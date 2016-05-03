@@ -97,7 +97,8 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
    <option value="2011">2011</option>
    <option value="2012">2012</option>
    <option value="2013">2013</option>
-   <option selected="selected" value="2014">2014</option>
+   <option value="2014">2014</option>
+   <option selected="selected" value="2015">2015</option>
 </select>
 </td>
 </tr>
@@ -335,8 +336,6 @@ function rank1() {
      
 function rank2() {
    var formdata = form.serialize(); // Serialize all form data
-   // form.action="/cgi-bin/rankings-2.cgi";
-   // form.submit();
 
    jQuery.get("cgi-bin/rankings-2.cgi", formdata, function( data ) {
    // console.log(data);
@@ -348,8 +347,6 @@ function rank2() {
  
 function rank3() {
     var formdata = form.serialize(); // Serialize all form data
-    // form.action="http://www.cs.rice.edu/~swarat/cgi-bin/rankings-3.cgi";
-    // form.submit();
 
     jQuery.get("cgi-bin/rankings-3.cgi", formdata, function( data ) {
        // console.log(data);
