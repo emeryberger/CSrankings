@@ -3,7 +3,7 @@ directory, and fire up the Python CGI browser at the command line:
 
 ```python -m CGIHTTPServer &```
 
-Then direct your browser to ```0.0.0.0:8000/rankings.html```.
+Then direct your browser to http://0.0.0.0:8000/rankings.html
 
 The code and data for this project were originally written / obtained
 by Swarat Chaudhuri (https://www.cs.rice.edu/~sc40/).
