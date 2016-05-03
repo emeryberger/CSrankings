@@ -26,6 +26,8 @@ weights['metrics'] = float(form.getvalue('metrics'))
 weights['web'] = float(form.getvalue('web'))
 weights['hci'] = float(form.getvalue('hci'))
 weights['graphics'] = float(form.getvalue('graphics'))
+weights['nlp'] = float(form.getvalue('nlp'))
+weights['vision'] = float(form.getvalue('vision'))
 
 startyear = int(form.getvalue('startyear'))
 endyear = int(form.getvalue('endyear'))
