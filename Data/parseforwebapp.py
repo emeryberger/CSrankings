@@ -24,20 +24,22 @@ theory = ['STOC', 'FOCS', 'SODA']
 networks = ['SIGCOMM', 'INFOCOM']
 security = ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium']
 mlmining = ['NIPS', 'ICML','KDD']
-ai = ['AAAI', 'IJCAI']
+ai = ['AAAI', 'IJCAI','AAMAS']
 database = ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference']
 graphics = ['ACM Trans. Graph.', 'SIGGRAPH']
 metrics = ['SIGMETRICS']
 web = ['WWW', 'SIGIR']
-hci = ['CHI']
+hci = ['CHI','UIST']
+nlp = ['EMNLP','ACL','NAACL']
+vision = ['CVPR','ICCV']
 
 plrelated = plflagship + logic + softeng
-allconf = plrelated + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics
+allconf = plrelated + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision
 startyear = 2000
-endyear = 2015
+endyear = 2016
 
 
-arealist = ['plflagship','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci']
+arealist = ['plflagship','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision']
 
 
 def conf2area(confname):
@@ -71,6 +73,10 @@ def conf2area(confname):
         return 'web'
     if (confname in hci):
         return 'hci'
+    if (confname in nlp):
+        return 'nlp'
+    if (confname in vision):
+        return 'vision'
 
 
 def parseDBLP(facultydict):
