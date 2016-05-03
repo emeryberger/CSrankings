@@ -20,7 +20,7 @@ template2 = """
       rank_slider[NUM], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
-      sliderValue: 10,
+      sliderValue: 4,
       onSlide: function(value) {
         var str = "field_NUM";
         $(str).value = value.toFixed(2);
