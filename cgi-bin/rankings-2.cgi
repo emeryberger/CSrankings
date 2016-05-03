@@ -5,32 +5,13 @@ import cgitb
 cgitb.enable()  # for troubleshooting 
 
 import csv
+import os
 import sys
 import operator
 
-weights = {}
-form = cgi.FieldStorage()
-weights['plflagship'] = float(form.getvalue('plflagship'))
-# weights['plothers'] = float(form.getvalue('plothers'))
-weights['logic'] = float(form.getvalue('logic'))
-weights['softeng'] = float(form.getvalue('softeng'))
-weights['opsys'] = float(form.getvalue('opsys'))
-weights['arch'] = float(form.getvalue('arch'))
-weights['theory'] = float(form.getvalue('theory'))
-weights['networks'] = float(form.getvalue('networks'))
-weights['security'] = float(form.getvalue('security'))
-weights['mlmining'] = float(form.getvalue('mlmining'))
-weights['ai'] = float(form.getvalue('ai'))
-weights['database'] = float(form.getvalue('database'))
-weights['metrics'] = float(form.getvalue('metrics'))
-weights['web'] = float(form.getvalue('web'))
-weights['hci'] = float(form.getvalue('hci'))
-weights['graphics'] = float(form.getvalue('graphics'))
-weights['nlp'] = float(form.getvalue('nlp'))
-weights['vision'] = float(form.getvalue('vision'))
+sys.path.append(os.path.abspath("cgi-bin/"))
 
-startyear = int(form.getvalue('startyear'))
-endyear = int(form.getvalue('endyear'))
+from subroutines import *
 
 """
 weights = {'plflagship': 0.0,'plothers': 0.0,'logic': 0.0, 'softeng': 0.0, 'opsys': 0.0, 'arch': 0.0, 'theory': 0.0, 'networks': 0.0, 'security': 0.0, 'mlmining': 1.0, 'ai': 0.0, 'database': 0.0,'metrics': 0.0, 'web': 0.0, 'hci': 0.0, 'graphics': 0.0}
@@ -39,19 +20,7 @@ startyear = 2005
 endyear = 2014
 """
 
-univagg = {}
-
-with open('intauthors-all.csv', mode='r') as infile:
-    reader = csv.reader(infile)
-    for rows in reader:
-        uname = rows[1]
-        area = rows[2]
-        year = int(rows[4])
-        count = float(rows[3])
-
-        if (year >= startyear and year <= endyear): 
-            univagg[uname] = univagg.get(uname, 0) + weights.get(area) * count
-           
+         
 print "Content-type: text/html"
 print ""
 print "<html>"
@@ -74,8 +43,9 @@ for (k, v) in rankedlist:
     j = j + 1
     if (oldv != v):
         i = i + 1
-    print "<tr><td>",i, "</td><td>", k.encode('utf-8'), "</td><td>",v, "</td></tr>"
-    oldv = v  
+    encoded = k.encode('utf-8')
+    print  "<tr><td>", i, "</td><td>", "<a href=\"", univwww[encoded], "\">", encoded, "</a>", "</td><td>", v, "</td></tr>"
+    oldv = v
 print "</table>" 
 print "\n"
 print "<br>"
