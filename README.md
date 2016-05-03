@@ -1,7 +1,7 @@
 To run this app locally, just clone the repo, go to the current
 directory, and fire up the Python CGI browser at the command line:
 
-```python -m CGIHTTPServer &
+```python -m CGIHTTPServer &```
 
 Then direct your browser to ```0.0.0.0:8000/rankings.html```.
 
