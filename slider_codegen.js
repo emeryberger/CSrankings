@@ -1,4 +1,5 @@
 
+
 function slidersetup()
 {
     var rank_slider = [];

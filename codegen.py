@@ -1,4 +1,5 @@
 template1 = """
+
 function slidersetup()
 {
     var rank_slider = [];
