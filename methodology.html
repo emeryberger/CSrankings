@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title></title>
+<style type="text/css">
+body {
+   margin-top: 3%;
+   margin-botton: 3%;
+   margin-left: 3%;
+   margin-right: 3%;
+   font-family: "Helvetica", "Arial";
+   line-height: 150%;
+}
+
+p {
+
+}
+
+li {
+   padding: 5px;
+}
+</style>
+</head>
+
+<body>
+<h2>Methodology</h2>
+
+<p>
+We rank computer science departments using a single metric:
+publication counts at top-tier outlets in several subareas of computer
+science. The motivation for, and limitations of, these rankings are
+discussed in a <a href="http://www.pl-enthusiast.net/2015/04/30/ranking-cs-departments-interactively">PL Enthusiast blog post</a>.</p>
+
+
+<h3>Categories and venues</h3>
+
+<p>A few "top-tier" venues in each area were identified through
+informal polling.
+<!-- For one area, Programming Languages, we considered
+two categories of venues: <i>Programming Languages</i> and
+<i>Programming Languages (others)</i>. The latter category consists of
+two conferences that are not flagship venues, but publish strong
+results.</p>
+<p>
+-->
+Publication data for all venues were obtained from the DBLP
+database.</p>
+
+<p>
+Here's a complete listing of the categories considered in the rankings,
+and the venues counted as top-tier in each of them.
+</p>
+
+<ul>
+<li> Programming languages:
+  <ul>
+    <li>
+    The ACM Symposium on Principles of
+  Programming Languages (POPL)
+    <li>The ACM Conference on Programming Language Design and
+    Implementation (PLDI)
+<li> The Conference on Object-Oriented
+Programming, Systems, Languages, and Applications (OOPSLA)
+  <li>The International Conference on Functional Programming (ICFP)
+</ul>
+</li>
+
+<li>Logic in computing:
+<ul>
+<li> The Conference on Computer-Aided Verification (CAV)
+<li> The IEEE Conference on Logic in Computer Science (LICS)
+  </ul>
+</li>
+
+<li>Software engineering:
+<ul>
+<li> The International Conference on Software Engineering (ICSE)
+<li> The ACM Symposium on Foundations of Software Engineering (FSE)
+  </ul>
+</li>
+
+<li>Algorithms and complexity:
+  <ul>
+<li> The Symposium on Theory of Computing (STOC)
+<li> The Conference on Foundations of Computer Science (FOCS)
+<li> The Symposium on Discrete Algorithms (SODA)
+    </ul>
+</li>
+
+<li> Operating systems:
+<ul>
+  <li>The Symposium on Operating Systems Principles (SOSP)
+  <li> The Symposium on Operating System Design and Implementation
+  (OSDI)
+</ul>
+</li>
+
+<li> Computer architecture:
+<ul>
+  <li> The International Symposium on Computer Architecture (ISCA)
+<li> The International Symposium on Micro-Architecture (MICRO)
+<li> The IEEE Symposium on High-Performance Computer Architecture (HPCA)
+<li> The Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+  </ul>
+</li>
+
+<li> Computer networks:
+  <ul>
+<li> The ACM Conference on Computer Communication (SIGCOMM)
+<li> The IEEE Conference on Computer Communications (INFOCOM)
+    </ul>
+</li>
+
+<li> Computer security:
+    <ul>
+<li> The IEEE Symposium on Security and Privacy (S&P)
+<li> The Conference on Computer and Communication Security (CCS)
+<li> The Usenix Security Symposium (Usenix Security)
+      </ul>
+</li>
+
+<li>Databases:
+      <ul>
+	<li> The ACM SIGMOD Conference (SIGMOD)
+	<li> The Symposium on
+Principles of Database Systems (PODS)
+	<li> The Conference on Very Large Databases (VLDB)
+</ul>
+</li>
+
+<li>
+Machine learning and data mining:
+<ul>
+<li> The Conference on Neural Information Processing Systems (NIPS)
+<li> International Conference on Machine Learning (ICML)
+<li> Symposium on Knowledge Discovery and Data Mining (KDD)
+  </ul>
+</li>
+
+<li> Artificial intelligence
+<ul>
+<li> The AAAI Conference on Artificial Intelligence (AAAI)
+<li> The International Joint Conference on Artificial Intelligence
+  (IJCAI)
+  <li> International Joint Conference on Autonomous Agents and Multiagent Systems (AAMAS)
+  </ul>
+</li>
+
+<li>Natural language processing
+<ul>
+<li> Meeting of the Association for Computational Linguistics (ACL)
+  </ul>
+</li>
+
+<li> Computer graphics
+  <ul>
+    <li>ACM Transactions on Graphics
+  </ul>
+</li>
+
+<li>Web and information retrieval:
+<ul>
+<li> Symposium on the World Wide Web (WWW) 
+<li> The Annual SIGIR conference (SIGIR)
+  </ul>
+</li>
+
+<li> Measurements:
+  <ul>
+<li> The ACM SIGMETRICS conference (SIGMETRICS) 
+    </ul>
+</li>
+
+<li> Human-computer interaction:
+    <ul>
+    <li> The ACM Conference on Computer-Human Interaction (CHI)
+      <li> Symposium on User Interface Software and Technology (UIST)
+      </ul>
+</li>
+
+<li> Computer vision
+<ul>
+<li>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+  <li> IEEE International Conference on Computer Vision (ICCV)
+  </ul>
+  </li>
+    </ul>
+
+<h3>Professors</h3>
+<p>
+Aside from DBLP data, the app uses a roster of professors at American universities constructed by <a
+    href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki
+    et al</a>. 
+    I changed the dataset in the following ways.
+<ul>
+<li>
+    Papoutsaki's dataset only considers the top 50 US Universities as
+    defined by the US News ranking for computer science. I
+    manually added two universities &mdash; Indiana University and Northeastern
+    University &mdash; that are not in Papoutsaki's list but are strong
+    in my research area of Programming Languages. 
+
+<li>    I updated the dataset so that the names of
+    professors match their entries in the DBLP database. This step is not
+    easy and may introduce errors (see "Limitations" below).
+  </ul>
+</p>
+
+  <p>
+  The final roster is available <a
+  href="facultydata-abbrv.txt">here</a>.
+  </p>
+
+    <h3>Scores for professors</h3>
+
+<p> The user selects a time window within the last 15 years and uses a
+set of sliders to put weights (numbers between 0 and 1) on various
+areas. The app assigns a score to each professor by giving him or her
+<i>w</i> points for each paper in a top-tier venue in an area with
+weight <i>w</i>. In addition, we identify a set of relevant professors
+&mdash; intuitively, the set of professors who are prospective
+advisors in the areas of interest. To qualify as a relevant professor,
+a faculty member must have published 3 or more papers across top
+venues in areas where the user has put a nonzero weight, within the
+selected period.
+    </p>
+    
+
+<h3>Ranks for departments</h3>
+    Departments are now ranked
+according to three different metrics. See the PL Enthusiast blog post
+    for more on these metrics.
+</p>
+<ul>
+<li><i>Aggregate productivity.</i> In this measure, the score of a
+department is the sum of the scores for all its professors.
+  </li>
+
+<li>
+<i>Maximal productivity.</i> Here, the score of a department is the
+greatest score received by one of its professors. 
+  </li>
+<li>
+  <i>Group size.</i> This metric estimates the
+size of a department's group in the user’s areas of interest, by
+counting the number of relevant professors that it employs. 
+  </li>
+</ul>
+
+
+<h3>Limitations</h3>
+
+The limitations of the methodology are described in some detail in the
+<a href="">accompanying blog post</a>. The implementation has quite a
+few limitations as well. Here is a partial list:
+<ul>
+  
+<li> The roster of <a href="facultydata-abbrv.csv">faculty members</a>
+  used here is based on data generated through crowdsourcing. Since
+  the data was generated, some faculty members may have moved,
+  retired, or started their academic careers. I have updated a few
+  such entries, but the data may still contain omissions/errors.
+  
+
+  <li>The roster of professors has to be linked with the DBLP
+  bibliography database. This is not always an easy task. Some
+  professors appear under multiple names in the DBLP database; also, a
+  professor's DBLP entry may be different from the name under which
+  they appear in the roster. I used a heuristic to unify certain
+  common variations of names and also eyeballed the data, but errors
+  may remain.
+  </ul>
+
+<p>
+If you spot a mistake that you would like corrected,
+  please leave a comment on <a
+  href="https://docs.google.com/document/d/17zbntw62_-Dn1fj9cnqkvgIPlbvtNLyWSk7iNSD6vuE/edit">this
+  public Google document</a>.
+  </p>
+ 
+
+</body>
+
+</html>
