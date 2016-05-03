@@ -70,8 +70,8 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
   <option value="2002">2002</option>
    <option value="2003">2003</option>
    <option value="2004">2004</option>
-  <option selected="selected" value="2005">2005</option>
-  <option value="2006">2006</option>  
+  <option value="2005">2005</option>
+  <option selected="selected" value="2006">2006</option>
   <option value="2007">2007</option>
    <option value="2008">2008</option>
    <option value="2009">2009</option>
@@ -114,7 +114,8 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
   
 <tr>
   <td>
-Programming languages 
+Programming languages
+<small><em>PLDI, POPL, OOPSLA</em></small>
 </td>
 <td>
 <input type="hidden" name="plflagship" id="field_1" value="1.0">
@@ -125,17 +126,8 @@ Programming languages
 
 <tr>
 <td>
-Logic in computing
-</td>
-<td><input type="hidden" name="logic" id="field_2" value="1.0">
-<div id="rank_slider_2" class="slider">
-<div class="handle"></div>  
-</td>
-</tr>
-
-<tr>
-<td>
 Software engineering
+<small><em>ICSE, FSE</em></small>
 </td>
 <td>
 <input type="hidden" name="softeng" id="field_3" value="1.0">
@@ -146,19 +138,9 @@ Software engineering
 
 
 <tr>
-<td>
-Algorithms and complexity
-</td>
-<td>
-<input type="hidden" name="theory" id="field_4" value="1.0">
-<div id="rank_slider_4" class="slider">
-<div class="handle"></div>  
-</td>
-</tr>
-
-<tr>
 <td>  
 Operating systems
+<small><em>SOSP, OSDI</em></small>
 </td>
 <td>
 <input type="hidden" name="opsys" id="field_5" value="1.0">
@@ -170,6 +152,7 @@ Operating systems
 <tr>
 <td>   
 Computer architecture
+<small><em>ASPLOS, ISCA, MICRO</em></small>
 </td>
 <td>
   <input type="hidden" name="arch" id="field_6" value="1.0">
@@ -181,6 +164,7 @@ Computer architecture
 <tr>
 <td>  
 Computer networks
+<small><em>INFOCOM, SIGCOMM, NSDI</em></small>
 </td>
 <td>  
 <input type="hidden" name="networks" id="field_7" value="1.0">
@@ -192,6 +176,7 @@ Computer networks
 <tr>
 <td>  
 Computer security
+<small><em>CCS, IEEE S&P, USENIX Security</em></small>
 </td>
 <td>  
 <input type="hidden" name="security" id="field_8" value="1.0">
@@ -204,6 +189,7 @@ Computer security
 <tr>
 <td>
 Databases
+<small><em>PODS, SIGMOD, VLDB</em></small>
 </td>
 <td>
 <input type="hidden" name="database" id="field_9" value="1.0">
@@ -212,10 +198,22 @@ Databases
 </td>
 </tr>
   
+<tr>
+<td>
+Measurements
+<small><em>IMC, SIGMETRICS</em></small>
+</td>
+<td> 
+<input type="hidden" name="metrics" id="field_15" value="1.0">
+<div id="rank_slider_15" class="slider">
+<div class="handle"></div>  
+</td>
+</tr>
 
 <tr>
 <td>
 Machine learning and data mining
+<small><em>ICML, KDD, NIPS</em></small>
 </td>
 <td> 
 <input type="hidden" name="mlmining" id="field_10" value="1.0">
@@ -227,6 +225,7 @@ Machine learning and data mining
 <tr>
 <td>
 Artificial intelligence
+<small><em>AAAI, AAMAS, IJCAI</em></small>
 </td>
 <td> 
 <input type="hidden" name="ai" id="field_11" value="1.0">
@@ -238,6 +237,7 @@ Artificial intelligence
 <tr>
 <td> 
 Natural language processing
+<small><em>ACL, EMNLP, NAACL</em></small>
 </td>
 <td>
   <input type="hidden" name="nlp" id="field_12" value="1.0">
@@ -249,6 +249,7 @@ Natural language processing
 <tr>
 <td>
 Computer graphics
+<small><em>SIGGRAPH, TOG</em></small>
 </td>
 <td>
 <input type="hidden" name="graphics" id="field_13" value="1.0">
@@ -260,6 +261,7 @@ Computer graphics
 <tr>
 <td>
 The web and information retrieval
+<small><em>SIGIR, WWW</em></small>
 </td>
 <td>
 <input type="hidden" name="web" id="field_14" value="1.0">
@@ -269,19 +271,9 @@ The web and information retrieval
 </tr>
 
 <tr>
-<td>
-Measurements
-</td>
-<td> 
-<input type="hidden" name="metrics" id="field_15" value="1.0">
-<div id="rank_slider_15" class="slider">
-<div class="handle"></div>  
-</td>
-</tr>
-
-<tr>
 <td> 
 Human-computer interaction
+<small><em>CHI, UIST</em></small>
 </td>
 <td>
   <input type="hidden" name="hci" id="field_16" value="1.0">
@@ -293,10 +285,34 @@ Human-computer interaction
 <tr>
 <td> 
 Computer vision
+<small><em>CVPR, ICCV</em></small>
 </td>
 <td>
   <input type="hidden" name="vision" id="field_17" value="1.0">
 <div id="rank_slider_17" class="slider">
+<div class="handle"></div>  
+</td>
+</tr>
+
+<tr>
+<td>
+Theory: algorithms and complexity
+<small><em>FOCS, PODC, SODA, STOC</em></small>
+</td>
+<td>
+<input type="hidden" name="theory" id="field_4" value="1.0">
+<div id="rank_slider_4" class="slider">
+<div class="handle"></div>  
+</td>
+</tr>
+
+<tr>
+<td>
+Logic in computing
+<small><em>CAV, LICS</em></small>
+</td>
+<td><input type="hidden" name="logic" id="field_2" value="1.0">
+<div id="rank_slider_2" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
