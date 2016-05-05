@@ -13,14 +13,6 @@ sys.path.append(os.path.abspath("cgi-bin/"))
 
 from subroutines import *
 
-"""
-startyear = 2005
-endyear = 2014
-
-weights = {'plflagship': 1.0,'plothers': 0.5,'logic': 0.5, 'softeng': 0.5, 'opsys': 0.0, 'arch': 0.0, 'theory': 0.0, 'networks': 0.0, 'security': 0.0, 'mlmining': 0.0, 'ai': 0.0, 'database': 0.0,'metrics': 0.0, 'web': 0.0, 'hci': 0.0, 'graphics': 0.0}
-"""
-
-
 print "Content-type: text/html"
 print ""
 print "<html>"

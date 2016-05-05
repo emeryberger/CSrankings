@@ -4,7 +4,7 @@ function slidersetup()
 {
     var rank_slider = [];
     var str = 'rank_slider_';
-    for (i = 1; i <= 17; i++) {
+    for (i = 1; i <= 16; i++) {
        rank_slider[i] = $(str.concat(i.toString()));
     }
 

@@ -31,9 +31,9 @@ Thomas A. Funkhouser,Princeton University,hci,1,2013
 Thomas A. Funkhouser,Princeton University,hci,1,2014
 Thomas A. Funkhouser,Princeton University,vision,1,2009
 Thomas A. Funkhouser,Princeton University,vision,1,2015
-Pat Hanrahan,Stanford University,plflagship,1,2010
-Pat Hanrahan,Stanford University,plflagship,1,2013
-Pat Hanrahan,Stanford University,plflagship,1,2014
+Pat Hanrahan,Stanford University,proglang,1,2010
+Pat Hanrahan,Stanford University,proglang,1,2013
+Pat Hanrahan,Stanford University,proglang,1,2014
 Pat Hanrahan,Stanford University,mlmining,1,2002
 Pat Hanrahan,Stanford University,database,1,2006
 Pat Hanrahan,Stanford University,database,1,2009
@@ -146,7 +146,7 @@ Dina Katabi,Massachusetts Institute of Technology,security,1,2011
 Dina Katabi,Massachusetts Institute of Technology,graphics,1,2014
 Dina Katabi,Massachusetts Institute of Technology,graphics,1,2015
 Dina Katabi,Massachusetts Institute of Technology,hci,1,2015
-Frédo Durand,Massachusetts Institute of Technology,plflagship,1,2013
+Frédo Durand,Massachusetts Institute of Technology,proglang,1,2013
 Frédo Durand,Massachusetts Institute of Technology,graphics,1,2000
 Frédo Durand,Massachusetts Institute of Technology,graphics,2,2001
 Frédo Durand,Massachusetts Institute of Technology,graphics,3,2002
@@ -290,7 +290,7 @@ David P. Dobkin,Princeton University,graphics,1,2002
 David P. Dobkin,Princeton University,graphics,1,2003
 David P. Dobkin,Princeton University,graphics,1,2004
 David P. Dobkin,Princeton University,graphics,1,2008
-Kavita Bala,Cornell University,plflagship,1,2007
+Kavita Bala,Cornell University,proglang,1,2007
 Kavita Bala,Cornell University,arch,1,2008
 Kavita Bala,Cornell University,graphics,1,2001
 Kavita Bala,Cornell University,graphics,1,2003
@@ -307,7 +307,7 @@ Kavita Bala,Cornell University,graphics,4,2014
 Kavita Bala,Cornell University,graphics,3,2015
 Kavita Bala,Cornell University,vision,1,2013
 Kavita Bala,Cornell University,vision,3,2015
-Connelly Barnes,University of Virginia,plflagship,1,2013
+Connelly Barnes,University of Virginia,proglang,1,2013
 Connelly Barnes,University of Virginia,graphics,1,2007
 Connelly Barnes,University of Virginia,graphics,1,2008
 Connelly Barnes,University of Virginia,graphics,1,2009
@@ -758,9 +758,9 @@ Aditi Majumder,University of California - Irvine,graphics,1,2005
 Aditi Majumder,University of California - Irvine,graphics,1,2011
 Aditi Majumder,University of California - Irvine,graphics,2,2012
 Aditi Majumder,University of California - Irvine,vision,2,2007
-Xi Wang,University of Washington,plflagship,1,2008
-Xi Wang,University of Washington,plflagship,1,2014
-Xi Wang,University of Washington,plflagship,1,2015
+Xi Wang,University of Washington,proglang,1,2008
+Xi Wang,University of Washington,proglang,1,2014
+Xi Wang,University of Washington,proglang,1,2015
 Xi Wang,University of Washington,softeng,1,2009
 Xi Wang,University of Washington,softeng,1,2010
 Xi Wang,University of Washington,opsys,1,2008
@@ -803,7 +803,7 @@ Paul E. Debevec,University of Southern California,graphics,1,2011
 Paul E. Debevec,University of Southern California,graphics,1,2013
 Paul E. Debevec,University of Southern California,graphics,1,2014
 Paul E. Debevec,University of Southern California,graphics,1,2015
-Sebastian Thrun,Stanford University,plflagship,1,2005
+Sebastian Thrun,Stanford University,proglang,1,2005
 Sebastian Thrun,Stanford University,mlmining,1,2000
 Sebastian Thrun,Stanford University,mlmining,2,2001
 Sebastian Thrun,Stanford University,mlmining,4,2003
@@ -1407,11 +1407,11 @@ Steven Dow,Carnegie Mellon University,hci,1,2007
 Steven Dow,Carnegie Mellon University,hci,1,2011
 Steven Dow,Carnegie Mellon University,hci,2,2013
 Steven Dow,Carnegie Mellon University,hci,1,2014
-Westley Weimer,University of Virginia,plflagship,1,2002
-Westley Weimer,University of Virginia,plflagship,1,2003
-Westley Weimer,University of Virginia,plflagship,1,2004
-Westley Weimer,University of Virginia,plflagship,1,2009
-Westley Weimer,University of Virginia,plflagship,1,2011
+Westley Weimer,University of Virginia,proglang,1,2002
+Westley Weimer,University of Virginia,proglang,1,2003
+Westley Weimer,University of Virginia,proglang,1,2004
+Westley Weimer,University of Virginia,proglang,1,2009
+Westley Weimer,University of Virginia,proglang,1,2011
 Westley Weimer,University of Virginia,logic,1,2002
 Westley Weimer,University of Virginia,softeng,2,2009
 Westley Weimer,University of Virginia,softeng,3,2012
@@ -1872,7 +1872,7 @@ Christos Faloutsos,Carnegie Mellon University,web,2,2016
 Christos Faloutsos,Carnegie Mellon University,hci,1,2011
 Christos Faloutsos,Carnegie Mellon University,nlp,1,2015
 Christos Faloutsos,Carnegie Mellon University,vision,1,2008
-Samuel Madden,Massachusetts Institute of Technology,plflagship,1,2013
+Samuel Madden,Massachusetts Institute of Technology,proglang,1,2013
 Samuel Madden,Massachusetts Institute of Technology,softeng,1,2011
 Samuel Madden,Massachusetts Institute of Technology,opsys,1,2002
 Samuel Madden,Massachusetts Institute of Technology,opsys,1,2007
@@ -2012,8 +2012,8 @@ George Kollios,Boston University,database,1,2009
 George Kollios,Boston University,database,2,2010
 George Kollios,Boston University,database,2,2012
 George Kollios,Boston University,database,1,2015
-Mark D. Hill,University of Wisconsin - Madison,plflagship,1,2001
-Mark D. Hill,University of Wisconsin - Madison,plflagship,1,2005
+Mark D. Hill,University of Wisconsin - Madison,proglang,1,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1,2005
 Mark D. Hill,University of Wisconsin - Madison,arch,1,2000
 Mark D. Hill,University of Wisconsin - Madison,arch,1,2001
 Mark D. Hill,University of Wisconsin - Madison,arch,2,2002
@@ -2055,13 +2055,13 @@ Magdalena Balazinska,University of Washington,database,6,2012
 Magdalena Balazinska,University of Washington,database,4,2013
 Magdalena Balazinska,University of Washington,database,2,2014
 Magdalena Balazinska,University of Washington,database,6,2015
-Michael D. Ernst,University of Washington,plflagship,2,2004
-Michael D. Ernst,University of Washington,plflagship,1,2005
-Michael D. Ernst,University of Washington,plflagship,1,2008
-Michael D. Ernst,University of Washington,plflagship,1,2010
-Michael D. Ernst,University of Washington,plflagship,3,2012
-Michael D. Ernst,University of Washington,plflagship,1,2013
-Michael D. Ernst,University of Washington,plflagship,1,2015
+Michael D. Ernst,University of Washington,proglang,2,2004
+Michael D. Ernst,University of Washington,proglang,1,2005
+Michael D. Ernst,University of Washington,proglang,1,2008
+Michael D. Ernst,University of Washington,proglang,1,2010
+Michael D. Ernst,University of Washington,proglang,3,2012
+Michael D. Ernst,University of Washington,proglang,1,2013
+Michael D. Ernst,University of Washington,proglang,1,2015
 Michael D. Ernst,University of Washington,logic,1,2011
 Michael D. Ernst,University of Washington,softeng,1,2000
 Michael D. Ernst,University of Washington,softeng,1,2001
@@ -2245,7 +2245,7 @@ Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,web,1,2014
 Daniel Abadi,Yale University,database,1,2010
 Daniel Abadi,Yale University,database,1,2015
 Daniel Abadi,Yale University,database,1,2016
-Michael J. Carey,University of California - Irvine,plflagship,1,2000
+Michael J. Carey,University of California - Irvine,proglang,1,2000
 Michael J. Carey,University of California - Irvine,database,4,2000
 Michael J. Carey,University of California - Irvine,database,1,2001
 Michael J. Carey,University of California - Irvine,database,1,2002
@@ -2258,16 +2258,16 @@ Michael J. Carey,University of California - Irvine,database,1,2009
 Michael J. Carey,University of California - Irvine,database,4,2010
 Michael J. Carey,University of California - Irvine,database,1,2012
 Michael J. Carey,University of California - Irvine,database,4,2014
-Dan Grossman,University of Washington,plflagship,1,2002
-Dan Grossman,University of Washington,plflagship,3,2007
-Dan Grossman,University of Washington,plflagship,2,2008
-Dan Grossman,University of Washington,plflagship,2,2010
-Dan Grossman,University of Washington,plflagship,1,2011
-Dan Grossman,University of Washington,plflagship,1,2012
-Dan Grossman,University of Washington,plflagship,2,2013
-Dan Grossman,University of Washington,plflagship,3,2014
-Dan Grossman,University of Washington,plflagship,1,2015
-Dan Grossman,University of Washington,plflagship,1,2016
+Dan Grossman,University of Washington,proglang,1,2002
+Dan Grossman,University of Washington,proglang,3,2007
+Dan Grossman,University of Washington,proglang,2,2008
+Dan Grossman,University of Washington,proglang,2,2010
+Dan Grossman,University of Washington,proglang,1,2011
+Dan Grossman,University of Washington,proglang,1,2012
+Dan Grossman,University of Washington,proglang,2,2013
+Dan Grossman,University of Washington,proglang,3,2014
+Dan Grossman,University of Washington,proglang,1,2015
+Dan Grossman,University of Washington,proglang,1,2016
 Dan Grossman,University of Washington,softeng,1,2007
 Dan Grossman,University of Washington,arch,2,2010
 Dan Grossman,University of Washington,arch,1,2011
@@ -2285,7 +2285,7 @@ Cristina Nita-Rotaru,Purdue University,security,1,2010
 Cristina Nita-Rotaru,Purdue University,security,1,2012
 Cristina Nita-Rotaru,Purdue University,security,2,2015
 Cristina Nita-Rotaru,Purdue University,database,1,2015
-Michael J. Cafarella,University of Michigan,plflagship,1,2014
+Michael J. Cafarella,University of Michigan,proglang,1,2014
 Michael J. Cafarella,University of Michigan,mlmining,1,2014
 Michael J. Cafarella,University of Michigan,ai,1,2004
 Michael J. Cafarella,University of Michigan,ai,1,2006
@@ -2299,7 +2299,7 @@ Michael J. Cafarella,University of Michigan,database,1,2014
 Michael J. Cafarella,University of Michigan,database,3,2015
 Michael J. Cafarella,University of Michigan,web,1,2004
 Michael J. Cafarella,University of Michigan,web,1,2005
-Moshe Y. Vardi,Rice University,plflagship,1,2007
+Moshe Y. Vardi,Rice University,proglang,1,2007
 Moshe Y. Vardi,Rice University,logic,3,2000
 Moshe Y. Vardi,Rice University,logic,3,2001
 Moshe Y. Vardi,Rice University,logic,1,2002
@@ -2410,21 +2410,21 @@ Srinivasan Parthasarathy,Ohio State University,web,1,2013
 Srinivasan Parthasarathy,Ohio State University,web,1,2014
 Srinivasan Parthasarathy,Ohio State University,web,1,2015
 Srinivasan Parthasarathy,Ohio State University,web,1,2016
-Alvin Cheung,University of Washington,plflagship,1,2013
+Alvin Cheung,University of Washington,proglang,1,2013
 Alvin Cheung,University of Washington,softeng,1,2011
 Alvin Cheung,University of Washington,database,1,2008
 Alvin Cheung,University of Washington,database,1,2012
 Alvin Cheung,University of Washington,database,1,2013
 Alvin Cheung,University of Washington,database,1,2014
 Alvin Cheung,University of Washington,database,1,2016
-Andrew C. Myers,Cornell University,plflagship,1,2004
-Andrew C. Myers,Cornell University,plflagship,2,2006
-Andrew C. Myers,Cornell University,plflagship,2,2009
-Andrew C. Myers,Cornell University,plflagship,1,2010
-Andrew C. Myers,Cornell University,plflagship,1,2012
-Andrew C. Myers,Cornell University,plflagship,2,2013
-Andrew C. Myers,Cornell University,plflagship,1,2014
-Andrew C. Myers,Cornell University,plflagship,3,2015
+Andrew C. Myers,Cornell University,proglang,1,2004
+Andrew C. Myers,Cornell University,proglang,2,2006
+Andrew C. Myers,Cornell University,proglang,2,2009
+Andrew C. Myers,Cornell University,proglang,1,2010
+Andrew C. Myers,Cornell University,proglang,1,2012
+Andrew C. Myers,Cornell University,proglang,2,2013
+Andrew C. Myers,Cornell University,proglang,1,2014
+Andrew C. Myers,Cornell University,proglang,3,2015
 Andrew C. Myers,Cornell University,opsys,1,2001
 Andrew C. Myers,Cornell University,opsys,1,2007
 Andrew C. Myers,Cornell University,opsys,1,2009
@@ -2818,7 +2818,7 @@ Jennifer Neville,Purdue University,database,1,2011
 Jennifer Neville,Purdue University,web,2,2010
 Jennifer Neville,Purdue University,web,1,2014
 Jennifer Neville,Purdue University,web,1,2015
-Feng Qian,Indiana University,plflagship,1,2003
+Feng Qian,Indiana University,proglang,1,2003
 Feng Qian,Indiana University,networks,1,2013
 Feng Qian,Indiana University,database,1,2014
 Feng Qian,Indiana University,metrics,1,2010
@@ -2885,7 +2885,7 @@ Bruce M. Maggs,Duke University,networks,1,2012
 Bruce M. Maggs,Duke University,networks,1,2013
 Bruce M. Maggs,Duke University,database,1,2006
 Bruce M. Maggs,Duke University,database,1,2008
-Todd C. Mowry,Carnegie Mellon University,plflagship,1,2010
+Todd C. Mowry,Carnegie Mellon University,proglang,1,2010
 Todd C. Mowry,Carnegie Mellon University,opsys,1,2000
 Todd C. Mowry,Carnegie Mellon University,arch,1,2000
 Todd C. Mowry,Carnegie Mellon University,arch,1,2002
@@ -2901,7 +2901,7 @@ Todd C. Mowry,Carnegie Mellon University,database,1,2001
 Todd C. Mowry,Carnegie Mellon University,database,2,2005
 Todd C. Mowry,Carnegie Mellon University,database,1,2006
 Todd C. Mowry,Carnegie Mellon University,database,1,2008
-Andrew McGregor,University of Massachusetts - Amherst,plflagship,1,2012
+Andrew McGregor,University of Massachusetts - Amherst,proglang,1,2012
 Andrew McGregor,University of Massachusetts - Amherst,theory,1,2004
 Andrew McGregor,University of Massachusetts - Amherst,theory,1,2005
 Andrew McGregor,University of Massachusetts - Amherst,theory,1,2006
@@ -3551,9 +3551,9 @@ Suresh Venkatasubramanian,University of Utah,database,1,2004
 Suresh Venkatasubramanian,University of Utah,database,1,2009
 Suresh Venkatasubramanian,University of Utah,database,1,2010
 Suresh Venkatasubramanian,University of Utah,vision,1,2008
-Neil Immerman,University of Massachusetts - Amherst,plflagship,2,2010
-Neil Immerman,University of Massachusetts - Amherst,plflagship,1,2014
-Neil Immerman,University of Massachusetts - Amherst,plflagship,1,2016
+Neil Immerman,University of Massachusetts - Amherst,proglang,2,2010
+Neil Immerman,University of Massachusetts - Amherst,proglang,1,2014
+Neil Immerman,University of Massachusetts - Amherst,proglang,1,2016
 Neil Immerman,University of Massachusetts - Amherst,logic,2,2001
 Neil Immerman,University of Massachusetts - Amherst,logic,1,2002
 Neil Immerman,University of Massachusetts - Amherst,logic,1,2006
@@ -3573,7 +3573,7 @@ Richard T. Snodgrass,University of Arizona,database,1,2005
 Richard T. Snodgrass,University of Arizona,database,1,2006
 Richard T. Snodgrass,University of Arizona,database,1,2013
 Richard T. Snodgrass,University of Arizona,database,1,2014
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,plflagship,1,2008
+Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2008
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,softeng,1,2010
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,2,2008
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,arch,1,2002
@@ -3585,17 +3585,17 @@ Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,database,1,
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,database,1,2015
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,web,1,2003
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,vision,3,2015
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2000
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2001
-Todd D. Millstein,University of California - Los Angeles,plflagship,2,2003
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2004
-Todd D. Millstein,University of California - Los Angeles,plflagship,2,2005
-Todd D. Millstein,University of California - Los Angeles,plflagship,2,2006
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2007
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2010
-Todd D. Millstein,University of California - Los Angeles,plflagship,2,2011
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2013
-Todd D. Millstein,University of California - Los Angeles,plflagship,1,2015
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2000
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2001
+Todd D. Millstein,University of California - Los Angeles,proglang,2,2003
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2004
+Todd D. Millstein,University of California - Los Angeles,proglang,2,2005
+Todd D. Millstein,University of California - Los Angeles,proglang,2,2006
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2007
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2010
+Todd D. Millstein,University of California - Los Angeles,proglang,2,2011
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2013
+Todd D. Millstein,University of California - Los Angeles,proglang,1,2015
 Todd D. Millstein,University of California - Los Angeles,logic,1,2014
 Todd D. Millstein,University of California - Los Angeles,softeng,1,2012
 Todd D. Millstein,University of California - Los Angeles,softeng,1,2013
@@ -3723,15 +3723,15 @@ Rodrigo Fonseca,Brown University,networks,1,2013
 Rodrigo Fonseca,Brown University,networks,1,2014
 Rodrigo Fonseca,Brown University,networks,1,2015
 Rodrigo Fonseca,Brown University,database,1,2009
-P. Sadayappan,Ohio State University,plflagship,1,2002
-P. Sadayappan,Ohio State University,plflagship,1,2007
-P. Sadayappan,Ohio State University,plflagship,1,2008
-P. Sadayappan,Ohio State University,plflagship,1,2011
-P. Sadayappan,Ohio State University,plflagship,1,2012
-P. Sadayappan,Ohio State University,plflagship,1,2013
-P. Sadayappan,Ohio State University,plflagship,2,2014
-P. Sadayappan,Ohio State University,plflagship,1,2015
-P. Sadayappan,Ohio State University,plflagship,1,2016
+P. Sadayappan,Ohio State University,proglang,1,2002
+P. Sadayappan,Ohio State University,proglang,1,2007
+P. Sadayappan,Ohio State University,proglang,1,2008
+P. Sadayappan,Ohio State University,proglang,1,2011
+P. Sadayappan,Ohio State University,proglang,1,2012
+P. Sadayappan,Ohio State University,proglang,1,2013
+P. Sadayappan,Ohio State University,proglang,2,2014
+P. Sadayappan,Ohio State University,proglang,1,2015
+P. Sadayappan,Ohio State University,proglang,1,2016
 P. Sadayappan,Ohio State University,database,1,2011
 Daniel Gildea,University of Rochester,mlmining,1,2012
 Daniel Gildea,University of Rochester,ai,1,2013
@@ -3912,7 +3912,7 @@ Jason Eisner,Johns Hopkins University,nlp,4,2009
 Jason Eisner,Johns Hopkins University,nlp,2,2011
 Jason Eisner,Johns Hopkins University,nlp,1,2013
 Jason Eisner,Johns Hopkins University,nlp,1,2015
-Dan Roth,University of Illinois at Urbana-Champaign,plflagship,1,2016
+Dan Roth,University of Illinois at Urbana-Champaign,proglang,1,2016
 Dan Roth,University of Illinois at Urbana-Champaign,mlmining,1,2000
 Dan Roth,University of Illinois at Urbana-Champaign,mlmining,1,2001
 Dan Roth,University of Illinois at Urbana-Champaign,mlmining,2,2002
@@ -4199,8 +4199,8 @@ Hui Zhang,Carnegie Mellon University,web,1,2007
 Hui Zhang,Carnegie Mellon University,nlp,2,2009
 Hui Zhang,Carnegie Mellon University,nlp,2,2010
 Hui Zhang,Carnegie Mellon University,vision,1,2015
-Percy Liang,Stanford University,plflagship,1,2010
-Percy Liang,Stanford University,plflagship,2,2011
+Percy Liang,Stanford University,proglang,1,2010
+Percy Liang,Stanford University,proglang,2,2011
 Percy Liang,Stanford University,mlmining,3,2007
 Percy Liang,Stanford University,mlmining,2,2008
 Percy Liang,Stanford University,mlmining,2,2009
@@ -4586,7 +4586,7 @@ Douglas S. Reeves,North Carolina State University,networks,1,2007
 Douglas S. Reeves,North Carolina State University,security,1,2002
 Douglas S. Reeves,North Carolina State University,security,1,2003
 Douglas S. Reeves,North Carolina State University,security,1,2006
-Jonathan Katz,University of Maryland - College Park,plflagship,1,2014
+Jonathan Katz,University of Maryland - College Park,proglang,1,2014
 Jonathan Katz,University of Maryland - College Park,theory,2,2000
 Jonathan Katz,University of Maryland - College Park,theory,1,2003
 Jonathan Katz,University of Maryland - College Park,theory,1,2006
@@ -4642,7 +4642,7 @@ Dan Boneh,Stanford University,security,3,2015
 Dan Boneh,Stanford University,web,1,2006
 Dan Boneh,Stanford University,web,1,2007
 Dan Boneh,Stanford University,web,2,2012
-Elaine Shi,University of Maryland - College Park,plflagship,1,2014
+Elaine Shi,University of Maryland - College Park,proglang,1,2014
 Elaine Shi,University of Maryland - College Park,opsys,1,2005
 Elaine Shi,University of Maryland - College Park,arch,1,2015
 Elaine Shi,University of Maryland - College Park,networks,1,2007
@@ -4811,20 +4811,20 @@ Nicholas Hopper,University of Minnesota - Twin Cities,security,4,2010
 Nicholas Hopper,University of Minnesota - Twin Cities,security,3,2012
 Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2013
 Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2015
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2000
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,2,2001
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,3,2002
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,3,2003
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2004
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,2,2007
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2008
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2009
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2010
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,2,2011
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,4,2012
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2013
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,3,2014
-Martin C. Rinard,Massachusetts Institute of Technology,plflagship,1,2015
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2000
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2001
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2002
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2003
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2004
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2007
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2008
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2009
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2010
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2011
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,4,2012
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2013
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2014
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2015
 Martin C. Rinard,Massachusetts Institute of Technology,logic,1,2003
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2002
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2004
@@ -5154,10 +5154,10 @@ Kevin R. B. Butler,University of Florida,security,1,2006
 Kevin R. B. Butler,University of Florida,security,1,2008
 Kevin R. B. Butler,University of Florida,security,1,2010
 Kevin R. B. Butler,University of Florida,security,2,2014
-Stephen Chong,Harvard University,plflagship,1,2004
-Stephen Chong,Harvard University,plflagship,1,2012
-Stephen Chong,Harvard University,plflagship,2,2013
-Stephen Chong,Harvard University,plflagship,1,2015
+Stephen Chong,Harvard University,proglang,1,2004
+Stephen Chong,Harvard University,proglang,1,2012
+Stephen Chong,Harvard University,proglang,2,2013
+Stephen Chong,Harvard University,proglang,1,2015
 Stephen Chong,Harvard University,opsys,1,2007
 Stephen Chong,Harvard University,opsys,1,2014
 Stephen Chong,Harvard University,security,1,2003
@@ -5220,9 +5220,9 @@ Christopher Kruegel,University of California - Santa Barbara,security,1,2015
 Christopher Kruegel,University of California - Santa Barbara,web,1,2011
 Christopher Kruegel,University of California - Santa Barbara,web,1,2013
 Christopher Kruegel,University of California - Santa Barbara,web,1,2014
-Junfeng Yang,Columbia University,plflagship,1,2010
-Junfeng Yang,Columbia University,plflagship,1,2012
-Junfeng Yang,Columbia University,plflagship,1,2016
+Junfeng Yang,Columbia University,proglang,1,2010
+Junfeng Yang,Columbia University,proglang,1,2012
+Junfeng Yang,Columbia University,proglang,1,2016
 Junfeng Yang,Columbia University,softeng,1,2004
 Junfeng Yang,Columbia University,softeng,1,2013
 Junfeng Yang,Columbia University,opsys,1,2001
@@ -5237,7 +5237,7 @@ Junfeng Yang,Columbia University,networks,1,2009
 Junfeng Yang,Columbia University,security,1,2003
 Junfeng Yang,Columbia University,security,1,2006
 Junfeng Yang,Columbia University,security,1,2015
-Dawson R. Engler,Stanford University,plflagship,1,2002
+Dawson R. Engler,Stanford University,proglang,1,2002
 Dawson R. Engler,Stanford University,logic,1,2011
 Dawson R. Engler,Stanford University,softeng,1,2002
 Dawson R. Engler,Stanford University,softeng,1,2004
@@ -5358,9 +5358,9 @@ Stanislaw Jarecki,University of California - Irvine,security,1,2007
 Stanislaw Jarecki,University of California - Irvine,security,1,2008
 Stanislaw Jarecki,University of California - Irvine,security,1,2011
 Stanislaw Jarecki,University of California - Irvine,security,1,2013
-Somesh Jha,University of Wisconsin - Madison,plflagship,1,2007
-Somesh Jha,University of Wisconsin - Madison,plflagship,1,2012
-Somesh Jha,University of Wisconsin - Madison,plflagship,1,2016
+Somesh Jha,University of Wisconsin - Madison,proglang,1,2007
+Somesh Jha,University of Wisconsin - Madison,proglang,1,2012
+Somesh Jha,University of Wisconsin - Madison,proglang,1,2016
 Somesh Jha,University of Wisconsin - Madison,logic,1,2000
 Somesh Jha,University of Wisconsin - Madison,logic,1,2002
 Somesh Jha,University of Wisconsin - Madison,logic,1,2010
@@ -5387,7 +5387,7 @@ Somesh Jha,University of Wisconsin - Madison,security,3,2010
 Somesh Jha,University of Wisconsin - Madison,security,1,2013
 Somesh Jha,University of Wisconsin - Madison,security,2,2014
 Somesh Jha,University of Wisconsin - Madison,security,1,2015
-Barton P. Miller,University of Wisconsin - Madison,plflagship,1,2000
+Barton P. Miller,University of Wisconsin - Madison,proglang,1,2000
 Barton P. Miller,University of Wisconsin - Madison,security,1,2002
 Barton P. Miller,University of Wisconsin - Madison,security,1,2004
 Barton P. Miller,University of Wisconsin - Madison,security,1,2006
@@ -5419,18 +5419,18 @@ Hovav Shacham,University of California - San Diego,security,3,2010
 Hovav Shacham,University of California - San Diego,security,2,2011
 Hovav Shacham,University of California - San Diego,security,1,2013
 Hovav Shacham,University of California - San Diego,security,1,2015
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2002
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2003
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2005
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2006
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,2,2007
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2008
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2009
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,2,2010
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,2,2011
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2012
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2014
-Jeffrey S. Foster,University of Maryland - College Park,plflagship,1,2015
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2002
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2003
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2005
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2006
+Jeffrey S. Foster,University of Maryland - College Park,proglang,2,2007
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2008
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2009
+Jeffrey S. Foster,University of Maryland - College Park,proglang,2,2010
+Jeffrey S. Foster,University of Maryland - College Park,proglang,2,2011
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2012
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2014
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2015
 Jeffrey S. Foster,University of Maryland - College Park,logic,1,2009
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1,2012
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1,2013
@@ -5458,15 +5458,15 @@ David Evans,University of Virginia,security,2,2011
 David Evans,University of Virginia,security,1,2012
 David Evans,University of Virginia,security,1,2013
 David Evans,University of Virginia,security,1,2015
-Xiangyu Zhang,Purdue University,plflagship,1,2004
-Xiangyu Zhang,Purdue University,plflagship,1,2006
-Xiangyu Zhang,Purdue University,plflagship,1,2007
-Xiangyu Zhang,Purdue University,plflagship,1,2008
-Xiangyu Zhang,Purdue University,plflagship,2,2011
-Xiangyu Zhang,Purdue University,plflagship,1,2012
-Xiangyu Zhang,Purdue University,plflagship,1,2013
-Xiangyu Zhang,Purdue University,plflagship,1,2014
-Xiangyu Zhang,Purdue University,plflagship,2,2015
+Xiangyu Zhang,Purdue University,proglang,1,2004
+Xiangyu Zhang,Purdue University,proglang,1,2006
+Xiangyu Zhang,Purdue University,proglang,1,2007
+Xiangyu Zhang,Purdue University,proglang,1,2008
+Xiangyu Zhang,Purdue University,proglang,2,2011
+Xiangyu Zhang,Purdue University,proglang,1,2012
+Xiangyu Zhang,Purdue University,proglang,1,2013
+Xiangyu Zhang,Purdue University,proglang,1,2014
+Xiangyu Zhang,Purdue University,proglang,2,2015
 Xiangyu Zhang,Purdue University,softeng,1,2003
 Xiangyu Zhang,Purdue University,softeng,1,2004
 Xiangyu Zhang,Purdue University,softeng,1,2005
@@ -5533,8 +5533,8 @@ Phillip Rogaway,University of California - Davis,security,1,2002
 Phillip Rogaway,University of California - Davis,security,1,2007
 Phillip Rogaway,University of California - Davis,security,1,2012
 Phillip Rogaway,University of California - Davis,security,1,2013
-Carl A. Gunter,University of Illinois at Urbana-Champaign,plflagship,1,2000
-Carl A. Gunter,University of Illinois at Urbana-Champaign,plflagship,1,2001
+Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2000
+Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2001
 Carl A. Gunter,University of Illinois at Urbana-Champaign,networks,1,2008
 Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2007
 Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2008
@@ -5654,10 +5654,10 @@ David Brumley,Carnegie Mellon University,security,2,2011
 David Brumley,Carnegie Mellon University,security,4,2012
 David Brumley,Carnegie Mellon University,security,2,2013
 David Brumley,Carnegie Mellon University,security,1,2015
-P. Madhusudan,University of Illinois at Urbana-Champaign,plflagship,1,2005
-P. Madhusudan,University of Illinois at Urbana-Champaign,plflagship,2,2011
-P. Madhusudan,University of Illinois at Urbana-Champaign,plflagship,2,2014
-P. Madhusudan,University of Illinois at Urbana-Champaign,plflagship,1,2016
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1,2005
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2,2011
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2,2014
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1,2016
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,3,2003
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1,2006
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1,2008
@@ -5708,7 +5708,7 @@ Hari Balakrishnan,Massachusetts Institute of Technology,database,1,2006
 Hari Balakrishnan,Massachusetts Institute of Technology,database,1,2011
 Hari Balakrishnan,Massachusetts Institute of Technology,metrics,1,2000
 Hari Balakrishnan,Massachusetts Institute of Technology,metrics,1,2003
-Kai Li,Princeton University,plflagship,1,2001
+Kai Li,Princeton University,proglang,1,2001
 Kai Li,Princeton University,opsys,1,2000
 Kai Li,Princeton University,opsys,1,2002
 Kai Li,Princeton University,arch,1,2002
@@ -5826,7 +5826,7 @@ Emerson R. Murphy-Hill,North Carolina State University,security,1,2014
 Xiaofeng Wang,Indiana University,security,1,2014
 Xiaofeng Wang,Indiana University,security,1,2015
 Xiaofeng Wang,Indiana University,mlmining,1,2002
-Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,plflagship,1,2005
+Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2005
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,security,1,2007
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,security,1,2008
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,web,1,2011
@@ -5859,9 +5859,9 @@ Aviel D. Rubin,Johns Hopkins University,security,1,2014
 Cynthia Sturton,University of North Carolina - Chapel Hill,arch,1,2015
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1,2009
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1,2011
-Michael Franz,University of California - Irvine,plflagship,1,2001
-Michael Franz,University of California - Irvine,plflagship,1,2009
-Michael Franz,University of California - Irvine,plflagship,1,2014
+Michael Franz,University of California - Irvine,proglang,1,2001
+Michael Franz,University of California - Irvine,proglang,1,2009
+Michael Franz,University of California - Irvine,proglang,1,2014
 Michael Franz,University of California - Irvine,security,1,2013
 Michael Franz,University of California - Irvine,security,1,2014
 Michael Franz,University of California - Irvine,security,3,2015
@@ -5872,10 +5872,10 @@ Apu Kapadia,Indiana University,security,1,2012
 Apu Kapadia,Indiana University,security,1,2014
 Apu Kapadia,Indiana University,hci,1,2014
 Apu Kapadia,Indiana University,hci,4,2015
-Greg Morrisett,Harvard University,plflagship,1,2007
-Greg Morrisett,Harvard University,plflagship,1,2010
-Greg Morrisett,Harvard University,plflagship,1,2011
-Greg Morrisett,Harvard University,plflagship,1,2012
+Greg Morrisett,Harvard University,proglang,1,2007
+Greg Morrisett,Harvard University,proglang,1,2010
+Greg Morrisett,Harvard University,proglang,1,2011
+Greg Morrisett,Harvard University,proglang,1,2012
 Greg Morrisett,Harvard University,security,1,2010
 Greg Morrisett,Harvard University,security,1,2011
 Greg Morrisett,Harvard University,security,1,2013
@@ -5893,7 +5893,7 @@ Rebecca N. Wright,Rutgers - State University of New Jersey - New Brunswick,mlmin
 Rebecca N. Wright,Rutgers - State University of New Jersey - New Brunswick,database,1,2005
 Rebecca N. Wright,Rutgers - State University of New Jersey - New Brunswick,database,1,2011
 Rebecca N. Wright,Rutgers - State University of New Jersey - New Brunswick,metrics,1,2013
-Tao Xie,University of Illinois at Urbana-Champaign,plflagship,1,2011
+Tao Xie,University of Illinois at Urbana-Champaign,proglang,1,2011
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1,2005
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,2,2006
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,2,2007
@@ -5913,16 +5913,16 @@ Stephen Checkoway,Johns Hopkins University,arch,1,2013
 Stephen Checkoway,Johns Hopkins University,security,2,2010
 Stephen Checkoway,Johns Hopkins University,security,2,2011
 Stephen Checkoway,Johns Hopkins University,security,1,2014
-William R. Harris,Georgia Institute of Technology,plflagship,1,2010
-William R. Harris,Georgia Institute of Technology,plflagship,1,2011
+William R. Harris,Georgia Institute of Technology,proglang,1,2010
+William R. Harris,Georgia Institute of Technology,proglang,1,2011
 William R. Harris,Georgia Institute of Technology,logic,1,2013
 William R. Harris,Georgia Institute of Technology,security,1,2010
 William R. Harris,Georgia Institute of Technology,security,1,2013
-Thomas W. Reps,University of Wisconsin - Madison,plflagship,1,2000
-Thomas W. Reps,University of Wisconsin - Madison,plflagship,2,2005
-Thomas W. Reps,University of Wisconsin - Madison,plflagship,1,2014
-Thomas W. Reps,University of Wisconsin - Madison,plflagship,2,2015
-Thomas W. Reps,University of Wisconsin - Madison,plflagship,1,2016
+Thomas W. Reps,University of Wisconsin - Madison,proglang,1,2000
+Thomas W. Reps,University of Wisconsin - Madison,proglang,2,2005
+Thomas W. Reps,University of Wisconsin - Madison,proglang,1,2014
+Thomas W. Reps,University of Wisconsin - Madison,proglang,2,2015
+Thomas W. Reps,University of Wisconsin - Madison,proglang,1,2016
 Thomas W. Reps,University of Wisconsin - Madison,logic,1,2002
 Thomas W. Reps,University of Wisconsin - Madison,logic,1,2004
 Thomas W. Reps,University of Wisconsin - Madison,logic,3,2005
@@ -5979,7 +5979,7 @@ Aditya Akella,University of Wisconsin - Madison,metrics,1,2003
 Aditya Akella,University of Wisconsin - Madison,metrics,1,2011
 Aditya Akella,University of Wisconsin - Madison,metrics,1,2013
 Aditya Akella,University of Wisconsin - Madison,metrics,1,2015
-Patrick McDaniel,Pennsylvania State University,plflagship,1,2014
+Patrick McDaniel,Pennsylvania State University,proglang,1,2014
 Patrick McDaniel,Pennsylvania State University,softeng,1,2012
 Patrick McDaniel,Pennsylvania State University,opsys,1,2010
 Patrick McDaniel,Pennsylvania State University,networks,1,2007
@@ -6018,7 +6018,7 @@ Eric Keller,University of Colorado Boulder,networks,1,2010
 Eric Keller,University of Colorado Boulder,networks,1,2014
 Eric Keller,University of Colorado Boulder,security,1,2011
 Eric Keller,University of Colorado Boulder,security,1,2015
-Jennifer Rexford,Princeton University,plflagship,1,2012
+Jennifer Rexford,Princeton University,proglang,1,2012
 Jennifer Rexford,Princeton University,arch,1,2010
 Jennifer Rexford,Princeton University,theory,1,2008
 Jennifer Rexford,Princeton University,networks,1,2000
@@ -6047,9 +6047,9 @@ Jennifer Rexford,Princeton University,metrics,1,2012
 Joshua R. Smith,University of Washington,networks,1,2013
 Joshua R. Smith,University of Washington,networks,2,2014
 Joshua R. Smith,University of Washington,security,1,2008
-Calvin Lin,University of Texas - Austin,plflagship,1,2007
-Calvin Lin,University of Texas - Austin,plflagship,1,2009
-Calvin Lin,University of Texas - Austin,plflagship,2,2015
+Calvin Lin,University of Texas - Austin,proglang,1,2007
+Calvin Lin,University of Texas - Austin,proglang,1,2009
+Calvin Lin,University of Texas - Austin,proglang,2,2015
 Calvin Lin,University of Texas - Austin,softeng,1,2001
 Calvin Lin,University of Texas - Austin,arch,1,2000
 Calvin Lin,University of Texas - Austin,arch,1,2004
@@ -6106,7 +6106,7 @@ David L. Dill,Stanford University,logic,1,2012
 David L. Dill,Stanford University,opsys,1,2002
 David L. Dill,Stanford University,arch,1,2001
 David L. Dill,Stanford University,security,1,2006
-Stephen McCamant,University of Minnesota - Twin Cities,plflagship,1,2008
+Stephen McCamant,University of Minnesota - Twin Cities,proglang,1,2008
 Stephen McCamant,University of Minnesota - Twin Cities,arch,1,2012
 Stephen McCamant,University of Minnesota - Twin Cities,security,2,2010
 Stephen McCamant,University of Minnesota - Twin Cities,security,1,2011
@@ -6190,7 +6190,7 @@ Arvind Krishnamurthy,University of Washington,security,1,2008
 Arvind Krishnamurthy,University of Washington,security,2,2010
 Arvind Krishnamurthy,University of Washington,security,1,2011
 Arvind Krishnamurthy,University of Washington,web,1,2011
-David Mazières,Stanford University,plflagship,1,2014
+David Mazières,Stanford University,proglang,1,2014
 David Mazières,Stanford University,opsys,1,2000
 David Mazières,Stanford University,opsys,1,2001
 David Mazières,Stanford University,opsys,1,2003
@@ -6298,9 +6298,9 @@ Joseph Y. Halpern,University of Minnesota - Twin Cities,ai,1,2014
 Joseph Y. Halpern,University of Minnesota - Twin Cities,ai,1,2015
 Joseph Y. Halpern,University of Minnesota - Twin Cities,database,1,2002
 Joseph Y. Halpern,University of Minnesota - Twin Cities,database,1,2006
-Scott D. Stoller,State University of New York - Stony Brook,plflagship,1,2004
-Scott D. Stoller,State University of New York - Stony Brook,plflagship,1,2005
-Scott D. Stoller,State University of New York - Stony Brook,plflagship,1,2012
+Scott D. Stoller,State University of New York - Stony Brook,proglang,1,2004
+Scott D. Stoller,State University of New York - Stony Brook,proglang,1,2005
+Scott D. Stoller,State University of New York - Stony Brook,proglang,1,2012
 Scott D. Stoller,State University of New York - Stony Brook,logic,1,2000
 Scott D. Stoller,State University of New York - Stony Brook,logic,1,2001
 Scott D. Stoller,State University of New York - Stony Brook,security,1,2007
@@ -6314,16 +6314,16 @@ Daniel Mossé,University of Pittsburgh,networks,1,2004
 Daniel Mossé,University of Pittsburgh,networks,1,2005
 Daniel Mossé,University of Pittsburgh,networks,1,2008
 Daniel Mossé,University of Pittsburgh,security,1,2010
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2001
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2002
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2004
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,2,2005
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2006
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2007
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,2,2009
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2011
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,1,2012
-Emery D. Berger,University of Massachusetts - Amherst,plflagship,3,2014
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2001
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2002
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2004
+Emery D. Berger,University of Massachusetts - Amherst,proglang,2,2005
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2006
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2007
+Emery D. Berger,University of Massachusetts - Amherst,proglang,2,2009
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2011
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1,2012
+Emery D. Berger,University of Massachusetts - Amherst,proglang,3,2014
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1,2006
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1,2008
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1,2011
@@ -6332,15 +6332,15 @@ Emery D. Berger,University of Massachusetts - Amherst,arch,1,2000
 Emery D. Berger,University of Massachusetts - Amherst,arch,1,2008
 Emery D. Berger,University of Massachusetts - Amherst,arch,1,2013
 Emery D. Berger,University of Massachusetts - Amherst,security,1,2010
-Isil Dillig,University of Texas - Austin,plflagship,1,2007
-Isil Dillig,University of Texas - Austin,plflagship,1,2008
-Isil Dillig,University of Texas - Austin,plflagship,1,2010
-Isil Dillig,University of Texas - Austin,plflagship,2,2011
-Isil Dillig,University of Texas - Austin,plflagship,1,2012
-Isil Dillig,University of Texas - Austin,plflagship,1,2013
-Isil Dillig,University of Texas - Austin,plflagship,1,2014
-Isil Dillig,University of Texas - Austin,plflagship,3,2015
-Isil Dillig,University of Texas - Austin,plflagship,1,2016
+Isil Dillig,University of Texas - Austin,proglang,1,2007
+Isil Dillig,University of Texas - Austin,proglang,1,2008
+Isil Dillig,University of Texas - Austin,proglang,1,2010
+Isil Dillig,University of Texas - Austin,proglang,2,2011
+Isil Dillig,University of Texas - Austin,proglang,1,2012
+Isil Dillig,University of Texas - Austin,proglang,1,2013
+Isil Dillig,University of Texas - Austin,proglang,1,2014
+Isil Dillig,University of Texas - Austin,proglang,3,2015
+Isil Dillig,University of Texas - Austin,proglang,1,2016
 Isil Dillig,University of Texas - Austin,logic,1,2009
 Isil Dillig,University of Texas - Austin,logic,1,2011
 Isil Dillig,University of Texas - Austin,logic,1,2012
@@ -6352,15 +6352,15 @@ Roy H. Campbell,University of Illinois at Urbana-Champaign,opsys,1,2008
 Roy H. Campbell,University of Illinois at Urbana-Champaign,security,1,2004
 Roy H. Campbell,University of Illinois at Urbana-Champaign,security,2,2008
 Roy H. Campbell,University of Illinois at Urbana-Champaign,metrics,1,2012
-Ranjit Jhala,University of California - San Diego,plflagship,1,2002
-Ranjit Jhala,University of California - San Diego,plflagship,2,2004
-Ranjit Jhala,University of California - San Diego,plflagship,1,2005
-Ranjit Jhala,University of California - San Diego,plflagship,3,2007
-Ranjit Jhala,University of California - San Diego,plflagship,3,2008
-Ranjit Jhala,University of California - San Diego,plflagship,2,2009
-Ranjit Jhala,University of California - San Diego,plflagship,1,2010
-Ranjit Jhala,University of California - San Diego,plflagship,4,2012
-Ranjit Jhala,University of California - San Diego,plflagship,1,2016
+Ranjit Jhala,University of California - San Diego,proglang,1,2002
+Ranjit Jhala,University of California - San Diego,proglang,2,2004
+Ranjit Jhala,University of California - San Diego,proglang,1,2005
+Ranjit Jhala,University of California - San Diego,proglang,3,2007
+Ranjit Jhala,University of California - San Diego,proglang,3,2008
+Ranjit Jhala,University of California - San Diego,proglang,2,2009
+Ranjit Jhala,University of California - San Diego,proglang,1,2010
+Ranjit Jhala,University of California - San Diego,proglang,4,2012
+Ranjit Jhala,University of California - San Diego,proglang,1,2016
 Ranjit Jhala,University of California - San Diego,logic,1,2001
 Ranjit Jhala,University of California - San Diego,logic,1,2002
 Ranjit Jhala,University of California - San Diego,logic,1,2003
@@ -6378,18 +6378,18 @@ Ranjit Jhala,University of California - San Diego,arch,1,2011
 Ranjit Jhala,University of California - San Diego,networks,1,2007
 Ranjit Jhala,University of California - San Diego,security,1,2010
 Ranjit Jhala,University of California - San Diego,security,1,2015
-Sorin Lerner,University of California - San Diego,plflagship,2,2002
-Sorin Lerner,University of California - San Diego,plflagship,1,2003
-Sorin Lerner,University of California - San Diego,plflagship,1,2005
-Sorin Lerner,University of California - San Diego,plflagship,1,2007
-Sorin Lerner,University of California - San Diego,plflagship,2,2008
-Sorin Lerner,University of California - San Diego,plflagship,3,2009
-Sorin Lerner,University of California - San Diego,plflagship,2,2010
-Sorin Lerner,University of California - San Diego,plflagship,1,2011
-Sorin Lerner,University of California - San Diego,plflagship,1,2012
-Sorin Lerner,University of California - San Diego,plflagship,1,2014
-Sorin Lerner,University of California - San Diego,plflagship,1,2015
-Sorin Lerner,University of California - San Diego,plflagship,1,2016
+Sorin Lerner,University of California - San Diego,proglang,2,2002
+Sorin Lerner,University of California - San Diego,proglang,1,2003
+Sorin Lerner,University of California - San Diego,proglang,1,2005
+Sorin Lerner,University of California - San Diego,proglang,1,2007
+Sorin Lerner,University of California - San Diego,proglang,2,2008
+Sorin Lerner,University of California - San Diego,proglang,3,2009
+Sorin Lerner,University of California - San Diego,proglang,2,2010
+Sorin Lerner,University of California - San Diego,proglang,1,2011
+Sorin Lerner,University of California - San Diego,proglang,1,2012
+Sorin Lerner,University of California - San Diego,proglang,1,2014
+Sorin Lerner,University of California - San Diego,proglang,1,2015
+Sorin Lerner,University of California - San Diego,proglang,1,2016
 Sorin Lerner,University of California - San Diego,logic,1,2008
 Sorin Lerner,University of California - San Diego,logic,1,2011
 Sorin Lerner,University of California - San Diego,softeng,3,2007
@@ -6410,15 +6410,15 @@ Joan Feigenbaum,Yale University,theory,1,2005
 Joan Feigenbaum,Yale University,theory,1,2012
 Joan Feigenbaum,Yale University,security,1,2000
 Joan Feigenbaum,Yale University,security,1,2014
-Benjamin C. Pierce,University of Pennsylvania,plflagship,1,2001
-Benjamin C. Pierce,University of Pennsylvania,plflagship,1,2004
-Benjamin C. Pierce,University of Pennsylvania,plflagship,2,2005
-Benjamin C. Pierce,University of Pennsylvania,plflagship,2,2008
-Benjamin C. Pierce,University of Pennsylvania,plflagship,2,2010
-Benjamin C. Pierce,University of Pennsylvania,plflagship,1,2011
-Benjamin C. Pierce,University of Pennsylvania,plflagship,1,2012
-Benjamin C. Pierce,University of Pennsylvania,plflagship,1,2013
-Benjamin C. Pierce,University of Pennsylvania,plflagship,1,2014
+Benjamin C. Pierce,University of Pennsylvania,proglang,1,2001
+Benjamin C. Pierce,University of Pennsylvania,proglang,1,2004
+Benjamin C. Pierce,University of Pennsylvania,proglang,2,2005
+Benjamin C. Pierce,University of Pennsylvania,proglang,2,2008
+Benjamin C. Pierce,University of Pennsylvania,proglang,2,2010
+Benjamin C. Pierce,University of Pennsylvania,proglang,1,2011
+Benjamin C. Pierce,University of Pennsylvania,proglang,1,2012
+Benjamin C. Pierce,University of Pennsylvania,proglang,1,2013
+Benjamin C. Pierce,University of Pennsylvania,proglang,1,2014
 Benjamin C. Pierce,University of Pennsylvania,logic,1,2003
 Benjamin C. Pierce,University of Pennsylvania,arch,1,2015
 Benjamin C. Pierce,University of Pennsylvania,security,1,2009
@@ -6427,22 +6427,22 @@ Benjamin C. Pierce,University of Pennsylvania,security,1,2013
 Benjamin C. Pierce,University of Pennsylvania,security,1,2015
 Benjamin C. Pierce,University of Pennsylvania,database,1,2006
 Benjamin C. Pierce,University of Pennsylvania,database,1,2012
-Stephanie Weirich,University of Pennsylvania,plflagship,1,2000
-Stephanie Weirich,University of Pennsylvania,plflagship,1,2008
-Stephanie Weirich,University of Pennsylvania,plflagship,2,2010
-Stephanie Weirich,University of Pennsylvania,plflagship,1,2011
-Stephanie Weirich,University of Pennsylvania,plflagship,2,2014
-Stephanie Weirich,University of Pennsylvania,plflagship,1,2015
+Stephanie Weirich,University of Pennsylvania,proglang,1,2000
+Stephanie Weirich,University of Pennsylvania,proglang,1,2008
+Stephanie Weirich,University of Pennsylvania,proglang,2,2010
+Stephanie Weirich,University of Pennsylvania,proglang,1,2011
+Stephanie Weirich,University of Pennsylvania,proglang,2,2014
+Stephanie Weirich,University of Pennsylvania,proglang,1,2015
 Stephanie Weirich,University of Pennsylvania,logic,1,2005
 Stephanie Weirich,University of Pennsylvania,security,1,2009
-Steve Zdancewic,University of Pennsylvania,plflagship,1,2005
-Steve Zdancewic,University of Pennsylvania,plflagship,1,2007
-Steve Zdancewic,University of Pennsylvania,plflagship,1,2009
-Steve Zdancewic,University of Pennsylvania,plflagship,1,2011
-Steve Zdancewic,University of Pennsylvania,plflagship,1,2012
-Steve Zdancewic,University of Pennsylvania,plflagship,2,2013
-Steve Zdancewic,University of Pennsylvania,plflagship,2,2015
-Steve Zdancewic,University of Pennsylvania,plflagship,1,2016
+Steve Zdancewic,University of Pennsylvania,proglang,1,2005
+Steve Zdancewic,University of Pennsylvania,proglang,1,2007
+Steve Zdancewic,University of Pennsylvania,proglang,1,2009
+Steve Zdancewic,University of Pennsylvania,proglang,1,2011
+Steve Zdancewic,University of Pennsylvania,proglang,1,2012
+Steve Zdancewic,University of Pennsylvania,proglang,2,2013
+Steve Zdancewic,University of Pennsylvania,proglang,2,2015
+Steve Zdancewic,University of Pennsylvania,proglang,1,2016
 Steve Zdancewic,University of Pennsylvania,opsys,1,2001
 Steve Zdancewic,University of Pennsylvania,arch,1,2008
 Steve Zdancewic,University of Pennsylvania,arch,1,2012
@@ -6450,7 +6450,7 @@ Steve Zdancewic,University of Pennsylvania,security,1,2003
 Steve Zdancewic,University of Pennsylvania,security,1,2004
 Steve Zdancewic,University of Pennsylvania,security,1,2007
 Steve Zdancewic,University of Pennsylvania,security,1,2009
-Pierre Baldi,University of California - Irvine,plflagship,1,2008
+Pierre Baldi,University of California - Irvine,proglang,1,2008
 Pierre Baldi,University of California - Irvine,security,1,2011
 Pierre Baldi,University of California - Irvine,mlmining,1,2002
 Pierre Baldi,University of California - Irvine,mlmining,1,2004
@@ -6461,7 +6461,7 @@ Pierre Baldi,University of California - Irvine,mlmining,1,2011
 Pierre Baldi,University of California - Irvine,mlmining,1,2012
 Pierre Baldi,University of California - Irvine,mlmining,1,2013
 Pierre Baldi,University of California - Irvine,mlmining,1,2014
-Krste Asanovic,University of California - Berkeley,plflagship,1,2010
+Krste Asanovic,University of California - Berkeley,proglang,1,2010
 Krste Asanovic,University of California - Berkeley,opsys,1,2005
 Krste Asanovic,University of California - Berkeley,arch,1,2000
 Krste Asanovic,University of California - Berkeley,arch,1,2001
@@ -6542,7 +6542,7 @@ Santosh Vempala,Georgia Institute of Technology,security,1,2007
 Santosh Vempala,Georgia Institute of Technology,security,1,2010
 Santosh Vempala,Georgia Institute of Technology,mlmining,1,2015
 Santosh Vempala,Georgia Institute of Technology,database,1,2005
-Philip Levis,Stanford University,plflagship,1,2003
+Philip Levis,Stanford University,proglang,1,2003
 Philip Levis,Stanford University,opsys,1,2000
 Philip Levis,Stanford University,opsys,1,2007
 Philip Levis,Stanford University,opsys,1,2008
@@ -6552,16 +6552,16 @@ Philip Levis,Stanford University,arch,1,2002
 Philip Levis,Stanford University,networks,2,2004
 Philip Levis,Stanford University,networks,1,2005
 Philip Levis,Stanford University,security,1,2015
-Zhendong Su,University of California - Davis,plflagship,1,2000
-Zhendong Su,University of California - Davis,plflagship,1,2002
-Zhendong Su,University of California - Davis,plflagship,1,2006
-Zhendong Su,University of California - Davis,plflagship,1,2007
-Zhendong Su,University of California - Davis,plflagship,1,2010
-Zhendong Su,University of California - Davis,plflagship,1,2011
-Zhendong Su,University of California - Davis,plflagship,1,2012
-Zhendong Su,University of California - Davis,plflagship,4,2013
-Zhendong Su,University of California - Davis,plflagship,2,2014
-Zhendong Su,University of California - Davis,plflagship,2,2015
+Zhendong Su,University of California - Davis,proglang,1,2000
+Zhendong Su,University of California - Davis,proglang,1,2002
+Zhendong Su,University of California - Davis,proglang,1,2006
+Zhendong Su,University of California - Davis,proglang,1,2007
+Zhendong Su,University of California - Davis,proglang,1,2010
+Zhendong Su,University of California - Davis,proglang,1,2011
+Zhendong Su,University of California - Davis,proglang,1,2012
+Zhendong Su,University of California - Davis,proglang,4,2013
+Zhendong Su,University of California - Davis,proglang,2,2014
+Zhendong Su,University of California - Davis,proglang,2,2015
 Zhendong Su,University of California - Davis,softeng,2,2004
 Zhendong Su,University of California - Davis,softeng,2,2006
 Zhendong Su,University of California - Davis,softeng,2,2007
@@ -6581,8 +6581,8 @@ Shyhtsun Felix Wu,University of California - Davis,arch,1,2006
 Shyhtsun Felix Wu,University of California - Davis,networks,1,2002
 Shyhtsun Felix Wu,University of California - Davis,networks,1,2008
 Shyhtsun Felix Wu,University of California - Davis,security,1,2005
-Donald E. Porter,State University of New York - Stony Brook,plflagship,1,2007
-Donald E. Porter,State University of New York - Stony Brook,plflagship,1,2009
+Donald E. Porter,State University of New York - Stony Brook,proglang,1,2007
+Donald E. Porter,State University of New York - Stony Brook,proglang,1,2009
 Donald E. Porter,State University of New York - Stony Brook,opsys,1,2007
 Donald E. Porter,State University of New York - Stony Brook,opsys,1,2009
 Donald E. Porter,State University of New York - Stony Brook,opsys,1,2015
@@ -6591,9 +6591,9 @@ Donald E. Porter,State University of New York - Stony Brook,arch,1,2011
 Donald E. Porter,State University of New York - Stony Brook,security,1,2007
 Donald E. Porter,State University of New York - Stony Brook,security,1,2011
 Donald E. Porter,State University of New York - Stony Brook,security,1,2014
-Emmett Witchel,University of Texas - Austin,plflagship,1,2005
-Emmett Witchel,University of Texas - Austin,plflagship,1,2007
-Emmett Witchel,University of Texas - Austin,plflagship,1,2009
+Emmett Witchel,University of Texas - Austin,proglang,1,2005
+Emmett Witchel,University of Texas - Austin,proglang,1,2007
+Emmett Witchel,University of Texas - Austin,proglang,1,2009
 Emmett Witchel,University of Texas - Austin,opsys,1,2005
 Emmett Witchel,University of Texas - Austin,opsys,1,2007
 Emmett Witchel,University of Texas - Austin,opsys,1,2009
@@ -6814,8 +6814,8 @@ John W. Byers,Boston University,networks,1,2008
 John W. Byers,Boston University,networks,1,2012
 John W. Byers,Boston University,mlmining,1,2013
 John W. Byers,Boston University,metrics,1,2007
-Jason Flinn,University of Michigan,plflagship,1,2012
-Jason Flinn,University of Michigan,plflagship,1,2014
+Jason Flinn,University of Michigan,proglang,1,2012
+Jason Flinn,University of Michigan,proglang,1,2014
 Jason Flinn,University of Michigan,opsys,1,2004
 Jason Flinn,University of Michigan,opsys,1,2005
 Jason Flinn,University of Michigan,opsys,2,2006
@@ -6934,7 +6934,7 @@ James F. Kurose,University of Massachusetts - Amherst,networks,1,2014
 James F. Kurose,University of Massachusetts - Amherst,metrics,1,2000
 James F. Kurose,University of Massachusetts - Amherst,metrics,2,2004
 James F. Kurose,University of Massachusetts - Amherst,web,1,2003
-Yuanyuan Zhou,University of California - San Diego,plflagship,1,2010
+Yuanyuan Zhou,University of California - San Diego,proglang,1,2010
 Yuanyuan Zhou,University of California - San Diego,softeng,1,2005
 Yuanyuan Zhou,University of California - San Diego,softeng,1,2007
 Yuanyuan Zhou,University of California - San Diego,softeng,1,2009
@@ -6963,10 +6963,10 @@ Yuanyuan Zhou,University of California - San Diego,networks,2,2013
 Yuanyuan Zhou,University of California - San Diego,security,1,2008
 Yuanyuan Zhou,University of California - San Diego,metrics,1,2005
 Yuanyuan Zhou,University of California - San Diego,metrics,1,2007
-Sarita V. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2005
-Sarita V. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2008
-Sarita V. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2009
-Sarita V. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2011
+Sarita V. Adve,University of Illinois at Urbana-Champaign,proglang,1,2005
+Sarita V. Adve,University of Illinois at Urbana-Champaign,proglang,1,2008
+Sarita V. Adve,University of Illinois at Urbana-Champaign,proglang,1,2009
+Sarita V. Adve,University of Illinois at Urbana-Champaign,proglang,1,2011
 Sarita V. Adve,University of Illinois at Urbana-Champaign,arch,1,2000
 Sarita V. Adve,University of Illinois at Urbana-Champaign,arch,2,2001
 Sarita V. Adve,University of Illinois at Urbana-Champaign,arch,1,2002
@@ -7014,12 +7014,12 @@ John N. Tsitsiklis,Massachusetts Institute of Technology,mlmining,1,2011
 John N. Tsitsiklis,Massachusetts Institute of Technology,metrics,1,2010
 John N. Tsitsiklis,Massachusetts Institute of Technology,metrics,1,2011
 John N. Tsitsiklis,Massachusetts Institute of Technology,metrics,1,2013
-Keshav Pingali,University of Texas - Austin,plflagship,1,2003
-Keshav Pingali,University of Texas - Austin,plflagship,1,2007
-Keshav Pingali,University of Texas - Austin,plflagship,1,2010
-Keshav Pingali,University of Texas - Austin,plflagship,3,2011
-Keshav Pingali,University of Texas - Austin,plflagship,1,2012
-Keshav Pingali,University of Texas - Austin,plflagship,1,2015
+Keshav Pingali,University of Texas - Austin,proglang,1,2003
+Keshav Pingali,University of Texas - Austin,proglang,1,2007
+Keshav Pingali,University of Texas - Austin,proglang,1,2010
+Keshav Pingali,University of Texas - Austin,proglang,3,2011
+Keshav Pingali,University of Texas - Austin,proglang,1,2012
+Keshav Pingali,University of Texas - Austin,proglang,1,2015
 Keshav Pingali,University of Texas - Austin,opsys,1,2013
 Keshav Pingali,University of Texas - Austin,arch,1,2004
 Keshav Pingali,University of Texas - Austin,arch,1,2008
@@ -7030,12 +7030,12 @@ Keshav Pingali,University of Texas - Austin,arch,1,2016
 Keshav Pingali,University of Texas - Austin,metrics,1,2005
 Douglas C. Sicker,University of Colorado Boulder,networks,2,2009
 Douglas C. Sicker,University of Colorado Boulder,metrics,1,2008
-Mahmut T. Kandemir,Pennsylvania State University,plflagship,1,2001
-Mahmut T. Kandemir,Pennsylvania State University,plflagship,1,2003
-Mahmut T. Kandemir,Pennsylvania State University,plflagship,2,2006
-Mahmut T. Kandemir,Pennsylvania State University,plflagship,1,2010
-Mahmut T. Kandemir,Pennsylvania State University,plflagship,1,2012
-Mahmut T. Kandemir,Pennsylvania State University,plflagship,1,2015
+Mahmut T. Kandemir,Pennsylvania State University,proglang,1,2001
+Mahmut T. Kandemir,Pennsylvania State University,proglang,1,2003
+Mahmut T. Kandemir,Pennsylvania State University,proglang,2,2006
+Mahmut T. Kandemir,Pennsylvania State University,proglang,1,2010
+Mahmut T. Kandemir,Pennsylvania State University,proglang,1,2012
+Mahmut T. Kandemir,Pennsylvania State University,proglang,1,2015
 Mahmut T. Kandemir,Pennsylvania State University,arch,1,2000
 Mahmut T. Kandemir,Pennsylvania State University,arch,1,2001
 Mahmut T. Kandemir,Pennsylvania State University,arch,3,2002
@@ -7100,7 +7100,7 @@ Margaret Martonosi,Princeton University,arch,5,2015
 Margaret Martonosi,Princeton University,arch,1,2016
 Margaret Martonosi,Princeton University,networks,1,2015
 Margaret Martonosi,Princeton University,metrics,1,2010
-Timothy Sherwood,University of California - Santa Barbara,plflagship,1,2011
+Timothy Sherwood,University of California - Santa Barbara,proglang,1,2011
 Timothy Sherwood,University of California - Santa Barbara,arch,1,2000
 Timothy Sherwood,University of California - Santa Barbara,arch,1,2001
 Timothy Sherwood,University of California - Santa Barbara,arch,1,2002
@@ -7116,9 +7116,9 @@ Timothy Sherwood,University of California - Santa Barbara,arch,2,2014
 Timothy Sherwood,University of California - Santa Barbara,networks,1,2004
 Timothy Sherwood,University of California - Santa Barbara,security,1,2007
 Timothy Sherwood,University of California - Santa Barbara,metrics,1,2003
-Brad Calder,University of California - San Diego,plflagship,1,2001
-Brad Calder,University of California - San Diego,plflagship,1,2006
-Brad Calder,University of California - San Diego,plflagship,1,2007
+Brad Calder,University of California - San Diego,proglang,1,2001
+Brad Calder,University of California - San Diego,proglang,1,2006
+Brad Calder,University of California - San Diego,proglang,1,2007
 Brad Calder,University of California - San Diego,opsys,1,2011
 Brad Calder,University of California - San Diego,arch,1,2000
 Brad Calder,University of California - San Diego,arch,1,2001
@@ -7218,8 +7218,8 @@ David A. Wood,University of Wisconsin - Madison,arch,4,2014
 David A. Wood,University of Wisconsin - Madison,arch,2,2015
 David A. Wood,University of Wisconsin - Madison,metrics,1,2002
 David A. Wood,University of Wisconsin - Madison,metrics,1,2013
-John M. Mellor-Crummey,Rice University,plflagship,1,2009
-John M. Mellor-Crummey,Rice University,plflagship,1,2014
+John M. Mellor-Crummey,Rice University,proglang,1,2009
+John M. Mellor-Crummey,Rice University,proglang,1,2014
 John M. Mellor-Crummey,Rice University,metrics,1,2004
 Ness B. Shroff,Ohio State University,networks,3,2001
 Ness B. Shroff,Ohio State University,networks,2,2002
@@ -7268,9 +7268,9 @@ Katrina Ligett,California Institute of Technology,theory,1,2012
 Katrina Ligett,California Institute of Technology,theory,1,2014
 Katrina Ligett,California Institute of Technology,mlmining,1,2012
 Katrina Ligett,California Institute of Technology,metrics,1,2013
-Dean M. Tullsen,University of California - San Diego,plflagship,1,2005
-Dean M. Tullsen,University of California - San Diego,plflagship,1,2010
-Dean M. Tullsen,University of California - San Diego,plflagship,1,2012
+Dean M. Tullsen,University of California - San Diego,proglang,1,2005
+Dean M. Tullsen,University of California - San Diego,proglang,1,2010
+Dean M. Tullsen,University of California - San Diego,proglang,1,2012
 Dean M. Tullsen,University of California - San Diego,arch,1,2000
 Dean M. Tullsen,University of California - San Diego,arch,4,2001
 Dean M. Tullsen,University of California - San Diego,arch,2,2002
@@ -7308,11 +7308,11 @@ Gagan Agrawal,Ohio State University,mlmining,2,2005
 Gagan Agrawal,Ohio State University,mlmining,1,2012
 Gagan Agrawal,Ohio State University,database,1,2005
 Gagan Agrawal,Ohio State University,metrics,1,2002
-J. Eliot B. Moss,University of Massachusetts - Amherst,plflagship,1,2001
-J. Eliot B. Moss,University of Massachusetts - Amherst,plflagship,1,2002
-J. Eliot B. Moss,University of Massachusetts - Amherst,plflagship,1,2003
-J. Eliot B. Moss,University of Massachusetts - Amherst,plflagship,3,2004
-J. Eliot B. Moss,University of Massachusetts - Amherst,plflagship,1,2006
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1,2001
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1,2002
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1,2003
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,3,2004
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1,2006
 J. Eliot B. Moss,University of Massachusetts - Amherst,opsys,1,2006
 J. Eliot B. Moss,University of Massachusetts - Amherst,opsys,1,2008
 J. Eliot B. Moss,University of Massachusetts - Amherst,metrics,1,2002
@@ -7408,8 +7408,8 @@ Chris Gniady,University of Arizona,opsys,1,2004
 Chris Gniady,University of Arizona,ai,1,2006
 Chris Gniady,University of Arizona,metrics,1,2005
 Chris Gniady,University of Arizona,metrics,1,2008
-Pen-Chung Yew,University of Minnesota - Twin Cities,plflagship,1,2003
-Pen-Chung Yew,University of Minnesota - Twin Cities,plflagship,1,2015
+Pen-Chung Yew,University of Minnesota - Twin Cities,proglang,1,2003
+Pen-Chung Yew,University of Minnesota - Twin Cities,proglang,1,2015
 Pen-Chung Yew,University of Minnesota - Twin Cities,softeng,1,2007
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1,2003
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1,2008
@@ -7424,13 +7424,13 @@ Gokhan Memik,Northwestern University,arch,1,2011
 Gokhan Memik,Northwestern University,networks,1,2006
 Gokhan Memik,Northwestern University,metrics,1,2007
 Gokhan Memik,Northwestern University,metrics,1,2010
-Peter A. Dinda,Northwestern University,plflagship,1,2010
+Peter A. Dinda,Northwestern University,proglang,1,2010
 Peter A. Dinda,Northwestern University,arch,3,2008
 Peter A. Dinda,Northwestern University,networks,1,2006
 Peter A. Dinda,Northwestern University,networks,1,2010
 Peter A. Dinda,Northwestern University,metrics,1,2007
 Peter A. Dinda,Northwestern University,metrics,1,2010
-Ramesh Govindan,University of Southern California,plflagship,1,2007
+Ramesh Govindan,University of Southern California,proglang,1,2007
 Ramesh Govindan,University of Southern California,softeng,1,2013
 Ramesh Govindan,University of Southern California,opsys,1,2001
 Ramesh Govindan,University of Southern California,networks,2,2000
@@ -7509,9 +7509,9 @@ Aleksandar Kuzmanovic,Northwestern University,networks,1,2013
 Aleksandar Kuzmanovic,Northwestern University,metrics,1,2005
 Aleksandar Kuzmanovic,Northwestern University,metrics,1,2007
 Aleksandar Kuzmanovic,Northwestern University,web,1,2010
-Mary Jane Irwin,Pennsylvania State University,plflagship,1,2003
-Mary Jane Irwin,Pennsylvania State University,plflagship,1,2006
-Mary Jane Irwin,Pennsylvania State University,plflagship,1,2010
+Mary Jane Irwin,Pennsylvania State University,proglang,1,2003
+Mary Jane Irwin,Pennsylvania State University,proglang,1,2006
+Mary Jane Irwin,Pennsylvania State University,proglang,1,2010
 Mary Jane Irwin,Pennsylvania State University,arch,1,2000
 Mary Jane Irwin,Pennsylvania State University,arch,1,2001
 Mary Jane Irwin,Pennsylvania State University,arch,1,2002
@@ -7714,7 +7714,7 @@ Arun Venkataramani,University of Massachusetts - Amherst,networks,1,2013
 Arun Venkataramani,University of Massachusetts - Amherst,networks,2,2014
 Arun Venkataramani,University of Massachusetts - Amherst,networks,1,2015
 Arun Venkataramani,University of Massachusetts - Amherst,metrics,1,2013
-Michael L. Scott,University of Rochester,plflagship,1,2014
+Michael L. Scott,University of Rochester,proglang,1,2014
 Michael L. Scott,University of Rochester,arch,1,2002
 Michael L. Scott,University of Rochester,arch,1,2003
 Michael L. Scott,University of Rochester,arch,1,2004
@@ -7737,7 +7737,7 @@ John E. Hopcroft,Cornell University,mlmining,1,2013
 John E. Hopcroft,Cornell University,web,1,2011
 John E. Hopcroft,Cornell University,web,1,2015
 John E. Hopcroft,Cornell University,web,2,2016
-Jayadev Misra,University of Texas - Austin,plflagship,1,2014
+Jayadev Misra,University of Texas - Austin,proglang,1,2014
 Jayadev Misra,University of Texas - Austin,theory,1,2000
 Jayadev Misra,University of Texas - Austin,theory,1,2004
 Nir Shavit,Massachusetts Institute of Technology,opsys,1,2015
@@ -7769,9 +7769,9 @@ Clifford Stein,Columbia University,theory,2,2005
 Clifford Stein,Columbia University,theory,1,2006
 Clifford Stein,Columbia University,theory,3,2007
 Clifford Stein,Columbia University,theory,1,2008
-Maurice Herlihy,Brown University,plflagship,1,2005
-Maurice Herlihy,Brown University,plflagship,1,2006
-Maurice Herlihy,Brown University,plflagship,1,2010
+Maurice Herlihy,Brown University,proglang,1,2005
+Maurice Herlihy,Brown University,proglang,1,2006
+Maurice Herlihy,Brown University,proglang,1,2010
 Maurice Herlihy,Brown University,arch,1,2005
 Maurice Herlihy,Brown University,theory,3,2000
 Maurice Herlihy,Brown University,theory,2,2001
@@ -8058,13 +8058,13 @@ Amit Chakrabarti,Dartmouth College,theory,1,2012
 Amit Chakrabarti,Dartmouth College,theory,2,2014
 Amit Chakrabarti,Dartmouth College,theory,1,2016
 Amit Chakrabarti,Dartmouth College,mlmining,1,2006
-Luis Ceze,University of Washington,plflagship,1,2010
-Luis Ceze,University of Washington,plflagship,2,2011
-Luis Ceze,University of Washington,plflagship,1,2012
-Luis Ceze,University of Washington,plflagship,1,2013
-Luis Ceze,University of Washington,plflagship,3,2014
-Luis Ceze,University of Washington,plflagship,1,2015
-Luis Ceze,University of Washington,plflagship,1,2016
+Luis Ceze,University of Washington,proglang,1,2010
+Luis Ceze,University of Washington,proglang,2,2011
+Luis Ceze,University of Washington,proglang,1,2012
+Luis Ceze,University of Washington,proglang,1,2013
+Luis Ceze,University of Washington,proglang,3,2014
+Luis Ceze,University of Washington,proglang,1,2015
+Luis Ceze,University of Washington,proglang,1,2016
 Luis Ceze,University of Washington,opsys,1,2010
 Luis Ceze,University of Washington,arch,2,2006
 Luis Ceze,University of Washington,arch,1,2007
@@ -8189,11 +8189,11 @@ Seth Pettie,University of Michigan,theory,1,2012
 Seth Pettie,University of Michigan,theory,2,2014
 Seth Pettie,University of Michigan,theory,3,2015
 Seth Pettie,University of Michigan,theory,1,2016
-Kunle Olukotun,Stanford University,plflagship,1,2006
-Kunle Olukotun,Stanford University,plflagship,1,2009
-Kunle Olukotun,Stanford University,plflagship,1,2010
-Kunle Olukotun,Stanford University,plflagship,1,2013
-Kunle Olukotun,Stanford University,plflagship,1,2014
+Kunle Olukotun,Stanford University,proglang,1,2006
+Kunle Olukotun,Stanford University,proglang,1,2009
+Kunle Olukotun,Stanford University,proglang,1,2010
+Kunle Olukotun,Stanford University,proglang,1,2013
+Kunle Olukotun,Stanford University,proglang,1,2014
 Kunle Olukotun,Stanford University,arch,1,2003
 Kunle Olukotun,Stanford University,arch,2,2004
 Kunle Olukotun,Stanford University,arch,2,2006
@@ -8222,7 +8222,7 @@ Mark Braverman,Princeton University,theory,1,2014
 Mark Braverman,Princeton University,theory,5,2015
 Mark Braverman,Princeton University,theory,1,2016
 Mark Braverman,Princeton University,web,1,2013
-Amin Vahdat,University of California - San Diego,plflagship,1,2007
+Amin Vahdat,University of California - San Diego,proglang,1,2007
 Amin Vahdat,University of California - San Diego,opsys,2,2000
 Amin Vahdat,University of California - San Diego,opsys,2,2001
 Amin Vahdat,University of California - San Diego,opsys,1,2002
@@ -8263,8 +8263,8 @@ Indranil Gupta,University of Illinois at Urbana-Champaign,theory,1,2001
 Indranil Gupta,University of Illinois at Urbana-Champaign,theory,1,2004
 Indranil Gupta,University of Illinois at Urbana-Champaign,networks,1,2007
 Indranil Gupta,University of Illinois at Urbana-Champaign,networks,1,2009
-Barbara Liskov,Massachusetts Institute of Technology,plflagship,1,2003
-Barbara Liskov,Massachusetts Institute of Technology,plflagship,1,2015
+Barbara Liskov,Massachusetts Institute of Technology,proglang,1,2003
+Barbara Liskov,Massachusetts Institute of Technology,proglang,1,2015
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2000
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2001
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2006
@@ -8300,7 +8300,7 @@ Avrim Blum,Carnegie Mellon University,mlmining,2,2015
 Avrim Blum,Carnegie Mellon University,ai,1,2014
 Avrim Blum,Carnegie Mellon University,ai,1,2015
 Avrim Blum,Carnegie Mellon University,database,1,2005
-Erik D. Demaine,Massachusetts Institute of Technology,plflagship,1,2010
+Erik D. Demaine,Massachusetts Institute of Technology,proglang,1,2010
 Erik D. Demaine,Massachusetts Institute of Technology,theory,3,2000
 Erik D. Demaine,Massachusetts Institute of Technology,theory,3,2001
 Erik D. Demaine,Massachusetts Institute of Technology,theory,1,2002
@@ -8520,15 +8520,15 @@ Qin Zhang,Indiana University,database,2,2010
 Qin Zhang,Indiana University,database,1,2012
 Qin Zhang,Indiana University,database,1,2014
 Qin Zhang,Indiana University,database,1,2015
-David Walker,Princeton University,plflagship,1,2000
-David Walker,Princeton University,plflagship,1,2005
-David Walker,Princeton University,plflagship,2,2006
-David Walker,Princeton University,plflagship,2,2007
-David Walker,Princeton University,plflagship,1,2008
-David Walker,Princeton University,plflagship,2,2010
-David Walker,Princeton University,plflagship,1,2012
-David Walker,Princeton University,plflagship,1,2014
-David Walker,Princeton University,plflagship,2,2016
+David Walker,Princeton University,proglang,1,2000
+David Walker,Princeton University,proglang,1,2005
+David Walker,Princeton University,proglang,2,2006
+David Walker,Princeton University,proglang,2,2007
+David Walker,Princeton University,proglang,1,2008
+David Walker,Princeton University,proglang,2,2010
+David Walker,Princeton University,proglang,1,2012
+David Walker,Princeton University,proglang,1,2014
+David Walker,Princeton University,proglang,2,2016
 David Walker,Princeton University,logic,1,2003
 David Walker,Princeton University,logic,1,2005
 David Walker,Princeton University,networks,1,2012
@@ -8574,7 +8574,7 @@ Joseph A. Konstan,University of Minnesota - Twin Cities,hci,2,2003
 Joseph A. Konstan,University of Minnesota - Twin Cities,hci,2,2007
 Joseph A. Konstan,University of Minnesota - Twin Cities,hci,1,2009
 Joseph A. Konstan,University of Minnesota - Twin Cities,hci,1,2011
-David E. Culler,University of California - Berkeley,plflagship,1,2003
+David E. Culler,University of California - Berkeley,proglang,1,2003
 David E. Culler,University of California - Berkeley,opsys,1,2000
 David E. Culler,University of California - Berkeley,opsys,1,2001
 David E. Culler,University of California - Berkeley,opsys,1,2006
@@ -8631,14 +8631,14 @@ Yan Liu,University of Southern California,database,1,2013
 Robert F. Murphy,Carnegie Mellon University,mlmining,1,2003
 Robert F. Murphy,Carnegie Mellon University,mlmining,2,2009
 Robert F. Murphy,Carnegie Mellon University,database,1,2005
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2005
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2007
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2008
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2010
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2011
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2012
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,2,2013
-Armando Solar-Lezama,Massachusetts Institute of Technology,plflagship,1,2014
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2005
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2007
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2008
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2010
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2011
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2012
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,2,2013
+Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1,2014
 Armando Solar-Lezama,Massachusetts Institute of Technology,logic,1,2011
 Armando Solar-Lezama,Massachusetts Institute of Technology,logic,2,2012
 Armando Solar-Lezama,Massachusetts Institute of Technology,softeng,2,2011
@@ -8647,10 +8647,10 @@ Armando Solar-Lezama,Massachusetts Institute of Technology,opsys,1,2013
 Armando Solar-Lezama,Massachusetts Institute of Technology,arch,1,2006
 Armando Solar-Lezama,Massachusetts Institute of Technology,mlmining,1,2015
 Armando Solar-Lezama,Massachusetts Institute of Technology,database,1,2014
-Nate Foster,Cornell University,plflagship,1,2012
-Nate Foster,Cornell University,plflagship,1,2013
-Nate Foster,Cornell University,plflagship,1,2014
-Nate Foster,Cornell University,plflagship,2,2015
+Nate Foster,Cornell University,proglang,1,2012
+Nate Foster,Cornell University,proglang,1,2013
+Nate Foster,Cornell University,proglang,1,2014
+Nate Foster,Cornell University,proglang,2,2015
 Nate Foster,Cornell University,networks,1,2012
 Nate Foster,Cornell University,networks,1,2013
 Nate Foster,Cornell University,database,1,2015
@@ -8658,7 +8658,7 @@ Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2003
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2008
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2010
 Douglas Stott Parker Jr.,University of California - Los Angeles,database,1,2007
-Andreas Haeberlen,University of Pennsylvania,plflagship,1,2013
+Andreas Haeberlen,University of Pennsylvania,proglang,1,2013
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2007
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2010
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2011
@@ -8746,23 +8746,23 @@ Chris Clifton,Purdue University,mlmining,1,2004
 Chris Clifton,Purdue University,mlmining,1,2012
 Chris Clifton,Purdue University,database,1,2003
 Chris Clifton,Purdue University,database,1,2007
-Matthew Flatt,University of Utah,plflagship,1,2001
-Matthew Flatt,University of Utah,plflagship,2,2004
-Matthew Flatt,University of Utah,plflagship,1,2005
-Matthew Flatt,University of Utah,plflagship,2,2010
-Matthew Flatt,University of Utah,plflagship,1,2011
-Matthew Flatt,University of Utah,plflagship,2,2012
-Matthew Flatt,University of Utah,plflagship,1,2016
+Matthew Flatt,University of Utah,proglang,1,2001
+Matthew Flatt,University of Utah,proglang,2,2004
+Matthew Flatt,University of Utah,proglang,1,2005
+Matthew Flatt,University of Utah,proglang,2,2010
+Matthew Flatt,University of Utah,proglang,1,2011
+Matthew Flatt,University of Utah,proglang,2,2012
+Matthew Flatt,University of Utah,proglang,1,2016
 Matthew Flatt,University of Utah,opsys,1,2000
-George C. Necula,University of California - Berkeley,plflagship,2,2000
-George C. Necula,University of California - Berkeley,plflagship,1,2001
-George C. Necula,University of California - Berkeley,plflagship,1,2002
-George C. Necula,University of California - Berkeley,plflagship,2,2003
-George C. Necula,University of California - Berkeley,plflagship,2,2004
-George C. Necula,University of California - Berkeley,plflagship,1,2005
-George C. Necula,University of California - Berkeley,plflagship,1,2011
-George C. Necula,University of California - Berkeley,plflagship,2,2013
-George C. Necula,University of California - Berkeley,plflagship,1,2014
+George C. Necula,University of California - Berkeley,proglang,2,2000
+George C. Necula,University of California - Berkeley,proglang,1,2001
+George C. Necula,University of California - Berkeley,proglang,1,2002
+George C. Necula,University of California - Berkeley,proglang,2,2003
+George C. Necula,University of California - Berkeley,proglang,2,2004
+George C. Necula,University of California - Berkeley,proglang,1,2005
+George C. Necula,University of California - Berkeley,proglang,1,2011
+George C. Necula,University of California - Berkeley,proglang,2,2013
+George C. Necula,University of California - Berkeley,proglang,1,2014
 George C. Necula,University of California - Berkeley,logic,1,2000
 George C. Necula,University of California - Berkeley,logic,1,2002
 George C. Necula,University of California - Berkeley,logic,1,2003
@@ -8771,17 +8771,17 @@ George C. Necula,University of California - Berkeley,softeng,1,2015
 George C. Necula,University of California - Berkeley,opsys,1,2003
 George C. Necula,University of California - Berkeley,opsys,2,2006
 George C. Necula,University of California - Berkeley,arch,1,2011
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2003
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2005
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2006
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2007
-Mayur Naik,Georgia Institute of Technology,plflagship,2,2009
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2010
-Mayur Naik,Georgia Institute of Technology,plflagship,2,2011
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2012
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2013
-Mayur Naik,Georgia Institute of Technology,plflagship,2,2014
-Mayur Naik,Georgia Institute of Technology,plflagship,1,2016
+Mayur Naik,Georgia Institute of Technology,proglang,1,2003
+Mayur Naik,Georgia Institute of Technology,proglang,1,2005
+Mayur Naik,Georgia Institute of Technology,proglang,1,2006
+Mayur Naik,Georgia Institute of Technology,proglang,1,2007
+Mayur Naik,Georgia Institute of Technology,proglang,2,2009
+Mayur Naik,Georgia Institute of Technology,proglang,1,2010
+Mayur Naik,Georgia Institute of Technology,proglang,2,2011
+Mayur Naik,Georgia Institute of Technology,proglang,1,2012
+Mayur Naik,Georgia Institute of Technology,proglang,1,2013
+Mayur Naik,Georgia Institute of Technology,proglang,2,2014
+Mayur Naik,Georgia Institute of Technology,proglang,1,2016
 Mayur Naik,Georgia Institute of Technology,logic,1,2009
 Mayur Naik,Georgia Institute of Technology,softeng,1,2009
 Mayur Naik,Georgia Institute of Technology,softeng,1,2010
@@ -8791,15 +8791,15 @@ Mayur Naik,Georgia Institute of Technology,softeng,2,2015
 Mayur Naik,Georgia Institute of Technology,mlmining,1,2006
 Mayur Naik,Georgia Institute of Technology,mlmining,1,2010
 Mayur Naik,Georgia Institute of Technology,ai,1,2016
-Alex Aiken,Stanford University,plflagship,1,2006
-Alex Aiken,Stanford University,plflagship,3,2007
-Alex Aiken,Stanford University,plflagship,1,2008
-Alex Aiken,Stanford University,plflagship,1,2010
-Alex Aiken,Stanford University,plflagship,5,2011
-Alex Aiken,Stanford University,plflagship,3,2012
-Alex Aiken,Stanford University,plflagship,3,2013
-Alex Aiken,Stanford University,plflagship,3,2014
-Alex Aiken,Stanford University,plflagship,5,2015
+Alex Aiken,Stanford University,proglang,1,2006
+Alex Aiken,Stanford University,proglang,3,2007
+Alex Aiken,Stanford University,proglang,1,2008
+Alex Aiken,Stanford University,proglang,1,2010
+Alex Aiken,Stanford University,proglang,5,2011
+Alex Aiken,Stanford University,proglang,3,2012
+Alex Aiken,Stanford University,proglang,3,2013
+Alex Aiken,Stanford University,proglang,3,2014
+Alex Aiken,Stanford University,proglang,5,2015
 Alex Aiken,Stanford University,logic,1,2006
 Alex Aiken,Stanford University,logic,1,2009
 Alex Aiken,Stanford University,logic,1,2011
@@ -8815,9 +8815,9 @@ Alex Aiken,Stanford University,arch,1,2013
 Alex Aiken,Stanford University,security,1,2008
 Alex Aiken,Stanford University,mlmining,1,2006
 Alex Aiken,Stanford University,hci,1,2013
-Shriram Krishnamurthi,Brown University,plflagship,1,2009
-Shriram Krishnamurthi,Brown University,plflagship,2,2013
-Shriram Krishnamurthi,Brown University,plflagship,1,2014
+Shriram Krishnamurthi,Brown University,proglang,1,2009
+Shriram Krishnamurthi,Brown University,proglang,2,2013
+Shriram Krishnamurthi,Brown University,proglang,1,2014
 Shriram Krishnamurthi,Brown University,softeng,2,2002
 Shriram Krishnamurthi,Brown University,softeng,1,2003
 Shriram Krishnamurthi,Brown University,softeng,2,2004
@@ -8829,127 +8829,127 @@ Shriram Krishnamurthi,Brown University,security,1,2011
 Shriram Krishnamurthi,Brown University,web,1,2007
 Shriram Krishnamurthi,Brown University,web,1,2009
 Shriram Krishnamurthi,Brown University,hci,1,2011
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2000
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2001
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2003
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2007
-Jens Palsberg,University of California - Los Angeles,plflagship,2,2008
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2010
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2011
-Jens Palsberg,University of California - Los Angeles,plflagship,2,2015
-Jens Palsberg,University of California - Los Angeles,plflagship,1,2016
+Jens Palsberg,University of California - Los Angeles,proglang,1,2000
+Jens Palsberg,University of California - Los Angeles,proglang,1,2001
+Jens Palsberg,University of California - Los Angeles,proglang,1,2003
+Jens Palsberg,University of California - Los Angeles,proglang,1,2007
+Jens Palsberg,University of California - Los Angeles,proglang,2,2008
+Jens Palsberg,University of California - Los Angeles,proglang,1,2010
+Jens Palsberg,University of California - Los Angeles,proglang,1,2011
+Jens Palsberg,University of California - Los Angeles,proglang,2,2015
+Jens Palsberg,University of California - Los Angeles,proglang,1,2016
 Jens Palsberg,University of California - Los Angeles,logic,1,2000
 Jens Palsberg,University of California - Los Angeles,logic,1,2002
 Jens Palsberg,University of California - Los Angeles,logic,1,2014
 Jens Palsberg,University of California - Los Angeles,softeng,1,2001
 Jens Palsberg,University of California - Los Angeles,softeng,1,2014
-Jan Vitek,Northeastern University,plflagship,1,2001
-Jan Vitek,Northeastern University,plflagship,1,2002
-Jan Vitek,Northeastern University,plflagship,1,2003
-Jan Vitek,Northeastern University,plflagship,1,2005
-Jan Vitek,Northeastern University,plflagship,1,2007
-Jan Vitek,Northeastern University,plflagship,1,2009
-Jan Vitek,Northeastern University,plflagship,3,2010
-Jan Vitek,Northeastern University,plflagship,1,2011
-Jan Vitek,Northeastern University,plflagship,2,2012
-Jan Vitek,Northeastern University,plflagship,3,2013
-Jan Vitek,Northeastern University,plflagship,1,2014
-Jan Vitek,Northeastern University,plflagship,1,2016
+Jan Vitek,Northeastern University,proglang,1,2001
+Jan Vitek,Northeastern University,proglang,1,2002
+Jan Vitek,Northeastern University,proglang,1,2003
+Jan Vitek,Northeastern University,proglang,1,2005
+Jan Vitek,Northeastern University,proglang,1,2007
+Jan Vitek,Northeastern University,proglang,1,2009
+Jan Vitek,Northeastern University,proglang,3,2010
+Jan Vitek,Northeastern University,proglang,1,2011
+Jan Vitek,Northeastern University,proglang,2,2012
+Jan Vitek,Northeastern University,proglang,3,2013
+Jan Vitek,Northeastern University,proglang,1,2014
+Jan Vitek,Northeastern University,proglang,1,2016
 Jan Vitek,Northeastern University,softeng,1,2013
 Jan Vitek,Northeastern University,security,1,2005
-Robert Bruce Findler,Northwestern University,plflagship,1,2001
-Robert Bruce Findler,Northwestern University,plflagship,2,2004
-Robert Bruce Findler,Northwestern University,plflagship,1,2005
-Robert Bruce Findler,Northwestern University,plflagship,1,2006
-Robert Bruce Findler,Northwestern University,plflagship,1,2007
-Robert Bruce Findler,Northwestern University,plflagship,2,2010
-Robert Bruce Findler,Northwestern University,plflagship,2,2011
-Robert Bruce Findler,Northwestern University,plflagship,2,2012
-Robert Bruce Findler,Northwestern University,plflagship,1,2013
-Matthias Felleisen,Northeastern University,plflagship,1,2001
-Matthias Felleisen,Northeastern University,plflagship,1,2002
-Matthias Felleisen,Northeastern University,plflagship,1,2005
-Matthias Felleisen,Northeastern University,plflagship,1,2006
-Matthias Felleisen,Northeastern University,plflagship,1,2008
-Matthias Felleisen,Northeastern University,plflagship,2,2011
-Matthias Felleisen,Northeastern University,plflagship,3,2012
-Matthias Felleisen,Northeastern University,plflagship,1,2013
-Matthias Felleisen,Northeastern University,plflagship,1,2014
-Matthias Felleisen,Northeastern University,plflagship,1,2016
+Robert Bruce Findler,Northwestern University,proglang,1,2001
+Robert Bruce Findler,Northwestern University,proglang,2,2004
+Robert Bruce Findler,Northwestern University,proglang,1,2005
+Robert Bruce Findler,Northwestern University,proglang,1,2006
+Robert Bruce Findler,Northwestern University,proglang,1,2007
+Robert Bruce Findler,Northwestern University,proglang,2,2010
+Robert Bruce Findler,Northwestern University,proglang,2,2011
+Robert Bruce Findler,Northwestern University,proglang,2,2012
+Robert Bruce Findler,Northwestern University,proglang,1,2013
+Matthias Felleisen,Northeastern University,proglang,1,2001
+Matthias Felleisen,Northeastern University,proglang,1,2002
+Matthias Felleisen,Northeastern University,proglang,1,2005
+Matthias Felleisen,Northeastern University,proglang,1,2006
+Matthias Felleisen,Northeastern University,proglang,1,2008
+Matthias Felleisen,Northeastern University,proglang,2,2011
+Matthias Felleisen,Northeastern University,proglang,3,2012
+Matthias Felleisen,Northeastern University,proglang,1,2013
+Matthias Felleisen,Northeastern University,proglang,1,2014
+Matthias Felleisen,Northeastern University,proglang,1,2016
 Matthias Felleisen,Northeastern University,softeng,1,2004
-Andrew W. Appel,Princeton University,plflagship,1,2000
-Andrew W. Appel,Princeton University,plflagship,2,2001
-Andrew W. Appel,Princeton University,plflagship,1,2002
-Andrew W. Appel,Princeton University,plflagship,1,2003
-Andrew W. Appel,Princeton University,plflagship,1,2004
-Andrew W. Appel,Princeton University,plflagship,1,2007
-Andrew W. Appel,Princeton University,plflagship,1,2010
-Andrew W. Appel,Princeton University,plflagship,2,2015
+Andrew W. Appel,Princeton University,proglang,1,2000
+Andrew W. Appel,Princeton University,proglang,2,2001
+Andrew W. Appel,Princeton University,proglang,1,2002
+Andrew W. Appel,Princeton University,proglang,1,2003
+Andrew W. Appel,Princeton University,proglang,1,2004
+Andrew W. Appel,Princeton University,proglang,1,2007
+Andrew W. Appel,Princeton University,proglang,1,2010
+Andrew W. Appel,Princeton University,proglang,2,2015
 Andrew W. Appel,Princeton University,logic,1,2001
 Andrew W. Appel,Princeton University,logic,1,2002
 Andrew W. Appel,Princeton University,security,1,2003
-Robert Harper,Carnegie Mellon University,plflagship,1,2000
-Robert Harper,Carnegie Mellon University,plflagship,1,2002
-Robert Harper,Carnegie Mellon University,plflagship,3,2003
-Robert Harper,Carnegie Mellon University,plflagship,2,2007
-Robert Harper,Carnegie Mellon University,plflagship,1,2011
-Robert Harper,Carnegie Mellon University,plflagship,1,2012
-Robert Harper,Carnegie Mellon University,plflagship,1,2013
+Robert Harper,Carnegie Mellon University,proglang,1,2000
+Robert Harper,Carnegie Mellon University,proglang,1,2002
+Robert Harper,Carnegie Mellon University,proglang,3,2003
+Robert Harper,Carnegie Mellon University,proglang,2,2007
+Robert Harper,Carnegie Mellon University,proglang,1,2011
+Robert Harper,Carnegie Mellon University,proglang,1,2012
+Robert Harper,Carnegie Mellon University,proglang,1,2013
 Robert Harper,Carnegie Mellon University,logic,2,2004
 Robert Harper,Carnegie Mellon University,logic,1,2008
 Robert Harper,Carnegie Mellon University,theory,1,2004
-Suresh Jagannathan,Purdue University,plflagship,1,2005
-Suresh Jagannathan,Purdue University,plflagship,1,2007
-Suresh Jagannathan,Purdue University,plflagship,1,2009
-Suresh Jagannathan,Purdue University,plflagship,4,2011
-Suresh Jagannathan,Purdue University,plflagship,1,2012
-Suresh Jagannathan,Purdue University,plflagship,2,2013
-Suresh Jagannathan,Purdue University,plflagship,1,2014
-Suresh Jagannathan,Purdue University,plflagship,2,2015
+Suresh Jagannathan,Purdue University,proglang,1,2005
+Suresh Jagannathan,Purdue University,proglang,1,2007
+Suresh Jagannathan,Purdue University,proglang,1,2009
+Suresh Jagannathan,Purdue University,proglang,4,2011
+Suresh Jagannathan,Purdue University,proglang,1,2012
+Suresh Jagannathan,Purdue University,proglang,2,2013
+Suresh Jagannathan,Purdue University,proglang,1,2014
+Suresh Jagannathan,Purdue University,proglang,2,2015
 Suresh Jagannathan,Purdue University,softeng,1,2007
 Suresh Jagannathan,Purdue University,arch,1,2002
 Suresh Jagannathan,Purdue University,arch,1,2010
-Matthew Might,University of Utah,plflagship,2,2006
-Matthew Might,University of Utah,plflagship,1,2007
-Matthew Might,University of Utah,plflagship,1,2010
-Matthew Might,University of Utah,plflagship,2,2011
-Matthew Might,University of Utah,plflagship,1,2013
-Matthew Might,University of Utah,plflagship,1,2015
-Matthew Might,University of Utah,plflagship,1,2016
-David Van Horn,University of Maryland - College Park,plflagship,1,2010
-David Van Horn,University of Maryland - College Park,plflagship,1,2012
-David Van Horn,University of Maryland - College Park,plflagship,3,2015
-David Van Horn,University of Maryland - College Park,plflagship,1,2016
-Frank Pfenning,Carnegie Mellon University,plflagship,1,2003
-Frank Pfenning,Carnegie Mellon University,plflagship,1,2004
-Frank Pfenning,Carnegie Mellon University,plflagship,1,2005
-Frank Pfenning,Carnegie Mellon University,plflagship,1,2016
+Matthew Might,University of Utah,proglang,2,2006
+Matthew Might,University of Utah,proglang,1,2007
+Matthew Might,University of Utah,proglang,1,2010
+Matthew Might,University of Utah,proglang,2,2011
+Matthew Might,University of Utah,proglang,1,2013
+Matthew Might,University of Utah,proglang,1,2015
+Matthew Might,University of Utah,proglang,1,2016
+David Van Horn,University of Maryland - College Park,proglang,1,2010
+David Van Horn,University of Maryland - College Park,proglang,1,2012
+David Van Horn,University of Maryland - College Park,proglang,3,2015
+David Van Horn,University of Maryland - College Park,proglang,1,2016
+Frank Pfenning,Carnegie Mellon University,proglang,1,2003
+Frank Pfenning,Carnegie Mellon University,proglang,1,2004
+Frank Pfenning,Carnegie Mellon University,proglang,1,2005
+Frank Pfenning,Carnegie Mellon University,proglang,1,2016
 Frank Pfenning,Carnegie Mellon University,logic,1,2001
 Frank Pfenning,Carnegie Mellon University,logic,1,2004
 Frank Pfenning,Carnegie Mellon University,logic,1,2009
 Frank Pfenning,Carnegie Mellon University,security,1,2010
 Frank Pfenning,Carnegie Mellon University,ai,1,2003
-Patrick Cousot,New York University,plflagship,1,2000
-Patrick Cousot,New York University,plflagship,1,2002
-Patrick Cousot,New York University,plflagship,1,2003
-Patrick Cousot,New York University,plflagship,1,2004
-Patrick Cousot,New York University,plflagship,1,2011
-Patrick Cousot,New York University,plflagship,2,2012
-Patrick Cousot,New York University,plflagship,1,2014
+Patrick Cousot,New York University,proglang,1,2000
+Patrick Cousot,New York University,proglang,1,2002
+Patrick Cousot,New York University,proglang,1,2003
+Patrick Cousot,New York University,proglang,1,2004
+Patrick Cousot,New York University,proglang,1,2011
+Patrick Cousot,New York University,proglang,2,2012
+Patrick Cousot,New York University,proglang,1,2014
 Patrick Cousot,New York University,logic,1,2002
-Andrew Lumsdaine,Indiana University,plflagship,1,2003
-Andrew Lumsdaine,Indiana University,plflagship,3,2005
-Andrew Lumsdaine,Indiana University,plflagship,1,2006
-Andrew Lumsdaine,Indiana University,plflagship,1,2009
-Andrew Lumsdaine,Indiana University,plflagship,1,2014
+Andrew Lumsdaine,Indiana University,proglang,1,2003
+Andrew Lumsdaine,Indiana University,proglang,3,2005
+Andrew Lumsdaine,Indiana University,proglang,1,2006
+Andrew Lumsdaine,Indiana University,proglang,1,2009
+Andrew Lumsdaine,Indiana University,proglang,1,2014
 Andrew Lumsdaine,Indiana University,vision,1,2012
 Andrew Lumsdaine,Indiana University,vision,1,2013
-Vikram S. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2000
-Vikram S. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2005
-Vikram S. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2006
-Vikram S. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2007
-Vikram S. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2009
-Vikram S. Adve,University of Illinois at Urbana-Champaign,plflagship,1,2011
+Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2000
+Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2005
+Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2006
+Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2007
+Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2009
+Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2011
 Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1,2006
 Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1,2012
 Vikram S. Adve,University of Illinois at Urbana-Champaign,opsys,1,2007
@@ -8961,10 +8961,10 @@ Vikram S. Adve,University of Illinois at Urbana-Champaign,arch,1,2014
 Vikram S. Adve,University of Illinois at Urbana-Champaign,arch,2,2015
 Vikram S. Adve,University of Illinois at Urbana-Champaign,security,1,2009
 Vikram S. Adve,University of Illinois at Urbana-Champaign,security,1,2014
-Sriram Sankaranarayanan,University of Colorado Boulder,plflagship,1,2004
-Sriram Sankaranarayanan,University of Colorado Boulder,plflagship,1,2010
-Sriram Sankaranarayanan,University of Colorado Boulder,plflagship,1,2013
-Sriram Sankaranarayanan,University of Colorado Boulder,plflagship,1,2014
+Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2004
+Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2010
+Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2013
+Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2014
 Sriram Sankaranarayanan,University of Colorado Boulder,logic,1,2003
 Sriram Sankaranarayanan,University of Colorado Boulder,logic,1,2007
 Sriram Sankaranarayanan,University of Colorado Boulder,logic,1,2009
@@ -8975,28 +8975,28 @@ Sriram Sankaranarayanan,University of Colorado Boulder,logic,1,2014
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1,2007
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1,2008
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1,2013
-Pavol Cerný,University of Colorado Boulder,plflagship,1,2005
-Pavol Cerný,University of Colorado Boulder,plflagship,1,2009
-Pavol Cerný,University of Colorado Boulder,plflagship,1,2011
-Pavol Cerný,University of Colorado Boulder,plflagship,1,2013
-Pavol Cerný,University of Colorado Boulder,plflagship,1,2015
+Pavol Cerný,University of Colorado Boulder,proglang,1,2005
+Pavol Cerný,University of Colorado Boulder,proglang,1,2009
+Pavol Cerný,University of Colorado Boulder,proglang,1,2011
+Pavol Cerný,University of Colorado Boulder,proglang,1,2013
+Pavol Cerný,University of Colorado Boulder,proglang,1,2015
 Pavol Cerný,University of Colorado Boulder,logic,1,2009
 Pavol Cerný,University of Colorado Boulder,logic,1,2010
 Pavol Cerný,University of Colorado Boulder,logic,1,2011
 Pavol Cerný,University of Colorado Boulder,logic,1,2013
 Pavol Cerný,University of Colorado Boulder,logic,1,2014
-Rastislav Bodík,University of Washington,plflagship,1,2000
-Rastislav Bodík,University of Washington,plflagship,2,2002
-Rastislav Bodík,University of Washington,plflagship,1,2003
-Rastislav Bodík,University of Washington,plflagship,5,2005
-Rastislav Bodík,University of Washington,plflagship,1,2006
-Rastislav Bodík,University of Washington,plflagship,3,2007
-Rastislav Bodík,University of Washington,plflagship,2,2008
-Rastislav Bodík,University of Washington,plflagship,1,2010
-Rastislav Bodík,University of Washington,plflagship,1,2011
-Rastislav Bodík,University of Washington,plflagship,1,2013
-Rastislav Bodík,University of Washington,plflagship,2,2014
-Rastislav Bodík,University of Washington,plflagship,1,2015
+Rastislav Bodík,University of Washington,proglang,1,2000
+Rastislav Bodík,University of Washington,proglang,2,2002
+Rastislav Bodík,University of Washington,proglang,1,2003
+Rastislav Bodík,University of Washington,proglang,5,2005
+Rastislav Bodík,University of Washington,proglang,1,2006
+Rastislav Bodík,University of Washington,proglang,3,2007
+Rastislav Bodík,University of Washington,proglang,2,2008
+Rastislav Bodík,University of Washington,proglang,1,2010
+Rastislav Bodík,University of Washington,proglang,1,2011
+Rastislav Bodík,University of Washington,proglang,1,2013
+Rastislav Bodík,University of Washington,proglang,2,2014
+Rastislav Bodík,University of Washington,proglang,1,2015
 Rastislav Bodík,University of Washington,logic,1,2012
 Rastislav Bodík,University of Washington,softeng,1,2010
 Rastislav Bodík,University of Washington,softeng,1,2011
@@ -9007,7 +9007,7 @@ Rastislav Bodík,University of Washington,arch,2,2003
 Rastislav Bodík,University of Washington,arch,2,2006
 Rastislav Bodík,University of Washington,arch,1,2016
 Rastislav Bodík,University of Washington,web,1,2010
-Jeffrey Mark Siskind,Purdue University,plflagship,2,2007
+Jeffrey Mark Siskind,Purdue University,proglang,2,2007
 Jeffrey Mark Siskind,Purdue University,mlmining,1,2003
 Jeffrey Mark Siskind,Purdue University,mlmining,1,2011
 Jeffrey Mark Siskind,Purdue University,ai,2,2015
@@ -9015,7 +9015,7 @@ Jeffrey Mark Siskind,Purdue University,vision,1,2001
 Jeffrey Mark Siskind,Purdue University,vision,1,2012
 Jeffrey Mark Siskind,Purdue University,vision,1,2013
 Jeffrey Mark Siskind,Purdue University,vision,1,2014
-Tevfik Bultan,University of California - Santa Barbara,plflagship,1,2012
+Tevfik Bultan,University of California - Santa Barbara,proglang,1,2012
 Tevfik Bultan,University of California - Santa Barbara,logic,1,2000
 Tevfik Bultan,University of California - Santa Barbara,logic,1,2003
 Tevfik Bultan,University of California - Santa Barbara,logic,2,2004
@@ -9032,12 +9032,12 @@ Tevfik Bultan,University of California - Santa Barbara,web,1,2003
 Tevfik Bultan,University of California - Santa Barbara,web,1,2004
 Tevfik Bultan,University of California - Santa Barbara,web,1,2005
 Tevfik Bultan,University of California - Santa Barbara,web,1,2011
-Rajeev Alur,University of Pennsylvania,plflagship,1,2000
-Rajeev Alur,University of Pennsylvania,plflagship,1,2005
-Rajeev Alur,University of Pennsylvania,plflagship,1,2007
-Rajeev Alur,University of Pennsylvania,plflagship,1,2011
-Rajeev Alur,University of Pennsylvania,plflagship,1,2013
-Rajeev Alur,University of Pennsylvania,plflagship,1,2015
+Rajeev Alur,University of Pennsylvania,proglang,1,2000
+Rajeev Alur,University of Pennsylvania,proglang,1,2005
+Rajeev Alur,University of Pennsylvania,proglang,1,2007
+Rajeev Alur,University of Pennsylvania,proglang,1,2011
+Rajeev Alur,University of Pennsylvania,proglang,1,2013
+Rajeev Alur,University of Pennsylvania,proglang,1,2015
 Rajeev Alur,University of Pennsylvania,logic,1,2000
 Rajeev Alur,University of Pennsylvania,logic,3,2001
 Rajeev Alur,University of Pennsylvania,logic,1,2002
@@ -9055,39 +9055,39 @@ Rajeev Alur,University of Pennsylvania,softeng,1,2001
 Rajeev Alur,University of Pennsylvania,softeng,1,2010
 Rajeev Alur,University of Pennsylvania,theory,1,2004
 Rajeev Alur,University of Pennsylvania,database,1,2007
-Aws Albarghouthi,University of Wisconsin - Madison,plflagship,1,2012
-Aws Albarghouthi,University of Wisconsin - Madison,plflagship,1,2014
-Aws Albarghouthi,University of Wisconsin - Madison,plflagship,1,2016
+Aws Albarghouthi,University of Wisconsin - Madison,proglang,1,2012
+Aws Albarghouthi,University of Wisconsin - Madison,proglang,1,2014
+Aws Albarghouthi,University of Wisconsin - Madison,proglang,1,2016
 Aws Albarghouthi,University of Wisconsin - Madison,logic,1,2010
 Aws Albarghouthi,University of Wisconsin - Madison,logic,1,2012
 Aws Albarghouthi,University of Wisconsin - Madison,logic,2,2013
-Thomas Wies,New York University,plflagship,1,2010
-Thomas Wies,New York University,plflagship,1,2013
-Thomas Wies,New York University,plflagship,1,2014
+Thomas Wies,New York University,proglang,1,2010
+Thomas Wies,New York University,proglang,1,2013
+Thomas Wies,New York University,proglang,1,2014
 Thomas Wies,New York University,logic,1,2007
 Thomas Wies,New York University,logic,1,2008
 Thomas Wies,New York University,logic,1,2009
 Thomas Wies,New York University,logic,1,2013
 Thomas Wies,New York University,logic,1,2014
 Thomas Wies,New York University,softeng,1,2013
-Umut A. Acar,Carnegie Mellon University,plflagship,1,2002
-Umut A. Acar,Carnegie Mellon University,plflagship,1,2003
-Umut A. Acar,Carnegie Mellon University,plflagship,1,2006
-Umut A. Acar,Carnegie Mellon University,plflagship,1,2008
-Umut A. Acar,Carnegie Mellon University,plflagship,2,2009
-Umut A. Acar,Carnegie Mellon University,plflagship,1,2010
-Umut A. Acar,Carnegie Mellon University,plflagship,2,2011
-Umut A. Acar,Carnegie Mellon University,plflagship,1,2012
+Umut A. Acar,Carnegie Mellon University,proglang,1,2002
+Umut A. Acar,Carnegie Mellon University,proglang,1,2003
+Umut A. Acar,Carnegie Mellon University,proglang,1,2006
+Umut A. Acar,Carnegie Mellon University,proglang,1,2008
+Umut A. Acar,Carnegie Mellon University,proglang,2,2009
+Umut A. Acar,Carnegie Mellon University,proglang,1,2010
+Umut A. Acar,Carnegie Mellon University,proglang,2,2011
+Umut A. Acar,Carnegie Mellon University,proglang,1,2012
 Umut A. Acar,Carnegie Mellon University,arch,1,2015
 Umut A. Acar,Carnegie Mellon University,theory,1,2004
 Umut A. Acar,Carnegie Mellon University,mlmining,1,2007
 Umut A. Acar,Carnegie Mellon University,ai,1,2011
-Guy E. Blelloch,Carnegie Mellon University,plflagship,1,2001
-Guy E. Blelloch,Carnegie Mellon University,plflagship,1,2002
-Guy E. Blelloch,Carnegie Mellon University,plflagship,1,2003
-Guy E. Blelloch,Carnegie Mellon University,plflagship,1,2006
-Guy E. Blelloch,Carnegie Mellon University,plflagship,1,2010
-Guy E. Blelloch,Carnegie Mellon University,plflagship,1,2013
+Guy E. Blelloch,Carnegie Mellon University,proglang,1,2001
+Guy E. Blelloch,Carnegie Mellon University,proglang,1,2002
+Guy E. Blelloch,Carnegie Mellon University,proglang,1,2003
+Guy E. Blelloch,Carnegie Mellon University,proglang,1,2006
+Guy E. Blelloch,Carnegie Mellon University,proglang,1,2010
+Guy E. Blelloch,Carnegie Mellon University,proglang,1,2013
 Guy E. Blelloch,Carnegie Mellon University,opsys,1,2012
 Guy E. Blelloch,Carnegie Mellon University,theory,2,2003
 Guy E. Blelloch,Carnegie Mellon University,theory,2,2004
@@ -9095,17 +9095,17 @@ Guy E. Blelloch,Carnegie Mellon University,theory,1,2005
 Guy E. Blelloch,Carnegie Mellon University,theory,1,2007
 Guy E. Blelloch,Carnegie Mellon University,theory,2,2008
 Guy E. Blelloch,Carnegie Mellon University,theory,1,2015
-Zhong Shao,Yale University,plflagship,1,2001
-Zhong Shao,Yale University,plflagship,1,2002
-Zhong Shao,Yale University,plflagship,2,2006
-Zhong Shao,Yale University,plflagship,2,2007
-Zhong Shao,Yale University,plflagship,1,2008
-Zhong Shao,Yale University,plflagship,1,2012
-Zhong Shao,Yale University,plflagship,1,2014
-Zhong Shao,Yale University,plflagship,2,2015
+Zhong Shao,Yale University,proglang,1,2001
+Zhong Shao,Yale University,proglang,1,2002
+Zhong Shao,Yale University,proglang,2,2006
+Zhong Shao,Yale University,proglang,2,2007
+Zhong Shao,Yale University,proglang,1,2008
+Zhong Shao,Yale University,proglang,1,2012
+Zhong Shao,Yale University,proglang,1,2014
+Zhong Shao,Yale University,proglang,2,2015
 Zhong Shao,Yale University,logic,1,2013
-Don S. Batory,University of Texas - Austin,plflagship,1,2007
-Don S. Batory,University of Texas - Austin,plflagship,1,2011
+Don S. Batory,University of Texas - Austin,proglang,1,2007
+Don S. Batory,University of Texas - Austin,proglang,1,2011
 Don S. Batory,University of Texas - Austin,softeng,1,2000
 Don S. Batory,University of Texas - Austin,softeng,1,2001
 Don S. Batory,University of Texas - Austin,softeng,3,2003
@@ -9116,54 +9116,54 @@ Don S. Batory,University of Texas - Austin,softeng,2,2009
 Don S. Batory,University of Texas - Austin,softeng,1,2011
 Don S. Batory,University of Texas - Austin,softeng,1,2012
 Don S. Batory,University of Texas - Austin,softeng,1,2013
-Michael Hicks,University of Maryland - College Park,plflagship,1,2008
-Michael Hicks,University of Maryland - College Park,plflagship,1,2010
-Michael Hicks,University of Maryland - College Park,plflagship,1,2011
-Michael Hicks,University of Maryland - College Park,plflagship,2,2012
-Michael Hicks,University of Maryland - College Park,plflagship,2,2014
+Michael Hicks,University of Maryland - College Park,proglang,1,2008
+Michael Hicks,University of Maryland - College Park,proglang,1,2010
+Michael Hicks,University of Maryland - College Park,proglang,1,2011
+Michael Hicks,University of Maryland - College Park,proglang,2,2012
+Michael Hicks,University of Maryland - College Park,proglang,2,2014
 Michael Hicks,University of Maryland - College Park,softeng,1,2013
 Michael Hicks,University of Maryland - College Park,networks,1,2009
 Michael Hicks,University of Maryland - College Park,security,1,2008
 Michael Hicks,University of Maryland - College Park,security,1,2014
 Michael Hicks,University of Maryland - College Park,web,1,2007
-William R. Cook,University of Texas - Austin,plflagship,1,2006
-William R. Cook,University of Texas - Austin,plflagship,1,2007
-William R. Cook,University of Texas - Austin,plflagship,1,2008
-William R. Cook,University of Texas - Austin,plflagship,1,2009
-William R. Cook,University of Texas - Austin,plflagship,2,2011
+William R. Cook,University of Texas - Austin,proglang,1,2006
+William R. Cook,University of Texas - Austin,proglang,1,2007
+William R. Cook,University of Texas - Austin,proglang,1,2008
+William R. Cook,University of Texas - Austin,proglang,1,2009
+William R. Cook,University of Texas - Austin,proglang,2,2011
 William R. Cook,University of Texas - Austin,softeng,1,2005
 William R. Cook,University of Texas - Austin,softeng,1,2009
-Bor-Yuh Evan Chang,University of Colorado Boulder,plflagship,1,2008
-Bor-Yuh Evan Chang,University of Colorado Boulder,plflagship,1,2010
-Bor-Yuh Evan Chang,University of Colorado Boulder,plflagship,1,2011
-Bor-Yuh Evan Chang,University of Colorado Boulder,plflagship,1,2013
-Bor-Yuh Evan Chang,University of Colorado Boulder,plflagship,1,2014
-Bor-Yuh Evan Chang,University of Colorado Boulder,plflagship,1,2015
+Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1,2008
+Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1,2010
+Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1,2011
+Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1,2013
+Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1,2014
+Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1,2015
 Bor-Yuh Evan Chang,University of Colorado Boulder,logic,1,2014
-Amal Ahmed,Northeastern University,plflagship,1,2008
-Amal Ahmed,Northeastern University,plflagship,1,2009
-Amal Ahmed,Northeastern University,plflagship,1,2011
-Amal Ahmed,Northeastern University,plflagship,1,2013
+Amal Ahmed,Northeastern University,proglang,1,2008
+Amal Ahmed,Northeastern University,proglang,1,2009
+Amal Ahmed,Northeastern University,proglang,1,2011
+Amal Ahmed,Northeastern University,proglang,1,2013
 Amal Ahmed,Northeastern University,logic,1,2009
-Ross Tate,Cornell University,plflagship,1,2009
-Ross Tate,Cornell University,plflagship,2,2010
-Ross Tate,Cornell University,plflagship,1,2011
-Ross Tate,Cornell University,plflagship,1,2013
-Ross Tate,Cornell University,plflagship,1,2014
-Ross Tate,Cornell University,plflagship,1,2015
+Ross Tate,Cornell University,proglang,1,2009
+Ross Tate,Cornell University,proglang,2,2010
+Ross Tate,Cornell University,proglang,1,2011
+Ross Tate,Cornell University,proglang,1,2013
+Ross Tate,Cornell University,proglang,1,2014
+Ross Tate,Cornell University,proglang,1,2015
 Ross Tate,Cornell University,logic,1,2011
-Zachary Tatlock,University of Washington,plflagship,1,2008
-Zachary Tatlock,University of Washington,plflagship,2,2009
-Zachary Tatlock,University of Washington,plflagship,1,2010
-Zachary Tatlock,University of Washington,plflagship,1,2014
-Zachary Tatlock,University of Washington,plflagship,2,2015
+Zachary Tatlock,University of Washington,proglang,1,2008
+Zachary Tatlock,University of Washington,proglang,2,2009
+Zachary Tatlock,University of Washington,proglang,1,2010
+Zachary Tatlock,University of Washington,proglang,1,2014
+Zachary Tatlock,University of Washington,proglang,2,2015
 Zachary Tatlock,University of Washington,opsys,1,2014
 Zachary Tatlock,University of Washington,security,1,2012
-Grigore Rosu,University of Illinois at Urbana-Champaign,plflagship,1,2007
-Grigore Rosu,University of Illinois at Urbana-Champaign,plflagship,1,2011
-Grigore Rosu,University of Illinois at Urbana-Champaign,plflagship,2,2012
-Grigore Rosu,University of Illinois at Urbana-Champaign,plflagship,1,2014
-Grigore Rosu,University of Illinois at Urbana-Champaign,plflagship,3,2015
+Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1,2007
+Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1,2011
+Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,2,2012
+Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1,2014
+Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,3,2015
 Grigore Rosu,University of Illinois at Urbana-Champaign,logic,1,2003
 Grigore Rosu,University of Illinois at Urbana-Champaign,logic,1,2004
 Grigore Rosu,University of Illinois at Urbana-Champaign,logic,1,2006
@@ -9173,7 +9173,7 @@ Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1,2008
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,3,2011
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1,2012
 Grigore Rosu,University of Illinois at Urbana-Champaign,arch,1,2005
-Aaron Roth,University of Pennsylvania,plflagship,1,2015
+Aaron Roth,University of Pennsylvania,proglang,1,2015
 Aaron Roth,University of Pennsylvania,theory,2,2008
 Aaron Roth,University of Pennsylvania,theory,3,2010
 Aaron Roth,University of Pennsylvania,theory,1,2011
@@ -9185,33 +9185,33 @@ Aaron Roth,University of Pennsylvania,theory,1,2016
 Aaron Roth,University of Pennsylvania,mlmining,1,2014
 Aaron Roth,University of Pennsylvania,mlmining,1,2015
 Aaron Roth,University of Pennsylvania,ai,1,2015
-Chen Ding,University of Rochester,plflagship,1,2003
-Chen Ding,University of Rochester,plflagship,1,2004
-Chen Ding,University of Rochester,plflagship,1,2006
-Chen Ding,University of Rochester,plflagship,2,2007
-Chen Ding,University of Rochester,plflagship,1,2011
+Chen Ding,University of Rochester,proglang,1,2003
+Chen Ding,University of Rochester,proglang,1,2004
+Chen Ding,University of Rochester,proglang,1,2006
+Chen Ding,University of Rochester,proglang,2,2007
+Chen Ding,University of Rochester,proglang,1,2011
 Chen Ding,University of Rochester,arch,1,2004
 Chen Ding,University of Rochester,arch,1,2013
-Thomas Dillig,University of Texas - Austin,plflagship,1,2007
-Thomas Dillig,University of Texas - Austin,plflagship,1,2008
-Thomas Dillig,University of Texas - Austin,plflagship,1,2010
-Thomas Dillig,University of Texas - Austin,plflagship,2,2011
-Thomas Dillig,University of Texas - Austin,plflagship,1,2012
-Thomas Dillig,University of Texas - Austin,plflagship,1,2013
-Thomas Dillig,University of Texas - Austin,plflagship,1,2014
+Thomas Dillig,University of Texas - Austin,proglang,1,2007
+Thomas Dillig,University of Texas - Austin,proglang,1,2008
+Thomas Dillig,University of Texas - Austin,proglang,1,2010
+Thomas Dillig,University of Texas - Austin,proglang,2,2011
+Thomas Dillig,University of Texas - Austin,proglang,1,2012
+Thomas Dillig,University of Texas - Austin,proglang,1,2013
+Thomas Dillig,University of Texas - Austin,proglang,1,2014
 Thomas Dillig,University of Texas - Austin,logic,1,2009
 Thomas Dillig,University of Texas - Austin,logic,1,2011
 Thomas Dillig,University of Texas - Austin,logic,1,2012
 Thomas Dillig,University of Texas - Austin,logic,1,2013
 Thomas Dillig,University of Texas - Austin,logic,1,2014
-Arjun Guha,University of Massachusetts - Amherst,plflagship,1,2009
-Arjun Guha,University of Massachusetts - Amherst,plflagship,1,2013
-Arjun Guha,University of Massachusetts - Amherst,plflagship,1,2014
+Arjun Guha,University of Massachusetts - Amherst,proglang,1,2009
+Arjun Guha,University of Massachusetts - Amherst,proglang,1,2013
+Arjun Guha,University of Massachusetts - Amherst,proglang,1,2014
 Arjun Guha,University of Massachusetts - Amherst,networks,1,2013
 Arjun Guha,University of Massachusetts - Amherst,security,2,2011
 Arjun Guha,University of Massachusetts - Amherst,web,1,2009
-Dexter Kozen,Cornell University,plflagship,1,2014
-Dexter Kozen,Cornell University,plflagship,1,2015
+Dexter Kozen,Cornell University,proglang,1,2014
+Dexter Kozen,Cornell University,proglang,1,2015
 Dexter Kozen,Cornell University,logic,1,2001
 Dexter Kozen,Cornell University,logic,1,2006
 Dexter Kozen,Cornell University,logic,1,2008
@@ -9219,18 +9219,18 @@ Dexter Kozen,Cornell University,logic,1,2012
 Dexter Kozen,Cornell University,logic,1,2013
 Dexter Kozen,Cornell University,mlmining,1,2007
 Dexter Kozen,Cornell University,mlmining,1,2009
-Ben Hardekopf,University of California - Santa Barbara,plflagship,1,2007
-Ben Hardekopf,University of California - Santa Barbara,plflagship,1,2009
-Ben Hardekopf,University of California - Santa Barbara,plflagship,1,2011
+Ben Hardekopf,University of California - Santa Barbara,proglang,1,2007
+Ben Hardekopf,University of California - Santa Barbara,proglang,1,2009
+Ben Hardekopf,University of California - Santa Barbara,proglang,1,2011
 Ben Hardekopf,University of California - Santa Barbara,arch,1,2011
 Ben Hardekopf,University of California - Santa Barbara,arch,1,2014
 Ben Hardekopf,University of California - Santa Barbara,security,1,2011
-Ravi Chugh,University of Chicago,plflagship,1,2008
-Ravi Chugh,University of Chicago,plflagship,1,2009
-Ravi Chugh,University of Chicago,plflagship,1,2010
-Ravi Chugh,University of Chicago,plflagship,2,2012
-Aarti Gupta,Princeton University,plflagship,1,2007
-Aarti Gupta,Princeton University,plflagship,1,2010
+Ravi Chugh,University of Chicago,proglang,1,2008
+Ravi Chugh,University of Chicago,proglang,1,2009
+Ravi Chugh,University of Chicago,proglang,1,2010
+Ravi Chugh,University of Chicago,proglang,2,2012
+Aarti Gupta,Princeton University,proglang,1,2007
+Aarti Gupta,Princeton University,proglang,1,2010
 Aarti Gupta,Princeton University,logic,1,2003
 Aarti Gupta,Princeton University,logic,1,2004
 Aarti Gupta,Princeton University,logic,3,2005
@@ -9244,39 +9244,39 @@ Aarti Gupta,Princeton University,softeng,1,2012
 Aarti Gupta,Princeton University,softeng,1,2013
 Aarti Gupta,Princeton University,softeng,1,2015
 Aarti Gupta,Princeton University,ai,1,2007
-Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,plflagship,1,2009
-Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,plflagship,2,2012
-Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,plflagship,2,2013
-Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,plflagship,1,2015
+Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2009
+Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,proglang,2,2012
+Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,proglang,2,2013
+Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2015
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1,2010
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1,2012
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1,2015
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2002
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2005
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2007
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2008
-Jonathan Aldrich,Carnegie Mellon University,plflagship,2,2009
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2011
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2012
-Jonathan Aldrich,Carnegie Mellon University,plflagship,1,2014
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2002
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2005
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2007
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2008
+Jonathan Aldrich,Carnegie Mellon University,proglang,2,2009
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2011
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2012
+Jonathan Aldrich,Carnegie Mellon University,proglang,1,2014
 Jonathan Aldrich,Carnegie Mellon University,softeng,1,2002
 Jonathan Aldrich,Carnegie Mellon University,softeng,1,2004
 Jonathan Aldrich,Carnegie Mellon University,softeng,2,2005
 Jonathan Aldrich,Carnegie Mellon University,softeng,1,2007
 Jonathan Aldrich,Carnegie Mellon University,softeng,1,2011
 Jonathan Aldrich,Carnegie Mellon University,softeng,1,2012
-Karl Crary,Carnegie Mellon University,plflagship,1,2000
-Karl Crary,Carnegie Mellon University,plflagship,3,2003
-Karl Crary,Carnegie Mellon University,plflagship,1,2007
-Karl Crary,Carnegie Mellon University,plflagship,2,2015
+Karl Crary,Carnegie Mellon University,proglang,1,2000
+Karl Crary,Carnegie Mellon University,proglang,3,2003
+Karl Crary,Carnegie Mellon University,proglang,1,2007
+Karl Crary,Carnegie Mellon University,proglang,2,2015
 Karl Crary,Carnegie Mellon University,logic,1,2004
-Swarat Chaudhuri,Rice University,plflagship,1,2008
-Swarat Chaudhuri,Rice University,plflagship,1,2009
-Swarat Chaudhuri,Rice University,plflagship,2,2010
-Swarat Chaudhuri,Rice University,plflagship,2,2011
-Swarat Chaudhuri,Rice University,plflagship,1,2013
-Swarat Chaudhuri,Rice University,plflagship,4,2014
-Swarat Chaudhuri,Rice University,plflagship,1,2015
+Swarat Chaudhuri,Rice University,proglang,1,2008
+Swarat Chaudhuri,Rice University,proglang,1,2009
+Swarat Chaudhuri,Rice University,proglang,2,2010
+Swarat Chaudhuri,Rice University,proglang,2,2011
+Swarat Chaudhuri,Rice University,proglang,1,2013
+Swarat Chaudhuri,Rice University,proglang,4,2014
+Swarat Chaudhuri,Rice University,proglang,1,2015
 Swarat Chaudhuri,Rice University,logic,1,2006
 Swarat Chaudhuri,Rice University,logic,1,2010
 Swarat Chaudhuri,Rice University,logic,1,2011
@@ -9287,20 +9287,20 @@ Swarat Chaudhuri,Rice University,softeng,1,2009
 Swarat Chaudhuri,Rice University,softeng,1,2011
 Swarat Chaudhuri,Rice University,security,1,2011
 Swarat Chaudhuri,Rice University,web,1,2015
-Ben Liblit,University of Wisconsin - Madison,plflagship,1,2000
-Ben Liblit,University of Wisconsin - Madison,plflagship,1,2003
-Ben Liblit,University of Wisconsin - Madison,plflagship,1,2005
-Ben Liblit,University of Wisconsin - Madison,plflagship,1,2007
-Ben Liblit,University of Wisconsin - Madison,plflagship,2,2009
-Ben Liblit,University of Wisconsin - Madison,plflagship,1,2010
-Ben Liblit,University of Wisconsin - Madison,plflagship,1,2011
+Ben Liblit,University of Wisconsin - Madison,proglang,1,2000
+Ben Liblit,University of Wisconsin - Madison,proglang,1,2003
+Ben Liblit,University of Wisconsin - Madison,proglang,1,2005
+Ben Liblit,University of Wisconsin - Madison,proglang,1,2007
+Ben Liblit,University of Wisconsin - Madison,proglang,2,2009
+Ben Liblit,University of Wisconsin - Madison,proglang,1,2010
+Ben Liblit,University of Wisconsin - Madison,proglang,1,2011
 Ben Liblit,University of Wisconsin - Madison,softeng,1,2009
 Ben Liblit,University of Wisconsin - Madison,mlmining,1,2003
 Ben Liblit,University of Wisconsin - Madison,mlmining,1,2006
-Richard W. Vuduc,Georgia Institute of Technology,plflagship,1,2012
+Richard W. Vuduc,Georgia Institute of Technology,proglang,1,2012
 Richard W. Vuduc,Georgia Institute of Technology,arch,1,2010
 Richard W. Vuduc,Georgia Institute of Technology,arch,1,2014
-Alexander G. Gray,Georgia Institute of Technology,plflagship,1,2012
+Alexander G. Gray,Georgia Institute of Technology,proglang,1,2012
 Alexander G. Gray,Georgia Institute of Technology,security,1,2009
 Alexander G. Gray,Georgia Institute of Technology,mlmining,1,2000
 Alexander G. Gray,Georgia Institute of Technology,mlmining,1,2002
@@ -9314,20 +9314,20 @@ Alexander G. Gray,Georgia Institute of Technology,mlmining,1,2010
 Alexander G. Gray,Georgia Institute of Technology,mlmining,1,2011
 Alexander G. Gray,Georgia Institute of Technology,mlmining,5,2012
 Alexander G. Gray,Georgia Institute of Technology,mlmining,1,2013
-Sam Tobin-Hochstadt,Indiana University,plflagship,1,2008
-Sam Tobin-Hochstadt,Indiana University,plflagship,1,2011
-Sam Tobin-Hochstadt,Indiana University,plflagship,5,2012
-Sam Tobin-Hochstadt,Indiana University,plflagship,1,2014
-J. Nathan Foster,Cornell University,plflagship,1,2005
-J. Nathan Foster,Cornell University,plflagship,1,2008
+Sam Tobin-Hochstadt,Indiana University,proglang,1,2008
+Sam Tobin-Hochstadt,Indiana University,proglang,1,2011
+Sam Tobin-Hochstadt,Indiana University,proglang,5,2012
+Sam Tobin-Hochstadt,Indiana University,proglang,1,2014
+J. Nathan Foster,Cornell University,proglang,1,2005
+J. Nathan Foster,Cornell University,proglang,1,2008
 J. Nathan Foster,Cornell University,database,1,2008
-Hongwei Xi,Boston University,plflagship,1,2003
+Hongwei Xi,Boston University,proglang,1,2003
 Hongwei Xi,Boston University,logic,1,2000
 Hongwei Xi,Boston University,logic,1,2001
-Scott A. Mahlke,University of Michigan,plflagship,1,2003
-Scott A. Mahlke,University of Michigan,plflagship,1,2008
-Scott A. Mahlke,University of Michigan,plflagship,2,2009
-Scott A. Mahlke,University of Michigan,plflagship,1,2012
+Scott A. Mahlke,University of Michigan,proglang,1,2003
+Scott A. Mahlke,University of Michigan,proglang,1,2008
+Scott A. Mahlke,University of Michigan,proglang,2,2009
+Scott A. Mahlke,University of Michigan,proglang,1,2012
 Scott A. Mahlke,University of Michigan,opsys,1,2008
 Scott A. Mahlke,University of Michigan,opsys,1,2012
 Scott A. Mahlke,University of Michigan,arch,1,2003
@@ -9343,19 +9343,19 @@ Scott A. Mahlke,University of Michigan,arch,2,2012
 Scott A. Mahlke,University of Michigan,arch,2,2013
 Scott A. Mahlke,University of Michigan,arch,3,2014
 Scott A. Mahlke,University of Michigan,arch,5,2015
-Emina Torlak,University of Washington,plflagship,1,2010
-Emina Torlak,University of Washington,plflagship,1,2014
-Emina Torlak,University of Washington,plflagship,1,2016
+Emina Torlak,University of Washington,proglang,1,2010
+Emina Torlak,University of Washington,proglang,1,2014
+Emina Torlak,University of Washington,proglang,1,2016
 Emina Torlak,University of Washington,logic,1,2012
 Emina Torlak,University of Washington,softeng,1,2004
 Emina Torlak,University of Washington,softeng,1,2011
 Emina Torlak,University of Washington,softeng,1,2012
 Emina Torlak,University of Washington,arch,1,2016
-Mary W. Hall,University of Utah,plflagship,1,2002
-Mary W. Hall,University of Utah,plflagship,1,2011
-Mary W. Hall,University of Utah,plflagship,1,2015
+Mary W. Hall,University of Utah,proglang,1,2002
+Mary W. Hall,University of Utah,proglang,1,2011
+Mary W. Hall,University of Utah,proglang,1,2015
 Mary W. Hall,University of Utah,arch,1,2016
-J. Strother Moore,University of Texas - Austin,plflagship,1,2012
+J. Strother Moore,University of Texas - Austin,proglang,1,2012
 J. Strother Moore,University of Texas - Austin,logic,1,2001
 J. Strother Moore,University of Texas - Austin,logic,1,2010
 Theophilus Benson,Duke University,networks,1,2009
@@ -9443,7 +9443,7 @@ Kenneth P. Birman,Cornell University,opsys,1,2005
 Kenneth P. Birman,Cornell University,networks,1,2001
 Kenneth P. Birman,Cornell University,networks,1,2003
 Kenneth P. Birman,Cornell University,networks,1,2007
-Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,plflagship,1,2009
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,proglang,1,2009
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2001
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2003
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2004
@@ -9460,7 +9460,7 @@ Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2005
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2006
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,networks,1,2004
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,networks,1,2011
-Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,plflagship,1,2009
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,proglang,1,2009
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2001
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2003
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2004
@@ -9485,8 +9485,8 @@ Shyamnath Gollakota,University of Washington,networks,3,2014
 Shyamnath Gollakota,University of Washington,security,1,2011
 Shyamnath Gollakota,University of Washington,hci,1,2014
 Shyamnath Gollakota,University of Washington,hci,1,2015
-Peter M. Chen,University of Michigan,plflagship,1,2012
-Peter M. Chen,University of Michigan,plflagship,1,2014
+Peter M. Chen,University of Michigan,proglang,1,2012
+Peter M. Chen,University of Michigan,proglang,1,2014
 Peter M. Chen,University of Michigan,opsys,1,2000
 Peter M. Chen,University of Michigan,opsys,1,2002
 Peter M. Chen,University of Michigan,opsys,1,2003
@@ -9502,11 +9502,11 @@ Peter M. Chen,University of Michigan,arch,1,2014
 Peter M. Chen,University of Michigan,arch,1,2016
 Peter M. Chen,University of Michigan,networks,1,2009
 Peter M. Chen,University of Michigan,security,1,2006
-Robert Grimm,New York University,plflagship,1,2006
-Robert Grimm,New York University,plflagship,1,2007
-Robert Grimm,New York University,plflagship,1,2009
-Robert Grimm,New York University,plflagship,1,2010
-Robert Grimm,New York University,plflagship,1,2012
+Robert Grimm,New York University,proglang,1,2006
+Robert Grimm,New York University,proglang,1,2007
+Robert Grimm,New York University,proglang,1,2009
+Robert Grimm,New York University,proglang,1,2010
+Robert Grimm,New York University,proglang,1,2012
 Robert Grimm,New York University,networks,1,2006
 Robert Grimm,New York University,networks,1,2007
 Robert Grimm,New York University,networks,1,2009
@@ -9556,10 +9556,10 @@ Fabián E. Bustamante,Northwestern University,networks,1,2012
 Fabián E. Bustamante,Northwestern University,networks,1,2013
 Fabián E. Bustamante,Northwestern University,networks,1,2014
 Fabián E. Bustamante,Northwestern University,networks,1,2015
-Yuvraj Agarwal,Carnegie Mellon University,plflagship,1,2012
+Yuvraj Agarwal,Carnegie Mellon University,proglang,1,2012
 Yuvraj Agarwal,Carnegie Mellon University,networks,2,2009
 Yuvraj Agarwal,Carnegie Mellon University,hci,1,2015
-Rajesh Gupta,University of California - San Diego,plflagship,1,2012
+Rajesh Gupta,University of California - San Diego,proglang,1,2012
 Rajesh Gupta,University of California - San Diego,logic,1,2008
 Rajesh Gupta,University of California - San Diego,opsys,1,2013
 Rajesh Gupta,University of California - San Diego,networks,2,2009
@@ -9577,8 +9577,8 @@ Wyatt Lloyd,University of Southern California,opsys,2,2014
 Wyatt Lloyd,University of Southern California,opsys,1,2015
 Wyatt Lloyd,University of Southern California,networks,1,2010
 Wyatt Lloyd,University of Southern California,networks,1,2013
-Haryadi S. Gunawi,University of Chicago,plflagship,1,2009
-Haryadi S. Gunawi,University of Chicago,plflagship,1,2011
+Haryadi S. Gunawi,University of Chicago,proglang,1,2009
+Haryadi S. Gunawi,University of Chicago,proglang,1,2011
 Haryadi S. Gunawi,University of Chicago,opsys,1,2003
 Haryadi S. Gunawi,University of Chicago,opsys,1,2004
 Haryadi S. Gunawi,University of Chicago,opsys,1,2005
@@ -9588,12 +9588,12 @@ Haryadi S. Gunawi,University of Chicago,opsys,1,2014
 Haryadi S. Gunawi,University of Chicago,arch,1,2005
 Haryadi S. Gunawi,University of Chicago,arch,1,2016
 Haryadi S. Gunawi,University of Chicago,networks,1,2011
-Koushik Sen,University of California - Berkeley,plflagship,1,2005
-Koushik Sen,University of California - Berkeley,plflagship,1,2008
-Koushik Sen,University of California - Berkeley,plflagship,1,2009
-Koushik Sen,University of California - Berkeley,plflagship,2,2011
-Koushik Sen,University of California - Berkeley,plflagship,2,2013
-Koushik Sen,University of California - Berkeley,plflagship,1,2014
+Koushik Sen,University of California - Berkeley,proglang,1,2005
+Koushik Sen,University of California - Berkeley,proglang,1,2008
+Koushik Sen,University of California - Berkeley,proglang,1,2009
+Koushik Sen,University of California - Berkeley,proglang,2,2011
+Koushik Sen,University of California - Berkeley,proglang,2,2013
+Koushik Sen,University of California - Berkeley,proglang,1,2014
 Koushik Sen,University of California - Berkeley,logic,1,2004
 Koushik Sen,University of California - Berkeley,logic,1,2005
 Koushik Sen,University of California - Berkeley,logic,2,2006
@@ -9649,7 +9649,7 @@ Trevor N. Mudge,University of Michigan,arch,2,2010
 Trevor N. Mudge,University of Michigan,arch,1,2011
 Trevor N. Mudge,University of Michigan,arch,2,2014
 Trevor N. Mudge,University of Michigan,arch,3,2015
-Feng Qin,Ohio State University,plflagship,1,2011
+Feng Qin,Ohio State University,proglang,1,2011
 Feng Qin,Ohio State University,softeng,1,2007
 Feng Qin,Ohio State University,opsys,1,2005
 Feng Qin,Ohio State University,opsys,1,2014
@@ -9666,17 +9666,17 @@ Alan L. Cox,Rice University,networks,1,2007
 Alan L. Cox,Rice University,networks,1,2009
 Alan L. Cox,Rice University,networks,1,2014
 Alan L. Cox,Rice University,web,1,2014
-Fred B. Schneider,Cornell University,plflagship,1,2013
+Fred B. Schneider,Cornell University,proglang,1,2013
 Fred B. Schneider,Cornell University,opsys,1,2004
 Fred B. Schneider,Cornell University,opsys,1,2008
 Fred B. Schneider,Cornell University,opsys,1,2011
 Fred B. Schneider,Cornell University,networks,1,2011
 Fred B. Schneider,Cornell University,security,2,2000
-Shan Lu,University of Chicago,plflagship,2,2010
-Shan Lu,University of Chicago,plflagship,1,2011
-Shan Lu,University of Chicago,plflagship,1,2012
-Shan Lu,University of Chicago,plflagship,1,2013
-Shan Lu,University of Chicago,plflagship,1,2014
+Shan Lu,University of Chicago,proglang,2,2010
+Shan Lu,University of Chicago,proglang,1,2011
+Shan Lu,University of Chicago,proglang,1,2012
+Shan Lu,University of Chicago,proglang,1,2013
+Shan Lu,University of Chicago,proglang,1,2014
 Shan Lu,University of Chicago,logic,1,2013
 Shan Lu,University of Chicago,softeng,1,2007
 Shan Lu,University of Chicago,softeng,1,2013
@@ -9714,7 +9714,7 @@ Kevin Fu,University of Michigan,security,1,2008
 Kevin Fu,University of Michigan,security,1,2009
 Kevin Fu,University of Michigan,security,1,2012
 Kevin Fu,University of Michigan,security,1,2013
-Gail E. Kaiser,Columbia University,plflagship,1,2014
+Gail E. Kaiser,Columbia University,proglang,1,2014
 Gail E. Kaiser,Columbia University,softeng,1,2003
 Gail E. Kaiser,Columbia University,softeng,1,2013
 Gail E. Kaiser,Columbia University,softeng,2,2014
@@ -9722,7 +9722,7 @@ Gail E. Kaiser,Columbia University,softeng,1,2015
 Gail E. Kaiser,Columbia University,opsys,1,2014
 Gail E. Kaiser,Columbia University,web,1,2003
 Gail E. Kaiser,Columbia University,web,1,2006
-Steven Swanson,University of California - San Diego,plflagship,1,2010
+Steven Swanson,University of California - San Diego,proglang,1,2010
 Steven Swanson,University of California - San Diego,opsys,1,2013
 Steven Swanson,University of California - San Diego,opsys,1,2014
 Steven Swanson,University of California - San Diego,arch,1,2003
@@ -9734,8 +9734,8 @@ Steven Swanson,University of California - San Diego,arch,1,2012
 Steven Swanson,University of California - San Diego,arch,1,2013
 Steven Swanson,University of California - San Diego,arch,1,2015
 Steven Swanson,University of California - San Diego,security,1,2013
-Darko Marinov,University of Illinois at Urbana-Champaign,plflagship,1,2002
-Darko Marinov,University of Illinois at Urbana-Champaign,plflagship,1,2003
+Darko Marinov,University of Illinois at Urbana-Champaign,proglang,1,2002
+Darko Marinov,University of Illinois at Urbana-Champaign,proglang,1,2003
 Darko Marinov,University of Illinois at Urbana-Champaign,logic,1,2014
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1,2005
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,3,2007
@@ -9748,7 +9748,7 @@ Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2,2014
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1,2015
 Darko Marinov,University of Illinois at Urbana-Champaign,arch,1,2009
 Darko Marinov,University of Illinois at Urbana-Champaign,arch,1,2010
-Josep Torrellas,University of Illinois at Urbana-Champaign,plflagship,1,2014
+Josep Torrellas,University of Illinois at Urbana-Champaign,proglang,1,2014
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,2,2000
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,1,2001
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,4,2002
@@ -9765,7 +9765,7 @@ Josep Torrellas,University of Illinois at Urbana-Champaign,arch,6,2013
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,3,2014
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,1,2015
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,2,2016
-Karthikeyan Sankaralingam,University of Wisconsin - Madison,plflagship,1,2012
+Karthikeyan Sankaralingam,University of Wisconsin - Madison,proglang,1,2012
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,arch,1,2001
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,arch,2,2003
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,arch,2,2006
@@ -9797,12 +9797,12 @@ Milos Prvulovic,University of Minnesota - Twin Cities,arch,1,2011
 Milos Prvulovic,University of Minnesota - Twin Cities,arch,1,2012
 Milos Prvulovic,University of Minnesota - Twin Cities,arch,1,2014
 Milos Prvulovic,University of Minnesota - Twin Cities,arch,2,2015
-David I. August,Princeton University,plflagship,1,2004
-David I. August,Princeton University,plflagship,2,2006
-David I. August,Princeton University,plflagship,2,2007
-David I. August,Princeton University,plflagship,3,2011
-David I. August,Princeton University,plflagship,2,2012
-David I. August,Princeton University,plflagship,1,2013
+David I. August,Princeton University,proglang,1,2004
+David I. August,Princeton University,proglang,2,2006
+David I. August,Princeton University,proglang,2,2007
+David I. August,Princeton University,proglang,3,2011
+David I. August,Princeton University,proglang,2,2012
+David I. August,Princeton University,proglang,1,2013
 David I. August,Princeton University,logic,1,2012
 David I. August,Princeton University,arch,1,2000
 David I. August,Princeton University,arch,1,2002
@@ -9833,7 +9833,7 @@ David M. Brooks,Harvard University,arch,2,2009
 David M. Brooks,Harvard University,arch,1,2010
 David M. Brooks,Harvard University,arch,2,2014
 David M. Brooks,Harvard University,arch,1,2015
-Michael D. Smith,Harvard University,plflagship,1,2004
+Michael D. Smith,Harvard University,proglang,1,2004
 Michael D. Smith,Harvard University,arch,1,2003
 Michael D. Smith,Harvard University,arch,1,2005
 Michael D. Smith,Harvard University,arch,1,2010
@@ -9846,18 +9846,18 @@ Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1,2008
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1,2010
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1,2013
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,2,2015
-Dongyoon Lee,Virginia Polytechnic Institute and State University,plflagship,1,2012
+Dongyoon Lee,Virginia Polytechnic Institute and State University,proglang,1,2012
 Dongyoon Lee,Virginia Polytechnic Institute and State University,softeng,1,2012
 Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1,2009
 Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1,2010
 Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1,2011
 Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1,2016
-Satish Narayanasamy,University of Michigan,plflagship,1,2007
-Satish Narayanasamy,University of Michigan,plflagship,1,2009
-Satish Narayanasamy,University of Michigan,plflagship,1,2010
-Satish Narayanasamy,University of Michigan,plflagship,1,2011
-Satish Narayanasamy,University of Michigan,plflagship,2,2012
-Satish Narayanasamy,University of Michigan,plflagship,2,2014
+Satish Narayanasamy,University of Michigan,proglang,1,2007
+Satish Narayanasamy,University of Michigan,proglang,1,2009
+Satish Narayanasamy,University of Michigan,proglang,1,2010
+Satish Narayanasamy,University of Michigan,proglang,1,2011
+Satish Narayanasamy,University of Michigan,proglang,2,2012
+Satish Narayanasamy,University of Michigan,proglang,2,2014
 Satish Narayanasamy,University of Michigan,opsys,1,2011
 Satish Narayanasamy,University of Michigan,arch,1,2005
 Satish Narayanasamy,University of Michigan,arch,2,2006
@@ -9867,7 +9867,7 @@ Satish Narayanasamy,University of Michigan,arch,2,2011
 Satish Narayanasamy,University of Michigan,arch,1,2012
 Satish Narayanasamy,University of Michigan,arch,2,2013
 Satish Narayanasamy,University of Michigan,arch,2,2015
-Daniel A. Jiménez,Texas A&M University,plflagship,1,2005
+Daniel A. Jiménez,Texas A&M University,proglang,1,2005
 Daniel A. Jiménez,Texas A&M University,arch,1,2000
 Daniel A. Jiménez,Texas A&M University,arch,1,2005
 Daniel A. Jiménez,Texas A&M University,arch,2,2008
@@ -9887,7 +9887,7 @@ Todd M. Austin,University of Michigan,arch,1,2011
 Todd M. Austin,University of Michigan,arch,1,2012
 Todd M. Austin,University of Michigan,arch,1,2015
 Todd M. Austin,University of Michigan,arch,1,2016
-T. N. Vijaykumar,Purdue University,plflagship,1,2004
+T. N. Vijaykumar,Purdue University,proglang,1,2004
 T. N. Vijaykumar,Purdue University,arch,2,2001
 T. N. Vijaykumar,Purdue University,arch,2,2002
 T. N. Vijaykumar,Purdue University,arch,7,2003
@@ -9913,7 +9913,7 @@ Yuan Xie 0001,University of California - Santa Barbara,arch,1,2010
 Yuan Xie 0001,University of California - Santa Barbara,arch,2,2011
 Yuan Xie 0001,University of California - Santa Barbara,arch,1,2013
 Yuan Xie 0001,University of California - Santa Barbara,arch,2,2014
-Changhee Jung,Virginia Polytechnic Institute and State University,plflagship,1,2011
+Changhee Jung,Virginia Polytechnic Institute and State University,proglang,1,2011
 Changhee Jung,Virginia Polytechnic Institute and State University,softeng,2,2014
 Changhee Jung,Virginia Polytechnic Institute and State University,arch,1,2009
 Changhee Jung,Virginia Polytechnic Institute and State University,arch,1,2016
@@ -9937,8 +9937,8 @@ Benjamin C. Lee,Duke University,arch,3,2010
 Benjamin C. Lee,Duke University,arch,3,2012
 Benjamin C. Lee,Duke University,arch,1,2014
 Benjamin C. Lee,Duke University,arch,1,2016
-Youtao Zhang,University of Pittsburgh,plflagship,1,2001
-Youtao Zhang,University of Pittsburgh,plflagship,1,2007
+Youtao Zhang,University of Pittsburgh,proglang,1,2001
+Youtao Zhang,University of Pittsburgh,proglang,1,2007
 Youtao Zhang,University of Pittsburgh,softeng,1,2003
 Youtao Zhang,University of Pittsburgh,softeng,1,2004
 Youtao Zhang,University of Pittsburgh,arch,2,2000
@@ -9973,7 +9973,7 @@ Valeria Bertacco,University of Michigan,arch,1,2008
 Valeria Bertacco,University of Michigan,arch,1,2011
 Valeria Bertacco,University of Michigan,arch,1,2012
 Valeria Bertacco,University of Michigan,arch,1,2013
-Gurindar S. Sohi,University of Wisconsin - Madison,plflagship,2,2014
+Gurindar S. Sohi,University of Wisconsin - Madison,proglang,2,2014
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,3,2000
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,4,2002
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,2,2003
@@ -9982,15 +9982,15 @@ Gurindar S. Sohi,University of Wisconsin - Madison,arch,3,2006
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,1,2008
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,1,2009
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,1,2011
-Vivek Sarkar,Rice University,plflagship,1,2000
-Vivek Sarkar,Rice University,plflagship,1,2001
-Vivek Sarkar,Rice University,plflagship,1,2002
-Vivek Sarkar,Rice University,plflagship,1,2004
-Vivek Sarkar,Rice University,plflagship,1,2005
-Vivek Sarkar,Rice University,plflagship,1,2011
-Vivek Sarkar,Rice University,plflagship,2,2012
-Vivek Sarkar,Rice University,plflagship,1,2013
-Vivek Sarkar,Rice University,plflagship,1,2014
+Vivek Sarkar,Rice University,proglang,1,2000
+Vivek Sarkar,Rice University,proglang,1,2001
+Vivek Sarkar,Rice University,proglang,1,2002
+Vivek Sarkar,Rice University,proglang,1,2004
+Vivek Sarkar,Rice University,proglang,1,2005
+Vivek Sarkar,Rice University,proglang,1,2011
+Vivek Sarkar,Rice University,proglang,2,2012
+Vivek Sarkar,Rice University,proglang,1,2013
+Vivek Sarkar,Rice University,proglang,1,2014
 Vivek Sarkar,Rice University,arch,1,2010
 Vivek Sarkar,Rice University,web,1,2005
 Daniel Sanchez,Massachusetts Institute of Technology,arch,1,2007
@@ -10049,7 +10049,7 @@ Jason Mars,University of Michigan,arch,3,2013
 Jason Mars,University of Michigan,arch,2,2014
 Jason Mars,University of Michigan,arch,3,2015
 Jason Mars,University of Michigan,arch,1,2016
-Mark Oskin,University of Washington,plflagship,1,2014
+Mark Oskin,University of Washington,proglang,1,2014
 Mark Oskin,University of Washington,arch,1,2000
 Mark Oskin,University of Washington,arch,1,2002
 Mark Oskin,University of Washington,arch,2,2003
@@ -10058,14 +10058,14 @@ Mark Oskin,University of Washington,arch,2,2006
 Mark Oskin,University of Washington,arch,1,2007
 Mark Oskin,University of Washington,arch,2,2008
 Mark Oskin,University of Washington,arch,1,2009
-Michael D. Bond,Ohio State University,plflagship,2,2007
-Michael D. Bond,Ohio State University,plflagship,1,2008
-Michael D. Bond,Ohio State University,plflagship,1,2009
-Michael D. Bond,Ohio State University,plflagship,2,2010
-Michael D. Bond,Ohio State University,plflagship,2,2011
-Michael D. Bond,Ohio State University,plflagship,2,2013
-Michael D. Bond,Ohio State University,plflagship,1,2014
-Michael D. Bond,Ohio State University,plflagship,1,2015
+Michael D. Bond,Ohio State University,proglang,2,2007
+Michael D. Bond,Ohio State University,proglang,1,2008
+Michael D. Bond,Ohio State University,proglang,1,2009
+Michael D. Bond,Ohio State University,proglang,2,2010
+Michael D. Bond,Ohio State University,proglang,2,2011
+Michael D. Bond,Ohio State University,proglang,2,2013
+Michael D. Bond,Ohio State University,proglang,1,2014
+Michael D. Bond,Ohio State University,proglang,1,2015
 Michael D. Bond,Ohio State University,arch,1,2005
 Michael D. Bond,Ohio State University,arch,1,2006
 Michael D. Bond,Ohio State University,arch,1,2009
@@ -10083,11 +10083,11 @@ Mary Lou Soffa,University of Virginia,softeng,1,2010
 Mary Lou Soffa,University of Virginia,softeng,1,2011
 Mary Lou Soffa,University of Virginia,arch,2,2011
 Mary Lou Soffa,University of Virginia,arch,1,2013
-Santosh Pande,Georgia Institute of Technology,plflagship,1,2004
-Santosh Pande,Georgia Institute of Technology,plflagship,1,2005
-Santosh Pande,Georgia Institute of Technology,plflagship,2,2011
-Santosh Pande,Georgia Institute of Technology,plflagship,1,2012
-Santosh Pande,Georgia Institute of Technology,plflagship,1,2013
+Santosh Pande,Georgia Institute of Technology,proglang,1,2004
+Santosh Pande,Georgia Institute of Technology,proglang,1,2005
+Santosh Pande,Georgia Institute of Technology,proglang,2,2011
+Santosh Pande,Georgia Institute of Technology,proglang,1,2012
+Santosh Pande,Georgia Institute of Technology,proglang,1,2013
 Santosh Pande,Georgia Institute of Technology,softeng,1,2004
 Santosh Pande,Georgia Institute of Technology,softeng,2,2014
 Santosh Pande,Georgia Institute of Technology,arch,1,2004
@@ -10096,7 +10096,7 @@ Santosh Pande,Georgia Institute of Technology,networks,1,2006
 Jih-Kwon Peir,University of Florida,arch,1,2001
 Jih-Kwon Peir,University of Florida,networks,1,2009
 Jih-Kwon Peir,University of Florida,networks,1,2011
-Alvin R. Lebeck,Duke University,plflagship,1,2001
+Alvin R. Lebeck,Duke University,proglang,1,2001
 Alvin R. Lebeck,Duke University,arch,1,2000
 Alvin R. Lebeck,Duke University,arch,1,2001
 Alvin R. Lebeck,Duke University,arch,1,2002
@@ -10142,7 +10142,7 @@ Prasant Mohapatra,University of California - Davis,web,1,2015
 Dipak Ghosal,University of California - Davis,networks,1,2006
 Dipak Ghosal,University of California - Davis,networks,1,2010
 Dipak Ghosal,University of California - Davis,networks,1,2011
-Arvind,Massachusetts Institute of Technology,plflagship,1,2000
+Arvind,Massachusetts Institute of Technology,proglang,1,2000
 Arvind,Massachusetts Institute of Technology,arch,1,2012
 Arvind,Massachusetts Institute of Technology,arch,1,2015
 Arvind,Massachusetts Institute of Technology,networks,1,2004
@@ -10487,8 +10487,8 @@ Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,1,2016
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,networks,1,2006
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,database,1,2004
-Patrick Eugster,Purdue University,plflagship,1,2009
-Patrick Eugster,Purdue University,plflagship,1,2011
+Patrick Eugster,Purdue University,proglang,1,2009
+Patrick Eugster,Purdue University,proglang,1,2011
 Patrick Eugster,Purdue University,softeng,1,2008
 Patrick Eugster,Purdue University,networks,1,2014
 Patrick Eugster,Purdue University,networks,1,2015
@@ -10509,7 +10509,7 @@ Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,1,2014
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,1,2015
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,3,2016
 Chandra Chekuri,University of Illinois at Urbana-Champaign,networks,1,2009
-Ananth Grama,Purdue University,plflagship,1,2007
+Ananth Grama,Purdue University,proglang,1,2007
 Ananth Grama,Purdue University,softeng,1,2007
 Ananth Grama,Purdue University,networks,1,2003
 Ananth Grama,Purdue University,mlmining,1,2003
@@ -10792,8 +10792,8 @@ André Platzer,Carnegie Mellon University,logic,1,2008
 André Platzer,Carnegie Mellon University,logic,1,2011
 André Platzer,Carnegie Mellon University,logic,2,2012
 André Platzer,Carnegie Mellon University,ai,1,2013
-Ruzica Piskac,Yale University,plflagship,1,2010
-Ruzica Piskac,Yale University,plflagship,1,2013
+Ruzica Piskac,Yale University,proglang,1,2010
+Ruzica Piskac,Yale University,proglang,1,2013
 Ruzica Piskac,Yale University,logic,1,2008
 Ruzica Piskac,Yale University,logic,1,2010
 Ruzica Piskac,Yale University,logic,2,2013
@@ -11556,7 +11556,7 @@ Yiling Chen,Harvard University,ai,3,2012
 Yiling Chen,Harvard University,ai,3,2013
 Yiling Chen,Harvard University,ai,2,2014
 Yiling Chen,Harvard University,ai,3,2015
-Charles Lee Isbell Jr.,Georgia Institute of Technology,plflagship,1,2008
+Charles Lee Isbell Jr.,Georgia Institute of Technology,proglang,1,2008
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1,2001
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1,2004
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1,2006
@@ -12036,10 +12036,10 @@ Jaideep Srivastava,University of Minnesota - Twin Cities,mlmining,1,2013
 Jaideep Srivastava,University of Minnesota - Twin Cities,mlmining,1,2014
 Jaideep Srivastava,University of Minnesota - Twin Cities,ai,1,2010
 Jaideep Srivastava,University of Minnesota - Twin Cities,ai,1,2013
-Jeff Huang,Brown University,plflagship,2,2012
-Jeff Huang,Brown University,plflagship,1,2013
-Jeff Huang,Brown University,plflagship,1,2014
-Jeff Huang,Brown University,plflagship,1,2015
+Jeff Huang,Brown University,proglang,2,2012
+Jeff Huang,Brown University,proglang,1,2013
+Jeff Huang,Brown University,proglang,1,2014
+Jeff Huang,Brown University,proglang,1,2015
 Jeff Huang,Brown University,softeng,2,2010
 Jeff Huang,Brown University,softeng,2,2015
 Jeff Huang,Brown University,ai,1,2010
@@ -12133,7 +12133,7 @@ Peter K. Allen,Columbia University,vision,1,2001
 Alexander J. Hartemink,Duke University,mlmining,1,2004
 Alexander J. Hartemink,Duke University,mlmining,1,2008
 Alexander J. Hartemink,Duke University,ai,1,2016
-Seth Copen Goldstein,Carnegie Mellon University,plflagship,1,2006
+Seth Copen Goldstein,Carnegie Mellon University,proglang,1,2006
 Seth Copen Goldstein,Carnegie Mellon University,arch,1,2001
 Seth Copen Goldstein,Carnegie Mellon University,arch,1,2004
 Seth Copen Goldstein,Carnegie Mellon University,arch,1,2006
@@ -12160,7 +12160,7 @@ Andrea Lockerd Thomaz,Georgia Institute of Technology,ai,2,2011
 Andrea Lockerd Thomaz,Georgia Institute of Technology,ai,1,2012
 Andrea Lockerd Thomaz,Georgia Institute of Technology,ai,1,2013
 Andrea Lockerd Thomaz,Georgia Institute of Technology,ai,1,2015
-Gerald DeJong,University of Illinois at Urbana-Champaign,plflagship,1,2003
+Gerald DeJong,University of Illinois at Urbana-Champaign,proglang,1,2003
 Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1,2000
 Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1,2002
 Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1,2003
@@ -12426,7 +12426,7 @@ Munmun De Choudhury,Georgia Institute of Technology,web,2,2010
 Munmun De Choudhury,Georgia Institute of Technology,hci,1,2012
 Munmun De Choudhury,Georgia Institute of Technology,hci,1,2013
 Munmun De Choudhury,Georgia Institute of Technology,hci,2,2014
-Alan Borning,University of Washington,plflagship,1,2015
+Alan Borning,University of Washington,proglang,1,2015
 Alan Borning,University of Washington,web,1,2001
 Alan Borning,University of Washington,hci,2,2010
 Alan Borning,University of Washington,hci,1,2011
@@ -12566,7 +12566,7 @@ Jason D. Hartline,Northwestern University,web,1,2008
 Jason D. Hartline,Northwestern University,web,1,2016
 Alessandro Vespignani,Northeastern University,mlmining,1,2005
 Alessandro Vespignani,Northeastern University,web,2,2005
-Kunal Agrawal,Washington University - St. Louis,plflagship,1,2015
+Kunal Agrawal,Washington University - St. Louis,proglang,1,2015
 Kunal Agrawal,Washington University - St. Louis,theory,1,2016
 Kunal Agrawal,Washington University - St. Louis,mlmining,1,2014
 Kunal Agrawal,Washington University - St. Louis,web,1,2011
@@ -12579,7 +12579,7 @@ Chengxiang Zhai,University of Illinois at Urbana-Champaign,web,1,2015
 Kathleen M. Carley,Carnegie Mellon University,softeng,1,2011
 Kathleen M. Carley,Carnegie Mellon University,ai,2,2007
 Kathleen M. Carley,Carnegie Mellon University,web,1,2016
-James D. Herbsleb,Carnegie Mellon University,plflagship,1,2007
+James D. Herbsleb,Carnegie Mellon University,proglang,1,2007
 James D. Herbsleb,Carnegie Mellon University,softeng,1,2000
 James D. Herbsleb,Carnegie Mellon University,softeng,1,2001
 James D. Herbsleb,Carnegie Mellon University,softeng,1,2002
@@ -12636,7 +12636,7 @@ Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2010
 Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2012
 Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2013
 Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2014
-Henry Hoffmann,University of Chicago,plflagship,1,2010
+Henry Hoffmann,University of Chicago,proglang,1,2010
 Henry Hoffmann,University of Chicago,softeng,1,2011
 Henry Hoffmann,University of Chicago,softeng,1,2014
 Henry Hoffmann,University of Chicago,softeng,1,2015
@@ -12646,7 +12646,7 @@ Henry Hoffmann,University of Chicago,arch,1,2004
 Henry Hoffmann,University of Chicago,arch,1,2011
 Henry Hoffmann,University of Chicago,arch,1,2015
 Henry Hoffmann,University of Chicago,arch,1,2016
-Anant Agarwal,Massachusetts Institute of Technology,plflagship,1,2005
+Anant Agarwal,Massachusetts Institute of Technology,proglang,1,2005
 Anant Agarwal,Massachusetts Institute of Technology,arch,1,2004
 Anant Agarwal,Massachusetts Institute of Technology,arch,1,2006
 Anant Agarwal,Massachusetts Institute of Technology,arch,1,2011
@@ -12656,7 +12656,7 @@ Ryan Kastner,University of California - San Diego,arch,1,2011
 Ryan Kastner,University of California - San Diego,arch,1,2013
 Ryan Kastner,University of California - San Diego,arch,1,2014
 Ryan Kastner,University of California - San Diego,security,1,2007
-Lawrence Rauchwerger,Texas A&M University,plflagship,1,2012
+Lawrence Rauchwerger,Texas A&M University,proglang,1,2012
 Lawrence Rauchwerger,Texas A&M University,softeng,1,2015
 Lawrence Rauchwerger,Texas A&M University,arch,1,2001
 Hasan Davulcu,Arizona State University,mlmining,1,2014
@@ -13198,11 +13198,11 @@ Wim van Dam,University of California - Santa Barbara,theory,1,2003
 Wim van Dam,University of California - Santa Barbara,theory,1,2004
 Wim van Dam,University of California - Santa Barbara,theory,1,2005
 Wim van Dam,University of California - Santa Barbara,theory,1,2007
-John Regehr,University of Utah,plflagship,1,2007
-John Regehr,University of Utah,plflagship,1,2011
-John Regehr,University of Utah,plflagship,1,2012
-John Regehr,University of Utah,plflagship,1,2013
-John Regehr,University of Utah,plflagship,1,2015
+John Regehr,University of Utah,proglang,1,2007
+John Regehr,University of Utah,proglang,1,2011
+John Regehr,University of Utah,proglang,1,2012
+John Regehr,University of Utah,proglang,1,2013
+John Regehr,University of Utah,proglang,1,2015
 John Regehr,University of Utah,softeng,1,2002
 John Regehr,University of Utah,softeng,1,2012
 John Regehr,University of Utah,opsys,1,2009
@@ -13354,12 +13354,12 @@ Aniket Kittur,Carnegie Mellon University,hci,5,2011
 Aniket Kittur,Carnegie Mellon University,hci,2,2012
 Aniket Kittur,Carnegie Mellon University,hci,2,2013
 Aniket Kittur,Carnegie Mellon University,hci,5,2014
-David A. Padua,University of Illinois at Urbana-Champaign,plflagship,1,2000
-David A. Padua,University of Illinois at Urbana-Champaign,plflagship,1,2001
-David A. Padua,University of Illinois at Urbana-Champaign,plflagship,1,2002
-David A. Padua,University of Illinois at Urbana-Champaign,plflagship,1,2003
-David A. Padua,University of Illinois at Urbana-Champaign,plflagship,1,2006
-David A. Padua,University of Illinois at Urbana-Champaign,plflagship,1,2015
+David A. Padua,University of Illinois at Urbana-Champaign,proglang,1,2000
+David A. Padua,University of Illinois at Urbana-Champaign,proglang,1,2001
+David A. Padua,University of Illinois at Urbana-Champaign,proglang,1,2002
+David A. Padua,University of Illinois at Urbana-Champaign,proglang,1,2003
+David A. Padua,University of Illinois at Urbana-Champaign,proglang,1,2006
+David A. Padua,University of Illinois at Urbana-Champaign,proglang,1,2015
 David A. Padua,University of Illinois at Urbana-Champaign,mlmining,1,2005
 Anand Rangarajan,University of Florida,networks,1,2005
 Anand Rangarajan,University of Florida,mlmining,2,2001
@@ -13681,9 +13681,9 @@ William G. Griswold,University of California - San Diego,hci,1,2015
 Amy Ogan,Carnegie Mellon University,hci,1,2008
 Amy Ogan,Carnegie Mellon University,hci,2,2012
 Amy Ogan,Carnegie Mellon University,hci,1,2013
-Daniel Jackson,Massachusetts Institute of Technology,plflagship,1,2002
-Daniel Jackson,Massachusetts Institute of Technology,plflagship,1,2005
-Daniel Jackson,Massachusetts Institute of Technology,plflagship,1,2015
+Daniel Jackson,Massachusetts Institute of Technology,proglang,1,2002
+Daniel Jackson,Massachusetts Institute of Technology,proglang,1,2005
+Daniel Jackson,Massachusetts Institute of Technology,proglang,1,2015
 Daniel Jackson,Massachusetts Institute of Technology,softeng,3,2000
 Daniel Jackson,Massachusetts Institute of Technology,softeng,1,2004
 Daniel Jackson,Massachusetts Institute of Technology,softeng,1,2005
@@ -13696,7 +13696,7 @@ Daniel Jackson,Massachusetts Institute of Technology,hci,2,2012
 Daniel Jackson,Massachusetts Institute of Technology,hci,2,2013
 Daniel Jackson,Massachusetts Institute of Technology,hci,1,2014
 Daniel Jackson,Massachusetts Institute of Technology,hci,1,2015
-William L. Scherlis,Carnegie Mellon University,plflagship,1,2006
+William L. Scherlis,Carnegie Mellon University,proglang,1,2006
 William L. Scherlis,Carnegie Mellon University,softeng,1,2002
 William L. Scherlis,Carnegie Mellon University,hci,1,2000
 Jon Froehlich,University of Maryland - College Park,softeng,1,2004
@@ -14111,31 +14111,31 @@ Gérard G. Medioni,University of Southern California,vision,3,2009
 Gérard G. Medioni,University of Southern California,vision,1,2010
 Gérard G. Medioni,University of Southern California,vision,5,2011
 Gérard G. Medioni,University of Southern California,vision,2,2014
-Atanas Rountev,Ohio State University,plflagship,1,2000
-Atanas Rountev,Ohio State University,plflagship,1,2001
-Atanas Rountev,Ohio State University,plflagship,1,2007
-Atanas Rountev,Ohio State University,plflagship,1,2009
-Atanas Rountev,Ohio State University,plflagship,2,2010
-Atanas Rountev,Ohio State University,plflagship,1,2011
-Atanas Rountev,Ohio State University,plflagship,1,2012
+Atanas Rountev,Ohio State University,proglang,1,2000
+Atanas Rountev,Ohio State University,proglang,1,2001
+Atanas Rountev,Ohio State University,proglang,1,2007
+Atanas Rountev,Ohio State University,proglang,1,2009
+Atanas Rountev,Ohio State University,proglang,2,2010
+Atanas Rountev,Ohio State University,proglang,1,2011
+Atanas Rountev,Ohio State University,proglang,1,2012
 Atanas Rountev,Ohio State University,softeng,1,2003
 Atanas Rountev,Ohio State University,softeng,1,2005
 Atanas Rountev,Ohio State University,softeng,2,2007
 Atanas Rountev,Ohio State University,softeng,1,2008
 Atanas Rountev,Ohio State University,softeng,1,2012
-Antony L. Hosking,Purdue University,plflagship,1,2005
-Antony L. Hosking,Purdue University,plflagship,1,2006
-Antony L. Hosking,Purdue University,plflagship,1,2010
-Antony L. Hosking,Purdue University,plflagship,1,2015
+Antony L. Hosking,Purdue University,proglang,1,2005
+Antony L. Hosking,Purdue University,proglang,1,2006
+Antony L. Hosking,Purdue University,proglang,1,2010
+Antony L. Hosking,Purdue University,proglang,1,2015
 Antony L. Hosking,Purdue University,arch,1,2004
-Chandra Krintz,University of California - Santa Barbara,plflagship,1,2001
-Chandra Krintz,University of California - Santa Barbara,plflagship,1,2008
-Chandra Krintz,University of California - Santa Barbara,plflagship,1,2010
+Chandra Krintz,University of California - Santa Barbara,proglang,1,2001
+Chandra Krintz,University of California - Santa Barbara,proglang,1,2008
+Chandra Krintz,University of California - Santa Barbara,proglang,1,2010
 Chandra Krintz,University of California - Santa Barbara,arch,1,2008
 Chandra Krintz,University of California - Santa Barbara,arch,1,2009
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,plflagship,2,2001
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,plflagship,1,2002
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,plflagship,1,2004
+Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,2,2001
+Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1,2002
+Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1,2004
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2003
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2005
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2006
@@ -14143,17 +14143,17 @@ Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,2,2
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2008
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,3,2009
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2010
-Eli Tilevich,Virginia Polytechnic Institute and State University,plflagship,1,2008
-Eli Tilevich,Virginia Polytechnic Institute and State University,plflagship,1,2009
-Eli Tilevich,Virginia Polytechnic Institute and State University,plflagship,1,2010
+Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1,2008
+Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1,2009
+Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1,2010
 Eli Tilevich,Virginia Polytechnic Institute and State University,softeng,1,2005
 Eli Tilevich,Virginia Polytechnic Institute and State University,softeng,2,2012
-Ana Milanova,Rensselaer Polytechnic Institute,plflagship,1,2001
-Ana Milanova,Rensselaer Polytechnic Institute,plflagship,1,2012
+Ana Milanova,Rensselaer Polytechnic Institute,proglang,1,2001
+Ana Milanova,Rensselaer Polytechnic Institute,proglang,1,2012
 Ana Milanova,Rensselaer Polytechnic Institute,softeng,1,2003
 Ana Milanova,Rensselaer Polytechnic Institute,softeng,1,2007
 Ana Milanova,Rensselaer Polytechnic Institute,softeng,2,2012
-Yuriy Brun,University of Massachusetts - Amherst,plflagship,1,2012
+Yuriy Brun,University of Massachusetts - Amherst,proglang,1,2012
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1,2004
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1,2009
 Yuriy Brun,University of Massachusetts - Amherst,softeng,4,2011
@@ -14161,21 +14161,21 @@ Yuriy Brun,University of Massachusetts - Amherst,softeng,1,2012
 Yuriy Brun,University of Massachusetts - Amherst,softeng,3,2013
 Yuriy Brun,University of Massachusetts - Amherst,softeng,3,2014
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1,2015
-Robert Cartwright,Rice University,plflagship,1,2003
-Robert Cartwright,Rice University,plflagship,1,2007
-Robert Cartwright,Rice University,plflagship,1,2008
-Jaakko Järvi,Texas A&M University,plflagship,1,2003
-Jaakko Järvi,Texas A&M University,plflagship,1,2005
-Jaakko Järvi,Texas A&M University,plflagship,1,2006
-Saurabh Sinha,University of Illinois at Urbana-Champaign,plflagship,1,2001
-Saurabh Sinha,University of Illinois at Urbana-Champaign,plflagship,1,2009
+Robert Cartwright,Rice University,proglang,1,2003
+Robert Cartwright,Rice University,proglang,1,2007
+Robert Cartwright,Rice University,proglang,1,2008
+Jaakko Järvi,Texas A&M University,proglang,1,2003
+Jaakko Järvi,Texas A&M University,proglang,1,2005
+Jaakko Järvi,Texas A&M University,proglang,1,2006
+Saurabh Sinha,University of Illinois at Urbana-Champaign,proglang,1,2001
+Saurabh Sinha,University of Illinois at Urbana-Champaign,proglang,1,2009
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1,2004
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1,2006
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1,2009
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,3,2012
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1,2013
-Christian Kästner,Carnegie Mellon University,plflagship,2,2011
-Christian Kästner,Carnegie Mellon University,plflagship,1,2012
+Christian Kästner,Carnegie Mellon University,proglang,2,2011
+Christian Kästner,Carnegie Mellon University,proglang,1,2012
 Christian Kästner,Carnegie Mellon University,softeng,1,2008
 Christian Kästner,Carnegie Mellon University,softeng,3,2009
 Christian Kästner,Carnegie Mellon University,softeng,3,2011
@@ -14183,14 +14183,14 @@ Christian Kästner,Carnegie Mellon University,softeng,2,2012
 Christian Kästner,Carnegie Mellon University,softeng,1,2013
 Christian Kästner,Carnegie Mellon University,softeng,5,2014
 Christian Kästner,Carnegie Mellon University,softeng,3,2015
-James A. Jones,University of California - Irvine,plflagship,1,2001
+James A. Jones,University of California - Irvine,proglang,1,2001
 James A. Jones,University of California - Irvine,softeng,1,2002
 James A. Jones,University of California - Irvine,softeng,2,2004
 James A. Jones,University of California - Irvine,softeng,1,2008
 James A. Jones,University of California - Irvine,softeng,1,2009
 James A. Jones,University of California - Irvine,softeng,4,2012
 James A. Jones,University of California - Irvine,softeng,1,2015
-Alessandro Orso,Georgia Institute of Technology,plflagship,1,2001
+Alessandro Orso,Georgia Institute of Technology,proglang,1,2001
 Alessandro Orso,Georgia Institute of Technology,softeng,1,2003
 Alessandro Orso,Georgia Institute of Technology,softeng,5,2004
 Alessandro Orso,Georgia Institute of Technology,softeng,2,2005
@@ -14204,7 +14204,7 @@ Alessandro Orso,Georgia Institute of Technology,softeng,3,2012
 Alessandro Orso,Georgia Institute of Technology,softeng,1,2013
 Alessandro Orso,Georgia Institute of Technology,softeng,1,2014
 Alessandro Orso,Georgia Institute of Technology,softeng,1,2015
-David Garlan,Carnegie Mellon University,plflagship,1,2006
+David Garlan,Carnegie Mellon University,proglang,1,2006
 David Garlan,Carnegie Mellon University,softeng,2,2003
 David Garlan,Carnegie Mellon University,softeng,3,2004
 David Garlan,Carnegie Mellon University,softeng,3,2005

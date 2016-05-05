@@ -10,7 +10,7 @@ import operator
 
 weights = {}
 form = cgi.FieldStorage()
-weights['plflagship'] = float(form.getvalue('plflagship'))
+weights['proglang'] = float(form.getvalue('proglang'))
 weights['logic'] = float(form.getvalue('logic'))
 weights['softeng'] = float(form.getvalue('softeng'))
 weights['opsys'] = float(form.getvalue('opsys'))
@@ -41,6 +41,7 @@ univagg = {} # (university, total number of papers)
 univmax = {} # (university, max number of papers)
 univwww = {} # (university, web page)
 authagg = {} # (author, number of papers) -- used to compute max papers from university per area
+univper = {} # (university, total papers divided by group size)
 
 # Read in URLs to populate univwww
 with open('universities.csv', mode='r') as infile:
@@ -70,4 +71,5 @@ with open('intauthors-all.csv', mode='r') as infile:
                 authcounts[aname] = authcounts.get(aname,0) + count
                 if (authcounts[aname] >= 3 and not visited.has_key(aname)):
                     univcounts[uname] = univcounts.get(uname, 0) + 1
+                    univper[uname] = univagg[uname] / univcounts[uname]
                     visited[aname] = True

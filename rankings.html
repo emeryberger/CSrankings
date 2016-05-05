@@ -35,8 +35,6 @@ a:active {
 </style>
 </head>
 
-
-
 <body>
 <h1></h1>
 <style type="text/css">
@@ -119,7 +117,7 @@ Programming languages
 </td>
 <!-- sync with slider max value -->
 <td>
-<input type="hidden" name="plflagship" id="field_1" value="4.0">
+<input type="hidden" name="proglang" id="field_1" value="4.0">
 <div id="rank_slider_1" class="slider">
 <div class="handle"></div>
 </td>
@@ -266,22 +264,25 @@ The web and information retrieval
 </td>
 <td>
 <input type="hidden" name="web" id="field_14" value="4.0">
+<!-- note: moved below from HCI for now -->
+<input type="hidden" name="hci" id="field_16" value="0.0">
 <div id="rank_slider_14" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
 
+<!--
 <tr>
 <td> 
 Human-computer interaction
 <small><em>CHI, UIST</em></small>
 </td>
 <td>
-  <input type="hidden" name="hci" id="field_16" value="4.0">
 <div id="rank_slider_16" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
+-->
 
 <tr>
 <td> 
@@ -289,8 +290,8 @@ Computer vision
 <small><em>CVPR, ICCV</em></small>
 </td>
 <td>
-  <input type="hidden" name="vision" id="field_17" value="4.0">
-<div id="rank_slider_17" class="slider">
+  <input type="hidden" name="vision" id="field_16" value="4.0">
+<div id="rank_slider_16" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -321,10 +322,11 @@ Logic in computing
 
 </table>
 <br>
-<input type="button" name="button1" id="button1" value="Rank by group size"
-onclick="rank1()">
-<input type="button" name="button2" id="button2" value="Rank by aggregate output" onclick="rank2()">
-<input type="button" name="button3" id="button3" value="Rank by maximal output" onclick="rank3()">
+<!-- <input type="button" name="button1" id="button1" value="Rank by group size"
+onclick="rank1()"> -->
+<input type="button" name="button2" id="button2" value="Recalculate" onclick="rank2()">
+<!-- <input type="button" name="button2" id="button2" value="Rank by aggregate output" onclick="rank2()"> -->
+<!-- <input type="button" name="button3" id="button3" value="Rank by maximal output" onclick="rank3()"> -->
 </form>
 </td>
 <td align=top>
@@ -339,12 +341,13 @@ onclick="rank1()">
 src="https://script.aculo.us/scriptaculous.js"></script>
 
 <script>
+window.onload=rank2;
 form=document.getElementById("rankform");
 
 function rank1() {
    var formdata = form.serialize(); // Serialize all form data
 
-  jQuery.get("cgi-bin/rankings-1.cgi", formdata, function( data ) {
+  jQuery.get("cgi-bin/rankings-groupsize.cgi", formdata, function( data ) {
      // console.log(data);
      jQuery("#success").html(data);
      }
@@ -355,7 +358,7 @@ function rank1() {
 function rank2() {
    var formdata = form.serialize(); // Serialize all form data
 
-   jQuery.get("cgi-bin/rankings-2.cgi", formdata, function( data ) {
+   jQuery.get("cgi-bin/rankings-output.cgi", formdata, function( data ) {
    // console.log(data);
    jQuery("#success").html(data);
      }
@@ -366,7 +369,7 @@ function rank2() {
 function rank3() {
     var formdata = form.serialize(); // Serialize all form data
 
-    jQuery.get("cgi-bin/rankings-3.cgi", formdata, function( data ) {
+    jQuery.get("cgi-bin/rankings-per.cgi", formdata, function( data ) {
        // console.log(data);
        jQuery("#success").html(data);
        }

@@ -15,7 +15,7 @@ parser.entity = CustomEntity()
 #conflist = ['STOC', 'FOCS', 'SODA', 'Symposium on Computational Geometry']
 #conflist = ['POPL', 'PLDI']
 
-plflagship = ['POPL', 'PLDI','OOPSLA']
+proglang = ['POPL', 'PLDI','OOPSLA']
 logic = ['CAV', 'LICS']
 softeng = ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE']
 opsys = ['SOSP', 'OSDI']
@@ -33,18 +33,18 @@ hci = ['CHI','UIST']
 nlp = ['EMNLP','ACL','NAACL']
 vision = ['CVPR','ICCV']
 
-plrelated = plflagship + logic + softeng
+plrelated = proglang + logic + softeng
 allconf = plrelated + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision
 startyear = 2000
 endyear = 2016
 
 
-arealist = ['plflagship','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision']
+arealist = ['proglang','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision']
 
 
 def conf2area(confname):
-    if (confname in plflagship):
-        return 'plflagship'
+    if (confname in proglang):
+        return 'proglang'
     if (confname in logic):
         return 'logic'
     if (confname in softeng):
