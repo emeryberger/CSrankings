@@ -11,7 +11,6 @@ import operator
 weights = {}
 form = cgi.FieldStorage()
 weights['plflagship'] = float(form.getvalue('plflagship'))
-# weights['plothers'] = float(form.getvalue('plothers'))
 weights['logic'] = float(form.getvalue('logic'))
 weights['softeng'] = float(form.getvalue('softeng'))
 weights['opsys'] = float(form.getvalue('opsys'))
@@ -38,11 +37,12 @@ endyear = int(form.getvalue('endyear'))
 univcounts = {}
 authcounts = {}
 visited = {}
-univagg = {}
-univwww = {} # web page for each CS department / college
-univmax = {}
-authagg = {}
+univagg = {} # (university, total number of papers)
+univmax = {} # (university, max number of papers)
+univwww = {} # (university, web page)
+authagg = {} # (author, number of papers) -- used to compute max papers from university per area
 
+# Read in URLs to populate univwww
 with open('universities.csv', mode='r') as infile:
     reader = csv.reader(infile)
     for rows in reader:
@@ -52,6 +52,7 @@ with open('universities.csv', mode='r') as infile:
         www = rows[1]
         univwww[encoded] = www
 
+# Read in all authors (author, university, area, # of pubs, year)
 with open('intauthors-all.csv', mode='r') as infile:
     reader = csv.reader(infile)
     for rows in reader:
@@ -60,12 +61,13 @@ with open('intauthors-all.csv', mode='r') as infile:
         area = rows[2]
         count = float(rows[3])
         year = int(rows[4])
+        # Only include papers in the specified range [startyear, endyear]
         if (year >= startyear and year <= endyear): 
             univagg[uname] = univagg.get(uname, 0) + weights.get(area) * count
             authagg[aname] = authagg.get(aname, 0) + weights.get(area) * count
             univmax[uname] = max(univmax.get(uname, 0), authagg[aname])
-        if (year >= startyear and year <= endyear and weights.get(area) >= 0.01):
-            authcounts[aname] = authcounts.get(aname,0) + count
-            if (authcounts[aname] >= 3 and not visited.has_key(aname)):
-                univcounts[uname] = univcounts.get(uname, 0) + 1
-                visited[aname] = True
+            if (weights.get(area) >= 0.01):
+                authcounts[aname] = authcounts.get(aname,0) + count
+                if (authcounts[aname] >= 3 and not visited.has_key(aname)):
+                    univcounts[uname] = univcounts.get(uname, 0) + 1
+                    visited[aname] = True
