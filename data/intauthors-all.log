@@ -279,6 +279,7 @@ David P. Dobkin,Princeton University,graphics,1,2002
 David P. Dobkin,Princeton University,graphics,1,2003
 David P. Dobkin,Princeton University,graphics,1,2004
 David P. Dobkin,Princeton University,graphics,1,2008
+Michael Neff,University of California - Davis,graphics,1,2008
 Kavita Bala,Cornell University,proglang,1,2007
 Kavita Bala,Cornell University,opsys,1,2008
 Kavita Bala,Cornell University,graphics,1,2001
@@ -503,6 +504,8 @@ Wojciech Matusik,Massachusetts Institute of Technology,vision,2,2007
 Wojciech Matusik,Massachusetts Institute of Technology,vision,1,2008
 Wojciech Matusik,Massachusetts Institute of Technology,vision,1,2009
 Wojciech Matusik,Massachusetts Institute of Technology,vision,1,2012
+Corey Toler-Franklin,University of Florida,graphics,1,2008
+Corey Toler-Franklin,University of Florida,graphics,1,2010
 Peter N. Belhumeur,Columbia University,networks,1,2004
 Peter N. Belhumeur,Columbia University,ai,1,2016
 Peter N. Belhumeur,Columbia University,graphics,1,2004
@@ -692,6 +695,8 @@ Etienne Vouga,University of Texas - Austin,graphics,1,2010
 Etienne Vouga,University of Texas - Austin,graphics,3,2012
 Etienne Vouga,University of Texas - Austin,graphics,2,2013
 Etienne Vouga,University of Texas - Austin,graphics,1,2015
+Anil N. Hirani,University of Illinois at Urbana-Champaign,theory,1,2010
+Anil N. Hirani,University of Illinois at Urbana-Champaign,graphics,1,2003
 Hanan Samet,University of Maryland - College Park,database,1,2003
 Hanan Samet,University of Maryland - College Park,database,1,2004
 Hanan Samet,University of Maryland - College Park,database,1,2008
@@ -1012,6 +1017,7 @@ Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1,2013
 Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1,2014
 Henry Fuchs,University of North Carolina - Chapel Hill,vision,3,2007
 Henry Fuchs,University of North Carolina - Chapel Hill,vision,1,2015
+Rick Stevens,University of Chicago,graphics,1,2005
 Jernej Barbic,University of Southern California,graphics,1,2005
 Jernej Barbic,University of Southern California,graphics,1,2006
 Jernej Barbic,University of Southern California,graphics,1,2008
@@ -1068,6 +1074,8 @@ James Hays,Brown University,vision,1,2010
 James Hays,Brown University,vision,1,2012
 James Hays,Brown University,vision,2,2013
 James Hays,Brown University,vision,1,2015
+Benjamin Lok,University of Florida,graphics,1,2003
+Benjamin Lok,University of Florida,hci,1,2007
 Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,2,2002
 Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1,2003
 David A. Forsyth,University of Illinois at Urbana-Champaign,mlmining,1,2003
@@ -1143,6 +1151,7 @@ Julie Dorsey,Yale University,graphics,3,2011
 Julie Dorsey,Yale University,graphics,2,2012
 Julie Dorsey,Yale University,graphics,1,2013
 Julie Dorsey,Yale University,hci,1,2014
+Klaus Mueller,State University of New York - Stony Brook,graphics,2,2002
 Mark Horowitz,Stanford University,opsys,1,2000
 Mark Horowitz,Stanford University,opsys,1,2003
 Mark Horowitz,Stanford University,arch,1,2000
@@ -1210,6 +1219,7 @@ Tao Yang,University of California - Santa Barbara,vision,1,2011
 Ron Alterovitz,University of North Carolina - Chapel Hill,ai,1,2012
 Ron Alterovitz,University of North Carolina - Chapel Hill,graphics,1,2009
 Ron Alterovitz,University of North Carolina - Chapel Hill,vision,1,2011
+Kris K. Hauser,Indiana University,graphics,1,2009
 Steven J. Gortler,Harvard University,networks,1,2009
 Steven J. Gortler,Harvard University,graphics,2,2000
 Steven J. Gortler,Harvard University,graphics,3,2001
@@ -1306,6 +1316,7 @@ John Anderson,Carnegie Mellon University,graphics,1,2006
 John Anderson,Carnegie Mellon University,graphics,1,2007
 John Anderson,Carnegie Mellon University,graphics,1,2008
 John Anderson,Carnegie Mellon University,graphics,1,2012
+Barbara Cutler,Rensselaer Polytechnic Institute,graphics,2,2002
 Leonard McMillan,University of North Carolina - Chapel Hill,mlmining,1,2006
 Leonard McMillan,University of North Carolina - Chapel Hill,database,1,2005
 Leonard McMillan,University of North Carolina - Chapel Hill,graphics,2,2000
@@ -1341,6 +1352,7 @@ Seth J. Teller,Massachusetts Institute of Technology,graphics,1,2004
 Seth J. Teller,Massachusetts Institute of Technology,vision,1,2000
 Seth J. Teller,Massachusetts Institute of Technology,vision,1,2007
 Seth J. Teller,Massachusetts Institute of Technology,vision,1,2009
+Kenneth I. Joy,University of California - Davis,graphics,1,2005
 Eakta Jain,University of Florida,mlmining,1,2012
 Eakta Jain,University of Florida,graphics,1,2012
 Eakta Jain,University of Florida,graphics,1,2015
@@ -1355,6 +1367,8 @@ Stanley Osher,University of California - Los Angeles,graphics,1,2003
 Stanley Osher,University of California - Los Angeles,graphics,1,2011
 Stanley Osher,University of California - Los Angeles,vision,2,2007
 Stanley Osher,University of California - Los Angeles,vision,2,2011
+Elaine Cohen,University of Utah,graphics,1,2008
+Elaine Cohen,University of Utah,graphics,1,2014
 Blair MacIntyre,Georgia Institute of Technology,graphics,1,2005
 Blair MacIntyre,Georgia Institute of Technology,hci,1,2001
 Blair MacIntyre,Georgia Institute of Technology,hci,1,2004
@@ -1383,6 +1397,8 @@ Westley Weimer,University of Virginia,opsys,1,2014
 Westley Weimer,University of Virginia,opsys,1,2016
 Westley Weimer,University of Virginia,graphics,1,2011
 Westley Weimer,University of Virginia,graphics,1,2014
+Brian A. Barsky,University of California - Berkeley,graphics,1,2012
+Brian A. Barsky,University of California - Berkeley,graphics,1,2014
 Emanuel Todorov,University of Washington,mlmining,1,2002
 Emanuel Todorov,University of Washington,mlmining,1,2006
 Emanuel Todorov,University of Washington,mlmining,1,2009
@@ -1442,12 +1458,17 @@ Tolga Tasdizen,University of Utah,vision,1,2013
 Glenn Reinman,University of California - Los Angeles,arch,2,2007
 Glenn Reinman,University of California - Los Angeles,arch,1,2008
 Glenn Reinman,University of California - Los Angeles,graphics,1,2009
+Alan H. Barr,California Institute of Technology,graphics,2,2002
+Ergun Akleman,Texas A&M University,graphics,1,2003
+Ergun Akleman,Texas A&M University,graphics,1,2009
 Jianer Chen,Texas A&M University,theory,1,2004
 Jianer Chen,Texas A&M University,theory,1,2008
 Jianer Chen,Texas A&M University,networks,2,2007
 Jianer Chen,Texas A&M University,networks,1,2008
 Jianer Chen,Texas A&M University,networks,1,2010
 Jianer Chen,Texas A&M University,graphics,1,2009
+Jonathan L. Gross,Columbia University,graphics,1,2009
+Meera Sitharam,University of Florida,graphics,1,2006
 Irfan A. Essa,Georgia Institute of Technology,mlmining,1,2000
 Irfan A. Essa,Georgia Institute of Technology,mlmining,1,2013
 Irfan A. Essa,Georgia Institute of Technology,ai,2,2007
@@ -1466,6 +1487,9 @@ Irfan A. Essa,Georgia Institute of Technology,vision,2,2011
 Irfan A. Essa,Georgia Institute of Technology,vision,1,2012
 Irfan A. Essa,Georgia Institute of Technology,vision,3,2013
 Irfan A. Essa,Georgia Institute of Technology,vision,1,2014
+Yong Cao,Virginia Polytechnic Institute and State University,ai,1,2014
+Yong Cao,Virginia Polytechnic Institute and State University,graphics,1,2005
+Stephen Ward,Massachusetts Institute of Technology,graphics,1,2014
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1,2005
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1,2010
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1,2011
@@ -2997,6 +3021,8 @@ Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database
 Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database,2,2003
 Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database,1,2005
 Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database,1,2010
+Ken Goldberg,University of California - Berkeley,database,1,2014
+Ken Goldberg,University of California - Berkeley,database,1,2015
 Alexandros Labrinidis,University of Pittsburgh,database,1,2000
 Alexandros Labrinidis,University of Pittsburgh,database,1,2001
 Alexandros Labrinidis,University of Pittsburgh,database,1,2003
@@ -3025,6 +3051,8 @@ Ting Yu,North Carolina State University,vision,2,2007
 Ting Yu,North Carolina State University,vision,2,2008
 Ting Yu,North Carolina State University,vision,1,2009
 Ting Yu,North Carolina State University,vision,1,2012
+Edward D. Lazowska,University of Washington,database,1,2011
+Edward D. Lazowska,University of Washington,web,1,2006
 Karsten Schwan,Georgia Institute of Technology,opsys,1,2007
 Karsten Schwan,Georgia Institute of Technology,opsys,1,2012
 Karsten Schwan,Georgia Institute of Technology,opsys,1,2016
@@ -3129,6 +3157,7 @@ Ben Y. Zhao,University of California - Santa Barbara,web,1,2010
 Ben Y. Zhao,University of California - Santa Barbara,web,1,2012
 Ben Y. Zhao,University of California - Santa Barbara,web,1,2013
 Ben Y. Zhao,University of California - Santa Barbara,web,1,2015
+Richard Anderson,University of Washington,database,1,2013
 Panos K. Chrysanthis,University of Pittsburgh,database,1,2006
 Panos K. Chrysanthis,University of Pittsburgh,database,1,2008
 Panos K. Chrysanthis,University of Pittsburgh,database,1,2009
@@ -3440,6 +3469,7 @@ Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,database,1,
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,database,1,2015
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,web,1,2003
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,vision,3,2015
+Stacy Patterson,Rensselaer Polytechnic Institute,database,1,2012
 Todd D. Millstein,University of California - Los Angeles,proglang,1,2000
 Todd D. Millstein,University of California - Los Angeles,proglang,1,2001
 Todd D. Millstein,University of California - Los Angeles,proglang,2,2003
@@ -3467,6 +3497,8 @@ Sofya Raskhodnikova,Pennsylvania State University,theory,1,2008
 Sofya Raskhodnikova,Pennsylvania State University,theory,1,2011
 Sofya Raskhodnikova,Pennsylvania State University,theory,1,2014
 Sofya Raskhodnikova,Pennsylvania State University,database,1,2011
+Goce Trajcevski,Northwestern University,database,1,2006
+Goce Trajcevski,Northwestern University,database,1,2008
 Peter Scheuermann,Northwestern University,mlmining,1,2002
 Peter Scheuermann,Northwestern University,mlmining,1,2003
 Peter Scheuermann,Northwestern University,database,1,2006
@@ -4121,6 +4153,8 @@ Yiming Yang,Carnegie Mellon University,web,1,2007
 Yiming Yang,Carnegie Mellon University,web,1,2008
 Yiming Yang,Carnegie Mellon University,web,1,2010
 Yiming Yang,Carnegie Mellon University,nlp,1,2003
+Christopher Dyer,Carnegie Mellon University,nlp,1,2008
+Christopher Dyer,Carnegie Mellon University,nlp,1,2010
 Andrew Y. Ng,Stanford University,opsys,1,2006
 Andrew Y. Ng,Stanford University,mlmining,1,2000
 Andrew Y. Ng,Stanford University,mlmining,4,2001
@@ -4152,6 +4186,7 @@ Andrew Y. Ng,Stanford University,nlp,2,2011
 Andrew Y. Ng,Stanford University,vision,2,2007
 Andrew Y. Ng,Stanford University,vision,1,2010
 Andrew Y. Ng,Stanford University,vision,1,2011
+Kristy Elizabeth Boyer,North Carolina State University,nlp,1,2011
 James C. Lester,North Carolina State University,ai,1,2001
 James C. Lester,North Carolina State University,ai,1,2006
 James C. Lester,North Carolina State University,ai,1,2012
@@ -4351,6 +4386,8 @@ Janyce Wiebe,University of Pittsburgh,nlp,1,2008
 Janyce Wiebe,University of Pittsburgh,nlp,2,2009
 Janyce Wiebe,University of Pittsburgh,nlp,1,2014
 Janyce Wiebe,University of Pittsburgh,nlp,1,2015
+Eric Fosler-Lussier,Ohio State University,ai,1,2015
+Eric Fosler-Lussier,Ohio State University,nlp,1,2003
 Charles Elkan,University of California - San Diego,mlmining,4,2001
 Charles Elkan,University of California - San Diego,mlmining,1,2002
 Charles Elkan,University of California - San Diego,mlmining,3,2003
@@ -4490,6 +4527,8 @@ Elaine Shi,University of Maryland - College Park,security,5,2014
 Elaine Shi,University of Maryland - College Park,security,4,2015
 Elaine Shi,University of Maryland - College Park,database,1,2012
 Elaine Shi,University of Maryland - College Park,web,1,2016
+René Just,University of Massachusetts - Amherst,softeng,1,2014
+René Just,University of Massachusetts - Amherst,security,1,2014
 R. Sekar,State University of New York - Stony Brook,softeng,1,2004
 R. Sekar,State University of New York - Stony Brook,opsys,1,2003
 R. Sekar,State University of New York - Stony Brook,opsys,1,2014
@@ -4970,6 +5009,8 @@ Giovanni Vigna,University of California - Santa Barbara,web,1,2010
 Giovanni Vigna,University of California - Santa Barbara,web,1,2011
 Giovanni Vigna,University of California - Santa Barbara,web,1,2013
 Giovanni Vigna,University of California - Santa Barbara,web,1,2014
+David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2011
+David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2015
 Thomas Ristenpart,University of Wisconsin - Madison,security,1,2008
 Thomas Ristenpart,University of Wisconsin - Madison,security,1,2009
 Thomas Ristenpart,University of Wisconsin - Madison,security,3,2012
@@ -4991,6 +5032,8 @@ Stephen Chong,Harvard University,security,1,2004
 Stephen Chong,Harvard University,security,1,2008
 Stephen Chong,Harvard University,security,1,2011
 Stephen Chong,Harvard University,security,1,2012
+Mustaque Ahamad,Georgia Institute of Technology,security,1,2010
+Mustaque Ahamad,Georgia Institute of Technology,web,1,2006
 Patrick Traynor,University of Florida,networks,1,2006
 Patrick Traynor,University of Florida,security,1,2005
 Patrick Traynor,University of Florida,security,1,2006
@@ -5005,6 +5048,7 @@ Arvind Narayanan,Princeton University,security,1,2012
 Arvind Narayanan,Princeton University,security,1,2013
 Arvind Narayanan,Princeton University,security,1,2015
 Arvind Narayanan,Princeton University,web,1,2015
+Matthew Green,Johns Hopkins University,security,1,2015
 Nadia Heninger,University of Pennsylvania,security,1,2008
 Nadia Heninger,University of Pennsylvania,security,1,2009
 Nadia Heninger,University of Pennsylvania,security,2,2012
@@ -5352,6 +5396,8 @@ Phillip Rogaway,University of California - Davis,security,1,2002
 Phillip Rogaway,University of California - Davis,security,1,2007
 Phillip Rogaway,University of California - Davis,security,1,2012
 Phillip Rogaway,University of California - Davis,security,1,2013
+John H. Hartman,University of Arizona,networks,1,2008
+John H. Hartman,University of Arizona,security,1,2008
 Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2000
 Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2001
 Carl A. Gunter,University of Illinois at Urbana-Champaign,networks,1,2008
@@ -5469,6 +5515,8 @@ David Brumley,Carnegie Mellon University,security,2,2011
 David Brumley,Carnegie Mellon University,security,4,2012
 David Brumley,Carnegie Mellon University,security,2,2013
 David Brumley,Carnegie Mellon University,security,1,2015
+Matthew K. Franklin,University of California - Davis,security,1,2000
+Matthew K. Franklin,University of California - Davis,security,1,2002
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1,2005
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2,2011
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2,2014
@@ -5685,6 +5733,7 @@ Greg Morrisett,Harvard University,proglang,1,2012
 Greg Morrisett,Harvard University,security,1,2010
 Greg Morrisett,Harvard University,security,1,2011
 Greg Morrisett,Harvard University,security,1,2013
+L. Jean Camp,Indiana University,security,1,2002
 Steven Myers,Indiana University,theory,1,2009
 Steven Myers,Indiana University,security,1,2010
 Steven Myers,Indiana University,security,1,2014
@@ -5807,6 +5856,7 @@ David C. Parkes,Harvard University,ai,2,2012
 David C. Parkes,Harvard University,ai,3,2013
 David C. Parkes,Harvard University,ai,1,2015
 David C. Parkes,Harvard University,hci,1,2012
+Saumya Debray,University of Arizona,security,2,2015
 Eric Keller,University of Colorado Boulder,arch,1,2010
 Eric Keller,University of Colorado Boulder,networks,1,2008
 Eric Keller,University of Colorado Boulder,networks,1,2010
@@ -6077,6 +6127,8 @@ Michael M. Swift,University of Wisconsin - Madison,arch,1,2014
 Michael M. Swift,University of Wisconsin - Madison,arch,1,2015
 Michael M. Swift,University of Wisconsin - Madison,security,1,2012
 Michael M. Swift,University of Wisconsin - Madison,security,1,2014
+John Black,University of Colorado Boulder,security,1,2001
+John Black,University of Colorado Boulder,security,1,2002
 Leman Akoglu,State University of New York - Stony Brook,security,1,2015
 Leman Akoglu,State University of New York - Stony Brook,mlmining,1,2008
 Leman Akoglu,State University of New York - Stony Brook,mlmining,1,2009
@@ -6201,6 +6253,8 @@ Sorin Lerner,University of California - San Diego,security,1,2012
 Sorin Lerner,University of California - San Diego,security,1,2015
 Sorin Lerner,University of California - San Diego,mlmining,1,2010
 Sorin Lerner,University of California - San Diego,hci,1,2015
+Victor Shoup,New York University,security,1,2006
+Victor Shoup,New York University,security,1,2009
 Joan Feigenbaum,Yale University,logic,1,2012
 Joan Feigenbaum,Yale University,theory,1,2000
 Joan Feigenbaum,Yale University,security,1,2000
@@ -6256,6 +6310,8 @@ Pierre Baldi,University of California - Irvine,mlmining,1,2011
 Pierre Baldi,University of California - Irvine,mlmining,1,2012
 Pierre Baldi,University of California - Irvine,mlmining,1,2013
 Pierre Baldi,University of California - Irvine,mlmining,1,2014
+J. Doug Tygar,University of California - Berkeley,security,1,2007
+J. Doug Tygar,University of California - Berkeley,mlmining,1,2014
 Krste Asanovic,University of California - Berkeley,proglang,1,2010
 Krste Asanovic,University of California - Berkeley,opsys,1,2002
 Krste Asanovic,University of California - Berkeley,opsys,1,2005
@@ -6405,6 +6461,8 @@ Emmett Witchel,University of Texas - Austin,security,1,2007
 Emmett Witchel,University of Texas - Austin,security,1,2011
 Emmett Witchel,University of Texas - Austin,security,1,2013
 Emmett Witchel,University of Texas - Austin,ai,1,2007
+Xiaosong Ma,North Carolina State University,security,1,2000
+Xiaosong Ma,North Carolina State University,metrics,1,2015
 Gregory R. Ganger,Carnegie Mellon University,opsys,4,2000
 Gregory R. Ganger,Carnegie Mellon University,opsys,2,2005
 Gregory R. Ganger,Carnegie Mellon University,opsys,1,2007
@@ -6846,6 +6904,7 @@ Mahmut T. Kandemir,Pennsylvania State University,metrics,1,2010
 Mahmut T. Kandemir,Pennsylvania State University,metrics,2,2011
 Mahmut T. Kandemir,Pennsylvania State University,metrics,2,2014
 Mahmut T. Kandemir,Pennsylvania State University,metrics,1,2015
+Gregory W. Wornell,Massachusetts Institute of Technology,metrics,1,2014
 Brighten Godfrey,University of Illinois at Urbana-Champaign,theory,1,2003
 Brighten Godfrey,University of Illinois at Urbana-Champaign,networks,1,2004
 Brighten Godfrey,University of Illinois at Urbana-Champaign,networks,2,2005
@@ -7151,6 +7210,7 @@ Beichuan Zhang,University of Arizona,networks,2,2010
 Beichuan Zhang,University of Arizona,networks,1,2013
 Beichuan Zhang,University of Arizona,networks,1,2014
 Beichuan Zhang,University of Arizona,metrics,1,2008
+Umakishore Ramachandran,Georgia Institute of Technology,metrics,1,2012
 Mario Gerla,University of California - Los Angeles,networks,2,2000
 Mario Gerla,University of California - Los Angeles,networks,1,2001
 Mario Gerla,University of California - Los Angeles,networks,1,2003
@@ -7216,6 +7276,8 @@ Peter A. Dinda,Northwestern University,networks,1,2006
 Peter A. Dinda,Northwestern University,networks,1,2010
 Peter A. Dinda,Northwestern University,metrics,1,2007
 Peter A. Dinda,Northwestern University,metrics,1,2010
+Richard Wolski,University of California - Santa Barbara,networks,1,2005
+Richard Wolski,University of California - Santa Barbara,metrics,1,2007
 Ramesh Govindan,University of Southern California,proglang,1,2007
 Ramesh Govindan,University of Southern California,softeng,1,2013
 Ramesh Govindan,University of Southern California,opsys,1,2001
@@ -7234,6 +7296,7 @@ Ramesh Govindan,University of Southern California,networks,2,2015
 Ramesh Govindan,University of Southern California,metrics,1,2002
 Ramesh Govindan,University of Southern California,metrics,1,2003
 Ramesh Govindan,University of Southern California,metrics,1,2010
+John L. Hennessy,Stanford University,metrics,1,2000
 Eddie Kohler,Harvard University,opsys,1,2002
 Eddie Kohler,Harvard University,opsys,1,2005
 Eddie Kohler,Harvard University,opsys,1,2006
@@ -7273,6 +7336,7 @@ Scott Rixner,Rice University,arch,1,2011
 Scott Rixner,Rice University,metrics,1,2004
 Scott Rixner,Rice University,web,1,2014
 Scott Rixner,Rice University,web,1,2015
+Thomas Schmid,University of Utah,metrics,1,2008
 Sonia Fahmy,Purdue University,networks,1,2004
 Sonia Fahmy,Purdue University,networks,1,2006
 Sonia Fahmy,Purdue University,networks,1,2007
@@ -7314,6 +7378,9 @@ Daniel J. Sorin,Duke University,arch,1,2010
 Daniel J. Sorin,Duke University,arch,1,2013
 Daniel J. Sorin,Duke University,metrics,1,2000
 Daniel J. Sorin,Duke University,metrics,1,2011
+Anshul Gandhi,State University of New York - Stony Brook,metrics,1,2013
+Rudra Dutta,North Carolina State University,networks,1,2012
+Rudra Dutta,North Carolina State University,metrics,1,2003
 George N. Rouskas,North Carolina State University,networks,1,2003
 George N. Rouskas,North Carolina State University,networks,1,2007
 George N. Rouskas,North Carolina State University,networks,1,2008
@@ -7409,10 +7476,13 @@ Shigang Chen,University of Florida,networks,3,2013
 Shigang Chen,University of Florida,networks,1,2014
 Shigang Chen,University of Florida,networks,1,2015
 Shigang Chen,University of Florida,metrics,1,2015
+Alexandru Nicolau,University of California - Irvine,metrics,1,2007
 Alexander V. Veidenbaum,University of California - Irvine,arch,1,2004
 Alexander V. Veidenbaum,University of California - Irvine,arch,2,2008
 Alexander V. Veidenbaum,University of California - Irvine,arch,1,2012
 Alexander V. Veidenbaum,University of California - Irvine,metrics,1,2007
+Ali Raza Butt,Virginia Polytechnic Institute and State University,opsys,1,2004
+Ali Raza Butt,Virginia Polytechnic Institute and State University,metrics,1,2005
 Milena Mihail,Georgia Institute of Technology,theory,1,2003
 Milena Mihail,Georgia Institute of Technology,theory,1,2006
 Milena Mihail,Georgia Institute of Technology,networks,1,2003
@@ -7506,6 +7576,8 @@ Nick Roussopoulos,University of Maryland - College Park,database,1,2001
 Nick Roussopoulos,University of Maryland - College Park,database,1,2002
 Nick Roussopoulos,University of Maryland - College Park,database,2,2003
 Nick Roussopoulos,University of Maryland - College Park,database,2,2004
+Calton Pu,Georgia Institute of Technology,database,1,2000
+Calton Pu,Georgia Institute of Technology,database,1,2001
 Stan Sclaroff,Boston University,mlmining,1,2001
 Stan Sclaroff,Boston University,mlmining,1,2014
 Stan Sclaroff,Boston University,database,1,2005
@@ -7616,6 +7688,7 @@ Lars Arge,Duke University,theory,1,2009
 Lars Arge,Duke University,database,1,2000
 Lars Arge,Duke University,database,1,2004
 Lars Arge,Duke University,database,1,2009
+Héctor Corrada Bravo,University of Maryland - College Park,database,1,2007
 Benjamin Recht,University of California - Berkeley,mlmining,1,2007
 Benjamin Recht,University of California - Berkeley,mlmining,1,2008
 Benjamin Recht,University of California - Berkeley,mlmining,1,2009
@@ -7710,6 +7783,9 @@ Gaetano Borriello,University of Washington,hci,1,2008
 Gaetano Borriello,University of Washington,hci,1,2013
 Gaetano Borriello,University of Washington,hci,1,2014
 Gaetano Borriello,University of Washington,hci,1,2015
+Carlos Eduardo Scheidegger,University of Arizona,database,1,2006
+Carlos Eduardo Scheidegger,University of Arizona,database,1,2008
+Ron Weiss,Massachusetts Institute of Technology,database,1,2001
 Vipin Kumar,University of Minnesota - Twin Cities,mlmining,1,2000
 Vipin Kumar,University of Minnesota - Twin Cities,mlmining,2,2002
 Vipin Kumar,University of Minnesota - Twin Cities,mlmining,1,2003
@@ -7739,6 +7815,7 @@ Yan Liu,University of Southern California,ai,3,2011
 Yan Liu,University of Southern California,ai,1,2012
 Yan Liu,University of Southern California,ai,1,2013
 Yan Liu,University of Southern California,database,1,2013
+Joseph JáJá,University of Maryland - College Park,database,1,2000
 Robert F. Murphy,Carnegie Mellon University,mlmining,1,2003
 Robert F. Murphy,Carnegie Mellon University,mlmining,2,2009
 Robert F. Murphy,Carnegie Mellon University,database,1,2005
@@ -7765,6 +7842,9 @@ Nate Foster,Cornell University,proglang,2,2015
 Nate Foster,Cornell University,networks,1,2012
 Nate Foster,Cornell University,networks,1,2013
 Nate Foster,Cornell University,database,1,2015
+Shahram Ghandeharizadeh,University of Southern California,database,1,2009
+Susanne E. Hambrusch,Purdue University,database,1,2004
+Susanne E. Hambrusch,Purdue University,database,1,2008
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2003
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2008
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2010
@@ -7783,6 +7863,7 @@ Andreas Haeberlen,University of Pennsylvania,networks,2,2012
 Andreas Haeberlen,University of Pennsylvania,networks,1,2014
 Andreas Haeberlen,University of Pennsylvania,security,1,2011
 Andreas Haeberlen,University of Pennsylvania,database,1,2011
+Yuan-Fang Wang,University of California - Santa Barbara,database,1,2004
 Amin Vahdat,University of California - San Diego,proglang,1,2007
 Amin Vahdat,University of California - San Diego,opsys,2,2000
 Amin Vahdat,University of California - San Diego,opsys,2,2001
@@ -7822,6 +7903,7 @@ Tian He,University of Minnesota - Twin Cities,networks,5,2013
 Tian He,University of Minnesota - Twin Cities,networks,4,2014
 Tian He,University of Minnesota - Twin Cities,networks,1,2015
 Tian He,University of Minnesota - Twin Cities,database,1,2008
+T. M. Murali,Virginia Polytechnic Institute and State University,database,1,2002
 Victor Vianu,University of California - San Diego,logic,1,2001
 Victor Vianu,University of California - San Diego,database,2,2000
 Victor Vianu,University of California - San Diego,database,3,2001
@@ -8090,6 +8172,8 @@ Andrew Lumsdaine,Indiana University,proglang,1,2009
 Andrew Lumsdaine,Indiana University,proglang,1,2014
 Andrew Lumsdaine,Indiana University,vision,1,2012
 Andrew Lumsdaine,Indiana University,vision,1,2013
+Amr Sabry,Indiana University,proglang,1,2009
+Amr Sabry,Indiana University,proglang,1,2012
 Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2000
 Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2005
 Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1,2006
@@ -8108,6 +8192,8 @@ Vikram S. Adve,University of Illinois at Urbana-Champaign,arch,1,2003
 Vikram S. Adve,University of Illinois at Urbana-Champaign,arch,1,2015
 Vikram S. Adve,University of Illinois at Urbana-Champaign,security,1,2009
 Vikram S. Adve,University of Illinois at Urbana-Champaign,security,1,2014
+Susan Horwitz,University of Wisconsin - Madison,proglang,1,2000
+Susan Horwitz,University of Wisconsin - Madison,proglang,1,2014
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2004
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2010
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1,2013
@@ -8122,6 +8208,8 @@ Sriram Sankaranarayanan,University of Colorado Boulder,logic,1,2014
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1,2007
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1,2008
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1,2013
+Eric Van Wyk,University of Minnesota - Twin Cities,proglang,1,2002
+Eric Van Wyk,University of Minnesota - Twin Cities,proglang,1,2009
 Pavol Cerný,University of Colorado Boulder,proglang,1,2005
 Pavol Cerný,University of Colorado Boulder,proglang,1,2009
 Pavol Cerný,University of Colorado Boulder,proglang,1,2011
@@ -8358,6 +8446,8 @@ Dexter Kozen,Cornell University,logic,1,2012
 Dexter Kozen,Cornell University,logic,1,2013
 Dexter Kozen,Cornell University,mlmining,1,2007
 Dexter Kozen,Cornell University,mlmining,1,2009
+Olin Shivers,Northeastern University,proglang,2,2006
+John Hughes,Brown University,proglang,1,2006
 Ben Hardekopf,University of California - Santa Barbara,proglang,1,2007
 Ben Hardekopf,University of California - Santa Barbara,proglang,1,2009
 Ben Hardekopf,University of California - Santa Barbara,proglang,1,2011
@@ -8390,6 +8480,8 @@ Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,pro
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2010
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2015
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1,2012
+Mitchell Wand,Northeastern University,proglang,1,2006
+Mitchell Wand,Northeastern University,proglang,1,2011
 Jonathan Aldrich,Carnegie Mellon University,proglang,1,2002
 Jonathan Aldrich,Carnegie Mellon University,proglang,1,2005
 Jonathan Aldrich,Carnegie Mellon University,proglang,1,2007
@@ -8463,6 +8555,8 @@ J. Nathan Foster,Cornell University,database,1,2008
 Hongwei Xi,Boston University,proglang,1,2003
 Hongwei Xi,Boston University,logic,1,2000
 Hongwei Xi,Boston University,logic,1,2001
+Stéphane Lafortune,University of Michigan,proglang,1,2009
+Stéphane Lafortune,University of Michigan,opsys,1,2008
 Scott A. Mahlke,University of Michigan,proglang,1,2003
 Scott A. Mahlke,University of Michigan,proglang,1,2008
 Scott A. Mahlke,University of Michigan,proglang,2,2009
@@ -8545,9 +8639,14 @@ Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2014
 Barbara Liskov,Massachusetts Institute of Technology,networks,2,2004
 Barbara Liskov,Massachusetts Institute of Technology,networks,1,2006
 Barbara Liskov,Massachusetts Institute of Technology,networks,1,2009
+Larry Carter,University of Minnesota - Twin Cities,proglang,2,2003
+Jeanne Ferrante,University of California - San Diego,proglang,2,2003
+Stephen Brookes,Carnegie Mellon University,proglang,1,2014
 Theophilus Benson,Duke University,networks,1,2009
 Theophilus Benson,Duke University,networks,1,2011
 Theophilus Benson,Duke University,networks,1,2015
+Brian Noble,University of Michigan,networks,1,2003
+Brian Noble,University of Michigan,networks,1,2013
 Larry L. Peterson,University of Arizona,opsys,1,2001
 Larry L. Peterson,University of Arizona,opsys,2,2002
 Larry L. Peterson,University of Arizona,opsys,2,2004
@@ -8710,6 +8809,8 @@ Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2004
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2005
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,networks,1,2004
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,networks,1,2011
+Miron Livny,University of Wisconsin - Madison,networks,1,2004
+Miron Livny,University of Wisconsin - Madison,database,1,2006
 Shyamnath Gollakota,University of Washington,networks,1,2007
 Shyamnath Gollakota,University of Washington,networks,1,2009
 Shyamnath Gollakota,University of Washington,networks,4,2011
@@ -8779,6 +8880,8 @@ Peter Steenkiste,Carnegie Mellon University,networks,2,2009
 Peter Steenkiste,Carnegie Mellon University,networks,1,2012
 Peter Steenkiste,Carnegie Mellon University,networks,1,2014
 Peter Steenkiste,Carnegie Mellon University,networks,1,2015
+Ryan Newton,Indiana University,proglang,1,2014
+Ryan Newton,Indiana University,networks,1,2009
 David R. Choffnes,Northeastern University,networks,1,2006
 David R. Choffnes,Northeastern University,networks,1,2008
 David R. Choffnes,Northeastern University,networks,1,2009
@@ -8812,6 +8915,8 @@ Romit Roy Choudhury,Duke University,networks,4,2013
 Romit Roy Choudhury,Duke University,networks,1,2015
 Romit Roy Choudhury,Duke University,web,1,2016
 Romit Roy Choudhury,Duke University,hci,1,2015
+Christopher Stewart,Ohio State University,opsys,1,2008
+Christopher Stewart,Ohio State University,networks,1,2005
 Wyatt Lloyd,University of Southern California,opsys,1,2011
 Wyatt Lloyd,University of Southern California,opsys,1,2013
 Wyatt Lloyd,University of Southern California,opsys,2,2014
@@ -8967,6 +9072,7 @@ Gail E. Kaiser,Columbia University,softeng,1,2015
 Gail E. Kaiser,Columbia University,opsys,1,2014
 Gail E. Kaiser,Columbia University,web,1,2003
 Gail E. Kaiser,Columbia University,web,1,2006
+Rajesh Rao,University of Washington,opsys,1,2012
 Steven Swanson,University of California - San Diego,proglang,1,2010
 Steven Swanson,University of California - San Diego,opsys,1,2006
 Steven Swanson,University of California - San Diego,opsys,1,2009
@@ -8983,6 +9089,8 @@ Steven Swanson,University of California - San Diego,arch,1,2010
 Steven Swanson,University of California - San Diego,arch,1,2011
 Steven Swanson,University of California - San Diego,arch,1,2013
 Steven Swanson,University of California - San Diego,security,1,2013
+Prabal Dutta,University of Michigan,opsys,1,2008
+Prabal Dutta,University of Michigan,arch,1,2015
 Darko Marinov,University of Illinois at Urbana-Champaign,proglang,1,2002
 Darko Marinov,University of Illinois at Urbana-Champaign,proglang,1,2003
 Darko Marinov,University of Illinois at Urbana-Champaign,logic,1,2014
@@ -9284,6 +9392,7 @@ Sudhanva Gurumurthi,University of Virginia,arch,1,2005
 Sudhanva Gurumurthi,University of Virginia,arch,1,2008
 Sudhanva Gurumurthi,University of Virginia,arch,2,2014
 Sudhanva Gurumurthi,University of Virginia,database,1,2001
+Matthew K. Farrens,University of California - Davis,arch,2,2000
 Radu Teodorescu,Ohio State University,arch,1,2007
 Radu Teodorescu,Ohio State University,arch,1,2008
 Radu Teodorescu,Ohio State University,arch,1,2010
@@ -9302,6 +9411,8 @@ Engin Ipek,University of Rochester,arch,1,2011
 Engin Ipek,University of Rochester,arch,1,2012
 Engin Ipek,University of Rochester,arch,2,2013
 Engin Ipek,University of Rochester,arch,1,2015
+Russ Joseph,Northwestern University,opsys,1,2011
+Russ Joseph,Northwestern University,arch,1,2011
 Hadi Esmaeilzadeh,Georgia Institute of Technology,softeng,1,2015
 Hadi Esmaeilzadeh,Georgia Institute of Technology,opsys,1,2011
 Hadi Esmaeilzadeh,Georgia Institute of Technology,opsys,1,2012
@@ -9385,9 +9496,12 @@ Santosh Pande,Georgia Institute of Technology,softeng,2,2014
 Santosh Pande,Georgia Institute of Technology,opsys,1,2004
 Santosh Pande,Georgia Institute of Technology,arch,2,2006
 Santosh Pande,Georgia Institute of Technology,networks,1,2006
+Thomas M. Conte,Georgia Institute of Technology,arch,1,2003
+Thomas M. Conte,Georgia Institute of Technology,arch,1,2011
 Jih-Kwon Peir,University of Florida,arch,1,2001
 Jih-Kwon Peir,University of Florida,networks,1,2009
 Jih-Kwon Peir,University of Florida,networks,1,2011
+Hai Zhou,Northwestern University,arch,1,2006
 Seth Pettie,University of Michigan,arch,1,2008
 Seth Pettie,University of Michigan,theory,1,2002
 Seth Pettie,University of Michigan,theory,2,2010
@@ -9403,6 +9517,7 @@ Alvin R. Lebeck,Duke University,opsys,1,2015
 Alvin R. Lebeck,Duke University,arch,1,2001
 Alvin R. Lebeck,Duke University,arch,1,2002
 Alvin R. Lebeck,Duke University,arch,1,2010
+José A. B. Fortes,University of Florida,arch,1,2008
 Donald S. Fussell,University of Texas - Austin,opsys,1,2016
 Donald S. Fussell,University of Texas - Austin,arch,1,2014
 Donald S. Fussell,University of Texas - Austin,ai,1,2007
@@ -9444,6 +9559,8 @@ Arvind,Massachusetts Institute of Technology,proglang,1,2000
 Arvind,Massachusetts Institute of Technology,opsys,1,2012
 Arvind,Massachusetts Institute of Technology,arch,1,2015
 Arvind,Massachusetts Institute of Technology,networks,1,2004
+Radu Stoleru,Texas A&M University,networks,1,2006
+Radu Stoleru,Texas A&M University,networks,1,2008
 John A. Stankovic,University of Virginia,networks,1,2004
 John A. Stankovic,University of Virginia,networks,1,2005
 John A. Stankovic,University of Virginia,networks,4,2006
@@ -9476,6 +9593,7 @@ Bill Lin,University of California - San Diego,networks,1,2007
 Bill Lin,University of California - San Diego,networks,1,2010
 Bill Lin,University of California - San Diego,networks,1,2012
 Bill Lin,University of California - San Diego,security,1,2008
+Jyh-Charn Liu,Texas A&M University,networks,1,2004
 H. T. Kung,Harvard University,networks,1,2001
 H. T. Kung,Harvard University,networks,2,2013
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,theory,3,2005
@@ -9527,6 +9645,8 @@ Robin Kravets,University of Illinois at Urbana-Champaign,networks,1,2007
 Robin Kravets,University of Illinois at Urbana-Champaign,networks,2,2009
 Robin Kravets,University of Illinois at Urbana-Champaign,networks,1,2010
 Robin Kravets,University of Illinois at Urbana-Champaign,networks,1,2012
+Cauligi S. Raghavendra,University of Southern California,networks,1,2002
+Cauligi S. Raghavendra,University of Southern California,networks,1,2005
 Jie Gao,State University of New York - Stony Brook,theory,1,2003
 Jie Gao,State University of New York - Stony Brook,networks,2,2004
 Jie Gao,State University of New York - Stony Brook,networks,1,2005
@@ -9581,9 +9701,13 @@ Chenyang Lu,Washington University - St. Louis,mlmining,1,2012
 Mark D. Corner,University of Massachusetts - Amherst,networks,1,2007
 Mark D. Corner,University of Massachusetts - Amherst,networks,1,2009
 Mark D. Corner,University of Massachusetts - Amherst,networks,1,2011
+John R. Lange,University of Pittsburgh,networks,1,2010
+Kamin Whitehouse,University of Virginia,networks,1,2009
 Elizabeth M. Belding,University of California - Santa Barbara,networks,1,2007
 Elizabeth M. Belding,University of California - Santa Barbara,networks,1,2008
 Elizabeth M. Belding,University of California - Santa Barbara,web,1,2015
+Randall Berry,Northwestern University,networks,1,2009
+Randall Berry,Northwestern University,networks,1,2013
 Sanjay Ranka,University of Florida,networks,2,2008
 Sanjay Ranka,University of Florida,mlmining,1,2007
 Sanjay Ranka,University of Florida,mlmining,1,2008
@@ -9596,6 +9720,9 @@ Alon Efrat,University of Arizona,networks,1,2010
 Alon Efrat,University of Arizona,networks,1,2011
 Alon Efrat,University of Arizona,networks,1,2012
 Alon Efrat,University of Arizona,database,1,2012
+Yechiam Yemini,Columbia University,networks,2,2000
+Mohamed G. Gouda,University of Texas - Austin,networks,1,2011
+Mohamed G. Gouda,University of Texas - Austin,web,1,2001
 Khaled Harfoush,North Carolina State University,networks,1,2002
 Khaled Harfoush,North Carolina State University,networks,1,2003
 Khaled Harfoush,North Carolina State University,networks,1,2004
@@ -9635,6 +9762,8 @@ Yixin Chen,Washington University - St. Louis,ai,1,2012
 Yixin Chen,Washington University - St. Louis,ai,1,2013
 Yixin Chen,Washington University - St. Louis,ai,1,2014
 Yixin Chen,Washington University - St. Louis,database,1,2002
+Indranil Gupta,University of Illinois at Urbana-Champaign,networks,1,2007
+Indranil Gupta,University of Illinois at Urbana-Champaign,networks,1,2009
 Miodrag Potkonjak,University of California - Los Angeles,opsys,1,2002
 Miodrag Potkonjak,University of California - Los Angeles,networks,1,2001
 Miodrag Potkonjak,University of California - Los Angeles,networks,2,2006
@@ -9668,6 +9797,7 @@ Arunabha Sen,Arizona State University,networks,1,2004
 Arunabha Sen,Arizona State University,networks,1,2006
 Arunabha Sen,Arizona State University,networks,1,2012
 Arunabha Sen,Arizona State University,networks,1,2013
+Rabi N. Mahapatra,Texas A&M University,networks,1,2008
 Akshay Krishnamurthy,University of Massachusetts - Amherst,networks,1,2012
 Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,1,2011
 Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,1,2012
@@ -9690,6 +9820,8 @@ Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,mlmining,1,2012
 Insup Lee,University of Pennsylvania,softeng,1,2003
 Insup Lee,University of Pennsylvania,networks,1,2013
 Insup Lee,University of Pennsylvania,nlp,1,2011
+Marco Levorato,University of California - Irvine,networks,1,2009
+Marco Levorato,University of California - Irvine,networks,1,2012
 Tracey Ho,California Institute of Technology,networks,1,2003
 Tracey Ho,California Institute of Technology,networks,2,2007
 Tracey Ho,California Institute of Technology,networks,1,2008
@@ -9705,6 +9837,9 @@ My T. Thai,University of Florida,networks,1,2010
 My T. Thai,University of Florida,networks,1,2011
 My T. Thai,University of Florida,networks,2,2013
 My T. Thai,University of Florida,networks,2,2015
+Michael L. Honig,Northwestern University,networks,1,2013
+Rakesh Vohra,University of Pennsylvania,networks,1,2013
+Rakesh Vohra,University of Pennsylvania,web,1,2008
 Chang-Tien Lu,Virginia Polytechnic Institute and State University,networks,1,2013
 Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1,2001
 Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1,2010
@@ -9720,6 +9855,7 @@ Richard M. Karp,University of California - Berkeley,networks,2,2002
 Richard M. Karp,University of California - Berkeley,networks,1,2004
 Richard M. Karp,University of California - Berkeley,mlmining,1,2001
 Richard M. Karp,University of California - Berkeley,mlmining,1,2002
+Sartaj Sahni,University of Florida,networks,1,2008
 Debmalya Panigrahi,Duke University,theory,1,2007
 Debmalya Panigrahi,Duke University,theory,2,2011
 Debmalya Panigrahi,Duke University,theory,1,2013
@@ -9728,6 +9864,15 @@ Debmalya Panigrahi,Duke University,networks,2,2008
 Debmalya Panigrahi,Duke University,networks,1,2009
 Debmalya Panigrahi,Duke University,networks,2,2010
 Debmalya Panigrahi,Duke University,database,1,2011
+Carla Schlatter Ellis,Duke University,opsys,1,2000
+Carla Schlatter Ellis,Duke University,networks,1,2000
+Alan Sussman,University of Maryland - College Park,networks,1,2011
+Ten-Hwang Lai,Ohio State University,networks,1,2008
+Ten-Hwang Lai,Ohio State University,networks,1,2011
+Robert Moll,University of Massachusetts - Amherst,networks,1,2005
+Robert Moll,University of Massachusetts - Amherst,mlmining,1,2000
+Ömer Egecioglu,University of California - Santa Barbara,networks,1,2009
+Harry G. Perros,North Carolina State University,networks,1,2003
 John F. Canny,University of California - Berkeley,networks,1,2007
 John F. Canny,University of California - Berkeley,security,1,2002
 John F. Canny,University of California - Berkeley,mlmining,1,2009
@@ -9770,6 +9915,7 @@ Huan Liu,Arizona State University,web,1,2013
 Huan Liu,Arizona State University,web,1,2014
 Huan Liu,Arizona State University,web,1,2016
 Huan Liu,Arizona State University,vision,1,2007
+Jonathan Turner,Washington University - St. Louis,networks,1,2006
 Kevin C. Almeroth,University of California - Santa Barbara,networks,1,2000
 Kevin C. Almeroth,University of California - Santa Barbara,networks,1,2001
 Kevin C. Almeroth,University of California - Santa Barbara,networks,1,2003
@@ -9790,6 +9936,7 @@ Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,3,2013
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,networks,1,2006
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,database,1,2004
+Malathi Veeraraghavan,University of Virginia,networks,1,2001
 Anupam Gupta,Carnegie Mellon University,theory,1,2000
 Anupam Gupta,Carnegie Mellon University,theory,3,2001
 Anupam Gupta,Carnegie Mellon University,theory,1,2002
@@ -9824,6 +9971,8 @@ Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,2,2011
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,2,2013
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,1,2014
 Chandra Chekuri,University of Illinois at Urbana-Champaign,networks,1,2009
+Luca P. Carloni,Columbia University,networks,1,2013
+Luca P. Carloni,Columbia University,web,1,2015
 Anish Arora,Ohio State University,networks,1,2006
 Anish Arora,Ohio State University,networks,1,2008
 Anish Arora,Ohio State University,networks,1,2009
@@ -9832,6 +9981,7 @@ Ananth Grama,Purdue University,proglang,1,2007
 Ananth Grama,Purdue University,softeng,1,2007
 Ananth Grama,Purdue University,networks,1,2003
 Ananth Grama,Purdue University,mlmining,1,2003
+Krishnendu Chakrabarty,Duke University,networks,1,2003
 Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,networks,1,2013
 Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,mlmining,1,2014
 Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,ai,1,2013
@@ -9841,11 +9991,15 @@ Asuman E. Ozdaglar,Massachusetts Institute of Technology,networks,1,2007
 Asuman E. Ozdaglar,Massachusetts Institute of Technology,networks,1,2009
 Asuman E. Ozdaglar,Massachusetts Institute of Technology,networks,1,2010
 Asuman E. Ozdaglar,Massachusetts Institute of Technology,mlmining,1,2013
+Zvi M. Kedem,New York University,networks,1,2005
 Patrick Crowley,Washington University - St. Louis,networks,1,2006
 Patrick Crowley,Washington University - St. Louis,networks,1,2007
 Patrick Crowley,Washington University - St. Louis,networks,1,2008
 Patrick Crowley,Washington University - St. Louis,networks,1,2013
 Patrick Crowley,Washington University - St. Louis,networks,1,2014
+Andréa W. Richa,Arizona State University,networks,1,2009
+Andréa W. Richa,Arizona State University,networks,1,2014
+Ketan Mayer-Patel,University of North Carolina - Chapel Hill,networks,1,2004
 Daniela Rus,Massachusetts Institute of Technology,networks,1,2004
 Daniela Rus,Massachusetts Institute of Technology,networks,1,2012
 Daniela Rus,Massachusetts Institute of Technology,mlmining,1,2014
@@ -9868,10 +10022,12 @@ Tim Roughgarden,Stanford University,networks,1,2009
 Tim Roughgarden,Stanford University,mlmining,1,2013
 Tim Roughgarden,Stanford University,mlmining,2,2015
 Tim Roughgarden,Stanford University,ai,1,2011
+Joel I. Seiferas,University of Rochester,networks,1,2005
 David R. Cheriton,Stanford University,opsys,1,2014
 David R. Cheriton,Stanford University,networks,1,2002
 David R. Cheriton,Stanford University,mlmining,1,2007
 David R. Cheriton,Stanford University,web,1,2006
+Douglas Comer,Purdue University,networks,1,2008
 Ying Wu,Northwestern University,networks,1,2009
 Ying Wu,Northwestern University,mlmining,1,2007
 Ying Wu,Northwestern University,vision,3,2000
@@ -9917,12 +10073,15 @@ Satish Rao,University of California - Berkeley,theory,1,2006
 Satish Rao,University of California - Berkeley,theory,1,2008
 Satish Rao,University of California - Berkeley,theory,1,2013
 Satish Rao,University of California - Berkeley,networks,1,2000
+Kishor S. Trivedi,Duke University,networks,1,2000
 Rajmohan Rajaraman,Northeastern University,theory,1,2003
 Rajmohan Rajaraman,Northeastern University,theory,1,2004
 Rajmohan Rajaraman,Northeastern University,theory,1,2005
 Rajmohan Rajaraman,Northeastern University,theory,1,2009
 Rajmohan Rajaraman,Northeastern University,networks,1,2004
 Rajmohan Rajaraman,Northeastern University,networks,1,2008
+Karl N. Levitt,University of California - Davis,networks,1,2008
+Raj Jain,Washington University - St. Louis,networks,1,2007
 Tina Eliassi-Rad,Rutgers - State University of New Jersey - New Brunswick,networks,1,2010
 Tina Eliassi-Rad,Rutgers - State University of New Jersey - New Brunswick,mlmining,1,2001
 Tina Eliassi-Rad,Rutgers - State University of New Jersey - New Brunswick,mlmining,1,2002
@@ -9955,6 +10114,7 @@ Robert D. Kleinberg,Cornell University,networks,1,2009
 Robert D. Kleinberg,Cornell University,mlmining,1,2004
 Robert D. Kleinberg,Cornell University,mlmining,1,2014
 Robert D. Kleinberg,Cornell University,ai,1,2007
+Lui Sha,University of Illinois at Urbana-Champaign,networks,1,2003
 Yaron Singer,Harvard University,theory,1,2008
 Yaron Singer,Harvard University,theory,1,2010
 Yaron Singer,Harvard University,theory,1,2013
@@ -9965,6 +10125,7 @@ Yaron Singer,Harvard University,web,1,2015
 Amos Ron,University of Wisconsin - Madison,networks,1,2005
 Amos Ron,University of Wisconsin - Madison,networks,2,2007
 Amos Ron,University of Wisconsin - Madison,networks,1,2009
+Riccardo Bettati,Texas A&M University,networks,1,2001
 Ming-Yang Kao,Northwestern University,theory,1,2000
 Ming-Yang Kao,Northwestern University,networks,1,2006
 Ming-Yang Kao,Northwestern University,security,1,2006
@@ -9992,6 +10153,8 @@ Jure Leskovec,Stanford University,web,3,2014
 Jure Leskovec,Stanford University,web,3,2015
 Jure Leskovec,Stanford University,web,3,2016
 Jure Leskovec,Stanford University,hci,1,2010
+Paul Medvedev,Pennsylvania State University,networks,1,2001
+Gaurav S. Sukhatme,University of Southern California,networks,1,2004
 Shivakant Mishra,University of Colorado Boulder,networks,1,2010
 Shivakant Mishra,University of Colorado Boulder,networks,1,2011
 Shivakant Mishra,University of Colorado Boulder,mlmining,1,2012
@@ -10007,6 +10170,8 @@ Kamalika Chaudhuri,University of California - San Diego,mlmining,1,2013
 Kamalika Chaudhuri,University of California - San Diego,mlmining,2,2014
 Kamalika Chaudhuri,University of California - San Diego,mlmining,3,2015
 Kamalika Chaudhuri,University of California - San Diego,database,1,2007
+Eric Bach,University of Wisconsin - Madison,theory,1,2001
+Eric Bach,University of Wisconsin - Madison,networks,1,2014
 Daniel P. Siewiorek,Carnegie Mellon University,networks,1,2005
 Daniel P. Siewiorek,Carnegie Mellon University,ai,1,2008
 Daniel P. Siewiorek,Carnegie Mellon University,hci,1,2011
@@ -10016,6 +10181,8 @@ Jing Chen,State University of New York - Stony Brook,theory,1,2009
 Jing Chen,State University of New York - Stony Brook,theory,1,2011
 Jing Chen,State University of New York - Stony Brook,networks,1,2015
 Jing Chen,State University of New York - Stony Brook,ai,1,2016
+Pablo A. Parrilo,Massachusetts Institute of Technology,networks,1,2010
+Raissa D'Souza,University of California - Davis,networks,1,2003
 Luis E. Ortiz,State University of New York - Stony Brook,networks,1,2015
 Luis E. Ortiz,State University of New York - Stony Brook,mlmining,2,2002
 Luis E. Ortiz,State University of New York - Stony Brook,mlmining,1,2003
@@ -10028,6 +10195,9 @@ Luis E. Ortiz,State University of New York - Stony Brook,ai,1,2011
 Luis E. Ortiz,State University of New York - Stony Brook,ai,1,2015
 Luis E. Ortiz,State University of New York - Stony Brook,vision,1,2011
 Luis E. Ortiz,State University of New York - Stony Brook,vision,1,2012
+Michael C. Ferris,University of Wisconsin - Madison,networks,1,2002
+Vijaya Ramachandran,University of Texas - Austin,arch,1,2008
+Vijaya Ramachandran,University of Texas - Austin,networks,1,2004
 Michael Kifer,State University of New York - Stony Brook,ai,1,2010
 Michael Kifer,State University of New York - Stony Brook,database,1,2000
 Michael Kifer,State University of New York - Stony Brook,database,1,2002
@@ -10042,6 +10212,11 @@ Kirk Pruhs,University of Pittsburgh,theory,1,2010
 Kirk Pruhs,University of Pittsburgh,theory,1,2011
 Kirk Pruhs,University of Pittsburgh,theory,2,2014
 Kirk Pruhs,University of Pittsburgh,database,1,2006
+Tomasz Imielinski,Rutgers - State University of New Jersey - New Brunswick,database,1,2002
+Roger King,University of Colorado Boulder,database,1,2002
+Tamer Kahveci,University of Florida,database,1,2001
+Tamer Kahveci,University of Florida,database,1,2006
+Shamkant B. Navathe,Georgia Institute of Technology,database,1,2000
 Ronald Parr,Duke University,mlmining,2,2001
 Ronald Parr,Duke University,mlmining,2,2002
 Ronald Parr,Duke University,mlmining,1,2003
@@ -10082,6 +10257,8 @@ Subbarao Kambhampati,Arizona State University,database,1,2005
 Subbarao Kambhampati,Arizona State University,database,1,2007
 Subbarao Kambhampati,Arizona State University,web,1,2010
 Subbarao Kambhampati,Arizona State University,web,1,2011
+Christian S. Collberg,University of Arizona,proglang,1,2004
+Christian S. Collberg,University of Arizona,database,1,2004
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1,2001
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1,2002
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1,2011
@@ -10094,6 +10271,8 @@ Petros Drineas,Rensselaer Polytechnic Institute,mlmining,1,2011
 Petros Drineas,Rensselaer Polytechnic Institute,mlmining,1,2012
 Petros Drineas,Rensselaer Polytechnic Institute,mlmining,2,2015
 Petros Drineas,Rensselaer Polytechnic Institute,database,1,2006
+David S. Johnson,Columbia University,theory,1,2000
+David S. Johnson,Columbia University,database,1,2004
 Gul Agha,University of Illinois at Urbana-Champaign,logic,1,2004
 Gul Agha,University of Illinois at Urbana-Champaign,logic,1,2005
 Gul Agha,University of Illinois at Urbana-Champaign,logic,1,2006
@@ -10173,6 +10352,9 @@ Rance Cleaveland,University of Maryland - College Park,softeng,1,2002
 Rance Cleaveland,University of Maryland - College Park,softeng,1,2003
 Warren A. Hunt Jr.,University of Texas - Austin,logic,2,2004
 Warren A. Hunt Jr.,University of Texas - Austin,logic,1,2009
+Zvonimir Rakamaric,University of Utah,logic,1,2009
+Zvonimir Rakamaric,University of Utah,logic,1,2014
+Benjamin Goldberg,New York University,logic,1,2005
 Clark Barrett,New York University,logic,1,2006
 Clark Barrett,New York University,logic,1,2007
 Clark Barrett,New York University,logic,1,2010
@@ -10185,6 +10367,7 @@ Karem A. Sakallah,University of Michigan,ai,1,2005
 Lydia E. Kavraki,Rice University,logic,1,2007
 Lydia E. Kavraki,Rice University,ai,1,2014
 Lydia E. Kavraki,Rice University,ai,1,2015
+Tuba Yavuz-Kahveci,University of Florida,logic,1,2005
 E. Allen Emerson,University of Texas - Austin,logic,1,2000
 E. Allen Emerson,University of Texas - Austin,logic,1,2001
 E. Allen Emerson,University of Texas - Austin,logic,1,2003
@@ -10199,6 +10382,7 @@ Mark Braverman,Princeton University,theory,4,2013
 Mark Braverman,Princeton University,theory,1,2014
 Mark Braverman,Princeton University,theory,3,2015
 Mark Braverman,Princeton University,web,1,2013
+Stephen A. Edwards,Columbia University,logic,1,2005
 Michael Kearns,University of Pennsylvania,theory,1,2012
 Michael Kearns,University of Pennsylvania,mlmining,1,2002
 Michael Kearns,University of Pennsylvania,mlmining,1,2006
@@ -10301,6 +10485,7 @@ Peter Stone,University of Texas - Austin,ai,1,2013
 Peter Stone,University of Texas - Austin,ai,1,2014
 Peter Stone,University of Texas - Austin,ai,7,2015
 Peter Stone,University of Texas - Austin,ai,2,2016
+Don Perlis,University of Maryland - College Park,ai,2,2016
 Joohyung Lee,Arizona State University,ai,1,2003
 Joohyung Lee,Arizona State University,ai,1,2004
 Joohyung Lee,Arizona State University,ai,1,2005
@@ -10313,6 +10498,8 @@ Joohyung Lee,Arizona State University,ai,1,2011
 Joohyung Lee,Arizona State University,ai,1,2012
 Joohyung Lee,Arizona State University,ai,3,2013
 Joohyung Lee,Arizona State University,ai,2,2015
+Robert Platt Jr.,Northeastern University,mlmining,1,2004
+Robert Platt Jr.,Northeastern University,ai,1,2005
 Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,2,2000
 Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1,2004
 Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1,2010
@@ -10490,6 +10677,8 @@ Max Welling,University of California - Irvine,vision,1,2005
 Max Welling,University of California - Irvine,vision,2,2008
 Max Welling,University of California - Irvine,vision,1,2011
 Max Welling,University of California - Irvine,vision,1,2013
+Lenhart K. Schubert,University of Rochester,ai,1,2006
+Lenhart K. Schubert,University of Rochester,ai,1,2015
 Jaime G. Carbonell,Carnegie Mellon University,mlmining,1,2002
 Jaime G. Carbonell,Carnegie Mellon University,mlmining,1,2005
 Jaime G. Carbonell,Carnegie Mellon University,mlmining,1,2007
@@ -10567,6 +10756,8 @@ Michael L. Littman,Brown University,ai,2,2013
 Michael L. Littman,Brown University,ai,1,2014
 Michael L. Littman,Brown University,ai,1,2015
 Michael L. Littman,Brown University,hci,1,2014
+Tiffany Barnes,North Carolina State University,ai,1,2007
+Tiffany Barnes,North Carolina State University,ai,1,2008
 John E. Laird,University of Michigan,ai,1,2003
 John E. Laird,University of Michigan,ai,1,2004
 John E. Laird,University of Michigan,ai,2,2007
@@ -10677,6 +10868,7 @@ Dieter Fox,University of Washington,vision,1,2011
 Dieter Fox,University of Washington,vision,1,2012
 Dieter Fox,University of Washington,vision,1,2013
 Dieter Fox,University of Washington,vision,1,2015
+Sergei Nirenburg,Rensselaer Polytechnic Institute,ai,2,2006
 Maria L. Gini,University of Minnesota - Twin Cities,mlmining,1,2000
 Maria L. Gini,University of Minnesota - Twin Cities,ai,1,2005
 Maria L. Gini,University of Minnesota - Twin Cities,ai,1,2006
@@ -10685,6 +10877,7 @@ Maria L. Gini,University of Minnesota - Twin Cities,ai,1,2008
 Maria L. Gini,University of Minnesota - Twin Cities,ai,2,2013
 Maria L. Gini,University of Minnesota - Twin Cities,ai,2,2015
 Maria L. Gini,University of Minnesota - Twin Cities,ai,2,2016
+Robin R. Murphy,Texas A&M University,ai,1,2004
 Paul Beame,University of Washington,theory,1,2000
 Paul Beame,University of Washington,theory,1,2001
 Paul Beame,University of Washington,theory,2,2002
@@ -10849,6 +11042,8 @@ Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1,2014
 Charles Lee Isbell Jr.,Georgia Institute of Technology,ai,2,2006
 Charles Lee Isbell Jr.,Georgia Institute of Technology,ai,5,2007
 Charles Lee Isbell Jr.,Georgia Institute of Technology,ai,2,2011
+Ernest Davis,New York University,ai,1,2004
+Ernest Davis,New York University,ai,1,2010
 Stuart J. Russell,University of California - Berkeley,mlmining,2,2000
 Stuart J. Russell,University of California - Berkeley,mlmining,1,2001
 Stuart J. Russell,University of California - Berkeley,mlmining,3,2002
@@ -11190,6 +11385,8 @@ Arindam Banerjee,University of Minnesota - Twin Cities,ai,1,2015
 Arindam Banerjee,University of Minnesota - Twin Cities,ai,1,2016
 Arindam Banerjee,University of Minnesota - Twin Cities,web,1,2015
 Arindam Banerjee,University of Minnesota - Twin Cities,vision,1,2011
+Stefanie Tellex,Brown University,ai,1,2011
+Stefanie Tellex,Brown University,web,1,2003
 Alexander T. Ihler,University of California - Irvine,mlmining,1,2003
 Alexander T. Ihler,University of California - Irvine,mlmining,1,2004
 Alexander T. Ihler,University of California - Irvine,mlmining,2,2006
@@ -11214,6 +11411,9 @@ Carlo Tomasi,Duke University,vision,1,2007
 Carlo Tomasi,Duke University,vision,3,2011
 Carlo Tomasi,Duke University,vision,2,2012
 Carlo Tomasi,Duke University,vision,1,2013
+Ricardo Gutierrez-Osuna,Texas A&M University,mlmining,1,2004
+Ricardo Gutierrez-Osuna,Texas A&M University,ai,1,2015
+Richard Furuta,Texas A&M University,ai,1,2015
 Steven M. LaValle,University of Illinois at Urbana-Champaign,ai,1,2005
 Steven M. LaValle,University of Illinois at Urbana-Champaign,ai,1,2007
 Steven M. LaValle,University of Illinois at Urbana-Champaign,ai,2,2013
@@ -11292,6 +11492,7 @@ Daniel Sheldon,University of Massachusetts - Amherst,ai,1,2013
 Daniel Sheldon,University of Massachusetts - Amherst,ai,1,2014
 Daniel Sheldon,University of Massachusetts - Amherst,ai,1,2015
 Daniel Sheldon,University of Massachusetts - Amherst,ai,2,2016
+Christopher Riesbeck,Northwestern University,ai,1,2007
 Yisong Yue,California Institute of Technology,mlmining,1,2008
 Yisong Yue,California Institute of Technology,mlmining,1,2009
 Yisong Yue,California Institute of Technology,mlmining,2,2011
@@ -11351,6 +11552,9 @@ Mark Riedl,Georgia Institute of Technology,ai,1,2012
 Mark Riedl,Georgia Institute of Technology,ai,1,2013
 Mark Riedl,Georgia Institute of Technology,ai,1,2014
 Mark Riedl,Georgia Institute of Technology,hci,1,2013
+Michael R. Genesereth,Stanford University,ai,1,2005
+Michael R. Genesereth,Stanford University,database,1,2009
+Amelia C. Regan,University of California - Irvine,ai,1,2014
 James Caverlee,Texas A&M University,ai,1,2016
 James Caverlee,Texas A&M University,web,1,2006
 James Caverlee,Texas A&M University,web,2,2008
@@ -11359,6 +11563,7 @@ James Caverlee,Texas A&M University,web,1,2011
 James Caverlee,Texas A&M University,web,1,2013
 James Caverlee,Texas A&M University,web,1,2014
 James Caverlee,Texas A&M University,web,2,2015
+Christopher Lee,University of California - Los Angeles,ai,1,2006
 Dana H. Ballard,University of Texas - Austin,mlmining,1,2003
 Dana H. Ballard,University of Texas - Austin,ai,1,2003
 Dana H. Ballard,University of Texas - Austin,ai,1,2004
@@ -11389,6 +11594,7 @@ J. Zico Kolter,Carnegie Mellon University,mlmining,1,2011
 J. Zico Kolter,Carnegie Mellon University,ai,1,2011
 J. Zico Kolter,Carnegie Mellon University,ai,1,2014
 J. Zico Kolter,Carnegie Mellon University,ai,1,2015
+Jon Doyle,North Carolina State University,ai,1,2007
 Frank Dellaert,Georgia Institute of Technology,mlmining,1,2000
 Frank Dellaert,Georgia Institute of Technology,ai,2,2005
 Frank Dellaert,Georgia Institute of Technology,ai,2,2007
@@ -11421,6 +11627,8 @@ Eric Price,University of Texas - Austin,ai,1,2015
 Peter K. Allen,Columbia University,ai,1,2016
 Peter K. Allen,Columbia University,vision,1,2000
 Peter K. Allen,Columbia University,vision,1,2001
+Bryan Pardo,Northwestern University,ai,1,2005
+Bryan Pardo,Northwestern University,hci,1,2015
 Alexander J. Hartemink,Duke University,mlmining,1,2004
 Alexander J. Hartemink,Duke University,mlmining,1,2008
 Alexander J. Hartemink,Duke University,ai,1,2016
@@ -11461,6 +11669,7 @@ Benjamin Kuipers,University of Michigan,ai,1,2007
 Benjamin Kuipers,University of Michigan,ai,1,2009
 Benjamin Kuipers,University of Michigan,vision,3,2011
 Benjamin Kuipers,University of Michigan,vision,1,2013
+Shi-Kuo Chang,University of Pittsburgh,ai,1,2013
 Virginia Vassilevska Williams,Stanford University,theory,1,2010
 Virginia Vassilevska Williams,Stanford University,theory,1,2011
 Virginia Vassilevska Williams,Stanford University,theory,2,2012
@@ -11480,6 +11689,7 @@ Xiaohui Xie,University of California - Irvine,mlmining,1,2000
 Xiaohui Xie,University of California - Irvine,mlmining,2,2001
 Xiaohui Xie,University of California - Irvine,mlmining,1,2003
 Xiaohui Xie,University of California - Irvine,ai,1,2016
+Emily Mower Provost,University of Michigan,ai,1,2015
 Georg Essl,University of Michigan,ai,1,2015
 Georg Essl,University of Michigan,graphics,1,2001
 Georg Essl,University of Michigan,hci,1,2010
@@ -11499,6 +11709,10 @@ Katherine A. Heller,Duke University,mlmining,1,2011
 Katherine A. Heller,Duke University,mlmining,3,2012
 Katherine A. Heller,Duke University,mlmining,3,2015
 Katherine A. Heller,Duke University,ai,1,2016
+Alexander Borgida,Rutgers - State University of New Jersey - New Brunswick,ai,1,2005
+Alexander Borgida,Rutgers - State University of New Jersey - New Brunswick,ai,1,2006
+Elizabeth Bradley,University of Colorado Boulder,ai,1,2008
+Elizabeth Bradley,University of Colorado Boulder,ai,1,2011
 Ming Lin,University of North Carolina - Chapel Hill,ai,2,2015
 Ming Lin,University of North Carolina - Chapel Hill,ai,1,2016
 Ming Lin,University of North Carolina - Chapel Hill,vision,1,2015
@@ -11533,6 +11747,7 @@ Tracy Anne Hammond,Texas A&M University,ai,1,2011
 Tracy Anne Hammond,Texas A&M University,ai,1,2013
 Tracy Anne Hammond,Texas A&M University,ai,1,2015
 Tracy Anne Hammond,Texas A&M University,hci,1,2014
+Yi Wu,Purdue University,ai,1,2012
 Laurent Itti,University of Southern California,mlmining,1,2001
 Laurent Itti,University of Southern California,mlmining,2,2005
 Laurent Itti,University of Southern California,mlmining,1,2007
@@ -11543,9 +11758,15 @@ Laurent Itti,University of Southern California,vision,2,2012
 Laurent Itti,University of Southern California,vision,1,2013
 Laurent Itti,University of Southern California,vision,1,2014
 Laurent Itti,University of Southern California,vision,1,2015
+Maya Cakmak,University of Washington,ai,1,2012
+Howie Choset,Carnegie Mellon University,ai,1,2010
+Joydeep Biswas,University of Massachusetts - Amherst,ai,1,2015
+Joydeep Biswas,University of Massachusetts - Amherst,ai,1,2016
 Suchi Saria,Johns Hopkins University,mlmining,1,2015
 Suchi Saria,Johns Hopkins University,ai,1,2011
 Suchi Saria,Johns Hopkins University,ai,1,2015
+Aaron Clauset,University of Colorado Boulder,theory,1,2005
+Aaron Clauset,University of Colorado Boulder,ai,1,2015
 Silvio Savarese,Stanford University,mlmining,1,2014
 Silvio Savarese,Stanford University,ai,1,2012
 Silvio Savarese,Stanford University,vision,1,2001
@@ -11605,6 +11826,8 @@ Thorsten Joachims,Cornell University,web,1,2016
 Thorsten Joachims,Cornell University,nlp,1,2014
 Thorsten Joachims,Cornell University,nlp,1,2015
 Thorsten Joachims,Cornell University,vision,1,2013
+Christopher L. Barrett,Virginia Polytechnic Institute and State University,ai,1,2007
+Christopher L. Barrett,Virginia Polytechnic Institute and State University,ai,1,2008
 Tucker R. Balch,Georgia Institute of Technology,mlmining,1,2001
 Tucker R. Balch,Georgia Institute of Technology,ai,1,2005
 Tucker R. Balch,Georgia Institute of Technology,vision,1,2005
@@ -11639,6 +11862,7 @@ Tomás Lozano-Pérez,Massachusetts Institute of Technology,ai,1,2011
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,ai,1,2014
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,ai,1,2015
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,vision,1,2007
+William Thompson,University of Utah,ai,1,2007
 Larry A. Wasserman,Carnegie Mellon University,mlmining,2,2005
 Larry A. Wasserman,Carnegie Mellon University,mlmining,3,2007
 Larry A. Wasserman,Carnegie Mellon University,mlmining,1,2008
@@ -11657,6 +11881,8 @@ Thad Starner,Georgia Institute of Technology,hci,1,2007
 Thad Starner,Georgia Institute of Technology,hci,2,2008
 Thad Starner,Georgia Institute of Technology,hci,4,2010
 Thad Starner,Georgia Institute of Technology,hci,1,2014
+Thomas R. Ioerger,Texas A&M University,ai,1,2001
+Thomas R. Ioerger,Texas A&M University,ai,1,2005
 Shih-Fu Chang,Columbia University,mlmining,1,2008
 Shih-Fu Chang,Columbia University,mlmining,1,2009
 Shih-Fu Chang,Columbia University,mlmining,3,2010
@@ -11685,6 +11911,7 @@ Nassir Navab,Johns Hopkins University,vision,4,2011
 Nassir Navab,Johns Hopkins University,vision,1,2012
 Nassir Navab,Johns Hopkins University,vision,2,2014
 Nassir Navab,Johns Hopkins University,vision,6,2015
+Ji Liu,University of Rochester,ai,1,2016
 Munmun De Choudhury,Georgia Institute of Technology,web,1,2009
 Munmun De Choudhury,Georgia Institute of Technology,web,2,2010
 Munmun De Choudhury,Georgia Institute of Technology,hci,1,2012
@@ -11721,6 +11948,8 @@ Edward A. Fox,Virginia Polytechnic Institute and State University,web,1,2001
 Edward A. Fox,Virginia Polytechnic Institute and State University,web,2,2004
 Edward A. Fox,Virginia Polytechnic Institute and State University,web,2,2005
 Edward A. Fox,Virginia Polytechnic Institute and State University,web,1,2008
+Donald J. Patterson,University of California - Irvine,web,1,2004
+Donald J. Patterson,University of California - Irvine,hci,1,2012
 John E. Hopcroft,Cornell University,theory,1,2004
 John E. Hopcroft,Cornell University,theory,1,2005
 John E. Hopcroft,Cornell University,mlmining,1,2003
@@ -11744,6 +11973,7 @@ Kenneth R. Koedinger,Carnegie Mellon University,hci,2,2004
 Kenneth R. Koedinger,Carnegie Mellon University,hci,1,2007
 Kenneth R. Koedinger,Carnegie Mellon University,hci,1,2013
 Kenneth R. Koedinger,Carnegie Mellon University,hci,1,2015
+Joe Warren,Rice University,web,1,2015
 Tom Yeh,University of Colorado Boulder,softeng,1,2013
 Tom Yeh,University of Colorado Boulder,web,1,2009
 Tom Yeh,University of Colorado Boulder,web,1,2011
@@ -11813,10 +12043,12 @@ John Zimmerman,Carnegie Mellon University,hci,4,2011
 John Zimmerman,Carnegie Mellon University,hci,1,2012
 John Zimmerman,Carnegie Mellon University,hci,2,2013
 John Zimmerman,Carnegie Mellon University,hci,3,2014
+Daniel P. Miranker,University of Texas - Austin,web,1,2012
 George Karypis,University of Minnesota - Twin Cities,mlmining,1,2004
 George Karypis,University of Minnesota - Twin Cities,mlmining,1,2013
 George Karypis,University of Minnesota - Twin Cities,web,1,2001
 George Karypis,University of Minnesota - Twin Cities,web,1,2002
+Daniel Friedman,Indiana University,web,1,2016
 Jason D. Hartline,Northwestern University,theory,1,2002
 Jason D. Hartline,Northwestern University,theory,2,2005
 Jason D. Hartline,Northwestern University,theory,1,2008
@@ -11828,12 +12060,16 @@ Jason D. Hartline,Northwestern University,web,1,2008
 Jason D. Hartline,Northwestern University,web,1,2016
 Alessandro Vespignani,Northeastern University,mlmining,1,2005
 Alessandro Vespignani,Northeastern University,web,2,2005
+Richard Han,University of Colorado Boulder,mlmining,1,2012
+Richard Han,University of Colorado Boulder,web,1,2011
 Richard E. Ladner,University of Washington,web,1,2008
 Richard E. Ladner,University of Washington,hci,1,2009
 Richard E. Ladner,University of Washington,hci,1,2010
 Richard E. Ladner,University of Washington,hci,3,2011
 Richard E. Ladner,University of Washington,hci,1,2013
 Richard E. Ladner,University of Washington,hci,1,2015
+Larry Birnbaum,Northwestern University,web,1,2007
+Larry Birnbaum,Northwestern University,web,1,2008
 Kunal Agrawal,Washington University - St. Louis,proglang,1,2015
 Kunal Agrawal,Washington University - St. Louis,mlmining,1,2014
 Kunal Agrawal,Washington University - St. Louis,web,1,2011
@@ -11843,6 +12079,12 @@ Chengxiang Zhai,University of Illinois at Urbana-Champaign,ai,1,2013
 Chengxiang Zhai,University of Illinois at Urbana-Champaign,web,1,2008
 Chengxiang Zhai,University of Illinois at Urbana-Champaign,web,1,2011
 Chengxiang Zhai,University of Illinois at Urbana-Champaign,web,1,2015
+David Lazer,Northeastern University,web,2,2013
+Kristian J. Hammond,Northwestern University,web,1,2002
+Kristian J. Hammond,Northwestern University,web,1,2010
+Kathleen M. Carley,Carnegie Mellon University,softeng,1,2011
+Kathleen M. Carley,Carnegie Mellon University,web,1,2016
+Jason Hong,Carnegie Mellon University,web,1,2016
 Éva Tardos,Cornell University,theory,2,2000
 Éva Tardos,Cornell University,theory,2,2001
 Éva Tardos,Cornell University,theory,2,2003
@@ -11932,6 +12174,7 @@ Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2010
 Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2012
 Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2013
 Loren G. Terveen,University of Minnesota - Twin Cities,hci,1,2014
+Sibel Adali,Rensselaer Polytechnic Institute,web,1,2012
 Henry Hoffmann,University of Chicago,proglang,1,2010
 Henry Hoffmann,University of Chicago,softeng,1,2011
 Henry Hoffmann,University of Chicago,softeng,1,2014
@@ -11951,6 +12194,8 @@ Ryan Kastner,University of California - San Diego,opsys,1,2014
 Ryan Kastner,University of California - San Diego,arch,1,2011
 Ryan Kastner,University of California - San Diego,arch,1,2013
 Ryan Kastner,University of California - San Diego,security,1,2007
+Georg Seelig,University of Washington,opsys,1,2016
+Georg Seelig,University of Washington,arch,1,2013
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,arch,1,2012
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,2,2006
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,1,2008
@@ -11959,9 +12204,20 @@ Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,2,2011
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,1,2012
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,3,2013
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,3,2015
+Andrew D. Hilton,Duke University,arch,1,2007
+Andrew D. Hilton,Duke University,arch,1,2009
+Charles C. Weems,University of Massachusetts - Amherst,arch,1,2003
 Lawrence Rauchwerger,Texas A&M University,proglang,1,2012
 Lawrence Rauchwerger,Texas A&M University,softeng,1,2015
 Lawrence Rauchwerger,Texas A&M University,arch,1,2001
+Scott Smith,Johns Hopkins University,arch,1,2000
+Vijaykrishnan Narayanan,Pennsylvania State University,arch,1,2006
+Vijaykrishnan Narayanan,Pennsylvania State University,arch,1,2014
+Katherine A. Yelick,University of California - Berkeley,arch,1,2009
+Frank Mueller,North Carolina State University,arch,1,2003
+Geoffrey Brown,Indiana University,arch,1,2000
+Joe Devietti,University of Pennsylvania,opsys,1,2008
+Joe Devietti,University of Pennsylvania,arch,1,2007
 Hasan Davulcu,Arizona State University,mlmining,1,2014
 Hasan Davulcu,Arizona State University,ai,1,2015
 Hasan Davulcu,Arizona State University,database,1,2000
@@ -11980,6 +12236,9 @@ Ryan Williams,Stanford University,database,1,2015
 Dana Angluin,Yale University,theory,1,2006
 Dana Angluin,Yale University,ai,1,2015
 Dana Angluin,Yale University,database,1,2013
+Leonard Pitt,University of Illinois at Urbana-Champaign,mlmining,1,2005
+Leonard Pitt,University of Illinois at Urbana-Champaign,database,1,2003
+Sandeep Gupta,Arizona State University,database,1,2004
 Jelani Nelson,Harvard University,theory,1,2008
 Jelani Nelson,Harvard University,theory,1,2010
 Jelani Nelson,Harvard University,theory,1,2011
@@ -11997,6 +12256,8 @@ Gregory Valiant,Stanford University,mlmining,1,2013
 Gregory Valiant,Stanford University,mlmining,2,2014
 Gregory Valiant,Stanford University,mlmining,1,2015
 Gregory Valiant,Stanford University,database,1,2009
+Jeff Erickson,University of Illinois at Urbana-Champaign,theory,1,2009
+Jeff Erickson,University of Illinois at Urbana-Champaign,database,1,2000
 Vladimir Braverman,Johns Hopkins University,theory,1,2007
 Vladimir Braverman,Johns Hopkins University,theory,2,2010
 Vladimir Braverman,Johns Hopkins University,database,1,2009
@@ -12006,6 +12267,7 @@ Jonathan Ullman,Northeastern University,theory,2,2013
 Jonathan Ullman,Northeastern University,theory,2,2014
 Jonathan Ullman,Northeastern University,theory,1,2015
 Jonathan Ullman,Northeastern University,database,1,2015
+Jeffrey B. Remmel,University of California - San Diego,database,1,2008
 Lance Fortnow,Georgia Institute of Technology,theory,1,2000
 Lance Fortnow,Georgia Institute of Technology,theory,1,2001
 Lance Fortnow,Georgia Institute of Technology,theory,1,2004
@@ -12264,6 +12526,8 @@ Rocco A. Servedio,Columbia University,mlmining,2,2008
 Rocco A. Servedio,Columbia University,mlmining,1,2010
 Rocco A. Servedio,Columbia University,mlmining,2,2011
 Rocco A. Servedio,Columbia University,mlmining,1,2014
+Muthuramakrishnan Venkitasubramaniam,University of Rochester,theory,1,2007
+Muthuramakrishnan Venkitasubramaniam,University of Rochester,theory,1,2009
 Eli Gafni,University of California - Los Angeles,theory,1,2002
 Eli Gafni,University of California - Los Angeles,theory,1,2005
 Eli Gafni,University of California - Los Angeles,theory,1,2009
@@ -12351,6 +12615,7 @@ Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,1,
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,2,2011
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,1,2012
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,1,2014
+Allison Bishop Lewko,Columbia University,theory,2,2015
 Leonid A. Levin,Boston University,logic,1,2012
 Leonid A. Levin,Boston University,theory,1,2001
 Leonid A. Levin,Boston University,theory,1,2002
@@ -12379,6 +12644,8 @@ Daniele Micciancio,University of California - San Diego,theory,1,2010
 James Aspnes,Yale University,theory,1,2002
 James Aspnes,Yale University,theory,1,2006
 James Aspnes,Yale University,theory,1,2011
+C. Greg Plaxton,University of Texas - Austin,theory,1,2000
+C. Greg Plaxton,University of Texas - Austin,theory,1,2003
 Chris Peikert,Georgia Institute of Technology,theory,1,2007
 Chris Peikert,Georgia Institute of Technology,theory,2,2008
 Chris Peikert,Georgia Institute of Technology,theory,1,2009
@@ -12438,6 +12705,7 @@ Yaoyun Shi,University of Michigan,theory,1,2014
 Elena Grigorescu,Purdue University,theory,1,2008
 Elena Grigorescu,Purdue University,theory,1,2010
 Elena Grigorescu,Purdue University,theory,1,2013
+Sorin Istrail,Brown University,theory,1,2000
 Vijay V. Vazirani,Georgia Institute of Technology,theory,2,2002
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1,2005
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1,2007
@@ -12452,6 +12720,11 @@ Huijia Lin,University of California - Santa Barbara,theory,1,2015
 Anna Gál,University of Texas - Austin,theory,1,2003
 Anna Gál,University of Texas - Austin,theory,1,2007
 Anna Gál,University of Texas - Austin,theory,1,2012
+Alper Üngör,University of Florida,theory,1,2000
+Piotr Berman,Pennsylvania State University,theory,1,2000
+Piotr Berman,Pennsylvania State University,theory,1,2014
+S. Rao Kosaraju,Johns Hopkins University,theory,1,2001
+Stefano Tessaro,University of California - Santa Barbara,theory,1,2011
 Eric Vigoda,Georgia Institute of Technology,theory,1,2001
 Eric Vigoda,Georgia Institute of Technology,theory,1,2003
 Eric Vigoda,Georgia Institute of Technology,theory,1,2004
@@ -12464,6 +12737,8 @@ Daniel Stefankovic,University of Rochester,theory,1,2003
 Daniel Stefankovic,University of Rochester,theory,1,2007
 Daniel Stefankovic,University of Rochester,theory,1,2014
 Daniel Stefankovic,University of Rochester,mlmining,1,2012
+Péter Gács,Boston University,theory,1,2001
+Péter Gács,Boston University,theory,1,2002
 Jacob Abernethy,University of Michigan,theory,1,2012
 Jacob Abernethy,University of Michigan,mlmining,1,2010
 Jacob Abernethy,University of Michigan,mlmining,1,2011
@@ -12475,6 +12750,8 @@ László Babai,University of Chicago,theory,2,2013
 Claire Mathieu,Brown University,theory,1,2008
 Claire Mathieu,Brown University,theory,1,2009
 Claire Mathieu,Brown University,theory,1,2010
+Dieter van Melkebeek,University of Wisconsin - Madison,theory,1,2002
+Dieter van Melkebeek,University of Wisconsin - Madison,theory,1,2010
 Yoav Freund,University of California - San Diego,theory,1,2008
 Yoav Freund,University of California - San Diego,mlmining,1,2007
 Yoav Freund,University of California - San Diego,mlmining,2,2009
@@ -12495,17 +12772,37 @@ John Regehr,University of Utah,softeng,1,2002
 John Regehr,University of Utah,softeng,1,2012
 John Regehr,University of Utah,opsys,1,2004
 John Regehr,University of Utah,opsys,1,2009
+John K. Ousterhout,Stanford University,opsys,1,2011
+John K. Ousterhout,Stanford University,opsys,1,2015
 John Criswell,University of Rochester,opsys,1,2007
 John Criswell,University of Rochester,opsys,1,2013
 John Criswell,University of Rochester,opsys,1,2014
 John Criswell,University of Rochester,opsys,1,2015
 John Criswell,University of Rochester,security,1,2009
 John Criswell,University of Rochester,security,1,2014
+Gary W. Meyer,University of Minnesota - Twin Cities,graphics,1,2001
+Lorie Loeb,Dartmouth College,graphics,1,2000
+Lorie Loeb,Dartmouth College,graphics,1,2002
+Roger Crawfis,Ohio State University,graphics,1,2003
 David H. Laidlaw,Brown University,graphics,2,2003
 David H. Laidlaw,Brown University,hci,3,2012
+Anselmo Lastra,University of North Carolina - Chapel Hill,graphics,1,2000
+Anselmo Lastra,University of North Carolina - Chapel Hill,graphics,1,2003
+Gary Bishop,University of North Carolina - Chapel Hill,graphics,1,2000
 Sampath Kannan,University of Pennsylvania,theory,1,2000
 Sampath Kannan,University of Pennsylvania,theory,1,2011
 Sampath Kannan,University of Pennsylvania,theory,1,2012
+Sandy Irani,University of California - Irvine,theory,1,2004
+Sandy Irani,University of California - Irvine,theory,1,2007
+Eric Allender,Rutgers - State University of New Jersey - New Brunswick,theory,1,2002
+Eric Allender,Rutgers - State University of New Jersey - New Brunswick,mlmining,1,2002
+John Harer,Duke University,theory,1,2007
+Alexander Vardy,University of California - San Diego,theory,1,2005
+Joel Spencer,New York University,theory,1,2002
+Ketan Mulmuley,University of Chicago,theory,1,2012
+Clifford Stein,Columbia University,theory,1,2007
+Endre Szemerédi,Rutgers - State University of New Jersey - New Brunswick,theory,1,2000
+Steven Rudich,Carnegie Mellon University,theory,1,2002
 Alon Orlitsky,University of California - San Diego,theory,1,2003
 Alon Orlitsky,University of California - San Diego,mlmining,1,2003
 Alon Orlitsky,University of California - San Diego,mlmining,1,2004
@@ -12513,6 +12810,7 @@ Alon Orlitsky,University of California - San Diego,mlmining,2,2005
 Alon Orlitsky,University of California - San Diego,mlmining,1,2012
 Alon Orlitsky,University of California - San Diego,mlmining,1,2014
 Alon Orlitsky,University of California - San Diego,mlmining,1,2015
+Xianghong Jasmine Zhou,University of Southern California,mlmining,1,2005
 Jieping Ye,University of Michigan,mlmining,6,2004
 Jieping Ye,University of Michigan,mlmining,2,2006
 Jieping Ye,University of Michigan,mlmining,5,2007
@@ -12565,6 +12863,8 @@ David Heckerman,University of California - Los Angeles,mlmining,1,2000
 David Heckerman,University of California - Los Angeles,mlmining,1,2004
 David Heckerman,University of California - Los Angeles,mlmining,1,2005
 David Heckerman,University of California - Los Angeles,vision,1,2001
+Jan Prins,University of North Carolina - Chapel Hill,mlmining,1,2004
+Jan Prins,University of North Carolina - Chapel Hill,mlmining,1,2006
 Nathan Srebro,University of Chicago,mlmining,2,2003
 Nathan Srebro,University of Chicago,mlmining,2,2004
 Nathan Srebro,University of Chicago,mlmining,1,2005
@@ -12580,10 +12880,15 @@ Nathan Srebro,University of Chicago,mlmining,2,2015
 Roni Rosenfeld,Carnegie Mellon University,mlmining,1,2012
 Roni Rosenfeld,Carnegie Mellon University,hci,1,2002
 Roni Rosenfeld,Carnegie Mellon University,hci,1,2013
+Carl Kingsford,Carnegie Mellon University,mlmining,1,2012
+Eric Mjolsness,University of California - Irvine,mlmining,2,2003
 Shashi Shekhar,University of Minnesota - Twin Cities,security,1,2011
 Shashi Shekhar,University of Minnesota - Twin Cities,security,1,2012
 Shashi Shekhar,University of Minnesota - Twin Cities,mlmining,1,2001
 Shashi Shekhar,University of Minnesota - Twin Cities,mlmining,1,2004
+Layne T. Watson,Virginia Polytechnic Institute and State University,mlmining,1,2010
+Anne Rogers,University of Chicago,mlmining,1,2000
+Dhabaleswar K. Panda,Ohio State University,mlmining,1,2003
 Aniket Kittur,Carnegie Mellon University,mlmining,1,2011
 Aniket Kittur,Carnegie Mellon University,hci,1,2007
 Aniket Kittur,Carnegie Mellon University,hci,2,2008
@@ -12608,9 +12913,15 @@ Anand Rangarajan,University of Florida,vision,1,2008
 Anand Rangarajan,University of Florida,vision,1,2009
 Anand Rangarajan,University of Florida,vision,1,2012
 Anand Rangarajan,University of Florida,vision,1,2014
+David Andersen,Carnegie Mellon University,mlmining,1,2009
+Christopher D. Carothers,Rensselaer Polytechnic Institute,mlmining,1,2003
+Alfonso F. Cardenas,University of California - Los Angeles,mlmining,1,2007
+Michael Young,North Carolina State University,mlmining,1,2013
+Michael Young,North Carolina State University,mlmining,1,2015
 Andrew Moore,Carnegie Mellon University,mlmining,1,2000
 Andrew Moore,Carnegie Mellon University,mlmining,1,2005
 Andrew Moore,Carnegie Mellon University,mlmining,1,2006
+Lenwood S. Heath,Virginia Polytechnic Institute and State University,mlmining,1,2010
 Jitendra Malik,University of California - Berkeley,mlmining,1,2000
 Jitendra Malik,University of California - Berkeley,mlmining,1,2002
 Jitendra Malik,University of California - Berkeley,mlmining,2,2004
@@ -12629,10 +12940,14 @@ Jitendra Malik,University of California - Berkeley,vision,2,2012
 Jitendra Malik,University of California - Berkeley,vision,6,2013
 Jitendra Malik,University of California - Berkeley,vision,3,2014
 Jitendra Malik,University of California - Berkeley,vision,16,2015
+David A. Bader,Georgia Institute of Technology,mlmining,1,2013
+Edmond Chow,Georgia Institute of Technology,mlmining,1,2013
 Jeannette M. Wing,Carnegie Mellon University,softeng,1,2001
 Jeannette M. Wing,Carnegie Mellon University,security,1,2002
 Jeannette M. Wing,Carnegie Mellon University,security,1,2012
 Jeannette M. Wing,Carnegie Mellon University,security,1,2014
+Jack W. Davidson,University of Virginia,proglang,1,2004
+Jack W. Davidson,University of Virginia,security,1,2012
 Shwetak Patel,University of Washington,security,1,2010
 Shwetak Patel,University of Washington,hci,1,2011
 Shwetak Patel,University of Washington,hci,5,2012
@@ -12641,6 +12956,7 @@ Shwetak Patel,University of Washington,hci,1,2014
 Helen Nissenbaum,New York University,security,1,2006
 Helen Nissenbaum,New York University,hci,1,2005
 Helen Nissenbaum,New York University,hci,1,2007
+Eugene H. Spafford,Purdue University,security,1,2005
 Jamie Callan,Carnegie Mellon University,web,4,2004
 Jamie Callan,Carnegie Mellon University,web,1,2005
 Jamie Callan,Carnegie Mellon University,web,2,2007
@@ -12678,6 +12994,9 @@ Javed A. Aslam,Northeastern University,web,1,2011
 Javed A. Aslam,Northeastern University,web,1,2012
 Javed A. Aslam,Northeastern University,web,3,2013
 Javed A. Aslam,Northeastern University,web,1,2014
+Adam Lee,University of Pittsburgh,web,1,2011
+Aditya P. Mathur,Purdue University,web,1,2010
+Aditya P. Mathur,Purdue University,web,1,2011
 Andruid Kerne,Texas A&M University,web,1,2007
 Andruid Kerne,Texas A&M University,hci,1,2007
 Andruid Kerne,Texas A&M University,hci,1,2011
@@ -12700,6 +13019,7 @@ Lorenzo Torresani,Dartmouth College,vision,1,2011
 Lorenzo Torresani,Dartmouth College,vision,1,2012
 Lorenzo Torresani,Dartmouth College,vision,1,2013
 Lorenzo Torresani,Dartmouth College,vision,3,2015
+Andrea S. LaPaugh,Princeton University,web,1,2002
 Brent Hecht,University of Minnesota - Twin Cities,ai,1,2015
 Brent Hecht,University of Minnesota - Twin Cities,web,1,2012
 Brent Hecht,University of Minnesota - Twin Cities,hci,1,2010
@@ -12742,6 +13062,7 @@ Robert Kraut,Carnegie Mellon University,hci,2,2012
 Krzysztof Gajos,Harvard University,ai,1,2003
 Krzysztof Gajos,Harvard University,hci,1,2005
 Krzysztof Gajos,Harvard University,hci,2,2012
+Janet L. Kolodner,Georgia Institute of Technology,hci,1,2005
 Chris Harrison,Carnegie Mellon University,hci,1,2007
 Chris Harrison,Carnegie Mellon University,hci,3,2008
 Chris Harrison,Carnegie Mellon University,hci,4,2009
@@ -12762,6 +13083,8 @@ Sara B. Kiesler,Carnegie Mellon University,hci,1,2012
 Sara B. Kiesler,Carnegie Mellon University,hci,2,2013
 Sara B. Kiesler,Carnegie Mellon University,hci,2,2014
 Sara B. Kiesler,Carnegie Mellon University,hci,1,2015
+Alex Endert,Georgia Institute of Technology,hci,1,2010
+Alex Endert,Georgia Institute of Technology,hci,1,2012
 Chris North,Virginia Polytechnic Institute and State University,hci,2,2007
 Chris North,Virginia Polytechnic Institute and State University,hci,1,2010
 Chris North,Virginia Polytechnic Institute and State University,hci,1,2011
@@ -12825,6 +13148,8 @@ Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,3,2012
 Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,2,2013
 Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,2,2014
 Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,1,2015
+Colin Potts,Georgia Institute of Technology,softeng,1,2001
+Colin Potts,Georgia Institute of Technology,hci,1,2004
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1,2000
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,3,2001
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,3,2002
@@ -12944,6 +13269,7 @@ Jon Froehlich,University of Maryland - College Park,hci,1,2010
 Jon Froehlich,University of Maryland - College Park,hci,1,2012
 Jon Froehlich,University of Maryland - College Park,hci,3,2013
 Jon Froehlich,University of Maryland - College Park,hci,2,2014
+Wayne D. Gray,Rensselaer Polytechnic Institute,hci,1,2001
 Gregory D. Abowd,Georgia Institute of Technology,hci,2,2000
 Gregory D. Abowd,Georgia Institute of Technology,hci,1,2002
 Gregory D. Abowd,Georgia Institute of Technology,hci,1,2004
@@ -12963,6 +13289,7 @@ Francis K. H. Quek,Texas A&M University,hci,1,2010
 Francis K. H. Quek,Texas A&M University,hci,1,2012
 Francis K. H. Quek,Texas A&M University,vision,1,2000
 Francis K. H. Quek,Texas A&M University,vision,1,2003
+Deborah Tatar,Virginia Polytechnic Institute and State University,hci,1,2012
 Bonnie A. Nardi,University of California - Irvine,hci,1,2010
 Bonnie A. Nardi,University of California - Irvine,hci,1,2011
 Bonnie A. Nardi,University of California - Irvine,hci,1,2012
@@ -12979,6 +13306,8 @@ Gerhard Fischer,University of Colorado Boulder,hci,1,2008
 Vincent Aleven,Carnegie Mellon University,hci,1,2008
 Vincent Aleven,Carnegie Mellon University,hci,2,2013
 Vincent Aleven,Carnegie Mellon University,hci,1,2014
+Doug A. Bowman,Virginia Polytechnic Institute and State University,hci,1,2007
+Doug A. Bowman,Virginia Polytechnic Institute and State University,hci,1,2011
 John T. Stasko,Georgia Institute of Technology,softeng,1,2001
 John T. Stasko,Georgia Institute of Technology,softeng,1,2002
 John T. Stasko,Georgia Institute of Technology,softeng,1,2004
@@ -12986,20 +13315,29 @@ John T. Stasko,Georgia Institute of Technology,hci,1,2003
 John T. Stasko,Georgia Institute of Technology,hci,2,2007
 John T. Stasko,Georgia Institute of Technology,hci,1,2008
 John T. Stasko,Georgia Institute of Technology,hci,1,2012
+Alfred Kobsa,University of California - Irvine,hci,1,2013
+Alfred Kobsa,University of California - Irvine,hci,1,2014
+Michael Eisenberg,University of Colorado Boulder,hci,1,2008
+Gillian Smith,Northeastern University,hci,1,2014
 Elliot Soloway,University of Michigan,hci,1,2002
 Elliot Soloway,University of Michigan,hci,1,2003
 Elliot Soloway,University of Michigan,hci,1,2004
 Amy Bruckman,Georgia Institute of Technology,hci,1,2001
 Amy Bruckman,Georgia Institute of Technology,hci,2,2011
 Amy Bruckman,Georgia Institute of Technology,hci,1,2012
+Lisa Anthony,University of Florida,hci,1,2013
+Manuel A. Pérez-Quiñones,Virginia Polytechnic Institute and State University,hci,2,2015
 Laura Dabbish,Carnegie Mellon University,softeng,2,2014
 Laura Dabbish,Carnegie Mellon University,hci,1,2004
 Laura Dabbish,Carnegie Mellon University,hci,2,2011
 Laura Dabbish,Carnegie Mellon University,hci,1,2012
 Laura Dabbish,Carnegie Mellon University,hci,1,2015
+Roberta L. Klatzky,Carnegie Mellon University,hci,1,2015
 D. Scott McCrickard,Virginia Polytechnic Institute and State University,hci,1,2003
 D. Scott McCrickard,Virginia Polytechnic Institute and State University,hci,1,2006
 D. Scott McCrickard,Virginia Polytechnic Institute and State University,hci,1,2011
+Stephen S. Intille,Northeastern University,hci,1,2004
+Stephen S. Intille,Northeastern University,hci,1,2005
 André van der Hoek,University of California - Irvine,softeng,2,2001
 André van der Hoek,University of California - Irvine,softeng,2,2002
 André van der Hoek,University of California - Irvine,softeng,2,2003
@@ -13017,11 +13355,20 @@ Ramani Duraiswami,University of Maryland - College Park,vision,1,2003
 Ramani Duraiswami,University of Maryland - College Park,vision,1,2005
 Ramani Duraiswami,University of Maryland - College Park,vision,2,2007
 Ramani Duraiswami,University of Maryland - College Park,vision,1,2009
+Betsy James DiSalvo,Georgia Institute of Technology,hci,1,2011
+Mark Guzdial,Georgia Institute of Technology,hci,1,2010
+Mark Guzdial,Georgia Institute of Technology,hci,1,2011
+Rupal Patel,Northeastern University,hci,1,2011
+Han-Wei Shen,Ohio State University,hci,1,2015
+Daniel W. Goldberg,Texas A&M University,hci,1,2014
+James A. Fogarty,University of Washington,hci,1,2014
 Tobias Höllerer,University of California - Santa Barbara,hci,1,2001
 Tobias Höllerer,University of California - Santa Barbara,hci,1,2002
 Tobias Höllerer,University of California - Santa Barbara,hci,1,2008
 Tobias Höllerer,University of California - Santa Barbara,hci,2,2014
 Tobias Höllerer,University of California - Santa Barbara,vision,2,2015
+Daniel Hsu,Columbia University,hci,1,2004
+Magy Seif El-Nasr,Northeastern University,hci,1,2010
 Vladimir Filkov,University of California - Davis,softeng,1,2007
 Vladimir Filkov,University of California - Davis,softeng,1,2008
 Vladimir Filkov,University of California - Davis,softeng,1,2009
@@ -13029,6 +13376,10 @@ Vladimir Filkov,University of California - Davis,softeng,1,2013
 Vladimir Filkov,University of California - Davis,softeng,3,2014
 Vladimir Filkov,University of California - Davis,softeng,2,2015
 Vladimir Filkov,University of California - Davis,hci,1,2015
+Tamara Sumner,University of Colorado Boulder,hci,1,2008
+Tamara Sumner,University of Colorado Boulder,nlp,1,2015
+Jignesh Patel,University of Wisconsin - Madison,security,1,2010
+Raju Pandey,University of California - Davis,security,1,2002
 Erik G. Learned-Miller,University of Massachusetts - Amherst,security,1,2011
 Erik G. Learned-Miller,University of Massachusetts - Amherst,mlmining,2,2004
 Erik G. Learned-Miller,University of Massachusetts - Amherst,mlmining,1,2012
@@ -13212,6 +13563,9 @@ Stefan Schaal,University of Southern California,mlmining,1,2008
 Stefan Schaal,University of Southern California,mlmining,1,2012
 Stefan Schaal,University of Southern California,mlmining,1,2014
 Stefan Schaal,University of Southern California,ai,1,2007
+James Demmel,University of California - Berkeley,mlmining,1,2000
+James Demmel,University of California - Berkeley,mlmining,1,2003
+Michael Casey,Dartmouth College,mlmining,1,2001
 Jianbo Shi,University of Pennsylvania,mlmining,1,2000
 Jianbo Shi,University of Pennsylvania,mlmining,1,2001
 Jianbo Shi,University of Pennsylvania,mlmining,1,2002
@@ -13257,6 +13611,8 @@ Raman Arora,Johns Hopkins University,mlmining,1,2011
 Raman Arora,Johns Hopkins University,mlmining,1,2012
 Raman Arora,Johns Hopkins University,mlmining,1,2013
 Raman Arora,Johns Hopkins University,mlmining,1,2015
+Robert D. Skeel,Purdue University,mlmining,1,2014
+DeLiang Wang,Ohio State University,mlmining,1,2012
 Hava T. Siegelmann,University of Massachusetts - Amherst,mlmining,1,2000
 Hava T. Siegelmann,University of Massachusetts - Amherst,mlmining,1,2001
 Hava T. Siegelmann,University of Massachusetts - Amherst,ai,1,2007
@@ -13281,6 +13637,10 @@ Arunava Banerjee,University of Florida,ai,1,2001
 Arunava Banerjee,University of Florida,vision,1,2008
 Arunava Banerjee,University of Florida,vision,1,2009
 Arunava Banerjee,University of Florida,vision,1,2011
+Stephen Wright,University of Wisconsin - Madison,mlmining,1,2014
+Russ Tedrake,Massachusetts Institute of Technology,mlmining,1,2008
+Jinbo Xu,University of Chicago,mlmining,1,2009
+Jinbo Xu,University of Chicago,mlmining,1,2015
 Gregory D. Hager,Johns Hopkins University,mlmining,1,2004
 Gregory D. Hager,Johns Hopkins University,mlmining,1,2006
 Gregory D. Hager,Johns Hopkins University,vision,2,2007
@@ -13293,6 +13653,10 @@ Benjamin M. Marlin,University of Massachusetts - Amherst,mlmining,2,2009
 Benjamin M. Marlin,University of Massachusetts - Amherst,mlmining,1,2010
 Benjamin M. Marlin,University of Massachusetts - Amherst,mlmining,2,2011
 Benjamin M. Marlin,University of Massachusetts - Amherst,ai,1,2011
+Arya Mazumdar,University of Massachusetts - Amherst,mlmining,2,2015
+Satinder Singh Baveja,University of Michigan,mlmining,1,2007
+Nicoleta Roman,Ohio State University,mlmining,1,2003
+Misha Pavel,Northeastern University,mlmining,1,2008
 Subhransu Maji,University of Massachusetts - Amherst,mlmining,2,2013
 Subhransu Maji,University of Massachusetts - Amherst,vision,1,2008
 Subhransu Maji,University of Massachusetts - Amherst,vision,2,2009
@@ -13317,9 +13681,19 @@ Marc Niethammer,University of North Carolina - Chapel Hill,mlmining,1,2015
 Marc Niethammer,University of North Carolina - Chapel Hill,vision,1,2007
 Marc Niethammer,University of North Carolina - Chapel Hill,vision,1,2009
 Marc Niethammer,University of North Carolina - Chapel Hill,vision,1,2014
+Kathryn Roeder,Carnegie Mellon University,mlmining,1,2010
+Kathryn Roeder,Carnegie Mellon University,mlmining,1,2012
 Vladimir Jojic,University of North Carolina - Chapel Hill,mlmining,1,2005
 Vladimir Jojic,University of North Carolina - Chapel Hill,mlmining,1,2010
 Vladimir Jojic,University of North Carolina - Chapel Hill,vision,1,2014
+Steven K. Feiner,Columbia University,hci,1,2014
+Steven K. Feiner,Columbia University,hci,1,2015
+Christine Neuwirth,Carnegie Mellon University,hci,1,2002
+Marvin Minsky,Massachusetts Institute of Technology,hci,1,2010
+Karrie G. Karahalios,University of Illinois at Urbana-Champaign,hci,1,2015
+Melody Moore Jackson,Georgia Institute of Technology,hci,1,2014
+Christopher James Langmead,Carnegie Mellon University,mlmining,1,2009
+Christopher James Langmead,Carnegie Mellon University,mlmining,1,2011
 Baba C. Vemuri,University of Florida,mlmining,1,2015
 Baba C. Vemuri,University of Florida,vision,1,2003
 Baba C. Vemuri,University of Florida,vision,1,2005
@@ -13331,6 +13705,14 @@ Baba C. Vemuri,University of Florida,vision,2,2011
 Baba C. Vemuri,University of Florida,vision,2,2013
 Baba C. Vemuri,University of Florida,vision,2,2014
 Baba C. Vemuri,University of Florida,vision,2,2015
+Michael G. Dyer,University of California - Los Angeles,mlmining,1,2002
+Gill Bejerano,Stanford University,mlmining,1,2001
+Gill Bejerano,Stanford University,mlmining,1,2002
+Jerry Zhu,University of Wisconsin - Madison,mlmining,1,2014
+Richard Scheines,Carnegie Mellon University,mlmining,1,2005
+Richard Scheines,Carnegie Mellon University,mlmining,1,2006
+Bonnie Berger,Massachusetts Institute of Technology,mlmining,1,2005
+Bonnie Berger,Massachusetts Institute of Technology,mlmining,1,2008
 Ramakant Nevatia,University of Southern California,mlmining,1,2000
 Ramakant Nevatia,University of Southern California,ai,1,2007
 Ramakant Nevatia,University of Southern California,vision,2,2000
@@ -13341,10 +13723,13 @@ Ramakant Nevatia,University of Southern California,vision,3,2007
 Ramakant Nevatia,University of Southern California,vision,1,2008
 Ramakant Nevatia,University of Southern California,vision,1,2010
 Ramakant Nevatia,University of Southern California,vision,1,2014
+Barbara E. Engelhardt,Duke University,mlmining,1,2006
+David Gleich,Purdue University,mlmining,1,2014
 Karen Livescu,University of Chicago,mlmining,1,2009
 Karen Livescu,University of Chicago,mlmining,1,2015
 Karen Livescu,University of Chicago,vision,1,2005
 Karen Livescu,University of Chicago,vision,1,2013
+Olga G. Troyanskaya,Princeton University,mlmining,1,2014
 Gérard G. Medioni,University of Southern California,mlmining,1,2012
 Gérard G. Medioni,University of Southern California,ai,1,2015
 Gérard G. Medioni,University of Southern California,vision,1,2000
@@ -13355,6 +13740,7 @@ Gérard G. Medioni,University of Southern California,vision,3,2009
 Gérard G. Medioni,University of Southern California,vision,1,2010
 Gérard G. Medioni,University of Southern California,vision,5,2011
 Gérard G. Medioni,University of Southern California,vision,2,2014
+Facundo Mémoli,Ohio State University,mlmining,1,2014
 Atanas Rountev,Ohio State University,proglang,1,2000
 Atanas Rountev,Ohio State University,proglang,1,2001
 Atanas Rountev,Ohio State University,proglang,1,2007
@@ -13367,16 +13753,25 @@ Atanas Rountev,Ohio State University,softeng,1,2005
 Atanas Rountev,Ohio State University,softeng,2,2007
 Atanas Rountev,Ohio State University,softeng,1,2008
 Atanas Rountev,Ohio State University,softeng,1,2012
+Jayadev Misra,University of Texas - Austin,proglang,1,2014
 Antony L. Hosking,Purdue University,proglang,1,2005
 Antony L. Hosking,Purdue University,proglang,1,2006
 Antony L. Hosking,Purdue University,proglang,1,2010
 Antony L. Hosking,Purdue University,proglang,1,2015
 Antony L. Hosking,Purdue University,opsys,1,2004
+Gordon L. Kindlmann,University of Chicago,proglang,1,2012
+Erin Parker,University of Utah,proglang,1,2001
 Chandra Krintz,University of California - Santa Barbara,proglang,1,2001
 Chandra Krintz,University of California - Santa Barbara,proglang,1,2008
 Chandra Krintz,University of California - Santa Barbara,proglang,1,2010
 Chandra Krintz,University of California - Santa Barbara,opsys,1,2008
 Chandra Krintz,University of California - Santa Barbara,opsys,1,2009
+Zhiyuan Li,Purdue University,proglang,1,2004
+Zhiyuan Li,Purdue University,proglang,1,2013
+Ulrich Kremer,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2003
+Ulrich Kremer,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2005
+Ron Cytron,Washington University - St. Louis,proglang,1,2000
+Krishna V. Palem,Rice University,proglang,1,2014
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,2,2001
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1,2002
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1,2004
@@ -13387,11 +13782,19 @@ Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,2,2
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2008
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,3,2009
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1,2010
+Keith D. Cooper,Rice University,proglang,1,2002
+Cindy Rubio-González,University of California - Davis,proglang,1,2009
+John D. Kececioglu,University of Arizona,proglang,1,2004
+Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,proglang,1,2013
+Todd A. Proebsting,University of Arizona,proglang,1,2001
 Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1,2008
 Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1,2009
 Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1,2010
 Eli Tilevich,Virginia Polytechnic Institute and State University,softeng,1,2005
 Eli Tilevich,Virginia Polytechnic Institute and State University,softeng,2,2012
+Calvin J. Ribbens,Virginia Polytechnic Institute and State University,proglang,1,2011
+Zhaojun Bai,University of California - Davis,proglang,1,2015
+Jim Waldo,Harvard University,proglang,1,2006
 Ana Milanova,Rensselaer Polytechnic Institute,proglang,1,2001
 Ana Milanova,Rensselaer Polytechnic Institute,proglang,1,2012
 Ana Milanova,Rensselaer Polytechnic Institute,softeng,1,2003
@@ -13405,12 +13808,14 @@ Yuriy Brun,University of Massachusetts - Amherst,softeng,1,2012
 Yuriy Brun,University of Massachusetts - Amherst,softeng,3,2013
 Yuriy Brun,University of Massachusetts - Amherst,softeng,3,2014
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1,2015
+Cristina V. Lopes,University of California - Irvine,proglang,1,2015
 Robert Cartwright,Rice University,proglang,1,2003
 Robert Cartwright,Rice University,proglang,1,2007
 Robert Cartwright,Rice University,proglang,1,2008
 Jaakko Järvi,Texas A&M University,proglang,1,2003
 Jaakko Järvi,Texas A&M University,proglang,1,2005
 Jaakko Järvi,Texas A&M University,proglang,1,2006
+Chris Hoffmann,Purdue University,proglang,1,2006
 Saurabh Sinha,University of Illinois at Urbana-Champaign,proglang,1,2001
 Saurabh Sinha,University of Illinois at Urbana-Champaign,proglang,1,2009
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1,2004
@@ -13457,6 +13862,9 @@ David Garlan,Carnegie Mellon University,softeng,1,2007
 David Garlan,Carnegie Mellon University,softeng,1,2009
 David Garlan,Carnegie Mellon University,softeng,2,2011
 David Garlan,Carnegie Mellon University,softeng,1,2015
+Chen Li,University of California - Irvine,vision,1,2013
+Chen Li,University of California - Irvine,vision,1,2015
+Xiaobai Sun,Duke University,vision,1,2013
 Camillo J. Taylor,University of Pennsylvania,vision,1,2000
 Camillo J. Taylor,University of Pennsylvania,vision,1,2001
 Camillo J. Taylor,University of Pennsylvania,vision,1,2003
@@ -13468,6 +13876,7 @@ Yasutaka Furukawa,Washington University - St. Louis,vision,3,2009
 Yasutaka Furukawa,Washington University - St. Louis,vision,1,2010
 Yasutaka Furukawa,Washington University - St. Louis,vision,2,2014
 Yasutaka Furukawa,Washington University - St. Louis,vision,1,2015
+Jean H. Gallier,University of Pennsylvania,vision,1,2011
 Robert Pless,Washington University - St. Louis,vision,1,2003
 Robert Pless,Washington University - St. Louis,vision,1,2005
 Robert Pless,Washington University - St. Louis,vision,2,2007
@@ -13480,6 +13889,9 @@ Davi Geiger,New York University,vision,1,2000
 Davi Geiger,New York University,vision,1,2005
 Davi Geiger,New York University,vision,1,2010
 Davi Geiger,New York University,vision,1,2014
+Raj Acharya,Pennsylvania State University,vision,1,2000
+Stephen M. Pizer,University of North Carolina - Chapel Hill,vision,1,2007
+Guido Gerig,University of Utah,vision,1,2007
 Ruzena Bajcsy,University of California - Berkeley,vision,1,2000
 Ruzena Bajcsy,University of California - Berkeley,vision,1,2001
 Ruzena Bajcsy,University of California - Berkeley,vision,1,2011
@@ -13493,6 +13905,10 @@ Margrit Betke,Boston University,vision,1,2011
 Margrit Betke,Boston University,vision,1,2012
 Margrit Betke,Boston University,vision,1,2013
 Margrit Betke,Boston University,vision,1,2015
+John M. Hollerbach,University of Utah,vision,1,2007
+Lee D. Coraor,Pennsylvania State University,vision,1,2000
+John R. Kender,Columbia University,vision,1,2000
+Berthold K. P. Horn,Massachusetts Institute of Technology,vision,1,2011
 Ramin Zabih,Cornell University,vision,1,2001
 Ramin Zabih,Cornell University,vision,2,2003
 Ramin Zabih,Cornell University,vision,1,2005
@@ -13504,6 +13920,26 @@ Allen Tannenbaum,State University of New York - Stony Brook,vision,1,2001
 Allen Tannenbaum,State University of New York - Stony Brook,vision,4,2007
 Allen Tannenbaum,State University of New York - Stony Brook,vision,1,2008
 Allen Tannenbaum,State University of New York - Stony Brook,vision,1,2009
+Aggelos K. Katsaggelos,Northwestern University,vision,1,2007
+Casimir A. Kulikowski,Rutgers - State University of New Jersey - New Brunswick,vision,1,2011
+Gustavo K. Rohde,Carnegie Mellon University,vision,1,2015
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,vision,2,2011
+Hao Chen,University of California - Davis,vision,1,2015
+Raghu Machiraju,Ohio State University,vision,1,2005
+David Eppstein,University of California - Irvine,networks,1,2011
+Tom Anderson,University of Washington,networks,1,2007
+Tajana Rosing,University of California - San Diego,networks,1,2013
+David Gelernter,Yale University,networks,1,2014
+Chris Dwyer,Duke University,opsys,1,2006
+Chris Dwyer,Duke University,opsys,1,2015
+Marios C. Papaefthymiou,University of Michigan,opsys,1,2013
+Jonathan Appavoo,Boston University,opsys,1,2014
+Lisa Hsu,Duke University,opsys,1,2014
+Shrikanth S. Narayanan,University of Southern California,nlp,1,2015
+Mitch Marcus,University of Pennsylvania,nlp,1,2009
+Kevin Sullivan,University of Virginia,softeng,1,2011
+Karl J. Lieberherr,Northeastern University,softeng,1,2000
+Karl J. Lieberherr,Northeastern University,softeng,1,2004
 Barry W. Boehm,University of Southern California,softeng,1,2000
 Barry W. Boehm,University of Southern California,softeng,4,2001
 Barry W. Boehm,University of Southern California,softeng,1,2002
@@ -13537,6 +13973,8 @@ Nenad Medvidovic,University of Southern California,softeng,1,2011
 Nenad Medvidovic,University of Southern California,softeng,2,2013
 Nenad Medvidovic,University of Southern California,softeng,1,2014
 Nenad Medvidovic,University of Southern California,softeng,1,2015
+Charles J. Colbourn,Arizona State University,softeng,1,2003
+Charles J. Colbourn,Arizona State University,softeng,1,2005
 Mary Shaw,Carnegie Mellon University,softeng,1,2000
 Mary Shaw,Carnegie Mellon University,softeng,1,2001
 Mary Shaw,Carnegie Mellon University,softeng,1,2002
@@ -13557,14 +13995,35 @@ Laurie Williams,North Carolina State University,softeng,1,2008
 Laurie Williams,North Carolina State University,softeng,2,2011
 David F. Redmiles,University of California - Irvine,softeng,2,2004
 David F. Redmiles,University of California - Irvine,softeng,2,2008
+Neelam Soundarajan,Ohio State University,softeng,1,2004
+John Knight,University of Virginia,softeng,1,2013
+Marc Snir,University of Illinois at Urbana-Champaign,softeng,1,2011
 William G. J. Halfond,University of Southern California,softeng,2,2006
 William G. J. Halfond,University of Southern California,softeng,1,2007
 William G. J. Halfond,University of Southern California,softeng,1,2008
 William G. J. Halfond,University of Southern California,softeng,2,2013
 William G. J. Halfond,University of Southern California,softeng,1,2014
 William G. J. Halfond,University of Southern California,softeng,3,2015
+Annie I. Antón,Georgia Institute of Technology,softeng,1,2001
+Paolo A. G. Sivilotti,Ohio State University,softeng,1,2001
 Nagiza F. Samatova,North Carolina State University,ai,2,2011
 Nagiza F. Samatova,North Carolina State University,ai,1,2013
+Majid Sarrafzadeh,University of California - Los Angeles,ai,1,2009
+Selmer Bringsjord,Rensselaer Polytechnic Institute,ai,1,2003
+Selmer Bringsjord,Rensselaer Polytechnic Institute,ai,1,2013
+David B. Leake,Indiana University,ai,1,2011
+Kenneth Anderson,University of Colorado Boulder,ai,1,2007
+Igor L. Markov,University of Michigan,ai,2,2003
+Nancy J. Nersessian,Georgia Institute of Technology,ai,1,2005
+Dennis McLeod,University of Southern California,ai,1,2007
+Gopalan Nadathur,University of Minnesota - Twin Cities,logic,1,2008
+Gopalan Nadathur,University of Minnesota - Twin Cities,logic,1,2012
+David A. Mix Barrington,University of Massachusetts - Amherst,logic,1,2001
+Robert L. Constable,Cornell University,logic,1,2012
 Daniel Leivant,Indiana University,logic,1,2002
 Daniel Leivant,Indiana University,logic,1,2004
 Daniel Leivant,Indiana University,logic,1,2006
+Teofilo F. Gonzalez,University of California - Santa Barbara,softeng,1,2005
+Jeffrey K. Hollingsworth,University of Maryland - College Park,softeng,1,2005
+Sarah Smith Heckman,North Carolina State University,softeng,1,2007
+Richard A. DeMillo,Georgia Institute of Technology,softeng,1,2000
