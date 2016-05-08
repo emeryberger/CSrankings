@@ -140,7 +140,7 @@ facultydict = csv2dict_str_str('facultydata-abbrv.csv')
 f = open('intauthors-all.log','w')
 for k, v in intauthors_gl.items():
     #print k, "@", v
-    if (v >= 3):
+    if (v >= 1):
         for area in arealist:
             for year in range(startyear,endyear + 1):
                 if (authscores_gl.has_key((k, area,year))):
@@ -161,7 +161,7 @@ f.close()
 f = open('rankings-all.log','w')
 for v, l in authlog_gl.items():
     if intauthors_gl.has_key(v):
-        if (intauthors_gl[v] >= 3):
+        if (intauthors_gl[v] >= 1):
             f.write("Papers for " + v.encode('utf-8') + ', ' + (facultydict[v]).encode('utf-8') + "\n")
             for logstring in l:
                 f.write(logstring)
