@@ -13,14 +13,7 @@ sys.path.append(os.path.abspath("cgi-bin/"))
 
 from subroutines import *
 
-"""
-weights = {'plflagship': 0.0,'plothers': 0.0,'logic': 0.0, 'softeng': 0.0, 'opsys': 0.0, 'arch': 0.0, 'theory': 0.0, 'networks': 0.0, 'security': 0.0, 'mlmining': 1.0, 'ai': 0.0, 'database': 0.0,'metrics': 0.0, 'web': 0.0, 'hci': 0.0, 'graphics': 0.0}
-
-startyear = 2005
-endyear = 2014
-"""
-
-         
+        
 print "Content-type: text/html"
 print ""
 print "<html>"
@@ -44,7 +37,12 @@ for (k, v) in rankedlist:
     if (oldv != v):
         i = i + 1
     encoded = k.encode('utf-8')
-    print  "<tr><td>", i, "</td><td>", "<a href=\"", univwww[encoded], "\">", encoded, "</a>", "</td><td>", v, "</td></tr>"
+    # Print rank
+    print  "<tr><td>", i, "</td>"
+    # Print university name
+    print "<td>", "<a href=\"", univwww[encoded], "\">", encoded, "</a>", "</td>"
+    # Print metric of interest
+    print "<td>", v, "(", univcounts[encoded], "faculty)", "</td></tr>"
     oldv = v
 print "</table>" 
 print "\n"

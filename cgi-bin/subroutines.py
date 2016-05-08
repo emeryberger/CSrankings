@@ -69,7 +69,8 @@ with open('intauthors-all.csv', mode='r') as infile:
             univmax[uname] = max(univmax.get(uname, 0), authagg[aname])
             if (weights.get(area) >= 0.01):
                 authcounts[aname] = authcounts.get(aname,0) + count
-                if (authcounts[aname] >= 3 and not visited.has_key(aname)):
+#                if (authcounts[aname] >= 3 and not visited.has_key(aname)):
+                if (not visited.has_key(aname)):
                     univcounts[uname] = univcounts.get(uname, 0) + 1
                     univper[uname] = univagg[uname] / univcounts[uname]
                     visited[aname] = True

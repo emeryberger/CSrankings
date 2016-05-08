@@ -1,4 +1,5 @@
 
+var r = [];
 
 function slidersetup()
 {
@@ -13,7 +14,7 @@ function slidersetup()
     // in js is a pain. have to use "this" somehow.
     // START CODEGEN
 
-    new Control.Slider(rank_slider[1].down('.handle'),
+    r[1] = new Control.Slider(rank_slider[1].down('.handle'),
       rank_slider[1], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -28,7 +29,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[2].down('.handle'),
+    r[2] = new Control.Slider(rank_slider[2].down('.handle'),
       rank_slider[2], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -43,7 +44,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[3].down('.handle'),
+    r[3] = new Control.Slider(rank_slider[3].down('.handle'),
       rank_slider[3], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -58,7 +59,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[4].down('.handle'),
+    r[4] = new Control.Slider(rank_slider[4].down('.handle'),
       rank_slider[4], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -73,7 +74,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[5].down('.handle'),
+    r[5] = new Control.Slider(rank_slider[5].down('.handle'),
       rank_slider[5], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -88,7 +89,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[6].down('.handle'),
+    r[6] = new Control.Slider(rank_slider[6].down('.handle'),
       rank_slider[6], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -103,7 +104,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[7].down('.handle'),
+    r[7] = new Control.Slider(rank_slider[7].down('.handle'),
       rank_slider[7], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -118,7 +119,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[8].down('.handle'),
+    r[8] = new Control.Slider(rank_slider[8].down('.handle'),
       rank_slider[8], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -133,7 +134,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[9].down('.handle'),
+    r[9] = new Control.Slider(rank_slider[9].down('.handle'),
       rank_slider[9], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -148,7 +149,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[10].down('.handle'),
+    r[10] = new Control.Slider(rank_slider[10].down('.handle'),
       rank_slider[10], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -163,7 +164,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[11].down('.handle'),
+    r[11] = new Control.Slider(rank_slider[11].down('.handle'),
       rank_slider[11], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -178,7 +179,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[12].down('.handle'),
+    r[12] = new Control.Slider(rank_slider[12].down('.handle'),
       rank_slider[12], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -193,7 +194,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[13].down('.handle'),
+    r[13] = new Control.Slider(rank_slider[13].down('.handle'),
       rank_slider[13], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -208,7 +209,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[14].down('.handle'),
+    r[14] = new Control.Slider(rank_slider[14].down('.handle'),
       rank_slider[14], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -223,7 +224,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[15].down('.handle'),
+    r[15] = new Control.Slider(rank_slider[15].down('.handle'),
       rank_slider[15], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -238,7 +239,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[16].down('.handle'),
+    r[16] = new Control.Slider(rank_slider[16].down('.handle'),
       rank_slider[16], {
       range: $R(0, 4),
       values: [0,1,2,3,4],
@@ -253,7 +254,7 @@ function slidersetup()
       }
      });
 
-    new Control.Slider(rank_slider[17].down('.handle'),
+    r[17] = new Control.Slider(rank_slider[17].down('.handle'),
       rank_slider[17], {
       range: $R(0, 4),
       values: [0,1,2,3,4],

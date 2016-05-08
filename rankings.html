@@ -112,9 +112,9 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
 
 <tr>
 <td>
-<div id="activate-pl">
+<a onClick="activatePL(); return false;">
 <b>Programming Languages</b>
-</div>
+</a>
 </a>
 <hr>
 </td>
@@ -122,9 +122,7 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
   
 <tr>
   <td>
-<!-- <a onClick="activatePL(); return false;"> -->
 Programming languages
-<!-- </a> -->
 <small><em>PLDI, POPL, OOPSLA</em></small>
 </td>
 <!-- sync with slider max value -->
@@ -141,8 +139,8 @@ Software engineering
 <small><em>ICSE, FSE</em></small>
 </td>
 <td>
-<input type="hidden" name="softeng" id="field_3" value="4.0">
-<div id="rank_slider_3" class="slider">
+<input type="hidden" name="softeng" id="field_2" value="4.0">
+<div id="rank_slider_2" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -153,7 +151,9 @@ Software engineering
 
 <tr>
 <td>
+<a onClick="activateSystems(); return false;">
 <b>Systems</b>
+</a>
 <hr>
 </td>
 </tr>
@@ -164,8 +164,8 @@ Operating systems
 <small><em>SOSP, OSDI, ASPLOS</em></small>
 </td>
 <td>
-<input type="hidden" name="opsys" id="field_5" value="4.0">
-<div id="rank_slider_5" class="slider">
+<input type="hidden" name="opsys" id="field_3" value="4.0">
+<div id="rank_slider_3" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -176,8 +176,8 @@ Computer networks
 <small><em>INFOCOM, SIGCOMM, NSDI</em></small>
 </td>
 <td>  
-<input type="hidden" name="networks" id="field_7" value="4.0">
-<div id="rank_slider_7" class="slider">
+<input type="hidden" name="networks" id="field_4" value="4.0">
+<div id="rank_slider_4" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -188,8 +188,8 @@ Computer security
 <small><em>CCS, IEEE S&P, USENIX Security</em></small>
 </td>
 <td>  
-<input type="hidden" name="security" id="field_8" value="4.0">
-  <div id="rank_slider_8" class="slider">
+<input type="hidden" name="security" id="field_5" value="4.0">
+  <div id="rank_slider_5" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -201,8 +201,8 @@ Databases
 <small><em>PODS, SIGMOD, VLDB</em></small>
 </td>
 <td>
-<input type="hidden" name="database" id="field_9" value="4.0">
-<div id="rank_slider_9" class="slider">
+<input type="hidden" name="database" id="field_6" value="4.0">
+<div id="rank_slider_6" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -213,8 +213,8 @@ Measurements
 <small><em>IMC, SIGMETRICS</em></small>
 </td>
 <td> 
-<input type="hidden" name="metrics" id="field_15" value="4.0">
-<div id="rank_slider_15" class="slider">
+<input type="hidden" name="metrics" id="field_7" value="4.0">
+<div id="rank_slider_7" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -225,7 +225,9 @@ Measurements
 
 <tr>
 <td>
+<a onClick="activateAI(); return false;">
 <b>AI</b>
+</a>
 <hr>
 </td>
 </tr>
@@ -236,8 +238,8 @@ Machine learning and data mining
 <small><em>ICML, KDD, NIPS</em></small>
 </td>
 <td> 
-<input type="hidden" name="mlmining" id="field_10" value="4.0">
-<div id="rank_slider_10" class="slider">
+<input type="hidden" name="mlmining" id="field_8" value="4.0">
+<div id="rank_slider_8" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -248,8 +250,8 @@ Artificial intelligence
 <small><em>AAAI, AAMAS, IJCAI</em></small>
 </td>
 <td> 
-<input type="hidden" name="ai" id="field_11" value="4.0">
-<div id="rank_slider_11" class="slider">
+<input type="hidden" name="ai" id="field_9" value="4.0">
+<div id="rank_slider_9" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -260,8 +262,8 @@ Natural language processing
 <small><em>ACL, EMNLP, NAACL</em></small>
 </td>
 <td>
-  <input type="hidden" name="nlp" id="field_12" value="4.0">
-<div id="rank_slider_12" class="slider">
+  <input type="hidden" name="nlp" id="field_10" value="4.0">
+<div id="rank_slider_10" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -272,8 +274,8 @@ The web and information retrieval
 <small><em>SIGIR, WWW</em></small>
 </td>
 <td>
-<input type="hidden" name="web" id="field_14" value="4.0">
-<div id="rank_slider_14" class="slider">
+<input type="hidden" name="web" id="field_11" value="4.0">
+<div id="rank_slider_11" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -284,8 +286,8 @@ Computer vision
 <small><em>CVPR, ICCV</em></small>
 </td>
 <td>
-  <input type="hidden" name="vision" id="field_16" value="4.0">
-<div id="rank_slider_16" class="slider">
+  <input type="hidden" name="vision" id="field_12" value="4.0">
+<div id="rank_slider_12" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -296,7 +298,9 @@ Computer vision
 
 <tr>
 <td>
+<a onClick="activateTheory(); return false;">
 <b>Theory</b>
+</a>
 <hr>
 </td>
 </tr>
@@ -307,8 +311,8 @@ Theory: algorithms and complexity
 <small><em>FOCS, STOC, SODA</em></small>
 </td>
 <td>
-<input type="hidden" name="theory" id="field_4" value="4.0">
-<div id="rank_slider_4" class="slider">
+<input type="hidden" name="theory" id="field_13" value="4.0">
+<div id="rank_slider_13" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -318,8 +322,8 @@ Theory: algorithms and complexity
 Logic in computing
 <small><em>CAV, LICS</em></small>
 </td>
-<td><input type="hidden" name="logic" id="field_2" value="4.0">
-<div id="rank_slider_2" class="slider">
+<td><input type="hidden" name="logic" id="field_14" value="4.0">
+<div id="rank_slider_14" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -342,8 +346,8 @@ Computer architecture
 <small><em>ISCA, MICRO</em></small>
 </td>
 <td>
-  <input type="hidden" name="arch" id="field_6" value="4.0">
-<div id="rank_slider_6" class="slider">
+  <input type="hidden" name="arch" id="field_15" value="4.0">
+<div id="rank_slider_15" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -355,8 +359,8 @@ Computer graphics
 <small><em>SIGGRAPH, TOG</em></small>
 </td>
 <td>
-<input type="hidden" name="graphics" id="field_13" value="4.0">
-<div id="rank_slider_13" class="slider">
+<input type="hidden" name="graphics" id="field_16" value="4.0">
+<div id="rank_slider_16" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -397,6 +401,53 @@ src="https://script.aculo.us/scriptaculous.js"></script>
 <script>
 window.onload=rank2;
 form=document.getElementById("rankform");
+
+function activatePL() {
+  r[1].setValue(4.0);
+  r[2].setValue(4.0);
+  for (i = 3; i <= 17; i++) {
+    r[i].setValue(0.0);
+  }
+  rank2();
+}
+
+function activateSystems() {
+  r[1].setValue(0.0);
+  r[2].setValue(0.0);
+  for (i = 3; i <= 7; i++) {
+    r[i].setValue(4.0);
+  }
+  for (i = 8; i <= 17; i++) {
+    r[i].setValue(0.0);
+  }
+  rank2();
+}
+
+function activateAI() {
+  for (i = 1; i <= 7; i++) {
+    r[i].setValue(0.0);
+  }
+  for (i = 8; i <= 12; i++) {
+    r[i].setValue(4.0);
+  }
+  for (i = 13; i <= 17; i++) {
+    r[i].setValue(0.0);
+  }
+  rank2();
+}
+
+function activateTheory() {
+  for (i = 1; i <= 12; i++) {
+    r[i].setValue(0.0);
+  }
+  for (i = 13; i <= 14; i++) {
+    r[i].setValue(4.0);
+  }
+  for (i = 15; i <= 17; i++) {
+    r[i].setValue(0.0);
+  }
+  rank2();
+}
 
 function rank1() {
    var formdata = form.serialize(); // Serialize all form data
