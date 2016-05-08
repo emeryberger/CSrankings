@@ -5,14 +5,10 @@ function slidersetup()
 {
     var rank_slider = [];
     var str = 'rank_slider_';
-    for (i = 1; i <= 17; i++) {
-       rank_slider[i] = $(str.concat(i.toString()));
-    }
 
-    // Define a whole bunch of slider controls
-    // BTO: i think they did it with copied code bcs getting closure variables to work
-    // in js is a pain. have to use "this" somehow.
-    // START CODEGEN
+    for (i = 1; i <= 17; i++) {
+	rank_slider[i] = $(str.concat(i.toString()));
+    }
 
     r[1] = new Control.Slider(rank_slider[1].down('.handle'),
       rank_slider[1], {
@@ -26,6 +22,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_1";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -41,6 +38,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_2";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -56,6 +54,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_3";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -71,6 +70,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_4";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -86,6 +86,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_5";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -101,6 +102,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_6";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -116,6 +118,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_7";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -131,6 +134,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_8";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -146,6 +150,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_9";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -161,6 +166,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_10";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -176,6 +182,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_11";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -191,6 +198,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_12";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -206,6 +214,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_13";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -221,6 +230,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_14";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -236,6 +246,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_15";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -251,6 +262,7 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_16";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
@@ -266,10 +278,9 @@ function slidersetup()
       onChange: function(value) {
         var str = "field_17";
         $(str).value = value.toFixed(2);
+        /* rank(); */
       }
      });
 
-
-    // END CODEGEN
 }
 

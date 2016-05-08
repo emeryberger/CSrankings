@@ -68,8 +68,8 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
 
       <tr>
 	<td>  
-      <b>Count papers published between</b>
-<select name="startyear">
+      <b>Count papers published in top-tier venues between </b>
+<select onchange="rank();" name="startyear">
     <option selected="selected" value="2000">2000</option>
   <option value="2001">2001</option>  
   <option value="2002">2002</option>
@@ -87,7 +87,7 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
    <option value="2014">2014</option>
 </select>
 <b>and</b>
-<select name="endyear">
+<select onchange="rank();" name="endyear">
    <option value="2000">2000</option>
   <option value="2001">2001</option>  
   <option value="2002">2002</option>
@@ -106,7 +106,7 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
    <option value="2015">2015</option>
    <option selected="selected" value="2016">2016</option>
 </select>
-<b> in top-tier venues in:</b> 
+<input type="button" name="button1" id="button1" value="Recalculate" onclick="rank();">
 </td>
 </tr>
 
@@ -386,12 +386,7 @@ Human-computer interaction
 
 </table>
 <br>
-<!-- <input type="button" name="button1" id="button1" value="Rank by group size"
-onclick="rank1()"> -->
 <input type="button" name="button2" id="button2" value="Reset" onclick="activateAll()">
-<input type="button" name="button2" id="button2" value="Recalculate" onclick="rank2()">
-<!-- <input type="button" name="button2" id="button2" value="Rank by aggregate output" onclick="rank2()"> -->
-<!-- <input type="button" name="button3" id="button3" value="Rank by maximal output" onclick="rank3()"> -->
 </form>
 </td>
 <td align=top>
@@ -406,7 +401,7 @@ onclick="rank1()"> -->
 src="https://script.aculo.us/scriptaculous.js"></script>
 
 <script>
-window.onload=rank2;
+window.onload=rank;
 form=document.getElementById("rankform");
 
 function activatePL() {
@@ -415,7 +410,8 @@ function activatePL() {
   for (i = 3; i <= 17; i++) {
     r[i].setValue(0.0);
   }
-  rank2();
+  rank();
+  return false;
 }
 
 function activateSystems() {
@@ -427,7 +423,8 @@ function activateSystems() {
   for (i = 8; i <= 17; i++) {
     r[i].setValue(0.0);
   }
-  rank2();
+  rank();
+  return false;
 }
 
 function activateAI() {
@@ -440,7 +437,8 @@ function activateAI() {
   for (i = 13; i <= 17; i++) {
     r[i].setValue(0.0);
   }
-  rank2();
+  rank();
+  return false;
 }
 
 function activateTheory() {
@@ -453,7 +451,8 @@ function activateTheory() {
   for (i = 15; i <= 17; i++) {
     r[i].setValue(0.0);
   }
-  rank2();
+  rank();
+  return false;
 }
 
 function activateOthers() {
@@ -463,48 +462,24 @@ function activateOthers() {
   for (i = 15; i <= 17; i++) {
     r[i].setValue(4.0);
   }
-  rank2();
+  rank();
+  return false;
 }
 
 function activateAll() {
   for (i = 1; i <= 17; i++) {
     r[i].setValue(4.0);
   }
-  rank2();
 }
 
-function rank1() {
+function rank() {
    var formdata = form.serialize(); // Serialize all form data
-
-  jQuery.get("cgi-bin/rankings-groupsize.cgi", formdata, function( data ) {
-     // console.log(data);
-     jQuery("#success").html(data);
-     }
-   );
-  return false; 
-}
-     
-function rank2() {
-   var formdata = form.serialize(); // Serialize all form data
-
    jQuery.get("cgi-bin/rankings-output.cgi", formdata, function( data ) {
-   // console.log(data);
-   jQuery("#success").html(data);
-     }
-    );
+     jQuery("#success").html(data);
+   });
   return false; 
 }
- 
-function rank3() {
-    var formdata = form.serialize(); // Serialize all form data
 
-    jQuery.get("cgi-bin/rankings-per.cgi", formdata, function( data ) {
-       // console.log(data);
-       jQuery("#success").html(data);
-       }
-     );
-  return false; 
-}
 
 </script>
 <script src="slider_codegen.js"></script>

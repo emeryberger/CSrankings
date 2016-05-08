@@ -22,7 +22,7 @@ print "<title>CS department rankings by productivity</title>"
 print "</head>"
 print "<body>" 
 print "<h4>Ranking by aggregate faculty output</h4>"
-print "<table valign=\"top\">"
+print "<table id=\"ranking\" valign=\"top\">"
 i = 0
 j = 1
 oldv = -100
@@ -42,7 +42,7 @@ for (k, v) in rankedlist:
     # Print university name
     print "<td>", "<a href=\"", univwww[encoded], "\">", encoded, "</a>", "</td>"
     # Print metric of interest
-    print "<td>", v, "(", univcounts[encoded], "faculty)", "</td></tr>"
+    print "<td>", v, "(", univcounts[encoded], "faculty )", "</td></tr>"
     oldv = v
 print "</table>" 
 print "\n"
