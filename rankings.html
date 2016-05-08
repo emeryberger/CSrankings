@@ -2,10 +2,11 @@
 <html> <head>
 <title></title>
 
-<style tyle="text/css">
+<style type="text/css">
 body {
    font-family: "Helvetica", "Arial";
 }
+
 
 table.center {
   margin-left: 3%;
@@ -13,7 +14,8 @@ table.center {
   margin-bottom: 3%;
 }
 
-td {
+table td, table td * {
+ vertical-align: top;
  padding-right: 20px;
 }
 
@@ -47,21 +49,22 @@ a:active {
 <h2 style="margin-left: 3%; margin-top: 3%;">Rank CS departments
 by publication productivity</h2>
 
-<p style="margin-left: 3%; margin-top: 2%; margin-bottom: 4%">
+<!--
+<p>
 <a href="http://www.pl-enthusiast.net/2015/04/30/ranking-cs-departments-interactively"><i>Read the accompanying blog article</i></a> &nbsp;| &nbsp; <a
 href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.html"><i>Code and data</i></a>
+-->
 
 <form id="rankform" name="rankform" action="" method="get" target="_blank">
 
 <table class="center">
   <tr>
   <td>
-<table>
-  <tr><b>Count papers published between</b>
-    </tr>
+    <table>
 
-<tr>
-<td>  
+      <tr>
+	<td>  
+      <b>Count papers published between</b>
 <select name="startyear">
     <option value="2000">2000</option>
   <option value="2001">2001</option>  
@@ -79,7 +82,7 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
    <option value="2013">2013</option>
    <option value="2014">2014</option>
 </select>
-&nbsp; and &nbsp;
+<b>and</b>
 <select name="endyear">
    <option value="2000">2000</option>
   <option value="2001">2001</option>  
@@ -99,20 +102,29 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
    <option value="2015">2015</option>
    <option selected="selected" value="2016">2016</option>
 </select>
+<b> in top-tier venues in:</b> 
 </td>
 </tr>
 
   <tr>
-    <td><br><br></td>
+    <td><br>&nbsp;<br></td>
   </tr>
 
 <tr>
-<td><b>... in top-tier venues on</b> 
-  </tr>
+<td>
+<div id="activate-pl">
+<b>Programming Languages</b>
+</div>
+</a>
+<hr>
+</td>
+</tr>
   
 <tr>
   <td>
+<!-- <a onClick="activatePL(); return false;"> -->
 Programming languages
+<!-- </a> -->
 <small><em>PLDI, POPL, OOPSLA</em></small>
 </td>
 <!-- sync with slider max value -->
@@ -135,27 +147,25 @@ Software engineering
 </td>
 </tr>
 
+  <tr>
+    <td><br>&nbsp;<br></td>
+  </tr>
 
 <tr>
-<td>  
-Operating systems
-<small><em>SOSP, OSDI</em></small>
-</td>
 <td>
-<input type="hidden" name="opsys" id="field_5" value="4.0">
-<div id="rank_slider_5" class="slider">
-<div class="handle"></div>  
+<b>Systems</b>
+<hr>
 </td>
 </tr>
 
 <tr>
-<td>   
-Computer architecture
-<small><em>ASPLOS, ISCA, MICRO</em></small>
+<td>  
+Operating systems
+<small><em>SOSP, OSDI, ASPLOS</em></small>
 </td>
 <td>
-  <input type="hidden" name="arch" id="field_6" value="4.0">
-<div id="rank_slider_6" class="slider">
+<input type="hidden" name="opsys" id="field_5" value="4.0">
+<div id="rank_slider_5" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
@@ -209,6 +219,17 @@ Measurements
 </td>
 </tr>
 
+  <tr>
+    <td><br>&nbsp;<br></td>
+  </tr>
+
+<tr>
+<td>
+<b>AI</b>
+<hr>
+</td>
+</tr>
+
 <tr>
 <td>
 Machine learning and data mining
@@ -247,42 +268,15 @@ Natural language processing
 
 <tr>
 <td>
-Computer graphics
-<small><em>SIGGRAPH, TOG</em></small>
-</td>
-<td>
-<input type="hidden" name="graphics" id="field_13" value="4.0">
-<div id="rank_slider_13" class="slider">
-<div class="handle"></div>  
-</td>
-</tr>
-
-<tr>
-<td>
 The web and information retrieval
 <small><em>SIGIR, WWW</em></small>
 </td>
 <td>
 <input type="hidden" name="web" id="field_14" value="4.0">
-<!-- note: moved below from HCI for now -->
-<input type="hidden" name="hci" id="field_16" value="0.0">
 <div id="rank_slider_14" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>
-
-<!--
-<tr>
-<td> 
-Human-computer interaction
-<small><em>CHI, UIST</em></small>
-</td>
-<td>
-<div id="rank_slider_16" class="slider">
-<div class="handle"></div>  
-</td>
-</tr>
--->
 
 <tr>
 <td> 
@@ -296,10 +290,21 @@ Computer vision
 </td>
 </tr>
 
+  <tr>
+    <td><br>&nbsp;<br></td>
+  </tr>
+
+<tr>
+<td>
+<b>Theory</b>
+<hr>
+</td>
+</tr>
+
 <tr>
 <td>
 Theory: algorithms and complexity
-<small><em>FOCS, PODC, SODA, STOC</em></small>
+<small><em>FOCS, STOC, SODA</em></small>
 </td>
 <td>
 <input type="hidden" name="theory" id="field_4" value="4.0">
@@ -315,6 +320,55 @@ Logic in computing
 </td>
 <td><input type="hidden" name="logic" id="field_2" value="4.0">
 <div id="rank_slider_2" class="slider">
+<div class="handle"></div>  
+</td>
+</tr>
+
+  <tr>
+    <td><br>&nbsp;<br></td>
+  </tr>
+
+
+<tr>
+<td>
+<b>Other Areas</b>
+<hr>
+</td>
+</tr>
+
+<tr>
+<td>   
+Computer architecture
+<small><em>ISCA, MICRO</em></small>
+</td>
+<td>
+  <input type="hidden" name="arch" id="field_6" value="4.0">
+<div id="rank_slider_6" class="slider">
+<div class="handle"></div>  
+</td>
+</tr>
+
+
+<tr>
+<td>
+Computer graphics
+<small><em>SIGGRAPH, TOG</em></small>
+</td>
+<td>
+<input type="hidden" name="graphics" id="field_13" value="4.0">
+<div id="rank_slider_13" class="slider">
+<div class="handle"></div>  
+</td>
+</tr>
+
+<tr>
+<td> 
+Human-computer interaction
+<small><em>CHI, UIST</em></small>
+</td>
+<td>
+<input type="hidden" name="hci" id="field_17" value="4.0">
+<div id="rank_slider_17" class="slider">
 <div class="handle"></div>  
 </td>
 </tr>

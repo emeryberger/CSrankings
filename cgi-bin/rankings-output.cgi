@@ -29,7 +29,7 @@ print "<title>CS department rankings by productivity</title>"
 print "</head>"
 print "<body>" 
 print "<h4>Ranking by aggregate faculty output</h4>"
-print "<table>"
+print "<table valign=\"top\">"
 i = 0
 j = 1
 oldv = -100
