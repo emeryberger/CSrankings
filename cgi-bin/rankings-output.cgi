@@ -21,8 +21,12 @@ print "<head>"
 print "<title>CS department rankings by productivity</title>"
 print "</head>"
 print "<body>" 
-print "<h4>Ranking by aggregate faculty output</h4>"
-print "<table id=\"ranking\" valign=\"top\">"
+# print "<h4>Ranking by aggregate faculty output</h4>"
+print "<div class=\"table-responsive\">"
+print "<table class=\"table table-striped\""
+print "id=\"ranking\" valign=\"top\">"
+print "<thead><tr><th>Rank</th><th>Institution</th><th>Score</th><th>Faculty</th></tr></thead>"
+print "<tbody>"
 i = 0
 j = 1
 oldv = -100
@@ -42,12 +46,21 @@ for (k, v) in rankedlist:
     # Print university name
     print "<td>", "<a href=\"", univwww[encoded], "\">", encoded, "</a>", "</td>"
     # Print metric of interest
-    print "<td>", v, "(", univcounts[encoded], "faculty )", "</td></tr>"
+    s = str(univcounts[encoded])
+    s.strip()
+    print "<td>"
+    print '{0}'.format(v)
+    print "</td>"
+    print "<td>"
+    print '{0}'.format(s) 
+    print "</td></tr>"
     oldv = v
+
+print "</tbody>"
 print "</table>" 
+print "</div>"
 print "\n"
 print "<br>"
-
 
 print "</body>"
 print "</html>" 
