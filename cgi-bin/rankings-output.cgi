@@ -48,10 +48,10 @@ for (k, v) in rankedlist:
     # Print metric of interest
     s = str(univcounts[encoded])
     s.strip()
-    print "<td>"
+    print "<td align=\"right\">"
     print '{0}'.format(v)
     print "</td>"
-    print "<td>"
+    print "<td align=\"right\">"
     print '{0}'.format(s) 
     print "</td></tr>"
     oldv = v

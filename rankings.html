@@ -77,8 +77,9 @@ href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.
 
 <form id="rankform" name="rankform" action="" method="get" target="_blank">
 
-<div class="lead">
-Count papers published in top-tier venues between
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title">Count papers published in top-tier venues between
 <select onchange="rank();" name="startyear">
     <option selected="selected" value="2000">2000</option>
   <option value="2001">2001</option>  
@@ -118,14 +119,14 @@ and
 </select>
 <input type="button" name="button1" id="button1" value="Recalculate" onclick="rank();">
 <input type="button" name="button2" id="button2" value="Reset" onclick="activateAll()">
-<!-- <td align=top>
- -->
+</h3>
+</div>
 </div>
 
 <div class="row">
 <div class="col-md-7">
 <div class="table-responsive">
-<table class="table table-bordered">
+<table class="table">
 <thead>
 <tr>
 <td colspan="2">
