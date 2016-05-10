@@ -49,7 +49,7 @@ for (k, v) in rankedlist:
     s = str(univcounts[encoded])
     s.strip()
     print "<td align=\"right\">"
-    print '{0}'.format(v)
+    print '{0}'.format(int(v))
     print "</td>"
     print "<td align=\"right\">"
     print '{0}'.format(s) 

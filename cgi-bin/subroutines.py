@@ -28,8 +28,8 @@ weights['graphics'] = float(form.getvalue('graphics'))
 weights['nlp'] = float(form.getvalue('nlp'))
 weights['vision'] = float(form.getvalue('vision'))
 
-for k in weights.keys():
-    weights[k] /= 4.0  # slider max value !!
+#for k in weights.keys():
+#    weights[k] /= 1.0  # slider max value !!
 
 startyear = int(form.getvalue('startyear'))
 endyear = int(form.getvalue('endyear'))
