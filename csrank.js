@@ -1,10 +1,10 @@
 var r = [];
-
 var setup = false;
+var rankingsInProgress = 0;
 
 function updateRank() {
-    setTimeout(rank, 250);
-    // rank();
+    rank();
+/*     setTimeout(rank, 500); */
 }
 
 function slidersetup()
@@ -292,13 +292,12 @@ function slidersetup()
     }
 }
 
-window.onload=init;
-form=document.getElementById("rankform");
-
 function init() {
     slidersetup();
     rank();
 }
+
+window.onload=init;
 
 function activatePL() {
     r[1].setValue(1.0);
@@ -369,6 +368,9 @@ function activateAll() {
 }
 
 function rank() {
+    rankingsInProgress++;
+    form=document.getElementById("rankform");
+    var s = "";
     if (true) {
 	univcounts = {};
 	authcounts = {};
@@ -381,78 +383,103 @@ function rank() {
 	universities = {};
 	authors = {};
 	Papa.parse("universities-2.csv", {
-		download : true,
+	    download : true,
+	    header : true,
+	    complete: function(results) {
+		universities = results.data;
+		Papa.parse("intauthors-all-2.csv", {
+		    download : true,
 		    header : true,
 		    complete: function(results) {
-		    universities = results.data;
-		    Papa.parse("intauthors-all-2.csv", {
-			    download : true,
-				header : true,
-				complete: function(results) {
-				authors = results.data;
-				weights = {};
-				weights["proglang"] = parseFloat(jQuery("#field_1"));
-				console.log(weights["proglang"]);
-				/* 
-				   weights['logic'] = float(form.getvalue('logic'))
-				   weights['softeng'] = float(form.getvalue('softeng'))
-				   weights['opsys'] = float(form.getvalue('opsys'))
-				   weights['arch'] = float(form.getvalue('arch'))
-				   weights['theory'] = float(form.getvalue('theory'))
-				   weights['networks'] = float(form.getvalue('networks'))
-				   weights['security'] = float(form.getvalue('security'))
-				   weights['mlmining'] = float(form.getvalue('mlmining'))
-				   weights['ai'] = float(form.getvalue('ai'))
-				   weights['database'] = float(form.getvalue('database'))
-				   weights['metrics'] = float(form.getvalue('metrics'))
-				   weights['web'] = float(form.getvalue('web'))
-				   weights['hci'] = float(form.getvalue('hci'))
-				   weights['graphics'] = float(form.getvalue('graphics'))
-				   weights['nlp'] = float(form.getvalue('nlp'))
-				   weights['vision'] = float(form.getvalue('vision'))
-				*/
-				startyear = parseInt(jQuery("#startyear").find(":selected").text());
-				endyear = parseInt(jQuery("#endyear").find(":selected").text());
-				console.log(startyear);
-				console.log(endyear);
-				for (var r in authors) {
-				    var name = authors[r].name;
-				    var dept = authors[r].dept;
-				    var area = authors[r].area;
-				    var count = authors[r].count;
-				    var year = authors[r].year;
-				    console.log(authors[r]);
-				    if ((year >= startyear) && (year <= endyear)) {
-					if (!(dept in univagg)) {
-					    univagg[dept] = 0;
+			authors = results.data;
+			weights = {};
+			weights["proglang"] = parseFloat($("field_1").value);
+			weights["softeng"]  = parseFloat($("field_2").value);
+			weights["opsys"]    = parseFloat($("field_3").value);
+			weights["networks"] = parseFloat($("field_4").value);
+			weights["security"] = parseFloat($("field_5").value);
+			weights["database"] = parseFloat($("field_6").value);
+			weights["metrics"]  = parseFloat($("field_7").value);
+			weights["mlmining"] = parseFloat($("field_8").value);
+			weights["ai"]       = parseFloat($("field_9").value);
+			weights["nlp"]      = parseFloat($("field_10").value);
+			weights["web"]      = parseFloat($("field_11").value);
+			weights["vision"]   = parseFloat($("field_12").value);
+			weights["theory"]   = parseFloat($("field_13").value);
+			weights["logic"]    = parseFloat($("field_14").value);
+			weights["arch"]     = parseFloat($("field_15").value);
+			weights["graphics"] = parseFloat($("field_16").value);
+			weights["hci"]      = parseFloat($("field_17").value);
+			startyear = parseInt(jQuery("#startyear").find(":selected").text());
+			endyear = parseInt(jQuery("#endyear").find(":selected").text());
+			for (var r in authors) {
+			    var name = authors[r].name;
+			    var dept = authors[r].dept;
+			    var area = authors[r].area;
+			    var count = authors[r].count;
+			    var year = authors[r].year;
+			    if ((year >= startyear) && (year <= endyear)) {
+				if (!(dept in univagg)) {
+				    univagg[dept] = 0;
+				}
+				univagg[dept] += parseInt(count) * weights[area];
+				if (weights[area] > 0) {
+				    if (!(name in visited)) {
+					visited[name] = true;
+					if (!(dept in univcounts)) {
+					    univcounts[dept] = 0;
 					}
-					univagg[dept] += parseInt(count) * weights[area];
-					console.log(univagg[dept]);
+					univcounts[dept] += 1;
 				    }
 				}
-				s = "Content-type: text/html" + ""
-				    + "<html>"
-				    + "<head>"
-				    + "<title>CS department rankings by productivity</title>"
-				    + "</head>"
-				    + "<body>" 
-				    + "<div class=\"table-responsive\">"
-				    + "<table class=\"table table-striped\""
-				    + "id=\"ranking\" valign=\"top\">"
-				    + "<thead><tr><th>Rank</th><th>Institution</th><th>Score</th><th>Faculty</th></tr></thead>"
-				    + "<tbody>";
-
 			    }
-			});
-		}
-	    });
-    }
-    var formdata = form.serialize(); // Serialize all form data
-    jQuery.get("cgi-bin/rankings-output.cgi", formdata, function( data ) {
-	    jQuery("#success").html(data);
+			}
+			s = "<html>"
+			    + "<head>"
+			    + "<title>CS department rankings by productivity</title>"
+			    + "</head>"
+			    + "<body>" 
+			    + "<div class=\"table-responsive\">"
+			    + "<table class=\"table table-striped\""
+			    + "id=\"ranking\" valign=\"top\">"
+			    + "<thead><tr><th>Rank</th><th>Institution</th><th>Count</th><th>Faculty</th></tr></thead>"
+			    + "<tbody>";
+			var i = 0;
+			var oldv = -100;
+			var keys = Object.keys(univagg);
+			keys.sort(function(a,b){return univagg[b] - univagg[a];});
+			for (ind = 0; ind < keys.length; ind++) {
+			    k = keys[ind];
+			    var v = univagg[k];
+			    if ((ind > 20) && (v != oldv)) {
+				break;
+			    }
+			    if (v < 1) {
+				break;
+			    }
+			    if (oldv != v) {
+				i = i + 1;
+			    }
+			    s += "\n<tr><td>" + i + "</td>";
+			    s += "<td>" + "<a href=\"" + universities[k] + "\">";
+			    s += k + "</a>" + "</td>";
+			    s += "<td align=\"right\">" + v + "</td>";
+			    s += "<td align=\"right\">" + univcounts[k] + "</td>";
+			    s += "</tr>\n";
+			    oldv = v;
+			}
+			s += "</tbody>" + "</table>" + "</div>" + "\n";
+			s += "<br>" + "</body>" + "</html>";
+			if (rankingsInProgress == 1) {
+			    jQuery("#success").html(s);
+			}
+			rankingsInProgress--;
+			return false; 
+		    }
+		});
+	    }
 	});
-
-    return false; 
+    }
 }
 
 
