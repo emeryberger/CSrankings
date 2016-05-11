@@ -2,6 +2,7 @@ var r = [];
 var setup = false;
 var outputHTML = "";
 var rankingsInProgress = 0;
+var minToRank = 25;
 
 function redisplay() {
     jQuery("#success").html(outputHTML);
@@ -443,12 +444,17 @@ function rank() {
 	    var s = "<html>"
 		+ "<head>"
 		+ "<title>CS department rankings by productivity</title>"
+	        + "<style type=\"text/css\">"
+	        + "  body { font-family: \"Helvetica\", \"Arial\"; }"
+		+ "  table td { vertical-align: top; }"
+	        + "</style>"
 		+ "</head>"
-		+ "<body>" 
-		+ "<div class=\"table table-responsive\">"
-		+ "<table class=\"table table-sm table-striped\""
+		+ "<body>"
+	        + "<div class=\"row\">"
+		+ "<div class=\"table\">"
+		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">"
-		+ "<thead><tr><th>Rank</th><th>Institution</th><th>Count</th><th>Faculty</th></tr></thead>"
+		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty</th></tr></thead>"
 		+ "<tbody>";
 	    var i = 0;
 	    var oldv = -100;
@@ -457,7 +463,7 @@ function rank() {
 	    for (ind = 0; ind < keys.length; ind++) {
 		var k = keys[ind];
 		var v = univagg[k];
-		if ((ind >= 20) && (v != oldv)) {
+		if ((ind >= minToRank) && (v != oldv)) {
 		    break;
 		}
 		if (v < 1) {
@@ -473,7 +479,7 @@ function rank() {
 		s += "</tr>\n";
 		oldv = v;
 	    }
-	    s += "</tbody>" + "</table>" + "</div>" + "\n";
+	    s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
 	    s += "<br>" + "</body>" + "</html>";
 	    outputHTML = s;
 	    rankingsInProgress--;

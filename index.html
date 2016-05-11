@@ -42,11 +42,9 @@
 	
         <h1>Computer Science Department Rankings</h1>
         <h3>
-	  <p class="lead">
-	    These rankings are computed based on publication productivity at top tier venues (currently US only).
-	  </p>
-	  <small class="text-muted">
-	    Code and data used to build this webpage: <a href="https://github.com/emeryberger/CSRank">https://github.com/emeryberger/CSRank</a>.</small>
+<!--	  <small class="text-muted">
+	    The code and data used to build this page was written originally by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a> and modified and extended by <a href="http://www.emeryberger.com">Emery Berger</a>.</small> -->
+	  <!-- Code and data used to build this webpage: <a href="https://github.com/emeryberger/CSRank">https://github.com/emeryberger/CSRank</a> -->
 	</h3>
       </div>
 
@@ -100,15 +98,16 @@
 
 	<div class="row">
 	  <div class="col-xs-12 col-sm-6 col-md-6">
-	    <div class="table-responsive">
-	      <table class="table table-sm">
+	    <div class="table">
+	      <table class="table-sm">
 		<thead>
 		  <tr>
 		    <th colspan="2">
-			<b>Programming Languages</b>
+			<p>Programming Languages
 			<a onClick="activatePL(); return false;">
 			  [only these areas]
 			</a>
+			</p>
 		    </th>
 		  </tr>
 		</thead>
@@ -144,10 +143,11 @@
 		<thead>
 		  <tr>
 		    <th colspan="2">
-			<b>Systems</b>
+			<p>Systems
 			<a onClick="activateSystems(); return false;">
 			  [only these areas]
-		      </a>
+			</a>
+			</p>
 		    </th>
 		  </tr>
 		</thead>
@@ -230,10 +230,11 @@
 		<thead>
 		  <tr>
 		    <th colspan="2">
-		      <b>AI</b>
+		      <p>AI
 		      <a onClick="activateAI(); return false;">
 			[only these areas]
 		      </a>
+		      </p>
 		    </th>
 		  </tr>
 		</thead>
@@ -303,10 +304,11 @@
 		<thead>
 		  <tr>
 		    <th colspan="2">
-		      <b>Theory</b>
+		      <p>Theory
 		      <a onClick="activateTheory(); return false;">
 			[only these areas]
 		      </a>
+		      </p>
 		    </th>
 		  </tr>
 		</thead>
@@ -339,10 +341,11 @@
 		<thead>
 		  <tr>
 		    <th colspan="2">
-			<b>Other Areas</b>
+			<p>Other Areas
 			<a onClick="activateOthers(); return false;">
 			  [only these areas]
-		      </a>
+			</a>
+			</p>
 		    </th>
 		  </tr>
 		</thead>
@@ -399,6 +402,13 @@
 
       </form>
       </div>
+      <div class="page-footer">
+      </div>
+      <p class="lead">
+	These rankings are computed based on publications at top tier venues (currently US only).
+      </p>
+      <p class="text-muted">
+	The code and data used to build this page was written originally by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a> and modified and extended by <a href="http://www.emeryberger.com">Emery Berger</a>.</p>
       </div>
       <script src="csrank.js"></script>
   </body>
