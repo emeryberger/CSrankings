@@ -367,7 +367,8 @@ function activateOthers() {
     for (i = 1; i <= 14; i++) {
 	r[i].setValue(0.0);
     }
-    for (i = 15; i <= 18; i++) {
+    r[18].setValue(0.0);
+    for (i = 15; i <= 17; i++) {
 	r[i].setValue(1.0);
     }
     return false;
