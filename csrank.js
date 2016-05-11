@@ -1,10 +1,10 @@
 var r = [];
 var setup = false;
+var outputHTML = "";
 var rankingsInProgress = 0;
 
-function updateRank() {
-    rank();
-/*     setTimeout(rank, 500); */
+function redisplay() {
+    jQuery("#success").html(outputHTML);
 }
 
 function slidersetup()
@@ -29,7 +29,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_1";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -45,7 +45,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_2";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -61,7 +61,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_3";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -77,7 +77,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_4";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -93,7 +93,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_5";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -109,7 +109,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_6";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -125,7 +125,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_7";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -141,7 +141,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_8";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -157,7 +157,7 @@ function slidersetup()
 				      onChange: function(value) {
 					  var str = "field_9";
 					  $(str).value = value.toFixed(2);
-					  updateRank();
+					  rank();
 				      }
 				  });
 
@@ -173,7 +173,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_10";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -189,7 +189,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_11";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -205,7 +205,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_12";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -221,7 +221,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_13";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -237,7 +237,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_14";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -253,7 +253,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_15";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -269,7 +269,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_16";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 
@@ -285,7 +285,7 @@ function slidersetup()
 				       onChange: function(value) {
 					   var str = "field_17";
 					   $(str).value = value.toFixed(2);
-					   updateRank();
+					   rank();
 				       }
 				   });
 	setup = true;
@@ -305,7 +305,6 @@ function activatePL() {
     for (i = 3; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
-    rank();
     return false;
 }
 
@@ -318,7 +317,6 @@ function activateSystems() {
     for (i = 8; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
-    rank();
     return false;
 }
 
@@ -332,7 +330,6 @@ function activateAI() {
     for (i = 13; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
-    rank();
     return false;
 }
 
@@ -346,7 +343,6 @@ function activateTheory() {
     for (i = 15; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
-    rank();
     return false;
 }
 
@@ -357,7 +353,6 @@ function activateOthers() {
     for (i = 15; i <= 17; i++) {
 	r[i].setValue(1.0);
     }
-    rank();
     return false;
 }
 
@@ -365,28 +360,27 @@ function activateAll() {
     for (i = 1; i <= 17; i++) {
 	r[i].setValue(1.0);
     }
+    return false;
 }
 
 function rank() {
     rankingsInProgress++;
-    form=document.getElementById("rankform");
+    var form = document.getElementById("rankform");
     var s = "";
     if (true) {
-	univcounts = {};
-	authcounts = {};
-	visited = {};
-	univagg = {}; /* (university, total number of papers) */
-	univmax = {}; /* (university, max number of papers) */
-	univwww = {}; /* (university, web page) */
-	authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
-	univper = {}; /* (university, total papers divided by group size) */
-	universities = {};
-	authors = {};
+	var univcounts = {};
+	var authcounts = {};
+	var visited = {};
+	var univagg = {}; /* (university, total number of papers) */
+	var univwww = {}; /* (university, web page) */
+	var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
+	var depturl = {}; /* (university, URL) */
+	var authors = {};
 	Papa.parse("universities-2.csv", {
 	    download : true,
 	    header : true,
 	    complete: function(results) {
-		universities = results.data;
+		depturl = results.data;
 		Papa.parse("intauthors-all-2.csv", {
 		    download : true,
 		    header : true,
@@ -434,7 +428,7 @@ function rank() {
 				}
 			    }
 			}
-			s = "<html>"
+			var s = "<html>"
 			    + "<head>"
 			    + "<title>CS department rankings by productivity</title>"
 			    + "</head>"
@@ -449,7 +443,7 @@ function rank() {
 			var keys = Object.keys(univagg);
 			keys.sort(function(a,b){return univagg[b] - univagg[a];});
 			for (ind = 0; ind < keys.length; ind++) {
-			    k = keys[ind];
+			    var k = keys[ind];
 			    var v = univagg[k];
 			    if ((ind > 20) && (v != oldv)) {
 				break;
@@ -461,7 +455,7 @@ function rank() {
 				i = i + 1;
 			    }
 			    s += "\n<tr><td>" + i + "</td>";
-			    s += "<td>" + "<a href=\"" + universities[k] + "\">";
+			    s += "<td>" + "<a href=\"" + depturl[k] + "\">";
 			    s += k + "</a>" + "</td>";
 			    s += "<td align=\"right\">" + v + "</td>";
 			    s += "<td align=\"right\">" + univcounts[k] + "</td>";
@@ -470,10 +464,9 @@ function rank() {
 			}
 			s += "</tbody>" + "</table>" + "</div>" + "\n";
 			s += "<br>" + "</body>" + "</html>";
-			if (rankingsInProgress == 1) {
-			    jQuery("#success").html(s);
-			}
+			outputHTML = s;
 			rankingsInProgress--;
+			setTimeout(redisplay, 0);
 			return false; 
 		    }
 		});
