@@ -330,7 +330,8 @@ function activateSystems() {
     for (i = 3; i <= 7; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 8; i <= 18; i++) {
+    r[18].setValue(1.0);
+    for (i = 8; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
     return false;
