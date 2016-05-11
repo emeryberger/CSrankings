@@ -768,7 +768,7 @@ Xi Wang,University of Washington,graphics,1,2006
 J. Alex Halderman,University of Michigan,security,1,2007
 J. Alex Halderman,University of Michigan,security,1,2008
 J. Alex Halderman,University of Michigan,security,1,2009
-J. Alex Halderman,University of Michigan,security,1,2010
+J. Alex Halderman,University of Michigan,security,2,2010
 J. Alex Halderman,University of Michigan,security,1,2011
 J. Alex Halderman,University of Michigan,security,1,2012
 J. Alex Halderman,University of Michigan,security,2,2015
@@ -1308,6 +1308,7 @@ Jia Deng,University of Michigan,vision,1,2011
 Jia Deng,University of Michigan,vision,1,2012
 Jia Deng,University of Michigan,vision,3,2013
 Jia Deng,University of Michigan,vision,4,2015
+Christopher G. Healey,North Carolina State University,security,1,2004
 Christopher G. Healey,North Carolina State University,ai,2,2001
 Christopher G. Healey,North Carolina State University,graphics,1,2004
 Matthew Stone,Rutgers - State University of New Jersey - New Brunswick,ai,1,2006
@@ -1802,6 +1803,7 @@ Joseph M. Hellerstein,University of California - Berkeley,networks,2,2005
 Joseph M. Hellerstein,University of California - Berkeley,networks,1,2007
 Joseph M. Hellerstein,University of California - Berkeley,networks,1,2010
 Joseph M. Hellerstein,University of California - Berkeley,networks,1,2011
+Joseph M. Hellerstein,University of California - Berkeley,security,1,2006
 Joseph M. Hellerstein,University of California - Berkeley,ai,1,2007
 Joseph M. Hellerstein,University of California - Berkeley,database,1,2000
 Joseph M. Hellerstein,University of California - Berkeley,database,3,2001
@@ -2082,6 +2084,7 @@ Michael D. Ernst,University of Washington,security,1,2014
 Michael D. Ernst,University of Washington,database,1,2010
 Michael D. Ernst,University of Washington,hci,1,2013
 Michael D. Ernst,University of Washington,hci,1,2015
+Gerome Miklau,University of Massachusetts - Amherst,security,1,2008
 Gerome Miklau,University of Massachusetts - Amherst,mlmining,1,2014
 Gerome Miklau,University of Massachusetts - Amherst,database,1,2002
 Gerome Miklau,University of Massachusetts - Amherst,database,1,2003
@@ -2108,6 +2111,7 @@ Barna Saha,University of Massachusetts - Amherst,database,1,2013
 Barna Saha,University of Massachusetts - Amherst,database,1,2015
 Barna Saha,University of Massachusetts - Amherst,database,1,2016
 Michael T. Goodrich,University of California - Irvine,theory,1,2014
+Michael T. Goodrich,University of California - Irvine,security,1,2001
 Michael T. Goodrich,University of California - Irvine,security,1,2002
 Michael T. Goodrich,University of California - Irvine,security,1,2005
 Michael T. Goodrich,University of California - Irvine,security,1,2009
@@ -2115,8 +2119,8 @@ Michael T. Goodrich,University of California - Irvine,database,1,2012
 Charalampos Papamanthou,University of Maryland - College Park,security,1,2008
 Charalampos Papamanthou,University of Maryland - College Park,security,1,2009
 Charalampos Papamanthou,University of Maryland - College Park,security,1,2012
-Charalampos Papamanthou,University of Maryland - College Park,security,1,2013
-Charalampos Papamanthou,University of Maryland - College Park,security,1,2014
+Charalampos Papamanthou,University of Maryland - College Park,security,2,2013
+Charalampos Papamanthou,University of Maryland - College Park,security,2,2014
 Charalampos Papamanthou,University of Maryland - College Park,security,1,2015
 Charalampos Papamanthou,University of Maryland - College Park,database,1,2012
 Charalampos Papamanthou,University of Maryland - College Park,database,1,2015
@@ -2272,7 +2276,7 @@ Cristina Nita-Rotaru,Purdue University,networks,1,2007
 Cristina Nita-Rotaru,Purdue University,networks,1,2011
 Cristina Nita-Rotaru,Purdue University,security,1,2007
 Cristina Nita-Rotaru,Purdue University,security,1,2010
-Cristina Nita-Rotaru,Purdue University,security,1,2012
+Cristina Nita-Rotaru,Purdue University,security,3,2012
 Cristina Nita-Rotaru,Purdue University,security,2,2015
 Cristina Nita-Rotaru,Purdue University,database,1,2015
 Michael J. Cafarella,University of Michigan,proglang,1,2014
@@ -2337,6 +2341,7 @@ Sanjeev Khanna,University of Pennsylvania,theory,3,2009
 Sanjeev Khanna,University of Pennsylvania,theory,1,2010
 Sanjeev Khanna,University of Pennsylvania,theory,2,2011
 Sanjeev Khanna,University of Pennsylvania,networks,1,2008
+Sanjeev Khanna,University of Pennsylvania,security,1,2004
 Sanjeev Khanna,University of Pennsylvania,database,2,2001
 Sanjeev Khanna,University of Pennsylvania,database,2,2002
 Sanjeev Khanna,University of Pennsylvania,database,1,2004
@@ -2503,7 +2508,9 @@ B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,2
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,database,1,2010
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,database,1,2012
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,web,1,2012
-Radu Sion,State University of New York - Stony Brook,security,1,2008
+Radu Sion,State University of New York - Stony Brook,security,1,2007
+Radu Sion,State University of New York - Stony Brook,security,2,2008
+Radu Sion,State University of New York - Stony Brook,security,1,2009
 Radu Sion,State University of New York - Stony Brook,security,1,2011
 Radu Sion,State University of New York - Stony Brook,security,2,2012
 Radu Sion,State University of New York - Stony Brook,security,1,2013
@@ -2575,6 +2582,7 @@ Boon Thau Loo,University of Pennsylvania,networks,1,2005
 Boon Thau Loo,University of Pennsylvania,networks,1,2011
 Boon Thau Loo,University of Pennsylvania,networks,4,2012
 Boon Thau Loo,University of Pennsylvania,networks,2,2014
+Boon Thau Loo,University of Pennsylvania,security,1,2010
 Boon Thau Loo,University of Pennsylvania,database,1,2001
 Boon Thau Loo,University of Pennsylvania,database,1,2003
 Boon Thau Loo,University of Pennsylvania,database,2,2004
@@ -2659,6 +2667,8 @@ Ninghui Li,Purdue University,security,3,2004
 Ninghui Li,Purdue University,security,2,2005
 Ninghui Li,Purdue University,security,2,2006
 Ninghui Li,Purdue University,security,1,2007
+Ninghui Li,Purdue University,security,1,2008
+Ninghui Li,Purdue University,security,1,2009
 Ninghui Li,Purdue University,security,2,2012
 Ninghui Li,Purdue University,security,1,2013
 Ninghui Li,Purdue University,security,1,2014
@@ -2740,6 +2750,7 @@ Michael A. Bender,State University of New York - Stony Brook,database,1,2012
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,theory,1,2000
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,database,1,2006
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,database,1,2012
+Rob Johnson,State University of New York - Stony Brook,security,1,2007
 Rob Johnson,State University of New York - Stony Brook,security,1,2009
 Rob Johnson,State University of New York - Stony Brook,security,1,2012
 Rob Johnson,State University of New York - Stony Brook,security,1,2014
@@ -2809,8 +2820,8 @@ Feng Qian,Indiana University,mobile,2,2012
 Feng Qian,Indiana University,mobile,1,2014
 Yan Huang,Indiana University,networks,1,2004
 Yan Huang,Indiana University,networks,1,2008
-Yan Huang,Indiana University,security,1,2011
-Yan Huang,Indiana University,security,1,2012
+Yan Huang,Indiana University,security,2,2011
+Yan Huang,Indiana University,security,2,2012
 Yan Huang,Indiana University,security,3,2014
 Yan Huang,Indiana University,security,3,2015
 Yan Huang,Indiana University,mlmining,1,2015
@@ -3054,7 +3065,7 @@ Alexandros Labrinidis,University of Pittsburgh,database,1,2011
 Alexandros Labrinidis,University of Pittsburgh,database,2,2012
 Alexandros Labrinidis,University of Pittsburgh,database,1,2015
 Ting Yu,North Carolina State University,security,1,2000
-Ting Yu,North Carolina State University,security,1,2001
+Ting Yu,North Carolina State University,security,2,2001
 Ting Yu,North Carolina State University,security,1,2003
 Ting Yu,North Carolina State University,security,1,2005
 Ting Yu,North Carolina State University,security,1,2006
@@ -3089,6 +3100,7 @@ Karsten Schwan,Georgia Institute of Technology,arch,1,2015
 Karsten Schwan,Georgia Institute of Technology,networks,1,2014
 Karsten Schwan,Georgia Institute of Technology,database,1,2014
 Dennis Shasha,New York University,opsys,1,2004
+Dennis Shasha,New York University,security,1,2009
 Dennis Shasha,New York University,mlmining,1,2000
 Dennis Shasha,New York University,mlmining,1,2003
 Dennis Shasha,New York University,mlmining,1,2005
@@ -3268,10 +3280,12 @@ Randy H. Katz,University of California - Berkeley,networks,1,2005
 Randy H. Katz,University of California - Berkeley,networks,1,2007
 Randy H. Katz,University of California - Berkeley,networks,1,2011
 Randy H. Katz,University of California - Berkeley,networks,1,2012
+Randy H. Katz,University of California - Berkeley,security,1,2006
 Randy H. Katz,University of California - Berkeley,database,1,2012
 Randy H. Katz,University of California - Berkeley,metrics,1,2002
 Randy H. Katz,University of California - Berkeley,mobile,1,2003
 Randy H. Katz,University of California - Berkeley,mobile,2,2014
+Chris Jermaine,Rice University,security,1,2012
 Chris Jermaine,Rice University,mlmining,1,2003
 Chris Jermaine,Rice University,mlmining,1,2006
 Chris Jermaine,Rice University,mlmining,1,2008
@@ -3314,6 +3328,7 @@ Alexander J. Smola,Carnegie Mellon University,vision,1,2015
 Tyson Condie,University of California - Los Angeles,opsys,1,2005
 Tyson Condie,University of California - Los Angeles,networks,1,2006
 Tyson Condie,University of California - Los Angeles,networks,1,2010
+Tyson Condie,University of California - Los Angeles,security,1,2006
 Tyson Condie,University of California - Los Angeles,database,1,2006
 Tyson Condie,University of California - Los Angeles,database,1,2008
 Tyson Condie,University of California - Los Angeles,database,1,2010
@@ -3443,6 +3458,7 @@ Xin Liu,University of California - Davis,networks,2,2010
 Xin Liu,University of California - Davis,networks,2,2011
 Xin Liu,University of California - Davis,networks,2,2012
 Xin Liu,University of California - Davis,networks,2,2014
+Xin Liu,University of California - Davis,security,1,2008
 Xin Liu,University of California - Davis,mlmining,1,2015
 Xin Liu,University of California - Davis,ai,1,2011
 Xin Liu,University of California - Davis,ai,1,2012
@@ -3488,6 +3504,7 @@ Sharon Goldberg,Boston University,networks,1,2010
 Sharon Goldberg,Boston University,networks,1,2011
 Sharon Goldberg,Boston University,networks,1,2013
 Sharon Goldberg,Boston University,networks,2,2014
+Sharon Goldberg,Boston University,security,1,2015
 Sharon Goldberg,Boston University,database,1,2014
 Sharon Goldberg,Boston University,metrics,1,2008
 Sharon Goldberg,Boston University,metrics,1,2011
@@ -3624,6 +3641,7 @@ Donald F. Towsley,University of Massachusetts - Amherst,networks,5,2010
 Donald F. Towsley,University of Massachusetts - Amherst,networks,3,2011
 Donald F. Towsley,University of Massachusetts - Amherst,security,1,2002
 Donald F. Towsley,University of Massachusetts - Amherst,security,1,2003
+Donald F. Towsley,University of Massachusetts - Amherst,security,1,2008
 Donald F. Towsley,University of Massachusetts - Amherst,database,1,2008
 Donald F. Towsley,University of Massachusetts - Amherst,metrics,2,2000
 Donald F. Towsley,University of Massachusetts - Amherst,metrics,3,2003
@@ -4597,9 +4615,10 @@ Zhuoqing Morley Mao,University of Michigan,networks,3,2008
 Zhuoqing Morley Mao,University of Michigan,networks,1,2011
 Zhuoqing Morley Mao,University of Michigan,networks,1,2013
 Zhuoqing Morley Mao,University of Michigan,networks,1,2015
-Zhuoqing Morley Mao,University of Michigan,security,1,2007
-Zhuoqing Morley Mao,University of Michigan,security,1,2010
-Zhuoqing Morley Mao,University of Michigan,security,3,2012
+Zhuoqing Morley Mao,University of Michigan,security,1,2005
+Zhuoqing Morley Mao,University of Michigan,security,2,2007
+Zhuoqing Morley Mao,University of Michigan,security,2,2010
+Zhuoqing Morley Mao,University of Michigan,security,4,2012
 Zhuoqing Morley Mao,University of Michigan,security,1,2015
 Zhuoqing Morley Mao,University of Michigan,metrics,1,2004
 Zhuoqing Morley Mao,University of Michigan,metrics,1,2005
@@ -4669,6 +4688,7 @@ Zhendong Su,University of California - Davis,opsys,1,2006
 Zhendong Su,University of California - Davis,security,1,2005
 Zhendong Su,University of California - Davis,security,1,2006
 Zhendong Su,University of California - Davis,security,1,2011
+Zhendong Su,University of California - Davis,security,1,2014
 Zhendong Su,University of California - Davis,ai,2,2015
 Zhendong Su,University of California - Davis,mobile,2,2013
 Romit Roy Choudhury,Duke University,networks,1,2009
@@ -4677,6 +4697,7 @@ Romit Roy Choudhury,Duke University,networks,1,2011
 Romit Roy Choudhury,Duke University,networks,2,2012
 Romit Roy Choudhury,Duke University,networks,4,2013
 Romit Roy Choudhury,Duke University,networks,1,2015
+Romit Roy Choudhury,Duke University,security,1,2014
 Romit Roy Choudhury,Duke University,web,1,2016
 Romit Roy Choudhury,Duke University,hci,1,2015
 Romit Roy Choudhury,Duke University,mobile,1,2008
@@ -4890,6 +4911,7 @@ Prasant Mohapatra,University of California - Davis,networks,4,2013
 Prasant Mohapatra,University of California - Davis,networks,2,2014
 Prasant Mohapatra,University of California - Davis,networks,3,2015
 Prasant Mohapatra,University of California - Davis,security,1,2006
+Prasant Mohapatra,University of California - Davis,security,1,2011
 Prasant Mohapatra,University of California - Davis,web,1,2001
 Prasant Mohapatra,University of California - Davis,web,1,2015
 Prasant Mohapatra,University of California - Davis,mobile,2,2014
@@ -4982,6 +5004,7 @@ Peter M. Chen,University of Michigan,opsys,1,2014
 Peter M. Chen,University of Michigan,opsys,1,2016
 Peter M. Chen,University of Michigan,arch,1,2014
 Peter M. Chen,University of Michigan,networks,1,2009
+Peter M. Chen,University of Michigan,security,1,2005
 Peter M. Chen,University of Michigan,security,1,2006
 Peter M. Chen,University of Michigan,mobile,1,2015
 Scott A. Mahlke,University of Michigan,proglang,1,2003
@@ -5129,21 +5152,27 @@ Radu Stoleru,Texas A&M University,networks,1,2006
 Radu Stoleru,Texas A&M University,networks,1,2008
 Radu Stoleru,Texas A&M University,mobile,1,2004
 Xuxian Jiang,North Carolina State University,security,1,2004
+Xuxian Jiang,North Carolina State University,security,1,2006
 Xuxian Jiang,North Carolina State University,security,1,2007
+Xuxian Jiang,North Carolina State University,security,1,2008
 Xuxian Jiang,North Carolina State University,security,2,2009
 Xuxian Jiang,North Carolina State University,security,2,2010
-Xuxian Jiang,North Carolina State University,security,1,2011
-Xuxian Jiang,North Carolina State University,security,2,2012
-Xuxian Jiang,North Carolina State University,security,1,2013
+Xuxian Jiang,North Carolina State University,security,2,2011
+Xuxian Jiang,North Carolina State University,security,4,2012
+Xuxian Jiang,North Carolina State University,security,3,2013
+Xuxian Jiang,North Carolina State University,security,1,2014
 Xuxian Jiang,North Carolina State University,mobile,1,2012
 Dongyan Xu,Purdue University,softeng,1,2014
 Dongyan Xu,Purdue University,opsys,1,2015
 Dongyan Xu,Purdue University,opsys,1,2016
 Dongyan Xu,Purdue University,security,1,2004
 Dongyan Xu,Purdue University,security,1,2007
-Dongyan Xu,Purdue University,security,1,2011
-Dongyan Xu,Purdue University,security,2,2013
-Dongyan Xu,Purdue University,security,3,2015
+Dongyan Xu,Purdue University,security,1,2008
+Dongyan Xu,Purdue University,security,1,2010
+Dongyan Xu,Purdue University,security,2,2011
+Dongyan Xu,Purdue University,security,1,2012
+Dongyan Xu,Purdue University,security,3,2013
+Dongyan Xu,Purdue University,security,4,2015
 Dongyan Xu,Purdue University,metrics,1,2014
 Dongyan Xu,Purdue University,mobile,1,2003
 Brian Noble,University of Michigan,networks,1,2003
@@ -5192,8 +5221,10 @@ Elaine Shi,University of Maryland - College Park,opsys,1,2015
 Elaine Shi,University of Maryland - College Park,networks,1,2007
 Elaine Shi,University of Maryland - College Park,security,2,2005
 Elaine Shi,University of Maryland - College Park,security,1,2007
-Elaine Shi,University of Maryland - College Park,security,6,2013
-Elaine Shi,University of Maryland - College Park,security,5,2014
+Elaine Shi,University of Maryland - College Park,security,1,2011
+Elaine Shi,University of Maryland - College Park,security,1,2012
+Elaine Shi,University of Maryland - College Park,security,7,2013
+Elaine Shi,University of Maryland - College Park,security,7,2014
 Elaine Shi,University of Maryland - College Park,security,4,2015
 Elaine Shi,University of Maryland - College Park,web,1,2016
 Elaine Shi,University of Maryland - College Park,mobile,1,2012
@@ -5203,11 +5234,13 @@ Dawn Song,University of California - Berkeley,opsys,1,2012
 Dawn Song,University of California - Berkeley,opsys,1,2014
 Dawn Song,University of California - Berkeley,networks,1,2013
 Dawn Song,University of California - Berkeley,networks,1,2015
-Dawn Song,University of California - Berkeley,security,2,2009
-Dawn Song,University of California - Berkeley,security,3,2010
-Dawn Song,University of California - Berkeley,security,5,2011
+Dawn Song,University of California - Berkeley,security,4,2008
+Dawn Song,University of California - Berkeley,security,3,2009
+Dawn Song,University of California - Berkeley,security,5,2010
+Dawn Song,University of California - Berkeley,security,7,2011
 Dawn Song,University of California - Berkeley,security,2,2012
 Dawn Song,University of California - Berkeley,security,3,2013
+Dawn Song,University of California - Berkeley,security,1,2015
 Dawn Song,University of California - Berkeley,mlmining,1,2009
 Dawn Song,University of California - Berkeley,mobile,1,2012
 Li-Shiuan Peh,Massachusetts Institute of Technology,opsys,1,2002
@@ -5291,7 +5324,7 @@ Kang G. Shin,University of Michigan,networks,2,2013
 Kang G. Shin,University of Michigan,networks,3,2014
 Kang G. Shin,University of Michigan,networks,2,2015
 Kang G. Shin,University of Michigan,security,1,2003
-Kang G. Shin,University of Michigan,security,1,2009
+Kang G. Shin,University of Michigan,security,2,2009
 Kang G. Shin,University of Michigan,security,3,2014
 Kang G. Shin,University of Michigan,mobile,1,2005
 Kang G. Shin,University of Michigan,mobile,2,2008
@@ -5335,7 +5368,7 @@ Steven D. Gribble,University of Washington,networks,2,2004
 Steven D. Gribble,University of Washington,networks,1,2008
 Steven D. Gribble,University of Washington,networks,1,2009
 Steven D. Gribble,University of Washington,networks,1,2010
-Steven D. Gribble,University of Washington,security,1,2006
+Steven D. Gribble,University of Washington,security,2,2006
 Steven D. Gribble,University of Washington,database,1,2007
 Steven D. Gribble,University of Washington,web,1,2007
 Steven D. Gribble,University of Washington,web,1,2008
@@ -5348,17 +5381,19 @@ Henry M. Levy,University of Washington,opsys,1,2010
 Henry M. Levy,University of Washington,opsys,1,2014
 Henry M. Levy,University of Washington,networks,1,2004
 Henry M. Levy,University of Washington,networks,1,2010
-Henry M. Levy,University of Washington,security,1,2006
+Henry M. Levy,University of Washington,security,2,2006
 Henry M. Levy,University of Washington,security,1,2009
 Henry M. Levy,University of Washington,database,1,2007
 Henry M. Levy,University of Washington,web,1,2004
 Henry M. Levy,University of Washington,web,1,2008
 Henry M. Levy,University of Washington,mobile,1,2008
 Apu Kapadia,Indiana University,security,1,2004
-Apu Kapadia,Indiana University,security,1,2007
-Apu Kapadia,Indiana University,security,1,2008
-Apu Kapadia,Indiana University,security,1,2012
-Apu Kapadia,Indiana University,security,1,2014
+Apu Kapadia,Indiana University,security,2,2007
+Apu Kapadia,Indiana University,security,2,2008
+Apu Kapadia,Indiana University,security,1,2011
+Apu Kapadia,Indiana University,security,2,2012
+Apu Kapadia,Indiana University,security,1,2013
+Apu Kapadia,Indiana University,security,2,2014
 Apu Kapadia,Indiana University,hci,1,2014
 Apu Kapadia,Indiana University,hci,4,2015
 Apu Kapadia,Indiana University,hci,1,2016
@@ -5373,13 +5408,15 @@ William G. J. Halfond,University of Southern California,mobile,1,2013
 William G. J. Halfond,University of Southern California,mobile,1,2014
 Dan S. Wallach,Rice University,opsys,1,2002
 Dan S. Wallach,Rice University,networks,1,2006
-Dan S. Wallach,Rice University,security,1,2001
+Dan S. Wallach,Rice University,security,2,2001
+Dan S. Wallach,Rice University,security,1,2002
 Dan S. Wallach,Rice University,security,1,2003
 Dan S. Wallach,Rice University,security,1,2004
 Dan S. Wallach,Rice University,security,1,2008
 Dan S. Wallach,Rice University,security,1,2009
 Dan S. Wallach,Rice University,security,1,2011
-Dan S. Wallach,Rice University,security,3,2012
+Dan S. Wallach,Rice University,security,4,2012
+Dan S. Wallach,Rice University,security,1,2014
 Dan S. Wallach,Rice University,hci,1,2008
 Dan S. Wallach,Rice University,mobile,1,2003
 I. V. Ramakrishnan,State University of New York - Stony Brook,logic,1,2000
@@ -5405,6 +5442,7 @@ Mingyan Liu,University of Michigan,networks,1,2012
 Mingyan Liu,University of Michigan,networks,3,2013
 Mingyan Liu,University of Michigan,networks,2,2014
 Mingyan Liu,University of Michigan,networks,2,2015
+Mingyan Liu,University of Michigan,security,1,2014
 Mingyan Liu,University of Michigan,ai,1,2016
 Mingyan Liu,University of Michigan,metrics,1,2015
 Mingyan Liu,University of Michigan,mobile,1,2006
@@ -5412,9 +5450,12 @@ Mingyan Liu,University of Michigan,mobile,1,2007
 Patrick Traynor,University of Florida,networks,1,2006
 Patrick Traynor,University of Florida,security,1,2005
 Patrick Traynor,University of Florida,security,1,2006
+Patrick Traynor,University of Florida,security,1,2008
 Patrick Traynor,University of Florida,security,2,2009
 Patrick Traynor,University of Florida,security,1,2010
-Patrick Traynor,University of Florida,security,1,2011
+Patrick Traynor,University of Florida,security,2,2011
+Patrick Traynor,University of Florida,security,1,2012
+Patrick Traynor,University of Florida,security,1,2013
 Patrick Traynor,University of Florida,mobile,1,2006
 Guohong Cao,Pennsylvania State University,networks,5,2004
 Guohong Cao,Pennsylvania State University,networks,4,2005
@@ -5438,11 +5479,12 @@ David Wagner,University of California - Berkeley,networks,1,2002
 David Wagner,University of California - Berkeley,security,1,2000
 David Wagner,University of California - Berkeley,security,3,2001
 David Wagner,University of California - Berkeley,security,3,2002
-David Wagner,University of California - Berkeley,security,3,2004
+David Wagner,University of California - Berkeley,security,4,2004
 David Wagner,University of California - Berkeley,security,1,2006
 David Wagner,University of California - Berkeley,security,2,2007
 David Wagner,University of California - Berkeley,security,1,2008
-David Wagner,University of California - Berkeley,security,2,2009
+David Wagner,University of California - Berkeley,security,3,2009
+David Wagner,University of California - Berkeley,security,1,2010
 David Wagner,University of California - Berkeley,security,2,2011
 David Wagner,University of California - Berkeley,security,1,2012
 David Wagner,University of California - Berkeley,security,1,2014
@@ -5502,6 +5544,7 @@ Guevara Noubir,Northeastern University,networks,1,2007
 Guevara Noubir,Northeastern University,networks,1,2008
 Guevara Noubir,Northeastern University,networks,1,2011
 Guevara Noubir,Northeastern University,networks,1,2013
+Guevara Noubir,Northeastern University,security,1,2013
 Guevara Noubir,Northeastern University,security,1,2014
 Guevara Noubir,Northeastern University,security,1,2015
 Guevara Noubir,Northeastern University,mobile,1,2011
@@ -5520,6 +5563,8 @@ Kevin Fu,University of Michigan,opsys,1,2011
 Kevin Fu,University of Michigan,arch,1,2015
 Kevin Fu,University of Michigan,networks,1,2011
 Kevin Fu,University of Michigan,security,1,2001
+Kevin Fu,University of Michigan,security,1,2005
+Kevin Fu,University of Michigan,security,1,2006
 Kevin Fu,University of Michigan,security,1,2008
 Kevin Fu,University of Michigan,security,1,2009
 Kevin Fu,University of Michigan,security,1,2012
@@ -5535,9 +5580,11 @@ Vern Paxson,University of California - Berkeley,security,1,2001
 Vern Paxson,University of California - Berkeley,security,1,2002
 Vern Paxson,University of California - Berkeley,security,2,2003
 Vern Paxson,University of California - Berkeley,security,3,2004
+Vern Paxson,University of California - Berkeley,security,1,2006
 Vern Paxson,University of California - Berkeley,security,2,2007
 Vern Paxson,University of California - Berkeley,security,1,2008
-Vern Paxson,University of California - Berkeley,security,2,2010
+Vern Paxson,University of California - Berkeley,security,1,2009
+Vern Paxson,University of California - Berkeley,security,3,2010
 Vern Paxson,University of California - Berkeley,security,4,2011
 Vern Paxson,University of California - Berkeley,security,2,2012
 Vern Paxson,University of California - Berkeley,security,1,2013
@@ -5600,12 +5647,14 @@ Jon Froehlich,University of Maryland - College Park,hci,1,2012
 Jon Froehlich,University of Maryland - College Park,hci,3,2013
 Jon Froehlich,University of Maryland - College Park,hci,2,2014
 Jon Froehlich,University of Maryland - College Park,mobile,1,2007
-Giuseppe Ateniese,Johns Hopkins University,networks,1,2014
-Giuseppe Ateniese,Johns Hopkins University,security,1,2001
-Giuseppe Ateniese,Johns Hopkins University,security,2,2005
-Giuseppe Ateniese,Johns Hopkins University,security,1,2006
-Giuseppe Ateniese,Johns Hopkins University,security,1,2007
-Giuseppe Ateniese,Johns Hopkins University,security,1,2015
+Nicholas Hopper,University of Minnesota - Twin Cities,networks,1,2011
+Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2007
+Nicholas Hopper,University of Minnesota - Twin Cities,security,2,2009
+Nicholas Hopper,University of Minnesota - Twin Cities,security,3,2010
+Nicholas Hopper,University of Minnesota - Twin Cities,security,2,2011
+Nicholas Hopper,University of Minnesota - Twin Cities,security,7,2012
+Nicholas Hopper,University of Minnesota - Twin Cities,security,2,2013
+Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2015
 Peng Ning,North Carolina State University,networks,1,2005
 Peng Ning,North Carolina State University,networks,1,2007
 Peng Ning,North Carolina State University,networks,1,2009
@@ -5614,19 +5663,763 @@ Peng Ning,North Carolina State University,networks,3,2012
 Peng Ning,North Carolina State University,networks,1,2013
 Peng Ning,North Carolina State University,networks,1,2015
 Peng Ning,North Carolina State University,security,1,2002
-Peng Ning,North Carolina State University,security,3,2003
-Peng Ning,North Carolina State University,security,1,2004
+Peng Ning,North Carolina State University,security,4,2003
+Peng Ning,North Carolina State University,security,2,2004
 Peng Ning,North Carolina State University,security,1,2005
 Peng Ning,North Carolina State University,security,2,2006
 Peng Ning,North Carolina State University,security,1,2007
 Peng Ning,North Carolina State University,security,2,2009
 Peng Ning,North Carolina State University,security,2,2010
 Peng Ning,North Carolina State University,security,2,2011
-Peng Ning,North Carolina State University,security,3,2013
+Peng Ning,North Carolina State University,security,4,2013
 Peng Ning,North Carolina State University,security,1,2014
-Douglas S. Reeves,North Carolina State University,networks,1,2007
-Douglas S. Reeves,North Carolina State University,security,1,2002
-Douglas S. Reeves,North Carolina State University,security,1,2006
+Gene Tsudik,University of California - Irvine,networks,1,2010
+Gene Tsudik,University of California - Irvine,security,1,2000
+Gene Tsudik,University of California - Irvine,security,1,2001
+Gene Tsudik,University of California - Irvine,security,1,2002
+Gene Tsudik,University of California - Irvine,security,1,2004
+Gene Tsudik,University of California - Irvine,security,2,2007
+Gene Tsudik,University of California - Irvine,security,1,2011
+Gene Tsudik,University of California - Irvine,security,3,2012
+Gene Tsudik,University of California - Irvine,security,1,2014
+Gene Tsudik,University of California - Irvine,security,1,2015
+Gene Tsudik,University of California - Irvine,database,1,2004
+Christopher Kruegel,University of California - Santa Barbara,softeng,1,2007
+Christopher Kruegel,University of California - Santa Barbara,softeng,1,2015
+Christopher Kruegel,University of California - Santa Barbara,networks,1,2011
+Christopher Kruegel,University of California - Santa Barbara,networks,1,2014
+Christopher Kruegel,University of California - Santa Barbara,security,1,2007
+Christopher Kruegel,University of California - Santa Barbara,security,1,2008
+Christopher Kruegel,University of California - Santa Barbara,security,2,2009
+Christopher Kruegel,University of California - Santa Barbara,security,7,2010
+Christopher Kruegel,University of California - Santa Barbara,security,6,2011
+Christopher Kruegel,University of California - Santa Barbara,security,6,2012
+Christopher Kruegel,University of California - Santa Barbara,security,5,2013
+Christopher Kruegel,University of California - Santa Barbara,security,2,2014
+Christopher Kruegel,University of California - Santa Barbara,security,3,2015
+Christopher Kruegel,University of California - Santa Barbara,web,1,2011
+Christopher Kruegel,University of California - Santa Barbara,web,1,2013
+Christopher Kruegel,University of California - Santa Barbara,web,1,2014
+Giovanni Vigna,University of California - Santa Barbara,softeng,1,2003
+Giovanni Vigna,University of California - Santa Barbara,softeng,1,2015
+Giovanni Vigna,University of California - Santa Barbara,networks,1,2011
+Giovanni Vigna,University of California - Santa Barbara,networks,1,2014
+Giovanni Vigna,University of California - Santa Barbara,security,2,2002
+Giovanni Vigna,University of California - Santa Barbara,security,1,2003
+Giovanni Vigna,University of California - Santa Barbara,security,2,2004
+Giovanni Vigna,University of California - Santa Barbara,security,1,2006
+Giovanni Vigna,University of California - Santa Barbara,security,2,2007
+Giovanni Vigna,University of California - Santa Barbara,security,2,2008
+Giovanni Vigna,University of California - Santa Barbara,security,2,2009
+Giovanni Vigna,University of California - Santa Barbara,security,3,2010
+Giovanni Vigna,University of California - Santa Barbara,security,3,2011
+Giovanni Vigna,University of California - Santa Barbara,security,5,2012
+Giovanni Vigna,University of California - Santa Barbara,security,5,2013
+Giovanni Vigna,University of California - Santa Barbara,security,2,2014
+Giovanni Vigna,University of California - Santa Barbara,security,4,2015
+Giovanni Vigna,University of California - Santa Barbara,web,1,2010
+Giovanni Vigna,University of California - Santa Barbara,web,1,2011
+Giovanni Vigna,University of California - Santa Barbara,web,1,2013
+Giovanni Vigna,University of California - Santa Barbara,web,1,2014
+Yan Chen,Northwestern University,opsys,1,2000
+Yan Chen,Northwestern University,networks,1,2004
+Yan Chen,Northwestern University,networks,2,2006
+Yan Chen,Northwestern University,networks,2,2007
+Yan Chen,Northwestern University,networks,1,2008
+Yan Chen,Northwestern University,networks,2,2009
+Yan Chen,Northwestern University,networks,5,2010
+Yan Chen,Northwestern University,networks,1,2012
+Yan Chen,Northwestern University,networks,4,2013
+Yan Chen,Northwestern University,networks,1,2015
+Yan Chen,Northwestern University,security,2,2010
+Yan Chen,Northwestern University,security,4,2011
+Yan Chen,Northwestern University,security,2,2012
+Yan Chen,Northwestern University,security,1,2014
+Yan Chen,Northwestern University,security,3,2015
+Yan Chen,Northwestern University,ai,1,2013
+Yan Chen,Northwestern University,database,1,2004
+Yan Chen,Northwestern University,web,1,2013
+Yan Chen,Northwestern University,hci,1,2010
+Yan Chen,Northwestern University,hci,1,2016
+Yan Chen,Northwestern University,vision,1,2009
+Yan Chen,Northwestern University,vision,1,2011
+Brent Waters,University of Texas - Austin,theory,2,2008
+Brent Waters,University of Texas - Austin,theory,1,2010
+Brent Waters,University of Texas - Austin,theory,2,2011
+Brent Waters,University of Texas - Austin,theory,2,2013
+Brent Waters,University of Texas - Austin,theory,1,2014
+Brent Waters,University of Texas - Austin,theory,2,2015
+Brent Waters,University of Texas - Austin,security,1,2005
+Brent Waters,University of Texas - Austin,security,5,2006
+Brent Waters,University of Texas - Austin,security,4,2007
+Brent Waters,University of Texas - Austin,security,2,2008
+Brent Waters,University of Texas - Austin,security,1,2009
+Brent Waters,University of Texas - Austin,security,4,2010
+Brent Waters,University of Texas - Austin,security,2,2011
+Brent Waters,University of Texas - Austin,security,2,2013
+Brent Waters,University of Texas - Austin,security,1,2014
+Brent Waters,University of Texas - Austin,web,1,2005
+Engin Kirda,Northeastern University,softeng,1,2001
+Engin Kirda,Northeastern University,security,1,2006
+Engin Kirda,Northeastern University,security,3,2007
+Engin Kirda,Northeastern University,security,2,2008
+Engin Kirda,Northeastern University,security,3,2009
+Engin Kirda,Northeastern University,security,5,2010
+Engin Kirda,Northeastern University,security,4,2011
+Engin Kirda,Northeastern University,security,2,2012
+Engin Kirda,Northeastern University,security,3,2013
+Engin Kirda,Northeastern University,security,1,2014
+Engin Kirda,Northeastern University,web,1,2006
+Engin Kirda,Northeastern University,web,1,2009
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2005
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2006
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2007
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2008
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2011
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2012
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2013
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2015
+Matthew Caesar,University of Illinois at Urbana-Champaign,security,1,2010
+Matthew Caesar,University of Illinois at Urbana-Champaign,security,1,2011
+Matthew Caesar,University of Illinois at Urbana-Champaign,security,1,2012
+Matthew Caesar,University of Illinois at Urbana-Champaign,security,2,2014
+Matthew Caesar,University of Illinois at Urbana-Champaign,metrics,1,2011
+Angelos D. Keromytis,Columbia University,opsys,1,2009
+Angelos D. Keromytis,Columbia University,networks,1,2002
+Angelos D. Keromytis,Columbia University,networks,1,2005
+Angelos D. Keromytis,Columbia University,security,2,2000
+Angelos D. Keromytis,Columbia University,security,1,2001
+Angelos D. Keromytis,Columbia University,security,1,2002
+Angelos D. Keromytis,Columbia University,security,2,2003
+Angelos D. Keromytis,Columbia University,security,1,2004
+Angelos D. Keromytis,Columbia University,security,2,2005
+Angelos D. Keromytis,Columbia University,security,1,2006
+Angelos D. Keromytis,Columbia University,security,2,2007
+Angelos D. Keromytis,Columbia University,security,2,2008
+Angelos D. Keromytis,Columbia University,security,1,2009
+Angelos D. Keromytis,Columbia University,security,5,2012
+Angelos D. Keromytis,Columbia University,security,2,2013
+Angelos D. Keromytis,Columbia University,security,2,2014
+Angelos D. Keromytis,Columbia University,security,2,2015
+Salvatore J. Stolfo,Columbia University,arch,1,2013
+Salvatore J. Stolfo,Columbia University,security,1,2001
+Salvatore J. Stolfo,Columbia University,security,1,2007
+Salvatore J. Stolfo,Columbia University,security,1,2008
+Salvatore J. Stolfo,Columbia University,security,1,2009
+Salvatore J. Stolfo,Columbia University,security,1,2013
+Salvatore J. Stolfo,Columbia University,security,1,2015
+Salvatore J. Stolfo,Columbia University,mlmining,1,2005
+Salvatore J. Stolfo,Columbia University,web,1,2006
+Frank Pfenning,Carnegie Mellon University,proglang,1,2003
+Frank Pfenning,Carnegie Mellon University,proglang,1,2004
+Frank Pfenning,Carnegie Mellon University,proglang,1,2005
+Frank Pfenning,Carnegie Mellon University,proglang,1,2016
+Frank Pfenning,Carnegie Mellon University,logic,1,2001
+Frank Pfenning,Carnegie Mellon University,logic,1,2004
+Frank Pfenning,Carnegie Mellon University,logic,1,2009
+Frank Pfenning,Carnegie Mellon University,security,1,2007
+Frank Pfenning,Carnegie Mellon University,security,1,2010
+Frank Pfenning,Carnegie Mellon University,ai,1,2003
+Andreas Haeberlen,University of Pennsylvania,proglang,1,2013
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2007
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2010
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2011
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2012
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2014
+Andreas Haeberlen,University of Pennsylvania,networks,1,2005
+Andreas Haeberlen,University of Pennsylvania,networks,1,2006
+Andreas Haeberlen,University of Pennsylvania,networks,1,2008
+Andreas Haeberlen,University of Pennsylvania,networks,1,2009
+Andreas Haeberlen,University of Pennsylvania,networks,2,2012
+Andreas Haeberlen,University of Pennsylvania,networks,1,2014
+Andreas Haeberlen,University of Pennsylvania,security,1,2009
+Andreas Haeberlen,University of Pennsylvania,security,1,2011
+Andreas Haeberlen,University of Pennsylvania,database,1,2011
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2000
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2001
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2002
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2003
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2004
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2007
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2008
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2009
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2010
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2011
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2012
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2013
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2014
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2015
+Martin C. Rinard,Massachusetts Institute of Technology,logic,1,2003
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2002
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2004
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2005
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2009
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2011
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2012
+Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2004
+Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2009
+Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2011
+Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2015
+Martin C. Rinard,Massachusetts Institute of Technology,security,1,2011
+Martin C. Rinard,Massachusetts Institute of Technology,security,3,2015
+Long Lu,State University of New York - Stony Brook,security,1,2009
+Long Lu,State University of New York - Stony Brook,security,1,2010
+Long Lu,State University of New York - Stony Brook,security,1,2011
+Long Lu,State University of New York - Stony Brook,security,1,2012
+Long Lu,State University of New York - Stony Brook,security,1,2014
+Long Lu,State University of New York - Stony Brook,security,3,2015
+Wenke Lee,Georgia Institute of Technology,networks,1,2010
+Wenke Lee,Georgia Institute of Technology,security,1,2001
+Wenke Lee,Georgia Institute of Technology,security,1,2003
+Wenke Lee,Georgia Institute of Technology,security,1,2004
+Wenke Lee,Georgia Institute of Technology,security,3,2006
+Wenke Lee,Georgia Institute of Technology,security,6,2008
+Wenke Lee,Georgia Institute of Technology,security,6,2009
+Wenke Lee,Georgia Institute of Technology,security,3,2010
+Wenke Lee,Georgia Institute of Technology,security,4,2011
+Wenke Lee,Georgia Institute of Technology,security,2,2012
+Wenke Lee,Georgia Institute of Technology,security,4,2013
+Wenke Lee,Georgia Institute of Technology,security,4,2014
+Wenke Lee,Georgia Institute of Technology,security,5,2015
+Wenke Lee,Georgia Institute of Technology,web,1,2011
+Wenke Lee,Georgia Institute of Technology,web,1,2012
+Wenke Lee,Georgia Institute of Technology,web,1,2015
+Wenke Lee,Georgia Institute of Technology,web,1,2016
+Aviel D. Rubin,Johns Hopkins University,networks,1,2002
+Aviel D. Rubin,Johns Hopkins University,security,1,2000
+Aviel D. Rubin,Johns Hopkins University,security,1,2002
+Aviel D. Rubin,Johns Hopkins University,security,1,2003
+Aviel D. Rubin,Johns Hopkins University,security,1,2004
+Aviel D. Rubin,Johns Hopkins University,security,1,2007
+Aviel D. Rubin,Johns Hopkins University,security,1,2012
+Aviel D. Rubin,Johns Hopkins University,security,1,2013
+Aviel D. Rubin,Johns Hopkins University,security,1,2014
+Alok N. Choudhary,Northwestern University,arch,1,2002
+Alok N. Choudhary,Northwestern University,arch,2,2008
+Alok N. Choudhary,Northwestern University,arch,1,2009
+Alok N. Choudhary,Northwestern University,security,1,2011
+Alok N. Choudhary,Northwestern University,security,1,2012
+Alok N. Choudhary,Northwestern University,mlmining,1,2012
+Alok N. Choudhary,Northwestern University,mlmining,2,2013
+Alok N. Choudhary,Northwestern University,ai,1,2011
+Alok N. Choudhary,Northwestern University,ai,2,2013
+Alok N. Choudhary,Northwestern University,web,1,2012
+Alok N. Choudhary,Northwestern University,nlp,1,2009
+Alok N. Choudhary,Northwestern University,vision,1,2014
+Alok N. Choudhary,Northwestern University,vision,1,2015
+Agnes Hui Chan,Northeastern University,security,1,2014
+Robert St. Amant,North Carolina State University,security,1,2004
+Robert St. Amant,North Carolina State University,ai,1,2001
+Robert St. Amant,North Carolina State University,ai,1,2005
+Robert St. Amant,North Carolina State University,ai,1,2006
+Robert St. Amant,North Carolina State University,hci,1,2004
+Robert St. Amant,North Carolina State University,hci,1,2014
+Jason Nieh,Columbia University,opsys,1,2002
+Jason Nieh,Columbia University,opsys,1,2005
+Jason Nieh,Columbia University,opsys,1,2007
+Jason Nieh,Columbia University,opsys,1,2009
+Jason Nieh,Columbia University,opsys,2,2011
+Jason Nieh,Columbia University,opsys,1,2013
+Jason Nieh,Columbia University,opsys,2,2014
+Jason Nieh,Columbia University,networks,1,2004
+Jason Nieh,Columbia University,networks,1,2010
+Jason Nieh,Columbia University,security,1,2005
+Jason Nieh,Columbia University,security,1,2007
+Jason Nieh,Columbia University,metrics,2,2002
+Jason Nieh,Columbia University,metrics,2,2010
+Jason Nieh,Columbia University,metrics,1,2011
+Jason Nieh,Columbia University,metrics,1,2014
+Jason Nieh,Columbia University,web,1,2003
+Jason Nieh,Columbia University,web,1,2004
+Jason Nieh,Columbia University,web,1,2005
+Jason Nieh,Columbia University,web,1,2006
+Vishal Misra,Columbia University,networks,1,2000
+Vishal Misra,Columbia University,networks,2,2001
+Vishal Misra,Columbia University,networks,2,2002
+Vishal Misra,Columbia University,networks,1,2003
+Vishal Misra,Columbia University,networks,1,2004
+Vishal Misra,Columbia University,networks,2,2005
+Vishal Misra,Columbia University,networks,3,2006
+Vishal Misra,Columbia University,networks,1,2007
+Vishal Misra,Columbia University,networks,1,2009
+Vishal Misra,Columbia University,networks,1,2010
+Vishal Misra,Columbia University,networks,1,2011
+Vishal Misra,Columbia University,security,1,2003
+Vishal Misra,Columbia University,security,1,2005
+Vishal Misra,Columbia University,metrics,2,2003
+Vishal Misra,Columbia University,metrics,1,2004
+Vishal Misra,Columbia University,metrics,2,2007
+Vishal Misra,Columbia University,metrics,2,2010
+Vishal Misra,Columbia University,web,1,2013
+Vishal Misra,Columbia University,web,1,2015
+Dan Rubenstein,Columbia University,networks,1,2002
+Dan Rubenstein,Columbia University,networks,2,2005
+Dan Rubenstein,Columbia University,networks,3,2006
+Dan Rubenstein,Columbia University,networks,2,2007
+Dan Rubenstein,Columbia University,networks,1,2010
+Dan Rubenstein,Columbia University,networks,1,2011
+Dan Rubenstein,Columbia University,security,1,2003
+Dan Rubenstein,Columbia University,security,1,2005
+Dan Rubenstein,Columbia University,metrics,1,2000
+Dan Rubenstein,Columbia University,metrics,1,2004
+Dan Rubenstein,Columbia University,metrics,2,2007
+Dan Rubenstein,Columbia University,metrics,1,2008
+Nadia Heninger,University of Pennsylvania,security,1,2008
+Nadia Heninger,University of Pennsylvania,security,1,2009
+Nadia Heninger,University of Pennsylvania,security,1,2010
+Nadia Heninger,University of Pennsylvania,security,2,2012
+Nadia Heninger,University of Pennsylvania,security,1,2015
+Edward W. Felten,Princeton University,logic,1,2008
+Edward W. Felten,Princeton University,opsys,1,2010
+Edward W. Felten,Princeton University,security,1,2000
+Edward W. Felten,Princeton University,security,1,2001
+Edward W. Felten,Princeton University,security,1,2002
+Edward W. Felten,Princeton University,security,1,2003
+Edward W. Felten,Princeton University,security,1,2008
+Edward W. Felten,Princeton University,security,1,2009
+Edward W. Felten,Princeton University,security,1,2010
+Edward W. Felten,Princeton University,security,2,2011
+Edward W. Felten,Princeton University,security,1,2012
+Edward W. Felten,Princeton University,security,2,2015
+Edward W. Felten,Princeton University,web,1,2005
+Edward W. Felten,Princeton University,web,1,2015
+Edward W. Felten,Princeton University,hci,1,2001
+Edward W. Felten,Princeton University,hci,1,2006
+Christopher J. Rossbach,University of Texas - Austin,proglang,1,2007
+Christopher J. Rossbach,University of Texas - Austin,opsys,1,2007
+Christopher J. Rossbach,University of Texas - Austin,opsys,2,2009
+Christopher J. Rossbach,University of Texas - Austin,opsys,1,2011
+Christopher J. Rossbach,University of Texas - Austin,opsys,1,2013
+Christopher J. Rossbach,University of Texas - Austin,arch,1,2007
+Christopher J. Rossbach,University of Texas - Austin,arch,1,2008
+Christopher J. Rossbach,University of Texas - Austin,security,1,2010
+Emmett Witchel,University of Texas - Austin,proglang,1,2005
+Emmett Witchel,University of Texas - Austin,proglang,1,2007
+Emmett Witchel,University of Texas - Austin,proglang,1,2009
+Emmett Witchel,University of Texas - Austin,opsys,1,2002
+Emmett Witchel,University of Texas - Austin,opsys,1,2005
+Emmett Witchel,University of Texas - Austin,opsys,1,2007
+Emmett Witchel,University of Texas - Austin,opsys,2,2009
+Emmett Witchel,University of Texas - Austin,opsys,2,2011
+Emmett Witchel,University of Texas - Austin,opsys,1,2012
+Emmett Witchel,University of Texas - Austin,opsys,2,2013
+Emmett Witchel,University of Texas - Austin,opsys,1,2014
+Emmett Witchel,University of Texas - Austin,opsys,2,2016
+Emmett Witchel,University of Texas - Austin,arch,1,2001
+Emmett Witchel,University of Texas - Austin,arch,1,2007
+Emmett Witchel,University of Texas - Austin,arch,1,2008
+Emmett Witchel,University of Texas - Austin,networks,1,2010
+Emmett Witchel,University of Texas - Austin,security,1,2007
+Emmett Witchel,University of Texas - Austin,security,1,2010
+Emmett Witchel,University of Texas - Austin,security,1,2011
+Emmett Witchel,University of Texas - Austin,security,1,2013
+Emmett Witchel,University of Texas - Austin,ai,1,2007
+Mendel Rosenblum,Stanford University,opsys,1,2002
+Mendel Rosenblum,Stanford University,opsys,1,2003
+Mendel Rosenblum,Stanford University,opsys,1,2006
+Mendel Rosenblum,Stanford University,opsys,1,2008
+Mendel Rosenblum,Stanford University,opsys,1,2011
+Mendel Rosenblum,Stanford University,arch,1,2005
+Mendel Rosenblum,Stanford University,networks,1,2006
+Mendel Rosenblum,Stanford University,networks,1,2011
+Mendel Rosenblum,Stanford University,security,1,2003
+Mendel Rosenblum,Stanford University,security,2,2004
+Dan Boneh,Stanford University,opsys,1,2000
+Dan Boneh,Stanford University,opsys,1,2003
+Dan Boneh,Stanford University,opsys,1,2008
+Dan Boneh,Stanford University,theory,1,2000
+Dan Boneh,Stanford University,theory,2,2007
+Dan Boneh,Stanford University,theory,1,2008
+Dan Boneh,Stanford University,security,1,2001
+Dan Boneh,Stanford University,security,2,2002
+Dan Boneh,Stanford University,security,1,2003
+Dan Boneh,Stanford University,security,2,2004
+Dan Boneh,Stanford University,security,2,2006
+Dan Boneh,Stanford University,security,3,2007
+Dan Boneh,Stanford University,security,1,2008
+Dan Boneh,Stanford University,security,1,2009
+Dan Boneh,Stanford University,security,4,2010
+Dan Boneh,Stanford University,security,2,2011
+Dan Boneh,Stanford University,security,5,2012
+Dan Boneh,Stanford University,security,3,2013
+Dan Boneh,Stanford University,security,1,2014
+Dan Boneh,Stanford University,security,3,2015
+Dan Boneh,Stanford University,web,1,2006
+Dan Boneh,Stanford University,web,1,2007
+Dan Boneh,Stanford University,web,2,2012
+Taieb Znati,University of Pittsburgh,networks,1,2005
+Taieb Znati,University of Pittsburgh,networks,1,2008
+Taieb Znati,University of Pittsburgh,networks,2,2009
+Taieb Znati,University of Pittsburgh,networks,2,2010
+Taieb Znati,University of Pittsburgh,security,1,2007
+Jignesh Patel,University of Wisconsin - Madison,security,1,2010
+Jignesh Patel,University of Wisconsin - Madison,security,1,2012
+R. Sekar,State University of New York - Stony Brook,softeng,1,2004
+R. Sekar,State University of New York - Stony Brook,opsys,1,2003
+R. Sekar,State University of New York - Stony Brook,opsys,1,2014
+R. Sekar,State University of New York - Stony Brook,opsys,1,2016
+R. Sekar,State University of New York - Stony Brook,security,1,2000
+R. Sekar,State University of New York - Stony Brook,security,1,2001
+R. Sekar,State University of New York - Stony Brook,security,1,2002
+R. Sekar,State University of New York - Stony Brook,security,2,2005
+R. Sekar,State University of New York - Stony Brook,security,1,2006
+R. Sekar,State University of New York - Stony Brook,security,1,2008
+R. Sekar,State University of New York - Stony Brook,security,1,2009
+Giuseppe Ateniese,Johns Hopkins University,networks,1,2014
+Giuseppe Ateniese,Johns Hopkins University,security,2,2001
+Giuseppe Ateniese,Johns Hopkins University,security,3,2005
+Giuseppe Ateniese,Johns Hopkins University,security,1,2006
+Giuseppe Ateniese,Johns Hopkins University,security,2,2007
+Giuseppe Ateniese,Johns Hopkins University,security,1,2013
+Giuseppe Ateniese,Johns Hopkins University,security,1,2015
+Kevin R. B. Butler,University of Florida,security,1,2006
+Kevin R. B. Butler,University of Florida,security,2,2008
+Kevin R. B. Butler,University of Florida,security,1,2010
+Kevin R. B. Butler,University of Florida,security,1,2012
+Kevin R. B. Butler,University of Florida,security,3,2014
+Michael Walfish,New York University,opsys,1,2004
+Michael Walfish,New York University,opsys,1,2010
+Michael Walfish,New York University,opsys,1,2011
+Michael Walfish,New York University,opsys,1,2013
+Michael Walfish,New York University,opsys,1,2015
+Michael Walfish,New York University,networks,2,2004
+Michael Walfish,New York University,networks,2,2006
+Michael Walfish,New York University,networks,2,2013
+Michael Walfish,New York University,security,2,2012
+Michael Walfish,New York University,security,1,2013
+Michael Walfish,New York University,security,1,2015
+Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2000
+Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2001
+Carl A. Gunter,University of Illinois at Urbana-Champaign,networks,1,2008
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2004
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2007
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2008
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2011
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2013
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,4,2014
+Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2015
+Carl A. Gunter,University of Illinois at Urbana-Champaign,web,1,2015
+Carl A. Gunter,University of Illinois at Urbana-Champaign,web,1,2016
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2000
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2001
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,3,2003
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2005
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,2,2006
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2007
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,2,2008
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2009
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2010
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,2,2012
+Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2013
+Shafi Goldwasser,Massachusetts Institute of Technology,security,1,2015
+Stephen McCamant,University of Minnesota - Twin Cities,proglang,1,2008
+Stephen McCamant,University of Minnesota - Twin Cities,opsys,1,2012
+Stephen McCamant,University of Minnesota - Twin Cities,security,3,2010
+Stephen McCamant,University of Minnesota - Twin Cities,security,2,2011
+Stephen McCamant,University of Minnesota - Twin Cities,security,1,2013
+Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2000
+Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2001
+Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2005
+Brian Neil Levine,University of Massachusetts - Amherst,networks,2,2007
+Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2008
+Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2011
+Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2013
+Brian Neil Levine,University of Massachusetts - Amherst,security,1,2000
+Brian Neil Levine,University of Massachusetts - Amherst,security,1,2002
+Brian Neil Levine,University of Massachusetts - Amherst,security,1,2003
+Brian Neil Levine,University of Massachusetts - Amherst,security,1,2005
+Brian Neil Levine,University of Massachusetts - Amherst,security,1,2006
+Brian Neil Levine,University of Massachusetts - Amherst,security,2,2011
+Brian Neil Levine,University of Massachusetts - Amherst,mlmining,1,2005
+Brian Neil Levine,University of Massachusetts - Amherst,database,1,2007
+Brian Neil Levine,University of Massachusetts - Amherst,metrics,1,2004
+Brian Neil Levine,University of Massachusetts - Amherst,metrics,1,2007
+Brian Neil Levine,University of Massachusetts - Amherst,web,1,2013
+David I. August,Princeton University,proglang,1,2004
+David I. August,Princeton University,proglang,2,2006
+David I. August,Princeton University,proglang,2,2007
+David I. August,Princeton University,proglang,3,2011
+David I. August,Princeton University,proglang,2,2012
+David I. August,Princeton University,proglang,1,2013
+David I. August,Princeton University,logic,1,2012
+David I. August,Princeton University,opsys,1,2008
+David I. August,Princeton University,opsys,1,2010
+David I. August,Princeton University,opsys,1,2013
+David I. August,Princeton University,arch,1,2000
+David I. August,Princeton University,arch,1,2002
+David I. August,Princeton University,arch,1,2004
+David I. August,Princeton University,arch,2,2005
+David I. August,Princeton University,arch,1,2006
+David I. August,Princeton University,arch,2,2007
+David I. August,Princeton University,arch,1,2010
+David I. August,Princeton University,arch,2,2011
+David I. August,Princeton University,arch,1,2015
+David I. August,Princeton University,security,1,2012
+Farnam Jahanian,University of Michigan,networks,2,2000
+Farnam Jahanian,University of Michigan,networks,1,2005
+Farnam Jahanian,University of Michigan,networks,1,2006
+Farnam Jahanian,University of Michigan,networks,1,2010
+Farnam Jahanian,University of Michigan,networks,1,2011
+Farnam Jahanian,University of Michigan,security,1,2000
+Farnam Jahanian,University of Michigan,security,1,2005
+Farnam Jahanian,University of Michigan,security,1,2007
+Farnam Jahanian,University of Michigan,security,1,2008
+Farnam Jahanian,University of Michigan,security,1,2010
+Farnam Jahanian,University of Michigan,security,1,2011
+Michael Franz,University of California - Irvine,proglang,1,2001
+Michael Franz,University of California - Irvine,proglang,1,2009
+Michael Franz,University of California - Irvine,proglang,1,2014
+Michael Franz,University of California - Irvine,security,1,2013
+Michael Franz,University of California - Irvine,security,1,2014
+Michael Franz,University of California - Irvine,security,5,2015
+Mustaque Ahamad,Georgia Institute of Technology,security,1,2010
+Mustaque Ahamad,Georgia Institute of Technology,security,1,2015
+Mustaque Ahamad,Georgia Institute of Technology,web,1,2006
+David Brumley,Carnegie Mellon University,logic,1,2011
+David Brumley,Carnegie Mellon University,softeng,1,2014
+David Brumley,Carnegie Mellon University,softeng,1,2015
+David Brumley,Carnegie Mellon University,networks,1,2010
+David Brumley,Carnegie Mellon University,security,1,2004
+David Brumley,Carnegie Mellon University,security,3,2006
+David Brumley,Carnegie Mellon University,security,2,2007
+David Brumley,Carnegie Mellon University,security,3,2010
+David Brumley,Carnegie Mellon University,security,4,2011
+David Brumley,Carnegie Mellon University,security,4,2012
+David Brumley,Carnegie Mellon University,security,3,2013
+David Brumley,Carnegie Mellon University,security,1,2015
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2002
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2003
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2005
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2008
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,2,2009
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2010
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2013
+Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2015
+Samuel T. King,University of Illinois at Urbana-Champaign,arch,1,2013
+Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2005
+Samuel T. King,University of Illinois at Urbana-Champaign,security,2,2006
+Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2008
+Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2009
+Samuel T. King,University of Illinois at Urbana-Champaign,security,2,2010
+Samuel T. King,University of Illinois at Urbana-Champaign,security,2,2011
+Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2012
+Samuel T. King,University of Illinois at Urbana-Champaign,web,1,2010
+Xiangyu Zhang,Purdue University,proglang,1,2004
+Xiangyu Zhang,Purdue University,proglang,1,2006
+Xiangyu Zhang,Purdue University,proglang,1,2007
+Xiangyu Zhang,Purdue University,proglang,1,2008
+Xiangyu Zhang,Purdue University,proglang,2,2011
+Xiangyu Zhang,Purdue University,proglang,1,2012
+Xiangyu Zhang,Purdue University,proglang,1,2013
+Xiangyu Zhang,Purdue University,proglang,1,2014
+Xiangyu Zhang,Purdue University,proglang,2,2015
+Xiangyu Zhang,Purdue University,softeng,1,2003
+Xiangyu Zhang,Purdue University,softeng,1,2004
+Xiangyu Zhang,Purdue University,softeng,1,2005
+Xiangyu Zhang,Purdue University,softeng,2,2006
+Xiangyu Zhang,Purdue University,softeng,1,2008
+Xiangyu Zhang,Purdue University,softeng,1,2010
+Xiangyu Zhang,Purdue University,softeng,1,2011
+Xiangyu Zhang,Purdue University,softeng,2,2012
+Xiangyu Zhang,Purdue University,softeng,3,2013
+Xiangyu Zhang,Purdue University,softeng,2,2014
+Xiangyu Zhang,Purdue University,opsys,1,2010
+Xiangyu Zhang,Purdue University,opsys,1,2015
+Xiangyu Zhang,Purdue University,opsys,1,2016
+Xiangyu Zhang,Purdue University,arch,1,2004
+Xiangyu Zhang,Purdue University,security,1,2008
+Xiangyu Zhang,Purdue University,security,1,2010
+Xiangyu Zhang,Purdue University,security,1,2011
+Xiangyu Zhang,Purdue University,security,1,2012
+Xiangyu Zhang,Purdue University,security,3,2013
+Xiangyu Zhang,Purdue University,security,4,2015
+Xiangyu Zhang,Purdue University,database,1,2007
+Xiangyu Zhang,Purdue University,metrics,1,2014
+Xiangyu Zhang,Purdue University,web,1,2010
+Xiangyu Zhang,Purdue University,web,1,2011
+Xiangyu Zhang,Purdue University,vision,2,2015
+Hovav Shacham,University of California - San Diego,opsys,1,2013
+Hovav Shacham,University of California - San Diego,opsys,1,2016
+Hovav Shacham,University of California - San Diego,security,1,2002
+Hovav Shacham,University of California - San Diego,security,1,2003
+Hovav Shacham,University of California - San Diego,security,2,2004
+Hovav Shacham,University of California - San Diego,security,1,2006
+Hovav Shacham,University of California - San Diego,security,1,2007
+Hovav Shacham,University of California - San Diego,security,1,2008
+Hovav Shacham,University of California - San Diego,security,1,2009
+Hovav Shacham,University of California - San Diego,security,3,2010
+Hovav Shacham,University of California - San Diego,security,2,2011
+Hovav Shacham,University of California - San Diego,security,1,2013
+Hovav Shacham,University of California - San Diego,security,2,2015
+Stefan Savage,University of California - San Diego,opsys,1,2004
+Stefan Savage,University of California - San Diego,opsys,1,2005
+Stefan Savage,University of California - San Diego,opsys,1,2008
+Stefan Savage,University of California - San Diego,opsys,1,2011
+Stefan Savage,University of California - San Diego,opsys,1,2012
+Stefan Savage,University of California - San Diego,networks,3,2000
+Stefan Savage,University of California - San Diego,networks,2,2003
+Stefan Savage,University of California - San Diego,networks,1,2004
+Stefan Savage,University of California - San Diego,networks,1,2005
+Stefan Savage,University of California - San Diego,networks,1,2006
+Stefan Savage,University of California - San Diego,networks,1,2007
+Stefan Savage,University of California - San Diego,networks,1,2008
+Stefan Savage,University of California - San Diego,networks,1,2010
+Stefan Savage,University of California - San Diego,security,1,2001
+Stefan Savage,University of California - San Diego,security,1,2007
+Stefan Savage,University of California - San Diego,security,3,2008
+Stefan Savage,University of California - San Diego,security,1,2009
+Stefan Savage,University of California - San Diego,security,3,2010
+Stefan Savage,University of California - San Diego,security,5,2011
+Stefan Savage,University of California - San Diego,security,3,2012
+Stefan Savage,University of California - San Diego,security,1,2013
+Stefan Savage,University of California - San Diego,security,3,2014
+Stefan Savage,University of California - San Diego,security,2,2015
+Stefan Savage,University of California - San Diego,mlmining,2,2009
+Stefan Savage,University of California - San Diego,mlmining,1,2010
+Stefan Savage,University of California - San Diego,mlmining,1,2014
+Stefan Savage,University of California - San Diego,metrics,1,2003
+Stefan Savage,University of California - San Diego,web,1,2014
+Matt Blaze,University of Pennsylvania,security,1,2001
+Matt Blaze,University of Pennsylvania,security,1,2002
+Matt Blaze,University of Pennsylvania,security,1,2009
+Matt Blaze,University of Pennsylvania,security,1,2010
+Matt Blaze,University of Pennsylvania,security,1,2011
+Matt Blaze,University of Pennsylvania,security,1,2014
+Arvind Narayanan,Princeton University,security,2,2005
+Arvind Narayanan,Princeton University,security,1,2008
+Arvind Narayanan,Princeton University,security,1,2009
+Arvind Narayanan,Princeton University,security,1,2010
+Arvind Narayanan,Princeton University,security,2,2011
+Arvind Narayanan,Princeton University,security,1,2012
+Arvind Narayanan,Princeton University,security,1,2013
+Arvind Narayanan,Princeton University,security,1,2014
+Arvind Narayanan,Princeton University,security,1,2015
+Arvind Narayanan,Princeton University,web,1,2015
+Matthew K. Franklin,University of California - Davis,security,1,2000
+Matthew K. Franklin,University of California - Davis,security,2,2001
+Matthew K. Franklin,University of California - Davis,security,1,2002
+Haixu Tang,Indiana University,security,2,2009
+Haixu Tang,Indiana University,security,1,2012
+Haixu Tang,Indiana University,security,1,2015
+John Kubiatowicz,University of California - Berkeley,opsys,1,2000
+John Kubiatowicz,University of California - Berkeley,opsys,1,2007
+John Kubiatowicz,University of California - Berkeley,opsys,1,2016
+John Kubiatowicz,University of California - Berkeley,arch,1,2003
+John Kubiatowicz,University of California - Berkeley,arch,1,2006
+John Kubiatowicz,University of California - Berkeley,arch,1,2008
+John Kubiatowicz,University of California - Berkeley,arch,1,2009
+John Kubiatowicz,University of California - Berkeley,networks,1,2002
+John Kubiatowicz,University of California - Berkeley,networks,1,2004
+John Kubiatowicz,University of California - Berkeley,networks,1,2005
+John Kubiatowicz,University of California - Berkeley,networks,1,2006
+John Kubiatowicz,University of California - Berkeley,security,1,2013
+John Kubiatowicz,University of California - Berkeley,security,1,2015
+William Enck,North Carolina State University,opsys,1,2010
+William Enck,North Carolina State University,networks,1,2007
+William Enck,North Carolina State University,security,1,2005
+William Enck,North Carolina State University,security,1,2008
+William Enck,North Carolina State University,security,1,2009
+William Enck,North Carolina State University,security,1,2012
+William Enck,North Carolina State University,security,1,2013
+William Enck,North Carolina State University,security,1,2014
+Patrick McDaniel,Pennsylvania State University,proglang,1,2014
+Patrick McDaniel,Pennsylvania State University,softeng,1,2012
+Patrick McDaniel,Pennsylvania State University,opsys,1,2010
+Patrick McDaniel,Pennsylvania State University,networks,1,2007
+Patrick McDaniel,Pennsylvania State University,security,1,2005
+Patrick McDaniel,Pennsylvania State University,security,2,2006
+Patrick McDaniel,Pennsylvania State University,security,1,2008
+Patrick McDaniel,Pennsylvania State University,security,1,2011
+Patrick McDaniel,Pennsylvania State University,security,2,2012
+Lorrie Faith Cranor,Carnegie Mellon University,security,1,2000
+Lorrie Faith Cranor,Carnegie Mellon University,security,1,2007
+Lorrie Faith Cranor,Carnegie Mellon University,security,1,2009
+Lorrie Faith Cranor,Carnegie Mellon University,security,3,2012
+Lorrie Faith Cranor,Carnegie Mellon University,security,1,2013
+Lorrie Faith Cranor,Carnegie Mellon University,security,1,2015
+Lorrie Faith Cranor,Carnegie Mellon University,web,1,2005
+Lorrie Faith Cranor,Carnegie Mellon University,web,1,2007
+Lorrie Faith Cranor,Carnegie Mellon University,hci,1,2007
+Lorrie Faith Cranor,Carnegie Mellon University,hci,3,2008
+Lorrie Faith Cranor,Carnegie Mellon University,hci,3,2009
+Lorrie Faith Cranor,Carnegie Mellon University,hci,4,2010
+Lorrie Faith Cranor,Carnegie Mellon University,hci,4,2011
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2012
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2013
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2014
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2015
+Lorrie Faith Cranor,Carnegie Mellon University,hci,3,2016
+Anupam Datta,Carnegie Mellon University,logic,1,2014
+Anupam Datta,Carnegie Mellon University,theory,1,2012
+Anupam Datta,Carnegie Mellon University,security,1,2005
+Anupam Datta,Carnegie Mellon University,security,1,2009
+Anupam Datta,Carnegie Mellon University,security,2,2010
+Anupam Datta,Carnegie Mellon University,security,1,2011
+Anupam Datta,Carnegie Mellon University,security,1,2012
+Anupam Datta,Carnegie Mellon University,security,1,2013
+Anupam Datta,Carnegie Mellon University,security,2,2014
+Anupam Datta,Carnegie Mellon University,security,2,2015
+Anupam Datta,Carnegie Mellon University,ai,1,2013
+Anupam Datta,Carnegie Mellon University,ai,3,2015
+Amir Houmansadr,University of Massachusetts - Amherst,security,1,2008
+Amir Houmansadr,University of Massachusetts - Amherst,security,1,2009
+Amir Houmansadr,University of Massachusetts - Amherst,security,2,2011
+Amir Houmansadr,University of Massachusetts - Amherst,security,1,2012
+Amir Houmansadr,University of Massachusetts - Amherst,security,2,2013
+Amir Houmansadr,University of Massachusetts - Amherst,security,1,2014
+Amir Houmansadr,University of Massachusetts - Amherst,security,1,2015
+Geoffrey M. Voelker,University of California - San Diego,opsys,1,2005
+Geoffrey M. Voelker,University of California - San Diego,opsys,1,2008
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2001
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2003
+Geoffrey M. Voelker,University of California - San Diego,networks,2,2004
+Geoffrey M. Voelker,University of California - San Diego,networks,2,2006
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2007
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2008
+Geoffrey M. Voelker,University of California - San Diego,networks,3,2009
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2011
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2012
+Geoffrey M. Voelker,University of California - San Diego,networks,2,2013
+Geoffrey M. Voelker,University of California - San Diego,networks,1,2014
+Geoffrey M. Voelker,University of California - San Diego,security,1,2001
+Geoffrey M. Voelker,University of California - San Diego,security,1,2008
+Geoffrey M. Voelker,University of California - San Diego,security,2,2010
+Geoffrey M. Voelker,University of California - San Diego,security,4,2011
+Geoffrey M. Voelker,University of California - San Diego,security,3,2012
+Geoffrey M. Voelker,University of California - San Diego,security,1,2013
+Geoffrey M. Voelker,University of California - San Diego,security,2,2014
+Geoffrey M. Voelker,University of California - San Diego,mlmining,2,2009
+Geoffrey M. Voelker,University of California - San Diego,mlmining,1,2010
+Geoffrey M. Voelker,University of California - San Diego,mlmining,1,2014
+Geoffrey M. Voelker,University of California - San Diego,metrics,2,2002
+Geoffrey M. Voelker,University of California - San Diego,metrics,1,2003
+Geoffrey M. Voelker,University of California - San Diego,web,1,2004
+Geoffrey M. Voelker,University of California - San Diego,web,1,2014
+Geoffrey M. Voelker,University of California - San Diego,mobile,1,2014
+Ran Canetti,Boston University,theory,1,2000
+Ran Canetti,Boston University,theory,2,2001
+Ran Canetti,Boston University,theory,1,2002
+Ran Canetti,Boston University,theory,1,2004
+Ran Canetti,Boston University,theory,1,2007
+Ran Canetti,Boston University,theory,1,2010
+Ran Canetti,Boston University,theory,2,2013
+Ran Canetti,Boston University,theory,1,2015
+Ran Canetti,Boston University,security,2,2000
+Ran Canetti,Boston University,security,1,2001
+Ran Canetti,Boston University,security,1,2002
+Ran Canetti,Boston University,security,1,2007
+Ran Canetti,Boston University,security,1,2011
+Ran Canetti,Boston University,security,1,2014
+Ran Canetti,Boston University,database,1,2015
+David Evans,University of Virginia,softeng,1,2004
+David Evans,University of Virginia,softeng,2,2006
+David Evans,University of Virginia,security,1,2001
+David Evans,University of Virginia,security,2,2004
+David Evans,University of Virginia,security,1,2008
+David Evans,University of Virginia,security,3,2011
+David Evans,University of Virginia,security,2,2012
+David Evans,University of Virginia,security,1,2013
+David Evans,University of Virginia,security,1,2015
 Jonathan Katz,University of Maryland - College Park,proglang,1,2014
 Jonathan Katz,University of Maryland - College Park,theory,2,2000
 Jonathan Katz,University of Maryland - College Park,theory,1,2003
@@ -5639,87 +6432,387 @@ Jonathan Katz,University of Maryland - College Park,security,1,2003
 Jonathan Katz,University of Maryland - College Park,security,1,2005
 Jonathan Katz,University of Maryland - College Park,security,1,2009
 Jonathan Katz,University of Maryland - College Park,security,2,2010
-Jonathan Katz,University of Maryland - College Park,security,1,2011
-Jonathan Katz,University of Maryland - College Park,security,2,2012
+Jonathan Katz,University of Maryland - College Park,security,2,2011
+Jonathan Katz,University of Maryland - College Park,security,3,2012
 Jonathan Katz,University of Maryland - College Park,security,1,2013
 Jonathan Katz,University of Maryland - College Park,security,3,2014
 Jonathan Katz,University of Maryland - College Park,security,3,2015
+Guofei Gu,Texas A&M University,networks,1,2012
+Guofei Gu,Texas A&M University,networks,1,2015
+Guofei Gu,Texas A&M University,security,1,2008
+Guofei Gu,Texas A&M University,security,1,2010
+Guofei Gu,Texas A&M University,security,3,2012
+Guofei Gu,Texas A&M University,security,5,2013
+Guofei Gu,Texas A&M University,security,2,2014
+Guofei Gu,Texas A&M University,security,1,2015
+Guofei Gu,Texas A&M University,web,1,2012
+Susan Hohenberger,Johns Hopkins University,security,2,2005
+Susan Hohenberger,Johns Hopkins University,security,1,2006
+Susan Hohenberger,Johns Hopkins University,security,1,2007
+Susan Hohenberger,Johns Hopkins University,security,1,2010
+Susan Hohenberger,Johns Hopkins University,security,1,2011
+Susan Hohenberger,Johns Hopkins University,security,1,2012
+Susan Hohenberger,Johns Hopkins University,security,1,2013
+Susan Hohenberger,Johns Hopkins University,security,1,2014
+Susan Hohenberger,Johns Hopkins University,security,1,2015
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2001
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2002
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2004
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2007
+Fabian Monrose,University of North Carolina - Chapel Hill,security,5,2008
+Fabian Monrose,University of North Carolina - Chapel Hill,security,2,2009
+Fabian Monrose,University of North Carolina - Chapel Hill,security,2,2010
+Fabian Monrose,University of North Carolina - Chapel Hill,security,4,2011
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2012
+Fabian Monrose,University of North Carolina - Chapel Hill,security,3,2013
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2014
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2015
+David J. Crandall,Indiana University,security,1,2013
+David J. Crandall,Indiana University,security,1,2014
+David J. Crandall,Indiana University,mlmining,1,2008
+David J. Crandall,Indiana University,web,1,2009
+David J. Crandall,Indiana University,web,1,2012
+David J. Crandall,Indiana University,hci,2,2015
+David J. Crandall,Indiana University,hci,1,2016
+David J. Crandall,Indiana University,vision,1,2007
+David J. Crandall,Indiana University,vision,1,2009
+David J. Crandall,Indiana University,vision,1,2011
+David J. Crandall,Indiana University,vision,1,2012
+David J. Crandall,Indiana University,vision,1,2014
+David J. Crandall,Indiana University,vision,1,2015
+Richard A. Kemmerer,University of California - Santa Barbara,logic,1,2000
+Richard A. Kemmerer,University of California - Santa Barbara,softeng,1,2000
+Richard A. Kemmerer,University of California - Santa Barbara,softeng,2,2003
+Richard A. Kemmerer,University of California - Santa Barbara,networks,1,2014
+Richard A. Kemmerer,University of California - Santa Barbara,security,1,2002
+Richard A. Kemmerer,University of California - Santa Barbara,security,1,2006
+Richard A. Kemmerer,University of California - Santa Barbara,security,1,2009
+Richard A. Kemmerer,University of California - Santa Barbara,security,1,2013
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2003
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2004
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2006
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2008
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2009
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2011
+Michael M. Swift,University of Wisconsin - Madison,opsys,4,2012
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2013
+Michael M. Swift,University of Wisconsin - Madison,arch,1,2007
+Michael M. Swift,University of Wisconsin - Madison,arch,1,2008
+Michael M. Swift,University of Wisconsin - Madison,arch,1,2012
+Michael M. Swift,University of Wisconsin - Madison,arch,1,2013
+Michael M. Swift,University of Wisconsin - Madison,arch,1,2014
+Michael M. Swift,University of Wisconsin - Madison,arch,1,2015
+Michael M. Swift,University of Wisconsin - Madison,security,1,2001
+Michael M. Swift,University of Wisconsin - Madison,security,1,2012
+Michael M. Swift,University of Wisconsin - Madison,security,1,2014
+Zachary Tatlock,University of Washington,proglang,1,2008
+Zachary Tatlock,University of Washington,proglang,2,2009
+Zachary Tatlock,University of Washington,proglang,1,2010
+Zachary Tatlock,University of Washington,proglang,1,2014
+Zachary Tatlock,University of Washington,proglang,2,2015
+Zachary Tatlock,University of Washington,opsys,1,2014
+Zachary Tatlock,University of Washington,security,1,2012
+Zachary Tatlock,University of Washington,security,1,2014
+Sorin Lerner,University of California - San Diego,proglang,2,2002
+Sorin Lerner,University of California - San Diego,proglang,1,2003
+Sorin Lerner,University of California - San Diego,proglang,1,2005
+Sorin Lerner,University of California - San Diego,proglang,1,2007
+Sorin Lerner,University of California - San Diego,proglang,2,2008
+Sorin Lerner,University of California - San Diego,proglang,3,2009
+Sorin Lerner,University of California - San Diego,proglang,2,2010
+Sorin Lerner,University of California - San Diego,proglang,1,2011
+Sorin Lerner,University of California - San Diego,proglang,1,2012
+Sorin Lerner,University of California - San Diego,proglang,1,2014
+Sorin Lerner,University of California - San Diego,proglang,1,2015
+Sorin Lerner,University of California - San Diego,proglang,1,2016
+Sorin Lerner,University of California - San Diego,logic,1,2008
+Sorin Lerner,University of California - San Diego,logic,1,2011
+Sorin Lerner,University of California - San Diego,softeng,2,2007
+Sorin Lerner,University of California - San Diego,softeng,1,2012
+Sorin Lerner,University of California - San Diego,security,1,2010
+Sorin Lerner,University of California - San Diego,security,1,2012
+Sorin Lerner,University of California - San Diego,security,1,2014
+Sorin Lerner,University of California - San Diego,security,1,2015
+Sorin Lerner,University of California - San Diego,mlmining,1,2010
+Sorin Lerner,University of California - San Diego,hci,1,2015
+Xi Chen,Columbia University,opsys,1,2015
+Xi Chen,Columbia University,theory,1,2005
+Xi Chen,Columbia University,theory,2,2006
+Xi Chen,Columbia University,theory,1,2007
+Xi Chen,Columbia University,theory,1,2008
+Xi Chen,Columbia University,theory,1,2009
+Xi Chen,Columbia University,theory,2,2010
+Xi Chen,Columbia University,theory,1,2012
+Xi Chen,Columbia University,theory,3,2013
+Xi Chen,Columbia University,theory,1,2014
+Xi Chen,Columbia University,theory,3,2015
+Xi Chen,Columbia University,networks,1,2010
+Xi Chen,Columbia University,networks,2,2012
+Xi Chen,Columbia University,networks,1,2013
+Xi Chen,Columbia University,networks,1,2014
+Xi Chen,Columbia University,networks,1,2015
+Xi Chen,Columbia University,security,1,2015
+Xi Chen,Columbia University,mlmining,1,2009
+Xi Chen,Columbia University,mlmining,2,2010
+Xi Chen,Columbia University,mlmining,3,2012
+Xi Chen,Columbia University,mlmining,1,2013
+Xi Chen,Columbia University,mlmining,2,2014
+Xi Chen,Columbia University,mlmining,1,2015
+Xi Chen,Columbia University,ai,1,2010
+Xi Chen,Columbia University,web,1,2005
+Xi Chen,Columbia University,vision,1,2007
+Xi Chen,Columbia University,vision,1,2011
+Dipak Ghosal,University of California - Davis,networks,1,2006
+Dipak Ghosal,University of California - Davis,networks,1,2010
+Dipak Ghosal,University of California - Davis,networks,1,2011
+Dipak Ghosal,University of California - Davis,security,1,2003
+Somesh Jha,University of Wisconsin - Madison,proglang,1,2007
+Somesh Jha,University of Wisconsin - Madison,proglang,1,2012
+Somesh Jha,University of Wisconsin - Madison,proglang,1,2016
+Somesh Jha,University of Wisconsin - Madison,logic,1,2000
+Somesh Jha,University of Wisconsin - Madison,logic,1,2002
+Somesh Jha,University of Wisconsin - Madison,logic,1,2010
+Somesh Jha,University of Wisconsin - Madison,logic,2,2012
+Somesh Jha,University of Wisconsin - Madison,logic,1,2013
+Somesh Jha,University of Wisconsin - Madison,softeng,2,2001
+Somesh Jha,University of Wisconsin - Madison,softeng,1,2003
+Somesh Jha,University of Wisconsin - Madison,softeng,1,2005
+Somesh Jha,University of Wisconsin - Madison,softeng,1,2007
+Somesh Jha,University of Wisconsin - Madison,softeng,1,2008
+Somesh Jha,University of Wisconsin - Madison,softeng,1,2012
+Somesh Jha,University of Wisconsin - Madison,softeng,1,2014
+Somesh Jha,University of Wisconsin - Madison,opsys,1,2008
+Somesh Jha,University of Wisconsin - Madison,networks,1,2008
+Somesh Jha,University of Wisconsin - Madison,networks,1,2014
+Somesh Jha,University of Wisconsin - Madison,security,2,2002
+Somesh Jha,University of Wisconsin - Madison,security,1,2003
+Somesh Jha,University of Wisconsin - Madison,security,3,2004
+Somesh Jha,University of Wisconsin - Madison,security,3,2005
+Somesh Jha,University of Wisconsin - Madison,security,4,2006
+Somesh Jha,University of Wisconsin - Madison,security,1,2007
+Somesh Jha,University of Wisconsin - Madison,security,2,2008
+Somesh Jha,University of Wisconsin - Madison,security,3,2010
+Somesh Jha,University of Wisconsin - Madison,security,1,2013
+Somesh Jha,University of Wisconsin - Madison,security,2,2014
+Somesh Jha,University of Wisconsin - Madison,security,1,2015
+Barton P. Miller,University of Wisconsin - Madison,proglang,1,2000
+Barton P. Miller,University of Wisconsin - Madison,security,1,2002
+Barton P. Miller,University of Wisconsin - Madison,security,2,2004
+Barton P. Miller,University of Wisconsin - Madison,security,1,2005
+Barton P. Miller,University of Wisconsin - Madison,security,1,2006
+Barton P. Miller,University of Wisconsin - Madison,ai,1,2008
+J. Doug Tygar,University of California - Berkeley,security,1,2007
+J. Doug Tygar,University of California - Berkeley,security,1,2009
+J. Doug Tygar,University of California - Berkeley,mlmining,1,2007
+J. Doug Tygar,University of California - Berkeley,mlmining,1,2014
+Steven M. Bellovin,Columbia University,security,1,2000
+Steven M. Bellovin,Columbia University,security,2,2001
+Steven M. Bellovin,Columbia University,security,1,2002
+Steven M. Bellovin,Columbia University,security,1,2004
+Steven M. Bellovin,Columbia University,security,1,2006
+Steven M. Bellovin,Columbia University,security,1,2015
+David B. Johnson,Rice University,networks,1,2003
+David B. Johnson,Rice University,networks,1,2007
+David B. Johnson,Rice University,networks,1,2011
+David B. Johnson,Rice University,security,1,2003
+Alex C. Snoeren,University of California - San Diego,opsys,1,2001
+Alex C. Snoeren,University of California - San Diego,opsys,1,2005
+Alex C. Snoeren,University of California - San Diego,opsys,1,2008
+Alex C. Snoeren,University of California - San Diego,networks,1,2000
+Alex C. Snoeren,University of California - San Diego,networks,1,2001
+Alex C. Snoeren,University of California - San Diego,networks,1,2004
+Alex C. Snoeren,University of California - San Diego,networks,1,2005
+Alex C. Snoeren,University of California - San Diego,networks,2,2006
+Alex C. Snoeren,University of California - San Diego,networks,3,2007
+Alex C. Snoeren,University of California - San Diego,networks,1,2008
+Alex C. Snoeren,University of California - San Diego,networks,2,2009
+Alex C. Snoeren,University of California - San Diego,networks,1,2010
+Alex C. Snoeren,University of California - San Diego,networks,1,2011
+Alex C. Snoeren,University of California - San Diego,networks,1,2012
+Alex C. Snoeren,University of California - San Diego,networks,1,2013
+Alex C. Snoeren,University of California - San Diego,networks,1,2014
+Alex C. Snoeren,University of California - San Diego,networks,1,2015
+Alex C. Snoeren,University of California - San Diego,security,3,2014
+Alex C. Snoeren,University of California - San Diego,security,1,2015
+Alex C. Snoeren,University of California - San Diego,mlmining,1,2015
+Alex C. Snoeren,University of California - San Diego,metrics,1,2013
+Alex C. Snoeren,University of California - San Diego,mobile,1,2014
+Thomas Ristenpart,University of Wisconsin - Madison,security,1,2008
+Thomas Ristenpart,University of Wisconsin - Madison,security,1,2009
+Thomas Ristenpart,University of Wisconsin - Madison,security,1,2010
+Thomas Ristenpart,University of Wisconsin - Madison,security,3,2012
+Thomas Ristenpart,University of Wisconsin - Madison,security,1,2013
+Thomas Ristenpart,University of Wisconsin - Madison,security,3,2014
+Thomas Ristenpart,University of Wisconsin - Madison,security,4,2015
+L. Jean Camp,Indiana University,security,1,2002
+L. Jean Camp,Indiana University,security,1,2013
+David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2011
+David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2014
+David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2015
+Stanislaw Jarecki,University of California - Irvine,security,1,2004
+Stanislaw Jarecki,University of California - Irvine,security,1,2007
+Stanislaw Jarecki,University of California - Irvine,security,1,2008
+Stanislaw Jarecki,University of California - Irvine,security,1,2011
+Stanislaw Jarecki,University of California - Irvine,security,1,2013
+Stanislaw Jarecki,University of California - Irvine,security,2,2014
+Avrim Blum,Carnegie Mellon University,theory,1,2000
+Avrim Blum,Carnegie Mellon University,theory,1,2002
+Avrim Blum,Carnegie Mellon University,theory,2,2003
+Avrim Blum,Carnegie Mellon University,theory,1,2004
+Avrim Blum,Carnegie Mellon University,theory,1,2005
+Avrim Blum,Carnegie Mellon University,theory,3,2008
+Avrim Blum,Carnegie Mellon University,theory,1,2010
+Avrim Blum,Carnegie Mellon University,theory,1,2011
+Avrim Blum,Carnegie Mellon University,theory,2,2012
+Avrim Blum,Carnegie Mellon University,security,1,2005
+Avrim Blum,Carnegie Mellon University,security,1,2008
+Avrim Blum,Carnegie Mellon University,mlmining,1,2000
+Avrim Blum,Carnegie Mellon University,mlmining,1,2001
+Avrim Blum,Carnegie Mellon University,mlmining,1,2003
+Avrim Blum,Carnegie Mellon University,mlmining,2,2004
+Avrim Blum,Carnegie Mellon University,mlmining,1,2006
+Avrim Blum,Carnegie Mellon University,mlmining,1,2009
+Avrim Blum,Carnegie Mellon University,mlmining,1,2010
+Avrim Blum,Carnegie Mellon University,mlmining,3,2014
+Avrim Blum,Carnegie Mellon University,mlmining,2,2015
+Avrim Blum,Carnegie Mellon University,ai,1,2014
+Avrim Blum,Carnegie Mellon University,ai,1,2015
+Avrim Blum,Carnegie Mellon University,database,1,2005
+Yevgeniy Dodis,New York University,theory,1,2002
+Yevgeniy Dodis,New York University,theory,1,2003
+Yevgeniy Dodis,New York University,theory,1,2004
+Yevgeniy Dodis,New York University,theory,1,2005
+Yevgeniy Dodis,New York University,theory,2,2009
+Yevgeniy Dodis,New York University,theory,2,2010
+Yevgeniy Dodis,New York University,theory,2,2011
+Yevgeniy Dodis,New York University,theory,1,2014
+Yevgeniy Dodis,New York University,theory,1,2015
+Yevgeniy Dodis,New York University,security,2,2003
+Yevgeniy Dodis,New York University,security,2,2004
+Yevgeniy Dodis,New York University,security,1,2010
+Yevgeniy Dodis,New York University,security,1,2013
+David Mazières,Stanford University,proglang,1,2014
+David Mazières,Stanford University,opsys,1,2000
+David Mazières,Stanford University,opsys,1,2001
+David Mazières,Stanford University,opsys,1,2003
+David Mazières,Stanford University,opsys,1,2004
+David Mazières,Stanford University,opsys,1,2005
+David Mazières,Stanford University,opsys,1,2006
+David Mazières,Stanford University,opsys,2,2012
+David Mazières,Stanford University,opsys,1,2013
+David Mazières,Stanford University,opsys,1,2014
+David Mazières,Stanford University,networks,1,2004
+David Mazières,Stanford University,networks,1,2005
+David Mazières,Stanford University,networks,2,2006
+David Mazières,Stanford University,networks,1,2007
+David Mazières,Stanford University,networks,1,2008
+David Mazières,Stanford University,networks,1,2013
+David Mazières,Stanford University,networks,1,2014
+David Mazières,Stanford University,security,1,2001
+David Mazières,Stanford University,security,1,2003
+David Mazières,Stanford University,security,1,2004
+David Mazières,Stanford University,security,1,2010
+David Mazières,Stanford University,security,1,2014
+David Mazières,Stanford University,security,2,2015
+Guoliang Xue,Arizona State University,networks,2,2004
+Guoliang Xue,Arizona State University,networks,2,2005
+Guoliang Xue,Arizona State University,networks,1,2006
+Guoliang Xue,Arizona State University,networks,1,2007
+Guoliang Xue,Arizona State University,networks,1,2008
+Guoliang Xue,Arizona State University,networks,2,2009
+Guoliang Xue,Arizona State University,networks,3,2011
+Guoliang Xue,Arizona State University,networks,5,2012
+Guoliang Xue,Arizona State University,networks,3,2013
+Guoliang Xue,Arizona State University,networks,1,2014
+Guoliang Xue,Arizona State University,networks,2,2015
+Guoliang Xue,Arizona State University,security,1,2013
+Leonid Reyzin,Boston University,theory,1,2010
+Leonid Reyzin,Boston University,networks,1,2014
+Leonid Reyzin,Boston University,security,1,2001
+Leonid Reyzin,Boston University,security,1,2015
+Leonid Reyzin,Boston University,database,1,2006
+Huijia Lin,University of California - Santa Barbara,theory,2,2009
+Huijia Lin,University of California - Santa Barbara,theory,1,2010
+Huijia Lin,University of California - Santa Barbara,theory,1,2011
+Huijia Lin,University of California - Santa Barbara,theory,2,2013
+Huijia Lin,University of California - Santa Barbara,theory,1,2015
+Huijia Lin,University of California - Santa Barbara,security,1,2007
+Ryan Henry,Indiana University,security,3,2011
+Ryan Henry,Indiana University,security,1,2013
+Lakshminarayanan Subramanian,New York University,networks,1,2001
+Lakshminarayanan Subramanian,New York University,networks,1,2002
+Lakshminarayanan Subramanian,New York University,networks,2,2004
+Lakshminarayanan Subramanian,New York University,networks,2,2005
+Lakshminarayanan Subramanian,New York University,networks,2,2007
+Lakshminarayanan Subramanian,New York University,networks,1,2008
+Lakshminarayanan Subramanian,New York University,networks,2,2009
+Lakshminarayanan Subramanian,New York University,networks,2,2011
+Lakshminarayanan Subramanian,New York University,security,1,2009
+Lakshminarayanan Subramanian,New York University,security,1,2011
+Lakshminarayanan Subramanian,New York University,mlmining,1,2014
+Lakshminarayanan Subramanian,New York University,database,1,2009
+Lakshminarayanan Subramanian,New York University,metrics,1,2011
+Lakshminarayanan Subramanian,New York University,web,1,2009
+Lakshminarayanan Subramanian,New York University,mobile,1,2014
 Trent Jaeger,Pennsylvania State University,softeng,1,2008
 Trent Jaeger,Pennsylvania State University,security,1,2000
 Trent Jaeger,Pennsylvania State University,security,2,2002
 Trent Jaeger,Pennsylvania State University,security,2,2004
 Trent Jaeger,Pennsylvania State University,security,1,2005
-Trent Jaeger,Pennsylvania State University,security,1,2006
+Trent Jaeger,Pennsylvania State University,security,2,2006
 Trent Jaeger,Pennsylvania State University,security,1,2008
 Trent Jaeger,Pennsylvania State University,security,1,2009
 Trent Jaeger,Pennsylvania State University,security,1,2012
 Trent Jaeger,Pennsylvania State University,web,1,2008
-Dan Boneh,Stanford University,opsys,1,2000
-Dan Boneh,Stanford University,opsys,1,2003
-Dan Boneh,Stanford University,opsys,1,2008
-Dan Boneh,Stanford University,theory,1,2000
-Dan Boneh,Stanford University,theory,2,2007
-Dan Boneh,Stanford University,theory,1,2008
-Dan Boneh,Stanford University,security,1,2001
-Dan Boneh,Stanford University,security,1,2002
-Dan Boneh,Stanford University,security,2,2004
-Dan Boneh,Stanford University,security,2,2006
-Dan Boneh,Stanford University,security,2,2007
-Dan Boneh,Stanford University,security,1,2008
-Dan Boneh,Stanford University,security,1,2009
-Dan Boneh,Stanford University,security,3,2010
-Dan Boneh,Stanford University,security,1,2011
-Dan Boneh,Stanford University,security,3,2012
-Dan Boneh,Stanford University,security,3,2013
-Dan Boneh,Stanford University,security,1,2014
-Dan Boneh,Stanford University,security,3,2015
-Dan Boneh,Stanford University,web,1,2006
-Dan Boneh,Stanford University,web,1,2007
-Dan Boneh,Stanford University,web,2,2012
+Marty Humphrey,University of Virginia,security,1,2000
+Andrew S. Grimshaw,University of Virginia,security,1,2000
+Roy H. Campbell,University of Illinois at Urbana-Champaign,opsys,1,2008
+Roy H. Campbell,University of Illinois at Urbana-Champaign,security,1,2004
+Roy H. Campbell,University of Illinois at Urbana-Champaign,security,2,2008
+Roy H. Campbell,University of Illinois at Urbana-Champaign,security,1,2013
+Roy H. Campbell,University of Illinois at Urbana-Champaign,metrics,1,2012
+Helen Nissenbaum,New York University,security,1,2010
+Helen Nissenbaum,New York University,hci,1,2005
+Ali Farhadi,University of Washington,security,1,2011
+Ali Farhadi,University of Washington,mlmining,1,2015
+Ali Farhadi,University of Washington,ai,1,2014
+Ali Farhadi,University of Washington,ai,2,2016
+Ali Farhadi,University of Washington,nlp,1,2014
+Ali Farhadi,University of Washington,nlp,1,2015
+Ali Farhadi,University of Washington,vision,1,2007
+Ali Farhadi,University of Washington,vision,3,2009
+Ali Farhadi,University of Washington,vision,1,2010
+Ali Farhadi,University of Washington,vision,2,2011
+Ali Farhadi,University of Washington,vision,1,2012
+Ali Farhadi,University of Washington,vision,3,2013
+Ali Farhadi,University of Washington,vision,2,2014
+Ali Farhadi,University of Washington,vision,4,2015
+Paul Barford,University of Wisconsin - Madison,networks,1,2000
+Paul Barford,University of Wisconsin - Madison,networks,1,2005
+Paul Barford,University of Wisconsin - Madison,networks,2,2007
+Paul Barford,University of Wisconsin - Madison,networks,3,2008
+Paul Barford,University of Wisconsin - Madison,networks,2,2009
+Paul Barford,University of Wisconsin - Madison,networks,1,2010
+Paul Barford,University of Wisconsin - Madison,networks,3,2011
+Paul Barford,University of Wisconsin - Madison,security,1,2004
+Paul Barford,University of Wisconsin - Madison,mlmining,1,2012
+Paul Barford,University of Wisconsin - Madison,ai,1,2016
+Paul Barford,University of Wisconsin - Madison,database,1,2006
+Paul Barford,University of Wisconsin - Madison,metrics,1,2003
+Paul Barford,University of Wisconsin - Madison,metrics,1,2004
+Paul Barford,University of Wisconsin - Madison,metrics,1,2007
+Paul Barford,University of Wisconsin - Madison,metrics,1,2012
+Paul Barford,University of Wisconsin - Madison,web,1,2014
+Paul Barford,University of Wisconsin - Madison,web,1,2016
+Douglas S. Reeves,North Carolina State University,networks,1,2007
+Douglas S. Reeves,North Carolina State University,security,1,2002
+Douglas S. Reeves,North Carolina State University,security,1,2006
 René Just,University of Massachusetts - Amherst,softeng,1,2014
 René Just,University of Massachusetts - Amherst,security,1,2014
-R. Sekar,State University of New York - Stony Brook,softeng,1,2004
-R. Sekar,State University of New York - Stony Brook,opsys,1,2003
-R. Sekar,State University of New York - Stony Brook,opsys,1,2014
-R. Sekar,State University of New York - Stony Brook,opsys,1,2016
-R. Sekar,State University of New York - Stony Brook,security,1,2001
-R. Sekar,State University of New York - Stony Brook,security,1,2002
-R. Sekar,State University of New York - Stony Brook,security,1,2005
-R. Sekar,State University of New York - Stony Brook,security,1,2006
-R. Sekar,State University of New York - Stony Brook,security,1,2008
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2002
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2003
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2005
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2008
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,2,2009
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2010
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2013
-Samuel T. King,University of Illinois at Urbana-Champaign,opsys,1,2015
-Samuel T. King,University of Illinois at Urbana-Champaign,arch,1,2013
-Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2006
-Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2008
-Samuel T. King,University of Illinois at Urbana-Champaign,security,1,2009
-Samuel T. King,University of Illinois at Urbana-Champaign,security,2,2010
-Samuel T. King,University of Illinois at Urbana-Champaign,security,2,2011
-Samuel T. King,University of Illinois at Urbana-Champaign,web,1,2010
 Ramamohan Paturi,University of California - San Diego,theory,1,2010
 Ramamohan Paturi,University of California - San Diego,theory,1,2013
 Ramamohan Paturi,University of California - San Diego,networks,1,2008
 Ramamohan Paturi,University of California - San Diego,security,1,2004
-Angelos D. Keromytis,Columbia University,opsys,1,2009
-Angelos D. Keromytis,Columbia University,networks,1,2002
-Angelos D. Keromytis,Columbia University,networks,1,2005
-Angelos D. Keromytis,Columbia University,security,2,2000
-Angelos D. Keromytis,Columbia University,security,1,2002
-Angelos D. Keromytis,Columbia University,security,2,2003
-Angelos D. Keromytis,Columbia University,security,1,2004
-Angelos D. Keromytis,Columbia University,security,1,2005
-Angelos D. Keromytis,Columbia University,security,2,2007
-Angelos D. Keromytis,Columbia University,security,1,2008
-Angelos D. Keromytis,Columbia University,security,4,2012
-Angelos D. Keromytis,Columbia University,security,2,2013
-Angelos D. Keromytis,Columbia University,security,2,2014
-Angelos D. Keromytis,Columbia University,security,2,2015
 Rafail Ostrovsky,University of California - Los Angeles,theory,1,2000
 Rafail Ostrovsky,University of California - Los Angeles,theory,1,2001
 Rafail Ostrovsky,University of California - Los Angeles,theory,1,2002
@@ -5765,93 +6858,6 @@ Yin Zhang,University of Texas - Austin,web,1,2003
 Yin Zhang,University of Texas - Austin,web,1,2014
 Yin Zhang,University of Texas - Austin,vision,2,2008
 Yin Zhang,University of Texas - Austin,mobile,1,2014
-Long Lu,State University of New York - Stony Brook,security,1,2009
-Long Lu,State University of New York - Stony Brook,security,1,2010
-Long Lu,State University of New York - Stony Brook,security,1,2011
-Long Lu,State University of New York - Stony Brook,security,1,2012
-Long Lu,State University of New York - Stony Brook,security,1,2014
-Long Lu,State University of New York - Stony Brook,security,1,2015
-Wenke Lee,Georgia Institute of Technology,networks,1,2010
-Wenke Lee,Georgia Institute of Technology,security,1,2001
-Wenke Lee,Georgia Institute of Technology,security,1,2003
-Wenke Lee,Georgia Institute of Technology,security,1,2004
-Wenke Lee,Georgia Institute of Technology,security,2,2006
-Wenke Lee,Georgia Institute of Technology,security,3,2008
-Wenke Lee,Georgia Institute of Technology,security,4,2009
-Wenke Lee,Georgia Institute of Technology,security,3,2010
-Wenke Lee,Georgia Institute of Technology,security,3,2011
-Wenke Lee,Georgia Institute of Technology,security,2,2012
-Wenke Lee,Georgia Institute of Technology,security,2,2013
-Wenke Lee,Georgia Institute of Technology,security,3,2014
-Wenke Lee,Georgia Institute of Technology,security,2,2015
-Wenke Lee,Georgia Institute of Technology,web,1,2011
-Wenke Lee,Georgia Institute of Technology,web,1,2012
-Wenke Lee,Georgia Institute of Technology,web,1,2015
-Wenke Lee,Georgia Institute of Technology,web,1,2016
-Gene Tsudik,University of California - Irvine,networks,1,2010
-Gene Tsudik,University of California - Irvine,security,1,2000
-Gene Tsudik,University of California - Irvine,security,1,2001
-Gene Tsudik,University of California - Irvine,security,2,2007
-Gene Tsudik,University of California - Irvine,security,1,2011
-Gene Tsudik,University of California - Irvine,security,1,2012
-Gene Tsudik,University of California - Irvine,security,1,2015
-Gene Tsudik,University of California - Irvine,database,1,2004
-Anupam Datta,Carnegie Mellon University,logic,1,2014
-Anupam Datta,Carnegie Mellon University,theory,1,2012
-Anupam Datta,Carnegie Mellon University,security,1,2005
-Anupam Datta,Carnegie Mellon University,security,1,2009
-Anupam Datta,Carnegie Mellon University,security,2,2010
-Anupam Datta,Carnegie Mellon University,security,1,2011
-Anupam Datta,Carnegie Mellon University,security,1,2012
-Anupam Datta,Carnegie Mellon University,security,1,2013
-Anupam Datta,Carnegie Mellon University,security,2,2014
-Anupam Datta,Carnegie Mellon University,security,1,2015
-Anupam Datta,Carnegie Mellon University,ai,1,2013
-Anupam Datta,Carnegie Mellon University,ai,3,2015
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2001
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2002
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2004
-Fabian Monrose,University of North Carolina - Chapel Hill,security,4,2008
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2009
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2,2010
-Fabian Monrose,University of North Carolina - Chapel Hill,security,3,2011
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2012
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2,2013
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1,2014
-Nicholas Hopper,University of Minnesota - Twin Cities,networks,1,2011
-Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2007
-Nicholas Hopper,University of Minnesota - Twin Cities,security,2,2009
-Nicholas Hopper,University of Minnesota - Twin Cities,security,3,2010
-Nicholas Hopper,University of Minnesota - Twin Cities,security,3,2012
-Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2013
-Nicholas Hopper,University of Minnesota - Twin Cities,security,1,2015
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2000
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2001
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2002
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2003
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2004
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2007
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2008
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2009
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2010
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2,2011
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2012
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2013
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,3,2014
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1,2015
-Martin C. Rinard,Massachusetts Institute of Technology,logic,1,2003
-Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2002
-Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2004
-Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2005
-Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2009
-Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2011
-Martin C. Rinard,Massachusetts Institute of Technology,softeng,1,2012
-Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2004
-Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2009
-Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2011
-Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2015
-Martin C. Rinard,Massachusetts Institute of Technology,security,1,2011
-Martin C. Rinard,Massachusetts Institute of Technology,security,1,2015
 Amit Sahai,University of California - Los Angeles,theory,3,2000
 Amit Sahai,University of California - Los Angeles,theory,4,2002
 Amit Sahai,University of California - Los Angeles,theory,3,2004
@@ -5871,27 +6877,6 @@ Amit Sahai,University of California - Los Angeles,security,2,2007
 Amit Sahai,University of California - Los Angeles,security,1,2008
 Amit Sahai,University of California - Los Angeles,security,3,2010
 Amit Sahai,University of California - Los Angeles,security,1,2014
-Brent Waters,University of Texas - Austin,theory,2,2008
-Brent Waters,University of Texas - Austin,theory,1,2010
-Brent Waters,University of Texas - Austin,theory,2,2011
-Brent Waters,University of Texas - Austin,theory,2,2013
-Brent Waters,University of Texas - Austin,theory,1,2014
-Brent Waters,University of Texas - Austin,theory,2,2015
-Brent Waters,University of Texas - Austin,security,1,2005
-Brent Waters,University of Texas - Austin,security,5,2006
-Brent Waters,University of Texas - Austin,security,3,2007
-Brent Waters,University of Texas - Austin,security,1,2008
-Brent Waters,University of Texas - Austin,security,1,2009
-Brent Waters,University of Texas - Austin,security,3,2010
-Brent Waters,University of Texas - Austin,security,2,2011
-Brent Waters,University of Texas - Austin,security,2,2013
-Brent Waters,University of Texas - Austin,security,1,2014
-Brent Waters,University of Texas - Austin,web,1,2005
-Steven M. Bellovin,Columbia University,security,1,2000
-Steven M. Bellovin,Columbia University,security,1,2001
-Steven M. Bellovin,Columbia University,security,1,2002
-Steven M. Bellovin,Columbia University,security,1,2004
-Steven M. Bellovin,Columbia University,security,1,2015
 Simha Sethumadhavan,Columbia University,opsys,1,2004
 Simha Sethumadhavan,Columbia University,arch,1,2003
 Simha Sethumadhavan,Columbia University,arch,1,2006
@@ -5904,67 +6889,6 @@ Simha Sethumadhavan,Columbia University,security,1,2011
 Simha Sethumadhavan,Columbia University,security,1,2012
 Simha Sethumadhavan,Columbia University,security,1,2013
 Simha Sethumadhavan,Columbia University,security,2,2015
-Salvatore J. Stolfo,Columbia University,arch,1,2013
-Salvatore J. Stolfo,Columbia University,security,1,2001
-Salvatore J. Stolfo,Columbia University,security,1,2007
-Salvatore J. Stolfo,Columbia University,security,1,2008
-Salvatore J. Stolfo,Columbia University,security,1,2015
-Salvatore J. Stolfo,Columbia University,mlmining,1,2005
-Salvatore J. Stolfo,Columbia University,web,1,2006
-Geoffrey M. Voelker,University of California - San Diego,opsys,1,2005
-Geoffrey M. Voelker,University of California - San Diego,opsys,1,2008
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2001
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2003
-Geoffrey M. Voelker,University of California - San Diego,networks,2,2004
-Geoffrey M. Voelker,University of California - San Diego,networks,2,2006
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2007
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2008
-Geoffrey M. Voelker,University of California - San Diego,networks,3,2009
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2011
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2012
-Geoffrey M. Voelker,University of California - San Diego,networks,2,2013
-Geoffrey M. Voelker,University of California - San Diego,networks,1,2014
-Geoffrey M. Voelker,University of California - San Diego,security,1,2001
-Geoffrey M. Voelker,University of California - San Diego,security,1,2008
-Geoffrey M. Voelker,University of California - San Diego,security,1,2010
-Geoffrey M. Voelker,University of California - San Diego,security,4,2011
-Geoffrey M. Voelker,University of California - San Diego,security,3,2012
-Geoffrey M. Voelker,University of California - San Diego,security,1,2014
-Geoffrey M. Voelker,University of California - San Diego,mlmining,2,2009
-Geoffrey M. Voelker,University of California - San Diego,mlmining,1,2010
-Geoffrey M. Voelker,University of California - San Diego,mlmining,1,2014
-Geoffrey M. Voelker,University of California - San Diego,metrics,2,2002
-Geoffrey M. Voelker,University of California - San Diego,metrics,1,2003
-Geoffrey M. Voelker,University of California - San Diego,web,1,2004
-Geoffrey M. Voelker,University of California - San Diego,web,1,2014
-Geoffrey M. Voelker,University of California - San Diego,mobile,1,2014
-Stefan Savage,University of California - San Diego,opsys,1,2004
-Stefan Savage,University of California - San Diego,opsys,1,2005
-Stefan Savage,University of California - San Diego,opsys,1,2008
-Stefan Savage,University of California - San Diego,opsys,1,2011
-Stefan Savage,University of California - San Diego,opsys,1,2012
-Stefan Savage,University of California - San Diego,networks,3,2000
-Stefan Savage,University of California - San Diego,networks,2,2003
-Stefan Savage,University of California - San Diego,networks,1,2004
-Stefan Savage,University of California - San Diego,networks,1,2005
-Stefan Savage,University of California - San Diego,networks,1,2006
-Stefan Savage,University of California - San Diego,networks,1,2007
-Stefan Savage,University of California - San Diego,networks,1,2008
-Stefan Savage,University of California - San Diego,networks,1,2010
-Stefan Savage,University of California - San Diego,security,1,2001
-Stefan Savage,University of California - San Diego,security,1,2007
-Stefan Savage,University of California - San Diego,security,3,2008
-Stefan Savage,University of California - San Diego,security,1,2009
-Stefan Savage,University of California - San Diego,security,2,2010
-Stefan Savage,University of California - San Diego,security,5,2011
-Stefan Savage,University of California - San Diego,security,3,2012
-Stefan Savage,University of California - San Diego,security,2,2014
-Stefan Savage,University of California - San Diego,security,1,2015
-Stefan Savage,University of California - San Diego,mlmining,2,2009
-Stefan Savage,University of California - San Diego,mlmining,1,2010
-Stefan Savage,University of California - San Diego,mlmining,1,2014
-Stefan Savage,University of California - San Diego,metrics,1,2003
-Stefan Savage,University of California - San Diego,web,1,2014
 Abhi Shelat,University of Virginia,theory,1,2002
 Abhi Shelat,University of Virginia,theory,1,2005
 Abhi Shelat,University of Virginia,theory,1,2007
@@ -5974,27 +6898,6 @@ Abhi Shelat,University of Virginia,security,1,2013
 Abhi Shelat,University of Virginia,security,2,2014
 Abhi Shelat,University of Virginia,security,1,2015
 Abhi Shelat,University of Virginia,ai,1,2004
-William Enck,North Carolina State University,opsys,1,2010
-William Enck,North Carolina State University,networks,1,2007
-William Enck,North Carolina State University,security,1,2005
-William Enck,North Carolina State University,security,1,2009
-William Enck,North Carolina State University,security,1,2012
-William Enck,North Carolina State University,security,1,2013
-William Enck,North Carolina State University,security,1,2014
-Lakshminarayanan Subramanian,New York University,networks,1,2001
-Lakshminarayanan Subramanian,New York University,networks,1,2002
-Lakshminarayanan Subramanian,New York University,networks,2,2004
-Lakshminarayanan Subramanian,New York University,networks,2,2005
-Lakshminarayanan Subramanian,New York University,networks,2,2007
-Lakshminarayanan Subramanian,New York University,networks,1,2008
-Lakshminarayanan Subramanian,New York University,networks,2,2009
-Lakshminarayanan Subramanian,New York University,networks,2,2011
-Lakshminarayanan Subramanian,New York University,security,1,2011
-Lakshminarayanan Subramanian,New York University,mlmining,1,2014
-Lakshminarayanan Subramanian,New York University,database,1,2009
-Lakshminarayanan Subramanian,New York University,metrics,1,2011
-Lakshminarayanan Subramanian,New York University,web,1,2009
-Lakshminarayanan Subramanian,New York University,mobile,1,2014
 Carla E. Brodley,Northeastern University,security,1,2004
 Carla E. Brodley,Northeastern University,mlmining,2,2000
 Carla E. Brodley,Northeastern University,mlmining,2,2003
@@ -6018,36 +6921,6 @@ Christo Wilson,Northeastern University,web,1,2010
 Christo Wilson,Northeastern University,web,1,2012
 Christo Wilson,Northeastern University,web,1,2013
 Christo Wilson,Northeastern University,web,2,2016
-Yan Chen,Northwestern University,opsys,1,2000
-Yan Chen,Northwestern University,networks,1,2004
-Yan Chen,Northwestern University,networks,2,2006
-Yan Chen,Northwestern University,networks,2,2007
-Yan Chen,Northwestern University,networks,1,2008
-Yan Chen,Northwestern University,networks,2,2009
-Yan Chen,Northwestern University,networks,5,2010
-Yan Chen,Northwestern University,networks,1,2012
-Yan Chen,Northwestern University,networks,4,2013
-Yan Chen,Northwestern University,networks,1,2015
-Yan Chen,Northwestern University,security,2,2010
-Yan Chen,Northwestern University,security,3,2011
-Yan Chen,Northwestern University,security,1,2014
-Yan Chen,Northwestern University,security,1,2015
-Yan Chen,Northwestern University,ai,1,2013
-Yan Chen,Northwestern University,database,1,2004
-Yan Chen,Northwestern University,web,1,2013
-Yan Chen,Northwestern University,hci,1,2010
-Yan Chen,Northwestern University,hci,1,2016
-Yan Chen,Northwestern University,vision,1,2009
-Yan Chen,Northwestern University,vision,1,2011
-Susan Hohenberger,Johns Hopkins University,security,1,2005
-Susan Hohenberger,Johns Hopkins University,security,1,2006
-Susan Hohenberger,Johns Hopkins University,security,1,2007
-Susan Hohenberger,Johns Hopkins University,security,1,2010
-Susan Hohenberger,Johns Hopkins University,security,1,2011
-Susan Hohenberger,Johns Hopkins University,security,1,2012
-Susan Hohenberger,Johns Hopkins University,security,1,2013
-Susan Hohenberger,Johns Hopkins University,security,1,2014
-Susan Hohenberger,Johns Hopkins University,security,1,2015
 Anna Lysyanskaya,Brown University,theory,1,2002
 Anna Lysyanskaya,Brown University,security,1,2002
 Anna Lysyanskaya,Brown University,security,2,2004
@@ -6056,37 +6929,6 @@ Anna Lysyanskaya,Brown University,security,1,2007
 Anna Lysyanskaya,Brown University,security,1,2010
 Anna Lysyanskaya,Brown University,security,1,2012
 Anna Lysyanskaya,Brown University,security,1,2013
-Giovanni Vigna,University of California - Santa Barbara,softeng,1,2003
-Giovanni Vigna,University of California - Santa Barbara,softeng,1,2015
-Giovanni Vigna,University of California - Santa Barbara,networks,1,2011
-Giovanni Vigna,University of California - Santa Barbara,networks,1,2014
-Giovanni Vigna,University of California - Santa Barbara,security,2,2002
-Giovanni Vigna,University of California - Santa Barbara,security,1,2003
-Giovanni Vigna,University of California - Santa Barbara,security,2,2004
-Giovanni Vigna,University of California - Santa Barbara,security,1,2007
-Giovanni Vigna,University of California - Santa Barbara,security,2,2008
-Giovanni Vigna,University of California - Santa Barbara,security,2,2009
-Giovanni Vigna,University of California - Santa Barbara,security,1,2010
-Giovanni Vigna,University of California - Santa Barbara,security,2,2011
-Giovanni Vigna,University of California - Santa Barbara,security,5,2012
-Giovanni Vigna,University of California - Santa Barbara,security,4,2013
-Giovanni Vigna,University of California - Santa Barbara,security,2,2015
-Giovanni Vigna,University of California - Santa Barbara,web,1,2010
-Giovanni Vigna,University of California - Santa Barbara,web,1,2011
-Giovanni Vigna,University of California - Santa Barbara,web,1,2013
-Giovanni Vigna,University of California - Santa Barbara,web,1,2014
-David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2011
-David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1,2015
-Thomas Ristenpart,University of Wisconsin - Madison,security,1,2008
-Thomas Ristenpart,University of Wisconsin - Madison,security,1,2009
-Thomas Ristenpart,University of Wisconsin - Madison,security,3,2012
-Thomas Ristenpart,University of Wisconsin - Madison,security,1,2013
-Thomas Ristenpart,University of Wisconsin - Madison,security,3,2014
-Thomas Ristenpart,University of Wisconsin - Madison,security,4,2015
-Kevin R. B. Butler,University of Florida,security,1,2006
-Kevin R. B. Butler,University of Florida,security,1,2008
-Kevin R. B. Butler,University of Florida,security,1,2010
-Kevin R. B. Butler,University of Florida,security,2,2014
 Stephen Chong,Harvard University,proglang,1,2004
 Stephen Chong,Harvard University,proglang,1,2012
 Stephen Chong,Harvard University,proglang,2,2013
@@ -6098,59 +6940,7 @@ Stephen Chong,Harvard University,security,1,2004
 Stephen Chong,Harvard University,security,1,2008
 Stephen Chong,Harvard University,security,1,2011
 Stephen Chong,Harvard University,security,1,2012
-Mustaque Ahamad,Georgia Institute of Technology,security,1,2010
-Mustaque Ahamad,Georgia Institute of Technology,web,1,2006
-Arvind Narayanan,Princeton University,security,2,2005
-Arvind Narayanan,Princeton University,security,1,2008
-Arvind Narayanan,Princeton University,security,1,2009
-Arvind Narayanan,Princeton University,security,1,2011
-Arvind Narayanan,Princeton University,security,1,2012
-Arvind Narayanan,Princeton University,security,1,2013
-Arvind Narayanan,Princeton University,security,1,2014
-Arvind Narayanan,Princeton University,security,1,2015
-Arvind Narayanan,Princeton University,web,1,2015
 Matthew Green,Johns Hopkins University,security,1,2015
-Nadia Heninger,University of Pennsylvania,security,1,2008
-Nadia Heninger,University of Pennsylvania,security,1,2009
-Nadia Heninger,University of Pennsylvania,security,2,2012
-Nadia Heninger,University of Pennsylvania,security,1,2015
-Lorrie Faith Cranor,Carnegie Mellon University,security,1,2000
-Lorrie Faith Cranor,Carnegie Mellon University,security,1,2009
-Lorrie Faith Cranor,Carnegie Mellon University,security,3,2012
-Lorrie Faith Cranor,Carnegie Mellon University,security,1,2013
-Lorrie Faith Cranor,Carnegie Mellon University,web,1,2005
-Lorrie Faith Cranor,Carnegie Mellon University,web,1,2007
-Lorrie Faith Cranor,Carnegie Mellon University,hci,1,2007
-Lorrie Faith Cranor,Carnegie Mellon University,hci,3,2008
-Lorrie Faith Cranor,Carnegie Mellon University,hci,3,2009
-Lorrie Faith Cranor,Carnegie Mellon University,hci,4,2010
-Lorrie Faith Cranor,Carnegie Mellon University,hci,4,2011
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2012
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2013
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2014
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2,2015
-Lorrie Faith Cranor,Carnegie Mellon University,hci,3,2016
-Richard A. Kemmerer,University of California - Santa Barbara,logic,1,2000
-Richard A. Kemmerer,University of California - Santa Barbara,softeng,1,2000
-Richard A. Kemmerer,University of California - Santa Barbara,softeng,2,2003
-Richard A. Kemmerer,University of California - Santa Barbara,networks,1,2014
-Richard A. Kemmerer,University of California - Santa Barbara,security,1,2002
-Richard A. Kemmerer,University of California - Santa Barbara,security,1,2009
-Christopher Kruegel,University of California - Santa Barbara,softeng,1,2007
-Christopher Kruegel,University of California - Santa Barbara,softeng,1,2015
-Christopher Kruegel,University of California - Santa Barbara,networks,1,2011
-Christopher Kruegel,University of California - Santa Barbara,networks,1,2014
-Christopher Kruegel,University of California - Santa Barbara,security,1,2007
-Christopher Kruegel,University of California - Santa Barbara,security,1,2008
-Christopher Kruegel,University of California - Santa Barbara,security,2,2009
-Christopher Kruegel,University of California - Santa Barbara,security,5,2010
-Christopher Kruegel,University of California - Santa Barbara,security,4,2011
-Christopher Kruegel,University of California - Santa Barbara,security,6,2012
-Christopher Kruegel,University of California - Santa Barbara,security,5,2013
-Christopher Kruegel,University of California - Santa Barbara,security,1,2015
-Christopher Kruegel,University of California - Santa Barbara,web,1,2011
-Christopher Kruegel,University of California - Santa Barbara,web,1,2013
-Christopher Kruegel,University of California - Santa Barbara,web,1,2014
 Junfeng Yang,Columbia University,proglang,1,2010
 Junfeng Yang,Columbia University,proglang,1,2012
 Junfeng Yang,Columbia University,proglang,1,2016
@@ -6210,65 +7000,6 @@ Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,4,2016
 Naren Ramakrishnan,Virginia Polytechnic Institute and State University,web,1,2004
 Naren Ramakrishnan,Virginia Polytechnic Institute and State University,hci,1,2014
 Naren Ramakrishnan,Virginia Polytechnic Institute and State University,nlp,1,2008
-Edward W. Felten,Princeton University,logic,1,2008
-Edward W. Felten,Princeton University,opsys,1,2010
-Edward W. Felten,Princeton University,security,1,2000
-Edward W. Felten,Princeton University,security,1,2001
-Edward W. Felten,Princeton University,security,1,2002
-Edward W. Felten,Princeton University,security,1,2003
-Edward W. Felten,Princeton University,security,1,2008
-Edward W. Felten,Princeton University,security,1,2009
-Edward W. Felten,Princeton University,security,2,2011
-Edward W. Felten,Princeton University,security,1,2012
-Edward W. Felten,Princeton University,security,2,2015
-Edward W. Felten,Princeton University,web,1,2005
-Edward W. Felten,Princeton University,web,1,2015
-Edward W. Felten,Princeton University,hci,1,2001
-Edward W. Felten,Princeton University,hci,1,2006
-Matt Blaze,University of Pennsylvania,security,1,2002
-Matt Blaze,University of Pennsylvania,security,1,2009
-Matt Blaze,University of Pennsylvania,security,1,2011
-Matt Blaze,University of Pennsylvania,security,1,2014
-Stanislaw Jarecki,University of California - Irvine,security,1,2004
-Stanislaw Jarecki,University of California - Irvine,security,1,2007
-Stanislaw Jarecki,University of California - Irvine,security,1,2008
-Stanislaw Jarecki,University of California - Irvine,security,1,2011
-Stanislaw Jarecki,University of California - Irvine,security,1,2013
-Somesh Jha,University of Wisconsin - Madison,proglang,1,2007
-Somesh Jha,University of Wisconsin - Madison,proglang,1,2012
-Somesh Jha,University of Wisconsin - Madison,proglang,1,2016
-Somesh Jha,University of Wisconsin - Madison,logic,1,2000
-Somesh Jha,University of Wisconsin - Madison,logic,1,2002
-Somesh Jha,University of Wisconsin - Madison,logic,1,2010
-Somesh Jha,University of Wisconsin - Madison,logic,2,2012
-Somesh Jha,University of Wisconsin - Madison,logic,1,2013
-Somesh Jha,University of Wisconsin - Madison,softeng,2,2001
-Somesh Jha,University of Wisconsin - Madison,softeng,1,2003
-Somesh Jha,University of Wisconsin - Madison,softeng,1,2005
-Somesh Jha,University of Wisconsin - Madison,softeng,1,2007
-Somesh Jha,University of Wisconsin - Madison,softeng,1,2008
-Somesh Jha,University of Wisconsin - Madison,softeng,1,2012
-Somesh Jha,University of Wisconsin - Madison,softeng,1,2014
-Somesh Jha,University of Wisconsin - Madison,opsys,1,2008
-Somesh Jha,University of Wisconsin - Madison,networks,1,2008
-Somesh Jha,University of Wisconsin - Madison,networks,1,2014
-Somesh Jha,University of Wisconsin - Madison,security,2,2002
-Somesh Jha,University of Wisconsin - Madison,security,1,2003
-Somesh Jha,University of Wisconsin - Madison,security,1,2004
-Somesh Jha,University of Wisconsin - Madison,security,3,2005
-Somesh Jha,University of Wisconsin - Madison,security,4,2006
-Somesh Jha,University of Wisconsin - Madison,security,1,2007
-Somesh Jha,University of Wisconsin - Madison,security,2,2008
-Somesh Jha,University of Wisconsin - Madison,security,3,2010
-Somesh Jha,University of Wisconsin - Madison,security,1,2013
-Somesh Jha,University of Wisconsin - Madison,security,2,2014
-Somesh Jha,University of Wisconsin - Madison,security,1,2015
-Barton P. Miller,University of Wisconsin - Madison,proglang,1,2000
-Barton P. Miller,University of Wisconsin - Madison,security,1,2002
-Barton P. Miller,University of Wisconsin - Madison,security,1,2004
-Barton P. Miller,University of Wisconsin - Madison,security,1,2005
-Barton P. Miller,University of Wisconsin - Madison,security,1,2006
-Barton P. Miller,University of Wisconsin - Madison,ai,1,2008
 Jan-Michael Frahm,University of North Carolina - Chapel Hill,security,1,2011
 Jan-Michael Frahm,University of North Carolina - Chapel Hill,security,1,2012
 Jan-Michael Frahm,University of North Carolina - Chapel Hill,security,1,2013
@@ -6281,17 +7012,6 @@ Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,1,2010
 Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,4,2011
 Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,2,2014
 Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,8,2015
-Hovav Shacham,University of California - San Diego,opsys,1,2013
-Hovav Shacham,University of California - San Diego,opsys,1,2016
-Hovav Shacham,University of California - San Diego,security,2,2004
-Hovav Shacham,University of California - San Diego,security,1,2006
-Hovav Shacham,University of California - San Diego,security,1,2007
-Hovav Shacham,University of California - San Diego,security,1,2008
-Hovav Shacham,University of California - San Diego,security,1,2009
-Hovav Shacham,University of California - San Diego,security,3,2010
-Hovav Shacham,University of California - San Diego,security,2,2011
-Hovav Shacham,University of California - San Diego,security,1,2013
-Hovav Shacham,University of California - San Diego,security,1,2015
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2002
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2003
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1,2005
@@ -6321,52 +7041,6 @@ Dong Xuan,Ohio State University,networks,1,2014
 Dong Xuan,Ohio State University,networks,2,2015
 Dong Xuan,Ohio State University,security,1,2007
 Dong Xuan,Ohio State University,security,1,2009
-David Evans,University of Virginia,softeng,1,2004
-David Evans,University of Virginia,softeng,2,2006
-David Evans,University of Virginia,security,1,2001
-David Evans,University of Virginia,security,1,2004
-David Evans,University of Virginia,security,1,2008
-David Evans,University of Virginia,security,2,2011
-David Evans,University of Virginia,security,1,2012
-David Evans,University of Virginia,security,1,2013
-David Evans,University of Virginia,security,1,2015
-Xiangyu Zhang,Purdue University,proglang,1,2004
-Xiangyu Zhang,Purdue University,proglang,1,2006
-Xiangyu Zhang,Purdue University,proglang,1,2007
-Xiangyu Zhang,Purdue University,proglang,1,2008
-Xiangyu Zhang,Purdue University,proglang,2,2011
-Xiangyu Zhang,Purdue University,proglang,1,2012
-Xiangyu Zhang,Purdue University,proglang,1,2013
-Xiangyu Zhang,Purdue University,proglang,1,2014
-Xiangyu Zhang,Purdue University,proglang,2,2015
-Xiangyu Zhang,Purdue University,softeng,1,2003
-Xiangyu Zhang,Purdue University,softeng,1,2004
-Xiangyu Zhang,Purdue University,softeng,1,2005
-Xiangyu Zhang,Purdue University,softeng,2,2006
-Xiangyu Zhang,Purdue University,softeng,1,2008
-Xiangyu Zhang,Purdue University,softeng,1,2010
-Xiangyu Zhang,Purdue University,softeng,1,2011
-Xiangyu Zhang,Purdue University,softeng,2,2012
-Xiangyu Zhang,Purdue University,softeng,3,2013
-Xiangyu Zhang,Purdue University,softeng,2,2014
-Xiangyu Zhang,Purdue University,opsys,1,2010
-Xiangyu Zhang,Purdue University,opsys,1,2015
-Xiangyu Zhang,Purdue University,opsys,1,2016
-Xiangyu Zhang,Purdue University,arch,1,2004
-Xiangyu Zhang,Purdue University,security,2,2013
-Xiangyu Zhang,Purdue University,security,3,2015
-Xiangyu Zhang,Purdue University,database,1,2007
-Xiangyu Zhang,Purdue University,metrics,1,2014
-Xiangyu Zhang,Purdue University,web,1,2010
-Xiangyu Zhang,Purdue University,web,1,2011
-Xiangyu Zhang,Purdue University,vision,2,2015
-Guofei Gu,Texas A&M University,networks,1,2012
-Guofei Gu,Texas A&M University,networks,1,2015
-Guofei Gu,Texas A&M University,security,1,2010
-Guofei Gu,Texas A&M University,security,3,2012
-Guofei Gu,Texas A&M University,security,3,2013
-Guofei Gu,Texas A&M University,security,1,2014
-Guofei Gu,Texas A&M University,web,1,2012
 Xiaohui Gu,North Carolina State University,networks,2,2007
 Xiaohui Gu,North Carolina State University,security,1,2010
 Xiaohui Gu,North Carolina State University,database,2,2007
@@ -6385,15 +7059,6 @@ Phillip Rogaway,University of California - Davis,security,1,2012
 Phillip Rogaway,University of California - Davis,security,1,2013
 John H. Hartman,University of Arizona,networks,1,2008
 John H. Hartman,University of Arizona,security,1,2008
-Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2000
-Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1,2001
-Carl A. Gunter,University of Illinois at Urbana-Champaign,networks,1,2008
-Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2007
-Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2008
-Carl A. Gunter,University of Illinois at Urbana-Champaign,security,1,2013
-Carl A. Gunter,University of Illinois at Urbana-Champaign,security,3,2014
-Carl A. Gunter,University of Illinois at Urbana-Champaign,web,1,2015
-Carl A. Gunter,University of Illinois at Urbana-Champaign,web,1,2016
 Sencun Zhu,Pennsylvania State University,softeng,1,2011
 Sencun Zhu,Pennsylvania State University,softeng,1,2014
 Sencun Zhu,Pennsylvania State University,networks,1,2006
@@ -6408,79 +7073,12 @@ Sencun Zhu,Pennsylvania State University,security,1,2009
 Sencun Zhu,Pennsylvania State University,security,1,2015
 Sencun Zhu,Pennsylvania State University,web,2,2008
 Sencun Zhu,Pennsylvania State University,web,1,2013
-Yevgeniy Dodis,New York University,theory,1,2002
-Yevgeniy Dodis,New York University,theory,1,2003
-Yevgeniy Dodis,New York University,theory,1,2004
-Yevgeniy Dodis,New York University,theory,1,2005
-Yevgeniy Dodis,New York University,theory,2,2009
-Yevgeniy Dodis,New York University,theory,2,2010
-Yevgeniy Dodis,New York University,theory,2,2011
-Yevgeniy Dodis,New York University,theory,1,2014
-Yevgeniy Dodis,New York University,theory,1,2015
-Yevgeniy Dodis,New York University,security,2,2004
-Yevgeniy Dodis,New York University,security,1,2010
-Yevgeniy Dodis,New York University,security,1,2013
 Daniel Wichs,Northeastern University,theory,1,2009
 Daniel Wichs,Northeastern University,theory,1,2010
 Daniel Wichs,Northeastern University,theory,2,2011
 Daniel Wichs,Northeastern University,theory,1,2014
 Daniel Wichs,Northeastern University,theory,1,2015
 Daniel Wichs,Northeastern University,security,1,2013
-Engin Kirda,Northeastern University,softeng,1,2001
-Engin Kirda,Northeastern University,security,1,2006
-Engin Kirda,Northeastern University,security,2,2007
-Engin Kirda,Northeastern University,security,1,2008
-Engin Kirda,Northeastern University,security,2,2009
-Engin Kirda,Northeastern University,security,4,2010
-Engin Kirda,Northeastern University,security,1,2011
-Engin Kirda,Northeastern University,security,1,2012
-Engin Kirda,Northeastern University,security,1,2013
-Engin Kirda,Northeastern University,security,1,2014
-Engin Kirda,Northeastern University,web,1,2006
-Engin Kirda,Northeastern University,web,1,2009
-Alex C. Snoeren,University of California - San Diego,opsys,1,2001
-Alex C. Snoeren,University of California - San Diego,opsys,1,2005
-Alex C. Snoeren,University of California - San Diego,opsys,1,2008
-Alex C. Snoeren,University of California - San Diego,networks,1,2000
-Alex C. Snoeren,University of California - San Diego,networks,1,2001
-Alex C. Snoeren,University of California - San Diego,networks,1,2004
-Alex C. Snoeren,University of California - San Diego,networks,1,2005
-Alex C. Snoeren,University of California - San Diego,networks,2,2006
-Alex C. Snoeren,University of California - San Diego,networks,3,2007
-Alex C. Snoeren,University of California - San Diego,networks,1,2008
-Alex C. Snoeren,University of California - San Diego,networks,2,2009
-Alex C. Snoeren,University of California - San Diego,networks,1,2010
-Alex C. Snoeren,University of California - San Diego,networks,1,2011
-Alex C. Snoeren,University of California - San Diego,networks,1,2012
-Alex C. Snoeren,University of California - San Diego,networks,1,2013
-Alex C. Snoeren,University of California - San Diego,networks,1,2014
-Alex C. Snoeren,University of California - San Diego,networks,1,2015
-Alex C. Snoeren,University of California - San Diego,security,2,2014
-Alex C. Snoeren,University of California - San Diego,security,1,2015
-Alex C. Snoeren,University of California - San Diego,mlmining,1,2015
-Alex C. Snoeren,University of California - San Diego,metrics,1,2013
-Alex C. Snoeren,University of California - San Diego,mobile,1,2014
-Farnam Jahanian,University of Michigan,networks,2,2000
-Farnam Jahanian,University of Michigan,networks,1,2005
-Farnam Jahanian,University of Michigan,networks,1,2006
-Farnam Jahanian,University of Michigan,networks,1,2010
-Farnam Jahanian,University of Michigan,networks,1,2011
-Farnam Jahanian,University of Michigan,security,1,2000
-Farnam Jahanian,University of Michigan,security,1,2008
-Farnam Jahanian,University of Michigan,security,1,2011
-David Brumley,Carnegie Mellon University,logic,1,2011
-David Brumley,Carnegie Mellon University,softeng,1,2014
-David Brumley,Carnegie Mellon University,softeng,1,2015
-David Brumley,Carnegie Mellon University,networks,1,2010
-David Brumley,Carnegie Mellon University,security,1,2004
-David Brumley,Carnegie Mellon University,security,2,2006
-David Brumley,Carnegie Mellon University,security,2,2010
-David Brumley,Carnegie Mellon University,security,2,2011
-David Brumley,Carnegie Mellon University,security,4,2012
-David Brumley,Carnegie Mellon University,security,2,2013
-David Brumley,Carnegie Mellon University,security,1,2015
-Matthew K. Franklin,University of California - Davis,security,1,2000
-Matthew K. Franklin,University of California - Davis,security,1,2002
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1,2005
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1,2006
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2,2011
@@ -6527,11 +7125,6 @@ Atul Prakash,University of Michigan,security,1,2005
 Atul Prakash,University of Michigan,security,1,2006
 Atul Prakash,University of Michigan,security,2,2009
 Atul Prakash,University of Michigan,hci,1,2010
-Amir Houmansadr,University of Massachusetts - Amherst,security,1,2008
-Amir Houmansadr,University of Massachusetts - Amherst,security,1,2011
-Amir Houmansadr,University of Massachusetts - Amherst,security,1,2012
-Amir Houmansadr,University of Massachusetts - Amherst,security,1,2013
-Amir Houmansadr,University of Massachusetts - Amherst,security,1,2015
 Alexandra Boldyreva,Georgia Institute of Technology,arch,1,2005
 Alexandra Boldyreva,Georgia Institute of Technology,security,2,2007
 Alexandra Boldyreva,Georgia Institute of Technology,security,1,2008
@@ -6552,20 +7145,6 @@ Manoj Prabhakaran,University of Illinois at Urbana-Champaign,theory,1,2006
 Manoj Prabhakaran,University of Illinois at Urbana-Champaign,theory,1,2010
 Manoj Prabhakaran,University of Illinois at Urbana-Champaign,theory,1,2014
 Manoj Prabhakaran,University of Illinois at Urbana-Champaign,security,2,2014
-Ran Canetti,Boston University,theory,1,2000
-Ran Canetti,Boston University,theory,2,2001
-Ran Canetti,Boston University,theory,1,2002
-Ran Canetti,Boston University,theory,1,2004
-Ran Canetti,Boston University,theory,1,2007
-Ran Canetti,Boston University,theory,1,2010
-Ran Canetti,Boston University,theory,2,2013
-Ran Canetti,Boston University,theory,1,2015
-Ran Canetti,Boston University,security,1,2000
-Ran Canetti,Boston University,security,1,2002
-Ran Canetti,Boston University,security,1,2007
-Ran Canetti,Boston University,security,1,2011
-Ran Canetti,Boston University,security,1,2014
-Ran Canetti,Boston University,database,1,2015
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1,2008
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1,2009
 Emerson R. Murphy-Hill,North Carolina State University,softeng,3,2012
@@ -6618,21 +7197,9 @@ Nick Feamster,Princeton University,metrics,1,2004
 Nick Feamster,Princeton University,metrics,1,2007
 Nick Feamster,Princeton University,metrics,2,2013
 Nick Feamster,Princeton University,hci,1,2015
-Aviel D. Rubin,Johns Hopkins University,networks,1,2002
-Aviel D. Rubin,Johns Hopkins University,security,1,2000
-Aviel D. Rubin,Johns Hopkins University,security,1,2004
-Aviel D. Rubin,Johns Hopkins University,security,1,2007
-Aviel D. Rubin,Johns Hopkins University,security,1,2013
-Aviel D. Rubin,Johns Hopkins University,security,1,2014
 Cynthia Sturton,University of North Carolina - Chapel Hill,opsys,1,2015
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1,2009
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1,2011
-Michael Franz,University of California - Irvine,proglang,1,2001
-Michael Franz,University of California - Irvine,proglang,1,2009
-Michael Franz,University of California - Irvine,proglang,1,2014
-Michael Franz,University of California - Irvine,security,1,2013
-Michael Franz,University of California - Irvine,security,1,2014
-Michael Franz,University of California - Irvine,security,3,2015
 Greg Morrisett,Harvard University,proglang,1,2007
 Greg Morrisett,Harvard University,proglang,1,2010
 Greg Morrisett,Harvard University,proglang,1,2011
@@ -6640,7 +7207,6 @@ Greg Morrisett,Harvard University,proglang,1,2012
 Greg Morrisett,Harvard University,security,1,2010
 Greg Morrisett,Harvard University,security,1,2011
 Greg Morrisett,Harvard University,security,1,2013
-L. Jean Camp,Indiana University,security,1,2002
 Steven Myers,Indiana University,theory,1,2009
 Steven Myers,Indiana University,security,1,2010
 Steven Myers,Indiana University,security,1,2014
@@ -6672,14 +7238,6 @@ Stephen Checkoway,Johns Hopkins University,opsys,1,2013
 Stephen Checkoway,Johns Hopkins University,security,2,2010
 Stephen Checkoway,Johns Hopkins University,security,2,2011
 Stephen Checkoway,Johns Hopkins University,security,1,2014
-Patrick McDaniel,Pennsylvania State University,proglang,1,2014
-Patrick McDaniel,Pennsylvania State University,softeng,1,2012
-Patrick McDaniel,Pennsylvania State University,opsys,1,2010
-Patrick McDaniel,Pennsylvania State University,networks,1,2007
-Patrick McDaniel,Pennsylvania State University,security,1,2005
-Patrick McDaniel,Pennsylvania State University,security,2,2006
-Patrick McDaniel,Pennsylvania State University,security,1,2011
-Patrick McDaniel,Pennsylvania State University,security,2,2012
 William R. Harris,Georgia Institute of Technology,proglang,1,2010
 William R. Harris,Georgia Institute of Technology,proglang,1,2011
 William R. Harris,Georgia Institute of Technology,logic,1,2012
@@ -6721,10 +7279,6 @@ Silvio Micali,Massachusetts Institute of Technology,theory,1,2009
 Silvio Micali,Massachusetts Institute of Technology,theory,1,2011
 Silvio Micali,Massachusetts Institute of Technology,theory,1,2012
 Silvio Micali,Massachusetts Institute of Technology,security,1,2001
-Leonid Reyzin,Boston University,theory,1,2010
-Leonid Reyzin,Boston University,networks,1,2014
-Leonid Reyzin,Boston University,security,1,2001
-Leonid Reyzin,Boston University,database,1,2006
 Aditya Akella,University of Wisconsin - Madison,opsys,1,2008
 Aditya Akella,University of Wisconsin - Madison,networks,1,2002
 Aditya Akella,University of Wisconsin - Madison,networks,1,2003
@@ -6809,23 +7363,6 @@ Calvin Lin,University of Texas - Austin,arch,1,2006
 Calvin Lin,University of Texas - Austin,arch,1,2013
 Calvin Lin,University of Texas - Austin,security,1,2008
 Calvin Lin,University of Texas - Austin,security,1,2015
-Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2000
-Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2001
-Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2005
-Brian Neil Levine,University of Massachusetts - Amherst,networks,2,2007
-Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2008
-Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2011
-Brian Neil Levine,University of Massachusetts - Amherst,networks,1,2013
-Brian Neil Levine,University of Massachusetts - Amherst,security,1,2000
-Brian Neil Levine,University of Massachusetts - Amherst,security,1,2003
-Brian Neil Levine,University of Massachusetts - Amherst,security,1,2005
-Brian Neil Levine,University of Massachusetts - Amherst,security,1,2006
-Brian Neil Levine,University of Massachusetts - Amherst,security,2,2011
-Brian Neil Levine,University of Massachusetts - Amherst,mlmining,1,2005
-Brian Neil Levine,University of Massachusetts - Amherst,database,1,2007
-Brian Neil Levine,University of Massachusetts - Amherst,metrics,1,2004
-Brian Neil Levine,University of Massachusetts - Amherst,metrics,1,2007
-Brian Neil Levine,University of Massachusetts - Amherst,web,1,2013
 Rafael Pass,Cornell University,theory,1,2003
 Rafael Pass,Cornell University,theory,2,2004
 Rafael Pass,Cornell University,theory,2,2005
@@ -6873,25 +7410,6 @@ David L. Dill,Stanford University,logic,1,2012
 David L. Dill,Stanford University,opsys,1,2002
 David L. Dill,Stanford University,arch,1,2001
 David L. Dill,Stanford University,security,1,2006
-Stephen McCamant,University of Minnesota - Twin Cities,proglang,1,2008
-Stephen McCamant,University of Minnesota - Twin Cities,opsys,1,2012
-Stephen McCamant,University of Minnesota - Twin Cities,security,2,2010
-Stephen McCamant,University of Minnesota - Twin Cities,security,1,2011
-Stephen McCamant,University of Minnesota - Twin Cities,security,1,2013
-Alok N. Choudhary,Northwestern University,arch,1,2002
-Alok N. Choudhary,Northwestern University,arch,2,2008
-Alok N. Choudhary,Northwestern University,arch,1,2009
-Alok N. Choudhary,Northwestern University,security,1,2011
-Alok N. Choudhary,Northwestern University,mlmining,1,2012
-Alok N. Choudhary,Northwestern University,mlmining,2,2013
-Alok N. Choudhary,Northwestern University,ai,1,2011
-Alok N. Choudhary,Northwestern University,ai,2,2013
-Alok N. Choudhary,Northwestern University,web,1,2012
-Alok N. Choudhary,Northwestern University,nlp,1,2009
-Alok N. Choudhary,Northwestern University,vision,1,2014
-Alok N. Choudhary,Northwestern University,vision,1,2015
-Haixu Tang,Indiana University,security,2,2009
-Haixu Tang,Indiana University,security,1,2015
 Premkumar T. Devanbu,University of California - Davis,softeng,1,2001
 Premkumar T. Devanbu,University of California - Davis,softeng,2,2003
 Premkumar T. Devanbu,University of California - Davis,softeng,4,2004
@@ -6906,18 +7424,6 @@ Premkumar T. Devanbu,University of California - Davis,softeng,6,2014
 Premkumar T. Devanbu,University of California - Davis,softeng,2,2015
 Premkumar T. Devanbu,University of California - Davis,security,1,2001
 Premkumar T. Devanbu,University of California - Davis,hci,1,2015
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2005
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2006
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2007
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2008
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2011
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2012
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1,2013
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2,2015
-Matthew Caesar,University of Illinois at Urbana-Champaign,security,1,2010
-Matthew Caesar,University of Illinois at Urbana-Champaign,security,1,2011
-Matthew Caesar,University of Illinois at Urbana-Champaign,security,1,2014
-Matthew Caesar,University of Illinois at Urbana-Champaign,metrics,1,2011
 Arvind Krishnamurthy,University of Washington,softeng,1,2013
 Arvind Krishnamurthy,University of Washington,softeng,1,2014
 Arvind Krishnamurthy,University of Washington,opsys,1,2000
@@ -6944,28 +7450,6 @@ Arvind Krishnamurthy,University of Washington,security,1,2008
 Arvind Krishnamurthy,University of Washington,security,2,2010
 Arvind Krishnamurthy,University of Washington,security,1,2011
 Arvind Krishnamurthy,University of Washington,web,1,2011
-David Mazières,Stanford University,proglang,1,2014
-David Mazières,Stanford University,opsys,1,2000
-David Mazières,Stanford University,opsys,1,2001
-David Mazières,Stanford University,opsys,1,2003
-David Mazières,Stanford University,opsys,1,2004
-David Mazières,Stanford University,opsys,1,2005
-David Mazières,Stanford University,opsys,1,2006
-David Mazières,Stanford University,opsys,2,2012
-David Mazières,Stanford University,opsys,1,2013
-David Mazières,Stanford University,opsys,1,2014
-David Mazières,Stanford University,networks,1,2004
-David Mazières,Stanford University,networks,1,2005
-David Mazières,Stanford University,networks,2,2006
-David Mazières,Stanford University,networks,1,2007
-David Mazières,Stanford University,networks,1,2008
-David Mazières,Stanford University,networks,1,2013
-David Mazières,Stanford University,networks,1,2014
-David Mazières,Stanford University,security,1,2001
-David Mazières,Stanford University,security,1,2004
-David Mazières,Stanford University,security,1,2010
-David Mazières,Stanford University,security,1,2014
-David Mazières,Stanford University,security,2,2015
 Klara Nahrstedt,University of Illinois at Urbana-Champaign,opsys,1,2003
 Klara Nahrstedt,University of Illinois at Urbana-Champaign,networks,1,2000
 Klara Nahrstedt,University of Illinois at Urbana-Champaign,networks,2,2002
@@ -6978,51 +7462,6 @@ Klara Nahrstedt,University of Illinois at Urbana-Champaign,networks,1,2012
 Klara Nahrstedt,University of Illinois at Urbana-Champaign,security,1,2013
 Klara Nahrstedt,University of Illinois at Urbana-Champaign,web,1,2009
 Klara Nahrstedt,University of Illinois at Urbana-Champaign,mobile,1,2014
-Vishal Misra,Columbia University,networks,1,2000
-Vishal Misra,Columbia University,networks,2,2001
-Vishal Misra,Columbia University,networks,2,2002
-Vishal Misra,Columbia University,networks,1,2003
-Vishal Misra,Columbia University,networks,1,2004
-Vishal Misra,Columbia University,networks,2,2005
-Vishal Misra,Columbia University,networks,3,2006
-Vishal Misra,Columbia University,networks,1,2007
-Vishal Misra,Columbia University,networks,1,2009
-Vishal Misra,Columbia University,networks,1,2010
-Vishal Misra,Columbia University,networks,1,2011
-Vishal Misra,Columbia University,security,1,2003
-Vishal Misra,Columbia University,metrics,2,2003
-Vishal Misra,Columbia University,metrics,1,2004
-Vishal Misra,Columbia University,metrics,2,2007
-Vishal Misra,Columbia University,metrics,2,2010
-Vishal Misra,Columbia University,web,1,2013
-Vishal Misra,Columbia University,web,1,2015
-Dan Rubenstein,Columbia University,networks,1,2002
-Dan Rubenstein,Columbia University,networks,2,2005
-Dan Rubenstein,Columbia University,networks,3,2006
-Dan Rubenstein,Columbia University,networks,2,2007
-Dan Rubenstein,Columbia University,networks,1,2010
-Dan Rubenstein,Columbia University,networks,1,2011
-Dan Rubenstein,Columbia University,security,1,2003
-Dan Rubenstein,Columbia University,metrics,1,2000
-Dan Rubenstein,Columbia University,metrics,1,2004
-Dan Rubenstein,Columbia University,metrics,2,2007
-Dan Rubenstein,Columbia University,metrics,1,2008
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2003
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2004
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2006
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2008
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2009
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2011
-Michael M. Swift,University of Wisconsin - Madison,opsys,4,2012
-Michael M. Swift,University of Wisconsin - Madison,opsys,1,2013
-Michael M. Swift,University of Wisconsin - Madison,arch,1,2007
-Michael M. Swift,University of Wisconsin - Madison,arch,1,2008
-Michael M. Swift,University of Wisconsin - Madison,arch,1,2012
-Michael M. Swift,University of Wisconsin - Madison,arch,1,2013
-Michael M. Swift,University of Wisconsin - Madison,arch,1,2014
-Michael M. Swift,University of Wisconsin - Madison,arch,1,2015
-Michael M. Swift,University of Wisconsin - Madison,security,1,2012
-Michael M. Swift,University of Wisconsin - Madison,security,1,2014
 John Black,University of Colorado Boulder,security,1,2001
 John Black,University of Colorado Boulder,security,1,2002
 Leman Akoglu,State University of New York - Stony Brook,security,1,2015
@@ -7097,10 +7536,6 @@ Isil Dillig,University of Texas - Austin,logic,1,2013
 Isil Dillig,University of Texas - Austin,logic,1,2014
 Isil Dillig,University of Texas - Austin,softeng,1,2014
 Isil Dillig,University of Texas - Austin,security,1,2015
-Roy H. Campbell,University of Illinois at Urbana-Champaign,opsys,1,2008
-Roy H. Campbell,University of Illinois at Urbana-Champaign,security,1,2004
-Roy H. Campbell,University of Illinois at Urbana-Champaign,security,2,2008
-Roy H. Campbell,University of Illinois at Urbana-Champaign,metrics,1,2012
 Ranjit Jhala,University of California - San Diego,proglang,1,2002
 Ranjit Jhala,University of California - San Diego,proglang,2,2004
 Ranjit Jhala,University of California - San Diego,proglang,1,2005
@@ -7126,27 +7561,6 @@ Ranjit Jhala,University of California - San Diego,softeng,1,2010
 Ranjit Jhala,University of California - San Diego,networks,1,2007
 Ranjit Jhala,University of California - San Diego,security,1,2010
 Ranjit Jhala,University of California - San Diego,security,1,2015
-Sorin Lerner,University of California - San Diego,proglang,2,2002
-Sorin Lerner,University of California - San Diego,proglang,1,2003
-Sorin Lerner,University of California - San Diego,proglang,1,2005
-Sorin Lerner,University of California - San Diego,proglang,1,2007
-Sorin Lerner,University of California - San Diego,proglang,2,2008
-Sorin Lerner,University of California - San Diego,proglang,3,2009
-Sorin Lerner,University of California - San Diego,proglang,2,2010
-Sorin Lerner,University of California - San Diego,proglang,1,2011
-Sorin Lerner,University of California - San Diego,proglang,1,2012
-Sorin Lerner,University of California - San Diego,proglang,1,2014
-Sorin Lerner,University of California - San Diego,proglang,1,2015
-Sorin Lerner,University of California - San Diego,proglang,1,2016
-Sorin Lerner,University of California - San Diego,logic,1,2008
-Sorin Lerner,University of California - San Diego,logic,1,2011
-Sorin Lerner,University of California - San Diego,softeng,2,2007
-Sorin Lerner,University of California - San Diego,softeng,1,2012
-Sorin Lerner,University of California - San Diego,security,1,2010
-Sorin Lerner,University of California - San Diego,security,1,2012
-Sorin Lerner,University of California - San Diego,security,1,2015
-Sorin Lerner,University of California - San Diego,mlmining,1,2010
-Sorin Lerner,University of California - San Diego,hci,1,2015
 Victor Shoup,New York University,security,1,2006
 Victor Shoup,New York University,security,1,2009
 Joan Feigenbaum,Yale University,logic,1,2012
@@ -7203,21 +7617,6 @@ Pierre Baldi,University of California - Irvine,mlmining,1,2011
 Pierre Baldi,University of California - Irvine,mlmining,1,2012
 Pierre Baldi,University of California - Irvine,mlmining,1,2013
 Pierre Baldi,University of California - Irvine,mlmining,1,2014
-J. Doug Tygar,University of California - Berkeley,security,1,2007
-J. Doug Tygar,University of California - Berkeley,mlmining,1,2007
-J. Doug Tygar,University of California - Berkeley,mlmining,1,2014
-John Kubiatowicz,University of California - Berkeley,opsys,1,2000
-John Kubiatowicz,University of California - Berkeley,opsys,1,2007
-John Kubiatowicz,University of California - Berkeley,opsys,1,2016
-John Kubiatowicz,University of California - Berkeley,arch,1,2003
-John Kubiatowicz,University of California - Berkeley,arch,1,2006
-John Kubiatowicz,University of California - Berkeley,arch,1,2008
-John Kubiatowicz,University of California - Berkeley,arch,1,2009
-John Kubiatowicz,University of California - Berkeley,networks,1,2002
-John Kubiatowicz,University of California - Berkeley,networks,1,2004
-John Kubiatowicz,University of California - Berkeley,networks,1,2005
-John Kubiatowicz,University of California - Berkeley,networks,1,2006
-John Kubiatowicz,University of California - Berkeley,security,1,2013
 Danfeng (Daphne) Yao,Virginia Polytechnic Institute and State University,networks,1,2015
 Danfeng (Daphne) Yao,Virginia Polytechnic Institute and State University,security,1,2013
 Danfeng (Daphne) Yao,Virginia Polytechnic Institute and State University,ai,1,2016
@@ -7246,7 +7645,6 @@ Wei Wang,University of California - Los Angeles,nlp,1,2004
 Wei Wang,University of California - Los Angeles,nlp,1,2013
 Wei Wang,University of California - Los Angeles,vision,1,2010
 Wei Wang,University of California - Los Angeles,vision,1,2011
-Ryan Henry,Indiana University,security,3,2011
 Santosh Vempala,Georgia Institute of Technology,theory,4,2000
 Santosh Vempala,Georgia Institute of Technology,theory,1,2001
 Santosh Vempala,Georgia Institute of Technology,theory,3,2002
@@ -7292,26 +7690,6 @@ Donald E. Porter,State University of New York - Stony Brook,arch,1,2007
 Donald E. Porter,State University of New York - Stony Brook,security,1,2007
 Donald E. Porter,State University of New York - Stony Brook,security,1,2011
 Donald E. Porter,State University of New York - Stony Brook,security,1,2014
-Emmett Witchel,University of Texas - Austin,proglang,1,2005
-Emmett Witchel,University of Texas - Austin,proglang,1,2007
-Emmett Witchel,University of Texas - Austin,proglang,1,2009
-Emmett Witchel,University of Texas - Austin,opsys,1,2002
-Emmett Witchel,University of Texas - Austin,opsys,1,2005
-Emmett Witchel,University of Texas - Austin,opsys,1,2007
-Emmett Witchel,University of Texas - Austin,opsys,2,2009
-Emmett Witchel,University of Texas - Austin,opsys,2,2011
-Emmett Witchel,University of Texas - Austin,opsys,1,2012
-Emmett Witchel,University of Texas - Austin,opsys,2,2013
-Emmett Witchel,University of Texas - Austin,opsys,1,2014
-Emmett Witchel,University of Texas - Austin,opsys,2,2016
-Emmett Witchel,University of Texas - Austin,arch,1,2001
-Emmett Witchel,University of Texas - Austin,arch,1,2007
-Emmett Witchel,University of Texas - Austin,arch,1,2008
-Emmett Witchel,University of Texas - Austin,networks,1,2010
-Emmett Witchel,University of Texas - Austin,security,1,2007
-Emmett Witchel,University of Texas - Austin,security,1,2011
-Emmett Witchel,University of Texas - Austin,security,1,2013
-Emmett Witchel,University of Texas - Austin,ai,1,2007
 Xiaosong Ma,North Carolina State University,security,1,2000
 Xiaosong Ma,North Carolina State University,metrics,1,2015
 Gregory R. Ganger,Carnegie Mellon University,opsys,4,2000
@@ -7459,24 +7837,6 @@ Godmar Back,Virginia Polytechnic Institute and State University,opsys,1,2006
 Godmar Back,Virginia Polytechnic Institute and State University,opsys,1,2013
 Godmar Back,Virginia Polytechnic Institute and State University,mlmining,1,2010
 Godmar Back,Virginia Polytechnic Institute and State University,metrics,1,2000
-Jason Nieh,Columbia University,opsys,1,2002
-Jason Nieh,Columbia University,opsys,1,2005
-Jason Nieh,Columbia University,opsys,1,2007
-Jason Nieh,Columbia University,opsys,1,2009
-Jason Nieh,Columbia University,opsys,2,2011
-Jason Nieh,Columbia University,opsys,1,2013
-Jason Nieh,Columbia University,opsys,2,2014
-Jason Nieh,Columbia University,networks,1,2004
-Jason Nieh,Columbia University,networks,1,2010
-Jason Nieh,Columbia University,security,1,2007
-Jason Nieh,Columbia University,metrics,2,2002
-Jason Nieh,Columbia University,metrics,2,2010
-Jason Nieh,Columbia University,metrics,1,2011
-Jason Nieh,Columbia University,metrics,1,2014
-Jason Nieh,Columbia University,web,1,2003
-Jason Nieh,Columbia University,web,1,2004
-Jason Nieh,Columbia University,web,1,2005
-Jason Nieh,Columbia University,web,1,2006
 Chita R. Das,Pennsylvania State University,opsys,1,2013
 Chita R. Das,Pennsylvania State University,arch,2,2006
 Chita R. Das,Pennsylvania State University,arch,1,2007
@@ -7512,22 +7872,6 @@ Mark Crovella,Boston University,mlmining,2,2012
 Mark Crovella,Boston University,mlmining,1,2015
 Mark Crovella,Boston University,metrics,1,2004
 Mark Crovella,Boston University,metrics,3,2005
-Paul Barford,University of Wisconsin - Madison,networks,1,2000
-Paul Barford,University of Wisconsin - Madison,networks,1,2005
-Paul Barford,University of Wisconsin - Madison,networks,2,2007
-Paul Barford,University of Wisconsin - Madison,networks,3,2008
-Paul Barford,University of Wisconsin - Madison,networks,2,2009
-Paul Barford,University of Wisconsin - Madison,networks,1,2010
-Paul Barford,University of Wisconsin - Madison,networks,3,2011
-Paul Barford,University of Wisconsin - Madison,mlmining,1,2012
-Paul Barford,University of Wisconsin - Madison,ai,1,2016
-Paul Barford,University of Wisconsin - Madison,database,1,2006
-Paul Barford,University of Wisconsin - Madison,metrics,1,2003
-Paul Barford,University of Wisconsin - Madison,metrics,1,2004
-Paul Barford,University of Wisconsin - Madison,metrics,1,2007
-Paul Barford,University of Wisconsin - Madison,metrics,1,2012
-Paul Barford,University of Wisconsin - Madison,web,1,2014
-Paul Barford,University of Wisconsin - Madison,web,1,2016
 Roch Guérin,Washington University - St. Louis,networks,1,2000
 Roch Guérin,Washington University - St. Louis,networks,1,2001
 Roch Guérin,Washington University - St. Louis,networks,2,2002
@@ -8450,20 +8794,6 @@ Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2003
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2008
 Douglas Stott Parker Jr.,University of California - Los Angeles,mlmining,1,2010
 Douglas Stott Parker Jr.,University of California - Los Angeles,database,1,2007
-Andreas Haeberlen,University of Pennsylvania,proglang,1,2013
-Andreas Haeberlen,University of Pennsylvania,opsys,1,2007
-Andreas Haeberlen,University of Pennsylvania,opsys,1,2010
-Andreas Haeberlen,University of Pennsylvania,opsys,1,2011
-Andreas Haeberlen,University of Pennsylvania,opsys,1,2012
-Andreas Haeberlen,University of Pennsylvania,opsys,1,2014
-Andreas Haeberlen,University of Pennsylvania,networks,1,2005
-Andreas Haeberlen,University of Pennsylvania,networks,1,2006
-Andreas Haeberlen,University of Pennsylvania,networks,1,2008
-Andreas Haeberlen,University of Pennsylvania,networks,1,2009
-Andreas Haeberlen,University of Pennsylvania,networks,2,2012
-Andreas Haeberlen,University of Pennsylvania,networks,1,2014
-Andreas Haeberlen,University of Pennsylvania,security,1,2011
-Andreas Haeberlen,University of Pennsylvania,database,1,2011
 Yuan-Fang Wang,University of California - Santa Barbara,database,1,2004
 Amin Vahdat,University of California - San Diego,proglang,1,2007
 Amin Vahdat,University of California - San Diego,opsys,2,2000
@@ -8736,15 +9066,6 @@ David Van Horn,University of Maryland - College Park,proglang,1,2010
 David Van Horn,University of Maryland - College Park,proglang,1,2012
 David Van Horn,University of Maryland - College Park,proglang,3,2015
 David Van Horn,University of Maryland - College Park,proglang,1,2016
-Frank Pfenning,Carnegie Mellon University,proglang,1,2003
-Frank Pfenning,Carnegie Mellon University,proglang,1,2004
-Frank Pfenning,Carnegie Mellon University,proglang,1,2005
-Frank Pfenning,Carnegie Mellon University,proglang,1,2016
-Frank Pfenning,Carnegie Mellon University,logic,1,2001
-Frank Pfenning,Carnegie Mellon University,logic,1,2004
-Frank Pfenning,Carnegie Mellon University,logic,1,2009
-Frank Pfenning,Carnegie Mellon University,security,1,2010
-Frank Pfenning,Carnegie Mellon University,ai,1,2003
 Patrick Cousot,New York University,proglang,1,2000
 Patrick Cousot,New York University,proglang,1,2002
 Patrick Cousot,New York University,proglang,1,2003
@@ -8983,13 +9304,6 @@ Ross Tate,Cornell University,proglang,1,2013
 Ross Tate,Cornell University,proglang,1,2014
 Ross Tate,Cornell University,proglang,1,2015
 Ross Tate,Cornell University,logic,1,2011
-Zachary Tatlock,University of Washington,proglang,1,2008
-Zachary Tatlock,University of Washington,proglang,2,2009
-Zachary Tatlock,University of Washington,proglang,1,2010
-Zachary Tatlock,University of Washington,proglang,1,2014
-Zachary Tatlock,University of Washington,proglang,2,2015
-Zachary Tatlock,University of Washington,opsys,1,2014
-Zachary Tatlock,University of Washington,security,1,2012
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1,2007
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1,2011
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,2,2012
@@ -9267,15 +9581,6 @@ Michael Dahlin,University of Texas - Austin,ai,1,2007
 Michael Dahlin,University of Texas - Austin,database,1,2007
 Michael Dahlin,University of Texas - Austin,web,2,2001
 Michael Dahlin,University of Texas - Austin,web,1,2003
-Mendel Rosenblum,Stanford University,opsys,1,2002
-Mendel Rosenblum,Stanford University,opsys,1,2003
-Mendel Rosenblum,Stanford University,opsys,1,2006
-Mendel Rosenblum,Stanford University,opsys,1,2008
-Mendel Rosenblum,Stanford University,opsys,1,2011
-Mendel Rosenblum,Stanford University,arch,1,2005
-Mendel Rosenblum,Stanford University,networks,1,2006
-Mendel Rosenblum,Stanford University,networks,1,2011
-Mendel Rosenblum,Stanford University,security,1,2004
 Sachin Katti,Stanford University,networks,1,2006
 Sachin Katti,Stanford University,networks,4,2007
 Sachin Katti,Stanford University,networks,1,2008
@@ -9435,16 +9740,6 @@ Fabián E. Bustamante,Northwestern University,networks,1,2012
 Fabián E. Bustamante,Northwestern University,networks,1,2013
 Fabián E. Bustamante,Northwestern University,networks,1,2014
 Fabián E. Bustamante,Northwestern University,networks,1,2015
-Michael Walfish,New York University,opsys,1,2004
-Michael Walfish,New York University,opsys,1,2010
-Michael Walfish,New York University,opsys,1,2011
-Michael Walfish,New York University,opsys,1,2013
-Michael Walfish,New York University,opsys,1,2015
-Michael Walfish,New York University,networks,2,2004
-Michael Walfish,New York University,networks,2,2006
-Michael Walfish,New York University,networks,2,2013
-Michael Walfish,New York University,security,1,2012
-Michael Walfish,New York University,security,1,2013
 Rajesh Gupta,University of California - San Diego,proglang,1,2012
 Rajesh Gupta,University of California - San Diego,logic,1,2008
 Rajesh Gupta,University of California - San Diego,opsys,1,2013
@@ -9639,25 +9934,6 @@ Milos Prvulovic,University of Minnesota - Twin Cities,arch,1,2011
 Milos Prvulovic,University of Minnesota - Twin Cities,arch,1,2012
 Milos Prvulovic,University of Minnesota - Twin Cities,arch,1,2014
 Milos Prvulovic,University of Minnesota - Twin Cities,arch,2,2015
-David I. August,Princeton University,proglang,1,2004
-David I. August,Princeton University,proglang,2,2006
-David I. August,Princeton University,proglang,2,2007
-David I. August,Princeton University,proglang,3,2011
-David I. August,Princeton University,proglang,2,2012
-David I. August,Princeton University,proglang,1,2013
-David I. August,Princeton University,logic,1,2012
-David I. August,Princeton University,opsys,1,2008
-David I. August,Princeton University,opsys,1,2010
-David I. August,Princeton University,opsys,1,2013
-David I. August,Princeton University,arch,1,2000
-David I. August,Princeton University,arch,1,2002
-David I. August,Princeton University,arch,1,2004
-David I. August,Princeton University,arch,2,2005
-David I. August,Princeton University,arch,1,2006
-David I. August,Princeton University,arch,2,2007
-David I. August,Princeton University,arch,1,2010
-David I. August,Princeton University,arch,2,2011
-David I. August,Princeton University,arch,1,2015
 Hyesoon Kim,Georgia Institute of Technology,opsys,1,2008
 Hyesoon Kim,Georgia Institute of Technology,arch,1,2004
 Hyesoon Kim,Georgia Institute of Technology,arch,3,2005
@@ -9983,13 +10259,6 @@ Jih-Kwon Peir,University of Florida,arch,1,2001
 Jih-Kwon Peir,University of Florida,networks,1,2009
 Jih-Kwon Peir,University of Florida,networks,1,2011
 Hai Zhou,Northwestern University,arch,1,2006
-Christopher J. Rossbach,University of Texas - Austin,proglang,1,2007
-Christopher J. Rossbach,University of Texas - Austin,opsys,1,2007
-Christopher J. Rossbach,University of Texas - Austin,opsys,2,2009
-Christopher J. Rossbach,University of Texas - Austin,opsys,1,2011
-Christopher J. Rossbach,University of Texas - Austin,opsys,1,2013
-Christopher J. Rossbach,University of Texas - Austin,arch,1,2007
-Christopher J. Rossbach,University of Texas - Austin,arch,1,2008
 Seth Pettie,University of Michigan,arch,1,2008
 Seth Pettie,University of Michigan,theory,1,2002
 Seth Pettie,University of Michigan,theory,1,2005
@@ -10019,9 +10288,6 @@ Wenjing Lou,Virginia Polytechnic Institute and State University,networks,4,2012
 Wenjing Lou,Virginia Polytechnic Institute and State University,networks,5,2013
 Wenjing Lou,Virginia Polytechnic Institute and State University,networks,4,2014
 Wenjing Lou,Virginia Polytechnic Institute and State University,networks,3,2015
-Dipak Ghosal,University of California - Davis,networks,1,2006
-Dipak Ghosal,University of California - Davis,networks,1,2010
-Dipak Ghosal,University of California - Davis,networks,1,2011
 Arvind,Massachusetts Institute of Technology,proglang,1,2000
 Arvind,Massachusetts Institute of Technology,opsys,1,2012
 Arvind,Massachusetts Institute of Technology,arch,1,2006
@@ -10072,9 +10338,6 @@ Minaxi Gupta,Indiana University,networks,1,2011
 Anxiao Jiang,Texas A&M University,networks,1,2005
 Anxiao Jiang,Texas A&M University,networks,2,2007
 Anxiao Jiang,Texas A&M University,networks,1,2008
-David B. Johnson,Rice University,networks,1,2003
-David B. Johnson,Rice University,networks,1,2007
-David B. Johnson,Rice University,networks,1,2011
 Cauligi S. Raghavendra,University of Southern California,networks,1,2002
 Cauligi S. Raghavendra,University of Southern California,networks,1,2005
 Jie Gao,State University of New York - Stony Brook,theory,1,2003
@@ -10110,21 +10373,6 @@ Prasun Sinha,Ohio State University,networks,2,2013
 Prasun Sinha,Ohio State University,networks,5,2014
 Prasun Sinha,Ohio State University,networks,1,2015
 Prasun Sinha,Ohio State University,mobile,1,2014
-Guoliang Xue,Arizona State University,networks,2,2004
-Guoliang Xue,Arizona State University,networks,2,2005
-Guoliang Xue,Arizona State University,networks,1,2006
-Guoliang Xue,Arizona State University,networks,1,2007
-Guoliang Xue,Arizona State University,networks,1,2008
-Guoliang Xue,Arizona State University,networks,2,2009
-Guoliang Xue,Arizona State University,networks,3,2011
-Guoliang Xue,Arizona State University,networks,5,2012
-Guoliang Xue,Arizona State University,networks,3,2013
-Guoliang Xue,Arizona State University,networks,1,2014
-Guoliang Xue,Arizona State University,networks,2,2015
-Taieb Znati,University of Pittsburgh,networks,1,2005
-Taieb Znati,University of Pittsburgh,networks,1,2008
-Taieb Znati,University of Pittsburgh,networks,2,2009
-Taieb Znati,University of Pittsburgh,networks,2,2010
 Chenyang Lu,Washington University - St. Louis,opsys,1,2007
 Chenyang Lu,Washington University - St. Louis,networks,1,2004
 Chenyang Lu,Washington University - St. Louis,networks,1,2012
@@ -10169,32 +10417,6 @@ Xin Li,Johns Hopkins University,vision,1,2015
 George Kesidis,Pennsylvania State University,networks,1,2003
 George Kesidis,Pennsylvania State University,networks,1,2012
 George Kesidis,Pennsylvania State University,networks,1,2013
-Xi Chen,Columbia University,opsys,1,2015
-Xi Chen,Columbia University,theory,1,2005
-Xi Chen,Columbia University,theory,2,2006
-Xi Chen,Columbia University,theory,1,2007
-Xi Chen,Columbia University,theory,1,2008
-Xi Chen,Columbia University,theory,1,2009
-Xi Chen,Columbia University,theory,2,2010
-Xi Chen,Columbia University,theory,1,2012
-Xi Chen,Columbia University,theory,3,2013
-Xi Chen,Columbia University,theory,1,2014
-Xi Chen,Columbia University,theory,3,2015
-Xi Chen,Columbia University,networks,1,2010
-Xi Chen,Columbia University,networks,2,2012
-Xi Chen,Columbia University,networks,1,2013
-Xi Chen,Columbia University,networks,1,2014
-Xi Chen,Columbia University,networks,1,2015
-Xi Chen,Columbia University,mlmining,1,2009
-Xi Chen,Columbia University,mlmining,2,2010
-Xi Chen,Columbia University,mlmining,3,2012
-Xi Chen,Columbia University,mlmining,1,2013
-Xi Chen,Columbia University,mlmining,2,2014
-Xi Chen,Columbia University,mlmining,1,2015
-Xi Chen,Columbia University,ai,1,2010
-Xi Chen,Columbia University,web,1,2005
-Xi Chen,Columbia University,vision,1,2007
-Xi Chen,Columbia University,vision,1,2011
 Lyle H. Ungar,University of Pennsylvania,networks,1,2003
 Lyle H. Ungar,University of Pennsylvania,mlmining,2,2000
 Lyle H. Ungar,University of Pennsylvania,mlmining,1,2001
@@ -11691,44 +11913,10 @@ Yun Fu,Northeastern University,vision,2,2009
 Yun Fu,Northeastern University,vision,1,2010
 Yun Fu,Northeastern University,vision,2,2013
 Yun Fu,Northeastern University,vision,2,2015
-Ali Farhadi,University of Washington,mlmining,1,2015
-Ali Farhadi,University of Washington,ai,1,2014
-Ali Farhadi,University of Washington,ai,2,2016
-Ali Farhadi,University of Washington,nlp,1,2014
-Ali Farhadi,University of Washington,nlp,1,2015
-Ali Farhadi,University of Washington,vision,1,2007
-Ali Farhadi,University of Washington,vision,3,2009
-Ali Farhadi,University of Washington,vision,1,2010
-Ali Farhadi,University of Washington,vision,2,2011
-Ali Farhadi,University of Washington,vision,1,2012
-Ali Farhadi,University of Washington,vision,3,2013
-Ali Farhadi,University of Washington,vision,2,2014
-Ali Farhadi,University of Washington,vision,4,2015
 Mauro Maggioni,Duke University,mlmining,1,2005
 Mauro Maggioni,Duke University,mlmining,2,2006
 Mauro Maggioni,Duke University,ai,1,2006
 Mauro Maggioni,Duke University,vision,1,2011
-Avrim Blum,Carnegie Mellon University,theory,1,2000
-Avrim Blum,Carnegie Mellon University,theory,1,2002
-Avrim Blum,Carnegie Mellon University,theory,2,2003
-Avrim Blum,Carnegie Mellon University,theory,1,2004
-Avrim Blum,Carnegie Mellon University,theory,1,2005
-Avrim Blum,Carnegie Mellon University,theory,3,2008
-Avrim Blum,Carnegie Mellon University,theory,1,2010
-Avrim Blum,Carnegie Mellon University,theory,1,2011
-Avrim Blum,Carnegie Mellon University,theory,2,2012
-Avrim Blum,Carnegie Mellon University,mlmining,1,2000
-Avrim Blum,Carnegie Mellon University,mlmining,1,2001
-Avrim Blum,Carnegie Mellon University,mlmining,1,2003
-Avrim Blum,Carnegie Mellon University,mlmining,2,2004
-Avrim Blum,Carnegie Mellon University,mlmining,1,2006
-Avrim Blum,Carnegie Mellon University,mlmining,1,2009
-Avrim Blum,Carnegie Mellon University,mlmining,1,2010
-Avrim Blum,Carnegie Mellon University,mlmining,3,2014
-Avrim Blum,Carnegie Mellon University,mlmining,2,2015
-Avrim Blum,Carnegie Mellon University,ai,1,2014
-Avrim Blum,Carnegie Mellon University,ai,1,2015
-Avrim Blum,Carnegie Mellon University,database,1,2005
 Leslie G. Valiant,Harvard University,theory,1,2001
 Leslie G. Valiant,Harvard University,theory,1,2004
 Leslie G. Valiant,Harvard University,theory,1,2006
@@ -12042,11 +12230,6 @@ Virginia Vassilevska Williams,Stanford University,ai,1,2010
 Virginia Vassilevska Williams,Stanford University,ai,1,2011
 Virginia Vassilevska Williams,Stanford University,ai,1,2015
 Virginia Vassilevska Williams,Stanford University,ai,1,2016
-Robert St. Amant,North Carolina State University,ai,1,2001
-Robert St. Amant,North Carolina State University,ai,1,2005
-Robert St. Amant,North Carolina State University,ai,1,2006
-Robert St. Amant,North Carolina State University,hci,1,2004
-Robert St. Amant,North Carolina State University,hci,1,2014
 Xiaohui Xie,University of California - Irvine,mlmining,1,2000
 Xiaohui Xie,University of California - Irvine,mlmining,2,2001
 Xiaohui Xie,University of California - Irvine,mlmining,1,2003
@@ -12343,17 +12526,6 @@ Robert E. Schapire,Princeton University,mlmining,3,2014
 Robert E. Schapire,Princeton University,mlmining,2,2015
 Robert E. Schapire,Princeton University,ai,1,2015
 Robert E. Schapire,Princeton University,web,1,2010
-David J. Crandall,Indiana University,mlmining,1,2008
-David J. Crandall,Indiana University,web,1,2009
-David J. Crandall,Indiana University,web,1,2012
-David J. Crandall,Indiana University,hci,2,2015
-David J. Crandall,Indiana University,hci,1,2016
-David J. Crandall,Indiana University,vision,1,2007
-David J. Crandall,Indiana University,vision,1,2009
-David J. Crandall,Indiana University,vision,1,2011
-David J. Crandall,Indiana University,vision,1,2012
-David J. Crandall,Indiana University,vision,1,2014
-David J. Crandall,Indiana University,vision,1,2015
 John Zimmerman,Carnegie Mellon University,web,1,2007
 John Zimmerman,Carnegie Mellon University,hci,2,2007
 John Zimmerman,Carnegie Mellon University,hci,3,2009
@@ -12665,17 +12837,6 @@ Oded Regev,New York University,theory,3,2008
 Oded Regev,New York University,theory,2,2011
 Oded Regev,New York University,theory,2,2013
 Oded Regev,New York University,theory,2,2015
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2000
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2001
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,3,2003
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2005
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,2,2006
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2007
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,2,2008
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2009
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2010
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,2,2012
-Shafi Goldwasser,Massachusetts Institute of Technology,theory,1,2013
 Prasad Tetali,Georgia Institute of Technology,theory,1,2003
 Prasad Tetali,Georgia Institute of Technology,theory,2,2007
 Prasad Tetali,Georgia Institute of Technology,theory,1,2009
@@ -13022,11 +13183,6 @@ Vijay V. Vazirani,Georgia Institute of Technology,theory,1,2007
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1,2012
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1,2014
 Vijay V. Vazirani,Georgia Institute of Technology,networks,1,2011
-Huijia Lin,University of California - Santa Barbara,theory,2,2009
-Huijia Lin,University of California - Santa Barbara,theory,1,2010
-Huijia Lin,University of California - Santa Barbara,theory,1,2011
-Huijia Lin,University of California - Santa Barbara,theory,2,2013
-Huijia Lin,University of California - Santa Barbara,theory,1,2015
 Anna Gál,University of Texas - Austin,theory,1,2003
 Anna Gál,University of Texas - Austin,theory,1,2007
 Anna Gál,University of Texas - Austin,theory,1,2012
@@ -13632,7 +13788,6 @@ Elliot Soloway,University of Michigan,hci,1,2004
 Amy Bruckman,Georgia Institute of Technology,hci,1,2001
 Amy Bruckman,Georgia Institute of Technology,hci,2,2011
 Amy Bruckman,Georgia Institute of Technology,hci,1,2012
-Helen Nissenbaum,New York University,hci,1,2005
 Lisa Anthony,University of Florida,hci,1,2013
 Laura Dabbish,Carnegie Mellon University,softeng,2,2014
 Laura Dabbish,Carnegie Mellon University,hci,1,2004
@@ -13684,7 +13839,6 @@ Vladimir Filkov,University of California - Davis,softeng,2,2015
 Vladimir Filkov,University of California - Davis,hci,1,2015
 Tamara Sumner,University of Colorado Boulder,hci,1,2008
 Tamara Sumner,University of Colorado Boulder,nlp,1,2015
-Jignesh Patel,University of Wisconsin - Madison,security,1,2010
 Raju Pandey,University of California - Davis,security,1,2002
 Erik G. Learned-Miller,University of Massachusetts - Amherst,security,1,2011
 Erik G. Learned-Miller,University of Massachusetts - Amherst,mlmining,2,2004
