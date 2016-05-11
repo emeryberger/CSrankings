@@ -23,13 +23,6 @@ body {
    font-family: "Helvetica", "Arial";
 }
 
-
-table.center {
-  margin-left: 3%;
-  margin-right: auto;
-  margin-bottom: 3%;
-}
-
 table td {
  vertical-align: top;
 }
@@ -53,19 +46,14 @@ a:hover {
 a:active {
     text-decoration: underline;
 }
+  div.slider { width:30px; margin:10px 0; background-color:#ccc; height:12px; position: relative; }
+  div.slider div.handle { width:10px; height:12px; background-color:#000; cursor:move; position: absolute; }
+  div#zoom_element { width:20px; height:50px; background:#2d86bd; position:relative; }
 </style>
 </head>
 
 <body>
 <div class="container">
-
-<h1></h1>
-<style type="text/css">
-  div.slider { width:30px; margin:10px 0; background-color:#ccc; height:12px; position: relative; }
-  div.slider div.handle { width:10px; height:12px; background-color:#000; cursor:move; position: absolute; }
-  div#zoom_element { width:20px; height:50px; background:#2d86bd; position:relative; }
-</style>
-
 
 <div class="page-header">
         <h1>Computer Science Department Rankings</h1>
@@ -403,7 +391,7 @@ Human-computer interaction
 </div>
 
 <div class="row">
-<div class="col-xs-6 col-sm-4 col-md-4">
+<div class="col-xs-6 col-sm-6 col-md-4">
 <div id="success"></div>
 </div>
 </div>
