@@ -438,7 +438,7 @@ function rank() {
 	    for (ind = 0; ind < keys.length; ind++) {
 		var k = keys[ind];
 		var v = univagg[k];
-		if ((ind > 20) && (v != oldv)) {
+		if ((ind >= 20) && (v != oldv)) {
 		    break;
 		}
 		if (v < 1) {
