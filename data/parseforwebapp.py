@@ -138,6 +138,7 @@ facultydict = csv2dict_str_str('facultydata-abbrv.csv')
 (intauthors_gl, authscores_gl, authlog_gl) = parseDBLP(facultydict)
 
 f = open('intauthors-all.log','w')
+f.write('"name","dept","area","count","year"\n')
 for k, v in intauthors_gl.items():
     #print k, "@", v
     if (v >= 1):
