@@ -445,8 +445,8 @@ function rank() {
 		+ "<title>CS department rankings by productivity</title>"
 		+ "</head>"
 		+ "<body>" 
-		+ "<div class=\"table-responsive\">"
-		+ "<table class=\"table table-striped\""
+		+ "<div class=\"table table-responsive\">"
+		+ "<table class=\"table table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">"
 		+ "<thead><tr><th>Rank</th><th>Institution</th><th>Count</th><th>Faculty</th></tr></thead>"
 		+ "<tbody>";
