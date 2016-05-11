@@ -367,112 +367,101 @@ function rank() {
     rankingsInProgress++;
     var form = document.getElementById("rankform");
     var s = "";
-    if (true) {
-	var univcounts = {};
-	var authcounts = {};
-	var visited = {};
-	var univagg = {}; /* (university, total number of papers) */
-	var univwww = {}; /* (university, web page) */
-	var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
-	var depturl = {}; /* (university, URL) */
-	var authors = {};
-	Papa.parse("universities-2.csv", {
-	    download : true,
-	    header : true,
-	    complete: function(results) {
-		depturl = results.data;
-		Papa.parse("intauthors-all-2.csv", {
-		    download : true,
-		    header : true,
-		    complete: function(results) {
-			authors = results.data;
-			weights = {};
-			weights["proglang"] = parseFloat($("field_1").value);
-			weights["softeng"]  = parseFloat($("field_2").value);
-			weights["opsys"]    = parseFloat($("field_3").value);
-			weights["networks"] = parseFloat($("field_4").value);
-			weights["security"] = parseFloat($("field_5").value);
-			weights["database"] = parseFloat($("field_6").value);
-			weights["metrics"]  = parseFloat($("field_7").value);
-			weights["mlmining"] = parseFloat($("field_8").value);
-			weights["ai"]       = parseFloat($("field_9").value);
-			weights["nlp"]      = parseFloat($("field_10").value);
-			weights["web"]      = parseFloat($("field_11").value);
-			weights["vision"]   = parseFloat($("field_12").value);
-			weights["theory"]   = parseFloat($("field_13").value);
-			weights["logic"]    = parseFloat($("field_14").value);
-			weights["arch"]     = parseFloat($("field_15").value);
-			weights["graphics"] = parseFloat($("field_16").value);
-			weights["hci"]      = parseFloat($("field_17").value);
-			startyear = parseInt(jQuery("#startyear").find(":selected").text());
-			endyear = parseInt(jQuery("#endyear").find(":selected").text());
-			for (var r in authors) {
-			    var name = authors[r].name;
-			    var dept = authors[r].dept;
-			    var area = authors[r].area;
-			    var count = authors[r].count;
-			    var year = authors[r].year;
-			    if ((year >= startyear) && (year <= endyear)) {
-				if (!(dept in univagg)) {
-				    univagg[dept] = 0;
-				}
-				univagg[dept] += parseInt(count) * weights[area];
-				if (weights[area] > 0) {
-				    if (!(name in visited)) {
-					visited[name] = true;
-					if (!(dept in univcounts)) {
-					    univcounts[dept] = 0;
-					}
-					univcounts[dept] += 1;
-				    }
-				}
-			    }
-			}
-			var s = "<html>"
-			    + "<head>"
-			    + "<title>CS department rankings by productivity</title>"
-			    + "</head>"
-			    + "<body>" 
-			    + "<div class=\"table-responsive\">"
-			    + "<table class=\"table table-striped\""
-			    + "id=\"ranking\" valign=\"top\">"
-			    + "<thead><tr><th>Rank</th><th>Institution</th><th>Count</th><th>Faculty</th></tr></thead>"
-			    + "<tbody>";
-			var i = 0;
-			var oldv = -100;
-			var keys = Object.keys(univagg);
-			keys.sort(function(a,b){return univagg[b] - univagg[a];});
-			for (ind = 0; ind < keys.length; ind++) {
-			    var k = keys[ind];
-			    var v = univagg[k];
-			    if ((ind > 20) && (v != oldv)) {
-				break;
-			    }
-			    if (v < 1) {
-				break;
-			    }
-			    if (oldv != v) {
-				i = i + 1;
-			    }
-			    s += "\n<tr><td>" + i + "</td>";
-			    s += "<td>" + "<a href=\"" + depturl[k] + "\">";
-			    s += k + "</a>" + "</td>";
-			    s += "<td align=\"right\">" + v + "</td>";
-			    s += "<td align=\"right\">" + univcounts[k] + "</td>";
-			    s += "</tr>\n";
-			    oldv = v;
-			}
-			s += "</tbody>" + "</table>" + "</div>" + "\n";
-			s += "<br>" + "</body>" + "</html>";
-			outputHTML = s;
-			rankingsInProgress--;
-			setTimeout(redisplay, 0);
-			return false; 
+    var univcounts = {};
+    var authcounts = {};
+    var visited = {};
+    var univagg = {}; /* (university, total number of papers) */
+    var univwww = {}; /* (university, web page) */
+    var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
+    var authors = {};
+    Papa.parse("intauthors-all-2.csv", {
+	download : true,
+	header : true,
+	complete: function(results) {
+	    authors = results.data;
+	    weights = {};
+	    weights["proglang"] = parseFloat($("field_1").value);
+	    weights["softeng"]  = parseFloat($("field_2").value);
+	    weights["opsys"]    = parseFloat($("field_3").value);
+	    weights["networks"] = parseFloat($("field_4").value);
+	    weights["security"] = parseFloat($("field_5").value);
+	    weights["database"] = parseFloat($("field_6").value);
+	    weights["metrics"]  = parseFloat($("field_7").value);
+	    weights["mlmining"] = parseFloat($("field_8").value);
+	    weights["ai"]       = parseFloat($("field_9").value);
+	    weights["nlp"]      = parseFloat($("field_10").value);
+	    weights["web"]      = parseFloat($("field_11").value);
+	    weights["vision"]   = parseFloat($("field_12").value);
+	    weights["theory"]   = parseFloat($("field_13").value);
+	    weights["logic"]    = parseFloat($("field_14").value);
+	    weights["arch"]     = parseFloat($("field_15").value);
+	    weights["graphics"] = parseFloat($("field_16").value);
+	    weights["hci"]      = parseFloat($("field_17").value);
+	    startyear = parseInt(jQuery("#startyear").find(":selected").text());
+	    endyear = parseInt(jQuery("#endyear").find(":selected").text());
+	    for (var r in authors) {
+		var name = authors[r].name;
+		var dept = authors[r].dept;
+		var area = authors[r].area;
+		var count = authors[r].count;
+		var year = authors[r].year;
+		if ((year >= startyear) && (year <= endyear)) {
+		    if (!(dept in univagg)) {
+			univagg[dept] = 0;
 		    }
-		});
+		    univagg[dept] += parseInt(count) * weights[area];
+		    if (weights[area] > 0) {
+			if (!(name in visited)) {
+			    visited[name] = true;
+			    if (!(dept in univcounts)) {
+				univcounts[dept] = 0;
+			    }
+			    univcounts[dept] += 1;
+			}
+		    }
+		}
 	    }
-	});
-    }
+	    var s = "<html>"
+		+ "<head>"
+		+ "<title>CS department rankings by productivity</title>"
+		+ "</head>"
+		+ "<body>" 
+		+ "<div class=\"table-responsive\">"
+		+ "<table class=\"table table-striped\""
+		+ "id=\"ranking\" valign=\"top\">"
+		+ "<thead><tr><th>Rank</th><th>Institution</th><th>Count</th><th>Faculty</th></tr></thead>"
+		+ "<tbody>";
+	    var i = 0;
+	    var oldv = -100;
+	    var keys = Object.keys(univagg);
+	    keys.sort(function(a,b){return univagg[b] - univagg[a];});
+	    for (ind = 0; ind < keys.length; ind++) {
+		var k = keys[ind];
+		var v = univagg[k];
+		if ((ind > 20) && (v != oldv)) {
+		    break;
+		}
+		if (v < 1) {
+		    break;
+		}
+		if (oldv != v) {
+		    i = i + 1;
+		}
+		s += "\n<tr><td>" + i + "</td>";
+		s += "<td>" +  k  + "</td>";
+		s += "<td align=\"right\">" + v + "</td>";
+		s += "<td align=\"right\">" + univcounts[k] + "</td>";
+		s += "</tr>\n";
+		oldv = v;
+	    }
+	    s += "</tbody>" + "</table>" + "</div>" + "\n";
+	    s += "<br>" + "</body>" + "</html>";
+	    outputHTML = s;
+	    rankingsInProgress--;
+	    setTimeout(redisplay, 0);
+	    return false; 
+	}
+    });
 }
 
 
