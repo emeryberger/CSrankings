@@ -2,7 +2,7 @@ var r = [];
 var setup = false;
 var outputHTML = "";
 var rankingsInProgress = 0;
-var minToRank = 25;
+var minToRank = 30;
 
 function redisplay() {
     jQuery("#success").html(outputHTML);
