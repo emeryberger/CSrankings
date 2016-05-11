@@ -13,7 +13,7 @@ function slidersetup()
 	var rank_slider = [];
 	var str = 'rank_slider_';
 
-	for (i = 1; i <= 17; i++) {
+	for (i = 1; i <= 18; i++) {
 	    rank_slider[i] = $(str.concat(i.toString()));
 	}
 
@@ -288,6 +288,22 @@ function slidersetup()
 					   rank();
 				       }
 				   });
+
+		r[18] = new Control.Slider(rank_slider[18].down('.handle'),
+				   rank_slider[18], {
+				       range: $R(0, 1),
+				       values: [0,1],
+				       sliderValue: 1,
+				       onSlide: function(value) {
+					   var str = "field_18";
+					   $(str).value = value.toFixed(2);
+				       },
+				       onChange: function(value) {
+					   var str = "field_18";
+					   $(str).value = value.toFixed(2);
+					   rank();
+				       }
+				   });
 	setup = true;
     }
 }
@@ -302,7 +318,7 @@ window.onload=init;
 function activatePL() {
     r[1].setValue(1.0);
     r[2].setValue(1.0);
-    for (i = 3; i <= 17; i++) {
+    for (i = 3; i <= 18; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -314,7 +330,7 @@ function activateSystems() {
     for (i = 3; i <= 7; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 8; i <= 17; i++) {
+    for (i = 8; i <= 18; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -327,7 +343,7 @@ function activateAI() {
     for (i = 8; i <= 12; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 13; i <= 17; i++) {
+    for (i = 13; i <= 18; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -340,7 +356,7 @@ function activateTheory() {
     for (i = 13; i <= 14; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 15; i <= 17; i++) {
+    for (i = 15; i <= 18; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -350,14 +366,14 @@ function activateOthers() {
     for (i = 1; i <= 14; i++) {
 	r[i].setValue(0.0);
     }
-    for (i = 15; i <= 17; i++) {
+    for (i = 15; i <= 18; i++) {
 	r[i].setValue(1.0);
     }
     return false;
 }
 
 function activateAll() {
-    for (i = 1; i <= 17; i++) {
+    for (i = 1; i <= 18; i++) {
 	r[i].setValue(1.0);
     }
     return false;
@@ -397,6 +413,7 @@ function rank() {
 	    weights["arch"]     = parseFloat($("field_15").value);
 	    weights["graphics"] = parseFloat($("field_16").value);
 	    weights["hci"]      = parseFloat($("field_17").value);
+	    weights["mobile"]   = parseFloat($("field_18").value);
 	    startyear = parseInt(jQuery("#startyear").find(":selected").text());
 	    endyear = parseInt(jQuery("#endyear").find(":selected").text());
 	    for (var r in authors) {

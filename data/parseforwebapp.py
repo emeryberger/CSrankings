@@ -32,14 +32,13 @@ web = ['WWW', 'SIGIR']
 hci = ['CHI','UIST']
 nlp = ['EMNLP','ACL','NAACL']
 vision = ['CVPR','ICCV']
+mobile = ['MobiSys','MobiCom']
 
-plrelated = proglang + logic + softeng
-allconf = plrelated + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision
+allconf = proglang + logic + softeng + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision + mobile
 startyear = 2000
 endyear = 2016
 
-
-arealist = ['proglang','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision']
+arealist = ['proglang','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision','mobile']
 
 
 def conf2area(confname):
@@ -77,6 +76,8 @@ def conf2area(confname):
         return 'nlp'
     if (confname in vision):
         return 'vision'
+    if (confname in mobile):
+        return 'mobile'
 
 
 def parseDBLP(facultydict):
