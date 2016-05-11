@@ -3,6 +3,7 @@ import htmlentitydefs
 import csv
 import operator
 import sys
+import gzip
 
 class CustomEntity:
     def __getitem__(self, key):
@@ -84,42 +85,43 @@ def parseDBLP(facultydict):
     authlogs = {}
     interestingauthors = {}
     authorscores = {}
-    
-    for (event, node) in iterparse('dblp.xml', events=['start', 'end'], parser=parser):
-        if (node.tag == 'inproceedings' or node.tag == 'article'):
-            flag = False
-            for child in node:
-                cond = (child.tag == 'booktitle' or child.tag == 'journal') and (child.text in allconf)
-                if (cond):
-                    flag = True
-                    confname = child.text
-                    yflagfortrace = -1
-                    break
-            if (flag):
-                for child in node:    
-                    if (child.tag == 'year' and type(child.text) is str):
-                        if (int(child.text) < startyear or int(child.text)>endyear):
-                            flag = False
-                        else:
-                            yflagfortrace = int(child.text)
-                        break
-            if(flag):
+
+    with gzip.open('dblp.xml.gz') as f:
+        for (event, node) in iterparse(f, events=['start', 'end'], parser=parser):
+            if (node.tag == 'inproceedings' or node.tag == 'article'):
+                flag = False
                 for child in node:
-                    if(child.tag == 'author'):
-                        authname = child.text
-                        #print "Author: ", authname
-                        if (facultydict.has_key(authname)):
-                            #print "Found prof author: ", authname
-                            logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
-                            tmplist = authlogs.get(authname,[])
-                            tmplist.append(logstring)
-                            authlogs[authname] = tmplist
-                            # if (confname in relevantconf):
-                            interestingauthors[authname] = interestingauthors.get(authname,0) + 1
-                            areaname = conf2area(confname)
-                            authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1
-                            #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
-        node.clear()
+                    cond = (child.tag == 'booktitle' or child.tag == 'journal') and (child.text in allconf)
+                    if (cond):
+                        flag = True
+                        confname = child.text
+                        yflagfortrace = -1
+                        break
+                if (flag):
+                    for child in node:    
+                        if (child.tag == 'year' and type(child.text) is str):
+                            if (int(child.text) < startyear or int(child.text)>endyear):
+                                flag = False
+                            else:
+                                yflagfortrace = int(child.text)
+                            break
+                if(flag):
+                    for child in node:
+                        if(child.tag == 'author'):
+                            authname = child.text
+                            #print "Author: ", authname
+                            if (facultydict.has_key(authname)):
+                                #print "Found prof author: ", authname
+                                logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
+                                tmplist = authlogs.get(authname,[])
+                                tmplist.append(logstring)
+                                authlogs[authname] = tmplist
+                                # if (confname in relevantconf):
+                                interestingauthors[authname] = interestingauthors.get(authname,0) + 1
+                                areaname = conf2area(confname)
+                                authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1
+                                #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
+            node.clear()
     return (interestingauthors, authorscores, authlogs)
 
 
