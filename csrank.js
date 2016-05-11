@@ -392,7 +392,7 @@ function rank() {
     var univwww = {}; /* (university, web page) */
     var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
     var authors = {};
-    Papa.parse("intauthors-all-2.csv", {
+    Papa.parse("authorinfo.csv", {
 	download : true,
 	header : true,
 	complete: function(results) {
