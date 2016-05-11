@@ -30,24 +30,9 @@
       color : blue ;
       }
 
-      a:link {
-      text-decoration: none;
-      }
-
-      a:visited {
-      text-decoration: none;
-      }
-
-      a:hover {
-      text-decoration: underline;
-      }
-
-      a:active {
-      text-decoration: underline;
-      }
       div.slider { width:30px; margin:10px 0; background-color:#ccc; height:12px; position: relative; }
-      div.slider div.handle { width:10px; height:12px; background-color:#000; cursor:move; position: absolute; }
-      div#zoom_element { width:20px; height:20px; background:#2d86bd; position:relative; }
+      div.slider div.handle { width:15px; height:12px; background-color:#000; cursor:move; position: absolute; }
+      div#zoom_element { width:10px; height:10px; background:#2d86bd; position:relative; }
     </style>
   </head>
 
@@ -114,15 +99,16 @@
 	</div>
 
 	<div class="row">
-	  <div class="col-xs-12 col-sm-6 col-md-8">
+	  <div class="col-xs-12 col-sm-6 col-md-6">
 	    <div class="table-responsive">
 	      <table class="table table-sm">
 		<thead>
 		  <tr>
 		    <th colspan="2">
-		      <a onClick="activatePL(); return false;">
 			<b>Programming Languages</b>
-		      </a>
+			<a onClick="activatePL(); return false;">
+			  [only these areas]
+			</a>
 		    </th>
 		  </tr>
 		</thead>
@@ -157,11 +143,12 @@
 
 		<thead>
 		  <tr>
-		    <td colspan="2">
-		      <a onClick="activateSystems(); return false;">
+		    <th colspan="2">
 			<b>Systems</b>
+			<a onClick="activateSystems(); return false;">
+			  [only these areas]
 		      </a>
-		    </td>
+		    </th>
 		  </tr>
 		</thead>
 
@@ -242,11 +229,12 @@
 
 		<thead>
 		  <tr>
-		    <td colspan="2">
+		    <th colspan="2">
+		      <b>AI</b>
 		      <a onClick="activateAI(); return false;">
-			<b>AI</b>
+			[only these areas]
 		      </a>
-		    </td>
+		    </th>
 		  </tr>
 		</thead>
 
@@ -314,11 +302,12 @@
 
 		<thead>
 		  <tr>
-		    <td colspan="2">
+		    <th colspan="2">
+		      <b>Theory</b>
 		      <a onClick="activateTheory(); return false;">
-			<b>Theory</b>
+			[only these areas]
 		      </a>
-		    </td>
+		    </th>
 		  </tr>
 		</thead>
 
@@ -349,11 +338,12 @@
 
 		<thead>
 		  <tr>
-		    <td colspan="2">
-		      <a onClick="activateOthers(); return false;">
+		    <th colspan="2">
 			<b>Other Areas</b>
+			<a onClick="activateOthers(); return false;">
+			  [only these areas]
 		      </a>
-		    </td>
+		    </th>
 		  </tr>
 		</thead>
 
