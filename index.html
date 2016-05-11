@@ -53,8 +53,8 @@
 
   <body>
     <div class="container">
-
       <div class="page-header">
+	
         <h1>Computer Science Department Rankings</h1>
         <h3>
 	  <p class="lead">
@@ -64,12 +64,6 @@
 	    Code and data used to build this webpage: <a href="https://github.com/emeryberger/CSRank">https://github.com/emeryberger/CSRank</a>.</small>
 	</h3>
       </div>
-
-      <!--
-	  <p>
-	    <a href="http://www.pl-enthusiast.net/2015/04/30/ranking-cs-departments-interactively"><i>Read the accompanying blog article</i></a> &nbsp;| &nbsp; <a
-																				   href="methodology.html"><i>Methodology</i></a> &nbsp;| &nbsp; <a href="codedata.html"><i>Code and data</i></a>
-	    -->
 
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 
@@ -125,301 +119,298 @@
 	      <table class="table table-condensed">
 		<thead>
 		  <tr>
-		    <td colspan="2">
+		    <th colspan="2">
 		      <a onClick="activatePL(); return false;">
 			<b>Programming Languages</b>
 		      </a>
-</a>
-</td>
-</tr>
-</thead>
+		    </th>
+		  </tr>
+		</thead>
+		
+		<tbody>
+		  <tr>
+		    <td>
+		      Programming languages
+		      <small><em>PLDI, POPL, OOPSLA</em></small>
+		    </td>
+		    <td>
+		      <!-- sync with slider max value -->
+		      <input type="hidden" name="proglang" id="field_1" value="1.0">
+		      <div id="rank_slider_1" class="slider">
+			<div class="handle"></div>
+		    </td>
+		  </tr>
 
-<tbody>
-  <tr>
-    <td>
-      Programming languages
-      <small><em>PLDI, POPL, OOPSLA</em></small>
-    </td>
-    <td>
-      <!-- sync with slider max value -->
-      <input type="hidden" name="proglang" id="field_1" value="1.0">
-      <div id="rank_slider_1" class="slider">
-	<div class="handle"></div>
-    </td>
-  </tr>
+		  <tr>
+		    <td>
+		      Software engineering
+		      <small><em>ICSE, FSE</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="softeng" id="field_2" value="1.0">
+		      <div id="rank_slider_2" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-  <tr>
-    <td>
-      Software engineering
-      <small><em>ICSE, FSE</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="softeng" id="field_2" value="1.0">
-      <div id="rank_slider_2" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
+		</tbody>
 
-</tbody>
+		<thead>
+		  <tr>
+		    <td colspan="2">
+		      <a onClick="activateSystems(); return false;">
+			<b>Systems</b>
+		      </a>
+		    </td>
+		  </tr>
+		</thead>
 
-<thead>
-  <tr>
-    <td colspan="2">
-      <a onClick="activateSystems(); return false;">
-	<b>Systems</b>
-      </a>
-    </td>
-  </tr>
-</thead>
+		<tbody>
+		  <tr>
+		    <td>  
+		      Operating systems
+		      <small><em>SOSP, OSDI, ASPLOS</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="opsys" id="field_3" value="1.0">
+		      <div id="rank_slider_3" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-<tbody>
-  <tr>
-    <td>  
-      Operating systems
-      <small><em>SOSP, OSDI, ASPLOS</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="opsys" id="field_3" value="1.0">
-      <div id="rank_slider_3" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
+		  <tr>
+		    <td>  
+		      Computer networks
+		      <small><em>INFOCOM, SIGCOMM, NSDI</em></small>
+		    </td>
+		    <td>  
+		      <input type="hidden" name="networks" id="field_4" value="1.0">
+		      <div id="rank_slider_4" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-  <tr>
-    <td>  
-      Computer networks
-      <small><em>INFOCOM, SIGCOMM, NSDI</em></small>
-    </td>
-    <td>  
-      <input type="hidden" name="networks" id="field_4" value="1.0">
-      <div id="rank_slider_4" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
+		  <tr>
+		    <td>
+		      Mobile computing
+		      <small><em>MobiCom, MobiSys</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="mobile" id="field_18" value="1.0">
+		      <div id="rank_slider_18" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-  <tr>
-    <td>
-      Mobile computing
-      <small><em>MobiCom, MobiSys</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="mobile" id="field_18" value="1.0">
-      <div id="rank_slider_18" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-  <tr>
-    <td>  
-      Computer security
-      <small><em>CCS, IEEE S&P, USENIX Security</em></small>
-    </td>
-    <td>  
-      <input type="hidden" name="security" id="field_5" value="1.0">
-      <div id="rank_slider_5" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-
-  <tr>
-    <td>
-      Databases
-      <small><em>PODS, SIGMOD, VLDB</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="database" id="field_6" value="1.0">
-      <div id="rank_slider_6" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Measurements
-      <small><em>IMC, SIGMETRICS</em></small>
-    </td>
-    <td> 
-      <input type="hidden" name="metrics" id="field_7" value="1.0">
-      <div id="rank_slider_7" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-</tbody>
-
-<thead>
-  <tr>
-    <td colspan="2">
-      <a onClick="activateAI(); return false;">
-	<b>AI</b>
-      </a>
-    </td>
-  </tr>
-</thead>
-
-<tbody>
-  <tr>
-    <td>
-      Machine learning and data mining
-      <small><em>ICML, KDD, NIPS</em></small>
-    </td>
-    <td> 
-      <input type="hidden" name="mlmining" id="field_8" value="1.0">
-      <div id="rank_slider_8" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      Artificial intelligence
-      <small><em>AAAI, IJCAI</em></small>
-    </td>
-    <td> 
-      <input type="hidden" name="ai" id="field_9" value="1.0">
-      <div id="rank_slider_9" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-  <tr>
-    <td> 
-      Natural language processing
-      <small><em>ACL, EMNLP, NAACL</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="nlp" id="field_10" value="1.0">
-      <div id="rank_slider_10" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      The web and information retrieval
-      <small><em>SIGIR, WWW</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="web" id="field_11" value="1.0">
-      <div id="rank_slider_11" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-  <tr>
-    <td> 
-      Computer vision
-      <small><em>CVPR, ICCV</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="vision" id="field_12" value="1.0">
-      <div id="rank_slider_12" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-</tbody>
-
-<thead>
-  <tr>
-    <td colspan="2">
-      <a onClick="activateTheory(); return false;">
-	<b>Theory</b>
-      </a>
-    </td>
-  </tr>
-</thead>
-
-<tbody>
-  <tr>
-    <td>
-      Theory: algorithms and complexity
-      <small><em>FOCS, STOC, SODA</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="theory" id="field_13" value="1.0">
-      <div id="rank_slider_13" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      Logic in computing
-      <small><em>CAV, LICS</em></small>
-    </td>
-    <td><input type="hidden" name="logic" id="field_14" value="1.0">
-      <div id="rank_slider_14" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
-</tbody>
-
-<thead>
-  <tr>
-    <td colspan="2">
-      <a onClick="activateOthers(); return false;">
-	<b>Other Areas</b>
-      </a>
-    </td>
-  </tr>
-</thead>
-
-<tbody>
-  <tr>
-    <td>   
-      Computer architecture
-      <small><em>ISCA, MICRO</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="arch" id="field_15" value="1.0">
-      <div id="rank_slider_15" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
+		  <tr>
+		    <td>  
+		      Computer security
+		      <small><em>CCS, IEEE S&P, USENIX Security</em></small>
+		    </td>
+		    <td>  
+		      <input type="hidden" name="security" id="field_5" value="1.0">
+		      <div id="rank_slider_5" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
 
-  <tr>
-    <td>
-      Computer graphics
-      <small><em>SIGGRAPH, TOG</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="graphics" id="field_16" value="1.0">
-      <div id="rank_slider_16" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
+		  <tr>
+		    <td>
+		      Databases
+		      <small><em>PODS, SIGMOD, VLDB</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="database" id="field_6" value="1.0">
+		      <div id="rank_slider_6" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+		  
+		  <tr>
+		    <td>
+		      Measurements
+		      <small><em>IMC, SIGMETRICS</em></small>
+		    </td>
+		    <td> 
+		      <input type="hidden" name="metrics" id="field_7" value="1.0">
+		      <div id="rank_slider_7" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+		</tbody>
 
-  <tr>
-    <td> 
-      Human-computer interaction
-      <small><em>CHI, UIST</em></small>
-    </td>
-    <td>
-      <input type="hidden" name="hci" id="field_17" value="1.0">
-      <div id="rank_slider_17" class="slider">
-	<div class="handle"></div>  
-    </td>
-  </tr>
+		<thead>
+		  <tr>
+		    <td colspan="2">
+		      <a onClick="activateAI(); return false;">
+			<b>AI</b>
+		      </a>
+		    </td>
+		  </tr>
+		</thead>
 
-</tbody>
+		<tbody>
+		  <tr>
+		    <td>
+		      Machine learning and data mining
+		      <small><em>ICML, KDD, NIPS</em></small>
+		    </td>
+		    <td> 
+		      <input type="hidden" name="mlmining" id="field_8" value="1.0">
+		      <div id="rank_slider_8" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-</table>
-</div>
-</div>
+		  <tr>
+		    <td>
+		      Artificial intelligence
+		      <small><em>AAAI, IJCAI</em></small>
+		    </td>
+		    <td> 
+		      <input type="hidden" name="ai" id="field_9" value="1.0">
+		      <div id="rank_slider_9" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-<div class="row">
-  <div class="col-xs-6 col-sm-6 col-md-4">
-    <div id="success"></div>
-  </div>
-</div>
-</div>
+		  <tr>
+		    <td> 
+		      Natural language processing
+		      <small><em>ACL, EMNLP, NAACL</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="nlp" id="field_10" value="1.0">
+		      <div id="rank_slider_10" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-</div>
-</form>
+		  <tr>
+		    <td>
+		      The web and information retrieval
+		      <small><em>SIGIR, WWW</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="web" id="field_11" value="1.0">
+		      <div id="rank_slider_11" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
 
-<script src="csrank.js"></script>
+		  <tr>
+		    <td> 
+		      Computer vision
+		      <small><em>CVPR, ICCV</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="vision" id="field_12" value="1.0">
+		      <div id="rank_slider_12" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+		</tbody>
 
-</body>
+		<thead>
+		  <tr>
+		    <td colspan="2">
+		      <a onClick="activateTheory(); return false;">
+			<b>Theory</b>
+		      </a>
+		    </td>
+		  </tr>
+		</thead>
+
+		<tbody>
+		  <tr>
+		    <td>
+		      Theory: algorithms and complexity
+		      <small><em>FOCS, STOC, SODA</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="theory" id="field_13" value="1.0">
+		      <div id="rank_slider_13" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td>
+		      Logic in computing
+		      <small><em>CAV, LICS</em></small>
+		    </td>
+		    <td><input type="hidden" name="logic" id="field_14" value="1.0">
+		      <div id="rank_slider_14" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+		</tbody>
+
+		<thead>
+		  <tr>
+		    <td colspan="2">
+		      <a onClick="activateOthers(); return false;">
+			<b>Other Areas</b>
+		      </a>
+		    </td>
+		  </tr>
+		</thead>
+
+		<tbody>
+		  <tr>
+		    <td>   
+		      Computer architecture
+		      <small><em>ISCA, MICRO</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="arch" id="field_15" value="1.0">
+		      <div id="rank_slider_15" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+
+		  <tr>
+		    <td>
+		      Computer graphics
+		      <small><em>SIGGRAPH, TOG</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="graphics" id="field_16" value="1.0">
+		      <div id="rank_slider_16" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td> 
+		      Human-computer interaction
+		      <small><em>CHI, UIST</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="hci" id="field_17" value="1.0">
+		      <div id="rank_slider_17" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		</tbody>
+
+	      </table>
+	      </div>
+	      </div>
+
+	      <div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-4">
+		  <div id="success"></div>
+		</div>
+	      </div>
+
+      </form>
+      </div>
+      </div>
+      <script src="csrank.js"></script>
+  </body>
 
 </html>
