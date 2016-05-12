@@ -382,6 +382,13 @@ function activateAll() {
     return false;
 }
 
+function activateNone() {
+    for (i = 1; i <= 18; i++) {
+	r[i].setValue(0.0);
+    }
+    return false;
+}
+
 function rank() {
     rankingsInProgress++;
     var form = document.getElementById("rankform");
