@@ -427,8 +427,9 @@ function rank() {
 	    weights["graphics"] = parseFloat($("field_16").value);
 	    weights["hci"]      = parseFloat($("field_17").value);
 	    weights["mobile"]   = parseFloat($("field_18").value);
-	    startyear = parseInt(jQuery("#startyear").find(":selected").text());
-	    endyear = parseInt(jQuery("#endyear").find(":selected").text());
+	    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
+	    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
+	    var display = parseInt(jQuery("#displayPercent").find(":selected").val());
 	    /* First, count the total number of papers in each area. */
 	    for (var r in authors) {
 		var area = authors[r].area;
@@ -447,6 +448,7 @@ function rank() {
 		    areaSum += areacount[a];
 		}
 	    }
+	    console.log(display);
 	    console.log(areaSum);
 	    /* Build the dictionary of departments (and count) to be ranked. */
 	    for (var r in authors) {
@@ -460,9 +462,10 @@ function rank() {
 			univagg[dept] = 0;
 		    }
 		    if (weights[area] > 0) {
-			univagg[dept] += parseInt(count) * (100.0 / areaSum);
-			if (dept === "University of Washington") {
-			    console.log(dept,univagg[dept]);
+			if (display) {
+			    univagg[dept] += parseInt(count) * (100.0 / areaSum);
+			} else {
+			    univagg[dept] += parseInt(count);
 			}
 			if (!(name in visited)) {
 			    visited[name] = true;
@@ -487,10 +490,13 @@ function rank() {
 	        + "<div class=\"row\">"
 		+ "<div class=\"table\">"
 		+ "<table class=\"table-sm table-striped\""
-		+ "id=\"ranking\" valign=\"top\">"
-/* 		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th><th align=\"right\">Count/Faculty</th></tr></thead>" */
-		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>"
-		+ "<tbody>";
+		+ "id=\"ranking\" valign=\"top\">";
+	    if (display) {
+		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>";
+	    } else {
+		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></tr></thead>";
+	    }
+	    s = s + "<tbody>";
 	    if (areaSum > 0) {
 		var i = 0;
 		var oldv = -100;
@@ -503,7 +509,7 @@ function rank() {
 		    if ((ind >= minToRank) && (v != oldv)) {
 			break;
 		    }
-		    if (v < 1) {
+		    if (v === 0.0) {
 			break;
 		    }
 		    if (oldv != v) {
@@ -511,7 +517,11 @@ function rank() {
 		    }
 		    s += "\n<tr><td>" + i + "</td>"; /* rank */
 		    s += "<td>" +  k  + "</td>";     /* institution */
-		    s += "<td align=\"right\">" + Math.floor(10.0 * v) / 10.0  + "%</td>"; /* count */
+		    if (display) {
+			s += "<td align=\"right\">" + Math.floor(10.0 * v) / 10.0  + "%</td>"; /* count */
+		    } else {
+			s += "<td align=\"right\">" + v  + "</td>"; /* count */
+		    }
 		    s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
 		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>"; */
 		    s += "</tr>\n";

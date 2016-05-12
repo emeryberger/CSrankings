@@ -92,6 +92,11 @@
 	      <!-- <input type="button" name="button1" id="button1" value="Recalculate" onclick="rank();"> -->
 	      <input type="button" name="button2" id="button2" value="All On" onclick="activateAll()">
 	      <input type="button" name="button2" id="button2" value="All Off" onclick="activateNone()">
+	      and compute
+	      <select id="displayPercent" name="displayPercent" onchange="rank();" >
+		<option value="0" selected="selected">sum of all pubs</option>
+		<option value="1">average percent of all pubs</option>
+	      </select>
 	    </h3>
 	  </div>
 	</div>
