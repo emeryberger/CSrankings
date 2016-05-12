@@ -461,7 +461,8 @@ function rank() {
 		+ "<div class=\"table\">"
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">"
-		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th><th align=\"right\">Count/Faculty</th></tr></thead>"
+/* 		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th><th align=\"right\">Count/Faculty</th></tr></thead>" */
+		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>"
 		+ "<tbody>";
 	    var i = 0;
 	    var oldv = -100;
@@ -483,7 +484,7 @@ function rank() {
 		s += "<td>" +  k  + "</td>";     /* institution */
 		s += "<td align=\"right\">" + v + "</td>"; /* count */
 		s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
-		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>";
+/*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>"; */
 		s += "</tr>\n";
 		oldv = v;
 	    }
