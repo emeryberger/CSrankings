@@ -483,7 +483,7 @@ function rank() {
 		s += "<td>" +  k  + "</td>";     /* institution */
 		s += "<td align=\"right\">" + v + "</td>"; /* count */
 		s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
-		s += "<td align=\"right\">" + v * 1.0 / univcounts[k]  + "</td>";
+		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>";
 		s += "</tr>\n";
 		oldv = v;
 	    }
