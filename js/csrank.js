@@ -461,7 +461,7 @@ function rank() {
 		+ "<div class=\"table\">"
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">"
-		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty</th><th align=\"right\">Count/Faculty</th></tr></thead>"
+		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th><th align=\"right\">Count/Faculty</th></tr></thead>"
 		+ "<tbody>";
 	    var i = 0;
 	    var oldv = -100;
