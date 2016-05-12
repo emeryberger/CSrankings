@@ -726,6 +726,7 @@ Seth Cooper,Northeastern University,graphics,1,2007
 Seth Cooper,Northeastern University,hci,1,2012
 Seth Cooper,Northeastern University,hci,1,2016
 Hao Li,University of Southern California,opsys,1,2013
+Hao Li,University of Southern California,opsys,1,2015
 Hao Li,University of Southern California,networks,1,2007
 Hao Li,University of Southern California,networks,1,2013
 Hao Li,University of Southern California,ai,1,2016
@@ -749,7 +750,7 @@ Xi Wang,University of Washington,proglang,1,2014
 Xi Wang,University of Washington,proglang,1,2015
 Xi Wang,University of Washington,softeng,1,2009
 Xi Wang,University of Washington,softeng,1,2010
-Xi Wang,University of Washington,opsys,1,2008
+Xi Wang,University of Washington,opsys,2,2008
 Xi Wang,University of Washington,opsys,1,2009
 Xi Wang,University of Washington,opsys,1,2010
 Xi Wang,University of Washington,opsys,1,2011
@@ -1804,6 +1805,7 @@ Daisy Zhe Wang,University of Florida,database,1,2015
 Joseph M. Hellerstein,University of California - Berkeley,opsys,1,2000
 Joseph M. Hellerstein,University of California - Berkeley,opsys,1,2002
 Joseph M. Hellerstein,University of California - Berkeley,opsys,1,2005
+Joseph M. Hellerstein,University of California - Berkeley,opsys,1,2010
 Joseph M. Hellerstein,University of California - Berkeley,networks,2,2005
 Joseph M. Hellerstein,University of California - Berkeley,networks,1,2007
 Joseph M. Hellerstein,University of California - Berkeley,networks,1,2010
@@ -1875,7 +1877,7 @@ Samuel Madden,Massachusetts Institute of Technology,softeng,1,2011
 Samuel Madden,Massachusetts Institute of Technology,opsys,1,2002
 Samuel Madden,Massachusetts Institute of Technology,opsys,1,2007
 Samuel Madden,Massachusetts Institute of Technology,opsys,1,2010
-Samuel Madden,Massachusetts Institute of Technology,opsys,1,2013
+Samuel Madden,Massachusetts Institute of Technology,opsys,3,2013
 Samuel Madden,Massachusetts Institute of Technology,networks,1,2004
 Samuel Madden,Massachusetts Institute of Technology,networks,1,2007
 Samuel Madden,Massachusetts Institute of Technology,networks,1,2009
@@ -2150,6 +2152,7 @@ Walid G. Aref,Purdue University,database,1,2009
 Walid G. Aref,Purdue University,database,1,2010
 Walid G. Aref,Purdue University,database,1,2012
 Walid G. Aref,Purdue University,database,3,2015
+Tim Kraska,Brown University,opsys,1,2013
 Tim Kraska,Brown University,database,1,2007
 Tim Kraska,Brown University,database,2,2008
 Tim Kraska,Brown University,database,2,2009
@@ -2582,6 +2585,7 @@ Juliana Freire,New York University,database,1,2013
 Juliana Freire,New York University,database,1,2014
 Juliana Freire,New York University,web,1,2001
 Juliana Freire,New York University,web,2,2007
+Barzan Mozafari,University of Michigan,opsys,1,2013
 Barzan Mozafari,University of Michigan,database,1,2009
 Barzan Mozafari,University of Michigan,database,2,2010
 Barzan Mozafari,University of Michigan,database,2,2012
@@ -2605,8 +2609,9 @@ Ion Stoica,University of California - Berkeley,opsys,1,2005
 Ion Stoica,University of California - Berkeley,opsys,1,2006
 Ion Stoica,University of California - Berkeley,opsys,2,2008
 Ion Stoica,University of California - Berkeley,opsys,1,2009
-Ion Stoica,University of California - Berkeley,opsys,2,2010
-Ion Stoica,University of California - Berkeley,opsys,2,2013
+Ion Stoica,University of California - Berkeley,opsys,3,2010
+Ion Stoica,University of California - Berkeley,opsys,1,2011
+Ion Stoica,University of California - Berkeley,opsys,4,2013
 Ion Stoica,University of California - Berkeley,opsys,2,2014
 Ion Stoica,University of California - Berkeley,networks,2,2000
 Ion Stoica,University of California - Berkeley,networks,1,2001
@@ -2967,6 +2972,7 @@ Wang-Chien Lee,Pennsylvania State University,web,1,2012
 Wang-Chien Lee,Pennsylvania State University,web,1,2015
 Wang-Chien Lee,Pennsylvania State University,web,1,2016
 Wang-Chien Lee,Pennsylvania State University,mobile,1,2004
+Eric P. Xing,Carnegie Mellon University,opsys,2,2016
 Eric P. Xing,Carnegie Mellon University,mlmining,1,2001
 Eric P. Xing,Carnegie Mellon University,mlmining,2,2002
 Eric P. Xing,Carnegie Mellon University,mlmining,1,2004
@@ -3072,8 +3078,9 @@ Alexandra Meliou,University of Massachusetts - Amherst,database,4,2014
 Alexandra Meliou,University of Massachusetts - Amherst,database,3,2015
 Alexandra Meliou,University of Massachusetts - Amherst,database,1,2016
 Karsten Schwan,Georgia Institute of Technology,opsys,1,2007
+Karsten Schwan,Georgia Institute of Technology,opsys,1,2008
 Karsten Schwan,Georgia Institute of Technology,opsys,1,2012
-Karsten Schwan,Georgia Institute of Technology,opsys,1,2016
+Karsten Schwan,Georgia Institute of Technology,opsys,4,2016
 Karsten Schwan,Georgia Institute of Technology,arch,1,2015
 Karsten Schwan,Georgia Institute of Technology,networks,1,2014
 Karsten Schwan,Georgia Institute of Technology,database,1,2014
@@ -3166,6 +3173,8 @@ Daniel Kifer,Pennsylvania State University,database,1,2013
 Daniel Kifer,Pennsylvania State University,database,1,2014
 Daniel Kifer,Pennsylvania State University,web,1,2010
 Ben Y. Zhao,University of California - Santa Barbara,opsys,1,2000
+Ben Y. Zhao,University of California - Santa Barbara,opsys,1,2006
+Ben Y. Zhao,University of California - Santa Barbara,opsys,1,2009
 Ben Y. Zhao,University of California - Santa Barbara,networks,1,2005
 Ben Y. Zhao,University of California - Santa Barbara,networks,1,2008
 Ben Y. Zhao,University of California - Santa Barbara,networks,1,2009
@@ -3250,6 +3259,7 @@ Avi Silberschatz,Yale University,hci,1,2012
 Randy H. Katz,University of California - Berkeley,softeng,1,2011
 Randy H. Katz,University of California - Berkeley,opsys,1,2008
 Randy H. Katz,University of California - Berkeley,opsys,1,2011
+Randy H. Katz,University of California - Berkeley,opsys,1,2012
 Randy H. Katz,University of California - Berkeley,networks,3,2000
 Randy H. Katz,University of California - Berkeley,networks,2,2002
 Randy H. Katz,University of California - Berkeley,networks,2,2003
@@ -3304,6 +3314,7 @@ Alexander J. Smola,Carnegie Mellon University,vision,1,2007
 Alexander J. Smola,Carnegie Mellon University,vision,1,2008
 Alexander J. Smola,Carnegie Mellon University,vision,1,2015
 Tyson Condie,University of California - Los Angeles,opsys,1,2005
+Tyson Condie,University of California - Los Angeles,opsys,1,2010
 Tyson Condie,University of California - Los Angeles,networks,1,2006
 Tyson Condie,University of California - Los Angeles,networks,1,2010
 Tyson Condie,University of California - Los Angeles,security,1,2006
@@ -3337,13 +3348,13 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2005
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2006
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2007
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,3,2008
-M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2009
+M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2,2009
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2,2010
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2011
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2,2012
-M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2,2013
+M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,3,2013
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2014
-M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1,2015
+M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2,2015
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,1,2001
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,1,2004
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,3,2005
@@ -3358,12 +3369,12 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,metrics,1,2003
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,1,2006
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,1,2008
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,1,2009
-Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,2,2010
-Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,3,2011
-Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,3,2012
-Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,3,2013
+Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,3,2010
+Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,4,2011
+Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,4,2012
+Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,4,2013
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,3,2014
-Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,2,2015
+Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,3,2015
 Nickolai Zeldovich,Massachusetts Institute of Technology,theory,1,2013
 Nickolai Zeldovich,Massachusetts Institute of Technology,networks,1,2005
 Nickolai Zeldovich,Massachusetts Institute of Technology,networks,1,2008
@@ -3522,7 +3533,10 @@ Richard T. Snodgrass,University of Arizona,database,1,2013
 Richard T. Snodgrass,University of Arizona,database,1,2014
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,proglang,1,2008
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,softeng,1,2010
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,2,2008
+Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2006
+Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,4,2008
+Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2012
+Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2013
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,arch,1,2002
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,networks,1,2007
 Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,networks,2,2008
@@ -3654,7 +3668,9 @@ Carlos Guestrin,University of Washington,web,1,2014
 Carlos Guestrin,University of Washington,hci,1,2007
 Rodrigo Fonseca,Brown University,opsys,1,2006
 Rodrigo Fonseca,Brown University,opsys,1,2008
+Rodrigo Fonseca,Brown University,opsys,1,2012
 Rodrigo Fonseca,Brown University,opsys,1,2015
+Rodrigo Fonseca,Brown University,opsys,1,2016
 Rodrigo Fonseca,Brown University,networks,1,2004
 Rodrigo Fonseca,Brown University,networks,2,2005
 Rodrigo Fonseca,Brown University,networks,1,2006
@@ -4470,6 +4486,8 @@ Vivek Srikumar,University of Utah,nlp,1,2011
 Vivek Srikumar,University of Utah,nlp,1,2014
 Vivek Srikumar,University of Utah,vision,1,2012
 Li Zhang,University of Wisconsin - Madison,opsys,1,2010
+Li Zhang,University of Wisconsin - Madison,opsys,1,2014
+Li Zhang,University of Wisconsin - Madison,opsys,1,2016
 Li Zhang,University of Wisconsin - Madison,networks,1,2015
 Li Zhang,University of Wisconsin - Madison,ai,1,2011
 Li Zhang,University of Wisconsin - Madison,ai,1,2015
@@ -4502,6 +4520,8 @@ W. Bruce Croft,University of Massachusetts - Amherst,web,3,2013
 W. Bruce Croft,University of Massachusetts - Amherst,web,3,2014
 W. Bruce Croft,University of Massachusetts - Amherst,web,2,2015
 W. Bruce Croft,University of Massachusetts - Amherst,nlp,1,2011
+Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1,2009
+Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1,2012
 Mahadev Satyanarayanan,Carnegie Mellon University,mobile,2,2003
 Mahadev Satyanarayanan,Carnegie Mellon University,mobile,2,2007
 Mahadev Satyanarayanan,Carnegie Mellon University,mobile,1,2009
@@ -4514,7 +4534,7 @@ Jason Flinn,University of Michigan,opsys,2,2006
 Jason Flinn,University of Michigan,opsys,1,2007
 Jason Flinn,University of Michigan,opsys,1,2008
 Jason Flinn,University of Michigan,opsys,2,2010
-Jason Flinn,University of Michigan,opsys,2,2011
+Jason Flinn,University of Michigan,opsys,3,2011
 Jason Flinn,University of Michigan,opsys,1,2012
 Jason Flinn,University of Michigan,opsys,1,2013
 Jason Flinn,University of Michigan,opsys,2,2014
@@ -4683,6 +4703,7 @@ Romit Roy Choudhury,Duke University,mobile,7,2012
 Romit Roy Choudhury,Duke University,mobile,5,2014
 Romit Roy Choudhury,Duke University,mobile,4,2015
 Tadayoshi Kohno,University of Washington,opsys,1,2010
+Tadayoshi Kohno,University of Washington,opsys,1,2011
 Tadayoshi Kohno,University of Washington,networks,1,2008
 Tadayoshi Kohno,University of Washington,networks,1,2012
 Tadayoshi Kohno,University of Washington,networks,1,2015
@@ -4955,10 +4976,12 @@ Eddie Kohler,Harvard University,opsys,1,2002
 Eddie Kohler,Harvard University,opsys,1,2005
 Eddie Kohler,Harvard University,opsys,1,2006
 Eddie Kohler,Harvard University,opsys,2,2007
-Eddie Kohler,Harvard University,opsys,1,2008
+Eddie Kohler,Harvard University,opsys,2,2008
 Eddie Kohler,Harvard University,opsys,1,2009
+Eddie Kohler,Harvard University,opsys,1,2012
 Eddie Kohler,Harvard University,opsys,2,2013
 Eddie Kohler,Harvard University,opsys,2,2014
+Eddie Kohler,Harvard University,opsys,1,2016
 Eddie Kohler,Harvard University,networks,1,2005
 Eddie Kohler,Harvard University,networks,1,2006
 Eddie Kohler,Harvard University,networks,1,2008
@@ -4974,7 +4997,7 @@ Peter M. Chen,University of Michigan,opsys,2,2005
 Peter M. Chen,University of Michigan,opsys,1,2006
 Peter M. Chen,University of Michigan,opsys,1,2008
 Peter M. Chen,University of Michigan,opsys,1,2010
-Peter M. Chen,University of Michigan,opsys,2,2011
+Peter M. Chen,University of Michigan,opsys,3,2011
 Peter M. Chen,University of Michigan,opsys,1,2013
 Peter M. Chen,University of Michigan,opsys,1,2014
 Peter M. Chen,University of Michigan,opsys,1,2016
@@ -5075,6 +5098,7 @@ James A. Landay,University of Washington,mobile,1,2007
 James A. Landay,University of Washington,mobile,1,2014
 Ryan Newton,Indiana University,networks,1,2009
 Ryan Newton,Indiana University,mobile,1,2008
+Qin Lv,University of Colorado Boulder,opsys,1,2006
 Qin Lv,University of Colorado Boulder,mlmining,1,2012
 Qin Lv,University of Colorado Boulder,database,1,2007
 Qin Lv,University of Colorado Boulder,metrics,1,2002
@@ -5127,6 +5151,9 @@ Luca P. Carloni,Columbia University,mobile,1,2011
 Radu Stoleru,Texas A&M University,networks,1,2006
 Radu Stoleru,Texas A&M University,networks,1,2008
 Radu Stoleru,Texas A&M University,mobile,1,2004
+Xuxian Jiang,North Carolina State University,opsys,1,2009
+Xuxian Jiang,North Carolina State University,opsys,1,2010
+Xuxian Jiang,North Carolina State University,opsys,1,2012
 Xuxian Jiang,North Carolina State University,security,1,2004
 Xuxian Jiang,North Carolina State University,security,1,2006
 Xuxian Jiang,North Carolina State University,security,1,2007
@@ -5139,6 +5166,7 @@ Xuxian Jiang,North Carolina State University,security,3,2013
 Xuxian Jiang,North Carolina State University,security,1,2014
 Xuxian Jiang,North Carolina State University,mobile,1,2012
 Dongyan Xu,Purdue University,softeng,1,2014
+Dongyan Xu,Purdue University,opsys,1,2009
 Dongyan Xu,Purdue University,opsys,1,2015
 Dongyan Xu,Purdue University,opsys,1,2016
 Dongyan Xu,Purdue University,security,1,2004
@@ -5286,6 +5314,8 @@ Bobby Bhattacharjee,University of Maryland - College Park,metrics,1,2011
 Bobby Bhattacharjee,University of Maryland - College Park,mobile,1,2014
 Kang G. Shin,University of Michigan,opsys,1,2001
 Kang G. Shin,University of Michigan,opsys,1,2005
+Kang G. Shin,University of Michigan,opsys,1,2007
+Kang G. Shin,University of Michigan,opsys,1,2015
 Kang G. Shin,University of Michigan,networks,1,2000
 Kang G. Shin,University of Michigan,networks,2,2001
 Kang G. Shin,University of Michigan,networks,4,2002
@@ -5336,7 +5366,9 @@ Steven D. Gribble,University of Washington,opsys,1,2000
 Steven D. Gribble,University of Washington,opsys,2,2002
 Steven D. Gribble,University of Washington,opsys,1,2003
 Steven D. Gribble,University of Washington,opsys,2,2004
+Steven D. Gribble,University of Washington,opsys,1,2009
 Steven D. Gribble,University of Washington,opsys,1,2010
+Steven D. Gribble,University of Washington,opsys,1,2011
 Steven D. Gribble,University of Washington,opsys,1,2013
 Steven D. Gribble,University of Washington,opsys,1,2014
 Steven D. Gribble,University of Washington,networks,1,2003
@@ -5354,6 +5386,7 @@ Henry M. Levy,University of Washington,opsys,1,2002
 Henry M. Levy,University of Washington,opsys,2,2003
 Henry M. Levy,University of Washington,opsys,2,2004
 Henry M. Levy,University of Washington,opsys,1,2010
+Henry M. Levy,University of Washington,opsys,1,2011
 Henry M. Levy,University of Washington,opsys,1,2014
 Henry M. Levy,University of Washington,networks,1,2004
 Henry M. Levy,University of Washington,networks,1,2010
@@ -5397,6 +5430,7 @@ Dan S. Wallach,Rice University,hci,1,2008
 Dan S. Wallach,Rice University,mobile,1,2003
 I. V. Ramakrishnan,State University of New York - Stony Brook,logic,1,2000
 I. V. Ramakrishnan,State University of New York - Stony Brook,logic,1,2001
+I. V. Ramakrishnan,State University of New York - Stony Brook,opsys,1,2016
 I. V. Ramakrishnan,State University of New York - Stony Brook,database,1,2000
 I. V. Ramakrishnan,State University of New York - Stony Brook,web,2,2002
 I. V. Ramakrishnan,State University of New York - Stony Brook,web,1,2004
@@ -5524,8 +5558,10 @@ Guevara Noubir,Northeastern University,security,1,2013
 Guevara Noubir,Northeastern University,security,1,2014
 Guevara Noubir,Northeastern University,security,1,2015
 Guevara Noubir,Northeastern University,mobile,1,2011
+Emin Gün Sirer,Cornell University,opsys,1,2007
 Emin Gün Sirer,Cornell University,opsys,1,2008
 Emin Gün Sirer,Cornell University,opsys,1,2011
+Emin Gün Sirer,Cornell University,opsys,1,2014
 Emin Gün Sirer,Cornell University,networks,2,2004
 Emin Gün Sirer,Cornell University,networks,2,2005
 Emin Gün Sirer,Cornell University,networks,2,2006
@@ -5573,8 +5609,8 @@ Vern Paxson,University of California - Berkeley,mobile,1,2015
 Scott Shenker,University of California - Berkeley,opsys,1,2004
 Scott Shenker,University of California - Berkeley,opsys,1,2006
 Scott Shenker,University of California - Berkeley,opsys,1,2007
-Scott Shenker,University of California - Berkeley,opsys,1,2010
-Scott Shenker,University of California - Berkeley,opsys,1,2013
+Scott Shenker,University of California - Berkeley,opsys,2,2010
+Scott Shenker,University of California - Berkeley,opsys,2,2013
 Scott Shenker,University of California - Berkeley,opsys,1,2015
 Scott Shenker,University of California - Berkeley,theory,3,2000
 Scott Shenker,University of California - Berkeley,networks,2,2000
@@ -5603,6 +5639,7 @@ Scott Shenker,University of California - Berkeley,mobile,1,2003
 Arun Venkataramani,University of Massachusetts - Amherst,opsys,1,2002
 Arun Venkataramani,University of Massachusetts - Amherst,opsys,1,2003
 Arun Venkataramani,University of Massachusetts - Amherst,opsys,1,2006
+Arun Venkataramani,University of Massachusetts - Amherst,opsys,1,2011
 Arun Venkataramani,University of Massachusetts - Amherst,networks,1,2006
 Arun Venkataramani,University of Massachusetts - Amherst,networks,5,2007
 Arun Venkataramani,University of Massachusetts - Amherst,networks,2,2008
@@ -5797,11 +5834,13 @@ Frank Pfenning,Carnegie Mellon University,security,1,2007
 Frank Pfenning,Carnegie Mellon University,security,1,2010
 Frank Pfenning,Carnegie Mellon University,ai,1,2003
 Andreas Haeberlen,University of Pennsylvania,proglang,1,2013
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2006
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2007
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2010
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2011
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2012
 Andreas Haeberlen,University of Pennsylvania,opsys,1,2014
+Andreas Haeberlen,University of Pennsylvania,opsys,1,2015
 Andreas Haeberlen,University of Pennsylvania,networks,1,2005
 Andreas Haeberlen,University of Pennsylvania,networks,1,2006
 Andreas Haeberlen,University of Pennsylvania,networks,1,2008
@@ -5836,6 +5875,7 @@ Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2004
 Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2009
 Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2011
 Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2015
+Martin C. Rinard,Massachusetts Institute of Technology,opsys,1,2016
 Martin C. Rinard,Massachusetts Institute of Technology,security,1,2011
 Martin C. Rinard,Massachusetts Institute of Technology,security,3,2015
 Long Lu,State University of New York - Stony Brook,security,1,2009
@@ -5897,6 +5937,8 @@ Jason Nieh,Columbia University,opsys,1,2009
 Jason Nieh,Columbia University,opsys,2,2011
 Jason Nieh,Columbia University,opsys,1,2013
 Jason Nieh,Columbia University,opsys,2,2014
+Jason Nieh,Columbia University,opsys,2,2015
+Jason Nieh,Columbia University,opsys,1,2016
 Jason Nieh,Columbia University,networks,1,2004
 Jason Nieh,Columbia University,networks,1,2010
 Jason Nieh,Columbia University,security,1,2005
@@ -5977,9 +6019,10 @@ Emmett Witchel,University of Texas - Austin,opsys,1,2005
 Emmett Witchel,University of Texas - Austin,opsys,1,2007
 Emmett Witchel,University of Texas - Austin,opsys,2,2009
 Emmett Witchel,University of Texas - Austin,opsys,2,2011
-Emmett Witchel,University of Texas - Austin,opsys,1,2012
+Emmett Witchel,University of Texas - Austin,opsys,2,2012
 Emmett Witchel,University of Texas - Austin,opsys,2,2013
 Emmett Witchel,University of Texas - Austin,opsys,1,2014
+Emmett Witchel,University of Texas - Austin,opsys,1,2015
 Emmett Witchel,University of Texas - Austin,opsys,2,2016
 Emmett Witchel,University of Texas - Austin,arch,1,2001
 Emmett Witchel,University of Texas - Austin,arch,1,2007
@@ -6056,8 +6099,8 @@ Kevin R. B. Butler,University of Florida,security,3,2014
 Michael Walfish,New York University,opsys,1,2004
 Michael Walfish,New York University,opsys,1,2010
 Michael Walfish,New York University,opsys,1,2011
-Michael Walfish,New York University,opsys,1,2013
-Michael Walfish,New York University,opsys,1,2015
+Michael Walfish,New York University,opsys,2,2013
+Michael Walfish,New York University,opsys,2,2015
 Michael Walfish,New York University,networks,2,2004
 Michael Walfish,New York University,networks,2,2006
 Michael Walfish,New York University,networks,2,2013
@@ -6145,15 +6188,18 @@ Farnam Jahanian,University of Michigan,security,1,2011
 Michael Franz,University of California - Irvine,proglang,1,2001
 Michael Franz,University of California - Irvine,proglang,1,2009
 Michael Franz,University of California - Irvine,proglang,1,2014
+Michael Franz,University of California - Irvine,opsys,1,2009
 Michael Franz,University of California - Irvine,security,1,2013
 Michael Franz,University of California - Irvine,security,1,2014
 Michael Franz,University of California - Irvine,security,5,2015
+Mustaque Ahamad,Georgia Institute of Technology,opsys,1,2008
 Mustaque Ahamad,Georgia Institute of Technology,security,1,2010
 Mustaque Ahamad,Georgia Institute of Technology,security,1,2015
 Mustaque Ahamad,Georgia Institute of Technology,web,1,2006
 David Brumley,Carnegie Mellon University,logic,1,2011
 David Brumley,Carnegie Mellon University,softeng,1,2014
 David Brumley,Carnegie Mellon University,softeng,1,2015
+David Brumley,Carnegie Mellon University,opsys,1,2007
 David Brumley,Carnegie Mellon University,networks,1,2010
 David Brumley,Carnegie Mellon University,security,1,2004
 David Brumley,Carnegie Mellon University,security,3,2006
@@ -6278,7 +6324,7 @@ Haixu Tang,Indiana University,security,2,2009
 Haixu Tang,Indiana University,security,1,2012
 Haixu Tang,Indiana University,security,1,2015
 John Kubiatowicz,University of California - Berkeley,opsys,1,2000
-John Kubiatowicz,University of California - Berkeley,opsys,1,2007
+John Kubiatowicz,University of California - Berkeley,opsys,2,2007
 John Kubiatowicz,University of California - Berkeley,opsys,1,2016
 John Kubiatowicz,University of California - Berkeley,arch,1,2003
 John Kubiatowicz,University of California - Berkeley,arch,1,2006
@@ -6507,8 +6553,9 @@ Michael M. Swift,University of Wisconsin - Madison,opsys,1,2006
 Michael M. Swift,University of Wisconsin - Madison,opsys,1,2008
 Michael M. Swift,University of Wisconsin - Madison,opsys,1,2009
 Michael M. Swift,University of Wisconsin - Madison,opsys,1,2011
-Michael M. Swift,University of Wisconsin - Madison,opsys,4,2012
+Michael M. Swift,University of Wisconsin - Madison,opsys,5,2012
 Michael M. Swift,University of Wisconsin - Madison,opsys,1,2013
+Michael M. Swift,University of Wisconsin - Madison,opsys,1,2014
 Michael M. Swift,University of Wisconsin - Madison,arch,1,2007
 Michael M. Swift,University of Wisconsin - Madison,arch,1,2008
 Michael M. Swift,University of Wisconsin - Madison,arch,1,2012
@@ -6631,6 +6678,7 @@ David B. Johnson,Rice University,security,1,2003
 Alex C. Snoeren,University of California - San Diego,opsys,1,2001
 Alex C. Snoeren,University of California - San Diego,opsys,1,2005
 Alex C. Snoeren,University of California - San Diego,opsys,1,2008
+Alex C. Snoeren,University of California - San Diego,opsys,1,2012
 Alex C. Snoeren,University of California - San Diego,networks,1,2000
 Alex C. Snoeren,University of California - San Diego,networks,1,2001
 Alex C. Snoeren,University of California - San Diego,networks,1,2004
@@ -6711,6 +6759,7 @@ David Mazières,Stanford University,opsys,1,2003
 David Mazières,Stanford University,opsys,1,2004
 David Mazières,Stanford University,opsys,1,2005
 David Mazières,Stanford University,opsys,1,2006
+David Mazières,Stanford University,opsys,1,2011
 David Mazières,Stanford University,opsys,2,2012
 David Mazières,Stanford University,opsys,1,2013
 David Mazières,Stanford University,opsys,1,2014
@@ -6768,6 +6817,7 @@ Lakshminarayanan Subramanian,New York University,metrics,1,2011
 Lakshminarayanan Subramanian,New York University,web,1,2009
 Lakshminarayanan Subramanian,New York University,mobile,1,2014
 Trent Jaeger,Pennsylvania State University,softeng,1,2008
+Trent Jaeger,Pennsylvania State University,opsys,1,2013
 Trent Jaeger,Pennsylvania State University,security,1,2000
 Trent Jaeger,Pennsylvania State University,security,2,2002
 Trent Jaeger,Pennsylvania State University,security,2,2004
@@ -6928,6 +6978,7 @@ Ronald L. Rivest,Massachusetts Institute of Technology,security,1,2010
 Ronald L. Rivest,Massachusetts Institute of Technology,security,1,2011
 Ronald L. Rivest,Massachusetts Institute of Technology,security,1,2012
 Ronald L. Rivest,Massachusetts Institute of Technology,security,1,2013
+Christo Wilson,Northeastern University,opsys,1,2009
 Christo Wilson,Northeastern University,networks,1,2011
 Christo Wilson,Northeastern University,security,1,2010
 Christo Wilson,Northeastern University,web,1,2010
@@ -6965,6 +7016,7 @@ Junfeng Yang,Columbia University,opsys,1,2006
 Junfeng Yang,Columbia University,opsys,2,2010
 Junfeng Yang,Columbia University,opsys,3,2011
 Junfeng Yang,Columbia University,opsys,2,2013
+Junfeng Yang,Columbia University,opsys,1,2014
 Junfeng Yang,Columbia University,opsys,1,2015
 Junfeng Yang,Columbia University,networks,1,2009
 Junfeng Yang,Columbia University,security,1,2003
@@ -7121,6 +7173,7 @@ Luis von Ahn,Carnegie Mellon University,hci,2,2009
 Kai Li,Princeton University,proglang,1,2001
 Kai Li,Princeton University,opsys,1,2000
 Kai Li,Princeton University,opsys,1,2002
+Kai Li,Princeton University,opsys,1,2006
 Kai Li,Princeton University,networks,1,2010
 Kai Li,Princeton University,security,1,2010
 Kai Li,Princeton University,database,1,2007
@@ -7180,8 +7233,11 @@ Augustin Chaintreau,Columbia University,metrics,1,2014
 Augustin Chaintreau,Columbia University,metrics,1,2015
 Augustin Chaintreau,Columbia University,web,1,2016
 Roxana Geambasu,Columbia University,opsys,1,2010
+Roxana Geambasu,Columbia University,opsys,1,2011
 Roxana Geambasu,Columbia University,opsys,1,2012
 Roxana Geambasu,Columbia University,opsys,1,2014
+Roxana Geambasu,Columbia University,opsys,1,2015
+Roxana Geambasu,Columbia University,opsys,1,2016
 Roxana Geambasu,Columbia University,security,1,2009
 Roxana Geambasu,Columbia University,security,1,2015
 Roxana Geambasu,Columbia University,database,1,2007
@@ -7400,7 +7456,8 @@ Robert Morris,Massachusetts Institute of Technology,opsys,1,2005
 Robert Morris,Massachusetts Institute of Technology,opsys,1,2006
 Robert Morris,Massachusetts Institute of Technology,opsys,1,2007
 Robert Morris,Massachusetts Institute of Technology,opsys,1,2008
-Robert Morris,Massachusetts Institute of Technology,opsys,1,2010
+Robert Morris,Massachusetts Institute of Technology,opsys,1,2009
+Robert Morris,Massachusetts Institute of Technology,opsys,2,2010
 Robert Morris,Massachusetts Institute of Technology,opsys,1,2014
 Robert Morris,Massachusetts Institute of Technology,networks,2,2000
 Robert Morris,Massachusetts Institute of Technology,networks,1,2001
@@ -7686,6 +7743,7 @@ Philip Levis,Stanford University,opsys,1,2002
 Philip Levis,Stanford University,opsys,1,2007
 Philip Levis,Stanford University,opsys,1,2008
 Philip Levis,Stanford University,opsys,1,2009
+Philip Levis,Stanford University,opsys,1,2011
 Philip Levis,Stanford University,opsys,1,2012
 Philip Levis,Stanford University,networks,2,2004
 Philip Levis,Stanford University,networks,1,2005
@@ -7698,16 +7756,22 @@ Donald E. Porter,State University of New York - Stony Brook,proglang,1,2007
 Donald E. Porter,State University of New York - Stony Brook,proglang,1,2009
 Donald E. Porter,State University of New York - Stony Brook,opsys,1,2007
 Donald E. Porter,State University of New York - Stony Brook,opsys,1,2009
+Donald E. Porter,State University of New York - Stony Brook,opsys,1,2012
+Donald E. Porter,State University of New York - Stony Brook,opsys,2,2014
 Donald E. Porter,State University of New York - Stony Brook,opsys,1,2015
+Donald E. Porter,State University of New York - Stony Brook,opsys,2,2016
 Donald E. Porter,State University of New York - Stony Brook,arch,1,2007
 Donald E. Porter,State University of New York - Stony Brook,security,1,2007
 Donald E. Porter,State University of New York - Stony Brook,security,1,2011
 Donald E. Porter,State University of New York - Stony Brook,security,1,2014
+Xiaosong Ma,North Carolina State University,opsys,1,2009
 Xiaosong Ma,North Carolina State University,security,1,2000
 Xiaosong Ma,North Carolina State University,metrics,1,2015
 Gregory R. Ganger,Carnegie Mellon University,opsys,4,2000
 Gregory R. Ganger,Carnegie Mellon University,opsys,2,2005
 Gregory R. Ganger,Carnegie Mellon University,opsys,1,2007
+Gregory R. Ganger,Carnegie Mellon University,opsys,1,2012
+Gregory R. Ganger,Carnegie Mellon University,opsys,2,2016
 Gregory R. Ganger,Carnegie Mellon University,networks,1,2009
 Gregory R. Ganger,Carnegie Mellon University,networks,1,2011
 Gregory R. Ganger,Carnegie Mellon University,mlmining,1,2012
@@ -7744,7 +7808,7 @@ Constantine Dovrolis,Georgia Institute of Technology,networks,2,2014
 Constantine Dovrolis,Georgia Institute of Technology,networks,1,2015
 Constantine Dovrolis,Georgia Institute of Technology,metrics,1,2012
 Bhuvan Urgaonkar,Pennsylvania State University,opsys,1,2002
-Bhuvan Urgaonkar,Pennsylvania State University,opsys,1,2009
+Bhuvan Urgaonkar,Pennsylvania State University,opsys,2,2009
 Bhuvan Urgaonkar,Pennsylvania State University,opsys,1,2012
 Bhuvan Urgaonkar,Pennsylvania State University,arch,1,2011
 Bhuvan Urgaonkar,Pennsylvania State University,metrics,1,2005
@@ -7755,6 +7819,7 @@ Bhuvan Urgaonkar,Pennsylvania State University,metrics,1,2013
 Bhuvan Urgaonkar,Pennsylvania State University,web,1,2005
 Anand Sivasubramaniam,Pennsylvania State University,opsys,1,2002
 Anand Sivasubramaniam,Pennsylvania State University,opsys,1,2006
+Anand Sivasubramaniam,Pennsylvania State University,opsys,1,2009
 Anand Sivasubramaniam,Pennsylvania State University,opsys,1,2012
 Anand Sivasubramaniam,Pennsylvania State University,opsys,1,2014
 Anand Sivasubramaniam,Pennsylvania State University,arch,2,2002
@@ -8023,9 +8088,10 @@ Alexandra Kolla,University of Illinois at Urbana-Champaign,networks,1,2014
 Alexandra Kolla,University of Illinois at Urbana-Champaign,metrics,1,2014
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2004
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2006
-Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2007
-Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2011
-Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2012
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,2,2007
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2010
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,2,2011
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,2,2012
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1,2013
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,3,2015
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1,2007
@@ -8068,15 +8134,19 @@ Brad Calder,University of California - San Diego,arch,1,2006
 Brad Calder,University of California - San Diego,networks,1,2004
 Brad Calder,University of California - San Diego,metrics,1,2003
 Kai Shen,University of Rochester,opsys,1,2002
-Kai Shen,University of Rochester,opsys,1,2008
+Kai Shen,University of Rochester,opsys,1,2007
+Kai Shen,University of Rochester,opsys,2,2008
+Kai Shen,University of Rochester,opsys,1,2009
 Kai Shen,University of Rochester,opsys,1,2010
-Kai Shen,University of Rochester,opsys,1,2013
+Kai Shen,University of Rochester,opsys,2,2013
 Kai Shen,University of Rochester,opsys,1,2014
 Kai Shen,University of Rochester,networks,1,2004
 Kai Shen,University of Rochester,networks,3,2005
 Kai Shen,University of Rochester,metrics,1,2012
 Sandhya Dwarkadas,University of Rochester,opsys,1,2008
+Sandhya Dwarkadas,University of Rochester,opsys,1,2009
 Sandhya Dwarkadas,University of Rochester,opsys,1,2013
+Sandhya Dwarkadas,University of Rochester,opsys,1,2016
 Sandhya Dwarkadas,University of Rochester,arch,1,2000
 Sandhya Dwarkadas,University of Rochester,arch,2,2001
 Sandhya Dwarkadas,University of Rochester,arch,2,2002
@@ -8205,6 +8275,7 @@ J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,3,2004
 J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1,2006
 J. Eliot B. Moss,University of Massachusetts - Amherst,opsys,1,2006
 J. Eliot B. Moss,University of Massachusetts - Amherst,metrics,1,2002
+Mor Harchol-Balter,Carnegie Mellon University,opsys,1,2016
 Mor Harchol-Balter,Carnegie Mellon University,arch,1,2010
 Mor Harchol-Balter,Carnegie Mellon University,networks,1,2006
 Mor Harchol-Balter,Carnegie Mellon University,networks,1,2015
@@ -8223,14 +8294,16 @@ Yuanyuan Zhou,University of California - San Diego,softeng,1,2015
 Yuanyuan Zhou,University of California - San Diego,opsys,3,2004
 Yuanyuan Zhou,University of California - San Diego,opsys,2,2005
 Yuanyuan Zhou,University of California - San Diego,opsys,1,2006
-Yuanyuan Zhou,University of California - San Diego,opsys,3,2007
+Yuanyuan Zhou,University of California - San Diego,opsys,4,2007
 Yuanyuan Zhou,University of California - San Diego,opsys,2,2008
-Yuanyuan Zhou,University of California - San Diego,opsys,3,2009
+Yuanyuan Zhou,University of California - San Diego,opsys,4,2009
 Yuanyuan Zhou,University of California - San Diego,opsys,2,2010
 Yuanyuan Zhou,University of California - San Diego,opsys,2,2011
 Yuanyuan Zhou,University of California - San Diego,opsys,1,2012
 Yuanyuan Zhou,University of California - San Diego,opsys,1,2013
 Yuanyuan Zhou,University of California - San Diego,opsys,1,2014
+Yuanyuan Zhou,University of California - San Diego,opsys,1,2015
+Yuanyuan Zhou,University of California - San Diego,opsys,1,2016
 Yuanyuan Zhou,University of California - San Diego,arch,2,2004
 Yuanyuan Zhou,University of California - San Diego,arch,1,2005
 Yuanyuan Zhou,University of California - San Diego,arch,2,2006
@@ -8238,6 +8311,7 @@ Yuanyuan Zhou,University of California - San Diego,arch,1,2011
 Yuanyuan Zhou,University of California - San Diego,networks,2,2013
 Yuanyuan Zhou,University of California - San Diego,security,1,2008
 Yuanyuan Zhou,University of California - San Diego,metrics,1,2005
+Moses Charikar,Princeton University,opsys,1,2006
 Moses Charikar,Princeton University,theory,2,2000
 Moses Charikar,Princeton University,theory,2,2001
 Moses Charikar,Princeton University,theory,3,2002
@@ -8268,7 +8342,7 @@ Shan Lu,University of Chicago,softeng,1,2014
 Shan Lu,University of Chicago,softeng,1,2015
 Shan Lu,University of Chicago,opsys,1,2004
 Shan Lu,University of Chicago,opsys,2,2006
-Shan Lu,University of Chicago,opsys,2,2007
+Shan Lu,University of Chicago,opsys,3,2007
 Shan Lu,University of Chicago,opsys,1,2008
 Shan Lu,University of Chicago,opsys,2,2009
 Shan Lu,University of Chicago,opsys,1,2010
@@ -8345,7 +8419,8 @@ Mihalis Yannakakis,Columbia University,database,1,2001
 Mihalis Yannakakis,Columbia University,metrics,1,2015
 Scott Rixner,Rice University,opsys,1,2000
 Scott Rixner,Rice University,opsys,1,2002
-Scott Rixner,Rice University,opsys,1,2006
+Scott Rixner,Rice University,opsys,2,2006
+Scott Rixner,Rice University,opsys,1,2013
 Scott Rixner,Rice University,opsys,1,2016
 Scott Rixner,Rice University,arch,2,2000
 Scott Rixner,Rice University,arch,1,2004
@@ -8464,6 +8539,7 @@ Alexander V. Veidenbaum,University of California - Irvine,arch,2,2008
 Alexander V. Veidenbaum,University of California - Irvine,arch,1,2012
 Alexander V. Veidenbaum,University of California - Irvine,metrics,1,2007
 Ali Raza Butt,Virginia Polytechnic Institute and State University,opsys,1,2004
+Ali Raza Butt,Virginia Polytechnic Institute and State University,opsys,1,2015
 Ali Raza Butt,Virginia Polytechnic Institute and State University,metrics,1,2005
 Milena Mihail,Georgia Institute of Technology,theory,1,2003
 Milena Mihail,Georgia Institute of Technology,theory,1,2006
@@ -8547,6 +8623,7 @@ Nick Roussopoulos,University of Maryland - College Park,database,1,2001
 Nick Roussopoulos,University of Maryland - College Park,database,1,2002
 Nick Roussopoulos,University of Maryland - College Park,database,2,2003
 Nick Roussopoulos,University of Maryland - College Park,database,2,2004
+Calton Pu,Georgia Institute of Technology,opsys,1,2006
 Calton Pu,Georgia Institute of Technology,database,1,2000
 Calton Pu,Georgia Institute of Technology,database,1,2001
 Stan Sclaroff,Boston University,mlmining,1,2001
@@ -8565,6 +8642,7 @@ Stan Sclaroff,Boston University,vision,4,2013
 Stan Sclaroff,Boston University,vision,3,2015
 Maurice Herlihy,Brown University,proglang,1,2006
 Maurice Herlihy,Brown University,proglang,1,2010
+Maurice Herlihy,Brown University,opsys,1,2014
 Maurice Herlihy,Brown University,arch,1,2005
 Maurice Herlihy,Brown University,theory,2,2000
 Maurice Herlihy,Brown University,theory,1,2013
@@ -8788,6 +8866,7 @@ Armando Fox,University of California - Berkeley,softeng,1,2005
 Armando Fox,University of California - Berkeley,opsys,1,2004
 Armando Fox,University of California - Berkeley,opsys,1,2005
 Armando Fox,University of California - Berkeley,opsys,1,2009
+Armando Fox,University of California - Berkeley,opsys,1,2010
 Armando Fox,University of California - Berkeley,networks,2,2004
 Armando Fox,University of California - Berkeley,mlmining,1,2010
 Armando Fox,University of California - Berkeley,database,1,2002
@@ -8814,6 +8893,8 @@ Amin Vahdat,University of California - San Diego,opsys,1,2001
 Amin Vahdat,University of California - San Diego,opsys,2,2002
 Amin Vahdat,University of California - San Diego,opsys,2,2003
 Amin Vahdat,University of California - San Diego,opsys,1,2008
+Amin Vahdat,University of California - San Diego,opsys,1,2012
+Amin Vahdat,University of California - San Diego,opsys,1,2014
 Amin Vahdat,University of California - San Diego,networks,1,2000
 Amin Vahdat,University of California - San Diego,networks,2,2004
 Amin Vahdat,University of California - San Diego,networks,1,2005
@@ -9018,6 +9099,8 @@ Jan Vitek,Northeastern University,proglang,3,2013
 Jan Vitek,Northeastern University,proglang,1,2014
 Jan Vitek,Northeastern University,proglang,1,2016
 Jan Vitek,Northeastern University,softeng,1,2013
+Jan Vitek,Northeastern University,opsys,1,2007
+Jan Vitek,Northeastern University,opsys,1,2010
 Jan Vitek,Northeastern University,security,1,2005
 Robert Bruce Findler,Northwestern University,proglang,1,2001
 Robert Bruce Findler,Northwestern University,proglang,2,2004
@@ -9067,6 +9150,7 @@ Suresh Jagannathan,Purdue University,proglang,2,2013
 Suresh Jagannathan,Purdue University,proglang,1,2014
 Suresh Jagannathan,Purdue University,proglang,2,2015
 Suresh Jagannathan,Purdue University,softeng,1,2007
+Suresh Jagannathan,Purdue University,opsys,1,2007
 Suresh Jagannathan,Purdue University,opsys,1,2010
 Matthew Might,University of Utah,proglang,2,2006
 Matthew Might,University of Utah,proglang,1,2007
@@ -9173,6 +9257,7 @@ Mayur Naik,Georgia Institute of Technology,softeng,1,2010
 Mayur Naik,Georgia Institute of Technology,softeng,1,2012
 Mayur Naik,Georgia Institute of Technology,softeng,1,2013
 Mayur Naik,Georgia Institute of Technology,softeng,2,2015
+Mayur Naik,Georgia Institute of Technology,opsys,1,2011
 Mayur Naik,Georgia Institute of Technology,mlmining,1,2006
 Mayur Naik,Georgia Institute of Technology,mlmining,1,2010
 Mayur Naik,Georgia Institute of Technology,ai,1,2016
@@ -9240,6 +9325,7 @@ Thomas Wies,New York University,logic,1,2009
 Thomas Wies,New York University,logic,1,2013
 Thomas Wies,New York University,logic,1,2014
 Thomas Wies,New York University,softeng,1,2013
+Thomas Wies,New York University,opsys,1,2011
 Umut A. Acar,Carnegie Mellon University,proglang,1,2002
 Umut A. Acar,Carnegie Mellon University,proglang,1,2003
 Umut A. Acar,Carnegie Mellon University,proglang,1,2006
@@ -9495,6 +9581,7 @@ Hongwei Xi,Boston University,proglang,1,2003
 Hongwei Xi,Boston University,logic,1,2000
 Hongwei Xi,Boston University,logic,1,2001
 Stéphane Lafortune,University of Michigan,proglang,1,2009
+Stéphane Lafortune,University of Michigan,opsys,1,2007
 Stéphane Lafortune,University of Michigan,opsys,1,2008
 Emina Torlak,University of Washington,proglang,1,2010
 Emina Torlak,University of Washington,proglang,1,2014
@@ -9549,8 +9636,9 @@ Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2001
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2006
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2007
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2010
-Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2013
+Barbara Liskov,Massachusetts Institute of Technology,opsys,2,2013
 Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2014
+Barbara Liskov,Massachusetts Institute of Technology,opsys,1,2016
 Barbara Liskov,Massachusetts Institute of Technology,networks,2,2004
 Barbara Liskov,Massachusetts Institute of Technology,networks,1,2006
 Barbara Liskov,Massachusetts Institute of Technology,networks,1,2009
@@ -9560,6 +9648,7 @@ Zvonimir Rakamaric,University of Utah,logic,1,2014
 Larry Carter,University of Minnesota - Twin Cities,proglang,2,2003
 Jeanne Ferrante,University of California - San Diego,proglang,2,2003
 Stephen Brookes,Carnegie Mellon University,proglang,1,2014
+Theophilus Benson,Duke University,opsys,1,2016
 Theophilus Benson,Duke University,networks,1,2009
 Theophilus Benson,Duke University,networks,1,2011
 Theophilus Benson,Duke University,networks,1,2015
@@ -9567,12 +9656,14 @@ Larry L. Peterson,University of Arizona,opsys,1,2001
 Larry L. Peterson,University of Arizona,opsys,2,2002
 Larry L. Peterson,University of Arizona,opsys,2,2004
 Larry L. Peterson,University of Arizona,opsys,1,2006
+Larry L. Peterson,University of Arizona,opsys,1,2007
 Larry L. Peterson,University of Arizona,networks,1,2002
 Larry L. Peterson,University of Arizona,networks,1,2003
 Larry L. Peterson,University of Arizona,networks,2,2004
 Larry L. Peterson,University of Arizona,networks,1,2006
 Larry L. Peterson,University of Arizona,networks,1,2009
 Ethan Katz-Bassett,University of Southern California,opsys,1,2013
+Ethan Katz-Bassett,University of Southern California,opsys,1,2014
 Ethan Katz-Bassett,University of Southern California,networks,2,2008
 Ethan Katz-Bassett,University of Southern California,networks,1,2009
 Ethan Katz-Bassett,University of Southern California,networks,1,2012
@@ -9603,6 +9694,8 @@ Sachin Katti,Stanford University,networks,3,2013
 Sachin Katti,Stanford University,networks,3,2014
 Sachin Katti,Stanford University,networks,4,2015
 Hakim Weatherspoon,Cornell University,opsys,1,2000
+Hakim Weatherspoon,Cornell University,opsys,1,2007
+Hakim Weatherspoon,Cornell University,opsys,1,2012
 Hakim Weatherspoon,Cornell University,networks,1,2006
 Hakim Weatherspoon,Cornell University,networks,1,2008
 Hakim Weatherspoon,Cornell University,networks,1,2013
@@ -9637,6 +9730,7 @@ Nick McKeown,Stanford University,networks,1,2012
 Nick McKeown,Stanford University,networks,3,2013
 Nick McKeown,Stanford University,networks,1,2014
 Nick McKeown,Stanford University,networks,1,2015
+Minlan Yu,University of Southern California,opsys,1,2014
 Minlan Yu,University of Southern California,networks,1,2010
 Minlan Yu,University of Southern California,networks,1,2011
 Minlan Yu,University of Southern California,networks,3,2013
@@ -9676,9 +9770,9 @@ Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2005
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2006
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2007
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2008
-Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2011
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2011
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2013
-Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2014
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,3,2014
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2015
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2004
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2005
@@ -9693,9 +9787,9 @@ Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2005
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2006
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2007
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2008
-Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2011
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2011
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2013
-Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2,2014
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,3,2014
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1,2015
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2004
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1,2005
@@ -9738,7 +9832,7 @@ T. S. Eugene Ng,Rice University,networks,2,2015
 Jinyang Li,New York University,opsys,1,2010
 Jinyang Li,New York University,opsys,1,2011
 Jinyang Li,New York University,opsys,1,2013
-Jinyang Li,New York University,opsys,1,2014
+Jinyang Li,New York University,opsys,2,2014
 Jinyang Li,New York University,networks,2,2005
 Jinyang Li,New York University,networks,1,2006
 Jinyang Li,New York University,networks,3,2009
@@ -9757,6 +9851,7 @@ Rajesh Gupta,University of California - San Diego,proglang,1,2012
 Rajesh Gupta,University of California - San Diego,logic,1,2008
 Rajesh Gupta,University of California - San Diego,opsys,1,2013
 Rajesh Gupta,University of California - San Diego,networks,2,2009
+Christopher Stewart,Ohio State University,opsys,1,2007
 Christopher Stewart,Ohio State University,opsys,1,2008
 Christopher Stewart,Ohio State University,networks,1,2005
 Wyatt Lloyd,University of Southern California,opsys,1,2011
@@ -9836,13 +9931,17 @@ Feng Qin,Ohio State University,proglang,1,2011
 Feng Qin,Ohio State University,softeng,1,2007
 Feng Qin,Ohio State University,opsys,1,2005
 Feng Qin,Ohio State University,opsys,1,2006
+Feng Qin,Ohio State University,opsys,1,2009
 Feng Qin,Ohio State University,opsys,1,2011
 Feng Qin,Ohio State University,opsys,1,2014
 Feng Qin,Ohio State University,arch,2,2004
 Feng Qin,Ohio State University,arch,1,2006
 Feng Qin,Ohio State University,networks,1,2013
 Alan L. Cox,Rice University,opsys,1,2002
-Alan L. Cox,Rice University,opsys,1,2016
+Alan L. Cox,Rice University,opsys,1,2007
+Alan L. Cox,Rice University,opsys,1,2013
+Alan L. Cox,Rice University,opsys,1,2015
+Alan L. Cox,Rice University,opsys,2,2016
 Alan L. Cox,Rice University,arch,1,2010
 Alan L. Cox,Rice University,arch,1,2011
 Alan L. Cox,Rice University,networks,1,2006
@@ -9986,6 +10085,7 @@ Dongyoon Lee,Virginia Polytechnic Institute and State University,proglang,1,2012
 Dongyoon Lee,Virginia Polytechnic Institute and State University,softeng,1,2012
 Dongyoon Lee,Virginia Polytechnic Institute and State University,opsys,1,2010
 Dongyoon Lee,Virginia Polytechnic Institute and State University,opsys,1,2011
+Dongyoon Lee,Virginia Polytechnic Institute and State University,opsys,1,2013
 Dongyoon Lee,Virginia Polytechnic Institute and State University,opsys,1,2016
 Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1,2009
 Satish Narayanasamy,University of Michigan,proglang,1,2007
@@ -10639,6 +10739,7 @@ Michael Dinitz,Johns Hopkins University,networks,1,2010
 Patrick Eugster,Purdue University,proglang,1,2009
 Patrick Eugster,Purdue University,proglang,1,2011
 Patrick Eugster,Purdue University,softeng,1,2008
+Patrick Eugster,Purdue University,opsys,1,2014
 Patrick Eugster,Purdue University,networks,1,2014
 Patrick Eugster,Purdue University,networks,1,2015
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,1,2001
@@ -10658,6 +10759,7 @@ Anish Arora,Ohio State University,networks,1,2009
 Anish Arora,Ohio State University,networks,1,2010
 Ananth Grama,Purdue University,proglang,1,2007
 Ananth Grama,Purdue University,softeng,1,2007
+Ananth Grama,Purdue University,opsys,1,2007
 Ananth Grama,Purdue University,networks,1,2003
 Ananth Grama,Purdue University,mlmining,1,2003
 Krishnendu Chakrabarty,Duke University,networks,1,2003
@@ -10702,7 +10804,9 @@ Tim Roughgarden,Stanford University,networks,1,2009
 Tim Roughgarden,Stanford University,mlmining,1,2013
 Tim Roughgarden,Stanford University,mlmining,2,2015
 Tim Roughgarden,Stanford University,ai,1,2011
+Joel I. Seiferas,University of Rochester,opsys,1,2008
 Joel I. Seiferas,University of Rochester,networks,1,2005
+David R. Cheriton,Stanford University,opsys,1,2007
 David R. Cheriton,Stanford University,opsys,1,2012
 David R. Cheriton,Stanford University,opsys,1,2014
 David R. Cheriton,Stanford University,networks,1,2002
@@ -10740,6 +10844,7 @@ Alan S. Willsky,Massachusetts Institute of Technology,vision,1,2000
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1,2005
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1,2007
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1,2010
+Ravi Sundaram,Northeastern University,opsys,1,2013
 Ravi Sundaram,Northeastern University,theory,1,2003
 Ravi Sundaram,Northeastern University,theory,1,2004
 Ravi Sundaram,Northeastern University,theory,1,2005
@@ -12771,6 +12876,19 @@ Jonathan Ullman,Northeastern University,theory,2,2014
 Jonathan Ullman,Northeastern University,theory,1,2015
 Jonathan Ullman,Northeastern University,database,1,2015
 Jeffrey B. Remmel,University of California - San Diego,database,1,2008
+Jonathan Appavoo,Boston University,opsys,1,2006
+Jonathan Appavoo,Boston University,opsys,1,2014
+Nir Shavit,Massachusetts Institute of Technology,opsys,1,2006
+Nir Shavit,Massachusetts Institute of Technology,opsys,1,2014
+Nir Shavit,Massachusetts Institute of Technology,opsys,2,2015
+Nir Shavit,Massachusetts Institute of Technology,theory,1,2005
+Nir Shavit,Massachusetts Institute of Technology,theory,1,2014
+Simon Peter,University of Texas - Austin,opsys,1,2008
+Simon Peter,University of Texas - Austin,opsys,1,2009
+Simon Peter,University of Texas - Austin,opsys,2,2011
+Simon Peter,University of Texas - Austin,opsys,1,2016
+Simon Peter,University of Texas - Austin,networks,1,2013
+Simon Peter,University of Texas - Austin,networks,1,2014
 Lance Fortnow,Georgia Institute of Technology,theory,1,2000
 Lance Fortnow,Georgia Institute of Technology,theory,1,2001
 Lance Fortnow,Georgia Institute of Technology,theory,1,2004
@@ -13142,9 +13260,6 @@ Chris Peikert,Georgia Institute of Technology,theory,2,2008
 Chris Peikert,Georgia Institute of Technology,theory,1,2009
 Chris Peikert,Georgia Institute of Technology,theory,1,2011
 Chris Peikert,Georgia Institute of Technology,theory,1,2013
-Nir Shavit,Massachusetts Institute of Technology,opsys,2,2015
-Nir Shavit,Massachusetts Institute of Technology,theory,1,2005
-Nir Shavit,Massachusetts Institute of Technology,theory,1,2014
 Sanjoy Dasgupta,University of California - San Diego,theory,1,2002
 Sanjoy Dasgupta,University of California - San Diego,theory,1,2008
 Sanjoy Dasgupta,University of California - San Diego,mlmining,3,2001
@@ -13256,11 +13371,6 @@ Wim van Dam,University of California - Santa Barbara,theory,1,2000
 Wim van Dam,University of California - Santa Barbara,theory,1,2001
 Wim van Dam,University of California - Santa Barbara,theory,1,2004
 Wim van Dam,University of California - Santa Barbara,theory,1,2005
-Simon Peter,University of Texas - Austin,opsys,1,2009
-Simon Peter,University of Texas - Austin,opsys,2,2011
-Simon Peter,University of Texas - Austin,opsys,1,2016
-Simon Peter,University of Texas - Austin,networks,1,2013
-Simon Peter,University of Texas - Austin,networks,1,2014
 John Regehr,University of Utah,proglang,1,2007
 John Regehr,University of Utah,proglang,1,2012
 John Regehr,University of Utah,proglang,1,2013
@@ -14443,7 +14553,6 @@ Chris Dwyer,Duke University,opsys,1,2015
 Marios C. Papaefthymiou,University of Michigan,opsys,1,2013
 Donald S. Fussell,University of Texas - Austin,opsys,1,2016
 Donald S. Fussell,University of Texas - Austin,ai,1,2007
-Jonathan Appavoo,Boston University,opsys,1,2014
 Lisa Hsu,Duke University,opsys,1,2014
 Yoav Artzi,Cornell University,nlp,1,2011
 Yoav Artzi,Cornell University,nlp,1,2013
