@@ -429,7 +429,7 @@ function rank() {
 	    weights["mobile"]   = parseFloat($("field_18").value);
 	    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
 	    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
-	    var display = parseInt(jQuery("#displayPercent").find(":selected").val());
+	    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
 	    /* First, count the total number of papers in each area. */
 	    for (var r in authors) {
 		var area = authors[r].area;
@@ -442,14 +442,13 @@ function rank() {
 		    areacount[area] += parseInt(count);
 		}
 	    }
-	    var areaSum = 0;
+	    console.log(areacount["proglang"]);
+	    var areaCount = 0;
 	    for (var a in areacount) {
-		if (weights[a] > 0) {
-		    areaSum += areacount[a];
+		if (weights[a] != 0) {
+		    areaCount += 1; 
 		}
 	    }
-	    console.log(display);
-	    console.log(areaSum);
 	    /* Build the dictionary of departments (and count) to be ranked. */
 	    for (var r in authors) {
 		var name = authors[r].name;
@@ -461,9 +460,9 @@ function rank() {
 		    if (!(dept in univagg)) {
 			univagg[dept] = 0;
 		    }
-		    if (weights[area] > 0) {
-			if (display) {
-			    univagg[dept] += parseInt(count) * (100.0 / areaSum);
+		    if (weights[area] != 0) {
+			if (displayPercentages) {
+			    univagg[dept] += parseFloat(count) / areacount[area];
 			} else {
 			    univagg[dept] += parseInt(count);
 			}
@@ -477,7 +476,9 @@ function rank() {
 		    }
 		}
 	    }
-	    
+
+	    console.log(univagg["University of Washington"]);
+
 	    var s = "<html>"
 		+ "<head>"
 		+ "<title>CS department rankings by productivity</title>"
@@ -491,13 +492,13 @@ function rank() {
 		+ "<div class=\"table\">"
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">";
-	    if (display) {
+	    if (displayPercentages) {
 		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>";
 	    } else {
 		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></tr></thead>";
 	    }
 	    s = s + "<tbody>";
-	    if (areaSum > 0) {
+	    if (areaCount > 0) {
 		var i = 0;
 		var oldv = -100;
 		var keys = Object.keys(univagg);
@@ -517,8 +518,8 @@ function rank() {
 		    }
 		    s += "\n<tr><td>" + i + "</td>"; /* rank */
 		    s += "<td>" +  k  + "</td>";     /* institution */
-		    if (display) {
-			s += "<td align=\"right\">" + Math.floor(10.0 * v) / 10.0  + "%</td>"; /* count */
+		    if (displayPercentages) {
+			s += "<td align=\"right\">" + (Math.floor(v * 100.0) / areaCount).toPrecision(2)  + "%</td>"; /* count */
 		    } else {
 			s += "<td align=\"right\">" + v  + "</td>"; /* count */
 		    }
