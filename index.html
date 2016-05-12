@@ -31,6 +31,10 @@
       color : blue ;
       }
 
+      a.only_these_areas {
+          cursor: pointer;
+      }
+
       div.slider { width:30px; margin:10px 0; background-color:#ccc; height:12px; position: relative; }
       div.slider div.handle { width:15px; height:12px; background-color:#000; cursor:move; position: absolute; }
       div#zoom_element { width:10px; height:10px; background:#2d86bd; position:relative; }
@@ -102,7 +106,7 @@
 		  <tr>
 		    <th colspan="2">
 			<p>Programming Languages
-			<a onClick="activatePL(); return false;">
+			<a class="only_these_areas" onClick="activatePL(); return false;">
 			  [only these areas]
 			</a>
 			</p>
@@ -142,7 +146,7 @@
 		  <tr>
 		    <th colspan="2">
 			<p>Systems
-			<a onClick="activateSystems(); return false;">
+			<a class="only_these_areas" onClick="activateSystems(); return false;">
 			  [only these areas]
 			</a>
 			</p>
@@ -229,7 +233,7 @@
 		  <tr>
 		    <th colspan="2">
 		      <p>AI
-		      <a onClick="activateAI(); return false;">
+		      <a class="only_these_areas" onClick="activateAI(); return false;">
 			[only these areas]
 		      </a>
 		      </p>
@@ -303,7 +307,7 @@
 		  <tr>
 		    <th colspan="2">
 		      <p>Theory
-		      <a onClick="activateTheory(); return false;">
+		      <a class="only_these_areas" onClick="activateTheory(); return false;">
 			[only these areas]
 		      </a>
 		      </p>
@@ -340,7 +344,7 @@
 		  <tr>
 		    <th colspan="2">
 			<p>Other Areas
-			<a onClick="activateOthers(); return false;">
+			<a class="only_these_areas" onClick="activateOthers(); return false;">
 			  [only these areas]
 			</a>
 			</p>
