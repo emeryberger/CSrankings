@@ -400,12 +400,15 @@ function rank() {
     var univwww = {}; /* (university, web page) */
     var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
     var authors = {};
+    var weights = {};
+
+    var areacount = {};
+    
     Papa.parse("generated-author-info.csv", {
 	download : true,
 	header : true,
 	complete: function(results) {
 	    authors = results.data;
-	    weights = {};
 	    weights["proglang"] = parseFloat($("field_1").value);
 	    weights["softeng"]  = parseFloat($("field_2").value);
 	    weights["opsys"]    = parseFloat($("field_3").value);
@@ -426,6 +429,26 @@ function rank() {
 	    weights["mobile"]   = parseFloat($("field_18").value);
 	    startyear = parseInt(jQuery("#startyear").find(":selected").text());
 	    endyear = parseInt(jQuery("#endyear").find(":selected").text());
+	    /* First, count the total number of papers in each area. */
+	    for (var r in authors) {
+		var area = authors[r].area;
+		var count = authors[r].count;
+		var year = authors[r].year;
+		if ((year >= startyear) && (year <= endyear)) {
+		    if (!(area in areacount)) {
+			areacount[area] = 0;
+		    }
+		    areacount[area] += parseInt(count);
+		}
+	    }
+	    var areaSum = 0;
+	    for (var a in areacount) {
+		if (weights[a] > 0) {
+		    areaSum += areacount[a];
+		}
+	    }
+	    console.log(areaSum);
+	    /* Build the dictionary of departments (and count) to be ranked. */
 	    for (var r in authors) {
 		var name = authors[r].name;
 		var dept = authors[r].dept;
@@ -436,8 +459,11 @@ function rank() {
 		    if (!(dept in univagg)) {
 			univagg[dept] = 0;
 		    }
-		    univagg[dept] += parseInt(count) * weights[area];
 		    if (weights[area] > 0) {
+			univagg[dept] += parseInt(count) * (100.0 / areaSum);
+			if (dept === "University of Washington") {
+			    console.log(dept,univagg[dept]);
+			}
 			if (!(name in visited)) {
 			    visited[name] = true;
 			    if (!(dept in univcounts)) {
@@ -448,6 +474,7 @@ function rank() {
 		    }
 		}
 	    }
+	    
 	    var s = "<html>"
 		+ "<head>"
 		+ "<title>CS department rankings by productivity</title>"
@@ -462,34 +489,39 @@ function rank() {
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">"
 /* 		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th><th align=\"right\">Count/Faculty</th></tr></thead>" */
-		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>"
+		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>"
 		+ "<tbody>";
-	    var i = 0;
-	    var oldv = -100;
-	    var keys = Object.keys(univagg);
-	    keys.sort(function(a,b){return univagg[b] - univagg[a];});
-	    for (ind = 0; ind < keys.length; ind++) {
-		var k = keys[ind];
-		var v = univagg[k];
-		if ((ind >= minToRank) && (v != oldv)) {
-		    break;
+	    if (areaSum > 0) {
+		var i = 0;
+		var oldv = -100;
+		var keys = Object.keys(univagg);
+		keys.sort(function(a,b){return univagg[b] - univagg[a];});
+		
+		for (ind = 0; ind < keys.length; ind++) {
+		    var k = keys[ind];
+		    var v = univagg[k];
+		    if ((ind >= minToRank) && (v != oldv)) {
+			break;
+		    }
+		    if (v < 1) {
+			break;
+		    }
+		    if (oldv != v) {
+			i = i + 1;
+		    }
+		    s += "\n<tr><td>" + i + "</td>"; /* rank */
+		    s += "<td>" +  k  + "</td>";     /* institution */
+		    s += "<td align=\"right\">" + Math.floor(10.0 * v) / 10.0  + "%</td>"; /* count */
+		    s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
+		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>"; */
+		    s += "</tr>\n";
+		    oldv = v;
 		}
-		if (v < 1) {
-		    break;
-		}
-		if (oldv != v) {
-		    i = i + 1;
-		}
-		s += "\n<tr><td>" + i + "</td>"; /* rank */
-		s += "<td>" +  k  + "</td>";     /* institution */
-		s += "<td align=\"right\">" + v + "</td>"; /* count */
-		s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
-/*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>"; */
-		s += "</tr>\n";
-		oldv = v;
+		s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
+		s += "<br>" + "</body>" + "</html>";
+	    } else {
+		s = "<h3>Nothing selected.</h3>";
 	    }
-	    s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
-	    s += "<br>" + "</body>" + "</html>";
 	    outputHTML = s;
 	    rankingsInProgress--;
 	    setTimeout(redisplay, 0);
