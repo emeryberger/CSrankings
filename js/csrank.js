@@ -461,7 +461,7 @@ function rank() {
 		+ "<div class=\"table\">"
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">"
-		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty</th></tr></thead>"
+		+ "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Count&nbsp;</th><th align=\"right\">Faculty</th><th align=\"right\">Count/Faculty</th></tr></thead>"
 		+ "<tbody>";
 	    var i = 0;
 	    var oldv = -100;
@@ -479,10 +479,11 @@ function rank() {
 		if (oldv != v) {
 		    i = i + 1;
 		}
-		s += "\n<tr><td>" + i + "</td>";
-		s += "<td>" +  k  + "</td>";
-		s += "<td align=\"right\">" + v + "</td>";
-		s += "<td align=\"right\">" + univcounts[k] + "</td>";
+		s += "\n<tr><td>" + i + "</td>"; /* rank */
+		s += "<td>" +  k  + "</td>";     /* institution */
+		s += "<td align=\"right\">" + v + "</td>"; /* count */
+		s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
+		s += "<td align=\"right\">" + v * 1.0 / univcounts[k]  + "</td>";
 		s += "</tr>\n";
 		oldv = v;
 	    }
