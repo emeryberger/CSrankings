@@ -136,11 +136,11 @@ def csv2dict_str_str(fname):
 def sortdictionary(d):
     return sorted(d.iteritems(), key=operator.itemgetter(1), reverse = True)    
 
-facultydict = csv2dict_str_str('facultydata-abbrv.csv')
+facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
 (intauthors_gl, authscores_gl, authlog_gl) = parseDBLP(facultydict)
 
-f = open('intauthors-all.log','w')
+f = open('generated-author-info.csv','w')
 f.write('"name","dept","area","count","year"\n')
 for k, v in intauthors_gl.items():
     #print k, "@", v
