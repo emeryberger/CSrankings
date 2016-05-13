@@ -306,6 +306,21 @@ function slidersetup()
 					   rank();
 				       }
 				   });
+		r[19] = new Control.Slider(rank_slider[19].down('.handle'),
+				   rank_slider[19], {
+				       range: $R(0, 1),
+				       values: [0,1],
+				       sliderValue: 1,
+				       onSlide: function(value) {
+					   var str = "field_19";
+					   $(str).value = value.toFixed(2);
+				       },
+				       onChange: function(value) {
+					   var str = "field_19";
+					   $(str).value = value.toFixed(2);
+					   rank();
+				       }
+				   });
 	setup = true;
     }
 }
