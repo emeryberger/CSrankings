@@ -54,8 +54,8 @@
 	    <h3 class="panel-title">
 	    Rank by
 	    <select id="displayPercent" name="displayPercent" onchange="rank();" >
-	      <option value="1" selected="selected">percent</option>
-	      <option value="0">sum</option>
+	      <option value="1" selected="selected">average percentage</option>
+	      <option value="0">total count</option>
 	    </select>
 	      of publications in selected areas between
 	      <select onchange="rank();" id="startyear" name="startyear">
@@ -427,8 +427,14 @@
       <p class="lead">
 	These rankings are computed based on publications at top tier venues (currently US only).
       </p>
+      <p>
+	<em>Average percentage</em> computes the mean percentage of total publications in each area, weighing areas evenly.<br />
+	<em>Total count</em> sums all papers published, effectively emphasizing areas with more publications.
+      </p>
+      
       <p class="text-muted">
-	This site was built and is maintained by <a href="http://www.emeryberger.com">Emery Berger</a>, based on code and data originally collected by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
+	This site was built and is maintained by <a href="http://www.emeryberger.com">Emery Berger</a>.<br />
+	Based on code and data originally collected by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
 	The original faculty affiliation dataset was constructed by <a
     href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>.<br />
 	All publication data is from <a href="http://dblp.uni-trier.de/">DBLP</a> (downloaded May 10, 2016).<br />
