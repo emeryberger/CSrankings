@@ -14,51 +14,26 @@ parser = ElementTree.XMLParser(attribute_defaults=True,load_dtd=True)
 # parser.parser.UseForeignDTD(True)
 # parser.entity = CustomEntity()
 
-#conflist = ['STOC', 'FOCS', 'SODA', 'Symposium on Computational Geometry']
-#conflist = ['POPL', 'PLDI']
-
-conf2area = {}
-
-proglang = ['POPL', 'PLDI','OOPSLA']
-logic = ['CAV', 'LICS']
-softeng = ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE']
-opsys = ['SOSP', 'OSDI', 'ASPLOS','EuroSys']
-arch = ['ISCA', 'MICRO']
-theory = ['STOC', 'FOCS']
-networks = ['SIGCOMM', 'INFOCOM', 'NSDI']
-security = ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS']
-mlmining = ['NIPS', 'ICML','KDD']
-ai = ['AAAI', 'IJCAI']
-database = ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference']
-graphics = ['ACM Trans. Graph.', 'SIGGRAPH']
-metrics = ['SIGMETRICS','IMC']
-web = ['WWW', 'SIGIR']
-hci = ['CHI','UIST']
-nlp = ['EMNLP','ACL','NAACL']
-vision = ['CVPR','ICCV']
-mobile = ['MobiSys','MobiCom']
-robotics = ['ICRA','IROS']
-
 areadict = {
-'proglang' : ['POPL', 'PLDI','OOPSLA'],
-'logic' : ['CAV', 'LICS'],
-'softeng' : ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
-'opsys' : ['SOSP', 'OSDI', 'ASPLOS','EuroSys'],
-'arch' : ['ISCA', 'MICRO'],
-'theory' : ['STOC', 'FOCS'],
-'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
-'mlmining' : ['NIPS', 'ICML','KDD'],
-'ai' : ['AAAI', 'IJCAI'],
-'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
-'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
-'metrics' : ['SIGMETRICS','IMC'],
-'web' : ['WWW', 'SIGIR'],
-'hci' : ['CHI','UIST'],
-'nlp' : ['EMNLP','ACL','NAACL'],
-'vision' : ['CVPR','ICCV'],
-'mobile' : ['MobiSys','MobiCom'],
-'robotics' : ['ICRA','IROS']
+    'proglang' : ['POPL', 'PLDI','OOPSLA'],
+    'logic' : ['CAV', 'LICS'],
+    'softeng' : ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+    'opsys' : ['SOSP', 'OSDI', 'ASPLOS','EuroSys'],
+    'arch' : ['ISCA', 'MICRO'],
+    'theory' : ['STOC', 'FOCS'],
+    'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
+    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
+    'mlmining' : ['NIPS', 'ICML','KDD'],
+    'ai' : ['AAAI', 'IJCAI'],
+    'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
+    'metrics' : ['SIGMETRICS','IMC'],
+    'web' : ['WWW', 'SIGIR'],
+    'hci' : ['CHI','UIST'],
+    'nlp' : ['EMNLP','ACL','NAACL'],
+    'vision' : ['CVPR','ICCV'],
+    'mobile' : ['MobiSys','MobiCom'],
+    'robotics' : ['ICRA','IROS']
 }
 
 confdict = {}
@@ -66,13 +41,10 @@ for k, v in areadict.items():
     for item in v:
         confdict[item] = k
 
-print confdict
-    
-allconf = proglang + logic + softeng + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision + mobile + robotics
+arealist = areadict.keys();
+
 startyear = 2000
 endyear = 2016
-
-arealist = ['proglang','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision','mobile','robotics']
 
    
 def conf2area(confname):
@@ -88,7 +60,7 @@ def parseDBLP(facultydict):
             if (node.tag == 'inproceedings' or node.tag == 'article'):
                 flag = False
                 for child in node:
-                    cond = (child.tag == 'booktitle' or child.tag == 'journal') and (child.text in allconf)
+                    cond = (child.tag == 'booktitle' or child.tag == 'journal') and (child.text in confdict)
                     if (cond):
                         flag = True
                         confname = child.text
