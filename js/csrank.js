@@ -3,6 +3,7 @@ var setup = false;
 var outputHTML = "";
 var rankingsInProgress = 0;
 var minToRank = 30;
+var totalSliders = 19;
 
 function redisplay() {
     jQuery("#success").html(outputHTML);
@@ -14,7 +15,7 @@ function slidersetup()
 	var rank_slider = [];
 	var str = 'rank_slider_';
 
-	for (i = 1; i <= 18; i++) {
+	for (i = 1; i <= totalSliders; i++) {
 	    rank_slider[i] = $(str.concat(i.toString()));
 	}
 
@@ -335,6 +336,7 @@ function activateSystems() {
     for (i = 8; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
+    r[totalSliders].setValue(0.0);
     return false;
 }
 
@@ -345,7 +347,7 @@ function activateAI() {
     for (i = 8; i <= 12; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 13; i <= 18; i++) {
+    for (i = 13; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -358,7 +360,7 @@ function activateTheory() {
     for (i = 13; i <= 14; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 15; i <= 18; i++) {
+    for (i = 15; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -372,18 +374,19 @@ function activateOthers() {
     for (i = 15; i <= 17; i++) {
 	r[i].setValue(1.0);
     }
+    r[totalSliders].setValue(1.0);
     return false;
 }
 
 function activateAll() {
-    for (i = 1; i <= 18; i++) {
+    for (i = 1; i <= totalSliders; i++) {
 	r[i].setValue(1.0);
     }
     return false;
 }
 
 function activateNone() {
-    for (i = 1; i <= 18; i++) {
+    for (i = 1; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -427,6 +430,7 @@ function rank() {
 	    weights["graphics"] = parseFloat($("field_16").value);
 	    weights["hci"]      = parseFloat($("field_17").value);
 	    weights["mobile"]   = parseFloat($("field_18").value);
+	    weights["robotics"]   = parseFloat($("field_19").value);
 	    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
 	    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
 	    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
