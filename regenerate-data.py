@@ -17,6 +17,8 @@ parser = ElementTree.XMLParser(attribute_defaults=True,load_dtd=True)
 #conflist = ['STOC', 'FOCS', 'SODA', 'Symposium on Computational Geometry']
 #conflist = ['POPL', 'PLDI']
 
+conf2area = {}
+
 proglang = ['POPL', 'PLDI','OOPSLA']
 logic = ['CAV', 'LICS']
 softeng = ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE']
@@ -35,52 +37,46 @@ hci = ['CHI','UIST']
 nlp = ['EMNLP','ACL','NAACL']
 vision = ['CVPR','ICCV']
 mobile = ['MobiSys','MobiCom']
+robotics = ['ICRA','IROS']
 
-allconf = proglang + logic + softeng + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision + mobile
+areadict = {
+'proglang' : ['POPL', 'PLDI','OOPSLA'],
+'logic' : ['CAV', 'LICS'],
+'softeng' : ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+'opsys' : ['SOSP', 'OSDI', 'ASPLOS','EuroSys'],
+'arch' : ['ISCA', 'MICRO'],
+'theory' : ['STOC', 'FOCS'],
+'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
+'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
+'mlmining' : ['NIPS', 'ICML','KDD'],
+'ai' : ['AAAI', 'IJCAI'],
+'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
+'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
+'metrics' : ['SIGMETRICS','IMC'],
+'web' : ['WWW', 'SIGIR'],
+'hci' : ['CHI','UIST'],
+'nlp' : ['EMNLP','ACL','NAACL'],
+'vision' : ['CVPR','ICCV'],
+'mobile' : ['MobiSys','MobiCom'],
+'robotics' : ['ICRA','IROS']
+}
+
+confdict = {}
+for k, v in areadict.items():
+    for item in v:
+        confdict[item] = k
+
+print confdict
+    
+allconf = proglang + logic + softeng + opsys + arch + theory + networks + security + mlmining + ai + database + metrics + web + hci + graphics + nlp + vision + mobile + robotics
 startyear = 2000
 endyear = 2016
 
-arealist = ['proglang','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision','mobile']
+arealist = ['proglang','logic', 'softeng', 'opsys', 'arch', 'theory', 'networks', 'security', 'mlmining', 'ai', 'database', 'graphics', 'metrics', 'web', 'hci', 'nlp', 'vision','mobile','robotics']
 
-
+   
 def conf2area(confname):
-    if (confname in proglang):
-        return 'proglang'
-    if (confname in logic):
-        return 'logic'
-    if (confname in softeng):
-        return 'softeng'
-    if (confname in opsys):
-        return 'opsys'
-    if (confname in arch):
-        return 'arch'
-    if (confname in theory):
-        return 'theory'
-    if (confname in networks):
-        return 'networks'
-    if (confname in security):
-        return 'security'
-    if (confname in mlmining):
-        return 'mlmining'
-    if (confname in ai):
-        return 'ai'
-    if (confname in database):
-        return 'database'
-    if (confname in graphics):
-        return 'graphics'
-    if (confname in metrics):
-        return 'metrics'
-    if (confname in web):
-        return 'web'
-    if (confname in hci):
-        return 'hci'
-    if (confname in nlp):
-        return 'nlp'
-    if (confname in vision):
-        return 'vision'
-    if (confname in mobile):
-        return 'mobile'
-
+    return confdict[confname]
 
 def parseDBLP(facultydict):
     authlogs = {}
