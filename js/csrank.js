@@ -519,7 +519,7 @@ function rank() {
 		    s += "\n<tr><td>" + i + "</td>"; /* rank */
 		    s += "<td>" +  k  + "</td>";     /* institution */
 		    if (displayPercentages) {
-			s += "<td align=\"right\">" + (Math.floor(v * 100.0) / areaCount).toPrecision(2)  + "%</td>"; /* count */
+			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>"; /* count */
 		    } else {
 			s += "<td align=\"right\">" + v  + "</td>"; /* count */
 		    }
