@@ -1,4 +1,5 @@
-from xml.etree.ElementTree import iterparse, XMLParser
+# from xml.etree.ElementTree import iterparse, XMLParser
+from lxml import etree as ElementTree
 import htmlentitydefs
 import csv
 import operator
@@ -9,9 +10,9 @@ class CustomEntity:
     def __getitem__(self, key):
         return unichr(htmlentitydefs.name2codepoint[key])
 
-parser = XMLParser()
-parser.parser.UseForeignDTD(True)
-parser.entity = CustomEntity()
+parser = ElementTree.XMLParser(attribute_defaults=True,load_dtd=True)
+# parser.parser.UseForeignDTD(True)
+# parser.entity = CustomEntity()
 
 #conflist = ['STOC', 'FOCS', 'SODA', 'Symposium on Computational Geometry']
 #conflist = ['POPL', 'PLDI']
@@ -87,7 +88,7 @@ def parseDBLP(facultydict):
     authorscores = {}
 
     with gzip.open('dblp.xml.gz') as f:
-        for (event, node) in iterparse(f, events=['start', 'end'], parser=parser):
+        for (event, node) in ElementTree.iterparse(f, events=['start', 'end']):
             if (node.tag == 'inproceedings' or node.tag == 'article'):
                 flag = False
                 for child in node:
