@@ -4,6 +4,7 @@ var outputHTML = "";
 var rankingsInProgress = 0;
 var minToRank = 30;
 var totalSliders = 19;
+var maxHoverFaculty = 20; /* If more than this many, don't create a hover tip. */
 
 function redisplay() {
     jQuery("#success").html(outputHTML);
@@ -502,11 +503,16 @@ function rank() {
 		}
 	    }
 	    for (dept in univnames) {
-		var s = "";
-		for (var name of univnames[dept]) {
-		    s += name + ": " + facultycount[name+dept] + "\n";
+		if (univcounts[dept] <= maxHoverFaculty) {
+		    var s = "";
+		    univnames[dept].sort();
+		    for (var name of univnames[dept]) {
+			s += "\n" + name + ": " + facultycount[name+dept];
+		    }
+		    univnames[dept] = s.slice(1);
+		} else {
+		    univnames[dept] = "(too many faculty to display)";
 		}
-		univnames[dept] = s;
 	    }
 
 	    var s = "<html>"
