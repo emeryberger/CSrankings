@@ -355,67 +355,6 @@ function init() {
 
 window.onload=init;
 
-function activatePL() {
-    r[1].setValue(1.0);
-    r[2].setValue(1.0);
-    for (var i = 3; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
-    }
-    return false;
-}
-
-function activateSystems() {
-    r[1].setValue(0.0);
-    r[2].setValue(0.0);
-    for (var i = 3; i <= 7; i++) {
-	r[i].setValue(1.0);
-    }
-    for (var i = 8; i <= 17; i++) {
-	r[i].setValue(0.0);
-    }
-    r[18].setValue(1.0);
-    r[totalSliders].setValue(0.0);
-    return false;
-}
-
-function activateAI() {
-    for (var i = 1; i <= 7; i++) {
-	r[i].setValue(0.0);
-    }
-    for (var i = 8; i <= 12; i++) {
-	r[i].setValue(1.0);
-    }
-    for (var i = 13; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
-    }
-    return false;
-}
-
-function activateTheory() {
-    for (var i = 1; i <= 12; i++) {
-	r[i].setValue(0.0);
-    }
-    for (var i = 13; i <= 14; i++) {
-	r[i].setValue(1.0);
-    }
-    for (var i = 15; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
-    }
-    return false;
-}
-
-function activateOthers() {
-    for (var i = 1; i <= 14; i++) {
-	r[i].setValue(0.0);
-    }
-    for (var i = 15; i <= 17; i++) {
-	r[i].setValue(1.0);
-    }
-    r[18].setValue(0.0);
-    r[totalSliders].setValue(1.0);
-    return false;
-}
-
 function activateAll() {
     for (var i = 1; i <= totalSliders; i++) {
 	r[i].setValue(1.0);
@@ -427,6 +366,162 @@ function activateNone() {
     for (var i = 1; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
+    return false;
+}
+
+function activatePL() {
+    r[1].setValue(1.0);
+    r[2].setValue(1.0);
+/*
+    for (var i = 3; i <= totalSliders; i++) {
+	r[i].setValue(0.0);
+    }
+*/
+    return false;
+}
+
+function activateSystems() {
+/*
+    r[1].setValue(0.0);
+    r[2].setValue(0.0);
+*/
+    for (var i = 3; i <= 7; i++) {
+	r[i].setValue(1.0);
+    }
+    r[18].setValue(1.0);
+/*
+    for (var i = 8; i <= 17; i++) {
+	r[i].setValue(0.0);
+    }
+    r[totalSliders].setValue(0.0);
+*/
+    return false;
+}
+
+function activateAI() {
+/*
+    for (var i = 1; i <= 7; i++) {
+	r[i].setValue(0.0);
+    }
+*/
+    for (var i = 8; i <= 12; i++) {
+	r[i].setValue(1.0);
+    }
+/*
+  for (var i = 13; i <= totalSliders; i++) {
+	r[i].setValue(0.0);
+    }
+*/
+    return false;
+}
+
+function activateTheory() {
+    /*
+    for (var i = 1; i <= 12; i++) {
+	r[i].setValue(0.0);
+    }
+    */
+    
+    for (var i = 13; i <= 14; i++) {
+	r[i].setValue(1.0);
+    }
+    /*
+    for (var i = 15; i <= totalSliders; i++) {
+	r[i].setValue(0.0);
+    }
+    */
+    return false;
+}
+
+function activateOthers() {
+    /*
+    for (var i = 1; i <= 14; i++) {
+	r[i].setValue(0.0);
+    }
+    */
+    for (var i = 15; i <= 17; i++) {
+	r[i].setValue(1.0);
+    }
+    r[totalSliders].setValue(1.0);
+    /*    r[18].setValue(0.0); */
+    return false;
+}
+
+function deactivatePL() {
+    r[1].setValue(0.0);
+    r[2].setValue(0.0);
+/*
+    for (var i = 3; i <= totalSliders; i++) {
+	r[i].setValue(0.0);
+    }
+*/
+    return false;
+}
+
+function deactivateSystems() {
+/*
+    r[1].setValue(0.0);
+    r[2].setValue(0.0);
+*/
+    for (var i = 3; i <= 7; i++) {
+	r[i].setValue(0.0);
+    }
+    r[18].setValue(0.0);
+/*
+    for (var i = 8; i <= 17; i++) {
+	r[i].setValue(0.0);
+    }
+    r[totalSliders].setValue(0.0);
+*/
+    return false;
+}
+
+function deactivateAI() {
+/*
+    for (var i = 1; i <= 7; i++) {
+	r[i].setValue(0.0);
+    }
+*/
+    for (var i = 8; i <= 12; i++) {
+	r[i].setValue(0.0);
+    }
+/*
+  for (var i = 13; i <= totalSliders; i++) {
+	r[i].setValue(0.0);
+    }
+*/
+    return false;
+}
+
+function deactivateTheory() {
+    /*
+    for (var i = 1; i <= 12; i++) {
+	r[i].setValue(0.0);
+    }
+    */
+    
+    for (var i = 13; i <= 14; i++) {
+	r[i].setValue(0.0);
+    }
+    /*
+    for (var i = 15; i <= totalSliders; i++) {
+	r[i].setValue(0.0);
+    }
+    */
+    return false;
+}
+
+function deactivateOthers() {
+    /*
+    for (var i = 1; i <= 14; i++) {
+	r[i].setValue(0.0);
+    }
+    */
+    for (var i = 15; i <= 17; i++) {
+	r[i].setValue(0.0);
+    }
+    r[totalSliders].setValue(0.0);
+    /*    r[18].setValue(0.0); */
     return false;
 }
 
