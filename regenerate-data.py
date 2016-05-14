@@ -76,7 +76,7 @@ def parseDBLP(facultydict):
                                 yflagfortrace = int(child.text)
                             break
                 if(flag):
-                    # Count up how many faculty are on this paper.
+                    # Count up how many faculty from our list are on this paper.
                     authorsOnPaper = 0
                     for child in node:
                         if(child.tag == 'author'):
@@ -84,24 +84,26 @@ def parseDBLP(facultydict):
                             #print "Author: ", authname
                             if (authname in facultydict):
                                 authorsOnPaper += 1
-                                
-                    for child in node:
-                        if(child.tag == 'author'):
-                            authname = child.text
-                            #print "Author: ", authname
-                            if (authname in facultydict):
-                                #print "Found prof author: ", authname
-                                if (False):
-                                    logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
-                                    tmplist = authlogs.get(authname,[])
-                                    tmplist.append(logstring)
-                                    authlogs[authname] = tmplist
-                                # if (confname in relevantconf):
-                                interestingauthors[authname] = interestingauthors.get(authname,0) + 1
-                                areaname = conf2area(confname)
-                                authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1.0
-                                authorscoresAdjusted[(authname,areaname,yflagfortrace)] = authorscoresAdjusted.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
-                                #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
+                                flag = True
+
+                    if (flag):
+                        areaname = conf2area(confname)
+                        for child in node:
+                            if(child.tag == 'author'):
+                                authname = child.text
+                                #print "Author: ", authname
+                                if (authname in facultydict):
+                                    #print "Found prof author: ", authname
+                                    if (False):
+                                        logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
+                                        tmplist = authlogs.get(authname,[])
+                                        tmplist.append(logstring)
+                                        authlogs[authname] = tmplist
+                                        # if (confname in relevantconf):
+                                    interestingauthors[authname] = interestingauthors.get(authname,0) + 1
+                                    authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1.0
+                                    authorscoresAdjusted[(authname,areaname,yflagfortrace)] = authorscoresAdjusted.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
+                                    #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
             node.clear()
     # return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
     return (interestingauthors, authorscores, authorscoresAdjusted)
