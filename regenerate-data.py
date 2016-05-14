@@ -79,7 +79,7 @@ def parseDBLP(facultydict):
                         if(child.tag == 'author'):
                             authname = child.text
                             #print "Author: ", authname
-                            if (facultydict.has_key(authname)):
+                            if (authname in facultydict):
                                 #print "Found prof author: ", authname
                                 logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
                                 tmplist = authlogs.get(authname,[])
