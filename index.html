@@ -110,13 +110,86 @@
 	  <div class="col-xs-12 col-sm-6 col-md-6">
 	    <div class="table">
 	      <table class="table-sm">
+
+
+		<thead>
+		  <tr>
+		    <th colspan="2">
+		      <p>AI
+			[<a class="only_these_areas" onClick="deactivateAI(); return false;">off</a> / <a class="only_these_areas" onClick="activateAI(); return false;">on</a>]
+		      </p>
+		    </th>
+		  </tr>
+		</thead>
+
+		<tbody>
+		  <tr>
+		    <td>
+		      Machine learning and data mining
+		      <small><em>ICML, KDD, NIPS</em></small>
+		    </td>
+		    <td> 
+		      <input type="hidden" name="mlmining" id="field_8" value="1.0">
+		      <div id="rank_slider_8" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td>
+		      Artificial intelligence
+		      <small><em>AAAI, IJCAI</em></small>
+		    </td>
+		    <td> 
+		      <input type="hidden" name="ai" id="field_9" value="1.0">
+		      <div id="rank_slider_9" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td> 
+		      Natural language processing
+		      <small><em>ACL, EMNLP, NAACL</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="nlp" id="field_10" value="1.0">
+		      <div id="rank_slider_10" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td>
+		      The web and information retrieval
+		      <small><em>SIGIR, WWW</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="web" id="field_11" value="1.0">
+		      <div id="rank_slider_11" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td> 
+		      Computer vision
+		      <small><em>CVPR, ICCV</em></small>
+		    </td>
+		    <td>
+		      <input type="hidden" name="vision" id="field_12" value="1.0">
+		      <div id="rank_slider_12" class="slider">
+			<div class="handle"></div>  
+		    </td>
+		  </tr>
+		</tbody>
+
+		
 		<thead>
 		  <tr>
 		    <th colspan="2">
 			<p>Programming Languages
-			<a class="only_these_areas" onClick="activatePL(); return false;">
-			  [only these areas]
-			</a>
+			[<a class="only_these_areas" onClick="deactivatePL(); return false;">off</a> / <a class="only_these_areas" onClick="activatePL(); return false;">on</a>]
 			</p>
 		    </th>
 		  </tr>
@@ -154,9 +227,7 @@
 		  <tr>
 		    <th colspan="2">
 			<p>Systems
-			<a class="only_these_areas" onClick="activateSystems(); return false;">
-			  [only these areas]
-			</a>
+			[<a class="only_these_areas" onClick="deactivateSystems(); return false;">off</a> / <a class="only_these_areas" onClick="activateSystems(); return false;">on</a>]
 			</p>
 		    </th>
 		  </tr>
@@ -240,84 +311,8 @@
 		<thead>
 		  <tr>
 		    <th colspan="2">
-		      <p>AI
-		      <a class="only_these_areas" onClick="activateAI(); return false;">
-			[only these areas]
-		      </a>
-		      </p>
-		    </th>
-		  </tr>
-		</thead>
-
-		<tbody>
-		  <tr>
-		    <td>
-		      Machine learning and data mining
-		      <small><em>ICML, KDD, NIPS</em></small>
-		    </td>
-		    <td> 
-		      <input type="hidden" name="mlmining" id="field_8" value="1.0">
-		      <div id="rank_slider_8" class="slider">
-			<div class="handle"></div>  
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td>
-		      Artificial intelligence
-		      <small><em>AAAI, IJCAI</em></small>
-		    </td>
-		    <td> 
-		      <input type="hidden" name="ai" id="field_9" value="1.0">
-		      <div id="rank_slider_9" class="slider">
-			<div class="handle"></div>  
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td> 
-		      Natural language processing
-		      <small><em>ACL, EMNLP, NAACL</em></small>
-		    </td>
-		    <td>
-		      <input type="hidden" name="nlp" id="field_10" value="1.0">
-		      <div id="rank_slider_10" class="slider">
-			<div class="handle"></div>  
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td>
-		      The web and information retrieval
-		      <small><em>SIGIR, WWW</em></small>
-		    </td>
-		    <td>
-		      <input type="hidden" name="web" id="field_11" value="1.0">
-		      <div id="rank_slider_11" class="slider">
-			<div class="handle"></div>  
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <td> 
-		      Computer vision
-		      <small><em>CVPR, ICCV</em></small>
-		    </td>
-		    <td>
-		      <input type="hidden" name="vision" id="field_12" value="1.0">
-		      <div id="rank_slider_12" class="slider">
-			<div class="handle"></div>  
-		    </td>
-		  </tr>
-		</tbody>
-
-		<thead>
-		  <tr>
-		    <th colspan="2">
 		      <p>Theory
-		      <a class="only_these_areas" onClick="activateTheory(); return false;">
-			[only these areas]
-		      </a>
+			[<a class="only_these_areas" onClick="deactivateTheory(); return false;">off</a> / <a class="only_these_areas" onClick="activateTheory(); return false;">on</a>]
 		      </p>
 		    </th>
 		  </tr>
@@ -352,9 +347,7 @@
 		  <tr>
 		    <th colspan="2">
 			<p>Other Areas
-			<a class="only_these_areas" onClick="activateOthers(); return false;">
-			  [only these areas]
-			</a>
+			[<a class="only_these_areas" onClick="deactivateOthers(); return false;">off</a> / <a class="only_these_areas" onClick="activateOthers(); return false;">on</a>]
 			</p>
 		    </th>
 		  </tr>
