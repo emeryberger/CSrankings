@@ -54,6 +54,7 @@ def parseDBLP(facultydict):
     authlogs = {}
     interestingauthors = {}
     authorscores = {}
+    authorscoresAdjusted = {}
 
     with gzip.open('dblp.xml.gz') as f:
         for (event, node) in ElementTree.iterparse(f, events=['start', 'end']):
@@ -90,17 +91,20 @@ def parseDBLP(facultydict):
                             #print "Author: ", authname
                             if (authname in facultydict):
                                 #print "Found prof author: ", authname
-                                logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
-                                tmplist = authlogs.get(authname,[])
-                                tmplist.append(logstring)
-                                authlogs[authname] = tmplist
+                                if (false):
+                                    logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
+                                    tmplist = authlogs.get(authname,[])
+                                    tmplist.append(logstring)
+                                    authlogs[authname] = tmplist
                                 # if (confname in relevantconf):
                                 interestingauthors[authname] = interestingauthors.get(authname,0) + 1
                                 areaname = conf2area(confname)
-                                authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
+                                authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1.0
+                                authorscoresAdjusted[(authname,areaname,yflagfortrace)] = authorscoresAdjusted.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
                                 #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
             node.clear()
-    return (interestingauthors, authorscores, authlogs)
+    # return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
+    return (interestingauthors, authorscores, authorscoresAdjusted)
 
 
 def csv2dict_str_str(fname):
@@ -116,40 +120,45 @@ def sortdictionary(d):
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
-(intauthors_gl, authscores_gl, authlog_gl) = parseDBLP(facultydict)
+(intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
+# (intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(facultydict)
 
 f = open('generated-author-info.csv','w')
-f.write('"name","dept","area","count","year"\n')
+f.write('"name","dept","area","count","adjustedcount","year"\n')
 for k, v in intauthors_gl.items():
     #print k, "@", v
     if (v >= 1):
         for area in arealist:
             for year in range(startyear,endyear + 1):
                 if (authscores_gl.has_key((k, area,year))):
-                    m = authscores_gl.get((k,area,year))
+                    count = authscores_gl.get((k,area,year))
+                    countAdjusted = authscoresAdjusted_gl.get((k,area,year))
                     f.write(k.encode('utf-8'))
                     f.write(',')
                     f.write((facultydict[k]).encode('utf-8'))
                     f.write(',')
                     f.write(area)
                     f.write(',')
-                    f.write(str(m))
+                    f.write(str(count))
+                    f.write(',')
+                    f.write(str(countAdjusted))
                     f.write(',')
                     f.write(str(year))
                     f.write('\n')
 f.close()    
 
 
-f = open('rankings-all.log','w')
-for v, l in authlog_gl.items():
-    if intauthors_gl.has_key(v):
-        if (intauthors_gl[v] >= 1):
-            f.write("Papers for " + v.encode('utf-8') + ', ' + (facultydict[v]).encode('utf-8') + "\n")
-            for logstring in l:
-                f.write(logstring)
-                f.write('\n')
-        f.write('\n')
-f.close()
+if (false):
+    f = open('rankings-all.log','w')
+    for v, l in authlog_gl.items():
+        if intauthors_gl.has_key(v):
+            if (intauthors_gl[v] >= 1):
+                f.write("Papers for " + v.encode('utf-8') + ', ' + (facultydict[v]).encode('utf-8') + "\n")
+                for logstring in l:
+                    f.write(logstring)
+                    f.write('\n')
+            f.write('\n')
+    f.close()
 
 
 

@@ -358,7 +358,7 @@ window.onload=init;
 function activatePL() {
     r[1].setValue(1.0);
     r[2].setValue(1.0);
-    for (var i = 3; i <= 18; i++) {
+    for (var i = 3; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -370,10 +370,10 @@ function activateSystems() {
     for (var i = 3; i <= 7; i++) {
 	r[i].setValue(1.0);
     }
-    r[18].setValue(1.0);
     for (var i = 8; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
+    r[18].setValue(1.0);
     r[totalSliders].setValue(0.0);
     return false;
 }
@@ -408,10 +408,10 @@ function activateOthers() {
     for (var i = 1; i <= 14; i++) {
 	r[i].setValue(0.0);
     }
-    r[18].setValue(0.0);
     for (var i = 15; i <= 17; i++) {
 	r[i].setValue(1.0);
     }
+    r[18].setValue(0.0);
     r[totalSliders].setValue(1.0);
     return false;
 }
@@ -497,7 +497,8 @@ function rank() {
 		var name = authors[r].name;
 		var dept = authors[r].dept;
 		var area = authors[r].area;
-		var count = parseFloat(authors[r].count);
+		var count = parseInt(authors[r].count);
+		var adjustedCount = parseFloat(authors[r].adjustedcount);
 		var year = authors[r].year;
 		if ((year >= startyear) && (year <= endyear)) {
 		    if (!(dept in univagg)) {
@@ -505,9 +506,9 @@ function rank() {
 		    }
 		    if (weights[area] != 0) {
 			if (displayPercentages) {
-			    univagg[dept] += (1.0 * count) / areacount[area];
+			    univagg[dept] += (1.0 * adjustedCount) / areacount[area];
 			} else {
-			    univagg[dept] += count;
+			    univagg[dept] += adjustedCount;
 			}
 			/* Is this the first time we have seen this person? */
 			if (!(name in visited)) {
@@ -524,12 +525,13 @@ function rank() {
 		    }
 		}
 	    }
+	    /* Build hover text for faculty names and paper counts. */
 	    for (dept in univnames) {
 		if (univcounts[dept] <= maxHoverFaculty) {
 		    var s = "";
 		    univnames[dept].sort(compareNames);
 		    for (var name of univnames[dept]) {
-			s += "\n" + name + ": " + facultycount[name+dept].toPrecision(2);
+			s += "\n" + name + ": " + facultycount[name+dept];
 		    }
 		    univnames[dept] = s.slice(1);
 		} else {
@@ -585,7 +587,7 @@ function rank() {
 			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
 		    } else {
 			/* Show count */
-			s += "<td align=\"right\">" + (Math.floor(v * 100.0) / 100.0).toPrecision(2)  + "</td>";
+			s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
 		    }
 		    s += "<td align=\"right\">" + "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</td>"; /* number of faculty */
 		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
