@@ -4,7 +4,7 @@ var outputHTML = "";
 var rankingsInProgress = 0;
 var minToRank = 30;
 var totalSliders = 19;
-var maxHoverFaculty = 20; /* If more than this many, don't create a hover tip. */
+var maxHoverFaculty = 30; /* If more than this many, don't create a hover tip. */
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
 function compareNames (a,b) {
