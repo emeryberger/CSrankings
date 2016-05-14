@@ -498,7 +498,7 @@ function rank() {
 			    univnames[dept].push(name);
 			    univcounts[dept] += 1;
 			}
-			facultycount[name+dept] += 1;
+			facultycount[name+dept] += count;
 		    }
 		}
 	    }
