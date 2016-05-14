@@ -6,6 +6,28 @@ var minToRank = 30;
 var totalSliders = 19;
 var maxHoverFaculty = 20; /* If more than this many, don't create a hover tip. */
 
+/* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
+function compareNames (a,b) {
+
+    //split the names as strings into arrays
+    var aName = a.split(" ");
+    var bName = b.split(" ");
+
+    // get the last names by selecting
+    // the last element in the name arrays
+    // using array.length - 1 since full names
+    // may also have a middle name or initial
+    var aLastName = aName[aName.length - 1];
+    var bLastName = bName[bName.length - 1];
+
+    // compare the names and return either
+    // a negative number, positive number
+    // or zero.
+    if (aLastName < bLastName) return -1;
+    if (aLastName > bLastName) return 1;
+    return 0;
+}
+
 function redisplay() {
     jQuery("#success").html(outputHTML);
 }
@@ -455,13 +477,13 @@ function rank() {
 	    /* First, count the total number of papers in each area. */
 	    for (var r in authors) {
 		var area = authors[r].area;
-		var count = authors[r].count;
+		var count = parseInt(authors[r].count);
 		var year = authors[r].year;
 		if ((year >= startyear) && (year <= endyear)) {
 		    if (!(area in areacount)) {
 			areacount[area] = 0;
 		    }
-		    areacount[area] += parseInt(count);
+		    areacount[area] += count;
 		}
 	    }
 	    var areaCount = 0;
@@ -475,7 +497,7 @@ function rank() {
 		var name = authors[r].name;
 		var dept = authors[r].dept;
 		var area = authors[r].area;
-		var count = authors[r].count;
+		var count = parseInt(authors[r].count);
 		var year = authors[r].year;
 		if ((year >= startyear) && (year <= endyear)) {
 		    if (!(dept in univagg)) {
@@ -483,9 +505,9 @@ function rank() {
 		    }
 		    if (weights[area] != 0) {
 			if (displayPercentages) {
-			    univagg[dept] += parseFloat(count) / areacount[area];
+			    univagg[dept] += (1.0 * count) / areacount[area];
 			} else {
-			    univagg[dept] += parseInt(count);
+			    univagg[dept] += count;
 			}
 			/* Is this the first time we have seen this person? */
 			if (!(name in visited)) {
@@ -505,13 +527,13 @@ function rank() {
 	    for (dept in univnames) {
 		if (univcounts[dept] <= maxHoverFaculty) {
 		    var s = "";
-		    univnames[dept].sort();
+		    univnames[dept].sort(compareNames);
 		    for (var name of univnames[dept]) {
 			s += "\n" + name + ": " + facultycount[name+dept];
 		    }
 		    univnames[dept] = s.slice(1);
 		} else {
-		    univnames[dept] = "(too many faculty to display)";
+		    univnames[dept] = "(can't display more than " + maxHoverFaculty + " faculty)";
 		}
 	    }
 
