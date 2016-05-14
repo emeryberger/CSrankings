@@ -22,10 +22,10 @@ areadict = {
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
     'theory' : ['STOC', 'FOCS'],
     'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
+    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium'],
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'IJCAI'],
-    'database' : ['PODS', 'VLDB J.', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
     'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
     'metrics' : ['SIGMETRICS','IMC'],
     'web' : ['WWW', 'SIGIR'],
@@ -91,7 +91,7 @@ def parseDBLP(facultydict):
                             #print "Author: ", authname
                             if (authname in facultydict):
                                 #print "Found prof author: ", authname
-                                if (false):
+                                if (False):
                                     logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
                                     tmplist = authlogs.get(authname,[])
                                     tmplist.append(logstring)
@@ -148,7 +148,7 @@ for k, v in intauthors_gl.items():
 f.close()    
 
 
-if (false):
+if (False):
     f = open('rankings-all.log','w')
     for v, l in authlog_gl.items():
         if intauthors_gl.has_key(v):
