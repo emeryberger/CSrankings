@@ -477,7 +477,7 @@ function rank() {
 	    /* First, count the total number of papers in each area. */
 	    for (var r in authors) {
 		var area = authors[r].area;
-		var count = parseInt(authors[r].count);
+		var count = parseFloat(authors[r].count);
 		var year = authors[r].year;
 		if ((year >= startyear) && (year <= endyear)) {
 		    if (!(area in areacount)) {
@@ -497,7 +497,7 @@ function rank() {
 		var name = authors[r].name;
 		var dept = authors[r].dept;
 		var area = authors[r].area;
-		var count = parseInt(authors[r].count);
+		var count = parseFloat(authors[r].count);
 		var year = authors[r].year;
 		if ((year >= startyear) && (year <= endyear)) {
 		    if (!(dept in univagg)) {
@@ -529,7 +529,7 @@ function rank() {
 		    var s = "";
 		    univnames[dept].sort(compareNames);
 		    for (var name of univnames[dept]) {
-			s += "\n" + name + ": " + facultycount[name+dept];
+			s += "\n" + name + ": " + facultycount[name+dept].toPrecision(2);
 		    }
 		    univnames[dept] = s.slice(1);
 		} else {
