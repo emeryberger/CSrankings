@@ -75,6 +75,15 @@ def parseDBLP(facultydict):
                                 yflagfortrace = int(child.text)
                             break
                 if(flag):
+                    # Count up how many faculty are on this paper.
+                    authorsOnPaper = 0
+                    for child in node:
+                        if(child.tag == 'author'):
+                            authname = child.text
+                            #print "Author: ", authname
+                            if (authname in facultydict):
+                                authorsOnPaper += 1
+                                
                     for child in node:
                         if(child.tag == 'author'):
                             authname = child.text
@@ -88,7 +97,7 @@ def parseDBLP(facultydict):
                                 # if (confname in relevantconf):
                                 interestingauthors[authname] = interestingauthors.get(authname,0) + 1
                                 areaname = conf2area(confname)
-                                authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1
+                                authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
                                 #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
             node.clear()
     return (interestingauthors, authorscores, authlogs)
