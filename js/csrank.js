@@ -2,9 +2,9 @@ var r = [];
 var setup = false;
 var outputHTML = "";
 var rankingsInProgress = 0;
-var minToRank = 30;
-var totalSliders = 19;
-var maxHoverFaculty = 30; /* If more than this many, don't create a hover tip. */
+var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
+var totalSliders = 19;      /* The number of sliders (research areas). */
+var maxHoverFaculty = 40;   /* If more than this many, don't create a hover tip. */
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
 function compareNames (a,b) {
@@ -585,7 +585,7 @@ function rank() {
 			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
 		    } else {
 			/* Show count */
-			s += "<td align=\"right\">" + Math.round(v)  + "</td>";
+			s += "<td align=\"right\">" + (Math.floor(v * 100.0) / 100.0).toPrecision(2)  + "</td>";
 		    }
 		    s += "<td align=\"right\">" + "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</td>"; /* number of faculty */
 		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
