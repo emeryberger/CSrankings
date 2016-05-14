@@ -585,7 +585,7 @@ function rank() {
 			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
 		    } else {
 			/* Show count */
-			s += "<td align=\"right\">" + v  + "</td>";
+			s += "<td align=\"right\">" + Math.round(v)  + "</td>";
 		    }
 		    s += "<td align=\"right\">" + "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</td>"; /* number of faculty */
 		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
