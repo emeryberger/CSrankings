@@ -15,7 +15,7 @@ function slidersetup()
 	var rank_slider = [];
 	var str = 'rank_slider_';
 
-	for (i = 1; i <= totalSliders; i++) {
+	for (var i = 1; i <= totalSliders; i++) {
 	    rank_slider[i] = $(str.concat(i.toString()));
 	}
 
@@ -335,7 +335,7 @@ window.onload=init;
 function activatePL() {
     r[1].setValue(1.0);
     r[2].setValue(1.0);
-    for (i = 3; i <= 18; i++) {
+    for (var i = 3; i <= 18; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -344,11 +344,11 @@ function activatePL() {
 function activateSystems() {
     r[1].setValue(0.0);
     r[2].setValue(0.0);
-    for (i = 3; i <= 7; i++) {
+    for (var i = 3; i <= 7; i++) {
 	r[i].setValue(1.0);
     }
     r[18].setValue(1.0);
-    for (i = 8; i <= 17; i++) {
+    for (var i = 8; i <= 17; i++) {
 	r[i].setValue(0.0);
     }
     r[totalSliders].setValue(0.0);
@@ -356,37 +356,37 @@ function activateSystems() {
 }
 
 function activateAI() {
-    for (i = 1; i <= 7; i++) {
+    for (var i = 1; i <= 7; i++) {
 	r[i].setValue(0.0);
     }
-    for (i = 8; i <= 12; i++) {
+    for (var i = 8; i <= 12; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 13; i <= totalSliders; i++) {
+    for (var i = 13; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
 }
 
 function activateTheory() {
-    for (i = 1; i <= 12; i++) {
+    for (var i = 1; i <= 12; i++) {
 	r[i].setValue(0.0);
     }
-    for (i = 13; i <= 14; i++) {
+    for (var i = 13; i <= 14; i++) {
 	r[i].setValue(1.0);
     }
-    for (i = 15; i <= totalSliders; i++) {
+    for (var i = 15; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
 }
 
 function activateOthers() {
-    for (i = 1; i <= 14; i++) {
+    for (var i = 1; i <= 14; i++) {
 	r[i].setValue(0.0);
     }
     r[18].setValue(0.0);
-    for (i = 15; i <= 17; i++) {
+    for (var i = 15; i <= 17; i++) {
 	r[i].setValue(1.0);
     }
     r[totalSliders].setValue(1.0);
@@ -394,14 +394,14 @@ function activateOthers() {
 }
 
 function activateAll() {
-    for (i = 1; i <= totalSliders; i++) {
+    for (var i = 1; i <= totalSliders; i++) {
 	r[i].setValue(1.0);
     }
     return false;
 }
 
 function activateNone() {
-    for (i = 1; i <= totalSliders; i++) {
+    for (var i = 1; i <= totalSliders; i++) {
 	r[i].setValue(0.0);
     }
     return false;
@@ -412,6 +412,8 @@ function rank() {
     var form = document.getElementById("rankform");
     var s = "";
     var univcounts = {};
+    var univnames = {};
+    var facultycount = {};
     var authcounts = {};
     var visited = {};
     var univagg = {}; /* (university, total number of papers) */
@@ -461,7 +463,6 @@ function rank() {
 		    areacount[area] += parseInt(count);
 		}
 	    }
-	    console.log(areacount["proglang"]);
 	    var areaCount = 0;
 	    for (var a in areacount) {
 		if (weights[a] != 0) {
@@ -485,18 +486,28 @@ function rank() {
 			} else {
 			    univagg[dept] += parseInt(count);
 			}
+			/* Is this the first time we have seen this person? */
 			if (!(name in visited)) {
 			    visited[name] = true;
+			    facultycount[name+dept] = 0;
 			    if (!(dept in univcounts)) {
 				univcounts[dept] = 0;
+				univnames[dept] = [];
 			    }
+			    univnames[dept].push(name);
 			    univcounts[dept] += 1;
 			}
+			facultycount[name+dept] += 1;
 		    }
 		}
 	    }
-
-	    console.log(univagg["University of Washington"]);
+	    for (dept in univnames) {
+		var s = "";
+		for (var name of univnames[dept]) {
+		    s += name + ": " + facultycount[name+dept] + "\n";
+		}
+		univnames[dept] = s;
+	    }
 
 	    var s = "<html>"
 		+ "<head>"
@@ -517,15 +528,19 @@ function rank() {
 		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></tr></thead>";
 	    }
 	    s = s + "<tbody>";
+	    /* As long as there is at least one thing selected, compute and display a ranking. */
 	    if (areaCount > 0) {
-		var i = 0;
-		var oldv = -100;
+		var rank = 0;        /* index */
+		var oldv = -100;  /* old number - to track ties */
+		/* Sort the university aggregate count from largest to smallest. */
 		var keys = Object.keys(univagg);
 		keys.sort(function(a,b){return univagg[b] - univagg[a];});
-		
-		for (ind = 0; ind < keys.length; ind++) {
-		    var k = keys[ind];
-		    var v = univagg[k];
+
+		/* Display rankings until we have shown `minToRank` items or
+		   while there is a tie (those all get the same rank). */
+		for (var ind = 0; ind < keys.length; ind++) {
+		    var dept = keys[ind];
+		    var v = univagg[dept];
 		    if ((ind >= minToRank) && (v != oldv)) {
 			break;
 		    }
@@ -533,17 +548,19 @@ function rank() {
 			break;
 		    }
 		    if (oldv != v) {
-			i = i + 1;
+			rank = rank + 1;
 		    }
-		    s += "\n<tr><td>" + i + "</td>"; /* rank */
-		    s += "<td>" +  k  + "</td>";     /* institution */
+		    s += "\n<tr><td>" + rank + "</td>";
+		    s += "<td>" +  dept  + "</td>";
 		    if (displayPercentages) {
-			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>"; /* count */
+			 /* Show average percentage */
+			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
 		    } else {
-			s += "<td align=\"right\">" + v  + "</td>"; /* count */
+			/* Show count */
+			s += "<td align=\"right\">" + v  + "</td>";
 		    }
-		    s += "<td align=\"right\">" + univcounts[k] + "</td>"; /* faculty */
-		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[k]) / 10.0 + "</td>"; */
+		    s += "<td align=\"right\">" + "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</td>"; /* number of faculty */
+		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
 		    s += "</tr>\n";
 		    oldv = v;
 		}
