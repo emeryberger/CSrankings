@@ -648,9 +648,9 @@ function rank() {
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">";
 	    if (displayPercentages) {
-		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></th></tr></thead>";
+		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
 	    } else {
-		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty&nbsp;</th></tr></thead>";
+		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty</th></tr></thead>";
 	    }
 	    s = s + "<tbody>";
 	    /* As long as there is at least one thing selected, compute and display a ranking. */
