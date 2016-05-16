@@ -1,18 +1,12 @@
-# from xml.etree.ElementTree import iterparse, XMLParser
 from lxml import etree as ElementTree
 import htmlentitydefs
 import csv
 import operator
-import sys
-import gzip
+# import gzip
 
-class CustomEntity:
-    def __getitem__(self, key):
-        return unichr(htmlentitydefs.name2codepoint[key])
+generateLog = True
 
-parser = ElementTree.XMLParser(attribute_defaults=True,load_dtd=True)
-# parser.parser.UseForeignDTD(True)
-# parser.entity = CustomEntity()
+parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
 
 areadict = {
     'proglang' : ['POPL', 'PLDI','OOPSLA'],
@@ -55,59 +49,93 @@ def parseDBLP(facultydict):
     interestingauthors = {}
     authorscores = {}
     authorscoresAdjusted = {}
-
+    
     with open('dblp.xml', mode='r') as f:
+        
     # with gzip.open('dblp.xml.gz') as f:
-        for (event, node) in ElementTree.iterparse(f, events=['start', 'end']):
-            if (node.tag == 'inproceedings' or node.tag == 'article'):
-                flag = False
-                for child in node:
-                    cond = (child.tag == 'booktitle' or child.tag == 'journal') and (child.text in confdict)
-                    if (cond):
-                        flag = True
-                        confname = child.text
-                        yflagfortrace = -1
-                        break
-                if (flag):
-                    for child in node:    
-                        if (child.tag == 'year' and type(child.text) is str):
-                            if (int(child.text) < startyear or int(child.text)>endyear):
-                                flag = False
-                            else:
-                                yflagfortrace = int(child.text)
-                            break
-                if(flag):
-                    # Count up how many faculty from our list are on this paper.
-                    authorsOnPaper = 0
-                    for child in node:
-                        if(child.tag == 'author'):
-                            authname = child.text
-                            #print "Author: ", authname
-                            if (authname in facultydict):
-                                authorsOnPaper += 1
-                                flag = True
 
-                    if (flag):
-                        areaname = conf2area(confname)
-                        for child in node:
-                            if(child.tag == 'author'):
-                                authname = child.text
-                                #print "Author: ", authname
-                                if (authname in facultydict):
-                                    #print "Found prof author: ", authname
-                                    if (True):
-                                        logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
-                                        tmplist = authlogs.get(authname,[])
-                                        tmplist.append(logstring)
-                                        authlogs[authname] = tmplist
-                                        # if (confname in relevantconf):
-                                    interestingauthors[authname] = interestingauthors.get(authname,0) + 1
-                                    authorscores[(authname,areaname,yflagfortrace)] = authorscores.get((authname,areaname,yflagfortrace), 0) + 1.0
-                                    authorscoresAdjusted[(authname,areaname,yflagfortrace)] = authorscoresAdjusted.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
-                                    #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
-            node.clear()
-    return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
-    # return (interestingauthors, authorscores, authorscoresAdjusted)
+        oldnode = None
+        
+        for (event, node) in ElementTree.iterparse(f, events=['start', 'end']):
+
+            if (oldnode is not None):
+                oldnode.clear()
+            oldnode = node
+            
+            foundArticle = False
+            inRange = False
+            authorsOnPaper = 0
+            authorName = ""
+            confname = ""
+            year = -1
+            
+            if (node.tag == 'inproceedings' or node.tag == 'article'):
+                
+                # First, check if this is one of the conferences we are looking for.
+                
+                for child in node:
+                    if (child.tag == 'booktitle' or child.tag == 'journal'):
+                        if (child.text in confdict):
+                            foundArticle = True
+                            confname = child.text
+                        break
+
+                if (not foundArticle):
+                    # Nope.
+                    continue
+
+                # It's a booktitle or journal, and it's one of our conferences.
+
+                # Check that dates are in the specified range.
+                
+                for child in node:
+                    if (child.tag == 'year'): #  and type(child.text) is str):
+                        year = int(child.text)
+                        if ((year >= startyear) and (year <= endyear)):
+                            inRange = True
+                        break
+
+                if (not inRange):
+                    # Out of range.
+                    continue
+
+                # Now, count up how many faculty from our list are on this paper.
+                
+                for child in node:
+                    if (child.tag == 'author'):
+                        authorName = child.text
+                        authorName.strip()
+                        if (authorName in facultydict):
+                            authorsOnPaper += 1
+
+                if (authorsOnPaper == 0):
+                    # No authors from our list.
+                    continue
+
+                # If we got here, we have a winner.
+                
+                areaname = conf2area(confname)
+                for child in node:
+                    if (child.tag == 'author'):
+                        authorName = child.text
+                        authorName.strip()
+                        if (authorName in facultydict):
+                            # print "here we go",authorName, confname, authorsOnPaper, year
+                            if (generateLog):
+                                logstring = authorName.encode('utf-8') + " ; " + confname + " " + str(year)
+                                tmplist = authlogs.get(authorName,[])
+                                tmplist.append(logstring)
+                                authlogs[authorName] = tmplist
+                            interestingauthors[authorName] = interestingauthors.get(authorName,0) + 1
+                            authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
+                            authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
+                          
+  
+            
+    if (generateLog):
+        return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
+    else:
+        return (interestingauthors, authorscores, authorscoresAdjusted)
 
 
 def csv2dict_str_str(fname):
@@ -123,8 +151,10 @@ def sortdictionary(d):
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
-# (intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
-(intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(facultydict)
+if (generateLog):
+    (intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(facultydict)
+else:
+    (intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
 
 f = open('generated-author-info.csv','w')
 f.write('"name","dept","area","count","adjustedcount","year"\n')
@@ -151,7 +181,7 @@ for k, v in intauthors_gl.items():
 f.close()    
 
 
-if (True):
+if (generateLog):
     f = open('rankings-all.log','w')
     for v, l in authlog_gl.items():
         if intauthors_gl.has_key(v):
