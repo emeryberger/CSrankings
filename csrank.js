@@ -1,7 +1,6 @@
-var r = [];
-var setup = false;
-var outputHTML = "";
-var rankingsInProgress = 0;
+var slider = [];            /* The sliders themselves. */
+var setup = false;          /* Have we initialized the sliders? */
+var outputHTML = "";        /* The string containing the ranked list of institutions. */
 var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
 var totalSliders = 19;      /* The number of sliders (research areas). */
 var maxHoverFaculty = 40;   /* If more than this many, don't create a hover tip. */
@@ -43,7 +42,7 @@ function slidersetup()
 	    rank_slider[i] = $(str.concat(i.toString()));
 	    (function(i) {
 		var str = "field_".concat(i.toString());
-		r[i] = new Control.Slider(rank_slider[i].down('.handle'),
+		slider[i] = new Control.Slider(rank_slider[i].down('.handle'),
 					  rank_slider[i], {
 					      range: $R(0, 1),
 					      values: [0,1],
@@ -72,24 +71,24 @@ window.onload=init;
 
 function activateAll() {
     for (var i = 1; i <= totalSliders; i++) {
-	r[i].setValue(1.0);
+	slider[i].setValue(1.0);
     }
     return false;
 }
 
 function activateNone() {
     for (var i = 1; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     return false;
 }
 
 function activatePL() {
-    r[1].setValue(1.0);
-    r[2].setValue(1.0);
+    slider[1].setValue(1.0);
+    slider[2].setValue(1.0);
 /*
     for (var i = 3; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 */
     return false;
@@ -97,18 +96,18 @@ function activatePL() {
 
 function activateSystems() {
 /*
-    r[1].setValue(0.0);
-    r[2].setValue(0.0);
+    slider[1].setValue(0.0);
+    slider[2].setValue(0.0);
 */
     for (var i = 3; i <= 7; i++) {
-	r[i].setValue(1.0);
+	slider[i].setValue(1.0);
     }
-    r[18].setValue(1.0);
+    slider[18].setValue(1.0);
 /*
     for (var i = 8; i <= 17; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
-    r[totalSliders].setValue(0.0);
+    slider[totalSliders].setValue(0.0);
 */
     return false;
 }
@@ -116,15 +115,15 @@ function activateSystems() {
 function activateAI() {
 /*
     for (var i = 1; i <= 7; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 */
     for (var i = 8; i <= 12; i++) {
-	r[i].setValue(1.0);
+	slider[i].setValue(1.0);
     }
 /*
   for (var i = 13; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 */
     return false;
@@ -133,16 +132,16 @@ function activateAI() {
 function activateTheory() {
     /*
     for (var i = 1; i <= 12; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     */
     
     for (var i = 13; i <= 14; i++) {
-	r[i].setValue(1.0);
+	slider[i].setValue(1.0);
     }
     /*
     for (var i = 15; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     */
     return false;
@@ -151,23 +150,23 @@ function activateTheory() {
 function activateOthers() {
     /*
     for (var i = 1; i <= 14; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     */
     for (var i = 15; i <= 17; i++) {
-	r[i].setValue(1.0);
+	slider[i].setValue(1.0);
     }
-    r[totalSliders].setValue(1.0);
-    /*    r[18].setValue(0.0); */
+    slider[totalSliders].setValue(1.0);
+    /*    slider[18].setValue(0.0); */
     return false;
 }
 
 function deactivatePL() {
-    r[1].setValue(0.0);
-    r[2].setValue(0.0);
+    slider[1].setValue(0.0);
+    slider[2].setValue(0.0);
 /*
     for (var i = 3; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 */
     return false;
@@ -175,18 +174,18 @@ function deactivatePL() {
 
 function deactivateSystems() {
 /*
-    r[1].setValue(0.0);
-    r[2].setValue(0.0);
+    slider[1].setValue(0.0);
+    slider[2].setValue(0.0);
 */
     for (var i = 3; i <= 7; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
-    r[18].setValue(0.0);
+    slider[18].setValue(0.0);
 /*
     for (var i = 8; i <= 17; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
-    r[totalSliders].setValue(0.0);
+    slider[totalSliders].setValue(0.0);
 */
     return false;
 }
@@ -194,15 +193,15 @@ function deactivateSystems() {
 function deactivateAI() {
 /*
     for (var i = 1; i <= 7; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 */
     for (var i = 8; i <= 12; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 /*
   for (var i = 13; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
 */
     return false;
@@ -211,16 +210,16 @@ function deactivateAI() {
 function deactivateTheory() {
     /*
     for (var i = 1; i <= 12; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     */
     
     for (var i = 13; i <= 14; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     /*
     for (var i = 15; i <= totalSliders; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     */
     return false;
@@ -229,19 +228,18 @@ function deactivateTheory() {
 function deactivateOthers() {
     /*
     for (var i = 1; i <= 14; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
     */
     for (var i = 15; i <= 17; i++) {
-	r[i].setValue(0.0);
+	slider[i].setValue(0.0);
     }
-    r[totalSliders].setValue(0.0);
-    /*    r[18].setValue(0.0); */
+    slider[totalSliders].setValue(0.0);
+    /*    slider[18].setValue(0.0); */
     return false;
 }
 
 function rank() {
-    rankingsInProgress++;
     var form = document.getElementById("rankform");
     var s = "";
     var univcounts = {};
@@ -411,7 +409,6 @@ function rank() {
 		s = "<h3>Nothing selected.</h3>";
 	    }
 	    outputHTML = s;
-	    rankingsInProgress--;
 	    setTimeout(redisplay, 0);
 	    return false; 
 	}
