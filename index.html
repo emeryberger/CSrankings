@@ -1,23 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<html> <head>
-    <meta name="description" content="US News Computer Science rankings">
+<html>
+  <head>
+    <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science, rankings, US News">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <title>CSRankings: Computer Science Rankings</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
     <script src="js/papaparse.min.js" type="text/javascript"></script>
-
-    <!-- From scriptaculous - https://script.aculo.us/scriptaculous.js and prototype.js -->
     <script type="text/javascript" src="js/prototype.js"></script>
     <script type="text/javascript" src="js/scriptaculous.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
     <style type="text/css">
@@ -110,8 +106,7 @@
 	<div class="row">
 	  <div class="col-xs-12 col-sm-6 col-md-6">
 	    <div class="table">
-	      <table class="table-sm">
-
+	      <table class="table-sm table-striped">
 
 		<thead>
 		  <tr>
@@ -190,6 +185,7 @@
 
 		
 		<thead>
+		  <tr><td colspan="2">&nbsp;</td></tr>
 		  <tr>
 		    <th colspan="2">
 			<p>Programming Languages
@@ -228,6 +224,7 @@
 		</tbody>
 
 		<thead>
+		  <tr><td colspan="2">&nbsp;</td></tr>
 		  <tr>
 		    <th colspan="2">
 			<p>Systems
@@ -254,7 +251,7 @@
 		  <tr>
 		    <td>  
 		      Computer security
-		      <small><em>CCS, NDSS, Oakland, USENIX Sec.</em></small>
+		      <small><em>CCS, NDSS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
 		    </td>
 		    <td>  
 		      <input type="hidden" name="security" id="field_5" value="1.0">
@@ -315,6 +312,7 @@
 		</tbody>
 
 		<thead>
+		  <tr><td colspan="2">&nbsp;</td></tr>
 		  <tr>
 		    <th colspan="2">
 		      <p>Theory
@@ -351,6 +349,7 @@
 		</tbody>
 
 		<thead>
+		  <tr><td colspan="2">&nbsp;</td></tr>
 		  <tr>
 		    <th colspan="2">
 			<p>Other Areas
@@ -398,13 +397,13 @@
 		    </td>
 		  </tr>
 
-		  		  <tr>
-		    <td> 
+		  <tr>
+		    <td>
 		      Robotics
 		      <small><em>ICRA, IROS</em></small>
 		    </td>
 		    <td>
-		      <input type="hidden" name="robotics" id="field_19" value="1.0">
+		    <input type="hidden" name="robotics" id="field_19" value="1.0">
 		      <div id="rank_slider_19" class="slider">
 			<div class="handle"></div>  
 		    </td>
