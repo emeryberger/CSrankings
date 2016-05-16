@@ -22,7 +22,7 @@ areadict = {
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
     'theory' : ['STOC', 'FOCS'],
     'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium'],
+    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'IJCAI'],
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
@@ -56,7 +56,8 @@ def parseDBLP(facultydict):
     authorscores = {}
     authorscoresAdjusted = {}
 
-    with gzip.open('dblp.xml.gz') as f:
+    with open('dblp.xml', mode='r') as f:
+    # with gzip.open('dblp.xml.gz') as f:
         for (event, node) in ElementTree.iterparse(f, events=['start', 'end']):
             if (node.tag == 'inproceedings' or node.tag == 'article'):
                 flag = False
