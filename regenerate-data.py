@@ -95,7 +95,7 @@ def parseDBLP(facultydict):
                                 #print "Author: ", authname
                                 if (authname in facultydict):
                                     #print "Found prof author: ", authname
-                                    if (False):
+                                    if (True):
                                         logstring = authname.encode('utf-8') + " ; " + confname + " " + str(yflagfortrace)
                                         tmplist = authlogs.get(authname,[])
                                         tmplist.append(logstring)
@@ -106,8 +106,8 @@ def parseDBLP(facultydict):
                                     authorscoresAdjusted[(authname,areaname,yflagfortrace)] = authorscoresAdjusted.get((authname,areaname,yflagfortrace), 0) + 1.0 / authorsOnPaper
                                     #authorscores[(authname,areaname)] = authorscores.get((authname,areaname), 0) + 1
             node.clear()
-    # return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
-    return (interestingauthors, authorscores, authorscoresAdjusted)
+    return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
+    # return (interestingauthors, authorscores, authorscoresAdjusted)
 
 
 def csv2dict_str_str(fname):
@@ -123,8 +123,8 @@ def sortdictionary(d):
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
-(intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
-# (intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(facultydict)
+# (intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
+(intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(facultydict)
 
 f = open('generated-author-info.csv','w')
 f.write('"name","dept","area","count","adjustedcount","year"\n')
@@ -151,7 +151,7 @@ for k, v in intauthors_gl.items():
 f.close()    
 
 
-if (False):
+if (True):
     f = open('rankings-all.log','w')
     for v, l in authlog_gl.items():
         if intauthors_gl.has_key(v):
