@@ -4,7 +4,7 @@
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science, rankings, US News">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    
     <title>CSRankings: Computer Science Rankings</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,7 +20,7 @@
       body {
       font-family: Helvetica, Arial;
       }
-      
+
       table td {
       vertical-align: top;
       }
@@ -30,7 +30,7 @@
       }
 
       a.only_these_areas {
-          cursor: pointer;
+      cursor: pointer;
       }
 
       div.slider { width:30px; margin:10px 0; background-color:lightblue; height:12px; position: relative; }
@@ -41,73 +41,72 @@
 
   <body>
     <div class="container">
-      <div class="page-header">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
-	
-        <h1>Computer Science Rankings</h1>
-        <h3>
-	</h3>
-	<div class="panel panel-info">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">
-	    Rank institutions by
-	    <select id="displayPercent" name="displayPercent" onchange="rank();" >
-	      <option value="1" selected="selected">average percentage</option>
-	      <option value="0">total count</option>
-	    </select>
-	      of publications between
-	      <select onchange="rank();" id="startyear" name="startyear">
-		<option selected="selected" value="2000">2000</option>
-		<option value="2001">2001</option>  
-		<option value="2002">2002</option>
-		<option value="2003">2003</option>
-		<option value="2004">2004</option>
-		<option value="2005">2005</option>
-		<option value="2006">2006</option>
-		<option value="2007">2007</option>
-		<option value="2008">2008</option>
-		<option value="2009">2009</option>
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2014">2014</option>
-		<option value="2014">2015</option>
-		<option value="2014">2016</option>
-	      </select>
-	      and
-	      <select onchange="rank();" id="endyear" name="endyear">
-		<option value="2000">2000</option>
-		<option value="2001">2001</option>  
-		<option value="2002">2002</option>
-		<option value="2003">2003</option>
-		<option value="2004">2004</option>
-		<option value="2005">2005</option>
-		<option value="2006">2006</option>  
-		<option value="2007">2007</option>
-		<option value="2008">2008</option>
-		<option value="2009">2009</option>
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2014">2014</option>
-		<option value="2015">2015</option>
-		<option selected="selected" value="2016">2016</option>
-	      </select>
-	      <!-- <input type="button" name="button1" id="button1" value="Recalculate" onclick="rank();"> -->
-			[<a class="only_these_areas" onClick="activateNone(); return false;"><font color="blue"><b>all off</b></a> | <a class="only_these_areas" onClick="activateAll(); return false;"><b>all on</b></font></a>]
-	    </h3>
+	<div class="page-header">
+	  
+          <h1>Computer Science Rankings</h1>
+          <h3>
+	  </h3>
+	  <div class="panel panel-info">
+	    <div class="panel-heading">
+	      <h3 class="panel-title">
+		Rank institutions by
+		<select id="displayPercent" name="displayPercent" onchange="rank();" >
+		  <option value="1" selected="selected">average percentage</option>
+		  <option value="0">total count</option>
+		</select>
+		of publications between
+		<select onchange="rank();" id="startyear" name="startyear">
+		  <option selected="selected" value="2000">2000</option>
+		  <option value="2001">2001</option>  
+		  <option value="2002">2002</option>
+		  <option value="2003">2003</option>
+		  <option value="2004">2004</option>
+		  <option value="2005">2005</option>
+		  <option value="2006">2006</option>
+		  <option value="2007">2007</option>
+		  <option value="2008">2008</option>
+		  <option value="2009">2009</option>
+		  <option value="2010">2010</option>
+		  <option value="2011">2011</option>
+		  <option value="2012">2012</option>
+		  <option value="2013">2013</option>
+		  <option value="2014">2014</option>
+		  <option value="2014">2015</option>
+		  <option value="2014">2016</option>
+		</select>
+		and
+		<select onchange="rank();" id="endyear" name="endyear">
+		  <option value="2000">2000</option>
+		  <option value="2001">2001</option>  
+		  <option value="2002">2002</option>
+		  <option value="2003">2003</option>
+		  <option value="2004">2004</option>
+		  <option value="2005">2005</option>
+		  <option value="2006">2006</option>  
+		  <option value="2007">2007</option>
+		  <option value="2008">2008</option>
+		  <option value="2009">2009</option>
+		  <option value="2010">2010</option>
+		  <option value="2011">2011</option>
+		  <option value="2012">2012</option>
+		  <option value="2013">2013</option>
+		  <option value="2014">2014</option>
+		  <option value="2015">2015</option>
+		  <option selected="selected" value="2016">2016</option>
+		</select>
+		<!-- <input type="button" name="button1" id="button1" value="Recalculate" onclick="rank();"> -->
+		[<a class="only_these_areas" onClick="activateNone(); return false;"><font color="blue"><b>all off</b></font></a> | <a class="only_these_areas" onClick="activateAll(); return false;"><font color="blue"><b>all on</b></font></a>]
+	      </h3>
+	    </div>
 	  </div>
 	</div>
-
-      </div>
-
+	
 	<div class="row">
 	  <div class="col-xs-12 col-sm-6 col-md-6">
 	    <div class="table">
 	      <table class="table-sm table-striped">
-
+		
 		<thead>
 		  <tr>
 		    <th colspan="2">
@@ -120,7 +119,6 @@
 
 		<tbody>
 
-
 		  <tr>
 		    <td>
 		      Artificial intelligence
@@ -129,7 +127,7 @@
 		    <td> 
 		      <input type="hidden" name="ai" id="field_9" value="1.0">
 		      <div id="rank_slider_9" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
 
@@ -141,10 +139,10 @@
 		    <td>
 		      <input type="hidden" name="vision" id="field_12" value="1.0">
 		      <div id="rank_slider_12" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
-
+		  
 		  <tr>
 		    <td>
 		      Machine learning &amp; data mining
@@ -153,10 +151,10 @@
 		    <td> 
 		      <input type="hidden" name="mlmining" id="field_8" value="1.0">
 		      <div id="rank_slider_8" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
-
+		  
 		  <tr>
 		    <td> 
 		      Natural language processing
@@ -165,7 +163,7 @@
 		    <td>
 		      <input type="hidden" name="nlp" id="field_10" value="1.0">
 		      <div id="rank_slider_10" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -177,7 +175,7 @@
 		    <td>
 		      <input type="hidden" name="web" id="field_11" value="1.0">
 		      <div id="rank_slider_11" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -188,9 +186,9 @@
 		  <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		  <tr>
 		    <th colspan="2">
-			<p>Programming Languages
+		      <p>Programming Languages
 			[<a class="only_these_areas" onClick="deactivatePL(); return false;">off</a> | <a class="only_these_areas" onClick="activatePL(); return false;">on</a>]
-			</p>
+		      </p>
 		    </th>
 		  </tr>
 		</thead>
@@ -205,7 +203,7 @@
 		      <!-- sync with slider max value -->
 		      <input type="hidden" name="proglang" id="field_1" value="1.0">
 		      <div id="rank_slider_1" class="slider">
-			<div class="handle"></div>
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
 
@@ -217,7 +215,7 @@
 		    <td>
 		      <input type="hidden" name="softeng" id="field_2" value="1.0">
 		      <div id="rank_slider_2" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
 
@@ -227,9 +225,9 @@
 		  <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		  <tr>
 		    <th colspan="2">
-			<p>Systems
+		      <p>Systems
 			[<a class="only_these_areas" onClick="deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="activateSystems(); return false;">on</a>]
-			</p>
+		      </p>
 		    </th>
 		  </tr>
 		</thead>
@@ -244,7 +242,7 @@
 		    <td>  
 		      <input type="hidden" name="networks" id="field_4" value="1.0">
 		      <div id="rank_slider_4" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -256,7 +254,7 @@
 		    <td>  
 		      <input type="hidden" name="security" id="field_5" value="1.0">
 		      <div id="rank_slider_5" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -268,7 +266,7 @@
 		    <td>
 		      <input type="hidden" name="database" id="field_6" value="1.0">
 		      <div id="rank_slider_6" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -280,7 +278,7 @@
 		    <td>
 		      <input type="hidden" name="mobile" id="field_18" value="1.0">
 		      <div id="rank_slider_18" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -292,7 +290,7 @@
 		    <td> 
 		      <input type="hidden" name="metrics" id="field_7" value="1.0">
 		      <div id="rank_slider_7" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -304,7 +302,7 @@
 		    <td>
 		      <input type="hidden" name="opsys" id="field_3" value="1.0">
 		      <div id="rank_slider_3" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 		  
@@ -332,7 +330,7 @@
 		    <td>
 		      <input type="hidden" name="theory" id="field_13" value="1.0">
 		      <div id="rank_slider_13" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 
@@ -343,7 +341,7 @@
 		    </td>
 		    <td><input type="hidden" name="logic" id="field_14" value="1.0">
 		      <div id="rank_slider_14" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>  
 		    </td>
 		  </tr>
 		</tbody>
@@ -352,9 +350,9 @@
 		  <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		  <tr>
 		    <th colspan="2">
-			<p>Other Areas
+		      <p>Other Areas
 			[<a class="only_these_areas" onClick="deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="activateOthers(); return false;">on</a>]
-			</p>
+		      </p>
 		    </th>
 		  </tr>
 		</thead>
@@ -368,7 +366,7 @@
 		    <td>
 		      <input type="hidden" name="arch" id="field_15" value="1.0">
 		      <div id="rank_slider_15" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
 
@@ -381,7 +379,7 @@
 		    <td>
 		      <input type="hidden" name="graphics" id="field_16" value="1.0">
 		      <div id="rank_slider_16" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
 
@@ -393,7 +391,7 @@
 		    <td>
 		      <input type="hidden" name="hci" id="field_17" value="1.0">
 		      <div id="rank_slider_17" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
 
@@ -403,46 +401,45 @@
 		      <small><em>ICRA, IROS</em></small>
 		    </td>
 		    <td>
-		    <input type="hidden" name="robotics" id="field_19" value="1.0">
+		      <input type="hidden" name="robotics" id="field_19" value="1.0">
 		      <div id="rank_slider_19" class="slider">
-			<div class="handle"></div>  
+			<div class="handle"></div></div>
 		    </td>
 		  </tr>
-
+		  
 		</tbody>
-
+		
 	      </table>
-	      </div>
-	      </div>
-
-	      <div class="row">
-		<div class="col-xs-6 col-sm-6 col-md-4">
-		  <div id="success"></div>
-		</div>
-	      </div>
-
+	    </div>
+	  </div>
+	  
+	  <div class="row">
+	    <div class="col-xs-6 col-sm-6 col-md-4">
+	      <div id="success"></div>
+	    </div>
+	  </div>
+	  
+	</div>
+	<div class="page-footer">
+	</div>
+	<p class="lead">
+	  These rankings are computed based on publication output at top tier venues (currently US only).
+	</p>
+	<p>
+	  <em>Average percentage</em> computes the mean percentage of total publications in each area, weighing areas evenly.<br />
+	  <em>Total count</em> computes the sum of all papers published, effectively emphasizing areas with more publications.
+	</p>
+	
+	<p class="text-muted">
+	  This site was developed and is maintained by <a href="http://www.emeryberger.com">Emery Berger</a>.<br />
+	  Based on code and data originally collected by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
+	  The original faculty affiliation dataset was constructed by <a
+									 href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>.<br />
+	  All publication data is from <a href="http://dblp.uni-trier.de/">DBLP</a> (downloaded May 10, 2016).<br />
+	</p>
+	
       </form>
-      </div>
-      <div class="page-footer">
-      </div>
-      <p class="lead">
-	These rankings are computed based on publication output at top tier venues (currently US only).
-      </p>
-      <p>
-	<em>Average percentage</em> computes the mean percentage of total publications in each area, weighing areas evenly.<br />
-	<em>Total count</em> computes the sum of all papers published, effectively emphasizing areas with more publications.
-      </p>
-      
-      <p class="text-muted">
-	This site was developed and is maintained by <a href="http://www.emeryberger.com">Emery Berger</a>.<br />
-	Based on code and data originally collected by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
-	The original faculty affiliation dataset was constructed by <a
-    href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>.<br />
-	All publication data is from <a href="http://dblp.uni-trier.de/">DBLP</a> (downloaded May 10, 2016).<br />
-      </p>
-      
-      </div>
-      <script src="csrank.js"></script>
+    </div>
+    <script src="csrank.js"></script>
   </body>
-
 </html>
