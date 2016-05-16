@@ -399,7 +399,8 @@ function rank() {
 			/* Show count */
 			s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
 		    }
-		    s += "<td align=\"right\">" + "<font color=\"blue\">" + "<div  title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</font>" + "</td>"; /* number of faculty */
+		    s += "<td align=\"right\">" + "<font color=\"blue\">"
+			+ "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</font>" + "</td>"; /* number of faculty */
 		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
 		    s += "</tr>\n";
 		    oldv = v;
