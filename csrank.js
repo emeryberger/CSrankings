@@ -64,6 +64,7 @@ function slidersetup()
 
 function init() {
     slidersetup();
+    deactivateOthers();    
     rank();
 }
 
