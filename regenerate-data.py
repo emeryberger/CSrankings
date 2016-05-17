@@ -23,7 +23,7 @@ areadict = {
     'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
     'metrics' : ['SIGMETRICS','IMC'],
     'web' : ['WWW', 'SIGIR'],
-    'hci' : ['CHI','UIST'],
+    'hci' : ['CHI','UbiComp','UIST'],
     'nlp' : ['EMNLP','ACL','NAACL'],
     'vision' : ['CVPR','ICCV'],
     'mobile' : ['MobiSys','MobiCom','SenSys'],
