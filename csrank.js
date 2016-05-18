@@ -5,6 +5,22 @@ var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
 var totalCheckboxes = 19;      /* The number of checkboxes (research areas). */
 var maxHoverFaculty = 40;   /* If more than this many, don't create a hover tip. */
 
+var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics" ];
+
+var prologue = 	"<html>"
+		+ "<head>"
+		+ "<title>CS department rankings by productivity</title>"
+	        + "<style type=\"text/css\">"
+	        + "  body { font-family: \"Helvetica\", \"Arial\"; }"
+		+ "  table td { vertical-align: top; }"
+	        + "</style>"
+		+ "</head>"
+		+ "<body>"
+	        + "<div class=\"row\">"
+		+ "<div class=\"table\">"
+		+ "<table class=\"table-sm table-striped\""
+		+ "id=\"ranking\" valign=\"top\">";
+
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
 function compareNames (a,b) {
 
@@ -172,33 +188,17 @@ function rank() {
     var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
     var authors = {};
     var weights = {};
-
     var areacount = {};
-    
+
     Papa.parse("generated-author-info.csv", {
 	download : true,
 	header : true,
 	complete: function(results) {
 	    authors = results.data;
-	    weights["proglang"] = jQuery('input[name=field_1]').prop('checked') ? 1.0 : 0.0;
-	    weights["softeng"]  = jQuery('input[name=field_2]').prop('checked') ? 1.0 : 0.0;
-	    weights["opsys"]    = jQuery('input[name=field_3]').prop('checked') ? 1.0 : 0.0;
-	    weights["networks"] = jQuery('input[name=field_4]').prop('checked') ? 1.0 : 0.0;
-	    weights["security"] = jQuery('input[name=field_5]').prop('checked') ? 1.0 : 0.0;
-	    weights["database"] = jQuery('input[name=field_6]').prop('checked') ? 1.0 : 0.0;
-	    weights["metrics"]  = jQuery('input[name=field_7]').prop('checked') ? 1.0 : 0.0;
-	    weights["mlmining"] = jQuery('input[name=field_8]').prop('checked') ? 1.0 : 0.0;
-	    weights["ai"]       = jQuery('input[name=field_9]').prop('checked') ? 1.0 : 0.0;
-	    weights["nlp"]      = jQuery('input[name=field_10]').prop('checked') ? 1.0 : 0.0;
-	    weights["web"]      = jQuery('input[name=field_11]').prop('checked') ? 1.0 : 0.0;
-	    weights["vision"]   = jQuery('input[name=field_12]').prop('checked') ? 1.0 : 0.0;
-	    weights["theory"]   = jQuery('input[name=field_13]').prop('checked') ? 1.0 : 0.0;
-	    weights["logic"]    = jQuery('input[name=field_14]').prop('checked') ? 1.0 : 0.0;
-	    weights["arch"]     = jQuery('input[name=field_15]').prop('checked') ? 1.0 : 0.0;
-	    weights["graphics"] = jQuery('input[name=field_16]').prop('checked') ? 1.0 : 0.0;
-	    weights["hci"]      = jQuery('input[name=field_17]').prop('checked') ? 1.0 : 0.0;
-	    weights["mobile"]   = jQuery('input[name=field_18]').prop('checked') ? 1.0 : 0.0;
-	    weights["robotics"]   = jQuery('input[name=field_19]').prop('checked') ? 1.0 : 0.0;
+	    /* Update the 'weights' of each area from the checkboxes. */
+	    for (var ind = 0; ind < areas.length; ind++) {
+		weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1.0 : 0.0;
+	    }
 	    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
 	    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
 	    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
@@ -267,19 +267,7 @@ function rank() {
 		}
 	    }
 
-	    var s = "<html>"
-		+ "<head>"
-		+ "<title>CS department rankings by productivity</title>"
-	        + "<style type=\"text/css\">"
-	        + "  body { font-family: \"Helvetica\", \"Arial\"; }"
-		+ "  table td { vertical-align: top; }"
-	        + "</style>"
-		+ "</head>"
-		+ "<body>"
-	        + "<div class=\"row\">"
-		+ "<div class=\"table\">"
-		+ "<table class=\"table-sm table-striped\""
-		+ "id=\"ranking\" valign=\"top\">";
+	    var s = prologue;
 
 	    if (displayPercentages) {
 		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
@@ -327,7 +315,7 @@ function rank() {
 		s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
 		s += "<br>" + "</body>" + "</html>";
 	    } else {
-		s = "<h3>Nothing selected.</h3>";
+		s = "<h4>Nothing selected: please select at least one area.</h4>";
 	    }
 	    outputHTML = s;
 	    setTimeout(redisplay, 0);
