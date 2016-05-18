@@ -243,7 +243,7 @@ Seth Copen Goldstein,Carnegie Mellon University,mobile,1.0,0.25,2005
 Seth Copen Goldstein,Carnegie Mellon University,robotics,1.0,1.0,2005
 Seth Copen Goldstein,Carnegie Mellon University,robotics,2.0,2.0,2006
 Seth Copen Goldstein,Carnegie Mellon University,robotics,5.0,3.5,2007
-Seth Copen Goldstein,Carnegie Mellon University,robotics,2.0,1.5,2008
+Seth Copen Goldstein,Carnegie Mellon University,robotics,3.0,2.5,2008
 Seth Copen Goldstein,Carnegie Mellon University,robotics,3.0,3.0,2009
 Seth Copen Goldstein,Carnegie Mellon University,robotics,1.0,1.0,2015
 Seth Copen Goldstein,Carnegie Mellon University,arch,1.0,1.0,2001
@@ -540,16 +540,16 @@ Daniela Rus,Massachusetts Institute of Technology,robotics,3.0,3.0,2002
 Daniela Rus,Massachusetts Institute of Technology,robotics,1.0,1.0,2003
 Daniela Rus,Massachusetts Institute of Technology,robotics,6.0,5.0,2004
 Daniela Rus,Massachusetts Institute of Technology,robotics,4.0,3.5,2005
-Daniela Rus,Massachusetts Institute of Technology,robotics,3.0,2.0,2006
+Daniela Rus,Massachusetts Institute of Technology,robotics,4.0,2.5,2006
 Daniela Rus,Massachusetts Institute of Technology,robotics,6.0,6.0,2007
-Daniela Rus,Massachusetts Institute of Technology,robotics,5.0,5.0,2008
+Daniela Rus,Massachusetts Institute of Technology,robotics,6.0,6.0,2008
 Daniela Rus,Massachusetts Institute of Technology,robotics,5.0,3.33333333333,2009
-Daniela Rus,Massachusetts Institute of Technology,robotics,11.0,11.0,2010
-Daniela Rus,Massachusetts Institute of Technology,robotics,11.0,10.0,2011
-Daniela Rus,Massachusetts Institute of Technology,robotics,14.0,14.0,2012
+Daniela Rus,Massachusetts Institute of Technology,robotics,12.0,12.0,2010
+Daniela Rus,Massachusetts Institute of Technology,robotics,12.0,11.0,2011
+Daniela Rus,Massachusetts Institute of Technology,robotics,17.0,16.5,2012
 Daniela Rus,Massachusetts Institute of Technology,robotics,15.0,13.0,2013
-Daniela Rus,Massachusetts Institute of Technology,robotics,12.0,11.0,2014
-Daniela Rus,Massachusetts Institute of Technology,robotics,14.0,12.5,2015
+Daniela Rus,Massachusetts Institute of Technology,robotics,13.0,11.3333333333,2014
+Daniela Rus,Massachusetts Institute of Technology,robotics,15.0,13.0,2015
 Daniela Rus,Massachusetts Institute of Technology,networks,1.0,1.0,2004
 Daniela Rus,Massachusetts Institute of Technology,networks,1.0,0.5,2012
 Kevin Skadron,University of Virginia,arch,1.0,1.0,2003
@@ -1027,7 +1027,7 @@ Camillo J. Taylor,University of Pennsylvania,robotics,2.0,2.0,2006
 Camillo J. Taylor,University of Pennsylvania,robotics,4.0,4.0,2007
 Camillo J. Taylor,University of Pennsylvania,robotics,1.0,1.0,2009
 Camillo J. Taylor,University of Pennsylvania,robotics,4.0,4.0,2011
-Camillo J. Taylor,University of Pennsylvania,robotics,1.0,0.5,2012
+Camillo J. Taylor,University of Pennsylvania,robotics,2.0,1.5,2012
 Camillo J. Taylor,University of Pennsylvania,robotics,1.0,1.0,2013
 Camillo J. Taylor,University of Pennsylvania,robotics,1.0,1.0,2014
 Camillo J. Taylor,University of Pennsylvania,robotics,1.0,1.0,2015
@@ -1300,6 +1300,7 @@ Nancy M. Amato,Texas A&M University,robotics,4.0,4.0,2004
 Nancy M. Amato,Texas A&M University,robotics,2.0,2.0,2005
 Nancy M. Amato,Texas A&M University,robotics,4.0,4.0,2006
 Nancy M. Amato,Texas A&M University,robotics,4.0,4.0,2007
+Nancy M. Amato,Texas A&M University,robotics,1.0,1.0,2008
 Nancy M. Amato,Texas A&M University,robotics,1.0,1.0,2009
 Nancy M. Amato,Texas A&M University,robotics,1.0,1.0,2010
 Nancy M. Amato,Texas A&M University,robotics,3.0,3.0,2011
@@ -1347,14 +1348,14 @@ Gaurav S. Sukhatme,University of Southern California,robotics,15.0,11.5,2002
 Gaurav S. Sukhatme,University of Southern California,robotics,8.0,6.5,2003
 Gaurav S. Sukhatme,University of Southern California,robotics,14.0,10.5,2004
 Gaurav S. Sukhatme,University of Southern California,robotics,8.0,6.5,2005
-Gaurav S. Sukhatme,University of Southern California,robotics,3.0,3.0,2006
-Gaurav S. Sukhatme,University of Southern California,robotics,7.0,7.0,2007
+Gaurav S. Sukhatme,University of Southern California,robotics,4.0,4.0,2006
+Gaurav S. Sukhatme,University of Southern California,robotics,8.0,7.5,2007
 Gaurav S. Sukhatme,University of Southern California,robotics,4.0,4.0,2008
 Gaurav S. Sukhatme,University of Southern California,robotics,5.0,4.5,2009
 Gaurav S. Sukhatme,University of Southern California,robotics,5.0,5.0,2010
 Gaurav S. Sukhatme,University of Southern California,robotics,11.0,10.0,2011
 Gaurav S. Sukhatme,University of Southern California,robotics,6.0,6.0,2012
-Gaurav S. Sukhatme,University of Southern California,robotics,8.0,7.5,2013
+Gaurav S. Sukhatme,University of Southern California,robotics,10.0,9.5,2013
 Gaurav S. Sukhatme,University of Southern California,robotics,4.0,4.0,2014
 Gaurav S. Sukhatme,University of Southern California,robotics,6.0,5.5,2015
 Gaurav S. Sukhatme,University of Southern California,networks,1.0,0.5,2004
@@ -1932,10 +1933,11 @@ Ron Alterovitz,University of North Carolina - Chapel Hill,graphics,1.0,0.3333333
 Ron Alterovitz,University of North Carolina - Chapel Hill,ai,1.0,0.5,2012
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,2.0,1.5,2003
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2005
+Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2007
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2008
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,3.0,2.5,2009
+Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,4.0,3.0,2009
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2010
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,3.0,3.0,2011
+Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,4.0,3.5,2011
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,3.0,2.5,2012
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2013
 Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,6.0,6.0,2014
@@ -2258,6 +2260,7 @@ Kunle Olukotun,Stanford University,proglang,1.0,1.0,2009
 Kunle Olukotun,Stanford University,proglang,1.0,0.5,2010
 Kunle Olukotun,Stanford University,proglang,1.0,1.0,2013
 Kunle Olukotun,Stanford University,proglang,1.0,1.0,2014
+Kunle Olukotun,Stanford University,robotics,1.0,0.333333333333,2006
 Kunle Olukotun,Stanford University,arch,1.0,1.0,2003
 Kunle Olukotun,Stanford University,arch,2.0,2.0,2004
 Kunle Olukotun,Stanford University,arch,2.0,2.0,2006
@@ -2688,6 +2691,7 @@ Mathieu Desbrun,California Institute of Technology,graphics,1.0,1.0,2013
 Mathieu Desbrun,California Institute of Technology,graphics,4.0,4.0,2014
 Mathieu Desbrun,California Institute of Technology,graphics,3.0,3.0,2015
 Mathieu Desbrun,California Institute of Technology,robotics,1.0,0.5,2002
+Mathieu Desbrun,California Institute of Technology,robotics,1.0,0.5,2007
 Denis Zorin,New York University,graphics,2.0,2.0,2000
 Denis Zorin,New York University,graphics,1.0,1.0,2001
 Denis Zorin,New York University,graphics,2.0,2.0,2002
@@ -2727,6 +2731,7 @@ Robert Platt Jr.,Northeastern University,ai,1.0,0.5,2005
 Robert Platt Jr.,Northeastern University,robotics,1.0,0.5,2002
 Robert Platt Jr.,Northeastern University,robotics,2.0,1.5,2003
 Robert Platt Jr.,Northeastern University,robotics,2.0,1.5,2004
+Robert Platt Jr.,Northeastern University,robotics,2.0,1.25,2010
 Robert Platt Jr.,Northeastern University,robotics,1.0,1.0,2014
 Robert Platt Jr.,Northeastern University,robotics,1.0,1.0,2015
 Amos Ron,University of Wisconsin - Madison,networks,1.0,0.5,2005
@@ -2921,9 +2926,9 @@ Mike Stilman,Georgia Institute of Technology,robotics,2.0,2.0,2007
 Mike Stilman,Georgia Institute of Technology,robotics,1.0,1.0,2008
 Mike Stilman,Georgia Institute of Technology,robotics,1.0,1.0,2009
 Mike Stilman,Georgia Institute of Technology,robotics,5.0,5.0,2010
-Mike Stilman,Georgia Institute of Technology,robotics,4.0,4.0,2011
-Mike Stilman,Georgia Institute of Technology,robotics,4.0,3.5,2012
-Mike Stilman,Georgia Institute of Technology,robotics,5.0,3.83333333333,2013
+Mike Stilman,Georgia Institute of Technology,robotics,5.0,5.0,2011
+Mike Stilman,Georgia Institute of Technology,robotics,5.0,4.5,2012
+Mike Stilman,Georgia Institute of Technology,robotics,6.0,4.83333333333,2013
 Mike Stilman,Georgia Institute of Technology,robotics,7.0,6.5,2014
 Mike Stilman,Georgia Institute of Technology,robotics,2.0,2.0,2015
 Shriram Krishnamurthi,Brown University,hci,1.0,1.0,2011
@@ -3277,12 +3282,12 @@ Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,4.0,4.0,20
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,4.0,4.0,2003
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,5.0,5.0,2004
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,3.0,3.0,2005
-Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,2.0,1.33333333333,2006
+Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,4.0,3.33333333333,2006
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,4.0,4.0,2007
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,2.0,2.0,2008
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,3.0,2.5,2009
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,2.0,2.0,2010
-Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,6.0,6.0,2011
+Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,8.0,8.0,2011
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,1.0,1.0,2012
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,6.0,6.0,2013
 Steven M. LaValle,University of Illinois at Urbana-Champaign,robotics,3.0,3.0,2014
@@ -3331,16 +3336,17 @@ Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,4.0,3.5,2
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,5.0,5.0,2002
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,3.0,2.33333333333,2003
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,3.0,2.33333333333,2004
-Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,4.0,4.0,2005
-Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,3.0,3.0,2006
-Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,7.0,7.0,2007
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,6.0,6.0,2005
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,4.0,4.0,2006
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,8.0,8.0,2007
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,2.0,2.0,2008
-Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,5.0,5.0,2009
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,7.0,7.0,2009
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,5.0,5.0,2010
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,7.0,7.0,2011
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,3.0,3.0,2012
-Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,9.0,9.0,2013
-Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,1.0,1.0,2014
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,10.0,10.0,2013
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,2.0,2.0,2014
+Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,1.0,1.0,2015
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,vision,2.0,2.0,2011
 Greg Morrisett,Cornell University,proglang,1.0,1.0,2007
 Greg Morrisett,Cornell University,proglang,1.0,1.0,2010
@@ -3539,6 +3545,8 @@ David A. Patterson,University of California - Berkeley,arch,1.0,0.5,2010
 David A. Patterson,University of California - Berkeley,arch,1.0,0.5,2013
 David A. Patterson,University of California - Berkeley,arch,1.0,0.333333333333,2015
 David A. Patterson,University of California - Berkeley,networks,1.0,0.5,2004
+James McLurkin,Rice University,robotics,1.0,1.0,2005
+James McLurkin,Rice University,robotics,1.0,0.5,2006
 James McLurkin,Rice University,robotics,1.0,0.5,2009
 James McLurkin,Rice University,robotics,1.0,1.0,2010
 James McLurkin,Rice University,robotics,1.0,1.0,2011
@@ -3621,9 +3629,9 @@ Ashutosh Saxena,Cornell University,robotics,4.0,2.5,2009
 Ashutosh Saxena,Cornell University,robotics,1.0,0.5,2010
 Ashutosh Saxena,Cornell University,robotics,3.0,3.0,2011
 Ashutosh Saxena,Cornell University,robotics,5.0,4.0,2012
-Ashutosh Saxena,Cornell University,robotics,2.0,2.0,2013
-Ashutosh Saxena,Cornell University,robotics,2.0,1.5,2014
-Ashutosh Saxena,Cornell University,robotics,1.0,1.0,2015
+Ashutosh Saxena,Cornell University,robotics,5.0,4.5,2013
+Ashutosh Saxena,Cornell University,robotics,5.0,4.5,2014
+Ashutosh Saxena,Cornell University,robotics,3.0,2.5,2015
 Ashutosh Saxena,Cornell University,vision,2.0,1.0,2007
 Ashutosh Saxena,Cornell University,vision,1.0,1.0,2012
 Ashutosh Saxena,Cornell University,vision,2.0,2.0,2013
@@ -3642,8 +3650,9 @@ H. Sebastian Seung,Princeton University,vision,1.0,1.0,2010
 Jur van den Berg,University of Utah,graphics,1.0,0.5,2012
 Jur van den Berg,University of Utah,ai,1.0,1.0,2011
 Jur van den Berg,University of Utah,ai,1.0,0.5,2012
-Jur van den Berg,University of Utah,robotics,2.0,1.0,2010
-Jur van den Berg,University of Utah,robotics,1.0,0.5,2011
+Jur van den Berg,University of Utah,robotics,1.0,0.333333333333,2009
+Jur van den Berg,University of Utah,robotics,3.0,1.5,2010
+Jur van den Berg,University of Utah,robotics,2.0,1.0,2011
 Jur van den Berg,University of Utah,robotics,2.0,0.833333333333,2012
 Jur van den Berg,University of Utah,robotics,4.0,3.33333333333,2013
 Jur van den Berg,University of Utah,robotics,2.0,2.0,2014
@@ -3706,16 +3715,16 @@ Howie Choset,Carnegie Mellon University,robotics,6.0,6.0,2001
 Howie Choset,Carnegie Mellon University,robotics,5.0,5.0,2002
 Howie Choset,Carnegie Mellon University,robotics,8.0,8.0,2003
 Howie Choset,Carnegie Mellon University,robotics,6.0,6.0,2004
-Howie Choset,Carnegie Mellon University,robotics,5.0,5.0,2005
-Howie Choset,Carnegie Mellon University,robotics,2.0,2.0,2006
+Howie Choset,Carnegie Mellon University,robotics,6.0,6.0,2005
+Howie Choset,Carnegie Mellon University,robotics,3.0,3.0,2006
 Howie Choset,Carnegie Mellon University,robotics,8.0,7.5,2007
 Howie Choset,Carnegie Mellon University,robotics,3.0,3.0,2008
-Howie Choset,Carnegie Mellon University,robotics,3.0,3.0,2009
+Howie Choset,Carnegie Mellon University,robotics,4.0,4.0,2009
 Howie Choset,Carnegie Mellon University,robotics,4.0,3.0,2010
-Howie Choset,Carnegie Mellon University,robotics,11.0,10.5,2011
+Howie Choset,Carnegie Mellon University,robotics,12.0,11.5,2011
 Howie Choset,Carnegie Mellon University,robotics,7.0,7.0,2012
 Howie Choset,Carnegie Mellon University,robotics,7.0,6.5,2013
-Howie Choset,Carnegie Mellon University,robotics,10.0,10.0,2014
+Howie Choset,Carnegie Mellon University,robotics,12.0,12.0,2014
 Howie Choset,Carnegie Mellon University,robotics,9.0,9.0,2015
 Anand Rangarajan,University of Florida,mlmining,2.0,1.0,2001
 Anand Rangarajan,University of Florida,mlmining,1.0,0.5,2015
@@ -3889,6 +3898,7 @@ Dina Katabi,Massachusetts Institute of Technology,theory,1.0,0.333333333333,2012
 Dina Katabi,Massachusetts Institute of Technology,opsys,1.0,1.0,2010
 Dina Katabi,Massachusetts Institute of Technology,mobile,4.0,2.7,2014
 Dina Katabi,Massachusetts Institute of Technology,mobile,1.0,1.0,2015
+Dina Katabi,Massachusetts Institute of Technology,robotics,1.0,0.5,2015
 Dina Katabi,Massachusetts Institute of Technology,security,1.0,0.333333333333,2011
 Dina Katabi,Massachusetts Institute of Technology,networks,1.0,1.0,2000
 Dina Katabi,Massachusetts Institute of Technology,networks,1.0,1.0,2002
@@ -3968,15 +3978,17 @@ Fabián E. Bustamante,Northwestern University,networks,1.0,1.0,2012
 Fabián E. Bustamante,Northwestern University,networks,1.0,0.5,2013
 Fabián E. Bustamante,Northwestern University,networks,1.0,1.0,2014
 Fabián E. Bustamante,Northwestern University,networks,1.0,1.0,2015
+Edwin Olson,University of Michigan,robotics,1.0,0.5,2005
 Edwin Olson,University of Michigan,robotics,1.0,0.5,2006
-Edwin Olson,University of Michigan,robotics,1.0,1.0,2008
+Edwin Olson,University of Michigan,robotics,1.0,0.5,2007
+Edwin Olson,University of Michigan,robotics,2.0,1.5,2008
 Edwin Olson,University of Michigan,robotics,1.0,0.5,2009
 Edwin Olson,University of Michigan,robotics,4.0,4.0,2010
 Edwin Olson,University of Michigan,robotics,5.0,5.0,2011
-Edwin Olson,University of Michigan,robotics,3.0,3.0,2012
+Edwin Olson,University of Michigan,robotics,4.0,4.0,2012
 Edwin Olson,University of Michigan,robotics,5.0,5.0,2013
 Edwin Olson,University of Michigan,robotics,3.0,3.0,2014
-Edwin Olson,University of Michigan,robotics,5.0,5.0,2015
+Edwin Olson,University of Michigan,robotics,6.0,6.0,2015
 Sharad Mehrotra,University of California - Irvine,database,1.0,1.0,2000
 Sharad Mehrotra,University of California - Irvine,database,2.0,2.0,2001
 Sharad Mehrotra,University of California - Irvine,database,1.0,1.0,2002
@@ -4119,8 +4131,8 @@ Maya Cakmak,University of Washington,ai,1.0,1.0,2012
 Maya Cakmak,University of Washington,robotics,2.0,2.0,2007
 Maya Cakmak,University of Washington,robotics,1.0,1.0,2008
 Maya Cakmak,University of Washington,robotics,1.0,0.333333333333,2011
-Maya Cakmak,University of Washington,robotics,2.0,2.0,2014
-Maya Cakmak,University of Washington,robotics,3.0,2.0,2015
+Maya Cakmak,University of Washington,robotics,3.0,3.0,2014
+Maya Cakmak,University of Washington,robotics,4.0,2.5,2015
 Hanspeter Pfister,Harvard University,graphics,1.0,1.0,2000
 Hanspeter Pfister,Harvard University,graphics,1.0,1.0,2001
 Hanspeter Pfister,Harvard University,graphics,2.0,0.666666666667,2002
@@ -4274,7 +4286,7 @@ Peter K. Allen,Columbia University,robotics,1.0,1.0,2001
 Peter K. Allen,Columbia University,robotics,3.0,3.0,2002
 Peter K. Allen,Columbia University,robotics,3.0,3.0,2003
 Peter K. Allen,Columbia University,robotics,2.0,1.5,2004
-Peter K. Allen,Columbia University,robotics,1.0,1.0,2005
+Peter K. Allen,Columbia University,robotics,2.0,2.0,2005
 Peter K. Allen,Columbia University,robotics,1.0,1.0,2006
 Peter K. Allen,Columbia University,robotics,4.0,4.0,2007
 Peter K. Allen,Columbia University,robotics,1.0,1.0,2008
@@ -4321,9 +4333,9 @@ Frank Dellaert,Georgia Institute of Technology,ai,2.0,2.0,2007
 Frank Dellaert,Georgia Institute of Technology,robotics,1.0,1.0,2002
 Frank Dellaert,Georgia Institute of Technology,robotics,3.0,2.33333333333,2003
 Frank Dellaert,Georgia Institute of Technology,robotics,2.0,2.0,2004
-Frank Dellaert,Georgia Institute of Technology,robotics,3.0,2.33333333333,2005
-Frank Dellaert,Georgia Institute of Technology,robotics,1.0,1.0,2006
-Frank Dellaert,Georgia Institute of Technology,robotics,3.0,3.0,2007
+Frank Dellaert,Georgia Institute of Technology,robotics,5.0,4.33333333333,2005
+Frank Dellaert,Georgia Institute of Technology,robotics,2.0,2.0,2006
+Frank Dellaert,Georgia Institute of Technology,robotics,4.0,4.0,2007
 Frank Dellaert,Georgia Institute of Technology,robotics,1.0,1.0,2008
 Frank Dellaert,Georgia Institute of Technology,robotics,2.0,2.0,2009
 Frank Dellaert,Georgia Institute of Technology,robotics,6.0,6.0,2010
@@ -4331,7 +4343,7 @@ Frank Dellaert,Georgia Institute of Technology,robotics,3.0,3.0,2011
 Frank Dellaert,Georgia Institute of Technology,robotics,1.0,1.0,2012
 Frank Dellaert,Georgia Institute of Technology,robotics,5.0,4.0,2013
 Frank Dellaert,Georgia Institute of Technology,robotics,11.0,11.0,2014
-Frank Dellaert,Georgia Institute of Technology,robotics,8.0,7.5,2015
+Frank Dellaert,Georgia Institute of Technology,robotics,9.0,8.5,2015
 Frank Dellaert,Georgia Institute of Technology,vision,1.0,0.333333333333,2000
 Frank Dellaert,Georgia Institute of Technology,vision,1.0,0.5,2003
 Frank Dellaert,Georgia Institute of Technology,vision,1.0,0.333333333333,2005
@@ -4992,7 +5004,7 @@ Nora Ayanian,University of Southern California,robotics,1.0,1.0,2008
 Nora Ayanian,University of Southern California,robotics,1.0,1.0,2010
 Nora Ayanian,University of Southern California,robotics,1.0,1.0,2011
 Nora Ayanian,University of Southern California,robotics,1.0,0.5,2013
-Nora Ayanian,University of Southern California,robotics,1.0,0.5,2014
+Nora Ayanian,University of Southern California,robotics,2.0,1.5,2014
 Nora Ayanian,University of Southern California,robotics,2.0,1.5,2015
 Brian Noble,University of Michigan,mobile,1.0,0.5,2003
 Brian Noble,University of Michigan,mobile,1.0,0.5,2007
@@ -5192,8 +5204,8 @@ Tomás Lozano-Pérez,Massachusetts Institute of Technology,ai,1.0,0.5,2011
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,ai,1.0,0.5,2014
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,ai,1.0,0.5,2015
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,1.0,1.0,2006
-Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,1.0,0.5,2007
-Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,1.0,0.333333333333,2010
+Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,2.0,1.0,2007
+Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,3.0,1.08333333333,2010
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,1.0,0.5,2011
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,4.0,1.83333333333,2012
 Tomás Lozano-Pérez,Massachusetts Institute of Technology,robotics,5.0,2.33333333333,2013
@@ -5218,13 +5230,13 @@ Dinesh Manocha,University of North Carolina - Chapel Hill,database,2.0,2.0,2006
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,1.5,2000
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2001
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2002
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2005
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2006
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,3.0,2007
+Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,3.0,2005
+Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,3.0,2006
+Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,4.0,4.0,2007
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2008
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,5.0,4.5,2009
+Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,6.0,4.83333333333,2009
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,7.0,6.5,2010
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,1.0,2011
+Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2011
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,2.33333333333,2012
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2013
 Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,2.0,2014
@@ -5458,9 +5470,11 @@ Andrew Y. Ng,Stanford University,opsys,1.0,0.333333333333,2006
 Andrew Y. Ng,Stanford University,web,1.0,1.0,2001
 Andrew Y. Ng,Stanford University,web,1.0,1.0,2002
 Andrew Y. Ng,Stanford University,web,1.0,1.0,2006
+Andrew Y. Ng,Stanford University,robotics,1.0,0.333333333333,2005
 Andrew Y. Ng,Stanford University,robotics,2.0,0.833333333333,2006
+Andrew Y. Ng,Stanford University,robotics,1.0,0.5,2007
 Andrew Y. Ng,Stanford University,robotics,2.0,0.833333333333,2008
-Andrew Y. Ng,Stanford University,robotics,8.0,5.5,2009
+Andrew Y. Ng,Stanford University,robotics,9.0,6.0,2009
 Andrew Y. Ng,Stanford University,robotics,7.0,5.83333333333,2010
 Andrew Y. Ng,Stanford University,robotics,3.0,2.5,2011
 Andrew Y. Ng,Stanford University,vision,2.0,1.0,2007
@@ -5834,7 +5848,7 @@ Yann LeCun,New York University,mlmining,1.0,1.0,2012
 Yann LeCun,New York University,mlmining,3.0,2.0,2014
 Yann LeCun,New York University,mlmining,3.0,3.0,2015
 Yann LeCun,New York University,ai,1.0,1.0,2007
-Yann LeCun,New York University,robotics,1.0,1.0,2007
+Yann LeCun,New York University,robotics,2.0,2.0,2007
 Yann LeCun,New York University,robotics,2.0,2.0,2008
 Yann LeCun,New York University,robotics,1.0,1.0,2009
 Yann LeCun,New York University,robotics,1.0,1.0,2010
@@ -5938,7 +5952,7 @@ Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.33333333333,2006
 Matthew T. Mason,Carnegie Mellon University,robotics,1.0,0.5,2007
 Matthew T. Mason,Carnegie Mellon University,robotics,1.0,0.5,2009
 Matthew T. Mason,Carnegie Mellon University,robotics,3.0,1.5,2010
-Matthew T. Mason,Carnegie Mellon University,robotics,3.0,2.0,2011
+Matthew T. Mason,Carnegie Mellon University,robotics,4.0,3.0,2011
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,2.0,2013
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,2.0,2014
 Matthew T. Mason,Carnegie Mellon University,robotics,3.0,3.0,2015
@@ -6199,6 +6213,7 @@ Honglak Lee,University of Michigan,mlmining,4.0,4.0,2015
 Honglak Lee,University of Michigan,ai,1.0,0.25,2006
 Honglak Lee,University of Michigan,ai,1.0,0.5,2009
 Honglak Lee,University of Michigan,robotics,1.0,0.5,2006
+Honglak Lee,University of Michigan,robotics,1.0,0.5,2013
 Honglak Lee,University of Michigan,vision,1.0,1.0,2011
 Honglak Lee,University of Michigan,vision,2.0,1.0,2012
 Honglak Lee,University of Michigan,vision,1.0,0.333333333333,2013
@@ -6459,15 +6474,16 @@ Sebastian Thrun,Stanford University,robotics,3.0,3.0,2001
 Sebastian Thrun,Stanford University,robotics,8.0,8.0,2002
 Sebastian Thrun,Stanford University,robotics,10.0,9.5,2003
 Sebastian Thrun,Stanford University,robotics,7.0,6.5,2004
-Sebastian Thrun,Stanford University,robotics,3.0,3.0,2005
-Sebastian Thrun,Stanford University,robotics,1.0,0.333333333333,2006
-Sebastian Thrun,Stanford University,robotics,1.0,0.333333333333,2008
-Sebastian Thrun,Stanford University,robotics,2.0,2.0,2009
+Sebastian Thrun,Stanford University,robotics,5.0,4.33333333333,2005
+Sebastian Thrun,Stanford University,robotics,4.0,2.66666666667,2006
+Sebastian Thrun,Stanford University,robotics,1.0,1.0,2007
+Sebastian Thrun,Stanford University,robotics,3.0,2.33333333333,2008
+Sebastian Thrun,Stanford University,robotics,3.0,3.0,2009
 Sebastian Thrun,Stanford University,robotics,5.0,3.83333333333,2010
-Sebastian Thrun,Stanford University,robotics,3.0,3.0,2011
+Sebastian Thrun,Stanford University,robotics,4.0,4.0,2011
 Sebastian Thrun,Stanford University,robotics,2.0,2.0,2012
-Sebastian Thrun,Stanford University,robotics,3.0,3.0,2013
-Sebastian Thrun,Stanford University,robotics,1.0,1.0,2014
+Sebastian Thrun,Stanford University,robotics,5.0,5.0,2013
+Sebastian Thrun,Stanford University,robotics,2.0,1.5,2014
 Sebastian Thrun,Stanford University,vision,1.0,0.333333333333,2000
 Sebastian Thrun,Stanford University,vision,1.0,1.0,2001
 Sebastian Thrun,Stanford University,vision,1.0,1.0,2005
@@ -6573,6 +6589,7 @@ Evdokia Nikolova,Texas A&M University,ai,1.0,0.5,2008
 Evdokia Nikolova,Texas A&M University,ai,1.0,1.0,2013
 Evdokia Nikolova,Texas A&M University,ai,1.0,1.0,2015
 Evdokia Nikolova,Texas A&M University,ai,1.0,1.0,2016
+Evdokia Nikolova,Texas A&M University,robotics,1.0,0.5,2012
 David B. Leake,Indiana University,ai,1.0,1.0,2011
 Jason Lawrence,University of Virginia,graphics,1.0,0.333333333333,2004
 Jason Lawrence,University of Virginia,graphics,2.0,0.45,2006
@@ -6827,6 +6844,7 @@ Alessandro Orso,Georgia Institute of Technology,softeng,1.0,1.0,2014
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,1.0,2015
 Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,1.0,2000
 Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,0.5,2006
+Jack Snoeyink,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2009
 Jack Snoeyink,University of North Carolina - Chapel Hill,networks,1.0,0.5,2001
 Chris Dwyer,Duke University,arch,1.0,0.5,2006
 Chris Dwyer,Duke University,arch,1.0,0.5,2015
@@ -6960,13 +6978,14 @@ Pieter Abbeel,University of California - Berkeley,mlmining,1.0,1.0,2014
 Pieter Abbeel,University of California - Berkeley,mlmining,2.0,2.0,2015
 Pieter Abbeel,University of California - Berkeley,ai,1.0,0.25,2006
 Pieter Abbeel,University of California - Berkeley,ai,1.0,0.333333333333,2015
+Pieter Abbeel,University of California - Berkeley,robotics,1.0,0.333333333333,2005
 Pieter Abbeel,University of California - Berkeley,robotics,1.0,0.333333333333,2008
-Pieter Abbeel,University of California - Berkeley,robotics,4.0,3.5,2010
+Pieter Abbeel,University of California - Berkeley,robotics,5.0,4.0,2010
 Pieter Abbeel,University of California - Berkeley,robotics,5.0,4.5,2011
 Pieter Abbeel,University of California - Berkeley,robotics,3.0,2.5,2012
-Pieter Abbeel,University of California - Berkeley,robotics,5.0,4.33333333333,2013
+Pieter Abbeel,University of California - Berkeley,robotics,6.0,5.33333333333,2013
 Pieter Abbeel,University of California - Berkeley,robotics,7.0,6.0,2014
-Pieter Abbeel,University of California - Berkeley,robotics,17.0,16.3333333333,2015
+Pieter Abbeel,University of California - Berkeley,robotics,18.0,16.8333333333,2015
 Alex Kirlik,University of Illinois at Urbana-Champaign,hci,1.0,1.0,2016
 Hasan Davulcu,Arizona State University,mlmining,1.0,0.5,2014
 Hasan Davulcu,Arizona State University,ai,1.0,1.0,2015
@@ -7144,6 +7163,8 @@ Michael L. Littman,Brown University,ai,1.0,1.0,2012
 Michael L. Littman,Brown University,ai,2.0,2.0,2013
 Michael L. Littman,Brown University,ai,1.0,0.333333333333,2014
 Michael L. Littman,Brown University,ai,1.0,1.0,2015
+Michael L. Littman,Brown University,robotics,1.0,1.0,2005
+Michael L. Littman,Brown University,robotics,1.0,0.5,2015
 Oliver Cossairt,Northwestern University,graphics,1.0,0.333333333333,2008
 Oliver Cossairt,Northwestern University,graphics,1.0,0.5,2010
 Oliver Cossairt,Northwestern University,vision,1.0,0.5,2010
@@ -7183,7 +7204,7 @@ Sven Koenig,University of Southern California,robotics,2.0,2.0,2001
 Sven Koenig,University of Southern California,robotics,2.0,2.0,2002
 Sven Koenig,University of Southern California,robotics,5.0,5.0,2003
 Sven Koenig,University of Southern California,robotics,2.0,2.0,2004
-Sven Koenig,University of Southern California,robotics,1.0,0.5,2005
+Sven Koenig,University of Southern California,robotics,2.0,1.0,2005
 Sven Koenig,University of Southern California,robotics,1.0,1.0,2006
 Sven Koenig,University of Southern California,robotics,2.0,2.0,2007
 Sven Koenig,University of Southern California,robotics,2.0,2.0,2009
@@ -7444,7 +7465,7 @@ Radhika Nagpal,Harvard University,robotics,2.0,2.0,2007
 Radhika Nagpal,Harvard University,robotics,1.0,1.0,2008
 Radhika Nagpal,Harvard University,robotics,2.0,2.0,2009
 Radhika Nagpal,Harvard University,robotics,1.0,1.0,2010
-Radhika Nagpal,Harvard University,robotics,4.0,4.0,2011
+Radhika Nagpal,Harvard University,robotics,5.0,5.0,2011
 Radhika Nagpal,Harvard University,robotics,4.0,4.0,2012
 Radhika Nagpal,Harvard University,robotics,3.0,3.0,2014
 Radhika Nagpal,Harvard University,robotics,2.0,2.0,2015
@@ -7551,7 +7572,7 @@ Ken Goldberg,University of California - Berkeley,robotics,3.0,1.5,2003
 Ken Goldberg,University of California - Berkeley,robotics,2.0,1.5,2012
 Ken Goldberg,University of California - Berkeley,robotics,2.0,1.33333333333,2013
 Ken Goldberg,University of California - Berkeley,robotics,1.0,0.5,2014
-Ken Goldberg,University of California - Berkeley,robotics,3.0,2.33333333333,2015
+Ken Goldberg,University of California - Berkeley,robotics,4.0,2.83333333333,2015
 Alfred Kobsa,University of California - Irvine,hci,1.0,0.5,2008
 Alfred Kobsa,University of California - Irvine,hci,2.0,2.0,2013
 Alfred Kobsa,University of California - Irvine,hci,1.0,1.0,2014
@@ -7752,9 +7773,9 @@ Lydia E. Kavraki,Rice University,robotics,4.0,4.0,2001
 Lydia E. Kavraki,Rice University,robotics,3.0,1.83333333333,2002
 Lydia E. Kavraki,Rice University,robotics,1.0,0.5,2003
 Lydia E. Kavraki,Rice University,robotics,3.0,2.0,2004
-Lydia E. Kavraki,Rice University,robotics,2.0,2.0,2005
+Lydia E. Kavraki,Rice University,robotics,3.0,3.0,2005
 Lydia E. Kavraki,Rice University,robotics,1.0,0.5,2006
-Lydia E. Kavraki,Rice University,robotics,4.0,2.0,2007
+Lydia E. Kavraki,Rice University,robotics,5.0,2.5,2007
 Lydia E. Kavraki,Rice University,robotics,3.0,2.5,2008
 Lydia E. Kavraki,Rice University,robotics,2.0,2.0,2009
 Lydia E. Kavraki,Rice University,robotics,2.0,1.5,2010
@@ -7793,12 +7814,12 @@ J. Andrew Bagnell,Carnegie Mellon University,ai,1.0,1.0,2008
 J. Andrew Bagnell,Carnegie Mellon University,ai,2.0,2.0,2015
 J. Andrew Bagnell,Carnegie Mellon University,ai,1.0,1.0,2016
 J. Andrew Bagnell,Carnegie Mellon University,robotics,1.0,1.0,2001
-J. Andrew Bagnell,Carnegie Mellon University,robotics,1.0,1.0,2006
-J. Andrew Bagnell,Carnegie Mellon University,robotics,2.0,2.0,2009
+J. Andrew Bagnell,Carnegie Mellon University,robotics,2.0,2.0,2006
+J. Andrew Bagnell,Carnegie Mellon University,robotics,3.0,3.0,2009
 J. Andrew Bagnell,Carnegie Mellon University,robotics,2.0,2.0,2011
-J. Andrew Bagnell,Carnegie Mellon University,robotics,3.0,2.5,2012
+J. Andrew Bagnell,Carnegie Mellon University,robotics,5.0,4.0,2012
 J. Andrew Bagnell,Carnegie Mellon University,robotics,6.0,5.5,2013
-J. Andrew Bagnell,Carnegie Mellon University,robotics,2.0,1.5,2015
+J. Andrew Bagnell,Carnegie Mellon University,robotics,4.0,3.5,2015
 J. Andrew Bagnell,Carnegie Mellon University,vision,1.0,1.0,2011
 J. Andrew Bagnell,Carnegie Mellon University,vision,1.0,1.0,2015
 Philip N. Klein,Brown University,theory,1.0,1.0,2005
@@ -8638,7 +8659,7 @@ Kostas E. Bekris,Rutgers - State University of New Jersey - New Brunswick,roboti
 Kostas E. Bekris,Rutgers - State University of New Jersey - New Brunswick,robotics,5.0,5.0,2011
 Kostas E. Bekris,Rutgers - State University of New Jersey - New Brunswick,robotics,3.0,3.0,2012
 Kostas E. Bekris,Rutgers - State University of New Jersey - New Brunswick,robotics,3.0,3.0,2013
-Kostas E. Bekris,Rutgers - State University of New Jersey - New Brunswick,robotics,2.0,2.0,2015
+Kostas E. Bekris,Rutgers - State University of New Jersey - New Brunswick,robotics,3.0,3.0,2015
 Linda G. Shapiro,University of Washington,mlmining,1.0,1.0,2003
 Linda G. Shapiro,University of Washington,mlmining,1.0,1.0,2012
 Linda G. Shapiro,University of Washington,vision,1.0,1.0,2003
@@ -8658,14 +8679,14 @@ Christopher Re,Stanford University,database,1.0,0.333333333333,2015
 Kostas Daniilidis,University of Pennsylvania,mlmining,1.0,1.0,2009
 Kostas Daniilidis,University of Pennsylvania,robotics,1.0,0.333333333333,2003
 Kostas Daniilidis,University of Pennsylvania,robotics,2.0,0.833333333333,2004
-Kostas Daniilidis,University of Pennsylvania,robotics,1.0,1.0,2005
+Kostas Daniilidis,University of Pennsylvania,robotics,2.0,2.0,2005
 Kostas Daniilidis,University of Pennsylvania,robotics,1.0,1.0,2006
 Kostas Daniilidis,University of Pennsylvania,robotics,2.0,2.0,2007
-Kostas Daniilidis,University of Pennsylvania,robotics,1.0,1.0,2008
+Kostas Daniilidis,University of Pennsylvania,robotics,2.0,2.0,2008
 Kostas Daniilidis,University of Pennsylvania,robotics,2.0,2.0,2011
 Kostas Daniilidis,University of Pennsylvania,robotics,2.0,1.5,2012
 Kostas Daniilidis,University of Pennsylvania,robotics,1.0,1.0,2013
-Kostas Daniilidis,University of Pennsylvania,robotics,5.0,5.0,2014
+Kostas Daniilidis,University of Pennsylvania,robotics,6.0,6.0,2014
 Kostas Daniilidis,University of Pennsylvania,robotics,5.0,4.5,2015
 Kostas Daniilidis,University of Pennsylvania,vision,1.0,1.0,2003
 Kostas Daniilidis,University of Pennsylvania,vision,1.0,1.0,2005
@@ -8841,11 +8862,13 @@ John Kubiatowicz,University of California - Berkeley,networks,1.0,0.2,2006
 Kris K. Hauser,Indiana University,graphics,1.0,0.333333333333,2009
 Kris K. Hauser,Indiana University,robotics,1.0,1.0,2005
 Kris K. Hauser,Indiana University,robotics,1.0,1.0,2006
-Kris K. Hauser,Indiana University,robotics,3.0,2.5,2009
+Kris K. Hauser,Indiana University,robotics,4.0,3.0,2009
 Kris K. Hauser,Indiana University,robotics,1.0,1.0,2010
-Kris K. Hauser,Indiana University,robotics,3.0,3.0,2012
-Kris K. Hauser,Indiana University,robotics,1.0,1.0,2013
+Kris K. Hauser,Indiana University,robotics,1.0,1.0,2011
+Kris K. Hauser,Indiana University,robotics,4.0,4.0,2012
+Kris K. Hauser,Indiana University,robotics,3.0,3.0,2013
 Kris K. Hauser,Indiana University,robotics,5.0,4.5,2014
+Kris K. Hauser,Indiana University,robotics,1.0,1.0,2015
 Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,1.0,0.5,2011
 Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,1.0,0.5,2012
 Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,2.0,1.0,2013
@@ -9254,7 +9277,7 @@ Emanuel Todorov,University of Washington,mlmining,1.0,1.0,2009
 Emanuel Todorov,University of Washington,mlmining,2.0,2.0,2010
 Emanuel Todorov,University of Washington,mlmining,1.0,0.5,2015
 Emanuel Todorov,University of Washington,robotics,1.0,1.0,2010
-Emanuel Todorov,University of Washington,robotics,4.0,4.0,2011
+Emanuel Todorov,University of Washington,robotics,5.0,5.0,2011
 Emanuel Todorov,University of Washington,robotics,4.0,4.0,2012
 Emanuel Todorov,University of Washington,robotics,1.0,1.0,2013
 Emanuel Todorov,University of Washington,robotics,4.0,4.0,2014
@@ -9327,7 +9350,9 @@ Dean M. Tullsen,University of California - San Diego,arch,2.0,1.33333333333,2015
 Dean M. Tullsen,University of California - San Diego,arch,1.0,0.5,2016
 Stefanie Tellex,Brown University,ai,1.0,0.5,2011
 Stefanie Tellex,Brown University,web,1.0,1.0,2003
-Stefanie Tellex,Brown University,robotics,2.0,1.0,2014
+Stefanie Tellex,Brown University,robotics,1.0,0.5,2013
+Stefanie Tellex,Brown University,robotics,3.0,1.33333333333,2014
+Stefanie Tellex,Brown University,robotics,1.0,0.5,2015
 Mark Oskin,University of Washington,proglang,1.0,0.5,2014
 Mark Oskin,University of Washington,arch,1.0,0.5,2000
 Mark Oskin,University of Washington,arch,1.0,1.0,2002
@@ -9448,9 +9473,9 @@ Nancy S. Pollard,Carnegie Mellon University,robotics,1.0,1.0,2006
 Nancy S. Pollard,Carnegie Mellon University,robotics,2.0,1.33333333333,2007
 Nancy S. Pollard,Carnegie Mellon University,robotics,1.0,1.0,2010
 Nancy S. Pollard,Carnegie Mellon University,robotics,1.0,1.0,2011
-Nancy S. Pollard,Carnegie Mellon University,robotics,2.0,1.5,2012
-Nancy S. Pollard,Carnegie Mellon University,robotics,2.0,1.5,2013
-Nancy S. Pollard,Carnegie Mellon University,robotics,1.0,1.0,2014
+Nancy S. Pollard,Carnegie Mellon University,robotics,3.0,2.0,2012
+Nancy S. Pollard,Carnegie Mellon University,robotics,3.0,2.5,2013
+Nancy S. Pollard,Carnegie Mellon University,robotics,2.0,2.0,2014
 Nancy S. Pollard,Carnegie Mellon University,robotics,1.0,1.0,2015
 Robert Harper,Carnegie Mellon University,proglang,1.0,1.0,2000
 Robert Harper,Carnegie Mellon University,proglang,1.0,0.333333333333,2002
@@ -9550,8 +9575,9 @@ J. Zico Kolter,Carnegie Mellon University,mlmining,1.0,1.0,2011
 J. Zico Kolter,Carnegie Mellon University,ai,1.0,1.0,2011
 J. Zico Kolter,Carnegie Mellon University,ai,1.0,1.0,2014
 J. Zico Kolter,Carnegie Mellon University,ai,1.0,1.0,2015
+J. Zico Kolter,Carnegie Mellon University,robotics,1.0,0.5,2007
 J. Zico Kolter,Carnegie Mellon University,robotics,1.0,0.5,2008
-J. Zico Kolter,Carnegie Mellon University,robotics,2.0,1.0,2009
+J. Zico Kolter,Carnegie Mellon University,robotics,3.0,1.5,2009
 J. Zico Kolter,Carnegie Mellon University,robotics,1.0,0.333333333333,2010
 David A. Wood,University of Wisconsin - Madison,metrics,1.0,0.5,2002
 David A. Wood,University of Wisconsin - Madison,metrics,1.0,1.0,2013
@@ -9714,6 +9740,7 @@ Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,1.0,2006
 Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,1.0,2007
 Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,1.0,2008
 Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,1.0,2011
+Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,1.0,2012
 Michael Walfish,New York University,opsys,1.0,0.25,2004
 Michael Walfish,New York University,opsys,1.0,0.5,2010
 Michael Walfish,New York University,opsys,1.0,1.0,2011
@@ -9964,7 +9991,7 @@ Dana H. Ballard,University of Texas - Austin,ai,1.0,1.0,2003
 Dana H. Ballard,University of Texas - Austin,ai,1.0,1.0,2004
 Dana H. Ballard,University of Texas - Austin,ai,1.0,1.0,2014
 Dana H. Ballard,University of Texas - Austin,ai,1.0,1.0,2015
-Dana H. Ballard,University of Texas - Austin,robotics,1.0,1.0,2006
+Dana H. Ballard,University of Texas - Austin,robotics,2.0,2.0,2006
 Dana H. Ballard,University of Texas - Austin,robotics,1.0,1.0,2011
 Cyrus Shahabi,University of Southern California,database,1.0,1.0,2000
 Cyrus Shahabi,University of Southern California,database,1.0,1.0,2001
@@ -11048,14 +11075,15 @@ Dieter Fox,University of Washington,robotics,1.0,1.0,2002
 Dieter Fox,University of Washington,robotics,5.0,4.0,2003
 Dieter Fox,University of Washington,robotics,3.0,3.0,2004
 Dieter Fox,University of Washington,robotics,1.0,0.5,2005
-Dieter Fox,University of Washington,robotics,4.0,4.0,2007
-Dieter Fox,University of Washington,robotics,1.0,1.0,2008
-Dieter Fox,University of Washington,robotics,1.0,1.0,2009
+Dieter Fox,University of Washington,robotics,1.0,1.0,2006
+Dieter Fox,University of Washington,robotics,5.0,5.0,2007
+Dieter Fox,University of Washington,robotics,2.0,2.0,2008
+Dieter Fox,University of Washington,robotics,3.0,3.0,2009
 Dieter Fox,University of Washington,robotics,1.0,1.0,2010
-Dieter Fox,University of Washington,robotics,7.0,6.0,2011
+Dieter Fox,University of Washington,robotics,8.0,7.0,2011
 Dieter Fox,University of Washington,robotics,3.0,2.5,2012
 Dieter Fox,University of Washington,robotics,2.0,2.0,2013
-Dieter Fox,University of Washington,robotics,8.0,8.0,2014
+Dieter Fox,University of Washington,robotics,9.0,9.0,2014
 Dieter Fox,University of Washington,robotics,2.0,1.5,2015
 Dieter Fox,University of Washington,vision,1.0,1.0,2011
 Dieter Fox,University of Washington,vision,1.0,1.0,2012
@@ -11114,6 +11142,7 @@ Volkan Isler,University of Minnesota - Twin Cities,ai,1.0,1.0,2011
 Volkan Isler,University of Minnesota - Twin Cities,ai,1.0,1.0,2012
 Volkan Isler,University of Minnesota - Twin Cities,robotics,2.0,0.666666666667,2003
 Volkan Isler,University of Minnesota - Twin Cities,robotics,2.0,0.833333333333,2004
+Volkan Isler,University of Minnesota - Twin Cities,robotics,1.0,1.0,2005
 Volkan Isler,University of Minnesota - Twin Cities,robotics,1.0,1.0,2006
 Volkan Isler,University of Minnesota - Twin Cities,robotics,2.0,2.0,2007
 Volkan Isler,University of Minnesota - Twin Cities,robotics,2.0,2.0,2008
@@ -11305,12 +11334,12 @@ Gillian Smith,Northeastern University,hci,1.0,1.0,2014
 Russ Tedrake,Massachusetts Institute of Technology,mlmining,1.0,1.0,2008
 Russ Tedrake,Massachusetts Institute of Technology,robotics,2.0,1.0,2004
 Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,2.5,2007
-Russ Tedrake,Massachusetts Institute of Technology,robotics,2.0,2.0,2008
-Russ Tedrake,Massachusetts Institute of Technology,robotics,4.0,4.0,2009
-Russ Tedrake,Massachusetts Institute of Technology,robotics,2.0,2.0,2010
+Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,3.0,2008
+Russ Tedrake,Massachusetts Institute of Technology,robotics,5.0,5.0,2009
+Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,2.25,2010
 Russ Tedrake,Massachusetts Institute of Technology,robotics,1.0,1.0,2011
 Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,2.33333333333,2012
-Russ Tedrake,Massachusetts Institute of Technology,robotics,2.0,2.0,2013
+Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,3.0,2013
 Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,2.33333333333,2014
 Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,2.5,2015
 Andrew T. Campbell,Dartmouth College,hci,1.0,1.0,2010
@@ -11825,7 +11854,7 @@ David Kempe,University of Southern California,ai,1.0,0.5,2006
 David Kempe,University of Southern California,ai,1.0,0.5,2010
 David Kempe,University of Southern California,ai,1.0,0.5,2012
 David Kempe,University of Southern California,web,1.0,1.0,2014
-David Kempe,University of Southern California,robotics,1.0,0.5,2005
+David Kempe,University of Southern California,robotics,2.0,1.0,2005
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.5,2011
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.5,2013
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.5,2014
@@ -12029,6 +12058,7 @@ Dezhen Song,Texas A&M University,robotics,4.0,4.0,2006
 Dezhen Song,Texas A&M University,robotics,4.0,4.0,2007
 Dezhen Song,Texas A&M University,robotics,1.0,1.0,2008
 Dezhen Song,Texas A&M University,robotics,4.0,4.0,2009
+Dezhen Song,Texas A&M University,robotics,1.0,1.0,2010
 Dezhen Song,Texas A&M University,robotics,3.0,3.0,2011
 Dezhen Song,Texas A&M University,robotics,2.0,2.0,2012
 Dezhen Song,Texas A&M University,robotics,2.0,2.0,2013
@@ -12309,6 +12339,7 @@ Leonidas J. Guibas,Stanford University,mobile,1.0,1.0,2009
 Leonidas J. Guibas,Stanford University,mobile,1.0,1.0,2010
 Leonidas J. Guibas,Stanford University,web,1.0,1.0,2014
 Leonidas J. Guibas,Stanford University,robotics,3.0,3.0,2001
+Leonidas J. Guibas,Stanford University,robotics,1.0,0.333333333333,2006
 Leonidas J. Guibas,Stanford University,networks,1.0,0.5,2004
 Leonidas J. Guibas,Stanford University,networks,1.0,0.5,2005
 Leonidas J. Guibas,Stanford University,networks,1.0,0.5,2006
@@ -12674,6 +12705,7 @@ Paul Valiant,Brown University,theory,2.0,1.0,2011
 Paul Valiant,Brown University,theory,1.0,0.5,2014
 Paul Valiant,Brown University,mlmining,1.0,0.5,2013
 Paul Valiant,Brown University,networks,1.0,0.333333333333,2006
+Michael Taylor,University of California - San Diego,robotics,1.0,1.0,2012
 Romit Roy Choudhury,Duke University,hci,1.0,1.0,2012
 Romit Roy Choudhury,Duke University,hci,2.0,2.0,2013
 Romit Roy Choudhury,Duke University,hci,2.0,1.5,2015
@@ -12845,13 +12877,13 @@ Leslie Pack Kaelbling,Massachusetts Institute of Technology,ai,2.0,1.5,2014
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,ai,1.0,0.5,2015
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,1.0,1.0,2002
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,2.0,1.5,2004
-Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,1.0,0.5,2007
-Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,1.0,0.333333333333,2010
+Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,2.0,1.0,2007
+Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,3.0,1.08333333333,2010
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,1.0,0.5,2011
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,4.0,1.83333333333,2012
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,5.0,2.33333333333,2013
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,4.0,2.5,2014
-Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,3.0,2.0,2015
+Leslie Pack Kaelbling,Massachusetts Institute of Technology,robotics,4.0,3.0,2015
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,vision,1.0,0.5,2007
 Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2002
 Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2004
@@ -13435,12 +13467,16 @@ Seth J. Teller,Massachusetts Institute of Technology,mobile,1.0,0.333333333333,2
 Seth J. Teller,Massachusetts Institute of Technology,mobile,1.0,0.5,2004
 Seth J. Teller,Massachusetts Institute of Technology,mobile,1.0,1.0,2010
 Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,1.0,2003
+Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,0.5,2005
 Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,0.5,2006
+Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,0.5,2007
+Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,0.5,2008
 Seth J. Teller,Massachusetts Institute of Technology,robotics,2.0,1.5,2009
-Seth J. Teller,Massachusetts Institute of Technology,robotics,4.0,3.5,2010
-Seth J. Teller,Massachusetts Institute of Technology,robotics,3.0,3.0,2011
-Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,1.0,2012
-Seth J. Teller,Massachusetts Institute of Technology,robotics,2.0,0.833333333333,2014
+Seth J. Teller,Massachusetts Institute of Technology,robotics,5.0,4.5,2010
+Seth J. Teller,Massachusetts Institute of Technology,robotics,4.0,4.0,2011
+Seth J. Teller,Massachusetts Institute of Technology,robotics,2.0,2.0,2012
+Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,0.5,2013
+Seth J. Teller,Massachusetts Institute of Technology,robotics,4.0,2.83333333333,2014
 Seth J. Teller,Massachusetts Institute of Technology,robotics,1.0,1.0,2015
 Seth J. Teller,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2005
 Seth J. Teller,Massachusetts Institute of Technology,networks,1.0,1.0,2011
@@ -13635,6 +13671,7 @@ Scott Niekum,University of Texas - Austin,mlmining,1.0,1.0,2015
 Scott Niekum,University of Texas - Austin,ai,1.0,1.0,2010
 Scott Niekum,University of Texas - Austin,ai,1.0,1.0,2012
 Scott Niekum,University of Texas - Austin,robotics,1.0,1.0,2012
+Scott Niekum,University of Texas - Austin,robotics,1.0,1.0,2013
 Scott Niekum,University of Texas - Austin,robotics,2.0,1.5,2015
 Roni Rosenfeld,Carnegie Mellon University,hci,1.0,0.5,2002
 Roni Rosenfeld,Carnegie Mellon University,hci,1.0,1.0,2013
@@ -13856,16 +13893,16 @@ Stefan Schaal,University of Southern California,robotics,3.0,3.0,2002
 Stefan Schaal,University of Southern California,robotics,1.0,1.0,2003
 Stefan Schaal,University of Southern California,robotics,1.0,1.0,2004
 Stefan Schaal,University of Southern California,robotics,4.0,4.0,2005
-Stefan Schaal,University of Southern California,robotics,1.0,1.0,2006
+Stefan Schaal,University of Southern California,robotics,3.0,3.0,2006
 Stefan Schaal,University of Southern California,robotics,7.0,7.0,2007
 Stefan Schaal,University of Southern California,robotics,1.0,1.0,2008
 Stefan Schaal,University of Southern California,robotics,4.0,4.0,2009
-Stefan Schaal,University of Southern California,robotics,3.0,3.0,2010
+Stefan Schaal,University of Southern California,robotics,4.0,4.0,2010
 Stefan Schaal,University of Southern California,robotics,7.0,7.0,2011
 Stefan Schaal,University of Southern California,robotics,2.0,2.0,2012
 Stefan Schaal,University of Southern California,robotics,3.0,2.5,2013
 Stefan Schaal,University of Southern California,robotics,5.0,5.0,2014
-Stefan Schaal,University of Southern California,robotics,3.0,3.0,2015
+Stefan Schaal,University of Southern California,robotics,6.0,6.0,2015
 Eftychios Sifakis,University of Wisconsin - Madison,graphics,1.0,1.0,2005
 Eftychios Sifakis,University of Wisconsin - Madison,graphics,2.0,1.5,2009
 Eftychios Sifakis,University of Wisconsin - Madison,graphics,1.0,1.0,2010
@@ -13894,6 +13931,7 @@ André Platzer,Carnegie Mellon University,ai,1.0,1.0,2013
 André Platzer,Carnegie Mellon University,logic,1.0,0.5,2008
 André Platzer,Carnegie Mellon University,logic,1.0,1.0,2011
 André Platzer,Carnegie Mellon University,logic,2.0,2.0,2012
+André Platzer,Carnegie Mellon University,robotics,1.0,1.0,2013
 Kamin Whitehouse,University of Virginia,hci,1.0,0.5,2008
 Kamin Whitehouse,University of Virginia,hci,2.0,1.5,2012
 Kamin Whitehouse,University of Virginia,hci,1.0,1.0,2013
@@ -14019,7 +14057,7 @@ Moshe Y. Vardi,Rice University,logic,1.0,1.0,2009
 Moshe Y. Vardi,Rice University,logic,1.0,1.0,2011
 Moshe Y. Vardi,Rice University,logic,1.0,1.0,2012
 Moshe Y. Vardi,Rice University,logic,3.0,2.33333333333,2013
-Moshe Y. Vardi,Rice University,robotics,1.0,0.5,2007
+Moshe Y. Vardi,Rice University,robotics,2.0,1.0,2007
 Moshe Y. Vardi,Rice University,robotics,1.0,0.5,2008
 Moshe Y. Vardi,Rice University,robotics,1.0,0.5,2010
 Moshe Y. Vardi,Rice University,robotics,1.0,0.5,2014
@@ -14054,6 +14092,9 @@ Bilge Mutlu,University of Wisconsin - Madison,hci,3.0,3.0,2013
 Bilge Mutlu,University of Wisconsin - Madison,hci,2.0,2.0,2014
 Bilge Mutlu,University of Wisconsin - Madison,hci,3.0,3.0,2015
 Bilge Mutlu,University of Wisconsin - Madison,mlmining,1.0,1.0,2011
+Bilge Mutlu,University of Wisconsin - Madison,robotics,1.0,1.0,2013
+Bilge Mutlu,University of Wisconsin - Madison,robotics,1.0,1.0,2014
+Bilge Mutlu,University of Wisconsin - Madison,robotics,1.0,0.5,2015
 Robert Endre Tarjan,Princeton University,metrics,1.0,0.5,2005
 Robert Endre Tarjan,Princeton University,theory,1.0,1.0,2002
 Robert Endre Tarjan,Princeton University,theory,1.0,1.0,2003
@@ -14118,7 +14159,7 @@ Benjamin Kuipers,University of Michigan,ai,1.0,1.0,2007
 Benjamin Kuipers,University of Michigan,ai,1.0,1.0,2009
 Benjamin Kuipers,University of Michigan,robotics,3.0,3.0,2004
 Benjamin Kuipers,University of Michigan,robotics,1.0,1.0,2005
-Benjamin Kuipers,University of Michigan,robotics,2.0,2.0,2006
+Benjamin Kuipers,University of Michigan,robotics,3.0,3.0,2006
 Benjamin Kuipers,University of Michigan,robotics,3.0,3.0,2008
 Benjamin Kuipers,University of Michigan,robotics,2.0,2.0,2009
 Benjamin Kuipers,University of Michigan,robotics,1.0,1.0,2011
@@ -14902,7 +14943,11 @@ Barton P. Miller,University of Wisconsin - Madison,security,1.0,0.5,2006
 Héctor Corrada Bravo,University of Maryland - College Park,database,1.0,1.0,2007
 John H. Reif,Duke University,robotics,1.0,1.0,2001
 John H. Reif,Duke University,robotics,2.0,2.0,2003
+John H. Reif,Duke University,robotics,1.0,1.0,2007
 Anca D. Dragan,University of California - Berkeley,robotics,1.0,1.0,2011
+Anca D. Dragan,University of California - Berkeley,robotics,1.0,1.0,2012
+Anca D. Dragan,University of California - Berkeley,robotics,1.0,1.0,2013
+Anca D. Dragan,University of California - Berkeley,robotics,1.0,1.0,2014
 Anca D. Dragan,University of California - Berkeley,robotics,1.0,0.5,2015
 Atanas Rountev,Ohio State University,proglang,1.0,1.0,2000
 Atanas Rountev,Ohio State University,proglang,1.0,0.333333333333,2001
@@ -15123,7 +15168,7 @@ Silvio Savarese,Stanford University,mlmining,1.0,0.333333333333,2014
 Silvio Savarese,Stanford University,ai,1.0,1.0,2012
 Silvio Savarese,Stanford University,robotics,1.0,1.0,2011
 Silvio Savarese,Stanford University,robotics,1.0,1.0,2012
-Silvio Savarese,Stanford University,robotics,1.0,1.0,2014
+Silvio Savarese,Stanford University,robotics,2.0,1.5,2014
 Silvio Savarese,Stanford University,vision,1.0,0.5,2001
 Silvio Savarese,Stanford University,vision,2.0,1.5,2007
 Silvio Savarese,Stanford University,vision,3.0,2.0,2009
@@ -16245,7 +16290,8 @@ Ross A. Knepper,Cornell University,robotics,1.0,0.5,2009
 Ross A. Knepper,Cornell University,robotics,1.0,0.5,2010
 Ross A. Knepper,Cornell University,robotics,1.0,0.5,2011
 Ross A. Knepper,Cornell University,robotics,4.0,2.0,2013
-Ross A. Knepper,Cornell University,robotics,1.0,0.5,2015
+Ross A. Knepper,Cornell University,robotics,1.0,0.333333333333,2014
+Ross A. Knepper,Cornell University,robotics,2.0,1.0,2015
 William R. Harris,Georgia Institute of Technology,proglang,1.0,0.333333333333,2010
 William R. Harris,Georgia Institute of Technology,proglang,1.0,1.0,2011
 William R. Harris,Georgia Institute of Technology,logic,1.0,0.333333333333,2012
