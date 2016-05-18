@@ -280,6 +280,7 @@ function rank() {
 		+ "<div class=\"table\">"
 		+ "<table class=\"table-sm table-striped\""
 		+ "id=\"ranking\" valign=\"top\">";
+
 	    if (displayPercentages) {
 		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
 	    } else {
