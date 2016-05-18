@@ -1,25 +1,29 @@
-var slider = [];            /* The sliders themselves. */
-var setup = false;          /* Have we initialized the sliders? */
 var outputHTML = "";        /* The string containing the ranked list of institutions. */
 var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
-var totalCheckboxes = 19;      /* The number of checkboxes (research areas). */
+var totalCheckboxes = 19;   /* The number of checkboxes (research areas). */
 var maxHoverFaculty = 40;   /* If more than this many, don't create a hover tip. */
+
+var authors = "";           /* The data which will hold the parsed CSV of author info. */
+
+/* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics" ];
 
+/* The prologue that we preface each generated HTML page with (the results). */
+
 var prologue = 	"<html>"
-		+ "<head>"
-		+ "<title>CS department rankings by productivity</title>"
-	        + "<style type=\"text/css\">"
-	        + "  body { font-family: \"Helvetica\", \"Arial\"; }"
-		+ "  table td { vertical-align: top; }"
-	        + "</style>"
-		+ "</head>"
-		+ "<body>"
-	        + "<div class=\"row\">"
-		+ "<div class=\"table\">"
-		+ "<table class=\"table-sm table-striped\""
-		+ "id=\"ranking\" valign=\"top\">";
+    + "<head>"
+    + "<title>CS department rankings by productivity</title>"
+    + "<style type=\"text/css\">"
+    + "  body { font-family: \"Helvetica\", \"Arial\"; }"
+    + "  table td { vertical-align: top; }"
+    + "</style>"
+    + "</head>"
+    + "<body>"
+    + "<div class=\"row\">"
+    + "<div class=\"table\">"
+    + "<table class=\"table-sm table-striped\""
+    + "id=\"ranking\" valign=\"top\">";
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
 function compareNames (a,b) {
@@ -51,18 +55,29 @@ function redisplay() {
 function init() {
     jQuery(document).ready(
 	function() {
+	    /* Set the checkboxes to true. */
 	    for (var i = 1; i <= totalCheckboxes; i++) {
 		var str = 'input[name=field_'+i+']';
 		jQuery(str).prop('checked', true);
 	    }
+	    /* Load up the CSV. */
+	    Papa.parse("generated-author-info.csv", {
+		download : true,
+		header : true,
+		complete: function(results) {
+		    authors = results.data;
+		    for (var i = 1; i <= totalCheckboxes; i++) {
+			var str = 'input[name=field_'+i+']';
+			(function(s) {
+			    jQuery(s).click(function() {
+				rank();
+			    });})(str);
+		    }
+		    activateAll();
+		    rank();
+		}
+	    });
 	});
-    for (var i = 1; i <= totalCheckboxes; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).click(function() {
-	    rank();
-	});
-    }
-    rank();
 }
 
 window.onload=init;
@@ -186,142 +201,135 @@ function rank() {
     var univagg = {}; /* (university, total number of papers) */
     var univwww = {}; /* (university, web page) */
     var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
-    var authors = {};
     var weights = {};
     var areacount = {};
 
-    Papa.parse("generated-author-info.csv", {
-	download : true,
-	header : true,
-	complete: function(results) {
-	    authors = results.data;
-	    /* Update the 'weights' of each area from the checkboxes. */
-	    for (var ind = 0; ind < areas.length; ind++) {
-		weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1.0 : 0.0;
+    /* Update the 'weights' of each area from the checkboxes. */
+    for (var ind = 0; ind < areas.length; ind++) {
+	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1.0 : 0.0;
+    }
+    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
+    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
+    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
+    /* First, count the total number of papers in each area. */
+    for (var r in authors) {
+	var area = authors[r].area;
+	var count = parseFloat(authors[r].count);
+	var year = authors[r].year;
+	if ((year >= startyear) && (year <= endyear)) {
+	    if (!(area in areacount)) {
+		areacount[area] = 0;
 	    }
-	    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
-	    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
-	    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
-	    /* First, count the total number of papers in each area. */
-	    for (var r in authors) {
-		var area = authors[r].area;
-		var count = parseFloat(authors[r].count);
-		var year = authors[r].year;
-		if ((year >= startyear) && (year <= endyear)) {
-		    if (!(area in areacount)) {
-			areacount[area] = 0;
-		    }
-		    areacount[area] += count;
-		}
-	    }
-	    var areaCount = 0;
-	    for (var a in areacount) {
-		if (weights[a] != 0) {
-		    areaCount += 1; 
-		}
-	    }
-	    /* Build the dictionary of departments (and count) to be ranked. */
-	    for (var r in authors) {
-		var name = authors[r].name;
-		var dept = authors[r].dept;
-		var area = authors[r].area;
-		var count = parseInt(authors[r].count);
-		var adjustedCount = parseFloat(authors[r].adjustedcount);
-		var year = authors[r].year;
-		if ((year >= startyear) && (year <= endyear)) {
-		    if (!(dept in univagg)) {
-			univagg[dept] = 0;
-		    }
-		    if (weights[area] != 0) {
-			if (displayPercentages) {
-			    univagg[dept] += (1.0 * adjustedCount) / areacount[area];
-			} else {
-			    univagg[dept] += adjustedCount;
-			}
-			/* Is this the first time we have seen this person? */
-			if (!(name in visited)) {
-			    visited[name] = true;
-			    facultycount[name+dept] = 0;
-			    if (!(dept in univcounts)) {
-				univcounts[dept] = 0;
-				univnames[dept] = [];
-			    }
-			    univnames[dept].push(name);
-			    univcounts[dept] += 1;
-			}
-			facultycount[name+dept] += count;
-		    }
-		}
-	    }
-	    /* Build hover text for faculty names and paper counts. */
-	    for (dept in univnames) {
-		if (univcounts[dept] <= maxHoverFaculty) {
-		    var s = "";
-		    univnames[dept].sort(compareNames);
-		    for (var name of univnames[dept]) {
-			s += "\n" + name + ": " + facultycount[name+dept];
-		    }
-		    univnames[dept] = s.slice(1);
-		} else {
-		    univnames[dept] = "(can't display more than " + maxHoverFaculty + " faculty)";
-		}
-	    }
-
-	    var s = prologue;
-
-	    if (displayPercentages) {
-		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
-	    } else {
-		s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty</th></tr></thead>";
-	    }
-	    s = s + "<tbody>";
-	    /* As long as there is at least one thing selected, compute and display a ranking. */
-	    if (areaCount > 0) {
-		var rank = 0;        /* index */
-		var oldv = -100;  /* old number - to track ties */
-		/* Sort the university aggregate count from largest to smallest. */
-		var keys = Object.keys(univagg);
-		keys.sort(function(a,b){return univagg[b] - univagg[a];});
-
-		/* Display rankings until we have shown `minToRank` items or
-		   while there is a tie (those all get the same rank). */
-		for (var ind = 0; ind < keys.length; ind++) {
-		    var dept = keys[ind];
-		    var v = univagg[dept];
-		    if ((ind >= minToRank) && (v != oldv)) {
-			break;
-		    }
-		    if (v === 0.0) {
-			break;
-		    }
-		    if (oldv != v) {
-			rank = rank + 1;
-		    }
-		    s += "\n<tr><td>" + rank + "</td>";
-		    s += "<td>" +  dept  + "</td>";
-		    if (displayPercentages) {
-			 /* Show average percentage */
-			s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
-		    } else {
-			/* Show count */
-			s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
-		    }
-		    s += "<td align=\"right\">" + "<font color=\"blue\">"
-			+ "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</font>" + "</td>"; /* number of faculty */
-		    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
-		    s += "</tr>\n";
-		    oldv = v;
-		}
-		s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
-		s += "<br>" + "</body>" + "</html>";
-	    } else {
-		s = "<h4>Nothing selected: please select at least one area.</h4>";
-	    }
-	    outputHTML = s;
-	    setTimeout(redisplay, 0);
-	    return false; 
+	    areacount[area] += count;
 	}
-    });
+    }
+    /* Count up the number of areas being used. */
+    var areaCount = 0;
+    for (var a in areacount) {
+	if (weights[a] != 0) {
+	    areaCount += 1; 
+	}
+    }
+    /* Build the dictionary of departments (and count) to be ranked. */
+    for (var r in authors) {
+	var name = authors[r].name;
+	var dept = authors[r].dept;
+	var area = authors[r].area;
+	var count = parseInt(authors[r].count);
+	var adjustedCount = parseFloat(authors[r].adjustedcount);
+	var year = authors[r].year;
+	if ((year >= startyear) && (year <= endyear)) {
+	    if (!(dept in univagg)) {
+		univagg[dept] = 0;
+	    }
+	    if (weights[area] != 0) {
+		if (displayPercentages) {
+		    univagg[dept] += (1.0 * adjustedCount) / areacount[area];
+		} else {
+		    univagg[dept] += adjustedCount;
+		}
+		/* Is this the first time we have seen this person? */
+		if (!(name in visited)) {
+		    visited[name] = true;
+		    facultycount[name+dept] = 0;
+		    if (!(dept in univcounts)) {
+			univcounts[dept] = 0;
+			univnames[dept] = [];
+		    }
+		    univnames[dept].push(name);
+		    univcounts[dept] += 1;
+		}
+		facultycount[name+dept] += count;
+	    }
+	}
+    }
+    /* Build hover text for faculty names and paper counts. */
+    for (dept in univnames) {
+	if (univcounts[dept] <= maxHoverFaculty) {
+	    var s = "";
+	    univnames[dept].sort(compareNames);
+	    for (var name of univnames[dept]) {
+		s += "\n" + name + ": " + facultycount[name+dept];
+	    }
+	    univnames[dept] = s.slice(1);
+	} else {
+	    univnames[dept] = "(can't display more than " + maxHoverFaculty + " faculty)";
+	}
+    }
+    
+    var s = prologue;
+    
+    if (displayPercentages) {
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
+    } else {
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty</th></tr></thead>";
+    }
+    s = s + "<tbody>";
+    /* As long as there is at least one thing selected, compute and display a ranking. */
+    if (areaCount > 0) {
+	var rank = 0;        /* index */
+	var oldv = -100;  /* old number - to track ties */
+	/* Sort the university aggregate count from largest to smallest. */
+	var keys = Object.keys(univagg);
+	keys.sort(function(a,b){return univagg[b] - univagg[a];});
+	
+	/* Display rankings until we have shown `minToRank` items or
+	   while there is a tie (those all get the same rank). */
+	for (var ind = 0; ind < keys.length; ind++) {
+	    var dept = keys[ind];
+	    var v = univagg[dept];
+	    if ((ind >= minToRank) && (v != oldv)) {
+		break;
+	    }
+	    if (v === 0.0) {
+		break;
+	    }
+	    if (oldv != v) {
+		rank = rank + 1;
+	    }
+	    s += "\n<tr><td>" + rank + "</td>";
+	    s += "<td>" +  dept  + "</td>";
+	    if (displayPercentages) {
+		/* Show average percentage */
+		s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
+	    } else {
+		/* Show count */
+		s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
+	    }
+	    s += "<td align=\"right\">" + "<font color=\"blue\">"
+		+ "<div title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</font>" + "</td>"; /* number of faculty */
+	    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
+	    s += "</tr>\n";
+	    oldv = v;
+	}
+	s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
+	s += "<br>" + "</body>" + "</html>";
+    } else {
+	s = "<h4>Nothing selected: please select at least one area.</h4>";
+    }
+    outputHTML = s;
+    setTimeout(redisplay, 0);
+    return false; 
 }
 
 
