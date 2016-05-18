@@ -2,7 +2,7 @@ var slider = [];            /* The sliders themselves. */
 var setup = false;          /* Have we initialized the sliders? */
 var outputHTML = "";        /* The string containing the ranked list of institutions. */
 var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
-var totalSliders = 19;      /* The number of sliders (research areas). */
+var totalCheckboxes = 19;      /* The number of checkboxes (research areas). */
 var maxHoverFaculty = 40;   /* If more than this many, don't create a hover tip. */
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
@@ -31,211 +31,131 @@ function redisplay() {
     jQuery("#success").html(outputHTML);
 }
 
-function slidersetup()
-{
-    if (!setup) {
-	/* Create all sliders. */
-	var rank_slider = [];
-	var str = 'rank_slider_';
-
-	for (var i = 1; i <= totalSliders; i++) {
-	    rank_slider[i] = $(str.concat(i.toString()));
-	    (function(i) {
-		var str = "field_".concat(i.toString());
-		slider[i] = new Control.Slider(rank_slider[i].down('.handle'),
-					  rank_slider[i], {
-					      range: $R(0, 1),
-					      values: [0,1],
-					      sliderValue: 1,
-					      onSlide: function(value) {
-						  $(str).value = value.toFixed(2);
-					      },
-					      onChange: function(value) {
-						  $(str).value = value.toFixed(2);
-						  rank();
-					      }
-					  });
-	    })(i);
-	};
-	
-	setup = true;
-    }
-}
 
 function init() {
-    slidersetup();
+    jQuery(document).ready(
+	function() {
+	    for (var i = 1; i <= totalCheckboxes; i++) {
+		var str = 'input[name=field_'+i+']';
+		jQuery(str).prop('checked', true);
+	    }
+	});
+    for (var i = 1; i <= totalCheckboxes; i++) {
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).click(function() {
+	    rank();
+	});
+    }
     rank();
 }
 
 window.onload=init;
 
 function activateAll() {
-    for (var i = 1; i <= totalSliders; i++) {
-	slider[i].setValue(1.0);
+    for (var i = 1; i <= totalCheckboxes; i++) {
+	var str = "input[name=field_"+i+"]";
+	jQuery(str).prop('checked', true);
     }
+    rank();
     return false;
 }
 
 function activateNone() {
-    for (var i = 1; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
+    for (var i = 1; i <= totalCheckboxes; i++) {
+	var str = "input[name=field_"+i+"]";
+	jQuery(str).prop('checked', false);
     }
+    rank();
     return false;
 }
 
 function activatePL() {
-    slider[1].setValue(1.0);
-    slider[2].setValue(1.0);
-/*
-    for (var i = 3; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
-    }
-*/
+    jQuery('input[name=field_1]').prop('checked', true);
+    jQuery('input[name=field_2]').prop('checked', true);
+    rank();
     return false;
 }
 
 function activateSystems() {
-/*
-    slider[1].setValue(0.0);
-    slider[2].setValue(0.0);
-*/
     for (var i = 3; i <= 7; i++) {
-	slider[i].setValue(1.0);
+	var str = "input[name=field_"+i+"]";
+	jQuery(str).prop('checked', true);
     }
-    slider[18].setValue(1.0);
-/*
-    for (var i = 8; i <= 17; i++) {
-	slider[i].setValue(0.0);
-    }
-    slider[totalSliders].setValue(0.0);
-*/
+    jQuery('input[name=field_18]').prop('checked', true);
+    rank();
     return false;
 }
 
 function activateAI() {
-/*
-    for (var i = 1; i <= 7; i++) {
-	slider[i].setValue(0.0);
-    }
-*/
     for (var i = 8; i <= 12; i++) {
-	slider[i].setValue(1.0);
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked',true);
     }
-/*
-  for (var i = 13; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
-    }
-*/
+    rank();
     return false;
 }
 
 function activateTheory() {
-    /*
-    for (var i = 1; i <= 12; i++) {
-	slider[i].setValue(0.0);
-    }
-    */
-    
     for (var i = 13; i <= 14; i++) {
-	slider[i].setValue(1.0);
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked',true);
     }
-    /*
-    for (var i = 15; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
-    }
-    */
+    rank();
     return false;
 }
 
 function activateOthers() {
-    /*
-    for (var i = 1; i <= 14; i++) {
-	slider[i].setValue(0.0);
-    }
-    */
     for (var i = 15; i <= 17; i++) {
-	slider[i].setValue(1.0);
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked',true);
     }
-    slider[totalSliders].setValue(1.0);
-    /*    slider[18].setValue(0.0); */
+    jQuery('input[name=field_19]').prop('checked', true);
+    rank();
     return false;
 }
 
 function deactivatePL() {
-    slider[1].setValue(0.0);
-    slider[2].setValue(0.0);
-/*
-    for (var i = 3; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
-    }
-*/
+    jQuery('input[name=field_1]').prop('checked', false);
+    jQuery('input[name=field_2]').prop('checked', false);
+    rank();
     return false;
 }
 
 function deactivateSystems() {
-/*
-    slider[1].setValue(0.0);
-    slider[2].setValue(0.0);
-*/
     for (var i = 3; i <= 7; i++) {
-	slider[i].setValue(0.0);
+	var str = "input[name=field_"+i+"]";
+	jQuery(str).prop('checked', false);
     }
-    slider[18].setValue(0.0);
-/*
-    for (var i = 8; i <= 17; i++) {
-	slider[i].setValue(0.0);
-    }
-    slider[totalSliders].setValue(0.0);
-*/
+    jQuery('input[name=field_18]').prop('checked', false);
+    rank();
     return false;
 }
 
 function deactivateAI() {
-/*
-    for (var i = 1; i <= 7; i++) {
-	slider[i].setValue(0.0);
-    }
-*/
     for (var i = 8; i <= 12; i++) {
-	slider[i].setValue(0.0);
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked',false);
     }
-/*
-  for (var i = 13; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
-    }
-*/
+    rank();
     return false;
 }
 
 function deactivateTheory() {
-    /*
-    for (var i = 1; i <= 12; i++) {
-	slider[i].setValue(0.0);
-    }
-    */
-    
     for (var i = 13; i <= 14; i++) {
-	slider[i].setValue(0.0);
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked',false);
     }
-    /*
-    for (var i = 15; i <= totalSliders; i++) {
-	slider[i].setValue(0.0);
-    }
-    */
+    rank();
     return false;
 }
 
 function deactivateOthers() {
-    /*
-    for (var i = 1; i <= 14; i++) {
-	slider[i].setValue(0.0);
-    }
-    */
     for (var i = 15; i <= 17; i++) {
-	slider[i].setValue(0.0);
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked',false);
     }
-    slider[totalSliders].setValue(0.0);
-    /*    slider[18].setValue(0.0); */
+    jQuery('input[name=field_19]').prop('checked', false);
+    rank();
     return false;
 }
 
@@ -260,25 +180,25 @@ function rank() {
 	header : true,
 	complete: function(results) {
 	    authors = results.data;
-	    weights["proglang"] = parseFloat($("field_1").value);
-	    weights["softeng"]  = parseFloat($("field_2").value);
-	    weights["opsys"]    = parseFloat($("field_3").value);
-	    weights["networks"] = parseFloat($("field_4").value);
-	    weights["security"] = parseFloat($("field_5").value);
-	    weights["database"] = parseFloat($("field_6").value);
-	    weights["metrics"]  = parseFloat($("field_7").value);
-	    weights["mlmining"] = parseFloat($("field_8").value);
-	    weights["ai"]       = parseFloat($("field_9").value);
-	    weights["nlp"]      = parseFloat($("field_10").value);
-	    weights["web"]      = parseFloat($("field_11").value);
-	    weights["vision"]   = parseFloat($("field_12").value);
-	    weights["theory"]   = parseFloat($("field_13").value);
-	    weights["logic"]    = parseFloat($("field_14").value);
-	    weights["arch"]     = parseFloat($("field_15").value);
-	    weights["graphics"] = parseFloat($("field_16").value);
-	    weights["hci"]      = parseFloat($("field_17").value);
-	    weights["mobile"]   = parseFloat($("field_18").value);
-	    weights["robotics"]   = parseFloat($("field_19").value);
+	    weights["proglang"] = jQuery('input[name=field_1]').prop('checked') ? 1.0 : 0.0;
+	    weights["softeng"]  = jQuery('input[name=field_2]').prop('checked') ? 1.0 : 0.0;
+	    weights["opsys"]    = jQuery('input[name=field_3]').prop('checked') ? 1.0 : 0.0;
+	    weights["networks"] = jQuery('input[name=field_4]').prop('checked') ? 1.0 : 0.0;
+	    weights["security"] = jQuery('input[name=field_5]').prop('checked') ? 1.0 : 0.0;
+	    weights["database"] = jQuery('input[name=field_6]').prop('checked') ? 1.0 : 0.0;
+	    weights["metrics"]  = jQuery('input[name=field_7]').prop('checked') ? 1.0 : 0.0;
+	    weights["mlmining"] = jQuery('input[name=field_8]').prop('checked') ? 1.0 : 0.0;
+	    weights["ai"]       = jQuery('input[name=field_9]').prop('checked') ? 1.0 : 0.0;
+	    weights["nlp"]      = jQuery('input[name=field_10]').prop('checked') ? 1.0 : 0.0;
+	    weights["web"]      = jQuery('input[name=field_11]').prop('checked') ? 1.0 : 0.0;
+	    weights["vision"]   = jQuery('input[name=field_12]').prop('checked') ? 1.0 : 0.0;
+	    weights["theory"]   = jQuery('input[name=field_13]').prop('checked') ? 1.0 : 0.0;
+	    weights["logic"]    = jQuery('input[name=field_14]').prop('checked') ? 1.0 : 0.0;
+	    weights["arch"]     = jQuery('input[name=field_15]').prop('checked') ? 1.0 : 0.0;
+	    weights["graphics"] = jQuery('input[name=field_16]').prop('checked') ? 1.0 : 0.0;
+	    weights["hci"]      = jQuery('input[name=field_17]').prop('checked') ? 1.0 : 0.0;
+	    weights["mobile"]   = jQuery('input[name=field_18]').prop('checked') ? 1.0 : 0.0;
+	    weights["robotics"]   = jQuery('input[name=field_19]').prop('checked') ? 1.0 : 0.0;
 	    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
 	    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
 	    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
