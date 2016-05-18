@@ -27,7 +27,7 @@ areadict = {
     'nlp' : ['EMNLP','ACL','NAACL'],
     'vision' : ['CVPR','ICCV'],
     'mobile' : ['MobiSys','MobiCom','SenSys'],
-    'robotics' : ['ICRA','IROS']
+    'robotics' : ['ICRA','IROS','Robotics: Science and Systems']
 }
 
 confdict = {}
