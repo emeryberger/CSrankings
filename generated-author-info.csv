@@ -1110,9 +1110,9 @@ Inderjit S. Dhillon,University of Texas - Austin,mlmining,4.0,2.5,2004
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,1.83333333333,2005
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,2.5,2006
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,1.0,0.5,2007
-Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,2.33333333333,2008
-Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,3.0,2009
-Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,2.5,2010
+Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,1.83333333333,2008
+Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,2.5,2009
+Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,2.0,2010
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,5.0,3.5,2011
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,2.0,1.33333333333,2012
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,1.33333333333,2013
@@ -1710,7 +1710,7 @@ Luca Trevisan,Stanford University,theory,2.0,1.5,2006
 Luca Trevisan,Stanford University,theory,1.0,0.333333333333,2007
 Luca Trevisan,Stanford University,theory,2.0,1.33333333333,2008
 Luca Trevisan,Stanford University,theory,1.0,1.0,2009
-Luca Trevisan,Stanford University,theory,3.0,2.0,2012
+Luca Trevisan,Stanford University,theory,3.0,1.83333333333,2012
 Luca Trevisan,Stanford University,theory,1.0,1.0,2013
 Yoav Freund,University of California - San Diego,theory,1.0,0.5,2008
 Yoav Freund,University of California - San Diego,mlmining,1.0,0.5,2007
@@ -1754,7 +1754,7 @@ Salil P. Vadhan,Harvard University,theory,4.0,2.83333333333,2006
 Salil P. Vadhan,Harvard University,theory,1.0,0.333333333333,2008
 Salil P. Vadhan,Harvard University,theory,2.0,2.0,2009
 Salil P. Vadhan,Harvard University,theory,3.0,2.5,2010
-Salil P. Vadhan,Harvard University,theory,3.0,2.5,2012
+Salil P. Vadhan,Harvard University,theory,3.0,2.33333333333,2012
 Salil P. Vadhan,Harvard University,theory,1.0,1.0,2013
 Salil P. Vadhan,Harvard University,theory,1.0,0.5,2014
 Salil P. Vadhan,Harvard University,theory,2.0,1.5,2015
@@ -2522,11 +2522,11 @@ David Zuckerman,University of Texas - Austin,theory,1.0,1.0,2003
 David Zuckerman,University of Texas - Austin,theory,1.0,1.0,2004
 David Zuckerman,University of Texas - Austin,theory,2.0,1.33333333333,2006
 David Zuckerman,University of Texas - Austin,theory,2.0,1.5,2008
-David Zuckerman,University of Texas - Austin,theory,2.0,1.25,2010
-David Zuckerman,University of Texas - Austin,theory,2.0,1.5,2011
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2012
+David Zuckerman,University of Texas - Austin,theory,2.0,0.75,2010
+David Zuckerman,University of Texas - Austin,theory,2.0,1.0,2011
+David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,2012
 David Zuckerman,University of Texas - Austin,theory,1.0,1.0,2014
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2015
+David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,2015
 David Zuckerman,University of Texas - Austin,security,1.0,1.0,2002
 Rob Fergus,New York University,graphics,1.0,1.0,2009
 Rob Fergus,New York University,mlmining,2.0,2.0,2009
@@ -4799,7 +4799,7 @@ Rocco A. Servedio,Columbia University,theory,4.0,2.5,2005
 Rocco A. Servedio,Columbia University,theory,1.0,0.5,2007
 Rocco A. Servedio,Columbia University,theory,2.0,1.0,2008
 Rocco A. Servedio,Columbia University,theory,1.0,1.0,2009
-Rocco A. Servedio,Columbia University,theory,1.0,0.333333333333,2010
+Rocco A. Servedio,Columbia University,theory,1.0,0.25,2010
 Rocco A. Servedio,Columbia University,theory,2.0,2.0,2012
 Rocco A. Servedio,Columbia University,theory,1.0,0.5,2013
 Rocco A. Servedio,Columbia University,theory,3.0,2.5,2014
@@ -4846,7 +4846,7 @@ Eric Vigoda,Georgia Institute of Technology,theory,1.0,0.5,2001
 Eric Vigoda,Georgia Institute of Technology,theory,1.0,1.0,2003
 Eric Vigoda,Georgia Institute of Technology,theory,1.0,1.0,2004
 Eric Vigoda,Georgia Institute of Technology,theory,2.0,1.33333333333,2007
-Eric Vigoda,Georgia Institute of Technology,theory,2.0,0.75,2011
+Eric Vigoda,Georgia Institute of Technology,theory,2.0,0.7,2011
 Eric Vigoda,Georgia Institute of Technology,theory,1.0,0.5,2014
 James Caverlee,Texas A&M University,ai,1.0,1.0,2016
 James Caverlee,Texas A&M University,web,1.0,0.5,2006
@@ -6097,6 +6097,14 @@ Prabal Dutta,University of Michigan,mobile,5.0,3.53333333333,2014
 Prabal Dutta,University of Michigan,mobile,5.0,5.0,2015
 Prabal Dutta,University of Michigan,arch,1.0,1.0,2015
 Stephen A. Edwards,Columbia University,logic,1.0,1.0,2005
+Raghu Meka,University of California - Los Angeles,theory,3.0,1.25,2010
+Raghu Meka,University of California - Los Angeles,theory,2.0,0.7,2011
+Raghu Meka,University of California - Los Angeles,theory,5.0,2.5,2012
+Raghu Meka,University of California - Los Angeles,theory,1.0,1.0,2013
+Raghu Meka,University of California - Los Angeles,theory,3.0,2.33333333333,2015
+Raghu Meka,University of California - Los Angeles,mlmining,1.0,0.5,2008
+Raghu Meka,University of California - Los Angeles,mlmining,1.0,0.5,2009
+Raghu Meka,University of California - Los Angeles,mlmining,1.0,0.5,2010
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,hci,1.0,0.5,2009
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,proglang,1.0,0.5,2005
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,mobile,1.0,0.5,2009
@@ -7036,7 +7044,7 @@ Dan Suciu,University of Washington,database,4.0,2.5,2011
 Dan Suciu,University of Washington,database,7.0,4.0,2012
 Dan Suciu,University of Washington,database,3.0,1.5,2013
 Dan Suciu,University of Washington,database,4.0,2.5,2014
-Dan Suciu,University of Washington,database,6.0,4.5,2015
+Dan Suciu,University of Washington,database,6.0,4.33333333333,2015
 Dan Suciu,University of Washington,database,1.0,1.0,2016
 Dan Suciu,University of Washington,mobile,1.0,0.333333333333,2008
 Dan Suciu,University of Washington,web,1.0,1.0,2002
@@ -8082,7 +8090,7 @@ Santosh Vempala,Georgia Institute of Technology,theory,2.0,1.5,2006
 Santosh Vempala,Georgia Institute of Technology,theory,1.0,0.333333333333,2007
 Santosh Vempala,Georgia Institute of Technology,theory,3.0,2.33333333333,2008
 Santosh Vempala,Georgia Institute of Technology,theory,2.0,2.0,2010
-Santosh Vempala,Georgia Institute of Technology,theory,2.0,0.75,2011
+Santosh Vempala,Georgia Institute of Technology,theory,2.0,0.7,2011
 Santosh Vempala,Georgia Institute of Technology,theory,2.0,1.33333333333,2012
 Santosh Vempala,Georgia Institute of Technology,theory,3.0,2.0,2013
 Santosh Vempala,Georgia Institute of Technology,theory,1.0,1.0,2014
@@ -8227,9 +8235,9 @@ Garrison W. Cottrell,University of California - San Diego,robotics,2.0,2.0,2008
 Garrison W. Cottrell,University of California - San Diego,vision,1.0,1.0,2008
 Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,1.0,2002
 Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,1.0,2009
-Adnan Darwiche,University of California - Los Angeles,mlmining,2.0,2.0,2013
+Adnan Darwiche,University of California - Los Angeles,mlmining,2.0,1.5,2013
 Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,1.0,2014
-Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,1.0,2015
+Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,0.5,2015
 Adnan Darwiche,University of California - Los Angeles,ai,1.0,1.0,2001
 Adnan Darwiche,University of California - Los Angeles,ai,3.0,3.0,2003
 Adnan Darwiche,University of California - Los Angeles,ai,4.0,4.0,2005
@@ -8241,7 +8249,7 @@ Adnan Darwiche,University of California - Los Angeles,ai,1.0,1.0,2010
 Adnan Darwiche,University of California - Los Angeles,ai,1.0,1.0,2011
 Adnan Darwiche,University of California - Los Angeles,ai,1.0,1.0,2012
 Adnan Darwiche,University of California - Los Angeles,ai,2.0,2.0,2013
-Adnan Darwiche,University of California - Los Angeles,ai,5.0,5.0,2015
+Adnan Darwiche,University of California - Los Angeles,ai,5.0,4.0,2015
 Adnan Darwiche,University of California - Los Angeles,ai,1.0,1.0,2016
 Eric Paulos,University of California - Berkeley,hci,1.0,1.0,2004
 Eric Paulos,University of California - Berkeley,hci,1.0,1.0,2005
@@ -8568,7 +8576,7 @@ David Steurer,Cornell University,theory,2.0,0.533333333333,2008
 David Steurer,Cornell University,theory,3.0,1.5,2009
 David Steurer,Cornell University,theory,3.0,1.33333333333,2010
 David Steurer,Cornell University,theory,1.0,0.5,2011
-David Steurer,Cornell University,theory,3.0,2.5,2012
+David Steurer,Cornell University,theory,3.0,2.33333333333,2012
 David Steurer,Cornell University,theory,1.0,0.333333333333,2013
 David Steurer,Cornell University,theory,2.0,2.0,2014
 David Steurer,Cornell University,theory,2.0,1.33333333333,2015
@@ -8766,6 +8774,16 @@ Angelos D. Keromytis,Columbia University,security,2.0,1.5,2015
 Angelos D. Keromytis,Columbia University,arch,1.0,0.5,2009
 Angelos D. Keromytis,Columbia University,networks,1.0,0.333333333333,2002
 Angelos D. Keromytis,Columbia University,networks,1.0,0.5,2005
+Guy Van den Broeck,University of California - Los Angeles,mlmining,1.0,1.0,2011
+Guy Van den Broeck,University of California - Los Angeles,mlmining,1.0,0.5,2013
+Guy Van den Broeck,University of California - Los Angeles,mlmining,1.0,0.5,2015
+Guy Van den Broeck,University of California - Los Angeles,ai,1.0,1.0,2010
+Guy Van den Broeck,University of California - Los Angeles,ai,2.0,2.0,2011
+Guy Van den Broeck,University of California - Los Angeles,ai,1.0,1.0,2012
+Guy Van den Broeck,University of California - Los Angeles,ai,2.0,2.0,2014
+Guy Van den Broeck,University of California - Los Angeles,ai,6.0,5.0,2015
+Guy Van den Broeck,University of California - Los Angeles,ai,1.0,1.0,2016
+Guy Van den Broeck,University of California - Los Angeles,database,1.0,0.333333333333,2015
 Benjamin J. Hescott,Tufts University,ai,1.0,0.5,2014
 Takeo Kanade,Carnegie Mellon University,graphics,1.0,1.0,2005
 Takeo Kanade,Carnegie Mellon University,graphics,1.0,1.0,2010
@@ -9693,9 +9711,9 @@ Prasad Raghavendra,University of California - Berkeley,theory,1.0,0.5,2006
 Prasad Raghavendra,University of California - Berkeley,theory,1.0,0.5,2007
 Prasad Raghavendra,University of California - Berkeley,theory,3.0,2.5,2008
 Prasad Raghavendra,University of California - Berkeley,theory,4.0,2.0,2009
-Prasad Raghavendra,University of California - Berkeley,theory,3.0,1.16666666667,2010
+Prasad Raghavendra,University of California - Berkeley,theory,3.0,1.08333333333,2010
 Prasad Raghavendra,University of California - Berkeley,theory,1.0,0.5,2011
-Prasad Raghavendra,University of California - Berkeley,theory,2.0,0.833333333333,2012
+Prasad Raghavendra,University of California - Berkeley,theory,2.0,0.666666666667,2012
 Prasad Raghavendra,University of California - Berkeley,theory,2.0,0.833333333333,2013
 Prasad Raghavendra,University of California - Berkeley,theory,1.0,0.333333333333,2015
 Yoonsuck Choe,Texas A&M University,ai,2.0,2.0,2006
@@ -11898,8 +11916,8 @@ Roger King,University of Colorado Boulder,database,1.0,1.0,2002
 Roger King,University of Colorado Boulder,robotics,1.0,1.0,2014
 Adam Klivans,University of Texas - Austin,theory,2.0,1.0,2001
 Adam Klivans,University of Texas - Austin,theory,2.0,0.833333333333,2002
-Adam Klivans,University of Texas - Austin,theory,2.0,1.33333333333,2010
-Adam Klivans,University of Texas - Austin,theory,1.0,0.25,2011
+Adam Klivans,University of Texas - Austin,theory,2.0,0.75,2010
+Adam Klivans,University of Texas - Austin,theory,1.0,0.2,2011
 Facundo Mémoli,Ohio State University,mlmining,1.0,1.0,2014
 David H. Laidlaw,Brown University,graphics,2.0,2.0,2003
 David H. Laidlaw,Brown University,hci,3.0,3.0,2012
@@ -11972,7 +11990,7 @@ Paul Beame,University of Washington,ai,1.0,0.5,2007
 Paul Beame,University of Washington,ai,1.0,1.0,2014
 Paul Beame,University of Washington,database,1.0,0.5,2013
 Paul Beame,University of Washington,database,1.0,0.5,2014
-Paul Beame,University of Washington,database,1.0,0.5,2015
+Paul Beame,University of Washington,database,1.0,0.333333333333,2015
 Michael Ferdman,State University of New York - Stony Brook,arch,2.0,1.5,2008
 Michael Ferdman,State University of New York - Stony Brook,arch,1.0,0.5,2009
 Michael Ferdman,State University of New York - Stony Brook,arch,1.0,1.0,2011
@@ -12200,10 +12218,10 @@ Shachar Lovett,University of California - San Diego,theory,3.0,3.0,2008
 Shachar Lovett,University of California - San Diego,theory,1.0,0.5,2009
 Shachar Lovett,University of California - San Diego,theory,2.0,2.0,2010
 Shachar Lovett,University of California - San Diego,theory,2.0,2.0,2011
-Shachar Lovett,University of California - San Diego,theory,5.0,4.0,2012
+Shachar Lovett,University of California - San Diego,theory,5.0,3.5,2012
 Shachar Lovett,University of California - San Diego,theory,3.0,2.5,2013
 Shachar Lovett,University of California - San Diego,theory,2.0,1.5,2014
-Shachar Lovett,University of California - San Diego,theory,3.0,2.5,2015
+Shachar Lovett,University of California - San Diego,theory,3.0,2.33333333333,2015
 Tracy Anne Hammond,Texas A&M University,hci,1.0,0.5,2014
 Tracy Anne Hammond,Texas A&M University,ai,1.0,1.0,2011
 Tracy Anne Hammond,Texas A&M University,ai,1.0,1.0,2013
@@ -12741,7 +12759,7 @@ Daniel Stefankovic,University of Rochester,theory,1.0,1.0,2001
 Daniel Stefankovic,University of Rochester,theory,1.0,1.0,2002
 Daniel Stefankovic,University of Rochester,theory,1.0,0.5,2003
 Daniel Stefankovic,University of Rochester,theory,1.0,0.333333333333,2007
-Daniel Stefankovic,University of Rochester,theory,1.0,0.25,2011
+Daniel Stefankovic,University of Rochester,theory,1.0,0.2,2011
 Daniel Stefankovic,University of Rochester,theory,1.0,0.5,2014
 Daniel Stefankovic,University of Rochester,mlmining,1.0,0.5,2012
 Sibel Adali,Rensselaer Polytechnic Institute,web,1.0,0.5,2012
@@ -14875,7 +14893,7 @@ Russell Impagliazzo,University of California - San Diego,theory,1.0,1.0,2004
 Russell Impagliazzo,University of California - San Diego,theory,2.0,2.0,2006
 Russell Impagliazzo,University of California - San Diego,theory,1.0,1.0,2008
 Russell Impagliazzo,University of California - San Diego,theory,2.0,2.0,2009
-Russell Impagliazzo,University of California - San Diego,theory,3.0,1.5,2012
+Russell Impagliazzo,University of California - San Diego,theory,3.0,1.33333333333,2012
 Russell Impagliazzo,University of California - San Diego,theory,2.0,1.5,2013
 Eakta Jain,University of Florida,graphics,1.0,0.5,2012
 Eakta Jain,University of Florida,graphics,1.0,0.5,2015
