@@ -426,7 +426,7 @@ David Wagner,University of California - Berkeley,hci,1.0,1.0,2015
 David Wagner,University of California - Berkeley,mobile,1.0,1.0,2004
 David Wagner,University of California - Berkeley,mobile,1.0,1.0,2011
 David Wagner,University of California - Berkeley,web,1.0,0.5,2010
-David Wagner,University of California - Berkeley,security,2.0,1.5,2000
+David Wagner,University of California - Berkeley,security,2.0,1.33333333333,2000
 David Wagner,University of California - Berkeley,security,3.0,2.5,2001
 David Wagner,University of California - Berkeley,security,3.0,3.0,2002
 David Wagner,University of California - Berkeley,security,4.0,4.0,2004
@@ -1277,7 +1277,7 @@ Philip Levis,Stanford University,opsys,1.0,0.25,2008
 Philip Levis,Stanford University,opsys,1.0,0.5,2009
 Philip Levis,Stanford University,opsys,1.0,0.333333333333,2011
 Philip Levis,Stanford University,opsys,1.0,1.0,2012
-Philip Levis,Stanford University,proglang,1.0,0.5,2003
+Philip Levis,Stanford University,proglang,1.0,0.333333333333,2003
 Philip Levis,Stanford University,mobile,1.0,0.5,2003
 Philip Levis,Stanford University,mobile,2.0,1.25,2005
 Philip Levis,Stanford University,mobile,3.0,2.33333333333,2006
@@ -1290,7 +1290,7 @@ Philip Levis,Stanford University,mobile,2.0,1.33333333333,2014
 Philip Levis,Stanford University,mobile,1.0,0.5,2015
 Philip Levis,Stanford University,security,1.0,1.0,2015
 Philip Levis,Stanford University,arch,1.0,0.5,2002
-Philip Levis,Stanford University,networks,2.0,0.666666666667,2004
+Philip Levis,Stanford University,networks,2.0,0.583333333333,2004
 Philip Levis,Stanford University,networks,1.0,0.5,2005
 Nancy M. Amato,Texas A&M University,robotics,4.0,4.0,2000
 Nancy M. Amato,Texas A&M University,robotics,9.0,9.0,2001
@@ -3464,7 +3464,7 @@ Armando Fox,University of California - Berkeley,database,1.0,0.333333333333,2010
 Armando Fox,University of California - Berkeley,database,1.0,0.25,2011
 Armando Fox,University of California - Berkeley,database,1.0,0.25,2013
 Armando Fox,University of California - Berkeley,softeng,1.0,1.0,2005
-Armando Fox,University of California - Berkeley,networks,2.0,1.5,2004
+Armando Fox,University of California - Berkeley,networks,2.0,1.33333333333,2004
 Hadi Esmaeilzadeh,Georgia Institute of Technology,softeng,1.0,0.5,2015
 Hadi Esmaeilzadeh,Georgia Institute of Technology,arch,2.0,1.5,2011
 Hadi Esmaeilzadeh,Georgia Institute of Technology,arch,2.0,1.0,2012
@@ -3544,7 +3544,7 @@ David A. Patterson,University of California - Berkeley,arch,1.0,1.0,2003
 David A. Patterson,University of California - Berkeley,arch,1.0,0.5,2010
 David A. Patterson,University of California - Berkeley,arch,1.0,0.5,2013
 David A. Patterson,University of California - Berkeley,arch,1.0,0.333333333333,2015
-David A. Patterson,University of California - Berkeley,networks,1.0,0.5,2004
+David A. Patterson,University of California - Berkeley,networks,1.0,0.333333333333,2004
 James McLurkin,Rice University,robotics,1.0,1.0,2005
 James McLurkin,Rice University,robotics,1.0,0.5,2006
 James McLurkin,Rice University,robotics,1.0,0.5,2009
@@ -3851,6 +3851,31 @@ Kevin Fu,University of Michigan,security,1.0,1.0,2013
 Kevin Fu,University of Michigan,arch,1.0,1.0,2011
 Kevin Fu,University of Michigan,arch,1.0,1.0,2015
 Kevin Fu,University of Michigan,networks,1.0,0.333333333333,2011
+Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.25,2000
+Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.5,2001
+Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.5,2003
+Eric A. Brewer,University of California - Berkeley,opsys,2.0,1.5,2006
+Eric A. Brewer,University of California - Berkeley,database,1.0,0.5,2004
+Eric A. Brewer,University of California - Berkeley,database,1.0,1.0,2007
+Eric A. Brewer,University of California - Berkeley,database,1.0,1.0,2008
+Eric A. Brewer,University of California - Berkeley,database,1.0,1.0,2009
+Eric A. Brewer,University of California - Berkeley,proglang,1.0,0.333333333333,2003
+Eric A. Brewer,University of California - Berkeley,proglang,1.0,1.0,2006
+Eric A. Brewer,University of California - Berkeley,proglang,1.0,1.0,2008
+Eric A. Brewer,University of California - Berkeley,mobile,1.0,0.333333333333,2004
+Eric A. Brewer,University of California - Berkeley,web,1.0,1.0,2003
+Eric A. Brewer,University of California - Berkeley,web,1.0,1.0,2005
+Eric A. Brewer,University of California - Berkeley,web,2.0,2.0,2006
+Eric A. Brewer,University of California - Berkeley,web,1.0,1.0,2008
+Eric A. Brewer,University of California - Berkeley,security,1.0,0.333333333333,2000
+Eric A. Brewer,University of California - Berkeley,security,1.0,0.5,2011
+Eric A. Brewer,University of California - Berkeley,softeng,1.0,1.0,2005
+Eric A. Brewer,University of California - Berkeley,arch,1.0,1.0,2010
+Eric A. Brewer,University of California - Berkeley,networks,1.0,1.0,2000
+Eric A. Brewer,University of California - Berkeley,networks,2.0,0.583333333333,2004
+Eric A. Brewer,University of California - Berkeley,networks,2.0,1.0,2007
+Eric A. Brewer,University of California - Berkeley,networks,1.0,0.5,2008
+Eric A. Brewer,University of California - Berkeley,networks,1.0,1.0,2013
 Amy Ogan,Carnegie Mellon University,hci,1.0,0.5,2008
 Amy Ogan,Carnegie Mellon University,hci,2.0,1.5,2012
 Amy Ogan,Carnegie Mellon University,hci,1.0,0.5,2013
@@ -3863,8 +3888,8 @@ Ahmed Helmy,University of Florida,networks,2.0,2.0,2005
 Ahmed Helmy,University of Florida,networks,1.0,1.0,2007
 Ahmed Helmy,University of Florida,networks,1.0,1.0,2011
 Ahmed Helmy,University of Florida,networks,2.0,2.0,2013
-George C. Necula,University of California - Berkeley,opsys,1.0,1.0,2003
-George C. Necula,University of California - Berkeley,opsys,2.0,2.0,2006
+George C. Necula,University of California - Berkeley,opsys,1.0,0.5,2003
+George C. Necula,University of California - Berkeley,opsys,2.0,1.5,2006
 George C. Necula,University of California - Berkeley,proglang,2.0,2.0,2000
 George C. Necula,University of California - Berkeley,proglang,1.0,1.0,2001
 George C. Necula,University of California - Berkeley,proglang,1.0,0.5,2002
@@ -6020,13 +6045,13 @@ David P. Dobkin,Princeton University,graphics,1.0,0.333333333333,2002
 David P. Dobkin,Princeton University,graphics,1.0,0.333333333333,2003
 David P. Dobkin,Princeton University,graphics,1.0,0.333333333333,2004
 David P. Dobkin,Princeton University,graphics,1.0,0.333333333333,2008
-David E. Culler,University of California - Berkeley,opsys,1.0,0.333333333333,2000
-David E. Culler,University of California - Berkeley,opsys,1.0,1.0,2001
+David E. Culler,University of California - Berkeley,opsys,1.0,0.25,2000
+David E. Culler,University of California - Berkeley,opsys,1.0,0.5,2001
 David E. Culler,University of California - Berkeley,opsys,1.0,0.25,2006
 David E. Culler,University of California - Berkeley,opsys,1.0,0.333333333333,2007
-David E. Culler,University of California - Berkeley,proglang,1.0,0.5,2003
+David E. Culler,University of California - Berkeley,proglang,1.0,0.333333333333,2003
 David E. Culler,University of California - Berkeley,mobile,2.0,1.5,2003
-David E. Culler,University of California - Berkeley,mobile,3.0,2.0,2004
+David E. Culler,University of California - Berkeley,mobile,3.0,1.83333333333,2004
 David E. Culler,University of California - Berkeley,mobile,2.0,1.25,2005
 David E. Culler,University of California - Berkeley,mobile,1.0,0.5,2006
 David E. Culler,University of California - Berkeley,mobile,1.0,0.166666666667,2007
@@ -6038,7 +6063,7 @@ David E. Culler,University of California - Berkeley,mobile,1.0,1.0,2013
 David E. Culler,University of California - Berkeley,mobile,3.0,1.83333333333,2014
 David E. Culler,University of California - Berkeley,arch,1.0,1.0,2000
 David E. Culler,University of California - Berkeley,arch,2.0,1.5,2002
-David E. Culler,University of California - Berkeley,networks,3.0,1.16666666667,2004
+David E. Culler,University of California - Berkeley,networks,3.0,1.08333333333,2004
 David E. Culler,University of California - Berkeley,networks,2.0,0.7,2005
 David E. Culler,University of California - Berkeley,networks,1.0,1.0,2013
 Zia Khan,University of Maryland - College Park,robotics,1.0,0.333333333333,2003
@@ -11465,7 +11490,7 @@ Samuel Madden,Massachusetts Institute of Technology,mobile,1.0,0.5,2011
 Samuel Madden,Massachusetts Institute of Technology,mobile,2.0,1.5,2012
 Samuel Madden,Massachusetts Institute of Technology,web,1.0,0.5,2010
 Samuel Madden,Massachusetts Institute of Technology,softeng,1.0,0.333333333333,2011
-Samuel Madden,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2004
+Samuel Madden,Massachusetts Institute of Technology,networks,1.0,0.25,2004
 Samuel Madden,Massachusetts Institute of Technology,networks,1.0,0.25,2007
 Samuel Madden,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2009
 Samuel Madden,Massachusetts Institute of Technology,networks,1.0,0.5,2011
@@ -12614,7 +12639,7 @@ Joseph M. Hellerstein,University of California - Berkeley,hci,1.0,0.5,2010
 Joseph M. Hellerstein,University of California - Berkeley,hci,3.0,1.33333333333,2011
 Joseph M. Hellerstein,University of California - Berkeley,hci,1.0,0.5,2012
 Joseph M. Hellerstein,University of California - Berkeley,ai,1.0,0.333333333333,2007
-Joseph M. Hellerstein,University of California - Berkeley,opsys,1.0,0.333333333333,2000
+Joseph M. Hellerstein,University of California - Berkeley,opsys,1.0,0.25,2000
 Joseph M. Hellerstein,University of California - Berkeley,opsys,1.0,0.333333333333,2002
 Joseph M. Hellerstein,University of California - Berkeley,opsys,1.0,0.25,2005
 Joseph M. Hellerstein,University of California - Berkeley,opsys,1.0,0.5,2010
@@ -12622,7 +12647,7 @@ Joseph M. Hellerstein,University of California - Berkeley,database,2.0,2.0,2000
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,3.0,2001
 Joseph M. Hellerstein,University of California - Berkeley,database,4.0,2.5,2002
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,0.833333333333,2003
-Joseph M. Hellerstein,University of California - Berkeley,database,7.0,3.75,2004
+Joseph M. Hellerstein,University of California - Berkeley,database,7.0,3.25,2004
 Joseph M. Hellerstein,University of California - Berkeley,database,4.0,2.75,2006
 Joseph M. Hellerstein,University of California - Berkeley,database,1.0,0.5,2007
 Joseph M. Hellerstein,University of California - Berkeley,database,2.0,1.0,2008
@@ -12962,7 +12987,7 @@ Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2012
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2014
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2015
 Jeffrey S. Foster,University of Maryland - College Park,logic,1.0,1.0,2009
-Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.5,2000
+Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.333333333333,2000
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.5,2001
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,1.0,2010
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,1.0,2012
@@ -13949,7 +13974,7 @@ Kamin Whitehouse,University of Virginia,hci,1.0,0.5,2008
 Kamin Whitehouse,University of Virginia,hci,2.0,1.5,2012
 Kamin Whitehouse,University of Virginia,hci,1.0,1.0,2013
 Kamin Whitehouse,University of Virginia,hci,1.0,1.0,2015
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.5,2004
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.333333333333,2004
 Kamin Whitehouse,University of Virginia,mobile,1.0,1.0,2005
 Kamin Whitehouse,University of Virginia,mobile,2.0,1.0,2007
 Kamin Whitehouse,University of Virginia,mobile,5.0,3.16666666667,2008
@@ -14225,7 +14250,7 @@ Wei Wang,University of California - Los Angeles,networks,1.0,1.0,2014
 Wei Wang,University of California - Los Angeles,networks,1.0,1.0,2015
 Wei Wang,University of California - Los Angeles,vision,1.0,1.0,2010
 Wei Wang,University of California - Los Angeles,vision,1.0,1.0,2011
-Steven D. Gribble,University of Washington,opsys,1.0,0.333333333333,2000
+Steven D. Gribble,University of Washington,opsys,1.0,0.25,2000
 Steven D. Gribble,University of Washington,opsys,2.0,1.5,2002
 Steven D. Gribble,University of Washington,opsys,1.0,0.333333333333,2003
 Steven D. Gribble,University of Washington,opsys,2.0,1.33333333333,2004
@@ -16257,13 +16282,13 @@ Lakshminarayanan Subramanian,New York University,database,1.0,1.0,2009
 Lakshminarayanan Subramanian,New York University,mobile,1.0,0.2,2014
 Lakshminarayanan Subramanian,New York University,web,1.0,0.5,2009
 Lakshminarayanan Subramanian,New York University,security,1.0,1.0,2009
-Lakshminarayanan Subramanian,New York University,security,1.0,1.0,2011
+Lakshminarayanan Subramanian,New York University,security,1.0,0.5,2011
 Lakshminarayanan Subramanian,New York University,networks,1.0,1.0,2001
 Lakshminarayanan Subramanian,New York University,networks,1.0,0.333333333333,2002
 Lakshminarayanan Subramanian,New York University,networks,2.0,0.5,2004
 Lakshminarayanan Subramanian,New York University,networks,2.0,0.7,2005
-Lakshminarayanan Subramanian,New York University,networks,2.0,2.0,2007
-Lakshminarayanan Subramanian,New York University,networks,1.0,1.0,2008
+Lakshminarayanan Subramanian,New York University,networks,2.0,1.0,2007
+Lakshminarayanan Subramanian,New York University,networks,1.0,0.5,2008
 Lakshminarayanan Subramanian,New York University,networks,2.0,1.0,2009
 Lakshminarayanan Subramanian,New York University,networks,2.0,1.0,2011
 Lakshminarayanan Subramanian,New York University,networks,1.0,1.0,2015
