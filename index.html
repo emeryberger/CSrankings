@@ -45,6 +45,21 @@
           <h1>Computer Science Rankings</h1>
 	  <div class="panel panel-info">
 	    <div class="panel-heading">
+	    <p>
+	      Rankings are computed based on publication output at top
+	      tier conferences by authors <em>currently affiliated</em>
+	      full-time with each institution's CS department (an
+	      author's publications move with them). <em>Average
+		percentage</em> computes the mean percent of publications
+	      in each area by institution, weighing areas evenly. For
+	      example, faculty members currently at CMU are responsible
+	      for 9.1% of all papers published at AAAI and IJCAI between
+	      2000 and 2016. <em>Total count</em> computes the sum of
+	      all papers published, effectively emphasizing areas with
+	      more publications. Hover over faculty count to display
+	      names and number of publications.<br />
+	    </p>
+	    </div>
 	      <h3 class="panel-title">
 		Rank institutions by
 		<select id="displayPercent" name="displayPercent" onchange="rank();" >
@@ -91,10 +106,9 @@
 		  <option value="2015">2015</option>
 		  <option selected="selected" value="2016">2016</option>
 		</select>
-		<br />
 		[<a class="only_these_areas" onClick="activateNone(); return false;"><font color="blue"><b>all off</b></font></a> | <a class="only_these_areas" onClick="activateAll(); return false;"><font color="blue"><b>all on</b></font></a>]
 	      </h3>
-	    </div>
+	    
 	  </div>
 	</div>
 	
@@ -381,26 +395,16 @@
 	  
 	</div>
 	<div class="page-footer">
+  
+	  <p class="text-muted">
+	    
+	    This site was developed and is maintained by <a href="http://www.emeryberger.com">Emery Berger</a>.<br />
+	    Based on code and data originally collected by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
+	    The original faculty affiliation dataset was constructed by <a
+									   href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>.<br />
+	    All publication data is from <a href="http://dblp.uni-trier.de/">DBLP</a> (downloaded May 14, 2016).<br />
+	  </p>
 	</div>
-	<p class="lead">
-	  These rankings are computed based on publication output at top tier conferences (currently US only)<br />
-	  by authors currently affiliated full-time with each institution's CS department.
-	</p>
-	<p>
-	  Hover over faculty count for names and number of publications.<br />
-	  <em>Average percentage</em> computes the mean percent of publications in each area by institution, weighing areas evenly.<br />
-	  <em>Total count</em> computes the sum of all papers published, effectively emphasizing areas with more publications.<br />
-	</p>
-	
-	<p class="text-muted">
-
-	  This site was developed and is maintained by <a href="http://www.emeryberger.com">Emery Berger</a>.<br />
-	  Based on code and data originally collected by <a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
-	  The original faculty affiliation dataset was constructed by <a
-									 href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>.<br />
-	  All publication data is from <a href="http://dblp.uni-trier.de/">DBLP</a> (downloaded May 14, 2016).<br />
-	</p>
-	
       </form>
     </div>
     <script src="csrank.js"></script>
