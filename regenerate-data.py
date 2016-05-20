@@ -2,12 +2,40 @@ from lxml import etree as ElementTree
 import htmlentitydefs
 import csv
 import operator
+import re
+
 # import gzip
 
 generateLog = True
 
 parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
 
+# Papers must be at least 4 pages long to count.
+pageCountThreshold = 4
+# Match ordinary page numbers (as in 10-17).
+pageCounterNormal = re.compile('(\d+)-(\d+)')
+# Match page number in the form volume:page (as in 12:140-12:150).
+pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
+
+def pagecount(input):
+    pageCounterMatcher1 = pageCounterNormal.match(input)
+    pageCounterMatcher2 = pageCounterColon.match(input)
+    start = 0
+    end = 0
+    count = 0
+    
+    if (not (pageCounterMatcher1 is None)):
+        start = int(pageCounterMatcher1.group(1))
+        end   = int(pageCounterMatcher1.group(2))
+        count = end-start+1
+    else:
+        if (not (pageCounterMatcher2 is None)):
+            start = int(pageCounterMatcher2.group(1))
+            end   = int(pageCounterMatcher2.group(2))
+            count = end-start+1
+    return count
+
+    
 areadict = {
     'proglang' : ['POPL', 'PLDI','OOPSLA'],
     'logic' : ['CAV', 'LICS'],
@@ -110,6 +138,22 @@ def parseDBLP(facultydict):
 
                 if (authorsOnPaper == 0):
                     # No authors from our list.
+                    continue
+
+                # Count the number of pages. It needs to exceed our threshold to be considered.
+                pageCount = -1
+                for child in node:
+                    if (child.tag == 'pages'):
+                        pageCount = pagecount(child.text)
+
+                if ((pageCount > 1) and (pageCount < pageCountThreshold)):
+                    # Only skip papers with a very small paper count,
+                    # but above 1. Why?
+                    # DBLP has real papers with incorrect page counts
+                    # - usually a truncated single page. -1 means no
+                    # pages found at all => some problem with journal
+                    # entries in DBLP.
+                    print "Skipping article with "+str(pageCount)+" pages."
                     continue
 
                 # If we got here, we have a winner.
