@@ -159,20 +159,20 @@ Stefan Savage,University of California - San Diego,networks,1.0,0.333333333333,2
 Stefan Savage,University of California - San Diego,networks,1.0,0.333333333333,2008
 Stefan Savage,University of California - San Diego,networks,1.0,0.5,2010
 Calvin J. Ribbens,Virginia Polytechnic Institute and State University,proglang,1.0,1.0,2011
-Doug L. James,Cornell University,graphics,1.0,1.0,2001
-Doug L. James,Cornell University,graphics,2.0,2.0,2002
-Doug L. James,Cornell University,graphics,2.0,1.5,2003
-Doug L. James,Cornell University,graphics,1.0,1.0,2004
-Doug L. James,Cornell University,graphics,2.0,1.5,2005
-Doug L. James,Cornell University,graphics,1.0,0.5,2006
-Doug L. James,Cornell University,graphics,3.0,3.0,2007
-Doug L. James,Cornell University,graphics,6.0,4.5,2008
-Doug L. James,Cornell University,graphics,3.0,2.0,2009
-Doug L. James,Cornell University,graphics,3.0,1.5,2010
-Doug L. James,Cornell University,graphics,2.0,1.5,2011
-Doug L. James,Cornell University,graphics,5.0,2.33333333333,2012
-Doug L. James,Cornell University,graphics,2.0,2.0,2014
-Doug L. James,Cornell University,robotics,1.0,1.0,2002
+Doug L. James,Stanford University,graphics,1.0,1.0,2001
+Doug L. James,Stanford University,graphics,2.0,2.0,2002
+Doug L. James,Stanford University,graphics,2.0,1.5,2003
+Doug L. James,Stanford University,graphics,1.0,1.0,2004
+Doug L. James,Stanford University,graphics,2.0,1.5,2005
+Doug L. James,Stanford University,graphics,1.0,0.5,2006
+Doug L. James,Stanford University,graphics,3.0,3.0,2007
+Doug L. James,Stanford University,graphics,6.0,4.5,2008
+Doug L. James,Stanford University,graphics,3.0,2.0,2009
+Doug L. James,Stanford University,graphics,3.0,1.5,2010
+Doug L. James,Stanford University,graphics,2.0,1.5,2011
+Doug L. James,Stanford University,graphics,5.0,2.33333333333,2012
+Doug L. James,Stanford University,graphics,2.0,2.0,2014
+Doug L. James,Stanford University,robotics,1.0,1.0,2002
 Szymon Rusinkiewicz,Princeton University,graphics,2.0,0.833333333333,2000
 Szymon Rusinkiewicz,Princeton University,graphics,2.0,1.0,2002
 Szymon Rusinkiewicz,Princeton University,graphics,1.0,0.5,2003
@@ -1066,6 +1066,11 @@ Shigang Chen,University of Florida,networks,1.0,1.0,2015
 Xiaodong Zhang,Ohio State University,ai,1.0,1.0,2016
 Xiaodong Zhang,Ohio State University,database,1.0,1.0,2015
 Xiaodong Zhang,Ohio State University,database,1.0,0.5,2016
+Dan Jurafsky,Stanford University,hci,1.0,1.0,2014
+Dan Jurafsky,Stanford University,nlp,1.0,1.0,2010
+Dan Jurafsky,Stanford University,nlp,1.0,1.0,2011
+Dan Jurafsky,Stanford University,nlp,2.0,2.0,2015
+Dan Jurafsky,Stanford University,mlmining,1.0,1.0,2012
 Bernard Chazelle,Princeton University,graphics,1.0,0.333333333333,2002
 Bernard Chazelle,Princeton University,theory,1.0,1.0,2001
 Bernard Chazelle,Princeton University,theory,1.0,1.0,2003
@@ -1095,10 +1100,10 @@ Bart Selman,Cornell University,mlmining,1.0,0.5,2000
 Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2003
 Bart Selman,Cornell University,mlmining,1.0,0.5,2006
 Bart Selman,Cornell University,mlmining,1.0,1.0,2008
-Bart Selman,Cornell University,mlmining,1.0,0.5,2011
-Bart Selman,Cornell University,mlmining,1.0,0.5,2012
-Bart Selman,Cornell University,mlmining,1.0,0.5,2013
-Bart Selman,Cornell University,mlmining,1.0,0.5,2014
+Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2011
+Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2012
+Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2013
+Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2014
 Bart Selman,Cornell University,ai,1.0,0.333333333333,2001
 Bart Selman,Cornell University,ai,2.0,1.33333333333,2003
 Bart Selman,Cornell University,ai,1.0,1.0,2004
@@ -1106,11 +1111,11 @@ Bart Selman,Cornell University,ai,1.0,0.5,2005
 Bart Selman,Cornell University,ai,1.0,0.5,2006
 Bart Selman,Cornell University,ai,5.0,2.83333333333,2007
 Bart Selman,Cornell University,ai,1.0,0.5,2009
-Bart Selman,Cornell University,ai,2.0,1.0,2011
+Bart Selman,Cornell University,ai,2.0,0.666666666667,2011
 Bart Selman,Cornell University,ai,1.0,0.5,2012
 Bart Selman,Cornell University,ai,2.0,1.0,2013
-Bart Selman,Cornell University,ai,2.0,1.0,2014
-Bart Selman,Cornell University,ai,2.0,1.0,2015
+Bart Selman,Cornell University,ai,2.0,0.833333333333,2014
+Bart Selman,Cornell University,ai,2.0,0.666666666667,2015
 Bart Selman,Cornell University,logic,1.0,1.0,2000
 Bart Selman,Cornell University,robotics,1.0,0.5,2012
 Bart Selman,Cornell University,robotics,1.0,0.5,2014
@@ -2575,28 +2580,28 @@ Kang G. Shin,University of Michigan,networks,1.0,1.0,2012
 Kang G. Shin,University of Michigan,networks,2.0,2.0,2013
 Kang G. Shin,University of Michigan,networks,3.0,3.0,2014
 Kang G. Shin,University of Michigan,networks,2.0,2.0,2015
-James A. Landay,University of Washington,hci,4.0,4.0,2000
-James A. Landay,University of Washington,hci,1.0,1.0,2001
-James A. Landay,University of Washington,hci,2.0,2.0,2002
-James A. Landay,University of Washington,hci,3.0,2.5,2003
-James A. Landay,University of Washington,hci,3.0,3.0,2004
-James A. Landay,University of Washington,hci,3.0,2.5,2005
-James A. Landay,University of Washington,hci,3.0,3.0,2006
-James A. Landay,University of Washington,hci,1.0,1.0,2007
-James A. Landay,University of Washington,hci,7.0,6.0,2008
-James A. Landay,University of Washington,hci,5.0,4.33333333333,2009
-James A. Landay,University of Washington,hci,4.0,3.5,2010
-James A. Landay,University of Washington,hci,2.0,2.0,2011
-James A. Landay,University of Washington,hci,1.0,0.333333333333,2012
-James A. Landay,University of Washington,hci,1.0,0.5,2013
-James A. Landay,University of Washington,hci,1.0,0.333333333333,2014
-James A. Landay,University of Washington,hci,1.0,1.0,2015
-James A. Landay,University of Washington,hci,1.0,1.0,2016
-James A. Landay,University of Washington,ai,1.0,1.0,2008
-James A. Landay,University of Washington,mobile,1.0,1.0,2004
-James A. Landay,University of Washington,mobile,1.0,0.5,2007
-James A. Landay,University of Washington,mobile,1.0,1.0,2014
-James A. Landay,University of Washington,web,1.0,1.0,2001
+James A. Landay,Stanford University,hci,4.0,4.0,2000
+James A. Landay,Stanford University,hci,1.0,1.0,2001
+James A. Landay,Stanford University,hci,2.0,2.0,2002
+James A. Landay,Stanford University,hci,3.0,2.5,2003
+James A. Landay,Stanford University,hci,3.0,3.0,2004
+James A. Landay,Stanford University,hci,3.0,2.5,2005
+James A. Landay,Stanford University,hci,3.0,3.0,2006
+James A. Landay,Stanford University,hci,1.0,1.0,2007
+James A. Landay,Stanford University,hci,7.0,6.0,2008
+James A. Landay,Stanford University,hci,5.0,4.33333333333,2009
+James A. Landay,Stanford University,hci,4.0,3.5,2010
+James A. Landay,Stanford University,hci,2.0,2.0,2011
+James A. Landay,Stanford University,hci,1.0,0.333333333333,2012
+James A. Landay,Stanford University,hci,1.0,0.5,2013
+James A. Landay,Stanford University,hci,1.0,0.333333333333,2014
+James A. Landay,Stanford University,hci,1.0,1.0,2015
+James A. Landay,Stanford University,hci,1.0,1.0,2016
+James A. Landay,Stanford University,ai,1.0,1.0,2008
+James A. Landay,Stanford University,mobile,1.0,1.0,2004
+James A. Landay,Stanford University,mobile,1.0,0.5,2007
+James A. Landay,Stanford University,mobile,1.0,1.0,2014
+James A. Landay,Stanford University,web,1.0,1.0,2001
 Radu Teodorescu,Ohio State University,arch,1.0,0.5,2007
 Radu Teodorescu,Ohio State University,arch,1.0,0.5,2008
 Radu Teodorescu,Ohio State University,arch,1.0,1.0,2010
@@ -3844,9 +3849,11 @@ Eric A. Brewer,University of California - Berkeley,networks,2.0,0.583333333333,2
 Eric A. Brewer,University of California - Berkeley,networks,2.0,1.0,2007
 Eric A. Brewer,University of California - Berkeley,networks,1.0,0.5,2008
 Eric A. Brewer,University of California - Berkeley,networks,1.0,1.0,2013
-Amy Ogan,Carnegie Mellon University,hci,1.0,0.5,2008
-Amy Ogan,Carnegie Mellon University,hci,2.0,1.5,2012
-Amy Ogan,Carnegie Mellon University,hci,1.0,0.5,2013
+Peter Bailis,Stanford University,database,1.0,0.25,2012
+Peter Bailis,Stanford University,database,3.0,0.916666666667,2013
+Peter Bailis,Stanford University,database,2.0,0.583333333333,2014
+Peter Bailis,Stanford University,database,1.0,0.25,2015
+Peter Bailis,Stanford University,mobile,1.0,1.0,2011
 Ahmed Helmy,University of Florida,mobile,1.0,0.5,2004
 Ahmed Helmy,University of Florida,networks,1.0,1.0,2003
 Ahmed Helmy,University of Florida,networks,2.0,2.0,2005
@@ -4637,21 +4644,21 @@ Tamal K. Dey,Ohio State University,graphics,2.0,1.0,2013
 Tamal K. Dey,Ohio State University,theory,1.0,1.0,2003
 Tamal K. Dey,Ohio State University,theory,1.0,0.5,2010
 Carla P. Gomes,Cornell University,mlmining,1.0,0.5,2006
-Carla P. Gomes,Cornell University,mlmining,1.0,0.5,2011
-Carla P. Gomes,Cornell University,mlmining,1.0,0.5,2012
-Carla P. Gomes,Cornell University,mlmining,1.0,0.5,2013
-Carla P. Gomes,Cornell University,mlmining,1.0,0.5,2014
+Carla P. Gomes,Cornell University,mlmining,1.0,0.333333333333,2011
+Carla P. Gomes,Cornell University,mlmining,1.0,0.333333333333,2012
+Carla P. Gomes,Cornell University,mlmining,1.0,0.333333333333,2013
+Carla P. Gomes,Cornell University,mlmining,1.0,0.333333333333,2014
 Carla P. Gomes,Cornell University,ai,1.0,0.333333333333,2001
 Carla P. Gomes,Cornell University,ai,1.0,0.333333333333,2003
 Carla P. Gomes,Cornell University,ai,1.0,0.5,2005
 Carla P. Gomes,Cornell University,ai,2.0,1.5,2006
 Carla P. Gomes,Cornell University,ai,5.0,2.83333333333,2007
 Carla P. Gomes,Cornell University,ai,3.0,2.5,2009
-Carla P. Gomes,Cornell University,ai,4.0,3.0,2011
+Carla P. Gomes,Cornell University,ai,4.0,2.66666666667,2011
 Carla P. Gomes,Cornell University,ai,1.0,0.5,2012
 Carla P. Gomes,Cornell University,ai,4.0,3.0,2013
-Carla P. Gomes,Cornell University,ai,2.0,1.0,2014
-Carla P. Gomes,Cornell University,ai,3.0,2.0,2015
+Carla P. Gomes,Cornell University,ai,2.0,0.833333333333,2014
+Carla P. Gomes,Cornell University,ai,3.0,1.16666666667,2015
 Shlomo Zilberstein,University of Massachusetts - Amherst,mlmining,3.0,3.0,2009
 Shlomo Zilberstein,University of Massachusetts - Amherst,mlmining,2.0,1.5,2010
 Shlomo Zilberstein,University of Massachusetts - Amherst,mlmining,1.0,1.0,2014
@@ -6364,10 +6371,10 @@ Ion Stoica,University of California - Berkeley,database,1.0,0.25,2003
 Ion Stoica,University of California - Berkeley,database,1.0,0.25,2004
 Ion Stoica,University of California - Berkeley,database,1.0,0.25,2006
 Ion Stoica,University of California - Berkeley,database,1.0,0.5,2007
-Ion Stoica,University of California - Berkeley,database,3.0,1.0,2012
-Ion Stoica,University of California - Berkeley,database,4.0,1.66666666667,2013
-Ion Stoica,University of California - Berkeley,database,3.0,1.16666666667,2014
-Ion Stoica,University of California - Berkeley,database,3.0,2.33333333333,2015
+Ion Stoica,University of California - Berkeley,database,3.0,0.916666666667,2012
+Ion Stoica,University of California - Berkeley,database,4.0,1.25,2013
+Ion Stoica,University of California - Berkeley,database,3.0,0.916666666667,2014
+Ion Stoica,University of California - Berkeley,database,3.0,2.25,2015
 Ion Stoica,University of California - Berkeley,mobile,1.0,0.333333333333,2003
 Ion Stoica,University of California - Berkeley,mobile,2.0,1.25,2005
 Ion Stoica,University of California - Berkeley,mobile,1.0,0.166666666667,2007
@@ -6811,6 +6818,9 @@ Alessandro Orso,Georgia Institute of Technology,softeng,2.0,1.5,2012
 Alessandro Orso,Georgia Institute of Technology,softeng,2.0,1.5,2013
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,1.0,2014
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,1.0,2015
+Amy Ogan,Carnegie Mellon University,hci,1.0,0.5,2008
+Amy Ogan,Carnegie Mellon University,hci,2.0,1.5,2012
+Amy Ogan,Carnegie Mellon University,hci,1.0,0.5,2013
 Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,1.0,2000
 Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,0.5,2006
 Jack Snoeyink,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2009
@@ -7447,24 +7457,24 @@ Lili Qiu,University of Texas - Austin,networks,1.0,0.5,2011
 Lili Qiu,University of Texas - Austin,networks,4.0,3.5,2013
 Lili Qiu,University of Texas - Austin,networks,1.0,0.5,2014
 Lili Qiu,University of Texas - Austin,networks,2.0,2.0,2015
-Moses Charikar,Princeton University,metrics,1.0,0.333333333333,2007
-Moses Charikar,Princeton University,theory,2.0,0.583333333333,2000
-Moses Charikar,Princeton University,theory,2.0,2.0,2001
-Moses Charikar,Princeton University,theory,3.0,1.75,2002
-Moses Charikar,Princeton University,theory,3.0,2.5,2003
-Moses Charikar,Princeton University,theory,2.0,2.0,2004
-Moses Charikar,Princeton University,theory,4.0,3.5,2005
-Moses Charikar,Princeton University,theory,1.0,0.5,2006
-Moses Charikar,Princeton University,theory,3.0,2.0,2007
-Moses Charikar,Princeton University,theory,2.0,1.0,2009
-Moses Charikar,Princeton University,theory,2.0,1.5,2010
-Moses Charikar,Princeton University,theory,1.0,1.0,2011
-Moses Charikar,Princeton University,theory,1.0,0.5,2014
-Moses Charikar,Princeton University,opsys,1.0,0.333333333333,2006
-Moses Charikar,Princeton University,database,1.0,1.0,2000
-Moses Charikar,Princeton University,database,1.0,0.333333333333,2007
-Moses Charikar,Princeton University,web,1.0,0.5,2008
-Moses Charikar,Princeton University,networks,1.0,1.0,2000
+Moses Charikar,Stanford University,metrics,1.0,0.333333333333,2007
+Moses Charikar,Stanford University,theory,2.0,0.583333333333,2000
+Moses Charikar,Stanford University,theory,2.0,2.0,2001
+Moses Charikar,Stanford University,theory,3.0,1.75,2002
+Moses Charikar,Stanford University,theory,3.0,2.5,2003
+Moses Charikar,Stanford University,theory,2.0,2.0,2004
+Moses Charikar,Stanford University,theory,4.0,3.5,2005
+Moses Charikar,Stanford University,theory,1.0,0.5,2006
+Moses Charikar,Stanford University,theory,3.0,2.0,2007
+Moses Charikar,Stanford University,theory,2.0,1.0,2009
+Moses Charikar,Stanford University,theory,2.0,1.5,2010
+Moses Charikar,Stanford University,theory,1.0,1.0,2011
+Moses Charikar,Stanford University,theory,1.0,0.5,2014
+Moses Charikar,Stanford University,opsys,1.0,0.333333333333,2006
+Moses Charikar,Stanford University,database,1.0,1.0,2000
+Moses Charikar,Stanford University,database,1.0,0.333333333333,2007
+Moses Charikar,Stanford University,web,1.0,0.5,2008
+Moses Charikar,Stanford University,networks,1.0,1.0,2000
 Tao Ju,Washington University - St. Louis,graphics,2.0,1.0,2002
 Tao Ju,Washington University - St. Louis,graphics,1.0,1.0,2004
 Tao Ju,Washington University - St. Louis,graphics,1.0,0.5,2005
@@ -7850,10 +7860,10 @@ Michael J. Franklin,University of Chicago,database,4.0,4.0,2006
 Michael J. Franklin,University of Chicago,database,1.0,1.0,2008
 Michael J. Franklin,University of Chicago,database,2.0,0.666666666667,2010
 Michael J. Franklin,University of Chicago,database,4.0,1.41666666667,2011
-Michael J. Franklin,University of Chicago,database,3.0,1.16666666667,2012
-Michael J. Franklin,University of Chicago,database,5.0,1.91666666667,2013
-Michael J. Franklin,University of Chicago,database,6.0,3.5,2014
-Michael J. Franklin,University of Chicago,database,5.0,3.66666666667,2015
+Michael J. Franklin,University of Chicago,database,3.0,1.08333333333,2012
+Michael J. Franklin,University of Chicago,database,5.0,1.83333333333,2013
+Michael J. Franklin,University of Chicago,database,6.0,3.41666666667,2014
+Michael J. Franklin,University of Chicago,database,5.0,3.58333333333,2015
 Michael J. Franklin,University of Chicago,networks,1.0,0.333333333333,2012
 Eli Gafni,University of California - Los Angeles,theory,1.0,1.0,2002
 Eli Gafni,University of California - Los Angeles,theory,1.0,1.0,2005
@@ -9303,6 +9313,15 @@ Baba C. Vemuri,University of Florida,vision,2.0,1.33333333333,2011
 Baba C. Vemuri,University of Florida,vision,2.0,2.0,2013
 Baba C. Vemuri,University of Florida,vision,2.0,1.5,2014
 Baba C. Vemuri,University of Florida,vision,2.0,2.0,2015
+Stefano Ermon,Stanford University,mlmining,1.0,0.333333333333,2011
+Stefano Ermon,Stanford University,mlmining,1.0,0.333333333333,2012
+Stefano Ermon,Stanford University,mlmining,1.0,0.333333333333,2013
+Stefano Ermon,Stanford University,mlmining,1.0,0.333333333333,2014
+Stefano Ermon,Stanford University,mlmining,1.0,1.0,2015
+Stefano Ermon,Stanford University,ai,2.0,0.666666666667,2011
+Stefano Ermon,Stanford University,ai,1.0,0.333333333333,2014
+Stefano Ermon,Stanford University,ai,3.0,1.16666666667,2015
+Stefano Ermon,Stanford University,ai,3.0,3.0,2016
 Etienne Vouga,University of Texas - Austin,graphics,1.0,0.5,2008
 Etienne Vouga,University of Texas - Austin,graphics,1.0,0.5,2009
 Etienne Vouga,University of Texas - Austin,graphics,1.0,0.5,2010
@@ -11931,6 +11950,8 @@ Dezhen Song,Texas A&M University,robotics,2.0,2.0,2013
 Dezhen Song,Texas A&M University,robotics,4.0,4.0,2014
 Dezhen Song,Texas A&M University,robotics,2.0,2.0,2015
 Dezhen Song,Texas A&M University,vision,1.0,1.0,2015
+Keith Winstein,Stanford University,networks,1.0,0.5,2013
+Keith Winstein,Stanford University,networks,1.0,0.5,2014
 Frank Mueller,North Carolina State University,arch,1.0,1.0,2003
 Mohit Gupta,University of Wisconsin - Madison,graphics,1.0,0.333333333333,2006
 Mohit Gupta,University of Wisconsin - Madison,graphics,1.0,0.5,2015
@@ -12487,10 +12508,10 @@ Joseph M. Hellerstein,University of California - Berkeley,database,2.0,1.0,2008
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,2.33333333333,2009
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,1.83333333333,2010
 Joseph M. Hellerstein,University of California - Berkeley,database,1.0,0.333333333333,2011
-Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.66666666667,2012
-Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.58333333333,2013
-Joseph M. Hellerstein,University of California - Berkeley,database,3.0,1.83333333333,2014
-Joseph M. Hellerstein,University of California - Berkeley,database,2.0,1.33333333333,2015
+Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.58333333333,2012
+Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.16666666667,2013
+Joseph M. Hellerstein,University of California - Berkeley,database,3.0,1.58333333333,2014
+Joseph M. Hellerstein,University of California - Berkeley,database,2.0,1.25,2015
 Joseph M. Hellerstein,University of California - Berkeley,security,1.0,0.5,2006
 Joseph M. Hellerstein,University of California - Berkeley,networks,2.0,0.666666666667,2005
 Joseph M. Hellerstein,University of California - Berkeley,networks,1.0,0.5,2007
@@ -12555,8 +12576,8 @@ Hari Balakrishnan,Massachusetts Institute of Technology,networks,3.0,1.583333333
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,4.0,2.16666666667,2009
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,1.0,0.5,2011
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,2.0,1.0,2012
-Hari Balakrishnan,Massachusetts Institute of Technology,networks,1.0,1.0,2013
-Hari Balakrishnan,Massachusetts Institute of Technology,networks,3.0,2.0,2014
+Hari Balakrishnan,Massachusetts Institute of Technology,networks,1.0,0.5,2013
+Hari Balakrishnan,Massachusetts Institute of Technology,networks,3.0,1.5,2014
 Mohamed G. Gouda,University of Texas - Austin,web,1.0,0.333333333333,2001
 Ryan Kastner,University of California - San Diego,security,1.0,0.5,2007
 Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2011
@@ -13873,6 +13894,8 @@ David Walker,Princeton University,networks,1.0,0.333333333333,2012
 David Walker,Princeton University,networks,1.0,0.333333333333,2013
 David Walker,Princeton University,networks,1.0,0.5,2015
 Xiaofeng Wang,Indiana University,mlmining,1.0,0.5,2002
+Ron O. Dror,Stanford University,arch,1.0,1.0,2007
+Ron O. Dror,Stanford University,arch,1.0,1.0,2013
 Armando Solar-Lezama,Massachusetts Institute of Technology,mlmining,1.0,1.0,2015
 Armando Solar-Lezama,Massachusetts Institute of Technology,opsys,1.0,0.25,2013
 Armando Solar-Lezama,Massachusetts Institute of Technology,database,1.0,0.333333333333,2014
