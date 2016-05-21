@@ -444,7 +444,7 @@ Ladislav Kavan,University of Pennsylvania,graphics,2.0,1.5,2015
 Michael J. Cafarella,University of Michigan,mlmining,1.0,1.0,2014
 Michael J. Cafarella,University of Michigan,ai,1.0,0.25,2004
 Michael J. Cafarella,University of Michigan,ai,1.0,0.5,2007
-Michael J. Cafarella,University of Michigan,database,1.0,0.5,2008
+Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2008
 Michael J. Cafarella,University of Michigan,database,2.0,1.33333333333,2009
 Michael J. Cafarella,University of Michigan,database,1.0,1.0,2011
 Michael J. Cafarella,University of Michigan,database,1.0,0.5,2012
@@ -1028,7 +1028,7 @@ Camillo J. Taylor,University of Pennsylvania,vision,1.0,1.0,2013
 Camillo J. Taylor,University of Pennsylvania,vision,1.0,1.0,2015
 Yanlei Diao,University of Massachusetts - Amherst,database,2.0,2.0,2000
 Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.5,2003
-Yanlei Diao,University of Massachusetts - Amherst,database,1.0,1.0,2006
+Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.5,2006
 Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.5,2008
 Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.333333333333,2009
 Yanlei Diao,University of Massachusetts - Amherst,database,3.0,2.0,2010
@@ -1210,7 +1210,7 @@ Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,1
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0.833333333333,2011
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,3.0,1.16666666667,2012
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,4.0,2.16666666667,2014
-Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,7.0,2.91666666667,2015
+Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,7.0,2.83333333333,2015
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,1.0,0.333333333333,2016
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,1.0,2004
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,1.0,2005
@@ -2766,9 +2766,9 @@ Guevara Noubir,Northeastern University,networks,1.0,1.0,2011
 Vitaly Shmatikov,Cornell University,mlmining,1.0,1.0,2006
 Vitaly Shmatikov,Cornell University,mlmining,1.0,1.0,2008
 Vitaly Shmatikov,Cornell University,mlmining,1.0,1.0,2013
-Vitaly Shmatikov,Cornell University,opsys,1.0,0.5,2012
+Vitaly Shmatikov,Cornell University,opsys,1.0,0.333333333333,2012
 Vitaly Shmatikov,Cornell University,proglang,2.0,1.5,2011
-Vitaly Shmatikov,Cornell University,web,2.0,2.0,2015
+Vitaly Shmatikov,Cornell University,web,2.0,1.0,2015
 Vitaly Shmatikov,Cornell University,logic,1.0,1.0,2003
 Vitaly Shmatikov,Cornell University,security,1.0,1.0,2000
 Vitaly Shmatikov,Cornell University,security,1.0,1.0,2001
@@ -2777,10 +2777,10 @@ Vitaly Shmatikov,Cornell University,security,2.0,1.0,2005
 Vitaly Shmatikov,Cornell University,security,1.0,0.333333333333,2007
 Vitaly Shmatikov,Cornell University,security,2.0,1.0,2008
 Vitaly Shmatikov,Cornell University,security,1.0,0.5,2009
-Vitaly Shmatikov,Cornell University,security,2.0,0.833333333333,2011
-Vitaly Shmatikov,Cornell University,security,3.0,2.5,2012
+Vitaly Shmatikov,Cornell University,security,2.0,0.666666666667,2011
+Vitaly Shmatikov,Cornell University,security,3.0,1.33333333333,2012
 Vitaly Shmatikov,Cornell University,security,4.0,3.5,2013
-Vitaly Shmatikov,Cornell University,security,3.0,2.5,2014
+Vitaly Shmatikov,Cornell University,security,3.0,1.5,2014
 Vitaly Shmatikov,Cornell University,security,1.0,1.0,2015
 Vitaly Shmatikov,Cornell University,networks,1.0,0.5,2007
 Vitaly Shmatikov,Cornell University,networks,1.0,0.5,2010
@@ -3217,7 +3217,7 @@ Dan Boneh,Stanford University,security,1.0,1.0,2008
 Dan Boneh,Stanford University,security,1.0,1.0,2009
 Dan Boneh,Stanford University,security,4.0,2.83333333333,2010
 Dan Boneh,Stanford University,security,2.0,1.5,2011
-Dan Boneh,Stanford University,security,5.0,4.0,2012
+Dan Boneh,Stanford University,security,5.0,3.83333333333,2012
 Dan Boneh,Stanford University,security,3.0,3.0,2013
 Dan Boneh,Stanford University,security,1.0,0.5,2014
 Dan Boneh,Stanford University,security,3.0,2.0,2015
@@ -4473,7 +4473,7 @@ Peng Ning,North Carolina State University,networks,1.0,1.0,2010
 Peng Ning,North Carolina State University,networks,3.0,3.0,2012
 Peng Ning,North Carolina State University,networks,1.0,1.0,2013
 Peng Ning,North Carolina State University,networks,1.0,1.0,2015
-Daisy Zhe Wang,University of Florida,database,2.0,1.0,2008
+Daisy Zhe Wang,University of Florida,database,2.0,0.833333333333,2008
 Daisy Zhe Wang,University of Florida,database,1.0,0.333333333333,2010
 Daisy Zhe Wang,University of Florida,database,1.0,0.333333333333,2011
 Daisy Zhe Wang,University of Florida,database,1.0,0.5,2012
@@ -5803,8 +5803,8 @@ Amol Deshpande,University of Maryland - College Park,database,4.0,4.0,2010
 Amol Deshpande,University of Maryland - College Park,database,2.0,2.0,2011
 Amol Deshpande,University of Maryland - College Park,database,2.0,2.0,2012
 Amol Deshpande,University of Maryland - College Park,database,4.0,3.5,2013
-Amol Deshpande,University of Maryland - College Park,database,3.0,2.5,2014
-Amol Deshpande,University of Maryland - College Park,database,3.0,1.83333333333,2015
+Amol Deshpande,University of Maryland - College Park,database,3.0,2.33333333333,2014
+Amol Deshpande,University of Maryland - College Park,database,3.0,1.75,2015
 Amol Deshpande,University of Maryland - College Park,database,1.0,0.333333333333,2016
 Amol Deshpande,University of Maryland - College Park,networks,1.0,0.5,2010
 Joseph Gonzalez,University of California - Berkeley,database,1.0,0.333333333333,2012
@@ -6576,7 +6576,7 @@ Donald E. Porter,State University of New York - Stony Brook,opsys,2.0,1.5,2016
 Donald E. Porter,State University of New York - Stony Brook,proglang,1.0,0.333333333333,2007
 Donald E. Porter,State University of New York - Stony Brook,proglang,1.0,0.333333333333,2009
 Donald E. Porter,State University of New York - Stony Brook,security,1.0,0.333333333333,2007
-Donald E. Porter,State University of New York - Stony Brook,security,1.0,0.5,2011
+Donald E. Porter,State University of New York - Stony Brook,security,1.0,0.333333333333,2011
 Donald E. Porter,State University of New York - Stony Brook,security,1.0,0.5,2014
 Donald E. Porter,State University of New York - Stony Brook,arch,1.0,0.333333333333,2007
 Donald E. Porter,State University of New York - Stony Brook,arch,1.0,1.0,2011
@@ -7890,7 +7890,7 @@ Michael J. Franklin,University of Chicago,database,1.0,1.0,2000
 Michael J. Franklin,University of Chicago,database,4.0,3.0,2001
 Michael J. Franklin,University of Chicago,database,1.0,1.0,2002
 Michael J. Franklin,University of Chicago,database,5.0,2.41666666667,2003
-Michael J. Franklin,University of Chicago,database,5.0,3.83333333333,2004
+Michael J. Franklin,University of Chicago,database,5.0,3.33333333333,2004
 Michael J. Franklin,University of Chicago,database,1.0,1.0,2005
 Michael J. Franklin,University of Chicago,database,4.0,4.0,2006
 Michael J. Franklin,University of Chicago,database,1.0,1.0,2008
@@ -7899,7 +7899,7 @@ Michael J. Franklin,University of Chicago,database,4.0,1.41666666667,2011
 Michael J. Franklin,University of Chicago,database,3.0,1.08333333333,2012
 Michael J. Franklin,University of Chicago,database,5.0,1.83333333333,2013
 Michael J. Franklin,University of Chicago,database,6.0,3.41666666667,2014
-Michael J. Franklin,University of Chicago,database,5.0,3.58333333333,2015
+Michael J. Franklin,University of Chicago,database,5.0,2.58333333333,2015
 Michael J. Franklin,University of Chicago,networks,1.0,0.25,2012
 Eli Gafni,University of California - Los Angeles,theory,1.0,1.0,2002
 Eli Gafni,University of California - Los Angeles,theory,1.0,1.0,2005
@@ -8674,7 +8674,7 @@ Emmett Witchel,University of Texas - Austin,opsys,1.0,0.5,2005
 Emmett Witchel,University of Texas - Austin,opsys,1.0,0.333333333333,2007
 Emmett Witchel,University of Texas - Austin,opsys,1.0,0.333333333333,2009
 Emmett Witchel,University of Texas - Austin,opsys,1.0,0.5,2011
-Emmett Witchel,University of Texas - Austin,opsys,2.0,1.0,2012
+Emmett Witchel,University of Texas - Austin,opsys,2.0,0.833333333333,2012
 Emmett Witchel,University of Texas - Austin,opsys,1.0,1.0,2014
 Emmett Witchel,University of Texas - Austin,opsys,1.0,1.0,2015
 Emmett Witchel,University of Texas - Austin,proglang,1.0,0.5,2005
@@ -10965,9 +10965,9 @@ David R. Karger,Massachusetts Institute of Technology,mlmining,1.0,0.5,2011
 David R. Karger,Massachusetts Institute of Technology,ai,1.0,0.5,2008
 David R. Karger,Massachusetts Institute of Technology,opsys,1.0,0.25,2001
 David R. Karger,Massachusetts Institute of Technology,database,1.0,1.0,2005
-David R. Karger,Massachusetts Institute of Technology,database,3.0,1.33333333333,2011
+David R. Karger,Massachusetts Institute of Technology,database,3.0,1.0,2011
 David R. Karger,Massachusetts Institute of Technology,database,1.0,0.333333333333,2012
-David R. Karger,Massachusetts Institute of Technology,database,1.0,0.333333333333,2015
+David R. Karger,Massachusetts Institute of Technology,database,1.0,0.25,2015
 David R. Karger,Massachusetts Institute of Technology,web,1.0,1.0,2003
 David R. Karger,Massachusetts Institute of Technology,web,1.0,1.0,2004
 David R. Karger,Massachusetts Institute of Technology,web,1.0,1.0,2005
@@ -11393,12 +11393,12 @@ Samuel Madden,Massachusetts Institute of Technology,database,3.0,1.83333333333,2
 Samuel Madden,Massachusetts Institute of Technology,database,4.0,3.5,2006
 Samuel Madden,Massachusetts Institute of Technology,database,2.0,2.0,2007
 Samuel Madden,Massachusetts Institute of Technology,database,5.0,3.83333333333,2008
-Samuel Madden,Massachusetts Institute of Technology,database,7.0,4.16666666667,2009
+Samuel Madden,Massachusetts Institute of Technology,database,7.0,3.66666666667,2009
 Samuel Madden,Massachusetts Institute of Technology,database,5.0,4.0,2010
-Samuel Madden,Massachusetts Institute of Technology,database,6.0,3.16666666667,2011
-Samuel Madden,Massachusetts Institute of Technology,database,4.0,2.0,2012
-Samuel Madden,Massachusetts Institute of Technology,database,7.0,4.66666666667,2013
-Samuel Madden,Massachusetts Institute of Technology,database,7.0,3.2,2014
+Samuel Madden,Massachusetts Institute of Technology,database,6.0,2.83333333333,2011
+Samuel Madden,Massachusetts Institute of Technology,database,4.0,1.5,2012
+Samuel Madden,Massachusetts Institute of Technology,database,7.0,4.16666666667,2013
+Samuel Madden,Massachusetts Institute of Technology,database,7.0,3.03333333333,2014
 Samuel Madden,Massachusetts Institute of Technology,database,5.0,2.2,2015
 Samuel Madden,Massachusetts Institute of Technology,database,1.0,0.333333333333,2016
 Samuel Madden,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2013
@@ -13355,6 +13355,11 @@ Shan Lu,University of Chicago,arch,1.0,0.5,2012
 Shan Lu,University of Chicago,arch,2.0,1.5,2013
 Shan Lu,University of Chicago,arch,1.0,1.0,2014
 Shan Lu,University of Chicago,arch,1.0,0.5,2016
+Suman Jana,Columbia University,opsys,1.0,0.333333333333,2012
+Suman Jana,Columbia University,web,2.0,1.0,2015
+Suman Jana,Columbia University,security,1.0,0.333333333333,2011
+Suman Jana,Columbia University,security,3.0,1.33333333333,2012
+Suman Jana,Columbia University,security,2.0,1.0,2014
 Hao Li,University of Southern California,graphics,1.0,0.5,2009
 Hao Li,University of Southern California,graphics,1.0,1.0,2010
 Hao Li,University of Southern California,graphics,1.0,1.0,2011
@@ -15133,6 +15138,15 @@ David Kotz,Dartmouth College,networks,2.0,2.0,2006
 David Kotz,Dartmouth College,networks,1.0,0.5,2008
 David Kotz,Dartmouth College,networks,1.0,1.0,2011
 Teofilo F. Gonzalez,University of California - Santa Barbara,softeng,1.0,1.0,2005
+Eugene Wu 0002,Columbia University,database,1.0,0.5,2004
+Eugene Wu 0002,Columbia University,database,1.0,0.5,2006
+Eugene Wu 0002,Columbia University,database,1.0,0.333333333333,2008
+Eugene Wu 0002,Columbia University,database,1.0,0.5,2009
+Eugene Wu 0002,Columbia University,database,2.0,0.666666666667,2011
+Eugene Wu 0002,Columbia University,database,1.0,0.5,2012
+Eugene Wu 0002,Columbia University,database,1.0,0.5,2013
+Eugene Wu 0002,Columbia University,database,2.0,1.33333333333,2014
+Eugene Wu 0002,Columbia University,database,3.0,1.25,2015
 Kathleen M. Carley,Carnegie Mellon University,hci,1.0,1.0,2012
 Kathleen M. Carley,Carnegie Mellon University,web,1.0,1.0,2016
 Kathleen M. Carley,Carnegie Mellon University,softeng,1.0,0.5,2011
