@@ -285,7 +285,7 @@ Shih-Fu Chang,Columbia University,vision,3.0,3.0,2009
 Shih-Fu Chang,Columbia University,vision,1.0,1.0,2010
 Shih-Fu Chang,Columbia University,vision,3.0,2.5,2011
 Shih-Fu Chang,Columbia University,vision,8.0,8.0,2012
-Shih-Fu Chang,Columbia University,vision,8.0,8.0,2013
+Shih-Fu Chang,Columbia University,vision,8.0,7.5,2013
 Shih-Fu Chang,Columbia University,vision,3.0,3.0,2014
 Shih-Fu Chang,Columbia University,vision,4.0,3.5,2015
 Scott Smith,Johns Hopkins University,arch,1.0,1.0,2000
@@ -6405,7 +6405,7 @@ Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,1.0,2013
 Yuan Xie 0001,University of California - Santa Barbara,arch,2.0,2.0,2014
 Ion Stoica,University of California - Berkeley,metrics,1.0,0.5,2005
 Ion Stoica,University of California - Berkeley,metrics,1.0,1.0,2014
-Ion Stoica,University of California - Berkeley,mlmining,1.0,1.0,2013
+Ion Stoica,University of California - Berkeley,mlmining,1.0,0.5,2013
 Ion Stoica,University of California - Berkeley,opsys,1.0,0.25,2001
 Ion Stoica,University of California - Berkeley,opsys,1.0,0.25,2005
 Ion Stoica,University of California - Berkeley,opsys,1.0,0.25,2006
@@ -6421,7 +6421,7 @@ Ion Stoica,University of California - Berkeley,database,1.0,0.25,2006
 Ion Stoica,University of California - Berkeley,database,1.0,0.5,2007
 Ion Stoica,University of California - Berkeley,database,3.0,0.916666666667,2012
 Ion Stoica,University of California - Berkeley,database,4.0,1.25,2013
-Ion Stoica,University of California - Berkeley,database,3.0,0.916666666667,2014
+Ion Stoica,University of California - Berkeley,database,3.0,0.833333333333,2014
 Ion Stoica,University of California - Berkeley,database,3.0,2.25,2015
 Ion Stoica,University of California - Berkeley,mobile,1.0,0.333333333333,2003
 Ion Stoica,University of California - Berkeley,mobile,2.0,1.25,2005
@@ -8106,8 +8106,8 @@ Mehryar Mohri,New York University,mlmining,2.0,2.0,2004
 Mehryar Mohri,New York University,mlmining,1.0,1.0,2005
 Mehryar Mohri,New York University,mlmining,1.0,1.0,2006
 Mehryar Mohri,New York University,mlmining,2.0,2.0,2007
-Mehryar Mohri,New York University,mlmining,4.0,4.0,2008
-Mehryar Mohri,New York University,mlmining,5.0,4.5,2009
+Mehryar Mohri,New York University,mlmining,4.0,3.5,2008
+Mehryar Mohri,New York University,mlmining,5.0,3.5,2009
 Mehryar Mohri,New York University,mlmining,3.0,3.0,2010
 Mehryar Mohri,New York University,mlmining,2.0,2.0,2012
 Mehryar Mohri,New York University,mlmining,1.0,1.0,2013
@@ -8985,7 +8985,7 @@ Barzan Mozafari,University of Michigan,database,1.0,0.5,2009
 Barzan Mozafari,University of Michigan,database,2.0,1.0,2010
 Barzan Mozafari,University of Michigan,database,2.0,0.833333333333,2012
 Barzan Mozafari,University of Michigan,database,1.0,0.5,2013
-Barzan Mozafari,University of Michigan,database,4.0,1.66666666667,2014
+Barzan Mozafari,University of Michigan,database,4.0,1.58333333333,2014
 Barzan Mozafari,University of Michigan,database,3.0,2.5,2015
 Ravi Ramamoorthi,University of California - Berkeley,graphics,1.0,0.5,2000
 Ravi Ramamoorthi,University of California - Berkeley,graphics,2.0,1.0,2001
@@ -11121,6 +11121,14 @@ Volkan Isler,University of Minnesota - Twin Cities,robotics,2.0,2.0,2012
 Volkan Isler,University of Minnesota - Twin Cities,robotics,4.0,4.0,2013
 Volkan Isler,University of Minnesota - Twin Cities,robotics,5.0,5.0,2014
 Volkan Isler,University of Minnesota - Twin Cities,vision,1.0,1.0,2001
+Ameet Talwalkar,University of California - Los Angeles,mlmining,1.0,0.5,2008
+Ameet Talwalkar,University of California - Los Angeles,mlmining,2.0,1.0,2009
+Ameet Talwalkar,University of California - Los Angeles,mlmining,1.0,1.0,2011
+Ameet Talwalkar,University of California - Los Angeles,mlmining,1.0,1.0,2012
+Ameet Talwalkar,University of California - Los Angeles,mlmining,1.0,0.5,2013
+Ameet Talwalkar,University of California - Los Angeles,database,1.0,0.25,2014
+Ameet Talwalkar,University of California - Los Angeles,vision,1.0,1.0,2008
+Ameet Talwalkar,University of California - Los Angeles,vision,1.0,0.5,2013
 A. Robert Calderbank,Duke University,metrics,1.0,1.0,2005
 A. Robert Calderbank,Duke University,mlmining,1.0,1.0,2012
 A. Robert Calderbank,Duke University,mlmining,1.0,1.0,2013
@@ -11410,7 +11418,7 @@ Samuel Madden,Massachusetts Institute of Technology,database,5.0,4.0,2010
 Samuel Madden,Massachusetts Institute of Technology,database,6.0,2.83333333333,2011
 Samuel Madden,Massachusetts Institute of Technology,database,4.0,1.5,2012
 Samuel Madden,Massachusetts Institute of Technology,database,7.0,4.16666666667,2013
-Samuel Madden,Massachusetts Institute of Technology,database,7.0,3.03333333333,2014
+Samuel Madden,Massachusetts Institute of Technology,database,7.0,2.95,2014
 Samuel Madden,Massachusetts Institute of Technology,database,5.0,2.2,2015
 Samuel Madden,Massachusetts Institute of Technology,database,1.0,0.333333333333,2016
 Samuel Madden,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2013
