@@ -1198,6 +1198,12 @@ Santosh Pande,Georgia Institute of Technology,softeng,2.0,1.0,2014
 Santosh Pande,Georgia Institute of Technology,arch,1.0,1.0,2004
 Santosh Pande,Georgia Institute of Technology,arch,2.0,2.0,2006
 Santosh Pande,Georgia Institute of Technology,networks,1.0,1.0,2006
+Ehsan Elhamifar,Northeastern University,mlmining,1.0,1.0,2011
+Ehsan Elhamifar,Northeastern University,mlmining,1.0,0.5,2012
+Ehsan Elhamifar,Northeastern University,ai,1.0,1.0,2015
+Ehsan Elhamifar,Northeastern University,vision,1.0,1.0,2011
+Ehsan Elhamifar,Northeastern University,vision,1.0,0.5,2012
+Ehsan Elhamifar,Northeastern University,vision,1.0,0.5,2013
 Sandy Irani,University of California - Irvine,theory,1.0,1.0,2004
 Sandy Irani,University of California - Irvine,theory,1.0,1.0,2007
 Sandy Irani,University of California - Irvine,theory,1.0,1.0,2009
@@ -1727,7 +1733,7 @@ Salil P. Vadhan,Harvard University,theory,1.0,0.5,2014
 Salil P. Vadhan,Harvard University,theory,2.0,1.5,2015
 Richard A. Kemmerer,University of California - Santa Barbara,logic,1.0,0.333333333333,2000
 Richard A. Kemmerer,University of California - Santa Barbara,security,1.0,0.5,2002
-Richard A. Kemmerer,University of California - Santa Barbara,security,1.0,0.5,2006
+Richard A. Kemmerer,University of California - Santa Barbara,security,1.0,0.333333333333,2006
 Richard A. Kemmerer,University of California - Santa Barbara,security,1.0,0.333333333333,2009
 Richard A. Kemmerer,University of California - Santa Barbara,security,1.0,1.0,2013
 Richard A. Kemmerer,University of California - Santa Barbara,softeng,1.0,1.0,2000
@@ -2724,7 +2730,7 @@ Jaakko Järvi,Texas A&M University,proglang,1.0,0.333333333333,2003
 Jaakko Järvi,Texas A&M University,proglang,1.0,0.5,2005
 Jaakko Järvi,Texas A&M University,proglang,2.0,0.666666666667,2006
 Guevara Noubir,Northeastern University,theory,1.0,0.333333333333,2005
-Guevara Noubir,Northeastern University,security,1.0,0.5,2013
+Guevara Noubir,Northeastern University,security,1.0,0.333333333333,2013
 Guevara Noubir,Northeastern University,security,1.0,1.0,2014
 Guevara Noubir,Northeastern University,security,1.0,1.0,2015
 Guevara Noubir,Northeastern University,networks,1.0,0.5,2004
@@ -4913,8 +4919,8 @@ Engin Kirda,Northeastern University,security,3.0,2.5,2009
 Engin Kirda,Northeastern University,security,5.0,2.33333333333,2010
 Engin Kirda,Northeastern University,security,4.0,2.33333333333,2011
 Engin Kirda,Northeastern University,security,2.0,1.33333333333,2012
-Engin Kirda,Northeastern University,security,3.0,2.5,2013
-Engin Kirda,Northeastern University,security,1.0,1.0,2014
+Engin Kirda,Northeastern University,security,3.0,1.83333333333,2013
+Engin Kirda,Northeastern University,security,1.0,0.5,2014
 T. M. Murali,Virginia Polytechnic Institute and State University,database,1.0,0.5,2002
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,1.5,2000
 Umesh V. Vazirani,University of California - Berkeley,theory,3.0,2.0,2001
@@ -7792,12 +7798,12 @@ Giovanni Vigna,University of California - Santa Barbara,web,1.0,0.5,2013
 Giovanni Vigna,University of California - Santa Barbara,web,1.0,0.5,2014
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,1.5,2002
 Giovanni Vigna,University of California - Santa Barbara,security,1.0,1.0,2003
-Giovanni Vigna,University of California - Santa Barbara,security,2.0,2.0,2004
-Giovanni Vigna,University of California - Santa Barbara,security,1.0,0.5,2006
+Giovanni Vigna,University of California - Santa Barbara,security,2.0,1.0,2004
+Giovanni Vigna,University of California - Santa Barbara,security,1.0,0.333333333333,2006
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,1.5,2007
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,1.33333333333,2008
-Giovanni Vigna,University of California - Santa Barbara,security,2.0,1.33333333333,2009
-Giovanni Vigna,University of California - Santa Barbara,security,3.0,1.33333333333,2010
+Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.833333333333,2009
+Giovanni Vigna,University of California - Santa Barbara,security,3.0,1.16666666667,2010
 Giovanni Vigna,University of California - Santa Barbara,security,3.0,1.33333333333,2011
 Giovanni Vigna,University of California - Santa Barbara,security,5.0,2.33333333333,2012
 Giovanni Vigna,University of California - Santa Barbara,security,5.0,3.0,2013
@@ -10508,7 +10514,7 @@ Guillermo Sapiro,Duke University,mlmining,1.0,1.0,2006
 Guillermo Sapiro,Duke University,mlmining,1.0,1.0,2008
 Guillermo Sapiro,Duke University,mlmining,3.0,3.0,2009
 Guillermo Sapiro,Duke University,mlmining,2.0,2.0,2011
-Guillermo Sapiro,Duke University,mlmining,3.0,3.0,2012
+Guillermo Sapiro,Duke University,mlmining,3.0,2.5,2012
 Guillermo Sapiro,Duke University,mlmining,2.0,2.0,2013
 Guillermo Sapiro,Duke University,mlmining,1.0,0.5,2015
 Guillermo Sapiro,Duke University,robotics,2.0,1.0,2012
@@ -10518,8 +10524,8 @@ Guillermo Sapiro,Duke University,vision,5.0,5.0,2007
 Guillermo Sapiro,Duke University,vision,1.0,1.0,2008
 Guillermo Sapiro,Duke University,vision,2.0,2.0,2009
 Guillermo Sapiro,Duke University,vision,1.0,1.0,2010
-Guillermo Sapiro,Duke University,vision,1.0,1.0,2012
-Guillermo Sapiro,Duke University,vision,1.0,1.0,2013
+Guillermo Sapiro,Duke University,vision,1.0,0.5,2012
+Guillermo Sapiro,Duke University,vision,1.0,0.5,2013
 Guillermo Sapiro,Duke University,vision,1.0,1.0,2014
 Guillermo Sapiro,Duke University,vision,2.0,1.5,2015
 Paolo A. G. Sivilotti,Ohio State University,softeng,1.0,1.0,2001
@@ -11708,7 +11714,7 @@ Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.5,2014
 Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.5,2007
 Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.333333333333,2008
 Christopher Kruegel,University of California - Santa Barbara,security,2.0,0.833333333333,2009
-Christopher Kruegel,University of California - Santa Barbara,security,7.0,3.33333333333,2010
+Christopher Kruegel,University of California - Santa Barbara,security,7.0,3.16666666667,2010
 Christopher Kruegel,University of California - Santa Barbara,security,6.0,3.33333333333,2011
 Christopher Kruegel,University of California - Santa Barbara,security,6.0,2.83333333333,2012
 Christopher Kruegel,University of California - Santa Barbara,security,5.0,2.5,2013
@@ -11790,6 +11796,8 @@ Manuela M. Veloso,Carnegie Mellon University,robotics,5.0,4.0,2012
 Manuela M. Veloso,Carnegie Mellon University,robotics,5.0,4.0,2013
 Manuela M. Veloso,Carnegie Mellon University,robotics,7.0,6.0,2014
 Manuela M. Veloso,Carnegie Mellon University,robotics,6.0,5.0,2015
+Michelle Borkin,Northeastern University,hci,1.0,1.0,2008
+Michelle Borkin,Northeastern University,hci,1.0,1.0,2009
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1.0,1.0,2001
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1.0,1.0,2002
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1.0,0.5,2011
@@ -13201,6 +13209,12 @@ Robert Moll,University of Massachusetts - Amherst,mlmining,1.0,1.0,2000
 Robert Moll,University of Massachusetts - Amherst,networks,1.0,0.333333333333,2005
 Silvia Ferrari,Duke University,robotics,2.0,2.0,2010
 Silvia Ferrari,Duke University,robotics,2.0,2.0,2014
+William K. Robertson,Northeastern University,security,2.0,1.0,2004
+William K. Robertson,Northeastern University,security,1.0,0.333333333333,2006
+William K. Robertson,Northeastern University,security,1.0,0.5,2009
+William K. Robertson,Northeastern University,security,1.0,0.333333333333,2010
+William K. Robertson,Northeastern University,security,2.0,0.833333333333,2013
+William K. Robertson,Northeastern University,security,1.0,0.5,2014
 Goce Trajcevski,Northwestern University,database,1.0,0.5,2008
 Rui Wang,University of Massachusetts - Amherst,graphics,1.0,1.0,2010
 Rui Wang,University of Massachusetts - Amherst,graphics,1.0,1.0,2011
