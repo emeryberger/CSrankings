@@ -783,11 +783,11 @@ Chen Ding,University of Rochester,proglang,1.0,1.0,2011
 Chen Ding,University of Rochester,arch,1.0,1.0,2004
 Chen Ding,University of Rochester,arch,1.0,1.0,2013
 Jelani Nelson,Harvard University,theory,1.0,1.0,2008
-Jelani Nelson,Harvard University,theory,1.0,0.5,2010
-Jelani Nelson,Harvard University,theory,1.0,1.0,2011
+Jelani Nelson,Harvard University,theory,1.0,0.333333333333,2010
+Jelani Nelson,Harvard University,theory,1.0,0.5,2011
 Jelani Nelson,Harvard University,theory,2.0,2.0,2013
 Jelani Nelson,Harvard University,theory,2.0,2.0,2015
-Jelani Nelson,Harvard University,database,2.0,2.0,2010
+Jelani Nelson,Harvard University,database,2.0,1.5,2010
 Sorin Lerner,University of California - San Diego,hci,1.0,0.5,2015
 Sorin Lerner,University of California - San Diego,mlmining,1.0,0.5,2010
 Sorin Lerner,University of California - San Diego,proglang,2.0,2.0,2002
@@ -2195,6 +2195,14 @@ Robert Bruce Findler,Northwestern University,proglang,2.0,0.833333333333,2010
 Robert Bruce Findler,Northwestern University,proglang,2.0,0.833333333333,2011
 Robert Bruce Findler,Northwestern University,proglang,2.0,0.583333333333,2012
 Robert Bruce Findler,Northwestern University,proglang,1.0,0.5,2013
+Daniel M. Kane,University of California - San Diego,theory,1.0,0.5,2005
+Daniel M. Kane,University of California - San Diego,theory,1.0,0.333333333333,2010
+Daniel M. Kane,University of California - San Diego,theory,2.0,1.5,2011
+Daniel M. Kane,University of California - San Diego,theory,1.0,1.0,2012
+Daniel M. Kane,University of California - San Diego,theory,1.0,0.5,2013
+Daniel M. Kane,University of California - San Diego,theory,1.0,1.0,2014
+Daniel M. Kane,University of California - San Diego,theory,1.0,0.5,2015
+Daniel M. Kane,University of California - San Diego,database,1.0,0.5,2010
 Alan S. Willsky,Massachusetts Institute of Technology,mlmining,1.0,0.5,2000
 Alan S. Willsky,Massachusetts Institute of Technology,mlmining,1.0,0.5,2001
 Alan S. Willsky,Massachusetts Institute of Technology,mlmining,1.0,0.5,2002
@@ -5188,6 +5196,10 @@ Zhuoqing Morley Mao,University of Michigan,networks,3.0,2.0,2008
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,1.0,2011
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,0.333333333333,2013
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,1.0,2015
+Julian J. McAuley,University of California - San Diego,mlmining,1.0,0.5,2012
+Julian J. McAuley,University of California - San Diego,mlmining,1.0,0.5,2015
+Julian J. McAuley,University of California - San Diego,web,1.0,0.5,2014
+Julian J. McAuley,University of California - San Diego,web,1.0,1.0,2015
 Stephen M. Pizer,University of North Carolina - Chapel Hill,vision,1.0,0.5,2007
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.5,2003
 Eric Fosler-Lussier,Ohio State University,ai,1.0,1.0,2015
@@ -6097,7 +6109,7 @@ Stephen A. Edwards,Columbia University,logic,1.0,1.0,2005
 Raghu Meka,University of California - Los Angeles,theory,3.0,1.2,2010
 Raghu Meka,University of California - Los Angeles,theory,2.0,0.7,2011
 Raghu Meka,University of California - Los Angeles,theory,5.0,2.5,2012
-Raghu Meka,University of California - Los Angeles,theory,1.0,1.0,2013
+Raghu Meka,University of California - Los Angeles,theory,1.0,0.5,2013
 Raghu Meka,University of California - Los Angeles,theory,3.0,2.33333333333,2015
 Raghu Meka,University of California - Los Angeles,mlmining,1.0,0.5,2008
 Raghu Meka,University of California - Los Angeles,mlmining,1.0,0.5,2009
@@ -9482,9 +9494,9 @@ Jure Leskovec,Stanford University,mlmining,3.0,1.83333333333,2008
 Jure Leskovec,Stanford University,mlmining,2.0,1.5,2009
 Jure Leskovec,Stanford University,mlmining,2.0,2.0,2010
 Jure Leskovec,Stanford University,mlmining,1.0,1.0,2011
-Jure Leskovec,Stanford University,mlmining,4.0,3.33333333333,2012
+Jure Leskovec,Stanford University,mlmining,4.0,2.83333333333,2012
 Jure Leskovec,Stanford University,mlmining,2.0,2.0,2013
-Jure Leskovec,Stanford University,mlmining,3.0,3.0,2015
+Jure Leskovec,Stanford University,mlmining,3.0,2.5,2015
 Jure Leskovec,Stanford University,ai,1.0,1.0,2005
 Jure Leskovec,Stanford University,database,1.0,0.5,2006
 Jure Leskovec,Stanford University,database,1.0,1.0,2015
@@ -9494,7 +9506,7 @@ Jure Leskovec,Stanford University,web,2.0,1.33333333333,2010
 Jure Leskovec,Stanford University,web,1.0,1.0,2011
 Jure Leskovec,Stanford University,web,1.0,1.0,2012
 Jure Leskovec,Stanford University,web,3.0,2.33333333333,2013
-Jure Leskovec,Stanford University,web,4.0,2.83333333333,2014
+Jure Leskovec,Stanford University,web,4.0,2.33333333333,2014
 Jure Leskovec,Stanford University,web,4.0,3.33333333333,2015
 Jure Leskovec,Stanford University,web,3.0,2.5,2016
 Jure Leskovec,Stanford University,networks,1.0,0.25,2007
@@ -11373,11 +11385,11 @@ Ming-Yang Kao,Northwestern University,security,1.0,0.5,2006
 Ming-Yang Kao,Northwestern University,networks,1.0,0.2,2006
 Ilias Diakonikolas,University of Southern California,theory,1.0,0.333333333333,2007
 Ilias Diakonikolas,University of Southern California,theory,1.0,0.333333333333,2009
-Ilias Diakonikolas,University of Southern California,theory,2.0,0.7,2010
+Ilias Diakonikolas,University of Southern California,theory,2.0,0.533333333333,2010
 Ilias Diakonikolas,University of Southern California,theory,2.0,0.833333333333,2012
 Ilias Diakonikolas,University of Southern California,theory,1.0,0.333333333333,2013
 Ilias Diakonikolas,University of Southern California,theory,1.0,0.5,2014
-Ilias Diakonikolas,University of Southern California,theory,2.0,1.33333333333,2015
+Ilias Diakonikolas,University of Southern California,theory,2.0,0.833333333333,2015
 Ilias Diakonikolas,University of Southern California,mlmining,1.0,0.5,2014
 Ilias Diakonikolas,University of Southern California,mlmining,1.0,1.0,2015
 Ilias Diakonikolas,University of Southern California,database,1.0,1.0,2015
@@ -12623,7 +12635,7 @@ Ryan Kastner,University of California - San Diego,security,1.0,0.5,2007
 Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2011
 Ryan Kastner,University of California - San Diego,arch,1.0,0.5,2013
 Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2014
-Paul Valiant,Brown University,theory,1.0,1.0,2005
+Paul Valiant,Brown University,theory,1.0,0.5,2005
 Paul Valiant,Brown University,theory,1.0,1.0,2008
 Paul Valiant,Brown University,theory,2.0,1.0,2011
 Paul Valiant,Brown University,theory,1.0,0.5,2014
