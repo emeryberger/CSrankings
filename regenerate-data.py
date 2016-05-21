@@ -153,7 +153,7 @@ def parseDBLP(facultydict):
                     # - usually a truncated single page. -1 means no
                     # pages found at all => some problem with journal
                     # entries in DBLP.
-                    print "Skipping article with "+str(pageCount)+" pages."
+                    # print "Skipping article with "+str(pageCount)+" pages."
                     continue
 
                 # If we got here, we have a winner.
