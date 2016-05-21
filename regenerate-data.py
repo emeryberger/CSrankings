@@ -58,20 +58,21 @@ areadict = {
     'robotics' : ['ICRA','IROS','Robotics: Science and Systems']
 }
 
+# Build a dictionary mapping conferences to areas.
+# e.g., confdict['CVPR'] = 'vision'.
 confdict = {}
 for k, v in areadict.items():
     for item in v:
         confdict[item] = k
 
+# The list of all areas.
 arealist = areadict.keys();
 
+# Consider pubs in this range only.
 startyear = 2000
-endyear = 2016
+endyear   = 2016
 
    
-def conf2area(confname):
-    return confdict[confname]
-
 def parseDBLP(facultydict):
     authlogs = {}
     interestingauthors = {}
@@ -158,7 +159,7 @@ def parseDBLP(facultydict):
 
                 # If we got here, we have a winner.
                 
-                areaname = conf2area(confname)
+                areaname = confdict[confname]
                 for child in node:
                     if (child.tag == 'author'):
                         authorName = child.text
