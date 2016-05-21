@@ -325,7 +325,7 @@ function rank() {
 	s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
 	s += "<br>" + "</body>" + "</html>";
     } else {
-	s = "<h4>Nothing selected: please select at least one area.</h4>";
+	s = "<h4>Please select at least one area.</h4>";
     }
     outputHTML = s;
     setTimeout(redisplay, 0);
