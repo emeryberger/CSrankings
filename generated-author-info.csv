@@ -105,7 +105,7 @@ Yan Huang,Indiana University,robotics,1.0,1.0,2010
 Yan Huang,Indiana University,robotics,1.0,1.0,2011
 Yan Huang,Indiana University,security,2.0,0.666666666667,2011
 Yan Huang,Indiana University,security,1.0,0.333333333333,2012
-Yan Huang,Indiana University,security,3.0,0.916666666667,2014
+Yan Huang,Indiana University,security,3.0,0.866666666667,2014
 Yan Huang,Indiana University,security,3.0,1.83333333333,2015
 Yan Huang,Indiana University,networks,1.0,1.0,2004
 Yan Huang,Indiana University,networks,1.0,1.0,2008
@@ -2867,7 +2867,7 @@ Mark Dredze,Johns Hopkins University,ai,1.0,1.0,2016
 Wim van Dam,University of California - Santa Barbara,theory,1.0,1.0,2000
 Wim van Dam,University of California - Santa Barbara,theory,1.0,0.5,2001
 Wim van Dam,University of California - Santa Barbara,theory,1.0,0.5,2004
-Wim van Dam,University of California - Santa Barbara,theory,1.0,1.0,2005
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.5,2005
 Edmund M. Clarke,Carnegie Mellon University,logic,2.0,1.5,2000
 Edmund M. Clarke,Carnegie Mellon University,logic,3.0,2.5,2002
 Edmund M. Clarke,Carnegie Mellon University,logic,1.0,1.0,2003
@@ -2900,7 +2900,7 @@ Jie Gao,State University of New York - Stony Brook,networks,3.0,3.0,2014
 Jie Gao,State University of New York - Stony Brook,networks,1.0,1.0,2015
 Dan Grossman,University of Washington,database,1.0,0.5,2010
 Dan Grossman,University of Washington,database,1.0,0.5,2014
-Dan Grossman,University of Washington,proglang,1.0,1.0,2002
+Dan Grossman,University of Washington,proglang,1.0,0.5,2002
 Dan Grossman,University of Washington,proglang,3.0,3.0,2007
 Dan Grossman,University of Washington,proglang,2.0,2.0,2008
 Dan Grossman,University of Washington,proglang,2.0,1.5,2010
@@ -4994,7 +4994,7 @@ Umesh V. Vazirani,University of California - Berkeley,theory,3.0,2.0,2001
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.333333333333,2004
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.5,2005
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.5,2006
-Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.5,2007
+Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.333333333333,2007
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.5,2008
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,1.0,2009
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,1.0,2011
@@ -6214,6 +6214,8 @@ Chris Callison-Burch,University of Pennsylvania,nlp,3.0,3.0,2009
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,1.0,2010
 Chris Callison-Burch,University of Pennsylvania,nlp,3.0,2.5,2011
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,0.5,2013
+Marine Carpuat,University of Maryland - College Park,nlp,1.0,1.0,2004
+Marine Carpuat,University of Maryland - College Park,nlp,1.0,1.0,2005
 Thomas Wahl,Northeastern University,logic,1.0,1.0,2007
 Thomas Wahl,Northeastern University,logic,1.0,1.0,2009
 Thomas Wahl,Northeastern University,logic,1.0,1.0,2010
@@ -6735,6 +6737,14 @@ Rafail Ostrovsky,University of California - Los Angeles,theory,2.0,2.0,2015
 Rafail Ostrovsky,University of California - Los Angeles,database,1.0,0.333333333333,2009
 Rafail Ostrovsky,University of California - Los Angeles,security,1.0,1.0,2006
 Rafail Ostrovsky,University of California - Los Angeles,security,2.0,1.33333333333,2007
+Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.333333333333,2010
+Michelle L. Mazurek,University of Maryland - College Park,hci,2.0,1.0,2011
+Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.5,2012
+Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.5,2014
+Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.5,2015
+Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.5,2016
+Michelle L. Mazurek,University of Maryland - College Park,security,2.0,1.0,2012
+Michelle L. Mazurek,University of Maryland - College Park,security,1.0,0.5,2013
 David A. Bader,Georgia Institute of Technology,mlmining,1.0,0.166666666667,2013
 Simon S. Lam,University of Texas - Austin,metrics,1.0,1.0,2004
 Simon S. Lam,University of Texas - Austin,metrics,1.0,1.0,2011
@@ -6880,16 +6890,6 @@ Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,net
 Sangyeun Cho,University of Pittsburgh,arch,1.0,1.0,2006
 Sangyeun Cho,University of Pittsburgh,arch,1.0,1.0,2009
 Sangyeun Cho,University of Pittsburgh,arch,1.0,1.0,2012
-Michael Hicks,University of Maryland - College Park,proglang,1.0,0.5,2008
-Michael Hicks,University of Maryland - College Park,proglang,1.0,1.0,2010
-Michael Hicks,University of Maryland - College Park,proglang,1.0,0.5,2011
-Michael Hicks,University of Maryland - College Park,proglang,2.0,1.5,2012
-Michael Hicks,University of Maryland - College Park,proglang,2.0,0.833333333333,2014
-Michael Hicks,University of Maryland - College Park,web,1.0,1.0,2007
-Michael Hicks,University of Maryland - College Park,security,1.0,1.0,2008
-Michael Hicks,University of Maryland - College Park,security,1.0,1.0,2014
-Michael Hicks,University of Maryland - College Park,softeng,1.0,0.5,2013
-Michael Hicks,University of Maryland - College Park,networks,1.0,1.0,2009
 Chunyi Peng,Ohio State University,mobile,1.0,1.0,2007
 Chunyi Peng,Ohio State University,mobile,1.0,0.5,2009
 Chunyi Peng,Ohio State University,mobile,1.0,0.5,2013
@@ -9147,13 +9147,13 @@ Chang Liu,Northwestern University,web,1.0,1.0,2012
 Chang Liu,Northwestern University,web,1.0,0.5,2016
 Chang Liu,Northwestern University,robotics,2.0,2.0,2003
 Chang Liu,Northwestern University,robotics,1.0,1.0,2014
-Chang Liu,Northwestern University,security,2.0,0.583333333333,2014
+Chang Liu,Northwestern University,security,2.0,0.533333333333,2014
 Chang Liu,Northwestern University,security,1.0,0.333333333333,2015
 Chang Liu,Northwestern University,softeng,1.0,1.0,2000
 Chang Liu,Northwestern University,softeng,1.0,1.0,2006
 Chang Liu,Northwestern University,softeng,1.0,1.0,2014
 Chang Liu,Northwestern University,softeng,1.0,1.0,2016
-Chang Liu,Northwestern University,arch,1.0,0.5,2015
+Chang Liu,Northwestern University,arch,1.0,0.333333333333,2015
 Falko Kuester,University of California - San Diego,robotics,1.0,1.0,2006
 Radu Sion,State University of New York - Stony Brook,database,1.0,0.5,2002
 Radu Sion,State University of New York - Stony Brook,database,1.0,0.333333333333,2004
@@ -9731,6 +9731,7 @@ Ruzica Piskac,Yale University,logic,2.0,1.5,2013
 Ruzica Piskac,Yale University,logic,1.0,0.5,2014
 Thomas M. Conte,Georgia Institute of Technology,arch,1.0,1.0,2003
 Thomas M. Conte,Georgia Institute of Technology,arch,1.0,1.0,2011
+Tom Goldstein,University of Maryland - College Park,mlmining,1.0,1.0,2015
 Richard W. Vuduc,Georgia Institute of Technology,proglang,1.0,0.5,2012
 Richard W. Vuduc,Georgia Institute of Technology,arch,1.0,0.5,2010
 Richard W. Vuduc,Georgia Institute of Technology,arch,1.0,1.0,2014
@@ -10167,7 +10168,7 @@ Stuart J. Russell,University of California - Berkeley,ai,1.0,0.333333333333,2015
 Stuart J. Russell,University of California - Berkeley,ai,1.0,1.0,2016
 Stuart J. Russell,University of California - Berkeley,robotics,1.0,0.5,2014
 Elaine Shi,Cornell University,opsys,1.0,1.0,2005
-Elaine Shi,Cornell University,proglang,1.0,0.333333333333,2014
+Elaine Shi,Cornell University,proglang,1.0,0.5,2014
 Elaine Shi,Cornell University,mobile,1.0,0.5,2012
 Elaine Shi,Cornell University,mobile,1.0,0.5,2014
 Elaine Shi,Cornell University,web,1.0,0.5,2016
@@ -10176,9 +10177,9 @@ Elaine Shi,Cornell University,security,1.0,1.0,2007
 Elaine Shi,Cornell University,security,1.0,0.5,2011
 Elaine Shi,Cornell University,security,1.0,1.0,2012
 Elaine Shi,Cornell University,security,6.0,4.25,2013
-Elaine Shi,Cornell University,security,7.0,3.75,2014
+Elaine Shi,Cornell University,security,7.0,3.7,2014
 Elaine Shi,Cornell University,security,4.0,2.83333333333,2015
-Elaine Shi,Cornell University,arch,1.0,0.5,2015
+Elaine Shi,Cornell University,arch,1.0,0.333333333333,2015
 Elaine Shi,Cornell University,networks,1.0,0.5,2007
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1.0,1.0,2001
 Vijay V. Vazirani,Georgia Institute of Technology,theory,2.0,1.5,2002
@@ -10270,10 +10271,19 @@ Wang-Chien Lee,Pennsylvania State University,web,1.0,1.0,2015
 Wang-Chien Lee,Pennsylvania State University,web,1.0,1.0,2016
 Wang-Chien Lee,Pennsylvania State University,networks,1.0,1.0,2007
 Wang-Chien Lee,Pennsylvania State University,networks,1.0,1.0,2010
-Davi Geiger,New York University,vision,1.0,1.0,2000
-Davi Geiger,New York University,vision,1.0,1.0,2005
-Davi Geiger,New York University,vision,1.0,1.0,2010
-Davi Geiger,New York University,vision,1.0,1.0,2014
+Michael W. Hicks,University of Maryland - College Park,database,1.0,1.0,2009
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,1.0,2001
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.5,2002
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,1.0,2004
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,1.0,2005
+Michael W. Hicks,University of Maryland - College Park,proglang,2.0,1.5,2006
+Michael W. Hicks,University of Maryland - College Park,proglang,2.0,2.0,2009
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,1.0,2014
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2015
+Michael W. Hicks,University of Maryland - College Park,security,1.0,1.0,2007
+Michael W. Hicks,University of Maryland - College Park,security,2.0,1.2,2014
+Michael W. Hicks,University of Maryland - College Park,arch,1.0,0.333333333333,2015
+Michael W. Hicks,University of Maryland - College Park,networks,1.0,1.0,2001
 Andrea S. LaPaugh,Princeton University,web,1.0,1.0,2002
 Boon Thau Loo,University of Pennsylvania,opsys,1.0,0.25,2005
 Boon Thau Loo,University of Pennsylvania,opsys,1.0,0.5,2011
@@ -11782,7 +11792,7 @@ Christopher Kruegel,University of California - Santa Barbara,networks,1.0,0.3333
 Kristian J. Hammond,Northwestern University,web,1.0,1.0,2002
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2004
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2006
-Ben Reichardt,University of Southern California,theory,1.0,1.0,2007
+Ben Reichardt,University of Southern California,theory,1.0,0.5,2007
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2008
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2009
 Amal Ahmed,Northeastern University,proglang,1.0,0.5,2008
@@ -12498,7 +12508,7 @@ Leonard J. Schulman,California Institute of Technology,theory,2.0,1.5,2000
 Leonard J. Schulman,California Institute of Technology,theory,1.0,0.5,2001
 Leonard J. Schulman,California Institute of Technology,theory,2.0,1.5,2005
 Leonard J. Schulman,California Institute of Technology,theory,1.0,0.5,2006
-Leonard J. Schulman,California Institute of Technology,theory,1.0,0.5,2007
+Leonard J. Schulman,California Institute of Technology,theory,1.0,0.333333333333,2007
 Leonard J. Schulman,California Institute of Technology,theory,1.0,0.5,2008
 Leonard J. Schulman,California Institute of Technology,theory,1.0,0.5,2014
 Leonard J. Schulman,California Institute of Technology,theory,3.0,2.0,2015
@@ -12860,21 +12870,21 @@ Brian A. Barsky,University of California - Berkeley,graphics,1.0,1.0,2014
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2002
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2003
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2005
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2006
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2006
 Jeffrey S. Foster,University of Maryland - College Park,proglang,2.0,2.0,2007
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2008
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2008
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2009
 Jeffrey S. Foster,University of Maryland - College Park,proglang,2.0,1.5,2010
-Jeffrey S. Foster,University of Maryland - College Park,proglang,2.0,1.0,2011
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2012
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2014
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2015
+Jeffrey S. Foster,University of Maryland - College Park,proglang,2.0,1.5,2011
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2012
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,1.0,2014
+Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.333333333333,2015
 Jeffrey S. Foster,University of Maryland - College Park,logic,1.0,1.0,2009
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.333333333333,2000
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.5,2001
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,1.0,2010
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.5,2012
-Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.5,2013
+Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,1.0,2013
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.5,2015
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.5,2016
 Sofya Raskhodnikova,Pennsylvania State University,theory,1.0,0.5,2002
@@ -12885,7 +12895,7 @@ Sofya Raskhodnikova,Pennsylvania State University,theory,1.0,1.0,2011
 Sofya Raskhodnikova,Pennsylvania State University,theory,1.0,0.5,2014
 Sofya Raskhodnikova,Pennsylvania State University,database,1.0,1.0,2011
 Daniel A. Spielman,Yale University,theory,2.0,1.0,2001
-Daniel A. Spielman,Yale University,theory,2.0,1.5,2003
+Daniel A. Spielman,Yale University,theory,2.0,1.0,2003
 Daniel A. Spielman,Yale University,theory,1.0,0.5,2004
 Daniel A. Spielman,Yale University,theory,2.0,1.5,2005
 Daniel A. Spielman,Yale University,theory,1.0,1.0,2006
@@ -13372,7 +13382,12 @@ Charless C. Fowlkes,University of California - Irvine,vision,1.0,1.0,2013
 Charless C. Fowlkes,University of California - Irvine,vision,2.0,1.5,2014
 Charless C. Fowlkes,University of California - Irvine,vision,1.0,1.0,2015
 Joel I. Seiferas,University of Rochester,networks,1.0,0.5,2005
-Krishna V. Palem,Rice University,proglang,1.0,1.0,2014
+Eytan Ruppin,University of Maryland - College Park,mlmining,1.0,1.0,2000
+Eytan Ruppin,University of Maryland - College Park,mlmining,1.0,1.0,2002
+Eytan Ruppin,University of Maryland - College Park,mlmining,1.0,1.0,2003
+Eytan Ruppin,University of Maryland - College Park,mlmining,1.0,1.0,2006
+Eytan Ruppin,University of Maryland - College Park,ai,1.0,1.0,2005
+Eytan Ruppin,University of Maryland - College Park,web,1.0,1.0,2001
 Seth J. Teller,Massachusetts Institute of Technology,graphics,1.0,1.0,2004
 Seth J. Teller,Massachusetts Institute of Technology,hci,1.0,1.0,2012
 Seth J. Teller,Massachusetts Institute of Technology,ai,1.0,0.5,2011
@@ -13786,6 +13801,10 @@ Rina Dechter,University of California - Irvine,ai,1.0,1.0,2012
 Rina Dechter,University of California - Irvine,ai,2.0,2.0,2013
 Rina Dechter,University of California - Irvine,ai,1.0,0.5,2015
 Rina Dechter,University of California - Irvine,ai,2.0,1.5,2016
+Davi Geiger,New York University,vision,1.0,1.0,2000
+Davi Geiger,New York University,vision,1.0,1.0,2005
+Davi Geiger,New York University,vision,1.0,1.0,2010
+Davi Geiger,New York University,vision,1.0,1.0,2014
 Stefan Schaal,University of Southern California,mlmining,2.0,2.0,2000
 Stefan Schaal,University of Southern California,mlmining,1.0,1.0,2002
 Stefan Schaal,University of Southern California,mlmining,1.0,1.0,2004
@@ -14997,7 +15016,7 @@ Mitchell Wand,Northeastern University,proglang,1.0,1.0,2011
 Gregory R. Ganger,Carnegie Mellon University,metrics,1.0,1.0,2000
 Gregory R. Ganger,Carnegie Mellon University,metrics,1.0,1.0,2007
 Gregory R. Ganger,Carnegie Mellon University,metrics,1.0,1.0,2008
-Gregory R. Ganger,Carnegie Mellon University,hci,1.0,0.5,2010
+Gregory R. Ganger,Carnegie Mellon University,hci,1.0,0.333333333333,2010
 Gregory R. Ganger,Carnegie Mellon University,mlmining,1.0,0.5,2012
 Gregory R. Ganger,Carnegie Mellon University,mlmining,1.0,0.5,2013
 Gregory R. Ganger,Carnegie Mellon University,opsys,3.0,3.0,2000
@@ -15318,6 +15337,7 @@ Daniel Sanchez,Massachusetts Institute of Technology,arch,1.0,1.0,2013
 Daniel Sanchez,Massachusetts Institute of Technology,arch,1.0,1.0,2014
 Daniel Sanchez,Massachusetts Institute of Technology,arch,3.0,3.0,2015
 Daniel Sanchez,Massachusetts Institute of Technology,arch,1.0,1.0,2016
+Krishna V. Palem,Rice University,proglang,1.0,1.0,2014
 John H. Reppy,University of Chicago,proglang,1.0,1.0,2001
 John H. Reppy,University of Chicago,proglang,1.0,1.0,2007
 John H. Reppy,University of Chicago,proglang,1.0,0.5,2012
@@ -15389,7 +15409,7 @@ Jonathan Katz,University of Maryland - College Park,theory,2.0,1.5,2007
 Jonathan Katz,University of Maryland - College Park,theory,1.0,1.0,2008
 Jonathan Katz,University of Maryland - College Park,theory,1.0,0.5,2010
 Jonathan Katz,University of Maryland - College Park,theory,2.0,2.0,2013
-Jonathan Katz,University of Maryland - College Park,proglang,1.0,0.333333333333,2014
+Jonathan Katz,University of Maryland - College Park,proglang,1.0,0.5,2014
 Jonathan Katz,University of Maryland - College Park,security,1.0,1.0,2000
 Jonathan Katz,University of Maryland - College Park,security,1.0,1.0,2003
 Jonathan Katz,University of Maryland - College Park,security,1.0,1.0,2005
@@ -15397,7 +15417,7 @@ Jonathan Katz,University of Maryland - College Park,security,1.0,1.0,2009
 Jonathan Katz,University of Maryland - College Park,security,2.0,2.0,2010
 Jonathan Katz,University of Maryland - College Park,security,2.0,0.666666666667,2011
 Jonathan Katz,University of Maryland - College Park,security,2.0,0.833333333333,2012
-Jonathan Katz,University of Maryland - College Park,security,3.0,1.08333333333,2014
+Jonathan Katz,University of Maryland - College Park,security,3.0,1.03333333333,2014
 Jonathan Katz,University of Maryland - College Park,security,3.0,2.0,2015
 David Eppstein,University of California - Irvine,robotics,1.0,0.5,2012
 David Eppstein,University of California - Irvine,networks,1.0,0.5,2011
@@ -15541,7 +15561,7 @@ Gregory D. Hager,Johns Hopkins University,vision,1.0,1.0,2009
 Gregory D. Hager,Johns Hopkins University,vision,1.0,1.0,2015
 David Van Horn,University of Maryland - College Park,proglang,1.0,0.5,2010
 David Van Horn,University of Maryland - College Park,proglang,1.0,0.5,2012
-David Van Horn,University of Maryland - College Park,proglang,3.0,2.0,2015
+David Van Horn,University of Maryland - College Park,proglang,3.0,1.83333333333,2015
 David Van Horn,University of Maryland - College Park,proglang,1.0,0.5,2016
 Thomas A. Funkhouser,Princeton University,graphics,1.0,0.5,2000
 Thomas A. Funkhouser,Princeton University,graphics,1.0,1.0,2001
@@ -15976,20 +15996,20 @@ Seth Cooper,Northeastern University,hci,1.0,0.5,2016
 Lorrie Faith Cranor,Carnegie Mellon University,hci,1.0,1.0,2007
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,3.0,2008
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,2.5,2009
-Lorrie Faith Cranor,Carnegie Mellon University,hci,5.0,4.0,2010
-Lorrie Faith Cranor,Carnegie Mellon University,hci,4.0,3.5,2011
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,2.0,2012
+Lorrie Faith Cranor,Carnegie Mellon University,hci,5.0,3.83333333333,2010
+Lorrie Faith Cranor,Carnegie Mellon University,hci,4.0,2.5,2011
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,1.5,2012
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,1.5,2013
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,1.5,2014
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,1.33333333333,2015
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,2.0,2016
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,1.0,2014
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,0.833333333333,2015
+Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,1.5,2016
 Lorrie Faith Cranor,Carnegie Mellon University,web,1.0,1.0,2005
 Lorrie Faith Cranor,Carnegie Mellon University,web,1.0,1.0,2007
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.5,2000
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,1.0,2007
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,1.0,2009
-Lorrie Faith Cranor,Carnegie Mellon University,security,3.0,3.0,2012
-Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,1.0,2013
+Lorrie Faith Cranor,Carnegie Mellon University,security,3.0,2.0,2012
+Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.5,2013
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.5,2015
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.5,2006
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.5,2008
@@ -16164,6 +16184,11 @@ Ariel D. Procaccia,Carnegie Mellon University,ai,7.0,5.0,2013
 Ariel D. Procaccia,Carnegie Mellon University,ai,6.0,5.0,2014
 Ariel D. Procaccia,Carnegie Mellon University,ai,6.0,4.5,2015
 Ariel D. Procaccia,Carnegie Mellon University,ai,3.0,3.0,2016
+Andrew M. Childs,University of Maryland - College Park,theory,1.0,0.5,2003
+Andrew M. Childs,University of Maryland - College Park,theory,1.0,0.5,2005
+Andrew M. Childs,University of Maryland - College Park,theory,2.0,0.833333333333,2007
+Andrew M. Childs,University of Maryland - College Park,theory,1.0,1.0,2014
+Andrew M. Childs,University of Maryland - College Park,theory,1.0,1.0,2015
 Neil Immerman,University of Massachusetts - Amherst,ai,1.0,0.5,2008
 Neil Immerman,University of Massachusetts - Amherst,ai,2.0,1.0,2011
 Neil Immerman,University of Massachusetts - Amherst,database,1.0,0.5,2008
