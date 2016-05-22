@@ -2781,7 +2781,7 @@ T. S. Eugene Ng,Rice University,networks,2.0,0.833333333333,2007
 T. S. Eugene Ng,Rice University,networks,1.0,1.0,2009
 T. S. Eugene Ng,Rice University,networks,3.0,3.0,2010
 T. S. Eugene Ng,Rice University,networks,2.0,2.0,2015
-Tomasz Imielinski,Rutgers - State University of New Jersey - New Brunswick,database,1.0,1.0,2002
+Tomasz Imielinski,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.5,2002
 Gordon L. Kindlmann,University of Chicago,proglang,1.0,0.5,2012
 Valerio Pascucci,University of Utah,graphics,1.0,0.5,2005
 Valerio Pascucci,University of Utah,graphics,1.0,0.5,2006
@@ -10427,9 +10427,6 @@ Haym Hirsh,Cornell University,mlmining,1.0,1.0,2000
 Haym Hirsh,Cornell University,mlmining,1.0,0.5,2006
 Haym Hirsh,Cornell University,ai,1.0,0.5,2001
 Haym Hirsh,Cornell University,web,1.0,1.0,2001
-J. Nathan Foster,Cornell University,database,1.0,0.5,2008
-J. Nathan Foster,Cornell University,proglang,1.0,0.5,2005
-J. Nathan Foster,Cornell University,proglang,1.0,0.5,2008
 Scott D. Stoller,State University of New York - Stony Brook,proglang,1.0,1.0,2004
 Scott D. Stoller,State University of New York - Stony Brook,proglang,1.0,1.0,2005
 Scott D. Stoller,State University of New York - Stony Brook,proglang,1.0,1.0,2012
@@ -12654,6 +12651,8 @@ Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,1.0,2015
 Richard J. Lipton,Georgia Institute of Technology,theory,1.0,1.0,2003
 Richard J. Lipton,Georgia Institute of Technology,database,1.0,1.0,2010
 Richard J. Lipton,Georgia Institute of Technology,networks,1.0,1.0,2002
+B. R. Badrinath,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.5,2002
+B. R. Badrinath,Rutgers - State University of New Jersey - New Brunswick,networks,3.0,3.0,2003
 Vipin Kumar,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2000
 Vipin Kumar,University of Minnesota - Twin Cities,mlmining,2.0,1.5,2002
 Vipin Kumar,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2003
@@ -14183,6 +14182,9 @@ Huamin Wang,Ohio State University,graphics,3.0,2.0,2013
 Huamin Wang,Ohio State University,graphics,3.0,3.0,2014
 Huamin Wang,Ohio State University,graphics,4.0,3.5,2015
 Huamin Wang,Ohio State University,vision,1.0,1.0,2009
+Aaron Clauset,University of Colorado Boulder,theory,1.0,0.5,2005
+Aaron Clauset,University of Colorado Boulder,ai,1.0,1.0,2015
+Aaron Clauset,University of Colorado Boulder,web,1.0,1.0,2016
 Vladimir Pavlovic,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,0.5,2000
 Vladimir Pavlovic,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,0.5,2005
 Vladimir Pavlovic,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,1.0,2007
@@ -15564,9 +15566,9 @@ Sharon Goldberg,Boston University,networks,1.0,0.5,2010
 Sharon Goldberg,Boston University,networks,1.0,0.5,2011
 Sharon Goldberg,Boston University,networks,1.0,1.0,2013
 Sharon Goldberg,Boston University,networks,1.0,0.5,2014
-Aaron Clauset,University of Colorado Boulder,theory,1.0,0.5,2005
-Aaron Clauset,University of Colorado Boulder,ai,1.0,1.0,2015
-Aaron Clauset,University of Colorado Boulder,web,1.0,1.0,2016
+J. Nathan Foster,Cornell University,database,1.0,0.5,2008
+J. Nathan Foster,Cornell University,proglang,1.0,0.5,2005
+J. Nathan Foster,Cornell University,proglang,1.0,0.5,2008
 Joel Spencer,New York University,theory,1.0,0.5,2002
 Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.5,2002
 Mark D. Hill,University of Wisconsin - Madison,database,1.0,1.0,2001
