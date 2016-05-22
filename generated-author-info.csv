@@ -3526,7 +3526,7 @@ Scott Aaronson,University of Texas - Austin,theory,1.0,1.0,2003
 Scott Aaronson,University of Texas - Austin,theory,2.0,2.0,2004
 Scott Aaronson,University of Texas - Austin,theory,1.0,1.0,2005
 Scott Aaronson,University of Texas - Austin,theory,2.0,2.0,2008
-Scott Aaronson,University of Texas - Austin,theory,2.0,2.0,2010
+Scott Aaronson,University of Texas - Austin,theory,2.0,1.5,2010
 Scott Aaronson,University of Texas - Austin,theory,1.0,1.0,2011
 Scott Aaronson,University of Texas - Austin,theory,1.0,1.0,2012
 Scott Aaronson,University of Texas - Austin,theory,1.0,1.0,2015
@@ -4878,7 +4878,7 @@ James Caverlee,Texas A&M University,web,1.0,1.0,2010
 James Caverlee,Texas A&M University,web,1.0,1.0,2013
 James Caverlee,Texas A&M University,web,1.0,1.0,2014
 James Caverlee,Texas A&M University,web,1.0,1.0,2015
-Nadia Heninger,University of Pennsylvania,security,1.0,0.333333333333,2008
+Nadia Heninger,University of Pennsylvania,security,1.0,0.25,2008
 Nadia Heninger,University of Pennsylvania,security,1.0,0.25,2009
 Nadia Heninger,University of Pennsylvania,security,1.0,0.166666666667,2010
 Nadia Heninger,University of Pennsylvania,security,2.0,1.5,2012
@@ -9194,6 +9194,10 @@ Xianfeng Gu,State University of New York - Stony Brook,vision,2.0,1.5,2010
 Xianfeng Gu,State University of New York - Stony Brook,vision,3.0,2.5,2011
 Xianfeng Gu,State University of New York - Stony Brook,vision,4.0,2.5,2013
 Xianfeng Gu,State University of New York - Stony Brook,vision,1.0,1.0,2014
+Ariel J. Feldman,University of Chicago,opsys,1.0,0.5,2010
+Ariel J. Feldman,University of Chicago,opsys,1.0,0.5,2013
+Ariel J. Feldman,University of Chicago,security,1.0,0.25,2008
+Ariel J. Feldman,University of Chicago,security,1.0,0.5,2012
 Ellen W. Zegura,Georgia Institute of Technology,metrics,1.0,1.0,2005
 Ellen W. Zegura,Georgia Institute of Technology,mobile,1.0,1.0,2014
 Ellen W. Zegura,Georgia Institute of Technology,networks,5.0,5.0,2000
@@ -9688,7 +9692,7 @@ Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,1.0,2012
 Michael Walfish,New York University,opsys,1.0,0.25,2004
 Michael Walfish,New York University,opsys,1.0,0.5,2010
 Michael Walfish,New York University,opsys,1.0,1.0,2011
-Michael Walfish,New York University,opsys,1.0,1.0,2013
+Michael Walfish,New York University,opsys,1.0,0.5,2013
 Michael Walfish,New York University,opsys,1.0,1.0,2015
 Michael Walfish,New York University,security,2.0,2.0,2012
 Michael Walfish,New York University,security,1.0,1.0,2013
@@ -10420,7 +10424,7 @@ J. Alex Halderman,University of Michigan,web,1.0,0.333333333333,2005
 J. Alex Halderman,University of Michigan,web,1.0,0.5,2010
 J. Alex Halderman,University of Michigan,security,1.0,0.25,2004
 J. Alex Halderman,University of Michigan,security,1.0,0.5,2007
-J. Alex Halderman,University of Michigan,security,1.0,0.333333333333,2008
+J. Alex Halderman,University of Michigan,security,1.0,0.25,2008
 J. Alex Halderman,University of Michigan,security,1.0,0.25,2009
 J. Alex Halderman,University of Michigan,security,2.0,1.16666666667,2010
 J. Alex Halderman,University of Michigan,security,1.0,1.0,2011
@@ -10735,18 +10739,18 @@ Timothy W. Bickmore,Northeastern University,hci,1.0,1.0,2015
 Timothy W. Bickmore,Northeastern University,nlp,1.0,0.5,2001
 Edward W. Felten,Princeton University,hci,1.0,1.0,2001
 Edward W. Felten,Princeton University,hci,1.0,1.0,2006
-Edward W. Felten,Princeton University,opsys,1.0,1.0,2010
+Edward W. Felten,Princeton University,opsys,1.0,0.5,2010
 Edward W. Felten,Princeton University,web,1.0,0.333333333333,2005
 Edward W. Felten,Princeton University,web,1.0,0.5,2015
 Edward W. Felten,Princeton University,security,1.0,1.0,2000
 Edward W. Felten,Princeton University,security,1.0,0.5,2001
 Edward W. Felten,Princeton University,security,1.0,1.0,2002
 Edward W. Felten,Princeton University,security,1.0,0.25,2004
-Edward W. Felten,Princeton University,security,1.0,0.333333333333,2008
+Edward W. Felten,Princeton University,security,1.0,0.25,2008
 Edward W. Felten,Princeton University,security,1.0,0.25,2009
 Edward W. Felten,Princeton University,security,1.0,0.166666666667,2010
 Edward W. Felten,Princeton University,security,2.0,1.33333333333,2011
-Edward W. Felten,Princeton University,security,1.0,1.0,2012
+Edward W. Felten,Princeton University,security,1.0,0.5,2012
 Edward W. Felten,Princeton University,security,2.0,1.5,2015
 Swarat Chaudhuri,Rice University,proglang,1.0,0.333333333333,2006
 Swarat Chaudhuri,Rice University,proglang,1.0,1.0,2008
@@ -12354,6 +12358,8 @@ Yin Zhang,University of Texas - Austin,networks,1.0,1.0,2012
 Yin Zhang,University of Texas - Austin,networks,1.0,0.5,2013
 Yin Zhang,University of Texas - Austin,networks,1.0,0.5,2014
 Yin Zhang,University of Texas - Austin,vision,2.0,2.0,2008
+Andrew A. Chien,University of Chicago,proglang,1.0,1.0,2000
+Andrew A. Chien,University of Chicago,arch,1.0,1.0,2015
 Glenn Reinman,University of California - Los Angeles,graphics,1.0,1.0,2009
 Glenn Reinman,University of California - Los Angeles,arch,2.0,2.0,2007
 Glenn Reinman,University of California - Los Angeles,arch,1.0,1.0,2008
@@ -14745,6 +14751,9 @@ Erik Winfree,California Institute of Technology,mlmining,1.0,1.0,2004
 Erik Winfree,California Institute of Technology,arch,1.0,1.0,2008
 Christopher D. Carothers,Rensselaer Polytechnic Institute,mlmining,1.0,0.5,2003
 John R. Lange,University of Pittsburgh,networks,1.0,0.5,2010
+Andrew Drucker,University of Chicago,theory,1.0,0.5,2010
+Andrew Drucker,University of Chicago,theory,1.0,1.0,2012
+Andrew Drucker,University of Chicago,theory,1.0,1.0,2013
 Dongyan Xu,Purdue University,metrics,1.0,0.5,2014
 Dongyan Xu,Purdue University,mobile,1.0,1.0,2003
 Dongyan Xu,Purdue University,security,1.0,0.5,2004
