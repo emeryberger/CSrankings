@@ -116,7 +116,7 @@ Kunal Agrawal,Washington University - St. Louis,web,1.0,0.5,2011
 Josep Torrellas,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,2014
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,2.0,2.0,2000
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2001
-Josep Torrellas,University of Illinois at Urbana-Champaign,arch,4.0,2.83333333333,2002
+Josep Torrellas,University of Illinois at Urbana-Champaign,arch,4.0,3.0,2002
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,2.0,1.5,2003
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,2.0,0.583333333333,2004
 Josep Torrellas,University of Illinois at Urbana-Champaign,arch,5.0,3.33333333333,2006
@@ -209,7 +209,7 @@ Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.25,2004
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.25,2005
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.5,2006
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2007
-Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2008
+Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.5,2008
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2010
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.5,2014
 Robert Morris,Massachusetts Institute of Technology,security,1.0,1.0,2002
@@ -1694,7 +1694,7 @@ Michael Casey,Dartmouth College,mlmining,1.0,1.0,2001
 Alexander Vardy,University of California - San Diego,theory,1.0,1.0,2005
 Milos Prvulovic,Georgia Institute of Technology,softeng,1.0,1.0,2011
 Milos Prvulovic,Georgia Institute of Technology,arch,1.0,0.333333333333,2001
-Milos Prvulovic,Georgia Institute of Technology,arch,2.0,0.833333333333,2002
+Milos Prvulovic,Georgia Institute of Technology,arch,2.0,1.0,2002
 Milos Prvulovic,Georgia Institute of Technology,arch,1.0,0.5,2003
 Milos Prvulovic,Georgia Institute of Technology,arch,2.0,2.0,2006
 Milos Prvulovic,Georgia Institute of Technology,arch,1.0,1.0,2007
@@ -2229,19 +2229,14 @@ Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,1.0,2000
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,0.333333333333,2005
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,0.5,2007
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,1.0,2010
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,1.0,2014
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,opsys,2.0,0.666666666667,2008
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,database,1.0,1.0,2014
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,database,1.0,1.0,2015
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,proglang,1.0,0.5,2008
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,web,1.0,1.0,2003
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,robotics,1.0,1.0,2005
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,softeng,1.0,0.5,2010
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.333333333333,2002
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,networks,1.0,1.0,2007
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,networks,2.0,0.833333333333,2008
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,networks,1.0,1.0,2010
-Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,vision,3.0,3.0,2015
+Yuriy Brun,University of Massachusetts - Amherst,proglang,1.0,0.5,2012
+Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2004
+Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2009
+Yuriy Brun,University of Massachusetts - Amherst,softeng,4.0,2.0,2011
+Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2012
+Yuriy Brun,University of Massachusetts - Amherst,softeng,4.0,2.33333333333,2013
+Yuriy Brun,University of Massachusetts - Amherst,softeng,3.0,1.33333333333,2014
+Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2015
 Kunle Olukotun,Stanford University,mlmining,1.0,0.5,2005
 Kunle Olukotun,Stanford University,mlmining,1.0,0.5,2006
 Kunle Olukotun,Stanford University,mlmining,1.0,1.0,2011
@@ -3405,7 +3400,7 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.5,2003
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.25,2005
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.5,2006
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2007
-M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.666666666667,2008
+M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,1.0,2008
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2009
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.666666666667,2010
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2011
@@ -3422,7 +3417,7 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,networks,1.0,0.2,2001
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,2.0,0.833333333333,2004
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,3.0,1.16666666667,2005
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,2.0,0.533333333333,2006
-M. Frans Kaashoek,Massachusetts Institute of Technology,networks,2.0,0.833333333333,2008
+M. Frans Kaashoek,Massachusetts Institute of Technology,networks,2.0,1.0,2008
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2009
 M. Frans Kaashoek,Massachusetts Institute of Technology,networks,1.0,1.0,2010
 Arvind,Massachusetts Institute of Technology,proglang,1.0,1.0,2000
@@ -3687,6 +3682,9 @@ Yasutaka Furukawa,Washington University - St. Louis,vision,3.0,1.66666666667,200
 Yasutaka Furukawa,Washington University - St. Louis,vision,1.0,0.333333333333,2010
 Yasutaka Furukawa,Washington University - St. Louis,vision,2.0,1.33333333333,2014
 Yasutaka Furukawa,Washington University - St. Louis,vision,1.0,1.0,2015
+Eddy Z. Zhang,Rutgers - State University of New Jersey - New Brunswick,proglang,1.0,1.0,2010
+Eddy Z. Zhang,Rutgers - State University of New Jersey - New Brunswick,proglang,1.0,1.0,2011
+Eddy Z. Zhang,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,1.0,2011
 Ganesh Gopalakrishnan,University of Utah,logic,1.0,1.0,2000
 Ganesh Gopalakrishnan,University of Utah,logic,1.0,1.0,2002
 Ganesh Gopalakrishnan,University of Utah,logic,1.0,1.0,2004
@@ -5179,7 +5177,7 @@ Zhuoqing Morley Mao,University of Michigan,networks,3.0,1.33333333333,2004
 Zhuoqing Morley Mao,University of Michigan,networks,3.0,1.2,2005
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,1.0,2006
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,1.0,2007
-Zhuoqing Morley Mao,University of Michigan,networks,3.0,2.0,2008
+Zhuoqing Morley Mao,University of Michigan,networks,3.0,2.5,2008
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,1.0,2011
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,0.333333333333,2013
 Zhuoqing Morley Mao,University of Michigan,networks,1.0,1.0,2015
@@ -6425,13 +6423,14 @@ Ion Stoica,University of California - Berkeley,networks,7.0,3.95,2012
 Ion Stoica,University of California - Berkeley,networks,3.0,1.33333333333,2013
 Ion Stoica,University of California - Berkeley,networks,2.0,0.833333333333,2014
 Ion Stoica,University of California - Berkeley,networks,5.0,4.0,2015
-Simon S. Lam,University of Texas - Austin,metrics,1.0,1.0,2004
-Simon S. Lam,University of Texas - Austin,metrics,1.0,1.0,2011
-Simon S. Lam,University of Texas - Austin,web,1.0,0.333333333333,2001
-Simon S. Lam,University of Texas - Austin,networks,2.0,1.0,2001
-Simon S. Lam,University of Texas - Austin,networks,1.0,1.0,2004
-Simon S. Lam,University of Texas - Austin,networks,1.0,1.0,2006
-Simon S. Lam,University of Texas - Austin,networks,2.0,0.833333333333,2007
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,1.0,2004
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,2005
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,1.0,2016
+Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,2001
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.333333333333,2004
+Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,2009
+Frank Pfenning,Carnegie Mellon University,robotics,1.0,1.0,2007
+Frank Pfenning,Carnegie Mellon University,security,1.0,1.0,2010
 Hava T. Siegelmann,University of Massachusetts - Amherst,mlmining,1.0,0.5,2000
 Hava T. Siegelmann,University of Massachusetts - Amherst,mlmining,1.0,0.5,2001
 Hava T. Siegelmann,University of Massachusetts - Amherst,ai,1.0,1.0,2007
@@ -6715,14 +6714,13 @@ Rafail Ostrovsky,University of California - Los Angeles,database,1.0,0.333333333
 Rafail Ostrovsky,University of California - Los Angeles,security,1.0,1.0,2006
 Rafail Ostrovsky,University of California - Los Angeles,security,2.0,1.33333333333,2007
 David A. Bader,Georgia Institute of Technology,mlmining,1.0,0.166666666667,2013
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,1.0,2004
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,2005
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,1.0,2016
-Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,2001
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.333333333333,2004
-Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,2009
-Frank Pfenning,Carnegie Mellon University,robotics,1.0,1.0,2007
-Frank Pfenning,Carnegie Mellon University,security,1.0,1.0,2010
+Simon S. Lam,University of Texas - Austin,metrics,1.0,1.0,2004
+Simon S. Lam,University of Texas - Austin,metrics,1.0,1.0,2011
+Simon S. Lam,University of Texas - Austin,web,1.0,0.333333333333,2001
+Simon S. Lam,University of Texas - Austin,networks,2.0,1.0,2001
+Simon S. Lam,University of Texas - Austin,networks,1.0,1.0,2004
+Simon S. Lam,University of Texas - Austin,networks,1.0,1.0,2006
+Simon S. Lam,University of Texas - Austin,networks,2.0,0.833333333333,2007
 Jason Nieh,Columbia University,metrics,2.0,2.0,2002
 Jason Nieh,Columbia University,metrics,2.0,2.0,2010
 Jason Nieh,Columbia University,metrics,1.0,1.0,2011
@@ -7826,7 +7824,7 @@ Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,pro
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,softeng,1.0,1.0,2016
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,1.0,2010
 Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2012
-Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2015
+Santosh Nagarakatte,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.333333333333,2015
 Roberta L. Klatzky,Carnegie Mellon University,hci,1.0,1.0,2015
 Roberta L. Klatzky,Carnegie Mellon University,robotics,1.0,1.0,2001
 Roberta L. Klatzky,Carnegie Mellon University,robotics,1.0,1.0,2003
@@ -12211,14 +12209,6 @@ Alexis Battle,Johns Hopkins University,mlmining,1.0,0.333333333333,2007
 Éva Tardos,Cornell University,mlmining,1.0,0.5,2015
 Éva Tardos,Cornell University,web,1.0,1.0,2012
 Éva Tardos,Cornell University,vision,1.0,0.333333333333,2010
-Yuriy Brun,University of Massachusetts - Amherst,proglang,1.0,0.5,2012
-Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2004
-Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2009
-Yuriy Brun,University of Massachusetts - Amherst,softeng,4.0,2.0,2011
-Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2012
-Yuriy Brun,University of Massachusetts - Amherst,softeng,4.0,2.33333333333,2013
-Yuriy Brun,University of Massachusetts - Amherst,softeng,3.0,1.33333333333,2014
-Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2015
 John Zimmerman,Carnegie Mellon University,hci,2.0,1.5,2007
 John Zimmerman,Carnegie Mellon University,hci,3.0,2.5,2009
 John Zimmerman,Carnegie Mellon University,hci,4.0,3.5,2010
@@ -15566,6 +15556,23 @@ Aaron Clauset,University of Colorado Boulder,theory,1.0,0.5,2005
 Aaron Clauset,University of Colorado Boulder,ai,1.0,1.0,2015
 Aaron Clauset,University of Colorado Boulder,web,1.0,1.0,2016
 Joel Spencer,New York University,theory,1.0,0.5,2002
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.5,2002
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,1.0,2001
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,1.0,2008
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,1.0,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.5,2005
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2000
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2001
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.833333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.83333333333,2003
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.75,2006
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.66666666667,2007
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,1.33333333333,2008
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,1.0,2011
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2012
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,1.0,2013
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,1.0,2014
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.5,2015
 Yechiam Yemini,Columbia University,networks,2.0,2.0,2000
 Zhendong Su,University of California - Davis,ai,2.0,2.0,2015
 Zhendong Su,University of California - Davis,proglang,1.0,1.0,2000
@@ -15624,14 +15631,14 @@ Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,2.0,2.0,2011
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,2.0,1.0,2013
 Chandra Chekuri,University of Illinois at Urbana-Champaign,theory,1.0,0.5,2014
 Chandra Chekuri,University of Illinois at Urbana-Champaign,networks,1.0,1.0,2009
-Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1.0,1.0,2004
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1.0,0.5,2004
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,opsys,1.0,1.0,2007
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,1.0,2006
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,1.0,2007
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2011
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,2.0,1.33333333333,2012
-Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,1.0,2013
-Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,3.0,2.5,2015
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2013
+Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,3.0,1.83333333333,2015
 Jack Tumblin,Northwestern University,graphics,1.0,0.5,2000
 Jack Tumblin,Northwestern University,graphics,1.0,1.0,2005
 Jack Tumblin,Northwestern University,graphics,1.0,1.0,2006
@@ -16015,21 +16022,21 @@ Xi Wang,University of Washington,graphics,1.0,0.5,2005
 Xi Wang,University of Washington,graphics,1.0,0.5,2006
 Xi Wang,University of Washington,mlmining,1.0,1.0,2013
 Xi Wang,University of Washington,ai,1.0,1.0,2016
-Xi Wang,University of Washington,opsys,1.0,0.333333333333,2008
+Xi Wang,University of Washington,opsys,1.0,0.5,2008
 Xi Wang,University of Washington,opsys,1.0,0.333333333333,2009
 Xi Wang,University of Washington,opsys,1.0,0.333333333333,2010
 Xi Wang,University of Washington,opsys,1.0,0.333333333333,2011
 Xi Wang,University of Washington,opsys,1.0,0.333333333333,2012
 Xi Wang,University of Washington,opsys,1.0,0.25,2013
 Xi Wang,University of Washington,opsys,2.0,0.666666666667,2014
-Xi Wang,University of Washington,proglang,1.0,0.5,2008
+Xi Wang,University of Washington,proglang,1.0,1.0,2008
 Xi Wang,University of Washington,proglang,1.0,1.0,2014
 Xi Wang,University of Washington,proglang,1.0,0.333333333333,2015
 Xi Wang,University of Washington,mobile,1.0,1.0,2004
 Xi Wang,University of Washington,softeng,1.0,1.0,2009
-Xi Wang,University of Washington,softeng,1.0,0.5,2010
+Xi Wang,University of Washington,softeng,1.0,1.0,2010
 Xi Wang,University of Washington,arch,1.0,0.333333333333,2016
-Xi Wang,University of Washington,networks,1.0,0.333333333333,2008
+Xi Wang,University of Washington,networks,1.0,0.5,2008
 Doug A. Bowman,Virginia Polytechnic Institute and State University,hci,1.0,0.5,2007
 Doug A. Bowman,Virginia Polytechnic Institute and State University,hci,1.0,0.5,2011
 Gurindar S. Sohi,University of Wisconsin - Madison,proglang,2.0,2.0,2014
@@ -16068,23 +16075,10 @@ Prasad Tetali,Georgia Institute of Technology,theory,2.0,1.33333333333,2010
 Prasad Tetali,Georgia Institute of Technology,theory,2.0,1.0,2011
 Prasad Tetali,Georgia Institute of Technology,theory,1.0,0.333333333333,2012
 Prasad Tetali,Georgia Institute of Technology,robotics,1.0,0.5,2013
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.5,2002
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,1.0,2001
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,1.0,2008
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,1.0,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.5,2005
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2000
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2001
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.833333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.83333333333,2003
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.75,2006
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.66666666667,2007
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,1.33333333333,2008
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,1.0,2011
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2012
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,1.0,2013
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,1.0,2014
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.5,2015
+Thu D. Nguyen,Rutgers - State University of New Jersey - New Brunswick,metrics,1.0,1.0,2002
+Thu D. Nguyen,Rutgers - State University of New Jersey - New Brunswick,opsys,1.0,0.5,2004
+Thu D. Nguyen,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2013
+Thu D. Nguyen,Rutgers - State University of New Jersey - New Brunswick,arch,2.0,0.833333333333,2015
 Lakshminarayanan Subramanian,New York University,mlmining,1.0,1.0,2014
 Lakshminarayanan Subramanian,New York University,database,1.0,1.0,2009
 Lakshminarayanan Subramanian,New York University,web,1.0,0.5,2009
