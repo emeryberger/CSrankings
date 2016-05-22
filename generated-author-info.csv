@@ -1325,7 +1325,6 @@ Regina Barzilay,Massachusetts Institute of Technology,ai,1.0,1.0,2005
 Regina Barzilay,Massachusetts Institute of Technology,ai,2.0,0.833333333333,2007
 Regina Barzilay,Massachusetts Institute of Technology,ai,2.0,0.833333333333,2008
 Regina Barzilay,Massachusetts Institute of Technology,ai,2.0,2.0,2011
-Hai Zhou,Northwestern University,arch,1.0,0.5,2006
 Rada Mihalcea,University of Michigan,nlp,1.0,1.0,2000
 Rada Mihalcea,University of Michigan,nlp,1.0,1.0,2001
 Rada Mihalcea,University of Michigan,nlp,1.0,1.0,2004
@@ -3443,7 +3442,7 @@ Arvind,Massachusetts Institute of Technology,proglang,1.0,1.0,2000
 Arvind,Massachusetts Institute of Technology,arch,1.0,1.0,2006
 Arvind,Massachusetts Institute of Technology,arch,1.0,1.0,2012
 Arvind,Massachusetts Institute of Technology,arch,1.0,1.0,2015
-Arvind,Massachusetts Institute of Technology,networks,1.0,0.5,2004
+Arvind,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2004
 Gill Bejerano,Stanford University,mlmining,1.0,1.0,2001
 Gill Bejerano,Stanford University,mlmining,1.0,1.0,2002
 Rami G. Melhem,University of Pittsburgh,metrics,1.0,1.0,2007
@@ -10163,7 +10162,7 @@ Elaine Shi,Cornell University,security,2.0,2.0,2005
 Elaine Shi,Cornell University,security,1.0,1.0,2007
 Elaine Shi,Cornell University,security,1.0,0.5,2011
 Elaine Shi,Cornell University,security,1.0,1.0,2012
-Elaine Shi,Cornell University,security,6.0,4.75,2013
+Elaine Shi,Cornell University,security,6.0,4.25,2013
 Elaine Shi,Cornell University,security,7.0,3.75,2014
 Elaine Shi,Cornell University,security,4.0,2.83333333333,2015
 Elaine Shi,Cornell University,arch,1.0,0.5,2015
@@ -10474,7 +10473,7 @@ Andrew Pavlo,Carnegie Mellon University,database,1.0,0.5,2009
 Andrew Pavlo,Carnegie Mellon University,database,1.0,0.5,2011
 Andrew Pavlo,Carnegie Mellon University,database,1.0,0.5,2012
 Andrew Pavlo,Carnegie Mellon University,database,2.0,1.5,2013
-Andrew Pavlo,Carnegie Mellon University,database,3.0,1.7,2014
+Andrew Pavlo,Carnegie Mellon University,database,3.0,1.2,2014
 Andrew Pavlo,Carnegie Mellon University,database,4.0,2.58333333333,2015
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,0.333333333333,2000
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.5,2006
@@ -12564,7 +12563,7 @@ Hari Balakrishnan,Massachusetts Institute of Technology,security,1.0,0.5,2009
 Hari Balakrishnan,Massachusetts Institute of Technology,security,1.0,0.5,2011
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,3.0,1.7,2001
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,1.0,1.0,2003
-Hari Balakrishnan,Massachusetts Institute of Technology,networks,5.0,1.95,2004
+Hari Balakrishnan,Massachusetts Institute of Technology,networks,5.0,1.78333333333,2004
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,4.0,1.83333333333,2005
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,3.0,0.833333333333,2006
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,1.0,1.0,2007
@@ -12575,6 +12574,18 @@ Hari Balakrishnan,Massachusetts Institute of Technology,networks,2.0,1.0,2012
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,1.0,0.5,2013
 Hari Balakrishnan,Massachusetts Institute of Technology,networks,3.0,1.5,2014
 Mohamed G. Gouda,University of Texas - Austin,web,1.0,0.333333333333,2001
+Srinivas Devadas,Massachusetts Institute of Technology,database,1.0,0.5,2014
+Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,1.0,2002
+Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,1.0,2005
+Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,1.0,2010
+Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.5,2013
+Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,1.0,2003
+Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,1.0,2004
+Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,1.0,2005
+Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,1.0,2009
+Srinivas Devadas,Massachusetts Institute of Technology,arch,2.0,2.0,2013
+Srinivas Devadas,Massachusetts Institute of Technology,arch,3.0,3.0,2015
+Srinivas Devadas,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2004
 Ryan Kastner,University of California - San Diego,security,1.0,0.5,2007
 Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2011
 Ryan Kastner,University of California - San Diego,arch,1.0,0.5,2013
@@ -13042,9 +13053,7 @@ Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1.0,0.33333333333
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,arch,1.0,0.5,2006
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,networks,1.0,0.333333333333,2004
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,networks,1.0,0.2,2011
-Suchi Saria,Johns Hopkins University,mlmining,1.0,1.0,2015
-Suchi Saria,Johns Hopkins University,ai,1.0,0.5,2011
-Suchi Saria,Johns Hopkins University,ai,1.0,1.0,2015
+Hai Zhou,Northwestern University,arch,1.0,0.5,2006
 Jignesh Patel,University of Wisconsin - Madison,security,1.0,1.0,2010
 Jignesh Patel,University of Wisconsin - Madison,security,1.0,1.0,2012
 Amr Sabry,Indiana University,proglang,1.0,0.5,2009
@@ -13509,6 +13518,9 @@ John A. Stankovic,University of Virginia,networks,4.0,1.25,2006
 John A. Stankovic,University of Virginia,networks,3.0,1.83333333333,2008
 John A. Stankovic,University of Virginia,networks,1.0,1.0,2010
 John A. Stankovic,University of Virginia,networks,1.0,0.5,2014
+Suchi Saria,Johns Hopkins University,mlmining,1.0,1.0,2015
+Suchi Saria,Johns Hopkins University,ai,1.0,0.5,2011
+Suchi Saria,Johns Hopkins University,ai,1.0,1.0,2015
 Katherine A. Heller,Duke University,mlmining,2.0,2.0,2005
 Katherine A. Heller,Duke University,mlmining,2.0,2.0,2008
 Katherine A. Heller,Duke University,mlmining,1.0,1.0,2009
