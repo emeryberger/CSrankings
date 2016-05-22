@@ -598,9 +598,9 @@ Aristides A. G. Requicha,University of Southern California,robotics,1.0,1.0,2001
 Aristides A. G. Requicha,University of Southern California,robotics,4.0,3.0,2004
 Aristides A. G. Requicha,University of Southern California,robotics,1.0,1.0,2007
 Aristides A. G. Requicha,University of Southern California,robotics,1.0,1.0,2009
-Jeremy G. Siek,Indiana University,proglang,1.0,0.333333333333,2003
+Jeremy G. Siek,Indiana University,proglang,1.0,0.5,2003
 Jeremy G. Siek,Indiana University,proglang,1.0,0.5,2005
-Jeremy G. Siek,Indiana University,proglang,2.0,0.666666666667,2006
+Jeremy G. Siek,Indiana University,proglang,2.0,1.0,2006
 Jeremy G. Siek,Indiana University,proglang,1.0,1.0,2010
 Jeremy G. Siek,Indiana University,proglang,1.0,0.333333333333,2011
 Jeremy G. Siek,Indiana University,proglang,1.0,0.333333333333,2014
@@ -1067,7 +1067,7 @@ Xiaodong Zhang,Ohio State University,ai,1.0,1.0,2016
 Xiaodong Zhang,Ohio State University,database,1.0,1.0,2015
 Xiaodong Zhang,Ohio State University,database,1.0,0.5,2016
 Dan Jurafsky,Stanford University,hci,1.0,1.0,2014
-Dan Jurafsky,Stanford University,nlp,1.0,1.0,2010
+Dan Jurafsky,Stanford University,nlp,1.0,0.5,2010
 Dan Jurafsky,Stanford University,nlp,1.0,1.0,2011
 Dan Jurafsky,Stanford University,nlp,2.0,2.0,2015
 Dan Jurafsky,Stanford University,mlmining,1.0,1.0,2012
@@ -1326,7 +1326,7 @@ Regina Barzilay,Massachusetts Institute of Technology,ai,2.0,1.33333333333,2007
 Regina Barzilay,Massachusetts Institute of Technology,ai,2.0,1.33333333333,2008
 Regina Barzilay,Massachusetts Institute of Technology,ai,2.0,2.0,2011
 Rada Mihalcea,University of Michigan,nlp,1.0,1.0,2000
-Rada Mihalcea,University of Michigan,nlp,1.0,1.0,2001
+Rada Mihalcea,University of Michigan,nlp,1.0,0.5,2001
 Rada Mihalcea,University of Michigan,nlp,1.0,1.0,2004
 Rada Mihalcea,University of Michigan,nlp,2.0,2.0,2005
 Rada Mihalcea,University of Michigan,nlp,1.0,0.5,2006
@@ -1677,7 +1677,6 @@ Anshumali Shrivastava,Rice University,mlmining,1.0,0.5,2011
 Anshumali Shrivastava,Rice University,mlmining,1.0,0.5,2013
 Anshumali Shrivastava,Rice University,mlmining,3.0,1.33333333333,2014
 Anshumali Shrivastava,Rice University,web,1.0,0.5,2015
-Michael Casey,Dartmouth College,mlmining,1.0,1.0,2001
 Alexander Vardy,University of California - San Diego,theory,1.0,1.0,2005
 Milos Prvulovic,Georgia Institute of Technology,softeng,1.0,1.0,2011
 Milos Prvulovic,Georgia Institute of Technology,arch,1.0,0.333333333333,2001
@@ -2739,9 +2738,6 @@ Amos Ron,University of Wisconsin - Madison,networks,1.0,0.5,2005
 Amos Ron,University of Wisconsin - Madison,networks,2.0,1.0,2007
 Amos Ron,University of Wisconsin - Madison,networks,1.0,0.5,2009
 Chris Bailey-Kellogg,Dartmouth College,ai,1.0,0.5,2004
-Jaakko Järvi,Texas A&M University,proglang,1.0,0.333333333333,2003
-Jaakko Järvi,Texas A&M University,proglang,1.0,0.5,2005
-Jaakko Järvi,Texas A&M University,proglang,2.0,0.666666666667,2006
 Guevara Noubir,Northeastern University,theory,1.0,0.333333333333,2005
 Guevara Noubir,Northeastern University,security,1.0,0.333333333333,2013
 Guevara Noubir,Northeastern University,security,1.0,1.0,2014
@@ -2791,16 +2787,10 @@ Valerio Pascucci,University of Utah,graphics,1.0,0.5,2006
 Valerio Pascucci,University of Utah,graphics,1.0,1.0,2007
 Valerio Pascucci,University of Utah,graphics,1.0,1.0,2011
 Valerio Pascucci,University of Utah,graphics,1.0,1.0,2012
-Leana Golubchik,University of Southern California,metrics,1.0,1.0,2000
-Leana Golubchik,University of Southern California,softeng,1.0,0.5,2006
-Leana Golubchik,University of Southern California,softeng,1.0,0.5,2008
-Leana Golubchik,University of Southern California,networks,1.0,0.5,2003
-Leana Golubchik,University of Southern California,networks,1.0,0.5,2009
-Leana Golubchik,University of Southern California,networks,1.0,1.0,2010
-Leana Golubchik,University of Southern California,networks,1.0,1.0,2011
-Leana Golubchik,University of Southern California,networks,1.0,1.0,2012
-Leana Golubchik,University of Southern California,networks,1.0,0.5,2013
-Leana Golubchik,University of Southern California,networks,1.0,1.0,2014
+Ruihong Huang,Texas A&M University,nlp,1.0,0.5,2010
+Ruihong Huang,Texas A&M University,nlp,1.0,0.5,2011
+Ruihong Huang,Texas A&M University,nlp,2.0,1.0,2013
+Ruihong Huang,Texas A&M University,ai,1.0,0.5,2012
 Michael Kazhdan,Johns Hopkins University,graphics,1.0,1.0,2015
 Margo I. Seltzer,Harvard University,metrics,1.0,1.0,2000
 Margo I. Seltzer,Harvard University,database,1.0,1.0,2015
@@ -3057,7 +3047,7 @@ Daniela Rus,Massachusetts Institute of Technology,robotics,6.0,6.0,2008
 Daniela Rus,Massachusetts Institute of Technology,robotics,5.0,3.33333333333,2009
 Daniela Rus,Massachusetts Institute of Technology,robotics,12.0,12.0,2010
 Daniela Rus,Massachusetts Institute of Technology,robotics,12.0,11.0,2011
-Daniela Rus,Massachusetts Institute of Technology,robotics,16.0,15.5,2012
+Daniela Rus,Massachusetts Institute of Technology,robotics,16.0,16.0,2012
 Daniela Rus,Massachusetts Institute of Technology,robotics,15.0,13.0,2013
 Daniela Rus,Massachusetts Institute of Technology,robotics,13.0,10.3333333333,2014
 Daniela Rus,Massachusetts Institute of Technology,robotics,15.0,12.8333333333,2015
@@ -4242,35 +4232,14 @@ Pankaj K. Agarwal,Duke University,robotics,1.0,1.0,2013
 Pankaj K. Agarwal,Duke University,networks,1.0,0.5,2010
 Pankaj K. Agarwal,Duke University,networks,1.0,0.5,2011
 Christopher Riesbeck,Northwestern University,ai,1.0,0.5,2007
-Ramesh Govindan,University of Southern California,metrics,1.0,1.0,2003
-Ramesh Govindan,University of Southern California,hci,1.0,0.5,2009
-Ramesh Govindan,University of Southern California,opsys,1.0,0.333333333333,2001
-Ramesh Govindan,University of Southern California,proglang,1.0,0.5,2007
-Ramesh Govindan,University of Southern California,mobile,2.0,2.0,2003
-Ramesh Govindan,University of Southern California,mobile,2.0,0.833333333333,2004
-Ramesh Govindan,University of Southern California,mobile,1.0,0.333333333333,2006
-Ramesh Govindan,University of Southern California,mobile,1.0,1.0,2007
-Ramesh Govindan,University of Southern California,mobile,1.0,0.5,2009
-Ramesh Govindan,University of Southern California,mobile,3.0,2.5,2010
-Ramesh Govindan,University of Southern California,mobile,3.0,2.5,2011
-Ramesh Govindan,University of Southern California,mobile,2.0,1.0,2012
-Ramesh Govindan,University of Southern California,mobile,1.0,0.5,2013
-Ramesh Govindan,University of Southern California,mobile,2.0,1.0,2014
-Ramesh Govindan,University of Southern California,mobile,3.0,2.5,2015
-Ramesh Govindan,University of Southern California,robotics,1.0,0.5,2011
-Ramesh Govindan,University of Southern California,softeng,1.0,0.5,2013
-Ramesh Govindan,University of Southern California,networks,2.0,1.5,2000
-Ramesh Govindan,University of Southern California,networks,2.0,0.833333333333,2001
-Ramesh Govindan,University of Southern California,networks,4.0,2.0,2002
-Ramesh Govindan,University of Southern California,networks,1.0,1.0,2003
-Ramesh Govindan,University of Southern California,networks,1.0,0.5,2004
-Ramesh Govindan,University of Southern California,networks,2.0,1.5,2005
-Ramesh Govindan,University of Southern California,networks,2.0,2.0,2006
-Ramesh Govindan,University of Southern California,networks,1.0,1.0,2010
-Ramesh Govindan,University of Southern California,networks,2.0,1.5,2011
-Ramesh Govindan,University of Southern California,networks,5.0,4.0,2013
-Ramesh Govindan,University of Southern California,networks,2.0,1.33333333333,2014
-Ramesh Govindan,University of Southern California,networks,2.0,1.0,2015
+Xia Hu,Texas A&M University,mlmining,1.0,1.0,2014
+Xia Hu,Texas A&M University,ai,3.0,1.5,2013
+Xia Hu,Texas A&M University,ai,1.0,0.5,2014
+Xia Hu,Texas A&M University,ai,4.0,3.0,2015
+Xia Hu,Texas A&M University,ai,3.0,2.0,2016
+Xia Hu,Texas A&M University,web,1.0,1.0,2010
+Xia Hu,Texas A&M University,web,1.0,0.5,2013
+Xia Hu,Texas A&M University,web,1.0,0.5,2014
 Randal E. Bryant,Carnegie Mellon University,opsys,1.0,0.333333333333,2013
 Randal E. Bryant,Carnegie Mellon University,logic,1.0,1.0,2000
 Randal E. Bryant,Carnegie Mellon University,logic,1.0,1.0,2001
@@ -4956,6 +4925,8 @@ Amit Sahai,University of California - Los Angeles,security,1.0,0.5,2008
 Amit Sahai,University of California - Los Angeles,security,3.0,2.0,2010
 Amit Sahai,University of California - Los Angeles,security,1.0,1.0,2014
 Geoffrey Brown,Indiana University,arch,1.0,1.0,2000
+Michelle Mills Strout,University of Arizona,proglang,1.0,0.333333333333,2003
+Michelle Mills Strout,University of Arizona,proglang,1.0,1.0,2007
 Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,2000
 Carl A. Gunter,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,2001
 Carl A. Gunter,University of Illinois at Urbana-Champaign,web,1.0,0.5,2015
@@ -6006,14 +5977,14 @@ Martin J. Strauss,University of Michigan,database,1.0,0.5,2009
 Ellen Riloff,University of Utah,nlp,1.0,0.5,2006
 Ellen Riloff,University of Utah,nlp,1.0,1.0,2008
 Ellen Riloff,University of Utah,nlp,2.0,2.0,2009
-Ellen Riloff,University of Utah,nlp,2.0,1.5,2010
-Ellen Riloff,University of Utah,nlp,2.0,2.0,2011
-Ellen Riloff,University of Utah,nlp,2.0,2.0,2013
+Ellen Riloff,University of Utah,nlp,2.0,1.0,2010
+Ellen Riloff,University of Utah,nlp,2.0,1.5,2011
+Ellen Riloff,University of Utah,nlp,2.0,1.0,2013
 Ellen Riloff,University of Utah,nlp,1.0,1.0,2014
 Ellen Riloff,University of Utah,nlp,1.0,1.0,2015
 Ellen Riloff,University of Utah,ai,1.0,0.5,2005
 Ellen Riloff,University of Utah,ai,1.0,1.0,2008
-Ellen Riloff,University of Utah,ai,1.0,1.0,2012
+Ellen Riloff,University of Utah,ai,1.0,0.5,2012
 Ellen Riloff,University of Utah,ai,1.0,1.0,2016
 Mehran Sahami,Stanford University,mlmining,1.0,1.0,2005
 Mehran Sahami,Stanford University,mlmining,2.0,1.0,2015
@@ -6605,12 +6576,7 @@ Jianwen Su,University of California - Santa Barbara,web,1.0,0.5,2003
 Jianwen Su,University of California - Santa Barbara,web,1.0,0.5,2004
 Jianwen Su,University of California - Santa Barbara,logic,1.0,0.333333333333,2000
 Jianwen Su,University of California - Santa Barbara,logic,1.0,0.5,2004
-Evdokia Nikolova,Texas A&M University,theory,1.0,1.0,2007
-Evdokia Nikolova,Texas A&M University,ai,1.0,0.5,2008
-Evdokia Nikolova,Texas A&M University,ai,1.0,1.0,2013
-Evdokia Nikolova,Texas A&M University,ai,1.0,1.0,2015
-Evdokia Nikolova,Texas A&M University,ai,1.0,1.0,2016
-Evdokia Nikolova,Texas A&M University,robotics,1.0,0.5,2012
+Michael Casey,Dartmouth College,mlmining,1.0,1.0,2001
 David B. Leake,Indiana University,ai,1.0,1.0,2011
 Jason Lawrence,University of Virginia,graphics,1.0,0.333333333333,2004
 Jason Lawrence,University of Virginia,graphics,2.0,0.45,2006
@@ -9202,7 +9168,7 @@ Ellen W. Zegura,Georgia Institute of Technology,networks,2.0,1.5,2003
 Ellen W. Zegura,Georgia Institute of Technology,networks,2.0,2.0,2005
 Ellen W. Zegura,Georgia Institute of Technology,networks,1.0,1.0,2006
 Ellen W. Zegura,Georgia Institute of Technology,networks,1.0,1.0,2015
-Jeanne Ferrante,University of California - San Diego,proglang,2.0,1.0,2003
+Jeanne Ferrante,University of California - San Diego,proglang,2.0,0.833333333333,2003
 David J. Crandall,Indiana University,hci,1.0,0.5,2014
 David J. Crandall,Indiana University,hci,2.0,0.833333333333,2015
 David J. Crandall,Indiana University,hci,1.0,0.5,2016
@@ -9257,6 +9223,35 @@ Haoqi Zhang,Northwestern University,ai,1.0,1.0,2011
 Haoqi Zhang,Northwestern University,ai,1.0,0.5,2013
 Haoqi Zhang,Northwestern University,web,1.0,1.0,2012
 Eric Mjolsness,University of California - Irvine,mlmining,2.0,1.0,2003
+Ramesh Govindan,University of Southern California,metrics,1.0,1.0,2003
+Ramesh Govindan,University of Southern California,hci,1.0,0.5,2009
+Ramesh Govindan,University of Southern California,opsys,1.0,0.333333333333,2001
+Ramesh Govindan,University of Southern California,proglang,1.0,0.5,2007
+Ramesh Govindan,University of Southern California,mobile,2.0,2.0,2003
+Ramesh Govindan,University of Southern California,mobile,2.0,0.833333333333,2004
+Ramesh Govindan,University of Southern California,mobile,1.0,0.333333333333,2006
+Ramesh Govindan,University of Southern California,mobile,1.0,1.0,2007
+Ramesh Govindan,University of Southern California,mobile,1.0,0.5,2009
+Ramesh Govindan,University of Southern California,mobile,3.0,2.5,2010
+Ramesh Govindan,University of Southern California,mobile,3.0,2.5,2011
+Ramesh Govindan,University of Southern California,mobile,2.0,1.0,2012
+Ramesh Govindan,University of Southern California,mobile,1.0,0.5,2013
+Ramesh Govindan,University of Southern California,mobile,2.0,1.0,2014
+Ramesh Govindan,University of Southern California,mobile,3.0,2.5,2015
+Ramesh Govindan,University of Southern California,robotics,1.0,0.5,2011
+Ramesh Govindan,University of Southern California,softeng,1.0,0.5,2013
+Ramesh Govindan,University of Southern California,networks,2.0,1.5,2000
+Ramesh Govindan,University of Southern California,networks,2.0,0.833333333333,2001
+Ramesh Govindan,University of Southern California,networks,4.0,2.0,2002
+Ramesh Govindan,University of Southern California,networks,1.0,1.0,2003
+Ramesh Govindan,University of Southern California,networks,1.0,0.5,2004
+Ramesh Govindan,University of Southern California,networks,2.0,1.5,2005
+Ramesh Govindan,University of Southern California,networks,2.0,2.0,2006
+Ramesh Govindan,University of Southern California,networks,1.0,1.0,2010
+Ramesh Govindan,University of Southern California,networks,2.0,1.5,2011
+Ramesh Govindan,University of Southern California,networks,5.0,4.0,2013
+Ramesh Govindan,University of Southern California,networks,2.0,1.33333333333,2014
+Ramesh Govindan,University of Southern California,networks,2.0,1.0,2015
 Kai Li,Princeton University,metrics,1.0,0.333333333333,2007
 Kai Li,Princeton University,opsys,1.0,0.5,2000
 Kai Li,Princeton University,opsys,1.0,1.0,2002
@@ -10043,7 +10038,7 @@ Emina Torlak,University of Washington,softeng,1.0,1.0,2012
 Emina Torlak,University of Washington,arch,1.0,0.333333333333,2016
 Yan Chen,Northwestern University,hci,1.0,1.0,2010
 Yan Chen,Northwestern University,hci,1.0,0.5,2016
-Yan Chen,Northwestern University,ai,1.0,1.0,2013
+Yan Chen,Northwestern University,ai,1.0,0.5,2013
 Yan Chen,Northwestern University,web,1.0,1.0,2013
 Yan Chen,Northwestern University,security,1.0,0.5,2006
 Yan Chen,Northwestern University,security,4.0,3.5,2011
@@ -10201,22 +10196,22 @@ Gregory D. Abowd,Georgia Institute of Technology,hci,3.0,2.0,2015
 Gregory D. Abowd,Georgia Institute of Technology,vision,1.0,0.5,2009
 Gregory D. Abowd,Georgia Institute of Technology,vision,1.0,0.5,2010
 Gregory D. Abowd,Georgia Institute of Technology,vision,1.0,0.25,2013
-Jeff Huang,Brown University,hci,1.0,1.0,2007
-Jeff Huang,Brown University,hci,2.0,2.0,2011
-Jeff Huang,Brown University,hci,1.0,1.0,2012
-Jeff Huang,Brown University,hci,1.0,1.0,2013
-Jeff Huang,Brown University,hci,1.0,1.0,2015
-Jeff Huang,Brown University,ai,1.0,1.0,2010
-Jeff Huang,Brown University,ai,1.0,0.333333333333,2014
-Jeff Huang,Brown University,proglang,2.0,2.0,2012
-Jeff Huang,Brown University,proglang,1.0,1.0,2013
-Jeff Huang,Brown University,proglang,1.0,0.5,2014
-Jeff Huang,Brown University,proglang,1.0,1.0,2015
-Jeff Huang,Brown University,web,2.0,2.0,2010
-Jeff Huang,Brown University,web,1.0,1.0,2012
-Jeff Huang,Brown University,softeng,1.0,1.0,2010
-Jeff Huang,Brown University,softeng,2.0,1.5,2015
-Jeff Huang,Brown University,softeng,1.0,1.0,2016
+Jeff Huang,Texas A&M University,hci,1.0,1.0,2007
+Jeff Huang,Texas A&M University,hci,2.0,2.0,2011
+Jeff Huang,Texas A&M University,hci,1.0,1.0,2012
+Jeff Huang,Texas A&M University,hci,1.0,1.0,2013
+Jeff Huang,Texas A&M University,hci,1.0,1.0,2015
+Jeff Huang,Texas A&M University,ai,1.0,1.0,2010
+Jeff Huang,Texas A&M University,ai,1.0,0.333333333333,2014
+Jeff Huang,Texas A&M University,proglang,2.0,2.0,2012
+Jeff Huang,Texas A&M University,proglang,1.0,1.0,2013
+Jeff Huang,Texas A&M University,proglang,1.0,0.5,2014
+Jeff Huang,Texas A&M University,proglang,1.0,1.0,2015
+Jeff Huang,Texas A&M University,web,2.0,2.0,2010
+Jeff Huang,Texas A&M University,web,1.0,1.0,2012
+Jeff Huang,Texas A&M University,softeng,1.0,1.0,2010
+Jeff Huang,Texas A&M University,softeng,2.0,1.5,2015
+Jeff Huang,Texas A&M University,softeng,1.0,1.0,2016
 My T. Thai,University of Florida,networks,1.0,1.0,2005
 My T. Thai,University of Florida,networks,1.0,0.5,2010
 My T. Thai,University of Florida,networks,1.0,1.0,2011
@@ -10232,7 +10227,7 @@ Amir Houmansadr,University of Massachusetts - Amherst,security,1.0,1.0,2012
 Amir Houmansadr,University of Massachusetts - Amherst,security,2.0,1.5,2013
 Amir Houmansadr,University of Massachusetts - Amherst,security,1.0,0.5,2014
 Amir Houmansadr,University of Massachusetts - Amherst,security,1.0,1.0,2015
-Larry Carter,University of Minnesota - Twin Cities,proglang,2.0,1.0,2003
+Larry Carter,University of Minnesota - Twin Cities,proglang,2.0,0.833333333333,2003
 Dong Xuan,Ohio State University,robotics,1.0,1.0,2015
 Dong Xuan,Ohio State University,security,1.0,1.0,2007
 Dong Xuan,Ohio State University,security,1.0,1.0,2009
@@ -10953,7 +10948,7 @@ David R. Karger,Massachusetts Institute of Technology,theory,1.0,0.333333333333,
 David R. Karger,Massachusetts Institute of Technology,theory,1.0,1.0,2009
 David R. Karger,Massachusetts Institute of Technology,mlmining,2.0,2.0,2003
 David R. Karger,Massachusetts Institute of Technology,mlmining,1.0,0.5,2011
-David R. Karger,Massachusetts Institute of Technology,ai,1.0,0.5,2008
+David R. Karger,Massachusetts Institute of Technology,ai,1.0,1.0,2008
 David R. Karger,Massachusetts Institute of Technology,opsys,1.0,0.25,2001
 David R. Karger,Massachusetts Institute of Technology,database,1.0,1.0,2005
 David R. Karger,Massachusetts Institute of Technology,database,3.0,1.0,2011
@@ -12462,13 +12457,13 @@ Huan Liu,Arizona State University,ai,1.0,1.0,2007
 Huan Liu,Arizona State University,ai,1.0,0.5,2009
 Huan Liu,Arizona State University,ai,1.0,1.0,2010
 Huan Liu,Arizona State University,ai,1.0,1.0,2011
-Huan Liu,Arizona State University,ai,2.0,2.0,2013
-Huan Liu,Arizona State University,ai,1.0,1.0,2014
-Huan Liu,Arizona State University,ai,4.0,4.0,2015
-Huan Liu,Arizona State University,ai,2.0,2.0,2016
+Huan Liu,Arizona State University,ai,2.0,1.0,2013
+Huan Liu,Arizona State University,ai,1.0,0.5,2014
+Huan Liu,Arizona State University,ai,4.0,3.0,2015
+Huan Liu,Arizona State University,ai,2.0,1.0,2016
 Huan Liu,Arizona State University,web,1.0,1.0,2005
-Huan Liu,Arizona State University,web,1.0,1.0,2013
-Huan Liu,Arizona State University,web,1.0,1.0,2014
+Huan Liu,Arizona State University,web,1.0,0.5,2013
+Huan Liu,Arizona State University,web,1.0,0.5,2014
 Huan Liu,Arizona State University,web,1.0,1.0,2016
 Huan Liu,Arizona State University,robotics,1.0,0.333333333333,2009
 Huan Liu,Arizona State University,robotics,1.0,0.333333333333,2010
@@ -12550,6 +12545,13 @@ Rodrigo Fonseca,Brown University,networks,1.0,0.25,2007
 Rodrigo Fonseca,Brown University,networks,1.0,0.333333333333,2013
 Rodrigo Fonseca,Brown University,networks,1.0,1.0,2014
 Rodrigo Fonseca,Brown University,networks,1.0,1.0,2015
+Mihai Surdeanu,University of Arizona,nlp,1.0,0.5,2001
+Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2002
+Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2003
+Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2008
+Mihai Surdeanu,University of Arizona,nlp,1.0,0.5,2010
+Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2011
+Mihai Surdeanu,University of Arizona,mlmining,1.0,1.0,2005
 Hari Balakrishnan,Massachusetts Institute of Technology,metrics,1.0,0.333333333333,2003
 Hari Balakrishnan,Massachusetts Institute of Technology,opsys,1.0,0.5,2000
 Hari Balakrishnan,Massachusetts Institute of Technology,opsys,1.0,0.333333333333,2001
@@ -14629,6 +14631,9 @@ Robert E. Schapire,Princeton University,mlmining,2.0,2.0,2014
 Robert E. Schapire,Princeton University,mlmining,2.0,2.0,2015
 Robert E. Schapire,Princeton University,ai,1.0,0.5,2015
 Robert E. Schapire,Princeton University,web,1.0,1.0,2010
+Bruce Gooch,Texas A&M University,graphics,1.0,1.0,2004
+Bruce Gooch,Texas A&M University,graphics,1.0,0.5,2005
+Bruce Gooch,Texas A&M University,graphics,1.0,1.0,2006
 Songwu Lu,University of California - Los Angeles,mobile,1.0,1.0,2007
 Songwu Lu,University of California - Los Angeles,mobile,1.0,0.5,2009
 Songwu Lu,University of California - Los Angeles,mobile,1.0,0.5,2013
@@ -14716,9 +14721,9 @@ Anindya De,Northwestern University,theory,1.0,0.333333333333,2012
 Anindya De,Northwestern University,theory,1.0,0.5,2013
 Anindya De,Northwestern University,theory,1.0,0.5,2014
 Anindya De,Northwestern University,theory,2.0,1.33333333333,2015
-Andrew Lumsdaine,Indiana University,proglang,1.0,0.333333333333,2003
-Andrew Lumsdaine,Indiana University,proglang,3.0,2.0,2005
-Andrew Lumsdaine,Indiana University,proglang,2.0,0.666666666667,2006
+Andrew Lumsdaine,Indiana University,proglang,1.0,0.5,2003
+Andrew Lumsdaine,Indiana University,proglang,3.0,2.5,2005
+Andrew Lumsdaine,Indiana University,proglang,2.0,1.0,2006
 Andrew Lumsdaine,Indiana University,proglang,1.0,0.5,2009
 Andrew Lumsdaine,Indiana University,proglang,1.0,0.333333333333,2014
 Andrew Lumsdaine,Indiana University,vision,1.0,1.0,2012
@@ -15672,7 +15677,7 @@ Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2013
 Ricardo Bianchini,Rutgers - State University of New Jersey - New Brunswick,arch,3.0,1.83333333333,2015
 Jack Tumblin,Northwestern University,graphics,1.0,0.5,2000
-Jack Tumblin,Northwestern University,graphics,1.0,1.0,2005
+Jack Tumblin,Northwestern University,graphics,1.0,0.5,2005
 Jack Tumblin,Northwestern University,graphics,1.0,1.0,2006
 Jack Tumblin,Northwestern University,graphics,1.0,1.0,2007
 Jack Tumblin,Northwestern University,vision,2.0,2.0,2008
@@ -16199,6 +16204,16 @@ William R. Harris,Georgia Institute of Technology,logic,1.0,0.333333333333,2013
 William R. Harris,Georgia Institute of Technology,security,1.0,0.333333333333,2010
 William R. Harris,Georgia Institute of Technology,security,1.0,0.333333333333,2013
 Annie I. Antón,Georgia Institute of Technology,softeng,1.0,0.5,2001
+Leana Golubchik,University of Southern California,metrics,1.0,1.0,2000
+Leana Golubchik,University of Southern California,softeng,1.0,0.5,2006
+Leana Golubchik,University of Southern California,softeng,1.0,0.5,2008
+Leana Golubchik,University of Southern California,networks,1.0,0.5,2003
+Leana Golubchik,University of Southern California,networks,1.0,0.5,2009
+Leana Golubchik,University of Southern California,networks,1.0,1.0,2010
+Leana Golubchik,University of Southern California,networks,1.0,1.0,2011
+Leana Golubchik,University of Southern California,networks,1.0,1.0,2012
+Leana Golubchik,University of Southern California,networks,1.0,0.5,2013
+Leana Golubchik,University of Southern California,networks,1.0,1.0,2014
 David M. Mount,University of Maryland - College Park,theory,1.0,1.0,2000
 David M. Mount,University of Maryland - College Park,theory,1.0,1.0,2002
 David M. Mount,University of Maryland - College Park,theory,1.0,1.0,2006
