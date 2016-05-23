@@ -10,8 +10,6 @@ var areas = ["proglang", "softeng", "opsys", "networks", "security", "database",
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
-var univnames = {};
-
 var prologue = 	"<html>"
     + "<head>"
     + "<title>CS department rankings by productivity</title>"
@@ -53,7 +51,6 @@ function redisplay() {
 }
 
 function toggle(dept) {
-    console.log("toggling "+univnames[dept]);
     var e = document.getElementById(dept);
     var widget = document.getElementById(dept+"-widget");
     if (e.style.display == 'block') {
@@ -206,6 +203,7 @@ function deactivateOthers() {
 function rank() {
     var form = document.getElementById("rankform");
     var s = "";
+    var univnames = {};
     var univcounts = {};
     var facultycount = {};
     var authcounts = {};
@@ -242,6 +240,7 @@ function rank() {
 	    areaCount += 1; 
 	}
     }
+    console.log(areaCount);
     /* Build the dictionary of departments (and count) to be ranked. */
     for (var r in authors) {
 	var name = authors[r].name;
@@ -269,24 +268,26 @@ function rank() {
 			univnames[dept] = [];
 		    }
 		    univnames[dept].push(name);
+		    console.log(univnames[dept]);
 		    univcounts[dept] += 1;
 		}
 		facultycount[name+dept] += count;
 	    }
 	}
     }
+    var s = prologue;
+    var univtext = {};
+
     /* Build hover text for faculty names and paper counts. */
     for (dept in univnames) {
-	var s = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\">";
+	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\">";
 	univnames[dept].sort(compareNames);
 	for (var name of univnames[dept]) {
-	    s += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td><small>" + facultycount[name+dept] + "</small></td></tr>";
+	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td><small>" + facultycount[name+dept] + "</small></td></tr>";
 	}
-	s += "</table></div></div>";
-	univnames[dept] = s;
+	p += "</table></div></div>";
+	univtext[dept] = p;
     }
-    
-    var s = prologue;
     
     if (displayPercentages) {
 	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
@@ -318,7 +319,7 @@ function rank() {
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
 	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
-	    s += "<div style=\"display:none;\" id=\""+dept+"\">" + univnames[dept] + "</div>";
+	    s += "<div style=\"display:none;\" id=\""+dept+"\">" + univtext[dept] + "</div>";
     
 	    s += "</td>";
 
