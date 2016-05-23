@@ -280,12 +280,12 @@ function rank() {
 
     /* Build hover text for faculty names and paper counts. */
     for (dept in univnames) {
-	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\">";
+	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Publications</em></small></td></thead><tbody>";
 	univnames[dept].sort(compareNames);
 	for (var name of univnames[dept]) {
-	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td><small>" + facultycount[name+dept] + "</small></td></tr>";
+	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td align=\"right\"><small>" + facultycount[name+dept] + "</small></td></tr>";
 	}
-	p += "</table></div></div>";
+	p += "</tbody></table></div></div>";
 	univtext[dept] = p;
     }
     
