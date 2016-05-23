@@ -54,7 +54,7 @@ areadict = {
     'hci' : ['CHI','UbiComp','UIST'],
     'nlp' : ['EMNLP','ACL','NAACL'],
     'vision' : ['CVPR','ICCV'],
-    'mobile' : ['MobiSys','MobiCom','SenSys'],
+    'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','IROS','Robotics: Science and Systems']
 }
 
