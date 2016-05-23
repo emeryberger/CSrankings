@@ -1,7 +1,6 @@
 var outputHTML = "";        /* The string containing the ranked list of institutions. */
 var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
 var totalCheckboxes = 19;   /* The number of checkboxes (research areas). */
-var maxHoverFaculty = 40;   /* If more than this many, don't create a hover tip. */
 
 var authors = "";           /* The data which will hold the parsed CSV of author info. */
 
@@ -10,6 +9,8 @@ var authors = "";           /* The data which will hold the parsed CSV of author
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics" ];
 
 /* The prologue that we preface each generated HTML page with (the results). */
+
+var univnames = {};
 
 var prologue = 	"<html>"
     + "<head>"
@@ -51,6 +52,18 @@ function redisplay() {
     jQuery("#success").html(outputHTML);
 }
 
+function toggle(dept) {
+    console.log("toggling "+univnames[dept]);
+    var e = document.getElementById(dept);
+    var widget = document.getElementById(dept+"-widget");
+    if (e.style.display == 'block') {
+	e.style.display = 'none';
+	widget.innerHTML = "&#9658;&nbsp;" + dept;
+    } else {
+	e.style.display = 'block';
+	widget.innerHTML = "&#9660;&nbsp;" + dept;
+    }
+}
 
 function init() {
     jQuery(document).ready(
@@ -194,7 +207,6 @@ function rank() {
     var form = document.getElementById("rankform");
     var s = "";
     var univcounts = {};
-    var univnames = {};
     var facultycount = {};
     var authcounts = {};
     var visited = {};
@@ -265,16 +277,13 @@ function rank() {
     }
     /* Build hover text for faculty names and paper counts. */
     for (dept in univnames) {
-	if (univcounts[dept] <= maxHoverFaculty) {
-	    var s = "";
-	    univnames[dept].sort(compareNames);
-	    for (var name of univnames[dept]) {
-		s += "\n" + name + ": " + facultycount[name+dept];
-	    }
-	    univnames[dept] = s.slice(1);
-	} else {
-	    univnames[dept] = "(can't display more than " + maxHoverFaculty + " faculty)";
+	var s = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\">";
+	univnames[dept].sort(compareNames);
+	for (var name of univnames[dept]) {
+	    s += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td><small>" + facultycount[name+dept] + "</small></td></tr>";
 	}
+	s += "</table></div></div>";
+	univnames[dept] = s;
     }
     
     var s = prologue;
@@ -308,7 +317,11 @@ function rank() {
 		rank = rank + 1;
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
-	    s += "<td>" +  dept  + "</td>";
+	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
+	    s += "<div style=\"display:none;\" id=\""+dept+"\">" + univnames[dept] + "</div>";
+    
+	    s += "</td>";
+
 	    if (displayPercentages) {
 		/* Show average percentage */
 		s += "<td align=\"right\">" + (Math.floor(v * 1000.0) / (10.0 * areaCount)).toPrecision(2)  + "%</td>";
@@ -316,9 +329,8 @@ function rank() {
 		/* Show count */
 		s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
 	    }
-	    s += "<td align=\"right\">" + "<font color=\"blue\">"
-		+ "<div class=\"hovertip\" title=\"" + univnames[dept] + "\">" + univcounts[dept] + "</div>" + "</font>" + "</td>"; /* number of faculty */
-	    /*		s += "<td align=\"right\">" + Math.floor(10.0 * v / univcounts[dept]) / 10.0 + "</td>"; */
+	    s += "<td align=\"right\">" + univcounts[dept] + "<br />"; /* number of faculty */
+	    s += "</td>";
 	    s += "</tr>\n";
 	    oldv = v;
 	}
