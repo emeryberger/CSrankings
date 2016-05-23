@@ -278,11 +278,17 @@ function rank() {
     var s = prologue;
     var univtext = {};
 
-    /* Build hover text for faculty names and paper counts. */
+    /* Build drop down for faculty names and paper counts. */
     for (dept in univnames) {
 	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Publications</em></small></td></thead><tbody>";
-	univnames[dept].sort(compareNames);
+	/* univnames[dept].sort(compareNames); */
+	var fc = {};
 	for (var name of univnames[dept]) {
+	    fc[name] = facultycount[name+dept];
+	}
+	var keys = Object.keys(fc);
+	keys.sort(function(a,b){ return fc[b] - fc[a];});
+	for (var name of keys) {
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td align=\"right\"><small>" + facultycount[name+dept] + "</small></td></tr>";
 	}
 	p += "</tbody></table></div></div>";
