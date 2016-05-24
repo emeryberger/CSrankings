@@ -49,7 +49,7 @@ areadict = {
     'ai' : ['AAAI', 'IJCAI'],
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
     'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
-    'metrics' : ['SIGMETRICS','IMC'],
+    'metrics' : ['SIGMETRICS','IMC','Internet Measurement Conference'],
     'web' : ['WWW', 'SIGIR'],
     'hci' : ['CHI','UbiComp','UIST'],
     'nlp' : ['EMNLP','ACL','NAACL'],
