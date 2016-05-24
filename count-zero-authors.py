@@ -187,6 +187,8 @@ else:
 
 for k in facultydict:
     if (intauthors_gl.has_key(k)):
-        continue
-    print k
+        if (intauthors_gl[k] < 2):
+            print str(k) + " : " + str(intauthors_gl[k])
+    else:
+            print str(k) + " : 0"
     
