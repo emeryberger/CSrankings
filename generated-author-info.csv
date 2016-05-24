@@ -1146,8 +1146,8 @@ Inderjit S. Dhillon,University of Texas - Austin,mlmining,2.0,1.33333333333,2012
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,3.0,1.33333333333,2013
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,12.0,8.5,2014
 Inderjit S. Dhillon,University of Texas - Austin,mlmining,10.0,7.5,2015
-Inderjit S. Dhillon,University of Texas - Austin,database,1.0,0.5,2014
-Inderjit S. Dhillon,University of Texas - Austin,web,1.0,0.5,2015
+Inderjit S. Dhillon,University of Texas - Austin,database,1.0,1.0,2014
+Inderjit S. Dhillon,University of Texas - Austin,web,1.0,1.0,2015
 Bart Selman,Cornell University,mlmining,1.0,0.5,2000
 Bart Selman,Cornell University,mlmining,1.0,0.5,2003
 Bart Selman,Cornell University,mlmining,1.0,0.5,2006
@@ -3021,21 +3021,6 @@ Zhuowen Tu,University of California - San Diego,vision,7.0,7.0,2012
 Zhuowen Tu,University of California - San Diego,vision,5.0,4.5,2013
 Zhuowen Tu,University of California - San Diego,vision,1.0,1.0,2014
 Zhuowen Tu,University of California - San Diego,vision,1.0,1.0,2015
-Jeffrey Mark Siskind,Purdue University,mlmining,1.0,1.0,2003
-Jeffrey Mark Siskind,Purdue University,mlmining,1.0,1.0,2011
-Jeffrey Mark Siskind,Purdue University,ai,2.0,2.0,2015
-Jeffrey Mark Siskind,Purdue University,proglang,2.0,2.0,2007
-Jeffrey Mark Siskind,Purdue University,robotics,1.0,1.0,2010
-Jeffrey Mark Siskind,Purdue University,robotics,1.0,1.0,2011
-Jeffrey Mark Siskind,Purdue University,vision,1.0,1.0,2001
-Jeffrey Mark Siskind,Purdue University,vision,1.0,1.0,2012
-Jeffrey Mark Siskind,Purdue University,vision,1.0,1.0,2013
-Jeffrey Mark Siskind,Purdue University,vision,1.0,1.0,2014
-Yung-Hsiang Lu,Purdue University,robotics,5.0,5.0,2004
-Yung-Hsiang Lu,Purdue University,robotics,4.0,4.0,2005
-Yung-Hsiang Lu,Purdue University,robotics,2.0,2.0,2006
-Yung-Hsiang Lu,Purdue University,robotics,1.0,1.0,2007
-Yung-Hsiang Lu,Purdue University,robotics,1.0,1.0,2010
 Mark Dredze,Johns Hopkins University,hci,1.0,0.5,2016
 Mark Dredze,Johns Hopkins University,nlp,1.0,1.0,2007
 Mark Dredze,Johns Hopkins University,nlp,1.0,1.0,2008
@@ -3443,7 +3428,6 @@ Allen Tannenbaum,State University of New York - Stony Brook,vision,1.0,1.0,2001
 Allen Tannenbaum,State University of New York - Stony Brook,vision,4.0,3.5,2007
 Allen Tannenbaum,State University of New York - Stony Brook,vision,1.0,1.0,2008
 Allen Tannenbaum,State University of New York - Stony Brook,vision,1.0,1.0,2009
-Yi Wu,Purdue University,ai,1.0,1.0,2012
 Dan Boneh,Stanford University,theory,1.0,1.0,2000
 Dan Boneh,Stanford University,theory,2.0,2.0,2007
 Dan Boneh,Stanford University,theory,1.0,0.5,2008
@@ -4070,9 +4054,6 @@ Maurice Herlihy,Brown University,proglang,1.0,1.0,2005
 Maurice Herlihy,Brown University,proglang,1.0,1.0,2006
 Maurice Herlihy,Brown University,proglang,1.0,1.0,2010
 Maurice Herlihy,Brown University,arch,1.0,1.0,2005
-Georg Essl,University of Michigan,graphics,1.0,1.0,2001
-Georg Essl,University of Michigan,hci,1.0,1.0,2010
-Georg Essl,University of Michigan,ai,1.0,0.5,2015
 Paul Barford,University of Wisconsin - Madison,metrics,1.0,1.0,2003
 Paul Barford,University of Wisconsin - Madison,metrics,5.0,4.33333333333,2004
 Paul Barford,University of Wisconsin - Madison,metrics,1.0,0.5,2007
@@ -4692,7 +4673,7 @@ Ninghui Li,Purdue University,security,2.0,2.0,2006
 Ninghui Li,Purdue University,security,1.0,1.0,2007
 Ninghui Li,Purdue University,security,1.0,1.0,2008
 Ninghui Li,Purdue University,security,1.0,1.0,2009
-Ninghui Li,Purdue University,security,2.0,0.666666666667,2012
+Ninghui Li,Purdue University,security,2.0,0.833333333333,2012
 Ninghui Li,Purdue University,security,1.0,1.0,2013
 Ninghui Li,Purdue University,security,1.0,1.0,2014
 Dennis McLeod,University of Southern California,ai,1.0,1.0,2007
@@ -6096,17 +6077,17 @@ Janyce Wiebe,University of Pittsburgh,ai,1.0,0.5,2004
 Janyce Wiebe,University of Pittsburgh,ai,1.0,0.5,2005
 Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.5,2000
 Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,2.0,2001
-Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.5,2002
-Alexander J. Smola,Carnegie Mellon University,mlmining,3.0,2.0,2003
-Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.5,2004
-Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,1.5,2005
+Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,4.0,2002
+Alexander J. Smola,Carnegie Mellon University,mlmining,3.0,2.5,2003
+Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,4.0,2004
+Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,2.0,2005
 Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,4.0,2006
-Alexander J. Smola,Carnegie Mellon University,mlmining,8.0,5.0,2007
+Alexander J. Smola,Carnegie Mellon University,mlmining,8.0,6.0,2007
 Alexander J. Smola,Carnegie Mellon University,mlmining,6.0,4.5,2008
 Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.0,2009
-Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.0,2010
+Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.5,2010
 Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,2.0,2011
-Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.0,2012
+Alexander J. Smola,Carnegie Mellon University,mlmining,4.0,3.5,2012
 Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,1.33333333333,2013
 Alexander J. Smola,Carnegie Mellon University,mlmining,7.0,6.5,2014
 Alexander J. Smola,Carnegie Mellon University,mlmining,8.0,7.0,2015
@@ -6315,7 +6296,9 @@ Silvio Micali,Massachusetts Institute of Technology,theory,1.0,0.5,2011
 Silvio Micali,Massachusetts Institute of Technology,theory,1.0,1.0,2012
 Silvio Micali,Massachusetts Institute of Technology,theory,1.0,1.0,2013
 Silvio Micali,Massachusetts Institute of Technology,security,1.0,0.5,2001
-Mohammed E. Hoque,University of Rochester,hci,1.0,1.0,2012
+Georg Essl,University of Michigan,graphics,1.0,1.0,2001
+Georg Essl,University of Michigan,hci,1.0,1.0,2010
+Georg Essl,University of Michigan,ai,1.0,0.5,2015
 Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
 Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
 Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
@@ -6676,13 +6659,6 @@ Jin-Yi Cai,University of Wisconsin - Madison,theory,2.0,2.0,2013
 Jin-Yi Cai,University of Wisconsin - Madison,theory,1.0,1.0,2014
 Jin-Yi Cai,University of Wisconsin - Madison,theory,1.0,1.0,2015
 Jin-Yi Cai,University of Wisconsin - Madison,database,1.0,0.5,2012
-Cristina Nita-Rotaru,Purdue University,database,1.0,1.0,2015
-Cristina Nita-Rotaru,Purdue University,security,1.0,1.0,2007
-Cristina Nita-Rotaru,Purdue University,security,3.0,2.33333333333,2012
-Cristina Nita-Rotaru,Purdue University,security,1.0,0.5,2015
-Cristina Nita-Rotaru,Purdue University,networks,1.0,1.0,2007
-Cristina Nita-Rotaru,Purdue University,networks,1.0,1.0,2011
-Cristina Nita-Rotaru,Purdue University,networks,1.0,1.0,2013
 Amitabh Varshney,University of Maryland - College Park,graphics,1.0,1.0,2004
 Amitabh Varshney,University of Maryland - College Park,graphics,2.0,2.0,2005
 Erik Andersen,Cornell University,graphics,1.0,0.5,2010
@@ -7790,7 +7766,7 @@ Yuan Qi,Purdue University,mlmining,1.0,1.0,2009
 Yuan Qi,Purdue University,ai,1.0,1.0,2011
 Yuan Qi,Purdue University,ai,3.0,3.0,2015
 Yuan Qi,Purdue University,ai,1.0,1.0,2016
-Yuan Qi,Purdue University,security,2.0,0.666666666667,2012
+Yuan Qi,Purdue University,security,2.0,0.833333333333,2012
 Jonathan Ullman,Northeastern University,theory,1.0,1.0,2010
 Jonathan Ullman,Northeastern University,theory,1.0,0.333333333333,2011
 Jonathan Ullman,Northeastern University,theory,2.0,1.5,2013
@@ -9116,7 +9092,7 @@ Ronald L. Rivest,Massachusetts Institute of Technology,networks,1.0,0.5,2013
 Alexandra Boldyreva,Georgia Institute of Technology,security,2.0,2.0,2007
 Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,1.0,2008
 Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,1.0,2012
-Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,0.5,2015
+Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,1.0,2015
 Alexandra Boldyreva,Georgia Institute of Technology,arch,1.0,1.0,2005
 Mohammad Alizadeh,Massachusetts Institute of Technology,metrics,2.0,1.0,2011
 Mohammad Alizadeh,Massachusetts Institute of Technology,metrics,1.0,1.0,2012
@@ -9226,25 +9202,6 @@ Mark Riedl,Georgia Institute of Technology,hci,1.0,1.0,2013
 Mark Riedl,Georgia Institute of Technology,ai,1.0,1.0,2012
 Mark Riedl,Georgia Institute of Technology,ai,1.0,1.0,2013
 Mark Riedl,Georgia Institute of Technology,ai,1.0,1.0,2014
-S. V. N. Vishwanathan,Purdue University,hci,1.0,1.0,2014
-S. V. N. Vishwanathan,Purdue University,theory,1.0,1.0,2011
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,0.5,2002
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,0.5,2003
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,0.5,2004
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,0.5,2005
-S. V. N. Vishwanathan,Purdue University,mlmining,5.0,5.0,2006
-S. V. N. Vishwanathan,Purdue University,mlmining,4.0,3.0,2007
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,1.0,2008
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,1.0,2009
-S. V. N. Vishwanathan,Purdue University,mlmining,5.0,4.5,2010
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,1.0,2011
-S. V. N. Vishwanathan,Purdue University,mlmining,3.0,2.5,2012
-S. V. N. Vishwanathan,Purdue University,mlmining,1.0,1.0,2014
-S. V. N. Vishwanathan,Purdue University,mlmining,2.0,2.0,2015
-S. V. N. Vishwanathan,Purdue University,database,1.0,0.5,2014
-S. V. N. Vishwanathan,Purdue University,web,1.0,0.5,2015
-S. V. N. Vishwanathan,Purdue University,vision,1.0,1.0,2008
-S. V. N. Vishwanathan,Purdue University,vision,1.0,1.0,2011
 Mary W. Hall,University of Utah,proglang,1.0,1.0,2002
 Mary W. Hall,University of Utah,proglang,1.0,0.5,2011
 Mary W. Hall,University of Utah,proglang,1.0,1.0,2015
@@ -13715,6 +13672,7 @@ Clifford Stein,Columbia University,theory,1.0,1.0,2002
 Clifford Stein,Columbia University,theory,1.0,1.0,2005
 Clifford Stein,Columbia University,theory,3.0,2.0,2007
 Clifford Stein,Columbia University,theory,1.0,0.333333333333,2008
+Mohammed E. Hoque,University of Rochester,hci,1.0,1.0,2012
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,0.5,2000
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,0.5,2008
 Stephanie Weirich,University of Pennsylvania,proglang,2.0,1.5,2010
@@ -14485,23 +14443,6 @@ Patrick Crowley,Washington University - St. Louis,networks,1.0,1.0,2007
 Patrick Crowley,Washington University - St. Louis,networks,1.0,1.0,2008
 Patrick Crowley,Washington University - St. Louis,networks,1.0,1.0,2013
 Patrick Crowley,Washington University - St. Louis,networks,1.0,1.0,2014
-T. N. Vijaykumar,Purdue University,proglang,1.0,1.0,2004
-T. N. Vijaykumar,Purdue University,arch,2.0,2.0,2001
-T. N. Vijaykumar,Purdue University,arch,2.0,2.0,2002
-T. N. Vijaykumar,Purdue University,arch,7.0,7.0,2003
-T. N. Vijaykumar,Purdue University,arch,4.0,4.0,2004
-T. N. Vijaykumar,Purdue University,arch,4.0,4.0,2005
-T. N. Vijaykumar,Purdue University,arch,1.0,1.0,2006
-T. N. Vijaykumar,Purdue University,arch,1.0,1.0,2007
-T. N. Vijaykumar,Purdue University,arch,1.0,1.0,2008
-T. N. Vijaykumar,Purdue University,arch,3.0,3.0,2010
-T. N. Vijaykumar,Purdue University,arch,1.0,1.0,2012
-T. N. Vijaykumar,Purdue University,arch,1.0,1.0,2013
-T. N. Vijaykumar,Purdue University,arch,2.0,2.0,2014
-T. N. Vijaykumar,Purdue University,arch,2.0,2.0,2015
-T. N. Vijaykumar,Purdue University,networks,1.0,1.0,2005
-T. N. Vijaykumar,Purdue University,networks,1.0,1.0,2010
-T. N. Vijaykumar,Purdue University,networks,1.0,1.0,2012
 Vladimir Filkov,University of California - Davis,hci,1.0,0.5,2015
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.5,2007
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.5,2008
