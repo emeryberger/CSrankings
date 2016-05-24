@@ -1203,6 +1203,32 @@ Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2010
 Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2013
 Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2014
 Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2015
+Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2001
+Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2002
+Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2003
+Dan Klein,University of California - Berkeley,nlp,2.0,1.33333333333,2004
+Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2005
+Dan Klein,University of California - Berkeley,nlp,3.0,2.5,2006
+Dan Klein,University of California - Berkeley,nlp,2.0,2.0,2007
+Dan Klein,University of California - Berkeley,nlp,6.0,5.0,2008
+Dan Klein,University of California - Berkeley,nlp,2.0,2.0,2009
+Dan Klein,University of California - Berkeley,nlp,6.0,5.0,2010
+Dan Klein,University of California - Berkeley,nlp,6.0,5.33333333333,2011
+Dan Klein,University of California - Berkeley,nlp,3.0,3.0,2013
+Dan Klein,University of California - Berkeley,nlp,2.0,2.0,2015
+Dan Klein,University of California - Berkeley,mlmining,1.0,1.0,2001
+Dan Klein,University of California - Berkeley,mlmining,3.0,3.0,2002
+Dan Klein,University of California - Berkeley,mlmining,3.0,1.83333333333,2007
+Dan Klein,University of California - Berkeley,mlmining,3.0,1.83333333333,2008
+Dan Klein,University of California - Berkeley,mlmining,2.0,1.33333333333,2009
+Dan Klein,University of California - Berkeley,mlmining,1.0,0.333333333333,2010
+Dan Klein,University of California - Berkeley,mlmining,1.0,1.0,2014
+Dan Klein,University of California - Berkeley,mlmining,1.0,0.5,2015
+Dan Klein,University of California - Berkeley,ai,2.0,2.0,2003
+Dan Klein,University of California - Berkeley,ai,2.0,2.0,2007
+Dan Klein,University of California - Berkeley,ai,1.0,1.0,2011
+Dan Klein,University of California - Berkeley,web,1.0,0.5,2002
+Dan Klein,University of California - Berkeley,robotics,1.0,0.5,2013
 Eric Gilbert,Georgia Institute of Technology,hci,1.0,1.0,2008
 Eric Gilbert,Georgia Institute of Technology,hci,1.0,1.0,2009
 Eric Gilbert,Georgia Institute of Technology,hci,1.0,1.0,2012
@@ -3226,16 +3252,16 @@ Daniela Rus,Massachusetts Institute of Technology,robotics,13.0,10.3333333333,20
 Daniela Rus,Massachusetts Institute of Technology,robotics,15.0,12.8333333333,2015
 Daniela Rus,Massachusetts Institute of Technology,networks,1.0,1.0,2004
 Daniela Rus,Massachusetts Institute of Technology,networks,1.0,0.5,2012
-Percy Liang,Stanford University,nlp,1.0,1.0,2006
-Percy Liang,Stanford University,nlp,2.0,2.0,2008
-Percy Liang,Stanford University,nlp,2.0,2.0,2010
-Percy Liang,Stanford University,nlp,1.0,0.5,2011
+Percy Liang,Stanford University,nlp,1.0,0.5,2006
+Percy Liang,Stanford University,nlp,2.0,1.0,2008
+Percy Liang,Stanford University,nlp,2.0,1.0,2010
+Percy Liang,Stanford University,nlp,1.0,0.333333333333,2011
 Percy Liang,Stanford University,nlp,2.0,2.0,2013
 Percy Liang,Stanford University,nlp,1.0,1.0,2015
-Percy Liang,Stanford University,mlmining,3.0,2.0,2007
-Percy Liang,Stanford University,mlmining,2.0,1.0,2008
-Percy Liang,Stanford University,mlmining,2.0,1.0,2009
-Percy Liang,Stanford University,mlmining,2.0,1.5,2010
+Percy Liang,Stanford University,mlmining,3.0,1.33333333333,2007
+Percy Liang,Stanford University,mlmining,2.0,0.833333333333,2008
+Percy Liang,Stanford University,mlmining,2.0,0.833333333333,2009
+Percy Liang,Stanford University,mlmining,2.0,1.33333333333,2010
 Percy Liang,Stanford University,mlmining,1.0,1.0,2012
 Percy Liang,Stanford University,mlmining,1.0,1.0,2013
 Percy Liang,Stanford University,mlmining,5.0,5.0,2014
@@ -7013,7 +7039,7 @@ Piotr Indyk,Massachusetts Institute of Technology,database,2.0,1.5,2013
 Piotr Indyk,Massachusetts Institute of Technology,database,1.0,1.0,2014
 Piotr Indyk,Massachusetts Institute of Technology,database,2.0,0.75,2015
 Piotr Indyk,Massachusetts Institute of Technology,mobile,1.0,0.5,2012
-Piotr Indyk,Massachusetts Institute of Technology,web,1.0,1.0,2002
+Piotr Indyk,Massachusetts Institute of Technology,web,1.0,0.5,2002
 Piotr Indyk,Massachusetts Institute of Technology,web,1.0,1.0,2013
 Piotr Indyk,Massachusetts Institute of Technology,networks,1.0,0.5,2012
 Eric Keller,University of Colorado Boulder,security,1.0,0.5,2011
@@ -7342,7 +7368,7 @@ Pieter Abbeel,University of California - Berkeley,robotics,1.0,0.333333333333,20
 Pieter Abbeel,University of California - Berkeley,robotics,5.0,4.0,2010
 Pieter Abbeel,University of California - Berkeley,robotics,5.0,4.5,2011
 Pieter Abbeel,University of California - Berkeley,robotics,3.0,2.5,2012
-Pieter Abbeel,University of California - Berkeley,robotics,6.0,5.33333333333,2013
+Pieter Abbeel,University of California - Berkeley,robotics,6.0,4.83333333333,2013
 Pieter Abbeel,University of California - Berkeley,robotics,7.0,6.0,2014
 Pieter Abbeel,University of California - Berkeley,robotics,18.0,16.3333333333,2015
 Alex Kirlik,University of Illinois at Urbana-Champaign,hci,1.0,1.0,2016
@@ -7604,7 +7630,7 @@ David B. Johnson,Rice University,security,1.0,1.0,2003
 David B. Johnson,Rice University,networks,1.0,1.0,2003
 David B. Johnson,Rice University,networks,1.0,1.0,2007
 David B. Johnson,Rice University,networks,1.0,1.0,2011
-Michael I. Jordan,University of California - Berkeley,nlp,1.0,0.5,2011
+Michael I. Jordan,University of California - Berkeley,nlp,1.0,0.333333333333,2011
 Michael I. Jordan,University of California - Berkeley,theory,1.0,1.0,2009
 Michael I. Jordan,University of California - Berkeley,theory,1.0,1.0,2013
 Michael I. Jordan,University of California - Berkeley,mlmining,7.0,4.16666666667,2001
@@ -7613,15 +7639,15 @@ Michael I. Jordan,University of California - Berkeley,mlmining,8.0,6.0,2003
 Michael I. Jordan,University of California - Berkeley,mlmining,9.0,7.5,2004
 Michael I. Jordan,University of California - Berkeley,mlmining,4.0,4.0,2005
 Michael I. Jordan,University of California - Berkeley,mlmining,4.0,2.25,2006
-Michael I. Jordan,University of California - Berkeley,mlmining,4.0,2.5,2007
-Michael I. Jordan,University of California - Berkeley,mlmining,9.0,6.16666666667,2008
-Michael I. Jordan,University of California - Berkeley,mlmining,5.0,3.33333333333,2009
-Michael I. Jordan,University of California - Berkeley,mlmining,11.0,9.33333333333,2010
+Michael I. Jordan,University of California - Berkeley,mlmining,4.0,2.33333333333,2007
+Michael I. Jordan,University of California - Berkeley,mlmining,9.0,5.66666666667,2008
+Michael I. Jordan,University of California - Berkeley,mlmining,5.0,3.16666666667,2009
+Michael I. Jordan,University of California - Berkeley,mlmining,11.0,9.16666666667,2010
 Michael I. Jordan,University of California - Berkeley,mlmining,3.0,2.5,2011
 Michael I. Jordan,University of California - Berkeley,mlmining,10.0,9.0,2012
 Michael I. Jordan,University of California - Berkeley,mlmining,7.0,5.16666666667,2013
 Michael I. Jordan,University of California - Berkeley,mlmining,4.0,2.5,2014
-Michael I. Jordan,University of California - Berkeley,mlmining,9.0,7.0,2015
+Michael I. Jordan,University of California - Berkeley,mlmining,9.0,6.5,2015
 Michael I. Jordan,University of California - Berkeley,ai,1.0,0.5,2001
 Michael I. Jordan,University of California - Berkeley,ai,1.0,1.0,2016
 Michael I. Jordan,University of California - Berkeley,opsys,1.0,0.333333333333,2009
@@ -8740,7 +8766,7 @@ Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.0,2014
 Hal Daumé III,University of Maryland - College Park,nlp,1.0,0.5,2015
 Hal Daumé III,University of Maryland - College Park,mlmining,1.0,1.0,2005
 Hal Daumé III,University of Maryland - College Park,mlmining,1.0,1.0,2007
-Hal Daumé III,University of Maryland - College Park,mlmining,2.0,1.5,2008
+Hal Daumé III,University of Maryland - College Park,mlmining,2.0,1.33333333333,2008
 Hal Daumé III,University of Maryland - College Park,mlmining,2.0,2.0,2009
 Hal Daumé III,University of Maryland - College Park,mlmining,2.0,2.0,2010
 Hal Daumé III,University of Maryland - College Park,mlmining,4.0,4.0,2011
@@ -12170,7 +12196,7 @@ Cynthia Sturton,University of North Carolina - Chapel Hill,security,1.0,0.5,2009
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1.0,0.5,2011
 Cynthia Sturton,University of North Carolina - Chapel Hill,arch,1.0,1.0,2015
 Michael Collins,Columbia University,nlp,2.0,2.0,2002
-Michael Collins,Columbia University,nlp,3.0,2.5,2004
+Michael Collins,Columbia University,nlp,3.0,2.33333333333,2004
 Michael Collins,Columbia University,nlp,2.0,1.5,2005
 Michael Collins,Columbia University,nlp,1.0,1.0,2006
 Michael Collins,Columbia University,nlp,1.0,1.0,2008
@@ -16746,7 +16772,7 @@ Jing Chen,State University of New York - Stony Brook,networks,1.0,0.5,2015
 Daphne Koller,Stanford University,graphics,1.0,0.5,2005
 Daphne Koller,Stanford University,graphics,1.0,0.5,2012
 Daphne Koller,Stanford University,hci,1.0,0.333333333333,2013
-Daphne Koller,Stanford University,nlp,1.0,0.5,2004
+Daphne Koller,Stanford University,nlp,1.0,0.333333333333,2004
 Daphne Koller,Stanford University,nlp,2.0,2.0,2008
 Daphne Koller,Stanford University,mlmining,3.0,3.0,2000
 Daphne Koller,Stanford University,mlmining,4.0,3.33333333333,2001
