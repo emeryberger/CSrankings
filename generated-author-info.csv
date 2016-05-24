@@ -160,7 +160,7 @@ Stefan Savage,University of California - San Diego,security,1.0,0.5,2013
 Stefan Savage,University of California - San Diego,security,3.0,1.16666666667,2014
 Stefan Savage,University of California - San Diego,security,2.0,1.0,2015
 Stefan Savage,University of California - San Diego,arch,1.0,0.5,2011
-Stefan Savage,University of California - San Diego,networks,3.0,2.33333333333,2000
+Stefan Savage,University of California - San Diego,networks,3.0,1.25,2000
 Stefan Savage,University of California - San Diego,networks,2.0,1.5,2003
 Stefan Savage,University of California - San Diego,networks,1.0,0.5,2004
 Stefan Savage,University of California - San Diego,networks,1.0,1.0,2005
@@ -1659,7 +1659,7 @@ Amit Chakrabarti,Dartmouth College,theory,1.0,1.0,2014
 Amit Chakrabarti,Dartmouth College,theory,1.0,1.0,2016
 Amit Chakrabarti,Dartmouth College,mlmining,1.0,1.0,2006
 Amit Chakrabarti,Dartmouth College,robotics,1.0,0.5,2013
-Neil Spring,University of Maryland - College Park,metrics,2.0,1.33333333333,2006
+Neil Spring,University of Maryland - College Park,metrics,2.0,1.25,2006
 Neil Spring,University of Maryland - College Park,metrics,1.0,0.5,2009
 Neil Spring,University of Maryland - College Park,metrics,1.0,0.5,2010
 Neil Spring,University of Maryland - College Park,metrics,1.0,1.0,2011
@@ -1691,6 +1691,30 @@ Peter M. Chen,University of Michigan,arch,1.0,0.5,2014
 Peter M. Chen,University of Michigan,arch,1.0,0.5,2016
 Peter M. Chen,University of Michigan,networks,1.0,0.333333333333,2009
 John Hughes,Brown University,proglang,1.0,1.0,2006
+Thomas E. Anderson,University of Washington,metrics,2.0,0.5,2006
+Thomas E. Anderson,University of Washington,metrics,1.0,0.333333333333,2009
+Thomas E. Anderson,University of Washington,metrics,1.0,0.333333333333,2010
+Thomas E. Anderson,University of Washington,opsys,1.0,0.333333333333,2000
+Thomas E. Anderson,University of Washington,opsys,1.0,0.5,2003
+Thomas E. Anderson,University of Washington,opsys,1.0,0.333333333333,2006
+Thomas E. Anderson,University of Washington,opsys,1.0,0.5,2011
+Thomas E. Anderson,University of Washington,opsys,1.0,0.333333333333,2014
+Thomas E. Anderson,University of Washington,proglang,1.0,0.25,2015
+Thomas E. Anderson,University of Washington,mobile,1.0,0.5,2008
+Thomas E. Anderson,University of Washington,arch,1.0,0.333333333333,2016
+Thomas E. Anderson,University of Washington,networks,4.0,2.25,2000
+Thomas E. Anderson,University of Washington,networks,1.0,0.5,2002
+Thomas E. Anderson,University of Washington,networks,2.0,2.0,2003
+Thomas E. Anderson,University of Washington,networks,2.0,0.833333333333,2005
+Thomas E. Anderson,University of Washington,networks,1.0,0.333333333333,2006
+Thomas E. Anderson,University of Washington,networks,2.0,0.833333333333,2007
+Thomas E. Anderson,University of Washington,networks,4.0,1.5,2008
+Thomas E. Anderson,University of Washington,networks,1.0,0.25,2009
+Thomas E. Anderson,University of Washington,networks,2.0,0.833333333333,2010
+Thomas E. Anderson,University of Washington,networks,1.0,0.5,2011
+Thomas E. Anderson,University of Washington,networks,1.0,0.2,2012
+Thomas E. Anderson,University of Washington,networks,3.0,1.0,2013
+Thomas E. Anderson,University of Washington,networks,1.0,0.333333333333,2014
 Christine Neuwirth,Carnegie Mellon University,hci,1.0,1.0,2002
 Richard M. Karp,University of California - Berkeley,theory,2.0,0.833333333333,2000
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.5,2003
@@ -2531,7 +2555,7 @@ Ramana Rao Kompella,Purdue University,networks,3.0,3.0,2012
 Ramana Rao Kompella,Purdue University,networks,1.0,1.0,2013
 John Zahorjan,University of Washington,opsys,1.0,0.5,2003
 John Zahorjan,University of Washington,networks,1.0,0.5,2005
-John Zahorjan,University of Washington,networks,3.0,1.5,2006
+John Zahorjan,University of Washington,networks,3.0,1.33333333333,2006
 John Zahorjan,University of Washington,networks,1.0,0.333333333333,2008
 Sariel Har-Peled,University of Illinois at Urbana-Champaign,theory,1.0,0.25,2000
 Sariel Har-Peled,University of Illinois at Urbana-Champaign,theory,6.0,4.75,2001
@@ -3048,7 +3072,7 @@ David Heckerman,University of California - Los Angeles,mlmining,1.0,0.5,2000
 David Heckerman,University of California - Los Angeles,mlmining,1.0,1.0,2004
 David Heckerman,University of California - Los Angeles,mlmining,1.0,0.5,2005
 David Heckerman,University of California - Los Angeles,vision,1.0,1.0,2001
-Jie Gao,State University of New York - Stony Brook,metrics,1.0,0.5,2009
+Jie Gao,State University of New York - Stony Brook,metrics,1.0,0.333333333333,2009
 Jie Gao,State University of New York - Stony Brook,theory,1.0,1.0,2003
 Jie Gao,State University of New York - Stony Brook,theory,1.0,0.5,2006
 Jie Gao,State University of New York - Stony Brook,theory,1.0,0.5,2008
@@ -3146,7 +3170,7 @@ Anna R. Karlin,University of Washington,theory,2.0,2.0,2007
 Anna R. Karlin,University of Washington,theory,1.0,0.5,2008
 Anna R. Karlin,University of Washington,theory,1.0,0.5,2016
 Anna R. Karlin,University of Washington,ai,1.0,1.0,2012
-Anna R. Karlin,University of Washington,networks,1.0,0.333333333333,2000
+Anna R. Karlin,University of Washington,networks,1.0,0.25,2000
 David A. Smith,Northeastern University,nlp,1.0,0.5,2004
 David A. Smith,Northeastern University,nlp,1.0,0.5,2006
 David A. Smith,Northeastern University,nlp,1.0,0.5,2008
@@ -3523,7 +3547,7 @@ Zachary Tatlock,University of Washington,proglang,1.0,0.333333333333,2008
 Zachary Tatlock,University of Washington,proglang,2.0,0.833333333333,2009
 Zachary Tatlock,University of Washington,proglang,1.0,0.5,2010
 Zachary Tatlock,University of Washington,proglang,1.0,0.5,2014
-Zachary Tatlock,University of Washington,proglang,2.0,1.33333333333,2015
+Zachary Tatlock,University of Washington,proglang,2.0,1.25,2015
 Zachary Tatlock,University of Washington,robotics,1.0,0.5,2015
 Zachary Tatlock,University of Washington,security,1.0,0.5,2012
 Zachary Tatlock,University of Washington,security,1.0,0.5,2014
@@ -4064,15 +4088,15 @@ Paul Barford,University of Wisconsin - Madison,networks,2.0,1.5,2009
 Paul Barford,University of Wisconsin - Madison,networks,1.0,1.0,2010
 Paul Barford,University of Wisconsin - Madison,networks,3.0,2.33333333333,2011
 Paul Barford,University of Wisconsin - Madison,networks,1.0,1.0,2015
-Arvind Krishnamurthy,University of Washington,metrics,2.0,0.666666666667,2006
-Arvind Krishnamurthy,University of Washington,metrics,1.0,0.5,2009
-Arvind Krishnamurthy,University of Washington,metrics,1.0,0.5,2010
+Arvind Krishnamurthy,University of Washington,metrics,2.0,0.5,2006
+Arvind Krishnamurthy,University of Washington,metrics,1.0,0.333333333333,2009
+Arvind Krishnamurthy,University of Washington,metrics,1.0,0.333333333333,2010
 Arvind Krishnamurthy,University of Washington,metrics,1.0,0.5,2014
-Arvind Krishnamurthy,University of Washington,opsys,1.0,0.5,2000
-Arvind Krishnamurthy,University of Washington,opsys,1.0,0.5,2006
+Arvind Krishnamurthy,University of Washington,opsys,1.0,0.333333333333,2000
+Arvind Krishnamurthy,University of Washington,opsys,1.0,0.333333333333,2006
 Arvind Krishnamurthy,University of Washington,opsys,1.0,0.25,2010
-Arvind Krishnamurthy,University of Washington,opsys,1.0,1.0,2011
-Arvind Krishnamurthy,University of Washington,opsys,2.0,1.0,2014
+Arvind Krishnamurthy,University of Washington,opsys,1.0,0.5,2011
+Arvind Krishnamurthy,University of Washington,opsys,2.0,0.833333333333,2014
 Arvind Krishnamurthy,University of Washington,opsys,1.0,1.0,2015
 Arvind Krishnamurthy,University of Washington,web,1.0,1.0,2011
 Arvind Krishnamurthy,University of Washington,security,1.0,0.333333333333,2008
@@ -4080,19 +4104,19 @@ Arvind Krishnamurthy,University of Washington,security,1.0,1.0,2010
 Arvind Krishnamurthy,University of Washington,security,1.0,1.0,2011
 Arvind Krishnamurthy,University of Washington,softeng,1.0,0.333333333333,2013
 Arvind Krishnamurthy,University of Washington,softeng,1.0,0.333333333333,2014
-Arvind Krishnamurthy,University of Washington,arch,2.0,0.833333333333,2016
+Arvind Krishnamurthy,University of Washington,arch,2.0,0.666666666667,2016
 Arvind Krishnamurthy,University of Washington,networks,1.0,0.5,2002
 Arvind Krishnamurthy,University of Washington,networks,3.0,2.5,2004
 Arvind Krishnamurthy,University of Washington,networks,1.0,0.5,2005
-Arvind Krishnamurthy,University of Washington,networks,1.0,0.5,2006
-Arvind Krishnamurthy,University of Washington,networks,1.0,0.5,2007
-Arvind Krishnamurthy,University of Washington,networks,5.0,3.16666666667,2008
-Arvind Krishnamurthy,University of Washington,networks,2.0,1.33333333333,2009
-Arvind Krishnamurthy,University of Washington,networks,3.0,1.83333333333,2010
-Arvind Krishnamurthy,University of Washington,networks,1.0,1.0,2011
-Arvind Krishnamurthy,University of Washington,networks,3.0,1.0,2012
-Arvind Krishnamurthy,University of Washington,networks,4.0,2.16666666667,2013
-Arvind Krishnamurthy,University of Washington,networks,2.0,1.0,2014
+Arvind Krishnamurthy,University of Washington,networks,1.0,0.333333333333,2006
+Arvind Krishnamurthy,University of Washington,networks,1.0,0.333333333333,2007
+Arvind Krishnamurthy,University of Washington,networks,5.0,2.0,2008
+Arvind Krishnamurthy,University of Washington,networks,2.0,1.25,2009
+Arvind Krishnamurthy,University of Washington,networks,3.0,1.16666666667,2010
+Arvind Krishnamurthy,University of Washington,networks,1.0,0.5,2011
+Arvind Krishnamurthy,University of Washington,networks,3.0,0.95,2012
+Arvind Krishnamurthy,University of Washington,networks,4.0,1.5,2013
+Arvind Krishnamurthy,University of Washington,networks,2.0,0.833333333333,2014
 Arvind Krishnamurthy,University of Washington,networks,2.0,1.33333333333,2015
 Kevin Fu,University of Michigan,opsys,1.0,0.333333333333,2000
 Kevin Fu,University of Michigan,mobile,1.0,0.5,2010
@@ -4211,20 +4235,20 @@ James F. Allen,University of Rochester,ai,2.0,2.0,2006
 James F. Allen,University of Rochester,ai,1.0,1.0,2007
 James F. Allen,University of Rochester,ai,2.0,1.5,2012
 James F. Allen,University of Rochester,ai,2.0,1.5,2013
-Arun Venkataramani,University of Massachusetts - Amherst,metrics,1.0,0.333333333333,2006
+Arun Venkataramani,University of Massachusetts - Amherst,metrics,1.0,0.25,2006
 Arun Venkataramani,University of Massachusetts - Amherst,metrics,1.0,1.0,2009
 Arun Venkataramani,University of Massachusetts - Amherst,metrics,1.0,0.5,2013
 Arun Venkataramani,University of Massachusetts - Amherst,opsys,1.0,1.0,2002
 Arun Venkataramani,University of Massachusetts - Amherst,opsys,1.0,0.5,2003
-Arun Venkataramani,University of Massachusetts - Amherst,opsys,1.0,0.5,2006
+Arun Venkataramani,University of Massachusetts - Amherst,opsys,1.0,0.333333333333,2006
 Arun Venkataramani,University of Massachusetts - Amherst,mobile,1.0,0.5,2007
 Arun Venkataramani,University of Massachusetts - Amherst,mobile,1.0,0.5,2008
 Arun Venkataramani,University of Massachusetts - Amherst,mobile,1.0,1.0,2010
 Arun Venkataramani,University of Massachusetts - Amherst,mobile,1.0,1.0,2011
 Arun Venkataramani,University of Massachusetts - Amherst,networks,1.0,1.0,2006
-Arun Venkataramani,University of Massachusetts - Amherst,networks,5.0,3.5,2007
-Arun Venkataramani,University of Massachusetts - Amherst,networks,2.0,0.666666666667,2008
-Arun Venkataramani,University of Massachusetts - Amherst,networks,2.0,0.833333333333,2009
+Arun Venkataramani,University of Massachusetts - Amherst,networks,5.0,3.33333333333,2007
+Arun Venkataramani,University of Massachusetts - Amherst,networks,2.0,0.583333333333,2008
+Arun Venkataramani,University of Massachusetts - Amherst,networks,2.0,0.75,2009
 Arun Venkataramani,University of Massachusetts - Amherst,networks,1.0,0.333333333333,2010
 Arun Venkataramani,University of Massachusetts - Amherst,networks,1.0,1.0,2011
 Arun Venkataramani,University of Massachusetts - Amherst,networks,1.0,1.0,2013
@@ -5017,8 +5041,8 @@ David R. Choffnes,Northeastern University,networks,1.0,0.5,2008
 David R. Choffnes,Northeastern University,networks,1.0,1.0,2009
 David R. Choffnes,Northeastern University,networks,2.0,1.5,2010
 David R. Choffnes,Northeastern University,networks,1.0,0.5,2011
-David R. Choffnes,Northeastern University,networks,1.0,0.25,2012
-David R. Choffnes,Northeastern University,networks,3.0,1.83333333333,2013
+David R. Choffnes,Northeastern University,networks,1.0,0.2,2012
+David R. Choffnes,Northeastern University,networks,3.0,1.75,2013
 David R. Choffnes,Northeastern University,networks,1.0,1.0,2015
 Qin Zhang,Indiana University,theory,1.0,1.0,2009
 Qin Zhang,Indiana University,theory,2.0,2.0,2010
@@ -6009,7 +6033,7 @@ Scott Shenker,University of California - Berkeley,networks,3.0,1.08333333333,200
 Scott Shenker,University of California - Berkeley,networks,3.0,0.783333333333,2004
 Scott Shenker,University of California - Berkeley,networks,6.0,1.93333333333,2005
 Scott Shenker,University of California - Berkeley,networks,6.0,2.83333333333,2006
-Scott Shenker,University of California - Berkeley,networks,5.0,2.5,2007
+Scott Shenker,University of California - Berkeley,networks,5.0,2.58333333333,2007
 Scott Shenker,University of California - Berkeley,networks,2.0,0.666666666667,2008
 Scott Shenker,University of California - Berkeley,networks,1.0,0.333333333333,2009
 Scott Shenker,University of California - Berkeley,networks,2.0,0.533333333333,2011
@@ -6210,7 +6234,7 @@ Yann LeCun,New York University,vision,3.0,2.5,2015
 Xiaowei Yang,Duke University,metrics,1.0,1.0,2010
 Xiaowei Yang,Duke University,security,1.0,1.0,2014
 Xiaowei Yang,Duke University,networks,1.0,1.0,2004
-Xiaowei Yang,Duke University,networks,1.0,0.5,2005
+Xiaowei Yang,Duke University,networks,1.0,0.333333333333,2005
 Xiaowei Yang,Duke University,networks,1.0,0.5,2006
 Xiaowei Yang,Duke University,networks,2.0,0.833333333333,2008
 Xiaowei Yang,Duke University,networks,1.0,0.5,2010
@@ -6488,7 +6512,7 @@ Matthew Caesar,University of Illinois at Urbana-Champaign,security,1.0,1.0,2012
 Matthew Caesar,University of Illinois at Urbana-Champaign,security,2.0,2.0,2014
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2.0,0.533333333333,2005
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2.0,1.33333333333,2006
-Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1.0,0.25,2007
+Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1.0,0.333333333333,2007
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1.0,0.5,2008
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1.0,0.5,2011
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,1.0,0.5,2012
@@ -6786,7 +6810,7 @@ Ion Stoica,University of California - Berkeley,networks,1.0,0.333333333333,2003
 Ion Stoica,University of California - Berkeley,networks,5.0,1.36666666667,2004
 Ion Stoica,University of California - Berkeley,networks,7.0,2.43333333333,2005
 Ion Stoica,University of California - Berkeley,networks,3.0,1.66666666667,2006
-Ion Stoica,University of California - Berkeley,networks,5.0,2.33333333333,2007
+Ion Stoica,University of California - Berkeley,networks,5.0,2.41666666667,2007
 Ion Stoica,University of California - Berkeley,networks,1.0,1.0,2008
 Ion Stoica,University of California - Berkeley,networks,1.0,0.333333333333,2009
 Ion Stoica,University of California - Berkeley,networks,4.0,1.78333333333,2011
@@ -7700,7 +7724,7 @@ Nick Feamster,Princeton University,networks,2.0,1.33333333333,2006
 Nick Feamster,Princeton University,networks,3.0,1.83333333333,2008
 Nick Feamster,Princeton University,networks,2.0,1.5,2010
 Nick Feamster,Princeton University,networks,2.0,1.5,2011
-Nick Feamster,Princeton University,networks,1.0,0.25,2012
+Nick Feamster,Princeton University,networks,1.0,0.2,2012
 Nick Feamster,Princeton University,networks,1.0,0.25,2014
 Nick Feamster,Princeton University,networks,3.0,3.0,2015
 David Mazières,Stanford University,opsys,1.0,0.333333333333,2000
@@ -9796,7 +9820,7 @@ Ramesh Govindan,University of Southern California,networks,5.0,4.0,2013
 Ramesh Govindan,University of Southern California,networks,2.0,1.33333333333,2014
 Ramesh Govindan,University of Southern California,networks,2.0,1.0,2015
 Kai Li,Princeton University,metrics,1.0,0.333333333333,2007
-Kai Li,Princeton University,opsys,1.0,0.5,2000
+Kai Li,Princeton University,opsys,1.0,0.333333333333,2000
 Kai Li,Princeton University,opsys,1.0,1.0,2002
 Kai Li,Princeton University,database,1.0,0.333333333333,2007
 Kai Li,Princeton University,proglang,1.0,1.0,2001
@@ -13406,7 +13430,7 @@ Michael D. Ernst,University of Washington,proglang,1.0,0.5,2008
 Michael D. Ernst,University of Washington,proglang,1.0,1.0,2010
 Michael D. Ernst,University of Washington,proglang,3.0,2.0,2012
 Michael D. Ernst,University of Washington,proglang,1.0,0.5,2013
-Michael D. Ernst,University of Washington,proglang,1.0,0.333333333333,2015
+Michael D. Ernst,University of Washington,proglang,1.0,0.25,2015
 Michael D. Ernst,University of Washington,logic,1.0,1.0,2011
 Michael D. Ernst,University of Washington,security,1.0,0.5,2014
 Michael D. Ernst,University of Washington,softeng,1.0,0.5,2000
@@ -13532,16 +13556,16 @@ Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,4.0,4.0,2013
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,1.0,1.0,2014
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,2.0,2.0,2015
 David A. Mix Barrington,University of Massachusetts - Amherst,logic,1.0,0.5,2001
-Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.333333333333,2006
-Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.5,2010
+Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.25,2006
+Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.333333333333,2010
 Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.5,2013
 Ethan Katz-Bassett,University of Southern California,metrics,3.0,1.83333333333,2015
 Ethan Katz-Bassett,University of Southern California,opsys,1.0,1.0,2013
-Ethan Katz-Bassett,University of Southern California,networks,2.0,0.666666666667,2008
-Ethan Katz-Bassett,University of Southern California,networks,1.0,0.333333333333,2009
-Ethan Katz-Bassett,University of Southern California,networks,1.0,0.5,2010
-Ethan Katz-Bassett,University of Southern California,networks,1.0,0.25,2012
-Ethan Katz-Bassett,University of Southern California,networks,2.0,0.833333333333,2013
+Ethan Katz-Bassett,University of Southern California,networks,2.0,0.5,2008
+Ethan Katz-Bassett,University of Southern California,networks,1.0,0.25,2009
+Ethan Katz-Bassett,University of Southern California,networks,1.0,0.333333333333,2010
+Ethan Katz-Bassett,University of Southern California,networks,1.0,0.2,2012
+Ethan Katz-Bassett,University of Southern California,networks,2.0,0.75,2013
 Ethan Katz-Bassett,University of Southern California,networks,1.0,0.25,2014
 Ethan Katz-Bassett,University of Southern California,networks,1.0,0.333333333333,2015
 Constantine Dovrolis,Georgia Institute of Technology,metrics,1.0,1.0,2009
@@ -14055,11 +14079,11 @@ Hao Li,University of Southern California,vision,1.0,0.5,2012
 Hao Li,University of Southern California,vision,1.0,1.0,2015
 Simon Peter,University of Texas - Austin,opsys,1.0,1.0,2009
 Simon Peter,University of Texas - Austin,opsys,1.0,1.0,2011
-Simon Peter,University of Texas - Austin,opsys,1.0,0.5,2014
+Simon Peter,University of Texas - Austin,opsys,1.0,0.333333333333,2014
 Simon Peter,University of Texas - Austin,arch,1.0,1.0,2011
-Simon Peter,University of Texas - Austin,arch,1.0,0.5,2016
-Simon Peter,University of Texas - Austin,networks,1.0,0.333333333333,2013
-Simon Peter,University of Texas - Austin,networks,1.0,0.5,2014
+Simon Peter,University of Texas - Austin,arch,1.0,0.333333333333,2016
+Simon Peter,University of Texas - Austin,networks,1.0,0.25,2013
+Simon Peter,University of Texas - Austin,networks,1.0,0.333333333333,2014
 Charless C. Fowlkes,University of California - Irvine,mlmining,1.0,0.5,2002
 Charless C. Fowlkes,University of California - Irvine,mlmining,1.0,0.5,2005
 Charless C. Fowlkes,University of California - Irvine,mlmining,1.0,0.5,2009
@@ -16518,7 +16542,6 @@ Jack Tumblin,Northwestern University,graphics,1.0,1.0,2006
 Jack Tumblin,Northwestern University,graphics,1.0,1.0,2007
 Jack Tumblin,Northwestern University,vision,2.0,2.0,2008
 Jack Tumblin,Northwestern University,vision,1.0,1.0,2011
-Tom Anderson,University of Washington,networks,1.0,0.25,2007
 Peter N. Belhumeur,Columbia University,graphics,1.0,0.5,2004
 Peter N. Belhumeur,Columbia University,graphics,1.0,0.25,2006
 Peter N. Belhumeur,Columbia University,graphics,3.0,1.33333333333,2007
@@ -16717,28 +16740,28 @@ Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,1.0,20
 Edward A. Fox,Virginia Polytechnic Institute and State University,web,2.0,2.0,2004
 Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,1.0,2005
 Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,1.0,2008
-David Wetherall,University of Washington,metrics,1.0,0.333333333333,2006
+David Wetherall,University of Washington,metrics,1.0,0.25,2006
 David Wetherall,University of Washington,metrics,1.0,0.5,2014
 David Wetherall,University of Washington,hci,2.0,2.0,2009
 David Wetherall,University of Washington,hci,1.0,1.0,2015
-David Wetherall,University of Washington,opsys,2.0,2.0,2003
+David Wetherall,University of Washington,opsys,2.0,1.5,2003
 David Wetherall,University of Washington,opsys,1.0,0.5,2004
 David Wetherall,University of Washington,mobile,1.0,1.0,2006
 David Wetherall,University of Washington,mobile,1.0,0.5,2007
-David Wetherall,University of Washington,mobile,3.0,2.33333333333,2008
+David Wetherall,University of Washington,mobile,3.0,1.83333333333,2008
 David Wetherall,University of Washington,mobile,1.0,0.5,2011
 David Wetherall,University of Washington,security,1.0,0.5,2008
 David Wetherall,University of Washington,security,1.0,1.0,2011
-David Wetherall,University of Washington,networks,2.0,1.33333333333,2000
-David Wetherall,University of Washington,networks,2.0,2.0,2002
-David Wetherall,University of Washington,networks,3.0,2.0,2005
+David Wetherall,University of Washington,networks,2.0,1.25,2000
+David Wetherall,University of Washington,networks,2.0,1.5,2002
+David Wetherall,University of Washington,networks,3.0,1.33333333333,2005
 David Wetherall,University of Washington,networks,3.0,1.5,2006
-David Wetherall,University of Washington,networks,2.0,1.5,2007
-David Wetherall,University of Washington,networks,3.0,1.16666666667,2008
+David Wetherall,University of Washington,networks,2.0,1.0,2007
+David Wetherall,University of Washington,networks,3.0,1.08333333333,2008
 David Wetherall,University of Washington,networks,1.0,1.0,2010
 David Wetherall,University of Washington,networks,2.0,2.0,2011
 David Wetherall,University of Washington,networks,1.0,0.5,2012
-David Wetherall,University of Washington,networks,3.0,1.16666666667,2013
+David Wetherall,University of Washington,networks,3.0,1.08333333333,2013
 David Wetherall,University of Washington,networks,2.0,0.833333333333,2014
 David Wetherall,University of Washington,networks,1.0,0.5,2015
 Ani Nenkova,University of Pennsylvania,nlp,1.0,1.0,2007
@@ -16906,7 +16929,7 @@ Xi Wang,University of Washington,opsys,1.0,0.25,2013
 Xi Wang,University of Washington,opsys,2.0,0.666666666667,2014
 Xi Wang,University of Washington,proglang,1.0,1.0,2008
 Xi Wang,University of Washington,proglang,1.0,1.0,2014
-Xi Wang,University of Washington,proglang,1.0,0.333333333333,2015
+Xi Wang,University of Washington,proglang,1.0,0.25,2015
 Xi Wang,University of Washington,mobile,1.0,1.0,2004
 Xi Wang,University of Washington,softeng,1.0,1.0,2009
 Xi Wang,University of Washington,softeng,1.0,1.0,2010
