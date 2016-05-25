@@ -335,10 +335,10 @@ Scott Smith,Johns Hopkins University,arch,1.0,1.0,2000
 Hao Chen,University of California - Davis,robotics,1.0,1.0,2001
 Hao Chen,University of California - Davis,vision,1.0,1.0,2015
 Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.333333333333,2003
-Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,1.0,2007
+Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.5,2007
 Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.5,2009
 Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.5,2010
-Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.5,2013
+Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.333333333333,2013
 Bobby Bhattacharjee,University of Maryland - College Park,opsys,1.0,1.0,2015
 Bobby Bhattacharjee,University of Maryland - College Park,mobile,1.0,0.5,2014
 Bobby Bhattacharjee,University of Maryland - College Park,security,1.0,0.5,2002
@@ -347,11 +347,11 @@ Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.5,2002
 Bobby Bhattacharjee,University of Maryland - College Park,networks,2.0,2.0,2005
 Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,1.0,2006
 Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.333333333333,2007
-Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.5,2008
-Bobby Bhattacharjee,University of Maryland - College Park,networks,4.0,2.5,2009
+Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.333333333333,2008
+Bobby Bhattacharjee,University of Maryland - College Park,networks,4.0,2.33333333333,2009
 Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.5,2010
 Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.5,2011
-Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.5,2015
+Bobby Bhattacharjee,University of Maryland - College Park,networks,1.0,0.333333333333,2015
 Jason Hong,Carnegie Mellon University,hci,1.0,1.0,2015
 Jason Hong,Carnegie Mellon University,web,1.0,1.0,2016
 Tao Xie,University of Illinois at Urbana-Champaign,metrics,1.0,1.0,2008
@@ -514,7 +514,7 @@ Aravind Srinivasan,University of Maryland - College Park,security,1.0,0.5,2002
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,1.0,2000
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,0.5,2002
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,0.5,2006
-Aravind Srinivasan,University of Maryland - College Park,networks,2.0,2.0,2008
+Aravind Srinivasan,University of Maryland - College Park,networks,2.0,1.5,2008
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,1.0,2009
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,1.0,2011
 Ladislav Kavan,University of Pennsylvania,graphics,1.0,1.0,2008
@@ -1096,7 +1096,7 @@ Ryan Henry,Indiana University,security,3.0,3.0,2011
 Ryan Henry,Indiana University,security,1.0,1.0,2013
 Bruce M. Maggs,Duke University,metrics,3.0,1.83333333333,2004
 Bruce M. Maggs,Duke University,metrics,1.0,0.5,2013
-Bruce M. Maggs,Duke University,metrics,1.0,0.25,2015
+Bruce M. Maggs,Duke University,metrics,1.0,0.2,2015
 Bruce M. Maggs,Duke University,theory,1.0,0.5,1990
 Bruce M. Maggs,Duke University,theory,2.0,1.0,1992
 Bruce M. Maggs,Duke University,theory,2.0,1.0,1993
@@ -1183,14 +1183,6 @@ E. Allen Emerson,University of Texas - Austin,logic,1.0,1.0,2000
 E. Allen Emerson,University of Texas - Austin,logic,1.0,1.0,2001
 E. Allen Emerson,University of Texas - Austin,logic,1.0,1.0,2003
 E. Allen Emerson,University of Texas - Austin,softeng,1.0,0.5,1992
-Charalampos Papamanthou,University of Maryland - College Park,database,1.0,0.333333333333,2012
-Charalampos Papamanthou,University of Maryland - College Park,database,1.0,0.5,2015
-Charalampos Papamanthou,University of Maryland - College Park,security,1.0,0.5,2008
-Charalampos Papamanthou,University of Maryland - College Park,security,1.0,0.5,2009
-Charalampos Papamanthou,University of Maryland - College Park,security,1.0,1.0,2012
-Charalampos Papamanthou,University of Maryland - College Park,security,2.0,1.5,2013
-Charalampos Papamanthou,University of Maryland - College Park,security,2.0,1.0,2014
-Charalampos Papamanthou,University of Maryland - College Park,security,1.0,0.5,2015
 Jia Deng,University of Michigan,graphics,1.0,0.25,2007
 Jia Deng,University of Michigan,hci,1.0,0.333333333333,2014
 Jia Deng,University of Michigan,mlmining,1.0,0.5,2011
@@ -1978,14 +1970,14 @@ Neil Spring,University of Maryland - College Park,metrics,2.0,1.25,2006
 Neil Spring,University of Maryland - College Park,metrics,1.0,0.5,2009
 Neil Spring,University of Maryland - College Park,metrics,1.0,0.5,2010
 Neil Spring,University of Maryland - College Park,metrics,1.0,1.0,2011
-Neil Spring,University of Maryland - College Park,metrics,1.0,0.5,2013
-Neil Spring,University of Maryland - College Park,metrics,2.0,2.0,2015
+Neil Spring,University of Maryland - College Park,metrics,1.0,0.333333333333,2013
+Neil Spring,University of Maryland - College Park,metrics,2.0,1.5,2015
 Neil Spring,University of Maryland - College Park,mobile,1.0,1.0,2010
-Neil Spring,University of Maryland - College Park,security,1.0,1.0,2014
-Neil Spring,University of Maryland - College Park,networks,2.0,1.5,2008
-Neil Spring,University of Maryland - College Park,networks,3.0,1.5,2009
+Neil Spring,University of Maryland - College Park,security,1.0,0.5,2014
+Neil Spring,University of Maryland - College Park,networks,2.0,1.33333333333,2008
+Neil Spring,University of Maryland - College Park,networks,3.0,1.33333333333,2009
 Neil Spring,University of Maryland - College Park,networks,1.0,0.5,2010
-Neil Spring,University of Maryland - College Park,networks,1.0,0.5,2015
+Neil Spring,University of Maryland - College Park,networks,1.0,0.333333333333,2015
 Peter M. Chen,University of Michigan,metrics,1.0,0.333333333333,1990
 Peter M. Chen,University of Michigan,metrics,1.0,0.5,1993
 Peter M. Chen,University of Michigan,metrics,1.0,1.0,1995
@@ -6208,8 +6200,8 @@ Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,1.0,2012
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.5,2013
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,3.0,3.0,2014
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,2.0,2.0,2015
-David R. Choffnes,Northeastern University,metrics,1.0,0.333333333333,2014
-David R. Choffnes,Northeastern University,metrics,3.0,0.916666666667,2015
+David R. Choffnes,Northeastern University,metrics,1.0,0.25,2014
+David R. Choffnes,Northeastern University,metrics,3.0,0.866666666667,2015
 David R. Choffnes,Northeastern University,mobile,1.0,0.5,2014
 David R. Choffnes,Northeastern University,mobile,3.0,1.5,2015
 David R. Choffnes,Northeastern University,networks,1.0,0.333333333333,2006
@@ -9076,8 +9068,8 @@ Julie A. Shah,Massachusetts Institute of Technology,robotics,2.0,2.0,2015
 Christo Wilson,Northeastern University,metrics,2.0,0.833333333333,2010
 Christo Wilson,Northeastern University,metrics,2.0,1.0,2011
 Christo Wilson,Northeastern University,metrics,1.0,0.5,2012
-Christo Wilson,Northeastern University,metrics,3.0,1.16666666667,2014
-Christo Wilson,Northeastern University,metrics,4.0,2.08333333333,2015
+Christo Wilson,Northeastern University,metrics,3.0,1.08333333333,2014
+Christo Wilson,Northeastern University,metrics,4.0,2.03333333333,2015
 Christo Wilson,Northeastern University,web,1.0,0.5,2010
 Christo Wilson,Northeastern University,web,1.0,0.5,2012
 Christo Wilson,Northeastern University,web,1.0,0.333333333333,2013
@@ -9863,9 +9855,6 @@ Loris D'Antoni,University of Wisconsin - Madison,proglang,2.0,2.0,2014
 Loris D'Antoni,University of Wisconsin - Madison,proglang,2.0,1.5,2015
 Loris D'Antoni,University of Wisconsin - Madison,logic,2.0,1.5,2013
 Loris D'Antoni,University of Wisconsin - Madison,logic,1.0,0.5,2014
-Dianne P. O'Leary,University of Maryland - College Park,nlp,1.0,1.0,2006
-Dianne P. O'Leary,University of Maryland - College Park,nlp,1.0,1.0,2011
-Dianne P. O'Leary,University of Maryland - College Park,mlmining,1.0,1.0,2012
 Alexander J. Hartemink,Duke University,mlmining,1.0,1.0,2004
 Alexander J. Hartemink,Duke University,mlmining,1.0,1.0,2008
 Alexander J. Hartemink,Duke University,ai,1.0,1.0,2016
@@ -10257,7 +10246,7 @@ Nick Roussopoulos,University of Maryland - College Park,database,1.0,1.0,1995
 Nick Roussopoulos,University of Maryland - College Park,database,2.0,2.0,1997
 Nick Roussopoulos,University of Maryland - College Park,database,2.0,2.0,1998
 Nick Roussopoulos,University of Maryland - College Park,database,1.0,1.0,1999
-Nick Roussopoulos,University of Maryland - College Park,database,3.0,2.0,2000
+Nick Roussopoulos,University of Maryland - College Park,database,3.0,2.5,2000
 Nick Roussopoulos,University of Maryland - College Park,database,1.0,0.5,2001
 Nick Roussopoulos,University of Maryland - College Park,database,1.0,1.0,2002
 Nick Roussopoulos,University of Maryland - College Park,database,2.0,1.5,2003
@@ -13169,8 +13158,6 @@ Saugata Basu,Purdue University,theory,1.0,1.0,2002
 Saugata Basu,Purdue University,theory,2.0,2.0,2005
 Saugata Basu,Purdue University,theory,1.0,1.0,2007
 Saugata Basu,Purdue University,theory,1.0,1.0,2009
-Joseph JáJá,University of Maryland - College Park,theory,1.0,1.0,1990
-Joseph JáJá,University of Maryland - College Park,database,1.0,0.5,2000
 Barry W. Boehm,University of Southern California,softeng,1.0,1.0,1994
 Barry W. Boehm,University of Southern California,softeng,1.0,0.5,1995
 Barry W. Boehm,University of Southern California,softeng,1.0,1.0,1996
@@ -13456,8 +13443,8 @@ Elaine Shi,Cornell University,security,2.0,2.0,2005
 Elaine Shi,Cornell University,security,1.0,1.0,2007
 Elaine Shi,Cornell University,security,1.0,0.5,2011
 Elaine Shi,Cornell University,security,1.0,1.0,2012
-Elaine Shi,Cornell University,security,6.0,4.25,2013
-Elaine Shi,Cornell University,security,7.0,3.7,2014
+Elaine Shi,Cornell University,security,6.0,4.75,2013
+Elaine Shi,Cornell University,security,7.0,4.2,2014
 Elaine Shi,Cornell University,security,4.0,2.83333333333,2015
 Elaine Shi,Cornell University,arch,1.0,0.333333333333,2015
 Elaine Shi,Cornell University,networks,1.0,0.5,2007
@@ -14794,8 +14781,8 @@ Joseph Pasquale,University of California - San Diego,networks,1.0,1.0,1998
 Joseph Pasquale,University of California - San Diego,networks,1.0,1.0,2003
 Joseph Pasquale,University of California - San Diego,networks,1.0,1.0,2006
 Alan Mislove,Northeastern University,metrics,1.0,1.0,2011
-Alan Mislove,Northeastern University,metrics,2.0,0.666666666667,2014
-Alan Mislove,Northeastern University,metrics,5.0,2.41666666667,2015
+Alan Mislove,Northeastern University,metrics,2.0,0.583333333333,2014
+Alan Mislove,Northeastern University,metrics,5.0,2.36666666667,2015
 Alan Mislove,Northeastern University,web,1.0,1.0,2009
 Alan Mislove,Northeastern University,web,2.0,1.33333333333,2013
 Alan Mislove,Northeastern University,web,1.0,0.5,2016
@@ -17110,9 +17097,6 @@ Stephanie Weirich,University of Pennsylvania,proglang,2.0,2.0,2014
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,1.0,2015
 Stephanie Weirich,University of Pennsylvania,logic,1.0,1.0,2005
 Stephanie Weirich,University of Pennsylvania,security,1.0,0.333333333333,2009
-Chau-Wen Tseng,University of Maryland - College Park,proglang,1.0,1.0,1991
-Chau-Wen Tseng,University of Maryland - College Park,proglang,1.0,1.0,1998
-Chau-Wen Tseng,University of Maryland - College Park,arch,1.0,1.0,1994
 Xia Zhou,Dartmouth College,metrics,1.0,1.0,2011
 Xia Zhou,Dartmouth College,metrics,1.0,0.5,2013
 Xia Zhou,Dartmouth College,hci,1.0,0.5,2014
@@ -17905,11 +17889,11 @@ Roberto Tamassia,Brown University,theory,3.0,2.0,1991
 Roberto Tamassia,Brown University,theory,2.0,1.5,1993
 Roberto Tamassia,Brown University,theory,1.0,0.5,1995
 Roberto Tamassia,Brown University,theory,1.0,0.333333333333,2012
-Roberto Tamassia,Brown University,database,1.0,0.333333333333,2012
-Roberto Tamassia,Brown University,database,1.0,0.5,2015
+Roberto Tamassia,Brown University,database,1.0,0.5,2012
+Roberto Tamassia,Brown University,database,1.0,1.0,2015
 Roberto Tamassia,Brown University,security,1.0,0.5,2004
-Roberto Tamassia,Brown University,security,1.0,0.5,2008
-Roberto Tamassia,Brown University,security,1.0,0.5,2009
+Roberto Tamassia,Brown University,security,1.0,1.0,2008
+Roberto Tamassia,Brown University,security,1.0,1.0,2009
 Roberto Tamassia,Brown University,security,1.0,0.5,2015
 Michael Rubenstein,Northwestern University,robotics,2.0,2.0,2004
 Michael Rubenstein,Northwestern University,robotics,1.0,1.0,2006
@@ -19273,7 +19257,7 @@ Michael T. Goodrich,University of California - Irvine,theory,1.0,1.0,2010
 Michael T. Goodrich,University of California - Irvine,theory,1.0,0.333333333333,2012
 Michael T. Goodrich,University of California - Irvine,theory,1.0,1.0,2014
 Michael T. Goodrich,University of California - Irvine,database,1.0,1.0,1993
-Michael T. Goodrich,University of California - Irvine,database,1.0,0.333333333333,2012
+Michael T. Goodrich,University of California - Irvine,database,1.0,0.5,2012
 Michael T. Goodrich,University of California - Irvine,security,1.0,0.5,2001
 Michael T. Goodrich,University of California - Irvine,security,1.0,1.0,2002
 Michael T. Goodrich,University of California - Irvine,security,1.0,1.0,2005
@@ -19728,6 +19712,14 @@ Suresh Jagannathan,Purdue University,proglang,2.0,2.0,2015
 Suresh Jagannathan,Purdue University,softeng,1.0,0.5,2007
 Suresh Jagannathan,Purdue University,arch,1.0,0.333333333333,2002
 Suresh Jagannathan,Purdue University,arch,1.0,0.5,2010
+Dave Levin,University of Maryland - College Park,metrics,1.0,0.5,2007
+Dave Levin,University of Maryland - College Park,metrics,1.0,0.333333333333,2013
+Dave Levin,University of Maryland - College Park,metrics,1.0,0.25,2014
+Dave Levin,University of Maryland - College Park,metrics,2.0,0.7,2015
+Dave Levin,University of Maryland - College Park,security,1.0,0.5,2014
+Dave Levin,University of Maryland - College Park,networks,2.0,0.833333333333,2008
+Dave Levin,University of Maryland - College Park,networks,2.0,1.33333333333,2009
+Dave Levin,University of Maryland - College Park,networks,1.0,0.333333333333,2015
 Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,mlmining,1.0,0.5,2003
 Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,mlmining,1.0,0.5,2012
 Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,networks,1.0,1.0,2009
@@ -20364,8 +20356,8 @@ Jonathan Katz,University of Maryland - College Park,security,1.0,1.0,2009
 Jonathan Katz,University of Maryland - College Park,security,2.0,2.0,2010
 Jonathan Katz,University of Maryland - College Park,security,2.0,0.666666666667,2011
 Jonathan Katz,University of Maryland - College Park,security,2.0,0.833333333333,2012
-Jonathan Katz,University of Maryland - College Park,security,3.0,1.03333333333,2014
-Jonathan Katz,University of Maryland - College Park,security,3.0,2.0,2015
+Jonathan Katz,University of Maryland - College Park,security,3.0,1.53333333333,2014
+Jonathan Katz,University of Maryland - College Park,security,3.0,2.5,2015
 David Eppstein,University of California - Irvine,graphics,1.0,0.5,1996
 David Eppstein,University of California - Irvine,theory,4.0,2.83333333333,1990
 David Eppstein,University of California - Irvine,theory,2.0,2.0,1991
