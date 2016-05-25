@@ -283,12 +283,16 @@ function rank() {
 	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Publications</em></small></td></thead><tbody>";
 	/* univnames[dept].sort(compareNames); */
 	var fc = {};
-	for (var name of univnames[dept]) {
+	for (var ind = 0; ind < univnames[dept].length; ind++) {
+	    /* for (var name of univnames[dept]) {*/
+	    name = univnames[dept][ind];
 	    fc[name] = facultycount[name+dept];
 	}
 	var keys = Object.keys(fc);
 	keys.sort(function(a,b){ return fc[b] - fc[a];});
-	for (var name of keys) {
+	for (var ind = 0; ind < keys.length; ind++) {
+	    /* for (var name of keys) { */
+	    name = keys[ind];
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td align=\"right\"><small>" + facultycount[name+dept] + "</small></td></tr>";
 	}
 	p += "</tbody></table></div></div>";
