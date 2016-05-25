@@ -2626,7 +2626,6 @@ Michael Mozer,University of Colorado Boulder,mlmining,2.0,2.0,2009
 Michael Mozer,University of Colorado Boulder,mlmining,1.0,1.0,2010
 Michael Mozer,University of Colorado Boulder,mlmining,1.0,1.0,2013
 Michael Mozer,University of Colorado Boulder,ai,1.0,1.0,1993
-Jeffrey Lang,Massachusetts Institute of Technology,robotics,1.0,1.0,2013
 Padhraic Smyth,University of California - Irvine,nlp,1.0,1.0,2013
 Padhraic Smyth,University of California - Irvine,theory,1.0,0.5,2013
 Padhraic Smyth,University of California - Irvine,mlmining,1.0,1.0,1990
@@ -2718,7 +2717,7 @@ Margaret Martonosi,Princeton University,arch,1.0,0.5,2009
 Margaret Martonosi,Princeton University,arch,1.0,0.5,2010
 Margaret Martonosi,Princeton University,arch,2.0,2.0,2011
 Margaret Martonosi,Princeton University,arch,1.0,1.0,2014
-Margaret Martonosi,Princeton University,arch,5.0,5.0,2015
+Margaret Martonosi,Princeton University,arch,5.0,4.5,2015
 Margaret Martonosi,Princeton University,arch,1.0,0.5,2016
 Margaret Martonosi,Princeton University,networks,1.0,1.0,2015
 Carolyn Penstein Rosé,Carnegie Mellon University,hci,2.0,2.0,2006
@@ -5041,7 +5040,7 @@ Kevin Fu,University of Michigan,arch,1.0,1.0,2011
 Kevin Fu,University of Michigan,arch,1.0,1.0,2015
 Kevin Fu,University of Michigan,networks,1.0,0.333333333333,2011
 Eric A. Brewer,University of California - Berkeley,metrics,1.0,1.0,1998
-Eric A. Brewer,University of California - Berkeley,theory,1.0,1.0,1994
+Eric A. Brewer,University of California - Berkeley,theory,1.0,0.5,1994
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.5,1997
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.333333333333,2000
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.5,2001
@@ -5944,8 +5943,8 @@ Victor Shoup,New York University,security,1.0,1.0,1998
 Victor Shoup,New York University,security,1.0,1.0,1999
 Victor Shoup,New York University,security,1.0,0.333333333333,2006
 Victor Shoup,New York University,security,1.0,1.0,2009
-Shyhtsun Felix Wu,University of California - Davis,security,1.0,0.5,2005
-Shyhtsun Felix Wu,University of California - Davis,arch,1.0,0.5,2006
+Shyhtsun Felix Wu,University of California - Davis,security,1.0,0.333333333333,2005
+Shyhtsun Felix Wu,University of California - Davis,arch,1.0,0.333333333333,2006
 Shyhtsun Felix Wu,University of California - Davis,networks,1.0,1.0,2002
 Shyhtsun Felix Wu,University of California - Davis,networks,1.0,0.5,2008
 Azer Bestavros,Boston University,metrics,1.0,0.5,1996
@@ -9041,8 +9040,8 @@ Matthew K. Farrens,University of California - Davis,arch,3.0,3.0,1992
 Matthew K. Farrens,University of California - Davis,arch,2.0,2.0,1993
 Matthew K. Farrens,University of California - Davis,arch,1.0,1.0,1994
 Matthew K. Farrens,University of California - Davis,arch,1.0,1.0,1995
-Matthew K. Farrens,University of California - Davis,arch,1.0,0.5,1999
-Matthew K. Farrens,University of California - Davis,arch,2.0,1.5,2000
+Matthew K. Farrens,University of California - Davis,arch,1.0,0.333333333333,1999
+Matthew K. Farrens,University of California - Davis,arch,2.0,1.33333333333,2000
 Matthew K. Farrens,University of California - Davis,arch,1.0,1.0,2011
 C. Karen Liu,Georgia Institute of Technology,graphics,2.0,1.0,2002
 C. Karen Liu,Georgia Institute of Technology,graphics,1.0,0.5,2005
@@ -11676,7 +11675,7 @@ John Kubiatowicz,University of California - Berkeley,arch,1.0,0.5,1992
 John Kubiatowicz,University of California - Berkeley,arch,1.0,0.333333333333,1995
 John Kubiatowicz,University of California - Berkeley,arch,1.0,0.5,1996
 John Kubiatowicz,University of California - Berkeley,arch,1.0,0.166666666667,2000
-John Kubiatowicz,University of California - Berkeley,arch,1.0,0.5,2003
+John Kubiatowicz,University of California - Berkeley,arch,1.0,0.333333333333,2003
 John Kubiatowicz,University of California - Berkeley,arch,1.0,1.0,2006
 John Kubiatowicz,University of California - Berkeley,arch,1.0,1.0,2008
 John Kubiatowicz,University of California - Berkeley,arch,1.0,1.0,2009
@@ -11799,6 +11798,23 @@ Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1.0,0.5,2008
 Sriram Sankaranarayanan,University of Colorado Boulder,softeng,1.0,0.5,2013
 Tamara Broderick,Massachusetts Institute of Technology,mlmining,2.0,0.833333333333,2013
 Tamara Broderick,Massachusetts Institute of Technology,mlmining,1.0,0.5,2015
+Frederic T. Chong,University of Chicago,theory,1.0,0.5,1994
+Frederic T. Chong,University of Chicago,proglang,1.0,0.333333333333,2011
+Frederic T. Chong,University of Chicago,security,1.0,0.333333333333,2005
+Frederic T. Chong,University of Chicago,arch,1.0,1.0,1994
+Frederic T. Chong,University of Chicago,arch,1.0,0.333333333333,1998
+Frederic T. Chong,University of Chicago,arch,1.0,0.333333333333,1999
+Frederic T. Chong,University of Chicago,arch,1.0,0.333333333333,2000
+Frederic T. Chong,University of Chicago,arch,1.0,0.333333333333,2003
+Frederic T. Chong,University of Chicago,arch,2.0,2.0,2004
+Frederic T. Chong,University of Chicago,arch,2.0,1.33333333333,2006
+Frederic T. Chong,University of Chicago,arch,1.0,0.5,2008
+Frederic T. Chong,University of Chicago,arch,3.0,1.5,2009
+Frederic T. Chong,University of Chicago,arch,1.0,1.0,2010
+Frederic T. Chong,University of Chicago,arch,2.0,0.75,2011
+Frederic T. Chong,University of Chicago,arch,2.0,1.33333333333,2013
+Frederic T. Chong,University of Chicago,arch,1.0,0.25,2014
+Frederic T. Chong,University of Chicago,arch,1.0,0.5,2015
 Tevfik Bultan,University of California - Santa Barbara,proglang,1.0,1.0,2012
 Tevfik Bultan,University of California - Santa Barbara,web,1.0,0.5,2003
 Tevfik Bultan,University of California - Santa Barbara,web,1.0,0.5,2004
@@ -12310,11 +12326,11 @@ Stefanie Tellex,Brown University,robotics,1.0,0.5,2013
 Stefanie Tellex,Brown University,robotics,3.0,1.33333333333,2014
 Stefanie Tellex,Brown University,robotics,1.0,0.5,2015
 Mark Oskin,University of Washington,proglang,1.0,0.5,2014
-Mark Oskin,University of Washington,arch,1.0,0.5,1998
-Mark Oskin,University of Washington,arch,1.0,0.5,1999
-Mark Oskin,University of Washington,arch,1.0,0.5,2000
+Mark Oskin,University of Washington,arch,1.0,0.333333333333,1998
+Mark Oskin,University of Washington,arch,1.0,0.333333333333,1999
+Mark Oskin,University of Washington,arch,1.0,0.333333333333,2000
 Mark Oskin,University of Washington,arch,1.0,1.0,2002
-Mark Oskin,University of Washington,arch,2.0,1.0,2003
+Mark Oskin,University of Washington,arch,2.0,0.833333333333,2003
 Mark Oskin,University of Washington,arch,1.0,1.0,2005
 Mark Oskin,University of Washington,arch,1.0,0.5,2006
 Mark Oskin,University of Washington,arch,1.0,0.5,2007
@@ -16646,9 +16662,9 @@ Paul S. Rosenbloom,University of Southern California,ai,1.0,1.0,1991
 Paul S. Rosenbloom,University of Southern California,ai,2.0,1.5,1993
 Paul S. Rosenbloom,University of Southern California,ai,2.0,1.0,1995
 Ryan Kastner,University of California - San Diego,security,1.0,0.5,2007
-Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2011
-Ryan Kastner,University of California - San Diego,arch,1.0,0.5,2013
-Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2014
+Ryan Kastner,University of California - San Diego,arch,1.0,0.25,2011
+Ryan Kastner,University of California - San Diego,arch,1.0,0.333333333333,2013
+Ryan Kastner,University of California - San Diego,arch,1.0,0.25,2014
 Paul Valiant,Brown University,theory,1.0,0.5,2005
 Paul Valiant,Brown University,theory,1.0,0.333333333333,2007
 Paul Valiant,Brown University,theory,1.0,1.0,2008
@@ -17195,7 +17211,7 @@ Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,0.2,1993
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,1.0,1996
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,2.0,1.0,1999
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,1.0,2003
-Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,1.0,2008
+Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,0.5,2008
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,1.0,2009
 Sanjeev Arora,Princeton University,theory,1.0,0.5,1990
 Sanjeev Arora,Princeton University,theory,2.0,1.33333333333,1992
@@ -18930,31 +18946,31 @@ Vijaya Ramachandran,University of Texas - Austin,networks,1.0,1.0,2004
 Minaxi Gupta,Indiana University,metrics,1.0,1.0,2006
 Minaxi Gupta,Indiana University,metrics,1.0,1.0,2010
 Minaxi Gupta,Indiana University,networks,2.0,1.5,2010
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2002
-Fei Sha,University of Southern California,mlmining,2.0,0.833333333333,2004
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2005
-Fei Sha,University of Southern California,mlmining,2.0,0.833333333333,2006
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2007
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2008
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2009
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2010
-Fei Sha,University of Southern California,mlmining,2.0,1.0,2011
-Fei Sha,University of Southern California,mlmining,3.0,2.0,2012
-Fei Sha,University of Southern California,mlmining,2.0,1.5,2013
-Fei Sha,University of Southern California,mlmining,4.0,3.0,2014
-Fei Sha,University of Southern California,mlmining,1.0,0.5,2015
-Fei Sha,University of Southern California,ai,1.0,1.0,2012
-Fei Sha,University of Southern California,ai,1.0,1.0,2014
-Fei Sha,University of Southern California,ai,1.0,1.0,2016
-Fei Sha,University of Southern California,database,1.0,1.0,1996
-Fei Sha,University of Southern California,database,1.0,1.0,1999
-Fei Sha,University of Southern California,database,1.0,1.0,2009
-Fei Sha,University of Southern California,mobile,1.0,0.5,2012
-Fei Sha,University of Southern California,vision,1.0,0.5,2007
-Fei Sha,University of Southern California,vision,1.0,0.5,2011
-Fei Sha,University of Southern California,vision,1.0,0.5,2012
-Fei Sha,University of Southern California,vision,1.0,0.5,2013
-Fei Sha,University of Southern California,vision,1.0,0.5,2014
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2002
+Fei Sha,University of California - Los Angeles,mlmining,2.0,0.833333333333,2004
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2005
+Fei Sha,University of California - Los Angeles,mlmining,2.0,0.833333333333,2006
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2007
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2008
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2009
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2010
+Fei Sha,University of California - Los Angeles,mlmining,2.0,1.0,2011
+Fei Sha,University of California - Los Angeles,mlmining,3.0,2.0,2012
+Fei Sha,University of California - Los Angeles,mlmining,2.0,1.5,2013
+Fei Sha,University of California - Los Angeles,mlmining,4.0,3.0,2014
+Fei Sha,University of California - Los Angeles,mlmining,1.0,0.5,2015
+Fei Sha,University of California - Los Angeles,ai,1.0,1.0,2012
+Fei Sha,University of California - Los Angeles,ai,1.0,1.0,2014
+Fei Sha,University of California - Los Angeles,ai,1.0,1.0,2016
+Fei Sha,University of California - Los Angeles,database,1.0,1.0,1996
+Fei Sha,University of California - Los Angeles,database,1.0,1.0,1999
+Fei Sha,University of California - Los Angeles,database,1.0,1.0,2009
+Fei Sha,University of California - Los Angeles,mobile,1.0,0.5,2012
+Fei Sha,University of California - Los Angeles,vision,1.0,0.5,2007
+Fei Sha,University of California - Los Angeles,vision,1.0,0.5,2011
+Fei Sha,University of California - Los Angeles,vision,1.0,0.5,2012
+Fei Sha,University of California - Los Angeles,vision,1.0,0.5,2013
+Fei Sha,University of California - Los Angeles,vision,1.0,0.5,2014
 Maneesh Agrawala,Stanford University,graphics,1.0,1.0,1996
 Maneesh Agrawala,Stanford University,graphics,1.0,0.5,1997
 Maneesh Agrawala,Stanford University,graphics,1.0,0.5,2000
@@ -20084,11 +20100,11 @@ Pranjal Awasthi,Rutgers - State University of New Jersey - New Brunswick,ai,1.0,
 Pranjal Awasthi,Rutgers - State University of New Jersey - New Brunswick,database,1.0,1.0,2007
 Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.5,2007
 Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.5,2009
-Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.5,2011
+Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.333333333333,2011
 Ben Hardekopf,University of California - Santa Barbara,security,1.0,1.0,2011
 Ben Hardekopf,University of California - Santa Barbara,softeng,1.0,1.0,2014
-Ben Hardekopf,University of California - Santa Barbara,arch,1.0,0.333333333333,2011
-Ben Hardekopf,University of California - Santa Barbara,arch,1.0,0.333333333333,2014
+Ben Hardekopf,University of California - Santa Barbara,arch,1.0,0.25,2011
+Ben Hardekopf,University of California - Santa Barbara,arch,1.0,0.25,2014
 Matei Zaharia,Massachusetts Institute of Technology,opsys,1.0,0.25,2008
 Matei Zaharia,Massachusetts Institute of Technology,opsys,2.0,0.833333333333,2013
 Matei Zaharia,Massachusetts Institute of Technology,opsys,1.0,0.5,2015
@@ -20591,9 +20607,9 @@ Thomas A. Funkhouser,Princeton University,hci,1.0,1.0,2014
 Thomas A. Funkhouser,Princeton University,database,1.0,1.0,1996
 Thomas A. Funkhouser,Princeton University,vision,1.0,1.0,2009
 Thomas A. Funkhouser,Princeton University,vision,1.0,0.5,2015
-Timothy Sherwood,University of California - Santa Barbara,proglang,1.0,0.5,2011
+Timothy Sherwood,University of California - Santa Barbara,proglang,1.0,0.333333333333,2011
 Timothy Sherwood,University of California - Santa Barbara,security,1.0,0.5,2007
-Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.5,1998
+Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.333333333333,1998
 Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.5,2000
 Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.5,2001
 Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.5,2002
@@ -20601,11 +20617,11 @@ Timothy Sherwood,University of California - Santa Barbara,arch,2.0,1.0,2003
 Timothy Sherwood,University of California - Santa Barbara,arch,1.0,1.0,2005
 Timothy Sherwood,University of California - Santa Barbara,arch,2.0,2.0,2006
 Timothy Sherwood,University of California - Santa Barbara,arch,2.0,2.0,2008
-Timothy Sherwood,University of California - Santa Barbara,arch,3.0,3.0,2009
-Timothy Sherwood,University of California - Santa Barbara,arch,3.0,2.33333333333,2011
+Timothy Sherwood,University of California - Santa Barbara,arch,3.0,1.5,2009
+Timothy Sherwood,University of California - Santa Barbara,arch,3.0,1.75,2011
 Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.5,2012
-Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.5,2013
-Timothy Sherwood,University of California - Santa Barbara,arch,2.0,1.33333333333,2014
+Timothy Sherwood,University of California - Santa Barbara,arch,1.0,0.333333333333,2013
+Timothy Sherwood,University of California - Santa Barbara,arch,2.0,1.25,2014
 Timothy Sherwood,University of California - Santa Barbara,networks,1.0,0.5,2004
 Elizabeth Bradley,University of Colorado Boulder,mlmining,1.0,1.0,1998
 Elizabeth Bradley,University of Colorado Boulder,ai,1.0,1.0,1999
@@ -20662,7 +20678,7 @@ Zhendong Su,University of California - Davis,proglang,3.0,3.0,2013
 Zhendong Su,University of California - Davis,proglang,2.0,2.0,2014
 Zhendong Su,University of California - Davis,proglang,2.0,1.5,2015
 Zhendong Su,University of California - Davis,mobile,1.0,1.0,2013
-Zhendong Su,University of California - Davis,security,1.0,0.5,2005
+Zhendong Su,University of California - Davis,security,1.0,0.333333333333,2005
 Zhendong Su,University of California - Davis,security,1.0,0.5,2006
 Zhendong Su,University of California - Davis,security,1.0,1.0,2011
 Zhendong Su,University of California - Davis,security,1.0,1.0,2014
@@ -20676,7 +20692,7 @@ Zhendong Su,University of California - Davis,softeng,2.0,2.0,2013
 Zhendong Su,University of California - Davis,softeng,1.0,0.5,2014
 Zhendong Su,University of California - Davis,softeng,1.0,1.0,2015
 Zhendong Su,University of California - Davis,softeng,1.0,1.0,2016
-Zhendong Su,University of California - Davis,arch,1.0,0.5,2006
+Zhendong Su,University of California - Davis,arch,1.0,0.333333333333,2006
 David R. Cheriton,Stanford University,mlmining,1.0,1.0,2007
 David R. Cheriton,Stanford University,opsys,1.0,1.0,1993
 David R. Cheriton,Stanford University,opsys,2.0,2.0,1994
