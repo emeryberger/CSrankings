@@ -371,15 +371,15 @@ Tao Xie,University of Illinois at Urbana-Champaign,softeng,6.0,6.0,2012
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,4.0,4.0,2013
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2016
 Tao Xie,University of Illinois at Urbana-Champaign,arch,1.0,1.0,2014
-Shubhangi Saraf,Rutgers - State University of New Jersey - New Brunswick,theory,2.0,1.33333333333,2009
+Shubhangi Saraf,Rutgers - State University of New Jersey - New Brunswick,theory,2.0,1.25,2009
 Shubhangi Saraf,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,0.5,2010
 Shubhangi Saraf,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,2.0,2011
 Shubhangi Saraf,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,0.5,2013
 Shubhangi Saraf,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,2.5,2014
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,1.0,2006
-Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,0.5,2008
-Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,2.33333333333,2009
-Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,1.33333333333,2010
+Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,0.333333333333,2008
+Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,2.25,2009
+Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,1.25,2010
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,2.0,1.5,2011
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,3.0,2.0,2013
 Swastik Kopparty,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,1.0,2016
@@ -774,14 +774,14 @@ Patrick Jaillet,Massachusetts Institute of Technology,ai,1.0,1.0,2014
 Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,2.0,2015
 Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,2.0,2016
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,1.0,0.5,1990
-Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,1.0,0.5,1991
-Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,1.5,1992
+Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,1.0,0.333333333333,1991
+Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,0.833333333333,1992
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,1.5,1994
-Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,1.33333333333,1995
+Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,0.833333333333,1995
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,1.5,1996
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,1.0,0.5,1998
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,1.0,1.0,1999
-Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,0.833333333333,2000
+Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,0.75,2000
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,1.0,0.5,2001
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,1.0,2002
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,1.0,2003
@@ -1841,7 +1841,7 @@ David R. Karger,Massachusetts Institute of Technology,hci,2.0,2.0,2014
 David R. Karger,Massachusetts Institute of Technology,hci,1.0,0.5,2015
 David R. Karger,Massachusetts Institute of Technology,theory,1.0,0.5,1991
 David R. Karger,Massachusetts Institute of Technology,theory,3.0,2.5,1993
-David R. Karger,Massachusetts Institute of Technology,theory,5.0,4.5,1994
+David R. Karger,Massachusetts Institute of Technology,theory,5.0,4.0,1994
 David R. Karger,Massachusetts Institute of Technology,theory,3.0,2.5,1995
 David R. Karger,Massachusetts Institute of Technology,theory,2.0,2.0,1996
 David R. Karger,Massachusetts Institute of Technology,theory,4.0,3.33333333333,1997
@@ -2087,8 +2087,8 @@ Mihir Bellare,University of California - San Diego,theory,3.0,1.16666666667,1990
 Mihir Bellare,University of California - San Diego,theory,1.0,0.333333333333,1991
 Mihir Bellare,University of California - San Diego,theory,1.0,1.0,1992
 Mihir Bellare,University of California - San Diego,theory,1.0,0.5,1993
-Mihir Bellare,University of California - San Diego,theory,3.0,2.5,1994
-Mihir Bellare,University of California - San Diego,theory,5.0,4.0,1995
+Mihir Bellare,University of California - San Diego,theory,3.0,2.0,1994
+Mihir Bellare,University of California - San Diego,theory,5.0,3.0,1995
 Mihir Bellare,University of California - San Diego,theory,1.0,0.5,1996
 Mihir Bellare,University of California - San Diego,theory,2.0,1.0,1997
 Mihir Bellare,University of California - San Diego,theory,1.0,0.5,1998
@@ -2207,10 +2207,10 @@ James Aspnes,Yale University,theory,1.0,1.0,2008
 James Aspnes,Yale University,theory,1.0,1.0,2009
 James Aspnes,Yale University,theory,1.0,1.0,2011
 James Aspnes,Yale University,theory,1.0,0.5,2014
-Luca Trevisan,Stanford University,theory,1.0,1.0,1996
+Luca Trevisan,Stanford University,theory,1.0,0.5,1996
 Luca Trevisan,Stanford University,theory,2.0,2.0,1997
-Luca Trevisan,Stanford University,theory,3.0,2.5,1998
-Luca Trevisan,Stanford University,theory,2.0,1.5,1999
+Luca Trevisan,Stanford University,theory,3.0,1.83333333333,1998
+Luca Trevisan,Stanford University,theory,2.0,1.33333333333,1999
 Luca Trevisan,Stanford University,theory,4.0,3.0,2000
 Luca Trevisan,Stanford University,theory,2.0,2.0,2001
 Luca Trevisan,Stanford University,theory,1.0,1.0,2002
@@ -2286,11 +2286,11 @@ Rong Ge,Duke University,mlmining,1.0,0.5,2014
 Rong Ge,Duke University,mlmining,2.0,2.0,2015
 Salil P. Vadhan,Harvard University,theory,1.0,0.5,1997
 Salil P. Vadhan,Harvard University,theory,3.0,1.83333333333,1998
-Salil P. Vadhan,Harvard University,theory,4.0,2.83333333333,1999
+Salil P. Vadhan,Harvard University,theory,4.0,2.66666666667,1999
 Salil P. Vadhan,Harvard University,theory,2.0,1.5,2000
 Salil P. Vadhan,Harvard University,theory,2.0,2.0,2002
-Salil P. Vadhan,Harvard University,theory,3.0,2.5,2003
-Salil P. Vadhan,Harvard University,theory,3.0,2.5,2004
+Salil P. Vadhan,Harvard University,theory,3.0,2.0,2003
+Salil P. Vadhan,Harvard University,theory,3.0,2.0,2004
 Salil P. Vadhan,Harvard University,theory,1.0,1.0,2005
 Salil P. Vadhan,Harvard University,theory,4.0,2.83333333333,2006
 Salil P. Vadhan,Harvard University,theory,2.0,0.833333333333,2008
@@ -2847,11 +2847,11 @@ Salvatore J. Stolfo,Columbia University,arch,1.0,0.5,2013
 Jon M. Kleinberg,Cornell University,hci,1.0,0.333333333333,2010
 Jon M. Kleinberg,Cornell University,theory,3.0,2.5,1994
 Jon M. Kleinberg,Cornell University,theory,2.0,1.0,1995
-Jon M. Kleinberg,Cornell University,theory,7.0,6.0,1996
+Jon M. Kleinberg,Cornell University,theory,7.0,5.5,1996
 Jon M. Kleinberg,Cornell University,theory,3.0,2.0,1997
 Jon M. Kleinberg,Cornell University,theory,3.0,2.5,1998
 Jon M. Kleinberg,Cornell University,theory,4.0,2.33333333333,1999
-Jon M. Kleinberg,Cornell University,theory,6.0,4.08333333333,2000
+Jon M. Kleinberg,Cornell University,theory,6.0,4.0,2000
 Jon M. Kleinberg,Cornell University,theory,2.0,1.0,2001
 Jon M. Kleinberg,Cornell University,theory,2.0,0.833333333333,2002
 Jon M. Kleinberg,Cornell University,theory,4.0,3.25,2004
@@ -3354,7 +3354,7 @@ David Zuckerman,University of Texas - Austin,theory,1.0,1.0,2003
 David Zuckerman,University of Texas - Austin,theory,1.0,1.0,2004
 David Zuckerman,University of Texas - Austin,theory,2.0,1.33333333333,2006
 David Zuckerman,University of Texas - Austin,theory,2.0,1.5,2008
-David Zuckerman,University of Texas - Austin,theory,2.0,0.833333333333,2010
+David Zuckerman,University of Texas - Austin,theory,2.0,0.75,2010
 David Zuckerman,University of Texas - Austin,theory,2.0,1.0,2011
 David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,2012
 David Zuckerman,University of Texas - Austin,theory,1.0,1.0,2014
@@ -3862,7 +3862,7 @@ Anna R. Karlin,University of Washington,theory,4.0,3.5,1992
 Anna R. Karlin,University of Washington,theory,2.0,1.5,1994
 Anna R. Karlin,University of Washington,theory,1.0,1.0,1995
 Anna R. Karlin,University of Washington,theory,1.0,1.0,1996
-Anna R. Karlin,University of Washington,theory,1.0,0.333333333333,2000
+Anna R. Karlin,University of Washington,theory,1.0,0.25,2000
 Anna R. Karlin,University of Washington,theory,4.0,3.0,2001
 Anna R. Karlin,University of Washington,theory,1.0,0.5,2002
 Anna R. Karlin,University of Washington,theory,2.0,0.75,2005
@@ -4344,11 +4344,11 @@ Amy Greenwald,Brown University,mlmining,1.0,0.5,2005
 Amy Greenwald,Brown University,mlmining,1.0,1.0,2008
 Amy Greenwald,Brown University,ai,1.0,1.0,1999
 Amy Greenwald,Brown University,ai,1.0,1.0,2007
-Venkatesan Guruswami,Carnegie Mellon University,theory,2.0,1.5,1998
+Venkatesan Guruswami,Carnegie Mellon University,theory,2.0,0.833333333333,1998
 Venkatesan Guruswami,Carnegie Mellon University,theory,1.0,0.25,1999
-Venkatesan Guruswami,Carnegie Mellon University,theory,5.0,3.08333333333,2000
+Venkatesan Guruswami,Carnegie Mellon University,theory,5.0,1.91666666667,2000
 Venkatesan Guruswami,Carnegie Mellon University,theory,1.0,0.5,2001
-Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,2.5,2002
+Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,2.0,2002
 Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,1.33333333333,2003
 Venkatesan Guruswami,Carnegie Mellon University,theory,1.0,1.0,2004
 Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,1.75,2005
@@ -4361,7 +4361,7 @@ Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,3.0,2011
 Venkatesan Guruswami,Carnegie Mellon University,theory,5.0,3.83333333333,2012
 Venkatesan Guruswami,Carnegie Mellon University,theory,6.0,5.5,2013
 Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,3.0,2014
-Venkatesan Guruswami,Carnegie Mellon University,theory,2.0,2.0,2015
+Venkatesan Guruswami,Carnegie Mellon University,theory,2.0,1.5,2015
 Venkatesan Guruswami,Carnegie Mellon University,theory,3.0,3.0,2016
 Venkatesan Guruswami,Carnegie Mellon University,web,1.0,0.5,2013
 Kurt VanLehn,Arizona State University,mlmining,1.0,1.0,1993
@@ -6477,7 +6477,7 @@ Amit Sahai,University of California - Los Angeles,theory,1.0,1.0,1996
 Amit Sahai,University of California - Los Angeles,theory,1.0,0.5,1997
 Amit Sahai,University of California - Los Angeles,theory,3.0,1.83333333333,1998
 Amit Sahai,University of California - Los Angeles,theory,2.0,1.33333333333,1999
-Amit Sahai,University of California - Los Angeles,theory,3.0,1.08333333333,2000
+Amit Sahai,University of California - Los Angeles,theory,3.0,0.916666666667,2000
 Amit Sahai,University of California - Los Angeles,theory,4.0,1.58333333333,2002
 Amit Sahai,University of California - Los Angeles,theory,4.0,2.33333333333,2004
 Amit Sahai,University of California - Los Angeles,theory,1.0,0.5,2005
@@ -6525,7 +6525,7 @@ T. M. Murali,Virginia Polytechnic Institute and State University,database,1.0,0.
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,1.33333333333,1990
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,1.0,1992
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,1.0,1993
-Umesh V. Vazirani,University of California - Berkeley,theory,4.0,2.5,1994
+Umesh V. Vazirani,University of California - Berkeley,theory,4.0,2.33333333333,1994
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.5,1998
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,1.5,1999
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,1.5,2000
@@ -9596,7 +9596,7 @@ Sven Koenig,University of Southern California,robotics,1.0,1.0,2014
 Grant Schoenebeck,University of Michigan,theory,1.0,0.333333333333,2007
 Grant Schoenebeck,University of Michigan,theory,1.0,1.0,2008
 Grant Schoenebeck,University of Michigan,theory,1.0,0.333333333333,2009
-Grant Schoenebeck,University of Michigan,theory,1.0,0.333333333333,2010
+Grant Schoenebeck,University of Michigan,theory,1.0,0.25,2010
 Grant Schoenebeck,University of Michigan,theory,1.0,0.333333333333,2014
 Grant Schoenebeck,University of Michigan,ai,1.0,0.5,2004
 Grant Schoenebeck,University of Michigan,web,1.0,1.0,2013
@@ -12014,6 +12014,31 @@ Yuanyuan Zhou,University of California - San Diego,networks,2.0,0.666666666667,2
 Eugene H. Spafford,Purdue University,security,1.0,1.0,1994
 Eugene H. Spafford,Purdue University,security,2.0,2.0,1997
 Eugene H. Spafford,Purdue University,security,1.0,0.5,2005
+Madhu Sudan,Harvard University,theory,1.0,1.0,1990
+Madhu Sudan,Harvard University,theory,1.0,0.333333333333,1991
+Madhu Sudan,Harvard University,theory,3.0,1.16666666667,1992
+Madhu Sudan,Harvard University,theory,7.0,4.33333333333,1994
+Madhu Sudan,Harvard University,theory,5.0,3.5,1995
+Madhu Sudan,Harvard University,theory,3.0,2.0,1996
+Madhu Sudan,Harvard University,theory,2.0,1.0,1997
+Madhu Sudan,Harvard University,theory,3.0,1.33333333333,1998
+Madhu Sudan,Harvard University,theory,3.0,1.83333333333,1999
+Madhu Sudan,Harvard University,theory,4.0,1.58333333333,2000
+Madhu Sudan,Harvard University,theory,1.0,1.0,2001
+Madhu Sudan,Harvard University,theory,2.0,1.5,2002
+Madhu Sudan,Harvard University,theory,2.0,1.5,2003
+Madhu Sudan,Harvard University,theory,1.0,0.5,2004
+Madhu Sudan,Harvard University,theory,2.0,1.5,2005
+Madhu Sudan,Harvard University,theory,1.0,1.0,2007
+Madhu Sudan,Harvard University,theory,3.0,2.33333333333,2008
+Madhu Sudan,Harvard University,theory,1.0,0.25,2009
+Madhu Sudan,Harvard University,theory,1.0,0.25,2010
+Madhu Sudan,Harvard University,theory,2.0,1.5,2011
+Madhu Sudan,Harvard University,theory,1.0,1.0,2012
+Madhu Sudan,Harvard University,theory,2.0,1.5,2014
+Madhu Sudan,Harvard University,theory,3.0,2.0,2015
+Madhu Sudan,Harvard University,theory,2.0,2.0,2016
+Madhu Sudan,Harvard University,networks,1.0,1.0,1997
 Keith Marzullo,University of California - San Diego,opsys,1.0,1.0,2008
 Keith Marzullo,University of California - San Diego,networks,1.0,0.5,2001
 Viktor K. Prasanna,University of Southern California,ai,1.0,1.0,2015
@@ -13397,7 +13422,7 @@ Todd D. Millstein,University of California - Los Angeles,networks,1.0,0.5,2011
 Todd D. Millstein,University of California - Los Angeles,networks,2.0,1.0,2015
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,1.0,1990
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,2.0,0.75,1991
-Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,4.0,3.0,1992
+Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,4.0,2.83333333333,1992
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,1.0,1993
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,1.0,1.0,1994
 Mario Szegedy,Rutgers - State University of New Jersey - New Brunswick,theory,2.0,2.0,1996
@@ -13814,7 +13839,7 @@ Avrim Blum,Carnegie Mellon University,theory,3.0,3.0,1990
 Avrim Blum,Carnegie Mellon University,theory,2.0,1.5,1991
 Avrim Blum,Carnegie Mellon University,theory,2.0,1.5,1992
 Avrim Blum,Carnegie Mellon University,theory,2.0,2.0,1993
-Avrim Blum,Carnegie Mellon University,theory,2.0,1.33333333333,1994
+Avrim Blum,Carnegie Mellon University,theory,2.0,0.833333333333,1994
 Avrim Blum,Carnegie Mellon University,theory,2.0,1.0,1995
 Avrim Blum,Carnegie Mellon University,theory,3.0,1.5,1996
 Avrim Blum,Carnegie Mellon University,theory,1.0,1.0,1997
@@ -13930,7 +13955,7 @@ Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,th
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.5,2006
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.25,2012
 Martin Farach-Colton,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.5,2014
-Elena Grigorescu,Purdue University,theory,1.0,0.5,2008
+Elena Grigorescu,Purdue University,theory,1.0,0.333333333333,2008
 Elena Grigorescu,Purdue University,theory,1.0,0.5,2009
 Elena Grigorescu,Purdue University,theory,1.0,1.0,2010
 Elena Grigorescu,Purdue University,theory,1.0,0.5,2012
@@ -14064,7 +14089,7 @@ Christos H. Papadimitriou,University of California - Berkeley,theory,5.0,3.83333
 Christos H. Papadimitriou,University of California - Berkeley,theory,2.0,2.0,1991
 Christos H. Papadimitriou,University of California - Berkeley,theory,1.0,0.333333333333,1992
 Christos H. Papadimitriou,University of California - Berkeley,theory,1.0,0.5,1993
-Christos H. Papadimitriou,University of California - Berkeley,theory,3.0,2.5,1994
+Christos H. Papadimitriou,University of California - Berkeley,theory,3.0,2.0,1994
 Christos H. Papadimitriou,University of California - Berkeley,theory,1.0,1.0,1995
 Christos H. Papadimitriou,University of California - Berkeley,theory,3.0,2.0,1998
 Christos H. Papadimitriou,University of California - Berkeley,theory,1.0,0.5,1999
@@ -14369,7 +14394,7 @@ Haryadi S. Gunawi,University of Chicago,arch,1.0,0.5,2016
 Haryadi S. Gunawi,University of Chicago,networks,1.0,0.2,2011
 Daniele Micciancio,University of California - San Diego,theory,1.0,1.0,1997
 Daniele Micciancio,University of California - San Diego,theory,2.0,1.5,1998
-Daniele Micciancio,University of California - San Diego,theory,1.0,1.0,1999
+Daniele Micciancio,University of California - San Diego,theory,1.0,0.5,1999
 Daniele Micciancio,University of California - San Diego,theory,2.0,2.0,2002
 Daniele Micciancio,University of California - San Diego,theory,1.0,0.5,2004
 Daniele Micciancio,University of California - San Diego,theory,1.0,1.0,2008
@@ -14436,9 +14461,9 @@ Larry S. Davis,University of Maryland - College Park,vision,6.0,5.0,2011
 Larry S. Davis,University of Maryland - College Park,vision,4.0,4.0,2012
 Larry S. Davis,University of Maryland - College Park,vision,4.0,3.5,2013
 Larry S. Davis,University of Maryland - College Park,vision,4.0,4.0,2015
-Sanjeev Khanna,University of Pennsylvania,theory,1.0,0.5,1994
+Sanjeev Khanna,University of Pennsylvania,theory,1.0,0.333333333333,1994
 Sanjeev Khanna,University of Pennsylvania,theory,2.0,2.0,1996
-Sanjeev Khanna,University of Pennsylvania,theory,2.0,2.0,1997
+Sanjeev Khanna,University of Pennsylvania,theory,2.0,1.5,1997
 Sanjeev Khanna,University of Pennsylvania,theory,3.0,2.5,1998
 Sanjeev Khanna,University of Pennsylvania,theory,5.0,2.0,1999
 Sanjeev Khanna,University of Pennsylvania,theory,4.0,2.83333333333,2000
@@ -14452,10 +14477,10 @@ Sanjeev Khanna,University of Pennsylvania,theory,2.0,0.833333333333,2007
 Sanjeev Khanna,University of Pennsylvania,theory,2.0,1.0,2008
 Sanjeev Khanna,University of Pennsylvania,theory,5.0,4.0,2009
 Sanjeev Khanna,University of Pennsylvania,theory,1.0,1.0,2010
-Sanjeev Khanna,University of Pennsylvania,theory,3.0,2.5,2011
+Sanjeev Khanna,University of Pennsylvania,theory,3.0,2.0,2011
 Sanjeev Khanna,University of Pennsylvania,theory,1.0,1.0,2012
-Sanjeev Khanna,University of Pennsylvania,theory,3.0,2.5,2014
-Sanjeev Khanna,University of Pennsylvania,theory,3.0,3.0,2015
+Sanjeev Khanna,University of Pennsylvania,theory,3.0,2.0,2014
+Sanjeev Khanna,University of Pennsylvania,theory,3.0,2.5,2015
 Sanjeev Khanna,University of Pennsylvania,theory,1.0,1.0,2016
 Sanjeev Khanna,University of Pennsylvania,database,2.0,2.0,2001
 Sanjeev Khanna,University of Pennsylvania,database,2.0,2.0,2002
@@ -16147,7 +16172,7 @@ David L. Dill,Stanford University,arch,1.0,0.5,2001
 Jason D. Hartline,Northwestern University,theory,2.0,1.5,2001
 Jason D. Hartline,Northwestern University,theory,1.0,0.5,2002
 Jason D. Hartline,Northwestern University,theory,1.0,1.0,2003
-Jason D. Hartline,Northwestern University,theory,5.0,3.08333333333,2005
+Jason D. Hartline,Northwestern University,theory,5.0,2.58333333333,2005
 Jason D. Hartline,Northwestern University,theory,1.0,1.0,2006
 Jason D. Hartline,Northwestern University,theory,2.0,1.0,2008
 Jason D. Hartline,Northwestern University,theory,2.0,1.5,2010
@@ -16772,8 +16797,8 @@ Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.5,2010
 Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.5,2013
 Kayvon Fatahalian,Carnegie Mellon University,graphics,2.0,1.5,2014
 Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,1.0,2015
-Richard J. Lipton,Georgia Institute of Technology,theory,1.0,0.5,1991
-Richard J. Lipton,Georgia Institute of Technology,theory,1.0,0.5,1992
+Richard J. Lipton,Georgia Institute of Technology,theory,1.0,0.333333333333,1991
+Richard J. Lipton,Georgia Institute of Technology,theory,1.0,0.333333333333,1992
 Richard J. Lipton,Georgia Institute of Technology,theory,3.0,3.0,1994
 Richard J. Lipton,Georgia Institute of Technology,theory,1.0,1.0,1997
 Richard J. Lipton,Georgia Institute of Technology,theory,1.0,1.0,1999
@@ -17249,12 +17274,12 @@ Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,1.0,2003
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,0.5,2008
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,1.0,2009
 Sanjeev Arora,Princeton University,theory,1.0,0.5,1990
-Sanjeev Arora,Princeton University,theory,2.0,1.5,1992
+Sanjeev Arora,Princeton University,theory,2.0,1.33333333333,1992
 Sanjeev Arora,Princeton University,theory,1.0,0.5,1993
 Sanjeev Arora,Princeton University,theory,1.0,0.5,1994
 Sanjeev Arora,Princeton University,theory,2.0,1.5,1995
 Sanjeev Arora,Princeton University,theory,2.0,2.0,1996
-Sanjeev Arora,Princeton University,theory,2.0,2.0,1997
+Sanjeev Arora,Princeton University,theory,2.0,1.5,1997
 Sanjeev Arora,Princeton University,theory,3.0,1.83333333333,1998
 Sanjeev Arora,Princeton University,theory,2.0,1.5,1999
 Sanjeev Arora,Princeton University,theory,1.0,1.0,2000
@@ -21182,7 +21207,7 @@ Edward D. Lazowska,University of Washington,networks,1.0,0.5,1993
 Zeev Dvir,Princeton University,theory,1.0,1.0,2005
 Zeev Dvir,Princeton University,theory,1.0,1.0,2007
 Zeev Dvir,Princeton University,theory,2.0,2.0,2008
-Zeev Dvir,Princeton University,theory,1.0,0.333333333333,2009
+Zeev Dvir,Princeton University,theory,1.0,0.25,2009
 Zeev Dvir,Princeton University,theory,1.0,1.0,2010
 Zeev Dvir,Princeton University,theory,1.0,0.5,2011
 Zeev Dvir,Princeton University,theory,2.0,1.5,2012
