@@ -1715,6 +1715,10 @@ Andreas Haeberlen,University of Pennsylvania,networks,1.0,1.0,2008
 Andreas Haeberlen,University of Pennsylvania,networks,1.0,0.5,2009
 Andreas Haeberlen,University of Pennsylvania,networks,2.0,1.0,2012
 Andreas Haeberlen,University of Pennsylvania,networks,1.0,0.5,2014
+Antonia Zhai,University of Minnesota - Twin Cities,arch,1.0,0.5,2000
+Antonia Zhai,University of Minnesota - Twin Cities,arch,1.0,0.5,2002
+Antonia Zhai,University of Minnesota - Twin Cities,arch,1.0,1.0,2009
+Antonia Zhai,University of Minnesota - Twin Cities,arch,1.0,1.0,2013
 Lu Wang,Northeastern University,ai,1.0,1.0,2016
 Lu Wang,Northeastern University,database,1.0,1.0,2011
 Lu Wang,Northeastern University,database,1.0,1.0,2013
@@ -1768,7 +1772,7 @@ Ting Chen,University of Southern California,database,1.0,0.333333333333,2008
 Ting Chen,University of Southern California,robotics,1.0,1.0,2015
 Ting Chen,University of Southern California,vision,1.0,0.5,2008
 Maria L. Gini,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2000
-Maria L. Gini,University of Minnesota - Twin Cities,ai,1.0,0.5,2005
+Maria L. Gini,University of Minnesota - Twin Cities,ai,1.0,0.333333333333,2005
 Maria L. Gini,University of Minnesota - Twin Cities,ai,1.0,1.0,2007
 Maria L. Gini,University of Minnesota - Twin Cities,ai,1.0,1.0,2008
 Maria L. Gini,University of Minnesota - Twin Cities,ai,2.0,2.0,2013
@@ -1776,7 +1780,7 @@ Maria L. Gini,University of Minnesota - Twin Cities,ai,2.0,2.0,2015
 Maria L. Gini,University of Minnesota - Twin Cities,ai,1.0,0.5,2016
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,1.0,1992
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,1.0,1994
-Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,0.5,1995
+Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,0.333333333333,1995
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,2.0,2.0,1996
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,1.0,1997
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,0.5,2000
@@ -2587,8 +2591,8 @@ Todd C. Mowry,Carnegie Mellon University,arch,3.0,1.58333333333,1996
 Todd C. Mowry,Carnegie Mellon University,arch,1.0,1.0,1997
 Todd C. Mowry,Carnegie Mellon University,arch,1.0,1.0,1998
 Todd C. Mowry,Carnegie Mellon University,arch,1.0,1.0,1999
-Todd C. Mowry,Carnegie Mellon University,arch,1.0,1.0,2000
-Todd C. Mowry,Carnegie Mellon University,arch,1.0,1.0,2002
+Todd C. Mowry,Carnegie Mellon University,arch,1.0,0.5,2000
+Todd C. Mowry,Carnegie Mellon University,arch,1.0,0.5,2002
 Todd C. Mowry,Carnegie Mellon University,arch,1.0,1.0,2006
 Todd C. Mowry,Carnegie Mellon University,arch,1.0,0.5,2008
 Todd C. Mowry,Carnegie Mellon University,arch,3.0,3.0,2010
@@ -5850,7 +5854,7 @@ Prashant J. Shenoy,University of Massachusetts - Amherst,metrics,1.0,1.0,1998
 Prashant J. Shenoy,University of Massachusetts - Amherst,metrics,1.0,1.0,2000
 Prashant J. Shenoy,University of Massachusetts - Amherst,metrics,1.0,0.5,2005
 Prashant J. Shenoy,University of Massachusetts - Amherst,ai,1.0,1.0,2009
-Prashant J. Shenoy,University of Massachusetts - Amherst,opsys,1.0,1.0,2000
+Prashant J. Shenoy,University of Massachusetts - Amherst,opsys,1.0,0.5,2000
 Prashant J. Shenoy,University of Massachusetts - Amherst,opsys,1.0,0.5,2002
 Prashant J. Shenoy,University of Massachusetts - Amherst,database,1.0,1.0,1996
 Prashant J. Shenoy,University of Massachusetts - Amherst,database,1.0,1.0,2001
@@ -6470,9 +6474,9 @@ Amit Sahai,University of California - Los Angeles,security,1.0,0.5,2008
 Amit Sahai,University of California - Los Angeles,security,3.0,2.0,2010
 Amit Sahai,University of California - Los Angeles,security,1.0,1.0,2014
 Geoffrey Brown,Indiana University,arch,1.0,1.0,2000
-Michelle Mills Strout,University of Arizona,proglang,1.0,0.333333333333,2003
+Michelle Mills Strout,University of Arizona,proglang,1.0,0.5,2003
 Michelle Mills Strout,University of Arizona,proglang,1.0,1.0,2007
-Michelle Mills Strout,University of Arizona,arch,1.0,0.333333333333,1998
+Michelle Mills Strout,University of Arizona,arch,1.0,0.5,1998
 Luis Rademacher,Ohio State University,theory,2.0,1.0,2006
 Luis Rademacher,Ohio State University,theory,1.0,0.5,2009
 Luis Rademacher,Ohio State University,theory,1.0,1.0,2010
@@ -6644,6 +6648,21 @@ Xifeng Yan,University of California - Santa Barbara,web,1.0,0.5,2016
 Xifeng Yan,University of California - Santa Barbara,security,1.0,0.333333333333,2010
 Xifeng Yan,University of California - Santa Barbara,softeng,1.0,0.5,2005
 Xifeng Yan,University of California - Santa Barbara,networks,1.0,0.5,2012
+Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.5,2011
+Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,1.0,2012
+Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.5,2013
+Haiyi Zhu,University of Minnesota - Twin Cities,hci,3.0,2.5,2014
+Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.333333333333,2016
+Gerhard Fischer,University of Colorado Boulder,hci,2.0,2.0,1990
+Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.5,1991
+Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.0,1994
+Gerhard Fischer,University of Colorado Boulder,hci,1.0,1.0,2008
+Gerhard Fischer,University of Colorado Boulder,ai,2.0,2.0,1990
+Gerhard Fischer,University of Colorado Boulder,ai,1.0,1.0,1991
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,0.5,1991
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,1996
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2000
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2002
 Ramin Zabih,Cornell University,ai,1.0,1.0,1990
 Ramin Zabih,Cornell University,ai,1.0,1.0,1991
 Ramin Zabih,Cornell University,vision,1.0,1.0,1996
@@ -6950,6 +6969,7 @@ Deepak Ganesan,University of Massachusetts - Amherst,networks,2.0,0.833333333333
 Deepak Ganesan,University of Massachusetts - Amherst,networks,1.0,1.0,2014
 Deepak Ganesan,University of Massachusetts - Amherst,networks,1.0,1.0,2015
 Layne T. Watson,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2010
+John V. Carlis,University of Minnesota - Twin Cities,mlmining,1.0,1.0,1998
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,1.0,1.0,1993
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,1.0,1.0,1994
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,1.0,1.0,1995
@@ -7006,6 +7026,8 @@ Russell Schwartz,Carnegie Mellon University,theory,1.0,0.333333333333,2011
 Marty Humphrey,University of Virginia,ai,1.0,1.0,1991
 Marty Humphrey,University of Virginia,ai,1.0,1.0,1993
 Marty Humphrey,University of Virginia,security,1.0,0.5,2000
+Jim Waldo,Harvard University,proglang,1.0,1.0,2006
+Jim Waldo,Harvard University,softeng,1.0,1.0,1997
 Luis von Ahn,Carnegie Mellon University,hci,1.0,0.5,2004
 Luis von Ahn,Carnegie Mellon University,hci,2.0,1.0,2006
 Luis von Ahn,Carnegie Mellon University,hci,2.0,2.0,2009
@@ -7108,7 +7130,7 @@ Zhi-Li Zhang,University of Minnesota - Twin Cities,mobile,1.0,1.0,2012
 Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,1994
 Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,1.0,0.5,1996
 Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,1997
-Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,1.0,1.0,1998
+Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,1.0,0.5,1998
 Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,2.0,1.5,1999
 Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,2.0,2.0,2000
 Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,2.0,2.0,2003
@@ -7795,25 +7817,16 @@ Silvio Micali,Massachusetts Institute of Technology,theory,1.0,1.0,2012
 Silvio Micali,Massachusetts Institute of Technology,theory,1.0,0.5,2013
 Silvio Micali,Massachusetts Institute of Technology,security,1.0,0.5,2001
 Mohammed E. Hoque,University of Rochester,hci,1.0,1.0,2012
-Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
-Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
-Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
-Injong Rhee,North Carolina State University,mobile,1.0,1.0,2005
-Injong Rhee,North Carolina State University,mobile,1.0,1.0,2013
-Injong Rhee,North Carolina State University,networks,1.0,1.0,1998
-Injong Rhee,North Carolina State University,networks,1.0,0.5,1999
-Injong Rhee,North Carolina State University,networks,3.0,2.0,2000
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2001
-Injong Rhee,North Carolina State University,networks,1.0,0.5,2004
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2005
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2006
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2007
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2008
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2009
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2010
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
-Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
-Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1991
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1993
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,2.0,1995
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2003
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2006
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2007
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2008
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2009
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2013
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2015
 Rance Cleaveland,University of Maryland - College Park,proglang,1.0,1.0,1994
 Rance Cleaveland,University of Maryland - College Park,logic,2.0,2.0,1990
 Rance Cleaveland,University of Maryland - College Park,logic,2.0,2.0,1991
@@ -8174,8 +8187,8 @@ Chris Callison-Burch,University of Pennsylvania,nlp,3.0,3.0,2009
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,1.0,2010
 Chris Callison-Burch,University of Pennsylvania,nlp,3.0,2.5,2011
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,0.5,2013
-Jonathan C. L. Liu,University of Florida,networks,2.0,2.0,1995
-Jonathan C. L. Liu,University of Florida,networks,1.0,1.0,1996
+Jonathan C. L. Liu,University of Florida,networks,2.0,1.0,1995
+Jonathan C. L. Liu,University of Florida,networks,1.0,0.5,1996
 Marine Carpuat,University of Maryland - College Park,nlp,1.0,1.0,2004
 Marine Carpuat,University of Maryland - College Park,nlp,1.0,1.0,2005
 Thomas Wahl,Northeastern University,logic,1.0,1.0,2007
@@ -8286,16 +8299,25 @@ Erik Andersen,Cornell University,hci,1.0,0.5,2011
 Erik Andersen,Cornell University,hci,1.0,0.333333333333,2012
 Erik Andersen,Cornell University,hci,1.0,0.5,2013
 Erik Andersen,Cornell University,hci,2.0,1.0,2015
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1991
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1993
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,2.0,1995
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2003
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2006
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2007
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2008
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2009
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2013
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2015
+Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
+Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
+Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
+Injong Rhee,North Carolina State University,mobile,1.0,1.0,2005
+Injong Rhee,North Carolina State University,mobile,1.0,1.0,2013
+Injong Rhee,North Carolina State University,networks,1.0,1.0,1998
+Injong Rhee,North Carolina State University,networks,1.0,0.5,1999
+Injong Rhee,North Carolina State University,networks,3.0,2.0,2000
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2001
+Injong Rhee,North Carolina State University,networks,1.0,0.5,2004
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2005
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2006
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2007
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2008
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2009
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2010
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
+Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
+Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,1996
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,2000
 Steven M. Seitz,University of Washington,graphics,1.0,1.0,2003
@@ -9352,7 +9374,6 @@ Steven Rudich,Carnegie Mellon University,theory,2.0,1.0,1992
 Steven Rudich,Carnegie Mellon University,theory,3.0,1.83333333333,1994
 Steven Rudich,Carnegie Mellon University,theory,1.0,0.333333333333,1997
 Steven Rudich,Carnegie Mellon University,theory,1.0,1.0,2002
-Héctor Corrada Bravo,University of Maryland - College Park,database,1.0,1.0,2007
 Dan Suciu,University of Washington,mlmining,1.0,0.5,2010
 Dan Suciu,University of Washington,ai,1.0,1.0,1999
 Dan Suciu,University of Washington,database,2.0,1.5,1994
@@ -11064,6 +11085,7 @@ Matthew K. Franklin,University of California - Davis,security,1.0,0.5,1999
 Matthew K. Franklin,University of California - Davis,security,1.0,1.0,2000
 Matthew K. Franklin,University of California - Davis,security,2.0,2.0,2001
 Matthew K. Franklin,University of California - Davis,softeng,1.0,1.0,1990
+Daniel F. Keefe,University of Minnesota - Twin Cities,graphics,1.0,0.5,2003
 Anastasios Sidiropoulos,Ohio State University,theory,3.0,1.08333333333,2005
 Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2007
 Anastasios Sidiropoulos,Ohio State University,theory,2.0,1.33333333333,2008
@@ -11477,6 +11499,14 @@ Ronald L. Rivest,Massachusetts Institute of Technology,security,1.0,0.5,2012
 Ronald L. Rivest,Massachusetts Institute of Technology,security,1.0,0.5,2013
 Ronald L. Rivest,Massachusetts Institute of Technology,networks,1.0,1.0,2007
 Ronald L. Rivest,Massachusetts Institute of Technology,networks,1.0,0.5,2013
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,1.0,1.0,1993
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,1.0,1.0,1994
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,2.0,1.0,1995
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,2.0,1.5,1996
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,1.0,0.5,1998
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,1.0,0.5,2007
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,1.0,0.5,2008
+David Hung-Chang Du,University of Minnesota - Twin Cities,networks,1.0,0.5,2009
 Aleksander Madry,Massachusetts Institute of Technology,theory,1.0,1.0,2009
 Aleksander Madry,Massachusetts Institute of Technology,theory,3.0,3.0,2010
 Aleksander Madry,Massachusetts Institute of Technology,theory,2.0,1.33333333333,2011
@@ -11720,7 +11750,7 @@ David Cash,Rutgers - State University of New Jersey - New Brunswick,security,1.0
 Robert Kraut,Carnegie Mellon University,hci,1.0,0.5,2008
 Robert Kraut,Carnegie Mellon University,hci,2.0,1.5,2011
 Robert Kraut,Carnegie Mellon University,hci,2.0,1.5,2012
-Robert Kraut,Carnegie Mellon University,hci,1.0,0.5,2016
+Robert Kraut,Carnegie Mellon University,hci,1.0,0.333333333333,2016
 R. Sekar,State University of New York - Stony Brook,opsys,1.0,1.0,2003
 R. Sekar,State University of New York - Stony Brook,opsys,1.0,0.333333333333,2014
 R. Sekar,State University of New York - Stony Brook,security,1.0,1.0,1999
@@ -11966,8 +11996,7 @@ Ravi Ramamoorthi,University of California - Berkeley,vision,1.0,0.5,2007
 Ravi Ramamoorthi,University of California - Berkeley,vision,2.0,2.0,2011
 Ravi Ramamoorthi,University of California - Berkeley,vision,2.0,1.5,2013
 Ravi Ramamoorthi,University of California - Berkeley,vision,4.0,1.83333333333,2015
-Jim Waldo,Harvard University,proglang,1.0,1.0,2006
-Jim Waldo,Harvard University,softeng,1.0,1.0,1997
+Abhishek Chandra,University of Minnesota - Twin Cities,opsys,1.0,0.5,2000
 Thorsten Joachims,Cornell University,nlp,1.0,1.0,2014
 Thorsten Joachims,Cornell University,nlp,1.0,0.5,2015
 Thorsten Joachims,Cornell University,mlmining,1.0,1.0,1997
@@ -12283,9 +12312,9 @@ Ellen W. Zegura,Georgia Institute of Technology,networks,1.0,1.0,2006
 Ellen W. Zegura,Georgia Institute of Technology,networks,1.0,0.5,2015
 Jeanne Ferrante,University of California - San Diego,proglang,1.0,0.333333333333,1990
 Jeanne Ferrante,University of California - San Diego,proglang,1.0,0.5,1991
-Jeanne Ferrante,University of California - San Diego,proglang,1.0,0.5,1997
-Jeanne Ferrante,University of California - San Diego,proglang,2.0,0.833333333333,2003
-Jeanne Ferrante,University of California - San Diego,arch,1.0,0.333333333333,1998
+Jeanne Ferrante,University of California - San Diego,proglang,1.0,1.0,1997
+Jeanne Ferrante,University of California - San Diego,proglang,2.0,1.5,2003
+Jeanne Ferrante,University of California - San Diego,arch,1.0,0.5,1998
 David J. Crandall,Indiana University,hci,1.0,0.5,2014
 David J. Crandall,Indiana University,hci,2.0,0.833333333333,2015
 David J. Crandall,Indiana University,hci,1.0,0.5,2016
@@ -13571,7 +13600,7 @@ Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,1.0,0.5,2003
 Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,3.0,2.0,2004
 Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,1.0,0.5,2005
 Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2006
-Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,3.0,3.0,2011
+Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,3.0,2.5,2011
 Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,4.0,3.33333333333,2012
 Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,1.0,0.333333333333,2013
 Arindam Banerjee,University of Minnesota - Twin Cities,mlmining,4.0,4.0,2014
@@ -13683,6 +13712,8 @@ My T. Thai,University of Florida,networks,1.0,0.5,2010
 My T. Thai,University of Florida,networks,1.0,1.0,2011
 My T. Thai,University of Florida,networks,2.0,2.0,2013
 My T. Thai,University of Florida,networks,2.0,2.0,2015
+Victoria Interrante,University of Minnesota - Twin Cities,graphics,1.0,1.0,1997
+Victoria Interrante,University of Minnesota - Twin Cities,graphics,1.0,1.0,2004
 José Meseguer,University of Illinois at Urbana-Champaign,database,1.0,1.0,1993
 José Meseguer,University of Illinois at Urbana-Champaign,logic,1.0,0.5,2004
 José Meseguer,University of Illinois at Urbana-Champaign,logic,1.0,1.0,2011
@@ -13699,11 +13730,6 @@ Amir Houmansadr,University of Massachusetts - Amherst,security,1.0,1.0,2012
 Amir Houmansadr,University of Massachusetts - Amherst,security,2.0,1.5,2013
 Amir Houmansadr,University of Massachusetts - Amherst,security,1.0,0.5,2014
 Amir Houmansadr,University of Massachusetts - Amherst,security,1.0,1.0,2015
-Larry Carter,University of Minnesota - Twin Cities,theory,1.0,1.0,1990
-Larry Carter,University of Minnesota - Twin Cities,theory,1.0,1.0,1998
-Larry Carter,University of Minnesota - Twin Cities,proglang,1.0,0.5,1997
-Larry Carter,University of Minnesota - Twin Cities,proglang,2.0,0.833333333333,2003
-Larry Carter,University of Minnesota - Twin Cities,arch,1.0,0.333333333333,1998
 Dong Xuan,Ohio State University,robotics,1.0,1.0,2015
 Dong Xuan,Ohio State University,security,1.0,1.0,2007
 Dong Xuan,Ohio State University,security,1.0,1.0,2009
@@ -15334,11 +15360,11 @@ Aniket Kittur,Carnegie Mellon University,hci,1.0,1.0,2007
 Aniket Kittur,Carnegie Mellon University,hci,2.0,2.0,2008
 Aniket Kittur,Carnegie Mellon University,hci,2.0,2.0,2009
 Aniket Kittur,Carnegie Mellon University,hci,1.0,0.333333333333,2010
-Aniket Kittur,Carnegie Mellon University,hci,5.0,4.33333333333,2011
+Aniket Kittur,Carnegie Mellon University,hci,5.0,3.83333333333,2011
 Aniket Kittur,Carnegie Mellon University,hci,2.0,2.0,2012
-Aniket Kittur,Carnegie Mellon University,hci,2.0,2.0,2013
-Aniket Kittur,Carnegie Mellon University,hci,5.0,5.0,2014
-Aniket Kittur,Carnegie Mellon University,hci,3.0,2.5,2016
+Aniket Kittur,Carnegie Mellon University,hci,2.0,1.5,2013
+Aniket Kittur,Carnegie Mellon University,hci,5.0,4.5,2014
+Aniket Kittur,Carnegie Mellon University,hci,3.0,2.33333333333,2016
 Aniket Kittur,Carnegie Mellon University,mlmining,1.0,0.333333333333,2011
 DeLiang Wang,Ohio State University,mlmining,1.0,1.0,2012
 Christopher J. Rossbach,University of Texas - Austin,opsys,1.0,0.333333333333,2007
@@ -15356,7 +15382,7 @@ Adrien Treuille,Carnegie Mellon University,graphics,2.0,0.833333333333,2006
 Adrien Treuille,Carnegie Mellon University,graphics,1.0,0.5,2007
 Adrien Treuille,Carnegie Mellon University,graphics,1.0,1.0,2009
 Adrien Treuille,Carnegie Mellon University,graphics,1.0,0.5,2010
-Adrien Treuille,Carnegie Mellon University,graphics,3.0,2.5,2013
+Adrien Treuille,Carnegie Mellon University,graphics,3.0,2.33333333333,2013
 Adrien Treuille,Carnegie Mellon University,graphics,1.0,0.5,2014
 Yiming Yang,Carnegie Mellon University,nlp,1.0,1.0,2003
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,1.0,1997
@@ -15831,7 +15857,7 @@ William D. Clinger,Northeastern University,proglang,1.0,1.0,1998
 Wei-Tek Tsai,Arizona State University,security,1.0,1.0,1990
 Wei-Tek Tsai,Arizona State University,softeng,1.0,1.0,1993
 David H. Laidlaw,Brown University,graphics,1.0,0.5,1995
-David H. Laidlaw,Brown University,graphics,2.0,2.0,2003
+David H. Laidlaw,Brown University,graphics,2.0,1.5,2003
 David H. Laidlaw,Brown University,hci,3.0,3.0,2012
 Leonard McMillan,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1995
 Leonard McMillan,University of North Carolina - Chapel Hill,graphics,2.0,0.833333333333,2000
@@ -15845,6 +15871,14 @@ Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,1.0,2005
 Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,1.0,2007
 Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,1.0,2008
 James C. Browne,University of Texas - Austin,softeng,1.0,1.0,1993
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,2.0,2.0,2005
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,1.0,1.0,2006
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,2.0,2.0,2007
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,2.0,2.0,2008
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,1.0,1.0,2009
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,1.0,1.0,2010
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,1.0,1.0,2011
+Junaed Sattar,University of Minnesota - Twin Cities,robotics,2.0,2.0,2014
 Manuela M. Veloso,Carnegie Mellon University,mlmining,1.0,0.5,1995
 Manuela M. Veloso,Carnegie Mellon University,mlmining,2.0,2.0,2000
 Manuela M. Veloso,Carnegie Mellon University,mlmining,2.0,2.0,2001
@@ -16286,7 +16320,7 @@ Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,3.0,2.5
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,2.0,1.5,2001
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,2.0,2.0,2002
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,5.0,3.83333333333,2003
-Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,7.0,6.33333333333,2004
+Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,7.0,5.83333333333,2004
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,3.0,2.0,2005
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,7.0,6.0,2006
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,6.0,6.0,2007
@@ -16301,7 +16335,7 @@ Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,4.0,4.0
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,vision,1.0,0.5,2007
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,vision,1.0,1.0,2009
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,vision,1.0,1.0,2010
-Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,vision,3.0,2.5,2011
+Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,vision,3.0,2.0,2011
 David L. Dill,Stanford University,opsys,1.0,0.5,2002
 David L. Dill,Stanford University,logic,4.0,3.0,1990
 David L. Dill,Stanford University,logic,1.0,1.0,1991
@@ -16967,7 +17001,7 @@ Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.5,2003
 Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.5,2004
 Kayvon Fatahalian,Carnegie Mellon University,graphics,2.0,1.0,2009
 Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.5,2010
-Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.5,2013
+Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,0.333333333333,2013
 Kayvon Fatahalian,Carnegie Mellon University,graphics,2.0,1.5,2014
 Kayvon Fatahalian,Carnegie Mellon University,graphics,1.0,1.0,2015
 Richard J. Lipton,Georgia Institute of Technology,theory,1.0,0.333333333333,1991
@@ -17010,7 +17044,7 @@ Vipin Kumar,University of Minnesota - Twin Cities,ai,1.0,0.5,2016
 Vipin Kumar,University of Minnesota - Twin Cities,database,1.0,0.5,1997
 Vipin Kumar,University of Minnesota - Twin Cities,database,1.0,1.0,2001
 Vipin Kumar,University of Minnesota - Twin Cities,web,1.0,0.5,2002
-Vipin Kumar,University of Minnesota - Twin Cities,robotics,1.0,0.5,1995
+Vipin Kumar,University of Minnesota - Twin Cities,robotics,1.0,0.333333333333,1995
 Berthold K. P. Horn,Massachusetts Institute of Technology,vision,1.0,0.5,2011
 Michael D. Ernst,University of Washington,hci,1.0,1.0,2013
 Michael D. Ernst,University of Washington,hci,1.0,1.0,2015
@@ -19011,6 +19045,14 @@ Huamin Wang,Ohio State University,graphics,3.0,2.0,2013
 Huamin Wang,Ohio State University,graphics,3.0,3.0,2014
 Huamin Wang,Ohio State University,graphics,4.0,3.5,2015
 Huamin Wang,Ohio State University,vision,1.0,1.0,2009
+Daniel Boley,University of Minnesota - Twin Cities,mlmining,1.0,0.5,2011
+Daniel Boley,University of Minnesota - Twin Cities,ai,1.0,0.333333333333,2005
+Daniel Boley,University of Minnesota - Twin Cities,ai,1.0,1.0,2015
+Daniel Boley,University of Minnesota - Twin Cities,robotics,1.0,0.333333333333,1995
+Daniel Boley,University of Minnesota - Twin Cities,robotics,1.0,1.0,1996
+Daniel Boley,University of Minnesota - Twin Cities,robotics,1.0,0.5,2004
+Daniel Boley,University of Minnesota - Twin Cities,robotics,1.0,1.0,2006
+Daniel Boley,University of Minnesota - Twin Cities,vision,1.0,0.5,2011
 Vladimir Pavlovic,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,0.5,2000
 Vladimir Pavlovic,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,0.5,2005
 Vladimir Pavlovic,Rutgers - State University of New Jersey - New Brunswick,mlmining,1.0,1.0,2007
@@ -19164,9 +19206,9 @@ Tian He,University of Minnesota - Twin Cities,mobile,2.0,2.0,2014
 Tian He,University of Minnesota - Twin Cities,mobile,4.0,3.5,2015
 Tian He,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,2005
 Tian He,University of Minnesota - Twin Cities,networks,4.0,1.25,2006
-Tian He,University of Minnesota - Twin Cities,networks,4.0,3.33333333333,2007
-Tian He,University of Minnesota - Twin Cities,networks,3.0,1.83333333333,2008
-Tian He,University of Minnesota - Twin Cities,networks,2.0,2.0,2009
+Tian He,University of Minnesota - Twin Cities,networks,4.0,2.83333333333,2007
+Tian He,University of Minnesota - Twin Cities,networks,3.0,1.33333333333,2008
+Tian He,University of Minnesota - Twin Cities,networks,2.0,1.5,2009
 Tian He,University of Minnesota - Twin Cities,networks,1.0,0.5,2010
 Tian He,University of Minnesota - Twin Cities,networks,4.0,4.0,2011
 Tian He,University of Minnesota - Twin Cities,networks,3.0,3.0,2012
@@ -19399,6 +19441,13 @@ Tamara L. Berg,University of North Carolina - Chapel Hill,vision,3.0,2.0,2011
 Tamara L. Berg,University of North Carolina - Chapel Hill,vision,2.0,1.0,2012
 Tamara L. Berg,University of North Carolina - Chapel Hill,vision,3.0,1.83333333333,2013
 Tamara L. Berg,University of North Carolina - Chapel Hill,vision,3.0,2.5,2015
+Rahul Narain,University of Minnesota - Twin Cities,graphics,1.0,1.0,2008
+Rahul Narain,University of Minnesota - Twin Cities,graphics,1.0,1.0,2009
+Rahul Narain,University of Minnesota - Twin Cities,graphics,1.0,1.0,2010
+Rahul Narain,University of Minnesota - Twin Cities,graphics,2.0,2.0,2012
+Rahul Narain,University of Minnesota - Twin Cities,graphics,2.0,1.33333333333,2013
+Rahul Narain,University of Minnesota - Twin Cities,graphics,1.0,1.0,2014
+Rahul Narain,University of Minnesota - Twin Cities,graphics,1.0,1.0,2015
 Xi Chen,Columbia University,theory,1.0,1.0,2005
 Xi Chen,Columbia University,theory,2.0,1.5,2006
 Xi Chen,Columbia University,theory,2.0,0.833333333333,2007
@@ -19814,16 +19863,7 @@ Barton P. Miller,University of Wisconsin - Madison,security,1.0,0.5,2005
 Barton P. Miller,University of Wisconsin - Madison,security,1.0,0.5,2006
 Barton P. Miller,University of Wisconsin - Madison,arch,1.0,0.333333333333,1991
 Barton P. Miller,University of Wisconsin - Madison,networks,1.0,1.0,1991
-Gerhard Fischer,University of Colorado Boulder,hci,2.0,2.0,1990
-Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.5,1991
-Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.0,1994
-Gerhard Fischer,University of Colorado Boulder,hci,1.0,1.0,2008
-Gerhard Fischer,University of Colorado Boulder,ai,2.0,2.0,1990
-Gerhard Fischer,University of Colorado Boulder,ai,1.0,1.0,1991
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,0.5,1991
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,1996
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2000
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2002
+Héctor Corrada Bravo,University of Maryland - College Park,database,1.0,1.0,2007
 John H. Reif,Duke University,theory,1.0,1.0,1990
 John H. Reif,Duke University,theory,1.0,1.0,1991
 John H. Reif,Duke University,theory,2.0,2.0,1992
@@ -21692,7 +21732,7 @@ Paul R. Schrater,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2008
 Paul R. Schrater,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2012
 Paul R. Schrater,University of Minnesota - Twin Cities,mlmining,1.0,0.5,2013
 Paul R. Schrater,University of Minnesota - Twin Cities,mlmining,1.0,1.0,2014
-Paul R. Schrater,University of Minnesota - Twin Cities,ai,1.0,0.5,2005
+Paul R. Schrater,University of Minnesota - Twin Cities,ai,1.0,0.333333333333,2005
 Paul R. Schrater,University of Minnesota - Twin Cities,ai,1.0,1.0,2013
 Paul R. Schrater,University of Minnesota - Twin Cities,robotics,1.0,0.5,2005
 Paul R. Schrater,University of Minnesota - Twin Cities,robotics,1.0,0.5,2006
