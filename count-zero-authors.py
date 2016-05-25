@@ -187,8 +187,8 @@ else:
 
 for k in facultydict:
     if (intauthors_gl.has_key(k)):
-        if (intauthors_gl[k] < 2):
-            print str(k) + " : " + str(intauthors_gl[k])
+        if (intauthors_gl[k] <= 3):
+            print str(k).encode('utf8') + " : " + str(intauthors_gl[k])
     else:
-            print str(k) + " : 0"
+            print str(k).encode('utf8') + " : 0"
     
