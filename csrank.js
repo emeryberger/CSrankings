@@ -240,7 +240,6 @@ function rank() {
 	    areaCount += 1; 
 	}
     }
-    console.log(areaCount);
     /* Build the dictionary of departments (and count) to be ranked. */
     for (var r in authors) {
 	var name = authors[r].name;
@@ -268,7 +267,6 @@ function rank() {
 			univnames[dept] = [];
 		    }
 		    univnames[dept].push(name);
-		    console.log(univnames[dept]);
 		    univcounts[dept] += 1;
 		}
 		facultycount[name+dept] += count;
