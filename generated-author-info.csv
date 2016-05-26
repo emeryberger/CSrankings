@@ -111,8 +111,8 @@ Yan Huang,Indiana University,robotics,1.0,1.0,2010
 Yan Huang,Indiana University,robotics,1.0,1.0,2011
 Yan Huang,Indiana University,security,2.0,0.666666666667,2011
 Yan Huang,Indiana University,security,1.0,0.333333333333,2012
-Yan Huang,Indiana University,security,3.0,0.866666666667,2014
-Yan Huang,Indiana University,security,3.0,1.83333333333,2015
+Yan Huang,Indiana University,security,3.0,1.08333333333,2014
+Yan Huang,Indiana University,security,3.0,2.0,2015
 Yan Huang,Indiana University,networks,1.0,1.0,2004
 Yan Huang,Indiana University,networks,1.0,1.0,2008
 Yan Huang,Indiana University,vision,1.0,1.0,1993
@@ -1940,7 +1940,7 @@ Jiebo Luo,University of Rochester,web,1.0,1.0,2011
 Jiebo Luo,University of Rochester,web,1.0,1.0,2014
 Jiebo Luo,University of Rochester,vision,1.0,1.0,2000
 Jiebo Luo,University of Rochester,vision,1.0,1.0,2007
-Jiebo Luo,University of Rochester,vision,4.0,3.0,2008
+Jiebo Luo,University of Rochester,vision,4.0,3.5,2008
 Jiebo Luo,University of Rochester,vision,2.0,2.0,2009
 Jiebo Luo,University of Rochester,vision,4.0,4.0,2010
 Jiebo Luo,University of Rochester,vision,2.0,1.5,2011
@@ -2140,21 +2140,6 @@ Marc Niethammer,University of North Carolina - Chapel Hill,robotics,1.0,0.25,201
 Marc Niethammer,University of North Carolina - Chapel Hill,vision,1.0,0.5,2007
 Marc Niethammer,University of North Carolina - Chapel Hill,vision,1.0,0.5,2009
 Marc Niethammer,University of North Carolina - Chapel Hill,vision,1.0,0.5,2014
-Ying Wu,Northwestern University,mlmining,1.0,1.0,2007
-Ying Wu,Northwestern University,networks,1.0,1.0,2009
-Ying Wu,Northwestern University,vision,1.0,1.0,1999
-Ying Wu,Northwestern University,vision,3.0,3.0,2000
-Ying Wu,Northwestern University,vision,3.0,3.0,2001
-Ying Wu,Northwestern University,vision,1.0,0.5,2003
-Ying Wu,Northwestern University,vision,6.0,5.0,2007
-Ying Wu,Northwestern University,vision,6.0,5.0,2008
-Ying Wu,Northwestern University,vision,4.0,4.0,2009
-Ying Wu,Northwestern University,vision,1.0,1.0,2010
-Ying Wu,Northwestern University,vision,5.0,5.0,2011
-Ying Wu,Northwestern University,vision,5.0,5.0,2012
-Ying Wu,Northwestern University,vision,4.0,4.0,2013
-Ying Wu,Northwestern University,vision,3.0,3.0,2014
-Ying Wu,Northwestern University,vision,1.0,1.0,2015
 Ruzica Piskac,Yale University,proglang,1.0,1.0,2010
 Ruzica Piskac,Yale University,proglang,1.0,1.0,2013
 Ruzica Piskac,Yale University,logic,1.0,1.0,2008
@@ -3893,10 +3878,6 @@ Rajeev Balasubramonian,University of Utah,arch,1.0,0.5,2011
 Rajeev Balasubramonian,University of Utah,arch,2.0,1.0,2012
 Rajeev Balasubramonian,University of Utah,arch,1.0,0.5,2013
 Rajeev Balasubramonian,University of Utah,arch,2.0,2.0,2015
-Benjamin Watson,Northwestern University,graphics,1.0,1.0,2001
-Benjamin Watson,Northwestern University,graphics,1.0,1.0,2004
-Benjamin Watson,Northwestern University,hci,1.0,1.0,2000
-Benjamin Watson,Northwestern University,hci,1.0,1.0,2002
 Dana Randall,Georgia Institute of Technology,theory,1.0,0.5,1993
 Dana Randall,Georgia Institute of Technology,theory,1.0,0.5,1994
 Dana Randall,Georgia Institute of Technology,theory,1.0,0.5,1995
@@ -5219,9 +5200,6 @@ Ketan Mulmuley,University of Chicago,theory,1.0,1.0,1994
 Ketan Mulmuley,University of Chicago,theory,1.0,1.0,1997
 Ketan Mulmuley,University of Chicago,theory,1.0,1.0,2012
 Allison Bishop Lewko,Columbia University,theory,2.0,0.833333333333,2015
-Michael L. Honig,Northwestern University,networks,1.0,1.0,1994
-Michael L. Honig,Northwestern University,networks,1.0,1.0,1995
-Michael L. Honig,Northwestern University,networks,1.0,0.333333333333,2013
 James A. Jones,University of California - Irvine,proglang,1.0,0.333333333333,2001
 James A. Jones,University of California - Irvine,softeng,1.0,0.5,2002
 James A. Jones,University of California - Irvine,softeng,1.0,1.0,2008
@@ -5715,12 +5693,12 @@ Lillian Lee,Cornell University,web,1.0,0.5,2009
 Lillian Lee,Cornell University,web,1.0,0.5,2012
 Lillian Lee,Cornell University,web,1.0,1.0,2015
 Lillian Lee,Cornell University,web,2.0,1.5,2016
-Gokhan Memik,Northwestern University,hci,1.0,0.333333333333,2009
-Gokhan Memik,Northwestern University,mobile,1.0,0.333333333333,2011
+Gokhan Memik,Northwestern University,hci,1.0,0.5,2009
+Gokhan Memik,Northwestern University,mobile,1.0,0.5,2011
 Gokhan Memik,Northwestern University,arch,1.0,1.0,2004
 Gokhan Memik,Northwestern University,arch,1.0,1.0,2005
 Gokhan Memik,Northwestern University,arch,1.0,0.5,2006
-Gokhan Memik,Northwestern University,arch,4.0,1.41666666667,2008
+Gokhan Memik,Northwestern University,arch,4.0,1.83333333333,2008
 Gokhan Memik,Northwestern University,arch,2.0,1.5,2009
 Gokhan Memik,Northwestern University,arch,1.0,1.0,2011
 Gokhan Memik,Northwestern University,networks,1.0,0.2,2006
@@ -5757,7 +5735,7 @@ Frank Dellaert,Georgia Institute of Technology,vision,1.0,1.0,2010
 Frank Dellaert,Georgia Institute of Technology,vision,1.0,1.0,2011
 Frank Dellaert,Georgia Institute of Technology,vision,1.0,1.0,2015
 Randall Berry,Northwestern University,networks,1.0,1.0,2009
-Randall Berry,Northwestern University,networks,1.0,0.333333333333,2013
+Randall Berry,Northwestern University,networks,1.0,0.5,2013
 Ninghui Li,Purdue University,mlmining,1.0,1.0,2009
 Ninghui Li,Purdue University,database,1.0,0.333333333333,2007
 Ninghui Li,Purdue University,database,1.0,0.5,2009
@@ -5843,11 +5821,6 @@ Stefano Soatto,University of California - Los Angeles,vision,2.0,2.0,2012
 Stefano Soatto,University of California - Los Angeles,vision,2.0,2.0,2013
 Stefano Soatto,University of California - Los Angeles,vision,3.0,3.0,2014
 Stefano Soatto,University of California - Los Angeles,vision,6.0,6.0,2015
-Randy A. Freeman,Northwestern University,robotics,1.0,1.0,1999
-Randy A. Freeman,Northwestern University,robotics,1.0,1.0,2000
-Randy A. Freeman,Northwestern University,robotics,1.0,1.0,2006
-Randy A. Freeman,Northwestern University,robotics,1.0,1.0,2007
-Randy A. Freeman,Northwestern University,robotics,1.0,1.0,2014
 Thomas Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2007
 Thomas Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2008
 Thomas Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2010
@@ -6238,12 +6211,6 @@ Minlan Yu,University of Southern California,networks,1.0,0.5,2011
 Minlan Yu,University of Southern California,networks,3.0,2.5,2013
 Minlan Yu,University of Southern California,networks,3.0,1.66666666667,2014
 Minlan Yu,University of Southern California,networks,3.0,1.83333333333,2015
-Robert P. Dick,Northwestern University,hci,1.0,0.333333333333,2009
-Robert P. Dick,Northwestern University,hci,1.0,0.5,2012
-Robert P. Dick,Northwestern University,hci,1.0,0.5,2013
-Robert P. Dick,Northwestern University,mobile,2.0,1.0,2009
-Robert P. Dick,Northwestern University,mobile,1.0,0.333333333333,2011
-Robert P. Dick,Northwestern University,arch,3.0,0.916666666667,2008
 John Criswell,University of Rochester,opsys,1.0,0.5,2007
 John Criswell,University of Rochester,security,1.0,0.5,2009
 John Criswell,University of Rochester,security,1.0,0.5,2014
@@ -6663,16 +6630,6 @@ Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,1.0,2012
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.5,2013
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,3.0,2.5,2014
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.333333333333,2016
-Gerhard Fischer,University of Colorado Boulder,hci,2.0,2.0,1990
-Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.5,1991
-Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.0,1994
-Gerhard Fischer,University of Colorado Boulder,hci,1.0,1.0,2008
-Gerhard Fischer,University of Colorado Boulder,ai,2.0,2.0,1990
-Gerhard Fischer,University of Colorado Boulder,ai,1.0,1.0,1991
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,0.5,1991
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,1996
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2000
-Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2002
 Ramin Zabih,Cornell University,ai,1.0,1.0,1990
 Ramin Zabih,Cornell University,ai,1.0,1.0,1991
 Ramin Zabih,Cornell University,vision,1.0,1.0,1996
@@ -7840,16 +7797,25 @@ Silvio Micali,Massachusetts Institute of Technology,theory,1.0,1.0,2012
 Silvio Micali,Massachusetts Institute of Technology,theory,1.0,0.5,2013
 Silvio Micali,Massachusetts Institute of Technology,security,1.0,0.5,2001
 Mohammed E. Hoque,University of Rochester,hci,1.0,1.0,2012
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1991
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1993
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,2.0,1995
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2003
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2006
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2007
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2008
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2009
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2013
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2015
+Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
+Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
+Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
+Injong Rhee,North Carolina State University,mobile,1.0,1.0,2005
+Injong Rhee,North Carolina State University,mobile,1.0,1.0,2013
+Injong Rhee,North Carolina State University,networks,1.0,1.0,1998
+Injong Rhee,North Carolina State University,networks,1.0,0.5,1999
+Injong Rhee,North Carolina State University,networks,3.0,2.0,2000
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2001
+Injong Rhee,North Carolina State University,networks,1.0,0.5,2004
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2005
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2006
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2007
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2008
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2009
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2010
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
+Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
+Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
 Rance Cleaveland,University of Maryland - College Park,proglang,1.0,1.0,1994
 Rance Cleaveland,University of Maryland - College Park,logic,2.0,2.0,1990
 Rance Cleaveland,University of Maryland - College Park,logic,2.0,2.0,1991
@@ -8322,25 +8288,16 @@ Erik Andersen,Cornell University,hci,1.0,0.5,2011
 Erik Andersen,Cornell University,hci,1.0,0.333333333333,2012
 Erik Andersen,Cornell University,hci,1.0,0.5,2013
 Erik Andersen,Cornell University,hci,2.0,1.0,2015
-Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
-Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
-Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
-Injong Rhee,North Carolina State University,mobile,1.0,1.0,2005
-Injong Rhee,North Carolina State University,mobile,1.0,1.0,2013
-Injong Rhee,North Carolina State University,networks,1.0,1.0,1998
-Injong Rhee,North Carolina State University,networks,1.0,0.5,1999
-Injong Rhee,North Carolina State University,networks,3.0,2.0,2000
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2001
-Injong Rhee,North Carolina State University,networks,1.0,0.5,2004
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2005
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2006
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2007
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2008
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2009
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2010
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
-Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
-Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1991
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1993
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,2.0,1995
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2003
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2006
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2007
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2008
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2009
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2013
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2015
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,1996
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,2000
 Steven M. Seitz,University of Washington,graphics,1.0,1.0,2003
@@ -8716,7 +8673,7 @@ Ergun Akleman,Texas A&M University,graphics,1.0,1.0,2003
 Ergun Akleman,Texas A&M University,graphics,1.0,0.5,2009
 Rakesh Vohra,University of Pennsylvania,theory,1.0,1.0,1992
 Rakesh Vohra,University of Pennsylvania,web,1.0,1.0,2008
-Rakesh Vohra,University of Pennsylvania,networks,1.0,0.333333333333,2013
+Rakesh Vohra,University of Pennsylvania,networks,1.0,0.5,2013
 Stephen Brookes,Carnegie Mellon University,proglang,1.0,1.0,2014
 Arvind Narayanan,Princeton University,web,1.0,0.5,2015
 Arvind Narayanan,Princeton University,security,2.0,1.0,2005
@@ -8939,10 +8896,6 @@ Jacob Abernethy,University of Michigan,mlmining,1.0,1.0,2010
 Jacob Abernethy,University of Michigan,mlmining,1.0,1.0,2011
 Jacob Abernethy,University of Michigan,mlmining,3.0,2.5,2013
 Jacob Abernethy,University of Michigan,robotics,1.0,1.0,2015
-Chi-haur Wu,Northwestern University,robotics,1.0,1.0,1996
-Chi-haur Wu,Northwestern University,robotics,1.0,1.0,1999
-Chi-haur Wu,Northwestern University,robotics,2.0,2.0,2001
-Chi-haur Wu,Northwestern University,robotics,1.0,1.0,2003
 Rafail Ostrovsky,University of California - Los Angeles,theory,3.0,1.66666666667,1990
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,1.0,1992
 Rafail Ostrovsky,University of California - Los Angeles,theory,4.0,2.33333333333,1994
@@ -9397,6 +9350,7 @@ Steven Rudich,Carnegie Mellon University,theory,2.0,1.0,1992
 Steven Rudich,Carnegie Mellon University,theory,3.0,1.83333333333,1994
 Steven Rudich,Carnegie Mellon University,theory,1.0,0.333333333333,1997
 Steven Rudich,Carnegie Mellon University,theory,1.0,1.0,2002
+Héctor Corrada Bravo,University of Maryland - College Park,database,1.0,1.0,2007
 Dan Suciu,University of Washington,mlmining,1.0,0.5,2010
 Dan Suciu,University of Washington,ai,1.0,1.0,1999
 Dan Suciu,University of Washington,database,2.0,1.5,1994
@@ -12233,24 +12187,6 @@ Christoph Bregler,New York University,vision,1.0,1.0,2000
 Christoph Bregler,New York University,vision,1.0,0.5,2009
 Christoph Bregler,New York University,vision,1.0,0.5,2011
 Christoph Bregler,New York University,vision,2.0,2.0,2015
-Chang Liu,Northwestern University,metrics,1.0,1.0,2015
-Chang Liu,Northwestern University,nlp,1.0,1.0,2007
-Chang Liu,Northwestern University,nlp,1.0,1.0,2010
-Chang Liu,Northwestern University,nlp,1.0,1.0,2011
-Chang Liu,Northwestern University,ai,1.0,1.0,2012
-Chang Liu,Northwestern University,opsys,1.0,1.0,2012
-Chang Liu,Northwestern University,web,1.0,1.0,2008
-Chang Liu,Northwestern University,web,1.0,1.0,2012
-Chang Liu,Northwestern University,web,1.0,0.5,2016
-Chang Liu,Northwestern University,robotics,2.0,2.0,2003
-Chang Liu,Northwestern University,robotics,1.0,1.0,2014
-Chang Liu,Northwestern University,security,2.0,0.533333333333,2014
-Chang Liu,Northwestern University,security,1.0,0.333333333333,2015
-Chang Liu,Northwestern University,softeng,1.0,1.0,2000
-Chang Liu,Northwestern University,softeng,1.0,1.0,2006
-Chang Liu,Northwestern University,softeng,1.0,1.0,2014
-Chang Liu,Northwestern University,softeng,1.0,1.0,2016
-Chang Liu,Northwestern University,arch,1.0,0.333333333333,2015
 Falko Kuester,University of California - San Diego,robotics,1.0,1.0,2006
 Radu Sion,State University of New York - Stony Brook,database,1.0,0.5,2002
 Radu Sion,State University of New York - Stony Brook,database,1.0,0.333333333333,2004
@@ -13656,15 +13592,15 @@ Elaine Shi,Cornell University,opsys,1.0,1.0,2005
 Elaine Shi,Cornell University,proglang,1.0,0.5,2014
 Elaine Shi,Cornell University,mobile,1.0,0.5,2012
 Elaine Shi,Cornell University,mobile,1.0,0.5,2014
-Elaine Shi,Cornell University,web,1.0,0.5,2016
+Elaine Shi,Cornell University,web,1.0,1.0,2016
 Elaine Shi,Cornell University,security,2.0,2.0,2005
 Elaine Shi,Cornell University,security,1.0,1.0,2007
 Elaine Shi,Cornell University,security,1.0,0.5,2011
 Elaine Shi,Cornell University,security,1.0,1.0,2012
 Elaine Shi,Cornell University,security,6.0,4.75,2013
-Elaine Shi,Cornell University,security,7.0,4.2,2014
-Elaine Shi,Cornell University,security,4.0,2.83333333333,2015
-Elaine Shi,Cornell University,arch,1.0,0.333333333333,2015
+Elaine Shi,Cornell University,security,7.0,4.41666666667,2014
+Elaine Shi,Cornell University,security,4.0,3.0,2015
+Elaine Shi,Cornell University,arch,1.0,0.5,2015
 Elaine Shi,Cornell University,networks,1.0,0.5,2007
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1.0,0.333333333333,1990
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1.0,1.0,1991
@@ -13802,8 +13738,8 @@ Michael W. Hicks,University of Maryland - College Park,proglang,2.0,2.0,2009
 Michael W. Hicks,University of Maryland - College Park,proglang,1.0,1.0,2014
 Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2015
 Michael W. Hicks,University of Maryland - College Park,security,1.0,1.0,2007
-Michael W. Hicks,University of Maryland - College Park,security,2.0,1.2,2014
-Michael W. Hicks,University of Maryland - College Park,arch,1.0,0.333333333333,2015
+Michael W. Hicks,University of Maryland - College Park,security,2.0,1.25,2014
+Michael W. Hicks,University of Maryland - College Park,arch,1.0,0.5,2015
 Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.5,1999
 Michael W. Hicks,University of Maryland - College Park,networks,1.0,1.0,2001
 Andrea S. LaPaugh,Princeton University,theory,1.0,1.0,1994
@@ -14774,11 +14710,11 @@ Vivek Sarkar,Rice University,web,1.0,1.0,2005
 Vivek Sarkar,Rice University,arch,1.0,1.0,1998
 Vivek Sarkar,Rice University,arch,1.0,1.0,2010
 Peter A. Dinda,Northwestern University,metrics,1.0,0.5,1996
-Peter A. Dinda,Northwestern University,hci,1.0,0.333333333333,2009
+Peter A. Dinda,Northwestern University,hci,1.0,0.5,2009
 Peter A. Dinda,Northwestern University,proglang,1.0,0.333333333333,2010
-Peter A. Dinda,Northwestern University,mobile,1.0,0.5,2009
-Peter A. Dinda,Northwestern University,mobile,1.0,0.333333333333,2011
-Peter A. Dinda,Northwestern University,arch,3.0,0.916666666667,2008
+Peter A. Dinda,Northwestern University,mobile,1.0,1.0,2009
+Peter A. Dinda,Northwestern University,mobile,1.0,0.5,2011
+Peter A. Dinda,Northwestern University,arch,3.0,1.33333333333,2008
 Peter A. Dinda,Northwestern University,networks,1.0,1.0,1999
 Peter A. Dinda,Northwestern University,networks,1.0,0.2,2006
 Peter A. Dinda,Northwestern University,networks,1.0,0.5,2010
@@ -19889,7 +19825,16 @@ Barton P. Miller,University of Wisconsin - Madison,security,1.0,0.5,2005
 Barton P. Miller,University of Wisconsin - Madison,security,1.0,0.5,2006
 Barton P. Miller,University of Wisconsin - Madison,arch,1.0,0.333333333333,1991
 Barton P. Miller,University of Wisconsin - Madison,networks,1.0,1.0,1991
-Héctor Corrada Bravo,University of Maryland - College Park,database,1.0,1.0,2007
+Gerhard Fischer,University of Colorado Boulder,hci,2.0,2.0,1990
+Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.5,1991
+Gerhard Fischer,University of Colorado Boulder,hci,2.0,1.0,1994
+Gerhard Fischer,University of Colorado Boulder,hci,1.0,1.0,2008
+Gerhard Fischer,University of Colorado Boulder,ai,2.0,2.0,1990
+Gerhard Fischer,University of Colorado Boulder,ai,1.0,1.0,1991
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,0.5,1991
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,1996
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2000
+Gerhard Fischer,University of Colorado Boulder,softeng,1.0,1.0,2002
 John H. Reif,Duke University,theory,1.0,1.0,1990
 John H. Reif,Duke University,theory,1.0,1.0,1991
 John H. Reif,Duke University,theory,2.0,2.0,1992
@@ -20043,7 +19988,7 @@ Alok N. Choudhary,Northwestern University,security,1.0,0.5,2011
 Alok N. Choudhary,Northwestern University,security,1.0,0.5,2012
 Alok N. Choudhary,Northwestern University,arch,1.0,0.5,1998
 Alok N. Choudhary,Northwestern University,arch,1.0,0.5,2002
-Alok N. Choudhary,Northwestern University,arch,2.0,0.75,2008
+Alok N. Choudhary,Northwestern University,arch,2.0,0.833333333333,2008
 Alok N. Choudhary,Northwestern University,arch,1.0,0.5,2009
 Alok N. Choudhary,Northwestern University,vision,1.0,1.0,2014
 Alok N. Choudhary,Northwestern University,vision,1.0,0.5,2015
@@ -20761,7 +20706,7 @@ Jonathan Katz,University of Maryland - College Park,security,1.0,1.0,2009
 Jonathan Katz,University of Maryland - College Park,security,2.0,2.0,2010
 Jonathan Katz,University of Maryland - College Park,security,2.0,0.666666666667,2011
 Jonathan Katz,University of Maryland - College Park,security,2.0,0.833333333333,2012
-Jonathan Katz,University of Maryland - College Park,security,3.0,1.53333333333,2014
+Jonathan Katz,University of Maryland - College Park,security,3.0,1.58333333333,2014
 Jonathan Katz,University of Maryland - College Park,security,3.0,2.5,2015
 David Eppstein,University of California - Irvine,graphics,1.0,0.5,1996
 David Eppstein,University of California - Irvine,theory,4.0,2.33333333333,1990
@@ -20903,11 +20848,11 @@ Albert-László Barabási,Northeastern University,mlmining,1.0,1.0,2011
 Albert-László Barabási,Northeastern University,ai,1.0,1.0,2014
 Albert-László Barabási,Northeastern University,web,1.0,1.0,2011
 Qin Lv,University of Colorado Boulder,metrics,1.0,0.333333333333,2007
-Qin Lv,University of Colorado Boulder,hci,1.0,0.5,2012
-Qin Lv,University of Colorado Boulder,hci,2.0,0.833333333333,2013
+Qin Lv,University of Colorado Boulder,hci,1.0,1.0,2012
+Qin Lv,University of Colorado Boulder,hci,2.0,1.33333333333,2013
 Qin Lv,University of Colorado Boulder,mlmining,1.0,0.333333333333,2012
 Qin Lv,University of Colorado Boulder,database,1.0,0.333333333333,2007
-Qin Lv,University of Colorado Boulder,mobile,1.0,0.5,2009
+Qin Lv,University of Colorado Boulder,mobile,1.0,1.0,2009
 Qin Lv,University of Colorado Boulder,mobile,1.0,0.333333333333,2015
 Qin Lv,University of Colorado Boulder,web,1.0,0.333333333333,2011
 Qin Lv,University of Colorado Boulder,web,1.0,1.0,2015
@@ -20922,9 +20867,9 @@ Ting Yu,North Carolina State University,security,2.0,2.0,2001
 Ting Yu,North Carolina State University,security,1.0,1.0,2003
 Ting Yu,North Carolina State University,security,1.0,1.0,2006
 Ting Yu,North Carolina State University,security,1.0,0.5,2011
-Ting Yu,North Carolina State University,vision,1.0,0.5,2003
-Ting Yu,North Carolina State University,vision,2.0,1.5,2007
-Ting Yu,North Carolina State University,vision,2.0,1.5,2008
+Ting Yu,North Carolina State University,vision,1.0,1.0,2003
+Ting Yu,North Carolina State University,vision,2.0,2.0,2007
+Ting Yu,North Carolina State University,vision,2.0,2.0,2008
 Ting Yu,North Carolina State University,vision,1.0,1.0,2009
 Ting Yu,North Carolina State University,vision,1.0,1.0,2012
 Russ Joseph,Northwestern University,arch,2.0,2.0,2011
@@ -21361,7 +21306,7 @@ Shree K. Nayar,Columbia University,vision,2.0,1.0,2011
 Shree K. Nayar,Columbia University,vision,1.0,0.5,2012
 Shree K. Nayar,Columbia University,vision,2.0,1.0,2013
 Shree K. Nayar,Columbia University,vision,2.0,1.5,2015
-Aggelos K. Katsaggelos,Northwestern University,vision,1.0,0.5,2007
+Aggelos K. Katsaggelos,Northwestern University,vision,1.0,1.0,2007
 Matthias Felleisen,Northeastern University,proglang,2.0,2.0,1991
 Matthias Felleisen,Northeastern University,proglang,1.0,0.5,1992
 Matthias Felleisen,Northeastern University,proglang,1.0,0.5,1993
