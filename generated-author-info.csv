@@ -550,11 +550,11 @@ Michael J. Cafarella,University of Michigan,ai,1.0,0.25,2004
 Michael J. Cafarella,University of Michigan,ai,1.0,0.5,2007
 Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2008
 Michael J. Cafarella,University of Michigan,database,2.0,1.33333333333,2009
-Michael J. Cafarella,University of Michigan,database,1.0,1.0,2011
+Michael J. Cafarella,University of Michigan,database,1.0,0.5,2011
 Michael J. Cafarella,University of Michigan,database,1.0,0.5,2012
 Michael J. Cafarella,University of Michigan,database,1.0,0.5,2013
 Michael J. Cafarella,University of Michigan,database,1.0,1.0,2014
-Michael J. Cafarella,University of Michigan,database,2.0,1.5,2015
+Michael J. Cafarella,University of Michigan,database,2.0,1.0,2015
 Michael J. Cafarella,University of Michigan,proglang,1.0,0.5,2014
 Michael J. Cafarella,University of Michigan,web,1.0,0.25,2004
 Michael J. Cafarella,University of Michigan,web,1.0,0.5,2005
@@ -2131,7 +2131,7 @@ Benjamin Recht,University of California - Berkeley,mlmining,1.0,0.333333333333,2
 Benjamin Recht,University of California - Berkeley,mlmining,1.0,1.0,2012
 Benjamin Recht,University of California - Berkeley,mlmining,2.0,1.0,2015
 Benjamin Recht,University of California - Berkeley,ai,1.0,0.5,2011
-Benjamin Recht,University of California - Berkeley,database,1.0,1.0,2012
+Benjamin Recht,University of California - Berkeley,database,1.0,0.5,2012
 Karen Livescu,University of Chicago,mlmining,1.0,0.333333333333,2009
 Karen Livescu,University of Chicago,vision,1.0,1.0,2005
 Karen Livescu,University of Chicago,vision,1.0,0.5,2013
@@ -2940,7 +2940,7 @@ Kunle Olukotun,Stanford University,mlmining,1.0,0.5,2005
 Kunle Olukotun,Stanford University,mlmining,1.0,0.5,2006
 Kunle Olukotun,Stanford University,mlmining,1.0,0.5,2011
 Kunle Olukotun,Stanford University,mlmining,1.0,1.0,2012
-Kunle Olukotun,Stanford University,mlmining,3.0,2.5,2015
+Kunle Olukotun,Stanford University,mlmining,3.0,1.33333333333,2015
 Kunle Olukotun,Stanford University,proglang,1.0,1.0,2006
 Kunle Olukotun,Stanford University,proglang,1.0,1.0,2009
 Kunle Olukotun,Stanford University,proglang,1.0,0.333333333333,2010
@@ -5891,7 +5891,7 @@ Prashant J. Shenoy,University of Massachusetts - Amherst,networks,1.0,1.0,2013
 Daisy Zhe Wang,University of Florida,database,2.0,0.833333333333,2008
 Daisy Zhe Wang,University of Florida,database,1.0,0.333333333333,2010
 Daisy Zhe Wang,University of Florida,database,1.0,0.333333333333,2011
-Daisy Zhe Wang,University of Florida,database,1.0,0.5,2012
+Daisy Zhe Wang,University of Florida,database,1.0,0.333333333333,2012
 Daisy Zhe Wang,University of Florida,database,1.0,1.0,2014
 Daisy Zhe Wang,University of Florida,database,1.0,0.5,2015
 Christopher G. Healey,North Carolina State University,graphics,1.0,1.0,2004
@@ -9411,9 +9411,9 @@ Dan Suciu,University of Washington,database,3.0,2.5,2003
 Dan Suciu,University of Washington,database,3.0,2.5,2004
 Dan Suciu,University of Washington,database,3.0,3.0,2005
 Dan Suciu,University of Washington,database,4.0,3.5,2007
-Dan Suciu,University of Washington,database,5.0,3.83333333333,2008
+Dan Suciu,University of Washington,database,5.0,3.08333333333,2008
 Dan Suciu,University of Washington,database,3.0,2.0,2009
-Dan Suciu,University of Washington,database,6.0,4.5,2010
+Dan Suciu,University of Washington,database,6.0,4.0,2010
 Dan Suciu,University of Washington,database,4.0,2.0,2011
 Dan Suciu,University of Washington,database,7.0,3.66666666667,2012
 Dan Suciu,University of Washington,database,3.0,1.16666666667,2013
@@ -10895,7 +10895,7 @@ Jude W. Shavlik,University of Wisconsin - Madison,ai,1.0,1.0,2009
 Jude W. Shavlik,University of Wisconsin - Madison,ai,1.0,1.0,2011
 Jude W. Shavlik,University of Wisconsin - Madison,ai,1.0,1.0,2014
 Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,1.0,2006
-Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,0.5,2011
+Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,0.333333333333,2011
 Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,0.25,2014
 Georgios E. Fainekos,Arizona State University,robotics,1.0,1.0,2005
 Georgios E. Fainekos,Arizona State University,robotics,2.0,2.0,2007
@@ -11942,6 +11942,17 @@ Hongyuan Zha,Georgia Institute of Technology,vision,1.0,1.0,2008
 Hongyuan Zha,Georgia Institute of Technology,vision,2.0,2.0,2013
 Hongyuan Zha,Georgia Institute of Technology,vision,1.0,1.0,2014
 Hongyuan Zha,Georgia Institute of Technology,vision,3.0,3.0,2015
+Christopher Ré,Stanford University,theory,1.0,1.0,2016
+Christopher Ré,Stanford University,mlmining,2.0,2.0,2014
+Christopher Ré,Stanford University,mlmining,4.0,2.16666666667,2015
+Christopher Ré,Stanford University,database,3.0,1.08333333333,2008
+Christopher Ré,Stanford University,database,1.0,0.5,2009
+Christopher Ré,Stanford University,database,2.0,1.5,2010
+Christopher Ré,Stanford University,database,4.0,2.83333333333,2011
+Christopher Ré,Stanford University,database,3.0,1.83333333333,2012
+Christopher Ré,Stanford University,database,2.0,2.0,2013
+Christopher Ré,Stanford University,database,1.0,1.0,2014
+Christopher Ré,Stanford University,database,3.0,2.5,2015
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1.0,1.0,2004
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1.0,0.333333333333,2010
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1.0,1.0,2013
@@ -13899,7 +13910,7 @@ Gaetano Borriello,University of Washington,hci,2.0,1.5,2014
 Gaetano Borriello,University of Washington,hci,2.0,2.0,2015
 Gaetano Borriello,University of Washington,hci,1.0,1.0,2016
 Gaetano Borriello,University of Washington,ai,1.0,1.0,2005
-Gaetano Borriello,University of Washington,database,1.0,0.333333333333,2008
+Gaetano Borriello,University of Washington,database,1.0,0.25,2008
 Gaetano Borriello,University of Washington,mobile,1.0,0.5,1999
 Gaetano Borriello,University of Washington,mobile,1.0,1.0,2005
 Gaetano Borriello,University of Washington,mobile,1.0,0.333333333333,2008
@@ -16817,7 +16828,7 @@ Joseph M. Hellerstein,University of California - Berkeley,database,2.0,1.0,2008
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,2.33333333333,2009
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,1.83333333333,2010
 Joseph M. Hellerstein,University of California - Berkeley,database,1.0,0.333333333333,2011
-Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.58333333333,2012
+Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.41666666667,2012
 Joseph M. Hellerstein,University of California - Berkeley,database,4.0,1.16666666667,2013
 Joseph M. Hellerstein,University of California - Berkeley,database,3.0,1.58333333333,2014
 Joseph M. Hellerstein,University of California - Berkeley,database,2.0,1.25,2015
@@ -18052,7 +18063,7 @@ AnHai Doan,University of Wisconsin - Madison,database,4.0,2.83333333333,2007
 AnHai Doan,University of Wisconsin - Madison,database,3.0,2.33333333333,2008
 AnHai Doan,University of Wisconsin - Madison,database,3.0,2.0,2009
 AnHai Doan,University of Wisconsin - Madison,database,1.0,0.5,2010
-AnHai Doan,University of Wisconsin - Madison,database,1.0,0.5,2011
+AnHai Doan,University of Wisconsin - Madison,database,1.0,0.333333333333,2011
 AnHai Doan,University of Wisconsin - Madison,database,1.0,1.0,2012
 AnHai Doan,University of Wisconsin - Madison,database,2.0,2.0,2013
 AnHai Doan,University of Wisconsin - Madison,database,4.0,2.25,2014
@@ -19119,8 +19130,8 @@ Joe D. Warren,Rice University,graphics,1.0,1.0,2012
 Joe D. Warren,Rice University,robotics,1.0,0.5,1998
 Magdalena Balazinska,University of Washington,database,1.0,0.333333333333,2005
 Magdalena Balazinska,University of Washington,database,1.0,0.333333333333,2007
-Magdalena Balazinska,University of Washington,database,3.0,1.83333333333,2008
-Magdalena Balazinska,University of Washington,database,3.0,1.83333333333,2009
+Magdalena Balazinska,University of Washington,database,3.0,1.58333333333,2008
+Magdalena Balazinska,University of Washington,database,3.0,1.33333333333,2009
 Magdalena Balazinska,University of Washington,database,3.0,1.5,2010
 Magdalena Balazinska,University of Washington,database,3.0,2.5,2011
 Magdalena Balazinska,University of Washington,database,6.0,3.66666666667,2012
