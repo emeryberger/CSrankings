@@ -278,7 +278,7 @@ function rank() {
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in univnames) {
-	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Publications</em></small></td></thead><tbody>";
+	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Publication Count</em></small></td></thead><tbody>";
 	/* univnames[dept].sort(compareNames); */
 	var fc = {};
 	for (var ind = 0; ind < univnames[dept].length; ind++) {
