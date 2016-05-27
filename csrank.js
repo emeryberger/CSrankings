@@ -1,5 +1,5 @@
 var outputHTML = "";        /* The string containing the ranked list of institutions. */
-var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
+var minToRank = 50;         /* Show the top 30 (with more if tied at the end) */
 var totalCheckboxes = 19;   /* The number of checkboxes (research areas). */
 
 var authors = "";           /* The data which will hold the parsed CSV of author info. */
@@ -206,6 +206,26 @@ function deactivateOthers() {
     return false;
 }
 
+
+function sortIndex(univagg) {
+    var keys = Object.keys(univagg);
+    keys.sort(function(a,b) {
+	if (univagg[a] > univagg[b]) {
+	    return -1;
+	}
+	if (univagg[b] > univagg[a]) {
+	    return 1;
+	}
+	if (a < b) {
+	    return -1;
+	}
+	if (b < a) {
+	    return 1;
+	}
+	return 0;});
+    return keys;
+}
+
 function rank() {
     var form = document.getElementById("rankform");
     var s = "";
@@ -214,12 +234,12 @@ function rank() {
     var facultycount = {};
     var authcounts = {};
     var visited = {}; /* contains an author name if that author has been processed. */
-    var univagg = {}; /* (university, total number of papers) */
     var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
     var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
     var areacount = {}; /* raw number of papers in each area */
     var areaAdjustedCount = {}; /* raw number of papers in each area */
     var areaDeptAdjustedCount = {};
+    var univagg = {}; /* (university, total or average number of papers) */
     
     var startyear = parseInt(jQuery("#startyear").find(":selected").text());
     var endyear = parseInt(jQuery("#endyear").find(":selected").text());
@@ -314,7 +334,7 @@ function rank() {
 	    }
 	}
 	if (displayPercentages) {
-	    univagg[dept] = Math.pow(univagg[dept], 1 / n);
+	    univagg[dept] = Math.floor(Math.pow(univagg[dept], 1 / n));
 	}
     }
 
@@ -342,9 +362,9 @@ function rank() {
     }
     
     if (displayPercentages) {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Geometric&nbsp;Mean</th><th align=\"right\">&nbsp;&nbsp;Faculty</th></th></tr></thead>";
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Average&nbsp;Pubs</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></th></tr></thead>";
     } else {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Total&nbsp;</th><th align=\"right\">&nbsp;&nbsp;Faculty</th></tr></thead>";
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Total&nbsp;Pubs</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>";
     }
     s = s + "<tbody>";
     /* As long as there is at least one thing selected, compute and display a ranking. */
@@ -352,9 +372,7 @@ function rank() {
 	var rank = 0;        /* index */
 	var oldv = null;     /* old number - to track ties */
 	/* Sort the university aggregate count from largest to smallest. */
-	var keys = Object.keys(univagg);
-	keys.sort(function(a,b){return univagg[b] - univagg[a];});
-	
+	var keys = sortIndex(univagg);
 	/* Display rankings until we have shown `minToRank` items or
 	   while there is a tie (those all get the same rank). */
 	for (var ind = 0; ind < keys.length; ind++) {
