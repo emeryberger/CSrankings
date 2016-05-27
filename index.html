@@ -68,15 +68,19 @@
 	      attributed to the institution where authors
 	      are <em>currently affiliated</em> full-time,
 	      tenure-track faculty members. Note that this means an
-	      author's publications follow them if they move. Each
-	      publication is counted exactly once, with credit split
-	      evenly among all faculty authors. Currently, this
-	      database includes only U.S. CS or EECS departments (or
-	      equivalent).
+	      author's publications follow them if they move.
+	      Currently, this database includes only U.S. CS or EECS
+	      departments (or equivalent).
 	    </p>
-	    <p><em>Average count</em> computes the geometric mean of
+	    <p>Each publication is counted exactly once, with credit
+	      adjusted by splitting evenly among all faculty
+	      authors.
+	    </p>
+	    <p><em>Average percent</em> computes the mean percentage of
 	      publications in each area by institution, weighing areas
-	      evenly. <em>Total count</em> computes the sum of all
+	      evenly.
+	    <br />
+	    <em>Total count</em> computes the sum of all
 	      papers published, effectively emphasizing areas with
 	      more publications.
 	    </p>
@@ -91,7 +95,7 @@
 	    </p>
 		  Rank by
 		  <select id="displayPercent" name="displayPercent" onchange="rank();" >
-		    <option value="1" selected="selected">average count</option>
+		    <option value="1" selected="selected">average percent</option>
 		    <option value="0">total count</option>
 		  </select>
 		  of publications between
@@ -278,7 +282,7 @@
 		  <tr>
 		    <td>  
 		      Computer security
-		      <small><em>CCS, NDSS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
+		      <small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
 		    </td>
 		    <td>  
 		      <input type="checkbox" name="field_5" id="field_5" value="1.0"/>

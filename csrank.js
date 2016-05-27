@@ -229,20 +229,19 @@ function sortIndex(univagg) {
 function rank() {
     var form = document.getElementById("rankform");
     var s = "";
-    var deptNames = [];
-    var deptCounts = [];
-    var facultycount = {};
-    var authcounts = {};
-    var visited = {}; /* contains an author name if that author has been processed. */
-    var authagg = {}; /* (author, number of papers) -- used to compute max papers from university per area */
-    var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-    var areacount = {}; /* raw number of papers in each area */
-    var areaAdjustedCount = {}; /* raw number of papers in each area */
-    var areaDeptAdjustedCount = {};
-    var univagg = {}; /* (university, total or average number of papers) */
+    var deptNames = {};          /* names of departments. */
+    var deptCounts = {};         /* number of faculty in each department. */
+    var facultycount = {};       /* name + dept -> raw count of pubs per name / department */
+    var visited = {};            /* contains an author name if that author has been processed. */
+    var authagg = {};            /* (author, number of papers) -- used to compute max papers from university per area */
+    var weights = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+    var areacount = {};          /* raw number of papers in each area */
+    var areaAdjustedCount = {};  /* adjusted number of papers in each area (split among faculty authors). */
+    var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
+    var univagg = {};            /* (university, total or average number of papers) */
     
-    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
-    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
+    var startyear          = parseInt(jQuery("#startyear").find(":selected").text());
+    var endyear            = parseInt(jQuery("#endyear").find(":selected").text());
     var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
 
     var numAreas = 0; /* Total number of areas checked */
@@ -251,6 +250,7 @@ function rank() {
     for (var ind = 0; ind < areas.length; ind++) {
 	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
 	if (weights[areas[ind]] == 1) {
+	    /* One more area checked. */
 	    numAreas++;
 	}
 	areacount[areas[ind]] = 0;
@@ -278,9 +278,6 @@ function rank() {
 	var areaDept = area+dept;
 	if (!(areaDept in areaDeptAdjustedCount)) {
 	    areaDeptAdjustedCount[areaDept] = 0;
-	}
-	if (isNaN(areaDeptAdjustedCount[areaDept])) {
-	    console.log ("WTF!");
 	}
 	if (weights[area] == 0) {
 	    continue;
@@ -311,7 +308,8 @@ function rank() {
     for (dept in deptNames) {
 	var n = numAreas;
 	if (displayPercentages) {
-	    univagg[dept] = 1;
+	    univagg[dept] = 0;
+/*	GEOMEAN:    univagg[dept] = 1; */
 	} else {
 	    univagg[dept] = 0;
 	}
@@ -324,7 +322,8 @@ function rank() {
 	    if (weights[area] != 0) {
 		if (displayPercentages) {
 		    if (areaDeptAdjustedCount[areaDept] != 0) {
-			univagg[dept] *= areaDeptAdjustedCount[areaDept];
+			univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area];
+			/* GEOMEAN: univagg[dept] *= areaDeptAdjustedCount[areaDept]; */
 		    } else {
 			n--;
 		    }
@@ -334,7 +333,8 @@ function rank() {
 	    }
 	}
 	if (displayPercentages) {
-	    univagg[dept] = Math.floor(Math.pow(univagg[dept], 1 / n));
+	    univagg[dept] = univagg[dept] / numAreas;
+/*	GEOMEAN:    univagg[dept] = univagg[dept] / n; */
 	}
     }
 
@@ -346,14 +346,12 @@ function rank() {
 	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Raw Publication Count</em></small></td></thead><tbody>";
 	var fc = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
-	    /* for (var name of deptNames[dept]) {*/
 	    name = deptNames[dept][ind];
 	    fc[name] = facultycount[name+dept];
 	}
 	var keys = Object.keys(fc);
 	keys.sort(function(a,b){ return fc[b] - fc[a];});
 	for (var ind = 0; ind < keys.length; ind++) {
-	    /* for (var name of keys) { */
 	    name = keys[ind];
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td align=\"right\"><small>" + facultycount[name+dept] + "</small></td></tr>";
 	}
@@ -362,9 +360,9 @@ function rank() {
     }
     
     if (displayPercentages) {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Average&nbsp;Pubs</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></th></tr></thead>";
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Average&nbsp;%</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></th></tr></thead>";
     } else {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Total&nbsp;Pubs</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>";
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Adjusted&nbsp;Pub&nbsp;Count</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>";
     }
     s = s + "<tbody>";
     /* As long as there is at least one thing selected, compute and display a ranking. */
@@ -395,13 +393,11 @@ function rank() {
 
 	    if (displayPercentages) {
 		/* Show average */
-		s += "<td align=\"right\">" + (10.0 * Math.floor(v) / (10.0))  + "</td>";
-
-
-		/*		s += "<td align=\"right\">" + v + "%</td>"; */
+		s += "<td align=\"right\">" + (Math.floor(1000.0 * v) / (10.0)).toPrecision(2)  + "%</td>";
+		/* GEO MEAN: s += "<td align=\"right\">" + (10.0 * Math.floor(v) / (10.0))  + "</td>"; */
 	    } else {
 		/* Show count */
-		s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
+		s += "<td align=\"right\">" + (Math.floor(100.0 * v) / 100.0)  + "</td>";
 	    }
 	    s += "<td align=\"right\">" + deptCounts[dept] + "<br />"; /* number of faculty */
 	    s += "</td>";
