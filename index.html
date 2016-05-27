@@ -74,14 +74,11 @@
 	      database includes only US CS or EECS departments (or
 	      equivalent).
 	    </p>
-	    <p><em>Average percentage</em> computes the geometric mean
-	      of publications in each area by institution, weighing
-	      areas evenly. For example, faculty members currently at
-	      CMU are responsible for 9.2% of all papers published at
-	      AAAI and IJCAI between 2000 and 2016. <em>Total
-	      count</em> computes the sum of all papers published,
-	      effectively emphasizing areas with more
-	      publications.
+	    <p><em>Average count</em> computes the geometric mean of
+	      publications in each area by institution, weighing areas
+	      evenly. <em>Total count</em> computes the sum of all
+	      papers published, effectively emphasizing areas with
+	      more publications.
 	    </p>
 	    <p>
 	      The rubrics (<em>AI</em>, <em>Systems</em>,
@@ -94,7 +91,7 @@
 	    </p>
 		  Rank by
 		  <select id="displayPercent" name="displayPercent" onchange="rank();" >
-		    <option value="1" selected="selected">average percentage</option>
+		    <option value="1" selected="selected">average count</option>
 		    <option value="0">total count</option>
 		  </select>
 		  of publications between
