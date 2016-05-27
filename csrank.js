@@ -149,7 +149,7 @@ function activateTheory() {
 }
 
 function activateOthers() {
-    for (var i = 14; i <= 17; i++) {
+    for (var i = 16; i <= 17; i++) {
 	var str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked',true);
     }
@@ -197,7 +197,7 @@ function deactivateTheory() {
 }
 
 function deactivateOthers() {
-    for (var i = 14; i <= 17; i++) {
+    for (var i = 16; i <= 17; i++) {
 	var str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked',false);
     }
@@ -289,6 +289,7 @@ function rank() {
     /* Now compute aggregate statistics. */
     
     for (dept in deptNames) {
+	var n = numAreas;
 	if (displayPercentages) {
 	    univagg[dept] = 1;
 	} else {
@@ -304,6 +305,8 @@ function rank() {
 		if (displayPercentages) {
 		    if (areaDeptAdjustedCount[areaDept] != 0) {
 			univagg[dept] *= areaDeptAdjustedCount[areaDept];
+		    } else {
+			n--;
 		    }
 		} else {
 		    univagg[dept] += areaDeptAdjustedCount[areaDept];
@@ -311,7 +314,7 @@ function rank() {
 	    }
 	}
 	if (displayPercentages) {
-	    univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
+	    univagg[dept] = Math.pow(univagg[dept], 1 / n);
 	}
     }
 
@@ -320,7 +323,7 @@ function rank() {
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Publication Count</em></small></td></thead><tbody>";
+	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Raw Publication Count</em></small></td></thead><tbody>";
 	var fc = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
 	    /* for (var name of deptNames[dept]) {*/
@@ -339,9 +342,9 @@ function rank() {
     }
     
     if (displayPercentages) {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Percent&nbsp;</th><th align=\"right\">Faculty</th></th></tr></thead>";
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Geometric&nbsp;Mean</th><th align=\"right\">&nbsp;&nbsp;Faculty</th></th></tr></thead>";
     } else {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Sum&nbsp;</th><th align=\"right\">Faculty</th></tr></thead>";
+	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;</th><th align=\"right\">Institution&nbsp;</th><th align=\"right\">Total&nbsp;</th><th align=\"right\">&nbsp;&nbsp;Faculty</th></tr></thead>";
     }
     s = s + "<tbody>";
     /* As long as there is at least one thing selected, compute and display a ranking. */
@@ -373,9 +376,11 @@ function rank() {
 	    s += "</td>";
 
 	    if (displayPercentages) {
-		/* Show average percentage */
-		s += "<td align=\"right\">" + (Math.floor(v) / (10.0)).toPrecision(2)  + "%</td>";
-/*		s += "<td align=\"right\">" + v + "%</td>"; */
+		/* Show average */
+		s += "<td align=\"right\">" + (10.0 * Math.floor(v) / (10.0))  + "</td>";
+
+
+		/*		s += "<td align=\"right\">" + v + "%</td>"; */
 	    } else {
 		/* Show count */
 		s += "<td align=\"right\">" + Math.floor(v)  + "</td>";
