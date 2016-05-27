@@ -118,6 +118,8 @@ function activatePL() {
 }
 
 function activateSystems() {
+    jQuery('input[name=field_1]').prop('checked', true);
+    jQuery('input[name=field_2]').prop('checked', true);
     for (var i = 3; i <= 7; i++) {
 	var str = "input[name=field_"+i+"]";
 	jQuery(str).prop('checked', true);
@@ -163,6 +165,7 @@ function deactivatePL() {
 }
 
 function deactivateSystems() {
+    deactivatePL();
     for (var i = 3; i <= 7; i++) {
 	var str = "input[name=field_"+i+"]";
 	jQuery(str).prop('checked', false);
