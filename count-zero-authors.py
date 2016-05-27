@@ -185,10 +185,10 @@ if (generateLog):
 else:
     (intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
 
+        # if (intauthors_gl[k] > 0)
+    #    print k.encode('utf8') + " : " + str(intauthors_gl[k]).encode('utf8')
+
 for k in facultydict:
-    if (intauthors_gl.has_key(k)):
-        if (intauthors_gl[k] == 0):
-            print k.encode('utf8') + " : " + str(intauthors_gl[k]).encode('utf8')
-#    else:
-#            print str(k).encode('utf8') + " : 0"
+    if (not intauthors_gl.has_key(k)):
+        print k.encode('utf8') + " : 0"
     
