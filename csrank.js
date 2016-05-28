@@ -334,6 +334,7 @@ function rank() {
 	}
 	if (displayPercentages) {
 	    univagg[dept] = univagg[dept] / numAreas;
+	    univagg[dept] = univagg[dept].toPrecision(2);
 /*	GEOMEAN:    univagg[dept] = univagg[dept] / n; */
 	}
     }
