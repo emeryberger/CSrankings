@@ -300,7 +300,7 @@ function rank() {
 	}
 	if (displayPercentages) {
 	    univagg[dept] = univagg[dept] / numAreas;
-	    univagg[dept] = univagg[dept].toPrecision(2);
+	    univagg[dept] = (Math.floor(1000.0 * univagg[dept]) / 1000.0); /* Force rounding. */
 /*	GEOMEAN:    univagg[dept] = univagg[dept] / n; */
 	}
     }
@@ -367,7 +367,7 @@ function rank() {
 
 	    if (displayPercentages) {
 		/* Show average */
-		s += "<td align=\"right\">" + (Math.floor(1000.0 * v) / (10.0)).toPrecision(2)  + "%</td>";
+		s += "<td align=\"right\">" + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2)  + "%</td>";
 		/* GEO MEAN: s += "<td align=\"right\">" + (10.0 * Math.floor(v) / (10.0))  + "</td>"; */
 	    } else {
 		/* Show count */
