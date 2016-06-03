@@ -92,118 +92,84 @@ function init() {
 
 window.onload=init;
 
-function activateAll() {
+function activateAll(value = true) {
     for (var i = 1; i <= totalCheckboxes; i++) {
 	var str = "input[name=field_"+i+"]";
-	jQuery(str).prop('checked', true);
+	jQuery(str).prop('checked', value);
     }
     rank();
     return false;
 }
 
 function activateNone() {
-    for (var i = 1; i <= totalCheckboxes; i++) {
-	var str = "input[name=field_"+i+"]";
-	jQuery(str).prop('checked', false);
-    }
+    return activateAll(false);
+}
+
+function activatePL(value = true) {
+    jQuery('input[name=field_1]').prop('checked', value);
+    jQuery('input[name=field_2]').prop('checked', value);
     rank();
     return false;
 }
 
-function activatePL() {
-    jQuery('input[name=field_1]').prop('checked', true);
-    jQuery('input[name=field_2]').prop('checked', true);
-    rank();
-    return false;
-}
-
-function activateSystems() {
-    jQuery('input[name=field_1]').prop('checked', true);
-    jQuery('input[name=field_2]').prop('checked', true);
+function activateSystems(value = true) {
     for (var i = 3; i <= 7; i++) {
 	var str = "input[name=field_"+i+"]";
-	jQuery(str).prop('checked', true);
+	jQuery(str).prop('checked', value);
     }
-    jQuery('input[name=field_15]').prop('checked', true);
-    jQuery('input[name=field_18]').prop('checked', true);
+    jQuery('input[name=field_15]').prop('checked', value);
+    jQuery('input[name=field_18]').prop('checked', value);
     rank();
     return false;
 }
 
-function activateAI() {
+function activateAI(value = true) {
     for (var i = 8; i <= 12; i++) {
 	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked',true);
+	jQuery(str).prop('checked', value);
     }
     rank();
     return false;
 }
 
-function activateTheory() {
+function activateTheory(value = true) {
     for (var i = 13; i <= 14; i++) {
 	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked',true);
+	jQuery(str).prop('checked', value);
     }
     rank();
     return false;
 }
 
-function activateOthers() {
+function activateOthers(value = true) {
     for (var i = 16; i <= 17; i++) {
 	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked',true);
+	jQuery(str).prop('checked', value);
     }
-    jQuery('input[name=field_19]').prop('checked', true);
+    jQuery('input[name=field_19]').prop('checked', value);
     rank();
     return false;
 }
 
 function deactivatePL() {
-    jQuery('input[name=field_1]').prop('checked', false);
-    jQuery('input[name=field_2]').prop('checked', false);
-    rank();
-    return false;
+    return activatePL(false);
 }
 
 function deactivateSystems() {
-    jQuery('input[name=field_1]').prop('checked', false);
-    jQuery('input[name=field_2]').prop('checked', false);
-    for (var i = 3; i <= 7; i++) {
-	var str = "input[name=field_"+i+"]";
-	jQuery(str).prop('checked', false);
-    }
-    jQuery('input[name=field_15]').prop('checked', false);
-    jQuery('input[name=field_18]').prop('checked', false);
-    rank();
+    return activateSystems(false);
     return false;
 }
 
 function deactivateAI() {
-    for (var i = 8; i <= 12; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked',false);
-    }
-    rank();
-    return false;
+    return activateAI(false);
 }
 
 function deactivateTheory() {
-    for (var i = 13; i <= 14; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked',false);
-    }
-    rank();
-    return false;
+    return activateTheory(false);
 }
 
 function deactivateOthers() {
-    for (var i = 16; i <= 17; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked',false);
-    }
-    jQuery('input[name=field_19]').prop('checked', false);
-    rank();
-    return false;
+    return activateOthers(false);
 }
 
 
