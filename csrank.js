@@ -354,7 +354,14 @@ function rank() {
 	keys.sort(function(a,b){ return fc[b] - fc[a];});
 	for (var ind = 0; ind < keys.length; ind++) {
 	    name = keys[ind];
-	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>" + name + "</small></td><td align=\"right\"><small>" + facultycount[name+dept] + "</small></td></tr>";
+	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+		+ "<a href=\"https://www.google.com/search?q="
+		+ encodeURI(name + " " + dept)
+		+ "&gws_rd=ssl\">"
+		+ name
+		+ "</a></small></td><td align=\"right\"><small>"
+		+ facultycount[name+dept]
+		+ "</small></td></tr>";
 	}
 	p += "</tbody></table></div></div>";
 	univtext[dept] = p;
