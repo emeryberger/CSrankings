@@ -8,7 +8,7 @@ for example, Les Valiant's entry is <a
 href="http://dblp.uni-trier.de/pers/hd/v/Valiant:Leslie_G=">```Leslie
 G. Valiant , Harvard University```</a>.
 
-The Python script ```regenerate-data.py``` builds the
+The Python script ```util/regenerate-data.py``` builds the
 ```generated-author-info.csv``` file which the web app uses to compute
 rankings. This needs to be re-executed every time the faculty
 affiliation csv changes.
