@@ -1,5 +1,5 @@
 var outputHTML = "";        /* The string containing the ranked list of institutions. */
-var minToRank = 50;         /* Show the top 30 (with more if tied at the end) */
+var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
 var totalCheckboxes = 19;   /* The number of checkboxes (research areas). */
 
 var authors = "";           /* The data which will hold the parsed CSV of author info. */
@@ -339,8 +339,10 @@ function rank() {
 	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Adjusted&nbsp;Pub&nbsp;Count</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>";
     }
     s = s + "<tbody>";
+    var useDenseRankings = false; /* set to true for "dense rankings" */
     /* As long as there is at least one thing selected, compute and display a ranking. */
     if (numAreas > 0) {
+	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competitive rankings" */
 	var rank = 0;        /* index */
 	var oldv = null;     /* old number - to track ties */
 	/* Sort the university aggregate count from largest to smallest. */
@@ -357,7 +359,12 @@ function rank() {
 		break;
 	    }
 	    if (oldv != v) {
-		rank = rank + 1;
+		if (useDenseRankings) {
+		    rank = rank + 1;
+		} else {
+		    rank = rank + ties;
+		    ties = 0;
+		}
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
 	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
@@ -376,6 +383,7 @@ function rank() {
 	    s += "<td align=\"right\">" + deptCounts[dept] + "<br />"; /* number of faculty */
 	    s += "</td>";
 	    s += "</tr>\n";
+	    ties++;
 	    oldv = v;
 	}
 	s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
