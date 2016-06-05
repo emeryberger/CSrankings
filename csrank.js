@@ -1,8 +1,7 @@
-var outputHTML = "";        /* The string containing the ranked list of institutions. */
-var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
-var totalCheckboxes = 19;   /* The number of checkboxes (research areas). */
+var outputHTML = "";          /* The string containing the ranked list of institutions. */
+var totalCheckboxes = 19;     /* The number of checkboxes (research areas). */
 var useDenseRankings = false; /* set to true for "dense rankings" */
-var authors = "";           /* The data which will hold the parsed CSV of author info. */
+var authors = "";             /* The data which will hold the parsed CSV of author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
@@ -13,16 +12,16 @@ var areas = ["proglang", "softeng", "opsys", "networks", "security", "database",
 var prologue = 	"<html>"
     + "<head>"
     + "<title>CS department rankings by productivity</title>"
-    + "<style type=\"text/css\">"
-    + "  body { font-family: \"Helvetica\", \"Arial\"; }"
+    + '<style type="text/css">'
+    + '  body { font-family: "Helvetica", "Arial"; }'
     + "  table td { vertical-align: top; }"
     + "</style>"
     + "</head>"
     + "<body>"
-    + "<div class=\"row\">"
-    + "<div class=\"table\">"
-    + "<table class=\"table-sm table-striped\""
-    + "id=\"ranking\" valign=\"top\">";
+    + '<div class="row">'
+    + '<div class="table">'
+    + '<table class="table-sm table-striped"'
+    + 'id="ranking" valign="top">';
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
 function compareNames (a,b) {
@@ -209,6 +208,8 @@ function rank() {
     var startyear          = parseInt(jQuery("#startyear").find(":selected").text());
     var endyear            = parseInt(jQuery("#endyear").find(":selected").text());
     var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
+    /* Show the top N (with more if tied at the end) */
+    var minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
 
     var numAreas = 0; /* Total number of areas checked */
 
@@ -310,7 +311,7 @@ function rank() {
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-	var p = "<div class=\"row\"><div class=\"table\"><table class=\"table-striped\" width=\"400px\"><thead><th></th><td><small><em>Faculty</em></small></td><td align=\"right\"><small><em>Raw Publication Count</em></small></td></thead><tbody>";
+	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>Raw Publication Count</em></small></td></thead><tbody>';
 	var fc = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
 	    name = deptNames[dept][ind];
@@ -321,11 +322,11 @@ function rank() {
 	for (var ind = 0; ind < keys.length; ind++) {
 	    name = keys[ind];
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-		+ "<a href=\"https://www.google.com/search?q="
+		+ '<a href="https://www.google.com/search?q='
 		+ encodeURI(name + " " + dept)
-		+ "&gws_rd=ssl\">"
+		+ '&gws_rd=ssl">'
 		+ name
-		+ "</a></small></td><td align=\"right\"><small>"
+		+ '</a></small></td><td align="right"><small>'
 		+ facultycount[name+dept]
 		+ "</small></td></tr>";
 	}
@@ -334,9 +335,9 @@ function rank() {
     }
     
     if (displayPercentages) {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Average&nbsp;%</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></th></tr></thead>";
+	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Average&nbsp;%</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></th></tr></thead>';
     } else {
-	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Adjusted&nbsp;Pub&nbsp;Count</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>";
+	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
     }
     s = s + "<tbody>";
     /* As long as there is at least one thing selected, compute and display a ranking. */
@@ -367,27 +368,34 @@ function rank() {
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
 	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
-	    s += "<div style=\"display:none;\" id=\""+dept+"\">" + univtext[dept] + "</div>";
+	    s += '<div style="display:none;" id=""+dept+"">" + univtext[dept] + "</div>';
     
 	    s += "</td>";
 
 	    if (displayPercentages) {
 		/* Show average */
-		s += "<td align=\"right\">" + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2)  + "%</td>";
-		/* GEO MEAN: s += "<td align=\"right\">" + (10.0 * Math.floor(v) / (10.0))  + "</td>"; */
+		s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2)  + "%</td>";
+		/* GEO MEAN: s += '<td align="right">' + (10.0 * Math.floor(v) / (10.0))  + "</td>"; */
 	    } else {
 		/* Show count */
-		s += "<td align=\"right\">" + (Math.floor(100.0 * v) / 100.0)  + "</td>";
+		s += '<td align="right">' + (Math.floor(100.0 * v) / 100.0)  + "</td>";
 	    }
-	    s += "<td align=\"right\">" + deptCounts[dept] + "<br />"; /* number of faculty */
+	    s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
 	    s += "</td>";
 	    s += "</tr>\n";
 	    ties++;
 	    oldv = v;
 	}
-	s += "</tbody>" + "</table>" + "</div>" + "</div>" + "\n";
+	s += "</tbody>" + "</table>" + "<br />";
+	if (useDenseRankings) {
+	    s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Click to use competitive rankings.</b></font></a><em>';
+	} else {
+	    s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Click to use dense rankings.</b></font></a></em>';
+	}
+	s += "</div>" + "</div>" + "\n";
 	s += "<br>" + "</body>" + "</html>";
     } else {
+	/* Nothing selected. */
 	s = "<h4>Please select at least one area.</h4>";
     }
     outputHTML = s;
