@@ -1,7 +1,7 @@
 var outputHTML = "";        /* The string containing the ranked list of institutions. */
 var minToRank = 30;         /* Show the top 30 (with more if tied at the end) */
 var totalCheckboxes = 19;   /* The number of checkboxes (research areas). */
-
+var useDenseRankings = false; /* set to true for "dense rankings" */
 var authors = "";           /* The data which will hold the parsed CSV of author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
@@ -339,7 +339,6 @@ function rank() {
 	s = s + "<thead><tr><th align=\"left\">Rank&nbsp;&nbsp;</th><th align=\"right\">Institution&nbsp;&nbsp;</th><th align=\"right\">Adjusted&nbsp;Pub&nbsp;Count</th><th align=\"right\">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>";
     }
     s = s + "<tbody>";
-    var useDenseRankings = false; /* set to true for "dense rankings" */
     /* As long as there is at least one thing selected, compute and display a ranking. */
     if (numAreas > 0) {
 	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competitive rankings" */
@@ -396,4 +395,15 @@ function rank() {
     return false; 
 }
 
+function activateDenseRankings() {
+    useDenseRankings = true;
+    rank();
+    return false;
+}
+
+function deactivateDenseRankings() {
+    useDenseRankings = false;
+    rank();
+    return false;
+}
 
