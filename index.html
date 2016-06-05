@@ -96,7 +96,15 @@
 	      Click on a triangle (&#9658;) to display
 	      names and number of publications.
 	    </p>
-		  Rank by
+	    Rank the top
+	    <select id="minToRank" name="minToRank" onchange="rank();">
+	      <option value="10">10</option>
+	      <option value="20">20</option>
+	      <option value="30" selected="selected">30</option>
+	      <option value="40">40</option>
+	      <option value="50">50</option>
+	    </select>
+	    institutions by
 		  <select id="displayPercent" name="displayPercent" onchange="rank();" >
 		    <option value="1" selected="selected">average percent</option>
 		    <option value="0">total count</option>
@@ -162,7 +170,6 @@
 		    <option selected="selected" value="2016">2016</option>
 		  </select>
 		  [<a class="only_these_areas" onClick="activateNone(); return false;"><font color="blue"><b>all off</b></font></a> | <a class="only_these_areas" onClick="activateAll(); return false;"><font color="blue"><b>all on</b></font></a>]&nbsp;
-		  <em>(<a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>regular rankings</b></font></a> | <a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>dense rankings</b></font></a>)</em>
 	  </div>
 	</div>
 	
