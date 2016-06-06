@@ -368,7 +368,7 @@ function rank() {
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
 	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
-	    s += '<div style="display:none;" id=""+dept+"">" + univtext[dept] + "</div>';
+	    s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
     
 	    s += "</td>";
 
