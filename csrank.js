@@ -326,7 +326,7 @@ function rank() {
 	for (var ind = 0; ind < keys.length; ind++) {
 	    name = keys[ind];
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-		+ '<a href="https://www.google.com/search?q='
+		+ '<a target="_blank" href="https://www.google.com/search?q='
 		+ encodeURI(name + " " + dept)
 		+ '&gws_rd=ssl">'
 		+ name
