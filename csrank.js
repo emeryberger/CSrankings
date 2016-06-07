@@ -197,6 +197,7 @@ function rank() {
     var deptNames = {};          /* names of departments. */
     var deptCounts = {};         /* number of faculty in each department. */
     var facultycount = {};       /* name + dept -> raw count of pubs per name / department */
+    var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
     var visited = {};            /* contains an author name if that author has been processed. */
     var authagg = {};            /* (author, number of papers) -- used to compute max papers from university per area */
     var weights = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
@@ -259,6 +260,7 @@ function rank() {
 	    if (!(name in visited)) {
 		visited[name] = true;
 		facultycount[name+dept] = 0;
+		facultyAdjustedCount[name+dept] = 0;
 		if (!(dept in deptCounts)) {
 		    deptCounts[dept] = 0;
 		    deptNames[dept] = [];
@@ -267,6 +269,7 @@ function rank() {
 		deptCounts[dept] += 1;
 	    }
 	    facultycount[name+dept] += count;
+	    facultyAdjustedCount[name+dept] += adjustedCount;
 	}
     }
 
@@ -311,7 +314,8 @@ function rank() {
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>Raw Publication Count</em></small></td></thead><tbody>';
+	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>&nbsp;&nbsp;Raw&nbsp;\#&nbsp;Pubs</em></small></td><td align="right"><small><em>&nbsp;&nbsp;Adjusted&nbsp;&nbsp;\#</em></small></td></thead><tbody>';
+	/* Build a dict of just faculty from this department for sorting purposes. */
 	var fc = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
 	    name = deptNames[dept][ind];
@@ -328,6 +332,9 @@ function rank() {
 		+ name
 		+ '</a></small></td><td align="right"><small>'
 		+ facultycount[name+dept]
+		+ "</small></td>"
+		+ '</a></small></td><td align="right"><small>'
+		+ facultyAdjustedCount[name+dept].toPrecision(2)
 		+ "</small></td></tr>";
 	}
 	p += "</tbody></table></div></div>";
