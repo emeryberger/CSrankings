@@ -709,7 +709,7 @@ Pat Hanrahan,Stanford University,graphics,2.0,2.0,2013
 Pat Hanrahan,Stanford University,graphics,2.0,1.5,2014
 Pat Hanrahan,Stanford University,graphics,3.0,3.0,2015
 Pat Hanrahan,Stanford University,hci,1.0,1.0,2013
-Pat Hanrahan,Stanford University,hci,1.0,1.0,2014
+Pat Hanrahan,Stanford University,hci,1.0,0.5,2014
 Pat Hanrahan,Stanford University,mlmining,1.0,1.0,2002
 Pat Hanrahan,Stanford University,database,1.0,1.0,2006
 Pat Hanrahan,Stanford University,database,1.0,1.0,2009
@@ -1342,7 +1342,7 @@ Xiaodong Zhang,Ohio State University,ai,1.0,1.0,2016
 Xiaodong Zhang,Ohio State University,database,1.0,1.0,2015
 Xiaodong Zhang,Ohio State University,database,1.0,0.5,2016
 Dan Jurafsky,Stanford University,hci,1.0,1.0,2014
-Dan Jurafsky,Stanford University,nlp,1.0,0.5,2010
+Dan Jurafsky,Stanford University,nlp,1.0,0.333333333333,2010
 Dan Jurafsky,Stanford University,nlp,1.0,1.0,2011
 Dan Jurafsky,Stanford University,nlp,2.0,2.0,2015
 Dan Jurafsky,Stanford University,mlmining,1.0,1.0,2012
@@ -1446,11 +1446,11 @@ Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2010
 Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2013
 Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2014
 Lane A. Hemaspaandra,University of Rochester,ai,1.0,1.0,2015
-Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2001
-Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2002
-Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2003
-Dan Klein,University of California - Berkeley,nlp,2.0,1.33333333333,2004
-Dan Klein,University of California - Berkeley,nlp,1.0,1.0,2005
+Dan Klein,University of California - Berkeley,nlp,1.0,0.5,2001
+Dan Klein,University of California - Berkeley,nlp,1.0,0.5,2002
+Dan Klein,University of California - Berkeley,nlp,1.0,0.5,2003
+Dan Klein,University of California - Berkeley,nlp,2.0,0.75,2004
+Dan Klein,University of California - Berkeley,nlp,1.0,0.5,2005
 Dan Klein,University of California - Berkeley,nlp,3.0,2.5,2006
 Dan Klein,University of California - Berkeley,nlp,2.0,2.0,2007
 Dan Klein,University of California - Berkeley,nlp,6.0,5.0,2008
@@ -1459,15 +1459,15 @@ Dan Klein,University of California - Berkeley,nlp,6.0,5.0,2010
 Dan Klein,University of California - Berkeley,nlp,6.0,5.33333333333,2011
 Dan Klein,University of California - Berkeley,nlp,3.0,3.0,2013
 Dan Klein,University of California - Berkeley,nlp,2.0,2.0,2015
-Dan Klein,University of California - Berkeley,mlmining,1.0,1.0,2001
-Dan Klein,University of California - Berkeley,mlmining,3.0,3.0,2002
+Dan Klein,University of California - Berkeley,mlmining,1.0,0.5,2001
+Dan Klein,University of California - Berkeley,mlmining,3.0,1.5,2002
 Dan Klein,University of California - Berkeley,mlmining,3.0,1.83333333333,2007
 Dan Klein,University of California - Berkeley,mlmining,3.0,1.83333333333,2008
 Dan Klein,University of California - Berkeley,mlmining,2.0,1.33333333333,2009
 Dan Klein,University of California - Berkeley,mlmining,1.0,0.333333333333,2010
 Dan Klein,University of California - Berkeley,mlmining,1.0,1.0,2014
 Dan Klein,University of California - Berkeley,mlmining,1.0,0.5,2015
-Dan Klein,University of California - Berkeley,ai,2.0,2.0,2003
+Dan Klein,University of California - Berkeley,ai,2.0,1.0,2003
 Dan Klein,University of California - Berkeley,ai,2.0,2.0,2007
 Dan Klein,University of California - Berkeley,ai,1.0,1.0,2011
 Dan Klein,University of California - Berkeley,web,1.0,0.5,2002
@@ -4166,7 +4166,7 @@ Percy Liang,Stanford University,nlp,1.0,0.5,2006
 Percy Liang,Stanford University,nlp,2.0,1.0,2008
 Percy Liang,Stanford University,nlp,2.0,1.0,2010
 Percy Liang,Stanford University,nlp,1.0,0.333333333333,2011
-Percy Liang,Stanford University,nlp,2.0,2.0,2013
+Percy Liang,Stanford University,nlp,2.0,1.5,2013
 Percy Liang,Stanford University,nlp,1.0,1.0,2015
 Percy Liang,Stanford University,mlmining,3.0,1.33333333333,2007
 Percy Liang,Stanford University,mlmining,2.0,0.833333333333,2008
@@ -4174,8 +4174,8 @@ Percy Liang,Stanford University,mlmining,2.0,0.833333333333,2009
 Percy Liang,Stanford University,mlmining,2.0,1.33333333333,2010
 Percy Liang,Stanford University,mlmining,1.0,0.5,2012
 Percy Liang,Stanford University,mlmining,1.0,1.0,2013
-Percy Liang,Stanford University,mlmining,5.0,5.0,2014
-Percy Liang,Stanford University,mlmining,6.0,6.0,2015
+Percy Liang,Stanford University,mlmining,5.0,4.5,2014
+Percy Liang,Stanford University,mlmining,6.0,5.5,2015
 Percy Liang,Stanford University,proglang,1.0,0.5,2010
 Percy Liang,Stanford University,proglang,2.0,1.0,2011
 Percy Liang,Stanford University,vision,1.0,1.0,2005
@@ -7411,9 +7411,9 @@ Munmun De Choudhury,Georgia Institute of Technology,hci,4.0,3.5,2016
 Munmun De Choudhury,Georgia Institute of Technology,web,1.0,1.0,2009
 Munmun De Choudhury,Georgia Institute of Technology,web,1.0,1.0,2010
 Andrew Y. Ng,Stanford University,hci,1.0,0.5,2006
-Andrew Y. Ng,Stanford University,nlp,2.0,2.0,2006
+Andrew Y. Ng,Stanford University,nlp,2.0,1.5,2006
 Andrew Y. Ng,Stanford University,nlp,1.0,0.5,2008
-Andrew Y. Ng,Stanford University,nlp,2.0,2.0,2011
+Andrew Y. Ng,Stanford University,nlp,2.0,1.5,2011
 Andrew Y. Ng,Stanford University,mlmining,1.0,1.0,1997
 Andrew Y. Ng,Stanford University,mlmining,2.0,1.25,1998
 Andrew Y. Ng,Stanford University,mlmining,4.0,2.33333333333,1999
@@ -7421,19 +7421,19 @@ Andrew Y. Ng,Stanford University,mlmining,1.0,0.5,2000
 Andrew Y. Ng,Stanford University,mlmining,4.0,1.83333333333,2001
 Andrew Y. Ng,Stanford University,mlmining,1.0,0.25,2002
 Andrew Y. Ng,Stanford University,mlmining,3.0,1.5,2003
-Andrew Y. Ng,Stanford University,mlmining,7.0,6.0,2004
+Andrew Y. Ng,Stanford University,mlmining,7.0,5.5,2004
 Andrew Y. Ng,Stanford University,mlmining,7.0,4.5,2005
 Andrew Y. Ng,Stanford University,mlmining,6.0,2.83333333333,2006
 Andrew Y. Ng,Stanford University,mlmining,4.0,2.16666666667,2007
 Andrew Y. Ng,Stanford University,mlmining,2.0,1.0,2008
 Andrew Y. Ng,Stanford University,mlmining,7.0,4.5,2009
 Andrew Y. Ng,Stanford University,mlmining,2.0,1.5,2010
-Andrew Y. Ng,Stanford University,mlmining,11.0,10.5,2011
-Andrew Y. Ng,Stanford University,mlmining,5.0,5.0,2012
-Andrew Y. Ng,Stanford University,mlmining,3.0,2.5,2013
+Andrew Y. Ng,Stanford University,mlmining,11.0,9.5,2011
+Andrew Y. Ng,Stanford University,mlmining,5.0,4.5,2012
+Andrew Y. Ng,Stanford University,mlmining,3.0,1.5,2013
 Andrew Y. Ng,Stanford University,ai,1.0,1.0,1999
 Andrew Y. Ng,Stanford University,ai,1.0,0.5,2001
-Andrew Y. Ng,Stanford University,ai,1.0,1.0,2005
+Andrew Y. Ng,Stanford University,ai,1.0,0.5,2005
 Andrew Y. Ng,Stanford University,ai,1.0,0.25,2006
 Andrew Y. Ng,Stanford University,ai,4.0,3.0,2007
 Andrew Y. Ng,Stanford University,ai,3.0,1.5,2008
@@ -7822,9 +7822,9 @@ Kenneth D. Forbus,Northwestern University,ai,3.0,3.0,2015
 Ronald A. Olsson,University of California - Davis,security,1.0,0.5,1998
 Vivek Srikumar,University of Utah,nlp,1.0,0.5,2008
 Vivek Srikumar,University of Utah,nlp,1.0,0.5,2011
-Vivek Srikumar,University of Utah,nlp,1.0,1.0,2014
+Vivek Srikumar,University of Utah,nlp,1.0,0.5,2014
 Vivek Srikumar,University of Utah,mlmining,1.0,0.333333333333,2010
-Vivek Srikumar,University of Utah,mlmining,1.0,1.0,2014
+Vivek Srikumar,University of Utah,mlmining,1.0,0.5,2014
 Vivek Srikumar,University of Utah,ai,2.0,1.0,2008
 Vivek Srikumar,University of Utah,vision,1.0,0.5,2012
 Khaled Harfoush,North Carolina State University,networks,1.0,0.333333333333,2002
@@ -15051,10 +15051,10 @@ Jeffrey Heer,University of Washington,hci,1.0,0.5,2008
 Jeffrey Heer,University of Washington,hci,1.0,0.5,2009
 Jeffrey Heer,University of Washington,hci,1.0,1.0,2010
 Jeffrey Heer,University of Washington,hci,6.0,3.16666666667,2011
-Jeffrey Heer,University of Washington,hci,4.0,3.5,2012
-Jeffrey Heer,University of Washington,hci,1.0,1.0,2013
-Jeffrey Heer,University of Washington,hci,3.0,3.0,2014
-Jeffrey Heer,University of Washington,nlp,1.0,1.0,2014
+Jeffrey Heer,University of Washington,hci,4.0,3.0,2012
+Jeffrey Heer,University of Washington,hci,1.0,0.5,2013
+Jeffrey Heer,University of Washington,hci,3.0,2.5,2014
+Jeffrey Heer,University of Washington,nlp,1.0,0.5,2014
 Hong Qin,State University of New York - Stony Brook,graphics,1.0,0.5,1994
 Hong Qin,State University of New York - Stony Brook,graphics,1.0,1.0,2012
 Hong Qin,State University of New York - Stony Brook,mlmining,1.0,1.0,2007
@@ -15569,7 +15569,7 @@ Michael Collins,Columbia University,nlp,1.0,1.0,1996
 Michael Collins,Columbia University,nlp,1.0,1.0,1997
 Michael Collins,Columbia University,nlp,1.0,1.0,1999
 Michael Collins,Columbia University,nlp,2.0,2.0,2002
-Michael Collins,Columbia University,nlp,3.0,2.33333333333,2004
+Michael Collins,Columbia University,nlp,3.0,2.25,2004
 Michael Collins,Columbia University,nlp,2.0,1.5,2005
 Michael Collins,Columbia University,nlp,1.0,1.0,2006
 Michael Collins,Columbia University,nlp,1.0,1.0,2008
@@ -16867,8 +16867,8 @@ Mihai Surdeanu,University of Arizona,nlp,1.0,0.5,2001
 Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2002
 Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2003
 Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2008
-Mihai Surdeanu,University of Arizona,nlp,1.0,0.5,2010
-Mihai Surdeanu,University of Arizona,nlp,1.0,1.0,2011
+Mihai Surdeanu,University of Arizona,nlp,1.0,0.333333333333,2010
+Mihai Surdeanu,University of Arizona,nlp,1.0,0.5,2011
 Mihai Surdeanu,University of Arizona,mlmining,1.0,1.0,2005
 Hari Balakrishnan,Massachusetts Institute of Technology,metrics,1.0,0.333333333333,1997
 Hari Balakrishnan,Massachusetts Institute of Technology,metrics,1.0,0.25,2003
@@ -18691,6 +18691,37 @@ Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1.0,1.0,2008
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,3.0,2.5,2011
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1.0,1.0,2012
 Grigore Rosu,University of Illinois at Urbana-Champaign,arch,1.0,0.5,2005
+Christopher D. Manning,Stanford University,hci,1.0,0.5,2012
+Christopher D. Manning,Stanford University,hci,1.0,0.5,2013
+Christopher D. Manning,Stanford University,hci,2.0,1.0,2014
+Christopher D. Manning,Stanford University,nlp,1.0,1.0,1993
+Christopher D. Manning,Stanford University,nlp,1.0,0.5,2001
+Christopher D. Manning,Stanford University,nlp,1.0,0.5,2002
+Christopher D. Manning,Stanford University,nlp,2.0,1.5,2003
+Christopher D. Manning,Stanford University,nlp,5.0,3.75,2004
+Christopher D. Manning,Stanford University,nlp,3.0,2.5,2005
+Christopher D. Manning,Stanford University,nlp,3.0,2.5,2006
+Christopher D. Manning,Stanford University,nlp,1.0,1.0,2007
+Christopher D. Manning,Stanford University,nlp,7.0,7.0,2008
+Christopher D. Manning,Stanford University,nlp,2.0,2.0,2009
+Christopher D. Manning,Stanford University,nlp,3.0,2.33333333333,2010
+Christopher D. Manning,Stanford University,nlp,3.0,2.0,2011
+Christopher D. Manning,Stanford University,nlp,2.0,1.5,2013
+Christopher D. Manning,Stanford University,nlp,7.0,6.0,2014
+Christopher D. Manning,Stanford University,nlp,2.0,2.0,2015
+Christopher D. Manning,Stanford University,mlmining,1.0,0.5,2001
+Christopher D. Manning,Stanford University,mlmining,3.0,1.5,2002
+Christopher D. Manning,Stanford University,mlmining,1.0,1.0,2003
+Christopher D. Manning,Stanford University,mlmining,1.0,0.5,2004
+Christopher D. Manning,Stanford University,mlmining,3.0,2.0,2011
+Christopher D. Manning,Stanford University,mlmining,1.0,0.5,2012
+Christopher D. Manning,Stanford University,mlmining,2.0,1.0,2013
+Christopher D. Manning,Stanford University,mlmining,3.0,2.0,2014
+Christopher D. Manning,Stanford University,mlmining,1.0,0.5,2015
+Christopher D. Manning,Stanford University,ai,2.0,1.0,2003
+Christopher D. Manning,Stanford University,ai,1.0,0.5,2005
+Christopher D. Manning,Stanford University,ai,1.0,1.0,2013
+Christopher D. Manning,Stanford University,web,1.0,1.0,2003
 Mubbasir Kapadia,Rutgers - State University of New Jersey - New Brunswick,robotics,1.0,1.0,2013
 Mubbasir Kapadia,Rutgers - State University of New Jersey - New Brunswick,robotics,2.0,2.0,2014
 Moshe Y. Vardi,Rice University,theory,2.0,1.5,1993
@@ -21416,7 +21447,7 @@ Jing Chen,State University of New York - Stony Brook,networks,1.0,0.5,2015
 Daphne Koller,Stanford University,graphics,1.0,0.5,2005
 Daphne Koller,Stanford University,graphics,1.0,0.5,2012
 Daphne Koller,Stanford University,hci,1.0,0.333333333333,2013
-Daphne Koller,Stanford University,nlp,1.0,0.333333333333,2004
+Daphne Koller,Stanford University,nlp,1.0,0.25,2004
 Daphne Koller,Stanford University,nlp,2.0,2.0,2008
 Daphne Koller,Stanford University,theory,1.0,0.5,1991
 Daphne Koller,Stanford University,theory,1.0,0.5,1992
