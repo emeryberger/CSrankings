@@ -547,8 +547,8 @@ Ladislav Kavan,University of Pennsylvania,graphics,3.0,2.5,2013
 Ladislav Kavan,University of Pennsylvania,graphics,2.0,2.0,2014
 Ladislav Kavan,University of Pennsylvania,graphics,2.0,1.5,2015
 Michael J. Cafarella,University of Michigan,mlmining,1.0,1.0,2014
-Michael J. Cafarella,University of Michigan,ai,1.0,0.25,2004
-Michael J. Cafarella,University of Michigan,ai,1.0,0.5,2007
+Michael J. Cafarella,University of Michigan,ai,1.0,0.333333333333,2004
+Michael J. Cafarella,University of Michigan,ai,1.0,1.0,2007
 Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2008
 Michael J. Cafarella,University of Michigan,database,2.0,1.33333333333,2009
 Michael J. Cafarella,University of Michigan,database,1.0,0.5,2011
@@ -557,8 +557,8 @@ Michael J. Cafarella,University of Michigan,database,1.0,0.5,2013
 Michael J. Cafarella,University of Michigan,database,1.0,1.0,2014
 Michael J. Cafarella,University of Michigan,database,2.0,1.0,2015
 Michael J. Cafarella,University of Michigan,proglang,1.0,0.5,2014
-Michael J. Cafarella,University of Michigan,web,1.0,0.25,2004
-Michael J. Cafarella,University of Michigan,web,1.0,0.5,2005
+Michael J. Cafarella,University of Michigan,web,1.0,0.333333333333,2004
+Michael J. Cafarella,University of Michigan,web,1.0,1.0,2005
 Illah R. Nourbakhsh,Carnegie Mellon University,mlmining,1.0,1.0,2000
 Illah R. Nourbakhsh,Carnegie Mellon University,ai,1.0,0.5,1993
 Illah R. Nourbakhsh,Carnegie Mellon University,ai,1.0,1.0,2005
@@ -2103,7 +2103,7 @@ Richard M. Karp,University of California - Berkeley,theory,2.0,2.0,1992
 Richard M. Karp,University of California - Berkeley,theory,2.0,2.0,1993
 Richard M. Karp,University of California - Berkeley,theory,2.0,1.5,1994
 Richard M. Karp,University of California - Berkeley,theory,2.0,2.0,1995
-Richard M. Karp,University of California - Berkeley,theory,2.0,1.5,1996
+Richard M. Karp,University of California - Berkeley,theory,2.0,2.0,1996
 Richard M. Karp,University of California - Berkeley,theory,1.0,1.0,1997
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.5,1998
 Richard M. Karp,University of California - Berkeley,theory,2.0,0.833333333333,2000
@@ -2112,7 +2112,7 @@ Richard M. Karp,University of California - Berkeley,theory,2.0,1.5,2007
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.5,2008
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.333333333333,2009
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.5,2011
-Richard M. Karp,University of California - Berkeley,mlmining,1.0,0.5,1997
+Richard M. Karp,University of California - Berkeley,mlmining,1.0,1.0,1997
 Richard M. Karp,University of California - Berkeley,mlmining,1.0,0.333333333333,2001
 Richard M. Karp,University of California - Berkeley,mlmining,1.0,0.25,2002
 Richard M. Karp,University of California - Berkeley,networks,1.0,0.333333333333,2001
@@ -3124,7 +3124,7 @@ Pedro M. Domingos,University of Washington,mlmining,2.0,2.0,2014
 Pedro M. Domingos,University of Washington,ai,1.0,1.0,1995
 Pedro M. Domingos,University of Washington,ai,1.0,1.0,1999
 Pedro M. Domingos,University of Washington,ai,1.0,0.5,2001
-Pedro M. Domingos,University of Washington,ai,1.0,0.25,2003
+Pedro M. Domingos,University of Washington,ai,1.0,0.333333333333,2003
 Pedro M. Domingos,University of Washington,ai,1.0,1.0,2005
 Pedro M. Domingos,University of Washington,ai,3.0,3.0,2006
 Pedro M. Domingos,University of Washington,ai,2.0,2.0,2007
@@ -4738,16 +4738,16 @@ Rami G. Melhem,University of Pittsburgh,arch,1.0,0.333333333333,2013
 Rami G. Melhem,University of Pittsburgh,arch,1.0,0.5,2015
 Rami G. Melhem,University of Pittsburgh,networks,1.0,0.5,2004
 Rami G. Melhem,University of Pittsburgh,networks,1.0,0.5,2008
-Doug Downey,Northwestern University,nlp,1.0,0.5,2007
-Doug Downey,Northwestern University,nlp,1.0,0.333333333333,2008
+Doug Downey,Northwestern University,nlp,1.0,1.0,2007
+Doug Downey,Northwestern University,nlp,1.0,0.5,2008
 Doug Downey,Northwestern University,nlp,1.0,0.5,2011
 Doug Downey,Northwestern University,nlp,1.0,1.0,2014
 Doug Downey,Northwestern University,nlp,1.0,0.5,2015
-Doug Downey,Northwestern University,mlmining,1.0,0.5,2008
-Doug Downey,Northwestern University,ai,1.0,0.25,2004
-Doug Downey,Northwestern University,ai,1.0,0.5,2005
-Doug Downey,Northwestern University,ai,2.0,1.5,2007
-Doug Downey,Northwestern University,web,1.0,0.25,2004
+Doug Downey,Northwestern University,mlmining,1.0,1.0,2008
+Doug Downey,Northwestern University,ai,1.0,0.333333333333,2004
+Doug Downey,Northwestern University,ai,1.0,1.0,2005
+Doug Downey,Northwestern University,ai,2.0,2.0,2007
+Doug Downey,Northwestern University,web,1.0,0.333333333333,2004
 Doug Downey,Northwestern University,web,1.0,0.5,2012
 Doug Downey,Northwestern University,web,1.0,1.0,2014
 A. Udaya Shankar,University of Maryland - College Park,metrics,1.0,0.5,1992
@@ -5037,11 +5037,11 @@ Sangtae Ha,University of Colorado Boulder,networks,1.0,0.5,2009
 Sangtae Ha,University of Colorado Boulder,networks,1.0,1.0,2012
 Sangtae Ha,University of Colorado Boulder,networks,2.0,2.0,2013
 Sangtae Ha,University of Colorado Boulder,networks,2.0,2.0,2015
-Alan Ritter,Ohio State University,nlp,1.0,0.333333333333,2008
-Alan Ritter,Ohio State University,nlp,1.0,0.5,2010
-Alan Ritter,Ohio State University,nlp,2.0,1.5,2011
+Alan Ritter,Ohio State University,nlp,1.0,0.5,2008
+Alan Ritter,Ohio State University,nlp,1.0,1.0,2010
+Alan Ritter,Ohio State University,nlp,2.0,2.0,2011
 Alan Ritter,Ohio State University,nlp,1.0,0.5,2014
-Alan Ritter,Ohio State University,mlmining,1.0,0.5,2012
+Alan Ritter,Ohio State University,mlmining,1.0,1.0,2012
 Alan Ritter,Ohio State University,ai,1.0,0.25,2015
 Alan Ritter,Ohio State University,web,1.0,0.5,2015
 Alan Ritter,Ohio State University,vision,1.0,0.333333333333,2015
@@ -5634,7 +5634,7 @@ Martial Hebert,Carnegie Mellon University,vision,1.0,1.0,2010
 Martial Hebert,Carnegie Mellon University,vision,5.0,3.33333333333,2011
 Martial Hebert,Carnegie Mellon University,vision,2.0,2.0,2012
 Martial Hebert,Carnegie Mellon University,vision,3.0,1.83333333333,2013
-Martial Hebert,Carnegie Mellon University,vision,3.0,2.0,2014
+Martial Hebert,Carnegie Mellon University,vision,3.0,2.5,2014
 Martial Hebert,Carnegie Mellon University,vision,7.0,5.0,2015
 Yun Fu,Northeastern University,mlmining,1.0,1.0,2012
 Yun Fu,Northeastern University,mlmining,1.0,1.0,2015
@@ -9628,7 +9628,7 @@ James M. Rehg,Georgia Institute of Technology,vision,1.0,1.0,2007
 James M. Rehg,Georgia Institute of Technology,vision,1.0,1.0,2008
 James M. Rehg,Georgia Institute of Technology,vision,2.0,1.5,2009
 James M. Rehg,Georgia Institute of Technology,vision,1.0,0.5,2010
-James M. Rehg,Georgia Institute of Technology,vision,3.0,2.5,2011
+James M. Rehg,Georgia Institute of Technology,vision,3.0,3.0,2011
 James M. Rehg,Georgia Institute of Technology,vision,2.0,1.5,2012
 James M. Rehg,Georgia Institute of Technology,vision,5.0,4.25,2013
 James M. Rehg,Georgia Institute of Technology,vision,2.0,2.0,2014
@@ -11841,7 +11841,7 @@ Linda G. Shapiro,University of Washington,vision,1.0,1.0,2005
 Linda G. Shapiro,University of Washington,vision,1.0,1.0,2007
 Linda G. Shapiro,University of Washington,vision,1.0,1.0,2009
 Linda G. Shapiro,University of Washington,vision,1.0,1.0,2013
-Linda G. Shapiro,University of Washington,vision,1.0,0.5,2015
+Linda G. Shapiro,University of Washington,vision,1.0,1.0,2015
 Christopher Re,Stanford University,mlmining,1.0,0.333333333333,2011
 Christopher Re,Stanford University,mlmining,1.0,1.0,2012
 Christopher Re,Stanford University,mlmining,1.0,0.5,2013
@@ -13074,8 +13074,8 @@ David C. Parkes,Harvard University,security,1.0,1.0,2009
 David C. Parkes,Harvard University,networks,1.0,1.0,2005
 David C. Parkes,Harvard University,networks,1.0,0.5,2009
 Niranjan Balasubramanian,State University of New York - Stony Brook,metrics,1.0,0.333333333333,2009
-Niranjan Balasubramanian,State University of New York - Stony Brook,nlp,1.0,0.5,2013
-Niranjan Balasubramanian,State University of New York - Stony Brook,nlp,1.0,0.5,2015
+Niranjan Balasubramanian,State University of New York - Stony Brook,nlp,1.0,1.0,2013
+Niranjan Balasubramanian,State University of New York - Stony Brook,nlp,1.0,1.0,2015
 Niranjan Balasubramanian,State University of New York - Stony Brook,web,1.0,1.0,2010
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,metrics,1.0,0.5,1998
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.5,2001
@@ -13546,19 +13546,6 @@ Paraschos Koutris,University of Wisconsin - Madison,database,2.0,0.666666666667,
 Paraschos Koutris,University of Wisconsin - Madison,database,2.0,0.666666666667,2013
 Paraschos Koutris,University of Wisconsin - Madison,database,2.0,0.666666666667,2014
 Paraschos Koutris,University of Wisconsin - Madison,database,1.0,1.0,2015
-Ali Farhadi,University of Washington,nlp,1.0,1.0,2014
-Ali Farhadi,University of Washington,nlp,1.0,0.5,2015
-Ali Farhadi,University of Washington,mlmining,1.0,1.0,2015
-Ali Farhadi,University of Washington,ai,1.0,0.5,2014
-Ali Farhadi,University of Washington,ai,2.0,2.0,2016
-Ali Farhadi,University of Washington,vision,1.0,0.5,2007
-Ali Farhadi,University of Washington,vision,3.0,1.33333333333,2009
-Ali Farhadi,University of Washington,vision,1.0,0.5,2010
-Ali Farhadi,University of Washington,vision,2.0,1.5,2011
-Ali Farhadi,University of Washington,vision,1.0,0.5,2012
-Ali Farhadi,University of Washington,vision,3.0,2.5,2013
-Ali Farhadi,University of Washington,vision,3.0,2.0,2014
-Ali Farhadi,University of Washington,vision,4.0,3.5,2015
 Dana S. Scott,Carnegie Mellon University,logic,1.0,1.0,1990
 Dana S. Scott,Carnegie Mellon University,logic,1.0,1.0,1998
 Jeffrey S. Chase,Duke University,metrics,1.0,0.25,1998
@@ -13978,8 +13965,8 @@ Derek Hoiem,University of Illinois at Urbana-Champaign,robotics,1.0,0.3333333333
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,1.0,0.333333333333,2005
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,3.0,1.83333333333,2007
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,1.0,0.333333333333,2008
-Derek Hoiem,University of Illinois at Urbana-Champaign,vision,5.0,2.08333333333,2009
-Derek Hoiem,University of Illinois at Urbana-Champaign,vision,2.0,1.0,2010
+Derek Hoiem,University of Illinois at Urbana-Champaign,vision,5.0,2.25,2009
+Derek Hoiem,University of Illinois at Urbana-Champaign,vision,2.0,1.5,2010
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,1.0,1.0,2011
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,4.0,3.0,2012
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,3.0,3.0,2013
@@ -14252,7 +14239,7 @@ Henry M. Levy,University of Washington,opsys,1.0,0.5,2014
 Henry M. Levy,University of Washington,database,1.0,0.333333333333,2007
 Henry M. Levy,University of Washington,proglang,2.0,1.33333333333,1992
 Henry M. Levy,University of Washington,mobile,1.0,1.0,2008
-Henry M. Levy,University of Washington,web,1.0,0.5,2004
+Henry M. Levy,University of Washington,web,1.0,1.0,2004
 Henry M. Levy,University of Washington,web,1.0,0.5,2008
 Henry M. Levy,University of Washington,security,1.0,1.0,2006
 Henry M. Levy,University of Washington,security,1.0,0.333333333333,2009
@@ -14704,7 +14691,7 @@ Larry S. Davis,University of Maryland - College Park,vision,3.0,2.5,2008
 Larry S. Davis,University of Maryland - College Park,vision,5.0,4.33333333333,2009
 Larry S. Davis,University of Maryland - College Park,vision,6.0,4.83333333333,2011
 Larry S. Davis,University of Maryland - College Park,vision,4.0,4.0,2012
-Larry S. Davis,University of Maryland - College Park,vision,4.0,3.0,2013
+Larry S. Davis,University of Maryland - College Park,vision,4.0,3.5,2013
 Larry S. Davis,University of Maryland - College Park,vision,4.0,4.0,2015
 Sanjeev Khanna,University of Pennsylvania,theory,1.0,0.333333333333,1994
 Sanjeev Khanna,University of Pennsylvania,theory,2.0,2.0,1996
@@ -16227,11 +16214,11 @@ David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,1.0,1998
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,3.0,3.0,1999
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,4.0,3.5,2001
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,0.5,2003
-David A. Forsyth,University of Illinois at Urbana-Champaign,vision,3.0,2.5,2007
+David A. Forsyth,University of Illinois at Urbana-Champaign,vision,3.0,3.0,2007
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,1.0,2008
-David A. Forsyth,University of Illinois at Urbana-Champaign,vision,7.0,3.83333333333,2009
+David A. Forsyth,University of Illinois at Urbana-Champaign,vision,7.0,5.0,2009
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,0.5,2010
-David A. Forsyth,University of Illinois at Urbana-Champaign,vision,2.0,1.0,2012
+David A. Forsyth,University of Illinois at Urbana-Champaign,vision,2.0,1.5,2012
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,1.0,2013
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,3.0,2.5,2015
 Don Perlis,University of Maryland - College Park,ai,2.0,2.0,2016
@@ -16311,38 +16298,6 @@ Scott Rixner,Rice University,arch,1.0,1.0,2004
 Scott Rixner,Rice University,arch,1.0,0.5,2010
 Scott Rixner,Rice University,arch,1.0,0.5,2011
 Scott Rixner,Rice University,arch,1.0,0.5,2016
-Oren Etzioni,University of Washington,nlp,1.0,1.0,2006
-Oren Etzioni,University of Washington,nlp,1.0,0.5,2007
-Oren Etzioni,University of Washington,nlp,3.0,1.83333333333,2008
-Oren Etzioni,University of Washington,nlp,3.0,2.0,2010
-Oren Etzioni,University of Washington,nlp,2.0,1.5,2011
-Oren Etzioni,University of Washington,nlp,1.0,0.5,2013
-Oren Etzioni,University of Washington,nlp,1.0,1.0,2014
-Oren Etzioni,University of Washington,nlp,2.0,1.0,2015
-Oren Etzioni,University of Washington,theory,1.0,0.5,1996
-Oren Etzioni,University of Washington,mlmining,1.0,0.5,1997
-Oren Etzioni,University of Washington,mlmining,1.0,1.0,2003
-Oren Etzioni,University of Washington,mlmining,1.0,0.5,2008
-Oren Etzioni,University of Washington,mlmining,1.0,0.5,2012
-Oren Etzioni,University of Washington,mlmining,1.0,1.0,2013
-Oren Etzioni,University of Washington,mlmining,2.0,2.0,2014
-Oren Etzioni,University of Washington,ai,1.0,1.0,1990
-Oren Etzioni,University of Washington,ai,2.0,2.0,1991
-Oren Etzioni,University of Washington,ai,5.0,4.0,1994
-Oren Etzioni,University of Washington,ai,1.0,1.0,1995
-Oren Etzioni,University of Washington,ai,1.0,1.0,1999
-Oren Etzioni,University of Washington,ai,1.0,0.25,2003
-Oren Etzioni,University of Washington,ai,1.0,0.25,2004
-Oren Etzioni,University of Washington,ai,1.0,0.5,2005
-Oren Etzioni,University of Washington,ai,2.0,1.0,2007
-Oren Etzioni,University of Washington,ai,1.0,1.0,2010
-Oren Etzioni,University of Washington,ai,1.0,1.0,2011
-Oren Etzioni,University of Washington,ai,1.0,0.5,2014
-Oren Etzioni,University of Washington,ai,1.0,1.0,2016
-Oren Etzioni,University of Washington,web,1.0,1.0,1998
-Oren Etzioni,University of Washington,web,1.0,0.5,2001
-Oren Etzioni,University of Washington,web,2.0,0.75,2004
-Oren Etzioni,University of Washington,web,1.0,0.5,2005
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,2.0,1.5,1994
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,1.0,1.0,1998
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,1.0,1.0,1999
@@ -17840,8 +17795,8 @@ Daniel S. Weld,University of Washington,hci,1.0,1.0,2009
 Daniel S. Weld,University of Washington,hci,1.0,1.0,2012
 Daniel S. Weld,University of Washington,hci,1.0,0.5,2013
 Daniel S. Weld,University of Washington,hci,1.0,0.25,2014
-Daniel S. Weld,University of Washington,nlp,1.0,0.5,2008
-Daniel S. Weld,University of Washington,nlp,3.0,2.5,2010
+Daniel S. Weld,University of Washington,nlp,1.0,1.0,2008
+Daniel S. Weld,University of Washington,nlp,3.0,3.0,2010
 Daniel S. Weld,University of Washington,nlp,1.0,0.5,2011
 Daniel S. Weld,University of Washington,nlp,2.0,1.5,2013
 Daniel S. Weld,University of Washington,nlp,1.0,1.0,2014
@@ -17850,12 +17805,12 @@ Daniel S. Weld,University of Washington,mlmining,1.0,0.5,2002
 Daniel S. Weld,University of Washington,mlmining,1.0,1.0,2008
 Daniel S. Weld,University of Washington,ai,1.0,1.0,1990
 Daniel S. Weld,University of Washington,ai,4.0,3.5,1993
-Daniel S. Weld,University of Washington,ai,5.0,4.0,1994
+Daniel S. Weld,University of Washington,ai,5.0,5.0,1994
 Daniel S. Weld,University of Washington,ai,1.0,0.333333333333,1997
 Daniel S. Weld,University of Washington,ai,2.0,2.0,1999
 Daniel S. Weld,University of Washington,ai,1.0,0.5,2001
-Daniel S. Weld,University of Washington,ai,1.0,0.25,2003
-Daniel S. Weld,University of Washington,ai,2.0,1.25,2004
+Daniel S. Weld,University of Washington,ai,1.0,0.333333333333,2003
+Daniel S. Weld,University of Washington,ai,2.0,1.33333333333,2004
 Daniel S. Weld,University of Washington,ai,1.0,0.5,2005
 Daniel S. Weld,University of Washington,ai,1.0,1.0,2006
 Daniel S. Weld,University of Washington,ai,2.0,1.5,2007
@@ -17868,8 +17823,8 @@ Daniel S. Weld,University of Washington,ai,1.0,1.0,2016
 Daniel S. Weld,University of Washington,database,1.0,0.5,1999
 Daniel S. Weld,University of Washington,database,1.0,0.5,2001
 Daniel S. Weld,University of Washington,database,1.0,0.5,2004
-Daniel S. Weld,University of Washington,web,2.0,1.0,2001
-Daniel S. Weld,University of Washington,web,1.0,0.25,2004
+Daniel S. Weld,University of Washington,web,2.0,1.5,2001
+Daniel S. Weld,University of Washington,web,1.0,0.333333333333,2004
 Daniel S. Weld,University of Washington,web,1.0,1.0,2007
 Daniel S. Weld,University of Washington,web,1.0,1.0,2008
 John K. Bennett,University of Colorado Boulder,opsys,1.0,1.0,1991
@@ -20602,7 +20557,7 @@ Carlos Guestrin,University of Washington,web,1.0,1.0,2012
 Carlos Guestrin,University of Washington,web,1.0,0.5,2014
 Carlos Guestrin,University of Washington,robotics,1.0,1.0,1998
 Carlos Guestrin,University of Washington,networks,1.0,0.25,2007
-Carlos Guestrin,University of Washington,vision,1.0,0.5,2014
+Carlos Guestrin,University of Washington,vision,1.0,1.0,2014
 Sarah Smith Heckman,North Carolina State University,softeng,1.0,1.0,2007
 Richard T. Snodgrass,University of Arizona,database,1.0,1.0,1996
 Richard T. Snodgrass,University of Arizona,database,1.0,1.0,2001
@@ -20709,7 +20664,7 @@ Russell H. Taylor,Johns Hopkins University,vision,1.0,0.5,2000
 Russell H. Taylor,Johns Hopkins University,vision,1.0,1.0,2003
 Krzysztof Gajos,Harvard University,hci,1.0,0.5,2005
 Krzysztof Gajos,Harvard University,hci,2.0,1.33333333333,2012
-Krzysztof Gajos,Harvard University,ai,1.0,0.25,2003
+Krzysztof Gajos,Harvard University,ai,1.0,0.333333333333,2003
 Emerson R. Murphy-Hill,North Carolina State University,security,1.0,1.0,2014
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,1.0,2008
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,1.0,2009
