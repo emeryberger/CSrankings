@@ -331,7 +331,9 @@ function rank() {
 		+ '&gws_rd=ssl">'
 		+ name
 		+ '</a></small></td><td align="right"><small>'
+		+ '<a target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
 		+ facultycount[name+dept]
+		+ '</a>'
 		+ "</small></td>"
 		+ '</a></small></td><td align="right"><small>'
 		+ facultyAdjustedCount[name+dept].toPrecision(2)
