@@ -1341,7 +1341,7 @@ Brandon Lucia,Carnegie Mellon University,arch,1.0,1.0,2016
 Xiaodong Zhang,Ohio State University,ai,1.0,1.0,2016
 Xiaodong Zhang,Ohio State University,database,1.0,1.0,2015
 Xiaodong Zhang,Ohio State University,database,1.0,0.5,2016
-Dan Jurafsky,Stanford University,hci,1.0,1.0,2014
+Dan Jurafsky,Stanford University,hci,1.0,0.5,2014
 Dan Jurafsky,Stanford University,nlp,1.0,0.333333333333,2010
 Dan Jurafsky,Stanford University,nlp,1.0,1.0,2011
 Dan Jurafsky,Stanford University,nlp,2.0,2.0,2015
@@ -2288,6 +2288,36 @@ Heng Ji,Rensselaer Polytechnic Institute,mlmining,1.0,0.333333333333,2013
 Heng Ji,Rensselaer Polytechnic Institute,mlmining,2.0,1.0,2015
 Heng Ji,Rensselaer Polytechnic Institute,ai,2.0,1.33333333333,2015
 Heng Ji,Rensselaer Polytechnic Institute,database,1.0,0.333333333333,2014
+John C. Mitchell,Stanford University,hci,1.0,0.5,2014
+John C. Mitchell,Stanford University,theory,1.0,1.0,1990
+John C. Mitchell,Stanford University,theory,1.0,1.0,1998
+John C. Mitchell,Stanford University,mlmining,1.0,1.0,2013
+John C. Mitchell,Stanford University,opsys,1.0,0.5,2012
+John C. Mitchell,Stanford University,proglang,2.0,1.5,1990
+John C. Mitchell,Stanford University,proglang,1.0,1.0,1991
+John C. Mitchell,Stanford University,proglang,2.0,2.0,1992
+John C. Mitchell,Stanford University,proglang,1.0,1.0,1994
+John C. Mitchell,Stanford University,proglang,1.0,1.0,1995
+John C. Mitchell,Stanford University,proglang,1.0,1.0,1997
+John C. Mitchell,Stanford University,proglang,1.0,1.0,1998
+John C. Mitchell,Stanford University,proglang,1.0,1.0,1999
+John C. Mitchell,Stanford University,web,1.0,0.5,2006
+John C. Mitchell,Stanford University,web,1.0,0.5,2012
+John C. Mitchell,Stanford University,logic,1.0,1.0,1992
+John C. Mitchell,Stanford University,logic,2.0,1.5,1993
+John C. Mitchell,Stanford University,logic,1.0,1.0,1998
+John C. Mitchell,Stanford University,logic,1.0,1.0,2006
+John C. Mitchell,Stanford University,security,1.0,1.0,1998
+John C. Mitchell,Stanford University,security,1.0,0.5,2001
+John C. Mitchell,Stanford University,security,1.0,0.5,2002
+John C. Mitchell,Stanford University,security,2.0,1.0,2003
+John C. Mitchell,Stanford University,security,1.0,0.5,2005
+John C. Mitchell,Stanford University,security,1.0,0.333333333333,2006
+John C. Mitchell,Stanford University,security,2.0,2.0,2008
+John C. Mitchell,Stanford University,security,3.0,3.0,2010
+John C. Mitchell,Stanford University,security,3.0,3.0,2011
+John C. Mitchell,Stanford University,security,1.0,1.0,2012
+John C. Mitchell,Stanford University,arch,1.0,0.333333333333,2000
 Tandy J. Warnow,University of Illinois at Urbana-Champaign,theory,2.0,1.0,1990
 Tandy J. Warnow,University of Illinois at Urbana-Champaign,theory,1.0,0.5,1991
 Tandy J. Warnow,University of Illinois at Urbana-Champaign,theory,3.0,2.5,1993
@@ -4425,9 +4455,9 @@ Dan Boneh,Stanford University,theory,1.0,1.0,2000
 Dan Boneh,Stanford University,theory,2.0,2.0,2007
 Dan Boneh,Stanford University,theory,1.0,0.5,2008
 Dan Boneh,Stanford University,opsys,1.0,0.5,2003
-Dan Boneh,Stanford University,web,1.0,1.0,2006
+Dan Boneh,Stanford University,web,1.0,0.5,2006
 Dan Boneh,Stanford University,web,1.0,1.0,2007
-Dan Boneh,Stanford University,web,2.0,2.0,2012
+Dan Boneh,Stanford University,web,2.0,1.5,2012
 Dan Boneh,Stanford University,security,1.0,0.5,1999
 Dan Boneh,Stanford University,security,1.0,0.5,2001
 Dan Boneh,Stanford University,security,1.0,1.0,2002
@@ -4442,7 +4472,7 @@ Dan Boneh,Stanford University,security,3.0,1.83333333333,2012
 Dan Boneh,Stanford University,security,3.0,3.0,2013
 Dan Boneh,Stanford University,security,1.0,0.5,2014
 Dan Boneh,Stanford University,security,3.0,2.0,2015
-Dan Boneh,Stanford University,arch,1.0,0.5,2000
+Dan Boneh,Stanford University,arch,1.0,0.333333333333,2000
 Dan Boneh,Stanford University,arch,1.0,1.0,2008
 Robert Pless,Washington University - St. Louis,theory,1.0,0.5,2000
 Robert Pless,Washington University - St. Louis,mobile,1.0,0.333333333333,2003
@@ -6035,9 +6065,9 @@ Ninghui Li,Purdue University,database,1.0,1.0,2012
 Ninghui Li,Purdue University,database,1.0,1.0,2013
 Ninghui Li,Purdue University,database,1.0,1.0,2014
 Ninghui Li,Purdue University,security,1.0,0.5,2000
-Ninghui Li,Purdue University,security,1.0,1.0,2001
-Ninghui Li,Purdue University,security,1.0,1.0,2002
-Ninghui Li,Purdue University,security,1.0,1.0,2003
+Ninghui Li,Purdue University,security,1.0,0.5,2001
+Ninghui Li,Purdue University,security,1.0,0.5,2002
+Ninghui Li,Purdue University,security,1.0,0.5,2003
 Ninghui Li,Purdue University,security,3.0,3.0,2004
 Ninghui Li,Purdue University,security,2.0,2.0,2005
 Ninghui Li,Purdue University,security,2.0,2.0,2006
@@ -6070,7 +6100,7 @@ Mark Horowitz,Stanford University,graphics,1.0,0.5,2007
 Mark Horowitz,Stanford University,graphics,1.0,0.333333333333,2010
 Mark Horowitz,Stanford University,graphics,1.0,0.5,2014
 Mark Horowitz,Stanford University,opsys,1.0,1.0,2003
-Mark Horowitz,Stanford University,security,1.0,1.0,2003
+Mark Horowitz,Stanford University,security,1.0,0.5,2003
 Mark Horowitz,Stanford University,arch,1.0,0.333333333333,1990
 Mark Horowitz,Stanford University,arch,1.0,1.0,1991
 Mark Horowitz,Stanford University,arch,2.0,1.33333333333,1992
@@ -6078,7 +6108,7 @@ Mark Horowitz,Stanford University,arch,3.0,1.66666666667,1994
 Mark Horowitz,Stanford University,arch,1.0,0.5,1995
 Mark Horowitz,Stanford University,arch,1.0,0.25,1996
 Mark Horowitz,Stanford University,arch,1.0,0.5,1997
-Mark Horowitz,Stanford University,arch,2.0,1.5,2000
+Mark Horowitz,Stanford University,arch,2.0,1.33333333333,2000
 Mark Horowitz,Stanford University,arch,1.0,1.0,2007
 Mark Horowitz,Stanford University,arch,1.0,1.0,2008
 Mark Horowitz,Stanford University,arch,3.0,3.0,2009
@@ -6559,6 +6589,10 @@ Rocco A. Servedio,Columbia University,mlmining,1.0,1.0,2010
 Rocco A. Servedio,Columbia University,mlmining,2.0,2.0,2011
 Rocco A. Servedio,Columbia University,mlmining,1.0,0.5,2014
 Rocco A. Servedio,Columbia University,logic,1.0,0.5,2007
+Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2010
+Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2012
+Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2013
+Kenneth Salisbury,Stanford University,vision,1.0,0.5,2007
 Leonid Reyzin,Boston University,theory,1.0,0.5,2010
 Leonid Reyzin,Boston University,database,1.0,0.333333333333,2006
 Leonid Reyzin,Boston University,security,1.0,0.5,2001
@@ -7548,7 +7582,7 @@ Alin Dobra,University of Florida,database,1.0,0.5,2015
 Alin Dobra,University of Florida,networks,1.0,1.0,2007
 Helen Nissenbaum,New York University,hci,1.0,1.0,2005
 Helen Nissenbaum,New York University,hci,1.0,1.0,2007
-Helen Nissenbaum,New York University,security,1.0,0.5,2006
+Helen Nissenbaum,New York University,security,1.0,0.333333333333,2006
 Joan Feigenbaum,Yale University,theory,1.0,0.333333333333,1991
 Joan Feigenbaum,Yale University,theory,1.0,1.0,1993
 Joan Feigenbaum,Yale University,theory,1.0,0.333333333333,1999
@@ -8237,8 +8271,6 @@ Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,security,1
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,security,1.0,0.5,2008
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,arch,2.0,0.833333333333,1996
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.25,1998
-David A. Mix Barrington,University of Massachusetts - Amherst,theory,1.0,0.5,1992
-David A. Mix Barrington,University of Massachusetts - Amherst,logic,1.0,0.5,2001
 Dennis Shasha,New York University,theory,1.0,1.0,1991
 Dennis Shasha,New York University,mlmining,1.0,1.0,1996
 Dennis Shasha,New York University,mlmining,1.0,1.0,1997
@@ -8793,7 +8825,7 @@ Sebastian Thrun,Stanford University,vision,1.0,0.333333333333,1999
 Sebastian Thrun,Stanford University,vision,1.0,0.333333333333,2000
 Sebastian Thrun,Stanford University,vision,1.0,0.5,2001
 Sebastian Thrun,Stanford University,vision,1.0,1.0,2005
-Sebastian Thrun,Stanford University,vision,1.0,1.0,2007
+Sebastian Thrun,Stanford University,vision,1.0,0.5,2007
 Sebastian Thrun,Stanford University,vision,2.0,2.0,2008
 Sebastian Thrun,Stanford University,vision,1.0,1.0,2009
 Sebastian Thrun,Stanford University,vision,4.0,3.5,2010
@@ -10026,7 +10058,7 @@ David Mazières,Stanford University,opsys,1.0,0.5,2003
 David Mazières,Stanford University,opsys,1.0,0.5,2004
 David Mazières,Stanford University,opsys,1.0,0.25,2005
 David Mazières,Stanford University,opsys,1.0,0.333333333333,2006
-David Mazières,Stanford University,opsys,2.0,2.0,2012
+David Mazières,Stanford University,opsys,2.0,1.5,2012
 David Mazières,Stanford University,opsys,1.0,1.0,2013
 David Mazières,Stanford University,opsys,1.0,1.0,2014
 David Mazières,Stanford University,proglang,1.0,1.0,2014
@@ -11018,7 +11050,7 @@ Kathleen Fisher,Tufts University,proglang,1.0,0.5,2008
 Kathleen Fisher,Tufts University,proglang,2.0,1.33333333333,2011
 Kathleen Fisher,Tufts University,proglang,1.0,0.333333333333,2012
 Kathleen Fisher,Tufts University,proglang,1.0,1.0,2014
-Kathleen Fisher,Tufts University,logic,1.0,1.0,1993
+Kathleen Fisher,Tufts University,logic,1.0,0.5,1993
 David Jacobs,University of Maryland - College Park,hci,1.0,0.5,2014
 David Jacobs,University of Maryland - College Park,mlmining,1.0,1.0,2001
 David Jacobs,University of Maryland - College Park,vision,1.0,1.0,2011
@@ -12812,7 +12844,7 @@ Nancy S. Pollard,Carnegie Mellon University,robotics,3.0,1.33333333333,2013
 Nancy S. Pollard,Carnegie Mellon University,robotics,2.0,2.0,2014
 Nancy S. Pollard,Carnegie Mellon University,robotics,1.0,0.5,2015
 Robert Harper,Carnegie Mellon University,theory,1.0,0.333333333333,2004
-Robert Harper,Carnegie Mellon University,proglang,1.0,1.0,1990
+Robert Harper,Carnegie Mellon University,proglang,1.0,0.5,1990
 Robert Harper,Carnegie Mellon University,proglang,2.0,1.5,1991
 Robert Harper,Carnegie Mellon University,proglang,1.0,1.0,1993
 Robert Harper,Carnegie Mellon University,proglang,1.0,1.0,1994
@@ -14878,11 +14910,6 @@ V. S. Subrahmanian,University of Maryland - College Park,database,1.0,0.5,1999
 V. S. Subrahmanian,University of Maryland - College Park,database,1.0,1.0,2004
 V. S. Subrahmanian,University of Maryland - College Park,web,1.0,1.0,2008
 V. S. Subrahmanian,University of Maryland - College Park,security,1.0,1.0,1997
-John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,1.0,1998
-John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,1.0,2000
-John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,1.0,2003
-John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,1.0,2005
-John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,1.0,2011
 Krste Asanovic,University of California - Berkeley,mlmining,1.0,0.5,1995
 Krste Asanovic,University of California - Berkeley,opsys,1.0,0.5,2005
 Krste Asanovic,University of California - Berkeley,proglang,1.0,1.0,2010
@@ -16937,8 +16964,8 @@ Anupam Datta,Carnegie Mellon University,theory,1.0,0.5,2012
 Anupam Datta,Carnegie Mellon University,ai,1.0,0.5,2013
 Anupam Datta,Carnegie Mellon University,ai,3.0,2.0,2015
 Anupam Datta,Carnegie Mellon University,logic,1.0,1.0,2014
-Anupam Datta,Carnegie Mellon University,security,1.0,1.0,2005
-Anupam Datta,Carnegie Mellon University,security,1.0,0.5,2006
+Anupam Datta,Carnegie Mellon University,security,1.0,0.5,2005
+Anupam Datta,Carnegie Mellon University,security,1.0,0.333333333333,2006
 Anupam Datta,Carnegie Mellon University,security,1.0,1.0,2009
 Anupam Datta,Carnegie Mellon University,security,2.0,2.0,2010
 Anupam Datta,Carnegie Mellon University,security,1.0,1.0,2011
@@ -17231,7 +17258,8 @@ Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,1.0,1.0,2012
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,4.0,4.0,2013
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,1.0,1.0,2014
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,2.0,2.0,2015
-John Mitchell,Stanford University,robotics,1.0,1.0,2006
+David A. Mix Barrington,University of Massachusetts - Amherst,theory,1.0,0.5,1992
+David A. Mix Barrington,University of Massachusetts - Amherst,logic,1.0,0.5,2001
 Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.25,2006
 Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.333333333333,2010
 Ethan Katz-Bassett,University of Southern California,metrics,1.0,0.5,2013
@@ -20303,6 +20331,11 @@ Kang G. Shin,University of Michigan,networks,1.0,1.0,2012
 Kang G. Shin,University of Michigan,networks,2.0,2.0,2013
 Kang G. Shin,University of Michigan,networks,3.0,3.0,2014
 Kang G. Shin,University of Michigan,networks,2.0,2.0,2015
+J. Kenneth Salisbury,Stanford University,robotics,1.0,1.0,1997
+J. Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2007
+J. Kenneth Salisbury,Stanford University,robotics,4.0,4.0,2008
+J. Kenneth Salisbury,Stanford University,robotics,2.0,2.0,2010
+J. Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2011
 Dexter Kozen,Cornell University,theory,1.0,0.5,1992
 Dexter Kozen,Cornell University,theory,1.0,1.0,1994
 Dexter Kozen,Cornell University,mlmining,1.0,0.5,2007
