@@ -21,8 +21,8 @@ Stephen S. Intille,Northeastern University,hci,1.0,0.5,2014
 Stephen S. Intille,Northeastern University,vision,1.0,0.5,1995
 Stephen S. Intille,Northeastern University,vision,1.0,0.5,1997
 Stephen S. Intille,Northeastern University,vision,1.0,0.5,1999
-Daniel Gildea,University of Rochester,nlp,1.0,1.0,1995
-Daniel Gildea,University of Rochester,nlp,1.0,1.0,2000
+Daniel Gildea,University of Rochester,nlp,1.0,0.5,1995
+Daniel Gildea,University of Rochester,nlp,1.0,0.5,2000
 Daniel Gildea,University of Rochester,nlp,1.0,1.0,2002
 Daniel Gildea,University of Rochester,nlp,1.0,1.0,2003
 Daniel Gildea,University of Rochester,nlp,1.0,1.0,2004
@@ -1941,9 +1941,9 @@ C. R. Ramakrishnan,State University of New York - Stony Brook,logic,1.0,0.5,2003
 C. R. Ramakrishnan,State University of New York - Stony Brook,security,1.0,0.5,2007
 Peter Stone,University of Texas - Austin,mlmining,1.0,0.5,1995
 Peter Stone,University of Texas - Austin,mlmining,1.0,1.0,2000
-Peter Stone,University of Texas - Austin,mlmining,2.0,1.5,2001
+Peter Stone,University of Texas - Austin,mlmining,2.0,1.33333333333,2001
 Peter Stone,University of Texas - Austin,mlmining,1.0,0.333333333333,2002
-Peter Stone,University of Texas - Austin,mlmining,1.0,0.5,2003
+Peter Stone,University of Texas - Austin,mlmining,1.0,0.333333333333,2003
 Peter Stone,University of Texas - Austin,mlmining,1.0,1.0,2007
 Peter Stone,University of Texas - Austin,mlmining,1.0,0.5,2008
 Peter Stone,University of Texas - Austin,mlmining,3.0,3.0,2010
@@ -2314,7 +2314,7 @@ John C. Mitchell,Stanford University,security,2.0,1.0,2003
 John C. Mitchell,Stanford University,security,1.0,0.5,2005
 John C. Mitchell,Stanford University,security,1.0,0.333333333333,2006
 John C. Mitchell,Stanford University,security,2.0,2.0,2008
-John C. Mitchell,Stanford University,security,3.0,3.0,2010
+John C. Mitchell,Stanford University,security,3.0,2.5,2010
 John C. Mitchell,Stanford University,security,3.0,3.0,2011
 John C. Mitchell,Stanford University,security,1.0,1.0,2012
 John C. Mitchell,Stanford University,arch,1.0,0.333333333333,2000
@@ -2928,7 +2928,7 @@ Xiaohui Gu,North Carolina State University,networks,2.0,1.5,2007
 Zeeshan Syed,University of Michigan,mlmining,2.0,1.5,2010
 Zeeshan Syed,University of Michigan,mlmining,1.0,1.0,2014
 Zeeshan Syed,University of Michigan,ai,1.0,1.0,2012
-Zeeshan Syed,University of Michigan,ai,2.0,2.0,2014
+Zeeshan Syed,University of Michigan,ai,2.0,1.0,2014
 Juliana Freire,New York University,database,1.0,0.25,1999
 Juliana Freire,New York University,database,2.0,2.0,2002
 Juliana Freire,New York University,database,1.0,1.0,2003
@@ -3104,10 +3104,10 @@ Michael P. Wellman,University of Michigan,ai,1.0,1.0,1992
 Michael P. Wellman,University of Michigan,ai,1.0,0.5,1994
 Michael P. Wellman,University of Michigan,ai,1.0,1.0,1999
 Michael P. Wellman,University of Michigan,ai,1.0,1.0,2001
-Michael P. Wellman,University of Michigan,ai,2.0,2.0,2005
+Michael P. Wellman,University of Michigan,ai,2.0,1.5,2005
 Michael P. Wellman,University of Michigan,ai,2.0,2.0,2006
 Michael P. Wellman,University of Michigan,ai,1.0,1.0,2007
-Michael P. Wellman,University of Michigan,ai,1.0,1.0,2009
+Michael P. Wellman,University of Michigan,ai,1.0,0.5,2009
 Michael P. Wellman,University of Michigan,ai,1.0,1.0,2010
 Michael P. Wellman,University of Michigan,web,1.0,1.0,2012
 Donald P. Greenberg,Cornell University,graphics,1.0,0.5,1990
@@ -5095,7 +5095,7 @@ Ganesh Gopalakrishnan,University of Utah,arch,1.0,1.0,2015
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,1.0,1996
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,1.0,1998
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,1.0,1999
-Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,0.5,2001
+Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,0.333333333333,2001
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,1.0,2004
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,1.0,2006
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,0.5,2008
@@ -6320,7 +6320,7 @@ H. V. Jagadish,University of Michigan,nlp,1.0,1.0,2008
 H. V. Jagadish,University of Michigan,mlmining,1.0,0.5,1998
 H. V. Jagadish,University of Michigan,mlmining,1.0,1.0,2013
 H. V. Jagadish,University of Michigan,mlmining,1.0,1.0,2015
-H. V. Jagadish,University of Michigan,ai,1.0,1.0,2007
+H. V. Jagadish,University of Michigan,ai,1.0,0.5,2007
 H. V. Jagadish,University of Michigan,database,3.0,3.0,1990
 H. V. Jagadish,University of Michigan,database,2.0,2.0,1991
 H. V. Jagadish,University of Michigan,database,5.0,4.5,1992
@@ -6338,7 +6338,7 @@ H. V. Jagadish,University of Michigan,database,4.0,3.0,2003
 H. V. Jagadish,University of Michigan,database,4.0,3.0,2004
 H. V. Jagadish,University of Michigan,database,2.0,2.0,2005
 H. V. Jagadish,University of Michigan,database,4.0,4.0,2006
-H. V. Jagadish,University of Michigan,database,5.0,4.0,2007
+H. V. Jagadish,University of Michigan,database,5.0,3.5,2007
 H. V. Jagadish,University of Michigan,database,2.0,2.0,2008
 H. V. Jagadish,University of Michigan,database,3.0,3.0,2009
 H. V. Jagadish,University of Michigan,database,4.0,4.0,2010
@@ -6593,6 +6593,37 @@ Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2010
 Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2012
 Kenneth Salisbury,Stanford University,robotics,1.0,1.0,2013
 Kenneth Salisbury,Stanford University,vision,1.0,0.5,2007
+Satinder P. Singh,University of Michigan,mlmining,2.0,2.0,1991
+Satinder P. Singh,University of Michigan,mlmining,2.0,0.833333333333,1993
+Satinder P. Singh,University of Michigan,mlmining,3.0,1.0,1994
+Satinder P. Singh,University of Michigan,mlmining,1.0,1.0,1995
+Satinder P. Singh,University of Michigan,mlmining,3.0,3.0,1996
+Satinder P. Singh,University of Michigan,mlmining,1.0,1.0,1997
+Satinder P. Singh,University of Michigan,mlmining,7.0,7.0,1998
+Satinder P. Singh,University of Michigan,mlmining,2.0,1.5,1999
+Satinder P. Singh,University of Michigan,mlmining,2.0,2.0,2000
+Satinder P. Singh,University of Michigan,mlmining,3.0,1.33333333333,2001
+Satinder P. Singh,University of Michigan,mlmining,3.0,1.83333333333,2003
+Satinder P. Singh,University of Michigan,mlmining,4.0,3.0,2004
+Satinder P. Singh,University of Michigan,mlmining,2.0,2.0,2005
+Satinder P. Singh,University of Michigan,mlmining,3.0,3.0,2006
+Satinder P. Singh,University of Michigan,mlmining,2.0,2.0,2008
+Satinder P. Singh,University of Michigan,mlmining,2.0,2.0,2010
+Satinder P. Singh,University of Michigan,mlmining,1.0,1.0,2013
+Satinder P. Singh,University of Michigan,mlmining,1.0,0.5,2014
+Satinder P. Singh,University of Michigan,mlmining,2.0,1.5,2015
+Satinder P. Singh,University of Michigan,ai,1.0,1.0,1992
+Satinder P. Singh,University of Michigan,ai,1.0,1.0,1994
+Satinder P. Singh,University of Michigan,ai,3.0,2.5,2005
+Satinder P. Singh,University of Michigan,ai,2.0,2.0,2006
+Satinder P. Singh,University of Michigan,ai,4.0,3.5,2007
+Satinder P. Singh,University of Michigan,ai,2.0,1.5,2009
+Satinder P. Singh,University of Michigan,ai,2.0,1.5,2011
+Satinder P. Singh,University of Michigan,ai,2.0,1.33333333333,2012
+Satinder P. Singh,University of Michigan,ai,2.0,1.0,2014
+Satinder P. Singh,University of Michigan,ai,1.0,1.0,2015
+Satinder P. Singh,University of Michigan,ai,1.0,1.0,2016
+Satinder P. Singh,University of Michigan,database,1.0,0.5,2007
 Leonid Reyzin,Boston University,theory,1.0,0.5,2010
 Leonid Reyzin,Boston University,database,1.0,0.333333333333,2006
 Leonid Reyzin,Boston University,security,1.0,0.5,2001
@@ -8002,25 +8033,16 @@ Silvio Micali,Massachusetts Institute of Technology,theory,1.0,1.0,2012
 Silvio Micali,Massachusetts Institute of Technology,theory,1.0,0.5,2013
 Silvio Micali,Massachusetts Institute of Technology,security,1.0,0.5,2001
 Mohammed E. Hoque,University of Rochester,hci,1.0,1.0,2012
-Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
-Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
-Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
-Injong Rhee,North Carolina State University,mobile,1.0,1.0,2005
-Injong Rhee,North Carolina State University,mobile,1.0,1.0,2013
-Injong Rhee,North Carolina State University,networks,1.0,1.0,1998
-Injong Rhee,North Carolina State University,networks,1.0,0.5,1999
-Injong Rhee,North Carolina State University,networks,3.0,2.0,2000
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2001
-Injong Rhee,North Carolina State University,networks,1.0,0.5,2004
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2005
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2006
-Injong Rhee,North Carolina State University,networks,2.0,1.5,2007
-Injong Rhee,North Carolina State University,networks,1.0,1.0,2008
-Injong Rhee,North Carolina State University,networks,2.0,1.5,2009
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2010
-Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
-Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
-Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1991
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1993
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,2.0,1995
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2003
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2006
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2007
+Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2008
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2009
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2013
+Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2015
 Rance Cleaveland,University of Maryland - College Park,proglang,1.0,1.0,1994
 Rance Cleaveland,University of Maryland - College Park,logic,2.0,2.0,1990
 Rance Cleaveland,University of Maryland - College Park,logic,2.0,2.0,1991
@@ -8393,8 +8415,8 @@ Honglak Lee,University of Michigan,mlmining,1.0,1.0,2010
 Honglak Lee,University of Michigan,mlmining,1.0,1.0,2011
 Honglak Lee,University of Michigan,mlmining,2.0,1.5,2012
 Honglak Lee,University of Michigan,mlmining,1.0,1.0,2013
-Honglak Lee,University of Michigan,mlmining,4.0,3.33333333333,2014
-Honglak Lee,University of Michigan,mlmining,4.0,4.0,2015
+Honglak Lee,University of Michigan,mlmining,4.0,2.83333333333,2014
+Honglak Lee,University of Michigan,mlmining,4.0,3.5,2015
 Honglak Lee,University of Michigan,ai,1.0,0.333333333333,2006
 Honglak Lee,University of Michigan,ai,1.0,1.0,2009
 Honglak Lee,University of Michigan,robotics,1.0,1.0,2006
@@ -8488,16 +8510,25 @@ Erik Andersen,Cornell University,hci,1.0,0.5,2011
 Erik Andersen,Cornell University,hci,1.0,0.333333333333,2012
 Erik Andersen,Cornell University,hci,1.0,0.5,2013
 Erik Andersen,Cornell University,hci,2.0,1.0,2015
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1991
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,1993
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,2.0,1995
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2003
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2006
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2007
-Vladimir Lifschitz,University of Texas - Austin,ai,2.0,1.5,2008
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2009
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,2013
-Vladimir Lifschitz,University of Texas - Austin,ai,1.0,1.0,2015
+Injong Rhee,North Carolina State University,metrics,1.0,1.0,2000
+Injong Rhee,North Carolina State University,metrics,1.0,1.0,2012
+Injong Rhee,North Carolina State University,hci,1.0,1.0,2013
+Injong Rhee,North Carolina State University,mobile,1.0,1.0,2005
+Injong Rhee,North Carolina State University,mobile,1.0,1.0,2013
+Injong Rhee,North Carolina State University,networks,1.0,1.0,1998
+Injong Rhee,North Carolina State University,networks,1.0,0.5,1999
+Injong Rhee,North Carolina State University,networks,3.0,2.0,2000
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2001
+Injong Rhee,North Carolina State University,networks,1.0,0.5,2004
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2005
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2006
+Injong Rhee,North Carolina State University,networks,2.0,1.5,2007
+Injong Rhee,North Carolina State University,networks,1.0,1.0,2008
+Injong Rhee,North Carolina State University,networks,2.0,1.5,2009
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2010
+Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
+Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
+Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,1996
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,2000
 Steven M. Seitz,University of Washington,graphics,1.0,1.0,2003
@@ -8543,7 +8574,7 @@ Suresh Venkatasubramanian,University of Utah,ai,1.0,0.5,2009
 Suresh Venkatasubramanian,University of Utah,database,1.0,0.5,1998
 Suresh Venkatasubramanian,University of Utah,database,1.0,1.0,2004
 Suresh Venkatasubramanian,University of Utah,vision,1.0,0.5,2008
-Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,1.0,2008
+Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.5,2008
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.25,2010
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.5,2011
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,1.0,2015
@@ -9831,9 +9862,9 @@ Michael L. Littman,Brown University,mlmining,1.0,0.5,1995
 Michael L. Littman,Brown University,mlmining,1.0,1.0,1996
 Michael L. Littman,Brown University,mlmining,1.0,1.0,1998
 Michael L. Littman,Brown University,mlmining,3.0,3.0,2000
-Michael L. Littman,Brown University,mlmining,4.0,3.5,2001
+Michael L. Littman,Brown University,mlmining,4.0,2.5,2001
 Michael L. Littman,Brown University,mlmining,1.0,0.333333333333,2002
-Michael L. Littman,Brown University,mlmining,1.0,0.5,2003
+Michael L. Littman,Brown University,mlmining,1.0,0.333333333333,2003
 Michael L. Littman,Brown University,mlmining,2.0,1.5,2005
 Michael L. Littman,Brown University,mlmining,2.0,1.5,2006
 Michael L. Littman,Brown University,mlmining,2.0,1.5,2007
@@ -9968,8 +9999,8 @@ Michael I. Jordan,University of California - Berkeley,theory,1.0,1.0,2013
 Michael I. Jordan,University of California - Berkeley,mlmining,1.0,1.0,1990
 Michael I. Jordan,University of California - Berkeley,mlmining,2.0,2.0,1991
 Michael I. Jordan,University of California - Berkeley,mlmining,1.0,1.0,1992
-Michael I. Jordan,University of California - Berkeley,mlmining,3.0,2.5,1993
-Michael I. Jordan,University of California - Berkeley,mlmining,9.0,7.0,1994
+Michael I. Jordan,University of California - Berkeley,mlmining,3.0,2.33333333333,1993
+Michael I. Jordan,University of California - Berkeley,mlmining,9.0,6.5,1994
 Michael I. Jordan,University of California - Berkeley,mlmining,5.0,3.83333333333,1995
 Michael I. Jordan,University of California - Berkeley,mlmining,4.0,2.5,1996
 Michael I. Jordan,University of California - Berkeley,mlmining,3.0,2.5,1997
@@ -11012,7 +11043,7 @@ Mark Braverman,Princeton University,theory,1.0,1.0,2016
 Mark Braverman,Princeton University,web,1.0,1.0,2013
 Mark Braverman,Princeton University,logic,1.0,1.0,2006
 Andries van Dam,Brown University,graphics,1.0,0.5,1991
-James H. Martin,University of Colorado Boulder,nlp,1.0,1.0,2005
+James H. Martin,University of Colorado Boulder,nlp,1.0,0.5,2005
 James H. Martin,University of Colorado Boulder,nlp,1.0,1.0,2006
 Simone Campanoni,Northwestern University,arch,1.0,0.333333333333,2010
 Simone Campanoni,Northwestern University,arch,1.0,0.5,2014
@@ -12598,7 +12629,7 @@ Xia Hu,Texas A&M University,ai,3.0,2.0,2016
 Xia Hu,Texas A&M University,web,1.0,1.0,2010
 Xia Hu,Texas A&M University,web,1.0,0.5,2013
 Xia Hu,Texas A&M University,web,1.0,0.5,2014
-Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1.0,1.0,1993
+Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1.0,0.5,1993
 Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1.0,1.0,1995
 Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1.0,1.0,2000
 Roderic A. Grupen,University of Massachusetts - Amherst,mlmining,1.0,0.333333333333,2004
@@ -12803,7 +12834,7 @@ Roxana Geambasu,Columbia University,database,1.0,0.333333333333,2007
 Roxana Geambasu,Columbia University,web,1.0,0.5,2008
 Roxana Geambasu,Columbia University,security,1.0,0.333333333333,2009
 Roxana Geambasu,Columbia University,security,1.0,0.333333333333,2015
-Martha E. Pollack,University of Michigan,mlmining,1.0,1.0,2004
+Martha E. Pollack,University of Michigan,mlmining,1.0,0.5,2004
 Martha E. Pollack,University of Michigan,ai,1.0,1.0,1990
 Martha E. Pollack,University of Michigan,ai,1.0,1.0,1993
 Martha E. Pollack,University of Michigan,ai,1.0,1.0,1994
@@ -13043,8 +13074,8 @@ Alexander M. Rush,Harvard University,nlp,1.0,1.0,2015
 Alexander M. Rush,Harvard University,mlmining,1.0,0.5,2015
 Alexander M. Rush,Harvard University,ai,1.0,0.5,2016
 David C. Parkes,Harvard University,hci,1.0,0.333333333333,2012
-David C. Parkes,Harvard University,mlmining,1.0,1.0,2003
-David C. Parkes,Harvard University,mlmining,1.0,1.0,2004
+David C. Parkes,Harvard University,mlmining,1.0,0.5,2003
+David C. Parkes,Harvard University,mlmining,1.0,0.5,2004
 David C. Parkes,Harvard University,mlmining,1.0,0.5,2012
 David C. Parkes,Harvard University,mlmining,2.0,1.0,2013
 David C. Parkes,Harvard University,mlmining,2.0,1.0,2014
@@ -15825,7 +15856,7 @@ David Kempe,University of Southern California,mlmining,1.0,1.0,2011
 David Kempe,University of Southern California,mlmining,1.0,1.0,2014
 David Kempe,University of Southern California,ai,1.0,0.5,2006
 David Kempe,University of Southern California,ai,1.0,0.5,2010
-David Kempe,University of Southern California,ai,1.0,0.5,2012
+David Kempe,University of Southern California,ai,1.0,0.333333333333,2012
 David Kempe,University of Southern California,web,1.0,1.0,2014
 David Kempe,University of Southern California,robotics,2.0,1.0,2005
 Christopher Kruegel,University of California - Santa Barbara,metrics,1.0,0.333333333333,2011
@@ -16254,6 +16285,21 @@ Robert Cartwright,Rice University,proglang,1.0,1.0,1998
 Robert Cartwright,Rice University,proglang,1.0,1.0,2003
 Robert Cartwright,Rice University,proglang,1.0,1.0,2007
 Robert Cartwright,Rice University,proglang,1.0,1.0,2008
+Daniel Jurafsky,Stanford University,nlp,2.0,1.5,1995
+Daniel Jurafsky,Stanford University,nlp,1.0,0.5,2000
+Daniel Jurafsky,Stanford University,nlp,1.0,1.0,2001
+Daniel Jurafsky,Stanford University,nlp,1.0,0.5,2005
+Daniel Jurafsky,Stanford University,nlp,1.0,1.0,2006
+Daniel Jurafsky,Stanford University,nlp,3.0,2.5,2007
+Daniel Jurafsky,Stanford University,nlp,5.0,3.5,2008
+Daniel Jurafsky,Stanford University,nlp,1.0,1.0,2009
+Daniel Jurafsky,Stanford University,nlp,3.0,3.0,2010
+Daniel Jurafsky,Stanford University,nlp,2.0,2.0,2011
+Daniel Jurafsky,Stanford University,nlp,1.0,1.0,2013
+Daniel Jurafsky,Stanford University,mlmining,1.0,1.0,2001
+Daniel Jurafsky,Stanford University,mlmining,1.0,1.0,2004
+Daniel Jurafsky,Stanford University,ai,1.0,1.0,1992
+Daniel Jurafsky,Stanford University,security,1.0,0.5,2010
 Shachar Lovett,University of California - San Diego,theory,3.0,3.0,2008
 Shachar Lovett,University of California - San Diego,theory,1.0,0.5,2009
 Shachar Lovett,University of California - San Diego,theory,2.0,2.0,2010
@@ -16667,7 +16713,7 @@ Milind Tambe,University of Southern California,ai,2.0,2.0,2008
 Milind Tambe,University of Southern California,ai,1.0,1.0,2009
 Milind Tambe,University of Southern California,ai,2.0,1.5,2010
 Milind Tambe,University of Southern California,ai,5.0,5.0,2011
-Milind Tambe,University of Southern California,ai,5.0,4.5,2012
+Milind Tambe,University of Southern California,ai,5.0,4.33333333333,2012
 Milind Tambe,University of Southern California,ai,4.0,3.5,2013
 Milind Tambe,University of Southern California,ai,5.0,4.33333333333,2014
 Milind Tambe,University of Southern California,ai,5.0,3.5,2015
@@ -16988,8 +17034,8 @@ Daniel Stefankovic,University of Rochester,mlmining,1.0,0.5,2012
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,2.0,0.5,2010
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,1.0,0.5,2014
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,1.0,0.5,2015
-Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,1.0,0.5,1993
-Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,3.0,1.5,1994
+Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,1993
+Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,3.0,1.0,1994
 Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,1995
 Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,1.0,0.5,1996
 Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,1.0,0.5,1997
@@ -18688,7 +18734,7 @@ Christopher D. Manning,Stanford University,nlp,5.0,3.75,2004
 Christopher D. Manning,Stanford University,nlp,3.0,2.5,2005
 Christopher D. Manning,Stanford University,nlp,3.0,3.0,2006
 Christopher D. Manning,Stanford University,nlp,1.0,1.0,2007
-Christopher D. Manning,Stanford University,nlp,7.0,7.0,2008
+Christopher D. Manning,Stanford University,nlp,7.0,6.0,2008
 Christopher D. Manning,Stanford University,nlp,2.0,2.0,2009
 Christopher D. Manning,Stanford University,nlp,3.0,2.33333333333,2010
 Christopher D. Manning,Stanford University,nlp,3.0,2.5,2011
@@ -19390,7 +19436,7 @@ Edmund H. Durfee,University of Michigan,ai,1.0,0.5,1997
 Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2003
 Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2005
 Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2008
-Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2011
+Edmund H. Durfee,University of Michigan,ai,1.0,0.5,2011
 Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2012
 Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2013
 Edmund H. Durfee,University of Michigan,ai,1.0,1.0,2014
@@ -21421,7 +21467,7 @@ David Wetherall,University of Washington,networks,1.0,0.5,2012
 David Wetherall,University of Washington,networks,3.0,0.916666666667,2013
 David Wetherall,University of Washington,networks,2.0,0.666666666667,2014
 David Wetherall,University of Washington,networks,1.0,1.0,2015
-Ani Nenkova,University of Pennsylvania,nlp,1.0,1.0,2007
+Ani Nenkova,University of Pennsylvania,nlp,1.0,0.5,2007
 Ani Nenkova,University of Pennsylvania,nlp,2.0,2.0,2008
 Ani Nenkova,University of Pennsylvania,nlp,1.0,1.0,2009
 Ani Nenkova,University of Pennsylvania,nlp,1.0,1.0,2010
@@ -21820,7 +21866,7 @@ Diane J. Litman,University of Pittsburgh,nlp,3.0,3.0,2006
 Diane J. Litman,University of Pittsburgh,nlp,1.0,1.0,2007
 Diane J. Litman,University of Pittsburgh,nlp,1.0,1.0,2008
 Diane J. Litman,University of Pittsburgh,nlp,1.0,1.0,2015
-Diane J. Litman,University of Pittsburgh,mlmining,1.0,1.0,1999
+Diane J. Litman,University of Pittsburgh,mlmining,1.0,0.5,1999
 Diane J. Litman,University of Pittsburgh,ai,1.0,1.0,1994
 Diane J. Litman,University of Pittsburgh,ai,1.0,1.0,1995
 Diane J. Litman,University of Pittsburgh,ai,1.0,1.0,2016
