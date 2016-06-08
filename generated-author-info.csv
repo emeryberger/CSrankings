@@ -2511,7 +2511,7 @@ Elisha Sacks,Purdue University,robotics,1.0,1.0,1994
 Elisha Sacks,Purdue University,robotics,1.0,1.0,1997
 Elisha Sacks,Purdue University,robotics,1.0,1.0,1999
 Elisha Sacks,Purdue University,robotics,2.0,2.0,2001
-Elisha Sacks,Purdue University,robotics,1.0,0.333333333333,2002
+Elisha Sacks,Purdue University,robotics,1.0,0.25,2002
 Elisha Sacks,Purdue University,robotics,1.0,1.0,2006
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,1.0,1990
 Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,1.0,1991
@@ -4182,7 +4182,7 @@ Daniela Rus,Massachusetts Institute of Technology,robotics,1.0,0.5,1994
 Daniela Rus,Massachusetts Institute of Technology,robotics,1.0,1.0,1996
 Daniela Rus,Massachusetts Institute of Technology,robotics,1.0,1.0,1997
 Daniela Rus,Massachusetts Institute of Technology,robotics,3.0,2.5,1998
-Daniela Rus,Massachusetts Institute of Technology,robotics,2.0,1.0,1999
+Daniela Rus,Massachusetts Institute of Technology,robotics,2.0,0.833333333333,1999
 Daniela Rus,Massachusetts Institute of Technology,robotics,4.0,2.5,2000
 Daniela Rus,Massachusetts Institute of Technology,robotics,2.0,2.0,2001
 Daniela Rus,Massachusetts Institute of Technology,robotics,3.0,3.0,2002
@@ -4904,6 +4904,9 @@ David A. Patterson,University of California - Berkeley,arch,1.0,0.5,2010
 David A. Patterson,University of California - Berkeley,arch,1.0,0.5,2013
 David A. Patterson,University of California - Berkeley,arch,1.0,0.333333333333,2015
 David A. Patterson,University of California - Berkeley,networks,1.0,0.333333333333,2004
+Stephen D. Brookes,Carnegie Mellon University,proglang,1.0,1.0,1995
+Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1993
+Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1996
 Adam W. Bargteil,University of Utah,graphics,2.0,1.0,2002
 Adam W. Bargteil,University of Utah,graphics,1.0,1.0,2004
 Adam W. Bargteil,University of Utah,graphics,1.0,1.0,2006
@@ -5125,9 +5128,9 @@ Roch Guérin,Washington University - St. Louis,networks,1.0,1.0,2012
 Christopher Stewart,Ohio State University,arch,1.0,0.333333333333,2008
 Christopher Stewart,Ohio State University,networks,1.0,0.5,2005
 Siddhartha S. Srinivasa,Carnegie Mellon University,ai,1.0,0.5,2015
-Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,2.0,0.833333333333,2002
-Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,1.0,0.5,2003
-Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,2.0,1.0,2005
+Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,2.0,0.75,2002
+Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,1.0,0.333333333333,2003
+Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,2.0,0.666666666667,2005
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,1.0,0.5,2006
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,1.0,0.5,2007
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,2.0,1.33333333333,2008
@@ -5136,7 +5139,7 @@ Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,6.0,4.83333333333,20
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,6.0,3.75,2011
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,5.0,4.5,2012
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,5.0,2.83333333333,2013
-Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,5.0,2.83333333333,2014
+Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,5.0,2.5,2014
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,8.0,6.33333333333,2015
 Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,1.5,2013
 Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,1.0,2014
@@ -5595,7 +5598,7 @@ Brad A. Myers,Carnegie Mellon University,hci,1.0,1.0,1998
 Brad A. Myers,Carnegie Mellon University,hci,2.0,2.0,1999
 Brad A. Myers,Carnegie Mellon University,hci,1.0,1.0,2000
 Brad A. Myers,Carnegie Mellon University,hci,1.0,0.5,2001
-Brad A. Myers,Carnegie Mellon University,hci,3.0,1.83333333333,2002
+Brad A. Myers,Carnegie Mellon University,hci,3.0,1.33333333333,2002
 Brad A. Myers,Carnegie Mellon University,hci,1.0,1.0,2003
 Brad A. Myers,Carnegie Mellon University,hci,2.0,2.0,2004
 Brad A. Myers,Carnegie Mellon University,hci,1.0,1.0,2005
@@ -7425,6 +7428,7 @@ Peter Winkler,Dartmouth College,theory,1.0,1.0,2008
 Peter Winkler,Dartmouth College,theory,1.0,1.0,2009
 Peter Winkler,Dartmouth College,networks,1.0,0.5,2002
 Peter Winkler,Dartmouth College,networks,1.0,1.0,2006
+Chinmay Eishan Kulkarni,Carnegie Mellon University,arch,1.0,1.0,2009
 Alfonso F. Cardenas,University of California - Los Angeles,mlmining,1.0,1.0,2007
 Kwan-Liu Ma,University of California - Davis,graphics,1.0,1.0,2003
 Kwan-Liu Ma,University of California - Davis,graphics,1.0,1.0,2010
@@ -8146,19 +8150,19 @@ Matthew T. Mason,Carnegie Mellon University,robotics,2.0,2.0,1995
 Matthew T. Mason,Carnegie Mellon University,robotics,1.0,1.0,1996
 Matthew T. Mason,Carnegie Mellon University,robotics,3.0,3.0,1997
 Matthew T. Mason,Carnegie Mellon University,robotics,3.0,3.0,1998
-Matthew T. Mason,Carnegie Mellon University,robotics,1.0,0.5,1999
+Matthew T. Mason,Carnegie Mellon University,robotics,1.0,0.333333333333,1999
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.0,2000
-Matthew T. Mason,Carnegie Mellon University,robotics,2.0,0.833333333333,2002
-Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.5,2003
+Matthew T. Mason,Carnegie Mellon University,robotics,2.0,0.75,2002
+Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.33333333333,2003
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.5,2004
-Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.0,2005
+Matthew T. Mason,Carnegie Mellon University,robotics,2.0,0.666666666667,2005
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.33333333333,2006
 Matthew T. Mason,Carnegie Mellon University,robotics,1.0,0.5,2007
 Matthew T. Mason,Carnegie Mellon University,robotics,1.0,0.5,2009
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,0.833333333333,2010
 Matthew T. Mason,Carnegie Mellon University,robotics,4.0,2.5,2011
 Matthew T. Mason,Carnegie Mellon University,robotics,2.0,2.0,2013
-Matthew T. Mason,Carnegie Mellon University,robotics,2.0,1.0,2014
+Matthew T. Mason,Carnegie Mellon University,robotics,2.0,0.666666666667,2014
 Matthew T. Mason,Carnegie Mellon University,robotics,3.0,3.0,2015
 Rick Stevens,University of Chicago,graphics,1.0,0.5,2005
 Srinivasan Seshan,Carnegie Mellon University,metrics,1.0,0.333333333333,1997
@@ -8614,8 +8618,8 @@ Injong Rhee,North Carolina State University,networks,2.0,2.0,2011
 Injong Rhee,North Carolina State University,networks,1.0,0.5,2012
 Injong Rhee,North Carolina State University,networks,2.0,1.5,2013
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,1996
-Steven M. Seitz,University of Washington,graphics,1.0,0.5,2000
-Steven M. Seitz,University of Washington,graphics,1.0,1.0,2003
+Steven M. Seitz,University of Washington,graphics,1.0,0.333333333333,2000
+Steven M. Seitz,University of Washington,graphics,1.0,0.5,2003
 Steven M. Seitz,University of Washington,graphics,3.0,1.66666666667,2004
 Steven M. Seitz,University of Washington,graphics,2.0,1.0,2006
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,2008
@@ -9632,8 +9636,6 @@ Zachary G. Ives,University of Pennsylvania,web,1.0,1.0,2003
 Prasad Jayanti,Dartmouth College,theory,1.0,1.0,1992
 Prasad Jayanti,Dartmouth College,theory,1.0,1.0,2005
 Prasad Jayanti,Dartmouth College,theory,1.0,1.0,2012
-Michael Erdmann,Carnegie Mellon University,robotics,1.0,1.0,1991
-Michael Erdmann,Carnegie Mellon University,robotics,1.0,1.0,1993
 Michael Young,North Carolina State University,mlmining,1.0,1.0,2013
 Michael Young,North Carolina State University,mlmining,1.0,1.0,2015
 Robin R. Murphy,Texas A&M University,ai,1.0,1.0,1997
@@ -17774,7 +17776,7 @@ Christos Faloutsos,Carnegie Mellon University,mlmining,6.0,3.33333333333,2008
 Christos Faloutsos,Carnegie Mellon University,mlmining,7.0,5.5,2009
 Christos Faloutsos,Carnegie Mellon University,mlmining,1.0,0.333333333333,2010
 Christos Faloutsos,Carnegie Mellon University,mlmining,5.0,3.25,2011
-Christos Faloutsos,Carnegie Mellon University,mlmining,7.0,4.83333333333,2012
+Christos Faloutsos,Carnegie Mellon University,mlmining,7.0,4.66666666667,2012
 Christos Faloutsos,Carnegie Mellon University,mlmining,2.0,0.47619047619,2013
 Christos Faloutsos,Carnegie Mellon University,mlmining,4.0,3.5,2014
 Christos Faloutsos,Carnegie Mellon University,mlmining,2.0,1.5,2015
@@ -17801,7 +17803,7 @@ Christos Faloutsos,Carnegie Mellon University,database,1.0,1.0,2014
 Christos Faloutsos,Carnegie Mellon University,database,3.0,2.0,2015
 Christos Faloutsos,Carnegie Mellon University,web,1.0,0.5,2007
 Christos Faloutsos,Carnegie Mellon University,web,1.0,1.0,2009
-Christos Faloutsos,Carnegie Mellon University,web,1.0,0.5,2012
+Christos Faloutsos,Carnegie Mellon University,web,1.0,0.333333333333,2012
 Christos Faloutsos,Carnegie Mellon University,web,2.0,1.5,2013
 Christos Faloutsos,Carnegie Mellon University,web,1.0,0.5,2014
 Christos Faloutsos,Carnegie Mellon University,web,1.0,1.0,2015
@@ -17846,6 +17848,19 @@ Ravi Janardan,University of Minnesota - Twin Cities,mlmining,5.0,2.08333333333,2
 Ravi Janardan,University of Minnesota - Twin Cities,mlmining,1.0,0.333333333333,2008
 Ravi Janardan,University of Minnesota - Twin Cities,robotics,1.0,0.5,2005
 Steven Homer,Boston University,theory,1.0,1.0,1994
+Michael A. Erdmann,Carnegie Mellon University,graphics,1.0,0.333333333333,2000
+Michael A. Erdmann,Carnegie Mellon University,graphics,1.0,0.5,2003
+Michael A. Erdmann,Carnegie Mellon University,robotics,2.0,2.0,1994
+Michael A. Erdmann,Carnegie Mellon University,robotics,2.0,2.0,1996
+Michael A. Erdmann,Carnegie Mellon University,robotics,1.0,1.0,1997
+Michael A. Erdmann,Carnegie Mellon University,robotics,1.0,1.0,1998
+Michael A. Erdmann,Carnegie Mellon University,robotics,1.0,0.333333333333,1999
+Michael A. Erdmann,Carnegie Mellon University,robotics,1.0,1.0,2000
+Michael A. Erdmann,Carnegie Mellon University,robotics,1.0,1.0,2001
+Michael A. Erdmann,Carnegie Mellon University,robotics,3.0,2.25,2002
+Michael A. Erdmann,Carnegie Mellon University,robotics,1.0,0.333333333333,2003
+Michael A. Erdmann,Carnegie Mellon University,robotics,2.0,0.666666666667,2005
+Michael A. Erdmann,Carnegie Mellon University,robotics,2.0,0.666666666667,2014
 Ashok K. Goel,Georgia Institute of Technology,ai,1.0,1.0,2001
 Ashok K. Goel,Georgia Institute of Technology,ai,1.0,1.0,2006
 Ashok K. Goel,Georgia Institute of Technology,ai,1.0,1.0,2007
@@ -18375,6 +18390,10 @@ Scott Niekum,University of Texas - Austin,ai,1.0,1.0,2012
 Scott Niekum,University of Texas - Austin,robotics,1.0,1.0,2012
 Scott Niekum,University of Texas - Austin,robotics,1.0,1.0,2013
 Scott Niekum,University of Texas - Austin,robotics,2.0,1.0,2015
+Roni Rosenfeld,Carnegie Mellon University,hci,1.0,0.5,2002
+Roni Rosenfeld,Carnegie Mellon University,hci,1.0,1.0,2013
+Roni Rosenfeld,Carnegie Mellon University,mlmining,1.0,0.333333333333,2012
+Roni Rosenfeld,Carnegie Mellon University,web,1.0,0.333333333333,2012
 Robert L. Constable,Cornell University,opsys,1.0,0.5,1999
 Robert L. Constable,Cornell University,logic,1.0,1.0,1990
 Robert L. Constable,Cornell University,logic,1.0,1.0,1995
@@ -19531,10 +19550,10 @@ Douglas Comer,Purdue University,networks,1.0,1.0,2008
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,1.0,0.5,2009
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2010
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,1.0,1.0,2011
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,2.0,1.0,2012
+B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,2.0,0.833333333333,2012
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,2.0,1.0,2014
 B. Aditya Prakash,Virginia Polytechnic Institute and State University,database,1.0,0.5,2010
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,web,1.0,0.5,2012
+B. Aditya Prakash,Virginia Polytechnic Institute and State University,web,1.0,0.333333333333,2012
 Wayne D. Gray,Rensselaer Polytechnic Institute,hci,1.0,1.0,1992
 Wayne D. Gray,Rensselaer Polytechnic Institute,hci,1.0,0.5,2001
 Katherine A. Yelick,University of California - Berkeley,proglang,1.0,0.5,1995
@@ -19679,7 +19698,7 @@ Miryung Kim,University of California - Los Angeles,softeng,2.0,2.0,2014
 Miryung Kim,University of California - Los Angeles,softeng,2.0,1.33333333333,2016
 Zoran Popovic,University of Washington,graphics,1.0,1.0,1995
 Zoran Popovic,University of Washington,graphics,1.0,1.0,1999
-Zoran Popovic,University of Washington,graphics,1.0,0.5,2000
+Zoran Popovic,University of Washington,graphics,1.0,0.333333333333,2000
 Zoran Popovic,University of Washington,graphics,6.0,3.0,2002
 Zoran Popovic,University of Washington,graphics,4.0,3.5,2003
 Zoran Popovic,University of Washington,graphics,2.0,2.0,2004
