@@ -39,7 +39,7 @@ def pagecount(input):
 areadict = {
     'proglang' : ['POPL', 'PLDI','OOPSLA'],
     'logic' : ['CAV', 'LICS'],
-    'softeng' : ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+    'softeng' : ['ICSE', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     'opsys' : ['SOSP', 'OSDI'],
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
     'theory' : ['STOC', 'FOCS','SODA'],
