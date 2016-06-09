@@ -1,5 +1,6 @@
 var outputHTML = "";          /* The string containing the ranked list of institutions. */
 var totalCheckboxes = 19;     /* The number of checkboxes (research areas). */
+var defaultCheckboxes = 16;   /* The number of checkboxes (research areas) selected by default. */
 var useDenseRankings = false; /* set to true for "dense rankings" */
 var authors = "";             /* The data which will hold the parsed CSV of author info. */
 
@@ -64,11 +65,14 @@ function toggle(dept) {
 function init() {
     jQuery(document).ready(
 	function() {
-	    /* Set the checkboxes to true. */
+	    /* Set the _default_ (not "other") checkboxes to true. */
 	    for (var i = 1; i <= totalCheckboxes; i++) {
 		var str = 'input[name=field_'+i+']';
 		jQuery(str).prop('checked', true);
 	    }
+	    jQuery('input[name=field_16]').prop('checked', false);
+	    jQuery('input[name=field_17]').prop('checked', false);
+	    jQuery('input[name=field_19]').prop('checked', false);
 	    /* Load up the CSV. */
 	    Papa.parse("generated-author-info.csv", {
 		download : true,
@@ -82,7 +86,6 @@ function init() {
 				rank();
 			    });})(str);
 		    }
-		    activateAll();
 		    rank();
 		}
 	    });
