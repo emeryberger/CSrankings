@@ -354,7 +354,7 @@ function rank() {
     s = s + "<tbody>";
     /* As long as there is at least one thing selected, compute and display a ranking. */
     if (numAreas > 0) {
-	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competitive rankings" */
+	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
 	var rank = 0;        /* index */
 	var oldv = null;     /* old number - to track ties */
 	/* Sort the university aggregate count from largest to smallest. */
@@ -400,9 +400,9 @@ function rank() {
 	}
 	s += "</tbody>" + "</table>" + "<br />";
 	if (useDenseRankings) {
-	    s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Click to use competitive rankings.</b></font></a><em>';
+	    s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
 	} else {
-	    s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Click to use dense rankings.</b></font></a></em>';
+	    s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
 	}
 	s += "</div>" + "</div>" + "\n";
 	s += "<br>" + "</body>" + "</html>";
