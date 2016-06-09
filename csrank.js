@@ -1,7 +1,7 @@
 var outputHTML = "";          /* The string containing the ranked list of institutions. */
 var totalCheckboxes = 19;     /* The number of checkboxes (research areas). */
 var defaultCheckboxes = 16;   /* The number of checkboxes (research areas) selected by default. */
-var useDenseRankings = false; /* set to true for "dense rankings" */
+var useDenseRankings = true; /* set to true for "dense rankings" */
 var authors = "";             /* The data which will hold the parsed CSV of author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
