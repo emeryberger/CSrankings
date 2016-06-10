@@ -1,7 +1,7 @@
-var totalCheckboxes = 19;     /* The number of checkboxes (research areas). */
-var defaultCheckboxes = 16;   /* The number of checkboxes (research areas) selected by default. */
-var useDenseRankings = true; /* set to true for "dense rankings" */
-var authors = "";             /* The data which will hold the parsed CSV of author info. */
+var totalCheckboxes   = 19;     /* The number of checkboxes (research areas). */
+var defaultCheckboxes = 16;     /* The number of checkboxes (research areas) selected by default. */
+var useDenseRankings  = false;  /* Set to true for "dense rankings" vs. "competition rankings". */
+var authors           = "";     /* The data which will hold the parsed CSV of author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
@@ -399,10 +399,13 @@ function rank() {
 	    oldv = v;
 	}
 	s += "</tbody>" + "</table>" + "<br />";
-	if (useDenseRankings) {
-	    s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
-	} else {
-	    s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+	if (false) {
+	    /* Disable option to change ranking approach for now. */
+	    if (useDenseRankings) {
+		s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
+	    } else {
+		s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+	    }
 	}
 	s += "</div>" + "</div>" + "\n";
 	s += "<br>" + "</body>" + "</html>";
