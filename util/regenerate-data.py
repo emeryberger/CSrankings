@@ -45,8 +45,6 @@ areadict = {
     'theory' : ['STOC', 'FOCS','SODA'],
     'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
     'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium'],
-    #     'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
-
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'IJCAI'],
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
