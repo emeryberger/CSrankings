@@ -94,7 +94,10 @@ function init() {
 	});
 }
 
-function activateAll(value = true) {
+function activateAll(value) {
+    if (value === undefined) {
+	value = true;
+    }
     for (var i = 1; i <= totalCheckboxes; i++) {
 	var str = "input[name=field_"+i+"]";
 	jQuery(str).prop('checked', value);
@@ -107,14 +110,20 @@ function activateNone() {
     return activateAll(false);
 }
 
-function activatePL(value = true) {
+function activatePL(value) {
+    if (value === undefined) {
+	value = true;
+    }
     jQuery('input[name=field_1]').prop('checked', value);
     jQuery('input[name=field_2]').prop('checked', value);
     rank();
     return false;
 }
 
-function activateSystems(value = true) {
+function activateSystems(value) {
+    if (value === undefined) {
+	value = true;
+    }
     for (var i = 3; i <= 7; i++) {
 	var str = "input[name=field_"+i+"]";
 	jQuery(str).prop('checked', value);
@@ -125,7 +134,10 @@ function activateSystems(value = true) {
     return false;
 }
 
-function activateAI(value = true) {
+function activateAI(value) {
+    if (value === undefined) {
+	value = true;
+    }
     for (var i = 8; i <= 12; i++) {
 	var str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked', value);
@@ -134,7 +146,10 @@ function activateAI(value = true) {
     return false;
 }
 
-function activateTheory(value = true) {
+function activateTheory(value) {
+    if (value === undefined) {
+	value = true;
+    }
     for (var i = 13; i <= 14; i++) {
 	var str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked', value);
@@ -143,7 +158,10 @@ function activateTheory(value = true) {
     return false;
 }
 
-function activateOthers(value = true) {
+function activateOthers(value) {
+    if (value === undefined) {
+	value = true;
+    }
     for (var i = 16; i <= 17; i++) {
 	var str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked', value);
