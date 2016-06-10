@@ -1,4 +1,3 @@
-var outputHTML = "";          /* The string containing the ranked list of institutions. */
 var totalCheckboxes = 19;     /* The number of checkboxes (research areas). */
 var defaultCheckboxes = 16;   /* The number of checkboxes (research areas) selected by default. */
 var useDenseRankings = true; /* set to true for "dense rankings" */
@@ -10,19 +9,22 @@ var areas = ["proglang", "softeng", "opsys", "networks", "security", "database",
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
-var prologue = 	"<html>"
-    + "<head>"
-    + "<title>CS department rankings by productivity</title>"
-    + '<style type="text/css">'
-    + '  body { font-family: "Helvetica", "Arial"; }'
-    + "  table td { vertical-align: top; }"
-    + "</style>"
-    + "</head>"
-    + "<body>"
-    + '<div class="row">'
-    + '<div class="table">'
-    + '<table class="table-sm table-striped"'
-    + 'id="ranking" valign="top">';
+function makePrologue() {
+    var s = "<html>"
+	+ "<head>"
+	+ "<title>CS department rankings by productivity</title>"
+	+ '<style type="text/css">'
+	+ '  body { font-family: "Helvetica", "Arial"; }'
+	+ "  table td { vertical-align: top; }"
+	+ "</style>"
+	+ "</head>"
+	+ "<body>"
+	+ '<div class="row">'
+	+ '<div class="table">'
+	+ '<table class="table-sm table-striped"'
+	+ 'id="ranking" valign="top">';
+    return s;
+}
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
 function compareNames (a,b) {
@@ -46,8 +48,8 @@ function compareNames (a,b) {
     return 0;
 }
 
-function redisplay() {
-    jQuery("#success").html(outputHTML);
+function redisplay(str) {
+    jQuery("#success").html(str);
 }
 
 function toggle(dept) {
@@ -91,8 +93,6 @@ function init() {
 	    });
 	});
 }
-
-window.onload=init;
 
 function activateAll(value = true) {
     for (var i = 1; i <= totalCheckboxes; i++) {
@@ -312,7 +312,7 @@ function rank() {
 	}
     }
 
-    var s = prologue;
+    var s = makePrologue();
     var univtext = {};
 
     /* Build drop down for faculty names and paper counts. */
@@ -410,8 +410,7 @@ function rank() {
 	/* Nothing selected. */
 	s = "<h4>Please select at least one area.</h4>";
     }
-    outputHTML = s;
-    setTimeout(redisplay, 0);
+    setTimeout((function(str) { redisplay(str); })(s), 0);
     return false; 
 }
 
@@ -427,3 +426,4 @@ function deactivateDenseRankings() {
     return false;
 }
 
+window.onload=init;
