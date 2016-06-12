@@ -377,11 +377,12 @@ function rank() {
 	    name = keys[ind];
 	    /* Build up text for co-authors. */
 	    var coauthorStr = "";
-	    if (!(name in coauthorList)) {
-		coauthorList[name] = new Set();
-		coauthorStr = "(no co-authors)\n";
+	    if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
+		coauthorList[name] = new Set([]);
+		coauthorStr = "(no faculty co-authors)\n";
 	    } else {
-		coauthorStr = "co-authors:\n";
+		console.log(name,coauthorList[name]);
+		coauthorStr = "faculty co-authors:\n";
 	    }
 	    coauthorList[name].forEach(function (item, coauthors) {
 		coauthorStr += item + "\n";
