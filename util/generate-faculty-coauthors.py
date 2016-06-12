@@ -135,9 +135,9 @@ def parseDBLP(facultydict):
                     if (child.tag == 'author'):
                         authorName = child.text
                         authorName = authorName.strip()
-                        authorName = authorName.encode('utf-8')
                         if (authorName in facultydict):
                             authorsOnPaper += 1
+                            authorName = authorName.encode('utf-8')
                             if (not authorName in coauthors):
                                 coauthors[authorName] = {}
                             if (not (year,areaname) in coauthors[authorName]):
