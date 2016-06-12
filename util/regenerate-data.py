@@ -133,7 +133,8 @@ def parseDBLP(facultydict):
                 for child in node:
                     if (child.tag == 'author'):
                         authorName = child.text
-                        authorName.strip()
+                        authorName = authorName.strip()
+                        authorName = authorName.encode('utf-8')
                         if (authorName in facultydict):
                             authorsOnPaper += 1
 
@@ -163,7 +164,7 @@ def parseDBLP(facultydict):
                 for child in node:
                     if (child.tag == 'author'):
                         authorName = child.text
-                        authorName.strip()
+                        authorName = authorName.strip()
                         if (authorName in facultydict):
                             # print "here we go",authorName, confname, authorsOnPaper, year
                             if (generateLog):
