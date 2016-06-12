@@ -2,6 +2,7 @@ var totalCheckboxes   = 19;     /* The number of checkboxes (research areas). */
 var defaultCheckboxes = 16;     /* The number of checkboxes (research areas) selected by default. */
 var useDenseRankings  = false;  /* Set to true for "dense rankings" vs. "competition rankings". */
 var authors           = "";     /* The data which will hold the parsed CSV of author info. */
+var coauthors         = "";     /* The data which will hold the parsed CSV of co-author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
@@ -76,23 +77,31 @@ function init() {
 	    jQuery('input[name=field_17]').prop('checked', false);
 	    jQuery('input[name=field_19]').prop('checked', false);
 	    /* Load up the CSV. */
-	    Papa.parse("generated-author-info.csv", {
+	    Papa.parse("faculty-coauthors.csv", {
 		download : true,
-		header : true,
-		complete: function(results) {
-		    authors = results.data;
-		    for (var i = 1; i <= totalCheckboxes; i++) {
-			var str = 'input[name=field_'+i+']';
-			(function(s) {
-			    jQuery(s).click(function() {
-				rank();
-			    });})(str);
-		    }
-		    rank();
+		header: true,
+		complete : function(results) {
+		    coauthors = results.data;
+		    Papa.parse("generated-author-info.csv", {
+			download : true,
+			header : true,
+			complete: function(results) {
+			    authors = results.data;
+			    for (var i = 1; i <= totalCheckboxes; i++) {
+				var str = 'input[name=field_'+i+']';
+				(function(s) {
+				    jQuery(s).click(function() {
+					rank();
+				    });})(str);
+			    }
+			    rank();
+			}
+		    });
 		}
 	    });
 	});
 }
+
 
 function activateAll(value) {
     if (value === undefined) {
@@ -245,6 +254,26 @@ function rank() {
 	areacount[areas[ind]] = 0;
 	areaAdjustedCount[areas[ind]] = 0;
     }
+    coauthorList = {};
+    for (var c in coauthors) {
+	var author = coauthors[c].author;
+	var coauthor = coauthors[c].coauthor;
+	var year = coauthors[c].year;
+	var area = coauthors[c].area;
+	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+	    continue;
+	}
+	if (!(author in coauthorList)) {
+	    coauthorList[author] = new Set();
+	}
+	coauthorList[author].add(coauthor);
+    }
+    if (false) {
+	for (author in coauthorList) {
+	    console.log(author, coauthorList[author]);
+	}
+    }
+    
     /* First, count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
 	var area = authors[r].area;
@@ -346,6 +375,18 @@ function rank() {
 	keys.sort(function(a,b){ return fc[b] - fc[a];});
 	for (var ind = 0; ind < keys.length; ind++) {
 	    name = keys[ind];
+	    /* Build up text for co-authors. */
+	    var coauthorStr = "";
+	    if (!(name in coauthorList)) {
+		coauthorList[name] = new Set();
+		coauthorStr = "(no co-authors)\n";
+	    } else {
+		coauthorStr = "co-authors:\n";
+	    }
+	    coauthorList[name].forEach(function (item, coauthors) {
+		coauthorStr += item + "\n";
+	    });
+	    coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		+ '<a target="_blank" href="https://www.google.com/search?q='
 		+ encodeURI(name + " " + dept)
@@ -357,7 +398,9 @@ function rank() {
 		+ '</a>'
 		+ "</small></td>"
 		+ '</a></small></td><td align="right"><small>'
+		+ '<abbr title="' + coauthorStr + '">'
 		+ facultyAdjustedCount[name+dept].toPrecision(2)
+		+ '</abbr>'
 		+ "</small></td></tr>";
 	}
 	p += "</tbody></table></div></div>";
