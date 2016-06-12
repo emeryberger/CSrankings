@@ -260,11 +260,11 @@ function rank() {
 	var coauthor = coauthors[c].coauthor;
 	var year = coauthors[c].year;
 	var area = coauthors[c].area;
-	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
-	    continue;
-	}
 	if (!(author in coauthorList)) {
 	    coauthorList[author] = new Set();
+	}
+	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+	    continue;
 	}
 	coauthorList[author].add(coauthor);
     }
