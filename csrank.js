@@ -379,10 +379,9 @@ function rank() {
 	    var coauthorStr = "";
 	    if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
 		coauthorList[name] = new Set([]);
-		coauthorStr = "(no CS faculty co-authors on these papers)\n";
+		coauthorStr = "(no senior co-authors on these papers)";
 	    } else {
-		console.log(name,coauthorList[name]);
-		coauthorStr = "CS faculty co-authors on these papers:\n";
+		coauthorStr = "Senior co-authors on these papers:\n";
 	    }
 	    coauthorList[name].forEach(function (item, coauthors) {
 		coauthorStr += item + "\n";
