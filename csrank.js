@@ -3,6 +3,7 @@ var defaultCheckboxes = 16;     /* The number of checkboxes (research areas) sel
 var useDenseRankings  = false;  /* Set to true for "dense rankings" vs. "competition rankings". */
 var authors           = "";     /* The data which will hold the parsed CSV of author info. */
 var coauthors         = "";     /* The data which will hold the parsed CSV of co-author info. */
+var maxCoauthors      = 30;     /* Max co-authors to display. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
@@ -268,11 +269,6 @@ function rank() {
 	}
 	coauthorList[author].add(coauthor);
     }
-    if (false) {
-	for (author in coauthorList) {
-	    console.log(author, coauthorList[author]);
-	}
-    }
     
     /* First, count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
@@ -388,12 +384,16 @@ function rank() {
 	    coauthorList[name].forEach(function (item, coauthors) {
 		l.push(item);
 	    });
-	    l.sort(compareNames);
-	    l.forEach(function (item, coauthors) {
-		coauthorStr += item + "\n";
-	    });
-	    /* Trim off the trailing newline. */
-	    coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
+	    if (l.length > maxCoauthors) {
+		coauthorStr = "(too many co-authors to show)";
+	    } else {
+		l.sort(compareNames);
+		l.forEach(function (item, coauthors) {
+		    coauthorStr += item + "\n";
+		});
+		/* Trim off the trailing newline. */
+		coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
+	    }
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		+ '<a target="_blank" href="https://www.google.com/search?q='
 		+ encodeURI(name + " " + dept)
