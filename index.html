@@ -77,13 +77,11 @@
 	    </p>
 	    <p><em>Adjusted counts</em>: each publication is counted
 	      exactly once, with credit adjusted by splitting evenly
-	      among all authors. This makes it impossible to
-	      boost rankings simply by adding authors to a paper.
-	    </p>
-	    <p><em>Average percent</em> computes the mean percentage
+	      among all authors. <br /> This makes it impossible to
+	      boost rankings simply by adding authors to a paper. <br />
+	    <em>Average percent</em> computes the mean percentage
 	      of (adjusted) publications in each area by
 	      institution. This weighs areas with different publication rates evenly.  <br />
-      
 	    <em>Total count</em> computes the adjusted sum of all
 	      papers published, which effectively emphasizes areas with
 	      more publications.
@@ -112,7 +110,7 @@
 		    <option value="1" selected="selected">average percent</option>
 		    <option value="0">total count</option>
 		  </select>
-		  of publications between
+		  of publications from
 		  <select onchange="rank();" id="startyear" name="startyear">
 		    <option value="1990">1990</option>  
 		    <option value="1991">1991</option>  
@@ -142,7 +140,7 @@
 		    <option value="2014">2015</option>
 		    <option value="2014">2016</option>
 		  </select>
-		  and
+		  to
 		  <select onchange="rank();" id="endyear" name="endyear">
 		    <option value="1990">1990</option>  
 		    <option value="1991">1991</option>  
