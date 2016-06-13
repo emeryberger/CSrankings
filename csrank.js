@@ -187,7 +187,6 @@ function deactivatePL() {
 
 function deactivateSystems() {
     return activateSystems(false);
-    return false;
 }
 
 function deactivateAI() {
