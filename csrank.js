@@ -383,9 +383,16 @@ function rank() {
 	    } else {
 		coauthorStr = "Senior co-authors on these papers:\n";
 	    }
+	    /* Sort it by last name. */
+	    var l = [];
 	    coauthorList[name].forEach(function (item, coauthors) {
+		l.push(item);
+	    });
+	    l.sort(compareNames);
+	    l.forEach(function (item, coauthors) {
 		coauthorStr += item + "\n";
 	    });
+	    /* Trim off the trailing newline. */
 	    coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		+ '<a target="_blank" href="https://www.google.com/search?q='
