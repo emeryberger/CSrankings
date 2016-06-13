@@ -10,6 +10,10 @@ generateLog = True
 
 parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
 
+# Author paper count threshold - the author must have written at least this many top papers to count as a co-author.
+# This is meant to generally exclude students.
+authorPaperCountThreshold = 5
+
 # Papers must be at least 4 pages long to count.
 pageCountThreshold = 4
 # Match ordinary page numbers (as in 10-17).
@@ -75,6 +79,7 @@ endyear   = 2016
    
 def parseDBLP(facultydict):
     coauthors = {}
+    papersWritten = {}
     counter = 0
     with open('dblp.xml', mode='r') as f:
         
@@ -108,7 +113,6 @@ def parseDBLP(facultydict):
                             confname = child.text
                         break
 
-
                 if (not foundArticle):
                     # Nope.
                     continue
@@ -135,14 +139,14 @@ def parseDBLP(facultydict):
                     if (child.tag == 'author'):
                         authorName = child.text
                         authorName = authorName.strip()
-                        if (authorName in facultydict):
+                        if (True): # authorName in facultydict):
                             authorsOnPaper += 1
-                            authorName = authorName.encode('utf-8')
                             if (not authorName in coauthors):
                                 coauthors[authorName] = {}
                             if (not (year,areaname) in coauthors[authorName]):
                                 coauthors[authorName][(year,areaname)] = set([])
                             coauthorsList.append(authorName)
+                            papersWritten[authorName] = papersWritten.get(authorName, 0) + 1
 
                 # No authors? Bail.
                 if (authorsOnPaper == 0):
@@ -170,7 +174,6 @@ def parseDBLP(facultydict):
                     if (child.tag == 'author'):
                         authorName = child.text
                         authorName = authorName.strip()
-                        authorName = authorName.encode('utf-8')
                         if (authorName in facultydict):
                             for coauth in coauthorsList:
                                 if (coauth != authorName):
@@ -180,16 +183,18 @@ def parseDBLP(facultydict):
     o = open('faculty-coauthors.csv', 'w')
     o.write('"author","coauthor","year","area"\n')
     for auth in coauthors:
-        for (year,area) in coauthors[auth]:
-            for coauth in coauthors[auth][(year,area)]:
-                o.write(auth)
-                o.write(',')
-                o.write(coauth)
-                o.write(',')
-                o.write(str(year))
-                o.write(',')
-                o.write(area)
-                o.write('\n')
+        if (auth in facultydict):
+            for (year,area) in coauthors[auth]:
+                for coauth in coauthors[auth][(year,area)]:
+                    if (papersWritten[coauth] >= authorPaperCountThreshold):
+                        o.write(auth.encode('utf-8'))
+                        o.write(',')
+                        o.write(coauth.encode('utf-8'))
+                        o.write(',')
+                        o.write(str(year))
+                        o.write(',')
+                        o.write(area)
+                        o.write('\n')
     o.close()
     
     return 0
