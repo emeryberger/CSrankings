@@ -129,15 +129,17 @@ def parseDBLP(facultydict):
                     continue
 
                 # Now, count up how many faculty from our list are on this paper.
-                
+
+                foundOneInDict = False
                 for child in node:
                     if (child.tag == 'author'):
                         authorName = child.text
                         authorName = authorName.strip()
+                        authorsOnPaper += 1
                         if (authorName in facultydict):
-                            authorsOnPaper += 1
+                            foundOneInDict = True
 
-                if (authorsOnPaper == 0):
+                if (not foundOneInDict):
                     # No authors from our list.
                     continue
 
