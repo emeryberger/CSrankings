@@ -19,7 +19,7 @@ var coauthors : Array<string>;   /* The data which will hold the parsed CSV of c
 
 type Areas = "proglang" | "softeng" | "opsys" | "networks" | "security" | "database" | "metrics" | "mlmining" | "ai" | "nlp" | "web" | "vision" | "theory" | "logic" | "arch" | "graphics" | "hci" | "mobile" | "robotics";
 
-var areas : Areas;
+const areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
