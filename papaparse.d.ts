@@ -115,7 +115,7 @@ declare namespace PapaParse {
      * meta: contains extra information about the parse, such as delimiter used, the newline sequence, whether the process was aborted, etc. Properties in this object are not guaranteed to exist in all situations
      */
     interface ParseResult {
-        data: Array<any>;
+        data: Array<string>;
         errors: Array<ParseError>;
         meta: ParseMeta;
     }
