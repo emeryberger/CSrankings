@@ -221,40 +221,8 @@ function sortIndex(univagg) {
     return keys;
 }
 
-function rank() {
-    var form = document.getElementById("rankform");
-    var s = "";
-    var deptNames = {};          /* names of departments. */
-    var deptCounts = {};         /* number of faculty in each department. */
-    var facultycount = {};       /* name + dept -> raw count of pubs per name / department */
-    var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
-    var visited = {};            /* contains an author name if that author has been processed. */
-    var authagg = {};            /* (author, number of papers) -- used to compute max papers from university per area */
-    var weights = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-    var areacount = {};          /* raw number of papers in each area */
-    var areaAdjustedCount = {};  /* adjusted number of papers in each area (split among faculty authors). */
-    var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
-    var univagg = {};            /* (university, total or average number of papers) */
-    
-    var startyear          = parseInt(jQuery("#startyear").find(":selected").text());
-    var endyear            = parseInt(jQuery("#endyear").find(":selected").text());
-    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
-    /* Show the top N (with more if tied at the end) */
-    var minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
-
-    var numAreas = 0; /* Total number of areas checked */
-
-    /* Update the 'weights' of each area from the checkboxes. */
-    for (var ind = 0; ind < areas.length; ind++) {
-	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
-	if (weights[areas[ind]] == 1) {
-	    /* One more area checked. */
-	    numAreas++;
-	}
-	areacount[areas[ind]] = 0;
-	areaAdjustedCount[areas[ind]] = 0;
-    }
-    coauthorList = {};
+function computeCoauthors(coauthors, startyear, endyear, weights) {
+    var coauthorList = {};
     for (var c in coauthors) {
 	var author = coauthors[c].author;
 	var coauthor = coauthors[c].coauthor;
@@ -268,8 +236,11 @@ function rank() {
 	}
 	coauthorList[author].add(coauthor);
     }
-    
-    /* First, count the total number of papers (raw and adjusted) in each area. */
+    return coauthorList;
+}
+
+function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
+    /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
 	var area = authors[r].area;
 	var dept = authors[r].dept;
@@ -284,7 +255,12 @@ function rank() {
 	areacount[area] += count;
 	areaAdjustedCount[area] += adjustedCount;
     }
+}
+
+
+function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights) {
     /* Build the dictionary of departments (and count) to be ranked. */
+    var visited = {};            /* contains an author name if that author has been processed. */
     for (var r in authors) {
 	var area = authors[r].area;
 	var dept = authors[r].dept;
@@ -317,9 +293,11 @@ function rank() {
 	    facultyAdjustedCount[name+dept] += adjustedCount;
 	}
     }
+}
 
-    /* Now compute aggregate statistics. */
-    
+/* Compute aggregate statistics. */
+function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+    var univagg = {};
     for (dept in deptNames) {
 	var n = numAreas;
 	if (displayPercentages) {
@@ -353,6 +331,46 @@ function rank() {
 /*	GEOMEAN:    univagg[dept] = univagg[dept] / n; */
 	}
     }
+    return univagg;
+}
+
+function rank() {
+    var form = document.getElementById("rankform");
+    var s = "";
+    var deptNames = {};          /* names of departments. */
+    var deptCounts = {};         /* number of faculty in each department. */
+    var facultycount = {};       /* name + dept -> raw count of pubs per name / department */
+    var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
+    var authagg = {};            /* (author, number of papers) -- used to compute max papers from university per area */
+    var weights = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+    var areacount = {};          /* raw number of papers in each area */
+    var areaAdjustedCount = {};  /* adjusted number of papers in each area (split among faculty authors). */
+    var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
+    var univagg = {};            /* (university, total or average number of papers) */
+    
+    var startyear          = parseInt(jQuery("#startyear").find(":selected").text());
+    var endyear            = parseInt(jQuery("#endyear").find(":selected").text());
+    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
+    /* Show the top N (with more if tied at the end) */
+    var minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
+
+    var numAreas = 0; /* Total number of areas checked */
+
+    /* Update the 'weights' of each area from the checkboxes. */
+    for (var ind = 0; ind < areas.length; ind++) {
+	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
+	if (weights[areas[ind]] == 1) {
+	    /* One more area checked. */
+	    numAreas++;
+	}
+	areacount[areas[ind]] = 0;
+	areaAdjustedCount[areas[ind]] = 0;
+    }
+
+    coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
+    countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
+    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights);
+    univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
 
     var s = makePrologue();
     var univtext = {};
