@@ -341,7 +341,6 @@ function rank() {
     var deptCounts = {};         /* number of faculty in each department. */
     var facultycount = {};       /* name + dept -> raw count of pubs per name / department */
     var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
-    var authagg = {};            /* (author, number of papers) -- used to compute max papers from university per area */
     var weights = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
     var areacount = {};          /* raw number of papers in each area */
     var areaAdjustedCount = {};  /* adjusted number of papers in each area (split among faculty authors). */
