@@ -19,7 +19,7 @@ var coauthors : Array<string>;   /* The data which will hold the parsed CSV of c
 
 type Areas = "proglang" | "softeng" | "opsys" | "networks" | "security" | "database" | "metrics" | "mlmining" | "ai" | "nlp" | "web" | "vision" | "theory" | "logic" | "arch" | "graphics" | "hci" | "mobile" | "robotics";
 
-const areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
+const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -232,8 +232,10 @@ function sortIndex(univagg : {[key: string] : number}) : string[] {
     return keys;
 }
 
-function computeCoauthors(coauthors, startyear, endyear, weights) {
-    var coauthorList = {};
+function computeCoauthors(coauthors, startyear, endyear, weights)
+: {[key : string] : Set<string> }
+{
+    var coauthorList : {[key : string] : Set<string> } = {};
     for (var c in coauthors) {
 	var author = coauthors[c].author;
 	var coauthor = coauthors[c].coauthor;
@@ -250,7 +252,8 @@ function computeCoauthors(coauthors, startyear, endyear, weights) {
     return coauthorList;
 }
 
-function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
+function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) : void
+{
     /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
 	var area = authors[r].area;
@@ -269,23 +272,32 @@ function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, author
 }
 
 
-function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights) {
+function buildDepartments(areaDeptAdjustedCount,
+			  deptCounts,
+			  deptNames : Array<Array<string>>,
+			  facultycount,
+			  facultyAdjustedCount,
+			  authors,
+			  startyear,
+			  endyear,
+			  weights) : void
+{
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited = {};            /* contains an author name if that author has been processed. */
     for (var r in authors) {
-	var area = authors[r].area;
-	var dept = authors[r].dept;
-	var areaDept = area+dept;
+	const area = authors[r].area;
+	const dept = authors[r].dept;
+	const areaDept = area+dept;
 	if (!(areaDept in areaDeptAdjustedCount)) {
 	    areaDeptAdjustedCount[areaDept] = 0;
 	}
 	if (weights[area] == 0) {
 	    continue;
 	}
-	var name = authors[r].name;
-	var count = parseInt(authors[r].count);
-	var adjustedCount = parseFloat(authors[r].adjustedcount);
-	var year = authors[r].year;
+	const name = authors[r].name;
+	const count = parseInt(authors[r].count);
+	const adjustedCount = parseFloat(authors[r].adjustedcount);
+	const year = authors[r].year;
 	if ((year >= startyear) && (year <= endyear)) {
 	    areaDeptAdjustedCount[areaDept] += adjustedCount;
 	    /* Is this the first time we have seen this person? */
@@ -307,10 +319,16 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
 }
 
 /* Compute aggregate statistics. */
-function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights)
-	 : any
+function computeStats(deptNames : Array<Array<string>>,
+		      areaAdjustedCount,
+		      areaDeptAdjustedCount,
+		      areas : Array<string>,
+		      numAreas : number,
+		      displayPercentages,
+		      weights)
+: {[key: string] : number}
 {
-    var univagg = {};
+    var univagg : {[key: string] : number} = {};
     for (var dept in deptNames) {
 	var n = numAreas;
 	if (displayPercentages) {
@@ -347,23 +365,23 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
     return univagg;
 }
 
-function rank() {
+function rank() : boolean {
     var form = document.getElementById("rankform");
-    var s = "";
-    var deptNames = {};          /* names of departments. */
-    var deptCounts = {};         /* number of faculty in each department. */
-    var facultycount = {};       /* name + dept -> raw count of pubs per name / department */
-    var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
-    var weights = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-    var areacount = {};          /* raw number of papers in each area */
-    var areaAdjustedCount = {};  /* adjusted number of papers in each area (split among faculty authors). */
-    var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
+    var s : string = "";
+    var deptNames : Array<Array<string>> = [];              /* names of departments. */
+    var deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
+    var facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
+    var facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
+    var weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+    var areacount : {[key: string] : number} = {};          /* raw number of papers in each area */
+    var areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
+    var areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
     
-    var startyear          = parseInt(jQuery("#startyear").find(":selected").text());
-    var endyear            = parseInt(jQuery("#endyear").find(":selected").text());
-    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
+    const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
+    const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
+    const displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
     /* Show the top N (with more if tied at the end) */
-    var minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
+    const minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
 
     var numAreas = 0; /* Total number of areas checked */
 
@@ -378,7 +396,7 @@ function rank() {
 	areaAdjustedCount[areas[ind]] = 0;
     }
 
-    var coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
+    const coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights);
     
@@ -404,7 +422,7 @@ function rank() {
 	    /* Build up text for co-authors. */
 	    var coauthorStr = "";
 	    if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
-		coauthorList[name] = new Set();
+		coauthorList[name] = new Set([]);
 		coauthorStr = "(no senior co-authors on these papers)";
 	    } else {
 		coauthorStr = "Senior co-authors on these papers:\n";

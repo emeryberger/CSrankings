@@ -250,26 +250,26 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
         if (weights[area] == 0) {
             continue;
         }
-        var name = authors[r].name;
+        var name_1 = authors[r].name;
         var count = parseInt(authors[r].count);
         var adjustedCount = parseFloat(authors[r].adjustedcount);
         var year = authors[r].year;
         if ((year >= startyear) && (year <= endyear)) {
             areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name in visited)) {
-                visited[name] = true;
-                facultycount[name + dept] = 0;
-                facultyAdjustedCount[name + dept] = 0;
+            if (!(name_1 in visited)) {
+                visited[name_1] = true;
+                facultycount[name_1 + dept] = 0;
+                facultyAdjustedCount[name_1 + dept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name);
+                deptNames[dept].push(name_1);
                 deptCounts[dept] += 1;
             }
-            facultycount[name + dept] += count;
-            facultyAdjustedCount[name + dept] += adjustedCount;
+            facultycount[name_1 + dept] += count;
+            facultyAdjustedCount[name_1 + dept] += adjustedCount;
         }
     }
 }
@@ -314,7 +314,7 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
 function rank() {
     var form = document.getElementById("rankform");
     var s = "";
-    var deptNames = {}; /* names of departments. */
+    var deptNames = []; /* names of departments. */
     var deptCounts = {}; /* number of faculty in each department. */
     var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
     var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
@@ -361,7 +361,7 @@ function rank() {
             /* Build up text for co-authors. */
             var coauthorStr = "";
             if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
-                coauthorList[name] = new Set();
+                coauthorList[name] = new Set([]);
                 coauthorStr = "(no senior co-authors on these papers)";
             }
             else {
