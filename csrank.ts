@@ -1,16 +1,25 @@
 /// <reference path="./jquery.d.ts" />
-/// <reference path="./papa.d.ts" />
-    
-var totalCheckboxes   = 19;     /* The number of checkboxes (research areas). */
-var defaultCheckboxes = 16;     /* The number of checkboxes (research areas) selected by default. */
-var useDenseRankings  = false;  /* Set to true for "dense rankings" vs. "competition rankings". */
-var authors           = "";     /* The data which will hold the parsed CSV of author info. */
-var coauthors         = "";     /* The data which will hold the parsed CSV of co-author info. */
-var maxCoauthors      = 30;     /* Max co-authors to display. */
+/// <reference path="./papaparse.d.ts" />
+/// <reference path="./set.d.ts" />
+
+
+const totalCheckboxes    = 19;      /* The number of checkboxes (research areas). */
+const defaultCheckboxes  = 16;      /* The number of checkboxes (research areas) selected by default. */
+const coauthorFile       = "faculty-coauthors.csv";
+const authorinfoFile     = "generated-author-info.csv";
+const allowRankingChange = false;
+const maxCoauthors       = 30;      /* Max co-authors to display. */
+
+var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
+var authors : Array<string>;     /* The data which will hold the parsed CSV of author info. */
+var coauthors : Array<string>;   /* The data which will hold the parsed CSV of co-author info. */
+
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
-var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics" ];
+type Areas = "proglang" | "softeng" | "opsys" | "networks" | "security" | "database" | "metrics" | "mlmining" | "ai" | "nlp" | "web" | "vision" | "theory" | "logic" | "arch" | "graphics" | "hci" | "mobile" | "robotics";
+
+var areas : Areas;
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -81,12 +90,12 @@ function init() {
 	    jQuery('input[name=field_17]').prop('checked', false);
 	    jQuery('input[name=field_19]').prop('checked', false);
 	    /* Load up the CSV. */
-	    Papa.parse("faculty-coauthors.csv", {
+	    Papa.parse(coauthorFile, {
 		download : true,
 		header: true,
 		complete : function(results) {
 		    coauthors = results.data;
-		    Papa.parse("generated-author-info.csv", {
+		    Papa.parse(authorinfoFile, {
 			download : true,
 			header : true,
 			complete: function(results) {
@@ -231,7 +240,7 @@ function computeCoauthors(coauthors, startyear, endyear, weights) {
 	var year = coauthors[c].year;
 	var area = coauthors[c].area;
 	if (!(author in coauthorList)) {
-	    coauthorList[author] = new Set();
+	    coauthorList[author] = new Set([]);
 	}
 	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
 	    continue;
@@ -488,7 +497,7 @@ function rank() {
 	    oldv = v;
 	}
 	s += "</tbody>" + "</table>" + "<br />";
-	if (false) {
+	if (allowRankingChange) {
 	    /* Disable option to change ranking approach for now. */
 	    if (useDenseRankings) {
 		s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
