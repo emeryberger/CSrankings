@@ -149,14 +149,12 @@ def parseDBLP(facultydict):
                     if (child.tag == 'pages'):
                         pageCount = pagecount(child.text)
 
-                if ((pageCount > 1) and (pageCount < pageCountThreshold)):
-                    # Only skip papers with a very small paper count,
-                    # but above 1. Why?
+                if ((pageCount != -1) and (pageCount < pageCountThreshold)):
                     # DBLP has real papers with incorrect page counts
                     # - usually a truncated single page. -1 means no
                     # pages found at all => some problem with journal
                     # entries in DBLP.
-                    # print "Skipping article with "+str(pageCount)+" pages."
+                    print "Skipping article "+authorName+" with "+str(pageCount)+" pages."
                     continue
 
                 # If we got here, we have a winner.
