@@ -15,7 +15,6 @@ var areas = ["proglang", "softeng", "opsys", "networks", "security", "database",
 function makePrologue() {
     var s = "<html>"
         + "<head>"
-        + "<title>CS department rankings by productivity</title>"
         + '<style type="text/css">'
         + '  body { font-family: "Helvetica", "Arial"; }'
         + "  table td { vertical-align: top; }"
