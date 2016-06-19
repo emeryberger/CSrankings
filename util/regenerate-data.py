@@ -18,6 +18,8 @@ pageCounterNormal = re.compile('(\d+)-(\d+)')
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 
 def pagecount(input):
+    if (input is None):
+        return 0
     pageCounterMatcher1 = pageCounterNormal.match(input)
     pageCounterMatcher2 = pageCounterColon.match(input)
     start = 0
