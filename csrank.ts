@@ -426,7 +426,7 @@ function rank() : boolean {
     const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
     const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
-    const minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
+    const minToRank          = 50; /* parseInt(jQuery("#minToRank").find(":selected").val()); */
 
     var numAreas = 0; /* Total number of areas checked */
 
@@ -453,7 +453,7 @@ function rank() : boolean {
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click to go to author\'s home page">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry)">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors (hover for list of senior co-authors)">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	/* Build a dict of just faculty from this department for sorting purposes. */
 	var fc : {[key:string] : number} = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
@@ -478,7 +478,7 @@ function rank() : boolean {
 		l.push(item);
 	    });
 	    if (l.length > maxCoauthors) {
-		coauthorStr = "(too many co-authors to display)";
+		coauthorStr = "(more than "+maxCoauthors+" senior co-authors)";
 	    } else {
 		l.sort(compareNames);
 		l.forEach(function (item, coauthors) {
@@ -508,7 +508,7 @@ function rank() : boolean {
     }
     
     if (displayPercentages) {
-	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Average&nbsp;%</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></th></tr></thead>';
+	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Percent of papers published, averaged across all areas.">Average&nbsp;%</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
     } else {
 	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
     }
