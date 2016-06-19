@@ -1,7 +1,7 @@
-/// <reference path="./jquery.d.ts" />
-/// <reference path="./papaparse.d.ts" />
-/// <reference path="./set.d.ts" />
-/// <reference path="./pako.d.ts" />
+/// <reference path="./typescript/jquery.d.ts" />
+/// <reference path="./typescript/papaparse.d.ts" />
+/// <reference path="./typescript/set.d.ts" />
+/// <reference path="./typescript/pako.d.ts" />
 
 const defaultCheckboxes  = 16;      /* The number of checkboxes (research areas) selected by default. */
 const coauthorFile       = "faculty-coauthors.csv";
