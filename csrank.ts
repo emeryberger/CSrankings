@@ -13,10 +13,7 @@ var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "comp
 var authors : Array<string>;     /* The data which will hold the parsed CSV of author info. */
 var coauthors : Array<string>;   /* The data which will hold the parsed CSV of co-author info. */
 
-
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-
-type Areas = "proglang" | "softeng" | "opsys" | "networks" | "security" | "database" | "metrics" | "mlmining" | "ai" | "nlp" | "web" | "vision" | "theory" | "logic" | "arch" | "graphics" | "hci" | "mobile" | "robotics";
 
 const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
 
@@ -98,11 +95,11 @@ function zlibDecompress(url, callback){
 }
 
 
-function redisplay(str : string) {
+function redisplay(str : string) : void {
     jQuery("#success").html(str);
 }
 
-function toggle(dept : string) {
+function toggle(dept : string) : void {
     var e = document.getElementById(dept);
     var widget = document.getElementById(dept+"-widget");
     if (e.style.display == 'block') {
@@ -155,14 +152,13 @@ function loadAuthorInfo(cont) : void {
     cont();
 }
 
-function init() {
+function init() : void {
     jQuery(document).ready(
 	function() {
 	    setAllCheckboxes();
 	    loadAuthorInfo(function() { loadCoauthors(rank) ; });
 	});
 }
-
 
 function activateAll(value : boolean) : boolean {
     if (value === undefined) {
@@ -180,65 +176,41 @@ function activateNone() : boolean {
     return activateAll(false);
 }
 
-function activatePL(value : boolean) : boolean {
+function activateFields(value : boolean, fields : Array<number>) : boolean {
     if (value === undefined) {
 	value = true;
     }
-    jQuery('input[name=field_1]').prop('checked', value);
-    jQuery('input[name=field_2]').prop('checked', value);
+    for (var i = 0; i <= fields.length; i++) {
+	var str = "input[name=field_"+fields[i]+"]";
+	jQuery(str).prop('checked', value);
+    }
     rank();
     return false;
+}
+
+function activatePL(value : boolean) : boolean {
+    const plFields      : Array<number> = [1, 2];
+    return activateFields(value, plFields);
 }
 
 function activateSystems(value : boolean) : boolean {
-    if (value === undefined) {
-	value = true;
-    }
-    for (var i = 3; i <= 7; i++) {
-	var str = "input[name=field_"+i+"]";
-	jQuery(str).prop('checked', value);
-    }
-    jQuery('input[name=field_15]').prop('checked', value);
-    jQuery('input[name=field_18]').prop('checked', value);
-    rank();
-    return false;
+    const systemsFields : Array<number> = [3, 4, 5, 6, 7, 15, 18];
+    return activateFields(value, systemsFields);
 }
 
 function activateAI(value : boolean) : boolean {
-    if (value === undefined) {
-	value = true;
-    }
-    for (var i = 8; i <= 12; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked', value);
-    }
-    rank();
-    return false;
+    const aiFields      : Array<number> = [8, 9, 10, 11, 12];
+    return activateFields(value, aiFields);
 }
 
 function activateTheory(value : boolean) : boolean {
-    if (value === undefined) {
-	value = true;
-    }
-    for (var i = 13; i <= 14; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked', value);
-    }
-    rank();
-    return false;
+    const theoryFields  : Array<number> = [13, 14];
+    return activateFields(value, theoryFields);
 }
 
 function activateOthers(value : boolean) : boolean {
-    if (value === undefined) {
-	value = true;
-    }
-    for (var i = 16; i <= 17; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked', value);
-    }
-    jQuery('input[name=field_19]').prop('checked', value);
-    rank();
-    return false;
+    const otherFields   : Array<number> = [16, 17, 19];
+    return activateFields(value, otherFields);
 }
 
 function deactivatePL() : boolean {
