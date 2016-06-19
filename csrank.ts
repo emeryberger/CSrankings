@@ -22,7 +22,6 @@ const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "secu
 function makePrologue() : string {
     var s = "<html>"
 	+ "<head>"
-	+ "<title>CS department rankings by productivity</title>"
 	+ '<style type="text/css">'
 	+ '  body { font-family: "Helvetica", "Arial"; }'
 	+ "  table td { vertical-align: top; }"
