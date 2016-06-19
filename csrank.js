@@ -10,6 +10,7 @@ var maxCoauthors = 30; /* Max co-authors to display. */
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 var authors; /* The data which will hold the parsed CSV of author info. */
 var coauthors; /* The data which will hold the parsed CSV of co-author info. */
+/* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
 /* The prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
@@ -147,61 +148,36 @@ function activateAll(value) {
 function activateNone() {
     return activateAll(false);
 }
-function activatePL(value) {
+function activateFields(value, fields) {
     if (value === undefined) {
         value = true;
     }
-    jQuery('input[name=field_1]').prop('checked', value);
-    jQuery('input[name=field_2]').prop('checked', value);
+    for (var i = 0; i <= fields.length; i++) {
+        var str = "input[name=field_" + fields[i] + "]";
+        jQuery(str).prop('checked', value);
+    }
     rank();
     return false;
+}
+function activatePL(value) {
+    var plFields = [1, 2];
+    return activateFields(value, plFields);
 }
 function activateSystems(value) {
-    if (value === undefined) {
-        value = true;
-    }
-    for (var i = 3; i <= 7; i++) {
-        var str = "input[name=field_" + i + "]";
-        jQuery(str).prop('checked', value);
-    }
-    jQuery('input[name=field_15]').prop('checked', value);
-    jQuery('input[name=field_18]').prop('checked', value);
-    rank();
-    return false;
+    var systemsFields = [3, 4, 5, 6, 7, 15, 18];
+    return activateFields(value, systemsFields);
 }
 function activateAI(value) {
-    if (value === undefined) {
-        value = true;
-    }
-    for (var i = 8; i <= 12; i++) {
-        var str = 'input[name=field_' + i + ']';
-        jQuery(str).prop('checked', value);
-    }
-    rank();
-    return false;
+    var aiFields = [8, 9, 10, 11, 12];
+    return activateFields(value, aiFields);
 }
 function activateTheory(value) {
-    if (value === undefined) {
-        value = true;
-    }
-    for (var i = 13; i <= 14; i++) {
-        var str = 'input[name=field_' + i + ']';
-        jQuery(str).prop('checked', value);
-    }
-    rank();
-    return false;
+    var theoryFields = [13, 14];
+    return activateFields(value, theoryFields);
 }
 function activateOthers(value) {
-    if (value === undefined) {
-        value = true;
-    }
-    for (var i = 16; i <= 17; i++) {
-        var str = 'input[name=field_' + i + ']';
-        jQuery(str).prop('checked', value);
-    }
-    jQuery('input[name=field_19]').prop('checked', value);
-    rank();
-    return false;
+    var otherFields = [16, 17, 19];
+    return activateFields(value, otherFields);
 }
 function deactivatePL() {
     return activatePL(false);
