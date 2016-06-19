@@ -2,10 +2,9 @@
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
-var defaultCheckboxes = 16; /* The number of checkboxes (research areas) selected by default. */
 var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
-var allowRankingChange = false;
+var allowRankingChange = false; /* Can we change the kind of rankings being used? */
 var maxCoauthors = 30; /* Max co-authors to display. */
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 var authors; /* The data which will hold the parsed CSV of author info. */
