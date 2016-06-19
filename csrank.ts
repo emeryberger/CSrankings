@@ -250,7 +250,10 @@ function sortIndex(univagg : {[key: string] : number}) : string[] {
     return keys;
 }
 
-function computeCoauthors(coauthors, startyear, endyear, weights)
+function computeCoauthors(coauthors,
+			  startyear : number,
+			  endyear : number,
+			  weights : {[key:string] : number})
 : {[key : string] : Set<string> }
 {
     var coauthorList : {[key : string] : Set<string> } = {};
@@ -270,7 +273,13 @@ function computeCoauthors(coauthors, startyear, endyear, weights)
     return coauthorList;
 }
 
-function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) : void
+function countPapers(areacount,
+		     areaAdjustedCount,
+		     areaDeptAdjustedCount,
+		     authors,
+		     startyear : number,
+		     endyear : number,
+		     weights : {[key:string] : number}) : void
 {
     /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
@@ -296,9 +305,9 @@ function buildDepartments(areaDeptAdjustedCount,
 			  facultycount,
 			  facultyAdjustedCount,
 			  authors,
-			  startyear,
-			  endyear,
-			  weights) : void
+			  startyear : number,
+			  endyear : number,
+			  weights : {[key:string] : number}) : void
 {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited = {};            /* contains an author name if that author has been processed. */
@@ -338,12 +347,12 @@ function buildDepartments(areaDeptAdjustedCount,
 
 /* Compute aggregate statistics. */
 function computeStats(deptNames : Array<Array<string>>,
-		      areaAdjustedCount,
+		      areaAdjustedCount : {[key:string] : number},
 		      areaDeptAdjustedCount,
 		      areas : Array<string>,
 		      numAreas : number,
-		      displayPercentages,
-		      weights)
+		      displayPercentages : number, /* TBD: boolean */
+		      weights : {[key:string] : number})
 : {[key: string] : number}
 {
     var univagg : {[key: string] : number} = {};
