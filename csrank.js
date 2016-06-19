@@ -7,10 +7,12 @@ var authorinfoFile = "generated-author-info.csv";
 var allowRankingChange = false; /* Can we change the kind of rankings being used? */
 var maxCoauthors = 30; /* Max co-authors to display. */
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
-var authors; /* The data which will hold the parsed CSV of author info. */
-var coauthors; /* The data which will hold the parsed CSV of co-author info. */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
+;
+;
+var authors; /* The data which will hold the parsed CSV of author info. */
+var coauthors; /* The data which will hold the parsed CSV of co-author info. */
 /* The prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
     var s = "<html>"
@@ -102,7 +104,8 @@ function loadCoauthors(cont) {
         download: true,
         header: true,
         complete: function (results) {
-            coauthors = results.data;
+            var data = results.data;
+            coauthors = data;
             cont();
         }
     });
@@ -112,7 +115,8 @@ function loadAuthorInfo(cont) {
         download: true,
         header: true,
         complete: function (results) {
-            authors = results.data;
+            var data = results.data;
+            authors = data;
             for (var i = 1; i <= areas.length; i++) {
                 var str = 'input[name=field_' + i + ']';
                 (function (s) {
