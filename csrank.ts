@@ -3,15 +3,14 @@
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
 
-const defaultCheckboxes  = 16;      /* The number of checkboxes (research areas) selected by default. */
 const coauthorFile       = "faculty-coauthors.csv";
 const authorinfoFile     = "generated-author-info.csv";
-const allowRankingChange = false;
+const allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 const maxCoauthors       = 30;      /* Max co-authors to display. */
 
 var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
-var authors : Array<string>;     /* The data which will hold the parsed CSV of author info. */
-var coauthors : Array<string>;   /* The data which will hold the parsed CSV of co-author info. */
+var authors   : Array<string>;     /* The data which will hold the parsed CSV of author info. */
+var coauthors : Array<string>;     /* The data which will hold the parsed CSV of co-author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
