@@ -6,7 +6,7 @@ clean:
 	rm $(TARGETS)
 
 csrank.js: csrank.ts
-	tsc csrank.ts
+	tsc --noImplicitAny --noImplicitReturns csrank.ts
 
 update-dblp:
 	@echo "Downloading from DBLP."

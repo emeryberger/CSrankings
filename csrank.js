@@ -286,7 +286,7 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
     }
 }
 /* Compute aggregate statistics. */
-function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, /* TBD: boolean */ weights) {
+function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
     var univagg = {};
     for (var dept in deptNames) {
         var n = numAreas;
@@ -326,7 +326,7 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
 function rank() {
     var form = document.getElementById("rankform");
     var s = "";
-    var deptNames = []; /* names of departments. */
+    var deptNames = {}; /* names of departments. */
     var deptCounts = {}; /* number of faculty in each department. */
     var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
     var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
@@ -336,7 +336,7 @@ function rank() {
     var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
     var startyear = parseInt(jQuery("#startyear").find(":selected").text());
     var endyear = parseInt(jQuery("#endyear").find(":selected").text());
-    var displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
+    var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
     var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
     var numAreas = 0; /* Total number of areas checked */
@@ -359,7 +359,7 @@ function rank() {
     var univtext = {};
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-        var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>&nbsp;&nbsp;Raw&nbsp;\#&nbsp;Pubs</em></small></td><td align="right"><small><em>&nbsp;&nbsp;Adjusted&nbsp;&nbsp;\#</em></small></td></thead><tbody>';
+        var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
         /* Build a dict of just faculty from this department for sorting purposes. */
         var fc = {};
         for (var ind = 0; ind < deptNames[dept].length; ind++) {
