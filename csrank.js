@@ -2,7 +2,6 @@
 /// <reference path="./papaparse.d.ts" />
 /// <reference path="./set.d.ts" />
 /// <reference path="./pako.d.ts" />
-var totalCheckboxes = 19; /* The number of checkboxes (research areas). */
 var defaultCheckboxes = 16; /* The number of checkboxes (research areas) selected by default. */
 var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
@@ -90,44 +89,55 @@ function toggle(dept) {
         widget.innerHTML = "&#9660;&nbsp;" + dept;
     }
 }
+function setAllCheckboxes() {
+    /* Set the _default_ (not "other") checkboxes to true. */
+    for (var i = 1; i <= areas.length; i++) {
+        var str = 'input[name=field_' + i + ']';
+        jQuery(str).prop('checked', true);
+    }
+}
+/* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
+function nop() { }
+function loadCoauthors(cont) {
+    Papa.parse(coauthorFile, {
+        download: true,
+        header: true,
+        complete: function (results) {
+            coauthors = results.data;
+            cont();
+        }
+    });
+}
+function loadAuthorInfo(cont) {
+    Papa.parse(authorinfoFile, {
+        download: true,
+        header: true,
+        complete: function (results) {
+            authors = results.data;
+            for (var i = 1; i <= areas.length; i++) {
+                var str = 'input[name=field_' + i + ']';
+                (function (s) {
+                    jQuery(s).click(function () {
+                        rank();
+                    });
+                })(str);
+            }
+            rank();
+        }
+    });
+    cont();
+}
 function init() {
     jQuery(document).ready(function () {
-        /* Set the _default_ (not "other") checkboxes to true. */
-        for (var i = 1; i <= totalCheckboxes; i++) {
-            var str = 'input[name=field_' + i + ']';
-            jQuery(str).prop('checked', true);
-        }
-        /* Load up the CSV. */
-        Papa.parse(coauthorFile, {
-            download: true,
-            header: true,
-            complete: function (results) {
-                coauthors = results.data;
-                Papa.parse(authorinfoFile, {
-                    download: true,
-                    header: true,
-                    complete: function (results) {
-                        authors = results.data;
-                        for (var i = 1; i <= totalCheckboxes; i++) {
-                            var str = 'input[name=field_' + i + ']';
-                            (function (s) {
-                                jQuery(s).click(function () {
-                                    rank();
-                                });
-                            })(str);
-                        }
-                        rank();
-                    }
-                });
-            }
-        });
+        setAllCheckboxes();
+        loadAuthorInfo(function () { loadCoauthors(rank); });
     });
 }
 function activateAll(value) {
     if (value === undefined) {
         value = true;
     }
-    for (var i = 1; i <= totalCheckboxes; i++) {
+    for (var i = 1; i <= areas.length; i++) {
         var str = "input[name=field_" + i + "]";
         jQuery(str).prop('checked', value);
     }
@@ -397,7 +407,7 @@ function rank() {
                 l.push(item);
             });
             if (l.length > maxCoauthors) {
-                coauthorStr = "(too many co-authors to show)";
+                coauthorStr = "(too many co-authors to display)";
             }
             else {
                 l.sort(compareNames);

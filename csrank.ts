@@ -3,7 +3,6 @@
 /// <reference path="./set.d.ts" />
 /// <reference path="./pako.d.ts" />
 
-const totalCheckboxes    = 19;      /* The number of checkboxes (research areas). */
 const defaultCheckboxes  = 16;      /* The number of checkboxes (research areas) selected by default. */
 const coauthorFile       = "faculty-coauthors.csv";
 const authorinfoFile     = "generated-author-info.csv";
@@ -20,6 +19,7 @@ var coauthors : Array<string>;   /* The data which will hold the parsed CSV of c
 type Areas = "proglang" | "softeng" | "opsys" | "networks" | "security" | "database" | "metrics" | "mlmining" | "ai" | "nlp" | "web" | "vision" | "theory" | "logic" | "arch" | "graphics" | "hci" | "mobile" | "robotics";
 
 const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
+
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -114,39 +114,53 @@ function toggle(dept : string) {
     }
 }
 
+function setAllCheckboxes() : void {
+    /* Set the _default_ (not "other") checkboxes to true. */
+    for (var i = 1; i <= areas.length; i++) {
+	var str = 'input[name=field_'+i+']';
+	jQuery(str).prop('checked', true);
+    }
+}
+
+/* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
+function nop() : void {}
+
+function loadCoauthors(cont) : void {
+    Papa.parse(coauthorFile, {
+	download : true,
+	header: true,
+	complete : function(results) {
+	    coauthors = results.data;
+	    cont();
+	}
+    });
+}
+
+function loadAuthorInfo(cont) : void {
+    Papa.parse(authorinfoFile, {
+	download : true,
+	header : true,
+	complete: function(results) {
+	    authors = results.data;
+	    for (var i = 1; i <= areas.length; i++) {
+		var str = 'input[name=field_'+i+']';
+		(function(s) {
+		    jQuery(s).click(function() {
+			rank();
+		    });})(str);
+	    }
+	    rank();
+	}
+    });
+    cont();
+}
+
 function init() {
     jQuery(document).ready(
 	function() {
-	    /* Set the _default_ (not "other") checkboxes to true. */
-	    for (var i = 1; i <= totalCheckboxes; i++) {
-		var str = 'input[name=field_'+i+']';
-		jQuery(str).prop('checked', true);
-	    }
-	    /* Load up the CSV. */
-		Papa.parse(coauthorFile, {
-		    download : true,
-		    header: true,
-		    complete : function(results) {
-			coauthors = results.data;
-			Papa.parse(authorinfoFile, {
-			    download : true,
-			    header : true,
-			    complete: function(results) {
-				
-				authors = results.data;
-				for (var i = 1; i <= totalCheckboxes; i++) {
-				    var str = 'input[name=field_'+i+']';
-				    (function(s) {
-					jQuery(s).click(function() {
-					    rank();
-					});})(str);
-				}
-				rank();
-			    }
-			});
-		    }
-		});
-	    });
+	    setAllCheckboxes();
+	    loadAuthorInfo(function() { loadCoauthors(rank) ; });
+	});
 }
 
 
@@ -154,7 +168,7 @@ function activateAll(value : boolean) : boolean {
     if (value === undefined) {
 	value = true;
     }
-    for (var i = 1; i <= totalCheckboxes; i++) {
+    for (var i = 1; i <= areas.length; i++) {
 	var str = "input[name=field_"+i+"]";
 	jQuery(str).prop('checked', value);
     }
@@ -467,7 +481,7 @@ function rank() : boolean {
 		l.push(item);
 	    });
 	    if (l.length > maxCoauthors) {
-		coauthorStr = "(too many co-authors to show)";
+		coauthorStr = "(too many co-authors to display)";
 	    } else {
 		l.sort(compareNames);
 		l.forEach(function (item, coauthors) {
