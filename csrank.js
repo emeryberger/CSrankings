@@ -4,7 +4,7 @@
 /// <reference path="./pako.d.ts" />
 var totalCheckboxes = 19; /* The number of checkboxes (research areas). */
 var defaultCheckboxes = 16; /* The number of checkboxes (research areas) selected by default. */
-var coauthorFile = "faculty-coauthors.csv.gz";
+var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
 var allowRankingChange = false;
 var maxCoauthors = 30; /* Max co-authors to display. */
@@ -49,6 +49,32 @@ function compareNames(a, b) {
         return 1;
     return 0;
 }
+/* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
+function zlibDecompress(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'blob';
+    xhr.onload = function (oEvent) {
+        // Base64 encode
+        var reader = new FileReader();
+        reader.readAsDataURL(xhr.response);
+        reader.onloadend = function () {
+            var base64data = reader.result;
+            //console.log(base64data);
+            var base64 = base64data.split(',')[1];
+            // Decode base64 (convert ascii to binary)
+            var strData = atob(base64);
+            // Convert binary string to character-number array
+            var charData = strData.split('').map(function (x) { return x.charCodeAt(0); });
+            // Turn number array into byte-array
+            var binData = new Uint8Array(charData);
+            // Pako inflate
+            var data = pako.inflate(binData, { to: 'string' });
+            callback(data);
+        };
+    };
+    xhr.send();
+}
 function redisplay(str) {
     jQuery("#success").html(str);
 }
@@ -64,41 +90,6 @@ function toggle(dept) {
         widget.innerHTML = "&#9660;&nbsp;" + dept;
     }
 }
-
-function zlibDecompress(url, callback){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'blob';
-
-    xhr.onload = function(oEvent) {
-	// Base64 encode
-	var reader = new window.FileReader();
-	reader.readAsDataURL(xhr.response);
-	reader.onloadend = function() {
-	    var base64data      = reader.result;
-
-	    //console.log(base64data);
-	    var base64      = base64data.split(',')[1];
-
-	    // Decode base64 (convert ascii to binary)
-	    var strData     = atob(base64);
-
-	    // Convert binary string to character-number array
-	    var charData    = strData.split('').map(function(x){return x.charCodeAt(0);});
-
-	    // Turn number array into byte-array
-	    var binData     = new Uint8Array(charData);
-
-	    // Pako inflate
-	    var data        = pako.inflate(binData, { to: 'string' });
-
-	    callback(data);
-	}
-    };
-
-    xhr.send();
-}
-
 function init() {
     jQuery(document).ready(function () {
         /* Set the _default_ (not "other") checkboxes to true. */
@@ -106,12 +97,8 @@ function init() {
             var str = 'input[name=field_' + i + ']';
             jQuery(str).prop('checked', true);
         }
-        jQuery('input[name=field_16]').prop('checked', false);
-        jQuery('input[name=field_17]').prop('checked', false);
-        jQuery('input[name=field_19]').prop('checked', false);
         /* Load up the CSV. */
-	zlibDecompress(coauthorFile, function(data) {
-            Papa.parse(data, {
+        Papa.parse(coauthorFile, {
             download: true,
             header: true,
             complete: function (results) {
@@ -134,7 +121,6 @@ function init() {
                 });
             }
         });
-	});
     });
 }
 function activateAll(value) {
