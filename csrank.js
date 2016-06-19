@@ -24,7 +24,7 @@ function makePrologue() {
         + "</head>"
         + "<body>"
         + '<div class="row">'
-        + '<div class="table" style="overflow:scroll; height: 600px;">'
+        + '<div class="table" style="overflow:auto; height: 600px;">'
         + '<table class="table-sm table-striped"'
         + 'id="ranking" valign="top">';
     return s;
