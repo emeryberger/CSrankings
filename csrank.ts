@@ -52,7 +52,7 @@ function makePrologue() : string {
 }
 
 /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
-function compareNames (a,b) : number {
+function compareNames (a : string, b : string) : number {
 
     //split the names as strings into arrays
     var aName = a.split(" ");
@@ -74,7 +74,7 @@ function compareNames (a,b) : number {
 }
 
 /* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
-function zlibDecompress(url, callback){
+function zlibDecompress(url : string, callback : any) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'blob';
@@ -136,7 +136,7 @@ function setAllCheckboxes() : void {
 /* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
 function nop() : void {}
 
-function loadCoauthors(cont) : void {
+function loadCoauthors(cont : () => void ) : void {
     Papa.parse(coauthorFile, {
 	download : true,
 	header: true,
@@ -148,7 +148,7 @@ function loadCoauthors(cont) : void {
     });
 }
 
-function loadAuthorInfo(cont) : void {
+function loadAuthorInfo(cont : () => void) : void {
     Papa.parse(authorinfoFile, {
 	download : true,
 	header : true,
@@ -157,7 +157,7 @@ function loadAuthorInfo(cont) : void {
 	    authors = <Array<Author>> data;
 	    for (var i = 1; i <= areas.length; i++) {
 		var str = 'input[name=field_'+i+']';
-		(function(s) {
+		(function(s : string) {
 		    jQuery(s).click(function() {
 			rank();
 		    });})(str);
@@ -319,7 +319,7 @@ function countPapers(areacount : {[key:string] : number},
 
 function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 			  deptCounts : {[key:string] : number},
-			  deptNames : Array<Array<string>>,
+			  deptNames  : {[key:string] : Array<string>},
 			  facultycount : {[key:string] : number},
 			  facultyAdjustedCount : {[key:string] : number},
 			  authors : Array<Author>,
@@ -328,21 +328,21 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 			  weights : {[key:string] : number}) : void
 {
     /* Build the dictionary of departments (and count) to be ranked. */
-    var visited = {};            /* contains an author name if that author has been processed. */
+    var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
     for (var r in authors) {
-	const area = authors[r].area;
-	const dept = authors[r].dept;
-	const areaDept = area+dept;
+	const area : string = authors[r].area;
+	const dept : string = authors[r].dept;
+	const areaDept : string = area+dept;
 	if (!(areaDept in areaDeptAdjustedCount)) {
 	    areaDeptAdjustedCount[areaDept] = 0;
 	}
 	if (weights[area] == 0) {
 	    continue;
 	}
-	const name = authors[r].name;
-	const count = parseInt(authors[r].count);
-	const adjustedCount = parseFloat(authors[r].adjustedcount);
-	const year = authors[r].year;
+	const name : string  = authors[r].name;
+	const count : number = parseInt(authors[r].count);
+	const adjustedCount : number = parseFloat(authors[r].adjustedcount);
+	const year : number  = authors[r].year;
 	if ((year >= startyear) && (year <= endyear)) {
 	    areaDeptAdjustedCount[areaDept] += adjustedCount;
 	    /* Is this the first time we have seen this person? */
@@ -352,7 +352,7 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 		facultyAdjustedCount[name+dept] = 0;
 		if (!(dept in deptCounts)) {
 		    deptCounts[dept] = 0;
-		    deptNames[dept] = [];
+		    deptNames[dept] = <Array<string>>[];
 		}
 		deptNames[dept].push(name);
 		deptCounts[dept] += 1;
@@ -364,12 +364,12 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 }
 
 /* Compute aggregate statistics. */
-function computeStats(deptNames : Array<Array<string>>,
+function computeStats(deptNames : {[key:string] : Array<string> },
 		      areaAdjustedCount : {[key:string] : number},
-		      areaDeptAdjustedCount,
+		      areaDeptAdjustedCount : {[key:string] : number},
 		      areas : Array<string>,
 		      numAreas : number,
-		      displayPercentages : number, /* TBD: boolean */
+		      displayPercentages : boolean,
 		      weights : {[key:string] : number})
 : {[key: string] : number}
 {
@@ -413,7 +413,7 @@ function computeStats(deptNames : Array<Array<string>>,
 function rank() : boolean {
     var form = document.getElementById("rankform");
     var s : string = "";
-    var deptNames : Array<Array<string>> = [];              /* names of departments. */
+    var deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
     var deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
     var facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
     var facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
@@ -424,7 +424,7 @@ function rank() : boolean {
     
     const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
     const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
-    const displayPercentages = parseInt(jQuery("#displayPercent").find(":selected").val());
+    const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
     const minToRank          = parseInt(jQuery("#minToRank").find(":selected").val());
 
@@ -449,19 +449,19 @@ function rank() : boolean {
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
 
     var s = makePrologue();
-    var univtext = {};
+    var univtext : {[key:string] : string} = {};
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>&nbsp;&nbsp;Raw&nbsp;\#&nbsp;Pubs</em></small></td><td align="right"><small><em>&nbsp;&nbsp;Adjusted&nbsp;&nbsp;\#</em></small></td></thead><tbody>';
+	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em>Faculty</em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	/* Build a dict of just faculty from this department for sorting purposes. */
-	var fc = {};
+	var fc : {[key:string] : number} = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
 	    name = deptNames[dept][ind];
 	    fc[name] = facultycount[name+dept];
 	}
 	var keys = Object.keys(fc);
-	keys.sort(function(a,b){ return fc[b] - fc[a];});
+	keys.sort(function(a : string, b : string){ return fc[b] - fc[a];});
 	for (var ind = 0; ind < keys.length; ind++) {
 	    name = keys[ind];
 	    /* Build up text for co-authors. */
@@ -473,7 +473,7 @@ function rank() : boolean {
 		coauthorStr = "Senior co-authors on these papers:\n";
 	    }
 	    /* Sort it by last name. */
-	    var l = [];
+	    var l : Array<string> = [];
 	    coauthorList[name].forEach(function (item, coauthors) {
 		l.push(item);
 	    });
@@ -517,7 +517,7 @@ function rank() : boolean {
     if (numAreas > 0) {
 	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
 	var rank = 0;        /* index */
-	var oldv = null;     /* old number - to track ties */
+	var oldv : any = null;     /* old number - to track ties */
 	/* Sort the university aggregate count from largest to smallest. */
 	var keys2 = sortIndex(univagg);
 	/* Display rankings until we have shown `minToRank` items or
@@ -574,17 +574,17 @@ function rank() : boolean {
 	/* Nothing selected. */
 	s = "<h4>Please select at least one area.</h4>";
     }
-    setTimeout((function(str) { redisplay(str); })(s), 0);
+    setTimeout((function(str : string) { redisplay(str); })(s), 0);
     return false; 
 }
 
-function activateDenseRankings() {
+function activateDenseRankings() : boolean {
     useDenseRankings = true;
     rank();
     return false;
 }
 
-function deactivateDenseRankings() {
+function deactivateDenseRankings() : boolean {
     useDenseRankings = false;
     rank();
     return false;
