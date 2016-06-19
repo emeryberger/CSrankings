@@ -1,7 +1,7 @@
 /// <reference path="./jquery.d.ts" />
 /// <reference path="./papaparse.d.ts" />
 /// <reference path="./set.d.ts" />
-
+/// <reference path="./pako.d.ts" />
 
 const totalCheckboxes    = 19;      /* The number of checkboxes (research areas). */
 const defaultCheckboxes  = 16;      /* The number of checkboxes (research areas) selected by default. */
@@ -62,6 +62,42 @@ function compareNames (a,b) : number {
     return 0;
 }
 
+/* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
+function zlibDecompress(url, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'blob';
+
+    xhr.onload = function(oEvent) {
+	// Base64 encode
+	var reader = new FileReader();
+	reader.readAsDataURL(xhr.response);
+	reader.onloadend = function() {
+	    var base64data      = reader.result;
+
+	    //console.log(base64data);
+	    var base64      = base64data.split(',')[1];
+
+	    // Decode base64 (convert ascii to binary)
+	    var strData     = atob(base64);
+
+	    // Convert binary string to character-number array
+	    var charData    = strData.split('').map(function(x){return x.charCodeAt(0);});
+
+	    // Turn number array into byte-array
+	    var binData     = new Uint8Array(charData);
+
+	    // Pako inflate
+	    var data        = pako.inflate(binData, { to: 'string' });
+
+	    callback(data);
+	}
+    };
+
+    xhr.send();
+}
+
+
 function redisplay(str : string) {
     jQuery("#success").html(str);
 }
@@ -86,33 +122,31 @@ function init() {
 		var str = 'input[name=field_'+i+']';
 		jQuery(str).prop('checked', true);
 	    }
-	    jQuery('input[name=field_16]').prop('checked', false);
-	    jQuery('input[name=field_17]').prop('checked', false);
-	    jQuery('input[name=field_19]').prop('checked', false);
 	    /* Load up the CSV. */
-	    Papa.parse(coauthorFile, {
-		download : true,
-		header: true,
-		complete : function(results) {
-		    coauthors = results.data;
-		    Papa.parse(authorinfoFile, {
-			download : true,
-			header : true,
-			complete: function(results) {
-			    authors = results.data;
-			    for (var i = 1; i <= totalCheckboxes; i++) {
-				var str = 'input[name=field_'+i+']';
-				(function(s) {
-				    jQuery(s).click(function() {
-					rank();
-				    });})(str);
+		Papa.parse(coauthorFile, {
+		    download : true,
+		    header: true,
+		    complete : function(results) {
+			coauthors = results.data;
+			Papa.parse(authorinfoFile, {
+			    download : true,
+			    header : true,
+			    complete: function(results) {
+				
+				authors = results.data;
+				for (var i = 1; i <= totalCheckboxes; i++) {
+				    var str = 'input[name=field_'+i+']';
+				    (function(s) {
+					jQuery(s).click(function() {
+					    rank();
+					});})(str);
+				}
+				rank();
 			    }
-			    rank();
-			}
-		    });
-		}
+			});
+		    }
+		});
 	    });
-	});
 }
 
 
