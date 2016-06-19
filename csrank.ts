@@ -453,7 +453,7 @@ function rank() : boolean {
 
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click to go to author\'s home page">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry)">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors (hover for list of senior co-authors)">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors (hover for list of senior co-authors)">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	/* Build a dict of just faculty from this department for sorting purposes. */
 	var fc : {[key:string] : number} = {};
 	for (var ind = 0; ind < deptNames[dept].length; ind++) {
@@ -488,12 +488,12 @@ function rank() : boolean {
 		coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
 	    }
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-		+ '<a target="_blank" href="https://www.google.com/search?q='
+		+ '<a title="Click for author\'s home page." target="_blank" href="https://www.google.com/search?q='
 		+ encodeURI(name + " " + dept)
 		+ '&gws_rd=ssl">'
 		+ name
 		+ '</a></small></td><td align="right"><small>'
-		+ '<a target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
+		+ '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
 		+ facultycount[name+dept]
 		+ '</a>'
 		+ "</small></td>"
