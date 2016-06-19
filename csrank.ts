@@ -9,13 +9,29 @@ const allowRankingChange = false;   /* Can we change the kind of rankings being 
 const maxCoauthors       = 30;      /* Max co-authors to display. */
 
 var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
-var authors   : Array<string>;     /* The data which will hold the parsed CSV of author info. */
-var coauthors : Array<string>;     /* The data which will hold the parsed CSV of co-author info. */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
 const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
 
+interface Author {
+    name : string;
+    dept : string;
+    area : string;
+    count : string;
+    adjustedcount : string;
+    year : number;
+};
+
+interface Coauthor {
+    author : string;
+    coauthor : string;
+    year : number;
+    area : string;
+};
+
+var authors   : Array<Author>;       /* The data which will hold the parsed CSV of author info. */
+var coauthors : Array<Coauthor>;     /* The data which will hold the parsed CSV of co-author info. */
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -125,7 +141,8 @@ function loadCoauthors(cont) : void {
 	download : true,
 	header: true,
 	complete : function(results) {
-	    coauthors = results.data;
+	    var data : any = results.data;
+	    coauthors = <Array<Coauthor>> data;
 	    cont();
 	}
     });
@@ -136,7 +153,8 @@ function loadAuthorInfo(cont) : void {
 	download : true,
 	header : true,
 	complete: function(results) {
-	    authors = results.data;
+	    var data : any = results.data;
+	    authors = <Array<Author>> data;
 	    for (var i = 1; i <= areas.length; i++) {
 		var str = 'input[name=field_'+i+']';
 		(function(s) {
@@ -250,7 +268,7 @@ function sortIndex(univagg : {[key: string] : number}) : string[] {
     return keys;
 }
 
-function computeCoauthors(coauthors,
+function computeCoauthors(coauthors : Array<Coauthor>,
 			  startyear : number,
 			  endyear : number,
 			  weights : {[key:string] : number})
@@ -273,10 +291,10 @@ function computeCoauthors(coauthors,
     return coauthorList;
 }
 
-function countPapers(areacount,
-		     areaAdjustedCount,
-		     areaDeptAdjustedCount,
-		     authors,
+function countPapers(areacount : {[key:string] : number},
+		     areaAdjustedCount : {[key:string] : number},
+		     areaDeptAdjustedCount  : {[key:string] : number},
+		     authors : Array<Author>,
 		     startyear : number,
 		     endyear : number,
 		     weights : {[key:string] : number}) : void
@@ -299,12 +317,12 @@ function countPapers(areacount,
 }
 
 
-function buildDepartments(areaDeptAdjustedCount,
-			  deptCounts,
+function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
+			  deptCounts : {[key:string] : number},
 			  deptNames : Array<Array<string>>,
-			  facultycount,
-			  facultyAdjustedCount,
-			  authors,
+			  facultycount : {[key:string] : number},
+			  facultyAdjustedCount : {[key:string] : number},
+			  authors : Array<Author>,
 			  startyear : number,
 			  endyear : number,
 			  weights : {[key:string] : number}) : void
