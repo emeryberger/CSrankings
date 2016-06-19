@@ -282,7 +282,7 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
     }
 }
 /* Compute aggregate statistics. */
-function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, /* TBD: boolean */ weights) {
     var univagg = {};
     for (var dept in deptNames) {
         var n = numAreas;
