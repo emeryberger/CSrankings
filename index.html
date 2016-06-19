@@ -19,7 +19,7 @@
     <title>CSRankings: Computer Science Rankings (beta)</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
     <script src="js/papaparse.min.js" type="text/javascript"></script>
@@ -71,7 +71,8 @@
 		most selective conferences in major areas of computer
 		science (at most three per area). These areas and the
 		conferences listed were developed in consultation with
-		numerous faculty.
+		faculty across a range of institutions, but are
+		subject to revision.
 	      </p>
 	      <p>Output is attributed to the institution where authors
 		are <em>currently affiliated</em> full-time,
@@ -83,10 +84,10 @@
 	      <p><em>Adjusted counts</em>: each publication is counted
 		exactly once, with credit adjusted by splitting evenly
 		across all authors. This approach makes it impossible to
-		boost rankings simply by adding authors to a paper. <br />
+		boost rankings simply by adding authors to a paper.
 		<em>Average percent</em> computes the mean percentage
 		of (adjusted) publications in each area by
-		institution. This weighs areas with different publication rates evenly.  <br />
+		institution. This weighs areas with different publication rates evenly.
 		<em>Total count</em> computes the adjusted sum of all
 		papers published, which effectively emphasizes areas with
 		more publications.
@@ -100,14 +101,20 @@
 		Click on a triangle (&#9658;) to display names and
 		number of publications. Click on a name to go to a
 		faculty member's home page; click on the raw number of
-		publications to go to their DBLP entry.
+		publications to go to their DBLP entry. Hover over the
+		adjusted number (divided among all co-authors) to list
+		senior co-authors.
 	      </p>
 	      Rank the top
 	      <select id="minToRank" name="minToRank" onchange="rank();">
 		<option value="10">10</option>
-		<option value="20" selected="selected">20</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+		<option value="25" selected="selected">25</option>
 		<option value="30">30</option>
+		<option value="35">35</option>
 		<option value="40">40</option>
+		<option value="45">45</option>
 		<option value="50">50</option>
 	      </select>
 	      institutions by
