@@ -12,7 +12,7 @@ var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "comp
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
-const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
+const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf"];
 
 interface Author {
     name : string;
@@ -210,7 +210,7 @@ function activatePL(value : boolean) : boolean {
 }
 
 function activateSystems(value : boolean) : boolean {
-    const systemsFields : Array<number> = [3, 4, 5, 6, 7, 15, 18];
+    const systemsFields : Array<number> = [3, 4, 5, 6, 7, 15, 18, 20];
     return activateFields(value, systemsFields);
 }
 
