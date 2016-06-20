@@ -289,8 +289,12 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
 function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
     var univagg = {};
     for (var dept in deptNames) {
-        var n = numAreas;
         if (displayPercentages) {
+            /* ARITHMETIC MEAN: */
+            /* univagg[dept] = 0; */
+            /*	GEOMEAN: */
+            /* univagg[dept] = 1; */
+            /*	HARMONIC MEAN: */
             univagg[dept] = 0;
         }
         else {
@@ -305,10 +309,15 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
             if (weights[area] != 0) {
                 if (displayPercentages) {
                     if (areaDeptAdjustedCount[areaDept] != 0) {
-                        univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area];
+                        /* ARITHMETIC MEAN: */
+                        /* univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area]; */
+                        /* GEOMEAN: */
+                        /* univagg[dept] *= areaDeptAdjustedCount[areaDept]; */
+                        /* HARMONIC MEAN: */
+                        /* Add reciprocal of rate. */
+                        univagg[dept] += areaAdjustedCount[area] / areaDeptAdjustedCount[areaDept];
                     }
                     else {
-                        n--;
                     }
                 }
                 else {
@@ -317,8 +326,13 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
             }
         }
         if (displayPercentages) {
-            univagg[dept] = univagg[dept] / numAreas;
-            univagg[dept] = (Math.floor(1000.0 * univagg[dept]) / 1000.0); /* Force rounding. */
+            /* univagg[dept] = univagg[dept] / numAreas; */
+            /* ARITHMETIC MEAN */
+            /* univagg[dept] = (Math.floor(1000.0 * univagg[dept]) / 1000.0); */
+            /*	GEOMEAN: */
+            /* univagg[dept] = univagg[dept] / n; */
+            /*	HARMONIC MEAN: */
+            univagg[dept] = numAreas / univagg[dept];
         }
     }
     return univagg;
