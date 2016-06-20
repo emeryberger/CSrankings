@@ -17,12 +17,12 @@ update-dblp:
 	mv dblp-fixed.xml dblp.xml
 	@echo "Done."
 
-faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py
+faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py util/csrankings.py
 	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
 	python util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-data.py
+generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	python util/regenerate-data.py
 	@echo "Done."
