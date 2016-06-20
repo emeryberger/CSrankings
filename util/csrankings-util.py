@@ -1,0 +1,93 @@
+from lxml import etree as ElementTree
+import htmlentitydefs
+import csv
+import operator
+import re
+
+# import gzip
+
+generateLog = True
+
+parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
+
+# Author paper count threshold - the author must have written at least this many top papers to count as a co-author.
+# This is meant to generally exclude students.
+authorPaperCountThreshold = 5
+
+# Papers must be at least 6 pages long to count.
+pageCountThreshold = 6
+# Match ordinary page numbers (as in 10-17).
+pageCounterNormal = re.compile('(\d+)-(\d+)')
+# Match page number in the form volume:page (as in 12:140-12:150).
+pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
+
+def pagecount(input):
+    if (input is None):
+        return 0
+    pageCounterMatcher1 = pageCounterNormal.match(input)
+    pageCounterMatcher2 = pageCounterColon.match(input)
+    start = 0
+    end = 0
+    count = 0
+    
+    if (not (pageCounterMatcher1 is None)):
+        start = int(pageCounterMatcher1.group(1))
+        end   = int(pageCounterMatcher1.group(2))
+        count = end-start+1
+    else:
+        if (not (pageCounterMatcher2 is None)):
+            start = int(pageCounterMatcher2.group(1))
+            end   = int(pageCounterMatcher2.group(2))
+            count = end-start+1
+    return count
+
+    
+areadict = {
+    'proglang' : ['POPL', 'PLDI', 'OOPSLA'],
+    'highperf' : ['SC', 'PPOPP'],
+    'logic' : ['CAV', 'LICS'],
+    'softeng' : ['ICSE', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+    'opsys' : ['SOSP', 'OSDI'],
+    'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
+    'theory' : ['STOC', 'FOCS','SODA'],
+    'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
+    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium'],
+    'mlmining' : ['NIPS', 'ICML','KDD'],
+    'ai' : ['AAAI', 'IJCAI'],
+    'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
+    'metrics' : ['SIGMETRICS','IMC','Internet Measurement Conference'],
+    'web' : ['WWW', 'SIGIR'],
+    'hci' : ['CHI','UbiComp','UIST'],
+    'nlp' : ['EMNLP','ACL','ACL (1)','NAACL'],
+    'vision' : ['CVPR','ICCV'],
+    'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
+    'robotics' : ['ICRA','IROS','Robotics: Science and Systems']
+}
+
+# Build a dictionary mapping conferences to areas.
+# e.g., confdict['CVPR'] = 'vision'.
+confdict = {}
+for k, v in areadict.items():
+    for item in v:
+        confdict[item] = k
+
+# The list of all areas.
+arealist = areadict.keys();
+
+# Consider pubs in this range only.
+startyear = 1990
+endyear   = 2016
+
+   
+
+def csv2dict_str_str(fname):
+    with open(fname, mode='r') as infile:
+        reader = csv.reader(infile)
+        #for rows in reader:
+        #    print rows[0], "-->", rows[1]
+        d = {unicode(rows[0].strip(),'utf-8'): unicode(rows[1].strip(),'utf-8') for rows in reader}
+    return d
+
+def sortdictionary(d):
+    return sorted(d.iteritems(), key=operator.itemgetter(1), reverse = True)    
