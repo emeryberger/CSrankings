@@ -6,6 +6,9 @@ var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
 var allowRankingChange = false; /* Can we change the kind of rankings being used? */
 var maxCoauthors = 30; /* Max co-authors to display. */
+var useArithmeticMean = false;
+var useGeometricMean = true;
+var useHarmonicMean = false;
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf"];
@@ -290,12 +293,15 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
     var univagg = {};
     for (var dept in deptNames) {
         if (displayPercentages) {
-            /* ARITHMETIC MEAN: */
-            /* univagg[dept] = 0; */
-            /*	GEOMEAN: */
-            /* univagg[dept] = 1; */
-            /*	HARMONIC MEAN: */
-            univagg[dept] = 0;
+            if (useArithmeticMean) {
+                univagg[dept] = 0;
+            }
+            if (useGeometricMean) {
+                univagg[dept] = 1;
+            }
+            if (useHarmonicMean) {
+                univagg[dept] = 0;
+            }
         }
         else {
             univagg[dept] = 0;
@@ -309,13 +315,15 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
             if (weights[area] != 0) {
                 if (displayPercentages) {
                     if (areaDeptAdjustedCount[areaDept] != 0) {
-                        /* ARITHMETIC MEAN: */
-                        /* univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area]; */
-                        /* GEOMEAN: */
-                        /* univagg[dept] *= areaDeptAdjustedCount[areaDept]; */
-                        /* HARMONIC MEAN: */
-                        /* Add reciprocal of rate. */
-                        univagg[dept] += areaAdjustedCount[area] / areaDeptAdjustedCount[areaDept];
+                        if (useArithmeticMean) {
+                            univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area];
+                        }
+                        if (useGeometricMean) {
+                            univagg[dept] *= areaDeptAdjustedCount[areaDept];
+                        }
+                        if (useHarmonicMean) {
+                            univagg[dept] += areaAdjustedCount[area] / areaDeptAdjustedCount[areaDept];
+                        }
                     }
                     else {
                     }
@@ -326,13 +334,15 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
             }
         }
         if (displayPercentages) {
-            /* univagg[dept] = univagg[dept] / numAreas; */
-            /* ARITHMETIC MEAN */
-            /* univagg[dept] = (Math.floor(1000.0 * univagg[dept]) / 1000.0); */
-            /*	GEOMEAN: */
-            /* univagg[dept] = univagg[dept] / n; */
-            /*	HARMONIC MEAN: */
-            univagg[dept] = numAreas / univagg[dept];
+            if (useArithmeticMean) {
+                univagg[dept] = univagg[dept] / numAreas;
+            }
+            if (useGeometricMean) {
+                univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
+            }
+            if (useHarmonicMean) {
+                univagg[dept] = numAreas / univagg[dept];
+            }
         }
     }
     return univagg;
@@ -429,7 +439,7 @@ function rank() {
         univtext[dept] = p;
     }
     if (displayPercentages) {
-        s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Percent of papers published, averaged across all areas.">Average&nbsp;%</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+        s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
     }
     else {
         s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
@@ -468,7 +478,12 @@ function rank() {
             s += "</td>";
             if (displayPercentages) {
                 /* Show average */
-                s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2) + "%</td>";
+                if (useArithmeticMean || useHarmonicMean) {
+                    s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2) + "%</td>";
+                }
+                if (useGeometricMean) {
+                    s += '<td align="right">' + (Math.floor(100.0 * v) / 100.0) + "</td>";
+                }
             }
             else {
                 /* Show count */
