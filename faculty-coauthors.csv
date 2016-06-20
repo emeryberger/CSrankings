@@ -185,6 +185,8 @@ C. Greg Plaxton,Torsten Suel,1992,theory
 C. Greg Plaxton,Frank Thomson Leighton,1990,theory
 C. Greg Plaxton,Robert Cypher,1990,theory
 Eric P. Xing,Chris Dyer,2014,nlp
+Eric P. Xing,Shay B. Cohen,2014,nlp
+Eric P. Xing,Ankur P. Parikh,2014,nlp
 Eric P. Xing,Jacob Eisenstein,2011,nlp
 Eric P. Xing,Noah A. Smith,2011,nlp
 Eric P. Xing,Qirong Ho,2015,mlmining
@@ -215,6 +217,7 @@ Eric P. Xing,Andrew Y. Ng,2002,mlmining
 Eric P. Xing,Michael I. Jordan,2002,mlmining
 Eric P. Xing,Richard M. Karp,2002,mlmining
 Eric P. Xing,Ni Lao,2011,mlmining
+Eric P. Xing,Ankur P. Parikh,2011,mlmining
 Eric P. Xing,Ning Chen,2011,mlmining
 Eric P. Xing,Jun Zhu,2011,mlmining
 Eric P. Xing,Jacob Eisenstein,2011,mlmining
@@ -238,6 +241,7 @@ Eric P. Xing,Gunhee Kim,2012,vision
 Eric P. Xing,Jacob Eisenstein,2010,nlp
 Eric P. Xing,André F. T. Martins,2010,nlp
 Eric P. Xing,Noah A. Smith,2010,nlp
+Eric P. Xing,Brendan O'Connor,2010,nlp
 Eric P. Xing,Amr Ahmed,2010,nlp
 Eric P. Xing,Pedro M. Q. Aguiar,2010,nlp
 Eric P. Xing,Mário A. T. Figueiredo,2010,nlp
@@ -278,6 +282,7 @@ Eric P. Xing,Bin Zhao,2014,vision
 Eric P. Xing,Seyoung Kim,2010,mlmining
 Eric P. Xing,Ni Lao,2010,mlmining
 Eric P. Xing,Li-Jia Li,2010,mlmining
+Eric P. Xing,Ankur P. Parikh,2010,mlmining
 Eric P. Xing,Seunghak Lee,2010,mlmining
 Eric P. Xing,Ning Chen,2010,mlmining
 Eric P. Xing,Jun Zhu,2010,mlmining
@@ -288,6 +293,8 @@ Eric P. Xing,Yan Liu 0002,2005,mlmining
 Eric P. Xing,Jaime G. Carbonell,2005,mlmining
 Eric P. Xing,Fan Li,2005,mlmining
 Eric P. Xing,Yiming Yang,2005,mlmining
+Eric P. Xing,Zhiting Hu,2015,nlp
+Eric P. Xing,Matthew Richardson,2015,nlp
 Eric P. Xing,Jacob Eisenstein,2011,web
 Eric P. Xing,Qirong Ho,2011,web
 Eric P. Xing,Alexander J. Smola,2011,web
@@ -343,11 +350,6 @@ Wim van Dam,Julia Kempe,2004,theory
 Wim van Dam,Zeph Landau,2004,theory
 Wim van Dam,Dorit Aharonov,2004,theory
 Wim van Dam,Oded Regev,2004,theory
-Hany Farid,Eero P. Simoncelli,1995,vision
-Hany Farid,James F. O'Brien,2014,graphics
-Hany Farid,James F. O'Brien,2012,graphics
-Hany Farid,James F. O'Brien,2013,graphics
-Hany Farid,Edward H. Adelson,1999,vision
 Dan Boneh,Moni Naor,2008,security
 Dan Boneh,Elie Bursztein,2009,security
 Dan Boneh,Nina Taft,2013,security
@@ -737,8 +739,10 @@ Gerome Miklau,Yue Wang,2014,database
 Gerome Miklau,Chao Li,2014,database
 Gerome Miklau,Michael Hay,2014,database
 Gerome Miklau,Brian Neil Levine,2007,database
-Marine Carpuat,Dekai Wu,2005,nlp
+Marine Carpuat,Jagadeesh Jagarlamudi,2013,nlp
+Marine Carpuat,Hal Daumé III,2013,nlp
 Marine Carpuat,Dekai Wu,2004,nlp
+Marine Carpuat,Dekai Wu,2005,nlp
 Umesh V. Vazirani,Thomas Vidick,2012,theory
 Umesh V. Vazirani,Michelangelo Grigni,2001,theory
 Umesh V. Vazirani,Julia Kempe,2001,theory
@@ -1231,6 +1235,82 @@ Eric Mjolsness,Przemyslaw Prusinkiewicz,1993,graphics
 Eric Mjolsness,Rebecca Castaño,1999,mlmining
 Eric Mjolsness,Anand Rangarajan,1993,mlmining
 Eric Mjolsness,Steven Gold,1993,mlmining
+Jure Leskovec,Daniel P. Huttenlocher,2010,hci
+Jure Leskovec,Jon M. Kleinberg,2010,hci
+Jure Leskovec,Anand Rajaraman,2015,mlmining
+Jure Leskovec,Kevin J. Lang,2010,web
+Jure Leskovec,Michael W. Mahoney,2010,web
+Jure Leskovec,Daniel P. Huttenlocher,2010,web
+Jure Leskovec,Jon M. Kleinberg,2010,web
+Jure Leskovec,John Shawe-Taylor,2003,mlmining
+Jure Leskovec,Deepayan Chakrabarti,2007,networks
+Jure Leskovec,Carlos Guestrin,2007,networks
+Jure Leskovec,Michalis Faloutsos,2007,networks
+Jure Leskovec,Samuel Madden,2007,networks
+Jure Leskovec,Christos Faloutsos,2007,networks
+Jure Leskovec,Cristian Danescu-Niculescu-Mizil,2013,web
+Jure Leskovec,Julian John McAuley,2013,web
+Jure Leskovec,Daniel P. Huttenlocher,2013,web
+Jure Leskovec,Ashton Anderson,2013,web
+Jure Leskovec,Robert West 0001,2013,web
+Jure Leskovec,Jon M. Kleinberg,2013,web
+Jure Leskovec,Christopher Potts,2013,web
+Jure Leskovec,Dan Jurafsky,2013,web
+Jure Leskovec,Andreas Krause,2006,mlmining
+Jure Leskovec,Carlos Guestrin,2006,mlmining
+Jure Leskovec,Christos Faloutsos,2006,mlmining
+Jure Leskovec,Andrew Tomkins,2008,mlmining
+Jure Leskovec,Jean Bolot,2008,mlmining
+Jure Leskovec,Alexander Tuzhilin,2008,mlmining
+Jure Leskovec,Lars Backstrom,2008,mlmining
+Jure Leskovec,David Jensen,2008,mlmining
+Jure Leskovec,Sridhar Machiraju,2008,mlmining
+Jure Leskovec,Ashwin Sridharan,2008,mlmining
+Jure Leskovec,Christos Faloutsos,2008,mlmining
+Jure Leskovec,Ravi Kumar,2008,mlmining
+Jure Leskovec,Cristian Danescu-Niculescu-Mizil,2013,nlp
+Jure Leskovec,Christopher Potts,2013,nlp
+Jure Leskovec,Dan Jurafsky,2013,nlp
+Jure Leskovec,Robert West 0001,2012,web
+Jure Leskovec,Susan T. Dumais,2007,web
+Jure Leskovec,Eric Horvitz,2007,web
+Jure Leskovec,Cristian Danescu-Niculescu-Mizil,2015,web
+Jure Leskovec,Mitul Tiwari,2015,web
+Jure Leskovec,Daniel P. Huttenlocher,2015,web
+Jure Leskovec,Ashton Anderson,2015,web
+Jure Leskovec,Robert West 0001,2015,web
+Jure Leskovec,Jon M. Kleinberg,2015,web
+Jure Leskovec,Dafna Shahaf,2013,mlmining
+Jure Leskovec,Agma J. M. Traina,2006,database
+Jure Leskovec,Hanghang Tong,2006,database
+Jure Leskovec,Christos Faloutsos,2006,database
+Jure Leskovec,Anirban Dasgupta 0001,2008,web
+Jure Leskovec,Kevin J. Lang,2008,web
+Jure Leskovec,Michael W. Mahoney,2008,web
+Jure Leskovec,Eric Horvitz,2008,web
+Jure Leskovec,Christos Faloutsos,2005,mlmining
+Jure Leskovec,Jon M. Kleinberg,2005,mlmining
+Jure Leskovec,Andreas Krause,2010,mlmining
+Jure Leskovec,Manuel Gomez-Rodriguez,2010,mlmining
+Jure Leskovec,Justin Cheng,2016,web
+Jure Leskovec,Robert West 0001,2016,web
+Jure Leskovec,Lada A. Adamic,2016,web
+Jure Leskovec,Jon M. Kleinberg,2016,web
+Jure Leskovec,Daniel P. Huttenlocher,2014,web
+Jure Leskovec,Justin Cheng,2014,web
+Jure Leskovec,Lada A. Adamic,2014,web
+Jure Leskovec,Jon M. Kleinberg,2014,web
+Jure Leskovec,Ashton Anderson,2014,web
+Jure Leskovec,Natasa Milic-Frayling,2005,ai
+Jure Leskovec,Marko Grobelnik,2005,ai
+Jure Leskovec,Lars Backstrom,2009,mlmining
+Jure Leskovec,Jon M. Kleinberg,2009,mlmining
+Jure Leskovec,Daniel P. Huttenlocher,2012,mlmining
+Jure Leskovec,Ashton Anderson,2012,mlmining
+Jure Leskovec,Jon M. Kleinberg,2012,mlmining
+Jure Leskovec,Andreas Krause,2007,mlmining
+Jure Leskovec,Carlos Guestrin,2007,mlmining
+Jure Leskovec,Christos Faloutsos,2007,mlmining
 David Cash,Mihir Bellare,2011,security
 David Cash,Thomas Ristenpart,2015,security
 Byron Boots,Brian D. Ziebart,2015,ai
@@ -1628,8 +1708,7 @@ Andrew McCallum,Fernando C. N. Pereira,2011,nlp
 Andrew McCallum,Michael L. Wick,2008,mlmining
 Andrew McCallum,Charles A. Sutton,2008,mlmining
 Andrew McCallum,Khashayar Rohanimanesh,2008,mlmining
-Andrew McCallum,Rajat Raina,2003,mlmining
-Andrew McCallum,Andrew Y. Ng,2003,mlmining
+Andrew McCallum,Ron Bekkerman,2005,web
 Andrew McCallum,Tom M. Mitchell,1998,mlmining
 Andrew McCallum,Andrew Y. Ng,1998,mlmining
 Andrew McCallum,Michael L. Wick,2011,mlmining
@@ -1639,16 +1718,19 @@ Andrew McCallum,Kedar Bellare,2011,mlmining
 Andrew McCallum,Xuerui Wang,2006,mlmining
 Andrew McCallum,Michael L. Wick,2010,database
 Andrew McCallum,Gerome Miklau,2010,database
-Andrew McCallum,W. Bruce Croft,2003,web
-Andrew McCallum,Xing Wei,2003,web
+Andrew McCallum,Xuerui Wang,2005,mlmining
+Andrew McCallum,Ran El-Yaniv,2005,mlmining
+Andrew McCallum,Ron Bekkerman,2005,mlmining
 Andrew McCallum,Sebastian Riedel,2010,nlp
 Andrew McCallum,Limin Yao,2010,nlp
 Andrew McCallum,Nicholas Roy,2001,mlmining
 Andrew McCallum,Fernando C. N. Pereira,2001,mlmining
 Andrew McCallum,John D. Lafferty,2001,mlmining
 Andrew McCallum,Xuerui Wang,2006,ai
+Andrew McCallum,Gregory Druck,2006,ai
 Andrew McCallum,Chris Pal,2006,ai
-Andrew McCallum,Ron Bekkerman,2005,web
+Andrew McCallum,Rajat Raina,2003,mlmining
+Andrew McCallum,Andrew Y. Ng,2003,mlmining
 Andrew McCallum,Michael L. Wick,2006,nlp
 Andrew McCallum,Aron Culotta,2006,nlp
 Andrew McCallum,David Cohn,2000,mlmining
@@ -1658,17 +1740,23 @@ Andrew McCallum,Dayne Freitag,2000,mlmining
 Andrew McCallum,Vidit Jain,2007,vision
 Andrew McCallum,Erik G. Learned-Miller,2007,vision
 Andrew McCallum,Chris Pal,2007,ai
+Andrew McCallum,Michael L. Wick,2012,nlp
+Andrew McCallum,Sebastian Riedel,2012,nlp
+Andrew McCallum,Limin Yao,2012,nlp
+Andrew McCallum,Sameer Singh,2012,nlp
 Andrew McCallum,Hanna M. Wallach,2009,nlp
 Andrew McCallum,David M. Mimno,2009,nlp
 Andrew McCallum,Kedar Bellare,2009,nlp
 Andrew McCallum,Burr Settles,2009,nlp
+Andrew McCallum,Gregory Druck,2009,nlp
 Andrew McCallum,David A. Smith,2009,nlp
 Andrew McCallum,Aron Culotta,2004,ai
 Andrew McCallum,Paul A. Viola,2004,ai
 Andrew McCallum,Gideon S. Mann,2008,web
-Andrew McCallum,Xuerui Wang,2005,mlmining
-Andrew McCallum,Ran El-Yaniv,2005,mlmining
-Andrew McCallum,Ron Bekkerman,2005,mlmining
+Andrew McCallum,Gregory Druck,2008,web
+Andrew McCallum,W. Bruce Croft,2003,web
+Andrew McCallum,Xing Wei,2003,web
+Andrew McCallum,Gregory Druck,2010,mlmining
 Andrew McCallum,Xuerui Wang,2005,ai
 Andrew McCallum,Aron Culotta,2005,ai
 Andrew McCallum,David M. Mimno,2009,mlmining
@@ -1885,6 +1973,13 @@ Qin Lv,Robert P. Dick,2013,hci
 Aaron Clauset,Dimitris Achlioptas,2005,theory
 Aaron Clauset,David Kempe,2005,theory
 Aaron Clauset,Cristopher Moore,2005,theory
+Alan W. Black,Chris Dyer,2013,nlp
+Alan W. Black,Wang Ling,2013,nlp
+Alan W. Black,Isabel Trancoso,2013,nlp
+Alan W. Black,Isabel Trancoso,2015,nlp
+Alan W. Black,Chris Dyer,2015,nlp
+Alan W. Black,Wang Ling,2015,nlp
+Alan W. Black,Yulia Tsvetkov,2015,nlp
 Zhuowen Tu,Arthur W. Toga,2008,vision
 Zhuowen Tu,Jiayan Jiang,2008,vision
 Zhuowen Tu,Alan L. Yuille,2008,vision
@@ -1969,43 +2064,37 @@ Danai Koutra,Stephan Günnemann,2015,database
 Danai Koutra,Wolfgang Gatterbauer,2015,database
 Danai Koutra,Di Jin,2015,database
 Danai Koutra,Christos Faloutsos,2015,database
-François Gygi,Martin Schulz,2006,highperf
-François Gygi,Erik W. Draeger,2006,highperf
-François Gygi,Bronis R. de Supinski,2006,highperf
-François Gygi,John A. Gunnels,2006,highperf
-François Gygi,Franz Franchetti,2006,highperf
-François Gygi,Erik W. Draeger,2005,highperf
-François Gygi,Franz Franchetti,2005,highperf
-François Gygi,Bronis R. de Supinski,2005,highperf
-François Gygi,John A. Gunnels,2005,highperf
+Jacob Eisenstein,Noah A. Smith,2011,nlp
+Jacob Eisenstein,Eric P. Xing,2011,nlp
+Jacob Eisenstein,Noah A. Smith,2010,nlp
+Jacob Eisenstein,Brendan O'Connor,2010,nlp
+Jacob Eisenstein,Eric P. Xing,2010,nlp
+Jacob Eisenstein,Yi Yang,2013,nlp
+Jacob Eisenstein,Wendy E. Mackay,2006,hci
 Jacob Eisenstein,Qirong Ho,2011,web
 Jacob Eisenstein,Alexander J. Smola,2011,web
 Jacob Eisenstein,Choon Hui Teo,2011,web
 Jacob Eisenstein,Amr Ahmed,2011,web
 Jacob Eisenstein,Eric P. Xing,2011,web
-Jacob Eisenstein,Noah A. Smith,2010,nlp
-Jacob Eisenstein,Eric P. Xing,2010,nlp
-Jacob Eisenstein,Yi Yang,2013,nlp
-Jacob Eisenstein,Wendy E. Mackay,2006,hci
 Jacob Eisenstein,Regina Barzilay,2007,ai
 Jacob Eisenstein,Randall Davis,2007,ai
 Jacob Eisenstein,Amr Ahmed,2011,mlmining
 Jacob Eisenstein,Eric P. Xing,2011,mlmining
-Jacob Eisenstein,Noah A. Smith,2011,nlp
-Jacob Eisenstein,Eric P. Xing,2011,nlp
-Jacob Eisenstein,Qirong Ho,2012,web
-Jacob Eisenstein,Eric P. Xing,2012,web
+Jacob Eisenstein,Regina Barzilay,2008,ai
+Jacob Eisenstein,Randall Davis,2008,ai
+Jacob Eisenstein,Sharon Goldwater,2012,nlp
 Jacob Eisenstein,Dan Goldwasser,2009,nlp
 Jacob Eisenstein,Dan Roth,2009,nlp
 Jacob Eisenstein,James Clarke,2009,nlp
 Jacob Eisenstein,Randall Davis,2007,nlp
 Jacob Eisenstein,S. R. K. Branavan,2008,nlp
+Jacob Eisenstein,Tahira Naseem,2008,nlp
 Jacob Eisenstein,Randall Davis,2008,nlp
 Jacob Eisenstein,Harr Chen,2008,nlp
 Jacob Eisenstein,Regina Barzilay,2008,nlp
 Jacob Eisenstein,Benjamin Snyder,2008,nlp
-Jacob Eisenstein,Regina Barzilay,2008,ai
-Jacob Eisenstein,Randall Davis,2008,ai
+Jacob Eisenstein,Qirong Ho,2012,web
+Jacob Eisenstein,Eric P. Xing,2012,web
 Aditya G. Parameswaran,Hector Garcia-Molina,2013,mlmining
 Aditya G. Parameswaran,Manas Joglekar,2013,mlmining
 Aditya G. Parameswaran,Amol Deshpande,2015,database
@@ -2626,6 +2715,61 @@ Aleksandra Korolova,Úlfar Erlingsson,2014,security
 Aleksandra Korolova,Krishnaram Kenthapadi,2009,web
 Aleksandra Korolova,Alexandros Ntoulas,2009,web
 Aleksandra Korolova,Nina Mishra,2009,web
+Tim Roughgarden,Robert Kleinberg,2012,theory
+Tim Roughgarden,Noam Nisan,2012,theory
+Tim Roughgarden,Hu Fu,2012,theory
+Tim Roughgarden,Ashwinkumar Badanidiyuru,2012,theory
+Tim Roughgarden,Stefano Leonardi,2012,theory
+Tim Roughgarden,Shahar Dobzinski,2012,theory
+Tim Roughgarden,Leonidas J. Guibas,2009,networks
+Tim Roughgarden,Michael Kearns,2013,mlmining
+Tim Roughgarden,Éva Tardos,2000,theory
+Tim Roughgarden,Richard Cole 0001,2014,theory
+Tim Roughgarden,Justin Hsu,2014,theory
+Tim Roughgarden,Zhiwei Steven Wu,2014,theory
+Tim Roughgarden,Zhiyi Huang 0002,2014,theory
+Tim Roughgarden,Aaron Roth,2014,theory
+Tim Roughgarden,Arpita Ghosh,2009,theory
+Tim Roughgarden,Mukund Sundararajan,2009,theory
+Tim Roughgarden,Anupam Gupta,2002,theory
+Tim Roughgarden,Amit Kumar 0001,2002,theory
+Tim Roughgarden,Ho-Lin Chen,2008,theory
+Tim Roughgarden,Shaddin Dughmi,2008,theory
+Tim Roughgarden,Robert Krauthgamer,2008,theory
+Tim Roughgarden,Gregory Valiant,2008,theory
+Tim Roughgarden,Shahar Dobzinski,2008,theory
+Tim Roughgarden,Jason D. Hartline,2008,theory
+Tim Roughgarden,Richard Cole 0001,2006,theory
+Tim Roughgarden,Mukund Sundararajan,2006,theory
+Tim Roughgarden,Yevgeniy Dodis,2006,theory
+Tim Roughgarden,Richard Cole 0001,2003,theory
+Tim Roughgarden,Martin Pál,2003,theory
+Tim Roughgarden,Yevgeniy Dodis,2003,theory
+Tim Roughgarden,Anupam Gupta,2003,theory
+Tim Roughgarden,Amit Kumar 0001,2003,theory
+Tim Roughgarden,Jerry O. Talton,2011,ai
+Tim Roughgarden,Salman Ahmad,2011,ai
+Tim Roughgarden,Scott R. Klemmer,2011,ai
+Tim Roughgarden,Ranjitha Kumar,2011,ai
+Tim Roughgarden,Shaddin Dughmi,2010,theory
+Tim Roughgarden,Aaron Roth,2010,theory
+Tim Roughgarden,Vasilis Syrgkanis,2016,theory
+Tim Roughgarden,Nicole Immorlica,2016,theory
+Tim Roughgarden,Brendan Lucier,2016,theory
+Tim Roughgarden,Michal Feldman,2016,theory
+Tim Roughgarden,Christos H. Papadimitriou,2005,theory
+Tim Roughgarden,Yashar Ganjali,2006,networks
+Tim Roughgarden,Nick McKeown,2006,networks
+Tim Roughgarden,Ashish Goel,2006,networks
+Tim Roughgarden,Shaddin Dughmi,2011,theory
+Tim Roughgarden,Anirban Dasgupta 0001,2004,theory
+Tim Roughgarden,Tom Wexler,2004,theory
+Tim Roughgarden,Elliot Anshelevich,2004,theory
+Tim Roughgarden,Éva Tardos,2004,theory
+Tim Roughgarden,Jon M. Kleinberg,2004,theory
+Tim Roughgarden,Amir Globerson,2015,mlmining
+Tim Roughgarden,Jamie Morgenstern,2015,mlmining
+Tim Roughgarden,David Sontag,2015,mlmining
 Tucker R. Balch,James Bruce,2000,robotics
 Tucker R. Balch,Manuela M. Veloso,2000,robotics
 Tucker R. Balch,Roozbeh Mottaghi,2009,robotics
@@ -3257,6 +3401,7 @@ Louis-Philippe Morency,Randall Davis,2013,vision
 Louis-Philippe Morency,Yale Song,2013,vision
 Louis-Philippe Morency,Ali Rahimi,2001,vision
 Louis-Philippe Morency,Trevor Darrell,2001,vision
+Louis-Philippe Morency,Rada Mihalcea,2013,nlp
 Louis-Philippe Morency,Trevor Darrell,2006,ai
 Louis-Philippe Morency,Christopher Lee,2006,ai
 Louis-Philippe Morency,Candace L. Sidner,2006,ai
@@ -3504,10 +3649,12 @@ Shree K. Nayar,Sanjeev J. Koppal,2005,vision
 Shree K. Nayar,Ko Nishino,2005,vision
 Shree K. Nayar,Mohit Gupta,2015,vision
 Shree K. Nayar,Ryunosuke Yokoya,2015,vision
+Ani Nenkova,Emily Pitler,2010,nlp
 Ani Nenkova,Kathleen McKeown,2005,web
 Ani Nenkova,Julia Hirschberg,2005,web
 Ani Nenkova,Rebecca J. Passonneau,2005,web
 Ani Nenkova,Daniel Jurafsky,2007,nlp
+Ani Nenkova,Emily Pitler,2008,nlp
 Ani Nenkova,Kathleen McKeown,2006,web
 Ani Nenkova,Lucy Vanderwende,2006,web
 Paul R. Schrater,Nikolaos Papanikolopoulos,2007,vision
@@ -3681,6 +3828,7 @@ Alan Ritter,William B. Dolan,2011,nlp
 Alan Ritter,Mausam,2011,nlp
 Alan Ritter,Colin Cherry,2011,nlp
 Alan Ritter,Oren Etzioni,2011,nlp
+Alan Ritter,Ndapandula Nakashole,2015,ai
 Alan Ritter,Tom M. Mitchell,2015,ai
 Alan Ritter,Mehdi Samadi,2015,ai
 Alan Ritter,William W. Cohen,2015,ai
@@ -3698,11 +3846,11 @@ Alan Ritter,Oren Etzioni,2010,nlp
 Alan Ritter,Stephen Soderland,2008,nlp
 Alan Ritter,Doug Downey,2008,nlp
 Alan Ritter,Oren Etzioni,2008,nlp
-Alan Ritter,Mausam,2012,mlmining
-Alan Ritter,Oren Etzioni,2012,mlmining
 Alan Ritter,Tom M. Mitchell,2015,vision
 Alan Ritter,Xinlei Chen,2015,vision
 Alan Ritter,Abhinav Gupta,2015,vision
+Alan Ritter,Mausam,2012,mlmining
+Alan Ritter,Oren Etzioni,2012,mlmining
 Alan Ritter,Tom M. Mitchell,2015,web
 Rong Ge,Ravindran Kannan,2012,theory
 Rong Ge,Sanjeev Arora,2012,theory
@@ -4634,10 +4782,12 @@ Christopher Ré,Michael J. Cafarella,2011,database
 Christopher Ré,Jude W. Shavlik,2011,database
 Christopher Ré,Arun Kumar,2011,database
 Christopher Ré,AnHai Doan,2011,database
-Christopher Ré,Michael W. Mahoney,2016,theory
-Christopher Ré,Yinlam Chow,2016,theory
+Christopher Ré,Jude W. Shavlik,2012,nlp
+Christopher Ré,Ce Zhang,2012,nlp
 Christopher Ré,Dan Suciu,2010,database
 Christopher Ré,Benny Kimelfeld,2010,database
+Christopher Ré,Michael W. Mahoney,2016,theory
+Christopher Ré,Yinlam Chow,2016,theory
 Christopher Ré,Daisy Zhe Wang,2012,database
 Christopher Ré,Joseph M. Hellerstein,2012,database
 Christopher Ré,Kun Li,2012,database
@@ -5877,77 +6027,6 @@ Matthew Flatt,Robert Bruce Findler,2010,proglang
 Matthew Flatt,Wilson C. Hsieh,2001,proglang
 Matthew Flatt,Sean McDirmid,2001,proglang
 Matthew Flatt,Robert Bruce Findler,2004,proglang
-Jure Leskovec,Daniel P. Huttenlocher,2010,hci
-Jure Leskovec,Jon M. Kleinberg,2010,hci
-Jure Leskovec,Anand Rajaraman,2015,mlmining
-Jure Leskovec,Kevin J. Lang,2010,web
-Jure Leskovec,Michael W. Mahoney,2010,web
-Jure Leskovec,Daniel P. Huttenlocher,2010,web
-Jure Leskovec,Jon M. Kleinberg,2010,web
-Jure Leskovec,John Shawe-Taylor,2003,mlmining
-Jure Leskovec,Deepayan Chakrabarti,2007,networks
-Jure Leskovec,Carlos Guestrin,2007,networks
-Jure Leskovec,Michalis Faloutsos,2007,networks
-Jure Leskovec,Samuel Madden,2007,networks
-Jure Leskovec,Christos Faloutsos,2007,networks
-Jure Leskovec,Cristian Danescu-Niculescu-Mizil,2013,web
-Jure Leskovec,Julian John McAuley,2013,web
-Jure Leskovec,Daniel P. Huttenlocher,2013,web
-Jure Leskovec,Ashton Anderson,2013,web
-Jure Leskovec,Robert West 0001,2013,web
-Jure Leskovec,Jon M. Kleinberg,2013,web
-Jure Leskovec,Christopher Potts,2013,web
-Jure Leskovec,Dan Jurafsky,2013,web
-Jure Leskovec,Andreas Krause,2006,mlmining
-Jure Leskovec,Carlos Guestrin,2006,mlmining
-Jure Leskovec,Christos Faloutsos,2006,mlmining
-Jure Leskovec,Andrew Tomkins,2008,mlmining
-Jure Leskovec,Jean Bolot,2008,mlmining
-Jure Leskovec,Alexander Tuzhilin,2008,mlmining
-Jure Leskovec,Lars Backstrom,2008,mlmining
-Jure Leskovec,David Jensen,2008,mlmining
-Jure Leskovec,Sridhar Machiraju,2008,mlmining
-Jure Leskovec,Ashwin Sridharan,2008,mlmining
-Jure Leskovec,Christos Faloutsos,2008,mlmining
-Jure Leskovec,Ravi Kumar,2008,mlmining
-Jure Leskovec,Robert West 0001,2012,web
-Jure Leskovec,Susan T. Dumais,2007,web
-Jure Leskovec,Eric Horvitz,2007,web
-Jure Leskovec,Cristian Danescu-Niculescu-Mizil,2015,web
-Jure Leskovec,Mitul Tiwari,2015,web
-Jure Leskovec,Daniel P. Huttenlocher,2015,web
-Jure Leskovec,Ashton Anderson,2015,web
-Jure Leskovec,Robert West 0001,2015,web
-Jure Leskovec,Jon M. Kleinberg,2015,web
-Jure Leskovec,Dafna Shahaf,2013,mlmining
-Jure Leskovec,Agma J. M. Traina,2006,database
-Jure Leskovec,Hanghang Tong,2006,database
-Jure Leskovec,Christos Faloutsos,2006,database
-Jure Leskovec,Anirban Dasgupta 0001,2008,web
-Jure Leskovec,Kevin J. Lang,2008,web
-Jure Leskovec,Michael W. Mahoney,2008,web
-Jure Leskovec,Eric Horvitz,2008,web
-Jure Leskovec,Christos Faloutsos,2005,mlmining
-Jure Leskovec,Jon M. Kleinberg,2005,mlmining
-Jure Leskovec,Andreas Krause,2010,mlmining
-Jure Leskovec,Manuel Gomez-Rodriguez,2010,mlmining
-Jure Leskovec,Robert West 0001,2016,web
-Jure Leskovec,Lada A. Adamic,2016,web
-Jure Leskovec,Jon M. Kleinberg,2016,web
-Jure Leskovec,Daniel P. Huttenlocher,2014,web
-Jure Leskovec,Lada A. Adamic,2014,web
-Jure Leskovec,Jon M. Kleinberg,2014,web
-Jure Leskovec,Ashton Anderson,2014,web
-Jure Leskovec,Natasa Milic-Frayling,2005,ai
-Jure Leskovec,Marko Grobelnik,2005,ai
-Jure Leskovec,Lars Backstrom,2009,mlmining
-Jure Leskovec,Jon M. Kleinberg,2009,mlmining
-Jure Leskovec,Daniel P. Huttenlocher,2012,mlmining
-Jure Leskovec,Ashton Anderson,2012,mlmining
-Jure Leskovec,Jon M. Kleinberg,2012,mlmining
-Jure Leskovec,Andreas Krause,2007,mlmining
-Jure Leskovec,Carlos Guestrin,2007,mlmining
-Jure Leskovec,Christos Faloutsos,2007,mlmining
 Kirk Pruhs,Sungjin Im,2012,theory
 Kirk Pruhs,Anupam Gupta,2012,theory
 Kirk Pruhs,Benjamin Moseley,2012,theory
@@ -6517,6 +6596,10 @@ Abraham Silberschatz,S. Sudarshan 0001,1993,database
 Abraham Silberschatz,H. V. Jagadish,1993,database
 Abraham Silberschatz,Yuri Breitbart,1993,database
 Yoav Artzi,Luke S. Zettlemoyer,2013,nlp
+Yoav Artzi,Tom Kwiatkowski,2013,nlp
+Yoav Artzi,Regina Barzilay,2014,nlp
+Yoav Artzi,Nate Kushman,2014,nlp
+Yoav Artzi,Luke Zettlemoyer,2014,nlp
 Yoav Artzi,Luke S. Zettlemoyer,2011,nlp
 Yoav Artzi,Yejin Choi,2015,nlp
 Yoav Artzi,Luke Zettlemoyer,2015,nlp
@@ -7337,6 +7420,7 @@ Ari Juels,Tamara Denning,2011,hci
 Raman Arora,Nati Srebro,2013,mlmining
 Raman Arora,Jeff A. Bilmes,2015,mlmining
 Raman Arora,Weiran Wang,2015,mlmining
+Raman Arora,Karen Livescu,2015,mlmining
 Raman Arora,Maya R. Gupta,2011,mlmining
 Raman Arora,Ambuj Tewari,2012,mlmining
 Raman Arora,Ofer Dekel,2012,mlmining
@@ -7657,10 +7741,10 @@ Cindy Rubio-González,Costin Iancu,2013,highperf
 Cindy Rubio-González,David H. Bailey,2013,highperf
 Cindy Rubio-González,Koushik Sen,2013,highperf
 Janos Simon,Mario Szegedy,1992,theory
-Julia Hockenmaier,Frank Keller,2006,nlp
-Julia Hockenmaier,Aravind K. Joshi,2006,nlp
 Julia Hockenmaier,Svetlana Lazebnik,2015,vision
 Julia Hockenmaier,Liwei Wang,2015,vision
+Julia Hockenmaier,Frank Keller,2006,nlp
+Julia Hockenmaier,Aravind K. Joshi,2006,nlp
 Julia Hockenmaier,Stephen Clark,2002,nlp
 Julia Hockenmaier,Mark Steedman,2002,nlp
 Geoffrey Brown,Paolo Faraboschi,2000,arch
@@ -8484,16 +8568,6 @@ Leonard M. Adleman,Qi Cheng,2002,theory
 Leonard M. Adleman,Ming-Deh A. Huang,2002,theory
 Leonard M. Adleman,David Kempe,2002,theory
 Leonard M. Adleman,Ashish Goel,2002,theory
-Carolyn Penstein Rosé,Robert E. Kraut,2006,hci
-Carolyn Penstein Rosé,Jaime Arguello,2006,hci
-Carolyn Penstein Rosé,Hao-Chuan Wang,2007,ai
-Carolyn Penstein Rosé,Tsai-Yen Li,2007,ai
-Carolyn Penstein Rosé,Barbara Di Eugenio,1995,nlp
-Carolyn Penstein Rosé,Yi-Chia Wang,2007,nlp
-Carolyn Penstein Rosé,Robert E. Kraut,2007,hci
-Carolyn Penstein Rosé,Susan R. Fussell,2007,hci
-Carolyn Penstein Rosé,Jie Yang 0001,2007,hci
-Carolyn Penstein Rosé,Darren Gergle,2007,hci
 Svetlana Yarosh,Kori M. Inkpen,2010,hci
 Svetlana Yarosh,A. J. Bernheim Brush,2010,hci
 Svetlana Yarosh,Gregory D. Abowd,2011,hci
@@ -8542,7 +8616,6 @@ Jur P. van den Berg,Dave Ferguson,2006,robotics
 Jur P. van den Berg,James Kuffner,2006,robotics
 Jur P. van den Berg,Ming C. Lin,2008,robotics
 Jur P. van den Berg,Dinesh Manocha,2008,robotics
-Steven A. Myers,Minaxi Gupta,2011,networks
 Gabe Sibley,Dorian Gálvez-López,2015,robotics
 Gabe Sibley,Nikolaus Correll,2015,robotics
 Gabe Sibley,Claire Monteleoni,2015,robotics
@@ -8710,6 +8783,8 @@ Daniel J. Hsu,Alekh Agarwal,2014,mlmining
 Daniel J. Hsu,Kamalika Chaudhuri,2014,mlmining
 Daniel J. Hsu,Sanjoy Dasgupta,2007,mlmining
 Daniel J. Hsu,Claire Monteleoni,2007,mlmining
+Daniel J. Hsu,Michael Collins,2015,nlp
+Daniel J. Hsu,Karl Stratos,2015,nlp
 Peter M. Chen,Edward K. Lee 0001,1995,metrics
 Peter M. Chen,Edmund B. Nightingale,2009,networks
 Peter M. Chen,Benjamin Wester,2009,networks
@@ -9177,12 +9252,16 @@ Jon M. Kleinberg,Prabhakar Raghavan,1998,database
 Jon M. Kleinberg,Daniel P. Huttenlocher,1994,theory
 Jon M. Kleinberg,R. Ravi 0001,2007,theory
 Jon M. Kleinberg,Alan M. Frieze,2007,theory
+Jon M. Kleinberg,Cristian Danescu-Niculescu-Mizil,2012,nlp
+Jon M. Kleinberg,Justin Cheng,2012,nlp
+Jon M. Kleinberg,Lillian Lee,2012,nlp
 Jon M. Kleinberg,Lars Backstrom,2008,web
 Jon M. Kleinberg,Ravi Kumar,2008,web
 Jon M. Kleinberg,Jasmine Novak,2008,web
 Jon M. Kleinberg,Jure Leskovec,2005,mlmining
 Jon M. Kleinberg,Christos Faloutsos,2005,mlmining
 Jon M. Kleinberg,Chenhao Tan,2016,web
+Jon M. Kleinberg,Justin Cheng,2016,web
 Jon M. Kleinberg,Lada A. Adamic,2016,web
 Jon M. Kleinberg,Lillian Lee,2016,web
 Jon M. Kleinberg,Jure Leskovec,2016,web
@@ -9198,6 +9277,7 @@ Jon M. Kleinberg,Kedar Dhamdhere,2005,theory
 Jon M. Kleinberg,Ittai Abraham,2005,theory
 Jon M. Kleinberg,Prabhakar Raghavan,2005,theory
 Jon M. Kleinberg,Daniel P. Huttenlocher,2014,web
+Jon M. Kleinberg,Justin Cheng,2014,web
 Jon M. Kleinberg,Lada A. Adamic,2014,web
 Jon M. Kleinberg,Jure Leskovec,2014,web
 Jon M. Kleinberg,Ashton Anderson,2014,web
@@ -9996,6 +10076,7 @@ Karthik Sridharan,Sham M. Kakade,2008,mlmining
 Karthik Sridharan,Nathan Srebro,2008,mlmining
 Karthik Sridharan,Shai Shalev-Shwartz,2008,mlmining
 Karthik Sridharan,Ambuj Tewari,2008,mlmining
+Karthik Sridharan,Karen Livescu,2009,mlmining
 Karthik Sridharan,Kamalika Chaudhuri,2009,mlmining
 Karthik Sridharan,Sham M. Kakade,2009,mlmining
 Karthik Sridharan,Ohad Shamir,2011,mlmining
@@ -10589,8 +10670,6 @@ Wojciech Jarosz,Greg Humphreys,2008,graphics
 Wojciech Jarosz,Toshiya Hachisuka,2008,graphics
 Wojciech Jarosz,Wojciech Matusik,2008,graphics
 Wojciech Jarosz,Frédo Durand,2008,graphics
-Alan W. Black,Chris Dyer,2013,nlp
-Alan W. Black,Chris Dyer,2015,nlp
 Alexandros Labrinidis,Adam J. Lee,2015,database
 Alexandros Labrinidis,Panos K. Chrysanthis,2015,database
 Alexandros Labrinidis,Nick Roussopoulos,2001,database
@@ -10757,6 +10836,8 @@ Michael J. Fischer,Shlomo Moran,1990,theory
 Michael J. Fischer,Steven Rudich,1990,theory
 Michael J. Fischer,Rebecca N. Wright,1993,theory
 Eric Nyberg,Ying Li,2014,web
+Eric Nyberg,Yulia Tsvetkov,2014,nlp
+Eric Nyberg,Chris Dyer,2014,nlp
 Eric Nyberg,Luo Si,2007,web
 Eric Nyberg,Jamie Callan,2007,web
 Eric Nyberg,William W. Cohen,2008,nlp
@@ -11376,10 +11457,6 @@ Rakesh Vohra,Amos Fiat,1992,theory
 Rakesh Vohra,Howard J. Karloff,1992,theory
 Richard H. Lathrop,Thomas G. Dietterich,1993,mlmining
 Richard H. Lathrop,Tomás Lozano-Pérez,1993,mlmining
-Ardalan Amiri Sani,Kevin Boos,2014,arch
-Ardalan Amiri Sani,Lin Zhong,2014,arch
-Ardalan Amiri Sani,Kevin Boos,2014,mobile
-Ardalan Amiri Sani,Lin Zhong,2014,mobile
 Jude W. Shavlik,Mark Craven,1994,mlmining
 Jude W. Shavlik,Olvi L. Mangasarian,2002,mlmining
 Jude W. Shavlik,Glenn Fung,2002,mlmining
@@ -11422,14 +11499,8 @@ Jude W. Shavlik,Vítor Santos Costa,2005,ai
 Jude W. Shavlik,Raghu Ramakrishnan,2005,ai
 Jude W. Shavlik,Jesse Davis,2005,ai
 Jude W. Shavlik,Lisa Torrey,2005,ai
-Marc Snir,Prabhat,2013,highperf
-Marc Snir,Surendra Byna,2013,highperf
-Marc Snir,Franck Cappello,2012,highperf
-Marc Snir,Danny Dig,2011,softeng
-Marc Snir,Ewing L. Lusk,2000,highperf
-Marc Snir,William Gropp,2000,highperf
-Marc Snir,Don Coppersmith,1990,theory
-Marc Snir,Prabhakar Raghavan,1990,theory
+Jude W. Shavlik,Christopher Ré,2012,nlp
+Jude W. Shavlik,Ce Zhang,2012,nlp
 J. Gregory Morrisett,Robert Harper,1995,proglang
 J. Gregory Morrisett,Neal Glew,1998,proglang
 J. Gregory Morrisett,David Walker,1998,proglang
@@ -11779,6 +11850,8 @@ Vipin Kumar,Zoran Obradovic,2000,mlmining
 Vipin Kumar,Gaurav Pandey,2007,mlmining
 Vipin Kumar,Michael Steinbach,2007,mlmining
 Vipin Kumar,George Karypis,1998,highperf
+Dan Goldwasser,Snigdha Chaturvedi,2014,nlp
+Dan Goldwasser,Hal Daumé III,2014,nlp
 Dan Goldwasser,Dan Roth,2011,nlp
 Dan Goldwasser,James Clarke,2011,nlp
 Dan Goldwasser,Roi Reichart,2011,nlp
@@ -11792,6 +11865,7 @@ Dan Goldwasser,James Clarke,2009,nlp
 Dan Goldwasser,Ming-Wei Chang,2010,mlmining
 Dan Goldwasser,Dan Roth,2010,mlmining
 Dan Goldwasser,Vivek Srikumar,2010,mlmining
+Dan Goldwasser,Snigdha Chaturvedi,2016,ai
 Dan Goldwasser,Hal Daumé III,2016,ai
 Dan Goldwasser,Dan Roth,2011,ai
 Remzi H. Arpaci-Dusseau,Suman Banerjee,2008,opsys
@@ -12031,28 +12105,42 @@ Ambuj K. Singh,Evangelos E. Papalexakis,2012,database
 Ambuj K. Singh,Christos Faloutsos,2012,database
 Ambuj K. Singh,Sayan Ranu,2014,database
 Ambuj K. Singh,Arnab Bhattacharya 0001,2007,database
+Tamara L. Berg,Vicente Ordonez,2014,nlp
 Tamara L. Berg,Song Feng,2015,ai
 Tamara L. Berg,Yejin Choi,2015,ai
 Tamara L. Berg,Alexander C. Berg,2015,ai
+Tamara L. Berg,Polina Kuznetsova,2015,ai
 Tamara L. Berg,Sujith Ravi,2015,ai
 Tamara L. Berg,Ravi Kumar,2015,ai
+Tamara L. Berg,Karl Stratos,2012,vision
 Tamara L. Berg,Amit Goyal,2012,vision
 Tamara L. Berg,Margaret Mitchell,2012,vision
 Tamara L. Berg,Alexander C. Berg,2012,vision
 Tamara L. Berg,Hal Daumé III,2012,vision
 Tamara L. Berg,Luis E. Ortiz,2012,vision
 Tamara L. Berg,Dimitris Samaras,2013,vision
+Tamara L. Berg,Vicente Ordonez,2013,vision
 Tamara L. Berg,Yejin Choi,2013,vision
 Tamara L. Berg,Alexander C. Berg,2013,vision
 Tamara L. Berg,Jia Deng,2013,vision
 Tamara L. Berg,Gregory J. Zelinsky,2013,vision
+Tamara L. Berg,Vicente Ordonez,2011,mlmining
 Tamara L. Berg,Alexander C. Berg,2004,mlmining
 Tamara L. Berg,David A. Forsyth,2004,mlmining
+Tamara L. Berg,Polina Kuznetsova,2012,nlp
+Tamara L. Berg,Yejin Choi,2012,nlp
+Tamara L. Berg,Vicente Ordonez,2012,nlp
+Tamara L. Berg,Alexander C. Berg,2012,nlp
+Tamara L. Berg,Vicente Ordonez,2011,vision
 Tamara L. Berg,Yejin Choi,2011,vision
 Tamara L. Berg,Alexander C. Berg,2011,vision
 Tamara L. Berg,Luis E. Ortiz,2011,vision
 Tamara L. Berg,Alexander C. Berg,2015,vision
 Tamara L. Berg,Svetlana Lazebnik,2015,vision
+Ardalan Amiri Sani,Kevin Boos,2014,arch
+Ardalan Amiri Sani,Lin Zhong,2014,arch
+Ardalan Amiri Sani,Kevin Boos,2014,mobile
+Ardalan Amiri Sani,Lin Zhong,2014,mobile
 Feng Qian,Zhuoqing Morley Mao,2009,metrics
 Feng Qian,Oliver Spatscheck,2009,metrics
 Feng Qian,Walter Willinger,2009,metrics
@@ -12301,13 +12389,17 @@ Dimitris Samaras,Wei Zhang 0002,2005,mlmining
 Dimitris Samaras,Gregory J. Zelinsky,2005,mlmining
 Dimitris Samaras,Xin Chen,2005,mlmining
 Noah A. Smith,Florian Schaub,2016,web
+Noah A. Smith,Fei Liu 0004,2016,web
 Noah A. Smith,Norman M. Sadeh,2016,web
+Noah A. Smith,Dani Yogatama,2014,nlp
+Noah A. Smith,Jaime G. Carbonell,2014,nlp
 Noah A. Smith,Chris Dyer,2014,nlp
 Noah A. Smith,Dani Yogatama,2011,nlp
 Noah A. Smith,Alon Lavie,2011,nlp
 Noah A. Smith,Kevin Gimpel,2011,nlp
 Noah A. Smith,Jacob Eisenstein,2011,nlp
 Noah A. Smith,André F. T. Martins,2011,nlp
+Noah A. Smith,Brendan O'Connor,2011,nlp
 Noah A. Smith,Eric P. Xing,2011,nlp
 Noah A. Smith,Chris Dyer,2011,nlp
 Noah A. Smith,Pedro M. Q. Aguiar,2011,nlp
@@ -12324,33 +12416,39 @@ Noah A. Smith,Mário A. T. Figueiredo,2008,mlmining
 Noah A. Smith,Shay B. Cohen,2008,mlmining
 Noah A. Smith,Jacob Eisenstein,2010,nlp
 Noah A. Smith,André F. T. Martins,2010,nlp
+Noah A. Smith,Brendan O'Connor,2010,nlp
 Noah A. Smith,Eric P. Xing,2010,nlp
 Noah A. Smith,Pedro M. Q. Aguiar,2010,nlp
 Noah A. Smith,Mário A. T. Figueiredo,2010,nlp
 Noah A. Smith,Shay B. Cohen,2010,nlp
-Noah A. Smith,Chris Dyer,2013,nlp
-Noah A. Smith,Jason Eisner,2005,nlp
-Noah A. Smith,David A. Smith,2004,nlp
-Noah A. Smith,Jason Eisner,2004,nlp
-Noah A. Smith,André F. T. Martins,2008,nlp
-Noah A. Smith,Dipanjan Das 0001,2008,nlp
-Noah A. Smith,Eric P. Xing,2008,nlp
-Noah A. Smith,André F. T. Martins,2009,mlmining
-Noah A. Smith,Eric P. Xing,2009,mlmining
 Noah A. Smith,André F. T. Martins,2011,mlmining
 Noah A. Smith,Eric P. Xing,2011,mlmining
 Noah A. Smith,Mário A. T. Figueiredo,2011,mlmining
 Noah A. Smith,Pedro M. Q. Aguiar,2011,mlmining
+Noah A. Smith,Jason Eisner,2005,nlp
+Noah A. Smith,David A. Smith,2004,nlp
+Noah A. Smith,Jason Eisner,2004,nlp
+Noah A. Smith,Dani Yogatama,2015,mlmining
+Noah A. Smith,Chris Dyer,2015,mlmining
+Noah A. Smith,André F. T. Martins,2009,mlmining
+Noah A. Smith,Eric P. Xing,2009,mlmining
+Noah A. Smith,André F. T. Martins,2008,nlp
+Noah A. Smith,Dipanjan Das 0001,2008,nlp
+Noah A. Smith,Eric P. Xing,2008,nlp
+Noah A. Smith,Brendan O'Connor,2013,nlp
+Noah A. Smith,Chris Dyer,2013,nlp
+Noah A. Smith,Dani Yogatama,2012,nlp
 Noah A. Smith,Kevin Gimpel,2009,nlp
 Noah A. Smith,John D. Lafferty,2007,nlp
 Noah A. Smith,Shay B. Cohen,2010,mlmining
 Noah A. Smith,Jason Eisner,2006,nlp
-Noah A. Smith,Dani Yogatama,2015,nlp
-Noah A. Smith,Chris Dyer,2015,nlp
 Noah A. Smith,Chris Dyer,2014,mlmining
 Noah A. Smith,Dani Yogatama,2014,mlmining
-Noah A. Smith,Dani Yogatama,2015,mlmining
-Noah A. Smith,Chris Dyer,2015,mlmining
+Noah A. Smith,Dani Yogatama,2015,nlp
+Noah A. Smith,Fei Liu 0004,2015,nlp
+Noah A. Smith,Chris Dyer,2015,nlp
+Noah A. Smith,Wang Ling,2015,nlp
+Noah A. Smith,Yulia Tsvetkov,2015,nlp
 Jing Chen,Quan Yuan,2015,networks
 Jing Chen,Guoliang Xue,2015,networks
 Jing Chen,Silvio Micali,2009,theory
@@ -12694,23 +12792,37 @@ David K. Gifford,James O'Toole,1993,opsys
 David K. Gifford,Scott Nettles,1993,opsys
 David K. Gifford,Bonnie Berger,2005,mlmining
 David K. Gifford,James O'Toole,1991,opsys
-Claire Cardie,Jiwei Li,2014,web
+Claire Cardie,Bishan Yang,2014,nlp
+Claire Cardie,Eduard H. Hovy,2014,nlp
+Claire Cardie,Alan Ritter,2014,nlp
+Claire Cardie,Jiwei Li,2014,nlp
 Claire Cardie,Chenhao Tan,2011,nlp
 Claire Cardie,Jeffrey T. Hancock,2011,nlp
 Claire Cardie,Yejin Choi,2011,nlp
 Claire Cardie,Yisong Yue,2010,nlp
 Claire Cardie,Kiri Wagstaff,2001,mlmining
 Claire Cardie,Yejin Choi,2007,ai
-Claire Cardie,Alan Ritter,2014,nlp
-Claire Cardie,Jiwei Li,2014,nlp
-Claire Cardie,Eduard H. Hovy,2014,nlp
+Claire Cardie,Jiwei Li,2014,web
+Claire Cardie,Bishan Yang,2013,nlp
+Claire Cardie,Vittorio Castelli,2013,nlp
+Claire Cardie,Lu Wang,2013,nlp
+Claire Cardie,Radu Florian,2013,nlp
 Claire Cardie,Jiwei Li,2013,nlp
+Claire Cardie,Hema Raghavan,2013,nlp
 Claire Cardie,Jeffrey T. Hancock,2012,web
 Claire Cardie,Yejin Choi,2009,nlp
 Claire Cardie,Yejin Choi,2008,nlp
 Claire Cardie,Yejin Choi,2006,nlp
 Claire Cardie,Wendy G. Lehnert,1991,ai
 Claire Cardie,Kiri Wagstaff,2000,mlmining
+Marc Snir,Prabhat,2013,highperf
+Marc Snir,Surendra Byna,2013,highperf
+Marc Snir,Franck Cappello,2012,highperf
+Marc Snir,Danny Dig,2011,softeng
+Marc Snir,Ewing L. Lusk,2000,highperf
+Marc Snir,William Gropp,2000,highperf
+Marc Snir,Don Coppersmith,1990,theory
+Marc Snir,Prabhakar Raghavan,1990,theory
 Kamin Whitehouse,Westley Weimer,2008,mobile
 Kamin Whitehouse,John A. Stankovic,2008,mobile
 Kamin Whitehouse,Liqian Luo,2008,mobile
@@ -12879,6 +12991,7 @@ Abhinav Gupta,Tomasz Malisiewicz,2011,graphics
 Abhinav Gupta,Anurag Mittal,2007,vision
 Abhinav Gupta,Larry S. Davis,2007,vision
 Abhinav Gupta,Alexei A. Efros,2013,mlmining
+Abhinav Gupta,Ndapandula Nakashole,2015,ai
 Abhinav Gupta,Tom M. Mitchell,2015,ai
 Abhinav Gupta,Mehdi Samadi,2015,ai
 Abhinav Gupta,William W. Cohen,2015,ai
@@ -12957,9 +13070,13 @@ David A. Smith,Jason Eisner,2008,nlp
 David A. Smith,Jason Eisner,2006,nlp
 Bruce N. Walker,Frank Dellaert,2004,robotics
 Bruce N. Walker,Sang Min Oh,2004,robotics
+Randall A. Berry,Eytan Modiano,2004,networks
+Randall A. Berry,Peter Marbach,2002,networks
+Randall A. Berry,Charles E. Rohrs,1997,networks
 Tamer Kahveci,Christopher M. Jermaine,2006,database
 Tamer Kahveci,Ambuj K. Singh,2001,database
 Norman M. Sadeh,Florian Schaub,2016,web
+Norman M. Sadeh,Fei Liu 0004,2016,web
 Norman M. Sadeh,Noah A. Smith,2016,web
 Norman M. Sadeh,Jialiu Lin,2014,web
 Norman M. Sadeh,Tuomas Sandholm,2008,ai
@@ -13273,12 +13390,11 @@ Dan Roth,Ming Zhang,2015,mlmining
 Dan Roth,Yangqiu Song,2015,mlmining
 Dan Roth,Jiawei Han,2015,mlmining
 Dan Roth,Aditya G. Parameswaran,2015,mlmining
+Dan Roth,Alexandre Klementiev,2008,mlmining
 Dan Roth,Ashutosh Garg,2003,mlmining
 Dan Roth,Shuly Wintner,2004,nlp
 Dan Roth,Ashutosh Garg,2002,mlmining
 Dan Roth,Sariel Har-Peled,2002,mlmining
-Dan Roth,Kai-Wei Chang,2011,mlmining
-Dan Roth,ChengXiang Zhai,2011,mlmining
 Dan Roth,Adam J. Grove,1997,mlmining
 Dan Roth,Ming-Wei Chang,2007,nlp
 Dan Roth,Lev-Arie Ratinov,2007,nlp
@@ -13292,11 +13408,13 @@ Dan Roth,Ming-Hsuan Yang,2000,vision
 Dan Roth,Narendra Ahuja,2000,vision
 Dan Roth,Russell Greiner,1996,mlmining
 Dan Roth,Adam J. Grove,1996,mlmining
+Dan Roth,Vivek Srikumar,2013,nlp
 Dan Roth,Kai-Wei Chang,2013,nlp
 Dan Roth,Eyal Amir,2006,ai
 Dan Roth,Rodrigo de Salvo Braz,2006,ai
 Dan Roth,Dan Goldwasser,2011,ai
 Dan Roth,Ming-Wei Chang,2006,nlp
+Dan Roth,Alexandre Klementiev,2006,nlp
 Dan Roth,Vasin Punyakanok,2000,mlmining
 Dan Roth,Wen-tau Yih,2001,ai
 Dan Roth,Ming-Wei Chang,2008,ai
@@ -13304,12 +13422,12 @@ Dan Roth,Lev-Arie Ratinov,2008,ai
 Dan Roth,Vivek Srikumar,2008,ai
 Dan Roth,Sariel Har-Peled,2007,ai
 Dan Roth,Yangqiu Song,2014,ai
-Dan Roth,Roni Khardon,1999,ai
-Dan Roth,Leslie G. Valiant,1999,ai
+Dan Roth,Wei Lu,2012,nlp
 Dan Roth,Jacob Eisenstein,2009,nlp
 Dan Roth,Dan Goldwasser,2009,nlp
 Dan Roth,James Clarke,2009,nlp
 Dan Roth,Ivan Titov,2009,ai
+Dan Roth,Alexandre Klementiev,2009,ai
 Dan Roth,Wen-tau Yih,2005,mlmining
 Dan Roth,Dan Goldwasser,2010,mlmining
 Dan Roth,Ming-Wei Chang,2010,mlmining
@@ -13333,6 +13451,8 @@ Dan Roth,Kai-Wei Chang,2015,ai
 Dan Roth,Heng Ji,2015,ai
 Dan Roth,Yangqiu Song,2015,ai
 Dan Roth,Jiawei Han,2015,ai
+Dan Roth,Kai-Wei Chang,2011,mlmining
+Dan Roth,ChengXiang Zhai,2011,mlmining
 Dan Roth,Ronen Basri,1998,vision
 Dan Roth,David W. Jacobs,1998,vision
 Dan Roth,Rodrigo de Salvo Braz,2005,ai
@@ -13351,6 +13471,8 @@ Dan Roth,Vivek Srikumar,2008,nlp
 Dan Roth,Ari Rappoport,2008,nlp
 Dan Roth,Dan Goldwasser,2008,nlp
 Dan Roth,Roi Reichart,2008,nlp
+Dan Roth,Roni Khardon,1999,ai
+Dan Roth,Leslie G. Valiant,1999,ai
 Adam Finkelstein,J. Alex Halderman,2010,web
 Adam Finkelstein,Connelly Barnes,2010,graphics
 Adam Finkelstein,Dan B. Goldman,2010,graphics
@@ -13765,28 +13887,6 @@ Henry M. Levy,Susan J. Eggers,1990,metrics
 Henry M. Levy,Edward D. Lazowska,1991,opsys
 Henry M. Levy,Brian N. Bershad,1991,opsys
 Henry M. Levy,Thomas E. Anderson,1991,opsys
-Spyros Blanas,Vuk Ercegovac,2010,database
-Spyros Blanas,Jignesh M. Patel,2010,database
-Spyros Blanas,Jun Rao,2010,database
-Spyros Blanas,Eugene J. Shekita,2010,database
-Spyros Blanas,Yuanyuan Tian,2010,database
-Spyros Blanas,Yinan Li,2011,database
-Spyros Blanas,Per-Åke Larson,2011,database
-Spyros Blanas,Jignesh M. Patel,2011,database
-Spyros Blanas,Arvind Arasu,2013,database
-Spyros Blanas,Raghav Kaushik,2013,database
-Spyros Blanas,Manas Joglekar,2013,database
-Spyros Blanas,Ravishankar Ramamurthy,2013,database
-Spyros Blanas,Donald Kossmann,2013,database
-Spyros Blanas,Ramarathnam Venkatesan,2013,database
-Spyros Blanas,Prasang Upadhyaya,2013,database
-Spyros Blanas,Surendra Byna,2014,database
-Spyros Blanas,Arie Shoshani,2014,database
-Spyros Blanas,Kesheng Wu,2014,database
-Spyros Blanas,Rubao Lee,2016,database
-Spyros Blanas,Yuan Yuan,2016,database
-Spyros Blanas,Xiaoning Ding,2016,database
-Spyros Blanas,Kaibo Wang,2016,database
 Luis Rademacher,Mikhail Belkin,2013,mlmining
 Luis Rademacher,Mikhail Belkin,2015,mlmining
 Luis Rademacher,Navin Goyal,2009,theory
@@ -14191,6 +14291,82 @@ Diane J. Litman,Rebecca J. Passonneau,1995,nlp
 Diane J. Litman,Marilyn A. Walker,1999,mlmining
 Diane J. Litman,Michael J. Kearns,1999,mlmining
 Diane J. Litman,Satinder P. Singh,1999,mlmining
+Qiaozhu Mei,Gang Huang 0001,2016,softeng
+Qiaozhu Mei,Xuanzhe Liu,2016,softeng
+Qiaozhu Mei,Dan Hao,2016,softeng
+Qiaozhu Mei,Tao Xie,2016,softeng
+Qiaozhu Mei,Vahed Qazvinian,2011,nlp
+Qiaozhu Mei,Dragomir R. Radev,2011,nlp
+Qiaozhu Mei,Yue Lu,2015,mlmining
+Qiaozhu Mei,Sandeep Pandey,2015,mlmining
+Qiaozhu Mei,Jian Tang,2015,mlmining
+Qiaozhu Mei,Dong Wang,2015,mlmining
+Qiaozhu Mei,Cheng Li,2015,mlmining
+Qiaozhu Mei,ChengXiang Zhai,2008,mlmining
+Qiaozhu Mei,Zhe Zhao,2013,web
+Qiaozhu Mei,ChengXiang Zhai,2006,mlmining
+Qiaozhu Mei,Dong Xin,2006,mlmining
+Qiaozhu Mei,Xuehua Shen,2006,mlmining
+Qiaozhu Mei,Jiawei Han,2006,mlmining
+Qiaozhu Mei,Hong Cheng,2006,mlmining
+Qiaozhu Mei,XuanLong Nguyen,2014,mlmining
+Qiaozhu Mei,Jian Tang,2014,mlmining
+Qiaozhu Mei,Ming Zhang,2014,mlmining
+Qiaozhu Mei,ChengXiang Zhai,2010,nlp
+Qiaozhu Mei,Cindy Xide Lin,2010,nlp
+Qiaozhu Mei,Duo Zhang,2010,nlp
+Qiaozhu Mei,Dong Xin,2009,database
+Qiaozhu Mei,Jiawei Han,2009,database
+Qiaozhu Mei,Tianyi Wu,2009,database
+Qiaozhu Mei,Ming Zhang,2012,web
+Qiaozhu Mei,Lei Yang,2012,web
+Qiaozhu Mei,Tao Sun,2012,web
+Qiaozhu Mei,Chun Chen,2009,web
+Qiaozhu Mei,Ziyu Guan,2009,web
+Qiaozhu Mei,Can Wang,2009,web
+Qiaozhu Mei,Jiajun Bu,2009,web
+Qiaozhu Mei,ChengXiang Zhai,2007,web
+Qiaozhu Mei,Hui Fang 0001,2007,web
+Qiaozhu Mei,Hang Su,2007,web
+Qiaozhu Mei,Zhe Zhao,2015,web
+Qiaozhu Mei,Jian Tang,2015,web
+Qiaozhu Mei,Ming Zhang,2015,web
+Qiaozhu Mei,Jun Yan,2015,web
+Qiaozhu Mei,Paul Resnick,2015,web
+Qiaozhu Mei,Deng Cai,2008,web
+Qiaozhu Mei,ChengXiang Zhai,2008,web
+Qiaozhu Mei,Duo Zhang,2008,web
+Qiaozhu Mei,Chao Liu 0001,2006,web
+Qiaozhu Mei,Hang Su,2006,web
+Qiaozhu Mei,ChengXiang Zhai,2006,web
+Qiaozhu Mei,ChengXiang Zhai,2005,mlmining
+Qiaozhu Mei,Dragomir R. Radev,2010,mlmining
+Qiaozhu Mei,Cindy Xide Lin,2010,mlmining
+Qiaozhu Mei,Jiawei Han,2010,mlmining
+Qiaozhu Mei,Bo Zhao,2010,mlmining
+Qiaozhu Mei,Gang Huang 0001,2016,web
+Qiaozhu Mei,Xuanzhe Liu,2016,web
+Qiaozhu Mei,Jian Tang,2016,web
+Qiaozhu Mei,Ming Zhang,2016,web
+Qiaozhu Mei,Paul Resnick,2014,web
+Qiaozhu Mei,Hong Cheng,2014,web
+Qiaozhu Mei,Yue Wang,2014,web
+Qiaozhu Mei,Zhe Zhao,2014,web
+Qiaozhu Mei,Cheng Li,2014,web
+Qiaozhu Mei,Jian Tang,2013,mlmining
+Qiaozhu Mei,Ming Zhang,2013,mlmining
+Qiaozhu Mei,Kaigui Bian,2015,metrics
+Qiaozhu Mei,Felix Xiaozhu Lin,2015,metrics
+Qiaozhu Mei,Xuanzhe Liu,2015,metrics
+Qiaozhu Mei,Tao Xie,2015,metrics
+Qiaozhu Mei,Rui Li,2009,mlmining
+Qiaozhu Mei,Zhijun Yin,2009,mlmining
+Qiaozhu Mei,Jiawei Han,2009,mlmining
+Qiaozhu Mei,ChengXiang Zhai,2008,nlp
+Qiaozhu Mei,Jingrui He,2012,mlmining
+Qiaozhu Mei,Hanghang Tong,2012,mlmining
+Qiaozhu Mei,ChengXiang Zhai,2007,mlmining
+Qiaozhu Mei,Xuehua Shen,2007,mlmining
 Sorin Lerner,William G. Griswold,2015,hci
 Sorin Lerner,Ross Tate,2011,logic
 Sorin Lerner,Ranjit Jhala,2009,proglang
@@ -14450,6 +14626,7 @@ Michael S. Bernstein,Robert C. Miller,2011,hci
 Michael S. Bernstein,Adam Marcus 0002,2011,hci
 Michael S. Bernstein,Joel Brandt,2011,hci
 Michael S. Bernstein,Shamsi T. Iqbal,2015,hci
+Michael S. Bernstein,Justin Cheng,2015,hci
 Michael S. Bernstein,Mira Dontcheva,2015,hci
 Michael S. Bernstein,Wilmot Li,2015,hci
 Michael S. Bernstein,Walter S. Lasecki,2015,hci
@@ -14566,7 +14743,9 @@ James F. Allen,George Ferguson,2007,ai
 James F. Allen,Walter S. Lasecki,2012,ai
 James F. Allen,Jeffrey P. Bigham,2012,ai
 James F. Allen,George Ferguson,2012,ai
+James F. Allen,Daniel Gildea,2013,nlp
 James F. Allen,Nathanael Chambers,2006,ai
+James F. Allen,David R. Traum,1994,nlp
 James F. Allen,Walter S. Lasecki,2013,hci
 James F. Allen,Jeffrey Nichols,2013,hci
 James F. Allen,Jeffrey P. Bigham,2013,hci
@@ -15356,6 +15535,7 @@ Nancy S. Pollard,Moslem Kazemi,2012,robotics
 Nancy S. Pollard,James J. Kuffner,2012,robotics
 Nancy S. Pollard,Mihail Pivtoraiko,2012,robotics
 Nancy S. Pollard,J. Andrew Bagnell,2012,robotics
+Nancy S. Pollard,Lei Cui,2012,robotics
 Nancy S. Pollard,Siddhartha S. Srinivasa,2015,robotics
 Nancy S. Pollard,Jennifer E. King,2015,robotics
 Nancy S. Pollard,Siddhartha S. Srinivasa,2007,robotics
@@ -15561,9 +15741,11 @@ Mirek Riedewald,Johannes Gehrke,2007,database
 Mirek Riedewald,Alan J. Demers,2007,database
 Mirek Riedewald,Walker M. White,2007,database
 Philipp Koehn,Michael Collins,2005,nlp
+Philipp Koehn,Chris Callison-Burch,2013,nlp
 Philipp Koehn,Evan Herbst,2007,nlp
 Philipp Koehn,Chris Dyer,2007,nlp
 Philipp Koehn,Chris Callison-Burch,2007,nlp
+Philipp Koehn,Marcello Federico,2007,nlp
 Philipp Koehn,Miles Osborne,2008,nlp
 Philipp Koehn,Kevin Knight,2003,nlp
 Shivakant Mishra,Richard Han,2011,web
@@ -15796,6 +15978,7 @@ Jimeng Sun,Richard W. Vuduc,2015,highperf
 Jimeng Sun,Le Song,2015,mlmining
 Jimeng Sun,Joydeep Ghosh,2015,mlmining
 Jimeng Sun,Nan Du,2015,mlmining
+Jimeng Sun,Yichen Wang,2015,mlmining
 Jimeng Sun,Christos Faloutsos,2008,mlmining
 Jimeng Sun,Philip S. Yu,2008,mlmining
 Jimeng Sun,Spiros Papadimitriou,2008,mlmining
@@ -16137,6 +16320,7 @@ Rob Fergus,Fei Yang,2015,vision
 Rob Fergus,Lorenzo Torresani,2015,vision
 Rob Fergus,David Eigen,2015,vision
 Rob Fergus,Yann LeCun,2014,mlmining
+Rob Fergus,Wojciech Zaremba,2014,mlmining
 Rob Fergus,David Eigen,2014,mlmining
 Rob Fergus,Dilip Krishnan,2009,graphics
 Jie Gao,Yue Wang,2009,networks
@@ -17886,11 +18070,16 @@ Anselmo Lastra,Gary Bishop,1999,graphics
 John R. Lange,Peter A. Dinda,2012,highperf
 John R. Lange,Patrick G. Bridges,2012,highperf
 John R. Lange,Peter A. Dinda,2010,networks
+Benjamin Van Durme,Margaret Mitchell,2014,nlp
+Benjamin Van Durme,Svitlana Volkova,2014,nlp
+Benjamin Van Durme,Mark Dredze,2014,nlp
 Benjamin Van Durme,Marius Pasca,2008,ai
+Benjamin Van Durme,Svitlana Volkova,2015,ai
 Benjamin Van Durme,Marius Pasca,2007,ai
 Benjamin Van Durme,Ashwin Lall,2009,mlmining
 Benjamin Van Durme,Shane Bergsma,2011,ai
 Benjamin Van Durme,Margaret Mitchell,2013,nlp
+Benjamin Van Durme,Shane Bergsma,2013,nlp
 Benjamin Van Durme,Peter Clark,2013,nlp
 Benjamin Van Durme,Chris Callison-Burch,2013,nlp
 Benjamin Van Durme,Chris Callison-Burch,2011,nlp
@@ -17900,6 +18089,8 @@ Benjamin Van Durme,Ashwin Lall,2009,ai
 Benjamin Van Durme,Margaret Mitchell,2016,ai
 Benjamin Van Durme,Kristina Toutanova,2016,ai
 Benjamin Van Durme,Ted Hart,2016,ai
+Benjamin Van Durme,Johan Bos,2015,nlp
+Benjamin Van Durme,Chris Callison-Burch,2015,nlp
 Xiangyu Zhang,Lin Tan,2016,softeng
 Xiangyu Zhang,Yunhui Zheng,2016,softeng
 Xiangyu Zhang,Peng Wang,2016,softeng
@@ -18130,6 +18321,24 @@ Sarita V. Adve,Vijay S. Pai,1999,arch
 Sarita V. Adve,Pradip Bose,2004,arch
 Sarita V. Adve,Christopher J. Hughes,2004,arch
 Sarita V. Adve,Jude A. Rivers,2004,arch
+Paraschos Koutris,Dan Suciu,2011,database
+Paraschos Koutris,Dan Suciu,2012,database
+Paraschos Koutris,Magdalena Balazinska,2012,database
+Paraschos Koutris,Bill Howe,2012,database
+Paraschos Koutris,Prasang Upadhyaya,2012,database
+Paraschos Koutris,Dan Suciu,2013,database
+Paraschos Koutris,Magdalena Balazinska,2013,database
+Paraschos Koutris,Bill Howe,2013,database
+Paraschos Koutris,Paul Beame,2013,database
+Paraschos Koutris,Prasang Upadhyaya,2013,database
+Paraschos Koutris,Jingjing Wang,2014,database
+Paraschos Koutris,Paul Beame,2014,database
+Paraschos Koutris,Magdalena Balazinska,2014,database
+Paraschos Koutris,Dan Suciu,2014,database
+Paraschos Koutris,Daniel Halperin,2014,database
+Paraschos Koutris,Shumo Chu,2014,database
+Paraschos Koutris,Bill Howe,2014,database
+Paraschos Koutris,Jef Wijsen,2015,database
 Gaurav S. Sukhatme,Scott Niekum,2015,robotics
 Gaurav S. Sukhatme,Ryan K. Williams,2015,robotics
 Gaurav S. Sukhatme,Andrea Gasparri,2015,robotics
@@ -18573,6 +18782,7 @@ Martial Hebert,Barry Brumitt,1998,robotics
 Martial Hebert,Nancy S. Pollard,2012,robotics
 Martial Hebert,Moslem Kazemi,2012,robotics
 Martial Hebert,J. Andrew Bagnell,2012,robotics
+Martial Hebert,Lei Cui,2012,robotics
 Martial Hebert,Mihail Pivtoraiko,2012,robotics
 Martial Hebert,Yong Jae Lee,2013,vision
 Martial Hebert,Alexei A. Efros,2013,vision
@@ -19450,6 +19660,7 @@ Gagan Agrawal,Feng Qin,2011,highperf
 Christopher Dyer,Smaranda Muresan,2008,nlp
 Christopher Dyer,Philip Resnik,2008,nlp
 Christopher Dyer,Philip Resnik,2010,nlp
+Christopher Dyer,Hendra Setiawan,2010,nlp
 Shahram Ghandeharizadeh,Cyrus Shahabi,1995,metrics
 Shahram Ghandeharizadeh,Surajit Chaudhuri,1995,database
 Shahram Ghandeharizadeh,Cyrus Shahabi,1995,database
@@ -19880,6 +20091,7 @@ Karen Livescu,Gregory Shakhnarovich,2013,vision
 Karen Livescu,James R. Glass,2005,vision
 Karen Livescu,Trevor Darrell,2005,vision
 Karen Livescu,Kate Saenko,2005,vision
+Karen Livescu,Joseph Keshet,2012,nlp
 Karen Livescu,Jeff A. Bilmes,2015,mlmining
 Karen Livescu,Weiran Wang,2015,mlmining
 Karen Livescu,Raman Arora,2015,mlmining
@@ -19925,9 +20137,13 @@ David Yarowsky,Gideon S. Mann,2001,nlp
 David Yarowsky,Radu Florian,1999,nlp
 David Yarowsky,Grace Ngai,2000,nlp
 David Yarowsky,Silviu Cucerzan,2000,nlp
+David Yarowsky,Svitlana Volkova,2013,nlp
 David Yarowsky,Haifeng Wang,2016,ai
 David Yarowsky,Ting Liu,2016,ai
 David Yarowsky,Wanxiang Che,2016,ai
+David Yarowsky,Haifeng Wang,2015,nlp
+David Yarowsky,Ting Liu,2015,nlp
+David Yarowsky,Wanxiang Che,2015,nlp
 Serafim Batzoglou,Su-In Lee,2003,mlmining
 Serafim Batzoglou,Olga Russakovsky,2006,mlmining
 Serafim Batzoglou,Chuong B. Do,2006,mlmining
@@ -19951,6 +20167,7 @@ W. Bruce Croft,James P. Callan,1995,web
 W. Bruce Croft,Chirag Shah,2004,web
 W. Bruce Croft,Jinxi Xu,1999,web
 W. Bruce Croft,Mark Sanderson,1999,web
+W. Bruce Croft,Jon Oberlander,2013,nlp
 W. Bruce Croft,Michael Bendersky,2012,web
 W. Bruce Croft,Van Dang,2012,web
 W. Bruce Croft,Donald Metzler,2006,ai
@@ -20162,13 +20379,13 @@ Doug Downey,Oren Etzioni,2004,web
 Doug Downey,Ana-Maria Popescu,2004,web
 Doug Downey,Stephen Soderland,2005,ai
 Doug Downey,Oren Etzioni,2005,ai
-Doug Downey,Stephen Soderland,2008,nlp
-Doug Downey,Alan Ritter,2008,nlp
-Doug Downey,Oren Etzioni,2008,nlp
 Doug Downey,Brent Hecht,2012,web
 Doug Downey,Johannes Schöning,2012,web
 Doug Downey,Darren Gergle,2012,web
 Doug Downey,Oren Etzioni,2007,nlp
+Doug Downey,Stephen Soderland,2008,nlp
+Doug Downey,Alan Ritter,2008,nlp
+Doug Downey,Oren Etzioni,2008,nlp
 Doug Downey,Jordan L. Boyd-Graber,2015,nlp
 Doug Downey,Yi Yang,2015,nlp
 Jack C. Wileden,Alexander L. Wolf,1990,softeng
@@ -21079,24 +21296,6 @@ Alexandra Kolla,Luca Trevisan,2016,theory
 Alexandra Kolla,Guy Kindler,2016,theory
 Alexandra Kolla,Yury Makarychev,2011,theory
 Alexandra Kolla,Konstantin Makarychev,2011,theory
-Paraschos Koutris,Dan Suciu,2011,database
-Paraschos Koutris,Dan Suciu,2012,database
-Paraschos Koutris,Magdalena Balazinska,2012,database
-Paraschos Koutris,Bill Howe,2012,database
-Paraschos Koutris,Prasang Upadhyaya,2012,database
-Paraschos Koutris,Dan Suciu,2013,database
-Paraschos Koutris,Magdalena Balazinska,2013,database
-Paraschos Koutris,Bill Howe,2013,database
-Paraschos Koutris,Paul Beame,2013,database
-Paraschos Koutris,Prasang Upadhyaya,2013,database
-Paraschos Koutris,Jingjing Wang,2014,database
-Paraschos Koutris,Paul Beame,2014,database
-Paraschos Koutris,Magdalena Balazinska,2014,database
-Paraschos Koutris,Dan Suciu,2014,database
-Paraschos Koutris,Daniel Halperin,2014,database
-Paraschos Koutris,Shumo Chu,2014,database
-Paraschos Koutris,Bill Howe,2014,database
-Paraschos Koutris,Jef Wijsen,2015,database
 Chandra Krintz,Todd M. Austin,1998,arch
 Chandra Krintz,Benjamin G. Zorn,1998,arch
 Chandra Krintz,Brad Calder,1998,arch
@@ -24186,7 +24385,97 @@ Kathleen McKeown,Regina Barzilay,1999,nlp
 Kathleen McKeown,Michael Elhadad,1999,nlp
 Kathleen McKeown,Lucy Vanderwende,2006,web
 Kathleen McKeown,Ani Nenkova,2006,web
+Kathleen McKeown,Fernando Diaz,2015,nlp
 Kathleen McKeown,Vasileios Hatzivassiloglou,1995,nlp
+Yan Chen,Dan Pei,2009,networks
+Yan Chen,Yao Zhao,2009,networks
+Yan Chen,Yinglian Xie,2009,networks
+Yan Chen,Fang Yu,2009,networks
+Yan Chen,Yuan Yu,2009,networks
+Yan Chen,Qifa Ke,2009,networks
+Yan Chen,Jia Wang,2009,networks
+Yan Chen,Zhoujun Li,2014,nlp
+Yan Chen,Min-Yen Kan,2014,nlp
+Yan Chen,Kai Chen 0005,2015,networks
+Yan Chen,Qunfeng Dong,2015,networks
+Yan Chen,Chengchen Hu,2015,networks
+Yan Chen,Sheng Zhang,2009,vision
+Yan Chen,Terence Sim,2009,vision
+Yan Chen,Yao Zhao,2007,networks
+Yan Chen,Guohan Lu,2007,networks
+Yan Chen,Xing Li,2007,networks
+Yan Chen,Fabián E. Bustamante,2007,networks
+Yan Chen,Walter S. Lasecki,2016,hci
+Yan Chen,Sean C. Rhea,2000,arch
+Yan Chen,Westley Weimer,2000,arch
+Yan Chen,David Bindel,2000,arch
+Yan Chen,Ben Y. Zhao,2000,arch
+Yan Chen,Ramakrishna Gummadi,2000,arch
+Yan Chen,John Kubiatowicz,2000,arch
+Yan Chen,Hakim Weatherspoon,2000,arch
+Yan Chen,Zhoujun Li,2013,web
+Yan Chen,Tat-Seng Chua,2013,web
+Yan Chen,Hadi Amiri,2013,web
+Yan Chen,Yao Zhao,2006,networks
+Yan Chen,Yan Gao,2006,networks
+Yan Chen,Gokhan Memik,2006,networks
+Yan Chen,Zhichun Li,2006,networks
+Yan Chen,Ming-Yang Kao,2006,networks
+Yan Chen,Yin Zhang,2006,networks
+Yan Chen,Peter A. Dinda,2006,networks
+Yan Chen,Robert T. Schweller,2006,networks
+Yan Chen,David Bindel,2006,networks
+Yan Chen,Christo Wilson,2010,metrics
+Yan Chen,Ben Y. Zhao,2010,metrics
+Yan Chen,Zhichun Li,2010,metrics
+Yan Chen,Hongyu Gao,2010,metrics
+Yan Chen,Jun Hu,2010,metrics
+Yan Chen,Chengchen Hu,2008,networks
+Yan Chen,Bin Liu 0001,2008,networks
+Yan Chen,Sheng Wang,2008,networks
+Yan Chen,Yu Cheng,2008,networks
+Yan Chen,Hung-Yu Wei,2013,networks
+Yan Chen,K. J. Ray Liu,2013,networks
+Yan Chen,Hongyu Gao,2013,networks
+Yan Chen,Vinod Yegneswaran,2013,networks
+Yan Chen,Phillip A. Porras,2013,networks
+Yan Chen,Ming-Yang Kao,2006,security
+Yan Chen,Zhichun Li,2006,security
+Yan Chen,Ankit Singla,2012,networks
+Yan Chen,Atul Singh,2012,networks
+Yan Chen,Gerome Miklau,2016,database
+Yan Chen,Michael Hay,2016,database
+Yan Chen,Ashwin Machanavajjhala,2016,database
+Yan Chen,Han Hee Song,2004,networks
+Yan Chen,David Bindel,2004,networks
+Yan Chen,Randy H. Katz,2004,networks
+Yan Chen,Xiaofei He,2011,vision
+Yan Chen,Hujun Bao,2011,vision
+Yan Chen,Alok N. Choudhary,2011,security
+Yan Chen,Zhichun Li,2011,security
+Yan Chen,Hongyu Gao,2011,security
+Yan Chen,Vinod Yegneswaran,2011,security
+Yan Chen,Jun Hu,2011,security
+Yan Chen,Phillip A. Porras,2011,security
+Yan Chen,Zhoujun Li,2013,ai
+Yan Chen,Xia Hu,2013,ai
+Yan Chen,Tat-Seng Chua,2013,ai
+Yan Chen,Kai Chen 0005,2010,networks
+Yan Chen,Chuanxiong Guo,2010,networks
+Yan Chen,Haitao Wu,2010,networks
+Yan Chen,Aleksandar Kuzmanovic,2010,networks
+Yan Chen,Zhichun Li,2010,networks
+Yan Chen,Yi-Min Wang,2010,networks
+Yan Chen,Hongyu Gao,2010,networks
+Yan Chen,Bin Liu 0001,2010,networks
+Yan Chen,Ming Zhang,2010,networks
+Yan Chen,Albert G. Greenberg,2010,networks
+Yan Chen,Chengchen Hu,2010,networks
+Yan Chen,Jing Yuan,2010,networks
+Yan Chen,Songwu Lu,2010,networks
+Yan Chen,Junchen Jiang,2010,networks
+Yan Chen,V. N. Venkatakrishnan,2015,security
+Yan Chen,Robert T. Schweller,2004,metrics
 Abhishek Bhattacharjee,Gabriel H. Loh,2015,arch
 Abhishek Bhattacharjee,Ricardo Bianchini,2012,arch
 Abhishek Bhattacharjee,David Meisner,2012,arch
@@ -24434,6 +24723,7 @@ Thorsten Joachims,Yisong Yue,2007,web
 Thorsten Joachims,Filip Radlinski,2005,mlmining
 Thorsten Joachims,Thomas Finley,2005,mlmining
 Thorsten Joachims,John E. Hopcroft,2005,mlmining
+Thorsten Joachims,Igor Labutov,2015,nlp
 Thorsten Joachims,David M. Mimno,2015,nlp
 Thorsten Joachims,Susan T. Dumais,2016,web
 Thorsten Joachims,Paul N. Bennett,2016,web
@@ -24450,14 +24740,6 @@ Thorsten Joachims,Tobias Scheffer,1999,mlmining
 Thorsten Joachims,Karthik Raman,2012,mlmining
 Thorsten Joachims,Shuo Chen,2012,mlmining
 Thorsten Joachims,Filip Radlinski,2007,mlmining
-Martin J. Strauss,Ely Porat,2012,theory
-Martin J. Strauss,Ely Porat,2010,theory
-Martin J. Strauss,Anna C. Gilbert,2010,theory
-Martin J. Strauss,Yi Li,2010,theory
-Martin J. Strauss,Anna C. Gilbert,2007,theory
-Martin J. Strauss,Joel A. Tropp,2007,theory
-Martin J. Strauss,Piotr Indyk,2009,database
-Martin J. Strauss,Graham Cormode,2009,database
 Stefanie Tellex,Lei Yang,2015,robotics
 Stefanie Tellex,James MacGlashan,2015,robotics
 Stefanie Tellex,Smaranda Muresan,2015,robotics
@@ -24488,141 +24770,6 @@ Stefanie Tellex,Seth J. Teller,2011,ai
 Stefanie Tellex,Jimmy J. Lin,2003,web
 Stefanie Tellex,Boris Katz,2003,web
 Tom Goldstein,Min Li,2015,mlmining
-H. V. Jagadish,Alberto O. Mendelzon,1995,database
-H. V. Jagadish,Tova Milo,1995,database
-H. V. Jagadish,Inderpal Singh Mumick,1995,database
-H. V. Jagadish,Abraham Silberschatz,1995,database
-H. V. Jagadish,Rakesh Agrawal,1990,database
-H. V. Jagadish,Beng Chin Ooi,2015,mlmining
-H. V. Jagadish,Sheng Wang,2015,mlmining
-H. V. Jagadish,Kenneth A. Ross,1998,mlmining
-H. V. Jagadish,Stefan Berchtold,1998,mlmining
-H. V. Jagadish,Anastassia Ailamaki,2010,database
-H. V. Jagadish,Laura Chiticariu,2010,database
-H. V. Jagadish,David Maier,2010,database
-H. V. Jagadish,Kristen LeFevre,2010,database
-H. V. Jagadish,M. Tamer Özsu,2010,database
-H. V. Jagadish,Frederick Reiss,2010,database
-H. V. Jagadish,Bin Liu 0002,2010,database
-H. V. Jagadish,Laura M. Haas,2010,database
-H. V. Jagadish,Marianne Winslett,2010,database
-H. V. Jagadish,Vivian Chu,2010,database
-H. V. Jagadish,Beng Chin Ooi,2005,database
-H. V. Jagadish,Stelios Paparizos,2005,database
-H. V. Jagadish,Raymond Chi-Wing Wong,2013,database
-H. V. Jagadish,Caleb Chen Cao,2013,database
-H. V. Jagadish,Cheng Long,2013,database
-H. V. Jagadish,Lei Chen 0002,2013,database
-H. V. Jagadish,Chen Jason Zhang,2013,database
-H. V. Jagadish,Aoying Zhou,2013,database
-H. V. Jagadish,Bin Liu 0002,2009,database
-H. V. Jagadish,Adriane Chapman,2009,database
-H. V. Jagadish,Huahai Yang,2007,ai
-H. V. Jagadish,Yunyao Li,2007,ai
-H. V. Jagadish,Satinder P. Singh,2007,ai
-H. V. Jagadish,Divesh Srivastava,2004,database
-H. V. Jagadish,Susan B. Davidson,2004,database
-H. V. Jagadish,Yuqing Wu,2004,database
-H. V. Jagadish,Yunyao Li,2004,database
-H. V. Jagadish,Stelios Paparizos,2004,database
-H. V. Jagadish,Laks V. S. Lakshmanan,2004,database
-H. V. Jagadish,Cong Yu,2004,database
-H. V. Jagadish,Divesh Srivastava,1999,database
-H. V. Jagadish,Tova Milo,1999,database
-H. V. Jagadish,Laks V. S. Lakshmanan,1999,database
-H. V. Jagadish,S. Muthukrishnan,1999,database
-H. V. Jagadish,Raymond T. Ng,1999,database
-H. V. Jagadish,Nick Koudas,1999,database
-H. V. Jagadish,Michael J. Cafarella,2012,database
-H. V. Jagadish,Arnab Nandi,2012,database
-H. V. Jagadish,Manish Singh,2012,database
-H. V. Jagadish,Cong Yu,2007,database
-H. V. Jagadish,Yunyao Li,2007,database
-H. V. Jagadish,Huahai Yang,2007,database
-H. V. Jagadish,Adriane Chapman,2007,database
-H. V. Jagadish,Jignesh M. Patel,2007,database
-H. V. Jagadish,Arnab Nandi,2007,database
-H. V. Jagadish,Satinder P. Singh,2007,database
-H. V. Jagadish,Zhifeng Bao,2015,database
-H. V. Jagadish,Tok Wang Ling,2015,database
-H. V. Jagadish,Adriane Chapman,2008,database
-H. V. Jagadish,Rajeev Rastogi,1994,database
-H. V. Jagadish,Narain H. Gehani,1994,database
-H. V. Jagadish,S. Sudarshan 0001,1994,database
-H. V. Jagadish,Abraham Silberschatz,1994,database
-H. V. Jagadish,Cong Yu,2003,database
-H. V. Jagadish,Divesh Srivastava,2003,database
-H. V. Jagadish,Leonard Pitt,2003,database
-H. V. Jagadish,Laks V. S. Lakshmanan,2003,database
-H. V. Jagadish,Adriane Chapman,2003,database
-H. V. Jagadish,Yuqing Wu,2003,database
-H. V. Jagadish,Stelios Paparizos,2003,database
-H. V. Jagadish,Jignesh M. Patel,2003,database
-H. V. Jagadish,Kenneth C. Sevcik,1998,database
-H. V. Jagadish,Torsten Suel,1998,database
-H. V. Jagadish,S. Muthukrishnan,1998,database
-H. V. Jagadish,Nick Koudas,1998,database
-H. V. Jagadish,Viswanath Poosala,1998,database
-H. V. Jagadish,Guoliang Li,2016,database
-H. V. Jagadish,Jianhua Feng,2016,database
-H. V. Jagadish,Dong Deng,2016,database
-H. V. Jagadish,Divesh Srivastava,2002,database
-H. V. Jagadish,Sudipto Guha,2002,database
-H. V. Jagadish,Ting Yu,2002,database
-H. V. Jagadish,Laks V. S. Lakshmanan,2002,database
-H. V. Jagadish,Nick Koudas,2002,database
-H. V. Jagadish,Arnab Nandi,2011,database
-H. V. Jagadish,P. P. S. Narayan,1997,database
-H. V. Jagadish,S. Sudarshan 0001,1997,database
-H. V. Jagadish,Flip Korn,1997,database
-H. V. Jagadish,Christos Faloutsos,1997,database
-H. V. Jagadish,S. Seshadri,1997,database
-H. V. Jagadish,Beng Chin Ooi,2006,database
-H. V. Jagadish,Kian-Lee Tan,2006,database
-H. V. Jagadish,Cong Yu,2006,database
-H. V. Jagadish,Yunyao Li,2006,web
-H. V. Jagadish,Rajasekar Krishnamurthy,2006,web
-H. V. Jagadish,Shivakumar Vaithyanathan,2006,web
-H. V. Jagadish,Dragomir R. Radev,2003,web
-H. V. Jagadish,Cong Yu,2003,web
-H. V. Jagadish,Gang Chen,2014,database
-H. V. Jagadish,Wei Lu,2014,database
-H. V. Jagadish,Yanyan Shen,2014,database
-H. V. Jagadish,Caleb Chen Cao,2014,database
-H. V. Jagadish,Fei Li,2014,database
-H. V. Jagadish,Lei Chen 0002,2014,database
-H. V. Jagadish,Beng Chin Ooi,2014,database
-H. V. Jagadish,Chen Jason Zhang,2014,database
-H. V. Jagadish,Cheng Long,2014,database
-H. V. Jagadish,Raymond Chi-Wing Wong,2014,database
-H. V. Jagadish,S. Sudarshan 0001,1993,database
-H. V. Jagadish,Abraham Silberschatz,1993,database
-H. V. Jagadish,Lei Chen 0002,2013,mlmining
-H. V. Jagadish,Caleb Chen Cao,2013,mlmining
-H. V. Jagadish,Yongxin Tong,2013,mlmining
-H. V. Jagadish,Kian-Lee Tan,2001,database
-H. V. Jagadish,Divesh Srivastava,2001,database
-H. V. Jagadish,Nick Koudas,2001,database
-H. V. Jagadish,S. Muthukrishnan,2001,database
-H. V. Jagadish,Beng Chin Ooi,2001,database
-H. V. Jagadish,Luis Gravano,2001,database
-H. V. Jagadish,Panagiotis G. Ipeirotis,2001,database
-H. V. Jagadish,Alberto O. Mendelzon,1996,database
-H. V. Jagadish,Alon Y. Levy,1996,database
-H. V. Jagadish,Divesh Srivastava,1996,database
-H. V. Jagadish,Shaul Dar,1996,database
-H. V. Jagadish,Inderpal Singh Mumick,1996,database
-H. V. Jagadish,Narain H. Gehani,1991,database
-H. V. Jagadish,Oded Shmueli,1992,database
-H. V. Jagadish,Xiaolei Qian,1992,database
-H. V. Jagadish,Narain H. Gehani,1992,database
-H. V. Jagadish,Christos Faloutsos,1992,database
-H. V. Jagadish,Yunyao Li,2008,nlp
-H. V. Jagadish,Sriram Raghavan,2008,nlp
-H. V. Jagadish,Rajasekar Krishnamurthy,2008,nlp
-H. V. Jagadish,Shivakumar Vaithyanathan,2008,nlp
-H. V. Jagadish,Divesh Srivastava,2000,database
-H. V. Jagadish,Nick Koudas,2000,database
 Devin J. Balkcom,Weifu Wang,2015,robotics
 Devin J. Balkcom,Dmitry Berenson,2015,robotics
 Devin J. Balkcom,Matthew T. Mason,2000,robotics
@@ -24959,8 +25106,6 @@ Olin Shivers,Godmar Back,1997,opsys
 Olin Shivers,Jay Lepreau,1997,opsys
 Olin Shivers,Bryan Ford,1997,opsys
 Olin Shivers,Matthew Might,2006,proglang
-Steve Harrison,Tejinder K. Judge,2011,hci
-Steve Harrison,Carman Neustaedter,2011,hci
 Mark D. Corner,Brian Noble,2003,mobile
 Mark D. Corner,Prashant J. Shenoy,2009,networks
 Mark D. Corner,Jeremy Gummeson,2009,networks
@@ -25138,6 +25283,9 @@ Jun Xu,Shivakumar Venkataraman,2016,database
 Jun Xu,Jeffrey D. Ullman,2016,database
 Jun Xu,Karl Schnaitter,2016,database
 Jun Xu,Divyakant Agrawal,2016,database
+Jun Xu,Yanyan Lan,2015,web
+Jun Xu,Xueqi Cheng,2015,web
+Jun Xu,Jiafeng Guo,2015,web
 Jun Xu,Rui Li,2010,database
 Jun Xu,Jianmin Wang 0001,2010,database
 Jun Xu,Haixun Wang,2010,database
@@ -25151,9 +25299,9 @@ Jun Xu,David Zhang,2015,vision
 Jun Xu,Yanyan Lan,2016,ai
 Jun Xu,Xueqi Cheng,2016,ai
 Jun Xu,Jiafeng Guo,2016,ai
-Jun Xu,Yanyan Lan,2015,web
-Jun Xu,Xueqi Cheng,2015,web
-Jun Xu,Jiafeng Guo,2015,web
+Jun Xu,Jiafeng Guo,2015,nlp
+Jun Xu,Yanyan Lan,2015,nlp
+Jun Xu,Xueqi Cheng,2015,nlp
 Samuel Z. Guyer,Kathryn S. McKinley,2007,proglang
 Samuel Z. Guyer,Michael D. Bond,2007,proglang
 Samuel Z. Guyer,Ben Wiedermann,2006,proglang
@@ -25216,14 +25364,6 @@ Robert Bruce Findler,Matthias Felleisen,2001,proglang
 Robert Bruce Findler,Christos Dimoulas,2013,proglang
 Robert Bruce Findler,Matthias Felleisen,2013,proglang
 Robert Bruce Findler,Matthew Flatt,2004,proglang
-Frank M. Shipman III,Catherine C. Marshall,2011,hci
-Frank M. Shipman III,Catherine C. Marshall,2013,web
-Frank M. Shipman III,Gerhard Fischer,1994,hci
-Frank M. Shipman III,Catherine C. Marshall,1995,hci
-Frank M. Shipman III,Thomas P. Moran,1995,hci
-Frank M. Shipman III,Lynn Wilcox,2007,hci
-Frank M. Shipman III,Thea Turner,2007,hci
-Frank M. Shipman III,Andreas Girgensohn,2007,hci
 Eli Upfal,Filip Radlinski,2008,mlmining
 Eli Upfal,Deepayan Chakrabarti,2008,mlmining
 Eli Upfal,Ravi Kumar,2008,mlmining
@@ -26946,7 +27086,9 @@ Martin C. Rinard,Fan Long,2014,proglang
 Martin C. Rinard,Brian Demsky,2003,proglang
 Martin C. Rinard,Chandrasekhar Boyapati,2003,proglang
 Martin C. Rinard,Viktor Kuncak,2008,proglang
-Martin C. Rinard,Radu Rugina,1999,highperf
+Martin C. Rinard,Regina Barzilay,2013,nlp
+Martin C. Rinard,Fan Long,2013,nlp
+Martin C. Rinard,Tao Lei,2013,nlp
 Martin C. Rinard,Monica S. Lam,1991,highperf
 Martin C. Rinard,Radu Rugina,1999,proglang
 Martin C. Rinard,John Whaley,1999,proglang
@@ -26985,9 +27127,21 @@ Martin C. Rinard,Alex Aiken,2011,proglang
 Martin C. Rinard,Mooly Sagiv,2011,proglang
 Martin C. Rinard,Chandrasekhar Boyapati,2002,proglang
 Martin C. Rinard,Viktor Kuncak,2002,proglang
+Martin C. Rinard,Radu Rugina,1999,highperf
 Martin C. Rinard,Daniel J. Scales,1992,highperf
 Martin C. Rinard,Monica S. Lam,1992,highperf
 Martin C. Rinard,Monica S. Lam,1992,proglang
+David K. Lowenthal,Martin Schulz,2015,highperf
+David K. Lowenthal,Barry Rountree,2015,highperf
+David K. Lowenthal,Xin Yuan,2003,highperf
+David K. Lowenthal,Martin Schulz,2007,highperf
+David K. Lowenthal,Bronis R. de Supinski,2007,highperf
+David K. Lowenthal,Vincent W. Freeh,2007,highperf
+David K. Lowenthal,Barry Rountree,2007,highperf
+David K. Lowenthal,Vincent W. Freeh,2005,highperf
+David K. Lowenthal,Barry Rountree,2006,highperf
+David K. Lowenthal,Vincent W. Freeh,2006,highperf
+David K. Lowenthal,Vincent W. Freeh,1994,opsys
 Michael R. Genesereth,Illah R. Nourbakhsh,1993,ai
 Michael R. Genesereth,Rada Chirkova,2009,database
 Michael R. Genesereth,Ankit Garg,2005,database
@@ -27006,7 +27160,7 @@ Stanislaw Jarecki,Moti Yung,1997,security
 Stanislaw Jarecki,Gene Tsudik,2007,security
 Stanislaw Jarecki,Hugo Krawczyk,2013,security
 Lyle H. Ungar,Marcos Salganicoff,1995,mlmining
-Lyle H. Ungar,Wei Xu,2016,ai
+Lyle H. Ungar,Dean P. Foster,2005,mlmining
 Lyle H. Ungar,Dean P. Foster,2010,nlp
 Lyle H. Ungar,Paramveer S. Dhillon,2010,nlp
 Lyle H. Ungar,John Blitzer,2008,mlmining
@@ -27023,10 +27177,14 @@ Lyle H. Ungar,Dean P. Foster,2011,mlmining
 Lyle H. Ungar,Paramveer S. Dhillon,2011,mlmining
 Lyle H. Ungar,Paramveer S. Dhillon,2013,mlmining
 Lyle H. Ungar,Dean P. Foster,2013,mlmining
+Lyle H. Ungar,Dean P. Foster,2012,nlp
+Lyle H. Ungar,Michael Collins,2012,nlp
+Lyle H. Ungar,Karl Stratos,2012,nlp
+Lyle H. Ungar,Shay B. Cohen,2012,nlp
 Lyle H. Ungar,David M. Pennock,2002,web
 Lyle H. Ungar,Dean P. Foster,2012,mlmining
 Lyle H. Ungar,Paramveer S. Dhillon,2012,mlmining
-Lyle H. Ungar,Dean P. Foster,2005,mlmining
+Lyle H. Ungar,Wei Xu,2016,ai
 Lyle H. Ungar,Dean P. Foster,1997,mlmining
 Lyle H. Ungar,Dale Schuurmans,1997,mlmining
 Lyle H. Ungar,Gregory Z. Grudic,2003,robotics
@@ -27056,6 +27214,7 @@ Kamalika Chaudhuri,Le Song,2011,mlmining
 Kamalika Chaudhuri,Sanjoy Dasgupta,2010,mlmining
 Kamalika Chaudhuri,Daniel J. Hsu,2012,mlmining
 Kamalika Chaudhuri,Kaushik Sinha,2012,mlmining
+Kamalika Chaudhuri,Karen Livescu,2009,mlmining
 Kamalika Chaudhuri,Sham M. Kakade,2009,mlmining
 Kamalika Chaudhuri,Yoav Freund,2009,mlmining
 Kamalika Chaudhuri,Daniel J. Hsu,2009,mlmining
@@ -27205,10 +27364,20 @@ Rick Stevens,Aditi Majumder,2005,graphics
 Rick Stevens,Jack Dongarra,1995,highperf
 Rick Stevens,Ken Kennedy,1995,highperf
 Rick Stevens,Geoffrey Fox,1995,highperf
-Jordan L. Boyd-Graber,He He,2014,nlp
+Martha Palmer,Daisuke Kawahara,2014,nlp
+Martha Palmer,Nianwen Xue,2004,nlp
+Martha Palmer,Alessandro Moschitti,2012,nlp
+Martha Palmer,Roberto Basili,2012,nlp
+Martha Palmer,Danilo Croce,2012,nlp
+Martha Palmer,Nianwen Xue,2006,nlp
 Jordan L. Boyd-Graber,Richard Socher,2014,nlp
+Jordan L. Boyd-Graber,Viet-An Nguyen,2014,nlp
+Jordan L. Boyd-Graber,He He,2014,nlp
+Jordan L. Boyd-Graber,Ke Zhai,2014,nlp
 Jordan L. Boyd-Graber,Hal Daumé III,2014,nlp
+Jordan L. Boyd-Graber,Yuening Hu,2014,nlp
 Jordan L. Boyd-Graber,Philip Resnik,2014,nlp
+Jordan L. Boyd-Graber,Yuening Hu,2011,nlp
 Jordan L. Boyd-Graber,Lise Getoor,2015,mlmining
 Jordan L. Boyd-Graber,Bert Huang,2015,mlmining
 Jordan L. Boyd-Graber,David M. Blei,2008,mlmining
@@ -27218,17 +27387,27 @@ Jordan L. Boyd-Graber,Chong Wang,2009,mlmining
 Jordan L. Boyd-Graber,Sean Gerrish,2009,mlmining
 Jordan L. Boyd-Graber,David M. Blei,2009,mlmining
 Jordan L. Boyd-Graber,Jonathan Chang,2009,mlmining
+Jordan L. Boyd-Graber,Yuening Hu,2013,mlmining
 Jordan L. Boyd-Graber,Philip Resnik,2013,mlmining
+Jordan L. Boyd-Graber,Viet-An Nguyen,2013,mlmining
 Jordan L. Boyd-Graber,Hal Daumé III,2013,mlmining
+Jordan L. Boyd-Graber,Ke Zhai,2012,web
 Jordan L. Boyd-Graber,Nima Asadi 0001,2012,web
+Jordan L. Boyd-Graber,Philip Resnik,2012,nlp
+Jordan L. Boyd-Graber,Viet-An Nguyen,2012,nlp
+Jordan L. Boyd-Graber,Yuening Hu,2012,mlmining
 Jordan L. Boyd-Graber,Sinead Williamson,2012,mlmining
+Jordan L. Boyd-Graber,Ke Zhai,2012,mlmining
 Jordan L. Boyd-Graber,Philip Resnik,2014,mlmining
+Jordan L. Boyd-Graber,Viet-An Nguyen,2014,mlmining
 Jordan L. Boyd-Graber,Jonathan Chang,2014,mlmining
 Jordan L. Boyd-Graber,Philip Resnik,2010,nlp
-Jordan L. Boyd-Graber,Doug Downey,2015,nlp
-Jordan L. Boyd-Graber,He He,2015,nlp
+Jordan L. Boyd-Graber,Cristian Danescu-Niculescu-Mizil,2015,nlp
+Jordan L. Boyd-Graber,Viet-An Nguyen,2015,nlp
 Jordan L. Boyd-Graber,Yi Yang,2015,nlp
+Jordan L. Boyd-Graber,He He,2015,nlp
 Jordan L. Boyd-Graber,Hal Daumé III,2015,nlp
+Jordan L. Boyd-Graber,Doug Downey,2015,nlp
 Jordan L. Boyd-Graber,Philip Resnik,2015,nlp
 Michael D. Ernst,David Notkin,2012,proglang
 Michael D. Ernst,Ana Milanova,2012,proglang
@@ -27662,34 +27841,6 @@ Hong Qin,Baba C. Vemuri,1998,vision
 Hong Qin,Sen Wang,2012,graphics
 Hong Qin,Demetri Terzopoulos,1994,graphics
 Hong Qin,Hongbin Zha,2007,mlmining
-Jaime G. Carbonell,Geoffrey J. Gordon,2008,ai
-Jaime G. Carbonell,Brad A. Myers,2008,ai
-Jaime G. Carbonell,Daniel P. Siewiorek,2008,ai
-Jaime G. Carbonell,Stephen F. Smith,2008,ai
-Jaime G. Carbonell,Michael Freed,2008,ai
-Jaime G. Carbonell,Aaron Steinfeld,2008,ai
-Jaime G. Carbonell,Anthony Tomasic,2008,ai
-Jaime G. Carbonell,James A. Hendler,1995,ai
-Jaime G. Carbonell,Paul S. Rosenbloom,1995,ai
-Jaime G. Carbonell,Yan Liu 0002,2005,mlmining
-Jaime G. Carbonell,Eric P. Xing,2005,mlmining
-Jaime G. Carbonell,Jeff G. Schneider,2009,mlmining
-Jaime G. Carbonell,Jian Zhang 0003,2002,mlmining
-Jaime G. Carbonell,Yiming Yang,2002,mlmining
-Jaime G. Carbonell,Yan Liu 0002,2010,ai
-Jaime G. Carbonell,Han Liu,2010,ai
-Jaime G. Carbonell,Xi Chen,2010,ai
-Jaime G. Carbonell,Yiming Yang,1998,web
-Jaime G. Carbonell,Liu Yang,2013,mlmining
-Jaime G. Carbonell,Yan Liu 0002,2007,ai
-Jaime G. Carbonell,Jingrui He,2007,ai
-Jaime G. Carbonell,Jamie Callan,2008,web
-Jaime G. Carbonell,Jaime Arguello,2008,web
-Jaime G. Carbonell,Jade Goldstein,1999,web
-Jaime G. Carbonell,Vibhu O. Mittal,1999,web
-Jaime G. Carbonell,Yaoliang Yu,2014,mlmining
-Jaime G. Carbonell,Suvrit Sra,2014,mlmining
-Jaime G. Carbonell,Jingrui He,2007,mlmining
 Charles Elkan,Greg Hamerly,2001,mlmining
 Charles Elkan,Bianca Zadrozny,2001,mlmining
 Charles Elkan,Greg Hamerly,2003,mlmining
@@ -27765,6 +27916,7 @@ David M. Mimno,Michael J. Freedman,2012,mlmining
 David M. Mimno,Matthew D. Hoffman,2012,mlmining
 David M. Mimno,Andrew McCallum,2007,mlmining
 David M. Mimno,Thorsten Joachims,2015,nlp
+David M. Mimno,Igor Labutov,2015,nlp
 David Van Horn,Yannis Smaragdakis,2010,proglang
 David Van Horn,Matthew Might,2010,proglang
 David Van Horn,Matthew Might,2016,proglang
@@ -28157,6 +28309,9 @@ Lu Wang,Feifei Li 0001,2015,database
 Lu Wang,Ke Yi,2015,database
 Lu Wang,Jayant Madhavan,2010,web
 Lu Wang,Alon Y. Halevy,2010,web
+Lu Wang,Yunhao Liu,2011,database
+Lu Wang,Zengfeng Huang,2011,database
+Lu Wang,Ke Yi,2011,database
 Lu Wang,Kaishun Wu,2012,networks
 Lu Wang,Qian Zhang,2012,networks
 Lu Wang,Yunhuai Liu,2012,networks
@@ -28165,9 +28320,10 @@ Lu Wang,Dan Song,2013,robotics
 Lu Wang,Yasemin Bekiroglu,2013,robotics
 Lu Wang,Danica Kragic,2013,robotics
 Lu Wang,Jianbo Su,2014,robotics
-Lu Wang,Yunhao Liu,2011,database
-Lu Wang,Zengfeng Huang,2011,database
-Lu Wang,Ke Yi,2011,database
+Lu Wang,Claire Cardie,2013,nlp
+Lu Wang,Vittorio Castelli,2013,nlp
+Lu Wang,Hema Raghavan,2013,nlp
+Lu Wang,Radu Florian,2013,nlp
 Lu Wang,Zhi-Hua Zhou,2016,ai
 Lu Wang,Wei Gao,2016,ai
 Lu Wang,Yu-Feng Li,2016,ai
@@ -28217,6 +28373,8 @@ Ronald G. Dreslinski,Ali G. Saidi,2006,arch
 Ronald G. Dreslinski,Steven K. Reinhardt,2006,arch
 Ronald G. Dreslinski,Krisztián Flautner,2006,arch
 Ronald G. Dreslinski,Trevor N. Mudge,2009,arch
+Adam Lopez,Philipp Koehn,2013,nlp
+Adam Lopez,Chris Callison-Burch,2013,nlp
 Adam Lopez,Michael Auli,2011,nlp
 I. V. Ramakrishnan,Y. S. Ramakrishna,1997,logic
 I. V. Ramakrishnan,Terrance Swift,1997,logic
@@ -28334,6 +28492,7 @@ Ashutosh Saxena,Hema Swetha Koppula,2015,vision
 Ashutosh Saxena,Silvio Savarese,2015,vision
 Ashutosh Saxena,Ashesh Jain,2015,vision
 Ashutosh Saxena,Amir Roshan Zamir,2015,vision
+Ashutosh Saxena,Percy Liang,2015,nlp
 Ashutosh Saxena,Thorsten Joachims,2013,mlmining
 Ashutosh Saxena,Ashesh Jain,2013,mlmining
 Ashutosh Saxena,Yun Jiang,2013,ai
@@ -28373,82 +28532,6 @@ Yuriy Brun,Alexandra Meliou,2013,softeng
 Yuriy Brun,Kivanç Muslu,2013,softeng
 Yuriy Brun,Arvind Krishnamurthy,2013,softeng
 Yuriy Brun,Michael D. Ernst,2013,softeng
-Qiaozhu Mei,Gang Huang 0001,2016,softeng
-Qiaozhu Mei,Xuanzhe Liu,2016,softeng
-Qiaozhu Mei,Dan Hao,2016,softeng
-Qiaozhu Mei,Tao Xie,2016,softeng
-Qiaozhu Mei,Vahed Qazvinian,2011,nlp
-Qiaozhu Mei,Dragomir R. Radev,2011,nlp
-Qiaozhu Mei,Yue Lu,2015,mlmining
-Qiaozhu Mei,Sandeep Pandey,2015,mlmining
-Qiaozhu Mei,Jian Tang,2015,mlmining
-Qiaozhu Mei,Dong Wang,2015,mlmining
-Qiaozhu Mei,Cheng Li,2015,mlmining
-Qiaozhu Mei,ChengXiang Zhai,2008,mlmining
-Qiaozhu Mei,Zhe Zhao,2013,web
-Qiaozhu Mei,ChengXiang Zhai,2006,mlmining
-Qiaozhu Mei,Dong Xin,2006,mlmining
-Qiaozhu Mei,Xuehua Shen,2006,mlmining
-Qiaozhu Mei,Jiawei Han,2006,mlmining
-Qiaozhu Mei,Hong Cheng,2006,mlmining
-Qiaozhu Mei,XuanLong Nguyen,2014,mlmining
-Qiaozhu Mei,Jian Tang,2014,mlmining
-Qiaozhu Mei,Ming Zhang,2014,mlmining
-Qiaozhu Mei,ChengXiang Zhai,2010,nlp
-Qiaozhu Mei,Cindy Xide Lin,2010,nlp
-Qiaozhu Mei,Duo Zhang,2010,nlp
-Qiaozhu Mei,Dong Xin,2009,database
-Qiaozhu Mei,Jiawei Han,2009,database
-Qiaozhu Mei,Tianyi Wu,2009,database
-Qiaozhu Mei,Ming Zhang,2012,web
-Qiaozhu Mei,Lei Yang,2012,web
-Qiaozhu Mei,Tao Sun,2012,web
-Qiaozhu Mei,Chun Chen,2009,web
-Qiaozhu Mei,Ziyu Guan,2009,web
-Qiaozhu Mei,Can Wang,2009,web
-Qiaozhu Mei,Jiajun Bu,2009,web
-Qiaozhu Mei,ChengXiang Zhai,2007,web
-Qiaozhu Mei,Hui Fang 0001,2007,web
-Qiaozhu Mei,Hang Su,2007,web
-Qiaozhu Mei,Zhe Zhao,2015,web
-Qiaozhu Mei,Jian Tang,2015,web
-Qiaozhu Mei,Ming Zhang,2015,web
-Qiaozhu Mei,Jun Yan,2015,web
-Qiaozhu Mei,Paul Resnick,2015,web
-Qiaozhu Mei,Deng Cai,2008,web
-Qiaozhu Mei,ChengXiang Zhai,2008,web
-Qiaozhu Mei,Duo Zhang,2008,web
-Qiaozhu Mei,Chao Liu 0001,2006,web
-Qiaozhu Mei,Hang Su,2006,web
-Qiaozhu Mei,ChengXiang Zhai,2006,web
-Qiaozhu Mei,ChengXiang Zhai,2005,mlmining
-Qiaozhu Mei,Dragomir R. Radev,2010,mlmining
-Qiaozhu Mei,Cindy Xide Lin,2010,mlmining
-Qiaozhu Mei,Jiawei Han,2010,mlmining
-Qiaozhu Mei,Bo Zhao,2010,mlmining
-Qiaozhu Mei,Gang Huang 0001,2016,web
-Qiaozhu Mei,Xuanzhe Liu,2016,web
-Qiaozhu Mei,Jian Tang,2016,web
-Qiaozhu Mei,Ming Zhang,2016,web
-Qiaozhu Mei,Paul Resnick,2014,web
-Qiaozhu Mei,Hong Cheng,2014,web
-Qiaozhu Mei,Yue Wang,2014,web
-Qiaozhu Mei,Zhe Zhao,2014,web
-Qiaozhu Mei,Cheng Li,2014,web
-Qiaozhu Mei,Jian Tang,2013,mlmining
-Qiaozhu Mei,Ming Zhang,2013,mlmining
-Qiaozhu Mei,Kaigui Bian,2015,metrics
-Qiaozhu Mei,Felix Xiaozhu Lin,2015,metrics
-Qiaozhu Mei,Xuanzhe Liu,2015,metrics
-Qiaozhu Mei,Tao Xie,2015,metrics
-Qiaozhu Mei,Rui Li,2009,mlmining
-Qiaozhu Mei,Zhijun Yin,2009,mlmining
-Qiaozhu Mei,Jiawei Han,2009,mlmining
-Qiaozhu Mei,ChengXiang Zhai,2008,nlp
-Qiaozhu Mei,Jingrui He,2012,mlmining
-Qiaozhu Mei,Hanghang Tong,2012,mlmining
-Qiaozhu Mei,ChengXiang Zhai,2007,mlmining
-Qiaozhu Mei,Xuehua Shen,2007,mlmining
 Elaine Cohen,David E. Johnson,1998,robotics
 Elaine Cohen,Michael M. Stark,1999,graphics
 Elaine Cohen,Adam W. Bargteil,2014,graphics
@@ -29064,6 +29147,8 @@ Jiawei Han,Bolin Ding,2010,database
 Jiawei Han,Jae-Gil Lee,2010,database
 Jiawei Han,Ming Ji,2010,database
 Jiawei Han,Yintao Yu,2010,database
+Jiawei Han,Yangqiu Song,2016,ai
+Jiawei Han,Ming Zhang,2016,ai
 Jiawei Han,Dong Xin,2005,database
 Jiawei Han,Xifeng Yan,2005,database
 Jiawei Han,Hong Cheng,2005,database
@@ -29137,6 +29222,9 @@ Jiawei Han,Kun Zhou,2007,ai
 Jiawei Han,Deng Cai,2007,ai
 Jiawei Han,Xiaofei He,2007,ai
 Jiawei Han,Hujun Bao,2007,ai
+Jiawei Han,Zhen Wen,2013,nlp
+Jiawei Han,Yizhou Sun,2013,nlp
+Jiawei Han,Heng Ji,2013,nlp
 Jiawei Han,Hector Gonzalez,2004,database
 Jiawei Han,Xifeng Yan,2004,database
 Jiawei Han,Charu C. Aggarwal,2004,database
@@ -29156,8 +29244,12 @@ Jiawei Han,Charu C. Aggarwal,2012,database
 Jiawei Han,Yizhou Sun,2012,database
 Jiawei Han,Ruoming Jin,2012,database
 Jiawei Han,Benjamin I. P. Rubinstein,2012,database
-Jiawei Han,Yangqiu Song,2016,ai
-Jiawei Han,Ming Zhang,2016,ai
+Jiawei Han,Wei Fan,2011,networks
+Jiawei Han,Deepak S. Turaga,2011,networks
+Jiawei Han,Lu Su,2011,networks
+Jiawei Han,Jing Gao,2011,networks
+Jiawei Han,Xiaoqiao Meng,2011,networks
+Jiawei Han,Olivier Verscheure,2011,networks
 Jiawei Han,Xiaohui Gu,2007,database
 Jiawei Han,Hector Gonzalez,2007,database
 Jiawei Han,Xifeng Yan,2007,database
@@ -29296,12 +29388,13 @@ Jiawei Han,Heng Ji,2014,database
 Jiawei Han,Jialu Liu,2014,database
 Jiawei Han,Yaliang Li,2014,database
 Jiawei Han,Xiang Ren,2014,database
-Jiawei Han,Wei Fan,2011,networks
-Jiawei Han,Deepak S. Turaga,2011,networks
-Jiawei Han,Lu Su,2011,networks
-Jiawei Han,Jing Gao,2011,networks
-Jiawei Han,Xiaoqiao Meng,2011,networks
-Jiawei Han,Olivier Verscheure,2011,networks
+Jiawei Han,Bülent Yener,2015,nlp
+Jiawei Han,Kevin Knight,2015,nlp
+Jiawei Han,Zhen Wen,2015,nlp
+Jiawei Han,Chin-Yew Lin,2015,nlp
+Jiawei Han,Yizhou Sun,2015,nlp
+Jiawei Han,Heng Ji,2015,nlp
+Jiawei Han,Sujian Li,2015,nlp
 Jiawei Han,Guo-Jun Qi,2013,web
 Jiawei Han,Charu C. Aggarwal,2013,web
 Jiawei Han,Thomas S. Huang,2013,web
@@ -29435,6 +29528,7 @@ Ruzena Bajcsy,Tarek M. Sobh,1991,robotics
 Ruzena Bajcsy,Ales Leonardis,1990,vision
 Ruzena Bajcsy,Alok Gupta,1990,vision
 Ruzena Bajcsy,Henrik I. Christensen,1997,robotics
+Luca P. Carloni,Karl Stratos,2015,web
 Luca P. Carloni,Maria Gorlatova,2013,networks
 Luca P. Carloni,Ioannis Kymissis,2013,networks
 Luca P. Carloni,Gil Zussman,2013,networks
@@ -30726,6 +30820,11 @@ Victor Shoup,Rafail Ostrovsky,1997,theory
 Victor Shoup,Jan Camenisch,2009,security
 Victor Shoup,Roman Smolensky,1991,theory
 Victor Shoup,Joachim von zur Gathen,1992,theory
+Dan Klein,Greg Durrett,2014,nlp
+Dan Klein,Mohit Bansal,2014,nlp
+Dan Klein,David Leo Wright Hall,2014,nlp
+Dan Klein,Taylor Berg-Kirkpatrick,2014,nlp
+Dan Klein,Gerard de Melo,2014,nlp
 Dan Klein,Mohit Bansal,2011,nlp
 Dan Klein,Percy Liang,2011,nlp
 Dan Klein,Michael I. Jordan,2011,nlp
@@ -30754,12 +30853,14 @@ Dan Klein,John DeNero,2007,nlp
 Dan Klein,Taylor Berg-Kirkpatrick,2014,mlmining
 Dan Klein,Mohit Bansal,2010,nlp
 Dan Klein,Percy Liang,2010,nlp
+Dan Klein,Gabor Angeli,2010,nlp
 Dan Klein,David Leo Wright Hall,2010,nlp
 Dan Klein,Taylor Berg-Kirkpatrick,2010,nlp
 Dan Klein,John DeNero,2010,nlp
 Dan Klein,Christopher D. Manning,2001,mlmining
-Dan Klein,John Canny,2013,nlp
+Dan Klein,Greg Durrett,2013,nlp
 Dan Klein,Taylor Berg-Kirkpatrick,2013,nlp
+Dan Klein,John Canny,2013,nlp
 Dan Klein,David Leo Wright Hall,2013,nlp
 Dan Klein,David Leo Wright Hall,2011,ai
 Dan Klein,Percy Liang,2006,nlp
@@ -30775,11 +30876,13 @@ Dan Klein,Christopher D. Manning,2003,ai
 Dan Klein,Slav Petrov,2007,ai
 Dan Klein,Aria Haghighi,2007,ai
 Dan Klein,John DeNero,2007,ai
+Dan Klein,Mohit Bansal,2012,nlp
 Dan Klein,Aria Haghighi,2009,nlp
 Dan Klein,John DeNero,2009,nlp
 Dan Klein,Michael I. Jordan,2010,mlmining
 Dan Klein,Percy Liang,2010,mlmining
 Dan Klein,Christopher D. Manning,2002,nlp
+Dan Klein,Greg Durrett,2015,nlp
 Dan Klein,Taylor Berg-Kirkpatrick,2015,nlp
 Dan Klein,Trond Grenager,2005,nlp
 Dan Klein,Christopher D. Manning,2005,nlp
@@ -31307,16 +31410,22 @@ Kai Shen,Hong Tang,1999,highperf
 Kai Shen,Lingkun Chu,2002,opsys
 Kai Shen,Tao Yang,2002,opsys
 Kai Shen,Hong Tang,2002,opsys
+Mehryar Mohri,Corinna Cortes,2014,nlp
+Mehryar Mohri,Vitaly Kuznetsov,2014,nlp
 Mehryar Mohri,Richard Sproat,1996,nlp
 Mehryar Mohri,Corinna Cortes,2015,mlmining
+Mehryar Mohri,Vitaly Kuznetsov,2015,mlmining
 Mehryar Mohri,Umar Syed,2015,mlmining
 Mehryar Mohri,Yishay Mansour,2008,mlmining
 Mehryar Mohri,Ameet Talwalkar,2008,mlmining
 Mehryar Mohri,Corinna Cortes,2008,mlmining
+Mehryar Mohri,Cyril Allauzen,2008,mlmining
 Mehryar Mohri,Afshin Rostamizadeh,2008,mlmining
 Mehryar Mohri,Corinna Cortes,2003,mlmining
 Mehryar Mohri,Corinna Cortes,2005,mlmining
 Mehryar Mohri,Jason Weston,2005,mlmining
+Mehryar Mohri,Michael Riley,2004,nlp
+Mehryar Mohri,Cyril Allauzen,2004,nlp
 Mehryar Mohri,Ronan Collobert,2009,mlmining
 Mehryar Mohri,Corinna Cortes,2009,mlmining
 Mehryar Mohri,Ryan T. McDonald,2009,mlmining
@@ -31337,25 +31446,30 @@ Mehryar Mohri,Corinna Cortes,2012,mlmining
 Mehryar Mohri,Stephen P. Boyd,2012,mlmining
 Mehryar Mohri,Borja Balle,2012,mlmining
 Mehryar Mohri,Brian Roark,2003,nlp
+Mehryar Mohri,Cyril Allauzen,2003,nlp
 Mehryar Mohri,Corinna Cortes,2014,mlmining
 Mehryar Mohri,Umar Syed,2014,mlmining
+Mehryar Mohri,Vitaly Kuznetsov,2014,mlmining
 Mehryar Mohri,Corinna Cortes,2007,mlmining
 Mehryar Mohri,Afshin Rostamizadeh,2007,mlmining
+Hal Daumé III,Yuval Marton,2014,nlp
+Hal Daumé III,Snigdha Chaturvedi,2014,nlp
 Hal Daumé III,He He,2014,nlp
+Hal Daumé III,Philip Resnik,2014,nlp
 Hal Daumé III,Richard Socher,2014,nlp
+Hal Daumé III,Dan Goldwasser,2014,nlp
 Hal Daumé III,Jordan L. Boyd-Graber,2014,nlp
+Hal Daumé III,Junhui Li,2014,nlp
 Hal Daumé III,Ching Lik Teo,2011,nlp
 Hal Daumé III,Yiannis Aloimonos,2011,nlp
+Hal Daumé III,Jagadeesh Jagarlamudi,2011,nlp
 Hal Daumé III,Amit Goyal,2011,nlp
 Hal Daumé III,Raghavendra Udupa,2011,nlp
 Hal Daumé III,Yezhou Yang,2011,nlp
-Hal Daumé III,Margaret Mitchell,2012,vision
-Hal Daumé III,David W. Jacobs,2012,vision
-Hal Daumé III,Alexander C. Berg,2012,vision
-Hal Daumé III,Abhishek Kumar 0001,2012,vision
-Hal Daumé III,Amit Goyal,2012,vision
-Hal Daumé III,Tamara L. Berg,2012,vision
-Hal Daumé III,Abhishek Sharma,2012,vision
+Hal Daumé III,Akshay Krishnamurthy,2015,mlmining
+Hal Daumé III,Kai-Wei Chang,2015,mlmining
+Hal Daumé III,Alekh Agarwal,2015,mlmining
+Hal Daumé III,John Langford,2015,mlmining
 Hal Daumé III,Piyush Rai,2008,mlmining
 Hal Daumé III,Percy Liang,2008,mlmining
 Hal Daumé III,Dan Klein,2008,mlmining
@@ -31364,21 +31478,27 @@ Hal Daumé III,Piyush Rai,2011,mlmining
 Hal Daumé III,Abhishek Kumar 0001,2011,mlmining
 Hal Daumé III,Jason Eisner,2014,mlmining
 Hal Daumé III,He He,2014,mlmining
-Hal Daumé III,Akshay Krishnamurthy,2015,mlmining
-Hal Daumé III,Kai-Wei Chang,2015,mlmining
-Hal Daumé III,Alekh Agarwal,2015,mlmining
-Hal Daumé III,John Langford,2015,mlmining
+Hal Daumé III,Margaret Mitchell,2012,vision
+Hal Daumé III,David W. Jacobs,2012,vision
+Hal Daumé III,Alexander C. Berg,2012,vision
+Hal Daumé III,Karl Stratos,2012,vision
+Hal Daumé III,Abhishek Kumar 0001,2012,vision
+Hal Daumé III,Amit Goyal,2012,vision
+Hal Daumé III,Tamara L. Berg,2012,vision
+Hal Daumé III,Abhishek Sharma,2012,vision
 Hal Daumé III,Cornelia Fermüller,2012,robotics
 Hal Daumé III,Ching Lik Teo,2012,robotics
 Hal Daumé III,Yezhou Yang,2012,robotics
 Hal Daumé III,Yiannis Aloimonos,2012,robotics
+Hal Daumé III,He He,2013,nlp
+Hal Daumé III,Jagadeesh Jagarlamudi,2013,nlp
 Hal Daumé III,Jason Eisner,2013,nlp
 Hal Daumé III,Chris Quirk,2013,nlp
-Hal Daumé III,He He,2013,nlp
 Hal Daumé III,Amit Goyal,2011,ai
 Hal Daumé III,Daniel Marcu,2006,nlp
 Hal Daumé III,Dan Goldwasser,2016,ai
 Hal Daumé III,Chris Dyer,2016,ai
+Hal Daumé III,Snigdha Chaturvedi,2016,ai
 Hal Daumé III,Hadi Amiri,2016,ai
 Hal Daumé III,Dan Goldwasser,2014,ai
 Hal Daumé III,Lise Getoor,2014,ai
@@ -31388,13 +31508,15 @@ Hal Daumé III,Suresh Venkatasubramanian,2009,ai
 Hal Daumé III,Piyush Rai,2009,ai
 Hal Daumé III,Daniel Marcu,2005,mlmining
 Hal Daumé III,Daniel Marcu,2002,nlp
-Hal Daumé III,Jordan L. Boyd-Graber,2015,nlp
 Hal Daumé III,He He,2015,nlp
+Hal Daumé III,Jordan L. Boyd-Graber,2015,nlp
+Hal Daumé III,Yuening Hu,2013,mlmining
 Hal Daumé III,Jordan L. Boyd-Graber,2013,mlmining
 Hal Daumé III,Hadi Amiri,2015,ai
 Hal Daumé III,Amit Goyal,2010,nlp
 Hal Daumé III,Ellen Riloff,2010,nlp
 Hal Daumé III,Piyush Rai,2009,mlmining
+Hal Daumé III,Jagadeesh Jagarlamudi,2010,ai
 Hal Daumé III,Ulf Hermjakob,2008,nlp
 Hal Daumé III,Kevin Knight,2008,nlp
 Hal Daumé III,Piyush Rai,2012,mlmining
@@ -32060,6 +32182,7 @@ Noah Snavely,Kavita Bala,2015,vision
 Noah Snavely,Sean Bell,2015,vision
 Noah Snavely,Tsuhan Chen,2012,vision
 Noah Snavely,Shimon Edelman,2012,vision
+William W. Cohen,William Yang Wang,2014,nlp
 William W. Cohen,Tom M. Mitchell,2011,nlp
 William W. Cohen,Ni Lao,2011,nlp
 William W. Cohen,Ramesh Nallapati,2008,mlmining
@@ -32090,13 +32213,17 @@ William W. Cohen,Einat Minkov,2006,web
 William W. Cohen,ChengXiang Zhai,2003,web
 William W. Cohen,John D. Lafferty,2003,web
 William W. Cohen,Lidong Bing,2015,nlp
+William W. Cohen,Ni Lao,2015,nlp
+William W. Cohen,William Yang Wang,2015,nlp
 William W. Cohen,Richard C. Wang,2015,nlp
 William W. Cohen,Einat Minkov,2015,nlp
+William W. Cohen,Ndapandula Nakashole,2015,ai
 William W. Cohen,Tom M. Mitchell,2015,ai
 William W. Cohen,Mehdi Samadi,2015,ai
 William W. Cohen,Xinlei Chen,2015,ai
 William W. Cohen,Jayant Krishnamurthy,2015,ai
 William W. Cohen,Partha Pratim Talukdar,2015,ai
+William W. Cohen,William Yang Wang,2015,ai
 William W. Cohen,Alan Ritter,2015,ai
 William W. Cohen,Richard C. Wang,2015,ai
 William W. Cohen,Ni Lao,2015,ai
@@ -32890,6 +33017,8 @@ Lillian Lee,Chenhao Tan,2016,web
 Lillian Lee,Jon M. Kleinberg,2016,web
 Lillian Lee,Fernando C. N. Pereira,1997,nlp
 Lillian Lee,Ido Dagan,1997,nlp
+Lillian Lee,Bo Pang,2014,nlp
+Lillian Lee,Chenhao Tan,2014,nlp
 Lillian Lee,Fernando C. N. Pereira,1993,nlp
 Lillian Lee,Naftali Tishby,1993,nlp
 Lillian Lee,Bo Pang,2005,nlp
@@ -32902,13 +33031,16 @@ Lillian Lee,Chenhao Tan,2011,mlmining
 Lillian Lee,Jie Tang,2011,mlmining
 Lillian Lee,Long Jiang,2011,mlmining
 Lillian Lee,Ming Zhou,2011,mlmining
-Lillian Lee,Cristian Danescu-Niculescu-Mizil,2012,web
-Lillian Lee,Bo Pang,2012,web
-Lillian Lee,Jon M. Kleinberg,2012,web
+Lillian Lee,Cristian Danescu-Niculescu-Mizil,2012,nlp
+Lillian Lee,Justin Cheng,2012,nlp
+Lillian Lee,Jon M. Kleinberg,2012,nlp
 Lillian Lee,Cristian Danescu-Niculescu-Mizil,2009,web
 Lillian Lee,Jon M. Kleinberg,2009,web
 Lillian Lee,Fernando C. N. Pereira,1994,nlp
 Lillian Lee,Ido Dagan,1994,nlp
+Lillian Lee,Cristian Danescu-Niculescu-Mizil,2012,web
+Lillian Lee,Bo Pang,2012,web
+Lillian Lee,Jon M. Kleinberg,2012,web
 Lillian Lee,Oren Kurland,2006,web
 Lillian Lee,Oren Kurland,2004,web
 Lillian Lee,Bo Pang,2006,nlp
@@ -32932,7 +33064,16 @@ Yizhou Sun,Xiaolei Li,2008,database
 Yizhou Sun,Zhijun Yin,2008,database
 Yizhou Sun,Jiawei Han,2008,database
 Yizhou Sun,Tianyi Wu,2008,database
+Yizhou Sun,Zhen Wen,2013,nlp
+Yizhou Sun,Heng Ji,2013,nlp
+Yizhou Sun,Jiawei Han,2013,nlp
 Yizhou Sun,Ting Chen,2014,mlmining
+Yizhou Sun,Juan-Zi Li,2015,mlmining
+Yizhou Sun,Jie Tang,2015,mlmining
+Yizhou Sun,Hongzhi Yin,2015,mlmining
+Yizhou Sun,Ling Chen,2015,mlmining
+Yizhou Sun,Xiaofang Zhou,2015,mlmining
+Yizhou Sun,Yang Yang,2015,mlmining
 Yizhou Sun,Bo Zhao,2009,database
 Yizhou Sun,Chen Chen,2009,database
 Yizhou Sun,Cindy Xide Lin,2009,database
@@ -32980,12 +33121,148 @@ Yizhou Sun,Xifeng Yan,2012,mlmining
 Yizhou Sun,Jing Gao,2012,mlmining
 Yizhou Sun,Jiawei Han,2012,mlmining
 Yizhou Sun,Philip S. Yu,2012,mlmining
-Yizhou Sun,Juan-Zi Li,2015,mlmining
-Yizhou Sun,Jie Tang,2015,mlmining
-Yizhou Sun,Hongzhi Yin,2015,mlmining
-Yizhou Sun,Ling Chen,2015,mlmining
-Yizhou Sun,Xiaofang Zhou,2015,mlmining
-Yizhou Sun,Yang Yang,2015,mlmining
+Yizhou Sun,Bülent Yener,2015,nlp
+Yizhou Sun,Kevin Knight,2015,nlp
+Yizhou Sun,Zhen Wen,2015,nlp
+Yizhou Sun,Chin-Yew Lin,2015,nlp
+Yizhou Sun,Jiawei Han,2015,nlp
+Yizhou Sun,Heng Ji,2015,nlp
+Yizhou Sun,Sujian Li,2015,nlp
+H. V. Jagadish,Alberto O. Mendelzon,1995,database
+H. V. Jagadish,Tova Milo,1995,database
+H. V. Jagadish,Inderpal Singh Mumick,1995,database
+H. V. Jagadish,Abraham Silberschatz,1995,database
+H. V. Jagadish,Rakesh Agrawal,1990,database
+H. V. Jagadish,Beng Chin Ooi,2015,mlmining
+H. V. Jagadish,Sheng Wang,2015,mlmining
+H. V. Jagadish,Kenneth A. Ross,1998,mlmining
+H. V. Jagadish,Stefan Berchtold,1998,mlmining
+H. V. Jagadish,Anastassia Ailamaki,2010,database
+H. V. Jagadish,Laura Chiticariu,2010,database
+H. V. Jagadish,David Maier,2010,database
+H. V. Jagadish,Kristen LeFevre,2010,database
+H. V. Jagadish,M. Tamer Özsu,2010,database
+H. V. Jagadish,Frederick Reiss,2010,database
+H. V. Jagadish,Bin Liu 0002,2010,database
+H. V. Jagadish,Laura M. Haas,2010,database
+H. V. Jagadish,Marianne Winslett,2010,database
+H. V. Jagadish,Vivian Chu,2010,database
+H. V. Jagadish,Beng Chin Ooi,2005,database
+H. V. Jagadish,Stelios Paparizos,2005,database
+H. V. Jagadish,Raymond Chi-Wing Wong,2013,database
+H. V. Jagadish,Caleb Chen Cao,2013,database
+H. V. Jagadish,Cheng Long,2013,database
+H. V. Jagadish,Lei Chen 0002,2013,database
+H. V. Jagadish,Chen Jason Zhang,2013,database
+H. V. Jagadish,Aoying Zhou,2013,database
+H. V. Jagadish,Bin Liu 0002,2009,database
+H. V. Jagadish,Adriane Chapman,2009,database
+H. V. Jagadish,Huahai Yang,2007,ai
+H. V. Jagadish,Yunyao Li,2007,ai
+H. V. Jagadish,Satinder P. Singh,2007,ai
+H. V. Jagadish,Divesh Srivastava,2004,database
+H. V. Jagadish,Susan B. Davidson,2004,database
+H. V. Jagadish,Yuqing Wu,2004,database
+H. V. Jagadish,Yunyao Li,2004,database
+H. V. Jagadish,Stelios Paparizos,2004,database
+H. V. Jagadish,Laks V. S. Lakshmanan,2004,database
+H. V. Jagadish,Cong Yu,2004,database
+H. V. Jagadish,Divesh Srivastava,1999,database
+H. V. Jagadish,Tova Milo,1999,database
+H. V. Jagadish,Laks V. S. Lakshmanan,1999,database
+H. V. Jagadish,S. Muthukrishnan,1999,database
+H. V. Jagadish,Raymond T. Ng,1999,database
+H. V. Jagadish,Nick Koudas,1999,database
+H. V. Jagadish,Michael J. Cafarella,2012,database
+H. V. Jagadish,Arnab Nandi,2012,database
+H. V. Jagadish,Manish Singh,2012,database
+H. V. Jagadish,Cong Yu,2007,database
+H. V. Jagadish,Yunyao Li,2007,database
+H. V. Jagadish,Huahai Yang,2007,database
+H. V. Jagadish,Adriane Chapman,2007,database
+H. V. Jagadish,Jignesh M. Patel,2007,database
+H. V. Jagadish,Arnab Nandi,2007,database
+H. V. Jagadish,Satinder P. Singh,2007,database
+H. V. Jagadish,Zhifeng Bao,2015,database
+H. V. Jagadish,Tok Wang Ling,2015,database
+H. V. Jagadish,Adriane Chapman,2008,database
+H. V. Jagadish,Rajeev Rastogi,1994,database
+H. V. Jagadish,Narain H. Gehani,1994,database
+H. V. Jagadish,S. Sudarshan 0001,1994,database
+H. V. Jagadish,Abraham Silberschatz,1994,database
+H. V. Jagadish,Cong Yu,2003,database
+H. V. Jagadish,Divesh Srivastava,2003,database
+H. V. Jagadish,Leonard Pitt,2003,database
+H. V. Jagadish,Laks V. S. Lakshmanan,2003,database
+H. V. Jagadish,Adriane Chapman,2003,database
+H. V. Jagadish,Yuqing Wu,2003,database
+H. V. Jagadish,Stelios Paparizos,2003,database
+H. V. Jagadish,Jignesh M. Patel,2003,database
+H. V. Jagadish,Kenneth C. Sevcik,1998,database
+H. V. Jagadish,Torsten Suel,1998,database
+H. V. Jagadish,S. Muthukrishnan,1998,database
+H. V. Jagadish,Nick Koudas,1998,database
+H. V. Jagadish,Viswanath Poosala,1998,database
+H. V. Jagadish,Guoliang Li,2016,database
+H. V. Jagadish,Jianhua Feng,2016,database
+H. V. Jagadish,Dong Deng,2016,database
+H. V. Jagadish,Divesh Srivastava,2002,database
+H. V. Jagadish,Sudipto Guha,2002,database
+H. V. Jagadish,Ting Yu,2002,database
+H. V. Jagadish,Laks V. S. Lakshmanan,2002,database
+H. V. Jagadish,Nick Koudas,2002,database
+H. V. Jagadish,Arnab Nandi,2011,database
+H. V. Jagadish,P. P. S. Narayan,1997,database
+H. V. Jagadish,S. Sudarshan 0001,1997,database
+H. V. Jagadish,Flip Korn,1997,database
+H. V. Jagadish,Christos Faloutsos,1997,database
+H. V. Jagadish,S. Seshadri,1997,database
+H. V. Jagadish,Beng Chin Ooi,2006,database
+H. V. Jagadish,Kian-Lee Tan,2006,database
+H. V. Jagadish,Cong Yu,2006,database
+H. V. Jagadish,Yunyao Li,2006,web
+H. V. Jagadish,Rajasekar Krishnamurthy,2006,web
+H. V. Jagadish,Shivakumar Vaithyanathan,2006,web
+H. V. Jagadish,Dragomir R. Radev,2003,web
+H. V. Jagadish,Cong Yu,2003,web
+H. V. Jagadish,Gang Chen,2014,database
+H. V. Jagadish,Wei Lu,2014,database
+H. V. Jagadish,Yanyan Shen,2014,database
+H. V. Jagadish,Caleb Chen Cao,2014,database
+H. V. Jagadish,Fei Li,2014,database
+H. V. Jagadish,Lei Chen 0002,2014,database
+H. V. Jagadish,Beng Chin Ooi,2014,database
+H. V. Jagadish,Chen Jason Zhang,2014,database
+H. V. Jagadish,Cheng Long,2014,database
+H. V. Jagadish,Raymond Chi-Wing Wong,2014,database
+H. V. Jagadish,S. Sudarshan 0001,1993,database
+H. V. Jagadish,Abraham Silberschatz,1993,database
+H. V. Jagadish,Lei Chen 0002,2013,mlmining
+H. V. Jagadish,Caleb Chen Cao,2013,mlmining
+H. V. Jagadish,Yongxin Tong,2013,mlmining
+H. V. Jagadish,Kian-Lee Tan,2001,database
+H. V. Jagadish,Divesh Srivastava,2001,database
+H. V. Jagadish,Nick Koudas,2001,database
+H. V. Jagadish,S. Muthukrishnan,2001,database
+H. V. Jagadish,Beng Chin Ooi,2001,database
+H. V. Jagadish,Luis Gravano,2001,database
+H. V. Jagadish,Panagiotis G. Ipeirotis,2001,database
+H. V. Jagadish,Alberto O. Mendelzon,1996,database
+H. V. Jagadish,Alon Y. Levy,1996,database
+H. V. Jagadish,Divesh Srivastava,1996,database
+H. V. Jagadish,Shaul Dar,1996,database
+H. V. Jagadish,Inderpal Singh Mumick,1996,database
+H. V. Jagadish,Narain H. Gehani,1991,database
+H. V. Jagadish,Oded Shmueli,1992,database
+H. V. Jagadish,Xiaolei Qian,1992,database
+H. V. Jagadish,Narain H. Gehani,1992,database
+H. V. Jagadish,Christos Faloutsos,1992,database
+H. V. Jagadish,Yunyao Li,2008,nlp
+H. V. Jagadish,Sriram Raghavan,2008,nlp
+H. V. Jagadish,Rajasekar Krishnamurthy,2008,nlp
+H. V. Jagadish,Shivakumar Vaithyanathan,2008,nlp
+H. V. Jagadish,Divesh Srivastava,2000,database
+H. V. Jagadish,Nick Koudas,2000,database
 Satinder P. Singh,Nan Jiang,2015,mlmining
 Satinder P. Singh,Honglak Lee,2015,mlmining
 Satinder P. Singh,Richard L. Lewis,2015,mlmining
@@ -33134,10 +33411,15 @@ Eugene Charniak,Mark Johnson,2005,nlp
 Eugene Charniak,Mark Johnson,2004,nlp
 Eugene Charniak,Mark Johnson,2001,nlp
 Eugene Charniak,Byron C. Wallace,2013,nlp
+Eugene Charniak,Stuart M. Shieber,2013,nlp
 Eugene Charniak,Matthew Lease,2006,ai
 Eugene Charniak,Mark Johnson,2006,ai
+Eugene Charniak,David McClosky,2006,ai
 Eugene Charniak,Mark Johnson,2006,nlp
+Eugene Charniak,David McClosky,2006,nlp
 Eugene Charniak,Robert P. Goldman,1991,ai
+Eugene Charniak,Byron C. Wallace,2015,nlp
+Eugene Charniak,David McClosky,2015,nlp
 Jean H. Gallier,Ryan Kennedy,2011,vision
 Jean H. Gallier,Jianbo Shi,2011,vision
 Dimitris N. Metaxas,Chandra Kambhamettu,2009,vision
@@ -33424,9 +33706,15 @@ Pavel A. Pevzner,Süleyman Cenk Sahinalp,1999,theory
 Pavel A. Pevzner,Mike Paterson,1999,theory
 Pavel A. Pevzner,Leslie Ann Goldberg,1999,theory
 Pavel A. Pevzner,Paul W. Goldberg,1999,theory
+Regina Barzilay,Tao Lei,2014,nlp
+Regina Barzilay,Luke Zettlemoyer,2014,nlp
+Regina Barzilay,Amir Globerson,2014,nlp
 Regina Barzilay,Yuan Zhang,2014,nlp
+Regina Barzilay,Nate Kushman,2014,nlp
 Regina Barzilay,Tommi S. Jaakkola,2014,nlp
+Regina Barzilay,Yoav Artzi,2014,nlp
 Regina Barzilay,S. R. K. Branavan,2011,nlp
+Regina Barzilay,Tahira Naseem,2011,nlp
 Regina Barzilay,Edward Benson,2011,nlp
 Regina Barzilay,Harr Chen,2011,nlp
 Regina Barzilay,Aria Haghighi,2011,nlp
@@ -33434,6 +33722,7 @@ Regina Barzilay,David Silver,2011,nlp
 Regina Barzilay,Luke S. Zettlemoyer,2010,nlp
 Regina Barzilay,Mark Johnson,2010,nlp
 Regina Barzilay,S. R. K. Branavan,2010,nlp
+Regina Barzilay,Tahira Naseem,2010,nlp
 Regina Barzilay,Kevin Knight,2010,nlp
 Regina Barzilay,Benjamin Snyder,2010,nlp
 Regina Barzilay,Yoong Keok Lee,2010,nlp
@@ -33449,12 +33738,24 @@ Regina Barzilay,Kathleen McKeown,1999,nlp
 Regina Barzilay,Michael Elhadad,1999,nlp
 Regina Barzilay,David Silver,2011,ai
 Regina Barzilay,S. R. K. Branavan,2011,ai
+Regina Barzilay,Tahira Naseem,2011,ai
+Regina Barzilay,Amir Globerson,2013,nlp
+Regina Barzilay,Yuan Zhang,2013,nlp
+Regina Barzilay,Martin C. Rinard,2013,nlp
+Regina Barzilay,Fan Long,2013,nlp
+Regina Barzilay,Tao Lei,2013,nlp
 Regina Barzilay,Jacob Eisenstein,2008,ai
 Regina Barzilay,Benjamin Snyder,2008,ai
 Regina Barzilay,Randall Davis,2008,ai
+Regina Barzilay,Amir Globerson,2012,nlp
+Regina Barzilay,Tao Lei,2012,nlp
+Regina Barzilay,S. R. K. Branavan,2012,nlp
+Regina Barzilay,Tahira Naseem,2012,nlp
+Regina Barzilay,Nate Kushman,2012,nlp
 Regina Barzilay,S. R. K. Branavan,2007,nlp
 Regina Barzilay,James R. Glass,2007,nlp
 Regina Barzilay,S. R. K. Branavan,2008,nlp
+Regina Barzilay,Tahira Naseem,2008,nlp
 Regina Barzilay,Randall Davis,2008,nlp
 Regina Barzilay,Benjamin Snyder,2008,nlp
 Regina Barzilay,Jacob Eisenstein,2008,nlp
@@ -33462,6 +33763,7 @@ Regina Barzilay,Harr Chen,2008,nlp
 Regina Barzilay,Yoong Keok Lee,2006,nlp
 Regina Barzilay,Benjamin Snyder,2010,mlmining
 Regina Barzilay,Yuan Zhang,2015,nlp
+Regina Barzilay,Tao Lei,2015,nlp
 Regina Barzilay,Tommi S. Jaakkola,2015,nlp
 Pedro F. Felzenszwalb,Deva Ramanan,2008,vision
 Pedro F. Felzenszwalb,David A. McAllester,2008,vision
@@ -33818,61 +34120,6 @@ Subhash Suri,Guru M. Parulkar,2000,networks
 Subhash Suri,John Hershberger,2003,theory
 Subhash Suri,George Varghese,1997,networks
 Subhash Suri,John Hershberger,1993,theory
-Tim Roughgarden,Robert Kleinberg,2012,theory
-Tim Roughgarden,Noam Nisan,2012,theory
-Tim Roughgarden,Hu Fu,2012,theory
-Tim Roughgarden,Ashwinkumar Badanidiyuru,2012,theory
-Tim Roughgarden,Stefano Leonardi,2012,theory
-Tim Roughgarden,Shahar Dobzinski,2012,theory
-Tim Roughgarden,Leonidas J. Guibas,2009,networks
-Tim Roughgarden,Michael Kearns,2013,mlmining
-Tim Roughgarden,Éva Tardos,2000,theory
-Tim Roughgarden,Richard Cole 0001,2014,theory
-Tim Roughgarden,Justin Hsu,2014,theory
-Tim Roughgarden,Zhiwei Steven Wu,2014,theory
-Tim Roughgarden,Zhiyi Huang 0002,2014,theory
-Tim Roughgarden,Aaron Roth,2014,theory
-Tim Roughgarden,Arpita Ghosh,2009,theory
-Tim Roughgarden,Mukund Sundararajan,2009,theory
-Tim Roughgarden,Anupam Gupta,2002,theory
-Tim Roughgarden,Amit Kumar 0001,2002,theory
-Tim Roughgarden,Ho-Lin Chen,2008,theory
-Tim Roughgarden,Shaddin Dughmi,2008,theory
-Tim Roughgarden,Robert Krauthgamer,2008,theory
-Tim Roughgarden,Gregory Valiant,2008,theory
-Tim Roughgarden,Shahar Dobzinski,2008,theory
-Tim Roughgarden,Jason D. Hartline,2008,theory
-Tim Roughgarden,Richard Cole 0001,2006,theory
-Tim Roughgarden,Mukund Sundararajan,2006,theory
-Tim Roughgarden,Yevgeniy Dodis,2006,theory
-Tim Roughgarden,Richard Cole 0001,2003,theory
-Tim Roughgarden,Martin Pál,2003,theory
-Tim Roughgarden,Yevgeniy Dodis,2003,theory
-Tim Roughgarden,Anupam Gupta,2003,theory
-Tim Roughgarden,Amit Kumar 0001,2003,theory
-Tim Roughgarden,Jerry O. Talton,2011,ai
-Tim Roughgarden,Salman Ahmad,2011,ai
-Tim Roughgarden,Scott R. Klemmer,2011,ai
-Tim Roughgarden,Ranjitha Kumar,2011,ai
-Tim Roughgarden,Shaddin Dughmi,2010,theory
-Tim Roughgarden,Aaron Roth,2010,theory
-Tim Roughgarden,Vasilis Syrgkanis,2016,theory
-Tim Roughgarden,Nicole Immorlica,2016,theory
-Tim Roughgarden,Brendan Lucier,2016,theory
-Tim Roughgarden,Michal Feldman,2016,theory
-Tim Roughgarden,Christos H. Papadimitriou,2005,theory
-Tim Roughgarden,Yashar Ganjali,2006,networks
-Tim Roughgarden,Nick McKeown,2006,networks
-Tim Roughgarden,Ashish Goel,2006,networks
-Tim Roughgarden,Shaddin Dughmi,2011,theory
-Tim Roughgarden,Anirban Dasgupta 0001,2004,theory
-Tim Roughgarden,Tom Wexler,2004,theory
-Tim Roughgarden,Elliot Anshelevich,2004,theory
-Tim Roughgarden,Éva Tardos,2004,theory
-Tim Roughgarden,Jon M. Kleinberg,2004,theory
-Tim Roughgarden,Amir Globerson,2015,mlmining
-Tim Roughgarden,Jamie Morgenstern,2015,mlmining
-Tim Roughgarden,David Sontag,2015,mlmining
 Jianbo Shi,Alexander Toshev,2007,vision
 Jianbo Shi,Kostas Daniilidis,2007,vision
 Jianbo Shi,Timothée Cour,2007,vision
@@ -34032,6 +34279,7 @@ Srinivasan Parthasarathy,Chao Wang,2005,mlmining
 Srinivasan Parthasarathy,Ruoming Jin,2005,mlmining
 Srinivasan Parthasarathy,Gagan Agrawal,2005,mlmining
 Srinivasan Parthasarathy,Alessandra Sala,2016,web
+Srinivasan Parthasarathy,Adriano Veloso,2014,web
 Srinivasan Parthasarathy,Wagner Meira Jr.,2014,web
 Srinivasan Parthasarathy,Renato Ferreira,2014,web
 Srinivasan Parthasarathy,Ye Wang,2013,mlmining
@@ -34261,6 +34509,7 @@ Daniel Gildea,Hao Zhang 0010,2005,nlp
 Daniel Gildea,Jiebo Luo,2014,ai
 Daniel Gildea,Henry A. Kautz,2014,ai
 Daniel Gildea,Daniel Jurafsky,2000,nlp
+Daniel Gildea,James F. Allen,2013,nlp
 Daniel Gildea,Daniel Jurafsky,1995,nlp
 Daniel Gildea,Ding Liu,2009,nlp
 Daniel Gildea,Robert C. Moore,2008,nlp
@@ -36098,7 +36347,7 @@ Bernard Chazelle,Jack Snoeyink,1990,theory
 Bernard Chazelle,Micha Sharir,1990,theory
 Bernard Chazelle,Herbert Edelsbrunner,1990,theory
 Bernard Chazelle,Raimund Seidel,1990,theory
-Rada Mihalcea,Cornelia Caragea,2015,nlp
+Rada Mihalcea,Janyce Wiebe,2009,nlp
 Rada Mihalcea,Razvan C. Bunescu,2011,nlp
 Rada Mihalcea,Lei Shi,2010,nlp
 Rada Mihalcea,Mihai Surdeanu,2001,nlp
@@ -36114,13 +36363,14 @@ Rada Mihalcea,Dan I. Moldovan,2000,nlp
 Rada Mihalcea,Marius Pasca,2000,nlp
 Rada Mihalcea,Vasile Rus,2000,nlp
 Rada Mihalcea,Sanda M. Harabagiu,2000,nlp
+Rada Mihalcea,Louis-Philippe Morency,2013,nlp
 Rada Mihalcea,Carlo Strapparava,2006,ai
 Rada Mihalcea,Janyce Wiebe,2007,nlp
 Rada Mihalcea,Janyce Wiebe,2008,nlp
+Rada Mihalcea,Cornelia Caragea,2015,nlp
 Rada Mihalcea,Janyce Wiebe,2006,nlp
 Rada Mihalcea,Zhan Wang,2015,vision
 Rada Mihalcea,Jia Deng,2015,vision
-Rada Mihalcea,Janyce Wiebe,2009,nlp
 Lorie Loeb,Christoph Bregler,2002,graphics
 Lorie Loeb,Bruce Randall Donald,2000,graphics
 Malathi Veeraraghavan,Ian T. Foster,2012,highperf
@@ -36494,24 +36744,6 @@ Brian Noble,Jason Flinn,1997,opsys
 Brian Noble,Dushyanth Narayanan,1997,opsys
 Brian Noble,Mahadev Satyanarayanan,1997,opsys
 Brian Noble,Mark D. Corner,2002,mobile
-Ronald C. Arkin,Damian M. Lyons,2012,robotics
-Ronald C. Arkin,Robin R. Murphy,1992,robotics
-Ronald C. Arkin,Ashwin Ram,1992,robotics
-Ronald C. Arkin,Russell J. Clark,1992,robotics
-Ronald C. Arkin,Maxim Likhachev,2001,robotics
-Ronald C. Arkin,Masahiro Fujita,2001,robotics
-Ronald C. Arkin,Damian M. Lyons,2004,robotics
-Ronald C. Arkin,Zsolt Kira,2004,robotics
-Ronald C. Arkin,Damian M. Lyons,2013,robotics
-Ronald C. Arkin,Damian M. Lyons,2014,robotics
-Ronald C. Arkin,Alexander Stoytchev,2002,robotics
-Ronald C. Arkin,Maxim Likhachev,2002,robotics
-Ronald C. Arkin,Eric Martinson,2002,robotics
-Ronald C. Arkin,Michael Kaess,2002,robotics
-Ronald C. Arkin,Eric Martinson,2003,robotics
-Ronald C. Arkin,Dong-Soo Kwon,2003,robotics
-Ronald C. Arkin,Kenneth J. Waldron,2003,robotics
-Ronald C. Arkin,Muhammad E. Abdallah,2003,robotics
 Vivek Srikumar,Christopher D. Manning,2014,nlp
 Vivek Srikumar,Jonathan Berant,2014,nlp
 Vivek Srikumar,Peter Clark,2014,nlp
@@ -36521,14 +36753,15 @@ Vivek Srikumar,Lev-Arie Ratinov,2008,ai
 Vivek Srikumar,Ming-Wei Chang,2012,vision
 Vivek Srikumar,Ian Endres,2012,vision
 Vivek Srikumar,Derek Hoiem,2012,vision
-Vivek Srikumar,Ming-Wei Chang,2010,mlmining
-Vivek Srikumar,Dan Goldwasser,2010,mlmining
-Vivek Srikumar,Dan Roth,2010,mlmining
+Vivek Srikumar,Dan Roth,2013,nlp
 Vivek Srikumar,Dan Roth,2011,nlp
 Vivek Srikumar,Ari Rappoport,2008,nlp
 Vivek Srikumar,Dan Roth,2008,nlp
 Vivek Srikumar,Roi Reichart,2008,nlp
 Vivek Srikumar,Christopher D. Manning,2014,mlmining
+Vivek Srikumar,Ming-Wei Chang,2010,mlmining
+Vivek Srikumar,Dan Goldwasser,2010,mlmining
+Vivek Srikumar,Dan Roth,2010,mlmining
 Mehran Sahami,Ron Kohavi,1995,mlmining
 Mehran Sahami,Leonidas J. Guibas,2015,mlmining
 Mehran Sahami,Surya Ganguli,2015,mlmining
@@ -37635,12 +37868,15 @@ Hao Li,Linjie Luo,2014,graphics
 Hao Li,Yuru Zhang,2011,robotics
 Hao Li,Jian S. Dai,2011,robotics
 Hao Li,Hui Zhang,2011,robotics
-Hao Li,Aaron Becker,2014,robotics
-Hao Li,Yu Zhou,2014,robotics
-Hao Li,James McLurkin,2014,robotics
 Hao Li,Xiaobu Yuan,2001,robotics
 Hao Li,Simon X. Yang,2001,robotics
 Hao Li,Max Q.-H. Meng,2001,robotics
+Hao Li,Aaron Becker,2014,robotics
+Hao Li,Yu Zhou,2014,robotics
+Hao Li,James McLurkin,2014,robotics
+Hao Li,Mona T. Diab,2013,nlp
+Hao Li,Weiwei Guo,2013,nlp
+Hao Li,Heng Ji,2013,nlp
 Hao Li,Gleb Gusev,2013,graphics
 Hao Li,Jonathan T. Barron,2013,graphics
 Hao Li,Etienne Vouga,2013,graphics
@@ -38129,6 +38365,14 @@ Erik D. Demaine,Neil Gershenfeld,2010,proglang
 Erik D. Demaine,Prosenjit Bose,1999,theory
 Erik D. Demaine,Anna Lubiw,1999,theory
 Erik D. Demaine,Morteza Zadimoghaddam,2013,theory
+Frank M. Shipman III,Catherine C. Marshall,2011,hci
+Frank M. Shipman III,Catherine C. Marshall,2013,web
+Frank M. Shipman III,Gerhard Fischer,1994,hci
+Frank M. Shipman III,Catherine C. Marshall,1995,hci
+Frank M. Shipman III,Thomas P. Moran,1995,hci
+Frank M. Shipman III,Lynn Wilcox,2007,hci
+Frank M. Shipman III,Thea Turner,2007,hci
+Frank M. Shipman III,Andreas Girgensohn,2007,hci
 Zvi M. Kedem,Michael O. Rabin,1993,theory
 Zvi M. Kedem,Krishna V. Palem,1993,theory
 Zvi M. Kedem,Yonatan Aumann,1993,theory
@@ -38221,6 +38465,28 @@ David F. Gleich,C. Seshadhri,2012,mlmining
 David F. Gleich,Jason D. Lee,2014,mlmining
 David F. Gleich,Bartek Rajwa,2014,mlmining
 David F. Gleich,Austin R. Benson,2014,mlmining
+Spyros Blanas,Vuk Ercegovac,2010,database
+Spyros Blanas,Jignesh M. Patel,2010,database
+Spyros Blanas,Jun Rao,2010,database
+Spyros Blanas,Eugene J. Shekita,2010,database
+Spyros Blanas,Yuanyuan Tian,2010,database
+Spyros Blanas,Yinan Li,2011,database
+Spyros Blanas,Per-Åke Larson,2011,database
+Spyros Blanas,Jignesh M. Patel,2011,database
+Spyros Blanas,Arvind Arasu,2013,database
+Spyros Blanas,Raghav Kaushik,2013,database
+Spyros Blanas,Manas Joglekar,2013,database
+Spyros Blanas,Ravishankar Ramamurthy,2013,database
+Spyros Blanas,Donald Kossmann,2013,database
+Spyros Blanas,Ramarathnam Venkatesan,2013,database
+Spyros Blanas,Prasang Upadhyaya,2013,database
+Spyros Blanas,Surendra Byna,2014,database
+Spyros Blanas,Arie Shoshani,2014,database
+Spyros Blanas,Kesheng Wu,2014,database
+Spyros Blanas,Rubao Lee,2016,database
+Spyros Blanas,Yuan Yuan,2016,database
+Spyros Blanas,Xiaoning Ding,2016,database
+Spyros Blanas,Kaibo Wang,2016,database
 Katherine E. Isaacs,Bernd Hamann,2012,highperf
 Katherine E. Isaacs,Abhinav Bhatele,2012,highperf
 Katherine E. Isaacs,Valerio Pascucci,2012,highperf
@@ -39655,9 +39921,12 @@ Stuart M. Shieber,Joe Marks,1997,graphics
 Stuart M. Shieber,Brian Mirtich,1997,graphics
 Stuart M. Shieber,William T. Freeman,1997,graphics
 Stuart M. Shieber,Hanspeter Pfister,1997,graphics
+Stuart M. Shieber,Eugene Charniak,2013,nlp
 Stuart M. Shieber,Yves Schabes,1992,nlp
 Stuart M. Shieber,Joe Marks,1995,graphics
 Stuart M. Shieber,Giorgio Satta,2008,nlp
+Stuart M. Shieber,Alexander M. Rush,2015,nlp
+Stuart M. Shieber,Jason Weston,2015,nlp
 Tyson Condie,Miryung Kim,2016,softeng
 Tyson Condie,Todd D. Millstein,2016,softeng
 Tyson Condie,Carlo Curino,2013,database
@@ -39875,6 +40144,7 @@ Christopher D. Manning,Sepandar D. Kamvar,2003,ai
 Christopher D. Manning,Dan Klein,2003,ai
 Christopher D. Manning,Richard Socher,2014,nlp
 Christopher D. Manning,Peter Clark,2014,nlp
+Christopher D. Manning,Gabor Angeli,2014,nlp
 Christopher D. Manning,Manolis Savva,2014,nlp
 Christopher D. Manning,Jonathan Berant,2014,nlp
 Christopher D. Manning,Vivek Srikumar,2014,nlp
@@ -39885,6 +40155,7 @@ Christopher D. Manning,Mihai Surdeanu,2011,nlp
 Christopher D. Manning,Andrew Y. Ng,2011,nlp
 Christopher D. Manning,Richard Socher,2011,nlp
 Christopher D. Manning,Spence Green,2011,nlp
+Christopher D. Manning,David McClosky,2011,nlp
 Christopher D. Manning,Marie-Catherine de Marneffe,2011,nlp
 Christopher D. Manning,Percy Liang,2015,mlmining
 Christopher D. Manning,Yoram Singer,2003,mlmining
@@ -39915,9 +40186,12 @@ Christopher D. Manning,Dan Jurafsky,2010,nlp
 Christopher D. Manning,Marie-Catherine de Marneffe,2010,nlp
 Christopher D. Manning,Jenny Rose Finkel,2010,nlp
 Christopher D. Manning,Dan Klein,2001,mlmining
+Christopher D. Manning,Andrew Y. Ng,2013,nlp
 Christopher D. Manning,Percy Liang,2013,nlp
 Christopher D. Manning,Richard Socher,2013,nlp
+Christopher D. Manning,Spence Green,2013,nlp
 Christopher D. Manning,Mengqiu Wang,2013,nlp
+Christopher D. Manning,Wanxiang Che,2013,nlp
 Christopher D. Manning,Sida I. Wang,2013,nlp
 Christopher D. Manning,Trond Grenager,2006,nlp
 Christopher D. Manning,Andrew Y. Ng,2006,nlp
@@ -39930,13 +40204,18 @@ Christopher D. Manning,Jeffrey Heer,2014,hci
 Christopher D. Manning,Manolis Savva,2014,hci
 Christopher D. Manning,Spence Green,2014,hci
 Christopher D. Manning,Pat Hanrahan,2014,hci
+Christopher D. Manning,Richard Socher,2012,nlp
+Christopher D. Manning,Andrew Y. Ng,2012,nlp
 Christopher D. Manning,Ramesh Nallapati,2009,nlp
 Christopher D. Manning,Jenny Rose Finkel,2009,nlp
 Christopher D. Manning,David Leo Wright Hall,2009,nlp
 Christopher D. Manning,Jeffrey Heer,2012,hci
 Christopher D. Manning,Sepandar D. Kamvar,2003,web
 Christopher D. Manning,Dan Klein,2002,nlp
+Christopher D. Manning,Richard Socher,2015,nlp
 Christopher D. Manning,Christopher Potts,2015,nlp
+Christopher D. Manning,Gabor Angeli,2015,nlp
+Christopher D. Manning,Manolis Savva,2015,nlp
 Christopher D. Manning,Andrew Y. Ng,2013,mlmining
 Christopher D. Manning,Richard Socher,2013,mlmining
 Christopher D. Manning,Wanxiang Che,2013,ai
@@ -39998,8 +40277,10 @@ Richard E. Korf,Toru Ishida,1991,ai
 Richard E. Korf,Vipin Kumar,1991,ai
 John H. Holland,Stephanie Forrest,1993,mlmining
 Tom M. Mitchell,Kevin Knight,2014,nlp
+Tom M. Mitchell,Ndapandula Nakashole,2014,nlp
 Tom M. Mitchell,Jayant Krishnamurthy,2014,nlp
 Tom M. Mitchell,Partha Pratim Talukdar,2014,nlp
+Tom M. Mitchell,Ashish Vaswani,2014,nlp
 Tom M. Mitchell,Jayant Krishnamurthy,2011,nlp
 Tom M. Mitchell,William W. Cohen,2011,nlp
 Tom M. Mitchell,Ni Lao,2011,nlp
@@ -40023,9 +40304,11 @@ Tom M. Mitchell,William W. Cohen,2004,nlp
 Tom M. Mitchell,Vitor R. Carvalho,2004,nlp
 Tom M. Mitchell,Sebastian Thrun,1993,ai
 Tom M. Mitchell,R. Bharat Rao,2007,ai
+Tom M. Mitchell,Ndapandula Nakashole,2015,nlp
 Tom M. Mitchell,Christos Faloutsos,2015,nlp
 Tom M. Mitchell,Evangelos E. Papalexakis,2015,nlp
 Tom M. Mitchell,Partha Pratim Talukdar,2015,nlp
+Tom M. Mitchell,Ndapandula Nakashole,2015,ai
 Tom M. Mitchell,Mehdi Samadi,2015,ai
 Tom M. Mitchell,William W. Cohen,2015,ai
 Tom M. Mitchell,Xinlei Chen,2015,ai
@@ -40139,6 +40422,7 @@ Gregory Shakhnarovich,Kristen Grauman,2005,vision
 Gregory Shakhnarovich,David Demirdjian,2005,vision
 Gregory Shakhnarovich,Trevor Darrell,2005,vision
 Gregory Shakhnarovich,Ran El-Yaniv,2001,mlmining
+Gregory Shakhnarovich,Karen Livescu,2013,vision
 Gregory Shakhnarovich,Subhransu Maji,2013,vision
 Gregory Shakhnarovich,Dhruv Batra,2013,vision
 Gregory Shakhnarovich,Hanspeter Pfister,2005,graphics
@@ -40591,6 +40875,7 @@ Mario Gerla,Milan Kovacevic,1992,networks
 Mario Gerla,Joseph A. Bannister,1992,networks
 Mario Gerla,Fabio Neri,1997,networks
 Mario Gerla,Emilio Leonardi,1997,networks
+Steven A. Myers,Minaxi Gupta,2011,networks
 Richard Fujimoto,Liang Chen,1992,metrics
 Richard Fujimoto,Ian F. Akyildiz,1992,metrics
 Richard Fujimoto,Ian F. Akyildiz,1991,metrics
@@ -40673,17 +40958,22 @@ John T. Stasko,Shixia Liu,2012,hci
 John T. Stasko,Furu Wei,2012,hci
 John T. Stasko,Kwan-Liu Ma,2012,hci
 John T. Stasko,Jun Xiao,2007,hci
+Chris Callison-Burch,Rui Yan,2014,nlp
 Chris Callison-Burch,Benjamin Van Durme,2011,nlp
 Chris Callison-Burch,William Schuler,2011,nlp
 Chris Callison-Burch,David Talbot,2004,nlp
 Chris Callison-Burch,Miles Osborne,2004,nlp
-Chris Callison-Burch,Benjamin Van Durme,2013,nlp
+Chris Callison-Burch,Philipp Koehn,2013,nlp
 Chris Callison-Burch,Peter Clark,2013,nlp
+Chris Callison-Burch,Benjamin Van Durme,2013,nlp
 Chris Callison-Burch,Philip Resnik,2009,nlp
 Chris Callison-Burch,Yuval Marton,2009,nlp
 Chris Callison-Burch,Philipp Koehn,2007,nlp
 Chris Callison-Burch,Evan Herbst,2007,nlp
 Chris Callison-Burch,Chris Dyer,2007,nlp
+Chris Callison-Burch,Marcello Federico,2007,nlp
+Chris Callison-Burch,Benjamin Van Durme,2015,nlp
+Chris Callison-Burch,Johan Bos,2015,nlp
 George N. Rouskas,Vijay Sivaraman,2009,networks
 George N. Rouskas,Harry G. Perros,1998,metrics
 George N. Rouskas,Lisong Xu,2003,networks
@@ -41596,8 +41886,10 @@ Prasad Raghavendra,David Steurer,2011,theory
 Prasad Raghavendra,David Steurer,2013,theory
 Prasad Raghavendra,Santosh Vempala,2013,theory
 Prasad Raghavendra,James R. Lee,2013,theory
+Tommi S. Jaakkola,Amir Globerson,2014,nlp
 Tommi S. Jaakkola,Regina Barzilay,2014,nlp
 Tommi S. Jaakkola,Yuan Zhang,2014,nlp
+Tommi S. Jaakkola,Tao Lei,2014,nlp
 Tommi S. Jaakkola,Yi Sun,2015,mlmining
 Tommi S. Jaakkola,Amir Globerson,2008,mlmining
 Tommi S. Jaakkola,David Sontag,2008,mlmining
@@ -41638,6 +41930,7 @@ Tommi S. Jaakkola,Lawrence K. Saul,1995,mlmining
 Tommi S. Jaakkola,Amir Globerson,2010,mlmining
 Tommi S. Jaakkola,David Sontag,2010,mlmining
 Tommi S. Jaakkola,Regina Barzilay,2015,nlp
+Tommi S. Jaakkola,Tao Lei,2015,nlp
 Tommi S. Jaakkola,Joseph Keshet,2013,mlmining
 Tommi S. Jaakkola,Tamir Hazan,2013,mlmining
 Tommi S. Jaakkola,Subhransu Maji,2013,mlmining
@@ -42380,6 +42673,7 @@ Yong-Lae Park,Mark R. Cutkosky,2008,robotics
 Yong-Lae Park,Seok Chang Ryu,2008,robotics
 Percy Liang,Michael Shilman,2005,vision
 Percy Liang,Paul A. Viola,2005,vision
+Percy Liang,Jonathan Berant,2014,nlp
 Percy Liang,Michael I. Jordan,2011,nlp
 Percy Liang,Dan Klein,2011,nlp
 Percy Liang,Christopher D. Manning,2015,mlmining
@@ -42403,6 +42697,7 @@ Percy Liang,Michael I. Jordan,2010,mlmining
 Percy Liang,Nati Srebro,2010,mlmining
 Percy Liang,Dan Klein,2010,mlmining
 Percy Liang,Sida I. Wang,2013,mlmining
+Percy Liang,Gabor Angeli,2010,nlp
 Percy Liang,Dan Klein,2010,nlp
 Percy Liang,Taylor Berg-Kirkpatrick,2008,nlp
 Percy Liang,Aria Haghighi,2008,nlp
@@ -42423,6 +42718,8 @@ Percy Liang,Thomas L. Griffiths,2007,mlmining
 Percy Liang,Dan Klein,2007,mlmining
 Percy Liang,Sham M. Kakade,2012,mlmining
 Percy Liang,Daniel J. Hsu,2012,mlmining
+Percy Liang,Ashutosh Saxena,2015,nlp
+Percy Liang,Jonathan Berant,2015,nlp
 Franco P. Preparata,Olivier Devillers,2000,theory
 Franco P. Preparata,Roberto Tamassia,1993,theory
 Franco P. Preparata,Jean-Daniel Boissonnat,1992,robotics
@@ -43111,17 +43408,6 @@ Paul Medvedev,Songwu Lu,2001,networks
 Aloysius K. Mok,E. Allen Emerson,1992,softeng
 Aloysius K. Mok,E. Allen Emerson,1990,logic
 Aloysius K. Mok,A. Prasad Sistla,1990,logic
-David K. Lowenthal,Martin Schulz,2015,highperf
-David K. Lowenthal,Barry Rountree,2015,highperf
-David K. Lowenthal,Xin Yuan,2003,highperf
-David K. Lowenthal,Martin Schulz,2007,highperf
-David K. Lowenthal,Bronis R. de Supinski,2007,highperf
-David K. Lowenthal,Vincent W. Freeh,2007,highperf
-David K. Lowenthal,Barry Rountree,2007,highperf
-David K. Lowenthal,Vincent W. Freeh,2005,highperf
-David K. Lowenthal,Barry Rountree,2006,highperf
-David K. Lowenthal,Vincent W. Freeh,2006,highperf
-David K. Lowenthal,Vincent W. Freeh,1994,opsys
 James A. Reggia,David Horn,1994,mlmining
 James A. Reggia,Eytan Ruppin,1994,mlmining
 James Demmel,Katherine A. Yelick,2009,highperf
@@ -43333,6 +43619,7 @@ Ameet Talwalkar,Ion Stoica,2013,mlmining
 Ameet Talwalkar,Sameer Agarwal,2013,mlmining
 Ameet Talwalkar,Michael I. Jordan,2013,mlmining
 Ameet Talwalkar,Mehryar Mohri,2008,mlmining
+Ameet Talwalkar,Cyril Allauzen,2008,mlmining
 Ameet Talwalkar,Lester W. Mackey,2013,vision
 Ameet Talwalkar,Yadong Mu,2013,vision
 Ameet Talwalkar,Shih-Fu Chang,2013,vision
@@ -43984,10 +44271,14 @@ Stephen S. Intille,Aaron F. Bobick,1995,vision
 Stephen S. Intille,Aaron F. Bobick,1999,vision
 Stephen S. Intille,Aaron F. Bobick,1997,vision
 Stephen S. Intille,James W. Davis,1997,vision
+Kevin Knight,Malte Nuhn,2014,nlp
 Kevin Knight,Tom M. Mitchell,2014,nlp
+Kevin Knight,Yang Gao,2014,nlp
 Kevin Knight,Ulf Hermjakob,2014,nlp
+Kevin Knight,Ashish Vaswani,2014,nlp
 Kevin Knight,Sujith Ravi,2011,nlp
 Kevin Knight,Benjamin Snyder,2010,nlp
+Kevin Knight,Jonathan May,2010,nlp
 Kevin Knight,Jason Baldridge,2010,nlp
 Kevin Knight,Regina Barzilay,2010,nlp
 Kevin Knight,Sujith Ravi,2010,nlp
@@ -43995,8 +44286,11 @@ Kevin Knight,Kenji Yamada,1995,ai
 Kevin Knight,Eduard H. Hovy,1995,ai
 Kevin Knight,Vasileios Hatzivassiloglou,1995,ai
 Kevin Knight,Daniel Marcu,2005,nlp
+Kevin Knight,David R. Traum,2005,nlp
 Kevin Knight,Daniel Marcu,2001,nlp
 Kevin Knight,Kenji Yamada,2001,nlp
+Kevin Knight,Karl Moritz Hermann,2013,nlp
+Kevin Knight,David Chiang,2013,nlp
 Kevin Knight,Vasileios Hatzivassiloglou,1995,nlp
 Kevin Knight,Radu Soricut,2008,nlp
 Kevin Knight,Ulf Hermjakob,2008,nlp
@@ -44007,8 +44301,18 @@ Kevin Knight,Daniel Marcu,2006,nlp
 Kevin Knight,Kenji Yamada,2006,nlp
 Kevin Knight,Philipp Koehn,2003,nlp
 Kevin Knight,Kenji Yamada,2002,nlp
+Kevin Knight,Bülent Yener,2015,nlp
+Kevin Knight,Jonathan May,2015,nlp
+Kevin Knight,Zhen Wen,2015,nlp
 Kevin Knight,Ulf Hermjakob,2015,nlp
+Kevin Knight,Chin-Yew Lin,2015,nlp
+Kevin Knight,Yizhou Sun,2015,nlp
+Kevin Knight,Jiawei Han,2015,nlp
 Kevin Knight,Daniel Marcu,2015,nlp
+Kevin Knight,Chris Dyer,2015,nlp
+Kevin Knight,Heng Ji,2015,nlp
+Kevin Knight,Sujian Li,2015,nlp
+Kevin Knight,Ashish Vaswani,2015,nlp
 Ravi Chugh,Sorin Lerner,2008,proglang
 Ravi Chugh,Ranjit Jhala,2008,proglang
 Ravi Chugh,Nikhil Swamy,2010,proglang
@@ -44165,6 +44469,7 @@ Jia Deng,Li-Jia Li,2009,vision
 Jia Deng,Fei-Fei Li,2012,vision
 Jia Deng,Alexander C. Berg,2012,vision
 Jia Deng,Zhiheng Huang,2013,vision
+Jia Deng,Vicente Ordonez,2013,vision
 Jia Deng,Olga Russakovsky,2013,vision
 Jia Deng,Alexander C. Berg,2013,vision
 Jia Deng,Yejin Choi,2013,vision
@@ -44399,18 +44704,22 @@ Valerio Pascucci,Scott Klasky,2006,highperf
 Valerio Pascucci,Michael E. Papka,2006,highperf
 Valerio Pascucci,Jian Huang,2006,highperf
 Valerio Pascucci,Kwan-Liu Ma,2006,highperf
-Mark Dredze,Emre Kiciman,2016,hci
-Mark Dredze,Munmun De Choudhury,2016,hci
+Mark Dredze,Benjamin Van Durme,2014,nlp
+Mark Dredze,Margaret Mitchell,2014,nlp
+Mark Dredze,Jason Eisner,2014,nlp
 Mark Dredze,Tim Oates,2010,nlp
 Mark Dredze,Koby Crammer,2008,mlmining
 Mark Dredze,Fernando Pereira,2008,mlmining
-Mark Dredze,Koby Crammer,2009,nlp
-Mark Dredze,Alex Kulesza,2009,nlp
+Mark Dredze,Emre Kiciman,2016,hci
+Mark Dredze,Munmun De Choudhury,2016,hci
 Mark Dredze,Koby Crammer,2009,mlmining
 Mark Dredze,Alex Kulesza,2009,mlmining
+Mark Dredze,Koby Crammer,2009,nlp
+Mark Dredze,Alex Kulesza,2009,nlp
 Mark Dredze,John Blitzer,2008,ai
 Mark Dredze,Hanna M. Wallach,2008,ai
 Mark Dredze,Fernando Pereira,2008,ai
+Mark Dredze,Sanjeev Khudanpur,2012,nlp
 Mark Dredze,Nicholas Kushmerick,2006,ai
 Mark Dredze,Tessa A. Lau,2006,ai
 Mark Dredze,John Blitzer,2007,nlp
@@ -44866,14 +45175,15 @@ Endre Szemerédi,Yuan Ma,1995,theory
 Endre Szemerédi,Torsten Suel,1995,theory
 Endre Szemerédi,Frank Thomson Leighton,1995,theory
 Endre Szemerédi,C. Greg Plaxton,1995,theory
+Jason Eisner,Mark Dredze,2014,nlp
 Jason Eisner,Brian Roark,2011,nlp
 Jason Eisner,Sanjeev Khudanpur,2011,nlp
 Jason Eisner,Noah A. Smith,2005,nlp
 Jason Eisner,Adam Stubblefield,2006,security
 Jason Eisner,Noah A. Smith,2004,nlp
 Jason Eisner,Giorgio Satta,1999,nlp
-Jason Eisner,Hal Daumé III,2013,nlp
 Jason Eisner,He He,2013,nlp
+Jason Eisner,Hal Daumé III,2013,nlp
 Jason Eisner,David A. Smith,2009,nlp
 Jason Eisner,David A. Smith,2008,nlp
 Jason Eisner,David A. Smith,2006,nlp
@@ -44998,6 +45308,7 @@ John Kubiatowicz,Mohit Tiwari,2013,security
 John Kubiatowicz,Krste Asanovic,2016,arch
 John Kubiatowicz,Tim Harris 0001,2016,arch
 Hongyuan Zha,Shuang Li,2015,mlmining
+Hongyuan Zha,Yichen Wang,2015,mlmining
 Hongyuan Zha,Manuel Gomez-Rodriguez,2015,mlmining
 Hongyuan Zha,Le Song,2015,mlmining
 Hongyuan Zha,Zhenyue Zhang,2003,mlmining
@@ -45098,6 +45409,7 @@ Hongyuan Zha,Anlei Dong,2016,web
 Hongyuan Zha,Liangda Li,2016,web
 Hongyuan Zha,Yi Chang,2016,web
 Hongyuan Zha,Zhenyue Zhang,2008,vision
+Hongyuan Zha,Min Zhang,2008,vision
 Hongyuan Zha,Bistra N. Dilkina,2014,web
 Hongyuan Zha,Haesun Park,2014,web
 Hongyuan Zha,Yong Yu,2011,web
@@ -45209,6 +45521,8 @@ Maja J. Mataric,Evan Drumwright,2003,robotics
 Maja J. Mataric,Gaurav S. Sukhatme,2003,robotics
 Maja J. Mataric,Andrew Howard,2003,robotics
 Maja J. Mataric,Brian P. Gerkey,2003,robotics
+Alexander M. Rush,Michael Collins,2014,nlp
+Alexander M. Rush,John DeNero,2014,nlp
 Alexander M. Rush,Michael Collins,2011,nlp
 Alexander M. Rush,David Sontag,2015,mlmining
 Alexander M. Rush,Terry Koo,2010,nlp
@@ -45218,95 +45532,9 @@ Alexander M. Rush,David Sontag,2010,nlp
 Alexander M. Rush,Michael Collins,2013,nlp
 Alexander M. Rush,David Sontag,2016,ai
 Alexander M. Rush,Sumit Chopra,2015,nlp
+Alexander M. Rush,Stuart M. Shieber,2015,nlp
 Alexander M. Rush,Jason Weston,2015,nlp
 Saman Amarasinghe,Xiaoqiao Meng,2013,highperf
-Yan Chen,Dan Pei,2009,networks
-Yan Chen,Yao Zhao,2009,networks
-Yan Chen,Yinglian Xie,2009,networks
-Yan Chen,Fang Yu,2009,networks
-Yan Chen,Yuan Yu,2009,networks
-Yan Chen,Qifa Ke,2009,networks
-Yan Chen,Jia Wang,2009,networks
-Yan Chen,Walter S. Lasecki,2016,hci
-Yan Chen,Kai Chen 0005,2015,networks
-Yan Chen,Qunfeng Dong,2015,networks
-Yan Chen,Chengchen Hu,2015,networks
-Yan Chen,Sheng Zhang,2009,vision
-Yan Chen,Terence Sim,2009,vision
-Yan Chen,Yao Zhao,2007,networks
-Yan Chen,Guohan Lu,2007,networks
-Yan Chen,Xing Li,2007,networks
-Yan Chen,Fabián E. Bustamante,2007,networks
-Yan Chen,Sean C. Rhea,2000,arch
-Yan Chen,Westley Weimer,2000,arch
-Yan Chen,David Bindel,2000,arch
-Yan Chen,Ben Y. Zhao,2000,arch
-Yan Chen,Ramakrishna Gummadi,2000,arch
-Yan Chen,John Kubiatowicz,2000,arch
-Yan Chen,Hakim Weatherspoon,2000,arch
-Yan Chen,Zhoujun Li,2013,web
-Yan Chen,Tat-Seng Chua,2013,web
-Yan Chen,Hadi Amiri,2013,web
-Yan Chen,Yao Zhao,2006,networks
-Yan Chen,Yan Gao,2006,networks
-Yan Chen,Gokhan Memik,2006,networks
-Yan Chen,Zhichun Li,2006,networks
-Yan Chen,Ming-Yang Kao,2006,networks
-Yan Chen,Yin Zhang,2006,networks
-Yan Chen,Peter A. Dinda,2006,networks
-Yan Chen,Robert T. Schweller,2006,networks
-Yan Chen,David Bindel,2006,networks
-Yan Chen,Christo Wilson,2010,metrics
-Yan Chen,Ben Y. Zhao,2010,metrics
-Yan Chen,Zhichun Li,2010,metrics
-Yan Chen,Hongyu Gao,2010,metrics
-Yan Chen,Jun Hu,2010,metrics
-Yan Chen,Chengchen Hu,2008,networks
-Yan Chen,Bin Liu 0001,2008,networks
-Yan Chen,Sheng Wang,2008,networks
-Yan Chen,Yu Cheng,2008,networks
-Yan Chen,Hung-Yu Wei,2013,networks
-Yan Chen,K. J. Ray Liu,2013,networks
-Yan Chen,Hongyu Gao,2013,networks
-Yan Chen,Vinod Yegneswaran,2013,networks
-Yan Chen,Phillip A. Porras,2013,networks
-Yan Chen,Ming-Yang Kao,2006,security
-Yan Chen,Zhichun Li,2006,security
-Yan Chen,Ankit Singla,2012,networks
-Yan Chen,Atul Singh,2012,networks
-Yan Chen,Gerome Miklau,2016,database
-Yan Chen,Michael Hay,2016,database
-Yan Chen,Ashwin Machanavajjhala,2016,database
-Yan Chen,Han Hee Song,2004,networks
-Yan Chen,David Bindel,2004,networks
-Yan Chen,Randy H. Katz,2004,networks
-Yan Chen,Xiaofei He,2011,vision
-Yan Chen,Hujun Bao,2011,vision
-Yan Chen,Alok N. Choudhary,2011,security
-Yan Chen,Zhichun Li,2011,security
-Yan Chen,Hongyu Gao,2011,security
-Yan Chen,Vinod Yegneswaran,2011,security
-Yan Chen,Jun Hu,2011,security
-Yan Chen,Phillip A. Porras,2011,security
-Yan Chen,Zhoujun Li,2013,ai
-Yan Chen,Xia Hu,2013,ai
-Yan Chen,Tat-Seng Chua,2013,ai
-Yan Chen,Kai Chen 0005,2010,networks
-Yan Chen,Chuanxiong Guo,2010,networks
-Yan Chen,Haitao Wu,2010,networks
-Yan Chen,Aleksandar Kuzmanovic,2010,networks
-Yan Chen,Zhichun Li,2010,networks
-Yan Chen,Yi-Min Wang,2010,networks
-Yan Chen,Hongyu Gao,2010,networks
-Yan Chen,Bin Liu 0001,2010,networks
-Yan Chen,Ming Zhang,2010,networks
-Yan Chen,Albert G. Greenberg,2010,networks
-Yan Chen,Chengchen Hu,2010,networks
-Yan Chen,Jing Yuan,2010,networks
-Yan Chen,Songwu Lu,2010,networks
-Yan Chen,Junchen Jiang,2010,networks
-Yan Chen,V. N. Venkatakrishnan,2015,security
-Yan Chen,Robert T. Schweller,2004,metrics
 Boon Thau Loo,Chris Olston,2001,database
 Boon Thau Loo,Jennifer Widom,2001,database
 Boon Thau Loo,Wenchao Zhou,2012,networks
@@ -45489,6 +45717,7 @@ Christos H. Papadimitriou,Milena Mihail,1994,logic
 Christos H. Papadimitriou,Mihalis Yannakakis,1993,theory
 Christos H. Papadimitriou,Prabhakar Raghavan,2000,database
 Christos H. Papadimitriou,Jon M. Kleinberg,2000,database
+Mihai Surdeanu,David McClosky,2011,nlp
 Mihai Surdeanu,Christopher D. Manning,2011,nlp
 Mihai Surdeanu,Christopher D. Manning,2010,nlp
 Mihai Surdeanu,Dan Jurafsky,2010,nlp
@@ -46079,6 +46308,9 @@ Dan Jurafsky,Elie Bursztein,2014,hci
 Dan Jurafsky,Nathanael Chambers,2011,nlp
 Dan Jurafsky,Mihai Surdeanu,2010,nlp
 Dan Jurafsky,Christopher D. Manning,2010,nlp
+Dan Jurafsky,Cristian Danescu-Niculescu-Mizil,2013,nlp
+Dan Jurafsky,Jure Leskovec,2013,nlp
+Dan Jurafsky,Christopher Potts,2013,nlp
 Dan Jurafsky,Cristian Danescu-Niculescu-Mizil,2013,web
 Dan Jurafsky,Jure Leskovec,2013,web
 Dan Jurafsky,Robert West 0001,2013,web
@@ -47114,6 +47346,7 @@ Daniel Jurafsky,Andrew Y. Ng,2008,nlp
 Daniel Jurafsky,Nathanael Chambers,2008,nlp
 Daniel Jurafsky,Sharon Goldwater,2008,nlp
 Daniel Jurafsky,Christopher D. Manning,2008,nlp
+Daniel Jurafsky,Brendan O'Connor,2008,nlp
 Daniel Jurafsky,David Leo Wright Hall,2008,nlp
 Leonard J. Schulman,Sridhar Rajagopalan,1996,theory
 Leonard J. Schulman,Vijay V. Vazirani,1999,theory
@@ -47416,7 +47649,9 @@ Dragomir R. Radev,Cong Yu,2003,web
 Dragomir R. Radev,Eric W. Brown 0001,2000,web
 Dragomir R. Radev,Qiaozhu Mei,2010,mlmining
 Dragomir R. Radev,Kathleen McKeown,1995,web
+Dragomir R. Radev,Mona T. Diab,2012,nlp
 Dragomir R. Radev,Vahed Qazvinian,2011,ai
+Dragomir R. Radev,Anthony Fader,2006,nlp
 Dragomir R. Radev,Horacio Saggion,2003,nlp
 Dragomir R. Radev,John Blitzer,2003,nlp
 Dragomir R. Radev,Wai Lam,2003,nlp
@@ -47781,6 +48016,11 @@ Venkatesan Guruswami,Rajmohan Rajaraman,1999,theory
 Venkatesan Guruswami,Swastik Kopparty,2013,theory
 Venkatesan Guruswami,Irit Dinur,2013,theory
 Venkatesan Guruswami,Ali Kemal Sinop,2013,theory
+Amy Ogan,Vincent Aleven,2008,hci
+Amy Ogan,Justine Cassell,2012,hci
+Amy Ogan,Stephen Oney,2013,hci
+Amy Ogan,Jason Wiese,2013,hci
+Amy Ogan,Chris Harrison,2013,hci
 Frank Dellaert,Marin Kobilarov,2015,robotics
 Frank Dellaert,Tom Drummond,2015,robotics
 Frank Dellaert,Luca Carlone,2015,robotics
@@ -48153,6 +48393,8 @@ Trevor N. Mudge,Steven K. Reinhardt,2001,mobile
 Trevor N. Mudge,Krisztián Flautner,2001,mobile
 Trevor N. Mudge,Bruce L. Jacob,1999,arch
 Trevor N. Mudge,Charles Lefurgy,1999,arch
+Steve Harrison,Tejinder K. Judge,2011,hci
+Steve Harrison,Carman Neustaedter,2011,hci
 Bhuvan Urgaonkar,Anand Sivasubramaniam,2012,arch
 Bhuvan Urgaonkar,Di Wang,2012,arch
 Bhuvan Urgaonkar,Mike Spreitzer,2005,metrics
@@ -48759,6 +49001,11 @@ Andrew T. Campbell,Hong Lu,2010,ai
 Andrew T. Campbell,Tanzeem Choudhury,2009,mobile
 Andrew T. Campbell,Nicholas D. Lane,2009,mobile
 Andrew T. Campbell,Hong Lu,2009,mobile
+Hany Farid,Eero P. Simoncelli,1995,vision
+Hany Farid,James F. O'Brien,2014,graphics
+Hany Farid,James F. O'Brien,2012,graphics
+Hany Farid,James F. O'Brien,2013,graphics
+Hany Farid,Edward H. Adelson,1999,vision
 Henry Hoffmann,John D. Lafferty,2015,arch
 Henry Hoffmann,Antonio Filieri,2014,softeng
 Henry Hoffmann,Sasa Misailovic,2011,softeng
@@ -48779,6 +49026,9 @@ Henry Hoffmann,Anant Agarwal,2011,arch
 Henry Hoffmann,Stelios Sidiroglou,2011,arch
 Henry Hoffmann,Martin C. Rinard,2011,arch
 Henry Hoffmann,Michael Carbin,2011,arch
+Michael Collins,John DeNero,2014,nlp
+Michael Collins,Alexander M. Rush,2014,nlp
+Michael Collins,Shay B. Cohen,2014,nlp
 Michael Collins,Alexander M. Rush,2011,nlp
 Michael Collins,Mark Johnson,2004,nlp
 Michael Collins,Dan Klein,2004,nlp
@@ -48796,10 +49046,17 @@ Michael Collins,Alexander M. Rush,2013,nlp
 Michael Collins,Cliff Stein,2013,nlp
 Michael Collins,Trevor Darrell,2007,vision
 Michael Collins,Ariadna Quattoni,2007,vision
+Michael Collins,Dean P. Foster,2012,nlp
+Michael Collins,Karl Stratos,2012,nlp
+Michael Collins,Lyle H. Ungar,2012,nlp
+Michael Collins,Shay B. Cohen,2012,nlp
 Michael Collins,Jun Suzuki,2009,nlp
 Michael Collins,Hideki Isozaki,2009,nlp
 Michael Collins,Xavier Carreras,2009,nlp
+Michael Collins,Karl Stratos,2015,nlp
 Michael Collins,Cliff Stein,2015,nlp
+Michael Collins,Daniel J. Hsu,2015,nlp
+Michael Collins,Slav Petrov,2015,nlp
 Michael Collins,Trevor Darrell,2008,vision
 Michael Collins,Ariadna Quattoni,2008,vision
 Michael Collins,Cliff Stein,2015,ai
@@ -49104,6 +49361,7 @@ Li-Shiuan Peh,Li Shang,2006,arch
 Li-Shiuan Peh,Bradford M. Beckmann,2011,arch
 Li-Shiuan Peh,Steven K. Reinhardt,2011,arch
 Li-Shiuan Peh,Niraj K. Jha,2009,arch
+Raymond J. Mooney,Katrin Erk,2014,nlp
 Raymond J. Mooney,Joseph Reisinger,2011,nlp
 Raymond J. Mooney,Mikhail Bilenko,2003,mlmining
 Raymond J. Mooney,Razvan C. Bunescu,2004,nlp
@@ -49131,6 +49389,8 @@ Raymond J. Mooney,Arindam Banerjee,2005,mlmining
 Raymond J. Mooney,Inderjit S. Dhillon,2005,mlmining
 Raymond J. Mooney,Joydeep Ghosh,2005,mlmining
 Raymond J. Mooney,Razvan C. Bunescu,2005,mlmining
+Raymond J. Mooney,Chris Quirk,2015,nlp
+Raymond J. Mooney,Michel Galley,2015,nlp
 Raymond J. Mooney,Peter Stone,2015,ai
 Raymond J. Mooney,Shiqi Zhang,2015,ai
 Raymond J. Mooney,Sergio Guadarrama,2013,ai
@@ -49470,21 +49730,25 @@ Madhur Tulsiani,Amit Kumar 0001,2011,theory
 D. Martin Swany,Richard Wolski,2002,highperf
 D. Martin Swany,Lori L. Pollock,2005,highperf
 Chitta Baral,Yan Zhang,2001,ai
-Chitta Baral,Matthias Scheutz,2009,robotics
-Chitta Baral,Paul W. Schermerhorn,2009,robotics
+Chitta Baral,Tran Cao Son,2008,ai
 Chitta Baral,Enrico Pontelli,2015,ai
 Chitta Baral,Tran Cao Son,2015,ai
 Chitta Baral,Thomas Eiter,2005,ai
-Chitta Baral,Tran Cao Son,2008,ai
+Chitta Baral,Matthias Scheutz,2009,robotics
+Chitta Baral,Paul W. Schermerhorn,2009,robotics
 Chitta Baral,Jorge Lobo,1997,ai
 Chitta Baral,Tran Cao Son,2004,ai
+Heng Ji,Ziqiang Cao,2014,nlp
 Heng Ji,Yu Hong,2014,nlp
-Heng Ji,Qi Li,2014,nlp
+Heng Ji,Chin-Yew Lin,2014,nlp
 Heng Ji,Sujian Li,2014,nlp
+Heng Ji,Yunbo Cao,2014,nlp
+Heng Ji,Qi Li,2014,nlp
 Heng Ji,Ralph Grishman,2011,nlp
 Heng Ji,Zheng Chen,2011,nlp
 Heng Ji,Chi Wang 0001,2015,ai
 Heng Ji,Wenjie Li,2015,ai
+Heng Ji,Ziqiang Cao,2015,ai
 Heng Ji,Yangqiu Song,2015,ai
 Heng Ji,Dan Roth,2015,ai
 Heng Ji,Sujian Li,2015,ai
@@ -49501,6 +49765,15 @@ Heng Ji,Ralph Grishman,2005,nlp
 Heng Ji,Xiang Ren,2016,database
 Heng Ji,Jiawei Han,2016,database
 Heng Ji,Ahmed El-Kishky,2016,database
+Heng Ji,Weiwei Guo,2013,nlp
+Heng Ji,Zhen Wen,2013,nlp
+Heng Ji,Yizhou Sun,2013,nlp
+Heng Ji,Qi Li,2013,nlp
+Heng Ji,Hao Li,2013,nlp
+Heng Ji,Mona T. Diab,2013,nlp
+Heng Ji,Wen Wang,2013,nlp
+Heng Ji,Jiawei Han,2013,nlp
+Heng Ji,Liang Huang,2013,nlp
 Heng Ji,Fangbo Tao,2013,mlmining
 Heng Ji,Chi Wang 0001,2013,mlmining
 Heng Ji,Bo Zhao,2013,mlmining
@@ -49522,11 +49795,20 @@ Heng Ji,Yizhou Sun,2014,database
 Heng Ji,Xiang Ren,2014,database
 Heng Ji,Jiawei Han,2014,database
 Heng Ji,Jian Wang,2015,nlp
-Heng Ji,Han Wang,2015,nlp
-Heng Ji,Juanzi Li,2015,nlp
-Heng Ji,Yu Hong,2015,nlp
+Heng Ji,Kevin Knight,2015,nlp
 Heng Ji,Shih-Fu Chang,2015,nlp
+Heng Ji,Sujian Li,2015,nlp
+Heng Ji,Baobao Chang,2015,nlp
 Heng Ji,Jie Tang,2015,nlp
+Heng Ji,Yu Hong,2015,nlp
+Heng Ji,Juanzi Li,2015,nlp
+Heng Ji,Chin-Yew Lin,2015,nlp
+Heng Ji,Bülent Yener,2015,nlp
+Heng Ji,Jiawei Han,2015,nlp
+Heng Ji,Zhen Wen,2015,nlp
+Heng Ji,Yizhou Sun,2015,nlp
+Heng Ji,Zhifang Sui,2015,nlp
+Heng Ji,Han Wang,2015,nlp
 Prasun Sinha,Haiyun Luo,2003,mobile
 Prasun Sinha,Ramachandran Ramjee,2003,mobile
 Prasun Sinha,Li Li 0002,2003,mobile
@@ -49635,6 +49917,7 @@ Pierre Baldi,Anders Krogh,1993,mlmining
 Luo Si,Qifan Wang,2013,web
 Luo Si,Mourad Ouzzani,2013,web
 Luo Si,Dan Zhang 0007,2013,web
+Luo Si,Eduard C. Dragut,2013,web
 Luo Si,Qifan Wang,2014,web
 Luo Si,Ning Zhang,2014,web
 Luo Si,Hui Yang 0001,2014,web
@@ -50021,6 +50304,17 @@ Laxmikant V. Kalé,James C. Phillips,2011,highperf
 Laxmikant V. Kalé,Gengbin Zheng,2011,highperf
 Laxmikant V. Kalé,Eric J. Bohm,2011,highperf
 Laxmikant V. Kalé,Nikhil Jain,2011,highperf
+Carolyn Penstein Rosé,Robert E. Kraut,2006,hci
+Carolyn Penstein Rosé,Jaime Arguello,2006,hci
+Carolyn Penstein Rosé,Hao-Chuan Wang,2007,ai
+Carolyn Penstein Rosé,Tsai-Yen Li,2007,ai
+Carolyn Penstein Rosé,Barbara Di Eugenio,1995,nlp
+Carolyn Penstein Rosé,Yi-Chia Wang,2007,nlp
+Carolyn Penstein Rosé,Robert E. Kraut,2007,hci
+Carolyn Penstein Rosé,Susan R. Fussell,2007,hci
+Carolyn Penstein Rosé,Jie Yang 0001,2007,hci
+Carolyn Penstein Rosé,Darren Gergle,2007,hci
+Carolyn Penstein Rosé,Diyi Yang,2015,nlp
 Morteza Dehghani,Matthew Klenk,2008,ai
 Morteza Dehghani,Kenneth D. Forbus,2008,ai
 Morteza Dehghani,Kenneth D. Forbus,2007,ai
@@ -50068,6 +50362,7 @@ Sridhar Mahadevan,Bo Liu,2010,mlmining
 Sridhar Mahadevan,Chang Wang 0001,2009,ai
 Sridhar Mahadevan,Mauro Maggioni,2005,mlmining
 Sridhar Mahadevan,Khashayar Rohanimanesh,2005,mlmining
+Sridhar Mahadevan,Bing Xiang,2015,nlp
 Sridhar Mahadevan,Lidan Wang,2015,nlp
 Sridhar Mahadevan,Bowen Zhou,2015,nlp
 Sridhar Mahadevan,William Dabney,2013,mlmining
@@ -50632,12 +50927,14 @@ Frank Mueller,Eric Rotenberg,2003,arch
 Frank Mueller,David B. Whalley,1992,proglang
 Ralph Grishman,Satoshi Sekine,2011,nlp
 Ralph Grishman,Wei Xu,2011,nlp
+Ralph Grishman,Joel R. Tetreault,2011,nlp
 Ralph Grishman,Heng Ji,2011,nlp
 Ralph Grishman,Heng Ji,2005,nlp
 Ralph Grishman,Satoshi Sekine,2004,nlp
 Ralph Grishman,Heng Ji,2008,nlp
 Ralph Grishman,Heng Ji,2006,nlp
 Ralph Grishman,Satoshi Sekine,2003,nlp
+Ralph Grishman,Barbara Plank,2015,nlp
 Alex C. Snoeren,Kirill Levchenko,2009,networks
 Alex C. Snoeren,Rajesh Gupta,2009,networks
 Alex C. Snoeren,George Varghese,2009,networks
@@ -50762,8 +51059,6 @@ Simon Peter,Paul Barham,2009,opsys
 Simon Peter,Timothy Roscoe,2009,opsys
 Simon Peter,Arvind Krishnamurthy,2016,arch
 Simon Peter,Thomas E. Anderson,2016,arch
-Shrikanth Narayanan,Kevin Knight,2005,nlp
-Shrikanth Narayanan,Daniel Marcu,2005,nlp
 Nora Ayanian,Bhaskar Krishnamachari,2015,robotics
 Nora Ayanian,Mark T. Bolas,2015,robotics
 Nora Ayanian,Cynthia R. Sung,2013,robotics
@@ -51543,6 +51838,14 @@ Beichuan Zhang,Bin Liu 0001,2014,networks
 Beichuan Zhang,Ting Zhang,2014,networks
 Beichuan Zhang,Lixia Zhang 0001,2002,networks
 Beichuan Zhang,Sugih Jamin,2002,networks
+Martin J. Strauss,Ely Porat,2012,theory
+Martin J. Strauss,Ely Porat,2010,theory
+Martin J. Strauss,Anna C. Gilbert,2010,theory
+Martin J. Strauss,Yi Li,2010,theory
+Martin J. Strauss,Anna C. Gilbert,2007,theory
+Martin J. Strauss,Joel A. Tropp,2007,theory
+Martin J. Strauss,Piotr Indyk,2009,database
+Martin J. Strauss,Graham Cormode,2009,database
 Manuel A. Pérez-Quiñones,Jaime Teevan,2015,hci
 Manuel A. Pérez-Quiñones,Yao Wang,2016,hci
 Manuel A. Pérez-Quiñones,John L. Sibert,1996,hci
@@ -51673,9 +51976,6 @@ Oussama Khatib,Roy Featherstone,1999,robotics
 Oussama Khatib,Oliver Brock,1999,robotics
 Oussama Khatib,Alan Bowling,1997,robotics
 Oussama Khatib,Diego C. Ruspini,1997,robotics
-Randall A. Berry,Eytan Modiano,2004,networks
-Randall A. Berry,Peter Marbach,2002,networks
-Randall A. Berry,Charles E. Rohrs,1997,networks
 Ken Goldberg,Jur van den Berg,2015,robotics
 Ken Goldberg,Matei T. Ciocarlie,2015,robotics
 Ken Goldberg,Allison M. Okamura,2015,robotics
@@ -51827,6 +52127,7 @@ J. Andrew Bagnell,Nancy S. Pollard,2012,robotics
 J. Andrew Bagnell,Moslem Kazemi,2012,robotics
 J. Andrew Bagnell,Mihail Pivtoraiko,2012,robotics
 J. Andrew Bagnell,Matthew Zucker,2012,robotics
+J. Andrew Bagnell,Lei Cui,2012,robotics
 J. Andrew Bagnell,Martial Hebert,2012,robotics
 J. Andrew Bagnell,Byron Boots,2016,ai
 J. Andrew Bagnell,Martial Hebert,2016,ai
@@ -51971,6 +52272,15 @@ David J. Crandall,Daniel P. Huttenlocher,2009,web
 David J. Crandall,Jon M. Kleinberg,2009,web
 David J. Crandall,Noah Snavely,2011,vision
 David J. Crandall,Dhruv Batra,2014,vision
+François Gygi,Martin Schulz,2006,highperf
+François Gygi,Erik W. Draeger,2006,highperf
+François Gygi,Bronis R. de Supinski,2006,highperf
+François Gygi,John A. Gunnels,2006,highperf
+François Gygi,Franz Franchetti,2006,highperf
+François Gygi,Erik W. Draeger,2005,highperf
+François Gygi,Franz Franchetti,2005,highperf
+François Gygi,Bronis R. de Supinski,2005,highperf
+François Gygi,John A. Gunnels,2005,highperf
 William T. Freeman,Aaron Hertzmann,2006,graphics
 William T. Freeman,Robert Fergus,2006,graphics
 William T. Freeman,Sam T. Roweis,2006,graphics
@@ -52155,27 +52465,36 @@ Lenore Cowen,Bonnie Berger,1993,theory
 Lenore Cowen,Baruch Awerbuch,1994,theory
 Lenore Cowen,Bonnie Berger,1991,theory
 Luke S. Zettlemoyer,Robert St. Amant,1999,hci
+Luke S. Zettlemoyer,Tom Kwiatkowski,2014,nlp
 Luke S. Zettlemoyer,Daniel S. Weld,2011,nlp
 Luke S. Zettlemoyer,Sharon Goldwater,2011,nlp
 Luke S. Zettlemoyer,Mark Steedman,2011,nlp
 Luke S. Zettlemoyer,Xiao Ling,2011,nlp
 Luke S. Zettlemoyer,Congle Zhang,2011,nlp
 Luke S. Zettlemoyer,Raphael Hoffmann,2011,nlp
+Luke S. Zettlemoyer,Tom Kwiatkowski,2011,nlp
 Luke S. Zettlemoyer,Yoav Artzi,2011,nlp
-Luke S. Zettlemoyer,Sharon Goldwater,2010,nlp
-Luke S. Zettlemoyer,Regina Barzilay,2010,nlp
-Luke S. Zettlemoyer,S. R. K. Branavan,2010,nlp
-Luke S. Zettlemoyer,Mark Steedman,2010,nlp
 Luke S. Zettlemoyer,Brian Milch,2008,mlmining
 Luke S. Zettlemoyer,Leslie Pack Kaelbling,2008,mlmining
+Luke S. Zettlemoyer,Sharon Goldwater,2010,nlp
+Luke S. Zettlemoyer,Regina Barzilay,2010,nlp
+Luke S. Zettlemoyer,Tom Kwiatkowski,2010,nlp
+Luke S. Zettlemoyer,S. R. K. Branavan,2010,nlp
+Luke S. Zettlemoyer,Mark Steedman,2010,nlp
 Luke S. Zettlemoyer,Hanna Pasula,2005,ai
 Luke S. Zettlemoyer,Leslie Pack Kaelbling,2005,ai
 Luke S. Zettlemoyer,Daniel S. Weld,2013,nlp
+Luke S. Zettlemoyer,Svitlana Volkova,2013,nlp
+Luke S. Zettlemoyer,Chris Quirk,2013,nlp
+Luke S. Zettlemoyer,Anthony Fader,2013,nlp
 Luke S. Zettlemoyer,Hannaneh Hajishirzi,2013,nlp
+Luke S. Zettlemoyer,Oren Etzioni,2013,nlp
+Luke S. Zettlemoyer,Tom Kwiatkowski,2013,nlp
 Luke S. Zettlemoyer,Yoav Artzi,2013,nlp
 Luke S. Zettlemoyer,Brian Milch,2008,ai
 Luke S. Zettlemoyer,Kristian Kersting,2008,ai
 Luke S. Zettlemoyer,Leslie Pack Kaelbling,2008,ai
+Luke S. Zettlemoyer,Einat Minkov,2012,nlp
 Luke S. Zettlemoyer,Jeff Huang 0002,2012,hci
 Luke S. Zettlemoyer,Oren Etzioni,2012,hci
 Luke S. Zettlemoyer,Hwee Tou Ng,2008,nlp
@@ -52356,20 +52675,22 @@ Wei Wang,Rong Liu,2015,robotics
 Wei Wang,Bin Wang,2015,database
 Wei Wang,Xiaochun Yang,2015,database
 Wei Wang,Ming Zhou,2004,nlp
-Wei Wang,Ben Liang,2014,networks
-Wei Wang,Baochun Li,2014,networks
+Wei Wang,Janet L. Wiener,2016,database
+Wei Wang,Chuan Xiao,2016,database
 Wei Wang,Alex X. Liu,2016,metrics
 Wei Wang,Yan Li,2010,robotics
 Wei Wang,Xin Xu,2010,robotics
 Wei Wang,Simon X. Yang,2010,robotics
-Wei Wang,Janet L. Wiener,2016,database
-Wei Wang,Chuan Xiao,2016,database
+Wei Wang,Ben Liang,2014,networks
+Wei Wang,Baochun Li,2014,networks
 Wei Wang,Cheng Chen,2011,vision
 Wei Wang,Yuan Yao,2011,vision
 Wei Wang,Yizhou Wang,2011,vision
 Wei Wang,Tingting Jiang,2011,vision
 Wei Wang,Jianqiang Yi,2005,robotics
 Wei Wang,Dongbin Zhao,2005,robotics
+Wei Wang,Tat-Seng Chua,2012,nlp
+Wei Wang,Xiangdong Zhou,2012,nlp
 Wei Wang,Yanghua Xiao,2016,ai
 Wei Wang,Haixun Wang,2016,ai
 Wei Wang,Seung-won Hwang,2016,ai
@@ -52753,6 +53074,7 @@ Sanjoy Dasgupta,Kamalika Chaudhuri,2014,mlmining
 Sanjoy Dasgupta,Yoav Freund,2007,mlmining
 Sanjoy Dasgupta,Daniel J. Hsu,2007,mlmining
 Sanjoy Dasgupta,Claire Monteleoni,2007,mlmining
+Munindar P. Singh,Zhe Zhang,2014,nlp
 Munindar P. Singh,Darrell Woelk,1994,database
 Munindar P. Singh,Daniel G. Bobrow,1997,ai
 Munindar P. Singh,Hiroaki Kitano,1997,ai
@@ -52883,6 +53205,7 @@ Le Song,Hongyuan Zha,2013,mlmining
 Le Song,James M. Rehg,2015,mlmining
 Le Song,Hongyuan Zha,2015,mlmining
 Le Song,Yingyu Liang,2015,mlmining
+Le Song,Yichen Wang,2015,mlmining
 Le Song,Alexander J. Smola,2015,mlmining
 Le Song,Amr Ahmed,2015,mlmining
 Le Song,Fuxin Li,2015,mlmining
@@ -52902,6 +53225,7 @@ Le Song,Jonathan Huang,2009,mlmining
 Le Song,Mladen Kolar,2009,mlmining
 Le Song,Animashree Anandkumar,2011,mlmining
 Le Song,Kenji Fukumizu,2011,mlmining
+Le Song,Ankur P. Parikh,2011,mlmining
 Le Song,Daniel J. Hsu,2011,mlmining
 Le Song,Arthur Gretton,2011,mlmining
 Le Song,Tong Zhang 0001,2011,mlmining
@@ -53020,6 +53344,7 @@ Mark Horowitz,Marc Levoy,2007,graphics
 Mark Horowitz,Andrew Adams,2007,graphics
 Brendan O'Connor,Daniel Jurafsky,2008,nlp
 Brendan O'Connor,Andrew Y. Ng,2008,nlp
+Brendan O'Connor,Noah A. Smith,2013,nlp
 Brendan O'Connor,Dani Yogatama,2011,nlp
 Brendan O'Connor,Chris Dyer,2011,nlp
 Brendan O'Connor,Noah A. Smith,2011,nlp
@@ -53076,11 +53401,6 @@ Lawrence Rauchwerger,Milos Prvulovic,2001,arch
 Lawrence Rauchwerger,Nancy M. Amato,2005,highperf
 Lawrence Rauchwerger,Jeff Huang 0001,2015,softeng
 Lawrence Rauchwerger,Nancy M. Amato,2011,highperf
-Amy Ogan,Vincent Aleven,2008,hci
-Amy Ogan,Justine Cassell,2012,hci
-Amy Ogan,Stephen Oney,2013,hci
-Amy Ogan,Jason Wiese,2013,hci
-Amy Ogan,Chris Harrison,2013,hci
 Jack Snoeyink,Ming C. Lin,2009,robotics
 Jack Snoeyink,Dinesh Manocha,2009,robotics
 Jack Snoeyink,Jur van den Berg,2009,robotics
@@ -53895,6 +54215,24 @@ Patrick Jaillet,Kian Hsiang Low,2016,ai
 Patrick Jaillet,Pradeep Varakantham,2016,ai
 Patrick Jaillet,Mohan S. Kankanhalli,2014,mlmining
 Patrick Jaillet,Trong Nghia Hoang,2014,mlmining
+Ronald C. Arkin,Damian M. Lyons,2012,robotics
+Ronald C. Arkin,Robin R. Murphy,1992,robotics
+Ronald C. Arkin,Ashwin Ram,1992,robotics
+Ronald C. Arkin,Russell J. Clark,1992,robotics
+Ronald C. Arkin,Maxim Likhachev,2001,robotics
+Ronald C. Arkin,Masahiro Fujita,2001,robotics
+Ronald C. Arkin,Damian M. Lyons,2004,robotics
+Ronald C. Arkin,Zsolt Kira,2004,robotics
+Ronald C. Arkin,Damian M. Lyons,2013,robotics
+Ronald C. Arkin,Damian M. Lyons,2014,robotics
+Ronald C. Arkin,Alexander Stoytchev,2002,robotics
+Ronald C. Arkin,Maxim Likhachev,2002,robotics
+Ronald C. Arkin,Eric Martinson,2002,robotics
+Ronald C. Arkin,Michael Kaess,2002,robotics
+Ronald C. Arkin,Eric Martinson,2003,robotics
+Ronald C. Arkin,Dong-Soo Kwon,2003,robotics
+Ronald C. Arkin,Kenneth J. Waldron,2003,robotics
+Ronald C. Arkin,Muhammad E. Abdallah,2003,robotics
 Laura Dabbish,James D. Herbsleb,2014,softeng
 Laura Dabbish,Min Kyung Lee,2015,hci
 Laura Dabbish,Robert Kraut,2012,hci
@@ -54580,6 +54918,36 @@ Guy E. Blelloch,Jeremy T. Fineman,2012,highperf
 Guy E. Blelloch,Julian Shun,2012,highperf
 Guy E. Blelloch,Phillip B. Gibbons,2012,highperf
 Guy E. Blelloch,Girija J. Narlikar,1998,highperf
+Jaime G. Carbonell,Chris Dyer,2014,nlp
+Jaime G. Carbonell,Noah A. Smith,2014,nlp
+Jaime G. Carbonell,Geoffrey J. Gordon,2008,ai
+Jaime G. Carbonell,Brad A. Myers,2008,ai
+Jaime G. Carbonell,Daniel P. Siewiorek,2008,ai
+Jaime G. Carbonell,Stephen F. Smith,2008,ai
+Jaime G. Carbonell,Michael Freed,2008,ai
+Jaime G. Carbonell,Aaron Steinfeld,2008,ai
+Jaime G. Carbonell,Anthony Tomasic,2008,ai
+Jaime G. Carbonell,James A. Hendler,1995,ai
+Jaime G. Carbonell,Paul S. Rosenbloom,1995,ai
+Jaime G. Carbonell,Yan Liu 0002,2005,mlmining
+Jaime G. Carbonell,Eric P. Xing,2005,mlmining
+Jaime G. Carbonell,Jeff G. Schneider,2009,mlmining
+Jaime G. Carbonell,Jian Zhang 0003,2002,mlmining
+Jaime G. Carbonell,Yiming Yang,2002,mlmining
+Jaime G. Carbonell,Yan Liu 0002,2010,ai
+Jaime G. Carbonell,Han Liu,2010,ai
+Jaime G. Carbonell,Xi Chen,2010,ai
+Jaime G. Carbonell,Yiming Yang,1998,web
+Jaime G. Carbonell,Liu Yang,2013,mlmining
+Jaime G. Carbonell,Yan Liu 0002,2007,ai
+Jaime G. Carbonell,Jingrui He,2007,ai
+Jaime G. Carbonell,Jamie Callan,2008,web
+Jaime G. Carbonell,Jaime Arguello,2008,web
+Jaime G. Carbonell,Jade Goldstein,1999,web
+Jaime G. Carbonell,Vibhu O. Mittal,1999,web
+Jaime G. Carbonell,Yaoliang Yu,2014,mlmining
+Jaime G. Carbonell,Suvrit Sra,2014,mlmining
+Jaime G. Carbonell,Jingrui He,2007,mlmining
 Mark Guzdial,Amy Bruckman,2011,hci
 Mark Guzdial,Sarita Yardi,2011,hci
 Daniel P. Miranker,Roberto J. Bayardo Jr.,1995,ai
@@ -54677,6 +55045,10 @@ Qiang Liu,Nageswara S. V. Rao,2012,networks
 Qiang Liu,Xin Wang,2012,networks
 Qiang Liu,Ze Zhao,2012,mobile
 Qiang Liu,Li Cui,2012,mobile
+Qiang Liu,John C. Platt,2012,nlp
+Qiang Liu,Geoffrey Zweig,2012,nlp
+Qiang Liu,Christopher J. C. Burges,2012,nlp
+Qiang Liu,Christopher Meek,2012,nlp
 Qiang Liu,Padhraic Smyth,2010,mlmining
 Qiang Liu,Alexander T. Ihler,2010,mlmining
 Qiang Liu,Arthur U. Asuncion,2010,mlmining
@@ -55115,6 +55487,7 @@ Ramesh Jain,Terry E. Weymouth,1992,robotics
 Ramesh Jain,Terry E. Weymouth,1991,database
 Ramesh Jain,Amarnath Gupta,1991,database
 Ramesh Jain,Amarnath Gupta,2009,database
+Eric Fosler-Lussier,Noemie Elhadad,2014,nlp
 Eric Fosler-Lussier,Kathleen McKeown,2003,nlp
 Eric Fosler-Lussier,Hongyan Jing,2003,nlp
 Eric Fosler-Lussier,Michel Galley,2003,nlp
@@ -56012,6 +56385,9 @@ Mario Szegedy,Sanjeev Arora,1992,theory
 Mario Szegedy,Carsten Lund,1992,theory
 Mario Szegedy,Frédéric Magniez,2005,theory
 Mario Szegedy,Miklos Santha,2005,theory
+Shrikanth Narayanan,Kevin Knight,2005,nlp
+Shrikanth Narayanan,Daniel Marcu,2005,nlp
+Shrikanth Narayanan,David R. Traum,2005,nlp
 Marty Humphrey,Victor R. Lesser,1993,ai
 Marty Humphrey,Victor R. Lesser,1991,ai
 Marty Humphrey,Keith Decker,1991,ai
@@ -56138,6 +56514,9 @@ Yiannis Aloimonos,Yezhou Yang,2011,vision
 Yiannis Aloimonos,Cornelia Fermüller,2011,vision
 Yiannis Aloimonos,Ching Lik Teo,2011,vision
 Yiannis Aloimonos,Cornelia Fermüller,2003,robotics
+Yiannis Aloimonos,Cornelia Fermüller,2015,nlp
+Yiannis Aloimonos,Yezhou Yang,2015,nlp
+Yiannis Aloimonos,Eren Erdal Aksoy,2015,nlp
 Yiannis Aloimonos,Justin Domke,2008,vision
 Yiannis Aloimonos,Cornelia Fermüller,2015,ai
 Yiannis Aloimonos,Yezhou Yang,2015,ai
