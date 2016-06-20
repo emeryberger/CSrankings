@@ -8,7 +8,7 @@ var allowRankingChange = false; /* Can we change the kind of rankings being used
 var maxCoauthors = 30; /* Max co-authors to display. */
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics"];
+var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf"];
 ;
 ;
 var authors; /* The data which will hold the parsed CSV of author info. */
@@ -166,7 +166,7 @@ function activatePL(value) {
     return activateFields(value, plFields);
 }
 function activateSystems(value) {
-    var systemsFields = [3, 4, 5, 6, 7, 15, 18];
+    var systemsFields = [3, 4, 5, 6, 7, 15, 18, 20];
     return activateFields(value, systemsFields);
 }
 function activateAI(value) {
