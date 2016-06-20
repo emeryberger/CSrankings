@@ -97,13 +97,11 @@
 		exactly once, with credit adjusted by splitting evenly
 		across all authors. This approach makes it impossible to
 		boost rankings simply by adding authors to a paper.
-		<em>Average percent</em> computes the harmonic mean
-		percentage of the adjusted publication rate in each
-		area by institution. This approach weighs areas with
-		different publication rates evenly.
-		<em>Total count</em> computes the adjusted sum of all
-		papers published, which effectively emphasizes areas with
-		more publications.
+		<em>Average count</em> computes the geometric mean
+		of the adjusted number of publications in each
+		area by institution.
+		<em>Total count</em> is the adjusted sum of all
+		papers published.
 	      </p>
 	      <p>
 		Click on a triangle (&#9658;) to display names and
@@ -128,7 +126,7 @@
 	      </select>
 		-->
 	      <select id="displayPercent" name="displayPercent" onchange="rank();" >
-		<option value="1" selected="selected">average percent</option>
+		<option value="1" selected="selected">average count</option>
 		<option value="0">total count</option>
 	      </select>
 	      of publications from
