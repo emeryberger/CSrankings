@@ -58,6 +58,7 @@ Swastik Kopparty,Mythili Vutukuru,2006,networks
 Swastik Kopparty,Sergey Yekhanin,2011,theory
 Swastik Kopparty,Shubhangi Saraf,2011,theory
 Swastik Kopparty,Eli Ben-Sasson,2013,theory
+Swastik Kopparty,Ariel Gabizon,2013,theory
 Swastik Kopparty,Or Meir,2013,theory
 Swastik Kopparty,Venkatesan Guruswami,2013,theory
 Swastik Kopparty,Shubhangi Saraf,2013,theory
@@ -342,19 +343,41 @@ Wim van Dam,Dorit Aharonov,2004,theory
 Wim van Dam,Oded Regev,2004,theory
 Dan Boneh,Moni Naor,2008,security
 Dan Boneh,Elie Bursztein,2009,security
+Dan Boneh,Ramarathnam Venkatesan,1998,crypto
+Dan Boneh,Rafail Ostrovsky,2007,crypto
+Dan Boneh,Eyal Kushilevitz,2007,crypto
+Dan Boneh,Marc Joye,2013,security
 Dan Boneh,Nina Taft,2013,security
 Dan Boneh,Stratis Ioannidis,2013,security
 Dan Boneh,Udi Weinsberg,2013,security
 Dan Boneh,Bryan Ford,2013,security
+Dan Boneh,Matthew K. Franklin,1997,crypto
+Dan Boneh,Richard J. Lipton,1997,crypto
+Dan Boneh,Xavier Boyen,2006,crypto
+Dan Boneh,Amit Sahai,2006,crypto
+Dan Boneh,Brent Waters,2006,crypto
 Dan Boneh,David Mazières,2010,security
+Dan Boneh,Ananth Raghunathan,2010,security
 Dan Boneh,Gaurav Aggarwal,2010,security
 Dan Boneh,Andrea Bittau,2010,security
 Dan Boneh,Mark Handley,2010,security
 Dan Boneh,Elie Bursztein,2010,security
 Dan Boneh,Collin Jackson,2010,security
+Dan Boneh,Vinod Vaikuntanathan,2014,crypto
+Dan Boneh,Brent Waters,2014,crypto
+Dan Boneh,Shai Halevi,2014,crypto
+Dan Boneh,Gil Segev,2014,crypto
+Dan Boneh,Sergey Gorbunov,2014,crypto
+Dan Boneh,Craig Gentry,2014,crypto
+Dan Boneh,Mark Zhandry,2014,crypto
 Dan Boneh,Somesh Jha,2006,security
 Dan Boneh,Brent Waters,2006,security
+Dan Boneh,Periklis A. Papakonstantinou,2008,theory
+Dan Boneh,Charles Rackoff,2008,theory
 Dan Boneh,Brent Waters,2008,theory
+Dan Boneh,Nick Howgrave-Graham,1999,crypto
+Dan Boneh,Glenn Durfee,1999,crypto
+Dan Boneh,Matthew K. Franklin,1999,crypto
 Dan Boneh,Gaurav Aggarwal,2012,web
 Dan Boneh,Elie Bursztein,2012,web
 Dan Boneh,John C. Mitchell,2012,web
@@ -362,12 +385,22 @@ Dan Boneh,Jatinder Pal Singh,2012,web
 Dan Boneh,Adam Barth,2007,security
 Dan Boneh,Collin Jackson,2007,security
 Dan Boneh,Ari Juels,2007,security
+Dan Boneh,Igor E. Shparlinski,2001,crypto
+Dan Boneh,Glenn Durfee,2001,crypto
+Dan Boneh,Matthew K. Franklin,2001,crypto
+Dan Boneh,Xavier Boyen,2010,crypto
+Dan Boneh,Shweta Agrawal,2010,crypto
+Dan Boneh,Xavier Boyen,2005,crypto
+Dan Boneh,Craig Gentry,2005,crypto
+Dan Boneh,Brent Waters,2005,crypto
 Dan Boneh,Hovav Shacham,2004,security
 Dan Boneh,Ben Pfaff,2004,security
 Dan Boneh,Mendel Rosenblum,2003,opsys
 Dan Boneh,Ben Pfaff,2003,opsys
 Dan Boneh,Dan R. K. Ports,2008,arch
 Dan Boneh,Carl A. Waldspurger,2008,arch
+Dan Boneh,Ramarathnam Venkatesan,1996,crypto
+Dan Boneh,Richard J. Lipton,1996,crypto
 Dan Boneh,Craig Gentry,2007,theory
 Dan Boneh,Gene Tsudik,2001,security
 Dan Boneh,Collin Jackson,2006,web
@@ -377,6 +410,14 @@ Dan Boneh,David Lie,2000,arch
 Dan Boneh,Chandramohan A. Thekkath,2000,arch
 Dan Boneh,Mark Horowitz,2000,arch
 Dan Boneh,John C. Mitchell,2000,arch
+Dan Boneh,Moni Naor,2000,crypto
+Dan Boneh,Richard J. Lipton,1995,crypto
+Dan Boneh,James Shaw,1995,crypto
+Dan Boneh,Xavier Boyen,2004,crypto
+Dan Boneh,Rafail Ostrovsky,2004,crypto
+Dan Boneh,Hovav Shacham,2004,crypto
+Dan Boneh,Giuseppe Persiano,2004,crypto
+Dan Boneh,Giovanni Di Crescenzo,2004,crypto
 Dan Boneh,Elie Bursztein,2011,security
 Dan Boneh,Andrea Bittau,2014,security
 Dan Boneh,David Mazières,2014,security
@@ -385,6 +426,18 @@ Dan Boneh,David Mazières,2015,security
 Dan Boneh,Joseph Bonneau,2015,security
 Dan Boneh,Andrea Bittau,2015,security
 Dan Boneh,Philippe Golle,2002,security
+Dan Boneh,Ilya Mironov,2015,crypto
+Dan Boneh,Amit Sahai,2015,crypto
+Dan Boneh,Divya Gupta 0001,2015,crypto
+Dan Boneh,Mark Zhandry,2015,crypto
+Dan Boneh,Mariana Raykova 0001,2015,crypto
+Dan Boneh,Shai Halevi,2008,crypto
+Dan Boneh,Rafail Ostrovsky,2008,crypto
+Dan Boneh,Ilya Mironov,2013,crypto
+Dan Boneh,Martín Abadi,2013,crypto
+Dan Boneh,Ananth Raghunathan,2013,crypto
+Dan Boneh,Gil Segev,2013,crypto
+Dan Boneh,Mark Zhandry,2013,crypto
 Dan Boneh,Patrick Lincoln,2012,security
 Dan Boneh,Vinod Yegneswaran,2012,security
 Dan Boneh,Suman Jana,2012,security
@@ -822,34 +875,61 @@ Suresh Venkatasubramanian,Piyush Rai,2009,ai
 Suresh Venkatasubramanian,Hal Daumé III,2009,ai
 Suresh Venkatasubramanian,Rajeev Motwani,1999,theory
 Suresh Venkatasubramanian,Piotr Indyk,1999,theory
-Rafael Pass,Ran Canetti,2007,theory
-Rafael Pass,Abhi Shelat,2007,theory
-Rafael Pass,Joseph Y. Halpern,2013,ai
 Rafael Pass,Huijia Lin,2009,theory
+Rafael Pass,Abhi Shelat,2015,security
+Rafael Pass,Michael Hay,2012,crypto
+Rafael Pass,Mohammad Mahmoody,2012,crypto
+Rafael Pass,Huijia Lin,2012,crypto
+Rafael Pass,Johannes Gehrke,2012,crypto
+Rafael Pass,Abhi Shelat,2006,crypto
+Rafael Pass,Vinod Vaikuntanathan,2006,crypto
 Rafael Pass,Sanjam Garg,2015,theory
 Rafael Pass,Nir Bitansky,2015,theory
 Rafael Pass,Huijia Lin,2015,theory
-Rafael Pass,Alon Rosen,2006,theory
-Rafael Pass,Silvio Micali,2006,theory
-Rafael Pass,Joseph Y. Halpern,2012,ai
-Rafael Pass,Ran Canetti,2010,theory
-Rafael Pass,Huijia Lin,2010,theory
-Rafael Pass,Susan Hohenberger,2014,security
-Rafael Pass,Abhi Shelat,2014,security
-Rafael Pass,Abhi Shelat,2015,security
+Rafael Pass,Alon Rosen,2005,theory
+Rafael Pass,Ilan Komargodski,2014,theory
 Rafael Pass,Alon Rosen,2014,theory
 Rafael Pass,Moni Naor,2014,theory
+Rafael Pass,Tal Moran,2014,theory
 Rafael Pass,Kai-Min Chung,2011,theory
 Rafael Pass,Huijia Lin,2011,theory
+Rafael Pass,Hoeteck Wee,2010,crypto
+Rafael Pass,Huijia Lin,2010,crypto
+Rafael Pass,Tal Rabin,2005,crypto
+Rafael Pass,Boaz Barak,2005,crypto
+Rafael Pass,Ran Canetti,2005,crypto
+Rafael Pass,Abhi Shelat,2005,crypto
+Rafael Pass,Yehuda Lindell,2005,crypto
+Rafael Pass,Joseph Y. Halpern,2012,ai
+Rafael Pass,Susan Hohenberger,2014,security
+Rafael Pass,Steven Myers,2014,security
+Rafael Pass,Abhi Shelat,2014,security
 Rafael Pass,Boaz Barak,2004,theory
+Rafael Pass,Jesper Buus Nielsen,2004,theory
 Rafael Pass,Ran Canetti,2004,theory
 Rafael Pass,Joseph Y. Halpern,2009,ai
+Rafael Pass,Ran Canetti,2007,theory
+Rafael Pass,Abhi Shelat,2007,theory
+Rafael Pass,Joseph Y. Halpern,2013,ai
+Rafael Pass,Alon Rosen,2006,theory
+Rafael Pass,Silvio Micali,2006,theory
 Rafael Pass,Alon Rosen,2003,theory
+Rafael Pass,Ran Canetti,2010,theory
+Rafael Pass,Huijia Lin,2010,theory
+Rafael Pass,Kai-Min Chung,2015,crypto
+Rafael Pass,Huijia Lin,2015,crypto
+Rafael Pass,Elette Boyle,2015,crypto
+Rafael Pass,Vinod Vaikuntanathan,2008,crypto
+Rafael Pass,Amit Sahai,2008,crypto
+Rafael Pass,Omkant Pandey,2008,crypto
 Rafael Pass,Ran Canetti,2013,theory
 Rafael Pass,Kai-Min Chung,2013,theory
 Rafael Pass,Huijia Lin,2013,theory
 Rafael Pass,Rafail Ostrovsky,2013,theory
-Rafael Pass,Alon Rosen,2005,theory
+Rafael Pass,Ivan Visconti,2013,theory
+Rafael Pass,Mohammad Mahmoody,2014,crypto
+Rafael Pass,Per Austrin,2014,crypto
+Rafael Pass,Kai-Min Chung,2014,crypto
 John E. Laird,Scott B. Huffman,1994,ai
 John E. Laird,Paul S. Rosenbloom,1990,ai
 John E. Laird,Scott B. Huffman,1993,ai
@@ -1070,6 +1150,7 @@ Angelos D. Keromytis,Moti Yung,2004,security
 Angelos D. Keromytis,Tal Malkin,2014,security
 Angelos D. Keromytis,Sotiris Ioannidis,2014,security
 Angelos D. Keromytis,Stefano Zanero,2014,security
+Angelos D. Keromytis,Vladimir Kolesnikov,2014,security
 Angelos D. Keromytis,Angelos Stavrou,2005,security
 Angelos D. Keromytis,Angelos Stavrou,2003,security
 Angelos D. Keromytis,Dan Rubenstein,2003,security
@@ -1258,7 +1339,26 @@ Jure Leskovec,Andreas Krause,2007,mlmining
 Jure Leskovec,Carlos Guestrin,2007,mlmining
 Jure Leskovec,Christos Faloutsos,2007,mlmining
 David Cash,Mihir Bellare,2011,security
+David Cash,Sriram Keelveedhi,2011,security
 David Cash,Thomas Ristenpart,2015,security
+David Cash,Eike Kiltz,2011,crypto
+David Cash,Krzysztof Pietrzak,2011,crypto
+David Cash,Abhishek Jain 0002,2011,crypto
+David Cash,Benny Applebaum,2009,crypto
+David Cash,Chris Peikert,2009,crypto
+David Cash,Amit Sahai,2009,crypto
+David Cash,Eike Kiltz,2008,crypto
+David Cash,Victor Shoup,2008,crypto
+David Cash,Stanislaw Jarecki,2013,crypto
+David Cash,Daniel Wichs,2013,crypto
+David Cash,Charanjit S. Jutla,2013,crypto
+David Cash,Hugo Krawczyk,2013,crypto
+David Cash,Michael Steiner,2013,crypto
+David Cash,Mihir Bellare,2010,crypto
+David Cash,Eike Kiltz,2010,crypto
+David Cash,Dennis Hofheinz,2010,crypto
+David Cash,Chris Peikert,2010,crypto
+David Cash,Stefano Tessaro,2014,crypto
 Byron Boots,Brian D. Ziebart,2015,ai
 Byron Boots,Dieter Fox,2015,ai
 Byron Boots,Dieter Fox,2014,robotics
@@ -1841,8 +1941,14 @@ Theodore Kim,Nils Thürey,2008,graphics
 Theodore Kim,Doug L. James,2009,graphics
 Andrew Drucker,Scott Aaronson,2010,theory
 Oded Regev,Ishay Haviv,2007,theory
+Oded Regev,Phong Q. Nguyen,2006,crypto
+Oded Regev,Léo Ducas,2016,crypto
+Oded Regev,Chris Peikert,2016,crypto
+Oded Regev,Ronald Cramer,2016,crypto
 Oded Regev,Irit Dinur,2002,theory
 Oded Regev,Yossi Azar,2002,theory
+Oded Regev,Divesh Aggarwal,2015,theory
+Oded Regev,Noah Stephens-Davidowitz,2015,theory
 Oded Regev,Daniel Dadush,2015,theory
 Oded Regev,Rishi Saket,2015,theory
 Oded Regev,Anup Rao,2008,theory
@@ -1873,13 +1979,20 @@ Oded Regev,Dorit Aharonov,2004,theory
 Oded Regev,Julia Kempe,2004,theory
 Oded Regev,Daniele Micciancio,2004,theory
 Oded Regev,Wim van Dam,2004,theory
+Oded Regev,Chris Peikert,2010,crypto
+Oded Regev,Vadim Lyubashevsky,2010,crypto
+Oded Regev,Phong Q. Nguyen,2010,crypto
+Oded Regev,Nicolas Gama,2010,crypto
 Oded Regev,Stefano Leonardi,1999,theory
 Oded Regev,Yossi Azar,1999,theory
 Oded Regev,Baruch Awerbuch,1999,theory
 Oded Regev,Zvika Brakerski,2013,theory
 Oded Regev,Thomas Vidick,2013,theory
+Oded Regev,Damien Stehlé,2013,theory
 Oded Regev,Chris Peikert,2013,theory
 Oded Regev,Assaf Naor,2013,theory
+Oded Regev,Chris Peikert,2013,crypto
+Oded Regev,Vadim Lyubashevsky,2013,crypto
 Qin Lv,Richard Han,2011,web
 Qin Lv,Shivakant Mishra,2011,web
 Qin Lv,Xue Liu,2011,web
@@ -2590,6 +2703,7 @@ Zhong Shao,Valery Trifonov,2002,logic
 Zhong Shao,Valery Trifonov,2002,proglang
 Zhong Shao,Bratin Saha,2002,proglang
 Zhong Shao,Andrew W. Appel,1993,proglang
+Zhong Shao,Hao Chen,2016,proglang
 Zhong Shao,Jan Hoffmann 0002,2014,proglang
 Zhong Shao,Valery Trifonov,2000,oopfp
 Zhong Shao,Bratin Saha,2000,oopfp
@@ -3442,10 +3556,34 @@ Chris Peikert,Brent Waters,2008,theory
 Chris Peikert,Vinod Vaikuntanathan,2008,theory
 Chris Peikert,Adam D. Smith,2003,theory
 Chris Peikert,Abhi Shelat,2003,theory
+Chris Peikert,Benny Applebaum,2009,crypto
+Chris Peikert,David Cash,2009,crypto
+Chris Peikert,Amit Sahai,2009,crypto
+Chris Peikert,Brent Waters,2008,crypto
+Chris Peikert,Vinod Vaikuntanathan,2008,crypto
+Chris Peikert,Oded Regev,2013,crypto
+Chris Peikert,Daniele Micciancio,2013,crypto
+Chris Peikert,Vadim Lyubashevsky,2013,crypto
 Chris Peikert,Daniel Dadush,2011,theory
 Chris Peikert,Santosh Vempala,2011,theory
+Chris Peikert,Daniele Micciancio,2012,crypto
+Chris Peikert,Mihir Bellare,2012,crypto
+Chris Peikert,Eike Kiltz,2012,crypto
+Chris Peikert,Brent Waters,2012,crypto
+Chris Peikert,Alon Rosen,2012,crypto
+Chris Peikert,Eike Kiltz,2010,crypto
+Chris Peikert,Vadim Lyubashevsky,2010,crypto
+Chris Peikert,Oded Regev,2010,crypto
+Chris Peikert,David Cash,2010,crypto
+Chris Peikert,Dennis Hofheinz,2010,crypto
+Chris Peikert,Brent Waters,2011,crypto
+Chris Peikert,Adam O'Neill,2011,crypto
+Chris Peikert,Damien Stehlé,2013,theory
 Chris Peikert,Zvika Brakerski,2013,theory
 Chris Peikert,Oded Regev,2013,theory
+Chris Peikert,Léo Ducas,2016,crypto
+Chris Peikert,Oded Regev,2016,crypto
+Chris Peikert,Ronald Cramer,2016,crypto
 Shree K. Nayar,Srinivasa G. Narasimhan,2006,graphics
 Shree K. Nayar,Henrik Wann Jensen,2006,graphics
 Shree K. Nayar,Peter N. Belhumeur,2006,graphics
@@ -3554,6 +3692,7 @@ Paul R. Schrater,Nikolaos Papanikolopoulos,2005,robotics
 Paul R. Schrater,Andrew Drenner,2005,robotics
 Paul R. Schrater,Nikolaos Papanikolopoulos,2006,robotics
 Paul R. Schrater,Harini Veeraraghavan,2006,robotics
+Stefan Savage,Scott Yilek,2009,metrics
 Stefan Savage,Hovav Shacham,2009,metrics
 Stefan Savage,Geoffrey M. Voelker,2015,metrics
 Stefan Savage,Lawrence K. Saul,2015,metrics
@@ -3639,6 +3778,7 @@ Stefan Savage,Damon McCoy,2013,metrics
 Stefan Savage,Daniel Turner,2013,metrics
 Stefan Savage,Kirill Levchenko,2013,metrics
 Stefan Savage,Alex C. Snoeren,2013,metrics
+Stefan Savage,Sarah Meiklejohn,2013,metrics
 Stefan Savage,Tadayoshi Kohno,2011,security
 Stefan Savage,Christian Kreibich,2011,security
 Stefan Savage,Márk Félegyházi,2011,security
@@ -4194,25 +4334,60 @@ Carla P. Gomes,Bart Selman,2014,mlmining
 Carla P. Gomes,Ashish Sabharwal,2014,mlmining
 Carla P. Gomes,Bart Selman,2009,ai
 Carla P. Gomes,Ashish Sabharwal,2009,ai
-Leonid Reyzin,Silvio Micali,2001,security
+Leonid Reyzin,Yevgeniy Dodis,2004,crypto
+Leonid Reyzin,Silvio Micali,2004,crypto
+Leonid Reyzin,Adam D. Smith,2004,crypto
+Leonid Reyzin,Hovav Shacham,2004,crypto
+Leonid Reyzin,Anna Lysyanskaya,2004,crypto
+Leonid Reyzin,Gene Itkis,2002,crypto
+Leonid Reyzin,Adam D. Smith,2006,crypto
+Leonid Reyzin,Jonathan Katz,2006,crypto
+Leonid Reyzin,Yevgeniy Dodis,2006,crypto
+Leonid Reyzin,Adam D. Smith,2016,crypto
+Leonid Reyzin,Ran Canetti,2016,crypto
+Leonid Reyzin,Omer Paneth,2016,crypto
+Leonid Reyzin,Sharon Goldberg,2014,networks
 Leonid Reyzin,Rafail Ostrovsky,2010,theory
+Leonid Reyzin,Nishanth Chandran,2010,theory
 Leonid Reyzin,Feifei Li 0001,2006,database
 Leonid Reyzin,George Kollios,2006,database
 Leonid Reyzin,Marios Hadjieleftheriou,2006,database
-Leonid Reyzin,Sharon Goldberg,2014,networks
+Leonid Reyzin,Kazuo Ohta,2001,security
+Leonid Reyzin,Silvio Micali,2001,security
+Leonid Reyzin,Silvio Micali,2001,crypto
+Leonid Reyzin,Gene Itkis,2001,crypto
+Leonid Reyzin,Tal Rabin,2010,crypto
+Leonid Reyzin,Eran Tromer,2010,crypto
+Leonid Reyzin,Sebastian Faust,2010,crypto
+Leonid Reyzin,Vinod Vaikuntanathan,2010,crypto
+Leonid Reyzin,Chi-Jen Lu,2007,crypto
+Leonid Reyzin,Zulfikar Ramzan,2000,crypto
+Leonid Reyzin,Melissa Chase,2005,crypto
+Leonid Reyzin,Anna Lysyanskaya,2005,crypto
+Leonid Reyzin,Tal Malkin,2005,crypto
+Leonid Reyzin,Divesh Aggarwal,2014,crypto
+Leonid Reyzin,Yevgeniy Dodis,2014,crypto
+Leonid Reyzin,Eric Miles,2014,crypto
+Gene Tsudik,Refik Molva,1993,security
 Gene Tsudik,Pierre Baldi,2011,security
 Gene Tsudik,Nitesh Saxena,2010,hci
+Gene Tsudik,Michael Steiner,1996,security
 Gene Tsudik,Michael Waidner,1996,security
 Gene Tsudik,N. Asokan,2015,security
+Gene Tsudik,Matthias Schunter,2015,security
 Gene Tsudik,Ahmad-Reza Sadeghi,2015,security
 Gene Tsudik,Sharad Mehrotra,2004,database
 Gene Tsudik,Giuseppe Ateniese,1998,security
+Gene Tsudik,Michael Steiner,1998,security
 Gene Tsudik,Ian T. Foster,1998,security
 Gene Tsudik,Carl Kesselman,1998,security
 Gene Tsudik,Yongdae Kim,2000,security
 Gene Tsudik,Adrian Perrig,2000,security
 Gene Tsudik,Stanislaw Jarecki,2007,security
 Gene Tsudik,Dan Boneh,2001,security
+Gene Tsudik,Marc Joye,2000,crypto
+Gene Tsudik,Jan Camenisch,2000,crypto
+Gene Tsudik,Giuseppe Ateniese,2000,crypto
 Gene Tsudik,Moti Yung,1997,networks
 Srinivasan Seshan,Matthew K. Mukerjee,2015,robotics
 Srinivasan Seshan,Richard Wang,2015,robotics
@@ -5480,6 +5655,7 @@ Sean Hallgren,Pranab Sen,2006,theory
 Sean Hallgren,Cristopher Moore,2006,theory
 Sean Hallgren,Alexander Russell,2006,theory
 Sean Hallgren,Wim van Dam,2003,theory
+Sean Hallgren,Adam D. Smith,2011,crypto
 Ladislav Kavan,Adam W. Bargteil,2011,graphics
 Ladislav Kavan,Peter-Pike J. Sloan,2011,graphics
 Ladislav Kavan,Olga Sorkine,2012,graphics
@@ -5793,10 +5969,13 @@ C. R. Ramakrishnan,David Scott Warren,1996,proglang
 David Evans,Jonathan Katz,2011,security
 David Evans,Yan Huang,2011,security
 David Evans,Manuvir Das,2006,softeng
+David Evans,Mike Rosulek,2015,crypto
 David Evans,John V. Guttag,1994,softeng
 David Evans,Raimondas Lencevicius,2004,softeng
 David Evans,Yan Huang,2012,security
 David Evans,Jonathan Katz,2012,security
+David Evans,Yan Huang,2013,crypto
+David Evans,Jonathan Katz,2013,crypto
 Michael T. Goodrich,David Eppstein,2009,theory
 Michael T. Goodrich,Michael Mitzenmacher,2012,theory
 Michael T. Goodrich,Roberto Tamassia,2012,theory
@@ -5813,6 +5992,7 @@ Michael T. Goodrich,Jeffrey Scott Vitter,1993,database
 Michael T. Goodrich,Roberto Tamassia,1991,theory
 Michael T. Goodrich,David Eppstein,2011,networks
 Michael T. Goodrich,George Varghese,2011,networks
+Michael T. Goodrich,Roberto Tamassia,2004,crypto
 Michael T. Goodrich,Edgar A. Ramos,1994,theory
 Michael T. Goodrich,Nancy M. Amato,1994,theory
 Michael T. Goodrich,Uzi Vishkin,1994,theory
@@ -7202,10 +7382,35 @@ Jiebo Luo,Yongdong Zhang,2015,vision
 Jiebo Luo,Jianchao Yang,2016,ai
 Jiebo Luo,Hailin Jin,2016,ai
 Jiebo Luo,Yongdong Zhang,2016,ai
+Ari Juels,Martin Wattenberg,1995,mlmining
+Ari Juels,Tadayoshi Kohno,2009,security
+Ari Juels,Shane S. Clark,2009,security
+Ari Juels,Kevin Fu,2009,security
+Ari Juels,Benjamin Ransford,2009,security
+Ari Juels,Alina Oprea,2009,security
+Ari Juels,Karl Koscher,2009,security
+Ari Juels,Farinaz Koushanfar,2013,security
+Ari Juels,Ronald L. Rivest,2013,security
+Ari Juels,Ronald L. Rivest,2013,networks
+Ari Juels,Marcus Peinado,1998,theory
+Ari Juels,Ronald L. Rivest,2003,security
+Ari Juels,Michael Szydlo,2003,security
+Ari Juels,Ronald L. Rivest,2006,security
+Ari Juels,Michael Szydlo,2006,security
+Ari Juels,Moti Yung,2006,security
+Ari Juels,Yevgeniy Dodis,2015,crypto
+Ari Juels,Thomas Ristenpart,2015,crypto
+Ari Juels,Johan Håstad,2000,security
+Ari Juels,Moti Yung,2000,security
+Ari Juels,Dan Boneh,2007,security
+Ari Juels,Burton S. Kaliski Jr.,2007,security
 Ari Juels,Philippe Golle,2004,security
 Ari Juels,Brent Waters,2004,security
 Ari Juels,Edward W. Felten,2004,security
 Ari Juels,J. Alex Halderman,2004,security
+Ari Juels,Rafail Ostrovsky,1997,crypto
+Ari Juels,Michael Luby,1997,crypto
+Ari Juels,Philippe Golle,2004,crypto
 Ari Juels,Yinqian Zhang,2011,security
 Ari Juels,Marten van Dijk,2011,security
 Ari Juels,Alina Oprea,2011,security
@@ -7219,12 +7424,6 @@ Ari Juels,Alina Oprea,2014,security
 Ari Juels,Jonathan Katz,2014,security
 Ari Juels,Michael K. Reiter,2014,security
 Ari Juels,Andrew Miller,2014,security
-Ari Juels,Ronald L. Rivest,2013,networks
-Ari Juels,Marcus Peinado,1998,theory
-Ari Juels,Martin Wattenberg,1995,mlmining
-Ari Juels,Ronald L. Rivest,2003,security
-Ari Juels,Ronald L. Rivest,2006,security
-Ari Juels,Moti Yung,2006,security
 Ari Juels,Bryan Parno,2008,security
 Ari Juels,Roberto Tamassia,2015,security
 Ari Juels,Jean-Pierre Hubaux,2015,security
@@ -7234,18 +7433,10 @@ Ari Juels,Erman Ayday,2015,security
 Ari Juels,Joseph Bonneau,2015,security
 Ari Juels,Ronald L. Rivest,2002,security
 Ari Juels,Markus Jakobsson,2002,security
-Ari Juels,Tadayoshi Kohno,2009,security
-Ari Juels,Shane S. Clark,2009,security
-Ari Juels,Kevin Fu,2009,security
-Ari Juels,Benjamin Ransford,2009,security
-Ari Juels,Alina Oprea,2009,security
-Ari Juels,Karl Koscher,2009,security
 Ari Juels,Elizabeth A. M. Shriver,1998,security
 Ari Juels,Bruce Hillyer,1998,security
 Ari Juels,Markus Jakobsson,1998,security
-Ari Juels,Johan Håstad,2000,security
-Ari Juels,Moti Yung,2000,security
-Ari Juels,Dan Boneh,2007,security
+Ari Juels,Thomas Ristenpart,2014,crypto
 Ari Juels,Nikos Triandopoulos,2012,security
 Ari Juels,Yinqian Zhang,2012,security
 Ari Juels,Marten van Dijk,2012,security
@@ -7254,8 +7445,6 @@ Ari Juels,Emil Stefanov,2012,security
 Ari Juels,Alina Oprea,2012,security
 Ari Juels,Ronald L. Rivest,2012,security
 Ari Juels,Michael K. Reiter,2012,security
-Ari Juels,Farinaz Koushanfar,2013,security
-Ari Juels,Ronald L. Rivest,2013,security
 Ari Juels,Martin Wattenberg,1999,security
 Raman Arora,Nati Srebro,2013,mlmining
 Raman Arora,Jeff A. Bilmes,2015,mlmining
@@ -7317,6 +7506,7 @@ Aravind Srinivasan,Srinivasan Parthasarathy 0002,2004,theory
 Aravind Srinivasan,V. S. Anil Kumar,2011,networks
 Aravind Srinivasan,Srinivasan Parthasarathy 0002,2011,networks
 Aravind Srinivasan,David Zuckerman,1994,theory
+Aravind Srinivasan,Suresh Chari,1994,theory
 Aravind Srinivasan,Pankaj Rohatgi,1994,theory
 Aravind Srinivasan,Yi Li,2000,theory
 Aravind Srinivasan,Philip M. Long,2000,theory
@@ -7342,6 +7532,7 @@ Aravind Srinivasan,Barna Saha,2010,theory
 Aravind Srinivasan,Ola Svensson,2016,theory
 Aravind Srinivasan,Nikhil Bansal,2016,theory
 Aravind Srinivasan,David G. Harris,2016,theory
+Aravind Srinivasan,Suresh Chari,1993,theory
 Aravind Srinivasan,Pankaj Rohatgi,1993,theory
 Aravind Srinivasan,David G. Harris,2013,theory
 Tandy J. Warnow,Bernard M. E. Moret,2001,theory
@@ -7885,6 +8076,7 @@ Kai Li,Anna R. Karlin,1996,opsys
 Kai Li,Garth A. Gibson,1996,opsys
 Kai Li,Yuanyuan Zhou,1996,opsys
 Kai Li,Susan S. Owicki,1991,opsys
+Kai Li,Mark S. Manasse,1991,opsys
 Kai Li,Anna R. Karlin,1991,opsys
 David C. Parkes,Jayant Kalagnanam,2001,ai
 David C. Parkes,Sven Seuken,2008,ai
@@ -8110,7 +8302,19 @@ Ran Canetti,Benny Pinkas,1999,networks
 Ran Canetti,Daniele Micciancio,1999,networks
 Ran Canetti,Moni Naor,1999,networks
 Ran Canetti,Juan A. Garay,1999,networks
+Ran Canetti,Gene Itkis,1999,networks
 Ran Canetti,Rafail Ostrovsky,1999,theory
+Ran Canetti,Shai Halevi,2004,crypto
+Ran Canetti,Jonathan Katz,2004,crypto
+Ran Canetti,Hugo Krawczyk,2002,crypto
+Ran Canetti,Luca Trevisan,2007,crypto
+Ran Canetti,Ronald L. Rivest,2007,crypto
+Ran Canetti,Madhu Sudan,2007,crypto
+Ran Canetti,Salil P. Vadhan,2007,crypto
+Ran Canetti,Hoeteck Wee,2007,crypto
+Ran Canetti,Rafail Ostrovsky,1997,crypto
+Ran Canetti,Cynthia Dwork,1997,crypto
+Ran Canetti,Moni Naor,1997,crypto
 Ran Canetti,Omer Reingold,1998,theory
 Ran Canetti,Mihir Bellare,1998,theory
 Ran Canetti,Oded Goldreich,1998,theory
@@ -8126,25 +8330,66 @@ Ran Canetti,Rafail Ostrovsky,2002,theory
 Ran Canetti,Yehuda Lindell,2002,theory
 Ran Canetti,Amit Sahai,2002,theory
 Ran Canetti,Vinod Vaikuntanathan,2015,theory
+Ran Canetti,Abhishek Jain 0002,2015,theory
+Ran Canetti,Leonid Reyzin,2016,crypto
+Ran Canetti,Omer Paneth,2016,crypto
+Ran Canetti,Adam D. Smith,2016,crypto
+Ran Canetti,Gilad Asharov,2011,crypto
+Ran Canetti,Stanislaw Jarecki,1999,crypto
+Ran Canetti,Tal Rabin,1999,crypto
+Ran Canetti,Rosario Gennaro,1999,crypto
+Ran Canetti,Kobbi Nissim,1999,crypto
+Ran Canetti,Tal Malkin,1999,crypto
+Ran Canetti,Hugo Krawczyk,1999,crypto
+Ran Canetti,Shafi Goldwasser,1999,crypto
 Ran Canetti,J. D. Tygar,2000,security
 Ran Canetti,Dawn Xiaodong Song,2000,security
 Ran Canetti,Adrian Perrig,2000,security
 Ran Canetti,Nir Bitansky,2014,theory
 Ran Canetti,Alon Rosen,2014,theory
+Ran Canetti,Omer Paneth,2014,theory
+Ran Canetti,Marc Fischlin,2001,crypto
+Ran Canetti,Stefan Dziembowski,2001,crypto
+Ran Canetti,Ivan Damgård,2001,crypto
+Ran Canetti,Tal Malkin,2001,crypto
+Ran Canetti,Hugo Krawczyk,2001,crypto
+Ran Canetti,Yuval Ishai,2001,crypto
+Ran Canetti,Nir Bitansky,2010,crypto
+Ran Canetti,Boaz Barak,2005,crypto
+Ran Canetti,Tal Rabin,2005,crypto
+Ran Canetti,Philip D. MacKenzie,2005,crypto
+Ran Canetti,Shai Halevi,2005,crypto
+Ran Canetti,Jonathan Katz,2005,crypto
+Ran Canetti,Yehuda Lindell,2005,crypto
+Ran Canetti,Rafael Pass,2005,crypto
 Ran Canetti,Erez Petrank,2001,theory
 Ran Canetti,Alon Rosen,2001,theory
 Ran Canetti,Joe Kilian,2001,theory
 Ran Canetti,George Kollios,2015,database
+Ran Canetti,Adam O'Neill,2015,database
+Ran Canetti,Hugo Krawczyk,1996,crypto
+Ran Canetti,Mihir Bellare,1996,crypto
 Ran Canetti,Rafael Pass,2007,theory
 Ran Canetti,Abhi Shelat,2007,theory
 Ran Canetti,Boaz Barak,2004,theory
+Ran Canetti,Jesper Buus Nielsen,2004,theory
 Ran Canetti,Rafael Pass,2004,theory
+Ran Canetti,Shai Halevi,2000,crypto
+Ran Canetti,Yevgeniy Dodis,2000,crypto
+Ran Canetti,Eyal Kushilevitz,2000,crypto
+Ran Canetti,Amit Sahai,2000,crypto
 Ran Canetti,Oded Goldreich,1990,theory
 Ran Canetti,Susan Hohenberger,2007,security
 Ran Canetti,Guy N. Rothblum,2011,security
+Ran Canetti,Ben Riva,2011,security
+Ran Canetti,Alessandra Scafuro,2014,security
+Ran Canetti,Abhishek Jain 0002,2014,security
 Ran Canetti,Oded Goldreich,2000,theory
 Ran Canetti,Silvio Micali,2000,theory
 Ran Canetti,Shafi Goldwasser,2000,theory
+Ran Canetti,Shai Halevi,2006,crypto
+Ran Canetti,Michael Steiner,2006,crypto
+Ran Canetti,Amir Herzberg,1994,crypto
 Ran Canetti,Omer Reingold,2002,security
 Ran Canetti,William Aiello,2002,security
 Ran Canetti,Angelos D. Keromytis,2002,security
@@ -8152,6 +8397,16 @@ Ran Canetti,Matt Blaze,2002,security
 Ran Canetti,Steven M. Bellovin,2002,security
 Ran Canetti,Rafael Pass,2010,theory
 Ran Canetti,Huijia Lin,2010,theory
+Ran Canetti,Abhishek Jain 0002,2015,crypto
+Ran Canetti,Yehuda Lindell,2015,crypto
+Ran Canetti,Vipul Goyal,2015,crypto
+Ran Canetti,Eyal Kushilevitz,2003,crypto
+Ran Canetti,Tal Rabin,2003,crypto
+Ran Canetti,Shai Halevi,2003,crypto
+Ran Canetti,Jonathan Katz,2003,crypto
+Ran Canetti,Jesper Buus Nielsen,2003,crypto
+Ran Canetti,Yehuda Lindell,2003,crypto
+Ran Canetti,Hugo Krawczyk,2003,crypto
 Ran Canetti,Michael Ben-Or,1993,theory
 Ran Canetti,Tal Rabin,1993,theory
 Ran Canetti,Oded Goldreich,1993,theory
@@ -8159,6 +8414,13 @@ Ran Canetti,Rafael Pass,2013,theory
 Ran Canetti,Nir Bitansky,2013,theory
 Ran Canetti,Eran Tromer,2013,theory
 Ran Canetti,Huijia Lin,2013,theory
+Ran Canetti,Alessandro Chiesa,2013,theory
+Ran Canetti,Abhishek Jain 0002,2014,crypto
+Ran Canetti,Omer Paneth,2014,crypto
+Ran Canetti,Yael Tauman Kalai,2014,crypto
+Ran Canetti,Nir Bitansky,2014,crypto
+Ran Canetti,Alon Rosen,2014,crypto
+Ran Canetti,Shafi Goldwasser,2014,crypto
 Andrew W. Appel,Zhong Shao,1995,proglang
 Andrew W. Appel,Jérôme Vouillon,2007,proglang
 Andrew W. Appel,Paul-André Melliès,2007,proglang
@@ -8586,6 +8848,7 @@ Daniel J. Hsu,John Langford,2010,mlmining
 Daniel J. Hsu,Animashree Anandkumar,2012,mlmining
 Daniel J. Hsu,Percy Liang,2012,mlmining
 Daniel J. Hsu,Anima Anandkumar,2012,mlmining
+Daniel J. Hsu,Yi-Kai Liu,2012,mlmining
 Daniel J. Hsu,Sham Kakade,2012,mlmining
 Daniel J. Hsu,Dean P. Foster,2012,mlmining
 Daniel J. Hsu,Sham M. Kakade,2012,mlmining
@@ -9241,6 +9504,7 @@ David Lazer,Alex Pentland,2010,hci
 David Lazer,Christo Wilson,2014,metrics
 David Lazer,Alan Mislove,2014,metrics
 Rocco A. Servedio,Philip M. Long,2008,mlmining
+Rocco A. Servedio,Ragesh Jaiswal,2009,theory
 Rocco A. Servedio,Parikshit Gopalan,2009,theory
 Rocco A. Servedio,Ilias Diakonikolas,2009,theory
 Rocco A. Servedio,Ronitt Rubinfeld,2009,theory
@@ -9468,6 +9732,7 @@ Yuan Qi,Stephen E. McLaughlin,2012,security
 Yuan Qi,Cristina Nita-Rotaru,2012,security
 Yuan Qi,Weining Yang,2012,security
 Yuan Qi,Ninghui Li,2012,security
+Yuan Qi,Suresh Chari,2016,ai
 Yuan Qi,Zenglin Xu,2016,ai
 Yuan Qi,Hao Peng,2015,ai
 Yuan Qi,Zenglin Xu,2015,ai
@@ -9761,6 +10026,8 @@ Elaine Shi,Leendert van Doorn,2005,opsys
 Elaine Shi,Pradeep K. Khosla,2005,opsys
 Elaine Shi,Arvind Seshadri,2005,opsys
 Elaine Shi,Adrian Perrig,2005,opsys
+Elaine Shi,S. Dov Gordon,2015,crypto
+Elaine Shi,Feng-Hao Liu,2015,crypto
 Elaine Shi,Michael Hicks,2014,proglang
 Elaine Shi,Jonathan Katz,2014,proglang
 Elaine Shi,Andrew Miller,2014,proglang
@@ -9779,6 +10046,17 @@ Elaine Shi,Srinivas Devadas,2013,security
 Elaine Shi,John Kubiatowicz,2013,security
 Elaine Shi,Dawn Song,2013,security
 Elaine Shi,Mohit Tiwari,2013,security
+Elaine Shi,Amit Sahai,2014,crypto
+Elaine Shi,Abhishek Jain 0002,2014,crypto
+Elaine Shi,Hong-Sheng Zhou,2014,crypto
+Elaine Shi,S. Dov Gordon,2014,crypto
+Elaine Shi,Vipul Goyal,2014,crypto
+Elaine Shi,Jonathan Katz,2014,crypto
+Elaine Shi,Feng-Hao Liu,2014,crypto
+Elaine Shi,Shafi Goldwasser,2014,crypto
+Elaine Shi,Ke Yi,2013,crypto
+Elaine Shi,Roberto Tamassia,2013,crypto
+Elaine Shi,Charalampos Papamanthou,2013,crypto
 John Keyser,Ming C. Lin,2000,robotics
 John Keyser,Dinesh Manocha,2000,robotics
 John Keyser,Ming C. Lin,1999,graphics
@@ -10295,13 +10573,58 @@ Shih-Fu Chang,Arnold W. M. Smeulders,2015,vision
 Shih-Fu Chang,Sanjiv Kumar,2015,vision
 Shih-Fu Chang,Rogério Schmidt Feris,2015,vision
 Shih-Fu Chang,Heng Ji,2015,nlp
+Ronitt Rubinfeld,Ryan O'Donnell,2009,theory
+Ronitt Rubinfeld,Rocco A. Servedio,2009,theory
+Ronitt Rubinfeld,Funda Ergün,1996,theory
+Ronitt Rubinfeld,Ravi Kumar,1996,theory
+Ronitt Rubinfeld,Jon M. Kleinberg,1996,theory
+Ronitt Rubinfeld,Ravi Kumar,1999,theory
+Ronitt Rubinfeld,Funda Ergün,1999,theory
+Ronitt Rubinfeld,Madhu Sudan,1992,theory
+Ronitt Rubinfeld,Richard J. Lipton,1992,theory
 Ronitt Rubinfeld,Noga Alon,2012,theory
 Ronitt Rubinfeld,Dana Ron,2012,theory
 Ronitt Rubinfeld,Krzysztof Onak,2012,theory
+Ronitt Rubinfeld,Funda Ergün,1998,theory
+Ronitt Rubinfeld,Mahesh Viswanathan 0001,1998,theory
+Ronitt Rubinfeld,Ravi Kumar,1998,theory
+Ronitt Rubinfeld,Sampath Kannan,1998,theory
+Ronitt Rubinfeld,Robert E. Schapire,1995,theory
+Ronitt Rubinfeld,Madhu Sudan,1995,theory
+Ronitt Rubinfeld,Yishay Mansour,1995,theory
+Ronitt Rubinfeld,Oded Goldreich,1995,theory
+Ronitt Rubinfeld,Michael J. Kearns,1995,theory
+Ronitt Rubinfeld,Dana Ron,1995,theory
+Ronitt Rubinfeld,Yoav Freund,1995,theory
+Ronitt Rubinfeld,Tugkan Batu,2002,theory
+Ronitt Rubinfeld,Eldar Fischer,2002,theory
+Ronitt Rubinfeld,Sofya Raskhodnikova,2002,theory
+Ronitt Rubinfeld,Ilan Newman,2002,theory
+Ronitt Rubinfeld,Alex Samorodnitsky,2002,theory
+Ronitt Rubinfeld,Eric Lehman,2002,theory
+Ronitt Rubinfeld,Sanjoy Dasgupta,2002,theory
+Ronitt Rubinfeld,Ravi Kumar,2002,theory
+Ronitt Rubinfeld,Rocco A. Servedio,2005,theory
+Ronitt Rubinfeld,Piotr Indyk,2012,database
 Ronitt Rubinfeld,Lance Fortnow,2001,theory
 Ronitt Rubinfeld,Tugkan Batu,2001,theory
 Ronitt Rubinfeld,Ravi Kumar,2001,theory
 Ronitt Rubinfeld,Eldar Fischer,2001,theory
+Ronitt Rubinfeld,Samuel Madden,2015,database
+Ronitt Rubinfeld,Piotr Indyk,2015,database
+Ronitt Rubinfeld,Aditya G. Parameswaran,2015,database
+Ronitt Rubinfeld,Joe Kilian,1991,crypto
+Ronitt Rubinfeld,Peter Gemmell,1991,theory
+Ronitt Rubinfeld,Avi Wigderson,1991,theory
+Ronitt Rubinfeld,Madhu Sudan,1991,theory
+Ronitt Rubinfeld,Richard J. Lipton,1991,theory
+Ronitt Rubinfeld,Bernard Chazelle,2004,theory
+Ronitt Rubinfeld,Ayellet Tal,2004,theory
+Ronitt Rubinfeld,Tugkan Batu,2004,theory
+Ronitt Rubinfeld,Joe Kilian,2004,theory
+Ronitt Rubinfeld,Ravi Kumar,2004,theory
+Ronitt Rubinfeld,Manuel Blum,1990,theory
+Ronitt Rubinfeld,Michael Luby,1990,theory
 Ronitt Rubinfeld,Yishay Mansour,1994,theory
 Ronitt Rubinfeld,Dana Ron,1994,theory
 Ronitt Rubinfeld,Robert E. Schapire,1994,theory
@@ -10322,30 +10645,6 @@ Ronitt Rubinfeld,Ronald Fagin,2000,theory
 Ronitt Rubinfeld,Jon M. Kleinberg,2000,theory
 Ronitt Rubinfeld,Lance Fortnow,2000,theory
 Ronitt Rubinfeld,Prabhakar Raghavan,2000,theory
-Ronitt Rubinfeld,Samuel Madden,2015,database
-Ronitt Rubinfeld,Piotr Indyk,2015,database
-Ronitt Rubinfeld,Aditya G. Parameswaran,2015,database
-Ronitt Rubinfeld,Funda Ergün,1998,theory
-Ronitt Rubinfeld,Mahesh Viswanathan 0001,1998,theory
-Ronitt Rubinfeld,Ravi Kumar,1998,theory
-Ronitt Rubinfeld,Sampath Kannan,1998,theory
-Ronitt Rubinfeld,Robert E. Schapire,1995,theory
-Ronitt Rubinfeld,Madhu Sudan,1995,theory
-Ronitt Rubinfeld,Yishay Mansour,1995,theory
-Ronitt Rubinfeld,Oded Goldreich,1995,theory
-Ronitt Rubinfeld,Michael J. Kearns,1995,theory
-Ronitt Rubinfeld,Dana Ron,1995,theory
-Ronitt Rubinfeld,Yoav Freund,1995,theory
-Ronitt Rubinfeld,Ryan O'Donnell,2009,theory
-Ronitt Rubinfeld,Rocco A. Servedio,2009,theory
-Ronitt Rubinfeld,Tugkan Batu,2002,theory
-Ronitt Rubinfeld,Eldar Fischer,2002,theory
-Ronitt Rubinfeld,Sofya Raskhodnikova,2002,theory
-Ronitt Rubinfeld,Ilan Newman,2002,theory
-Ronitt Rubinfeld,Alex Samorodnitsky,2002,theory
-Ronitt Rubinfeld,Eric Lehman,2002,theory
-Ronitt Rubinfeld,Sanjoy Dasgupta,2002,theory
-Ronitt Rubinfeld,Ravi Kumar,2002,theory
 Ronitt Rubinfeld,Christian Sohler,2003,theory
 Ronitt Rubinfeld,Tugkan Batu,2003,theory
 Ronitt Rubinfeld,Artur Czumaj,2003,theory
@@ -10355,31 +10654,11 @@ Ronitt Rubinfeld,Joe Kilian,2003,theory
 Ronitt Rubinfeld,Funda Ergün,2003,theory
 Ronitt Rubinfeld,Lance Fortnow,2003,theory
 Ronitt Rubinfeld,Avner Magen,2003,theory
-Ronitt Rubinfeld,Funda Ergün,1996,theory
-Ronitt Rubinfeld,Ravi Kumar,1996,theory
-Ronitt Rubinfeld,Jon M. Kleinberg,1996,theory
 Ronitt Rubinfeld,Krzysztof Onak,2010,theory
-Ronitt Rubinfeld,Peter Gemmell,1991,theory
-Ronitt Rubinfeld,Avi Wigderson,1991,theory
-Ronitt Rubinfeld,Madhu Sudan,1991,theory
-Ronitt Rubinfeld,Richard J. Lipton,1991,theory
-Ronitt Rubinfeld,Rocco A. Servedio,2005,theory
-Ronitt Rubinfeld,Bernard Chazelle,2004,theory
-Ronitt Rubinfeld,Ayellet Tal,2004,theory
-Ronitt Rubinfeld,Tugkan Batu,2004,theory
-Ronitt Rubinfeld,Joe Kilian,2004,theory
-Ronitt Rubinfeld,Ravi Kumar,2004,theory
 Ronitt Rubinfeld,Robert E. Schapire,1993,theory
 Ronitt Rubinfeld,Dana Ron,1993,theory
 Ronitt Rubinfeld,Yoav Freund,1993,theory
 Ronitt Rubinfeld,Michael J. Kearns,1993,theory
-Ronitt Rubinfeld,Piotr Indyk,2012,database
-Ronitt Rubinfeld,Ravi Kumar,1999,theory
-Ronitt Rubinfeld,Funda Ergün,1999,theory
-Ronitt Rubinfeld,Madhu Sudan,1992,theory
-Ronitt Rubinfeld,Richard J. Lipton,1992,theory
-Ronitt Rubinfeld,Manuel Blum,1990,theory
-Ronitt Rubinfeld,Michael Luby,1990,theory
 Wojciech Jarosz,Henrik Wann Jensen,2011,graphics
 Wojciech Jarosz,Matthias Zwicker,2011,graphics
 Wojciech Jarosz,Peter-Pike J. Sloan,2011,graphics
@@ -10525,37 +10804,39 @@ Daniel N. Rockmore,Cristopher Moore,2004,theory
 Daniel N. Rockmore,Alexander Russell,2004,theory
 Daniel N. Rockmore,Leonard J. Schulman,2004,theory
 Daniel N. Rockmore,John D. Lafferty,1997,theory
+Shafi Goldwasser,Tali Kaufman,2008,theory
+Shafi Goldwasser,Guy N. Rothblum,2008,theory
+Shafi Goldwasser,Yael Tauman Kalai,2008,theory
+Shafi Goldwasser,Oded Goldreich,1996,theory
+Shafi Goldwasser,Dana Ron,1996,theory
+Shafi Goldwasser,Hao Chen,2007,crypto
+Shafi Goldwasser,Vinod Vaikuntanathan,2007,crypto
+Shafi Goldwasser,Ronald Cramer,2007,crypto
 Shafi Goldwasser,Guy N. Rothblum,2012,theory
 Shafi Goldwasser,Yael Tauman Kalai,2012,theory
-Shafi Goldwasser,Boaz Barak,2001,theory
-Shafi Goldwasser,Oded Goldreich,2001,theory
-Shafi Goldwasser,Yehuda Lindell,2001,theory
-Shafi Goldwasser,Carsten Lund,1994,theory
-Shafi Goldwasser,Mihir Bellare,1994,theory
-Shafi Goldwasser,Alexander Russell,1994,theory
-Shafi Goldwasser,Tali Kaufman,2007,theory
-Shafi Goldwasser,Guy N. Rothblum,2007,theory
-Shafi Goldwasser,Silvio Micali,2000,theory
-Shafi Goldwasser,Oded Goldreich,2000,theory
-Shafi Goldwasser,Ran Canetti,2000,theory
+Shafi Goldwasser,Elette Boyle,2012,theory
+Shafi Goldwasser,Abhishek Jain 0002,2012,theory
+Shafi Goldwasser,Rafail Ostrovsky,1992,crypto
+Shafi Goldwasser,Shai Halevi,1997,crypto
+Shafi Goldwasser,Oded Goldreich,1997,crypto
+Shafi Goldwasser,Daniele Micciancio,1997,crypto
+Shafi Goldwasser,Mihir Bellare,1997,crypto
 Shafi Goldwasser,Eric Lehman,1998,theory
 Shafi Goldwasser,Oded Goldreich,1998,theory
 Shafi Goldwasser,Dana Ron,1998,theory
 Shafi Goldwasser,Oded Goldreich,1995,theory
 Shafi Goldwasser,Mihir Bellare,1995,theory
 Shafi Goldwasser,Mihir Bellare,1997,security
-Shafi Goldwasser,Tali Kaufman,2008,theory
-Shafi Goldwasser,Guy N. Rothblum,2008,theory
-Shafi Goldwasser,Yael Tauman Kalai,2008,theory
-Shafi Goldwasser,Dana Moshkovitz,2006,theory
-Shafi Goldwasser,Oded Goldreich,2006,theory
-Shafi Goldwasser,Vinod Vaikuntanathan,2006,theory
-Shafi Goldwasser,Elan Pavlov,2006,theory
-Shafi Goldwasser,Shmuel Safra,2003,theory
-Shafi Goldwasser,Oded Goldreich,2003,theory
-Shafi Goldwasser,Yael Tauman Kalai,2003,theory
-Shafi Goldwasser,Oded Goldreich,1996,theory
-Shafi Goldwasser,Dana Ron,1996,theory
+Shafi Goldwasser,Ran Canetti,1999,crypto
+Shafi Goldwasser,Yael Tauman Kalai,2005,theory
+Shafi Goldwasser,Silvio Micali,2001,crypto
+Shafi Goldwasser,Marc Fischlin,2001,crypto
+Shafi Goldwasser,Mihir Bellare,2001,crypto
+Shafi Goldwasser,Guy N. Rothblum,2010,crypto
+Shafi Goldwasser,Zvika Brakerski,2010,crypto
+Shafi Goldwasser,Boaz Barak,2001,theory
+Shafi Goldwasser,Oded Goldreich,2001,theory
+Shafi Goldwasser,Yehuda Lindell,2001,theory
 Shafi Goldwasser,Joan Feigenbaum,1991,theory
 Shafi Goldwasser,Mihir Bellare,1991,theory
 Shafi Goldwasser,Oded Goldreich,1991,theory
@@ -10565,18 +10846,55 @@ Shafi Goldwasser,Uriel Feige,1991,theory
 Shafi Goldwasser,Richard Beigel,1991,theory
 Shafi Goldwasser,Shmuel Safra,1991,theory
 Shafi Goldwasser,László Lovász,1991,theory
-Shafi Goldwasser,Yael Tauman Kalai,2005,theory
+Shafi Goldwasser,Leonid A. Levin,1990,crypto
+Shafi Goldwasser,Oded Goldreich,1990,theory
+Shafi Goldwasser,Mihir Bellare,1990,theory
+Shafi Goldwasser,Carsten Lund,1994,theory
+Shafi Goldwasser,Mihir Bellare,1994,theory
+Shafi Goldwasser,Alexander Russell,1994,theory
+Shafi Goldwasser,Tali Kaufman,2007,theory
+Shafi Goldwasser,Guy N. Rothblum,2007,theory
+Shafi Goldwasser,Silvio Micali,2000,theory
+Shafi Goldwasser,Oded Goldreich,2000,theory
+Shafi Goldwasser,Ran Canetti,2000,theory
+Shafi Goldwasser,Oded Goldreich,1994,crypto
+Shafi Goldwasser,Mihir Bellare,1994,crypto
+Shafi Goldwasser,Dana Moshkovitz,2006,theory
+Shafi Goldwasser,Oded Goldreich,2006,theory
+Shafi Goldwasser,Vinod Vaikuntanathan,2006,theory
+Shafi Goldwasser,Elan Pavlov,2006,theory
+Shafi Goldwasser,Shmuel Safra,2003,theory
+Shafi Goldwasser,Oded Goldreich,2003,theory
+Shafi Goldwasser,Yael Tauman Kalai,2003,theory
+Shafi Goldwasser,Guy N. Rothblum,2008,crypto
+Shafi Goldwasser,Yael Tauman Kalai,2008,crypto
+Shafi Goldwasser,Nickolai Zeldovich,2013,crypto
+Shafi Goldwasser,Raluca A. Popa,2013,crypto
+Shafi Goldwasser,Yael Tauman Kalai,2013,crypto
+Shafi Goldwasser,Vinod Vaikuntanathan,2013,crypto
 Shafi Goldwasser,Carsten Lund,1993,theory
 Shafi Goldwasser,Mihir Bellare,1993,theory
 Shafi Goldwasser,Nickolai Zeldovich,2013,theory
 Shafi Goldwasser,Raluca A. Popa,2013,theory
 Shafi Goldwasser,Yael Tauman Kalai,2013,theory
 Shafi Goldwasser,Vinod Vaikuntanathan,2013,theory
-Shafi Goldwasser,Oded Goldreich,1990,theory
-Shafi Goldwasser,Mihir Bellare,1990,theory
+Shafi Goldwasser,Elaine Shi,2014,crypto
+Shafi Goldwasser,Ran Canetti,2014,crypto
+Shafi Goldwasser,Amit Sahai,2014,crypto
+Shafi Goldwasser,Abhishek Jain 0002,2014,crypto
+Shafi Goldwasser,Hong-Sheng Zhou,2014,crypto
+Shafi Goldwasser,S. Dov Gordon,2014,crypto
+Shafi Goldwasser,Vipul Goyal,2014,crypto
+Shafi Goldwasser,Jonathan Katz,2014,crypto
+Shafi Goldwasser,Omer Paneth,2014,crypto
+Shafi Goldwasser,Feng-Hao Liu,2014,crypto
+Shafi Goldwasser,Nir Bitansky,2014,crypto
+Shafi Goldwasser,Alon Rosen,2014,crypto
+Shafi Goldwasser,Yael Tauman Kalai,2014,crypto
 Michael J. Fischer,Ming-Yang Kao,2001,theory
 Michael J. Fischer,Alok Kumar,2001,theory
 Michael J. Fischer,James Aspnes,2001,theory
+Michael J. Fischer,Rebecca N. Wright,1991,crypto
 Michael J. Fischer,Shlomo Moran,1990,theory
 Michael J. Fischer,Steven Rudich,1990,theory
 Michael J. Fischer,Rebecca N. Wright,1993,theory
@@ -11110,6 +11428,8 @@ Matthew K. Farrens,Andrew R. Pleszkun,1991,arch
 Matthew K. Farrens,Allison Woodruff,1991,highperf
 Matthew K. Farrens,Andrew R. Pleszkun,1994,arch
 Matthew K. Farrens,Gary S. Tyson,1994,arch
+Allison Bishop,Daniel Wichs,2016,crypto
+Allison Bishop,Rajmohan Rajaraman,2016,crypto
 Thomas F. Wenisch,Parthasarathy Ranganathan,2013,arch
 Thomas F. Wenisch,Ali G. Saidi,2013,arch
 Thomas F. Wenisch,David Meisner,2013,arch
@@ -11159,8 +11479,16 @@ Thomas F. Wenisch,Colin Blundell,2009,arch
 Thomas F. Wenisch,Peter M. Chen,2016,arch
 Thomas F. Wenisch,Ali G. Saidi,2016,arch
 Thomas F. Wenisch,Steven Pelley,2016,arch
+John Black,Thomas Shrimpton,2002,crypto
+John Black,Phillip Rogaway,2002,crypto
+John Black,Hugo Krawczyk,1999,crypto
+John Black,Shai Halevi,1999,crypto
+John Black,Phillip Rogaway,1999,crypto
 John Black,Mihir Bellare,2001,security
 John Black,Phillip Rogaway,2001,security
+John Black,Phillip Rogaway,2000,crypto
+John Black,Thomas Shrimpton,2005,crypto
+Gordon L. Kindlmann,John H. Reppy,2012,proglang
 Rakesh Vohra,Hamid Nazerzadeh,2008,web
 Rakesh Vohra,Amin Saberi,2008,web
 Rakesh Vohra,Justin Hsu,2016,theory
@@ -11329,6 +11657,7 @@ Han-Wei Shen,Jian Huang,2006,highperf
 Han-Wei Shen,Michael E. Papka,2006,highperf
 Han-Wei Shen,Kwan-Liu Ma,2006,highperf
 Han-Wei Shen,Tom Peterka,2014,highperf
+Michael O. Rabin,Yonatan Aumann,1999,crypto
 Michael O. Rabin,Rocco A. Servedio,2007,logic
 Michael O. Rabin,Joe Kilian,2003,theory
 Michael O. Rabin,Silvio Micali,2003,theory
@@ -11899,11 +12228,53 @@ William K. Robertson,Christopher Krügel,2004,security
 William K. Robertson,Giovanni Vigna,2004,security
 William K. Robertson,Engin Kirda,2014,security
 William K. Robertson,Engin Kirda,2013,security
+Russell Impagliazzo,Avi Wigderson,2009,theory
+Russell Impagliazzo,Valentine Kabanets,2009,theory
+Russell Impagliazzo,Jeff Edmonds,1996,theory
+Russell Impagliazzo,Ragesh Jaiswal,2007,crypto
+Russell Impagliazzo,Valentine Kabanets,2007,crypto
+Russell Impagliazzo,Toniann Pitassi,1992,theory
+Russell Impagliazzo,Paul Beame,1992,theory
+Russell Impagliazzo,Pavel Pudlák,1992,theory
 Russell Impagliazzo,Ramamohan Paturi,2012,theory
 Russell Impagliazzo,Shachar Lovett,2012,theory
 Russell Impagliazzo,Paul Beame,2012,theory
 Russell Impagliazzo,Raghu Meka,2012,theory
 Russell Impagliazzo,David Zuckerman,2012,theory
+Russell Impagliazzo,Toniann Pitassi,1999,theory
+Russell Impagliazzo,Ronen Shaltiel,1999,theory
+Russell Impagliazzo,Eli Ben-Sasson,1999,theory
+Russell Impagliazzo,Avi Wigderson,1999,theory
+Russell Impagliazzo,Dima Grigoriev,1999,theory
+Russell Impagliazzo,Giovanni Di Crescenzo,1999,theory
+Russell Impagliazzo,Samuel R. Buss,1999,theory
+Russell Impagliazzo,Ramamohan Paturi,1998,theory
+Russell Impagliazzo,Francis Zane,1998,theory
+Russell Impagliazzo,Toniann Pitassi,1995,theory
+Russell Impagliazzo,Jeff Edmonds,1995,theory
+Russell Impagliazzo,Paul Beame,1995,theory
+Russell Impagliazzo,Stephen A. Cook,1995,theory
+Russell Impagliazzo,Samuel R. Buss,2002,theory
+Russell Impagliazzo,Avi Wigderson,2008,theory
+Russell Impagliazzo,Ragesh Jaiswal,2008,theory
+Russell Impagliazzo,Valentine Kabanets,2008,theory
+Russell Impagliazzo,Ke Yang,2001,crypto
+Russell Impagliazzo,Steven Rudich,2001,crypto
+Russell Impagliazzo,Oded Goldreich,2001,crypto
+Russell Impagliazzo,Salil P. Vadhan,2001,crypto
+Russell Impagliazzo,Boaz Barak,2001,crypto
+Russell Impagliazzo,Amit Sahai,2001,crypto
+Russell Impagliazzo,Kazue Sako,1996,crypto
+Russell Impagliazzo,Markus Jakobsson,1996,crypto
+Russell Impagliazzo,Jeff Edmonds,1991,theory
+Russell Impagliazzo,Steven Rudich,1991,theory
+Russell Impagliazzo,Jirí Sgall,1991,theory
+Russell Impagliazzo,Boaz Barak,2004,theory
+Russell Impagliazzo,Avi Wigderson,2004,theory
+Russell Impagliazzo,David Zuckerman,1990,theory
+Russell Impagliazzo,Oded Goldreich,1990,theory
+Russell Impagliazzo,Ramarathnam Venkatesan,1990,theory
+Russell Impagliazzo,Leonid A. Levin,1990,theory
 Russell Impagliazzo,Toniann Pitassi,1994,theory
 Russell Impagliazzo,Noam Nisan,1994,theory
 Russell Impagliazzo,Pavel Pudlák,1994,theory
@@ -11912,17 +12283,6 @@ Russell Impagliazzo,Paul Beame,1994,theory
 Russell Impagliazzo,Ronen Shaltiel,2000,theory
 Russell Impagliazzo,Avi Wigderson,2000,theory
 Russell Impagliazzo,Pavel Pudlák,2000,theory
-Russell Impagliazzo,Ramamohan Paturi,1998,theory
-Russell Impagliazzo,Francis Zane,1998,theory
-Russell Impagliazzo,Toniann Pitassi,1995,theory
-Russell Impagliazzo,Jeff Edmonds,1995,theory
-Russell Impagliazzo,Paul Beame,1995,theory
-Russell Impagliazzo,Stephen A. Cook,1995,theory
-Russell Impagliazzo,Avi Wigderson,2009,theory
-Russell Impagliazzo,Valentine Kabanets,2009,theory
-Russell Impagliazzo,Samuel R. Buss,2002,theory
-Russell Impagliazzo,Avi Wigderson,2008,theory
-Russell Impagliazzo,Valentine Kabanets,2008,theory
 Russell Impagliazzo,Toniann Pitassi,1997,theory
 Russell Impagliazzo,Steven Rudich,1997,theory
 Russell Impagliazzo,Eric Allender,1997,theory
@@ -11930,33 +12290,14 @@ Russell Impagliazzo,Manindra Agrawal,1997,theory
 Russell Impagliazzo,Avi Wigderson,1997,theory
 Russell Impagliazzo,Moni Naor,1997,theory
 Russell Impagliazzo,Mihir Bellare,1997,theory
+Russell Impagliazzo,Ragesh Jaiswal,2006,theory
 Russell Impagliazzo,Valentine Kabanets,2006,theory
 Russell Impagliazzo,Bruce M. Kapron,2003,theory
 Russell Impagliazzo,Valentine Kabanets,2003,theory
-Russell Impagliazzo,Jeff Edmonds,1996,theory
 Russell Impagliazzo,Toniann Pitassi,1994,logic
-Russell Impagliazzo,Jeff Edmonds,1991,theory
-Russell Impagliazzo,Steven Rudich,1991,theory
-Russell Impagliazzo,Jirí Sgall,1991,theory
-Russell Impagliazzo,Boaz Barak,2004,theory
-Russell Impagliazzo,Avi Wigderson,2004,theory
 Russell Impagliazzo,Ramamohan Paturi,1993,theory
 Russell Impagliazzo,Michael E. Saks,1993,theory
-Russell Impagliazzo,Toniann Pitassi,1999,theory
-Russell Impagliazzo,Ronen Shaltiel,1999,theory
-Russell Impagliazzo,Eli Ben-Sasson,1999,theory
-Russell Impagliazzo,Avi Wigderson,1999,theory
-Russell Impagliazzo,Dima Grigoriev,1999,theory
-Russell Impagliazzo,Giovanni Di Crescenzo,1999,theory
-Russell Impagliazzo,Samuel R. Buss,1999,theory
-Russell Impagliazzo,Toniann Pitassi,1992,theory
-Russell Impagliazzo,Paul Beame,1992,theory
-Russell Impagliazzo,Pavel Pudlák,1992,theory
 Russell Impagliazzo,Ramamohan Paturi,2013,theory
-Russell Impagliazzo,David Zuckerman,1990,theory
-Russell Impagliazzo,Oded Goldreich,1990,theory
-Russell Impagliazzo,Ramarathnam Venkatesan,1990,theory
-Russell Impagliazzo,Leonid A. Levin,1990,theory
 Satish Narayanasamy,Abhayendra Singh,2015,arch
 Satish Narayanasamy,Scott A. Mahlke,2015,arch
 Satish Narayanasamy,Ronald G. Dreslinski,2013,arch
@@ -12163,6 +12504,7 @@ Daphne Koller,Stephen Gould,2008,mlmining
 Daphne Koller,Benjamin Taskar,2003,mlmining
 Daphne Koller,Carlos Guestrin,2003,mlmining
 Daphne Koller,Pieter Abbeel,2003,mlmining
+Daphne Koller,Xavier Boyen,1998,mlmining
 Daphne Koller,Tianshi Gao,2011,mlmining
 Daphne Koller,Mehran Sahami,1996,mlmining
 Daphne Koller,Andrew Y. Ng,2006,mlmining
@@ -12870,11 +13212,15 @@ Eric Vigoda,Christian Borgs,1999,theory
 Eric Vigoda,Jennifer T. Chayes,1999,theory
 Eric Vigoda,Alan M. Frieze,1999,theory
 James Caverlee,Ling Liu,2006,web
+Manoj Prabhakaran,Amit Sahai,2004,crypto
 Manoj Prabhakaran,Jean-Pierre Hubaux,2014,security
 Manoj Prabhakaran,Carl A. Gunter,2014,security
 Manoj Prabhakaran,Muhammad Naveed 0001,2014,security
 Manoj Prabhakaran,Erman Ayday,2014,security
 Manoj Prabhakaran,XiaoFeng Wang,2014,security
+Manoj Prabhakaran,David Wagner,2006,crypto
+Manoj Prabhakaran,Amit Sahai,2006,crypto
+Manoj Prabhakaran,Yuval Ishai,2006,crypto
 Manoj Prabhakaran,Moses Charikar,2002,theory
 Manoj Prabhakaran,Amit Sahai,2002,theory
 Manoj Prabhakaran,Abhi Shelat,2002,theory
@@ -12883,16 +13229,41 @@ Manoj Prabhakaran,Rina Panigrahy,2002,theory
 Manoj Prabhakaran,Eric Lehman,2002,theory
 Manoj Prabhakaran,Alon Rosen,2002,theory
 Manoj Prabhakaran,April Rasala,2002,theory
+Manoj Prabhakaran,Hemanta K. Maji,2016,crypto
+Manoj Prabhakaran,Amit Sahai,2016,crypto
 Manoj Prabhakaran,Boaz Barak,2006,theory
 Manoj Prabhakaran,Amit Sahai,2006,theory
+Manoj Prabhakaran,Jürg Wullschleger,2011,crypto
+Manoj Prabhakaran,Rafail Ostrovsky,2011,crypto
+Manoj Prabhakaran,Eyal Kushilevitz,2011,crypto
+Manoj Prabhakaran,Amit Sahai,2011,crypto
+Manoj Prabhakaran,Yuval Ishai,2011,crypto
+Manoj Prabhakaran,Amit Sahai,2012,crypto
+Manoj Prabhakaran,Abhishek Jain 0002,2012,crypto
+Manoj Prabhakaran,Vipul Goyal,2012,crypto
+Manoj Prabhakaran,Shweta Agrawal,2012,crypto
+Manoj Prabhakaran,Hemanta K. Maji,2010,theory
 Manoj Prabhakaran,Amit Sahai,2010,theory
+Manoj Prabhakaran,Hemanta K. Maji,2015,crypto
+Manoj Prabhakaran,Divya Gupta 0001,2015,crypto
+Manoj Prabhakaran,Omkant Pandey,2015,crypto
+Manoj Prabhakaran,Shweta Agrawal,2015,crypto
+Manoj Prabhakaran,Mike Rosulek,2008,crypto
+Manoj Prabhakaran,Amit Sahai,2008,crypto
+Manoj Prabhakaran,Yuval Ishai,2008,crypto
 Manoj Prabhakaran,Yehuda Lindell,2005,theory
 Manoj Prabhakaran,Yael Tauman Kalai,2005,theory
+Manoj Prabhakaran,Daniel Genkin,2014,theory
 Manoj Prabhakaran,Eran Tromer,2014,theory
 Manoj Prabhakaran,Amit Sahai,2014,theory
 Manoj Prabhakaran,Yuval Ishai,2014,theory
 Manoj Prabhakaran,Yevgeniy Dodis,2004,theory
 Manoj Prabhakaran,Amit Sahai,2004,theory
+Manoj Prabhakaran,Hemanta K. Maji,2010,crypto
+Manoj Prabhakaran,Mike Rosulek,2010,crypto
+Manoj Prabhakaran,Mike Rosulek,2007,crypto
+Manoj Prabhakaran,Hemanta K. Maji,2014,crypto
+Manoj Prabhakaran,Amit Sahai,2014,crypto
 Chinmay Eishan Kulkarni,Mateo Valero,2009,arch
 Chinmay Eishan Kulkarni,Tim Harris 0001,2009,arch
 Chinmay Eishan Kulkarni,Adrián Cristal,2009,arch
@@ -13801,6 +14172,7 @@ John H. Reif,Tingting Jiang,2003,robotics
 John H. Reif,J. D. Tygar,1990,theory
 Steve Bellovin,Tal Malkin,2014,security
 Steve Bellovin,Angelos D. Keromytis,2014,security
+Steve Bellovin,Vladimir Kolesnikov,2014,security
 Huan Sun,Xiaodong He,2016,web
 Huan Sun,Yang Li,2016,web
 Huan Sun,Yu Su,2016,web
@@ -14112,6 +14484,11 @@ Luca Trevisan,Jonathan Katz,2000,theory
 Luca Trevisan,Rosario Gennaro,2000,theory
 Luca Trevisan,Venkatesan Guruswami,1998,theory
 Luca Trevisan,Madhu Sudan,1998,theory
+Luca Trevisan,Salil P. Vadhan,2007,crypto
+Luca Trevisan,Ronald L. Rivest,2007,crypto
+Luca Trevisan,Ran Canetti,2007,crypto
+Luca Trevisan,Madhu Sudan,2007,crypto
+Luca Trevisan,Hoeteck Wee,2007,crypto
 Luca Trevisan,Andrej Bogdanov,2002,theory
 Luca Trevisan,Salil P. Vadhan,2008,theory
 Luca Trevisan,Omer Reingold,2008,theory
@@ -14133,6 +14510,8 @@ Luca Trevisan,Luca Becchetti,2016,theory
 Luca Trevisan,Lance Fortnow,2005,theory
 Luca Trevisan,Rahul Santhanam,2005,theory
 Luca Trevisan,Shayan Oveis Gharan,2014,theory
+Luca Trevisan,Anindya De,2010,crypto
+Luca Trevisan,Madhur Tulsiani,2010,crypto
 Luca Trevisan,Salil P. Vadhan,1999,theory
 Luca Trevisan,Madhu Sudan,1999,theory
 Luca Trevisan,Lap Chi Lau,2013,theory
@@ -14357,15 +14736,22 @@ Alexandr Andoni,Haitham Hassanieh,2013,theory
 Alexandr Andoni,Piotr Indyk,2013,theory
 Alexandr Andoni,Dina Katabi,2013,theory
 Huijia Lin,Rafael Pass,2009,theory
-Huijia Lin,Rafael Pass,2010,theory
-Huijia Lin,Ran Canetti,2010,theory
 Huijia Lin,Sanjam Garg,2015,theory
 Huijia Lin,Rafael Pass,2015,theory
 Huijia Lin,Nir Bitansky,2015,theory
+Huijia Lin,Rafael Pass,2010,theory
+Huijia Lin,Ran Canetti,2010,theory
+Huijia Lin,Rafael Pass,2015,crypto
+Huijia Lin,Kai-Min Chung,2015,crypto
+Huijia Lin,Stefano Tessaro,2013,crypto
+Huijia Lin,Rafael Pass,2011,theory
+Huijia Lin,Rafael Pass,2012,crypto
+Huijia Lin,Rafael Pass,2010,crypto
 Huijia Lin,Rafael Pass,2013,theory
 Huijia Lin,Ran Canetti,2013,theory
 Huijia Lin,Kai-Min Chung,2013,theory
-Huijia Lin,Rafael Pass,2011,theory
+Huijia Lin,Nir Bitansky,2014,crypto
+Huijia Lin,Dana Dachman-Soled,2014,crypto
 James F. Allen,Eric K. Ringger,1996,nlp
 James F. Allen,Daniel Gildea,2013,ai
 James F. Allen,Nathanael Chambers,2005,nlp
@@ -16637,10 +17023,16 @@ Madhu Sudan,Sanjeev Arora,1992,theory
 Madhu Sudan,Mario Szegedy,1992,theory
 Madhu Sudan,Carsten Lund,1992,theory
 Madhu Sudan,Eli Ben-Sasson,2012,theory
+Madhu Sudan,Luca Trevisan,2007,crypto
+Madhu Sudan,Ronald L. Rivest,2007,crypto
+Madhu Sudan,Ran Canetti,2007,crypto
+Madhu Sudan,Hoeteck Wee,2007,crypto
+Madhu Sudan,Salil P. Vadhan,2007,crypto
 Madhu Sudan,Luca Trevisan,1998,theory
 Madhu Sudan,Venkatesan Guruswami,1998,theory
 Madhu Sudan,Johan Håstad,1995,theory
 Madhu Sudan,Oded Goldreich,1995,theory
+Madhu Sudan,Benny Chor,1995,theory
 Madhu Sudan,Mihir Bellare,1995,theory
 Madhu Sudan,Alain J. Mayer,1995,theory
 Madhu Sudan,Don Coppersmith,1995,theory
@@ -16719,6 +17111,7 @@ Madhu Sudan,Arnab Bhattacharyya,2010,theory
 Madhu Sudan,David Zuckerman,2010,theory
 Madhu Sudan,Grant Schoenebeck,2010,theory
 Madhu Sudan,Swastik Kopparty,2010,theory
+Madhu Sudan,Ilan Komargodski,2016,theory
 Madhu Sudan,Pravesh Kothari,2016,theory
 Madhu Sudan,Nachum Shacham,1997,networks
 Elias Bareinboim,Vasant Honavar,2013,mlmining
@@ -16735,11 +17128,13 @@ Bernhard Haeupler,Keren Censor-Hillel,2012,theory
 Bernhard Haeupler,Jonathan A. Kelner,2012,theory
 Bernhard Haeupler,George Giakkoupis,2015,theory
 Bernhard Haeupler,Fabian Kuhn,2015,theory
+Bernhard Haeupler,Ran Gelles,2015,theory
 Bernhard Haeupler,Keren Censor-Hillel,2015,theory
 Bernhard Haeupler,Mohsen Ghaffari,2015,theory
 Bernhard Haeupler,Navin Goyal,2010,theory
 Bernhard Haeupler,Aravind Srinivasan,2010,theory
 Bernhard Haeupler,Barna Saha,2010,theory
+Bernhard Haeupler,Ran Gelles,2016,theory
 Bernhard Haeupler,Mohsen Ghaffari,2016,theory
 Bernhard Haeupler,Mark Braverman,2016,theory
 Bernhard Haeupler,Klim Efremenko,2016,theory
@@ -16855,6 +17250,7 @@ Walid G. Aref,Mohamed F. Mokbel,2006,database
 Walid G. Aref,Ahmed M. Aly,2012,database
 Walid G. Aref,Mourad Ouzzani,2012,database
 George Kollios,Ran Canetti,2015,database
+George Kollios,Adam O'Neill,2015,database
 George Kollios,Vassilis Athitsos,2008,database
 George Kollios,Dimitrios Gunopulos,2008,database
 George Kollios,Nikolaos Laoutaris,2007,networks
@@ -16872,6 +17268,7 @@ George Kollios,Yufei Tao,2004,mlmining
 George Kollios,Marios Hadjieleftheriou,2004,mlmining
 George Kollios,Nikos Mamoulis,2004,mlmining
 George Kollios,Feifei Li 0001,2006,database
+George Kollios,Leonid Reyzin,2006,database
 George Kollios,Marios Hadjieleftheriou,2006,database
 George Kollios,Dimitrios Gunopulos,1999,database
 George Kollios,Vassilis J. Tsotras,1999,database
@@ -17142,6 +17539,7 @@ Aditya Akella,Suman Nath,2010,networks
 Aditya Akella,Ramachandran Ramjee,2010,networks
 Aditya Akella,Keqiang He,2015,metrics
 Aditya Akella,Ratul Mahajan,2015,metrics
+Aditya Akella,Thomas Shrimpton,2015,security
 Aditya Akella,Thomas Ristenpart,2015,security
 Aditya Akella,Liang Wang,2015,security
 Aditya Akella,Srinivasan Seshan,2004,metrics
@@ -17885,6 +18283,15 @@ Paraschos Koutris,Prasang Upadhyaya,2013,database
 Paraschos Koutris,Dan Suciu,2014,database
 Paraschos Koutris,Paul Beame,2014,database
 Paraschos Koutris,Jef Wijsen,2015,database
+Mohammad Mahmoody,Rafael Pass,2012,crypto
+Mohammad Mahmoody,Vipul Goyal,2010,crypto
+Mohammad Mahmoody,Yuval Ishai,2010,crypto
+Mohammad Mahmoody,Amit Sahai,2010,crypto
+Mohammad Mahmoody,Kai-Min Chung,2014,crypto
+Mohammad Mahmoody,Per Austrin,2014,crypto
+Mohammad Mahmoody,Rafael Pass,2014,crypto
+Mohammad Mahmoody,Salil P. Vadhan,2011,crypto
+Mohammad Mahmoody,Tal Moran,2011,crypto
 Gaurav S. Sukhatme,Scott Niekum,2015,robotics
 Gaurav S. Sukhatme,Ryan K. Williams,2015,robotics
 Gaurav S. Sukhatme,Andrea Gasparri,2015,robotics
@@ -18687,6 +19094,9 @@ Manuel Blum,Peter Gemmell,1991,theory
 Manuel Blum,William S. Evans,1991,theory
 Manuel Blum,Moni Naor,1991,theory
 Manuel Blum,Sampath Kannan,1991,theory
+Manuel Blum,Nicholas J. Hopper,2003,crypto
+Manuel Blum,John Langford,2003,crypto
+Manuel Blum,Luis von Ahn,2003,crypto
 Manuel Blum,Peter Gemmell,1993,theory
 Manuel Blum,Mehdi Samadi,2016,ai
 Manuel Blum,Partha Pratim Talukdar,2016,ai
@@ -18807,9 +19217,13 @@ Jason I. Hong,Rajesh Krishna Balan,2009,mobile
 Giuseppe Ateniese,Susan Hohenberger,2005,security
 Giuseppe Ateniese,Jan Camenisch,2005,security
 Giuseppe Ateniese,Alfredo De Santis,2006,security
+Giuseppe Ateniese,Michael Steiner,1998,security
 Giuseppe Ateniese,Gene Tsudik,1998,security
 Giuseppe Ateniese,Randal C. Burns,2007,security
 Giuseppe Ateniese,Dawn Xiaodong Song,2007,security
+Giuseppe Ateniese,Marc Joye,2000,crypto
+Giuseppe Ateniese,Jan Camenisch,2000,crypto
+Giuseppe Ateniese,Gene Tsudik,2000,crypto
 Eddie Kohler,Benjie Chen,2002,arch
 Eddie Kohler,Robert Morris,2002,arch
 Eddie Kohler,Byung-Gon Chun,2008,networks
@@ -19087,6 +19501,7 @@ Alan Borning,Tamara Denning,2010,hci
 Alan Borning,Batya Friedman,2010,hci
 Alan Borning,Jacob O. Wobbrock,2011,hci
 Alan Borning,Richard E. Ladner,2011,hci
+Alan Borning,Bernd Meyer,2001,web
 Alan Borning,Kim Marriott,2001,web
 Alan Borning,Michael Muller,2012,hci
 Alan Borning,Todd D. Millstein,2015,oopfp
@@ -19155,7 +19570,6 @@ Thomas F. La Porta,Donald F. Towsley,1998,networks
 Thomas F. La Porta,Thomas Y. C. Woo,1998,networks
 Thomas F. La Porta,James F. Kurose,1998,networks
 Thomas F. La Porta,Ramachandran Ramjee,1998,networks
-Gordon L. Kindlmann,John H. Reppy,2012,proglang
 Gagan Agrawal,Joel H. Saltz,1995,proglang
 Gagan Agrawal,Rajkumar Kettimuthu,2015,highperf
 Gagan Agrawal,Wei Jiang,2015,highperf
@@ -19348,6 +19762,7 @@ Shubhangi Saraf,Zeev Dvir,2011,theory
 Shubhangi Saraf,Amir Shpilka,2011,theory
 Shubhangi Saraf,Arnab Bhattacharyya,2011,theory
 Shubhangi Saraf,Sergey Yekhanin,2011,theory
+Shubhangi Saraf,Ariel Gabizon,2013,theory
 Shubhangi Saraf,Eli Ben-Sasson,2013,theory
 Shubhangi Saraf,Swastik Kopparty,2013,theory
 Daniela Rus,Cynthia R. Sung,2015,robotics
@@ -19829,6 +20244,7 @@ David Jensen,Marc E. Maier,2007,mlmining
 Rebecca E. Grinter,W. Keith Edwards,2014,hci
 Rebecca E. Grinter,Catherine Grevet,2014,hci
 Rebecca E. Grinter,Eric Gilbert,2014,hci
+Rebecca E. Grinter,Glenn Durfee,2004,security
 Rebecca E. Grinter,Dirk Balfanz,2004,security
 Rebecca E. Grinter,Paul Dourish,2010,hci
 Rebecca E. Grinter,Susan Wyche,2010,hci
@@ -20234,6 +20650,8 @@ Pradeep K. Khosla,Arvin Agah,1997,robotics
 Pradeep K. Khosla,George A. Bekey,1997,robotics
 Pradeep K. Khosla,Bradley J. Nelson,1997,robotics
 Pradeep K. Khosla,Christiaan J. J. Paredis,1997,robotics
+Rafail Ostrovsky,Moti Yung,1993,crypto
+Rafail Ostrovsky,Ramarathnam Venkatesan,1993,crypto
 Rafail Ostrovsky,Juan A. Garay,2006,security
 Rafail Ostrovsky,Seny Kamara,2006,security
 Rafail Ostrovsky,Eyal Kushilevitz,2009,theory
@@ -20244,14 +20662,34 @@ Rafail Ostrovsky,Moti Yung,1996,theory
 Rafail Ostrovsky,Eyal Kushilevitz,1996,theory
 Rafail Ostrovsky,Nathan Linial,1996,theory
 Rafail Ostrovsky,Alain J. Mayer,1996,theory
+Rafail Ostrovsky,Eli Ben-Sasson,2012,crypto
+Rafail Ostrovsky,Yuval Rabani,2012,crypto
+Rafail Ostrovsky,Sanjam Garg,2012,crypto
+Rafail Ostrovsky,Serge Fehr,2012,crypto
+Rafail Ostrovsky,Ivan Visconti,2012,crypto
 Rafail Ostrovsky,Allan Borodin,1999,theory
 Rafail Ostrovsky,Ran Canetti,1999,theory
 Rafail Ostrovsky,Yuval Rabani,1999,theory
 Rafail Ostrovsky,Yoram Ofek,1992,theory
 Rafail Ostrovsky,Moti Yung,1992,theory
 Rafail Ostrovsky,Alain J. Mayer,1992,theory
+Rafail Ostrovsky,Ivan Visconti,2012,theory
 Rafail Ostrovsky,Eyal Kushilevitz,2012,theory
 Rafail Ostrovsky,Vipul Goyal,2012,theory
+Rafail Ostrovsky,Steve Lu,2012,theory
+Rafail Ostrovsky,Jens Groth,2007,crypto
+Rafail Ostrovsky,Eyal Kushilevitz,2007,crypto
+Rafail Ostrovsky,Dan Boneh,2007,crypto
+Rafail Ostrovsky,Ramarathnam Venkatesan,1992,crypto
+Rafail Ostrovsky,Moni Naor,1992,crypto
+Rafail Ostrovsky,Shafi Goldwasser,1992,crypto
+Rafail Ostrovsky,Moti Yung,1992,crypto
+Rafail Ostrovsky,Ran Canetti,1997,crypto
+Rafail Ostrovsky,Moni Naor,1997,crypto
+Rafail Ostrovsky,Michael Luby,1997,crypto
+Rafail Ostrovsky,Shlomi Dolev,1997,crypto
+Rafail Ostrovsky,Cynthia Dwork,1997,crypto
+Rafail Ostrovsky,Ari Juels,1997,crypto
 Rafail Ostrovsky,Eyal Kushilevitz,1998,theory
 Rafail Ostrovsky,Yuval Rabani,1998,theory
 Rafail Ostrovsky,Adi Rosén,1998,theory
@@ -20264,7 +20702,9 @@ Rafail Ostrovsky,Yehuda Lindell,2002,theory
 Rafail Ostrovsky,Ran Canetti,2002,theory
 Rafail Ostrovsky,Amit Sahai,2002,theory
 Rafail Ostrovsky,Noam Nisan,2015,theory
+Rafail Ostrovsky,Steve Lu,2015,theory
 Rafail Ostrovsky,Sanjam Garg,2015,theory
+Rafail Ostrovsky,Alessandra Scafuro,2015,theory
 Rafail Ostrovsky,Eyal Kushilevitz,2008,theory
 Rafail Ostrovsky,Amit Sahai,2008,theory
 Rafail Ostrovsky,Yuval Ishai,2008,theory
@@ -20272,19 +20712,63 @@ Rafail Ostrovsky,Carlo Zaniolo,2009,database
 Rafail Ostrovsky,Vladimir Braverman,2009,database
 Rafail Ostrovsky,Leonard J. Schulman,2005,theory
 Rafail Ostrovsky,Yuval Rabani,2005,theory
+Rafail Ostrovsky,Ivan Visconti,2014,theory
 Rafail Ostrovsky,Vipul Goyal,2014,theory
+Rafail Ostrovsky,Alessandra Scafuro,2014,theory
 Rafail Ostrovsky,Adam Meyerson,2011,theory
 Rafail Ostrovsky,Vladimir Braverman,2011,theory
+Rafail Ostrovsky,Amit Sahai,2001,crypto
+Rafail Ostrovsky,Alfredo De Santis,2001,crypto
+Rafail Ostrovsky,Matthias Fitzi,2001,crypto
+Rafail Ostrovsky,Giuseppe Persiano,2001,crypto
+Rafail Ostrovsky,Adam D. Smith,2001,crypto
+Rafail Ostrovsky,Jonathan Katz,2001,crypto
+Rafail Ostrovsky,Giovanni Di Crescenzo,2001,crypto
+Rafail Ostrovsky,Juan A. Garay,2001,crypto
+Rafail Ostrovsky,Moti Yung,2001,crypto
+Rafail Ostrovsky,Steven Myers,2001,crypto
+Rafail Ostrovsky,Ueli M. Maurer,2001,crypto
+Rafail Ostrovsky,Abhishek Jain 0002,2010,crypto
+Rafail Ostrovsky,Vipul Goyal,2010,crypto
+Rafail Ostrovsky,Juan A. Garay,2010,crypto
+Rafail Ostrovsky,Xavier Boyen,2005,crypto
+Rafail Ostrovsky,Adam D. Smith,2005,crypto
+Rafail Ostrovsky,Jonathan Katz,2005,crypto
+Rafail Ostrovsky,Yevgeniy Dodis,2005,crypto
 Rafail Ostrovsky,Allan Borodin,2001,theory
 Rafail Ostrovsky,Julia Chuzhoy,2001,theory
 Rafail Ostrovsky,Yuval Rabani,2001,theory
 Rafail Ostrovsky,Amit Sahai,2007,security
 Rafail Ostrovsky,Brent Waters,2007,security
+Rafail Ostrovsky,Vipul Goyal,2009,crypto
+Rafail Ostrovsky,Nishanth Chandran,2009,crypto
+Rafail Ostrovsky,Giovanni Di Crescenzo,1999,crypto
 Rafail Ostrovsky,Eyal Kushilevitz,2004,theory
 Rafail Ostrovsky,Amit Sahai,2004,theory
 Rafail Ostrovsky,Yuval Ishai,2004,theory
+Rafail Ostrovsky,Eyal Kushilevitz,2011,crypto
+Rafail Ostrovsky,Amit Sahai,2011,crypto
+Rafail Ostrovsky,Nishanth Chandran,2011,crypto
+Rafail Ostrovsky,Harry Buhrman,2011,crypto
+Rafail Ostrovsky,Manoj Prabhakaran,2011,crypto
+Rafail Ostrovsky,Vipul Goyal,2011,crypto
+Rafail Ostrovsky,Christian Schaffner,2011,crypto
+Rafail Ostrovsky,Ran Gelles,2011,crypto
+Rafail Ostrovsky,Serge Fehr,2011,crypto
+Rafail Ostrovsky,Jürg Wullschleger,2011,crypto
+Rafail Ostrovsky,Yuval Ishai,2011,crypto
+Rafail Ostrovsky,Eyal Kushilevitz,2000,crypto
+Rafail Ostrovsky,Tal Malkin,2000,crypto
+Rafail Ostrovsky,Giovanni Di Crescenzo,2000,crypto
 Rafail Ostrovsky,Silvio Micali,1990,theory
 Rafail Ostrovsky,Mihir Bellare,1990,theory
+Rafail Ostrovsky,Adi Rosén,2016,crypto
+Rafail Ostrovsky,Jesper Buus Nielsen,2016,crypto
+Rafail Ostrovsky,Ivan Damgård,2016,crypto
+Rafail Ostrovsky,Giuseppe Persiano,2004,crypto
+Rafail Ostrovsky,Jonathan Katz,2004,crypto
+Rafail Ostrovsky,Dan Boneh,2004,crypto
+Rafail Ostrovsky,Giovanni Di Crescenzo,2004,crypto
 Rafail Ostrovsky,Manuel Blum,1994,theory
 Rafail Ostrovsky,Eyal Kushilevitz,1994,theory
 Rafail Ostrovsky,Noga Alon,1994,theory
@@ -20298,12 +20782,18 @@ Rafail Ostrovsky,Erez Petrank,1994,theory
 Rafail Ostrovsky,Umesh V. Vazirani,1994,theory
 Rafail Ostrovsky,Eyal Kushilevitz,2007,theory
 Rafail Ostrovsky,Amit Sahai,2007,theory
+Rafail Ostrovsky,Nishanth Chandran,2007,theory
 Rafail Ostrovsky,Vipul Goyal,2007,theory
 Rafail Ostrovsky,Jonathan Katz,2007,theory
 Rafail Ostrovsky,Vladimir Braverman,2007,theory
 Rafail Ostrovsky,Juan A. Garay,2007,theory
 Rafail Ostrovsky,Yuval Ishai,2007,theory
 Rafail Ostrovsky,Yuval Rabani,2000,theory
+Rafail Ostrovsky,Hovav Shacham,2006,crypto
+Rafail Ostrovsky,Jens Groth,2006,crypto
+Rafail Ostrovsky,Amit Sahai,2006,crypto
+Rafail Ostrovsky,Steve Lu,2006,crypto
+Rafail Ostrovsky,Brent Waters,2006,crypto
 Rafail Ostrovsky,Victor Shoup,1997,theory
 Rafail Ostrovsky,Eyal Kushilevitz,1997,theory
 Rafail Ostrovsky,Yuval Rabani,1997,theory
@@ -20316,9 +20806,41 @@ Rafail Ostrovsky,Yuval Ishai,2006,theory
 Rafail Ostrovsky,Adi Rosén,2003,theory
 Rafail Ostrovsky,Eyal Kushilevitz,2003,theory
 Rafail Ostrovsky,William Aiello,2003,theory
+Rafail Ostrovsky,Leonid Reyzin,2010,theory
 Rafail Ostrovsky,Vladimir Braverman,2010,theory
+Rafail Ostrovsky,Nishanth Chandran,2010,theory
+Rafail Ostrovsky,Giuseppe Persiano,2015,crypto
+Rafail Ostrovsky,Eyal Kushilevitz,2015,crypto
+Rafail Ostrovsky,Amit Sahai,2015,crypto
+Rafail Ostrovsky,Sanjam Garg,2015,crypto
+Rafail Ostrovsky,Melissa Chase,2015,crypto
+Rafail Ostrovsky,Vassilis Zikas,2015,crypto
+Rafail Ostrovsky,Hong-Sheng Zhou,2015,crypto
+Rafail Ostrovsky,Joël Alwen,2015,crypto
+Rafail Ostrovsky,Ivan Visconti,2015,crypto
+Rafail Ostrovsky,Yuval Ishai,2015,crypto
+Rafail Ostrovsky,Alessandra Scafuro,2015,crypto
+Rafail Ostrovsky,Dan Boneh,2008,crypto
+Rafail Ostrovsky,Shai Halevi,2008,crypto
+Rafail Ostrovsky,Juan A. Garay,2008,crypto
+Rafail Ostrovsky,Ran Gelles,2013,crypto
+Rafail Ostrovsky,Alessandra Scafuro,2013,crypto
+Rafail Ostrovsky,Steve Lu,2013,crypto
+Rafail Ostrovsky,Ivan Visconti,2013,crypto
+Rafail Ostrovsky,Leonard J. Schulman,2013,crypto
+Rafail Ostrovsky,Matthew K. Franklin,2013,crypto
+Rafail Ostrovsky,Adam D. Smith,2003,crypto
+Rafail Ostrovsky,Jonathan Katz,2003,crypto
 Rafail Ostrovsky,Rafael Pass,2013,theory
+Rafail Ostrovsky,Ivan Visconti,2013,theory
 Rafail Ostrovsky,Kai-Min Chung,2013,theory
+Rafail Ostrovsky,Shai Halevi,2014,crypto
+Rafail Ostrovsky,Steve Lu,2014,crypto
+Rafail Ostrovsky,Daniel Wichs,2014,crypto
+Rafail Ostrovsky,Mariana Raykova 0001,2014,crypto
+Rafail Ostrovsky,Vassilis Zikas,2014,crypto
+Rafail Ostrovsky,Craig Gentry,2014,crypto
+Rafail Ostrovsky,Yuval Ishai,2014,crypto
 Chunyi Peng,Ke Xu,2015,networks
 Chunyi Peng,Li Li,2015,networks
 Chunyi Peng,Dan Wang,2015,networks
@@ -20496,6 +21018,7 @@ Jennifer Rexford,Sharon Goldberg,2010,networks
 Jennifer Rexford,Michael Schapira,2010,networks
 Jennifer Rexford,Jia Wang,2010,networks
 Jennifer Rexford,Mung Chiang,2008,metrics
+Jennifer Rexford,David Xiao,2008,metrics
 Jennifer Rexford,Boaz Barak,2008,metrics
 Jennifer Rexford,Eran Tromer,2008,metrics
 Jennifer Rexford,Sharon Goldberg,2008,metrics
@@ -20863,6 +21386,8 @@ Anindya De,Ankur Moitra,2014,theory
 Anindya De,Ilias Diakonikolas,2014,theory
 Anindya De,Constantinos Daskalakis,2014,theory
 Anindya De,Rocco A. Servedio,2014,theory
+Anindya De,Luca Trevisan,2010,crypto
+Anindya De,Madhur Tulsiani,2010,crypto
 Anindya De,Elchanan Mossel,2013,theory
 Swarat Chaudhuri,Jeffrey S. Foster,2011,proglang
 Swarat Chaudhuri,Saurabh Srivastava,2011,proglang
@@ -20909,17 +21434,31 @@ Swarat Chaudhuri,Aarti Gupta,2009,softeng
 Swarat Chaudhuri,Yu Yang,2009,softeng
 Swarat Chaudhuri,Scott Rixner,2015,web
 Swarat Chaudhuri,Christopher M. Jermaine,2015,web
-Daniele Micciancio,Omer Reingold,1998,theory
-Daniele Micciancio,Ran Canetti,1998,theory
-Daniele Micciancio,Tal Rabin,1998,security
-Daniele Micciancio,Rosario Gennaro,1998,security
 Daniele Micciancio,Benny Pinkas,1999,networks
 Daniele Micciancio,Moni Naor,1999,networks
 Daniele Micciancio,Ran Canetti,1999,networks
 Daniele Micciancio,Juan A. Garay,1999,networks
-Daniele Micciancio,Oded Regev,2004,theory
+Daniele Micciancio,Gene Itkis,1999,networks
+Daniele Micciancio,Chris Peikert,2012,crypto
 Daniele Micciancio,Madhu Sudan,1999,theory
+Daniele Micciancio,Rosario Gennaro,2002,crypto
+Daniele Micciancio,Tal Malkin,2002,crypto
+Daniele Micciancio,Mihir Bellare,1997,crypto
+Daniele Micciancio,Shafi Goldwasser,1997,crypto
+Daniele Micciancio,Omer Reingold,1998,theory
+Daniele Micciancio,Ran Canetti,1998,theory
+Daniele Micciancio,Tal Rabin,1998,security
+Daniele Micciancio,Rosario Gennaro,1998,security
+Daniele Micciancio,Vadim Lyubashevsky,2009,crypto
+Daniele Micciancio,Oded Regev,2004,theory
+Daniele Micciancio,Léo Ducas,2015,crypto
+Daniele Micciancio,Chris Peikert,2013,crypto
+Daniele Micciancio,Salil P. Vadhan,2003,crypto
+Daniele Micciancio,Erez Petrank,2003,crypto
+Daniele Micciancio,Mihir Bellare,2003,crypto
+Daniele Micciancio,Bogdan Warinschi,2003,crypto
 Daniele Micciancio,Daniel Dadush,2013,theory
+Daniele Micciancio,Léo Ducas,2014,crypto
 John R. Gilbert,Robert Schreiber,1993,highperf
 John R. Gilbert,Siddhartha Chatterjee,1993,highperf
 John R. Gilbert,Shang-Hua Teng,1993,highperf
@@ -21720,7 +22259,45 @@ Philip Levis,Pat Hanrahan,2016,graphics
 Philip Levis,David E. Culler,2002,arch
 Martha A. Kim,Kenneth A. Ross,2013,arch
 Martha A. Kim,Kenneth A. Ross,2014,arch
+Mihir Bellare,Phillip Rogaway,1993,crypto
+Mihir Bellare,Stefano Tessaro,2016,crypto
+Mihir Bellare,Daniel J. Bernstein,2016,crypto
+Mihir Bellare,Brent Waters,2016,crypto
+Mihir Bellare,Hugo Krawczyk,1996,theory
+Mihir Bellare,Ran Canetti,1996,theory
+Mihir Bellare,Amit Sahai,1998,crypto
+Mihir Bellare,David Pointcheval,1998,crypto
+Mihir Bellare,Tal Rabin,1998,crypto
+Mihir Bellare,Salil P. Vadhan,1998,crypto
+Mihir Bellare,Shai Halevi,1998,crypto
+Mihir Bellare,Ramarathnam Venkatesan,1998,crypto
+Mihir Bellare,Giovanni Di Crescenzo,1998,crypto
+Mihir Bellare,Juan A. Garay,1998,crypto
+Mihir Bellare,Phillip Rogaway,1998,crypto
+Mihir Bellare,Anand Desai,1998,crypto
+Mihir Bellare,William Aiello,1998,crypto
+Mihir Bellare,Scott Yilek,2012,crypto
+Mihir Bellare,Eike Kiltz,2012,crypto
+Mihir Bellare,Brent Waters,2012,crypto
+Mihir Bellare,Stefano Tessaro,2012,crypto
+Mihir Bellare,Thomas Ristenpart,2012,crypto
+Mihir Bellare,Chris Peikert,2012,crypto
+Mihir Bellare,Alexandra Boldyreva,2007,crypto
+Mihir Bellare,Adam O'Neill,2007,crypto
+Mihir Bellare,Phillip Rogaway,2013,security
+Mihir Bellare,Viet Tung Hoang,2013,security
+Mihir Bellare,Sriram Keelveedhi,2013,security
 Mihir Bellare,Phillip Rogaway,1993,security
+Mihir Bellare,Chanathip Namprempre,2002,crypto
+Mihir Bellare,Michel Abdalla,2002,crypto
+Mihir Bellare,Jee Hea An,2002,crypto
+Mihir Bellare,Moti Yung,1992,crypto
+Mihir Bellare,Oded Goldreich,1992,crypto
+Mihir Bellare,Moti Yung,1997,crypto
+Mihir Bellare,Markus Jakobsson,1997,crypto
+Mihir Bellare,Daniele Micciancio,1997,crypto
+Mihir Bellare,Shafi Goldwasser,1997,crypto
+Mihir Bellare,Phillip Rogaway,1997,crypto
 Mihir Bellare,Hugo Krawczyk,1998,theory
 Mihir Bellare,Ran Canetti,1998,theory
 Mihir Bellare,Johan Håstad,1995,theory
@@ -21731,33 +22308,93 @@ Mihir Bellare,Ramarathnam Venkatesan,1995,theory
 Mihir Bellare,Phillip Rogaway,1995,theory
 Mihir Bellare,William Aiello,1995,theory
 Mihir Bellare,Shafi Goldwasser,1995,theory
-Mihir Bellare,Russell Impagliazzo,1997,theory
-Mihir Bellare,Moni Naor,1997,theory
-Mihir Bellare,Phillip Rogaway,1997,theory
-Mihir Bellare,Phillip Rogaway,2013,security
+Mihir Bellare,Erez Petrank,1992,theory
 Mihir Bellare,Victor Shoup,2006,security
+Mihir Bellare,Gregory Neven,2006,security
 Mihir Bellare,Tadayoshi Kohno,2006,security
 Mihir Bellare,Shafi Goldwasser,1997,security
+Mihir Bellare,Sriram Keelveedhi,2011,crypto
+Mihir Bellare,Phillip Rogaway,2007,security
+Mihir Bellare,Marc Fischlin,2001,crypto
+Mihir Bellare,Silvio Micali,2001,crypto
+Mihir Bellare,Lars R. Knudsen,2001,crypto
+Mihir Bellare,Jee Hea An,2001,crypto
+Mihir Bellare,Chanathip Namprempre,2001,crypto
+Mihir Bellare,Alexandra Boldyreva,2001,crypto
+Mihir Bellare,Shafi Goldwasser,2001,crypto
+Mihir Bellare,David Cash,2010,crypto
+Mihir Bellare,Tanja Lange,2005,crypto
+Mihir Bellare,Tadayoshi Kohno,2005,crypto
+Mihir Bellare,Michel Abdalla,2005,crypto
+Mihir Bellare,Eike Kiltz,2005,crypto
+Mihir Bellare,Dario Catalano,2005,crypto
+Mihir Bellare,Krzysztof Pietrzak,2005,crypto
+Mihir Bellare,Phillip Rogaway,2005,crypto
+Mihir Bellare,Gregory Neven,2005,crypto
+Mihir Bellare,Hugo Krawczyk,1996,crypto
+Mihir Bellare,Ran Canetti,1996,crypto
+Mihir Bellare,Phillip Rogaway,1996,crypto
 Mihir Bellare,Carsten Lund,1994,theory
 Mihir Bellare,Alexander Russell,1994,theory
 Mihir Bellare,Shafi Goldwasser,1994,theory
 Mihir Bellare,Madhu Sudan,1994,theory
-Mihir Bellare,Tadayoshi Kohno,2002,security
-Mihir Bellare,Hugo Krawczyk,1996,theory
-Mihir Bellare,Ran Canetti,1996,theory
+Mihir Bellare,Scott Yilek,2009,crypto
+Mihir Bellare,Dennis Hofheinz,2009,crypto
 Mihir Bellare,Joan Feigenbaum,1991,theory
 Mihir Bellare,Richard Beigel,1991,theory
 Mihir Bellare,Shafi Goldwasser,1991,theory
-Mihir Bellare,Phillip Rogaway,2007,security
-Mihir Bellare,Carsten Lund,1993,theory
-Mihir Bellare,Shafi Goldwasser,1993,theory
-Mihir Bellare,Phillip Rogaway,2001,security
+Mihir Bellare,Viet Tung Hoang,2012,security
 Mihir Bellare,Phillip Rogaway,2012,security
-Mihir Bellare,Erez Petrank,1992,theory
+Mihir Bellare,John Black,2001,security
+Mihir Bellare,Phillip Rogaway,2001,security
+Mihir Bellare,Silvio Micali,2000,crypto
+Mihir Bellare,Alexandra Boldyreva,2000,crypto
+Mihir Bellare,David Pointcheval,2000,crypto
+Mihir Bellare,Phillip Rogaway,2000,crypto
 Mihir Bellare,Rafail Ostrovsky,1990,theory
 Mihir Bellare,Oded Goldreich,1990,theory
 Mihir Bellare,Silvio Micali,1990,theory
 Mihir Bellare,Shafi Goldwasser,1990,theory
+Mihir Bellare,Roch Guérin,1995,crypto
+Mihir Bellare,Phillip Rogaway,1995,crypto
+Mihir Bellare,Chanathip Namprempre,2004,crypto
+Mihir Bellare,Alexandra Boldyreva,2004,crypto
+Mihir Bellare,Tadayoshi Kohno,2004,crypto
+Mihir Bellare,Gregory Neven,2004,crypto
+Mihir Bellare,David Cash,2011,security
+Mihir Bellare,Sriram Keelveedhi,2011,security
+Mihir Bellare,Hugo Krawczyk,1999,crypto
+Mihir Bellare,Oded Goldreich,1999,crypto
+Mihir Bellare,Amit Sahai,1999,crypto
+Mihir Bellare,Jee Hea An,1999,crypto
+Mihir Bellare,Phillip Rogaway,2006,crypto
+Mihir Bellare,Oded Goldreich,1994,crypto
+Mihir Bellare,Joe Kilian,1994,crypto
+Mihir Bellare,Shafi Goldwasser,1994,crypto
+Mihir Bellare,Phillip Rogaway,1994,crypto
+Mihir Bellare,Anand Desai,1997,theory
+Mihir Bellare,Russell Impagliazzo,1997,theory
+Mihir Bellare,Moni Naor,1997,theory
+Mihir Bellare,Phillip Rogaway,1997,theory
+Mihir Bellare,Chanathip Namprempre,2002,security
+Mihir Bellare,Tadayoshi Kohno,2002,security
+Mihir Bellare,Viet Tung Hoang,2015,crypto
+Mihir Bellare,Marc Fischlin,2008,crypto
+Mihir Bellare,Thomas Ristenpart,2008,crypto
+Mihir Bellare,Adam O'Neill,2008,crypto
+Mihir Bellare,Thomas Ristenpart,2013,crypto
+Mihir Bellare,Viet Tung Hoang,2013,crypto
+Mihir Bellare,Sriram Keelveedhi,2013,crypto
+Mihir Bellare,Tadayoshi Kohno,2003,crypto
+Mihir Bellare,Daniele Micciancio,2003,crypto
+Mihir Bellare,Bogdan Warinschi,2003,crypto
+Mihir Bellare,Carsten Lund,1993,theory
+Mihir Bellare,Shafi Goldwasser,1993,theory
+Mihir Bellare,Kenneth G. Paterson,2014,crypto
+Mihir Bellare,Sriram Keelveedhi,2014,crypto
+Mihir Bellare,Phillip Rogaway,2014,crypto
+Mihir Bellare,Viet Tung Hoang,2014,crypto
+Mihir Bellare,Sarah Meiklejohn,2014,crypto
 James Aspnes,Ming-Yang Kao,2001,theory
 James Aspnes,Alok Kumar,2001,theory
 James Aspnes,Miklós Ajtai,1994,theory
@@ -22008,6 +22645,7 @@ Anna R. Karlin,Frank Thomson Leighton,1990,theory
 Anna R. Karlin,Andrei Z. Broder,1990,theory
 Anna R. Karlin,Satish Rao,1990,theory
 Anna R. Karlin,Victor Milenkovic,1990,theory
+Anna R. Karlin,Mark S. Manasse,1990,theory
 Anna R. Karlin,Eli Upfal,1994,theory
 Anna R. Karlin,Greg Nelson,1994,theory
 Anna R. Karlin,Hisao Tamaki,1994,theory
@@ -22048,6 +22686,7 @@ Anna R. Karlin,Henry M. Levy,1996,arch
 Anna R. Karlin,Michael J. Feeley,1996,arch
 Anna R. Karlin,Kai Li,1991,opsys
 Anna R. Karlin,Susan S. Owicki,1991,opsys
+Anna R. Karlin,Mark S. Manasse,1991,opsys
 Justine Cassell,Hao Yan,1999,hci
 Justine Cassell,Timothy W. Bickmore,1999,hci
 Justine Cassell,Timothy W. Bickmore,2001,nlp
@@ -22254,9 +22893,11 @@ Nadia Heninger,Edward W. Felten,2008,security
 Nadia Heninger,Zakir Durumeric,2015,security
 Nadia Heninger,Eric Wustrow,2015,security
 Nadia Heninger,J. Alex Halderman,2015,security
+Nadia Heninger,Pierrick Gaudry,2015,security
 Nadia Heninger,Matthew Green 0001,2015,security
 Nadia Heninger,Karthikeyan Bhargavan,2015,security
 Nadia Heninger,Santiago Zanella Béguelin,2015,security
+Nadia Heninger,Hovav Shacham,2009,crypto
 László Babai,Igor Pak,2000,theory
 László Babai,Thomas P. Hayes,1998,theory
 László Babai,Ákos Seress,2009,theory
@@ -22421,6 +23062,8 @@ Roch Guérin,Vinod G. J. Peris,1996,networks
 Roch Guérin,Leonidas Georgiadis,1994,networks
 Roch Guérin,Yuval Shavitt,1994,networks
 Roch Guérin,Israel Cidon,1994,networks
+Roch Guérin,Mihir Bellare,1995,crypto
+Roch Guérin,Phillip Rogaway,1995,crypto
 Roch Guérin,Sanjay Kamat,1998,networks
 Roch Guérin,Satish K. Tripathi,1998,networks
 Roch Guérin,Vinod G. J. Peris,1998,networks
@@ -22550,6 +23193,7 @@ Rajmohan Rajaraman,Shang-Hua Teng,2009,theory
 Rajmohan Rajaraman,Ravi Sundaram,2009,theory
 Rajmohan Rajaraman,Michael A. Bender,2002,theory
 Rajmohan Rajaraman,S. Muthukrishnan,2002,theory
+Rajmohan Rajaraman,Daniel Wichs,2016,crypto
 Rajmohan Rajaraman,David P. Williamson,2006,theory
 Rajmohan Rajaraman,Ravi Sundaram,2003,theory
 Rajmohan Rajaraman,Guevara Noubir,2004,networks
@@ -22570,6 +23214,8 @@ Rajmohan Rajaraman,Johannes Gehrke,1999,theory
 Rajmohan Rajaraman,Emanuele Viola,2013,theory
 Rajmohan Rajaraman,Gopal Pandurangan,2013,theory
 Thomas W. Doeppner Jr.,Philip N. Klein,2000,security
+Avrim Blum,Richard J. Lipton,1993,crypto
+Avrim Blum,Michael J. Kearns,1993,crypto
 Avrim Blum,Geoffrey J. Gordon,2003,mlmining
 Avrim Blum,H. Brendan McMahan,2003,mlmining
 Avrim Blum,Moritz Hardt,2015,mlmining
@@ -23140,6 +23786,11 @@ Yan Huang,Hui Ji,2015,vision
 Yan Huang,Yuhui Quan,2015,vision
 Yan Huang,Ruoming Jin,2014,database
 Yan Huang,Xiaoyang Sean Wang,2014,database
+Yan Huang,Ranjit Kumaresan,2014,crypto
+Yan Huang,Jonathan Katz,2014,crypto
+Yan Huang,Vladimir Kolesnikov,2014,crypto
+Yan Huang,Jonathan Katz,2013,crypto
+Yan Huang,David Evans,2013,crypto
 Jun Yang,Youtao Zhang,2015,arch
 Jun Yang,Rami G. Melhem,2015,arch
 Jun Yang,Lei Jiang,2015,arch
@@ -23328,6 +23979,7 @@ Vitaly Shmatikov,Harrick M. Vin,2007,networks
 Vitaly Shmatikov,Yin Zhang,2007,networks
 Vitaly Shmatikov,Arvind Narayanan,2009,security
 Vitaly Shmatikov,Hubert Comon-Lundh,2003,logic
+Vitaly Shmatikov,Stanislaw Jarecki,2007,crypto
 Vitaly Shmatikov,Amir Houmansadr,2013,security
 Vitaly Shmatikov,Kathryn S. McKinley,2013,security
 Vitaly Shmatikov,Suman Jana,2013,security
@@ -23346,6 +23998,7 @@ Vitaly Shmatikov,Baishakhi Ray,2014,security
 Vitaly Shmatikov,Suman Jana,2014,security
 Vitaly Shmatikov,Sarfraz Khurshid,2014,security
 Vitaly Shmatikov,Jonathan K. Millen,2001,security
+Vitaly Shmatikov,Stanislaw Jarecki,2004,crypto
 Vitaly Shmatikov,Suman Jana,2011,security
 Vitaly Shmatikov,Arvind Narayanan,2011,security
 Vitaly Shmatikov,Edward W. Felten,2011,security
@@ -23899,14 +24552,59 @@ David B. Johnson,Yih-Chun Hu,1998,mobile
 David B. Johnson,Lei Tang,2011,networks
 David B. Johnson,Omer Gurewitz,2011,networks
 David B. Johnson,Yanjun Sun,2011,networks
-Phillip Rogaway,Mihir Bellare,1993,security
-Phillip Rogaway,Mihir Bellare,1995,theory
-Phillip Rogaway,Mihir Bellare,1997,theory
-Phillip Rogaway,Mihir Bellare,2007,security
-Phillip Rogaway,Mihir Bellare,2001,security
-Phillip Rogaway,Mihir Bellare,2012,security
+Phillip Rogaway,Mihir Bellare,1993,crypto
+Phillip Rogaway,Viet Tung Hoang,2012,crypto
+Phillip Rogaway,Ben Morris,2012,crypto
 Phillip Rogaway,Mihir Bellare,2013,security
+Phillip Rogaway,Viet Tung Hoang,2013,security
+Phillip Rogaway,Sriram Keelveedhi,2013,security
+Phillip Rogaway,Mihir Bellare,1993,security
+Phillip Rogaway,John Black,2002,crypto
+Phillip Rogaway,Thomas Shrimpton,2002,crypto
+Phillip Rogaway,Mihir Bellare,1997,crypto
+Phillip Rogaway,Thomas Shrimpton,2006,crypto
+Phillip Rogaway,Mihir Bellare,2006,crypto
+Phillip Rogaway,Mihir Bellare,1995,theory
+Phillip Rogaway,Mihir Bellare,2007,security
+Phillip Rogaway,Viet Tung Hoang,2010,crypto
+Phillip Rogaway,Mihir Bellare,2005,crypto
+Phillip Rogaway,Krzysztof Pietrzak,2005,crypto
+Phillip Rogaway,Joe Kilian,1996,crypto
+Phillip Rogaway,Mihir Bellare,1996,crypto
+Phillip Rogaway,Silvio Micali,1991,crypto
+Phillip Rogaway,Ben Morris,2009,crypto
+Phillip Rogaway,Joe Kilian,1990,crypto
+Phillip Rogaway,Joan Feigenbaum,1990,crypto
+Phillip Rogaway,Donald Beaver,1990,crypto
+Phillip Rogaway,John Black,2001,security
+Phillip Rogaway,Mihir Bellare,2001,security
+Phillip Rogaway,John Black,2000,crypto
+Phillip Rogaway,Mihir Bellare,2000,crypto
+Phillip Rogaway,David Pointcheval,2000,crypto
 Phillip Rogaway,Silvio Micali,1990,theory
+Phillip Rogaway,Donald Beaver,1990,theory
+Phillip Rogaway,Roch Guérin,1995,crypto
+Phillip Rogaway,Mihir Bellare,1995,crypto
+Phillip Rogaway,John Black,1999,crypto
+Phillip Rogaway,Shai Halevi,1999,crypto
+Phillip Rogaway,Hugo Krawczyk,1999,crypto
+Phillip Rogaway,Joe Kilian,1994,crypto
+Phillip Rogaway,Mihir Bellare,1994,crypto
+Phillip Rogaway,Anand Desai,1997,theory
+Phillip Rogaway,Mihir Bellare,1997,theory
+Phillip Rogaway,Anand Desai,1998,crypto
+Phillip Rogaway,Mihir Bellare,1998,crypto
+Phillip Rogaway,David Pointcheval,1998,crypto
+Phillip Rogaway,Viet Tung Hoang,2015,crypto
+Phillip Rogaway,John P. Steinberger,2008,crypto
+Phillip Rogaway,Shai Halevi,2003,crypto
+Phillip Rogaway,Mihir Bellare,2012,security
+Phillip Rogaway,Viet Tung Hoang,2012,security
+Phillip Rogaway,Chanathip Namprempre,2014,crypto
+Phillip Rogaway,Thomas Shrimpton,2014,crypto
+Phillip Rogaway,Mihir Bellare,2014,crypto
+Phillip Rogaway,Kenneth G. Paterson,2014,crypto
+Phillip Rogaway,Ben Morris,2014,crypto
 Yixin Chen,John E. McInroy,2000,robotics
 Yixin Chen,Weixiong Zhang,2008,ai
 Yixin Chen,Michael R. Brent,2008,ai
@@ -24232,6 +24930,9 @@ Richard T. Snodgrass,Philip A. Bernstein,2005,database
 Richard T. Snodgrass,Jennifer Widom,2005,database
 Matt Blaze,Jonathan M. Smith,2014,security
 Matt Blaze,Joan Feigenbaum,1996,security
+Matt Blaze,Moni Naor,1998,crypto
+Matt Blaze,Martin Strauss,1998,crypto
+Matt Blaze,Joan Feigenbaum,1998,crypto
 Matt Blaze,Omer Reingold,2002,security
 Matt Blaze,Ran Canetti,2002,security
 Matt Blaze,William Aiello,2002,security
@@ -24740,6 +25441,9 @@ Robert Bruce Findler,Matthew Flatt,2010,oopfp
 Robert Bruce Findler,Peter A. Dinda,2010,oopfp
 Robert Bruce Findler,Matthew Flatt,2007,oopfp
 Robert Bruce Findler,Matthias Felleisen,2007,oopfp
+Agnes Hui Chan,James L. Massey,1992,crypto
+Agnes Hui Chan,Yair Frankel,1998,crypto
+Agnes Hui Chan,Andrew Klapper,1990,crypto
 Eli Upfal,Filip Radlinski,2008,mlmining
 Eli Upfal,Deepayan Chakrabarti,2008,mlmining
 Eli Upfal,Ravi Kumar,2008,mlmining
@@ -25131,12 +25835,15 @@ Emanuele Viola,Anna Gál,2012,theory
 Emanuele Viola,Avi Wigderson,2007,theory
 Emanuele Viola,Andrej Bogdanov,2007,theory
 Emanuele Viola,Parikshit Gopalan,2009,theory
+Emanuele Viola,Ragesh Jaiswal,2009,theory
 Emanuele Viola,Ilias Diakonikolas,2009,theory
 Emanuele Viola,Rocco A. Servedio,2009,theory
 Emanuele Viola,Ronen Shaltiel,2008,theory
+Emanuele Viola,Eric Miles,2012,crypto
 Emanuele Viola,Mihai Patrascu,2010,theory
 Emanuele Viola,Salil P. Vadhan,2004,theory
 Emanuele Viola,Gopal Pandurangan,2013,theory
+Emanuele Viola,Eric Miles,2013,theory
 Emanuele Viola,Rajmohan Rajaraman,2013,theory
 Dean M. Tullsen,Steven Swanson,2013,highperf
 Dean M. Tullsen,Rakesh Kumar 0002,2005,arch
@@ -26166,34 +26873,49 @@ Maria L. Gini,Dean F. Hougen,2001,robotics
 Maria L. Gini,Paul R. Schrater,2005,ai
 Maria L. Gini,Daniel Boley,2005,ai
 Maria L. Gini,Dean F. Hougen,1997,robotics
+David Wagner,Akshay Krishnamurthy,2010,web
+David Wagner,David Molnar,2009,security
+David Wagner,Sanjit A. Seshia,2009,security
+David Wagner,Serge Egelman,2015,hci
+David Wagner,Adrienne Porter Felt,2011,mobile
+David Wagner,Ronald L. Rivest,2002,crypto
+David Wagner,Bruce Schneier,1997,crypto
+David Wagner,John Kelsey,1997,crypto
+David Wagner,Manoj Prabhakaran,2006,crypto
+David Wagner,Amit Sahai,2006,crypto
+David Wagner,Yuval Ishai,2006,crypto
+David Wagner,Tadayoshi Kohno,2006,security
+David Wagner,David Molnar,2006,security
+David Wagner,Aviel D. Rubin,2002,networks
+David Wagner,Dawn Xiaodong Song,2000,security
+David Wagner,Adrian Perrig,2000,security
+David Wagner,Umesh Shankar,2007,security
 David Wagner,Serge Egelman,2014,hci
 David Wagner,David Molnar,2004,security
+David Wagner,Bruce Schneier,1996,crypto
+David Wagner,John Kelsey,1996,crypto
+David Wagner,Ian Goldberg,2001,mobile
+David Wagner,Nikita Borisov,2001,mobile
+David Wagner,Matthew J. B. Robshaw,1999,crypto
+David Wagner,Lars R. Knudsen,1999,crypto
+David Wagner,Dawn Xiaodong Song,2001,security
+David Wagner,Umesh Shankar,2001,security
+David Wagner,Jeffrey S. Foster,2001,security
+David Wagner,Drew Dean,2001,security
+David Wagner,Kunal Talwar,2001,security
+David Wagner,Alex Biryukov,2000,crypto
 David Wagner,Matthew Hicks,2011,security
 David Wagner,Samuel T. King,2011,security
 David Wagner,Adrienne Porter Felt,2011,security
 David Wagner,Dawn Song,2011,security
 David Wagner,Sunny Consolvo,2014,security
 David Wagner,Serge Egelman,2014,security
-David Wagner,Ian Goldberg,2001,mobile
-David Wagner,Nikita Borisov,2001,mobile
-David Wagner,Akshay Krishnamurthy,2010,web
-David Wagner,Serge Egelman,2015,hci
-David Wagner,Tadayoshi Kohno,2006,security
-David Wagner,David Molnar,2006,security
+David Wagner,Bruce Schneier,1998,crypto
+David Wagner,John Kelsey,1998,crypto
 David Wagner,Drew Dean,2002,security
 David Wagner,Hao Chen 0003,2002,security
-David Wagner,David Molnar,2009,security
-David Wagner,Sanjit A. Seshia,2009,security
-David Wagner,Dawn Xiaodong Song,2001,security
-David Wagner,Umesh Shankar,2001,security
-David Wagner,Jeffrey S. Foster,2001,security
-David Wagner,Drew Dean,2001,security
-David Wagner,Kunal Talwar,2001,security
-David Wagner,Aviel D. Rubin,2002,networks
-David Wagner,Dawn Xiaodong Song,2000,security
-David Wagner,Adrian Perrig,2000,security
-David Wagner,Umesh Shankar,2007,security
-David Wagner,Adrienne Porter Felt,2011,mobile
+David Wagner,Amit Sahai,2003,crypto
+David Wagner,Yuval Ishai,2003,crypto
 David Wagner,Adrienne Porter Felt,2012,security
 Christopher W. Clifton,Jaewoo Lee,2014,mlmining
 Rebecca Fiebrink,Dan Morris,2009,hci
@@ -26388,6 +27110,7 @@ Ankur Moitra,Aravindan Vijayaraghavan,2014,theory
 Ankur Moitra,Rocco A. Servedio,2014,theory
 Ankur Moitra,Constantinos Daskalakis,2014,theory
 Ankur Moitra,Nicole Immorlica,2011,theory
+Ankur Moitra,Ran Gelles,2011,theory
 Ankur Moitra,Amit Sahai,2011,theory
 Ankur Moitra,Howard J. Karloff,2011,theory
 Ankur Moitra,Matthew Andrews,2011,theory
@@ -26559,15 +27282,35 @@ Stacy Patterson,Aaron J. Elmore,2012,database
 Stacy Patterson,Divyakant Agrawal,2012,database
 Stacy Patterson,Amr El Abbadi,2012,database
 Stacy Patterson,Jeff Trinkle,2016,robotics
+Stanislaw Jarecki,Vitaly Shmatikov,2004,crypto
 Stanislaw Jarecki,Yevgeniy Dodis,2004,security
 Stanislaw Jarecki,Michael J. Freedman,2004,security
 Stanislaw Jarecki,Nitesh Saxena,2011,security
+Stanislaw Jarecki,Hugo Krawczyk,1999,crypto
+Stanislaw Jarecki,Tal Rabin,1999,crypto
+Stanislaw Jarecki,Rosario Gennaro,1999,crypto
+Stanislaw Jarecki,Ran Canetti,1999,crypto
+Stanislaw Jarecki,Hugo Krawczyk,1996,crypto
+Stanislaw Jarecki,Tal Rabin,1996,crypto
+Stanislaw Jarecki,Rosario Gennaro,1996,crypto
+Stanislaw Jarecki,Anna Lysyanskaya,2000,crypto
 Stanislaw Jarecki,Hugo Krawczyk,1997,security
 Stanislaw Jarecki,Markus Jakobsson,1997,security
 Stanislaw Jarecki,Amir Herzberg,1997,security
 Stanislaw Jarecki,Moti Yung,1997,security
+Stanislaw Jarecki,Jung Hee Cheon,2008,security
+Stanislaw Jarecki,Hugo Krawczyk,2013,crypto
+Stanislaw Jarecki,Michael Steiner,2013,crypto
+Stanislaw Jarecki,Charanjit S. Jutla,2013,crypto
+Stanislaw Jarecki,David Cash,2013,crypto
 Stanislaw Jarecki,Gene Tsudik,2007,security
+Stanislaw Jarecki,Vitaly Shmatikov,2007,crypto
 Stanislaw Jarecki,Hugo Krawczyk,2013,security
+Stanislaw Jarecki,Michael Steiner,2013,security
+Stanislaw Jarecki,Charanjit S. Jutla,2013,security
+Stanislaw Jarecki,Hugo Krawczyk,1995,crypto
+Stanislaw Jarecki,Moti Yung,1995,crypto
+Stanislaw Jarecki,Amir Herzberg,1995,crypto
 Lyle H. Ungar,Marcos Salganicoff,1995,mlmining
 Lyle H. Ungar,Dean P. Foster,2005,mlmining
 Lyle H. Ungar,Dean P. Foster,2010,nlp
@@ -26635,6 +27378,7 @@ Kamalika Chaudhuri,Cynthia Dwork,2007,database
 Kamalika Chaudhuri,Kunal Talwar,2007,database
 Kamalika Chaudhuri,Satyen Kale,2007,database
 Kamalika Chaudhuri,Frank McSherry,2007,database
+Kamalika Chaudhuri,Nina Mishra,2006,crypto
 Benjamin J. Hescott,Roni Khardon,2014,ai
 Christopher Riesbeck,Abhishek B. Sharma,2007,ai
 Christopher Riesbeck,Lawrence Birnbaum,2007,ai
@@ -27503,6 +28247,7 @@ Chengxiang Zhai,Yue Lu,2008,web
 Zeev Dvir,Amir Yehudayoff,2012,theory
 Zeev Dvir,Shachar Lovett,2012,theory
 Zeev Dvir,Avi Wigderson,2007,theory
+Zeev Dvir,Ariel Gabizon,2007,theory
 Zeev Dvir,Swastik Kopparty,2009,theory
 Zeev Dvir,Shubhangi Saraf,2009,theory
 Zeev Dvir,Madhu Sudan,2009,theory
@@ -27630,8 +28375,10 @@ Hyesoon Kim,Chi-Keung Luk,2009,arch
 E. Allen Emerson,Kedar S. Namjoshi,1995,proglang
 E. Allen Emerson,Richard J. Trefler,1999,logic
 E. Allen Emerson,Richard J. Trefler,2000,logic
+E. Allen Emerson,Charanjit S. Jutla,1993,logic
 E. Allen Emerson,A. Prasad Sistla,1993,logic
 E. Allen Emerson,A. Prasad Sistla,1995,logic
+E. Allen Emerson,Charanjit S. Jutla,1991,theory
 E. Allen Emerson,A. Prasad Sistla,1990,logic
 E. Allen Emerson,Vineet Kahlon,2003,logic
 E. Allen Emerson,Kedar S. Namjoshi,1996,logic
@@ -27763,30 +28510,53 @@ I. V. Ramakrishnan,Hasan Davulcu,2000,database
 I. V. Ramakrishnan,Guizhen Yang,2000,database
 Thomas Ristenpart,Somesh Jha,2014,security
 Thomas Ristenpart,Yinqian Zhang,2014,security
+Thomas Ristenpart,Thomas Shrimpton,2014,security
 Thomas Ristenpart,Michael K. Reiter,2014,security
 Thomas Ristenpart,Ari Juels,2014,security
 Thomas Ristenpart,Michael M. Swift,2014,security
-Thomas Ristenpart,Tadayoshi Kohno,2008,security
-Thomas Ristenpart,Arvind Krishnamurthy,2008,security
-Thomas Ristenpart,Somesh Jha,2015,security
-Thomas Ristenpart,Ari Juels,2015,security
-Thomas Ristenpart,Aditya Akella,2015,security
-Thomas Ristenpart,Joseph Bonneau,2015,security
-Thomas Ristenpart,Liang Wang,2015,security
-Thomas Ristenpart,Stefan Savage,2009,security
-Thomas Ristenpart,Hovav Shacham,2009,security
-Thomas Ristenpart,Eran Tromer,2009,security
-Thomas Ristenpart,Juan Caballero,2014,metrics
-Thomas Ristenpart,Liang Wang,2014,metrics
-Thomas Ristenpart,Aditya Akella,2014,metrics
-Thomas Ristenpart,Yinqian Zhang,2012,security
-Thomas Ristenpart,Michael M. Swift,2012,security
-Thomas Ristenpart,Michael K. Reiter,2012,security
-Thomas Ristenpart,Ari Juels,2012,security
 Thomas Ristenpart,Keqiang He,2013,metrics
 Thomas Ristenpart,Aditya Akella,2013,metrics
 Thomas Ristenpart,Liang Wang,2013,metrics
 Thomas Ristenpart,Aaron Gember,2013,metrics
+Thomas Ristenpart,Tadayoshi Kohno,2008,security
+Thomas Ristenpart,Arvind Krishnamurthy,2008,security
+Thomas Ristenpart,Somesh Jha,2015,security
+Thomas Ristenpart,David Cash,2015,security
+Thomas Ristenpart,Ari Juels,2015,security
+Thomas Ristenpart,Thomas Shrimpton,2015,security
+Thomas Ristenpart,Aditya Akella,2015,security
+Thomas Ristenpart,Joseph Bonneau,2015,security
+Thomas Ristenpart,Liang Wang,2015,security
+Thomas Ristenpart,Hovav Shacham,2011,crypto
+Thomas Ristenpart,Thomas Shrimpton,2011,crypto
+Thomas Ristenpart,Stefan Savage,2009,security
+Thomas Ristenpart,Hovav Shacham,2009,security
+Thomas Ristenpart,Eran Tromer,2009,security
+Thomas Ristenpart,Yevgeniy Dodis,2009,crypto
+Thomas Ristenpart,Thomas Shrimpton,2009,crypto
+Thomas Ristenpart,Yevgeniy Dodis,2015,crypto
+Thomas Ristenpart,Ari Juels,2015,crypto
+Thomas Ristenpart,Marc Fischlin,2008,crypto
+Thomas Ristenpart,Mihir Bellare,2008,crypto
+Thomas Ristenpart,Adam O'Neill,2008,crypto
+Thomas Ristenpart,Scott Yilek,2013,crypto
+Thomas Ristenpart,Mihir Bellare,2013,crypto
+Thomas Ristenpart,Sriram Keelveedhi,2013,crypto
+Thomas Ristenpart,Yevgeniy Dodis,2012,crypto
+Thomas Ristenpart,John P. Steinberger,2012,crypto
+Thomas Ristenpart,Mihir Bellare,2012,crypto
+Thomas Ristenpart,Stefano Tessaro,2012,crypto
+Thomas Ristenpart,Yinqian Zhang,2012,security
+Thomas Ristenpart,Thomas Shrimpton,2012,security
+Thomas Ristenpart,Michael M. Swift,2012,security
+Thomas Ristenpart,Michael K. Reiter,2012,security
+Thomas Ristenpart,Ari Juels,2012,security
+Thomas Ristenpart,Scott Yilek,2007,crypto
+Thomas Ristenpart,Thomas Shrimpton,2013,security
+Thomas Ristenpart,Ari Juels,2014,crypto
+Thomas Ristenpart,Juan Caballero,2014,metrics
+Thomas Ristenpart,Liang Wang,2014,metrics
+Thomas Ristenpart,Aditya Akella,2014,metrics
 Ashutosh Saxena,Ashesh Jain,2015,robotics
 Ashutosh Saxena,Ross A. Knepper,2015,robotics
 Ashutosh Saxena,Andrew Y. Ng,2009,robotics
@@ -28012,25 +28782,48 @@ Erik Andersen,Yun-En Liu,2012,hci
 Erik Andersen,Zoran Popovic,2012,hci
 Erik Andersen,Sumit Gulwani,2013,hci
 Erik Andersen,Zoran Popovic,2013,hci
+Silvio Micali,Frank Thomson Leighton,1993,crypto
+Silvio Micali,Jing Chen,2009,theory
+Silvio Micali,Michael O. Rabin,1999,theory
+Silvio Micali,Salil P. Vadhan,1999,theory
+Silvio Micali,Abhi Shelat,2005,theory
+Silvio Micali,Jing Chen,2011,theory
+Silvio Micali,Leonid Reyzin,2001,crypto
+Silvio Micali,Marc Fischlin,2001,crypto
+Silvio Micali,Mihir Bellare,2001,crypto
+Silvio Micali,Shafi Goldwasser,2001,crypto
+Silvio Micali,Shai Halevi,1996,crypto
+Silvio Micali,Phillip Rogaway,1991,crypto
+Silvio Micali,Tal Rabin,1990,crypto
+Silvio Micali,Leonid Reyzin,2001,security
+Silvio Micali,Kazuo Ohta,2001,security
+Silvio Micali,Yevgeniy Dodis,2000,crypto
+Silvio Micali,Mihir Bellare,2000,crypto
+Silvio Micali,Alexandra Boldyreva,2000,crypto
+Silvio Micali,Rafail Ostrovsky,1990,theory
+Silvio Micali,Mihir Bellare,1990,theory
+Silvio Micali,Donald Beaver,1990,theory
+Silvio Micali,Phillip Rogaway,1990,theory
+Silvio Micali,Rosario Gennaro,1995,crypto
+Silvio Micali,Leonid Reyzin,2004,crypto
+Silvio Micali,Hovav Shacham,2004,crypto
+Silvio Micali,Anna Lysyanskaya,2004,crypto
 Silvio Micali,Rafail Ostrovsky,1994,theory
 Silvio Micali,Eyal Kushilevitz,1994,theory
+Silvio Micali,Yevgeniy Dodis,1999,crypto
+Silvio Micali,Tal Malkin,1999,crypto
+Silvio Micali,Amos Beimel,1999,crypto
+Silvio Micali,Markus Stadler,1999,crypto
+Silvio Micali,Christian Cachin,1999,crypto
 Silvio Micali,Oded Goldreich,2000,theory
 Silvio Micali,Ran Canetti,2000,theory
 Silvio Micali,Shafi Goldwasser,2000,theory
-Silvio Micali,Jing Chen,2009,theory
 Silvio Micali,Rafael Pass,2006,theory
 Silvio Micali,Alon Rosen,2006,theory
 Silvio Micali,Michael O. Rabin,2003,theory
 Silvio Micali,Joe Kilian,2003,theory
-Silvio Micali,Abhi Shelat,2005,theory
-Silvio Micali,Jing Chen,2011,theory
-Silvio Micali,Michael O. Rabin,1999,theory
-Silvio Micali,Salil P. Vadhan,1999,theory
 Silvio Micali,Constantinos Daskalakis,2013,theory
 Silvio Micali,S. Matthew Weinberg,2013,theory
-Silvio Micali,Rafail Ostrovsky,1990,theory
-Silvio Micali,Mihir Bellare,1990,theory
-Silvio Micali,Phillip Rogaway,1990,theory
 Jonathan Richard Shewchuk,James F. O'Brien,2004,graphics
 Jonathan Richard Shewchuk,Jack Snoeyink,2006,graphics
 Jonathan Richard Shewchuk,Daniel Ritchie,2010,graphics
@@ -29393,8 +30186,58 @@ Ashwin Machanavajjhala,Jayavel Shanmugasundaram,2007,database
 Ashwin Machanavajjhala,Johannes Gehrke,2007,database
 Michael Eisenberg,Leah Buechley,2008,hci
 Michael Eisenberg,Gerhard Fischer,1994,hci
+Jonathan Katz,Dana Dachman-Soled,2016,crypto
+Jonathan Katz,Craig Gentry,2009,security
+Jonathan Katz,Martin R. Albrecht,2009,security
+Jonathan Katz,Shai Halevi,2009,security
+Jonathan Katz,Michael Hicks,2014,proglang
+Jonathan Katz,Elaine Shi,2014,proglang
+Jonathan Katz,Andrew Miller,2014,proglang
+Jonathan Katz,Ueli Maurer,2012,crypto
+Jonathan Katz,Joël Alwen,2012,crypto
+Jonathan Katz,Vassilis Zikas,2012,crypto
+Jonathan Katz,Alan M. Dunn,2013,security
+Jonathan Katz,Emmett Witchel,2013,security
+Jonathan Katz,Brent Waters,2013,security
+Jonathan Katz,Moti Yung,2002,crypto
+Jonathan Katz,Yevgeniy Dodis,2002,crypto
+Jonathan Katz,Leonid Reyzin,2006,crypto
+Jonathan Katz,Yevgeniy Dodis,2006,crypto
+Jonathan Katz,Adam D. Smith,2006,crypto
+Jonathan Katz,Nan Wang,2003,security
+Jonathan Katz,S. Dov Gordon,2008,theory
+Jonathan Katz,Yehuda Lindell,2008,theory
+Jonathan Katz,Bruce Schneier,2000,security
+Jonathan Katz,Rafail Ostrovsky,2001,crypto
+Jonathan Katz,Steven Myers,2001,crypto
+Jonathan Katz,Giovanni Di Crescenzo,2001,crypto
+Jonathan Katz,Adam D. Smith,2001,crypto
+Jonathan Katz,Moti Yung,2001,crypto
+Jonathan Katz,S. Dov Gordon,2010,crypto
+Jonathan Katz,Ronen Shaltiel,2005,crypto
+Jonathan Katz,Yevgeniy Dodis,2005,crypto
+Jonathan Katz,Ran Canetti,2005,crypto
+Jonathan Katz,Adam D. Smith,2005,crypto
+Jonathan Katz,Philip D. MacKenzie,2005,crypto
+Jonathan Katz,Shai Halevi,2005,crypto
+Jonathan Katz,Yehuda Lindell,2005,crypto
+Jonathan Katz,Xavier Boyen,2005,crypto
+Jonathan Katz,Rafail Ostrovsky,2005,crypto
+Jonathan Katz,Iftach Haitner,2005,crypto
 Jonathan Katz,Peter J. Keleher,2004,networks
 Jonathan Katz,Samrat Bhattacharjee,2004,networks
+Jonathan Katz,Giuseppe Persiano,2009,crypto
+Jonathan Katz,Joël Alwen,2009,crypto
+Jonathan Katz,Ivan Visconti,2009,crypto
+Jonathan Katz,Yehuda Lindell,2009,crypto
+Jonathan Katz,Abhi Shelat,2009,crypto
+Jonathan Katz,Rafail Ostrovsky,2007,theory
+Jonathan Katz,Juan A. Garay,2007,theory
+Jonathan Katz,Luca Trevisan,2000,theory
+Jonathan Katz,Moti Yung,2000,theory
+Jonathan Katz,Shai Halevi,2004,crypto
+Jonathan Katz,Ran Canetti,2004,crypto
+Jonathan Katz,Rafail Ostrovsky,2004,crypto
 Jonathan Katz,Yan Huang,2011,security
 Jonathan Katz,David Evans,2011,security
 Jonathan Katz,Charalampos Papamanthou,2014,security
@@ -29405,34 +30248,50 @@ Jonathan Katz,Elaine Shi,2014,security
 Jonathan Katz,Chang Liu,2014,security
 Jonathan Katz,Andrew Miller,2014,security
 Jonathan Katz,Ari Juels,2014,security
-Jonathan Katz,Nan Wang,2003,security
-Jonathan Katz,Yehuda Lindell,2008,theory
 Jonathan Katz,Charalampos Papamanthou,2015,security
 Jonathan Katz,Elaine Shi,2015,security
 Jonathan Katz,Andrew Miller,2015,security
+Jonathan Katz,Viet Tung Hoang,2015,security
 Jonathan Katz,Rosario Gennaro,2003,theory
 Jonathan Katz,Yael Gertner,2003,theory
-Jonathan Katz,Craig Gentry,2009,security
-Jonathan Katz,Shai Halevi,2009,security
-Jonathan Katz,Luca Trevisan,2000,theory
-Jonathan Katz,Moti Yung,2000,theory
 Jonathan Katz,Yael Tauman Kalai,2010,theory
 Jonathan Katz,Zvika Brakerski,2010,theory
 Jonathan Katz,Vinod Vaikuntanathan,2010,theory
-Jonathan Katz,Rafail Ostrovsky,2007,theory
-Jonathan Katz,Juan A. Garay,2007,theory
-Jonathan Katz,Michael Hicks,2014,proglang
-Jonathan Katz,Elaine Shi,2014,proglang
-Jonathan Katz,Andrew Miller,2014,proglang
+Jonathan Katz,Amit Sahai,2008,crypto
+Jonathan Katz,Brent Waters,2008,crypto
+Jonathan Katz,Yan Huang,2013,crypto
+Jonathan Katz,David Evans,2013,crypto
+Jonathan Katz,Shai Halevi,2003,crypto
+Jonathan Katz,Ran Canetti,2003,crypto
+Jonathan Katz,Adam D. Smith,2003,crypto
+Jonathan Katz,Moti Yung,2003,crypto
+Jonathan Katz,Rafail Ostrovsky,2003,crypto
 Jonathan Katz,Yan Huang,2012,security
 Jonathan Katz,David Evans,2012,security
+Jonathan Katz,S. Dov Gordon,2012,security
 Jonathan Katz,Tal Malkin,2012,security
-Jonathan Katz,Alan M. Dunn,2013,security
-Jonathan Katz,Emmett Witchel,2013,security
-Jonathan Katz,Brent Waters,2013,security
+Jonathan Katz,Mariana Raykova 0001,2012,security
+Jonathan Katz,Vladimir Kolesnikov,2012,security
 Jonathan Katz,Raef Bassily,2013,theory
+Jonathan Katz,Ueli Maurer,2013,theory
 Jonathan Katz,Adam D. Smith,2013,theory
+Jonathan Katz,Vassilis Zikas,2013,theory
 Jonathan Katz,Juan A. Garay,2013,theory
+Jonathan Katz,Ranjit Kumaresan,2014,crypto
+Jonathan Katz,Elaine Shi,2014,crypto
+Jonathan Katz,Amit Sahai,2014,crypto
+Jonathan Katz,Abhishek Jain 0002,2014,crypto
+Jonathan Katz,Dominique Schröder,2014,crypto
+Jonathan Katz,Hong-Sheng Zhou,2014,crypto
+Jonathan Katz,Vipul Goyal,2014,crypto
+Jonathan Katz,Dana Dachman-Soled,2014,crypto
+Jonathan Katz,S. Dov Gordon,2014,crypto
+Jonathan Katz,Anna Lysyanskaya,2014,crypto
+Jonathan Katz,Vladimir Kolesnikov,2014,crypto
+Jonathan Katz,Vassilis Zikas,2014,crypto
+Jonathan Katz,Feng-Hao Liu,2014,crypto
+Jonathan Katz,Yan Huang,2014,crypto
+Jonathan Katz,Shafi Goldwasser,2014,crypto
 Yechiam Yemini,Zhensheng Zhang,1994,networks
 Yechiam Yemini,Hao Huang,2000,networks
 Yechiam Yemini,Ouri Wolfson,1991,database
@@ -29642,15 +30501,13 @@ Sariel Har-Peled,Piotr Indyk,2013,theory
 Sariel Har-Peled,Anastasios Sidiropoulos,2013,theory
 Sariel Har-Peled,Rachit Agarwal 0001,2011,networks
 Sariel Har-Peled,Philip Brighten Godfrey,2011,networks
+David Zuckerman,J. D. Tygar,2002,security
+David Zuckerman,Dawn Xiaodong Song,2002,security
+David Zuckerman,Michael E. Saks,1999,theory
+David Zuckerman,Alexander Russell,1999,theory
 David Zuckerman,Russell Impagliazzo,2012,theory
 David Zuckerman,Raghu Meka,2012,theory
-David Zuckerman,Christopher Umans,2001,theory
-David Zuckerman,Shmuel Safra,2001,theory
-David Zuckerman,Hartmut Klauck,2001,theory
-David Zuckerman,Ashwin Nayak,2001,theory
-David Zuckerman,Amnon Ta-Shma,2001,theory
-David Zuckerman,Aravind Srinivasan,1994,theory
-David Zuckerman,Alexander Russell,1998,theory
+David Zuckerman,Salil P. Vadhan,2006,crypto
 David Zuckerman,C. Greg Plaxton,1995,theory
 David Zuckerman,Frank Thomson Leighton,1995,theory
 David Zuckerman,Robert Endre Tarjan,1995,theory
@@ -29665,6 +30522,24 @@ David Zuckerman,Anup Rao,2008,theory
 David Zuckerman,Parikshit Gopalan,2008,theory
 David Zuckerman,Xin Li 0006,2008,theory
 David Zuckerman,Yael Tauman Kalai,2008,theory
+David Zuckerman,Omer Reingold,2011,theory
+David Zuckerman,Yevgeniy Dodis,2011,theory
+David Zuckerman,Xin Li 0006,2011,theory
+David Zuckerman,Parikshit Gopalan,2011,theory
+David Zuckerman,Raghu Meka,2011,theory
+David Zuckerman,Christopher Umans,2001,theory
+David Zuckerman,Shmuel Safra,2001,theory
+David Zuckerman,Hartmut Klauck,2001,theory
+David Zuckerman,Ashwin Nayak,2001,theory
+David Zuckerman,Amnon Ta-Shma,2001,theory
+David Zuckerman,Atri Rudra,2004,theory
+David Zuckerman,Charanjit S. Jutla,2004,theory
+David Zuckerman,Russell Impagliazzo,1990,theory
+David Zuckerman,Oded Goldreich,1990,theory
+David Zuckerman,Ramarathnam Venkatesan,1990,theory
+David Zuckerman,Leonid A. Levin,1990,theory
+David Zuckerman,Aravind Srinivasan,1994,theory
+David Zuckerman,Alexander Russell,1998,theory
 David Zuckerman,Leonard J. Schulman,1997,theory
 David Zuckerman,Anup Rao,2006,theory
 David Zuckerman,Salil P. Vadhan,2006,theory
@@ -29673,12 +30548,6 @@ David Zuckerman,Grant Schoenebeck,2010,theory
 David Zuckerman,Swastik Kopparty,2010,theory
 David Zuckerman,Raghu Meka,2010,theory
 David Zuckerman,Madhu Sudan,2010,theory
-David Zuckerman,Omer Reingold,2011,theory
-David Zuckerman,Yevgeniy Dodis,2011,theory
-David Zuckerman,Xin Li 0006,2011,theory
-David Zuckerman,Parikshit Gopalan,2011,theory
-David Zuckerman,Raghu Meka,2011,theory
-David Zuckerman,Atri Rudra,2004,theory
 David Zuckerman,Eyal Kushilevitz,1993,theory
 David Zuckerman,Noam Nisan,1993,theory
 David Zuckerman,Michael O. Rabin,1993,theory
@@ -29687,14 +30556,6 @@ David Zuckerman,Michael Luby,1993,theory
 David Zuckerman,Nathan Linial,1993,theory
 David Zuckerman,Michael E. Saks,1993,theory
 David Zuckerman,Avi Wigderson,1993,theory
-David Zuckerman,Michael E. Saks,1999,theory
-David Zuckerman,Alexander Russell,1999,theory
-David Zuckerman,J. D. Tygar,2002,security
-David Zuckerman,Dawn Xiaodong Song,2002,security
-David Zuckerman,Russell Impagliazzo,1990,theory
-David Zuckerman,Oded Goldreich,1990,theory
-David Zuckerman,Ramarathnam Venkatesan,1990,theory
-David Zuckerman,Leonid A. Levin,1990,theory
 Robert Endre Tarjan,Gerth Stølting Brodal,2012,theory
 Robert Endre Tarjan,Kostas Tsioutsiouliklis,2001,theory
 Robert Endre Tarjan,Haim Kaplan,2001,theory
@@ -30039,14 +30900,41 @@ Hanan Samet,Kenneth P. Smith,2004,database
 Hanan Samet,Alon Efrat,1999,theory
 Hanan Samet,Arnon Amir,1999,theory
 Hanan Samet,Piotr Indyk,1999,theory
-Victor Shoup,N. Asokan,1998,security
-Victor Shoup,Michael Waidner,1998,security
+Victor Shoup,Jan Camenisch,2009,security
+Victor Shoup,Joachim von zur Gathen,1992,theory
+Victor Shoup,Jan Camenisch,2002,crypto
+Victor Shoup,Ronald Cramer,2002,crypto
 Victor Shoup,Tadayoshi Kohno,2006,security
 Victor Shoup,Mihir Bellare,2006,security
-Victor Shoup,Rafail Ostrovsky,1997,theory
-Victor Shoup,Jan Camenisch,2009,security
+Victor Shoup,Shai Halevi,2015,crypto
+Victor Shoup,Klaus Kursawe,2001,crypto
+Victor Shoup,Christian Cachin,2001,crypto
+Victor Shoup,Jan Camenisch,2010,crypto
+Victor Shoup,Masayuki Abe,2005,crypto
+Victor Shoup,Rosario Gennaro,2005,crypto
+Victor Shoup,Kaoru Kurosawa,2005,crypto
+Victor Shoup,Aviel D. Rubin,1996,crypto
+Victor Shoup,Jan Camenisch,2009,crypto
+Victor Shoup,Nishanth Chandran,2009,crypto
 Victor Shoup,Roman Smolensky,1991,theory
-Victor Shoup,Joachim von zur Gathen,1992,theory
+Victor Shoup,Johannes A. Buchmann,1991,theory
+Victor Shoup,Joan Feigenbaum,1990,crypto
+Victor Shoup,Donald Beaver,1990,crypto
+Victor Shoup,Aggelos Kiayias,2004,crypto
+Victor Shoup,Yevgeniy Dodis,2004,crypto
+Victor Shoup,Rafail Ostrovsky,1997,theory
+Victor Shoup,Rosario Gennaro,1998,crypto
+Victor Shoup,N. Asokan,1998,crypto
+Victor Shoup,Michael Waidner,1998,crypto
+Victor Shoup,Ronald Cramer,1998,crypto
+Victor Shoup,N. Asokan,1998,security
+Victor Shoup,Michael Waidner,1998,security
+Victor Shoup,Eike Kiltz,2008,crypto
+Victor Shoup,Yevgeniy Dodis,2008,crypto
+Victor Shoup,David Cash,2008,crypto
+Victor Shoup,Shai Halevi,2014,crypto
+Victor Shoup,Jan Camenisch,2003,crypto
+Victor Shoup,Ronald Cramer,1999,security
 Dan Klein,Greg Durrett,2014,nlp
 Dan Klein,Mohit Bansal,2014,nlp
 Dan Klein,David Leo Wright Hall,2014,nlp
@@ -30995,6 +31883,7 @@ Somesh Jha,Thomas W. Reps,2005,softeng
 Somesh Jha,Vinod Ganapathy,2005,softeng
 Somesh Jha,Sanjit A. Seshia,2005,softeng
 Somesh Jha,Robin Sommer,2014,security
+Somesh Jha,Thomas Shrimpton,2014,security
 Somesh Jha,Thomas Ristenpart,2014,security
 Somesh Jha,Lorenzo De Carli,2014,security
 Somesh Jha,Randal E. Bryant,2005,security
@@ -31067,11 +31956,14 @@ Chenyang Lu,Kathryn S. McKinley,2016,highperf
 Chenyang Lu,Kunal Agrawal,2016,highperf
 Chenyang Lu,Yuxiong He,2016,highperf
 Chenyang Lu,Sameh Elnikety,2016,highperf
-Nickolai Zeldovich,Michael Dalton,2008,opsys
-Nickolai Zeldovich,Christos Kozyrakis,2008,opsys
-Nickolai Zeldovich,Nabeel Ahmed,2011,security
-Nickolai Zeldovich,Shyamnath Gollakota,2011,security
-Nickolai Zeldovich,Dina Katabi,2011,security
+Nickolai Zeldovich,M. Frans Kaashoek,2012,arch
+Nickolai Zeldovich,Austin T. Clements,2012,arch
+Nickolai Zeldovich,Hari Balakrishnan,2014,networks
+Nickolai Zeldovich,Michael Dalton,2009,security
+Nickolai Zeldovich,Christos Kozyrakis,2009,security
+Nickolai Zeldovich,Raluca A. Popa,2013,security
+Nickolai Zeldovich,Xi Wang,2009,opsys
+Nickolai Zeldovich,M. Frans Kaashoek,2009,opsys
 Nickolai Zeldovich,M. Frans Kaashoek,2013,database
 Nickolai Zeldovich,Stephen Tu,2013,database
 Nickolai Zeldovich,Samuel Madden,2013,database
@@ -31087,33 +31979,37 @@ Nickolai Zeldovich,M. Frans Kaashoek,2013,opsys
 Nickolai Zeldovich,Ramesh Chandra,2013,opsys
 Nickolai Zeldovich,Austin T. Clements,2013,opsys
 Nickolai Zeldovich,Xi Wang,2013,opsys
+Nickolai Zeldovich,Ramesh Chandra,2005,networks
+Nickolai Zeldovich,Monica S. Lam,2005,networks
+Nickolai Zeldovich,Michael Dalton,2008,opsys
+Nickolai Zeldovich,Christos Kozyrakis,2008,opsys
 Nickolai Zeldovich,Taesoo Kim,2014,opsys
 Nickolai Zeldovich,Adam Chlipala,2014,opsys
 Nickolai Zeldovich,M. Frans Kaashoek,2014,opsys
 Nickolai Zeldovich,Zachary Tatlock,2014,opsys
 Nickolai Zeldovich,Xi Wang,2014,opsys
-Nickolai Zeldovich,Taesoo Kim,2010,security
 Nickolai Zeldovich,Taesoo Kim,2012,opsys
 Nickolai Zeldovich,M. Frans Kaashoek,2012,opsys
 Nickolai Zeldovich,Ramesh Chandra,2012,opsys
 Nickolai Zeldovich,Xi Wang,2012,opsys
-Nickolai Zeldovich,Ramesh Chandra,2005,networks
-Nickolai Zeldovich,Monica S. Lam,2005,networks
-Nickolai Zeldovich,Hari Balakrishnan,2014,networks
-Nickolai Zeldovich,Xi Wang,2009,opsys
-Nickolai Zeldovich,M. Frans Kaashoek,2009,opsys
-Nickolai Zeldovich,Michael Dalton,2009,security
-Nickolai Zeldovich,Christos Kozyrakis,2009,security
-Nickolai Zeldovich,Silas Boyd-Wickizer,2006,opsys
-Nickolai Zeldovich,Eddie Kohler,2006,opsys
-Nickolai Zeldovich,David Mazières,2006,opsys
+Nickolai Zeldovich,Nabeel Ahmed,2011,security
+Nickolai Zeldovich,Shyamnath Gollakota,2011,security
+Nickolai Zeldovich,Dina Katabi,2011,security
 Nickolai Zeldovich,M. Frans Kaashoek,2014,security
+Nickolai Zeldovich,Taesoo Kim,2010,security
 Nickolai Zeldovich,Taesoo Kim,2010,opsys
 Nickolai Zeldovich,M. Frans Kaashoek,2010,opsys
 Nickolai Zeldovich,Silas Boyd-Wickizer,2010,opsys
 Nickolai Zeldovich,Robert Morris,2010,opsys
 Nickolai Zeldovich,Austin T. Clements,2010,opsys
 Nickolai Zeldovich,Xi Wang,2010,opsys
+Nickolai Zeldovich,Silas Boyd-Wickizer,2006,opsys
+Nickolai Zeldovich,Eddie Kohler,2006,opsys
+Nickolai Zeldovich,David Mazières,2006,opsys
+Nickolai Zeldovich,Yael Tauman Kalai,2013,crypto
+Nickolai Zeldovich,Raluca A. Popa,2013,crypto
+Nickolai Zeldovich,Shafi Goldwasser,2013,crypto
+Nickolai Zeldovich,Vinod Vaikuntanathan,2013,crypto
 Nickolai Zeldovich,Taesoo Kim,2011,opsys
 Nickolai Zeldovich,Raluca A. Popa,2011,opsys
 Nickolai Zeldovich,M. Frans Kaashoek,2011,opsys
@@ -31121,13 +32017,10 @@ Nickolai Zeldovich,Hari Balakrishnan,2011,opsys
 Nickolai Zeldovich,Dong Zhou,2011,opsys
 Nickolai Zeldovich,Ramesh Chandra,2011,opsys
 Nickolai Zeldovich,Xi Wang,2011,opsys
-Nickolai Zeldovich,Raluca A. Popa,2013,security
 Nickolai Zeldovich,Yael Tauman Kalai,2013,theory
 Nickolai Zeldovich,Raluca A. Popa,2013,theory
 Nickolai Zeldovich,Shafi Goldwasser,2013,theory
 Nickolai Zeldovich,Vinod Vaikuntanathan,2013,theory
-Nickolai Zeldovich,M. Frans Kaashoek,2012,arch
-Nickolai Zeldovich,Austin T. Clements,2012,arch
 Rajeev Alur,Sebastian Burckhardt,2007,proglang
 Rajeev Alur,Milo M. K. Martin,2007,proglang
 Rajeev Alur,Susmit Sarkar,2012,logic
@@ -31217,15 +32110,28 @@ Ben Reichardt,Robert Spalek,2008,theory
 Susan Hohenberger,Matthew Green 0001,2011,security
 Susan Hohenberger,Brent Waters,2011,security
 Susan Hohenberger,Rafael Pass,2014,security
+Susan Hohenberger,Steven Myers,2014,security
 Susan Hohenberger,Abhi Shelat,2014,security
 Susan Hohenberger,Giuseppe Ateniese,2005,security
 Susan Hohenberger,Matthew Green 0001,2010,security
 Susan Hohenberger,Jan Camenisch,2006,security
 Susan Hohenberger,Anna Lysyanskaya,2006,security
 Susan Hohenberger,Markulf Kohlweiss,2006,security
+Susan Hohenberger,Brent Waters,2009,crypto
+Susan Hohenberger,Brent Waters,2015,crypto
+Susan Hohenberger,Amit Sahai,2013,crypto
+Susan Hohenberger,Brent Waters,2013,crypto
 Susan Hohenberger,Ran Canetti,2007,security
+Susan Hohenberger,Allison B. Lewko,2012,crypto
+Susan Hohenberger,Brent Waters,2012,crypto
 Susan Hohenberger,Matthew Green 0001,2012,security
+Susan Hohenberger,Brent Waters,2010,crypto
+Susan Hohenberger,Jan Camenisch,2007,crypto
 Susan Hohenberger,Matthew Green 0001,2013,security
+Susan Hohenberger,Jan Camenisch,2005,crypto
+Susan Hohenberger,Anna Lysyanskaya,2005,crypto
+Susan Hohenberger,Amit Sahai,2014,crypto
+Susan Hohenberger,Brent Waters,2014,crypto
 José Meseguer,Yi-Min Wang,2007,security
 José Meseguer,Helen J. Wang,2007,security
 José Meseguer,Xiaolei Qian,1993,database
@@ -31902,9 +32808,11 @@ Ramana Rao Kompella,Myungjin Lee,2011,networks
 Ramana Rao Kompella,Hyunseok Chang,2011,networks
 Ramana Rao Kompella,Sarit Mukherjee,2011,networks
 Ramana Rao Kompella,Murali S. Kodialam,2011,networks
+Leonid A. Levin,Gene Itkis,1994,theory
 Leonid A. Levin,László Babai,1991,theory
 Leonid A. Levin,Lance Fortnow,1991,theory
 Leonid A. Levin,Mario Szegedy,1991,theory
+Leonid A. Levin,Shafi Goldwasser,1990,crypto
 Leonid A. Levin,David Zuckerman,1990,theory
 Leonid A. Levin,Russell Impagliazzo,1990,theory
 Leonid A. Levin,Oded Goldreich,1990,theory
@@ -32181,10 +33089,26 @@ Koushik Sen,George C. Necula,2011,proglang
 Koushik Sen,Chang-Seo Park,2009,logic
 Koushik Sen,Pallavi Joshi,2009,logic
 Koushik Sen,Mayur Naik,2009,logic
+Alexandra Boldyreva,Mihir Bellare,2004,crypto
 Alexandra Boldyreva,Hsien-Hsin S. Lee,2005,arch
-Alexandra Boldyreva,Cristina Nita-Rotaru,2015,security
 Alexandra Boldyreva,Vipul Goyal,2008,security
+Alexandra Boldyreva,Cristina Nita-Rotaru,2015,security
+Alexandra Boldyreva,Adam O'Neill,2011,crypto
+Alexandra Boldyreva,Adam O'Neill,2009,crypto
+Alexandra Boldyreva,Serge Fehr,2008,crypto
+Alexandra Boldyreva,Adam O'Neill,2008,crypto
 Alexandra Boldyreva,Craig Gentry,2007,security
+Alexandra Boldyreva,Adam O'Neill,2007,security
+Alexandra Boldyreva,Chanathip Namprempre,2001,crypto
+Alexandra Boldyreva,Mihir Bellare,2001,crypto
+Alexandra Boldyreva,Lars R. Knudsen,2001,crypto
+Alexandra Boldyreva,Kenneth G. Paterson,2012,crypto
+Alexandra Boldyreva,Martijn Stam,2012,crypto
+Alexandra Boldyreva,Mihir Bellare,2007,crypto
+Alexandra Boldyreva,Adam O'Neill,2007,crypto
+Alexandra Boldyreva,Silvio Micali,2000,crypto
+Alexandra Boldyreva,Mihir Bellare,2000,crypto
+Alexandra Boldyreva,Marc Fischlin,2005,crypto
 Jeff Trinkle,Wolfram Burgard,2015,robotics
 Jeff Trinkle,Shuai Li,2015,robotics
 Jeff Trinkle,Siwei Lyu,2015,robotics
@@ -32810,28 +33734,74 @@ Dan Suciu,Christos H. Papadimitriou,1996,database
 Dan Suciu,Tova Milo,2000,database
 Dan Suciu,Victor Vianu,2000,database
 Vinod Vaikuntanathan,Eran Tromer,2012,theory
+Vinod Vaikuntanathan,Adriana López-Alt,2012,theory
 Vinod Vaikuntanathan,Ran Canetti,2015,theory
+Vinod Vaikuntanathan,Abhishek Jain 0002,2015,theory
 Vinod Vaikuntanathan,Daniel Wichs,2015,theory
+Vinod Vaikuntanathan,Sergey Gorbunov,2015,theory
 Vinod Vaikuntanathan,Nir Bitansky,2015,theory
+Vinod Vaikuntanathan,Rafael Pass,2006,crypto
+Vinod Vaikuntanathan,Abhi Shelat,2006,crypto
 Vinod Vaikuntanathan,Timothy Sherwood,2012,arch
 Vinod Vaikuntanathan,Andrew Putnam,2012,arch
 Vinod Vaikuntanathan,Seny Kamara,2012,arch
+Vinod Vaikuntanathan,Melissa Chase,2012,arch
 Vinod Vaikuntanathan,Craig Gentry,2008,theory
 Vinod Vaikuntanathan,Chris Peikert,2008,theory
 Vinod Vaikuntanathan,Michael Ben-Or,2006,theory
 Vinod Vaikuntanathan,Elan Pavlov,2006,theory
 Vinod Vaikuntanathan,Shafi Goldwasser,2006,theory
+Vinod Vaikuntanathan,Zvika Brakerski,2011,crypto
 Vinod Vaikuntanathan,Jonathan Katz,2010,theory
 Vinod Vaikuntanathan,Yael Tauman Kalai,2010,theory
 Vinod Vaikuntanathan,Zvika Brakerski,2010,theory
+Vinod Vaikuntanathan,Gil Segev,2015,crypto
+Vinod Vaikuntanathan,Sergey Gorbunov,2015,crypto
+Vinod Vaikuntanathan,Zvika Brakerski,2015,crypto
+Vinod Vaikuntanathan,Hoeteck Wee,2015,crypto
 Vinod Vaikuntanathan,Daniel Wichs,2016,theory
+Vinod Vaikuntanathan,Raluca A. Popa,2013,crypto
+Vinod Vaikuntanathan,Shweta Agrawal,2013,crypto
+Vinod Vaikuntanathan,Shafi Goldwasser,2013,crypto
+Vinod Vaikuntanathan,Sergey Gorbunov,2013,crypto
+Vinod Vaikuntanathan,Nickolai Zeldovich,2013,crypto
+Vinod Vaikuntanathan,Hoeteck Wee,2013,crypto
+Vinod Vaikuntanathan,Yael Tauman Kalai,2013,crypto
 Vinod Vaikuntanathan,Zvika Brakerski,2011,theory
+Vinod Vaikuntanathan,Gilad Asharov,2012,crypto
+Vinod Vaikuntanathan,Abhishek Jain 0002,2012,crypto
+Vinod Vaikuntanathan,Adriana López-Alt,2012,crypto
+Vinod Vaikuntanathan,Daniel Wichs,2012,crypto
+Vinod Vaikuntanathan,Eran Tromer,2012,crypto
+Vinod Vaikuntanathan,Sergey Gorbunov,2012,crypto
+Vinod Vaikuntanathan,Hoeteck Wee,2012,crypto
+Vinod Vaikuntanathan,Rafael Pass,2008,crypto
+Vinod Vaikuntanathan,Chris Peikert,2008,crypto
+Vinod Vaikuntanathan,Brent Waters,2008,crypto
+Vinod Vaikuntanathan,Omkant Pandey,2008,crypto
+Vinod Vaikuntanathan,Leonid Reyzin,2010,crypto
+Vinod Vaikuntanathan,Tal Rabin,2010,crypto
+Vinod Vaikuntanathan,Marten van Dijk,2010,crypto
+Vinod Vaikuntanathan,Eran Tromer,2010,crypto
+Vinod Vaikuntanathan,Shai Halevi,2010,crypto
+Vinod Vaikuntanathan,Sebastian Faust,2010,crypto
+Vinod Vaikuntanathan,Craig Gentry,2010,crypto
+Vinod Vaikuntanathan,Hao Chen,2007,crypto
+Vinod Vaikuntanathan,Shafi Goldwasser,2007,crypto
+Vinod Vaikuntanathan,Ronald Cramer,2007,crypto
 Vinod Vaikuntanathan,Toniann Pitassi,2013,theory
 Vinod Vaikuntanathan,Raluca A. Popa,2013,theory
 Vinod Vaikuntanathan,Mark Braverman,2013,theory
 Vinod Vaikuntanathan,Shafi Goldwasser,2013,theory
+Vinod Vaikuntanathan,Sergey Gorbunov,2013,theory
 Vinod Vaikuntanathan,Nickolai Zeldovich,2013,theory
+Vinod Vaikuntanathan,Hoeteck Wee,2013,theory
 Vinod Vaikuntanathan,Yael Tauman Kalai,2013,theory
+Vinod Vaikuntanathan,Dan Boneh,2014,crypto
+Vinod Vaikuntanathan,Shai Halevi,2014,crypto
+Vinod Vaikuntanathan,Gil Segev,2014,crypto
+Vinod Vaikuntanathan,Sergey Gorbunov,2014,crypto
+Vinod Vaikuntanathan,Craig Gentry,2014,crypto
 Pavel A. Pevzner,Süleyman Cenk Sahinalp,1999,theory
 Pavel A. Pevzner,Mike Paterson,1999,theory
 Pavel A. Pevzner,Leslie Ann Goldberg,1999,theory
@@ -34271,8 +35241,19 @@ Amit Sahai,Rafail Ostrovsky,2009,theory
 Amit Sahai,Eyal Kushilevitz,2009,theory
 Amit Sahai,Vipul Goyal,2009,theory
 Amit Sahai,Yuval Ishai,2009,theory
+Amit Sahai,Yi Deng,2009,theory
 Amit Sahai,Salil P. Vadhan,1997,theory
 Amit Sahai,Marshall W. Bern,1996,theory
+Amit Sahai,Salil P. Vadhan,1998,crypto
+Amit Sahai,Shai Halevi,1998,crypto
+Amit Sahai,Cynthia Dwork,1998,crypto
+Amit Sahai,Mihir Bellare,1998,crypto
+Amit Sahai,Shweta Agrawal,2012,crypto
+Amit Sahai,Abhishek Jain 0002,2012,crypto
+Amit Sahai,Manoj Prabhakaran,2012,crypto
+Amit Sahai,Brent Waters,2012,crypto
+Amit Sahai,Vipul Goyal,2012,crypto
+Amit Sahai,Sanjam Garg,2012,crypto
 Amit Sahai,Moses Charikar,1999,theory
 Amit Sahai,Andrew Tomkins,1999,theory
 Amit Sahai,Sridhar Rajagopalan,1999,theory
@@ -34290,29 +35271,83 @@ Amit Sahai,Allison B. Lewko,2010,security
 Amit Sahai,Brent Waters,2010,security
 Amit Sahai,Edward W. Felten,2003,security
 Amit Sahai,Vipul Goyal,2006,security
+Amit Sahai,Omkant Pandey,2006,security
 Amit Sahai,Brent Waters,2006,security
 Amit Sahai,Rafail Ostrovsky,2008,theory
 Amit Sahai,Eyal Kushilevitz,2008,theory
 Amit Sahai,Yuval Ishai,2008,theory
+Amit Sahai,Dominique Unruh,2011,crypto
+Amit Sahai,Eyal Kushilevitz,2011,crypto
+Amit Sahai,Abhishek Jain 0002,2011,crypto
+Amit Sahai,Dominique Schröder,2011,crypto
+Amit Sahai,Manoj Prabhakaran,2011,crypto
+Amit Sahai,Sanjam Garg,2011,crypto
+Amit Sahai,Jürg Wullschleger,2011,crypto
+Amit Sahai,Yael Tauman Kalai,2011,crypto
+Amit Sahai,Rafail Ostrovsky,2011,crypto
+Amit Sahai,Yuval Ishai,2011,crypto
+Amit Sahai,Salil P. Vadhan,1999,crypto
+Amit Sahai,Oded Goldreich,1999,crypto
+Amit Sahai,Mihir Bellare,1999,crypto
+Amit Sahai,Ravi Kumar,1999,crypto
+Amit Sahai,Sridhar Rajagopalan,1999,crypto
 Amit Sahai,Boaz Barak,2005,theory
+Amit Sahai,Daniel Genkin,2014,theory
 Amit Sahai,Manoj Prabhakaran,2014,theory
 Amit Sahai,Eran Tromer,2014,theory
 Amit Sahai,Brent Waters,2014,theory
 Amit Sahai,Yuval Ishai,2014,theory
+Amit Sahai,Ran Gelles,2011,theory
 Amit Sahai,Ankur Moitra,2011,theory
+Amit Sahai,Salil P. Vadhan,2001,crypto
+Amit Sahai,Yevgeniy Dodis,2001,crypto
+Amit Sahai,Ke Yang,2001,crypto
+Amit Sahai,Steven Rudich,2001,crypto
+Amit Sahai,Alfredo De Santis,2001,crypto
+Amit Sahai,Oded Goldreich,2001,crypto
+Amit Sahai,Boaz Barak,2001,crypto
+Amit Sahai,Giuseppe Persiano,2001,crypto
+Amit Sahai,Adam D. Smith,2001,crypto
+Amit Sahai,Giovanni Di Crescenzo,2001,crypto
+Amit Sahai,Rafail Ostrovsky,2001,crypto
+Amit Sahai,Russell Impagliazzo,2001,crypto
+Amit Sahai,Allison B. Lewko,2010,crypto
+Amit Sahai,Tatsuaki Okamoto,2010,crypto
+Amit Sahai,Mohammad Mahmoody,2010,crypto
+Amit Sahai,Vipul Goyal,2010,crypto
+Amit Sahai,Brent Waters,2010,crypto
+Amit Sahai,Yuval Ishai,2010,crypto
+Amit Sahai,Brent Waters,2005,crypto
 Amit Sahai,Rafail Ostrovsky,2007,security
 Amit Sahai,Brent Waters,2007,security
+Amit Sahai,David Wagner,2003,crypto
+Amit Sahai,Yuval Ishai,2003,crypto
+Amit Sahai,Benny Applebaum,2009,crypto
+Amit Sahai,Chris Peikert,2009,crypto
+Amit Sahai,Vipul Goyal,2009,crypto
+Amit Sahai,David Cash,2009,crypto
 Amit Sahai,Rafail Ostrovsky,2007,theory
 Amit Sahai,Eyal Kushilevitz,2007,theory
 Amit Sahai,Vipul Goyal,2007,theory
 Amit Sahai,Yuval Ishai,2007,theory
+Amit Sahai,Nishanth Chandran,2007,theory
 Amit Sahai,Eyal Kushilevitz,2004,theory
 Amit Sahai,Manoj Prabhakaran,2004,theory
 Amit Sahai,Yevgeniy Dodis,2004,theory
 Amit Sahai,Rafail Ostrovsky,2004,theory
 Amit Sahai,Edith Elkind,2004,theory
 Amit Sahai,Yuval Ishai,2004,theory
+Amit Sahai,Shai Halevi,2000,crypto
+Amit Sahai,Yevgeniy Dodis,2000,crypto
+Amit Sahai,Ran Canetti,2000,crypto
+Amit Sahai,Eyal Kushilevitz,2000,crypto
+Amit Sahai,Manoj Prabhakaran,2016,crypto
+Amit Sahai,Eric Miles,2016,crypto
+Amit Sahai,Hemanta K. Maji,2016,crypto
+Amit Sahai,Mark Zhandry,2016,crypto
+Amit Sahai,Manoj Prabhakaran,2004,crypto
 Amit Sahai,Yuval Ishai,2014,security
+Amit Sahai,Divya Gupta 0001,2014,security
 Amit Sahai,Moses Charikar,2000,theory
 Amit Sahai,Madhu Sudan,2000,theory
 Amit Sahai,Sridhar Rajagopalan,2000,theory
@@ -34321,14 +35356,62 @@ Amit Sahai,Venkatesan Guruswami,2000,theory
 Amit Sahai,Jon M. Kleinberg,2000,theory
 Amit Sahai,Prabhakar Raghavan,2000,theory
 Amit Sahai,Ravi Kumar,2000,theory
+Amit Sahai,Dan Boneh,2006,crypto
+Amit Sahai,Jens Groth,2006,crypto
+Amit Sahai,Manoj Prabhakaran,2006,crypto
+Amit Sahai,Brent Waters,2006,crypto
+Amit Sahai,Steve Lu,2006,crypto
+Amit Sahai,Hovav Shacham,2006,crypto
+Amit Sahai,Rafail Ostrovsky,2006,crypto
+Amit Sahai,David Wagner,2006,crypto
+Amit Sahai,Yuval Ishai,2006,crypto
 Amit Sahai,Vipul Goyal,2008,security
+Amit Sahai,Steve Lu,2008,security
 Amit Sahai,Brent Waters,2008,security
 Amit Sahai,Boaz Barak,2006,theory
 Amit Sahai,Manoj Prabhakaran,2006,theory
 Amit Sahai,Eyal Kushilevitz,2006,theory
 Amit Sahai,Yuval Ishai,2006,theory
 Amit Sahai,Rafail Ostrovsky,2006,theory
+Amit Sahai,Hemanta K. Maji,2010,theory
 Amit Sahai,Manoj Prabhakaran,2010,theory
+Amit Sahai,Ilya Mironov,2015,crypto
+Amit Sahai,Dan Boneh,2015,crypto
+Amit Sahai,Eyal Kushilevitz,2015,crypto
+Amit Sahai,Yuval Ishai,2015,crypto
+Amit Sahai,Divya Gupta 0001,2015,crypto
+Amit Sahai,Mehdi Tibouchi,2015,crypto
+Amit Sahai,Vipul Goyal,2015,crypto
+Amit Sahai,Rafail Ostrovsky,2015,crypto
+Amit Sahai,Sanjam Garg,2015,crypto
+Amit Sahai,Shai Halevi,2015,crypto
+Amit Sahai,Mark Zhandry,2015,crypto
+Amit Sahai,Eric Miles,2015,crypto
+Amit Sahai,Hemanta K. Maji,2015,crypto
+Amit Sahai,Craig Gentry,2015,crypto
+Amit Sahai,Tancrède Lepoint,2015,crypto
+Amit Sahai,Jean-Sébastien Coron,2015,crypto
+Amit Sahai,Mariana Raykova 0001,2015,crypto
+Amit Sahai,Manoj Prabhakaran,2008,crypto
+Amit Sahai,Nishanth Chandran,2008,crypto
+Amit Sahai,Jens Groth,2008,crypto
+Amit Sahai,Brent Waters,2008,crypto
+Amit Sahai,Vipul Goyal,2008,crypto
+Amit Sahai,Jonathan Katz,2008,crypto
+Amit Sahai,Yuval Ishai,2008,crypto
+Amit Sahai,Rafael Pass,2008,crypto
+Amit Sahai,Omkant Pandey,2008,crypto
+Amit Sahai,Ilya Mironov,2013,crypto
+Amit Sahai,Abhishek Jain 0002,2013,crypto
+Amit Sahai,Vipul Goyal,2013,crypto
+Amit Sahai,Brent Waters,2013,crypto
+Amit Sahai,Sanjam Garg,2013,crypto
+Amit Sahai,Shai Halevi,2013,crypto
+Amit Sahai,Susan Hohenberger,2013,crypto
+Amit Sahai,Elette Boyle,2013,crypto
+Amit Sahai,Yael Tauman Kalai,2013,crypto
+Amit Sahai,Craig Gentry,2013,crypto
+Amit Sahai,Omkant Pandey,2013,crypto
 Amit Sahai,Moses Charikar,2002,theory
 Amit Sahai,Ran Canetti,2002,theory
 Amit Sahai,Abhi Shelat,2002,theory
@@ -34343,7 +35426,24 @@ Amit Sahai,April Rasala,2002,theory
 Amit Sahai,Sanjam Garg,2013,theory
 Amit Sahai,Craig Gentry,2013,theory
 Amit Sahai,Brent Waters,2013,theory
+Amit Sahai,Mariana Raykova 0001,2013,theory
 Amit Sahai,Shai Halevi,2013,theory
+Amit Sahai,Brent Waters,2014,crypto
+Amit Sahai,Susan Hohenberger,2014,crypto
+Amit Sahai,Elaine Shi,2014,crypto
+Amit Sahai,Abhishek Jain 0002,2014,crypto
+Amit Sahai,Hong-Sheng Zhou,2014,crypto
+Amit Sahai,S. Dov Gordon,2014,crypto
+Amit Sahai,Vipul Goyal,2014,crypto
+Amit Sahai,Sanjam Garg,2014,crypto
+Amit Sahai,Boaz Barak,2014,crypto
+Amit Sahai,Jonathan Katz,2014,crypto
+Amit Sahai,Hemanta K. Maji,2014,crypto
+Amit Sahai,Yael Tauman Kalai,2014,crypto
+Amit Sahai,Feng-Hao Liu,2014,crypto
+Amit Sahai,Shafi Goldwasser,2014,crypto
+Amit Sahai,Manoj Prabhakaran,2014,crypto
+Amit Sahai,Omer Paneth,2014,crypto
 Keenan Crane,Peter Schröder,2015,graphics
 Keenan Crane,Ulrich Pinkall,2015,graphics
 Keenan Crane,Peter Schröder,2011,graphics
@@ -35452,9 +36552,12 @@ Rada Mihalcea,Jia Deng,2015,vision
 Lorie Loeb,Christoph Bregler,2002,graphics
 Lorie Loeb,Bruce Randall Donald,2000,graphics
 Malathi Veeraraghavan,Ian T. Foster,2012,highperf
+Tal Malkin,Moti Yung,2004,crypto
 Tal Malkin,Omer Reingold,2001,theory
 Tal Malkin,Yael Gertner,2001,theory
+Tal Malkin,Daniele Micciancio,2002,crypto
 Tal Malkin,Angelos D. Keromytis,2014,security
+Tal Malkin,Vladimir Kolesnikov,2014,security
 Tal Malkin,Mahesh Viswanathan 0001,2000,theory
 Tal Malkin,Omer Reingold,2000,theory
 Tal Malkin,Yael Gertner,2000,theory
@@ -35462,13 +36565,42 @@ Tal Malkin,Sampath Kannan,2000,theory
 Tal Malkin,Eyal Kushilevitz,1998,theory
 Tal Malkin,Yael Gertner,1998,theory
 Tal Malkin,Yuval Ishai,1998,theory
+Tal Malkin,Enav Weinreb,2007,crypto
+Tal Malkin,Amos Beimel,2007,crypto
+Tal Malkin,Kobbi Nissim,2007,crypto
 Tal Malkin,Patrick Drew McDaniel,2003,security
 Tal Malkin,Sugih Jamin,2003,security
+Tal Malkin,Dana Dachman-Soled,2016,crypto
 Tal Malkin,Steven M. Bellovin,2015,security
+Tal Malkin,Vladimir Kolesnikov,2015,security
+Tal Malkin,Moti Yung,2011,crypto
+Tal Malkin,Moti Yung,2009,crypto
+Tal Malkin,François-Xavier Standaert,2009,crypto
+Tal Malkin,Silvio Micali,1999,crypto
+Tal Malkin,Ran Canetti,1999,crypto
+Tal Malkin,Amos Beimel,1999,crypto
+Tal Malkin,Kobbi Nissim,1999,crypto
+Tal Malkin,Mike Rosulek,2013,crypto
+Tal Malkin,S. Dov Gordon,2013,crypto
+Tal Malkin,Hoeteck Wee,2013,crypto
+Tal Malkin,Ivan Damgård,2001,crypto
+Tal Malkin,Ran Canetti,2001,crypto
+Tal Malkin,Stefan Dziembowski,2001,crypto
+Tal Malkin,Yuval Ishai,2001,crypto
+Tal Malkin,S. Dov Gordon,2012,security
 Tal Malkin,Jonathan Katz,2012,security
+Tal Malkin,Mariana Raykova 0001,2012,security
+Tal Malkin,Vladimir Kolesnikov,2012,security
 Tal Malkin,Eyal Kushilevitz,1999,theory
 Tal Malkin,Amos Beimel,1999,theory
 Tal Malkin,Yuval Ishai,1999,theory
+Tal Malkin,Rafail Ostrovsky,2000,crypto
+Tal Malkin,Giovanni Di Crescenzo,2000,crypto
+Tal Malkin,Yuval Ishai,2000,crypto
+Tal Malkin,Amos Beimel,2000,crypto
+Tal Malkin,Melissa Chase,2005,crypto
+Tal Malkin,Anna Lysyanskaya,2005,crypto
+Tal Malkin,Leonid Reyzin,2005,crypto
 Nima Honarmand,Vikram S. Adve,2011,proglang
 Nima Honarmand,Adam Welc,2011,proglang
 Nima Honarmand,Sarita V. Adve,2011,proglang
@@ -36591,6 +37723,7 @@ Gérard G. Medioni,Chi-Keung Tang,1999,vision
 Ming-Yang Kao,Alok Kumar,2001,theory
 Ming-Yang Kao,James Aspnes,2001,theory
 Ming-Yang Kao,Yuan Ma,1994,theory
+Ming-Yang Kao,Yiqun Lisa Yin,1994,theory
 Ming-Yang Kao,Ting Chen,2000,theory
 Ming-Yang Kao,Stephen R. Tate,2000,theory
 Ming-Yang Kao,P. Krishnan,1995,theory
@@ -36634,6 +37767,7 @@ Ilias Diakonikolas,Ludwig Schmidt,2015,database
 Ilias Diakonikolas,Jayadev Acharya,2015,database
 Ilias Diakonikolas,Chinmay Hegde,2015,database
 Ilias Diakonikolas,Parikshit Gopalan,2009,theory
+Ilias Diakonikolas,Ragesh Jaiswal,2009,theory
 Ilias Diakonikolas,Emanuele Viola,2009,theory
 Ilias Diakonikolas,Rocco A. Servedio,2009,theory
 Ilias Diakonikolas,Xiaorui Sun,2015,theory
@@ -36690,6 +37824,11 @@ Calvin Lin,Xinyu Wang,2015,oopfp
 Calvin Lin,Isil Dillig,2015,oopfp
 Calvin Lin,Daniel A. Jiménez,2000,arch
 Calvin Lin,Stephen W. Keckler,2000,arch
+Hovav Shacham,Xavier Boyen,2004,crypto
+Hovav Shacham,Leonid Reyzin,2004,crypto
+Hovav Shacham,Dan Boneh,2004,crypto
+Hovav Shacham,Anna Lysyanskaya,2004,crypto
+Hovav Shacham,Silvio Micali,2004,crypto
 Hovav Shacham,Dan Boneh,2004,security
 Hovav Shacham,Ben Pfaff,2004,security
 Hovav Shacham,Stefan Savage,2011,security
@@ -36699,6 +37838,11 @@ Hovav Shacham,Stephen Checkoway,2011,security
 Hovav Shacham,Damon McCoy,2011,security
 Hovav Shacham,Alexei Czeskis,2011,security
 Hovav Shacham,Karl Koscher,2011,security
+Hovav Shacham,Sarah Meiklejohn,2011,security
+Hovav Shacham,Rafail Ostrovsky,2006,crypto
+Hovav Shacham,Amit Sahai,2006,crypto
+Hovav Shacham,Steve Lu,2006,crypto
+Hovav Shacham,Brent Waters,2006,crypto
 Hovav Shacham,Stefan Savage,2010,security
 Hovav Shacham,Tadayoshi Kohno,2010,security
 Hovav Shacham,Shwetak Patel,2010,security
@@ -36711,13 +37855,22 @@ Hovav Shacham,Damon McCoy,2010,security
 Hovav Shacham,Alexei Czeskis,2010,security
 Hovav Shacham,Ahmad-Reza Sadeghi,2010,security
 Hovav Shacham,Karl Koscher,2010,security
+Hovav Shacham,Xavier Boyen,2006,security
 Hovav Shacham,Brent Waters,2006,security
 Hovav Shacham,Stefan Savage,2008,security
 Hovav Shacham,Sorin Lerner,2015,security
 Hovav Shacham,Ranjit Jhala,2015,security
+Hovav Shacham,Thomas Shrimpton,2011,crypto
+Hovav Shacham,Thomas Ristenpart,2011,crypto
 Hovav Shacham,Stefan Savage,2009,security
 Hovav Shacham,Eran Tromer,2009,security
 Hovav Shacham,Thomas Ristenpart,2009,security
+Hovav Shacham,Jan Camenisch,2009,crypto
+Hovav Shacham,Melissa Chase,2009,crypto
+Hovav Shacham,Anna Lysyanskaya,2009,crypto
+Hovav Shacham,Nadia Heninger,2009,crypto
+Hovav Shacham,Markulf Kohlweiss,2009,crypto
+Hovav Shacham,Scott Yilek,2009,metrics
 Hovav Shacham,Stefan Savage,2009,metrics
 Hovav Shacham,Stephen Checkoway,2013,arch
 Hovav Shacham,Steven Swanson,2013,security
@@ -36948,10 +38101,16 @@ Roberto Tamassia,Nikos Triandopoulos,2008,security
 Roberto Tamassia,Charalampos Papamanthou,2008,security
 Roberto Tamassia,Nikos Triandopoulos,2015,security
 Roberto Tamassia,Ari Juels,2015,security
+Roberto Tamassia,Nikos Triandopoulos,2011,crypto
+Roberto Tamassia,Charalampos Papamanthou,2011,crypto
 Roberto Tamassia,Charalampos Papamanthou,2009,security
 Roberto Tamassia,Jianer Chen,1991,theory
 Roberto Tamassia,Michael T. Goodrich,1991,theory
 Roberto Tamassia,Giuseppe Di Battista,1991,theory
+Roberto Tamassia,Elaine Shi,2013,crypto
+Roberto Tamassia,Ke Yi,2013,crypto
+Roberto Tamassia,Charalampos Papamanthou,2013,crypto
+Roberto Tamassia,Michael T. Goodrich,2004,crypto
 Roberto Tamassia,Giuseppe Di Battista,1993,theory
 Roberto Tamassia,Michael T. Goodrich,2012,database
 Roberto Tamassia,Charalampos Papamanthou,2012,database
@@ -37404,7 +38563,12 @@ Karrie Karahalios,Eric Gilbert,2009,hci
 Karrie Karahalios,Judith S. Donath,2004,hci
 Muthuramakrishnan Venkitasubramaniam,Rafael Pass,2009,theory
 Muthuramakrishnan Venkitasubramaniam,Huijia Lin,2009,theory
+Muthuramakrishnan Venkitasubramaniam,Rafael Pass,2010,crypto
+Muthuramakrishnan Venkitasubramaniam,Huijia Lin,2010,crypto
 Muthuramakrishnan Venkitasubramaniam,Rafael Pass,2007,theory
+Muthuramakrishnan Venkitasubramaniam,Rafael Pass,2008,crypto
+Muthuramakrishnan Venkitasubramaniam,Amit Sahai,2008,crypto
+Muthuramakrishnan Venkitasubramaniam,Omkant Pandey,2008,crypto
 Isaac D. Scherson,Tomás Lang,1990,networks
 Isil Dillig,Saswat Anand,2014,softeng
 Isil Dillig,Alex Aiken,2014,softeng
@@ -37532,13 +38696,86 @@ Ramesh K. Sitaraman,Bruce M. Maggs,2003,networks
 Ramesh K. Sitaraman,Anees Shaikh,2003,networks
 Ramesh K. Sitaraman,Aditya Akella,2003,networks
 Ramesh K. Sitaraman,Srinivasan Seshan,2003,networks
-Yevgeniy Dodis,Stanislaw Jarecki,2004,security
-Yevgeniy Dodis,Michael J. Freedman,2004,security
-Yevgeniy Dodis,Anna Lysyanskaya,2004,security
-Yevgeniy Dodis,Brent Waters,2010,security
 Yevgeniy Dodis,Daniel Wichs,2009,theory
 Yevgeniy Dodis,Shachar Lovett,2009,theory
 Yevgeniy Dodis,Yael Tauman Kalai,2009,theory
+Yevgeniy Dodis,Ilya Mironov,2012,crypto
+Yevgeniy Dodis,Eike Kiltz,2012,crypto
+Yevgeniy Dodis,Adriana López-Alt,2012,crypto
+Yevgeniy Dodis,Stefano Tessaro,2012,crypto
+Yevgeniy Dodis,Thomas Ristenpart,2012,crypto
+Yevgeniy Dodis,Salil P. Vadhan,2012,crypto
+Yevgeniy Dodis,Daniel Wichs,2012,crypto
+Yevgeniy Dodis,Krzysztof Pietrzak,2012,crypto
+Yevgeniy Dodis,John P. Steinberger,2012,crypto
+Yevgeniy Dodis,Sanjeev Khanna,1999,theory
+Yevgeniy Dodis,Daniel Wichs,2013,security
+Yevgeniy Dodis,David Pointcheval,2013,security
+Yevgeniy Dodis,Tal Rabin,2002,crypto
+Yevgeniy Dodis,Moti Yung,2002,crypto
+Yevgeniy Dodis,Jonathan Katz,2002,crypto
+Yevgeniy Dodis,Jee Hea An,2002,crypto
+Yevgeniy Dodis,Leonid Reyzin,2006,crypto
+Yevgeniy Dodis,Jonathan Katz,2006,crypto
+Yevgeniy Dodis,Adam D. Smith,2006,crypto
+Yevgeniy Dodis,Sherman S. M. Chow,2010,security
+Yevgeniy Dodis,Brent Waters,2010,security
+Yevgeniy Dodis,Divesh Aggarwal,2015,theory
+Yevgeniy Dodis,John P. Steinberger,2016,crypto
+Yevgeniy Dodis,Martijn Stam,2016,crypto
+Yevgeniy Dodis,Olivier Pereira,2011,crypto
+Yevgeniy Dodis,Boaz Barak,2011,crypto
+Yevgeniy Dodis,Yu Yu,2011,crypto
+Yevgeniy Dodis,Krzysztof Pietrzak,2011,crypto
+Yevgeniy Dodis,Hugo Krawczyk,2011,crypto
+Yevgeniy Dodis,François-Xavier Standaert,2011,crypto
+Yevgeniy Dodis,John P. Steinberger,2011,crypto
+Yevgeniy Dodis,Adam D. Smith,2005,theory
+Yevgeniy Dodis,Divesh Aggarwal,2014,theory
+Yevgeniy Dodis,Shachar Lovett,2014,theory
+Yevgeniy Dodis,Allison B. Lewko,2011,theory
+Yevgeniy Dodis,Xin Li 0006,2011,theory
+Yevgeniy Dodis,Brent Waters,2011,theory
+Yevgeniy Dodis,Daniel Wichs,2011,theory
+Yevgeniy Dodis,David Zuckerman,2011,theory
+Yevgeniy Dodis,Adam D. Smith,2001,crypto
+Yevgeniy Dodis,Amit Sahai,2001,crypto
+Yevgeniy Dodis,Moni Naor,2010,crypto
+Yevgeniy Dodis,Daniel Wichs,2010,crypto
+Yevgeniy Dodis,Gil Segev,2010,crypto
+Yevgeniy Dodis,Krzysztof Pietrzak,2010,crypto
+Yevgeniy Dodis,Joël Alwen,2010,crypto
+Yevgeniy Dodis,Adam D. Smith,2005,crypto
+Yevgeniy Dodis,Jonathan Katz,2005,crypto
+Yevgeniy Dodis,Krzysztof Pietrzak,2005,crypto
+Yevgeniy Dodis,Xavier Boyen,2005,crypto
+Yevgeniy Dodis,Rafail Ostrovsky,2005,crypto
+Yevgeniy Dodis,Jean-Sébastien Coron,2005,crypto
+Yevgeniy Dodis,Stanislaw Jarecki,2004,security
+Yevgeniy Dodis,Michael J. Freedman,2004,security
+Yevgeniy Dodis,Anna Lysyanskaya,2004,security
+Yevgeniy Dodis,John P. Steinberger,2009,crypto
+Yevgeniy Dodis,Joël Alwen,2009,crypto
+Yevgeniy Dodis,Thomas Shrimpton,2009,crypto
+Yevgeniy Dodis,Thomas Ristenpart,2009,crypto
+Yevgeniy Dodis,Daniel Wichs,2009,crypto
+Yevgeniy Dodis,Manoj Prabhakaran,2004,theory
+Yevgeniy Dodis,Amit Sahai,2004,theory
+Yevgeniy Dodis,Eyal Kushilevitz,2000,crypto
+Yevgeniy Dodis,Ran Canetti,2000,crypto
+Yevgeniy Dodis,Amit Sahai,2000,crypto
+Yevgeniy Dodis,Tal Rabin,2000,crypto
+Yevgeniy Dodis,Silvio Micali,2000,crypto
+Yevgeniy Dodis,Shai Halevi,2000,crypto
+Yevgeniy Dodis,Leonid Reyzin,2004,crypto
+Yevgeniy Dodis,Rosario Gennaro,2004,crypto
+Yevgeniy Dodis,Johan Håstad,2004,crypto
+Yevgeniy Dodis,Tal Rabin,2004,crypto
+Yevgeniy Dodis,Victor Shoup,2004,crypto
+Yevgeniy Dodis,Adam D. Smith,2004,crypto
+Yevgeniy Dodis,Aggelos Kiayias,2004,crypto
+Yevgeniy Dodis,Hugo Krawczyk,2004,crypto
+Yevgeniy Dodis,Silvio Micali,1999,crypto
 Yevgeniy Dodis,Richard Cole 0001,2006,theory
 Yevgeniy Dodis,Tim Roughgarden,2006,theory
 Yevgeniy Dodis,Richard Cole 0001,2003,theory
@@ -37546,18 +38783,26 @@ Yevgeniy Dodis,Tim Roughgarden,2003,theory
 Yevgeniy Dodis,Daniel Wichs,2010,theory
 Yevgeniy Dodis,Mikkel Thorup,2010,theory
 Yevgeniy Dodis,Mihai Patrascu,2010,theory
-Yevgeniy Dodis,Adam D. Smith,2005,theory
-Yevgeniy Dodis,Shachar Lovett,2014,theory
-Yevgeniy Dodis,Allison B. Lewko,2011,theory
-Yevgeniy Dodis,Xin Li 0006,2011,theory
-Yevgeniy Dodis,Brent Waters,2011,theory
-Yevgeniy Dodis,Daniel Wichs,2011,theory
-Yevgeniy Dodis,David Zuckerman,2011,theory
-Yevgeniy Dodis,Manoj Prabhakaran,2004,theory
-Yevgeniy Dodis,Amit Sahai,2004,theory
-Yevgeniy Dodis,Sanjeev Khanna,1999,theory
-Yevgeniy Dodis,Daniel Wichs,2013,security
-Yevgeniy Dodis,David Pointcheval,2013,security
+Yevgeniy Dodis,Adriana López-Alt,2010,theory
+Yevgeniy Dodis,Kristiyan Haralambiev,2010,theory
+Yevgeniy Dodis,Ari Juels,2015,crypto
+Yevgeniy Dodis,Thomas Ristenpart,2015,crypto
+Yevgeniy Dodis,Victor Shoup,2008,crypto
+Yevgeniy Dodis,Ronald Cramer,2008,crypto
+Yevgeniy Dodis,Daniel Wichs,2008,crypto
+Yevgeniy Dodis,Carles Padró,2008,crypto
+Yevgeniy Dodis,Krzysztof Pietrzak,2008,crypto
+Yevgeniy Dodis,Serge Fehr,2008,crypto
+Yevgeniy Dodis,Andrey Bogdanov,2013,crypto
+Yevgeniy Dodis,John P. Steinberger,2013,crypto
+Yevgeniy Dodis,Jee Hea An,2003,crypto
+Yevgeniy Dodis,Leonid Reyzin,2014,crypto
+Yevgeniy Dodis,Noah Stephens-Davidowitz,2014,crypto
+Yevgeniy Dodis,Adi Shamir,2014,crypto
+Yevgeniy Dodis,Divesh Aggarwal,2014,crypto
+Yevgeniy Dodis,Daniel Wichs,2014,crypto
+Yevgeniy Dodis,Eric Miles,2014,crypto
+Yevgeniy Dodis,Krzysztof Pietrzak,2014,crypto
 Sean W. Smith,David M. Nicol,2005,security
 Sean W. Smith,Apu Kapadia,2008,security
 Sean W. Smith,Apu Kapadia,2007,security
@@ -38669,6 +39914,7 @@ Mark Braverman,Boaz Barak,2010,theory
 Mark Braverman,Ran Raz,2010,theory
 Mark Braverman,Xi Chen,2010,theory
 Mark Braverman,Amir Yehudayoff,2010,theory
+Mark Braverman,Ran Gelles,2016,theory
 Mark Braverman,Tengyu Ma,2016,theory
 Mark Braverman,S. Matthew Weinberg,2016,theory
 Mark Braverman,Huy L. Nguyen,2016,theory
@@ -38700,16 +39946,27 @@ Ronald L. Rivest,Marten van Dijk,2011,security
 Ronald L. Rivest,Alina Oprea,2011,security
 Ronald L. Rivest,Ari Juels,2011,security
 Ronald L. Rivest,Ari Juels,2013,networks
+Ronald L. Rivest,David Chaum,2010,security
+Ronald L. Rivest,Michael Szydlo,2003,security
 Ronald L. Rivest,Ari Juels,2003,security
+Ronald L. Rivest,Michael Szydlo,2006,security
 Ronald L. Rivest,Ari Juels,2006,security
 Ronald L. Rivest,Moti Yung,2006,security
+Ronald L. Rivest,David Wagner,2002,crypto
 Ronald L. Rivest,Markus Jakobsson,2002,security
 Ronald L. Rivest,Ari Juels,2002,security
+Ronald L. Rivest,Birgit Pfitzmann,1998,crypto
+Ronald L. Rivest,Oded Goldreich,1998,crypto
 Ronald L. Rivest,Emil Stefanov,2012,security
 Ronald L. Rivest,Marten van Dijk,2012,security
 Ronald L. Rivest,Alina Oprea,2012,security
 Ronald L. Rivest,Ari Juels,2012,security
 Ronald L. Rivest,Nikos Triandopoulos,2012,security
+Ronald L. Rivest,Luca Trevisan,2007,crypto
+Ronald L. Rivest,Salil P. Vadhan,2007,crypto
+Ronald L. Rivest,Ran Canetti,2007,crypto
+Ronald L. Rivest,Madhu Sudan,2007,crypto
+Ronald L. Rivest,Hoeteck Wee,2007,crypto
 Ronald L. Rivest,Ari Juels,2013,security
 Andreas Klappenecker,Dylan A. Shell,2011,robotics
 Andreas Klappenecker,Lantao Liu,2011,robotics
@@ -38886,6 +40143,7 @@ Martin Strauss,Sudipto Guha,2002,theory
 Martin Strauss,Piotr Indyk,2002,theory
 Martin Strauss,Jin-yi Cai,1997,theory
 Martin Strauss,D. Sivakumar,1997,theory
+Martin Strauss,Matt Blaze,1998,crypto
 Martin Strauss,Anna C. Gilbert,2003,theory
 Martin Strauss,S. Muthukrishnan,2003,theory
 Martin Strauss,Yannis Kotidis,2002,database
@@ -39142,6 +40400,7 @@ Richard E. Korf,Eric Huang,2009,ai
 Richard E. Korf,Toru Ishida,1991,ai
 Richard E. Korf,Vipin Kumar,1991,ai
 John H. Holland,Stephanie Forrest,1993,mlmining
+Tom M. Mitchell,Brian Murphy,2014,nlp
 Tom M. Mitchell,Kevin Knight,2014,nlp
 Tom M. Mitchell,Ndapandula Nakashole,2014,nlp
 Tom M. Mitchell,Jayant Krishnamurthy,2014,nlp
@@ -39211,6 +40470,8 @@ Peter Winkler,Kin K. Leung,2006,networks
 Peter Winkler,Péter Gács,1992,theory
 Peter Winkler,Milena Mihail,1992,theory
 Peter Winkler,Teunis J. Ott,1992,theory
+Peter Winkler,Yacov Yacobi,1995,crypto
+Peter Winkler,Arjen K. Lenstra,1995,crypto
 Andréa W. Richa,Goran Konjevod,2007,theory
 Andréa W. Richa,Michael Mitzenmacher,1998,theory
 Andréa W. Richa,Satish Rao,1998,theory
@@ -39742,6 +41003,13 @@ Georg Essl,Michael Rohs,2010,hci
 Georg Essl,Sven G. Kratz,2010,hci
 Georg Essl,James F. O'Brien,2001,graphics
 Georg Essl,Perry R. Cook,2001,graphics
+Boaz Barak,Moritz Hardt,2009,theory
+Boaz Barak,Satyen Kale,2009,theory
+Boaz Barak,Frank McSherry,2007,database
+Boaz Barak,Cynthia Dwork,2007,database
+Boaz Barak,Kunal Talwar,2007,database
+Boaz Barak,Satyen Kale,2007,database
+Boaz Barak,Kamalika Chaudhuri,2007,database
 Boaz Barak,Johan Håstad,2012,theory
 Boaz Barak,Aram Wettroth Harrow,2012,theory
 Boaz Barak,David Steurer,2012,theory
@@ -39750,38 +41018,22 @@ Boaz Barak,Raghu Meka,2012,theory
 Boaz Barak,Yuan Zhou,2012,theory
 Boaz Barak,Jonathan A. Kelner,2012,theory
 Boaz Barak,Prasad Raghavendra,2012,theory
-Boaz Barak,Oded Goldreich,2001,theory
-Boaz Barak,Yehuda Lindell,2001,theory
-Boaz Barak,Shafi Goldwasser,2001,theory
+Boaz Barak,Yehuda Lindell,2002,theory
 Boaz Barak,David Steurer,2015,theory
 Boaz Barak,Jonathan A. Kelner,2015,theory
-Boaz Barak,Shai Halevi,2005,security
-Boaz Barak,Moritz Hardt,2009,theory
-Boaz Barak,Satyen Kale,2009,theory
-Boaz Barak,Yehuda Lindell,2002,theory
-Boaz Barak,Eran Tromer,2008,metrics
-Boaz Barak,Jennifer Rexford,2008,metrics
-Boaz Barak,Sharon Goldberg,2008,metrics
 Boaz Barak,Anup Rao,2008,theory
+Boaz Barak,David Xiao,2008,theory
 Boaz Barak,Ishay Haviv,2008,theory
 Boaz Barak,David Steurer,2008,theory
 Boaz Barak,Oded Regev,2008,theory
 Boaz Barak,Moritz Hardt,2008,theory
 Boaz Barak,Benny Applebaum,2008,theory
-Boaz Barak,Anup Rao,2006,theory
-Boaz Barak,Ronen Shaltiel,2006,theory
-Boaz Barak,Avi Wigderson,2006,theory
-Boaz Barak,Manoj Prabhakaran,2006,theory
-Boaz Barak,Amit Sahai,2006,theory
-Boaz Barak,Salil P. Vadhan,2003,theory
-Boaz Barak,Yehuda Lindell,2003,theory
-Boaz Barak,Anup Rao,2010,theory
-Boaz Barak,Avi Wigderson,2010,theory
-Boaz Barak,Mark Braverman,2010,theory
-Boaz Barak,Sanjeev Arora,2010,theory
-Boaz Barak,David Steurer,2010,theory
-Boaz Barak,Benny Applebaum,2010,theory
-Boaz Barak,Xi Chen,2010,theory
+Boaz Barak,Olivier Pereira,2011,crypto
+Boaz Barak,Yevgeniy Dodis,2011,crypto
+Boaz Barak,Yu Yu,2011,crypto
+Boaz Barak,Krzysztof Pietrzak,2011,crypto
+Boaz Barak,Hugo Krawczyk,2011,crypto
+Boaz Barak,François-Xavier Standaert,2011,crypto
 Boaz Barak,Ronen Shaltiel,2005,theory
 Boaz Barak,Avi Wigderson,2005,theory
 Boaz Barak,Guy Kindler,2005,theory
@@ -39796,17 +41048,55 @@ Boaz Barak,Zeev Dvir,2011,theory
 Boaz Barak,David Steurer,2011,theory
 Boaz Barak,Moritz Hardt,2011,theory
 Boaz Barak,Prasad Raghavendra,2011,theory
+Boaz Barak,Ke Yang,2001,crypto
+Boaz Barak,Steven Rudich,2001,crypto
+Boaz Barak,Oded Goldreich,2001,crypto
+Boaz Barak,Salil P. Vadhan,2001,crypto
+Boaz Barak,Russell Impagliazzo,2001,crypto
+Boaz Barak,Amit Sahai,2001,crypto
+Boaz Barak,Iftach Haitner,2010,crypto
+Boaz Barak,Yuval Ishai,2010,crypto
+Boaz Barak,Dennis Hofheinz,2010,crypto
+Boaz Barak,Tal Rabin,2005,crypto
+Boaz Barak,Yehuda Lindell,2005,crypto
+Boaz Barak,Ran Canetti,2005,crypto
+Boaz Barak,Rafael Pass,2005,crypto
+Boaz Barak,Oded Goldreich,2001,theory
+Boaz Barak,Yehuda Lindell,2001,theory
+Boaz Barak,Shafi Goldwasser,2001,theory
 Boaz Barak,Rafael Pass,2004,theory
 Boaz Barak,Russell Impagliazzo,2004,theory
 Boaz Barak,Avi Wigderson,2004,theory
 Boaz Barak,Ran Canetti,2004,theory
-Boaz Barak,Frank McSherry,2007,database
-Boaz Barak,Cynthia Dwork,2007,database
-Boaz Barak,Kunal Talwar,2007,database
-Boaz Barak,Satyen Kale,2007,database
-Boaz Barak,Kamalika Chaudhuri,2007,database
+Boaz Barak,Jesper Buus Nielsen,2004,theory
+Boaz Barak,Shai Halevi,2005,security
+Boaz Barak,David Xiao,2008,metrics
+Boaz Barak,Eran Tromer,2008,metrics
+Boaz Barak,Jennifer Rexford,2008,metrics
+Boaz Barak,Sharon Goldberg,2008,metrics
+Boaz Barak,Anup Rao,2006,theory
+Boaz Barak,Ronen Shaltiel,2006,theory
+Boaz Barak,Avi Wigderson,2006,theory
+Boaz Barak,Manoj Prabhakaran,2006,theory
+Boaz Barak,Amit Sahai,2006,theory
+Boaz Barak,Salil P. Vadhan,2003,theory
+Boaz Barak,Yehuda Lindell,2003,theory
+Boaz Barak,Anup Rao,2010,theory
+Boaz Barak,Avi Wigderson,2010,theory
+Boaz Barak,Mark Braverman,2010,theory
+Boaz Barak,Sanjeev Arora,2010,theory
+Boaz Barak,David Steurer,2010,theory
+Boaz Barak,Benny Applebaum,2010,theory
+Boaz Barak,Xi Chen,2010,theory
+Boaz Barak,David Xiao,2008,crypto
+Boaz Barak,Sharon Goldberg,2008,crypto
 Boaz Barak,Amir Herzberg,1999,security
 Boaz Barak,Dalit Naor,1999,security
+Boaz Barak,Salil P. Vadhan,2003,crypto
+Boaz Barak,Sanjam Garg,2014,crypto
+Boaz Barak,Omer Paneth,2014,crypto
+Boaz Barak,Yael Tauman Kalai,2014,crypto
+Boaz Barak,Amit Sahai,2014,crypto
 John T. Stasko,Sougata Mukherjea,1993,softeng
 John T. Stasko,Gregory D. Abowd,2011,hci
 John T. Stasko,Mary Jean Harrold,2002,softeng
@@ -39952,6 +41242,7 @@ Tadayoshi Kohno,Tamara Denning,2010,hci
 Tadayoshi Kohno,Batya Friedman,2010,hci
 Tadayoshi Kohno,Tamara Denning,2013,security
 Tadayoshi Kohno,Steven D. Gribble,2008,networks
+Tadayoshi Kohno,John Kelsey,2006,crypto
 Tadayoshi Kohno,Stefan Savage,2010,security
 Tadayoshi Kohno,Shwetak Patel,2010,security
 Tadayoshi Kohno,Franziska Roesner,2010,security
@@ -39970,6 +41261,12 @@ Tadayoshi Kohno,Tamara Denning,2009,hci
 Tadayoshi Kohno,Joshua R. Smith,2009,hci
 Tadayoshi Kohno,Karl Koscher,2009,hci
 Tadayoshi Kohno,Katherine Everitt,2009,hci
+Tadayoshi Kohno,Tanja Lange,2005,crypto
+Tadayoshi Kohno,Gregory Neven,2005,crypto
+Tadayoshi Kohno,Michel Abdalla,2005,crypto
+Tadayoshi Kohno,Mihir Bellare,2005,crypto
+Tadayoshi Kohno,Eike Kiltz,2005,crypto
+Tadayoshi Kohno,Dario Catalano,2005,crypto
 Tadayoshi Kohno,Tamara Denning,2014,hci
 Tadayoshi Kohno,Aviel D. Rubin,2004,security
 Tadayoshi Kohno,Dan S. Wallach,2004,security
@@ -39982,6 +41279,7 @@ Tadayoshi Kohno,Alexander Moshchuk,2014,security
 Tadayoshi Kohno,David Molnar,2014,security
 Tadayoshi Kohno,Franziska Roesner,2012,hci
 Tadayoshi Kohno,James Fogarty,2012,hci
+Tadayoshi Kohno,Mihir Bellare,2004,crypto
 Tadayoshi Kohno,Stefan Savage,2011,security
 Tadayoshi Kohno,Franziska Roesner,2011,security
 Tadayoshi Kohno,Stephen Checkoway,2011,security
@@ -40013,7 +41311,9 @@ Tadayoshi Kohno,Karl Koscher,2008,security
 Tadayoshi Kohno,Roxana Geambasu,2010,opsys
 Tadayoshi Kohno,Henry M. Levy,2010,opsys
 Tadayoshi Kohno,Arvind Krishnamurthy,2010,opsys
+Tadayoshi Kohno,Chanathip Namprempre,2002,security
 Tadayoshi Kohno,Mihir Bellare,2002,security
+Tadayoshi Kohno,Mihir Bellare,2003,crypto
 Tadayoshi Kohno,Bryan Parno,2012,security
 Tadayoshi Kohno,Franziska Roesner,2012,security
 Tadayoshi Kohno,Dan S. Wallach,2012,security
@@ -40237,25 +41537,40 @@ Davi Geiger,Hiroshi Ishikawa 0002,2005,vision
 Davi Geiger,Krishnan Kumaran,1996,vision
 Davi Geiger,Tyng-Luh Liu,1996,vision
 Davi Geiger,Michael Werman,2014,vision
+Salil P. Vadhan,Omer Reingold,2009,theory
+Salil P. Vadhan,Moni Naor,2009,theory
+Salil P. Vadhan,Hoeteck Wee,2009,theory
+Salil P. Vadhan,Guy N. Rothblum,2009,theory
+Salil P. Vadhan,Cynthia Dwork,2009,theory
+Salil P. Vadhan,Iftach Haitner,2009,theory
+Salil P. Vadhan,Shai Halevi,1998,crypto
+Salil P. Vadhan,Mihir Bellare,1998,crypto
+Salil P. Vadhan,Amit Sahai,1998,crypto
+Salil P. Vadhan,Ilya Mironov,2012,crypto
+Salil P. Vadhan,Yevgeniy Dodis,2012,crypto
+Salil P. Vadhan,Adriana López-Alt,2012,crypto
+Salil P. Vadhan,Ran Canetti,2007,crypto
+Salil P. Vadhan,Madhu Sudan,2007,crypto
+Salil P. Vadhan,Ronald L. Rivest,2007,crypto
+Salil P. Vadhan,Luca Trevisan,2007,crypto
+Salil P. Vadhan,Hoeteck Wee,2007,crypto
 Salil P. Vadhan,Omer Reingold,2012,theory
 Salil P. Vadhan,Moni Naor,2012,theory
 Salil P. Vadhan,Luca Trevisan,2012,theory
 Salil P. Vadhan,Parikshit Gopalan,2012,theory
 Salil P. Vadhan,Raghu Meka,2012,theory
 Salil P. Vadhan,Cynthia Dwork,2012,theory
-Salil P. Vadhan,Luca Trevisan,2000,theory
-Salil P. Vadhan,Omer Reingold,2000,theory
-Salil P. Vadhan,Avi Wigderson,2000,theory
+Salil P. Vadhan,Omer Reingold,1999,theory
+Salil P. Vadhan,Madhu Sudan,1999,theory
+Salil P. Vadhan,Michael O. Rabin,1999,theory
+Salil P. Vadhan,Ran Raz,1999,theory
+Salil P. Vadhan,Silvio Micali,1999,theory
+Salil P. Vadhan,Luca Trevisan,1999,theory
 Salil P. Vadhan,Amit Sahai,1998,theory
 Salil P. Vadhan,Michael A. Bender,1998,theory
 Salil P. Vadhan,Antonio Fernández 0001,1998,theory
 Salil P. Vadhan,Oded Goldreich,1998,theory
 Salil P. Vadhan,Dana Ron,1998,theory
-Salil P. Vadhan,Omer Reingold,2009,theory
-Salil P. Vadhan,Moni Naor,2009,theory
-Salil P. Vadhan,Guy N. Rothblum,2009,theory
-Salil P. Vadhan,Cynthia Dwork,2009,theory
-Salil P. Vadhan,Iftach Haitner,2009,theory
 Salil P. Vadhan,Michael R. Capalbo,2002,theory
 Salil P. Vadhan,Omer Reingold,2002,theory
 Salil P. Vadhan,Avi Wigderson,2002,theory
@@ -40267,6 +41582,36 @@ Salil P. Vadhan,Luca Trevisan,2008,theory
 Salil P. Vadhan,Michael Mitzenmacher,2008,theory
 Salil P. Vadhan,Omer Reingold,2008,theory
 Salil P. Vadhan,Madhur Tulsiani,2008,theory
+Salil P. Vadhan,Mohammad Mahmoody,2011,crypto
+Salil P. Vadhan,Tal Moran,2011,crypto
+Salil P. Vadhan,Jonathan Ullman,2014,theory
+Salil P. Vadhan,Ke Yang,2001,crypto
+Salil P. Vadhan,Steven Rudich,2001,crypto
+Salil P. Vadhan,Oded Goldreich,2001,crypto
+Salil P. Vadhan,Boaz Barak,2001,crypto
+Salil P. Vadhan,Russell Impagliazzo,2001,crypto
+Salil P. Vadhan,Amit Sahai,2001,crypto
+Salil P. Vadhan,Omer Reingold,2010,crypto
+Salil P. Vadhan,Thomas Holenstein,2010,crypto
+Salil P. Vadhan,Kai-Min Chung,2010,crypto
+Salil P. Vadhan,Iftach Haitner,2010,crypto
+Salil P. Vadhan,Hoeteck Wee,2010,crypto
+Salil P. Vadhan,Yael Tauman Kalai,2010,crypto
+Salil P. Vadhan,Kobbi Nissim,2016,database
+Salil P. Vadhan,Ilya Mironov,2009,crypto
+Salil P. Vadhan,Omer Reingold,2009,crypto
+Salil P. Vadhan,Omkant Pandey,2009,crypto
+Salil P. Vadhan,Eli Ben-Sasson,2004,theory
+Salil P. Vadhan,Madhu Sudan,2004,theory
+Salil P. Vadhan,Oded Goldreich,2004,theory
+Salil P. Vadhan,Prahladh Harsha,2004,theory
+Salil P. Vadhan,Emanuele Viola,2004,theory
+Salil P. Vadhan,Oded Goldreich,1999,crypto
+Salil P. Vadhan,Amit Sahai,1999,crypto
+Salil P. Vadhan,Luca Trevisan,2000,theory
+Salil P. Vadhan,Omer Reingold,2000,theory
+Salil P. Vadhan,Avi Wigderson,2000,theory
+Salil P. Vadhan,David Zuckerman,2006,crypto
 Salil P. Vadhan,Amit Sahai,1997,theory
 Salil P. Vadhan,Anup Rao,2006,theory
 Salil P. Vadhan,Omer Reingold,2006,theory
@@ -40287,19 +41632,10 @@ Salil P. Vadhan,Guy N. Rothblum,2010,theory
 Salil P. Vadhan,Kunal Talwar,2010,theory
 Salil P. Vadhan,Iftach Haitner,2010,theory
 Salil P. Vadhan,Cynthia Dwork,2010,theory
-Salil P. Vadhan,Kobbi Nissim,2016,database
-Salil P. Vadhan,Jonathan Ullman,2014,theory
-Salil P. Vadhan,Eli Ben-Sasson,2004,theory
-Salil P. Vadhan,Madhu Sudan,2004,theory
-Salil P. Vadhan,Oded Goldreich,2004,theory
-Salil P. Vadhan,Prahladh Harsha,2004,theory
-Salil P. Vadhan,Emanuele Viola,2004,theory
-Salil P. Vadhan,Omer Reingold,1999,theory
-Salil P. Vadhan,Madhu Sudan,1999,theory
-Salil P. Vadhan,Michael O. Rabin,1999,theory
-Salil P. Vadhan,Ran Raz,1999,theory
-Salil P. Vadhan,Silvio Micali,1999,theory
-Salil P. Vadhan,Luca Trevisan,1999,theory
+Salil P. Vadhan,Gil Segev,2013,crypto
+Salil P. Vadhan,Ananth Raghunathan,2013,crypto
+Salil P. Vadhan,Boaz Barak,2003,crypto
+Salil P. Vadhan,Daniele Micciancio,2003,crypto
 Salil P. Vadhan,Guy N. Rothblum,2013,theory
 Salil P. Vadhan,Avi Wigderson,2013,theory
 Mohammad Taghi Hajiaghayi,Nicole Immorlica,2003,mobile
@@ -40843,15 +42179,23 @@ Brent Hecht,Darren Gergle,2012,web
 Brent Hecht,Darren Gergle,2012,hci
 Brent Hecht,Michael S. Horn,2012,hci
 Brent Hecht,Shilad Sen,2015,ai
-Allison B. Lewko,Brent Waters,2009,security
 Allison B. Lewko,Anup Rao,2012,theory
 Allison B. Lewko,Yael Tauman Kalai,2012,theory
-Allison B. Lewko,Brent Waters,2010,theory
 Allison B. Lewko,Amit Sahai,2010,security
 Allison B. Lewko,Brent Waters,2010,security
+Allison B. Lewko,Brent Waters,2011,crypto
+Allison B. Lewko,Brent Waters,2009,security
+Allison B. Lewko,Brent Waters,2010,theory
 Allison B. Lewko,Daniel Wichs,2011,theory
 Allison B. Lewko,Yevgeniy Dodis,2011,theory
 Allison B. Lewko,Brent Waters,2011,theory
+Allison B. Lewko,Susan Hohenberger,2012,crypto
+Allison B. Lewko,Brent Waters,2012,crypto
+Allison B. Lewko,Tatsuaki Okamoto,2010,crypto
+Allison B. Lewko,Amit Sahai,2010,crypto
+Allison B. Lewko,Brent Waters,2010,crypto
+Allison B. Lewko,Craig Gentry,2014,crypto
+Allison B. Lewko,Brent Waters,2014,crypto
 David Walker,Jennifer Rexford,2015,networks
 David Walker,Xin Jin,2015,networks
 David Walker,Lester W. Mackey,2007,proglang
@@ -40925,6 +42269,10 @@ Raluca A. Popa,Soyeon Park,2007,opsys
 Raluca A. Popa,Yuanyuan Zhou,2007,opsys
 Raluca A. Popa,Hari Balakrishnan,2009,security
 Raluca A. Popa,Andrew J. Blumberg,2009,security
+Raluca A. Popa,Nickolai Zeldovich,2013,crypto
+Raluca A. Popa,Yael Tauman Kalai,2013,crypto
+Raluca A. Popa,Shafi Goldwasser,2013,crypto
+Raluca A. Popa,Vinod Vaikuntanathan,2013,crypto
 Raluca A. Popa,Nickolai Zeldovich,2011,opsys
 Raluca A. Popa,Hari Balakrishnan,2011,opsys
 Raluca A. Popa,Nickolai Zeldovich,2013,security
@@ -41766,17 +43114,64 @@ M. Frans Kaashoek,Nickolai Zeldovich,2011,opsys
 M. Frans Kaashoek,Xi Wang,2011,opsys
 M. Frans Kaashoek,Dong Zhou,2011,opsys
 Daniel Wichs,Yevgeniy Dodis,2009,theory
+Daniel Wichs,Sergey Gorbunov,2015,theory
 Daniel Wichs,Vinod Vaikuntanathan,2015,theory
+Daniel Wichs,Rajmohan Rajaraman,2016,crypto
+Daniel Wichs,Mark Zhandry,2016,crypto
+Daniel Wichs,Gil Segev,2011,crypto
+Daniel Wichs,Stefan Dziembowski,2011,crypto
+Daniel Wichs,Elette Boyle,2011,crypto
+Daniel Wichs,Joël Alwen,2009,crypto
+Daniel Wichs,Yevgeniy Dodis,2009,crypto
+Daniel Wichs,Juan A. Garay,2009,crypto
+Daniel Wichs,Hong-Sheng Zhou,2009,crypto
 Daniel Wichs,Yevgeniy Dodis,2010,theory
+Daniel Wichs,Kristiyan Haralambiev,2010,theory
+Daniel Wichs,Adriana López-Alt,2010,theory
 Daniel Wichs,Vinod Vaikuntanathan,2016,theory
+Daniel Wichs,David Cash,2013,crypto
+Daniel Wichs,Adriana López-Alt,2013,crypto
+Daniel Wichs,Krzysztof Pietrzak,2013,crypto
+Daniel Wichs,Joël Alwen,2013,crypto
+Daniel Wichs,Hoeteck Wee,2013,crypto
 Daniel Wichs,Craig Gentry,2014,theory
+Daniel Wichs,Mariana Raykova 0001,2014,theory
 Daniel Wichs,Shai Halevi,2014,theory
 Daniel Wichs,Allison B. Lewko,2011,theory
 Daniel Wichs,Craig Gentry,2011,theory
 Daniel Wichs,Yevgeniy Dodis,2011,theory
 Daniel Wichs,Brent Waters,2011,theory
+Daniel Wichs,Gilad Asharov,2012,crypto
+Daniel Wichs,Yevgeniy Dodis,2012,crypto
+Daniel Wichs,Abhishek Jain 0002,2012,crypto
+Daniel Wichs,Eike Kiltz,2012,crypto
+Daniel Wichs,Vinod Vaikuntanathan,2012,crypto
+Daniel Wichs,Adriana López-Alt,2012,crypto
+Daniel Wichs,Eran Tromer,2012,crypto
+Daniel Wichs,Krzysztof Pietrzak,2012,crypto
+Daniel Wichs,Yevgeniy Dodis,2008,crypto
+Daniel Wichs,Ronald Cramer,2008,crypto
+Daniel Wichs,Ivan Damgård,2008,crypto
+Daniel Wichs,Jesper Buus Nielsen,2008,crypto
+Daniel Wichs,Carles Padró,2008,crypto
+Daniel Wichs,Serge Fehr,2008,crypto
+Daniel Wichs,Joël Alwen,2010,crypto
+Daniel Wichs,Yevgeniy Dodis,2010,crypto
+Daniel Wichs,Moni Naor,2010,crypto
+Daniel Wichs,Gil Segev,2010,crypto
 Daniel Wichs,Yevgeniy Dodis,2013,security
 Daniel Wichs,David Pointcheval,2013,security
+Daniel Wichs,Noah Stephens-Davidowitz,2014,crypto
+Daniel Wichs,Yevgeniy Dodis,2014,crypto
+Daniel Wichs,Adi Shamir,2014,crypto
+Daniel Wichs,Steve Lu,2014,crypto
+Daniel Wichs,Sanjam Garg,2014,crypto
+Daniel Wichs,Shai Halevi,2014,crypto
+Daniel Wichs,Sebastian Faust,2014,crypto
+Daniel Wichs,Mariana Raykova 0001,2014,crypto
+Daniel Wichs,Krzysztof Pietrzak,2014,crypto
+Daniel Wichs,Craig Gentry,2014,crypto
+Daniel Wichs,Rafail Ostrovsky,2014,crypto
 Adam R. Klivans,Vitaly Feldman,2004,theory
 Adam R. Klivans,Toniann Pitassi,2004,theory
 Adam R. Klivans,Mark Braverman,2004,theory
@@ -42236,6 +43631,7 @@ J. Alex Halderman,Nadia Heninger,2008,security
 J. Alex Halderman,Zakir Durumeric,2015,security
 J. Alex Halderman,Michael Bailey,2015,security
 J. Alex Halderman,Eric Wustrow,2015,security
+J. Alex Halderman,Pierrick Gaudry,2015,security
 J. Alex Halderman,Matthew Green 0001,2015,security
 J. Alex Halderman,Karthikeyan Bhargavan,2015,security
 J. Alex Halderman,Nadia Heninger,2015,security
@@ -42812,6 +44208,7 @@ Timothy Sherwood,Lin Tan,2005,arch
 Timothy Sherwood,Seny Kamara,2012,arch
 Timothy Sherwood,Andrew Putnam,2012,arch
 Timothy Sherwood,Vinod Vaikuntanathan,2012,arch
+Timothy Sherwood,Melissa Chase,2012,arch
 Timothy Sherwood,Brad Calder,2000,arch
 Timothy Sherwood,Brad Calder,2004,networks
 Timothy Sherwood,George Varghese,2004,networks
@@ -44485,6 +45882,7 @@ Jinyang Li,Jay Chen,2009,web
 Jinyang Li,Lakshminarayanan Subramanian,2009,web
 Jinyang Li,Marcos K. Aguilera,2011,opsys
 Jinyang Li,Lakshminarayanan Subramanian,2011,networks
+Jinyang Li,Sherman S. M. Chow,2011,networks
 Alan Sussman,Joel H. Saltz,2001,highperf
 Alan Sussman,Tahsin M. Kurç,2001,highperf
 Alan Sussman,Henrique Andrade,2001,highperf
@@ -44720,10 +46118,14 @@ Raquel Urtasun,Marc Pollefeys,2012,vision
 Raquel Urtasun,Andreas Geiger,2012,vision
 Raquel Urtasun,Sanja Fidler,2012,vision
 Raquel Urtasun,Pascal Fua,2012,vision
+Richard J. Lipton,Avrim Blum,1993,crypto
+Richard J. Lipton,Michael J. Kearns,1993,crypto
 Richard J. Lipton,Neal E. Young,1994,theory
 Richard J. Lipton,Jin-yi Cai,1994,theory
 Richard J. Lipton,Andrew Tomkins,1994,theory
 Richard J. Lipton,Jeffrey F. Naughton,1990,database
+Richard J. Lipton,Dan Boneh,1997,crypto
+Richard J. Lipton,Dan Boneh,1996,crypto
 Richard J. Lipton,Parikshit Gopalan,2003,theory
 Richard J. Lipton,Jun (Jim) Xu,2002,networks
 Richard J. Lipton,Peter Gemmell,1991,theory
@@ -44736,6 +46138,7 @@ Richard J. Lipton,Danupon Nanongkai,2010,database
 Richard J. Lipton,Jun (Jim) Xu,2010,database
 Richard J. Lipton,Madhu Sudan,1992,theory
 Richard J. Lipton,Ronitt Rubinfeld,1992,theory
+Richard J. Lipton,Dan Boneh,1995,crypto
 Leslie Pack Kaelbling,Christopher Amato,2015,robotics
 Leslie Pack Kaelbling,Tomás Lozano-Pérez,2015,robotics
 Leslie Pack Kaelbling,Jonathan P. How,2015,robotics
@@ -45251,6 +46654,7 @@ Jason Mars,Neil Vachharajani,2011,arch
 Jason Mars,Mary Lou Soffa,2011,arch
 Jason Mars,Lingjia Tang,2016,arch
 Steven M. Bellovin,Tal Malkin,2015,security
+Steven M. Bellovin,Vladimir Kolesnikov,2015,security
 Steven M. Bellovin,Omer Reingold,2002,security
 Steven M. Bellovin,Ran Canetti,2002,security
 Steven M. Bellovin,Angelos D. Keromytis,2002,security
@@ -45494,6 +46898,7 @@ Rebecca N. Wright,Fernando C. N. Pereira,1991,nlp
 Rebecca N. Wright,Stuart G. Stubblebine,1996,security
 Rebecca N. Wright,Matthew K. Franklin,1996,security
 Rebecca N. Wright,Michael K. Reiter,1996,security
+Rebecca N. Wright,Matthew K. Franklin,1998,crypto
 Rebecca N. Wright,Aleksandar Nikolov,2011,database
 Rebecca N. Wright,S. Muthukrishnan,2011,database
 Rebecca N. Wright,Jonathan K. Millen,2000,security
@@ -46021,6 +47426,9 @@ Leonard J. Schulman,Jie Gao,2006,theory
 Leonard J. Schulman,Yuval Rabani,2006,theory
 Leonard J. Schulman,Michael Langberg,2006,theory
 Leonard J. Schulman,Michael Langberg,2010,theory
+Leonard J. Schulman,Rafail Ostrovsky,2013,crypto
+Leonard J. Schulman,Ran Gelles,2013,crypto
+Leonard J. Schulman,Matthew K. Franklin,2013,crypto
 Leonard J. Schulman,William S. Evans,1993,theory
 Leonard J. Schulman,Euiwoong Lee,2013,theory
 Eliot Moss,Benjamin M. Marlin,2016,proglang
@@ -46378,6 +47786,7 @@ Russell H. Taylor,Rajesh Kumar 0001,2003,robotics
 Aniket Kate,Michael Backes 0001,2012,security
 Aniket Kate,Matteo Maffei,2012,security
 Aniket Kate,Michael Backes 0001,2014,security
+Aniket Kate,Dominique Schröder,2015,security
 Prasad Tetali,Santosh Vempala,2012,theory
 Prasad Tetali,Prasad Raghavendra,2012,theory
 Prasad Tetali,David Gamarnik,2007,theory
@@ -46495,6 +47904,12 @@ John C. Mitchell,Ole Agesen,1997,oopfp
 John C. Mitchell,Patrick Lincoln,1992,proglang
 John C. Mitchell,David Mazières,2012,oopfp
 John C. Mitchell,Alejandro Russo,2012,oopfp
+John C. Mitchell,Andre Scedrov,2014,crypto
+John C. Mitchell,Gilles Barthe,2014,crypto
+John C. Mitchell,Dario Fiore,2014,crypto
+John C. Mitchell,Benedikt Schmidt,2014,crypto
+Richard A. DeMillo,Dan Boneh,1997,crypto
+Richard A. DeMillo,Richard J. Lipton,1997,crypto
 Ronald A. Olsson,Biswanath Mukherjee,1998,security
 Ugur Çetintemel,Andrew Pavlo,2015,database
 Ugur Çetintemel,Nesime Tatbul,2015,database
@@ -46551,6 +47966,7 @@ Venkatesan Guruswami,Moses Charikar,2012,theory
 Venkatesan Guruswami,Yi Wu 0002,2012,theory
 Venkatesan Guruswami,Aditya Bhaskara,2012,theory
 Venkatesan Guruswami,Rishi Saket,2012,theory
+Venkatesan Guruswami,Chaoping Xing,2012,theory
 Venkatesan Guruswami,Prasad Raghavendra,2012,theory
 Venkatesan Guruswami,Aravindan Vijayaraghavan,2012,theory
 Venkatesan Guruswami,Yuan Zhou,2012,theory
@@ -46609,6 +48025,7 @@ Venkatesan Guruswami,Jason D. Hartline,2005,theory
 Venkatesan Guruswami,Johan Håstad,2014,theory
 Venkatesan Guruswami,Srikanth Srinivasan,2014,theory
 Venkatesan Guruswami,Per Austrin,2014,theory
+Venkatesan Guruswami,Chaoping Xing,2014,theory
 Venkatesan Guruswami,Prahladh Harsha,2014,theory
 Venkatesan Guruswami,Yuan Zhou,2011,theory
 Venkatesan Guruswami,Ali Kemal Sinop,2011,theory
@@ -46617,6 +48034,7 @@ Venkatesan Guruswami,F. Bruce Shepherd,1999,theory
 Venkatesan Guruswami,Sanjeev Khanna,1999,theory
 Venkatesan Guruswami,Rajmohan Rajaraman,1999,theory
 Venkatesan Guruswami,Swastik Kopparty,2013,theory
+Venkatesan Guruswami,Chaoping Xing,2013,theory
 Venkatesan Guruswami,Irit Dinur,2013,theory
 Venkatesan Guruswami,Ali Kemal Sinop,2013,theory
 Amy Ogan,Vincent Aleven,2008,hci
@@ -47225,17 +48643,48 @@ Jih-Kwon Peir,Windsor W. Hsu,1998,arch
 Jih-Kwon Peir,Yongjoon Lee,1998,arch
 Jih-Kwon Peir,Konrad Lai,2001,arch
 Daniel F. Keefe,David H. Laidlaw,2003,graphics
+Anna Lysyanskaya,Leonid Reyzin,2004,crypto
+Anna Lysyanskaya,Hovav Shacham,2004,crypto
+Anna Lysyanskaya,Jan Camenisch,2004,crypto
+Anna Lysyanskaya,Silvio Micali,2004,crypto
 Anna Lysyanskaya,Nikos Triandopoulos,2004,security
 Anna Lysyanskaya,Yevgeniy Dodis,2004,security
 Anna Lysyanskaya,Roberto Tamassia,2004,security
+Anna Lysyanskaya,Jan Camenisch,2002,crypto
+Anna Lysyanskaya,Nikos Triandopoulos,2006,crypto
+Anna Lysyanskaya,Melissa Chase,2006,crypto
+Anna Lysyanskaya,Sarah Meiklejohn,2010,security
+Anna Lysyanskaya,Stanislaw Jarecki,2000,crypto
 Anna Lysyanskaya,Tal Rabin,2002,theory
 Anna Lysyanskaya,Yehuda Lindell,2002,theory
 Anna Lysyanskaya,Susan Hohenberger,2006,security
 Anna Lysyanskaya,Jan Camenisch,2006,security
 Anna Lysyanskaya,Markulf Kohlweiss,2006,security
+Anna Lysyanskaya,Klaus Kursawe,2002,security
 Anna Lysyanskaya,Christian Cachin,2002,security
+Anna Lysyanskaya,Melissa Chase,2009,crypto
+Anna Lysyanskaya,Hovav Shacham,2009,crypto
+Anna Lysyanskaya,Jan Camenisch,2009,crypto
+Anna Lysyanskaya,Markulf Kohlweiss,2009,crypto
 Anna Lysyanskaya,Jan Camenisch,2007,security
+Anna Lysyanskaya,Jan Camenisch,2001,crypto
+Anna Lysyanskaya,Melissa Chase,2012,crypto
+Anna Lysyanskaya,Feng-Hao Liu,2012,crypto
+Anna Lysyanskaya,Markulf Kohlweiss,2012,crypto
+Anna Lysyanskaya,Sarah Meiklejohn,2012,crypto
+Anna Lysyanskaya,Gregory Neven,2012,security
 Anna Lysyanskaya,Jan Camenisch,2012,security
+Anna Lysyanskaya,Melissa Chase,2007,crypto
+Anna Lysyanskaya,Leonid Reyzin,2005,crypto
+Anna Lysyanskaya,Jan Camenisch,2005,crypto
+Anna Lysyanskaya,Susan Hohenberger,2005,crypto
+Anna Lysyanskaya,Melissa Chase,2005,crypto
+Anna Lysyanskaya,Tal Malkin,2005,crypto
+Anna Lysyanskaya,Gregory Neven,2014,crypto
+Anna Lysyanskaya,Jan Camenisch,2014,crypto
+Anna Lysyanskaya,Dominique Schröder,2014,crypto
+Anna Lysyanskaya,Jonathan Katz,2014,crypto
+Anna Lysyanskaya,Dana Dachman-Soled,2014,crypto
 Tomás Lozano-Pérez,Leslie Pack Kaelbling,2015,robotics
 Tomás Lozano-Pérez,Han-Pang Chiu,2007,vision
 Tomás Lozano-Pérez,Leslie Pack Kaelbling,2007,vision
@@ -47699,6 +49148,7 @@ Shachar Lovett,Tali Kaufman,2008,theory
 Shachar Lovett,Ely Porat,2010,theory
 Shachar Lovett,Amir Shpilka,2010,theory
 Shachar Lovett,Benny Applebaum,2016,theory
+Shachar Lovett,Divesh Aggarwal,2014,theory
 Shachar Lovett,Yevgeniy Dodis,2014,theory
 Shachar Lovett,Tali Kaufman,2011,theory
 Shachar Lovett,Zeev Dvir,2013,theory
@@ -47718,6 +49168,10 @@ William Enck,Patrick Drew McDaniel,2009,security
 William Enck,Patrick McDaniel,2006,mobile
 William Enck,Patrick Traynor,2006,mobile
 William Enck,Thomas F. La Porta,2006,mobile
+Benjamin Marlin,Emre Ertin,2015,hci
+Benjamin Marlin,Mustafa al'Absi,2015,hci
+Benjamin Marlin,Santosh Kumar,2015,hci
+Benjamin Marlin,Erik G. Learned-Miller,2014,vision
 Gary Bishop,Greg Welch,1997,graphics
 Gary Bishop,Anselmo Lastra,1999,graphics
 Gary Bishop,Manuel M. Oliveira,2000,graphics
@@ -48280,6 +49734,8 @@ Madhur Tulsiani,Subhash Khot,2014,theory
 Madhur Tulsiani,Amit Deshpande,2011,theory
 Madhur Tulsiani,Nisheeth K. Vishnoi,2011,theory
 Madhur Tulsiani,Amit Kumar 0001,2011,theory
+Madhur Tulsiani,Luca Trevisan,2010,crypto
+Madhur Tulsiani,Anindya De,2010,crypto
 D. Martin Swany,Richard Wolski,2002,highperf
 D. Martin Swany,Lori L. Pollock,2005,highperf
 Chitta Baral,Yan Zhang,2001,ai
@@ -48516,12 +49972,18 @@ Joan Feigenbaum,Scott Shenker,2000,theory
 Joan Feigenbaum,Christos H. Papadimitriou,2000,theory
 Joan Feigenbaum,Sampath Kannan,2000,theory
 Joan Feigenbaum,Matt Blaze,1996,security
+Joan Feigenbaum,Moni Naor,1998,crypto
+Joan Feigenbaum,Matt Blaze,1998,crypto
 Joan Feigenbaum,Mihir Bellare,1991,theory
 Joan Feigenbaum,Shafi Goldwasser,1991,theory
 Joan Feigenbaum,Richard Beigel,1991,theory
 Joan Feigenbaum,Siddharth Suri,2005,theory
 Joan Feigenbaum,Andrew McGregor,2005,theory
 Joan Feigenbaum,Sampath Kannan,2005,theory
+Joan Feigenbaum,Victor Shoup,1990,crypto
+Joan Feigenbaum,Joe Kilian,1990,crypto
+Joan Feigenbaum,Donald Beaver,1990,crypto
+Joan Feigenbaum,Phillip Rogaway,1990,crypto
 Joan Feigenbaum,Carsten Lund,1993,theory
 Joan Feigenbaum,Anne Condon,1993,theory
 Joan Feigenbaum,Peter W. Shor,1993,theory
@@ -48666,49 +50128,102 @@ Hava T. Siegelmann,Tommi S. Jaakkola,2001,mlmining
 Hava T. Siegelmann,B. R. Badrinath,1991,database
 Hava T. Siegelmann,Vladimir Vapnik,2000,mlmining
 Hava T. Siegelmann,David Horn,2000,mlmining
-Brent Waters,Ari Juels,2004,security
-Brent Waters,J. Alex Halderman,2004,security
-Brent Waters,Edward W. Felten,2004,security
-Brent Waters,Susan Hohenberger,2011,security
-Brent Waters,Alan M. Dunn,2011,security
-Brent Waters,Matthew Green 0001,2011,security
-Brent Waters,Owen S. Hofmann,2011,security
-Brent Waters,Emmett Witchel,2011,security
-Brent Waters,Amit Sahai,2014,theory
+Brent Waters,Craig Gentry,2015,theory
+Brent Waters,Amit Sahai,2015,theory
+Brent Waters,J. Alex Halderman,2005,web
+Brent Waters,Edward W. Felten,2005,web
+Brent Waters,Allison B. Lewko,2009,security
+Brent Waters,Allison B. Lewko,2012,crypto
+Brent Waters,Scott Yilek,2012,crypto
+Brent Waters,Mihir Bellare,2012,crypto
+Brent Waters,Eike Kiltz,2012,crypto
+Brent Waters,Susan Hohenberger,2012,crypto
+Brent Waters,Chris Peikert,2012,crypto
+Brent Waters,Amit Sahai,2012,crypto
+Brent Waters,Alan M. Dunn,2013,security
+Brent Waters,Jonathan Katz,2013,security
+Brent Waters,Emmett Witchel,2013,security
+Brent Waters,Dan Boneh,2006,crypto
+Brent Waters,Amit Sahai,2006,crypto
+Brent Waters,Steve Lu,2006,crypto
+Brent Waters,Hovav Shacham,2006,crypto
+Brent Waters,Xavier Boyen,2006,crypto
+Brent Waters,Rafail Ostrovsky,2006,crypto
 Brent Waters,Allison B. Lewko,2010,security
 Brent Waters,Yevgeniy Dodis,2010,security
 Brent Waters,Amit Sahai,2010,security
 Brent Waters,Sanjam Garg,2010,security
-Brent Waters,J. Alex Halderman,2005,web
-Brent Waters,Edward W. Felten,2005,web
+Brent Waters,Sherman S. M. Chow,2010,security
 Brent Waters,Dan Boneh,2006,security
 Brent Waters,Patrick McDaniel,2006,security
 Brent Waters,Amit Sahai,2006,security
 Brent Waters,Dawn Xiaodong Song,2006,security
 Brent Waters,Vipul Goyal,2006,security
 Brent Waters,Hovav Shacham,2006,security
+Brent Waters,Xavier Boyen,2006,security
 Brent Waters,Patrick Traynor,2006,security
+Brent Waters,Omkant Pandey,2006,security
+Brent Waters,Periklis A. Papakonstantinou,2008,theory
 Brent Waters,Dan Boneh,2008,theory
+Brent Waters,Charles Rackoff,2008,theory
 Brent Waters,Chris Peikert,2008,theory
-Brent Waters,Amit Sahai,2008,security
-Brent Waters,Vipul Goyal,2008,security
-Brent Waters,Allison B. Lewko,2009,security
-Brent Waters,Allison B. Lewko,2010,theory
-Brent Waters,Rafail Ostrovsky,2007,security
-Brent Waters,J. Alex Halderman,2007,security
-Brent Waters,Amit Sahai,2007,security
+Brent Waters,Allison B. Lewko,2011,crypto
+Brent Waters,Chris Peikert,2011,crypto
+Brent Waters,Adam O'Neill,2011,crypto
+Brent Waters,Amit Sahai,2014,theory
 Brent Waters,Allison B. Lewko,2011,theory
 Brent Waters,Daniel Wichs,2011,theory
 Brent Waters,Yevgeniy Dodis,2011,theory
-Brent Waters,Alan M. Dunn,2013,security
-Brent Waters,Jonathan Katz,2013,security
-Brent Waters,Emmett Witchel,2013,security
+Brent Waters,Allison B. Lewko,2010,crypto
+Brent Waters,Tatsuaki Okamoto,2010,crypto
+Brent Waters,Susan Hohenberger,2010,crypto
+Brent Waters,Amit Sahai,2010,crypto
+Brent Waters,Craig Gentry,2005,crypto
+Brent Waters,Dan Boneh,2005,crypto
+Brent Waters,Amit Sahai,2005,crypto
+Brent Waters,Ari Juels,2004,security
+Brent Waters,J. Alex Halderman,2004,security
+Brent Waters,Edward W. Felten,2004,security
+Brent Waters,Rafail Ostrovsky,2007,security
+Brent Waters,J. Alex Halderman,2007,security
+Brent Waters,Amit Sahai,2007,security
+Brent Waters,Susan Hohenberger,2009,crypto
+Brent Waters,Craig Gentry,2009,crypto
+Brent Waters,Mihir Bellare,2016,crypto
+Brent Waters,Susan Hohenberger,2011,security
+Brent Waters,Alan M. Dunn,2011,security
+Brent Waters,Matthew Green 0001,2011,security
+Brent Waters,Owen S. Hofmann,2011,security
+Brent Waters,Emmett Witchel,2011,security
+Brent Waters,Xavier Boyen,2005,security
+Brent Waters,Amit Sahai,2008,security
+Brent Waters,Steve Lu,2008,security
+Brent Waters,Vipul Goyal,2008,security
+Brent Waters,Allison B. Lewko,2010,theory
+Brent Waters,Susan Hohenberger,2015,crypto
+Brent Waters,Jonathan Katz,2008,crypto
+Brent Waters,Chris Peikert,2008,crypto
+Brent Waters,Amit Sahai,2008,crypto
+Brent Waters,Vinod Vaikuntanathan,2008,crypto
+Brent Waters,Susan Hohenberger,2013,crypto
+Brent Waters,Eyal Kushilevitz,2013,crypto
+Brent Waters,Amit Sahai,2013,crypto
+Brent Waters,Sanjam Garg,2013,crypto
+Brent Waters,Shai Halevi,2013,crypto
+Brent Waters,Craig Gentry,2013,crypto
+Brent Waters,Benny Applebaum,2013,crypto
+Brent Waters,Yuval Ishai,2013,crypto
 Brent Waters,Sanjam Garg,2013,theory
 Brent Waters,Craig Gentry,2013,theory
 Brent Waters,Amit Sahai,2013,theory
+Brent Waters,Mariana Raykova 0001,2013,theory
 Brent Waters,Shai Halevi,2013,theory
-Brent Waters,Craig Gentry,2015,theory
-Brent Waters,Amit Sahai,2015,theory
+Brent Waters,Allison B. Lewko,2014,crypto
+Brent Waters,Dan Boneh,2014,crypto
+Brent Waters,Amit Sahai,2014,crypto
+Brent Waters,Susan Hohenberger,2014,crypto
+Brent Waters,Mark Zhandry,2014,crypto
+Brent Waters,Craig Gentry,2014,crypto
 Eric A. Brewer,Matt Welsh,2001,opsys
 Eric A. Brewer,David E. Culler,2001,opsys
 Eric A. Brewer,Sonesh Surana,2007,networks
@@ -49257,6 +50772,7 @@ Geoffrey M. Voelker,Lawrence K. Saul,2010,mlmining
 Geoffrey M. Voelker,Stefan Savage,2013,metrics
 Geoffrey M. Voelker,Damon McCoy,2013,metrics
 Geoffrey M. Voelker,Kirill Levchenko,2013,metrics
+Geoffrey M. Voelker,Sarah Meiklejohn,2013,metrics
 Geoffrey M. Voelker,Christophe Diot,2011,networks
 Geoffrey M. Voelker,Stratis Ioannidis,2011,networks
 Geoffrey M. Voelker,Wenguang Chen,2009,highperf
@@ -49928,6 +51444,7 @@ Lakshminarayanan Subramanian,Matthew Caesar,2005,networks
 Lakshminarayanan Subramanian,Cheng Tien Ee,2005,networks
 Lakshminarayanan Subramanian,Zhuoqing Morley Mao,2005,networks
 Lakshminarayanan Subramanian,Scott Shenker,2005,networks
+Lakshminarayanan Subramanian,Sherman S. M. Chow,2011,networks
 Lakshminarayanan Subramanian,Jinyang Li,2011,networks
 Richard Jay Lipton,David Brumley,2010,security
 Richard Jay Lipton,Sang Kil Cha,2010,security
@@ -50391,6 +51908,12 @@ Steven Rudich,Jirí Sgall,1991,theory
 Steven Rudich,James Aspnes,1991,theory
 Steven Rudich,Richard Beigel,1991,theory
 Steven Rudich,Russell Impagliazzo,1991,theory
+Steven Rudich,Ke Yang,2001,crypto
+Steven Rudich,Amit Sahai,2001,crypto
+Steven Rudich,Oded Goldreich,2001,crypto
+Steven Rudich,Salil P. Vadhan,2001,crypto
+Steven Rudich,Boaz Barak,2001,crypto
+Steven Rudich,Russell Impagliazzo,2001,crypto
 Steven Rudich,Avrim Blum,1992,theory
 Steven Rudich,Richard Beigel,1992,theory
 Steven Rudich,Shlomo Moran,1990,theory
@@ -50645,18 +52168,36 @@ J. Andrew Bagnell,Shervin Javdani,2015,ai
 J. Andrew Bagnell,Andreas Krause,2015,ai
 J. Andrew Bagnell,Jeff G. Schneider,2001,robotics
 J. Andrew Bagnell,Martial Hebert,2015,vision
+Matthew K. Franklin,Stuart Haber,1993,crypto
+Matthew K. Franklin,Dan Boneh,1999,crypto
+Matthew K. Franklin,Dan Boneh,1997,crypto
 Matthew K. Franklin,Harry Buhrman,1998,theory
 Matthew K. Franklin,Juan A. Garay,1998,theory
 Matthew K. Franklin,Moti Yung,1995,theory
+Matthew K. Franklin,Jacques Patarin,1996,crypto
+Matthew K. Franklin,Ronald Cramer,1996,crypto
+Matthew K. Franklin,Don Coppersmith,1996,crypto
+Matthew K. Franklin,Berry Schoenmakers,1996,crypto
+Matthew K. Franklin,Moti Yung,1996,crypto
+Matthew K. Franklin,Michael K. Reiter,1996,crypto
 Matthew K. Franklin,Rebecca N. Wright,1996,security
 Matthew K. Franklin,Michael K. Reiter,1996,security
+Matthew K. Franklin,Moti Yung,1994,crypto
+Matthew K. Franklin,Rafail Ostrovsky,2013,crypto
+Matthew K. Franklin,Ran Gelles,2013,crypto
+Matthew K. Franklin,Leonard J. Schulman,2013,crypto
+Matthew K. Franklin,Rebecca N. Wright,1998,crypto
 Matthew K. Franklin,Jessica Staddon,2002,security
 Matthew K. Franklin,Drew Dean,2002,security
 Matthew K. Franklin,Dirk Balfanz,2002,security
+Matthew K. Franklin,Glenn Durfee,2000,security
+Matthew K. Franklin,Dan Boneh,2001,crypto
+Matthew K. Franklin,Glenn Durfee,2001,crypto
 Matthew K. Franklin,Moti Yung,1993,theory
 Matthew K. Franklin,Zvi Galil,1993,theory
 Matthew K. Franklin,Moti Yung,1992,theory
 Matthew K. Franklin,Dan Boneh,1999,security
+Matthew K. Franklin,Michael K. Reiter,1995,crypto
 Cauligi S. Raghavendra,Viktor K. Prasanna,1998,highperf
 Tevfik Bultan,William Pugh,1997,logic
 Tevfik Bultan,Fang Yu,2011,softeng
@@ -51037,6 +52578,7 @@ Aviel D. Rubin,Tadayoshi Kohno,2004,security
 Aviel D. Rubin,Dan S. Wallach,2004,security
 Aviel D. Rubin,Adam Stubblefield,2004,security
 Aviel D. Rubin,Denis Foo Kune,2014,security
+Aviel D. Rubin,Victor Shoup,1996,crypto
 Aviel D. Rubin,Fabian Monrose,1997,security
 Aviel D. Rubin,David Wagner,2002,networks
 Aviel D. Rubin,Michael K. Reiter,1998,security
@@ -51463,7 +53005,24 @@ Charles E. Leiserson,Satish Rao,1993,theory
 Charles E. Leiserson,Rezaul Alam Chowdhury,2016,highperf
 Charles E. Leiserson,Armando Solar-Lezama,2016,highperf
 Charles E. Leiserson,Bradley C. Kuszmaul,2016,highperf
+Stefano Tessaro,Mihir Bellare,2016,crypto
+Stefano Tessaro,Vladimir Kolmogorov,2016,crypto
+Stefano Tessaro,Krzysztof Pietrzak,2016,crypto
+Stefano Tessaro,Joël Alwen,2016,crypto
+Stefano Tessaro,Daniel J. Bernstein,2016,crypto
+Stefano Tessaro,Peter Gazi,2016,crypto
+Stefano Tessaro,Ueli M. Maurer,2009,crypto
+Stefano Tessaro,Krzysztof Pietrzak,2015,crypto
+Stefano Tessaro,Peter Gazi,2015,crypto
+Stefano Tessaro,Huijia Lin,2013,crypto
 Stefano Tessaro,Thomas Holenstein,2011,theory
+Stefano Tessaro,Yevgeniy Dodis,2012,crypto
+Stefano Tessaro,Mihir Bellare,2012,crypto
+Stefano Tessaro,Thomas Ristenpart,2012,crypto
+Stefano Tessaro,John P. Steinberger,2012,crypto
+Stefano Tessaro,Peter Gazi,2012,crypto
+Stefano Tessaro,Ueli M. Maurer,2007,crypto
+Stefano Tessaro,David Cash,2014,crypto
 Kevin J. Compton,Serge Abiteboul,1992,database
 Kevin J. Compton,Victor Vianu,1992,database
 Meera Sitharam,Adam Arbree,2006,graphics
@@ -52683,6 +54242,7 @@ Ronald C. Arkin,Ashwin Ram,1992,robotics
 Ronald C. Arkin,Russell J. Clark,1992,robotics
 Ronald C. Arkin,Maxim Likhachev,2001,robotics
 Ronald C. Arkin,Masahiro Fujita,2001,robotics
+Ronald C. Arkin,Tsuyoshi Takagi,2001,robotics
 Ronald C. Arkin,Damian M. Lyons,2004,robotics
 Ronald C. Arkin,Zsolt Kira,2004,robotics
 Ronald C. Arkin,Damian M. Lyons,2013,robotics
@@ -52714,6 +54274,9 @@ Matthew Might,David Van Horn,2013,oopfp
 Matthew Might,David Van Horn,2012,oopfp
 Matthew Might,David Van Horn,2010,oopfp
 Merrick L. Furst,Avrim Blum,1995,ai
+Merrick L. Furst,Avrim Blum,1993,crypto
+Merrick L. Furst,Richard J. Lipton,1993,crypto
+Merrick L. Furst,Michael J. Kearns,1993,crypto
 Merrick L. Furst,Yishay Mansour,1994,theory
 Merrick L. Furst,Avrim Blum,1994,theory
 Merrick L. Furst,Jeffrey C. Jackson,1994,theory
@@ -54425,12 +55988,16 @@ Sharon Goldberg,Rebecca N. Wright,2008,networks
 Sharon Goldberg,Michael Schapira,2013,networks
 Sharon Goldberg,Michael Schapira,2010,networks
 Sharon Goldberg,Jennifer Rexford,2010,networks
+Sharon Goldberg,David Xiao,2008,metrics
 Sharon Goldberg,Eran Tromer,2008,metrics
 Sharon Goldberg,Jennifer Rexford,2008,metrics
 Sharon Goldberg,Boaz Barak,2008,metrics
+Sharon Goldberg,Leonid Reyzin,2014,networks
 Sharon Goldberg,Myungjin Lee,2011,metrics
 Sharon Goldberg,Ramana Rao Kompella,2011,metrics
 Sharon Goldberg,George Varghese,2011,metrics
+Sharon Goldberg,Boaz Barak,2008,crypto
+Sharon Goldberg,David Xiao,2008,crypto
 Sharon Goldberg,Frank McSherry,2014,database
 Sharon Goldberg,Zhenming Liu,2013,theory
 Sharon Goldberg,Phillipa Gill,2011,networks
@@ -54819,6 +56386,8 @@ Daniel J. Abadi,Samuel Madden,2007,database
 Daniel J. Abadi,Adam Marcus 0002,2007,database
 Mario Szegedy,Gábor Tardos,2008,theory
 Mario Szegedy,János Pach,2008,theory
+Mario Szegedy,Eike Kiltz,2013,crypto
+Mario Szegedy,Krzysztof Pietrzak,2013,crypto
 Mario Szegedy,Ilan Newman,1996,theory
 Mario Szegedy,Yossi Matias,1996,theory
 Mario Szegedy,Noga Alon,1996,theory
@@ -55000,6 +56569,8 @@ Ramani Duraiswami,Larry S. Davis,2005,vision
 Ramani Duraiswami,Leah Findlater,2015,hci
 Ramani Duraiswami,Larry S. Davis,2004,mlmining
 Ramani Duraiswami,Larry S. Davis,2003,vision
+Eli Gafni,Jessica Staddon,1999,crypto
+Eli Gafni,Yiqun Lisa Yin,1999,crypto
 Eli Gafni,Rachid Guerraoui,2005,theory
 Anna Gál,Pavel Pudlák,2012,theory
 Anna Gál,Michal Koucký,2012,theory
@@ -55022,6 +56593,8 @@ Steven Myers,Abhi Shelat,2009,theory
 Steven Myers,Susan Hohenberger,2014,security
 Steven Myers,Rafael Pass,2014,security
 Steven Myers,Abhi Shelat,2014,security
+Steven Myers,Rafail Ostrovsky,2001,crypto
+Steven Myers,Jonathan Katz,2001,crypto
 Mihalis Yannakakis,Jeffrey D. Ullman,1990,database
 Mihalis Yannakakis,David Lee,1993,logic
 Mihalis Yannakakis,Rajeev Alur,2000,softeng
@@ -55280,6 +56853,7 @@ Alistair Sinclair,Dana Randall,1993,theory
 Alistair Sinclair,Ilan Newman,1999,theory
 Alistair Sinclair,Anupam Gupta,1999,theory
 Alistair Sinclair,Yuri Rabinovich,1999,theory
+Alistair Sinclair,Ben Morris,1999,theory
 Alistair Sinclair,Yuri Rabinovich,1992,theory
 Alistair Sinclair,Avi Wigderson,1992,theory
 Alistair Sinclair,Yitong Yin,2013,theory
@@ -55400,6 +56974,12 @@ Abhi Shelat,Susan Hohenberger,2014,security
 Abhi Shelat,Elaine Shi,2014,security
 Abhi Shelat,Xiao Shaun Wang,2014,security
 Abhi Shelat,Rafael Pass,2014,security
+Abhi Shelat,Steven Myers,2014,security
+Abhi Shelat,Rafael Pass,2006,crypto
+Abhi Shelat,Vinod Vaikuntanathan,2006,crypto
+Abhi Shelat,Gregory Neven,2007,crypto
+Abhi Shelat,Jan Camenisch,2007,crypto
+Abhi Shelat,Steven Myers,2009,theory
 Abhi Shelat,Moses Charikar,2002,theory
 Abhi Shelat,Amit Sahai,2002,theory
 Abhi Shelat,Manoj Prabhakaran,2002,theory
@@ -55410,10 +56990,18 @@ Abhi Shelat,April Rasala,2002,theory
 Abhi Shelat,Rafael Pass,2015,security
 Abhi Shelat,Adam D. Smith,2003,theory
 Abhi Shelat,Chris Peikert,2003,theory
+Abhi Shelat,Giuseppe Persiano,2009,crypto
+Abhi Shelat,Joël Alwen,2009,crypto
+Abhi Shelat,Jonathan Katz,2009,crypto
+Abhi Shelat,Yehuda Lindell,2009,crypto
+Abhi Shelat,Ivan Visconti,2009,crypto
 Abhi Shelat,Rafael Pass,2007,theory
 Abhi Shelat,Ran Canetti,2007,theory
+Abhi Shelat,Joël Alwen,2008,crypto
+Abhi Shelat,Ivan Visconti,2008,crypto
 Abhi Shelat,Silvio Micali,2005,theory
 Abhi Shelat,Andrew J. Blumberg,2004,ai
+Abhi Shelat,Rafael Pass,2005,crypto
 Thomas R. Ioerger,John Yen,2001,ai
 Thomas R. Ioerger,Richard A. Volz,2001,ai
 Jianer Chen,Anxiao Jiang,2008,networks
