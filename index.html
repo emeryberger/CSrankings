@@ -103,11 +103,12 @@
 		exactly once, with credit adjusted by splitting evenly
 		across all authors. This approach makes it impossible to
 		boost rankings simply by adding authors to a paper.
-		<em>Average count</em> computes the geometric mean
-		of the adjusted number of publications in each
-		area by institution.
-		<em>Total count</em> is the adjusted sum of all
-		papers published.
+		<em>Average count</em> computes the geometric mean of
+		the adjusted number of publications in each area by
+		institution. This normalizes for the size
+		of areas, so that large and small areas are weighed
+		the same.
+		<em>Total count</em> is the sum of the adjusted number of publications.
 	      </p>
 	      <p>
 		Click on a triangle (&#9658;) to display names and
@@ -137,6 +138,16 @@
 	      </select>
 	      of publications from
 	      <select onchange="rank();" id="startyear" name="startyear">
+		<option value="1980">1980</option>  
+		<option value="1981">1981</option>  
+		<option value="1982">1982</option>  
+		<option value="1983">1983</option>  
+		<option value="1984">1984</option>  
+		<option value="1985">1985</option>  
+		<option value="1986">1986</option>  
+		<option value="1987">1987</option>  
+		<option value="1988">1988</option>  
+		<option value="1989">1989</option>  
 		<option value="1990">1990</option>  
 		<option value="1991">1991</option>  
 		<option value="1992">1992</option>  
@@ -167,6 +178,16 @@
 	      </select>
 	      to
 	      <select onchange="rank();" id="endyear" name="endyear">
+		<option value="1980">1980</option>  
+		<option value="1981">1981</option>  
+		<option value="1982">1982</option>  
+		<option value="1983">1983</option>  
+		<option value="1984">1984</option>  
+		<option value="1985">1985</option>  
+		<option value="1986">1986</option>  
+		<option value="1987">1987</option>  
+		<option value="1988">1988</option>  
+		<option value="1989">1989</option>  
 		<option value="1990">1990</option>  
 		<option value="1991">1991</option>  
 		<option value="1992">1992</option>  
