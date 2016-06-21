@@ -11,7 +11,7 @@ var useGeometricMean = true;
 var useHarmonicMean = false;
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "oopfp"];
+var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "oopfp", "crypto"];
 ;
 ;
 var authors; /* The data which will hold the parsed CSV of author info. */
@@ -177,7 +177,7 @@ function activateAI(value) {
     return activateFields(value, aiFields);
 }
 function activateTheory(value) {
-    var theoryFields = [13, 14];
+    var theoryFields = [13, 14, 22];
     return activateFields(value, theoryFields);
 }
 function activateOthers(value) {
