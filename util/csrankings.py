@@ -63,7 +63,8 @@ areadict = {
     'nlp' : ['EMNLP','ACL','ACL (1)','NAACL'],
     'vision' : ['CVPR','ICCV'],
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
-    'robotics' : ['ICRA','IROS','Robotics: Science and Systems']
+    'robotics' : ['ICRA','IROS','Robotics: Science and Systems'],
+    'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
 }
 
 # Build a dictionary mapping conferences to areas.
