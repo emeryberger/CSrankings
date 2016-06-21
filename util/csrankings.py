@@ -78,7 +78,7 @@ for k, v in areadict.items():
 arealist = areadict.keys();
 
 # Consider pubs in this range only.
-startyear = 1990
+startyear = 1980
 endyear   = 2016
 
    
