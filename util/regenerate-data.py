@@ -79,12 +79,13 @@ def parseDBLP(facultydict):
                     if (child.tag == 'pages'):
                         pageCount = pagecount(child.text)
 
-                if ((pageCount != -1) and (pageCount < pageCountThreshold)):
+                if ((pageCount != -1) and (pageCount < pageCountThreshold) and (confname != 'SC')):
+                    # SPECIAL CASE FOR SC which insanely has incorrect entries (as of 6/22/2016).
                     # DBLP has real papers with incorrect page counts
                     # - usually a truncated single page. -1 means no
                     # pages found at all => some problem with journal
                     # entries in DBLP.
-                    print "Skipping article "+authorName+" with "+str(pageCount)+" pages."
+                    print "Skipping "+authorName.encode('utf-8')+", "+str(pageCount)+", "+confname.encode('utf-8')+", "+str(year)
                     continue
 
                 # If we got here, we have a winner.
