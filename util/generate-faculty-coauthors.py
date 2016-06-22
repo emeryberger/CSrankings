@@ -81,7 +81,8 @@ def parseDBLP(facultydict):
                     if (child.tag == 'pages'):
                         pageCount = pagecount(child.text)
 
-                if ((pageCount > 1) and (pageCount < pageCountThreshold)):
+                if ((pageCount != -1) and (pageCount < pageCountThreshold) and (confname != 'SC')):
+                    # SPECIAL CASE FOR SC which insanely has incorrect entries (as of 6/22/2016).
                     # Only skip papers with a very small paper count,
                     # but above 1. Why?
                     # DBLP has real papers with incorrect page counts
