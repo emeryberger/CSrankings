@@ -79,13 +79,21 @@ def parseDBLP(facultydict):
                     if (child.tag == 'pages'):
                         pageCount = pagecount(child.text)
 
-                if ((pageCount != -1) and (pageCount < pageCountThreshold) and (confname != 'SC')):
-                    # SPECIAL CASE FOR SC which insanely has incorrect entries (as of 6/22/2016).
+                tooFewPages = False
+                if ((pageCount != -1) and (pageCount < pageCountThreshold)):
+                    tooFewPages = True
+                    if ((pageCount == 0) and ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'PLDI') or (confname == 'ACM Trans. Graph.'))):
+                        tooFewPages = False
+                    # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
+                    # Only skip papers with a very small paper count,
+                    # but above 1. Why?
                     # DBLP has real papers with incorrect page counts
                     # - usually a truncated single page. -1 means no
                     # pages found at all => some problem with journal
                     # entries in DBLP.
-                    print "Skipping "+authorName.encode('utf-8')+", "+str(pageCount)+", "+confname.encode('utf-8')+", "+str(year)
+                    # print "Skipping article with "+str(pageCount)+" pages."
+
+                if (tooFewPages):
                     continue
 
                 # If we got here, we have a winner.

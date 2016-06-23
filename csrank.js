@@ -27,7 +27,7 @@ function makePrologue() {
         + "</head>"
         + "<body>"
         + '<div class="row">'
-        + '<div class="table" style="overflow:auto; height: 600px;">'
+        + '<div class="table" style="overflow:auto; height: 650px;">'
         + '<table class="table-sm table-striped"'
         + 'id="ranking" valign="top">';
     return s;
@@ -457,6 +457,12 @@ function rank() {
         for (var ind = 0; ind < keys2.length; ind++) {
             var dept = keys2[ind];
             var v = univagg[dept];
+            if (useArithmeticMean || useHarmonicMean) {
+                v = (Math.floor(10000.0 * v) / (100.0));
+            }
+            if (useGeometricMean) {
+                v = (Math.floor(10.0 * v) / 10.0);
+            }
             if ((ind >= minToRank) && (v != oldv)) {
                 break;
             }
@@ -482,7 +488,7 @@ function rank() {
                     s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2) + "%</td>";
                 }
                 if (useGeometricMean) {
-                    s += '<td align="right">' + (Math.floor(100.0 * v) / 100.0) + "</td>";
+                    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0) + "</td>";
                 }
             }
             else {
