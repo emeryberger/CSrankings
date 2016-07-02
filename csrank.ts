@@ -1,3 +1,11 @@
+/*
+
+  CSrankings.ts
+
+  @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
+
+*/
+
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
@@ -5,12 +13,13 @@
 
 const coauthorFile       = "faculty-coauthors.csv";
 const authorinfoFile     = "generated-author-info.csv";
+const countryinfoFile    = "country-info.csv";
 const allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 const maxCoauthors       = 30;      /* Max co-authors to display. */
 
 const useArithmeticMean = false;
-const useGeometricMean = true;
-const useHarmonicMean = false;
+const useGeometricMean  = true;    /* This is the default and arguably only principled choice. */
+const useHarmonicMean   = false;
 
 var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
 
@@ -34,8 +43,15 @@ interface Coauthor {
     area : string;
 };
 
-var authors   : Array<Author>;       /* The data which will hold the parsed CSV of author info. */
-var coauthors : Array<Coauthor>;     /* The data which will hold the parsed CSV of co-author info. */
+interface CountryInfo {
+    institution : string;
+    region : string;
+};
+
+var authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
+var coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
+var countryInfo : {[key:string] : string} = {};
+
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -152,6 +168,24 @@ function loadCoauthors(cont : () => void ) : void {
     });
 }
 
+function loadCountryInfo(cont : () => void ) : void {
+    Papa.parse(countryinfoFile, {
+	download : true,
+	header: true,
+	complete : function(results) {
+	    var data : any = results.data;
+	    var ci = data as Array<CountryInfo>;
+	    console.log(ci);
+	    console.log(ci.length);
+	    for (var i = 0; i < ci.length; i++) {
+		console.log(ci[i]);
+		countryInfo[ci[i].institution] = ci[i].region;
+	    }
+	    cont();
+	}
+    });
+}
+
 function loadAuthorInfo(cont : () => void) : void {
     Papa.parse(authorinfoFile, {
 	download : true,
@@ -165,18 +199,19 @@ function loadAuthorInfo(cont : () => void) : void {
 		    jQuery(s).click(function() {
 			rank();
 		    });})(str);
+		cont();
 	    }
-	    rank();
+/*	    rank(); */
 	}
     });
-    cont();
 }
 
 function init() : void {
     jQuery(document).ready(
 	function() {
 	    setAllCheckboxes();
-	    loadAuthorInfo(function() { loadCoauthors(rank) ; });
+	    loadAuthorInfo(function() { loadCoauthors(function() {
+		loadCountryInfo(rank) ; }); });
 	});
 }
 
@@ -329,13 +364,19 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 			  authors : Array<Author>,
 			  startyear : number,
 			  endyear : number,
-			  weights : {[key:string] : number}) : void
+			  weights : {[key:string] : number},
+			  regions : string) : void
 {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
     for (var r in authors) {
 	const area : string = authors[r].area;
 	const dept : string = authors[r].dept;
+	if (regions == "USA") {
+	    if (dept in countryInfo) {
+		continue;
+	    }
+	}
 	const areaDept : string = area+dept;
 	if (!(areaDept in areaDeptAdjustedCount)) {
 	    areaDeptAdjustedCount[areaDept] = 0;
@@ -451,6 +492,7 @@ function rank() : boolean {
     const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
     const minToRank          = 50; /* parseInt(jQuery("#minToRank").find(":selected").val()); */
+    const whichRegions       = jQuery("#regions").find(":selected").val();
 
     var numAreas = 0; /* Total number of areas checked */
 
@@ -467,7 +509,7 @@ function rank() : boolean {
 
     const coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
-    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights);
+    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     
     /* (university, total or average number of papers) */
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
