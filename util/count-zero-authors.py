@@ -1,78 +1,7 @@
-from lxml import etree as ElementTree
-import htmlentitydefs
-import csv
-import operator
-import re
+from csrankings import *
 
 # import gzip
 
-generateLog = True
-
-parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
-
-# Papers must be at least 4 pages long to count.
-pageCountThreshold = 4
-# Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile('(\d+)-(\d+)')
-# Match page number in the form volume:page (as in 12:140-12:150).
-pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
-
-def pagecount(input):
-    pageCounterMatcher1 = pageCounterNormal.match(input)
-    pageCounterMatcher2 = pageCounterColon.match(input)
-    start = 0
-    end = 0
-    count = 0
-    
-    if (not (pageCounterMatcher1 is None)):
-        start = int(pageCounterMatcher1.group(1))
-        end   = int(pageCounterMatcher1.group(2))
-        count = end-start+1
-    else:
-        if (not (pageCounterMatcher2 is None)):
-            start = int(pageCounterMatcher2.group(1))
-            end   = int(pageCounterMatcher2.group(2))
-            count = end-start+1
-    return count
-
-    
-areadict = {
-    'proglang' : ['POPL', 'PLDI','OOPSLA'],
-    'logic' : ['CAV', 'LICS'],
-    'softeng' : ['ICSE', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
-    'opsys' : ['SOSP', 'OSDI'],
-    'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
-    'theory' : ['STOC', 'FOCS'],
-    'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium','NDSS'],
-    'mlmining' : ['NIPS', 'ICML','KDD'],
-    'ai' : ['AAAI', 'IJCAI'],
-    'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
-    'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
-    'metrics' : ['SIGMETRICS','IMC'],
-    'web' : ['WWW', 'SIGIR'],
-    'hci' : ['CHI','UbiComp','UIST'],
-    'nlp' : ['EMNLP','ACL','NAACL'],
-    'vision' : ['CVPR','ICCV'],
-    'mobile' : ['MobiSys','MobiCom','SenSys'],
-    'robotics' : ['ICRA','IROS','Robotics: Science and Systems']
-}
-
-# Build a dictionary mapping conferences to areas.
-# e.g., confdict['CVPR'] = 'vision'.
-confdict = {}
-for k, v in areadict.items():
-    for item in v:
-        confdict[item] = k
-
-# The list of all areas.
-arealist = areadict.keys();
-
-# Consider pubs in this range only.
-startyear = 2000
-endyear   = 2016
-
-   
 def parseDBLP(facultydict):
     authlogs = {}
     interestingauthors = {}
