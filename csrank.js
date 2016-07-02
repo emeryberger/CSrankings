@@ -1,21 +1,31 @@
+/*
+
+  CSrankings.ts
+
+  @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
+
+*/
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
 var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
+var countryinfoFile = "country-info.csv";
 var allowRankingChange = false; /* Can we change the kind of rankings being used? */
 var maxCoauthors = 30; /* Max co-authors to display. */
 var useArithmeticMean = false;
-var useGeometricMean = true;
+var useGeometricMean = true; /* This is the default and arguably only principled choice. */
 var useHarmonicMean = false;
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "oopfp", "crypto"];
 ;
 ;
-var authors; /* The data which will hold the parsed CSV of author info. */
-var coauthors; /* The data which will hold the parsed CSV of co-author info. */
+;
+var authors = []; /* The data which will hold the parsed CSV of author info. */
+var coauthors = []; /* The data which will hold the parsed CSV of co-author info. */
+var countryInfo = {};
 /* The prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
     var s = "<html>"
@@ -113,6 +123,23 @@ function loadCoauthors(cont) {
         }
     });
 }
+function loadCountryInfo(cont) {
+    Papa.parse(countryinfoFile, {
+        download: true,
+        header: true,
+        complete: function (results) {
+            var data = results.data;
+            var ci = data;
+            console.log(ci);
+            console.log(ci.length);
+            for (var i = 0; i < ci.length; i++) {
+                console.log(ci[i]);
+                countryInfo[ci[i].institution] = ci[i].region;
+            }
+            cont();
+        }
+    });
+}
 function loadAuthorInfo(cont) {
     Papa.parse(authorinfoFile, {
         download: true,
@@ -127,16 +154,20 @@ function loadAuthorInfo(cont) {
                         rank();
                     });
                 })(str);
+                cont();
             }
-            rank();
+            /*	    rank(); */
         }
     });
-    cont();
 }
 function init() {
     jQuery(document).ready(function () {
         setAllCheckboxes();
-        loadAuthorInfo(function () { loadCoauthors(rank); });
+        loadAuthorInfo(function () {
+            loadCoauthors(function () {
+                loadCountryInfo(rank);
+            });
+        });
     });
 }
 function activateAll(value) {
@@ -252,12 +283,17 @@ function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, author
         areaAdjustedCount[area] += adjustedCount;
     }
 }
-function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights) {
+function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, regions) {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited = {}; /* contains an author name if that author has been processed. */
     for (var r in authors) {
         var area = authors[r].area;
         var dept = authors[r].dept;
+        if (regions == "USA") {
+            if (dept in countryInfo) {
+                continue;
+            }
+        }
         var areaDept = area + dept;
         if (!(areaDept in areaDeptAdjustedCount)) {
             areaDeptAdjustedCount[areaDept] = 0;
@@ -363,6 +399,7 @@ function rank() {
     var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
     var minToRank = 50; /* parseInt(jQuery("#minToRank").find(":selected").val()); */
+    var whichRegions = jQuery("#regions").find(":selected").val();
     var numAreas = 0; /* Total number of areas checked */
     /* Update the 'weights' of each area from the checkboxes. */
     for (var ind = 0; ind < areas.length; ind++) {
@@ -376,7 +413,7 @@ function rank() {
     }
     var coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
-    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights);
+    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     /* (university, total or average number of papers) */
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
     var s = makePrologue();
