@@ -1,12 +1,4 @@
-from lxml import etree as ElementTree
-import htmlentitydefs
-import csv
-import operator
-# import gzip
-
-generateLog = True
-
-parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
+from csrankings import *
 
 def parseDBLP():
     authors = {}
