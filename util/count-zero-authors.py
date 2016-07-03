@@ -1,3 +1,4 @@
+import os
 from csrankings import *
 
 # import gzip
@@ -118,6 +119,14 @@ else:
     #    print k.encode('utf8') + " : " + str(intauthors_gl[k]).encode('utf8')
 
 for k in facultydict:
-    if (not intauthors_gl.has_key(k)):
-        print k.encode('utf8') + " : 0"
-    
+        if ((not intauthors_gl.has_key(k)) or (intauthors_gl[k] <= 3)):
+            # print k.encode('utf8') + " , " + facultydict[k]
+            name = k.replace(' ', '%20')
+            name = name.encode('utf8')
+            cmd = "xmlstarlet sel -T --net -t -m '//authors/author' -v '.' -n http://dblp.uni-trier.de/search/author?xauthor=" + name
+            stream = os.popen(cmd)
+            for line in stream:
+                x = line.rstrip()
+                print x.encode('utf8') + " , " + facultydict[k].encode('utf8')
+            # os.system(cmd)
+
