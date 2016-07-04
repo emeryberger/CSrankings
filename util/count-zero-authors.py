@@ -4,6 +4,7 @@ from csrankings import *
 # import gzip
 
 def parseDBLP(facultydict):
+    count = 0
     authlogs = {}
     interestingauthors = {}
     authorscores = {}
@@ -75,6 +76,10 @@ def parseDBLP(facultydict):
                     continue
 
                 # If we got here, we have a winner.
+
+                count = count + 1
+                if (count % 100 == 0):
+                    print count
                 
                 for child in node:
                     if (child.tag == 'author'):
@@ -123,10 +128,13 @@ for k in facultydict:
             # print k.encode('utf8') + " , " + facultydict[k]
             name = k.replace(' ', '%20')
             name = name.encode('utf8')
+            # print name
+            institution = facultydict[k]
             cmd = "xmlstarlet sel -T --net -t -m '//authors/author' -v '.' -n http://dblp.uni-trier.de/search/author?xauthor=" + name
             stream = os.popen(cmd)
             for line in stream:
                 x = line.rstrip()
-                print x.encode('utf8') + " , " + facultydict[k].encode('utf8')
+                x = x.decode('utf8')
+                print x + " , " + institution.encode('utf8')
             # os.system(cmd)
 
