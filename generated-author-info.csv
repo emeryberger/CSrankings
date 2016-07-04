@@ -5463,6 +5463,10 @@ Rajeev Balasubramonian,University of Utah,arch,1.0,0.2,2011
 Rajeev Balasubramonian,University of Utah,arch,2.0,0.342857142857,2012
 Rajeev Balasubramonian,University of Utah,arch,1.0,0.166666666667,2013
 Rajeev Balasubramonian,University of Utah,arch,2.0,0.366666666667,2015
+Benjamin Watson,North Carolina State University,hci,1.0,0.333333333333,2000
+Benjamin Watson,North Carolina State University,hci,1.0,0.166666666667,2002
+Benjamin Watson,North Carolina State University,graphics,1.0,0.333333333333,2001
+Benjamin Watson,North Carolina State University,graphics,1.0,0.333333333333,2004
 Massimiliano Pontil,University College London,mlmining,2.0,0.416666666667,2000
 Massimiliano Pontil,University College London,mlmining,1.0,0.2,2001
 Massimiliano Pontil,University College London,mlmining,2.0,1.0,2004
@@ -6918,8 +6922,14 @@ Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,0.309523809524,2
 Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,0.45,2014
 Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,0.291666666667,2015
 Phillipa Gill,University of Massachusetts - Amherst,security,1.0,0.25,2010
-David Jones,University College London,hci,1.0,0.166666666667,2015
-David Jones,University College London,database,1.0,0.0526315789474,2014
+Robert N. M. Watson,University of Cambridge,proglang,1.0,0.142857142857,2016
+Robert N. M. Watson,University of Cambridge,networks,1.0,0.333333333333,2014
+Robert N. M. Watson,University of Cambridge,networks,1.0,0.142857142857,2015
+Robert N. M. Watson,University of Cambridge,arch,1.0,0.1,2014
+Robert N. M. Watson,University of Cambridge,arch,1.0,0.111111111111,2015
+Robert N. M. Watson,University of Cambridge,security,1.0,0.25,2010
+Robert N. M. Watson,University of Cambridge,security,1.0,0.2,2013
+Robert N. M. Watson,University of Cambridge,security,2.0,0.177777777778,2015
 Byron Cook,University College London,proglang,1.0,0.333333333333,2006
 Byron Cook,University College London,proglang,4.0,0.983333333333,2007
 Byron Cook,University College London,proglang,1.0,0.25,2009
@@ -11136,6 +11146,19 @@ Raghu Meka,University of California - Los Angeles,theory,2.0,0.416666666667,2011
 Raghu Meka,University of California - Los Angeles,theory,5.0,2.2,2012
 Raghu Meka,University of California - Los Angeles,theory,1.0,0.5,2013
 Raghu Meka,University of California - Los Angeles,theory,4.0,1.36666666667,2015
+Chee-Keng Yap,New York University,theory,1.0,1.0,1980
+Chee-Keng Yap,New York University,theory,1.0,0.5,1982
+Chee-Keng Yap,New York University,theory,2.0,0.833333333333,1983
+Chee-Keng Yap,New York University,theory,2.0,0.833333333333,1984
+Chee-Keng Yap,New York University,theory,2.0,0.7,1985
+Chee-Keng Yap,New York University,theory,1.0,0.333333333333,1986
+Chee-Keng Yap,New York University,theory,1.0,0.5,1988
+Chee-Keng Yap,New York University,theory,1.0,0.333333333333,1990
+Chee-Keng Yap,New York University,theory,1.0,1.0,1992
+Chee-Keng Yap,New York University,theory,1.0,0.333333333333,1995
+Chee-Keng Yap,New York University,theory,1.0,0.5,2001
+Chee-Keng Yap,New York University,graphics,1.0,0.5,1992
+Chee-Keng Yap,New York University,database,1.0,0.5,1982
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,proglang,1.0,0.25,2005
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,web,1.0,0.2,2011
 Liviu Iftode,Rutgers - State University of New Jersey - New Brunswick,opsys,1.0,0.333333333333,1996
@@ -11363,6 +11386,8 @@ Junfeng Yang,Columbia University,security,1.0,0.2,2006
 Junfeng Yang,Columbia University,security,1.0,0.5,2015
 Haixu Tang,Indiana University,security,2.0,0.366666666667,2009
 Haixu Tang,Indiana University,security,1.0,0.166666666667,2015
+David Jones,University College London,hci,1.0,0.166666666667,2015
+David Jones,University College London,database,1.0,0.0526315789474,2014
 David Leake,Indiana University,ai,1.0,0.5,2014
 Dimitris N. Metaxas,Rutgers - State University of New Jersey - New Brunswick,ai,1.0,0.333333333333,1994
 Dimitris N. Metaxas,Rutgers - State University of New Jersey - New Brunswick,ai,1.0,0.2,2016
@@ -14818,6 +14843,22 @@ Kevin R. B. Butler,University of Florida,metrics,1.0,0.2,2014
 Kevin R. B. Butler,University of Florida,security,1.0,0.333333333333,2006
 Kevin R. B. Butler,University of Florida,security,1.0,0.333333333333,2008
 Kevin R. B. Butler,University of Florida,security,2.0,0.392857142857,2014
+Michael Kifer,State University of New York - Stony Brook,ai,1.0,0.5,1989
+Michael Kifer,State University of New York - Stony Brook,ai,1.0,0.2,2010
+Michael Kifer,State University of New York - Stony Brook,web,1.0,0.25,2009
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.5,1983
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.5,1984
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.333333333333,1988
+Michael Kifer,State University of New York - Stony Brook,database,2.0,1.0,1989
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.333333333333,1992
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.25,1998
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.25,1999
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.25,2000
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.333333333333,2002
+Michael Kifer,State University of New York - Stony Brook,database,2.0,0.833333333333,2006
+Michael Kifer,State University of New York - Stony Brook,database,1.0,0.5,2007
+Michael Kifer,State University of New York - Stony Brook,logic,1.0,0.5,1989
+Michael Kifer,State University of New York - Stony Brook,logic,1.0,0.5,1991
 Ed Lazowska,University of Washington,database,1.0,0.2,2016
 Andrew M. Pitts,University of Cambridge,proglang,1.0,0.5,2007
 Andrew M. Pitts,University of Cambridge,proglang,1.0,1.0,2010
@@ -21420,22 +21461,18 @@ Dan Rubenstein,Columbia University,metrics,1.0,0.25,2008
 Dan Rubenstein,Columbia University,mobile,1.0,0.333333333333,2007
 Dan Rubenstein,Columbia University,mobile,1.0,0.166666666667,2009
 Dan Rubenstein,Columbia University,security,1.0,0.166666666667,2003
-Michael Kifer,State University of New York - Stony Brook,ai,1.0,0.5,1989
-Michael Kifer,State University of New York - Stony Brook,ai,1.0,0.2,2010
-Michael Kifer,State University of New York - Stony Brook,web,1.0,0.25,2009
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.5,1983
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.5,1984
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.333333333333,1988
-Michael Kifer,State University of New York - Stony Brook,database,2.0,1.0,1989
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.333333333333,1992
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.25,1998
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.25,1999
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.25,2000
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.333333333333,2002
-Michael Kifer,State University of New York - Stony Brook,database,2.0,0.833333333333,2006
-Michael Kifer,State University of New York - Stony Brook,database,1.0,0.5,2007
-Michael Kifer,State University of New York - Stony Brook,logic,1.0,0.5,1989
-Michael Kifer,State University of New York - Stony Brook,logic,1.0,0.5,1991
+Richard T. Snodgrass,University of Arizona,database,1.0,1.0,1984
+Richard T. Snodgrass,University of Arizona,database,1.0,0.5,1985
+Richard T. Snodgrass,University of Arizona,database,1.0,0.5,1986
+Richard T. Snodgrass,University of Arizona,database,1.0,0.5,1987
+Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,1996
+Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,2001
+Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,2002
+Richard T. Snodgrass,University of Arizona,database,1.0,0.5,2003
+Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,2004
+Richard T. Snodgrass,University of Arizona,database,1.0,0.1,2005
+Richard T. Snodgrass,University of Arizona,database,1.0,0.5,2006
+Richard T. Snodgrass,University of Arizona,database,1.0,0.166666666667,2013
 Stephen McCamant,University of Minnesota - Twin Cities,proglang,1.0,0.5,2008
 Stephen McCamant,University of Minnesota - Twin Cities,arch,1.0,0.2,2012
 Stephen McCamant,University of Minnesota - Twin Cities,security,2.0,0.366666666667,2010
@@ -27900,18 +27937,6 @@ Yoav Etsion,Technion,metrics,1.0,0.333333333333,2003
 Yoav Etsion,Technion,arch,1.0,0.125,2010
 Yoav Etsion,Technion,arch,3.0,0.95,2014
 Yoav Etsion,Technion,arch,2.0,0.75,2015
-Richard T. Snodgrass,University of Arizona,database,1.0,1.0,1984
-Richard T. Snodgrass,University of Arizona,database,1.0,0.5,1985
-Richard T. Snodgrass,University of Arizona,database,1.0,0.5,1986
-Richard T. Snodgrass,University of Arizona,database,1.0,0.5,1987
-Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,1996
-Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,2001
-Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,2002
-Richard T. Snodgrass,University of Arizona,database,1.0,0.5,2003
-Richard T. Snodgrass,University of Arizona,database,1.0,0.333333333333,2004
-Richard T. Snodgrass,University of Arizona,database,1.0,0.1,2005
-Richard T. Snodgrass,University of Arizona,database,1.0,0.5,2006
-Richard T. Snodgrass,University of Arizona,database,1.0,0.166666666667,2013
 James C. Lester,North Carolina State University,nlp,1.0,0.5,2002
 James C. Lester,North Carolina State University,nlp,1.0,0.2,2011
 James C. Lester,North Carolina State University,ai,1.0,0.5,2001
