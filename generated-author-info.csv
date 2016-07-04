@@ -1483,9 +1483,19 @@ Adam Wierman,California Institute of Technology,metrics,1.0,0.125,2012
 Adam Wierman,California Institute of Technology,metrics,2.0,0.583333333333,2014
 Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2015
 Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2016
-Christopher G. Lucas,The University of Edinburgh,mlmining,2.0,0.5,2008
-Christopher G. Lucas,The University of Edinburgh,mlmining,1.0,0.333333333333,2011
-Christopher G. Lucas,The University of Edinburgh,mlmining,1.0,0.25,2015
+Darko Marinov,University of Illinois at Urbana-Champaign,oopfp,1.0,0.333333333333,2002
+Darko Marinov,University of Illinois at Urbana-Champaign,oopfp,1.0,0.5,2003
+Darko Marinov,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2009
+Darko Marinov,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2010
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2005
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2007
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2008
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.166666666667,2011
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2012
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.392857142857,2013
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2014
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2015
+Darko Marinov,University of Illinois at Urbana-Champaign,logic,1.0,0.2,2014
 Panos K. Chrysanthis,University of Pittsburgh,database,1.0,0.5,1990
 Panos K. Chrysanthis,University of Pittsburgh,database,2.0,0.833333333333,1991
 Panos K. Chrysanthis,University of Pittsburgh,database,2.0,1.0,1999
@@ -5345,19 +5355,27 @@ Dan Grossman,University of Washington,database,1.0,0.333333333333,2010
 Dan Grossman,University of Washington,security,1.0,0.5,2005
 Ansaf Salleb-Aouissi,Columbia University,ai,1.0,0.333333333333,2007
 Eddy Zheng Zhang,Rutgers - State University of New Jersey - New Brunswick,highperf,1.0,0.2,2013
-Darko Marinov,University of Illinois at Urbana-Champaign,oopfp,1.0,0.333333333333,2002
-Darko Marinov,University of Illinois at Urbana-Champaign,oopfp,1.0,0.5,2003
-Darko Marinov,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2009
-Darko Marinov,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2010
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2005
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2007
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2008
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.166666666667,2011
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2012
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.392857142857,2013
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2014
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2015
-Darko Marinov,University of Illinois at Urbana-Champaign,logic,1.0,0.2,2014
+Anind K. Dey,Carnegie Mellon University,ai,1.0,0.25,2008
+Anind K. Dey,Carnegie Mellon University,ai,1.0,0.333333333333,2011
+Anind K. Dey,Carnegie Mellon University,robotics,1.0,0.111111111111,2009
+Anind K. Dey,Carnegie Mellon University,mlmining,1.0,0.333333333333,2010
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.333333333333,1999
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.25,2002
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.166666666667,2003
+Anind K. Dey,Carnegie Mellon University,hci,2.0,0.4,2004
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.25,2005
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.5,2006
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.25,2007
+Anind K. Dey,Carnegie Mellon University,hci,3.0,1.08333333333,2008
+Anind K. Dey,Carnegie Mellon University,hci,4.0,1.83333333333,2009
+Anind K. Dey,Carnegie Mellon University,hci,4.0,1.41666666667,2010
+Anind K. Dey,Carnegie Mellon University,hci,3.0,1.0,2011
+Anind K. Dey,Carnegie Mellon University,hci,3.0,1.0,2012
+Anind K. Dey,Carnegie Mellon University,hci,4.0,1.075,2013
+Anind K. Dey,Carnegie Mellon University,hci,4.0,1.23333333333,2014
+Anind K. Dey,Carnegie Mellon University,hci,4.0,1.0,2015
+Anind K. Dey,Carnegie Mellon University,hci,5.0,1.21666666667,2016
+Anind K. Dey,Carnegie Mellon University,mobile,1.0,0.125,2015
 Rebecca E. Grinter,Georgia Institute of Technology,hci,2.0,0.333333333333,2002
 Rebecca E. Grinter,Georgia Institute of Technology,hci,1.0,0.5,2003
 Rebecca E. Grinter,Georgia Institute of Technology,hci,1.0,0.2,2005
@@ -9264,6 +9282,9 @@ Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.333333333333,2012
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.2,2013
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,3.0,0.642857142857,2014
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.166666666667,2016
+Christopher G. Lucas,The University of Edinburgh,mlmining,2.0,0.5,2008
+Christopher G. Lucas,The University of Edinburgh,mlmining,1.0,0.333333333333,2011
+Christopher G. Lucas,The University of Edinburgh,mlmining,1.0,0.25,2015
 Geoffrey Charles Fox,Indiana University,highperf,1.0,0.333333333333,1989
 Geoffrey Charles Fox,Indiana University,highperf,2.0,0.75,1996
 Eno Thereska,Imperial College London,networks,1.0,0.25,2011
@@ -10489,6 +10510,11 @@ Tobias Ritschel,University College London,graphics,1.0,0.333333333333,2013
 Tobias Ritschel,University College London,graphics,1.0,0.2,2014
 Tobias Ritschel,University College London,graphics,1.0,0.333333333333,2015
 Tobias Ritschel,University College London,vision,1.0,0.25,2014
+Rezaul Alam Chowdhury,State University of New York - Stony Brook,highperf,1.0,0.166666666667,2015
+Rezaul Alam Chowdhury,State University of New York - Stony Brook,highperf,1.0,0.125,2016
+Rezaul Alam Chowdhury,State University of New York - Stony Brook,theory,1.0,0.5,2005
+Rezaul Alam Chowdhury,State University of New York - Stony Brook,theory,1.0,0.5,2006
+Rezaul Alam Chowdhury,State University of New York - Stony Brook,theory,1.0,0.166666666667,2008
 Ronald A. Olsson,University of California - Davis,security,1.0,0.2,1998
 Vivek Srikumar,University of Utah,nlp,1.0,0.2,2008
 Vivek Srikumar,University of Utah,nlp,1.0,0.5,2011
@@ -12735,6 +12761,15 @@ Xiaosong Ma,North Carolina State University,highperf,2.0,0.342857142857,2013
 Xiaosong Ma,North Carolina State University,highperf,1.0,0.2,2014
 Xiaosong Ma,North Carolina State University,metrics,1.0,0.125,2015
 Xiaosong Ma,North Carolina State University,security,1.0,0.333333333333,2000
+John Watrous,University of Waterloo,theory,1.0,1.0,1995
+John Watrous,University of Waterloo,theory,1.0,0.5,1997
+John Watrous,University of Waterloo,theory,2.0,2.0,1999
+John Watrous,University of Waterloo,theory,3.0,2.0,2000
+John Watrous,University of Waterloo,theory,2.0,1.2,2001
+John Watrous,University of Waterloo,theory,1.0,1.0,2006
+John Watrous,University of Waterloo,theory,1.0,0.5,2007
+John Watrous,University of Waterloo,theory,1.0,0.333333333333,2009
+John Watrous,University of Waterloo,theory,1.0,0.25,2010
 Tadayoshi Kohno,University of Washington,networks,1.0,0.25,2008
 Tadayoshi Kohno,University of Washington,networks,1.0,0.333333333333,2012
 Tadayoshi Kohno,University of Washington,networks,1.0,0.25,2015
@@ -12811,6 +12846,18 @@ Murray Shanahan,Imperial College London,ai,1.0,1.0,1989
 Murray Shanahan,Imperial College London,ai,1.0,1.0,1993
 Murray Shanahan,Imperial College London,ai,1.0,1.0,1999
 Murray Shanahan,Imperial College London,ai,1.0,0.333333333333,2001
+Dylan A. Shell,Texas A&M University,ai,1.0,0.5,2015
+Dylan A. Shell,Texas A&M University,robotics,1.0,0.5,2003
+Dylan A. Shell,Texas A&M University,robotics,1.0,0.5,2004
+Dylan A. Shell,Texas A&M University,robotics,1.0,0.5,2006
+Dylan A. Shell,Texas A&M University,robotics,1.0,0.5,2009
+Dylan A. Shell,Texas A&M University,robotics,1.0,0.5,2010
+Dylan A. Shell,Texas A&M University,robotics,4.0,1.75,2011
+Dylan A. Shell,Texas A&M University,robotics,5.0,2.5,2012
+Dylan A. Shell,Texas A&M University,robotics,6.0,3.0,2013
+Dylan A. Shell,Texas A&M University,robotics,4.0,1.83333333333,2014
+Dylan A. Shell,Texas A&M University,robotics,3.0,1.5,2015
+Dylan A. Shell,Texas A&M University,robotics,1.0,0.5,2016
 Graham Knight,University College London,networks,1.0,0.5,1995
 Graham Knight,University College London,networks,1.0,0.5,1996
 Mike Hicks,University of Maryland - College Park,security,1.0,0.5,2012
@@ -12932,6 +12979,8 @@ Markus Püschel,ETH Zurich,proglang,1.0,0.333333333333,2015
 Markus Püschel,ETH Zurich,mlmining,1.0,0.25,2009
 Markus Püschel,ETH Zurich,highperf,1.0,0.333333333333,2006
 Daniel G. Brown 0001,University of Waterloo,theory,1.0,0.333333333333,2000
+Robin L. Hill,The University of Edinburgh,hci,1.0,0.2,2007
+Robin L. Hill,The University of Edinburgh,hci,1.0,0.2,2011
 Barton P. Miller,University of Wisconsin - Madison,ai,1.0,0.25,2008
 Barton P. Miller,University of Wisconsin - Madison,proglang,1.0,0.5,1988
 Barton P. Miller,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2000
@@ -13759,6 +13808,8 @@ Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.25,2002
 Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.166666666667,2005
 Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.166666666667,2010
 Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.142857142857,2013
+Jason Cong,University of California - Los Angeles,arch,1.0,0.111111111111,2008
+Jason Cong,University of California - Los Angeles,mobile,1.0,0.0909090909091,2009
 William L. Scherlis,Carnegie Mellon University,proglang,1.0,1.0,1981
 William L. Scherlis,Carnegie Mellon University,proglang,1.0,0.5,1986
 William L. Scherlis,Carnegie Mellon University,hci,1.0,0.2,1996
@@ -25644,6 +25695,8 @@ Wei Wang,University of California - Los Angeles,security,1.0,0.166666666667,2013
 Wei Wang,University of California - Los Angeles,vision,1.0,0.25,2010
 Wei Wang,University of California - Los Angeles,vision,1.0,0.166666666667,2011
 Yuying Li,University of Waterloo,ai,1.0,0.333333333333,2012
+Roger D. Chamberlain,Washington University - St. Louis,highperf,1.0,0.142857142857,2007
+Roger D. Chamberlain,Washington University - St. Louis,highperf,1.0,0.25,2012
 Larry L. Peterson,University of Arizona,networks,1.0,0.5,1988
 Larry L. Peterson,University of Arizona,networks,2.0,1.0,1992
 Larry L. Peterson,University of Arizona,networks,2.0,0.666666666667,1994
@@ -26866,6 +26919,10 @@ Dongyan Xu,Purdue University,security,1.0,0.333333333333,2007
 Dongyan Xu,Purdue University,security,1.0,0.25,2011
 Dongyan Xu,Purdue University,security,2.0,0.5,2013
 Dongyan Xu,Purdue University,security,3.0,0.65,2015
+Robert M. Kirby,University of Utah,highperf,1.0,0.2,1999
+Robert M. Kirby,University of Utah,highperf,1.0,0.166666666667,2009
+Robert M. Kirby,University of Utah,highperf,1.0,0.5,2013
+Robert M. Kirby,University of Utah,logic,1.0,0.333333333333,2008
 Michael Wooldridge,University of Oxford,ai,1.0,0.333333333333,2006
 Michael Wooldridge,University of Oxford,ai,4.0,1.03333333333,2007
 Michael Wooldridge,University of Oxford,ai,1.0,0.25,2008
@@ -27973,15 +28030,17 @@ Russell H. Taylor,Johns Hopkins University,robotics,2.0,0.45,2015
 Russell H. Taylor,Johns Hopkins University,robotics,2.0,0.333333333333,2016
 Russell H. Taylor,Johns Hopkins University,vision,1.0,0.2,2000
 Russell H. Taylor,Johns Hopkins University,vision,1.0,0.5,2003
-John Watrous,University of Waterloo,theory,1.0,1.0,1995
-John Watrous,University of Waterloo,theory,1.0,0.5,1997
-John Watrous,University of Waterloo,theory,2.0,2.0,1999
-John Watrous,University of Waterloo,theory,3.0,2.0,2000
-John Watrous,University of Waterloo,theory,2.0,1.2,2001
-John Watrous,University of Waterloo,theory,1.0,1.0,2006
-John Watrous,University of Waterloo,theory,1.0,0.5,2007
-John Watrous,University of Waterloo,theory,1.0,0.333333333333,2009
-John Watrous,University of Waterloo,theory,1.0,0.25,2010
+Kin K. Leung,Imperial College London,networks,1.0,0.5,1989
+Kin K. Leung,Imperial College London,networks,2.0,1.5,1990
+Kin K. Leung,Imperial College London,networks,1.0,0.333333333333,1992
+Kin K. Leung,Imperial College London,networks,1.0,0.333333333333,1994
+Kin K. Leung,Imperial College London,networks,1.0,0.333333333333,1995
+Kin K. Leung,Imperial College London,networks,1.0,1.0,1999
+Kin K. Leung,Imperial College London,networks,1.0,0.333333333333,2006
+Kin K. Leung,Imperial College London,networks,1.0,0.2,2014
+Kin K. Leung,Imperial College London,networks,1.0,0.333333333333,2015
+Kin K. Leung,Imperial College London,metrics,1.0,0.2,2013
+Kin K. Leung,Imperial College London,metrics,1.0,0.166666666667,2014
 Jinbo Xu,University of Chicago,mlmining,1.0,0.333333333333,2009
 Jinbo Xu,University of Chicago,mlmining,2.0,0.666666666667,2015
 Jinbo Xu,University of Chicago,theory,1.0,0.333333333333,2008
@@ -29330,6 +29389,7 @@ Jens Groth,University College London,crypto,2.0,0.5,2014
 Jens Groth,University College London,crypto,1.0,0.5,2015
 Jens Groth,University College London,crypto,2.0,1.2,2016
 Larry Smarr,University of California - San Diego,highperf,1.0,0.333333333333,1995
+Carlos A. Varela,Rensselaer Polytechnic Institute,proglang,1.0,0.5,2005
 John P. Hayes,University of Michigan,highperf,1.0,0.5,1990
 John P. Hayes,University of Michigan,arch,1.0,0.5,1980
 Lakshminarayanan Subramanian,New York University,networks,1.0,0.5,2001
