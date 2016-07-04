@@ -175,10 +175,7 @@ function loadCountryInfo(cont : () => void ) : void {
 	complete : function(results) {
 	    var data : any = results.data;
 	    var ci = data as Array<CountryInfo>;
-	    console.log(ci);
-	    console.log(ci.length);
 	    for (var i = 0; i < ci.length; i++) {
-		console.log(ci[i]);
 		countryInfo[ci[i].institution] = ci[i].region;
 	    }
 	    cont();
