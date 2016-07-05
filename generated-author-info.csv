@@ -2372,6 +2372,18 @@ Lu Wang,Northeastern University,database,1.0,0.25,2013
 Lu Wang,Northeastern University,database,2.0,0.416666666667,2015
 Lu Wang,Northeastern University,vision,1.0,0.333333333333,2007
 Lu Wang,Northeastern University,vision,2.0,0.833333333333,2009
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.5,2004
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.5,2005
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.333333333333,2006
+Daniel Vogel 0001,University of Waterloo,hci,3.0,1.0,2007
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.5,2008
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.2,2009
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.5,2010
+Daniel Vogel 0001,University of Waterloo,hci,1.0,0.5,2011
+Daniel Vogel 0001,University of Waterloo,hci,2.0,0.75,2012
+Daniel Vogel 0001,University of Waterloo,hci,2.0,0.75,2014
+Daniel Vogel 0001,University of Waterloo,hci,2.0,0.833333333333,2015
+Daniel Vogel 0001,University of Waterloo,hci,3.0,1.08333333333,2016
 Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.5,1982
 Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,1986
 Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.5,1988
@@ -8626,6 +8638,12 @@ Qin Zhang,Indiana University,database,1.0,0.2,2014
 Qin Zhang,Indiana University,database,1.0,0.25,2015
 Qin Zhang,Indiana University,database,1.0,0.5,2016
 Qin Zhang,Indiana University,vision,1.0,0.25,2010
+Steven J. Murdoch,University College London,security,1.0,0.5,2005
+Steven J. Murdoch,University College London,security,1.0,1.0,2006
+Steven J. Murdoch,University College London,security,2.0,0.833333333333,2008
+Steven J. Murdoch,University College London,security,1.0,0.25,2010
+Steven J. Murdoch,University College London,security,1.0,0.2,2014
+Steven J. Murdoch,University College London,security,1.0,0.0666666666667,2015
 Rebecca Hwa,University of Pittsburgh,nlp,1.0,1.0,1999
 Rebecca Hwa,University of Pittsburgh,nlp,1.0,0.25,2002
 Rebecca Hwa,University of Pittsburgh,nlp,2.0,1.0,2005
@@ -16088,6 +16106,8 @@ Mary W. Hall,University of Utah,highperf,1.0,0.125,1993
 Mary W. Hall,University of Utah,highperf,1.0,0.2,1995
 Mary W. Hall,University of Utah,highperf,2.0,0.571428571429,1999
 Mary W. Hall,University of Utah,arch,1.0,0.2,2016
+Robert L. (Scot) Drysdale III,Dartmouth College,theory,1.0,0.25,1982
+Robert L. (Scot) Drysdale III,Dartmouth College,theory,1.0,1.0,1990
 Harriet J. Fell,Northeastern University,crypto,1.0,0.5,1985
 Cauligi S. Raghavendra,University of Southern California,networks,1.0,0.5,2002
 Cauligi S. Raghavendra,University of Southern California,networks,1.0,0.5,2005
@@ -16347,19 +16367,6 @@ Joshua R. Smith,University of Washington,networks,2.0,0.45,2014
 Joshua R. Smith,University of Washington,hci,1.0,0.2,1995
 Joshua R. Smith,University of Washington,hci,1.0,0.2,2009
 Joshua R. Smith,University of Washington,security,1.0,0.25,2008
-David Kotz,Dartmouth College,networks,1.0,0.25,2004
-David Kotz,Dartmouth College,networks,2.0,0.533333333333,2006
-David Kotz,Dartmouth College,networks,1.0,0.2,2008
-David Kotz,Dartmouth College,opsys,1.0,1.0,1994
-David Kotz,Dartmouth College,opsys,1.0,0.5,2000
-David Kotz,Dartmouth College,highperf,1.0,0.5,1994
-David Kotz,Dartmouth College,metrics,1.0,0.5,1994
-David Kotz,Dartmouth College,mobile,1.0,0.5,2002
-David Kotz,Dartmouth College,mobile,1.0,0.333333333333,2004
-David Kotz,Dartmouth College,mobile,1.0,0.166666666667,2008
-David Kotz,Dartmouth College,mobile,1.0,0.25,2012
-David Kotz,Dartmouth College,mobile,1.0,0.2,2014
-David Kotz,Dartmouth College,security,1.0,0.2,2014
 Chris North,Virginia Polytechnic Institute and State University,hci,2.0,0.666666666667,2007
 Chris North,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2010
 Chris North,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2012
@@ -18301,6 +18308,25 @@ Alin Deutsch,University of California - San Diego,database,2.0,0.666666666667,20
 Alin Deutsch,University of California - San Diego,database,1.0,0.2,2013
 Alin Deutsch,University of California - San Diego,database,1.0,0.25,2014
 Alin Deutsch,University of California - San Diego,database,1.0,0.333333333333,2016
+Markus H. Gross,ETH Zurich,hci,1.0,0.5,2006
+Markus H. Gross,ETH Zurich,graphics,1.0,0.166666666667,1996
+Markus H. Gross,ETH Zurich,graphics,1.0,0.25,2000
+Markus H. Gross,ETH Zurich,graphics,2.0,0.75,2001
+Markus H. Gross,ETH Zurich,graphics,2.0,0.5,2002
+Markus H. Gross,ETH Zurich,graphics,2.0,0.326923076923,2003
+Markus H. Gross,ETH Zurich,graphics,2.0,0.416666666667,2005
+Markus H. Gross,ETH Zurich,graphics,2.0,0.424242424242,2006
+Markus H. Gross,ETH Zurich,graphics,4.0,0.869047619048,2007
+Markus H. Gross,ETH Zurich,graphics,1.0,0.25,2008
+Markus H. Gross,ETH Zurich,graphics,5.0,1.11666666667,2009
+Markus H. Gross,ETH Zurich,graphics,10.0,2.27619047619,2010
+Markus H. Gross,ETH Zurich,graphics,8.0,1.83611111111,2011
+Markus H. Gross,ETH Zurich,graphics,9.0,2.00952380952,2012
+Markus H. Gross,ETH Zurich,graphics,6.0,1.09166666667,2013
+Markus H. Gross,ETH Zurich,graphics,7.0,1.12543290043,2014
+Markus H. Gross,ETH Zurich,graphics,6.0,1.34285714286,2015
+Markus H. Gross,ETH Zurich,vision,1.0,0.25,2012
+Markus H. Gross,ETH Zurich,vision,1.0,0.25,2015
 John F. Canny,University of California - Berkeley,robotics,1.0,0.5,1992
 John F. Canny,University of California - Berkeley,robotics,6.0,2.83333333333,1994
 John F. Canny,University of California - Berkeley,robotics,1.0,0.5,1995
@@ -27591,12 +27617,19 @@ Erik D. Demaine,Massachusetts Institute of Technology,theory,3.0,0.625,2010
 Erik D. Demaine,Massachusetts Institute of Technology,theory,2.0,0.833333333333,2011
 Erik D. Demaine,Massachusetts Institute of Technology,theory,1.0,0.5,2013
 Erik D. Demaine,Massachusetts Institute of Technology,theory,1.0,0.25,2016
-Steven J. Murdoch,University College London,security,1.0,0.5,2005
-Steven J. Murdoch,University College London,security,1.0,1.0,2006
-Steven J. Murdoch,University College London,security,2.0,0.833333333333,2008
-Steven J. Murdoch,University College London,security,1.0,0.25,2010
-Steven J. Murdoch,University College London,security,1.0,0.2,2014
-Steven J. Murdoch,University College London,security,1.0,0.0666666666667,2015
+David Kotz,Dartmouth College,networks,1.0,0.25,2004
+David Kotz,Dartmouth College,networks,2.0,0.533333333333,2006
+David Kotz,Dartmouth College,networks,1.0,0.2,2008
+David Kotz,Dartmouth College,opsys,1.0,1.0,1994
+David Kotz,Dartmouth College,opsys,1.0,0.5,2000
+David Kotz,Dartmouth College,highperf,1.0,0.5,1994
+David Kotz,Dartmouth College,metrics,1.0,0.5,1994
+David Kotz,Dartmouth College,mobile,1.0,0.5,2002
+David Kotz,Dartmouth College,mobile,1.0,0.333333333333,2004
+David Kotz,Dartmouth College,mobile,1.0,0.166666666667,2008
+David Kotz,Dartmouth College,mobile,1.0,0.25,2012
+David Kotz,Dartmouth College,mobile,1.0,0.2,2014
+David Kotz,Dartmouth College,security,1.0,0.2,2014
 Teofilo F. Gonzalez,University of California - Santa Barbara,theory,1.0,1.0,1992
 Teofilo F. Gonzalez,University of California - Santa Barbara,softeng,1.0,0.333333333333,2005
 Alexandru Nicolau,University of California - Irvine,proglang,1.0,0.5,1988
