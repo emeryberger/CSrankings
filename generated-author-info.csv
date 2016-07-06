@@ -28,8 +28,12 @@ M. Tamer Özsu,University of Waterloo,database,2.0,0.4,2011
 M. Tamer Özsu,University of Waterloo,database,1.0,0.25,2013
 M. Tamer Özsu,University of Waterloo,database,2.0,0.5,2014
 M. Tamer Özsu,University of Waterloo,database,1.0,0.125,2016
+Stephen S. Intille,Northeastern University,hci,1.0,1.0,2002
+Stephen S. Intille,Northeastern University,hci,1.0,0.125,2003
 Stephen S. Intille,Northeastern University,hci,1.0,0.25,2004
 Stephen S. Intille,Northeastern University,hci,1.0,0.5,2005
+Stephen S. Intille,Northeastern University,hci,1.0,0.333333333333,2006
+Stephen S. Intille,Northeastern University,hci,1.0,0.2,2007
 Stephen S. Intille,Northeastern University,hci,1.0,0.333333333333,2009
 Stephen S. Intille,Northeastern University,hci,1.0,0.25,2010
 Stephen S. Intille,Northeastern University,hci,1.0,0.166666666667,2014
@@ -85,6 +89,7 @@ Jon Crowcroft,University of Cambridge,web,1.0,0.25,2011
 Jon Crowcroft,University of Cambridge,web,2.0,0.5,2013
 Jon Crowcroft,University of Cambridge,web,1.0,0.333333333333,2014
 Jon Crowcroft,University of Cambridge,opsys,1.0,0.142857142857,2005
+Jon Crowcroft,University of Cambridge,hci,1.0,0.111111111111,2007
 Jon Crowcroft,University of Cambridge,metrics,1.0,0.5,2006
 Jon Crowcroft,University of Cambridge,metrics,1.0,0.142857142857,2012
 Jon Crowcroft,University of Cambridge,metrics,1.0,0.166666666667,2013
@@ -591,6 +596,8 @@ Yong Jae Lee,University of California - Davis,vision,1.0,0.333333333333,2012
 Yong Jae Lee,University of California - Davis,vision,1.0,0.333333333333,2013
 Yong Jae Lee,University of California - Davis,vision,2.0,0.75,2015
 William G. Griswold,University of California - San Diego,proglang,1.0,0.5,1987
+William G. Griswold,University of California - San Diego,hci,1.0,0.166666666667,2005
+William G. Griswold,University of California - San Diego,hci,1.0,0.1,2006
 William G. Griswold,University of California - San Diego,hci,2.0,0.5,2008
 William G. Griswold,University of California - San Diego,hci,1.0,0.333333333333,2013
 William G. Griswold,University of California - San Diego,hci,1.0,0.333333333333,2015
@@ -949,6 +956,7 @@ Sébastien Ourselin,University College London,vision,1.0,0.2,2007
 Pat Hanrahan,Stanford University,proglang,1.0,0.2,2013
 Pat Hanrahan,Stanford University,proglang,1.0,0.2,2014
 Pat Hanrahan,Stanford University,mlmining,1.0,0.333333333333,2002
+Pat Hanrahan,Stanford University,hci,1.0,0.2,2001
 Pat Hanrahan,Stanford University,hci,1.0,0.5,2013
 Pat Hanrahan,Stanford University,hci,1.0,0.25,2014
 Pat Hanrahan,Stanford University,highperf,1.0,0.25,2000
@@ -1625,6 +1633,7 @@ Licia Capra,University College London,web,1.0,0.25,2010
 Licia Capra,University College London,web,2.0,0.7,2016
 Licia Capra,University College London,mlmining,1.0,0.5,2011
 Licia Capra,University College London,hci,1.0,0.333333333333,2008
+Licia Capra,University College London,hci,1.0,0.5,2011
 Licia Capra,University College London,hci,1.0,0.333333333333,2014
 Licia Capra,University College London,hci,1.0,0.142857142857,2015
 Licia Capra,University College London,hci,1.0,0.125,2016
@@ -2154,6 +2163,8 @@ James Allan,University of Massachusetts - Amherst,web,1.0,0.166666666667,2015
 Mark D. Corner,University of Massachusetts - Amherst,networks,1.0,0.25,1998
 Mark D. Corner,University of Massachusetts - Amherst,networks,1.0,0.333333333333,2007
 Mark D. Corner,University of Massachusetts - Amherst,networks,1.0,0.25,2009
+Mark D. Corner,University of Massachusetts - Amherst,hci,1.0,0.333333333333,2006
+Mark D. Corner,University of Massachusetts - Amherst,hci,1.0,0.2,2007
 Mark D. Corner,University of Massachusetts - Amherst,mobile,1.0,0.5,2002
 Mark D. Corner,University of Massachusetts - Amherst,mobile,1.0,0.5,2003
 Mark D. Corner,University of Massachusetts - Amherst,mobile,1.0,0.25,2005
@@ -2749,9 +2760,11 @@ Thomas Hofmann,ETH Zurich,vision,1.0,0.333333333333,1999
 Thomas Hofmann,ETH Zurich,vision,1.0,0.333333333333,2008
 Yvonne Rogers,University College London,hci,2.0,0.75,1997
 Yvonne Rogers,University College London,hci,2.0,0.45,2003
+Yvonne Rogers,University College London,hci,1.0,1.0,2006
+Yvonne Rogers,University College London,hci,1.0,0.125,2007
 Yvonne Rogers,University College London,hci,1.0,0.125,2009
 Yvonne Rogers,University College London,hci,2.0,0.311111111111,2010
-Yvonne Rogers,University College London,hci,3.0,0.525,2011
+Yvonne Rogers,University College London,hci,5.0,0.767857142857,2011
 Yvonne Rogers,University College London,hci,3.0,0.833333333333,2012
 Yvonne Rogers,University College London,hci,3.0,0.833333333333,2013
 Yvonne Rogers,University College London,hci,1.0,0.2,2014
@@ -2835,6 +2848,7 @@ Luca Trevisan,Stanford University,crypto,1.0,0.166666666667,2007
 Luca Trevisan,Stanford University,crypto,1.0,0.333333333333,2010
 Victor Zue,Massachusetts Institute of Technology,mlmining,1.0,0.5,1988
 Victor Zue,Massachusetts Institute of Technology,mlmining,2.0,0.375,1990
+Robert K. Harle,University of Cambridge,hci,1.0,0.5,2003
 Robert K. Harle,University of Cambridge,hci,1.0,0.5,2008
 Robert K. Harle,University of Cambridge,mobile,1.0,0.333333333333,2003
 Robert K. Harle,University of Cambridge,mobile,1.0,0.5,2005
@@ -4842,7 +4856,7 @@ James A. Landay,Stanford University,hci,1.0,0.5,1995
 James A. Landay,Stanford University,hci,2.0,0.533333333333,1999
 James A. Landay,Stanford University,hci,4.0,1.16666666667,2000
 James A. Landay,Stanford University,hci,1.0,0.2,2001
-James A. Landay,Stanford University,hci,2.0,0.533333333333,2002
+James A. Landay,Stanford University,hci,3.0,0.866666666667,2002
 James A. Landay,Stanford University,hci,3.0,0.833333333333,2003
 James A. Landay,Stanford University,hci,3.0,0.833333333333,2004
 James A. Landay,Stanford University,hci,3.0,1.08333333333,2005
@@ -4858,6 +4872,7 @@ James A. Landay,Stanford University,hci,1.0,0.111111111111,2014
 James A. Landay,Stanford University,hci,1.0,0.25,2016
 James A. Landay,Stanford University,mobile,1.0,0.5,2004
 James A. Landay,Stanford University,mobile,1.0,0.2,2007
+Radu Teodorescu,Ohio State University,hci,1.0,0.5,2001
 Radu Teodorescu,Ohio State University,arch,1.0,0.25,2007
 Radu Teodorescu,Ohio State University,arch,1.0,0.5,2008
 Radu Teodorescu,Ohio State University,arch,1.0,0.2,2010
@@ -5374,26 +5389,29 @@ Anind K. Dey,Carnegie Mellon University,ai,1.0,0.333333333333,2011
 Anind K. Dey,Carnegie Mellon University,robotics,1.0,0.111111111111,2009
 Anind K. Dey,Carnegie Mellon University,mlmining,1.0,0.333333333333,2010
 Anind K. Dey,Carnegie Mellon University,hci,1.0,0.333333333333,1999
+Anind K. Dey,Carnegie Mellon University,hci,1.0,0.2,2001
 Anind K. Dey,Carnegie Mellon University,hci,1.0,0.25,2002
-Anind K. Dey,Carnegie Mellon University,hci,1.0,0.166666666667,2003
+Anind K. Dey,Carnegie Mellon University,hci,2.0,0.666666666667,2003
 Anind K. Dey,Carnegie Mellon University,hci,2.0,0.4,2004
 Anind K. Dey,Carnegie Mellon University,hci,1.0,0.25,2005
-Anind K. Dey,Carnegie Mellon University,hci,1.0,0.5,2006
-Anind K. Dey,Carnegie Mellon University,hci,1.0,0.25,2007
+Anind K. Dey,Carnegie Mellon University,hci,2.0,0.7,2006
+Anind K. Dey,Carnegie Mellon University,hci,2.0,0.5,2007
 Anind K. Dey,Carnegie Mellon University,hci,3.0,1.08333333333,2008
 Anind K. Dey,Carnegie Mellon University,hci,4.0,1.83333333333,2009
 Anind K. Dey,Carnegie Mellon University,hci,4.0,1.41666666667,2010
-Anind K. Dey,Carnegie Mellon University,hci,3.0,1.0,2011
+Anind K. Dey,Carnegie Mellon University,hci,6.0,2.0,2011
 Anind K. Dey,Carnegie Mellon University,hci,3.0,1.0,2012
 Anind K. Dey,Carnegie Mellon University,hci,4.0,1.075,2013
 Anind K. Dey,Carnegie Mellon University,hci,4.0,1.23333333333,2014
 Anind K. Dey,Carnegie Mellon University,hci,4.0,1.0,2015
 Anind K. Dey,Carnegie Mellon University,hci,5.0,1.21666666667,2016
 Anind K. Dey,Carnegie Mellon University,mobile,1.0,0.125,2015
+Rebecca E. Grinter,Georgia Institute of Technology,hci,1.0,0.5,2001
 Rebecca E. Grinter,Georgia Institute of Technology,hci,2.0,0.333333333333,2002
 Rebecca E. Grinter,Georgia Institute of Technology,hci,1.0,0.5,2003
 Rebecca E. Grinter,Georgia Institute of Technology,hci,1.0,0.2,2005
-Rebecca E. Grinter,Georgia Institute of Technology,hci,1.0,0.2,2006
+Rebecca E. Grinter,Georgia Institute of Technology,hci,2.0,0.533333333333,2006
+Rebecca E. Grinter,Georgia Institute of Technology,hci,2.0,0.583333333333,2007
 Rebecca E. Grinter,Georgia Institute of Technology,hci,2.0,0.666666666667,2008
 Rebecca E. Grinter,Georgia Institute of Technology,hci,3.0,1.03333333333,2009
 Rebecca E. Grinter,Georgia Institute of Technology,hci,3.0,0.733333333333,2010
@@ -5557,6 +5575,7 @@ Deborah Estrin,Cornell University,web,1.0,0.2,2016
 Deborah Estrin,Cornell University,opsys,1.0,0.166666666667,2001
 Deborah Estrin,Cornell University,opsys,1.0,0.333333333333,2002
 Deborah Estrin,Cornell University,hci,1.0,0.25,2009
+Deborah Estrin,Cornell University,hci,1.0,0.333333333333,2011
 Deborah Estrin,Cornell University,theory,1.0,0.5,2003
 Deborah Estrin,Cornell University,metrics,1.0,0.2,2010
 Deborah Estrin,Cornell University,mobile,1.0,0.25,1999
@@ -6433,6 +6452,7 @@ Armando Fox,University of California - Berkeley,opsys,1.0,0.2,1997
 Armando Fox,University of California - Berkeley,opsys,1.0,0.2,2004
 Armando Fox,University of California - Berkeley,opsys,1.0,0.166666666667,2005
 Armando Fox,University of California - Berkeley,opsys,1.0,0.2,2009
+Armando Fox,University of California - Berkeley,hci,2.0,0.45,2001
 Armando Fox,University of California - Berkeley,arch,1.0,0.25,1996
 Armando Fox,University of California - Berkeley,database,1.0,0.166666666667,2011
 Armando Fox,University of California - Berkeley,database,1.0,0.166666666667,2013
@@ -6765,6 +6785,7 @@ Norman M. Sadeh,Carnegie Mellon University,web,1.0,0.142857142857,2016
 Norman M. Sadeh,Carnegie Mellon University,mlmining,1.0,0.166666666667,2013
 Norman M. Sadeh,Carnegie Mellon University,hci,1.0,0.166666666667,2009
 Norman M. Sadeh,Carnegie Mellon University,hci,4.0,0.761111111111,2010
+Norman M. Sadeh,Carnegie Mellon University,hci,1.0,0.142857142857,2011
 Norman M. Sadeh,Carnegie Mellon University,hci,1.0,0.166666666667,2012
 Norman M. Sadeh,Carnegie Mellon University,hci,3.0,0.60119047619,2013
 Norman M. Sadeh,Carnegie Mellon University,hci,2.0,0.416666666667,2014
@@ -7101,6 +7122,7 @@ Srinivasan Keshav,University of Waterloo,networks,1.0,0.5,1997
 Srinivasan Keshav,University of Waterloo,networks,1.0,0.333333333333,1999
 Srinivasan Keshav,University of Waterloo,networks,2.0,0.45,2012
 Srinivasan Keshav,University of Waterloo,networks,1.0,0.25,2014
+Srinivasan Keshav,University of Waterloo,hci,1.0,0.5,2011
 Srinivasan Keshav,University of Waterloo,mobile,1.0,0.2,2006
 Srinivasan Keshav,University of Waterloo,mobile,1.0,0.25,2007
 Srinivasan Keshav,University of Waterloo,mobile,1.0,0.142857142857,2009
@@ -7563,7 +7585,7 @@ Brad A. Myers,Carnegie Mellon University,hci,1.0,0.5,1996
 Brad A. Myers,Carnegie Mellon University,hci,1.0,1.0,1998
 Brad A. Myers,Carnegie Mellon University,hci,2.0,0.833333333333,1999
 Brad A. Myers,Carnegie Mellon University,hci,1.0,0.333333333333,2000
-Brad A. Myers,Carnegie Mellon University,hci,1.0,0.5,2001
+Brad A. Myers,Carnegie Mellon University,hci,2.0,0.7,2001
 Brad A. Myers,Carnegie Mellon University,hci,2.0,0.285714285714,2002
 Brad A. Myers,Carnegie Mellon University,hci,1.0,0.333333333333,2003
 Brad A. Myers,Carnegie Mellon University,hci,1.0,0.5,2004
@@ -8219,6 +8241,7 @@ Prashant J. Shenoy,University of Massachusetts - Amherst,web,1.0,0.333333333333,
 Prashant J. Shenoy,University of Massachusetts - Amherst,web,1.0,0.5,2005
 Prashant J. Shenoy,University of Massachusetts - Amherst,opsys,1.0,0.25,2000
 Prashant J. Shenoy,University of Massachusetts - Amherst,opsys,1.0,0.333333333333,2002
+Prashant J. Shenoy,University of Massachusetts - Amherst,hci,1.0,0.333333333333,2006
 Prashant J. Shenoy,University of Massachusetts - Amherst,metrics,1.0,0.5,1998
 Prashant J. Shenoy,University of Massachusetts - Amherst,metrics,1.0,0.25,2000
 Prashant J. Shenoy,University of Massachusetts - Amherst,metrics,1.0,0.2,2005
@@ -8623,7 +8646,7 @@ Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.333333333333,2006
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,2.0,0.583333333333,2008
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.5,2009
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.25,2010
-Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.142857142857,2011
+Elizabeth D. Mynatt,Georgia Institute of Technology,hci,2.0,0.309523809524,2011
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.333333333333,2012
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,1.0,0.142857142857,2013
 Elizabeth D. Mynatt,Georgia Institute of Technology,hci,2.0,0.833333333333,2014
@@ -8709,6 +8732,8 @@ Xiaohui Xie,University of California - Irvine,mlmining,1.0,0.333333333333,2003
 Anil Madhavapeddy,University of Cambridge,networks,1.0,0.166666666667,2011
 Anil Madhavapeddy,University of Cambridge,networks,1.0,0.0833333333333,2015
 Anil Madhavapeddy,University of Cambridge,opsys,1.0,0.166666666667,2015
+Anil Madhavapeddy,University of Cambridge,hci,1.0,0.333333333333,2003
+Anil Madhavapeddy,University of Cambridge,hci,1.0,0.5,2005
 Anil Madhavapeddy,University of Cambridge,oopfp,1.0,0.25,2010
 Anil Madhavapeddy,University of Cambridge,arch,1.0,0.111111111111,2013
 Anil Madhavapeddy,University of Cambridge,mobile,1.0,0.25,2008
@@ -9762,6 +9787,8 @@ Henry A. Kautz,University of Rochester,mlmining,1.0,0.333333333333,2000
 Henry A. Kautz,University of Rochester,mlmining,1.0,0.333333333333,2005
 Henry A. Kautz,University of Rochester,mlmining,1.0,0.333333333333,2012
 Henry A. Kautz,University of Rochester,mlmining,1.0,0.333333333333,2015
+Henry A. Kautz,University of Rochester,hci,1.0,0.25,2003
+Henry A. Kautz,University of Rochester,hci,1.0,0.111111111111,2004
 Henry A. Kautz,University of Rochester,vision,1.0,0.25,2008
 Henry A. Kautz,University of Rochester,vision,1.0,0.333333333333,2009
 Deepak Ganesan,University of Massachusetts - Amherst,networks,1.0,0.333333333333,2006
@@ -9769,6 +9796,7 @@ Deepak Ganesan,University of Massachusetts - Amherst,networks,2.0,0.5,2009
 Deepak Ganesan,University of Massachusetts - Amherst,networks,1.0,0.5,2014
 Deepak Ganesan,University of Massachusetts - Amherst,networks,1.0,0.333333333333,2015
 Deepak Ganesan,University of Massachusetts - Amherst,opsys,1.0,0.166666666667,2001
+Deepak Ganesan,University of Massachusetts - Amherst,hci,1.0,0.2,2011
 Deepak Ganesan,University of Massachusetts - Amherst,hci,3.0,0.842857142857,2013
 Deepak Ganesan,University of Massachusetts - Amherst,database,1.0,0.2,2009
 Deepak Ganesan,University of Massachusetts - Amherst,mobile,1.0,0.2,2003
@@ -9828,7 +9856,7 @@ Daniel P. Siewiorek,Carnegie Mellon University,networks,1.0,0.333333333333,1993
 Daniel P. Siewiorek,Carnegie Mellon University,networks,1.0,0.5,2005
 Daniel P. Siewiorek,Carnegie Mellon University,hci,1.0,0.166666666667,1997
 Daniel P. Siewiorek,Carnegie Mellon University,hci,1.0,0.2,2010
-Daniel P. Siewiorek,Carnegie Mellon University,hci,1.0,0.166666666667,2011
+Daniel P. Siewiorek,Carnegie Mellon University,hci,2.0,0.5,2011
 Daniel P. Siewiorek,Carnegie Mellon University,hci,1.0,0.166666666667,2014
 Daniel P. Siewiorek,Carnegie Mellon University,hci,1.0,0.25,2015
 Daniel P. Siewiorek,Carnegie Mellon University,hci,1.0,0.25,2016
@@ -10222,6 +10250,7 @@ Peter Steenkiste,Carnegie Mellon University,networks,1.0,0.0769230769231,2012
 Peter Steenkiste,Carnegie Mellon University,networks,1.0,0.333333333333,2014
 Peter Steenkiste,Carnegie Mellon University,networks,1.0,0.111111111111,2015
 Peter Steenkiste,Carnegie Mellon University,opsys,1.0,0.5,1996
+Peter Steenkiste,Carnegie Mellon University,hci,1.0,0.5,2002
 Peter Steenkiste,Carnegie Mellon University,highperf,2.0,0.340909090909,1991
 Peter Steenkiste,Carnegie Mellon University,highperf,3.0,1.5,1995
 Peter Steenkiste,Carnegie Mellon University,arch,1.0,0.5,1987
@@ -10678,7 +10707,7 @@ Xiaowei Yang,Duke University,metrics,1.0,0.25,2010
 Xiaowei Yang,Duke University,security,1.0,0.25,2014
 Thomas W. Doeppner Jr.,Brown University,security,1.0,0.333333333333,2000
 Laura Dabbish,Carnegie Mellon University,hci,1.0,0.5,2004
-Laura Dabbish,Carnegie Mellon University,hci,1.0,0.333333333333,2011
+Laura Dabbish,Carnegie Mellon University,hci,2.0,0.5,2011
 Laura Dabbish,Carnegie Mellon University,hci,1.0,0.333333333333,2012
 Laura Dabbish,Carnegie Mellon University,hci,1.0,0.25,2015
 Laura Dabbish,Carnegie Mellon University,softeng,2.0,0.666666666667,2014
@@ -11524,6 +11553,7 @@ Injong Rhee,North Carolina State University,mobile,1.0,0.333333333333,2013
 Steven M. Seitz,University of Washington,mlmining,1.0,0.25,2000
 Steven M. Seitz,University of Washington,hci,1.0,0.333333333333,2004
 Steven M. Seitz,University of Washington,hci,1.0,0.2,2008
+Steven M. Seitz,University of Washington,hci,1.0,0.142857142857,2011
 Steven M. Seitz,University of Washington,hci,1.0,0.5,2012
 Steven M. Seitz,University of Washington,graphics,1.0,0.5,1996
 Steven M. Seitz,University of Washington,graphics,1.0,0.2,2000
@@ -12873,9 +12903,15 @@ Andrew S. Grimshaw,University of Virginia,highperf,1.0,0.25,2001
 Andrew S. Grimshaw,University of Virginia,highperf,1.0,0.333333333333,2012
 Andrew S. Grimshaw,University of Virginia,oopfp,1.0,0.5,1987
 Andrew S. Grimshaw,University of Virginia,oopfp,1.0,0.333333333333,1994
-Misha Pavel,Northeastern University,mlmining,1.0,0.333333333333,1998
-Misha Pavel,Northeastern University,mlmining,1.0,0.142857142857,2008
-Misha Pavel,Northeastern University,vision,1.0,0.25,2002
+Michael Wooldridge,University of Oxford,ai,1.0,0.333333333333,2006
+Michael Wooldridge,University of Oxford,ai,4.0,1.03333333333,2007
+Michael Wooldridge,University of Oxford,ai,1.0,0.25,2008
+Michael Wooldridge,University of Oxford,ai,1.0,0.2,2009
+Michael Wooldridge,University of Oxford,ai,1.0,0.333333333333,2010
+Michael Wooldridge,University of Oxford,ai,3.0,0.642857142857,2011
+Michael Wooldridge,University of Oxford,ai,2.0,0.583333333333,2013
+Michael Wooldridge,University of Oxford,ai,2.0,0.4,2015
+Michael Wooldridge,University of Oxford,ai,2.0,0.366666666667,2016
 Alfred O. Hero III,University of Michigan,mlmining,1.0,0.5,2005
 Alfred O. Hero III,University of Michigan,mlmining,1.0,1.0,2006
 Alfred O. Hero III,University of Michigan,mlmining,1.0,0.5,2011
@@ -13365,7 +13401,7 @@ Ketan Mulmuley,University of Chicago,graphics,1.0,1.0,1989
 Robert C. Miller,Massachusetts Institute of Technology,ai,1.0,0.2,2015
 Robert C. Miller,Massachusetts Institute of Technology,networks,1.0,0.25,2014
 Robert C. Miller,Massachusetts Institute of Technology,web,1.0,0.333333333333,2007
-Robert C. Miller,Massachusetts Institute of Technology,hci,1.0,0.5,2001
+Robert C. Miller,Massachusetts Institute of Technology,hci,2.0,0.7,2001
 Robert C. Miller,Massachusetts Institute of Technology,hci,1.0,0.142857142857,2002
 Robert C. Miller,Massachusetts Institute of Technology,hci,1.0,0.5,2004
 Robert C. Miller,Massachusetts Institute of Technology,hci,2.0,0.4,2005
@@ -13910,6 +13946,7 @@ Gopalan Nadathur,University of Minnesota - Twin Cities,logic,1.0,0.333333333333,
 Gopalan Nadathur,University of Minnesota - Twin Cities,logic,1.0,0.5,2012
 John T. Stasko,Georgia Institute of Technology,hci,1.0,1.0,1991
 John T. Stasko,Georgia Institute of Technology,hci,1.0,0.333333333333,2003
+John T. Stasko,Georgia Institute of Technology,hci,1.0,0.2,2004
 John T. Stasko,Georgia Institute of Technology,hci,1.0,0.333333333333,2007
 John T. Stasko,Georgia Institute of Technology,hci,1.0,0.5,2008
 John T. Stasko,Georgia Institute of Technology,hci,1.0,0.2,2011
@@ -13949,13 +13986,15 @@ Jason I. Hong,Carnegie Mellon University,web,1.0,0.333333333333,2007
 Jason I. Hong,Carnegie Mellon University,web,1.0,0.5,2009
 Jason I. Hong,Carnegie Mellon University,mlmining,1.0,0.166666666667,2013
 Jason I. Hong,Carnegie Mellon University,hci,2.0,0.75,2000
+Jason I. Hong,Carnegie Mellon University,hci,1.0,0.333333333333,2002
+Jason I. Hong,Carnegie Mellon University,hci,1.0,0.25,2003
 Jason I. Hong,Carnegie Mellon University,hci,2.0,0.583333333333,2004
 Jason I. Hong,Carnegie Mellon University,hci,1.0,0.25,2006
-Jason I. Hong,Carnegie Mellon University,hci,2.0,0.666666666667,2007
+Jason I. Hong,Carnegie Mellon University,hci,3.0,0.916666666667,2007
 Jason I. Hong,Carnegie Mellon University,hci,1.0,0.333333333333,2008
 Jason I. Hong,Carnegie Mellon University,hci,2.0,0.5,2009
 Jason I. Hong,Carnegie Mellon University,hci,4.0,0.761111111111,2010
-Jason I. Hong,Carnegie Mellon University,hci,3.0,0.783333333333,2011
+Jason I. Hong,Carnegie Mellon University,hci,5.0,1.28333333333,2011
 Jason I. Hong,Carnegie Mellon University,hci,2.0,0.416666666667,2012
 Jason I. Hong,Carnegie Mellon University,hci,1.0,0.333333333333,2013
 Jason I. Hong,Carnegie Mellon University,hci,2.0,0.5,2014
@@ -14153,6 +14192,7 @@ Ken Goldberg,University of California - Berkeley,robotics,6.0,1.13571428571,2016
 Ken Goldberg,University of California - Berkeley,database,1.0,0.166666666667,2014
 Ken Goldberg,University of California - Berkeley,database,1.0,0.2,2015
 Ken Goldberg,University of California - Berkeley,database,1.0,0.2,2016
+Ardalan Amiri Sani,University of California - Irvine,hci,1.0,0.166666666667,2011
 Ardalan Amiri Sani,University of California - Irvine,arch,1.0,0.25,2014
 Ardalan Amiri Sani,University of California - Irvine,mobile,1.0,0.25,2014
 Stephen M. Watt,University of Waterloo,oopfp,1.0,0.5,2005
@@ -14602,6 +14642,7 @@ Philip N. Klein,Brown University,vision,1.0,0.333333333333,2001
 Philip N. Klein,Brown University,vision,1.0,0.333333333333,2002
 Nadia Berthouze,University College London,robotics,1.0,0.25,2010
 Jon Froehlich,University of Maryland - College Park,ai,1.0,0.333333333333,2009
+Jon Froehlich,University of Maryland - College Park,hci,1.0,0.25,2006
 Jon Froehlich,University of Maryland - College Park,hci,3.0,0.361111111111,2008
 Jon Froehlich,University of Maryland - College Park,hci,1.0,0.166666666667,2009
 Jon Froehlich,University of Maryland - College Park,hci,1.0,0.333333333333,2010
@@ -14691,6 +14732,7 @@ Richard R. Muntz,University of California - Los Angeles,networks,1.0,0.5,2006
 Richard R. Muntz,University of California - Los Angeles,web,1.0,0.5,1996
 Richard R. Muntz,University of California - Los Angeles,mlmining,1.0,0.0909090909091,1995
 Richard R. Muntz,University of California - Los Angeles,mlmining,1.0,0.25,1996
+Richard R. Muntz,University of California - Los Angeles,hci,1.0,0.25,2001
 Richard R. Muntz,University of California - Los Angeles,metrics,1.0,0.333333333333,1989
 Richard R. Muntz,University of California - Los Angeles,metrics,1.0,0.5,1992
 Richard R. Muntz,University of California - Los Angeles,metrics,1.0,0.333333333333,1995
@@ -15146,7 +15188,11 @@ Kai Shen,University of Rochester,arch,1.0,1.0,2010
 Kai Shen,University of Rochester,arch,1.0,0.2,2013
 Kai Shen,University of Rochester,arch,1.0,0.333333333333,2014
 Khai N. Truong,University of Toronto,ai,1.0,0.25,2011
-Khai N. Truong,University of Toronto,hci,1.0,0.2,2006
+Khai N. Truong,University of Toronto,hci,1.0,0.333333333333,2001
+Khai N. Truong,University of Toronto,hci,2.0,0.5,2004
+Khai N. Truong,University of Toronto,hci,1.0,0.25,2005
+Khai N. Truong,University of Toronto,hci,2.0,0.533333333333,2006
+Khai N. Truong,University of Toronto,hci,1.0,0.25,2007
 Khai N. Truong,University of Toronto,hci,2.0,0.75,2008
 Khai N. Truong,University of Toronto,hci,3.0,0.892857142857,2009
 Khai N. Truong,University of Toronto,hci,3.0,0.916666666667,2010
@@ -15349,7 +15395,7 @@ Eric Paulos,University of California - Berkeley,hci,1.0,0.5,2004
 Eric Paulos,University of California - Berkeley,hci,1.0,0.5,2005
 Eric Paulos,University of California - Berkeley,hci,2.0,0.392857142857,2009
 Eric Paulos,University of California - Berkeley,hci,4.0,1.66666666667,2010
-Eric Paulos,University of California - Berkeley,hci,4.0,1.41666666667,2011
+Eric Paulos,University of California - Berkeley,hci,6.0,1.86666666667,2011
 Eric Paulos,University of California - Berkeley,hci,1.0,0.5,2012
 Eric Paulos,University of California - Berkeley,hci,2.0,0.833333333333,2013
 Eric Paulos,University of California - Berkeley,hci,2.0,0.75,2014
@@ -15728,11 +15774,15 @@ James D. Herbsleb,Carnegie Mellon University,softeng,2.0,0.75,2009
 James D. Herbsleb,Carnegie Mellon University,softeng,2.0,0.75,2011
 James D. Herbsleb,Carnegie Mellon University,softeng,2.0,0.666666666667,2014
 James D. Herbsleb,Carnegie Mellon University,mobile,1.0,0.25,2007
-Shwetak N. Patel,University of Washington,hci,1.0,0.142857142857,2007
+Shwetak N. Patel,University of Washington,hci,1.0,0.5,2003
+Shwetak N. Patel,University of Washington,hci,1.0,0.5,2004
+Shwetak N. Patel,University of Washington,hci,1.0,0.25,2005
+Shwetak N. Patel,University of Washington,hci,2.0,0.533333333333,2006
+Shwetak N. Patel,University of Washington,hci,2.0,0.342857142857,2007
 Shwetak N. Patel,University of Washington,hci,2.0,0.45,2008
 Shwetak N. Patel,University of Washington,hci,1.0,0.166666666667,2009
 Shwetak N. Patel,University of Washington,hci,3.0,0.833333333333,2010
-Shwetak N. Patel,University of Washington,hci,1.0,0.25,2011
+Shwetak N. Patel,University of Washington,hci,3.0,0.7,2011
 Shwetak N. Patel,University of Washington,hci,2.0,0.333333333333,2012
 Shwetak N. Patel,University of Washington,hci,1.0,0.25,2013
 Shwetak N. Patel,University of Washington,hci,3.0,0.542857142857,2014
@@ -16370,6 +16420,7 @@ Joshua R. Smith,University of Washington,robotics,2.0,0.45,2015
 Joshua R. Smith,University of Washington,networks,1.0,0.166666666667,2013
 Joshua R. Smith,University of Washington,networks,2.0,0.45,2014
 Joshua R. Smith,University of Washington,hci,1.0,0.2,1995
+Joshua R. Smith,University of Washington,hci,1.0,0.2,2006
 Joshua R. Smith,University of Washington,hci,1.0,0.2,2009
 Joshua R. Smith,University of Washington,security,1.0,0.25,2008
 Chris North,Virginia Polytechnic Institute and State University,hci,2.0,0.666666666667,2007
@@ -16396,10 +16447,11 @@ David M. Blei,Columbia University,mlmining,4.0,1.16666666667,2015
 David M. Blei,Columbia University,vision,1.0,0.333333333333,2009
 David M. Blei,Columbia University,vision,1.0,0.2,2010
 John Zimmerman,Carnegie Mellon University,web,1.0,0.333333333333,2007
-John Zimmerman,Carnegie Mellon University,hci,2.0,0.47619047619,2007
+John Zimmerman,Carnegie Mellon University,hci,1.0,0.2,2006
+John Zimmerman,Carnegie Mellon University,hci,3.0,0.72619047619,2007
 John Zimmerman,Carnegie Mellon University,hci,3.0,1.45,2009
 John Zimmerman,Carnegie Mellon University,hci,4.0,1.28333333333,2010
-John Zimmerman,Carnegie Mellon University,hci,4.0,0.894444444444,2011
+John Zimmerman,Carnegie Mellon University,hci,5.0,1.06111111111,2011
 John Zimmerman,Carnegie Mellon University,hci,2.0,0.291666666667,2012
 John Zimmerman,Carnegie Mellon University,hci,2.0,0.4,2013
 John Zimmerman,Carnegie Mellon University,hci,3.0,0.491666666667,2014
@@ -17215,6 +17267,7 @@ Stefanie Tellex,Brown University,robotics,3.0,0.783333333333,2014
 Stefanie Tellex,Brown University,robotics,1.0,0.111111111111,2015
 Stefanie Tellex,Brown University,robotics,1.0,0.25,2016
 Stefanie Tellex,Brown University,web,1.0,0.2,2003
+Stefanie Tellex,Brown University,hci,1.0,0.2,2004
 Mark Oskin,University of Washington,oopfp,1.0,0.25,2014
 Mark Oskin,University of Washington,arch,1.0,0.333333333333,1998
 Mark Oskin,University of Washington,arch,1.0,0.166666666667,1999
@@ -17363,6 +17416,7 @@ Martha E. Pollack,University of Michigan,ai,4.0,1.58333333333,2005
 Martha E. Pollack,University of Michigan,ai,1.0,0.5,2006
 Martha E. Pollack,University of Michigan,ai,1.0,0.5,2007
 Martha E. Pollack,University of Michigan,mlmining,1.0,0.333333333333,2004
+Martha E. Pollack,University of Michigan,hci,1.0,0.5,2007
 Martha E. Pollack,University of Michigan,softeng,1.0,0.333333333333,2000
 Blair MacIntyre,Georgia Institute of Technology,hci,1.0,0.166666666667,2001
 Blair MacIntyre,Georgia Institute of Technology,hci,1.0,0.25,2004
@@ -17458,6 +17512,7 @@ John D. Kececioglu,University of Arizona,proglang,1.0,0.142857142857,2004
 John D. Kececioglu,University of Arizona,theory,1.0,0.5,1994
 John D. Kececioglu,University of Arizona,theory,1.0,0.5,1995
 Louis-Philippe Morency,Carnegie Mellon University,nlp,1.0,0.333333333333,2013
+Louis-Philippe Morency,Carnegie Mellon University,hci,1.0,0.142857142857,2002
 Louis-Philippe Morency,Carnegie Mellon University,hci,1.0,0.2,2015
 Louis-Philippe Morency,Carnegie Mellon University,vision,1.0,0.333333333333,2001
 Louis-Philippe Morency,Carnegie Mellon University,vision,1.0,0.333333333333,2004
@@ -18342,7 +18397,7 @@ John F. Canny,University of California - Berkeley,mlmining,1.0,0.333333333333,20
 John F. Canny,University of California - Berkeley,mlmining,1.0,0.25,2015
 John F. Canny,University of California - Berkeley,hci,1.0,0.5,1998
 John F. Canny,University of California - Berkeley,hci,2.0,0.625,2005
-John F. Canny,University of California - Berkeley,hci,1.0,0.333333333333,2006
+John F. Canny,University of California - Berkeley,hci,2.0,0.583333333333,2006
 John F. Canny,University of California - Berkeley,hci,3.0,0.9,2007
 John F. Canny,University of California - Berkeley,hci,2.0,0.75,2009
 John F. Canny,University of California - Berkeley,hci,1.0,0.333333333333,2010
@@ -18576,7 +18631,7 @@ Jodi Forlizzi,Carnegie Mellon University,hci,1.0,0.333333333333,2005
 Jodi Forlizzi,Carnegie Mellon University,hci,2.0,0.533333333333,2007
 Jodi Forlizzi,Carnegie Mellon University,hci,1.0,0.25,2009
 Jodi Forlizzi,Carnegie Mellon University,hci,3.0,0.916666666667,2010
-Jodi Forlizzi,Carnegie Mellon University,hci,5.0,1.36666666667,2011
+Jodi Forlizzi,Carnegie Mellon University,hci,6.0,1.7,2011
 Jodi Forlizzi,Carnegie Mellon University,hci,2.0,0.416666666667,2012
 Jodi Forlizzi,Carnegie Mellon University,hci,4.0,0.709523809524,2013
 Jodi Forlizzi,Carnegie Mellon University,hci,3.0,0.658333333333,2014
@@ -19196,6 +19251,8 @@ Derek Hoiem,University of Illinois at Urbana-Champaign,vision,3.0,0.95,2013
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,2.0,0.5,2015
 Gaetano Borriello,University of Washington,ai,1.0,0.2,2005
 Gaetano Borriello,University of Washington,hci,1.0,0.142857142857,2001
+Gaetano Borriello,University of Washington,hci,1.0,0.125,2002
+Gaetano Borriello,University of Washington,hci,2.0,0.7,2004
 Gaetano Borriello,University of Washington,hci,1.0,0.1,2008
 Gaetano Borriello,University of Washington,hci,1.0,0.166666666667,2009
 Gaetano Borriello,University of Washington,hci,1.0,0.166666666667,2012
@@ -20464,7 +20521,10 @@ Dieter Fox,University of Washington,mlmining,1.0,0.333333333333,2005
 Dieter Fox,University of Washington,mlmining,1.0,0.333333333333,2010
 Dieter Fox,University of Washington,mlmining,1.0,0.333333333333,2011
 Dieter Fox,University of Washington,mlmining,1.0,0.2,2012
-Dieter Fox,University of Washington,hci,1.0,0.142857142857,2011
+Dieter Fox,University of Washington,hci,1.0,0.125,2002
+Dieter Fox,University of Washington,hci,1.0,0.25,2003
+Dieter Fox,University of Washington,hci,1.0,0.111111111111,2004
+Dieter Fox,University of Washington,hci,2.0,0.285714285714,2011
 Dieter Fox,University of Washington,hci,1.0,0.25,2012
 Dieter Fox,University of Washington,vision,1.0,0.25,2011
 Dieter Fox,University of Washington,vision,1.0,0.333333333333,2012
@@ -20524,11 +20584,11 @@ Alexander M. Bronstein,Technion,vision,1.0,0.25,2015
 Paul Anderson,University of Edinburgh,mlmining,1.0,0.333333333333,1995
 Andrew Davison,Imperial College London,robotics,1.0,0.333333333333,2008
 Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.666666666667,2000
-Jennifer Mankoff,Carnegie Mellon University,hci,1.0,0.25,2002
+Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.45,2002
 Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.5,2003
 Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.4,2004
 Jennifer Mankoff,Carnegie Mellon University,hci,4.0,1.41666666667,2005
-Jennifer Mankoff,Carnegie Mellon University,hci,1.0,0.5,2006
+Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.7,2006
 Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.666666666667,2007
 Jennifer Mankoff,Carnegie Mellon University,hci,1.0,0.25,2009
 Jennifer Mankoff,Carnegie Mellon University,hci,2.0,0.583333333333,2010
@@ -20653,6 +20713,7 @@ Donald Sannella,University of Edinburgh,proglang,1.0,0.5,1985
 Donald Sannella,University of Edinburgh,logic,1.0,0.333333333333,1989
 Jeffrey Heer,University of Washington,nlp,1.0,0.166666666667,2014
 Jeffrey Heer,University of Washington,hci,1.0,0.5,2002
+Jeffrey Heer,University of Washington,hci,1.0,0.25,2003
 Jeffrey Heer,University of Washington,hci,1.0,0.2,2004
 Jeffrey Heer,University of Washington,hci,1.0,0.333333333333,2005
 Jeffrey Heer,University of Washington,hci,2.0,0.666666666667,2007
@@ -20899,6 +20960,7 @@ Andrew T. Campbell,Dartmouth College,networks,2.0,1.0,2004
 Andrew T. Campbell,Dartmouth College,networks,1.0,0.5,2007
 Andrew T. Campbell,Dartmouth College,networks,1.0,0.2,2008
 Andrew T. Campbell,Dartmouth College,hci,1.0,0.25,2010
+Andrew T. Campbell,Dartmouth College,hci,1.0,0.142857142857,2011
 Andrew T. Campbell,Dartmouth College,hci,1.0,0.125,2012
 Andrew T. Campbell,Dartmouth College,hci,1.0,0.111111111111,2014
 Andrew T. Campbell,Dartmouth College,hci,2.0,0.4,2015
@@ -22184,6 +22246,7 @@ David A. Forsyth,University of Illinois at Urbana-Champaign,vision,3.0,0.8666666
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,0.25,2013
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,1.0,0.5,2014
 David A. Forsyth,University of Illinois at Urbana-Champaign,vision,4.0,1.5,2015
+Frank Stajano,University of Cambridge,hci,1.0,0.333333333333,2005
 Frank Stajano,University of Cambridge,security,1.0,0.25,2012
 Wolfgang Emmerich,University College London,softeng,1.0,0.5,1999
 Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2000
@@ -24016,10 +24079,13 @@ Hai Zhou,Northwestern University,arch,1.0,0.2,2006
 Hai Zhou,Northwestern University,logic,1.0,0.2,1998
 Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.333333333333,1999
 Gregory D. Abowd,Georgia Institute of Technology,hci,2.0,0.666666666667,2000
+Gregory D. Abowd,Georgia Institute of Technology,hci,3.0,0.7,2001
 Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.25,2002
-Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.5,2005
-Gregory D. Abowd,Georgia Institute of Technology,hci,2.0,0.7,2006
-Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.142857142857,2007
+Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.5,2003
+Gregory D. Abowd,Georgia Institute of Technology,hci,3.0,1.0,2004
+Gregory D. Abowd,Georgia Institute of Technology,hci,4.0,1.09090909091,2005
+Gregory D. Abowd,Georgia Institute of Technology,hci,4.0,1.23333333333,2006
+Gregory D. Abowd,Georgia Institute of Technology,hci,2.0,0.342857142857,2007
 Gregory D. Abowd,Georgia Institute of Technology,hci,3.0,0.7,2008
 Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.333333333333,2009
 Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.166666666667,2010
@@ -24305,7 +24371,7 @@ Daniel S. Weld,University of Washington,web,1.0,0.5,2008
 Daniel S. Weld,University of Washington,mlmining,1.0,0.333333333333,2000
 Daniel S. Weld,University of Washington,mlmining,1.0,0.333333333333,2002
 Daniel S. Weld,University of Washington,mlmining,1.0,0.333333333333,2008
-Daniel S. Weld,University of Washington,hci,1.0,0.5,2005
+Daniel S. Weld,University of Washington,hci,2.0,0.642857142857,2005
 Daniel S. Weld,University of Washington,hci,2.0,0.666666666667,2007
 Daniel S. Weld,University of Washington,hci,3.0,0.916666666667,2008
 Daniel S. Weld,University of Washington,hci,1.0,0.166666666667,2009
@@ -24946,6 +25012,7 @@ Tony Jebara,Columbia University,vision,1.0,0.333333333333,1998
 Tony Jebara,Columbia University,vision,1.0,1.0,2003
 Tony Jebara,Columbia University,vision,1.0,0.25,2008
 Andy Hopper,University of Cambridge,networks,1.0,0.333333333333,1990
+Andy Hopper,University of Cambridge,hci,1.0,0.5,2003
 Andy Hopper,University of Cambridge,hci,1.0,0.5,2008
 Andy Hopper,University of Cambridge,arch,1.0,0.333333333333,1989
 Andy Hopper,University of Cambridge,mobile,1.0,0.2,1999
@@ -25039,6 +25106,7 @@ Anupam Gupta,Carnegie Mellon University,theory,2.0,0.833333333333,2015
 Anupam Gupta,Carnegie Mellon University,theory,1.0,0.333333333333,2016
 Majid Sarrafzadeh,University of California - Los Angeles,ai,1.0,0.333333333333,2009
 Majid Sarrafzadeh,University of California - Los Angeles,theory,1.0,0.333333333333,1990
+Kay Connelly,Indiana University,hci,1.0,0.125,2007
 Kay Connelly,Indiana University,hci,1.0,0.333333333333,2011
 Kay Connelly,Indiana University,hci,1.0,0.333333333333,2012
 Kay Connelly,Indiana University,hci,2.0,0.4,2015
@@ -25090,6 +25158,7 @@ Bharat K. Bhargava,Purdue University,database,1.0,0.25,1994
 George Kesidis,Pennsylvania State University,networks,1.0,0.5,2003
 George Kesidis,Pennsylvania State University,networks,1.0,0.333333333333,2012
 George Kesidis,Pennsylvania State University,networks,1.0,0.2,2013
+Alastair R. Beresford,University of Cambridge,hci,1.0,0.333333333333,2004
 Mohammad Amin Shokrollahi,EPFL,theory,3.0,1.03333333333,1997
 Mohammad Amin Shokrollahi,EPFL,theory,3.0,1.08333333333,1998
 Mohammad Amin Shokrollahi,EPFL,theory,1.0,0.5,1999
@@ -26733,6 +26802,7 @@ Robert E. Schapire,Princeton University,theory,2.0,0.416666666667,1995
 Robert E. Schapire,Princeton University,theory,1.0,0.25,1997
 Mark D. Gross,University of Colorado Boulder,robotics,1.0,0.2,2009
 Mark D. Gross,University of Colorado Boulder,hci,1.0,0.2,2010
+Mark D. Gross,University of Colorado Boulder,hci,1.0,0.2,2011
 Mark D. Gross,University of Colorado Boulder,mobile,1.0,0.25,1997
 Aaron J. Elmore,University of Chicago,database,1.0,0.25,2011
 Aaron J. Elmore,University of Chicago,database,1.0,0.2,2012
@@ -27083,15 +27153,10 @@ Robert M. Kirby,University of Utah,highperf,1.0,0.2,1999
 Robert M. Kirby,University of Utah,highperf,1.0,0.166666666667,2009
 Robert M. Kirby,University of Utah,highperf,1.0,0.5,2013
 Robert M. Kirby,University of Utah,logic,1.0,0.333333333333,2008
-Michael Wooldridge,University of Oxford,ai,1.0,0.333333333333,2006
-Michael Wooldridge,University of Oxford,ai,4.0,1.03333333333,2007
-Michael Wooldridge,University of Oxford,ai,1.0,0.25,2008
-Michael Wooldridge,University of Oxford,ai,1.0,0.2,2009
-Michael Wooldridge,University of Oxford,ai,1.0,0.333333333333,2010
-Michael Wooldridge,University of Oxford,ai,3.0,0.642857142857,2011
-Michael Wooldridge,University of Oxford,ai,2.0,0.583333333333,2013
-Michael Wooldridge,University of Oxford,ai,2.0,0.4,2015
-Michael Wooldridge,University of Oxford,ai,2.0,0.366666666667,2016
+Misha Pavel,Northeastern University,mlmining,1.0,0.333333333333,1998
+Misha Pavel,Northeastern University,mlmining,1.0,0.142857142857,2008
+Misha Pavel,Northeastern University,hci,1.0,0.333333333333,2007
+Misha Pavel,Northeastern University,vision,1.0,0.25,2002
 Perdita Stevens,University of Edinburgh,softeng,1.0,0.5,1998
 Walid G. Aref,Purdue University,database,1.0,0.5,1990
 Walid G. Aref,Purdue University,database,1.0,0.5,1991
@@ -27711,6 +27776,9 @@ Alexandru Nicolau,University of California - Irvine,arch,1.0,0.5,1990
 Alexandru Nicolau,University of California - Irvine,arch,1.0,0.333333333333,1991
 Alexandru Nicolau,University of California - Irvine,arch,1.0,0.333333333333,1992
 Eyal de Lara,University of Toronto,opsys,1.0,0.2,2005
+Eyal de Lara,University of Toronto,hci,1.0,0.25,2005
+Eyal de Lara,University of Toronto,hci,1.0,0.1,2006
+Eyal de Lara,University of Toronto,hci,4.0,0.777777777778,2007
 Eyal de Lara,University of Toronto,hci,1.0,0.333333333333,2008
 Eyal de Lara,University of Toronto,metrics,1.0,0.2,2014
 Eyal de Lara,University of Toronto,arch,1.0,0.125,2015
@@ -28436,6 +28504,7 @@ Albert-László Barabási,Northeastern University,mlmining,1.0,0.2,2011
 Qin Lv,University of Colorado Boulder,web,1.0,0.111111111111,2011
 Qin Lv,University of Colorado Boulder,web,1.0,0.2,2015
 Qin Lv,University of Colorado Boulder,mlmining,1.0,0.111111111111,2012
+Qin Lv,University of Colorado Boulder,hci,2.0,0.3,2011
 Qin Lv,University of Colorado Boulder,hci,1.0,0.142857142857,2012
 Qin Lv,University of Colorado Boulder,hci,2.0,0.267857142857,2013
 Qin Lv,University of Colorado Boulder,metrics,1.0,0.166666666667,2007
@@ -29318,7 +29387,7 @@ Lorrie Faith Cranor,Carnegie Mellon University,hci,1.0,0.166666666667,2007
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,0.67619047619,2008
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,0.616666666667,2009
 Lorrie Faith Cranor,Carnegie Mellon University,hci,4.0,0.623611111111,2010
-Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,0.325,2011
+Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,0.491666666667,2011
 Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,0.277777777778,2012
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,0.60119047619,2013
 Lorrie Faith Cranor,Carnegie Mellon University,hci,2.0,0.266666666667,2014
