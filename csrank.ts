@@ -196,8 +196,8 @@ function loadAuthorInfo(cont : () => void) : void {
 		    jQuery(s).click(function() {
 			rank();
 		    });})(str);
-		cont();
 	    }
+	    cont();
 /*	    rank(); */
 	}
     });
@@ -207,8 +207,11 @@ function init() : void {
     jQuery(document).ready(
 	function() {
 	    setAllCheckboxes();
-	    loadAuthorInfo(function() { loadCoauthors(function() {
-		loadCountryInfo(rank) ; }); });
+	    loadAuthorInfo(function() {
+		loadCountryInfo(function() {
+		    loadCoauthors(rank);
+		});
+	    });
 	});
 }
 
