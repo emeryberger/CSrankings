@@ -151,8 +151,8 @@ function loadAuthorInfo(cont) {
                         rank();
                     });
                 })(str);
-                cont();
             }
+            cont();
             /*	    rank(); */
         }
     });
@@ -161,8 +161,8 @@ function init() {
     jQuery(document).ready(function () {
         setAllCheckboxes();
         loadAuthorInfo(function () {
-            loadCoauthors(function () {
-                loadCountryInfo(rank);
+            loadCountryInfo(function () {
+                loadCoauthors(rank);
             });
         });
     });
