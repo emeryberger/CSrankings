@@ -32,6 +32,17 @@ Doug L. James,Dinesh K. Pai,2003,graphics
 Doug L. James,Dinesh K. Pai,2002,robotics
 Doug L. James,Changxi Zheng,2009,graphics
 Doug L. James,Theodore Kim,2009,graphics
+Norman C. Hutchinson,Larry L. Peterson,1988,networks
+Norman C. Hutchinson,Sean W. O'Malley,1989,opsys
+Norman C. Hutchinson,Larry L. Peterson,1989,opsys
+Norman C. Hutchinson,Calton Pu,1988,database
+Norman C. Hutchinson,Gail E. Kaiser,1988,database
+Norman C. Hutchinson,Eric Jul,1986,oopfp
+Norman C. Hutchinson,Andrew P. Black,1986,oopfp
+Norman C. Hutchinson,Henry M. Levy,1986,oopfp
+Norman C. Hutchinson,Sean W. O'Malley,1999,opsys
+Norman C. Hutchinson,Michael J. Feeley,1999,opsys
+Norman C. Hutchinson,Alistair C. Veitch,1999,opsys
 Swastik Kopparty,Phokion G. Kolaitis,2009,theory
 Swastik Kopparty,Eli Ben-Sasson,2009,theory
 Swastik Kopparty,Zeev Dvir,2009,theory
@@ -75,6 +86,8 @@ Scott Kuindersma,Andrew G. Barto,2011,ai
 Scott Kuindersma,Roderic A. Grupen,2011,ai
 Eric Van Wyk,Neil D. Jones,2002,proglang
 Eric Van Wyk,Maria L. Gini,2012,robotics
+Michael T. Hallett,Hans L. Bodlaender,1994,theory
+Michael T. Hallett,Michael R. Fellows,1994,theory
 Jonathan C. L. Liu,Mengjou Lin,1996,networks
 Jonathan C. L. Liu,Jenwei Hsieh,1996,networks
 Jonathan C. L. Liu,David Hung-Chang Du,1996,networks
@@ -545,6 +558,34 @@ Olga Sorkine,Daniel Cohen-Or,2009,graphics
 Olga Sorkine,Tong-Yee Lee,2009,graphics
 Olga Sorkine,Diego Gutierrez,2009,graphics
 Olga Sorkine,Hans-Peter Seidel,2009,graphics
+Nicholas J. A. Harvey,John Dunagan,2007,theory
+Nicholas J. A. Harvey,Satoru Iwata,2009,theory
+Nicholas J. A. Harvey,Vahab S. Mirrokni,2009,theory
+Nicholas J. A. Harvey,Michel X. Goemans,2009,theory
+Nicholas J. A. Harvey,Andrew Warfield,2014,opsys
+Nicholas J. A. Harvey,Sergey Yekhanin,2007,networks
+Nicholas J. A. Harvey,Mihai Patrascu,2007,networks
+Nicholas J. A. Harvey,Yonggang Wen,2007,networks
+Nicholas J. A. Harvey,Jelani Nelson,2008,theory
+Nicholas J. A. Harvey,Krzysztof Onak,2008,theory
+Nicholas J. A. Harvey,Jan Vondrák,2015,theory
+Nicholas J. A. Harvey,Micah Adler,2006,theory
+Nicholas J. A. Harvey,David R. Karger,2006,theory
+Nicholas J. A. Harvey,Kamal Jain,2006,theory
+Nicholas J. A. Harvey,Erik D. Demaine,2006,theory
+Nicholas J. A. Harvey,Robert D. Kleinberg,2006,theory
+Nicholas J. A. Harvey,Sergey Yekhanin,2006,theory
+Nicholas J. A. Harvey,Mihai Patrascu,2006,theory
+Nicholas J. A. Harvey,Alec Wolman,2004,opsys
+Nicholas J. A. Harvey,Marvin Theimer,2004,opsys
+Nicholas J. A. Harvey,Dejan Kostic,2004,opsys
+Nicholas J. A. Harvey,Michael B. Jones,2004,opsys
+Nicholas J. A. Harvey,John Dunagan,2004,opsys
+Nicholas J. A. Harvey,David R. Karger,2005,theory
+Nicholas J. A. Harvey,Neil Olver,2014,theory
+Nicholas J. A. Harvey,Ramesh Hariharan,2011,theory
+Nicholas J. A. Harvey,Debmalya Panigrahi,2011,theory
+Nicholas J. A. Harvey,Maria-Florina Balcan,2011,theory
 Yasutaka Furukawa,Jean Ponce,2008,vision
 Yasutaka Furukawa,Jean Ponce,2007,vision
 Yasutaka Furukawa,Brian Curless,2009,vision
@@ -1327,6 +1368,26 @@ Jean-Yves Le Boudec,Milan Vojnovic,2007,mobile
 Jean-Yves Le Boudec,Thomas Karagiannis,2007,mobile
 Jean-Yves Le Boudec,Carmela Troncoso,2012,security
 Jean-Yves Le Boudec,Jean-Pierre Hubaux,2012,security
+David G. Lowe,Peter D. Lawrence,2000,robotics
+David G. Lowe,David Meger,2008,robotics
+David G. Lowe,Per-Erik Forssén,2008,robotics
+David G. Lowe,Kevin Lai,2008,robotics
+David G. Lowe,James J. Little,2008,robotics
+David G. Lowe,Matthew Brown,2003,vision
+David G. Lowe,Stephen Se,2002,robotics
+David G. Lowe,James J. Little,2002,robotics
+David G. Lowe,Per-Erik Forssén,2007,vision
+David G. Lowe,Thomas O. Binford,1983,ai
+David G. Lowe,Thomas O. Binford,1981,ai
+David G. Lowe,Nando de Freitas,2004,vision
+David G. Lowe,James J. Little,2004,vision
+David G. Lowe,Gary R. Bradski,2011,robotics
+David G. Lowe,Radu Bogdan Rusu,2011,robotics
+David G. Lowe,Peter D. Lawrence,2003,robotics
+David G. Lowe,Stephen Se,2001,robotics
+David G. Lowe,James J. Little,2001,robotics
+David G. Lowe,Dinesh K. Pai,1997,robotics
+David G. Lowe,John E. Lloyd,1997,robotics
 Michael Kearns,Tim Roughgarden,2013,mlmining
 Michael Kearns,Aaron Roth,2015,ai
 Michael Kearns,Kareem Amin,2015,ai
@@ -1351,9 +1412,9 @@ Angelos D. Keromytis,Vasileios P. Kemerlis,2015,security
 Angelos D. Keromytis,Simha Sethumadhavan,2015,security
 Angelos D. Keromytis,Omer Reingold,2002,security
 Angelos D. Keromytis,Ran Canetti,2002,security
-Angelos D. Keromytis,William Aiello,2002,security
-Angelos D. Keromytis,Matt Blaze,2002,security
 Angelos D. Keromytis,Steven M. Bellovin,2002,security
+Angelos D. Keromytis,Matt Blaze,2002,security
+Angelos D. Keromytis,William Aiello,2002,security
 Angelos D. Keromytis,Dan Rubenstein,2002,networks
 Angelos D. Keromytis,Vishal Misra,2002,networks
 Angelos D. Keromytis,Sotiris Ioannidis,2000,security
@@ -2547,6 +2608,7 @@ Richard Mayr,Alain Finkel,1999,logic
 Richard Mayr,Yu-Fang Chen,2010,logic
 Richard Mayr,Tomás Vojnar,2010,logic
 Richard Mayr,Parosh Aziz Abdulla,2010,logic
+Richard Mayr,Lukás Holík,2010,logic
 Richard Mayr,Antonín Kucera,2005,logic
 Richard Mayr,Javier Esparza,2005,logic
 Richard Mayr,Parosh Aziz Abdulla,2005,logic
@@ -3086,6 +3148,8 @@ Thomas Wies,Dino Distefano,2007,logic
 Thomas Wies,Cristiano Calcagno,2007,logic
 Thomas Wies,Damien Zufferey,2013,logic
 Thomas Wies,Ruzica Piskac,2013,logic
+Thomas Wies,Andrew Reynolds,2015,logic
+Thomas Wies,Clark W. Barrett,2015,logic
 Thomas Wies,Andrey Rybalchenko,2008,logic
 Thomas Wies,Andreas Podelski,2008,logic
 Thomas Wies,Andreas Podelski,2010,proglang
@@ -3937,6 +4001,8 @@ Jeffrey S. Foster,Swarat Chaudhuri,2011,proglang
 Jeffrey S. Foster,Sumit Gulwani,2011,proglang
 Jeffrey S. Foster,Alexander Aiken,2002,proglang
 Jeffrey S. Foster,Tachio Terauchi,2002,proglang
+Jeffrey S. Foster,Armando Solar-Lezama,2015,logic
+Jeffrey S. Foster,Xiaokang Qiu,2015,logic
 Jeffrey S. Foster,Michael Hicks,2012,oopfp
 Jeffrey S. Foster,Saurabh Srivastava,2009,logic
 Jeffrey S. Foster,Sumit Gulwani,2009,logic
@@ -3948,6 +4014,10 @@ Andrew Markham,Cecilia Mascolo,2010,mobile
 Andrew Markham,Salvatore Scellato,2010,mobile
 Andrew Markham,Niki Trigoni,2010,mobile
 Andrew Markham,Niki Trigoni,2015,mobile
+Helmut Seidl,Sebastian Maneth,2005,database
+Helmut Seidl,Thomas Schwentick,2003,database
+Helmut Seidl,Sebastian Maneth,2015,theory
+Helmut Seidl,Bernd Finkbeiner,2013,security
 Alastair R. Beresford,David J. Scott,2004,hci
 Louis-Philippe Morency,Trevor Darrell,2007,vision
 Louis-Philippe Morency,Ariadna Quattoni,2007,vision
@@ -6708,6 +6778,7 @@ Ladislav Kavan,Alec Jacobson,2013,graphics
 Ladislav Kavan,Jernej Barbic,2015,graphics
 Ladislav Kavan,Alec Jacobson,2015,graphics
 Ladislav Kavan,Carol O'Sullivan,2008,graphics
+Jordi Domingo-Pascual,Albert Banchs,2009,metrics
 Calton Pu,Roger S. Barga,1995,database
 Calton Pu,Norman C. Hutchinson,1988,database
 Calton Pu,Gail E. Kaiser,1988,database
@@ -6816,6 +6887,65 @@ Elisha Sacks,Leo Joskowicz,1999,robotics
 Elisha Sacks,Leo Joskowicz,1991,ai
 Elisha Sacks,Jon Doyle,1989,ai
 Elisha Sacks,Leo Joskowicz,1997,robotics
+Michiel van de Panne,Petros Faloutsos,2000,robotics
+Michiel van de Panne,Stelian Coros,2010,graphics
+Michiel van de Panne,Libin Liu,2010,graphics
+Michiel van de Panne,KangKang Yin,2010,graphics
+Michiel van de Panne,Weiwei Xu,2010,graphics
+Michiel van de Panne,A. Frank van der Stappen,2013,graphics
+Michiel van de Panne,Rémi Ronfard,2015,graphics
+Michiel van de Panne,Baining Guo,2009,graphics
+Michiel van de Panne,Stelian Coros,2009,graphics
+Michiel van de Panne,Kun Zhou,2009,graphics
+Michiel van de Panne,KangKang Yin,2009,graphics
+Michiel van de Panne,Jun Wang,2009,graphics
+Michiel van de Panne,Weiwei Xu,2009,graphics
+Michiel van de Panne,Falai Chen,2009,graphics
+Michiel van de Panne,KangKang Yin,2012,graphics
+Michiel van de Panne,Baining Guo,2012,graphics
+Michiel van de Panne,Libin Liu,2012,graphics
+Michiel van de Panne,Rémi Ronfard,2014,graphics
+Michiel van de Panne,Tao Ju,2008,graphics
+Michiel van de Panne,Qian-Yi Zhou,2008,graphics
+Michiel van de Panne,Stelian Coros,2008,graphics
+Michiel van de Panne,Daniel Cohen-Or,2008,graphics
+Michiel van de Panne,KangKang Yin,2008,graphics
+Michiel van de Panne,Ulrich Neumann,2008,graphics
+Michiel van de Panne,Demetri Terzopoulos,2001,graphics
+Michiel van de Panne,Petros Faloutsos,2001,graphics
+Michiel van de Panne,Nicolas Bonneel,2011,graphics
+Michiel van de Panne,Wolfgang Heidrich,2011,graphics
+Michiel van de Panne,Stelian Coros,2011,graphics
+Michiel van de Panne,Sylvain Paris,2011,graphics
+Michiel van de Panne,Andrej Karpathy,2011,graphics
+Michiel van de Panne,Eugene Fiume,2000,graphics
+Michiel van de Panne,Eugene Fiume,1990,graphics
+Michiel van de Panne,Zvonko G. Vranesic,1990,graphics
+Michiel van de Panne,Demetri Terzopoulos,2003,robotics
+Michiel van de Panne,Petros Faloutsos,2003,robotics
+Michiel van de Panne,KangKang Yin,2007,graphics
+Michiel van de Panne,Eugene Fiume,1996,graphics
+Michiel van de Panne,KangKang Yin,2016,graphics
+Michiel van de Panne,Libin Liu,2016,graphics
+Adrian Vetta,Bundit Laekhanukit,2012,theory
+Adrian Vetta,Joseph Cheriyan,2012,theory
+Adrian Vetta,F. Bruce Shepherd,2007,theory
+Adrian Vetta,Gordon T. Wilfong,2007,theory
+Adrian Vetta,Ravi Kannan,2000,theory
+Adrian Vetta,Santosh Vempala,2000,theory
+Adrian Vetta,Joseph Cheriyan,2002,theory
+Adrian Vetta,Santosh Vempala,2002,theory
+Adrian Vetta,F. Bruce Shepherd,2015,theory
+Adrian Vetta,Gordon T. Wilfong,2015,theory
+Adrian Vetta,Yang Cai,2016,theory
+Adrian Vetta,Santosh Vempala,2005,theory
+Adrian Vetta,Vahab S. Mirrokni,2005,theory
+Adrian Vetta,Michel X. Goemans,2005,theory
+Adrian Vetta,Joseph Cheriyan,2005,theory
+Adrian Vetta,Ravi Sundaram,2004,theory
+Adrian Vetta,Robert D. Kleinberg,2004,theory
+Adrian Vetta,László Lovász,2004,theory
+Adrian Vetta,Rajmohan Rajaraman,2004,theory
 Salvatore J. Stolfo,Mauricio A. Hernández,1995,database
 Salvatore J. Stolfo,Simha Sethumadhavan,2013,arch
 Salvatore J. Stolfo,John Demme,2013,arch
@@ -7026,6 +7156,16 @@ Julian J. McAuley,Jure Leskovec,2015,mlmining
 Julian J. McAuley,Jure Leskovec,2012,mlmining
 Julian J. McAuley,Anton van den Hengel,2015,web
 Julian J. McAuley,Qinfeng Shi,2015,web
+Martin P. Robillard,Nenad Medvidovic,2016,softeng
+Martin P. Robillard,Christoph Treude,2016,softeng
+Martin P. Robillard,Barthélémy Dagenais,2010,softeng
+Martin P. Robillard,Barthélémy Dagenais,2008,softeng
+Martin P. Robillard,Gail C. Murphy,2002,softeng
+Martin P. Robillard,Gail C. Murphy,2000,softeng
+Martin P. Robillard,Barthélémy Dagenais,2012,softeng
+Martin P. Robillard,Gail C. Murphy,2001,softeng
+Martin P. Robillard,Robert J. Walker,2001,softeng
+Martin P. Robillard,Peter C. Rigby,2013,softeng
 Hector J. Levesque,Bart Selman,1990,ai
 Hector J. Levesque,Philip R. Cohen,1990,ai
 Hector J. Levesque,Yves Lespérance,1990,ai
@@ -7704,11 +7844,31 @@ Erez Petrank,Noga Alon,1997,theory
 Erez Petrank,Eyal Kushilevitz,2006,theory
 Erez Petrank,Yehuda Lindell,2006,theory
 Erez Petrank,Yuval Ishai,2006,theory
+Erez Petrank,Chris Hawblitzel,2015,logic
+Erez Petrank,Serdar Tasiran,2015,logic
+Erez Petrank,Shaz Qadeer,2015,logic
 Erez Petrank,Daniele Micciancio,2003,crypto
 Erez Petrank,Joe Kilian,2003,crypto
 Erez Petrank,Kobbi Nissim,2003,crypto
 Erez Petrank,Yuval Ishai,2003,crypto
 Erez Petrank,Niv Buchbinder,2003,crypto
+Ivan Beschastnikh,Arvind Krishnamurthy,2014,softeng
+Ivan Beschastnikh,Yuriy Brun,2014,softeng
+Ivan Beschastnikh,Michael D. Ernst,2014,softeng
+Ivan Beschastnikh,Stefan Saroiu,2008,networks
+Ivan Beschastnikh,P. Krishna Gummadi,2008,networks
+Ivan Beschastnikh,Andreas Haeberlen,2008,networks
+Ivan Beschastnikh,Yuriy Brun,2011,softeng
+Ivan Beschastnikh,Michael D. Ernst,2011,softeng
+Ivan Beschastnikh,Justin Cappos,2010,security
+Ivan Beschastnikh,Thomas E. Anderson,2010,security
+Ivan Beschastnikh,Arvind Krishnamurthy,2010,security
+Ivan Beschastnikh,Justin Cappos,2014,networks
+Ivan Beschastnikh,Thomas E. Anderson,2011,opsys
+Ivan Beschastnikh,Arvind Krishnamurthy,2011,opsys
+Ivan Beschastnikh,Arvind Krishnamurthy,2013,softeng
+Ivan Beschastnikh,Yuriy Brun,2013,softeng
+Ivan Beschastnikh,Michael D. Ernst,2013,softeng
 Reuven Cohen,Danny Raz,2009,networks
 Reuven Cohen,Liran Katzir 0001,2009,networks
 Reuven Cohen,Gil Zussman,2009,networks
@@ -8682,6 +8842,7 @@ David A. Basin,Joachim M. Buhmann,2009,security
 David A. Basin,Nils Klarlund,1995,logic
 David A. Basin,Benedikt Schmidt,2013,logic
 David A. Basin,Felix Klaedtke,2000,logic
+David A. Basin,Boris Köpf,2007,security
 David A. Basin,Srdjan Capkun,2012,security
 David A. Basin,Harald Ganzinger,1996,logic
 David A. Basin,Srdjan Capkun,2013,security
@@ -9692,6 +9853,30 @@ Kai Li,Yuanyuan Zhou,1996,opsys
 Kai Li,Susan S. Owicki,1991,opsys
 Kai Li,Mark S. Manasse,1991,opsys
 Kai Li,Anna R. Karlin,1991,opsys
+David Meger,Philippe Giguère,2015,robotics
+David Meger,Anqi Xu,2015,robotics
+David Meger,Gregory Dudek,2015,robotics
+David Meger,Gregory Dudek,2009,robotics
+David Meger,Ioannis M. Rekleitis,2009,robotics
+David Meger,Dimitri Marinakis,2009,robotics
+David Meger,Gregory Dudek,2007,ai
+David Meger,Ioannis M. Rekleitis,2007,ai
+David Meger,Dimitri Marinakis,2007,ai
+David Meger,Elizabeth A. Croft,2013,robotics
+David Meger,James J. Little,2013,robotics
+David Meger,Florian Shkurti,2014,robotics
+David Meger,Philippe Giguère,2014,robotics
+David Meger,Gregory Dudek,2014,robotics
+David Meger,Gregory Dudek,2016,robotics
+David Meger,Ankur Gupta,2010,robotics
+David Meger,James J. Little,2010,robotics
+David Meger,James J. Little,2011,robotics
+David Meger,Gregory Dudek,2008,robotics
+David Meger,David G. Lowe,2008,robotics
+David Meger,Per-Erik Forssén,2008,robotics
+David Meger,James J. Little,2008,robotics
+David Meger,Kevin Lai,2008,robotics
+David Meger,Ioannis M. Rekleitis,2008,robotics
 David C. Parkes,Jayant Kalagnanam,2001,ai
 David C. Parkes,Sven Seuken,2008,ai
 David C. Parkes,William E. Walsh,2008,ai
@@ -9750,6 +9935,48 @@ David C. Parkes,Rajarshi Das,2009,ai
 David C. Parkes,Jeffrey O. Kephart,2009,ai
 David C. Parkes,Yiling Chen,2009,ai
 David C. Parkes,Haoqi Zhang,2009,ai
+Joelle Pineau,Hong Zhang,2015,robotics
+Joelle Pineau,Nicholas Roy,2008,mlmining
+Joelle Pineau,Mahdi Milani Fard,2008,mlmining
+Joelle Pineau,Geoffrey J. Gordon,2003,mlmining
+Joelle Pineau,Sebastian Thrun,2003,mlmining
+Joelle Pineau,Doina Precup,2011,mlmining
+Joelle Pineau,André da Motta Salles Barreto,2011,mlmining
+Joelle Pineau,Borja Balle,2016,robotics
+Joelle Pineau,Brahim Chaib-draa,2008,robotics
+Joelle Pineau,Stéphane Ross,2008,robotics
+Joelle Pineau,Borja Balle,2014,mlmining
+Joelle Pineau,Nicholas Roy,2000,nlp
+Joelle Pineau,Sebastian Thrun,2000,nlp
+Joelle Pineau,Doina Precup,2006,ai
+Joelle Pineau,Prakash Panangaden,2006,ai
+Joelle Pineau,Yoshua Bengio,2016,ai
+Joelle Pineau,André da Motta Salles Barreto,2016,ai
+Joelle Pineau,Borja Balle,2016,ai
+Joelle Pineau,Aaron C. Courville,2016,ai
+Joelle Pineau,Doina Precup,2016,ai
+Joelle Pineau,Alessandro Sordoni,2016,ai
+Joelle Pineau,Geoffrey J. Gordon,2003,ai
+Joelle Pineau,Sebastian Thrun,2003,ai
+Joelle Pineau,Arthur Guez,2008,ai
+Joelle Pineau,Peng Sun,2008,ai
+Joelle Pineau,Mahdi Milani Fard,2008,ai
+Joelle Pineau,Doina Precup,2012,ai
+Joelle Pineau,Mahdi Milani Fard,2012,ai
+Joelle Pineau,Arthur Guez,2010,robotics
+Joelle Pineau,Mahdi Milani Fard,2010,mlmining
+Joelle Pineau,Robert West 0001,2009,ai
+Joelle Pineau,Doina Precup,2009,ai
+Joelle Pineau,Amir Massoud Farahmand,2013,mlmining
+Joelle Pineau,Doina Precup,2013,mlmining
+Joelle Pineau,Mahdi Milani Fard,2013,mlmining
+Joelle Pineau,Doina Precup,2015,ai
+Joelle Pineau,André da Motta Salles Barreto,2015,ai
+Joelle Pineau,Doina Precup,2007,robotics
+Joelle Pineau,Doina Precup,2012,mlmining
+Joelle Pineau,André da Motta Salles Barreto,2012,mlmining
+Joelle Pineau,Brahim Chaib-draa,2007,mlmining
+Joelle Pineau,Stéphane Ross,2007,mlmining
 Rastislav Bodík,Saurabh Srivastava,2011,oopfp
 Rastislav Bodík,Armando Solar-Lezama,2007,proglang
 Rastislav Bodík,Manu Sridharan,2007,proglang
@@ -10044,10 +10271,10 @@ Ran Canetti,Shai Halevi,2006,crypto
 Ran Canetti,Michael Steiner,2006,crypto
 Ran Canetti,Amir Herzberg,1994,crypto
 Ran Canetti,Omer Reingold,2002,security
-Ran Canetti,William Aiello,2002,security
+Ran Canetti,Steven M. Bellovin,2002,security
 Ran Canetti,Angelos D. Keromytis,2002,security
 Ran Canetti,Matt Blaze,2002,security
-Ran Canetti,Steven M. Bellovin,2002,security
+Ran Canetti,William Aiello,2002,security
 Ran Canetti,Rafael Pass,2010,theory
 Ran Canetti,Huijia Lin,2010,theory
 Ran Canetti,Abhishek Jain 0002,2015,crypto
@@ -10274,6 +10501,52 @@ Dan Rubenstein,Gil Zussman,2011,networks
 Dan Rubenstein,Joshua Reich,2011,networks
 Dan Rubenstein,Vishal Misra,2011,networks
 Dan Rubenstein,Micah Adler,2002,theory
+Darius Burschka,Klaus H. Strobl,2009,robotics
+Darius Burschka,Eckehard G. Steinbach,2009,robotics
+Darius Burschka,Tim Bodenmüller,2009,robotics
+Darius Burschka,Michael Suppa,2009,robotics
+Darius Burschka,Wolfgang Sepp,2009,robotics
+Darius Burschka,Gerd Hirzinger,2009,robotics
+Darius Burschka,Elmar Mair,2009,robotics
+Darius Burschka,Michael Suppa,2012,robotics
+Darius Burschka,Gregory D. Hager,2001,robotics
+Darius Burschka,Russell H. Taylor,2004,robotics
+Darius Burschka,Ming Li 0027,2004,robotics
+Darius Burschka,Gregory D. Hager,2004,robotics
+Darius Burschka,Nikolaos Kyriazis,2013,robotics
+Darius Burschka,Gregory D. Hager,2013,robotics
+Darius Burschka,Michael Suppa,2013,robotics
+Darius Burschka,Sven Parusel,2013,robotics
+Darius Burschka,Danica Kragic,2013,robotics
+Darius Burschka,Sami Haddadin,2013,robotics
+Darius Burschka,Jonathan Bohren,2013,robotics
+Darius Burschka,Dan Song,2013,robotics
+Darius Burschka,Louis L. Whitcomb,2013,robotics
+Darius Burschka,Elmar Mair,2013,robotics
+Darius Burschka,Antonis A. Argyros,2013,robotics
+Darius Burschka,Seth Hutchinson,1999,robotics
+Darius Burschka,Georg Färber,1999,robotics
+Darius Burschka,Michael Suppa,2010,vision
+Darius Burschka,Gregory D. Hager,2010,vision
+Darius Burschka,Gerd Hirzinger,2010,vision
+Darius Burschka,Elmar Mair,2010,vision
+Darius Burschka,Eckehard G. Steinbach,2010,robotics
+Darius Burschka,Sven Parusel,2010,robotics
+Darius Burschka,Michael Suppa,2010,robotics
+Darius Burschka,Gerd Hirzinger,2010,robotics
+Darius Burschka,Elmar Mair,2010,robotics
+Darius Burschka,Sami Haddadin,2010,robotics
+Darius Burschka,Alin Albu-Schäffer,2010,robotics
+Darius Burschka,Michael Suppa,2011,robotics
+Darius Burschka,Elmar Mair,2011,robotics
+Darius Burschka,Gregory D. Hager,2005,robotics
+Darius Burschka,Robert Bauernschmitt,2008,robotics
+Darius Burschka,Alois Knoll,2008,robotics
+Darius Burschka,Gregory D. Hager,2002,robotics
+Darius Burschka,Gregory D. Hager,2003,robotics
+Darius Burschka,Jason J. Corso,2003,robotics
+Darius Burschka,Christof Eberst,1997,robotics
+Darius Burschka,Christian Robl,1997,robotics
 Yanxi Liu,Grant Schindler,2008,vision
 Yanxi Liu,James Hays,2008,vision
 Yanxi Liu,Robert T. Collins,2008,vision
@@ -12021,7 +12294,9 @@ John Keyser,Arno Zinke,2008,graphics
 John Keyser,Cem Yuksel,2008,graphics
 John Keyser,Scott Schaefer,2009,graphics
 John Keyser,Cem Yuksel,2009,graphics
+Clark Barrett,Andrew Reynolds,2014,logic
 Clark Barrett,Cesare Tinelli,2014,logic
+Clark Barrett,Andrew Reynolds,2011,logic
 Clark Barrett,Cesare Tinelli,2011,logic
 Lujo Bauer,Sean M. Segreti,2014,hci
 Lujo Bauer,Nicolas Christin,2014,hci
@@ -12162,6 +12437,16 @@ Aniket Kittur,Ed H. Chi,2007,hci
 Aniket Kittur,Bongwon Suh,2007,hci
 Aniket Kittur,Robert E. Kraut,2013,hci
 Aniket Kittur,Haiyi Zhu,2013,hci
+José M. Llabería,Mateo Valero,1989,arch
+José M. Llabería,Juan J. Navarro,1989,arch
+José M. Llabería,Mateo Valero,1986,arch
+José M. Llabería,Juan J. Navarro,1986,arch
+José M. Llabería,Mateo Valero,1985,arch
+José M. Llabería,Jesús Labarta,1985,arch
+José M. Llabería,Mateo Valero,1992,arch
+José M. Llabería,Tomás Lang,1992,arch
+José M. Llabería,Eduard Ayguadé,1992,arch
+José M. Llabería,Juan J. Navarro,1992,arch
 Khai N. Truong,Daniel J. Wigdor,2014,hci
 Khai N. Truong,Koji Yatani,2010,hci
 Khai N. Truong,Julie A. Kientz,2010,hci
@@ -12861,6 +13146,8 @@ Feng Qin,Qi Gao,2011,arch
 Feng Qin,Mark Lillibridge,2014,opsys
 Feng Qin,Joseph Tucek,2014,opsys
 Feng Qin,Gagan Agrawal,2011,highperf
+David Poole,Nando de Freitas,2002,mlmining
+David Poole,Katsumi Inoue,1991,ai
 Daniel N. Rockmore,Cristopher Moore,2004,theory
 Daniel N. Rockmore,Alexander Russell,2004,theory
 Daniel N. Rockmore,Leonard J. Schulman,2004,theory
@@ -13527,6 +13814,19 @@ Amos J. Storkey,Felix V. Agakov,2010,mlmining
 Amos J. Storkey,Zoubin Ghahramani,2012,mlmining
 Amos J. Storkey,Charles A. Sutton,2012,mlmining
 Amos J. Storkey,Marc Toussaint,2007,mlmining
+Reid Holmes,Laura Inozemtseva,2014,softeng
+Reid Holmes,Gordon Fraser,2014,softeng
+Reid Holmes,Michael W. Godfrey,2014,softeng
+Reid Holmes,Michael D. Ernst,2014,softeng
+Reid Holmes,Michael D. Ernst,2011,softeng
+Reid Holmes,David Notkin,2011,softeng
+Reid Holmes,Yuriy Brun,2011,softeng
+Reid Holmes,Gail C. Murphy,2005,softeng
+Reid Holmes,Robert J. Walker,2007,softeng
+Reid Holmes,David Notkin,2012,oopfp
+Reid Holmes,Yuriy Brun,2012,oopfp
+Reid Holmes,Kivanç Muslu,2012,oopfp
+Reid Holmes,Michael D. Ernst,2012,oopfp
 Hansen Andrew Schwartz,Lyle H. Ungar,2014,nlp
 Matthew K. Farrens,Andrew R. Pleszkun,1990,arch
 Matthew K. Farrens,Arvin Park,1990,arch
@@ -13545,6 +13845,113 @@ Matthew K. Farrens,Andrew R. Pleszkun,1989,arch
 Matthew K. Farrens,Allison Woodruff,1991,highperf
 Matthew K. Farrens,Andrew R. Pleszkun,1994,arch
 Matthew K. Farrens,Gary S. Tyson,1994,arch
+Gregory Dudek,Anqi Xu,2015,robotics
+Gregory Dudek,David Meger,2015,robotics
+Gregory Dudek,Kaleem Siddiqi,2015,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2015,robotics
+Gregory Dudek,Philippe Giguère,2015,robotics
+Gregory Dudek,Michael Jenkin,2000,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2000,robotics
+Gregory Dudek,Evangelos E. Milios,2000,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2009,robotics
+Gregory Dudek,David Meger,2009,robotics
+Gregory Dudek,Philippe Giguère,2009,robotics
+Gregory Dudek,Junaed Sattar,2009,robotics
+Gregory Dudek,Dimitri Marinakis,2009,robotics
+Gregory Dudek,Robert Sim,1999,vision
+Gregory Dudek,Yogesh A. Girdhar,2013,robotics
+Gregory Dudek,Florian Shkurti,2013,robotics
+Gregory Dudek,David Meger,2016,robotics
+Gregory Dudek,Chi Zhang,1996,robotics
+Gregory Dudek,Ioannis M. Rekleitis,1996,robotics
+Gregory Dudek,Paul Freedman,1996,robotics
+Gregory Dudek,David J. Fleet,2005,robotics
+Gregory Dudek,Sue Whitesides,2005,robotics
+Gregory Dudek,Saul Simhon,2005,robotics
+Gregory Dudek,Evangelos E. Milios,2005,robotics
+Gregory Dudek,Hui Liu,2005,robotics
+Gregory Dudek,Chris Prahacs,2005,robotics
+Gregory Dudek,Junaed Sattar,2005,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2005,robotics
+Gregory Dudek,Luz Abril Torres-Méndez,2005,robotics
+Gregory Dudek,Michael Jenkin,2005,robotics
+Gregory Dudek,Philippe Giguère,2005,robotics
+Gregory Dudek,Dimitri Marinakis,2005,robotics
+Gregory Dudek,Andrew Hogue,2005,robotics
+Gregory Dudek,Philippe Giguère,2006,robotics
+Gregory Dudek,Chris Prahacs,2006,robotics
+Gregory Dudek,Dimitri Marinakis,2006,robotics
+Gregory Dudek,Junaed Sattar,2006,robotics
+Gregory Dudek,Anqi Xu,2008,robotics
+Gregory Dudek,David Meger,2008,robotics
+Gregory Dudek,Yogesh A. Girdhar,2008,robotics
+Gregory Dudek,Chris Prahacs,2008,robotics
+Gregory Dudek,Junaed Sattar,2008,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2008,robotics
+Gregory Dudek,Philippe Giguère,2008,robotics
+Gregory Dudek,Robert Sim,1998,robotics
+Gregory Dudek,Saul Simhon,1998,robotics
+Gregory Dudek,Anqi Xu,2012,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2012,robotics
+Gregory Dudek,Yogesh A. Girdhar,2012,robotics
+Gregory Dudek,Florian Shkurti,2012,robotics
+Gregory Dudek,Chris Prahacs,2012,robotics
+Gregory Dudek,Philippe Giguère,2012,robotics
+Gregory Dudek,Sue Whitesides,1995,theory
+Gregory Dudek,Michael Jenkin,2004,robotics
+Gregory Dudek,Evangelos E. Milios,2004,robotics
+Gregory Dudek,Hui Liu,2004,robotics
+Gregory Dudek,Martin Buehler,2004,robotics
+Gregory Dudek,Chris Prahacs,2004,robotics
+Gregory Dudek,Luz Abril Torres-Méndez,2004,robotics
+Gregory Dudek,Nicholas Roy,2004,robotics
+Gregory Dudek,Robert Sim,2004,robotics
+Gregory Dudek,Andrew Hogue,2004,robotics
+Gregory Dudek,Anqi Xu,2014,robotics
+Gregory Dudek,David Meger,2014,robotics
+Gregory Dudek,Yogesh A. Girdhar,2014,robotics
+Gregory Dudek,Florian Shkurti,2014,robotics
+Gregory Dudek,Philippe Giguère,2014,robotics
+Gregory Dudek,Dimitri Marinakis,2006,ai
+Gregory Dudek,Ioannis M. Rekleitis,2002,robotics
+Gregory Dudek,Evangelos E. Milios,2002,robotics
+Gregory Dudek,David Wilkes,1993,ai
+Gregory Dudek,Paul Freedman,1993,ai
+Gregory Dudek,Michael R. M. Jenkin,1993,ai
+Gregory Dudek,Evangelos E. Milios,1993,ai
+Gregory Dudek,David Meger,2007,ai
+Gregory Dudek,Ioannis M. Rekleitis,2007,ai
+Gregory Dudek,Dimitri Marinakis,2007,ai
+Gregory Dudek,Anqi Xu,2010,robotics
+Gregory Dudek,Yogesh A. Girdhar,2010,robotics
+Gregory Dudek,Junaed Sattar,2010,robotics
+Gregory Dudek,Anqi Xu,2011,robotics
+Gregory Dudek,Yogesh A. Girdhar,2011,robotics
+Gregory Dudek,Florian Shkurti,2011,robotics
+Gregory Dudek,Junaed Sattar,2011,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2011,robotics
+Gregory Dudek,Ioannis M. Rekleitis,1997,ai
+Gregory Dudek,Evangelos E. Milios,1997,ai
+Gregory Dudek,Luz Abril Torres-Méndez,2004,ai
+Gregory Dudek,Robert Sim,2004,ai
+Gregory Dudek,Saul Simhon,2004,ai
+Gregory Dudek,Luz Abril Torres-Méndez,2003,robotics
+Gregory Dudek,Robert Sim,2003,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2003,robotics
+Gregory Dudek,Saul Simhon,2003,robotics
+Gregory Dudek,Evangelos E. Milios,2003,robotics
+Gregory Dudek,Anqi Xu,2007,robotics
+Gregory Dudek,Junaed Sattar,2007,robotics
+Gregory Dudek,Robert Sim,2001,robotics
+Gregory Dudek,Ioannis M. Rekleitis,2001,robotics
+Gregory Dudek,Evangelos E. Milios,2001,robotics
+Gregory Dudek,Vida Dujmovic,1999,robotics
+Gregory Dudek,Robert Sim,1999,robotics
+Gregory Dudek,Ioannis M. Rekleitis,1999,robotics
+Gregory Dudek,Michael Jenkin,1993,robotics
+Gregory Dudek,David Wilkes,1993,robotics
+Gregory Dudek,Evangelos E. Milios,1993,robotics
+Gregory Dudek,Simon Lacroix,1997,robotics
 Daniel C. Alexander,Jonathan Huang,2012,mlmining
 Daniel C. Alexander,James C. Gee,1999,vision
 Daniel C. Alexander,Ruzena Bajcsy,1999,vision
@@ -13676,6 +14083,8 @@ Frederick P. Brooks Jr.,Dinesh Manocha,1996,graphics
 Frederick P. Brooks Jr.,Jonathan D. Cohen,1996,graphics
 Frederick P. Brooks Jr.,Greg Turk,1996,graphics
 Frederick P. Brooks Jr.,Pankaj K. Agarwal,1996,graphics
+Pere Barlet-Ros,Nick G. Duffield,2011,metrics
+Pere Barlet-Ros,Ramana Rao Kompella,2011,metrics
 Elias Koutsoupias,Yishay Mansour,2012,theory
 Elias Koutsoupias,Amos Fiat,2012,theory
 Elias Koutsoupias,Katrina Ligett,2012,theory
@@ -13712,6 +14121,34 @@ J. Gregory Morrisett,Neal Glew,1999,proglang
 J. Gregory Morrisett,Karl Crary,1999,proglang
 J. Gregory Morrisett,Thorsten von Eicken,1998,networks
 J. Gregory Morrisett,Anindya Basu,1998,networks
+Gail C. Murphy,Thomas Zimmermann 0001,2014,softeng
+Gail C. Murphy,Thomas Fritz,2014,softeng
+Gail C. Murphy,Reid Holmes,2005,softeng
+Gail C. Murphy,Miryung Kim,2005,softeng
+Gail C. Murphy,David Notkin,2005,softeng
+Gail C. Murphy,John Anvik,2006,softeng
+Gail C. Murphy,Robert J. Walker,2000,softeng
+Gail C. Murphy,Martin P. Robillard,2000,softeng
+Gail C. Murphy,Kevin J. Sullivan,1995,softeng
+Gail C. Murphy,David Notkin,1995,softeng
+Gail C. Murphy,Robert J. Walker,1999,softeng
+Gail C. Murphy,Elisa L. A. Baniassad,1999,softeng
+Gail C. Murphy,Thomas Zimmermann 0001,2014,hci
+Gail C. Murphy,Elaine M. Huang,2014,hci
+Gail C. Murphy,Thomas Fritz,2014,hci
+Gail C. Murphy,Martin P. Robillard,2002,softeng
+Gail C. Murphy,Elisa L. A. Baniassad,2003,softeng
+Gail C. Murphy,Gregor Kiczales,1997,softeng
+Gail C. Murphy,John Lamping,1997,softeng
+Gail C. Murphy,Cristina Videira Lopes,1997,softeng
+Gail C. Murphy,Elisa L. A. Baniassad,1998,softeng
+Gail C. Murphy,Emerson R. Murphy-Hill,2012,softeng
+Gail C. Murphy,Thomas Fritz,2007,softeng
+Gail C. Murphy,David Notkin,1996,softeng
+Gail C. Murphy,Robert J. Walker,1998,oopfp
+Gail C. Murphy,Bjørn N. Freeman-Benson,1998,oopfp
+Gail C. Murphy,Robert J. Walker,2001,softeng
+Gail C. Murphy,Martin P. Robillard,2001,softeng
 Steven H. Low,Cheng Jin,2003,highperf
 Steven H. Low,Wu-chun Feng,2003,highperf
 Steven H. Low,Mung Chiang,2007,networks
@@ -15803,6 +16240,8 @@ Manoj Prabhakaran,Mike Rosulek,2010,crypto
 Manoj Prabhakaran,Mike Rosulek,2007,crypto
 Manoj Prabhakaran,Hemanta K. Maji,2014,crypto
 Manoj Prabhakaran,Amit Sahai,2014,crypto
+René Serral-Gracià,Ariel Orda,2008,networks
+René Serral-Gracià,Alexander Sprintson,2008,networks
 Chinmay Eishan Kulkarni,Mateo Valero,2009,arch
 Chinmay Eishan Kulkarni,Tim Harris 0001,2009,arch
 Chinmay Eishan Kulkarni,Adrián Cristal,2009,arch
@@ -15887,6 +16326,8 @@ Junfeng Yang,Zhendong Su,2010,oopfp
 Junfeng Yang,Moisés Goldszmidt,2010,oopfp
 Junfeng Yang,Gang Hu,2013,softeng
 Junfeng Yang,Jingyue Wu,2013,softeng
+Arvind Gupta,Russell Impagliazzo,1991,theory
+Arvind Gupta,Yongmei Liu 0001,2007,ai
 Richard Furuta,Anshul Gupta,2015,ai
 Long Lu,Wenke Lee,2011,security
 Long Lu,Roberto Perdisci,2011,security
@@ -16674,6 +17115,16 @@ John R. Kender,David Elliot Shaw,1986,ai
 John R. Kender,Rick Kjeldsen,1997,vision
 John R. Kender,Rick Kjeldsen,1991,ai
 Yuval Tamir,Tomás Lang,1987,proglang
+Kellogg S. Booth,Joanna McGrenere,2006,hci
+Kellogg S. Booth,Eugene Fiume,1982,graphics
+Kellogg S. Booth,John C. Beatty,1982,graphics
+Kellogg S. Booth,Leah Findlater,2008,hci
+Kellogg S. Booth,Ronald Baecker,2002,hci
+Kellogg S. Booth,Joanna McGrenere,2002,hci
+Kellogg S. Booth,John C. Beatty,1993,graphics
+Kellogg S. Booth,Christine L. MacKenzie,1998,hci
+Kellogg S. Booth,Karon E. MacLean,2007,hci
+Kellogg S. Booth,Kori Inkpen,2001,hci
 Dezhen Song,Jingang Yi,2015,robotics
 Dezhen Song,Yan Lu,2015,robotics
 Dezhen Song,Tao Liu,2015,robotics
@@ -17863,6 +18314,312 @@ Alexandr Andoni,Huy L. Nguyen,2013,theory
 Alexandr Andoni,Haitham Hassanieh,2013,theory
 Alexandr Andoni,Piotr Indyk,2013,theory
 Alexandr Andoni,Dina Katabi,2013,theory
+Gerd Hirzinger,Jörg Butterfaß,2000,robotics
+Gerd Hirzinger,Klaus Landzettel,2000,robotics
+Gerd Hirzinger,Hong Liu,2000,robotics
+Gerd Hirzinger,Urbano Nunes,2000,robotics
+Gerd Hirzinger,Stefan Jörg,2000,robotics
+Gerd Hirzinger,Rui Cortesão,2000,robotics
+Gerd Hirzinger,Max Fischer,2000,robotics
+Gerd Hirzinger,Tobias Ortmaier,2000,robotics
+Gerd Hirzinger,Ralf Koeppe,2000,robotics
+Gerd Hirzinger,Masaru Uchiyama,2000,robotics
+Gerd Hirzinger,Bernhard Brunner,2000,robotics
+Gerd Hirzinger,Roberto Lampariello,2000,robotics
+Gerd Hirzinger,Koyu Abe,2000,robotics
+Gerd Hirzinger,Markus Grebenstein,2000,robotics
+Gerd Hirzinger,Ciro Natale,2000,robotics
+Gerd Hirzinger,Yuichi Tsumaki,2000,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2000,robotics
+Gerd Hirzinger,Philipp Kremer,2009,robotics
+Gerd Hirzinger,Nikolaus Seitz,2009,robotics
+Gerd Hirzinger,Florian Schmidt,2009,robotics
+Gerd Hirzinger,Wolfgang Sepp,2009,robotics
+Gerd Hirzinger,Elmar Mair,2009,robotics
+Gerd Hirzinger,Rainer Konietschke,2009,robotics
+Gerd Hirzinger,Klaus H. Strobl,2009,robotics
+Gerd Hirzinger,Jürgen Rossmann,2009,robotics
+Gerd Hirzinger,Dragomir N. Nenchev,2009,robotics
+Gerd Hirzinger,Christoph Borst,2009,robotics
+Gerd Hirzinger,Andreas Tobergte,2009,robotics
+Gerd Hirzinger,Sami Haddadin,2009,robotics
+Gerd Hirzinger,Martin Buss,2009,robotics
+Gerd Hirzinger,Michael Suppa,2009,robotics
+Gerd Hirzinger,Carsten Preusche,2009,robotics
+Gerd Hirzinger,Thomas Wimböck,2009,robotics
+Gerd Hirzinger,Paolo Robuffo Giordano,2009,robotics
+Gerd Hirzinger,Tim Bodenmüller,2009,robotics
+Gerd Hirzinger,Satoko Abiko,2009,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2009,robotics
+Gerd Hirzinger,Matthias Fuchs,2009,robotics
+Gerd Hirzinger,Darius Burschka,2009,robotics
+Gerd Hirzinger,Johann Heindl,1989,robotics
+Gerd Hirzinger,Klaus Landzettel,1989,robotics
+Gerd Hirzinger,Bernhard Brunner,1992,robotics
+Gerd Hirzinger,Johann Heindl,1992,robotics
+Gerd Hirzinger,Klaus Landzettel,1992,robotics
+Gerd Hirzinger,Christian Rink,2013,robotics
+Gerd Hirzinger,Ulrike Thomas,2013,robotics
+Gerd Hirzinger,Bernhard Rumpe,2013,robotics
+Gerd Hirzinger,Roberto Lampariello,2013,robotics
+Gerd Hirzinger,Ralf Koeppe,1996,robotics
+Gerd Hirzinger,Friedrich Lange,1996,robotics
+Gerd Hirzinger,Nikolaus Seitz,2005,robotics
+Gerd Hirzinger,Li Jiang,2005,robotics
+Gerd Hirzinger,Hong Liu,2005,robotics
+Gerd Hirzinger,R. Wei,2005,robotics
+Gerd Hirzinger,Friedrich Lange,2005,robotics
+Gerd Hirzinger,Jingdong Zhao,2005,robotics
+Gerd Hirzinger,Hegao Cai,2005,robotics
+Gerd Hirzinger,Christian Ott,2005,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2005,robotics
+Gerd Hirzinger,Zongwu Xie,2005,robotics
+Gerd Hirzinger,Berthold Bäuml,2006,robotics
+Gerd Hirzinger,Franziska Zacharias,2006,robotics
+Gerd Hirzinger,Klaus Landzettel,2006,robotics
+Gerd Hirzinger,Kaustubh Pathak,2006,robotics
+Gerd Hirzinger,Alessandro De Luca 0001,2006,robotics
+Gerd Hirzinger,Stefan Jörg,2006,robotics
+Gerd Hirzinger,Zongwu Xie,2006,robotics
+Gerd Hirzinger,Rainer Konietschke,2006,robotics
+Gerd Hirzinger,Klaus H. Strobl,2006,robotics
+Gerd Hirzinger,Li Jiang,2006,robotics
+Gerd Hirzinger,Luc Le Tien,2006,robotics
+Gerd Hirzinger,Tobias Ortmaier,2006,robotics
+Gerd Hirzinger,Johann Heindl,2006,robotics
+Gerd Hirzinger,Wolfgang Sepp,2006,robotics
+Gerd Hirzinger,Mathias Nickl,2006,robotics
+Gerd Hirzinger,Hong Liu,2006,robotics
+Gerd Hirzinger,Christoph Borst,2006,robotics
+Gerd Hirzinger,Sami Haddadin,2006,robotics
+Gerd Hirzinger,Ralf Koeppe,2006,robotics
+Gerd Hirzinger,Carsten Preusche,2006,robotics
+Gerd Hirzinger,Thomas Wimböck,2006,robotics
+Gerd Hirzinger,Hegao Cai,2006,robotics
+Gerd Hirzinger,Jingdong Zhao,2006,robotics
+Gerd Hirzinger,Roberto Lampariello,2006,robotics
+Gerd Hirzinger,Jordi Artigas,2006,robotics
+Gerd Hirzinger,Thomas Hulin,2006,robotics
+Gerd Hirzinger,Markus Grebenstein,2006,robotics
+Gerd Hirzinger,Stefan Fuchs,2006,robotics
+Gerd Hirzinger,Christian Ott,2006,robotics
+Gerd Hirzinger,Satoko Abiko,2006,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2006,robotics
+Gerd Hirzinger,Sunil Kumar Agrawal,2006,robotics
+Gerd Hirzinger,Ulrich Hagn,2006,robotics
+Gerd Hirzinger,Claudio Melchiorri,2008,robotics
+Gerd Hirzinger,P. Patrick van der Smagt,2008,robotics
+Gerd Hirzinger,Jörg Butterfaß,2008,robotics
+Gerd Hirzinger,Giulio Sandini,2008,robotics
+Gerd Hirzinger,Hong Liu,2008,robotics
+Gerd Hirzinger,Yiwei Liu,2008,robotics
+Gerd Hirzinger,M. H. Jin,2008,robotics
+Gerd Hirzinger,Alessandro De Luca 0001,2008,robotics
+Gerd Hirzinger,Nikolaus Seitz,2008,robotics
+Gerd Hirzinger,Klaus H. Strobl,2008,robotics
+Gerd Hirzinger,Thomas Bahls,2008,robotics
+Gerd Hirzinger,Gianni Borghesan,2008,robotics
+Gerd Hirzinger,Luc Le Tien,2008,robotics
+Gerd Hirzinger,Martin Görner,2008,robotics
+Gerd Hirzinger,Friedrich Lange,2008,robotics
+Gerd Hirzinger,Franziska Zacharias,2008,robotics
+Gerd Hirzinger,Christoph Borst,2008,robotics
+Gerd Hirzinger,Sebastian Wolf,2008,robotics
+Gerd Hirzinger,Thomas Wimböck,2008,robotics
+Gerd Hirzinger,Carsten Preusche,2008,robotics
+Gerd Hirzinger,Claudio Castellini,2008,robotics
+Gerd Hirzinger,Roberto Lampariello,2008,robotics
+Gerd Hirzinger,Jordi Artigas,2008,robotics
+Gerd Hirzinger,Thomas Hulin,2008,robotics
+Gerd Hirzinger,Markus Grebenstein,2008,robotics
+Gerd Hirzinger,Michael Beetz,2008,robotics
+Gerd Hirzinger,Andreas Kugi,2008,robotics
+Gerd Hirzinger,Sami Haddadin,2008,robotics
+Gerd Hirzinger,Christian Ott,2008,robotics
+Gerd Hirzinger,Satoko Abiko,2008,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2008,robotics
+Gerd Hirzinger,Matthias Fuchs,2008,robotics
+Gerd Hirzinger,P. Patrick van der Smagt,1998,robotics
+Gerd Hirzinger,Jörg Butterfaß,1998,robotics
+Gerd Hirzinger,Max Fischer,1998,robotics
+Gerd Hirzinger,Friedrich Lange,1998,robotics
+Gerd Hirzinger,Hong Liu,1998,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,1998,robotics
+Gerd Hirzinger,Máximo A. Roa,2012,robotics
+Gerd Hirzinger,Tim Bodenmüller,2012,robotics
+Gerd Hirzinger,Roberto Lampariello,2012,robotics
+Gerd Hirzinger,Michael Suppa,2012,robotics
+Gerd Hirzinger,Carsten Preusche,2012,robotics
+Gerd Hirzinger,Friedrich Lange,2012,robotics
+Gerd Hirzinger,Christian Rink,2012,robotics
+Gerd Hirzinger,Katharina Hertkorn,2012,robotics
+Gerd Hirzinger,Christoph Borst,2012,robotics
+Gerd Hirzinger,Andreas Tobergte,2012,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2012,robotics
+Gerd Hirzinger,Alexander Dietrich,2012,robotics
+Gerd Hirzinger,Stefano Stramigioli,2004,robotics
+Gerd Hirzinger,Jörg Butterfaß,2004,robotics
+Gerd Hirzinger,Nikolaus Seitz,2004,robotics
+Gerd Hirzinger,Hong Liu,2004,robotics
+Gerd Hirzinger,Yiwei Liu,2004,robotics
+Gerd Hirzinger,M. H. Jin,2004,robotics
+Gerd Hirzinger,R. Wei,2004,robotics
+Gerd Hirzinger,Klaus H. Strobl,2004,robotics
+Gerd Hirzinger,Max Fischer,2004,robotics
+Gerd Hirzinger,Pengpeng Wang,2004,robotics
+Gerd Hirzinger,Wolfgang Sepp,2004,robotics
+Gerd Hirzinger,Christoph Borst,2004,robotics
+Gerd Hirzinger,Kamal Gupta,2004,robotics
+Gerd Hirzinger,Michael Suppa,2004,robotics
+Gerd Hirzinger,Hegao Cai,2004,robotics
+Gerd Hirzinger,Tim Bodenmüller,2004,robotics
+Gerd Hirzinger,Andreas Kugi,2004,robotics
+Gerd Hirzinger,Javier F. Seara,2004,robotics
+Gerd Hirzinger,Christian Ott,2004,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2004,robotics
+Gerd Hirzinger,Michael Suppa,2010,vision
+Gerd Hirzinger,Gregory D. Hager,2010,vision
+Gerd Hirzinger,Elmar Mair,2010,vision
+Gerd Hirzinger,Darius Burschka,2010,vision
+Gerd Hirzinger,Ralf Koeppe,2002,robotics
+Gerd Hirzinger,Rui Cortesão,2002,robotics
+Gerd Hirzinger,Günther Schmidt,2002,robotics
+Gerd Hirzinger,Steffen Haidacher,2002,robotics
+Gerd Hirzinger,Max Fischer,2002,robotics
+Gerd Hirzinger,Urbano Nunes,2002,robotics
+Gerd Hirzinger,Carsten Preusche,2002,robotics
+Gerd Hirzinger,Christoph Borst,2002,robotics
+Gerd Hirzinger,Christian Ott,2002,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2002,robotics
+Gerd Hirzinger,Markus Schedl,2002,robotics
+Gerd Hirzinger,Bernhard Brunner,1994,robotics
+Gerd Hirzinger,Johann Heindl,1994,robotics
+Gerd Hirzinger,Gregory D. Hager,1994,robotics
+Gerd Hirzinger,Berthold Bäuml,2010,robotics
+Gerd Hirzinger,Philipp Kremer,2010,robotics
+Gerd Hirzinger,Martin Görner,2010,robotics
+Gerd Hirzinger,Mathias Nickl,2010,robotics
+Gerd Hirzinger,Werner Friedl,2010,robotics
+Gerd Hirzinger,Thomas Bahls,2010,robotics
+Gerd Hirzinger,Georg Passig,2010,robotics
+Gerd Hirzinger,Friedrich Lange,2010,robotics
+Gerd Hirzinger,Franziska Zacharias,2010,robotics
+Gerd Hirzinger,Christoph Borst,2010,robotics
+Gerd Hirzinger,Andreas Tobergte,2010,robotics
+Gerd Hirzinger,Sami Haddadin,2010,robotics
+Gerd Hirzinger,Carsten Preusche,2010,robotics
+Gerd Hirzinger,Darius Burschka,2010,robotics
+Gerd Hirzinger,Maxime Chalon,2010,robotics
+Gerd Hirzinger,Sven Parusel,2010,robotics
+Gerd Hirzinger,Andre Schiele,2010,robotics
+Gerd Hirzinger,Thomas Wimböck,2010,robotics
+Gerd Hirzinger,Oliver Eiberger,2010,robotics
+Gerd Hirzinger,Thomas Hulin,2010,robotics
+Gerd Hirzinger,Markus Grebenstein,2010,robotics
+Gerd Hirzinger,Florian Petit,2010,robotics
+Gerd Hirzinger,Florian Schmidt,2010,robotics
+Gerd Hirzinger,Katharina Hertkorn,2010,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2010,robotics
+Gerd Hirzinger,Ulrich Hagn,2010,robotics
+Gerd Hirzinger,Stefan Jörg,2010,robotics
+Gerd Hirzinger,Jörg Butterfaß,2011,robotics
+Gerd Hirzinger,Johann Heindl,2011,robotics
+Gerd Hirzinger,Florian Schmidt,2011,robotics
+Gerd Hirzinger,Stefan Jörg,2011,robotics
+Gerd Hirzinger,Elmar Mair,2011,robotics
+Gerd Hirzinger,Mathias Nickl,2011,robotics
+Gerd Hirzinger,Klaus Landzettel,2011,robotics
+Gerd Hirzinger,Klaus H. Strobl,2011,robotics
+Gerd Hirzinger,Jürgen Rossmann,2011,robotics
+Gerd Hirzinger,Alexander Dietrich,2011,robotics
+Gerd Hirzinger,Georg Passig,2011,robotics
+Gerd Hirzinger,Hannes Hoppner,2011,robotics
+Gerd Hirzinger,Oliver Eiberger,2011,robotics
+Gerd Hirzinger,Franziska Zacharias,2011,robotics
+Gerd Hirzinger,Jee-Hwan Ryu,2011,robotics
+Gerd Hirzinger,Christoph Borst,2011,robotics
+Gerd Hirzinger,Andreas Tobergte,2011,robotics
+Gerd Hirzinger,Sebastian Wolf,2011,robotics
+Gerd Hirzinger,Werner Friedl,2011,robotics
+Gerd Hirzinger,Carsten Preusche,2011,robotics
+Gerd Hirzinger,Máximo A. Roa,2011,robotics
+Gerd Hirzinger,Maxime Chalon,2011,robotics
+Gerd Hirzinger,Michael Suppa,2011,robotics
+Gerd Hirzinger,Andre Schiele,2011,robotics
+Gerd Hirzinger,Thomas Wimböck,2011,robotics
+Gerd Hirzinger,Duy Nguyen-Tuong,2011,robotics
+Gerd Hirzinger,Claudio Castellini,2011,robotics
+Gerd Hirzinger,Roberto Lampariello,2011,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2011,robotics
+Gerd Hirzinger,Nikolaus Seitz,2011,robotics
+Gerd Hirzinger,Markus Grebenstein,2011,robotics
+Gerd Hirzinger,Tim Bodenmüller,2011,robotics
+Gerd Hirzinger,Florian Petit,2011,robotics
+Gerd Hirzinger,Sami Haddadin,2011,robotics
+Gerd Hirzinger,Jordi Artigas,2011,robotics
+Gerd Hirzinger,Katharina Hertkorn,2011,robotics
+Gerd Hirzinger,Thomas Bahls,2011,robotics
+Gerd Hirzinger,Jan Peters 0001,2011,robotics
+Gerd Hirzinger,Ulrich Hagn,2011,robotics
+Gerd Hirzinger,Claudio Melchiorri,2003,robotics
+Gerd Hirzinger,Jörg Butterfaß,2003,robotics
+Gerd Hirzinger,Nikolaus Seitz,2003,robotics
+Gerd Hirzinger,Udo Frese,2003,robotics
+Gerd Hirzinger,Rui Pedro Duarte Cortesão,2003,robotics
+Gerd Hirzinger,Max Fischer,2003,robotics
+Gerd Hirzinger,Hong Liu,2003,robotics
+Gerd Hirzinger,Jee-Hwan Ryu,2003,robotics
+Gerd Hirzinger,Christoph Borst,2003,robotics
+Gerd Hirzinger,Luigi Biagiotti,2003,robotics
+Gerd Hirzinger,Steffen Haidacher,2003,robotics
+Gerd Hirzinger,Carsten Preusche,2003,robotics
+Gerd Hirzinger,Roberto Lampariello,2003,robotics
+Gerd Hirzinger,Markus Grebenstein,2003,robotics
+Gerd Hirzinger,Andreas Kugi,2003,robotics
+Gerd Hirzinger,Blake Hannaford,2003,robotics
+Gerd Hirzinger,Christian Ott,2003,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2003,robotics
+Gerd Hirzinger,Sunil Kumar Agrawal,2003,robotics
+Gerd Hirzinger,Stefan Fuchs,2008,vision
+Gerd Hirzinger,Claudio Melchiorri,2007,robotics
+Gerd Hirzinger,Michael Achtelik,2007,robotics
+Gerd Hirzinger,Klaus H. Strobl,2007,robotics
+Gerd Hirzinger,Luc Le Tien,2007,robotics
+Gerd Hirzinger,Wolfgang Sepp,2007,robotics
+Gerd Hirzinger,Franziska Zacharias,2007,robotics
+Gerd Hirzinger,Christoph Borst,2007,robotics
+Gerd Hirzinger,Sami Haddadin,2007,robotics
+Gerd Hirzinger,Michael Suppa,2007,robotics
+Gerd Hirzinger,Thomas Wimböck,2007,robotics
+Gerd Hirzinger,Carsten Preusche,2007,robotics
+Gerd Hirzinger,Jordi Artigas,2007,robotics
+Gerd Hirzinger,Thomas Hulin,2007,robotics
+Gerd Hirzinger,Markus Grebenstein,2007,robotics
+Gerd Hirzinger,Gianluca Palli,2007,robotics
+Gerd Hirzinger,Tim Bodenmüller,2007,robotics
+Gerd Hirzinger,Christian Ott,2007,robotics
+Gerd Hirzinger,Satoko Abiko,2007,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2007,robotics
+Gerd Hirzinger,Daniela Rus,2007,robotics
+Gerd Hirzinger,Matthias Fuchs,2007,robotics
+Gerd Hirzinger,Ralf Koeppe,2001,robotics
+Gerd Hirzinger,Urbano Nunes,2001,robotics
+Gerd Hirzinger,Rui Cortesão,2001,robotics
+Gerd Hirzinger,Steffen Haidacher,2001,robotics
+Gerd Hirzinger,Berthold Bäuml,2001,robotics
+Gerd Hirzinger,Udo Frese,2001,robotics
+Gerd Hirzinger,Christian Ott,2001,robotics
+Gerd Hirzinger,Alin Albu-Schäffer,2001,robotics
+Gerd Hirzinger,Ralf Koeppe,1999,robotics
+Gerd Hirzinger,Max Fischer,1999,robotics
+Gerd Hirzinger,Hong Liu,1999,robotics
+Gerd Hirzinger,Friedrich Lange,1999,robotics
+Gerd Hirzinger,Christoph Borst,1999,robotics
+Gerd Hirzinger,Bernhard Brunner,1993,robotics
+Gerd Hirzinger,Klaus Landzettel,1993,robotics
+Gerd Hirzinger,Johann Heindl,1993,robotics
+Gerd Hirzinger,Ulrich Hillenbrand,2002,vision
+Gerd Hirzinger,Max Fischer,1997,robotics
 Huijia Lin,Rafael Pass,2009,theory
 Huijia Lin,Sanjam Garg,2015,theory
 Huijia Lin,Rafael Pass,2015,theory
@@ -19065,6 +19822,8 @@ Armando Solar-Lezama,Shachar Itzhaky,2016,proglang
 Armando Solar-Lezama,Alvin Cheung,2016,proglang
 Armando Solar-Lezama,Stephen Chong,2016,proglang
 Armando Solar-Lezama,Cormac Flanagan,2016,proglang
+Armando Solar-Lezama,Jeffrey S. Foster,2015,logic
+Armando Solar-Lezama,Xiaokang Qiu,2015,logic
 Armando Solar-Lezama,Kemal Ebcioglu,2005,proglang
 Armando Solar-Lezama,Rastislav Bodík,2005,proglang
 Armando Solar-Lezama,Rodric M. Rabbah,2005,proglang
@@ -19083,6 +19842,20 @@ Su-Lin Lee,Chaoyang Shi,2014,robotics
 Su-Lin Lee,Guang-Zhong Yang,2014,robotics
 Su-Lin Lee,Lin Zhang,2014,robotics
 Su-Lin Lee,George P. Mylonas,2014,robotics
+Paul G. Kry,Uri M. Ascher,2000,robotics
+Paul G. Kry,Dinesh K. Pai,2000,robotics
+Paul G. Kry,Dinesh K. Pai,2006,graphics
+Paul G. Kry,Christian Duriez,2010,graphics
+Paul G. Kry,François Faure,2010,graphics
+Paul G. Kry,Bernd Bickel,2016,hci
+Paul G. Kry,Fabrizio Pece,2016,hci
+Paul G. Kry,Moritz Bächer,2016,hci
+Paul G. Kry,Bernhard Thomaszewski,2016,hci
+Paul G. Kry,Otmar Hilliges,2016,hci
+Paul G. Kry,Kees van den Doel,2001,graphics
+Paul G. Kry,Dinesh K. Pai,2001,graphics
+Paul G. Kry,Dinesh K. Pai,2003,graphics
+Paul G. Kry,François Faure,2009,graphics
 Boleslaw K. Szymanski,Qiaozhu Mei,2012,mlmining
 Boleslaw K. Szymanski,Jingrui He,2012,mlmining
 Boleslaw K. Szymanski,Hanghang Tong,2012,mlmining
@@ -21544,6 +22317,10 @@ Xiangyu Zhang,Dongyan Xu,2015,security
 Xiangyu Zhang,Patrick Eugster,2012,mobile
 Xiangyu Zhang,Yunhui Zheng,2011,proglang
 Xiangyu Zhang,Rajiv Gupta,2004,arch
+Xiangyu Zhang,Yunhui Zheng,2015,logic
+Xiangyu Zhang,Omer Tripp,2015,logic
+Xiangyu Zhang,Vijay Ganesh,2015,logic
+Xiangyu Zhang,Julian Dolby,2015,logic
 Xiangyu Zhang,Jian Sun 0001,2015,vision
 Xiangyu Zhang,Shaoqing Ren,2015,vision
 Xiangyu Zhang,Kaiming He,2015,vision
@@ -23598,6 +24375,10 @@ Sanjeev Arora,Ankur Moitra,2012,mlmining
 Sanjeev Arora,Rong Ge,2012,mlmining
 Sanjeev Arora,Ali Kemal Sinop,2013,theory
 Sanjeev Arora,Rong Ge,2013,theory
+Cristina Conati,Giuseppe Carenini,2014,hci
+Cristina Conati,Giuseppe Carenini,2001,ai
+Cristina Conati,Giuseppe Carenini,2015,ai
+Cristina Conati,Giuseppe Carenini,2013,hci
 Indranil Gupta,Tarek F. Abdelzaher,2008,networks
 Indranil Gupta,I-Hong Hou,2008,networks
 Indranil Gupta,Sriram Subramanian,2016,database
@@ -23925,9 +24706,9 @@ Daniela Rus,Qun Li,2001,mobile
 Daniela Rus,Kyle Gilpin,2007,robotics
 Daniela Rus,Jean-Jacques E. Slotine,2007,robotics
 Daniela Rus,Michael Achtelik,2007,robotics
-Daniela Rus,Keith Kotay,2007,robotics
-Daniela Rus,Seung-kook Yun,2007,robotics
 Daniela Rus,Gerd Hirzinger,2007,robotics
+Daniela Rus,Seung-kook Yun,2007,robotics
+Daniela Rus,Keith Kotay,2007,robotics
 Daniela Rus,Mac Schwager,2007,robotics
 Daniela Rus,Robert Fitch,2001,robotics
 Daniela Rus,Zack J. Butler,2001,robotics
@@ -24225,6 +25006,17 @@ Rebecca E. Grinter,James D. Herbsleb,1999,softeng
 Rebecca E. Grinter,Marshini Chetty,2007,hci
 Rebecca E. Grinter,Henrik I. Christensen,2007,hci
 Rebecca E. Grinter,W. Keith Edwards,2001,hci
+Alan J. Hu,Drew Dean,2004,security
+Alan J. Hu,Shaz Qadeer,2004,logic
+Alan J. Hu,Anne Condon,2004,logic
+Alan J. Hu,David L. Dill,1992,logic
+Alan J. Hu,Amir Nahir,2012,logic
+Alan J. Hu,Domagoj Babic,2008,softeng
+Alan J. Hu,Domagoj Babic,2007,logic
+Alan J. Hu,David L. Dill,1993,logic
+Alan J. Hu,Holger H. Hoos,2015,ai
+Alan J. Hu,Howard Wong-Toi,1991,logic
+Alan J. Hu,David L. Dill,1991,logic
 Doug Downey,Dan Roth,2011,nlp
 Doug Downey,Lev-Arie Ratinov,2011,nlp
 Doug Downey,Oren Etzioni,2008,mlmining
@@ -24260,6 +25052,22 @@ Jack C. Wileden,Lori A. Clarke,1985,softeng
 Jack C. Wileden,Alexander L. Wolf,1989,oopfp
 Jack C. Wileden,Alexander L. Wolf,1990,softeng
 Jack C. Wileden,Peri L. Tarr,1990,softeng
+Holger H. Hoos,Craig Boutilier,2001,ai
+Holger H. Hoos,Kevin Leyton-Brown,2013,mlmining
+Holger H. Hoos,Frank Hutter,2013,mlmining
+Holger H. Hoos,Frank Hutter,2015,ai
+Holger H. Hoos,Kevin Leyton-Brown,2015,ai
+Holger H. Hoos,Alan J. Hu,2015,ai
+Holger H. Hoos,Frank Hutter,2007,ai
+Holger H. Hoos,Frank Hutter,2005,ai
+Holger H. Hoos,Lin Xu,2012,ai
+Holger H. Hoos,Kevin Leyton-Brown,2012,ai
+Holger H. Hoos,Ronen I. Brafman,1999,ai
+Holger H. Hoos,Lin Xu,2009,ai
+Holger H. Hoos,Kevin Leyton-Brown,2009,ai
+Holger H. Hoos,Kevin Leyton-Brown,2016,ai
+Holger H. Hoos,Tomasz P. Michalak,2016,ai
+Holger H. Hoos,Talal Rahwan,2016,ai
 Eric Price,Haitham Hassanieh,2012,theory
 Eric Price,Piotr Indyk,2012,theory
 Eric Price,Dina Katabi,2012,theory
@@ -26279,6 +27087,16 @@ Neil Immerman,Mooly Sagiv,2013,logic
 Neil Immerman,Shachar Itzhaky,2013,logic
 Neil Immerman,Yuri Gurevich,1994,logic
 Neil Immerman,Saharon Shelah,1994,logic
+Marc González,Nacho Navarro,2012,highperf
+Marc González,Eduard Ayguadé,2012,highperf
+Marc González,Xavier Martorell,2012,highperf
+Marc González,Mateo Valero,2015,arch
+Marc González,Nacho Navarro,2015,arch
+Marc González,Miquel Moretó,2015,arch
+Marc González,Eduard Ayguadé,2015,arch
+Marc González,Xavier Martorell,2015,arch
+Marc González,Pradip Bose,2012,arch
+Marc González,Alper Buyuktosunoglu,2012,arch
 Philip Levis,Rodrigo Fonseca,2008,opsys
 Philip Levis,Ion Stoica,2008,opsys
 Philip Levis,Prabal Dutta,2008,opsys
@@ -26669,6 +27487,7 @@ Edmund M. Clarke,Ofer Strichman,2002,logic
 Edmund M. Clarke,Marco Roveri,2002,logic
 Edmund M. Clarke,Alessandro Cimatti,2002,logic
 Edmund M. Clarke,Enrico Giunchiglia,2002,logic
+Edmund M. Clarke,Anvesh Komuravelli,2012,logic
 Edmund M. Clarke,Corina S. Pasareanu,2012,logic
 Edmund M. Clarke,E. Allen Emerson,1983,proglang
 Edmund M. Clarke,A. Prasad Sistla,1983,proglang
@@ -26693,6 +27512,8 @@ Edmund M. Clarke,Armin Biere,2000,logic
 Edmund M. Clarke,Orna Grumberg,2000,logic
 Edmund M. Clarke,Kenneth L. McMillan,1990,logic
 Edmund M. Clarke,David L. Dill,1990,logic
+Edmund M. Clarke,Steven M. German,1982,proglang
+Edmund M. Clarke,Joseph Y. Halpern,1982,proglang
 Edmund M. Clarke,Alex Groce,2003,softeng
 Edmund M. Clarke,Somesh Jha,2003,softeng
 Edmund M. Clarke,Helmut Veith,2003,softeng
@@ -26712,10 +27533,13 @@ Edmund M. Clarke,Bow-Yaw Wang,2010,logic
 Edmund M. Clarke,Bud Mishra,1985,proglang
 Edmund M. Clarke,Nishant Sinha,2005,logic
 Edmund M. Clarke,Sagar Chaki,2005,logic
+Edmund M. Clarke,Anvesh Komuravelli,2013,logic
 Edmund M. Clarke,Arie Gurfinkel,2013,logic
 Edmund M. Clarke,Sagar Chaki,2013,logic
-Edmund M. Clarke,Steven M. German,1982,proglang
-Edmund M. Clarke,Joseph Y. Halpern,1982,proglang
+Edmund M. Clarke,Arjun Radhakrishna,2015,logic
+Edmund M. Clarke,Pavol Cerný,2015,logic
+Edmund M. Clarke,Thomas A. Henzinger,2015,logic
+Edmund M. Clarke,Leonid Ryzhyk,2015,logic
 Edmund M. Clarke,Somesh Jha,1994,logic
 Edmund M. Clarke,David E. Long,1994,logic
 Edmund M. Clarke,Kiyoharu Hamaguchi,1994,logic
@@ -27165,6 +27989,8 @@ Taku Komura,Shunsuke Kudoh,2006,robotics
 Taku Komura,Katsushi Ikeuchi,2002,robotics
 Taku Komura,Shunsuke Kudoh,2002,robotics
 Taku Komura,Shunsuke Kudoh,2003,robotics
+Florian Matthes,Joachim W. Schmidt,1994,database
+Florian Matthes,Joachim W. Schmidt,1993,database
 Yuan Xie 0001,Naveen Muralimanohar,2009,highperf
 Yuan Xie 0001,Norman P. Jouppi,2009,highperf
 Yuan Xie 0001,Jishen Zhao,2013,arch
@@ -28160,6 +28986,50 @@ Odest Chadwicke Jenkins,Sarah Osentoski,2011,robotics
 Odest Chadwicke Jenkins,Charles DuHadway,2011,robotics
 Odest Chadwicke Jenkins,Benjamin Pitzer,2011,robotics
 Odest Chadwicke Jenkins,Maja J. Mataric,2002,robotics
+Alla Sheffer,Nathan Carr,2011,graphics
+Alla Sheffer,Ariel Shamir,2011,graphics
+Alla Sheffer,Nicolas Ray,2006,graphics
+Alla Sheffer,Bruno Lévy,2006,graphics
+Alla Sheffer,Pierre Alliez,2006,graphics
+Alla Sheffer,Wolfgang Heidrich,2010,graphics
+Alla Sheffer,Marie-Paule Cani,2010,graphics
+Alla Sheffer,Derek Bradley,2010,graphics
+Alla Sheffer,Tiberiu Popa,2010,graphics
+Alla Sheffer,Marie-Paule Cani,2012,graphics
+Alla Sheffer,Adrien Bousseau,2012,graphics
+Alla Sheffer,Karan Singh,2012,graphics
+Alla Sheffer,Bruno Lévy,2005,graphics
+Alla Sheffer,Karan Singh,2014,graphics
+Alla Sheffer,Adrien Bousseau,2014,graphics
+Alla Sheffer,Ariel Shamir,2013,graphics
+Alla Sheffer,James Gregson,2013,graphics
+Alla Sheffer,Daniel Cohen-Or,2013,graphics
+Alla Sheffer,Shi-Min Hu,2013,graphics
+Alla Sheffer,Hao Zhang 0002,2013,graphics
+Alla Sheffer,Nicolas Ray,2015,graphics
+Alla Sheffer,Karan Singh,2015,graphics
+Alla Sheffer,Marco Tarini,2015,graphics
+Alla Sheffer,Evangelos Kalogerakis,2015,graphics
+Alla Sheffer,Bruno Lévy,2015,graphics
+Alla Sheffer,Wenping Wang,2015,graphics
+Alla Sheffer,Pierre Poulin,2015,graphics
+Alla Sheffer,Wolfgang Heidrich,2008,graphics
+Alla Sheffer,Derek Bradley,2008,graphics
+Alla Sheffer,Ariel Shamir,2008,graphics
+Alla Sheffer,Niloy J. Mitra,2008,graphics
+Alla Sheffer,Tamy Boubekeur,2008,graphics
+Alla Sheffer,Martin Kilian,2008,graphics
+Alla Sheffer,Hongbo Fu,2008,graphics
+Alla Sheffer,Daniel Cohen-Or,2008,graphics
+Alla Sheffer,Tiberiu Popa,2008,graphics
+Alla Sheffer,Gideon Dror,2008,graphics
+Alla Sheffer,Nina Amenta,2008,graphics
+Alla Sheffer,Helmut Pottmann,2008,graphics
+Alla Sheffer,Andrei Sharf,2008,graphics
+Alla Sheffer,Craig Gotsman,2003,graphics
+Alla Sheffer,Xianfeng Gu,2003,graphics
+Alla Sheffer,Niloy J. Mitra,2009,graphics
+Alla Sheffer,Ravish Mehra,2009,graphics
 Song Chun Zhu,Wenze Hu,2008,vision
 Song Chun Zhu,Yongtian Wang,2008,vision
 Song Chun Zhu,Haifeng Gong,2008,vision
@@ -28901,6 +29771,25 @@ Dan S. Wallach,Lydia E. Kavraki,2002,robotics
 Dan S. Wallach,Kostas E. Bekris,2002,robotics
 Dan S. Wallach,Andrew M. Ladd,2002,robotics
 Dan S. Wallach,Michael D. Byrne,2008,hci
+Jesús Labarta,Mateo Valero,2015,highperf
+Jesús Labarta,Eduard Ayguadé,2015,highperf
+Jesús Labarta,Miquel Moretó,2015,highperf
+Jesús Labarta,Xavier Martorell,2000,opsys
+Jesús Labarta,Mateo Valero,1983,metrics
+Jesús Labarta,Tomás Lang,1983,metrics
+Jesús Labarta,Eduard Ayguadé,2000,highperf
+Jesús Labarta,Dimitrios S. Nikolopoulos,2000,highperf
+Jesús Labarta,Constantine D. Polychronopoulos,2000,highperf
+Jesús Labarta,Mateo Valero,2010,arch
+Jesús Labarta,Alex Ramírez,2010,arch
+Jesús Labarta,Yoav Etsion,2010,arch
+Jesús Labarta,Eduard Ayguadé,2010,arch
+Jesús Labarta,Eduard Ayguadé,1995,highperf
+Jesús Labarta,Allan Snavely,2002,highperf
+Jesús Labarta,Laura Carrington,2002,highperf
+Jesús Labarta,Mateo Valero,1985,arch
+Jesús Labarta,José M. Llabería,1985,arch
+Jesús Labarta,Eduard Ayguadé,1989,highperf
 Sebastián Uchitel,Jeff Magee,2014,softeng
 Sebastián Uchitel,Dalal Alrajeh,2014,softeng
 Sebastián Uchitel,Nicolás D'Ippolito,2014,softeng
@@ -29275,6 +30164,7 @@ David B. Johnson,Yih-Chun Hu,1998,mobile
 David B. Johnson,Lei Tang,2011,networks
 David B. Johnson,Omer Gurewitz,2011,networks
 David B. Johnson,Yanjun Sun,2011,networks
+Alan Wagner,Raymond T. Ng,2004,mlmining
 Phillip Rogaway,Mihir Bellare,1993,crypto
 Phillip Rogaway,Johan Håstad,1988,crypto
 Phillip Rogaway,Oded Goldreich,1988,crypto
@@ -29617,6 +30507,147 @@ Tom Goldstein,Min Li,2015,mlmining
 Therese C. Biedl,Prosenjit Bose,1999,theory
 Therese C. Biedl,Erik D. Demaine,1999,theory
 Therese C. Biedl,Anna Lubiw,1999,theory
+Alin Albu-Schäffer,Gerd Hirzinger,1998,robotics
+Alin Albu-Schäffer,Ferenc Balint-Benczedi,2015,robotics
+Alin Albu-Schäffer,Werner Friedl,2015,robotics
+Alin Albu-Schäffer,Alexis Maldonado,2015,robotics
+Alin Albu-Schäffer,Dominic Lakatos,2015,robotics
+Alin Albu-Schäffer,Roberto Lampariello,2015,robotics
+Alin Albu-Schäffer,Christoph Borst,2015,robotics
+Alin Albu-Schäffer,Sami Haddadin,2015,robotics
+Alin Albu-Schäffer,Bernhard Brunner,2015,robotics
+Alin Albu-Schäffer,Alexander Dietrich,2015,robotics
+Alin Albu-Schäffer,Michael Beetz,2015,robotics
+Alin Albu-Schäffer,Nico Mansfeld,2015,robotics
+Alin Albu-Schäffer,Jordi Artigas,2015,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2000,robotics
+Alin Albu-Schäffer,Jürgen Rossmann,2009,robotics
+Alin Albu-Schäffer,Dragomir N. Nenchev,2009,robotics
+Alin Albu-Schäffer,Thomas Wimböck,2009,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2009,robotics
+Alin Albu-Schäffer,Sami Haddadin,2009,robotics
+Alin Albu-Schäffer,Matthias Fuchs,2009,robotics
+Alin Albu-Schäffer,Paolo Robuffo Giordano,2009,robotics
+Alin Albu-Schäffer,P. Patrick van der Smagt,2012,robotics
+Alin Albu-Schäffer,Sethu Vijayakumar,2012,robotics
+Alin Albu-Schäffer,Etienne Burdet,2012,robotics
+Alin Albu-Schäffer,Nathanaël Jarrassé,2012,robotics
+Alin Albu-Schäffer,Antonio Bicchi,2012,robotics
+Alin Albu-Schäffer,Andreas Tobergte,2012,robotics
+Alin Albu-Schäffer,Sami Haddadin,2012,robotics
+Alin Albu-Schäffer,Sven Parusel,2012,robotics
+Alin Albu-Schäffer,Felix Huber,2012,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2012,robotics
+Alin Albu-Schäffer,Alexander Dietrich,2012,robotics
+Alin Albu-Schäffer,Ganesh Gowrishankar,2012,robotics
+Alin Albu-Schäffer,Florian Petit,2012,robotics
+Alin Albu-Schäffer,Nico Mansfeld,2012,robotics
+Alin Albu-Schäffer,Luc Le Tien,2012,robotics
+Alin Albu-Schäffer,Christian Ott,2012,robotics
+Alin Albu-Schäffer,Luc Le Tien,2007,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2007,robotics
+Alin Albu-Schäffer,Sami Haddadin,2007,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2001,robotics
+Alin Albu-Schäffer,Stefano Stramigioli,2004,robotics
+Alin Albu-Schäffer,P. Patrick van der Smagt,2004,robotics
+Alin Albu-Schäffer,Max Fischer,2004,robotics
+Alin Albu-Schäffer,Andreas Kugi,2004,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2004,robotics
+Alin Albu-Schäffer,Christian Ott,2004,robotics
+Alin Albu-Schäffer,Martin Görner,2013,robotics
+Alin Albu-Schäffer,Rainer Konietschke,2013,robotics
+Alin Albu-Schäffer,Dominic Lakatos,2013,robotics
+Alin Albu-Schäffer,Johann Heindl,2013,robotics
+Alin Albu-Schäffer,Sebastian Wolf,2013,robotics
+Alin Albu-Schäffer,Sven Parusel,2013,robotics
+Alin Albu-Schäffer,Felix Huber,2013,robotics
+Alin Albu-Schäffer,Alexander Dietrich,2013,robotics
+Alin Albu-Schäffer,Thomas Hulin,2013,robotics
+Alin Albu-Schäffer,Florian Petit,2013,robotics
+Alin Albu-Schäffer,Sami Haddadin,2013,robotics
+Alin Albu-Schäffer,Christian Ott,2013,robotics
+Alin Albu-Schäffer,Konstantin Kondak,2013,robotics
+Alin Albu-Schäffer,Dominic Lakatos,2014,robotics
+Alin Albu-Schäffer,Florian Petit,2014,robotics
+Alin Albu-Schäffer,Jerry E. Pratt,2014,robotics
+Alin Albu-Schäffer,Thomas Wimböck,2014,robotics
+Alin Albu-Schäffer,Sandra Hirche,2014,robotics
+Alin Albu-Schäffer,Stefan Jörg,2014,robotics
+Alin Albu-Schäffer,Christian Ott,2014,robotics
+Alin Albu-Schäffer,Alexander Dietrich,2014,robotics
+Alin Albu-Schäffer,Dominic Lakatos,2016,robotics
+Alin Albu-Schäffer,Jee-Hwan Ryu,2016,robotics
+Alin Albu-Schäffer,Christian Ott,2016,robotics
+Alin Albu-Schäffer,Andreas Tobergte,2016,robotics
+Alin Albu-Schäffer,Jordi Artigas,2016,robotics
+Alin Albu-Schäffer,Werner Friedl,2010,robotics
+Alin Albu-Schäffer,Ganesh Gowrishankar,2010,robotics
+Alin Albu-Schäffer,Markus Grebenstein,2010,robotics
+Alin Albu-Schäffer,Etienne Burdet,2010,robotics
+Alin Albu-Schäffer,Florian Petit,2010,robotics
+Alin Albu-Schäffer,Maxime Chalon,2010,robotics
+Alin Albu-Schäffer,Sven Parusel,2010,robotics
+Alin Albu-Schäffer,Sebastian Wolf,2010,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2010,robotics
+Alin Albu-Schäffer,Mitsuo Kawato,2010,robotics
+Alin Albu-Schäffer,Sami Haddadin,2010,robotics
+Alin Albu-Schäffer,Oliver Eiberger,2010,robotics
+Alin Albu-Schäffer,Darius Burschka,2010,robotics
+Alin Albu-Schäffer,Nikolaus Seitz,2011,robotics
+Alin Albu-Schäffer,Jung-Jun Park,2011,robotics
+Alin Albu-Schäffer,Stefan Jörg,2011,robotics
+Alin Albu-Schäffer,Mathias Nickl,2011,robotics
+Alin Albu-Schäffer,Werner Friedl,2011,robotics
+Alin Albu-Schäffer,Thomas Bahls,2011,robotics
+Alin Albu-Schäffer,Marc Hassenzahl,2011,robotics
+Alin Albu-Schäffer,Hannes Hoppner,2011,robotics
+Alin Albu-Schäffer,Rainer Konietschke,2011,robotics
+Alin Albu-Schäffer,Andreas Tobergte,2011,robotics
+Alin Albu-Schäffer,Jae-Bok Song,2011,robotics
+Alin Albu-Schäffer,Sami Haddadin,2011,robotics
+Alin Albu-Schäffer,Jens Reinecke,2011,robotics
+Alin Albu-Schäffer,Gerhard Hirzinger,2011,robotics
+Alin Albu-Schäffer,Maxime Chalon,2011,robotics
+Alin Albu-Schäffer,Sven Parusel,2011,robotics
+Alin Albu-Schäffer,Máximo A. Roa,2011,robotics
+Alin Albu-Schäffer,Thomas Wimböck,2011,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2011,robotics
+Alin Albu-Schäffer,Alexander Dietrich,2011,robotics
+Alin Albu-Schäffer,Oliver Eiberger,2011,robotics
+Alin Albu-Schäffer,Markus Grebenstein,2011,robotics
+Alin Albu-Schäffer,Florian Petit,2011,robotics
+Alin Albu-Schäffer,Sebastian Wolf,2011,robotics
+Alin Albu-Schäffer,Christian Ott,2011,robotics
+Alin Albu-Schäffer,Ulrich Hagn,2011,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2005,robotics
+Alin Albu-Schäffer,Christian Ott,2005,robotics
+Alin Albu-Schäffer,Markus Grebenstein,2006,robotics
+Alin Albu-Schäffer,Klaus Landzettel,2006,robotics
+Alin Albu-Schäffer,Tobias Ortmaier,2006,robotics
+Alin Albu-Schäffer,Carsten Preusche,2006,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2006,robotics
+Alin Albu-Schäffer,Luc Le Tien,2006,robotics
+Alin Albu-Schäffer,Stefan Jörg,2006,robotics
+Alin Albu-Schäffer,Christian Ott,2006,robotics
+Alin Albu-Schäffer,Alessandro De Luca 0001,2006,robotics
+Alin Albu-Schäffer,Sami Haddadin,2006,robotics
+Alin Albu-Schäffer,Rainer Konietschke,2006,robotics
+Alin Albu-Schäffer,Ulrich Hagn,2006,robotics
+Alin Albu-Schäffer,Andreas Kugi,2008,robotics
+Alin Albu-Schäffer,Thomas Wimböck,2008,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2008,robotics
+Alin Albu-Schäffer,Luc Le Tien,2008,robotics
+Alin Albu-Schäffer,Alessandro De Luca 0001,2008,robotics
+Alin Albu-Schäffer,Christian Ott,2008,robotics
+Alin Albu-Schäffer,Sami Haddadin,2008,robotics
+Alin Albu-Schäffer,Paolo Robuffo Giordano,2008,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2002,robotics
+Alin Albu-Schäffer,Christian Ott,2002,robotics
+Alin Albu-Schäffer,Markus Schedl,2002,robotics
+Alin Albu-Schäffer,Andreas Kugi,2003,robotics
+Alin Albu-Schäffer,Udo Frese,2003,robotics
+Alin Albu-Schäffer,Gerd Hirzinger,2003,robotics
+Alin Albu-Schäffer,Christian Ott,2003,robotics
 Glynn Winskel,Marcelo P. Fiore,1999,logic
 Glynn Winskel,Sam Staton,2010,logic
 Glynn Winskel,Henrik Reif Andersen,1994,logic
@@ -29698,27 +30729,31 @@ James D. Foley,Piyawadee Noi Sukaviriya,1990,hci
 James D. Foley,Scott E. Hudson,1995,hci
 James D. Foley,Sougata Mukherjea,1995,hci
 Viktor Kuncak,Dejan Kostic,2009,networks
-Viktor Kuncak,Martin C. Rinard,2009,proglang
-Viktor Kuncak,Christoph Koch 0001,2013,database
+Viktor Kuncak,Martin C. Rinard,2008,proglang
 Viktor Kuncak,Philippe Suter,2012,proglang
 Viktor Kuncak,Rachid Guerraoui,2012,proglang
+Viktor Kuncak,Daniel Jackson,2005,softeng
+Viktor Kuncak,Ruzica Piskac,2008,logic
+Viktor Kuncak,Philippe Suter,2010,proglang
+Viktor Kuncak,Ruzica Piskac,2010,proglang
+Viktor Kuncak,Mikaël Mayer,2010,proglang
+Viktor Kuncak,Martin C. Rinard,2003,logic
+Viktor Kuncak,Tihomir Gvero,2013,proglang
+Viktor Kuncak,Ruzica Piskac,2013,proglang
 Viktor Kuncak,Tihomir Gvero,2011,logic
 Viktor Kuncak,Ruzica Piskac,2011,logic
-Viktor Kuncak,Martin C. Rinard,2008,proglang
-Viktor Kuncak,Martin C. Rinard,2003,logic
-Viktor Kuncak,Philippe Suter,2013,oopfp
-Viktor Kuncak,Martin C. Rinard,2002,proglang
-Viktor Kuncak,Ruzica Piskac,2008,logic
+Viktor Kuncak,Christoph Koch 0001,2013,database
 Viktor Kuncak,Daniel Jackson,2015,oopfp
 Viktor Kuncak,Mikaël Mayer,2015,oopfp
 Viktor Kuncak,Tihomir Gvero,2015,oopfp
 Viktor Kuncak,Sumit Gulwani,2015,oopfp
-Viktor Kuncak,Daniel Jackson,2005,softeng
-Viktor Kuncak,Philippe Suter,2010,proglang
-Viktor Kuncak,Ruzica Piskac,2010,proglang
-Viktor Kuncak,Mikaël Mayer,2010,proglang
-Viktor Kuncak,Tihomir Gvero,2013,proglang
-Viktor Kuncak,Ruzica Piskac,2013,proglang
+Viktor Kuncak,Martin C. Rinard,2009,proglang
+Viktor Kuncak,Philippe Suter,2013,oopfp
+Viktor Kuncak,Martin C. Rinard,2002,proglang
+Viktor Kuncak,Philipp Rümmer,2013,logic
+Viktor Kuncak,Andrew Reynolds,2015,logic
+Viktor Kuncak,Cesare Tinelli,2015,logic
+Viktor Kuncak,Clark W. Barrett,2015,logic
 Matt Blaze,Jonathan M. Smith,2014,security
 Matt Blaze,Joan Feigenbaum,1996,security
 Matt Blaze,Moni Naor,1998,crypto
@@ -29726,9 +30761,9 @@ Matt Blaze,Martin Strauss,1998,crypto
 Matt Blaze,Joan Feigenbaum,1998,crypto
 Matt Blaze,Omer Reingold,2002,security
 Matt Blaze,Ran Canetti,2002,security
-Matt Blaze,William Aiello,2002,security
-Matt Blaze,Angelos D. Keromytis,2002,security
 Matt Blaze,Steven M. Bellovin,2002,security
+Matt Blaze,Angelos D. Keromytis,2002,security
+Matt Blaze,William Aiello,2002,security
 Matt Blaze,Micah Sherr,2009,security
 Lorenzo Torresani,Vladimir Kolmogorov,2008,vision
 Lorenzo Torresani,Carsten Rother,2008,vision
@@ -29888,6 +30923,9 @@ Miryung Kim,Michael Dalton,2011,softeng
 Miryung Kim,Yuanfang Cai,2011,softeng
 Karem A. Sakallah,Martha E. Pollack,2005,ai
 Karem A. Sakallah,Michael D. Moffitt,2005,ai
+José María Llabería,Mateo Valero,1983,metrics
+José María Llabería,Tomás Lang,1983,metrics
+José María Llabería,Jesús Labarta,1983,metrics
 Martin T. Vechev,Maged M. Michael,2009,highperf
 Martin T. Vechev,Vijay A. Saraswat,2009,highperf
 Martin T. Vechev,Eran Yahav,2009,proglang
@@ -29926,15 +30964,16 @@ Martin T. Vechev,Otmar Hilliges,2015,hci
 Martin T. Vechev,Laurent Vanbever,2016,proglang
 Martin T. Vechev,Veselin Raychev,2016,proglang
 Martin T. Vechev,Andreas Krause,2016,proglang
-Martin T. Vechev,Eran Yahav,2014,proglang
-Martin T. Vechev,Eric Koskinen,2014,proglang
-Martin T. Vechev,Dimitar Dimitrov,2014,proglang
-Martin T. Vechev,Veselin Raychev,2014,proglang
+Martin T. Vechev,Dimitar Dimitrov,2015,logic
 Martin T. Vechev,Max Schäfer,2013,oopfp
 Martin T. Vechev,Manu Sridharan,2013,oopfp
 Martin T. Vechev,Veselin Raychev,2013,oopfp
 Martin T. Vechev,Eran Yahav,2010,proglang
 Martin T. Vechev,Greta Yorsh,2010,proglang
+Martin T. Vechev,Eran Yahav,2014,proglang
+Martin T. Vechev,Eric Koskinen,2014,proglang
+Martin T. Vechev,Dimitar Dimitrov,2014,proglang
+Martin T. Vechev,Veselin Raychev,2014,proglang
 Alok N. Choudhary,Wei-keng Liao,2008,highperf
 Alok N. Choudhary,Md. Mostofa Ali Patwary,2013,highperf
 Alok N. Choudhary,Wei-keng Liao,2013,highperf
@@ -30019,6 +31058,9 @@ Alok N. Choudhary,Yu Cheng,2015,vision
 Alok N. Choudhary,Sanjiv Kumar,2015,vision
 Alok N. Choudhary,Rogério Schmidt Feris,2015,vision
 Alok N. Choudhary,Bing Liu 0001,2009,nlp
+Jackie Chi Kit Cheung,Gerald Penn,2013,nlp
+Jackie Chi Kit Cheung,Gerald Penn,2014,nlp
+Jackie Chi Kit Cheung,Gerald Penn,2010,nlp
 Ivan Flechais,Kasper Bonne Rasmussen,2015,softeng
 Ivan Flechais,Cas J. F. Cremers,2015,softeng
 Ajitha Rajan,Michael W. Whalen,2008,softeng
@@ -30094,6 +31136,82 @@ Dana S. Nau,Héctor Muñoz-Avila,1999,ai
 Dana S. Nau,V. S. Subrahmanian,2006,ai
 Dana S. Nau,Ugur Kuter,2004,ai
 Dana S. Nau,Ugur Kuter,2009,ai
+Alois Knoll,Alexander Clifford Perzylo,2015,robotics
+Alois Knoll,Konstantinos Dalamagkidis,2015,robotics
+Alois Knoll,Nikhil Somani,2015,robotics
+Alois Knoll,Oussama Khatib,2015,robotics
+Alois Knoll,Andre Gaschler,2015,robotics
+Alois Knoll,Sebastian Klose,2015,robotics
+Alois Knoll,Markus Rickert,2015,robotics
+Alois Knoll,Michael Jäntsch,2015,robotics
+Alois Knoll,Steffen Wittmeier,2015,robotics
+Alois Knoll,Chao Chen,2015,robotics
+Alois Knoll,Jianwei Zhang 0001,2000,robotics
+Alois Knoll,Giorgio Panin,2009,robotics
+Alois Knoll,Markus Rickert,2009,robotics
+Alois Knoll,Christian Buckl,2012,logic
+Alois Knoll,Chih-Hong Cheng,2012,logic
+Alois Knoll,Nikhil Somani,2013,robotics
+Alois Knoll,Andre Gaschler,2013,robotics
+Alois Knoll,Sebastian Klose,2013,robotics
+Alois Knoll,Christian Buckl,2013,robotics
+Alois Knoll,Guang Chen,2013,robotics
+Alois Knoll,Emmanuel C. Dean-Leon,2013,robotics
+Alois Knoll,Markus Rickert,2013,robotics
+Alois Knoll,Jianwei Zhang 0001,1996,robotics
+Alois Knoll,Jürgen Schmidhuber,2006,robotics
+Alois Knoll,Faustino J. Gomez,2006,robotics
+Alois Knoll,Daan Wierstra,2006,robotics
+Alois Knoll,Giorgio Panin,2008,robotics
+Alois Knoll,Robert Bauernschmitt,2008,robotics
+Alois Knoll,Markus Rickert,2008,robotics
+Alois Knoll,Oliver Brock,2008,robotics
+Alois Knoll,Darius Burschka,2008,robotics
+Alois Knoll,Jianwei Zhang 0001,1998,robotics
+Alois Knoll,Konstantinos Dalamagkidis,2012,robotics
+Alois Knoll,Andre Gaschler,2012,robotics
+Alois Knoll,Robert Bauernschmitt,2012,robotics
+Alois Knoll,Chih-Hong Cheng,2012,robotics
+Alois Knoll,Michael Jäntsch,2012,robotics
+Alois Knoll,Steffen Wittmeier,2012,robotics
+Alois Knoll,Christian Buckl,2012,robotics
+Alois Knoll,Sebastian Klose,2013,vision
+Alois Knoll,Robert Bauernschmitt,2004,robotics
+Alois Knoll,Andre Gaschler,2014,robotics
+Alois Knoll,Duy Nguyen-Tuong,2014,robotics
+Alois Knoll,Markus Rickert,2014,robotics
+Alois Knoll,Guang Chen,2014,robotics
+Alois Knoll,Carl E. Rasmussen,2014,robotics
+Alois Knoll,Emmanuel C. Dean-Leon,2014,robotics
+Alois Knoll,Jan Peters 0001,2014,robotics
+Alois Knoll,Marc Peter Deisenroth,2014,robotics
+Alois Knoll,Herke van Hoof,2014,robotics
+Alois Knoll,Nikhil Somani,2014,robotics
+Alois Knoll,Jianwei Zhang 0001,2002,robotics
+Alois Knoll,Christian Buckl,2008,softeng
+Alois Knoll,Alfons Kemper,2008,softeng
+Alois Knoll,Jian Wang,2010,robotics
+Alois Knoll,Giorgio Panin,2010,robotics
+Alois Knoll,Sebastian Klose,2010,robotics
+Alois Knoll,Takayuki Osa,2010,robotics
+Alois Knoll,Robert Bauernschmitt,2010,robotics
+Alois Knoll,Michael Achtelik,2010,robotics
+Alois Knoll,Steffen Wittmeier,2010,robotics
+Alois Knoll,Michael Jäntsch,2010,robotics
+Alois Knoll,Konstantinos Dalamagkidis,2011,robotics
+Alois Knoll,Steffen Wittmeier,2011,robotics
+Alois Knoll,Michael Jäntsch,2011,robotics
+Alois Knoll,Markus Rickert,2011,robotics
+Alois Knoll,Jon Oberlander,2009,ai
+Alois Knoll,Robert Bauernschmitt,2007,robotics
+Alois Knoll,Yun-Hui Liu,2001,robotics
+Alois Knoll,Kejie Li,2001,robotics
+Alois Knoll,Dan Ding,2001,robotics
+Alois Knoll,Jianwei Zhang 0001,2001,robotics
+Alois Knoll,Yantao Shen,2001,robotics
+Alois Knoll,Jianwei Zhang 0001,1999,robotics
+Alois Knoll,Sebastian Klose,2015,vision
+Alois Knoll,Jianwei Zhang 0001,1997,robotics
 Yvo Desmedt,George I. Davida,1988,crypto
 Yvo Desmedt,Jean-Jacques Quisquater,1986,crypto
 Yvo Desmedt,Joos Vandewalle,1983,crypto
@@ -30349,6 +31467,24 @@ Jun Xu,Jiafeng Guo,2016,ai
 Jun Xu,Jiafeng Guo,2015,nlp
 Jun Xu,Yanyan Lan,2015,nlp
 Jun Xu,Xueqi Cheng,2015,nlp
+Mark W. Schmidt,Rómer Rosales,2008,vision
+Mark W. Schmidt,Glenn Fung,2008,vision
+Mark W. Schmidt,Kevin P. Murphy,2008,vision
+Mark W. Schmidt,Neil Birkbeck,2007,vision
+Mark W. Schmidt,Dana Cobzas,2007,vision
+Mark W. Schmidt,Martin Jägersand,2007,vision
+Mark W. Schmidt,Dana Cobzas,2009,vision
+Mark W. Schmidt,Peter Carbonetto,2008,mlmining
+Mark W. Schmidt,Nando de Freitas,2008,mlmining
+Mark W. Schmidt,Alexandru Niculescu-Mizil,2007,ai
+Mark W. Schmidt,Kevin P. Murphy,2007,ai
+Mark W. Schmidt,Nicolas Le Roux,2011,mlmining
+Mark W. Schmidt,Francis R. Bach,2011,mlmining
+Mark W. Schmidt,Nicol N. Schraudolph,2006,mlmining
+Mark W. Schmidt,S. V. N. Vishwanathan,2006,mlmining
+Mark W. Schmidt,Kevin P. Murphy,2006,mlmining
+Mark W. Schmidt,Nicolas Le Roux,2012,mlmining
+Mark W. Schmidt,Francis R. Bach,2012,mlmining
 Samuel Z. Guyer,Ben Wiedermann,2006,oopfp
 Samuel Z. Guyer,Darko Stefanovic,2006,oopfp
 Samuel Z. Guyer,Martin Hirzel,2006,oopfp
@@ -31099,6 +32235,8 @@ Mohammad Alizadeh,Vimalkumar Jeyakumar,2014,networks
 Mohammad Alizadeh,Balaji Prabhakar,2011,metrics
 Mohammad Alizadeh,Adel Javanmard,2011,metrics
 Mohammad Alizadeh,Pramod Viswanath,2016,metrics
+Georg Carle,Jörg Nonnenmacher,1998,networks
+Georg Carle,Ernst Biersack,1998,networks
 Ron Cytron,F. Kenneth Zadeck,1986,proglang
 Ron Cytron,Edith Schonberg,1990,highperf
 Ron Cytron,Barry K. Rosen,1989,proglang
@@ -31601,6 +32739,17 @@ Laurie Williams,Brian Robinson,2006,softeng
 Laurie Williams,Carolyn B. Seaman,2007,softeng
 Laurie Williams,Andrew Meneely,2008,softeng
 Laurie Williams,Andrew Meneely,2011,softeng
+Juan J. Navarro,Toni Juan,1998,arch
+Juan J. Navarro,Mateo Valero,1989,arch
+Juan J. Navarro,José M. Llabería,1989,arch
+Juan J. Navarro,Tomás Lang,1996,arch
+Juan J. Navarro,Toni Juan,1996,arch
+Juan J. Navarro,Mateo Valero,1986,arch
+Juan J. Navarro,José M. Llabería,1986,arch
+Juan J. Navarro,Mateo Valero,1992,arch
+Juan J. Navarro,Tomás Lang,1992,arch
+Juan J. Navarro,Eduard Ayguadé,1992,arch
+Juan J. Navarro,José M. Llabería,1992,arch
 Vikram S. Adve,John Criswell,2013,arch
 Vikram S. Adve,Andrew Lenharth,2007,proglang
 Vikram S. Adve,John Criswell,2009,security
@@ -32064,6 +33213,99 @@ Alexander L. Wolf,Antonio Carzaniga,2003,networks
 Alexander L. Wolf,Jonathan E. Cook,1996,database
 Alexander L. Wolf,Artur Klauser,1996,database
 Alexander L. Wolf,Benjamin G. Zorn,1996,database
+Mateo Valero,Francisco J. Cazorla,2008,highperf
+Mateo Valero,Alex Ramírez,2013,highperf
+Mateo Valero,Eduard Ayguadé,1995,arch
+Mateo Valero,Josep Llosa,1995,arch
+Mateo Valero,Antonio González 0001,1995,arch
+Mateo Valero,Tomás Lang,1995,arch
+Mateo Valero,Jesús Labarta,2010,arch
+Mateo Valero,Tim Harris 0001,2010,arch
+Mateo Valero,Alex Ramírez,2010,arch
+Mateo Valero,Yoav Etsion,2010,arch
+Mateo Valero,Adrián Cristal,2010,arch
+Mateo Valero,Eduard Ayguadé,2010,arch
+Mateo Valero,Osman S. Unsal,2010,arch
+Mateo Valero,Josep Llosa,2000,arch
+Mateo Valero,Antonio González 0001,2000,arch
+Mateo Valero,Eduard Ayguadé,2000,arch
+Mateo Valero,Nigel P. Topham,2000,arch
+Mateo Valero,Tomás Lang,1992,arch
+Mateo Valero,Eduard Ayguadé,1992,arch
+Mateo Valero,José M. Llabería,1992,arch
+Mateo Valero,Juan J. Navarro,1992,arch
+Mateo Valero,Josep Llosa,2001,arch
+Mateo Valero,Josep-Lluis Larriba-Pey,2001,arch
+Mateo Valero,Kourosh Gharachorloo,2001,arch
+Mateo Valero,Alex Ramírez,2001,arch
+Mateo Valero,Luiz André Barroso,2001,arch
+Mateo Valero,P. Geoffrey Lowney,2001,arch
+Mateo Valero,Eduard Ayguadé,2001,arch
+Mateo Valero,Nacho Navarro,2014,arch
+Mateo Valero,Muli Ben-Yehuda,2014,arch
+Mateo Valero,Alex Ramírez,2014,arch
+Mateo Valero,Yoav Etsion,2014,arch
+Mateo Valero,Roger Espasa,1999,highperf
+Mateo Valero,Jesús Labarta,1985,arch
+Mateo Valero,José M. Llabería,1985,arch
+Mateo Valero,Eduard Ayguadé,1996,arch
+Mateo Valero,Josep Llosa,1996,arch
+Mateo Valero,Eduard Ayguadé,1998,arch
+Mateo Valero,Josep Llosa,1998,arch
+Mateo Valero,Eduard Ayguadé,2000,proglang
+Mateo Valero,Josep Llosa,2000,proglang
+Mateo Valero,Alexander V. Veidenbaum,2008,arch
+Mateo Valero,Chen-Yong Cher,2008,arch
+Mateo Valero,Francisco J. Cazorla,2008,arch
+Mateo Valero,Daniel A. Jiménez,2008,arch
+Mateo Valero,Alper Buyuktosunoglu,2008,arch
+Mateo Valero,Adrián Cristal,2008,arch
+Mateo Valero,Osman S. Unsal,2010,highperf
+Mateo Valero,Francisco J. Cazorla,2010,highperf
+Mateo Valero,Mario Nemirovsky,2010,highperf
+Mateo Valero,Tim Harris 0001,2010,highperf
+Mateo Valero,Adrián Cristal,2010,highperf
+Mateo Valero,Tomás Lang,1983,metrics
+Mateo Valero,Jesús Labarta,1983,metrics
+Mateo Valero,James E. Smith,1997,arch
+Mateo Valero,Roger Espasa,1997,arch
+Mateo Valero,Josep-Lluis Larriba-Pey,2002,arch
+Mateo Valero,Antonio González 0001,2002,arch
+Mateo Valero,Roger Espasa,2002,arch
+Mateo Valero,Alex Ramírez,2002,arch
+Mateo Valero,Juan J. Navarro,1989,arch
+Mateo Valero,José M. Llabería,1989,arch
+Mateo Valero,Tim Harris 0001,2009,arch
+Mateo Valero,Francisco J. Cazorla,2009,arch
+Mateo Valero,Mario Nemirovsky,2009,arch
+Mateo Valero,Adrián Cristal,2009,arch
+Mateo Valero,Osman S. Unsal,2009,arch
+Mateo Valero,Nacho Navarro,2015,arch
+Mateo Valero,Miquel Moretó,2015,arch
+Mateo Valero,Eduard Ayguadé,2015,arch
+Mateo Valero,Xavier Martorell,2015,arch
+Mateo Valero,Tim Harris 0001,2009,highperf
+Mateo Valero,Adrián Cristal,2009,highperf
+Mateo Valero,Eduard Ayguadé,2009,highperf
+Mateo Valero,Osman S. Unsal,2009,highperf
+Mateo Valero,Eduard Ayguadé,2015,highperf
+Mateo Valero,Miquel Moretó,2015,highperf
+Mateo Valero,Jesús Labarta,2015,highperf
+Mateo Valero,Juan J. Navarro,1986,arch
+Mateo Valero,José M. Llabería,1986,arch
+Mateo Valero,Francisco J. Cazorla,2012,arch
+Mateo Valero,Mario Nemirovsky,2012,arch
+Mateo Valero,Miquel Moretó,2012,arch
+Mateo Valero,Adrián Cristal,2012,arch
+Mateo Valero,Osman S. Unsal,2012,arch
+Mateo Valero,Antonio González 0001,1999,arch
+Mateo Valero,Roger Espasa,1999,arch
+Mateo Valero,Jared Stark,2004,arch
+Mateo Valero,Alexander V. Veidenbaum,2004,arch
+Mateo Valero,Francisco J. Cazorla,2004,arch
+Mateo Valero,Alex Ramírez,2004,arch
+Mateo Valero,Konrad Lai,2004,arch
+Mateo Valero,Adrián Cristal,2004,arch
 Suresh Jagannathan,Xiangyu Zhang,2008,highperf
 Suresh Jagannathan,Mike Dodds,2012,proglang
 Suresh Jagannathan,Xiangyu Zhang,2010,arch
@@ -32705,6 +33947,44 @@ Michael R. Genesereth,Jeffrey S. Rosenschein,1986,ai
 Michael R. Genesereth,Illah R. Nourbakhsh,1993,ai
 Michael R. Genesereth,Devika Subramanian,1987,ai
 Michael R. Genesereth,Jeffrey S. Rosenschein,1985,ai
+Thomas Neumann 0001,Sebastian Michel,2008,web
+Thomas Neumann 0001,Ralf Schenkel,2008,web
+Thomas Neumann 0001,Josiane Xavier Parreira,2008,web
+Thomas Neumann 0001,Gerhard Weikum,2008,web
+Thomas Neumann 0001,Franz Färber,2013,database
+Thomas Neumann 0001,Alfons Kemper,2013,database
+Thomas Neumann 0001,Tobias Mühlbauer,2013,database
+Thomas Neumann 0001,Angelika Reiser,2013,database
+Thomas Neumann 0001,Norman May,2013,database
+Thomas Neumann 0001,Alfons Kemper,2015,database
+Thomas Neumann 0001,Tobias Mühlbauer,2015,database
+Thomas Neumann 0001,Franz Färber,2015,database
+Thomas Neumann 0001,Norman May,2015,database
+Thomas Neumann 0001,Peter A. Boncz,2015,database
+Thomas Neumann 0001,Guido Moerkotte,2008,database
+Thomas Neumann 0001,Mauro Sozio,2008,database
+Thomas Neumann 0001,Gerhard Weikum,2008,database
+Thomas Neumann 0001,Guido Moerkotte,2003,database
+Thomas Neumann 0001,Sven Helmer,2003,database
+Thomas Neumann 0001,Tobias Mühlbauer,2016,database
+Thomas Neumann 0001,Peter A. Boncz,2016,database
+Thomas Neumann 0001,Alfons Kemper,2016,database
+Thomas Neumann 0001,Guido Moerkotte,2009,database
+Thomas Neumann 0001,Gerhard Weikum,2009,database
+Thomas Neumann 0001,Guido Moerkotte,2011,database
+Thomas Neumann 0001,Guido Moerkotte,2004,database
+Thomas Neumann 0001,Guido Moerkotte,2006,database
+Thomas Neumann 0001,Gerhard Weikum,2007,web
+Thomas Neumann 0001,Srikanta J. Bedathur,2007,web
+Thomas Neumann 0001,Klaus Berberich,2007,web
+Thomas Neumann 0001,Fabian M. Suchanek,2010,database
+Thomas Neumann 0001,Nicoleta Preda,2010,database
+Thomas Neumann 0001,Gjergji Kasneci,2010,database
+Thomas Neumann 0001,Gerhard Weikum,2010,database
+Thomas Neumann 0001,Alfons Kemper,2012,database
+Thomas Neumann 0001,Nikolaus Augsten,2014,database
+Thomas Neumann 0001,Alfons Kemper,2014,database
+Thomas Neumann 0001,Peter A. Boncz,2014,database
 Benjamin Watson,Larry F. Hodges,2004,graphics
 Benjamin Watson,Yoshifumi Kitamura,2002,hci
 Benjamin Watson,Ehud Sharlin,2002,hci
@@ -32742,6 +34022,7 @@ Stanislaw Jarecki,Charanjit S. Jutla,2013,security
 Stanislaw Jarecki,Hugo Krawczyk,1995,crypto
 Stanislaw Jarecki,Moti Yung,1995,crypto
 Stanislaw Jarecki,Amir Herzberg,1995,crypto
+Ian M. Mitchell,Junaed Sattar,2014,robotics
 Lyle H. Ungar,Marcos Salganicoff,1995,mlmining
 Lyle H. Ungar,Dean P. Foster,2005,mlmining
 Lyle H. Ungar,Dean P. Foster,2010,nlp
@@ -32812,10 +34093,21 @@ Kamalika Chaudhuri,Kunal Talwar,2007,database
 Kamalika Chaudhuri,Satyen Kale,2007,database
 Kamalika Chaudhuri,Frank McSherry,2007,database
 Kamalika Chaudhuri,Nina Mishra,2006,crypto
+Michael S. Langer,Steven W. Zucker,1994,vision
+Michael S. Langer,Scott McCloskey,2009,vision
+Michael S. Langer,Richard Mann,2001,vision
+Michael S. Langer,Steven W. Zucker,1993,vision
+Michael S. Langer,Sébastien Roy,2011,vision
+Michael S. Langer,Steven W. Zucker,1997,vision
 Benjamin J. Hescott,Roni Khardon,2014,ai
 Christopher Riesbeck,Abhishek B. Sharma,2007,ai
 Christopher Riesbeck,Lawrence Birnbaum,2007,ai
 Christopher Riesbeck,Kenneth D. Forbus,2007,ai
+Clark Verbrugge,Laurie J. Hendren,2003,oopfp
+Clark Verbrugge,Karel Driesen,2003,oopfp
+Clark Verbrugge,Laurie J. Hendren,2004,oopfp
+Clark Verbrugge,Oege de Moor,2004,oopfp
+Clark Verbrugge,Ganesh Sittampalam,2004,oopfp
 Prashant J. Shenoy,Mark D. Corner,2009,networks
 Prashant J. Shenoy,Jeremy Gummeson,2009,networks
 Prashant J. Shenoy,Deepak Ganesan,2009,networks
@@ -32961,6 +34253,8 @@ Martha Palmer,Alessandro Moschitti,2012,nlp
 Martha Palmer,Roberto Basili,2012,nlp
 Martha Palmer,Danilo Croce,2012,nlp
 Martha Palmer,Nianwen Xue,2006,nlp
+Jim Little,Stephen Se,2001,robotics
+Jim Little,David G. Lowe,2001,robotics
 Jordan L. Boyd-Graber,Richard Socher,2014,nlp
 Jordan L. Boyd-Graber,Viet-An Nguyen,2014,nlp
 Jordan L. Boyd-Graber,He He,2014,nlp
@@ -33215,8 +34509,8 @@ Nando de Freitas,Misha Denil,2013,mlmining
 Nando de Freitas,Marc'Aurelio Ranzato,2013,mlmining
 Nando de Freitas,Padhraic Smyth,2015,mlmining
 Nando de Freitas,Misha Denil,2015,mlmining
-Nando de Freitas,Peter Carbonetto,2008,mlmining
 Nando de Freitas,Mark W. Schmidt,2008,mlmining
+Nando de Freitas,Peter Carbonetto,2008,mlmining
 Nando de Freitas,Arnaud Doucet,2001,mlmining
 Nando de Freitas,José A. Castellanos,2007,robotics
 Nando de Freitas,Ruben Martinez-Cantin,2007,robotics
@@ -34227,6 +35521,8 @@ I. V. Ramakrishnan,David Scott Warren,2008,mobile
 I. V. Ramakrishnan,Michael Kifer,2000,database
 I. V. Ramakrishnan,Hasan Davulcu,2000,database
 I. V. Ramakrishnan,Guizhen Yang,2000,database
+Jordi Guitart,Thu D. Nguyen,2011,highperf
+Jordi Guitart,Ricardo Bianchini,2011,highperf
 Thomas Ristenpart,Somesh Jha,2014,security
 Thomas Ristenpart,Yinqian Zhang,2014,security
 Thomas Ristenpart,Thomas Shrimpton,2014,security
@@ -34500,6 +35796,120 @@ Ramesh Govindan,Andreas Terzis,2009,mobile
 Ramesh Govindan,Philip Levis,2009,mobile
 Ramesh Govindan,Chieh-Jan Mike Liang,2009,mobile
 Ramesh Govindan,David P. Anderson,1991,opsys
+Nils Thuerey,Derek Nowrouzezahrai,2015,graphics
+Nils Thuerey,Chris Wojtan,2015,graphics
+Nils Thuerey,Theodore Kim,2015,graphics
+Wolfgang Heidrich,Sidney Fels,2010,graphics
+Wolfgang Heidrich,Derek Bradley,2010,graphics
+Wolfgang Heidrich,Tiberiu Popa,2010,graphics
+Wolfgang Heidrich,Alla Sheffer,2010,graphics
+Wolfgang Heidrich,Andreas Kolb,2013,graphics
+Wolfgang Heidrich,James Gregson,2013,graphics
+Wolfgang Heidrich,Matthias B. Hullin,2013,graphics
+Wolfgang Heidrich,Gordon Wetzstein,2013,graphics
+Wolfgang Heidrich,Ramesh Raskar,2013,graphics
+Wolfgang Heidrich,Felix Heide,2013,graphics
+Wolfgang Heidrich,Gordon Wetzstein,2015,graphics
+Wolfgang Heidrich,Matthias B. Hullin,2015,graphics
+Wolfgang Heidrich,Felix Heide,2015,graphics
+Wolfgang Heidrich,Hans-Peter Seidel,1999,graphics
+Wolfgang Heidrich,James Gregson,2013,vision
+Wolfgang Heidrich,Matthias B. Hullin,2013,vision
+Wolfgang Heidrich,Felix Heide,2013,vision
+Wolfgang Heidrich,James Gregson,2012,graphics
+Wolfgang Heidrich,Matthias B. Hullin,2012,graphics
+Wolfgang Heidrich,Lei Xiao,2014,graphics
+Wolfgang Heidrich,Nils Thürey,2014,graphics
+Wolfgang Heidrich,Matthias B. Hullin,2014,graphics
+Wolfgang Heidrich,Kiriakos N. Kutulakos,2014,graphics
+Wolfgang Heidrich,James Gregson,2014,graphics
+Wolfgang Heidrich,Matthew O'Toole,2014,graphics
+Wolfgang Heidrich,Ivo Ihrke,2014,graphics
+Wolfgang Heidrich,Felix Heide,2014,graphics
+Wolfgang Heidrich,Gordon Wetzstein,2010,vision
+Wolfgang Heidrich,Ivo Ihrke,2010,vision
+Wolfgang Heidrich,Marcus A. Magnor,2008,graphics
+Wolfgang Heidrich,Tamy Boubekeur,2008,graphics
+Wolfgang Heidrich,Derek Bradley,2008,graphics
+Wolfgang Heidrich,Tiberiu Popa,2008,graphics
+Wolfgang Heidrich,Art Tevs,2008,graphics
+Wolfgang Heidrich,Alla Sheffer,2008,graphics
+Wolfgang Heidrich,Ivo Ihrke,2008,graphics
+Wolfgang Heidrich,Hans-Peter Seidel,2008,graphics
+Wolfgang Heidrich,Hans-Peter Seidel,1998,graphics
+Wolfgang Heidrich,Philipp Slusallek,1998,graphics
+Wolfgang Heidrich,Nicolas Bonneel,2011,graphics
+Wolfgang Heidrich,Michiel van de Panne,2011,graphics
+Wolfgang Heidrich,Rafal Mantiuk,2011,graphics
+Wolfgang Heidrich,Matthew Hirsch,2011,graphics
+Wolfgang Heidrich,Sylvain Paris,2011,graphics
+Wolfgang Heidrich,Douglas Lanman,2011,graphics
+Wolfgang Heidrich,Gordon Wetzstein,2011,graphics
+Wolfgang Heidrich,Ramesh Raskar,2011,graphics
+Wolfgang Heidrich,Matthew O'Toole,2007,vision
+Wolfgang Heidrich,Abhijeet Ghosh,2007,vision
+Wolfgang Heidrich,Hans-Peter Seidel,2000,graphics
+Wolfgang Heidrich,Jan Kautz,2000,graphics
+Wolfgang Heidrich,Rafal Mantiuk,2011,vision
+Wolfgang Heidrich,Gordon Wetzstein,2011,vision
+Wolfgang Heidrich,Ramesh Raskar,2011,vision
+Wolfgang Heidrich,Lei Xiao,2014,vision
+Wolfgang Heidrich,Matthias B. Hullin,2014,vision
+Wolfgang Heidrich,Felix Heide,2014,vision
+Wolfgang Heidrich,Derek Bradley,2008,vision
+Wolfgang Heidrich,Tamy Boubekeur,2008,vision
+Wolfgang Heidrich,Abhijeet Ghosh,2004,graphics
+Wolfgang Heidrich,Wolfgang Stürzlinger,2004,graphics
+Wolfgang Heidrich,Jan Kautz,2003,graphics
+Wolfgang Heidrich,Michael Goesele,2003,graphics
+Wolfgang Heidrich,Hendrik P. A. Lensch,2003,graphics
+Wolfgang Heidrich,Hans-Peter Seidel,2003,graphics
+Wolfgang Heidrich,Lei Xiao,2015,vision
+Wolfgang Heidrich,Matthias B. Hullin,2015,vision
+Wolfgang Heidrich,Andreas Kolb,2015,vision
+Wolfgang Heidrich,Gordon Wetzstein,2015,vision
+Wolfgang Heidrich,Matthew O'Toole,2015,vision
+Wolfgang Heidrich,Felix Heide,2015,vision
+Wolfgang Heidrich,James Gregson,2016,graphics
+Georg Klinker,John P. McDermott,1987,ai
+Giuseppe Carenini,Cristina Conati,2014,hci
+Giuseppe Carenini,Yashar Mehdad,2014,nlp
+Giuseppe Carenini,Raymond T. Ng,2014,nlp
+Giuseppe Carenini,Shima Gerani,2014,nlp
+Giuseppe Carenini,Raymond T. Ng,2005,mlmining
+Giuseppe Carenini,Cristina Conati,2015,ai
+Giuseppe Carenini,Shafiq R. Joty,2010,nlp
+Giuseppe Carenini,Raymond T. Ng,2010,nlp
+Giuseppe Carenini,Johanna D. Moore,1995,ai
+Giuseppe Carenini,Vibhu O. Mittal,1995,ai
+Giuseppe Carenini,Steven F. Roth,1995,ai
+Giuseppe Carenini,Raymond T. Ng,2007,web
+Giuseppe Carenini,Cristina Conati,2001,ai
+Giuseppe Carenini,Johanna D. Moore,2001,ai
+Giuseppe Carenini,Shafiq R. Joty,2011,ai
+Giuseppe Carenini,Chin-Yew Lin,2011,ai
+Giuseppe Carenini,Johanna D. Moore,2000,nlp
+Giuseppe Carenini,Shafiq R. Joty,2013,nlp
+Giuseppe Carenini,Yashar Mehdad,2013,nlp
+Giuseppe Carenini,Raymond T. Ng,2013,nlp
+Giuseppe Carenini,Raymond T. Ng,2008,nlp
+Giuseppe Carenini,Cristina Conati,2013,hci
+Felix Brandt,Paul Harrenstein,2008,ai
+Felix Brandt,Felix A. Fischer,2008,ai
+Felix Brandt,Tuomas Sandholm,2007,ai
+Felix Brandt,Paul Harrenstein,2007,ai
+Felix Brandt,Yoav Shoham,2007,ai
+Felix Brandt,Felix A. Fischer,2007,ai
+Felix Brandt,Paul Harrenstein,2014,ai
+Felix Brandt,Markus Brill,2014,ai
+Felix Brandt,Haris Aziz,2014,ai
+Felix Brandt,Lane A. Hemaspaandra,2010,ai
+Felix Brandt,Markus Brill,2010,ai
+Felix Brandt,Edith Hemaspaandra,2010,ai
+Felix Brandt,Yoav Shoham,2006,ai
+Felix Brandt,Felix A. Fischer,2006,ai
+Felix Brandt,Haris Aziz,2011,ai
+Felix Brandt,Markus Brill,2011,ai
 Erik Andersen,Evan Herbst,2010,graphics
 Erik Andersen,Yongjoon Lee,2010,graphics
 Erik Andersen,Zoran Popovic,2010,graphics
@@ -35412,11 +36822,6 @@ Ruzena Bajcsy,Henrik I. Christensen,1997,robotics
 Luca P. Carloni,Karl Stratos,2015,web
 Luca P. Carloni,Kenneth L. McMillan,1999,logic
 Luca P. Carloni,Alberto L. Sangiovanni-Vincentelli,1999,logic
-Sanmay Das,Malik Magdon-Ismail,2013,ai
-Sanmay Das,Elliot Anshelevich,2013,ai
-Sanmay Das,Malik Magdon-Ismail,2008,mlmining
-Sanmay Das,Jeff Trinkle,2010,robotics
-Sanmay Das,Volkan Isler,2010,robotics
 Joshua R. Smith,Howard Jay Chizeck,2015,robotics
 Joshua R. Smith,Fuchun Sun,2015,robotics
 Joshua R. Smith,Vincent Liu,2013,networks
@@ -35450,41 +36855,41 @@ Joshua R. Smith,Cynthia Matuszek,2011,robotics
 Joshua R. Smith,Liefeng Bo,2011,robotics
 Joshua R. Smith,Dieter Fox,2011,robotics
 Joshua R. Smith,Marc Peter Deisenroth,2011,robotics
-Steve Zdancewic,Dimitrios Vytiniotis,2011,proglang
-Steve Zdancewic,Stephanie Weirich,2011,proglang
-Steve Zdancewic,Simon L. Peyton Jones,2011,proglang
 Steve Zdancewic,Peng Li,2007,proglang
 Steve Zdancewic,Nathaniel Nystrom,2001,opsys
 Steve Zdancewic,Andrew C. Myers,2001,opsys
 Steve Zdancewic,Santosh Nagarakatte,2012,proglang
 Steve Zdancewic,Milo M. K. Martin,2012,proglang
 Steve Zdancewic,Jianzhou Zhao,2012,proglang
-Steve Zdancewic,Colin Blundell,2008,arch
-Steve Zdancewic,Milo M. K. Martin,2008,arch
-Steve Zdancewic,Andrew C. Myers,2003,security
-Steve Zdancewic,Stephen Chong,2003,security
-Steve Zdancewic,Santosh Nagarakatte,2012,arch
-Steve Zdancewic,Milo M. K. Martin,2012,arch
-Steve Zdancewic,Viktor Vafeiadis,2015,proglang
-Steve Zdancewic,Chung-Kil Hur,2015,proglang
-Steve Zdancewic,Santosh Nagarakatte,2009,proglang
-Steve Zdancewic,Milo M. K. Martin,2009,proglang
-Steve Zdancewic,Jianzhou Zhao,2009,proglang
+Steve Zdancewic,Stephanie Weirich,2009,security
+Steve Zdancewic,Benjamin C. Pierce,2009,security
 Steve Zdancewic,Santosh Nagarakatte,2013,proglang
 Steve Zdancewic,Milo M. K. Martin,2013,proglang
 Steve Zdancewic,Jianzhou Zhao,2013,proglang
-Steve Zdancewic,Stephanie Weirich,2009,security
-Steve Zdancewic,Benjamin C. Pierce,2009,security
-Steve Zdancewic,David Walker,2016,proglang
 Steve Zdancewic,Jianzhou Zhao,2008,oopfp
 Steve Zdancewic,Limin Jia,2008,oopfp
+Steve Zdancewic,Andrew C. Myers,2003,security
+Steve Zdancewic,Stephen Chong,2003,security
+Steve Zdancewic,Colin Blundell,2008,arch
+Steve Zdancewic,Milo M. K. Martin,2008,arch
+Steve Zdancewic,Viktor Vafeiadis,2015,proglang
+Steve Zdancewic,Chung-Kil Hur,2015,proglang
+Steve Zdancewic,David Walker,2003,oopfp
+Steve Zdancewic,Jay Ligatti,2003,oopfp
+Steve Zdancewic,Santosh Nagarakatte,2009,proglang
+Steve Zdancewic,Milo M. K. Martin,2009,proglang
+Steve Zdancewic,Jianzhou Zhao,2009,proglang
+Steve Zdancewic,Dan Grossman,1999,oopfp
+Steve Zdancewic,J. Gregory Morrisett,1999,oopfp
 Steve Zdancewic,Peng Li,2005,proglang
 Steve Zdancewic,Santosh Nagarakatte,2013,oopfp
 Steve Zdancewic,Milo M. K. Martin,2013,oopfp
-Steve Zdancewic,David Walker,2003,oopfp
-Steve Zdancewic,Jay Ligatti,2003,oopfp
-Steve Zdancewic,Dan Grossman,1999,oopfp
-Steve Zdancewic,J. Gregory Morrisett,1999,oopfp
+Steve Zdancewic,Santosh Nagarakatte,2012,arch
+Steve Zdancewic,Milo M. K. Martin,2012,arch
+Steve Zdancewic,Dimitrios Vytiniotis,2011,proglang
+Steve Zdancewic,Stephanie Weirich,2011,proglang
+Steve Zdancewic,Simon L. Peyton Jones,2011,proglang
+Steve Zdancewic,David Walker,2016,proglang
 Sandhya Dwarkadas,Kai Shen,2013,arch
 Sandhya Dwarkadas,Xiao Zhang,2013,arch
 Sandhya Dwarkadas,Arrvindh Shriraman,2013,arch
@@ -35789,6 +37194,28 @@ James Cheney,Sam Lindley,2013,oopfp
 James Cheney,Philip Wadler,2014,database
 James Cheney,Sam Lindley,2014,database
 Rüdiger L. Urbanke,Dimitris Achlioptas,2016,theory
+Nils Thürey,Markus H. Gross,2010,graphics
+Nils Thürey,Greg Turk,2010,graphics
+Nils Thürey,Christopher Wojtan,2010,graphics
+Nils Thürey,Tobias Pfaff,2010,graphics
+Nils Thürey,Markus H. Gross,2012,graphics
+Nils Thürey,Tobias Pfaff,2012,graphics
+Nils Thürey,Wolfgang Heidrich,2014,graphics
+Nils Thürey,Chris Wojtan,2014,graphics
+Nils Thürey,James Gregson,2014,graphics
+Nils Thürey,Greg Turk,2014,graphics
+Nils Thürey,Ivo Ihrke,2014,graphics
+Nils Thürey,Ulrich Rüde,2004,highperf
+Nils Thürey,Theodore Kim,2013,graphics
+Nils Thürey,Chris Wojtan,2013,graphics
+Nils Thürey,Markus H. Gross,2008,graphics
+Nils Thürey,Theodore Kim,2008,graphics
+Nils Thürey,Doug L. James,2008,graphics
+Nils Thürey,Markus H. Gross,2009,graphics
+Nils Thürey,Greg Turk,2009,graphics
+Nils Thürey,Christopher Wojtan,2009,graphics
+Nils Thürey,Andrew Selle,2009,graphics
+Nils Thürey,Tobias Pfaff,2009,graphics
 Ling Liu,Kisung Lee,2013,highperf
 Ling Liu,Mudhakar Srivatsa,2005,web
 Ling Liu,Li Xiong,2005,web
@@ -35936,6 +37363,11 @@ Mohamed G. Gouda,Simon S. Lam,2001,web
 Mohamed G. Gouda,Yang Richard Yang,2001,web
 Mohamed G. Gouda,Umeshwar Dayal,1984,database
 Mohamed G. Gouda,Simon S. Lam,1998,networks
+Hamed Hatami,Michael Molloy,2010,theory
+Hamed Hatami,Arnab Bhattacharyya,2013,theory
+Hamed Hatami,Shachar Lovett,2013,theory
+Hamed Hatami,Eldar Fischer,2013,theory
+Hamed Hatami,Shachar Lovett,2011,theory
 Anupam Datta,Avrim Blum,2012,theory
 Anupam Datta,Deepak Garg 0001,2011,security
 Anupam Datta,Limin Jia,2011,security
@@ -36112,6 +37544,28 @@ Yong Cao,Petros Faloutsos,2005,graphics
 Yong Cao,Yong Yu,2014,ai
 Yong Cao,Zaiqing Nie,2014,ai
 Yong Cao,Yong Rui,2014,ai
+Michael J. Feeley,Henry M. Levy,1992,oopfp
+Michael J. Feeley,Mary K. Vernon,1996,arch
+Michael J. Feeley,Geoffrey M. Voelker,1996,arch
+Michael J. Feeley,Henry M. Levy,1996,arch
+Michael J. Feeley,Anna R. Karlin,1996,arch
+Michael J. Feeley,Jeffrey S. Chase,1998,metrics
+Michael J. Feeley,Geoffrey M. Voelker,1998,metrics
+Michael J. Feeley,Tracy Kimbrel,1998,metrics
+Michael J. Feeley,Henry M. Levy,1998,metrics
+Michael J. Feeley,Anna R. Karlin,1998,metrics
+Michael J. Feeley,Frédéric H. Pighin,1995,opsys
+Michael J. Feeley,Chandramohan A. Thekkath,1995,opsys
+Michael J. Feeley,Henry M. Levy,1995,opsys
+Michael J. Feeley,Anna R. Karlin,1995,opsys
+Michael J. Feeley,Norman C. Hutchinson,1999,opsys
+Michael J. Feeley,Alistair C. Veitch,1999,opsys
+Michael J. Feeley,Henry M. Levy,1991,highperf
+Michael J. Feeley,Brian N. Bershad,1991,highperf
+Michael J. Feeley,Jeffrey S. Chase,1991,highperf
+Michael J. Feeley,Vivek R. Narasayya,1994,opsys
+Michael J. Feeley,Henry M. Levy,1994,opsys
+Michael J. Feeley,Jeffrey S. Chase,1994,opsys
 Shashi Shekhar,Jaideep Srivastava,1988,database
 Shashi Shekhar,Chang-Tien Lu,2001,mlmining
 Shashi Shekhar,Dan S. Wallach,2011,security
@@ -38519,6 +39973,8 @@ Nickolai Zeldovich,Yael Tauman Kalai,2013,theory
 Nickolai Zeldovich,Raluca A. Popa,2013,theory
 Nickolai Zeldovich,Shafi Goldwasser,2013,theory
 Nickolai Zeldovich,Vinod Vaikuntanathan,2013,theory
+Eva Marín-Tordera,Ariel Orda,2008,networks
+Eva Marín-Tordera,Alexander Sprintson,2008,networks
 Stratis Viglas,Marcelo Cintra,2015,arch
 Stratis Viglas,Vijay Nagarajan,2015,arch
 Stratis Viglas,Ioannis Koltsidas,2008,database
@@ -38534,6 +39990,32 @@ Stratis Viglas,Jeffrey F. Naughton,2002,database
 Stratis Viglas,Chun Zhang,2002,database
 Stratis Viglas,Jayavel Shanmugasundaram,2002,database
 Stratis Viglas,Eugene J. Shekita,2002,database
+Laurie J. Hendren,Pavel Avgustinov,2005,oopfp
+Laurie J. Hendren,Ondrej Lhoták,2005,oopfp
+Laurie J. Hendren,Damien Sereni,2005,oopfp
+Laurie J. Hendren,Ganesh Sittampalam,2005,oopfp
+Laurie J. Hendren,Oege de Moor,2005,oopfp
+Laurie J. Hendren,Ganesh Sittampalam,2004,oopfp
+Laurie J. Hendren,Oege de Moor,2004,oopfp
+Laurie J. Hendren,Ondrej Lhoták,2003,proglang
+Laurie J. Hendren,Feng Qian,2003,proglang
+Laurie J. Hendren,Alexandru Nicolau,1994,proglang
+Laurie J. Hendren,Eric Bodden,2008,softeng
+Laurie J. Hendren,Barthélémy Dagenais,2008,oopfp
+Laurie J. Hendren,Karel Driesen,2003,oopfp
+Laurie J. Hendren,Pavel Avgustinov,2005,proglang
+Laurie J. Hendren,Ondrej Lhoták,2005,proglang
+Laurie J. Hendren,Damien Sereni,2005,proglang
+Laurie J. Hendren,Ganesh Sittampalam,2005,proglang
+Laurie J. Hendren,Oege de Moor,2005,proglang
+Laurie J. Hendren,Kevin B. Theobald,1992,arch
+Laurie J. Hendren,Guang R. Gao,1992,arch
+Laurie J. Hendren,Alexandru Nicolau,1992,proglang
+Laurie J. Hendren,Max Schäfer,2012,softeng
+Laurie J. Hendren,Shay Artzi,2012,softeng
+Laurie J. Hendren,Frank Tip,2012,softeng
+Laurie J. Hendren,Todd D. Millstein,2012,softeng
+Laurie J. Hendren,Ondrej Lhoták,2004,proglang
 Rajeev Alur,Sebastian Burckhardt,2007,proglang
 Rajeev Alur,Milo M. K. Martin,2007,proglang
 Rajeev Alur,Susmit Sarkar,2012,logic
@@ -38608,6 +40090,8 @@ Rajeev Alur,Swarat Chaudhuri,2006,proglang
 Rajeev Alur,P. Madhusudan,2006,proglang
 Rajeev Alur,Pavol Cerný,2011,proglang
 Rajeev Alur,Loris D'Antoni,2013,logic
+Rajeev Alur,Arjun Radhakrishna,2015,logic
+Rajeev Alur,Pavol Cerný,2015,logic
 Rajeev Alur,Thomas A. Henzinger,1994,logic
 Rajeev Alur,Limor Fix,1994,logic
 Rajeev Alur,Thomas A. Henzinger,1993,theory
@@ -38622,6 +40106,25 @@ Ben Reichardt,Robert Spalek,2007,theory
 Ben Reichardt,Shengyu Zhang,2007,theory
 Ben Reichardt,Andris Ambainis,2007,theory
 Ben Reichardt,Robert Spalek,2008,theory
+Joanna McGrenere,Karyn Moffatt,2010,hci
+Joanna McGrenere,Leah Findlater,2005,hci
+Joanna McGrenere,Karyn Moffatt,2005,hci
+Joanna McGrenere,Sidney Fels,2005,hci
+Joanna McGrenere,Tamara Munzner,2006,hci
+Joanna McGrenere,Kellogg S. Booth,2006,hci
+Joanna McGrenere,François Guimbretière,2006,hci
+Joanna McGrenere,Leah Findlater,2008,hci
+Joanna McGrenere,Kellogg S. Booth,2002,hci
+Joanna McGrenere,Ronald Baecker,2002,hci
+Joanna McGrenere,Leah Findlater,2009,hci
+Joanna McGrenere,Karyn Moffatt,2009,hci
+Joanna McGrenere,Tamara Munzner,2012,hci
+Joanna McGrenere,Andrea Bunt,2007,hci
+Joanna McGrenere,Maria M. Klawe,2004,hci
+Joanna McGrenere,Leah Findlater,2004,hci
+Joanna McGrenere,Karyn Moffatt,2004,hci
+Joanna McGrenere,Katherine J. Kuchenbecker,2013,hci
+Joanna McGrenere,Karon E. MacLean,2013,hci
 Alan Blackwell,Per Ola Kristensson,2012,hci
 Alan Blackwell,David Coyle,2012,hci
 Nicolas Courtois,Jacques Patarin,2000,crypto
@@ -39517,6 +41020,12 @@ Ramana Rao Kompella,Myungjin Lee,2011,networks
 Ramana Rao Kompella,Hyunseok Chang,2011,networks
 Ramana Rao Kompella,Sarit Mukherjee,2011,networks
 Ramana Rao Kompella,Murali S. Kodialam,2011,networks
+Gregor Kiczales,John Lamping,1992,oopfp
+Gregor Kiczales,Mira Mezini,2005,softeng
+Gregor Kiczales,John Lamping,1997,softeng
+Gregor Kiczales,Cristina Videira Lopes,1997,softeng
+Gregor Kiczales,Gail C. Murphy,1997,softeng
+Gregor Kiczales,Daniel G. Bobrow,1986,oopfp
 Leonid A. Levin,Gene Itkis,1994,theory
 Leonid A. Levin,Russell Impagliazzo,1989,theory
 Leonid A. Levin,Oded Goldreich,1989,theory
@@ -39734,8 +41243,8 @@ Randy H. Katz,Jennifer Rexford,2004,networks
 Randy H. Katz,Scott Shenker,2004,networks
 Randy H. Katz,Edward K. Lee 0001,1993,metrics
 Randy H. Katz,Eugene Wong,1980,database
-Randy H. Katz,Tao Ye,1998,mobile
 Randy H. Katz,Hans-Arno Jacobsen,1998,mobile
+Randy H. Katz,Tao Ye,1998,mobile
 Randy H. Katz,Ion Stoica,2011,networks
 Randy H. Katz,Anthony D. Joseph,2011,networks
 Randy H. Katz,Matei Zaharia,2011,networks
@@ -41142,6 +42651,23 @@ Lenwood S. Heath,Sorin Istrail,1987,theory
 Greg N. Frederickson,Donald B. Johnson,1980,theory
 Greg N. Frederickson,Nancy A. Lynch,1984,theory
 Greg N. Frederickson,Ravi Janardan,1986,theory
+Kaleem Siddiqi,Gregory Dudek,2015,robotics
+Kaleem Siddiqi,Ioannis M. Rekleitis,2015,robotics
+Kaleem Siddiqi,Benjamin B. Kimia,1994,vision
+Kaleem Siddiqi,Steven W. Zucker,1998,vision
+Kaleem Siddiqi,Sven J. Dickinson,1998,vision
+Kaleem Siddiqi,Marcello Pelillo,1998,vision
+Kaleem Siddiqi,Ali Shokoufandeh,1998,vision
+Kaleem Siddiqi,Allen Tannenbaum,1998,vision
+Kaleem Siddiqi,Allen Tannenbaum,1999,vision
+Kaleem Siddiqi,Steven W. Zucker,1999,vision
+Kaleem Siddiqi,Sven J. Dickinson,1999,vision
+Kaleem Siddiqi,Ali Shokoufandeh,1999,vision
+Kaleem Siddiqi,Sven J. Dickinson,2008,vision
+Kaleem Siddiqi,Benjamin B. Kimia,1993,vision
+Kaleem Siddiqi,Benjamin B. Kimia,1996,vision
+Kaleem Siddiqi,Steven W. Zucker,1997,vision
+Kaleem Siddiqi,Allen Tannenbaum,1997,vision
 Matthias Scheutz,Yu Zhang,2015,robotics
 Matthias Scheutz,Tom Williams,2015,robotics
 Matthias Scheutz,David E. Smith,2015,robotics
@@ -41663,6 +43189,17 @@ Sorin Istrail,Bard Bloom,1988,proglang
 Sorin Istrail,Albert R. Meyer,1988,proglang
 Sorin Istrail,Christos H. Papadimitriou,1999,theory
 Sorin Istrail,Lenwood S. Heath,1987,theory
+Gerhard Hirzinger,Friedrich Lange,1992,robotics
+Gerhard Hirzinger,Klaus Landzettel,1994,robotics
+Gerhard Hirzinger,Bernhard Brunner,1994,robotics
+Gerhard Hirzinger,Friedrich Lange,1994,robotics
+Gerhard Hirzinger,Máximo A. Roa,2011,robotics
+Gerhard Hirzinger,Christian Ott,2011,robotics
+Gerhard Hirzinger,Alin Albu-Schäffer,2011,robotics
+Gerhard Hirzinger,Rainer Konietschke,2011,robotics
+Gerhard Hirzinger,Masaru Uchiyama,1996,robotics
+Gerhard Hirzinger,Dragomir N. Nenchev,1996,robotics
+Gerhard Hirzinger,Yuichi Tsumaki,1996,robotics
 Edward D. Lazowska,Henry M. Levy,1992,oopfp
 Edward D. Lazowska,Jeffrey S. Chase,1992,oopfp
 Edward D. Lazowska,Henry M. Levy,1989,opsys
@@ -42178,6 +43715,13 @@ Joseph Devietti,Luis Ceze,2011,arch
 Joseph Devietti,Luis Ceze,2009,arch
 Joseph Devietti,Mark Oskin,2009,arch
 Joseph Devietti,Brandon Lucia,2009,arch
+Ronald Garcia,Amr Sabry,2009,proglang
+Ronald Garcia,Andrew Lumsdaine,2009,proglang
+Ronald Garcia,Éric Tanter,2016,proglang
+Ronald Garcia,Andrew Lumsdaine,2003,oopfp
+Ronald Garcia,Jeremiah Willcock,2003,oopfp
+Ronald Garcia,Jeremy G. Siek,2003,oopfp
+Ronald Garcia,Éric Tanter,2014,oopfp
 Gary K. Fedder,Seth Copen Goldstein,2007,robotics
 Gary K. Fedder,Jason Campbell,2007,robotics
 Gary K. Fedder,Ivan Poupyrev,2013,hci
@@ -42744,6 +44288,23 @@ Xiaowei Yang,Srikanth Kandula,2010,metrics
 Xiaowei Yang,Ming Zhang,2010,metrics
 Xiaowei Yang,Ang Li,2011,networks
 Xiaowei Yang,Xin Liu,2011,networks
+Andrew Warfield,Jacob R. Lorch,2015,networks
+Andrew Warfield,Hani Jamjoom,2013,networks
+Andrew Warfield,Ion Stoica,2012,networks
+Andrew Warfield,Dhruba Borthakur,2012,networks
+Andrew Warfield,Ali Ghodsi,2012,networks
+Andrew Warfield,Srikanth Kandula,2012,networks
+Andrew Warfield,Scott Shenker,2012,networks
+Andrew Warfield,Ganesh Ananthanarayanan,2012,networks
+Andrew Warfield,Nicholas J. A. Harvey,2014,opsys
+Andrew Warfield,Steven Hand,2005,networks
+Andrew Warfield,Eric Jul,2005,networks
+Andrew Warfield,Ian Pratt,2005,networks
+Andrew Warfield,Ashraf Aboulnaga,2011,database
+Andrew Warfield,Kenneth Salem,2011,database
+Andrew Warfield,Umar Farooq Minhas,2011,database
+Andrew Warfield,Jun Zhu,2011,opsys
+Andrew Warfield,William Aiello,2011,opsys
 Radu Sion,Sumeet Bajaj,2013,database
 Radu Sion,Mikhail J. Atallah,2003,database
 Radu Sion,Sunil Prabhakar,2003,database
@@ -42889,12 +44450,7 @@ Tolga Tasdizen,Ross T. Whitaker,2007,mlmining
 Tolga Tasdizen,Ross T. Whitaker,2006,vision
 Mahesh Viswanathan 0001,Gul Agha,2004,logic
 Mahesh Viswanathan 0001,Koushik Sen,2004,logic
-Mahesh Viswanathan 0001,Omer Reingold,2000,theory
-Mahesh Viswanathan 0001,Joan Feigenbaum,2000,theory
-Mahesh Viswanathan 0001,Martin Strauss,2000,theory
-Mahesh Viswanathan 0001,Yael Gertner,2000,theory
-Mahesh Viswanathan 0001,Sampath Kannan,2000,theory
-Mahesh Viswanathan 0001,Tal Malkin,2000,theory
+Mahesh Viswanathan 0001,Koushik Sen,2006,logic
 Mahesh Viswanathan 0001,Rajeev Alur,2013,ai
 Mahesh Viswanathan 0001,Sumit Gulwani,2013,ai
 Mahesh Viswanathan 0001,Loris D'Antoni,2013,ai
@@ -42907,7 +44463,12 @@ Mahesh Viswanathan 0001,Gul Agha,2005,logic
 Mahesh Viswanathan 0001,Koushik Sen,2005,logic
 Mahesh Viswanathan 0001,A. Prasad Sistla,2008,logic
 Mahesh Viswanathan 0001,P. Madhusudan,2007,web
-Mahesh Viswanathan 0001,Koushik Sen,2006,logic
+Mahesh Viswanathan 0001,Omer Reingold,2000,theory
+Mahesh Viswanathan 0001,Joan Feigenbaum,2000,theory
+Mahesh Viswanathan 0001,Martin Strauss,2000,theory
+Mahesh Viswanathan 0001,Yael Gertner,2000,theory
+Mahesh Viswanathan 0001,Sampath Kannan,2000,theory
+Mahesh Viswanathan 0001,Tal Malkin,2000,theory
 Mahesh Viswanathan 0001,Martin Strauss,1999,theory
 Mahesh Viswanathan 0001,Joan Feigenbaum,1999,theory
 Mahesh Viswanathan 0001,Sampath Kannan,1999,theory
@@ -42939,6 +44500,67 @@ Jaideep Srivastava,Jianzhong Li,1992,database
 Jaideep Srivastava,Tao Ye,2014,mlmining
 Jaideep Srivastava,Doron Rotem,1993,database
 Jaideep Srivastava,Jianzhong Li,1993,database
+Doina Precup,Philip Bachman,2015,mlmining
+Doina Precup,Prakash Panangaden,2015,mlmining
+Doina Precup,Shie Mannor,2008,mlmining
+Doina Precup,Prakash Panangaden,2008,mlmining
+Doina Precup,Jonathan Taylor,2008,mlmining
+Doina Precup,Paul E. Utgoff,1998,mlmining
+Doina Precup,Richard S. Sutton,1998,mlmining
+Doina Precup,Satinder P. Singh,1998,mlmining
+Doina Precup,Balaraman Ravindran,1998,mlmining
+Doina Precup,Theodore J. Perkins,2002,mlmining
+Doina Precup,Joelle Pineau,2011,mlmining
+Doina Precup,André da Motta Salles Barreto,2011,mlmining
+Doina Precup,Carla E. Brodley,1997,mlmining
+Doina Precup,John Cavazos,1997,mlmining
+Doina Precup,Paul E. Utgoff,1997,mlmining
+Doina Precup,Richard S. Sutton,1997,mlmining
+Doina Precup,J. Eliot B. Moss,1997,mlmining
+Doina Precup,Darko Stefanovic,1997,mlmining
+Doina Precup,Shie Mannor,2006,mlmining
+Doina Precup,Philip Bachman,2014,mlmining
+Doina Precup,Richard S. Sutton,2014,mlmining
+Doina Precup,Amir Massoud Farahmand,2014,mlmining
+Doina Precup,Sanjoy Dasgupta,2001,mlmining
+Doina Precup,Richard S. Sutton,2001,mlmining
+Doina Precup,Joelle Pineau,2006,ai
+Doina Precup,Prakash Panangaden,2006,ai
+Doina Precup,Philip Bachman,2011,ai
+Doina Precup,Joelle Pineau,2016,ai
+Doina Precup,André da Motta Salles Barreto,2016,ai
+Doina Precup,Satinder P. Singh,2000,mlmining
+Doina Precup,Richard S. Sutton,2000,mlmining
+Doina Precup,Tal Arbel,2007,ai
+Doina Precup,Marc G. Bellemare,2007,ai
+Doina Precup,Joelle Pineau,2012,ai
+Doina Precup,Mahdi Milani Fard,2012,ai
+Doina Precup,Tal Arbel,2014,vision
+Doina Precup,James J. Clark,2014,vision
+Doina Precup,Joelle Pineau,2009,ai
+Doina Precup,Robert West 0001,2009,ai
+Doina Precup,Prakash Panangaden,2009,ai
+Doina Precup,Satinder P. Singh,2005,mlmining
+Doina Precup,Richard S. Sutton,2005,mlmining
+Doina Precup,Joelle Pineau,2013,mlmining
+Doina Precup,Amir Massoud Farahmand,2013,mlmining
+Doina Precup,Mahdi Milani Fard,2013,mlmining
+Doina Precup,André da Motta Salles Barreto,2015,ai
+Doina Precup,Joelle Pineau,2015,ai
+Doina Precup,Prakash Panangaden,2015,ai
+Doina Precup,Joelle Pineau,2007,robotics
+Doina Precup,Csaba Szepesvári,2009,mlmining
+Doina Precup,Shalabh Bhatnagar,2009,mlmining
+Doina Precup,Richard S. Sutton,2009,mlmining
+Doina Precup,Eric Wiewiora,2009,mlmining
+Doina Precup,David Silver,2009,mlmining
+Doina Precup,Shie Mannor,2010,ai
+Doina Precup,Prakash Panangaden,2015,logic
+Doina Precup,Borja Balle,2015,logic
+Doina Precup,Joelle Pineau,2012,mlmining
+Doina Precup,Amir Massoud Farahmand,2012,mlmining
+Doina Precup,Philip Bachman,2012,mlmining
+Doina Precup,André da Motta Salles Barreto,2012,mlmining
 Lirong Xia,Vincent Conitzer,2008,ai
 Lirong Xia,Jérôme Lang,2008,ai
 Lirong Xia,Haris Aziz,2015,ai
@@ -43380,6 +45002,11 @@ Yin Zhang,Subhabrata Sen,2004,metrics
 Yin Zhang,Nick G. Duffield,2004,metrics
 Yin Zhang,Sumeet Singh,2004,metrics
 Yin Zhang,Carsten Lund,2004,metrics
+Patrick van der Smagt,Hannes Hoppner,2014,robotics
+Patrick van der Smagt,Markus Grebenstein,2015,robotics
+Patrick van der Smagt,Hannes Hoppner,2015,robotics
+Patrick van der Smagt,Daniel Cremers,2015,vision
+Patrick van der Smagt,Thomas Brox,2015,vision
 Marina Jirotka,Paul Luff,2010,hci
 Suman Jana,Donald E. Porter,2011,security
 Suman Jana,Vitaly Shmatikov,2011,security
@@ -43601,6 +45228,34 @@ Dan Tsafrir,David F. Bacon,2009,oopfp
 Dan Tsafrir,Bjarne Stroustrup,2009,oopfp
 Dan Tsafrir,Assaf Schuster,2014,arch
 Dan Tsafrir,Adam Morrison,2016,arch
+Hans-Arno Jacobsen,Tilmann Rabl,2013,database
+Hans-Arno Jacobsen,Minqing Hu,2013,database
+Hans-Arno Jacobsen,Meikel Poess,2013,database
+Hans-Arno Jacobsen,Charles Zhang,2004,oopfp
+Hans-Arno Jacobsen,Tilmann Rabl,2015,database
+Hans-Arno Jacobsen,Mohammad Sadoghi,2015,database
+Hans-Arno Jacobsen,Brian F. Cooper,2008,database
+Hans-Arno Jacobsen,Utkarsh Srivastava,2008,database
+Hans-Arno Jacobsen,Ramana Yerneni,2008,database
+Hans-Arno Jacobsen,Raghu Ramakrishnan,2008,database
+Hans-Arno Jacobsen,Philip Bohannon,2008,database
+Hans-Arno Jacobsen,Adam Silberstein,2008,database
+Hans-Arno Jacobsen,Françoise Fabret,2001,database
+Hans-Arno Jacobsen,François Llirbat,2001,database
+Hans-Arno Jacobsen,Kenneth A. Ross,2001,database
+Hans-Arno Jacobsen,Dennis Shasha,2001,database
+Hans-Arno Jacobsen,Frank Olken,1998,oopfp
+Hans-Arno Jacobsen,Tao Ye,1998,mobile
+Hans-Arno Jacobsen,Randy H. Katz,1998,mobile
+Hans-Arno Jacobsen,Mohammad Sadoghi,2011,database
+Hans-Arno Jacobsen,Chunyang Ye,2011,web
+Hans-Arno Jacobsen,Haifeng Liu,2005,web
+Hans-Arno Jacobsen,Tilmann Rabl,2012,database
+Hans-Arno Jacobsen,Mohammad Sadoghi,2012,database
+Hans-Arno Jacobsen,Tilmann Rabl,2014,database
+Hans-Arno Jacobsen,Jintao Li,2014,database
+Hans-Arno Jacobsen,Yue Liu,2014,database
+Hans-Arno Jacobsen,Jian Chen,2014,database
 Mary Jane Irwin,Seung Woo Son,2008,highperf
 Mary Jane Irwin,Mahmut T. Kandemir,2008,highperf
 Mary Jane Irwin,Feihui Li,2008,highperf
@@ -43908,6 +45563,42 @@ Daniel Vogel 0001,Maneesh Agrawala,2007,hci
 Daniel Vogel 0001,Ravin Balakrishnan,2004,hci
 Lorie Loeb,Christoph Bregler,2002,graphics
 Lorie Loeb,Bruce Randall Donald,2000,graphics
+Harald Räcke,Artur Czumaj,2012,theory
+Harald Räcke,Matthias Englert,2012,theory
+Harald Räcke,Anna Adamaszek,2012,theory
+Harald Räcke,Matthias Westermann,2007,theory
+Harald Räcke,Matthias Englert,2007,theory
+Harald Räcke,Matthias Englert,2009,theory
+Harald Räcke,Hariharan Narayanan,2008,theory
+Harald Räcke,Prahladh Harsha,2008,theory
+Harald Räcke,Jaikumar Radhakrishnan,2008,theory
+Harald Räcke,Thomas P. Hayes,2008,theory
+Harald Räcke,Berthold Vöcking,2006,theory
+Harald Räcke,Frank Thomson Leighton,2006,theory
+Harald Räcke,Robert D. Kleinberg,2006,theory
+Harald Räcke,Anupam Gupta,2006,theory
+Harald Räcke,Kedar Dhamdhere,2006,theory
+Harald Räcke,Mohammad Taghi Hajiaghayi,2006,theory
+Harald Räcke,Edith Cohen,2003,theory
+Harald Räcke,Amos Fiat,2003,theory
+Harald Räcke,Haim Kaplan,2003,theory
+Harald Räcke,Yossi Azar,2003,theory
+Harald Räcke,Yuri Rabinovich,2005,theory
+Harald Räcke,Anastasios Sidiropoulos,2005,theory
+Harald Räcke,Shuchi Chawla,2005,theory
+Harald Räcke,Mihai Badoiu,2005,theory
+Harald Räcke,Tom Leighton,2005,theory
+Harald Räcke,Adi Rosén,2005,theory
+Harald Räcke,Jeong Han Kim,2005,theory
+Harald Räcke,Robert D. Kleinberg,2005,theory
+Harald Räcke,Anupam Gupta,2005,theory
+Harald Räcke,Kedar Dhamdhere,2005,theory
+Harald Räcke,Mohammad Taghi Hajiaghayi,2005,theory
+Harald Räcke,R. Ravi 0001,2005,theory
+Harald Räcke,Artur Czumaj,2011,theory
+Harald Räcke,Matthias Englert,2011,theory
+Harald Räcke,Anna Adamaszek,2011,theory
+Brigitte Pientka,Prakash Panangaden,2014,proglang
 Malathi Veeraraghavan,Ian T. Foster,2012,highperf
 Malathi Veeraraghavan,Gagan L. Choudhury,1997,networks
 Malathi Veeraraghavan,Mukesh Singhal,1997,mobile
@@ -43961,6 +45652,45 @@ Tal Malkin,Amos Beimel,2000,crypto
 Tal Malkin,Melissa Chase,2005,crypto
 Tal Malkin,Anna Lysyanskaya,2005,crypto
 Tal Malkin,Leonid Reyzin,2005,crypto
+James J. Little,Simon Léonard,2009,robotics
+James J. Little,Elizabeth A. Croft,2009,robotics
+James J. Little,David Meger,2013,robotics
+James J. Little,Elizabeth A. Croft,2013,robotics
+James J. Little,Robert Sim,2006,robotics
+James J. Little,David G. Lowe,2008,robotics
+James J. Little,David Meger,2008,robotics
+James J. Little,Elizabeth A. Croft,2008,robotics
+James J. Little,Kevin Lai,2008,robotics
+James J. Little,Per-Erik Forssén,2008,robotics
+James J. Little,Simon Léonard,2008,robotics
+James J. Little,Jesse Hoey,2003,vision
+James J. Little,Nando de Freitas,2006,vision
+James J. Little,Don Ray Murray,1998,robotics
+James J. Little,Jesse Hoey,2000,vision
+James J. Little,Don Ray Murray,2004,robotics
+James J. Little,Junaed Sattar,2014,robotics
+James J. Little,Don Ray Murray,2002,robotics
+James J. Little,David G. Lowe,2002,robotics
+James J. Little,Jesse Hoey,2002,robotics
+James J. Little,Stephen Se,2002,robotics
+James J. Little,Sidney Fels,2007,vision
+James J. Little,Hao Jiang,2007,vision
+James J. Little,Jesse Hoey,2004,vision
+James J. Little,Nando de Freitas,2004,vision
+James J. Little,David G. Lowe,2004,vision
+James J. Little,David Meger,2010,robotics
+James J. Little,Ankur Gupta,2010,robotics
+James J. Little,David Meger,2011,robotics
+James J. Little,Elizabeth A. Croft,2011,robotics
+James J. Little,Jo-Anne Ting,2011,vision
+James J. Little,Kevin P. Murphy,2011,vision
+James J. Little,Ankur Gupta,2014,vision
+James J. Little,Robert J. Woodham,2014,vision
+James J. Little,Tomaso A. Poggio,1988,vision
+James J. Little,Heinrich H. Bülthoff,1988,vision
+James J. Little,Stephen Se,2001,robotics
+James J. Little,David G. Lowe,2001,robotics
+James J. Little,Don Ray Murray,1999,robotics
 Nima Honarmand,Vikram S. Adve,2011,proglang
 Nima Honarmand,Adam Welc,2011,proglang
 Nima Honarmand,Sarita V. Adve,2011,proglang
@@ -44425,6 +46155,38 @@ Brenna Argall,Anthony Stentz,2006,robotics
 Brenna Argall,Manuela M. Veloso,2006,robotics
 Brenna Argall,Brett Browning,2008,robotics
 Brenna Argall,Manuela M. Veloso,2008,robotics
+Prakash Panangaden,Josee Desharnais,2002,logic
+Prakash Panangaden,Vineet Gupta,2002,logic
+Prakash Panangaden,Radha Jagadeesan,2002,logic
+Prakash Panangaden,Abbas Edalat,1997,logic
+Prakash Panangaden,Josee Desharnais,1997,logic
+Prakash Panangaden,Doina Precup,2015,mlmining
+Prakash Panangaden,Doina Precup,2008,mlmining
+Prakash Panangaden,Jonathan Taylor,2008,mlmining
+Prakash Panangaden,Robert L. Constable,1986,logic
+Prakash Panangaden,Brigitte Pientka,2014,proglang
+Prakash Panangaden,Abbas Edalat,1998,logic
+Prakash Panangaden,Josee Desharnais,1998,logic
+Prakash Panangaden,Josee Desharnais,2000,logic
+Prakash Panangaden,Vineet Gupta,2000,logic
+Prakash Panangaden,Radha Jagadeesan,2000,logic
+Prakash Panangaden,Joelle Pineau,2006,ai
+Prakash Panangaden,Doina Precup,2006,ai
+Prakash Panangaden,Carl A. Gunter,1991,ai
+Prakash Panangaden,Devika Subramanian,1991,ai
+Prakash Panangaden,David A. McAllester,1988,theory
+Prakash Panangaden,Vijay A. Saraswat,1991,proglang
+Prakash Panangaden,Martin C. Rinard,1991,proglang
+Prakash Panangaden,Doina Precup,2009,ai
+Prakash Panangaden,Doina Precup,2015,ai
+Prakash Panangaden,Vineet Gupta,1999,proglang
+Prakash Panangaden,Radha Jagadeesan,1999,proglang
+Prakash Panangaden,Dexter Kozen,2013,logic
+Prakash Panangaden,Doina Precup,2015,logic
+Prakash Panangaden,Borja Balle,2015,logic
+Prakash Panangaden,Alan J. Demers,1987,proglang
+Prakash Panangaden,Keshav Pingali,1989,logic
+Prakash Panangaden,Radha Jagadeesan,1989,logic
 Evimaria Terzi,John W. Byers,2013,mlmining
 Evimaria Terzi,Behzad Golshan,2013,mlmining
 Evimaria Terzi,Azer Bestavros,2013,mlmining
@@ -46521,6 +48283,11 @@ Lawrence K. Saul,John Blitzer,2004,mlmining
 Lawrence K. Saul,Kilian Q. Weinberger,2004,mlmining
 Lawrence K. Saul,Fernando Pereira,2004,mlmining
 Lawrence K. Saul,Yun Mao,2004,metrics
+Sanmay Das,Malik Magdon-Ismail,2013,ai
+Sanmay Das,Elliot Anshelevich,2013,ai
+Sanmay Das,Malik Magdon-Ismail,2008,mlmining
+Sanmay Das,Jeff Trinkle,2010,robotics
+Sanmay Das,Volkan Isler,2010,robotics
 Howie Choset,Chaohui Gong,2015,robotics
 Howie Choset,Reid G. Simmons,2015,robotics
 Howie Choset,Daniel I. Goldman,2015,robotics
@@ -46683,6 +48450,8 @@ Gill Bejerano,Naftali Tishby,2002,mlmining
 Gill Bejerano,Noam Slonim,2002,mlmining
 Gill Bejerano,Naftali Tishby,2001,mlmining
 Gill Bejerano,Yevgeny Seldin,2001,mlmining
+Bettina Kemme,Gustavo Alonso,2010,database
+Bettina Kemme,Gustavo Alonso,2000,database
 Duen Horng Chau,David A. Bader,2013,mlmining
 Duen Horng Chau,Alan Fern,2013,mlmining
 Duen Horng Chau,Danai Koutra,2013,mlmining
@@ -47878,9 +49647,9 @@ Junaed Sattar,Luz Abril Torres-Méndez,2005,robotics
 Junaed Sattar,Philippe Giguère,2005,robotics
 Junaed Sattar,Andrew Hogue,2005,robotics
 Junaed Sattar,Gregory Dudek,2006,robotics
-Junaed Sattar,Anqi Xu,2008,robotics
-Junaed Sattar,Yogesh A. Girdhar,2008,robotics
 Junaed Sattar,Gregory Dudek,2008,robotics
+Junaed Sattar,Yogesh A. Girdhar,2008,robotics
+Junaed Sattar,Anqi Xu,2008,robotics
 Junaed Sattar,Chris Prahacs,2008,robotics
 Junaed Sattar,Ioannis M. Rekleitis,2008,robotics
 Junaed Sattar,Philippe Giguère,2008,robotics
@@ -48278,6 +50047,14 @@ Funda Ergün,Tugkan Batu,2006,theory
 Funda Ergün,Süleyman Cenk Sahinalp,2006,theory
 Funda Ergün,Ravi Kumar,1999,theory
 Funda Ergün,Ronitt Rubinfeld,1999,theory
+Chen Greif,Andrei Sharf,2010,graphics
+Chen Greif,Daniel Cohen-Or,2010,graphics
+Chen Greif,Haim Avron,2010,graphics
+Chen Greif,Robert Bridson,2015,graphics
+Chen Greif,Daniel Cohen-Or,2008,graphics
+Chen Greif,Nina Amenta,2008,graphics
+Chen Greif,Alla Sheffer,2008,graphics
+Chen Greif,Andrei Sharf,2008,graphics
 Andréa W. Richa,Goran Konjevod,2007,theory
 Andréa W. Richa,Michael Mitzenmacher,1998,theory
 Andréa W. Richa,Satish Rao,1998,theory
@@ -48926,6 +50703,18 @@ Craig S. Kaplan,David Salesin,2000,graphics
 Craig S. Kaplan,Celine Latulipe,2005,hci
 Craig S. Kaplan,Charles L. A. Clarke,2005,hci
 Yike Guo,Anthony Rowe,2002,mlmining
+Anne Condon,Avi Wigderson,1994,theory
+Anne Condon,Lisa Hellerstein,1994,theory
+Anne Condon,Richard J. Lipton,1989,theory
+Anne Condon,Kevin Leyton-Brown,2009,theory
+Anne Condon,Kevin Leyton-Brown,2007,ai
+Anne Condon,Shaz Qadeer,2004,logic
+Anne Condon,Alan J. Hu,2004,logic
+Anne Condon,Amol Deshpande,2006,database
+Anne Condon,Lisa Hellerstein,2006,database
+Anne Condon,Carsten Lund,1993,theory
+Anne Condon,Peter W. Shor,1993,theory
+Anne Condon,Joan Feigenbaum,1993,theory
 Boaz Barak,Moritz Hardt,2009,theory
 Boaz Barak,Satyen Kale,2009,theory
 Boaz Barak,Frank McSherry,2007,database
@@ -49050,6 +50839,12 @@ Assaf Schuster,Dan Geiger,2009,highperf
 Assaf Schuster,Muli Ben-Yehuda,2012,arch
 Assaf Schuster,Nadav Har'El,2012,arch
 Assaf Schuster,Dan Tsafrir,2012,arch
+Ramon Canal,Minyi Guo,2013,arch
+Ramon Canal,Yao Lu,2013,arch
+Ramon Canal,Xiaoyao Liang,2013,arch
+Ramon Canal,José Duato,2009,arch
+Ramon Canal,Antonio González 0001,2000,arch
+Ramon Canal,James E. Smith,2000,arch
 Chris Callison-Burch,Rui Yan,2014,nlp
 Chris Callison-Burch,Benjamin Van Durme,2011,nlp
 Chris Callison-Burch,William Schuler,2011,nlp
@@ -50165,6 +51960,18 @@ Prasad Raghavendra,David Steurer,2011,theory
 Prasad Raghavendra,David Steurer,2013,theory
 Prasad Raghavendra,Santosh Vempala,2013,theory
 Prasad Raghavendra,James R. Lee,2013,theory
+Yang Cai,Constantinos Daskalakis,2012,theory
+Yang Cai,S. Matthew Weinberg,2012,theory
+Yang Cai,Fan Long,2009,softeng
+Yang Cai,Xi Wang,2009,softeng
+Yang Cai,Nikhil R. Devanur,2016,theory
+Yang Cai,Adrian Vetta,2016,theory
+Yang Cai,S. Matthew Weinberg,2016,theory
+Yang Cai,Constantinos Daskalakis,2011,theory
+Yang Cai,Zhiyi Huang 0002,2013,theory
+Yang Cai,Constantinos Daskalakis,2013,theory
+Yang Cai,S. Matthew Weinberg,2013,theory
+Yang Cai,Ting Zhang,2009,logic
 Cas J. F. Cremers,Srdjan Capkun,2012,security
 Cas J. F. Cremers,Benedikt Schmidt,2012,security
 Cas J. F. Cremers,Kasper Bonne Rasmussen,2012,security
@@ -50268,8 +52075,8 @@ Kenneth A. Ross,Mustafa Canim,2014,database
 Kenneth A. Ross,Mohammad Sadoghi,2014,database
 Kenneth A. Ross,Bishwaranjan Bhattacharjee,2014,database
 Kenneth A. Ross,Allen Van Gelder,1988,database
-Kenneth A. Ross,Françoise Fabret,2001,database
 Kenneth A. Ross,Hans-Arno Jacobsen,2001,database
+Kenneth A. Ross,Françoise Fabret,2001,database
 Kenneth A. Ross,Dennis Shasha,2001,database
 Kenneth A. Ross,François Llirbat,2001,database
 Kenneth A. Ross,S. Sudarshan 0001,1996,database
@@ -50310,6 +52117,7 @@ Katrina Ligett,Chaitanya Swamy,2014,theory
 Katrina Ligett,Leonard J. Schulman,2014,theory
 Katrina Ligett,Moritz Hardt,2012,mlmining
 Katrina Ligett,Frank McSherry,2012,mlmining
+Alexander Pretschner,Stefan Wagner 0001,2005,softeng
 Brent Hecht,Eytan Adar,2014,hci
 Brent Hecht,Nicholas Diakopoulos,2014,hci
 Brent Hecht,Johannes Schöning,2016,hci
@@ -50686,6 +52494,23 @@ Ranjit Jhala,Thomas A. Henzinger,2002,proglang
 Ranjit Jhala,Rupak Majumdar,2002,proglang
 Ranjit Jhala,Sorin Lerner,2016,proglang
 Ranjit Jhala,Ravi Chugh,2012,oopfp
+Wenbo He,Yu Hua,2015,networks
+Wenbo He,Xue Liu,2015,networks
+Wenbo He,Dan Feng,2015,networks
+Wenbo He,Lin Xiao,2008,networks
+Wenbo He,Feng Zhao,2008,networks
+Wenbo He,Suman Nath,2008,networks
+Wenbo He,Gong Chen,2008,networks
+Wenbo He,Jie Liu,2008,networks
+Wenbo He,Fan Zhang,2012,networks
+Wenbo He,Yu Hua,2012,networks
+Wenbo He,Xue Liu,2012,networks
+Wenbo He,Tarek F. Abdelzaher,2007,networks
+Wenbo He,Xue Liu,2007,networks
+Wenbo He,Klara Nahrstedt,2007,networks
+Wenbo He,Xin Miao,2014,networks
+Wenbo He,Kebin Liu,2014,networks
+Wenbo He,Stephanie Forrest,2011,networks
 Jeremy G. Siek,Gabriel Dos Reis,2006,oopfp
 Jeremy G. Siek,Bjarne Stroustrup,2006,oopfp
 Jeremy G. Siek,Andrew Lumsdaine,2006,oopfp
@@ -52559,6 +54384,8 @@ Gary W. Meyer,Kenneth E. Torrance,1986,graphics
 Gary W. Meyer,Michael F. Cohen,1986,graphics
 Gary W. Meyer,Holly E. Rushmeier,1986,graphics
 Gary W. Meyer,Donald P. Greenberg,1986,graphics
+Michael P. Friedlander,Mark W. Schmidt,2015,mlmining
+Llorenç Cerdà,Mateo Valero,2003,arch
 Tamara Sumner,Steven Bethard,2015,nlp
 Donald Perlis,David W. Etherington,1990,ai
 Donald Perlis,Sarit Kraus,1990,ai
@@ -52881,6 +54708,8 @@ Timothy Sherwood,Mohit Tiwari,2011,arch
 Timothy Sherwood,Diana Franklin,2009,arch
 Timothy Sherwood,Frederic T. Chong,2009,arch
 Timothy Sherwood,Mohit Tiwari,2009,arch
+Jordi Garcia,Eduard Ayguadé,1995,highperf
+Jordi Garcia,Jesús Labarta,1995,highperf
 Bruno F. Ribeiro,Philippe Nain,2012,metrics
 Bruno F. Ribeiro,Daniel R. Figueiredo,2012,metrics
 Bruno F. Ribeiro,Don Towsley,2012,metrics
@@ -53376,6 +55205,9 @@ Subbarao Kambhampati,Hankz Hankui Zhuo,2012,mlmining
 Gregory R. Andrews,Vincent W. Freeh,1994,opsys
 Gregory R. Andrews,David K. Lowenthal,1994,opsys
 Gregory R. Andrews,David P. Dobkin,1981,softeng
+Tobias Nipkow,Frank Tip,2006,oopfp
+Tobias Nipkow,Gregor Snelting,2006,oopfp
+Tobias Nipkow,Javier Esparza,2013,logic
 Padhraic Smyth,Nando de Freitas,2015,mlmining
 Padhraic Smyth,Misha Denil,2015,mlmining
 Padhraic Smyth,Ian Porteous,2008,mlmining
@@ -53490,6 +55322,7 @@ Fahiem Bacchus,Daphne Koller,1992,ai
 Fahiem Bacchus,Joseph Y. Halpern,1992,ai
 Fahiem Bacchus,Qiang Yang 0001,1992,ai
 Fahiem Bacchus,Adam J. Grove,1992,ai
+Fahiem Bacchus,George Katsirelos,2015,logic
 Fahiem Bacchus,Allen Van Gelder,2011,ai
 Fahiem Bacchus,Toniann Pitassi,2003,theory
 Fahiem Bacchus,Qiang Yang 0001,1991,ai
@@ -53827,6 +55660,9 @@ Grant E. Weddell,Jeffrey Pound,2011,ai
 Grant E. Weddell,David Toman,2009,ai
 Grant E. Weddell,William Pugh,1990,proglang
 Grant E. Weddell,David Toman,2005,ai
+Bernd Bruegge,Jeffrey C. Jackson,1992,oopfp
+Bernd Bruegge,Jim Blythe,1992,oopfp
+Bernd Bruegge,Bin Luo,1993,oopfp
 Sharad Mehrotra,Dmitri V. Kalashnikov,2013,database
 Sharad Mehrotra,Murat Kantarcioglu,2015,database
 Sharad Mehrotra,Dmitri V. Kalashnikov,2015,database
@@ -53853,6 +55689,45 @@ Sharad Mehrotra,Henry F. Korth,1993,database
 Sharad Mehrotra,Rajeev Rastogi,1993,database
 Sharad Mehrotra,Yuri Breitbart,1993,database
 Sharad Mehrotra,Abraham Silberschatz,1993,database
+William Aiello,Adi Rosén,2003,theory
+William Aiello,Rafail Ostrovsky,2003,theory
+William Aiello,Eyal Kushilevitz,2003,theory
+William Aiello,Patrick McDaniel,2011,security
+William Aiello,Stephen E. McLaughlin,2011,security
+William Aiello,Fan R. K. Chung,2000,theory
+William Aiello,Adi Rosén,1998,theory
+William Aiello,Rafail Ostrovsky,1998,theory
+William Aiello,Eyal Kushilevitz,1998,theory
+William Aiello,Ramarathnam Venkatesan,1995,theory
+William Aiello,Mihir Bellare,1995,theory
+William Aiello,Ramarathnam Venkatesan,1996,crypto
+William Aiello,Patrick Drew McDaniel,2003,security
+William Aiello,Patrick McDaniel,2006,security
+William Aiello,Kevin R. B. Butler,2006,security
+William Aiello,Yishay Mansour,2000,networks
+William Aiello,Adi Rosén,2000,networks
+William Aiello,Ramarathnam Venkatesan,1998,crypto
+William Aiello,Mihir Bellare,1998,crypto
+William Aiello,Giovanni Di Crescenzo,1998,crypto
+William Aiello,Omer Reingold,2002,security
+William Aiello,Ran Canetti,2002,security
+William Aiello,Angelos D. Keromytis,2002,security
+William Aiello,Matt Blaze,2002,security
+William Aiello,Steven M. Bellovin,2002,security
+William Aiello,Fan R. K. Chung,2001,theory
+William Aiello,Milena Mihail,1991,theory
+William Aiello,Omer Reingold,2001,crypto
+William Aiello,Yuval Ishai,2001,crypto
+William Aiello,Bruce M. Maggs,1993,theory
+William Aiello,Satish Rao,1993,theory
+William Aiello,Baruch Awerbuch,1993,theory
+William Aiello,Johan Håstad,1986,theory
+William Aiello,Shafi Goldwasser,1986,theory
+William Aiello,Jun Zhu,2011,opsys
+William Aiello,Andrew Warfield,2011,opsys
+William Aiello,Aviel D. Rubin,1999,security
+William Aiello,Martin Strauss,1999,security
+William Aiello,Johan Håstad,1987,theory
 Christophe Dubach,Michael F. P. O'Boyle,2013,highperf
 Christophe Dubach,Stephen J. Fink,2012,proglang
 Christophe Dubach,Rodric M. Rabbah,2012,proglang
@@ -54647,6 +56522,9 @@ Madhav V. Marathe,Nan Wang,2004,theory
 Madhav V. Marathe,Aravind Srinivasan,2004,theory
 Madhav V. Marathe,V. S. Anil Kumar,2004,theory
 Madhav V. Marathe,Srinivasan Parthasarathy 0002,2004,theory
+Marc González Tallada,Arnon Amir,2014,highperf
+Marc González Tallada,Rajit Manohar,2014,highperf
+Marc González Tallada,Dharmendra S. Modha,2014,highperf
 Boon Thau Loo,Chris Olston,2001,database
 Boon Thau Loo,Jennifer Widom,2001,database
 Boon Thau Loo,Wenchao Zhou,2012,networks
@@ -55398,6 +57276,34 @@ Walter L. Ruzzo,Janos Simon,1982,theory
 Walter L. Ruzzo,Martin Tompa,1982,theory
 Walter L. Ruzzo,Mike Paterson,1981,theory
 Walter L. Ruzzo,Lawrence Snyder,1981,theory
+Antonio González 0001,Xavier Vera,2013,arch
+Antonio González 0001,F. Jesús Sánchez,2003,arch
+Antonio González 0001,David R. Kaeli,2003,arch
+Antonio González 0001,F. Jesús Sánchez,2001,arch
+Antonio González 0001,Xavier Vera,2014,arch
+Antonio González 0001,Hong Wang 0003,2003,metrics
+Antonio González 0001,Tor M. Aamodt,2003,metrics
+Antonio González 0001,John Paul Shen,2003,metrics
+Antonio González 0001,Xavier Vera,2012,arch
+Antonio González 0001,Mateo Valero,1995,arch
+Antonio González 0001,Josep Llosa,1995,arch
+Antonio González 0001,Eduard Ayguadé,1995,arch
+Antonio González 0001,Grigorios Magklis,2010,arch
+Antonio González 0001,F. Jesús Sánchez,2000,arch
+Antonio González 0001,James E. Smith,2000,arch
+Antonio González 0001,Mateo Valero,2000,arch
+Antonio González 0001,Nigel P. Topham,2000,arch
+Antonio González 0001,Mateo Valero,1999,arch
+Antonio González 0001,Xavier Vera,2007,arch
+Antonio González 0001,F. Jesús Sánchez,1997,arch
+Antonio González 0001,Nigel P. Topham,1997,arch
+Antonio González 0001,F. Jesús Sánchez,2002,arch
+Antonio González 0001,Mateo Valero,2002,arch
+Antonio González 0001,Dean M. Tullsen,2005,proglang
+Antonio González 0001,David R. Kaeli,2005,proglang
+Antonio González 0001,F. Jesús Sánchez,2005,proglang
+Antonio González 0001,Xavier Vera,2011,arch
+Antonio González 0001,Xavier Vera,2009,arch
 Nikos Hardavellas,Babak Falsafi,2007,arch
 Nikos Hardavellas,Jangwoo Kim,2007,arch
 Nikos Hardavellas,James C. Hoe,2007,arch
@@ -55524,6 +57430,29 @@ Jean Yang,Karthikeyan Bhargavan,2011,oopfp
 Jean Yang,Pierre-Yves Strub,2011,oopfp
 Jean Yang,Juan Chen,2011,oopfp
 Jean Yang,Armando Solar-Lezama,2012,proglang
+Kevin Leyton-Brown,Moshe Tennenholtz,2003,ai
+Kevin Leyton-Brown,Holger H. Hoos,2013,mlmining
+Kevin Leyton-Brown,Frank Hutter,2013,mlmining
+Kevin Leyton-Brown,Holger H. Hoos,2015,ai
+Kevin Leyton-Brown,Frank Hutter,2015,ai
+Kevin Leyton-Brown,Anne Condon,2009,theory
+Kevin Leyton-Brown,Anne Condon,2007,ai
+Kevin Leyton-Brown,Albert Xin Jiang,2007,ai
+Kevin Leyton-Brown,Frank Hutter,2014,mlmining
+Kevin Leyton-Brown,Holger H. Hoos,2012,ai
+Kevin Leyton-Brown,Lin Xu,2012,ai
+Kevin Leyton-Brown,Anna R. Karlin,2012,ai
+Kevin Leyton-Brown,Milind Tambe,2012,ai
+Kevin Leyton-Brown,Manish Jain,2012,ai
+Kevin Leyton-Brown,Lin Xu,2010,ai
+Kevin Leyton-Brown,Yoav Shoham,1999,ai
+Kevin Leyton-Brown,Albert Xin Jiang,2006,ai
+Kevin Leyton-Brown,Holger H. Hoos,2009,ai
+Kevin Leyton-Brown,Lin Xu,2009,ai
+Kevin Leyton-Brown,Tomasz P. Michalak,2016,ai
+Kevin Leyton-Brown,Holger H. Hoos,2016,ai
+Kevin Leyton-Brown,Talal Rahwan,2016,ai
+Kevin Leyton-Brown,Albert Xin Jiang,2010,mlmining
 Randall Davis,Louis-Philippe Morency,2012,vision
 Randall Davis,Yale Song,2012,vision
 Randall Davis,Jacob Eisenstein,2007,nlp
@@ -55843,6 +57772,13 @@ George Candea,Neoklis Polyzotis,2009,database
 George Candea,Radek Vingralek,2009,database
 George Candea,Rachid Guerraoui,2014,arch
 George Candea,Armando Fox,2004,opsys
+David G. Kirkpatrick,William S. Evans,2000,theory
+David G. Kirkpatrick,William S. Evans,2004,theory
+David G. Kirkpatrick,Jack Snoeyink,1993,theory
+David G. Kirkpatrick,Doron Rotem,1982,database
+David G. Kirkpatrick,Frank Wm. Tompa,1982,database
+David G. Kirkpatrick,Chee-Keng Yap,1990,theory
+David G. Kirkpatrick,Bhubaneswar Mishra,1990,theory
 Ninghui Li,William H. Winsborough,2004,security
 Ninghui Li,Mahesh V. Tripunitara,2004,security
 Ninghui Li,Wahbeh H. Qardaji,2013,database
@@ -56570,6 +58506,100 @@ P. Sadayappan,Louis-Noël Pouchet,2016,proglang
 P. Sadayappan,Fabrice Rastello,2016,proglang
 P. Sadayappan,J. Ramanujam,2016,proglang
 P. Sadayappan,Albert Cohen 0001,2016,proglang
+Daniel Cremers,Javier González Jiménez,2015,robotics
+Daniel Cremers,Jörg Stückler,2015,robotics
+Daniel Cremers,Jakob Engel,2015,robotics
+Daniel Cremers,Rudolph Triebel,2015,robotics
+Daniel Cremers,Frank R. Schmidt,2007,vision
+Daniel Cremers,Thomas Schoenemann,2007,vision
+Daniel Cremers,Thomas Schoenemann,2009,vision
+Daniel Cremers,Kalin Kolev,2009,vision
+Daniel Cremers,Thomas Pock,2009,vision
+Daniel Cremers,Antonin Chambolle,2009,vision
+Daniel Cremers,Bastian Goldlücke,2009,vision
+Daniel Cremers,Horst Bischof,2009,vision
+Daniel Cremers,Frank R. Schmidt,2009,vision
+Daniel Cremers,Fredrik Kahl,2009,vision
+Daniel Cremers,Evgeny Strekalovskiy,2012,vision
+Daniel Cremers,Hiroshi Ishikawa 0002,2012,vision
+Daniel Cremers,Antonin Chambolle,2012,vision
+Daniel Cremers,Claudia Nieuwenhuis,2012,vision
+Daniel Cremers,Michael Beetz,2012,robotics
+Daniel Cremers,Dongheui Lee,2012,robotics
+Daniel Cremers,Dejan Pangercic,2012,robotics
+Daniel Cremers,Wolfram Burgard,2012,robotics
+Daniel Cremers,Felix Endres,2012,robotics
+Daniel Cremers,Jürgen Sturm,2012,robotics
+Daniel Cremers,Jakob Engel,2012,robotics
+Daniel Cremers,Thomas Schoenemann,2008,vision
+Daniel Cremers,Kalin Kolev,2008,vision
+Daniel Cremers,Joachim Weickert,2008,vision
+Daniel Cremers,Bodo Rosenhahn,2008,vision
+Daniel Cremers,Thomas Pock,2008,vision
+Daniel Cremers,Horst Bischof,2008,vision
+Daniel Cremers,Thomas Brox,2008,vision
+Daniel Cremers,Frank R. Schmidt,2008,vision
+Daniel Cremers,Uwe Franke,2008,vision
+Daniel Cremers,Hans-Peter Seidel,2008,vision
+Daniel Cremers,Andrea Torsello,2013,vision
+Daniel Cremers,Peter Schröder,2013,vision
+Daniel Cremers,Yasuo Kuniyoshi,2013,vision
+Daniel Cremers,Evgeny Strekalovskiy,2013,vision
+Daniel Cremers,Christian Kerl,2013,vision
+Daniel Cremers,Emanuele Rodolà,2013,vision
+Daniel Cremers,Jürgen Sturm,2013,vision
+Daniel Cremers,Jakob Engel,2013,vision
+Daniel Cremers,Claudia Nieuwenhuis,2013,vision
+Daniel Cremers,Tatsuya Harada,2013,vision
+Daniel Cremers,Christoph Schnörr,2004,vision
+Daniel Cremers,Nir A. Sochen,2004,vision
+Daniel Cremers,Fredrik Kahl,2013,robotics
+Daniel Cremers,Christian Kerl,2013,robotics
+Daniel Cremers,Jürgen Sturm,2013,robotics
+Daniel Cremers,Jörg Conradt,2014,robotics
+Daniel Cremers,Jürgen Sturm,2014,robotics
+Daniel Cremers,Jörg Stückler,2016,robotics
+Daniel Cremers,Christian Kerl,2016,robotics
+Daniel Cremers,Jakob Engel,2016,robotics
+Daniel Cremers,Rudolph Triebel,2016,robotics
+Daniel Cremers,Bastian Goldlücke,2010,vision
+Daniel Cremers,Kalin Kolev,2010,vision
+Daniel Cremers,Thomas Pock,2010,vision
+Daniel Cremers,Kalin Kolev,2011,vision
+Daniel Cremers,Evgeny Strekalovskiy,2011,vision
+Daniel Cremers,Bastian Goldlücke,2011,vision
+Daniel Cremers,Mathieu Aubry,2011,vision
+Daniel Cremers,Frank R. Schmidt,2011,vision
+Daniel Cremers,Junmo Kim,2014,vision
+Daniel Cremers,Samuel Rota Bulò,2014,vision
+Daniel Cremers,Evgeny Strekalovskiy,2014,vision
+Daniel Cremers,Emanuele Rodolà,2014,vision
+Daniel Cremers,Jakob Engel,2014,vision
+Daniel Cremers,Claudia Nieuwenhuis,2014,vision
+Daniel Cremers,Andrew W. Fitzgibbon,2015,vision
+Daniel Cremers,Patrick van der Smagt,2015,vision
+Daniel Cremers,Sebastian Nowozin,2015,vision
+Daniel Cremers,Andrea Albarelli,2015,vision
+Daniel Cremers,Christian Kerl,2015,vision
+Daniel Cremers,Thomas Brox,2015,vision
+Daniel Cremers,Andrea Torsello,2015,vision
+Daniel Cremers,Junmo Kim,2015,vision
+Daniel Cremers,Jamie Shotton,2015,vision
+Daniel Cremers,Richard Szeliski,2015,vision
+Daniel Cremers,Jörg Stückler,2015,vision
+Daniel Cremers,Marc Pollefeys,2015,vision
+Daniel Cremers,Emanuele Rodolà,2015,vision
+Daniel Cremers,Christoph Schnörr,2002,vision
+Daniel Cremers,Stefano Soatto,2003,vision
+Daniel Cremers,Paolo Favaro,2003,vision
+Daniel Cremers,Gianfranco Doretto,2003,vision
+Daniel Cremers,Yuri Boykov,2006,vision
+Daniel Cremers,Bodo Rosenhahn,2006,vision
+Daniel Cremers,Vladimir Kolmogorov,2006,vision
+Daniel Cremers,Leo Grady,2006,vision
+Daniel Cremers,Andrew Delong,2006,vision
+Daniel Cremers,Hans-Peter Seidel,2006,vision
+Daniel Cremers,Thomas Brox,2006,vision
 Sudipto Guha,Anthony Wirth,2015,mlmining
 Sudipto Guha,Graham Cormode,2015,mlmining
 Sudipto Guha,Andrew McGregor,2015,mlmining
@@ -56804,6 +58834,7 @@ Byron Cook,Cristiano Calcagno,2007,logic
 Byron Cook,Andrey Rybalchenko,2006,proglang
 Byron Cook,Andreas Podelski,2006,proglang
 Byron Cook,Eric Koskinen,2011,proglang
+Byron Cook,Nir Piterman,2015,logic
 Byron Cook,Tal Lev-Ami,2008,logic
 Byron Cook,Mooly Sagiv,2008,logic
 Byron Cook,Josh Berdine,2008,logic
@@ -57292,6 +59323,18 @@ Aniket Kate,Michael Backes 0001,2012,security
 Aniket Kate,Matteo Maffei,2012,security
 Aniket Kate,Michael Backes 0001,2014,security
 Aniket Kate,Dominique Schröder,2015,security
+Bruce A. Reed,Michael Molloy,2001,theory
+Bruce A. Reed,Ken-ichi Kawarabayashi,2007,theory
+Bruce A. Reed,Michael Molloy,1998,theory
+Bruce A. Reed,Ken-ichi Kawarabayashi,2009,theory
+Bruce A. Reed,Michael Molloy,2009,theory
+Bruce A. Reed,Ken-ichi Kawarabayashi,2008,theory
+Bruce A. Reed,Bojan Mohar,2008,theory
+Bruce A. Reed,Ken-ichi Kawarabayashi,2010,theory
+Bruce A. Reed,Paul Wollan,2011,theory
+Bruce A. Reed,Ken-ichi Kawarabayashi,2011,theory
+Bruce A. Reed,Ken-ichi Kawarabayashi,2013,theory
+Bruce A. Reed,Martin Grohe,2013,theory
 Prasad Tetali,Santosh Vempala,2012,theory
 Prasad Tetali,Prasad Raghavendra,2012,theory
 Prasad Tetali,David Gamarnik,2007,theory
@@ -57780,6 +59823,16 @@ John L. Hennessy,Anoop Gupta,1993,highperf
 John L. Hennessy,Thomas R. Gross,1982,proglang
 John L. Hennessy,Peter Steenkiste,1987,arch
 John L. Hennessy,Josep Torrellas,1990,metrics
+Roger Espasa,Olivier Temam,1998,arch
+Roger Espasa,Toni Juan,1998,arch
+Roger Espasa,Mateo Valero,1999,arch
+Roger Espasa,Mateo Valero,1997,arch
+Roger Espasa,James E. Smith,1997,arch
+Roger Espasa,Mateo Valero,1999,highperf
+Roger Espasa,Mateo Valero,2002,arch
+Roger Espasa,Pradeep Dubey,2008,graphics
+Roger Espasa,Pat Hanrahan,2008,graphics
+Roger Espasa,Toni Juan,2008,graphics
 Evangelos Kalogerakis,Siddhartha Chaudhuri,2011,graphics
 Evangelos Kalogerakis,Vladlen Koltun,2011,graphics
 Evangelos Kalogerakis,Leonidas J. Guibas,2011,graphics
@@ -58376,6 +60429,16 @@ Anna Lysyanskaya,Jan Camenisch,2014,crypto
 Anna Lysyanskaya,Dominique Schröder,2014,crypto
 Anna Lysyanskaya,Jonathan Katz,2014,crypto
 Anna Lysyanskaya,Dana Dachman-Soled,2014,crypto
+Joel Friedman,Endre Szemerédi,1989,theory
+Joel Friedman,Jeff Kahn,1989,theory
+Joel Friedman,Bernard Chazelle,1988,theory
+Joel Friedman,Johan Håstad,1985,theory
+Joel Friedman,Oded Goldreich,1985,theory
+Joel Friedman,Benny Chor,1985,theory
+Joel Friedman,Steven Rudich,1985,theory
+Joel Friedman,Roman Smolensky,1985,theory
+Joel Friedman,Nicholas Pippenger,1986,theory
+Joel Friedman,Paul Feldman,1986,theory
 Tomás Lozano-Pérez,Leslie Pack Kaelbling,2015,robotics
 Tomás Lozano-Pérez,Leslie Pack Kaelbling,2015,mlmining
 Tomás Lozano-Pérez,Warren P. Seering,1989,robotics
@@ -58666,6 +60729,17 @@ Stuart J. Russell,Carlos Guestrin,2005,ai
 Stuart J. Russell,David Sontag,2005,ai
 Stuart J. Russell,Andrew Y. Ng,1999,mlmining
 Michelle Strout,Mary W. Hall,2015,proglang
+Susanne Albers,Michael Mitzenmacher,1998,theory
+Susanne Albers,Stefano Leonardi,1998,theory
+Susanne Albers,Moses Charikar,1998,theory
+Susanne Albers,Naveen Garg,1998,theory
+Susanne Albers,Monika Rauch Henzinger,1997,theory
+Susanne Albers,Yishay Mansour,2006,theory
+Susanne Albers,Eyal Even-Dar,2006,theory
+Susanne Albers,Liam Roditty,2006,theory
+Susanne Albers,Sanjeev Khanna,1999,theory
+Susanne Albers,Sanjeev Arora,1999,theory
+Susanne Albers,Torben Hagerup,1992,theory
 Scott Jordan,Hong Jiang,1996,networks
 Scott Jordan,Pravin Varaiya,1991,networks
 Andrew T. Campbell,Xia Zhou,2015,mobile
@@ -59155,6 +61229,10 @@ Raymond J. Mooney,Kate Saenko,2015,vision
 Raymond J. Mooney,Lilyana Mihalkova,2007,mlmining
 Raymond J. Mooney,Razvan C. Bunescu,2007,mlmining
 Héctor Corrada Bravo,Raghu Ramakrishnan,2007,database
+Alan K. Mackworth,Yu Zhang,1998,robotics
+Alan K. Mackworth,Raymond Reiter,1990,ai
+Alan K. Mackworth,Johan de Kleer,1990,ai
+Alan K. Mackworth,Jane Mulligan,1997,robotics
 Shimon Whiteson,Frans A. Oliehoek,2015,ai
 Shimon Whiteson,Maarten de Rijke,2015,mlmining
 Shimon Whiteson,Peter Stone,2006,ai
@@ -59162,6 +61240,8 @@ Shimon Whiteson,Peter Stone,2004,ai
 Shimon Whiteson,Maarten de Rijke,2014,mlmining
 Shimon Whiteson,Rémi Munos,2014,mlmining
 Shimon Whiteson,Maarten de Rijke,2015,web
+Rachel Pottinger,Alon Y. Levy,2000,database
+Rachel Pottinger,Philip A. Bernstein,2003,database
 Zhendong Su,Vu Le,2016,softeng
 Zhendong Su,Chengnian Sun,2016,softeng
 Zhendong Su,Tao Xie,2011,oopfp
@@ -59571,6 +61651,9 @@ Ronald Baecker,Joanna McGrenere,2002,hci
 Ronald Baecker,Mark H. Chignell,1998,hci
 Ronald Baecker,Cosmin Munteanu,2015,hci
 Ronald Baecker,William T. Reeves,1981,graphics
+Julita Corbalán,Jesús Labarta,2000,opsys
+Julita Corbalán,Xavier Martorell,2000,opsys
+Julita Corbalán,Eduard Ayguadé,2008,highperf
 Heng Ji,Yu Hong,2014,nlp
 Heng Ji,Chin-Yew Lin,2014,nlp
 Heng Ji,Sujian Li,2014,nlp
@@ -59895,11 +61978,68 @@ Samuel R. Buss,Toniann Pitassi,1999,theory
 Samuel R. Buss,Maria Luisa Bonet,1991,logic
 Samuel R. Buss,John N. Tsitsiklis,1990,theory
 Samuel R. Buss,Christos H. Papadimitriou,1990,theory
+Raymond T. Ng,Yashar Mehdad,2014,nlp
+Raymond T. Ng,Giuseppe Carenini,2014,nlp
+Raymond T. Ng,Shima Gerani,2014,nlp
+Raymond T. Ng,Laks V. S. Lakshmanan,2005,database
+Raymond T. Ng,Shafiq R. Joty,2010,nlp
+Raymond T. Ng,Giuseppe Carenini,2010,nlp
+Raymond T. Ng,Edwin M. Knorr,2001,mlmining
+Raymond T. Ng,Kyuseok Shim,2009,database
+Raymond T. Ng,Hongrae Lee,2009,database
+Raymond T. Ng,Shafiq R. Joty,2013,nlp
+Raymond T. Ng,Yashar Mehdad,2013,nlp
+Raymond T. Ng,Giuseppe Carenini,2013,nlp
+Raymond T. Ng,Lei Chen 0002,2004,database
+Raymond T. Ng,Divesh Srivastava,1999,database
+Raymond T. Ng,Edwin M. Knorr,1999,database
+Raymond T. Ng,H. V. Jagadish,1999,database
+Raymond T. Ng,Laks V. S. Lakshmanan,1999,database
+Raymond T. Ng,Jiawei Han,1999,database
+Raymond T. Ng,Giuseppe Carenini,2007,web
+Raymond T. Ng,Kyuseok Shim,2007,database
+Raymond T. Ng,Hongrae Lee,2007,database
+Raymond T. Ng,Jiawei Han,1994,database
+Raymond T. Ng,Edwin M. Knorr,1998,database
+Raymond T. Ng,Jiawei Han,1998,database
+Raymond T. Ng,Laks V. S. Lakshmanan,1998,database
+Raymond T. Ng,Theodore Johnson,2002,database
+Raymond T. Ng,Laks V. S. Lakshmanan,2002,database
+Raymond T. Ng,Kyuseok Shim,2011,database
+Raymond T. Ng,Hongrae Lee,2011,database
+Raymond T. Ng,Giuseppe Carenini,2005,mlmining
+Raymond T. Ng,M. Tamer Özsu,2001,database
+Raymond T. Ng,Timos K. Sellis,1991,database
+Raymond T. Ng,Christos Faloutsos,1991,database
+Raymond T. Ng,Jef Wijsen,1999,mlmining
+Raymond T. Ng,Toon Calders,1999,mlmining
+Raymond T. Ng,Yannis E. Ioannidis,1992,database
+Raymond T. Ng,Timos K. Sellis,1992,database
+Raymond T. Ng,Anil Nerode,1992,database
+Raymond T. Ng,Kyuseok Shim,1992,database
+Raymond T. Ng,V. S. Subrahmanian,1992,database
+Raymond T. Ng,Giuseppe Carenini,2008,nlp
+Raymond T. Ng,Hans-Peter Kriegel,2000,database
+Raymond T. Ng,Laks V. S. Lakshmanan,2000,database
+Raymond T. Ng,Theodore Johnson,2000,database
+Raymond T. Ng,Jörg Sander,2000,database
 Ronald Rosenfeld,David S. Touretzky,1987,mlmining
 Ronald Rosenfeld,Andrew McCallum,1998,mlmining
 Ronald Rosenfeld,Andrew Y. Ng,1998,mlmining
 Ronald Rosenfeld,Tom M. Mitchell,1998,mlmining
 Ronald Rosenfeld,Barak A. Pearlmutter,1990,mlmining
+P. Patrick van der Smagt,Gerd Hirzinger,1998,robotics
+P. Patrick van der Smagt,Max Fischer,1998,robotics
+P. Patrick van der Smagt,Florian Petit,2012,robotics
+P. Patrick van der Smagt,Felix Huber,2012,robotics
+P. Patrick van der Smagt,Sethu Vijayakumar,2012,robotics
+P. Patrick van der Smagt,Alin Albu-Schäffer,2012,robotics
+P. Patrick van der Smagt,Sami Haddadin,2012,robotics
+P. Patrick van der Smagt,Alin Albu-Schäffer,2004,robotics
+P. Patrick van der Smagt,Claudio Castellini,2011,robotics
+P. Patrick van der Smagt,Claudio Castellini,2008,robotics
+P. Patrick van der Smagt,Gerd Hirzinger,2008,robotics
+P. Patrick van der Smagt,Giulio Sandini,2008,robotics
 Rance Cleaveland,Bernhard Steffen,1992,logic
 Rance Cleaveland,Bikram Sengupta,2002,softeng
 Rance Cleaveland,Orna Grumberg,1995,logic
@@ -61126,6 +63266,18 @@ Chang-Tien Lu,Jieping Ye,2015,mlmining
 Chang-Tien Lu,Liang Zhao,2015,mlmining
 Chang-Tien Lu,Naren Ramakrishnan,2015,mlmining
 Chang-Tien Lu,Feng Chen,2015,mlmining
+Karon E. MacLean,Elizabeth A. Croft,2011,hci
+Karon E. MacLean,Andy Cockburn,2011,hci
+Karon E. MacLean,J. Edward Colgate,2011,hci
+Karon E. MacLean,Michael A. Peshkin,2011,hci
+Karon E. MacLean,Vincent Hayward,2006,hci
+Karon E. MacLean,Amir Haddadi,2013,robotics
+Karon E. MacLean,Elizabeth A. Croft,2013,robotics
+Karon E. MacLean,Ali Israr,2015,hci
+Karon E. MacLean,Kellogg S. Booth,2007,hci
+Karon E. MacLean,Sidney Fels,2004,hci
+Karon E. MacLean,Katherine J. Kuchenbecker,2013,hci
+Karon E. MacLean,Joanna McGrenere,2013,hci
 Michelle Mills Strout,Larry Carter,2003,proglang
 Michelle Mills Strout,Jeanne Ferrante,2003,proglang
 Michelle Mills Strout,Larry Carter,1998,arch
@@ -61860,6 +64012,7 @@ P. Madhusudan,Carl A. Gunter,2008,security
 P. Madhusudan,Gennaro Parlato,2011,proglang
 P. Madhusudan,Xiaokang Qiu,2011,proglang
 P. Madhusudan,Pranav Garg 0001,2013,logic
+P. Madhusudan,Pranav Garg 0001,2015,logic
 P. Madhusudan,Gennaro Parlato,2009,logic
 P. Madhusudan,Azadeh Farzan,2009,logic
 P. Madhusudan,Salvatore La Torre,2009,logic
@@ -61944,6 +64097,42 @@ Arun Venkataramani,Michael Dahlin,2003,opsys
 Arun Venkataramani,Jian Yin,2003,opsys
 Arun Venkataramani,Jean-Philippe Martin,2003,opsys
 Arun Venkataramani,Ramesh K. Sitaraman,2013,metrics
+Dinesh K. Pai,Uri M. Ascher,2000,robotics
+Dinesh K. Pai,Paul G. Kry,2000,robotics
+Dinesh K. Pai,Jernej Barbic,2006,graphics
+Dinesh K. Pai,Doug L. James,2006,graphics
+Dinesh K. Pai,Paul G. Kry,2006,graphics
+Dinesh K. Pai,Shinjiro Sueda,2013,graphics
+Dinesh K. Pai,David I. W. Levin,2013,graphics
+Dinesh K. Pai,Shinjiro Sueda,2015,graphics
+Dinesh K. Pai,Doug L. James,1999,graphics
+Dinesh K. Pai,Bin Wang,2012,graphics
+Dinesh K. Pai,François Faure,2012,graphics
+Dinesh K. Pai,Danny M. Kaufman,2008,graphics
+Dinesh K. Pai,Doug L. James,2008,graphics
+Dinesh K. Pai,Shinjiro Sueda,2008,graphics
+Dinesh K. Pai,Paul G. Kry,2001,graphics
+Dinesh K. Pai,Kees van den Doel,2001,graphics
+Dinesh K. Pai,John E. Lloyd,2001,graphics
+Dinesh K. Pai,Doug L. James,2001,graphics
+Dinesh K. Pai,Doug L. James,2002,robotics
+Dinesh K. Pai,Robert J. Woodham,2002,robotics
+Dinesh K. Pai,Shinjiro Sueda,2011,graphics
+Dinesh K. Pai,François Faure,2011,graphics
+Dinesh K. Pai,David I. W. Levin,2011,graphics
+Dinesh K. Pai,Kees van den Doel,1994,robotics
+Dinesh K. Pai,Uri M. Ascher,1995,robotics
+Dinesh K. Pai,Danny M. Kaufman,2005,graphics
+Dinesh K. Pai,Doug L. James,2004,graphics
+Dinesh K. Pai,John E. Lloyd,2001,robotics
+Dinesh K. Pai,Matthew T. Mason,1999,robotics
+Dinesh K. Pai,Michael A. Erdmann,1999,robotics
+Dinesh K. Pai,Daniela Rus,1999,robotics
+Dinesh K. Pai,Paul G. Kry,2003,graphics
+Dinesh K. Pai,Kees van den Doel,2003,graphics
+Dinesh K. Pai,Doug L. James,2003,graphics
+Dinesh K. Pai,John E. Lloyd,1997,robotics
+Dinesh K. Pai,David G. Lowe,1997,robotics
 Joohyung Lee,Vladimir Lifschitz,2003,ai
 Joohyung Lee,Vladimir Lifschitz,2008,ai
 Joohyung Lee,Ravi Palla,2008,ai
@@ -62155,6 +64344,8 @@ Brandon Lucia,Joseph Devietti,2009,arch
 Brandon Lucia,Luis Ceze,2009,arch
 Brandon Lucia,Mark Oskin,2009,arch
 Brandon Lucia,Alanson P. Sample,2016,arch
+Alessandro Abate,Lubos Brim,2015,logic
+Alessandro Abate,Marta Z. Kwiatkowska,2015,logic
 Anuj Dawar,Nicole Schweikardt,2006,logic
 Anuj Dawar,Stephan Kreutzer,2006,logic
 Anuj Dawar,Martin Grohe,2006,logic
@@ -62554,6 +64745,22 @@ Tevfik Bultan,Samik Basu,2011,web
 Tevfik Bultan,Fang Yu,2007,softeng
 Tevfik Bultan,Richard Hull,2003,web
 Tevfik Bultan,Jianwen Su,2003,web
+Uri M. Ascher,Paul G. Kry,2000,robotics
+Uri M. Ascher,Dinesh K. Pai,2000,robotics
+Uri M. Ascher,Dinesh K. Pai,1995,robotics
+Uri M. Ascher,Minglun Gong,2013,graphics
+Uri M. Ascher,Baoquan Chen,2013,graphics
+Uri M. Ascher,Daniel Cohen-Or,2013,graphics
+Uri M. Ascher,Hui Huang 0004,2013,graphics
+Uri M. Ascher,Dani Lischinski,2013,graphics
+Uri M. Ascher,KangKang Yin,2015,graphics
+Uri M. Ascher,Hui Huang 0004,2015,graphics
+Uri M. Ascher,Bin Wang,2015,graphics
+Uri M. Ascher,Libin Liu,2015,graphics
+Uri M. Ascher,Dan Li,2009,graphics
+Uri M. Ascher,Hui Huang 0004,2009,graphics
+Uri M. Ascher,Daniel Cohen-Or,2009,graphics
+Uri M. Ascher,Hao Zhang 0002,2009,graphics
 Viktor K. Prasanna,Yang Yu,2004,networks
 Viktor K. Prasanna,Bhaskar Krishnamachari,2004,networks
 Viktor K. Prasanna,Qian-Yi Zhou,2012,web
@@ -63943,6 +66150,7 @@ Arvind,David E. Culler,1988,arch
 Arvind,Ming Liu,2015,arch
 Arvind,Hari Balakrishnan,2004,networks
 Arvind,Srinivas Devadas,2004,networks
+Arvind,Adam Chlipala,2015,logic
 Arvind,Rishiyur S. Nikhil,1992,arch
 Arvind,Larry Rudolph,1998,highperf
 Daniele Panozzo,David Harmon,2011,graphics
@@ -64407,12 +66615,12 @@ Sangyeun Cho,Gyungho Lee,1999,arch
 Sangyeun Cho,Pen-Chung Yew,1999,arch
 Philippa Gardner,Cristiano Calcagno,2007,proglang
 Philippa Gardner,Mike Dodds,2011,oopfp
-Philippa Gardner,Alan Schmitt,2014,proglang
-Philippa Gardner,Arthur Charguéraud,2014,proglang
 Philippa Gardner,Cristiano Calcagno,2005,proglang
 Philippa Gardner,Lars Birkedal,2013,proglang
 Philippa Gardner,Matthew J. Parkinson,2013,proglang
 Philippa Gardner,Hongseok Yang,2013,proglang
+Philippa Gardner,Alan Schmitt,2014,proglang
+Philippa Gardner,Arthur Charguéraud,2014,proglang
 Sven Koenig,Pinar Keskinocak,2009,robotics
 Sven Koenig,Xiaoming Zheng,2009,robotics
 Sven Koenig,Maxim Likhachev,2002,mlmining
@@ -65029,6 +67237,15 @@ Patrick McDaniel,Wahbeh H. Qardaji,2012,security
 Patrick McDaniel,Stephen E. McLaughlin,2012,security
 Patrick McDaniel,Eric Bodden,2014,proglang
 Patrick McDaniel,Yves Le Traon,2014,proglang
+Jan Kretínský,Javier Esparza,2012,logic
+Jan Kretínský,Krishnendu Chatterjee,2013,logic
+Jan Kretínský,Javier Esparza,2014,logic
+Jan Kretínský,David Parker 0001,2015,logic
+Jan Kretínský,Krishnendu Chatterjee,2015,logic
+Jan Kretínský,Martin Chmelik,2015,logic
+Jan Kretínský,Tomás Brázdil,2015,logic
+Jan Kretínský,Antonín Kucera,2008,logic
+Jan Kretínský,Tomás Brázdil,2008,logic
 Adrian Perrig,Jonathan M. McCune,2013,mobile
 Adrian Perrig,Tiffany Hyun-Jin Kim,2013,mobile
 Adrian Perrig,Yih-Chun Hu,2007,networks
@@ -65288,7 +67505,10 @@ Kevin Chen-Chuan Chang,Rui Wang,2012,mlmining
 Kevin Chen-Chuan Chang,Hongbo Deng,2012,mlmining
 Kevin Chen-Chuan Chang,Rui Li,2012,mlmining
 Kevin Chen-Chuan Chang,Hector Garcia-Molina,2000,database
+Marta Z. Kwiatkowska,David Parker 0001,2011,logic
 Marta Z. Kwiatkowska,Michael Huth,1997,logic
+Marta Z. Kwiatkowska,David Parker 0001,2006,logic
+Marta Z. Kwiatkowska,Lubos Brim,2015,logic
 Shi-Kuo Chang,Mary Lou Soffa,1992,highperf
 Patrick Thiran,Renata Teixeira,2009,networks
 Patrick Thiran,Christophe Diot,2009,networks
@@ -65428,6 +67648,9 @@ Peter Schröder,Steven J. Gortler,1993,graphics
 Peter Schröder,Pat Hanrahan,1993,graphics
 Peter Schröder,Eitan Grinspun,2003,graphics
 Peter Schröder,Mathieu Desbrun,2003,graphics
+Arndt Bode,Pradeep Dubey,2014,highperf
+Arndt Bode,Karthikeyan Vaidyanathan,2014,highperf
+Arndt Bode,Mikhail Smelyanskiy,2014,highperf
 Daniel Boley,Maria L. Gini,1995,robotics
 Daniel Boley,Vipin Kumar,1995,robotics
 Daniel Boley,Paul R. Schrater,2005,ai
@@ -67495,6 +69718,113 @@ Shyamnath Gollakota,Kate Ching-Ju Lin,2011,networks
 Shyamnath Gollakota,Benjamin Ransford,2011,networks
 Shyamnath Gollakota,Fadel Adib,2011,networks
 Shyamnath Gollakota,Dina Katabi,2011,networks
+Xue Liu,Dan Feng,2015,networks
+Xue Liu,Guoliang Xing,2015,networks
+Xue Liu,Xi Chen,2015,networks
+Xue Liu,Yu Hua,2015,networks
+Xue Liu,Lei Rao,2015,networks
+Xue Liu,Wenbo He,2015,networks
+Xue Liu,Shan Lin,2015,networks
+Xue Liu,Jianping Wang,2015,networks
+Xue Liu,Bin Xiao,2013,networks
+Xue Liu,Yuan Yao,2013,networks
+Xue Liu,Min-You Wu,2013,networks
+Xue Liu,Yu Hua,2013,networks
+Xue Liu,Lei Rao,2013,networks
+Xue Liu,Lei Rao,2012,networks
+Xue Liu,Fan Zhang,2012,networks
+Xue Liu,Xiaohua Tian,2012,networks
+Xue Liu,Wenbo He,2012,networks
+Xue Liu,Yu Hua,2012,networks
+Xue Liu,Xinbing Wang,2012,networks
+Xue Liu,Yunhao Liu,2010,networks
+Xue Liu,Lei Rao,2010,networks
+Xue Liu,Wenyu Liu,2010,networks
+Xue Liu,Shivakant Mishra,2010,networks
+Xue Liu,Jiajun Bu,2010,networks
+Xue Liu,Gong Chen,2010,networks
+Xue Liu,Wei Dong,2010,networks
+Xue Liu,Chun Chen,2010,networks
+Xue Liu,Xinyu Xing,2010,networks
+Xue Liu,Yuan He,2010,networks
+Xue Liu,Wenbo He,2007,networks
+Xue Liu,Tarek F. Abdelzaher,2007,networks
+Xue Liu,Klara Nahrstedt,2007,networks
+Xue Liu,Wei Xi,2014,networks
+Xue Liu,Dan Feng,2014,networks
+Xue Liu,Yang Zhang,2014,networks
+Xue Liu,Shaojie Tang,2014,networks
+Xue Liu,Jing Zhang,2014,networks
+Xue Liu,Xiang-Yang Li,2014,networks
+Xue Liu,Yu Hua,2014,networks
+Xue Liu,Xiaohua Tian,2014,networks
+Xue Liu,Xinbing Wang,2014,networks
+Xue Liu,Zhiping Jiang,2014,networks
+Xue Liu,Jizhong Zhao,2014,networks
+Xue Liu,Gang Zhou,2012,hci
+Xue Liu,Xin Qi,2012,hci
+Xue Liu,Yi Zhang 0001,2008,web
+Xue Liu,Xinbing Wang,2016,ai
+Xue Liu,Luoyi Fu,2016,ai
+Xue Liu,Richard Han,2012,mlmining
+Xue Liu,Shivakant Mishra,2012,mlmining
+Xue Liu,Qin Lv,2012,mlmining
+Xue Liu,Xinyu Xing,2012,mlmining
+Xue Liu,Yu Hua,2011,networks
+Xue Liu,Luoyi Fu,2011,networks
+Xue Liu,Shivakant Mishra,2011,networks
+Xue Liu,Xinbing Wang,2011,networks
+Xue Liu,Xinyu Xing,2011,networks
+Xue Liu,Richard Han,2011,web
+Xue Liu,Shivakant Mishra,2011,web
+Xue Liu,Qin Lv,2011,web
+Xue Liu,Xinyu Xing,2011,web
+Xue Liu,Gang Zhou,2011,hci
+Michael Bader,Pradeep Dubey,2014,highperf
+Michael Bader,Karthikeyan Vaidyanathan,2014,highperf
+Michael Bader,Mikhail Smelyanskiy,2014,highperf
+Eduard Ayguadé,Mateo Valero,2015,arch
+Eduard Ayguadé,Nacho Navarro,2015,arch
+Eduard Ayguadé,Miquel Moretó,2015,arch
+Eduard Ayguadé,Xavier Martorell,2015,arch
+Eduard Ayguadé,Mateo Valero,1998,arch
+Eduard Ayguadé,Josep Llosa,1998,arch
+Eduard Ayguadé,Mateo Valero,2015,highperf
+Eduard Ayguadé,Miquel Moretó,2015,highperf
+Eduard Ayguadé,Jesús Labarta,2015,highperf
+Eduard Ayguadé,Mateo Valero,2001,arch
+Eduard Ayguadé,Josep Llosa,2001,arch
+Eduard Ayguadé,Nacho Navarro,2012,highperf
+Eduard Ayguadé,Xavier Martorell,2012,highperf
+Eduard Ayguadé,Dimitrios S. Nikolopoulos,2001,highperf
+Eduard Ayguadé,Constantine D. Polychronopoulos,2001,highperf
+Eduard Ayguadé,Mateo Valero,2009,highperf
+Eduard Ayguadé,Tim Harris 0001,2009,highperf
+Eduard Ayguadé,Adrián Cristal,2009,highperf
+Eduard Ayguadé,Osman S. Unsal,2009,highperf
+Eduard Ayguadé,Dimitrios S. Nikolopoulos,2000,highperf
+Eduard Ayguadé,Constantine D. Polychronopoulos,2000,highperf
+Eduard Ayguadé,Jesús Labarta,2000,highperf
+Eduard Ayguadé,Mateo Valero,2010,arch
+Eduard Ayguadé,Jesús Labarta,2010,arch
+Eduard Ayguadé,Alex Ramírez,2010,arch
+Eduard Ayguadé,Yoav Etsion,2010,arch
+Eduard Ayguadé,Jesús Labarta,1995,highperf
+Eduard Ayguadé,Mateo Valero,2000,proglang
+Eduard Ayguadé,Josep Llosa,2000,proglang
+Eduard Ayguadé,Mateo Valero,1992,arch
+Eduard Ayguadé,Tomás Lang,1992,arch
+Eduard Ayguadé,José M. Llabería,1992,arch
+Eduard Ayguadé,Juan J. Navarro,1992,arch
+Eduard Ayguadé,Mateo Valero,2000,arch
+Eduard Ayguadé,Josep Llosa,2000,arch
+Eduard Ayguadé,Mateo Valero,1996,arch
+Eduard Ayguadé,Josep Llosa,1996,arch
+Eduard Ayguadé,Jesús Labarta,1989,highperf
+Eduard Ayguadé,Mateo Valero,1995,arch
+Eduard Ayguadé,Tomás Lang,1995,arch
+Eduard Ayguadé,Josep Llosa,1995,arch
+Eduard Ayguadé,Antonio González 0001,1995,arch
 Lenore Blum,Manuel Blum,1982,crypto
 Barton P. Miller,Dorian C. Arnold,2008,highperf
 Barton P. Miller,Martin Schulz,2008,highperf
@@ -67990,6 +70320,7 @@ Yvonne Rogers,Nadia Bianchi-Berthouze,2012,hci
 Yvonne Rogers,Kay Connelly,2007,hci
 Yvonne Rogers,Janet van der Linden,2013,hci
 Yvonne Rogers,Nadia Bianchi-Berthouze,2013,hci
+Luc Devroye,Wojciech Szpankowski,2007,theory
 Robert K. Harle,Andy Hopper,2003,mobile
 Robert K. Harle,Andy Hopper,2008,hci
 Robert K. Harle,Andy Hopper,2003,hci
@@ -68039,6 +70370,13 @@ Péter Gács,Charles H. Bennett,1993,theory
 Péter Gács,Ming Li 0001,1993,theory
 Péter Gács,Paul M. B. Vitányi,1993,theory
 Péter Gács,Peter Winkler,1992,theory
+Tamara Munzner,François Guimbretière,2006,hci
+Tamara Munzner,Joanna McGrenere,2006,hci
+Tamara Munzner,Serdar Tasiran,2003,graphics
+Tamara Munzner,Yunhong Zhou,2003,graphics
+Tamara Munzner,François Guimbretière,2003,graphics
+Tamara Munzner,Li Zhang 0001,2003,graphics
+Tamara Munzner,Joanna McGrenere,2012,hci
 Melody Moore Jackson,Thad Starner,2014,hci
 T. S. Eugene Ng,Bo Zhang,2009,networks
 T. S. Eugene Ng,Sanjay G. Rao,2015,networks
@@ -68382,6 +70720,7 @@ Yiannis Aloimonos,Cornelia Fermüller,2015,vision
 Yiannis Aloimonos,Ching Lik Teo,2015,vision
 Yiannis Aloimonos,Yezhou Yang,2015,vision
 Yiannis Aloimonos,Yi Li,2015,vision
+Agustin Fernández,Roger Espasa,2005,arch
 Ramani Duraiswami,Larry S. Davis,2007,vision
 Ramani Duraiswami,Vikas C. Raykar,2007,vision
 Ramani Duraiswami,Vlad I. Morariu,2008,mlmining
@@ -68404,6 +70743,15 @@ Eli Gafni,Danny Dolev,1988,theory
 Eli Gafni,Rachid Guerraoui,2005,theory
 Eli Gafni,Yehuda Afek,1987,theory
 Eli Gafni,Baruch Awerbuch,1987,theory
+Josep-Lluis Larriba-Pey,Hassan Chafi,2015,database
+Josep-Lluis Larriba-Pey,Peter A. Boncz,2015,database
+Josep-Lluis Larriba-Pey,Mateo Valero,2001,arch
+Josep-Lluis Larriba-Pey,Kourosh Gharachorloo,2001,arch
+Josep-Lluis Larriba-Pey,Alex Ramírez,2001,arch
+Josep-Lluis Larriba-Pey,Luiz André Barroso,2001,arch
+Josep-Lluis Larriba-Pey,P. Geoffrey Lowney,2001,arch
+Josep-Lluis Larriba-Pey,Alex Ramírez,2002,arch
+Josep-Lluis Larriba-Pey,Mateo Valero,2002,arch
 Shaul Markovitch,Eugene Agichtein,2011,web
 Shaul Markovitch,Evgeniy Gabrilovich,2011,web
 Shaul Markovitch,Kira Radinsky,2011,web
@@ -68558,6 +70906,11 @@ Bistra N. Dilkina,Ashish Sabharwal,2007,ai
 Bistra N. Dilkina,Carla P. Gomes,2007,ai
 Bistra N. Dilkina,Le Song,2016,ai
 Bistra N. Dilkina,Le Song,2014,mlmining
+Peter Struss,Martin Sachenbacher,2003,ai
+Peter Struss,Oskar Dressler,1989,ai
+Jörg Ott,Jorma T. Virtamo,2011,networks
+Jörg Ott,Esa Hyytiä,2011,networks
+Jörg Ott,Jussi Kangasharju,2011,networks
 Ehud Rivlin,Héctor Rotstein,2015,robotics
 Ehud Rivlin,Ilan Shimshoni,2000,robotics
 Ehud Rivlin,Amit Adam,2000,robotics
@@ -68765,6 +71118,14 @@ Dieter van Melkebeek,Adam Klivans,1999,theory
 Dieter van Melkebeek,Harry Buhrman,2002,theory
 Dieter van Melkebeek,Michal Koucký,2002,theory
 Dieter van Melkebeek,Eric Allender,2002,theory
+Matthias Althoff,Daniel Althoff,2015,robotics
+Matthias Althoff,Sebastian Scherer,2015,robotics
+Matthias Althoff,Daniel Althoff,2010,robotics
+Matthias Althoff,Dirk Wollherr,2010,robotics
+Matthias Althoff,Martin Buss,2010,robotics
+Matthias Althoff,Dirk Wollherr,2008,robotics
+Matthias Althoff,Florian Rohrmüller,2008,robotics
+Matthias Althoff,Martin Buss,2008,robotics
 Mitchell P. Marcus,Vasumathi Raman,2013,robotics
 Mitchell P. Marcus,Hadas Kress-Gazit,2013,robotics
 Mitchell P. Marcus,Cameron Finucane,2013,robotics

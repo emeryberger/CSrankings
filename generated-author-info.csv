@@ -800,6 +800,29 @@ Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.3333
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.2,2010
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.5,2011
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.25,2015
+Alois Knoll,TU Munich,ai,1.0,0.166666666667,2009
+Alois Knoll,TU Munich,robotics,1.0,0.333333333333,1996
+Alois Knoll,TU Munich,robotics,2.0,0.666666666667,1997
+Alois Knoll,TU Munich,robotics,1.0,0.333333333333,1998
+Alois Knoll,TU Munich,robotics,2.0,0.666666666667,1999
+Alois Knoll,TU Munich,robotics,1.0,0.25,2000
+Alois Knoll,TU Munich,robotics,2.0,0.45,2001
+Alois Knoll,TU Munich,robotics,2.0,0.833333333333,2002
+Alois Knoll,TU Munich,robotics,1.0,0.2,2004
+Alois Knoll,TU Munich,robotics,1.0,0.166666666667,2006
+Alois Knoll,TU Munich,robotics,1.0,0.166666666667,2007
+Alois Knoll,TU Munich,robotics,3.0,0.666666666667,2008
+Alois Knoll,TU Munich,robotics,1.0,0.25,2009
+Alois Knoll,TU Munich,robotics,5.0,1.33333333333,2010
+Alois Knoll,TU Munich,robotics,3.0,0.559523809524,2011
+Alois Knoll,TU Munich,robotics,6.0,1.18333333333,2012
+Alois Knoll,TU Munich,robotics,5.0,1.26666666667,2013
+Alois Knoll,TU Munich,robotics,4.0,0.825,2014
+Alois Knoll,TU Munich,robotics,9.0,2.26666666667,2015
+Alois Knoll,TU Munich,softeng,1.0,0.166666666667,2008
+Alois Knoll,TU Munich,logic,1.0,0.2,2012
+Alois Knoll,TU Munich,vision,1.0,0.25,2013
+Alois Knoll,TU Munich,vision,1.0,0.25,2015
 Jordi Domingo-Pascual,Polytechnic University of Catalonia,metrics,1.0,0.2,2009
 Christopher W. Clifton,Purdue University,mlmining,1.0,0.5,2014
 Ugur Çetintemel,Brown University,database,1.0,0.111111111111,2002
@@ -1761,6 +1784,13 @@ Camillo J. Taylor,University of Pennsylvania,vision,1.0,0.5,2008
 Camillo J. Taylor,University of Pennsylvania,vision,1.0,1.0,2013
 Camillo J. Taylor,University of Pennsylvania,vision,1.0,0.5,2015
 Robert Patro,State University of New York - Stony Brook,mlmining,1.0,0.166666666667,2012
+Felix Brandt,TU Munich,ai,1.0,0.333333333333,2006
+Felix Brandt,TU Munich,ai,3.0,1.08333333333,2007
+Felix Brandt,TU Munich,ai,1.0,0.25,2008
+Felix Brandt,TU Munich,ai,1.0,0.25,2010
+Felix Brandt,TU Munich,ai,3.0,1.66666666667,2011
+Felix Brandt,TU Munich,ai,2.0,0.666666666667,2014
+Felix Brandt,TU Munich,ai,1.0,0.25,2015
 Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.25,2000
 Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.5,2003
 Yanlei Diao,University of Massachusetts - Amherst,database,1.0,0.333333333333,2004
@@ -2691,7 +2721,7 @@ Stefan Kiefer,University of Oxford,theory,1.0,0.333333333333,2007
 Stefan Kiefer,University of Oxford,logic,2.0,0.533333333333,2011
 Stefan Kiefer,University of Oxford,logic,2.0,0.533333333333,2012
 Stefan Kiefer,University of Oxford,logic,1.0,0.25,2013
-Stefan Kiefer,University of Oxford,logic,1.0,0.25,2015
+Stefan Kiefer,University of Oxford,logic,2.0,0.75,2015
 Daniel J. Hsu,Columbia University,nlp,1.0,0.333333333333,2015
 Daniel J. Hsu,Columbia University,mlmining,1.0,0.333333333333,2007
 Daniel J. Hsu,Columbia University,mlmining,1.0,0.5,2008
@@ -3590,12 +3620,13 @@ Mikhail J. Atallah,Purdue University,database,1.0,0.5,2000
 Mikhail J. Atallah,Purdue University,database,1.0,0.333333333333,2003
 Mikhail J. Atallah,Purdue University,database,1.0,0.333333333333,2004
 Mikhail J. Atallah,Purdue University,database,1.0,0.5,2009
-Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1980
-Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1981
-Robert C. Berwick,Massachusetts Institute of Technology,nlp,2.0,1.0,1985
-Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,0.5,1994
-Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,0.25,2013
-Robert C. Berwick,Massachusetts Institute of Technology,ai,1.0,0.5,1985
+Nils Thürey,TU Munich,highperf,1.0,0.142857142857,2004
+Nils Thürey,TU Munich,graphics,1.0,0.25,2008
+Nils Thürey,TU Munich,graphics,2.0,0.5,2009
+Nils Thürey,TU Munich,graphics,3.0,0.7,2010
+Nils Thürey,TU Munich,graphics,1.0,0.333333333333,2012
+Nils Thürey,TU Munich,graphics,2.0,0.666666666667,2013
+Nils Thürey,TU Munich,graphics,2.0,0.5,2014
 Edward Lank,University of Waterloo,hci,1.0,0.333333333333,2007
 Edward Lank,University of Waterloo,hci,3.0,0.833333333333,2008
 Edward Lank,University of Waterloo,hci,1.0,0.333333333333,2009
@@ -4120,6 +4151,7 @@ Fahiem Bacchus,University of Toronto,ai,2.0,0.75,2014
 Fahiem Bacchus,University of Toronto,ai,1.0,0.333333333333,2015
 Fahiem Bacchus,University of Toronto,theory,1.0,0.333333333333,2003
 Fahiem Bacchus,University of Toronto,logic,1.0,0.2,2014
+Fahiem Bacchus,University of Toronto,logic,1.0,0.5,2015
 John Darlington,Imperial College London,highperf,1.0,0.25,1995
 John Darlington,Imperial College London,highperf,1.0,0.166666666667,2001
 John Darlington,Imperial College London,highperf,1.0,0.2,2002
@@ -5462,6 +5494,7 @@ Edmund M. Clarke,Carnegie Mellon University,logic,2.0,0.833333333333,2008
 Edmund M. Clarke,Carnegie Mellon University,logic,1.0,0.166666666667,2010
 Edmund M. Clarke,Carnegie Mellon University,logic,3.0,1.0,2012
 Edmund M. Clarke,Carnegie Mellon University,logic,1.0,0.25,2013
+Edmund M. Clarke,Carnegie Mellon University,logic,1.0,0.142857142857,2015
 Martha Mercaldi,Columbia University,web,1.0,0.166666666667,2006
 Martha Mercaldi,Columbia University,arch,2.0,0.267857142857,2006
 Andrea Grimes Parker,Northeastern University,hci,1.0,0.142857142857,2013
@@ -6543,6 +6576,7 @@ Arvind,Massachusetts Institute of Technology,arch,1.0,0.333333333333,1999
 Arvind,Massachusetts Institute of Technology,arch,1.0,0.5,2006
 Arvind,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2012
 Arvind,Massachusetts Institute of Technology,arch,1.0,0.125,2015
+Arvind,Massachusetts Institute of Technology,logic,1.0,0.25,2015
 Michael M. Kazhdan,Johns Hopkins University,graphics,1.0,0.166666666667,2000
 Michael M. Kazhdan,Johns Hopkins University,graphics,1.0,0.142857142857,2003
 Michael M. Kazhdan,Johns Hopkins University,graphics,2.0,0.458333333333,2004
@@ -6903,6 +6937,9 @@ Muriel Médard,Massachusetts Institute of Technology,networks,3.0,0.783333333333
 Muriel Médard,Massachusetts Institute of Technology,networks,1.0,0.2,2010
 Muriel Médard,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2011
 Muriel Médard,Massachusetts Institute of Technology,networks,1.0,0.333333333333,2015
+Jörg Ott,TU Munich,networks,1.0,0.5,2004
+Jörg Ott,TU Munich,networks,1.0,0.5,2005
+Jörg Ott,TU Munich,networks,2.0,0.366666666667,2011
 Apostolos Gerasoulis,Rutgers - State University of New Jersey - New Brunswick,highperf,1.0,0.5,1991
 Ashutosh Saxena,Cornell University,nlp,1.0,0.25,2015
 Ashutosh Saxena,Cornell University,ai,1.0,0.333333333333,2007
@@ -7057,6 +7094,33 @@ Alan Ritter,Ohio State University,ai,1.0,0.04,2015
 Alan Ritter,Ohio State University,web,1.0,0.25,2015
 Alan Ritter,Ohio State University,mlmining,1.0,0.25,2012
 Alan Ritter,Ohio State University,vision,1.0,0.25,2015
+Gerd Hirzinger,TU Munich,robotics,1.0,0.333333333333,1989
+Gerd Hirzinger,TU Munich,robotics,1.0,0.25,1992
+Gerd Hirzinger,TU Munich,robotics,1.0,0.25,1993
+Gerd Hirzinger,TU Munich,robotics,3.0,1.08333333333,1994
+Gerd Hirzinger,TU Munich,robotics,1.0,0.5,1995
+Gerd Hirzinger,TU Munich,robotics,3.0,1.33333333333,1996
+Gerd Hirzinger,TU Munich,robotics,6.0,2.66666666667,1997
+Gerd Hirzinger,TU Munich,robotics,5.0,1.5,1998
+Gerd Hirzinger,TU Munich,robotics,5.0,2.16666666667,1999
+Gerd Hirzinger,TU Munich,robotics,8.0,2.40833333333,2000
+Gerd Hirzinger,TU Munich,robotics,5.0,1.42619047619,2001
+Gerd Hirzinger,TU Munich,robotics,7.0,2.25952380952,2002
+Gerd Hirzinger,TU Munich,robotics,11.0,2.92777777778,2003
+Gerd Hirzinger,TU Munich,robotics,7.0,1.55952380952,2004
+Gerd Hirzinger,TU Munich,robotics,6.0,1.95833333333,2005
+Gerd Hirzinger,TU Munich,robotics,20.0,5.43535353535,2006
+Gerd Hirzinger,TU Munich,robotics,15.0,4.32619047619,2007
+Gerd Hirzinger,TU Munich,robotics,17.0,5.02777777778,2008
+Gerd Hirzinger,TU Munich,robotics,12.0,3.29642857143,2009
+Gerd Hirzinger,TU Munich,robotics,19.0,4.70952380952,2010
+Gerd Hirzinger,TU Munich,robotics,22.0,5.34469507101,2011
+Gerd Hirzinger,TU Munich,robotics,7.0,1.81666666667,2012
+Gerd Hirzinger,TU Munich,robotics,4.0,1.23333333333,2013
+Gerd Hirzinger,TU Munich,vision,1.0,0.5,1998
+Gerd Hirzinger,TU Munich,vision,1.0,0.5,2002
+Gerd Hirzinger,TU Munich,vision,1.0,0.5,2008
+Gerd Hirzinger,TU Munich,vision,1.0,0.2,2010
 Yasutaka Furukawa,Washington University - St. Louis,vision,1.0,0.25,2004
 Yasutaka Furukawa,Washington University - St. Louis,vision,1.0,0.5,2006
 Yasutaka Furukawa,Washington University - St. Louis,vision,1.0,0.5,2007
@@ -7173,6 +7237,7 @@ Byron Cook,University College London,logic,2.0,0.666666666667,2011
 Byron Cook,University College London,logic,1.0,0.111111111111,2012
 Byron Cook,University College London,logic,1.0,0.333333333333,2013
 Byron Cook,University College London,logic,1.0,0.166666666667,2014
+Byron Cook,University College London,logic,1.0,0.333333333333,2015
 Howie Choset,Carnegie Mellon University,ai,1.0,0.333333333333,2010
 Howie Choset,Carnegie Mellon University,robotics,1.0,0.333333333333,1993
 Howie Choset,Carnegie Mellon University,robotics,1.0,0.5,1994
@@ -7250,6 +7315,7 @@ P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.66666666666
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2010
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.25,2013
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.5,2014
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2015
 P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.25,2007
 P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.333333333333,2008
 P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.25,2010
@@ -8533,8 +8599,7 @@ Yizhou Sun,Northeastern University,mlmining,2.0,0.366666666667,2015
 Yizhou Sun,Northeastern University,database,1.0,0.2,2008
 Yizhou Sun,Northeastern University,database,1.0,0.2,2011
 Yizhou Sun,Northeastern University,database,1.0,0.333333333333,2012
-Lila Kari,University of Waterloo,theory,1.0,0.25,2002
-Lila Kari,University of Waterloo,theory,1.0,0.2,2011
+Nils Thuerey,TU Munich,graphics,2.0,0.533333333333,2015
 Andrew W. Moore 0001,Carnegie Mellon University,ai,1.0,0.5,1995
 Andrew W. Moore 0001,Carnegie Mellon University,ai,2.0,0.833333333333,1999
 Andrew W. Moore 0001,Carnegie Mellon University,ai,1.0,0.25,2006
@@ -9589,24 +9654,7 @@ Brian Noble,University of Michigan,mobile,1.0,0.333333333333,2007
 Brian Noble,University of Michigan,mobile,1.0,0.142857142857,2010
 Brian Noble,University of Michigan,mobile,1.0,0.166666666667,2012
 Brian Noble,University of Michigan,mobile,1.0,0.2,2013
-Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1985
-Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1992
-Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1993
-Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.333333333333,1994
-Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1995
-Gerald DeJong,University of Illinois at Urbana-Champaign,proglang,1.0,0.1,2003
-Gerald DeJong,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,1980
-Gerald DeJong,University of Illinois at Urbana-Champaign,web,1.0,1.0,1983
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.333333333333,1993
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,1994
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,1.0,1995
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,1999
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,1.0,2000
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2002
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2003
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2005
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2006
-Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.333333333333,2008
+Georg Klinker,TU Munich,ai,1.0,0.25,1987
 Rahul Santhanam,University of Oxford,mlmining,1.0,0.333333333333,2006
 Rahul Santhanam,University of Oxford,theory,1.0,0.5,2004
 Rahul Santhanam,University of Oxford,theory,1.0,0.333333333333,2005
@@ -9972,6 +10020,7 @@ Tevfik Bultan,University of California - Santa Barbara,logic,1.0,0.333333333333,
 Tevfik Bultan,University of California - Santa Barbara,logic,1.0,0.2,2000
 Tevfik Bultan,University of California - Santa Barbara,logic,1.0,0.5,2003
 Tevfik Bultan,University of California - Santa Barbara,logic,1.0,0.5,2004
+Tevfik Bultan,University of California - Santa Barbara,logic,1.0,0.333333333333,2015
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,0.5,1981
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,1.0,1982
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,1.0,1987
@@ -10298,6 +10347,7 @@ Panagiotis Manolios,Northeastern University,logic,1.0,0.5,2001
 Panagiotis Manolios,Northeastern University,logic,1.0,0.5,2006
 Panagiotis Manolios,Northeastern University,logic,1.0,0.333333333333,2011
 Panagiotis Manolios,Northeastern University,logic,1.0,0.5,2013
+Panagiotis Manolios,Northeastern University,logic,2.0,0.833333333333,2015
 Emily Mower Provost,University of Michigan,ai,1.0,0.25,2015
 Shaddin Dughmi,University of Southern California,ai,1.0,0.166666666667,2014
 Shaddin Dughmi,University of Southern California,ai,2.0,0.416666666667,2015
@@ -10520,6 +10570,12 @@ Beichuan Zhang,University of Arizona,networks,1.0,0.111111111111,2014
 Beichuan Zhang,University of Arizona,metrics,1.0,0.2,2006
 Beichuan Zhang,University of Arizona,metrics,1.0,0.2,2008
 Beichuan Zhang,University of Arizona,metrics,1.0,0.333333333333,2012
+P. Patrick van der Smagt,TU Munich,robotics,1.0,0.333333333333,1998
+P. Patrick van der Smagt,TU Munich,robotics,1.0,0.333333333333,2004
+P. Patrick van der Smagt,TU Munich,robotics,1.0,0.25,2008
+P. Patrick van der Smagt,TU Munich,robotics,1.0,0.25,2010
+P. Patrick van der Smagt,TU Munich,robotics,1.0,0.333333333333,2011
+P. Patrick van der Smagt,TU Munich,robotics,1.0,0.142857142857,2012
 Judea Pearl,University of California - Los Angeles,ai,1.0,1.0,1981
 Judea Pearl,University of California - Los Angeles,ai,2.0,1.5,1985
 Judea Pearl,University of California - Los Angeles,ai,1.0,0.5,1986
@@ -10915,6 +10971,10 @@ Rezaul Alam Chowdhury,State University of New York - Stony Brook,highperf,1.0,0.
 Rezaul Alam Chowdhury,State University of New York - Stony Brook,theory,1.0,0.5,2005
 Rezaul Alam Chowdhury,State University of New York - Stony Brook,theory,1.0,0.5,2006
 Rezaul Alam Chowdhury,State University of New York - Stony Brook,theory,1.0,0.166666666667,2008
+Carsten Steger,TU Munich,robotics,1.0,0.333333333333,2009
+Carsten Steger,TU Munich,vision,1.0,1.0,1996
+Carsten Steger,TU Munich,vision,1.0,1.0,1997
+Carsten Steger,TU Munich,vision,1.0,1.0,1999
 Ronald A. Olsson,University of California - Davis,security,1.0,0.2,1998
 Vivek Srikumar,University of Utah,nlp,1.0,0.2,2008
 Vivek Srikumar,University of Utah,nlp,1.0,0.5,2011
@@ -11977,8 +12037,8 @@ Amy Bruckman,Georgia Institute of Technology,hci,1.0,0.5,1999
 Amy Bruckman,Georgia Institute of Technology,hci,1.0,0.5,2001
 Amy Bruckman,Georgia Institute of Technology,hci,1.0,0.5,2011
 Amy Bruckman,Georgia Institute of Technology,hci,1.0,0.5,2012
-Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,0.5,1990
-Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,1.0,1995
+Florian Matthes,TU Munich,database,1.0,0.25,1993
+Florian Matthes,TU Munich,database,1.0,0.5,1994
 Bryan Pardo,Northwestern University,ai,1.0,0.5,2005
 Martha Palmer,University of Colorado Boulder,nlp,1.0,1.0,1981
 Martha Palmer,University of Colorado Boulder,nlp,1.0,0.166666666667,1986
@@ -12767,6 +12827,8 @@ Ruslan Salakhutdinov,University of Toronto,mlmining,6.0,1.68452380952,2015
 Ruslan Salakhutdinov,University of Toronto,vision,1.0,0.333333333333,2011
 Ruslan Salakhutdinov,University of Toronto,vision,1.0,0.333333333333,2012
 Ruslan Salakhutdinov,University of Toronto,vision,3.0,0.642857142857,2015
+Claudia Eckert,TU Munich,ai,1.0,0.5,2013
+Claudia Eckert,TU Munich,mlmining,1.0,0.166666666667,2015
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.333333333333,1989
 Rafail Ostrovsky,University of California - Los Angeles,theory,3.0,1.66666666667,1990
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.25,1992
@@ -12816,6 +12878,28 @@ Rafail Ostrovsky,University of California - Los Angeles,crypto,5.0,1.45,2015
 Rafail Ostrovsky,University of California - Los Angeles,crypto,1.0,0.25,2016
 Rafail Ostrovsky,University of California - Los Angeles,security,1.0,0.25,2006
 Rafail Ostrovsky,University of California - Los Angeles,security,2.0,0.833333333333,2007
+Tian He,University of Minnesota - Twin Cities,networks,1.0,0.25,2005
+Tian He,University of Minnesota - Twin Cities,networks,4.0,0.6,2006
+Tian He,University of Minnesota - Twin Cities,networks,1.0,0.25,2007
+Tian He,University of Minnesota - Twin Cities,networks,3.0,0.7,2008
+Tian He,University of Minnesota - Twin Cities,networks,2.0,0.5,2009
+Tian He,University of Minnesota - Twin Cities,networks,1.0,0.25,2010
+Tian He,University of Minnesota - Twin Cities,networks,2.0,0.583333333333,2011
+Tian He,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,2012
+Tian He,University of Minnesota - Twin Cities,networks,2.0,0.4,2013
+Tian He,University of Minnesota - Twin Cities,networks,4.0,0.85,2014
+Tian He,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,2015
+Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.533333333333,2003
+Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.35,2004
+Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.340909090909,2005
+Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.416666666667,2006
+Tian He,University of Minnesota - Twin Cities,mobile,3.0,1.33333333333,2007
+Tian He,University of Minnesota - Twin Cities,mobile,4.0,1.28333333333,2009
+Tian He,University of Minnesota - Twin Cities,mobile,1.0,0.25,2010
+Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.309523809524,2012
+Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.366666666667,2013
+Tian He,University of Minnesota - Twin Cities,mobile,1.0,0.166666666667,2014
+Tian He,University of Minnesota - Twin Cities,mobile,4.0,1.41666666667,2015
 Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.0625,2010
 Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.125,2011
 Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.111111111111,2012
@@ -12832,6 +12916,15 @@ Katerina J. Argyraki,EPFL,networks,2.0,0.833333333333,2014
 Katerina J. Argyraki,EPFL,opsys,1.0,0.111111111111,2009
 Katerina J. Argyraki,EPFL,metrics,1.0,0.333333333333,2010
 Katerina J. Argyraki,EPFL,mobile,1.0,0.166666666667,2013
+Sriraam Natarajan,Indiana University,ai,1.0,0.25,2007
+Sriraam Natarajan,Indiana University,ai,1.0,0.5,2009
+Sriraam Natarajan,Indiana University,ai,1.0,0.2,2011
+Sriraam Natarajan,Indiana University,ai,1.0,0.166666666667,2012
+Sriraam Natarajan,Indiana University,ai,1.0,0.333333333333,2014
+Sriraam Natarajan,Indiana University,ai,2.0,0.583333333333,2015
+Sriraam Natarajan,Indiana University,ai,1.0,0.25,2016
+Sriraam Natarajan,Indiana University,mlmining,2.0,0.666666666667,2005
+Sriraam Natarajan,Indiana University,mlmining,1.0,0.333333333333,2012
 Srinivasa G. Narasimhan,Carnegie Mellon University,robotics,1.0,0.2,2011
 Srinivasa G. Narasimhan,Carnegie Mellon University,graphics,1.0,0.25,2005
 Srinivasa G. Narasimhan,Carnegie Mellon University,graphics,1.0,0.166666666667,2006
@@ -13011,6 +13104,7 @@ Thomas Wies,New York University,logic,1.0,0.333333333333,2008
 Thomas Wies,New York University,logic,1.0,0.2,2009
 Thomas Wies,New York University,logic,1.0,0.333333333333,2013
 Thomas Wies,New York University,logic,1.0,0.333333333333,2014
+Thomas Wies,New York University,logic,1.0,0.2,2015
 Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1980
 Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1983
 Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.125,1985
@@ -13200,33 +13294,6 @@ Sangyeun Cho,University of Pittsburgh,arch,2.0,0.666666666667,1999
 Sangyeun Cho,University of Pittsburgh,arch,1.0,0.5,2006
 Sangyeun Cho,University of Pittsburgh,arch,1.0,0.5,2009
 Sangyeun Cho,University of Pittsburgh,arch,1.0,0.5,2012
-Michael Hicks,University of Maryland - College Park,proglang,1.0,0.25,2008
-Michael Hicks,University of Maryland - College Park,proglang,1.0,0.2,2010
-Michael Hicks,University of Maryland - College Park,proglang,1.0,0.25,2011
-Michael Hicks,University of Maryland - College Park,proglang,2.0,0.5,2014
-Michael Hicks,University of Maryland - College Park,networks,1.0,0.333333333333,2009
-Michael Hicks,University of Maryland - College Park,web,1.0,0.333333333333,2007
-Michael Hicks,University of Maryland - College Park,oopfp,1.0,0.25,2011
-Michael Hicks,University of Maryland - College Park,oopfp,2.0,0.45,2012
-Michael Hicks,University of Maryland - College Park,softeng,1.0,0.333333333333,2013
-Michael Hicks,University of Maryland - College Park,security,1.0,0.333333333333,2008
-Michael Hicks,University of Maryland - College Park,security,1.0,0.333333333333,2014
-Chunyi Peng,Ohio State University,networks,1.0,0.25,2012
-Chunyi Peng,Ohio State University,networks,2.0,0.366666666667,2014
-Chunyi Peng,Ohio State University,networks,2.0,0.366666666667,2015
-Chunyi Peng,Ohio State University,metrics,1.0,0.2,2016
-Chunyi Peng,Ohio State University,mobile,1.0,0.2,2007
-Chunyi Peng,Ohio State University,mobile,1.0,0.0909090909091,2009
-Chunyi Peng,Ohio State University,mobile,1.0,0.2,2011
-Chunyi Peng,Ohio State University,mobile,2.0,0.5,2012
-Chunyi Peng,Ohio State University,mobile,2.0,0.342857142857,2013
-Chunyi Peng,Ohio State University,mobile,2.0,0.416666666667,2014
-Chunyi Peng,Ohio State University,mobile,1.0,0.166666666667,2015
-Chunyi Peng,Ohio State University,security,1.0,0.2,2012
-Chunyi Peng,Ohio State University,security,1.0,0.2,2014
-Chunyi Peng,Ohio State University,security,1.0,0.142857142857,2015
-Ellis Horowitz,University of Southern California,softeng,1.0,0.5,1985
-Ellis Horowitz,University of Southern California,softeng,1.0,0.25,1995
 Mendel Rosenblum,Stanford University,networks,1.0,0.333333333333,2006
 Mendel Rosenblum,Stanford University,opsys,1.0,0.5,1991
 Mendel Rosenblum,Stanford University,opsys,2.0,0.366666666667,1995
@@ -13244,6 +13311,24 @@ Mendel Rosenblum,Stanford University,arch,1.0,0.333333333333,1998
 Mendel Rosenblum,Stanford University,arch,1.0,0.5,2005
 Mendel Rosenblum,Stanford University,arch,1.0,0.25,2008
 Mendel Rosenblum,Stanford University,security,1.0,0.2,2004
+Chunyi Peng,Ohio State University,networks,1.0,0.25,2012
+Chunyi Peng,Ohio State University,networks,2.0,0.366666666667,2014
+Chunyi Peng,Ohio State University,networks,2.0,0.366666666667,2015
+Chunyi Peng,Ohio State University,metrics,1.0,0.2,2016
+Chunyi Peng,Ohio State University,mobile,1.0,0.2,2007
+Chunyi Peng,Ohio State University,mobile,1.0,0.0909090909091,2009
+Chunyi Peng,Ohio State University,mobile,1.0,0.2,2011
+Chunyi Peng,Ohio State University,mobile,2.0,0.5,2012
+Chunyi Peng,Ohio State University,mobile,2.0,0.342857142857,2013
+Chunyi Peng,Ohio State University,mobile,2.0,0.416666666667,2014
+Chunyi Peng,Ohio State University,mobile,1.0,0.166666666667,2015
+Chunyi Peng,Ohio State University,security,1.0,0.2,2012
+Chunyi Peng,Ohio State University,security,1.0,0.2,2014
+Chunyi Peng,Ohio State University,security,1.0,0.142857142857,2015
+Ellis Horowitz,University of Southern California,softeng,1.0,0.5,1985
+Ellis Horowitz,University of Southern California,softeng,1.0,0.25,1995
+Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,0.5,1990
+Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,1.0,1995
 Xiaosong Ma,North Carolina State University,highperf,2.0,0.5,2005
 Xiaosong Ma,North Carolina State University,highperf,1.0,0.2,2006
 Xiaosong Ma,North Carolina State University,highperf,1.0,0.142857142857,2007
@@ -13369,6 +13454,7 @@ Philippa Gardner,Imperial College London,proglang,1.0,0.125,2014
 Philippa Gardner,Imperial College London,oopfp,1.0,0.2,2011
 Philippa Gardner,Imperial College London,oopfp,1.0,0.5,2015
 Philippa Gardner,Imperial College London,database,1.0,0.25,2008
+Philippa Gardner,Imperial College London,logic,1.0,0.25,2015
 Daniel C. Alexander,University College London,mlmining,1.0,0.5,2012
 Daniel C. Alexander,University College London,vision,1.0,0.5,1997
 Daniel C. Alexander,University College London,vision,2.0,1.33333333333,1999
@@ -13687,6 +13773,7 @@ Mahesh Viswanathan 0001,University of Illinois at Urbana-Champaign,logic,1.0,0.3
 Mahesh Viswanathan 0001,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2005
 Mahesh Viswanathan 0001,University of Illinois at Urbana-Champaign,logic,1.0,0.5,2006
 Mahesh Viswanathan 0001,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2008
+Mahesh Viswanathan 0001,University of Illinois at Urbana-Champaign,logic,1.0,0.25,2015
 Anil N. Hirani,University of Illinois at Urbana-Champaign,theory,1.0,0.333333333333,2010
 Anil N. Hirani,University of Illinois at Urbana-Champaign,graphics,1.0,0.5,1996
 Anil N. Hirani,University of Illinois at Urbana-Champaign,graphics,1.0,0.25,2003
@@ -13752,6 +13839,26 @@ Ramamohan Paturi,University of California - San Diego,theory,1.0,0.5,2010
 Ramamohan Paturi,University of California - San Diego,theory,1.0,0.333333333333,2012
 Ramamohan Paturi,University of California - San Diego,theory,1.0,0.333333333333,2013
 Ramamohan Paturi,University of California - San Diego,security,1.0,0.333333333333,2004
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,1988
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,1992
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,1993
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,1994
+Alistair Sinclair,University of California - Berkeley,theory,2.0,0.666666666667,1995
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,1996
+Alistair Sinclair,University of California - Berkeley,theory,2.0,0.666666666667,1998
+Alistair Sinclair,University of California - Berkeley,theory,2.0,0.75,1999
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,2001
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,2002
+Alistair Sinclair,University of California - Berkeley,theory,2.0,0.533333333333,2003
+Alistair Sinclair,University of California - Berkeley,theory,4.0,1.5,2004
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2005
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2007
+Alistair Sinclair,University of California - Berkeley,theory,3.0,1.5,2009
+Alistair Sinclair,University of California - Berkeley,theory,2.0,0.5,2011
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,2012
+Alistair Sinclair,University of California - Berkeley,theory,3.0,1.08333333333,2013
+Alistair Sinclair,University of California - Berkeley,theory,3.0,1.08333333333,2015
+Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2016
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,2.0,0.666666666667,2006
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,1.0,0.333333333333,2008
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,1.0,0.25,2010
@@ -15386,6 +15493,7 @@ Matthias Grossglauser,EPFL,database,1.0,0.333333333333,2015
 Valerie E. Taylor,Texas A&M University,highperf,1.0,0.333333333333,1991
 Valerie E. Taylor,Texas A&M University,highperf,1.0,1.0,1992
 Valerie E. Taylor,Texas A&M University,highperf,1.0,0.333333333333,2001
+Alessandro Abate,University of Oxford,logic,1.0,0.25,2015
 Thomas R. Ioerger,Texas A&M University,ai,1.0,0.166666666667,2001
 Thomas R. Ioerger,Texas A&M University,ai,1.0,0.111111111111,2005
 Seyoung Kim,Carnegie Mellon University,mlmining,1.0,0.5,2006
@@ -16654,6 +16762,10 @@ Angelos D. Keromytis,Columbia University,security,4.0,1.16666666667,2012
 Angelos D. Keromytis,Columbia University,security,2.0,0.5,2013
 Angelos D. Keromytis,Columbia University,security,2.0,0.236111111111,2014
 Angelos D. Keromytis,Columbia University,security,2.0,0.45,2015
+Georg Carle,TU Munich,networks,1.0,0.2,1998
+Georg Carle,TU Munich,metrics,1.0,0.25,2010
+Georg Carle,TU Munich,metrics,1.0,0.25,2011
+Georg Carle,TU Munich,metrics,1.0,0.2,2015
 Guy Van den Broeck,University of California - Los Angeles,ai,1.0,0.25,2010
 Guy Van den Broeck,University of California - Los Angeles,ai,2.0,0.533333333333,2011
 Guy Van den Broeck,University of California - Los Angeles,ai,1.0,0.5,2012
@@ -17278,6 +17390,7 @@ Uri M. Ascher,University of British Columbia,robotics,1.0,0.333333333333,2000
 Uri M. Ascher,University of British Columbia,graphics,1.0,0.2,2009
 Uri M. Ascher,University of British Columbia,graphics,2.0,0.309523809524,2013
 Uri M. Ascher,University of British Columbia,graphics,1.0,0.166666666667,2015
+Arndt Bode,TU Munich,highperf,1.0,0.0833333333333,2014
 Eugene H. Spafford,Purdue University,highperf,1.0,0.25,1995
 Eugene H. Spafford,Purdue University,security,1.0,0.5,1994
 Eugene H. Spafford,Purdue University,security,1.0,0.166666666667,1997
@@ -17403,6 +17516,7 @@ Steve Zdancewic,University of Pennsylvania,oopfp,1.0,0.5,2010
 Steve Zdancewic,University of Pennsylvania,oopfp,1.0,0.166666666667,2013
 Steve Zdancewic,University of Pennsylvania,arch,1.0,0.25,2008
 Steve Zdancewic,University of Pennsylvania,arch,1.0,0.333333333333,2012
+Steve Zdancewic,University of Pennsylvania,logic,1.0,0.333333333333,2015
 Steve Zdancewic,University of Pennsylvania,security,1.0,0.25,2003
 Steve Zdancewic,University of Pennsylvania,security,1.0,0.5,2004
 Steve Zdancewic,University of Pennsylvania,security,1.0,0.5,2007
@@ -18581,6 +18695,7 @@ Ruzica Piskac,Yale University,logic,1.0,0.5,2008
 Ruzica Piskac,Yale University,logic,1.0,0.333333333333,2011
 Ruzica Piskac,Yale University,logic,2.0,0.583333333333,2013
 Ruzica Piskac,Yale University,logic,1.0,0.333333333333,2014
+Ruzica Piskac,Yale University,logic,1.0,0.5,2015
 Ron M. Roth,Technion,networks,1.0,0.25,2009
 Ron M. Roth,Technion,theory,1.0,0.25,1994
 Thomas M. Conte,Georgia Institute of Technology,arch,1.0,0.333333333333,1989
@@ -18960,6 +19075,17 @@ John F. Canny,University of California - Berkeley,vision,1.0,0.333333333333,1988
 John F. Canny,University of California - Berkeley,vision,1.0,0.5,1994
 Anselm Blumer,Tufts University,theory,1.0,0.2,1984
 Anselm Blumer,Tufts University,theory,1.0,0.25,1986
+Michael Hicks,University of Maryland - College Park,proglang,1.0,0.25,2008
+Michael Hicks,University of Maryland - College Park,proglang,1.0,0.2,2010
+Michael Hicks,University of Maryland - College Park,proglang,1.0,0.25,2011
+Michael Hicks,University of Maryland - College Park,proglang,2.0,0.5,2014
+Michael Hicks,University of Maryland - College Park,networks,1.0,0.333333333333,2009
+Michael Hicks,University of Maryland - College Park,web,1.0,0.333333333333,2007
+Michael Hicks,University of Maryland - College Park,oopfp,1.0,0.25,2011
+Michael Hicks,University of Maryland - College Park,oopfp,2.0,0.45,2012
+Michael Hicks,University of Maryland - College Park,softeng,1.0,0.333333333333,2013
+Michael Hicks,University of Maryland - College Park,security,1.0,0.333333333333,2008
+Michael Hicks,University of Maryland - College Park,security,1.0,0.333333333333,2014
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2007
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2008
 Trent Jaeger,Pennsylvania State University,security,1.0,0.5,1994
@@ -19009,6 +19135,7 @@ Erez Petrank,Technion,oopfp,1.0,0.5,2015
 Erez Petrank,Technion,crypto,1.0,0.5,1998
 Erez Petrank,Technion,crypto,3.0,1.25,2003
 Erez Petrank,Technion,crypto,1.0,0.25,2006
+Erez Petrank,Technion,logic,1.0,0.25,2015
 Dana H. Ballard,University of Texas - Austin,ai,2.0,1.5,1981
 Dana H. Ballard,University of Texas - Austin,ai,1.0,1.0,1984
 Dana H. Ballard,University of Texas - Austin,ai,1.0,1.0,1986
@@ -19223,6 +19350,24 @@ Yoav Freund,University of California - San Diego,theory,2.0,0.416666666667,1995
 Yoav Freund,University of California - San Diego,theory,1.0,0.25,1997
 Yoav Freund,University of California - San Diego,theory,1.0,0.5,2008
 Yoav Freund,University of California - San Diego,vision,1.0,0.333333333333,2003
+Alin Albu-Schäffer,TU Munich,robotics,1.0,0.333333333333,1998
+Alin Albu-Schäffer,TU Munich,robotics,1.0,0.5,2000
+Alin Albu-Schäffer,TU Munich,robotics,2.0,0.7,2001
+Alin Albu-Schäffer,TU Munich,robotics,3.0,0.97619047619,2002
+Alin Albu-Schäffer,TU Munich,robotics,2.0,0.5,2003
+Alin Albu-Schäffer,TU Munich,robotics,4.0,1.06666666667,2004
+Alin Albu-Schäffer,TU Munich,robotics,1.0,0.333333333333,2005
+Alin Albu-Schäffer,TU Munich,robotics,5.0,1.00757575758,2006
+Alin Albu-Schäffer,TU Munich,robotics,4.0,1.2,2007
+Alin Albu-Schäffer,TU Munich,robotics,6.0,1.53333333333,2008
+Alin Albu-Schäffer,TU Munich,robotics,4.0,0.9,2009
+Alin Albu-Schäffer,TU Munich,robotics,7.0,1.45952380952,2010
+Alin Albu-Schäffer,TU Munich,robotics,14.0,3.59206349206,2011
+Alin Albu-Schäffer,TU Munich,robotics,10.0,3.05119047619,2012
+Alin Albu-Schäffer,TU Munich,robotics,12.0,3.54166666667,2013
+Alin Albu-Schäffer,TU Munich,robotics,5.0,1.28333333333,2014
+Alin Albu-Schäffer,TU Munich,robotics,5.0,0.874242424242,2015
+Alin Albu-Schäffer,TU Munich,robotics,3.0,0.72619047619,2016
 Ness B. Shroff,Ohio State University,networks,1.0,0.5,1991
 Ness B. Shroff,Ohio State University,networks,1.0,0.5,1994
 Ness B. Shroff,Ohio State University,networks,2.0,1.0,1996
@@ -20043,6 +20188,14 @@ Reuven Cohen,Technion,networks,3.0,0.916666666667,2009
 Reuven Cohen,Technion,networks,1.0,0.333333333333,2012
 Reuven Cohen,Technion,networks,2.0,1.0,2014
 Tajana Simunic Rosing,University of California - San Diego,arch,1.0,0.125,2012
+Tobias Nipkow,TU Munich,proglang,1.0,0.5,1993
+Tobias Nipkow,TU Munich,proglang,1.0,0.5,1998
+Tobias Nipkow,TU Munich,oopfp,1.0,0.25,2006
+Tobias Nipkow,TU Munich,oopfp,1.0,0.5,2013
+Tobias Nipkow,TU Munich,logic,1.0,1.0,1990
+Tobias Nipkow,TU Munich,logic,1.0,1.0,1991
+Tobias Nipkow,TU Munich,logic,1.0,1.0,1993
+Tobias Nipkow,TU Munich,logic,1.0,0.166666666667,2013
 Thomas Heinis,Imperial College London,database,1.0,0.5,2008
 Thomas Heinis,Imperial College London,database,1.0,0.2,2012
 Thomas Heinis,Imperial College London,database,1.0,0.166666666667,2013
@@ -20334,6 +20487,17 @@ Atif M. Memon,University of Maryland - College Park,softeng,1.0,0.142857142857,2
 Atif M. Memon,University of Maryland - College Park,softeng,1.0,0.5,2007
 Ming Lin,University of North Carolina - Chapel Hill,ai,2.0,0.533333333333,2015
 Ming Lin,University of North Carolina - Chapel Hill,vision,1.0,0.2,2015
+Susanne Albers,TU Munich,theory,1.0,0.5,1992
+Susanne Albers,TU Munich,theory,1.0,1.0,1995
+Susanne Albers,TU Munich,theory,2.0,1.5,1997
+Susanne Albers,TU Munich,theory,3.0,1.16666666667,1998
+Susanne Albers,TU Munich,theory,1.0,0.333333333333,1999
+Susanne Albers,TU Munich,theory,2.0,1.33333333333,2002
+Susanne Albers,TU Munich,theory,1.0,0.5,2003
+Susanne Albers,TU Munich,theory,1.0,0.5,2004
+Susanne Albers,TU Munich,theory,1.0,0.2,2006
+Susanne Albers,TU Munich,theory,1.0,1.0,2008
+Susanne Albers,TU Munich,theory,1.0,0.5,2012
 James R. Lee,University of Washington,theory,2.0,0.833333333333,2003
 James R. Lee,University of Washington,theory,2.0,0.75,2004
 James R. Lee,University of Washington,theory,3.0,1.66666666667,2005
@@ -20365,6 +20529,11 @@ Yanjun Qi,University of Virginia,mlmining,1.0,0.125,2009
 Yanjun Qi,University of Virginia,mlmining,1.0,0.25,2012
 Jim Hendler,Rensselaer Polytechnic Institute,highperf,1.0,0.333333333333,1989
 Jeremy Buhler,Washington University - St. Louis,highperf,1.0,0.142857142857,2007
+Jan Kretínský,TU Munich,logic,1.0,0.25,2008
+Jan Kretínský,TU Munich,logic,1.0,0.5,2012
+Jan Kretínský,TU Munich,logic,1.0,0.333333333333,2013
+Jan Kretínský,TU Munich,logic,1.0,0.5,2014
+Jan Kretínský,TU Munich,logic,3.0,0.658333333333,2015
 Val Tannen,University of Pennsylvania,proglang,1.0,0.5,1987
 Val Tannen,University of Pennsylvania,database,1.0,0.333333333333,1989
 Val Tannen,University of Pennsylvania,database,1.0,0.5,1994
@@ -21125,6 +21294,10 @@ John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,0.333333333333,1998
 John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,0.333333333333,2003
 John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,0.25,2005
 John Kenneth Salisbury Jr.,Stanford University,robotics,1.0,0.333333333333,2011
+Peter Struss,TU Munich,ai,1.0,0.5,1989
+Peter Struss,TU Munich,ai,1.0,1.0,1994
+Peter Struss,TU Munich,ai,1.0,0.5,2003
+Peter Struss,TU Munich,ai,2.0,1.5,2007
 Alexander M. Bronstein,Technion,mlmining,1.0,0.333333333333,2012
 Alexander M. Bronstein,Technion,mlmining,1.0,0.2,2013
 Alexander M. Bronstein,Technion,graphics,1.0,0.2,2008
@@ -21186,15 +21359,20 @@ Finale Doshi-Velez,Harvard University,mlmining,3.0,1.75,2009
 Finale Doshi-Velez,Harvard University,mlmining,1.0,0.25,2010
 Finale Doshi-Velez,Harvard University,mlmining,1.0,0.142857142857,2014
 Finale Doshi-Velez,Harvard University,mlmining,1.0,0.333333333333,2015
-Sriraam Natarajan,Indiana University,ai,1.0,0.25,2007
-Sriraam Natarajan,Indiana University,ai,1.0,0.5,2009
-Sriraam Natarajan,Indiana University,ai,1.0,0.2,2011
-Sriraam Natarajan,Indiana University,ai,1.0,0.166666666667,2012
-Sriraam Natarajan,Indiana University,ai,1.0,0.333333333333,2014
-Sriraam Natarajan,Indiana University,ai,2.0,0.583333333333,2015
-Sriraam Natarajan,Indiana University,ai,1.0,0.25,2016
-Sriraam Natarajan,Indiana University,mlmining,2.0,0.666666666667,2005
-Sriraam Natarajan,Indiana University,mlmining,1.0,0.333333333333,2012
+Thomas Neumann 0001,TU Munich,web,1.0,0.25,2007
+Thomas Neumann 0001,TU Munich,web,1.0,0.142857142857,2008
+Thomas Neumann 0001,TU Munich,database,1.0,0.333333333333,2003
+Thomas Neumann 0001,TU Munich,database,1.0,0.5,2004
+Thomas Neumann 0001,TU Munich,database,1.0,0.5,2006
+Thomas Neumann 0001,TU Munich,database,3.0,1.33333333333,2008
+Thomas Neumann 0001,TU Munich,database,3.0,1.83333333333,2009
+Thomas Neumann 0001,TU Munich,database,2.0,0.666666666667,2010
+Thomas Neumann 0001,TU Munich,database,2.0,1.5,2011
+Thomas Neumann 0001,TU Munich,database,2.0,0.666666666667,2012
+Thomas Neumann 0001,TU Munich,database,2.0,0.333333333333,2013
+Thomas Neumann 0001,TU Munich,database,4.0,1.625,2014
+Thomas Neumann 0001,TU Munich,database,5.0,1.16666666667,2015
+Thomas Neumann 0001,TU Munich,database,1.0,0.166666666667,2016
 A. Robert Calderbank,Duke University,networks,2.0,0.666666666667,2006
 A. Robert Calderbank,Duke University,networks,2.0,0.5,2007
 A. Robert Calderbank,Duke University,networks,1.0,0.25,2009
@@ -21818,6 +21996,9 @@ Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.25,2012
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.5,2013
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.5,2014
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.5,2015
+Bernd Bruegge,TU Munich,oopfp,1.0,0.25,1992
+Bernd Bruegge,TU Munich,oopfp,1.0,0.333333333333,1993
+Bernd Bruegge,TU Munich,softeng,1.0,0.25,2012
 Stephen G. Pulman,University of Oxford,nlp,1.0,0.5,2006
 Alexei A. Efros,University of California - Berkeley,ai,1.0,0.5,2007
 Alexei A. Efros,University of California - Berkeley,robotics,1.0,0.25,2006
@@ -21939,6 +22120,7 @@ Rajeev Alur,University of Pennsylvania,logic,2.0,0.533333333333,2010
 Rajeev Alur,University of Pennsylvania,logic,2.0,0.433333333333,2012
 Rajeev Alur,University of Pennsylvania,logic,2.0,0.533333333333,2013
 Rajeev Alur,University of Pennsylvania,logic,1.0,0.5,2014
+Rajeev Alur,University of Pennsylvania,logic,2.0,0.533333333333,2015
 Henry Hoffmann,University of Chicago,opsys,1.0,1.0,2015
 Henry Hoffmann,University of Chicago,oopfp,1.0,0.25,2010
 Henry Hoffmann,University of Chicago,arch,1.0,0.0909090909091,2002
@@ -22425,8 +22607,12 @@ William D. Clinger,Northeastern University,proglang,1.0,0.5,1991
 William D. Clinger,Northeastern University,proglang,1.0,0.5,1997
 William D. Clinger,Northeastern University,proglang,1.0,1.0,1998
 William D. Clinger,Northeastern University,oopfp,1.0,0.5,2002
-Wei-Tek Tsai,Arizona State University,softeng,1.0,0.25,1993
-Wei-Tek Tsai,Arizona State University,security,1.0,0.5,1990
+Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1980
+Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1981
+Robert C. Berwick,Massachusetts Institute of Technology,nlp,2.0,1.0,1985
+Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,0.5,1994
+Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,0.25,2013
+Robert C. Berwick,Massachusetts Institute of Technology,ai,1.0,0.5,1985
 Kellogg S. Booth,University of British Columbia,hci,1.0,0.25,1998
 Kellogg S. Booth,University of British Columbia,hci,1.0,0.333333333333,2000
 Kellogg S. Booth,University of British Columbia,hci,1.0,0.2,2001
@@ -22491,6 +22677,22 @@ Gianluca Stringhini,University College London,security,1.0,0.2,2011
 Gianluca Stringhini,University College London,security,1.0,0.166666666667,2012
 Gianluca Stringhini,University College London,security,1.0,0.333333333333,2013
 Gianluca Stringhini,University College London,security,1.0,0.125,2015
+Darius Burschka,TU Munich,robotics,1.0,0.333333333333,1997
+Darius Burschka,TU Munich,robotics,1.0,0.25,1999
+Darius Burschka,TU Munich,robotics,1.0,0.5,2001
+Darius Burschka,TU Munich,robotics,1.0,0.333333333333,2002
+Darius Burschka,TU Munich,robotics,3.0,1.16666666667,2003
+Darius Burschka,TU Munich,robotics,2.0,0.75,2004
+Darius Burschka,TU Munich,robotics,1.0,0.5,2005
+Darius Burschka,TU Munich,robotics,1.0,1.0,2006
+Darius Burschka,TU Munich,robotics,1.0,0.166666666667,2008
+Darius Burschka,TU Munich,robotics,3.0,0.625,2009
+Darius Burschka,TU Munich,robotics,4.0,1.17619047619,2010
+Darius Burschka,TU Munich,robotics,2.0,0.7,2011
+Darius Burschka,TU Munich,robotics,1.0,0.25,2012
+Darius Burschka,TU Munich,robotics,6.0,2.0873015873,2013
+Darius Burschka,TU Munich,robotics,1.0,0.5,2014
+Darius Burschka,TU Munich,vision,1.0,0.2,2010
 Aiichiro Nakano,University of Southern California,highperf,1.0,0.142857142857,2001
 Aiichiro Nakano,University of Southern California,highperf,1.0,0.1,2002
 Aiichiro Nakano,University of Southern California,highperf,1.0,0.142857142857,2006
@@ -23172,6 +23374,7 @@ Viktor Kuncak,EPFL,logic,1.0,0.5,2008
 Viktor Kuncak,EPFL,logic,1.0,0.333333333333,2011
 Viktor Kuncak,EPFL,logic,1.0,0.333333333333,2013
 Viktor Kuncak,EPFL,logic,1.0,0.5,2014
+Viktor Kuncak,EPFL,logic,2.0,0.533333333333,2015
 Cristiano Calcagno,Imperial College London,proglang,1.0,1.0,2001
 Cristiano Calcagno,Imperial College London,proglang,2.0,0.583333333333,2005
 Cristiano Calcagno,Imperial College London,proglang,1.0,0.333333333333,2006
@@ -23748,10 +23951,10 @@ Zvonimir Rakamaric,University of Utah,proglang,1.0,0.333333333333,2011
 Zvonimir Rakamaric,University of Utah,highperf,1.0,0.25,2014
 Zvonimir Rakamaric,University of Utah,logic,1.0,0.333333333333,2009
 Zvonimir Rakamaric,University of Utah,logic,1.0,0.5,2014
-Lawrence C. Paulson,University of Cambridge,proglang,1.0,1.0,1982
-Lawrence C. Paulson,University of Cambridge,logic,1.0,0.5,1998
-Lawrence C. Paulson,University of Cambridge,logic,1.0,1.0,1999
-Lawrence C. Paulson,University of Cambridge,security,1.0,0.333333333333,2002
+Lawrence C. Paulson,TU Munich,proglang,1.0,1.0,1982
+Lawrence C. Paulson,TU Munich,logic,1.0,0.5,1998
+Lawrence C. Paulson,TU Munich,logic,1.0,1.0,1999
+Lawrence C. Paulson,TU Munich,security,1.0,0.333333333333,2002
 Cas J. F. Cremers,University of Oxford,softeng,1.0,0.166666666667,2015
 Cas J. F. Cremers,University of Oxford,security,1.0,1.0,2008
 Cas J. F. Cremers,University of Oxford,security,1.0,0.25,2012
@@ -24338,6 +24541,7 @@ Marta Z. Kwiatkowska,University of Oxford,logic,1.0,0.333333333333,2001
 Marta Z. Kwiatkowska,University of Oxford,logic,1.0,0.333333333333,2006
 Marta Z. Kwiatkowska,University of Oxford,logic,1.0,0.333333333333,2011
 Marta Z. Kwiatkowska,University of Oxford,logic,1.0,0.2,2014
+Marta Z. Kwiatkowska,University of Oxford,logic,1.0,0.25,2015
 Constantine Dovrolis,Georgia Institute of Technology,networks,3.0,1.08333333333,2010
 Constantine Dovrolis,Georgia Institute of Technology,networks,1.0,0.5,2011
 Constantine Dovrolis,Georgia Institute of Technology,networks,1.0,0.333333333333,2012
@@ -24374,6 +24578,7 @@ Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.3333333333
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.333333333333,2013
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.2,2016
 Jeffrey S. Foster,University of Maryland - College Park,logic,1.0,0.333333333333,2009
+Jeffrey S. Foster,University of Maryland - College Park,logic,1.0,0.25,2015
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.25,2001
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.5,2010
 Sofya Raskhodnikova,Pennsylvania State University,theory,1.0,0.166666666667,2002
@@ -24443,6 +24648,10 @@ Steve Marschner,Cornell University,graphics,6.0,1.57619047619,2012
 Steve Marschner,Cornell University,graphics,2.0,0.236111111111,2013
 Steve Marschner,Cornell University,graphics,3.0,0.583333333333,2014
 Steve Marschner,Cornell University,graphics,4.0,0.759523809524,2015
+Patrick van der Smagt,TU Munich,robotics,2.0,0.5,2013
+Patrick van der Smagt,TU Munich,robotics,3.0,0.733333333333,2014
+Patrick van der Smagt,TU Munich,robotics,2.0,0.583333333333,2015
+Patrick van der Smagt,TU Munich,vision,1.0,0.111111111111,2015
 John W. Byers,Boston University,networks,1.0,0.25,1998
 John W. Byers,Boston University,networks,1.0,0.333333333333,1999
 John W. Byers,Boston University,networks,1.0,0.333333333333,2001
@@ -25159,6 +25368,7 @@ Rui Wang,University of Massachusetts - Amherst,graphics,1.0,0.166666666667,2013
 Rui Wang,University of Massachusetts - Amherst,graphics,1.0,0.166666666667,2014
 Rui Wang,University of Massachusetts - Amherst,graphics,3.0,0.6,2015
 Rui Wang,University of Massachusetts - Amherst,database,1.0,0.2,2007
+Alexander Pretschner,TU Munich,softeng,1.0,0.125,2005
 Taieb Znati,University of Pittsburgh,networks,1.0,0.333333333333,1995
 Taieb Znati,University of Pittsburgh,networks,1.0,0.5,1999
 Taieb Znati,University of Pittsburgh,networks,1.0,1.0,2005
@@ -25475,6 +25685,16 @@ Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1980
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1981
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.333333333333,1982
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1986
+Harald Räcke,TU Munich,theory,1.0,1.0,2002
+Harald Räcke,TU Munich,theory,1.0,0.2,2003
+Harald Räcke,TU Munich,theory,5.0,1.47619047619,2005
+Harald Räcke,TU Munich,theory,4.0,1.25,2006
+Harald Räcke,TU Munich,theory,1.0,0.333333333333,2007
+Harald Räcke,TU Munich,theory,2.0,1.2,2008
+Harald Räcke,TU Munich,theory,1.0,0.5,2009
+Harald Räcke,TU Munich,theory,1.0,0.25,2011
+Harald Räcke,TU Munich,theory,2.0,0.5,2012
+Harald Räcke,TU Munich,theory,1.0,0.333333333333,2014
 Alan S. Willsky,Massachusetts Institute of Technology,networks,1.0,0.25,2011
 Alan S. Willsky,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2000
 Alan S. Willsky,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2001
@@ -25553,6 +25773,11 @@ Michael Rubenstein,Northwestern University,robotics,1.0,0.5,2010
 Michael Rubenstein,Northwestern University,robotics,1.0,0.333333333333,2012
 Michael Rubenstein,Northwestern University,robotics,1.0,0.2,2013
 Michael Rubenstein,Northwestern University,robotics,2.0,0.583333333333,2015
+Matthias Althoff,TU Munich,robotics,1.0,0.25,2008
+Matthias Althoff,TU Munich,robotics,1.0,0.25,2010
+Matthias Althoff,TU Munich,robotics,1.0,0.333333333333,2014
+Matthias Althoff,TU Munich,robotics,3.0,1.33333333333,2015
+Matthias Althoff,TU Munich,robotics,1.0,0.333333333333,2016
 Alexander J. Hartemink,Duke University,ai,1.0,0.2,2016
 Alexander J. Hartemink,Duke University,mlmining,1.0,0.166666666667,2004
 Alexander J. Hartemink,Duke University,mlmining,1.0,0.5,2008
@@ -25586,6 +25811,8 @@ Roni Rosenfeld,Carnegie Mellon University,hci,1.0,0.142857142857,2013
 Andrew Markham,University of Oxford,networks,1.0,0.5,2010
 Andrew Markham,University of Oxford,mobile,2.0,0.35,2010
 Andrew Markham,University of Oxford,mobile,1.0,0.2,2015
+Lila Kari,University of Waterloo,theory,1.0,0.25,2002
+Lila Kari,University of Waterloo,theory,1.0,0.2,2011
 Sergio Maffeis,Imperial College London,proglang,1.0,0.333333333333,2012
 Sergio Maffeis,Imperial College London,proglang,1.0,0.125,2014
 Sergio Maffeis,Imperial College London,security,1.0,0.333333333333,2010
@@ -25755,6 +25982,17 @@ Kay Connelly,Indiana University,hci,1.0,0.333333333333,2011
 Kay Connelly,Indiana University,hci,1.0,0.333333333333,2012
 Kay Connelly,Indiana University,hci,2.0,0.4,2015
 Kay Connelly,Indiana University,hci,1.0,0.2,2016
+Helmut Seidl,TU Munich,proglang,1.0,0.5,1997
+Helmut Seidl,TU Munich,proglang,1.0,0.5,2004
+Helmut Seidl,TU Munich,proglang,1.0,0.2,2011
+Helmut Seidl,TU Munich,proglang,1.0,0.333333333333,2013
+Helmut Seidl,TU Munich,theory,1.0,0.5,2001
+Helmut Seidl,TU Munich,theory,1.0,0.333333333333,2015
+Helmut Seidl,TU Munich,database,1.0,0.333333333333,2003
+Helmut Seidl,TU Munich,database,1.0,0.25,2005
+Helmut Seidl,TU Munich,logic,1.0,1.0,1996
+Helmut Seidl,TU Munich,logic,1.0,0.5,2009
+Helmut Seidl,TU Munich,security,1.0,0.333333333333,2013
 Patrick Crowley,Washington University - St. Louis,networks,1.0,0.2,2006
 Patrick Crowley,Washington University - St. Louis,networks,1.0,0.0833333333333,2007
 Patrick Crowley,Washington University - St. Louis,networks,1.0,0.5,2014
@@ -26144,6 +26382,7 @@ Armando Solar-Lezama,Massachusetts Institute of Technology,softeng,1.0,0.2,2016
 Armando Solar-Lezama,Massachusetts Institute of Technology,database,1.0,0.333333333333,2014
 Armando Solar-Lezama,Massachusetts Institute of Technology,logic,1.0,0.5,2011
 Armando Solar-Lezama,Massachusetts Institute of Technology,logic,2.0,1.0,2012
+Armando Solar-Lezama,Massachusetts Institute of Technology,logic,1.0,0.25,2015
 Jaswinder Pal Singh,Princeton University,networks,1.0,0.5,2004
 Jaswinder Pal Singh,Princeton University,web,1.0,0.333333333333,2002
 Jaswinder Pal Singh,Princeton University,highperf,2.0,0.5,1993
@@ -26294,26 +26533,24 @@ Moshe Y. Vardi,Rice University,logic,1.0,0.5,2009
 Moshe Y. Vardi,Rice University,logic,1.0,0.333333333333,2011
 Moshe Y. Vardi,Rice University,logic,1.0,0.111111111111,2012
 Moshe Y. Vardi,Rice University,logic,3.0,1.16666666667,2013
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,1988
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,1992
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,1993
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,1994
-Alistair Sinclair,University of California - Berkeley,theory,2.0,0.666666666667,1995
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,1996
-Alistair Sinclair,University of California - Berkeley,theory,2.0,0.666666666667,1998
-Alistair Sinclair,University of California - Berkeley,theory,2.0,0.75,1999
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,2001
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,2002
-Alistair Sinclair,University of California - Berkeley,theory,2.0,0.533333333333,2003
-Alistair Sinclair,University of California - Berkeley,theory,4.0,1.5,2004
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2005
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2007
-Alistair Sinclair,University of California - Berkeley,theory,3.0,1.5,2009
-Alistair Sinclair,University of California - Berkeley,theory,2.0,0.5,2011
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,2012
-Alistair Sinclair,University of California - Berkeley,theory,3.0,1.08333333333,2013
-Alistair Sinclair,University of California - Berkeley,theory,3.0,1.08333333333,2015
-Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2016
+Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1985
+Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1992
+Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1993
+Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.333333333333,1994
+Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1995
+Gerald DeJong,University of Illinois at Urbana-Champaign,proglang,1.0,0.1,2003
+Gerald DeJong,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,1980
+Gerald DeJong,University of Illinois at Urbana-Champaign,web,1.0,1.0,1983
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.333333333333,1993
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,1994
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,1.0,1995
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,1999
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,1.0,2000
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2002
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2003
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2005
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.5,2006
+Gerald DeJong,University of Illinois at Urbana-Champaign,mlmining,1.0,0.333333333333,2008
 Donald Perlis,University of Maryland - College Park,ai,1.0,0.333333333333,1990
 Donald Perlis,University of Maryland - College Park,ai,1.0,0.5,2008
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2012
@@ -26902,28 +27139,7 @@ Indranil Gupta,University of Illinois at Urbana-Champaign,networks,1.0,0.25,2008
 Indranil Gupta,University of Illinois at Urbana-Champaign,database,1.0,0.111111111111,2016
 Mark O. Riedl,Georgia Institute of Technology,ai,1.0,0.5,2014
 David J. Hawkes,University College London,vision,1.0,0.333333333333,2007
-Tian He,University of Minnesota - Twin Cities,networks,1.0,0.25,2005
-Tian He,University of Minnesota - Twin Cities,networks,4.0,0.6,2006
-Tian He,University of Minnesota - Twin Cities,networks,1.0,0.25,2007
-Tian He,University of Minnesota - Twin Cities,networks,3.0,0.7,2008
-Tian He,University of Minnesota - Twin Cities,networks,2.0,0.5,2009
-Tian He,University of Minnesota - Twin Cities,networks,1.0,0.25,2010
-Tian He,University of Minnesota - Twin Cities,networks,2.0,0.583333333333,2011
-Tian He,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,2012
-Tian He,University of Minnesota - Twin Cities,networks,2.0,0.4,2013
-Tian He,University of Minnesota - Twin Cities,networks,4.0,0.85,2014
-Tian He,University of Minnesota - Twin Cities,networks,1.0,0.333333333333,2015
-Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.533333333333,2003
-Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.35,2004
-Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.340909090909,2005
-Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.416666666667,2006
-Tian He,University of Minnesota - Twin Cities,mobile,3.0,1.33333333333,2007
-Tian He,University of Minnesota - Twin Cities,mobile,4.0,1.28333333333,2009
-Tian He,University of Minnesota - Twin Cities,mobile,1.0,0.25,2010
-Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.309523809524,2012
-Tian He,University of Minnesota - Twin Cities,mobile,2.0,0.366666666667,2013
-Tian He,University of Minnesota - Twin Cities,mobile,1.0,0.166666666667,2014
-Tian He,University of Minnesota - Twin Cities,mobile,4.0,1.41666666667,2015
+Michael Bader,TU Munich,highperf,1.0,0.0833333333333,2014
 Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2013
 Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.142857142857,2014
 Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2016
@@ -27900,6 +28116,7 @@ Martin T. Vechev,ETH Zurich,oopfp,1.0,0.333333333333,2008
 Martin T. Vechev,ETH Zurich,oopfp,3.0,0.666666666667,2011
 Martin T. Vechev,ETH Zurich,oopfp,2.0,0.583333333333,2013
 Martin T. Vechev,ETH Zurich,oopfp,2.0,0.533333333333,2015
+Martin T. Vechev,ETH Zurich,logic,1.0,0.333333333333,2015
 Gustavo Alonso,ETH Zurich,web,1.0,0.25,2005
 Gustavo Alonso,ETH Zurich,mlmining,1.0,0.333333333333,2012
 Gustavo Alonso,ETH Zurich,opsys,1.0,0.25,2014
@@ -28126,6 +28343,8 @@ Ondrej Lhoták,University of Waterloo,oopfp,1.0,0.5,2012
 Ondrej Lhoták,University of Waterloo,oopfp,1.0,0.333333333333,2015
 Sergei Nirenburg,Rensselaer Polytechnic Institute,nlp,1.0,0.25,1996
 Sergei Nirenburg,Rensselaer Polytechnic Institute,ai,1.0,0.333333333333,1989
+Wei-Tek Tsai,Arizona State University,softeng,1.0,0.25,1993
+Wei-Tek Tsai,Arizona State University,security,1.0,0.5,1990
 Bruce R. Childers,University of Pittsburgh,arch,1.0,0.25,2012
 Bruce R. Childers,University of Pittsburgh,arch,1.0,0.2,2013
 Bruce R. Childers,University of Pittsburgh,softeng,1.0,0.2,2005
@@ -28212,6 +28431,7 @@ Suresh Jagannathan,Purdue University,oopfp,1.0,0.5,2014
 Suresh Jagannathan,Purdue University,oopfp,1.0,0.333333333333,2015
 Suresh Jagannathan,Purdue University,arch,1.0,0.333333333333,2010
 Suresh Jagannathan,Purdue University,softeng,1.0,0.333333333333,2007
+Suresh Jagannathan,Purdue University,logic,1.0,0.333333333333,2015
 Dave Levin,University of Maryland - College Park,networks,2.0,0.416666666667,2008
 Dave Levin,University of Maryland - College Park,networks,2.0,0.45,2009
 Dave Levin,University of Maryland - College Park,networks,1.0,0.125,2015
@@ -28583,6 +28803,23 @@ J. Kenneth Salisbury,Stanford University,robotics,4.0,1.5,2008
 J. Kenneth Salisbury,Stanford University,robotics,2.0,0.75,2010
 J. Kenneth Salisbury,Stanford University,robotics,1.0,0.333333333333,2011
 Chris Evans,University College London,security,1.0,0.25,2010
+Hans-Arno Jacobsen,TU Munich,networks,1.0,0.5,2013
+Hans-Arno Jacobsen,TU Munich,web,1.0,0.333333333333,2005
+Hans-Arno Jacobsen,TU Munich,web,1.0,0.333333333333,2011
+Hans-Arno Jacobsen,TU Munich,oopfp,1.0,0.2,1998
+Hans-Arno Jacobsen,TU Munich,oopfp,1.0,0.5,2004
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.166666666667,2001
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.5,2007
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.111111111111,2008
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.5,2010
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.5,2011
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.166666666667,2012
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.142857142857,2013
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.125,2014
+Hans-Arno Jacobsen,TU Munich,database,2.0,0.533333333333,2015
+Hans-Arno Jacobsen,TU Munich,database,1.0,0.5,2016
+Hans-Arno Jacobsen,TU Munich,mobile,1.0,0.333333333333,1998
+Hans-Arno Jacobsen,TU Munich,mobile,1.0,0.333333333333,2005
 Alex Pothen,Purdue University,highperf,1.0,0.25,1992
 Alex Pothen,Purdue University,highperf,1.0,0.333333333333,1993
 Alex Pothen,Purdue University,highperf,1.0,0.5,1999
@@ -28650,21 +28887,21 @@ Somesh Jha,University of Wisconsin - Madison,security,3.0,0.67619047619,2010
 Somesh Jha,University of Wisconsin - Madison,security,1.0,0.2,2013
 Somesh Jha,University of Wisconsin - Madison,security,2.0,0.583333333333,2014
 Somesh Jha,University of Wisconsin - Madison,security,1.0,0.333333333333,2015
-Nassir Navab,Johns Hopkins University,ai,1.0,0.2,2008
-Nassir Navab,Johns Hopkins University,robotics,1.0,0.2,2012
-Nassir Navab,Johns Hopkins University,robotics,3.0,1.0,2015
-Nassir Navab,Johns Hopkins University,robotics,4.0,0.966666666667,2016
-Nassir Navab,Johns Hopkins University,vision,2.0,0.833333333333,1993
-Nassir Navab,Johns Hopkins University,vision,1.0,0.5,1994
-Nassir Navab,Johns Hopkins University,vision,3.0,1.03333333333,2000
-Nassir Navab,Johns Hopkins University,vision,3.0,0.75,2007
-Nassir Navab,Johns Hopkins University,vision,5.0,1.15,2008
-Nassir Navab,Johns Hopkins University,vision,6.0,1.48333333333,2009
-Nassir Navab,Johns Hopkins University,vision,7.0,2.15,2010
-Nassir Navab,Johns Hopkins University,vision,4.0,0.97619047619,2011
-Nassir Navab,Johns Hopkins University,vision,3.0,0.95,2012
-Nassir Navab,Johns Hopkins University,vision,2.0,0.416666666667,2014
-Nassir Navab,Johns Hopkins University,vision,6.0,1.48333333333,2015
+Nassir Navab,TU Munich,ai,1.0,0.2,2008
+Nassir Navab,TU Munich,robotics,1.0,0.2,2012
+Nassir Navab,TU Munich,robotics,3.0,1.0,2015
+Nassir Navab,TU Munich,robotics,4.0,0.966666666667,2016
+Nassir Navab,TU Munich,vision,2.0,0.833333333333,1993
+Nassir Navab,TU Munich,vision,1.0,0.5,1994
+Nassir Navab,TU Munich,vision,3.0,1.03333333333,2000
+Nassir Navab,TU Munich,vision,3.0,0.75,2007
+Nassir Navab,TU Munich,vision,5.0,1.15,2008
+Nassir Navab,TU Munich,vision,6.0,1.48333333333,2009
+Nassir Navab,TU Munich,vision,7.0,2.15,2010
+Nassir Navab,TU Munich,vision,4.0,0.97619047619,2011
+Nassir Navab,TU Munich,vision,3.0,0.95,2012
+Nassir Navab,TU Munich,vision,2.0,0.416666666667,2014
+Nassir Navab,TU Munich,vision,6.0,1.48333333333,2015
 Odest Chadwicke Jenkins,Brown University,robotics,1.0,0.5,2002
 Odest Chadwicke Jenkins,Brown University,robotics,1.0,0.333333333333,2004
 Odest Chadwicke Jenkins,Brown University,robotics,1.0,0.5,2007
@@ -28765,10 +29002,29 @@ Xiangyu Zhang,Purdue University,softeng,3.0,0.535714285714,2016
 Xiangyu Zhang,Purdue University,database,1.0,0.25,2007
 Xiangyu Zhang,Purdue University,mobile,1.0,0.333333333333,2010
 Xiangyu Zhang,Purdue University,mobile,1.0,0.333333333333,2012
+Xiangyu Zhang,Purdue University,logic,1.0,0.166666666667,2015
 Xiangyu Zhang,Purdue University,security,2.0,0.5,2013
 Xiangyu Zhang,Purdue University,security,3.0,0.65,2015
 Xiangyu Zhang,Purdue University,vision,1.0,0.25,2014
 Xiangyu Zhang,Purdue University,vision,2.0,0.45,2015
+Daniel Cremers,TU Munich,robotics,5.0,1.15,2012
+Daniel Cremers,TU Munich,robotics,4.0,1.2,2013
+Daniel Cremers,TU Munich,robotics,2.0,0.583333333333,2014
+Daniel Cremers,TU Munich,robotics,5.0,1.58333333333,2015
+Daniel Cremers,TU Munich,robotics,3.0,0.833333333333,2016
+Daniel Cremers,TU Munich,vision,1.0,0.333333333333,2002
+Daniel Cremers,TU Munich,vision,2.0,0.75,2003
+Daniel Cremers,TU Munich,vision,1.0,0.333333333333,2004
+Daniel Cremers,TU Munich,vision,3.0,1.0,2006
+Daniel Cremers,TU Munich,vision,4.0,2.33333333333,2007
+Daniel Cremers,TU Munich,vision,10.0,3.31666666667,2008
+Daniel Cremers,TU Munich,vision,9.0,3.08333333333,2009
+Daniel Cremers,TU Munich,vision,3.0,1.33333333333,2010
+Daniel Cremers,TU Munich,vision,7.0,2.83333333333,2011
+Daniel Cremers,TU Munich,vision,4.0,1.33333333333,2012
+Daniel Cremers,TU Munich,vision,7.0,2.11666666667,2013
+Daniel Cremers,TU Munich,vision,6.0,1.86666666667,2014
+Daniel Cremers,TU Munich,vision,6.0,1.15277777778,2015
 Christopher Raphael,Indiana University,ai,1.0,1.0,2009
 Christopher Raphael,Indiana University,mlmining,1.0,1.0,2001
 Christopher Raphael,Indiana University,mlmining,1.0,1.0,2010
@@ -29982,6 +30238,10 @@ David Wetherall,University of Washington,mobile,3.0,1.0,2008
 David Wetherall,University of Washington,mobile,1.0,0.166666666667,2011
 David Wetherall,University of Washington,security,1.0,0.166666666667,2008
 David Wetherall,University of Washington,security,1.0,0.2,2011
+Gerhard Hirzinger,TU Munich,robotics,1.0,0.5,1992
+Gerhard Hirzinger,TU Munich,robotics,4.0,1.66666666667,1994
+Gerhard Hirzinger,TU Munich,robotics,1.0,0.2,1996
+Gerhard Hirzinger,TU Munich,robotics,2.0,0.45,2011
 Hui Zhang 0005,University College London,vision,1.0,0.25,2007
 Vernon Rego,Purdue University,networks,1.0,1.0,1986
 Vernon Rego,Purdue University,highperf,1.0,0.333333333333,1992
@@ -30173,6 +30433,9 @@ Emery D. Berger,University of Massachusetts - Amherst,arch,1.0,0.5,2013
 Emery D. Berger,University of Massachusetts - Amherst,softeng,1.0,0.333333333333,2016
 Emery D. Berger,University of Massachusetts - Amherst,mobile,1.0,0.166666666667,2007
 Emery D. Berger,University of Massachusetts - Amherst,security,1.0,0.5,2010
+Bernd Brügge,TU Munich,hci,1.0,0.5,2008
+Bernd Brügge,TU Munich,softeng,1.0,0.5,1997
+Bernd Brügge,TU Munich,softeng,1.0,0.5,2013
 Anil Vullikanti,Virginia Polytechnic Institute and State University,ai,2.0,1.0,2016
 Anil Vullikanti,Virginia Polytechnic Institute and State University,mlmining,1.0,0.0333333333333,2014
 Davide Careglio,Polytechnic University of Catalonia,networks,1.0,0.0526315789474,2006
