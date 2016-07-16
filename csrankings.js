@@ -125,8 +125,8 @@ function loadCoauthors(cont) {
 }
 function loadCountryInfo(cont) {
     Papa.parse(countryinfoFile, {
-        download: true,
         header: true,
+        download: true,
         complete: function (results) {
             var data = results.data;
             var ci = data;
@@ -283,6 +283,7 @@ function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, author
 function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, regions) {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited = {}; /* contains an author name if that author has been processed. */
+    console.log(countryInfo);
     for (var r in authors) {
         var area = authors[r].area;
         var dept = authors[r].dept;

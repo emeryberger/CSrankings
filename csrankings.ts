@@ -50,8 +50,7 @@ interface CountryInfo {
 
 var authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
 var coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
-var countryInfo : {[key:string] : string} = {};
-
+var countryInfo : {[key : string] : string } = {};
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -170,8 +169,8 @@ function loadCoauthors(cont : () => void ) : void {
 
 function loadCountryInfo(cont : () => void ) : void {
     Papa.parse(countryinfoFile, {
-	download : true,
 	header: true,
+	download : true,
 	complete : function(results) {
 	    var data : any = results.data;
 	    var ci = data as Array<CountryInfo>;
@@ -369,6 +368,7 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
+    console.log(countryInfo);
     for (var r in authors) {
 	const area : string = authors[r].area;
 	const dept : string = authors[r].dept;
