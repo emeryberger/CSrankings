@@ -60,7 +60,7 @@ areadict = {
     'metrics' : ['SIGMETRICS','IMC','Internet Measurement Conference'],
     'web' : ['WWW', 'SIGIR'],
     'hci' : ['CHI','UbiComp','Ubicomp','UIST'],
-    'nlp' : ['EMNLP','ACL','ACL (1)','NAACL'],
+    'nlp' : ['EMNLP','ACL','ACL (1)','NAACL', 'HLT-NAACL'],
     'vision' : ['CVPR','ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','IROS','Robotics: Science and Systems'],
