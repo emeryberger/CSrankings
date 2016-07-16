@@ -8,4 +8,4 @@ for example, Les Valiant's entry is <a
 href="http://dblp.uni-trier.de/pers/hd/v/Valiant:Leslie_G=">```Leslie
 G. Valiant , Harvard University```</a>.
 
-To rebuild the databases, just run ```make```.
+If you want to change anything, you will want to download the DBLP data by running ``make update-dblp``. To then rebuild the databases, just run ```make```.
