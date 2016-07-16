@@ -1,12 +1,12 @@
-TARGETS = csrank.js generated-author-info.csv faculty-coauthors.csv
+TARGETS = csrankings.js generated-author-info.csv faculty-coauthors.csv
 
 all: $(TARGETS)
 
 clean:
 	rm $(TARGETS)
 
-csrank.js: csrank.ts
-	tsc --noImplicitAny --noImplicitReturns csrank.ts
+csrankings.js: csrankings.ts
+	tsc --noImplicitAny --noImplicitReturns csrankings.ts
 
 update-dblp:
 	@echo "Downloading from DBLP."
