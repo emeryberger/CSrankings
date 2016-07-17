@@ -287,10 +287,30 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
     for (var r in authors) {
         var area = authors[r].area;
         var dept = authors[r].dept;
-        if (regions == "USA") {
-            if (dept in countryInfo) {
-                continue;
-            }
+        switch (regions) {
+            case "USA":
+                if (dept in countryInfo) {
+                    continue;
+                }
+                break;
+            case "europe":
+                if (!(dept in countryInfo)) {
+                    continue;
+                }
+                if (countryInfo[dept] != "europe") {
+                    continue;
+                }
+                break;
+            case "canada":
+                if (!(dept in countryInfo)) {
+                    continue;
+                }
+                if (countryInfo[dept] != "canada") {
+                    continue;
+                }
+                break;
+            case "world":
+                break;
         }
         var areaDept = area + dept;
         if (!(areaDept in areaDeptAdjustedCount)) {

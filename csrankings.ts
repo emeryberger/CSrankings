@@ -93,12 +93,12 @@ function compareNames (a : string, b : string) : number {
 }
 
 /* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
-function zlibDecompress(url : string, callback : any) {
+function zlibDecompress(url : string, callback : (x : any) => void) : void {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'blob';
 
-    xhr.onload = function(oEvent) {
+    xhr.onload = function(oEvent : any) {
 	// Base64 encode
 	var reader = new FileReader();
 	reader.readAsDataURL(xhr.response);
@@ -372,10 +372,30 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
     for (var r in authors) {
 	const area : string = authors[r].area;
 	const dept : string = authors[r].dept;
-	if (regions == "USA") {
+	switch (regions) {
+	case "USA":
 	    if (dept in countryInfo) {
 		continue;
 	    }
+	    break;
+	case "europe":
+	    if (!(dept in countryInfo)) { // USA
+		continue;
+	    }
+	    if (countryInfo[dept] != "europe") {
+		continue;
+	    }
+	    break;
+	case "canada":
+	    if (!(dept in countryInfo)) { // USA
+		continue;
+	    }
+	    if (countryInfo[dept] != "canada") {
+		continue;
+	    }
+	    break;
+	case "world":
+	    break;
 	}
 	const areaDept : string = area+dept;
 	if (!(areaDept in areaDeptAdjustedCount)) {
