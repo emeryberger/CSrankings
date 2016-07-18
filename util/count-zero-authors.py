@@ -134,7 +134,6 @@ for k in facultydict:
             stream = os.popen(cmd)
             for line in stream:
                 x = line.rstrip()
-                x = x.decode('utf8')
                 print x + " , " + institution.encode('utf8')
             # os.system(cmd)
 
