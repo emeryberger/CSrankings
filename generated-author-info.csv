@@ -9802,6 +9802,7 @@ Xifeng Yan,University of California - Santa Barbara,web,1.0,0.2,2013
 Xifeng Yan,University of California - Santa Barbara,web,2.0,0.333333333333,2016
 Xifeng Yan,University of California - Santa Barbara,security,1.0,0.2,2010
 Xifeng Yan,University of California - Santa Barbara,softeng,1.0,0.2,2005
+Miguel Valero-García,Polytechnic University of Catalonia,arch,1.0,0.25,1989
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.333333333333,2012
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.2,2013
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,3.0,0.642857142857,2014
@@ -10226,18 +10227,16 @@ Chris Clifton,Purdue University,database,1.0,0.5,1990
 Chris Clifton,Purdue University,database,1.0,0.5,1994
 Chris Clifton,Purdue University,database,1.0,0.142857142857,1998
 Chris Clifton,Purdue University,database,1.0,0.333333333333,2007
-Lisa Fleischer,Dartmouth College,theory,1.0,1.0,1998
-Lisa Fleischer,Dartmouth College,theory,1.0,1.0,1999
-Lisa Fleischer,Dartmouth College,theory,3.0,1.08333333333,2000
-Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2001
-Lisa Fleischer,Dartmouth College,theory,2.0,1.0,2003
-Lisa Fleischer,Dartmouth College,theory,2.0,1.33333333333,2004
-Lisa Fleischer,Dartmouth College,theory,3.0,0.833333333333,2006
-Lisa Fleischer,Dartmouth College,theory,2.0,1.0,2008
-Lisa Fleischer,Dartmouth College,theory,1.0,0.25,2009
-Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2011
-Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2012
-Lisa Fleischer,Dartmouth College,theory,1.0,0.25,2013
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,1980
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,1987
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,1988
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,0.5,1992
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,0.5,1997
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,0.25,1999
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,0.125,2013
+Bonnie L. Webber,University of Edinburgh,ai,1.0,0.5,1980
+Bonnie L. Webber,University of Edinburgh,ai,1.0,0.333333333333,1984
+Bonnie L. Webber,University of Edinburgh,ai,1.0,0.2,1993
 Henry A. Kautz,University of Rochester,hci,1.0,0.25,2003
 Henry A. Kautz,University of Rochester,hci,1.0,0.111111111111,2004
 Henry A. Kautz,University of Rochester,nlp,1.0,0.142857142857,2015
@@ -10357,16 +10356,23 @@ Nigel Shadbolt,University of Oxford,ai,1.0,0.25,2007
 Nigel Shadbolt,University of Oxford,web,1.0,0.333333333333,2003
 Nigel Shadbolt,University of Oxford,web,1.0,0.2,2009
 Nigel Shadbolt,University of Oxford,web,1.0,0.25,2015
-Peter Winkler,Dartmouth College,theory,1.0,0.333333333333,1990
-Peter Winkler,Dartmouth College,theory,1.0,0.5,1991
-Peter Winkler,Dartmouth College,theory,3.0,1.16666666667,1992
-Peter Winkler,Dartmouth College,theory,1.0,0.5,1995
-Peter Winkler,Dartmouth College,theory,1.0,0.5,1998
-Peter Winkler,Dartmouth College,theory,1.0,0.2,2008
-Peter Winkler,Dartmouth College,theory,1.0,0.5,2009
-Peter Winkler,Dartmouth College,crypto,1.0,0.333333333333,1995
-Peter Winkler,Dartmouth College,networks,1.0,0.2,2002
-Peter Winkler,Dartmouth College,networks,1.0,0.333333333333,2006
+Christoph Koch 0001,EPFL,ai,1.0,0.5,1999
+Christoph Koch 0001,EPFL,database,2.0,0.833333333333,2002
+Christoph Koch 0001,EPFL,database,3.0,1.66666666667,2003
+Christoph Koch 0001,EPFL,database,3.0,0.783333333333,2004
+Christoph Koch 0001,EPFL,database,1.0,1.0,2005
+Christoph Koch 0001,EPFL,database,1.0,1.0,2006
+Christoph Koch 0001,EPFL,database,3.0,0.7,2007
+Christoph Koch 0001,EPFL,database,2.0,1.5,2008
+Christoph Koch 0001,EPFL,database,2.0,0.642857142857,2009
+Christoph Koch 0001,EPFL,database,2.0,1.33333333333,2010
+Christoph Koch 0001,EPFL,database,2.0,0.309523809524,2011
+Christoph Koch 0001,EPFL,database,1.0,0.25,2012
+Christoph Koch 0001,EPFL,database,2.0,0.45,2013
+Christoph Koch 0001,EPFL,database,5.0,1.83333333333,2014
+Christoph Koch 0001,EPFL,database,2.0,0.625,2015
+Christoph Koch 0001,EPFL,database,6.0,2.33333333333,2016
+Christoph Koch 0001,EPFL,logic,1.0,0.5,2002
 Chinmay Eishan Kulkarni,Carnegie Mellon University,arch,1.0,0.125,2009
 Vivek S. Pai,Princeton University,metrics,1.0,0.25,2005
 Vivek S. Pai,Princeton University,metrics,2.0,0.75,2011
@@ -14643,6 +14649,14 @@ David G. Lowe,University of British Columbia,vision,1.0,0.5,2003
 David G. Lowe,University of British Columbia,vision,1.0,0.2,2004
 David G. Lowe,University of British Columbia,vision,1.0,0.5,2007
 David G. Lowe,University of British Columbia,vision,1.0,0.5,2012
+Wolfgang Emmerich,University College London,softeng,1.0,0.5,1999
+Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2000
+Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2001
+Wolfgang Emmerich,University College London,softeng,2.0,1.33333333333,2002
+Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2003
+Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2004
+Wolfgang Emmerich,University College London,softeng,1.0,0.166666666667,2007
+Wolfgang Emmerich,University College London,softeng,2.0,0.666666666667,2008
 Aleksandra Korolova,University of Southern California,database,1.0,0.333333333333,2011
 Aleksandra Korolova,University of Southern California,web,1.0,0.25,2009
 Aleksandra Korolova,University of Southern California,security,2.0,0.583333333333,2014
@@ -15837,6 +15851,8 @@ Ravi Sundaram,Northeastern University,theory,1.0,0.2,2016
 Ravi Sundaram,Northeastern University,mlmining,1.0,0.25,2005
 Ravi Sundaram,Northeastern University,ai,1.0,0.333333333333,2015
 Ravi Sundaram,Northeastern University,networks,1.0,0.2,2005
+Jérôme Feret,Ecole Normale Superieure,proglang,1.0,0.125,2003
+Jérôme Feret,Ecole Normale Superieure,logic,1.0,0.2,2010
 Benjamin Recht,University of California - Berkeley,mlmining,1.0,0.5,2007
 Benjamin Recht,University of California - Berkeley,mlmining,1.0,0.5,2008
 Benjamin Recht,University of California - Berkeley,mlmining,1.0,0.333333333333,2009
@@ -21677,6 +21693,8 @@ Vinod Ganapathy,Rutgers - State University of New Jersey - New Brunswick,softeng
 Vinod Ganapathy,Rutgers - State University of New Jersey - New Brunswick,softeng,1.0,0.2,2014
 Vinod Ganapathy,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.5,2006
 Vinod Ganapathy,Rutgers - State University of New Jersey - New Brunswick,arch,1.0,0.2,2008
+Michael E. Locasto,University of Calgary,security,2.0,0.45,2007
+Michael E. Locasto,University of Calgary,security,1.0,0.2,2008
 George Danezis,University College London,security,1.0,0.333333333333,2003
 George Danezis,University College London,security,1.0,0.5,2005
 George Danezis,University College London,security,1.0,0.25,2007
@@ -23287,14 +23305,24 @@ Jörg Denzinger,University of Calgary,softeng,1.0,0.25,2007
 Jörg Denzinger,University of Calgary,softeng,1.0,0.333333333333,2008
 Frank Stajano,University of Cambridge,hci,1.0,0.333333333333,2005
 Frank Stajano,University of Cambridge,security,1.0,0.25,2012
-Wolfgang Emmerich,University College London,softeng,1.0,0.5,1999
-Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2000
-Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2001
-Wolfgang Emmerich,University College London,softeng,2.0,1.33333333333,2002
-Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2003
-Wolfgang Emmerich,University College London,softeng,1.0,0.333333333333,2004
-Wolfgang Emmerich,University College London,softeng,1.0,0.166666666667,2007
-Wolfgang Emmerich,University College London,softeng,2.0,0.666666666667,2008
+Claude Crépeau,McGill University,theory,2.0,0.833333333333,1986
+Claude Crépeau,McGill University,theory,2.0,0.833333333333,1988
+Claude Crépeau,McGill University,theory,1.0,0.25,1993
+Claude Crépeau,McGill University,theory,1.0,0.333333333333,1998
+Claude Crépeau,McGill University,theory,2.0,0.533333333333,2002
+Claude Crépeau,McGill University,theory,1.0,0.2,2006
+Claude Crépeau,McGill University,crypto,1.0,1.0,1985
+Claude Crépeau,McGill University,crypto,3.0,1.83333333333,1986
+Claude Crépeau,McGill University,crypto,1.0,0.5,1988
+Claude Crépeau,McGill University,crypto,1.0,0.5,1989
+Claude Crépeau,McGill University,crypto,1.0,0.5,1990
+Claude Crépeau,McGill University,crypto,2.0,0.75,1991
+Claude Crépeau,McGill University,crypto,1.0,0.5,1993
+Claude Crépeau,McGill University,crypto,2.0,0.833333333333,1995
+Claude Crépeau,McGill University,crypto,2.0,1.5,1997
+Claude Crépeau,McGill University,crypto,1.0,0.333333333333,2001
+Claude Crépeau,McGill University,crypto,1.0,0.333333333333,2005
+Claude Crépeau,McGill University,crypto,2.0,0.75,2006
 Ian M. Hodkinson,Imperial College London,logic,1.0,0.333333333333,2002
 Don Perlis,University of Maryland - College Park,ai,1.0,0.166666666667,2016
 Thomas Vidick,California Institute of Technology,theory,1.0,0.2,2008
@@ -23700,6 +23728,18 @@ Ernest Davis,New York University,ai,1.0,0.5,2004
 Ernest Davis,New York University,ai,1.0,1.0,2010
 Stratis D. Viglas,University of Edinburgh,database,1.0,0.333333333333,2014
 Stratis D. Viglas,University of Edinburgh,database,1.0,0.333333333333,2015
+Lisa Fleischer,Dartmouth College,theory,1.0,1.0,1998
+Lisa Fleischer,Dartmouth College,theory,1.0,1.0,1999
+Lisa Fleischer,Dartmouth College,theory,3.0,1.08333333333,2000
+Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2001
+Lisa Fleischer,Dartmouth College,theory,2.0,1.0,2003
+Lisa Fleischer,Dartmouth College,theory,2.0,1.33333333333,2004
+Lisa Fleischer,Dartmouth College,theory,3.0,0.833333333333,2006
+Lisa Fleischer,Dartmouth College,theory,2.0,1.0,2008
+Lisa Fleischer,Dartmouth College,theory,1.0,0.25,2009
+Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2011
+Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2012
+Lisa Fleischer,Dartmouth College,theory,1.0,0.25,2013
 Reuven Bar-Yehuda,Technion,graphics,1.0,0.5,1996
 Reuven Bar-Yehuda,Technion,theory,1.0,0.5,1982
 Reuven Bar-Yehuda,Technion,theory,1.0,0.25,1994
@@ -26020,6 +26060,8 @@ Michael Rubenstein,Northwestern University,robotics,1.0,0.5,2010
 Michael Rubenstein,Northwestern University,robotics,1.0,0.333333333333,2012
 Michael Rubenstein,Northwestern University,robotics,1.0,0.2,2013
 Michael Rubenstein,Northwestern University,robotics,2.0,0.583333333333,2015
+Céline Chevalier,Ecole Normale Superieure,crypto,2.0,0.583333333333,2009
+Céline Chevalier,Ecole Normale Superieure,crypto,1.0,0.2,2013
 Matthias Althoff,TU Munich,robotics,1.0,0.25,2008
 Matthias Althoff,TU Munich,robotics,1.0,0.25,2010
 Matthias Althoff,TU Munich,robotics,1.0,0.333333333333,2014
@@ -30428,6 +30470,16 @@ Shree K. Nayar,Columbia University,vision,2.0,0.666666666667,2013
 Shree K. Nayar,Columbia University,vision,2.0,0.833333333333,2015
 Aggelos K. Katsaggelos,Northwestern University,vision,1.0,0.25,2007
 Aggelos K. Katsaggelos,Northwestern University,vision,1.0,0.25,2012
+Peter Winkler,Dartmouth College,theory,1.0,0.333333333333,1990
+Peter Winkler,Dartmouth College,theory,1.0,0.5,1991
+Peter Winkler,Dartmouth College,theory,3.0,1.16666666667,1992
+Peter Winkler,Dartmouth College,theory,1.0,0.5,1995
+Peter Winkler,Dartmouth College,theory,1.0,0.5,1998
+Peter Winkler,Dartmouth College,theory,1.0,0.2,2008
+Peter Winkler,Dartmouth College,theory,1.0,0.5,2009
+Peter Winkler,Dartmouth College,crypto,1.0,0.333333333333,1995
+Peter Winkler,Dartmouth College,networks,1.0,0.2,2002
+Peter Winkler,Dartmouth College,networks,1.0,0.333333333333,2006
 Matthias Felleisen,Northeastern University,proglang,1.0,0.5,1987
 Matthias Felleisen,Northeastern University,proglang,1.0,1.0,1988
 Matthias Felleisen,Northeastern University,proglang,1.0,0.5,1989
