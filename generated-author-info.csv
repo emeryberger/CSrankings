@@ -366,6 +366,10 @@ Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database
 Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.5,2003
 Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.2,2005
 Amélie Marian,Rutgers - State University of New Jersey - New Brunswick,database,1.0,0.2,2010
+Kim Steenstrup Pedersen,DIKU,vision,1.0,0.5,2002
+Kim Steenstrup Pedersen,DIKU,vision,1.0,0.333333333333,2010
+Kim Steenstrup Pedersen,DIKU,vision,1.0,0.25,2012
+Kim Steenstrup Pedersen,DIKU,vision,1.0,0.25,2013
 Seth Copen Goldstein,Carnegie Mellon University,proglang,1.0,0.333333333333,1995
 Seth Copen Goldstein,Carnegie Mellon University,proglang,1.0,0.5,2006
 Seth Copen Goldstein,Carnegie Mellon University,robotics,1.0,0.333333333333,2005
@@ -821,6 +825,10 @@ Alois Knoll,TU Munich,robotics,9.0,2.26666666667,2015
 Alois Knoll,TU Munich,softeng,1.0,0.166666666667,2008
 Alois Knoll,TU Munich,vision,1.0,0.25,2013
 Alois Knoll,TU Munich,vision,1.0,0.25,2015
+Christina Lioma,DIKU,nlp,1.0,0.5,2006
+Christina Lioma,DIKU,nlp,1.0,0.2,2011
+Christina Lioma,DIKU,web,1.0,0.333333333333,2012
+Christina Lioma,DIKU,web,1.0,0.25,2015
 Jordi Domingo-Pascual,Polytechnic University of Catalonia,metrics,1.0,0.2,2009
 Christopher W. Clifton,Purdue University,mlmining,1.0,0.5,2014
 Ugur Çetintemel,Brown University,database,1.0,0.111111111111,2002
@@ -1352,6 +1360,12 @@ Michael D. Smith,Harvard University,arch,1.0,0.5,1998
 Michael D. Smith,Harvard University,arch,1.0,0.5,2003
 Michael D. Smith,Harvard University,arch,1.0,0.333333333333,2005
 Michael D. Smith,Harvard University,arch,1.0,0.142857142857,2010
+Yevgeny Seldin,DIKU,mlmining,1.0,0.333333333333,2001
+Yevgeny Seldin,DIKU,mlmining,1.0,0.333333333333,2006
+Yevgeny Seldin,DIKU,mlmining,1.0,0.5,2008
+Yevgeny Seldin,DIKU,mlmining,1.0,0.2,2011
+Yevgeny Seldin,DIKU,mlmining,2.0,0.7,2013
+Yevgeny Seldin,DIKU,mlmining,2.0,0.75,2014
 Sean B. Holden,University of Cambridge,mlmining,2.0,1.0,2007
 Ben Y. Zhao,University of California - Santa Barbara,metrics,3.0,0.509523809524,2010
 Ben Y. Zhao,University of California - Santa Barbara,metrics,2.0,0.366666666667,2011
@@ -1555,6 +1569,11 @@ Adam Wierman,California Institute of Technology,networks,1.0,0.25,2011
 Adam Wierman,California Institute of Technology,networks,1.0,0.333333333333,2013
 Adam Wierman,California Institute of Technology,networks,1.0,0.166666666667,2014
 Adam Wierman,California Institute of Technology,networks,1.0,0.25,2015
+Amal Ahmed,Northeastern University,proglang,1.0,0.333333333333,2008
+Amal Ahmed,Northeastern University,proglang,1.0,0.333333333333,2009
+Amal Ahmed,Northeastern University,proglang,1.0,0.25,2011
+Amal Ahmed,Northeastern University,proglang,1.0,0.2,2013
+Amal Ahmed,Northeastern University,logic,1.0,0.333333333333,2009
 Darko Marinov,University of Illinois at Urbana-Champaign,logic,1.0,0.2,2014
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2005
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2007
@@ -1633,6 +1652,11 @@ Marti A. Hearst,University of California - Berkeley,mlmining,1.0,0.333333333333,
 Marti A. Hearst,University of California - Berkeley,web,1.0,0.5,1993
 Marti A. Hearst,University of California - Berkeley,web,1.0,0.5,1996
 Marti A. Hearst,University of California - Berkeley,web,1.0,0.5,1997
+Christian Wulff-Nilsen,DIKU,theory,2.0,1.33333333333,2010
+Christian Wulff-Nilsen,DIKU,theory,3.0,1.45,2011
+Christian Wulff-Nilsen,DIKU,theory,2.0,1.25,2012
+Christian Wulff-Nilsen,DIKU,theory,2.0,2.0,2013
+Christian Wulff-Nilsen,DIKU,theory,1.0,1.0,2016
 Helen Pain,University of Edinburgh,hci,1.0,0.25,2012
 Hadas Shachnai,Technion,metrics,1.0,0.333333333333,1995
 Hadas Shachnai,Technion,theory,2.0,0.366666666667,2002
@@ -2519,6 +2543,8 @@ Hartmut Geyer,Carnegie Mellon University,robotics,2.0,0.833333333333,2012
 Hartmut Geyer,Carnegie Mellon University,robotics,1.0,0.5,2013
 Hartmut Geyer,Carnegie Mellon University,robotics,3.0,1.33333333333,2014
 Hartmut Geyer,Carnegie Mellon University,robotics,5.0,1.58333333333,2015
+Pernille Bjørn,DIKU,hci,1.0,0.5,2014
+Pernille Bjørn,DIKU,hci,1.0,0.5,2015
 Ravi Sethi,University of Arizona,theory,1.0,1.0,1981
 Ravi Sethi,University of Arizona,proglang,1.0,1.0,1980
 Ravi Sethi,University of Arizona,proglang,2.0,0.833333333333,1984
@@ -2821,6 +2847,11 @@ Richard M. Karp,University of California - Berkeley,networks,2.0,0.45,2002
 Richard M. Karp,University of California - Berkeley,networks,1.0,0.2,2004
 Richard M. Karp,University of California - Berkeley,arch,1.0,0.2,1989
 Richard M. Karp,University of California - Berkeley,highperf,1.0,0.125,1993
+Mads Nielsen,DIKU,vision,1.0,0.333333333333,1996
+Mads Nielsen,DIKU,vision,1.0,0.5,1998
+Mads Nielsen,DIKU,vision,2.0,0.7,2004
+Mads Nielsen,DIKU,vision,2.0,0.583333333333,2010
+Mads Nielsen,DIKU,vision,1.0,0.25,2011
 Jayadev Misra,University of Texas - Austin,proglang,1.0,1.0,2014
 Marc Fischlin,TU Darmstadt,theory,1.0,1.0,1997
 Marc Fischlin,TU Darmstadt,crypto,1.0,1.0,1997
@@ -3599,6 +3630,11 @@ Kristen Grauman,University of Texas - Austin,vision,7.0,2.66666666667,2012
 Kristen Grauman,University of Texas - Austin,vision,8.0,3.75,2013
 Kristen Grauman,University of Texas - Austin,vision,7.0,3.33333333333,2014
 Kristen Grauman,University of Texas - Austin,vision,2.0,1.0,2015
+Yvonne Jansen,DIKU,hci,1.0,0.142857142857,2009
+Yvonne Jansen,DIKU,hci,1.0,0.333333333333,2012
+Yvonne Jansen,DIKU,hci,1.0,0.333333333333,2013
+Yvonne Jansen,DIKU,hci,1.0,0.166666666667,2014
+Yvonne Jansen,DIKU,hci,2.0,0.267857142857,2015
 Herbert Wiklicky,Imperial College London,mlmining,1.0,1.0,1993
 Anthony Steed,University College London,graphics,1.0,0.142857142857,1999
 Anthony Steed,University College London,graphics,1.0,0.142857142857,2012
@@ -4873,6 +4909,7 @@ Jan Vitek,Northeastern University,proglang,1.0,0.2,2014
 Jan Vitek,Northeastern University,proglang,1.0,0.166666666667,2016
 Jan Vitek,Northeastern University,security,1.0,0.333333333333,2005
 Jan Vitek,Northeastern University,softeng,1.0,0.166666666667,2013
+Ken Friis Larsen,DIKU,proglang,1.0,0.333333333333,2004
 Leonid A. Levin,Boston University,theory,2.0,1.5,1988
 Leonid A. Levin,Boston University,theory,3.0,1.33333333333,1989
 Leonid A. Levin,Boston University,theory,2.0,0.7,1990
@@ -5140,6 +5177,13 @@ Jesse L. Barlow,Pennsylvania State University,vision,1.0,0.333333333333,2005
 Mark R. Greenstreet,University of British Columbia,logic,1.0,1.0,1996
 Mark R. Greenstreet,University of British Columbia,logic,1.0,0.25,2013
 V. K. Prasanna Kumar,University of Southern California,vision,1.0,0.5,1991
+Sebastian Boring,DIKU,hci,1.0,0.25,2005
+Sebastian Boring,DIKU,hci,1.0,0.2,2010
+Sebastian Boring,DIKU,hci,1.0,0.25,2011
+Sebastian Boring,DIKU,hci,1.0,0.333333333333,2012
+Sebastian Boring,DIKU,hci,1.0,0.111111111111,2014
+Sebastian Boring,DIKU,hci,1.0,0.2,2015
+Sebastian Boring,DIKU,hci,1.0,0.25,2016
 Guofei Gu,Texas A&M University,networks,1.0,0.333333333333,2015
 Guofei Gu,Texas A&M University,web,1.0,0.2,2012
 Guofei Gu,Texas A&M University,security,1.0,0.25,2008
@@ -5409,6 +5453,7 @@ Krzysztof Z. Gajos,Harvard University,hci,3.0,0.833333333333,2014
 Krzysztof Z. Gajos,Harvard University,hci,1.0,0.2,2015
 Krzysztof Z. Gajos,Harvard University,hci,3.0,0.616666666667,2016
 Krzysztof Z. Gajos,Harvard University,ai,1.0,0.333333333333,2016
+Marleen de Bruijne,DIKU,mlmining,1.0,0.2,2013
 Martina Angela Sasse,University College London,hci,1.0,0.25,2001
 Martina Angela Sasse,University College London,hci,2.0,0.5,2003
 Martina Angela Sasse,University College London,hci,2.0,0.833333333333,2004
@@ -5865,6 +5910,7 @@ Maurice F. Fallon,University of Edinburgh,robotics,2.0,0.583333333333,2010
 Maurice F. Fallon,University of Edinburgh,robotics,1.0,0.25,2011
 Maurice F. Fallon,University of Edinburgh,robotics,2.0,0.533333333333,2012
 Maurice F. Fallon,University of Edinburgh,robotics,1.0,0.25,2013
+Kenny Erleben,DIKU,graphics,1.0,1.0,2007
 Peggy Seriès,University of Edinburgh,mlmining,1.0,0.333333333333,2010
 Peggy Seriès,University of Edinburgh,mlmining,1.0,0.333333333333,2011
 Daniel Abadi,Yale University,database,1.0,0.5,2016
@@ -10128,6 +10174,10 @@ Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.333333333333,2012
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2014
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2015
 Karrie G. Karahalios,University of Illinois at Urbana-Champaign,hci,1.0,0.2,2015
+Andrzej Filinski,DIKU,proglang,1.0,1.0,1992
+Andrzej Filinski,DIKU,proglang,1.0,1.0,1994
+Andrzej Filinski,DIKU,proglang,1.0,1.0,1999
+Andrzej Filinski,DIKU,proglang,1.0,1.0,2010
 Tevfik Bultan,University of California - Santa Barbara,proglang,1.0,0.333333333333,2012
 Tevfik Bultan,University of California - Santa Barbara,web,1.0,0.25,2003
 Tevfik Bultan,University of California - Santa Barbara,web,1.0,0.333333333333,2004
@@ -10154,6 +10204,10 @@ Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,0.3333333333
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,0.333333333333,2001
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,2.0,0.5,2002
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,2.0,0.309523809524,2008
+Mary Cryan,University of Edinburgh,theory,1.0,0.333333333333,1998
+Mary Cryan,University of Edinburgh,theory,2.0,0.7,2002
+Mary Cryan,University of Edinburgh,theory,1.0,0.25,2003
+Mary Cryan,University of Edinburgh,theory,1.0,0.333333333333,2005
 Richard Cole 0001,New York University,theory,1.0,0.5,1983
 Richard Cole 0001,New York University,theory,3.0,1.83333333333,1984
 Richard Cole 0001,New York University,theory,1.0,0.5,1985
@@ -11239,11 +11293,7 @@ Xiaowei Yang,Duke University,security,1.0,0.25,2014
 Thomas W. Doeppner Jr.,Brown University,security,1.0,0.333333333333,2000
 Nelson Wong,University of Calgary,hci,1.0,0.5,2008
 Nelson Wong,University of Calgary,hci,1.0,0.5,2010
-Laura Dabbish,Carnegie Mellon University,hci,1.0,0.5,2004
-Laura Dabbish,Carnegie Mellon University,hci,2.0,0.5,2011
-Laura Dabbish,Carnegie Mellon University,hci,1.0,0.333333333333,2012
-Laura Dabbish,Carnegie Mellon University,hci,1.0,0.25,2015
-Laura Dabbish,Carnegie Mellon University,softeng,2.0,0.666666666667,2014
+Katarzyna Wac,DIKU,hci,1.0,0.166666666667,2011
 Benjamin Rossman,University of Toronto,theory,1.0,1.0,2008
 Benjamin Rossman,University of Toronto,theory,1.0,1.0,2010
 Benjamin Rossman,University of Toronto,theory,2.0,1.33333333333,2014
@@ -11281,11 +11331,15 @@ Boris Motik,University of Oxford,web,1.0,0.333333333333,2008
 Karem A. Sakallah,University of Michigan,ai,1.0,0.333333333333,2003
 Karem A. Sakallah,University of Michigan,ai,1.0,0.25,2005
 Karem A. Sakallah,University of Michigan,logic,1.0,0.5,2014
-Amal Ahmed,Northeastern University,proglang,1.0,0.333333333333,2008
-Amal Ahmed,Northeastern University,proglang,1.0,0.333333333333,2009
-Amal Ahmed,Northeastern University,proglang,1.0,0.25,2011
-Amal Ahmed,Northeastern University,proglang,1.0,0.2,2013
-Amal Ahmed,Northeastern University,logic,1.0,0.333333333333,2009
+Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.166666666667,2009
+Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.333333333333,2010
+Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.25,2011
+Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,2.0,0.5,2012
+Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.333333333333,2015
+Evangelos Kalogerakis,University of Massachusetts - Amherst,hci,1.0,0.25,2013
+Evangelos Kalogerakis,University of Massachusetts - Amherst,mobile,1.0,0.2,2014
+Evangelos Kalogerakis,University of Massachusetts - Amherst,vision,1.0,0.2,2009
+Evangelos Kalogerakis,University of Massachusetts - Amherst,vision,1.0,0.25,2015
 Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,0.5,2009
 Adnan Darwiche,University of California - Los Angeles,mlmining,2.0,0.833333333333,2013
 Adnan Darwiche,University of California - Los Angeles,mlmining,1.0,0.333333333333,2014
@@ -19099,6 +19153,10 @@ Mira Mezini,TU Darmstadt,softeng,2.0,0.5,2014
 Mira Mezini,TU Darmstadt,softeng,2.0,0.5,2015
 Mira Mezini,TU Darmstadt,softeng,2.0,0.75,2016
 Mitchell Marcus,University of Pennsylvania,nlp,1.0,0.333333333333,2015
+Jakob Grue Simonsen,DIKU,hci,1.0,0.5,2013
+Jakob Grue Simonsen,DIKU,hci,1.0,0.25,2014
+Jakob Grue Simonsen,DIKU,hci,1.0,0.2,2016
+Jakob Grue Simonsen,DIKU,web,1.0,0.25,2015
 Timothy G. Griffin,University of Cambridge,networks,1.0,0.5,2005
 Timothy G. Griffin,University of Cambridge,networks,1.0,0.333333333333,2006
 Kristy Elizabeth Boyer,North Carolina State University,nlp,1.0,0.2,2011
@@ -21433,6 +21491,10 @@ Alexander M. Bronstein,Technion,vision,3.0,1.08333333333,2010
 Alexander M. Bronstein,Technion,vision,1.0,0.2,2011
 Alexander M. Bronstein,Technion,vision,2.0,0.45,2012
 Alexander M. Bronstein,Technion,vision,1.0,0.25,2015
+Aasa Feragen,DIKU,mlmining,1.0,0.2,2013
+Aasa Feragen,DIKU,vision,1.0,0.25,2011
+Aasa Feragen,DIKU,vision,1.0,0.333333333333,2014
+Aasa Feragen,DIKU,vision,1.0,0.333333333333,2015
 Paul Anderson,University of Edinburgh,mlmining,1.0,0.333333333333,1995
 Andrew Davison,Imperial College London,robotics,1.0,0.333333333333,2008
 Jennifer Mankoff,Carnegie Mellon University,graphics,1.0,0.2,2016
@@ -22491,6 +22553,20 @@ John R. Kender,Columbia University,vision,2.0,1.0,1998
 John R. Kender,Columbia University,vision,1.0,0.5,2000
 John R. Kender,Columbia University,vision,2.0,1.0,2002
 Donald M. Chiarulli,University of Pittsburgh,mlmining,1.0,0.2,1997
+Kasper Hornbæk,DIKU,hci,1.0,0.333333333333,2000
+Kasper Hornbæk,DIKU,hci,1.0,0.5,2001
+Kasper Hornbæk,DIKU,hci,1.0,0.25,2004
+Kasper Hornbæk,DIKU,hci,1.0,0.5,2005
+Kasper Hornbæk,DIKU,hci,2.0,1.0,2006
+Kasper Hornbæk,DIKU,hci,1.0,0.5,2007
+Kasper Hornbæk,DIKU,hci,1.0,0.5,2008
+Kasper Hornbæk,DIKU,hci,2.0,0.75,2009
+Kasper Hornbæk,DIKU,hci,3.0,1.5,2011
+Kasper Hornbæk,DIKU,hci,2.0,0.583333333333,2012
+Kasper Hornbæk,DIKU,hci,1.0,0.333333333333,2013
+Kasper Hornbæk,DIKU,hci,5.0,1.75,2014
+Kasper Hornbæk,DIKU,hci,5.0,1.43452380952,2015
+Kasper Hornbæk,DIKU,hci,7.0,2.78333333333,2016
 Julie Dorsey,Yale University,graphics,1.0,0.333333333333,1991
 Julie Dorsey,Yale University,graphics,2.0,0.833333333333,1996
 Julie Dorsey,Yale University,graphics,2.0,0.533333333333,1999
@@ -22557,10 +22633,12 @@ Aditya Akella,University of Wisconsin - Madison,mobile,1.0,0.25,2005
 Aditya Akella,University of Wisconsin - Madison,mobile,1.0,0.25,2011
 Aditya Akella,University of Wisconsin - Madison,mobile,1.0,0.5,2013
 Aditya Akella,University of Wisconsin - Madison,security,1.0,0.2,2015
-Mary Cryan,University of Edinburgh,theory,1.0,0.333333333333,1998
-Mary Cryan,University of Edinburgh,theory,2.0,0.7,2002
-Mary Cryan,University of Edinburgh,theory,1.0,0.25,2003
-Mary Cryan,University of Edinburgh,theory,1.0,0.333333333333,2005
+Fritz Henglein,DIKU,proglang,1.0,0.5,1991
+Fritz Henglein,DIKU,proglang,1.0,0.5,1994
+Fritz Henglein,DIKU,proglang,1.0,0.166666666667,1999
+Fritz Henglein,DIKU,proglang,1.0,0.5,2011
+Fritz Henglein,DIKU,proglang,1.0,0.2,2016
+Fritz Henglein,DIKU,logic,1.0,0.5,1997
 Dan Rubenstein,Columbia University,metrics,1.0,0.333333333333,2000
 Dan Rubenstein,Columbia University,metrics,2.0,0.666666666667,2007
 Dan Rubenstein,Columbia University,metrics,1.0,0.25,2008
@@ -22766,15 +22844,36 @@ James Cheney,University of Edinburgh,database,1.0,0.333333333333,2014
 James Cheney,University of Edinburgh,proglang,1.0,0.166666666667,2002
 James Cheney,University of Edinburgh,logic,1.0,0.5,2004
 James Cheney,University of Edinburgh,logic,1.0,0.333333333333,2008
-Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.166666666667,2009
-Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.333333333333,2010
-Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.25,2011
-Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,2.0,0.5,2012
-Evangelos Kalogerakis,University of Massachusetts - Amherst,graphics,1.0,0.333333333333,2015
-Evangelos Kalogerakis,University of Massachusetts - Amherst,hci,1.0,0.25,2013
-Evangelos Kalogerakis,University of Massachusetts - Amherst,mobile,1.0,0.2,2014
-Evangelos Kalogerakis,University of Massachusetts - Amherst,vision,1.0,0.2,2009
-Evangelos Kalogerakis,University of Massachusetts - Amherst,vision,1.0,0.25,2015
+Mikkel Thorup,DIKU,metrics,1.0,0.333333333333,2004
+Mikkel Thorup,DIKU,metrics,1.0,0.25,2008
+Mikkel Thorup,DIKU,theory,2.0,1.0,1994
+Mikkel Thorup,DIKU,theory,1.0,0.5,1995
+Mikkel Thorup,DIKU,theory,3.0,1.41666666667,1996
+Mikkel Thorup,DIKU,theory,3.0,3.0,1997
+Mikkel Thorup,DIKU,theory,4.0,2.58333333333,1998
+Mikkel Thorup,DIKU,theory,1.0,0.2,1999
+Mikkel Thorup,DIKU,theory,2.0,1.5,2000
+Mikkel Thorup,DIKU,theory,3.0,2.5,2001
+Mikkel Thorup,DIKU,theory,4.0,2.33333333333,2002
+Mikkel Thorup,DIKU,theory,5.0,4.2,2003
+Mikkel Thorup,DIKU,theory,2.0,0.833333333333,2004
+Mikkel Thorup,DIKU,theory,1.0,1.0,2005
+Mikkel Thorup,DIKU,theory,3.0,1.5,2006
+Mikkel Thorup,DIKU,theory,2.0,1.0,2007
+Mikkel Thorup,DIKU,theory,2.0,1.2,2008
+Mikkel Thorup,DIKU,theory,3.0,1.53333333333,2009
+Mikkel Thorup,DIKU,theory,2.0,0.833333333333,2010
+Mikkel Thorup,DIKU,theory,3.0,1.5,2011
+Mikkel Thorup,DIKU,theory,2.0,0.833333333333,2012
+Mikkel Thorup,DIKU,theory,4.0,2.83333333333,2013
+Mikkel Thorup,DIKU,theory,1.0,0.5,2014
+Mikkel Thorup,DIKU,theory,6.0,2.66666666667,2015
+Mikkel Thorup,DIKU,theory,1.0,0.25,2016
+Mikkel Thorup,DIKU,database,1.0,0.25,2005
+Mikkel Thorup,DIKU,database,1.0,0.2,2007
+Mikkel Thorup,DIKU,database,1.0,0.2,2009
+Mikkel Thorup,DIKU,networks,1.0,0.5,2000
+Mikkel Thorup,DIKU,networks,2.0,0.833333333333,2003
 Minlan Yu,University of Southern California,metrics,1.0,0.25,2015
 Minlan Yu,University of Southern California,networks,1.0,0.25,2010
 Minlan Yu,University of Southern California,networks,1.0,0.142857142857,2011
@@ -23889,6 +23988,11 @@ Anant Agarwal,Massachusetts Institute of Technology,highperf,2.0,0.7,1993
 Anant Agarwal,Massachusetts Institute of Technology,highperf,1.0,0.333333333333,1997
 Christopher Dyer,Carnegie Mellon University,nlp,1.0,0.333333333333,2008
 Christopher Dyer,Carnegie Mellon University,nlp,2.0,0.833333333333,2010
+Laura Dabbish,Carnegie Mellon University,hci,1.0,0.5,2004
+Laura Dabbish,Carnegie Mellon University,hci,2.0,0.5,2011
+Laura Dabbish,Carnegie Mellon University,hci,1.0,0.333333333333,2012
+Laura Dabbish,Carnegie Mellon University,hci,1.0,0.25,2015
+Laura Dabbish,Carnegie Mellon University,softeng,2.0,0.666666666667,2014
 Yin Zhang,University of Texas - Austin,metrics,1.0,0.25,2003
 Yin Zhang,University of Texas - Austin,metrics,1.0,0.2,2004
 Yin Zhang,University of Texas - Austin,metrics,1.0,0.25,2005
@@ -25081,6 +25185,7 @@ Andrew McCallum,University of Massachusetts - Amherst,web,1.0,0.25,2003
 Andrew McCallum,University of Massachusetts - Amherst,web,1.0,0.5,2005
 Andrew McCallum,University of Massachusetts - Amherst,web,1.0,0.333333333333,2008
 Andrew McCallum,University of Massachusetts - Amherst,vision,1.0,0.333333333333,2007
+Jyrki Katajainen,DIKU,theory,1.0,0.25,1995
 Nikolaus Correll,University of Colorado Boulder,robotics,1.0,0.5,2005
 Nikolaus Correll,University of Colorado Boulder,robotics,2.0,0.333333333333,2006
 Nikolaus Correll,University of Colorado Boulder,robotics,1.0,0.5,2007
@@ -25879,6 +25984,7 @@ AnHai Doan,University of Wisconsin - Madison,database,2.0,0.225,2013
 AnHai Doan,University of Wisconsin - Madison,database,4.0,1.05952380952,2014
 AnHai Doan,University of Wisconsin - Madison,database,1.0,0.0833333333333,2015
 AnHai Doan,University of Wisconsin - Madison,web,1.0,0.25,2002
+Martin Elsman,DIKU,proglang,1.0,0.333333333333,2002
 Theophilus Benson,Duke University,metrics,1.0,0.333333333333,2009
 Theophilus Benson,Duke University,metrics,1.0,0.333333333333,2010
 Theophilus Benson,Duke University,metrics,1.0,0.25,2011
@@ -27321,6 +27427,8 @@ Joe D. Warren,Rice University,graphics,1.0,0.5,2012
 Joe D. Warren,Rice University,proglang,1.0,0.25,1983
 Joe D. Warren,Rice University,proglang,1.0,1.0,1984
 Joe D. Warren,Rice University,robotics,1.0,0.333333333333,1998
+Sune Darkner,DIKU,vision,1.0,0.25,2007
+Sune Darkner,DIKU,vision,1.0,0.25,2012
 Magdalena Balazinska,University of Washington,database,1.0,0.25,2005
 Magdalena Balazinska,University of Washington,database,1.0,0.25,2007
 Magdalena Balazinska,University of Washington,database,2.0,0.583333333333,2008
@@ -27343,6 +27451,9 @@ Eftychios Sifakis,University of Wisconsin - Madison,graphics,1.0,0.333333333333,
 Eftychios Sifakis,University of Wisconsin - Madison,graphics,2.0,0.5,2014
 Eftychios Sifakis,University of Wisconsin - Madison,graphics,2.0,0.583333333333,2015
 Eftychios Sifakis,University of Wisconsin - Madison,arch,1.0,0.111111111111,2007
+Christian Igel,DIKU,mlmining,1.0,0.5,2009
+Christian Igel,DIKU,mlmining,1.0,0.25,2014
+Christian Igel,DIKU,vision,1.0,0.25,2013
 Michael Kapralov,EPFL,theory,1.0,0.333333333333,2009
 Michael Kapralov,EPFL,theory,1.0,0.333333333333,2010
 Michael Kapralov,EPFL,theory,1.0,0.333333333333,2012
@@ -28401,6 +28512,7 @@ Dongyan Xu,Purdue University,softeng,1.0,0.2,2014
 Dongyan Xu,Purdue University,arch,1.0,0.2,2015
 Dongyan Xu,Purdue University,arch,1.0,0.142857142857,2016
 Dongyan Xu,Purdue University,highperf,1.0,0.25,2010
+Hui Zhang 0005,University College London,vision,1.0,0.25,2007
 Robert M. Kirby,University of Utah,logic,1.0,0.333333333333,2008
 Robert M. Kirby,University of Utah,highperf,1.0,0.2,1999
 Robert M. Kirby,University of Utah,highperf,1.0,0.166666666667,2009
@@ -28674,6 +28786,10 @@ Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2013
 Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2014
 Julia Chuzhoy,University of Chicago,theory,3.0,2.5,2015
 Julia Chuzhoy,University of Chicago,theory,1.0,0.333333333333,2016
+Erik Frøkjær,DIKU,hci,1.0,0.333333333333,2000
+Erik Frøkjær,DIKU,hci,1.0,0.5,2001
+Erik Frøkjær,DIKU,hci,1.0,0.5,2005
+Erik Frøkjær,DIKU,hci,1.0,0.5,2008
 Jim Davies,University of Oxford,ai,1.0,0.5,2001
 Jim Davies,University of Oxford,softeng,1.0,0.2,2003
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.2,2003
@@ -29108,6 +29224,15 @@ J. Kenneth Salisbury,Stanford University,robotics,1.0,0.2,2007
 J. Kenneth Salisbury,Stanford University,robotics,4.0,1.5,2008
 J. Kenneth Salisbury,Stanford University,robotics,2.0,0.75,2010
 J. Kenneth Salisbury,Stanford University,robotics,1.0,0.333333333333,2011
+Stephen Alstrup,DIKU,theory,2.0,0.583333333333,1998
+Stephen Alstrup,DIKU,theory,1.0,0.333333333333,1999
+Stephen Alstrup,DIKU,theory,2.0,0.666666666667,2000
+Stephen Alstrup,DIKU,theory,1.0,0.333333333333,2001
+Stephen Alstrup,DIKU,theory,2.0,1.0,2002
+Stephen Alstrup,DIKU,theory,1.0,0.333333333333,2003
+Stephen Alstrup,DIKU,theory,1.0,0.333333333333,2014
+Stephen Alstrup,DIKU,theory,2.0,0.583333333333,2015
+Stephen Alstrup,DIKU,theory,1.0,0.25,2016
 Chris Evans,University College London,security,1.0,0.25,2010
 Hans-Arno Jacobsen,TU Munich,database,1.0,0.166666666667,2001
 Hans-Arno Jacobsen,TU Munich,database,1.0,0.5,2007
@@ -29613,6 +29738,10 @@ Dimitris Samaras,State University of New York - Stony Brook,vision,3.0,0.5833333
 Dimitris Samaras,State University of New York - Stony Brook,vision,2.0,0.4,2013
 Dimitris Samaras,State University of New York - Stony Brook,vision,1.0,0.2,2014
 Dimitris Samaras,State University of New York - Stony Brook,vision,2.0,0.583333333333,2015
+Mikkel Rønne Jakobsen,DIKU,hci,1.0,0.5,2006
+Mikkel Rønne Jakobsen,DIKU,hci,1.0,0.5,2009
+Mikkel Rønne Jakobsen,DIKU,hci,1.0,0.5,2011
+Mikkel Rønne Jakobsen,DIKU,hci,1.0,0.333333333333,2014
 Norman S. Matloff,University of California - Davis,networks,1.0,0.25,1989
 Norman S. Matloff,University of California - Davis,security,1.0,1.0,1986
 Giovanni De Micheli,EPFL,mobile,1.0,0.25,2000
@@ -30578,7 +30707,8 @@ Gerhard Hirzinger,TU Munich,robotics,1.0,0.5,1992
 Gerhard Hirzinger,TU Munich,robotics,4.0,1.66666666667,1994
 Gerhard Hirzinger,TU Munich,robotics,1.0,0.2,1996
 Gerhard Hirzinger,TU Munich,robotics,2.0,0.45,2011
-Hui Zhang 0005,University College London,vision,1.0,0.25,2007
+Klaus Marius Hansen,DIKU,hci,1.0,0.333333333333,2000
+Klaus Marius Hansen,DIKU,hci,1.0,0.166666666667,2001
 Vernon Rego,Purdue University,networks,1.0,1.0,1986
 Vernon Rego,Purdue University,highperf,1.0,0.333333333333,1992
 Ani Nenkova,University of Pennsylvania,nlp,2.0,0.611111111111,2003
