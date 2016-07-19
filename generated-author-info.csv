@@ -1,16 +1,16 @@
 "name","dept","area","count","adjustedcount","year"
-Liqing Zhang,Virginia Polytechnic Institute and State University,mlmining,1.0,0.5,1998
-Liqing Zhang,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,1999
-Liqing Zhang,Virginia Polytechnic Institute and State University,mlmining,1.0,0.5,2008
-Liqing Zhang,Virginia Polytechnic Institute and State University,mlmining,1.0,0.142857142857,2011
-Liqing Zhang,Virginia Polytechnic Institute and State University,ai,1.0,0.333333333333,2013
-Liqing Zhang,Virginia Polytechnic Institute and State University,ai,1.0,0.25,2014
-Liqing Zhang,Virginia Polytechnic Institute and State University,ai,1.0,0.25,2015
-Liqing Zhang,Virginia Polytechnic Institute and State University,vision,1.0,0.5,2007
-Liqing Zhang,Virginia Polytechnic Institute and State University,vision,1.0,0.2,2010
-Liqing Zhang,Virginia Polytechnic Institute and State University,vision,1.0,0.25,2011
-Liqing Zhang,Virginia Polytechnic Institute and State University,vision,1.0,0.25,2012
-Liqing Zhang,Virginia Polytechnic Institute and State University,vision,1.0,0.166666666667,2015
+Liqing Zhang,Virginia Tech,mlmining,1.0,0.5,1998
+Liqing Zhang,Virginia Tech,mlmining,1.0,0.333333333333,1999
+Liqing Zhang,Virginia Tech,mlmining,1.0,0.5,2008
+Liqing Zhang,Virginia Tech,mlmining,1.0,0.142857142857,2011
+Liqing Zhang,Virginia Tech,ai,1.0,0.333333333333,2013
+Liqing Zhang,Virginia Tech,ai,1.0,0.25,2014
+Liqing Zhang,Virginia Tech,ai,1.0,0.25,2015
+Liqing Zhang,Virginia Tech,vision,1.0,0.5,2007
+Liqing Zhang,Virginia Tech,vision,1.0,0.2,2010
+Liqing Zhang,Virginia Tech,vision,1.0,0.25,2011
+Liqing Zhang,Virginia Tech,vision,1.0,0.25,2012
+Liqing Zhang,Virginia Tech,vision,1.0,0.166666666667,2015
 Ricardo Gutierrez-Osuna,Texas A&M University,mlmining,1.0,0.5,2004
 Ricardo Gutierrez-Osuna,Texas A&M University,robotics,1.0,0.25,2004
 M. Tamer Özsu,University of Waterloo,mlmining,1.0,0.5,2003
@@ -272,7 +272,7 @@ Shmuel Zaks,Technion,networks,1.0,0.333333333333,1996
 Shmuel Zaks,Technion,networks,1.0,0.2,2014
 J. Michael Herrmann,University of Edinburgh,mlmining,1.0,0.333333333333,2005
 J. Michael Herrmann,University of Edinburgh,robotics,1.0,0.5,2010
-Calvin J. Ribbens,Virginia Polytechnic Institute and State University,proglang,1.0,0.333333333333,2011
+Calvin J. Ribbens,Virginia Tech,proglang,1.0,0.333333333333,2011
 Doug L. James,Stanford University,graphics,1.0,0.5,1999
 Doug L. James,Stanford University,graphics,1.0,0.142857142857,2001
 Doug L. James,Stanford University,graphics,2.0,1.0,2003
@@ -935,19 +935,19 @@ Abdeslam Boularias,Rutgers University,ai,2.0,0.424242424242,2015
 Abdeslam Boularias,Rutgers University,robotics,1.0,0.5,2010
 Abdeslam Boularias,Rutgers University,robotics,1.0,0.333333333333,2011
 Abdeslam Boularias,Rutgers University,robotics,1.0,0.25,2015
-Yang Cao,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2008
-Yang Cao,Virginia Polytechnic Institute and State University,database,1.0,0.2,2011
-Yang Cao,Virginia Polytechnic Institute and State University,database,1.0,0.333333333333,2013
-Yang Cao,Virginia Polytechnic Institute and State University,database,1.0,0.25,2014
-Yang Cao,Virginia Polytechnic Institute and State University,database,1.0,0.2,2015
-Yang Cao,Virginia Polytechnic Institute and State University,database,2.0,0.75,2016
-Yang Cao,Virginia Polytechnic Institute and State University,networks,1.0,0.25,2014
-Yang Cao,Virginia Polytechnic Institute and State University,web,1.0,0.142857142857,2008
-Yang Cao,Virginia Polytechnic Institute and State University,web,1.0,0.25,2012
-Yang Cao,Virginia Polytechnic Institute and State University,robotics,1.0,0.0769230769231,2014
-Yang Cao,Virginia Polytechnic Institute and State University,robotics,1.0,0.166666666667,2015
-Yang Cao,Virginia Polytechnic Institute and State University,vision,2.0,0.533333333333,2010
-Yang Cao,Virginia Polytechnic Institute and State University,vision,1.0,0.25,2011
+Yang Cao,Virginia Tech,mlmining,1.0,0.333333333333,2008
+Yang Cao,Virginia Tech,database,1.0,0.2,2011
+Yang Cao,Virginia Tech,database,1.0,0.333333333333,2013
+Yang Cao,Virginia Tech,database,1.0,0.25,2014
+Yang Cao,Virginia Tech,database,1.0,0.2,2015
+Yang Cao,Virginia Tech,database,2.0,0.75,2016
+Yang Cao,Virginia Tech,networks,1.0,0.25,2014
+Yang Cao,Virginia Tech,web,1.0,0.142857142857,2008
+Yang Cao,Virginia Tech,web,1.0,0.25,2012
+Yang Cao,Virginia Tech,robotics,1.0,0.0769230769231,2014
+Yang Cao,Virginia Tech,robotics,1.0,0.166666666667,2015
+Yang Cao,Virginia Tech,vision,2.0,0.533333333333,2010
+Yang Cao,Virginia Tech,vision,1.0,0.25,2011
 Subhransu Maji,University of Massachusetts - Amherst,mlmining,2.0,0.583333333333,2013
 Subhransu Maji,University of Massachusetts - Amherst,vision,1.0,0.333333333333,2008
 Subhransu Maji,University of Massachusetts - Amherst,vision,2.0,1.0,2009
@@ -1866,8 +1866,8 @@ Martin Tompa,University of Washington,theory,1.0,0.5,1986
 Martin Tompa,University of Washington,theory,2.0,0.833333333333,1987
 Martin Tompa,University of Washington,theory,2.0,0.666666666667,1989
 Martin Tompa,University of Washington,theory,2.0,0.533333333333,1990
-Steve Harrison,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2010
-Steve Harrison,Virginia Polytechnic Institute and State University,hci,2.0,0.45,2011
+Steve Harrison,Virginia Tech,hci,1.0,0.333333333333,2010
+Steve Harrison,Virginia Tech,hci,2.0,0.45,2011
 Christian S. Collberg,University of Arizona,database,1.0,0.333333333333,2004
 Christian S. Collberg,University of Arizona,proglang,1.0,1.0,1997
 Christian S. Collberg,University of Arizona,proglang,1.0,0.333333333333,1998
@@ -3513,26 +3513,26 @@ Manish Parashar,Rutgers University,highperf,1.0,0.0666666666667,2012
 Manish Parashar,Rutgers University,highperf,2.0,0.188034188034,2013
 Manish Parashar,Rutgers University,highperf,1.0,0.166666666667,2014
 Manish Parashar,Rutgers University,highperf,3.0,0.385714285714,2015
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,1.0,1983
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.5,1988
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.5,1990
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.5,1991
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.5,1992
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.333333333333,1993
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.333333333333,1999
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,2.0,0.833333333333,2001
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.333333333333,2002
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,proglang,1.0,0.2,2004
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.333333333333,1996
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.25,1997
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.333333333333,1999
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.333333333333,2003
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.25,2006
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.5,2007
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,1.0,0.333333333333,2008
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,softeng,2.0,0.45,2009
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,highperf,1.0,0.333333333333,1990
-Barbara G. Ryder,Virginia Polytechnic Institute and State University,highperf,1.0,0.5,1993
+Barbara G. Ryder,Virginia Tech,proglang,1.0,1.0,1983
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.5,1988
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.5,1990
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.5,1991
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.5,1992
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.333333333333,1993
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.333333333333,1999
+Barbara G. Ryder,Virginia Tech,proglang,2.0,0.833333333333,2001
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.333333333333,2002
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.2,2004
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.333333333333,1996
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.25,1997
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.333333333333,1999
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.333333333333,2003
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.25,2006
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.5,2007
+Barbara G. Ryder,Virginia Tech,softeng,1.0,0.333333333333,2008
+Barbara G. Ryder,Virginia Tech,softeng,2.0,0.45,2009
+Barbara G. Ryder,Virginia Tech,highperf,1.0,0.333333333333,1990
+Barbara G. Ryder,Virginia Tech,highperf,1.0,0.5,1993
 Merrick L. Furst,Georgia Institute of Technology,theory,1.0,0.333333333333,1980
 Merrick L. Furst,Georgia Institute of Technology,theory,1.0,0.333333333333,1981
 Merrick L. Furst,Georgia Institute of Technology,theory,2.0,0.833333333333,1983
@@ -4177,11 +4177,11 @@ Serafim Batzoglou,Stanford University,theory,1.0,0.142857142857,1997
 Serafim Batzoglou,Stanford University,mlmining,1.0,0.5,2003
 Serafim Batzoglou,Stanford University,mlmining,1.0,0.25,2006
 Serafim Batzoglou,Stanford University,ai,1.0,0.333333333333,2004
-Changhee Jung,Virginia Polytechnic Institute and State University,proglang,1.0,0.2,2011
-Changhee Jung,Virginia Polytechnic Institute and State University,softeng,2.0,0.583333333333,2014
-Changhee Jung,Virginia Polytechnic Institute and State University,arch,1.0,0.5,2009
-Changhee Jung,Virginia Polytechnic Institute and State University,arch,1.0,0.333333333333,2016
-Changhee Jung,Virginia Polytechnic Institute and State University,highperf,1.0,0.25,2005
+Changhee Jung,Virginia Tech,proglang,1.0,0.2,2011
+Changhee Jung,Virginia Tech,softeng,2.0,0.583333333333,2014
+Changhee Jung,Virginia Tech,arch,1.0,0.5,2009
+Changhee Jung,Virginia Tech,arch,1.0,0.333333333333,2016
+Changhee Jung,Virginia Tech,highperf,1.0,0.25,2005
 Xiaohui Gu,North Carolina State University,database,2.0,0.257575757576,2007
 Xiaohui Gu,North Carolina State University,networks,1.0,0.333333333333,2007
 Zeeshan Syed,University of Michigan,mlmining,2.0,1.0,2010
@@ -6373,11 +6373,11 @@ Thore Graepel,University College London,proglang,1.0,0.166666666667,2014
 Thore Graepel,University College London,web,1.0,0.333333333333,2009
 Thore Graepel,University College London,web,1.0,0.25,2013
 Melody Moore Jackson,Georgia Institute of Technology,hci,1.0,0.2,2014
-Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1.0,0.5,2008
-Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1.0,0.5,2009
-Eli Tilevich,Virginia Polytechnic Institute and State University,proglang,1.0,0.333333333333,2010
-Eli Tilevich,Virginia Polytechnic Institute and State University,softeng,1.0,0.5,2005
-Eli Tilevich,Virginia Polytechnic Institute and State University,softeng,1.0,0.5,2012
+Eli Tilevich,Virginia Tech,proglang,1.0,0.5,2008
+Eli Tilevich,Virginia Tech,proglang,1.0,0.5,2009
+Eli Tilevich,Virginia Tech,proglang,1.0,0.333333333333,2010
+Eli Tilevich,Virginia Tech,softeng,1.0,0.5,2005
+Eli Tilevich,Virginia Tech,softeng,1.0,0.5,2012
 Michael J. Fischer,Yale University,theory,1.0,0.5,1980
 Michael J. Fischer,Yale University,theory,2.0,0.75,1984
 Michael J. Fischer,Yale University,theory,1.0,0.5,1985
@@ -9288,28 +9288,28 @@ John Criswell,University of Rochester,security,1.0,0.333333333333,2014
 John Criswell,University of Rochester,arch,1.0,0.25,2013
 John Criswell,University of Rochester,arch,1.0,0.333333333333,2014
 John Criswell,University of Rochester,arch,1.0,0.2,2015
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,nlp,1.0,0.5,2008
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,1.0,0.2,2004
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,1.0,0.5,2005
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,2.0,0.583333333333,2006
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2008
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,1.0,0.25,2009
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,3.0,0.642857142857,2010
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,1.0,0.166666666667,2011
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,1.0,0.25,2012
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,2.0,0.158333333333,2014
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,mlmining,3.0,0.533333333333,2015
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.5,2001
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.5,2003
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.5,2004
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.5,2005
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.2,2011
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.25,2012
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,2.0,0.5,2013
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,1.0,0.142857142857,2015
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,ai,4.0,1.15,2016
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,web,1.0,0.25,2004
-Naren Ramakrishnan,Virginia Polytechnic Institute and State University,security,1.0,0.333333333333,2015
+Naren Ramakrishnan,Virginia Tech,nlp,1.0,0.5,2008
+Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.2,2004
+Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.5,2005
+Naren Ramakrishnan,Virginia Tech,mlmining,2.0,0.583333333333,2006
+Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.333333333333,2008
+Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.25,2009
+Naren Ramakrishnan,Virginia Tech,mlmining,3.0,0.642857142857,2010
+Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.166666666667,2011
+Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.25,2012
+Naren Ramakrishnan,Virginia Tech,mlmining,2.0,0.158333333333,2014
+Naren Ramakrishnan,Virginia Tech,mlmining,3.0,0.533333333333,2015
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.5,2001
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.5,2003
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.5,2004
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.5,2005
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.2,2011
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.25,2012
+Naren Ramakrishnan,Virginia Tech,ai,2.0,0.5,2013
+Naren Ramakrishnan,Virginia Tech,ai,1.0,0.142857142857,2015
+Naren Ramakrishnan,Virginia Tech,ai,4.0,1.15,2016
+Naren Ramakrishnan,Virginia Tech,web,1.0,0.25,2004
+Naren Ramakrishnan,Virginia Tech,security,1.0,0.333333333333,2015
 Wolfgang Heidrich,University of British Columbia,graphics,1.0,0.333333333333,1998
 Wolfgang Heidrich,University of British Columbia,graphics,1.0,0.5,1999
 Wolfgang Heidrich,University of British Columbia,graphics,1.0,0.25,2000
@@ -9800,11 +9800,11 @@ Engin Kirda,Northeastern University,security,1.0,0.333333333333,2011
 Engin Kirda,Northeastern University,security,1.0,0.25,2012
 Engin Kirda,Northeastern University,security,1.0,0.25,2013
 Engin Kirda,Northeastern University,security,1.0,0.333333333333,2014
-T. M. Murali,Virginia Polytechnic Institute and State University,theory,1.0,0.25,1996
-T. M. Murali,Virginia Polytechnic Institute and State University,theory,1.0,0.2,1998
-T. M. Murali,Virginia Polytechnic Institute and State University,theory,1.0,0.166666666667,2000
-T. M. Murali,Virginia Polytechnic Institute and State University,theory,1.0,0.25,2001
-T. M. Murali,Virginia Polytechnic Institute and State University,database,1.0,0.25,2002
+T. M. Murali,Virginia Tech,theory,1.0,0.25,1996
+T. M. Murali,Virginia Tech,theory,1.0,0.2,1998
+T. M. Murali,Virginia Tech,theory,1.0,0.166666666667,2000
+T. M. Murali,Virginia Tech,theory,1.0,0.25,2001
+T. M. Murali,Virginia Tech,database,1.0,0.25,2002
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,0.666666666667,1983
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,1.0,1984
 Umesh V. Vazirani,University of California - Berkeley,theory,3.0,2.0,1985
@@ -10475,8 +10475,8 @@ Deepak Ganesan,University of Massachusetts - Amherst,mobile,3.0,0.866666666667,2
 Deepak Ganesan,University of Massachusetts - Amherst,mobile,2.0,0.45,2013
 Deepak Ganesan,University of Massachusetts - Amherst,mobile,3.0,0.65,2014
 Deepak Ganesan,University of Massachusetts - Amherst,mobile,1.0,0.142857142857,2015
-Layne T. Watson,Virginia Polytechnic Institute and State University,mlmining,1.0,0.166666666667,2010
-Layne T. Watson,Virginia Polytechnic Institute and State University,vision,1.0,0.333333333333,1988
+Layne T. Watson,Virginia Tech,mlmining,1.0,0.166666666667,2010
+Layne T. Watson,Virginia Tech,vision,1.0,0.333333333333,1988
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,1.0,0.5,1981
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,2.0,0.583333333333,1985
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,1.0,0.5,1989
@@ -10998,9 +10998,9 @@ Alin Dobra,University of Florida,database,1.0,0.333333333333,2013
 Alin Dobra,University of Florida,database,1.0,0.25,2015
 Alin Dobra,University of Florida,networks,1.0,0.333333333333,2007
 Peter McBrien,Imperial College London,database,1.0,0.5,1991
-Kirk W. Cameron,Virginia Polytechnic Institute and State University,highperf,1.0,0.5,2004
-Kirk W. Cameron,Virginia Polytechnic Institute and State University,highperf,1.0,0.333333333333,2005
-Kirk W. Cameron,Virginia Polytechnic Institute and State University,highperf,1.0,0.333333333333,2006
+Kirk W. Cameron,Virginia Tech,highperf,1.0,0.5,2004
+Kirk W. Cameron,Virginia Tech,highperf,1.0,0.333333333333,2005
+Kirk W. Cameron,Virginia Tech,highperf,1.0,0.333333333333,2006
 Joan Feigenbaum,Yale University,theory,1.0,0.333333333333,1987
 Joan Feigenbaum,Yale University,theory,1.0,0.25,1991
 Joan Feigenbaum,Yale University,theory,1.0,0.25,1993
@@ -11341,12 +11341,12 @@ D. Martin Swany,Indiana University,highperf,1.0,1.0,2004
 D. Martin Swany,Indiana University,highperf,1.0,0.25,2005
 D. Martin Swany,Indiana University,highperf,1.0,0.333333333333,2006
 D. Martin Swany,Indiana University,highperf,1.0,0.333333333333,2009
-Dongyoon Lee,Virginia Polytechnic Institute and State University,proglang,1.0,0.25,2012
-Dongyoon Lee,Virginia Polytechnic Institute and State University,softeng,1.0,0.333333333333,2012
-Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1.0,0.2,2009
-Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1.0,0.166666666667,2010
-Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1.0,0.142857142857,2011
-Dongyoon Lee,Virginia Polytechnic Institute and State University,arch,1.0,0.333333333333,2016
+Dongyoon Lee,Virginia Tech,proglang,1.0,0.25,2012
+Dongyoon Lee,Virginia Tech,softeng,1.0,0.333333333333,2012
+Dongyoon Lee,Virginia Tech,arch,1.0,0.2,2009
+Dongyoon Lee,Virginia Tech,arch,1.0,0.166666666667,2010
+Dongyoon Lee,Virginia Tech,arch,1.0,0.142857142857,2011
+Dongyoon Lee,Virginia Tech,arch,1.0,0.333333333333,2016
 Amol Deshpande,University of Maryland - College Park,theory,1.0,0.5,2011
 Amol Deshpande,University of Maryland - College Park,theory,1.0,0.333333333333,2014
 Amol Deshpande,University of Maryland - College Park,database,1.0,0.333333333333,2001
@@ -12016,9 +12016,9 @@ Dennis Shasha,New York University,database,3.0,1.33333333333,2002
 Dennis Shasha,New York University,database,2.0,1.0,2003
 Dennis Shasha,New York University,database,1.0,0.2,2007
 Dennis Shasha,New York University,proglang,1.0,0.333333333333,1984
-Manuel A. Pérez-Quiñones,Virginia Polytechnic Institute and State University,hci,1.0,0.5,1996
-Manuel A. Pérez-Quiñones,Virginia Polytechnic Institute and State University,hci,1.0,0.142857142857,2015
-Manuel A. Pérez-Quiñones,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2016
+Manuel A. Pérez-Quiñones,Virginia Tech,hci,1.0,0.5,1996
+Manuel A. Pérez-Quiñones,Virginia Tech,hci,1.0,0.142857142857,2015
+Manuel A. Pérez-Quiñones,Virginia Tech,hci,1.0,0.333333333333,2016
 Matthew Caesar,University of Illinois at Urbana-Champaign,metrics,1.0,0.166666666667,2011
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2.0,0.309523809524,2005
 Matthew Caesar,University of Illinois at Urbana-Champaign,networks,2.0,0.4,2006
@@ -12874,13 +12874,13 @@ Pradeep K. Khosla,University of California - San Diego,robotics,6.0,2.25,2004
 Pradeep K. Khosla,University of California - San Diego,robotics,1.0,0.333333333333,2005
 Pradeep K. Khosla,University of California - San Diego,robotics,1.0,0.25,2007
 Pradeep K. Khosla,University of California - San Diego,vision,1.0,0.333333333333,2000
-Godmar Back,Virginia Polytechnic Institute and State University,metrics,1.0,0.2,2000
-Godmar Back,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2010
-Godmar Back,Virginia Polytechnic Institute and State University,opsys,1.0,0.166666666667,1996
-Godmar Back,Virginia Polytechnic Institute and State University,opsys,1.0,0.166666666667,1997
-Godmar Back,Virginia Polytechnic Institute and State University,opsys,1.0,0.333333333333,2000
-Godmar Back,Virginia Polytechnic Institute and State University,opsys,1.0,0.2,2006
-Godmar Back,Virginia Polytechnic Institute and State University,opsys,1.0,0.5,2013
+Godmar Back,Virginia Tech,metrics,1.0,0.2,2000
+Godmar Back,Virginia Tech,mlmining,1.0,0.333333333333,2010
+Godmar Back,Virginia Tech,opsys,1.0,0.166666666667,1996
+Godmar Back,Virginia Tech,opsys,1.0,0.166666666667,1997
+Godmar Back,Virginia Tech,opsys,1.0,0.333333333333,2000
+Godmar Back,Virginia Tech,opsys,1.0,0.2,2006
+Godmar Back,Virginia Tech,opsys,1.0,0.5,2013
 Beth Plale,Indiana University,highperf,1.0,0.5,2006
 Donald E. Porter,Stony Brook University,opsys,1.0,0.166666666667,2007
 Donald E. Porter,Stony Brook University,opsys,1.0,0.2,2009
@@ -13638,9 +13638,9 @@ Jack Snoeyink,University of North Carolina - Chapel Hill,networks,1.0,0.33333333
 Jack Snoeyink,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2009
 Barbara M. Chapman,Stony Brook University,highperf,2.0,0.583333333333,1993
 Barbara M. Chapman,Stony Brook University,highperf,1.0,0.125,2008
-Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,ai,1.0,0.25,2013
-Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,ai,1.0,0.333333333333,2014
-Anil Kumar S. Vullikanti,Virginia Polytechnic Institute and State University,networks,1.0,0.5,2013
+Anil Kumar S. Vullikanti,Virginia Tech,ai,1.0,0.25,2013
+Anil Kumar S. Vullikanti,Virginia Tech,ai,1.0,0.333333333333,2014
+Anil Kumar S. Vullikanti,Virginia Tech,networks,1.0,0.5,2013
 Eric Bach,University of Wisconsin - Madison,theory,1.0,1.0,1982
 Eric Bach,University of Wisconsin - Madison,theory,1.0,0.333333333333,1984
 Eric Bach,University of Wisconsin - Madison,theory,1.0,0.5,1985
@@ -15743,14 +15743,14 @@ John K. Ousterhout,Stanford University,opsys,1.0,0.2,2011
 John K. Ousterhout,Stanford University,opsys,1.0,0.2,2015
 John K. Ousterhout,Stanford University,database,1.0,0.25,1988
 John K. Ousterhout,Stanford University,arch,1.0,0.2,1992
-Deborah Tatar,Virginia Polytechnic Institute and State University,hci,1.0,0.2,2012
-Ali Raza Butt,Virginia Polytechnic Institute and State University,metrics,1.0,0.333333333333,2005
-Ali Raza Butt,Virginia Polytechnic Institute and State University,opsys,1.0,0.333333333333,2004
-Ali Raza Butt,Virginia Polytechnic Institute and State University,highperf,1.0,0.333333333333,2003
-Ali Raza Butt,Virginia Polytechnic Institute and State University,highperf,1.0,0.25,2004
-Ali Raza Butt,Virginia Polytechnic Institute and State University,highperf,1.0,0.25,2005
-Ali Raza Butt,Virginia Polytechnic Institute and State University,highperf,1.0,0.125,2010
-Ali Raza Butt,Virginia Polytechnic Institute and State University,highperf,1.0,0.142857142857,2015
+Deborah Tatar,Virginia Tech,hci,1.0,0.2,2012
+Ali Raza Butt,Virginia Tech,metrics,1.0,0.333333333333,2005
+Ali Raza Butt,Virginia Tech,opsys,1.0,0.333333333333,2004
+Ali Raza Butt,Virginia Tech,highperf,1.0,0.333333333333,2003
+Ali Raza Butt,Virginia Tech,highperf,1.0,0.25,2004
+Ali Raza Butt,Virginia Tech,highperf,1.0,0.25,2005
+Ali Raza Butt,Virginia Tech,highperf,1.0,0.125,2010
+Ali Raza Butt,Virginia Tech,highperf,1.0,0.142857142857,2015
 Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.833333333333,2008
 Claire Mathieu,Ecole Normale Superieure,theory,1.0,0.5,2009
 Claire Mathieu,Ecole Normale Superieure,theory,3.0,1.33333333333,2010
@@ -17450,9 +17450,9 @@ Joshua R. Smith,University of Washington,robotics,1.0,0.5,2013
 Joshua R. Smith,University of Washington,robotics,1.0,0.111111111111,2014
 Joshua R. Smith,University of Washington,robotics,2.0,0.45,2015
 Joshua R. Smith,University of Washington,security,1.0,0.25,2008
-Chris North,Virginia Polytechnic Institute and State University,hci,2.0,0.666666666667,2007
-Chris North,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2010
-Chris North,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2012
+Chris North,Virginia Tech,hci,2.0,0.666666666667,2007
+Chris North,Virginia Tech,hci,1.0,0.333333333333,2010
+Chris North,Virginia Tech,hci,1.0,0.333333333333,2012
 David M. Blei,Columbia University,nlp,1.0,0.333333333333,2010
 David M. Blei,Columbia University,nlp,1.0,0.5,2011
 David M. Blei,Columbia University,mlmining,1.0,0.333333333333,2001
@@ -19156,7 +19156,7 @@ Richard W. Vuduc,Georgia Institute of Technology,highperf,1.0,0.1,2009
 Richard W. Vuduc,Georgia Institute of Technology,highperf,3.0,0.75,2010
 Richard W. Vuduc,Georgia Institute of Technology,highperf,2.0,0.361111111111,2012
 Richard W. Vuduc,Georgia Institute of Technology,highperf,1.0,0.2,2015
-Deborah G. Tatar,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2010
+Deborah G. Tatar,Virginia Tech,hci,1.0,0.333333333333,2010
 Richard Mann,University of Waterloo,hci,2.0,0.666666666667,2011
 Richard Mann,University of Waterloo,vision,1.0,0.333333333333,1996
 Richard Mann,University of Waterloo,vision,1.0,0.5,1998
@@ -19902,14 +19902,14 @@ Ronald L. Graham,University of California - San Diego,theory,1.0,0.5,1989
 Ronald L. Graham,University of California - San Diego,theory,1.0,0.333333333333,1993
 Ronald L. Graham,University of California - San Diego,theory,1.0,0.333333333333,2002
 Ronald L. Graham,University of California - San Diego,theory,1.0,0.166666666667,2008
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,theory,1.0,1.0,1984
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,theory,1.0,0.5,1987
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,theory,1.0,1.0,1991
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,theory,1.0,0.5,1999
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,mlmining,1.0,0.142857142857,2010
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,web,1.0,0.25,1990
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,web,1.0,0.333333333333,1992
-Lenwood S. Heath,Virginia Polytechnic Institute and State University,web,1.0,0.2,1996
+Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1984
+Lenwood S. Heath,Virginia Tech,theory,1.0,0.5,1987
+Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1991
+Lenwood S. Heath,Virginia Tech,theory,1.0,0.5,1999
+Lenwood S. Heath,Virginia Tech,mlmining,1.0,0.142857142857,2010
+Lenwood S. Heath,Virginia Tech,web,1.0,0.25,1990
+Lenwood S. Heath,Virginia Tech,web,1.0,0.333333333333,1992
+Lenwood S. Heath,Virginia Tech,web,1.0,0.2,1996
 Ashok K. Agrawala,University of Maryland - College Park,metrics,1.0,0.5,1983
 Ashok K. Agrawala,University of Maryland - College Park,metrics,1.0,0.5,1986
 Ashok K. Agrawala,University of Maryland - College Park,hci,1.0,0.333333333333,2012
@@ -20089,20 +20089,20 @@ Vijay V. Vazirani,Georgia Institute of Technology,theory,2.0,0.833333333333,2014
 Vijay V. Vazirani,Georgia Institute of Technology,crypto,2.0,0.833333333333,1983
 Vijay V. Vazirani,Georgia Institute of Technology,crypto,1.0,0.5,1984
 Vijay V. Vazirani,Georgia Institute of Technology,networks,1.0,0.2,2011
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,metrics,1.0,0.5,1981
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,metrics,1.0,0.25,2005
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,theory,1.0,0.2,1993
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,theory,2.0,0.45,1994
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,theory,1.0,0.2,1997
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,theory,2.0,0.45,2000
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,theory,2.0,0.45,2004
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,theory,1.0,0.25,2005
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,mlmining,1.0,0.166666666667,2014
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,ai,1.0,0.142857142857,2007
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,networks,2.0,0.366666666667,2008
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,networks,2.0,0.4,2009
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,highperf,1.0,0.2,2008
-Madhav V. Marathe,Virginia Polytechnic Institute and State University,highperf,1.0,0.333333333333,2013
+Madhav V. Marathe,Virginia Tech,metrics,1.0,0.5,1981
+Madhav V. Marathe,Virginia Tech,metrics,1.0,0.25,2005
+Madhav V. Marathe,Virginia Tech,theory,1.0,0.2,1993
+Madhav V. Marathe,Virginia Tech,theory,2.0,0.45,1994
+Madhav V. Marathe,Virginia Tech,theory,1.0,0.2,1997
+Madhav V. Marathe,Virginia Tech,theory,2.0,0.45,2000
+Madhav V. Marathe,Virginia Tech,theory,2.0,0.45,2004
+Madhav V. Marathe,Virginia Tech,theory,1.0,0.25,2005
+Madhav V. Marathe,Virginia Tech,mlmining,1.0,0.166666666667,2014
+Madhav V. Marathe,Virginia Tech,ai,1.0,0.142857142857,2007
+Madhav V. Marathe,Virginia Tech,networks,2.0,0.366666666667,2008
+Madhav V. Marathe,Virginia Tech,networks,2.0,0.4,2009
+Madhav V. Marathe,Virginia Tech,highperf,1.0,0.2,2008
+Madhav V. Marathe,Virginia Tech,highperf,1.0,0.333333333333,2013
 Ruta Mehta,University of Illinois at Urbana-Champaign,theory,1.0,0.25,2011
 Ruta Mehta,University of Illinois at Urbana-Champaign,theory,1.0,0.25,2012
 Ruta Mehta,University of Illinois at Urbana-Champaign,theory,1.0,0.25,2013
@@ -21946,8 +21946,8 @@ Jeffrey Heer,University of Washington,hci,4.0,1.22619047619,2012
 Jeffrey Heer,University of Washington,hci,1.0,0.333333333333,2013
 Jeffrey Heer,University of Washington,hci,3.0,0.916666666667,2014
 Jeffrey Heer,University of Washington,nlp,1.0,0.166666666667,2014
-D. Scott McCrickard,Virginia Polytechnic Institute and State University,hci,1.0,0.142857142857,2003
-D. Scott McCrickard,Virginia Polytechnic Institute and State University,hci,1.0,0.2,2011
+D. Scott McCrickard,Virginia Tech,hci,1.0,0.142857142857,2003
+D. Scott McCrickard,Virginia Tech,hci,1.0,0.2,2011
 Hong Qin,Stony Brook University,graphics,1.0,0.5,1994
 Hong Qin,Stony Brook University,graphics,1.0,0.2,2012
 Hong Qin,Stony Brook University,mlmining,1.0,0.333333333333,2007
@@ -23957,7 +23957,7 @@ Donald S. Fussell,University of Texas - Austin,arch,1.0,0.5,1982
 Donald S. Fussell,University of Texas - Austin,arch,1.0,0.25,1993
 Donald S. Fussell,University of Texas - Austin,arch,1.0,0.333333333333,2014
 Donald S. Fussell,University of Texas - Austin,arch,1.0,0.25,2016
-Danfeng (Daphne) Yao,Virginia Polytechnic Institute and State University,networks,1.0,0.25,2015
+Danfeng (Daphne) Yao,Virginia Tech,networks,1.0,0.25,2015
 Tim Brecht,University of Waterloo,metrics,1.0,0.25,1984
 Tim Brecht,University of Waterloo,metrics,1.0,0.5,1991
 Tim Brecht,University of Waterloo,theory,1.0,0.25,1996
@@ -24459,14 +24459,14 @@ Milind Tambe,University of Southern California,ai,5.0,0.983333333333,2014
 Milind Tambe,University of Southern California,ai,5.0,1.125,2015
 Milind Tambe,University of Southern California,ai,5.0,0.870634920635,2016
 Milind Tambe,University of Southern California,highperf,1.0,0.2,1990
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2001
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1.0,0.333333333333,2010
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1.0,0.166666666667,2011
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1.0,0.0333333333333,2014
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,mlmining,1.0,0.166666666667,2015
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,ai,2.0,0.583333333333,2013
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,ai,1.0,0.2,2016
-Chang-Tien Lu,Virginia Polytechnic Institute and State University,networks,1.0,0.142857142857,2013
+Chang-Tien Lu,Virginia Tech,mlmining,1.0,0.333333333333,2001
+Chang-Tien Lu,Virginia Tech,mlmining,1.0,0.333333333333,2010
+Chang-Tien Lu,Virginia Tech,mlmining,1.0,0.166666666667,2011
+Chang-Tien Lu,Virginia Tech,mlmining,1.0,0.0333333333333,2014
+Chang-Tien Lu,Virginia Tech,mlmining,1.0,0.166666666667,2015
+Chang-Tien Lu,Virginia Tech,ai,2.0,0.583333333333,2013
+Chang-Tien Lu,Virginia Tech,ai,1.0,0.2,2016
+Chang-Tien Lu,Virginia Tech,networks,1.0,0.142857142857,2013
 Shahram Ghandeharizadeh,University of Southern California,metrics,1.0,0.333333333333,1995
 Shahram Ghandeharizadeh,University of Southern California,database,1.0,0.333333333333,1988
 Shahram Ghandeharizadeh,University of Southern California,database,1.0,0.5,1990
@@ -24821,8 +24821,8 @@ James D. Hollan,University of California - San Diego,hci,2.0,0.5,2008
 James D. Hollan,University of California - San Diego,hci,2.0,0.642857142857,2009
 James D. Hollan,University of California - San Diego,hci,1.0,0.333333333333,2010
 James D. Hollan,University of California - San Diego,hci,2.0,0.5,2012
-Dennis G. Kafura,Virginia Polytechnic Institute and State University,proglang,1.0,0.25,1991
-Dennis G. Kafura,Virginia Polytechnic Institute and State University,softeng,1.0,0.5,1985
+Dennis G. Kafura,Virginia Tech,proglang,1.0,0.25,1991
+Dennis G. Kafura,Virginia Tech,softeng,1.0,0.5,1985
 Anupam Datta,Carnegie Mellon University,theory,1.0,0.25,2012
 Anupam Datta,Carnegie Mellon University,ai,1.0,0.2,2013
 Anupam Datta,Carnegie Mellon University,ai,3.0,0.7,2015
@@ -26492,15 +26492,15 @@ Roberto Tamassia,Brown University,crypto,1.0,0.25,2013
 Roberto Tamassia,Brown University,security,1.0,0.333333333333,2008
 Roberto Tamassia,Brown University,security,1.0,0.25,2009
 Roberto Tamassia,Brown University,security,1.0,0.25,2015
-Edward A. Fox,Virginia Polytechnic Institute and State University,networks,1.0,0.2,1996
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,1.0,1985
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,0.333333333333,1988
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,0.25,1990
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,0.333333333333,1992
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,0.2,1993
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,0.2,1996
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,2.0,0.342857142857,2004
-Edward A. Fox,Virginia Polytechnic Institute and State University,web,1.0,0.142857142857,2005
+Edward A. Fox,Virginia Tech,networks,1.0,0.2,1996
+Edward A. Fox,Virginia Tech,web,1.0,1.0,1985
+Edward A. Fox,Virginia Tech,web,1.0,0.333333333333,1988
+Edward A. Fox,Virginia Tech,web,1.0,0.25,1990
+Edward A. Fox,Virginia Tech,web,1.0,0.333333333333,1992
+Edward A. Fox,Virginia Tech,web,1.0,0.2,1993
+Edward A. Fox,Virginia Tech,web,1.0,0.2,1996
+Edward A. Fox,Virginia Tech,web,2.0,0.342857142857,2004
+Edward A. Fox,Virginia Tech,web,1.0,0.142857142857,2005
 Michael Rubenstein,Northwestern University,robotics,2.0,0.583333333333,2004
 Michael Rubenstein,Northwestern University,robotics,1.0,0.166666666667,2006
 Michael Rubenstein,Northwestern University,robotics,1.0,0.5,2008
@@ -26579,7 +26579,7 @@ Balaji Prabhakar,Stanford University,networks,1.0,0.5,2009
 Balaji Prabhakar,Stanford University,networks,1.0,0.125,2010
 Balaji Prabhakar,Stanford University,networks,1.0,0.166666666667,2012
 Balaji Prabhakar,Stanford University,networks,2.0,0.309523809524,2013
-Adrian Sandu,Virginia Polytechnic Institute and State University,highperf,2.0,0.416666666667,2009
+Adrian Sandu,Virginia Tech,highperf,2.0,0.416666666667,2009
 Mayur Naik,Georgia Institute of Technology,mlmining,1.0,0.2,2006
 Mayur Naik,Georgia Institute of Technology,mlmining,1.0,0.166666666667,2010
 Mayur Naik,Georgia Institute of Technology,ai,1.0,0.2,2016
@@ -28138,13 +28138,13 @@ Nathan Srebro,University of Chicago,mlmining,3.0,1.0,2014
 Nathan Srebro,University of Chicago,mlmining,2.0,0.833333333333,2015
 Su-Lin Lee,Imperial College London,robotics,2.0,0.5,2014
 Su-Lin Lee,Imperial College London,robotics,1.0,0.333333333333,2016
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,1.0,0.2,2009
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,1.0,0.125,2010
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,1.0,0.5,2011
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,2.0,0.45,2012
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,mlmining,2.0,0.325,2014
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,database,1.0,0.333333333333,2010
-B. Aditya Prakash,Virginia Polytechnic Institute and State University,web,1.0,0.25,2012
+B. Aditya Prakash,Virginia Tech,mlmining,1.0,0.2,2009
+B. Aditya Prakash,Virginia Tech,mlmining,1.0,0.125,2010
+B. Aditya Prakash,Virginia Tech,mlmining,1.0,0.5,2011
+B. Aditya Prakash,Virginia Tech,mlmining,2.0,0.45,2012
+B. Aditya Prakash,Virginia Tech,mlmining,2.0,0.325,2014
+B. Aditya Prakash,Virginia Tech,database,1.0,0.333333333333,2010
+B. Aditya Prakash,Virginia Tech,web,1.0,0.25,2012
 Wayne D. Gray,Rensselaer Polytechnic Institute,hci,1.0,0.333333333333,1992
 Wayne D. Gray,Rensselaer Polytechnic Institute,hci,1.0,0.5,2001
 Mateo Valero,Polytechnic University of Catalonia,metrics,1.0,0.2,1983
@@ -28233,17 +28233,17 @@ Edmund H. Durfee,University of Michigan,ai,1.0,0.5,2013
 Edmund H. Durfee,University of Michigan,ai,1.0,0.5,2014
 Edmund H. Durfee,University of Michigan,ai,1.0,0.2,2016
 Edmund H. Durfee,University of Michigan,robotics,1.0,0.25,2001
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,1.0,0.333333333333,2004
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,1.0,0.333333333333,2005
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,1.0,0.333333333333,2006
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,1.0,0.333333333333,2008
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,2.0,0.583333333333,2009
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,3.0,0.75,2010
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,2.0,0.45,2011
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,5.0,0.983333333333,2012
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,5.0,0.97619047619,2013
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,4.0,0.816666666667,2014
-Wenjing Lou,Virginia Polytechnic Institute and State University,networks,3.0,0.65,2015
+Wenjing Lou,Virginia Tech,networks,1.0,0.333333333333,2004
+Wenjing Lou,Virginia Tech,networks,1.0,0.333333333333,2005
+Wenjing Lou,Virginia Tech,networks,1.0,0.333333333333,2006
+Wenjing Lou,Virginia Tech,networks,1.0,0.333333333333,2008
+Wenjing Lou,Virginia Tech,networks,2.0,0.583333333333,2009
+Wenjing Lou,Virginia Tech,networks,3.0,0.75,2010
+Wenjing Lou,Virginia Tech,networks,2.0,0.45,2011
+Wenjing Lou,Virginia Tech,networks,5.0,0.983333333333,2012
+Wenjing Lou,Virginia Tech,networks,5.0,0.97619047619,2013
+Wenjing Lou,Virginia Tech,networks,4.0,0.816666666667,2014
+Wenjing Lou,Virginia Tech,networks,3.0,0.65,2015
 Mark Crovella,Boston University,metrics,1.0,0.5,1996
 Mark Crovella,Boston University,metrics,1.0,0.5,1998
 Mark Crovella,Boston University,metrics,1.0,0.5,1999
@@ -28438,8 +28438,8 @@ Jignesh M. Patel,University of Wisconsin - Madison,database,6.0,1.86025641026,20
 Jignesh M. Patel,University of Wisconsin - Madison,database,4.0,1.27777777778,2015
 Jignesh M. Patel,University of Wisconsin - Madison,database,1.0,0.25,2016
 Jignesh M. Patel,University of Wisconsin - Madison,arch,1.0,0.333333333333,2001
-Yong Cao,Virginia Polytechnic Institute and State University,graphics,1.0,0.25,2005
-Yong Cao,Virginia Polytechnic Institute and State University,ai,1.0,0.2,2014
+Yong Cao,Virginia Tech,graphics,1.0,0.25,2005
+Yong Cao,Virginia Tech,ai,1.0,0.2,2014
 Tony Hoare,University of Oxford,proglang,1.0,1.0,2014
 Tony Hoare,University of Oxford,logic,1.0,1.0,2006
 Tony Hoare,University of Oxford,highperf,1.0,0.25,2006
@@ -30116,8 +30116,8 @@ Mikkel Rønne Jakobsen,DIKU,hci,1.0,0.333333333333,2014
 Norman S. Matloff,University of California - Davis,networks,1.0,0.25,1989
 Norman S. Matloff,University of California - Davis,security,1.0,1.0,1986
 Giovanni De Micheli,EPFL,mobile,1.0,0.25,2000
-Christopher L. Barrett,Virginia Polytechnic Institute and State University,ai,1.0,0.142857142857,2007
-Christopher L. Barrett,Virginia Polytechnic Institute and State University,highperf,1.0,0.2,2008
+Christopher L. Barrett,Virginia Tech,ai,1.0,0.142857142857,2007
+Christopher L. Barrett,Virginia Tech,highperf,1.0,0.2,2008
 Eldar Fischer,Technion,theory,2.0,0.45,1999
 Eldar Fischer,Technion,theory,3.0,1.66666666667,2001
 Eldar Fischer,Technion,theory,2.0,0.366666666667,2002
@@ -30701,8 +30701,8 @@ Danny Raz,Technion,networks,2.0,0.342857142857,2012
 Danny Raz,Technion,networks,1.0,0.25,2013
 Danny Raz,Technion,networks,1.0,0.25,2014
 Danny Raz,Technion,networks,1.0,0.25,2015
-Danfeng Yao,Virginia Polytechnic Institute and State University,security,1.0,0.25,2004
-Danfeng Yao,Virginia Polytechnic Institute and State University,security,1.0,0.333333333333,2015
+Danfeng Yao,Virginia Tech,security,1.0,0.25,2004
+Danfeng Yao,Virginia Tech,security,1.0,0.333333333333,2015
 Karrie Karahalios,University of Illinois at Urbana-Champaign,hci,1.0,0.5,2004
 Karrie Karahalios,University of Illinois at Urbana-Champaign,hci,1.0,0.333333333333,2008
 Karrie Karahalios,University of Illinois at Urbana-Champaign,hci,2.0,0.833333333333,2009
@@ -31294,8 +31294,8 @@ Emery D. Berger,University of Massachusetts - Amherst,highperf,1.0,0.25,2014
 Bernd Brügge,TU Munich,hci,1.0,0.5,2008
 Bernd Brügge,TU Munich,softeng,1.0,0.5,1997
 Bernd Brügge,TU Munich,softeng,1.0,0.5,2013
-Anil Vullikanti,Virginia Polytechnic Institute and State University,mlmining,1.0,0.0333333333333,2014
-Anil Vullikanti,Virginia Polytechnic Institute and State University,ai,2.0,1.0,2016
+Anil Vullikanti,Virginia Tech,mlmining,1.0,0.0333333333333,2014
+Anil Vullikanti,Virginia Tech,ai,2.0,1.0,2016
 Davide Careglio,Polytechnic University of Catalonia,networks,1.0,0.0526315789474,2006
 Michel Abdalla,Ecole Normale Superieure,crypto,1.0,0.25,2002
 Michel Abdalla,Ecole Normale Superieure,crypto,1.0,0.1,2005
@@ -31403,7 +31403,7 @@ Xi Wang,University of Washington,robotics,1.0,0.5,1989
 Xi Wang,University of Washington,softeng,1.0,0.333333333333,2009
 Xi Wang,University of Washington,softeng,1.0,0.1,2010
 Xi Wang,University of Washington,arch,1.0,0.166666666667,2016
-Doug A. Bowman,Virginia Polytechnic Institute and State University,hci,1.0,0.333333333333,2007
+Doug A. Bowman,Virginia Tech,hci,1.0,0.333333333333,2007
 Jeffrey Shallit,University of Waterloo,theory,1.0,0.333333333333,1984
 Jeffrey Shallit,University of Waterloo,theory,1.0,0.5,1985
 Jeffrey Shallit,University of Waterloo,theory,1.0,0.333333333333,1990

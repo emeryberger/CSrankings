@@ -137,10 +137,10 @@ function toggle(dept : string) : void {
     var widget = document.getElementById(dept+"-widget");
     if (e.style.display == 'block') {
 	e.style.display = 'none';
-	widget.innerHTML = "&#9658;&nbsp;" + dept;
+	widget.innerHTML = '<font color="blue">&#9658;</font>&nbsp;' + dept;
     } else {
 	e.style.display = 'block';
-	widget.innerHTML = "&#9660;&nbsp;" + dept;
+	widget.innerHTML = '<font color="blue">&#9660;</font>&nbsp;' + dept;
     }
 }
 
@@ -288,6 +288,17 @@ function deactivateOthers() : boolean {
     return activateOthers(false);
 }
 
+function toggleAI(cb : any) : boolean {
+    if (cb.checked) {
+	console.log("checked");
+	activateAI(false);
+    } else {
+	console.log("not checked");
+	activateAI(true);
+    }
+    return false;
+}
+
 function sortIndex(univagg : {[key: string] : number}) : string[] {
     var keys = Object.keys(univagg);
     keys.sort(function(a,b) {
@@ -369,7 +380,6 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
-    console.log(countryInfo);
     for (var r in authors) {
 	const area : string = authors[r].area;
 	const dept : string = authors[r].dept;
@@ -635,7 +645,7 @@ function rank() : boolean {
 		}
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
-	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
+	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp" + dept + "</div>";
 	    s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
     
 	    s += "</td>";

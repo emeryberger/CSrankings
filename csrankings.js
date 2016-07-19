@@ -96,11 +96,11 @@ function toggle(dept) {
     var widget = document.getElementById(dept + "-widget");
     if (e.style.display == 'block') {
         e.style.display = 'none';
-        widget.innerHTML = "&#9658;&nbsp;" + dept;
+        widget.innerHTML = '<font color="blue">&#9658;</font>&nbsp;' + dept;
     }
     else {
         e.style.display = 'block';
-        widget.innerHTML = "&#9660;&nbsp;" + dept;
+        widget.innerHTML = '<font color="blue">&#9660;</font>&nbsp;' + dept;
     }
 }
 function setAllCheckboxes() {
@@ -228,6 +228,17 @@ function deactivateTheory() {
 function deactivateOthers() {
     return activateOthers(false);
 }
+function toggleAI(cb) {
+    if (cb.checked) {
+        console.log("checked");
+        activateAI(false);
+    }
+    else {
+        console.log("not checked");
+        activateAI(true);
+    }
+    return false;
+}
 function sortIndex(univagg) {
     var keys = Object.keys(univagg);
     keys.sort(function (a, b) {
@@ -284,7 +295,6 @@ function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, author
 function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, regions) {
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited = {}; /* contains an author name if that author has been processed. */
-    console.log(countryInfo);
     for (var r in authors) {
         var area = authors[r].area;
         var dept = authors[r].dept;
@@ -535,7 +545,7 @@ function rank() {
                 }
             }
             s += "\n<tr><td>" + rank + "</td>";
-            s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">&#9658;&nbsp" + dept + "</div>";
+            s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp" + dept + "</div>";
             s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
             s += "</td>";
             if (displayPercentages) {
