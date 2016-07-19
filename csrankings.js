@@ -544,7 +544,7 @@ function rank() {
                     s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2) + "%</td>";
                 }
                 if (useGeometricMean) {
-                    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0) + "</td>";
+                    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 }
             }
             else {
