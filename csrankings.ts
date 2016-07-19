@@ -248,6 +248,7 @@ function activatePL(value : boolean) : boolean {
 }
 
 function activateSystems(value : boolean) : boolean {
+    activatePL(value);
     const systemsFields : Array<number> = [3, 4, 5, 6, 7, 15, 18, 20];
     return activateFields(value, systemsFields);
 }
