@@ -13,6 +13,7 @@ var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
 var countryinfoFile = "country-info.csv";
 var allowRankingChange = false; /* Can we change the kind of rankings being used? */
+var showCoauthors = false;
 var maxCoauthors = 30; /* Max co-authors to display. */
 var useArithmeticMean = false;
 var useGeometricMean = true; /* This is the default and arguably only principled choice. */
@@ -161,12 +162,23 @@ function init() {
     jQuery(document).ready(function () {
         setAllCheckboxes();
         loadAuthorInfo(function () {
-            loadCountryInfo(function () {
-                loadCoauthors(rank);
-            });
+            loadCountryInfo(rank);
         });
     });
 }
+/*
+function init() : void {
+    jQuery(document).ready(
+    function() {
+        setAllCheckboxes();
+        loadAuthorInfo(function() {
+        loadCountryInfo(function() {
+            loadCoauthors(rank);
+        });
+        });
+    });
+}
+*/
 function activateAll(value) {
     if (value === undefined) {
         value = true;
@@ -440,7 +452,10 @@ function rank() {
         areacount[areas[ind]] = 0;
         areaAdjustedCount[areas[ind]] = 0;
     }
-    var coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
+    var coauthorList = {};
+    if (showCoauthors) {
+        coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
+    }
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     /* (university, total or average number of papers) */
@@ -449,7 +464,7 @@ function rank() {
     var univtext = {};
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-        var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors (hover for list of senior co-authors)">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+        var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
         /* Build a dict of just faculty from this department for sorting purposes. */
         var fc = {};
         for (var ind = 0; ind < deptNames[dept].length; ind++) {
@@ -460,30 +475,32 @@ function rank() {
         keys.sort(function (a, b) { return fc[b] - fc[a]; });
         for (var ind = 0; ind < keys.length; ind++) {
             name = keys[ind];
-            /* Build up text for co-authors. */
-            var coauthorStr = "";
-            if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
-                coauthorList[name] = new Set([]);
-                coauthorStr = "(no senior co-authors on these papers)";
-            }
-            else {
-                coauthorStr = "Senior co-authors on these papers:\n";
-            }
-            /* Sort it by last name. */
-            var l = [];
-            coauthorList[name].forEach(function (item, coauthors) {
-                l.push(item);
-            });
-            if (l.length > maxCoauthors) {
-                coauthorStr = "(more than " + maxCoauthors + " senior co-authors)";
-            }
-            else {
-                l.sort(compareNames);
-                l.forEach(function (item, coauthors) {
-                    coauthorStr += item + "\n";
+            if (showCoauthors) {
+                /* Build up text for co-authors. */
+                var coauthorStr = "";
+                if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
+                    coauthorList[name] = new Set([]);
+                    coauthorStr = "(no senior co-authors on these papers)";
+                }
+                else {
+                    coauthorStr = "Senior co-authors on these papers:\n";
+                }
+                /* Sort it by last name. */
+                var l = [];
+                coauthorList[name].forEach(function (item, coauthors) {
+                    l.push(item);
                 });
-                /* Trim off the trailing newline. */
-                coauthorStr = coauthorStr.slice(0, coauthorStr.length - 1);
+                if (l.length > maxCoauthors) {
+                    coauthorStr = "(more than " + maxCoauthors + " senior co-authors)";
+                }
+                else {
+                    l.sort(compareNames);
+                    l.forEach(function (item, coauthors) {
+                        coauthorStr += item + "\n";
+                    });
+                    /* Trim off the trailing newline. */
+                    coauthorStr = coauthorStr.slice(0, coauthorStr.length - 1);
+                }
             }
             p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
                 + '<a title="Click for author\'s home page." target="_blank" href="https://www.google.com/search?q='
@@ -496,9 +513,7 @@ function rank() {
                 + '</a>'
                 + "</small></td>"
                 + '</a></small></td><td align="right"><small>'
-                + '<abbr title="' + coauthorStr + '">'
                 + facultyAdjustedCount[name + dept].toPrecision(2)
-                + '</abbr>'
                 + "</small></td></tr>";
         }
         p += "</tbody></table></div></div>";
