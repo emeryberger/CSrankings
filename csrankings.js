@@ -197,6 +197,7 @@ function activatePL(value) {
     return activateFields(value, plFields);
 }
 function activateSystems(value) {
+    activatePL(value);
     var systemsFields = [3, 4, 5, 6, 7, 15, 18, 20];
     return activateFields(value, systemsFields);
 }
