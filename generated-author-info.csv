@@ -512,6 +512,10 @@ Bobby Bhattacharjee,University of Maryland - College Park,mobile,1.0,0.166666666
 Bobby Bhattacharjee,University of Maryland - College Park,mobile,2.0,0.361111111111,2016
 Bobby Bhattacharjee,University of Maryland - College Park,security,1.0,0.333333333333,2002
 Bobby Bhattacharjee,University of Maryland - College Park,security,1.0,0.333333333333,2005
+Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.5,2003
+Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.142857142857,2008
+Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.2,2009
+Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.333333333333,2013
 Daniel Kroening,University of Oxford,proglang,1.0,0.333333333333,2013
 Daniel Kroening,University of Oxford,proglang,1.0,0.333333333333,2014
 Daniel Kroening,University of Oxford,logic,1.0,0.25,2004
@@ -701,6 +705,7 @@ Iain Murray,University of Edinburgh,mlmining,1.0,0.333333333333,2013
 Iain Murray,University of Edinburgh,mlmining,1.0,0.333333333333,2014
 Iain Murray,University of Edinburgh,mlmining,1.0,0.25,2015
 Arya Mazumdar,University of Massachusetts - Amherst,mlmining,2.0,0.833333333333,2015
+Richard Zanibbi,Rochester Institute of Technology,web,1.0,0.25,2016
 David Wagner,University of California - Berkeley,hci,1.0,0.142857142857,2014
 David Wagner,University of California - Berkeley,hci,1.0,0.166666666667,2015
 David Wagner,University of California - Berkeley,crypto,1.0,0.333333333333,1996
@@ -2425,6 +2430,9 @@ Mark D. Corner,University of Massachusetts - Amherst,mobile,1.0,0.5,2003
 Mark D. Corner,University of Massachusetts - Amherst,mobile,1.0,0.25,2005
 Mark D. Corner,University of Massachusetts - Amherst,mobile,2.0,0.366666666667,2007
 Mark D. Corner,University of Massachusetts - Amherst,mobile,2.0,0.583333333333,2008
+Andrew Meneely,Rochester Institute of Technology,security,1.0,0.5,2009
+Andrew Meneely,Rochester Institute of Technology,softeng,1.0,0.25,2008
+Andrew Meneely,Rochester Institute of Technology,softeng,2.0,0.833333333333,2011
 Yaron Singer,Harvard University,theory,1.0,0.333333333333,2008
 Yaron Singer,Harvard University,theory,2.0,1.11111111111,2010
 Yaron Singer,Harvard University,theory,1.0,0.5,2013
@@ -2484,6 +2492,17 @@ Nancy M. Amato,Texas A&M University,highperf,1.0,0.166666666667,2005
 Nancy M. Amato,Texas A&M University,highperf,1.0,0.333333333333,2010
 Nancy M. Amato,Texas A&M University,highperf,1.0,0.0714285714286,2011
 Nancy M. Amato,Texas A&M University,highperf,1.0,0.333333333333,2014
+Edith Hemaspaandra,Rochester Institute of Technology,theory,1.0,0.5,1997
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.333333333333,2005
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.333333333333,2006
+Edith Hemaspaandra,Rochester Institute of Technology,ai,2.0,0.583333333333,2007
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.2,2008
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.333333333333,2009
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.25,2010
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.5,2011
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.333333333333,2013
+Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.333333333333,2014
+Edith Hemaspaandra,Rochester Institute of Technology,logic,1.0,1.0,1994
 Emo Welzl,ETH Zurich,theory,1.0,0.2,1988
 Emo Welzl,ETH Zurich,theory,1.0,0.125,1990
 Emo Welzl,ETH Zurich,theory,2.0,0.5,1991
@@ -3253,6 +3272,7 @@ Luca Trevisan,University of California - Berkeley,theory,1.0,0.5,2014
 Luca Trevisan,University of California - Berkeley,theory,2.0,0.533333333333,2016
 Luca Trevisan,University of California - Berkeley,crypto,1.0,0.166666666667,2007
 Luca Trevisan,University of California - Berkeley,crypto,1.0,0.333333333333,2010
+Matt Huenerfauth,Rochester Institute of Technology,nlp,1.0,1.0,2005
 Victor Zue,Massachusetts Institute of Technology,nlp,1.0,0.333333333333,2010
 Victor Zue,Massachusetts Institute of Technology,mlmining,1.0,0.5,1988
 Victor Zue,Massachusetts Institute of Technology,mlmining,2.0,0.375,1990
@@ -12883,6 +12903,8 @@ Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.25,2010
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.166666666667,2011
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,3.0,0.833333333333,2013
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.5,2015
+Matthew Fluet,Rochester Institute of Technology,proglang,1.0,0.333333333333,2009
+Matthew Fluet,Rochester Institute of Technology,highperf,1.0,0.166666666667,2013
 John Regehr,University of Utah,opsys,1.0,0.2,2009
 John Regehr,University of Utah,proglang,1.0,0.5,2007
 John Regehr,University of Utah,proglang,1.0,0.25,2011
@@ -15273,6 +15295,8 @@ Ren Ng,University of California - Berkeley,graphics,1.0,0.333333333333,2004
 Ren Ng,University of California - Berkeley,graphics,1.0,1.0,2005
 Ren Ng,University of California - Berkeley,graphics,1.0,0.2,2006
 Ren Ng,University of California - Berkeley,vision,1.0,0.25,2015
+Ivona Bezáková,Rochester Institute of Technology,theory,2.0,0.583333333333,2006
+Ivona Bezáková,Rochester Institute of Technology,mlmining,1.0,0.333333333333,2006
 Matthew Flatt,University of Utah,opsys,1.0,0.2,2000
 Matthew Flatt,University of Utah,proglang,1.0,0.2,1996
 Matthew Flatt,University of Utah,proglang,2.0,0.833333333333,1998
@@ -15530,8 +15554,7 @@ Lili Qiu,University of Texas - Austin,mobile,1.0,0.333333333333,2013
 Lili Qiu,University of Texas - Austin,mobile,2.0,0.4,2014
 Lili Qiu,University of Texas - Austin,mobile,1.0,0.333333333333,2015
 Lili Qiu,University of Texas - Austin,security,1.0,0.166666666667,2002
-Richard H. Lathrop,University of California - Irvine,mlmining,1.0,0.25,1993
-Richard H. Lathrop,University of California - Irvine,mlmining,1.0,1.0,1996
+Hans-Peter Bischof,Rochester Institute of Technology,networks,1.0,0.166666666667,2002
 Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,1.0,0.5,2001
 Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,1.0,0.333333333333,2009
 Wai-Tat Fu,University of Illinois at Urbana-Champaign,hci,2.0,0.833333333333,2010
@@ -20291,6 +20314,7 @@ Erez Petrank,Technion,logic,1.0,0.25,2015
 Erez Petrank,Technion,highperf,1.0,0.5,2011
 Erez Petrank,Technion,highperf,1.0,0.5,2012
 Erez Petrank,Technion,highperf,1.0,0.5,2014
+Joe Geigel,Rochester Institute of Technology,graphics,1.0,0.5,1997
 Dana H. Ballard,University of Texas - Austin,mlmining,1.0,0.333333333333,1988
 Dana H. Ballard,University of Texas - Austin,mlmining,1.0,0.5,1992
 Dana H. Ballard,University of Texas - Austin,mlmining,2.0,1.0,1994
@@ -20847,6 +20871,7 @@ Amr Sabry,Indiana University,proglang,1.0,0.333333333333,2009
 Amr Sabry,Indiana University,proglang,1.0,0.5,2012
 Jeff Huang,Texas A&M University,hci,1.0,0.5,2007
 Jeff Huang,Texas A&M University,ai,1.0,0.5,2010
+Zack Butler,Rochester Institute of Technology,robotics,1.0,0.5,2009
 My T. Thai,University of Florida,database,1.0,0.333333333333,2016
 My T. Thai,University of Florida,networks,1.0,0.25,2005
 My T. Thai,University of Florida,networks,1.0,0.2,2010
@@ -25740,6 +25765,9 @@ Mohamed G. Gouda,University of Texas - Austin,web,1.0,0.25,2001
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.333333333333,2010
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.2,2012
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.333333333333,2015
+Aniket Kate,Purdue University,security,1.0,0.25,2012
+Aniket Kate,Purdue University,security,1.0,0.25,2014
+Aniket Kate,Purdue University,security,1.0,0.333333333333,2015
 Kaleem Siddiqi,McGill University,robotics,1.0,0.2,2015
 Kaleem Siddiqi,McGill University,vision,1.0,0.5,1993
 Kaleem Siddiqi,McGill University,vision,1.0,0.5,1994
@@ -27573,6 +27601,9 @@ Roni Rosenfeld,Carnegie Mellon University,web,1.0,0.25,2012
 Andrew Markham,University of Oxford,networks,1.0,0.5,2010
 Andrew Markham,University of Oxford,mobile,2.0,0.35,2010
 Andrew Markham,University of Oxford,mobile,1.0,0.2,2015
+Mehdi Mirakhorli,Rochester Institute of Technology,softeng,1.0,0.142857142857,2011
+Mehdi Mirakhorli,Rochester Institute of Technology,softeng,2.0,0.583333333333,2012
+Qi Yu,Rochester Institute of Technology,ai,1.0,0.25,2011
 Sergio Maffeis,Imperial College London,proglang,1.0,0.333333333333,2012
 Sergio Maffeis,Imperial College London,proglang,1.0,0.125,2014
 Sergio Maffeis,Imperial College London,security,1.0,0.333333333333,2010
@@ -28345,6 +28376,8 @@ Gerald DeJong,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,
 Gerald DeJong,University of Illinois at Urbana-Champaign,web,1.0,1.0,1983
 Donald Perlis,University of Maryland - College Park,ai,1.0,0.333333333333,1990
 Donald Perlis,University of Maryland - College Park,ai,1.0,0.5,2008
+Richard H. Lathrop,University of California - Irvine,mlmining,1.0,0.25,1993
+Richard H. Lathrop,University of California - Irvine,mlmining,1.0,1.0,1996
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,networks,1.0,0.2,2009
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2012
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,proglang,1.0,0.166666666667,2013
@@ -28975,6 +29008,9 @@ Raluca A. Popa,University of California - Berkeley,crypto,1.0,0.2,2013
 Raluca A. Popa,University of California - Berkeley,security,1.0,0.333333333333,2009
 Raluca A. Popa,University of California - Berkeley,security,1.0,0.25,2011
 Raluca A. Popa,University of California - Berkeley,security,1.0,0.333333333333,2013
+Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.333333333333,2013
+Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.25,2014
+Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.142857142857,2015
 Christopher M. Brown,University of Rochester,ai,1.0,0.142857142857,1993
 Christopher M. Brown,University of Rochester,ai,1.0,0.5,1995
 Christopher M. Brown,University of Rochester,vision,1.0,0.25,1990
@@ -29852,42 +29888,6 @@ Michael Brudno,University of Toronto,ai,1.0,0.333333333333,2004
 Christopher D. Carothers,Rensselaer Polytechnic Institute,mlmining,1.0,0.25,2003
 John R. Lange,University of Pittsburgh,networks,1.0,0.333333333333,2010
 John R. Lange,University of Pittsburgh,highperf,1.0,0.2,2012
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1991
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.166666666667,1993
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,opsys,1.0,0.333333333333,1995
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,1999
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1999
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1983
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1984
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.111111111111,1986
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1989
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1990
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1991
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1992
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,1993
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1994
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1996
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1998
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1999
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,2000
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.2,2001
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.11666666667,2003
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.958333333333,2006
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.892857142857,2007
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.03333333333,2008
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2011
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2012
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.325,2013
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.392857142857,2014
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.527777777778,2015
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1994
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.166666666667,1995
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1997
 Robert Grimm,New York University,opsys,1.0,0.1,1997
 Robert Grimm,New York University,opsys,1.0,0.25,1999
 Robert Grimm,New York University,networks,1.0,0.142857142857,2006
@@ -31698,14 +31698,42 @@ J. Nathan Foster,Cornell University,proglang,1.0,0.2,2008
 Joel Spencer,New York University,theory,1.0,1.0,1992
 Joel Spencer,New York University,theory,1.0,0.25,2008
 Joel Spencer,New York University,theory,1.0,0.25,2010
-Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
-Thu D. Nguyen,Rutgers University,networks,1.0,0.25,1993
-Thu D. Nguyen,Rutgers University,arch,1.0,0.2,2013
-Thu D. Nguyen,Rutgers University,arch,2.0,0.583333333333,2015
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.333333333333,2000
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.2,2003
-Thu D. Nguyen,Rutgers University,highperf,2.0,0.291666666667,2011
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1991
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.166666666667,1993
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,opsys,1.0,0.333333333333,1995
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,1999
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1999
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1983
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1984
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.111111111111,1986
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1989
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1990
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1991
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1992
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,1993
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1994
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1996
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1998
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1999
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,2000
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.2,2001
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.11666666667,2003
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.958333333333,2006
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.892857142857,2007
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.03333333333,2008
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2011
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2012
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.325,2013
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.392857142857,2014
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.527777777778,2015
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1994
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.166666666667,1995
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1997
 Yechiam Yemini,Columbia University,database,1.0,0.25,1991
 Yechiam Yemini,Columbia University,networks,2.0,1.33333333333,1983
 Yechiam Yemini,Columbia University,networks,1.0,0.333333333333,1984
@@ -32643,9 +32671,14 @@ Prasad Tetali,Georgia Institute of Technology,theory,3.0,0.916666666667,2010
 Prasad Tetali,Georgia Institute of Technology,theory,3.0,0.866666666667,2011
 Prasad Tetali,Georgia Institute of Technology,theory,1.0,0.25,2012
 Prasad Tetali,Georgia Institute of Technology,robotics,1.0,0.2,2013
-Aniket Kate,Purdue University,security,1.0,0.25,2012
-Aniket Kate,Purdue University,security,1.0,0.25,2014
-Aniket Kate,Purdue University,security,1.0,0.333333333333,2015
+Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
+Thu D. Nguyen,Rutgers University,networks,1.0,0.25,1993
+Thu D. Nguyen,Rutgers University,arch,1.0,0.2,2013
+Thu D. Nguyen,Rutgers University,arch,2.0,0.583333333333,2015
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.333333333333,2000
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.2,2003
+Thu D. Nguyen,Rutgers University,highperf,2.0,0.291666666667,2011
 William Whittaker,Carnegie Mellon University,mlmining,1.0,0.333333333333,2000
 William Whittaker,Carnegie Mellon University,mlmining,1.0,0.0909090909091,2003
 William Whittaker,Carnegie Mellon University,ai,1.0,0.166666666667,1985
@@ -32702,6 +32735,10 @@ Jens Groth,University College London,crypto,1.0,0.5,2015
 Jens Groth,University College London,crypto,2.0,1.2,2016
 Larry Smarr,University of California - San Diego,highperf,1.0,0.333333333333,1995
 Carlos A. Varela,Rensselaer Polytechnic Institute,proglang,1.0,0.5,2005
+Daniel Ashbrook,Rochester Institute of Technology,hci,1.0,0.166666666667,2004
+Daniel Ashbrook,Rochester Institute of Technology,hci,1.0,0.5,2010
+Daniel Ashbrook,Rochester Institute of Technology,hci,1.0,0.333333333333,2011
+Daniel Ashbrook,Rochester Institute of Technology,hci,1.0,0.25,2012
 John P. Hayes,University of Michigan,arch,1.0,0.5,1980
 John P. Hayes,University of Michigan,highperf,1.0,0.5,1990
 Lakshminarayanan Subramanian,New York University,metrics,1.0,0.2,2014
