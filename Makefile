@@ -1,4 +1,4 @@
-TARGETS = csrankings.js generated-author-info.csv faculty-coauthors.csv
+TARGETS = csrankings.js generated-author-info.csv # faculty-coauthors.csv
 
 all: $(TARGETS)
 
