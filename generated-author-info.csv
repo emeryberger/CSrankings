@@ -3439,6 +3439,11 @@ Joseph A. Konstan,University of Minnesota - Twin Cities,web,1.0,0.25,1999
 Joseph A. Konstan,University of Minnesota - Twin Cities,web,1.0,0.25,2001
 Joseph A. Konstan,University of Minnesota - Twin Cities,web,1.0,0.25,2005
 Joseph A. Konstan,University of Minnesota - Twin Cities,web,1.0,0.2,2014
+Grigory Yaroslavtsev,Indiana University,theory,2.0,0.833333333333,2013
+Grigory Yaroslavtsev,Indiana University,theory,2.0,0.583333333333,2014
+Grigory Yaroslavtsev,Indiana University,theory,1.0,0.25,2015
+Grigory Yaroslavtsev,Indiana University,theory,1.0,0.25,2016
+Grigory Yaroslavtsev,Indiana University,database,1.0,0.25,2011
 Ari Juels,Cornell University,theory,1.0,0.5,1998
 Ari Juels,Cornell University,mlmining,1.0,0.5,1995
 Ari Juels,Cornell University,crypto,1.0,0.333333333333,1997
@@ -12522,34 +12527,18 @@ Carla E. Brodley,Northeastern University,ai,1.0,0.333333333333,2014
 Carla E. Brodley,Northeastern University,security,1.0,0.5,1998
 Carla E. Brodley,Northeastern University,security,1.0,0.333333333333,2004
 Carla E. Brodley,Northeastern University,vision,1.0,0.2,1999
-Benjamin C. Pierce,University of Pennsylvania,database,1.0,0.333333333333,2006
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.25,1989
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1991
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,1.0,1992
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1993
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1994
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1995
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,1996
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1997
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1998
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,1999
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,2001
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,2004
-Benjamin C. Pierce,University of Pennsylvania,proglang,2.0,0.7,2005
-Benjamin C. Pierce,University of Pennsylvania,proglang,2.0,0.4,2008
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2010
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2011
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2012
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.2,2013
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.111111111111,2014
-Benjamin C. Pierce,University of Pennsylvania,mobile,1.0,0.5,1998
-Benjamin C. Pierce,University of Pennsylvania,logic,1.0,0.333333333333,1989
-Benjamin C. Pierce,University of Pennsylvania,logic,1.0,0.5,1993
-Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.2,2009
-Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.333333333333,2011
-Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.2,2013
-Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.142857142857,2015
-Benjamin C. Pierce,University of Pennsylvania,arch,1.0,0.111111111111,2015
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.333333333333,2001
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.166666666667,2006
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.125,2007
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.142857142857,2008
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.166666666667,2009
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.5,2010
+Yuan Xie 0001,University of California - Santa Barbara,arch,2.0,0.309523809524,2011
+Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.2,2013
+Yuan Xie 0001,University of California - Santa Barbara,arch,2.0,0.5,2014
+Yuan Xie 0001,University of California - Santa Barbara,highperf,1.0,0.2,2009
+Yuan Xie 0001,University of California - Santa Barbara,highperf,1.0,0.25,2010
+Yuan Xie 0001,University of California - Santa Barbara,highperf,1.0,0.125,2012
 Scott E. Hudson,Carnegie Mellon University,graphics,1.0,1.0,1994
 Scott E. Hudson,Carnegie Mellon University,graphics,1.0,0.5,2004
 Scott E. Hudson,Carnegie Mellon University,hci,2.0,1.33333333333,1990
@@ -13162,18 +13151,34 @@ Hongwei Xi,Boston University,proglang,1.0,0.5,1999
 Hongwei Xi,Boston University,proglang,1.0,0.333333333333,2003
 Hongwei Xi,Boston University,logic,1.0,1.0,2000
 Hongwei Xi,Boston University,logic,1.0,1.0,2001
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.333333333333,2001
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.166666666667,2006
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.125,2007
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.142857142857,2008
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.166666666667,2009
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.5,2010
-Yuan Xie 0001,University of California - Santa Barbara,arch,2.0,0.309523809524,2011
-Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.2,2013
-Yuan Xie 0001,University of California - Santa Barbara,arch,2.0,0.5,2014
-Yuan Xie 0001,University of California - Santa Barbara,highperf,1.0,0.2,2009
-Yuan Xie 0001,University of California - Santa Barbara,highperf,1.0,0.25,2010
-Yuan Xie 0001,University of California - Santa Barbara,highperf,1.0,0.125,2012
+Benjamin C. Pierce,University of Pennsylvania,database,1.0,0.333333333333,2006
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.25,1989
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1991
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,1.0,1992
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1993
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1994
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1995
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,1996
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1997
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1998
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,1999
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,2001
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,2004
+Benjamin C. Pierce,University of Pennsylvania,proglang,2.0,0.7,2005
+Benjamin C. Pierce,University of Pennsylvania,proglang,2.0,0.4,2008
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2010
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2011
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2012
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.2,2013
+Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.111111111111,2014
+Benjamin C. Pierce,University of Pennsylvania,mobile,1.0,0.5,1998
+Benjamin C. Pierce,University of Pennsylvania,logic,1.0,0.333333333333,1989
+Benjamin C. Pierce,University of Pennsylvania,logic,1.0,0.5,1993
+Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.2,2009
+Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.333333333333,2011
+Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.2,2013
+Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.142857142857,2015
+Benjamin C. Pierce,University of Pennsylvania,arch,1.0,0.111111111111,2015
 Mark Handley,University College London,metrics,1.0,0.166666666667,2011
 Mark Handley,University College London,networks,1.0,0.333333333333,1995
 Mark Handley,University College London,networks,1.0,0.5,1997
