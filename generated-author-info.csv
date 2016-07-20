@@ -6979,10 +6979,31 @@ Eli Upfal,Brown University,database,1.0,0.166666666667,2007
 Eli Upfal,Brown University,database,1.0,0.166666666667,2009
 Eli Upfal,Brown University,database,1.0,0.333333333333,2010
 Eli Upfal,Brown University,database,1.0,0.25,2011
-Ueli Maurer,ETH Zurich,theory,1.0,0.2,2013
-Ueli Maurer,ETH Zurich,crypto,1.0,0.25,2012
-Ueli Maurer,ETH Zurich,crypto,3.0,0.916666666667,2013
-Ueli Maurer,ETH Zurich,security,1.0,0.5,2010
+Ashutosh Saxena,Cornell University,nlp,1.0,0.25,2015
+Ashutosh Saxena,Cornell University,mlmining,2.0,0.666666666667,2005
+Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2006
+Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2008
+Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2010
+Ashutosh Saxena,Cornell University,mlmining,2.0,0.583333333333,2011
+Ashutosh Saxena,Cornell University,mlmining,1.0,0.333333333333,2012
+Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2013
+Ashutosh Saxena,Cornell University,ai,1.0,0.333333333333,2007
+Ashutosh Saxena,Cornell University,ai,2.0,0.666666666667,2008
+Ashutosh Saxena,Cornell University,ai,1.0,0.333333333333,2011
+Ashutosh Saxena,Cornell University,ai,1.0,0.5,2013
+Ashutosh Saxena,Cornell University,robotics,4.0,1.36666666667,2009
+Ashutosh Saxena,Cornell University,robotics,1.0,0.333333333333,2010
+Ashutosh Saxena,Cornell University,robotics,2.0,0.666666666667,2011
+Ashutosh Saxena,Cornell University,robotics,4.0,1.08333333333,2012
+Ashutosh Saxena,Cornell University,robotics,4.0,1.83333333333,2013
+Ashutosh Saxena,Cornell University,robotics,5.0,1.91666666667,2014
+Ashutosh Saxena,Cornell University,robotics,3.0,1.08333333333,2015
+Ashutosh Saxena,Cornell University,robotics,2.0,0.4,2016
+Ashutosh Saxena,Cornell University,vision,2.0,0.666666666667,2007
+Ashutosh Saxena,Cornell University,vision,1.0,0.5,2012
+Ashutosh Saxena,Cornell University,vision,2.0,0.583333333333,2013
+Ashutosh Saxena,Cornell University,vision,1.0,0.5,2014
+Ashutosh Saxena,Cornell University,vision,3.0,0.7,2015
 Olga Sorkine,ETH Zurich,graphics,1.0,0.333333333333,2003
 Olga Sorkine,ETH Zurich,graphics,3.0,0.75,2005
 Olga Sorkine,ETH Zurich,graphics,1.0,0.2,2006
@@ -7452,31 +7473,10 @@ Jörg Ott,TU Munich,networks,1.0,0.5,2004
 Jörg Ott,TU Munich,networks,1.0,0.5,2005
 Jörg Ott,TU Munich,networks,2.0,0.366666666667,2011
 Apostolos Gerasoulis,Rutgers University,highperf,1.0,0.5,1991
-Ashutosh Saxena,Cornell University,nlp,1.0,0.25,2015
-Ashutosh Saxena,Cornell University,mlmining,2.0,0.666666666667,2005
-Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2006
-Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2008
-Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2010
-Ashutosh Saxena,Cornell University,mlmining,2.0,0.583333333333,2011
-Ashutosh Saxena,Cornell University,mlmining,1.0,0.333333333333,2012
-Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2013
-Ashutosh Saxena,Cornell University,ai,1.0,0.333333333333,2007
-Ashutosh Saxena,Cornell University,ai,2.0,0.666666666667,2008
-Ashutosh Saxena,Cornell University,ai,1.0,0.333333333333,2011
-Ashutosh Saxena,Cornell University,ai,1.0,0.5,2013
-Ashutosh Saxena,Cornell University,robotics,4.0,1.36666666667,2009
-Ashutosh Saxena,Cornell University,robotics,1.0,0.333333333333,2010
-Ashutosh Saxena,Cornell University,robotics,2.0,0.666666666667,2011
-Ashutosh Saxena,Cornell University,robotics,4.0,1.08333333333,2012
-Ashutosh Saxena,Cornell University,robotics,4.0,1.83333333333,2013
-Ashutosh Saxena,Cornell University,robotics,5.0,1.91666666667,2014
-Ashutosh Saxena,Cornell University,robotics,3.0,1.08333333333,2015
-Ashutosh Saxena,Cornell University,robotics,2.0,0.4,2016
-Ashutosh Saxena,Cornell University,vision,2.0,0.666666666667,2007
-Ashutosh Saxena,Cornell University,vision,1.0,0.5,2012
-Ashutosh Saxena,Cornell University,vision,2.0,0.583333333333,2013
-Ashutosh Saxena,Cornell University,vision,1.0,0.5,2014
-Ashutosh Saxena,Cornell University,vision,3.0,0.7,2015
+Ueli Maurer,ETH Zurich,theory,1.0,0.2,2013
+Ueli Maurer,ETH Zurich,crypto,1.0,0.25,2012
+Ueli Maurer,ETH Zurich,crypto,3.0,0.916666666667,2013
+Ueli Maurer,ETH Zurich,security,1.0,0.5,2010
 Anne Bouillard,Ecole Normale Superieure,networks,1.0,0.333333333333,2010
 Jur van den Berg,University of Utah,graphics,1.0,0.166666666667,2012
 Jur van den Berg,University of Utah,ai,1.0,0.25,2011
@@ -10956,18 +10956,21 @@ Christoph Koch 0001,EPFL,database,2.0,0.625,2015
 Christoph Koch 0001,EPFL,database,6.0,2.33333333333,2016
 Christoph Koch 0001,EPFL,logic,1.0,0.5,2002
 Chinmay Eishan Kulkarni,Carnegie Mellon University,arch,1.0,0.125,2009
-Vivek S. Pai,Princeton University,metrics,1.0,0.25,2005
-Vivek S. Pai,Princeton University,metrics,2.0,0.75,2011
-Vivek S. Pai,Princeton University,opsys,1.0,0.333333333333,1999
-Vivek S. Pai,Princeton University,opsys,1.0,0.333333333333,2002
-Vivek S. Pai,Princeton University,opsys,1.0,0.2,2004
-Vivek S. Pai,Princeton University,networks,2.0,1.0,2006
-Vivek S. Pai,Princeton University,networks,1.0,0.25,2008
-Vivek S. Pai,Princeton University,networks,1.0,0.25,2009
-Vivek S. Pai,Princeton University,networks,1.0,0.5,2011
-Vivek S. Pai,Princeton University,networks,1.0,0.2,2014
-Vivek S. Pai,Princeton University,networks,1.0,0.5,2015
-Vivek S. Pai,Princeton University,arch,1.0,0.142857142857,1998
+Yehuda Afek,Tel Aviv University,theory,2.0,0.583333333333,1987
+Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1989
+Yehuda Afek,Tel Aviv University,theory,1.0,0.5,1993
+Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1995
+Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1996
+Yehuda Afek,Tel Aviv University,theory,1.0,0.5,1997
+Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1999
+Yehuda Afek,Tel Aviv University,networks,2.0,0.583333333333,1996
+Yehuda Afek,Tel Aviv University,networks,1.0,0.333333333333,1999
+Yehuda Afek,Tel Aviv University,networks,1.0,0.5,2000
+Yehuda Afek,Tel Aviv University,networks,1.0,0.333333333333,2003
+Yehuda Afek,Tel Aviv University,arch,1.0,0.5,2014
+Yehuda Afek,Tel Aviv University,arch,1.0,0.5,2015
+Yehuda Afek,Tel Aviv University,highperf,1.0,0.5,2013
+Yehuda Afek,Tel Aviv University,vision,1.0,0.333333333333,2015
 Alfonso F. Cardenas,University of California - Los Angeles,mlmining,1.0,0.25,2007
 Alfonso F. Cardenas,University of California - Los Angeles,database,1.0,0.2,1983
 Kwan-Liu Ma,University of California - Davis,graphics,1.0,0.2,2003
@@ -21110,9 +21113,6 @@ Sudipto Guha,University of Pennsylvania,database,2.0,0.833333333333,2009
 Sudipto Guha,University of Pennsylvania,database,1.0,0.25,2010
 Sudipto Guha,University of Pennsylvania,database,2.0,0.666666666667,2012
 Sudipto Guha,University of Pennsylvania,database,1.0,0.333333333333,2015
-Ann Blandford,University College London,hci,1.0,0.333333333333,2011
-Ann Blandford,University College London,hci,2.0,0.533333333333,2014
-Ann Blandford,University College London,hci,1.0,0.333333333333,2015
 Yousef Saad,University of Minnesota - Twin Cities,mlmining,1.0,0.5,2012
 Yousef Saad,University of Minnesota - Twin Cities,mlmining,1.0,0.333333333333,2015
 Yousef Saad,University of Minnesota - Twin Cities,mlmining,1.0,0.5,2016
@@ -23294,6 +23294,12 @@ Ananth Grama,Purdue University,highperf,1.0,0.333333333333,1995
 Ananth Grama,Purdue University,highperf,1.0,0.333333333333,1996
 Ananth Grama,Purdue University,highperf,1.0,0.333333333333,1998
 Ananth Grama,Purdue University,highperf,1.0,0.333333333333,1999
+Seny Kamara,Brown University,theory,1.0,0.25,2013
+Seny Kamara,Brown University,security,1.0,0.25,2006
+Seny Kamara,Brown University,security,2.0,0.583333333333,2008
+Seny Kamara,Brown University,security,2.0,0.666666666667,2012
+Seny Kamara,Brown University,security,2.0,0.583333333333,2015
+Seny Kamara,Brown University,arch,1.0,0.142857142857,2012
 Laurie Williams,North Carolina State University,softeng,1.0,0.25,2006
 Laurie Williams,North Carolina State University,softeng,2.0,0.533333333333,2007
 Laurie Williams,North Carolina State University,softeng,1.0,0.25,2008
@@ -25257,6 +25263,8 @@ Anant Agarwal,Massachusetts Institute of Technology,arch,1.0,0.166666666667,2011
 Anant Agarwal,Massachusetts Institute of Technology,arch,1.0,0.25,2012
 Anant Agarwal,Massachusetts Institute of Technology,highperf,2.0,0.7,1993
 Anant Agarwal,Massachusetts Institute of Technology,highperf,1.0,0.333333333333,1997
+Christopher Dyer,Carnegie Mellon University,nlp,1.0,0.333333333333,2008
+Christopher Dyer,Carnegie Mellon University,nlp,2.0,0.833333333333,2010
 Laura Dabbish,Carnegie Mellon University,hci,1.0,0.5,2004
 Laura Dabbish,Carnegie Mellon University,hci,2.0,0.5,2011
 Laura Dabbish,Carnegie Mellon University,hci,1.0,0.333333333333,2012
@@ -29547,37 +29555,9 @@ Michael T. Goodrich,University of California - Irvine,networks,1.0,0.25,2011
 Michael T. Goodrich,University of California - Irvine,security,1.0,1.0,2002
 Michael T. Goodrich,University of California - Irvine,security,1.0,1.0,2005
 Michael T. Goodrich,University of California - Irvine,security,1.0,1.0,2009
-Robert E. Schapire,Princeton University,theory,1.0,0.5,1987
-Robert E. Schapire,Princeton University,theory,3.0,1.83333333333,1989
-Robert E. Schapire,Princeton University,theory,2.0,0.833333333333,1990
-Robert E. Schapire,Princeton University,theory,2.0,0.333333333333,1993
-Robert E. Schapire,Princeton University,theory,1.0,0.166666666667,1994
-Robert E. Schapire,Princeton University,theory,2.0,0.416666666667,1995
-Robert E. Schapire,Princeton University,theory,1.0,0.25,1997
-Robert E. Schapire,Princeton University,mlmining,1.0,0.25,1991
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,1992
-Robert E. Schapire,Princeton University,mlmining,1.0,0.5,1994
-Robert E. Schapire,Princeton University,mlmining,2.0,0.75,1996
-Robert E. Schapire,Princeton University,mlmining,3.0,1.58333333333,1997
-Robert E. Schapire,Princeton University,mlmining,1.0,0.25,1998
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,2000
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,2001
-Robert E. Schapire,Princeton University,mlmining,2.0,0.45,2002
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,2003
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,2004
-Robert E. Schapire,Princeton University,mlmining,2.0,0.666666666667,2005
-Robert E. Schapire,Princeton University,mlmining,2.0,0.75,2006
-Robert E. Schapire,Princeton University,mlmining,3.0,1.33333333333,2007
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,2008
-Robert E. Schapire,Princeton University,mlmining,2.0,0.833333333333,2010
-Robert E. Schapire,Princeton University,mlmining,3.0,1.16666666667,2014
-Robert E. Schapire,Princeton University,mlmining,2.0,0.45,2015
-Robert E. Schapire,Princeton University,mlmining,1.0,0.333333333333,2016
-Robert E. Schapire,Princeton University,ai,1.0,1.0,1999
-Robert E. Schapire,Princeton University,ai,1.0,0.25,2015
-Robert E. Schapire,Princeton University,web,1.0,0.25,1996
-Robert E. Schapire,Princeton University,web,1.0,0.333333333333,1998
-Robert E. Schapire,Princeton University,web,1.0,0.25,2010
+Ann Blandford,University College London,hci,1.0,0.333333333333,2011
+Ann Blandford,University College London,hci,2.0,0.533333333333,2014
+Ann Blandford,University College London,hci,1.0,0.333333333333,2015
 Ivan Beschastnikh,University of British Columbia,opsys,1.0,0.25,2011
 Ivan Beschastnikh,University of British Columbia,networks,1.0,0.2,2008
 Ivan Beschastnikh,University of British Columbia,networks,1.0,0.142857142857,2014
@@ -30237,6 +30217,19 @@ Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2013
 Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2014
 Julia Chuzhoy,University of Chicago,theory,3.0,2.5,2015
 Julia Chuzhoy,University of Chicago,theory,1.0,0.333333333333,2016
+Hongseok Yang,University of Oxford,proglang,1.0,0.333333333333,2004
+Hongseok Yang,University of Oxford,proglang,1.0,0.25,2009
+Hongseok Yang,University of Oxford,proglang,1.0,0.166666666667,2011
+Hongseok Yang,University of Oxford,proglang,1.0,0.25,2012
+Hongseok Yang,University of Oxford,proglang,2.0,0.533333333333,2013
+Hongseok Yang,University of Oxford,proglang,4.0,0.9,2014
+Hongseok Yang,University of Oxford,proglang,1.0,0.333333333333,2015
+Hongseok Yang,University of Oxford,proglang,2.0,0.7,2016
+Hongseok Yang,University of Oxford,logic,1.0,0.333333333333,2005
+Hongseok Yang,University of Oxford,logic,2.0,0.47619047619,2007
+Hongseok Yang,University of Oxford,logic,1.0,0.142857142857,2008
+Hongseok Yang,University of Oxford,logic,1.0,0.333333333333,2011
+Hongseok Yang,University of Oxford,softeng,1.0,0.25,2012
 Erik Frøkjær,DIKU,hci,1.0,0.333333333333,2000
 Erik Frøkjær,DIKU,hci,1.0,0.5,2001
 Erik Frøkjær,DIKU,hci,1.0,0.5,2005
@@ -32253,21 +32246,6 @@ Joseph E. Gonzalez,University of California - Berkeley,opsys,1.0,0.2,2012
 Joseph E. Gonzalez,University of California - Berkeley,opsys,1.0,0.166666666667,2014
 Mahesh K. Marina,University of Edinburgh,mobile,1.0,0.2,2010
 Mahesh K. Marina,University of Edinburgh,mobile,1.0,0.25,2014
-Yehuda Afek,Tel Aviv University,theory,2.0,0.583333333333,1987
-Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1989
-Yehuda Afek,Tel Aviv University,theory,1.0,0.5,1993
-Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1995
-Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1996
-Yehuda Afek,Tel Aviv University,theory,1.0,0.5,1997
-Yehuda Afek,Tel Aviv University,theory,1.0,0.333333333333,1999
-Yehuda Afek,Tel Aviv University,networks,2.0,0.583333333333,1996
-Yehuda Afek,Tel Aviv University,networks,1.0,0.333333333333,1999
-Yehuda Afek,Tel Aviv University,networks,1.0,0.5,2000
-Yehuda Afek,Tel Aviv University,networks,1.0,0.333333333333,2003
-Yehuda Afek,Tel Aviv University,arch,1.0,0.5,2014
-Yehuda Afek,Tel Aviv University,arch,1.0,0.5,2015
-Yehuda Afek,Tel Aviv University,highperf,1.0,0.5,2013
-Yehuda Afek,Tel Aviv University,vision,1.0,0.333333333333,2015
 David Wetherall,University of Washington,metrics,1.0,0.166666666667,2006
 David Wetherall,University of Washington,metrics,1.0,0.333333333333,2014
 David Wetherall,University of Washington,hci,2.0,0.392857142857,2009
@@ -32322,19 +32300,10 @@ Walter A. Burkhard,University of California - San Diego,database,1.0,1.0,1984
 Walter A. Burkhard,University of California - San Diego,database,1.0,0.5,1988
 Walter A. Burkhard,University of California - San Diego,arch,1.0,0.333333333333,1997
 Walter A. Burkhard,University of California - San Diego,arch,1.0,0.25,1998
-Hongseok Yang,University of Oxford,proglang,1.0,0.333333333333,2004
-Hongseok Yang,University of Oxford,proglang,1.0,0.25,2009
-Hongseok Yang,University of Oxford,proglang,1.0,0.166666666667,2011
-Hongseok Yang,University of Oxford,proglang,1.0,0.25,2012
-Hongseok Yang,University of Oxford,proglang,2.0,0.533333333333,2013
-Hongseok Yang,University of Oxford,proglang,4.0,0.9,2014
-Hongseok Yang,University of Oxford,proglang,1.0,0.333333333333,2015
-Hongseok Yang,University of Oxford,proglang,2.0,0.7,2016
-Hongseok Yang,University of Oxford,logic,1.0,0.333333333333,2005
-Hongseok Yang,University of Oxford,logic,2.0,0.47619047619,2007
-Hongseok Yang,University of Oxford,logic,1.0,0.142857142857,2008
-Hongseok Yang,University of Oxford,logic,1.0,0.333333333333,2011
-Hongseok Yang,University of Oxford,softeng,1.0,0.25,2012
+Vasileios P. Kemerlis,Brown University,security,2.0,0.583333333333,2012
+Vasileios P. Kemerlis,Brown University,security,1.0,0.25,2013
+Vasileios P. Kemerlis,Brown University,security,1.0,0.25,2015
+Vasileios P. Kemerlis,Brown University,softeng,1.0,0.2,2016
 Jing Chen,Stony Brook University,theory,1.0,0.5,2009
 Jing Chen,Stony Brook University,theory,1.0,0.5,2011
 Jing Chen,Stony Brook University,ai,2.0,0.45,2016
