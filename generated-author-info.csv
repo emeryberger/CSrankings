@@ -2665,13 +2665,20 @@ Todd M. Austin,University of Michigan,arch,1.0,0.142857142857,2016
 Prabhakar Ragde,University of Waterloo,theory,1.0,0.25,1985
 Prabhakar Ragde,University of Waterloo,theory,1.0,0.5,1987
 Prabhakar Ragde,University of Waterloo,theory,1.0,0.25,1995
-C. R. Ramakrishnan,Stony Brook University,database,1.0,0.25,1998
-C. R. Ramakrishnan,Stony Brook University,proglang,1.0,0.142857142857,1995
-C. R. Ramakrishnan,Stony Brook University,proglang,1.0,0.333333333333,1996
-C. R. Ramakrishnan,Stony Brook University,mobile,1.0,0.2,2008
-C. R. Ramakrishnan,Stony Brook University,web,1.0,0.25,2009
-C. R. Ramakrishnan,Stony Brook University,logic,1.0,0.166666666667,1997
-C. R. Ramakrishnan,Stony Brook University,security,1.0,0.25,2007
+Joan Feigenbaum,Yale University,theory,1.0,0.333333333333,1987
+Joan Feigenbaum,Yale University,theory,1.0,0.25,1991
+Joan Feigenbaum,Yale University,theory,1.0,0.25,1993
+Joan Feigenbaum,Yale University,theory,1.0,0.25,1999
+Joan Feigenbaum,Yale University,theory,2.0,0.583333333333,2000
+Joan Feigenbaum,Yale University,theory,1.0,0.2,2005
+Joan Feigenbaum,Yale University,crypto,1.0,1.0,1985
+Joan Feigenbaum,Yale University,crypto,1.0,0.2,1988
+Joan Feigenbaum,Yale University,crypto,2.0,0.583333333333,1990
+Joan Feigenbaum,Yale University,crypto,1.0,0.333333333333,1998
+Joan Feigenbaum,Yale University,logic,1.0,0.333333333333,1991
+Joan Feigenbaum,Yale University,security,1.0,0.333333333333,1996
+Joan Feigenbaum,Yale University,security,1.0,0.333333333333,2000
+Joan Feigenbaum,Yale University,security,1.0,0.25,2014
 Peter Stone,University of Texas - Austin,mlmining,1.0,0.5,1995
 Peter Stone,University of Texas - Austin,mlmining,1.0,1.0,2000
 Peter Stone,University of Texas - Austin,mlmining,2.0,0.7,2001
@@ -3646,6 +3653,12 @@ Nenad Medvidovic,University of Southern California,softeng,2.0,0.45,2013
 Nenad Medvidovic,University of Southern California,softeng,1.0,0.333333333333,2014
 Nenad Medvidovic,University of Southern California,softeng,2.0,0.392857142857,2015
 Nenad Medvidovic,University of Southern California,softeng,1.0,0.5,2016
+Bhiksha Raj,Carnegie Mellon University,mlmining,1.0,0.333333333333,2007
+Bhiksha Raj,Carnegie Mellon University,mlmining,1.0,0.333333333333,2009
+Bhiksha Raj,Carnegie Mellon University,mlmining,1.0,0.333333333333,2010
+Bhiksha Raj,Carnegie Mellon University,mlmining,1.0,0.5,2012
+Bhiksha Raj,Carnegie Mellon University,vision,1.0,0.333333333333,2007
+Bhiksha Raj,Carnegie Mellon University,vision,1.0,0.2,2015
 Emma Brunskill,Carnegie Mellon University,hci,1.0,0.25,2014
 Emma Brunskill,Carnegie Mellon University,hci,2.0,0.375,2016
 Emma Brunskill,Carnegie Mellon University,mlmining,1.0,0.333333333333,2013
@@ -11034,20 +11047,13 @@ Peter McBrien,Imperial College London,database,1.0,0.5,1991
 Kirk W. Cameron,Virginia Tech,highperf,1.0,0.5,2004
 Kirk W. Cameron,Virginia Tech,highperf,1.0,0.333333333333,2005
 Kirk W. Cameron,Virginia Tech,highperf,1.0,0.333333333333,2006
-Joan Feigenbaum,Yale University,theory,1.0,0.333333333333,1987
-Joan Feigenbaum,Yale University,theory,1.0,0.25,1991
-Joan Feigenbaum,Yale University,theory,1.0,0.25,1993
-Joan Feigenbaum,Yale University,theory,1.0,0.25,1999
-Joan Feigenbaum,Yale University,theory,2.0,0.583333333333,2000
-Joan Feigenbaum,Yale University,theory,1.0,0.2,2005
-Joan Feigenbaum,Yale University,crypto,1.0,1.0,1985
-Joan Feigenbaum,Yale University,crypto,1.0,0.2,1988
-Joan Feigenbaum,Yale University,crypto,2.0,0.583333333333,1990
-Joan Feigenbaum,Yale University,crypto,1.0,0.333333333333,1998
-Joan Feigenbaum,Yale University,logic,1.0,0.333333333333,1991
-Joan Feigenbaum,Yale University,security,1.0,0.333333333333,1996
-Joan Feigenbaum,Yale University,security,1.0,0.333333333333,2000
-Joan Feigenbaum,Yale University,security,1.0,0.25,2014
+C. R. Ramakrishnan,Stony Brook University,database,1.0,0.25,1998
+C. R. Ramakrishnan,Stony Brook University,proglang,1.0,0.142857142857,1995
+C. R. Ramakrishnan,Stony Brook University,proglang,1.0,0.333333333333,1996
+C. R. Ramakrishnan,Stony Brook University,mobile,1.0,0.2,2008
+C. R. Ramakrishnan,Stony Brook University,web,1.0,0.25,2009
+C. R. Ramakrishnan,Stony Brook University,logic,1.0,0.166666666667,1997
+C. R. Ramakrishnan,Stony Brook University,security,1.0,0.25,2007
 Farnam Jahanian,Carnegie Mellon University,metrics,1.0,0.2,2010
 Farnam Jahanian,Carnegie Mellon University,networks,1.0,0.333333333333,1997
 Farnam Jahanian,Carnegie Mellon University,networks,1.0,0.5,1998
@@ -11586,6 +11592,17 @@ Le Song,Georgia Institute of Technology,mlmining,6.0,1.35,2015
 Le Song,Georgia Institute of Technology,mlmining,2.0,0.583333333333,2016
 Le Song,Georgia Institute of Technology,ai,1.0,0.2,2016
 Le Song,Georgia Institute of Technology,vision,1.0,0.142857142857,2015
+Elias Koutsoupias,University of Oxford,theory,1.0,0.5,1993
+Elias Koutsoupias,University of Oxford,theory,1.0,0.5,1994
+Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,1995
+Elias Koutsoupias,University of Oxford,theory,2.0,1.5,1999
+Elias Koutsoupias,University of Oxford,theory,1.0,0.25,2000
+Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,2004
+Elias Koutsoupias,University of Oxford,theory,1.0,0.5,2005
+Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,2007
+Elias Koutsoupias,University of Oxford,theory,1.0,0.2,2012
+Elias Koutsoupias,University of Oxford,database,1.0,0.333333333333,1997
+Elias Koutsoupias,University of Oxford,database,1.0,0.5,1998
 Silvio Micali,Massachusetts Institute of Technology,theory,1.0,0.5,1980
 Silvio Micali,Massachusetts Institute of Technology,theory,4.0,1.66666666667,1982
 Silvio Micali,Massachusetts Institute of Technology,theory,2.0,0.666666666667,1983
@@ -17933,17 +17950,13 @@ Christoph Bregler,New York University,vision,1.0,0.25,2010
 Christoph Bregler,New York University,vision,1.0,0.25,2011
 Christoph Bregler,New York University,vision,2.0,0.311111111111,2015
 Henrik Christensen,Georgia Institute of Technology,robotics,1.0,0.333333333333,2016
-Elias Koutsoupias,University of Oxford,theory,1.0,0.5,1993
-Elias Koutsoupias,University of Oxford,theory,1.0,0.5,1994
-Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,1995
-Elias Koutsoupias,University of Oxford,theory,2.0,1.5,1999
-Elias Koutsoupias,University of Oxford,theory,1.0,0.25,2000
-Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,2004
-Elias Koutsoupias,University of Oxford,theory,1.0,0.5,2005
-Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,2007
-Elias Koutsoupias,University of Oxford,theory,1.0,0.2,2012
-Elias Koutsoupias,University of Oxford,database,1.0,0.333333333333,1997
-Elias Koutsoupias,University of Oxford,database,1.0,0.5,1998
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,1.0,0.25,2008
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,2.0,0.75,2010
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,2.0,0.833333333333,2011
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,2.0,0.583333333333,2013
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,1.0,0.333333333333,2014
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,2.0,0.583333333333,2015
+Taylor Berg-Kirkpatrick,Carnegie Mellon University,mlmining,1.0,0.333333333333,2014
 Henrik Wann Jensen,University of California - San Diego,graphics,1.0,0.5,1998
 Henrik Wann Jensen,University of California - San Diego,graphics,1.0,0.2,1999
 Henrik Wann Jensen,University of California - San Diego,graphics,3.0,0.75,2001
@@ -22267,6 +22280,9 @@ Yuval Filmus,Technion,theory,1.0,0.25,2013
 Yuval Filmus,Technion,theory,1.0,0.333333333333,2015
 Yuval Filmus,Technion,ai,1.0,0.333333333333,2013
 Yuval Filmus,Technion,ai,1.0,0.25,2016
+Graham Neubig,Carnegie Mellon University,nlp,1.0,0.2,2011
+Graham Neubig,Carnegie Mellon University,nlp,1.0,0.25,2012
+Graham Neubig,Carnegie Mellon University,nlp,3.0,0.733333333333,2015
 Divyakant Agrawal,University of California - Santa Barbara,database,1.0,0.5,1988
 Divyakant Agrawal,University of California - Santa Barbara,database,1.0,0.5,1989
 Divyakant Agrawal,University of California - Santa Barbara,database,2.0,1.0,1990
