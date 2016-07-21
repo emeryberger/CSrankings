@@ -993,6 +993,11 @@ Anthony Hunter,University College London,ai,1.0,1.0,2008
 Anthony Hunter,University College London,ai,1.0,0.333333333333,2010
 Anthony Hunter,University College London,ai,1.0,0.5,2011
 Anthony Hunter,University College London,ai,2.0,1.2,2015
+Vicente Ordonez,University of Virginia,nlp,1.0,0.2,2012
+Vicente Ordonez,University of Virginia,nlp,1.0,0.25,2014
+Vicente Ordonez,University of Virginia,mlmining,1.0,0.333333333333,2011
+Vicente Ordonez,University of Virginia,vision,1.0,0.333333333333,2011
+Vicente Ordonez,University of Virginia,vision,1.0,0.5,2014
 Olivier Danvy,Aarhus University,proglang,1.0,1.0,1987
 Olivier Danvy,Aarhus University,proglang,1.0,0.5,1991
 Olivier Danvy,Aarhus University,proglang,2.0,1.0,1993
@@ -1826,6 +1831,15 @@ Mahadev Satyanarayanan,Carnegie Mellon University,mobile,1.0,0.166666666667,2009
 Mahadev Satyanarayanan,Carnegie Mellon University,mobile,2.0,0.366666666667,2013
 Mahadev Satyanarayanan,Carnegie Mellon University,mobile,1.0,0.166666666667,2014
 Mahadev Satyanarayanan,Carnegie Mellon University,softeng,1.0,1.0,1988
+Kai-Wei Chang,University of Virginia,nlp,2.0,0.666666666667,2013
+Kai-Wei Chang,University of Virginia,nlp,1.0,0.25,2014
+Kai-Wei Chang,University of Virginia,mlmining,2.0,0.4,2008
+Kai-Wei Chang,University of Virginia,mlmining,1.0,0.25,2010
+Kai-Wei Chang,University of Virginia,mlmining,1.0,0.5,2011
+Kai-Wei Chang,University of Virginia,mlmining,1.0,0.333333333333,2014
+Kai-Wei Chang,University of Virginia,mlmining,1.0,0.2,2015
+Kai-Wei Chang,University of Virginia,ai,1.0,0.25,2011
+Kai-Wei Chang,University of Virginia,ai,1.0,0.25,2015
 Marios C. Papaefthymiou,University of Michigan,arch,1.0,0.142857142857,2013
 Ronald C. Arkin,Georgia Institute of Technology,robotics,2.0,1.25,1989
 Ronald C. Arkin,Georgia Institute of Technology,robotics,1.0,0.333333333333,1990
@@ -10522,6 +10536,10 @@ Dirk Van Gucht,Indiana University,database,1.0,0.333333333333,2007
 Dirk Van Gucht,Indiana University,database,1.0,0.2,2013
 Dirk Van Gucht,Indiana University,database,1.0,0.25,2015
 Dirk Van Gucht,Indiana University,logic,1.0,0.333333333333,1995
+Suchi Saria,Johns Hopkins University,mlmining,1.0,0.5,2015
+Suchi Saria,Johns Hopkins University,ai,1.0,0.333333333333,2011
+Suchi Saria,Johns Hopkins University,ai,1.0,0.333333333333,2015
+Suchi Saria,Johns Hopkins University,ai,1.0,0.5,2016
 Alan L. Cox,Rice University,metrics,1.0,0.5,1997
 Alan L. Cox,Rice University,opsys,1.0,0.5,1989
 Alan L. Cox,Rice University,opsys,1.0,0.25,2002
@@ -11678,6 +11696,24 @@ Janyce Wiebe,University of Pittsburgh,nlp,2.0,1.0,2015
 Janyce Wiebe,University of Pittsburgh,ai,1.0,0.333333333333,2004
 Janyce Wiebe,University of Pittsburgh,ai,1.0,0.333333333333,2005
 Janyce Wiebe,University of Pittsburgh,ai,1.0,0.5,2016
+K. Selçuk Candan,Arizona State University,mlmining,1.0,0.5,2014
+K. Selçuk Candan,Arizona State University,ai,1.0,0.333333333333,2008
+K. Selçuk Candan,Arizona State University,database,1.0,0.25,1996
+K. Selçuk Candan,Arizona State University,database,1.0,0.25,1997
+K. Selçuk Candan,Arizona State University,database,1.0,0.2,2001
+K. Selçuk Candan,Arizona State University,database,2.0,0.342857142857,2002
+K. Selçuk Candan,Arizona State University,database,1.0,0.2,2005
+K. Selçuk Candan,Arizona State University,database,4.0,0.7,2006
+K. Selçuk Candan,Arizona State University,database,2.0,0.666666666667,2007
+K. Selçuk Candan,Arizona State University,database,2.0,0.366666666667,2008
+K. Selçuk Candan,Arizona State University,database,1.0,0.5,2009
+K. Selçuk Candan,Arizona State University,database,1.0,0.25,2012
+K. Selçuk Candan,Arizona State University,database,1.0,0.333333333333,2015
+K. Selçuk Candan,Arizona State University,web,1.0,0.25,2001
+K. Selçuk Candan,Arizona State University,web,1.0,0.2,2003
+K. Selçuk Candan,Arizona State University,web,1.0,0.166666666667,2004
+K. Selçuk Candan,Arizona State University,web,1.0,0.333333333333,2005
+K. Selçuk Candan,Arizona State University,web,1.0,0.333333333333,2009
 Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,0.533333333333,1996
 Alexander J. Smola,Carnegie Mellon University,mlmining,2.0,0.75,1997
 Alexander J. Smola,Carnegie Mellon University,mlmining,3.0,0.75,1998
@@ -13179,28 +13215,27 @@ Ion Stoica,University of California - Berkeley,mobile,2.0,0.642857142857,2005
 Ion Stoica,University of California - Berkeley,mobile,2.0,0.267857142857,2007
 Ion Stoica,University of California - Berkeley,mobile,1.0,0.5,2009
 Ion Stoica,University of California - Berkeley,mobile,1.0,0.2,2013
-Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,1982
-Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,1988
-Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,2004
-Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,2011
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1981
-Simon S. Lam,University of Texas - Austin,networks,1.0,1.0,1986
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1988
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1989
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1990
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.333333333333,1994
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1995
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1996
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1997
-Simon S. Lam,University of Texas - Austin,networks,2.0,0.833333333333,1998
-Simon S. Lam,University of Texas - Austin,networks,2.0,0.583333333333,2001
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.2,2004
-Simon S. Lam,University of Texas - Austin,networks,1.0,0.2,2006
-Simon S. Lam,University of Texas - Austin,networks,2.0,0.45,2007
-Simon S. Lam,University of Texas - Austin,web,1.0,0.25,2001
-Simon S. Lam,University of Texas - Austin,security,1.0,0.333333333333,1991
-Simon S. Lam,University of Texas - Austin,security,1.0,0.5,1992
-Simon S. Lam,University of Texas - Austin,security,2.0,1.0,1993
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1988
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1991
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1996
+Frank Pfenning,Carnegie Mellon University,proglang,2.0,0.833333333333,1998
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1999
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.25,2003
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,2004
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.333333333333,2005
+Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.333333333333,2016
+Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,1989
+Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,1991
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,1992
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.333333333333,1993
+Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,1995
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,1996
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,1997
+Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,2001
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.25,2004
+Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,2009
+Frank Pfenning,Carnegie Mellon University,robotics,1.0,0.5,2007
+Frank Pfenning,Carnegie Mellon University,security,1.0,0.5,2010
 Ron Kimmel,Technion,graphics,1.0,0.2,2008
 Ron Kimmel,Technion,vision,1.0,0.333333333333,1995
 Ron Kimmel,Technion,vision,2.0,0.75,1996
@@ -13912,27 +13947,28 @@ David A. Bader,Georgia Institute of Technology,highperf,1.0,0.333333333333,2006
 David A. Bader,Georgia Institute of Technology,highperf,1.0,0.5,2009
 David A. Bader,Georgia Institute of Technology,highperf,1.0,0.25,2010
 David A. Bader,Georgia Institute of Technology,highperf,1.0,0.5,2014
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1988
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1991
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1996
-Frank Pfenning,Carnegie Mellon University,proglang,2.0,0.833333333333,1998
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1999
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.25,2003
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,2004
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.333333333333,2005
-Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.333333333333,2016
-Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,1989
-Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,1991
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,1992
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.333333333333,1993
-Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,1995
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,1996
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,1997
-Frank Pfenning,Carnegie Mellon University,logic,1.0,1.0,2001
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.25,2004
-Frank Pfenning,Carnegie Mellon University,logic,1.0,0.5,2009
-Frank Pfenning,Carnegie Mellon University,robotics,1.0,0.5,2007
-Frank Pfenning,Carnegie Mellon University,security,1.0,0.5,2010
+Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,1982
+Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,1988
+Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,2004
+Simon S. Lam,University of Texas - Austin,metrics,1.0,0.5,2011
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1981
+Simon S. Lam,University of Texas - Austin,networks,1.0,1.0,1986
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1988
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1989
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1990
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.333333333333,1994
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1995
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1996
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.5,1997
+Simon S. Lam,University of Texas - Austin,networks,2.0,0.833333333333,1998
+Simon S. Lam,University of Texas - Austin,networks,2.0,0.583333333333,2001
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.2,2004
+Simon S. Lam,University of Texas - Austin,networks,1.0,0.2,2006
+Simon S. Lam,University of Texas - Austin,networks,2.0,0.45,2007
+Simon S. Lam,University of Texas - Austin,web,1.0,0.25,2001
+Simon S. Lam,University of Texas - Austin,security,1.0,0.333333333333,1991
+Simon S. Lam,University of Texas - Austin,security,1.0,0.5,1992
+Simon S. Lam,University of Texas - Austin,security,2.0,1.0,1993
 Ravin Balakrishnan,University of Toronto,graphics,1.0,0.5,2004
 Ravin Balakrishnan,University of Toronto,graphics,1.0,0.333333333333,2005
 Ravin Balakrishnan,University of Toronto,hci,2.0,0.75,1997
@@ -24166,6 +24202,11 @@ Michalis Polychronakis,Stony Brook University,metrics,2.0,0.533333333333,2013
 Michalis Polychronakis,Stony Brook University,security,1.0,0.333333333333,2011
 Michalis Polychronakis,Stony Brook University,security,2.0,0.583333333333,2012
 Michalis Polychronakis,Stony Brook University,security,1.0,0.25,2014
+Samira Manabi Khan,University of Virginia,metrics,1.0,0.166666666667,2014
+Samira Manabi Khan,University of Virginia,metrics,1.0,0.1,2016
+Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2010
+Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2012
+Samira Manabi Khan,University of Virginia,arch,2.0,0.366666666667,2015
 Adam Klivans,University of Texas - Austin,theory,2.0,1.0,1999
 Adam Klivans,University of Texas - Austin,theory,1.0,0.5,2001
 Adam Klivans,University of Texas - Austin,theory,2.0,0.666666666667,2002
@@ -25738,6 +25779,14 @@ Amir Shpilka,Tel Aviv University,theory,1.0,0.5,2013
 Amir Shpilka,Tel Aviv University,theory,1.0,0.333333333333,2014
 Amir Shpilka,Tel Aviv University,theory,2.0,0.583333333333,2015
 Amir Shpilka,Tel Aviv University,theory,1.0,0.333333333333,2016
+Hongning Wang,University of Virginia,nlp,1.0,0.333333333333,2011
+Hongning Wang,University of Virginia,mlmining,1.0,0.333333333333,2010
+Hongning Wang,University of Virginia,mlmining,1.0,0.333333333333,2011
+Hongning Wang,University of Virginia,web,1.0,0.25,2011
+Hongning Wang,University of Virginia,web,1.0,0.2,2012
+Hongning Wang,University of Virginia,web,5.0,1.0,2013
+Hongning Wang,University of Virginia,web,2.0,0.333333333333,2014
+Hongning Wang,University of Virginia,web,2.0,0.75,2016
 Lawrence C. Paulson,TU Munich,proglang,1.0,1.0,1982
 Lawrence C. Paulson,TU Munich,logic,1.0,0.5,1998
 Lawrence C. Paulson,TU Munich,logic,1.0,1.0,1999
@@ -27576,10 +27625,13 @@ John A. Stankovic,University of Virginia,mobile,2.0,0.267857142857,2010
 John A. Stankovic,University of Virginia,mobile,1.0,0.142857142857,2011
 John A. Stankovic,University of Virginia,mobile,1.0,0.1,2012
 John A. Stankovic,University of Virginia,mobile,1.0,0.111111111111,2013
-Suchi Saria,Johns Hopkins University,mlmining,1.0,0.5,2015
-Suchi Saria,Johns Hopkins University,ai,1.0,0.333333333333,2011
-Suchi Saria,Johns Hopkins University,ai,1.0,0.333333333333,2015
-Suchi Saria,Johns Hopkins University,ai,1.0,0.5,2016
+Baishakhi Ray,University of Virginia,hci,1.0,0.142857142857,2015
+Baishakhi Ray,University of Virginia,opsys,1.0,0.2,2011
+Baishakhi Ray,University of Virginia,security,1.0,0.2,2014
+Baishakhi Ray,University of Virginia,softeng,2.0,0.833333333333,2012
+Baishakhi Ray,University of Virginia,softeng,1.0,0.25,2013
+Baishakhi Ray,University of Virginia,softeng,1.0,0.25,2014
+Baishakhi Ray,University of Virginia,softeng,1.0,0.166666666667,2016
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1980
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1981
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.333333333333,1982
