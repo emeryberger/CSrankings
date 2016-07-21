@@ -439,7 +439,7 @@ function rank() {
     var endyear = parseInt(jQuery("#endyear").find(":selected").text());
     var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
-    var minToRank = 50; /* parseInt(jQuery("#minToRank").find(":selected").val()); */
+    var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
     var whichRegions = jQuery("#regions").find(":selected").val();
     var numAreas = 0; /* Total number of areas checked */
     /* Update the 'weights' of each area from the checkboxes. */
