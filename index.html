@@ -89,7 +89,14 @@
 		faculty member's home page; click on the raw number of
 		publications to go to their DBLP entry.
 	      </p>
-	      Rank the top 50 institutions in
+	      Rank the top
+	      <select id="minToRank" name="minToRank" onchange="rank();">
+		<option value="10">10</option>
+		<option value="25">25</option>
+		<option value="50" selected="selected">50</option>
+		<option value="75">75</option>
+	      </select>
+	      institutions in
 	      <select id="regions" name="regions" onchange="rank();">
 		<option value="USA" selected="selected">the USA only</option>
 		<option value="canada">Canada only</option>
