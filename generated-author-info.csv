@@ -10693,7 +10693,11 @@ Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2006
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.333333333333,2012
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2014
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2015
-Karrie G. Karahalios,University of Illinois at Urbana-Champaign,hci,1.0,0.2,2015
+William Yang Wang,University of California - Santa Barbara,nlp,1.0,0.25,2012
+William Yang Wang,University of California - Santa Barbara,nlp,2.0,0.75,2014
+William Yang Wang,University of California - Santa Barbara,nlp,5.0,2.08333333333,2015
+William Yang Wang,University of California - Santa Barbara,ai,1.0,0.333333333333,2015
+William Yang Wang,University of California - Santa Barbara,ai,1.0,0.5,2016
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1992
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1994
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1999
@@ -13534,15 +13538,6 @@ Kai Li,Princeton University,vision,1.0,0.166666666667,2009
 Kai Li,Princeton University,vision,1.0,0.25,2010
 Kai Li,Princeton University,vision,1.0,0.2,2012
 Kai Li,Princeton University,vision,1.0,0.166666666667,2015
-Jason Lawrence,University of Virginia,graphics,1.0,0.333333333333,2004
-Jason Lawrence,University of Virginia,graphics,2.0,0.285714285714,2006
-Jason Lawrence,University of Virginia,graphics,1.0,0.5,2007
-Jason Lawrence,University of Virginia,graphics,2.0,0.416666666667,2008
-Jason Lawrence,University of Virginia,graphics,3.0,0.47619047619,2009
-Jason Lawrence,University of Virginia,graphics,1.0,0.333333333333,2010
-Jason Lawrence,University of Virginia,graphics,5.0,1.39285714286,2011
-Jason Lawrence,University of Virginia,graphics,3.0,0.583333333333,2014
-Jason Lawrence,University of Virginia,vision,1.0,0.5,2011
 Paul Beame,University of Washington,theory,1.0,0.333333333333,1984
 Paul Beame,University of Washington,theory,1.0,1.0,1986
 Paul Beame,University of Washington,theory,1.0,0.5,1987
@@ -17071,16 +17066,6 @@ Daniel Sheldon,University of Massachusetts - Amherst,ai,1.0,0.25,2013
 Daniel Sheldon,University of Massachusetts - Amherst,ai,1.0,0.333333333333,2014
 Daniel Sheldon,University of Massachusetts - Amherst,ai,1.0,0.333333333333,2015
 Daniel Sheldon,University of Massachusetts - Amherst,ai,2.0,0.583333333333,2016
-Sudhanva Gurumurthi,University of Virginia,database,1.0,0.166666666667,2001
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.25,2003
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.333333333333,2004
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.333333333333,2005
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.333333333333,2006
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.333333333333,2007
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.333333333333,2008
-Sudhanva Gurumurthi,University of Virginia,arch,2.0,0.366666666667,2014
-Sudhanva Gurumurthi,University of Virginia,arch,1.0,0.142857142857,2015
-Sudhanva Gurumurthi,University of Virginia,highperf,1.0,0.2,2013
 Hal Daumé III,University of Maryland - College Park,nlp,1.0,0.5,2002
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.0,2004
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.5,2006
@@ -21222,22 +21207,22 @@ James Demmel,University of California - Berkeley,highperf,1.0,0.25,2009
 James Demmel,University of California - Berkeley,highperf,1.0,0.333333333333,2011
 James Demmel,University of California - Berkeley,highperf,2.0,0.583333333333,2012
 James Demmel,University of California - Berkeley,highperf,1.0,0.111111111111,2013
-Abhi Shelat,University of Virginia,theory,2.0,0.625,2002
-Abhi Shelat,University of Virginia,theory,1.0,0.333333333333,2003
-Abhi Shelat,University of Virginia,theory,1.0,0.333333333333,2005
-Abhi Shelat,University of Virginia,theory,1.0,0.333333333333,2007
-Abhi Shelat,University of Virginia,theory,1.0,0.5,2009
-Abhi Shelat,University of Virginia,ai,1.0,0.5,2004
-Abhi Shelat,University of Virginia,crypto,1.0,0.5,2005
-Abhi Shelat,University of Virginia,crypto,1.0,0.333333333333,2006
-Abhi Shelat,University of Virginia,crypto,1.0,0.333333333333,2007
-Abhi Shelat,University of Virginia,crypto,1.0,0.333333333333,2008
-Abhi Shelat,University of Virginia,crypto,1.0,0.166666666667,2009
-Abhi Shelat,University of Virginia,crypto,1.0,0.5,2011
-Abhi Shelat,University of Virginia,security,1.0,0.333333333333,2012
-Abhi Shelat,University of Virginia,security,1.0,0.5,2013
-Abhi Shelat,University of Virginia,security,2.0,0.45,2014
-Abhi Shelat,University of Virginia,security,1.0,0.5,2015
+Abhi Shelat,Northeastern University,theory,2.0,0.625,2002
+Abhi Shelat,Northeastern University,theory,1.0,0.333333333333,2003
+Abhi Shelat,Northeastern University,theory,1.0,0.333333333333,2005
+Abhi Shelat,Northeastern University,theory,1.0,0.333333333333,2007
+Abhi Shelat,Northeastern University,theory,1.0,0.5,2009
+Abhi Shelat,Northeastern University,ai,1.0,0.5,2004
+Abhi Shelat,Northeastern University,crypto,1.0,0.5,2005
+Abhi Shelat,Northeastern University,crypto,1.0,0.333333333333,2006
+Abhi Shelat,Northeastern University,crypto,1.0,0.333333333333,2007
+Abhi Shelat,Northeastern University,crypto,1.0,0.333333333333,2008
+Abhi Shelat,Northeastern University,crypto,1.0,0.166666666667,2009
+Abhi Shelat,Northeastern University,crypto,1.0,0.5,2011
+Abhi Shelat,Northeastern University,security,1.0,0.333333333333,2012
+Abhi Shelat,Northeastern University,security,1.0,0.5,2013
+Abhi Shelat,Northeastern University,security,2.0,0.45,2014
+Abhi Shelat,Northeastern University,security,1.0,0.5,2015
 David J. Pym,University College London,logic,1.0,1.0,1999
 David J. Pym,University College London,logic,1.0,0.5,2004
 Thomas Schmid,University of Utah,metrics,1.0,0.2,2008
@@ -22767,6 +22752,7 @@ Gregor Kiczales,University of British Columbia,proglang,1.0,0.5,2013
 Gregor Kiczales,University of British Columbia,softeng,1.0,1.0,1996
 Gregor Kiczales,University of British Columbia,softeng,1.0,0.166666666667,1997
 Gregor Kiczales,University of British Columbia,softeng,1.0,0.5,2005
+Huy L. Nguyên,Northeastern University,theory,2.0,0.583333333333,2015
 Josef Sivic,Ecole Normale Superieure,graphics,1.0,0.2,2012
 Josef Sivic,Ecole Normale Superieure,graphics,1.0,0.333333333333,2014
 Josef Sivic,Ecole Normale Superieure,mlmining,1.0,0.2,2009
@@ -23251,6 +23237,15 @@ Ming-Yang Kao,Northwestern University,theory,1.0,0.25,2004
 Ming-Yang Kao,Northwestern University,theory,1.0,0.5,2006
 Ming-Yang Kao,Northwestern University,networks,1.0,0.111111111111,2006
 Ming-Yang Kao,Northwestern University,security,1.0,0.2,2006
+Huy L. Nguyen,Northeastern University,theory,1.0,0.25,2009
+Huy L. Nguyen,Northeastern University,theory,1.0,0.5,2010
+Huy L. Nguyen,Northeastern University,theory,1.0,0.25,2011
+Huy L. Nguyen,Northeastern University,theory,1.0,0.5,2012
+Huy L. Nguyen,Northeastern University,theory,3.0,1.5,2013
+Huy L. Nguyen,Northeastern University,theory,4.0,1.25,2014
+Huy L. Nguyen,Northeastern University,theory,1.0,0.2,2016
+Huy L. Nguyen,Northeastern University,mlmining,2.0,0.666666666667,2014
+Huy L. Nguyen,Northeastern University,mlmining,2.0,0.75,2015
 Yuriy Brun,University of Massachusetts - Amherst,proglang,1.0,0.2,2012
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.5,2004
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.25,2009
@@ -25765,9 +25760,6 @@ Mohamed G. Gouda,University of Texas - Austin,web,1.0,0.25,2001
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.333333333333,2010
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.2,2012
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.333333333333,2015
-Aniket Kate,Purdue University,security,1.0,0.25,2012
-Aniket Kate,Purdue University,security,1.0,0.25,2014
-Aniket Kate,Purdue University,security,1.0,0.333333333333,2015
 Kaleem Siddiqi,McGill University,robotics,1.0,0.2,2015
 Kaleem Siddiqi,McGill University,vision,1.0,0.5,1993
 Kaleem Siddiqi,McGill University,vision,1.0,0.5,1994
@@ -29888,6 +29880,42 @@ Michael Brudno,University of Toronto,ai,1.0,0.333333333333,2004
 Christopher D. Carothers,Rensselaer Polytechnic Institute,mlmining,1.0,0.25,2003
 John R. Lange,University of Pittsburgh,networks,1.0,0.333333333333,2010
 John R. Lange,University of Pittsburgh,highperf,1.0,0.2,2012
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1991
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.166666666667,1993
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,opsys,1.0,0.333333333333,1995
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,1999
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1999
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1983
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1984
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.111111111111,1986
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1989
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1990
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1991
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1992
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,1993
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1994
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1996
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1998
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1999
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,2000
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.2,2001
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.11666666667,2003
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.958333333333,2006
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.892857142857,2007
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.03333333333,2008
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2011
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2012
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.325,2013
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.392857142857,2014
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.527777777778,2015
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1994
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.166666666667,1995
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1997
 Robert Grimm,New York University,opsys,1.0,0.1,1997
 Robert Grimm,New York University,opsys,1.0,0.25,1999
 Robert Grimm,New York University,networks,1.0,0.142857142857,2006
@@ -30680,6 +30708,7 @@ Ye Xia 0001,University of Florida,networks,1.0,1.0,2004
 Ye Xia 0001,University of Florida,networks,1.0,0.333333333333,2007
 Ye Xia 0001,University of Florida,networks,1.0,0.333333333333,2010
 Ye Xia 0001,University of Florida,networks,1.0,0.5,2014
+Karrie G. Karahalios,University of Illinois at Urbana-Champaign,hci,1.0,0.2,2015
 Dan Tsafrir,Technion,metrics,1.0,0.333333333333,2003
 Dan Tsafrir,Technion,metrics,1.0,0.5,2016
 Dan Tsafrir,Technion,opsys,1.0,0.2,2015
@@ -31698,42 +31727,14 @@ J. Nathan Foster,Cornell University,proglang,1.0,0.2,2008
 Joel Spencer,New York University,theory,1.0,1.0,1992
 Joel Spencer,New York University,theory,1.0,0.25,2008
 Joel Spencer,New York University,theory,1.0,0.25,2010
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1991
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.166666666667,1993
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,opsys,1.0,0.333333333333,1995
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,1999
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1999
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1983
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1984
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.111111111111,1986
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1989
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1990
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1991
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1992
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,1993
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1994
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1996
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1998
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1999
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,2000
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.2,2001
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.11666666667,2003
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.958333333333,2006
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.892857142857,2007
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.03333333333,2008
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2011
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2012
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.325,2013
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.392857142857,2014
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.527777777778,2015
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1994
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.166666666667,1995
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1997
+Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
+Thu D. Nguyen,Rutgers University,networks,1.0,0.25,1993
+Thu D. Nguyen,Rutgers University,arch,1.0,0.2,2013
+Thu D. Nguyen,Rutgers University,arch,2.0,0.583333333333,2015
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.333333333333,2000
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.2,2003
+Thu D. Nguyen,Rutgers University,highperf,2.0,0.291666666667,2011
 Yechiam Yemini,Columbia University,database,1.0,0.25,1991
 Yechiam Yemini,Columbia University,networks,2.0,1.33333333333,1983
 Yechiam Yemini,Columbia University,networks,1.0,0.333333333333,1984
@@ -32671,14 +32672,9 @@ Prasad Tetali,Georgia Institute of Technology,theory,3.0,0.916666666667,2010
 Prasad Tetali,Georgia Institute of Technology,theory,3.0,0.866666666667,2011
 Prasad Tetali,Georgia Institute of Technology,theory,1.0,0.25,2012
 Prasad Tetali,Georgia Institute of Technology,robotics,1.0,0.2,2013
-Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
-Thu D. Nguyen,Rutgers University,networks,1.0,0.25,1993
-Thu D. Nguyen,Rutgers University,arch,1.0,0.2,2013
-Thu D. Nguyen,Rutgers University,arch,2.0,0.583333333333,2015
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.333333333333,2000
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.2,2003
-Thu D. Nguyen,Rutgers University,highperf,2.0,0.291666666667,2011
+Aniket Kate,Purdue University,security,1.0,0.25,2012
+Aniket Kate,Purdue University,security,1.0,0.25,2014
+Aniket Kate,Purdue University,security,1.0,0.333333333333,2015
 William Whittaker,Carnegie Mellon University,mlmining,1.0,0.333333333333,2000
 William Whittaker,Carnegie Mellon University,mlmining,1.0,0.0909090909091,2003
 William Whittaker,Carnegie Mellon University,ai,1.0,0.166666666667,1985
