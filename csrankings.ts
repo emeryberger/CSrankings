@@ -535,7 +535,7 @@ function rank() : boolean {
     const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
     const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
-    const minToRank          = 50; /* parseInt(jQuery("#minToRank").find(":selected").val()); */
+    var minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
     const whichRegions       = jQuery("#regions").find(":selected").val();
 
     var numAreas = 0; /* Total number of areas checked */
