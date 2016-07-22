@@ -259,12 +259,14 @@ Stefan Savage,University of California - San Diego,networks,1.0,0.25,2008
 Stefan Savage,University of California - San Diego,networks,1.0,0.25,2010
 Stefan Savage,University of California - San Diego,web,1.0,0.25,2014
 Stefan Savage,University of California - San Diego,security,1.0,0.333333333333,2001
-Stefan Savage,University of California - San Diego,security,1.0,0.25,2007
+Stefan Savage,University of California - San Diego,security,1.0,0.5,2003
+Stefan Savage,University of California - San Diego,security,2.0,0.5,2007
 Stefan Savage,University of California - San Diego,security,3.0,0.72619047619,2008
 Stefan Savage,University of California - San Diego,security,1.0,0.25,2009
 Stefan Savage,University of California - San Diego,security,2.0,0.257575757576,2010
 Stefan Savage,University of California - San Diego,security,5.0,0.811111111111,2011
 Stefan Savage,University of California - San Diego,security,3.0,0.366666666667,2012
+Stefan Savage,University of California - San Diego,security,1.0,0.25,2013
 Stefan Savage,University of California - San Diego,security,2.0,0.236111111111,2014
 Stefan Savage,University of California - San Diego,security,1.0,0.166666666667,2015
 Stefan Savage,University of California - San Diego,arch,1.0,0.2,2011
@@ -512,6 +514,7 @@ Bobby Bhattacharjee,University of Maryland - College Park,mobile,1.0,0.166666666
 Bobby Bhattacharjee,University of Maryland - College Park,mobile,2.0,0.361111111111,2016
 Bobby Bhattacharjee,University of Maryland - College Park,security,1.0,0.333333333333,2002
 Bobby Bhattacharjee,University of Maryland - College Park,security,1.0,0.333333333333,2005
+Bobby Bhattacharjee,University of Maryland - College Park,security,1.0,0.166666666667,2014
 Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.5,2003
 Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.142857142857,2008
 Pengcheng Shi,Rochester Institute of Technology,vision,1.0,0.2,2009
@@ -535,6 +538,7 @@ Tao Xie,University of Illinois at Urbana-Champaign,proglang,1.0,0.2,2011
 Tao Xie,University of Illinois at Urbana-Champaign,web,1.0,0.5,2007
 Tao Xie,University of Illinois at Urbana-Champaign,web,1.0,0.166666666667,2013
 Tao Xie,University of Illinois at Urbana-Champaign,web,1.0,0.166666666667,2015
+Tao Xie,University of Illinois at Urbana-Champaign,security,2.0,0.45,2013
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2003
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2004
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2005
@@ -721,17 +725,21 @@ David Wagner,University of California - Berkeley,mobile,1.0,0.333333333333,2001
 David Wagner,University of California - Berkeley,mobile,1.0,0.333333333333,2004
 David Wagner,University of California - Berkeley,mobile,1.0,0.25,2011
 David Wagner,University of California - Berkeley,web,1.0,0.333333333333,2010
+David Wagner,University of California - Berkeley,security,1.0,0.25,1996
 David Wagner,University of California - Berkeley,security,1.0,0.333333333333,2000
 David Wagner,University of California - Berkeley,security,3.0,1.08333333333,2001
 David Wagner,University of California - Berkeley,security,3.0,1.33333333333,2002
 David Wagner,University of California - Berkeley,security,3.0,2.0,2004
+David Wagner,University of California - Berkeley,security,1.0,0.333333333333,2005
 David Wagner,University of California - Berkeley,security,1.0,0.25,2006
 David Wagner,University of California - Berkeley,security,1.0,0.25,2007
 David Wagner,University of California - Berkeley,security,1.0,0.25,2008
 David Wagner,University of California - Berkeley,security,2.0,0.583333333333,2009
 David Wagner,University of California - Berkeley,security,2.0,0.45,2011
 David Wagner,University of California - Berkeley,security,1.0,0.333333333333,2012
-David Wagner,University of California - Berkeley,security,1.0,0.166666666667,2014
+David Wagner,University of California - Berkeley,security,1.0,0.333333333333,2013
+David Wagner,University of California - Berkeley,security,2.0,0.666666666667,2014
+David Wagner,University of California - Berkeley,security,2.0,0.366666666667,2015
 Jean Gallier,University of Pennsylvania,robotics,1.0,0.333333333333,2015
 Aravind Srinivasan,University of Maryland - College Park,metrics,1.0,0.25,2003
 Aravind Srinivasan,University of Maryland - College Park,metrics,1.0,0.25,2005
@@ -908,10 +916,18 @@ Andrew S. Tanenbaum,VU Amsterdam,opsys,1.0,0.5,1985
 Andrew S. Tanenbaum,VU Amsterdam,opsys,1.0,1.0,2005
 Andrew S. Tanenbaum,VU Amsterdam,security,1.0,0.333333333333,2012
 Andrew S. Tanenbaum,VU Amsterdam,arch,1.0,0.333333333333,2013
-Christina Lioma,DIKU,nlp,1.0,0.5,2006
-Christina Lioma,DIKU,nlp,1.0,0.2,2011
-Christina Lioma,DIKU,web,1.0,0.333333333333,2012
-Christina Lioma,DIKU,web,1.0,0.25,2015
+Norman I. Badler,University of Pennsylvania,graphics,1.0,0.5,1980
+Norman I. Badler,University of Pennsylvania,graphics,1.0,0.5,1981
+Norman I. Badler,University of Pennsylvania,graphics,1.0,0.5,1985
+Norman I. Badler,University of Pennsylvania,graphics,1.0,0.25,1990
+Norman I. Badler,University of Pennsylvania,graphics,2.0,0.611111111111,1994
+Norman I. Badler,University of Pennsylvania,graphics,1.0,0.25,2000
+Norman I. Badler,University of Pennsylvania,graphics,2.0,0.666666666667,2002
+Norman I. Badler,University of Pennsylvania,ai,1.0,0.5,1991
+Norman I. Badler,University of Pennsylvania,robotics,2.0,1.0,1992
+Norman I. Badler,University of Pennsylvania,robotics,1.0,0.25,2013
+Norman I. Badler,University of Pennsylvania,robotics,2.0,0.583333333333,2014
+Norman I. Badler,University of Pennsylvania,vision,1.0,0.333333333333,1994
 Jordi Domingo-Pascual,Polytechnic University of Catalonia,metrics,1.0,0.2,2009
 Christopher W. Clifton,Purdue University,mlmining,1.0,0.5,2014
 Ugur Çetintemel,Brown University,database,1.0,0.111111111111,2002
@@ -1516,6 +1532,8 @@ Ben Y. Zhao,University of California - Santa Barbara,web,1.0,0.166666666667,2010
 Ben Y. Zhao,University of California - Santa Barbara,web,1.0,0.142857142857,2012
 Ben Y. Zhao,University of California - Santa Barbara,web,1.0,0.2,2013
 Ben Y. Zhao,University of California - Santa Barbara,web,1.0,0.125,2015
+Ben Y. Zhao,University of California - Santa Barbara,security,1.0,0.166666666667,2013
+Ben Y. Zhao,University of California - Santa Barbara,security,1.0,0.25,2014
 Ben Y. Zhao,University of California - Santa Barbara,arch,1.0,0.0833333333333,2000
 Jelani Nelson,Harvard University,theory,1.0,0.333333333333,2008
 Jelani Nelson,Harvard University,theory,2.0,0.666666666667,2010
@@ -1610,6 +1628,7 @@ Danai Koutra,University of Michigan,web,1.0,0.333333333333,2015
 J. Doug Tygar,University of California - Berkeley,mlmining,1.0,0.333333333333,2007
 J. Doug Tygar,University of California - Berkeley,mlmining,1.0,0.166666666667,2014
 J. Doug Tygar,University of California - Berkeley,security,1.0,0.5,1994
+J. Doug Tygar,University of California - Berkeley,security,1.0,0.5,1999
 J. Doug Tygar,University of California - Berkeley,security,1.0,0.25,2007
 Simha Sethumadhavan,Columbia University,robotics,1.0,0.2,2016
 Simha Sethumadhavan,Columbia University,security,1.0,0.5,2010
@@ -2012,6 +2031,7 @@ Christian S. Collberg,University of Arizona,proglang,1.0,1.0,1997
 Christian S. Collberg,University of Arizona,proglang,1.0,0.333333333333,1998
 Christian S. Collberg,University of Arizona,proglang,1.0,0.5,1999
 Christian S. Collberg,University of Arizona,proglang,1.0,0.142857142857,2004
+Christian S. Collberg,University of Arizona,security,1.0,0.166666666667,2005
 Stuart A. Kurtz,University of Chicago,theory,1.0,1.0,1982
 Stuart A. Kurtz,University of Chicago,theory,1.0,0.333333333333,1986
 Stuart A. Kurtz,University of Chicago,theory,2.0,0.666666666667,1989
@@ -2066,7 +2086,7 @@ Eran Tromer,Tel Aviv University,crypto,1.0,0.2,2013
 Eran Tromer,Tel Aviv University,crypto,2.0,0.583333333333,2014
 Eran Tromer,Tel Aviv University,crypto,1.0,0.333333333333,2015
 Eran Tromer,Tel Aviv University,security,1.0,0.25,2009
-Eran Tromer,Tel Aviv University,security,1.0,0.142857142857,2014
+Eran Tromer,Tel Aviv University,security,2.0,0.392857142857,2014
 Eran Tromer,Tel Aviv University,security,1.0,0.2,2015
 Brandon Lucia,Carnegie Mellon University,proglang,1.0,0.333333333333,2011
 Brandon Lucia,Carnegie Mellon University,proglang,1.0,0.2,2012
@@ -2136,6 +2156,7 @@ Inderjit S. Dhillon,University of Texas - Austin,database,1.0,0.2,2014
 Inderjit S. Dhillon,University of Texas - Austin,web,1.0,0.2,2015
 Inderjit S. Dhillon,University of Texas - Austin,highperf,1.0,0.0833333333333,1996
 Gregory R. Andrews,University of Arizona,opsys,1.0,0.333333333333,1994
+Gregory R. Andrews,University of Arizona,security,1.0,0.333333333333,2007
 Gregory R. Andrews,University of Arizona,softeng,1.0,0.333333333333,1981
 Gregory R. Andrews,University of Arizona,softeng,1.0,0.333333333333,2003
 Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2000
@@ -2842,6 +2863,7 @@ Geoffrey M. Voelker,University of California - San Diego,mobile,1.0,0.1428571428
 Geoffrey M. Voelker,University of California - San Diego,mobile,1.0,0.25,2014
 Geoffrey M. Voelker,University of California - San Diego,web,1.0,0.25,2014
 Geoffrey M. Voelker,University of California - San Diego,security,1.0,0.333333333333,2001
+Geoffrey M. Voelker,University of California - San Diego,security,1.0,0.25,2007
 Geoffrey M. Voelker,University of California - San Diego,security,1.0,0.142857142857,2008
 Geoffrey M. Voelker,University of California - San Diego,security,1.0,0.166666666667,2010
 Geoffrey M. Voelker,University of California - San Diego,security,4.0,0.711111111111,2011
@@ -2850,6 +2872,7 @@ Geoffrey M. Voelker,University of California - San Diego,security,1.0,0.11111111
 Geoffrey M. Voelker,University of California - San Diego,arch,2.0,0.267857142857,1996
 Geoffrey M. Voelker,University of California - San Diego,highperf,1.0,0.125,2009
 Todd M. Austin,University of Michigan,proglang,1.0,0.333333333333,1994
+Todd M. Austin,University of Michigan,security,1.0,0.5,2003
 Todd M. Austin,University of Michigan,arch,1.0,0.5,1992
 Todd M. Austin,University of Michigan,arch,2.0,0.833333333333,1995
 Todd M. Austin,University of Michigan,arch,1.0,0.5,1996
@@ -3060,6 +3083,7 @@ Thomas E. Anderson,University of Washington,proglang,1.0,0.25,1993
 Thomas E. Anderson,University of Washington,proglang,1.0,0.142857142857,2015
 Thomas E. Anderson,University of Washington,mobile,1.0,0.25,1999
 Thomas E. Anderson,University of Washington,mobile,1.0,0.333333333333,2008
+Thomas E. Anderson,University of Washington,security,1.0,0.25,1998
 Thomas E. Anderson,University of Washington,security,1.0,0.125,2010
 Thomas E. Anderson,University of Washington,arch,1.0,0.25,1991
 Thomas E. Anderson,University of Washington,arch,1.0,0.25,1992
@@ -3385,11 +3409,11 @@ John C. Mitchell,Stanford University,logic,2.0,0.666666666667,1993
 John C. Mitchell,Stanford University,logic,1.0,1.0,1998
 John C. Mitchell,Stanford University,logic,1.0,0.5,2006
 John C. Mitchell,Stanford University,security,1.0,0.333333333333,1997
-John C. Mitchell,Stanford University,security,1.0,0.25,1998
+John C. Mitchell,Stanford University,security,2.0,0.583333333333,1998
 John C. Mitchell,Stanford University,security,1.0,0.333333333333,2001
 John C. Mitchell,Stanford University,security,1.0,0.333333333333,2002
 John C. Mitchell,Stanford University,security,1.0,0.333333333333,2003
-John C. Mitchell,Stanford University,security,1.0,0.2,2005
+John C. Mitchell,Stanford University,security,2.0,0.4,2005
 John C. Mitchell,Stanford University,security,1.0,0.25,2006
 John C. Mitchell,Stanford University,security,2.0,0.666666666667,2008
 John C. Mitchell,Stanford University,security,3.0,0.783333333333,2010
@@ -3672,17 +3696,18 @@ Ari Juels,Cornell University,security,1.0,0.5,1999
 Ari Juels,Cornell University,security,1.0,0.25,2000
 Ari Juels,Cornell University,security,1.0,0.5,2001
 Ari Juels,Cornell University,security,1.0,0.333333333333,2002
-Ari Juels,Cornell University,security,1.0,0.333333333333,2003
+Ari Juels,Cornell University,security,2.0,0.583333333333,2003
 Ari Juels,Cornell University,security,3.0,1.75,2004
+Ari Juels,Cornell University,security,1.0,0.166666666667,2005
 Ari Juels,Cornell University,security,1.0,0.2,2006
-Ari Juels,Cornell University,security,2.0,0.75,2007
+Ari Juels,Cornell University,security,3.0,1.08333333333,2007
 Ari Juels,Cornell University,security,1.0,0.333333333333,2008
 Ari Juels,Cornell University,security,3.0,0.783333333333,2009
 Ari Juels,Cornell University,security,2.0,0.45,2011
 Ari Juels,Cornell University,security,2.0,0.416666666667,2012
 Ari Juels,Cornell University,security,2.0,0.833333333333,2013
 Ari Juels,Cornell University,security,3.0,0.65,2014
-Ari Juels,Cornell University,security,3.0,0.7,2015
+Ari Juels,Cornell University,security,4.0,0.9,2015
 Michael F. P. O'Boyle,University of Edinburgh,mlmining,1.0,0.166666666667,2006
 Michael F. P. O'Boyle,University of Edinburgh,proglang,1.0,0.5,2006
 Michael F. P. O'Boyle,University of Edinburgh,proglang,1.0,0.25,2009
@@ -4294,7 +4319,8 @@ Hovav Shacham,University of California - San Diego,security,1.0,0.25,2008
 Hovav Shacham,University of California - San Diego,security,1.0,0.25,2009
 Hovav Shacham,University of California - San Diego,security,3.0,0.507575757576,2010
 Hovav Shacham,University of California - San Diego,security,2.0,0.35,2011
-Hovav Shacham,University of California - San Diego,security,1.0,0.2,2013
+Hovav Shacham,University of California - San Diego,security,2.0,0.45,2013
+Hovav Shacham,University of California - San Diego,security,2.0,0.211111111111,2014
 Hovav Shacham,University of California - San Diego,security,1.0,0.166666666667,2015
 Hovav Shacham,University of California - San Diego,arch,1.0,0.5,2013
 Hovav Shacham,University of California - San Diego,arch,1.0,0.25,2016
@@ -4455,6 +4481,7 @@ Salvatore J. Stolfo,Columbia University,ai,1.0,1.0,1984
 Salvatore J. Stolfo,Columbia University,database,1.0,0.25,1991
 Salvatore J. Stolfo,Columbia University,database,1.0,0.25,1994
 Salvatore J. Stolfo,Columbia University,database,1.0,0.5,1995
+Salvatore J. Stolfo,Columbia University,security,1.0,0.5,1998
 Salvatore J. Stolfo,Columbia University,security,1.0,0.333333333333,1999
 Salvatore J. Stolfo,Columbia University,security,1.0,0.25,2001
 Salvatore J. Stolfo,Columbia University,security,1.0,0.2,2007
@@ -4835,6 +4862,7 @@ Alan Mislove,Northeastern University,networks,1.0,0.333333333333,2011
 Alan Mislove,Northeastern University,web,1.0,0.333333333333,2009
 Alan Mislove,Northeastern University,web,2.0,0.47619047619,2013
 Alan Mislove,Northeastern University,web,1.0,0.333333333333,2016
+Alan Mislove,Northeastern University,security,1.0,0.142857142857,2014
 Kamin Whitehouse,University of Virginia,hci,1.0,0.333333333333,2008
 Kamin Whitehouse,University of Virginia,hci,1.0,0.2,2012
 Kamin Whitehouse,University of Virginia,hci,1.0,0.5,2015
@@ -5057,6 +5085,7 @@ Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,2012
 Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,2013
 Thomas R. Gross,ETH Zurich,proglang,1.0,0.333333333333,2015
 Thomas R. Gross,ETH Zurich,security,1.0,0.333333333333,2012
+Thomas R. Gross,ETH Zurich,security,1.0,0.2,2015
 Thomas R. Gross,ETH Zurich,softeng,1.0,0.5,2009
 Thomas R. Gross,ETH Zurich,softeng,3.0,0.95,2012
 Thomas R. Gross,ETH Zurich,softeng,1.0,0.5,2013
@@ -5368,9 +5397,9 @@ Thomas Ristenpart,Cornell University,crypto,1.0,0.333333333333,2016
 Thomas Ristenpart,Cornell University,security,1.0,0.25,2008
 Thomas Ristenpart,Cornell University,security,1.0,0.25,2009
 Thomas Ristenpart,Cornell University,security,3.0,0.7,2012
-Thomas Ristenpart,Cornell University,security,1.0,0.25,2013
-Thomas Ristenpart,Cornell University,security,3.0,0.7,2014
-Thomas Ristenpart,Cornell University,security,4.0,1.03333333333,2015
+Thomas Ristenpart,Cornell University,security,3.0,0.833333333333,2013
+Thomas Ristenpart,Cornell University,security,7.0,1.5,2014
+Thomas Ristenpart,Cornell University,security,6.0,1.48333333333,2015
 James J. Little,University of British Columbia,robotics,1.0,0.333333333333,1998
 James J. Little,University of British Columbia,robotics,1.0,0.333333333333,1999
 James J. Little,University of British Columbia,robotics,1.0,0.333333333333,2001
@@ -5476,6 +5505,7 @@ Kang G. Shin,University of Michigan,robotics,3.0,1.33333333333,2001
 Kang G. Shin,University of Michigan,security,1.0,0.333333333333,2003
 Kang G. Shin,University of Michigan,security,1.0,0.333333333333,2009
 Kang G. Shin,University of Michigan,security,2.0,0.75,2014
+Kang G. Shin,University of Michigan,security,2.0,0.666666666667,2015
 Kang G. Shin,University of Michigan,arch,1.0,0.5,1989
 Kang G. Shin,University of Michigan,arch,1.0,0.5,1990
 Kang G. Shin,University of Michigan,arch,1.0,0.5,1995
@@ -5541,11 +5571,13 @@ Sebastian Boring,DIKU,hci,1.0,0.2,2015
 Sebastian Boring,DIKU,hci,1.0,0.25,2016
 Guofei Gu,Texas A&M University,networks,1.0,0.333333333333,2015
 Guofei Gu,Texas A&M University,web,1.0,0.2,2012
+Guofei Gu,Texas A&M University,security,1.0,0.25,2007
 Guofei Gu,Texas A&M University,security,1.0,0.25,2008
 Guofei Gu,Texas A&M University,security,1.0,0.25,2010
 Guofei Gu,Texas A&M University,security,1.0,0.25,2012
 Guofei Gu,Texas A&M University,security,3.0,0.541666666667,2013
 Guofei Gu,Texas A&M University,security,1.0,0.166666666667,2014
+Guofei Gu,Texas A&M University,security,1.0,0.166666666667,2015
 Michael E. Locasto,University of Calgary,security,2.0,0.45,2007
 Michael E. Locasto,University of Calgary,security,1.0,0.2,2008
 Frank M. Shipman III,Texas A&M University,hci,2.0,0.7,1994
@@ -5753,6 +5785,7 @@ Vitaly Shmatikov,Cornell University,networks,1.0,0.2,2010
 Vitaly Shmatikov,Cornell University,networks,1.0,0.2,2013
 Vitaly Shmatikov,Cornell University,proglang,2.0,0.583333333333,2011
 Vitaly Shmatikov,Cornell University,web,1.0,0.333333333333,2015
+Vitaly Shmatikov,Cornell University,security,1.0,0.333333333333,1998
 Vitaly Shmatikov,Cornell University,security,1.0,0.5,2001
 Vitaly Shmatikov,Cornell University,security,1.0,0.333333333333,2004
 Vitaly Shmatikov,Cornell University,security,2.0,1.0,2005
@@ -5827,6 +5860,10 @@ Krzysztof Z. Gajos,Harvard University,hci,3.0,0.833333333333,2014
 Krzysztof Z. Gajos,Harvard University,hci,1.0,0.2,2015
 Krzysztof Z. Gajos,Harvard University,hci,3.0,0.616666666667,2016
 Krzysztof Z. Gajos,Harvard University,ai,1.0,0.333333333333,2016
+Christina Lioma,DIKU,nlp,1.0,0.5,2006
+Christina Lioma,DIKU,nlp,1.0,0.2,2011
+Christina Lioma,DIKU,web,1.0,0.333333333333,2012
+Christina Lioma,DIKU,web,1.0,0.25,2015
 Marleen de Bruijne,DIKU,mlmining,1.0,0.2,2013
 Martina Angela Sasse,University College London,hci,1.0,0.25,2001
 Martina Angela Sasse,University College London,hci,2.0,0.5,2003
@@ -6404,6 +6441,7 @@ John H. Hartman,University of Arizona,opsys,1.0,0.2,1991
 John H. Hartman,University of Arizona,opsys,1.0,0.5,1993
 John H. Hartman,University of Arizona,opsys,1.0,0.5,1996
 John H. Hartman,University of Arizona,networks,1.0,0.5,2008
+John H. Hartman,University of Arizona,security,1.0,0.166666666667,2005
 John H. Hartman,University of Arizona,security,1.0,0.25,2008
 John H. Hartman,University of Arizona,arch,1.0,0.0909090909091,1994
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,0.5,2008
@@ -6528,8 +6566,8 @@ Guang-Zhong Yang,Imperial College London,vision,1.0,0.5,2014
 Herbert Bos,VU Amsterdam,metrics,1.0,0.333333333333,2015
 Herbert Bos,VU Amsterdam,opsys,1.0,0.2,2004
 Herbert Bos,VU Amsterdam,security,1.0,0.125,2012
-Herbert Bos,VU Amsterdam,security,1.0,0.142857142857,2013
-Herbert Bos,VU Amsterdam,security,2.0,0.75,2014
+Herbert Bos,VU Amsterdam,security,2.0,0.392857142857,2013
+Herbert Bos,VU Amsterdam,security,3.0,0.95,2014
 Herbert Bos,VU Amsterdam,security,1.0,0.125,2015
 Guohong Cao,Pennsylvania State University,hci,1.0,0.25,2015
 Guohong Cao,Pennsylvania State University,networks,1.0,0.5,1999
@@ -6732,7 +6770,7 @@ Bryan Ford,EPFL,proglang,1.0,0.2,1997
 Bryan Ford,EPFL,proglang,1.0,1.0,2004
 Bryan Ford,EPFL,security,1.0,0.2,2007
 Bryan Ford,EPFL,security,1.0,0.5,2010
-Bryan Ford,EPFL,security,2.0,0.583333333333,2013
+Bryan Ford,EPFL,security,3.0,0.916666666667,2013
 Bryan Ford,EPFL,arch,1.0,0.25,2013
 Allen Tannenbaum,Stony Brook University,vision,1.0,0.5,1994
 Allen Tannenbaum,Stony Brook University,vision,1.0,0.2,1995
@@ -6789,11 +6827,14 @@ Dan Boneh,Stanford University,crypto,2.0,0.416666666667,2015
 Dan Boneh,Stanford University,web,1.0,0.25,2006
 Dan Boneh,Stanford University,web,1.0,0.5,2007
 Dan Boneh,Stanford University,web,2.0,0.45,2012
-Dan Boneh,Stanford University,security,1.0,0.5,1999
+Dan Boneh,Stanford University,security,1.0,0.5,1996
+Dan Boneh,Stanford University,security,2.0,0.833333333333,1999
 Dan Boneh,Stanford University,security,1.0,0.25,2001
 Dan Boneh,Stanford University,security,1.0,0.5,2002
+Dan Boneh,Stanford University,security,1.0,0.5,2003
 Dan Boneh,Stanford University,security,2.0,0.666666666667,2004
-Dan Boneh,Stanford University,security,2.0,0.75,2006
+Dan Boneh,Stanford University,security,1.0,0.2,2005
+Dan Boneh,Stanford University,security,3.0,0.916666666667,2006
 Dan Boneh,Stanford University,security,2.0,0.45,2007
 Dan Boneh,Stanford University,security,1.0,0.5,2008
 Dan Boneh,Stanford University,security,1.0,0.333333333333,2009
@@ -6801,8 +6842,8 @@ Dan Boneh,Stanford University,security,3.0,0.783333333333,2010
 Dan Boneh,Stanford University,security,1.0,0.25,2011
 Dan Boneh,Stanford University,security,3.0,0.509523809524,2012
 Dan Boneh,Stanford University,security,3.0,0.583333333333,2013
-Dan Boneh,Stanford University,security,1.0,0.2,2014
-Dan Boneh,Stanford University,security,3.0,0.783333333333,2015
+Dan Boneh,Stanford University,security,3.0,0.733333333333,2014
+Dan Boneh,Stanford University,security,4.0,0.983333333333,2015
 Dan Boneh,Stanford University,arch,1.0,0.142857142857,2000
 Dan Boneh,Stanford University,arch,1.0,0.125,2008
 Robert Pless,Washington University - St. Louis,theory,1.0,0.333333333333,2000
@@ -7035,6 +7076,7 @@ Greg Morrisett,Cornell University,proglang,1.0,0.5,2007
 Greg Morrisett,Cornell University,proglang,1.0,0.25,2010
 Greg Morrisett,Cornell University,proglang,1.0,0.333333333333,2011
 Greg Morrisett,Cornell University,proglang,1.0,0.2,2012
+Greg Morrisett,Cornell University,security,1.0,0.5,2006
 Greg Morrisett,Cornell University,security,1.0,0.333333333333,2010
 Greg Morrisett,Cornell University,security,1.0,0.333333333333,2011
 Greg Morrisett,Cornell University,security,1.0,0.2,2013
@@ -7160,6 +7202,7 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,proglang,1.0,0.333333333
 M. Frans Kaashoek,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,1997
 M. Frans Kaashoek,Massachusetts Institute of Technology,mobile,1.0,0.5,1996
 M. Frans Kaashoek,Massachusetts Institute of Technology,security,1.0,0.5,1998
+M. Frans Kaashoek,Massachusetts Institute of Technology,security,1.0,0.5,2003
 M. Frans Kaashoek,Massachusetts Institute of Technology,security,1.0,0.2,2007
 M. Frans Kaashoek,Massachusetts Institute of Technology,security,1.0,0.333333333333,2014
 M. Frans Kaashoek,Massachusetts Institute of Technology,arch,1.0,0.2,2008
@@ -7390,11 +7433,12 @@ Aleksandar Nikolov,University of Toronto,theory,1.0,0.25,2014
 Aleksandar Nikolov,University of Toronto,theory,2.0,1.5,2015
 Aleksandar Nikolov,University of Toronto,theory,1.0,0.5,2016
 Aleksandar Nikolov,University of Toronto,database,1.0,0.25,2011
+Matthew Green 0001,Johns Hopkins University,security,1.0,0.166666666667,2005
 Matthew Green 0001,Johns Hopkins University,security,1.0,0.333333333333,2010
 Matthew Green 0001,Johns Hopkins University,security,1.0,0.333333333333,2011
 Matthew Green 0001,Johns Hopkins University,security,1.0,0.25,2012
 Matthew Green 0001,Johns Hopkins University,security,2.0,0.583333333333,2013
-Matthew Green 0001,Johns Hopkins University,security,1.0,0.142857142857,2014
+Matthew Green 0001,Johns Hopkins University,security,2.0,0.242857142857,2014
 Matthew Green 0001,Johns Hopkins University,security,2.0,0.271428571429,2015
 Bernhard Haeupler,Carnegie Mellon University,theory,2.0,0.666666666667,2010
 Bernhard Haeupler,Carnegie Mellon University,theory,1.0,1.0,2011
@@ -7623,6 +7667,8 @@ Alex Aiken,Stanford University,logic,1.0,0.333333333333,2009
 Alex Aiken,Stanford University,logic,1.0,0.25,2011
 Alex Aiken,Stanford University,logic,2.0,0.583333333333,2012
 Alex Aiken,Stanford University,logic,1.0,0.5,2014
+Alex Aiken,Stanford University,security,1.0,0.5,1998
+Alex Aiken,Stanford University,security,1.0,0.5,2006
 Alex Aiken,Stanford University,security,1.0,0.5,2008
 Alex Aiken,Stanford University,softeng,1.0,0.5,2006
 Alex Aiken,Stanford University,softeng,1.0,0.333333333333,2007
@@ -7780,6 +7826,7 @@ Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,0.45,2014
 Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,0.291666666667,2015
 Phillipa Gill,University of Massachusetts - Amherst,networks,2.0,0.666666666667,2011
 Phillipa Gill,University of Massachusetts - Amherst,security,1.0,0.25,2010
+Phillipa Gill,University of Massachusetts - Amherst,security,1.0,0.125,2014
 Robert N. M. Watson,University of Cambridge,networks,1.0,0.333333333333,2014
 Robert N. M. Watson,University of Cambridge,networks,1.0,0.142857142857,2015
 Robert N. M. Watson,University of Cambridge,proglang,1.0,0.142857142857,2016
@@ -8005,6 +8052,7 @@ Paul Barford,University of Wisconsin - Madison,networks,2.0,0.366666666667,2011
 Paul Barford,University of Wisconsin - Madison,networks,1.0,0.25,2015
 Paul Barford,University of Wisconsin - Madison,web,1.0,0.2,2014
 Paul Barford,University of Wisconsin - Madison,web,1.0,0.25,2016
+Paul Barford,University of Wisconsin - Madison,security,1.0,0.5,2013
 Grant E. Weddell,University of Waterloo,ai,1.0,0.5,2005
 Grant E. Weddell,University of Waterloo,ai,1.0,0.5,2009
 Grant E. Weddell,University of Waterloo,ai,1.0,0.25,2011
@@ -8087,6 +8135,7 @@ Eric A. Brewer,University of California - Berkeley,mobile,1.0,0.333333333333,201
 Eric A. Brewer,University of California - Berkeley,web,1.0,0.333333333333,2003
 Eric A. Brewer,University of California - Berkeley,web,2.0,0.583333333333,2006
 Eric A. Brewer,University of California - Berkeley,web,1.0,0.5,2008
+Eric A. Brewer,University of California - Berkeley,security,1.0,0.25,1996
 Eric A. Brewer,University of California - Berkeley,security,1.0,0.333333333333,2011
 Eric A. Brewer,University of California - Berkeley,softeng,1.0,0.5,2005
 Eric A. Brewer,University of California - Berkeley,arch,1.0,0.25,1996
@@ -8405,6 +8454,8 @@ Patrick Cousot,Ecole Normale Superieure,proglang,2.0,0.75,2012
 Patrick Cousot,Ecole Normale Superieure,logic,1.0,0.5,1995
 Patrick Cousot,Ecole Normale Superieure,logic,1.0,0.5,2002
 Atul Prakash,University of Michigan,security,1.0,0.5,1994
+Atul Prakash,University of Michigan,security,1.0,0.5,1996
+Atul Prakash,University of Michigan,security,1.0,0.333333333333,1999
 Atul Prakash,University of Michigan,security,1.0,0.5,2001
 Atul Prakash,University of Michigan,security,1.0,0.5,2002
 Atul Prakash,University of Michigan,security,1.0,0.5,2004
@@ -8589,6 +8640,15 @@ Kilian Q. Weinberger,Washington University - St. Louis,ai,1.0,0.2,2013
 Kilian Q. Weinberger,Washington University - St. Louis,ai,1.0,0.166666666667,2014
 Kilian Q. Weinberger,Washington University - St. Louis,ai,2.0,0.416666666667,2015
 Kilian Q. Weinberger,Washington University - St. Louis,web,1.0,0.25,2011
+Marsette Vona,Northeastern University,robotics,1.0,0.25,1998
+Marsette Vona,Northeastern University,robotics,1.0,0.5,1999
+Marsette Vona,Northeastern University,robotics,2.0,1.0,2000
+Marsette Vona,Northeastern University,robotics,3.0,0.9,2005
+Marsette Vona,Northeastern University,robotics,1.0,0.25,2006
+Marsette Vona,Northeastern University,robotics,1.0,0.5,2011
+Marsette Vona,Northeastern University,robotics,1.0,0.5,2013
+Marsette Vona,Northeastern University,robotics,1.0,0.5,2014
+Marsette Vona,Northeastern University,robotics,1.0,0.333333333333,2015
 Duen Horng Chau,Georgia Institute of Technology,hci,2.0,0.5,2006
 Duen Horng Chau,Georgia Institute of Technology,hci,2.0,0.666666666667,2007
 Duen Horng Chau,Georgia Institute of Technology,hci,1.0,0.333333333333,2008
@@ -9113,6 +9173,8 @@ Phil Blunsom,University of Oxford,mlmining,1.0,0.333333333333,2008
 Phil Blunsom,University of Oxford,mlmining,1.0,0.5,2014
 Phil Blunsom,University of Oxford,mlmining,2.0,0.392857142857,2015
 Phil Blunsom,University of Oxford,mlmining,1.0,0.333333333333,2016
+Carole-Jean Wu,Arizona State University,arch,2.0,0.366666666667,2011
+Carole-Jean Wu,Arizona State University,arch,1.0,0.333333333333,2015
 Peter Pietzuch,Imperial College London,database,2.0,0.583333333333,2013
 Peter Pietzuch,Imperial College London,database,2.0,0.5,2016
 Olga G. Troyanskaya,Princeton University,mlmining,1.0,0.5,2014
@@ -9306,10 +9368,13 @@ Gavin Lowe,University of Oxford,logic,1.0,0.142857142857,2012
 Steven M. Bellovin,Columbia University,crypto,1.0,1.0,1998
 Steven M. Bellovin,Columbia University,security,1.0,0.5,1992
 Steven M. Bellovin,Columbia University,security,1.0,0.5,1993
+Steven M. Bellovin,Columbia University,security,2.0,1.5,1995
+Steven M. Bellovin,Columbia University,security,1.0,1.0,1996
 Steven M. Bellovin,Columbia University,security,1.0,0.25,2000
 Steven M. Bellovin,Columbia University,security,1.0,0.5,2001
 Steven M. Bellovin,Columbia University,security,1.0,0.142857142857,2002
 Steven M. Bellovin,Columbia University,security,1.0,1.0,2004
+Steven M. Bellovin,Columbia University,security,1.0,0.5,2014
 Steven M. Bellovin,Columbia University,security,1.0,0.142857142857,2015
 Victor Shoup,New York University,theory,1.0,1.0,1988
 Victor Shoup,New York University,theory,1.0,1.0,1990
@@ -9379,11 +9444,12 @@ Dan S. Wallach,Rice University,robotics,1.0,0.166666666667,2002
 Dan S. Wallach,Rice University,security,1.0,0.333333333333,1996
 Dan S. Wallach,Rice University,security,1.0,0.5,1998
 Dan S. Wallach,Rice University,security,1.0,0.125,2001
-Dan S. Wallach,Rice University,security,1.0,0.333333333333,2003
+Dan S. Wallach,Rice University,security,2.0,0.833333333333,2003
 Dan S. Wallach,Rice University,security,1.0,0.333333333333,2008
 Dan S. Wallach,Rice University,security,1.0,0.5,2009
 Dan S. Wallach,Rice University,security,1.0,0.2,2011
 Dan S. Wallach,Rice University,security,3.0,0.783333333333,2012
+Dan S. Wallach,Rice University,security,1.0,0.2,2013
 Andrew C. Myers,Cornell University,opsys,2.0,0.75,1997
 Andrew C. Myers,Cornell University,opsys,1.0,0.25,2001
 Andrew C. Myers,Cornell University,opsys,1.0,0.142857142857,2007
@@ -9407,6 +9473,7 @@ Andrew C. Myers,Cornell University,proglang,1.0,0.2,2016
 Andrew C. Myers,Cornell University,security,1.0,0.5,1998
 Andrew C. Myers,Cornell University,security,1.0,0.25,2003
 Andrew C. Myers,Cornell University,security,1.0,0.5,2004
+Andrew C. Myers,Cornell University,security,1.0,0.333333333333,2007
 Andrew C. Myers,Cornell University,security,1.0,0.333333333333,2010
 Andrew C. Myers,Cornell University,security,1.0,0.333333333333,2011
 Andrew C. Myers,Cornell University,security,1.0,0.166666666667,2012
@@ -9711,6 +9778,7 @@ Qin Zhang,Indiana University,robotics,2.0,0.666666666667,2011
 Qin Zhang,Indiana University,robotics,1.0,0.25,2012
 Qin Zhang,Indiana University,vision,1.0,0.25,2010
 Steven J. Murdoch,University College London,security,1.0,0.5,2005
+Steven J. Murdoch,University College London,security,1.0,0.5,2007
 Steven J. Murdoch,University College London,security,2.0,0.833333333333,2008
 Steven J. Murdoch,University College London,security,1.0,0.25,2010
 Steven J. Murdoch,University College London,security,1.0,0.2,2014
@@ -9952,18 +10020,20 @@ Vern Paxson,University of California - Berkeley,networks,1.0,0.5,2003
 Vern Paxson,University of California - Berkeley,networks,1.0,0.166666666667,2008
 Vern Paxson,University of California - Berkeley,mobile,1.0,0.2,2015
 Vern Paxson,University of California - Berkeley,web,1.0,0.125,2016
+Vern Paxson,University of California - Berkeley,security,1.0,1.0,1998
 Vern Paxson,University of California - Berkeley,security,2.0,1.0,2000
 Vern Paxson,University of California - Berkeley,security,1.0,0.333333333333,2001
 Vern Paxson,University of California - Berkeley,security,1.0,0.333333333333,2002
 Vern Paxson,University of California - Berkeley,security,2.0,1.0,2003
 Vern Paxson,University of California - Berkeley,security,3.0,0.833333333333,2004
+Vern Paxson,University of California - Berkeley,security,1.0,0.5,2005
 Vern Paxson,University of California - Berkeley,security,2.0,0.583333333333,2007
 Vern Paxson,University of California - Berkeley,security,2.0,0.47619047619,2008
 Vern Paxson,University of California - Berkeley,security,2.0,0.75,2010
 Vern Paxson,University of California - Berkeley,security,4.0,0.627777777778,2011
 Vern Paxson,University of California - Berkeley,security,2.0,0.180555555556,2012
-Vern Paxson,University of California - Berkeley,security,1.0,0.5,2013
-Vern Paxson,University of California - Berkeley,security,2.0,0.361111111111,2014
+Vern Paxson,University of California - Berkeley,security,3.0,0.8,2013
+Vern Paxson,University of California - Berkeley,security,4.0,0.777777777778,2014
 Vern Paxson,University of California - Berkeley,security,2.0,0.333333333333,2015
 Eric Vigoda,Georgia Institute of Technology,theory,1.0,0.5,1997
 Eric Vigoda,Georgia Institute of Technology,theory,2.0,1.14285714286,1999
@@ -10233,7 +10303,8 @@ Raymond T. Ng,University of British Columbia,database,1.0,0.333333333333,2011
 Raymond T. Ng,University of British Columbia,web,1.0,0.333333333333,2007
 Engin Kirda,Northeastern University,web,1.0,0.25,2006
 Engin Kirda,Northeastern University,web,1.0,0.25,2009
-Engin Kirda,Northeastern University,security,1.0,0.333333333333,2006
+Engin Kirda,Northeastern University,security,1.0,0.2,2005
+Engin Kirda,Northeastern University,security,2.0,0.833333333333,2006
 Engin Kirda,Northeastern University,security,1.0,0.2,2007
 Engin Kirda,Northeastern University,security,1.0,0.142857142857,2008
 Engin Kirda,Northeastern University,security,2.0,0.416666666667,2009
@@ -10241,7 +10312,8 @@ Engin Kirda,Northeastern University,security,4.0,0.866666666667,2010
 Engin Kirda,Northeastern University,security,1.0,0.333333333333,2011
 Engin Kirda,Northeastern University,security,1.0,0.25,2012
 Engin Kirda,Northeastern University,security,1.0,0.25,2013
-Engin Kirda,Northeastern University,security,1.0,0.333333333333,2014
+Engin Kirda,Northeastern University,security,2.0,0.5,2014
+Engin Kirda,Northeastern University,security,1.0,0.2,2015
 T. M. Murali,Virginia Tech,theory,1.0,0.25,1996
 T. M. Murali,Virginia Tech,theory,1.0,0.2,1998
 T. M. Murali,Virginia Tech,theory,1.0,0.166666666667,2000
@@ -10696,6 +10768,7 @@ Zhuoqing Morley Mao,University of Michigan,web,1.0,0.125,2012
 Zhuoqing Morley Mao,University of Michigan,security,1.0,0.5,2007
 Zhuoqing Morley Mao,University of Michigan,security,1.0,0.25,2010
 Zhuoqing Morley Mao,University of Michigan,security,3.0,0.944444444444,2012
+Zhuoqing Morley Mao,University of Michigan,security,1.0,0.333333333333,2014
 Zhuoqing Morley Mao,University of Michigan,security,1.0,0.2,2015
 Rajesh P. N. Rao,University of Washington,hci,1.0,0.2,2008
 Rajesh P. N. Rao,University of Washington,mlmining,1.0,0.5,1994
@@ -11183,6 +11256,7 @@ Zhi-Li Zhang,University of Minnesota - Twin Cities,networks,1.0,0.2,2014
 Zhi-Li Zhang,University of Minnesota - Twin Cities,mobile,1.0,0.2,2009
 Zhi-Li Zhang,University of Minnesota - Twin Cities,mobile,2.0,0.5,2010
 Zhi-Li Zhang,University of Minnesota - Twin Cities,mobile,1.0,0.142857142857,2012
+Zhi-Li Zhang,University of Minnesota - Twin Cities,security,1.0,0.25,2013
 Richard Fujimoto,Georgia Institute of Technology,metrics,1.0,0.333333333333,1991
 Richard Fujimoto,Georgia Institute of Technology,metrics,1.0,0.2,1992
 Richard Fujimoto,Georgia Institute of Technology,metrics,2.0,0.833333333333,1994
@@ -11383,6 +11457,7 @@ Beichuan Zhang,University of Arizona,networks,1.0,0.5,2009
 Beichuan Zhang,University of Arizona,networks,1.0,0.25,2010
 Beichuan Zhang,University of Arizona,networks,1.0,0.333333333333,2013
 Beichuan Zhang,University of Arizona,networks,1.0,0.111111111111,2014
+Beichuan Zhang,University of Arizona,security,1.0,0.166666666667,2006
 P. Patrick van der Smagt,TU Munich,robotics,1.0,0.333333333333,1998
 P. Patrick van der Smagt,TU Munich,robotics,1.0,0.25,2008
 P. Patrick van der Smagt,TU Munich,robotics,1.0,0.25,2010
@@ -11534,10 +11609,13 @@ David Evans,University of Virginia,mobile,1.0,0.5,2004
 David Evans,University of Virginia,security,1.0,0.5,1999
 David Evans,University of Virginia,security,1.0,0.5,2001
 David Evans,University of Virginia,security,1.0,1.0,2004
+David Evans,University of Virginia,security,1.0,0.333333333333,2005
+David Evans,University of Virginia,security,1.0,0.5,2006
 David Evans,University of Virginia,security,1.0,0.25,2008
 David Evans,University of Virginia,security,2.0,0.75,2011
 David Evans,University of Virginia,security,1.0,0.333333333333,2012
 David Evans,University of Virginia,security,1.0,0.5,2013
+David Evans,University of Virginia,security,1.0,0.5,2014
 David Evans,University of Virginia,security,1.0,0.5,2015
 David Evans,University of Virginia,softeng,1.0,0.25,1994
 David Evans,University of Virginia,softeng,2.0,0.7,2006
@@ -11637,6 +11715,7 @@ Chandra Krintz,University of California - Santa Barbara,proglang,1.0,0.5,2001
 Chandra Krintz,University of California - Santa Barbara,proglang,1.0,0.5,2008
 Chandra Krintz,University of California - Santa Barbara,proglang,1.0,0.5,2010
 Chandra Krintz,University of California - Santa Barbara,mobile,1.0,0.333333333333,2004
+Chandra Krintz,University of California - Santa Barbara,security,1.0,0.333333333333,2003
 Chandra Krintz,University of California - Santa Barbara,arch,2.0,0.5,1998
 Chandra Krintz,University of California - Santa Barbara,arch,1.0,0.5,2008
 Chandra Krintz,University of California - Santa Barbara,arch,1.0,0.5,2009
@@ -12716,8 +12795,10 @@ Michael J. Freedman,Princeton University,networks,1.0,0.25,2013
 Michael J. Freedman,Princeton University,networks,1.0,0.2,2014
 Michael J. Freedman,Princeton University,security,1.0,0.5,2002
 Michael J. Freedman,Princeton University,security,2.0,0.583333333333,2004
+Michael J. Freedman,Princeton University,security,1.0,0.166666666667,2006
 Michael J. Freedman,Princeton University,security,1.0,0.25,2012
 Michael J. Freedman,Princeton University,security,1.0,0.5,2014
+Michael J. Freedman,Princeton University,security,1.0,0.2,2015
 Thomas Wahl,Northeastern University,logic,1.0,1.0,2007
 Thomas Wahl,Northeastern University,logic,1.0,0.25,2009
 Thomas Wahl,Northeastern University,logic,1.0,0.333333333333,2010
@@ -13066,13 +13147,14 @@ Nagiza F. Samatova,North Carolina State University,highperf,1.0,0.166666666667,2
 Nagiza F. Samatova,North Carolina State University,highperf,1.0,0.0769230769231,2011
 Nagiza F. Samatova,North Carolina State University,highperf,1.0,0.111111111111,2012
 Ian Goldberg,University of Waterloo,mobile,1.0,0.333333333333,2001
+Ian Goldberg,University of Waterloo,security,1.0,0.25,1996
 Ian Goldberg,University of Waterloo,security,1.0,1.0,2007
 Ian Goldberg,University of Waterloo,security,3.0,1.25,2009
 Ian Goldberg,University of Waterloo,security,1.0,0.5,2010
 Ian Goldberg,University of Waterloo,security,5.0,1.78333333333,2011
 Ian Goldberg,University of Waterloo,security,2.0,0.583333333333,2012
 Ian Goldberg,University of Waterloo,security,1.0,0.5,2013
-Ian Goldberg,University of Waterloo,security,2.0,0.533333333333,2014
+Ian Goldberg,University of Waterloo,security,3.0,0.733333333333,2014
 Ian Goldberg,University of Waterloo,security,2.0,0.642857142857,2015
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,2007
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2011
@@ -13486,7 +13568,7 @@ Arvind Narayanan,Princeton University,security,1.0,0.2,2011
 Arvind Narayanan,Princeton University,security,1.0,0.142857142857,2012
 Arvind Narayanan,Princeton University,security,1.0,0.333333333333,2013
 Arvind Narayanan,Princeton University,security,1.0,0.166666666667,2014
-Arvind Narayanan,Princeton University,security,1.0,0.166666666667,2015
+Arvind Narayanan,Princeton University,security,2.0,0.309523809524,2015
 Pradeep K. Khosla,University of California - San Diego,opsys,1.0,0.166666666667,2005
 Pradeep K. Khosla,University of California - San Diego,robotics,1.0,0.25,1989
 Pradeep K. Khosla,University of California - San Diego,robotics,2.0,0.833333333333,1991
@@ -13824,6 +13906,7 @@ Ruslan Salakhutdinov,University of Toronto,vision,3.0,0.642857142857,2015
 Renate Scheidler,University of Calgary,crypto,1.0,0.333333333333,1990
 Claudia Eckert,TU Munich,mlmining,1.0,0.166666666667,2015
 Claudia Eckert,TU Munich,ai,1.0,0.5,2013
+Claudia Eckert,TU Munich,security,1.0,0.142857142857,2014
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.333333333333,1989
 Rafail Ostrovsky,University of California - Los Angeles,theory,3.0,1.66666666667,1990
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.25,1992
@@ -13904,6 +13987,7 @@ Michelle L. Mazurek,University of Maryland - College Park,hci,1.0,0.1,2015
 Michelle L. Mazurek,University of Maryland - College Park,hci,2.0,0.266666666667,2016
 Michelle L. Mazurek,University of Maryland - College Park,security,2.0,0.194444444444,2012
 Michelle L. Mazurek,University of Maryland - College Park,security,1.0,0.111111111111,2013
+Michelle L. Mazurek,University of Maryland - College Park,security,1.0,0.1,2015
 Katerina J. Argyraki,EPFL,metrics,1.0,0.333333333333,2010
 Katerina J. Argyraki,EPFL,opsys,1.0,0.111111111111,2009
 Katerina J. Argyraki,EPFL,networks,2.0,0.533333333333,2009
@@ -14212,6 +14296,7 @@ Christo Wilson,Northeastern University,web,1.0,0.166666666667,2010
 Christo Wilson,Northeastern University,web,1.0,0.142857142857,2012
 Christo Wilson,Northeastern University,web,1.0,0.142857142857,2013
 Christo Wilson,Northeastern University,web,2.0,0.583333333333,2016
+Christo Wilson,Northeastern University,security,1.0,0.166666666667,2013
 Alessandro Orso,Georgia Institute of Technology,proglang,1.0,0.111111111111,2001
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,0.333333333333,1997
 Alessandro Orso,Georgia Institute of Technology,softeng,4.0,1.2,2004
@@ -14301,6 +14386,7 @@ Mendel Rosenblum,Stanford University,opsys,1.0,0.2,2003
 Mendel Rosenblum,Stanford University,opsys,1.0,0.2,2011
 Mendel Rosenblum,Stanford University,networks,1.0,0.333333333333,2006
 Mendel Rosenblum,Stanford University,security,1.0,0.2,2004
+Mendel Rosenblum,Stanford University,security,1.0,0.25,2005
 Mendel Rosenblum,Stanford University,arch,3.0,0.353846153846,1994
 Mendel Rosenblum,Stanford University,arch,3.0,0.783333333333,1996
 Mendel Rosenblum,Stanford University,arch,1.0,0.166666666667,1997
@@ -14362,12 +14448,13 @@ Tadayoshi Kohno,University of Washington,security,1.0,0.333333333333,2002
 Tadayoshi Kohno,University of Washington,security,1.0,1.0,2004
 Tadayoshi Kohno,University of Washington,security,1.0,0.333333333333,2005
 Tadayoshi Kohno,University of Washington,security,2.0,0.583333333333,2006
+Tadayoshi Kohno,University of Washington,security,1.0,0.2,2007
 Tadayoshi Kohno,University of Washington,security,4.0,0.777777777778,2008
 Tadayoshi Kohno,University of Washington,security,2.0,0.5,2009
 Tadayoshi Kohno,University of Washington,security,1.0,0.0909090909091,2010
 Tadayoshi Kohno,University of Washington,security,2.0,0.35,2011
 Tadayoshi Kohno,University of Washington,security,2.0,0.366666666667,2012
-Tadayoshi Kohno,University of Washington,security,1.0,0.25,2013
+Tadayoshi Kohno,University of Washington,security,2.0,0.75,2013
 Tadayoshi Kohno,University of Washington,security,1.0,0.2,2014
 Tadayoshi Kohno,University of Washington,vision,1.0,0.333333333333,2010
 Andrew S. Grimshaw,University of Virginia,proglang,1.0,0.5,1987
@@ -14845,6 +14932,7 @@ Long Lu,Stony Brook University,security,1.0,0.166666666667,2009
 Long Lu,Stony Brook University,security,1.0,0.25,2010
 Long Lu,Stony Brook University,security,1.0,0.333333333333,2011
 Long Lu,Stony Brook University,security,1.0,0.2,2012
+Long Lu,Stony Brook University,security,1.0,0.2,2013
 Long Lu,Stony Brook University,security,1.0,0.2,2014
 Long Lu,Stony Brook University,security,1.0,0.166666666667,2015
 William W. Cohen,Carnegie Mellon University,nlp,1.0,0.333333333333,2004
@@ -15259,6 +15347,7 @@ Roxana Geambasu,Columbia University,opsys,1.0,0.166666666667,2014
 Roxana Geambasu,Columbia University,database,1.0,0.25,2007
 Roxana Geambasu,Columbia University,web,1.0,0.2,2008
 Roxana Geambasu,Columbia University,security,1.0,0.25,2009
+Roxana Geambasu,Columbia University,security,1.0,0.125,2014
 Roxana Geambasu,Columbia University,security,1.0,0.166666666667,2015
 David Mazières,Stanford University,opsys,1.0,0.142857142857,1995
 David Mazières,Stanford University,opsys,1.0,0.1,1997
@@ -15355,17 +15444,20 @@ Jonathan Ullman,Northeastern University,database,1.0,1.0,2015
 Jonathan Ullman,Northeastern University,database,1.0,0.25,2016
 Fabian Monrose,University of North Carolina - Chapel Hill,metrics,1.0,0.25,2006
 Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.5,1997
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,1999
+Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.533333333333,1999
 Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.25,2001
 Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.2,2002
 Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2004
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2005
+Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2006
+Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.45,2007
 Fabian Monrose,University of North Carolina - Chapel Hill,security,4.0,0.9,2008
 Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.25,2009
 Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.666666666667,2010
 Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.5,2011
 Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.166666666667,2012
 Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.366666666667,2013
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2014
+Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.583333333333,2014
 Diane L. Souvaine,Tufts University,theory,1.0,0.125,1991
 Diane L. Souvaine,Tufts University,theory,1.0,0.142857142857,2001
 Ren Ng,University of California - Berkeley,graphics,2.0,0.285714285714,2002
@@ -15428,6 +15520,7 @@ Stephen Chong,Harvard University,proglang,1.0,0.25,2015
 Stephen Chong,Harvard University,proglang,1.0,0.166666666667,2016
 Stephen Chong,Harvard University,security,1.0,0.25,2003
 Stephen Chong,Harvard University,security,1.0,0.5,2004
+Stephen Chong,Harvard University,security,1.0,0.333333333333,2007
 Stephen Chong,Harvard University,security,1.0,0.5,2011
 Stephen Chong,Harvard University,security,1.0,0.333333333333,2012
 Xin Liu,University of California - Davis,metrics,1.0,0.333333333333,2014
@@ -15455,6 +15548,7 @@ Xin Liu,University of California - Davis,web,1.0,0.25,2002
 Xin Liu,University of California - Davis,web,1.0,0.333333333333,2003
 Xin Liu,University of California - Davis,web,1.0,0.5,2013
 Xin Liu,University of California - Davis,robotics,1.0,0.333333333333,2015
+Xin Liu,University of California - Davis,security,1.0,0.333333333333,2005
 Xin Liu,University of California - Davis,highperf,1.0,0.5,2003
 Xin Liu,University of California - Davis,highperf,1.0,0.5,2004
 Xin Liu,University of California - Davis,vision,1.0,0.5,2000
@@ -15466,6 +15560,7 @@ Srinivas Devadas,Massachusetts Institute of Technology,proglang,1.0,0.2,1995
 Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.25,2002
 Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.166666666667,2005
 Srinivas Devadas,Massachusetts Institute of Technology,security,1.0,0.166666666667,2010
+Srinivas Devadas,Massachusetts Institute of Technology,security,2.0,0.342857142857,2015
 Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,0.2,2003
 Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,0.25,2004
 Srinivas Devadas,Massachusetts Institute of Technology,arch,1.0,0.25,2005
@@ -15509,6 +15604,7 @@ Jennifer Rexford,Princeton University,networks,1.0,0.2,2013
 Jennifer Rexford,Princeton University,networks,4.0,0.725,2014
 Jennifer Rexford,Princeton University,networks,2.0,0.5,2015
 Jennifer Rexford,Princeton University,security,1.0,0.25,2011
+Jennifer Rexford,Princeton University,security,1.0,0.142857142857,2015
 Jennifer Rexford,Princeton University,arch,1.0,0.333333333333,1996
 Jennifer Rexford,Princeton University,arch,1.0,0.25,2010
 Gopalan Nadathur,University of Minnesota - Twin Cities,nlp,1.0,0.5,1986
@@ -16427,16 +16523,18 @@ Giovanni Vigna,University of California - Santa Barbara,web,1.0,0.25,2011
 Giovanni Vigna,University of California - Santa Barbara,web,1.0,0.142857142857,2013
 Giovanni Vigna,University of California - Santa Barbara,web,1.0,0.111111111111,2014
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.75,2002
-Giovanni Vigna,University of California - Santa Barbara,security,1.0,0.5,2003
+Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.833333333333,2003
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.583333333333,2004
+Giovanni Vigna,University of California - Santa Barbara,security,1.0,0.2,2005
 Giovanni Vigna,University of California - Santa Barbara,security,1.0,0.25,2007
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.47619047619,2008
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.625,2009
 Giovanni Vigna,University of California - Santa Barbara,security,1.0,0.25,2010
 Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.45,2011
 Giovanni Vigna,University of California - Santa Barbara,security,5.0,1.04166666667,2012
-Giovanni Vigna,University of California - Santa Barbara,security,4.0,1.0,2013
-Giovanni Vigna,University of California - Santa Barbara,security,3.0,0.791666666667,2015
+Giovanni Vigna,University of California - Santa Barbara,security,6.0,1.45,2013
+Giovanni Vigna,University of California - Santa Barbara,security,2.0,0.5,2014
+Giovanni Vigna,University of California - Santa Barbara,security,7.0,1.69166666667,2015
 Giovanni Vigna,University of California - Santa Barbara,softeng,1.0,0.333333333333,1997
 Giovanni Vigna,University of California - Santa Barbara,softeng,1.0,0.2,2015
 Ramani Duraiswami,University of Maryland - College Park,hci,1.0,0.125,2015
@@ -16533,6 +16631,7 @@ Dawson R. Engler,Stanford University,logic,1.0,0.5,2011
 Dawson R. Engler,Stanford University,security,1.0,0.5,2002
 Dawson R. Engler,Stanford University,security,1.0,0.25,2003
 Dawson R. Engler,Stanford University,security,2.0,0.4,2006
+Dawson R. Engler,Stanford University,security,1.0,0.5,2015
 Dawson R. Engler,Stanford University,softeng,1.0,0.5,2002
 Dawson R. Engler,Stanford University,softeng,1.0,0.25,2004
 Dawson R. Engler,Stanford University,softeng,1.0,0.5,2014
@@ -16600,7 +16699,9 @@ P. David Stotts,University of North Carolina - Chapel Hill,softeng,2.0,1.0,2003
 Kevin R. B. Butler,University of Florida,metrics,1.0,0.2,2014
 Kevin R. B. Butler,University of Florida,security,1.0,0.333333333333,2006
 Kevin R. B. Butler,University of Florida,security,1.0,0.333333333333,2008
+Kevin R. B. Butler,University of Florida,security,2.0,0.5,2013
 Kevin R. B. Butler,University of Florida,security,2.0,0.392857142857,2014
+Kevin R. B. Butler,University of Florida,security,2.0,0.45,2015
 Michael Kifer,Stony Brook University,ai,1.0,0.5,1989
 Michael Kifer,Stony Brook University,ai,1.0,0.2,2010
 Michael Kifer,Stony Brook University,database,1.0,0.5,1983
@@ -17014,6 +17115,7 @@ Douglas S. Reeves,North Carolina State University,robotics,1.0,0.333333333333,19
 Douglas S. Reeves,North Carolina State University,security,1.0,0.333333333333,2002
 Douglas S. Reeves,North Carolina State University,security,1.0,0.5,2003
 Douglas S. Reeves,North Carolina State University,security,1.0,0.333333333333,2006
+Douglas S. Reeves,North Carolina State University,security,1.0,0.125,2015
 Eddie Kohler,Harvard University,metrics,1.0,0.2,2004
 Eddie Kohler,Harvard University,metrics,1.0,0.25,2007
 Eddie Kohler,Harvard University,opsys,1.0,0.25,1999
@@ -17378,6 +17480,8 @@ Mustaque Ahamad,Georgia Institute of Technology,networks,1.0,0.333333333333,1989
 Mustaque Ahamad,Georgia Institute of Technology,networks,1.0,0.333333333333,1990
 Mustaque Ahamad,Georgia Institute of Technology,web,1.0,0.5,2006
 Mustaque Ahamad,Georgia Institute of Technology,security,1.0,0.2,2010
+Mustaque Ahamad,Georgia Institute of Technology,security,1.0,0.333333333333,2013
+Mustaque Ahamad,Georgia Institute of Technology,security,1.0,0.25,2015
 Leonid Libkin,University of Edinburgh,ai,1.0,1.0,2015
 Leonid Libkin,University of Edinburgh,database,1.0,0.5,1993
 Leonid Libkin,University of Edinburgh,database,1.0,0.5,1994
@@ -17474,6 +17578,8 @@ Mathias Payer,Purdue University,opsys,1.0,0.166666666667,2014
 Mathias Payer,Purdue University,proglang,1.0,0.333333333333,2007
 Mathias Payer,Purdue University,security,1.0,0.333333333333,2012
 Mathias Payer,Purdue University,security,1.0,0.25,2013
+Mathias Payer,Purdue University,security,1.0,0.25,2014
+Mathias Payer,Purdue University,security,1.0,0.2,2015
 Joydeep Biswas,University of Massachusetts - Amherst,ai,1.0,0.142857142857,2016
 Joydeep Biswas,University of Massachusetts - Amherst,robotics,1.0,0.5,2010
 Joydeep Biswas,University of Massachusetts - Amherst,robotics,1.0,0.333333333333,2011
@@ -17685,6 +17791,7 @@ Alexandra Boldyreva,Georgia Institute of Technology,crypto,1.0,0.25,2012
 Alexandra Boldyreva,Georgia Institute of Technology,security,2.0,0.75,2007
 Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,0.333333333333,2008
 Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,0.5,2012
+Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,0.166666666667,2014
 Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,0.25,2015
 Alexandra Boldyreva,Georgia Institute of Technology,arch,1.0,0.2,2005
 Gregor Richards,University of Waterloo,proglang,1.0,0.125,2009
@@ -17915,12 +18022,12 @@ Angelos D. Keromytis,Columbia University,security,2.0,0.75,2000
 Angelos D. Keromytis,Columbia University,security,1.0,0.142857142857,2002
 Angelos D. Keromytis,Columbia University,security,2.0,0.5,2003
 Angelos D. Keromytis,Columbia University,security,1.0,0.25,2004
-Angelos D. Keromytis,Columbia University,security,1.0,0.5,2005
+Angelos D. Keromytis,Columbia University,security,2.0,0.666666666667,2005
 Angelos D. Keromytis,Columbia University,security,2.0,0.45,2007
 Angelos D. Keromytis,Columbia University,security,1.0,0.2,2008
 Angelos D. Keromytis,Columbia University,security,4.0,1.16666666667,2012
-Angelos D. Keromytis,Columbia University,security,2.0,0.5,2013
-Angelos D. Keromytis,Columbia University,security,2.0,0.236111111111,2014
+Angelos D. Keromytis,Columbia University,security,3.0,0.833333333333,2013
+Angelos D. Keromytis,Columbia University,security,4.0,1.06944444444,2014
 Angelos D. Keromytis,Columbia University,security,2.0,0.45,2015
 Angelos D. Keromytis,Columbia University,arch,1.0,0.166666666667,2009
 Georg Carle,TU Munich,metrics,1.0,0.25,2010
@@ -17988,15 +18095,16 @@ Takeo Kanade,Carnegie Mellon University,vision,2.0,0.583333333333,2012
 Takeo Kanade,Carnegie Mellon University,vision,3.0,1.16666666667,2013
 Takeo Kanade,Carnegie Mellon University,vision,2.0,0.342857142857,2014
 Takeo Kanade,Carnegie Mellon University,vision,3.0,0.694444444444,2015
-Marsette Vona,Northeastern University,robotics,1.0,0.25,1998
-Marsette Vona,Northeastern University,robotics,1.0,0.5,1999
-Marsette Vona,Northeastern University,robotics,2.0,1.0,2000
-Marsette Vona,Northeastern University,robotics,3.0,0.9,2005
-Marsette Vona,Northeastern University,robotics,1.0,0.25,2006
-Marsette Vona,Northeastern University,robotics,1.0,0.5,2011
-Marsette Vona,Northeastern University,robotics,1.0,0.5,2013
-Marsette Vona,Northeastern University,robotics,1.0,0.5,2014
-Marsette Vona,Northeastern University,robotics,1.0,0.333333333333,2015
+Yezhou Yang,Arizona State University,nlp,1.0,0.25,2011
+Yezhou Yang,Arizona State University,nlp,1.0,0.25,2015
+Yezhou Yang,Arizona State University,ai,1.0,0.25,2015
+Yezhou Yang,Arizona State University,robotics,2.0,0.4,2012
+Yezhou Yang,Arizona State University,robotics,2.0,0.5,2013
+Yezhou Yang,Arizona State University,robotics,1.0,0.25,2015
+Yezhou Yang,Arizona State University,vision,1.0,0.2,2010
+Yezhou Yang,Arizona State University,vision,1.0,0.2,2011
+Yezhou Yang,Arizona State University,vision,1.0,0.333333333333,2013
+Yezhou Yang,Arizona State University,vision,1.0,0.25,2015
 Ajitha Rajan,University of Edinburgh,softeng,1.0,0.333333333333,2008
 Ajitha Rajan,University of Edinburgh,softeng,1.0,0.25,2014
 David Cash,Rutgers University,crypto,1.0,0.333333333333,2008
@@ -18025,12 +18133,14 @@ Nobuko Yoshida,Imperial College London,logic,1.0,0.333333333333,2005
 Nobuko Yoshida,Imperial College London,highperf,1.0,0.25,2015
 R. Sekar,Stony Brook University,opsys,1.0,0.2,2003
 R. Sekar,Stony Brook University,opsys,1.0,0.166666666667,2014
-R. Sekar,Stony Brook University,security,1.0,0.25,1999
+R. Sekar,Stony Brook University,security,2.0,0.75,1999
 R. Sekar,Stony Brook University,security,1.0,0.25,2001
 R. Sekar,Stony Brook University,security,1.0,0.142857142857,2002
+R. Sekar,Stony Brook University,security,1.0,0.333333333333,2003
 R. Sekar,Stony Brook University,security,1.0,0.5,2005
-R. Sekar,Stony Brook University,security,1.0,0.333333333333,2006
+R. Sekar,Stony Brook University,security,2.0,0.666666666667,2006
 R. Sekar,Stony Brook University,security,1.0,0.25,2008
+R. Sekar,Stony Brook University,security,1.0,0.5,2013
 R. Sekar,Stony Brook University,softeng,1.0,0.333333333333,2004
 R. Sekar,Stony Brook University,arch,1.0,0.5,2016
 Thomas Dueholm Hansen,Aarhus University,theory,2.0,0.666666666667,2011
@@ -18509,6 +18619,7 @@ Nick McKeown,Stanford University,networks,1.0,0.333333333333,2012
 Nick McKeown,Stanford University,networks,3.0,0.434523809524,2013
 Nick McKeown,Stanford University,networks,3.0,0.525,2014
 Nick McKeown,Stanford University,networks,1.0,0.25,2015
+Nick McKeown,Stanford University,security,1.0,0.166666666667,2006
 Yuanyuan Zhou,University of California - San Diego,metrics,1.0,0.2,2005
 Yuanyuan Zhou,University of California - San Diego,metrics,1.0,0.25,2007
 Yuanyuan Zhou,University of California - San Diego,opsys,1.0,0.333333333333,1996
@@ -18731,6 +18842,7 @@ Monica S. Lam,Stanford University,proglang,1.0,0.5,2004
 Monica S. Lam,Stanford University,proglang,1.0,0.333333333333,2005
 Monica S. Lam,Stanford University,proglang,1.0,0.5,2008
 Monica S. Lam,Stanford University,web,1.0,0.2,2012
+Monica S. Lam,Stanford University,security,1.0,0.5,2005
 Monica S. Lam,Stanford University,security,1.0,0.5,2008
 Monica S. Lam,Stanford University,softeng,1.0,0.5,2002
 Monica S. Lam,Stanford University,softeng,1.0,0.25,2005
@@ -18834,7 +18946,7 @@ Mihir Bellare,University of California - San Diego,security,2.0,0.833333333333,2
 Mihir Bellare,University of California - San Diego,security,1.0,0.5,2007
 Mihir Bellare,University of California - San Diego,security,1.0,0.333333333333,2011
 Mihir Bellare,University of California - San Diego,security,1.0,0.333333333333,2012
-Mihir Bellare,University of California - San Diego,security,1.0,0.25,2013
+Mihir Bellare,University of California - San Diego,security,2.0,0.583333333333,2013
 Mihir Bellare,University of California - San Diego,security,1.0,0.333333333333,2015
 Nicoleta Roman,Ohio State University,mlmining,1.0,0.333333333333,2003
 Emanuel Todorov,University of Washington,graphics,1.0,0.333333333333,2012
@@ -19864,6 +19976,7 @@ Mingyan Liu,University of Michigan,mobile,1.0,0.5,2004
 Mingyan Liu,University of Michigan,mobile,1.0,0.25,2006
 Mingyan Liu,University of Michigan,mobile,2.0,0.833333333333,2007
 Mingyan Liu,University of Michigan,mobile,1.0,0.2,2009
+Mingyan Liu,University of Michigan,security,1.0,0.142857142857,2015
 Eyal Kushilevitz,Technion,theory,2.0,1.5,1989
 Eyal Kushilevitz,Technion,theory,1.0,0.333333333333,1990
 Eyal Kushilevitz,Technion,theory,2.0,0.833333333333,1991
@@ -20153,6 +20266,8 @@ Haitao Zheng,University of California - Santa Barbara,web,1.0,0.166666666667,201
 Haitao Zheng,University of California - Santa Barbara,web,1.0,0.142857142857,2012
 Haitao Zheng,University of California - Santa Barbara,web,1.0,0.2,2013
 Haitao Zheng,University of California - Santa Barbara,web,1.0,0.125,2015
+Haitao Zheng,University of California - Santa Barbara,security,1.0,0.166666666667,2013
+Haitao Zheng,University of California - Santa Barbara,security,1.0,0.25,2014
 Gail C. Murphy,University of British Columbia,hci,1.0,0.25,2014
 Gail C. Murphy,University of British Columbia,proglang,1.0,0.166666666667,1998
 Gail C. Murphy,University of British Columbia,proglang,1.0,0.5,1999
@@ -20247,10 +20362,13 @@ Pascal Fua,EPFL,vision,8.0,2.16666666667,2015
 Patrick McDaniel,Pennsylvania State University,opsys,1.0,0.142857142857,2010
 Patrick McDaniel,Pennsylvania State University,proglang,1.0,0.111111111111,2014
 Patrick McDaniel,Pennsylvania State University,mobile,1.0,0.25,2006
+Patrick McDaniel,Pennsylvania State University,security,1.0,0.333333333333,1999
 Patrick McDaniel,Pennsylvania State University,security,1.0,0.25,2005
 Patrick McDaniel,Pennsylvania State University,security,2.0,0.583333333333,2006
+Patrick McDaniel,Pennsylvania State University,security,1.0,1.0,2007
 Patrick McDaniel,Pennsylvania State University,security,2.0,0.583333333333,2011
 Patrick McDaniel,Pennsylvania State University,security,2.0,0.666666666667,2012
+Patrick McDaniel,Pennsylvania State University,security,1.0,0.142857142857,2013
 Patrick McDaniel,Pennsylvania State University,softeng,1.0,0.333333333333,2012
 Alexandra Kolla,University of Illinois at Urbana-Champaign,theory,1.0,0.166666666667,2008
 Alexandra Kolla,University of Illinois at Urbana-Champaign,theory,1.0,0.25,2010
@@ -20349,14 +20467,18 @@ Michael Hicks,University of Maryland - College Park,security,1.0,0.333333333333,
 Michael Hicks,University of Maryland - College Park,security,1.0,0.333333333333,2014
 Michael Hicks,University of Maryland - College Park,softeng,1.0,0.333333333333,2013
 Trent Jaeger,Pennsylvania State University,security,1.0,0.5,1994
+Trent Jaeger,Pennsylvania State University,security,1.0,0.5,1996
+Trent Jaeger,Pennsylvania State University,security,1.0,0.333333333333,1998
 Trent Jaeger,Pennsylvania State University,security,1.0,0.5,2000
 Trent Jaeger,Pennsylvania State University,security,2.0,0.666666666667,2002
+Trent Jaeger,Pennsylvania State University,security,1.0,0.333333333333,2003
 Trent Jaeger,Pennsylvania State University,security,2.0,0.5,2004
 Trent Jaeger,Pennsylvania State University,security,1.0,0.333333333333,2005
 Trent Jaeger,Pennsylvania State University,security,1.0,0.333333333333,2006
 Trent Jaeger,Pennsylvania State University,security,1.0,0.333333333333,2008
 Trent Jaeger,Pennsylvania State University,security,1.0,0.142857142857,2009
 Trent Jaeger,Pennsylvania State University,security,2.0,0.666666666667,2012
+Trent Jaeger,Pennsylvania State University,security,1.0,0.25,2014
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2007
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2008
 Eleazar Eskin,University of California - Los Angeles,mlmining,1.0,1.0,2000
@@ -20501,6 +20623,7 @@ Steven H. Low,California Institute of Technology,networks,1.0,0.166666666667,200
 Steven H. Low,California Institute of Technology,networks,2.0,0.533333333333,2010
 Steven H. Low,California Institute of Technology,networks,1.0,0.333333333333,2012
 Steven H. Low,California Institute of Technology,security,1.0,0.333333333333,1994
+Steven H. Low,California Institute of Technology,security,1.0,1.0,1996
 Steven H. Low,California Institute of Technology,highperf,1.0,0.1,2003
 Cyrus Shahabi,University of Southern California,metrics,1.0,0.333333333333,1995
 Cyrus Shahabi,University of Southern California,database,1.0,0.333333333333,1995
@@ -20877,8 +21000,8 @@ Elaine Shi,Cornell University,web,1.0,0.166666666667,2016
 Elaine Shi,Cornell University,security,2.0,0.583333333333,2005
 Elaine Shi,Cornell University,security,1.0,0.2,2007
 Elaine Shi,Cornell University,security,3.0,1.125,2013
-Elaine Shi,Cornell University,security,5.0,0.942857142857,2014
-Elaine Shi,Cornell University,security,4.0,0.95,2015
+Elaine Shi,Cornell University,security,8.0,1.60952380952,2014
+Elaine Shi,Cornell University,security,5.0,1.09285714286,2015
 Elaine Shi,Cornell University,arch,1.0,0.166666666667,2015
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.142857142857,2001
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.1,2002
@@ -21046,8 +21169,9 @@ Peng Ning,North Carolina State University,security,1.0,0.25,2007
 Peng Ning,North Carolina State University,security,2.0,0.583333333333,2009
 Peng Ning,North Carolina State University,security,2.0,0.5,2010
 Peng Ning,North Carolina State University,security,1.0,0.333333333333,2011
-Peng Ning,North Carolina State University,security,3.0,0.541666666667,2013
+Peng Ning,North Carolina State University,security,4.0,0.791666666667,2013
 Peng Ning,North Carolina State University,security,1.0,0.125,2014
+Peng Ning,North Carolina State University,security,1.0,0.125,2015
 Mira Mezini,TU Darmstadt,proglang,1.0,1.0,1997
 Mira Mezini,TU Darmstadt,proglang,1.0,0.5,1998
 Mira Mezini,TU Darmstadt,proglang,1.0,0.5,2000
@@ -21192,6 +21316,7 @@ Karl N. Levitt,University of California - Davis,networks,1.0,0.25,2008
 Karl N. Levitt,University of California - Davis,security,1.0,0.166666666667,1990
 Karl N. Levitt,University of California - Davis,security,1.0,0.5,1991
 Karl N. Levitt,University of California - Davis,security,1.0,0.142857142857,1993
+Karl N. Levitt,University of California - Davis,security,1.0,0.5,1996
 Karl N. Levitt,University of California - Davis,security,1.0,0.333333333333,1997
 John Keyser,Texas A&M University,graphics,1.0,0.2,1999
 John Keyser,Texas A&M University,graphics,1.0,0.333333333333,2007
@@ -21289,6 +21414,7 @@ Lujo Bauer,Carnegie Mellon University,security,1.0,0.333333333333,2002
 Lujo Bauer,Carnegie Mellon University,security,1.0,0.333333333333,2005
 Lujo Bauer,Carnegie Mellon University,security,2.0,0.194444444444,2012
 Lujo Bauer,Carnegie Mellon University,security,1.0,0.111111111111,2013
+Lujo Bauer,Carnegie Mellon University,security,1.0,0.1,2015
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,1980
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1986
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,1988
@@ -21323,7 +21449,7 @@ Abhi Shelat,Northeastern University,crypto,1.0,0.333333333333,2008
 Abhi Shelat,Northeastern University,crypto,1.0,0.166666666667,2009
 Abhi Shelat,Northeastern University,crypto,1.0,0.5,2011
 Abhi Shelat,Northeastern University,security,1.0,0.333333333333,2012
-Abhi Shelat,Northeastern University,security,1.0,0.5,2013
+Abhi Shelat,Northeastern University,security,2.0,0.75,2013
 Abhi Shelat,Northeastern University,security,2.0,0.45,2014
 Abhi Shelat,Northeastern University,security,1.0,0.5,2015
 David J. Pym,University College London,logic,1.0,1.0,1999
@@ -21379,13 +21505,15 @@ J. Alex Halderman,University of Michigan,graphics,1.0,0.142857142857,2003
 J. Alex Halderman,University of Michigan,web,1.0,0.333333333333,2005
 J. Alex Halderman,University of Michigan,web,1.0,0.333333333333,2010
 J. Alex Halderman,University of Michigan,security,1.0,0.25,2004
+J. Alex Halderman,University of Michigan,security,1.0,0.5,2006
 J. Alex Halderman,University of Michigan,security,1.0,0.5,2007
 J. Alex Halderman,University of Michigan,security,1.0,0.111111111111,2008
 J. Alex Halderman,University of Michigan,security,1.0,0.166666666667,2009
 J. Alex Halderman,University of Michigan,security,1.0,0.125,2010
 J. Alex Halderman,University of Michigan,security,1.0,0.25,2011
 J. Alex Halderman,University of Michigan,security,1.0,0.25,2012
-J. Alex Halderman,University of Michigan,security,1.0,0.142857142857,2014
+J. Alex Halderman,University of Michigan,security,1.0,0.333333333333,2013
+J. Alex Halderman,University of Michigan,security,4.0,0.920634920635,2014
 J. Alex Halderman,University of Michigan,security,2.0,0.271428571429,2015
 Naranker Dulay,Imperial College London,web,1.0,0.333333333333,2001
 Haym Hirsh,Cornell University,mlmining,1.0,0.5,1993
@@ -21479,6 +21607,7 @@ Augustin Chaintreau,Columbia University,networks,1.0,0.166666666667,2006
 Augustin Chaintreau,Columbia University,networks,1.0,0.166666666667,2007
 Augustin Chaintreau,Columbia University,networks,1.0,0.333333333333,2009
 Augustin Chaintreau,Columbia University,web,1.0,0.2,2016
+Augustin Chaintreau,Columbia University,security,1.0,0.125,2014
 Augustin Chaintreau,Columbia University,security,1.0,0.166666666667,2015
 Therese C. Biedl,University of Waterloo,theory,1.0,0.25,1999
 Scott Schaefer,Texas A&M University,graphics,2.0,0.5,2002
@@ -21581,7 +21710,7 @@ Eli Ben-Sasson,Technion,ai,1.0,0.5,2011
 Eli Ben-Sasson,Technion,crypto,1.0,0.333333333333,2012
 Eli Ben-Sasson,Technion,crypto,1.0,0.2,2013
 Eli Ben-Sasson,Technion,crypto,1.0,0.25,2014
-Eli Ben-Sasson,Technion,security,1.0,0.142857142857,2014
+Eli Ben-Sasson,Technion,security,2.0,0.392857142857,2014
 Eli Ben-Sasson,Technion,security,1.0,0.2,2015
 John H. Reppy,University of Chicago,proglang,1.0,1.0,1988
 John H. Reppy,University of Chicago,proglang,1.0,1.0,1991
@@ -21616,6 +21745,7 @@ Henry M. Levy,University of Washington,mobile,1.0,0.333333333333,2008
 Henry M. Levy,University of Washington,web,1.0,0.25,2004
 Henry M. Levy,University of Washington,web,1.0,0.2,2008
 Henry M. Levy,University of Washington,security,1.0,0.25,2006
+Henry M. Levy,University of Washington,security,1.0,0.2,2007
 Henry M. Levy,University of Washington,security,1.0,0.25,2009
 Henry M. Levy,University of Washington,arch,1.0,0.5,1982
 Henry M. Levy,University of Washington,arch,1.0,0.5,1987
@@ -21851,6 +21981,18 @@ Jan Kretínský,TU Munich,logic,1.0,0.333333333333,2013
 Jan Kretínský,TU Munich,logic,1.0,0.5,2014
 Jan Kretínský,TU Munich,logic,3.0,0.658333333333,2015
 Jan Kretínský,TU Munich,logic,1.0,0.25,2016
+Baoxin Li,Arizona State University,mlmining,1.0,0.5,2012
+Baoxin Li,Arizona State University,ai,1.0,0.5,2009
+Baoxin Li,Arizona State University,ai,1.0,0.5,2016
+Baoxin Li,Arizona State University,robotics,1.0,0.5,2006
+Baoxin Li,Arizona State University,vision,1.0,0.5,2007
+Baoxin Li,Arizona State University,vision,2.0,0.833333333333,2008
+Baoxin Li,Arizona State University,vision,1.0,0.5,2009
+Baoxin Li,Arizona State University,vision,2.0,0.7,2010
+Baoxin Li,Arizona State University,vision,1.0,0.5,2011
+Baoxin Li,Arizona State University,vision,1.0,0.5,2013
+Baoxin Li,Arizona State University,vision,1.0,0.333333333333,2014
+Baoxin Li,Arizona State University,vision,1.0,0.333333333333,2015
 Val Tannen,University of Pennsylvania,database,1.0,0.333333333333,1989
 Val Tannen,University of Pennsylvania,database,1.0,0.5,1994
 Val Tannen,University of Pennsylvania,database,1.0,0.333333333333,1999
@@ -22028,17 +22170,18 @@ Edward W. Felten,Princeton University,web,1.0,0.333333333333,2005
 Edward W. Felten,Princeton University,web,1.0,0.142857142857,2015
 Edward W. Felten,Princeton University,security,1.0,0.333333333333,1996
 Edward W. Felten,Princeton University,security,1.0,0.5,1998
-Edward W. Felten,Princeton University,security,1.0,0.5,1999
+Edward W. Felten,Princeton University,security,2.0,1.0,1999
 Edward W. Felten,Princeton University,security,1.0,0.5,2000
 Edward W. Felten,Princeton University,security,1.0,0.125,2001
 Edward W. Felten,Princeton University,security,1.0,0.333333333333,2002
 Edward W. Felten,Princeton University,security,1.0,0.333333333333,2003
 Edward W. Felten,Princeton University,security,1.0,0.25,2004
+Edward W. Felten,Princeton University,security,1.0,0.5,2006
 Edward W. Felten,Princeton University,security,1.0,0.111111111111,2008
 Edward W. Felten,Princeton University,security,1.0,0.166666666667,2009
 Edward W. Felten,Princeton University,security,2.0,0.533333333333,2011
 Edward W. Felten,Princeton University,security,1.0,0.25,2012
-Edward W. Felten,Princeton University,security,1.0,0.166666666667,2015
+Edward W. Felten,Princeton University,security,2.0,0.366666666667,2015
 Edward W. Felten,Princeton University,arch,1.0,0.166666666667,1994
 Edward W. Felten,Princeton University,arch,1.0,0.166666666667,1995
 Edward W. Felten,Princeton University,arch,1.0,0.111111111111,1996
@@ -22242,6 +22385,8 @@ Andrew W. Appel,Princeton University,proglang,2.0,1.25,2015
 Andrew W. Appel,Princeton University,logic,1.0,1.0,2001
 Andrew W. Appel,Princeton University,security,1.0,0.5,1999
 Andrew W. Appel,Princeton University,security,1.0,0.5,2003
+Andrew W. Appel,Princeton University,security,1.0,0.333333333333,2005
+Andrew W. Appel,Princeton University,security,1.0,0.25,2015
 Andrew W. Appel,Princeton University,arch,1.0,0.5,1991
 Larry S. Davis,University of Maryland - College Park,hci,1.0,0.111111111111,2011
 Larry S. Davis,University of Maryland - College Park,mlmining,1.0,0.333333333333,2004
@@ -22796,10 +22941,13 @@ Alan Sussman,University of Maryland - College Park,highperf,2.0,0.392857142857,2
 Alan Sussman,University of Maryland - College Park,highperf,1.0,0.333333333333,2006
 Aviel D. Rubin,Johns Hopkins University,crypto,1.0,0.5,1996
 Aviel D. Rubin,Johns Hopkins University,networks,1.0,0.2,2002
+Aviel D. Rubin,Johns Hopkins University,security,1.0,0.5,1993
+Aviel D. Rubin,Johns Hopkins University,security,1.0,1.0,1995
 Aviel D. Rubin,Johns Hopkins University,security,1.0,0.5,1997
 Aviel D. Rubin,Johns Hopkins University,security,1.0,0.333333333333,1998
-Aviel D. Rubin,Johns Hopkins University,security,1.0,0.333333333333,1999
+Aviel D. Rubin,Johns Hopkins University,security,2.0,0.533333333333,1999
 Aviel D. Rubin,Johns Hopkins University,security,1.0,0.333333333333,2000
+Aviel D. Rubin,Johns Hopkins University,security,1.0,0.166666666667,2005
 Aviel D. Rubin,Johns Hopkins University,security,1.0,0.5,2007
 Aviel D. Rubin,Johns Hopkins University,security,1.0,0.25,2013
 Aviel D. Rubin,Johns Hopkins University,security,1.0,0.25,2014
@@ -22955,6 +23103,7 @@ George Danezis,University College London,security,1.0,0.333333333333,2003
 George Danezis,University College London,security,1.0,0.5,2005
 George Danezis,University College London,security,1.0,0.25,2007
 George Danezis,University College London,security,2.0,1.0,2009
+George Danezis,University College London,security,1.0,0.25,2013
 George Danezis,University College London,security,1.0,0.333333333333,2014
 George Danezis,University College London,security,1.0,0.2,2015
 Roy H. Campbell,University of Illinois at Urbana-Champaign,metrics,1.0,0.2,2012
@@ -23953,6 +24102,7 @@ Aditya Akella,University of Wisconsin - Madison,networks,3.0,0.409523809524,2015
 Aditya Akella,University of Wisconsin - Madison,mobile,1.0,0.25,2005
 Aditya Akella,University of Wisconsin - Madison,mobile,1.0,0.25,2011
 Aditya Akella,University of Wisconsin - Madison,mobile,1.0,0.5,2013
+Aditya Akella,University of Wisconsin - Madison,security,1.0,0.166666666667,2006
 Aditya Akella,University of Wisconsin - Madison,security,1.0,0.2,2015
 Fritz Henglein,DIKU,proglang,1.0,0.5,1991
 Fritz Henglein,DIKU,proglang,1.0,0.5,1994
@@ -23985,6 +24135,7 @@ Richard T. Snodgrass,University of Arizona,database,1.0,0.166666666667,2013
 Silvia Santini,TU Dresden,hci,1.0,0.333333333333,2013
 Silvia Santini,TU Dresden,hci,1.0,0.333333333333,2015
 Stephen McCamant,University of Minnesota - Twin Cities,proglang,1.0,0.5,2008
+Stephen McCamant,University of Minnesota - Twin Cities,security,1.0,0.5,2006
 Stephen McCamant,University of Minnesota - Twin Cities,security,2.0,0.366666666667,2010
 Stephen McCamant,University of Minnesota - Twin Cities,security,1.0,0.142857142857,2011
 Stephen McCamant,University of Minnesota - Twin Cities,security,1.0,0.125,2013
@@ -24162,14 +24313,17 @@ Christopher Kruegel,University of California - Santa Barbara,networks,1.0,0.25,2
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.25,2011
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.142857142857,2013
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.111111111111,2014
+Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.2,2005
+Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.5,2006
 Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.2,2007
 Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.142857142857,2008
 Christopher Kruegel,University of California - Santa Barbara,security,2.0,0.291666666667,2009
 Christopher Kruegel,University of California - Santa Barbara,security,5.0,1.11666666667,2010
 Christopher Kruegel,University of California - Santa Barbara,security,4.0,1.03333333333,2011
 Christopher Kruegel,University of California - Santa Barbara,security,6.0,1.29166666667,2012
-Christopher Kruegel,University of California - Santa Barbara,security,5.0,1.25,2013
-Christopher Kruegel,University of California - Santa Barbara,security,1.0,0.166666666667,2015
+Christopher Kruegel,University of California - Santa Barbara,security,7.0,1.7,2013
+Christopher Kruegel,University of California - Santa Barbara,security,2.0,0.5,2014
+Christopher Kruegel,University of California - Santa Barbara,security,5.0,1.06666666667,2015
 Christopher Kruegel,University of California - Santa Barbara,softeng,1.0,0.333333333333,2007
 Christopher Kruegel,University of California - Santa Barbara,softeng,1.0,0.2,2015
 Kristian J. Hammond,Northwestern University,ai,1.0,1.0,1987
@@ -24227,7 +24381,8 @@ Minlan Yu,University of Southern California,networks,3.0,0.486111111111,2015
 Michalis Polychronakis,Stony Brook University,metrics,2.0,0.533333333333,2013
 Michalis Polychronakis,Stony Brook University,security,1.0,0.333333333333,2011
 Michalis Polychronakis,Stony Brook University,security,2.0,0.583333333333,2012
-Michalis Polychronakis,Stony Brook University,security,1.0,0.25,2014
+Michalis Polychronakis,Stony Brook University,security,1.0,0.333333333333,2013
+Michalis Polychronakis,Stony Brook University,security,3.0,0.783333333333,2014
 Samira Manabi Khan,University of Virginia,metrics,1.0,0.166666666667,2014
 Samira Manabi Khan,University of Virginia,metrics,1.0,0.1,2016
 Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2010
@@ -24360,7 +24515,7 @@ Gianluca Stringhini,University College London,web,1.0,0.111111111111,2014
 Gianluca Stringhini,University College London,security,1.0,0.2,2011
 Gianluca Stringhini,University College London,security,1.0,0.166666666667,2012
 Gianluca Stringhini,University College London,security,1.0,0.333333333333,2013
-Gianluca Stringhini,University College London,security,1.0,0.125,2015
+Gianluca Stringhini,University College London,security,2.0,0.291666666667,2015
 Tibor Bosse,VU Amsterdam,ai,1.0,0.5,2007
 Darius Burschka,TU Munich,robotics,1.0,0.333333333333,1997
 Darius Burschka,TU Munich,robotics,1.0,0.25,1999
@@ -24482,7 +24637,7 @@ Ling Liu,Georgia Institute of Technology,web,1.0,0.25,2004
 Ling Liu,Georgia Institute of Technology,web,1.0,0.333333333333,2005
 Ling Liu,Georgia Institute of Technology,web,1.0,0.333333333333,2006
 Ling Liu,Georgia Institute of Technology,web,1.0,0.25,2008
-Ling Liu,Georgia Institute of Technology,security,1.0,0.5,2005
+Ling Liu,Georgia Institute of Technology,security,2.0,1.0,2005
 Ling Liu,Georgia Institute of Technology,security,1.0,0.333333333333,2008
 Ling Liu,Georgia Institute of Technology,softeng,1.0,0.25,1997
 Ling Liu,Georgia Institute of Technology,highperf,1.0,0.25,2011
@@ -24568,7 +24723,7 @@ Yinqian Zhang,Ohio State University,security,1.0,0.25,2011
 Yinqian Zhang,Ohio State University,security,1.0,0.25,2012
 Yinqian Zhang,Ohio State University,security,1.0,0.5,2013
 Yinqian Zhang,Ohio State University,security,1.0,0.25,2014
-Yinqian Zhang,Ohio State University,security,1.0,0.333333333333,2015
+Yinqian Zhang,Ohio State University,security,2.0,0.583333333333,2015
 Thomas Holenstein,ETH Zurich,theory,1.0,1.0,2005
 Thomas Holenstein,ETH Zurich,theory,1.0,1.0,2007
 Thomas Holenstein,ETH Zurich,theory,1.0,0.25,2008
@@ -25336,7 +25491,7 @@ Calvin Lin,University of Texas - Austin,proglang,1.0,0.5,2007
 Calvin Lin,University of Texas - Austin,proglang,1.0,0.5,2009
 Calvin Lin,University of Texas - Austin,proglang,2.0,0.583333333333,2015
 Calvin Lin,University of Texas - Austin,security,1.0,0.333333333333,2008
-Calvin Lin,University of Texas - Austin,security,1.0,0.333333333333,2015
+Calvin Lin,University of Texas - Austin,security,2.0,0.666666666667,2015
 Calvin Lin,University of Texas - Austin,softeng,1.0,0.5,2001
 Calvin Lin,University of Texas - Austin,arch,1.0,0.333333333333,2000
 Calvin Lin,University of Texas - Austin,arch,1.0,0.5,2004
@@ -25359,8 +25514,9 @@ Jesper Buus Nielsen,Aarhus University,crypto,2.0,0.533333333333,2013
 Jesper Buus Nielsen,Aarhus University,crypto,1.0,0.333333333333,2015
 Jesper Buus Nielsen,Aarhus University,crypto,1.0,0.25,2016
 Matt Blaze,University of Pennsylvania,crypto,2.0,0.666666666667,1998
-Matt Blaze,University of Pennsylvania,security,1.0,1.0,1993
+Matt Blaze,University of Pennsylvania,security,2.0,1.5,1993
 Matt Blaze,University of Pennsylvania,security,1.0,1.0,1994
+Matt Blaze,University of Pennsylvania,security,1.0,0.5,1995
 Matt Blaze,University of Pennsylvania,security,1.0,0.333333333333,1996
 Matt Blaze,University of Pennsylvania,security,1.0,0.142857142857,2002
 Matt Blaze,University of Pennsylvania,security,1.0,0.2,2009
@@ -25407,7 +25563,9 @@ William Enck,North Carolina State University,mobile,1.0,0.25,2006
 William Enck,North Carolina State University,security,1.0,0.25,2005
 William Enck,North Carolina State University,security,1.0,0.333333333333,2009
 William Enck,North Carolina State University,security,1.0,0.25,2011
-William Enck,North Carolina State University,security,1.0,0.5,2013
+William Enck,North Carolina State University,security,2.0,0.7,2013
+William Enck,North Carolina State University,security,1.0,0.25,2014
+William Enck,North Carolina State University,security,1.0,0.125,2015
 Abbas Edalat,Imperial College London,mlmining,1.0,1.0,2013
 Abbas Edalat,Imperial College London,logic,1.0,1.0,1994
 Abbas Edalat,Imperial College London,logic,1.0,1.0,1995
@@ -25501,6 +25659,7 @@ Andrew A. Chien,University of Chicago,proglang,1.0,0.5,1994
 Andrew A. Chien,University of Chicago,proglang,1.0,0.333333333333,1995
 Andrew A. Chien,University of Chicago,proglang,1.0,0.5,1998
 Andrew A. Chien,University of Chicago,proglang,1.0,0.5,2000
+Andrew A. Chien,University of Chicago,security,1.0,0.333333333333,2005
 Andrew A. Chien,University of Chicago,arch,1.0,0.111111111111,1987
 Andrew A. Chien,University of Chicago,arch,1.0,0.5,1992
 Andrew A. Chien,University of Chicago,arch,2.0,0.833333333333,1994
@@ -25545,6 +25704,7 @@ Alex C. Snoeren,University of California - San Diego,networks,1.0,0.2,2015
 Alex C. Snoeren,University of California - San Diego,mobile,1.0,0.5,2000
 Alex C. Snoeren,University of California - San Diego,mobile,1.0,0.5,2003
 Alex C. Snoeren,University of California - San Diego,mobile,1.0,0.25,2014
+Alex C. Snoeren,University of California - San Diego,security,1.0,0.166666666667,2013
 Alex C. Snoeren,University of California - San Diego,security,2.0,0.458333333333,2014
 Alex C. Snoeren,University of California - San Diego,security,1.0,0.166666666667,2015
 Alex C. Snoeren,University of California - San Diego,highperf,1.0,0.333333333333,2009
@@ -26151,6 +26311,7 @@ Richard J. Lipton,Georgia Institute of Technology,networks,1.0,0.5,2002
 Richard J. Lipton,Georgia Institute of Technology,proglang,1.0,0.25,1980
 Richard J. Lipton,Georgia Institute of Technology,proglang,1.0,0.333333333333,1982
 Richard J. Lipton,Georgia Institute of Technology,security,1.0,0.333333333333,1980
+Richard J. Lipton,Georgia Institute of Technology,security,1.0,0.5,1996
 William J. Dally,Stanford University,mlmining,1.0,0.25,2015
 William J. Dally,Stanford University,database,1.0,0.5,1993
 William J. Dally,Stanford University,networks,1.0,0.5,2002
@@ -26308,8 +26469,8 @@ Srdjan Capkun,ETH Zurich,security,1.0,0.5,2010
 Srdjan Capkun,ETH Zurich,security,1.0,0.25,2011
 Srdjan Capkun,ETH Zurich,security,3.0,0.916666666667,2012
 Srdjan Capkun,ETH Zurich,security,3.0,0.833333333333,2013
-Srdjan Capkun,ETH Zurich,security,1.0,0.2,2014
-Srdjan Capkun,ETH Zurich,security,1.0,0.25,2015
+Srdjan Capkun,ETH Zurich,security,2.0,0.7,2014
+Srdjan Capkun,ETH Zurich,security,3.0,0.666666666667,2015
 Simon King,University of Edinburgh,hci,1.0,0.166666666667,2007
 Daniel Mossé,University of Pittsburgh,networks,1.0,0.333333333333,1995
 Daniel Mossé,University of Pittsburgh,networks,1.0,0.5,1998
@@ -26545,8 +26706,8 @@ Ahmad-Reza Sadeghi,TU Darmstadt,crypto,1.0,0.5,2001
 Ahmad-Reza Sadeghi,TU Darmstadt,mobile,1.0,0.166666666667,2016
 Ahmad-Reza Sadeghi,TU Darmstadt,security,2.0,0.366666666667,2010
 Ahmad-Reza Sadeghi,TU Darmstadt,security,2.0,0.4,2011
-Ahmad-Reza Sadeghi,TU Darmstadt,security,2.0,0.416666666667,2013
-Ahmad-Reza Sadeghi,TU Darmstadt,security,1.0,0.2,2014
+Ahmad-Reza Sadeghi,TU Darmstadt,security,3.0,0.75,2013
+Ahmad-Reza Sadeghi,TU Darmstadt,security,3.0,0.7,2014
 Ahmad-Reza Sadeghi,TU Darmstadt,security,7.0,1.0123015873,2015
 Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.5,2006
 Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.666666666667,2007
@@ -27363,8 +27524,8 @@ Suman Jana,Columbia University,mobile,1.0,0.166666666667,2009
 Suman Jana,Columbia University,web,1.0,0.333333333333,2015
 Suman Jana,Columbia University,security,1.0,0.333333333333,2011
 Suman Jana,Columbia University,security,3.0,1.16666666667,2012
-Suman Jana,Columbia University,security,1.0,0.333333333333,2013
-Suman Jana,Columbia University,security,1.0,0.2,2014
+Suman Jana,Columbia University,security,2.0,0.47619047619,2013
+Suman Jana,Columbia University,security,2.0,0.4,2014
 Michael J. Wozny,Rensselaer Polytechnic Institute,graphics,1.0,0.2,1991
 Michael J. Wozny,Rensselaer Polytechnic Institute,graphics,1.0,0.333333333333,1994
 Hao Li,University of Southern California,graphics,1.0,0.25,2009
@@ -27517,6 +27678,7 @@ Landon P. Cox,Duke University,mobile,1.0,0.2,2013
 Landon P. Cox,Duke University,mobile,1.0,0.142857142857,2015
 Landon P. Cox,Duke University,mobile,1.0,0.166666666667,2016
 Landon P. Cox,Duke University,security,1.0,0.333333333333,2009
+Landon P. Cox,Duke University,security,1.0,0.142857142857,2014
 Daniel Dominic Sleator,Carnegie Mellon University,theory,1.0,0.333333333333,1980
 Daniel Dominic Sleator,Carnegie Mellon University,theory,1.0,0.5,1981
 Daniel Dominic Sleator,Carnegie Mellon University,theory,1.0,0.5,1983
@@ -27691,6 +27853,7 @@ Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,0.25,2005
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,0.25,2007
 Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,0.25,2010
 Neeraj Suri,TU Darmstadt,security,1.0,0.166666666667,2013
+Neeraj Suri,TU Darmstadt,security,1.0,0.25,2015
 Neeraj Suri,TU Darmstadt,softeng,2.0,0.5,2011
 Gladimir V. G. Baranoski,University of Waterloo,graphics,1.0,0.25,2005
 Gladimir V. G. Baranoski,University of Waterloo,graphics,1.0,0.333333333333,2009
@@ -27700,6 +27863,7 @@ Onur Mutlu,ETH Zurich,metrics,2.0,0.309523809524,2014
 Onur Mutlu,ETH Zurich,metrics,1.0,0.25,2015
 Onur Mutlu,ETH Zurich,metrics,2.0,0.242857142857,2016
 Onur Mutlu,ETH Zurich,networks,1.0,0.2,2012
+Onur Mutlu,ETH Zurich,security,1.0,0.5,2007
 Onur Mutlu,ETH Zurich,arch,1.0,0.25,2004
 Onur Mutlu,ETH Zurich,arch,3.0,0.916666666667,2005
 Onur Mutlu,ETH Zurich,arch,2.0,0.5,2006
@@ -27799,6 +27963,7 @@ Qi Yu,Rochester Institute of Technology,ai,1.0,0.25,2011
 Sergio Maffeis,Imperial College London,proglang,1.0,0.333333333333,2012
 Sergio Maffeis,Imperial College London,proglang,1.0,0.125,2014
 Sergio Maffeis,Imperial College London,security,1.0,0.333333333333,2010
+Sergio Maffeis,Imperial College London,security,1.0,0.333333333333,2013
 Robert L. Constable,Cornell University,theory,1.0,1.0,1980
 Robert L. Constable,Cornell University,opsys,1.0,0.142857142857,1999
 Robert L. Constable,Cornell University,logic,2.0,0.833333333333,1986
@@ -28073,6 +28238,8 @@ Saumya K. Debray,University of Arizona,proglang,2.0,0.75,2002
 Saumya K. Debray,University of Arizona,proglang,1.0,0.142857142857,2004
 Saumya K. Debray,University of Arizona,proglang,1.0,0.25,2007
 Saumya K. Debray,University of Arizona,security,1.0,0.5,2003
+Saumya K. Debray,University of Arizona,security,1.0,0.166666666667,2005
+Saumya K. Debray,University of Arizona,security,1.0,0.333333333333,2007
 Saumya K. Debray,University of Arizona,security,1.0,0.333333333333,2011
 Saumya K. Debray,University of Arizona,softeng,1.0,0.333333333333,2003
 Julita Corbalán,Polytechnic University of Catalonia,opsys,1.0,0.333333333333,2000
@@ -28189,8 +28356,8 @@ XiaoFeng Wang,Indiana University,security,2.0,0.45,2010
 XiaoFeng Wang,Indiana University,security,2.0,0.45,2011
 XiaoFeng Wang,Indiana University,security,2.0,0.533333333333,2012
 XiaoFeng Wang,Indiana University,security,3.0,0.575,2013
-XiaoFeng Wang,Indiana University,security,5.0,0.935714285714,2014
-XiaoFeng Wang,Indiana University,security,6.0,1.00277777778,2015
+XiaoFeng Wang,Indiana University,security,6.0,1.13571428571,2014
+XiaoFeng Wang,Indiana University,security,7.0,1.12777777778,2015
 Allison B. Lewko,Columbia University,theory,1.0,0.5,2010
 Allison B. Lewko,Columbia University,theory,2.0,0.583333333333,2011
 Allison B. Lewko,Columbia University,theory,1.0,0.333333333333,2012
@@ -28284,17 +28451,18 @@ Wenke Lee,Georgia Institute of Technology,web,1.0,0.25,2011
 Wenke Lee,Georgia Institute of Technology,web,1.0,0.2,2012
 Wenke Lee,Georgia Institute of Technology,web,1.0,0.142857142857,2015
 Wenke Lee,Georgia Institute of Technology,web,1.0,0.25,2016
+Wenke Lee,Georgia Institute of Technology,security,1.0,0.5,1998
 Wenke Lee,Georgia Institute of Technology,security,1.0,0.333333333333,1999
 Wenke Lee,Georgia Institute of Technology,security,1.0,0.5,2001
-Wenke Lee,Georgia Institute of Technology,security,2.0,0.7,2006
+Wenke Lee,Georgia Institute of Technology,security,3.0,0.9,2006
 Wenke Lee,Georgia Institute of Technology,security,4.0,0.95,2008
 Wenke Lee,Georgia Institute of Technology,security,4.0,1.0,2009
 Wenke Lee,Georgia Institute of Technology,security,3.0,0.7,2010
 Wenke Lee,Georgia Institute of Technology,security,3.0,0.733333333333,2011
 Wenke Lee,Georgia Institute of Technology,security,2.0,0.342857142857,2012
-Wenke Lee,Georgia Institute of Technology,security,2.0,0.45,2013
-Wenke Lee,Georgia Institute of Technology,security,3.0,0.6,2014
-Wenke Lee,Georgia Institute of Technology,security,2.0,0.366666666667,2015
+Wenke Lee,Georgia Institute of Technology,security,4.0,0.816666666667,2013
+Wenke Lee,Georgia Institute of Technology,security,5.0,0.933333333333,2014
+Wenke Lee,Georgia Institute of Technology,security,3.0,0.616666666667,2015
 Ben Shneiderman,University of Maryland - College Park,graphics,1.0,1.0,1992
 Ben Shneiderman,University of Maryland - College Park,graphics,1.0,0.333333333333,2002
 Ben Shneiderman,University of Maryland - College Park,hci,1.0,0.333333333333,1992
@@ -28858,6 +29026,8 @@ Patrick Traynor,University of Florida,security,1.0,0.25,2006
 Patrick Traynor,University of Florida,security,2.0,0.392857142857,2009
 Patrick Traynor,University of Florida,security,1.0,0.2,2010
 Patrick Traynor,University of Florida,security,1.0,0.25,2011
+Patrick Traynor,University of Florida,security,1.0,0.25,2013
+Patrick Traynor,University of Florida,security,2.0,0.4,2015
 Jack Sampson,Pennsylvania State University,arch,2.0,0.291666666667,2006
 Jack Sampson,Pennsylvania State University,arch,1.0,0.125,2010
 Jack Sampson,Pennsylvania State University,arch,1.0,0.166666666667,2011
@@ -29118,6 +29288,7 @@ Nick Feamster,Princeton University,security,1.0,0.2,2002
 Nick Feamster,Princeton University,security,1.0,0.333333333333,2007
 Nick Feamster,Princeton University,security,1.0,0.2,2009
 Nick Feamster,Princeton University,security,1.0,0.2,2010
+Nick Feamster,Princeton University,security,1.0,0.166666666667,2013
 Nick Feamster,Princeton University,security,1.0,0.333333333333,2014
 Erik G. Learned-Miller,University of Massachusetts - Amherst,mlmining,2.0,0.833333333333,2004
 Erik G. Learned-Miller,University of Massachusetts - Amherst,mlmining,1.0,0.25,2012
@@ -29350,11 +29521,14 @@ Dawn Song,University of California - Berkeley,networks,1.0,0.2,2013
 Dawn Song,University of California - Berkeley,networks,1.0,0.166666666667,2015
 Dawn Song,University of California - Berkeley,mobile,1.0,0.25,2012
 Dawn Song,University of California - Berkeley,logic,1.0,0.333333333333,2011
+Dawn Song,University of California - Berkeley,security,1.0,0.2,2007
 Dawn Song,University of California - Berkeley,security,2.0,0.666666666667,2009
 Dawn Song,University of California - Berkeley,security,3.0,0.616666666667,2010
 Dawn Song,University of California - Berkeley,security,5.0,1.04285714286,2011
 Dawn Song,University of California - Berkeley,security,3.0,0.642857142857,2012
 Dawn Song,University of California - Berkeley,security,3.0,0.5,2013
+Dawn Song,University of California - Berkeley,security,1.0,0.25,2014
+Dawn Song,University of California - Berkeley,security,1.0,0.333333333333,2015
 Dawn Song,University of California - Berkeley,softeng,1.0,0.333333333333,2013
 Dawn Song,University of California - Berkeley,arch,1.0,0.2,2012
 J. Ian Munro,University of Waterloo,theory,1.0,0.5,1980
@@ -29594,6 +29768,7 @@ Mark Crovella,Boston University,networks,1.0,0.25,2008
 Mark Crovella,Boston University,networks,1.0,0.25,2012
 Mark Crovella,Boston University,networks,1.0,0.333333333333,2013
 Mark Crovella,Boston University,mobile,1.0,0.333333333333,2011
+Mark Crovella,Boston University,security,1.0,0.142857142857,2014
 Mark Crovella,Boston University,highperf,1.0,0.5,1994
 Christian Kästner,Carnegie Mellon University,proglang,2.0,0.416666666667,2011
 Christian Kästner,Carnegie Mellon University,proglang,1.0,0.333333333333,2012
@@ -29884,7 +30059,8 @@ Michael M. Swift,University of Wisconsin - Madison,opsys,1.0,0.25,2004
 Michael M. Swift,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2009
 Michael M. Swift,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2012
 Michael M. Swift,University of Wisconsin - Madison,security,1.0,0.2,2012
-Michael M. Swift,University of Wisconsin - Madison,security,1.0,0.2,2014
+Michael M. Swift,University of Wisconsin - Madison,security,2.0,0.533333333333,2014
+Michael M. Swift,University of Wisconsin - Madison,security,1.0,0.25,2015
 Michael M. Swift,University of Wisconsin - Madison,arch,1.0,0.125,2006
 Michael M. Swift,University of Wisconsin - Madison,arch,1.0,0.142857142857,2007
 Michael M. Swift,University of Wisconsin - Madison,arch,2.0,0.4,2008
@@ -30005,9 +30181,11 @@ Yiling Chen,Harvard University,ai,1.0,0.5,2016
 Éric Schost,University of Waterloo,theory,1.0,0.166666666667,2007
 Éric Schost,University of Waterloo,crypto,1.0,0.5,2004
 William K. Robertson,Northeastern University,security,2.0,0.583333333333,2004
+William K. Robertson,Northeastern University,security,1.0,0.2,2005
 William K. Robertson,Northeastern University,security,1.0,0.5,2009
 William K. Robertson,Northeastern University,security,1.0,0.25,2013
 William K. Robertson,Northeastern University,security,1.0,0.333333333333,2014
+William K. Robertson,Northeastern University,security,1.0,0.2,2015
 H. Venkateswaran,Georgia Institute of Technology,metrics,1.0,0.25,1994
 H. Venkateswaran,Georgia Institute of Technology,metrics,1.0,0.25,1995
 H. Venkateswaran,Georgia Institute of Technology,theory,1.0,0.5,1986
@@ -30117,6 +30295,7 @@ Jun Wang,University College London,ai,1.0,0.5,2016
 Jun Wang,University College London,web,1.0,0.5,2006
 Jun Wang,University College London,web,1.0,0.5,2008
 Jun Wang,University College London,web,1.0,0.2,2016
+Jun Wang,University College London,security,1.0,0.2,2015
 Jun Wang,University College London,vision,2.0,0.45,2014
 Dongyan Xu,Purdue University,metrics,1.0,0.142857142857,2014
 Dongyan Xu,Purdue University,mobile,1.0,0.25,2003
@@ -30124,6 +30303,7 @@ Dongyan Xu,Purdue University,security,1.0,0.5,2004
 Dongyan Xu,Purdue University,security,1.0,0.333333333333,2007
 Dongyan Xu,Purdue University,security,1.0,0.25,2011
 Dongyan Xu,Purdue University,security,2.0,0.5,2013
+Dongyan Xu,Purdue University,security,2.0,0.416666666667,2014
 Dongyan Xu,Purdue University,security,3.0,0.65,2015
 Dongyan Xu,Purdue University,softeng,1.0,0.333333333333,2013
 Dongyan Xu,Purdue University,softeng,1.0,0.2,2014
@@ -30890,6 +31070,8 @@ Dan Tsafrir,Technion,metrics,1.0,0.333333333333,2003
 Dan Tsafrir,Technion,metrics,1.0,0.5,2016
 Dan Tsafrir,Technion,opsys,1.0,0.2,2015
 Dan Tsafrir,Technion,proglang,1.0,0.25,2009
+Dan Tsafrir,Technion,security,1.0,0.333333333333,2007
+Dan Tsafrir,Technion,security,1.0,0.333333333333,2015
 Dan Tsafrir,Technion,arch,1.0,0.142857142857,2012
 Dan Tsafrir,Technion,arch,1.0,0.333333333333,2014
 Dan Tsafrir,Technion,arch,1.0,0.25,2015
@@ -30982,14 +31164,14 @@ Somesh Jha,University of Wisconsin - Madison,logic,1.0,0.25,2002
 Somesh Jha,University of Wisconsin - Madison,logic,2.0,0.47619047619,2012
 Somesh Jha,University of Wisconsin - Madison,logic,1.0,0.25,2013
 Somesh Jha,University of Wisconsin - Madison,security,2.0,0.533333333333,2002
-Somesh Jha,University of Wisconsin - Madison,security,1.0,0.2,2003
+Somesh Jha,University of Wisconsin - Madison,security,2.0,0.7,2003
 Somesh Jha,University of Wisconsin - Madison,security,3.0,0.866666666667,2005
 Somesh Jha,University of Wisconsin - Madison,security,4.0,1.11666666667,2006
 Somesh Jha,University of Wisconsin - Madison,security,1.0,0.2,2007
 Somesh Jha,University of Wisconsin - Madison,security,2.0,0.666666666667,2008
 Somesh Jha,University of Wisconsin - Madison,security,3.0,0.67619047619,2010
-Somesh Jha,University of Wisconsin - Madison,security,1.0,0.2,2013
-Somesh Jha,University of Wisconsin - Madison,security,2.0,0.583333333333,2014
+Somesh Jha,University of Wisconsin - Madison,security,3.0,0.592857142857,2013
+Somesh Jha,University of Wisconsin - Madison,security,4.0,0.95,2014
 Somesh Jha,University of Wisconsin - Madison,security,1.0,0.333333333333,2015
 Somesh Jha,University of Wisconsin - Madison,softeng,1.0,0.333333333333,1996
 Somesh Jha,University of Wisconsin - Madison,softeng,1.0,0.333333333333,1998
@@ -31059,7 +31241,7 @@ Shiri Chechik,Tel Aviv University,theory,1.0,1.0,2015
 Shiri Chechik,Tel Aviv University,theory,2.0,0.7,2016
 Elias Athanasopoulos,VU Amsterdam,web,1.0,0.142857142857,2011
 Elias Athanasopoulos,VU Amsterdam,security,1.0,0.25,2013
-Elias Athanasopoulos,VU Amsterdam,security,2.0,0.5,2014
+Elias Athanasopoulos,VU Amsterdam,security,3.0,0.7,2014
 Elias Athanasopoulos,VU Amsterdam,security,1.0,0.2,2015
 Kenneth Salem,University of Waterloo,database,1.0,0.5,1987
 Kenneth Salem,University of Waterloo,database,1.0,0.5,1991
@@ -31113,7 +31295,8 @@ Xiangyu Zhang,Purdue University,mobile,1.0,0.333333333333,2012
 Xiangyu Zhang,Purdue University,web,1.0,0.333333333333,2011
 Xiangyu Zhang,Purdue University,logic,1.0,0.166666666667,2015
 Xiangyu Zhang,Purdue University,security,2.0,0.5,2013
-Xiangyu Zhang,Purdue University,security,3.0,0.65,2015
+Xiangyu Zhang,Purdue University,security,2.0,0.416666666667,2014
+Xiangyu Zhang,Purdue University,security,4.0,0.792857142857,2015
 Xiangyu Zhang,Purdue University,softeng,1.0,0.333333333333,2003
 Xiangyu Zhang,Purdue University,softeng,1.0,0.333333333333,2004
 Xiangyu Zhang,Purdue University,softeng,2.0,0.75,2005
@@ -31262,6 +31445,7 @@ Carlos Guestrin,University of Washington,web,1.0,0.25,2014
 Carlos Guestrin,University of Washington,robotics,1.0,0.333333333333,1998
 Carlos Guestrin,University of Washington,vision,1.0,0.333333333333,2014
 Yoav Etsion,Technion,metrics,1.0,0.333333333333,2003
+Yoav Etsion,Technion,security,1.0,0.333333333333,2007
 Yoav Etsion,Technion,arch,1.0,0.125,2010
 Yoav Etsion,Technion,arch,3.0,0.95,2014
 Yoav Etsion,Technion,arch,2.0,0.75,2015
@@ -31888,6 +32072,7 @@ Sharon Goldberg,Boston University,networks,1.0,0.25,2010
 Sharon Goldberg,Boston University,networks,1.0,0.333333333333,2011
 Sharon Goldberg,Boston University,networks,1.0,0.333333333333,2013
 Sharon Goldberg,Boston University,networks,1.0,0.25,2014
+Sharon Goldberg,Boston University,security,1.0,0.25,2015
 Kenneth R. Koedinger,Carnegie Mellon University,hci,2.0,0.5,2004
 Kenneth R. Koedinger,Carnegie Mellon University,hci,1.0,0.5,2007
 Kenneth R. Koedinger,Carnegie Mellon University,hci,1.0,0.25,2013
@@ -31967,6 +32152,7 @@ Zhendong Su,University of California - Davis,logic,1.0,0.5,2016
 Zhendong Su,University of California - Davis,security,1.0,0.25,2005
 Zhendong Su,University of California - Davis,security,1.0,0.166666666667,2006
 Zhendong Su,University of California - Davis,security,1.0,0.333333333333,2011
+Zhendong Su,University of California - Davis,security,1.0,0.166666666667,2014
 Zhendong Su,University of California - Davis,softeng,1.0,0.333333333333,2004
 Zhendong Su,University of California - Davis,softeng,2.0,1.0,2006
 Zhendong Su,University of California - Davis,softeng,3.0,1.08333333333,2007
@@ -32513,6 +32699,7 @@ David Wetherall,University of Washington,mobile,3.0,1.0,2008
 David Wetherall,University of Washington,mobile,1.0,0.166666666667,2011
 David Wetherall,University of Washington,security,1.0,0.166666666667,2008
 David Wetherall,University of Washington,security,1.0,0.2,2011
+David Wetherall,University of Washington,security,1.0,0.111111111111,2014
 Gerhard Hirzinger,TU Munich,robotics,1.0,0.5,1992
 Gerhard Hirzinger,TU Munich,robotics,4.0,1.66666666667,1994
 Gerhard Hirzinger,TU Munich,robotics,1.0,0.2,1996
@@ -32542,6 +32729,7 @@ Walter A. Burkhard,University of California - San Diego,arch,1.0,0.333333333333,
 Walter A. Burkhard,University of California - San Diego,arch,1.0,0.25,1998
 Vasileios P. Kemerlis,Brown University,security,2.0,0.583333333333,2012
 Vasileios P. Kemerlis,Brown University,security,1.0,0.25,2013
+Vasileios P. Kemerlis,Brown University,security,1.0,0.333333333333,2014
 Vasileios P. Kemerlis,Brown University,security,1.0,0.25,2015
 Vasileios P. Kemerlis,Brown University,softeng,1.0,0.2,2016
 Jing Chen,Stony Brook University,theory,1.0,0.5,2009
@@ -32681,6 +32869,8 @@ Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.333333333333,2000
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.2,2009
 Lorrie Faith Cranor,Carnegie Mellon University,security,3.0,0.361111111111,2012
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.111111111111,2013
+Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.2,2014
+Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.1,2015
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.25,2006
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.2,2008
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.333333333333,2011
