@@ -101,6 +101,9 @@ Jon Crowcroft,University of Cambridge,arch,1.0,0.111111111111,2013
 Marc González,Polytechnic University of Catalonia,arch,1.0,0.2,2012
 Marc González,Polytechnic University of Catalonia,arch,1.0,0.111111111111,2015
 Marc González,Polytechnic University of Catalonia,highperf,1.0,0.166666666667,2012
+Stefano Lonardi,University of California - Riverside,mlmining,1.0,0.333333333333,2002
+Stefano Lonardi,University of California - Riverside,mlmining,1.0,0.333333333333,2003
+Stefano Lonardi,University of California - Riverside,mlmining,2.0,0.533333333333,2004
 Rakesh V. Vohra,University of Pennsylvania,theory,1.0,0.25,2008
 Xia Hu,Texas A&M University,mlmining,1.0,0.25,2014
 Xia Hu,Texas A&M University,ai,3.0,0.666666666667,2013
@@ -2331,24 +2334,32 @@ Serge J. Belongie,Cornell University,vision,4.0,0.791666666667,2015
 Jeffrey E. Boyd,University of Calgary,vision,1.0,0.5,1994
 Jeffrey E. Boyd,University of Calgary,vision,1.0,0.333333333333,1999
 Jeffrey E. Boyd,University of Calgary,vision,1.0,1.0,2001
-Christos Kozyrakis,EPFL,opsys,1.0,0.166666666667,2012
-Christos Kozyrakis,EPFL,opsys,1.0,0.166666666667,2014
-Christos Kozyrakis,EPFL,database,1.0,0.25,2007
-Christos Kozyrakis,EPFL,proglang,1.0,0.333333333333,2009
-Christos Kozyrakis,EPFL,security,1.0,0.333333333333,2008
-Christos Kozyrakis,EPFL,security,1.0,0.333333333333,2009
-Christos Kozyrakis,EPFL,arch,2.0,0.242857142857,2004
-Christos Kozyrakis,EPFL,arch,2.0,0.267857142857,2006
-Christos Kozyrakis,EPFL,arch,3.0,0.625,2007
-Christos Kozyrakis,EPFL,arch,1.0,0.142857142857,2009
-Christos Kozyrakis,EPFL,arch,3.0,0.944444444444,2010
-Christos Kozyrakis,EPFL,arch,2.0,0.666666666667,2011
-Christos Kozyrakis,EPFL,arch,3.0,1.16666666667,2013
-Christos Kozyrakis,EPFL,arch,2.0,0.7,2014
-Christos Kozyrakis,EPFL,arch,1.0,0.2,2015
-Christos Kozyrakis,EPFL,arch,2.0,0.642857142857,2016
-Christos Kozyrakis,EPFL,highperf,1.0,0.2,2007
-Christos Kozyrakis,EPFL,highperf,1.0,0.2,2009
+Saman P. Amarasinghe,Massachusetts Institute of Technology,graphics,1.0,0.166666666667,2012
+Saman P. Amarasinghe,Massachusetts Institute of Technology,graphics,1.0,0.0909090909091,2016
+Saman P. Amarasinghe,Massachusetts Institute of Technology,opsys,1.0,0.0714285714286,2009
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.833333333333,1993
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.833333333333,2000
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.25,2001
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.583333333333,2003
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.142857142857,2009
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.166666666667,2013
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.25,2014
+Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.291666666667,2015
+Saman P. Amarasinghe,Massachusetts Institute of Technology,security,1.0,0.333333333333,2002
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.142857142857,1998
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.25,1999
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,2.0,0.340909090909,2002
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.0625,2004
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2005
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2006
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2007
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2009
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.2,2012
+Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.25,2013
+Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,2.0,0.533333333333,1995
+Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,1.0,0.2,2005
+Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,1.0,0.2,2009
+Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,1.0,0.333333333333,2016
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,mlmining,2.0,0.583333333333,2012
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,mlmining,1.0,0.333333333333,2013
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,mlmining,1.0,0.25,2015
@@ -3285,11 +3296,16 @@ Aarti Singh,Carnegie Mellon University,ai,1.0,0.5,2016
 Aarti Singh,Carnegie Mellon University,networks,1.0,0.5,2012
 Mark Giesbrecht,University of Waterloo,theory,1.0,1.0,1992
 Mark Giesbrecht,University of Waterloo,theory,1.0,0.333333333333,2000
-Anshumali Shrivastava,Rice University,mlmining,1.0,0.25,2011
-Anshumali Shrivastava,Rice University,mlmining,1.0,0.5,2013
-Anshumali Shrivastava,Rice University,mlmining,3.0,1.33333333333,2014
-Anshumali Shrivastava,Rice University,database,1.0,0.333333333333,2016
-Anshumali Shrivastava,Rice University,web,1.0,0.5,2015
+Vagelis Hristidis,University of California - Riverside,mlmining,1.0,0.142857142857,2010
+Vagelis Hristidis,University of California - Riverside,mlmining,1.0,0.333333333333,2011
+Vagelis Hristidis,University of California - Riverside,mlmining,1.0,0.25,2014
+Vagelis Hristidis,University of California - Riverside,database,1.0,0.333333333333,2001
+Vagelis Hristidis,University of California - Riverside,database,1.0,0.5,2002
+Vagelis Hristidis,University of California - Riverside,database,1.0,0.333333333333,2003
+Vagelis Hristidis,University of California - Riverside,database,2.0,0.583333333333,2004
+Vagelis Hristidis,University of California - Riverside,database,1.0,0.25,2006
+Vagelis Hristidis,University of California - Riverside,database,1.0,0.2,2010
+Vagelis Hristidis,University of California - Riverside,database,1.0,0.25,2014
 Chinmay Kulkarni,Carnegie Mellon University,ai,1.0,0.2,2016
 Luc Devroye,McGill University,theory,1.0,0.25,2007
 Milos Prvulovic,Georgia Institute of Technology,softeng,1.0,0.25,2007
@@ -4372,8 +4388,17 @@ S. Muthukrishnan,Rutgers University,web,2.0,0.833333333333,2010
 S. Muthukrishnan,Rutgers University,web,1.0,0.2,2011
 S. Muthukrishnan,Rutgers University,web,1.0,0.2,2014
 S. Muthukrishnan,Rutgers University,web,1.0,0.25,2016
-Gary K. Fedder,Carnegie Mellon University,hci,1.0,0.25,2013
-Gary K. Fedder,Carnegie Mellon University,robotics,1.0,0.166666666667,2007
+Bir Bhanu,University of California - Riverside,mlmining,1.0,0.5,2003
+Bir Bhanu,University of California - Riverside,robotics,1.0,0.5,1994
+Bir Bhanu,University of California - Riverside,robotics,1.0,0.2,2001
+Bir Bhanu,University of California - Riverside,vision,1.0,0.5,1995
+Bir Bhanu,University of California - Riverside,vision,2.0,1.0,1996
+Bir Bhanu,University of California - Riverside,vision,1.0,0.5,1999
+Bir Bhanu,University of California - Riverside,vision,2.0,0.75,2003
+Bir Bhanu,University of California - Riverside,vision,1.0,0.5,2005
+Bir Bhanu,University of California - Riverside,vision,1.0,0.5,2007
+Bir Bhanu,University of California - Riverside,vision,1.0,0.5,2009
+Bir Bhanu,University of California - Riverside,vision,1.0,0.25,2014
 Ian T. Foster,University of Chicago,networks,1.0,0.333333333333,2004
 Ian T. Foster,University of Chicago,security,1.0,0.25,1998
 Ian T. Foster,University of Chicago,highperf,1.0,0.0384615384615,1993
@@ -6803,6 +6828,23 @@ Bryan Ford,EPFL,security,1.0,0.2,2007
 Bryan Ford,EPFL,security,1.0,0.5,2010
 Bryan Ford,EPFL,security,3.0,0.916666666667,2013
 Bryan Ford,EPFL,arch,1.0,0.25,2013
+Michalis Faloutsos,University of California - Riverside,metrics,1.0,0.25,2004
+Michalis Faloutsos,University of California - Riverside,mlmining,1.0,0.2,2009
+Michalis Faloutsos,University of California - Riverside,networks,1.0,0.333333333333,1998
+Michalis Faloutsos,University of California - Riverside,networks,1.0,0.333333333333,1999
+Michalis Faloutsos,University of California - Riverside,networks,4.0,1.33333333333,2004
+Michalis Faloutsos,University of California - Riverside,networks,1.0,0.333333333333,2005
+Michalis Faloutsos,University of California - Riverside,networks,2.0,0.533333333333,2006
+Michalis Faloutsos,University of California - Riverside,networks,3.0,0.916666666667,2007
+Michalis Faloutsos,University of California - Riverside,networks,4.0,1.03333333333,2008
+Michalis Faloutsos,University of California - Riverside,networks,2.0,0.666666666667,2013
+Michalis Faloutsos,University of California - Riverside,networks,1.0,0.2,2015
+Michalis Faloutsos,University of California - Riverside,mobile,1.0,0.2,2007
+Michalis Faloutsos,University of California - Riverside,mobile,1.0,0.25,2012
+Michalis Faloutsos,University of California - Riverside,web,1.0,0.25,2013
+Michalis Faloutsos,University of California - Riverside,web,1.0,0.2,2015
+Michalis Faloutsos,University of California - Riverside,security,1.0,0.25,2012
+Michalis Faloutsos,University of California - Riverside,softeng,1.0,0.25,2012
 Allen Tannenbaum,Stony Brook University,vision,1.0,0.5,1994
 Allen Tannenbaum,Stony Brook University,vision,1.0,0.2,1995
 Allen Tannenbaum,Stony Brook University,vision,1.0,0.333333333333,1996
@@ -7144,6 +7186,17 @@ Eli Upfal,Brown University,database,1.0,0.166666666667,2007
 Eli Upfal,Brown University,database,1.0,0.166666666667,2009
 Eli Upfal,Brown University,database,1.0,0.333333333333,2010
 Eli Upfal,Brown University,database,1.0,0.25,2011
+Vassilis J. Tsotras,University of California - Riverside,mlmining,1.0,0.25,2014
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.333333333333,1999
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.25,2000
+Vassilis J. Tsotras,University of California - Riverside,database,2.0,0.533333333333,2001
+Vassilis J. Tsotras,University of California - Riverside,database,2.0,0.533333333333,2002
+Vassilis J. Tsotras,University of California - Riverside,database,2.0,0.583333333333,2005
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.333333333333,2007
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.5,2010
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.25,2012
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.25,2013
+Vassilis J. Tsotras,University of California - Riverside,database,1.0,0.0434782608696,2014
 Ashutosh Saxena,Cornell University,nlp,1.0,0.25,2015
 Ashutosh Saxena,Cornell University,mlmining,2.0,0.666666666667,2005
 Ashutosh Saxena,Cornell University,mlmining,1.0,0.25,2006
@@ -7474,6 +7527,29 @@ Matthew Green 0001,Johns Hopkins University,security,1.0,0.25,2012
 Matthew Green 0001,Johns Hopkins University,security,2.0,0.583333333333,2013
 Matthew Green 0001,Johns Hopkins University,security,2.0,0.242857142857,2014
 Matthew Green 0001,Johns Hopkins University,security,2.0,0.271428571429,2015
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.5,1997
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.333333333333,2001
+Eamonn J. Keogh,University of California - Riverside,mlmining,2.0,0.833333333333,2002
+Eamonn J. Keogh,University of California - Riverside,mlmining,2.0,0.583333333333,2003
+Eamonn J. Keogh,University of California - Riverside,mlmining,2.0,0.533333333333,2004
+Eamonn J. Keogh,University of California - Riverside,mlmining,3.0,0.9,2006
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.2,2007
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.5,2008
+Eamonn J. Keogh,University of California - Riverside,mlmining,2.0,0.75,2009
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.5,2010
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.333333333333,2011
+Eamonn J. Keogh,University of California - Riverside,mlmining,1.0,0.125,2012
+Eamonn J. Keogh,University of California - Riverside,mlmining,2.0,0.416666666667,2013
+Eamonn J. Keogh,University of California - Riverside,mlmining,3.0,0.583333333333,2015
+Eamonn J. Keogh,University of California - Riverside,ai,1.0,0.5,2013
+Eamonn J. Keogh,University of California - Riverside,database,1.0,0.25,2001
+Eamonn J. Keogh,University of California - Riverside,database,1.0,1.0,2002
+Eamonn J. Keogh,University of California - Riverside,database,1.0,0.2,2004
+Eamonn J. Keogh,University of California - Riverside,database,1.0,0.25,2005
+Eamonn J. Keogh,University of California - Riverside,database,1.0,0.2,2006
+Eamonn J. Keogh,University of California - Riverside,database,1.0,0.2,2008
+Eamonn J. Keogh,University of California - Riverside,database,1.0,0.5,2014
+Eamonn J. Keogh,University of California - Riverside,web,1.0,0.5,1999
 Bernhard Haeupler,Carnegie Mellon University,theory,2.0,0.666666666667,2010
 Bernhard Haeupler,Carnegie Mellon University,theory,1.0,1.0,2011
 Bernhard Haeupler,Carnegie Mellon University,theory,1.0,0.25,2012
@@ -7527,6 +7603,12 @@ Munindar P. Singh,North Carolina State University,web,1.0,0.5,2016
 Ronald Rosenfeld,Carnegie Mellon University,mlmining,1.0,0.5,1987
 Ronald Rosenfeld,Carnegie Mellon University,mlmining,1.0,0.5,1990
 Ronald Rosenfeld,Carnegie Mellon University,mlmining,1.0,0.25,1998
+Zhijia Zhao,University of California - Riverside,hci,1.0,0.333333333333,2014
+Zhijia Zhao,University of California - Riverside,proglang,1.0,0.166666666667,2012
+Zhijia Zhao,University of California - Riverside,proglang,1.0,0.142857142857,2014
+Zhijia Zhao,University of California - Riverside,arch,2.0,0.533333333333,2014
+Zhijia Zhao,University of California - Riverside,arch,1.0,0.5,2015
+Zhijia Zhao,University of California - Riverside,highperf,1.0,0.2,2013
 Stefan Roth,TU Darmstadt,mlmining,1.0,0.333333333333,2005
 Stefan Roth,TU Darmstadt,robotics,1.0,0.125,2010
 Stefan Roth,TU Darmstadt,vision,1.0,0.5,2005
@@ -10302,6 +10384,9 @@ Michelle Mills Strout,University of Arizona,proglang,1.0,0.25,2007
 Michelle Mills Strout,University of Arizona,arch,1.0,0.25,1998
 Michelle Mills Strout,University of Arizona,highperf,1.0,0.2,2007
 Michelle Mills Strout,University of Arizona,highperf,1.0,0.2,2014
+Ahmed Eldawy,University of California - Riverside,database,1.0,0.166666666667,2011
+Ahmed Eldawy,University of California - Riverside,database,1.0,0.142857142857,2013
+Ahmed Eldawy,University of California - Riverside,database,1.0,0.333333333333,2014
 Shrikanth Narayanan,University of Southern California,nlp,1.0,0.1,2005
 Shrikanth Narayanan,University of Southern California,nlp,2.0,0.666666666667,2006
 Shrikanth Narayanan,University of Southern California,nlp,1.0,0.333333333333,2007
@@ -10460,6 +10545,55 @@ Xin Li 0006,Johns Hopkins University,theory,2.0,2.0,2012
 Xin Li 0006,Johns Hopkins University,theory,2.0,2.0,2013
 Xin Li 0006,Johns Hopkins University,theory,1.0,1.0,2015
 Xin Li 0006,Johns Hopkins University,theory,1.0,0.333333333333,2016
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1989
+Rajiv Gupta,University of California - Riverside,proglang,1.0,1.0,1990
+Rajiv Gupta,University of California - Riverside,proglang,1.0,1.0,1992
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1993
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1995
+Rajiv Gupta,University of California - Riverside,proglang,2.0,0.833333333333,1997
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1998
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1999
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,2000
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.5,2001
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.5,2003
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.5,2004
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,2006
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.25,2007
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,2010
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,2012
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,2014
+Rajiv Gupta,University of California - Riverside,proglang,1.0,0.166666666667,2015
+Rajiv Gupta,University of California - Riverside,robotics,1.0,0.166666666667,1995
+Rajiv Gupta,University of California - Riverside,robotics,1.0,0.166666666667,2010
+Rajiv Gupta,University of California - Riverside,robotics,1.0,0.25,2012
+Rajiv Gupta,University of California - Riverside,robotics,1.0,0.125,2014
+Rajiv Gupta,University of California - Riverside,softeng,1.0,0.5,1995
+Rajiv Gupta,University of California - Riverside,softeng,1.0,0.333333333333,1996
+Rajiv Gupta,University of California - Riverside,softeng,1.0,0.333333333333,2003
+Rajiv Gupta,University of California - Riverside,softeng,1.0,0.333333333333,2004
+Rajiv Gupta,University of California - Riverside,softeng,2.0,0.75,2005
+Rajiv Gupta,University of California - Riverside,softeng,2.0,0.666666666667,2006
+Rajiv Gupta,University of California - Riverside,arch,1.0,1.0,1989
+Rajiv Gupta,University of California - Riverside,arch,1.0,1.0,1990
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.5,1991
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.2,1993
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.333333333333,1997
+Rajiv Gupta,University of California - Riverside,arch,2.0,0.833333333333,1999
+Rajiv Gupta,University of California - Riverside,arch,2.0,0.666666666667,2000
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.5,2002
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.5,2004
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.5,2005
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.25,2008
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.5,2009
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.25,2012
+Rajiv Gupta,University of California - Riverside,arch,1.0,0.333333333333,2015
+Rajiv Gupta,University of California - Riverside,highperf,4.0,2.83333333333,1990
+Rajiv Gupta,University of California - Riverside,highperf,1.0,0.333333333333,1992
+Rajiv Gupta,University of California - Riverside,highperf,1.0,0.333333333333,1996
+Rajiv Gupta,University of California - Riverside,highperf,2.0,0.583333333333,2011
+Rajiv Gupta,University of California - Riverside,highperf,1.0,0.333333333333,2014
+Rajiv Gupta,University of California - Riverside,vision,1.0,0.5,1993
+Rajiv Gupta,University of California - Riverside,vision,1.0,0.5,1994
 Margrit Betke,Boston University,robotics,1.0,0.5,1994
 Margrit Betke,Boston University,vision,1.0,0.5,1995
 Margrit Betke,Boston University,vision,1.0,0.5,1998
@@ -11201,6 +11335,20 @@ Christophe Dubach,University of Edinburgh,arch,1.0,0.333333333333,2007
 Christophe Dubach,University of Edinburgh,arch,1.0,0.2,2009
 Christophe Dubach,University of Edinburgh,arch,1.0,0.25,2010
 Christophe Dubach,University of Edinburgh,highperf,1.0,0.333333333333,2013
+Chengyu Song,University of California - Riverside,opsys,1.0,0.2,2015
+Chengyu Song,University of California - Riverside,networks,1.0,0.166666666667,2015
+Chengyu Song,University of California - Riverside,security,2.0,0.366666666667,2014
+Chengyu Song,University of California - Riverside,security,2.0,0.416666666667,2015
+Chinya V. Ravishankar,University of California - Riverside,database,1.0,0.25,1993
+Chinya V. Ravishankar,University of California - Riverside,database,1.0,0.5,1994
+Chinya V. Ravishankar,University of California - Riverside,database,1.0,0.5,1996
+Chinya V. Ravishankar,University of California - Riverside,database,2.0,0.833333333333,2004
+Chinya V. Ravishankar,University of California - Riverside,database,1.0,0.333333333333,2005
+Chinya V. Ravishankar,University of California - Riverside,networks,1.0,0.5,1996
+Chinya V. Ravishankar,University of California - Riverside,networks,1.0,0.5,1998
+Chinya V. Ravishankar,University of California - Riverside,networks,1.0,0.333333333333,2006
+Chinya V. Ravishankar,University of California - Riverside,networks,1.0,0.333333333333,2007
+Chinya V. Ravishankar,University of California - Riverside,robotics,1.0,0.333333333333,1999
 Vadim Bulitko,University of Alberta,ai,1.0,0.5,2004
 Vadim Bulitko,University of Alberta,ai,1.0,0.333333333333,2005
 Vadim Bulitko,University of Alberta,ai,1.0,0.5,2006
@@ -11409,6 +11557,20 @@ Jean-Pierre Hubaux,EPFL,security,1.0,0.25,2013
 Jean-Pierre Hubaux,EPFL,security,1.0,0.142857142857,2014
 Jean-Pierre Hubaux,EPFL,security,2.0,0.45,2015
 Julian C. Bradfield,University of Edinburgh,logic,1.0,1.0,1992
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2002
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.333333333333,2005
+Laxmi N. Bhuyan,University of California - Riverside,networks,2.0,0.833333333333,2007
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.25,2008
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.25,2009
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2010
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2011
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.5,1982
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,1.0,1984
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.5,1987
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.25,1989
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.333333333333,2015
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.5,1992
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.333333333333,1994
 Partha Dasgupta,Arizona State University,proglang,1.0,1.0,1986
 Barbara Engelhardt,Princeton University,mlmining,1.0,0.5,2016
 Barbara Engelhardt,Princeton University,ai,1.0,0.5,2003
@@ -11602,6 +11764,7 @@ C. R. Ramakrishnan,Stony Brook University,mobile,1.0,0.2,2008
 C. R. Ramakrishnan,Stony Brook University,web,1.0,0.25,2009
 C. R. Ramakrishnan,Stony Brook University,logic,1.0,0.166666666667,1997
 C. R. Ramakrishnan,Stony Brook University,security,1.0,0.25,2007
+Davide Careglio,Polytechnic University of Catalonia,networks,1.0,0.0526315789474,2006
 Farnam Jahanian,Carnegie Mellon University,metrics,1.0,0.2,2010
 Farnam Jahanian,Carnegie Mellon University,networks,1.0,0.333333333333,1997
 Farnam Jahanian,Carnegie Mellon University,networks,1.0,0.5,1998
@@ -13907,6 +14070,7 @@ Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.333333333333,2011
 Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.2,2013
 Benjamin C. Pierce,University of Pennsylvania,security,1.0,0.142857142857,2015
 Benjamin C. Pierce,University of Pennsylvania,arch,1.0,0.111111111111,2015
+Joe Geigel,Rochester Institute of Technology,graphics,1.0,0.5,1997
 Mark Handley,University College London,metrics,1.0,0.166666666667,2011
 Mark Handley,University College London,networks,1.0,0.333333333333,1995
 Mark Handley,University College London,networks,1.0,0.5,1997
@@ -14242,6 +14406,7 @@ Jan Prins,University of North Carolina - Chapel Hill,arch,1.0,0.25,1982
 Jan Prins,University of North Carolina - Chapel Hill,highperf,1.0,0.5,1993
 Vijaykrishnan Narayanan,Pennsylvania State University,arch,1.0,0.166666666667,2006
 Vijaykrishnan Narayanan,Pennsylvania State University,arch,1.0,0.25,2014
+Qi Zhu,University of California - Riverside,robotics,1.0,0.333333333333,2004
 Rajesh K. Gupta,University of California - San Diego,theory,1.0,0.333333333333,2003
 Rajesh K. Gupta,University of California - San Diego,networks,1.0,0.5,2011
 Rajesh K. Gupta,University of California - San Diego,mobile,1.0,0.25,2006
@@ -14638,32 +14803,24 @@ Quentin F. Stout,University of Michigan,highperf,1.0,0.166666666667,1997
 Quentin F. Stout,University of Michigan,highperf,1.0,0.166666666667,1998
 Quentin F. Stout,University of Michigan,highperf,1.0,0.333333333333,2000
 Quentin F. Stout,University of Michigan,highperf,1.0,0.5,2006
-Saman P. Amarasinghe,Massachusetts Institute of Technology,graphics,1.0,0.166666666667,2012
-Saman P. Amarasinghe,Massachusetts Institute of Technology,graphics,1.0,0.0909090909091,2016
-Saman P. Amarasinghe,Massachusetts Institute of Technology,opsys,1.0,0.0714285714286,2009
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.833333333333,1993
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.833333333333,2000
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.25,2001
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.583333333333,2003
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.142857142857,2009
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.166666666667,2013
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.25,2014
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.291666666667,2015
-Saman P. Amarasinghe,Massachusetts Institute of Technology,security,1.0,0.333333333333,2002
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.142857142857,1998
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.25,1999
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,2.0,0.340909090909,2002
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.0625,2004
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2005
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2006
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2007
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.333333333333,2009
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.2,2012
-Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.25,2013
-Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,2.0,0.533333333333,1995
-Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,1.0,0.2,2005
-Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,1.0,0.2,2009
-Saman P. Amarasinghe,Massachusetts Institute of Technology,highperf,1.0,0.333333333333,2016
+Christos Kozyrakis,EPFL,opsys,1.0,0.166666666667,2012
+Christos Kozyrakis,EPFL,opsys,1.0,0.166666666667,2014
+Christos Kozyrakis,EPFL,database,1.0,0.25,2007
+Christos Kozyrakis,EPFL,proglang,1.0,0.333333333333,2009
+Christos Kozyrakis,EPFL,security,1.0,0.333333333333,2008
+Christos Kozyrakis,EPFL,security,1.0,0.333333333333,2009
+Christos Kozyrakis,EPFL,arch,2.0,0.242857142857,2004
+Christos Kozyrakis,EPFL,arch,2.0,0.267857142857,2006
+Christos Kozyrakis,EPFL,arch,3.0,0.625,2007
+Christos Kozyrakis,EPFL,arch,1.0,0.142857142857,2009
+Christos Kozyrakis,EPFL,arch,3.0,0.944444444444,2010
+Christos Kozyrakis,EPFL,arch,2.0,0.666666666667,2011
+Christos Kozyrakis,EPFL,arch,3.0,1.16666666667,2013
+Christos Kozyrakis,EPFL,arch,2.0,0.7,2014
+Christos Kozyrakis,EPFL,arch,1.0,0.2,2015
+Christos Kozyrakis,EPFL,arch,2.0,0.642857142857,2016
+Christos Kozyrakis,EPFL,highperf,1.0,0.2,2007
+Christos Kozyrakis,EPFL,highperf,1.0,0.2,2009
 Boris Grot,University of Edinburgh,database,1.0,0.333333333333,2015
 Boris Grot,University of Edinburgh,arch,1.0,0.333333333333,2009
 Boris Grot,University of Edinburgh,arch,1.0,0.25,2011
@@ -14935,7 +15092,9 @@ Ken Perlin,New York University,graphics,1.0,0.5,2009
 Ken Perlin,New York University,graphics,1.0,0.25,2014
 Ken Perlin,New York University,hci,1.0,0.5,2012
 Ken Perlin,New York University,hci,1.0,0.25,2014
-Carey Williamson,University of Calgary,hci,1.0,0.333333333333,2011
+Daniel Wong 0001,University of California - Riverside,arch,1.0,0.2,2010
+Daniel Wong 0001,University of California - Riverside,arch,1.0,0.5,2012
+Daniel Wong 0001,University of California - Riverside,arch,1.0,0.333333333333,2013
 Daniel E. Atkins,University of Michigan,highperf,1.0,0.2,2006
 Shaun K. Kane,University of Colorado Boulder,hci,1.0,0.142857142857,2009
 Shaun K. Kane,University of Colorado Boulder,hci,1.0,0.25,2010
@@ -15426,6 +15585,12 @@ Steve Renals,University of Edinburgh,nlp,1.0,0.25,2006
 Steve Renals,University of Edinburgh,nlp,1.0,1.0,2010
 Steve Renals,University of Edinburgh,mlmining,1.0,0.2,1991
 Steve Renals,University of Edinburgh,mlmining,1.0,0.333333333333,1993
+Shaolei Ren,University of California - Riverside,networks,1.0,0.333333333333,2011
+Shaolei Ren,University of California - Riverside,networks,1.0,0.333333333333,2012
+Shaolei Ren,University of California - Riverside,networks,1.0,0.25,2013
+Shaolei Ren,University of California - Riverside,networks,1.0,0.25,2015
+Shaolei Ren,University of California - Riverside,web,1.0,0.25,2015
+Shaolei Ren,University of California - Riverside,highperf,1.0,0.5,2013
 Kousha Etessami,University of Edinburgh,theory,1.0,0.5,2007
 Kousha Etessami,University of Edinburgh,theory,1.0,0.333333333333,2012
 Kousha Etessami,University of Edinburgh,database,1.0,1.0,1998
@@ -15506,16 +15671,12 @@ Ren Ng,University of California - Berkeley,graphics,1.0,0.2,2006
 Ren Ng,University of California - Berkeley,vision,1.0,0.25,2015
 Ivona Bezáková,Rochester Institute of Technology,theory,2.0,0.583333333333,2006
 Ivona Bezáková,Rochester Institute of Technology,mlmining,1.0,0.333333333333,2006
-Matthew Flatt,University of Utah,opsys,1.0,0.2,2000
-Matthew Flatt,University of Utah,proglang,1.0,0.2,1996
-Matthew Flatt,University of Utah,proglang,2.0,0.833333333333,1998
-Matthew Flatt,University of Utah,proglang,1.0,0.333333333333,2001
-Matthew Flatt,University of Utah,proglang,2.0,0.833333333333,2004
-Matthew Flatt,University of Utah,proglang,1.0,0.333333333333,2005
-Matthew Flatt,University of Utah,proglang,2.0,0.533333333333,2010
-Matthew Flatt,University of Utah,proglang,1.0,0.2,2011
-Matthew Flatt,University of Utah,proglang,2.0,0.35,2012
-Matthew Flatt,University of Utah,proglang,1.0,1.0,2016
+Claudio Orlandi,Aarhus University,crypto,1.0,0.5,2010
+Claudio Orlandi,Aarhus University,crypto,1.0,0.25,2011
+Claudio Orlandi,Aarhus University,crypto,1.0,0.25,2012
+Claudio Orlandi,Aarhus University,crypto,1.0,0.2,2013
+Claudio Orlandi,Aarhus University,crypto,1.0,0.333333333333,2015
+Claudio Orlandi,Aarhus University,security,1.0,0.333333333333,2013
 Ryan B. Hayward,University of Alberta,theory,1.0,0.333333333333,2002
 Ryan B. Hayward,University of Alberta,ai,1.0,0.333333333333,2009
 Rephael Wenger,Ohio State University,theory,1.0,0.25,2006
@@ -15659,6 +15820,8 @@ John T. Stasko,Georgia Institute of Technology,hci,1.0,0.2,2011
 John T. Stasko,Georgia Institute of Technology,softeng,1.0,0.5,1993
 John T. Stasko,Georgia Institute of Technology,softeng,1.0,0.333333333333,1997
 John T. Stasko,Georgia Institute of Technology,softeng,1.0,0.333333333333,2002
+Jim Davies,University of Oxford,ai,1.0,0.5,2001
+Jim Davies,University of Oxford,softeng,1.0,0.2,2003
 Morteza Dehghani,University of Southern California,ai,1.0,0.333333333333,2007
 Morteza Dehghani,University of Southern California,ai,1.0,0.25,2008
 Peter Robinson 0001,University of Cambridge,hci,1.0,0.5,1996
@@ -15739,6 +15902,17 @@ Jason I. Hong,Carnegie Mellon University,web,1.0,0.333333333333,2007
 Jason I. Hong,Carnegie Mellon University,web,1.0,0.5,2009
 Jason I. Hong,Carnegie Mellon University,security,1.0,0.142857142857,2012
 Jason I. Hong,Carnegie Mellon University,security,1.0,0.25,2014
+Paul Valiant,Brown University,theory,1.0,0.333333333333,2005
+Paul Valiant,Brown University,theory,1.0,0.333333333333,2007
+Paul Valiant,Brown University,theory,1.0,1.0,2008
+Paul Valiant,Brown University,theory,1.0,0.25,2009
+Paul Valiant,Brown University,theory,2.0,1.0,2011
+Paul Valiant,Brown University,theory,1.0,0.5,2012
+Paul Valiant,Brown University,theory,1.0,0.2,2013
+Paul Valiant,Brown University,theory,2.0,0.75,2014
+Paul Valiant,Brown University,theory,1.0,0.5,2016
+Paul Valiant,Brown University,mlmining,1.0,0.5,2013
+Paul Valiant,Brown University,networks,1.0,0.25,2006
 Lili Qiu,University of Texas - Austin,metrics,1.0,0.25,2005
 Lili Qiu,University of Texas - Austin,metrics,1.0,0.2,2009
 Lili Qiu,University of Texas - Austin,metrics,1.0,0.25,2011
@@ -17857,6 +18031,10 @@ Mohammad Alizadeh,Massachusetts Institute of Technology,networks,1.0,0.125,2010
 Mohammad Alizadeh,Massachusetts Institute of Technology,networks,1.0,0.166666666667,2012
 Mohammad Alizadeh,Massachusetts Institute of Technology,networks,2.0,0.309523809524,2013
 Mohammad Alizadeh,Massachusetts Institute of Technology,networks,2.0,0.290909090909,2014
+Tamar Shinar,University of California - Riverside,graphics,1.0,0.25,2006
+Tamar Shinar,University of California - Riverside,graphics,1.0,0.333333333333,2007
+Tamar Shinar,University of California - Riverside,graphics,1.0,0.2,2008
+Tamar Shinar,University of California - Riverside,graphics,1.0,0.25,2016
 Adam Finkelstein,Princeton University,graphics,1.0,0.5,1994
 Adam Finkelstein,Princeton University,graphics,1.0,0.333333333333,1995
 Adam Finkelstein,Princeton University,graphics,1.0,0.333333333333,1996
@@ -19282,6 +19460,10 @@ Etienne Vouga,University of Texas - Austin,graphics,2.0,0.416666666667,2013
 Etienne Vouga,University of Texas - Austin,graphics,1.0,0.333333333333,2015
 Etienne Vouga,University of Texas - Austin,graphics,2.0,0.290909090909,2016
 Gene Cooperman,Northeastern University,theory,1.0,0.2,1991
+Craig Schroeder,University of California - Riverside,graphics,1.0,0.2,2013
+Craig Schroeder,University of California - Riverside,graphics,1.0,0.166666666667,2014
+Craig Schroeder,University of California - Riverside,graphics,1.0,0.2,2015
+Craig Schroeder,University of California - Riverside,graphics,1.0,0.142857142857,2016
 Anna Gál,University of Texas - Austin,theory,1.0,1.0,1991
 Anna Gál,University of Texas - Austin,theory,1.0,0.333333333333,1995
 Anna Gál,University of Texas - Austin,theory,1.0,0.166666666667,1996
@@ -19985,6 +20167,11 @@ Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,0.5,2007
 Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,0.333333333333,2008
 Roderic A. Grupen,University of Massachusetts - Amherst,robotics,1.0,0.25,2011
 Roderic A. Grupen,University of Massachusetts - Amherst,vision,1.0,0.5,1999
+Nael B. Abu-Ghazaleh,University of California - Riverside,networks,1.0,0.333333333333,2013
+Nael B. Abu-Ghazaleh,University of California - Riverside,networks,2.0,0.833333333333,2014
+Nael B. Abu-Ghazaleh,University of California - Riverside,mobile,1.0,0.25,2001
+Nael B. Abu-Ghazaleh,University of California - Riverside,arch,1.0,0.25,2012
+Nael B. Abu-Ghazaleh,University of California - Riverside,arch,1.0,0.166666666667,2014
 Malcolm P. Atkinson,University of Edinburgh,database,1.0,0.5,1986
 Malcolm P. Atkinson,University of Edinburgh,database,1.0,0.25,1987
 Malcolm P. Atkinson,University of Edinburgh,database,1.0,0.333333333333,2001
@@ -20089,6 +20276,16 @@ Christopher Umans,California Institute of Technology,theory,2.0,1.5,2008
 Christopher Umans,California Institute of Technology,theory,1.0,0.5,2009
 Christopher Umans,California Institute of Technology,theory,1.0,0.111111111111,2010
 Christopher Umans,California Institute of Technology,theory,1.0,0.5,2013
+Marek Chrobak,University of California - Riverside,theory,1.0,0.5,1986
+Marek Chrobak,University of California - Riverside,theory,1.0,0.25,1990
+Marek Chrobak,University of California - Riverside,theory,1.0,0.25,1991
+Marek Chrobak,University of California - Riverside,theory,1.0,0.5,1992
+Marek Chrobak,University of California - Riverside,theory,1.0,0.5,1998
+Marek Chrobak,University of California - Riverside,theory,1.0,0.333333333333,2000
+Marek Chrobak,University of California - Riverside,theory,1.0,0.333333333333,2004
+Marek Chrobak,University of California - Riverside,theory,1.0,0.142857142857,2009
+Marek Chrobak,University of California - Riverside,theory,1.0,0.166666666667,2014
+Marek Chrobak,University of California - Riverside,networks,1.0,0.25,2008
 Richard W. Vuduc,Georgia Institute of Technology,proglang,1.0,0.25,2012
 Richard W. Vuduc,Georgia Institute of Technology,arch,1.0,0.25,2010
 Richard W. Vuduc,Georgia Institute of Technology,arch,1.0,0.142857142857,2014
@@ -20253,6 +20450,11 @@ Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,3.0,1.5,
 Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,2.0,0.533333333333,2005
 Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,1.0,0.5,2007
 Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,1.0,0.5,2014
+Anshumali Shrivastava,Rice University,mlmining,1.0,0.25,2011
+Anshumali Shrivastava,Rice University,mlmining,1.0,0.5,2013
+Anshumali Shrivastava,Rice University,mlmining,3.0,1.33333333333,2014
+Anshumali Shrivastava,Rice University,database,1.0,0.333333333333,2016
+Anshumali Shrivastava,Rice University,web,1.0,0.5,2015
 Michael Kaminski,Technion,theory,1.0,0.5,1990
 Yuval Ishai,Technion,theory,2.0,0.583333333333,1998
 Yuval Ishai,Technion,theory,2.0,0.75,1999
@@ -20558,7 +20760,14 @@ Erez Petrank,Technion,logic,1.0,0.25,2015
 Erez Petrank,Technion,highperf,1.0,0.5,2011
 Erez Petrank,Technion,highperf,1.0,0.5,2012
 Erez Petrank,Technion,highperf,1.0,0.5,2014
-Joe Geigel,Rochester Institute of Technology,graphics,1.0,0.5,1997
+Matei Zaharia,Massachusetts Institute of Technology,opsys,1.0,0.2,2008
+Matei Zaharia,Massachusetts Institute of Technology,opsys,2.0,0.416666666667,2013
+Matei Zaharia,Massachusetts Institute of Technology,opsys,1.0,0.25,2015
+Matei Zaharia,Massachusetts Institute of Technology,database,1.0,0.166666666667,2013
+Matei Zaharia,Massachusetts Institute of Technology,database,1.0,0.0909090909091,2015
+Matei Zaharia,Massachusetts Institute of Technology,database,1.0,0.0909090909091,2016
+Matei Zaharia,Massachusetts Institute of Technology,networks,3.0,0.491666666667,2011
+Matei Zaharia,Massachusetts Institute of Technology,networks,2.0,0.361111111111,2012
 Dana H. Ballard,University of Texas - Austin,mlmining,1.0,0.333333333333,1988
 Dana H. Ballard,University of Texas - Austin,mlmining,1.0,0.5,1992
 Dana H. Ballard,University of Texas - Austin,mlmining,2.0,1.0,1994
@@ -20678,6 +20887,15 @@ Cyrus Shahabi,University of Southern California,database,1.0,0.333333333333,2012
 Cyrus Shahabi,University of Southern California,database,1.0,0.333333333333,2013
 Cyrus Shahabi,University of Southern California,database,1.0,0.333333333333,2014
 Cyrus Shahabi,University of Southern California,database,1.0,0.2,2015
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,1.0,0.5,2005
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,4.0,1.5,2007
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,2.0,1.0,2008
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,1.0,0.333333333333,2009
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,2.0,0.75,2010
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,2.0,0.291666666667,2011
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,2.0,0.666666666667,2013
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,3.0,1.33333333333,2014
+Amit K. Roy-Chowdhury,University of California - Riverside,vision,1.0,0.5,2015
 Eva Marín-Tordera,Polytechnic University of Catalonia,networks,1.0,0.166666666667,2008
 Alexander Schill,TU Dresden,networks,1.0,0.333333333333,1997
 James Aspnes,Yale University,theory,2.0,0.583333333333,1991
@@ -23890,6 +24108,29 @@ Max Mühlhäuser,TU Darmstadt,softeng,1.0,1.0,1988
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1.0,0.25,2009
 Cynthia Sturton,University of North Carolina - Chapel Hill,security,1.0,0.25,2011
 Cynthia Sturton,University of North Carolina - Chapel Hill,arch,1.0,0.25,2015
+K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.333333333333,1992
+K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.5,1993
+K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.5,1997
+K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.333333333333,1998
+K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.25,2004
+K. K. Ramakrishnan,University of California - Riverside,metrics,2.0,0.4,2011
+K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.5,2013
+K. K. Ramakrishnan,University of California - Riverside,database,1.0,0.25,2010
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,1.0,1986
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.5,1988
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.5,1990
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.333333333333,1992
+K. K. Ramakrishnan,University of California - Riverside,networks,2.0,0.833333333333,1996
+K. K. Ramakrishnan,University of California - Riverside,networks,4.0,1.41666666667,1997
+K. K. Ramakrishnan,University of California - Riverside,networks,3.0,1.16666666667,1998
+K. K. Ramakrishnan,University of California - Riverside,networks,3.0,1.0,1999
+K. K. Ramakrishnan,University of California - Riverside,networks,2.0,0.4,2000
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.2,2007
+K. K. Ramakrishnan,University of California - Riverside,networks,2.0,0.4,2009
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.333333333333,2011
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.125,2013
+K. K. Ramakrishnan,University of California - Riverside,networks,3.0,0.7,2014
+K. K. Ramakrishnan,University of California - Riverside,networks,1.0,0.166666666667,2015
 Michael Collins,Columbia University,nlp,1.0,1.0,1996
 Michael Collins,Columbia University,nlp,1.0,1.0,1997
 Michael Collins,Columbia University,nlp,1.0,0.25,1999
@@ -24106,12 +24347,13 @@ Ziv Bar-Joseph,Carnegie Mellon University,graphics,1.0,0.333333333333,2009
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1.0,0.2,2005
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1.0,0.5,2010
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1.0,0.5,2011
-Claudio Orlandi,Aarhus University,crypto,1.0,0.5,2010
-Claudio Orlandi,Aarhus University,crypto,1.0,0.25,2011
-Claudio Orlandi,Aarhus University,crypto,1.0,0.25,2012
-Claudio Orlandi,Aarhus University,crypto,1.0,0.2,2013
-Claudio Orlandi,Aarhus University,crypto,1.0,0.333333333333,2015
-Claudio Orlandi,Aarhus University,security,1.0,0.333333333333,2013
+Carey Williamson,University of Calgary,hci,1.0,0.333333333333,2011
+Zhiyun Qian,University of California - Riverside,database,1.0,0.125,2015
+Zhiyun Qian,University of California - Riverside,networks,1.0,0.2,2011
+Zhiyun Qian,University of California - Riverside,security,1.0,0.25,2010
+Zhiyun Qian,University of California - Riverside,security,2.0,0.833333333333,2012
+Zhiyun Qian,University of California - Riverside,security,1.0,0.333333333333,2014
+Zhiyun Qian,University of California - Riverside,security,2.0,0.533333333333,2015
 José M. Llabería,Polytechnic University of Catalonia,arch,1.0,0.25,1985
 José M. Llabería,Polytechnic University of Catalonia,arch,1.0,0.333333333333,1986
 José M. Llabería,Polytechnic University of Catalonia,arch,1.0,0.25,1989
@@ -25495,6 +25737,8 @@ Lisa Fleischer,Dartmouth College,theory,1.0,0.25,2009
 Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2011
 Lisa Fleischer,Dartmouth College,theory,1.0,0.333333333333,2012
 Lisa Fleischer,Dartmouth College,theory,1.0,0.25,2013
+Frank Vahid,University of California - Riverside,hci,2.0,1.0,2006
+Frank Vahid,University of California - Riverside,arch,1.0,0.333333333333,2003
 Reuven Bar-Yehuda,Technion,graphics,1.0,0.5,1996
 Reuven Bar-Yehuda,Technion,theory,1.0,0.5,1982
 Reuven Bar-Yehuda,Technion,theory,1.0,0.25,1994
@@ -26191,17 +26435,8 @@ Ryan Kastner,University of California - San Diego,security,1.0,0.125,2007
 Ryan Kastner,University of California - San Diego,arch,1.0,0.111111111111,2011
 Ryan Kastner,University of California - San Diego,arch,1.0,0.142857142857,2013
 Ryan Kastner,University of California - San Diego,arch,1.0,0.111111111111,2014
-Paul Valiant,Brown University,theory,1.0,0.333333333333,2005
-Paul Valiant,Brown University,theory,1.0,0.333333333333,2007
-Paul Valiant,Brown University,theory,1.0,1.0,2008
-Paul Valiant,Brown University,theory,1.0,0.25,2009
-Paul Valiant,Brown University,theory,2.0,1.0,2011
-Paul Valiant,Brown University,theory,1.0,0.5,2012
-Paul Valiant,Brown University,theory,1.0,0.2,2013
-Paul Valiant,Brown University,theory,2.0,0.75,2014
-Paul Valiant,Brown University,theory,1.0,0.5,2016
-Paul Valiant,Brown University,mlmining,1.0,0.5,2013
-Paul Valiant,Brown University,networks,1.0,0.25,2006
+Mart Molle,University of California - Riverside,metrics,1.0,0.5,1987
+Mart Molle,University of California - Riverside,networks,1.0,0.25,2004
 Hamed Hatami,McGill University,theory,1.0,0.5,2010
 Hamed Hatami,McGill University,theory,1.0,0.5,2011
 Hamed Hatami,McGill University,theory,2.0,0.7,2013
@@ -26621,6 +26856,8 @@ Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,database,2.0,0
 Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,2010
 Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,2012
 Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,2014
+Gary K. Fedder,Carnegie Mellon University,hci,1.0,0.25,2013
+Gary K. Fedder,Carnegie Mellon University,robotics,1.0,0.166666666667,2007
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,1.0,0.333333333333,2004
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,1.0,0.333333333333,2006
 Mohamed F. Mokbel,University of Minnesota - Twin Cities,database,1.0,0.5,2009
@@ -26762,6 +26999,12 @@ Myungjin Lee,University of Edinburgh,networks,2.0,0.666666666667,2010
 Myungjin Lee,University of Edinburgh,networks,1.0,0.25,2011
 Myungjin Lee,University of Edinburgh,networks,1.0,0.142857142857,2014
 Myungjin Lee,University of Edinburgh,networks,1.0,0.2,2015
+Heng Yin,University of California - Riverside,security,1.0,0.5,2005
+Heng Yin,University of California - Riverside,security,1.0,0.333333333333,2006
+Heng Yin,University of California - Riverside,security,2.0,0.45,2007
+Heng Yin,University of California - Riverside,security,1.0,0.5,2012
+Heng Yin,University of California - Riverside,security,2.0,0.416666666667,2014
+Heng Yin,University of California - Riverside,security,1.0,0.25,2015
 Patrick van der Smagt,TU Munich,robotics,2.0,0.5,2013
 Patrick van der Smagt,TU Munich,robotics,3.0,0.733333333333,2014
 Patrick van der Smagt,TU Munich,robotics,2.0,0.583333333333,2015
@@ -27557,6 +27800,16 @@ Scott N. Woodfield,Brigham Young University,proglang,1.0,0.333333333333,1992
 Scott N. Woodfield,Brigham Young University,softeng,1.0,0.333333333333,1981
 Scott N. Woodfield,Brigham Young University,softeng,1.0,0.5,1987
 Scott N. Woodfield,Brigham Young University,softeng,1.0,0.5,1988
+Matthew Flatt,University of Utah,opsys,1.0,0.2,2000
+Matthew Flatt,University of Utah,proglang,1.0,0.2,1996
+Matthew Flatt,University of Utah,proglang,2.0,0.833333333333,1998
+Matthew Flatt,University of Utah,proglang,1.0,0.333333333333,2001
+Matthew Flatt,University of Utah,proglang,2.0,0.833333333333,2004
+Matthew Flatt,University of Utah,proglang,1.0,0.333333333333,2005
+Matthew Flatt,University of Utah,proglang,2.0,0.533333333333,2010
+Matthew Flatt,University of Utah,proglang,1.0,0.2,2011
+Matthew Flatt,University of Utah,proglang,2.0,0.35,2012
+Matthew Flatt,University of Utah,proglang,1.0,1.0,2016
 Suman Jana,Columbia University,opsys,1.0,0.125,2012
 Suman Jana,Columbia University,mobile,1.0,0.5,2008
 Suman Jana,Columbia University,mobile,1.0,0.166666666667,2009
@@ -27618,6 +27871,8 @@ Alessio Lomuscio,Imperial College London,ai,3.0,1.5,2013
 Alessio Lomuscio,Imperial College London,ai,4.0,1.66666666667,2015
 Alessio Lomuscio,Imperial College London,logic,1.0,0.333333333333,2009
 Alessio Lomuscio,Imperial College London,logic,1.0,0.25,2014
+Jiasi Chen,University of California - Riverside,networks,2.0,0.416666666667,2015
+Jiasi Chen,University of California - Riverside,mobile,1.0,0.2,2013
 Joel I. Seiferas,University of Rochester,theory,1.0,0.333333333333,1980
 Joel I. Seiferas,University of Rochester,theory,1.0,0.5,1981
 Joel I. Seiferas,University of Rochester,theory,1.0,0.333333333333,1994
@@ -30649,8 +30904,20 @@ Erik Frøkjær,DIKU,hci,1.0,0.333333333333,2000
 Erik Frøkjær,DIKU,hci,1.0,0.5,2001
 Erik Frøkjær,DIKU,hci,1.0,0.5,2005
 Erik Frøkjær,DIKU,hci,1.0,0.5,2008
-Jim Davies,University of Oxford,ai,1.0,0.5,2001
-Jim Davies,University of Oxford,softeng,1.0,0.2,2003
+Neal E. Young,University of California - Riverside,theory,1.0,1.0,1991
+Neal E. Young,University of California - Riverside,theory,1.0,0.333333333333,1993
+Neal E. Young,University of California - Riverside,theory,4.0,1.5,1994
+Neal E. Young,University of California - Riverside,theory,1.0,1.0,1995
+Neal E. Young,University of California - Riverside,theory,1.0,0.333333333333,1996
+Neal E. Young,University of California - Riverside,theory,1.0,1.0,1998
+Neal E. Young,University of California - Riverside,theory,1.0,0.2,1999
+Neal E. Young,University of California - Riverside,theory,2.0,1.33333333333,2000
+Neal E. Young,University of California - Riverside,theory,2.0,1.5,2001
+Neal E. Young,University of California - Riverside,theory,2.0,0.833333333333,2002
+Neal E. Young,University of California - Riverside,theory,1.0,0.5,2007
+Neal E. Young,University of California - Riverside,theory,1.0,0.5,2012
+Neal E. Young,University of California - Riverside,mlmining,1.0,0.166666666667,2007
+Neal E. Young,University of California - Riverside,mlmining,1.0,0.333333333333,2011
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.2,2003
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.5,2004
 Ondrej Lhoták,University of Waterloo,proglang,2.0,0.2,2005
@@ -31290,14 +31557,9 @@ Kenneth Salem,University of Waterloo,database,1.0,0.25,2010
 Kenneth Salem,University of Waterloo,database,1.0,0.166666666667,2011
 Kenneth Salem,University of Waterloo,database,2.0,0.833333333333,2013
 Kenneth Salem,University of Waterloo,database,1.0,0.166666666667,2014
-Matei Zaharia,Massachusetts Institute of Technology,opsys,1.0,0.2,2008
-Matei Zaharia,Massachusetts Institute of Technology,opsys,2.0,0.416666666667,2013
-Matei Zaharia,Massachusetts Institute of Technology,opsys,1.0,0.25,2015
-Matei Zaharia,Massachusetts Institute of Technology,database,1.0,0.166666666667,2013
-Matei Zaharia,Massachusetts Institute of Technology,database,1.0,0.0909090909091,2015
-Matei Zaharia,Massachusetts Institute of Technology,database,1.0,0.0909090909091,2016
-Matei Zaharia,Massachusetts Institute of Technology,networks,3.0,0.491666666667,2011
-Matei Zaharia,Massachusetts Institute of Technology,networks,2.0,0.361111111111,2012
+Zizhong Chen,University of California - Riverside,highperf,1.0,0.142857142857,2005
+Zizhong Chen,University of California - Riverside,highperf,1.0,1.0,2009
+Zizhong Chen,University of California - Riverside,highperf,2.0,1.25,2013
 Carlo Tomasi,Duke University,ai,1.0,0.333333333333,2016
 Carlo Tomasi,Duke University,vision,2.0,1.0,1993
 Carlo Tomasi,Duke University,vision,2.0,1.5,1994
@@ -32942,7 +33204,11 @@ Lars Arge,Aarhus University,database,1.0,0.333333333333,2000
 Lars Arge,Aarhus University,database,1.0,0.25,2004
 Anil Vullikanti,Virginia Tech,mlmining,1.0,0.0333333333333,2014
 Anil Vullikanti,Virginia Tech,ai,2.0,1.0,2016
-Davide Careglio,Polytechnic University of Catalonia,networks,1.0,0.0526315789474,2006
+Mohsen Lesani,University of California - Riverside,proglang,1.0,0.25,2013
+Mohsen Lesani,University of California - Riverside,proglang,1.0,0.333333333333,2015
+Mohsen Lesani,University of California - Riverside,proglang,1.0,0.333333333333,2016
+Mohsen Lesani,University of California - Riverside,logic,1.0,0.333333333333,2014
+Mohsen Lesani,University of California - Riverside,highperf,1.0,0.5,2011
 Michel Abdalla,Ecole Normale Superieure,crypto,1.0,0.25,2002
 Michel Abdalla,Ecole Normale Superieure,crypto,1.0,0.1,2005
 Michel Abdalla,Ecole Normale Superieure,crypto,2.0,0.666666666667,2009
