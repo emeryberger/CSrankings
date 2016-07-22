@@ -317,6 +317,9 @@ Szymon Rusinkiewicz,Princeton University,vision,1.0,0.333333333333,2008
 Szymon Rusinkiewicz,Princeton University,vision,1.0,0.166666666667,2012
 Szymon Rusinkiewicz,Princeton University,vision,1.0,0.25,2013
 Szymon Rusinkiewicz,Princeton University,vision,1.0,0.2,2015
+Laurent Doyen 0001,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2006
+Laurent Doyen 0001,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2009
+Laurent Doyen 0001,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2012
 Xuxian Jiang,North Carolina State University,mobile,1.0,0.2,2012
 Xuxian Jiang,North Carolina State University,security,1.0,0.5,2004
 Xuxian Jiang,North Carolina State University,security,1.0,0.333333333333,2007
@@ -672,6 +675,22 @@ Bonnie Berger,Massachusetts Institute of Technology,theory,1.0,0.333333333333,19
 Bonnie Berger,Massachusetts Institute of Technology,theory,1.0,0.333333333333,2008
 Bonnie Berger,Massachusetts Institute of Technology,mlmining,1.0,0.2,2005
 Bonnie Berger,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2008
+Luc Segoufin,Ecole Normale Superieure de Cachan,theory,1.0,0.333333333333,2001
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,1998
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2000
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2001
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,1.0,0.5,2002
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,1.0,1.0,2003
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,1.0,0.5,2005
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,1.0,0.2,2006
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,2008
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,2013
+Luc Segoufin,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,2014
+Luc Segoufin,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2000
+Luc Segoufin,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2001
+Luc Segoufin,Ecole Normale Superieure de Cachan,logic,1.0,0.2,2006
+Luc Segoufin,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2008
+Luc Segoufin,Ecole Normale Superieure de Cachan,logic,2.0,1.0,2010
 Yong Jae Lee,University of California - Davis,graphics,1.0,0.333333333333,2011
 Yong Jae Lee,University of California - Davis,graphics,1.0,0.333333333333,2014
 Yong Jae Lee,University of California - Davis,mlmining,1.0,0.25,2014
@@ -1291,13 +1310,7 @@ Daniel A. Jiménez,Texas A&M University,arch,1.0,0.333333333333,2010
 Daniel A. Jiménez,Texas A&M University,arch,1.0,0.333333333333,2012
 Daniel A. Jiménez,Texas A&M University,arch,1.0,1.0,2013
 Daniel A. Jiménez,Texas A&M University,arch,1.0,0.166666666667,2014
-Patrick Jaillet,Massachusetts Institute of Technology,theory,1.0,0.5,2015
-Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2013
-Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2014
-Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
-Patrick Jaillet,Massachusetts Institute of Technology,ai,1.0,0.333333333333,2014
-Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.5,2015
-Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.666666666667,2016
+Stéphanie Delaune,Ecole Normale Superieure de Cachan,security,1.0,0.5,2004
 Ronitt Rubinfeld,Tel Aviv University,theory,1.0,0.333333333333,1990
 Ronitt Rubinfeld,Tel Aviv University,theory,1.0,0.2,1991
 Ronitt Rubinfeld,Tel Aviv University,theory,2.0,0.75,1992
@@ -1696,6 +1709,9 @@ P. Thomas Fletcher,University of Utah,mlmining,1.0,0.5,2013
 P. Thomas Fletcher,University of Utah,vision,1.0,0.25,2007
 P. Thomas Fletcher,University of Utah,vision,1.0,0.333333333333,2008
 P. Thomas Fletcher,University of Utah,vision,2.0,0.75,2012
+Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2002
+Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2007
+Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2016
 Cartic Ramakrishnan,Stony Brook University,web,1.0,0.111111111111,2006
 Michael R. Brent,Washington University - St. Louis,nlp,1.0,1.0,1990
 Michael R. Brent,Washington University - St. Louis,nlp,1.0,1.0,1991
@@ -2426,6 +2442,9 @@ Mirella Lapata,University of Edinburgh,ai,2.0,1.0,2005
 Mirella Lapata,University of Edinburgh,ai,1.0,0.5,2007
 Mirella Lapata,University of Edinburgh,ai,1.0,0.5,2011
 Mirella Lapata,University of Edinburgh,ai,1.0,0.166666666667,2013
+Benedikt Bollig,Ecole Normale Superieure de Cachan,ai,1.0,0.25,2009
+Benedikt Bollig,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2013
+Benedikt Bollig,Ecole Normale Superieure de Cachan,logic,2.0,1.25,2014
 Sebastian Riedel,University College London,nlp,1.0,0.5,2006
 Sebastian Riedel,University College London,nlp,1.0,0.5,2009
 Sebastian Riedel,University College London,nlp,2.0,0.833333333333,2010
@@ -2679,6 +2698,7 @@ Richard Mayr,University of Edinburgh,logic,1.0,0.333333333333,2009
 Richard Mayr,University of Edinburgh,logic,1.0,0.142857142857,2010
 Richard Mayr,University of Edinburgh,logic,1.0,0.5,2011
 Richard Mayr,University of Edinburgh,logic,1.0,0.333333333333,2013
+Richard Mayr,University of Edinburgh,logic,1.0,0.166666666667,2014
 Martha A. Kim,Columbia University,proglang,1.0,0.5,2014
 Martha A. Kim,Columbia University,arch,1.0,0.333333333333,2012
 Martha A. Kim,Columbia University,arch,1.0,0.25,2013
@@ -3023,6 +3043,7 @@ Stefan Kiefer,University of Oxford,theory,1.0,0.333333333333,2007
 Stefan Kiefer,University of Oxford,logic,2.0,0.533333333333,2011
 Stefan Kiefer,University of Oxford,logic,2.0,0.533333333333,2012
 Stefan Kiefer,University of Oxford,logic,1.0,0.25,2013
+Stefan Kiefer,University of Oxford,logic,2.0,0.7,2014
 Stefan Kiefer,University of Oxford,logic,2.0,0.75,2015
 Stefan Kiefer,University of Oxford,logic,1.0,0.166666666667,2016
 Daniel J. Hsu,Columbia University,nlp,1.0,0.333333333333,2015
@@ -6280,6 +6301,12 @@ Benjamin Watson,North Carolina State University,graphics,1.0,0.333333333333,2001
 Benjamin Watson,North Carolina State University,graphics,1.0,0.333333333333,2004
 Benjamin Watson,North Carolina State University,hci,1.0,0.333333333333,2000
 Benjamin Watson,North Carolina State University,hci,1.0,0.166666666667,2002
+Stefan Göller,Ecole Normale Superieure de Cachan,theory,1.0,0.333333333333,2013
+Stefan Göller,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2009
+Stefan Göller,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2011
+Stefan Göller,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2012
+Stefan Göller,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2013
+Stefan Göller,Ecole Normale Superieure de Cachan,logic,1.0,0.2,2015
 Massimiliano Pontil,University College London,mlmining,2.0,0.416666666667,2000
 Massimiliano Pontil,University College London,mlmining,1.0,0.2,2001
 Massimiliano Pontil,University College London,mlmining,2.0,1.0,2004
@@ -7317,6 +7344,7 @@ Michael M. Kazhdan,Johns Hopkins University,graphics,2.0,0.833333333333,2010
 Michael M. Kazhdan,Johns Hopkins University,graphics,1.0,0.5,2011
 Michael M. Kazhdan,Johns Hopkins University,graphics,1.0,0.5,2013
 Michael M. Kazhdan,Johns Hopkins University,vision,1.0,0.2,2002
+Frédéric Blanqui,Ecole Normale Superieure de Cachan,logic,1.0,1.0,2001
 Gill Bejerano,Stanford University,mlmining,1.0,0.333333333333,2001
 Gill Bejerano,Stanford University,mlmining,1.0,0.25,2002
 Peter Sewell,University of Cambridge,opsys,1.0,0.166666666667,2015
@@ -7418,6 +7446,7 @@ James Brotherston,University College London,proglang,1.0,0.5,2014
 James Brotherston,University College London,proglang,1.0,0.25,2016
 James Brotherston,University College London,logic,1.0,0.5,2007
 James Brotherston,University College London,logic,1.0,0.5,2010
+James Brotherston,University College London,logic,1.0,0.25,2014
 Nicholas R. Jennings,Imperial College London,hci,1.0,0.333333333333,2012
 Nicholas R. Jennings,Imperial College London,hci,1.0,0.25,2013
 Nicholas R. Jennings,Imperial College London,hci,1.0,0.166666666667,2014
@@ -7806,6 +7835,13 @@ Sangtae Ha,University of Colorado Boulder,networks,1.0,0.25,2009
 Sangtae Ha,University of Colorado Boulder,networks,1.0,0.2,2012
 Sangtae Ha,University of Colorado Boulder,networks,2.0,0.533333333333,2013
 Sangtae Ha,University of Colorado Boulder,networks,2.0,0.533333333333,2015
+Patrick Jaillet,Massachusetts Institute of Technology,theory,1.0,0.5,2015
+Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2013
+Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2014
+Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
+Patrick Jaillet,Massachusetts Institute of Technology,ai,1.0,0.333333333333,2014
+Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.5,2015
+Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.666666666667,2016
 Ian M. Leslie,University of Cambridge,networks,2.0,1.0,1989
 Ian M. Leslie,University of Cambridge,networks,1.0,0.5,1992
 Ian M. Leslie,University of Cambridge,networks,1.0,0.5,1993
@@ -8334,6 +8370,7 @@ Georg Gottlob,University of Oxford,logic,1.0,0.333333333333,1998
 Georg Gottlob,University of Oxford,logic,1.0,0.5,1999
 Georg Gottlob,University of Oxford,logic,1.0,0.5,2002
 Georg Gottlob,University of Oxford,logic,2.0,0.533333333333,2010
+Georg Gottlob,University of Oxford,logic,1.0,0.5,2014
 Matthew Turk,University of California - Santa Barbara,graphics,1.0,0.2,2004
 Matthew Turk,University of California - Santa Barbara,hci,1.0,0.25,2014
 Matthew Turk,University of California - Santa Barbara,vision,1.0,0.333333333333,1999
@@ -8562,6 +8599,7 @@ Patrick Cousot,Ecole Normale Superieure,proglang,1.0,0.333333333333,2011
 Patrick Cousot,Ecole Normale Superieure,proglang,2.0,0.75,2012
 Patrick Cousot,Ecole Normale Superieure,logic,1.0,0.5,1995
 Patrick Cousot,Ecole Normale Superieure,logic,1.0,0.5,2002
+Patrick Cousot,Ecole Normale Superieure,logic,1.0,0.5,2014
 Atul Prakash,University of Michigan,security,1.0,0.5,1994
 Atul Prakash,University of Michigan,security,1.0,0.5,1996
 Atul Prakash,University of Michigan,security,1.0,0.333333333333,1999
@@ -9793,6 +9831,7 @@ Tamal K. Dey,Ohio State University,theory,1.0,0.5,2008
 Tamal K. Dey,Ohio State University,theory,2.0,0.666666666667,2010
 Tamal K. Dey,Ohio State University,theory,1.0,0.333333333333,2013
 Tamal K. Dey,Ohio State University,theory,1.0,0.333333333333,2016
+Serge Haddad,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2012
 Timothy Bourke,Ecole Normale Superieure,security,1.0,0.111111111111,2013
 William Aiello,University of British Columbia,theory,1.0,0.333333333333,1986
 William Aiello,University of British Columbia,theory,1.0,0.5,1987
@@ -10658,6 +10697,7 @@ Xifeng Yan,University of California - Santa Barbara,web,1.0,0.2,2013
 Xifeng Yan,University of California - Santa Barbara,web,2.0,0.333333333333,2016
 Xifeng Yan,University of California - Santa Barbara,security,1.0,0.2,2010
 Xifeng Yan,University of California - Santa Barbara,softeng,1.0,0.2,2005
+Michel Bidoit,Ecole Normale Superieure de Cachan,softeng,1.0,0.2,1984
 Miguel Valero-García,Polytechnic University of Catalonia,arch,1.0,0.25,1989
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.333333333333,2012
 Haiyi Zhu,University of Minnesota - Twin Cities,hci,1.0,0.2,2013
@@ -11592,6 +11632,7 @@ Christel Baier,TU Dresden,logic,1.0,0.25,2000
 Christel Baier,TU Dresden,logic,1.0,0.333333333333,2001
 Christel Baier,TU Dresden,logic,1.0,0.5,2005
 Christel Baier,TU Dresden,logic,1.0,0.2,2008
+Christel Baier,TU Dresden,logic,2.0,0.583333333333,2014
 Christel Baier,TU Dresden,logic,1.0,0.166666666667,2016
 Christel Baier,TU Dresden,highperf,1.0,0.166666666667,2013
 Lance Fortnow,Georgia Institute of Technology,theory,1.0,1.0,1987
@@ -12204,6 +12245,7 @@ Ben Reichardt,University of Southern California,theory,1.0,0.2,2007
 Ben Reichardt,University of Southern California,theory,1.0,0.5,2008
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2009
 Ben Reichardt,University of Southern California,theory,2.0,2.0,2011
+Jean Goubault,Ecole Normale Superieure de Cachan,logic,1.0,1.0,1994
 Alexandr Andoni,Columbia University,theory,3.0,1.33333333333,2006
 Alexandr Andoni,Columbia University,theory,2.0,0.666666666667,2007
 Alexandr Andoni,Columbia University,theory,2.0,0.666666666667,2008
@@ -12588,6 +12630,11 @@ David P. Dobkin,Princeton University,theory,1.0,0.5,1989
 David P. Dobkin,Princeton University,theory,1.0,0.25,1990
 David P. Dobkin,Princeton University,softeng,1.0,0.333333333333,1981
 David P. Dobkin,Princeton University,vision,1.0,0.2,2002
+Samira Manabi Khan,University of Virginia,metrics,1.0,0.166666666667,2014
+Samira Manabi Khan,University of Virginia,metrics,1.0,0.1,2016
+Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2010
+Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2012
+Samira Manabi Khan,University of Virginia,arch,2.0,0.366666666667,2015
 David E. Culler,University of California - Berkeley,metrics,1.0,0.333333333333,1996
 David E. Culler,University of California - Berkeley,metrics,2.0,0.533333333333,1998
 David E. Culler,University of California - Berkeley,metrics,1.0,0.5,1999
@@ -14493,6 +14540,7 @@ Christo Wilson,Northeastern University,web,1.0,0.142857142857,2012
 Christo Wilson,Northeastern University,web,1.0,0.142857142857,2013
 Christo Wilson,Northeastern University,web,2.0,0.583333333333,2016
 Christo Wilson,Northeastern University,security,1.0,0.166666666667,2013
+Stefan Haar,Ecole Normale Superieure de Cachan,database,1.0,0.25,2005
 Alessandro Orso,Georgia Institute of Technology,proglang,1.0,0.111111111111,2001
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,0.333333333333,1997
 Alessandro Orso,Georgia Institute of Technology,softeng,4.0,1.2,2004
@@ -14666,6 +14714,7 @@ Michael Wooldridge,University of Oxford,ai,3.0,0.642857142857,2011
 Michael Wooldridge,University of Oxford,ai,2.0,0.583333333333,2013
 Michael Wooldridge,University of Oxford,ai,2.0,0.4,2015
 Michael Wooldridge,University of Oxford,ai,2.0,0.366666666667,2016
+Michael Wooldridge,University of Oxford,logic,1.0,0.5,2014
 Alfred O. Hero III,University of Michigan,mlmining,1.0,0.5,2005
 Alfred O. Hero III,University of Michigan,mlmining,1.0,1.0,2006
 Alfred O. Hero III,University of Michigan,mlmining,1.0,0.5,2011
@@ -15355,6 +15404,7 @@ David A. Basin,ETH Zurich,logic,1.0,0.5,1996
 David A. Basin,ETH Zurich,logic,2.0,0.833333333333,2000
 David A. Basin,ETH Zurich,logic,1.0,0.333333333333,2010
 David A. Basin,ETH Zurich,logic,1.0,0.25,2013
+David A. Basin,ETH Zurich,logic,1.0,0.333333333333,2014
 David A. Basin,ETH Zurich,security,1.0,0.333333333333,2003
 David A. Basin,ETH Zurich,security,1.0,0.5,2007
 David A. Basin,ETH Zurich,security,1.0,0.333333333333,2008
@@ -15530,6 +15580,7 @@ Zhong Shao,Yale University,proglang,2.0,0.458333333333,2015
 Zhong Shao,Yale University,proglang,2.0,0.533333333333,2016
 Zhong Shao,Yale University,logic,1.0,0.2,2002
 Zhong Shao,Yale University,logic,1.0,0.333333333333,2013
+Zhong Shao,Yale University,logic,1.0,0.333333333333,2014
 Zhong Shao,Yale University,robotics,1.0,0.25,2012
 Roxana Geambasu,Columbia University,opsys,1.0,0.2,2010
 Roxana Geambasu,Columbia University,opsys,1.0,0.166666666667,2012
@@ -16533,6 +16584,8 @@ Xavier Rival,Ecole Normale Superieure,proglang,1.0,0.125,2003
 Xavier Rival,Ecole Normale Superieure,proglang,1.0,1.0,2004
 Xavier Rival,Ecole Normale Superieure,proglang,1.0,0.5,2008
 Xavier Rival,Ecole Normale Superieure,proglang,1.0,0.5,2011
+Stefan Schwoon,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2000
+Stefan Schwoon,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2001
 Stelian Coros,Carnegie Mellon University,graphics,2.0,0.5,2008
 Stelian Coros,Carnegie Mellon University,graphics,1.0,0.333333333333,2009
 Stelian Coros,Carnegie Mellon University,graphics,1.0,0.333333333333,2010
@@ -16585,33 +16638,7 @@ J. Andrew Bagnell,Carnegie Mellon University,robotics,1.0,0.25,2016
 J. Andrew Bagnell,Carnegie Mellon University,vision,1.0,0.333333333333,2010
 J. Andrew Bagnell,Carnegie Mellon University,vision,1.0,0.25,2011
 J. Andrew Bagnell,Carnegie Mellon University,vision,1.0,0.25,2015
-Philip N. Klein,Brown University,theory,1.0,0.5,1986
-Philip N. Klein,Brown University,theory,1.0,1.0,1988
-Philip N. Klein,Brown University,theory,3.0,1.08333333333,1990
-Philip N. Klein,Brown University,theory,1.0,0.333333333333,1991
-Philip N. Klein,Brown University,theory,1.0,0.5,1992
-Philip N. Klein,Brown University,theory,2.0,0.833333333333,1993
-Philip N. Klein,Brown University,theory,2.0,0.75,1994
-Philip N. Klein,Brown University,theory,1.0,0.5,1996
-Philip N. Klein,Brown University,theory,1.0,0.2,1998
-Philip N. Klein,Brown University,theory,1.0,0.2,1999
-Philip N. Klein,Brown University,theory,1.0,0.25,2000
-Philip N. Klein,Brown University,theory,1.0,0.333333333333,2001
-Philip N. Klein,Brown University,theory,1.0,1.0,2002
-Philip N. Klein,Brown University,theory,2.0,2.0,2005
-Philip N. Klein,Brown University,theory,2.0,1.5,2006
-Philip N. Klein,Brown University,theory,1.0,0.333333333333,2007
-Philip N. Klein,Brown University,theory,1.0,0.333333333333,2008
-Philip N. Klein,Brown University,theory,1.0,0.333333333333,2009
-Philip N. Klein,Brown University,theory,1.0,0.2,2011
-Philip N. Klein,Brown University,theory,2.0,0.583333333333,2012
-Philip N. Klein,Brown University,theory,2.0,0.833333333333,2013
-Philip N. Klein,Brown University,theory,2.0,0.833333333333,2014
-Philip N. Klein,Brown University,theory,1.0,0.333333333333,2015
-Philip N. Klein,Brown University,theory,1.0,0.2,2016
-Philip N. Klein,Brown University,security,1.0,0.333333333333,2000
-Philip N. Klein,Brown University,vision,1.0,0.333333333333,2001
-Philip N. Klein,Brown University,vision,1.0,0.333333333333,2002
+Pavol Federl,University of Calgary,graphics,1.0,0.166666666667,2005
 Nadia Berthouze,University College London,robotics,1.0,0.25,2010
 Jon Froehlich,University of Maryland - College Park,hci,1.0,0.25,2006
 Jon Froehlich,University of Maryland - College Park,hci,3.0,0.361111111111,2008
@@ -17720,6 +17747,7 @@ Leonid Libkin,University of Edinburgh,logic,1.0,0.5,2003
 Leonid Libkin,University of Edinburgh,logic,1.0,0.5,2005
 Leonid Libkin,University of Edinburgh,logic,1.0,0.166666666667,2007
 Leonid Libkin,University of Edinburgh,logic,1.0,0.333333333333,2012
+Leonid Libkin,University of Edinburgh,logic,1.0,0.5,2014
 Leonid Libkin,University of Edinburgh,logic,1.0,0.5,2015
 Michael Kearns,University of Pennsylvania,theory,1.0,0.5,2012
 Michael Kearns,University of Pennsylvania,mlmining,1.0,0.2,2002
@@ -18786,6 +18814,8 @@ Lirong Xia,Rensselaer Polytechnic Institute,ai,1.0,0.25,2013
 Lirong Xia,Rensselaer Polytechnic Institute,ai,1.0,0.333333333333,2015
 Lirong Xia,Rensselaer Polytechnic Institute,ai,2.0,1.5,2016
 Lirong Xia,Rensselaer Polytechnic Institute,networks,1.0,0.333333333333,2014
+Gilles Dowek,Ecole Normale Superieure de Cachan,logic,1.0,1.0,1992
+Gilles Dowek,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1995
 Rakesh Vohra,University of Pennsylvania,theory,1.0,0.25,1992
 Rakesh Vohra,University of Pennsylvania,theory,1.0,0.2,2016
 Rakesh Vohra,University of Pennsylvania,networks,1.0,0.166666666667,2013
@@ -19721,6 +19751,7 @@ Sam Staton,University of Oxford,proglang,1.0,1.0,2015
 Sam Staton,University of Oxford,logic,1.0,0.5,2006
 Sam Staton,University of Oxford,logic,1.0,1.0,2008
 Sam Staton,University of Oxford,logic,1.0,0.5,2010
+Sam Staton,University of Oxford,logic,2.0,1.0,2014
 Jason Flinn,University of Michigan,metrics,1.0,0.2,2000
 Jason Flinn,University of Michigan,opsys,1.0,0.166666666667,1997
 Jason Flinn,University of Michigan,opsys,1.0,0.5,1999
@@ -19840,6 +19871,7 @@ Ryan Williams,Stanford University,ai,1.0,0.333333333333,2003
 Ryan Williams,Stanford University,database,1.0,0.5,2004
 Ryan Williams,Stanford University,database,1.0,0.333333333333,2011
 Ryan Williams,Stanford University,database,1.0,0.25,2015
+Ryan Williams,Stanford University,logic,1.0,1.0,2014
 Demetri Terzopoulos,University of California - Los Angeles,graphics,1.0,0.25,1987
 Demetri Terzopoulos,University of California - Los Angeles,graphics,1.0,0.5,1988
 Demetri Terzopoulos,University of California - Los Angeles,graphics,1.0,0.5,1989
@@ -19906,18 +19938,38 @@ Gul A. Agha,University of Illinois at Urbana-Champaign,metrics,1.0,0.25,2012
 Gul A. Agha,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2009
 Gul A. Agha,University of Illinois at Urbana-Champaign,softeng,2.0,1.0,2014
 Gul A. Agha,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2011
-George Candea,EPFL,opsys,1.0,0.2,2004
-George Candea,EPFL,opsys,1.0,0.25,2008
-George Candea,EPFL,opsys,1.0,0.333333333333,2013
-George Candea,EPFL,opsys,1.0,0.166666666667,2014
-George Candea,EPFL,opsys,1.0,0.2,2015
-George Candea,EPFL,database,1.0,0.333333333333,2008
-George Candea,EPFL,database,1.0,0.333333333333,2009
-George Candea,EPFL,proglang,1.0,0.25,2012
-George Candea,EPFL,security,1.0,0.25,2015
-George Candea,EPFL,arch,1.0,0.333333333333,2011
-George Candea,EPFL,arch,1.0,0.333333333333,2012
-George Candea,EPFL,arch,2.0,0.666666666667,2014
+Serge Abiteboul,Ecole Normale Superieure de Cachan,theory,1.0,0.5,1991
+Serge Abiteboul,Ecole Normale Superieure de Cachan,theory,1.0,0.333333333333,2001
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,3.0,1.5,1984
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1985
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,1986
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,1987
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1988
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1989
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,1990
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1991
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,1992
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,1993
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,1994
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,1995
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,1996
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1997
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,5.0,1.42619047619,1998
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.16666666667,1999
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,3.0,0.833333333333,2001
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.4,2003
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.5,2004
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2005
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,2007
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,2008
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,2009
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2011
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,2013
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,2015
+Serge Abiteboul,Ecole Normale Superieure de Cachan,web,1.0,0.333333333333,2003
+Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1989
+Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1994
+Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,1.0,2001
 Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.5,2010
 Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.25,2011
 Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.166666666667,2012
@@ -19926,6 +19978,9 @@ Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.166666666667,2015
 Brent Hecht,University of Minnesota - Twin Cities,hci,2.0,0.392857142857,2016
 Brent Hecht,University of Minnesota - Twin Cities,ai,1.0,0.111111111111,2015
 Brent Hecht,University of Minnesota - Twin Cities,web,1.0,0.142857142857,2012
+Hubert Comon-Lundh,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2009
+Hubert Comon-Lundh,Ecole Normale Superieure de Cachan,security,1.0,0.5,2008
+Hubert Comon-Lundh,Ecole Normale Superieure de Cachan,security,1.0,0.5,2014
 James R. Larus,EPFL,metrics,1.0,0.166666666667,1993
 James R. Larus,EPFL,proglang,1.0,0.5,1988
 James R. Larus,EPFL,proglang,1.0,0.5,1992
@@ -20055,6 +20110,7 @@ Dexter Kozen,Cornell University,logic,1.0,1.0,2006
 Dexter Kozen,Cornell University,logic,1.0,1.0,2008
 Dexter Kozen,Cornell University,logic,1.0,0.5,2012
 Dexter Kozen,Cornell University,logic,1.0,0.25,2013
+Dexter Kozen,Cornell University,logic,1.0,0.333333333333,2014
 Wesley Willett,University of Calgary,hci,1.0,0.333333333333,2008
 Wesley Willett,University of Calgary,hci,1.0,0.25,2011
 Wesley Willett,University of Calgary,hci,1.0,0.333333333333,2012
@@ -20715,6 +20771,10 @@ Trent Jaeger,Pennsylvania State University,security,2.0,0.666666666667,2012
 Trent Jaeger,Pennsylvania State University,security,1.0,0.25,2014
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2007
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2008
+Jean Goubault-Larrecq,Ecole Normale Superieure de Cachan,logic,1.0,1.0,1997
+Jean Goubault-Larrecq,Ecole Normale Superieure de Cachan,logic,1.0,1.0,2007
+Jean Goubault-Larrecq,Ecole Normale Superieure de Cachan,logic,1.0,1.0,2010
+Jean Goubault-Larrecq,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2011
 Eleazar Eskin,University of California - Los Angeles,mlmining,1.0,1.0,2000
 Eleazar Eskin,University of California - Los Angeles,mlmining,1.0,0.25,2002
 Eleazar Eskin,University of California - Los Angeles,mlmining,1.0,0.333333333333,2003
@@ -22055,6 +22115,7 @@ Eugene W. Stark,Stony Brook University,proglang,1.0,1.0,1987
 Eugene W. Stark,Stony Brook University,proglang,1.0,1.0,1990
 Eugene W. Stark,Stony Brook University,logic,1.0,1.0,1992
 Eugene W. Stark,Stony Brook University,logic,1.0,0.5,1998
+Étienne Lozes,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2002
 Paolo A. G. Sivilotti,Ohio State University,softeng,1.0,0.5,2001
 Mladen A. Vouk,North Carolina State University,softeng,1.0,0.142857142857,2015
 Mladen A. Vouk,North Carolina State University,highperf,1.0,0.25,2006
@@ -22066,8 +22127,12 @@ Michael Carbin,Massachusetts Institute of Technology,proglang,1.0,0.2,2014
 Michael Carbin,Massachusetts Institute of Technology,softeng,1.0,0.2,2012
 Michael Carbin,Massachusetts Institute of Technology,arch,1.0,0.166666666667,2011
 Michael Carbin,Massachusetts Institute of Technology,highperf,1.0,0.2,2007
-Ken Barker,University of Calgary,ai,1.0,0.333333333333,2006
-Ken Barker,University of Calgary,ai,1.0,0.0666666666667,2007
+Sylvain Schmitz,Ecole Normale Superieure de Cachan,nlp,1.0,1.0,2010
+Sylvain Schmitz,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2011
+Sylvain Schmitz,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2012
+Sylvain Schmitz,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2013
+Sylvain Schmitz,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2014
+Sylvain Schmitz,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2015
 Steven W. Zucker,Yale University,graphics,1.0,0.5,1981
 Steven W. Zucker,Yale University,graphics,1.0,0.5,1982
 Steven W. Zucker,Yale University,mlmining,1.0,0.5,2013
@@ -23335,6 +23400,8 @@ Vinod Ganapathy,Rutgers University,softeng,1.0,0.2,2014
 Vinod Ganapathy,Rutgers University,softeng,1.0,0.25,2015
 Vinod Ganapathy,Rutgers University,arch,1.0,0.5,2006
 Vinod Ganapathy,Rutgers University,arch,1.0,0.2,2008
+Laurent Fribourg,Ecole Normale Superieure de Cachan,logic,1.0,1.0,1992
+Laurent Fribourg,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1999
 Tim Menzies,North Carolina State University,softeng,1.0,0.333333333333,2001
 Tim Menzies,North Carolina State University,softeng,1.0,0.2,2005
 Tim Menzies,North Carolina State University,softeng,2.0,0.5,2007
@@ -23511,6 +23578,7 @@ Michael Benedikt,University of Oxford,logic,1.0,0.25,2001
 Michael Benedikt,University of Oxford,logic,1.0,0.25,2005
 Michael Benedikt,University of Oxford,logic,1.0,0.333333333333,2011
 Michael Benedikt,University of Oxford,logic,1.0,0.25,2013
+Michael Benedikt,University of Oxford,logic,1.0,0.333333333333,2014
 Michael Benedikt,University of Oxford,logic,3.0,1.08333333333,2015
 Anne Rogers,University of Chicago,theory,1.0,0.25,1998
 Anne Rogers,University of Chicago,mlmining,1.0,0.25,2000
@@ -24056,7 +24124,7 @@ Rajeev Alur,University of Pennsylvania,logic,2.0,0.666666666667,2009
 Rajeev Alur,University of Pennsylvania,logic,2.0,0.533333333333,2010
 Rajeev Alur,University of Pennsylvania,logic,2.0,0.433333333333,2012
 Rajeev Alur,University of Pennsylvania,logic,2.0,0.533333333333,2013
-Rajeev Alur,University of Pennsylvania,logic,1.0,0.5,2014
+Rajeev Alur,University of Pennsylvania,logic,2.0,0.833333333333,2014
 Rajeev Alur,University of Pennsylvania,logic,2.0,0.533333333333,2015
 Rajeev Alur,University of Pennsylvania,logic,1.0,0.333333333333,2016
 Rajeev Alur,University of Pennsylvania,softeng,1.0,0.25,1997
@@ -24200,6 +24268,12 @@ Heiko Mantel,TU Darmstadt,security,1.0,1.0,2002
 Lee A. Hollaar,University of Utah,web,1.0,1.0,1983
 Lee A. Hollaar,University of Utah,web,1.0,1.0,1984
 Lee A. Hollaar,University of Utah,web,1.0,1.0,1985
+Alain Finkel,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1991
+Alain Finkel,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1997
+Alain Finkel,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1999
+Alain Finkel,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2004
+Alain Finkel,Ecole Normale Superieure de Cachan,logic,1.0,0.2,2015
+Alain Finkel,Ecole Normale Superieure de Cachan,softeng,1.0,0.333333333333,1994
 Vikram S. Adve,University of Illinois at Urbana-Champaign,metrics,1.0,0.5,1993
 Vikram S. Adve,University of Illinois at Urbana-Champaign,opsys,1.0,0.25,2007
 Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1998
@@ -24662,11 +24736,18 @@ Michalis Polychronakis,Stony Brook University,security,1.0,0.333333333333,2011
 Michalis Polychronakis,Stony Brook University,security,2.0,0.583333333333,2012
 Michalis Polychronakis,Stony Brook University,security,1.0,0.333333333333,2013
 Michalis Polychronakis,Stony Brook University,security,3.0,0.783333333333,2014
-Samira Manabi Khan,University of Virginia,metrics,1.0,0.166666666667,2014
-Samira Manabi Khan,University of Virginia,metrics,1.0,0.1,2016
-Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2010
-Samira Manabi Khan,University of Virginia,arch,1.0,0.333333333333,2012
-Samira Manabi Khan,University of Virginia,arch,2.0,0.366666666667,2015
+George Candea,EPFL,opsys,1.0,0.2,2004
+George Candea,EPFL,opsys,1.0,0.25,2008
+George Candea,EPFL,opsys,1.0,0.333333333333,2013
+George Candea,EPFL,opsys,1.0,0.166666666667,2014
+George Candea,EPFL,opsys,1.0,0.2,2015
+George Candea,EPFL,database,1.0,0.333333333333,2008
+George Candea,EPFL,database,1.0,0.333333333333,2009
+George Candea,EPFL,proglang,1.0,0.25,2012
+George Candea,EPFL,security,1.0,0.25,2015
+George Candea,EPFL,arch,1.0,0.333333333333,2011
+George Candea,EPFL,arch,1.0,0.333333333333,2012
+George Candea,EPFL,arch,2.0,0.666666666667,2014
 Adam Klivans,University of Texas - Austin,theory,2.0,1.0,1999
 Adam Klivans,University of Texas - Austin,theory,1.0,0.5,2001
 Adam Klivans,University of Texas - Austin,theory,2.0,0.666666666667,2002
@@ -24707,6 +24788,7 @@ C.-H. Luke Ong,University of Oxford,logic,2.0,0.45,2008
 C.-H. Luke Ong,University of Oxford,logic,3.0,1.5,2009
 C.-H. Luke Ong,University of Oxford,logic,1.0,0.25,2010
 C.-H. Luke Ong,University of Oxford,logic,1.0,0.333333333333,2012
+C.-H. Luke Ong,University of Oxford,logic,1.0,0.5,2014
 C.-H. Luke Ong,University of Oxford,logic,1.0,0.5,2015
 Raimund Dachselt,TU Dresden,hci,2.0,0.833333333333,2012
 Raimund Dachselt,TU Dresden,hci,3.0,0.866666666667,2013
@@ -25767,6 +25849,8 @@ Michael Mitzenmacher,Harvard University,networks,1.0,0.2,2009
 Michael Mitzenmacher,Harvard University,networks,1.0,0.333333333333,2010
 Michael Mitzenmacher,Harvard University,networks,1.0,0.125,2015
 Michael Mitzenmacher,Harvard University,web,1.0,0.333333333333,2014
+Paul Gastin,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2001
+Paul Gastin,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2014
 Calvin Lin,University of Texas - Austin,proglang,1.0,0.333333333333,1998
 Calvin Lin,University of Texas - Austin,proglang,1.0,0.5,2007
 Calvin Lin,University of Texas - Austin,proglang,1.0,0.5,2009
@@ -25857,6 +25941,7 @@ Abbas Edalat,Imperial College London,logic,1.0,0.5,2002
 Abbas Edalat,Imperial College London,logic,1.0,0.5,2005
 Abbas Edalat,Imperial College London,logic,1.0,1.0,2007
 Abbas Edalat,Imperial College London,logic,1.0,1.0,2008
+Abbas Edalat,Imperial College London,logic,1.0,0.5,2014
 Abbas Edalat,Imperial College London,logic,1.0,1.0,2015
 Daniel S. Hirschberg,University of California - Irvine,theory,1.0,0.5,1985
 Daniel S. Hirschberg,University of California - Irvine,theory,1.0,0.5,1990
@@ -26376,6 +26461,7 @@ Mohamed G. Gouda,University of Texas - Austin,networks,1.0,0.5,2011
 Mohamed G. Gouda,University of Texas - Austin,web,1.0,0.25,2001
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.333333333333,2010
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.2,2012
+Jörg Endrullis,VU Amsterdam,logic,1.0,0.5,2014
 Jörg Endrullis,VU Amsterdam,logic,1.0,0.333333333333,2015
 Aniket Kate,Purdue University,security,1.0,0.25,2012
 Aniket Kate,Purdue University,security,1.0,0.25,2014
@@ -28460,6 +28546,7 @@ Marcelo P. Fiore,University of Cambridge,logic,1.0,0.5,2001
 Marcelo P. Fiore,University of Cambridge,logic,1.0,0.5,2006
 Marcelo P. Fiore,University of Cambridge,logic,1.0,1.0,2008
 Marcelo P. Fiore,University of Cambridge,logic,1.0,0.5,2013
+Marcelo P. Fiore,University of Cambridge,logic,1.0,0.5,2014
 Vladimir Filkov,University of California - Davis,hci,1.0,0.142857142857,2015
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.25,2007
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.2,2008
@@ -28587,6 +28674,7 @@ Glynn Winskel,University of Cambridge,logic,1.0,0.5,2006
 Glynn Winskel,University of Cambridge,logic,1.0,0.5,2010
 Glynn Winskel,University of Cambridge,logic,1.0,0.5,2011
 Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2012
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2014
 Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2015
 Glynn Winskel,University of Cambridge,security,1.0,0.5,2001
 Stefan Schaal,University of Southern California,mlmining,1.0,0.5,1993
@@ -28625,6 +28713,19 @@ Stefan Schaal,University of Southern California,robotics,6.0,1.51666666667,2015
 Stefan Schaal,University of Southern California,robotics,7.0,2.03333333333,2016
 Meera Sitharam,University of Florida,graphics,1.0,0.25,2006
 Meera Sitharam,University of Florida,theory,1.0,1.0,1994
+Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,1988
+Nir Shavit,Tel Aviv University,theory,2.0,0.833333333333,1989
+Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,1990
+Nir Shavit,Tel Aviv University,theory,3.0,1.0,1991
+Nir Shavit,Tel Aviv University,theory,1.0,0.5,1993
+Nir Shavit,Tel Aviv University,theory,1.0,0.5,1994
+Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,2005
+Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,2014
+Nir Shavit,Tel Aviv University,opsys,1.0,0.25,2015
+Nir Shavit,Tel Aviv University,arch,1.0,0.5,2015
+Nir Shavit,Tel Aviv University,highperf,1.0,0.333333333333,2012
+Nir Shavit,Tel Aviv University,highperf,1.0,0.166666666667,2013
+Nir Shavit,Tel Aviv University,highperf,1.0,0.25,2015
 Stephen A. Cook,University of Toronto,theory,2.0,1.0,1980
 Stephen A. Cook,University of Toronto,theory,1.0,0.5,1983
 Stephen A. Cook,University of Toronto,theory,1.0,0.333333333333,1984
@@ -30925,6 +31026,12 @@ Ondrej Lhoták,University of Waterloo,proglang,1.0,0.5,2012
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.333333333333,2015
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.333333333333,2016
 Ondrej Lhoták,University of Waterloo,softeng,1.0,0.5,2011
+Patricia Bouyer,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2000
+Patricia Bouyer,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2003
+Patricia Bouyer,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2006
+Patricia Bouyer,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2007
+Patricia Bouyer,Ecole Normale Superieure de Cachan,logic,1.0,0.2,2008
+Patricia Bouyer,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2016
 Sergei Nirenburg,Rensselaer Polytechnic Institute,nlp,1.0,0.25,1996
 Sergei Nirenburg,Rensselaer Polytechnic Institute,ai,1.0,0.333333333333,1989
 Wei-Tek Tsai,Arizona State University,security,1.0,0.5,1990
@@ -31201,6 +31308,10 @@ Stephen Mann,University of Waterloo,graphics,1.0,0.25,1991
 Stephen Mann,University of Waterloo,graphics,1.0,0.25,1993
 Stephen Mann,University of Waterloo,graphics,1.0,0.5,1997
 Stephen Mann,University of Waterloo,hci,1.0,0.25,2006
+Philippe Schnoebelen,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2002
+Philippe Schnoebelen,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2008
+Philippe Schnoebelen,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2011
+Philippe Schnoebelen,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2012
 Silvio Savarese,Stanford University,mlmining,1.0,0.25,2014
 Silvio Savarese,Stanford University,ai,1.0,0.25,2012
 Silvio Savarese,Stanford University,robotics,1.0,0.25,2011
@@ -31462,6 +31573,7 @@ Somesh Jha,University of Wisconsin - Madison,logic,1.0,0.2,2000
 Somesh Jha,University of Wisconsin - Madison,logic,1.0,0.25,2002
 Somesh Jha,University of Wisconsin - Madison,logic,2.0,0.47619047619,2012
 Somesh Jha,University of Wisconsin - Madison,logic,1.0,0.25,2013
+Somesh Jha,University of Wisconsin - Madison,logic,1.0,0.5,2014
 Somesh Jha,University of Wisconsin - Madison,security,2.0,0.533333333333,2002
 Somesh Jha,University of Wisconsin - Madison,security,2.0,0.7,2003
 Somesh Jha,University of Wisconsin - Madison,security,3.0,0.866666666667,2005
@@ -31637,6 +31749,7 @@ Christopher Raphael,Indiana University,mlmining,1.0,1.0,2001
 Christopher Raphael,Indiana University,mlmining,1.0,1.0,2010
 Christopher Raphael,Indiana University,ai,1.0,1.0,2009
 Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.142857142857,2012
+Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.5,2014
 Matthew Fredrikson,Carnegie Mellon University,security,2.0,0.75,2011
 Matthew Fredrikson,Carnegie Mellon University,security,3.0,0.766666666667,2014
 Rafal K. Mantiuk,University of Cambridge,graphics,1.0,0.5,2014
@@ -32582,7 +32695,33 @@ Karrie Karahalios,University of Illinois at Urbana-Champaign,web,1.0,0.25,2016
 Amos Ron,University of Wisconsin - Madison,networks,1.0,0.25,2005
 Amos Ron,University of Wisconsin - Madison,networks,1.0,0.25,2007
 Amos Ron,University of Wisconsin - Madison,networks,1.0,0.25,2009
-Pavol Federl,University of Calgary,graphics,1.0,0.166666666667,2005
+Philip N. Klein,Brown University,theory,1.0,0.5,1986
+Philip N. Klein,Brown University,theory,1.0,1.0,1988
+Philip N. Klein,Brown University,theory,3.0,1.08333333333,1990
+Philip N. Klein,Brown University,theory,1.0,0.333333333333,1991
+Philip N. Klein,Brown University,theory,1.0,0.5,1992
+Philip N. Klein,Brown University,theory,2.0,0.833333333333,1993
+Philip N. Klein,Brown University,theory,2.0,0.75,1994
+Philip N. Klein,Brown University,theory,1.0,0.5,1996
+Philip N. Klein,Brown University,theory,1.0,0.2,1998
+Philip N. Klein,Brown University,theory,1.0,0.2,1999
+Philip N. Klein,Brown University,theory,1.0,0.25,2000
+Philip N. Klein,Brown University,theory,1.0,0.333333333333,2001
+Philip N. Klein,Brown University,theory,1.0,1.0,2002
+Philip N. Klein,Brown University,theory,2.0,2.0,2005
+Philip N. Klein,Brown University,theory,2.0,1.5,2006
+Philip N. Klein,Brown University,theory,1.0,0.333333333333,2007
+Philip N. Klein,Brown University,theory,1.0,0.333333333333,2008
+Philip N. Klein,Brown University,theory,1.0,0.333333333333,2009
+Philip N. Klein,Brown University,theory,1.0,0.2,2011
+Philip N. Klein,Brown University,theory,2.0,0.583333333333,2012
+Philip N. Klein,Brown University,theory,2.0,0.833333333333,2013
+Philip N. Klein,Brown University,theory,2.0,0.833333333333,2014
+Philip N. Klein,Brown University,theory,1.0,0.333333333333,2015
+Philip N. Klein,Brown University,theory,1.0,0.2,2016
+Philip N. Klein,Brown University,security,1.0,0.333333333333,2000
+Philip N. Klein,Brown University,vision,1.0,0.333333333333,2001
+Philip N. Klein,Brown University,vision,1.0,0.333333333333,2002
 Padma Raghavan,Pennsylvania State University,highperf,1.0,0.333333333333,2002
 Padma Raghavan,Pennsylvania State University,highperf,2.0,0.533333333333,2006
 Padma Raghavan,Pennsylvania State University,highperf,1.0,0.25,2011
@@ -32674,19 +32813,14 @@ Funda Ergün,Indiana University,crypto,1.0,0.333333333333,1999
 Funda Ergün,Indiana University,networks,1.0,0.333333333333,2000
 Funda Ergün,Indiana University,networks,1.0,0.2,2001
 Funda Ergün,Indiana University,networks,1.0,0.25,2014
-Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,1988
-Nir Shavit,Tel Aviv University,theory,2.0,0.833333333333,1989
-Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,1990
-Nir Shavit,Tel Aviv University,theory,3.0,1.0,1991
-Nir Shavit,Tel Aviv University,theory,1.0,0.5,1993
-Nir Shavit,Tel Aviv University,theory,1.0,0.5,1994
-Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,2005
-Nir Shavit,Tel Aviv University,theory,1.0,0.333333333333,2014
-Nir Shavit,Tel Aviv University,opsys,1.0,0.25,2015
-Nir Shavit,Tel Aviv University,arch,1.0,0.5,2015
-Nir Shavit,Tel Aviv University,highperf,1.0,0.333333333333,2012
-Nir Shavit,Tel Aviv University,highperf,1.0,0.166666666667,2013
-Nir Shavit,Tel Aviv University,highperf,1.0,0.25,2015
+Hubert Comon,Ecole Normale Superieure de Cachan,theory,1.0,0.333333333333,2001
+Hubert Comon,Ecole Normale Superieure de Cachan,logic,1.0,1.0,1990
+Hubert Comon,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1992
+Hubert Comon,Ecole Normale Superieure de Cachan,logic,2.0,1.33333333333,1995
+Hubert Comon,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1997
+Hubert Comon,Ecole Normale Superieure de Cachan,logic,2.0,0.75,1998
+Ken Barker,University of Calgary,ai,1.0,0.333333333333,2006
+Ken Barker,University of Calgary,ai,1.0,0.0666666666667,2007
 Tobias Höllerer,University of California - Santa Barbara,hci,1.0,0.333333333333,2001
 Tobias Höllerer,University of California - Santa Barbara,hci,2.0,0.583333333333,2014
 Tobias Höllerer,University of California - Santa Barbara,vision,1.0,0.25,2014
@@ -33127,6 +33261,7 @@ Martha White,Indiana University,ai,1.0,0.5,2009
 Martha White,Indiana University,ai,1.0,0.2,2011
 Martha White,Indiana University,ai,1.0,0.25,2015
 Martha White,Indiana University,ai,1.0,0.333333333333,2016
+David Baelde,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2012
 Seth Cooper,Northeastern University,graphics,1.0,0.333333333333,2006
 Seth Cooper,Northeastern University,graphics,1.0,0.333333333333,2007
 Seth Cooper,Northeastern University,hci,1.0,0.125,2012
@@ -33212,6 +33347,12 @@ Michel Abdalla,Ecole Normale Superieure,crypto,1.0,0.25,2012
 Michel Abdalla,Ecole Normale Superieure,crypto,1.0,0.25,2014
 Michel Abdalla,Ecole Normale Superieure,crypto,2.0,0.666666666667,2015
 Michel Abdalla,Ecole Normale Superieure,security,1.0,0.333333333333,2015
+Stéphane Demri,Ecole Normale Superieure de Cachan,ai,1.0,0.333333333333,1991
+Stéphane Demri,Ecole Normale Superieure de Cachan,ai,1.0,0.5,1993
+Stéphane Demri,Ecole Normale Superieure de Cachan,ai,1.0,0.5,1995
+Stéphane Demri,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2006
+Stéphane Demri,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2013
+Stéphane Demri,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2014
 Barbara Cutler,Rensselaer Polytechnic Institute,graphics,2.0,0.4,2002
 Ranjit Jhala,University of California - San Diego,networks,1.0,0.25,2007
 Ranjit Jhala,University of California - San Diego,proglang,1.0,0.25,2002
