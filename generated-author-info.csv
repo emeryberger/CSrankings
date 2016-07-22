@@ -369,6 +369,8 @@ Maria L. Gini,University of Minnesota - Twin Cities,robotics,2.0,0.642857142857,
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,0.333333333333,2007
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,0.25,2011
 Maria L. Gini,University of Minnesota - Twin Cities,robotics,1.0,0.333333333333,2012
+Ryan Stutsman,University of Utah,opsys,1.0,0.2,2011
+Ryan Stutsman,University of Utah,database,2.0,0.533333333333,2015
 Amélie Marian,Rutgers University,database,1.0,0.25,2001
 Amélie Marian,Rutgers University,database,1.0,0.5,2003
 Amélie Marian,Rutgers University,database,1.0,0.2,2005
@@ -772,13 +774,13 @@ Aravind Srinivasan,University of Maryland - College Park,networks,2.0,0.36666666
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,0.2,2009
 Aravind Srinivasan,University of Maryland - College Park,networks,1.0,0.25,2011
 Aravind Srinivasan,University of Maryland - College Park,security,1.0,0.333333333333,2002
-Ladislav Kavan,University of Pennsylvania,graphics,1.0,0.25,2008
-Ladislav Kavan,University of Pennsylvania,graphics,1.0,0.25,2011
-Ladislav Kavan,University of Pennsylvania,graphics,2.0,0.7,2012
-Ladislav Kavan,University of Pennsylvania,graphics,3.0,0.72619047619,2013
-Ladislav Kavan,University of Pennsylvania,graphics,1.0,0.125,2014
-Ladislav Kavan,University of Pennsylvania,graphics,2.0,0.583333333333,2015
-Ladislav Kavan,University of Pennsylvania,graphics,1.0,0.5,2016
+Ladislav Kavan,University of Utah,graphics,1.0,0.25,2008
+Ladislav Kavan,University of Utah,graphics,1.0,0.25,2011
+Ladislav Kavan,University of Utah,graphics,2.0,0.7,2012
+Ladislav Kavan,University of Utah,graphics,3.0,0.72619047619,2013
+Ladislav Kavan,University of Utah,graphics,1.0,0.125,2014
+Ladislav Kavan,University of Utah,graphics,2.0,0.583333333333,2015
+Ladislav Kavan,University of Utah,graphics,1.0,0.5,2016
 Lawrence Birnbaum,Northwestern University,ai,1.0,1.0,1985
 Lawrence Birnbaum,Northwestern University,ai,1.0,0.333333333333,1989
 Lawrence Birnbaum,Northwestern University,ai,1.0,0.25,1990
@@ -1466,6 +1468,12 @@ Shuang Zhao,University of California - Irvine,graphics,3.0,0.616666666667,2013
 Shuang Zhao,University of California - Irvine,graphics,1.0,0.333333333333,2014
 Shuang Zhao,University of California - Irvine,graphics,1.0,0.2,2015
 Shuang Zhao,University of California - Irvine,graphics,1.0,1.0,2016
+Hari Sundar,University of Utah,highperf,1.0,0.2,2007
+Hari Sundar,University of Utah,highperf,1.0,0.2,2008
+Hari Sundar,University of Utah,highperf,1.0,0.333333333333,2010
+Hari Sundar,University of Utah,highperf,1.0,0.166666666667,2012
+Hari Sundar,University of Utah,highperf,1.0,0.333333333333,2013
+Hari Sundar,University of Utah,vision,1.0,0.2,2010
 Engin Ipek,University of Rochester,opsys,1.0,0.142857142857,2009
 Engin Ipek,University of Rochester,arch,1.0,0.2,2006
 Engin Ipek,University of Rochester,arch,1.0,0.25,2007
@@ -4863,18 +4871,27 @@ Alan Mislove,Northeastern University,web,1.0,0.333333333333,2009
 Alan Mislove,Northeastern University,web,2.0,0.47619047619,2013
 Alan Mislove,Northeastern University,web,1.0,0.333333333333,2016
 Alan Mislove,Northeastern University,security,1.0,0.142857142857,2014
-Kamin Whitehouse,University of Virginia,hci,1.0,0.333333333333,2008
-Kamin Whitehouse,University of Virginia,hci,1.0,0.2,2012
-Kamin Whitehouse,University of Virginia,hci,1.0,0.5,2015
-Kamin Whitehouse,University of Virginia,networks,1.0,0.5,2009
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2004
-Kamin Whitehouse,University of Virginia,mobile,2.0,0.4,2008
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.2,2009
-Kamin Whitehouse,University of Virginia,mobile,2.0,0.267857142857,2010
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.142857142857,2011
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2012
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2014
-Kamin Whitehouse,University of Virginia,mobile,1.0,0.2,2016
+Wenke Lee,Georgia Institute of Technology,mlmining,1.0,0.166666666667,1997
+Wenke Lee,Georgia Institute of Technology,mlmining,1.0,0.333333333333,1998
+Wenke Lee,Georgia Institute of Technology,mlmining,1.0,0.333333333333,1999
+Wenke Lee,Georgia Institute of Technology,networks,1.0,0.333333333333,2010
+Wenke Lee,Georgia Institute of Technology,mobile,1.0,0.5,2000
+Wenke Lee,Georgia Institute of Technology,web,1.0,0.25,2011
+Wenke Lee,Georgia Institute of Technology,web,1.0,0.2,2012
+Wenke Lee,Georgia Institute of Technology,web,1.0,0.142857142857,2015
+Wenke Lee,Georgia Institute of Technology,web,1.0,0.25,2016
+Wenke Lee,Georgia Institute of Technology,security,1.0,0.5,1998
+Wenke Lee,Georgia Institute of Technology,security,1.0,0.333333333333,1999
+Wenke Lee,Georgia Institute of Technology,security,1.0,0.5,2001
+Wenke Lee,Georgia Institute of Technology,security,3.0,0.9,2006
+Wenke Lee,Georgia Institute of Technology,security,4.0,0.95,2008
+Wenke Lee,Georgia Institute of Technology,security,4.0,1.0,2009
+Wenke Lee,Georgia Institute of Technology,security,3.0,0.7,2010
+Wenke Lee,Georgia Institute of Technology,security,3.0,0.733333333333,2011
+Wenke Lee,Georgia Institute of Technology,security,2.0,0.342857142857,2012
+Wenke Lee,Georgia Institute of Technology,security,4.0,0.816666666667,2013
+Wenke Lee,Georgia Institute of Technology,security,5.0,0.933333333333,2014
+Wenke Lee,Georgia Institute of Technology,security,3.0,0.616666666667,2015
 Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2008
 Karthik Sridharan,Cornell University,mlmining,1.0,0.25,2009
 Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2010
@@ -5872,12 +5889,17 @@ Martina Angela Sasse,University College London,hci,1.0,0.25,2006
 Martina Angela Sasse,University College London,hci,1.0,0.5,2010
 Martina Angela Sasse,University College London,hci,1.0,0.25,2011
 Martina Angela Sasse,University College London,hci,1.0,0.2,2012
-William R. Harris,Georgia Institute of Technology,proglang,1.0,0.25,2010
-William R. Harris,Georgia Institute of Technology,proglang,1.0,0.5,2011
-William R. Harris,Georgia Institute of Technology,logic,1.0,0.333333333333,2012
-William R. Harris,Georgia Institute of Technology,logic,1.0,0.25,2013
-William R. Harris,Georgia Institute of Technology,security,1.0,0.333333333333,2010
-William R. Harris,Georgia Institute of Technology,security,1.0,0.2,2013
+Valerio Pascucci,University of Utah,graphics,1.0,0.333333333333,1995
+Valerio Pascucci,University of Utah,graphics,1.0,0.25,2005
+Valerio Pascucci,University of Utah,graphics,1.0,0.2,2006
+Valerio Pascucci,University of Utah,graphics,1.0,0.25,2007
+Valerio Pascucci,University of Utah,graphics,1.0,0.2,2011
+Valerio Pascucci,University of Utah,graphics,1.0,0.333333333333,2012
+Valerio Pascucci,University of Utah,highperf,1.0,0.5,2001
+Valerio Pascucci,University of Utah,highperf,1.0,0.0833333333333,2006
+Valerio Pascucci,University of Utah,highperf,3.0,0.233333333333,2012
+Valerio Pascucci,University of Utah,highperf,2.0,0.153846153846,2013
+Valerio Pascucci,University of Utah,highperf,2.0,0.253968253968,2014
 Ruihong Huang,Texas A&M University,nlp,1.0,0.5,2010
 Ruihong Huang,Texas A&M University,nlp,1.0,0.5,2011
 Ruihong Huang,Texas A&M University,nlp,3.0,1.16666666667,2013
@@ -5918,6 +5940,15 @@ Daniel N. Rockmore,Dartmouth College,theory,1.0,0.5,1995
 Daniel N. Rockmore,Dartmouth College,theory,1.0,0.5,1997
 Daniel N. Rockmore,Dartmouth College,theory,2.0,0.583333333333,2004
 Daniel N. Rockmore,Dartmouth College,vision,1.0,0.333333333333,2013
+Aditya Bhaskara,University of Utah,theory,1.0,0.2,2010
+Aditya Bhaskara,University of Utah,theory,1.0,0.5,2011
+Aditya Bhaskara,University of Utah,theory,2.0,0.45,2012
+Aditya Bhaskara,University of Utah,theory,1.0,0.25,2013
+Aditya Bhaskara,University of Utah,theory,1.0,0.25,2014
+Aditya Bhaskara,University of Utah,theory,1.0,0.2,2016
+Aditya Bhaskara,University of Utah,mlmining,2.0,0.5,2014
+Aditya Bhaskara,University of Utah,mlmining,1.0,0.166666666667,2016
+Aditya Bhaskara,University of Utah,web,1.0,0.333333333333,2015
 Francis R. Bach,Ecole Normale Superieure,mlmining,1.0,0.5,2001
 Francis R. Bach,Ecole Normale Superieure,mlmining,1.0,0.5,2002
 Francis R. Bach,Ecole Normale Superieure,mlmining,2.0,0.833333333333,2003
@@ -7325,6 +7356,9 @@ Robert Harle,University of Cambridge,hci,1.0,0.5,2013
 Amir Averbuch,Tel Aviv University,arch,1.0,0.333333333333,1990
 Amir Averbuch,Tel Aviv University,vision,1.0,0.25,2013
 William E. Howden,University of California - San Diego,softeng,1.0,1.0,1981
+Andrea S. LaPaugh,Princeton University,theory,1.0,1.0,1980
+Andrea S. LaPaugh,Princeton University,theory,1.0,0.333333333333,1994
+Andrea S. LaPaugh,Princeton University,web,1.0,0.333333333333,2002
 James Brotherston,University College London,proglang,1.0,0.333333333333,2008
 James Brotherston,University College London,proglang,1.0,0.5,2009
 James Brotherston,University College London,proglang,1.0,0.5,2014
@@ -7452,13 +7486,13 @@ Stephen D. Brookes,Carnegie Mellon University,proglang,1.0,0.5,1995
 Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1986
 Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1993
 Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1996
-Adam W. Bargteil,University of Utah,graphics,1.0,0.333333333333,2004
-Adam W. Bargteil,University of Utah,graphics,1.0,0.25,2006
-Adam W. Bargteil,University of Utah,graphics,1.0,0.25,2007
-Adam W. Bargteil,University of Utah,graphics,1.0,0.25,2011
-Adam W. Bargteil,University of Utah,graphics,2.0,0.75,2013
-Adam W. Bargteil,University of Utah,graphics,2.0,0.7,2014
-Adam W. Bargteil,University of Utah,graphics,1.0,0.25,2016
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,1.0,0.333333333333,2004
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,1.0,0.25,2006
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,1.0,0.25,2007
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,1.0,0.25,2011
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,2.0,0.75,2013
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,2.0,0.7,2014
+Adam W. Bargteil,University of Maryland - Baltimore County,graphics,1.0,0.25,2016
 Kathleen Fisher,Tufts University,mlmining,1.0,0.25,2000
 Kathleen Fisher,Tufts University,proglang,1.0,0.5,1999
 Kathleen Fisher,Tufts University,proglang,1.0,0.5,2005
@@ -11695,6 +11729,10 @@ Eric Allender,Rutgers University,theory,2.0,0.7,1997
 Eric Allender,Rutgers University,theory,1.0,0.2,2002
 Eric Allender,Rutgers University,mlmining,1.0,0.2,2002
 Eric Allender,Rutgers University,crypto,1.0,0.2,1988
+Tamara Denning,University of Utah,hci,1.0,0.2,2009
+Tamara Denning,University of Utah,hci,1.0,0.166666666667,2010
+Tamara Denning,University of Utah,hci,1.0,0.333333333333,2014
+Tamara Denning,University of Utah,security,1.0,0.25,2013
 Daniel Wichs,Northeastern University,theory,1.0,0.5,2009
 Daniel Wichs,Northeastern University,theory,1.0,0.25,2010
 Daniel Wichs,Northeastern University,theory,2.0,0.75,2011
@@ -17050,8 +17088,8 @@ Jude W. Shavlik,University of Wisconsin - Madison,ai,1.0,0.333333333333,2014
 Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,0.25,2006
 Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,0.25,2011
 Jude W. Shavlik,University of Wisconsin - Madison,database,1.0,0.142857142857,2014
-Robert Michael Young,North Carolina State University,ai,1.0,0.5,2004
-Robert Michael Young,North Carolina State University,ai,1.0,0.5,2005
+Robert Michael Young,University of Utah,ai,1.0,0.5,2004
+Robert Michael Young,University of Utah,ai,1.0,0.5,2005
 Georgios E. Fainekos,Arizona State University,robotics,1.0,0.333333333333,2005
 Georgios E. Fainekos,Arizona State University,robotics,2.0,0.666666666667,2007
 Georgios E. Fainekos,Arizona State University,robotics,1.0,1.0,2011
@@ -20021,6 +20059,7 @@ Ruzica Piskac,Yale University,logic,2.0,0.583333333333,2013
 Ruzica Piskac,Yale University,logic,1.0,0.333333333333,2014
 Ruzica Piskac,Yale University,logic,1.0,0.5,2015
 Ruzica Piskac,Yale University,logic,1.0,0.333333333333,2016
+Alexander Lex,University of Utah,hci,1.0,0.2,2014
 Ron M. Roth,Technion,theory,1.0,0.5,1991
 Ron M. Roth,Technion,theory,1.0,0.25,1994
 Ron M. Roth,Technion,networks,1.0,0.25,2009
@@ -21256,9 +21295,9 @@ Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.1428571428
 Michael W. Hicks,University of Maryland - College Park,security,1.0,0.5,2007
 Michael W. Hicks,University of Maryland - College Park,security,2.0,0.45,2014
 Michael W. Hicks,University of Maryland - College Park,arch,1.0,0.166666666667,2015
-Andrea S. LaPaugh,Princeton University,theory,1.0,1.0,1980
-Andrea S. LaPaugh,Princeton University,theory,1.0,0.333333333333,1994
-Andrea S. LaPaugh,Princeton University,web,1.0,0.333333333333,2002
+Bei Wang,University of Utah,theory,1.0,0.333333333333,2012
+Bei Wang,University of Utah,theory,1.0,0.5,2014
+Bei Wang,University of Utah,highperf,1.0,0.125,2013
 Boon Thau Loo,University of Pennsylvania,opsys,1.0,0.166666666667,2005
 Boon Thau Loo,University of Pennsylvania,opsys,1.0,0.166666666667,2011
 Boon Thau Loo,University of Pennsylvania,database,1.0,0.333333333333,2001
@@ -27700,8 +27739,8 @@ Nina Amenta,University of California - Davis,graphics,1.0,0.142857142857,2009
 Nina Amenta,University of California - Davis,theory,1.0,1.0,1992
 Nina Amenta,University of California - Davis,theory,1.0,0.333333333333,1997
 Nina Amenta,University of California - Davis,theory,1.0,0.333333333333,2007
-Guido Gerig,University of Utah,vision,1.0,0.25,1995
-Guido Gerig,University of Utah,vision,1.0,0.125,2007
+Guido Gerig,New York University,vision,1.0,0.25,1995
+Guido Gerig,New York University,vision,1.0,0.125,2007
 AnHai Doan,University of Wisconsin - Madison,ai,1.0,0.333333333333,2005
 AnHai Doan,University of Wisconsin - Madison,database,1.0,0.333333333333,2001
 AnHai Doan,University of Wisconsin - Madison,database,2.0,0.45,2004
@@ -28442,27 +28481,18 @@ Daniel Deutch,Tel Aviv University,database,1.0,0.333333333333,2015
 Daniel Deutch,Tel Aviv University,web,1.0,0.25,2012
 David L. Spooner,Rensselaer Polytechnic Institute,database,1.0,1.0,1984
 David L. Spooner,Rensselaer Polytechnic Institute,database,1.0,0.2,1986
-Wenke Lee,Georgia Institute of Technology,mlmining,1.0,0.166666666667,1997
-Wenke Lee,Georgia Institute of Technology,mlmining,1.0,0.333333333333,1998
-Wenke Lee,Georgia Institute of Technology,mlmining,1.0,0.333333333333,1999
-Wenke Lee,Georgia Institute of Technology,networks,1.0,0.333333333333,2010
-Wenke Lee,Georgia Institute of Technology,mobile,1.0,0.5,2000
-Wenke Lee,Georgia Institute of Technology,web,1.0,0.25,2011
-Wenke Lee,Georgia Institute of Technology,web,1.0,0.2,2012
-Wenke Lee,Georgia Institute of Technology,web,1.0,0.142857142857,2015
-Wenke Lee,Georgia Institute of Technology,web,1.0,0.25,2016
-Wenke Lee,Georgia Institute of Technology,security,1.0,0.5,1998
-Wenke Lee,Georgia Institute of Technology,security,1.0,0.333333333333,1999
-Wenke Lee,Georgia Institute of Technology,security,1.0,0.5,2001
-Wenke Lee,Georgia Institute of Technology,security,3.0,0.9,2006
-Wenke Lee,Georgia Institute of Technology,security,4.0,0.95,2008
-Wenke Lee,Georgia Institute of Technology,security,4.0,1.0,2009
-Wenke Lee,Georgia Institute of Technology,security,3.0,0.7,2010
-Wenke Lee,Georgia Institute of Technology,security,3.0,0.733333333333,2011
-Wenke Lee,Georgia Institute of Technology,security,2.0,0.342857142857,2012
-Wenke Lee,Georgia Institute of Technology,security,4.0,0.816666666667,2013
-Wenke Lee,Georgia Institute of Technology,security,5.0,0.933333333333,2014
-Wenke Lee,Georgia Institute of Technology,security,3.0,0.616666666667,2015
+Kamin Whitehouse,University of Virginia,hci,1.0,0.333333333333,2008
+Kamin Whitehouse,University of Virginia,hci,1.0,0.2,2012
+Kamin Whitehouse,University of Virginia,hci,1.0,0.5,2015
+Kamin Whitehouse,University of Virginia,networks,1.0,0.5,2009
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2004
+Kamin Whitehouse,University of Virginia,mobile,2.0,0.4,2008
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.2,2009
+Kamin Whitehouse,University of Virginia,mobile,2.0,0.267857142857,2010
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.142857142857,2011
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2012
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2014
+Kamin Whitehouse,University of Virginia,mobile,1.0,0.2,2016
 Ben Shneiderman,University of Maryland - College Park,graphics,1.0,1.0,1992
 Ben Shneiderman,University of Maryland - College Park,graphics,1.0,0.333333333333,2002
 Ben Shneiderman,University of Maryland - College Park,hci,1.0,0.333333333333,1992
@@ -29895,6 +29925,10 @@ Dragomir R. Radev,University of Michigan,web,1.0,0.5,1995
 Dragomir R. Radev,University of Michigan,web,1.0,0.25,2000
 Dragomir R. Radev,University of Michigan,web,1.0,0.2,2002
 Dragomir R. Radev,University of Michigan,web,1.0,0.333333333333,2006
+Tucker Hermans,University of Utah,robotics,1.0,0.25,2011
+Tucker Hermans,University of Utah,robotics,1.0,0.333333333333,2012
+Tucker Hermans,University of Utah,robotics,1.0,0.333333333333,2013
+Tucker Hermans,University of Utah,robotics,1.0,0.25,2015
 Thorsten Strufe,TU Dresden,networks,1.0,0.5,2015
 Thorsten Strufe,TU Dresden,web,1.0,0.25,2009
 Eli Biham,Technion,theory,1.0,0.2,2000
@@ -33242,17 +33276,12 @@ Ross A. Knepper,Cornell University,robotics,1.0,0.5,2011
 Ross A. Knepper,Cornell University,robotics,4.0,1.11666666667,2013
 Ross A. Knepper,Cornell University,robotics,1.0,0.2,2014
 Ross A. Knepper,Cornell University,robotics,2.0,0.583333333333,2015
-Valerio Pascucci,University of Utah,graphics,1.0,0.333333333333,1995
-Valerio Pascucci,University of Utah,graphics,1.0,0.25,2005
-Valerio Pascucci,University of Utah,graphics,1.0,0.2,2006
-Valerio Pascucci,University of Utah,graphics,1.0,0.25,2007
-Valerio Pascucci,University of Utah,graphics,1.0,0.2,2011
-Valerio Pascucci,University of Utah,graphics,1.0,0.333333333333,2012
-Valerio Pascucci,University of Utah,highperf,1.0,0.5,2001
-Valerio Pascucci,University of Utah,highperf,1.0,0.0833333333333,2006
-Valerio Pascucci,University of Utah,highperf,3.0,0.233333333333,2012
-Valerio Pascucci,University of Utah,highperf,2.0,0.153846153846,2013
-Valerio Pascucci,University of Utah,highperf,2.0,0.253968253968,2014
+William R. Harris,Georgia Institute of Technology,proglang,1.0,0.25,2010
+William R. Harris,Georgia Institute of Technology,proglang,1.0,0.5,2011
+William R. Harris,Georgia Institute of Technology,logic,1.0,0.333333333333,2012
+William R. Harris,Georgia Institute of Technology,logic,1.0,0.25,2013
+William R. Harris,Georgia Institute of Technology,security,1.0,0.333333333333,2010
+William R. Harris,Georgia Institute of Technology,security,1.0,0.2,2013
 Elham Kashefi,University of Edinburgh,nlp,1.0,0.333333333333,2013
 Elham Kashefi,University of Edinburgh,theory,1.0,0.333333333333,2009
 Leana Golubchik,University of Southern California,metrics,1.0,0.333333333333,1995
