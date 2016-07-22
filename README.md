@@ -12,8 +12,8 @@ If you want to change anything, you will want to download the DBLP data by runni
 
 You will need to install libxml2-utils (or whatever package includes xmllint on your distro), npm, typescript, and python-lxml at the minimum.
 
-apt-get install libxml2-utils, npm, python-lxml
+`apt-get install libxml2-utils, npm, python-lxml`
 
-npm install -g typescript
+`npm install -g typescript`
 
 Be warned that running ``make update-dblp `` will consume upwards of 19GiB of memory (so make sure your system has sufficient resources).
