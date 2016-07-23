@@ -46,7 +46,7 @@ areadict = {
     'proglang' : ['POPL', 'PLDI', 'OOPSLA'],
     'highperf' : ['SC', 'PPOPP'],
     'logic' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
-    'softeng' : ['ICSE', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
+    'softeng' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
     'opsys' : ['SOSP', 'OSDI'],
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
     'theory' : ['STOC', 'FOCS','SODA'],

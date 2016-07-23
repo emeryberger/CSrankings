@@ -557,12 +557,12 @@ Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2006
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,3.0,1.25,2007
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,3.0,1.2,2008
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,5.0,1.65,2009
-Tao Xie,University of Illinois at Urbana-Champaign,softeng,2.0,0.366666666667,2010
+Tao Xie,University of Illinois at Urbana-Champaign,softeng,4.0,0.766666666667,2010
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,4.0,1.03333333333,2011
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,5.0,1.01666666667,2012
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,5.0,1.00952380952,2013
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2014
-Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2015
+Tao Xie,University of Illinois at Urbana-Champaign,softeng,2.0,0.366666666667,2015
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.125,2016
 Tao Xie,University of Illinois at Urbana-Champaign,arch,1.0,0.25,2014
 Ted Briscoe,University of Cambridge,nlp,1.0,0.2,1987
@@ -1610,6 +1610,7 @@ Joanne M. Atlee,University of Waterloo,softeng,1.0,0.333333333333,2002
 Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2009
 Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2010
 Joanne M. Atlee,University of Waterloo,softeng,2.0,0.642857142857,2014
+Joanne M. Atlee,University of Waterloo,softeng,1.0,0.25,2015
 Joël Ouaknine,University of Oxford,theory,1.0,0.333333333333,2013
 Joël Ouaknine,University of Oxford,theory,1.0,0.5,2014
 Joël Ouaknine,University of Oxford,theory,2.0,0.666666666667,2015
@@ -1771,11 +1772,12 @@ Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2006
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2007
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2008
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.5,2009
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.166666666667,2010
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.166666666667,2011
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2012
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,3.0,0.642857142857,2013
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,3.0,0.7,2014
-Darko Marinov,University of Illinois at Urbana-Champaign,softeng,2.0,0.45,2015
+Darko Marinov,University of Illinois at Urbana-Champaign,softeng,3.0,0.783333333333,2015
 Darko Marinov,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2010
 Panos K. Chrysanthis,University of Pittsburgh,database,1.0,0.5,1990
 Panos K. Chrysanthis,University of Pittsburgh,database,2.0,0.833333333333,1991
@@ -4243,6 +4245,7 @@ Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.5,2002
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.333333333333,2004
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.5,2005
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.333333333333,2009
+Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.25,2010
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.25,2011
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.2,2012
 Martin C. Rinard,Massachusetts Institute of Technology,softeng,1.0,0.25,2015
@@ -5919,7 +5922,9 @@ Ben Liblit,University of Wisconsin - Madison,proglang,2.0,0.45,2009
 Ben Liblit,University of Wisconsin - Madison,proglang,1.0,0.25,2010
 Ben Liblit,University of Wisconsin - Madison,proglang,1.0,0.2,2011
 Ben Liblit,University of Wisconsin - Madison,softeng,1.0,0.2,2009
+Ben Liblit,University of Wisconsin - Madison,softeng,1.0,0.5,2010
 Ben Liblit,University of Wisconsin - Madison,softeng,1.0,0.5,2013
+Ben Liblit,University of Wisconsin - Madison,softeng,1.0,0.333333333333,2015
 Ben Liblit,University of Wisconsin - Madison,arch,1.0,0.125,2006
 Ben Liblit,University of Wisconsin - Madison,highperf,1.0,0.125,2008
 Ben Liblit,University of Wisconsin - Madison,highperf,1.0,0.142857142857,2009
@@ -6093,6 +6098,7 @@ Mark Harman,University College London,softeng,4.0,1.11904761905,2011
 Mark Harman,University College London,softeng,1.0,0.166666666667,2012
 Mark Harman,University College London,softeng,3.0,0.75,2013
 Mark Harman,University College London,softeng,4.0,0.9,2014
+Mark Harman,University College London,softeng,3.0,0.75,2015
 Mark Harman,University College London,softeng,2.0,0.533333333333,2016
 Edmund M. Clarke,Carnegie Mellon University,theory,1.0,0.5,1982
 Edmund M. Clarke,Carnegie Mellon University,proglang,1.0,0.333333333333,1982
@@ -6534,6 +6540,7 @@ John H. Hartman,University of Arizona,security,1.0,0.25,2008
 John H. Hartman,University of Arizona,arch,1.0,0.0909090909091,1994
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,0.5,2008
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,0.333333333333,2009
+Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,0.25,2010
 Emerson R. Murphy-Hill,North Carolina State University,softeng,2.0,0.666666666667,2012
 Emerson R. Murphy-Hill,North Carolina State University,softeng,2.0,0.5,2013
 Emerson R. Murphy-Hill,North Carolina State University,softeng,2.0,0.833333333333,2014
@@ -8478,6 +8485,7 @@ Earl T. Barr,University College London,proglang,1.0,0.25,2012
 Earl T. Barr,University College London,proglang,1.0,0.25,2013
 Earl T. Barr,University College London,proglang,1.0,0.5,2014
 Earl T. Barr,University College London,security,1.0,0.2,2007
+Earl T. Barr,University College London,softeng,1.0,0.25,2010
 Earl T. Barr,University College London,softeng,1.0,0.2,2011
 Earl T. Barr,University College London,softeng,1.0,0.2,2012
 Earl T. Barr,University College London,softeng,4.0,1.03333333333,2014
@@ -8520,7 +8528,7 @@ Koushik Sen,University of California - Berkeley,softeng,1.0,0.333333333333,2005
 Koushik Sen,University of California - Berkeley,softeng,2.0,1.5,2007
 Koushik Sen,University of California - Berkeley,softeng,2.0,1.0,2008
 Koushik Sen,University of California - Berkeley,softeng,4.0,1.33333333333,2009
-Koushik Sen,University of California - Berkeley,softeng,2.0,0.75,2010
+Koushik Sen,University of California - Berkeley,softeng,3.0,1.25,2010
 Koushik Sen,University of California - Berkeley,softeng,1.0,0.142857142857,2011
 Koushik Sen,University of California - Berkeley,softeng,1.0,0.25,2013
 Koushik Sen,University of California - Berkeley,softeng,1.0,0.2,2014
@@ -8681,7 +8689,9 @@ Brad A. Myers,Carnegie Mellon University,proglang,1.0,0.333333333333,1992
 Brad A. Myers,Carnegie Mellon University,softeng,1.0,0.333333333333,2005
 Brad A. Myers,Carnegie Mellon University,softeng,2.0,0.583333333333,2007
 Brad A. Myers,Carnegie Mellon University,softeng,3.0,1.33333333333,2008
+Brad A. Myers,Carnegie Mellon University,softeng,1.0,0.5,2010
 Brad A. Myers,Carnegie Mellon University,softeng,1.0,0.25,2012
+Brad A. Myers,Carnegie Mellon University,softeng,1.0,0.5,2015
 Brad A. Myers,Carnegie Mellon University,softeng,1.0,0.166666666667,2016
 Martial Hebert,Carnegie Mellon University,graphics,1.0,0.333333333333,2005
 Martial Hebert,Carnegie Mellon University,mlmining,1.0,0.5,2003
@@ -8769,6 +8779,7 @@ Stephen G. Kobourov,University of Arizona,theory,1.0,0.333333333333,2001
 Stephen G. Kobourov,University of Arizona,theory,1.0,0.333333333333,2013
 Stephen G. Kobourov,University of Arizona,robotics,1.0,0.25,2003
 Cindy Rubio-González,University of California - Davis,proglang,1.0,0.2,2009
+Cindy Rubio-González,University of California - Davis,softeng,1.0,0.333333333333,2015
 Cindy Rubio-González,University of California - Davis,softeng,1.0,0.1,2016
 Cindy Rubio-González,University of California - Davis,highperf,1.0,0.111111111111,2013
 Christopher James Langmead,Carnegie Mellon University,mlmining,1.0,0.5,2009
@@ -9976,6 +9987,7 @@ Rebecca Hwa,University of Pittsburgh,ai,1.0,0.5,2016
 John Criswell,University of Rochester,opsys,1.0,0.25,2007
 John Criswell,University of Rochester,security,1.0,0.333333333333,2009
 John Criswell,University of Rochester,security,1.0,0.333333333333,2014
+John Criswell,University of Rochester,softeng,1.0,0.333333333333,2010
 John Criswell,University of Rochester,arch,1.0,0.25,2013
 John Criswell,University of Rochester,arch,1.0,0.333333333333,2014
 John Criswell,University of Rochester,arch,1.0,0.2,2015
@@ -10925,6 +10937,7 @@ Emina Torlak,University of Washington,proglang,1.0,0.5,2014
 Emina Torlak,University of Washington,proglang,2.0,0.583333333333,2016
 Emina Torlak,University of Washington,logic,1.0,0.142857142857,2016
 Emina Torlak,University of Washington,softeng,1.0,0.333333333333,2004
+Emina Torlak,University of Washington,softeng,1.0,0.5,2010
 Emina Torlak,University of Washington,softeng,1.0,0.25,2011
 Emina Torlak,University of Washington,softeng,1.0,1.0,2012
 Emina Torlak,University of Washington,arch,1.0,0.166666666667,2016
@@ -11078,7 +11091,7 @@ Tevfik Bultan,University of California - Santa Barbara,softeng,2.0,0.75,2010
 Tevfik Bultan,University of California - Santa Barbara,softeng,1.0,0.333333333333,2011
 Tevfik Bultan,University of California - Santa Barbara,softeng,2.0,0.833333333333,2012
 Tevfik Bultan,University of California - Santa Barbara,softeng,2.0,1.0,2014
-Tevfik Bultan,University of California - Santa Barbara,softeng,2.0,0.833333333333,2015
+Tevfik Bultan,University of California - Santa Barbara,softeng,3.0,1.33333333333,2015
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,0.5,1981
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,1.0,1982
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,1.0,1987
@@ -11940,7 +11953,7 @@ Adam A. Porter,University of Maryland - College Park,softeng,1.0,0.333333333333,
 Adam A. Porter,University of Maryland - College Park,softeng,1.0,0.5,2002
 Adam A. Porter,University of Maryland - College Park,softeng,1.0,0.166666666667,2004
 Adam A. Porter,University of Maryland - College Park,softeng,2.0,0.342857142857,2005
-Adam A. Porter,University of Maryland - College Park,softeng,1.0,0.5,2010
+Adam A. Porter,University of Maryland - College Park,softeng,2.0,0.7,2010
 Adam A. Porter,University of Maryland - College Park,softeng,1.0,0.333333333333,2012
 Jonathan Appavoo,Boston University,opsys,1.0,0.25,1999
 Jonathan Appavoo,Boston University,arch,1.0,0.2,2014
@@ -13300,6 +13313,7 @@ Anthony Finkelstein,University College London,softeng,1.0,0.333333333333,2000
 Anthony Finkelstein,University College London,softeng,2.0,0.666666666667,2003
 Anthony Finkelstein,University College London,softeng,1.0,0.5,2005
 Anthony Finkelstein,University College London,softeng,1.0,0.333333333333,2008
+Anthony Finkelstein,University College London,softeng,1.0,0.333333333333,2010
 Anthony Finkelstein,University College London,softeng,1.0,0.25,2013
 Francesca Toni,Imperial College London,ai,1.0,0.333333333333,1999
 Francesca Toni,Imperial College London,ai,2.0,0.583333333333,2003
@@ -13415,6 +13429,7 @@ Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2004
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,2.0,0.583333333333,2008
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,2.0,0.5,2011
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2013
+Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2015
 Grigore Rosu,University of Illinois at Urbana-Champaign,arch,1.0,0.25,2005
 Robert Holte,University of Alberta,ai,1.0,0.25,2006
 Robert Holte,University of Alberta,ai,2.0,0.5,2010
@@ -13427,6 +13442,7 @@ Reid Holmes,University of British Columbia,proglang,1.0,0.2,2012
 Reid Holmes,University of British Columbia,softeng,1.0,0.5,2005
 Reid Holmes,University of British Columbia,softeng,1.0,0.5,2007
 Reid Holmes,University of British Columbia,softeng,1.0,0.25,2009
+Reid Holmes,University of British Columbia,softeng,1.0,0.5,2010
 Reid Holmes,University of British Columbia,softeng,2.0,0.75,2011
 Reid Holmes,University of British Columbia,softeng,4.0,1.33333333333,2014
 Georg Seelig,University of Washington,arch,1.0,0.25,2013
@@ -14543,11 +14559,12 @@ Alessandro Orso,Georgia Institute of Technology,softeng,2.0,0.833333333333,2006
 Alessandro Orso,Georgia Institute of Technology,softeng,3.0,1.25,2007
 Alessandro Orso,Georgia Institute of Technology,softeng,2.0,0.7,2008
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,0.5,2009
+Alessandro Orso,Georgia Institute of Technology,softeng,1.0,0.5,2010
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,0.5,2011
 Alessandro Orso,Georgia Institute of Technology,softeng,2.0,0.833333333333,2012
 Alessandro Orso,Georgia Institute of Technology,softeng,1.0,0.333333333333,2013
 Alessandro Orso,Georgia Institute of Technology,softeng,2.0,0.45,2014
-Alessandro Orso,Georgia Institute of Technology,softeng,2.0,0.666666666667,2015
+Alessandro Orso,Georgia Institute of Technology,softeng,3.0,1.0,2015
 Gregory Dudek,McGill University,theory,1.0,0.333333333333,1995
 Gregory Dudek,McGill University,ai,2.0,0.583333333333,1993
 Gregory Dudek,McGill University,ai,1.0,0.333333333333,1997
@@ -16271,7 +16288,7 @@ William G. J. Halfond,University of Southern California,softeng,1.0,0.5,2007
 William G. J. Halfond,University of Southern California,softeng,1.0,0.5,2008
 William G. J. Halfond,University of Southern California,softeng,2.0,0.45,2013
 William G. J. Halfond,University of Southern California,softeng,1.0,0.333333333333,2014
-William G. J. Halfond,University of Southern California,softeng,2.0,0.5,2015
+William G. J. Halfond,University of Southern California,softeng,3.0,0.75,2015
 William G. J. Halfond,University of Southern California,softeng,1.0,0.25,2016
 Andrew McGregor,University of Massachusetts - Amherst,theory,1.0,0.25,2004
 Andrew McGregor,University of Massachusetts - Amherst,theory,1.0,0.2,2005
@@ -16903,6 +16920,7 @@ Daniel Jackson,Massachusetts Institute of Technology,softeng,1.0,0.166666666667,
 Daniel Jackson,Massachusetts Institute of Technology,softeng,2.0,0.5,2011
 Daniel Jackson,Massachusetts Institute of Technology,softeng,1.0,0.5,2012
 Daniel Jackson,Massachusetts Institute of Technology,softeng,1.0,0.5,2014
+Daniel Jackson,Massachusetts Institute of Technology,softeng,1.0,0.25,2015
 Daniel Jackson,Massachusetts Institute of Technology,softeng,1.0,0.5,2016
 Devika Subramanian,Rice University,ai,1.0,0.5,1987
 Devika Subramanian,Rice University,ai,1.0,0.5,1990
@@ -17332,6 +17350,7 @@ Steven P. Reiss,Brown University,softeng,2.0,1.33333333333,2005
 Steven P. Reiss,Brown University,softeng,1.0,1.0,2007
 Steven P. Reiss,Brown University,softeng,1.0,1.0,2008
 Steven P. Reiss,Brown University,softeng,1.0,1.0,2009
+Steven P. Reiss,Brown University,softeng,1.0,0.111111111111,2010
 Steven P. Reiss,Brown University,softeng,1.0,0.2,2012
 Steven P. Reiss,Brown University,softeng,2.0,1.5,2014
 David K. Gifford,Massachusetts Institute of Technology,mlmining,1.0,0.2,2005
@@ -20179,6 +20198,7 @@ Yue Jia,University College London,softeng,1.0,0.333333333333,2011
 Yue Jia,University College London,softeng,1.0,0.166666666667,2012
 Yue Jia,University College London,softeng,1.0,0.25,2013
 Yue Jia,University College London,softeng,1.0,0.333333333333,2014
+Yue Jia,University College London,softeng,2.0,0.5,2015
 Yue Jia,University College London,softeng,1.0,0.2,2016
 Maria-Florina Balcan,Carnegie Mellon University,theory,1.0,0.25,2005
 Maria-Florina Balcan,Carnegie Mellon University,theory,1.0,0.333333333333,2008
@@ -20347,6 +20367,7 @@ Marek Chrobak,University of California - Riverside,theory,1.0,0.142857142857,200
 Marek Chrobak,University of California - Riverside,theory,1.0,0.166666666667,2014
 Marek Chrobak,University of California - Riverside,networks,1.0,0.25,2008
 Richard W. Vuduc,Georgia Institute of Technology,proglang,1.0,0.25,2012
+Richard W. Vuduc,Georgia Institute of Technology,softeng,1.0,0.333333333333,2010
 Richard W. Vuduc,Georgia Institute of Technology,arch,1.0,0.25,2010
 Richard W. Vuduc,Georgia Institute of Technology,arch,1.0,0.142857142857,2014
 Richard W. Vuduc,Georgia Institute of Technology,highperf,1.0,0.166666666667,2007
@@ -20585,6 +20606,7 @@ Gail C. Murphy,University of British Columbia,softeng,2.0,0.75,2005
 Gail C. Murphy,University of British Columbia,softeng,3.0,1.16666666667,2006
 Gail C. Murphy,University of British Columbia,softeng,1.0,0.333333333333,2007
 Gail C. Murphy,University of British Columbia,softeng,1.0,0.5,2008
+Gail C. Murphy,University of British Columbia,softeng,3.0,1.08333333333,2010
 Gail C. Murphy,University of British Columbia,softeng,1.0,0.333333333333,2012
 Gail C. Murphy,University of British Columbia,softeng,1.0,0.333333333333,2013
 Gail C. Murphy,University of British Columbia,softeng,1.0,0.25,2014
@@ -20671,6 +20693,7 @@ Patrick McDaniel,Pennsylvania State University,security,2.0,0.583333333333,2011
 Patrick McDaniel,Pennsylvania State University,security,2.0,0.666666666667,2012
 Patrick McDaniel,Pennsylvania State University,security,1.0,0.142857142857,2013
 Patrick McDaniel,Pennsylvania State University,softeng,1.0,0.333333333333,2012
+Patrick McDaniel,Pennsylvania State University,softeng,2.0,0.3,2015
 Alexandra Kolla,University of Illinois at Urbana-Champaign,theory,1.0,0.166666666667,2008
 Alexandra Kolla,University of Illinois at Urbana-Champaign,theory,1.0,0.25,2010
 Alexandra Kolla,University of Illinois at Urbana-Champaign,theory,1.0,0.333333333333,2011
@@ -20865,7 +20888,7 @@ Robert J. Walker,University of Calgary,softeng,1.0,0.5,2004
 Robert J. Walker,University of Calgary,softeng,2.0,0.75,2007
 Robert J. Walker,University of Calgary,softeng,1.0,0.333333333333,2008
 Robert J. Walker,University of Calgary,softeng,1.0,0.25,2009
-Robert J. Walker,University of Calgary,softeng,1.0,0.5,2010
+Robert J. Walker,University of Calgary,softeng,2.0,1.0,2010
 Robert J. Walker,University of Calgary,softeng,2.0,0.833333333333,2012
 Jian Ma,Carnegie Mellon University,networks,1.0,0.2,2002
 Jian Ma,Carnegie Mellon University,mobile,1.0,0.2,2010
@@ -22305,6 +22328,7 @@ Atif M. Memon,University of Maryland - College Park,softeng,1.0,0.333333333333,2
 Atif M. Memon,University of Maryland - College Park,softeng,2.0,0.666666666667,2004
 Atif M. Memon,University of Maryland - College Park,softeng,1.0,0.142857142857,2005
 Atif M. Memon,University of Maryland - College Park,softeng,2.0,1.0,2007
+Atif M. Memon,University of Maryland - College Park,softeng,1.0,0.2,2015
 Ming Lin,University of North Carolina - Chapel Hill,ai,2.0,0.533333333333,2015
 Ming Lin,University of North Carolina - Chapel Hill,vision,1.0,0.2,2015
 Susanne Albers,TU Munich,theory,1.0,0.5,1992
@@ -22622,6 +22646,7 @@ Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2009
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,2.0,0.416666666667,2010
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,3.0,0.72619047619,2012
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,2.0,0.342857142857,2013
+Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2015
 Adrian Perrig,ETH Zurich,opsys,1.0,0.166666666667,2005
 Adrian Perrig,ETH Zurich,networks,1.0,0.5,2001
 Adrian Perrig,ETH Zurich,networks,1.0,0.333333333333,2003
@@ -23462,6 +23487,7 @@ Tim Menzies,North Carolina State University,softeng,2.0,0.5,2009
 Tim Menzies,North Carolina State University,softeng,1.0,0.2,2011
 Tim Menzies,North Carolina State University,softeng,1.0,0.5,2012
 Tim Menzies,North Carolina State University,softeng,4.0,0.95,2013
+Tim Menzies,North Carolina State University,softeng,1.0,0.333333333333,2015
 Jesús Labarta,Polytechnic University of Catalonia,metrics,1.0,0.2,1983
 Jesús Labarta,Polytechnic University of Catalonia,opsys,1.0,0.333333333333,2000
 Jesús Labarta,Polytechnic University of Catalonia,arch,1.0,0.25,1985
@@ -23998,6 +24024,7 @@ Rada Chirkova,North Carolina State University,database,1.0,0.5,2007
 Rada Chirkova,North Carolina State University,database,1.0,0.5,2008
 Rada Chirkova,North Carolina State University,database,1.0,0.5,2009
 DeLiang Wang,Ohio State University,mlmining,1.0,0.5,2012
+Ivano Malavolta,VU Amsterdam,softeng,1.0,0.2,2010
 Christopher J. Rossbach,University of Texas - Austin,opsys,1.0,0.166666666667,2007
 Christopher J. Rossbach,University of Texas - Austin,opsys,1.0,0.2,2009
 Christopher J. Rossbach,University of Texas - Austin,opsys,1.0,0.2,2011
@@ -24175,6 +24202,7 @@ Rajeev Alur,University of Pennsylvania,softeng,1.0,0.5,2001
 Rajeev Alur,University of Pennsylvania,softeng,1.0,0.25,2010
 Henry Hoffmann,University of Chicago,opsys,1.0,1.0,2015
 Henry Hoffmann,University of Chicago,proglang,1.0,0.25,2010
+Henry Hoffmann,University of Chicago,softeng,1.0,0.25,2010
 Henry Hoffmann,University of Chicago,softeng,1.0,0.25,2011
 Henry Hoffmann,University of Chicago,softeng,1.0,0.333333333333,2014
 Henry Hoffmann,University of Chicago,softeng,1.0,0.333333333333,2015
@@ -24328,6 +24356,7 @@ Vikram S. Adve,University of Illinois at Urbana-Champaign,security,1.0,0.3333333
 Vikram S. Adve,University of Illinois at Urbana-Champaign,security,1.0,0.333333333333,2014
 Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2006
 Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1.0,0.166666666667,2009
+Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2010
 Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2012
 Vikram S. Adve,University of Illinois at Urbana-Champaign,softeng,1.0,0.166666666667,2015
 Vikram S. Adve,University of Illinois at Urbana-Champaign,arch,1.0,0.25,1991
@@ -25591,6 +25620,7 @@ Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333
 Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,1.0,0.2,2014
 Sasa Misailovic,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2016
 Sasa Misailovic,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2007
+Sasa Misailovic,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2010
 Sasa Misailovic,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2011
 Sasa Misailovic,University of Illinois at Urbana-Champaign,arch,1.0,0.166666666667,2011
 Nikolaos Papanikolopoulos,University of Minnesota - Twin Cities,robotics,2.0,0.833333333333,1994
@@ -25736,6 +25766,7 @@ Viktor Kuncak,EPFL,logic,1.0,0.333333333333,2013
 Viktor Kuncak,EPFL,logic,1.0,0.5,2014
 Viktor Kuncak,EPFL,logic,2.0,0.533333333333,2015
 Viktor Kuncak,EPFL,softeng,1.0,0.5,2005
+Viktor Kuncak,EPFL,softeng,1.0,0.166666666667,2010
 Shahar Maoz,Tel Aviv University,softeng,1.0,0.5,2006
 Shahar Maoz,Tel Aviv University,softeng,1.0,0.5,2008
 Shahar Maoz,Tel Aviv University,softeng,1.0,0.5,2009
@@ -25992,6 +26023,7 @@ William Enck,North Carolina State University,security,1.0,0.25,2011
 William Enck,North Carolina State University,security,2.0,0.7,2013
 William Enck,North Carolina State University,security,1.0,0.25,2014
 William Enck,North Carolina State University,security,1.0,0.125,2015
+William Enck,North Carolina State University,softeng,1.0,0.166666666667,2015
 Abbas Edalat,Imperial College London,mlmining,1.0,1.0,2013
 Abbas Edalat,Imperial College London,logic,1.0,1.0,1994
 Abbas Edalat,Imperial College London,logic,1.0,1.0,1995
@@ -26853,7 +26885,7 @@ Michael D. Ernst,University of Washington,softeng,7.0,2.01666666667,2011
 Michael D. Ernst,University of Washington,softeng,1.0,0.5,2012
 Michael D. Ernst,University of Washington,softeng,2.0,0.45,2013
 Michael D. Ernst,University of Washington,softeng,4.0,1.16666666667,2014
-Michael D. Ernst,University of Washington,softeng,1.0,0.142857142857,2015
+Michael D. Ernst,University of Washington,softeng,2.0,0.392857142857,2015
 Michael D. Ernst,University of Washington,softeng,1.0,0.2,2016
 Karon E. MacLean,University of British Columbia,hci,1.0,0.333333333333,2000
 Karon E. MacLean,University of British Columbia,hci,1.0,0.166666666667,2001
@@ -27089,6 +27121,7 @@ Jeffrey S. Foster,University of Maryland - College Park,logic,1.0,0.333333333333
 Jeffrey S. Foster,University of Maryland - College Park,logic,1.0,0.25,2015
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.25,2001
 Jeffrey S. Foster,University of Maryland - College Park,security,1.0,0.5,2010
+Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.2,2010
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.333333333333,2012
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.333333333333,2013
 Jeffrey S. Foster,University of Maryland - College Park,softeng,1.0,0.2,2016
@@ -27337,6 +27370,7 @@ Pen-Chung Yew,University of Minnesota - Twin Cities,proglang,1.0,0.142857142857,
 Pen-Chung Yew,University of Minnesota - Twin Cities,proglang,1.0,0.5,2015
 Pen-Chung Yew,University of Minnesota - Twin Cities,softeng,1.0,0.2,2007
 Pen-Chung Yew,University of Minnesota - Twin Cities,softeng,1.0,0.111111111111,2014
+Pen-Chung Yew,University of Minnesota - Twin Cities,softeng,1.0,0.1,2015
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,0.333333333333,1985
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,0.333333333333,1987
 Pen-Chung Yew,University of Minnesota - Twin Cities,arch,1.0,0.5,1989
@@ -27958,7 +27992,7 @@ Shan Lu,University of Chicago,proglang,1.0,0.5,2014
 Shan Lu,University of Chicago,logic,1.0,0.25,2013
 Shan Lu,University of Chicago,softeng,1.0,0.25,2013
 Shan Lu,University of Chicago,softeng,1.0,0.166666666667,2014
-Shan Lu,University of Chicago,softeng,1.0,0.2,2015
+Shan Lu,University of Chicago,softeng,2.0,0.45,2015
 Shan Lu,University of Chicago,arch,1.0,0.125,2004
 Shan Lu,University of Chicago,arch,2.0,0.45,2006
 Shan Lu,University of Chicago,arch,1.0,0.25,2008
@@ -28298,6 +28332,7 @@ Baishakhi Ray,University of Virginia,security,1.0,0.2,2014
 Baishakhi Ray,University of Virginia,softeng,2.0,0.833333333333,2012
 Baishakhi Ray,University of Virginia,softeng,1.0,0.25,2013
 Baishakhi Ray,University of Virginia,softeng,1.0,0.25,2014
+Baishakhi Ray,University of Virginia,softeng,1.0,0.2,2015
 Baishakhi Ray,University of Virginia,softeng,1.0,0.166666666667,2016
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1980
 Deborah Joseph,University of Wisconsin - Madison,theory,1.0,0.5,1981
@@ -28334,6 +28369,7 @@ Alan S. Willsky,Massachusetts Institute of Technology,vision,1.0,0.25,2010
 Neeraj Suri,TU Darmstadt,security,1.0,0.166666666667,2013
 Neeraj Suri,TU Darmstadt,security,1.0,0.25,2015
 Neeraj Suri,TU Darmstadt,softeng,2.0,0.5,2011
+Neeraj Suri,TU Darmstadt,softeng,1.0,0.2,2015
 Gladimir V. G. Baranoski,University of Waterloo,graphics,1.0,0.25,2005
 Gladimir V. G. Baranoski,University of Waterloo,graphics,1.0,0.333333333333,2009
 Gladimir V. G. Baranoski,University of Waterloo,graphics,1.0,0.2,2013
@@ -28655,7 +28691,7 @@ Vladimir Filkov,University of California - Davis,softeng,1.0,0.142857142857,2009
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.333333333333,2011
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.25,2013
 Vladimir Filkov,University of California - Davis,softeng,3.0,1.0,2014
-Vladimir Filkov,University of California - Davis,softeng,2.0,0.45,2015
+Vladimir Filkov,University of California - Davis,softeng,3.0,0.65,2015
 Vladimir Filkov,University of California - Davis,softeng,1.0,0.142857142857,2016
 Prasant Mohapatra,University of California - Davis,networks,1.0,0.5,2002
 Prasant Mohapatra,University of California - Davis,networks,2.0,1.0,2004
@@ -29858,7 +29894,7 @@ Raluca A. Popa,University of California - Berkeley,security,1.0,0.25,2011
 Raluca A. Popa,University of California - Berkeley,security,1.0,0.333333333333,2013
 Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.333333333333,2013
 Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.25,2014
-Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.142857142857,2015
+Meiyappan Nagappan,Rochester Institute of Technology,softeng,2.0,0.392857142857,2015
 Christopher M. Brown,University of Rochester,ai,1.0,0.142857142857,1993
 Christopher M. Brown,University of Rochester,ai,1.0,0.5,1995
 Christopher M. Brown,University of Rochester,vision,1.0,0.25,1990
@@ -29893,7 +29929,7 @@ Premkumar T. Devanbu,University of California - Davis,softeng,4.0,1.23333333333,
 Premkumar T. Devanbu,University of California - Davis,softeng,3.0,0.7,2012
 Premkumar T. Devanbu,University of California - Davis,softeng,3.0,1.0,2013
 Premkumar T. Devanbu,University of California - Davis,softeng,6.0,1.53333333333,2014
-Premkumar T. Devanbu,University of California - Davis,softeng,2.0,0.45,2015
+Premkumar T. Devanbu,University of California - Davis,softeng,3.0,0.65,2015
 Premkumar T. Devanbu,University of California - Davis,softeng,3.0,0.642857142857,2016
 Vijaya Ramachandran,University of Texas - Austin,theory,1.0,1.0,1982
 Vijaya Ramachandran,University of Texas - Austin,theory,1.0,0.333333333333,1986
@@ -30052,7 +30088,7 @@ Antonio Filieri,Imperial College London,proglang,1.0,0.2,2014
 Antonio Filieri,Imperial College London,softeng,2.0,0.583333333333,2011
 Antonio Filieri,Imperial College London,softeng,1.0,0.333333333333,2013
 Antonio Filieri,Imperial College London,softeng,3.0,0.783333333333,2014
-Antonio Filieri,Imperial College London,softeng,2.0,0.583333333333,2015
+Antonio Filieri,Imperial College London,softeng,3.0,0.916666666667,2015
 Antonio González 0001,Polytechnic University of Catalonia,metrics,1.0,0.142857142857,2003
 Antonio González 0001,Polytechnic University of Catalonia,proglang,2.0,0.416666666667,2005
 Antonio González 0001,Polytechnic University of Catalonia,arch,1.0,0.25,1995
@@ -30259,6 +30295,7 @@ Christian Kästner,Carnegie Mellon University,proglang,2.0,0.416666666667,2011
 Christian Kästner,Carnegie Mellon University,proglang,1.0,0.333333333333,2012
 Christian Kästner,Carnegie Mellon University,softeng,2.0,0.833333333333,2008
 Christian Kästner,Carnegie Mellon University,softeng,2.0,0.666666666667,2009
+Christian Kästner,Carnegie Mellon University,softeng,1.0,0.2,2010
 Christian Kästner,Carnegie Mellon University,softeng,1.0,0.2,2011
 Christian Kästner,Carnegie Mellon University,softeng,2.0,0.285714285714,2012
 Christian Kästner,Carnegie Mellon University,softeng,1.0,0.166666666667,2013
@@ -30328,10 +30365,11 @@ Miryung Kim,University of California - Los Angeles,proglang,1.0,0.333333333333,2
 Miryung Kim,University of California - Los Angeles,softeng,1.0,0.25,2005
 Miryung Kim,University of California - Los Angeles,softeng,1.0,0.333333333333,2007
 Miryung Kim,University of California - Los Angeles,softeng,1.0,0.5,2009
-Miryung Kim,University of California - Los Angeles,softeng,1.0,0.333333333333,2010
+Miryung Kim,University of California - Los Angeles,softeng,2.0,0.583333333333,2010
 Miryung Kim,University of California - Los Angeles,softeng,2.0,0.583333333333,2011
 Miryung Kim,University of California - Los Angeles,softeng,4.0,1.5,2012
 Miryung Kim,University of California - Los Angeles,softeng,2.0,0.583333333333,2013
+Miryung Kim,University of California - Los Angeles,softeng,2.0,0.5,2015
 Miryung Kim,University of California - Los Angeles,softeng,2.0,0.392857142857,2016
 Zoran Popovic,University of Washington,graphics,1.0,0.5,1999
 Zoran Popovic,University of Washington,graphics,1.0,0.2,2000
@@ -30981,7 +31019,7 @@ Atanas Rountev,Ohio State University,softeng,1.0,0.5,2005
 Atanas Rountev,Ohio State University,softeng,2.0,0.75,2007
 Atanas Rountev,Ohio State University,softeng,1.0,0.5,2008
 Atanas Rountev,Ohio State University,softeng,1.0,0.333333333333,2012
-Atanas Rountev,Ohio State University,softeng,1.0,0.166666666667,2015
+Atanas Rountev,Ohio State University,softeng,2.0,0.366666666667,2015
 Atanas Rountev,Ohio State University,highperf,1.0,0.2,2006
 Atanas Rountev,Ohio State University,highperf,2.0,0.333333333333,2008
 Atanas Rountev,Ohio State University,highperf,1.0,0.166666666667,2009
@@ -31693,6 +31731,7 @@ Somesh Jha,University of Wisconsin - Madison,softeng,2.0,0.583333333333,2007
 Somesh Jha,University of Wisconsin - Madison,softeng,1.0,0.25,2008
 Somesh Jha,University of Wisconsin - Madison,softeng,1.0,0.333333333333,2012
 Somesh Jha,University of Wisconsin - Madison,softeng,1.0,0.2,2014
+Somesh Jha,University of Wisconsin - Madison,softeng,1.0,0.2,2015
 Somesh Jha,University of Wisconsin - Madison,arch,1.0,0.2,2008
 Nassir Navab,TU Munich,ai,1.0,0.2,2008
 Nassir Navab,TU Munich,robotics,1.0,0.2,2012
@@ -31741,7 +31780,7 @@ Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.5,2009
 Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.142857142857,2011
 Ben Hardekopf,University of California - Santa Barbara,security,1.0,0.333333333333,2011
 Ben Hardekopf,University of California - Santa Barbara,softeng,1.0,0.125,2014
-Ben Hardekopf,University of California - Santa Barbara,softeng,1.0,0.333333333333,2015
+Ben Hardekopf,University of California - Santa Barbara,softeng,2.0,0.666666666667,2015
 Ben Hardekopf,University of California - Santa Barbara,arch,1.0,0.111111111111,2011
 Ben Hardekopf,University of California - Santa Barbara,arch,1.0,0.111111111111,2014
 Shiri Chechik,Tel Aviv University,theory,1.0,0.25,2009
@@ -31808,7 +31847,7 @@ Xiangyu Zhang,Purdue University,softeng,1.0,0.333333333333,2004
 Xiangyu Zhang,Purdue University,softeng,2.0,0.75,2005
 Xiangyu Zhang,Purdue University,softeng,2.0,0.666666666667,2006
 Xiangyu Zhang,Purdue University,softeng,1.0,0.5,2008
-Xiangyu Zhang,Purdue University,softeng,1.0,0.5,2010
+Xiangyu Zhang,Purdue University,softeng,2.0,0.75,2010
 Xiangyu Zhang,Purdue University,softeng,1.0,0.25,2011
 Xiangyu Zhang,Purdue University,softeng,2.0,0.75,2012
 Xiangyu Zhang,Purdue University,softeng,5.0,2.16666666667,2013
@@ -32672,11 +32711,11 @@ Zhendong Su,University of California - Davis,softeng,2.0,1.0,2006
 Zhendong Su,University of California - Davis,softeng,3.0,1.08333333333,2007
 Zhendong Su,University of California - Davis,softeng,5.0,2.33333333333,2008
 Zhendong Su,University of California - Davis,softeng,1.0,0.25,2009
-Zhendong Su,University of California - Davis,softeng,1.0,0.5,2010
+Zhendong Su,University of California - Davis,softeng,3.0,1.25,2010
 Zhendong Su,University of California - Davis,softeng,3.0,1.2,2012
 Zhendong Su,University of California - Davis,softeng,2.0,0.666666666667,2013
 Zhendong Su,University of California - Davis,softeng,1.0,0.333333333333,2014
-Zhendong Su,University of California - Davis,softeng,1.0,0.5,2015
+Zhendong Su,University of California - Davis,softeng,4.0,1.36666666667,2015
 Zhendong Su,University of California - Davis,softeng,1.0,0.333333333333,2016
 Zhendong Su,University of California - Davis,arch,1.0,0.166666666667,2006
 Ehud Rivlin,Technion,ai,1.0,0.5,1993
@@ -33242,10 +33281,11 @@ David Wetherall,University of Washington,security,1.0,0.166666666667,2008
 David Wetherall,University of Washington,security,1.0,0.2,2011
 David Wetherall,University of Washington,security,1.0,0.111111111111,2014
 Denys Poshyvanyk,College of William and Mary,softeng,1.0,0.25,2007
+Denys Poshyvanyk,College of William and Mary,softeng,1.0,0.166666666667,2010
 Denys Poshyvanyk,College of William and Mary,softeng,1.0,0.2,2011
 Denys Poshyvanyk,College of William and Mary,softeng,3.0,0.783333333333,2012
 Denys Poshyvanyk,College of William and Mary,softeng,4.0,0.666666666667,2013
-Denys Poshyvanyk,College of William and Mary,softeng,2.0,0.416666666667,2015
+Denys Poshyvanyk,College of William and Mary,softeng,3.0,0.559523809524,2015
 Gerhard Hirzinger,TU Munich,robotics,1.0,0.5,1992
 Gerhard Hirzinger,TU Munich,robotics,4.0,1.66666666667,1994
 Gerhard Hirzinger,TU Munich,robotics,1.0,0.2,1996
@@ -33531,11 +33571,12 @@ Martin P. Robillard,McGill University,softeng,1.0,0.5,2006
 Martin P. Robillard,McGill University,softeng,2.0,0.75,2007
 Martin P. Robillard,McGill University,softeng,1.0,0.5,2008
 Martin P. Robillard,McGill University,softeng,2.0,0.75,2009
-Martin P. Robillard,McGill University,softeng,1.0,0.5,2010
+Martin P. Robillard,McGill University,softeng,2.0,0.7,2010
 Martin P. Robillard,McGill University,softeng,1.0,0.5,2011
 Martin P. Robillard,McGill University,softeng,3.0,1.33333333333,2012
 Martin P. Robillard,McGill University,softeng,1.0,0.5,2013
 Martin P. Robillard,McGill University,softeng,1.0,0.5,2014
+Martin P. Robillard,McGill University,softeng,1.0,0.333333333333,2015
 Martin P. Robillard,McGill University,softeng,2.0,1.0,2016
 Giovanni De Micheli,EPFL,mobile,1.0,0.25,2000
 Xi Wang,University of Washington,graphics,2.0,0.333333333333,2002
