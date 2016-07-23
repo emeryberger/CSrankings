@@ -1416,6 +1416,13 @@ Leslie G. Valiant,Harvard University,ai,1.0,1.0,1985
 Leslie G. Valiant,Harvard University,ai,1.0,1.0,1988
 Leslie G. Valiant,Harvard University,ai,1.0,0.333333333333,1999
 Leslie G. Valiant,Harvard University,ai,1.0,1.0,2006
+Moira C. Norrie,ETH Zurich,hci,1.0,0.333333333333,2011
+Moira C. Norrie,ETH Zurich,hci,1.0,0.333333333333,2013
+Moira C. Norrie,ETH Zurich,hci,1.0,0.25,2014
+Moira C. Norrie,ETH Zurich,hci,1.0,0.25,2015
+Moira C. Norrie,ETH Zurich,database,1.0,0.333333333333,1996
+Moira C. Norrie,ETH Zurich,database,1.0,0.333333333333,2014
+Moira C. Norrie,ETH Zurich,mobile,1.0,0.2,2005
 David F. Gleich,Purdue University,mlmining,1.0,0.5,2011
 David F. Gleich,Purdue University,mlmining,1.0,0.5,2012
 David F. Gleich,Purdue University,mlmining,3.0,1.25,2014
@@ -8063,28 +8070,42 @@ James W. Mickens,Harvard University,networks,1.0,0.5,2006
 James W. Mickens,Harvard University,networks,3.0,0.833333333333,2010
 James W. Mickens,Harvard University,networks,1.0,0.111111111111,2014
 James W. Mickens,Harvard University,security,1.0,0.2,2011
-P. Madhusudan,University of Illinois at Urbana-Champaign,theory,1.0,0.5,2004
-P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2005
-P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2006
-P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2.0,0.833333333333,2011
-P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2.0,0.666666666667,2014
-P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2016
-P. Madhusudan,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,2007
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,3.0,1.58333333333,2003
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2005
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.833333333333,2006
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.5,2008
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.666666666667,2009
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2010
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.25,2013
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.5,2014
-P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2015
-P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.25,2007
-P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.333333333333,2008
-P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.25,2010
-P. Madhusudan,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2010
-P. Madhusudan,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2012
-P. Madhusudan,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2011
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.5,1991
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.25,1995
+Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.576923076923,1997
+Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.833333333333,1999
+Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,1.43333333333,2000
+Jessica K. Hodgins,Carnegie Mellon University,graphics,6.0,2.9,2002
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,1.0,2003
+Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.666666666667,2004
+Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,0.9,2005
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.5,2006
+Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,1.25,2007
+Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,1.0,2008
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.25,2010
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.2,2011
+Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,0.833333333333,2012
+Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.342857142857,2013
+Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.4,2014
+Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,0.642857142857,2015
+Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.5,2016
+Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.2,2007
+Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2011
+Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2014
+Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2015
+Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2016
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,1.0,1994
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,1.0,1996
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.5,2000
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.25,2002
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.333333333333,2003
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.166666666667,2005
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.5,2009
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.5,2010
+Jessica K. Hodgins,Carnegie Mellon University,robotics,2.0,0.75,2014
+Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.25,2016
+Jessica K. Hodgins,Carnegie Mellon University,vision,2.0,0.333333333333,2010
+Jessica K. Hodgins,Carnegie Mellon University,vision,1.0,0.333333333333,2012
 Jieping Ye,University of Michigan,nlp,1.0,0.0909090909091,2015
 Jieping Ye,University of Michigan,mlmining,6.0,2.28333333333,2004
 Jieping Ye,University of Michigan,mlmining,2.0,1.0,2006
@@ -13187,6 +13208,12 @@ Michael J. Feeley,University of British Columbia,opsys,1.0,0.166666666667,1999
 Michael J. Feeley,University of British Columbia,proglang,1.0,0.5,1992
 Michael J. Feeley,University of British Columbia,arch,1.0,0.142857142857,1996
 Michael J. Feeley,University of British Columbia,highperf,1.0,0.25,1991
+Cristina Nita-Rotaru,Northeastern University,database,1.0,0.142857142857,2015
+Cristina Nita-Rotaru,Northeastern University,networks,1.0,0.2,2007
+Cristina Nita-Rotaru,Northeastern University,networks,1.0,0.333333333333,2013
+Cristina Nita-Rotaru,Northeastern University,security,1.0,0.5,2007
+Cristina Nita-Rotaru,Northeastern University,security,1.0,0.125,2012
+Cristina Nita-Rotaru,Northeastern University,security,1.0,0.25,2015
 Amitabh Varshney,University of Maryland - College Park,graphics,1.0,0.125,1996
 Amitabh Varshney,University of Maryland - College Park,graphics,1.0,0.5,2004
 Amitabh Varshney,University of Maryland - College Park,graphics,2.0,0.833333333333,2005
@@ -13690,42 +13717,28 @@ Brent Waters,University of Texas - Austin,security,3.0,0.833333333333,2010
 Brent Waters,University of Texas - Austin,security,2.0,0.583333333333,2011
 Brent Waters,University of Texas - Austin,security,2.0,0.7,2013
 Brent Waters,University of Texas - Austin,security,1.0,0.5,2014
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.5,1991
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.25,1995
-Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.576923076923,1997
-Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.833333333333,1999
-Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,1.43333333333,2000
-Jessica K. Hodgins,Carnegie Mellon University,graphics,6.0,2.9,2002
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,1.0,2003
-Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.666666666667,2004
-Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,0.9,2005
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.5,2006
-Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,1.25,2007
-Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,1.0,2008
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.25,2010
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.2,2011
-Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,0.833333333333,2012
-Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.342857142857,2013
-Jessica K. Hodgins,Carnegie Mellon University,graphics,2.0,0.4,2014
-Jessica K. Hodgins,Carnegie Mellon University,graphics,3.0,0.642857142857,2015
-Jessica K. Hodgins,Carnegie Mellon University,graphics,1.0,0.5,2016
-Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.2,2007
-Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2011
-Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2014
-Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2015
-Jessica K. Hodgins,Carnegie Mellon University,hci,1.0,0.25,2016
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,1.0,1994
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,1.0,1996
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.5,2000
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.25,2002
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.333333333333,2003
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.166666666667,2005
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.5,2009
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.5,2010
-Jessica K. Hodgins,Carnegie Mellon University,robotics,2.0,0.75,2014
-Jessica K. Hodgins,Carnegie Mellon University,robotics,1.0,0.25,2016
-Jessica K. Hodgins,Carnegie Mellon University,vision,2.0,0.333333333333,2010
-Jessica K. Hodgins,Carnegie Mellon University,vision,1.0,0.333333333333,2012
+P. Madhusudan,University of Illinois at Urbana-Champaign,theory,1.0,0.5,2004
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2005
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2006
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2.0,0.833333333333,2011
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2.0,0.666666666667,2014
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2016
+P. Madhusudan,University of Illinois at Urbana-Champaign,web,1.0,0.333333333333,2007
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,3.0,1.58333333333,2003
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2005
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.833333333333,2006
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.5,2008
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.666666666667,2009
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2010
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.25,2013
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.5,2014
+P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2015
+P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.25,2007
+P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.333333333333,2008
+P. Madhusudan,University of Illinois at Urbana-Champaign,security,1.0,0.25,2010
+P. Madhusudan,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2010
+P. Madhusudan,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2012
+P. Madhusudan,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2011
 Robert D. Kleinberg,Cornell University,theory,2.0,1.0,2003
 Robert D. Kleinberg,Cornell University,theory,2.0,0.666666666667,2004
 Robert D. Kleinberg,Cornell University,theory,4.0,1.25,2005
@@ -21752,6 +21765,36 @@ Lujo Bauer,Carnegie Mellon University,security,1.0,0.1,2015
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,1980
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1986
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,1988
+Andreas Krause 0001,ETH Zurich,hci,1.0,0.2,2007
+Andreas Krause 0001,ETH Zurich,mlmining,1.0,0.333333333333,2005
+Andreas Krause 0001,ETH Zurich,mlmining,1.0,0.333333333333,2006
+Andreas Krause 0001,ETH Zurich,mlmining,3.0,0.916666666667,2007
+Andreas Krause 0001,ETH Zurich,mlmining,1.0,0.333333333333,2009
+Andreas Krause 0001,ETH Zurich,mlmining,7.0,2.75,2010
+Andreas Krause 0001,ETH Zurich,mlmining,3.0,1.08333333333,2011
+Andreas Krause 0001,ETH Zurich,mlmining,2.0,0.666666666667,2012
+Andreas Krause 0001,ETH Zurich,mlmining,2.0,0.583333333333,2013
+Andreas Krause 0001,ETH Zurich,mlmining,6.0,1.78333333333,2014
+Andreas Krause 0001,ETH Zurich,mlmining,6.0,1.86666666667,2015
+Andreas Krause 0001,ETH Zurich,mlmining,3.0,0.833333333333,2016
+Andreas Krause 0001,ETH Zurich,ai,1.0,0.5,2005
+Andreas Krause 0001,ETH Zurich,ai,2.0,0.45,2007
+Andreas Krause 0001,ETH Zurich,ai,1.0,0.5,2008
+Andreas Krause 0001,ETH Zurich,ai,1.0,0.333333333333,2009
+Andreas Krause 0001,ETH Zurich,ai,2.0,0.533333333333,2011
+Andreas Krause 0001,ETH Zurich,ai,1.0,0.25,2013
+Andreas Krause 0001,ETH Zurich,ai,6.0,1.31666666667,2015
+Andreas Krause 0001,ETH Zurich,ai,3.0,0.916666666667,2016
+Andreas Krause 0001,ETH Zurich,proglang,1.0,0.333333333333,2015
+Andreas Krause 0001,ETH Zurich,proglang,1.0,0.25,2016
+Andreas Krause 0001,ETH Zurich,mobile,1.0,0.2,2005
+Andreas Krause 0001,ETH Zurich,web,1.0,0.5,2013
+Andreas Krause 0001,ETH Zurich,robotics,2.0,0.833333333333,2010
+Andreas Krause 0001,ETH Zurich,robotics,1.0,0.25,2013
+Andreas Krause 0001,ETH Zurich,robotics,1.0,0.142857142857,2014
+Andreas Krause 0001,ETH Zurich,robotics,1.0,0.25,2015
+Andreas Krause 0001,ETH Zurich,robotics,1.0,0.333333333333,2016
+Andreas Krause 0001,ETH Zurich,vision,1.0,0.333333333333,2015
 Jacco van Ossenbruggen,VU Amsterdam,web,1.0,0.2,2001
 Jacco van Ossenbruggen,VU Amsterdam,web,1.0,0.25,2003
 Jacco van Ossenbruggen,VU Amsterdam,web,1.0,0.333333333333,2005
@@ -26349,6 +26392,9 @@ Joseph M. Hellerstein,University of California - Berkeley,networks,1.0,0.1428571
 Joseph M. Hellerstein,University of California - Berkeley,networks,1.0,0.166666666667,2010
 Joseph M. Hellerstein,University of California - Berkeley,networks,1.0,0.111111111111,2011
 Joseph M. Hellerstein,University of California - Berkeley,mobile,1.0,0.142857142857,2007
+Ankit Singla,ETH Zurich,networks,2.0,0.583333333333,2012
+Ankit Singla,ETH Zurich,networks,1.0,0.166666666667,2013
+Ankit Singla,ETH Zurich,networks,2.0,0.5,2014
 Zvonimir Rakamaric,University of Utah,proglang,1.0,0.333333333333,2011
 Zvonimir Rakamaric,University of Utah,logic,1.0,0.333333333333,2009
 Zvonimir Rakamaric,University of Utah,logic,1.0,0.5,2014
@@ -26417,6 +26463,10 @@ David Sontag,New York University,mlmining,2.0,0.583333333333,2016
 David Sontag,New York University,ai,1.0,0.166666666667,2005
 David Sontag,New York University,ai,1.0,0.25,2016
 David Sontag,New York University,vision,1.0,0.333333333333,2014
+Mohsen Ghaffari,ETH Zurich,theory,1.0,0.5,2013
+Mohsen Ghaffari,ETH Zurich,theory,4.0,1.41666666667,2014
+Mohsen Ghaffari,ETH Zurich,theory,1.0,0.2,2015
+Mohsen Ghaffari,ETH Zurich,theory,2.0,1.5,2016
 Rodrigo Fonseca,Brown University,metrics,1.0,0.333333333333,2013
 Rodrigo Fonseca,Brown University,opsys,1.0,0.125,2006
 Rodrigo Fonseca,Brown University,opsys,1.0,0.25,2008
@@ -27545,6 +27595,18 @@ Joseph Y. Halpern,Cornell University,logic,1.0,0.333333333333,1988
 Joseph Y. Halpern,Cornell University,logic,2.0,0.833333333333,1992
 Joseph Y. Halpern,Cornell University,logic,2.0,1.0,1999
 Joseph Y. Halpern,Cornell University,security,1.0,0.5,2001
+Gunnar Rätsch,ETH Zurich,mlmining,2.0,0.5,1998
+Gunnar Rätsch,ETH Zurich,mlmining,2.0,0.333333333333,1999
+Gunnar Rätsch,ETH Zurich,mlmining,1.0,0.333333333333,2000
+Gunnar Rätsch,ETH Zurich,mlmining,3.0,0.733333333333,2001
+Gunnar Rätsch,ETH Zurich,mlmining,1.0,0.5,2003
+Gunnar Rätsch,ETH Zurich,mlmining,1.0,0.333333333333,2004
+Gunnar Rätsch,ETH Zurich,mlmining,2.0,0.666666666667,2005
+Gunnar Rätsch,ETH Zurich,mlmining,2.0,0.833333333333,2006
+Gunnar Rätsch,ETH Zurich,mlmining,1.0,0.333333333333,2007
+Gunnar Rätsch,ETH Zurich,mlmining,1.0,0.25,2008
+Gunnar Rätsch,ETH Zurich,mlmining,1.0,0.166666666667,2011
+Gunnar Rätsch,ETH Zurich,ai,1.0,0.333333333333,2016
 Tina Eliassi-Rad,Northeastern University,mlmining,1.0,0.5,2001
 Tina Eliassi-Rad,Northeastern University,mlmining,1.0,0.333333333333,2002
 Tina Eliassi-Rad,Northeastern University,mlmining,1.0,0.25,2007
@@ -27562,6 +27624,16 @@ Ravi Janardan,University of Minnesota - Twin Cities,crypto,1.0,0.5,1982
 Ravi Janardan,University of Minnesota - Twin Cities,robotics,1.0,0.25,2005
 Steven Homer,Boston University,theory,1.0,1.0,1984
 Steven Homer,Boston University,theory,1.0,0.333333333333,1994
+Ce Zhang,ETH Zurich,nlp,1.0,0.25,2012
+Ce Zhang,ETH Zurich,mlmining,1.0,0.166666666667,2013
+Ce Zhang,ETH Zurich,mlmining,1.0,0.142857142857,2014
+Ce Zhang,ETH Zurich,mlmining,2.0,0.5,2015
+Ce Zhang,ETH Zurich,database,1.0,0.25,2010
+Ce Zhang,ETH Zurich,database,1.0,0.5,2013
+Ce Zhang,ETH Zurich,database,2.0,0.833333333333,2014
+Ce Zhang,ETH Zurich,database,1.0,0.166666666667,2015
+Ce Zhang,ETH Zurich,database,1.0,0.2,2016
+Ce Zhang,ETH Zurich,web,1.0,0.333333333333,2010
 Katerina J. Argyraki,EPFL,metrics,1.0,0.333333333333,2010
 Katerina J. Argyraki,EPFL,opsys,1.0,0.111111111111,2009
 Katerina J. Argyraki,EPFL,networks,2.0,0.533333333333,2009
@@ -33025,6 +33097,13 @@ Anna Lubiw,University of Waterloo,theory,1.0,0.25,1999
 Anna Lubiw,University of Waterloo,theory,1.0,0.25,2003
 Anna Lubiw,University of Waterloo,theory,1.0,0.333333333333,2006
 Anna Lubiw,University of Waterloo,theory,1.0,0.1,2013
+Peter Müller 0001,ETH Zurich,hci,1.0,0.333333333333,2016
+Peter Müller 0001,ETH Zurich,proglang,1.0,0.5,2007
+Peter Müller 0001,ETH Zurich,proglang,1.0,0.5,2011
+Peter Müller 0001,ETH Zurich,proglang,1.0,0.333333333333,2014
+Peter Müller 0001,ETH Zurich,logic,1.0,0.333333333333,2016
+Peter Müller 0001,ETH Zurich,softeng,1.0,0.5,2007
+Peter Müller 0001,ETH Zurich,softeng,1.0,0.333333333333,2016
 Pierre Dillenbourg,EPFL,robotics,1.0,0.2,2008
 Pierre Dillenbourg,EPFL,robotics,1.0,0.25,2009
 Pierre Dillenbourg,EPFL,robotics,1.0,0.333333333333,2015
