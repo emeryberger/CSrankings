@@ -93,6 +93,9 @@ def parseDBLP(facultydict):
                     # entries in DBLP.
                     # print "Skipping article with "+str(pageCount)+" pages."
 
+                if ((confname == 'ASE') and (pageCount <= 6)):
+                    tooFewPages = True
+                    
                 if (tooFewPages):
                     continue
 
