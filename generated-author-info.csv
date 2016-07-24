@@ -59,15 +59,23 @@ Daniel Gildea,University of Rochester,ai,1.0,0.333333333333,2013
 Daniel Gildea,University of Rochester,ai,1.0,0.166666666667,2014
 Daniel Gildea,University of Rochester,ai,1.0,0.125,2016
 José María Cela,Polytechnic University of Catalonia,highperf,1.0,0.333333333333,2010
-Anastasios Sidiropoulos,Ohio State University,theory,3.0,0.559523809524,2005
-Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.333333333333,2007
-Anastasios Sidiropoulos,Ohio State University,theory,2.0,0.7,2008
-Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2009
-Anastasios Sidiropoulos,Ohio State University,theory,3.0,1.83333333333,2010
-Anastasios Sidiropoulos,Ohio State University,theory,2.0,0.833333333333,2011
-Anastasios Sidiropoulos,Ohio State University,theory,3.0,1.83333333333,2013
-Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2014
-Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2015
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2014
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,1.0,0.25,2003
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,2.0,0.666666666667,2004
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2005
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,3.0,1.08333333333,2006
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2007
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,5.0,1.91666666667,2008
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,1.0,0.5,2009
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2010
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,3.0,1.0,2011
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,4.0,1.41666666667,2012
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,2.0,0.833333333333,2013
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,3.0,1.33333333333,2014
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,2.0,0.666666666667,2015
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,mlmining,4.0,2.16666666667,2016
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,ai,2.0,0.666666666667,2011
+Shai Shalev-Shwartz,Hebrew University of Jerusalem,web,1.0,0.25,2002
 Stéphane Lafortune,University of Michigan,opsys,1.0,0.2,2008
 Stéphane Lafortune,University of Michigan,proglang,1.0,0.2,2009
 Simon Julier,University College London,hci,1.0,0.142857142857,2013
@@ -821,18 +829,12 @@ Lawrence Birnbaum,Northwestern University,ai,1.0,0.333333333333,1995
 Lawrence Birnbaum,Northwestern University,ai,1.0,0.166666666667,2007
 Lawrence Birnbaum,Northwestern University,vision,1.0,0.333333333333,1993
 Lawrence Birnbaum,Northwestern University,vision,1.0,0.2,1994
-Michael J. Cafarella,University of Michigan,mlmining,1.0,0.5,2014
-Michael J. Cafarella,University of Michigan,ai,1.0,0.125,2004
-Michael J. Cafarella,University of Michigan,ai,1.0,0.2,2007
-Michael J. Cafarella,University of Michigan,database,1.0,0.2,2008
-Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2009
-Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2011
-Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2012
-Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2015
-Michael J. Cafarella,University of Michigan,database,1.0,0.2,2016
-Michael J. Cafarella,University of Michigan,proglang,1.0,0.333333333333,2014
-Michael J. Cafarella,University of Michigan,web,1.0,0.111111111111,2004
-Michael J. Cafarella,University of Michigan,web,1.0,0.5,2005
+Rafal Mantiuk,University of Cambridge,graphics,1.0,0.25,2004
+Rafal Mantiuk,University of Cambridge,graphics,1.0,0.25,2006
+Rafal Mantiuk,University of Cambridge,graphics,2.0,0.583333333333,2008
+Rafal Mantiuk,University of Cambridge,graphics,1.0,0.25,2011
+Rafal Mantiuk,University of Cambridge,graphics,1.0,0.2,2012
+Rafal Mantiuk,University of Cambridge,vision,2.0,0.533333333333,2011
 Naomi Nishimura,University of Waterloo,theory,1.0,0.25,1995
 Naomi Nishimura,University of Waterloo,theory,1.0,0.5,2012
 Illah R. Nourbakhsh,Carnegie Mellon University,ai,1.0,0.5,1993
@@ -871,26 +873,6 @@ Yossi Azar,Tel Aviv University,theory,1.0,0.5,2011
 Yossi Azar,Tel Aviv University,theory,3.0,0.833333333333,2013
 Yossi Azar,Tel Aviv University,theory,2.0,0.5,2016
 Yossi Azar,Tel Aviv University,networks,1.0,0.333333333333,1992
-Aaron F. Bobick,Georgia Institute of Technology,graphics,1.0,0.2,2003
-Aaron F. Bobick,Georgia Institute of Technology,graphics,1.0,0.25,2005
-Aaron F. Bobick,Georgia Institute of Technology,hci,1.0,0.333333333333,1997
-Aaron F. Bobick,Georgia Institute of Technology,hci,1.0,0.2,1999
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.5,1989
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.2,2006
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.25,2009
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.333333333333,2012
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.333333333333,2013
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.25,2014
-Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.5,2015
-Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,1991
-Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,1994
-Aaron F. Bobick,Georgia Institute of Technology,vision,2.0,1.0,1995
-Aaron F. Bobick,Georgia Institute of Technology,vision,4.0,1.66666666667,1997
-Aaron F. Bobick,Georgia Institute of Technology,vision,4.0,2.0,1998
-Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,1999
-Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.333333333333,2000
-Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.25,2007
-Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,2014
 Isaac D. Scherson,University of California - Irvine,metrics,1.0,0.5,1996
 Isaac D. Scherson,University of California - Irvine,theory,1.0,0.333333333333,1986
 Isaac D. Scherson,University of California - Irvine,networks,1.0,0.333333333333,1990
@@ -1633,12 +1615,20 @@ Sorin Lerner,University of California - San Diego,security,1.0,0.333333333333,20
 Sorin Lerner,University of California - San Diego,security,1.0,0.166666666667,2015
 Sorin Lerner,University of California - San Diego,softeng,3.0,0.916666666667,2007
 Sorin Lerner,University of California - San Diego,softeng,1.0,0.333333333333,2012
-Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2000
-Joanne M. Atlee,University of Waterloo,softeng,1.0,0.333333333333,2002
-Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2009
-Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2010
-Joanne M. Atlee,University of Waterloo,softeng,2.0,0.642857142857,2014
-Joanne M. Atlee,University of Waterloo,softeng,1.0,0.25,2015
+Michael Schapira,Hebrew University of Jerusalem,metrics,1.0,0.25,2010
+Michael Schapira,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2005
+Michael Schapira,Hebrew University of Jerusalem,theory,2.0,0.833333333333,2006
+Michael Schapira,Hebrew University of Jerusalem,theory,1.0,0.5,2007
+Michael Schapira,Hebrew University of Jerusalem,theory,2.0,0.666666666667,2008
+Michael Schapira,Hebrew University of Jerusalem,theory,1.0,0.111111111111,2010
+Michael Schapira,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2015
+Michael Schapira,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2009
+Michael Schapira,Hebrew University of Jerusalem,networks,1.0,0.25,2010
+Michael Schapira,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2011
+Michael Schapira,Hebrew University of Jerusalem,networks,2.0,0.5,2013
+Michael Schapira,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2014
+Michael Schapira,Hebrew University of Jerusalem,networks,2.0,0.533333333333,2015
+Michael Schapira,Hebrew University of Jerusalem,proglang,1.0,0.125,2014
 Joël Ouaknine,University of Oxford,theory,1.0,0.333333333333,2013
 Joël Ouaknine,University of Oxford,theory,1.0,0.5,2014
 Joël Ouaknine,University of Oxford,theory,2.0,0.666666666667,2015
@@ -2889,6 +2879,15 @@ Ting Chen,University of Southern California,database,1.0,0.2,2007
 Ting Chen,University of Southern California,database,1.0,0.25,2008
 Ting Chen,University of Southern California,robotics,1.0,0.25,2015
 Ting Chen,University of Southern California,vision,1.0,0.25,2008
+Anastasios Sidiropoulos,Ohio State University,theory,3.0,0.559523809524,2005
+Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.333333333333,2007
+Anastasios Sidiropoulos,Ohio State University,theory,2.0,0.7,2008
+Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2009
+Anastasios Sidiropoulos,Ohio State University,theory,3.0,1.83333333333,2010
+Anastasios Sidiropoulos,Ohio State University,theory,2.0,0.833333333333,2011
+Anastasios Sidiropoulos,Ohio State University,theory,3.0,1.83333333333,2013
+Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2014
+Anastasios Sidiropoulos,Ohio State University,theory,1.0,0.5,2015
 Hartmut Geyer,Carnegie Mellon University,robotics,2.0,0.833333333333,2012
 Hartmut Geyer,Carnegie Mellon University,robotics,1.0,0.5,2013
 Hartmut Geyer,Carnegie Mellon University,robotics,3.0,1.33333333333,2014
@@ -3388,6 +3387,24 @@ Aarti Singh,Carnegie Mellon University,mlmining,2.0,0.666666666667,2015
 Aarti Singh,Carnegie Mellon University,ai,1.0,0.2,2015
 Aarti Singh,Carnegie Mellon University,ai,1.0,0.5,2016
 Aarti Singh,Carnegie Mellon University,networks,1.0,0.5,2012
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.25,2007
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2008
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2010
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.25,2011
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2013
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.5,2015
+Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.25,2016
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.333333333333,2006
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.5,2008
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.5,2009
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.166666666667,2010
+Gil Segev,Hebrew University of Jerusalem,crypto,2.0,0.833333333333,2011
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.25,2012
+Gil Segev,Hebrew University of Jerusalem,crypto,3.0,0.866666666667,2013
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.125,2014
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.25,2015
+Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.333333333333,2016
+Gil Segev,Hebrew University of Jerusalem,security,1.0,0.25,2015
 Mark Giesbrecht,University of Waterloo,theory,1.0,1.0,1992
 Mark Giesbrecht,University of Waterloo,theory,1.0,0.333333333333,2000
 Vagelis Hristidis,University of California - Riverside,mlmining,1.0,0.142857142857,2010
@@ -4635,6 +4652,15 @@ Jon M. Kleinberg,Cornell University,web,2.0,0.583333333333,2013
 Jon M. Kleinberg,Cornell University,web,2.0,0.45,2014
 Jon M. Kleinberg,Cornell University,web,2.0,0.45,2015
 Jon M. Kleinberg,Cornell University,web,3.0,0.833333333333,2016
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1998
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,2.0,1.0,2000
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,2.0,0.366666666667,2002
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,1.0,0.5,2005
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,1.0,0.5,2006
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,2.0,1.5,2007
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2008
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2009
+Alex Samorodnitsky,Hebrew University of Jerusalem,theory,1.0,0.5,2014
 Michal Feldman,Tel Aviv University,theory,1.0,0.333333333333,2007
 Michal Feldman,Tel Aviv University,theory,1.0,0.125,2009
 Michal Feldman,Tel Aviv University,theory,2.0,0.583333333333,2013
@@ -5247,12 +5273,18 @@ Geoffrey J. Gordon,Carnegie Mellon University,ai,1.0,0.333333333333,2013
 Geoffrey J. Gordon,Carnegie Mellon University,robotics,1.0,0.25,2005
 Geoffrey J. Gordon,Carnegie Mellon University,robotics,1.0,0.25,2007
 Geoffrey J. Gordon,Carnegie Mellon University,robotics,1.0,0.333333333333,2010
-Rafal Mantiuk,University of Cambridge,graphics,1.0,0.25,2004
-Rafal Mantiuk,University of Cambridge,graphics,1.0,0.25,2006
-Rafal Mantiuk,University of Cambridge,graphics,2.0,0.583333333333,2008
-Rafal Mantiuk,University of Cambridge,graphics,1.0,0.25,2011
-Rafal Mantiuk,University of Cambridge,graphics,1.0,0.2,2012
-Rafal Mantiuk,University of Cambridge,vision,2.0,0.533333333333,2011
+Michael J. Cafarella,University of Michigan,mlmining,1.0,0.5,2014
+Michael J. Cafarella,University of Michigan,ai,1.0,0.125,2004
+Michael J. Cafarella,University of Michigan,ai,1.0,0.2,2007
+Michael J. Cafarella,University of Michigan,database,1.0,0.2,2008
+Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2009
+Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2011
+Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2012
+Michael J. Cafarella,University of Michigan,database,1.0,0.333333333333,2015
+Michael J. Cafarella,University of Michigan,database,1.0,0.2,2016
+Michael J. Cafarella,University of Michigan,proglang,1.0,0.333333333333,2014
+Michael J. Cafarella,University of Michigan,web,1.0,0.111111111111,2004
+Michael J. Cafarella,University of Michigan,web,1.0,0.5,2005
 Steven A. Myers,Indiana University,networks,1.0,0.333333333333,2011
 John C. Hart,University of Illinois at Urbana-Champaign,graphics,1.0,0.333333333333,1989
 John C. Hart,University of Illinois at Urbana-Champaign,graphics,1.0,0.5,1991
@@ -7582,6 +7614,16 @@ Haesun Park,Georgia Institute of Technology,web,1.0,0.2,2014
 Haesun Park,Georgia Institute of Technology,highperf,1.0,0.333333333333,2016
 Heiko Vogler,TU Dresden,nlp,1.0,0.333333333333,2010
 Heiko Vogler,TU Dresden,nlp,1.0,0.333333333333,2013
+Aviv Zohar,Hebrew University of Jerusalem,metrics,1.0,0.25,2010
+Aviv Zohar,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2008
+Aviv Zohar,Hebrew University of Jerusalem,ai,2.0,1.0,2006
+Aviv Zohar,Hebrew University of Jerusalem,ai,2.0,0.583333333333,2007
+Aviv Zohar,Hebrew University of Jerusalem,ai,2.0,0.583333333333,2010
+Aviv Zohar,Hebrew University of Jerusalem,ai,1.0,0.333333333333,2011
+Aviv Zohar,Hebrew University of Jerusalem,ai,1.0,0.5,2015
+Aviv Zohar,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2009
+Aviv Zohar,Hebrew University of Jerusalem,web,1.0,0.25,2012
+Aviv Zohar,Hebrew University of Jerusalem,security,1.0,0.25,2015
 Tajana Simunic,University of California - San Diego,mobile,1.0,0.25,2000
 J. Eric Fosler,Ohio State University,nlp,1.0,0.333333333333,1995
 Aggelos Kiayias,University of Edinburgh,crypto,1.0,0.5,2001
@@ -8863,6 +8905,23 @@ Yun Fu,University College London,vision,2.0,0.583333333333,2013
 Yun Fu,University College London,vision,1.0,0.333333333333,2014
 Yun Fu,University College London,vision,2.0,0.833333333333,2015
 M. Angela Sasse,University College London,hci,1.0,0.166666666667,2016
+Danny Dolev,Hebrew University of Jerusalem,theory,3.0,1.7,1981
+Danny Dolev,Hebrew University of Jerusalem,theory,2.0,0.833333333333,1982
+Danny Dolev,Hebrew University of Jerusalem,theory,3.0,0.833333333333,1983
+Danny Dolev,Hebrew University of Jerusalem,theory,4.0,1.33333333333,1984
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.25,1985
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.166666666667,1987
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1988
+Danny Dolev,Hebrew University of Jerusalem,theory,2.0,1.0,1989
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.25,1990
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1991
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.2,1994
+Danny Dolev,Hebrew University of Jerusalem,theory,1.0,0.5,2015
+Danny Dolev,Hebrew University of Jerusalem,database,1.0,0.5,1995
+Danny Dolev,Hebrew University of Jerusalem,crypto,2.0,0.833333333333,1982
+Danny Dolev,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2003
+Danny Dolev,Hebrew University of Jerusalem,networks,1.0,0.25,2008
+Danny Dolev,Hebrew University of Jerusalem,arch,1.0,0.2,2008
 Daniel J. Abadi,Yale University,database,2.0,0.404761904762,2005
 Daniel J. Abadi,Yale University,database,2.0,0.583333333333,2006
 Daniel J. Abadi,Yale University,database,2.0,0.416666666667,2007
@@ -9228,6 +9287,17 @@ Daniele Panozzo,New York University,graphics,3.0,0.833333333333,2013
 Daniele Panozzo,New York University,graphics,4.0,1.41666666667,2014
 Daniele Panozzo,New York University,graphics,3.0,0.642857142857,2015
 Daniele Panozzo,New York University,graphics,2.0,0.833333333333,2016
+Sara Cohen,Hebrew University of Jerusalem,ai,1.0,0.5,2015
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,0.333333333333,1999
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,0.333333333333,2001
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,0.25,2003
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,0.5,2005
+Sara Cohen,Hebrew University of Jerusalem,database,3.0,2.2,2006
+Sara Cohen,Hebrew University of Jerusalem,database,2.0,1.33333333333,2008
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,0.333333333333,2009
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,1.0,2013
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,0.333333333333,2015
+Sara Cohen,Hebrew University of Jerusalem,database,1.0,1.0,2016
 Chen Ding,University of Rochester,proglang,1.0,0.5,1999
 Chen Ding,University of Rochester,proglang,1.0,0.5,2003
 Chen Ding,University of Rochester,proglang,1.0,0.25,2004
@@ -9613,6 +9683,12 @@ E. Allen Emerson,University of Texas - Austin,logic,1.0,0.333333333333,2000
 E. Allen Emerson,University of Texas - Austin,logic,1.0,0.5,2003
 E. Allen Emerson,University of Texas - Austin,softeng,1.0,0.333333333333,1992
 E. Allen Emerson,University of Texas - Austin,softeng,1.0,0.333333333333,2009
+Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2000
+Joanne M. Atlee,University of Waterloo,softeng,1.0,0.333333333333,2002
+Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2009
+Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2010
+Joanne M. Atlee,University of Waterloo,softeng,2.0,0.642857142857,2014
+Joanne M. Atlee,University of Waterloo,softeng,1.0,0.25,2015
 Yizhou Sun,Northeastern University,nlp,1.0,0.142857142857,2013
 Yizhou Sun,Northeastern University,nlp,1.0,0.0909090909091,2015
 Yizhou Sun,Northeastern University,mlmining,3.0,0.783333333333,2009
@@ -13078,6 +13154,35 @@ Daniel P. Miranker,University of Texas - Austin,database,1.0,0.25,1991
 Daniel P. Miranker,University of Texas - Austin,database,1.0,0.5,1993
 Daniel P. Miranker,University of Texas - Austin,database,1.0,0.5,1998
 Susanne E. Hambrusch,Purdue University,theory,1.0,0.5,1985
+Yair Weiss,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,2004
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,1.0,1996
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,1.0,1997
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.5,1999
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2000
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2001
+Yair Weiss,Hebrew University of Jerusalem,mlmining,3.0,1.33333333333,2002
+Yair Weiss,Hebrew University of Jerusalem,mlmining,4.0,1.5,2003
+Yair Weiss,Hebrew University of Jerusalem,mlmining,2.0,0.583333333333,2005
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2006
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2008
+Yair Weiss,Hebrew University of Jerusalem,mlmining,2.0,0.833333333333,2009
+Yair Weiss,Hebrew University of Jerusalem,mlmining,2.0,1.0,2012
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2013
+Yair Weiss,Hebrew University of Jerusalem,mlmining,1.0,0.5,2015
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,0.5,1996
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,1.0,1997
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,1.0,1999
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,1.0,2001
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,0.583333333333,2003
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,0.75,2004
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2005
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,1.0,2006
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,0.833333333333,2007
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,0.583333333333,2008
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,0.75,2009
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,0.25,2010
+Yair Weiss,Hebrew University of Jerusalem,vision,2.0,0.75,2011
+Yair Weiss,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2012
 Igor L. Markov,University of Michigan,ai,1.0,0.333333333333,2003
 Sencun Zhu,Pennsylvania State University,networks,1.0,0.2,2006
 Sencun Zhu,Pennsylvania State University,networks,1.0,0.25,2007
@@ -13452,6 +13557,17 @@ Brendan O'Connor,University of Massachusetts - Amherst,nlp,3.0,0.833333333333,20
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.5,2015
 Matthew Fluet,Rochester Institute of Technology,proglang,1.0,0.333333333333,2009
 Matthew Fluet,Rochester Institute of Technology,highperf,1.0,0.166666666667,2013
+Dafna Shahaf,Hebrew University of Jerusalem,mlmining,1.0,0.25,2009
+Dafna Shahaf,Hebrew University of Jerusalem,mlmining,1.0,0.5,2010
+Dafna Shahaf,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2012
+Dafna Shahaf,Hebrew University of Jerusalem,mlmining,1.0,0.166666666667,2013
+Dafna Shahaf,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2015
+Dafna Shahaf,Hebrew University of Jerusalem,ai,2.0,0.833333333333,2006
+Dafna Shahaf,Hebrew University of Jerusalem,ai,1.0,0.5,2007
+Dafna Shahaf,Hebrew University of Jerusalem,ai,1.0,0.5,2009
+Dafna Shahaf,Hebrew University of Jerusalem,ai,1.0,0.5,2010
+Dafna Shahaf,Hebrew University of Jerusalem,ai,1.0,0.5,2011
+Dafna Shahaf,Hebrew University of Jerusalem,web,1.0,0.333333333333,2012
 John Regehr,University of Utah,opsys,1.0,0.2,2009
 John Regehr,University of Utah,proglang,1.0,0.5,2007
 John Regehr,University of Utah,proglang,1.0,0.25,2011
@@ -14706,6 +14822,22 @@ Julie A. Shah,Massachusetts Institute of Technology,robotics,1.0,0.333333333333,
 Julie A. Shah,Massachusetts Institute of Technology,robotics,2.0,0.416666666667,2014
 Julie A. Shah,Massachusetts Institute of Technology,robotics,2.0,0.75,2015
 Julie A. Shah,Massachusetts Institute of Technology,robotics,1.0,0.5,2016
+Michael Ben-Or,Hebrew University of Jerusalem,theory,2.0,1.33333333333,1983
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1984
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.5,1985
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.25,1986
+Michael Ben-Or,Hebrew University of Jerusalem,theory,3.0,1.08333333333,1988
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.5,1989
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.5,1991
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.5,1992
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1993
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,1.0,1994
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.5,1996
+Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,0.5,1997
+Michael Ben-Or,Hebrew University of Jerusalem,theory,2.0,0.533333333333,2006
+Michael Ben-Or,Hebrew University of Jerusalem,theory,2.0,0.833333333333,2008
+Michael Ben-Or,Hebrew University of Jerusalem,crypto,1.0,0.142857142857,1988
+Michael Ben-Or,Hebrew University of Jerusalem,crypto,1.0,0.25,1989
 Peter Buneman,University of Edinburgh,database,1.0,0.5,1979
 Peter Buneman,University of Edinburgh,database,1.0,0.5,1986
 Peter Buneman,University of Edinburgh,database,1.0,0.333333333333,1988
@@ -15530,6 +15662,32 @@ Robert C. Miller,Massachusetts Institute of Technology,networks,1.0,0.25,2014
 Robert C. Miller,Massachusetts Institute of Technology,web,1.0,0.333333333333,2007
 Robert C. Miller,Massachusetts Institute of Technology,softeng,1.0,0.5,2007
 Robert C. Miller,Massachusetts Institute of Technology,softeng,1.0,0.333333333333,2009
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,0.5,1990
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,1.0,1991
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,0.5,2002
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,0.5,2004
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,0.5,2005
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,2.0,1.0,2006
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2011
+Amnon Shashua,Hebrew University of Jerusalem,mlmining,1.0,0.5,2016
+Amnon Shashua,Hebrew University of Jerusalem,vision,1.0,0.5,1988
+Amnon Shashua,Hebrew University of Jerusalem,vision,1.0,1.0,1993
+Amnon Shashua,Hebrew University of Jerusalem,vision,3.0,2.0,1994
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,1.0,1995
+Amnon Shashua,Hebrew University of Jerusalem,vision,3.0,1.08333333333,1996
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,1.0,1997
+Amnon Shashua,Hebrew University of Jerusalem,vision,3.0,1.5,1998
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,0.833333333333,1999
+Amnon Shashua,Hebrew University of Jerusalem,vision,6.0,3.0,2000
+Amnon Shashua,Hebrew University of Jerusalem,vision,5.0,2.08333333333,2001
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,1.0,2002
+Amnon Shashua,Hebrew University of Jerusalem,vision,1.0,0.5,2003
+Amnon Shashua,Hebrew University of Jerusalem,vision,1.0,0.5,2004
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,0.833333333333,2005
+Amnon Shashua,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2006
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,0.833333333333,2007
+Amnon Shashua,Hebrew University of Jerusalem,vision,2.0,0.833333333333,2008
+Amnon Shashua,Hebrew University of Jerusalem,vision,1.0,0.5,2010
 Daniel G. Aliaga,Purdue University,graphics,1.0,0.1,1991
 Daniel G. Aliaga,Purdue University,graphics,1.0,0.5,1999
 Daniel G. Aliaga,Purdue University,graphics,1.0,0.5,2001
@@ -16009,6 +16167,7 @@ Stephen Chong,Harvard University,security,1.0,0.5,2004
 Stephen Chong,Harvard University,security,1.0,0.333333333333,2007
 Stephen Chong,Harvard University,security,1.0,0.5,2011
 Stephen Chong,Harvard University,security,1.0,0.333333333333,2012
+Oded Schwartz,Hebrew University of Jerusalem,highperf,1.0,0.25,2012
 Xin Liu,University of California - Davis,metrics,1.0,0.333333333333,2014
 Xin Liu,University of California - Davis,hci,1.0,0.2,2015
 Xin Liu,University of California - Davis,mlmining,1.0,0.25,2015
@@ -16260,6 +16419,17 @@ Moses Charikar,Stanford University,database,1.0,0.2,2007
 Moses Charikar,Stanford University,networks,1.0,0.333333333333,2000
 Moses Charikar,Stanford University,web,1.0,0.333333333333,2008
 Moses Charikar,Stanford University,web,1.0,0.333333333333,2011
+Nir Friedman,Hebrew University of Jerusalem,mlmining,1.0,0.5,1996
+Nir Friedman,Hebrew University of Jerusalem,mlmining,2.0,1.33333333333,1997
+Nir Friedman,Hebrew University of Jerusalem,mlmining,2.0,0.833333333333,1998
+Nir Friedman,Hebrew University of Jerusalem,mlmining,1.0,0.25,2000
+Nir Friedman,Hebrew University of Jerusalem,mlmining,2.0,0.583333333333,2001
+Nir Friedman,Hebrew University of Jerusalem,mlmining,1.0,0.25,2010
+Nir Friedman,Hebrew University of Jerusalem,ai,1.0,0.5,1994
+Nir Friedman,Hebrew University of Jerusalem,ai,1.0,0.5,1995
+Nir Friedman,Hebrew University of Jerusalem,ai,1.0,0.25,1999
+Nir Friedman,Hebrew University of Jerusalem,web,2.0,0.583333333333,2002
+Nir Friedman,Hebrew University of Jerusalem,logic,1.0,0.5,1999
 Tao Ju,Washington University - St. Louis,graphics,2.0,0.5,2002
 Tao Ju,Washington University - St. Louis,graphics,1.0,1.0,2004
 Tao Ju,Washington University - St. Louis,graphics,1.0,0.333333333333,2005
@@ -16929,25 +17099,26 @@ Babak Falsafi,EPFL,arch,3.0,0.7,2014
 Babak Falsafi,EPFL,arch,2.0,0.533333333333,2015
 Babak Falsafi,EPFL,highperf,1.0,0.125,1994
 Babak Falsafi,EPFL,highperf,1.0,0.2,2001
-Matthew K. Franklin,University of California - Davis,theory,1.0,0.5,1992
-Matthew K. Franklin,University of California - Davis,theory,1.0,0.333333333333,1993
-Matthew K. Franklin,University of California - Davis,theory,1.0,0.5,1995
-Matthew K. Franklin,University of California - Davis,theory,1.0,0.166666666667,1998
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1993
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1994
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1995
-Matthew K. Franklin,University of California - Davis,crypto,2.0,0.5,1996
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1997
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1998
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1999
-Matthew K. Franklin,University of California - Davis,crypto,2.0,0.833333333333,2001
-Matthew K. Franklin,University of California - Davis,crypto,1.0,0.25,2013
-Matthew K. Franklin,University of California - Davis,security,1.0,0.5,1995
-Matthew K. Franklin,University of California - Davis,security,1.0,0.25,1996
-Matthew K. Franklin,University of California - Davis,security,1.0,0.5,1999
-Matthew K. Franklin,University of California - Davis,security,1.0,0.5,2000
-Matthew K. Franklin,University of California - Davis,security,1.0,0.166666666667,2002
-Matthew K. Franklin,University of California - Davis,softeng,1.0,0.5,1990
+Aaron F. Bobick,Georgia Institute of Technology,graphics,1.0,0.2,2003
+Aaron F. Bobick,Georgia Institute of Technology,graphics,1.0,0.25,2005
+Aaron F. Bobick,Georgia Institute of Technology,hci,1.0,0.333333333333,1997
+Aaron F. Bobick,Georgia Institute of Technology,hci,1.0,0.2,1999
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.5,1989
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.2,2006
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.25,2009
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.333333333333,2012
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.333333333333,2013
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.25,2014
+Aaron F. Bobick,Georgia Institute of Technology,robotics,1.0,0.5,2015
+Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,1991
+Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,1994
+Aaron F. Bobick,Georgia Institute of Technology,vision,2.0,1.0,1995
+Aaron F. Bobick,Georgia Institute of Technology,vision,4.0,1.66666666667,1997
+Aaron F. Bobick,Georgia Institute of Technology,vision,4.0,2.0,1998
+Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,1999
+Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.333333333333,2000
+Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.25,2007
+Aaron F. Bobick,Georgia Institute of Technology,vision,1.0,0.5,2014
 Matthew Might,University of Utah,proglang,2.0,1.0,2006
 Matthew Might,University of Utah,proglang,1.0,1.0,2007
 Matthew Might,University of Utah,proglang,1.0,0.333333333333,2010
@@ -17218,6 +17389,16 @@ Paul W. Goldberg,University of Oxford,theory,1.0,0.333333333333,2011
 Paul W. Goldberg,University of Oxford,mlmining,1.0,0.333333333333,1997
 Paul W. Goldberg,University of Oxford,ai,1.0,0.25,2007
 Paul W. Goldberg,University of Oxford,ai,1.0,0.25,2008
+Guy Kindler,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1998
+Guy Kindler,Hebrew University of Jerusalem,theory,1.0,0.2,1999
+Guy Kindler,Hebrew University of Jerusalem,theory,1.0,0.2,2002
+Guy Kindler,Hebrew University of Jerusalem,theory,2.0,0.75,2004
+Guy Kindler,Hebrew University of Jerusalem,theory,3.0,0.733333333333,2005
+Guy Kindler,Hebrew University of Jerusalem,theory,2.0,0.583333333333,2008
+Guy Kindler,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2010
+Guy Kindler,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2015
+Guy Kindler,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2016
+Guy Kindler,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2014
 Matthias Grossglauser,EPFL,metrics,2.0,0.666666666667,2008
 Matthias Grossglauser,EPFL,mlmining,1.0,0.5,2011
 Matthias Grossglauser,EPFL,mlmining,1.0,0.5,2015
@@ -18138,6 +18319,8 @@ Daniel Leivant,Indiana University,logic,1.0,1.0,1989
 Daniel Leivant,Indiana University,logic,1.0,1.0,1991
 Daniel Leivant,Indiana University,logic,1.0,1.0,2004
 Daniel Leivant,Indiana University,logic,1.0,1.0,2006
+Matan Gavish,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2010
+Matan Gavish,Hebrew University of Jerusalem,mlmining,1.0,0.5,2011
 Kavita Bala,Cornell University,graphics,1.0,0.333333333333,1999
 Kavita Bala,Cornell University,graphics,1.0,0.333333333333,2003
 Kavita Bala,Cornell University,graphics,1.0,0.166666666667,2005
@@ -19254,6 +19437,26 @@ Rajmohan Rajaraman,Northeastern University,theory,1.0,0.2,2013
 Rajmohan Rajaraman,Northeastern University,crypto,1.0,0.25,2016
 Rajmohan Rajaraman,Northeastern University,networks,1.0,0.333333333333,2004
 Rajmohan Rajaraman,Northeastern University,networks,1.0,0.166666666667,2008
+Yair Bartal,Hebrew University of Jerusalem,theory,3.0,1.08333333333,1992
+Yair Bartal,Hebrew University of Jerusalem,theory,2.0,0.666666666667,1993
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.25,1994
+Yair Bartal,Hebrew University of Jerusalem,theory,5.0,2.2,1996
+Yair Bartal,Hebrew University of Jerusalem,theory,3.0,0.916666666667,1997
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,1.0,1998
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.25,1999
+Yair Bartal,Hebrew University of Jerusalem,theory,2.0,0.666666666667,2001
+Yair Bartal,Hebrew University of Jerusalem,theory,2.0,0.75,2003
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.5,2004
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.125,2005
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2006
+Yair Bartal,Hebrew University of Jerusalem,theory,2.0,0.666666666667,2007
+Yair Bartal,Hebrew University of Jerusalem,theory,2.0,0.666666666667,2008
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2009
+Yair Bartal,Hebrew University of Jerusalem,theory,2.0,0.533333333333,2011
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2012
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.5,2013
+Yair Bartal,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2016
+Yair Bartal,Hebrew University of Jerusalem,security,1.0,0.25,1999
 Michael W. Godfrey,University of Waterloo,database,1.0,0.25,1998
 Michael W. Godfrey,University of Waterloo,softeng,1.0,0.25,2005
 Michael W. Godfrey,University of Waterloo,softeng,1.0,0.333333333333,2014
@@ -19907,6 +20110,29 @@ James Fogarty,University of Washington,hci,3.0,0.7,2015
 James Fogarty,University of Washington,hci,2.0,0.533333333333,2016
 James Fogarty,University of Washington,ai,1.0,0.125,2008
 James Fogarty,University of Washington,ai,2.0,0.45,2011
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.5,1988
+Noam Nisan,Hebrew University of Jerusalem,theory,3.0,1.66666666667,1989
+Noam Nisan,Hebrew University of Jerusalem,theory,4.0,2.08333333333,1990
+Noam Nisan,Hebrew University of Jerusalem,theory,2.0,1.5,1991
+Noam Nisan,Hebrew University of Jerusalem,theory,3.0,1.03333333333,1992
+Noam Nisan,Hebrew University of Jerusalem,theory,2.0,1.0,1993
+Noam Nisan,Hebrew University of Jerusalem,theory,5.0,1.7,1994
+Noam Nisan,Hebrew University of Jerusalem,theory,5.0,2.08333333333,1995
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.5,1997
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1998
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.5,1999
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.5,2002
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2003
+Noam Nisan,Hebrew University of Jerusalem,theory,2.0,0.833333333333,2005
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2006
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.5,2007
+Noam Nisan,Hebrew University of Jerusalem,theory,2.0,0.666666666667,2008
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.166666666667,2012
+Noam Nisan,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2014
+Noam Nisan,Hebrew University of Jerusalem,theory,2.0,0.5,2015
+Noam Nisan,Hebrew University of Jerusalem,web,2.0,0.666666666667,2014
+Noam Nisan,Hebrew University of Jerusalem,security,1.0,0.25,2004
+Noam Nisan,Hebrew University of Jerusalem,security,1.0,0.333333333333,2008
 Robert Harper,Carnegie Mellon University,theory,1.0,0.2,2004
 Robert Harper,Carnegie Mellon University,proglang,1.0,0.5,1988
 Robert Harper,Carnegie Mellon University,proglang,1.0,0.333333333333,1990
@@ -21746,6 +21972,26 @@ Frank Keller,University of Edinburgh,nlp,2.0,0.833333333333,2013
 Frank Keller,University of Edinburgh,nlp,1.0,0.25,2014
 Frank Keller,University of Edinburgh,nlp,1.0,0.5,2015
 Frank Keller,University of Edinburgh,vision,1.0,0.25,2014
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,1993
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,1994
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.45,1996
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.25,1997
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.2,1998
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.666666666667,2002
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.833333333333,2004
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.5,2006
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.416666666667,2007
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.375,2008
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.533333333333,2009
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,2010
+Dani Lischinski,Hebrew University of Jerusalem,graphics,4.0,1.58333333333,2011
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.5,2012
+Dani Lischinski,Hebrew University of Jerusalem,graphics,2.0,0.392857142857,2013
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.166666666667,2014
+Dani Lischinski,Hebrew University of Jerusalem,graphics,1.0,0.2,2015
+Dani Lischinski,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2007
+Dani Lischinski,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2010
+Dani Lischinski,Hebrew University of Jerusalem,vision,2.0,0.666666666667,2013
 Peter Jeavons,University of Oxford,theory,1.0,0.333333333333,2001
 Peter Jeavons,University of Oxford,ai,1.0,0.333333333333,2001
 Peter Jeavons,University of Oxford,ai,1.0,0.25,2003
@@ -21890,20 +22136,20 @@ Wang-Chien Lee,Pennsylvania State University,web,1.0,0.2,2015
 Wang-Chien Lee,Pennsylvania State University,web,1.0,0.142857142857,2016
 James A. Reggia,University of Maryland - College Park,mlmining,2.0,0.833333333333,1994
 James A. Reggia,University of Maryland - College Park,ai,1.0,0.5,1986
-Michael W. Hicks,University of Maryland - College Park,database,1.0,0.333333333333,2009
-Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.2,1999
-Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.333333333333,2001
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2001
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.166666666667,2002
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2004
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.2,2005
-Michael W. Hicks,University of Maryland - College Park,proglang,2.0,0.583333333333,2006
-Michael W. Hicks,University of Maryland - College Park,proglang,2.0,0.833333333333,2009
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2014
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.142857142857,2015
-Michael W. Hicks,University of Maryland - College Park,security,1.0,0.5,2007
-Michael W. Hicks,University of Maryland - College Park,security,2.0,0.45,2014
-Michael W. Hicks,University of Maryland - College Park,arch,1.0,0.166666666667,2015
+Glynn Winskel,University of Cambridge,logic,1.0,1.0,1988
+Glynn Winskel,University of Cambridge,logic,2.0,1.0,1991
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1993
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1994
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1998
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1999
+Glynn Winskel,University of Cambridge,logic,2.0,2.0,2005
+Glynn Winskel,University of Cambridge,logic,1.0,0.5,2006
+Glynn Winskel,University of Cambridge,logic,1.0,0.5,2010
+Glynn Winskel,University of Cambridge,logic,1.0,0.5,2011
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2012
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2014
+Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2015
+Glynn Winskel,University of Cambridge,security,1.0,0.5,2001
 Bei Wang,University of Utah,theory,1.0,0.333333333333,2012
 Bei Wang,University of Utah,theory,1.0,0.5,2014
 Bei Wang,University of Utah,highperf,1.0,0.125,2013
@@ -22048,9 +22294,34 @@ Mohammad Taghi Hajiaghayi,University of Maryland - College Park,ai,1.0,0.3333333
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,networks,1.0,0.25,2006
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,mobile,1.0,0.333333333333,2003
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,web,1.0,0.2,2009
-Clark Barrett,New York University,logic,1.0,0.5,2010
-Clark Barrett,New York University,logic,1.0,0.125,2011
-Clark Barrett,New York University,logic,2.0,0.4,2014
+Yehoshua Sagiv,Hebrew University of Jerusalem,theory,1.0,0.25,1979
+Yehoshua Sagiv,Hebrew University of Jerusalem,ai,1.0,0.5,1993
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.5,1978
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,1.0,1981
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.5,1982
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.5,1983
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,2.0,1985
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,4.0,1.41666666667,1986
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,1.5,1987
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,5.0,1.75,1989
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.5,1991
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,3.0,1.33333333333,1992
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,0.75,1993
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,0.583333333333,1994
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,3.0,1.08333333333,1995
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.333333333333,1998
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.333333333333,1999
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,0.833333333333,2001
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,0.75,2003
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.25,2004
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.5,2005
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,0.7,2006
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,1.0,2007
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,3.0,1.0,2008
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.333333333333,2009
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,1.0,0.25,2010
+Yehoshua Sagiv,Hebrew University of Jerusalem,database,2.0,0.833333333333,2011
+Yehoshua Sagiv,Hebrew University of Jerusalem,logic,1.0,0.25,1987
 Lujo Bauer,Carnegie Mellon University,hci,2.0,0.342857142857,2008
 Lujo Bauer,Carnegie Mellon University,hci,1.0,0.2,2009
 Lujo Bauer,Carnegie Mellon University,hci,1.0,0.0625,2010
@@ -22210,6 +22481,22 @@ J. Alex Halderman,University of Michigan,security,1.0,0.25,2012
 J. Alex Halderman,University of Michigan,security,1.0,0.333333333333,2013
 J. Alex Halderman,University of Michigan,security,4.0,0.920634920635,2014
 J. Alex Halderman,University of Michigan,security,2.0,0.271428571429,2015
+Nathan Linial,Hebrew University of Jerusalem,theory,3.0,1.03333333333,1985
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1986
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.666666666667,1987
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.666666666667,1988
+Nathan Linial,Hebrew University of Jerusalem,theory,3.0,0.833333333333,1989
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.5,1990
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.833333333333,1991
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.2,1992
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.75,1993
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.533333333333,1994
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.833333333333,1996
+Nathan Linial,Hebrew University of Jerusalem,theory,2.0,0.666666666667,1998
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.25,2001
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2002
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.25,2003
+Nathan Linial,Hebrew University of Jerusalem,theory,1.0,0.5,2004
 Naranker Dulay,Imperial College London,web,1.0,0.333333333333,2001
 Haym Hirsh,Cornell University,mlmining,1.0,0.5,1993
 Haym Hirsh,Cornell University,mlmining,1.0,0.25,2006
@@ -22536,6 +22823,17 @@ Steven W. Zucker,Yale University,vision,1.0,0.5,2006
 Steven W. Zucker,Yale University,vision,1.0,0.333333333333,2007
 Cas Cremers,University of Oxford,logic,1.0,0.25,2013
 Cas Cremers,University of Oxford,security,1.0,0.25,2014
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.5,1996
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.5,1997
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1998
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.25,2001
+Dorit Aharonov,Hebrew University of Jerusalem,theory,2.0,1.0,2003
+Dorit Aharonov,Hebrew University of Jerusalem,theory,2.0,0.666666666667,2004
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2006
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.25,2007
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.25,2009
+Dorit Aharonov,Hebrew University of Jerusalem,theory,2.0,0.75,2011
+Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.166666666667,2014
 Nalini Venkatasubramanian,University of California - Irvine,networks,1.0,0.333333333333,2009
 Nalini Venkatasubramanian,University of California - Irvine,networks,1.0,0.2,2014
 Christos H. Papadimitriou,University of California - Berkeley,theory,1.0,0.5,1976
@@ -22956,6 +23254,20 @@ Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,2.0,0.416666666
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,3.0,0.72619047619,2012
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,2.0,0.342857142857,2013
 Saurabh Sinha,University of Illinois at Urbana-Champaign,softeng,1.0,0.333333333333,2015
+Shmuel Peleg,Hebrew University of Jerusalem,ai,1.0,0.5,2016
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,1990
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.5,1992
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.333333333333,1994
+Shmuel Peleg,Hebrew University of Jerusalem,vision,2.0,0.5,1996
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.5,1997
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,1998
+Shmuel Peleg,Hebrew University of Jerusalem,vision,2.0,0.833333333333,1999
+Shmuel Peleg,Hebrew University of Jerusalem,vision,2.0,0.666666666667,2000
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,2004
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,2007
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2009
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2014
+Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,2015
 Adrian Perrig,ETH Zurich,opsys,1.0,0.166666666667,2005
 Adrian Perrig,ETH Zurich,networks,1.0,0.5,2001
 Adrian Perrig,ETH Zurich,networks,1.0,0.333333333333,2003
@@ -24286,6 +24598,15 @@ Samuel Madden,Massachusetts Institute of Technology,mobile,1.0,0.142857142857,20
 Samuel Madden,Massachusetts Institute of Technology,mobile,1.0,0.166666666667,2012
 Samuel Madden,Massachusetts Institute of Technology,web,1.0,0.25,2010
 Samuel Madden,Massachusetts Institute of Technology,softeng,1.0,0.333333333333,2011
+Leo Joskowicz,Hebrew University of Jerusalem,ai,1.0,0.5,1988
+Leo Joskowicz,Hebrew University of Jerusalem,ai,1.0,1.0,1989
+Leo Joskowicz,Hebrew University of Jerusalem,ai,1.0,0.5,1991
+Leo Joskowicz,Hebrew University of Jerusalem,ai,1.0,0.333333333333,1992
+Leo Joskowicz,Hebrew University of Jerusalem,robotics,1.0,0.5,1994
+Leo Joskowicz,Hebrew University of Jerusalem,robotics,1.0,0.5,1997
+Leo Joskowicz,Hebrew University of Jerusalem,robotics,2.0,0.583333333333,1998
+Leo Joskowicz,Hebrew University of Jerusalem,robotics,1.0,0.333333333333,1999
+Leo Joskowicz,Hebrew University of Jerusalem,robotics,1.0,0.5,2005
 Alex Endert,Georgia Institute of Technology,hci,1.0,0.333333333333,2010
 Alex Endert,Georgia Institute of Technology,hci,1.0,0.333333333333,2012
 Davood Rafiei,University of Alberta,database,1.0,0.5,1997
@@ -24668,6 +24989,10 @@ Sergey Gorbunov,University of Waterloo,crypto,1.0,0.333333333333,2012
 Sergey Gorbunov,University of Waterloo,crypto,1.0,0.25,2013
 Sergey Gorbunov,University of Waterloo,crypto,1.0,0.125,2014
 Sergey Gorbunov,University of Waterloo,crypto,1.0,0.333333333333,2015
+Amit Zoran,Hebrew University of Jerusalem,graphics,1.0,0.25,2015
+Amit Zoran,Hebrew University of Jerusalem,hci,1.0,0.333333333333,2013
+Amit Zoran,Hebrew University of Jerusalem,hci,2.0,0.833333333333,2015
+Amit Zoran,Hebrew University of Jerusalem,hci,2.0,0.833333333333,2016
 Robert A. van de Geijn,University of Texas - Austin,softeng,1.0,0.333333333333,2014
 Robert A. van de Geijn,University of Texas - Austin,highperf,1.0,0.5,1993
 Robert A. van de Geijn,University of Texas - Austin,highperf,1.0,0.166666666667,1994
@@ -25166,6 +25491,11 @@ Mikkel Thorup,DIKU,database,1.0,0.2,2007
 Mikkel Thorup,DIKU,database,1.0,0.2,2009
 Mikkel Thorup,DIKU,networks,1.0,0.5,2000
 Mikkel Thorup,DIKU,networks,2.0,0.833333333333,2003
+Omri Abend,Hebrew University of Jerusalem,nlp,2.0,0.833333333333,2010
+Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.25,2011
+Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.5,2013
+Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.333333333333,2014
+Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.333333333333,2015
 Minlan Yu,University of Southern California,metrics,1.0,0.25,2015
 Minlan Yu,University of Southern California,networks,1.0,0.25,2010
 Minlan Yu,University of Southern California,networks,1.0,0.142857142857,2011
@@ -27313,6 +27643,28 @@ Karon E. MacLean,University of British Columbia,hci,1.0,0.2,2016
 Karon E. MacLean,University of British Columbia,robotics,1.0,1.0,2000
 Karon E. MacLean,University of British Columbia,robotics,1.0,0.333333333333,2004
 Karon E. MacLean,University of British Columbia,robotics,1.0,0.2,2013
+Yuval Rabani,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1990
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.5,1991
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.583333333333,1992
+Yuval Rabani,Hebrew University of Jerusalem,theory,1.0,0.5,1993
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.583333333333,1994
+Yuval Rabani,Hebrew University of Jerusalem,theory,3.0,1.0,1995
+Yuval Rabani,Hebrew University of Jerusalem,theory,3.0,1.83333333333,1996
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.833333333333,1997
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.666666666667,1998
+Yuval Rabani,Hebrew University of Jerusalem,theory,3.0,1.0,1999
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,1.0,2000
+Yuval Rabani,Hebrew University of Jerusalem,theory,5.0,1.83333333333,2001
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.5,2003
+Yuval Rabani,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2004
+Yuval Rabani,Hebrew University of Jerusalem,theory,3.0,1.33333333333,2005
+Yuval Rabani,Hebrew University of Jerusalem,theory,4.0,1.16666666667,2006
+Yuval Rabani,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2008
+Yuval Rabani,Hebrew University of Jerusalem,theory,1.0,0.5,2009
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,0.75,2010
+Yuval Rabani,Hebrew University of Jerusalem,theory,2.0,1.0,2013
+Yuval Rabani,Hebrew University of Jerusalem,theory,1.0,0.25,2015
+Yuval Rabani,Hebrew University of Jerusalem,crypto,1.0,0.25,2012
 Charles R. Dyer,University of Wisconsin - Madison,graphics,1.0,0.5,1996
 Charles R. Dyer,University of Wisconsin - Madison,theory,1.0,0.5,1986
 Charles R. Dyer,University of Wisconsin - Madison,ai,1.0,0.2,2007
@@ -28131,12 +28483,12 @@ Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1998
 Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1999
 Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,2000
 Ketan Mayer-Patel,University of North Carolina - Chapel Hill,networks,1.0,0.333333333333,2004
-Katrina Ligett,California Institute of Technology,theory,2.0,0.5,2007
-Katrina Ligett,California Institute of Technology,theory,2.0,0.583333333333,2008
-Katrina Ligett,California Institute of Technology,theory,1.0,0.2,2010
-Katrina Ligett,California Institute of Technology,theory,1.0,0.2,2012
-Katrina Ligett,California Institute of Technology,theory,1.0,0.25,2014
-Katrina Ligett,California Institute of Technology,mlmining,1.0,0.333333333333,2012
+Katrina Ligett,Hebrew University of Jerusalem,theory,2.0,0.5,2007
+Katrina Ligett,Hebrew University of Jerusalem,theory,2.0,0.583333333333,2008
+Katrina Ligett,Hebrew University of Jerusalem,theory,1.0,0.2,2010
+Katrina Ligett,Hebrew University of Jerusalem,theory,1.0,0.2,2012
+Katrina Ligett,Hebrew University of Jerusalem,theory,1.0,0.25,2014
+Katrina Ligett,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2012
 William R. Cook,University of Texas - Austin,proglang,2.0,0.75,1989
 William R. Cook,University of Texas - Austin,proglang,1.0,0.333333333333,1990
 William R. Cook,University of Texas - Austin,proglang,1.0,1.0,1992
@@ -28931,6 +29283,12 @@ Balaji Prabhakar,Stanford University,networks,1.0,0.5,2009
 Balaji Prabhakar,Stanford University,networks,1.0,0.125,2010
 Balaji Prabhakar,Stanford University,networks,1.0,0.166666666667,2012
 Balaji Prabhakar,Stanford University,networks,2.0,0.309523809524,2013
+Christopher M. Brown,University of Rochester,ai,1.0,0.2,1973
+Christopher M. Brown,University of Rochester,ai,1.0,0.333333333333,1977
+Christopher M. Brown,University of Rochester,ai,1.0,0.142857142857,1993
+Christopher M. Brown,University of Rochester,ai,1.0,0.5,1995
+Christopher M. Brown,University of Rochester,vision,1.0,0.25,1990
+Christopher M. Brown,University of Rochester,vision,1.0,0.5,1992
 Adrian Sandu,Virginia Tech,highperf,2.0,0.416666666667,2009
 Mayur Naik,Georgia Institute of Technology,mlmining,1.0,0.2,2006
 Mayur Naik,Georgia Institute of Technology,mlmining,1.0,0.166666666667,2010
@@ -29072,11 +29430,24 @@ Anupam Gupta,Carnegie Mellon University,mlmining,1.0,0.25,2007
 Anupam Gupta,Carnegie Mellon University,networks,1.0,0.333333333333,2003
 Majid Sarrafzadeh,University of California - Los Angeles,theory,1.0,0.333333333333,1990
 Majid Sarrafzadeh,University of California - Los Angeles,ai,1.0,0.333333333333,2009
-Kay Connelly,Indiana University,hci,1.0,0.125,2007
-Kay Connelly,Indiana University,hci,1.0,0.333333333333,2011
-Kay Connelly,Indiana University,hci,1.0,0.333333333333,2012
-Kay Connelly,Indiana University,hci,2.0,0.4,2015
-Kay Connelly,Indiana University,hci,1.0,0.2,2016
+Michael Werman,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,1994
+Michael Werman,Hebrew University of Jerusalem,graphics,2.0,0.666666666667,2002
+Michael Werman,Hebrew University of Jerusalem,theory,1.0,0.2,1991
+Michael Werman,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,1998
+Michael Werman,Hebrew University of Jerusalem,vision,2.0,1.0,1992
+Michael Werman,Hebrew University of Jerusalem,vision,4.0,1.66666666667,1994
+Michael Werman,Hebrew University of Jerusalem,vision,2.0,1.0,1995
+Michael Werman,Hebrew University of Jerusalem,vision,2.0,0.833333333333,1996
+Michael Werman,Hebrew University of Jerusalem,vision,2.0,0.833333333333,1997
+Michael Werman,Hebrew University of Jerusalem,vision,5.0,1.75,1999
+Michael Werman,Hebrew University of Jerusalem,vision,2.0,0.833333333333,2000
+Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2002
+Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2006
+Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2008
+Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2009
+Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2010
+Michael Werman,Hebrew University of Jerusalem,vision,2.0,0.666666666667,2013
+Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.25,2014
 Helmut Seidl,TU Munich,theory,1.0,0.5,2001
 Helmut Seidl,TU Munich,theory,1.0,0.333333333333,2015
 Helmut Seidl,TU Munich,database,1.0,0.333333333333,2003
@@ -29231,20 +29602,20 @@ Lijun Chen,University of Colorado Boulder,networks,1.0,0.25,2006
 Lijun Chen,University of Colorado Boulder,networks,1.0,0.2,2007
 Lijun Chen,University of Colorado Boulder,networks,1.0,0.25,2014
 Lijun Chen,University of Colorado Boulder,networks,1.0,0.2,2015
-Glynn Winskel,University of Cambridge,logic,1.0,1.0,1988
-Glynn Winskel,University of Cambridge,logic,2.0,1.0,1991
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1993
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1994
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1998
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,1999
-Glynn Winskel,University of Cambridge,logic,2.0,2.0,2005
-Glynn Winskel,University of Cambridge,logic,1.0,0.5,2006
-Glynn Winskel,University of Cambridge,logic,1.0,0.5,2010
-Glynn Winskel,University of Cambridge,logic,1.0,0.5,2011
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2012
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2014
-Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2015
-Glynn Winskel,University of Cambridge,security,1.0,0.5,2001
+Michael W. Hicks,University of Maryland - College Park,database,1.0,0.333333333333,2009
+Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.2,1999
+Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.333333333333,2001
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2001
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.166666666667,2002
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2004
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.2,2005
+Michael W. Hicks,University of Maryland - College Park,proglang,2.0,0.583333333333,2006
+Michael W. Hicks,University of Maryland - College Park,proglang,2.0,0.833333333333,2009
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2014
+Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.142857142857,2015
+Michael W. Hicks,University of Maryland - College Park,security,1.0,0.5,2007
+Michael W. Hicks,University of Maryland - College Park,security,2.0,0.45,2014
+Michael W. Hicks,University of Maryland - College Park,arch,1.0,0.166666666667,2015
 Stefan Schaal,University of Southern California,mlmining,1.0,0.5,1993
 Stefan Schaal,University of Southern California,mlmining,1.0,0.5,1995
 Stefan Schaal,University of Southern California,mlmining,1.0,1.0,1996
@@ -29401,6 +29772,29 @@ André Platzer,Carnegie Mellon University,logic,1.0,0.5,2008
 André Platzer,Carnegie Mellon University,logic,1.0,1.0,2011
 André Platzer,Carnegie Mellon University,logic,2.0,2.0,2012
 André Platzer,Carnegie Mellon University,robotics,1.0,0.333333333333,2013
+Naftali Tishby,Hebrew University of Jerusalem,nlp,1.0,0.333333333333,1993
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,2.0,0.75,1992
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,3.0,1.08333333333,1993
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,1997
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,1998
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,2.0,0.833333333333,1999
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,2.0,1.0,2000
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,3.0,0.833333333333,2001
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,4.0,1.5,2002
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.25,2003
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,2.0,0.583333333333,2004
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,3.0,1.08333333333,2005
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2006
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.5,2007
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,2.0,1.0,2008
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2010
+Naftali Tishby,Hebrew University of Jerusalem,mlmining,1.0,0.5,2012
+Naftali Tishby,Hebrew University of Jerusalem,web,1.0,0.5,2000
+Naftali Tishby,Hebrew University of Jerusalem,web,1.0,0.25,2001
+Naftali Tishby,Hebrew University of Jerusalem,web,1.0,0.333333333333,2002
+Naftali Tishby,Hebrew University of Jerusalem,robotics,1.0,0.333333333333,2014
+Naftali Tishby,Hebrew University of Jerusalem,vision,1.0,0.5,1993
+Naftali Tishby,Hebrew University of Jerusalem,vision,1.0,0.333333333333,1994
 Daniel Deutch,Tel Aviv University,database,2.0,1.0,2008
 Daniel Deutch,Tel Aviv University,database,3.0,0.916666666667,2010
 Daniel Deutch,Tel Aviv University,database,4.0,1.25,2011
@@ -30326,6 +30720,24 @@ Muthuramakrishnan Venkitasubramaniam,University of Rochester,theory,1.0,0.333333
 Muthuramakrishnan Venkitasubramaniam,University of Rochester,crypto,1.0,0.2,2008
 Muthuramakrishnan Venkitasubramaniam,University of Rochester,crypto,1.0,0.25,2010
 Michael Bader,TU Munich,highperf,1.0,0.0833333333333,2014
+Orna Kupferman,Hebrew University of Jerusalem,theory,1.0,0.333333333333,1997
+Orna Kupferman,Hebrew University of Jerusalem,theory,2.0,0.833333333333,1998
+Orna Kupferman,Hebrew University of Jerusalem,theory,1.0,0.5,2005
+Orna Kupferman,Hebrew University of Jerusalem,theory,1.0,0.333333333333,2009
+Orna Kupferman,Hebrew University of Jerusalem,logic,2.0,1.5,1995
+Orna Kupferman,Hebrew University of Jerusalem,logic,3.0,1.33333333333,1996
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.5,1997
+Orna Kupferman,Hebrew University of Jerusalem,logic,2.0,0.833333333333,1998
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.5,1999
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.5,2000
+Orna Kupferman,Hebrew University of Jerusalem,logic,2.0,0.75,2001
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.333333333333,2002
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.333333333333,2005
+Orna Kupferman,Hebrew University of Jerusalem,logic,4.0,2.33333333333,2006
+Orna Kupferman,Hebrew University of Jerusalem,logic,2.0,0.666666666667,2007
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.5,2009
+Orna Kupferman,Hebrew University of Jerusalem,logic,2.0,0.583333333333,2011
+Orna Kupferman,Hebrew University of Jerusalem,logic,1.0,0.333333333333,2013
 Arjun Guha,University of Massachusetts - Amherst,networks,1.0,0.2,2013
 Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.142857142857,2009
 Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2013
@@ -30343,12 +30755,17 @@ Raluca A. Popa,University of California - Berkeley,security,1.0,0.333333333333,2
 Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.333333333333,2013
 Meiyappan Nagappan,Rochester Institute of Technology,softeng,1.0,0.25,2014
 Meiyappan Nagappan,Rochester Institute of Technology,softeng,2.0,0.392857142857,2015
-Christopher M. Brown,University of Rochester,ai,1.0,0.2,1973
-Christopher M. Brown,University of Rochester,ai,1.0,0.333333333333,1977
-Christopher M. Brown,University of Rochester,ai,1.0,0.142857142857,1993
-Christopher M. Brown,University of Rochester,ai,1.0,0.5,1995
-Christopher M. Brown,University of Rochester,vision,1.0,0.25,1990
-Christopher M. Brown,University of Rochester,vision,1.0,0.5,1992
+Raanan Fattal,Hebrew University of Jerusalem,graphics,2.0,0.666666666667,2002
+Raanan Fattal,Hebrew University of Jerusalem,graphics,1.0,0.5,2004
+Raanan Fattal,Hebrew University of Jerusalem,graphics,3.0,1.53333333333,2007
+Raanan Fattal,Hebrew University of Jerusalem,graphics,1.0,1.0,2008
+Raanan Fattal,Hebrew University of Jerusalem,graphics,3.0,2.33333333333,2009
+Raanan Fattal,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,2010
+Raanan Fattal,Hebrew University of Jerusalem,graphics,3.0,1.83333333333,2011
+Raanan Fattal,Hebrew University of Jerusalem,graphics,2.0,1.0,2012
+Raanan Fattal,Hebrew University of Jerusalem,graphics,1.0,0.333333333333,2013
+Raanan Fattal,Hebrew University of Jerusalem,graphics,1.0,1.0,2014
+Raanan Fattal,Hebrew University of Jerusalem,vision,1.0,0.5,2012
 Adrian Sampson,Cornell University,proglang,1.0,0.25,2010
 Adrian Sampson,Cornell University,proglang,1.0,0.166666666667,2011
 Adrian Sampson,Cornell University,proglang,1.0,0.166666666667,2014
@@ -30614,6 +31031,12 @@ Nathan Srebro,University of Chicago,mlmining,2.0,0.666666666667,2011
 Nathan Srebro,University of Chicago,mlmining,5.0,1.75,2012
 Nathan Srebro,University of Chicago,mlmining,3.0,1.0,2014
 Nathan Srebro,University of Chicago,mlmining,2.0,0.833333333333,2015
+David Hay,Hebrew University of Jerusalem,networks,4.0,1.25,2009
+David Hay,Hebrew University of Jerusalem,networks,1.0,0.333333333333,2010
+David Hay,Hebrew University of Jerusalem,networks,1.0,0.166666666667,2011
+David Hay,Hebrew University of Jerusalem,networks,1.0,0.25,2012
+David Hay,Hebrew University of Jerusalem,networks,1.0,0.2,2014
+David Hay,Hebrew University of Jerusalem,networks,3.0,0.783333333333,2015
 Nigel R. Shadbolt,University of Oxford,hci,1.0,0.2,2013
 Nigel R. Shadbolt,University of Oxford,ai,1.0,0.333333333333,2007
 Nigel R. Shadbolt,University of Oxford,web,1.0,0.2,2004
@@ -31040,6 +31463,30 @@ Anup Basu,University of Alberta,robotics,1.0,0.333333333333,2005
 Anup Basu,University of Alberta,vision,1.0,1.0,1993
 Anup Basu,University of Alberta,vision,1.0,0.5,2007
 Anup Basu,University of Alberta,vision,1.0,0.25,2008
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,1989
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,1.0,1990
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,3.0,1.16666666667,1998
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,2.0,0.5,2003
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2004
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.25,2005
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,2.0,0.833333333333,2006
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.5,2007
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.142857142857,2008
+Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,2010
+Daphna Weinshall,Hebrew University of Jerusalem,security,1.0,1.0,2006
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,1.0,1990
+Daphna Weinshall,Hebrew University of Jerusalem,vision,2.0,1.0,1993
+Daphna Weinshall,Hebrew University of Jerusalem,vision,3.0,1.16666666667,1994
+Daphna Weinshall,Hebrew University of Jerusalem,vision,3.0,1.33333333333,1996
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,0.5,1997
+Daphna Weinshall,Hebrew University of Jerusalem,vision,4.0,1.66666666667,1998
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,0.333333333333,1999
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2000
+Daphna Weinshall,Hebrew University of Jerusalem,vision,2.0,0.45,2002
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2003
+Daphna Weinshall,Hebrew University of Jerusalem,vision,2.0,0.833333333333,2005
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,0.5,2007
+Daphna Weinshall,Hebrew University of Jerusalem,vision,1.0,0.5,2011
 Michael M. Swift,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2003
 Michael M. Swift,University of Wisconsin - Madison,opsys,1.0,0.25,2004
 Michael M. Swift,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2009
@@ -31738,6 +32185,25 @@ Suresh Jagannathan,Purdue University,softeng,1.0,0.333333333333,2006
 Suresh Jagannathan,Purdue University,softeng,1.0,0.333333333333,2007
 Suresh Jagannathan,Purdue University,arch,1.0,0.333333333333,2010
 Suresh Jagannathan,Purdue University,highperf,1.0,0.333333333333,2008
+Matthew K. Franklin,University of California - Davis,theory,1.0,0.5,1992
+Matthew K. Franklin,University of California - Davis,theory,1.0,0.333333333333,1993
+Matthew K. Franklin,University of California - Davis,theory,1.0,0.5,1995
+Matthew K. Franklin,University of California - Davis,theory,1.0,0.166666666667,1998
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1993
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1994
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1995
+Matthew K. Franklin,University of California - Davis,crypto,2.0,0.5,1996
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1997
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1998
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1999
+Matthew K. Franklin,University of California - Davis,crypto,2.0,0.833333333333,2001
+Matthew K. Franklin,University of California - Davis,crypto,1.0,0.25,2013
+Matthew K. Franklin,University of California - Davis,security,1.0,0.5,1995
+Matthew K. Franklin,University of California - Davis,security,1.0,0.25,1996
+Matthew K. Franklin,University of California - Davis,security,1.0,0.5,1999
+Matthew K. Franklin,University of California - Davis,security,1.0,0.5,2000
+Matthew K. Franklin,University of California - Davis,security,1.0,0.166666666667,2002
+Matthew K. Franklin,University of California - Davis,softeng,1.0,0.5,1990
 Ivan Laptev,Ecole Normale Superieure,mlmining,1.0,0.333333333333,2011
 Ivan Laptev,Ecole Normale Superieure,vision,1.0,0.333333333333,1998
 Ivan Laptev,Ecole Normale Superieure,vision,1.0,0.5,2003
@@ -31906,6 +32372,9 @@ Devavrat Shah,Massachusetts Institute of Technology,networks,3.0,0.783333333333,
 Devavrat Shah,Massachusetts Institute of Technology,networks,1.0,0.2,2012
 Devavrat Shah,Massachusetts Institute of Technology,networks,1.0,0.2,2014
 Devavrat Shah,Massachusetts Institute of Technology,mobile,1.0,0.25,2012
+Clark Barrett,New York University,logic,1.0,0.5,2010
+Clark Barrett,New York University,logic,1.0,0.125,2011
+Clark Barrett,New York University,logic,2.0,0.4,2014
 Jianer Chen,Texas A&M University,graphics,1.0,0.25,2009
 Jianer Chen,Texas A&M University,theory,1.0,0.25,1991
 Jianer Chen,Texas A&M University,theory,1.0,0.5,1999
@@ -32596,6 +33065,11 @@ Zvi M. Kedem,New York University,database,1.0,0.333333333333,1982
 Zvi M. Kedem,New York University,database,1.0,0.5,1989
 Zvi M. Kedem,New York University,networks,1.0,0.5,2005
 Zvi M. Kedem,New York University,highperf,1.0,0.5,1988
+Kay Connelly,Indiana University,hci,1.0,0.125,2007
+Kay Connelly,Indiana University,hci,1.0,0.333333333333,2011
+Kay Connelly,Indiana University,hci,1.0,0.333333333333,2012
+Kay Connelly,Indiana University,hci,2.0,0.4,2015
+Kay Connelly,Indiana University,hci,1.0,0.2,2016
 Emmanuel Letier,University College London,softeng,1.0,0.5,1998
 Emmanuel Letier,University College London,softeng,2.0,1.0,2002
 Emmanuel Letier,University College London,softeng,1.0,0.5,2004
@@ -33695,6 +34169,18 @@ Peter Winkler,Dartmouth College,theory,1.0,0.5,2009
 Peter Winkler,Dartmouth College,crypto,1.0,0.333333333333,1995
 Peter Winkler,Dartmouth College,networks,1.0,0.2,2002
 Peter Winkler,Dartmouth College,networks,1.0,0.333333333333,2006
+Ari Rappoport,Hebrew University of Jerusalem,graphics,1.0,1.0,1991
+Ari Rappoport,Hebrew University of Jerusalem,graphics,1.0,0.5,1993
+Ari Rappoport,Hebrew University of Jerusalem,graphics,2.0,0.833333333333,1994
+Ari Rappoport,Hebrew University of Jerusalem,graphics,1.0,0.5,1997
+Ari Rappoport,Hebrew University of Jerusalem,graphics,1.0,0.5,1998
+Ari Rappoport,Hebrew University of Jerusalem,nlp,1.0,0.5,2006
+Ari Rappoport,Hebrew University of Jerusalem,nlp,3.0,1.33333333333,2007
+Ari Rappoport,Hebrew University of Jerusalem,nlp,4.0,1.45,2008
+Ari Rappoport,Hebrew University of Jerusalem,nlp,3.0,1.5,2009
+Ari Rappoport,Hebrew University of Jerusalem,nlp,6.0,2.83333333333,2010
+Ari Rappoport,Hebrew University of Jerusalem,nlp,1.0,0.25,2011
+Ari Rappoport,Hebrew University of Jerusalem,nlp,2.0,0.75,2013
 Daniel Zappala,Brigham Young University,hci,1.0,0.125,2016
 Daniel Zappala,Brigham Young University,networks,1.0,1.0,2000
 Matthias Felleisen,Northeastern University,proglang,1.0,0.5,1987
