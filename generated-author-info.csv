@@ -1890,6 +1890,8 @@ Christian Wulff-Nilsen,DIKU,theory,2.0,1.25,2012
 Christian Wulff-Nilsen,DIKU,theory,2.0,2.0,2013
 Christian Wulff-Nilsen,DIKU,theory,1.0,1.0,2016
 Helen Pain,University of Edinburgh,hci,1.0,0.25,2012
+Olaf Chitil,University of Kent,proglang,1.0,0.5,2015
+Olaf Chitil,University of Kent,proglang,1.0,0.5,2016
 Hadas Shachnai,Technion,metrics,1.0,0.333333333333,1995
 Hadas Shachnai,Technion,theory,2.0,0.366666666667,2002
 Hadas Shachnai,Technion,theory,1.0,0.333333333333,2009
@@ -7322,6 +7324,12 @@ José A. B. Fortes,University of Florida,arch,1.0,0.333333333333,1988
 José A. B. Fortes,University of Florida,arch,1.0,0.333333333333,2008
 José A. B. Fortes,University of Florida,highperf,3.0,0.866666666667,2000
 José A. B. Fortes,University of Florida,highperf,1.0,0.2,2004
+Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.833333333333,2008
+Claire Mathieu,Ecole Normale Superieure,theory,1.0,0.5,2009
+Claire Mathieu,Ecole Normale Superieure,theory,3.0,1.33333333333,2010
+Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.583333333333,2012
+Claire Mathieu,Ecole Normale Superieure,theory,1.0,0.333333333333,2014
+Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.4,2016
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,2.0,0.666666666667,1998
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,4.0,1.33333333333,1999
 Stergios I. Roumeliotis,University of Minnesota - Twin Cities,robotics,4.0,1.75,2000
@@ -9922,6 +9930,7 @@ Johannes A. Buchmann,TU Darmstadt,crypto,2.0,0.833333333333,1990
 Johannes A. Buchmann,TU Darmstadt,crypto,1.0,0.2,1992
 Johannes A. Buchmann,TU Darmstadt,crypto,1.0,0.333333333333,1993
 Johannes A. Buchmann,TU Darmstadt,crypto,1.0,0.5,1997
+Matteo Migliavacca,University of Kent,database,1.0,0.25,2013
 H. V. Jagadish,University of Michigan,nlp,1.0,0.2,2008
 H. V. Jagadish,University of Michigan,mlmining,1.0,0.25,2013
 H. V. Jagadish,University of Michigan,mlmining,1.0,0.25,2015
@@ -10493,6 +10502,12 @@ Sarah Heckman,North Carolina State University,softeng,1.0,0.142857142857,2015
 Robert R. Kessler,University of Utah,proglang,1.0,0.5,1987
 Robert R. Kessler,University of Utah,arch,1.0,0.5,1978
 Robert R. Kessler,University of Utah,arch,1.0,0.5,1979
+Mark Batty,University of Kent,proglang,1.0,0.2,2011
+Mark Batty,University of Kent,proglang,2.0,0.325,2012
+Mark Batty,University of Kent,proglang,1.0,0.333333333333,2013
+Mark Batty,University of Kent,proglang,1.0,0.25,2015
+Mark Batty,University of Kent,proglang,1.0,0.333333333333,2016
+Mark Batty,University of Kent,arch,1.0,0.125,2015
 Nadia Heninger,University of Pennsylvania,crypto,1.0,0.5,2009
 Nadia Heninger,University of Pennsylvania,security,1.0,0.111111111111,2008
 Nadia Heninger,University of Pennsylvania,security,1.0,0.166666666667,2009
@@ -11130,6 +11145,8 @@ Alan L. Cox,Rice University,highperf,1.0,0.25,1995
 Alan L. Cox,Rice University,highperf,2.0,0.45,1997
 Alan L. Cox,Rice University,highperf,1.0,0.333333333333,2000
 Alan L. Cox,Rice University,highperf,1.0,0.333333333333,2001
+Richard E. Jones,University of Kent,proglang,2.0,0.75,2002
+Richard E. Jones,University of Kent,proglang,1.0,0.25,2012
 Gerome Miklau,University of Massachusetts - Amherst,mlmining,1.0,0.5,2014
 Gerome Miklau,University of Massachusetts - Amherst,database,1.0,0.5,2002
 Gerome Miklau,University of Massachusetts - Amherst,database,1.0,0.5,2003
@@ -14402,6 +14419,9 @@ J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,3.0,1.0,2004
 J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.05,2006
 J. Eliot B. Moss,University of Massachusetts - Amherst,arch,1.0,0.5,1993
 J. Eliot B. Moss,University of Massachusetts - Amherst,highperf,1.0,0.125,2007
+Andy King,University of Kent,proglang,1.0,0.333333333333,2016
+Andy King,University of Kent,logic,1.0,0.5,2008
+Andy King,University of Kent,logic,1.0,0.333333333333,2011
 Piotr Indyk,Massachusetts Institute of Technology,theory,3.0,1.58333333333,1997
 Piotr Indyk,Massachusetts Institute of Technology,theory,3.0,2.5,1998
 Piotr Indyk,Massachusetts Institute of Technology,theory,7.0,3.91666666667,1999
@@ -17350,12 +17370,7 @@ Ali Raza Butt,Virginia Tech,highperf,1.0,0.25,2004
 Ali Raza Butt,Virginia Tech,highperf,1.0,0.25,2005
 Ali Raza Butt,Virginia Tech,highperf,1.0,0.125,2010
 Ali Raza Butt,Virginia Tech,highperf,1.0,0.142857142857,2015
-Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.833333333333,2008
-Claire Mathieu,Ecole Normale Superieure,theory,1.0,0.5,2009
-Claire Mathieu,Ecole Normale Superieure,theory,3.0,1.33333333333,2010
-Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.583333333333,2012
-Claire Mathieu,Ecole Normale Superieure,theory,1.0,0.333333333333,2014
-Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.4,2016
+Frank Wang,University of Kent,security,1.0,0.142857142857,2012
 Wenbo He,McGill University,networks,1.0,0.2,2007
 Wenbo He,McGill University,networks,1.0,0.142857142857,2008
 Wenbo He,McGill University,networks,1.0,0.333333333333,2011
@@ -17634,6 +17649,11 @@ Mats Per Erik Heimdahl,University of Minnesota - Twin Cities,softeng,1.0,0.33333
 Mats Per Erik Heimdahl,University of Minnesota - Twin Cities,softeng,1.0,0.2,2013
 Mats Per Erik Heimdahl,University of Minnesota - Twin Cities,softeng,1.0,0.333333333333,2014
 Mats Per Erik Heimdahl,University of Minnesota - Twin Cities,softeng,1.0,0.166666666667,2015
+DeLiang L. Wang,Ohio State University,mlmining,1.0,0.5,1994
+DeLiang L. Wang,Ohio State University,mlmining,1.0,0.5,1998
+DeLiang L. Wang,Ohio State University,mlmining,2.0,1.0,1999
+DeLiang L. Wang,Ohio State University,mlmining,1.0,0.5,2002
+DeLiang L. Wang,Ohio State University,mlmining,1.0,0.333333333333,2003
 Leslie Ann Goldberg,University of Oxford,theory,1.0,1.0,1993
 Leslie Ann Goldberg,University of Oxford,theory,1.0,0.5,1996
 Leslie Ann Goldberg,University of Oxford,theory,3.0,1.25,1997
@@ -24887,6 +24907,7 @@ Douglas Comer,Purdue University,networks,1.0,0.5,1985
 Douglas Comer,Purdue University,networks,1.0,0.5,1989
 Douglas Comer,Purdue University,networks,1.0,0.5,1990
 Douglas Comer,Purdue University,networks,1.0,0.5,2008
+Budi Arief,University of Kent,security,1.0,0.2,2014
 Yiming Yang,Carnegie Mellon University,nlp,1.0,0.333333333333,2003
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.5,1997
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.333333333333,2000
@@ -27806,6 +27827,10 @@ Vipin Kumar,University of Minnesota - Twin Cities,highperf,1.0,0.5,1997
 Vipin Kumar,University of Minnesota - Twin Cities,highperf,2.0,0.833333333333,1998
 Vipin Kumar,University of Minnesota - Twin Cities,highperf,1.0,0.333333333333,1999
 Vipin Kumar,University of Minnesota - Twin Cities,highperf,1.0,0.333333333333,2000
+David N. Turner,University of Kent,proglang,1.0,0.333333333333,1992
+David N. Turner,University of Kent,proglang,1.0,0.5,1993
+David N. Turner,University of Kent,proglang,1.0,0.333333333333,1996
+David N. Turner,University of Kent,proglang,1.0,0.5,1998
 Berthold K. P. Horn,Massachusetts Institute of Technology,vision,1.0,0.25,2011
 Michael D. Ernst,University of Washington,hci,1.0,0.25,2013
 Michael D. Ernst,University of Washington,hci,1.0,0.333333333333,2015
@@ -29469,6 +29494,13 @@ Andrew Markham,University of Oxford,mobile,1.0,0.2,2015
 Mehdi Mirakhorli,Rochester Institute of Technology,softeng,1.0,0.142857142857,2011
 Mehdi Mirakhorli,Rochester Institute of Technology,softeng,2.0,0.583333333333,2012
 Qi Yu,Rochester Institute of Technology,ai,1.0,0.25,2011
+Scott Owens,University of Kent,proglang,1.0,0.125,2009
+Scott Owens,University of Kent,proglang,1.0,0.2,2011
+Scott Owens,University of Kent,proglang,2.0,0.325,2012
+Scott Owens,University of Kent,proglang,1.0,0.25,2014
+Scott Owens,University of Kent,logic,1.0,0.1,2012
+Scott Owens,University of Kent,robotics,1.0,0.25,2000
+Scott Owens,University of Kent,highperf,1.0,0.5,2016
 Sergio Maffeis,Imperial College London,proglang,1.0,0.333333333333,2012
 Sergio Maffeis,Imperial College London,proglang,1.0,0.125,2014
 Sergio Maffeis,Imperial College London,security,1.0,0.333333333333,2010
@@ -30398,6 +30430,7 @@ Shyamnath Gollakota,University of Washington,security,1.0,0.25,2011
 Jennie Duggan,Northwestern University,database,1.0,0.25,2011
 Jennie Duggan,Northwestern University,database,2.0,0.625,2014
 Jennie Duggan,Northwestern University,database,1.0,0.25,2015
+Marek Grzes,University of Kent,ai,1.0,0.333333333333,2013
 Norman Ramsey,Tufts University,proglang,1.0,1.0,1994
 Norman Ramsey,Tufts University,proglang,1.0,1.0,1996
 Norman Ramsey,Tufts University,proglang,1.0,0.5,2000
@@ -33284,6 +33317,9 @@ Samir R. Das,Stony Brook University,networks,1.0,0.333333333333,2015
 Samir R. Das,Stony Brook University,mobile,1.0,0.2,2007
 Samir R. Das,Stony Brook University,mobile,1.0,0.333333333333,2008
 Samir R. Das,Stony Brook University,mobile,1.0,0.25,2009
+Radu Grigore,University of Kent,proglang,1.0,0.2,2014
+Radu Grigore,University of Kent,proglang,1.0,0.5,2016
+Radu Grigore,University of Kent,logic,1.0,0.5,2015
 Ashwin Machanavajjhala,Duke University,mlmining,1.0,0.25,2011
 Ashwin Machanavajjhala,Duke University,database,1.0,0.5,2006
 Ashwin Machanavajjhala,Duke University,database,1.0,0.2,2007
@@ -34117,11 +34153,7 @@ Padma Raghavan,Pennsylvania State University,highperf,1.0,0.25,2011
 Padma Raghavan,Pennsylvania State University,highperf,1.0,0.333333333333,2012
 Padma Raghavan,Pennsylvania State University,highperf,1.0,0.5,2013
 Padma Raghavan,Pennsylvania State University,highperf,1.0,0.166666666667,2015
-DeLiang L. Wang,Ohio State University,mlmining,1.0,0.5,1994
-DeLiang L. Wang,Ohio State University,mlmining,1.0,0.5,1998
-DeLiang L. Wang,Ohio State University,mlmining,2.0,1.0,1999
-DeLiang L. Wang,Ohio State University,mlmining,1.0,0.5,2002
-DeLiang L. Wang,Ohio State University,mlmining,1.0,0.333333333333,2003
+Colin G. Johnson,University of Kent,robotics,1.0,0.5,1998
 Jack Tumblin,Northwestern University,graphics,1.0,0.5,1996
 Jack Tumblin,Northwestern University,graphics,2.0,0.833333333333,1999
 Jack Tumblin,Northwestern University,graphics,1.0,0.25,2000
