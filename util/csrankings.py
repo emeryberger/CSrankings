@@ -43,15 +43,16 @@ def pagecount(input):
 
     
 areadict = {
+    # Max three most selective venues per area for now.
     'proglang' : ['POPL', 'PLDI', 'OOPSLA'],
     'highperf' : ['SC', 'PPOPP'],
     'logic' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     'softeng' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
-    'opsys' : ['SOSP', 'OSDI'],
+    'opsys' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference'], # note: OSDI/SOSP alternate years, so are treated as one venue
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
     'theory' : ['STOC', 'FOCS','SODA'],
     'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],
+    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'], # USENIX Security listed twice to reflect variants in DBLP
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'IJCAI'],
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
