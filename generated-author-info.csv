@@ -251,6 +251,14 @@ Josep Torrellas,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333
 Josep Torrellas,University of Illinois at Urbana-Champaign,highperf,1.0,0.2,2003
 Josep Torrellas,University of Illinois at Urbana-Champaign,highperf,1.0,0.142857142857,2006
 Josep Torrellas,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2014
+Andrew Calway,University of Bristol,robotics,3.0,1.08333333333,2012
+Andrew Calway,University of Bristol,robotics,2.0,0.666666666667,2013
+Andrew Calway,University of Bristol,robotics,1.0,0.333333333333,2014
+Andrew Calway,University of Bristol,robotics,2.0,0.833333333333,2015
+Andrew Calway,University of Bristol,robotics,1.0,0.5,2016
+Andrew Calway,University of Bristol,vision,1.0,0.5,2004
+Andrew Calway,University of Bristol,vision,1.0,0.5,2006
+Andrew Calway,University of Bristol,vision,1.0,0.25,2007
 Kenneth Mark Anderson,University of Colorado Boulder,hci,1.0,0.25,2014
 Kenneth Mark Anderson,University of Colorado Boulder,hci,1.0,0.2,2016
 Stefan Savage,University of California - San Diego,metrics,2.0,0.4,2006
@@ -295,8 +303,8 @@ Stefan Savage,University of California - San Diego,security,1.0,0.166666666667,2
 Stefan Savage,University of California - San Diego,arch,1.0,0.2,2011
 Shmuel Zaks,Technion,networks,1.0,0.333333333333,1996
 Shmuel Zaks,Technion,networks,1.0,0.2,2014
-J. Michael Herrmann,University of Edinburgh,mlmining,1.0,0.333333333333,2005
-J. Michael Herrmann,University of Edinburgh,robotics,1.0,0.5,2010
+Thorsten Strufe,TU Dresden,networks,1.0,0.5,2015
+Thorsten Strufe,TU Dresden,web,1.0,0.25,2009
 Calvin J. Ribbens,Virginia Tech,proglang,1.0,0.333333333333,2011
 Doug L. James,Stanford University,graphics,1.0,0.5,1999
 Doug L. James,Stanford University,graphics,1.0,0.142857142857,2001
@@ -2187,6 +2195,12 @@ Eran Tromer,Tel Aviv University,crypto,1.0,0.333333333333,2015
 Eran Tromer,Tel Aviv University,security,1.0,0.25,2009
 Eran Tromer,Tel Aviv University,security,2.0,0.392857142857,2014
 Eran Tromer,Tel Aviv University,security,1.0,0.2,2015
+Benjamin Rossman,University of Toronto,theory,1.0,1.0,2008
+Benjamin Rossman,University of Toronto,theory,1.0,1.0,2010
+Benjamin Rossman,University of Toronto,theory,2.0,1.33333333333,2014
+Benjamin Rossman,University of Toronto,theory,2.0,1.33333333333,2015
+Benjamin Rossman,University of Toronto,theory,1.0,0.25,2016
+Benjamin Rossman,University of Toronto,logic,1.0,1.0,2005
 Brandon Lucia,Carnegie Mellon University,proglang,1.0,0.333333333333,2011
 Brandon Lucia,Carnegie Mellon University,proglang,1.0,0.2,2012
 Brandon Lucia,Carnegie Mellon University,proglang,3.0,1.08333333333,2015
@@ -2383,6 +2397,8 @@ Eric Gilbert,Georgia Institute of Technology,hci,4.0,2.08333333333,2015
 Eric Gilbert,Georgia Institute of Technology,web,1.0,0.333333333333,2014
 Haixu Tang,Indiana University,security,2.0,0.366666666667,2009
 Haixu Tang,Indiana University,security,1.0,0.166666666667,2015
+David Bernhard,University of Bristol,security,1.0,0.25,2012
+David Bernhard,University of Bristol,security,1.0,0.2,2015
 Magda El Zarki,University of California - Irvine,networks,1.0,0.5,1990
 Magda El Zarki,University of California - Irvine,networks,1.0,0.5,1991
 Magda El Zarki,University of California - Irvine,networks,3.0,1.33333333333,1992
@@ -2467,6 +2483,7 @@ Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0.666666666667,2014
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,4.0,0.816666666667,2015
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0.5,2016
+Volker Müller,University of Luxembourg,vision,1.0,1.0,1996
 Santosh Pande,Georgia Institute of Technology,networks,1.0,0.5,2006
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,1999
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,2004
@@ -2524,6 +2541,7 @@ Mirella Lapata,University of Edinburgh,ai,2.0,1.0,2005
 Mirella Lapata,University of Edinburgh,ai,1.0,0.5,2007
 Mirella Lapata,University of Edinburgh,ai,1.0,0.5,2011
 Mirella Lapata,University of Edinburgh,ai,1.0,0.166666666667,2013
+Dan Page,University of Bristol,crypto,1.0,0.142857142857,2005
 Benedikt Bollig,Ecole Normale Superieure de Cachan,ai,1.0,0.25,2009
 Benedikt Bollig,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2013
 Benedikt Bollig,Ecole Normale Superieure de Cachan,logic,2.0,1.25,2014
@@ -2920,9 +2938,15 @@ John Aycock,University of Calgary,hci,1.0,0.2,2011
 Helen Nissenbaum,New York University,hci,1.0,0.333333333333,2005
 Helen Nissenbaum,New York University,hci,1.0,0.5,2007
 Helen Nissenbaum,New York University,security,1.0,0.25,2006
-Kenneth M. Anderson,University of Colorado Boulder,softeng,1.0,0.2,1995
-Kenneth M. Anderson,University of Colorado Boulder,softeng,1.0,1.0,1999
-Kenneth M. Anderson,University of Colorado Boulder,softeng,1.0,0.333333333333,2002
+Peter A. Flach,University of Bristol,nlp,1.0,0.5,2010
+Peter A. Flach,University of Bristol,mlmining,1.0,0.5,2001
+Peter A. Flach,University of Bristol,mlmining,2.0,0.583333333333,2002
+Peter A. Flach,University of Bristol,mlmining,3.0,2.0,2003
+Peter A. Flach,University of Bristol,mlmining,2.0,0.583333333333,2004
+Peter A. Flach,University of Bristol,mlmining,2.0,0.666666666667,2011
+Peter A. Flach,University of Bristol,mlmining,1.0,0.5,2015
+Peter A. Flach,University of Bristol,ai,2.0,1.0,2005
+Peter A. Flach,University of Bristol,ai,1.0,0.333333333333,2016
 Ting Chen,University of Southern California,theory,1.0,0.2,2000
 Ting Chen,University of Southern California,mlmining,1.0,0.2,2014
 Ting Chen,University of Southern California,ai,1.0,0.2,2013
@@ -4362,6 +4386,7 @@ Joseph Devietti,University of Pennsylvania,arch,1.0,0.2,2010
 Joseph Devietti,University of Pennsylvania,arch,1.0,0.2,2011
 Joseph Devietti,University of Pennsylvania,arch,1.0,0.166666666667,2012
 Joseph Devietti,University of Pennsylvania,arch,1.0,0.2,2013
+Ian Holyer,University of Bristol,web,1.0,0.5,2004
 Padhraic Smyth,University of California - Irvine,nlp,1.0,0.5,2013
 Padhraic Smyth,University of California - Irvine,theory,1.0,0.25,2013
 Padhraic Smyth,University of California - Irvine,mlmining,1.0,0.333333333333,1988
@@ -5980,6 +6005,8 @@ Eric P. Xing,Carnegie Mellon University,vision,2.0,0.583333333333,2011
 Eric P. Xing,Carnegie Mellon University,vision,2.0,1.0,2012
 Eric P. Xing,Carnegie Mellon University,vision,2.0,1.0,2013
 Eric P. Xing,Carnegie Mellon University,vision,4.0,1.83333333333,2014
+Sjouke Mauw,University of Luxembourg,logic,1.0,0.5,1991
+Sjouke Mauw,University of Luxembourg,security,1.0,0.333333333333,2011
 Mathieu Desbrun,California Institute of Technology,graphics,1.0,0.25,1999
 Mathieu Desbrun,California Institute of Technology,graphics,2.0,0.75,2001
 Mathieu Desbrun,California Institute of Technology,graphics,2.0,0.666666666667,2002
@@ -6219,6 +6246,13 @@ Ruihong Huang,Texas A&M University,nlp,3.0,1.16666666667,2013
 Ruihong Huang,Texas A&M University,ai,1.0,0.5,2012
 Stuart Anderson,University of Edinburgh,hci,1.0,0.142857142857,2012
 Michael Kazhdan,Johns Hopkins University,graphics,1.0,0.2,2015
+Martijn Stam,University of Bristol,crypto,2.0,0.47619047619,2005
+Martijn Stam,University of Bristol,crypto,1.0,1.0,2008
+Martijn Stam,University of Bristol,crypto,1.0,0.25,2009
+Martijn Stam,University of Bristol,crypto,1.0,0.333333333333,2011
+Martijn Stam,University of Bristol,crypto,1.0,0.25,2012
+Martijn Stam,University of Bristol,crypto,1.0,0.25,2013
+Martijn Stam,University of Bristol,crypto,1.0,0.25,2016
 Margo I. Seltzer,Harvard University,metrics,2.0,1.0,1997
 Margo I. Seltzer,Harvard University,metrics,1.0,0.5,2000
 Margo I. Seltzer,Harvard University,opsys,1.0,0.142857142857,1995
@@ -7845,6 +7879,20 @@ Peter Szolovits,Massachusetts Institute of Technology,mlmining,1.0,0.14285714285
 Peter Szolovits,Massachusetts Institute of Technology,ai,1.0,0.333333333333,1981
 Peter Szolovits,Massachusetts Institute of Technology,ai,1.0,0.142857142857,2015
 Peter Szolovits,Massachusetts Institute of Technology,ai,1.0,0.2,2016
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.5,1994
+Alex Biryukov,University of Luxembourg,crypto,2.0,1.0,1998
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.333333333333,1999
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.5,2000
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.5,2001
+Alex Biryukov,University of Luxembourg,crypto,2.0,0.583333333333,2003
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.333333333333,2004
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.333333333333,2009
+Alex Biryukov,University of Luxembourg,crypto,2.0,0.7,2010
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.5,2015
+Alex Biryukov,University of Luxembourg,crypto,1.0,0.333333333333,2016
+Alex Biryukov,University of Luxembourg,security,1.0,0.333333333333,2013
+Alex Biryukov,University of Luxembourg,security,1.0,0.333333333333,2014
+Alex Biryukov,University of Luxembourg,security,1.0,0.5,2015
 Scott Aaronson,University of Texas - Austin,theory,1.0,1.0,2002
 Scott Aaronson,University of Texas - Austin,theory,1.0,0.5,2003
 Scott Aaronson,University of Texas - Austin,theory,2.0,2.0,2004
@@ -8142,6 +8190,19 @@ George Porter,University of California - San Diego,networks,1.0,0.142857142857,2
 George Porter,University of California - San Diego,networks,1.0,0.111111111111,2013
 George Porter,University of California - San Diego,networks,2.0,0.277777777778,2014
 George Porter,University of California - San Diego,networks,2.0,0.533333333333,2015
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,2.0,0.666666666667,2006
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,3.0,1.0,2007
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,1.0,0.5,2008
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,4.0,1.28333333333,2009
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,1.0,0.333333333333,2010
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,5.0,2.83333333333,2011
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,4.0,1.33333333333,2012
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,5.0,1.31666666667,2013
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,3.0,1.03333333333,2014
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,3.0,1.33333333333,2015
+Constantinos Daskalakis,Massachusetts Institute of Technology,theory,2.0,0.75,2016
+Constantinos Daskalakis,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
+Constantinos Daskalakis,Massachusetts Institute of Technology,networks,1.0,0.25,2009
 Alex Aiken,Stanford University,hci,1.0,0.166666666667,2013
 Alex Aiken,Stanford University,mlmining,1.0,0.2,2006
 Alex Aiken,Stanford University,opsys,1.0,0.5,2008
@@ -9536,13 +9597,38 @@ Chen Ding,University of Rochester,arch,1.0,0.333333333333,2004
 Chen Ding,University of Rochester,arch,1.0,0.25,2013
 Chen Ding,University of Rochester,highperf,1.0,0.5,2004
 Chen Ding,University of Rochester,highperf,1.0,0.2,2011
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2009
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,0.666666666667,2010
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2011
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,0.666666666667,2013
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.5,2014
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,0.583333333333,2015
-Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2016
+Serge Abiteboul,Ecole Normale Superieure de Cachan,theory,1.0,0.5,1991
+Serge Abiteboul,Ecole Normale Superieure de Cachan,theory,1.0,0.333333333333,2001
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,3.0,1.5,1984
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1985
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,1986
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,1987
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1988
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1989
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,1990
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1991
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,1992
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,1993
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,1994
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,1995
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,1996
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1997
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,5.0,1.42619047619,1998
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.16666666667,1999
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,3.0,0.833333333333,2001
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.4,2003
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.5,2004
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2005
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,2007
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,2008
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,2009
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2011
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,2013
+Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,2015
+Serge Abiteboul,Ecole Normale Superieure de Cachan,web,1.0,0.333333333333,2003
+Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1989
+Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1994
+Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,1.0,2001
 Susan Eisenbach,Imperial College London,proglang,1.0,0.333333333333,1998
 Susan Eisenbach,Imperial College London,logic,1.0,0.333333333333,1999
 Emily Whiting,Dartmouth College,graphics,1.0,0.333333333333,2009
@@ -9772,6 +9858,9 @@ Peter Pietzuch,Imperial College London,opsys,1.0,0.25,2014
 Peter Pietzuch,Imperial College London,opsys,1.0,0.0588235294118,2016
 Peter Pietzuch,Imperial College London,database,2.0,0.583333333333,2013
 Peter Pietzuch,Imperial College London,database,2.0,0.5,2016
+Majid Mirmehdi,University of Bristol,vision,1.0,0.333333333333,1998
+Majid Mirmehdi,University of Bristol,vision,1.0,0.25,2002
+Majid Mirmehdi,University of Bristol,vision,2.0,0.75,2010
 Olga G. Troyanskaya,Princeton University,mlmining,1.0,0.5,2014
 Doina Precup,McGill University,mlmining,3.0,1.14285714286,1997
 Doina Precup,McGill University,mlmining,2.0,0.833333333333,1998
@@ -10408,6 +10497,15 @@ Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,2.0,0.4,2015
 Akshay Krishnamurthy,University of Massachusetts - Amherst,mlmining,1.0,0.333333333333,2016
 Akshay Krishnamurthy,University of Massachusetts - Amherst,networks,1.0,0.5,2012
 Akshay Krishnamurthy,University of Massachusetts - Amherst,web,1.0,0.333333333333,2010
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.25,2007
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.5,2009
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,1.33333333333,2011
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,0.866666666667,2013
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,5.0,1.28333333333,2014
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,2.0,0.666666666667,2016
+Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.5,2011
+Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.333333333333,2013
+Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.25,2014
 Denis Thérien,McGill University,theory,1.0,0.5,1987
 Denis Thérien,McGill University,theory,1.0,0.5,1996
 Denis Thérien,McGill University,theory,1.0,0.5,1998
@@ -11556,6 +11654,7 @@ William Yang Wang,University of California - Santa Barbara,nlp,2.0,0.75,2014
 William Yang Wang,University of California - Santa Barbara,nlp,5.0,2.08333333333,2015
 William Yang Wang,University of California - Santa Barbara,ai,1.0,0.333333333333,2015
 William Yang Wang,University of California - Santa Barbara,ai,1.0,0.5,2016
+Jacopo Urbani,VU Amsterdam,ai,3.0,0.75,2016
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1992
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1994
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1999
@@ -12062,6 +12161,9 @@ Hector J. Levesque,University of Toronto,ai,1.0,0.333333333333,2016
 Clyde P. Kruskal,University of Maryland - College Park,arch,1.0,0.166666666667,1982
 Clyde P. Kruskal,University of Maryland - College Park,arch,1.0,0.5,1984
 Clyde P. Kruskal,University of Maryland - College Park,arch,1.0,0.125,1985
+He Sun 0001,University of Bristol,theory,1.0,0.5,2012
+He Sun 0001,University of Bristol,theory,1.0,0.25,2013
+He Sun 0001,University of Bristol,theory,1.0,0.5,2015
 Ross T. Whitaker,University of Utah,graphics,2.0,0.5,2002
 Ross T. Whitaker,University of Utah,graphics,1.0,0.25,2003
 Ross T. Whitaker,University of Utah,mlmining,1.0,0.333333333333,2007
@@ -12757,12 +12859,14 @@ Thomas W. Doeppner Jr.,Brown University,security,1.0,0.333333333333,2000
 Nelson Wong,University of Calgary,hci,1.0,0.5,2008
 Nelson Wong,University of Calgary,hci,1.0,0.5,2010
 Katarzyna Wac,DIKU,hci,1.0,0.166666666667,2011
-Benjamin Rossman,University of Toronto,theory,1.0,1.0,2008
-Benjamin Rossman,University of Toronto,theory,1.0,1.0,2010
-Benjamin Rossman,University of Toronto,theory,2.0,1.33333333333,2014
-Benjamin Rossman,University of Toronto,theory,2.0,1.33333333333,2015
-Benjamin Rossman,University of Toronto,theory,1.0,0.25,2016
-Benjamin Rossman,University of Toronto,logic,1.0,1.0,2005
+Walterio W. Mayol-Cuevas,University of Bristol,hci,2.0,0.583333333333,2012
+Walterio W. Mayol-Cuevas,University of Bristol,robotics,1.0,0.333333333333,2002
+Walterio W. Mayol-Cuevas,University of Bristol,robotics,3.0,1.08333333333,2012
+Walterio W. Mayol-Cuevas,University of Bristol,robotics,2.0,0.583333333333,2013
+Walterio W. Mayol-Cuevas,University of Bristol,robotics,1.0,0.333333333333,2014
+Walterio W. Mayol-Cuevas,University of Bristol,robotics,5.0,2.0,2015
+Walterio W. Mayol-Cuevas,University of Bristol,robotics,2.0,1.0,2016
+Walterio W. Mayol-Cuevas,University of Bristol,vision,1.0,0.25,2007
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2004
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2006
 Ben Reichardt,University of Southern California,theory,1.0,0.2,2007
@@ -13594,7 +13698,11 @@ Chris Callison-Burch,University of Pennsylvania,nlp,1.0,0.25,2014
 Chris Callison-Burch,University of Pennsylvania,nlp,2.0,0.5,2015
 Jonathan C. L. Liu,University of Florida,networks,2.0,0.533333333333,1995
 Jonathan C. L. Liu,University of Florida,networks,1.0,0.25,1996
-Jacopo Urbani,VU Amsterdam,ai,3.0,0.75,2016
+Anne Roudaut,University of Bristol,hci,1.0,0.333333333333,2009
+Anne Roudaut,University of Bristol,hci,1.0,0.333333333333,2011
+Anne Roudaut,University of Bristol,hci,2.0,0.416666666667,2013
+Anne Roudaut,University of Bristol,hci,1.0,0.333333333333,2016
+Anne Roudaut,University of Bristol,robotics,1.0,0.166666666667,2016
 Marine Carpuat,University of Maryland - College Park,nlp,1.0,0.333333333333,2004
 Marine Carpuat,University of Maryland - College Park,nlp,1.0,0.166666666667,2013
 Michael J. Freedman,Princeton University,metrics,1.0,0.5,2011
@@ -14061,6 +14169,15 @@ Jeffrey S. Rosenschein,Hebrew University of Jerusalem,ai,2.0,0.666666666667,2011
 Jeffrey S. Rosenschein,Hebrew University of Jerusalem,ai,2.0,0.5,2013
 Jeffrey S. Rosenschein,Hebrew University of Jerusalem,ai,2.0,0.45,2015
 Jeffrey S. Rosenschein,Hebrew University of Jerusalem,ai,2.0,0.45,2016
+Nigel P. Smart,University of Bristol,crypto,1.0,1.0,1999
+Nigel P. Smart,University of Bristol,crypto,1.0,1.0,2001
+Nigel P. Smart,University of Bristol,crypto,2.0,0.583333333333,2002
+Nigel P. Smart,University of Bristol,crypto,1.0,0.333333333333,2004
+Nigel P. Smart,University of Bristol,crypto,1.0,0.25,2006
+Nigel P. Smart,University of Bristol,crypto,3.0,0.916666666667,2012
+Nigel P. Smart,University of Bristol,crypto,1.0,0.333333333333,2014
+Nigel P. Smart,University of Bristol,crypto,1.0,0.25,2015
+Nigel P. Smart,University of Bristol,security,2.0,0.583333333333,2013
 Qiang Liu,Dartmouth College,nlp,1.0,0.166666666667,2012
 Qiang Liu,Dartmouth College,mlmining,1.0,0.25,2010
 Qiang Liu,Dartmouth College,mlmining,1.0,0.5,2011
@@ -18261,6 +18378,9 @@ Jeff Erickson,University of Illinois at Urbana-Champaign,theory,1.0,0.3333333333
 Jeff Erickson,University of Illinois at Urbana-Champaign,database,1.0,0.2,1998
 Jeff Erickson,University of Illinois at Urbana-Champaign,database,1.0,0.333333333333,2000
 Jeff Erickson,University of Illinois at Urbana-Champaign,robotics,1.0,0.25,2003
+Kenneth M. Anderson,University of Colorado Boulder,softeng,1.0,0.2,1995
+Kenneth M. Anderson,University of Colorado Boulder,softeng,1.0,1.0,1999
+Kenneth M. Anderson,University of Colorado Boulder,softeng,1.0,0.333333333333,2002
 Steven P. Reiss,Brown University,hci,1.0,0.333333333333,1989
 Steven P. Reiss,Brown University,hci,1.0,0.111111111111,2010
 Steven P. Reiss,Brown University,database,1.0,0.333333333333,1982
@@ -19563,11 +19683,6 @@ David M. Blei,Columbia University,web,1.0,0.5,2003
 David M. Blei,Columbia University,web,2.0,0.583333333333,2016
 David M. Blei,Columbia University,vision,1.0,0.333333333333,2009
 David M. Blei,Columbia University,vision,1.0,0.2,2010
-Vadim Lyubashevsky,Ecole Normale Superieure,crypto,1.0,0.5,2009
-Vadim Lyubashevsky,Ecole Normale Superieure,crypto,1.0,0.333333333333,2010
-Vadim Lyubashevsky,Ecole Normale Superieure,crypto,2.0,1.25,2012
-Vadim Lyubashevsky,Ecole Normale Superieure,crypto,3.0,1.08333333333,2013
-Vadim Lyubashevsky,Ecole Normale Superieure,crypto,1.0,0.5,2015
 John Zimmerman,Carnegie Mellon University,hci,1.0,0.2,2006
 John Zimmerman,Carnegie Mellon University,hci,3.0,0.72619047619,2007
 John Zimmerman,Carnegie Mellon University,hci,3.0,1.45,2009
@@ -19766,6 +19881,14 @@ Ravi Ramamoorthi,University of California - San Diego,vision,2.0,0.833333333333,
 Ravi Ramamoorthi,University of California - San Diego,vision,1.0,0.333333333333,2012
 Ravi Ramamoorthi,University of California - San Diego,vision,2.0,0.5,2013
 Ravi Ramamoorthi,University of California - San Diego,vision,4.0,1.03333333333,2015
+Mike Fraser,University of Bristol,hci,3.0,0.267832167832,2001
+Mike Fraser,University of Bristol,hci,1.0,0.1,2002
+Mike Fraser,University of Bristol,hci,1.0,0.166666666667,2004
+Mike Fraser,University of Bristol,hci,1.0,0.25,2005
+Mike Fraser,University of Bristol,hci,1.0,0.25,2007
+Mike Fraser,University of Bristol,hci,1.0,0.142857142857,2011
+Mike Fraser,University of Bristol,hci,1.0,0.25,2012
+Mike Fraser,University of Bristol,hci,2.0,0.416666666667,2016
 Steffen Hölldobler,TU Dresden,ai,1.0,1.0,1990
 Steffen Hölldobler,TU Dresden,ai,2.0,0.833333333333,1993
 Steffen Hölldobler,TU Dresden,ai,1.0,0.25,2007
@@ -20463,6 +20586,7 @@ Stefano Tessaro,University of California - Santa Barbara,crypto,1.0,0.5,2014
 Stefano Tessaro,University of California - Santa Barbara,crypto,1.0,0.333333333333,2015
 Stefano Tessaro,University of California - Santa Barbara,crypto,3.0,1.0,2016
 Ian Douglas Horswill,Northwestern University,robotics,1.0,0.5,2002
+Thomas Engel,University of Luxembourg,networks,1.0,0.25,2014
 Joelle Pineau,McGill University,nlp,1.0,0.333333333333,2000
 Joelle Pineau,McGill University,mlmining,1.0,0.333333333333,2003
 Joelle Pineau,McGill University,mlmining,2.0,0.666666666667,2007
@@ -20898,6 +21022,21 @@ Robert Sedgewick,Princeton University,theory,1.0,0.5,1984
 Robert Sedgewick,Princeton University,theory,1.0,0.333333333333,1992
 Robert Sedgewick,Princeton University,theory,1.0,0.5,1997
 Robert Sedgewick,Princeton University,proglang,1.0,0.333333333333,1982
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.333333333333,1999
+Jean-Sébastien Coron,University of Luxembourg,crypto,3.0,1.75,2000
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.25,2001
+Jean-Sébastien Coron,University of Luxembourg,crypto,3.0,2.25,2002
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,1.0,2004
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.25,2005
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,1.0,2007
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.333333333333,2008
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.25,2009
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.166666666667,2010
+Jean-Sébastien Coron,University of Luxembourg,crypto,2.0,0.583333333333,2011
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,0.333333333333,2012
+Jean-Sébastien Coron,University of Luxembourg,crypto,2.0,0.47619047619,2013
+Jean-Sébastien Coron,University of Luxembourg,crypto,1.0,1.0,2014
+Jean-Sébastien Coron,University of Luxembourg,crypto,2.0,0.444444444444,2015
 J. Zico Kolter,Carnegie Mellon University,mlmining,1.0,0.333333333333,2007
 J. Zico Kolter,Carnegie Mellon University,mlmining,1.0,0.2,2008
 J. Zico Kolter,Carnegie Mellon University,mlmining,2.0,1.0,2009
@@ -21031,38 +21170,13 @@ Gul A. Agha,University of Illinois at Urbana-Champaign,metrics,1.0,0.25,2012
 Gul A. Agha,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2009
 Gul A. Agha,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2014
 Gul A. Agha,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2011
-Serge Abiteboul,Ecole Normale Superieure de Cachan,theory,1.0,0.5,1991
-Serge Abiteboul,Ecole Normale Superieure de Cachan,theory,1.0,0.333333333333,2001
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,3.0,1.5,1984
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1985
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,1986
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,1987
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1988
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1989
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,1990
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1991
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,1992
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,1993
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,1994
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,1995
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,1996
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,1997
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,5.0,1.42619047619,1998
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.16666666667,1999
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,3.0,0.833333333333,2001
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.4,2003
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.5,2004
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2005
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.833333333333,2007
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.333333333333,2008
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.666666666667,2009
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,0.583333333333,2011
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.5,2013
-Serge Abiteboul,Ecole Normale Superieure de Cachan,database,1.0,0.25,2015
-Serge Abiteboul,Ecole Normale Superieure de Cachan,web,1.0,0.333333333333,2003
-Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1989
-Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1994
-Serge Abiteboul,Ecole Normale Superieure de Cachan,logic,1.0,1.0,2001
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2009
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,0.666666666667,2010
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2011
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,0.666666666667,2013
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.5,2014
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,0.583333333333,2015
+Jeff Trinkle,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2016
 Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.5,2010
 Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.25,2011
 Brent Hecht,University of Minnesota - Twin Cities,hci,1.0,0.166666666667,2012
@@ -22096,6 +22210,7 @@ Amit K. Roy-Chowdhury,University of California - Riverside,vision,3.0,1.33333333
 Amit K. Roy-Chowdhury,University of California - Riverside,vision,1.0,0.5,2015
 Eva Marín-Tordera,Polytechnic University of Catalonia,networks,1.0,0.166666666667,2008
 Alexander Schill,TU Dresden,networks,1.0,0.333333333333,1997
+Elisabeth Oswald,University of Bristol,crypto,1.0,0.5,2011
 James Aspnes,Yale University,theory,2.0,0.583333333333,1991
 James Aspnes,Yale University,theory,1.0,0.5,1992
 James Aspnes,Yale University,theory,1.0,0.2,1993
@@ -22169,6 +22284,7 @@ Leonard McMillan,University of North Carolina - Chapel Hill,vision,2.0,1.0,2005
 Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2006
 Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,0.25,2007
 Leonard McMillan,University of North Carolina - Chapel Hill,vision,2.0,0.5,2008
+Nicolas Wu,University of Bristol,proglang,1.0,0.333333333333,2015
 Jodi Forlizzi,Carnegie Mellon University,hci,1.0,0.25,1998
 Jodi Forlizzi,Carnegie Mellon University,hci,1.0,0.333333333333,2001
 Jodi Forlizzi,Carnegie Mellon University,hci,2.0,0.666666666667,2002
@@ -23202,6 +23318,7 @@ Augustin Chaintreau,Columbia University,web,1.0,0.2,2016
 Augustin Chaintreau,Columbia University,security,1.0,0.125,2014
 Augustin Chaintreau,Columbia University,security,1.0,0.166666666667,2015
 Therese C. Biedl,University of Waterloo,theory,1.0,0.25,1999
+Kirsten Cater,University of Bristol,hci,1.0,0.25,2012
 Scott Schaefer,Texas A&M University,graphics,2.0,0.5,2002
 Scott Schaefer,Texas A&M University,graphics,2.0,0.833333333333,2005
 Scott Schaefer,Texas A&M University,graphics,1.0,0.333333333333,2006
@@ -24066,6 +24183,8 @@ Larry S. Davis,University of Maryland - College Park,vision,5.0,1.58333333333,20
 Larry S. Davis,University of Maryland - College Park,vision,4.0,1.33333333333,2013
 Larry S. Davis,University of Maryland - College Park,vision,2.0,0.583333333333,2014
 Larry S. Davis,University of Maryland - College Park,vision,4.0,0.9,2015
+Neill W. Campbell,University of Bristol,graphics,1.0,0.333333333333,2003
+Neill W. Campbell,University of Bristol,vision,1.0,0.333333333333,2008
 Keith Clark,Imperial College London,ai,1.0,0.142857142857,2016
 Serge Vaudenay,EPFL,crypto,1.0,1.0,1992
 Serge Vaudenay,EPFL,crypto,1.0,0.333333333333,1993
@@ -24547,19 +24666,15 @@ A. Robert Calderbank,Duke University,networks,2.0,0.5,2007
 A. Robert Calderbank,Duke University,networks,1.0,0.25,2009
 A. Robert Calderbank,Duke University,networks,1.0,0.25,2010
 A. Robert Calderbank,Duke University,vision,1.0,0.25,2015
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,2.0,0.666666666667,2006
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,3.0,1.0,2007
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,1.0,0.5,2008
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,4.0,1.28333333333,2009
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,1.0,0.333333333333,2010
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,5.0,2.83333333333,2011
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,4.0,1.33333333333,2012
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,5.0,1.31666666667,2013
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,3.0,1.03333333333,2014
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,3.0,1.33333333333,2015
-Constantinos Daskalakis,Massachusetts Institute of Technology,theory,2.0,0.75,2016
-Constantinos Daskalakis,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
-Constantinos Daskalakis,Massachusetts Institute of Technology,networks,1.0,0.25,2009
+Bogdan Warinschi,University of Bristol,database,1.0,0.5,2005
+Bogdan Warinschi,University of Bristol,crypto,1.0,0.333333333333,2003
+Bogdan Warinschi,University of Bristol,crypto,1.0,0.25,2007
+Bogdan Warinschi,University of Bristol,crypto,1.0,0.333333333333,2011
+Bogdan Warinschi,University of Bristol,crypto,1.0,0.333333333333,2014
+Bogdan Warinschi,University of Bristol,security,2.0,0.75,2011
+Bogdan Warinschi,University of Bristol,security,1.0,0.25,2012
+Bogdan Warinschi,University of Bristol,security,2.0,0.583333333333,2013
+Bogdan Warinschi,University of Bristol,security,1.0,0.2,2015
 Michael A. Arbib,University of Southern California,ai,1.0,1.0,1971
 Barna Saha,University of Massachusetts - Amherst,theory,2.0,0.666666666667,2010
 Barna Saha,University of Massachusetts - Amherst,theory,1.0,0.2,2011
@@ -24605,6 +24720,8 @@ Anup Rao,University of Washington,theory,1.0,0.333333333333,2012
 Anup Rao,University of Washington,theory,1.0,0.25,2013
 Anup Rao,University of Washington,theory,1.0,0.142857142857,2014
 Anup Rao,University of Washington,mlmining,1.0,0.333333333333,2015
+J. Michael Herrmann,University of Edinburgh,mlmining,1.0,0.333333333333,2005
+J. Michael Herrmann,University of Edinburgh,robotics,1.0,0.5,2010
 Timothy M. Jones,University of Cambridge,arch,1.0,0.333333333333,2007
 Timothy M. Jones,University of Cambridge,arch,1.0,0.2,2009
 Timothy M. Jones,University of Cambridge,arch,1.0,0.25,2010
@@ -27268,6 +27385,13 @@ Nachum Dershowitz,Tel Aviv University,softeng,1.0,0.5,1978
 Nachum Dershowitz,Tel Aviv University,softeng,1.0,1.0,1981
 Nachum Dershowitz,Tel Aviv University,vision,1.0,0.2,2011
 Nachum Dershowitz,Tel Aviv University,vision,1.0,0.111111111111,2014
+Yves Le Traon,University of Luxembourg,proglang,1.0,0.111111111111,2014
+Yves Le Traon,University of Luxembourg,proglang,1.0,0.125,2016
+Yves Le Traon,University of Luxembourg,security,1.0,0.142857142857,2013
+Yves Le Traon,University of Luxembourg,softeng,1.0,0.333333333333,2006
+Yves Le Traon,University of Luxembourg,softeng,1.0,0.166666666667,2010
+Yves Le Traon,University of Luxembourg,softeng,4.0,0.8,2015
+Yves Le Traon,University of Luxembourg,softeng,1.0,0.2,2016
 Björn W. Schuller,Imperial College London,mlmining,1.0,0.25,2014
 Björn W. Schuller,Imperial College London,ai,2.0,0.416666666667,2016
 P. Sadayappan,Ohio State University,database,1.0,0.333333333333,2011
@@ -27361,6 +27485,9 @@ Calvin Lin,University of Texas - Austin,arch,1.0,0.5,2004
 Calvin Lin,University of Texas - Austin,arch,1.0,0.5,2006
 Calvin Lin,University of Texas - Austin,arch,1.0,0.5,2013
 Robert D. Mullins,University of Cambridge,arch,1.0,0.333333333333,2004
+Dima Damen,University of Bristol,robotics,1.0,0.25,2012
+Dima Damen,University of Bristol,vision,1.0,0.5,2008
+Dima Damen,University of Bristol,vision,1.0,0.5,2009
 Jesper Buus Nielsen,Aarhus University,theory,1.0,0.25,2004
 Jesper Buus Nielsen,Aarhus University,crypto,1.0,0.5,2000
 Jesper Buus Nielsen,Aarhus University,crypto,1.0,0.333333333333,2001
@@ -28081,6 +28208,8 @@ James D. Hollan,University of California - San Diego,hci,2.0,0.5,2008
 James D. Hollan,University of California - San Diego,hci,2.0,0.642857142857,2009
 James D. Hollan,University of California - San Diego,hci,1.0,0.333333333333,2010
 James D. Hollan,University of California - San Diego,hci,2.0,0.5,2012
+Pierre Kelsen,University of Luxembourg,theory,1.0,0.5,1991
+Pierre Kelsen,University of Luxembourg,theory,2.0,1.25,1992
 Dennis G. Kafura,Virginia Tech,proglang,1.0,0.25,1991
 Dennis G. Kafura,Virginia Tech,softeng,1.0,0.5,1985
 Hong Zhang,University of Alberta,hci,1.0,0.166666666667,2012
@@ -28236,6 +28365,7 @@ Richard J. Lipton,Georgia Institute of Technology,proglang,1.0,0.25,1980
 Richard J. Lipton,Georgia Institute of Technology,proglang,1.0,0.333333333333,1982
 Richard J. Lipton,Georgia Institute of Technology,security,1.0,0.333333333333,1980
 Richard J. Lipton,Georgia Institute of Technology,security,1.0,0.5,1996
+Dave Cliff,University of Bristol,ai,1.0,0.5,2011
 William J. Dally,Stanford University,mlmining,1.0,0.25,2015
 William J. Dally,Stanford University,database,1.0,0.5,1993
 William J. Dally,Stanford University,networks,1.0,0.5,2002
@@ -32143,8 +32273,13 @@ Tucker Hermans,University of Utah,robotics,1.0,0.25,2011
 Tucker Hermans,University of Utah,robotics,1.0,0.333333333333,2012
 Tucker Hermans,University of Utah,robotics,1.0,0.333333333333,2013
 Tucker Hermans,University of Utah,robotics,1.0,0.25,2015
-Thorsten Strufe,TU Dresden,networks,1.0,0.5,2015
-Thorsten Strufe,TU Dresden,web,1.0,0.25,2009
+Carl Henrik Ek,University of Bristol,mlmining,2.0,0.5,2012
+Carl Henrik Ek,University of Bristol,robotics,3.0,0.75,2011
+Carl Henrik Ek,University of Bristol,robotics,2.0,0.4,2012
+Carl Henrik Ek,University of Bristol,robotics,5.0,1.15,2013
+Carl Henrik Ek,University of Bristol,robotics,1.0,0.25,2014
+Carl Henrik Ek,University of Bristol,robotics,2.0,0.583333333333,2015
+Carl Henrik Ek,University of Bristol,robotics,1.0,0.166666666667,2016
 Eli Biham,Technion,theory,1.0,0.2,2000
 Eli Biham,Technion,crypto,1.0,0.5,1990
 Eli Biham,Technion,crypto,2.0,1.0,1991
@@ -32459,6 +32594,8 @@ Yiling Chen,Harvard University,ai,2.0,0.666666666667,2013
 Yiling Chen,Harvard University,ai,1.0,0.166666666667,2014
 Yiling Chen,Harvard University,ai,3.0,1.16666666667,2015
 Yiling Chen,Harvard University,ai,1.0,0.5,2016
+Kerstin Eder,University of Bristol,robotics,1.0,0.2,2013
+Kerstin Eder,University of Bristol,robotics,1.0,0.5,2014
 Éric Schost,University of Waterloo,theory,1.0,0.166666666667,2007
 Éric Schost,University of Waterloo,crypto,1.0,0.5,2004
 William K. Robertson,Northeastern University,security,2.0,0.583333333333,2004
@@ -34198,15 +34335,10 @@ Junghoo Cho,University of California - Los Angeles,web,1.0,0.333333333333,2011
 Junghoo Cho,University of California - Los Angeles,web,1.0,0.5,2012
 Junghoo Cho,University of California - Los Angeles,web,1.0,0.25,2013
 Junghoo Cho,University of California - Los Angeles,web,1.0,0.5,2016
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.25,2007
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.5,2009
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,1.33333333333,2011
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,0.866666666667,2013
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,5.0,1.28333333333,2014
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,2.0,0.666666666667,2016
-Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.5,2011
-Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.333333333333,2013
-Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.25,2014
+Chris Preist,University of Bristol,hci,1.0,0.2,2013
+Chris Preist,University of Bristol,hci,1.0,0.333333333333,2016
+Chris Preist,University of Bristol,web,1.0,0.333333333333,2002
+Chris Preist,University of Bristol,web,1.0,0.25,2013
 Carey L. Williamson,University of Calgary,metrics,1.0,0.25,1984
 Carey L. Williamson,University of Calgary,metrics,1.0,0.5,1987
 Carey L. Williamson,University of Calgary,metrics,1.0,0.5,1996
