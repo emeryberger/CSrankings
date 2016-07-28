@@ -274,7 +274,7 @@ Stefan Savage,University of California - San Diego,mlmining,1.0,0.25,2014
 Stefan Savage,University of California - San Diego,opsys,1.0,0.125,1995
 Stefan Savage,University of California - San Diego,opsys,1.0,0.5,1996
 Stefan Savage,University of California - San Diego,opsys,1.0,0.2,1997
-Stefan Savage,University of California - San Diego,opsys,1.0,0.25,2004
+Stefan Savage,University of California - San Diego,opsys,2.0,0.45,2004
 Stefan Savage,University of California - San Diego,opsys,1.0,0.125,2005
 Stefan Savage,University of California - San Diego,opsys,1.0,0.125,2008
 Stefan Savage,University of California - San Diego,opsys,1.0,0.333333333333,2010
@@ -365,8 +365,9 @@ Xuxian Jiang,North Carolina State University,security,1.0,0.25,2011
 Xuxian Jiang,North Carolina State University,security,1.0,0.5,2012
 Xuxian Jiang,North Carolina State University,security,1.0,0.2,2013
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.25,1999
-Robert Morris,Massachusetts Institute of Technology,opsys,2.0,0.45,2001
+Robert Morris,Massachusetts Institute of Technology,opsys,3.0,0.95,2001
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.25,2002
+Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.166666666667,2003
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.166666666667,2004
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.111111111111,2005
 Robert Morris,Massachusetts Institute of Technology,opsys,1.0,0.166666666667,2006
@@ -1743,6 +1744,8 @@ John V. Guttag,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333
 John V. Guttag,Massachusetts Institute of Technology,mlmining,1.0,0.5,2013
 John V. Guttag,Massachusetts Institute of Technology,mlmining,1.0,0.25,2015
 John V. Guttag,Massachusetts Institute of Technology,opsys,1.0,0.25,1987
+John V. Guttag,Massachusetts Institute of Technology,opsys,1.0,0.25,2003
+John V. Guttag,Massachusetts Institute of Technology,opsys,1.0,0.5,2004
 John V. Guttag,Massachusetts Institute of Technology,networks,1.0,0.333333333333,1998
 John V. Guttag,Massachusetts Institute of Technology,networks,1.0,0.5,2005
 John V. Guttag,Massachusetts Institute of Technology,networks,1.0,0.2,2009
@@ -1929,6 +1932,7 @@ Hadas Shachnai,Technion,networks,1.0,0.333333333333,2014
 Richard P. Martin,Rutgers University,metrics,1.0,0.2,1998
 Richard P. Martin,Rutgers University,metrics,1.0,0.5,1999
 Richard P. Martin,Rutgers University,opsys,1.0,0.2,2004
+Richard P. Martin,Rutgers University,opsys,1.0,0.166666666667,2006
 Richard P. Martin,Rutgers University,opsys,1.0,0.2,2010
 Richard P. Martin,Rutgers University,networks,1.0,0.333333333333,2007
 Richard P. Martin,Rutgers University,mobile,1.0,0.111111111111,2011
@@ -1944,7 +1948,9 @@ Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.5,1991
 Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.2,1993
 Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.333333333333,1995
 Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.166666666667,1997
-Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.5,1999
+Mahadev Satyanarayanan,Carnegie Mellon University,opsys,2.0,0.833333333333,1999
+Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.166666666667,2003
+Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.142857142857,2006
 Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.125,2009
 Mahadev Satyanarayanan,Carnegie Mellon University,opsys,1.0,0.166666666667,2012
 Mahadev Satyanarayanan,Carnegie Mellon University,networks,1.0,0.25,1997
@@ -2133,6 +2139,7 @@ Martin Tompa,University of Washington,theory,2.0,0.666666666667,1989
 Martin Tompa,University of Washington,theory,2.0,0.533333333333,1990
 Steve Harrison,Virginia Tech,hci,1.0,0.333333333333,2010
 Steve Harrison,Virginia Tech,hci,2.0,0.45,2011
+Christian S. Collberg,University of Arizona,opsys,1.0,0.25,2005
 Christian S. Collberg,University of Arizona,database,1.0,0.333333333333,2004
 Christian S. Collberg,University of Arizona,proglang,1.0,1.0,1997
 Christian S. Collberg,University of Arizona,proglang,1.0,0.333333333333,1998
@@ -2600,6 +2607,7 @@ James Allan,University of Massachusetts - Amherst,web,2.0,0.666666666667,2014
 James Allan,University of Massachusetts - Amherst,web,1.0,0.166666666667,2015
 Mark D. Corner,University of Massachusetts - Amherst,hci,1.0,0.333333333333,2006
 Mark D. Corner,University of Massachusetts - Amherst,hci,1.0,0.2,2007
+Mark D. Corner,University of Massachusetts - Amherst,opsys,2.0,0.533333333333,2006
 Mark D. Corner,University of Massachusetts - Amherst,networks,1.0,0.25,1998
 Mark D. Corner,University of Massachusetts - Amherst,networks,1.0,0.333333333333,2007
 Mark D. Corner,University of Massachusetts - Amherst,networks,1.0,0.25,2009
@@ -3021,7 +3029,8 @@ Geoffrey M. Voelker,University of California - San Diego,mlmining,2.0,0.5,2009
 Geoffrey M. Voelker,University of California - San Diego,mlmining,1.0,0.25,2010
 Geoffrey M. Voelker,University of California - San Diego,mlmining,1.0,0.25,2014
 Geoffrey M. Voelker,University of California - San Diego,opsys,1.0,0.166666666667,1999
-Geoffrey M. Voelker,University of California - San Diego,opsys,1.0,0.125,2005
+Geoffrey M. Voelker,University of California - San Diego,opsys,1.0,0.2,2004
+Geoffrey M. Voelker,University of California - San Diego,opsys,2.0,0.325,2005
 Geoffrey M. Voelker,University of California - San Diego,opsys,1.0,0.125,2008
 Geoffrey M. Voelker,University of California - San Diego,networks,1.0,0.333333333333,2001
 Geoffrey M. Voelker,University of California - San Diego,networks,1.0,0.25,2003
@@ -3203,8 +3212,8 @@ Peter M. Chen,University of Michigan,metrics,1.0,0.5,1995
 Peter M. Chen,University of Michigan,opsys,1.0,0.5,1997
 Peter M. Chen,University of Michigan,opsys,1.0,0.333333333333,2000
 Peter M. Chen,University of Michigan,opsys,1.0,0.2,2002
-Peter M. Chen,University of Michigan,opsys,1.0,0.5,2003
-Peter M. Chen,University of Michigan,opsys,2.0,0.583333333333,2005
+Peter M. Chen,University of Michigan,opsys,2.0,0.833333333333,2003
+Peter M. Chen,University of Michigan,opsys,3.0,0.916666666667,2005
 Peter M. Chen,University of Michigan,opsys,1.0,0.25,2006
 Peter M. Chen,University of Michigan,opsys,1.0,0.333333333333,2008
 Peter M. Chen,University of Michigan,opsys,2.0,0.583333333333,2011
@@ -3242,7 +3251,7 @@ Thomas E. Anderson,University of Washington,opsys,1.0,0.166666666667,1995
 Thomas E. Anderson,University of Washington,opsys,2.0,0.4,1997
 Thomas E. Anderson,University of Washington,opsys,2.0,0.75,1998
 Thomas E. Anderson,University of Washington,opsys,1.0,0.333333333333,1999
-Thomas E. Anderson,University of Washington,opsys,1.0,0.142857142857,2000
+Thomas E. Anderson,University of Washington,opsys,2.0,0.47619047619,2000
 Thomas E. Anderson,University of Washington,opsys,1.0,0.25,2003
 Thomas E. Anderson,University of Washington,opsys,1.0,0.142857142857,2006
 Thomas E. Anderson,University of Washington,opsys,1.0,0.25,2011
@@ -3752,7 +3761,11 @@ Willy Zwaenepoel,EPFL,metrics,1.0,0.333333333333,2000
 Willy Zwaenepoel,EPFL,metrics,1.0,0.2,2005
 Willy Zwaenepoel,EPFL,opsys,1.0,0.5,1983
 Willy Zwaenepoel,EPFL,opsys,1.0,0.333333333333,1991
-Willy Zwaenepoel,EPFL,opsys,1.0,0.333333333333,1999
+Willy Zwaenepoel,EPFL,opsys,3.0,1.0,1999
+Willy Zwaenepoel,EPFL,opsys,1.0,0.25,2000
+Willy Zwaenepoel,EPFL,opsys,1.0,0.25,2004
+Willy Zwaenepoel,EPFL,opsys,1.0,0.25,2005
+Willy Zwaenepoel,EPFL,opsys,1.0,0.333333333333,2006
 Willy Zwaenepoel,EPFL,opsys,3.0,0.866666666667,2007
 Willy Zwaenepoel,EPFL,opsys,1.0,0.5,2008
 Willy Zwaenepoel,EPFL,opsys,1.0,0.25,2009
@@ -4653,6 +4666,7 @@ Ian T. Foster,University of Chicago,highperf,1.0,0.25,2014
 Ian T. Foster,University of Chicago,highperf,1.0,0.2,2015
 Dirk Grunwald,University of Colorado Boulder,metrics,1.0,0.333333333333,1997
 Dirk Grunwald,University of Colorado Boulder,metrics,1.0,0.2,2000
+Dirk Grunwald,University of Colorado Boulder,opsys,1.0,0.333333333333,1999
 Dirk Grunwald,University of Colorado Boulder,opsys,1.0,0.2,2000
 Dirk Grunwald,University of Colorado Boulder,networks,1.0,0.25,2009
 Dirk Grunwald,University of Colorado Boulder,proglang,1.0,0.333333333333,1993
@@ -5372,6 +5386,7 @@ Martin Odersky,EPFL,highperf,1.0,0.25,2012
 Eleni Stroulia,University of Alberta,mlmining,1.0,0.333333333333,2002
 Eleni Stroulia,University of Alberta,robotics,1.0,0.333333333333,1997
 Eleni Stroulia,University of Alberta,softeng,1.0,0.5,2005
+Thomas R. Gross,ETH Zurich,opsys,1.0,0.5,2005
 Thomas R. Gross,ETH Zurich,opsys,1.0,0.333333333333,2013
 Thomas R. Gross,ETH Zurich,database,1.0,0.25,2003
 Thomas R. Gross,ETH Zurich,networks,1.0,0.333333333333,1999
@@ -5796,7 +5811,10 @@ Kang G. Shin,University of Michigan,metrics,1.0,0.5,1983
 Kang G. Shin,University of Michigan,metrics,1.0,0.5,1990
 Kang G. Shin,University of Michigan,ai,1.0,0.25,1997
 Kang G. Shin,University of Michigan,opsys,1.0,0.333333333333,1999
+Kang G. Shin,University of Michigan,opsys,1.0,0.25,2000
 Kang G. Shin,University of Michigan,opsys,1.0,0.5,2001
+Kang G. Shin,University of Michigan,opsys,1.0,0.333333333333,2002
+Kang G. Shin,University of Michigan,opsys,1.0,0.333333333333,2003
 Kang G. Shin,University of Michigan,opsys,1.0,0.333333333333,2005
 Kang G. Shin,University of Michigan,opsys,1.0,0.125,2007
 Kang G. Shin,University of Michigan,opsys,1.0,0.125,2009
@@ -5914,6 +5932,7 @@ Guofei Gu,Texas A&M University,security,1.0,0.25,2012
 Guofei Gu,Texas A&M University,security,3.0,0.541666666667,2013
 Guofei Gu,Texas A&M University,security,1.0,0.166666666667,2014
 Guofei Gu,Texas A&M University,security,1.0,0.166666666667,2015
+Michael E. Locasto,University of Calgary,opsys,1.0,0.25,2005
 Michael E. Locasto,University of Calgary,opsys,1.0,0.25,2007
 Michael E. Locasto,University of Calgary,security,2.0,0.45,2007
 Michael E. Locasto,University of Calgary,security,1.0,0.2,2008
@@ -6180,6 +6199,8 @@ David Poole,University of British Columbia,ai,2.0,0.75,2013
 David Poole,University of British Columbia,ai,1.0,0.5,2014
 David Poole,University of British Columbia,ai,1.0,0.5,2015
 T. S. Eugene Ng,Rice University,metrics,1.0,0.166666666667,2006
+T. S. Eugene Ng,Rice University,opsys,1.0,0.333333333333,2001
+T. S. Eugene Ng,Rice University,opsys,2.0,0.642857142857,2004
 T. S. Eugene Ng,Rice University,networks,1.0,0.333333333333,1997
 T. S. Eugene Ng,Rice University,networks,1.0,0.333333333333,1998
 T. S. Eugene Ng,Rice University,networks,1.0,0.333333333333,2000
@@ -6256,6 +6277,10 @@ Margo I. Seltzer,Harvard University,metrics,2.0,1.0,1997
 Margo I. Seltzer,Harvard University,metrics,1.0,0.5,2000
 Margo I. Seltzer,Harvard University,opsys,1.0,0.142857142857,1995
 Margo I. Seltzer,Harvard University,opsys,5.0,2.0,1996
+Margo I. Seltzer,Harvard University,opsys,3.0,1.16666666667,2000
+Margo I. Seltzer,Harvard University,opsys,1.0,0.333333333333,2001
+Margo I. Seltzer,Harvard University,opsys,1.0,0.111111111111,2002
+Margo I. Seltzer,Harvard University,opsys,1.0,0.25,2006
 Margo I. Seltzer,Harvard University,opsys,1.0,0.125,2009
 Margo I. Seltzer,Harvard University,opsys,1.0,0.25,2013
 Margo I. Seltzer,Harvard University,database,1.0,0.5,1990
@@ -6361,6 +6386,7 @@ Abhinav Gupta,Carnegie Mellon University,vision,7.0,2.5,2015
 Richard Mortier,University of Cambridge,hci,1.0,0.125,2012
 Richard Mortier,University of Cambridge,hci,2.0,0.444444444444,2013
 Richard Mortier,University of Cambridge,opsys,1.0,0.25,2004
+Richard Mortier,University of Cambridge,opsys,1.0,0.2,2006
 Richard Mortier,University of Cambridge,opsys,1.0,0.0588235294118,2016
 Richard Mortier,University of Cambridge,database,1.0,0.25,2006
 Richard Mortier,University of Cambridge,networks,1.0,0.25,2006
@@ -6472,6 +6498,7 @@ Orna Grumberg,Technion,logic,2.0,1.0,2006
 Orna Grumberg,Technion,logic,1.0,0.333333333333,2008
 Orna Grumberg,Technion,logic,1.0,0.333333333333,2013
 Orna Grumberg,Technion,logic,1.0,0.25,2016
+Dan Grossman,University of Washington,opsys,1.0,0.166666666667,2002
 Dan Grossman,University of Washington,database,1.0,0.333333333333,2010
 Dan Grossman,University of Washington,proglang,1.0,0.166666666667,2002
 Dan Grossman,University of Washington,proglang,3.0,1.375,2007
@@ -6678,6 +6705,7 @@ Deborah Estrin,Cornell University,hci,1.0,0.333333333333,2011
 Deborah Estrin,Cornell University,theory,1.0,0.5,2003
 Deborah Estrin,Cornell University,opsys,1.0,0.166666666667,2001
 Deborah Estrin,Cornell University,opsys,1.0,0.333333333333,2002
+Deborah Estrin,Cornell University,opsys,1.0,0.166666666667,2004
 Deborah Estrin,Cornell University,networks,1.0,1.0,1986
 Deborah Estrin,Cornell University,networks,1.0,0.5,1990
 Deborah Estrin,Cornell University,networks,2.0,0.75,1991
@@ -6840,6 +6868,7 @@ David L. Roberts,North Carolina State University,ai,1.0,0.142857142857,2014
 John H. Hartman,University of Arizona,opsys,1.0,0.2,1991
 John H. Hartman,University of Arizona,opsys,1.0,0.5,1993
 John H. Hartman,University of Arizona,opsys,1.0,0.5,1996
+John H. Hartman,University of Arizona,opsys,1.0,0.25,2005
 John H. Hartman,University of Arizona,networks,1.0,0.5,2008
 John H. Hartman,University of Arizona,security,1.0,0.166666666667,2005
 John H. Hartman,University of Arizona,security,1.0,0.25,2008
@@ -7189,6 +7218,7 @@ Yuqing Wu,Indiana University,database,1.0,0.2,2013
 Bryan Ford,EPFL,opsys,2.0,0.666666666667,1996
 Bryan Ford,EPFL,opsys,1.0,0.166666666667,1997
 Bryan Ford,EPFL,opsys,1.0,0.2,1999
+Bryan Ford,EPFL,opsys,1.0,0.333333333333,2005
 Bryan Ford,EPFL,opsys,1.0,0.166666666667,2006
 Bryan Ford,EPFL,opsys,1.0,0.5,2008
 Bryan Ford,EPFL,opsys,1.0,0.25,2010
@@ -7648,7 +7678,8 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.6,1997
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.5,1999
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.533333333333,2000
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.45,2001
-M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.25,2003
+M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,3.0,0.666666666667,2003
+M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.166666666667,2004
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.111111111111,2005
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,1.0,0.166666666667,2006
 M. Frans Kaashoek,Massachusetts Institute of Technology,opsys,2.0,0.47619047619,2007
@@ -8654,6 +8685,7 @@ Arvind Krishnamurthy,University of Washington,metrics,1.0,0.142857142857,2009
 Arvind Krishnamurthy,University of Washington,metrics,1.0,0.166666666667,2010
 Arvind Krishnamurthy,University of Washington,metrics,1.0,0.333333333333,2014
 Arvind Krishnamurthy,University of Washington,opsys,1.0,0.142857142857,2000
+Arvind Krishnamurthy,University of Washington,opsys,1.0,0.2,2004
 Arvind Krishnamurthy,University of Washington,opsys,1.0,0.142857142857,2006
 Arvind Krishnamurthy,University of Washington,opsys,1.0,0.2,2010
 Arvind Krishnamurthy,University of Washington,opsys,1.0,0.25,2011
@@ -8689,6 +8721,7 @@ Arvind Krishnamurthy,University of Washington,highperf,1.0,0.333333333333,1995
 Nigel H. Goddard,University of Edinburgh,mlmining,1.0,0.333333333333,2014
 Nigel H. Goddard,University of Edinburgh,mlmining,1.0,0.333333333333,2015
 Kevin Fu,University of Michigan,opsys,1.0,0.333333333333,2000
+Kevin Fu,University of Michigan,opsys,1.0,0.166666666667,2004
 Kevin Fu,University of Michigan,networks,1.0,0.2,2011
 Kevin Fu,University of Michigan,mobile,1.0,0.25,2010
 Kevin Fu,University of Michigan,security,1.0,0.25,2001
@@ -8704,8 +8737,10 @@ Tony R. Martinez,Brigham Young University,mlmining,1.0,0.333333333333,2007
 Eric A. Brewer,University of California - Berkeley,metrics,1.0,0.166666666667,1998
 Eric A. Brewer,University of California - Berkeley,theory,1.0,0.333333333333,1994
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.2,1997
+Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.25,1999
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.25,2000
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.333333333333,2001
+Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.125,2002
 Eric A. Brewer,University of California - Berkeley,opsys,1.0,0.2,2003
 Eric A. Brewer,University of California - Berkeley,opsys,2.0,0.625,2006
 Eric A. Brewer,University of California - Berkeley,database,1.0,0.333333333333,2004
@@ -8963,6 +8998,7 @@ Koushik Sen,University of California - Berkeley,highperf,1.0,0.166666666667,2015
 Fabián E. Bustamante,Northwestern University,metrics,1.0,0.25,2012
 Fabián E. Bustamante,Northwestern University,metrics,1.0,0.166666666667,2014
 Fabián E. Bustamante,Northwestern University,metrics,1.0,0.333333333333,2015
+Fabián E. Bustamante,Northwestern University,opsys,1.0,0.5,2006
 Fabián E. Bustamante,Northwestern University,networks,1.0,0.25,2006
 Fabián E. Bustamante,Northwestern University,networks,1.0,0.166666666667,2007
 Fabián E. Bustamante,Northwestern University,networks,1.0,0.5,2008
@@ -9112,6 +9148,9 @@ Brad A. Myers,Carnegie Mellon University,hci,3.0,1.08333333333,2014
 Brad A. Myers,Carnegie Mellon University,hci,1.0,0.166666666667,2015
 Brad A. Myers,Carnegie Mellon University,hci,1.0,0.5,2016
 Brad A. Myers,Carnegie Mellon University,ai,1.0,0.111111111111,2008
+Brad A. Myers,Carnegie Mellon University,opsys,1.0,0.5,1999
+Brad A. Myers,Carnegie Mellon University,opsys,1.0,0.5,2000
+Brad A. Myers,Carnegie Mellon University,opsys,1.0,0.5,2001
 Brad A. Myers,Carnegie Mellon University,proglang,1.0,0.5,1988
 Brad A. Myers,Carnegie Mellon University,proglang,1.0,0.333333333333,1992
 Brad A. Myers,Carnegie Mellon University,softeng,1.0,0.333333333333,2005
@@ -9183,6 +9222,7 @@ Yun Fu,University College London,ai,1.0,0.5,2013
 Yun Fu,University College London,ai,1.0,0.333333333333,2014
 Yun Fu,University College London,ai,5.0,1.91666666667,2015
 Yun Fu,University College London,ai,9.0,3.08333333333,2016
+Yun Fu,University College London,opsys,1.0,0.25,2002
 Yun Fu,University College London,opsys,1.0,0.2,2003
 Yun Fu,University College London,vision,1.0,0.333333333333,2007
 Yun Fu,University College London,vision,1.0,0.2,2008
@@ -10066,6 +10106,7 @@ Andrew W. Moore 0001,Carnegie Mellon University,ai,1.0,0.25,2006
 Andrew W. Moore 0001,Carnegie Mellon University,ai,1.0,0.333333333333,2011
 Andrew W. Moore 0001,Carnegie Mellon University,web,1.0,0.5,2009
 Gavin Lowe,University of Oxford,logic,1.0,0.142857142857,2012
+Steven M. Bellovin,Columbia University,opsys,2.0,2.0,2006
 Steven M. Bellovin,Columbia University,crypto,1.0,1.0,1998
 Steven M. Bellovin,Columbia University,security,1.0,0.5,1992
 Steven M. Bellovin,Columbia University,security,1.0,0.5,1993
@@ -10103,6 +10144,7 @@ Victor Shoup,New York University,security,1.0,0.333333333333,1998
 Victor Shoup,New York University,security,1.0,0.5,1999
 Victor Shoup,New York University,security,1.0,0.333333333333,2006
 Victor Shoup,New York University,security,1.0,0.25,2009
+John Kubiatowicz,University of California - Berkeley,opsys,1.0,0.25,2004
 John Kubiatowicz,University of California - Berkeley,opsys,2.0,0.5,2007
 John Kubiatowicz,University of California - Berkeley,networks,1.0,0.5,2002
 John Kubiatowicz,University of California - Berkeley,networks,1.0,0.25,2004
@@ -11429,6 +11471,9 @@ Suchi Saria,Johns Hopkins University,ai,1.0,0.5,2016
 Alan L. Cox,Rice University,metrics,1.0,0.5,1997
 Alan L. Cox,Rice University,opsys,1.0,0.5,1989
 Alan L. Cox,Rice University,opsys,1.0,0.25,2002
+Alan L. Cox,Rice University,opsys,1.0,0.25,2004
+Alan L. Cox,Rice University,opsys,1.0,0.25,2005
+Alan L. Cox,Rice University,opsys,2.0,0.666666666667,2006
 Alan L. Cox,Rice University,opsys,1.0,0.333333333333,2007
 Alan L. Cox,Rice University,opsys,1.0,0.333333333333,2008
 Alan L. Cox,Rice University,opsys,2.0,0.45,2013
@@ -11568,6 +11613,8 @@ Zhuoqing Morley Mao,University of Michigan,metrics,2.0,0.333333333333,2011
 Zhuoqing Morley Mao,University of Michigan,metrics,1.0,0.2,2012
 Zhuoqing Morley Mao,University of Michigan,metrics,1.0,0.125,2014
 Zhuoqing Morley Mao,University of Michigan,metrics,1.0,0.166666666667,2015
+Zhuoqing Morley Mao,University of Michigan,opsys,1.0,0.166666666667,2002
+Zhuoqing Morley Mao,University of Michigan,opsys,1.0,0.25,2006
 Zhuoqing Morley Mao,University of Michigan,opsys,1.0,0.25,2008
 Zhuoqing Morley Mao,University of Michigan,opsys,1.0,0.333333333333,2009
 Zhuoqing Morley Mao,University of Michigan,opsys,1.0,0.2,2012
@@ -11860,6 +11907,7 @@ Lee D. Coraor,Pennsylvania State University,arch,1.0,0.25,1991
 Lee D. Coraor,Pennsylvania State University,arch,1.0,0.333333333333,1992
 Lee D. Coraor,Pennsylvania State University,vision,1.0,0.166666666667,2000
 Hermann Härtig,TU Dresden,opsys,1.0,0.2,1997
+Hermann Härtig,TU Dresden,opsys,1.0,0.5,2001
 Hermann Härtig,TU Dresden,opsys,1.0,0.25,2006
 Hermann Härtig,TU Dresden,opsys,1.0,0.5,2008
 Hermann Härtig,TU Dresden,arch,1.0,0.2,2016
@@ -12517,7 +12565,7 @@ Scott Shenker,University of California - Berkeley,theory,1.0,0.333333333333,1995
 Scott Shenker,University of California - Berkeley,theory,3.0,0.833333333333,2000
 Scott Shenker,University of California - Berkeley,opsys,1.0,0.25,1994
 Scott Shenker,University of California - Berkeley,opsys,1.0,0.166666666667,2004
-Scott Shenker,University of California - Berkeley,opsys,1.0,0.125,2006
+Scott Shenker,University of California - Berkeley,opsys,2.0,0.375,2006
 Scott Shenker,University of California - Berkeley,opsys,1.0,0.25,2007
 Scott Shenker,University of California - Berkeley,opsys,1.0,0.333333333333,2008
 Scott Shenker,University of California - Berkeley,opsys,2.0,0.257575757576,2010
@@ -12571,6 +12619,8 @@ Adam A. Porter,University of Maryland - College Park,softeng,2.0,0.342857142857,
 Adam A. Porter,University of Maryland - College Park,softeng,2.0,0.7,2010
 Adam A. Porter,University of Maryland - College Park,softeng,1.0,0.333333333333,2012
 Jonathan Appavoo,Boston University,opsys,1.0,0.25,1999
+Jonathan Appavoo,Boston University,opsys,1.0,0.0833333333333,2003
+Jonathan Appavoo,Boston University,opsys,1.0,0.142857142857,2005
 Jonathan Appavoo,Boston University,opsys,1.0,0.0833333333333,2006
 Jonathan Appavoo,Boston University,opsys,1.0,0.166666666667,2007
 Jonathan Appavoo,Boston University,arch,1.0,0.2,2014
@@ -13166,6 +13216,7 @@ Srinivasan Seshan,Carnegie Mellon University,metrics,1.0,0.25,1997
 Srinivasan Seshan,Carnegie Mellon University,metrics,2.0,0.366666666667,2004
 Srinivasan Seshan,Carnegie Mellon University,metrics,1.0,0.25,2013
 Srinivasan Seshan,Carnegie Mellon University,opsys,1.0,0.2,2000
+Srinivasan Seshan,Carnegie Mellon University,opsys,1.0,0.333333333333,2004
 Srinivasan Seshan,Carnegie Mellon University,database,1.0,0.25,2003
 Srinivasan Seshan,Carnegie Mellon University,networks,1.0,0.25,1996
 Srinivasan Seshan,Carnegie Mellon University,networks,1.0,0.2,1998
@@ -13287,8 +13338,10 @@ Samira Manabi Khan,University of Virginia,arch,2.0,0.366666666667,2015
 David E. Culler,University of California - Berkeley,metrics,1.0,0.333333333333,1996
 David E. Culler,University of California - Berkeley,metrics,2.0,0.533333333333,1998
 David E. Culler,University of California - Berkeley,metrics,1.0,0.5,1999
+David E. Culler,University of California - Berkeley,opsys,1.0,0.25,1999
 David E. Culler,University of California - Berkeley,opsys,1.0,0.25,2000
 David E. Culler,University of California - Berkeley,opsys,1.0,0.333333333333,2001
+David E. Culler,University of California - Berkeley,opsys,1.0,0.125,2002
 David E. Culler,University of California - Berkeley,opsys,1.0,0.125,2006
 David E. Culler,University of California - Berkeley,opsys,1.0,0.142857142857,2007
 David E. Culler,University of California - Berkeley,database,1.0,0.2,1997
@@ -14247,9 +14300,9 @@ Scott E. Hudson,Carnegie Mellon University,database,1.0,0.333333333333,1990
 Scott E. Hudson,Carnegie Mellon University,robotics,1.0,0.333333333333,2015
 Ion Stoica,University of California - Berkeley,metrics,1.0,0.2,2005
 Ion Stoica,University of California - Berkeley,mlmining,1.0,0.2,2013
-Ion Stoica,University of California - Berkeley,opsys,1.0,0.2,2001
+Ion Stoica,University of California - Berkeley,opsys,2.0,0.533333333333,2001
 Ion Stoica,University of California - Berkeley,opsys,1.0,0.166666666667,2005
-Ion Stoica,University of California - Berkeley,opsys,1.0,0.125,2006
+Ion Stoica,University of California - Berkeley,opsys,2.0,0.375,2006
 Ion Stoica,University of California - Berkeley,opsys,2.0,0.45,2008
 Ion Stoica,University of California - Berkeley,opsys,1.0,0.5,2009
 Ion Stoica,University of California - Berkeley,opsys,3.0,0.559523809524,2010
@@ -14358,7 +14411,8 @@ Garth A. Gibson,Carnegie Mellon University,mlmining,1.0,0.166666666667,2014
 Garth A. Gibson,Carnegie Mellon University,ai,1.0,0.166666666667,2015
 Garth A. Gibson,Carnegie Mellon University,opsys,1.0,0.2,1995
 Garth A. Gibson,Carnegie Mellon University,opsys,1.0,0.111111111111,1996
-Garth A. Gibson,Carnegie Mellon University,opsys,1.0,0.5,1999
+Garth A. Gibson,Carnegie Mellon University,opsys,2.0,0.833333333333,1999
+Garth A. Gibson,Carnegie Mellon University,opsys,1.0,0.25,2000
 Garth A. Gibson,Carnegie Mellon University,opsys,2.0,0.611111111111,2013
 Garth A. Gibson,Carnegie Mellon University,opsys,1.0,0.0833333333333,2014
 Garth A. Gibson,Carnegie Mellon University,opsys,1.0,0.142857142857,2016
@@ -14696,7 +14750,9 @@ Kai Li,Princeton University,opsys,1.0,0.25,1991
 Kai Li,Princeton University,opsys,2.0,0.5,1994
 Kai Li,Princeton University,opsys,2.0,0.444444444444,1996
 Kai Li,Princeton University,opsys,1.0,0.142857142857,2000
+Kai Li,Princeton University,opsys,1.0,0.333333333333,2001
 Kai Li,Princeton University,opsys,1.0,0.5,2002
+Kai Li,Princeton University,opsys,1.0,0.333333333333,2003
 Kai Li,Princeton University,opsys,1.0,0.2,2006
 Kai Li,Princeton University,opsys,1.0,0.5,2007
 Kai Li,Princeton University,opsys,1.0,0.166666666667,2016
@@ -15136,9 +15192,11 @@ Jason Nieh,Columbia University,metrics,2.0,0.833333333333,2010
 Jason Nieh,Columbia University,metrics,1.0,0.5,2011
 Jason Nieh,Columbia University,metrics,1.0,0.333333333333,2014
 Jason Nieh,Columbia University,opsys,1.0,0.5,1997
-Jason Nieh,Columbia University,opsys,1.0,0.25,2002
+Jason Nieh,Columbia University,opsys,1.0,0.5,2000
+Jason Nieh,Columbia University,opsys,3.0,0.916666666667,2001
+Jason Nieh,Columbia University,opsys,2.0,0.5,2002
 Jason Nieh,Columbia University,opsys,1.0,0.333333333333,2004
-Jason Nieh,Columbia University,opsys,1.0,0.333333333333,2005
+Jason Nieh,Columbia University,opsys,2.0,0.533333333333,2005
 Jason Nieh,Columbia University,opsys,2.0,0.7,2007
 Jason Nieh,Columbia University,opsys,1.0,0.5,2010
 Jason Nieh,Columbia University,opsys,2.0,0.366666666667,2011
@@ -15844,6 +15902,7 @@ Robin L. Hill,University of Edinburgh,hci,1.0,0.2,2011
 Barton P. Miller,University of Wisconsin - Madison,ai,1.0,0.25,2008
 Barton P. Miller,University of Wisconsin - Madison,opsys,1.0,0.5,1983
 Barton P. Miller,University of Wisconsin - Madison,opsys,1.0,0.5,1999
+Barton P. Miller,University of Wisconsin - Madison,opsys,1.0,0.5,2003
 Barton P. Miller,University of Wisconsin - Madison,networks,1.0,0.5,1989
 Barton P. Miller,University of Wisconsin - Madison,networks,1.0,0.5,1991
 Barton P. Miller,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1987
@@ -16213,6 +16272,9 @@ Robert C. Miller,Massachusetts Institute of Technology,hci,2.0,0.267857142857,20
 Robert C. Miller,Massachusetts Institute of Technology,hci,5.0,1.27777777778,2014
 Robert C. Miller,Massachusetts Institute of Technology,hci,3.0,0.7,2015
 Robert C. Miller,Massachusetts Institute of Technology,ai,1.0,0.2,2015
+Robert C. Miller,Massachusetts Institute of Technology,opsys,1.0,0.5,1999
+Robert C. Miller,Massachusetts Institute of Technology,opsys,1.0,0.5,2000
+Robert C. Miller,Massachusetts Institute of Technology,opsys,1.0,0.5,2001
 Robert C. Miller,Massachusetts Institute of Technology,database,1.0,0.2,2011
 Robert C. Miller,Massachusetts Institute of Technology,networks,1.0,0.25,2014
 Robert C. Miller,Massachusetts Institute of Technology,web,1.0,0.333333333333,2007
@@ -16332,6 +16394,7 @@ Matthias Jarke,RWTH Aachen,softeng,1.0,0.5,2015
 Fusheng Wang,Stony Brook University,database,1.0,0.5,2005
 Fusheng Wang,Stony Brook University,database,1.0,0.166666666667,2012
 Fusheng Wang,Stony Brook University,database,1.0,0.142857142857,2013
+John Black,University of Colorado Boulder,opsys,1.0,1.0,2006
 John Black,University of Colorado Boulder,crypto,1.0,0.2,1999
 John Black,University of Colorado Boulder,crypto,1.0,0.5,2000
 John Black,University of Colorado Boulder,crypto,2.0,0.833333333333,2002
@@ -16564,9 +16627,9 @@ David Mazières,Stanford University,opsys,1.0,0.142857142857,1995
 David Mazières,Stanford University,opsys,1.0,0.1,1997
 David Mazières,Stanford University,opsys,1.0,0.25,1999
 David Mazières,Stanford University,opsys,1.0,0.333333333333,2000
-David Mazières,Stanford University,opsys,1.0,0.333333333333,2001
-David Mazières,Stanford University,opsys,1.0,0.25,2003
-David Mazières,Stanford University,opsys,1.0,0.25,2004
+David Mazières,Stanford University,opsys,2.0,1.33333333333,2001
+David Mazières,Stanford University,opsys,2.0,0.416666666667,2003
+David Mazières,Stanford University,opsys,2.0,0.416666666667,2004
 David Mazières,Stanford University,opsys,1.0,0.111111111111,2005
 David Mazières,Stanford University,opsys,1.0,0.25,2006
 David Mazières,Stanford University,opsys,1.0,0.166666666667,2011
@@ -16823,6 +16886,7 @@ Jennifer Rexford,Princeton University,metrics,1.0,0.25,2007
 Jennifer Rexford,Princeton University,metrics,2.0,0.4,2008
 Jennifer Rexford,Princeton University,metrics,1.0,0.25,2009
 Jennifer Rexford,Princeton University,metrics,1.0,0.2,2011
+Jennifer Rexford,Princeton University,opsys,2.0,0.75,2006
 Jennifer Rexford,Princeton University,opsys,1.0,0.25,2010
 Jennifer Rexford,Princeton University,opsys,1.0,0.142857142857,2016
 Jennifer Rexford,Princeton University,networks,1.0,0.333333333333,1996
@@ -16964,6 +17028,7 @@ Lili Qiu,University of Texas - Austin,metrics,1.0,0.2,2009
 Lili Qiu,University of Texas - Austin,metrics,1.0,0.25,2011
 Lili Qiu,University of Texas - Austin,metrics,1.0,0.125,2012
 Lili Qiu,University of Texas - Austin,metrics,1.0,0.2,2014
+Lili Qiu,University of Texas - Austin,opsys,1.0,0.333333333333,2002
 Lili Qiu,University of Texas - Austin,networks,2.0,0.833333333333,2000
 Lili Qiu,University of Texas - Austin,networks,1.0,0.333333333333,2001
 Lili Qiu,University of Texas - Austin,networks,2.0,0.583333333333,2003
@@ -17083,7 +17148,8 @@ Godmar Back,Virginia Tech,metrics,1.0,0.2,2000
 Godmar Back,Virginia Tech,mlmining,1.0,0.333333333333,2010
 Godmar Back,Virginia Tech,opsys,1.0,0.166666666667,1996
 Godmar Back,Virginia Tech,opsys,1.0,0.166666666667,1997
-Godmar Back,Virginia Tech,opsys,1.0,0.333333333333,2000
+Godmar Back,Virginia Tech,opsys,2.0,0.533333333333,2000
+Godmar Back,Virginia Tech,opsys,1.0,0.333333333333,2001
 Godmar Back,Virginia Tech,opsys,1.0,0.2,2006
 Godmar Back,Virginia Tech,opsys,1.0,0.5,2013
 Richard A. DeMillo,Georgia Institute of Technology,theory,1.0,0.5,1974
@@ -17884,7 +17950,7 @@ Dawson R. Engler,Stanford University,ai,1.0,0.333333333333,2007
 Dawson R. Engler,Stanford University,opsys,1.0,0.333333333333,1995
 Dawson R. Engler,Stanford University,opsys,1.0,0.1,1997
 Dawson R. Engler,Stanford University,opsys,1.0,0.25,2000
-Dawson R. Engler,Stanford University,opsys,2.0,0.533333333333,2001
+Dawson R. Engler,Stanford University,opsys,3.0,0.866666666667,2001
 Dawson R. Engler,Stanford University,opsys,1.0,0.2,2002
 Dawson R. Engler,Stanford University,opsys,1.0,0.5,2003
 Dawson R. Engler,Stanford University,opsys,1.0,0.25,2004
@@ -18097,6 +18163,7 @@ Ursula Martin,University of Oxford,logic,1.0,0.5,1993
 Simone Campanoni,Northwestern University,arch,1.0,0.142857142857,2010
 Simone Campanoni,Northwestern University,arch,1.0,0.166666666667,2014
 Dhabaleswar K. Panda,Ohio State University,mlmining,1.0,0.166666666667,2003
+Dhabaleswar K. Panda,Ohio State University,opsys,1.0,0.25,2006
 Dhabaleswar K. Panda,Ohio State University,arch,1.0,0.333333333333,1997
 Dhabaleswar K. Panda,Ohio State University,highperf,1.0,0.333333333333,2001
 Dhabaleswar K. Panda,Ohio State University,highperf,2.0,0.361111111111,2003
@@ -18189,6 +18256,7 @@ David J. Fleet,University of Toronto,vision,1.0,0.5,2013
 David J. Fleet,University of Toronto,vision,1.0,0.333333333333,2014
 David J. Fleet,University of Toronto,vision,1.0,0.333333333333,2015
 Timothy Roscoe,ETH Zurich,opsys,1.0,0.333333333333,2002
+Timothy Roscoe,ETH Zurich,opsys,1.0,0.25,2004
 Timothy Roscoe,ETH Zurich,opsys,1.0,0.166666666667,2005
 Timothy Roscoe,ETH Zurich,opsys,1.0,0.25,2006
 Timothy Roscoe,ETH Zurich,opsys,2.0,0.533333333333,2008
@@ -18793,6 +18861,7 @@ Jiawei Han,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2005
 Jiawei Han,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2006
 Jiawei Han,University of Illinois at Urbana-Champaign,highperf,1.0,0.25,2005
 Jiawei Han,University of Illinois at Urbana-Champaign,vision,3.0,0.866666666667,2007
+Mustaque Ahamad,Georgia Institute of Technology,opsys,1.0,0.333333333333,2006
 Mustaque Ahamad,Georgia Institute of Technology,opsys,1.0,0.25,2008
 Mustaque Ahamad,Georgia Institute of Technology,networks,1.0,0.333333333333,1989
 Mustaque Ahamad,Georgia Institute of Technology,networks,1.0,0.333333333333,1990
@@ -19380,8 +19449,11 @@ Sivan Toledo,Tel Aviv University,graphics,1.0,0.25,2005
 Sivan Toledo,Tel Aviv University,graphics,1.0,0.2,2007
 Sivan Toledo,Tel Aviv University,theory,2.0,1.33333333333,1992
 Sivan Toledo,Tel Aviv University,theory,1.0,0.333333333333,1993
+Sivan Toledo,Tel Aviv University,opsys,1.0,0.5,2005
 Sivan Toledo,Tel Aviv University,networks,1.0,0.2,2009
 Sivan Toledo,Tel Aviv University,mobile,1.0,0.142857142857,2009
+Angelos D. Keromytis,Columbia University,opsys,1.0,0.333333333333,2003
+Angelos D. Keromytis,Columbia University,opsys,1.0,0.25,2005
 Angelos D. Keromytis,Columbia University,opsys,1.0,0.25,2007
 Angelos D. Keromytis,Columbia University,networks,1.0,0.333333333333,2002
 Angelos D. Keromytis,Columbia University,networks,1.0,0.25,2005
@@ -19898,6 +19970,7 @@ Steffen Hölldobler,TU Dresden,ai,1.0,1.0,1990
 Steffen Hölldobler,TU Dresden,ai,2.0,0.833333333333,1993
 Steffen Hölldobler,TU Dresden,ai,1.0,0.25,2007
 Abhishek Chandra,University of Minnesota - Twin Cities,opsys,1.0,0.25,2000
+Abhishek Chandra,University of Minnesota - Twin Cities,opsys,1.0,0.5,2001
 Thorsten Joachims,Cornell University,nlp,1.0,0.25,2015
 Thorsten Joachims,Cornell University,mlmining,1.0,1.0,1997
 Thorsten Joachims,Cornell University,mlmining,3.0,1.83333333333,1999
@@ -20006,7 +20079,9 @@ Nick McKeown,Stanford University,security,1.0,0.166666666667,2006
 Yuanyuan Zhou,University of California - San Diego,metrics,1.0,0.2,2005
 Yuanyuan Zhou,University of California - San Diego,metrics,1.0,0.25,2007
 Yuanyuan Zhou,University of California - San Diego,opsys,1.0,0.333333333333,1996
-Yuanyuan Zhou,University of California - San Diego,opsys,1.0,0.25,2004
+Yuanyuan Zhou,University of California - San Diego,opsys,1.0,0.333333333333,2001
+Yuanyuan Zhou,University of California - San Diego,opsys,1.0,0.333333333333,2003
+Yuanyuan Zhou,University of California - San Diego,opsys,2.0,0.5,2004
 Yuanyuan Zhou,University of California - San Diego,opsys,2.0,0.416666666667,2005
 Yuanyuan Zhou,University of California - San Diego,opsys,4.0,0.7,2007
 Yuanyuan Zhou,University of California - San Diego,opsys,2.0,0.392857142857,2009
@@ -20391,6 +20466,8 @@ Scott A. Smolka,Stony Brook University,logic,1.0,0.5,1998
 Scott A. Smolka,Stony Brook University,logic,1.0,0.142857142857,2011
 Alvin R. Lebeck,Duke University,metrics,1.0,0.166666666667,1993
 Alvin R. Lebeck,Duke University,metrics,1.0,0.5,1995
+Alvin R. Lebeck,Duke University,opsys,1.0,0.25,2003
+Alvin R. Lebeck,Duke University,opsys,1.0,0.25,2005
 Alvin R. Lebeck,Duke University,proglang,1.0,0.25,2001
 Alvin R. Lebeck,Duke University,arch,1.0,0.25,1989
 Alvin R. Lebeck,Duke University,arch,1.0,0.1,1993
@@ -20968,7 +21045,7 @@ Jason Flinn,University of Michigan,metrics,1.0,0.2,2000
 Jason Flinn,University of Michigan,opsys,1.0,0.166666666667,1997
 Jason Flinn,University of Michigan,opsys,1.0,0.5,1999
 Jason Flinn,University of Michigan,opsys,1.0,0.5,2004
-Jason Flinn,University of Michigan,opsys,1.0,0.333333333333,2005
+Jason Flinn,University of Michigan,opsys,2.0,0.833333333333,2005
 Jason Flinn,University of Michigan,opsys,2.0,0.75,2006
 Jason Flinn,University of Michigan,opsys,2.0,0.533333333333,2007
 Jason Flinn,University of Michigan,opsys,1.0,0.5,2008
@@ -21055,6 +21132,7 @@ J. Zico Kolter,Carnegie Mellon University,robotics,1.0,0.5,2007
 J. Zico Kolter,Carnegie Mellon University,robotics,1.0,0.333333333333,2008
 J. Zico Kolter,Carnegie Mellon University,robotics,3.0,1.33333333333,2009
 J. Zico Kolter,Carnegie Mellon University,robotics,1.0,0.2,2010
+J. Gregory Morrisett,Cornell University,opsys,1.0,0.166666666667,2002
 J. Gregory Morrisett,Cornell University,networks,1.0,0.333333333333,1998
 J. Gregory Morrisett,Cornell University,proglang,1.0,0.5,1995
 J. Gregory Morrisett,Cornell University,proglang,2.0,0.5,1996
@@ -21175,6 +21253,7 @@ Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,highperf,5.0,1.616
 Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,highperf,6.0,1.4,2014
 A. Aldo Faisal,Imperial College London,robotics,1.0,0.333333333333,2016
 Gul A. Agha,University of Illinois at Urbana-Champaign,metrics,1.0,0.25,2012
+Gul A. Agha,University of Illinois at Urbana-Champaign,opsys,1.0,0.2,2005
 Gul A. Agha,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,2009
 Gul A. Agha,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2014
 Gul A. Agha,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2011
@@ -21197,6 +21276,7 @@ Hubert Comon-Lundh,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2
 Hubert Comon-Lundh,Ecole Normale Superieure de Cachan,security,1.0,0.5,2008
 Hubert Comon-Lundh,Ecole Normale Superieure de Cachan,security,1.0,0.5,2014
 James R. Larus,EPFL,metrics,1.0,0.166666666667,1993
+James R. Larus,EPFL,opsys,1.0,0.5,2002
 James R. Larus,EPFL,opsys,1.0,0.142857142857,2006
 James R. Larus,EPFL,opsys,1.0,0.1,2007
 James R. Larus,EPFL,proglang,1.0,0.5,1988
@@ -21306,9 +21386,11 @@ Stefanos Zafeiriou,Imperial College London,vision,8.0,2.78333333333,2014
 Stefanos Zafeiriou,Imperial College London,vision,5.0,1.66666666667,2015
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1998
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.5,2001
-Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.125,2003
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.583333333333,2002
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,3.0,0.791666666667,2003
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.583333333333,2004
-Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.166666666667,2005
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.5,2005
+Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2006
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.2,2007
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.375,2008
 Andrea C. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.25,2009
@@ -22347,10 +22429,12 @@ Jeffrey S. Chase,Duke University,opsys,1.0,0.2,1989
 Jeffrey S. Chase,Duke University,opsys,1.0,0.25,1994
 Jeffrey S. Chase,Duke University,opsys,1.0,0.166666666667,1998
 Jeffrey S. Chase,Duke University,opsys,1.0,0.333333333333,2000
-Jeffrey S. Chase,Duke University,opsys,1.0,0.2,2001
-Jeffrey S. Chase,Duke University,opsys,1.0,0.142857142857,2002
+Jeffrey S. Chase,Duke University,opsys,2.0,0.7,2001
+Jeffrey S. Chase,Duke University,opsys,2.0,0.253968253968,2002
 Jeffrey S. Chase,Duke University,opsys,1.0,0.2,2003
 Jeffrey S. Chase,Duke University,opsys,1.0,0.2,2004
+Jeffrey S. Chase,Duke University,opsys,1.0,0.25,2005
+Jeffrey S. Chase,Duke University,opsys,1.0,0.166666666667,2006
 Jeffrey S. Chase,Duke University,opsys,1.0,0.2,2008
 Jeffrey S. Chase,Duke University,database,1.0,0.333333333333,2006
 Jeffrey S. Chase,Duke University,proglang,1.0,0.25,1992
@@ -22936,6 +23020,7 @@ Michael L. Scott,University of Rochester,opsys,1.0,0.333333333333,1989
 Michael L. Scott,University of Rochester,opsys,1.0,0.25,1991
 Michael L. Scott,University of Rochester,opsys,1.0,0.142857142857,1997
 Michael L. Scott,University of Rochester,opsys,1.0,0.5,1999
+Michael L. Scott,University of Rochester,opsys,1.0,0.5,2004
 Michael L. Scott,University of Rochester,opsys,1.0,0.333333333333,2013
 Michael L. Scott,University of Rochester,proglang,1.0,0.333333333333,2014
 Michael L. Scott,University of Rochester,arch,2.0,0.7,1991
@@ -23034,23 +23119,6 @@ Derek Hoiem,University of Illinois at Urbana-Champaign,vision,1.0,0.333333333333
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,7.0,2.5,2012
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,3.0,0.95,2013
 Derek Hoiem,University of Illinois at Urbana-Champaign,vision,2.0,0.5,2015
-Gaetano Borriello,University of Washington,hci,1.0,0.142857142857,2001
-Gaetano Borriello,University of Washington,hci,1.0,0.125,2002
-Gaetano Borriello,University of Washington,hci,2.0,0.7,2004
-Gaetano Borriello,University of Washington,hci,1.0,0.1,2008
-Gaetano Borriello,University of Washington,hci,1.0,0.166666666667,2009
-Gaetano Borriello,University of Washington,hci,1.0,0.166666666667,2012
-Gaetano Borriello,University of Washington,hci,1.0,0.2,2013
-Gaetano Borriello,University of Washington,hci,1.0,0.142857142857,2014
-Gaetano Borriello,University of Washington,hci,2.0,0.35,2015
-Gaetano Borriello,University of Washington,hci,1.0,0.125,2016
-Gaetano Borriello,University of Washington,ai,1.0,0.2,2005
-Gaetano Borriello,University of Washington,mobile,1.0,0.25,1999
-Gaetano Borriello,University of Washington,mobile,1.0,0.2,2005
-Gaetano Borriello,University of Washington,mobile,1.0,0.142857142857,2008
-Gaetano Borriello,University of Washington,mobile,1.0,0.2,2009
-Gaetano Borriello,University of Washington,mobile,1.0,0.142857142857,2012
-Gaetano Borriello,University of Washington,arch,1.0,0.25,1987
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,theory,1.0,0.25,2003
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,theory,2.0,0.75,2004
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,theory,8.0,2.58333333333,2005
@@ -23485,6 +23553,7 @@ Henry M. Levy,University of Washington,highperf,1.0,0.25,1991
 Michael P. Friedlander,University of British Columbia,mlmining,1.0,0.2,2015
 Peter Scheuermann,Northwestern University,mlmining,1.0,0.333333333333,2002
 Peter Scheuermann,Northwestern University,mlmining,1.0,0.2,2003
+Peter Scheuermann,Northwestern University,opsys,1.0,0.25,1999
 Peter Scheuermann,Northwestern University,database,1.0,1.0,1977
 Peter Scheuermann,Northwestern University,database,1.0,0.5,1983
 Peter Scheuermann,Northwestern University,database,1.0,0.333333333333,1991
@@ -24017,7 +24086,9 @@ Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,2007
 Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2009
 Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.333333333333,2014
 Shmuel Peleg,Hebrew University of Jerusalem,vision,1.0,0.25,2015
+Adrian Perrig,ETH Zurich,opsys,1.0,0.166666666667,2003
 Adrian Perrig,ETH Zurich,opsys,1.0,0.166666666667,2005
+Adrian Perrig,ETH Zurich,opsys,1.0,0.333333333333,2006
 Adrian Perrig,ETH Zurich,opsys,2.0,0.533333333333,2008
 Adrian Perrig,ETH Zurich,opsys,1.0,0.1,2012
 Adrian Perrig,ETH Zurich,opsys,1.0,0.166666666667,2014
@@ -24264,6 +24335,8 @@ Sanjeev Khanna,University of Pennsylvania,robotics,1.0,0.25,2015
 Abraham Silberschatz,Yale University,metrics,1.0,0.5,1996
 Abraham Silberschatz,Yale University,theory,1.0,0.5,1979
 Abraham Silberschatz,Yale University,mlmining,1.0,0.5,1995
+Abraham Silberschatz,Yale University,opsys,2.0,0.4,1999
+Abraham Silberschatz,Yale University,opsys,1.0,0.25,2000
 Abraham Silberschatz,Yale University,database,2.0,0.666666666667,1981
 Abraham Silberschatz,Yale University,database,2.0,0.666666666667,1982
 Abraham Silberschatz,Yale University,database,1.0,0.5,1983
@@ -24287,6 +24360,7 @@ Abraham Silberschatz,Yale University,networks,1.0,0.2,2005
 Abraham Silberschatz,Yale University,networks,1.0,0.2,2008
 Abraham Silberschatz,Yale University,proglang,1.0,0.5,1986
 Nickolai Zeldovich,Massachusetts Institute of Technology,theory,1.0,0.2,2013
+Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,1.0,0.166666666667,2003
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,1.0,0.25,2006
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,1.0,0.25,2009
 Nickolai Zeldovich,Massachusetts Institute of Technology,opsys,4.0,1.22619047619,2010
@@ -24772,8 +24846,6 @@ Jeffrey Heer,University of Washington,hci,4.0,1.22619047619,2012
 Jeffrey Heer,University of Washington,hci,1.0,0.333333333333,2013
 Jeffrey Heer,University of Washington,hci,3.0,0.916666666667,2014
 Jeffrey Heer,University of Washington,nlp,1.0,0.166666666667,2014
-D. Scott McCrickard,Virginia Tech,hci,1.0,0.142857142857,2003
-D. Scott McCrickard,Virginia Tech,hci,1.0,0.2,2011
 Hong Qin,Stony Brook University,graphics,1.0,0.5,1994
 Hong Qin,Stony Brook University,graphics,1.0,0.2,2012
 Hong Qin,Stony Brook University,mlmining,1.0,0.333333333333,2007
@@ -24901,6 +24973,7 @@ Tim Menzies,North Carolina State University,softeng,4.0,0.95,2013
 Tim Menzies,North Carolina State University,softeng,1.0,0.333333333333,2015
 Jesús Labarta,Polytechnic University of Catalonia,metrics,1.0,0.2,1983
 Jesús Labarta,Polytechnic University of Catalonia,opsys,1.0,0.333333333333,2000
+Jesús Labarta,Polytechnic University of Catalonia,opsys,1.0,0.5,2001
 Jesús Labarta,Polytechnic University of Catalonia,arch,1.0,0.25,1985
 Jesús Labarta,Polytechnic University of Catalonia,arch,1.0,0.25,1987
 Jesús Labarta,Polytechnic University of Catalonia,arch,1.0,0.125,2010
@@ -25242,6 +25315,8 @@ Randy H. Katz,University of California - Berkeley,metrics,1.0,0.25,1990
 Randy H. Katz,University of California - Berkeley,metrics,1.0,0.5,1991
 Randy H. Katz,University of California - Berkeley,metrics,1.0,0.5,1993
 Randy H. Katz,University of California - Berkeley,metrics,1.0,0.25,1997
+Randy H. Katz,University of California - Berkeley,opsys,1.0,0.333333333333,2002
+Randy H. Katz,University of California - Berkeley,opsys,1.0,0.2,2006
 Randy H. Katz,University of California - Berkeley,opsys,1.0,0.2,2008
 Randy H. Katz,University of California - Berkeley,opsys,1.0,0.25,2011
 Randy H. Katz,University of California - Berkeley,opsys,1.0,0.25,2012
@@ -25973,6 +26048,7 @@ Aditya Akella,University of Wisconsin - Madison,metrics,1.0,0.2,2012
 Aditya Akella,University of Wisconsin - Madison,metrics,2.0,0.416666666667,2013
 Aditya Akella,University of Wisconsin - Madison,metrics,1.0,0.2,2014
 Aditya Akella,University of Wisconsin - Madison,metrics,2.0,0.533333333333,2015
+Aditya Akella,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2004
 Aditya Akella,University of Wisconsin - Madison,opsys,2.0,0.325,2008
 Aditya Akella,University of Wisconsin - Madison,networks,1.0,0.2,2002
 Aditya Akella,University of Wisconsin - Madison,networks,1.0,0.2,2003
@@ -26248,6 +26324,7 @@ Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1993
 Kristian J. Hammond,Northwestern University,ai,1.0,0.333333333333,1995
 Kristian J. Hammond,Northwestern University,web,1.0,0.25,2002
 Viktor Gruev,Washington University - St. Louis,mlmining,1.0,0.333333333333,1998
+James Cheney,University of Edinburgh,opsys,1.0,0.166666666667,2002
 James Cheney,University of Edinburgh,database,1.0,0.333333333333,2006
 James Cheney,University of Edinburgh,database,1.0,0.25,2008
 James Cheney,University of Edinburgh,database,1.0,0.5,2009
@@ -26564,6 +26641,7 @@ Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.25,2009
 Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.5,2013
 Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.5,2014
 Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.333333333333,2015
+Ling Liu,Georgia Institute of Technology,opsys,1.0,0.333333333333,2006
 Ling Liu,Georgia Institute of Technology,database,1.0,0.5,1992
 Ling Liu,Georgia Institute of Technology,database,1.0,0.5,2006
 Ling Liu,Georgia Institute of Technology,database,1.0,0.5,2009
@@ -27087,7 +27165,7 @@ Ralph Grishman,New York University,nlp,1.0,0.2,2013
 Ralph Grishman,New York University,nlp,2.0,0.666666666667,2015
 Ralph Grishman,New York University,database,1.0,1.0,1978
 Ralph Grishman,New York University,arch,1.0,0.166666666667,1982
-Scott Rixner,Rice University,opsys,2.0,1.0,2006
+Scott Rixner,Rice University,opsys,3.0,1.33333333333,2006
 Scott Rixner,Rice University,opsys,1.0,0.333333333333,2008
 Scott Rixner,Rice University,opsys,1.0,0.333333333333,2012
 Scott Rixner,Rice University,opsys,2.0,0.45,2013
@@ -27213,6 +27291,8 @@ Tim Brecht,University of Waterloo,metrics,1.0,0.25,1984
 Tim Brecht,University of Waterloo,metrics,1.0,0.5,1991
 Tim Brecht,University of Waterloo,theory,1.0,0.25,1996
 Tim Brecht,University of Waterloo,theory,1.0,0.25,1997
+Tim Brecht,University of Waterloo,opsys,1.0,0.5,1999
+Tim Brecht,University of Waterloo,opsys,1.0,0.333333333333,2004
 Tim Brecht,University of Waterloo,opsys,1.0,0.2,2006
 Tim Brecht,University of Waterloo,opsys,1.0,0.166666666667,2007
 Tim Brecht,University of Waterloo,proglang,1.0,0.25,2001
@@ -27695,7 +27775,8 @@ Alex C. Snoeren,University of California - San Diego,metrics,2.0,0.5,2013
 Alex C. Snoeren,University of California - San Diego,metrics,2.0,0.45,2015
 Alex C. Snoeren,University of California - San Diego,mlmining,1.0,0.166666666667,2015
 Alex C. Snoeren,University of California - San Diego,opsys,1.0,0.333333333333,2001
-Alex C. Snoeren,University of California - San Diego,opsys,1.0,0.125,2005
+Alex C. Snoeren,University of California - San Diego,opsys,2.0,0.267857142857,2005
+Alex C. Snoeren,University of California - San Diego,opsys,2.0,0.45,2006
 Alex C. Snoeren,University of California - San Diego,opsys,1.0,0.166666666667,2007
 Alex C. Snoeren,University of California - San Diego,opsys,1.0,0.125,2008
 Alex C. Snoeren,University of California - San Diego,opsys,1.0,0.25,2010
@@ -28002,6 +28083,10 @@ Thomas Heinis,Imperial College London,database,1.0,0.166666666667,2013
 Thomas Heinis,Imperial College London,database,1.0,0.333333333333,2015
 Erez Zadok,Stony Brook University,metrics,1.0,0.333333333333,2008
 Erez Zadok,Stony Brook University,metrics,1.0,0.166666666667,2015
+Erez Zadok,Stony Brook University,opsys,1.0,0.333333333333,1999
+Erez Zadok,Stony Brook University,opsys,1.0,0.5,2000
+Erez Zadok,Stony Brook University,opsys,1.0,0.25,2001
+Erez Zadok,Stony Brook University,opsys,1.0,0.333333333333,2003
 Erez Zadok,Stony Brook University,opsys,2.0,0.533333333333,2006
 Erez Zadok,Stony Brook University,opsys,1.0,0.166666666667,2012
 Erez Zadok,Stony Brook University,database,1.0,0.1,2012
@@ -28186,6 +28271,7 @@ David R. Cheriton,Stanford University,opsys,1.0,0.5,1994
 David R. Cheriton,Stanford University,opsys,1.0,0.5,1995
 David R. Cheriton,Stanford University,opsys,1.0,0.5,1996
 David R. Cheriton,Stanford University,opsys,1.0,0.5,1999
+David R. Cheriton,Stanford University,opsys,1.0,0.5,2005
 David R. Cheriton,Stanford University,opsys,1.0,0.166666666667,2007
 David R. Cheriton,Stanford University,opsys,1.0,0.5,2013
 David R. Cheriton,Stanford University,networks,1.0,1.0,1983
@@ -28918,6 +29004,7 @@ Clifford Stein,Columbia University,theory,1.0,0.25,2002
 Clifford Stein,Columbia University,theory,1.0,0.5,2005
 Clifford Stein,Columbia University,theory,3.0,0.833333333333,2007
 Clifford Stein,Columbia University,theory,1.0,0.2,2008
+Clifford Stein,Columbia University,opsys,1.0,0.2,2005
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,0.2,1996
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,0.5,2000
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,0.2,2008
@@ -29283,6 +29370,7 @@ Ce Zhang,ETH Zurich,database,1.0,0.166666666667,2015
 Ce Zhang,ETH Zurich,database,1.0,0.2,2016
 Ce Zhang,ETH Zurich,web,1.0,0.333333333333,2010
 Katerina J. Argyraki,EPFL,metrics,1.0,0.333333333333,2010
+Katerina J. Argyraki,EPFL,opsys,1.0,0.5,2005
 Katerina J. Argyraki,EPFL,opsys,1.0,0.111111111111,2009
 Katerina J. Argyraki,EPFL,networks,2.0,0.533333333333,2009
 Katerina J. Argyraki,EPFL,networks,1.0,0.2,2010
@@ -29366,6 +29454,7 @@ Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1997
 Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1998
 Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1999
 Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,2000
+Ketan Mayer-Patel,University of North Carolina - Chapel Hill,opsys,1.0,0.5,2002
 Ketan Mayer-Patel,University of North Carolina - Chapel Hill,networks,1.0,0.333333333333,2004
 Katrina Ligett,Hebrew University of Jerusalem,theory,2.0,0.5,2007
 Katrina Ligett,Hebrew University of Jerusalem,theory,2.0,0.583333333333,2008
@@ -29497,6 +29586,7 @@ José Meseguer,University of Illinois at Urbana-Champaign,security,1.0,0.5,1984
 José Meseguer,University of Illinois at Urbana-Champaign,security,1.0,0.25,2007
 José Meseguer,University of Illinois at Urbana-Champaign,softeng,1.0,0.25,1987
 David R. O'Hallaron,Carnegie Mellon University,metrics,1.0,0.5,1996
+David R. O'Hallaron,Carnegie Mellon University,opsys,1.0,0.142857142857,2006
 David R. O'Hallaron,Carnegie Mellon University,database,1.0,0.166666666667,2006
 David R. O'Hallaron,Carnegie Mellon University,networks,1.0,0.333333333333,2001
 David R. O'Hallaron,Carnegie Mellon University,networks,1.0,0.5,2002
@@ -29797,9 +29887,11 @@ Iryna Gurevych,TU Darmstadt,ai,1.0,0.333333333333,2008
 Iryna Gurevych,TU Darmstadt,web,1.0,0.333333333333,2014
 Iryna Gurevych,TU Darmstadt,vision,1.0,0.2,2010
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.5,2001
-Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.125,2003
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.583333333333,2002
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,3.0,0.791666666667,2003
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.583333333333,2004
-Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.166666666667,2005
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.5,2005
+Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.333333333333,2006
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.2,2007
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,2.0,0.375,2008
 Remzi H. Arpaci-Dusseau,University of Wisconsin - Madison,opsys,1.0,0.25,2009
@@ -30516,6 +30608,7 @@ Lijun Chen,University of Colorado Boulder,networks,1.0,0.25,2006
 Lijun Chen,University of Colorado Boulder,networks,1.0,0.2,2007
 Lijun Chen,University of Colorado Boulder,networks,1.0,0.25,2014
 Lijun Chen,University of Colorado Boulder,networks,1.0,0.2,2015
+Michael W. Hicks,University of Maryland - College Park,opsys,1.0,0.166666666667,2002
 Michael W. Hicks,University of Maryland - College Park,database,1.0,0.333333333333,2009
 Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.2,1999
 Michael W. Hicks,University of Maryland - College Park,networks,1.0,0.333333333333,2001
@@ -31276,8 +31369,8 @@ Larry L. Peterson,University of Arizona,opsys,1.0,0.5,1996
 Larry L. Peterson,University of Arizona,opsys,1.0,0.5,1999
 Larry L. Peterson,University of Arizona,opsys,1.0,0.25,2001
 Larry L. Peterson,University of Arizona,opsys,2.0,0.666666666667,2002
-Larry L. Peterson,University of Arizona,opsys,1.0,0.2,2004
-Larry L. Peterson,University of Arizona,opsys,1.0,0.25,2006
+Larry L. Peterson,University of Arizona,opsys,3.0,0.6,2004
+Larry L. Peterson,University of Arizona,opsys,2.0,1.25,2006
 Larry L. Peterson,University of Arizona,opsys,1.0,0.2,2007
 Larry L. Peterson,University of Arizona,opsys,1.0,0.25,2008
 Larry L. Peterson,University of Arizona,opsys,1.0,0.166666666667,2011
@@ -32519,6 +32612,7 @@ Xiaodong Zhang 0001,Ohio State University,metrics,1.0,0.5,2002
 Xiaodong Zhang 0001,Ohio State University,metrics,1.0,0.166666666667,2006
 Xiaodong Zhang 0001,Ohio State University,metrics,1.0,0.2,2014
 Xiaodong Zhang 0001,Ohio State University,mlmining,1.0,0.2,2009
+Xiaodong Zhang 0001,Ohio State University,opsys,1.0,0.333333333333,2005
 Xiaodong Zhang 0001,Ohio State University,opsys,1.0,0.2,2007
 Xiaodong Zhang 0001,Ohio State University,opsys,1.0,0.166666666667,2010
 Xiaodong Zhang 0001,Ohio State University,opsys,1.0,0.333333333333,2011
@@ -35084,6 +35178,7 @@ Bryan S. Morse,Brigham Young University,vision,1.0,0.25,2005
 Bryan S. Morse,Brigham Young University,vision,1.0,0.142857142857,2008
 Bryan S. Morse,Brigham Young University,vision,2.0,0.583333333333,2009
 Bryan S. Morse,Brigham Young University,vision,2.0,0.666666666667,2010
+Brad Karp,University College London,opsys,1.0,0.166666666667,2003
 Brad Karp,University College London,opsys,2.0,0.342857142857,2014
 Brad Karp,University College London,networks,2.0,0.375,2005
 Brad Karp,University College London,networks,1.0,0.166666666667,2006
@@ -35161,6 +35256,8 @@ Pierre Dillenbourg,EPFL,robotics,1.0,0.2,2008
 Pierre Dillenbourg,EPFL,robotics,1.0,0.25,2009
 Pierre Dillenbourg,EPFL,robotics,1.0,0.333333333333,2015
 Pierre Dillenbourg,EPFL,robotics,1.0,0.2,2016
+Dilma Da Silva,Texas A&M University,opsys,1.0,0.0833333333333,2003
+Dilma Da Silva,Texas A&M University,opsys,1.0,0.142857142857,2005
 Dilma Da Silva,Texas A&M University,opsys,1.0,0.0833333333333,2006
 Dilma Da Silva,Texas A&M University,opsys,1.0,0.166666666667,2007
 Dilma Da Silva,Texas A&M University,highperf,1.0,0.166666666667,2012
@@ -35299,36 +35396,8 @@ Joseph E. Gonzalez,University of California - Berkeley,opsys,1.0,0.2,2012
 Joseph E. Gonzalez,University of California - Berkeley,opsys,1.0,0.166666666667,2014
 Mahesh K. Marina,University of Edinburgh,mobile,1.0,0.2,2010
 Mahesh K. Marina,University of Edinburgh,mobile,1.0,0.25,2014
-David Wetherall,University of Washington,metrics,1.0,0.166666666667,2006
-David Wetherall,University of Washington,metrics,1.0,0.333333333333,2014
-David Wetherall,University of Washington,hci,2.0,0.392857142857,2009
-David Wetherall,University of Washington,hci,1.0,0.25,2015
-David Wetherall,University of Washington,opsys,1.0,0.5,1998
-David Wetherall,University of Washington,opsys,1.0,1.0,1999
-David Wetherall,University of Washington,opsys,2.0,0.45,2003
-David Wetherall,University of Washington,opsys,1.0,0.2,2004
-David Wetherall,University of Washington,opsys,1.0,0.166666666667,2015
-David Wetherall,University of Washington,networks,1.0,0.333333333333,1998
-David Wetherall,University of Washington,networks,2.0,0.75,2000
-David Wetherall,University of Washington,networks,2.0,0.666666666667,2002
-David Wetherall,University of Washington,networks,3.0,0.916666666667,2005
-David Wetherall,University of Washington,networks,3.0,0.95,2006
-David Wetherall,University of Washington,networks,2.0,0.583333333333,2007
-David Wetherall,University of Washington,networks,3.0,0.616666666667,2008
-David Wetherall,University of Washington,networks,1.0,0.25,2010
-David Wetherall,University of Washington,networks,2.0,0.533333333333,2011
-David Wetherall,University of Washington,networks,1.0,0.333333333333,2012
-David Wetherall,University of Washington,networks,3.0,0.559523809524,2013
-David Wetherall,University of Washington,networks,2.0,0.45,2014
-David Wetherall,University of Washington,networks,1.0,0.1,2015
-David Wetherall,University of Washington,mobile,1.0,0.333333333333,1999
-David Wetherall,University of Washington,mobile,1.0,0.2,2006
-David Wetherall,University of Washington,mobile,1.0,0.2,2007
-David Wetherall,University of Washington,mobile,3.0,1.0,2008
-David Wetherall,University of Washington,mobile,1.0,0.166666666667,2011
-David Wetherall,University of Washington,security,1.0,0.166666666667,2008
-David Wetherall,University of Washington,security,1.0,0.2,2011
-David Wetherall,University of Washington,security,1.0,0.111111111111,2014
+D. Scott McCrickard,Virginia Tech,hci,1.0,0.142857142857,2003
+D. Scott McCrickard,Virginia Tech,hci,1.0,0.2,2011
 Denys Poshyvanyk,College of William and Mary,softeng,1.0,0.25,2007
 Denys Poshyvanyk,College of William and Mary,softeng,1.0,0.166666666667,2010
 Denys Poshyvanyk,College of William and Mary,softeng,1.0,0.2,2011
@@ -35513,7 +35582,7 @@ Lorrie Faith Cranor,Carnegie Mellon University,security,3.0,0.361111111111,2012
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.111111111111,2013
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.2,2014
 Lorrie Faith Cranor,Carnegie Mellon University,security,1.0,0.1,2015
-Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.25,2006
+Emery D. Berger,University of Massachusetts - Amherst,opsys,3.0,0.783333333333,2006
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.2,2008
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.333333333333,2011
 Emery D. Berger,University of Massachusetts - Amherst,opsys,1.0,0.5,2015
@@ -35740,6 +35809,7 @@ Prasad Tetali,Georgia Institute of Technology,theory,1.0,0.25,2012
 Prasad Tetali,Georgia Institute of Technology,robotics,1.0,0.2,2013
 Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
 Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.166666666667,2006
 Thu D. Nguyen,Rutgers University,opsys,1.0,0.333333333333,2007
 Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2010
 Thu D. Nguyen,Rutgers University,opsys,1.0,0.166666666667,2012
@@ -35814,6 +35884,7 @@ John P. Hayes,University of Michigan,arch,1.0,0.5,1980
 John P. Hayes,University of Michigan,highperf,1.0,0.5,1990
 Lakshminarayanan Subramanian,New York University,metrics,1.0,0.2,2014
 Lakshminarayanan Subramanian,New York University,mlmining,1.0,0.333333333333,2014
+Lakshminarayanan Subramanian,New York University,opsys,1.0,0.333333333333,2002
 Lakshminarayanan Subramanian,New York University,networks,1.0,0.5,2001
 Lakshminarayanan Subramanian,New York University,networks,1.0,0.25,2002
 Lakshminarayanan Subramanian,New York University,networks,2.0,0.45,2004
