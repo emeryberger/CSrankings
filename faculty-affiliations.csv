@@ -83,7 +83,6 @@ Anna Lysyanskaya , Brown University
 Benjamin J. Raphael , Brown University
 Odest Chadwicke Jenkins , Brown University
 Chad Jenkins , Brown University
-Claire Mathieu , Brown University
 David H. Laidlaw , Brown University
 Eli Upfal , Brown University
 Erik B. Sudderth , Brown University
@@ -114,7 +113,6 @@ Alain J. Martin , California Institute of Technology
 Alan H. Barr , California Institute of Technology
 Christopher Umans , California Institute of Technology
 Erik Winfree , California Institute of Technology
-Katrina Ligett , California Institute of Technology
 Leonard J. Schulman , California Institute of Technology
 Mathieu Desbrun , California Institute of Technology
 Peter Schröder , California Institute of Technology
@@ -170,7 +168,6 @@ Douglas C. Sicker , Carnegie Mellon University
 Edmund M. Clarke , Carnegie Mellon University
 Emma Brunskill , Carnegie Mellon University
 Eric Nyberg , Carnegie Mellon University
-Eric Paulos , Carnegie Mellon University
 Eric P. Xing , Carnegie Mellon University
 Farnam Jahanian , Carnegie Mellon University
 Frank Pfenning , Carnegie Mellon University
@@ -628,7 +625,6 @@ Yan Huang , Indiana University
 Yuqing Wu , Indiana University
 Yuqing Melanie Wu , Indiana University
 Yuzhen Ye , Indiana University
-Adam Lopez , Johns Hopkins University
 Alexis Battle , Johns Hopkins University
 Aviel D. Rubin , Johns Hopkins University
 Ben Langmead , Johns Hopkins University
@@ -645,7 +641,6 @@ Michael Kazhdan , Johns Hopkins University
 Michael M. Kazhdan , Johns Hopkins University
 Michael Schatz , Johns Hopkins University
 Misha Kazhdan , Johns Hopkins University
-Nassir Navab , Johns Hopkins University
 Peter Kazanzides , Johns Hopkins University
 Philipp Koehn , Johns Hopkins University
 Raman Arora , Johns Hopkins University
@@ -1099,7 +1094,6 @@ Luo Si , Purdue University
 Mathias Payer , Purdue University
 Mikhail J. Atallah , Purdue University
 Ninghui Li , Purdue University
-Patrick Eugster , Purdue University
 Ramana Rao Kompella , Purdue University
 Robert D. Skeel , Purdue University
 Samuel S. Wagstaff Jr. , Purdue University
@@ -1244,7 +1238,6 @@ Jure Leskovec , Stanford University
 Keith Winstein , Stanford University
 Kunle Olukotun , Stanford University
 Leonidas J. Guibas , Stanford University
-Luca Trevisan , Stanford University
 Maneesh Agrawala , Stanford University
 Marc Levoy , Stanford University
 Mark Horowitz , Stanford University
@@ -1337,7 +1330,7 @@ Frank M. Shipman III , Texas A&M University
 Guofei Gu , Texas A&M University
 J. Maurice Rojas , Texas A&M University
 James Caverlee , Texas A&M University
-Jeff Huang , Texas A&M University
+Jeff Huang 0001, Texas A&M University
 Jennifer L. Welch , Texas A&M University
 Jianer Chen , Texas A&M University
 Jinxiang Chai , Texas A&M University
@@ -1749,7 +1742,6 @@ Madhur Tulsiani , University of Chicago
 Michael J. Franklin , University of Chicago
 Michael J. O'Donnell , University of Chicago
 Nathan Srebro , University of Chicago
-Raquel Urtasun , University of Chicago
 Ravi Chugh , University of Chicago
 Rick Stevens , University of Chicago
 Risi Kondor , University of Chicago
@@ -2975,8 +2967,6 @@ James Cheney , University of Edinburgh
 Shay B. Cohen , University of Edinburgh
 Murray Cole , University of Edinburgh
 Mary Cryan , University of Edinburgh
-Vincent Danos , University of Edinburgh
-Ilias Diakonikolas , University of Edinburgh
 Christophe Dubach , University of Edinburgh
 Kousha Etessami , University of Edinburgh
 Maurice F. Fallon , University of Edinburgh
@@ -3011,7 +3001,6 @@ Aggelos Kiayias , University of Edinburgh
 Simon King , University of Edinburgh
 Simon A. King , University of Edinburgh
 Ewan Klein , University of Edinburgh
-Philipp Koehn , University of Edinburgh
 Taku Komura , University of Edinburgh
 Mirella Lapata , University of Edinburgh
 Alex Lascarides , University of Edinburgh
@@ -3225,7 +3214,6 @@ François Pitt , University of Toronto
 Charles Rackoff , University of Toronto
 Karen L. Reid , University of Toronto
 Benjamin Rossman , University of Toronto
-Ruslan Salakhutdinov , University of Toronto
 Bianca Schroeder , University of Toronto
 Bogdan Simion , University of Toronto
 Karan Singh , University of Toronto
@@ -3344,7 +3332,6 @@ Ivana Drobnjak , University College London
 Wolfgang Emmerich , University College London
 Chris Evans , University College London
 Anthony Finkelstein , University College London
-Yun Fu , University College London
 Guido Germano , University College London
 Nicolas Gold , University College London
 Denise Gorse , University College London
@@ -3361,7 +3348,6 @@ Robin Hirsch , University College London
 Catherine Holloway , University College London
 Catherine S. Holloway , University College London
 Anthony Hunter , University College London
-Kyle Jamieson , University College London
 Yue Jia , University College London
 Bangti Jin , University College London
 David Jones , University College London
@@ -3597,7 +3583,6 @@ Nassir Navab , TU Munich
 Thomas Neumann 0001, TU Munich
 Tobias Nipkow , TU Munich
 Jörg Ott , TU Munich
-Lawrence C. Paulson , TU Munich
 Alexander Pretschner , TU Munich
 Harald Räcke , TU Munich
 Burkhard Rost , TU Munich
@@ -3654,7 +3639,6 @@ François Bérenger , Ecole Normale Superieure
 Céline Chevalier , Ecole Normale Superieure
 Albert Cohen , Ecole Normale Superieure
 Éric Colin de Verdière , Ecole Normale Superieure
-Patrick Cousot , Ecole Normale Superieure
 Vincent Danos , Ecole Normale Superieure
 Cezara Dragoi , Ecole Normale Superieure
 Jérôme Feret , Ecole Normale Superieure
@@ -3840,7 +3824,6 @@ Amir Averbuch , Tel Aviv University
 Yossi Azar , Tel Aviv University
 Benny Chor , Tel Aviv University
 Amir Shpilka , Tel Aviv University
-Ran Canetti , Tel Aviv University
 Shiri Chechik , Tel Aviv University
 Daniel Cohen-Or , Tel Aviv University
 Nachum Dershowitz , Tel Aviv University
@@ -3862,8 +3845,6 @@ Rotem Oshman , Tel Aviv University
 Alexander Rabinovich , Tel Aviv University
 Alexander Moshe Rabinovich , Tel Aviv University
 Noam Rinetzky , Tel Aviv University
-Ronitt Rubinfeld , Tel Aviv University
-Eytan Ruppin , Tel Aviv University
 Shmuel Safra , Tel Aviv University
 Muli Safra , Tel Aviv University
 Shmuel Sagiv , Tel Aviv University
@@ -3871,7 +3852,6 @@ Mooly Sagiv , Tel Aviv University
 Ron Shamir , Tel Aviv University
 Roded Sharan , Tel Aviv University
 Micha Sharir , Tel Aviv University
-Nir Shavit , Tel Aviv University
 Amnon Ta-Shma , Tel Aviv University
 Michael Tarsi , Tel Aviv University
 Sivan Toledo , Tel Aviv University
