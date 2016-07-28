@@ -59,7 +59,8 @@ areadict = {
     'ai' : ['AAAI', 'IJCAI'],
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
     'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
-    'metrics' : ['SIGMETRICS','IMC','Internet Measurement Conference'],
+    'metrics' : ['SIGMETRICS','SIGMETRICS/Performance','IMC','Internet Measurement Conference'],
+    # Two variants for each, as in DBLP.
     'web' : ['WWW', 'SIGIR'],
     'hci' : ['CHI','UbiComp','Ubicomp','UIST'],
     'nlp' : ['EMNLP','ACL','ACL (1)','NAACL', 'HLT-NAACL'],
