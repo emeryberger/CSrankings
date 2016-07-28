@@ -48,11 +48,13 @@ areadict = {
     'highperf' : ['SC', 'PPOPP'],
     'logic' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     'softeng' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
-    'opsys' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference'], # note: OSDI/SOSP alternate years, so are treated as one venue
+    'opsys' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
+     # note: OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
     'theory' : ['STOC', 'FOCS','SODA'],
     'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'], # USENIX Security listed twice to reflect variants in DBLP
+    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],
+    # USENIX Security listed twice to reflect variants in DBLP
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'IJCAI'],
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
