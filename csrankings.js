@@ -12,6 +12,7 @@
 var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
 var countryinfoFile = "country-info.csv";
+var aliasFile = "dblp-aliases.csv";
 var allowRankingChange = false; /* Can we change the kind of rankings being used? */
 var showCoauthors = false;
 var maxCoauthors = 30; /* Max co-authors to display. */
@@ -24,9 +25,11 @@ var areas = ["proglang", "softeng", "opsys", "networks", "security", "database",
 ;
 ;
 ;
+;
 var authors = []; /* The data which will hold the parsed CSV of author info. */
 var coauthors = []; /* The data which will hold the parsed CSV of co-author info. */
 var countryInfo = {};
+var aliases = {};
 /* The prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
     var s = "<html>"
@@ -124,6 +127,20 @@ function loadCoauthors(cont) {
         }
     });
 }
+function loadAliases(cont) {
+    Papa.parse(aliasFile, {
+        header: true,
+        download: true,
+        complete: function (results) {
+            var data = results.data;
+            var d = data;
+            for (var i = 0; i < d.length; i++) {
+                aliases[d[i].alias] = d[i].name;
+            }
+            cont();
+        }
+    });
+}
 function loadCountryInfo(cont) {
     Papa.parse(countryinfoFile, {
         header: true,
@@ -161,8 +178,10 @@ function loadAuthorInfo(cont) {
 function init() {
     jQuery(document).ready(function () {
         setAllCheckboxes();
-        loadAuthorInfo(function () {
-            loadCountryInfo(rank);
+        loadAliases(function () {
+            loadAuthorInfo(function () {
+                loadCountryInfo(rank);
+            });
         });
     });
 }
@@ -462,6 +481,23 @@ function rank() {
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
     var s = makePrologue();
     var univtext = {};
+    /* Canonicalize names. */
+    for (dept in deptNames) {
+        for (var ind = 0; ind < deptNames[dept].length; ind++) {
+            name = deptNames[dept][ind];
+            if (name in aliases) {
+                deptNames[dept][ind] = aliases[name];
+                if (!(aliases[name] + dept in facultycount)) {
+                    facultycount[aliases[name] + dept] = facultycount[name + dept];
+                    facultyAdjustedCount[aliases[name] + dept] = facultyAdjustedCount[name + dept];
+                }
+                else {
+                    facultycount[aliases[name] + dept] += facultycount[name + dept];
+                    facultyAdjustedCount[aliases[name] + dept] += facultyAdjustedCount[name + dept];
+                }
+            }
+        }
+    }
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
         var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
