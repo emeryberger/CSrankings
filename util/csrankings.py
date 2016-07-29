@@ -56,7 +56,8 @@ areadict = {
     'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],
     # USENIX Security listed twice to reflect variants in DBLP
     'mlmining' : ['NIPS', 'ICML','KDD'],
-    'ai' : ['AAAI', 'IJCAI'],
+    'ai' : ['AAAI', 'AAAI/IAAI', 'IJCAI'],
+    # AAAI listed to account for AAAI/IAAI joint conference
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
     'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
     'metrics' : ['SIGMETRICS','SIGMETRICS/Performance','IMC','Internet Measurement Conference'],
