@@ -45,7 +45,7 @@ def pagecount(input):
 areadict = {
     # Max three most selective venues per area for now.
     'proglang' : ['POPL', 'PLDI', 'OOPSLA'],
-    'highperf' : ['SC', 'PPOPP'],
+    'highperf' : ['SC', 'HPDC', 'ICS'],
     'logic' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     'softeng' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
     'opsys' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
