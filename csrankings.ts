@@ -656,7 +656,7 @@ function rank() : boolean {
 		+ "</small></td>"
 		+ '</a></small></td><td align="right"><small>'
 //		+ '<abbr title="' + coauthorStr + '">'
-		+ facultyAdjustedCount[name+dept].toPrecision(2)
+		+ (Math.floor(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 //		+ '</abbr>'
 		+ "</small></td></tr>";
 	}

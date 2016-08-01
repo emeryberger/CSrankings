@@ -549,7 +549,7 @@ function rank() {
                 + '</a>'
                 + "</small></td>"
                 + '</a></small></td><td align="right"><small>'
-                + facultyAdjustedCount[name + dept].toPrecision(2)
+                + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
                 + "</small></td></tr>";
         }
         p += "</tbody></table></div></div>";
