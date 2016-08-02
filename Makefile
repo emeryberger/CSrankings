@@ -17,6 +17,10 @@ update-dblp:
 	mv dblp-fixed.xml dblp.xml
 	@echo "Done."
 
+fix-affiliations:
+	python util/fix-affiliations.py | sort -t',' -k2 | uniq > /tmp/f.csv
+	cp /tmp/f.csv faculty-affiliations.csv
+
 faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py util/csrankings.py
 	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
 	python util/generate-faculty-coauthors.py
