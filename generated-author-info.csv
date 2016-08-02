@@ -225,6 +225,19 @@ Yan Huang,Indiana University,vision,1.0,0.5,2005
 Yan Huang,Indiana University,vision,2.0,0.666666666667,2015
 Michael Ian Shamos,Carnegie Mellon University,theory,2.0,1.5,1975
 Michael Ian Shamos,Carnegie Mellon University,theory,3.0,1.5,1976
+Gautam Biswas,Vanderbilt University,mlmining,1.0,0.5,1995
+Gautam Biswas,Vanderbilt University,mlmining,1.0,0.5,2000
+Gautam Biswas,Vanderbilt University,ai,1.0,0.5,1989
+Gautam Biswas,Vanderbilt University,ai,1.0,0.5,1993
+Gautam Biswas,Vanderbilt University,ai,1.0,0.5,1997
+Gautam Biswas,Vanderbilt University,ai,1.0,0.333333333333,1998
+Gautam Biswas,Vanderbilt University,ai,1.0,0.5,1999
+Gautam Biswas,Vanderbilt University,ai,1.0,0.25,2000
+Gautam Biswas,Vanderbilt University,ai,1.0,0.5,2003
+Gautam Biswas,Vanderbilt University,ai,1.0,0.25,2006
+Gautam Biswas,Vanderbilt University,ai,1.0,0.333333333333,2007
+Gautam Biswas,Vanderbilt University,ai,1.0,0.333333333333,2016
+Gautam Biswas,Vanderbilt University,robotics,1.0,0.333333333333,2006
 Kunal Agrawal,Washington University - St. Louis,theory,1.0,0.25,2016
 Kunal Agrawal,Washington University - St. Louis,mlmining,1.0,0.25,2014
 Kunal Agrawal,Washington University - St. Louis,proglang,1.0,0.2,2015
@@ -464,11 +477,8 @@ Seth Copen Goldstein,Carnegie Mellon University,arch,1.0,0.5,2001
 Seth Copen Goldstein,Carnegie Mellon University,arch,1.0,0.25,2004
 Seth Copen Goldstein,Carnegie Mellon University,arch,1.0,0.166666666667,2006
 Seth Copen Goldstein,Carnegie Mellon University,highperf,1.0,0.142857142857,1993
-Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.333333333333,2009
-Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.25,2011
-Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.25,2014
-Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.142857142857,2015
-Matthew A. Hammer,University of Colorado Boulder,security,1.0,0.333333333333,2014
+Bobby Bodenheimer,Vanderbilt University,graphics,1.0,0.25,1996
+Bobby Bodenheimer,Vanderbilt University,graphics,1.0,0.5,2008
 Sean Hallgren,Pennsylvania State University,theory,1.0,0.5,1999
 Sean Hallgren,Pennsylvania State University,theory,2.0,0.833333333333,2000
 Sean Hallgren,Pennsylvania State University,theory,1.0,1.0,2002
@@ -2473,12 +2483,11 @@ Inderjit S. Dhillon,University of Texas - Austin,mlmining,6.0,1.65,2016
 Inderjit S. Dhillon,University of Texas - Austin,database,1.0,0.2,2014
 Inderjit S. Dhillon,University of Texas - Austin,web,1.0,0.2,2015
 Inderjit S. Dhillon,University of Texas - Austin,highperf,1.0,0.0833333333333,1996
-Gregory R. Andrews,University of Arizona,opsys,1.0,0.333333333333,1994
-Gregory R. Andrews,University of Arizona,proglang,1.0,0.5,1979
-Gregory R. Andrews,University of Arizona,security,1.0,0.333333333333,2007
-Gregory R. Andrews,University of Arizona,softeng,1.0,0.333333333333,1981
-Gregory R. Andrews,University of Arizona,softeng,1.0,0.333333333333,2003
-Gregory R. Andrews,University of Arizona,highperf,1.0,0.5,1996
+Xenofon D. Koutsoukos,Vanderbilt University,ai,1.0,0.166666666667,2001
+Xenofon D. Koutsoukos,Vanderbilt University,ai,1.0,0.333333333333,2007
+Xenofon D. Koutsoukos,Vanderbilt University,ai,1.0,0.333333333333,2015
+Xenofon D. Koutsoukos,Vanderbilt University,mobile,1.0,0.333333333333,2007
+Xenofon D. Koutsoukos,Vanderbilt University,robotics,1.0,0.333333333333,2006
 Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2000
 Bart Selman,Cornell University,mlmining,1.0,0.25,2003
 Bart Selman,Cornell University,mlmining,1.0,0.333333333333,2006
@@ -3944,6 +3953,12 @@ Elke A. Rundensteiner,WPI,database,1.0,0.25,2015
 Elke A. Rundensteiner,WPI,database,2.0,0.666666666667,2016
 Elke A. Rundensteiner,WPI,web,1.0,0.5,2005
 Elke A. Rundensteiner,WPI,web,1.0,0.333333333333,2008
+Richard Alan Peters II,Vanderbilt University,robotics,1.0,0.333333333333,1994
+Richard Alan Peters II,Vanderbilt University,robotics,1.0,0.333333333333,1998
+Richard Alan Peters II,Vanderbilt University,robotics,1.0,0.25,2002
+Richard Alan Peters II,Vanderbilt University,robotics,1.0,0.25,2003
+Richard Alan Peters II,Vanderbilt University,robotics,1.0,0.5,2004
+Richard Alan Peters II,Vanderbilt University,robotics,1.0,0.333333333333,2006
 Erika Ábrahám,RWTH Aachen,logic,1.0,0.333333333333,2013
 Erika Ábrahám,RWTH Aachen,logic,1.0,0.125,2015
 Prasun Sinha,Ohio State University,networks,1.0,0.333333333333,1999
@@ -7362,7 +7377,29 @@ Weixiong Zhang,Washington University - St. Louis,ai,1.0,0.333333333333,2010
 Weixiong Zhang,Washington University - St. Louis,ai,1.0,0.5,2013
 Weixiong Zhang,Washington University - St. Louis,ai,3.0,0.75,2015
 Weixiong Zhang,Washington University - St. Louis,ai,3.0,0.566666666667,2016
-Simon Justin Julier,University College London,robotics,2.0,0.75,2010
+Andrew T. Campbell,Dartmouth College,hci,1.0,0.25,2010
+Andrew T. Campbell,Dartmouth College,hci,1.0,0.142857142857,2011
+Andrew T. Campbell,Dartmouth College,hci,1.0,0.125,2012
+Andrew T. Campbell,Dartmouth College,hci,1.0,0.111111111111,2014
+Andrew T. Campbell,Dartmouth College,hci,2.0,0.4,2015
+Andrew T. Campbell,Dartmouth College,ai,1.0,0.2,2010
+Andrew T. Campbell,Dartmouth College,networks,1.0,0.2,1993
+Andrew T. Campbell,Dartmouth College,networks,1.0,0.25,2000
+Andrew T. Campbell,Dartmouth College,networks,1.0,0.333333333333,2001
+Andrew T. Campbell,Dartmouth College,networks,1.0,0.25,2002
+Andrew T. Campbell,Dartmouth College,networks,2.0,1.0,2004
+Andrew T. Campbell,Dartmouth College,networks,1.0,0.5,2007
+Andrew T. Campbell,Dartmouth College,networks,2.0,0.45,2008
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.5,1998
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.333333333333,2003
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.25,2005
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.2,2006
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.166666666667,2007
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.111111111111,2008
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.2,2009
+Andrew T. Campbell,Dartmouth College,mobile,2.0,0.333333333333,2010
+Andrew T. Campbell,Dartmouth College,mobile,1.0,0.0909090909091,2013
+Andrew T. Campbell,Dartmouth College,mobile,2.0,0.4,2015
 David L. Roberts,North Carolina State University,hci,1.0,0.25,2016
 David L. Roberts,North Carolina State University,ai,1.0,0.2,2006
 David L. Roberts,North Carolina State University,ai,1.0,0.25,2007
@@ -7375,6 +7412,7 @@ John H. Hartman,University of Arizona,networks,1.0,0.5,2008
 John H. Hartman,University of Arizona,security,1.0,0.166666666667,2005
 John H. Hartman,University of Arizona,security,1.0,0.25,2008
 John H. Hartman,University of Arizona,arch,1.0,0.0909090909091,1994
+Robert E. Bodenheimer,Vanderbilt University,robotics,1.0,0.333333333333,2006
 James Miller,University of Kansas,ai,1.0,0.5,1990
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,0.5,2008
 Emerson R. Murphy-Hill,North Carolina State University,softeng,1.0,0.333333333333,2009
@@ -11118,6 +11156,9 @@ Boaz Barak,Harvard University,crypto,1.0,0.2,2014
 Boaz Barak,Harvard University,security,1.0,0.25,1999
 Boaz Barak,Harvard University,security,1.0,0.5,2005
 Boaz Barak,Harvard University,highperf,1.0,0.25,2010
+Julie A. Adams,Vanderbilt University,ai,1.0,0.5,2010
+Julie A. Adams,Vanderbilt University,robotics,1.0,0.5,2004
+Julie A. Adams,Vanderbilt University,robotics,1.0,0.5,2006
 Fred B. Schneider,Cornell University,opsys,1.0,0.5,1995
 Fred B. Schneider,Cornell University,opsys,1.0,0.5,2004
 Fred B. Schneider,Cornell University,opsys,1.0,0.2,2008
@@ -13017,6 +13058,16 @@ Panagiotis Manolios,Northeastern University,logic,2.0,0.833333333333,2015
 Panagiotis Manolios,Northeastern University,softeng,1.0,0.333333333333,2006
 Dave Andersen,Carnegie Mellon University,security,1.0,0.166666666667,1999
 Emily Mower Provost,University of Michigan,ai,1.0,0.25,2015
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,1.0,1983
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.5,1990
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.5,1991
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.5,1993
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.5,1994
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.5,1997
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.333333333333,2000
+Jeremy P. Spinrad,Vanderbilt University,theory,2.0,1.0,2001
+Jeremy P. Spinrad,Vanderbilt University,theory,1.0,0.5,2002
+Jeremy P. Spinrad,Vanderbilt University,theory,2.0,0.75,2003
 Shaddin Dughmi,University of Southern California,theory,1.0,0.25,2008
 Shaddin Dughmi,University of Southern California,theory,1.0,0.5,2009
 Shaddin Dughmi,University of Southern California,theory,2.0,0.611111111111,2010
@@ -13360,6 +13411,7 @@ Alexander V. Veidenbaum,University of California - Irvine,highperf,1.0,0.5,1992
 Alexander V. Veidenbaum,University of California - Irvine,highperf,1.0,0.5,1994
 Alexander V. Veidenbaum,University of California - Irvine,highperf,1.0,0.2,2005
 Alexander V. Veidenbaum,University of California - Irvine,highperf,1.0,0.25,2009
+Maithilee Kunda,Vanderbilt University,ai,1.0,0.333333333333,2011
 Joseph L. Zachary,University of Utah,proglang,1.0,0.5,1989
 Michael J. O'Donnell,University of Chicago,proglang,1.0,0.5,1979
 Michael J. O'Donnell,University of Chicago,proglang,1.0,0.5,1984
@@ -15370,6 +15422,7 @@ Nagiza F. Samatova,North Carolina State University,highperf,1.0,0.166666666667,2
 Nagiza F. Samatova,North Carolina State University,highperf,1.0,0.0769230769231,2011
 Nagiza F. Samatova,North Carolina State University,highperf,2.0,0.194444444444,2012
 Nagiza F. Samatova,North Carolina State University,highperf,1.0,0.125,2013
+Bennett A. Landman,Vanderbilt University,vision,1.0,0.333333333333,2007
 Ian Goldberg,University of Waterloo,mobile,1.0,0.333333333333,2001
 Ian Goldberg,University of Waterloo,security,1.0,0.25,1996
 Ian Goldberg,University of Waterloo,security,1.0,1.0,2007
@@ -15983,6 +16036,12 @@ David B. Leake,Indiana University,ai,1.0,1.0,1993
 David B. Leake,Indiana University,ai,1.0,0.5,1995
 David B. Leake,Indiana University,ai,1.0,0.333333333333,1997
 David B. Leake,Indiana University,ai,1.0,0.5,2011
+Gregory R. Andrews,University of Arizona,opsys,1.0,0.333333333333,1994
+Gregory R. Andrews,University of Arizona,proglang,1.0,0.5,1979
+Gregory R. Andrews,University of Arizona,security,1.0,0.333333333333,2007
+Gregory R. Andrews,University of Arizona,softeng,1.0,0.333333333333,1981
+Gregory R. Andrews,University of Arizona,softeng,1.0,0.333333333333,2003
+Gregory R. Andrews,University of Arizona,highperf,1.0,0.5,1996
 Thomas Shrimpton,University of Florida,crypto,2.0,0.666666666667,2002
 Thomas Shrimpton,University of Florida,crypto,1.0,0.333333333333,2005
 Thomas Shrimpton,University of Florida,crypto,1.0,0.5,2006
@@ -16247,7 +16306,13 @@ Ruslan Salakhutdinov,Carnegie Mellon University,vision,1.0,0.333333333333,2011
 Ruslan Salakhutdinov,Carnegie Mellon University,vision,1.0,0.333333333333,2012
 Ruslan Salakhutdinov,Carnegie Mellon University,vision,3.0,0.642857142857,2015
 Renate Scheidler,University of Calgary,crypto,1.0,0.333333333333,1990
-Ras Bodík,University of Washington,hci,1.0,0.333333333333,2014
+Ákos Lédeczi,Vanderbilt University,mobile,2.0,0.361111111111,2004
+Ákos Lédeczi,Vanderbilt University,mobile,1.0,0.125,2005
+Ákos Lédeczi,Vanderbilt University,mobile,3.0,0.658333333333,2007
+Ákos Lédeczi,Vanderbilt University,mobile,1.0,0.333333333333,2011
+Ákos Lédeczi,Vanderbilt University,mobile,1.0,0.2,2013
+Ákos Lédeczi,Vanderbilt University,mobile,1.0,0.2,2014
+Ákos Lédeczi,Vanderbilt University,robotics,1.0,0.166666666667,2015
 Claudia Eckert,TU Munich,mlmining,1.0,0.166666666667,2015
 Claudia Eckert,TU Munich,ai,1.0,0.5,2013
 Claudia Eckert,TU Munich,security,1.0,0.142857142857,2014
@@ -21055,6 +21120,7 @@ Alec Jacobson,University of Toronto,graphics,1.0,0.333333333333,2013
 Alec Jacobson,University of Toronto,graphics,3.0,1.29166666667,2014
 Alec Jacobson,University of Toronto,graphics,2.0,0.583333333333,2015
 Alec Jacobson,University of Toronto,graphics,3.0,1.16666666667,2016
+Jules White,Vanderbilt University,softeng,1.0,0.25,2015
 Sanjeev Setia,George Mason University,metrics,1.0,0.333333333333,1993
 Sanjeev Setia,George Mason University,metrics,1.0,0.5,1999
 Sanjeev Setia,George Mason University,networks,1.0,0.5,2008
@@ -22061,6 +22127,7 @@ Christoph Bregler,New York University,vision,1.0,0.333333333333,2009
 Christoph Bregler,New York University,vision,1.0,0.25,2010
 Christoph Bregler,New York University,vision,1.0,0.25,2011
 Christoph Bregler,New York University,vision,2.0,0.311111111111,2015
+Benjamin Marlin,University of Massachusetts - Amherst,vision,1.0,0.333333333333,2014
 Stefan Haar,Ecole Normale Superieure de Cachan,database,1.0,0.25,2005
 Henrik Christensen,Georgia Institute of Technology,robotics,1.0,0.333333333333,2016
 Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,1.0,0.25,2008
@@ -23182,6 +23249,8 @@ Ryan Williams,Stanford University,database,1.0,0.5,2004
 Ryan Williams,Stanford University,database,1.0,0.333333333333,2011
 Ryan Williams,Stanford University,database,1.0,0.25,2015
 Ryan Williams,Stanford University,logic,1.0,1.0,2014
+Sune Darkner,DIKU,vision,1.0,0.25,2007
+Sune Darkner,DIKU,vision,1.0,0.25,2012
 Michael I. Schwartzbach,Aarhus University,theory,1.0,0.333333333333,1992
 Michael I. Schwartzbach,Aarhus University,proglang,1.0,0.5,1991
 Michael I. Schwartzbach,Aarhus University,proglang,2.0,0.833333333333,1993
@@ -26100,6 +26169,8 @@ Val Tannen,University of Pennsylvania,logic,1.0,0.5,1987
 Val Tannen,University of Pennsylvania,logic,1.0,1.0,1988
 Val Tannen,University of Pennsylvania,logic,1.0,0.25,1989
 Val Tannen,University of Pennsylvania,logic,1.0,0.333333333333,1993
+Douglas Fisher,Vanderbilt University,mlmining,1.0,1.0,1995
+Douglas Fisher,Vanderbilt University,ai,1.0,0.5,1995
 Marc Peter Deisenroth,Imperial College London,mlmining,1.0,0.333333333333,2009
 Marc Peter Deisenroth,Imperial College London,mlmining,1.0,0.5,2011
 Marc Peter Deisenroth,Imperial College London,mlmining,1.0,0.5,2012
@@ -27543,29 +27614,7 @@ Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,1.08333333333,20
 Russ Tedrake,Massachusetts Institute of Technology,robotics,1.0,0.333333333333,2014
 Russ Tedrake,Massachusetts Institute of Technology,robotics,3.0,1.33333333333,2015
 Russ Tedrake,Massachusetts Institute of Technology,robotics,2.0,0.583333333333,2016
-Andrew T. Campbell,Dartmouth College,hci,1.0,0.25,2010
-Andrew T. Campbell,Dartmouth College,hci,1.0,0.142857142857,2011
-Andrew T. Campbell,Dartmouth College,hci,1.0,0.125,2012
-Andrew T. Campbell,Dartmouth College,hci,1.0,0.111111111111,2014
-Andrew T. Campbell,Dartmouth College,hci,2.0,0.4,2015
-Andrew T. Campbell,Dartmouth College,ai,1.0,0.2,2010
-Andrew T. Campbell,Dartmouth College,networks,1.0,0.2,1993
-Andrew T. Campbell,Dartmouth College,networks,1.0,0.25,2000
-Andrew T. Campbell,Dartmouth College,networks,1.0,0.333333333333,2001
-Andrew T. Campbell,Dartmouth College,networks,1.0,0.25,2002
-Andrew T. Campbell,Dartmouth College,networks,2.0,1.0,2004
-Andrew T. Campbell,Dartmouth College,networks,1.0,0.5,2007
-Andrew T. Campbell,Dartmouth College,networks,2.0,0.45,2008
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.5,1998
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.333333333333,2003
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.25,2005
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.2,2006
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.166666666667,2007
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.111111111111,2008
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.2,2009
-Andrew T. Campbell,Dartmouth College,mobile,2.0,0.333333333333,2010
-Andrew T. Campbell,Dartmouth College,mobile,1.0,0.0909090909091,2013
-Andrew T. Campbell,Dartmouth College,mobile,2.0,0.4,2015
+Simon Justin Julier,University College London,robotics,2.0,0.75,2010
 Anupam Datta,Carnegie Mellon University,theory,1.0,0.25,2012
 Anupam Datta,Carnegie Mellon University,ai,1.0,0.2,2013
 Anupam Datta,Carnegie Mellon University,ai,3.0,0.7,2015
@@ -29394,7 +29443,10 @@ Anna Lysyanskaya,Brown University,security,1.0,0.333333333333,2007
 Anna Lysyanskaya,Brown University,security,1.0,0.2,2010
 Anna Lysyanskaya,Brown University,security,1.0,0.333333333333,2012
 Anna Lysyanskaya,Brown University,security,1.0,0.5,2013
-Benjamin Marlin,University of Massachusetts - Amherst,vision,1.0,0.333333333333,2014
+Aniruddha S. Gokhale,Vanderbilt University,opsys,1.0,0.333333333333,2006
+Aniruddha S. Gokhale,Vanderbilt University,networks,1.0,0.5,1996
+Aniruddha S. Gokhale,Vanderbilt University,networks,1.0,0.5,1999
+Aniruddha S. Gokhale,Vanderbilt University,softeng,1.0,0.142857142857,2005
 David A. Forsyth,University of Illinois at Urbana-Champaign,graphics,1.0,0.5,2000
 David A. Forsyth,University of Illinois at Urbana-Champaign,graphics,2.0,1.0,2002
 David A. Forsyth,University of Illinois at Urbana-Champaign,graphics,1.0,0.333333333333,2003
@@ -30786,6 +30838,12 @@ Kun Sun,College of William and Mary,security,2.0,0.45,2015
 Kun Sun,College of William and Mary,vision,1.0,0.5,2014
 Joe Sventek,University of Oregon,hci,1.0,0.125,2012
 Joe Sventek,University of Oregon,proglang,1.0,0.5,2010
+Yevgeniy Vorobeychik,Vanderbilt University,mlmining,1.0,0.5,2014
+Yevgeniy Vorobeychik,Vanderbilt University,ai,1.0,0.333333333333,2005
+Yevgeniy Vorobeychik,Vanderbilt University,ai,1.0,0.25,2009
+Yevgeniy Vorobeychik,Vanderbilt University,ai,2.0,0.642857142857,2012
+Yevgeniy Vorobeychik,Vanderbilt University,ai,4.0,1.66666666667,2015
+Yevgeniy Vorobeychik,Vanderbilt University,ai,5.0,2.41666666667,2016
 Anil Vullikanti,Virginia Tech,mlmining,1.0,0.0333333333333,2014
 Anil Vullikanti,Virginia Tech,ai,2.0,1.0,2016
 Thomas P. Hayes,University of New Mexico,theory,1.0,0.333333333333,1998
@@ -32548,8 +32606,11 @@ Alessio Lomuscio,Imperial College London,ai,3.0,1.5,2013
 Alessio Lomuscio,Imperial College London,ai,4.0,1.66666666667,2015
 Alessio Lomuscio,Imperial College London,logic,1.0,0.333333333333,2009
 Alessio Lomuscio,Imperial College London,logic,1.0,0.25,2014
-Sune Darkner,DIKU,vision,1.0,0.25,2007
-Sune Darkner,DIKU,vision,1.0,0.25,2012
+Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.333333333333,2009
+Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.25,2011
+Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.25,2014
+Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.142857142857,2015
+Matthew A. Hammer,University of Colorado Boulder,security,1.0,0.333333333333,2014
 Jiasi Chen,University of California - Riverside,networks,2.0,0.416666666667,2015
 Jiasi Chen,University of California - Riverside,mobile,1.0,0.2,2013
 Joel I. Seiferas,University of Rochester,theory,1.0,1.0,1974
@@ -32745,12 +32806,12 @@ Michael Gleicher,University of Wisconsin - Madison,vision,1.0,1.0,1997
 Michael Gleicher,University of Wisconsin - Madison,vision,1.0,0.5,2008
 Michael Gleicher,University of Wisconsin - Madison,vision,1.0,0.5,2009
 Michael Gleicher,University of Wisconsin - Madison,vision,1.0,0.25,2010
-Padma Raghavan,Pennsylvania State University,highperf,1.0,0.333333333333,2002
-Padma Raghavan,Pennsylvania State University,highperf,2.0,0.533333333333,2006
-Padma Raghavan,Pennsylvania State University,highperf,2.0,0.583333333333,2011
-Padma Raghavan,Pennsylvania State University,highperf,2.0,0.666666666667,2012
-Padma Raghavan,Pennsylvania State University,highperf,1.0,0.5,2013
-Padma Raghavan,Pennsylvania State University,highperf,1.0,0.166666666667,2015
+Padma Raghavan,Vanderbilt University,highperf,1.0,0.333333333333,2002
+Padma Raghavan,Vanderbilt University,highperf,2.0,0.533333333333,2006
+Padma Raghavan,Vanderbilt University,highperf,2.0,0.583333333333,2011
+Padma Raghavan,Vanderbilt University,highperf,2.0,0.666666666667,2012
+Padma Raghavan,Vanderbilt University,highperf,1.0,0.5,2013
+Padma Raghavan,Vanderbilt University,highperf,1.0,0.166666666667,2015
 Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.5,2001
 Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.166666666667,2003
 Srinivasan Parthasarathy,Ohio State University,mlmining,2.0,0.533333333333,2005
@@ -38731,6 +38792,7 @@ David Baelde,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2012
 Seth Cooper,Northeastern University,graphics,1.0,0.333333333333,2006
 Seth Cooper,Northeastern University,graphics,1.0,0.333333333333,2007
 Seth Cooper,Northeastern University,hci,1.0,0.125,2012
+Ras Bodík,University of Washington,hci,1.0,0.333333333333,2014
 Renée J. Miller,University of Toronto,database,1.0,0.333333333333,1993
 Renée J. Miller,University of Toronto,database,1.0,0.5,1997
 Renée J. Miller,University of Toronto,database,1.0,1.0,1998
