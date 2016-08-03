@@ -11,7 +11,7 @@ for name in facultydict:
     if (name in reversealiasdict):
         print reversealiasdict[name].encode('utf8') + " , " + facultydict1[name].encode('utf8')
         print name.encode('utf8') + " , " + facultydict1[name].encode('utf8')
-    if (name in aliasdict):
+    elif (name in aliasdict):
         print name.encode('utf8') + " , " + facultydict1[name].encode('utf8')
         print aliasdict[name].encode('utf8') + " , " + facultydict1[name].encode('utf8')
     else:
