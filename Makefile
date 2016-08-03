@@ -18,7 +18,7 @@ update-dblp:
 	@echo "Done."
 
 fix-affiliations:
-	python util/fix-affiliations.py > /tmp/f.csv
+	python util/fix-affiliations.py | sort -k2 -t"," | uniq  >  /tmp/f.csv
 	mv /tmp/f.csv faculty-affiliations.csv
 
 faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py util/csrankings.py
