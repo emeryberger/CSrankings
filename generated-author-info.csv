@@ -5746,23 +5746,28 @@ Brian D. Noble,University of Michigan,mobile,2.0,0.45,2006
 Brian D. Noble,University of Michigan,mobile,1.0,0.5,2008
 Brian D. Noble,University of Michigan,web,1.0,0.333333333333,2010
 Brian D. Noble,University of Michigan,highperf,1.0,0.333333333333,2005
-Martin Odersky,EPFL,hci,1.0,0.333333333333,1991
-Martin Odersky,EPFL,mlmining,1.0,0.111111111111,2011
-Martin Odersky,EPFL,database,1.0,0.333333333333,1991
-Martin Odersky,EPFL,proglang,1.0,1.0,1991
-Martin Odersky,EPFL,proglang,1.0,0.333333333333,1993
-Martin Odersky,EPFL,proglang,1.0,1.0,1994
-Martin Odersky,EPFL,proglang,1.0,0.2,1995
-Martin Odersky,EPFL,proglang,1.0,0.5,1996
-Martin Odersky,EPFL,proglang,1.0,0.5,1997
-Martin Odersky,EPFL,proglang,1.0,0.25,1998
-Martin Odersky,EPFL,proglang,1.0,0.333333333333,2001
-Martin Odersky,EPFL,proglang,1.0,0.5,2005
-Martin Odersky,EPFL,proglang,1.0,0.333333333333,2008
-Martin Odersky,EPFL,proglang,2.0,0.458333333333,2010
-Martin Odersky,EPFL,proglang,3.0,0.694444444444,2013
-Martin Odersky,EPFL,proglang,3.0,0.866666666667,2014
-Martin Odersky,EPFL,proglang,1.0,0.25,2015
+Hao Jiang,Boston College,metrics,1.0,0.5,2005
+Hao Jiang,Boston College,hci,1.0,0.2,2009
+Hao Jiang,Boston College,ai,1.0,0.25,2007
+Hao Jiang,Boston College,ai,1.0,0.25,2008
+Hao Jiang,Boston College,ai,1.0,0.333333333333,2011
+Hao Jiang,Boston College,networks,1.0,0.333333333333,2005
+Hao Jiang,Boston College,networks,1.0,0.166666666667,2013
+Hao Jiang,Boston College,robotics,1.0,0.25,2005
+Hao Jiang,Boston College,robotics,1.0,0.333333333333,2006
+Hao Jiang,Boston College,robotics,1.0,0.1,2013
+Hao Jiang,Boston College,robotics,2.0,0.267857142857,2014
+Hao Jiang,Boston College,robotics,4.0,0.585714285714,2015
+Hao Jiang,Boston College,vision,1.0,0.333333333333,2004
+Hao Jiang,Boston College,vision,2.0,0.533333333333,2006
+Hao Jiang,Boston College,vision,1.0,0.333333333333,2007
+Hao Jiang,Boston College,vision,2.0,1.0,2008
+Hao Jiang,Boston College,vision,2.0,1.5,2009
+Hao Jiang,Boston College,vision,1.0,0.333333333333,2011
+Hao Jiang,Boston College,vision,3.0,2.25,2012
+Hao Jiang,Boston College,vision,1.0,0.5,2013
+Hao Jiang,Boston College,vision,1.0,1.0,2014
+Hao Jiang,Boston College,vision,1.0,1.0,2015
 Eleni Stroulia,University of Alberta,mlmining,1.0,0.333333333333,2002
 Eleni Stroulia,University of Alberta,robotics,1.0,0.333333333333,1997
 Eleni Stroulia,University of Alberta,softeng,1.0,0.5,2005
@@ -16288,6 +16293,7 @@ Johanna D. Moore,University of Edinburgh,ai,1.0,0.5,1990
 Johanna D. Moore,University of Edinburgh,ai,1.0,0.2,1995
 Johanna D. Moore,University of Edinburgh,ai,1.0,0.5,2001
 Johanna D. Moore,University of Edinburgh,opsys,1.0,0.333333333333,1983
+Michael P. Friedlander,University of British Columbia,mlmining,1.0,0.2,2015
 Hongwei Xi,Boston University,proglang,1.0,0.5,1998
 Hongwei Xi,Boston University,proglang,1.0,0.5,1999
 Hongwei Xi,Boston University,proglang,1.0,0.333333333333,2003
@@ -25999,7 +26005,8 @@ Henry M. Levy,University of Washington,arch,3.0,0.434523809524,1996
 Henry M. Levy,University of Washington,arch,1.0,0.2,1997
 Henry M. Levy,University of Washington,arch,1.0,0.166666666667,1998
 Henry M. Levy,University of Washington,arch,1.0,0.333333333333,2000
-Michael P. Friedlander,University of British Columbia,mlmining,1.0,0.2,2015
+Robert Muller,Boston College,proglang,1.0,0.166666666667,1993
+Robert Muller,Boston College,proglang,1.0,1.0,1994
 Peter Scheuermann,Northwestern University,mlmining,1.0,0.333333333333,2002
 Peter Scheuermann,Northwestern University,mlmining,1.0,0.2,2003
 Peter Scheuermann,Northwestern University,opsys,1.0,0.25,1999
@@ -28944,6 +28951,9 @@ George Candea,EPFL,security,1.0,0.25,2015
 George Candea,EPFL,arch,1.0,0.333333333333,2011
 George Candea,EPFL,arch,1.0,0.333333333333,2012
 George Candea,EPFL,arch,2.0,0.666666666667,2014
+Howard Straubing,Boston College,logic,1.0,0.333333333333,2006
+Howard Straubing,Boston College,logic,1.0,0.333333333333,2008
+Howard Straubing,Boston College,logic,1.0,0.333333333333,2009
 Adam Klivans,University of Texas - Austin,theory,2.0,1.0,1999
 Adam Klivans,University of Texas - Austin,theory,1.0,0.5,2001
 Adam Klivans,University of Texas - Austin,theory,2.0,0.666666666667,2002
@@ -29502,6 +29512,10 @@ Martin Strauss,University of Michigan,database,1.0,0.25,2002
 Martin Strauss,University of Michigan,database,1.0,0.5,2003
 Martin Strauss,University of Michigan,crypto,1.0,0.333333333333,1998
 Martin Strauss,University of Michigan,security,1.0,0.333333333333,1999
+José Bento,Boston College,mlmining,2.0,0.666666666667,2010
+José Bento,Boston College,mlmining,1.0,0.25,2013
+José Bento,Boston College,mlmining,1.0,0.25,2014
+José Bento,Boston College,ai,2.0,0.45,2015
 Keith Winstein,Stanford University,opsys,1.0,0.5,2012
 Keith Winstein,Stanford University,opsys,1.0,0.142857142857,2015
 Keith Winstein,Stanford University,networks,2.0,0.833333333333,2013
@@ -33898,6 +33912,11 @@ Vineet Bafna,University of California - San Diego,theory,1.0,0.5,1993
 Vineet Bafna,University of California - San Diego,theory,1.0,0.5,1995
 Vineet Bafna,University of California - San Diego,theory,1.0,0.166666666667,1996
 Vineet Bafna,University of California - San Diego,theory,1.0,0.166666666667,1998
+Edward Sciore,Boston College,theory,1.0,0.5,1978
+Edward Sciore,Boston College,database,1.0,1.0,1979
+Edward Sciore,Boston College,database,1.0,1.0,1981
+Edward Sciore,Boston College,database,1.0,1.0,1983
+Edward Sciore,Boston College,database,1.0,0.5,1988
 Armando Solar-Lezama,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
 Armando Solar-Lezama,Massachusetts Institute of Technology,opsys,1.0,0.25,2013
 Armando Solar-Lezama,Massachusetts Institute of Technology,database,1.0,0.333333333333,2014
@@ -34785,6 +34804,23 @@ Eran Halperin,Tel Aviv University,theory,2.0,0.833333333333,2001
 Eran Halperin,Tel Aviv University,theory,2.0,0.583333333333,2002
 Eran Halperin,Tel Aviv University,theory,3.0,0.95,2003
 Eran Halperin,Tel Aviv University,theory,1.0,0.25,2007
+Martin Odersky,EPFL,hci,1.0,0.333333333333,1991
+Martin Odersky,EPFL,mlmining,1.0,0.111111111111,2011
+Martin Odersky,EPFL,database,1.0,0.333333333333,1991
+Martin Odersky,EPFL,proglang,1.0,1.0,1991
+Martin Odersky,EPFL,proglang,1.0,0.333333333333,1993
+Martin Odersky,EPFL,proglang,1.0,1.0,1994
+Martin Odersky,EPFL,proglang,1.0,0.2,1995
+Martin Odersky,EPFL,proglang,1.0,0.5,1996
+Martin Odersky,EPFL,proglang,1.0,0.5,1997
+Martin Odersky,EPFL,proglang,1.0,0.25,1998
+Martin Odersky,EPFL,proglang,1.0,0.333333333333,2001
+Martin Odersky,EPFL,proglang,1.0,0.5,2005
+Martin Odersky,EPFL,proglang,1.0,0.333333333333,2008
+Martin Odersky,EPFL,proglang,2.0,0.458333333333,2010
+Martin Odersky,EPFL,proglang,3.0,0.694444444444,2013
+Martin Odersky,EPFL,proglang,3.0,0.866666666667,2014
+Martin Odersky,EPFL,proglang,1.0,0.25,2015
 Raymond J. Mooney,University of Texas - Austin,nlp,1.0,0.5,1997
 Raymond J. Mooney,University of Texas - Austin,nlp,1.0,0.5,2004
 Raymond J. Mooney,University of Texas - Austin,nlp,3.0,1.5,2006
