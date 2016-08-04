@@ -1116,6 +1116,7 @@ Angela Demke Brown,University of Toronto,opsys,1.0,0.333333333333,2014
 Angela Demke Brown,University of Toronto,opsys,1.0,0.333333333333,2015
 Angela Demke Brown,University of Toronto,networks,1.0,0.25,2009
 Angela Demke Brown,University of Toronto,arch,1.0,0.333333333333,2012
+Saad Biaz,Auburn University,mobile,1.0,0.25,2006
 Daniela Rus,Massachusetts Institute of Technology,theory,1.0,0.333333333333,1999
 Daniela Rus,Massachusetts Institute of Technology,mlmining,1.0,0.2,2014
 Daniela Rus,Massachusetts Institute of Technology,ai,1.0,0.25,2012
@@ -3745,7 +3746,7 @@ Aaron Roth,University of Pennsylvania,ai,1.0,0.333333333333,2016
 Aaron Roth,University of Pennsylvania,proglang,1.0,0.166666666667,2015
 Stacy Patterson,Rensselaer Polytechnic Institute,database,1.0,0.2,2012
 Stacy Patterson,Rensselaer Polytechnic Institute,robotics,1.0,0.333333333333,2016
-Neelam Soundarajan,Ohio State University,softeng,1.0,0.5,2004
+Richard Chapman,Auburn University,proglang,1.0,0.5,1990
 Ryan P. Adams,Harvard University,mlmining,4.0,1.2,2012
 Ryan P. Adams,Harvard University,mlmining,6.0,1.91666666667,2014
 Ryan P. Adams,Harvard University,mlmining,9.0,2.20396825397,2015
@@ -18842,6 +18843,21 @@ John D. Lafferty,University of Chicago,robotics,1.0,0.333333333333,2007
 John D. Lafferty,University of Chicago,arch,1.0,0.25,2015
 John D. Lafferty,University of Chicago,vision,1.0,0.333333333333,2002
 John D. Lafferty,University of Chicago,vision,1.0,0.333333333333,2011
+Julia Chuzhoy,University of Chicago,theory,1.0,0.333333333333,2001
+Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2002
+Julia Chuzhoy,University of Chicago,theory,3.0,1.25,2004
+Julia Chuzhoy,University of Chicago,theory,4.0,1.25,2005
+Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2006
+Julia Chuzhoy,University of Chicago,theory,2.0,0.75,2007
+Julia Chuzhoy,University of Chicago,theory,2.0,0.833333333333,2008
+Julia Chuzhoy,University of Chicago,theory,2.0,0.833333333333,2009
+Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2010
+Julia Chuzhoy,University of Chicago,theory,2.0,1.33333333333,2011
+Julia Chuzhoy,University of Chicago,theory,5.0,3.0,2012
+Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2013
+Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2014
+Julia Chuzhoy,University of Chicago,theory,3.0,2.5,2015
+Julia Chuzhoy,University of Chicago,theory,1.0,0.333333333333,2016
 Bastian Leibe,RWTH Aachen,robotics,1.0,0.2,2008
 Bastian Leibe,RWTH Aachen,robotics,1.0,0.25,2009
 Bastian Leibe,RWTH Aachen,robotics,1.0,0.333333333333,2011
@@ -24830,6 +24846,7 @@ Xu Liu,College of William and Mary,arch,1.0,0.5,2016
 Xu Liu,College of William and Mary,highperf,2.0,0.833333333333,2013
 Xu Liu,College of William and Mary,highperf,1.0,0.5,2015
 Xu Liu,College of William and Mary,highperf,1.0,0.333333333333,2016
+Neelam Soundarajan,Ohio State University,softeng,1.0,0.5,2004
 A. J. Field,Imperial College London,metrics,1.0,0.5,1986
 David Johnson,University of Kansas,metrics,1.0,0.2,2011
 David Johnson,University of Kansas,nlp,1.0,0.333333333333,2001
@@ -26699,8 +26716,9 @@ Ivan Beschastnikh,University of British Columbia,softeng,1.0,0.2,2013
 Ivan Beschastnikh,University of British Columbia,softeng,2.0,0.392857142857,2014
 Ivan Beschastnikh,University of British Columbia,softeng,2.0,0.583333333333,2015
 Ivan Beschastnikh,University of British Columbia,highperf,1.0,0.5,2006
-David J. Pym,University College London,logic,1.0,1.0,1999
-David J. Pym,University College London,logic,1.0,0.5,2004
+Jeffrey Overbey,Auburn University,proglang,1.0,0.1,2009
+Jeffrey Overbey,Auburn University,softeng,1.0,0.166666666667,2009
+Jeffrey Overbey,Auburn University,softeng,1.0,0.25,2016
 Thomas Schmid,University of Utah,metrics,1.0,0.2,2008
 Thomas Schmid,University of Utah,hci,1.0,0.25,2009
 Thomas Schmid,University of Utah,mobile,1.0,0.2,2008
@@ -29267,6 +29285,7 @@ Brian Neil Levine,University of Massachusetts - Amherst,security,1.0,0.333333333
 Brian Neil Levine,University of Massachusetts - Amherst,security,1.0,0.5,2006
 Brian Neil Levine,University of Massachusetts - Amherst,security,2.0,0.666666666667,2011
 Peter G. Jeavons,University of Oxford,ai,2.0,0.5,2015
+Anthony Skjellum,Auburn University,highperf,1.0,1.0,1993
 Shlomo Zilberstein,University of Massachusetts - Amherst,mlmining,1.0,0.333333333333,1996
 Shlomo Zilberstein,University of Massachusetts - Amherst,mlmining,3.0,1.5,2009
 Shlomo Zilberstein,University of Massachusetts - Amherst,mlmining,2.0,0.75,2010
@@ -32812,6 +32831,9 @@ Jared Saia,University of New Mexico,theory,1.0,0.2,2008
 Jared Saia,University of New Mexico,theory,1.0,0.5,2013
 Jared Saia,University of New Mexico,theory,1.0,0.5,2014
 Jared Saia,University of New Mexico,mlmining,1.0,0.5,2006
+Jeffrey L. Overbey,Auburn University,proglang,1.0,0.5,2009
+Jeffrey L. Overbey,Auburn University,softeng,1.0,0.5,2011
+Jeffrey L. Overbey,Auburn University,softeng,1.0,0.333333333333,2014
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.25,1998
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.333333333333,1999
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.333333333333,2002
@@ -36925,6 +36947,8 @@ Anup Basu,University of Alberta,robotics,1.0,0.333333333333,2005
 Anup Basu,University of Alberta,vision,1.0,1.0,1993
 Anup Basu,University of Alberta,vision,1.0,0.5,2007
 Anup Basu,University of Alberta,vision,1.0,0.25,2008
+David J. Pym,University College London,logic,1.0,1.0,1999
+David J. Pym,University College London,logic,1.0,0.5,2004
 Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,0.333333333333,1989
 Daphna Weinshall,Hebrew University of Jerusalem,mlmining,1.0,1.0,1990
 Daphna Weinshall,Hebrew University of Jerusalem,mlmining,3.0,1.16666666667,1998
@@ -37283,6 +37307,7 @@ Dongyan Xu,Purdue University,highperf,1.0,0.25,2000
 Dongyan Xu,Purdue University,highperf,1.0,0.5,2003
 Dongyan Xu,Purdue University,highperf,1.0,0.25,2010
 Dongyan Xu,Purdue University,highperf,1.0,0.166666666667,2012
+Cheryl D. Seals,Auburn University,hci,1.0,0.5,2001
 Jinze Liu,University of Kentucky,mlmining,1.0,0.333333333333,2004
 Jinze Liu,University of Kentucky,mlmining,1.0,0.2,2006
 Jinze Liu,University of Kentucky,vision,1.0,0.25,2009
@@ -37594,21 +37619,8 @@ Donald F. Towsley,University of Massachusetts - Amherst,security,1.0,0.333333333
 Donald F. Towsley,University of Massachusetts - Amherst,security,1.0,0.25,2003
 Donald F. Towsley,University of Massachusetts - Amherst,highperf,1.0,0.25,1993
 Donald F. Towsley,University of Massachusetts - Amherst,highperf,1.0,0.333333333333,1995
-Julia Chuzhoy,University of Chicago,theory,1.0,0.333333333333,2001
-Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2002
-Julia Chuzhoy,University of Chicago,theory,3.0,1.25,2004
-Julia Chuzhoy,University of Chicago,theory,4.0,1.25,2005
-Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2006
-Julia Chuzhoy,University of Chicago,theory,2.0,0.75,2007
-Julia Chuzhoy,University of Chicago,theory,2.0,0.833333333333,2008
-Julia Chuzhoy,University of Chicago,theory,2.0,0.833333333333,2009
-Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2010
-Julia Chuzhoy,University of Chicago,theory,2.0,1.33333333333,2011
-Julia Chuzhoy,University of Chicago,theory,5.0,3.0,2012
-Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2013
-Julia Chuzhoy,University of Chicago,theory,1.0,0.5,2014
-Julia Chuzhoy,University of Chicago,theory,3.0,2.5,2015
-Julia Chuzhoy,University of Chicago,theory,1.0,0.333333333333,2016
+N. Hari Narayanan,Auburn University,ai,1.0,0.5,1991
+N. Hari Narayanan,Auburn University,ai,1.0,0.333333333333,1994
 Hongseok Yang,University of Oxford,proglang,1.0,0.333333333333,2004
 Hongseok Yang,University of Oxford,proglang,1.0,0.25,2009
 Hongseok Yang,University of Oxford,proglang,1.0,0.166666666667,2011
@@ -40931,6 +40943,9 @@ William R. Harris,Georgia Institute of Technology,logic,1.0,0.333333333333,2012
 William R. Harris,Georgia Institute of Technology,logic,1.0,0.25,2013
 William R. Harris,Georgia Institute of Technology,security,1.0,0.333333333333,2010
 William R. Harris,Georgia Institute of Technology,security,1.0,0.2,2013
+Wei-Shinn Ku,Auburn University,database,1.0,0.25,2010
+Wei-Shinn Ku,Auburn University,database,1.0,0.25,2011
+Wei-Shinn Ku,Auburn University,database,1.0,0.166666666667,2016
 Elham Kashefi,University of Edinburgh,nlp,1.0,0.333333333333,2013
 Elham Kashefi,University of Edinburgh,theory,1.0,0.333333333333,2009
 Leana Golubchik,University of Southern California,metrics,1.0,0.333333333333,1995
