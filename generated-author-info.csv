@@ -832,6 +832,15 @@ Iain Murray,University of Edinburgh,mlmining,1.0,0.333333333333,2013
 Iain Murray,University of Edinburgh,mlmining,1.0,0.333333333333,2014
 Iain Murray,University of Edinburgh,mlmining,1.0,0.25,2015
 Arya Mazumdar,University of Massachusetts - Amherst,mlmining,2.0,0.833333333333,2015
+Qing Cao,University of Tennessee,networks,2.0,0.266666666667,2006
+Qing Cao,University of Tennessee,networks,1.0,0.25,2007
+Qing Cao,University of Tennessee,networks,1.0,0.25,2011
+Qing Cao,University of Tennessee,networks,1.0,0.2,2012
+Qing Cao,University of Tennessee,networks,2.0,0.45,2014
+Qing Cao,University of Tennessee,mobile,1.0,0.0909090909091,2005
+Qing Cao,University of Tennessee,mobile,1.0,0.0909090909091,2007
+Qing Cao,University of Tennessee,mobile,1.0,0.2,2008
+Qing Cao,University of Tennessee,highperf,1.0,0.166666666667,2015
 Richard Zanibbi,Rochester Institute of Technology,web,1.0,0.25,2016
 David Wagner,University of California - Berkeley,hci,1.0,0.142857142857,2014
 David Wagner,University of California - Berkeley,hci,1.0,0.166666666667,2015
@@ -1893,6 +1902,9 @@ Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2002
 Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2007
 Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2016
 Cartic Ramakrishnan,Stony Brook University,web,1.0,0.111111111111,2006
+Jack J. Dongarra,University of Tennessee,highperf,1.0,0.25,1997
+Jack J. Dongarra,University of Tennessee,highperf,1.0,0.5,1998
+Jack J. Dongarra,University of Tennessee,highperf,1.0,0.25,2013
 Michael R. Brent,Washington University - St. Louis,nlp,1.0,1.0,1990
 Michael R. Brent,Washington University - St. Louis,nlp,1.0,1.0,1991
 Michael R. Brent,Washington University - St. Louis,nlp,2.0,1.0,2001
@@ -1915,22 +1927,16 @@ Hyesoon Kim,Georgia Institute of Technology,highperf,1.0,0.2,2015
 Nancy A. Day,University of Waterloo,softeng,1.0,0.333333333333,2002
 Nancy A. Day,University of Waterloo,softeng,1.0,0.5,2014
 Joseph S. Sventek,University of Oregon,networks,1.0,0.5,2005
-Adam Wierman,California Institute of Technology,metrics,1.0,0.5,2003
-Adam Wierman,California Institute of Technology,metrics,2.0,0.833333333333,2005
-Adam Wierman,California Institute of Technology,metrics,1.0,0.25,2006
-Adam Wierman,California Institute of Technology,metrics,1.0,0.5,2008
-Adam Wierman,California Institute of Technology,metrics,1.0,0.333333333333,2010
-Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2011
-Adam Wierman,California Institute of Technology,metrics,1.0,0.125,2012
-Adam Wierman,California Institute of Technology,metrics,2.0,0.583333333333,2014
-Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2015
-Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2016
-Adam Wierman,California Institute of Technology,networks,1.0,0.333333333333,2006
-Adam Wierman,California Institute of Technology,networks,2.0,0.666666666667,2009
-Adam Wierman,California Institute of Technology,networks,1.0,0.25,2011
-Adam Wierman,California Institute of Technology,networks,1.0,0.333333333333,2013
-Adam Wierman,California Institute of Technology,networks,1.0,0.166666666667,2014
-Adam Wierman,California Institute of Technology,networks,1.0,0.25,2015
+Mongi A. Abidi,University of Tennessee,robotics,1.0,0.333333333333,2002
+Mongi A. Abidi,University of Tennessee,robotics,1.0,0.25,2006
+Mongi A. Abidi,University of Tennessee,robotics,1.0,0.2,2007
+Mongi A. Abidi,University of Tennessee,robotics,1.0,0.333333333333,2008
+Mongi A. Abidi,University of Tennessee,vision,1.0,0.333333333333,1999
+Mongi A. Abidi,University of Tennessee,vision,1.0,0.5,2001
+Mongi A. Abidi,University of Tennessee,vision,1.0,0.333333333333,2003
+Mongi A. Abidi,University of Tennessee,vision,1.0,0.333333333333,2007
+Mongi A. Abidi,University of Tennessee,vision,2.0,0.366666666667,2008
+Mongi A. Abidi,University of Tennessee,vision,1.0,0.2,2009
 Robert W. Lindeman,WPI,hci,1.0,0.333333333333,1999
 Robert W. Lindeman,WPI,hci,1.0,0.2,2005
 Robert W. Lindeman,WPI,robotics,1.0,0.111111111111,2014
@@ -4548,18 +4554,7 @@ Bhiksha Raj,Carnegie Mellon University,mlmining,1.0,0.333333333333,2010
 Bhiksha Raj,Carnegie Mellon University,mlmining,1.0,0.5,2012
 Bhiksha Raj,Carnegie Mellon University,vision,1.0,0.333333333333,2007
 Bhiksha Raj,Carnegie Mellon University,vision,1.0,0.2,2015
-Emma Brunskill,Carnegie Mellon University,hci,1.0,0.25,2014
-Emma Brunskill,Carnegie Mellon University,hci,2.0,0.375,2016
-Emma Brunskill,Carnegie Mellon University,mlmining,1.0,0.333333333333,2013
-Emma Brunskill,Carnegie Mellon University,mlmining,2.0,0.833333333333,2014
-Emma Brunskill,Carnegie Mellon University,mlmining,1.0,0.5,2015
-Emma Brunskill,Carnegie Mellon University,mlmining,2.0,0.75,2016
-Emma Brunskill,Carnegie Mellon University,ai,1.0,0.333333333333,2010
-Emma Brunskill,Carnegie Mellon University,ai,2.0,0.75,2015
-Emma Brunskill,Carnegie Mellon University,ai,4.0,1.2,2016
-Emma Brunskill,Carnegie Mellon University,robotics,1.0,0.5,2005
-Emma Brunskill,Carnegie Mellon University,robotics,2.0,0.47619047619,2007
-Emma Brunskill,Carnegie Mellon University,robotics,1.0,0.25,2009
+Charles D. Hansen,University of Utah,highperf,1.0,0.333333333333,1993
 Michael Goesele,TU Darmstadt,graphics,2.0,0.45,2003
 Michael Goesele,TU Darmstadt,graphics,1.0,0.2,2004
 Michael Goesele,TU Darmstadt,graphics,1.0,0.142857142857,2010
@@ -6674,6 +6669,9 @@ Nir Ailon,Technion,mlmining,1.0,1.0,2008
 Nir Ailon,Technion,mlmining,1.0,0.333333333333,2009
 Nir Ailon,Technion,mlmining,1.0,1.0,2011
 Nir Ailon,Technion,mlmining,1.0,0.333333333333,2014
+Michel C. A. Klein,VU Amsterdam,ai,1.0,0.5,2003
+Michel C. A. Klein,VU Amsterdam,ai,1.0,0.333333333333,2007
+Michel C. A. Klein,VU Amsterdam,web,1.0,0.166666666667,2001
 Timothy M. Chan,University of Waterloo,theory,1.0,0.333333333333,1995
 Timothy M. Chan,University of Waterloo,theory,1.0,1.0,1997
 Timothy M. Chan,University of Waterloo,theory,1.0,1.0,1998
@@ -7089,6 +7087,34 @@ Orna Grumberg,Technion,logic,1.0,0.25,2016
 Daniel R. Sheldon,University of Massachusetts - Amherst,mlmining,1.0,0.5,2011
 Daniel R. Sheldon,University of Massachusetts - Amherst,mlmining,1.0,0.333333333333,2014
 Daniel R. Sheldon,University of Massachusetts - Amherst,ai,1.0,0.142857142857,2013
+Stefano Soatto,University of California - Los Angeles,mlmining,2.0,0.833333333333,2006
+Stefano Soatto,University of California - Los Angeles,mlmining,1.0,0.333333333333,2010
+Stefano Soatto,University of California - Los Angeles,mlmining,1.0,0.5,2011
+Stefano Soatto,University of California - Los Angeles,mlmining,1.0,0.333333333333,2012
+Stefano Soatto,University of California - Los Angeles,robotics,1.0,0.25,2004
+Stefano Soatto,University of California - Los Angeles,robotics,3.0,0.916666666667,2015
+Stefano Soatto,University of California - Los Angeles,robotics,1.0,0.25,2016
+Stefano Soatto,University of California - Los Angeles,vision,1.0,0.25,1993
+Stefano Soatto,University of California - Los Angeles,vision,1.0,0.333333333333,1994
+Stefano Soatto,University of California - Los Angeles,vision,2.0,1.0,1996
+Stefano Soatto,University of California - Los Angeles,vision,1.0,0.5,1998
+Stefano Soatto,University of California - Los Angeles,vision,1.0,0.25,1999
+Stefano Soatto,University of California - Los Angeles,vision,4.0,1.58333333333,2000
+Stefano Soatto,University of California - Los Angeles,vision,5.0,1.66666666667,2001
+Stefano Soatto,University of California - Los Angeles,vision,3.0,1.25,2002
+Stefano Soatto,University of California - Los Angeles,vision,9.0,3.41666666667,2003
+Stefano Soatto,University of California - Los Angeles,vision,8.0,2.5,2004
+Stefano Soatto,University of California - Los Angeles,vision,3.0,1.25,2005
+Stefano Soatto,University of California - Los Angeles,vision,5.0,1.89285714286,2006
+Stefano Soatto,University of California - Los Angeles,vision,8.0,3.0,2007
+Stefano Soatto,University of California - Los Angeles,vision,8.0,3.41666666667,2008
+Stefano Soatto,University of California - Los Angeles,vision,4.0,2.08333333333,2009
+Stefano Soatto,University of California - Los Angeles,vision,5.0,1.83333333333,2010
+Stefano Soatto,University of California - Los Angeles,vision,1.0,0.5,2011
+Stefano Soatto,University of California - Los Angeles,vision,3.0,1.16666666667,2012
+Stefano Soatto,University of California - Los Angeles,vision,2.0,0.75,2013
+Stefano Soatto,University of California - Los Angeles,vision,3.0,1.16666666667,2014
+Stefano Soatto,University of California - Los Angeles,vision,6.0,1.91666666667,2015
 Dan Grossman,University of Washington,opsys,1.0,0.166666666667,2002
 Dan Grossman,University of Washington,database,1.0,0.333333333333,2010
 Dan Grossman,University of Washington,proglang,1.0,0.166666666667,2002
@@ -7822,9 +7848,10 @@ Jan Hoffmann 0002,Carnegie Mellon University,proglang,1.0,0.25,2014
 Jan Hoffmann 0002,Carnegie Mellon University,proglang,1.0,0.333333333333,2015
 Jan Hoffmann 0002,Carnegie Mellon University,logic,1.0,0.333333333333,2012
 Jan Hoffmann 0002,Carnegie Mellon University,logic,1.0,0.333333333333,2013
-Michel C. A. Klein,VU Amsterdam,ai,1.0,0.5,2003
-Michel C. A. Klein,VU Amsterdam,ai,1.0,0.333333333333,2007
-Michel C. A. Klein,VU Amsterdam,web,1.0,0.166666666667,2001
+Micah Beck,University of Tennessee,networks,1.0,0.333333333333,2002
+Micah Beck,University of Tennessee,proglang,1.0,0.2,1991
+Micah Beck,University of Tennessee,web,1.0,0.2,2001
+Micah Beck,University of Tennessee,highperf,1.0,0.166666666667,2003
 Fei Li,George Mason University,theory,1.0,0.333333333333,2007
 Fei Li,George Mason University,ai,1.0,0.25,2016
 Fei Li,George Mason University,database,2.0,0.833333333333,2014
@@ -8233,6 +8260,8 @@ Kurt VanLehn,Arizona State University,nlp,1.0,0.25,2003
 Kurt VanLehn,Arizona State University,mlmining,1.0,0.5,1993
 Kurt VanLehn,Arizona State University,ai,1.0,0.333333333333,1998
 Juraj Hromkovic,ETH Zurich,theory,1.0,0.5,1996
+Jens Krinke,University College London,softeng,1.0,0.25,2013
+Jens Krinke,University College London,softeng,1.0,0.166666666667,2014
 Cho-Jui Hsieh,University of California - Davis,mlmining,2.0,0.4,2008
 Cho-Jui Hsieh,University of California - Davis,mlmining,1.0,0.25,2010
 Cho-Jui Hsieh,University of California - Davis,mlmining,2.0,0.75,2011
@@ -8977,6 +9006,7 @@ Ulrich Kremer,Rutgers University,proglang,1.0,0.25,2005
 Ulrich Kremer,Rutgers University,robotics,1.0,0.5,2009
 Ulrich Kremer,Rutgers University,highperf,1.0,0.2,1989
 Ulrich Kremer,Rutgers University,highperf,1.0,0.5,1995
+Jeremy H. Holleman,University of Tennessee,mlmining,1.0,0.333333333333,1997
 Charlie McDowell,University of California - Santa Cruz,softeng,1.0,0.25,2003
 Dale Schuurmans,University of Alberta,nlp,1.0,0.333333333333,2003
 Dale Schuurmans,University of Alberta,nlp,1.0,0.2,2006
@@ -10103,6 +10133,12 @@ Cliff Stein,Columbia University,theory,3.0,0.72619047619,2014
 Cliff Stein,Columbia University,theory,1.0,0.5,2016
 Cliff Stein,Columbia University,ai,1.0,0.333333333333,2015
 Aaron Leon Roth,University of Pennsylvania,theory,1.0,0.166666666667,2015
+Hairong Qi,University of Tennessee,networks,1.0,0.25,2011
+Hairong Qi,University of Tennessee,networks,1.0,0.2,2014
+Hairong Qi,University of Tennessee,robotics,1.0,0.333333333333,2005
+Hairong Qi,University of Tennessee,vision,1.0,0.5,2000
+Hairong Qi,University of Tennessee,vision,1.0,0.5,2007
+Hairong Qi,University of Tennessee,vision,2.0,0.666666666667,2013
 Mea Wang,University of Calgary,networks,1.0,0.5,2007
 Elaine Cohen,University of Utah,graphics,1.0,0.333333333333,1985
 Elaine Cohen,University of Utah,graphics,1.0,1.0,1987
@@ -10287,6 +10323,11 @@ Cindy Rubio-González,University of California - Davis,softeng,1.0,0.1,2016
 Cindy Rubio-González,University of California - Davis,highperf,1.0,0.111111111111,2013
 Christopher James Langmead,Carnegie Mellon University,mlmining,1.0,0.5,2009
 Christopher James Langmead,Carnegie Mellon University,mlmining,1.0,0.333333333333,2011
+Michael Elad,Technion,vision,1.0,0.333333333333,1999
+Michael Elad,Technion,vision,1.0,0.333333333333,2005
+Michael Elad,Technion,vision,2.0,0.833333333333,2006
+Michael Elad,Technion,vision,1.0,0.333333333333,2010
+Michael Elad,Technion,vision,1.0,0.333333333333,2012
 Jernej Barbic,University of Southern California,graphics,1.0,0.5,2005
 Jernej Barbic,University of Southern California,graphics,1.0,0.333333333333,2006
 Jernej Barbic,University of Southern California,graphics,1.0,0.5,2008
@@ -12547,6 +12588,22 @@ Brian Noble,University of Michigan,mobile,1.0,0.2,2013
 Brian Noble,University of Michigan,highperf,1.0,0.333333333333,2002
 Majid Ghaderi,University of Calgary,networks,1.0,0.333333333333,2008
 Majid Ghaderi,University of Calgary,mobile,1.0,0.2,2006
+Adam Wierman,California Institute of Technology,metrics,1.0,0.5,2003
+Adam Wierman,California Institute of Technology,metrics,2.0,0.833333333333,2005
+Adam Wierman,California Institute of Technology,metrics,1.0,0.25,2006
+Adam Wierman,California Institute of Technology,metrics,1.0,0.5,2008
+Adam Wierman,California Institute of Technology,metrics,1.0,0.333333333333,2010
+Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2011
+Adam Wierman,California Institute of Technology,metrics,1.0,0.125,2012
+Adam Wierman,California Institute of Technology,metrics,2.0,0.583333333333,2014
+Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2015
+Adam Wierman,California Institute of Technology,metrics,1.0,0.2,2016
+Adam Wierman,California Institute of Technology,networks,1.0,0.333333333333,2006
+Adam Wierman,California Institute of Technology,networks,2.0,0.666666666667,2009
+Adam Wierman,California Institute of Technology,networks,1.0,0.25,2011
+Adam Wierman,California Institute of Technology,networks,1.0,0.333333333333,2013
+Adam Wierman,California Institute of Technology,networks,1.0,0.166666666667,2014
+Adam Wierman,California Institute of Technology,networks,1.0,0.25,2015
 Georg Klinker,TU Munich,ai,1.0,0.25,1987
 Rahul Santhanam,University of Oxford,theory,1.0,0.5,2004
 Rahul Santhanam,University of Oxford,theory,1.0,0.333333333333,2005
@@ -15790,6 +15847,26 @@ Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.25,2010
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.166666666667,2011
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,3.0,0.833333333333,2013
 Brendan O'Connor,University of Massachusetts - Amherst,nlp,1.0,0.5,2015
+Jian Huang,University of Tennessee,ai,1.0,0.5,2006
+Jian Huang,University of Tennessee,ai,1.0,0.5,2007
+Jian Huang,University of Tennessee,ai,1.0,0.5,2010
+Jian Huang,University of Tennessee,opsys,1.0,0.25,2015
+Jian Huang,University of Tennessee,opsys,1.0,0.333333333333,2016
+Jian Huang,University of Tennessee,database,1.0,0.333333333333,2009
+Jian Huang,University of Tennessee,database,1.0,0.333333333333,2014
+Jian Huang,University of Tennessee,robotics,1.0,0.25,2006
+Jian Huang,University of Tennessee,robotics,1.0,0.166666666667,2007
+Jian Huang,University of Tennessee,robotics,2.0,0.45,2008
+Jian Huang,University of Tennessee,robotics,4.0,0.766666666667,2009
+Jian Huang,University of Tennessee,robotics,2.0,0.366666666667,2011
+Jian Huang,University of Tennessee,robotics,2.0,0.45,2012
+Jian Huang,University of Tennessee,robotics,1.0,0.333333333333,2013
+Jian Huang,University of Tennessee,robotics,2.0,0.392857142857,2015
+Jian Huang,University of Tennessee,arch,1.0,0.25,2015
+Jian Huang,University of Tennessee,highperf,1.0,0.166666666667,2003
+Jian Huang,University of Tennessee,highperf,2.0,0.283333333333,2006
+Jian Huang,University of Tennessee,highperf,1.0,0.166666666667,2009
+Jian Huang,University of Tennessee,highperf,2.0,0.416666666667,2011
 Matthew Fluet,Rochester Institute of Technology,proglang,1.0,0.333333333333,2009
 Faith E. Fich,University of Toronto,theory,1.0,1.0,1981
 Faith E. Fich,University of Toronto,theory,2.0,1.25,1983
@@ -16884,6 +16961,10 @@ Michelle L. Mazurek,University of Maryland - College Park,hci,2.0,0.266666666667
 Michelle L. Mazurek,University of Maryland - College Park,security,2.0,0.194444444444,2012
 Michelle L. Mazurek,University of Maryland - College Park,security,1.0,0.111111111111,2013
 Michelle L. Mazurek,University of Maryland - College Park,security,1.0,0.1,2015
+Jinyuan Sun,University of Tennessee,networks,1.0,0.333333333333,2008
+Jinyuan Sun,University of Tennessee,networks,1.0,0.333333333333,2010
+Jinyuan Sun,University of Tennessee,networks,1.0,0.25,2012
+Jinyuan Sun,University of Tennessee,networks,1.0,0.25,2013
 Sriraam Natarajan,Indiana University,mlmining,2.0,0.666666666667,2005
 Sriraam Natarajan,Indiana University,mlmining,1.0,0.333333333333,2012
 Sriraam Natarajan,Indiana University,ai,1.0,0.25,2007
@@ -17471,6 +17552,7 @@ Liuba Shrira,Brandeis University,networks,1.0,0.333333333333,1990
 Liuba Shrira,Brandeis University,proglang,1.0,0.5,1988
 Liuba Shrira,Brandeis University,proglang,1.0,0.5,2002
 Liuba Shrira,Brandeis University,proglang,2.0,0.533333333333,2003
+Michael R. Jantz,University of Tennessee,proglang,1.0,0.25,2015
 Chunyi Peng,Ohio State University,metrics,1.0,0.2,2016
 Chunyi Peng,Ohio State University,networks,1.0,0.25,2012
 Chunyi Peng,Ohio State University,networks,2.0,0.366666666667,2014
@@ -19345,8 +19427,9 @@ Anastassia Ailamaki,EPFL,arch,1.0,0.1,2000
 Anastassia Ailamaki,EPFL,arch,1.0,0.166666666667,2005
 Anastassia Ailamaki,EPFL,arch,2.0,0.45,2006
 Anastassia Ailamaki,EPFL,arch,1.0,0.25,2007
-Jens Krinke,University College London,softeng,1.0,0.25,2013
-Jens Krinke,University College London,softeng,1.0,0.166666666667,2014
+Bradley T. Vander Zanden,University of Tennessee,hci,1.0,1.0,1989
+Bradley T. Vander Zanden,University of Tennessee,hci,1.0,0.25,1991
+Bradley T. Vander Zanden,University of Tennessee,hci,1.0,0.333333333333,2004
 Yixin Chen,Washington University - St. Louis,mlmining,1.0,0.333333333333,2005
 Yixin Chen,Washington University - St. Louis,mlmining,1.0,0.5,2007
 Yixin Chen,Washington University - St. Louis,mlmining,1.0,0.25,2009
@@ -20960,7 +21043,18 @@ Ronald N. Goldman,Rice University,graphics,2.0,2.0,1985
 Ronald N. Goldman,Rice University,graphics,1.0,0.5,1988
 Ronald N. Goldman,Rice University,graphics,1.0,0.333333333333,1991
 Ronald N. Goldman,Rice University,graphics,1.0,0.25,1993
-Charles D. Hansen,University of Utah,highperf,1.0,0.333333333333,1993
+Emma Brunskill,Carnegie Mellon University,hci,1.0,0.25,2014
+Emma Brunskill,Carnegie Mellon University,hci,2.0,0.375,2016
+Emma Brunskill,Carnegie Mellon University,mlmining,1.0,0.333333333333,2013
+Emma Brunskill,Carnegie Mellon University,mlmining,2.0,0.833333333333,2014
+Emma Brunskill,Carnegie Mellon University,mlmining,1.0,0.5,2015
+Emma Brunskill,Carnegie Mellon University,mlmining,2.0,0.75,2016
+Emma Brunskill,Carnegie Mellon University,ai,1.0,0.333333333333,2010
+Emma Brunskill,Carnegie Mellon University,ai,2.0,0.75,2015
+Emma Brunskill,Carnegie Mellon University,ai,4.0,1.2,2016
+Emma Brunskill,Carnegie Mellon University,robotics,1.0,0.5,2005
+Emma Brunskill,Carnegie Mellon University,robotics,2.0,0.47619047619,2007
+Emma Brunskill,Carnegie Mellon University,robotics,1.0,0.25,2009
 Jun-Hong Cui,University of Connecticut,metrics,1.0,0.25,1998
 Jun-Hong Cui,University of Connecticut,networks,1.0,0.25,2005
 Jun-Hong Cui,University of Connecticut,networks,1.0,0.25,2006
@@ -25366,6 +25460,19 @@ Peter Desnoyers,Northeastern University,mobile,1.0,0.333333333333,2005
 Peter Desnoyers,Northeastern University,mobile,1.0,0.25,2006
 Bob J. Wielinga,VU Amsterdam,ai,1.0,0.5,1991
 Bob J. Wielinga,VU Amsterdam,ai,1.0,0.25,1999
+Audris Mockus,University of Tennessee,softeng,1.0,0.25,1999
+Audris Mockus,University of Tennessee,softeng,1.0,0.333333333333,2000
+Audris Mockus,University of Tennessee,softeng,1.0,0.25,2001
+Audris Mockus,University of Tennessee,softeng,1.0,0.5,2002
+Audris Mockus,University of Tennessee,softeng,1.0,0.333333333333,2003
+Audris Mockus,University of Tennessee,softeng,1.0,0.333333333333,2005
+Audris Mockus,University of Tennessee,softeng,1.0,0.5,2008
+Audris Mockus,University of Tennessee,softeng,1.0,1.0,2009
+Audris Mockus,University of Tennessee,softeng,2.0,1.5,2010
+Audris Mockus,University of Tennessee,softeng,2.0,0.7,2011
+Audris Mockus,University of Tennessee,softeng,1.0,0.5,2012
+Audris Mockus,University of Tennessee,softeng,2.0,0.47619047619,2015
+Audris Mockus,University of Tennessee,softeng,1.0,0.25,2016
 Henry M. Tufo,University of Colorado Boulder,highperf,2.0,0.75,1999
 Henry M. Tufo,University of Colorado Boulder,highperf,1.0,0.0769230769231,2000
 Henry M. Tufo,University of Colorado Boulder,highperf,1.0,0.5,2006
@@ -25453,14 +25560,8 @@ Ronald L. Graham,University of California - San Diego,theory,1.0,0.333333333333,
 Ronald L. Graham,University of California - San Diego,theory,1.0,0.333333333333,2002
 Ronald L. Graham,University of California - San Diego,theory,1.0,0.166666666667,2008
 Ronald L. Graham,University of California - San Diego,opsys,1.0,0.5,1973
-Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1984
-Lenwood S. Heath,Virginia Tech,theory,1.0,0.5,1987
-Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1991
-Lenwood S. Heath,Virginia Tech,theory,1.0,0.5,1999
-Lenwood S. Heath,Virginia Tech,mlmining,1.0,0.142857142857,2010
-Lenwood S. Heath,Virginia Tech,web,1.0,0.25,1990
-Lenwood S. Heath,Virginia Tech,web,1.0,0.333333333333,1992
-Lenwood S. Heath,Virginia Tech,web,1.0,0.2,1996
+Husheng Li,University of Tennessee,networks,1.0,0.333333333333,2009
+Husheng Li,University of Tennessee,networks,1.0,0.2,2013
 Ashok K. Agrawala,University of Maryland - College Park,metrics,1.0,0.5,1983
 Ashok K. Agrawala,University of Maryland - College Park,metrics,1.0,0.5,1986
 Ashok K. Agrawala,University of Maryland - College Park,hci,1.0,0.333333333333,2012
@@ -25504,34 +25605,24 @@ Todd D. Millstein,University of California - Los Angeles,softeng,1.0,0.25,2013
 Todd D. Millstein,University of California - Los Angeles,softeng,1.0,0.142857142857,2016
 Todd D. Millstein,University of California - Los Angeles,arch,1.0,0.2,2011
 Todd D. Millstein,University of California - Los Angeles,arch,1.0,0.2,2012
-Stefano Soatto,University of California - Los Angeles,mlmining,2.0,0.833333333333,2006
-Stefano Soatto,University of California - Los Angeles,mlmining,1.0,0.333333333333,2010
-Stefano Soatto,University of California - Los Angeles,mlmining,1.0,0.5,2011
-Stefano Soatto,University of California - Los Angeles,mlmining,1.0,0.333333333333,2012
-Stefano Soatto,University of California - Los Angeles,robotics,1.0,0.25,2004
-Stefano Soatto,University of California - Los Angeles,robotics,3.0,0.916666666667,2015
-Stefano Soatto,University of California - Los Angeles,robotics,1.0,0.25,2016
-Stefano Soatto,University of California - Los Angeles,vision,1.0,0.25,1993
-Stefano Soatto,University of California - Los Angeles,vision,1.0,0.333333333333,1994
-Stefano Soatto,University of California - Los Angeles,vision,2.0,1.0,1996
-Stefano Soatto,University of California - Los Angeles,vision,1.0,0.5,1998
-Stefano Soatto,University of California - Los Angeles,vision,1.0,0.25,1999
-Stefano Soatto,University of California - Los Angeles,vision,4.0,1.58333333333,2000
-Stefano Soatto,University of California - Los Angeles,vision,5.0,1.66666666667,2001
-Stefano Soatto,University of California - Los Angeles,vision,3.0,1.25,2002
-Stefano Soatto,University of California - Los Angeles,vision,9.0,3.41666666667,2003
-Stefano Soatto,University of California - Los Angeles,vision,8.0,2.5,2004
-Stefano Soatto,University of California - Los Angeles,vision,3.0,1.25,2005
-Stefano Soatto,University of California - Los Angeles,vision,5.0,1.89285714286,2006
-Stefano Soatto,University of California - Los Angeles,vision,8.0,3.0,2007
-Stefano Soatto,University of California - Los Angeles,vision,8.0,3.41666666667,2008
-Stefano Soatto,University of California - Los Angeles,vision,4.0,2.08333333333,2009
-Stefano Soatto,University of California - Los Angeles,vision,5.0,1.83333333333,2010
-Stefano Soatto,University of California - Los Angeles,vision,1.0,0.5,2011
-Stefano Soatto,University of California - Los Angeles,vision,3.0,1.16666666667,2012
-Stefano Soatto,University of California - Los Angeles,vision,2.0,0.75,2013
-Stefano Soatto,University of California - Los Angeles,vision,3.0,1.16666666667,2014
-Stefano Soatto,University of California - Los Angeles,vision,6.0,1.91666666667,2015
+Wei Gao,University of Tennessee,hci,1.0,0.2,2015
+Wei Gao,University of Tennessee,hci,1.0,0.25,2016
+Wei Gao,University of Tennessee,nlp,3.0,0.7,2011
+Wei Gao,University of Tennessee,nlp,1.0,0.2,2015
+Wei Gao,University of Tennessee,ai,2.0,1.0,2013
+Wei Gao,University of Tennessee,ai,1.0,0.333333333333,2014
+Wei Gao,University of Tennessee,ai,2.0,0.666666666667,2015
+Wei Gao,University of Tennessee,ai,2.0,0.392857142857,2016
+Wei Gao,University of Tennessee,networks,1.0,0.2,2009
+Wei Gao,University of Tennessee,networks,1.0,0.5,2011
+Wei Gao,University of Tennessee,networks,1.0,0.5,2013
+Wei Gao,University of Tennessee,networks,2.0,0.583333333333,2014
+Wei Gao,University of Tennessee,networks,1.0,0.5,2015
+Wei Gao,University of Tennessee,web,1.0,0.142857142857,2007
+Wei Gao,University of Tennessee,web,1.0,0.25,2010
+Wei Gao,University of Tennessee,web,1.0,0.25,2011
+Wei Gao,University of Tennessee,robotics,1.0,0.2,2014
+Wei Gao,University of Tennessee,vision,1.0,0.333333333333,2009
 Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1980
 Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1981
 Robert C. Berwick,Massachusetts Institute of Technology,nlp,2.0,1.0,1985
@@ -29335,6 +29426,9 @@ Stephen McCamant,University of Minnesota,security,2.0,0.366666666667,2010
 Stephen McCamant,University of Minnesota,security,1.0,0.142857142857,2011
 Stephen McCamant,University of Minnesota,security,1.0,0.125,2013
 Stephen McCamant,University of Minnesota,arch,1.0,0.2,2012
+Chao Tian,University of Tennessee,database,1.0,0.0769230769231,2011
+Chao Tian,University of Tennessee,database,1.0,0.25,2015
+Chao Tian,University of Tennessee,networks,1.0,0.25,2014
 Charles Elkan,University of California - San Diego,nlp,1.0,0.5,2010
 Charles Elkan,University of California - San Diego,mlmining,2.0,1.5,2001
 Charles Elkan,University of California - San Diego,mlmining,1.0,0.5,2002
@@ -31251,6 +31345,14 @@ Steven Swanson,University of California - San Diego,arch,1.0,0.5,2013
 Steven Swanson,University of California - San Diego,arch,1.0,0.25,2015
 Steven Swanson,University of California - San Diego,highperf,1.0,0.1,2010
 Steven Swanson,University of California - San Diego,highperf,1.0,0.333333333333,2013
+Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1984
+Lenwood S. Heath,Virginia Tech,theory,1.0,0.5,1987
+Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1991
+Lenwood S. Heath,Virginia Tech,theory,1.0,0.5,1999
+Lenwood S. Heath,Virginia Tech,mlmining,1.0,0.142857142857,2010
+Lenwood S. Heath,Virginia Tech,web,1.0,0.25,1990
+Lenwood S. Heath,Virginia Tech,web,1.0,0.333333333333,1992
+Lenwood S. Heath,Virginia Tech,web,1.0,0.2,1996
 Gary W. Meyer,University of Minnesota,graphics,1.0,0.5,1980
 Gary W. Meyer,University of Minnesota,graphics,1.0,0.2,1986
 Gary W. Meyer,University of Minnesota,graphics,1.0,0.5,1992
@@ -33028,11 +33130,10 @@ William R. Cook,University of Texas - Austin,proglang,1.0,1.0,2009
 William R. Cook,University of Texas - Austin,proglang,2.0,0.833333333333,2011
 William R. Cook,University of Texas - Austin,softeng,1.0,0.5,2005
 William R. Cook,University of Texas - Austin,softeng,1.0,0.333333333333,2009
-Michael Elad,Technion,vision,1.0,0.333333333333,1999
-Michael Elad,Technion,vision,1.0,0.333333333333,2005
-Michael Elad,Technion,vision,2.0,0.833333333333,2006
-Michael Elad,Technion,vision,1.0,0.333333333333,2010
-Michael Elad,Technion,vision,1.0,0.333333333333,2012
+Michael A. Langston,University of Tennessee,theory,2.0,1.0,1989
+Michael A. Langston,University of Tennessee,theory,1.0,0.166666666667,2011
+Michael A. Langston,University of Tennessee,database,1.0,0.5,1988
+Michael A. Langston,University of Tennessee,highperf,1.0,0.166666666667,2005
 Shi-Kuo Chang,University of Pittsburgh,theory,1.0,1.0,1970
 Shi-Kuo Chang,University of Pittsburgh,theory,1.0,1.0,1971
 Shi-Kuo Chang,University of Pittsburgh,ai,1.0,0.333333333333,2013
@@ -35485,6 +35586,9 @@ Ambuj K. Singh,University of California - Santa Barbara,proglang,1.0,0.333333333
 Ambuj K. Singh,University of California - Santa Barbara,web,1.0,0.333333333333,2015
 Ambuj K. Singh,University of California - Santa Barbara,highperf,1.0,0.25,1994
 Angela K. Demke,University of Toronto,opsys,1.0,0.333333333333,1996
+James S. Plank,University of Tennessee,networks,1.0,0.333333333333,2002
+James S. Plank,University of Tennessee,highperf,1.0,0.333333333333,1997
+James S. Plank,University of Tennessee,highperf,1.0,0.333333333333,2002
 Nick Feamster,Princeton University,metrics,1.0,0.25,2003
 Nick Feamster,Princeton University,metrics,2.0,0.666666666667,2004
 Nick Feamster,Princeton University,metrics,1.0,0.25,2007
@@ -37997,6 +38101,10 @@ Xiangyu Zhang,Purdue University,arch,1.0,0.2,2015
 Xiangyu Zhang,Purdue University,arch,1.0,0.142857142857,2016
 Xiangyu Zhang,Purdue University,vision,1.0,0.25,2014
 Xiangyu Zhang,Purdue University,vision,2.0,0.45,2015
+Brad T. Vander Zanden,University of Tennessee,hci,1.0,0.333333333333,1989
+Brad T. Vander Zanden,University of Tennessee,hci,1.0,0.5,1990
+Brad T. Vander Zanden,University of Tennessee,database,1.0,0.333333333333,1986
+Brad T. Vander Zanden,University of Tennessee,proglang,1.0,0.333333333333,1992
 Alejandro P. Buchmann,TU Darmstadt,database,1.0,0.5,1984
 Alejandro P. Buchmann,TU Darmstadt,database,1.0,0.5,1985
 Alejandro P. Buchmann,TU Darmstadt,database,1.0,0.5,2002
@@ -39256,6 +39364,27 @@ Umakishore Ramachandran,Georgia Institute of Technology,arch,1.0,0.333333333333,
 Umakishore Ramachandran,Georgia Institute of Technology,arch,1.0,0.5,1990
 Umakishore Ramachandran,Georgia Institute of Technology,highperf,1.0,0.2,1995
 Umakishore Ramachandran,Georgia Institute of Technology,highperf,1.0,0.2,1999
+Jack Dongarra,University of Tennessee,highperf,1.0,1.0,1987
+Jack Dongarra,University of Tennessee,highperf,1.0,0.333333333333,1988
+Jack Dongarra,University of Tennessee,highperf,1.0,0.1,1990
+Jack Dongarra,University of Tennessee,highperf,2.0,0.75,1991
+Jack Dongarra,University of Tennessee,highperf,1.0,0.333333333333,1993
+Jack Dongarra,University of Tennessee,highperf,1.0,0.125,1995
+Jack Dongarra,University of Tennessee,highperf,2.0,0.583333333333,1996
+Jack Dongarra,University of Tennessee,highperf,2.0,0.533333333333,2000
+Jack Dongarra,University of Tennessee,highperf,1.0,0.142857142857,2001
+Jack Dongarra,University of Tennessee,highperf,1.0,0.5,2002
+Jack Dongarra,University of Tennessee,highperf,4.0,1.14285714286,2006
+Jack Dongarra,University of Tennessee,highperf,1.0,0.333333333333,2007
+Jack Dongarra,University of Tennessee,highperf,1.0,0.2,2008
+Jack Dongarra,University of Tennessee,highperf,2.0,0.583333333333,2009
+Jack Dongarra,University of Tennessee,highperf,1.0,0.25,2010
+Jack Dongarra,University of Tennessee,highperf,2.0,0.583333333333,2011
+Jack Dongarra,University of Tennessee,highperf,1.0,0.333333333333,2012
+Jack Dongarra,University of Tennessee,highperf,1.0,0.25,2013
+Jack Dongarra,University of Tennessee,highperf,1.0,0.5,2014
+Jack Dongarra,University of Tennessee,highperf,4.0,0.72619047619,2015
+Jack Dongarra,University of Tennessee,highperf,1.0,0.2,2016
 Noah A. Smith,University of Washington,nlp,2.0,1.0,2004
 Noah A. Smith,University of Washington,nlp,1.0,0.5,2005
 Noah A. Smith,University of Washington,nlp,1.0,0.5,2006
@@ -39492,6 +39621,25 @@ Pierre Dillenbourg,EPFL,robotics,1.0,0.2,2008
 Pierre Dillenbourg,EPFL,robotics,1.0,0.25,2009
 Pierre Dillenbourg,EPFL,robotics,1.0,0.333333333333,2015
 Pierre Dillenbourg,EPFL,robotics,1.0,0.2,2016
+Lynne E. Parker,University of Tennessee,robotics,1.0,1.0,1994
+Lynne E. Parker,University of Tennessee,robotics,1.0,1.0,1996
+Lynne E. Parker,University of Tennessee,robotics,2.0,1.5,1997
+Lynne E. Parker,University of Tennessee,robotics,4.0,1.66666666667,2002
+Lynne E. Parker,University of Tennessee,robotics,3.0,0.916666666667,2003
+Lynne E. Parker,University of Tennessee,robotics,2.0,0.583333333333,2004
+Lynne E. Parker,University of Tennessee,robotics,2.0,1.0,2005
+Lynne E. Parker,University of Tennessee,robotics,1.0,0.5,2006
+Lynne E. Parker,University of Tennessee,robotics,3.0,1.5,2007
+Lynne E. Parker,University of Tennessee,robotics,3.0,1.5,2008
+Lynne E. Parker,University of Tennessee,robotics,3.0,1.0,2009
+Lynne E. Parker,University of Tennessee,robotics,3.0,1.33333333333,2010
+Lynne E. Parker,University of Tennessee,robotics,2.0,1.0,2011
+Lynne E. Parker,University of Tennessee,robotics,1.0,0.5,2012
+Lynne E. Parker,University of Tennessee,robotics,1.0,0.5,2013
+Lynne E. Parker,University of Tennessee,robotics,2.0,0.666666666667,2014
+Lynne E. Parker,University of Tennessee,robotics,3.0,1.08333333333,2015
+Lynne E. Parker,University of Tennessee,robotics,1.0,0.25,2016
+Lynne E. Parker,University of Tennessee,vision,1.0,0.25,2014
 Hoeteck Wee,Ecole Normale Superieure,theory,1.0,1.0,2005
 Hoeteck Wee,Ecole Normale Superieure,theory,1.0,0.25,2009
 Hoeteck Wee,Ecole Normale Superieure,theory,1.0,1.0,2010
