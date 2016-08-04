@@ -214,21 +214,21 @@ Hung Q. Ngo 0001,University of Buffalo,networks,1.0,0.25,2007
 Hung Q. Ngo 0001,University of Buffalo,networks,1.0,0.333333333333,2009
 Hung Q. Ngo 0001,University of Buffalo,networks,1.0,0.25,2010
 Stanley C. Eisenstat,Yale University,theory,1.0,0.333333333333,1975
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2009
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2010
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,security,1.0,0.166666666667,2012
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,security,1.0,0.2,2013
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2014
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,1.0,0.5,2003
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,1.0,0.5,2006
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,5.0,1.10833333333,2007
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,6.0,1.56666666667,2008
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,4.0,1.16666666667,2009
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,3.0,0.766666666667,2010
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,4.0,1.5,2011
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2012
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,5.0,1.41666666667,2014
-Jan-Michael Frahm,University of North Carolina - Chapel Hill,vision,8.0,2.33333333333,2015
+Jan-Michael Frahm,University of North Carolina,robotics,1.0,0.333333333333,2009
+Jan-Michael Frahm,University of North Carolina,robotics,1.0,0.25,2010
+Jan-Michael Frahm,University of North Carolina,security,1.0,0.166666666667,2012
+Jan-Michael Frahm,University of North Carolina,security,1.0,0.2,2013
+Jan-Michael Frahm,University of North Carolina,security,1.0,0.333333333333,2014
+Jan-Michael Frahm,University of North Carolina,vision,1.0,0.5,2003
+Jan-Michael Frahm,University of North Carolina,vision,1.0,0.5,2006
+Jan-Michael Frahm,University of North Carolina,vision,5.0,1.10833333333,2007
+Jan-Michael Frahm,University of North Carolina,vision,6.0,1.56666666667,2008
+Jan-Michael Frahm,University of North Carolina,vision,4.0,1.16666666667,2009
+Jan-Michael Frahm,University of North Carolina,vision,3.0,0.766666666667,2010
+Jan-Michael Frahm,University of North Carolina,vision,4.0,1.5,2011
+Jan-Michael Frahm,University of North Carolina,vision,1.0,0.333333333333,2012
+Jan-Michael Frahm,University of North Carolina,vision,5.0,1.41666666667,2014
+Jan-Michael Frahm,University of North Carolina,vision,8.0,2.33333333333,2015
 Ranjitha Kumar,University of Illinois at Urbana-Champaign,hci,1.0,0.2,2010
 Ranjitha Kumar,University of Illinois at Urbana-Champaign,hci,1.0,0.25,2011
 Ranjitha Kumar,University of Illinois at Urbana-Champaign,hci,1.0,0.166666666667,2012
@@ -480,8 +480,8 @@ Maria L. Gini,University of Minnesota,robotics,2.0,0.642857142857,2006
 Maria L. Gini,University of Minnesota,robotics,1.0,0.333333333333,2007
 Maria L. Gini,University of Minnesota,robotics,1.0,0.25,2011
 Maria L. Gini,University of Minnesota,robotics,1.0,0.333333333333,2012
-Stephen M. Pizer,University of North Carolina - Chapel Hill,vision,1.0,0.5,1988
-Stephen M. Pizer,University of North Carolina - Chapel Hill,vision,1.0,0.125,2007
+Stephen M. Pizer,University of North Carolina,vision,1.0,0.5,1988
+Stephen M. Pizer,University of North Carolina,vision,1.0,0.125,2007
 Ryan Stutsman,University of Utah,opsys,2.0,0.366666666667,2011
 Ryan Stutsman,University of Utah,opsys,1.0,0.166666666667,2013
 Ryan Stutsman,University of Utah,opsys,1.0,0.333333333333,2015
@@ -3812,12 +3812,12 @@ Karen Livescu,University of Chicago,mlmining,1.0,0.25,2015
 Karen Livescu,University of Chicago,mlmining,1.0,0.333333333333,2016
 Karen Livescu,University of Chicago,vision,1.0,0.166666666667,2005
 Karen Livescu,University of Chicago,vision,1.0,0.333333333333,2013
-Marc Niethammer,University of North Carolina - Chapel Hill,mlmining,1.0,0.2,2015
-Marc Niethammer,University of North Carolina - Chapel Hill,robotics,1.0,0.2,2012
-Marc Niethammer,University of North Carolina - Chapel Hill,vision,1.0,0.5,2004
-Marc Niethammer,University of North Carolina - Chapel Hill,vision,1.0,0.166666666667,2007
-Marc Niethammer,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2009
-Marc Niethammer,University of North Carolina - Chapel Hill,vision,2.0,0.5,2014
+Marc Niethammer,University of North Carolina,mlmining,1.0,0.2,2015
+Marc Niethammer,University of North Carolina,robotics,1.0,0.2,2012
+Marc Niethammer,University of North Carolina,vision,1.0,0.5,2004
+Marc Niethammer,University of North Carolina,vision,1.0,0.166666666667,2007
+Marc Niethammer,University of North Carolina,vision,1.0,0.333333333333,2009
+Marc Niethammer,University of North Carolina,vision,2.0,0.5,2014
 Dinesh K. Pai,University of British Columbia,graphics,1.0,0.5,1999
 Dinesh K. Pai,University of British Columbia,graphics,2.0,0.47619047619,2001
 Dinesh K. Pai,University of British Columbia,graphics,3.0,1.33333333333,2003
@@ -4560,10 +4560,10 @@ Scott F. Smith,Johns Hopkins University,proglang,1.0,0.333333333333,2010
 Scott F. Smith,Johns Hopkins University,proglang,1.0,0.5,2011
 Scott F. Smith,Johns Hopkins University,logic,1.0,0.5,1987
 Scott F. Smith,Johns Hopkins University,logic,1.0,0.5,1988
-Anselmo Lastra,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1998
-Anselmo Lastra,University of North Carolina - Chapel Hill,graphics,2.0,0.833333333333,1999
-Anselmo Lastra,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,2000
-Anselmo Lastra,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2003
+Anselmo Lastra,University of North Carolina,graphics,1.0,0.5,1998
+Anselmo Lastra,University of North Carolina,graphics,2.0,0.833333333333,1999
+Anselmo Lastra,University of North Carolina,graphics,1.0,0.166666666667,2000
+Anselmo Lastra,University of North Carolina,graphics,1.0,0.25,2003
 Samuel Z. Guyer,Tufts University,proglang,1.0,0.5,2004
 Samuel Z. Guyer,Tufts University,proglang,2.0,0.383333333333,2006
 Samuel Z. Guyer,Tufts University,proglang,1.0,0.2,2007
@@ -4684,21 +4684,21 @@ Swastik Kopparty,Rutgers University,theory,3.0,0.9,2013
 Swastik Kopparty,Rutgers University,theory,2.0,0.75,2016
 Swastik Kopparty,Rutgers University,database,1.0,0.333333333333,2004
 Swastik Kopparty,Rutgers University,networks,1.0,0.25,2006
-Ron Alterovitz,University of North Carolina - Chapel Hill,graphics,1.0,0.125,2009
-Ron Alterovitz,University of North Carolina - Chapel Hill,ai,1.0,0.333333333333,2012
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,2.0,0.4,2003
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,2.0,0.533333333333,2005
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2007
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2008
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,4.0,0.87619047619,2009
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,2.0,0.833333333333,2010
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,4.0,1.41666666667,2011
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,3.0,1.16666666667,2012
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2013
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,6.0,2.16666666667,2014
-Ron Alterovitz,University of North Carolina - Chapel Hill,robotics,4.0,0.80119047619,2015
-Ron Alterovitz,University of North Carolina - Chapel Hill,vision,1.0,0.25,2010
-Ron Alterovitz,University of North Carolina - Chapel Hill,vision,1.0,0.25,2011
+Ron Alterovitz,University of North Carolina,graphics,1.0,0.125,2009
+Ron Alterovitz,University of North Carolina,ai,1.0,0.333333333333,2012
+Ron Alterovitz,University of North Carolina,robotics,2.0,0.4,2003
+Ron Alterovitz,University of North Carolina,robotics,2.0,0.533333333333,2005
+Ron Alterovitz,University of North Carolina,robotics,1.0,0.333333333333,2007
+Ron Alterovitz,University of North Carolina,robotics,1.0,0.25,2008
+Ron Alterovitz,University of North Carolina,robotics,4.0,0.87619047619,2009
+Ron Alterovitz,University of North Carolina,robotics,2.0,0.833333333333,2010
+Ron Alterovitz,University of North Carolina,robotics,4.0,1.41666666667,2011
+Ron Alterovitz,University of North Carolina,robotics,3.0,1.16666666667,2012
+Ron Alterovitz,University of North Carolina,robotics,1.0,0.25,2013
+Ron Alterovitz,University of North Carolina,robotics,6.0,2.16666666667,2014
+Ron Alterovitz,University of North Carolina,robotics,4.0,0.80119047619,2015
+Ron Alterovitz,University of North Carolina,vision,1.0,0.25,2010
+Ron Alterovitz,University of North Carolina,vision,1.0,0.25,2011
 Mikhail J. Atallah,Purdue University,theory,1.0,0.5,1982
 Mikhail J. Atallah,Purdue University,theory,1.0,1.0,1983
 Mikhail J. Atallah,Purdue University,theory,1.0,0.5,1985
@@ -7755,13 +7755,13 @@ Phillipa Gill,University of Massachusetts - Amherst,metrics,2.0,0.291666666667,2
 Phillipa Gill,University of Massachusetts - Amherst,networks,2.0,0.666666666667,2011
 Phillipa Gill,University of Massachusetts - Amherst,security,1.0,0.25,2010
 Phillipa Gill,University of Massachusetts - Amherst,security,1.0,0.125,2014
-David A. Plaisted,University of North Carolina - Chapel Hill,theory,1.0,1.0,1972
-David A. Plaisted,University of North Carolina - Chapel Hill,theory,1.0,1.0,1977
-David A. Plaisted,University of North Carolina - Chapel Hill,theory,2.0,1.33333333333,1980
-David A. Plaisted,University of North Carolina - Chapel Hill,ai,1.0,0.5,1993
-David A. Plaisted,University of North Carolina - Chapel Hill,ai,1.0,0.5,1997
-David A. Plaisted,University of North Carolina - Chapel Hill,logic,1.0,1.0,1986
-David A. Plaisted,University of North Carolina - Chapel Hill,logic,1.0,0.25,1988
+David A. Plaisted,University of North Carolina,theory,1.0,1.0,1972
+David A. Plaisted,University of North Carolina,theory,1.0,1.0,1977
+David A. Plaisted,University of North Carolina,theory,2.0,1.33333333333,1980
+David A. Plaisted,University of North Carolina,ai,1.0,0.5,1993
+David A. Plaisted,University of North Carolina,ai,1.0,0.5,1997
+David A. Plaisted,University of North Carolina,logic,1.0,1.0,1986
+David A. Plaisted,University of North Carolina,logic,1.0,0.25,1988
 Luo Si,Purdue University,nlp,1.0,0.333333333333,2007
 Luo Si,Purdue University,nlp,1.0,0.166666666667,2015
 Luo Si,Purdue University,mlmining,1.0,0.5,2003
@@ -10473,9 +10473,9 @@ Jan Chomicki,University of Buffalo,database,1.0,0.333333333333,1996
 Jan Chomicki,University of Buffalo,database,1.0,0.333333333333,1999
 Jan Chomicki,University of Buffalo,database,1.0,0.5,2009
 Jan Chomicki,University of Buffalo,database,1.0,0.25,2015
-Vladimir Jojic,University of North Carolina - Chapel Hill,mlmining,1.0,0.2,2005
-Vladimir Jojic,University of North Carolina - Chapel Hill,mlmining,1.0,0.333333333333,2010
-Vladimir Jojic,University of North Carolina - Chapel Hill,vision,1.0,0.25,2014
+Vladimir Jojic,University of North Carolina,mlmining,1.0,0.2,2005
+Vladimir Jojic,University of North Carolina,mlmining,1.0,0.333333333333,2010
+Vladimir Jojic,University of North Carolina,vision,1.0,0.25,2014
 Kilian Q. Weinberger,Washington University - St. Louis,mlmining,2.0,0.583333333333,2004
 Kilian Q. Weinberger,Washington University - St. Louis,mlmining,1.0,0.333333333333,2005
 Kilian Q. Weinberger,Washington University - St. Louis,mlmining,1.0,0.25,2006
@@ -10927,10 +10927,10 @@ Peter K. Allen,Columbia University,vision,1.0,0.333333333333,1997
 Peter K. Allen,Columbia University,vision,1.0,0.5,1998
 Peter K. Allen,Columbia University,vision,1.0,0.5,2000
 Peter K. Allen,Columbia University,vision,1.0,0.5,2001
-Kevin Jeffay,University of North Carolina - Chapel Hill,metrics,1.0,0.25,2001
-Kevin Jeffay,University of North Carolina - Chapel Hill,networks,1.0,0.25,2000
-Kevin Jeffay,University of North Carolina - Chapel Hill,networks,1.0,0.25,2003
-Kevin Jeffay,University of North Carolina - Chapel Hill,networks,1.0,0.166666666667,2004
+Kevin Jeffay,University of North Carolina,metrics,1.0,0.25,2001
+Kevin Jeffay,University of North Carolina,networks,1.0,0.25,2000
+Kevin Jeffay,University of North Carolina,networks,1.0,0.25,2003
+Kevin Jeffay,University of North Carolina,networks,1.0,0.166666666667,2004
 Lillian Lee,Cornell University,nlp,1.0,0.333333333333,1993
 Lillian Lee,Cornell University,nlp,1.0,0.333333333333,1994
 Lillian Lee,Cornell University,nlp,2.0,1.33333333333,1997
@@ -12506,10 +12506,10 @@ T. M. Murali,Virginia Tech,theory,1.0,0.2,1998
 T. M. Murali,Virginia Tech,theory,1.0,0.166666666667,2000
 T. M. Murali,Virginia Tech,theory,1.0,0.25,2001
 T. M. Murali,Virginia Tech,database,1.0,0.25,2002
-Sanjoy K. Baruah,University of North Carolina - Chapel Hill,metrics,1.0,0.5,1993
-Sanjoy K. Baruah,University of North Carolina - Chapel Hill,theory,1.0,0.166666666667,1991
-Sanjoy K. Baruah,University of North Carolina - Chapel Hill,theory,1.0,0.25,1993
-Sanjoy K. Baruah,University of North Carolina - Chapel Hill,networks,1.0,0.25,1997
+Sanjoy K. Baruah,University of North Carolina,metrics,1.0,0.5,1993
+Sanjoy K. Baruah,University of North Carolina,theory,1.0,0.166666666667,1991
+Sanjoy K. Baruah,University of North Carolina,theory,1.0,0.25,1993
+Sanjoy K. Baruah,University of North Carolina,networks,1.0,0.25,1997
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,0.666666666667,1983
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,1.0,1984
 Umesh V. Vazirani,University of California - Berkeley,theory,3.0,2.0,1985
@@ -13269,46 +13269,46 @@ Nelson L. Max,University of California - Davis,graphics,1.0,1.0,1986
 Nelson L. Max,University of California - Davis,graphics,1.0,0.333333333333,1987
 Nelson L. Max,University of California - Davis,graphics,1.0,0.5,1993
 Nelson L. Max,University of California - Davis,highperf,1.0,0.25,1993
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1994
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,2.0,0.458333333333,1996
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,2.0,0.75,1997
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1998
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,1.0,0.2,1999
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2001
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,2.0,0.7,2003
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,2.0,0.375,2005
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,1.0,0.2,2006
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,2.0,0.7,2008
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,1.0,0.2,2010
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,3.0,0.666666666667,2012
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,3.0,0.666666666667,2013
-Dinesh Manocha,University of North Carolina - Chapel Hill,graphics,3.0,1.45833333333,2014
-Dinesh Manocha,University of North Carolina - Chapel Hill,ai,1.0,0.333333333333,2010
-Dinesh Manocha,University of North Carolina - Chapel Hill,ai,1.0,0.25,2011
-Dinesh Manocha,University of North Carolina - Chapel Hill,database,1.0,0.2,2004
-Dinesh Manocha,University of North Carolina - Chapel Hill,database,1.0,0.333333333333,2005
-Dinesh Manocha,University of North Carolina - Chapel Hill,database,1.0,0.25,2006
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.833333333333,1994
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,1995
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.45,2000
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2001
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2002
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,1.08333333333,2005
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,0.833333333333,2006
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,4.0,1.11666666667,2007
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.833333333333,2008
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,6.0,1.75,2009
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,7.0,2.28333333333,2010
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.583333333333,2011
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,0.733333333333,2012
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.583333333333,2013
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.533333333333,2014
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,2.0,0.833333333333,2015
-Dinesh Manocha,University of North Carolina - Chapel Hill,robotics,3.0,0.783333333333,2016
-Dinesh Manocha,University of North Carolina - Chapel Hill,highperf,1.0,0.333333333333,1996
-Dinesh Manocha,University of North Carolina - Chapel Hill,highperf,1.0,0.25,2005
-Dinesh Manocha,University of North Carolina - Chapel Hill,highperf,1.0,0.25,2006
-Dinesh Manocha,University of North Carolina - Chapel Hill,vision,1.0,0.25,2015
+Dinesh Manocha,University of North Carolina,graphics,1.0,0.5,1994
+Dinesh Manocha,University of North Carolina,graphics,2.0,0.458333333333,1996
+Dinesh Manocha,University of North Carolina,graphics,2.0,0.75,1997
+Dinesh Manocha,University of North Carolina,graphics,1.0,0.333333333333,1998
+Dinesh Manocha,University of North Carolina,graphics,1.0,0.2,1999
+Dinesh Manocha,University of North Carolina,graphics,1.0,0.25,2001
+Dinesh Manocha,University of North Carolina,graphics,2.0,0.7,2003
+Dinesh Manocha,University of North Carolina,graphics,2.0,0.375,2005
+Dinesh Manocha,University of North Carolina,graphics,1.0,0.2,2006
+Dinesh Manocha,University of North Carolina,graphics,2.0,0.7,2008
+Dinesh Manocha,University of North Carolina,graphics,1.0,0.2,2010
+Dinesh Manocha,University of North Carolina,graphics,3.0,0.666666666667,2012
+Dinesh Manocha,University of North Carolina,graphics,3.0,0.666666666667,2013
+Dinesh Manocha,University of North Carolina,graphics,3.0,1.45833333333,2014
+Dinesh Manocha,University of North Carolina,ai,1.0,0.333333333333,2010
+Dinesh Manocha,University of North Carolina,ai,1.0,0.25,2011
+Dinesh Manocha,University of North Carolina,database,1.0,0.2,2004
+Dinesh Manocha,University of North Carolina,database,1.0,0.333333333333,2005
+Dinesh Manocha,University of North Carolina,database,1.0,0.25,2006
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.833333333333,1994
+Dinesh Manocha,University of North Carolina,robotics,1.0,0.333333333333,1995
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.45,2000
+Dinesh Manocha,University of North Carolina,robotics,1.0,0.25,2001
+Dinesh Manocha,University of North Carolina,robotics,1.0,0.333333333333,2002
+Dinesh Manocha,University of North Carolina,robotics,3.0,1.08333333333,2005
+Dinesh Manocha,University of North Carolina,robotics,3.0,0.833333333333,2006
+Dinesh Manocha,University of North Carolina,robotics,4.0,1.11666666667,2007
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.833333333333,2008
+Dinesh Manocha,University of North Carolina,robotics,6.0,1.75,2009
+Dinesh Manocha,University of North Carolina,robotics,7.0,2.28333333333,2010
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.583333333333,2011
+Dinesh Manocha,University of North Carolina,robotics,3.0,0.733333333333,2012
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.583333333333,2013
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.533333333333,2014
+Dinesh Manocha,University of North Carolina,robotics,2.0,0.833333333333,2015
+Dinesh Manocha,University of North Carolina,robotics,3.0,0.783333333333,2016
+Dinesh Manocha,University of North Carolina,highperf,1.0,0.333333333333,1996
+Dinesh Manocha,University of North Carolina,highperf,1.0,0.25,2005
+Dinesh Manocha,University of North Carolina,highperf,1.0,0.25,2006
+Dinesh Manocha,University of North Carolina,vision,1.0,0.25,2015
 Barnabás Póczos,Carnegie Mellon University,mlmining,1.0,0.5,2005
 Barnabás Póczos,Carnegie Mellon University,mlmining,1.0,0.5,2008
 Barnabás Póczos,Carnegie Mellon University,mlmining,1.0,0.2,2009
@@ -13833,8 +13833,8 @@ Ross T. Whitaker,University of Utah,vision,1.0,1.0,1995
 Ross T. Whitaker,University of Utah,vision,1.0,0.5,2005
 Ross T. Whitaker,University of Utah,vision,1.0,0.333333333333,2006
 Ross T. Whitaker,University of Utah,vision,1.0,0.333333333333,2009
-Jan F. Prins,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2014
-Jan F. Prins,University of North Carolina - Chapel Hill,highperf,1.0,0.25,2012
+Jan F. Prins,University of North Carolina,robotics,1.0,0.333333333333,2014
+Jan F. Prins,University of North Carolina,highperf,1.0,0.25,2012
 Christopher Scaffidi,Oregon State University,hci,1.0,0.142857142857,2013
 Christopher Scaffidi,Oregon State University,hci,1.0,0.333333333333,2016
 Christopher Scaffidi,Oregon State University,softeng,2.0,0.5,2008
@@ -16669,19 +16669,19 @@ Beth Plale,Indiana University,highperf,1.0,0.5,2000
 Beth Plale,Indiana University,highperf,1.0,1.0,2002
 Beth Plale,Indiana University,highperf,1.0,0.5,2006
 Beth Plale,Indiana University,highperf,1.0,0.25,2010
-Donald E. Porter,University of North Carolina - Chapel Hill,opsys,1.0,0.166666666667,2007
-Donald E. Porter,University of North Carolina - Chapel Hill,opsys,1.0,0.2,2009
-Donald E. Porter,University of North Carolina - Chapel Hill,opsys,1.0,0.142857142857,2012
-Donald E. Porter,University of North Carolina - Chapel Hill,opsys,2.0,0.35,2014
-Donald E. Porter,University of North Carolina - Chapel Hill,opsys,1.0,0.166666666667,2015
-Donald E. Porter,University of North Carolina - Chapel Hill,opsys,3.0,0.654761904762,2016
-Donald E. Porter,University of North Carolina - Chapel Hill,proglang,1.0,0.125,2007
-Donald E. Porter,University of North Carolina - Chapel Hill,proglang,1.0,0.2,2009
-Donald E. Porter,University of North Carolina - Chapel Hill,security,1.0,0.25,2007
-Donald E. Porter,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2011
-Donald E. Porter,University of North Carolina - Chapel Hill,security,1.0,0.2,2014
-Donald E. Porter,University of North Carolina - Chapel Hill,arch,1.0,0.166666666667,2007
-Donald E. Porter,University of North Carolina - Chapel Hill,arch,1.0,0.2,2011
+Donald E. Porter,University of North Carolina,opsys,1.0,0.166666666667,2007
+Donald E. Porter,University of North Carolina,opsys,1.0,0.2,2009
+Donald E. Porter,University of North Carolina,opsys,1.0,0.142857142857,2012
+Donald E. Porter,University of North Carolina,opsys,2.0,0.35,2014
+Donald E. Porter,University of North Carolina,opsys,1.0,0.166666666667,2015
+Donald E. Porter,University of North Carolina,opsys,3.0,0.654761904762,2016
+Donald E. Porter,University of North Carolina,proglang,1.0,0.125,2007
+Donald E. Porter,University of North Carolina,proglang,1.0,0.2,2009
+Donald E. Porter,University of North Carolina,security,1.0,0.25,2007
+Donald E. Porter,University of North Carolina,security,1.0,0.333333333333,2011
+Donald E. Porter,University of North Carolina,security,1.0,0.2,2014
+Donald E. Porter,University of North Carolina,arch,1.0,0.166666666667,2007
+Donald E. Porter,University of North Carolina,arch,1.0,0.2,2011
 Jane Hillston,University of Edinburgh,logic,1.0,1.0,2005
 Qun Li,College of William and Mary,hci,1.0,0.333333333333,2013
 Qun Li,College of William and Mary,hci,1.0,0.2,2015
@@ -17031,33 +17031,33 @@ Renate Scheidler,University of Calgary,crypto,1.0,0.333333333333,1990
 Claudia Eckert,TU Munich,mlmining,1.0,0.166666666667,2015
 Claudia Eckert,TU Munich,ai,1.0,0.5,2013
 Claudia Eckert,TU Munich,security,1.0,0.142857142857,2014
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1996
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.2,1999
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2001
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.5,2003
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,2.0,0.458333333333,2005
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2008
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2009
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,3.0,0.733333333333,2010
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,2011
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,2.0,0.333333333333,2012
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,3.0,0.833333333333,2013
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,2014
-Ming C. Lin,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,2015
-Ming C. Lin,University of North Carolina - Chapel Hill,ai,1.0,0.25,2011
-Ming C. Lin,University of North Carolina - Chapel Hill,database,1.0,0.2,2004
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,1994
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,1995
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,3.0,0.95,2000
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,2.0,0.75,2001
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,2.0,0.533333333333,2002
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,3.0,1.08333333333,2005
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2006
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,2.0,0.45,2007
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,1.0,0.333333333333,2008
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,2.0,0.5,2009
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,2.0,0.533333333333,2010
-Ming C. Lin,University of North Carolina - Chapel Hill,robotics,1.0,0.5,2016
+Ming C. Lin,University of North Carolina,graphics,1.0,0.333333333333,1996
+Ming C. Lin,University of North Carolina,graphics,1.0,0.2,1999
+Ming C. Lin,University of North Carolina,graphics,1.0,0.25,2001
+Ming C. Lin,University of North Carolina,graphics,1.0,0.5,2003
+Ming C. Lin,University of North Carolina,graphics,2.0,0.458333333333,2005
+Ming C. Lin,University of North Carolina,graphics,1.0,0.25,2008
+Ming C. Lin,University of North Carolina,graphics,1.0,0.25,2009
+Ming C. Lin,University of North Carolina,graphics,3.0,0.733333333333,2010
+Ming C. Lin,University of North Carolina,graphics,1.0,0.333333333333,2011
+Ming C. Lin,University of North Carolina,graphics,2.0,0.333333333333,2012
+Ming C. Lin,University of North Carolina,graphics,3.0,0.833333333333,2013
+Ming C. Lin,University of North Carolina,graphics,1.0,0.166666666667,2014
+Ming C. Lin,University of North Carolina,graphics,1.0,0.166666666667,2015
+Ming C. Lin,University of North Carolina,ai,1.0,0.25,2011
+Ming C. Lin,University of North Carolina,database,1.0,0.2,2004
+Ming C. Lin,University of North Carolina,robotics,1.0,0.333333333333,1994
+Ming C. Lin,University of North Carolina,robotics,1.0,0.333333333333,1995
+Ming C. Lin,University of North Carolina,robotics,3.0,0.95,2000
+Ming C. Lin,University of North Carolina,robotics,2.0,0.75,2001
+Ming C. Lin,University of North Carolina,robotics,2.0,0.533333333333,2002
+Ming C. Lin,University of North Carolina,robotics,3.0,1.08333333333,2005
+Ming C. Lin,University of North Carolina,robotics,1.0,0.333333333333,2006
+Ming C. Lin,University of North Carolina,robotics,2.0,0.45,2007
+Ming C. Lin,University of North Carolina,robotics,1.0,0.333333333333,2008
+Ming C. Lin,University of North Carolina,robotics,2.0,0.5,2009
+Ming C. Lin,University of North Carolina,robotics,2.0,0.533333333333,2010
+Ming C. Lin,University of North Carolina,robotics,1.0,0.5,2016
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.333333333333,1989
 Rafail Ostrovsky,University of California - Los Angeles,theory,3.0,1.66666666667,1990
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.25,1992
@@ -17392,21 +17392,21 @@ Thomas Wies,New York University,logic,1.0,0.333333333333,2013
 Thomas Wies,New York University,logic,1.0,0.333333333333,2014
 Thomas Wies,New York University,logic,1.0,0.2,2015
 Thomas Wies,New York University,softeng,1.0,0.333333333333,2013
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,2.0,0.833333333333,1979
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1980
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1983
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.125,1985
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,2.0,0.583333333333,1986
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.1,1989
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1992
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.142857142857,1996
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,1998
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2003
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,2013
-Henry Fuchs,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,2014
-Henry Fuchs,University of North Carolina - Chapel Hill,arch,1.0,0.5,1979
-Henry Fuchs,University of North Carolina - Chapel Hill,vision,3.0,1.25,2007
-Henry Fuchs,University of North Carolina - Chapel Hill,vision,1.0,0.2,2015
+Henry Fuchs,University of North Carolina,graphics,2.0,0.833333333333,1979
+Henry Fuchs,University of North Carolina,graphics,1.0,0.333333333333,1980
+Henry Fuchs,University of North Carolina,graphics,1.0,0.333333333333,1983
+Henry Fuchs,University of North Carolina,graphics,1.0,0.125,1985
+Henry Fuchs,University of North Carolina,graphics,2.0,0.583333333333,1986
+Henry Fuchs,University of North Carolina,graphics,1.0,0.1,1989
+Henry Fuchs,University of North Carolina,graphics,1.0,0.333333333333,1992
+Henry Fuchs,University of North Carolina,graphics,1.0,0.142857142857,1996
+Henry Fuchs,University of North Carolina,graphics,1.0,0.166666666667,1998
+Henry Fuchs,University of North Carolina,graphics,1.0,0.25,2003
+Henry Fuchs,University of North Carolina,graphics,1.0,0.166666666667,2013
+Henry Fuchs,University of North Carolina,graphics,1.0,0.166666666667,2014
+Henry Fuchs,University of North Carolina,arch,1.0,0.5,1979
+Henry Fuchs,University of North Carolina,vision,3.0,1.25,2007
+Henry Fuchs,University of North Carolina,vision,1.0,0.2,2015
 Martin Farach,Rutgers University,theory,2.0,1.0,1991
 Martin Farach,Rutgers University,theory,1.0,0.333333333333,1992
 Martin Farach,Rutgers University,theory,2.0,0.533333333333,1993
@@ -17416,10 +17416,10 @@ Martin Farach,Rutgers University,theory,2.0,0.666666666667,1996
 Martin Farach,Rutgers University,theory,4.0,1.89285714286,1997
 Martin Farach,Rutgers University,theory,2.0,0.833333333333,1998
 Laurent Michel,University of Connecticut,proglang,1.0,0.5,2002
-Jan Prins,University of North Carolina - Chapel Hill,mlmining,1.0,0.25,2004
-Jan Prins,University of North Carolina - Chapel Hill,mlmining,1.0,0.2,2006
-Jan Prins,University of North Carolina - Chapel Hill,proglang,1.0,0.333333333333,1988
-Jan Prins,University of North Carolina - Chapel Hill,arch,1.0,0.25,1982
+Jan Prins,University of North Carolina,mlmining,1.0,0.25,2004
+Jan Prins,University of North Carolina,mlmining,1.0,0.2,2006
+Jan Prins,University of North Carolina,proglang,1.0,0.333333333333,1988
+Jan Prins,University of North Carolina,arch,1.0,0.25,1982
 Chaoli Wang,University of Notre Dame,robotics,1.0,0.25,2000
 Chaoli Wang,University of Notre Dame,robotics,1.0,1.0,2011
 Chaoli Wang,University of Notre Dame,highperf,1.0,0.333333333333,2007
@@ -17648,18 +17648,18 @@ Gregory Dudek,McGill University,vision,1.0,0.5,1999
 Ivan Martinovic,University of Oxford,networks,1.0,0.25,2011
 Ivan Martinovic,University of Oxford,security,1.0,0.166666666667,2012
 Ivan Martinovic,University of Oxford,softeng,1.0,0.166666666667,2015
-Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,0.25,1988
-Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,0.5,2000
-Jack Snoeyink,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2006
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,2.0,0.47619047619,1990
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,1.0,0.2,1991
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,1.0,0.333333333333,1993
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,1.0,0.333333333333,1995
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,1.0,0.5,1999
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,1.0,0.333333333333,2000
-Jack Snoeyink,University of North Carolina - Chapel Hill,theory,1.0,0.5,2004
-Jack Snoeyink,University of North Carolina - Chapel Hill,networks,1.0,0.333333333333,2001
-Jack Snoeyink,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2009
+Jack Snoeyink,University of North Carolina,graphics,1.0,0.25,1988
+Jack Snoeyink,University of North Carolina,graphics,1.0,0.5,2000
+Jack Snoeyink,University of North Carolina,graphics,1.0,0.25,2006
+Jack Snoeyink,University of North Carolina,theory,2.0,0.47619047619,1990
+Jack Snoeyink,University of North Carolina,theory,1.0,0.2,1991
+Jack Snoeyink,University of North Carolina,theory,1.0,0.333333333333,1993
+Jack Snoeyink,University of North Carolina,theory,1.0,0.333333333333,1995
+Jack Snoeyink,University of North Carolina,theory,1.0,0.5,1999
+Jack Snoeyink,University of North Carolina,theory,1.0,0.333333333333,2000
+Jack Snoeyink,University of North Carolina,theory,1.0,0.5,2004
+Jack Snoeyink,University of North Carolina,networks,1.0,0.333333333333,2001
+Jack Snoeyink,University of North Carolina,robotics,1.0,0.25,2009
 Barbara M. Chapman,Stony Brook University,highperf,1.0,0.25,1993
 Barbara M. Chapman,Stony Brook University,highperf,1.0,0.125,2008
 John Shawe-Taylor,University College London,mlmining,1.0,1.0,1991
@@ -19080,23 +19080,23 @@ Jonathan Ullman,Northeastern University,theory,2.0,0.5,2016
 Jonathan Ullman,Northeastern University,database,1.0,1.0,2015
 Jonathan Ullman,Northeastern University,database,1.0,0.25,2016
 Björn E. Ottersten,University of Luxembourg,vision,1.0,0.2,2007
-Fabian Monrose,University of North Carolina - Chapel Hill,metrics,1.0,0.25,2006
-Fabian Monrose,University of North Carolina - Chapel Hill,opsys,1.0,0.25,2012
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.5,1997
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.533333333333,1999
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.25,2001
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.2,2002
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2004
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2005
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2006
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.45,2007
-Fabian Monrose,University of North Carolina - Chapel Hill,security,4.0,0.9,2008
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.25,2009
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.666666666667,2010
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.5,2011
-Fabian Monrose,University of North Carolina - Chapel Hill,security,1.0,0.166666666667,2012
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.366666666667,2013
-Fabian Monrose,University of North Carolina - Chapel Hill,security,2.0,0.583333333333,2014
+Fabian Monrose,University of North Carolina,metrics,1.0,0.25,2006
+Fabian Monrose,University of North Carolina,opsys,1.0,0.25,2012
+Fabian Monrose,University of North Carolina,security,1.0,0.5,1997
+Fabian Monrose,University of North Carolina,security,2.0,0.533333333333,1999
+Fabian Monrose,University of North Carolina,security,1.0,0.25,2001
+Fabian Monrose,University of North Carolina,security,1.0,0.2,2002
+Fabian Monrose,University of North Carolina,security,1.0,0.333333333333,2004
+Fabian Monrose,University of North Carolina,security,1.0,0.333333333333,2005
+Fabian Monrose,University of North Carolina,security,1.0,0.333333333333,2006
+Fabian Monrose,University of North Carolina,security,2.0,0.45,2007
+Fabian Monrose,University of North Carolina,security,4.0,0.9,2008
+Fabian Monrose,University of North Carolina,security,1.0,0.25,2009
+Fabian Monrose,University of North Carolina,security,2.0,0.666666666667,2010
+Fabian Monrose,University of North Carolina,security,2.0,0.5,2011
+Fabian Monrose,University of North Carolina,security,1.0,0.166666666667,2012
+Fabian Monrose,University of North Carolina,security,2.0,0.366666666667,2013
+Fabian Monrose,University of North Carolina,security,2.0,0.583333333333,2014
 Diane L. Souvaine,Tufts University,theory,1.0,0.125,1991
 Diane L. Souvaine,Tufts University,theory,1.0,0.142857142857,2001
 Ren Ng,University of California - Berkeley,graphics,2.0,0.285714285714,2002
@@ -20525,8 +20525,8 @@ Jason Eisner,Johns Hopkins University,mlmining,2.0,0.583333333333,2012
 Jason Eisner,Johns Hopkins University,mlmining,1.0,0.333333333333,2014
 Jason Eisner,Johns Hopkins University,ai,1.0,0.5,1992
 Jason Eisner,Johns Hopkins University,security,1.0,0.25,2006
-P. David Stotts,University of North Carolina - Chapel Hill,web,1.0,0.5,2002
-P. David Stotts,University of North Carolina - Chapel Hill,softeng,2.0,1.0,2003
+P. David Stotts,University of North Carolina,web,1.0,0.5,2002
+P. David Stotts,University of North Carolina,softeng,2.0,1.0,2003
 Abedelaziz Mohaisen,University of Buffalo,metrics,1.0,0.333333333333,2010
 Abedelaziz Mohaisen,University of Buffalo,networks,1.0,0.333333333333,2011
 Abedelaziz Mohaisen,University of Buffalo,networks,1.0,0.25,2012
@@ -20575,47 +20575,47 @@ Andrew M. Pitts,University of Cambridge,logic,1.0,0.5,1990
 Andrew M. Pitts,University of Cambridge,logic,1.0,1.0,1993
 Andrew M. Pitts,University of Cambridge,logic,1.0,1.0,1996
 Andrew M. Pitts,University of Cambridge,logic,1.0,0.5,1999
-Michael K. Reiter,University of North Carolina - Chapel Hill,metrics,1.0,0.333333333333,2010
-Michael K. Reiter,University of North Carolina - Chapel Hill,hci,2.0,0.342857142857,2008
-Michael K. Reiter,University of North Carolina - Chapel Hill,hci,1.0,0.2,2009
-Michael K. Reiter,University of North Carolina - Chapel Hill,hci,1.0,0.0625,2010
-Michael K. Reiter,University of North Carolina - Chapel Hill,hci,1.0,0.2,2011
-Michael K. Reiter,University of North Carolina - Chapel Hill,hci,1.0,0.111111111111,2012
-Michael K. Reiter,University of North Carolina - Chapel Hill,hci,1.0,0.25,2015
-Michael K. Reiter,University of North Carolina - Chapel Hill,theory,1.0,0.5,1997
-Michael K. Reiter,University of North Carolina - Chapel Hill,opsys,1.0,0.2,2005
-Michael K. Reiter,University of North Carolina - Chapel Hill,opsys,1.0,0.333333333333,2006
-Michael K. Reiter,University of North Carolina - Chapel Hill,opsys,1.0,0.333333333333,2007
-Michael K. Reiter,University of North Carolina - Chapel Hill,opsys,1.0,0.2,2008
-Michael K. Reiter,University of North Carolina - Chapel Hill,crypto,1.0,0.5,1995
-Michael K. Reiter,University of North Carolina - Chapel Hill,crypto,1.0,0.25,1996
-Michael K. Reiter,University of North Carolina - Chapel Hill,crypto,1.0,0.5,2001
-Michael K. Reiter,University of North Carolina - Chapel Hill,networks,1.0,0.166666666667,2008
-Michael K. Reiter,University of North Carolina - Chapel Hill,networks,1.0,0.2,2012
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,1992
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.5,1993
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,2.0,1994
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.5,1995
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.25,1996
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,1.0,1997
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,1998
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,0.533333333333,1999
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,3.0,1.25,2001
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.2,2002
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,0.833333333333,2003
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,6.0,2.5,2004
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,4.0,1.11666666667,2005
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.166666666667,2006
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,3.0,0.9,2007
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,0.583333333333,2008
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,0.5,2009
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.333333333333,2010
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.25,2011
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.25,2012
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,1.0,0.5,2013
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,0.45,2014
-Michael K. Reiter,University of North Carolina - Chapel Hill,security,2.0,0.666666666667,2015
-Michael K. Reiter,University of North Carolina - Chapel Hill,arch,1.0,0.2,2008
+Michael K. Reiter,University of North Carolina,metrics,1.0,0.333333333333,2010
+Michael K. Reiter,University of North Carolina,hci,2.0,0.342857142857,2008
+Michael K. Reiter,University of North Carolina,hci,1.0,0.2,2009
+Michael K. Reiter,University of North Carolina,hci,1.0,0.0625,2010
+Michael K. Reiter,University of North Carolina,hci,1.0,0.2,2011
+Michael K. Reiter,University of North Carolina,hci,1.0,0.111111111111,2012
+Michael K. Reiter,University of North Carolina,hci,1.0,0.25,2015
+Michael K. Reiter,University of North Carolina,theory,1.0,0.5,1997
+Michael K. Reiter,University of North Carolina,opsys,1.0,0.2,2005
+Michael K. Reiter,University of North Carolina,opsys,1.0,0.333333333333,2006
+Michael K. Reiter,University of North Carolina,opsys,1.0,0.333333333333,2007
+Michael K. Reiter,University of North Carolina,opsys,1.0,0.2,2008
+Michael K. Reiter,University of North Carolina,crypto,1.0,0.5,1995
+Michael K. Reiter,University of North Carolina,crypto,1.0,0.25,1996
+Michael K. Reiter,University of North Carolina,crypto,1.0,0.5,2001
+Michael K. Reiter,University of North Carolina,networks,1.0,0.166666666667,2008
+Michael K. Reiter,University of North Carolina,networks,1.0,0.2,2012
+Michael K. Reiter,University of North Carolina,security,1.0,0.333333333333,1992
+Michael K. Reiter,University of North Carolina,security,1.0,0.5,1993
+Michael K. Reiter,University of North Carolina,security,2.0,2.0,1994
+Michael K. Reiter,University of North Carolina,security,1.0,0.5,1995
+Michael K. Reiter,University of North Carolina,security,1.0,0.25,1996
+Michael K. Reiter,University of North Carolina,security,2.0,1.0,1997
+Michael K. Reiter,University of North Carolina,security,1.0,0.333333333333,1998
+Michael K. Reiter,University of North Carolina,security,2.0,0.533333333333,1999
+Michael K. Reiter,University of North Carolina,security,3.0,1.25,2001
+Michael K. Reiter,University of North Carolina,security,1.0,0.2,2002
+Michael K. Reiter,University of North Carolina,security,2.0,0.833333333333,2003
+Michael K. Reiter,University of North Carolina,security,6.0,2.5,2004
+Michael K. Reiter,University of North Carolina,security,4.0,1.11666666667,2005
+Michael K. Reiter,University of North Carolina,security,1.0,0.166666666667,2006
+Michael K. Reiter,University of North Carolina,security,3.0,0.9,2007
+Michael K. Reiter,University of North Carolina,security,2.0,0.583333333333,2008
+Michael K. Reiter,University of North Carolina,security,2.0,0.5,2009
+Michael K. Reiter,University of North Carolina,security,1.0,0.333333333333,2010
+Michael K. Reiter,University of North Carolina,security,1.0,0.25,2011
+Michael K. Reiter,University of North Carolina,security,1.0,0.25,2012
+Michael K. Reiter,University of North Carolina,security,1.0,0.5,2013
+Michael K. Reiter,University of North Carolina,security,2.0,0.45,2014
+Michael K. Reiter,University of North Carolina,security,2.0,0.666666666667,2015
+Michael K. Reiter,University of North Carolina,arch,1.0,0.2,2008
 Paul W. Goldberg,University of Oxford,theory,1.0,0.333333333333,1998
 Paul W. Goldberg,University of Oxford,theory,1.0,0.166666666667,1999
 Paul W. Goldberg,University of Oxford,theory,3.0,1.0,2006
@@ -21752,14 +21752,14 @@ Kavita Bala,Cornell University,proglang,1.0,0.166666666667,2007
 Kavita Bala,Cornell University,arch,1.0,0.166666666667,2008
 Kavita Bala,Cornell University,vision,1.0,0.25,2013
 Kavita Bala,Cornell University,vision,3.0,0.616666666667,2015
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1.0,0.125,1985
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1.0,0.25,1990
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,2.0,0.392857142857,1993
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1.0,0.125,1996
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1997
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1.0,0.142857142857,1999
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,2.0,0.5,2002
-Frederick P. Brooks Jr.,University of North Carolina - Chapel Hill,graphics,1.0,0.25,2003
+Frederick P. Brooks Jr.,University of North Carolina,graphics,1.0,0.125,1985
+Frederick P. Brooks Jr.,University of North Carolina,graphics,1.0,0.25,1990
+Frederick P. Brooks Jr.,University of North Carolina,graphics,2.0,0.392857142857,1993
+Frederick P. Brooks Jr.,University of North Carolina,graphics,1.0,0.125,1996
+Frederick P. Brooks Jr.,University of North Carolina,graphics,1.0,0.333333333333,1997
+Frederick P. Brooks Jr.,University of North Carolina,graphics,1.0,0.142857142857,1999
+Frederick P. Brooks Jr.,University of North Carolina,graphics,2.0,0.5,2002
+Frederick P. Brooks Jr.,University of North Carolina,graphics,1.0,0.25,2003
 David Steurer,Cornell University,theory,1.0,0.5,2005
 David Steurer,Cornell University,theory,2.0,0.333333333333,2008
 David Steurer,Cornell University,theory,4.0,1.83333333333,2009
@@ -25076,9 +25076,9 @@ Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,2.0,0.53
 Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,1.0,0.5,2006
 Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,1.0,0.5,2007
 Jeffrey K. Hollingsworth,University of Maryland - College Park,highperf,1.0,0.25,2013
-Prasun Dewan,University of North Carolina - Chapel Hill,hci,1.0,1.0,1990
-Prasun Dewan,University of North Carolina - Chapel Hill,hci,2.0,1.0,1991
-Prasun Dewan,University of North Carolina - Chapel Hill,softeng,1.0,0.5,2008
+Prasun Dewan,University of North Carolina,hci,1.0,1.0,1990
+Prasun Dewan,University of North Carolina,hci,2.0,1.0,1991
+Prasun Dewan,University of North Carolina,softeng,1.0,0.5,2008
 Anshumali Shrivastava,Rice University,mlmining,1.0,0.25,2011
 Anshumali Shrivastava,Rice University,mlmining,1.0,0.5,2013
 Anshumali Shrivastava,Rice University,mlmining,3.0,1.33333333333,2014
@@ -25668,21 +25668,21 @@ Barry W. Boehm,University of Southern California,softeng,1.0,0.166666666667,2007
 Barry W. Boehm,University of Southern California,softeng,1.0,0.25,2009
 Barry W. Boehm,University of Southern California,softeng,1.0,0.5,2011
 Barry W. Boehm,University of Southern California,softeng,1.0,0.5,2015
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1995
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,2.0,0.533333333333,2000
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,1.0,0.2,2001
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,4.0,0.733333333333,2002
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,2.0,0.583333333333,2003
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,1.0,0.5,2005
-Leonard McMillan,University of North Carolina - Chapel Hill,graphics,1.0,0.5,2007
-Leonard McMillan,University of North Carolina - Chapel Hill,mlmining,1.0,0.2,2006
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2001
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,0.25,2002
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,2.0,0.833333333333,2004
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,2.0,1.0,2005
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2006
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,1.0,0.25,2007
-Leonard McMillan,University of North Carolina - Chapel Hill,vision,2.0,0.5,2008
+Leonard McMillan,University of North Carolina,graphics,1.0,0.5,1995
+Leonard McMillan,University of North Carolina,graphics,2.0,0.533333333333,2000
+Leonard McMillan,University of North Carolina,graphics,1.0,0.2,2001
+Leonard McMillan,University of North Carolina,graphics,4.0,0.733333333333,2002
+Leonard McMillan,University of North Carolina,graphics,2.0,0.583333333333,2003
+Leonard McMillan,University of North Carolina,graphics,1.0,0.5,2005
+Leonard McMillan,University of North Carolina,graphics,1.0,0.5,2007
+Leonard McMillan,University of North Carolina,mlmining,1.0,0.2,2006
+Leonard McMillan,University of North Carolina,vision,1.0,0.333333333333,2001
+Leonard McMillan,University of North Carolina,vision,1.0,0.25,2002
+Leonard McMillan,University of North Carolina,vision,2.0,0.833333333333,2004
+Leonard McMillan,University of North Carolina,vision,2.0,1.0,2005
+Leonard McMillan,University of North Carolina,vision,1.0,0.333333333333,2006
+Leonard McMillan,University of North Carolina,vision,1.0,0.25,2007
+Leonard McMillan,University of North Carolina,vision,2.0,0.5,2008
 Nicolas Wu,University of Bristol,proglang,1.0,0.333333333333,2015
 Jodi Forlizzi,Carnegie Mellon University,hci,1.0,0.25,1998
 Jodi Forlizzi,Carnegie Mellon University,hci,1.0,0.333333333333,2001
@@ -25787,8 +25787,8 @@ Shyhtsun Felix Wu,University of California - Davis,networks,1.0,0.142857142857,2
 Shyhtsun Felix Wu,University of California - Davis,networks,1.0,0.25,2008
 Shyhtsun Felix Wu,University of California - Davis,security,1.0,0.25,2005
 Shyhtsun Felix Wu,University of California - Davis,arch,1.0,0.166666666667,2006
-James H. Anderson,University of North Carolina - Chapel Hill,theory,1.0,0.5,1994
-James H. Anderson,University of North Carolina - Chapel Hill,theory,1.0,0.5,2002
+James H. Anderson,University of North Carolina,theory,1.0,0.5,1994
+James H. Anderson,University of North Carolina,theory,1.0,0.5,2002
 Peter Desnoyers,Northeastern University,opsys,1.0,0.5,2007
 Peter Desnoyers,Northeastern University,opsys,1.0,0.166666666667,2016
 Peter Desnoyers,Northeastern University,mobile,1.0,0.333333333333,2005
@@ -26960,14 +26960,14 @@ Martin Farach-Colton,Rutgers University,opsys,1.0,0.0714285714286,2016
 Martin Farach-Colton,Rutgers University,database,1.0,0.333333333333,2006
 Martin Farach-Colton,Rutgers University,database,1.0,0.1,2012
 Martin Farach-Colton,Rutgers University,database,1.0,0.2,2014
-Mohit Bansal,University of North Carolina - Chapel Hill,nlp,1.0,0.25,2009
-Mohit Bansal,University of North Carolina - Chapel Hill,nlp,1.0,0.5,2010
-Mohit Bansal,University of North Carolina - Chapel Hill,nlp,2.0,0.833333333333,2011
-Mohit Bansal,University of North Carolina - Chapel Hill,nlp,2.0,0.833333333333,2012
-Mohit Bansal,University of North Carolina - Chapel Hill,nlp,2.0,0.75,2014
-Mohit Bansal,University of North Carolina - Chapel Hill,nlp,1.0,0.2,2015
-Mohit Bansal,University of North Carolina - Chapel Hill,ai,1.0,0.333333333333,2016
-Mohit Bansal,University of North Carolina - Chapel Hill,vision,1.0,0.2,2014
+Mohit Bansal,University of North Carolina,nlp,1.0,0.25,2009
+Mohit Bansal,University of North Carolina,nlp,1.0,0.5,2010
+Mohit Bansal,University of North Carolina,nlp,2.0,0.833333333333,2011
+Mohit Bansal,University of North Carolina,nlp,2.0,0.833333333333,2012
+Mohit Bansal,University of North Carolina,nlp,2.0,0.75,2014
+Mohit Bansal,University of North Carolina,nlp,1.0,0.2,2015
+Mohit Bansal,University of North Carolina,ai,1.0,0.333333333333,2016
+Mohit Bansal,University of North Carolina,vision,1.0,0.2,2014
 Elena Grigorescu,Purdue University,theory,1.0,0.25,2008
 Elena Grigorescu,Purdue University,theory,1.0,0.2,2009
 Elena Grigorescu,Purdue University,theory,1.0,0.333333333333,2010
@@ -29311,9 +29311,9 @@ Janos Simon,University of Chicago,theory,1.0,0.333333333333,1986
 Janos Simon,University of Chicago,theory,1.0,0.5,1988
 Janos Simon,University of Chicago,theory,1.0,0.5,1992
 Janos Simon,University of Chicago,proglang,1.0,0.5,1986
-Stanley C. Ahalt,University of North Carolina - Chapel Hill,mlmining,1.0,0.25,1988
-Stanley C. Ahalt,University of North Carolina - Chapel Hill,robotics,1.0,0.25,2001
-Stanley C. Ahalt,University of North Carolina - Chapel Hill,highperf,1.0,1.0,2004
+Stanley C. Ahalt,University of North Carolina,mlmining,1.0,0.25,1988
+Stanley C. Ahalt,University of North Carolina,robotics,1.0,0.25,2001
+Stanley C. Ahalt,University of North Carolina,highperf,1.0,1.0,2004
 Rajeev Alur,University of Pennsylvania,theory,1.0,0.5,1989
 Rajeev Alur,University of Pennsylvania,theory,1.0,0.5,1992
 Rajeev Alur,University of Pennsylvania,theory,1.0,0.333333333333,1993
@@ -29407,9 +29407,9 @@ Max Mühlhäuser,TU Darmstadt,hci,1.0,0.2,2014
 Max Mühlhäuser,TU Darmstadt,hci,1.0,0.166666666667,2015
 Max Mühlhäuser,TU Darmstadt,nlp,1.0,0.333333333333,2007
 Max Mühlhäuser,TU Darmstadt,softeng,1.0,1.0,1988
-Cynthia Sturton,University of North Carolina - Chapel Hill,security,1.0,0.25,2009
-Cynthia Sturton,University of North Carolina - Chapel Hill,security,1.0,0.25,2011
-Cynthia Sturton,University of North Carolina - Chapel Hill,arch,1.0,0.25,2015
+Cynthia Sturton,University of North Carolina,security,1.0,0.25,2009
+Cynthia Sturton,University of North Carolina,security,1.0,0.25,2011
+Cynthia Sturton,University of North Carolina,arch,1.0,0.25,2015
 K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.333333333333,1992
 K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.5,1993
 K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.5,1997
@@ -29843,9 +29843,9 @@ Ness B. Shroff,Ohio State University,networks,10.0,2.91666666667,2013
 Ness B. Shroff,Ohio State University,networks,3.0,0.625,2014
 Ness B. Shroff,Ohio State University,networks,3.0,0.95,2015
 Ness B. Shroff,Ohio State University,mobile,1.0,0.333333333333,2006
-S. M. Shahriar Nirjon,University of North Carolina - Chapel Hill,mobile,1.0,0.1,2012
-S. M. Shahriar Nirjon,University of North Carolina - Chapel Hill,mobile,1.0,0.111111111111,2013
-S. M. Shahriar Nirjon,University of North Carolina - Chapel Hill,mobile,1.0,0.166666666667,2014
+S. M. Shahriar Nirjon,University of North Carolina,mobile,1.0,0.1,2012
+S. M. Shahriar Nirjon,University of North Carolina,mobile,1.0,0.111111111111,2013
+S. M. Shahriar Nirjon,University of North Carolina,mobile,1.0,0.166666666667,2014
 Alexander A. Sherstov,University of California - Los Angeles,theory,1.0,0.5,2006
 Alexander A. Sherstov,University of California - Los Angeles,theory,1.0,1.0,2007
 Alexander A. Sherstov,University of California - Los Angeles,theory,3.0,2.5,2008
@@ -33479,14 +33479,14 @@ Al Davis,University of Utah,highperf,1.0,0.2,2009
 Robert H. Sloan,University of Illinois - Chicago,theory,1.0,0.5,2000
 Robert H. Sloan,University of Illinois - Chicago,ai,1.0,0.5,1988
 Robert H. Sloan,University of Illinois - Chicago,ai,1.0,0.25,2008
-Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1994
-Gary Bishop,University of North Carolina - Chapel Hill,graphics,2.0,1.0,1995
-Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1997
-Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1998
-Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,1999
-Gary Bishop,University of North Carolina - Chapel Hill,graphics,1.0,0.333333333333,2000
-Ketan Mayer-Patel,University of North Carolina - Chapel Hill,opsys,1.0,0.5,2002
-Ketan Mayer-Patel,University of North Carolina - Chapel Hill,networks,1.0,0.333333333333,2004
+Gary Bishop,University of North Carolina,graphics,1.0,0.5,1994
+Gary Bishop,University of North Carolina,graphics,2.0,1.0,1995
+Gary Bishop,University of North Carolina,graphics,1.0,0.5,1997
+Gary Bishop,University of North Carolina,graphics,1.0,0.5,1998
+Gary Bishop,University of North Carolina,graphics,1.0,0.333333333333,1999
+Gary Bishop,University of North Carolina,graphics,1.0,0.333333333333,2000
+Ketan Mayer-Patel,University of North Carolina,opsys,1.0,0.5,2002
+Ketan Mayer-Patel,University of North Carolina,networks,1.0,0.333333333333,2004
 Katrina Ligett,Hebrew University of Jerusalem,theory,2.0,0.5,2007
 Katrina Ligett,Hebrew University of Jerusalem,theory,2.0,0.583333333333,2008
 Katrina Ligett,Hebrew University of Jerusalem,theory,1.0,0.2,2010
@@ -33605,12 +33605,12 @@ Aaron Stump,University of Iowa,logic,1.0,0.25,2001
 Aaron Stump,University of Iowa,logic,1.0,0.333333333333,2002
 Marina Jirotka,University of Oxford,hci,1.0,0.166666666667,2010
 Marina Jirotka,University of Oxford,hci,1.0,0.333333333333,2014
-Jasleen Kaur,University of North Carolina - Chapel Hill,metrics,2.0,0.833333333333,2004
-Jasleen Kaur,University of North Carolina - Chapel Hill,networks,1.0,0.5,2001
-Jasleen Kaur,University of North Carolina - Chapel Hill,networks,1.0,0.5,2003
-Jasleen Kaur,University of North Carolina - Chapel Hill,networks,1.0,0.5,2007
-Jasleen Kaur,University of North Carolina - Chapel Hill,networks,1.0,0.5,2009
-Jasleen Kaur,University of North Carolina - Chapel Hill,networks,1.0,0.5,2015
+Jasleen Kaur,University of North Carolina,metrics,2.0,0.833333333333,2004
+Jasleen Kaur,University of North Carolina,networks,1.0,0.5,2001
+Jasleen Kaur,University of North Carolina,networks,1.0,0.5,2003
+Jasleen Kaur,University of North Carolina,networks,1.0,0.5,2007
+Jasleen Kaur,University of North Carolina,networks,1.0,0.5,2009
+Jasleen Kaur,University of North Carolina,networks,1.0,0.5,2015
 Bernd Gärtner,ETH Zurich,theory,1.0,1.0,1992
 Bernd Gärtner,ETH Zurich,theory,1.0,0.5,1994
 Bernd Gärtner,ETH Zurich,theory,1.0,1.0,1998
@@ -33881,11 +33881,11 @@ Raj Reddy,Carnegie Mellon University,ai,2.0,1.0,1977
 Raj Reddy,Carnegie Mellon University,robotics,1.0,0.333333333333,1994
 Raj Reddy,Carnegie Mellon University,vision,1.0,0.333333333333,1994
 Raj Reddy,Carnegie Mellon University,vision,1.0,0.25,1995
-Greg Welch,University of North Carolina - Chapel Hill,graphics,1.0,0.5,1997
-Greg Welch,University of North Carolina - Chapel Hill,graphics,1.0,0.166666666667,1998
-Greg Welch,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2003
-Greg Welch,University of North Carolina - Chapel Hill,vision,1.0,0.5,2005
-Greg Welch,University of North Carolina - Chapel Hill,vision,1.0,0.2,2007
+Greg Welch,University of North Carolina,graphics,1.0,0.5,1997
+Greg Welch,University of North Carolina,graphics,1.0,0.166666666667,1998
+Greg Welch,University of North Carolina,vision,1.0,0.333333333333,2003
+Greg Welch,University of North Carolina,vision,1.0,0.5,2005
+Greg Welch,University of North Carolina,vision,1.0,0.2,2007
 Charless C. Fowlkes,University of California - Irvine,mlmining,1.0,0.333333333333,2002
 Charless C. Fowlkes,University of California - Irvine,mlmining,1.0,0.333333333333,2005
 Charless C. Fowlkes,University of California - Irvine,mlmining,1.0,0.333333333333,2009
@@ -35371,25 +35371,25 @@ Robert Endre Tarjan,Princeton University,theory,1.0,0.5,2010
 Robert Endre Tarjan,Princeton University,theory,2.0,0.833333333333,2012
 Robert Endre Tarjan,Princeton University,theory,2.0,0.416666666667,2014
 Robert Endre Tarjan,Princeton University,proglang,1.0,1.0,1980
-Alexander C. Berg,University of North Carolina - Chapel Hill,nlp,2.0,0.290909090909,2012
-Alexander C. Berg,University of North Carolina - Chapel Hill,mlmining,1.0,0.25,2004
-Alexander C. Berg,University of North Carolina - Chapel Hill,mlmining,1.0,0.25,2011
-Alexander C. Berg,University of North Carolina - Chapel Hill,ai,1.0,0.125,2015
-Alexander C. Berg,University of North Carolina - Chapel Hill,database,1.0,0.2,2000
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.5,2001
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.25,2003
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.125,2004
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,2.0,0.666666666667,2005
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.25,2006
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2007
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2008
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,2.0,0.75,2009
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,2.0,0.583333333333,2010
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,3.0,0.72619047619,2011
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,3.0,0.840909090909,2012
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.2,2013
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.25,2014
-Alexander C. Berg,University of North Carolina - Chapel Hill,vision,4.0,0.983333333333,2015
+Alexander C. Berg,University of North Carolina,nlp,2.0,0.290909090909,2012
+Alexander C. Berg,University of North Carolina,mlmining,1.0,0.25,2004
+Alexander C. Berg,University of North Carolina,mlmining,1.0,0.25,2011
+Alexander C. Berg,University of North Carolina,ai,1.0,0.125,2015
+Alexander C. Berg,University of North Carolina,database,1.0,0.2,2000
+Alexander C. Berg,University of North Carolina,vision,1.0,0.5,2001
+Alexander C. Berg,University of North Carolina,vision,1.0,0.25,2003
+Alexander C. Berg,University of North Carolina,vision,1.0,0.125,2004
+Alexander C. Berg,University of North Carolina,vision,2.0,0.666666666667,2005
+Alexander C. Berg,University of North Carolina,vision,1.0,0.25,2006
+Alexander C. Berg,University of North Carolina,vision,1.0,0.333333333333,2007
+Alexander C. Berg,University of North Carolina,vision,1.0,0.333333333333,2008
+Alexander C. Berg,University of North Carolina,vision,2.0,0.75,2009
+Alexander C. Berg,University of North Carolina,vision,2.0,0.583333333333,2010
+Alexander C. Berg,University of North Carolina,vision,3.0,0.72619047619,2011
+Alexander C. Berg,University of North Carolina,vision,3.0,0.840909090909,2012
+Alexander C. Berg,University of North Carolina,vision,1.0,0.2,2013
+Alexander C. Berg,University of North Carolina,vision,1.0,0.25,2014
+Alexander C. Berg,University of North Carolina,vision,4.0,0.983333333333,2015
 Moses Charikar,Stanford University,metrics,1.0,0.166666666667,2007
 Moses Charikar,Stanford University,theory,2.0,0.583333333333,1997
 Moses Charikar,Stanford University,theory,7.0,2.00952380952,1998
@@ -36634,20 +36634,20 @@ Theodore Kim,University of California - Santa Barbara,graphics,1.0,0.5,2009
 Theodore Kim,University of California - Santa Barbara,graphics,2.0,0.833333333333,2013
 Theodore Kim,University of California - Santa Barbara,graphics,1.0,0.333333333333,2014
 Theodore Kim,University of California - Santa Barbara,graphics,2.0,0.45,2015
-Tamara L. Berg,University of North Carolina - Chapel Hill,nlp,2.0,0.290909090909,2012
-Tamara L. Berg,University of North Carolina - Chapel Hill,nlp,1.0,0.25,2014
-Tamara L. Berg,University of North Carolina - Chapel Hill,mlmining,1.0,0.25,2004
-Tamara L. Berg,University of North Carolina - Chapel Hill,mlmining,1.0,0.333333333333,2011
-Tamara L. Berg,University of North Carolina - Chapel Hill,ai,1.0,0.125,2015
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.125,2004
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2005
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.5,2006
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,1.0,0.333333333333,2010
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,3.0,0.72619047619,2011
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,2.0,0.340909090909,2012
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,2.0,0.533333333333,2013
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,2.0,0.75,2014
-Tamara L. Berg,University of North Carolina - Chapel Hill,vision,3.0,0.95,2015
+Tamara L. Berg,University of North Carolina,nlp,2.0,0.290909090909,2012
+Tamara L. Berg,University of North Carolina,nlp,1.0,0.25,2014
+Tamara L. Berg,University of North Carolina,mlmining,1.0,0.25,2004
+Tamara L. Berg,University of North Carolina,mlmining,1.0,0.333333333333,2011
+Tamara L. Berg,University of North Carolina,ai,1.0,0.125,2015
+Tamara L. Berg,University of North Carolina,vision,1.0,0.125,2004
+Tamara L. Berg,University of North Carolina,vision,1.0,0.333333333333,2005
+Tamara L. Berg,University of North Carolina,vision,1.0,0.5,2006
+Tamara L. Berg,University of North Carolina,vision,1.0,0.333333333333,2010
+Tamara L. Berg,University of North Carolina,vision,3.0,0.72619047619,2011
+Tamara L. Berg,University of North Carolina,vision,2.0,0.340909090909,2012
+Tamara L. Berg,University of North Carolina,vision,2.0,0.533333333333,2013
+Tamara L. Berg,University of North Carolina,vision,2.0,0.75,2014
+Tamara L. Berg,University of North Carolina,vision,3.0,0.95,2015
 Rahul Narain,University of Minnesota,graphics,1.0,0.25,2008
 Rahul Narain,University of Minnesota,graphics,1.0,0.25,2009
 Rahul Narain,University of Minnesota,graphics,1.0,0.333333333333,2010
