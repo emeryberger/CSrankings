@@ -2102,6 +2102,14 @@ Christian Wulff-Nilsen,DIKU,theory,3.0,1.45,2011
 Christian Wulff-Nilsen,DIKU,theory,2.0,1.25,2012
 Christian Wulff-Nilsen,DIKU,theory,2.0,2.0,2013
 Christian Wulff-Nilsen,DIKU,theory,1.0,1.0,2016
+Reza Rejaie,University of Oregon,metrics,2.0,0.7,2006
+Reza Rejaie,University of Oregon,metrics,1.0,0.25,2010
+Reza Rejaie,University of Oregon,networks,2.0,0.666666666667,1999
+Reza Rejaie,University of Oregon,networks,1.0,0.25,2000
+Reza Rejaie,University of Oregon,networks,1.0,0.5,2005
+Reza Rejaie,University of Oregon,networks,4.0,1.53333333333,2006
+Reza Rejaie,University of Oregon,networks,2.0,0.833333333333,2007
+Reza Rejaie,University of Oregon,web,1.0,0.2,2013
 Helen Pain,University of Edinburgh,hci,1.0,0.25,2012
 Olaf Chitil,University of Kent,proglang,1.0,0.5,2015
 Olaf Chitil,University of Kent,proglang,1.0,0.5,2016
@@ -3428,6 +3436,15 @@ Todd M. Austin,University of Michigan,arch,1.0,0.2,2011
 Todd M. Austin,University of Michigan,arch,1.0,0.25,2012
 Todd M. Austin,University of Michigan,arch,1.0,0.25,2015
 Todd M. Austin,University of Michigan,arch,1.0,0.142857142857,2016
+Zhi Wang,Florida State University,opsys,1.0,0.2,2010
+Zhi Wang,Florida State University,opsys,1.0,0.25,2012
+Zhi Wang,Florida State University,opsys,1.0,0.2,2015
+Zhi Wang,Florida State University,networks,2.0,0.4,2014
+Zhi Wang,Florida State University,networks,1.0,0.25,2015
+Zhi Wang,Florida State University,security,1.0,0.25,2009
+Zhi Wang,Florida State University,security,2.0,0.666666666667,2010
+Zhi Wang,Florida State University,security,1.0,0.25,2011
+Zhi Wang,Florida State University,security,1.0,0.25,2014
 Chun-Hsi Huang,University of Connecticut,theory,1.0,0.333333333333,1999
 Prabhakar Ragde,University of Waterloo,theory,1.0,0.25,1985
 Prabhakar Ragde,University of Waterloo,theory,1.0,0.5,1987
@@ -5226,10 +5243,10 @@ Kathleen F. McCoy,University of Delaware,nlp,1.0,1.0,1982
 Kathleen F. McCoy,University of Delaware,nlp,1.0,1.0,1986
 Kathleen F. McCoy,University of Delaware,nlp,1.0,0.333333333333,1992
 Kathleen F. McCoy,University of Delaware,nlp,1.0,0.5,2001
-Zeeshan Syed,University of Michigan,mlmining,2.0,1.0,2010
-Zeeshan Syed,University of Michigan,mlmining,1.0,0.5,2014
-Zeeshan Syed,University of Michigan,ai,1.0,0.333333333333,2012
-Zeeshan Syed,University of Michigan,ai,2.0,0.45,2014
+Adrian Nistor,Florida State University,softeng,1.0,0.2,2012
+Adrian Nistor,Florida State University,softeng,1.0,0.25,2013
+Adrian Nistor,Florida State University,softeng,1.0,0.25,2015
+Adrian Nistor,Florida State University,arch,1.0,0.333333333333,2010
 Stephen A. Ward,Massachusetts Institute of Technology,arch,1.0,0.5,1980
 Michael A. Erdmann,Carnegie Mellon University,graphics,1.0,0.2,2000
 Michael A. Erdmann,Carnegie Mellon University,graphics,1.0,0.333333333333,2003
@@ -6229,29 +6246,15 @@ Ihab F. Ilyas,University of Waterloo,database,2.0,0.47619047619,2013
 Ihab F. Ilyas,University of Waterloo,database,2.0,0.583333333333,2014
 Ihab F. Ilyas,University of Waterloo,database,2.0,0.253968253968,2015
 Ihab F. Ilyas,University of Waterloo,database,2.0,0.583333333333,2016
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1989
-David Zuckerman,University of Texas - Austin,theory,3.0,2.2,1990
-David Zuckerman,University of Texas - Austin,theory,1.0,1.0,1991
-David Zuckerman,University of Texas - Austin,theory,4.0,1.5,1993
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1994
-David Zuckerman,University of Texas - Austin,theory,1.0,0.111111111111,1995
-David Zuckerman,University of Texas - Austin,theory,1.0,1.0,1996
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1997
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1998
-David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,1999
-David Zuckerman,University of Texas - Austin,theory,4.0,1.41666666667,2001
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2003
-David Zuckerman,University of Texas - Austin,theory,1.0,0.25,2004
-David Zuckerman,University of Texas - Austin,theory,2.0,1.25,2006
-David Zuckerman,University of Texas - Austin,theory,2.0,0.583333333333,2008
-David Zuckerman,University of Texas - Austin,theory,2.0,0.7,2010
-David Zuckerman,University of Texas - Austin,theory,2.0,0.5,2011
-David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,2012
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2014
-David Zuckerman,University of Texas - Austin,theory,1.0,0.2,2015
-David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2016
-David Zuckerman,University of Texas - Austin,crypto,1.0,0.333333333333,2006
-David Zuckerman,University of Texas - Austin,security,1.0,0.333333333333,2002
+Franco P. Preparata,Brown University,graphics,1.0,0.333333333333,1990
+Franco P. Preparata,Brown University,theory,1.0,0.5,1979
+Franco P. Preparata,Brown University,theory,1.0,0.5,1982
+Franco P. Preparata,Brown University,theory,1.0,0.5,1984
+Franco P. Preparata,Brown University,theory,1.0,0.5,1987
+Franco P. Preparata,Brown University,theory,1.0,0.5,1988
+Franco P. Preparata,Brown University,theory,1.0,0.333333333333,1993
+Franco P. Preparata,Brown University,theory,1.0,0.5,2000
+Franco P. Preparata,Brown University,robotics,1.0,0.25,1992
 Kenneth Heafield,University of Edinburgh,nlp,1.0,0.333333333333,2013
 Chris Bregler,New York University,graphics,1.0,0.25,2013
 Gordon V. Cormack,University of Waterloo,mlmining,1.0,0.5,2009
@@ -7980,15 +7983,10 @@ Stanislaw Jarecki,University of California - Irvine,security,1.0,0.333333333333,
 Stanislaw Jarecki,University of California - Irvine,security,1.0,0.333333333333,2008
 Stanislaw Jarecki,University of California - Irvine,security,1.0,0.25,2011
 Stanislaw Jarecki,University of California - Irvine,security,1.0,0.2,2013
-Franco P. Preparata,Brown University,graphics,1.0,0.333333333333,1990
-Franco P. Preparata,Brown University,theory,1.0,0.5,1979
-Franco P. Preparata,Brown University,theory,1.0,0.5,1982
-Franco P. Preparata,Brown University,theory,1.0,0.5,1984
-Franco P. Preparata,Brown University,theory,1.0,0.5,1987
-Franco P. Preparata,Brown University,theory,1.0,0.5,1988
-Franco P. Preparata,Brown University,theory,1.0,0.333333333333,1993
-Franco P. Preparata,Brown University,theory,1.0,0.5,2000
-Franco P. Preparata,Brown University,robotics,1.0,0.25,1992
+Peixiang Zhao,Florida State University,database,1.0,0.333333333333,2007
+Peixiang Zhao,Florida State University,database,1.0,0.5,2010
+Peixiang Zhao,Florida State University,database,2.0,0.583333333333,2011
+Peixiang Zhao,Florida State University,web,1.0,0.25,2011
 Bernard Wong,University of Waterloo,opsys,1.0,0.25,2014
 Bernard Wong,University of Waterloo,database,1.0,0.2,2015
 Bernard Wong,University of Waterloo,networks,1.0,0.333333333333,2005
@@ -8390,6 +8388,13 @@ Walid A. Najjar,University of California - Riverside,arch,1.0,0.333333333333,199
 Walid A. Najjar,University of California - Riverside,arch,1.0,0.25,1993
 Walid A. Najjar,University of California - Riverside,arch,1.0,0.5,1995
 Walid A. Najjar,University of California - Riverside,arch,1.0,0.333333333333,2003
+Wim van Dam,University of California - Santa Barbara,theory,1.0,1.0,1998
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.25,2000
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.333333333333,2001
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.333333333333,2003
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.166666666667,2004
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.333333333333,2005
+Wim van Dam,University of California - Santa Barbara,theory,1.0,0.5,2007
 José A. B. Fortes,University of Florida,mlmining,1.0,0.5,1989
 José A. B. Fortes,University of Florida,arch,1.0,0.5,1984
 José A. B. Fortes,University of Florida,arch,1.0,0.333333333333,1988
@@ -9174,6 +9179,17 @@ Jörg Ott,TU Munich,networks,2.0,0.366666666667,2011
 Apostolos Gerasoulis,Rutgers University,highperf,1.0,0.333333333333,1990
 Apostolos Gerasoulis,Rutgers University,highperf,1.0,0.5,1991
 Apostolos Gerasoulis,Rutgers University,highperf,1.0,0.5,1992
+Xin Yuan,Florida State University,metrics,1.0,0.25,2007
+Xin Yuan,Florida State University,mlmining,1.0,0.333333333333,2014
+Xin Yuan,Florida State University,mlmining,1.0,0.2,2015
+Xin Yuan,Florida State University,networks,1.0,0.5,2001
+Xin Yuan,Florida State University,highperf,1.0,0.333333333333,1996
+Xin Yuan,Florida State University,highperf,1.0,0.5,2005
+Xin Yuan,Florida State University,highperf,2.0,0.666666666667,2006
+Xin Yuan,Florida State University,highperf,1.0,0.333333333333,2007
+Xin Yuan,Florida State University,highperf,1.0,0.5,2009
+Xin Yuan,Florida State University,highperf,2.0,0.342857142857,2013
+Xin Yuan,Florida State University,vision,1.0,0.142857142857,2014
 Ueli Maurer,ETH Zurich,theory,1.0,0.2,2013
 Ueli Maurer,ETH Zurich,crypto,1.0,0.25,2012
 Ueli Maurer,ETH Zurich,crypto,3.0,0.916666666667,2013
@@ -10792,19 +10808,8 @@ Randal E. Bryant,Carnegie Mellon University,logic,3.0,1.5,2004
 Randal E. Bryant,Carnegie Mellon University,security,1.0,0.2,2005
 Randal E. Bryant,Carnegie Mellon University,softeng,1.0,0.2,2005
 Randal E. Bryant,Carnegie Mellon University,arch,1.0,0.333333333333,1989
-Charles Rackoff,University of Toronto,theory,1.0,1.0,1974
-Charles Rackoff,University of Toronto,theory,1.0,0.2,1979
-Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,1983
-Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,1985
-Charles Rackoff,University of Toronto,theory,1.0,0.5,1986
-Charles Rackoff,University of Toronto,theory,1.0,0.5,1993
-Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,1998
-Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,2002
-Charles Rackoff,University of Toronto,theory,1.0,0.2,2008
-Charles Rackoff,University of Toronto,crypto,1.0,0.333333333333,1986
-Charles Rackoff,University of Toronto,crypto,1.0,0.5,1987
-Charles Rackoff,University of Toronto,crypto,1.0,1.0,1988
-Charles Rackoff,University of Toronto,crypto,1.0,0.5,1991
+Robert van Engelen,Florida State University,highperf,1.0,0.125,2005
+Robert van Engelen,Florida State University,highperf,1.0,0.25,2006
 Daniele Panozzo,New York University,graphics,2.0,0.45,2011
 Daniele Panozzo,New York University,graphics,1.0,0.25,2012
 Daniele Panozzo,New York University,graphics,3.0,0.833333333333,2013
@@ -11690,6 +11695,10 @@ Parris K. Egbert,Brigham Young University,vision,1.0,0.5,2005
 Aaron Striegel,University of Notre Dame,metrics,1.0,0.25,2015
 Aaron Striegel,University of Notre Dame,mobile,1.0,0.5,2013
 Aaron Striegel,University of Notre Dame,highperf,2.0,0.366666666667,2005
+Sonia Haiduc,Florida State University,softeng,1.0,0.2,2012
+Sonia Haiduc,Florida State University,softeng,1.0,0.166666666667,2013
+Sonia Haiduc,Florida State University,softeng,1.0,0.142857142857,2015
+Sonia Haiduc,Florida State University,softeng,1.0,0.111111111111,2016
 William Aiello,University of British Columbia,theory,1.0,0.333333333333,1986
 William Aiello,University of British Columbia,theory,1.0,0.5,1987
 William Aiello,University of British Columbia,theory,1.0,0.5,1991
@@ -11968,6 +11977,7 @@ Tracey Ho,California Institute of Technology,mlmining,1.0,0.333333333333,2003
 Tracey Ho,California Institute of Technology,networks,1.0,0.333333333333,2003
 Tracey Ho,California Institute of Technology,networks,2.0,0.366666666667,2007
 Tracey Ho,California Institute of Technology,networks,1.0,0.25,2011
+Jonathan P. Whiteley,University of Oxford,mlmining,1.0,0.2,2000
 Aveek Dutta,University of Kansas,networks,1.0,0.25,2009
 Aveek Dutta,University of Kansas,networks,1.0,0.25,2015
 Tim Weninger,University of Notre Dame,database,1.0,0.25,2011
@@ -13928,14 +13938,10 @@ Ran El-Yaniv,Technion,mlmining,1.0,0.5,2012
 Ran El-Yaniv,Technion,mlmining,1.0,0.25,2014
 Ran El-Yaniv,Technion,proglang,1.0,0.333333333333,2016
 Ran El-Yaniv,Technion,web,1.0,0.25,2001
-Reza Rejaie,University of Oregon,metrics,2.0,0.7,2006
-Reza Rejaie,University of Oregon,metrics,1.0,0.25,2010
-Reza Rejaie,University of Oregon,networks,2.0,0.666666666667,1999
-Reza Rejaie,University of Oregon,networks,1.0,0.25,2000
-Reza Rejaie,University of Oregon,networks,1.0,0.5,2005
-Reza Rejaie,University of Oregon,networks,4.0,1.53333333333,2006
-Reza Rejaie,University of Oregon,networks,2.0,0.833333333333,2007
-Reza Rejaie,University of Oregon,web,1.0,0.2,2013
+Zhenhai Duan,Florida State University,metrics,1.0,0.25,2007
+Zhenhai Duan,Florida State University,networks,1.0,0.25,2005
+Zhenhai Duan,Florida State University,networks,1.0,0.166666666667,2009
+Zhenhai Duan,Florida State University,networks,1.0,0.25,2013
 Bhubaneswar Mishra,New York University,theory,1.0,1.0,1984
 Bhubaneswar Mishra,New York University,theory,1.0,0.333333333333,1990
 Bhubaneswar Mishra,New York University,theory,1.0,0.166666666667,1991
@@ -14202,6 +14208,18 @@ Wayne Eberly,University of Calgary,theory,1.0,0.333333333333,1991
 Wayne Eberly,University of Calgary,theory,1.0,1.0,1992
 Wayne Eberly,University of Calgary,theory,1.0,1.0,1995
 Wayne Eberly,University of Calgary,theory,1.0,0.333333333333,2000
+Jie Yang 0003,Florida State University,networks,1.0,0.25,2009
+Jie Yang 0003,Florida State University,networks,1.0,0.2,2010
+Jie Yang 0003,Florida State University,networks,1.0,0.25,2012
+Jie Yang 0003,Florida State University,networks,1.0,0.25,2013
+Jie Yang 0003,Florida State University,networks,2.0,0.375,2014
+Jie Yang 0003,Florida State University,networks,1.0,0.25,2015
+Jie Yang 0003,Florida State University,mobile,1.0,0.111111111111,2011
+Jie Yang 0003,Florida State University,mobile,1.0,0.142857142857,2012
+Jie Yang 0003,Florida State University,mobile,2.0,0.291666666667,2013
+Jie Yang 0003,Florida State University,mobile,2.0,0.333333333333,2014
+Jie Yang 0003,Florida State University,mobile,2.0,0.416666666667,2015
+Jie Yang 0003,Florida State University,robotics,1.0,0.2,2014
 Scott Shenker,University of California - Berkeley,metrics,1.0,1.0,1987
 Scott Shenker,University of California - Berkeley,metrics,1.0,0.5,1988
 Scott Shenker,University of California - Berkeley,metrics,1.0,0.333333333333,1996
@@ -14652,6 +14670,7 @@ Alexandr Andoni,Columbia University,theory,2.0,0.833333333333,2015
 Alexandr Andoni,Columbia University,mlmining,1.0,0.25,2014
 Alexandr Andoni,Columbia University,mlmining,1.0,0.2,2015
 Alexandr Andoni,Columbia University,highperf,1.0,0.25,2010
+Ashok Srinivasan,Florida State University,highperf,1.0,0.2,2006
 Phong Nguyen,Ecole Normale Superieure,mlmining,1.0,0.333333333333,2012
 Boris Motik,University of Oxford,ai,1.0,0.333333333333,2005
 Boris Motik,University of Oxford,ai,1.0,0.5,2007
@@ -15357,6 +15376,7 @@ Matt W. Mutka,Michigan State University,robotics,1.0,0.166666666667,2013
 Matt W. Mutka,Michigan State University,robotics,1.0,0.2,2014
 Matt W. Mutka,Michigan State University,highperf,1.0,0.5,1994
 Matt W. Mutka,Michigan State University,highperf,1.0,0.5,1995
+Deborah Tatar,Virginia Tech,hci,1.0,0.2,2012
 Pascal Schweitzer,RWTH Aachen,theory,1.0,0.5,2009
 Pascal Schweitzer,RWTH Aachen,theory,2.0,1.0,2015
 Prabal Dutta,University of Michigan,opsys,1.0,0.25,2008
@@ -16569,6 +16589,8 @@ Robert D. Kleinberg,Cornell University,highperf,1.0,0.25,2011
 Hantao Zhang,University of Iowa,ai,1.0,0.5,1994
 Hantao Zhang,University of Iowa,ai,1.0,0.5,1995
 Hantao Zhang,University of Iowa,ai,1.0,0.5,2004
+Danail Stoyanov,University College London,robotics,1.0,0.333333333333,2009
+Danail Stoyanov,University College London,robotics,1.0,0.0769230769231,2015
 Piotr Berman,Pennsylvania State University,theory,1.0,0.5,1983
 Piotr Berman,Pennsylvania State University,theory,1.0,0.5,1987
 Piotr Berman,Pennsylvania State University,theory,1.0,0.5,1988
@@ -16912,8 +16934,9 @@ Piotr Indyk,Massachusetts Institute of Technology,mobile,1.0,0.25,2012
 Piotr Indyk,Massachusetts Institute of Technology,web,1.0,0.25,2002
 Piotr Indyk,Massachusetts Institute of Technology,web,1.0,0.25,2013
 Piotr Indyk,Massachusetts Institute of Technology,highperf,1.0,0.25,2011
-Erik Winfree,California Institute of Technology,theory,1.0,0.5,2000
-Erik Winfree,California Institute of Technology,mlmining,1.0,0.333333333333,2004
+Michael Brudno,University of Toronto,mlmining,1.0,0.166666666667,2008
+Michael Brudno,University of Toronto,ai,1.0,0.333333333333,2004
+Michael Brudno,University of Toronto,opsys,1.0,0.125,2009
 Johanna D. Moore,University of Edinburgh,hci,1.0,1.0,1989
 Johanna D. Moore,University of Edinburgh,hci,1.0,0.5,1994
 Johanna D. Moore,University of Edinburgh,hci,1.0,0.5,1995
@@ -17725,6 +17748,7 @@ Chunyi Peng,Ohio State University,security,1.0,0.142857142857,2015
 Ellis Horowitz,University of Southern California,theory,1.0,1.0,1972
 Ellis Horowitz,University of Southern California,softeng,1.0,0.333333333333,1976
 Ellis Horowitz,University of Southern California,softeng,1.0,0.25,1995
+Li Fei-Fei,Stanford University,vision,1.0,0.333333333333,2014
 Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,0.5,1990
 Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,1.0,1995
 Xiaosong Ma,North Carolina State University,metrics,1.0,0.125,2015
@@ -19610,6 +19634,14 @@ Yixin Chen,Washington University - St. Louis,networks,1.0,0.25,2012
 Yixin Chen,Washington University - St. Louis,robotics,1.0,0.5,2000
 Yixin Chen,Washington University - St. Louis,robotics,1.0,0.5,2002
 Yixin Chen,Washington University - St. Louis,vision,1.0,0.333333333333,2005
+Weikuan Yu,Florida State University,metrics,1.0,0.25,2014
+Weikuan Yu,Florida State University,highperf,1.0,0.111111111111,2003
+Weikuan Yu,Florida State University,highperf,1.0,0.333333333333,2005
+Weikuan Yu,Florida State University,highperf,2.0,0.283333333333,2008
+Weikuan Yu,Florida State University,highperf,1.0,0.2,2011
+Weikuan Yu,Florida State University,highperf,1.0,0.333333333333,2012
+Weikuan Yu,Florida State University,highperf,1.0,0.2,2013
+Weikuan Yu,Florida State University,highperf,1.0,0.25,2015
 Leysia Palen,University of Colorado Boulder,hci,1.0,0.5,1996
 Leysia Palen,University of Colorado Boulder,hci,1.0,0.125,1997
 Leysia Palen,University of Colorado Boulder,hci,1.0,1.0,1999
@@ -20330,7 +20362,25 @@ John K. Ousterhout,Stanford University,opsys,2.0,0.533333333333,2015
 John K. Ousterhout,Stanford University,opsys,1.0,0.166666666667,2016
 John K. Ousterhout,Stanford University,database,1.0,0.25,1988
 John K. Ousterhout,Stanford University,arch,1.0,0.2,1992
-Deborah Tatar,Virginia Tech,hci,1.0,0.2,2012
+Yanxi Liu,Pennsylvania State University,graphics,1.0,0.333333333333,2004
+Yanxi Liu,Pennsylvania State University,ai,1.0,0.5,1990
+Yanxi Liu,Pennsylvania State University,robotics,1.0,0.5,1989
+Yanxi Liu,Pennsylvania State University,robotics,1.0,0.5,1992
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,1998
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2000
+Yanxi Liu,Pennsylvania State University,vision,2.0,0.833333333333,2001
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2002
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2003
+Yanxi Liu,Pennsylvania State University,vision,2.0,0.833333333333,2004
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2005
+Yanxi Liu,Pennsylvania State University,vision,4.0,1.2,2006
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2007
+Yanxi Liu,Pennsylvania State University,vision,6.0,1.61666666667,2008
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2009
+Yanxi Liu,Pennsylvania State University,vision,2.0,0.75,2010
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2012
+Yanxi Liu,Pennsylvania State University,vision,2.0,0.75,2013
+Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2014
 Ali Raza Butt,Virginia Tech,metrics,1.0,0.333333333333,2005
 Ali Raza Butt,Virginia Tech,opsys,1.0,0.333333333333,2004
 Ali Raza Butt,Virginia Tech,opsys,1.0,0.333333333333,2015
@@ -22314,6 +22364,7 @@ R. Sekar,Stony Brook University,security,1.0,0.25,2008
 R. Sekar,Stony Brook University,security,1.0,0.5,2013
 R. Sekar,Stony Brook University,softeng,1.0,0.333333333333,2004
 R. Sekar,Stony Brook University,arch,1.0,0.5,2016
+An-I Wang,Florida State University,opsys,1.0,0.25,2002
 Thomas Dueholm Hansen,Aarhus University,theory,2.0,0.666666666667,2011
 Thomas Dueholm Hansen,Aarhus University,theory,2.0,0.666666666667,2014
 Thomas Dueholm Hansen,Aarhus University,theory,1.0,0.5,2015
@@ -22516,6 +22567,12 @@ Daniel Dominic Sleator,Carnegie Mellon University,theory,1.0,0.5,1987
 Daniel Dominic Sleator,Carnegie Mellon University,theory,1.0,0.333333333333,1988
 Daniel Dominic Sleator,Carnegie Mellon University,theory,2.0,0.583333333333,1991
 Daniel Dominic Sleator,Carnegie Mellon University,theory,1.0,0.333333333333,2006
+Mike Burmester,Florida State University,crypto,1.0,0.25,1989
+Mike Burmester,Florida State University,crypto,1.0,1.0,1990
+Mike Burmester,Florida State University,crypto,1.0,0.5,1991
+Mike Burmester,Florida State University,crypto,1.0,0.333333333333,1992
+Mike Burmester,Florida State University,crypto,1.0,1.0,1994
+Mike Burmester,Florida State University,crypto,2.0,1.25,1996
 Shambhu J. Upadhyaya,University of Buffalo,networks,1.0,0.25,2008
 David M. Blei,Columbia University,nlp,1.0,0.333333333333,2010
 David M. Blei,Columbia University,nlp,1.0,0.5,2011
@@ -23289,6 +23346,11 @@ James Andrew Bagnell,Carnegie Mellon University,ai,1.0,0.333333333333,2014
 James Andrew Bagnell,Carnegie Mellon University,ai,3.0,0.833333333333,2015
 James Andrew Bagnell,Carnegie Mellon University,vision,2.0,0.583333333333,2012
 James Andrew Bagnell,Carnegie Mellon University,vision,1.0,0.2,2014
+Zhenghao Zhang,Florida State University,networks,1.0,0.5,2004
+Zhenghao Zhang,Florida State University,networks,2.0,1.0,2005
+Zhenghao Zhang,Florida State University,networks,1.0,0.25,2010
+Zhenghao Zhang,Florida State University,networks,2.0,0.666666666667,2011
+Zhenghao Zhang,Florida State University,mobile,1.0,0.333333333333,2011
 Mihir Bellare,University of California - San Diego,theory,1.0,0.5,1988
 Mihir Bellare,University of California - San Diego,theory,2.0,0.666666666667,1990
 Mihir Bellare,University of California - San Diego,theory,1.0,0.25,1991
@@ -23626,7 +23688,21 @@ Songqing Chen,George Mason University,networks,1.0,0.2,2012
 Songqing Chen,George Mason University,web,1.0,0.25,2005
 Songqing Chen,George Mason University,web,1.0,0.125,2016
 Christophe G. Giraud-Carrier,Brigham Young University,mlmining,3.0,1.0,2000
-Li Fei-Fei,Stanford University,vision,1.0,0.333333333333,2014
+Charles Rackoff,University of Toronto,theory,1.0,1.0,1974
+Charles Rackoff,University of Toronto,theory,1.0,0.2,1979
+Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,1983
+Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,1985
+Charles Rackoff,University of Toronto,theory,1.0,0.5,1986
+Charles Rackoff,University of Toronto,theory,1.0,0.5,1993
+Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,1998
+Charles Rackoff,University of Toronto,theory,1.0,0.333333333333,2002
+Charles Rackoff,University of Toronto,theory,1.0,0.2,2008
+Charles Rackoff,University of Toronto,crypto,1.0,0.333333333333,1986
+Charles Rackoff,University of Toronto,crypto,1.0,0.5,1987
+Charles Rackoff,University of Toronto,crypto,1.0,1.0,1988
+Charles Rackoff,University of Toronto,crypto,1.0,0.5,1991
+An-I Andy Wang,Florida State University,opsys,1.0,0.333333333333,2008
+An-I Andy Wang,Florida State University,security,1.0,0.333333333333,2015
 Stanislav Zivny,University of Oxford,theory,2.0,1.0,2012
 Stanislav Zivny,University of Oxford,theory,1.0,0.5,2013
 Stanislav Zivny,University of Oxford,theory,1.0,0.5,2014
@@ -24812,6 +24888,16 @@ Dmitry Berenson,WPI,robotics,2.0,1.5,2013
 Dmitry Berenson,WPI,robotics,2.0,0.611111111111,2014
 Dmitry Berenson,WPI,robotics,3.0,1.16666666667,2015
 Dmitry Berenson,WPI,robotics,2.0,0.444444444444,2016
+Xiuwen Liu,Florida State University,mlmining,1.0,0.5,1999
+Xiuwen Liu,Florida State University,mlmining,1.0,0.25,2003
+Xiuwen Liu,Florida State University,robotics,1.0,0.25,2009
+Xiuwen Liu,Florida State University,vision,1.0,0.333333333333,1999
+Xiuwen Liu,Florida State University,vision,1.0,0.5,2000
+Xiuwen Liu,Florida State University,vision,1.0,0.333333333333,2002
+Xiuwen Liu,Florida State University,vision,1.0,0.333333333333,2003
+Xiuwen Liu,Florida State University,vision,2.0,0.583333333333,2004
+Xiuwen Liu,Florida State University,vision,1.0,0.25,2007
+Xiuwen Liu,Florida State University,vision,1.0,0.2,2010
 Alexander Herzog,Clemson University,robotics,1.0,0.166666666667,2012
 Alexander Herzog,Clemson University,robotics,2.0,0.45,2014
 Raquel Urtasun,University of Toronto,mlmining,1.0,0.5,2007
@@ -26054,6 +26140,8 @@ Amr Sabry,Indiana University,proglang,1.0,0.333333333333,2009
 Amr Sabry,Indiana University,proglang,1.0,0.5,2012
 Jeff Huang,Brown University,hci,1.0,0.5,2007
 Jeff Huang,Brown University,ai,1.0,0.5,2010
+Robert A. van Engelen,Florida State University,highperf,1.0,0.2,2004
+Robert A. van Engelen,Florida State University,highperf,1.0,0.5,2008
 Zack Butler,Rochester Institute of Technology,robotics,1.0,0.5,2009
 Adrian R. Vetta,McGill University,mlmining,1.0,0.333333333333,2014
 My T. Thai,University of Florida,database,1.0,0.333333333333,2016
@@ -28796,7 +28884,16 @@ Divyakant Agrawal,University of California - Santa Barbara,web,1.0,0.33333333333
 Divyakant Agrawal,University of California - Santa Barbara,web,1.0,0.333333333333,2007
 Divyakant Agrawal,University of California - Santa Barbara,web,1.0,0.333333333333,2011
 Divyakant Agrawal,University of California - Santa Barbara,highperf,1.0,0.25,1994
-Jonathan P. Whiteley,University of Oxford,mlmining,1.0,0.2,2000
+David B. Whalley,Florida State University,metrics,1.0,1.0,1992
+David B. Whalley,Florida State University,proglang,1.0,0.5,1992
+David B. Whalley,Florida State University,proglang,1.0,0.5,1993
+David B. Whalley,Florida State University,proglang,1.0,0.5,1995
+David B. Whalley,Florida State University,proglang,1.0,0.333333333333,1998
+David B. Whalley,Florida State University,proglang,1.0,0.166666666667,2004
+David B. Whalley,Florida State University,arch,1.0,0.5,1990
+David B. Whalley,Florida State University,arch,2.0,0.583333333333,2005
+David B. Whalley,Florida State University,arch,1.0,0.333333333333,2007
+David B. Whalley,Florida State University,highperf,1.0,0.333333333333,2001
 Jean Ponce,Ecole Normale Superieure,mlmining,1.0,0.2,2008
 Jean Ponce,Ecole Normale Superieure,mlmining,1.0,0.25,2009
 Jean Ponce,Ecole Normale Superieure,mlmining,2.0,0.666666666667,2010
@@ -30805,29 +30902,14 @@ Elizabeth Bradley,University of Colorado Boulder,ai,1.0,0.5,1998
 Elizabeth Bradley,University of Colorado Boulder,ai,1.0,0.5,1999
 Elizabeth Bradley,University of Colorado Boulder,ai,1.0,0.333333333333,2008
 Elizabeth Bradley,University of Colorado Boulder,ai,1.0,0.333333333333,2011
-Yanxi Liu,Pennsylvania State University,graphics,1.0,0.333333333333,2004
-Yanxi Liu,Pennsylvania State University,ai,1.0,0.5,1990
-Yanxi Liu,Pennsylvania State University,robotics,1.0,0.5,1989
-Yanxi Liu,Pennsylvania State University,robotics,1.0,0.5,1992
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,1998
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2000
-Yanxi Liu,Pennsylvania State University,vision,2.0,0.833333333333,2001
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2002
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2003
-Yanxi Liu,Pennsylvania State University,vision,2.0,0.833333333333,2004
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2005
-Yanxi Liu,Pennsylvania State University,vision,4.0,1.2,2006
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2007
-Yanxi Liu,Pennsylvania State University,vision,6.0,1.61666666667,2008
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2009
-Yanxi Liu,Pennsylvania State University,vision,2.0,0.75,2010
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.333333333333,2012
-Yanxi Liu,Pennsylvania State University,vision,2.0,0.75,2013
-Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2014
+Sudhir Aggarwal,Florida State University,robotics,1.0,0.333333333333,1994
+Sudhir Aggarwal,Florida State University,security,1.0,0.25,2009
+Sudhir Aggarwal,Florida State University,security,1.0,0.25,2010
 Laurent D. Michel,University of Connecticut,ai,1.0,0.5,2007
 Kenneth Wingate Regan,University of Buffalo,ai,1.0,0.5,2011
 Seshadhri Comandur,University of California - Santa Cruz,theory,1.0,0.25,2006
 Seshadhri Comandur,University of California - Santa Cruz,mlmining,1.0,0.25,2014
+Piyush Kumar,Florida State University,theory,1.0,0.2,2006
 Beverly A. Sanders,University of Florida,softeng,1.0,0.333333333333,2010
 Beverly A. Sanders,University of Florida,highperf,1.0,0.2,2010
 Daniel Jurafsky,Stanford University,nlp,2.0,0.833333333333,1995
@@ -33162,8 +33244,10 @@ Wolfgang E. Nagel,TU Dresden,highperf,1.0,0.5,1991
 Wolfgang E. Nagel,TU Dresden,highperf,1.0,0.5,2006
 Wolfgang E. Nagel,TU Dresden,highperf,1.0,0.1,2012
 Wolfgang E. Nagel,TU Dresden,highperf,1.0,0.166666666667,2013
-Danail Stoyanov,University College London,robotics,1.0,0.333333333333,2009
-Danail Stoyanov,University College London,robotics,1.0,0.0769230769231,2015
+Zeeshan Syed,University of Michigan,mlmining,2.0,1.0,2010
+Zeeshan Syed,University of Michigan,mlmining,1.0,0.5,2014
+Zeeshan Syed,University of Michigan,ai,1.0,0.333333333333,2012
+Zeeshan Syed,University of Michigan,ai,2.0,0.45,2014
 Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.166666666667,1998
 Gregory D. Abowd,Georgia Institute of Technology,hci,1.0,0.333333333333,1999
 Gregory D. Abowd,Georgia Institute of Technology,hci,2.0,0.666666666667,2000
@@ -37148,9 +37232,7 @@ Huaping Liu,Oregon State University,robotics,1.0,0.25,2010
 Huaping Liu,Oregon State University,robotics,1.0,0.25,2014
 Huaping Liu,Oregon State University,robotics,1.0,0.2,2015
 Huaping Liu,Oregon State University,robotics,1.0,0.25,2016
-Michael Brudno,University of Toronto,mlmining,1.0,0.166666666667,2008
-Michael Brudno,University of Toronto,ai,1.0,0.333333333333,2004
-Michael Brudno,University of Toronto,opsys,1.0,0.125,2009
+Michael Mascagni,Florida State University,highperf,1.0,0.25,1994
 Christopher D. Carothers,Rensselaer Polytechnic Institute,mlmining,1.0,0.25,2003
 John R. Lange,University of Pittsburgh,opsys,1.0,0.333333333333,2008
 John R. Lange,University of Pittsburgh,networks,1.0,0.333333333333,2010
@@ -37373,13 +37455,29 @@ Anca D. Dragan,University of California - Berkeley,robotics,1.0,0.5,2013
 Anca D. Dragan,University of California - Berkeley,robotics,1.0,0.333333333333,2014
 Anca D. Dragan,University of California - Berkeley,robotics,1.0,0.25,2015
 Anca D. Dragan,University of California - Berkeley,robotics,1.0,0.142857142857,2016
-Wim van Dam,University of California - Santa Barbara,theory,1.0,1.0,1998
-Wim van Dam,University of California - Santa Barbara,theory,1.0,0.25,2000
-Wim van Dam,University of California - Santa Barbara,theory,1.0,0.333333333333,2001
-Wim van Dam,University of California - Santa Barbara,theory,1.0,0.333333333333,2003
-Wim van Dam,University of California - Santa Barbara,theory,1.0,0.166666666667,2004
-Wim van Dam,University of California - Santa Barbara,theory,1.0,0.333333333333,2005
-Wim van Dam,University of California - Santa Barbara,theory,1.0,0.5,2007
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1989
+David Zuckerman,University of Texas - Austin,theory,3.0,2.2,1990
+David Zuckerman,University of Texas - Austin,theory,1.0,1.0,1991
+David Zuckerman,University of Texas - Austin,theory,4.0,1.5,1993
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1994
+David Zuckerman,University of Texas - Austin,theory,1.0,0.111111111111,1995
+David Zuckerman,University of Texas - Austin,theory,1.0,1.0,1996
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1997
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,1998
+David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,1999
+David Zuckerman,University of Texas - Austin,theory,4.0,1.41666666667,2001
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2003
+David Zuckerman,University of Texas - Austin,theory,1.0,0.25,2004
+David Zuckerman,University of Texas - Austin,theory,2.0,1.25,2006
+David Zuckerman,University of Texas - Austin,theory,2.0,0.583333333333,2008
+David Zuckerman,University of Texas - Austin,theory,2.0,0.7,2010
+David Zuckerman,University of Texas - Austin,theory,2.0,0.5,2011
+David Zuckerman,University of Texas - Austin,theory,1.0,0.333333333333,2012
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2014
+David Zuckerman,University of Texas - Austin,theory,1.0,0.2,2015
+David Zuckerman,University of Texas - Austin,theory,1.0,0.5,2016
+David Zuckerman,University of Texas - Austin,crypto,1.0,0.333333333333,2006
+David Zuckerman,University of Texas - Austin,security,1.0,0.333333333333,2002
 Atanas Rountev,Ohio State University,proglang,1.0,0.5,2000
 Atanas Rountev,Ohio State University,proglang,1.0,0.333333333333,2001
 Atanas Rountev,Ohio State University,proglang,1.0,0.166666666667,2007
@@ -38145,6 +38243,8 @@ Jacob W. Crandall,Brigham Young University,ai,1.0,0.333333333333,2011
 Jacob W. Crandall,Brigham Young University,ai,1.0,1.0,2015
 Jacob W. Crandall,Brigham Young University,ai,1.0,0.333333333333,2016
 Jacob W. Crandall,Brigham Young University,robotics,1.0,0.5,2002
+Erik Winfree,California Institute of Technology,theory,1.0,0.5,2000
+Erik Winfree,California Institute of Technology,mlmining,1.0,0.333333333333,2004
 Mohsen Lesani,University of California - Riverside,proglang,1.0,0.25,2013
 Mohsen Lesani,University of California - Riverside,proglang,1.0,0.333333333333,2015
 Mohsen Lesani,University of California - Riverside,proglang,1.0,0.333333333333,2016
