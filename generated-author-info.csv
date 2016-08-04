@@ -4754,6 +4754,10 @@ Raouf Boutaba,University of Waterloo,networks,1.0,0.25,2014
 Yiu-Kai Ng,Brigham Young University,database,1.0,0.333333333333,1999
 Yiu-Kai Ng,Brigham Young University,database,1.0,0.333333333333,2011
 Yiu-Kai Ng,Brigham Young University,web,1.0,0.5,2012
+Padmini Srinivasan,University of Iowa,nlp,1.0,0.2,2015
+Padmini Srinivasan,University of Iowa,web,1.0,0.333333333333,1998
+Padmini Srinivasan,University of Iowa,web,1.0,0.25,2001
+Padmini Srinivasan,University of Iowa,web,1.0,0.25,2012
 Michiel van de Panne,University of British Columbia,graphics,1.0,0.333333333333,1990
 Michiel van de Panne,University of British Columbia,graphics,1.0,1.0,1993
 Michiel van de Panne,University of British Columbia,graphics,1.0,0.333333333333,1996
@@ -5646,15 +5650,17 @@ Kamin Whitehouse,University of Virginia,mobile,1.0,0.142857142857,2011
 Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2012
 Kamin Whitehouse,University of Virginia,mobile,1.0,0.25,2014
 Kamin Whitehouse,University of Virginia,mobile,1.0,0.2,2016
-Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2008
-Karthik Sridharan,Cornell University,mlmining,1.0,0.25,2009
-Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2010
-Karthik Sridharan,Cornell University,mlmining,3.0,0.916666666667,2011
-Karthik Sridharan,Cornell University,mlmining,3.0,0.916666666667,2012
-Karthik Sridharan,Cornell University,mlmining,1.0,0.5,2013
-Karthik Sridharan,Cornell University,mlmining,1.0,0.333333333333,2015
-Karthik Sridharan,Cornell University,mlmining,1.0,0.5,2016
-Karthik Sridharan,Cornell University,ai,1.0,0.333333333333,2011
+Tianbao Yang,University of Iowa,mlmining,1.0,0.25,2009
+Tianbao Yang,University of Iowa,mlmining,2.0,0.533333333333,2010
+Tianbao Yang,University of Iowa,mlmining,1.0,0.25,2011
+Tianbao Yang,University of Iowa,mlmining,5.0,1.0,2012
+Tianbao Yang,University of Iowa,mlmining,2.0,1.33333333333,2013
+Tianbao Yang,University of Iowa,mlmining,1.0,0.5,2014
+Tianbao Yang,University of Iowa,mlmining,3.0,0.7,2015
+Tianbao Yang,University of Iowa,mlmining,2.0,0.45,2016
+Tianbao Yang,University of Iowa,ai,1.0,0.2,2012
+Tianbao Yang,University of Iowa,ai,2.0,0.45,2016
+Tianbao Yang,University of Iowa,vision,1.0,0.25,2015
 Mario Gerla,University of California - Los Angeles,hci,1.0,0.2,2013
 Mario Gerla,University of California - Los Angeles,networks,1.0,0.5,1981
 Mario Gerla,University of California - Los Angeles,networks,1.0,0.5,1985
@@ -14221,6 +14227,7 @@ Simon W. Moore,University of Cambridge,security,1.0,0.0666666666667,2015
 Simon W. Moore,University of Cambridge,arch,1.0,0.333333333333,2004
 Simon W. Moore,University of Cambridge,arch,1.0,0.1,2014
 Simon W. Moore,University of Cambridge,arch,1.0,0.111111111111,2015
+Bonnie Nash-Webber,University of Edinburgh,ai,1.0,0.5,1977
 Tobias Ritschel,University College London,graphics,2.0,0.333333333333,2008
 Tobias Ritschel,University College London,graphics,2.0,0.416666666667,2009
 Tobias Ritschel,University College London,graphics,2.0,0.4,2010
@@ -16271,6 +16278,9 @@ Robert D. Kleinberg,Cornell University,ai,1.0,0.333333333333,2007
 Robert D. Kleinberg,Cornell University,networks,1.0,0.25,2005
 Robert D. Kleinberg,Cornell University,networks,1.0,0.25,2009
 Robert D. Kleinberg,Cornell University,highperf,1.0,0.25,2011
+Hantao Zhang,University of Iowa,ai,1.0,0.5,1994
+Hantao Zhang,University of Iowa,ai,1.0,0.5,1995
+Hantao Zhang,University of Iowa,ai,1.0,0.5,2004
 Piotr Berman,Pennsylvania State University,theory,1.0,0.5,1983
 Piotr Berman,Pennsylvania State University,theory,1.0,0.5,1987
 Piotr Berman,Pennsylvania State University,theory,1.0,0.5,1988
@@ -22585,6 +22595,14 @@ Eugene H. Spafford,Purdue University,security,1.0,0.333333333333,2005
 Eugene H. Spafford,Purdue University,highperf,1.0,0.25,1995
 Hui Zhang 0005,University College London,vision,1.0,0.333333333333,2004
 Hui Zhang 0005,University College London,vision,1.0,0.25,2007
+Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.5,2006
+Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.666666666667,2007
+Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.833333333333,2010
+Alexander Rakhlin,University of Pennsylvania,mlmining,3.0,1.03333333333,2011
+Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.666666666667,2012
+Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.833333333333,2013
+Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.333333333333,2015
+Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.5,2016
 Madhu Sudan,Harvard University,theory,1.0,0.25,1990
 Madhu Sudan,Harvard University,theory,1.0,0.2,1991
 Madhu Sudan,Harvard University,theory,3.0,0.95,1992
@@ -25548,11 +25566,10 @@ Rajiv K. Kalia,University of Southern California,highperf,1.0,0.1,2002
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.142857142857,2006
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.2,2013
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.111111111111,2014
-Minh Hoai Nguyen,Stony Brook University,mlmining,1.0,0.5,2008
-Minh Hoai Nguyen,Stony Brook University,vision,2.0,1.0,2008
-Minh Hoai Nguyen,Stony Brook University,vision,1.0,0.25,2009
-Minh Hoai Nguyen,Stony Brook University,vision,1.0,0.333333333333,2011
-Minh Hoai Nguyen,Stony Brook University,vision,1.0,0.5,2012
+Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.142857142857,2012
+Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.5,2014
+Matthew Fredrikson,Carnegie Mellon University,security,2.0,0.75,2011
+Matthew Fredrikson,Carnegie Mellon University,security,3.0,0.766666666667,2014
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1.0,0.5,1980
 Vijay V. Vazirani,Georgia Institute of Technology,theory,2.0,0.666666666667,1983
 Vijay V. Vazirani,Georgia Institute of Technology,theory,1.0,0.5,1984
@@ -25837,6 +25854,11 @@ Wang-Chien Lee,Pennsylvania State University,web,1.0,0.333333333333,2012
 Wang-Chien Lee,Pennsylvania State University,web,1.0,0.2,2015
 Wang-Chien Lee,Pennsylvania State University,web,1.0,0.142857142857,2016
 Wang-Chien Lee,Pennsylvania State University,highperf,1.0,0.333333333333,1997
+Octav Chipara,University of Iowa,mobile,1.0,0.25,2007
+Octav Chipara,University of Iowa,mobile,1.0,0.333333333333,2008
+Octav Chipara,University of Iowa,mobile,1.0,0.25,2010
+Octav Chipara,University of Iowa,mobile,1.0,0.111111111111,2012
+Octav Chipara,University of Iowa,softeng,1.0,0.333333333333,2014
 James A. Reggia,University of Maryland - College Park,mlmining,2.0,0.833333333333,1994
 James A. Reggia,University of Maryland - College Park,ai,1.0,0.5,1986
 Glynn Winskel,University of Cambridge,logic,1.0,1.0,1988
@@ -29144,6 +29166,12 @@ Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1.0,0.2,2005
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1.0,0.5,2010
 Ziv Bar-Joseph,Carnegie Mellon University,mlmining,1.0,0.5,2011
 Carey Williamson,University of Calgary,hci,1.0,0.333333333333,2011
+Cesare Tinelli,University of Iowa,logic,1.0,0.2,2004
+Cesare Tinelli,University of Iowa,logic,1.0,0.125,2011
+Cesare Tinelli,University of Iowa,logic,1.0,0.25,2013
+Cesare Tinelli,University of Iowa,logic,2.0,0.4,2014
+Cesare Tinelli,University of Iowa,logic,1.0,0.2,2015
+Cesare Tinelli,University of Iowa,logic,1.0,0.25,2016
 Zhiyun Qian,University of California - Riverside,database,1.0,0.125,2015
 Zhiyun Qian,University of California - Riverside,networks,1.0,0.2,2011
 Zhiyun Qian,University of California - Riverside,security,1.0,0.25,2010
@@ -32348,14 +32376,12 @@ Ahmad-Reza Sadeghi,TU Darmstadt,security,2.0,0.4,2011
 Ahmad-Reza Sadeghi,TU Darmstadt,security,3.0,0.75,2013
 Ahmad-Reza Sadeghi,TU Darmstadt,security,3.0,0.7,2014
 Ahmad-Reza Sadeghi,TU Darmstadt,security,7.0,1.0123015873,2015
-Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.5,2006
-Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.666666666667,2007
-Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.833333333333,2010
-Alexander Rakhlin,University of Pennsylvania,mlmining,3.0,1.03333333333,2011
-Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.666666666667,2012
-Alexander Rakhlin,University of Pennsylvania,mlmining,2.0,0.833333333333,2013
-Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.333333333333,2015
-Alexander Rakhlin,University of Pennsylvania,mlmining,1.0,0.5,2016
+Juan Pablo Hourcade,University of Iowa,hci,1.0,0.0714285714286,2000
+Juan Pablo Hourcade,University of Iowa,hci,1.0,0.25,2010
+Juan Pablo Hourcade,University of Iowa,hci,1.0,0.5,2011
+Juan Pablo Hourcade,University of Iowa,hci,1.0,0.333333333333,2012
+Juan Pablo Hourcade,University of Iowa,hci,2.0,0.7,2013
+Juan Pablo Hourcade,University of Iowa,hci,1.0,0.25,2015
 Myungjin Lee,University of Edinburgh,metrics,1.0,0.25,2011
 Myungjin Lee,University of Edinburgh,metrics,1.0,0.333333333333,2012
 Myungjin Lee,University of Edinburgh,networks,2.0,0.666666666667,2010
@@ -33052,7 +33078,8 @@ Jon G. Rokne,University of Calgary,graphics,1.0,0.333333333333,1990
 Jon G. Rokne,University of Calgary,graphics,1.0,0.5,1992
 Jon G. Rokne,University of Calgary,graphics,1.0,0.25,2005
 Kenneth Baclawski,Northeastern University,database,1.0,0.2,1994
-Bonnie Nash-Webber,University of Edinburgh,ai,1.0,0.5,1977
+Aaron Stump,University of Iowa,logic,1.0,0.25,2001
+Aaron Stump,University of Iowa,logic,1.0,0.333333333333,2002
 Marina Jirotka,University of Oxford,hci,1.0,0.166666666667,2010
 Marina Jirotka,University of Oxford,hci,1.0,0.333333333333,2014
 Jasleen Kaur,University of North Carolina - Chapel Hill,metrics,2.0,0.833333333333,2004
@@ -34499,6 +34526,15 @@ Michal Young,University of Oregon,softeng,1.0,0.5,1999
 Michal Young,University of Oregon,softeng,1.0,0.25,2000
 Michal Young,University of Oregon,softeng,1.0,0.333333333333,2004
 Michal Young,University of Oregon,softeng,1.0,0.25,2013
+Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2008
+Karthik Sridharan,Cornell University,mlmining,1.0,0.25,2009
+Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2010
+Karthik Sridharan,Cornell University,mlmining,3.0,0.916666666667,2011
+Karthik Sridharan,Cornell University,mlmining,3.0,0.916666666667,2012
+Karthik Sridharan,Cornell University,mlmining,1.0,0.5,2013
+Karthik Sridharan,Cornell University,mlmining,1.0,0.333333333333,2015
+Karthik Sridharan,Cornell University,mlmining,1.0,0.5,2016
+Karthik Sridharan,Cornell University,ai,1.0,0.333333333333,2011
 David Walker,Princeton University,networks,1.0,0.2,2012
 David Walker,Princeton University,networks,1.0,0.2,2013
 David Walker,Princeton University,networks,1.0,0.25,2015
@@ -36276,6 +36312,10 @@ Abhi Shelat,Northeastern University,security,2.0,0.75,2013
 Abhi Shelat,Northeastern University,security,2.0,0.45,2014
 Abhi Shelat,Northeastern University,security,1.0,0.5,2015
 Abhi Shelat,Northeastern University,highperf,1.0,0.5,2011
+Sriram V. Pemmaraju,University of Iowa,theory,1.0,0.5,2000
+Sriram V. Pemmaraju,University of Iowa,theory,1.0,0.333333333333,2004
+Sriram V. Pemmaraju,University of Iowa,theory,1.0,0.333333333333,2005
+Sriram V. Pemmaraju,University of Iowa,networks,1.0,0.333333333333,2009
 Song-Chun Zhu,University of California - Los Angeles,mlmining,1.0,0.25,2016
 Song-Chun Zhu,University of California - Los Angeles,ai,3.0,0.916666666667,2016
 Song-Chun Zhu,University of California - Los Angeles,robotics,1.0,0.2,2014
@@ -37949,10 +37989,18 @@ Daniel Cremers,TU Munich,vision,6.0,1.15277777778,2015
 Christopher Raphael,Indiana University,mlmining,1.0,1.0,2001
 Christopher Raphael,Indiana University,mlmining,1.0,1.0,2010
 Christopher Raphael,Indiana University,ai,1.0,1.0,2009
-Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.142857142857,2012
-Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.5,2014
-Matthew Fredrikson,Carnegie Mellon University,security,2.0,0.75,2011
-Matthew Fredrikson,Carnegie Mellon University,security,3.0,0.766666666667,2014
+David Chiang,University of Notre Dame,nlp,2.0,1.33333333333,2000
+David Chiang,University of Notre Dame,nlp,1.0,1.0,2001
+David Chiang,University of Notre Dame,nlp,1.0,1.0,2005
+David Chiang,University of Notre Dame,nlp,2.0,0.833333333333,2007
+David Chiang,University of Notre Dame,nlp,2.0,0.583333333333,2008
+David Chiang,University of Notre Dame,nlp,1.0,0.333333333333,2009
+David Chiang,University of Notre Dame,nlp,3.0,1.45,2010
+David Chiang,University of Notre Dame,nlp,1.0,0.25,2011
+David Chiang,University of Notre Dame,nlp,1.0,0.333333333333,2012
+David Chiang,University of Notre Dame,nlp,2.0,0.416666666667,2013
+David Chiang,University of Notre Dame,nlp,2.0,1.0,2014
+David Chiang,University of Notre Dame,nlp,3.0,1.33333333333,2015
 Rafal K. Mantiuk,University of Cambridge,graphics,1.0,0.5,2014
 Rafal K. Mantiuk,University of Cambridge,graphics,2.0,0.583333333333,2015
 Balajee Vamanan,University of Illinois - Chicago,networks,1.0,0.333333333333,2010
@@ -39133,6 +39181,21 @@ Peter N. Belhumeur,Columbia University,vision,1.0,0.25,2011
 Peter N. Belhumeur,Columbia University,vision,3.0,0.642857142857,2012
 Peter N. Belhumeur,Columbia University,vision,3.0,1.5,2013
 Peter N. Belhumeur,Columbia University,vision,2.0,0.5,2014
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.5,1997
+Kasturi R. Varadarajan,University of Iowa,theory,2.0,1.2,1998
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.5,1999
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.5,2000
+Kasturi R. Varadarajan,University of Iowa,theory,2.0,0.833333333333,2001
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.333333333333,2002
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.333333333333,2004
+Kasturi R. Varadarajan,University of Iowa,theory,2.0,0.666666666667,2005
+Kasturi R. Varadarajan,University of Iowa,theory,2.0,0.75,2006
+Kasturi R. Varadarajan,University of Iowa,theory,2.0,1.0,2007
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.2,2008
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.5,2009
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,1.0,2010
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.5,2012
+Kasturi R. Varadarajan,University of Iowa,theory,1.0,0.333333333333,2015
 Alexander Moshe Rabinovich,Tel Aviv University,logic,1.0,0.5,1989
 Alexander Moshe Rabinovich,Tel Aviv University,logic,1.0,0.5,1999
 Alexander Moshe Rabinovich,Tel Aviv University,logic,1.0,0.2,2004
@@ -39203,6 +39266,11 @@ Xuehai Qian,University of Southern California,arch,2.0,0.666666666667,2014
 Xuehai Qian,University of Southern California,highperf,1.0,0.25,2016
 Patrick H. Winston,Massachusetts Institute of Technology,ai,1.0,0.5,1977
 Patrick H. Winston,Massachusetts Institute of Technology,ai,1.0,0.25,1983
+Minh Hoai Nguyen,Stony Brook University,mlmining,1.0,0.5,2008
+Minh Hoai Nguyen,Stony Brook University,vision,2.0,1.0,2008
+Minh Hoai Nguyen,Stony Brook University,vision,1.0,0.25,2009
+Minh Hoai Nguyen,Stony Brook University,vision,1.0,0.333333333333,2011
+Minh Hoai Nguyen,Stony Brook University,vision,1.0,0.5,2012
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,1999
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1.0,0.5,2000
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1.0,0.5,2001
@@ -39547,6 +39615,10 @@ Gerhard Hirzinger,TU Munich,robotics,1.0,0.2,1996
 Gerhard Hirzinger,TU Munich,robotics,2.0,0.45,2011
 Klaus Marius Hansen,DIKU,hci,1.0,0.333333333333,2000
 Klaus Marius Hansen,DIKU,hci,1.0,0.166666666667,2001
+Alberto Maria Segre,University of Iowa,mlmining,1.0,0.333333333333,1994
+Alberto Maria Segre,University of Iowa,mlmining,1.0,0.5,1996
+Alberto Maria Segre,University of Iowa,ai,1.0,1.0,1987
+Alberto Maria Segre,University of Iowa,ai,1.0,0.5,1994
 Vernon Rego,Purdue University,networks,1.0,1.0,1986
 Vernon Rego,Purdue University,highperf,1.0,0.333333333333,1992
 Ani Nenkova,University of Pennsylvania,nlp,2.0,0.611111111111,2003
@@ -39823,18 +39895,23 @@ Stéphane Demri,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2006
 Stéphane Demri,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2013
 Stéphane Demri,Ecole Normale Superieure de Cachan,logic,1.0,0.5,2014
 Barbara Cutler,Rensselaer Polytechnic Institute,graphics,2.0,0.4,2002
-David Chiang,University of Notre Dame,nlp,2.0,1.33333333333,2000
-David Chiang,University of Notre Dame,nlp,1.0,1.0,2001
-David Chiang,University of Notre Dame,nlp,1.0,1.0,2005
-David Chiang,University of Notre Dame,nlp,2.0,0.833333333333,2007
-David Chiang,University of Notre Dame,nlp,2.0,0.583333333333,2008
-David Chiang,University of Notre Dame,nlp,1.0,0.333333333333,2009
-David Chiang,University of Notre Dame,nlp,3.0,1.45,2010
-David Chiang,University of Notre Dame,nlp,1.0,0.25,2011
-David Chiang,University of Notre Dame,nlp,1.0,0.333333333333,2012
-David Chiang,University of Notre Dame,nlp,2.0,0.416666666667,2013
-David Chiang,University of Notre Dame,nlp,2.0,1.0,2014
-David Chiang,University of Notre Dame,nlp,3.0,1.33333333333,2015
+Daniel A. Reed,University of Iowa,metrics,1.0,1.0,1983
+Daniel A. Reed,University of Iowa,metrics,1.0,0.5,1987
+Daniel A. Reed,University of Iowa,arch,1.0,0.2,1988
+Daniel A. Reed,University of Iowa,highperf,2.0,0.833333333333,1990
+Daniel A. Reed,University of Iowa,highperf,1.0,0.5,1992
+Daniel A. Reed,University of Iowa,highperf,1.0,0.333333333333,1993
+Daniel A. Reed,University of Iowa,highperf,2.0,0.416666666667,1995
+Daniel A. Reed,University of Iowa,highperf,1.0,0.333333333333,1996
+Daniel A. Reed,University of Iowa,highperf,1.0,0.5,1997
+Daniel A. Reed,University of Iowa,highperf,1.0,0.25,1998
+Daniel A. Reed,University of Iowa,highperf,2.0,0.642857142857,1999
+Daniel A. Reed,University of Iowa,highperf,1.0,0.5,2001
+Daniel A. Reed,University of Iowa,highperf,2.0,1.0,2002
+Daniel A. Reed,University of Iowa,highperf,2.0,1.5,2004
+Daniel A. Reed,University of Iowa,highperf,2.0,0.47619047619,2006
+Daniel A. Reed,University of Iowa,highperf,3.0,1.2,2008
+Daniel A. Reed,University of Iowa,highperf,1.0,0.2,2010
 Ranjit Jhala,University of California - San Diego,networks,1.0,0.25,2007
 Ranjit Jhala,University of California - San Diego,proglang,1.0,0.25,2002
 Ranjit Jhala,University of California - San Diego,proglang,2.0,0.583333333333,2004
