@@ -1034,7 +1034,21 @@ Isaac D. Scherson,University of California - Irvine,metrics,1.0,0.5,1996
 Isaac D. Scherson,University of California - Irvine,theory,1.0,0.333333333333,1986
 Isaac D. Scherson,University of California - Irvine,networks,1.0,0.333333333333,1990
 Fran Berman,Rensselaer Polytechnic Institute,highperf,1.0,0.2,1996
-Tony Field,Imperial College London,highperf,1.0,0.166666666667,2001
+Ko Nishino,Drexel University,graphics,1.0,0.5,2004
+Ko Nishino,Drexel University,robotics,1.0,0.25,2001
+Ko Nishino,Drexel University,vision,2.0,0.666666666667,1999
+Ko Nishino,Drexel University,vision,2.0,0.666666666667,2001
+Ko Nishino,Drexel University,vision,3.0,0.916666666667,2003
+Ko Nishino,Drexel University,vision,1.0,0.5,2004
+Ko Nishino,Drexel University,vision,1.0,0.333333333333,2005
+Ko Nishino,Drexel University,vision,1.0,0.5,2007
+Ko Nishino,Drexel University,vision,4.0,2.5,2009
+Ko Nishino,Drexel University,vision,3.0,1.5,2010
+Ko Nishino,Drexel University,vision,1.0,0.2,2011
+Ko Nishino,Drexel University,vision,5.0,2.33333333333,2012
+Ko Nishino,Drexel University,vision,1.0,0.25,2013
+Ko Nishino,Drexel University,vision,1.0,0.5,2014
+Ko Nishino,Drexel University,vision,2.0,0.833333333333,2015
 Yannis Papakonstantinou,University of California - San Diego,database,2.0,0.583333333333,1996
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.5,1997
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.5,1999
@@ -1943,9 +1957,9 @@ Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2002
 Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.25,2007
 Nicolas Markey,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,2016
 Cartic Ramakrishnan,Stony Brook University,web,1.0,0.111111111111,2006
-Jack J. Dongarra,University of Tennessee,highperf,1.0,0.25,1997
-Jack J. Dongarra,University of Tennessee,highperf,1.0,0.5,1998
-Jack J. Dongarra,University of Tennessee,highperf,1.0,0.25,2013
+David E. Breen,Drexel University,graphics,1.0,0.2,1991
+David E. Breen,Drexel University,graphics,1.0,0.333333333333,1994
+David E. Breen,Drexel University,graphics,2.0,0.5,2002
 Michael R. Brent,Washington University - St. Louis,nlp,1.0,1.0,1990
 Michael R. Brent,Washington University - St. Louis,nlp,1.0,1.0,1991
 Michael R. Brent,Washington University - St. Louis,nlp,2.0,1.0,2001
@@ -3303,6 +3317,10 @@ Mooly Sagiv,Tel Aviv University,logic,1.0,0.333333333333,2009
 Mooly Sagiv,Tel Aviv University,logic,1.0,0.2,2013
 Mooly Sagiv,Tel Aviv University,logic,1.0,0.2,2014
 Mooly Sagiv,Tel Aviv University,softeng,1.0,0.2,2010
+Julia Stoyanovich,Drexel University,database,1.0,0.5,2004
+Julia Stoyanovich,Drexel University,database,1.0,0.25,2008
+Julia Stoyanovich,Drexel University,database,1.0,0.166666666667,2011
+Julia Stoyanovich,Drexel University,database,1.0,0.25,2015
 John Aycock,University of Calgary,hci,1.0,0.2,2011
 Helen Nissenbaum,New York University,hci,1.0,0.333333333333,2005
 Helen Nissenbaum,New York University,hci,1.0,0.5,2007
@@ -6671,10 +6689,7 @@ Mathieu Desbrun,California Institute of Technology,graphics,3.0,0.566666666667,2
 Mathieu Desbrun,California Institute of Technology,graphics,2.0,0.5,2016
 Mathieu Desbrun,California Institute of Technology,robotics,1.0,0.25,2002
 Mathieu Desbrun,California Institute of Technology,robotics,1.0,0.25,2007
-Collin McMillan,University of Notre Dame,softeng,1.0,0.166666666667,2010
-Collin McMillan,University of Notre Dame,softeng,1.0,0.2,2011
-Collin McMillan,University of Notre Dame,softeng,2.0,0.533333333333,2012
-Collin McMillan,University of Notre Dame,softeng,1.0,0.2,2014
+Tony Field,Imperial College London,highperf,1.0,0.166666666667,2001
 Denis Zorin,New York University,graphics,1.0,0.5,1995
 Denis Zorin,New York University,graphics,1.0,0.333333333333,1997
 Denis Zorin,New York University,graphics,2.0,0.833333333333,2000
@@ -14158,6 +14173,8 @@ Raman Arora,Johns Hopkins University,mlmining,1.0,0.333333333333,2013
 Raman Arora,Johns Hopkins University,mlmining,1.0,0.2,2014
 Raman Arora,Johns Hopkins University,mlmining,1.0,0.25,2015
 Raman Arora,Johns Hopkins University,mlmining,2.0,0.533333333333,2016
+Holger Hoos,University of British Columbia,mlmining,1.0,0.333333333333,2014
+Holger Hoos,University of British Columbia,ai,1.0,0.333333333333,2010
 Matt Fredrikson,Carnegie Mellon University,database,1.0,0.166666666667,2009
 Matt Fredrikson,Carnegie Mellon University,security,2.0,0.342857142857,2010
 Matt Fredrikson,Carnegie Mellon University,security,1.0,0.333333333333,2015
@@ -17556,6 +17573,13 @@ Jonathan Richard Shewchuk,University of California - Berkeley,graphics,1.0,0.125
 Jonathan Richard Shewchuk,University of California - Berkeley,graphics,1.0,0.166666666667,2010
 Jonathan Richard Shewchuk,University of California - Berkeley,graphics,1.0,0.25,2012
 Jonathan Richard Shewchuk,University of California - Berkeley,graphics,1.0,0.25,2013
+Ali Shokoufandeh,Drexel University,robotics,1.0,0.25,2004
+Ali Shokoufandeh,Drexel University,robotics,1.0,0.5,2005
+Ali Shokoufandeh,Drexel University,vision,2.0,0.583333333333,1998
+Ali Shokoufandeh,Drexel University,vision,1.0,0.25,1999
+Ali Shokoufandeh,Drexel University,vision,1.0,0.2,2002
+Ali Shokoufandeh,Drexel University,vision,1.0,0.25,2003
+Ali Shokoufandeh,Drexel University,vision,2.0,0.533333333333,2004
 Julie A. Shah,Massachusetts Institute of Technology,mlmining,2.0,0.833333333333,2014
 Julie A. Shah,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
 Julie A. Shah,Massachusetts Institute of Technology,ai,1.0,0.333333333333,2013
@@ -22995,8 +23019,9 @@ Arunava Banerjee,University of Florida,vision,2.0,0.666666666667,2006
 Arunava Banerjee,University of Florida,vision,2.0,0.583333333333,2008
 Arunava Banerjee,University of Florida,vision,1.0,0.333333333333,2009
 Arunava Banerjee,University of Florida,vision,1.0,0.25,2011
-Holger Hoos,University of British Columbia,mlmining,1.0,0.333333333333,2014
-Holger Hoos,University of British Columbia,ai,1.0,0.333333333333,2010
+Jack J. Dongarra,University of Tennessee,highperf,1.0,0.25,1997
+Jack J. Dongarra,University of Tennessee,highperf,1.0,0.5,1998
+Jack J. Dongarra,University of Tennessee,highperf,1.0,0.25,2013
 Matthias F. M. Stallmann,North Carolina State University,theory,1.0,0.5,1984
 Jamie Callan,Carnegie Mellon University,nlp,2.0,0.75,2007
 Jamie Callan,Carnegie Mellon University,web,1.0,0.5,2005
@@ -24715,6 +24740,11 @@ Miodrag Potkonjak,University of California - Los Angeles,mobile,2.0,0.5833333333
 Miodrag Potkonjak,University of California - Los Angeles,mobile,2.0,0.583333333333,2003
 Miodrag Potkonjak,University of California - Los Angeles,arch,1.0,0.333333333333,1997
 Miodrag Potkonjak,University of California - Los Angeles,arch,1.0,0.333333333333,2002
+Rachel Greenstadt,Drexel University,nlp,1.0,0.333333333333,2013
+Rachel Greenstadt,Drexel University,ai,1.0,0.333333333333,2006
+Rachel Greenstadt,Drexel University,security,1.0,0.333333333333,2012
+Rachel Greenstadt,Drexel University,security,2.0,0.4,2014
+Rachel Greenstadt,Drexel University,security,1.0,0.142857142857,2015
 Benjamin B. Bederson,University of Maryland - College Park,graphics,1.0,0.333333333333,2002
 Benjamin B. Bederson,University of Maryland - College Park,hci,1.0,0.5,1995
 Benjamin B. Bederson,University of Maryland - College Park,hci,1.0,0.2,1997
@@ -26088,6 +26118,15 @@ Arindam Banerjee,University of Minnesota,ai,1.0,0.333333333333,2015
 Arindam Banerjee,University of Minnesota,ai,1.0,0.25,2016
 Arindam Banerjee,University of Minnesota,web,1.0,0.5,2015
 Arindam Banerjee,University of Minnesota,vision,1.0,0.25,2011
+Yuanfang Cai,Drexel University,softeng,1.0,0.142857142857,2005
+Yuanfang Cai,Drexel University,softeng,1.0,0.5,2006
+Yuanfang Cai,Drexel University,softeng,1.0,0.25,2008
+Yuanfang Cai,Drexel University,softeng,2.0,0.7,2009
+Yuanfang Cai,Drexel University,softeng,2.0,0.75,2011
+Yuanfang Cai,Drexel University,softeng,1.0,0.333333333333,2013
+Yuanfang Cai,Drexel University,softeng,1.0,0.333333333333,2014
+Yuanfang Cai,Drexel University,softeng,1.0,0.125,2015
+Yuanfang Cai,Drexel University,softeng,2.0,0.4,2016
 Daniel L. Chester,University of Delaware,ai,1.0,0.5,1977
 Chenyang Lu,Washington University - St. Louis,mlmining,1.0,0.166666666667,2012
 Chenyang Lu,Washington University - St. Louis,opsys,1.0,0.142857142857,2007
@@ -34252,10 +34291,37 @@ Padma Raghavan,Vanderbilt University,highperf,2.0,0.583333333333,2011
 Padma Raghavan,Vanderbilt University,highperf,2.0,0.666666666667,2012
 Padma Raghavan,Vanderbilt University,highperf,1.0,0.5,2013
 Padma Raghavan,Vanderbilt University,highperf,1.0,0.166666666667,2015
-Cherri M. Pancake,Oregon State University,highperf,1.0,0.5,1989
-Cherri M. Pancake,Oregon State University,highperf,1.0,0.5,1991
-Cherri M. Pancake,Oregon State University,highperf,1.0,0.333333333333,1994
-Cherri M. Pancake,Oregon State University,highperf,1.0,1.0,1995
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.5,2001
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.166666666667,2003
+Srinivasan Parthasarathy,Ohio State University,mlmining,2.0,0.533333333333,2005
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.5,2006
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.333333333333,2007
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.25,2008
+Srinivasan Parthasarathy,Ohio State University,mlmining,2.0,1.0,2009
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.25,2012
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.333333333333,2013
+Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.333333333333,2016
+Srinivasan Parthasarathy,Ohio State University,ai,1.0,0.333333333333,2005
+Srinivasan Parthasarathy,Ohio State University,opsys,1.0,0.142857142857,1997
+Srinivasan Parthasarathy,Ohio State University,database,1.0,0.142857142857,2005
+Srinivasan Parthasarathy,Ohio State University,database,1.0,0.333333333333,2007
+Srinivasan Parthasarathy,Ohio State University,database,1.0,0.25,2008
+Srinivasan Parthasarathy,Ohio State University,database,3.0,1.08333333333,2009
+Srinivasan Parthasarathy,Ohio State University,database,1.0,0.2,2010
+Srinivasan Parthasarathy,Ohio State University,database,2.0,0.666666666667,2011
+Srinivasan Parthasarathy,Ohio State University,database,1.0,0.5,2012
+Srinivasan Parthasarathy,Ohio State University,web,1.0,0.333333333333,2013
+Srinivasan Parthasarathy,Ohio State University,web,1.0,0.166666666667,2014
+Srinivasan Parthasarathy,Ohio State University,web,1.0,0.5,2015
+Srinivasan Parthasarathy,Ohio State University,web,1.0,0.2,2016
+Srinivasan Parthasarathy,Ohio State University,arch,1.0,0.111111111111,1997
+Srinivasan Parthasarathy,Ohio State University,highperf,2.0,0.583333333333,1996
+Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.2,2003
+Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.5,2004
+Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.142857142857,2005
+Srinivasan Parthasarathy,Ohio State University,highperf,2.0,0.5,2008
+Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.2,2014
+Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.2,2015
 Sunil Prabhakar,Purdue University,database,1.0,0.5,2000
 Sunil Prabhakar,Purdue University,database,2.0,0.666666666667,2003
 Sunil Prabhakar,Purdue University,database,2.0,0.533333333333,2004
@@ -34728,6 +34794,7 @@ Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2009
 Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2010
 Michael Werman,Hebrew University of Jerusalem,vision,2.0,0.666666666667,2013
 Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.25,2014
+Charles M. Eastman,Georgia Institute of Technology,ai,1.0,1.0,1971
 Helmut Seidl,TU Munich,theory,1.0,0.5,2001
 Helmut Seidl,TU Munich,theory,1.0,0.333333333333,2015
 Helmut Seidl,TU Munich,database,1.0,0.333333333333,2003
@@ -39474,6 +39541,10 @@ Craig Gotsman,Technion,graphics,1.0,0.2,2012
 Craig Gotsman,Technion,vision,1.0,0.333333333333,2000
 Agustin Fernández,Polytechnic University of Catalonia,arch,1.0,0.2,2005
 Ioanis Nikolaidis,University of Alberta,metrics,1.0,0.333333333333,1994
+Collin McMillan,University of Notre Dame,softeng,1.0,0.166666666667,2010
+Collin McMillan,University of Notre Dame,softeng,1.0,0.2,2011
+Collin McMillan,University of Notre Dame,softeng,2.0,0.533333333333,2012
+Collin McMillan,University of Notre Dame,softeng,1.0,0.2,2014
 Rik Sarkar,University of Edinburgh,mlmining,1.0,0.25,2013
 Rik Sarkar,University of Edinburgh,networks,1.0,0.333333333333,2007
 Rik Sarkar,University of Edinburgh,networks,2.0,0.45,2008
@@ -39540,41 +39611,21 @@ Drew Bagnell,Carnegie Mellon University,mlmining,2.0,0.833333333333,2011
 Drew Bagnell,Carnegie Mellon University,mlmining,2.0,1.0,2012
 Drew Bagnell,Carnegie Mellon University,robotics,1.0,0.25,2005
 Drew Bagnell,Carnegie Mellon University,robotics,1.0,0.2,2013
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1991
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.166666666667,1993
-Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,opsys,1.0,0.333333333333,1995
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,1999
-Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1999
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2001
-Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1983
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1984
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.111111111111,1986
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1989
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1990
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1991
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1992
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,1993
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1994
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1996
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1998
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1999
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,2000
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.2,2001
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2002
-Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.11666666667,2003
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.958333333333,2006
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.892857142857,2007
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.03333333333,2008
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2011
-Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2012
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.325,2013
-Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.392857142857,2014
-Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.527777777778,2015
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1994
-Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.333333333333,2011
+Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.166666666667,2006
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.333333333333,2007
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2010
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.166666666667,2012
+Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2016
+Thu D. Nguyen,Rutgers University,networks,1.0,0.25,1993
+Thu D. Nguyen,Rutgers University,arch,1.0,0.2,2013
+Thu D. Nguyen,Rutgers University,arch,2.0,0.583333333333,2015
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.333333333333,2000
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.5,2001
+Thu D. Nguyen,Rutgers University,highperf,2.0,0.45,2003
+Thu D. Nguyen,Rutgers University,highperf,2.0,0.291666666667,2011
+Thu D. Nguyen,Rutgers University,highperf,1.0,0.25,2015
 Yechiam Yemini,Columbia University,theory,1.0,1.0,1979
 Yechiam Yemini,Columbia University,database,1.0,0.25,1991
 Yechiam Yemini,Columbia University,networks,2.0,1.33333333333,1983
@@ -39806,37 +39857,10 @@ Jack Tumblin,Northwestern University,graphics,1.0,0.2,2007
 Jack Tumblin,Northwestern University,vision,1.0,0.333333333333,2005
 Jack Tumblin,Northwestern University,vision,2.0,0.45,2008
 Jack Tumblin,Northwestern University,vision,1.0,0.25,2011
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.5,2001
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.166666666667,2003
-Srinivasan Parthasarathy,Ohio State University,mlmining,2.0,0.533333333333,2005
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.5,2006
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.333333333333,2007
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.25,2008
-Srinivasan Parthasarathy,Ohio State University,mlmining,2.0,1.0,2009
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.25,2012
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.333333333333,2013
-Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.333333333333,2016
-Srinivasan Parthasarathy,Ohio State University,ai,1.0,0.333333333333,2005
-Srinivasan Parthasarathy,Ohio State University,opsys,1.0,0.142857142857,1997
-Srinivasan Parthasarathy,Ohio State University,database,1.0,0.142857142857,2005
-Srinivasan Parthasarathy,Ohio State University,database,1.0,0.333333333333,2007
-Srinivasan Parthasarathy,Ohio State University,database,1.0,0.25,2008
-Srinivasan Parthasarathy,Ohio State University,database,3.0,1.08333333333,2009
-Srinivasan Parthasarathy,Ohio State University,database,1.0,0.2,2010
-Srinivasan Parthasarathy,Ohio State University,database,2.0,0.666666666667,2011
-Srinivasan Parthasarathy,Ohio State University,database,1.0,0.5,2012
-Srinivasan Parthasarathy,Ohio State University,web,1.0,0.333333333333,2013
-Srinivasan Parthasarathy,Ohio State University,web,1.0,0.166666666667,2014
-Srinivasan Parthasarathy,Ohio State University,web,1.0,0.5,2015
-Srinivasan Parthasarathy,Ohio State University,web,1.0,0.2,2016
-Srinivasan Parthasarathy,Ohio State University,arch,1.0,0.111111111111,1997
-Srinivasan Parthasarathy,Ohio State University,highperf,2.0,0.583333333333,1996
-Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.2,2003
-Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.5,2004
-Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.142857142857,2005
-Srinivasan Parthasarathy,Ohio State University,highperf,2.0,0.5,2008
-Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.2,2014
-Srinivasan Parthasarathy,Ohio State University,highperf,1.0,0.2,2015
+Cherri M. Pancake,Oregon State University,highperf,1.0,0.5,1989
+Cherri M. Pancake,Oregon State University,highperf,1.0,0.5,1991
+Cherri M. Pancake,Oregon State University,highperf,1.0,0.333333333333,1994
+Cherri M. Pancake,Oregon State University,highperf,1.0,1.0,1995
 Peter N. Belhumeur,Columbia University,graphics,1.0,0.333333333333,2004
 Peter N. Belhumeur,Columbia University,graphics,1.0,0.166666666667,2006
 Peter N. Belhumeur,Columbia University,graphics,3.0,0.916666666667,2007
@@ -39983,7 +40007,9 @@ Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1.0,0.3333333333
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2010
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,2013
 Craig B. Zilles,University of Illinois at Urbana-Champaign,arch,2.0,1.0,2015
-Charles M. Eastman,Georgia Institute of Technology,ai,1.0,1.0,1971
+Geoffrey Mainland,Drexel University,networks,1.0,0.5,2004
+Geoffrey Mainland,Drexel University,networks,1.0,0.333333333333,2005
+Geoffrey Mainland,Drexel University,arch,1.0,0.166666666667,2015
 Edward F. Gehringer,North Carolina State University,opsys,1.0,1.0,1979
 Edward F. Gehringer,North Carolina State University,arch,2.0,0.75,1985
 Edward F. Gehringer,North Carolina State University,arch,1.0,0.5,1986
@@ -40842,21 +40868,41 @@ Prasad Tetali,Georgia Institute of Technology,theory,3.0,0.916666666667,2010
 Prasad Tetali,Georgia Institute of Technology,theory,3.0,0.866666666667,2011
 Prasad Tetali,Georgia Institute of Technology,theory,1.0,0.25,2012
 Prasad Tetali,Georgia Institute of Technology,robotics,1.0,0.2,2013
-Thu D. Nguyen,Rutgers University,metrics,1.0,0.5,1998
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2004
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.166666666667,2006
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.333333333333,2007
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2010
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.166666666667,2012
-Thu D. Nguyen,Rutgers University,opsys,1.0,0.2,2016
-Thu D. Nguyen,Rutgers University,networks,1.0,0.25,1993
-Thu D. Nguyen,Rutgers University,arch,1.0,0.2,2013
-Thu D. Nguyen,Rutgers University,arch,2.0,0.583333333333,2015
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.333333333333,2000
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.5,2001
-Thu D. Nguyen,Rutgers University,highperf,2.0,0.45,2003
-Thu D. Nguyen,Rutgers University,highperf,2.0,0.291666666667,2011
-Thu D. Nguyen,Rutgers University,highperf,1.0,0.25,2015
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1991
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.166666666667,1993
+Mark D. Hill,University of Wisconsin - Madison,metrics,1.0,0.333333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,opsys,1.0,0.333333333333,1995
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,1999
+Mark D. Hill,University of Wisconsin - Madison,database,1.0,0.25,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1999
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2001
+Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1983
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1984
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.111111111111,1986
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1989
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1990
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1991
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.5,1992
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,1993
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1994
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.25,1996
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,1998
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.142857142857,1999
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.1,2000
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.2,2001
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2002
+Mark D. Hill,University of Wisconsin - Madison,arch,4.0,1.11666666667,2003
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.958333333333,2006
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.892857142857,2007
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,1.03333333333,2008
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.5,2011
+Mark D. Hill,University of Wisconsin - Madison,arch,1.0,0.333333333333,2012
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.325,2013
+Mark D. Hill,University of Wisconsin - Madison,arch,2.0,0.392857142857,2014
+Mark D. Hill,University of Wisconsin - Madison,arch,3.0,0.527777777778,2015
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.125,1994
+Mark D. Hill,University of Wisconsin - Madison,highperf,1.0,0.333333333333,2011
 William Whittaker,Carnegie Mellon University,mlmining,1.0,0.333333333333,2000
 William Whittaker,Carnegie Mellon University,mlmining,1.0,0.0909090909091,2003
 William Whittaker,Carnegie Mellon University,ai,1.0,0.166666666667,1985
