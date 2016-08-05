@@ -1856,8 +1856,24 @@ Stefan Katzenbeisser 0001,TU Darmstadt,security,2.0,0.533333333333,2007
 Stefan Katzenbeisser 0001,TU Darmstadt,security,1.0,0.25,2012
 Stefan Katzenbeisser 0001,TU Darmstadt,security,1.0,0.25,2014
 Stefan Katzenbeisser 0001,TU Darmstadt,security,1.0,0.5,2015
-Claire Kenyon-Mathieu,Ecole Normale Superieure,theory,1.0,0.5,1989
-Claire Kenyon-Mathieu,Ecole Normale Superieure,theory,3.0,1.33333333333,2007
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2002
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.333333333333,2005
+Laxmi N. Bhuyan,University of California - Riverside,networks,2.0,0.833333333333,2007
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.25,2008
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.25,2009
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2010
+Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2011
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.5,1982
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,1.0,1984
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.5,1987
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.25,1989
+Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.333333333333,2015
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.5,1992
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.333333333333,1994
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.5,2000
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.25,2014
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.2,2015
+Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.25,2016
 Calton Pu,Georgia Institute of Technology,opsys,1.0,0.5,1989
 Calton Pu,Georgia Institute of Technology,opsys,1.0,0.111111111111,1995
 Calton Pu,Georgia Institute of Technology,opsys,1.0,0.166666666667,1999
@@ -3727,6 +3743,7 @@ Song Min Kim,George Mason University,networks,1.0,0.2,2013
 Song Min Kim,George Mason University,networks,1.0,0.333333333333,2015
 Song Min Kim,George Mason University,mobile,1.0,0.2,2013
 Song Min Kim,George Mason University,mobile,2.0,0.833333333333,2015
+Scott A. DeLoach,Kansas State University,robotics,1.0,0.5,2004
 Amir Nayyeri,Oregon State University,theory,1.0,0.333333333333,2009
 Amir Nayyeri,Oregon State University,theory,2.0,1.0,2011
 Amir Nayyeri,Oregon State University,theory,2.0,0.416666666667,2014
@@ -6948,6 +6965,8 @@ Martijn Stam,University of Bristol,crypto,1.0,0.333333333333,2011
 Martijn Stam,University of Bristol,crypto,1.0,0.25,2012
 Martijn Stam,University of Bristol,crypto,1.0,0.25,2013
 Martijn Stam,University of Bristol,crypto,1.0,0.25,2016
+Daniel Andresen,Kansas State University,highperf,1.0,0.5,1998
+Daniel Andresen,Kansas State University,highperf,1.0,0.25,1999
 Margo I. Seltzer,Harvard University,metrics,2.0,1.0,1997
 Margo I. Seltzer,Harvard University,metrics,1.0,0.5,2000
 Margo I. Seltzer,Harvard University,opsys,1.0,0.142857142857,1995
@@ -7024,6 +7043,8 @@ Francis R. Bach,Ecole Normale Superieure,vision,1.0,0.166666666667,2013
 Francis R. Bach,Ecole Normale Superieure,vision,1.0,0.142857142857,2014
 Francis R. Bach,Ecole Normale Superieure,vision,1.0,0.142857142857,2015
 Christopher W. Clifton,Purdue University,mlmining,1.0,0.5,2014
+Claire Kenyon-Mathieu,Ecole Normale Superieure,theory,1.0,0.5,1989
+Claire Kenyon-Mathieu,Ecole Normale Superieure,theory,3.0,1.33333333333,2007
 Alan Blackwell,University of Cambridge,hci,1.0,0.2,2012
 Zhuowen Tu,University of California - San Diego,ai,1.0,0.25,2012
 Zhuowen Tu,University of California - San Diego,vision,1.0,0.333333333333,2000
@@ -9148,6 +9169,9 @@ Nicholas J. A. Harvey,University of British Columbia,theory,1.0,0.5,2015
 Nicholas J. A. Harvey,University of British Columbia,opsys,1.0,0.166666666667,2004
 Nicholas J. A. Harvey,University of British Columbia,opsys,1.0,0.2,2014
 Nicholas J. A. Harvey,University of British Columbia,networks,1.0,0.2,2007
+Ellis Horowitz,University of Southern California,theory,1.0,1.0,1972
+Ellis Horowitz,University of Southern California,softeng,1.0,0.333333333333,1976
+Ellis Horowitz,University of Southern California,softeng,1.0,0.25,1995
 Ulrich Kremer,Rutgers University,proglang,1.0,0.5,2003
 Ulrich Kremer,Rutgers University,proglang,1.0,0.25,2005
 Ulrich Kremer,Rutgers University,robotics,1.0,0.5,2009
@@ -10806,10 +10830,7 @@ Pankaj K. Agarwal,Duke University,robotics,1.0,0.25,1997
 Pankaj K. Agarwal,Duke University,robotics,1.0,0.333333333333,2001
 Pankaj K. Agarwal,Duke University,robotics,1.0,0.333333333333,2003
 Pankaj K. Agarwal,Duke University,robotics,1.0,0.25,2013
-Christopher Riesbeck,Northwestern University,hci,1.0,0.5,1998
-Christopher Riesbeck,Northwestern University,ai,1.0,0.25,1973
-Christopher Riesbeck,Northwestern University,ai,1.0,1.0,1981
-Christopher Riesbeck,Northwestern University,ai,1.0,0.166666666667,2007
+Venkatesh-Prasad Ranganath,Kansas State University,softeng,1.0,0.333333333333,2014
 Ramesh Govindan,University of Southern California,metrics,1.0,0.333333333333,2003
 Ramesh Govindan,University of Southern California,metrics,1.0,0.142857142857,2006
 Ramesh Govindan,University of Southern California,metrics,1.0,0.25,2009
@@ -13497,6 +13518,13 @@ Hermann Härtig,TU Dresden,opsys,1.0,0.5,2001
 Hermann Härtig,TU Dresden,opsys,1.0,0.25,2006
 Hermann Härtig,TU Dresden,opsys,1.0,0.5,2008
 Hermann Härtig,TU Dresden,arch,1.0,0.2,2016
+Robby,Kansas State University,security,1.0,0.25,2014
+Robby,Kansas State University,softeng,1.0,0.142857142857,2000
+Robby,Kansas State University,softeng,1.0,0.125,2001
+Robby,Kansas State University,softeng,1.0,0.25,2004
+Robby,Kansas State University,softeng,1.0,0.333333333333,2006
+Robby,Kansas State University,softeng,1.0,0.333333333333,2009
+Robby,Kansas State University,softeng,1.0,0.25,2013
 René Serral-Gracià,Polytechnic University of Catalonia,networks,1.0,0.166666666667,2008
 Adam Chlipala,Massachusetts Institute of Technology,opsys,1.0,1.0,2010
 Adam Chlipala,Massachusetts Institute of Technology,opsys,1.0,0.2,2014
@@ -13967,24 +13995,10 @@ Jean-Pierre Hubaux,EPFL,security,1.0,0.142857142857,2014
 Jean-Pierre Hubaux,EPFL,security,2.0,0.45,2015
 Trilce Estrada,University of New Mexico,highperf,1.0,0.2,2006
 Trilce Estrada,University of New Mexico,highperf,1.0,0.5,2012
-Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2002
-Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.333333333333,2005
-Laxmi N. Bhuyan,University of California - Riverside,networks,2.0,0.833333333333,2007
-Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.25,2008
-Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.25,2009
-Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2010
-Laxmi N. Bhuyan,University of California - Riverside,networks,1.0,0.5,2011
-Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.5,1982
-Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,1.0,1984
-Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.5,1987
-Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.25,1989
-Laxmi N. Bhuyan,University of California - Riverside,arch,1.0,0.333333333333,2015
-Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.5,1992
-Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.333333333333,1994
-Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.5,2000
-Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.25,2014
-Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.2,2015
-Laxmi N. Bhuyan,University of California - Riverside,highperf,1.0,0.25,2016
+Pavithra Prabhakar,Kansas State University,logic,1.0,0.5,2013
+Pavithra Prabhakar,Kansas State University,logic,1.0,0.5,2016
+Pavithra Prabhakar,Kansas State University,robotics,1.0,0.25,2013
+Pavithra Prabhakar,Kansas State University,robotics,1.0,0.5,2014
 Gilles Dowek,Ecole Normale Superieure de Cachan,logic,1.0,1.0,1992
 Gilles Dowek,Ecole Normale Superieure de Cachan,logic,1.0,0.333333333333,1995
 Partha Dasgupta,Arizona State University,proglang,1.0,1.0,1986
@@ -14549,6 +14563,8 @@ Simon W. Moore,University of Cambridge,security,1.0,0.0666666666667,2015
 Simon W. Moore,University of Cambridge,arch,1.0,0.333333333333,2004
 Simon W. Moore,University of Cambridge,arch,1.0,0.1,2014
 Simon W. Moore,University of Cambridge,arch,1.0,0.111111111111,2015
+Venkatesh Prasad Ranganath,Kansas State University,softeng,1.0,0.2,2003
+Venkatesh Prasad Ranganath,Kansas State University,arch,1.0,0.25,2009
 Bonnie Nash-Webber,University of Edinburgh,ai,1.0,0.5,1977
 Tobias Ritschel,University College London,graphics,2.0,0.333333333333,2008
 Tobias Ritschel,University College London,graphics,2.0,0.416666666667,2009
@@ -14848,6 +14864,7 @@ Andrew Warfield,University of British Columbia,networks,1.0,0.125,2005
 Andrew Warfield,University of British Columbia,networks,1.0,0.142857142857,2012
 Andrew Warfield,University of British Columbia,networks,1.0,0.25,2013
 Andrew Warfield,University of British Columbia,networks,1.0,0.2,2015
+Doina Caragea,Kansas State University,mlmining,1.0,0.333333333333,2001
 Mostafa H. Ammar,Georgia Institute of Technology,metrics,1.0,0.333333333333,1998
 Mostafa H. Ammar,Georgia Institute of Technology,metrics,1.0,0.25,2009
 Mostafa H. Ammar,Georgia Institute of Technology,metrics,1.0,0.25,2011
@@ -17844,9 +17861,12 @@ Chunyi Peng,Ohio State University,mobile,1.0,0.166666666667,2015
 Chunyi Peng,Ohio State University,security,1.0,0.2,2012
 Chunyi Peng,Ohio State University,security,1.0,0.2,2014
 Chunyi Peng,Ohio State University,security,1.0,0.142857142857,2015
-Ellis Horowitz,University of Southern California,theory,1.0,1.0,1972
-Ellis Horowitz,University of Southern California,softeng,1.0,0.333333333333,1976
-Ellis Horowitz,University of Southern California,softeng,1.0,0.25,1995
+John Hatcliff,Kansas State University,proglang,1.0,0.5,1994
+John Hatcliff,Kansas State University,softeng,1.0,0.142857142857,2000
+John Hatcliff,Kansas State University,softeng,1.0,0.125,2001
+John Hatcliff,Kansas State University,softeng,1.0,0.25,2002
+John Hatcliff,Kansas State University,softeng,1.0,0.2,2003
+John Hatcliff,Kansas State University,softeng,1.0,0.25,2013
 Li Fei-Fei,Stanford University,vision,1.0,0.333333333333,2014
 Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,0.5,1990
 Seymour E. Goodman,Georgia Institute of Technology,highperf,1.0,1.0,1995
@@ -21931,6 +21951,8 @@ Lance Williams,University of New Mexico,graphics,1.0,0.5,1993
 Lance Williams,University of New Mexico,graphics,1.0,0.5,1995
 Lance Williams,University of New Mexico,graphics,1.0,0.25,2000
 Lance Williams,University of New Mexico,vision,1.0,0.25,2011
+Masaaki Mizuno,Kansas State University,softeng,1.0,0.25,2002
+Masaaki Mizuno,Kansas State University,arch,1.0,0.25,1980
 Vivek Sarin,Texas A&M University,highperf,1.0,0.5,1996
 Vivek Sarin,Texas A&M University,highperf,1.0,0.333333333333,1998
 Vivek Sarin,Texas A&M University,highperf,1.0,0.333333333333,1999
@@ -23546,6 +23568,10 @@ Emanuel Todorov,University of Washington,robotics,1.0,0.333333333333,2013
 Emanuel Todorov,University of Washington,robotics,4.0,1.78333333333,2014
 Emanuel Todorov,University of Washington,robotics,3.0,0.809523809524,2015
 Emanuel Todorov,University of Washington,robotics,2.0,0.833333333333,2016
+Christopher Riesbeck,Northwestern University,hci,1.0,0.5,1998
+Christopher Riesbeck,Northwestern University,ai,1.0,0.25,1973
+Christopher Riesbeck,Northwestern University,ai,1.0,1.0,1981
+Christopher Riesbeck,Northwestern University,ai,1.0,0.166666666667,2007
 Scott A. Smolka,Stony Brook University,proglang,1.0,0.5,1991
 Scott A. Smolka,Stony Brook University,proglang,1.0,0.5,1992
 Scott A. Smolka,Stony Brook University,logic,1.0,0.25,1990
@@ -38691,6 +38717,7 @@ Carlo Tomasi,Duke University,vision,1.0,0.333333333333,2010
 Carlo Tomasi,Duke University,vision,3.0,1.03333333333,2011
 Carlo Tomasi,Duke University,vision,5.0,2.0,2012
 Carlo Tomasi,Duke University,vision,1.0,0.5,2013
+Torben Amtoft,Kansas State University,proglang,1.0,0.333333333333,2006
 Xiangyu Zhang,Purdue University,metrics,1.0,0.142857142857,2014
 Xiangyu Zhang,Purdue University,database,1.0,0.25,2007
 Xiangyu Zhang,Purdue University,proglang,1.0,0.5,2004
