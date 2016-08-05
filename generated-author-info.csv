@@ -1107,6 +1107,7 @@ Ugur Çetintemel,Brown University,database,1.0,0.333333333333,2010
 Ugur Çetintemel,Brown University,database,2.0,1.25,2011
 Ugur Çetintemel,Brown University,database,1.0,0.333333333333,2014
 Ugur Çetintemel,Brown University,database,3.0,0.553113553114,2015
+Catherine Mills Olschanowsky,Colorado State University,highperf,1.0,0.2,2014
 Ilya Sergey,University College London,proglang,1.0,0.142857142857,2013
 Ilya Sergey,University College London,proglang,1.0,0.333333333333,2014
 Ilya Sergey,University College London,proglang,1.0,0.333333333333,2015
@@ -2950,6 +2951,7 @@ Mark D. Corner,University of Massachusetts - Amherst,mobile,2.0,0.583333333333,2
 Andrew Meneely,Rochester Institute of Technology,security,1.0,0.5,2009
 Andrew Meneely,Rochester Institute of Technology,softeng,1.0,0.25,2008
 Andrew Meneely,Rochester Institute of Technology,softeng,2.0,0.833333333333,2011
+Harold Abelson,Massachusetts Institute of Technology,theory,1.0,1.0,1978
 Yaron Singer,Harvard University,theory,1.0,0.333333333333,2008
 Yaron Singer,Harvard University,theory,2.0,1.11111111111,2010
 Yaron Singer,Harvard University,theory,1.0,0.5,2013
@@ -3919,6 +3921,11 @@ Milos Prvulovic,Georgia Institute of Technology,arch,1.0,0.5,2012
 Milos Prvulovic,Georgia Institute of Technology,arch,1.0,0.333333333333,2014
 Milos Prvulovic,Georgia Institute of Technology,arch,2.0,0.833333333333,2015
 Milos Prvulovic,Georgia Institute of Technology,highperf,1.0,0.25,2011
+Wayne Eberly,University of Calgary,theory,1.0,1.0,1984
+Wayne Eberly,University of Calgary,theory,1.0,0.333333333333,1991
+Wayne Eberly,University of Calgary,theory,1.0,1.0,1992
+Wayne Eberly,University of Calgary,theory,1.0,1.0,1995
+Wayne Eberly,University of Calgary,theory,1.0,0.333333333333,2000
 Peter Struss,TU Munich,ai,1.0,0.5,1989
 Peter Struss,TU Munich,ai,1.0,1.0,1994
 Peter Struss,TU Munich,ai,1.0,0.5,2003
@@ -7109,6 +7116,10 @@ Robert V. Kenyon,University of Illinois - Chicago,softeng,1.0,0.25,1998
 Raissa M. D'Souza,University of California - Davis,metrics,1.0,0.166666666667,2012
 Raissa M. D'Souza,University of California - Davis,softeng,1.0,0.2,2008
 Raissa M. D'Souza,University of California - Davis,softeng,1.0,0.25,2013
+Indrajit Ray,Colorado State University,database,1.0,0.1,2010
+Indrajit Ray,Colorado State University,security,1.0,0.25,1996
+Indrajit Ray,Colorado State University,security,1.0,0.25,2007
+Indrajit Ray,Colorado State University,security,1.0,0.2,2012
 Voicu Popescu,Purdue University,graphics,1.0,0.166666666667,2000
 Voicu Popescu,Purdue University,graphics,1.0,0.5,2006
 Voicu Popescu,Purdue University,graphics,1.0,0.333333333333,2009
@@ -8376,6 +8387,17 @@ Douglas Stott Parker Jr.,University of California - Los Angeles,database,1.0,0.3
 Douglas Stott Parker Jr.,University of California - Los Angeles,database,1.0,0.25,2007
 Douglas Stott Parker Jr.,University of California - Los Angeles,proglang,1.0,1.0,1989
 Douglas Stott Parker Jr.,University of California - Los Angeles,arch,1.0,0.5,1982
+Bruce A. Draper,Colorado State University,mlmining,1.0,0.333333333333,2000
+Bruce A. Draper,Colorado State University,vision,1.0,0.333333333333,1997
+Bruce A. Draper,Colorado State University,vision,2.0,1.0,1998
+Bruce A. Draper,Colorado State University,vision,1.0,0.5,2000
+Bruce A. Draper,Colorado State University,vision,2.0,0.75,2001
+Bruce A. Draper,Colorado State University,vision,1.0,0.2,2004
+Bruce A. Draper,Colorado State University,vision,1.0,0.333333333333,2009
+Bruce A. Draper,Colorado State University,vision,1.0,0.25,2010
+Bruce A. Draper,Colorado State University,vision,2.0,1.0,2012
+Bruce A. Draper,Colorado State University,vision,1.0,0.2,2014
+Bruce A. Draper,Colorado State University,vision,1.0,0.333333333333,2015
 Walter L. Ruzzo,University of Washington,theory,1.0,0.333333333333,1976
 Walter L. Ruzzo,University of Washington,theory,2.0,2.0,1979
 Walter L. Ruzzo,University of Washington,theory,1.0,0.333333333333,1981
@@ -8709,6 +8731,7 @@ Armando Fox,University of California - Berkeley,proglang,1.0,0.142857142857,2016
 Armando Fox,University of California - Berkeley,mobile,1.0,0.5,1996
 Armando Fox,University of California - Berkeley,mobile,1.0,0.25,2001
 Armando Fox,University of California - Berkeley,arch,1.0,0.25,1996
+Shrideep Pallickara,Colorado State University,highperf,1.0,0.333333333333,2004
 Hadi Esmaeilzadeh,Georgia Institute of Technology,softeng,1.0,0.2,2015
 Hadi Esmaeilzadeh,Georgia Institute of Technology,arch,2.0,0.4,2011
 Hadi Esmaeilzadeh,Georgia Institute of Technology,arch,2.0,0.5,2012
@@ -9033,6 +9056,19 @@ Munindar P. Singh,North Carolina State University,ai,2.0,0.75,2015
 Munindar P. Singh,North Carolina State University,ai,2.0,0.45,2016
 Munindar P. Singh,North Carolina State University,database,1.0,0.25,1993
 Munindar P. Singh,North Carolina State University,web,1.0,0.5,2016
+Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.333333333333,1998
+Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.5,2001
+Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.333333333333,2006
+Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.333333333333,2009
+Luca de Alfaro,University of California - Santa Cruz,web,1.0,0.5,2007
+Luca de Alfaro,University of California - Santa Cruz,web,1.0,0.5,2013
+Luca de Alfaro,University of California - Santa Cruz,logic,1.0,0.5,1996
+Luca de Alfaro,University of California - Santa Cruz,logic,1.0,1.0,1998
+Luca de Alfaro,University of California - Santa Cruz,logic,2.0,0.833333333333,2000
+Luca de Alfaro,University of California - Santa Cruz,logic,2.0,1.33333333333,2001
+Luca de Alfaro,University of California - Santa Cruz,logic,2.0,0.45,2002
+Luca de Alfaro,University of California - Santa Cruz,logic,1.0,0.333333333333,2004
+Luca de Alfaro,University of California - Santa Cruz,logic,3.0,1.25,2007
 Simon J. Julier,University College London,robotics,2.0,1.5,2001
 Simon J. Julier,University College London,robotics,1.0,0.5,2003
 Simon J. Julier,University College London,robotics,2.0,1.0,2008
@@ -10971,6 +11007,13 @@ Gokhan Memik,Northwestern University,highperf,1.0,0.25,2005
 Gokhan Memik,Northwestern University,highperf,1.0,0.2,2007
 Gokhan Memik,Northwestern University,highperf,1.0,0.25,2008
 Gokhan Memik,Northwestern University,highperf,1.0,0.166666666667,2014
+Adele E. Howe,Colorado State University,ai,1.0,0.5,1991
+Adele E. Howe,Colorado State University,ai,1.0,1.0,1992
+Adele E. Howe,Colorado State University,ai,1.0,0.5,1995
+Adele E. Howe,Colorado State University,ai,1.0,0.25,1999
+Adele E. Howe,Colorado State University,ai,1.0,0.333333333333,2004
+Adele E. Howe,Colorado State University,ai,1.0,0.333333333333,2013
+Adele E. Howe,Colorado State University,security,1.0,0.2,2012
 Juan J. Navarro,Polytechnic University of Catalonia,arch,1.0,0.333333333333,1986
 Juan J. Navarro,Polytechnic University of Catalonia,arch,1.0,0.25,1989
 Juan J. Navarro,Polytechnic University of Catalonia,arch,1.0,0.166666666667,1992
@@ -12412,6 +12455,13 @@ Anthony J. Bonner,University of Toronto,database,1.0,0.5,1991
 Anthony J. Bonner,University of Toronto,database,1.0,1.0,1992
 Anthony J. Bonner,University of Toronto,database,1.0,0.5,1995
 Anthony J. Bonner,University of Toronto,database,1.0,1.0,1999
+Ross M. McConnell,Colorado State University,theory,1.0,0.2,1984
+Ross M. McConnell,Colorado State University,theory,1.0,0.5,1994
+Ross M. McConnell,Colorado State University,theory,2.0,0.833333333333,1997
+Ross M. McConnell,Colorado State University,theory,1.0,1.0,2001
+Ross M. McConnell,Colorado State University,theory,1.0,0.5,2002
+Ross M. McConnell,Colorado State University,theory,1.0,0.25,2003
+Ross M. McConnell,Colorado State University,theory,1.0,1.0,2004
 Keenan Crane,Carnegie Mellon University,graphics,1.0,0.333333333333,2007
 Keenan Crane,Carnegie Mellon University,graphics,2.0,0.533333333333,2009
 Keenan Crane,Carnegie Mellon University,graphics,1.0,0.333333333333,2011
@@ -14204,11 +14254,12 @@ David Evans,University of Virginia,softeng,1.0,0.333333333333,2011
 Aaron Clauset,University of Colorado Boulder,theory,1.0,0.25,2005
 Aaron Clauset,University of Colorado Boulder,ai,1.0,0.5,2015
 Aaron Clauset,University of Colorado Boulder,web,1.0,0.333333333333,2016
-Wayne Eberly,University of Calgary,theory,1.0,1.0,1984
-Wayne Eberly,University of Calgary,theory,1.0,0.333333333333,1991
-Wayne Eberly,University of Calgary,theory,1.0,1.0,1992
-Wayne Eberly,University of Calgary,theory,1.0,1.0,1995
-Wayne Eberly,University of Calgary,theory,1.0,0.333333333333,2000
+Sanjay V. Rajopadhye,Colorado State University,proglang,1.0,0.5,2006
+Sanjay V. Rajopadhye,Colorado State University,proglang,1.0,0.25,2007
+Sanjay V. Rajopadhye,Colorado State University,highperf,1.0,0.5,2004
+Sanjay V. Rajopadhye,Colorado State University,highperf,1.0,0.2,2007
+Sanjay V. Rajopadhye,Colorado State University,highperf,1.0,0.5,2008
+Sanjay V. Rajopadhye,Colorado State University,highperf,1.0,0.5,2015
 Jie Yang 0003,Florida State University,networks,1.0,0.25,2009
 Jie Yang 0003,Florida State University,networks,1.0,0.2,2010
 Jie Yang 0003,Florida State University,networks,1.0,0.25,2012
@@ -14522,6 +14573,14 @@ Dongyoon Lee,Virginia Tech,arch,1.0,0.2,2009
 Dongyoon Lee,Virginia Tech,arch,1.0,0.166666666667,2010
 Dongyoon Lee,Virginia Tech,arch,1.0,0.142857142857,2011
 Dongyoon Lee,Virginia Tech,arch,1.0,0.333333333333,2016
+Kristian J. Hammond,Northwestern University,ai,1.0,1.0,1987
+Kristian J. Hammond,Northwestern University,ai,1.0,1.0,1989
+Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1990
+Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1991
+Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1993
+Kristian J. Hammond,Northwestern University,ai,1.0,0.333333333333,1995
+Kristian J. Hammond,Northwestern University,ai,1.0,0.333333333333,1998
+Kristian J. Hammond,Northwestern University,web,1.0,0.25,2002
 Juyang Weng,Michigan State University,ai,1.0,0.333333333333,1991
 Juyang Weng,Michigan State University,robotics,1.0,0.5,2004
 Juyang Weng,Michigan State University,vision,1.0,0.333333333333,1988
@@ -16243,6 +16302,9 @@ Qiang Liu,Dartmouth College,ai,1.0,0.333333333333,2015
 Qiang Liu,Dartmouth College,ai,1.0,0.25,2016
 Qiang Liu,Dartmouth College,networks,1.0,0.333333333333,2013
 Qiang Liu,Dartmouth College,mobile,1.0,0.333333333333,2016
+Asa Ben-Hur,Colorado State University,mlmining,1.0,0.333333333333,1999
+Asa Ben-Hur,Colorado State University,mlmining,1.0,0.25,2000
+Asa Ben-Hur,Colorado State University,mlmining,2.0,0.45,2004
 Carla E. Brodley,Northeastern University,mlmining,1.0,1.0,1993
 Carla E. Brodley,Northeastern University,mlmining,1.0,1.0,1995
 Carla E. Brodley,Northeastern University,mlmining,1.0,0.142857142857,1997
@@ -16396,7 +16458,9 @@ Hava T. Siegelmann,University of Massachusetts - Amherst,ai,1.0,1.0,1994
 Hava T. Siegelmann,University of Massachusetts - Amherst,ai,1.0,0.5,2007
 Hava T. Siegelmann,University of Massachusetts - Amherst,database,1.0,0.5,1991
 Hava T. Siegelmann,University of Massachusetts - Amherst,web,1.0,0.5,1991
-Harold Abelson,Massachusetts Institute of Technology,theory,1.0,1.0,1978
+Catherine Olschanowsky,Colorado State University,highperf,1.0,0.2,2004
+Catherine Olschanowsky,Colorado State University,highperf,1.0,0.142857142857,2011
+Catherine Olschanowsky,Colorado State University,highperf,1.0,0.166666666667,2015
 Wenfei Fan,University of Edinburgh,database,1.0,0.333333333333,1998
 Wenfei Fan,University of Edinburgh,database,1.0,0.5,2000
 Wenfei Fan,University of Edinburgh,database,1.0,0.5,2001
@@ -18531,6 +18595,9 @@ Alistair Sinclair,University of California - Berkeley,theory,1.0,0.333333333333,
 Alistair Sinclair,University of California - Berkeley,theory,3.0,1.08333333333,2013
 Alistair Sinclair,University of California - Berkeley,theory,3.0,1.08333333333,2015
 Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,2016
+Darrell Whitley,Colorado State University,ai,1.0,0.333333333333,2013
+Darrell Whitley,Colorado State University,security,1.0,0.25,2007
+Darrell Whitley,Colorado State University,arch,1.0,0.333333333333,1990
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,2.0,0.666666666667,2006
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,1.0,0.333333333333,2008
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,theory,1.0,0.25,2010
@@ -20446,6 +20513,12 @@ Michael J. Franklin,University of Chicago,networks,1.0,0.5,1998
 Michael J. Franklin,University of Chicago,networks,1.0,0.111111111111,2012
 Michael J. Franklin,University of Chicago,proglang,1.0,0.5,1997
 Paul Patras,University of Edinburgh,networks,1.0,0.333333333333,2013
+Christos Papadopoulos,Colorado State University,metrics,1.0,0.166666666667,2014
+Christos Papadopoulos,Colorado State University,networks,1.0,0.5,1993
+Christos Papadopoulos,Colorado State University,networks,1.0,0.333333333333,1998
+Christos Papadopoulos,Colorado State University,networks,1.0,0.25,2001
+Christos Papadopoulos,Colorado State University,networks,2.0,0.666666666667,2003
+Christos Papadopoulos,Colorado State University,networks,1.0,0.333333333333,2006
 Eli Gafni,University of California - Los Angeles,theory,1.0,0.333333333333,1987
 Eli Gafni,University of California - Los Angeles,theory,1.0,0.333333333333,1988
 Eli Gafni,University of California - Los Angeles,theory,1.0,0.333333333333,1989
@@ -23730,6 +23803,7 @@ Thomas Engel,University of Luxembourg,networks,1.0,0.25,2014
 James Alexander Hendler,Rensselaer Polytechnic Institute,ai,1.0,0.166666666667,2014
 Fabian E. Bustamante,Northwestern University,metrics,2.0,0.833333333333,2014
 Fabian E. Bustamante,Northwestern University,networks,1.0,0.5,2009
+James M. Bieman,Colorado State University,softeng,1.0,0.333333333333,1999
 Mingyan Liu,University of Michigan,metrics,1.0,0.5,2015
 Mingyan Liu,University of Michigan,ai,1.0,0.5,2016
 Mingyan Liu,University of Michigan,networks,1.0,0.333333333333,2003
@@ -23906,6 +23980,11 @@ Hagit Attiya,Technion,theory,1.0,0.5,2007
 Hagit Attiya,Technion,theory,1.0,0.333333333333,2008
 Hagit Attiya,Technion,proglang,1.0,0.333333333333,2010
 Hagit Attiya,Technion,proglang,1.0,0.166666666667,2011
+L. Darrell Whitley,Colorado State University,ai,1.0,0.5,1997
+L. Darrell Whitley,Colorado State University,ai,1.0,0.333333333333,1998
+L. Darrell Whitley,Colorado State University,ai,1.0,0.25,1999
+L. Darrell Whitley,Colorado State University,ai,1.0,0.333333333333,2000
+L. Darrell Whitley,Colorado State University,ai,1.0,0.333333333333,2004
 Lorie Loeb,Dartmouth College,graphics,1.0,0.166666666667,2000
 Lorie Loeb,Dartmouth College,graphics,2.0,0.5,2002
 Philip S. Yu,University of Illinois - Chicago,metrics,1.0,0.2,1985
@@ -24410,6 +24489,10 @@ Charles C. Weems,University of Massachusetts - Amherst,metrics,1.0,0.33333333333
 Charles C. Weems,University of Massachusetts - Amherst,arch,1.0,0.2,2003
 Charles C. Weems,University of Massachusetts - Amherst,vision,1.0,0.5,1993
 Hans Akkermans,VU Amsterdam,ai,1.0,0.5,1991
+Daniel Massey,Colorado State University,networks,1.0,0.142857142857,2002
+Daniel Massey,Colorado State University,networks,1.0,0.166666666667,2004
+Daniel Massey,Colorado State University,networks,1.0,0.25,2006
+Daniel Massey,Colorado State University,security,1.0,0.166666666667,2006
 Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1990
 Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1993
 Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2013
@@ -27402,6 +27485,7 @@ Fuxin Li,Oregon State University,vision,2.0,0.666666666667,2012
 Fuxin Li,Oregon State University,vision,2.0,0.45,2013
 Fuxin Li,Oregon State University,vision,2.0,0.533333333333,2014
 Fuxin Li,Oregon State University,vision,3.0,0.833333333333,2015
+Marco Levorato,University of California - Irvine,networks,1.0,0.333333333333,2009
 Kobus Barnard,University of Arizona,mlmining,1.0,0.5,2009
 Kobus Barnard,University of Arizona,mlmining,1.0,0.166666666667,2015
 Kobus Barnard,University of Arizona,vision,1.0,0.333333333333,1995
@@ -27744,6 +27828,7 @@ Chen Li 0001,University of California - Irvine,database,2.0,0.4,2013
 Chen Li 0001,University of California - Irvine,database,2.0,0.16847826087,2014
 Chen Li 0001,University of California - Irvine,web,1.0,0.25,2009
 Chen Li 0001,University of California - Irvine,web,1.0,0.25,2012
+Christina Boucher,Colorado State University,hci,1.0,0.166666666667,2016
 Daniele Micciancio,University of California - San Diego,theory,1.0,1.0,1997
 Daniele Micciancio,University of California - San Diego,theory,2.0,1.33333333333,1998
 Daniele Micciancio,University of California - San Diego,theory,1.0,0.333333333333,1999
@@ -29106,6 +29191,10 @@ Davood Rafiei,University of Alberta,database,1.0,0.5,2006
 Davood Rafiei,University of Alberta,database,1.0,0.5,2008
 Davood Rafiei,University of Alberta,database,1.0,0.5,2012
 Davood Rafiei,University of Alberta,web,1.0,0.333333333333,2010
+A. P. Wim Böhm,Colorado State University,arch,1.0,0.333333333333,1991
+A. P. Wim Böhm,Colorado State University,arch,1.0,0.333333333333,1992
+A. P. Wim Böhm,Colorado State University,arch,1.0,0.25,1993
+A. P. Wim Böhm,Colorado State University,highperf,1.0,0.5,1987
 Mark Heinrich,University of Central Florida,metrics,1.0,0.333333333333,1996
 Mark Heinrich,University of Central Florida,arch,2.0,0.153846153846,1994
 Mark Heinrich,University of Central Florida,arch,1.0,0.166666666667,1998
@@ -30012,14 +30101,9 @@ Christopher Kruegel,University of California - Santa Barbara,security,2.0,0.5,20
 Christopher Kruegel,University of California - Santa Barbara,security,5.0,1.06666666667,2015
 Christopher Kruegel,University of California - Santa Barbara,softeng,1.0,0.333333333333,2007
 Christopher Kruegel,University of California - Santa Barbara,softeng,1.0,0.2,2015
-Kristian J. Hammond,Northwestern University,ai,1.0,1.0,1987
-Kristian J. Hammond,Northwestern University,ai,1.0,1.0,1989
-Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1990
-Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1991
-Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1993
-Kristian J. Hammond,Northwestern University,ai,1.0,0.333333333333,1995
-Kristian J. Hammond,Northwestern University,ai,1.0,0.333333333333,1998
-Kristian J. Hammond,Northwestern University,web,1.0,0.25,2002
+Indrakshi Ray,Colorado State University,database,1.0,0.333333333333,1995
+Indrakshi Ray,Colorado State University,database,1.0,0.1,2010
+Indrakshi Ray,Colorado State University,security,1.0,0.333333333333,1996
 Viktor Gruev,Washington University - St. Louis,mlmining,1.0,0.333333333333,1998
 James Cheney,University of Edinburgh,opsys,1.0,0.166666666667,2002
 James Cheney,University of Edinburgh,database,1.0,0.333333333333,2006
@@ -30929,6 +31013,18 @@ Kenneth Wingate Regan,University of Buffalo,ai,1.0,0.5,2011
 Seshadhri Comandur,University of California - Santa Cruz,theory,1.0,0.25,2006
 Seshadhri Comandur,University of California - Santa Cruz,mlmining,1.0,0.25,2014
 Piyush Kumar,Florida State University,theory,1.0,0.2,2006
+J. Ross Beveridge,Colorado State University,ai,1.0,0.333333333333,1997
+J. Ross Beveridge,Colorado State University,ai,1.0,1.0,1998
+J. Ross Beveridge,Colorado State University,vision,2.0,0.583333333333,1992
+J. Ross Beveridge,Colorado State University,vision,1.0,0.5,1993
+J. Ross Beveridge,Colorado State University,vision,1.0,0.5,1996
+J. Ross Beveridge,Colorado State University,vision,1.0,0.25,2001
+J. Ross Beveridge,Colorado State University,vision,1.0,0.2,2004
+J. Ross Beveridge,Colorado State University,vision,1.0,0.5,2008
+J. Ross Beveridge,Colorado State University,vision,1.0,0.333333333333,2009
+J. Ross Beveridge,Colorado State University,vision,2.0,0.583333333333,2010
+J. Ross Beveridge,Colorado State University,vision,1.0,0.2,2014
+J. Ross Beveridge,Colorado State University,vision,1.0,0.333333333333,2015
 Beverly A. Sanders,University of Florida,softeng,1.0,0.333333333333,2010
 Beverly A. Sanders,University of Florida,highperf,1.0,0.2,2010
 Daniel Jurafsky,Stanford University,nlp,2.0,0.833333333333,1995
@@ -33435,6 +33531,9 @@ Ashok K. Goel,Georgia Institute of Technology,robotics,1.0,0.5,1992
 Douglas C. Sicker,Carnegie Mellon University,networks,1.0,0.25,2009
 Douglas C. Sicker,Carnegie Mellon University,mobile,1.0,0.2,2006
 George C. Verghese,Massachusetts Institute of Technology,robotics,1.0,0.333333333333,1989
+Jaime Ruiz,Colorado State University,hci,1.0,0.333333333333,2007
+Jaime Ruiz,Colorado State University,hci,1.0,0.333333333333,2011
+Jaime Ruiz,Colorado State University,hci,1.0,0.166666666667,2016
 Anxiao Jiang,Texas A&M University,networks,1.0,0.5,2005
 Anxiao Jiang,Texas A&M University,networks,2.0,0.4,2007
 Anxiao Jiang,Texas A&M University,networks,1.0,0.333333333333,2008
@@ -35690,6 +35789,8 @@ Geoffrey C. Fox,Indiana University,highperf,1.0,0.25,1998
 Geoffrey C. Fox,Indiana University,highperf,1.0,0.166666666667,2002
 Geoffrey C. Fox,Indiana University,highperf,1.0,0.333333333333,2004
 Geoffrey C. Fox,Indiana University,highperf,3.0,0.642857142857,2010
+Charles W. Anderson,Colorado State University,mlmining,1.0,1.0,1992
+Charles W. Anderson,Colorado State University,mlmining,1.0,0.333333333333,2000
 Xue Liu,McGill University,hci,1.0,0.25,2011
 Xue Liu,McGill University,hci,1.0,0.2,2012
 Xue Liu,McGill University,mlmining,1.0,0.111111111111,2012
@@ -35819,19 +35920,8 @@ Daniel Boley,University of Minnesota,robotics,1.0,0.25,2004
 Daniel Boley,University of Minnesota,robotics,1.0,0.333333333333,2006
 Daniel Boley,University of Minnesota,vision,1.0,0.25,2010
 Daniel Boley,University of Minnesota,vision,1.0,0.25,2011
-Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.333333333333,1998
-Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.5,2001
-Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.333333333333,2006
-Luca de Alfaro,University of California - Santa Cruz,theory,1.0,0.333333333333,2009
-Luca de Alfaro,University of California - Santa Cruz,web,1.0,0.5,2007
-Luca de Alfaro,University of California - Santa Cruz,web,1.0,0.5,2013
-Luca de Alfaro,University of California - Santa Cruz,logic,1.0,0.5,1996
-Luca de Alfaro,University of California - Santa Cruz,logic,1.0,1.0,1998
-Luca de Alfaro,University of California - Santa Cruz,logic,2.0,0.833333333333,2000
-Luca de Alfaro,University of California - Santa Cruz,logic,2.0,1.33333333333,2001
-Luca de Alfaro,University of California - Santa Cruz,logic,2.0,0.45,2002
-Luca de Alfaro,University of California - Santa Cruz,logic,1.0,0.333333333333,2004
-Luca de Alfaro,University of California - Santa Cruz,logic,3.0,1.25,2007
+Yashwant K. Malaiya,Colorado State University,arch,1.0,1.0,1989
+Yashwant K. Malaiya,Colorado State University,arch,1.0,0.333333333333,1990
 Sekou Remy,Clemson University,robotics,1.0,0.333333333333,2011
 Vladimir Pavlovic,Rutgers University,mlmining,1.0,0.333333333333,2000
 Vladimir Pavlovic,Rutgers University,mlmining,1.0,0.333333333333,2005
@@ -35873,7 +35963,10 @@ Cristina Conati,University of British Columbia,ai,1.0,0.5,2007
 Cristina Conati,University of British Columbia,ai,1.0,1.0,2009
 Cristina Conati,University of British Columbia,ai,2.0,0.75,2015
 Cristina Conati,University of British Columbia,ai,1.0,0.333333333333,2016
-Marco Levorato,University of California - Irvine,networks,1.0,0.333333333333,2009
+Hamid Reza Chitsaz,Colorado State University,robotics,1.0,0.333333333333,2004
+Hamid Reza Chitsaz,Colorado State University,robotics,1.0,0.25,2006
+Hamid Reza Chitsaz,Colorado State University,robotics,1.0,0.5,2007
+Hamid Reza Chitsaz,Colorado State University,robotics,1.0,0.25,2008
 Robert D. Mullins,University of Cambridge,arch,1.0,0.333333333333,2004
 Siddhartha S. Srinivasa,Carnegie Mellon University,ai,1.0,0.166666666667,2015
 Siddhartha S. Srinivasa,Carnegie Mellon University,robotics,2.0,0.333333333333,2002
