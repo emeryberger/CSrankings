@@ -12189,15 +12189,7 @@ Lise Getoor,University of California - Santa Cruz,database,1.0,0.333333333333,20
 Lise Getoor,University of California - Santa Cruz,database,1.0,0.333333333333,2010
 Lise Getoor,University of California - Santa Cruz,database,1.0,0.333333333333,2012
 Lise Getoor,University of California - Santa Cruz,web,1.0,0.5,2009
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.25,2007
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.5,2009
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,1.33333333333,2011
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,0.866666666667,2013
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,5.0,1.28333333333,2014
-Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,2.0,0.666666666667,2016
-Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.5,2011
-Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.333333333333,2013
-Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.25,2014
+Bora Uçar,Ecole Normale Superieure de Lyon,highperf,1.0,0.5,2015
 Denis Thérien,McGill University,theory,1.0,0.5,1987
 Denis Thérien,McGill University,theory,1.0,0.5,1996
 Denis Thérien,McGill University,theory,1.0,0.5,1998
@@ -13859,6 +13851,14 @@ Daniel P. Siewiorek,Carnegie Mellon University,arch,2.0,0.833333333333,1973
 Daniel P. Siewiorek,Carnegie Mellon University,arch,2.0,1.5,1974
 Daniel P. Siewiorek,Carnegie Mellon University,arch,1.0,0.25,1985
 Daniel P. Siewiorek,Carnegie Mellon University,arch,1.0,0.5,1991
+Damien Stehlé,Ecole Normale Superieure de Lyon,theory,1.0,0.333333333333,2011
+Damien Stehlé,Ecole Normale Superieure de Lyon,theory,1.0,0.2,2013
+Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,1.0,0.5,2005
+Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,1.0,0.5,2007
+Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,2.0,0.833333333333,2011
+Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,2.0,0.583333333333,2014
+Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,2.0,0.7,2015
+Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,1.0,0.5,2016
 Marty Humphrey,University of Virginia,ai,1.0,0.25,1991
 Marty Humphrey,University of Virginia,ai,1.0,0.333333333333,1993
 Marty Humphrey,University of Virginia,highperf,2.0,0.75,2001
@@ -19053,6 +19053,7 @@ Ketan Mulmuley,University of Chicago,theory,1.0,1.0,1992
 Ketan Mulmuley,University of Chicago,theory,1.0,1.0,1994
 Ketan Mulmuley,University of Chicago,theory,1.0,1.0,1997
 Ketan Mulmuley,University of Chicago,theory,1.0,1.0,2012
+Frédéric Prost,Ecole Normale Superieure de Lyon,logic,1.0,1.0,2000
 Robert C. Miller,Massachusetts Institute of Technology,hci,1.0,0.5,2001
 Robert C. Miller,Massachusetts Institute of Technology,hci,1.0,0.142857142857,2002
 Robert C. Miller,Massachusetts Institute of Technology,hci,1.0,0.5,2004
@@ -22242,6 +22243,13 @@ Shwetak N. Patel,University of Washington,hci,3.0,0.542857142857,2014
 Shwetak N. Patel,University of Washington,hci,5.0,0.942857142857,2015
 Shwetak N. Patel,University of Washington,hci,4.0,0.80119047619,2016
 Shwetak N. Patel,University of Washington,security,1.0,0.25,2011
+Benoît Libert,Ecole Normale Superieure de Lyon,crypto,2.0,0.666666666667,2012
+Benoît Libert,Ecole Normale Superieure de Lyon,crypto,2.0,0.75,2013
+Benoît Libert,Ecole Normale Superieure de Lyon,crypto,1.0,0.25,2014
+Benoît Libert,Ecole Normale Superieure de Lyon,crypto,1.0,0.333333333333,2015
+Benoît Libert,Ecole Normale Superieure de Lyon,crypto,1.0,0.25,2016
+Benoît Libert,Ecole Normale Superieure de Lyon,security,1.0,0.333333333333,2007
+Benoît Libert,Ecole Normale Superieure de Lyon,security,1.0,0.5,2008
 Ahmed M. Elgammal,Rutgers University,mlmining,1.0,0.25,2016
 Ahmed M. Elgammal,Rutgers University,ai,1.0,0.25,2013
 Ahmed M. Elgammal,Rutgers University,ai,1.0,0.2,2015
@@ -24776,6 +24784,7 @@ Jure Leskovec,Stanford University,web,4.0,1.15,2014
 Jure Leskovec,Stanford University,web,4.0,1.23333333333,2015
 Jure Leskovec,Stanford University,web,3.0,0.833333333333,2016
 Jure Leskovec,Stanford University,vision,1.0,0.5,2012
+Stéphan Thomassé,Ecole Normale Superieure de Lyon,theory,1.0,0.333333333333,2011
 Johann A. Makowsky,Technion,theory,1.0,0.333333333333,1981
 Johann A. Makowsky,Technion,theory,1.0,1.0,2001
 Johann A. Makowsky,Technion,database,1.0,0.5,1987
@@ -24837,6 +24846,15 @@ Sandhya Dwarkadas,University of Rochester,arch,2.0,0.45,2013
 Sandhya Dwarkadas,University of Rochester,highperf,1.0,0.25,1992
 Sandhya Dwarkadas,University of Rochester,highperf,1.0,0.25,1995
 Sandhya Dwarkadas,University of Rochester,highperf,1.0,0.5,2009
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.25,2007
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,1.0,0.5,2009
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,1.33333333333,2011
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,3.0,0.866666666667,2013
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,5.0,1.28333333333,2014
+Stefanie Jegelka,Massachusetts Institute of Technology,mlmining,2.0,0.666666666667,2016
+Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.5,2011
+Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.333333333333,2013
+Stefanie Jegelka,Massachusetts Institute of Technology,vision,1.0,0.25,2014
 Zhigang Zhu,CUNY,robotics,1.0,0.25,1994
 Zhigang Zhu,CUNY,robotics,1.0,0.333333333333,1996
 Zhigang Zhu,CUNY,robotics,1.0,0.333333333333,2006
