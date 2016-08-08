@@ -13,6 +13,7 @@ var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
 var countryinfoFile = "country-info.csv";
 var aliasFile = "dblp-aliases.csv";
+var homepagesFile = "homepages.csv";
 var allowRankingChange = false; /* Can we change the kind of rankings being used? */
 var showCoauthors = false;
 var maxCoauthors = 30; /* Max co-authors to display. */
@@ -26,10 +27,12 @@ var areas = ["proglang", "softeng", "opsys", "networks", "security", "database",
 ;
 ;
 ;
+;
 var authors = []; /* The data which will hold the parsed CSV of author info. */
 var coauthors = []; /* The data which will hold the parsed CSV of co-author info. */
 var countryInfo = {};
 var aliases = {};
+var homepages = {};
 /* The prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
     var s = "<html>"
@@ -175,12 +178,28 @@ function loadAuthorInfo(cont) {
         }
     });
 }
+function loadHomepages(cont) {
+    Papa.parse(homepagesFile, {
+        header: true,
+        download: true,
+        complete: function (results) {
+            var data = results.data;
+            var d = data;
+            for (var i = 0; i < d.length; i++) {
+                homepages[d[i].name] = d[i].homepage;
+            }
+            cont();
+        }
+    });
+}
 function init() {
     jQuery(document).ready(function () {
         setAllCheckboxes();
         loadAliases(function () {
-            loadAuthorInfo(function () {
-                loadCountryInfo(rank);
+            loadHomepages(function () {
+                loadAuthorInfo(function () {
+                    loadCountryInfo(rank);
+                });
             });
         });
     });
@@ -539,9 +558,7 @@ function rank() {
                 }
             }
             p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                + '<a title="Click for author\'s home page." target="_blank" href="https://www.google.com/search?q='
-                + encodeURI(name + " " + dept)
-                + '&gws_rd=ssl">'
+                + '<a title="Click for author\'s home page." target="_blank" href="' + encodeURI(homepages[name]) + '">' // https://www.google.com/search?q='
                 + name
                 + '</a></small></td><td align="right"><small>'
                 + '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
