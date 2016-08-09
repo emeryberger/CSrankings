@@ -1,5 +1,6 @@
-# import urllib2
-# import htmlentitydefs
+# Identify faculty home pages by using Google's "I'm Feeling Lucky"
+# search for both their name and their home page.
+
 import sys
 import urllib2
 import csv
@@ -14,37 +15,26 @@ def csv2dict_str_str(fname):
         d = { rows[0].strip(): rows[1].strip() for rows in reader}
     return d
 
-# from collections import *
-# from urllib.request import urlopen
-# from urllib.parse import quote
-
-#import urllib.parse
-#import urllib.request
-#import urllib.response
-#from urllib.error import URLError, HTTPError
-#from urllib.request import Request, urlopen
 import requests
 
-facultydict1 = csv2dict_str_str('faculty-affiliations.csv')
+facultydict = csv2dict_str_str('faculty-affiliations.csv')
 homepages = csv2dict_str_str('homepages.csv')
 print "name , homepage"
-for name in facultydict1:
+for name in facultydict:
+    # Skip any homepages we have already in the database.
     if (name in homepages):
         continue
-#    print("Hello")
-#    print(name)
     n1 = name
     name = name.decode('utf8')
-#    print(name)
-    str = urllib2.quote(name.encode('utf8') + ' ' + facultydict1[n1], safe='')
-#    str = "Emery%20Berger"
-    # str = urllib.parse.quote(name.encode('utf8'), safe='')
-#    print(str)
+    str = urllib2.quote(name.encode('utf8') + ' ' + facultydict[n1], safe='')
+    # The URL to do an I'm Feeling Lucky search.
     passedurl = "http://www.google.com/search?q=" + str + '&btnI'
+    # Identify the actual URL we get redirected to.
     actualURL = requests.head(passedurl, timeout=100.0 , headers={'Accept-Encoding': 'identity'}).headers.get('location', passedurl)
+    # Output the name and this resolved URL.
     print(name.encode('utf8') + " , " + actualURL)
     sys.stdout.flush()
+    # Throttle lookups to avoid getting cut off by Google.
     sleep(0.2)
-#    break
 
     
