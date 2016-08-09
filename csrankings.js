@@ -9,6 +9,9 @@
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
+/// <reference path="./typescript/google.d.ts" />
+/// <reference path="./typescript/d3.d.ts" />
+/// <reference path="./typescript/d3pie.d.ts" />
 var coauthorFile = "faculty-coauthors.csv";
 var authorinfoFile = "generated-author-info.csv";
 var countryinfoFile = "country-info.csv";
@@ -23,6 +26,13 @@ var useHarmonicMean = false;
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
+var areaNames = ["PL", "SE", "OS", "Networks", "Security", "Databases", "Metrics", "ML", "AI", "NLP", "Web and IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
+var areaDict = {};
+function initAreaDict() {
+    for (var i = 0; i < areaNames.length; i++) {
+        areaDict[areas[i]] = areaNames[i];
+    }
+}
 ;
 ;
 ;
@@ -33,6 +43,7 @@ var coauthors = []; /* The data which will hold the parsed CSV of co-author info
 var countryInfo = {};
 var aliases = {};
 var homepages = {};
+var authorAreas = {};
 /* The prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
     var s = "<html>"
@@ -97,6 +108,96 @@ function zlibDecompress(url, callback) {
 }
 function redisplay(str) {
     jQuery("#success").html(str);
+}
+function makeChart(name) {
+    var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
+    var data = [];
+    var keys = Object.keys(authorAreas[name]);
+    for (var i = 0; i < keys.length; i++) {
+        data.push({ "label": areaDict[keys[i]],
+            "value": authorAreas[name][keys[i]],
+            "color": color[i] });
+    }
+    var pie = new d3pie(name, {
+        "header": {
+            "title": {
+                "text": name,
+                "fontSize": 24,
+                "font": "open sans"
+            },
+            "subtitle": {
+                "text": "Publication Profile",
+                "color": "#999999",
+                "fontSize": 12,
+                "font": "open sans"
+            },
+            "titleSubtitlePadding": 9
+        },
+        "size": {
+            "canvasHeight": 400,
+            "canvasWidth": 400,
+            "pieInnerRadius": "38%",
+            "pieOuterRadius": "83%"
+        },
+        "data": {
+            "sortOrder": "value-desc",
+            "content": data
+        },
+        "labels": {
+            "outer": {
+                "pieDistance": 32
+            },
+            "inner": {
+                "format": "value",
+                "hideWhenLessThanPercentage": 5
+            },
+            "mainLabel": {
+                "fontSize": 12
+            },
+            "percentage": {
+                "color": "#ffffff",
+                "decimalPlaces": 0
+            },
+            "value": {
+                "color": "#adadad",
+                "fontSize": 11
+            },
+            "lines": {
+                "enabled": true
+            },
+            "truncation": {
+                "enabled": true
+            }
+        },
+        "effects": {
+            "load": {
+                "effect": "none"
+            },
+            "pullOutSegmentOnClick": {
+                "effect": "none",
+                "speed": 400,
+                "size": 8
+            }
+        },
+        "misc": {
+            "gradient": {
+                "enabled": true,
+                "percentage": 100
+            }
+        }
+    });
+}
+function toggleChart(name) {
+    var e = document.getElementById(name);
+    if (e.style.display == 'block') {
+        e.style.display = 'none';
+        var widget = document.getElementById(name);
+        widget.innerHTML = '';
+    }
+    else {
+        e.style.display = 'block';
+        makeChart(name);
+    }
 }
 function toggle(dept) {
     var e = document.getElementById(dept);
@@ -195,6 +296,7 @@ function loadHomepages(cont) {
 function init() {
     jQuery(document).ready(function () {
         setAllCheckboxes();
+        initAreaDict();
         loadAliases(function () {
             loadHomepages(function () {
                 loadAuthorInfo(function () {
@@ -325,6 +427,28 @@ function computeCoauthors(coauthors, startyear, endyear, weights) {
     }
     return coauthorList;
 }
+function countAuthorAreas(authors, authorAreas, startyear, endyear) {
+    for (var r in authors) {
+        var name_1 = authors[r].name;
+        if (authorAreas.hasOwnProperty(name_1)) {
+            delete authorAreas[name_1];
+        }
+    }
+    for (var r in authors) {
+        var name_2 = authors[r].name;
+        var area = authors[r].area;
+        var year = authors[r].year;
+        if ((year >= startyear) && (year <= endyear)) {
+            if (!(name_2 in authorAreas)) {
+                authorAreas[name_2] = {};
+            }
+            if (!(area in authorAreas[name_2])) {
+                authorAreas[name_2][area] = 0;
+            }
+            authorAreas[name_2][area] += 1;
+        }
+    }
+}
 function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
     /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
@@ -380,26 +504,26 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
         if (weights[area] == 0) {
             continue;
         }
-        var name_1 = authors[r].name;
+        var name_3 = authors[r].name;
         var count = parseInt(authors[r].count);
         var adjustedCount = parseFloat(authors[r].adjustedcount);
         var year = authors[r].year;
         if ((year >= startyear) && (year <= endyear)) {
             areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name_1 in visited)) {
-                visited[name_1] = true;
-                facultycount[name_1 + dept] = 0;
-                facultyAdjustedCount[name_1 + dept] = 0;
+            if (!(name_3 in visited)) {
+                visited[name_3] = true;
+                facultycount[name_3 + dept] = 0;
+                facultyAdjustedCount[name_3 + dept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name_1);
+                deptNames[dept].push(name_3);
                 deptCounts[dept] += 1;
             }
-            facultycount[name_1 + dept] += count;
-            facultyAdjustedCount[name_1 + dept] += adjustedCount;
+            facultycount[name_3 + dept] += count;
+            facultyAdjustedCount[name_3 + dept] += adjustedCount;
         }
     }
 }
@@ -495,10 +619,10 @@ function rank() {
         coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     }
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
+    countAuthorAreas(authors, authorAreas, startyear, endyear);
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     /* (university, total or average number of papers) */
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
-    var s = makePrologue();
     var univtext = {};
     /* Canonicalize names. */
     for (dept in deptNames) {
@@ -558,20 +682,31 @@ function rank() {
                 }
             }
             p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                + '<a title="Click for author\'s home page." target="_blank" href="' + encodeURI(homepages[name]) + '">' // https://www.google.com/search?q='
+                + '<a title="Click for author\'s home page." target="_blank" href="'
+                + encodeURI(homepages[name])
+                + '">'
                 + name
-                + '</a></small></td><td align="right"><small>'
+                + '</a>&nbsp;'
+                + "<span onclick=\"toggleChart('" + name + "')\" class=\"hovertip\" id=\"" + name + "-widget\"><font color=\"blue\">&#9685;</font></span>"
+                + '</small>'
+                + '</td><td align="right"><small>'
                 + '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
                 + facultycount[name + dept]
                 + '</a>'
                 + "</small></td>"
                 + '</a></small></td><td align="right"><small>'
                 + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
-                + "</small></td></tr>";
+                + "</small></td></tr>"
+                + "<tr><td colspan=\"3\">"
+                + '<div style="display:none;" style="width: 400px; height: 400px;" id="' + name + '">'
+                + '</div>'
+                + "</td></tr>";
         }
         p += "</tbody></table></div></div>";
         univtext[dept] = p;
     }
+    /* Start building up the string to output. */
+    var s = makePrologue();
     if (displayPercentages) {
         s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
     }

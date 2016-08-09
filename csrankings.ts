@@ -10,6 +10,9 @@
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
+/// <reference path="./typescript/google.d.ts" />
+/// <reference path="./typescript/d3.d.ts" />
+/// <reference path="./typescript/d3pie.d.ts" />
 
 const coauthorFile       = "faculty-coauthors.csv";
 const authorinfoFile     = "generated-author-info.csv";
@@ -29,6 +32,16 @@ var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "comp
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
 const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
+
+const areaNames : Array<string> = ["PL", "SE", "OS", "Networks", "Security", "Databases", "Metrics", "ML", "AI", "NLP", "Web and IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
+
+var areaDict : {[key : string] : string } = {};
+
+function initAreaDict() : void {
+    for (var i = 0; i < areaNames.length; i++) {
+	areaDict[areas[i]] = areaNames[i];
+    }
+}
 
 interface Author {
     name : string;
@@ -61,11 +74,13 @@ interface HomePage {
     homepage : string;
 };
 
+
 var authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
 var coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
 var countryInfo : {[key : string] : string } = {};
 var aliases : {[key : string] : string } = {};
 var homepages : {[key : string] : string } = {};
+var authorAreas : {[name : string] : {[area : string] : number } } = {};
 
 /* The prologue that we preface each generated HTML page with (the results). */
 
@@ -145,6 +160,98 @@ function zlibDecompress(url : string, callback : (x : any) => void) : void {
 
 function redisplay(str : string) : void {
     jQuery("#success").html(str);
+}
+
+function makeChart(name : string) : void {
+    const color = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
+    var data : any = [];
+    var keys = Object.keys(authorAreas[name]);
+    for (var i = 0; i < keys.length; i++) {
+	data.push({ "label" : areaDict[keys[i]],
+		    "value" : authorAreas[name][keys[i]],
+		    "color" : color[i] });
+    }
+    var pie = new d3pie(name, {
+	"header": {
+	    "title": {
+		"text": name,
+		"fontSize": 24,
+		"font": "open sans"
+	    },
+	    "subtitle": {
+		"text": "Publication Profile",
+		"color": "#999999",
+		"fontSize": 12,
+		"font": "open sans"
+	    },
+	    "titleSubtitlePadding": 9
+	},
+	"size": {
+	    "canvasHeight": 400,
+	    "canvasWidth": 400,
+	    "pieInnerRadius": "38%",
+	    "pieOuterRadius": "83%"
+	},
+	"data": {
+	    "sortOrder": "value-desc",
+	    "content": data
+	},
+	"labels": {
+	    "outer": {
+		"pieDistance": 32
+	    },
+	    "inner": {
+		"format": "value",
+		"hideWhenLessThanPercentage": 5
+	    },
+	    "mainLabel": {
+		"fontSize": 12
+	    },
+	    "percentage": {
+		"color": "#ffffff",
+		"decimalPlaces": 0
+	    },
+	    "value": {
+		"color": "#adadad",
+		"fontSize": 11
+	    },
+	    "lines": {
+		"enabled": true
+	    },
+	    "truncation": {
+		"enabled": true
+	    }
+	},
+	"effects": {
+	    "load": {
+		"effect": "none"
+	    },
+	    "pullOutSegmentOnClick": {
+		"effect": "none",
+		"speed": 400,
+		"size": 8
+	    }
+	},
+	"misc": {
+	    "gradient": {
+		"enabled": true,
+		"percentage": 100
+	    }
+	}
+    });
+}
+
+function toggleChart(name : string) : void {
+    var e = document.getElementById(name);
+    if (e.style.display == 'block') {
+	e.style.display = 'none';
+	var widget = document.getElementById(name);
+	widget.innerHTML = '';
+    } else {
+	e.style.display = 'block';
+	makeChart(name);
+    }
+    
 }
 
 function toggle(dept : string) : void {
@@ -251,6 +358,7 @@ function init() : void {
     jQuery(document).ready(
 	function() {
 	    setAllCheckboxes();
+	    initAreaDict();
 	    loadAliases(function() {
 		loadHomepages(function() {
 		    loadAuthorInfo(function() {
@@ -400,6 +508,33 @@ function computeCoauthors(coauthors : Array<Coauthor>,
 	coauthorList[author].add(coauthor);
     }
     return coauthorList;
+}
+
+function countAuthorAreas(authors : Array<Author>,
+			  authorAreas : {[name : string] : {[area : string] : number } },
+			  startyear : number,
+			  endyear : number)
+{
+    for (var r in authors) {
+	const name : string  = authors[r].name;
+	if (authorAreas.hasOwnProperty(name)) {
+	    delete authorAreas[name];
+	}
+    }
+    for (var r in authors) {
+	const name : string  = authors[r].name;
+	const area : string = authors[r].area;
+	var year = authors[r].year;
+	if ((year >= startyear) && (year <= endyear)) {
+	    if (!(name in authorAreas)) {
+		authorAreas[name] = {};
+	    }
+	    if (!(area in authorAreas[name])) {
+		authorAreas[name][area] = 0;
+	    }
+	    authorAreas[name][area] += 1;
+	}
+    }
 }
 
 function countPapers(areacount : {[key:string] : number},
@@ -604,12 +739,12 @@ function rank() : boolean {
 	coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     }
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
+    countAuthorAreas(authors, authorAreas, startyear, endyear);
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     
     /* (university, total or average number of papers) */
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
 
-    var s = makePrologue();
     var univtext : {[key:string] : string} = {};
 
     /* Canonicalize names. */
@@ -669,11 +804,14 @@ function rank() : boolean {
 	    }
 	    
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-		+ '<a title="Click for author\'s home page." target="_blank" href="' + encodeURI(homepages[name]) + '">' // https://www.google.com/search?q='
-		// + encodeURI(name + " " + dept)
-		// + '&gws_rd=ssl">'
+		+ '<a title="Click for author\'s home page." target="_blank" href="'
+		+ encodeURI(homepages[name])
+		+ '">' 
 		+ name
-		+ '</a></small></td><td align="right"><small>'
+		+ '</a>&nbsp;'
+		+ "<span onclick=\"toggleChart('" + name + "')\" class=\"hovertip\" id=\"" + name + "-widget\"><font color=\"blue\">&#9685;</font></span>"
+		+ '</small>'
+		+ '</td><td align="right"><small>'
 		+ '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
 		+ facultycount[name+dept]
 		+ '</a>'
@@ -682,12 +820,20 @@ function rank() : boolean {
 //		+ '<abbr title="' + coauthorStr + '">'
 		+ (Math.floor(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 //		+ '</abbr>'
-		+ "</small></td></tr>";
+		+ "</small></td></tr>"
+		+ "<tr><td colspan=\"3\">"
+		+ '<div style="display:none;" style="width: 400px; height: 400px;" id="' + name + '">'
+		+ '</div>'
+		+ "</td></tr>"
+	    ;
 	}
 	p += "</tbody></table></div></div>";
 	univtext[dept] = p;
     }
-    
+
+    /* Start building up the string to output. */
+    var s = makePrologue();
+
     if (displayPercentages) {
 	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
     } else {
