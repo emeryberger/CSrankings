@@ -33,7 +33,7 @@ var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "comp
 
 const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
 
-const areaNames : Array<string> = ["PL", "SE", "OS", "Networks", "Security", "Databases", "Metrics", "ML", "AI", "NLP", "Web and IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
+const areaNames : Array<string> = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML", "AI", "NLP", "Web & IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
 
 var areaDict : {[key : string] : string } = {};
 
@@ -163,7 +163,8 @@ function redisplay(str : string) : void {
 }
 
 function makeChart(name : string) : void {
-    const color = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
+    const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
+    console.assert (color.length >= areas.length, "Houston, we have a problem.");
     var data : any = [];
     var keys = Object.keys(authorAreas[name]);
     for (var i = 0; i < keys.length; i++) {
@@ -181,14 +182,14 @@ function makeChart(name : string) : void {
 	    "subtitle": {
 		"text": "Publication Profile",
 		"color": "#999999",
-		"fontSize": 12,
+		"fontSize": 14,
 		"font": "open sans"
 	    },
 	    "titleSubtitlePadding": 9
 	},
 	"size": {
-	    "canvasHeight": 400,
-	    "canvasWidth": 400,
+	    "canvasHeight": 500,
+	    "canvasWidth": 500,
 	    "pieInnerRadius": "38%",
 	    "pieOuterRadius": "83%"
 	},
@@ -202,7 +203,7 @@ function makeChart(name : string) : void {
 	    },
 	    "inner": {
 		"format": "value",
-		"hideWhenLessThanPercentage": 5
+		"hideWhenLessThanPercentage": 0
 	    },
 	    "mainLabel": {
 		"fontSize": 12
@@ -212,7 +213,7 @@ function makeChart(name : string) : void {
 		"decimalPlaces": 0
 	    },
 	    "value": {
-		"color": "#adadad",
+		"color": "#ffffff", // "#adadad",
 		"fontSize": 11
 	    },
 	    "lines": {
@@ -510,30 +511,40 @@ function computeCoauthors(coauthors : Array<Coauthor>,
     return coauthorList;
 }
 
-function countAuthorAreas(authors : Array<Author>,
-			  authorAreas : {[name : string] : {[area : string] : number } },
+function countAuthorAreas(areacount : {[key:string] : number},
+			  authors : Array<Author>,
 			  startyear : number,
-			  endyear : number)
+			  endyear : number,
+			  weights : {[key:string] : number}) : void
+			  
 {
+    /* Delete everything from authorAreas. */
     for (var r in authors) {
 	const name : string  = authors[r].name;
 	if (authorAreas.hasOwnProperty(name)) {
 	    delete authorAreas[name];
 	}
     }
+    /* Now rebuild. */
     for (var r in authors) {
-	const name : string  = authors[r].name;
+	var name : string  = authors[r].name;
+	if (name in aliases) {
+	    name = aliases[name];
+	}	
 	const area : string = authors[r].area;
+	const count = parseFloat(authors[r].count);
 	var year = authors[r].year;
-	if ((year >= startyear) && (year <= endyear)) {
-	    if (!(name in authorAreas)) {
-		authorAreas[name] = {};
-	    }
-	    if (!(area in authorAreas[name])) {
-		authorAreas[name][area] = 0;
-	    }
-	    authorAreas[name][area] += 1;
+	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+	    continue;
 	}
+	if (!(name in authorAreas)) {
+	    authorAreas[name] = {};
+	}
+	if (!(area in authorAreas[name])) {
+	    authorAreas[name][area] = 0;
+	}
+	authorAreas[name][area] += count;
+	console.log(authorAreas[name][area]);
     }
 }
 
@@ -547,16 +558,16 @@ function countPapers(areacount : {[key:string] : number},
 {
     /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
-	var area = authors[r].area;
-	var dept = authors[r].dept;
-	var year = authors[r].year;
-	var areaDept = area+dept;
+	const area = authors[r].area;
+	const dept = authors[r].dept;
+	const year = authors[r].year;
+	const areaDept = area+dept;
 	areaDeptAdjustedCount[areaDept] = 0;
 	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
 	    continue;
 	}
-	var count = parseFloat(authors[r].count);
-	var adjustedCount = parseFloat(authors[r].adjustedcount);
+	const count = parseFloat(authors[r].count);
+	const adjustedCount = parseFloat(authors[r].adjustedcount);
 	areacount[area] += count;
 	areaAdjustedCount[area] += adjustedCount;
     }
@@ -739,7 +750,7 @@ function rank() : boolean {
 	coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     }
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
-    countAuthorAreas(authors, authorAreas, startyear, endyear);
+    countAuthorAreas(areacount, authors, startyear, endyear, weights);
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     
     /* (university, total or average number of papers) */
@@ -809,7 +820,11 @@ function rank() : boolean {
 		+ '">' 
 		+ name
 		+ '</a>&nbsp;'
-		+ "<span onclick=\"toggleChart('" + name + "')\" class=\"hovertip\" id=\"" + name + "-widget\"><font color=\"blue\">&#9685;</font></span>"
+		+ "<span onclick=\"toggleChart('"
+		+ name
+		+ "')\" class=\"hovertip\" id=\""
+		+ name
+		+ "-widget\"><font color=\"blue\">&#9685;</font></span>"
 		+ '</small>'
 		+ '</td><td align="right"><small>'
 		+ '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
@@ -821,8 +836,8 @@ function rank() : boolean {
 		+ (Math.floor(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 //		+ '</abbr>'
 		+ "</small></td></tr>"
-		+ "<tr><td colspan=\"3\">"
-		+ '<div style="display:none;" style="width: 400px; height: 400px;" id="' + name + '">'
+		+ "<tr><td colspan=\"4\">"
+		+ '<div style="display:none;" style="width: 100%; height: 350px;" id="' + name + '">'
 		+ '</div>'
 		+ "</td></tr>"
 	    ;

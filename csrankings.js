@@ -26,7 +26,7 @@ var useHarmonicMean = false;
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
-var areaNames = ["PL", "SE", "OS", "Networks", "Security", "Databases", "Metrics", "ML", "AI", "NLP", "Web and IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
+var areaNames = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML", "AI", "NLP", "Web & IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
 var areaDict = {};
 function initAreaDict() {
     for (var i = 0; i < areaNames.length; i++) {
@@ -111,6 +111,7 @@ function redisplay(str) {
 }
 function makeChart(name) {
     var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
+    console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
     var keys = Object.keys(authorAreas[name]);
     for (var i = 0; i < keys.length; i++) {
@@ -128,14 +129,14 @@ function makeChart(name) {
             "subtitle": {
                 "text": "Publication Profile",
                 "color": "#999999",
-                "fontSize": 12,
+                "fontSize": 14,
                 "font": "open sans"
             },
             "titleSubtitlePadding": 9
         },
         "size": {
-            "canvasHeight": 400,
-            "canvasWidth": 400,
+            "canvasHeight": 500,
+            "canvasWidth": 500,
             "pieInnerRadius": "38%",
             "pieOuterRadius": "83%"
         },
@@ -149,7 +150,7 @@ function makeChart(name) {
             },
             "inner": {
                 "format": "value",
-                "hideWhenLessThanPercentage": 5
+                "hideWhenLessThanPercentage": 0
             },
             "mainLabel": {
                 "fontSize": 12
@@ -159,7 +160,7 @@ function makeChart(name) {
                 "decimalPlaces": 0
             },
             "value": {
-                "color": "#adadad",
+                "color": "#ffffff",
                 "fontSize": 11
             },
             "lines": {
@@ -427,26 +428,34 @@ function computeCoauthors(coauthors, startyear, endyear, weights) {
     }
     return coauthorList;
 }
-function countAuthorAreas(authors, authorAreas, startyear, endyear) {
+function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
+    /* Delete everything from authorAreas. */
     for (var r in authors) {
         var name_1 = authors[r].name;
         if (authorAreas.hasOwnProperty(name_1)) {
             delete authorAreas[name_1];
         }
     }
+    /* Now rebuild. */
     for (var r in authors) {
-        var name_2 = authors[r].name;
-        var area = authors[r].area;
-        var year = authors[r].year;
-        if ((year >= startyear) && (year <= endyear)) {
-            if (!(name_2 in authorAreas)) {
-                authorAreas[name_2] = {};
-            }
-            if (!(area in authorAreas[name_2])) {
-                authorAreas[name_2][area] = 0;
-            }
-            authorAreas[name_2][area] += 1;
+        var name = authors[r].name;
+        if (name in aliases) {
+            name = aliases[name];
         }
+        var area = authors[r].area;
+        var count = parseFloat(authors[r].count);
+        var year = authors[r].year;
+        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+            continue;
+        }
+        if (!(name in authorAreas)) {
+            authorAreas[name] = {};
+        }
+        if (!(area in authorAreas[name])) {
+            authorAreas[name][area] = 0;
+        }
+        authorAreas[name][area] += count;
+        console.log(authorAreas[name][area]);
     }
 }
 function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
@@ -504,26 +513,26 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
         if (weights[area] == 0) {
             continue;
         }
-        var name_3 = authors[r].name;
+        var name_2 = authors[r].name;
         var count = parseInt(authors[r].count);
         var adjustedCount = parseFloat(authors[r].adjustedcount);
         var year = authors[r].year;
         if ((year >= startyear) && (year <= endyear)) {
             areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name_3 in visited)) {
-                visited[name_3] = true;
-                facultycount[name_3 + dept] = 0;
-                facultyAdjustedCount[name_3 + dept] = 0;
+            if (!(name_2 in visited)) {
+                visited[name_2] = true;
+                facultycount[name_2 + dept] = 0;
+                facultyAdjustedCount[name_2 + dept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name_3);
+                deptNames[dept].push(name_2);
                 deptCounts[dept] += 1;
             }
-            facultycount[name_3 + dept] += count;
-            facultyAdjustedCount[name_3 + dept] += adjustedCount;
+            facultycount[name_2 + dept] += count;
+            facultyAdjustedCount[name_2 + dept] += adjustedCount;
         }
     }
 }
@@ -619,7 +628,7 @@ function rank() {
         coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     }
     countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
-    countAuthorAreas(authors, authorAreas, startyear, endyear);
+    countAuthorAreas(areacount, authors, startyear, endyear, weights);
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     /* (university, total or average number of papers) */
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
@@ -687,7 +696,11 @@ function rank() {
                 + '">'
                 + name
                 + '</a>&nbsp;'
-                + "<span onclick=\"toggleChart('" + name + "')\" class=\"hovertip\" id=\"" + name + "-widget\"><font color=\"blue\">&#9685;</font></span>"
+                + "<span onclick=\"toggleChart('"
+                + name
+                + "')\" class=\"hovertip\" id=\""
+                + name
+                + "-widget\"><font color=\"blue\">&#9685;</font></span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
                 + '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
@@ -697,8 +710,8 @@ function rank() {
                 + '</a></small></td><td align="right"><small>'
                 + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
                 + "</small></td></tr>"
-                + "<tr><td colspan=\"3\">"
-                + '<div style="display:none;" style="width: 400px; height: 400px;" id="' + name + '">'
+                + "<tr><td colspan=\"4\">"
+                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + name + '">'
                 + '</div>'
                 + "</td></tr>";
         }
