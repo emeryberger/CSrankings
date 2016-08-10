@@ -14,6 +14,9 @@
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 
+declare function escape(s:string): string;
+declare function unescape(s:string): string;
+
 const coauthorFile       = "faculty-coauthors.csv";
 const authorinfoFile     = "generated-author-info.csv";
 const countryinfoFile    = "country-info.csv";
@@ -135,7 +138,6 @@ function zlibDecompress(url : string, callback : (x : any) => void) : void {
 	reader.onloadend = function() {
 	    var base64data      = reader.result;
 
-	    //console.log(base64data);
 	    var base64      = base64data.split(',')[1];
 
 	    // Decode base64 (convert ascii to binary)
@@ -166,16 +168,16 @@ function makeChart(name : string) : void {
     const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
     console.assert (color.length >= areas.length, "Houston, we have a problem.");
     var data : any = [];
-    var keys = Object.keys(authorAreas[name]);
+    var keys = Object.keys(authorAreas[unescape(name)]);
     for (var i = 0; i < keys.length; i++) {
 	data.push({ "label" : areaDict[keys[i]],
-		    "value" : authorAreas[name][keys[i]],
+		    "value" : authorAreas[unescape(name)][keys[i]],
 		    "color" : color[i] });
     }
     var pie = new d3pie(name, {
 	"header": {
 	    "title": {
-		"text": name,
+		"text": unescape(name),
 		"fontSize": 24,
 		"font": "open sans"
 	    },
@@ -460,10 +462,8 @@ function deactivateOthers() : boolean {
 
 function toggleAI(cb : any) : boolean {
     if (cb.checked) {
-	console.log("checked");
 	activateAI(false);
     } else {
-	console.log("not checked");
 	activateAI(true);
     }
     return false;
@@ -544,7 +544,6 @@ function countAuthorAreas(areacount : {[key:string] : number},
 	    authorAreas[name][area] = 0;
 	}
 	authorAreas[name][area] += count;
-	console.log(authorAreas[name][area]);
     }
 }
 
@@ -813,7 +812,7 @@ function rank() : boolean {
 		    coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
 		}
 	    }
-	    
+
 	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		+ '<a title="Click for author\'s home page." target="_blank" href="'
 		+ encodeURI(homepages[name])
@@ -821,9 +820,9 @@ function rank() : boolean {
 		+ name
 		+ '</a>&nbsp;'
 		+ "<span onclick=\"toggleChart('"
-		+ name
+		+ escape(name)
 		+ "')\" class=\"hovertip\" id=\""
-		+ name
+		+ escape(name)
 		+ "-widget\"><font color=\"blue\">&#9685;</font></span>"
 		+ '</small>'
 		+ '</td><td align="right"><small>'
@@ -837,7 +836,7 @@ function rank() : boolean {
 //		+ '</abbr>'
 		+ "</small></td></tr>"
 		+ "<tr><td colspan=\"4\">"
-		+ '<div style="display:none;" style="width: 100%; height: 350px;" id="' + name + '">'
+		+ '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(name) + '">'
 		+ '</div>'
 		+ "</td></tr>"
 	    ;
