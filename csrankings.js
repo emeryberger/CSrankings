@@ -91,7 +91,6 @@ function zlibDecompress(url, callback) {
         reader.readAsDataURL(xhr.response);
         reader.onloadend = function () {
             var base64data = reader.result;
-            //console.log(base64data);
             var base64 = base64data.split(',')[1];
             // Decode base64 (convert ascii to binary)
             var strData = atob(base64);
@@ -113,16 +112,16 @@ function makeChart(name) {
     var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
     console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
-    var keys = Object.keys(authorAreas[name]);
+    var keys = Object.keys(authorAreas[unescape(name)]);
     for (var i = 0; i < keys.length; i++) {
         data.push({ "label": areaDict[keys[i]],
-            "value": authorAreas[name][keys[i]],
+            "value": authorAreas[unescape(name)][keys[i]],
             "color": color[i] });
     }
     var pie = new d3pie(name, {
         "header": {
             "title": {
-                "text": name,
+                "text": unescape(name),
                 "fontSize": 24,
                 "font": "open sans"
             },
@@ -383,11 +382,9 @@ function deactivateOthers() {
 }
 function toggleAI(cb) {
     if (cb.checked) {
-        console.log("checked");
         activateAI(false);
     }
     else {
-        console.log("not checked");
         activateAI(true);
     }
     return false;
@@ -455,7 +452,6 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
             authorAreas[name][area] = 0;
         }
         authorAreas[name][area] += count;
-        console.log(authorAreas[name][area]);
     }
 }
 function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
@@ -697,9 +693,9 @@ function rank() {
                 + name
                 + '</a>&nbsp;'
                 + "<span onclick=\"toggleChart('"
-                + name
+                + escape(name)
                 + "')\" class=\"hovertip\" id=\""
-                + name
+                + escape(name)
                 + "-widget\"><font color=\"blue\">&#9685;</font></span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
@@ -711,7 +707,7 @@ function rank() {
                 + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
                 + "</small></td></tr>"
                 + "<tr><td colspan=\"4\">"
-                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + name + '">'
+                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(name) + '">'
                 + '</div>'
                 + "</td></tr>";
         }
