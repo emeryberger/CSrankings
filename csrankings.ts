@@ -10,7 +10,6 @@
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
-/// <reference path="./typescript/google.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 
@@ -39,6 +38,9 @@ const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "secu
 const areaNames : Array<string> = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML", "AI", "NLP", "Web & IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
 
 var areaDict : {[key : string] : string } = {};
+
+/* Colors for all areas. */
+const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 
 function initAreaDict() : void {
     for (var i = 0; i < areaNames.length; i++) {
@@ -165,7 +167,6 @@ function redisplay(str : string) : void {
 }
 
 function makeChart(name : string) : void {
-    const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
     console.assert (color.length >= areas.length, "Houston, we have a problem.");
     var data : any = [];
     var keys = Object.keys(authorAreas[unescape(name)]);
@@ -197,7 +198,11 @@ function makeChart(name : string) : void {
 	},
 	"data": {
 	    "sortOrder": "value-desc",
-	    "content": data
+	    "content": data,
+	    "smallSegmentGrouping": {
+		"enabled": true,
+		"value": 1
+	    },
 	},
 	"labels": {
 	    "outer": {
@@ -205,7 +210,7 @@ function makeChart(name : string) : void {
 	    },
 	    "inner": {
 		"format": "value",
-		"hideWhenLessThanPercentage": 0
+		"hideWhenLessThanPercentage": 5
 	    },
 	    "mainLabel": {
 		"fontSize": 12
@@ -230,7 +235,7 @@ function makeChart(name : string) : void {
 		"effect": "none"
 	    },
 	    "pullOutSegmentOnClick": {
-		"effect": "none",
+		"effect": "linear",
 		"speed": 400,
 		"size": 8
 	    }
@@ -519,20 +524,35 @@ function countAuthorAreas(areacount : {[key:string] : number},
 			  
 {
     /* Delete everything from authorAreas. */
+    // Build up an associative array of depts.
+    var depts : {[key:string] : number} = {}; 
     for (var r in authors) {
+	// If we haven't seen this dept yet, add it.
+	const dept = authors[r].dept;
+	if (!depts.hasOwnProperty(dept)) {
+	    depts[dept] = 1;
+	}
+	// Now trash the existing name entry.
 	const name : string  = authors[r].name;
 	if (authorAreas.hasOwnProperty(name)) {
 	    delete authorAreas[name];
 	}
     }
+    // Clean up department entries, too.
+    for (var d in depts) {
+	if (authorAreas.hasOwnProperty(d)) {
+	    delete authorAreas[d];
+	}
+    }
     /* Now rebuild. */
     for (var r in authors) {
+	const dept = authors[r].dept;
+	const area = authors[r].area;
+	const count = parseFloat(authors[r].count);
 	var name : string  = authors[r].name;
 	if (name in aliases) {
 	    name = aliases[name];
-	}	
-	const area : string = authors[r].area;
-	const count = parseFloat(authors[r].count);
+	}
 	var year = authors[r].year;
 	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
 	    continue;
@@ -540,10 +560,17 @@ function countAuthorAreas(areacount : {[key:string] : number},
 	if (!(name in authorAreas)) {
 	    authorAreas[name] = {};
 	}
+	if (!(dept in authorAreas)) {
+	    authorAreas[dept] = {};
+	}
 	if (!(area in authorAreas[name])) {
 	    authorAreas[name][area] = 0;
 	}
+	if (!(area in authorAreas[dept])) {
+	    authorAreas[dept][area] = 0;
+	}
 	authorAreas[name][area] += count;
+	authorAreas[dept][area] += count;
     }
 }
 
@@ -889,9 +916,14 @@ function rank() : boolean {
 		}
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
-	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp" + dept + "</div>";
+	    s += "<td><span onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp;" + dept + "</span>";
+	    s += "&nbsp;<span onclick=\"toggleChart('"
+		+ escape(dept)
+		+ "')\" class=\"hovertip\" id=\""
+		+ escape(dept)
+		+ "-widget\"><font color=\"blue\">&#9685;</font></span>";
+	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
 	    s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
-    
 	    s += "</td>";
 
 	    if (displayPercentages) {

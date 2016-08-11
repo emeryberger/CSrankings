@@ -9,7 +9,6 @@
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/pako.d.ts" />
-/// <reference path="./typescript/google.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 var coauthorFile = "faculty-coauthors.csv";
@@ -28,6 +27,8 @@ var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competiti
 var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
 var areaNames = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML", "AI", "NLP", "Web & IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
 var areaDict = {};
+/* Colors for all areas. */
+var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 function initAreaDict() {
     for (var i = 0; i < areaNames.length; i++) {
         areaDict[areas[i]] = areaNames[i];
@@ -109,7 +110,6 @@ function redisplay(str) {
     jQuery("#success").html(str);
 }
 function makeChart(name) {
-    var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
     console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
     var keys = Object.keys(authorAreas[unescape(name)]);
@@ -141,7 +141,11 @@ function makeChart(name) {
         },
         "data": {
             "sortOrder": "value-desc",
-            "content": data
+            "content": data,
+            "smallSegmentGrouping": {
+                "enabled": true,
+                "value": 1
+            }
         },
         "labels": {
             "outer": {
@@ -149,7 +153,7 @@ function makeChart(name) {
             },
             "inner": {
                 "format": "value",
-                "hideWhenLessThanPercentage": 0
+                "hideWhenLessThanPercentage": 5
             },
             "mainLabel": {
                 "fontSize": 12
@@ -174,7 +178,7 @@ function makeChart(name) {
                 "effect": "none"
             },
             "pullOutSegmentOnClick": {
-                "effect": "none",
+                "effect": "linear",
                 "speed": 400,
                 "size": 8
             }
@@ -427,20 +431,35 @@ function computeCoauthors(coauthors, startyear, endyear, weights) {
 }
 function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
     /* Delete everything from authorAreas. */
+    // Build up an associative array of depts.
+    var depts = {};
     for (var r in authors) {
+        // If we haven't seen this dept yet, add it.
+        var dept = authors[r].dept;
+        if (!depts.hasOwnProperty(dept)) {
+            depts[dept] = 1;
+        }
+        // Now trash the existing name entry.
         var name_1 = authors[r].name;
         if (authorAreas.hasOwnProperty(name_1)) {
             delete authorAreas[name_1];
         }
     }
+    // Clean up department entries, too.
+    for (var d in depts) {
+        if (authorAreas.hasOwnProperty(d)) {
+            delete authorAreas[d];
+        }
+    }
     /* Now rebuild. */
     for (var r in authors) {
+        var dept = authors[r].dept;
+        var area = authors[r].area;
+        var count = parseFloat(authors[r].count);
         var name = authors[r].name;
         if (name in aliases) {
             name = aliases[name];
         }
-        var area = authors[r].area;
-        var count = parseFloat(authors[r].count);
         var year = authors[r].year;
         if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
             continue;
@@ -448,10 +467,17 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
         if (!(name in authorAreas)) {
             authorAreas[name] = {};
         }
+        if (!(dept in authorAreas)) {
+            authorAreas[dept] = {};
+        }
         if (!(area in authorAreas[name])) {
             authorAreas[name][area] = 0;
         }
+        if (!(area in authorAreas[dept])) {
+            authorAreas[dept][area] = 0;
+        }
         authorAreas[name][area] += count;
+        authorAreas[dept][area] += count;
     }
 }
 function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
@@ -757,7 +783,13 @@ function rank() {
                 }
             }
             s += "\n<tr><td>" + rank + "</td>";
-            s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp" + dept + "</div>";
+            s += "<td><span onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp;" + dept + "</span>";
+            s += "&nbsp;<span onclick=\"toggleChart('"
+                + escape(dept)
+                + "')\" class=\"hovertip\" id=\""
+                + escape(dept)
+                + "-widget\"><font color=\"blue\">&#9685;</font></span>";
+            s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
             s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
             s += "</td>";
             if (displayPercentages) {
