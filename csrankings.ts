@@ -922,7 +922,7 @@ function rank() : boolean {
 		+ "')\" class=\"hovertip\" id=\""
 		+ escape(dept)
 		+ "-widget\"><font color=\"blue\">&#9685;</font></span>";
-	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
+//	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
 	    s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
 	    s += "</td>";
 
@@ -941,6 +941,7 @@ function rank() : boolean {
 	    s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
 	    s += "</td>";
 	    s += "</tr>\n";
+	    s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div></td></tr>';
 	    ties++;
 	    oldv = v;
 	}
