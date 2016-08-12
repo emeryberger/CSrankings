@@ -42,6 +42,10 @@ var areaDict : {[key : string] : string } = {};
 /* Colors for all areas. */
 const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 
+const RightTriangle = "&#9658;";
+const DownTriangle  = "&#9660;";
+const PieChart      = "&#9685;";
+
 function initAreaDict() : void {
     for (var i = 0; i < areaNames.length; i++) {
 	areaDict[areas[i]] = areaNames[i];
@@ -267,10 +271,10 @@ function toggle(dept : string) : void {
     var widget = document.getElementById(dept+"-widget");
     if (e.style.display == 'block') {
 	e.style.display = 'none';
-	widget.innerHTML = '<font color="blue">&#9658;</font>&nbsp;' + dept;
+	widget.innerHTML = '<font color="blue">' + RightTriangle + '</font>&nbsp;' + dept;
     } else {
 	e.style.display = 'block';
-	widget.innerHTML = '<font color="blue">&#9660;</font>&nbsp;' + dept;
+	widget.innerHTML = '<font color="blue">' + DownTriangle + '</font>&nbsp;' + dept;
     }
 }
 
@@ -850,7 +854,7 @@ function rank() : boolean {
 		+ escape(name)
 		+ "')\" class=\"hovertip\" id=\""
 		+ escape(name)
-		+ "-widget\"><font color=\"blue\">&#9685;</font></span>"
+		+ "-widget\"><font color=\"blue\">" + PieChart + "</font></span>"
 		+ '</small>'
 		+ '</td><td align="right"><small>'
 		+ '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
@@ -916,13 +920,15 @@ function rank() : boolean {
 		}
 	    }
 	    s += "\n<tr><td>" + rank + "</td>";
-	    s += "<td><span onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp;" + dept + "</span>";
+	    s += "<td><span onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">" + RightTriangle + "</font>&nbsp;" + dept + "</span>";
 	    s += "&nbsp;<span onclick=\"toggleChart('"
 		+ escape(dept)
 		+ "')\" class=\"hovertip\" id=\""
 		+ escape(dept)
-		+ "-widget\"><font color=\"blue\">&#9685;</font></span>";
+		+ "-widget\"><font color=\"blue\">" + PieChart + "</font></span>";
 //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
+	    s += 
+	    '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
 	    s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
 	    s += "</td>";
 
@@ -941,7 +947,6 @@ function rank() : boolean {
 	    s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
 	    s += "</td>";
 	    s += "</tr>\n";
-	    s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div></td></tr>';
 	    ties++;
 	    oldv = v;
 	}
