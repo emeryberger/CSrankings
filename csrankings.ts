@@ -518,9 +518,15 @@ function countAuthorAreas(areacount : {[key:string] : number},
 	}
 	if (!(name in authorAreas)) {
 	    authorAreas[name] = {};
+	    for (var i = 0; i < areas.length; i++) {
+		authorAreas[name][areas[i]] = 0;
+	    }
 	}
 	if (!(dept in authorAreas)) {
 	    authorAreas[dept] = {};
+	    for (var i = 0; i < areas.length; i++) {
+		authorAreas[dept][areas[i]] = 0;
+	    }
 	}
 	if (!(area in authorAreas[name])) {
 	    authorAreas[name][area] = 0;
