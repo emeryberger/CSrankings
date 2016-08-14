@@ -359,12 +359,7 @@ function activateFields(value, fields) {
     rank();
     return false;
 }
-function activatePL(value) {
-    var plFields = [1, 2, 21];
-    return activateFields(value, plFields);
-}
 function activateSystems(value) {
-    activatePL(value);
     var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     return activateFields(value, systemsFields);
 }
@@ -379,9 +374,6 @@ function activateTheory(value) {
 function activateOthers(value) {
     var otherFields = [19, 20, 21];
     return activateFields(value, otherFields);
-}
-function deactivatePL() {
-    return activatePL(false);
 }
 function deactivateSystems() {
     return activateSystems(false);

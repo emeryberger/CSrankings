@@ -423,13 +423,7 @@ function activateFields(value : boolean, fields : Array<number>) : boolean {
     return false;
 }
 
-function activatePL(value : boolean) : boolean {
-    const plFields      : Array<number> = [1, 2, 21];
-    return activateFields(value, plFields);
-}
-
 function activateSystems(value : boolean) : boolean {
-    activatePL(value);
     const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     return activateFields(value, systemsFields);
 }
@@ -447,10 +441,6 @@ function activateTheory(value : boolean) : boolean {
 function activateOthers(value : boolean) : boolean {
     const otherFields   : Array<number> = [19, 20, 21];
     return activateFields(value, otherFields);
-}
-
-function deactivatePL() : boolean {
-    return activatePL(false);
 }
 
 function deactivateSystems() : boolean {
