@@ -90,6 +90,7 @@ function makeChart(name) {
     console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
     var keys = Object.keys(authorAreas[unescape(name)]);
+    keys = keys.sort();
     for (var i = 0; i < keys.length; i++) {
         data.push({ "label": areaDict[keys[i]],
             "value": authorAreas[unescape(name)][keys[i]],
@@ -117,7 +118,7 @@ function makeChart(name) {
             "pieOuterRadius": "83%"
         },
         "data": {
-            "sortOrder": "value-desc",
+            "sortOrder": "label-asc",
             "content": data,
             "smallSegmentGrouping": {
                 "enabled": true,
