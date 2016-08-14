@@ -23,18 +23,59 @@ var useGeometricMean = true; /* This is the default and arguably only principled
 var useHarmonicMean = false;
 var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
-var areaNames = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML", "AI", "NLP", "Web & IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
+var areas = ["ai", "vision", "mlmining", "nlp", "web",
+    "arch", "networks", "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
+    "theory", "crypto", "logic",
+    "graphics", "hci", "robotics"];
+var areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
+    "Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
+    "Theory", "Crypto", "Logic",
+    "Graphics", "HCI", "Robotics"];
+//console.log(areas.length);
 var areaDict = {};
+var areaPosition = {};
+var color2 = ['#e5ee66',
+    '#cff568',
+    '#bbed83',
+    '#9bfd6a',
+    '#6cd65c',
+    '#74f37c',
+    '#71e891',
+    '#78eeaf',
+    '#72ccae',
+    '#87fcec',
+    '#88e0e6',
+    '#79c3de',
+    '#64adee',
+    '#7fa1e4',
+    '#6275f3',
+    '#6860d3',
+    '#9d7ef3',
+    '#a361ee',
+    '#c580e8',
+    '#e169f3',
+    '#df70d7',
+    '#e980cd',
+    '#f28cc2',
+    '#e06991',
+    '#fd697d',
+    '#fa7066',
+    '#e18f71',
+    '#feb87a',
+    '#eeca82',
+    '#ebda71'];
 /* Colors for all areas. */
 var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 var RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
 var DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
 var PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
-// Build the areaDict (dictionary: areas -> names used in pie charts }
+/* Build the areaDict dictionary: areas -> names used in pie charts
+   and areaPosition dictionary: areas -> position in area array
+*/
 function initAreaDict() {
     for (var i = 0; i < areaNames.length; i++) {
         areaDict[areas[i]] = areaNames[i];
+        areaPosition[areas[i]] = i;
     }
 }
 ;
@@ -93,12 +134,13 @@ function makeChart(name) {
     console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
     var keys = Object.keys(authorAreas[unescape(name)]);
-    keys = keys.sort();
+    keys.sort(function (a, b) { return areaPosition[a] - areaPosition[b]; });
     for (var i = 0; i < keys.length; i++) {
         data.push({ "label": areaDict[keys[i]],
             "value": authorAreas[unescape(name)][keys[i]],
             "color": color[i] });
     }
+    console.log(data);
     var pie = new d3pie(name + "-chart", {
         "header": {
             "title": {
@@ -121,7 +163,6 @@ function makeChart(name) {
             "pieOuterRadius": "83%"
         },
         "data": {
-            "sortOrder": "label-asc",
             "content": data,
             "smallSegmentGrouping": {
                 "enabled": true,
@@ -324,19 +365,19 @@ function activatePL(value) {
 }
 function activateSystems(value) {
     activatePL(value);
-    var systemsFields = [3, 4, 5, 6, 7, 15, 18, 20];
+    var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     return activateFields(value, systemsFields);
 }
 function activateAI(value) {
-    var aiFields = [8, 9, 10, 11, 12];
+    var aiFields = [1, 2, 3, 4, 5];
     return activateFields(value, aiFields);
 }
 function activateTheory(value) {
-    var theoryFields = [13, 14, 22];
+    var theoryFields = [16, 17, 18];
     return activateFields(value, theoryFields);
 }
 function activateOthers(value) {
-    var otherFields = [16, 17, 19];
+    var otherFields = [19, 20, 21];
     return activateFields(value, otherFields);
 }
 function deactivatePL() {
@@ -424,36 +465,36 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
     /* Now rebuild. */
     for (var r in authors) {
         var dept = authors[r].dept;
-        var area = authors[r].area;
+        var area_1 = authors[r].area;
         var count = parseFloat(authors[r].count);
         var name = authors[r].name;
         if (name in aliases) {
             name = aliases[name];
         }
         var year = authors[r].year;
-        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+        if ((weights[area_1] == 0) || (year < startyear) || (year > endyear)) {
             continue;
         }
         if (!(name in authorAreas)) {
             authorAreas[name] = {};
-            for (var i = 0; i < areas.length; i++) {
-                authorAreas[name][areas[i]] = 0;
+            for (var area in areas) {
+                authorAreas[name][area_1] = 0;
             }
         }
         if (!(dept in authorAreas)) {
             authorAreas[dept] = {};
-            for (var i = 0; i < areas.length; i++) {
-                authorAreas[dept][areas[i]] = 0;
+            for (var area in areas) {
+                authorAreas[dept][area_1] = 0;
             }
         }
-        if (!(area in authorAreas[name])) {
-            authorAreas[name][area] = 0;
+        if (!(area_1 in authorAreas[name])) {
+            authorAreas[name][area_1] = 0;
         }
-        if (!(area in authorAreas[dept])) {
-            authorAreas[dept][area] = 0;
+        if (!(area_1 in authorAreas[dept])) {
+            authorAreas[dept][area_1] = 0;
         }
-        authorAreas[name][area] += count;
-        authorAreas[dept][area] += count;
+        authorAreas[name][area_1] += count;
+        authorAreas[dept][area_1] += count;
     }
 }
 function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
