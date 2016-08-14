@@ -8,7 +8,6 @@
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
-/// <reference path="./typescript/pako.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 var coauthorFile = "faculty-coauthors.csv";
@@ -84,31 +83,6 @@ function compareNames(a, b) {
         return 1;
     return 0;
 }
-/* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
-function zlibDecompress(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'blob';
-    xhr.onload = function (oEvent) {
-        // Base64 encode
-        var reader = new FileReader();
-        reader.readAsDataURL(xhr.response);
-        reader.onloadend = function () {
-            var base64data = reader.result;
-            var base64 = base64data.split(',')[1];
-            // Decode base64 (convert ascii to binary)
-            var strData = atob(base64);
-            // Convert binary string to character-number array
-            var charData = strData.split('').map(function (x) { return x.charCodeAt(0); });
-            // Turn number array into byte-array
-            var binData = new Uint8Array(charData);
-            // Pako inflate
-            var data = pako.inflate(binData, { to: 'string' });
-            callback(data);
-        };
-    };
-    xhr.send();
-}
 function redisplay(str) {
     jQuery("#success").html(str);
 }
@@ -121,7 +95,7 @@ function makeChart(name) {
             "value": authorAreas[unescape(name)][keys[i]],
             "color": color[i] });
     }
-    var pie = new d3pie(name, {
+    var pie = new d3pie(name + "-chart", {
         "header": {
             "title": {
                 "text": unescape(name),
@@ -195,27 +169,27 @@ function makeChart(name) {
     });
 }
 function toggleChart(name) {
-    var e = document.getElementById(name);
-    if (e.style.display == 'block') {
-        e.style.display = 'none';
-        var widget = document.getElementById(name);
-        widget.innerHTML = '';
+    var chart = document.getElementById(name + "-chart");
+    var widget = document.getElementById(name + "-widget");
+    if (chart.style.display == 'block') {
+        chart.style.display = 'none';
+        chart.innerHTML = '';
     }
     else {
-        e.style.display = 'block';
+        chart.style.display = 'block';
         makeChart(name);
     }
 }
-function toggle(dept) {
-    var e = document.getElementById(dept);
+function toggleFaculty(dept) {
+    var e = document.getElementById(dept + "-faculty");
     var widget = document.getElementById(dept + "-widget");
     if (e.style.display == 'block') {
         e.style.display = 'none';
-        widget.innerHTML = '<font color="blue">' + RightTriangle + '</font>&nbsp;' + dept;
+        widget.innerHTML = RightTriangle;
     }
     else {
         e.style.display = 'block';
-        widget.innerHTML = '<font color="blue">' + DownTriangle + '</font>&nbsp;' + dept;
+        widget.innerHTML = DownTriangle;
     }
 }
 function setAllCheckboxes() {
@@ -723,9 +697,7 @@ function rank() {
                 + '</a>&nbsp;'
                 + "<span onclick=\"toggleChart('"
                 + escape(name)
-                + "')\" class=\"hovertip\" id=\""
-                + escape(name)
-                + "-widget\"><font color=\"blue\">" + PieChart + "</font></span>"
+                + "')\" class=\"hovertip\" ><font color=\"blue\">" + PieChart + "</font></span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
                 + '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
@@ -736,7 +708,7 @@ function rank() {
                 + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
                 + "</small></td></tr>"
                 + "<tr><td colspan=\"4\">"
-                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(name) + '">'
+                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(name) + "-chart" + '">'
                 + '</div>'
                 + "</td></tr>";
         }
@@ -786,16 +758,16 @@ function rank() {
                 }
             }
             s += "\n<tr><td>" + rank + "</td>";
-            s += "<td><span onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">" + RightTriangle + "</font>&nbsp;" + dept + "</span>";
-            s += "&nbsp;<span onclick=\"toggleChart('"
+            s += "<font color=\"blue\"><td><span onclick=\"toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + RightTriangle + "</span></font>&nbsp;" + dept;
+            s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"toggleChart('"
                 + escape(dept)
                 + "')\" class=\"hovertip\" id=\""
                 + escape(dept)
-                + "-widget\"><font color=\"blue\">" + PieChart + "</font></span>";
+                + "-widget\">" + PieChart + "</span></font>";
             //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
             s +=
-                '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
-            s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
+                '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '-chart">' + '</div>';
+            s += '<div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div>';
             s += "</td>";
             if (displayPercentages) {
                 /* Show average */
