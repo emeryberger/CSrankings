@@ -41,10 +41,11 @@ var areaDict : {[key : string] : string } = {};
 /* Colors for all areas. */
 const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 
-const RightTriangle = "&#9658;";
-const DownTriangle  = "&#9660;";
-const PieChart      = "&#9685;";
+const RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+const DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
+const PieChart      = "&#9685;"; // symbol that looks close enough to a pie chart
 
+// Build the areaDict (dictionary: areas -> names used in pie charts }
 function initAreaDict() : void {
     for (var i = 0; i < areaNames.length; i++) {
 	areaDict[areas[i]] = areaNames[i];
@@ -85,13 +86,13 @@ interface HomePage {
 
 var authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
 var coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
-var countryInfo : {[key : string] : string } = {};
-var aliases : {[key : string] : string } = {};
-var homepages : {[key : string] : string } = {};
+var countryInfo : {[key : string] : string } = {}; /* Maps institutions to (non-US) regions. */
+var aliases : {[key : string] : string } = {}; /* Maps aliases to canonical author name. */
+var homepages : {[key : string] : string } = {}; /* Maps names to home pages. */
 var authorAreas : {[name : string] : {[area : string] : number } } = {};
+/* Maps authors to the areas they have published in (for pie chart display). */
 
-/* The prologue that we preface each generated HTML page with (the results). */
-
+/* Create the prologue that we preface each generated HTML page with (the results). */
 function makePrologue() : string {
     var s = "<html>"
 	+ "<head>"
@@ -134,6 +135,7 @@ function redisplay(str : string) : void {
     jQuery("#success").html(str);
 }
 
+/* Create a pie chart */
 function makeChart(name : string) : void {
     console.assert (color.length >= areas.length, "Houston, we have a problem.");
     var data : any = [];
@@ -218,6 +220,7 @@ function makeChart(name : string) : void {
     });
 }
 
+/* Turn the chart display on or off. */
 function toggleChart(name : string) : void {
     var chart = document.getElementById(name+"-chart");
     var widget = document.getElementById(name+"-widget");
@@ -231,6 +234,7 @@ function toggleChart(name : string) : void {
     
 }
 
+/* Expand or collape the view of all faculty in a department. */
 function toggleFaculty(dept : string) : void {
     var e = document.getElementById(dept+"-faculty");
     var widget = document.getElementById(dept+"-widget");
@@ -243,8 +247,8 @@ function toggleFaculty(dept : string) : void {
     }
 }
 
+/* Set all checkboxes to true. */
 function setAllCheckboxes() : void {
-    /* Set the _default_ (not "other") checkboxes to true. */
     for (var i = 1; i <= areas.length; i++) {
 	var str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked', true);
@@ -345,20 +349,6 @@ function init() : void {
 	    });
 	});
 }
-
-/* 
-function init() : void {
-    jQuery(document).ready(
-	function() {
-	    setAllCheckboxes();
-	    loadAuthorInfo(function() {
-		loadCountryInfo(function() {
-		    loadCoauthors(rank);
-		});
-	    });
-	});
-}
-*/
 
 function activateAll(value : boolean) : boolean {
     if (value === undefined) {

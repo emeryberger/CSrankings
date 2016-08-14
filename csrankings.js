@@ -28,9 +28,10 @@ var areaNames = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML"
 var areaDict = {};
 /* Colors for all areas. */
 var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
-var RightTriangle = "&#9658;";
-var DownTriangle = "&#9660;";
-var PieChart = "&#9685;";
+var RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+var DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
+var PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+// Build the areaDict (dictionary: areas -> names used in pie charts }
 function initAreaDict() {
     for (var i = 0; i < areaNames.length; i++) {
         areaDict[areas[i]] = areaNames[i];
@@ -43,11 +44,12 @@ function initAreaDict() {
 ;
 var authors = []; /* The data which will hold the parsed CSV of author info. */
 var coauthors = []; /* The data which will hold the parsed CSV of co-author info. */
-var countryInfo = {};
-var aliases = {};
-var homepages = {};
+var countryInfo = {}; /* Maps institutions to (non-US) regions. */
+var aliases = {}; /* Maps aliases to canonical author name. */
+var homepages = {}; /* Maps names to home pages. */
 var authorAreas = {};
-/* The prologue that we preface each generated HTML page with (the results). */
+/* Maps authors to the areas they have published in (for pie chart display). */
+/* Create the prologue that we preface each generated HTML page with (the results). */
 function makePrologue() {
     var s = "<html>"
         + "<head>"
@@ -86,6 +88,7 @@ function compareNames(a, b) {
 function redisplay(str) {
     jQuery("#success").html(str);
 }
+/* Create a pie chart */
 function makeChart(name) {
     console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
@@ -169,6 +172,7 @@ function makeChart(name) {
         }
     });
 }
+/* Turn the chart display on or off. */
 function toggleChart(name) {
     var chart = document.getElementById(name + "-chart");
     var widget = document.getElementById(name + "-widget");
@@ -181,6 +185,7 @@ function toggleChart(name) {
         makeChart(name);
     }
 }
+/* Expand or collape the view of all faculty in a department. */
 function toggleFaculty(dept) {
     var e = document.getElementById(dept + "-faculty");
     var widget = document.getElementById(dept + "-widget");
@@ -193,8 +198,8 @@ function toggleFaculty(dept) {
         widget.innerHTML = DownTriangle;
     }
 }
+/* Set all checkboxes to true. */
 function setAllCheckboxes() {
-    /* Set the _default_ (not "other") checkboxes to true. */
     for (var i = 1; i <= areas.length; i++) {
         var str = 'input[name=field_' + i + ']';
         jQuery(str).prop('checked', true);
@@ -288,19 +293,6 @@ function init() {
         });
     });
 }
-/*
-function init() : void {
-    jQuery(document).ready(
-    function() {
-        setAllCheckboxes();
-        loadAuthorInfo(function() {
-        loadCountryInfo(function() {
-            loadCoauthors(rank);
-        });
-        });
-    });
-}
-*/
 function activateAll(value) {
     if (value === undefined) {
         value = true;
