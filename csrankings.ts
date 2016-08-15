@@ -47,41 +47,11 @@ const areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
 var areaDict : {[key : string] : string } = {};
 var areaPosition : {[key : string] : number } = {};
 
-const color2 : Array<string> =
-    [ '#e5ee66',
-      '#cff568',
-      '#bbed83',
-      '#9bfd6a',
-      '#6cd65c',
-      '#74f37c',
-      '#71e891',
-      '#78eeaf',
-      '#72ccae',
-      '#87fcec',
-      '#88e0e6',
-      '#79c3de',
-      '#64adee',
-      '#7fa1e4',
-      '#6275f3',
-      '#6860d3',
-      '#9d7ef3',
-      '#a361ee',
-      '#c580e8',
-      '#e169f3',
-      '#df70d7',
-      '#e980cd',
-      '#f28cc2',
-      '#e06991',
-      '#fd697d',
-      '#fa7066',
-      '#e18f71',
-      '#feb87a',
-      '#eeca82',
-      '#ebda71' ];
-
-
 /* Colors for all areas. */
-const color : Array<string> = [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
+const color : Array<string> =
+    ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
+
+// [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 
 const RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
 const DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
@@ -184,8 +154,9 @@ function redisplay(str : string) : void {
 function makeChart(name : string) : void {
     console.assert (color.length >= areas.length, "Houston, we have a problem.");
     var data : any = [];
-    var keys = Object.keys(authorAreas[unescape(name)]);
-    keys.sort(function(a : string, b : string) { return areaPosition[a] - areaPosition[b];});
+    var keys = areas; // Object.keys(authorAreas[unescape(name)]);
+//    console.log(keys);
+//        keys.sort(function(a : string, b : string) { return areaPosition[a] - areaPosition[b];});
     for (var i = 0; i < keys.length; i++) {
 	data.push({ "label" : areaDict[keys[i]],
 		    "value" : authorAreas[unescape(name)][keys[i]],
@@ -540,8 +511,8 @@ function countAuthorAreas(areacount : {[key:string] : number},
     }
     /* Now rebuild. */
     for (var r in authors) {
-	const dept = authors[r].dept;
-	const area = authors[r].area;
+	const dept  = authors[r].dept;
+	const area  = authors[r].area;
 	const count = parseFloat(authors[r].count);
 	var name : string  = authors[r].name;
 	if (name in aliases) {
