@@ -19,7 +19,6 @@ import requests
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 homepages = csv2dict_str_str('homepages.csv')
-print "name , homepage"
 for name in facultydict:
     # Skip any homepages we have already in the database.
     if (name in homepages):
