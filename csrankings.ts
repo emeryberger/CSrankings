@@ -610,6 +610,14 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 		continue;
 	    }
 	    break;
+	case "australasia":
+	    if (!(dept in countryInfo)) { // USA
+		continue;
+	    }
+	    if (countryInfo[dept] != "australasia") {
+		continue;
+	    }
+	    break;
 	case "world":
 	    break;
 	}
