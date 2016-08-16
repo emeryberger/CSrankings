@@ -112,7 +112,6 @@ function makeChart(name) {
             "value": authorAreas[unescape(name)][keys[i]],
             "color": color[i] });
     }
-    console.log(data);
     var pie = new d3pie(name + "-chart", {
         "header": {
             "title": {
@@ -777,9 +776,6 @@ function rank() {
                 + escape(dept)
                 + "-widget\">" + PieChart + "</span></font>";
             //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
-            s +=
-                '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '-chart">' + '</div>';
-            s += '<div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div>';
             s += "</td>";
             if (displayPercentages) {
                 /* Show average */
@@ -797,6 +793,10 @@ function rank() {
             s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
             s += "</td>";
             s += "</tr>\n";
+            s += '<tr><td colspan="3"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+                + escape(dept)
+                + '-chart">' + '</div></td></tr>';
+            s += '<tr><td colspan="3"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
             ties++;
             oldv = v;
         }
