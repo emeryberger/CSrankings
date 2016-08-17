@@ -196,7 +196,7 @@ function makeChart(name : string) : void {
 	    },
 	    "inner": {
 		"format": "value",
-		"hideWhenLessThanPercentage": 5
+		"hideWhenLessThanPercentage": 2
 	    },
 	    "mainLabel": {
 		"fontSize": 12
@@ -207,7 +207,7 @@ function makeChart(name : string) : void {
 	    },
 	    "value": {
 		"color": "#ffffff", // "#adadad",
-		"fontSize": 11
+		"fontSize": 10
 	    },
 	    "lines": {
 		"enabled": true
