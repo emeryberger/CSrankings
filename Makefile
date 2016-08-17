@@ -2,12 +2,13 @@ TARGETS = csrankings.js generated-author-info.csv homepages.csv
 
 .PHONY: home-pages fix-affiliations
 
-all: $(TARGETS) home-pages fix-affiliations
+all: $(TARGETS)
 
 clean:
 	rm $(TARGETS)
 
 csrankings.js: csrankings.ts
+	@echo "Rebuilding JavaScript code."
 	tsc --noImplicitAny --noImplicitReturns csrankings.ts
 
 update-dblp:
@@ -20,9 +21,11 @@ update-dblp:
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv
+	@echo "Rebuilding home pages."
 	@python util/make-web-pages.py >> homepages.csv
 
 fix-affiliations: faculty-affiliations.csv
+	@echo "Updating affiliations."
 	@python util/fix-affiliations.py | sort -k2 -t"," | uniq > /tmp/f1.csv
 	@echo "name , affiliation" | cat - /tmp/f1.csv >  /tmp/f2.csv
 	@rm /tmp/f1.csv
