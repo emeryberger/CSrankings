@@ -146,7 +146,7 @@ function makeChart(name) {
             },
             "inner": {
                 "format": "value",
-                "hideWhenLessThanPercentage": 5
+                "hideWhenLessThanPercentage": 2
             },
             "mainLabel": {
                 "fontSize": 12
@@ -157,7 +157,7 @@ function makeChart(name) {
             },
             "value": {
                 "color": "#ffffff",
-                "fontSize": 11
+                "fontSize": 10
             },
             "lines": {
                 "enabled": true
