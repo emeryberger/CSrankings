@@ -31,12 +31,10 @@ var areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
     "Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
     "Theory", "Crypto", "Logic",
     "Graphics", "HCI", "Robotics"];
-//console.log(areas.length);
 var areaDict = {};
 var areaPosition = {};
 /* Colors for all areas. */
 var color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
-// [ "#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
 var RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
 var DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
 var PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
@@ -104,9 +102,7 @@ function redisplay(str) {
 function makeChart(name) {
     console.assert(color.length >= areas.length, "Houston, we have a problem.");
     var data = [];
-    var keys = areas; // Object.keys(authorAreas[unescape(name)]);
-    //    console.log(keys);
-    //        keys.sort(function(a : string, b : string) { return areaPosition[a] - areaPosition[b];});
+    var keys = areas;
     for (var i = 0; i < keys.length; i++) {
         data.push({ "label": areaDict[keys[i]],
             "value": authorAreas[unescape(name)][keys[i]],
@@ -662,7 +658,7 @@ function rank() {
     }
     /* Build drop down for faculty names and paper counts. */
     for (dept in deptNames) {
-        var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+        var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
         /* Build a dict of just faculty from this department for sorting purposes. */
         var fc = {};
         for (var ind = 0; ind < deptNames[dept].length; ind++) {
@@ -719,7 +715,7 @@ function rank() {
                 + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
                 + "</small></td></tr>"
                 + "<tr><td colspan=\"4\">"
-                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(name) + "-chart" + '">'
+                + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
                 + '</div>'
                 + "</td></tr>";
         }
@@ -793,10 +789,10 @@ function rank() {
             s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
             s += "</td>";
             s += "</tr>\n";
-            s += '<tr><td colspan="3"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+            s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
                 + escape(dept)
                 + '-chart">' + '</div></td></tr>';
-            s += '<tr><td colspan="3"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
+            s += '<tr><td colspan="4"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
             ties++;
             oldv = v;
         }
