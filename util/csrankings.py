@@ -1,4 +1,5 @@
-from lxml import etree as ElementTree
+# from lxml import etree as ElementTree
+import xml.etree.ElementTree as ElementTree
 import htmlentitydefs
 import csv
 import operator
@@ -6,9 +7,8 @@ import re
 
 # import gzip
 
-generateLog = True
-
-parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
+# parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
+parser = ElementTree.XMLParser()
 
 # Author paper count threshold - the author must have written at least this many top papers to count as a co-author.
 # This is meant to generally exclude students.
@@ -64,28 +64,28 @@ areadict = {
     # Two variants for each, as in DBLP.
     'web' : ['WWW', 'SIGIR'],
     'hci' : ['CHI','UbiComp','Ubicomp','UIST'],
-    'nlp' : ['EMNLP','ACL','ACL (1)','NAACL', 'HLT-NAACL'],
+    'nlp' : ['EMNLP','ACL','ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL'],
     'vision' : ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
-    'robotics' : ['ICRA','IROS','Robotics: Science and Systems'],
+    'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
     'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)']
 }
 
 # Build a dictionary mapping conferences to areas.
 # e.g., confdict['CVPR'] = 'vision'.
 confdict = {}
+venues = []
 for k, v in areadict.items():
     for item in v:
         confdict[item] = k
-
+        venues.append(item)
+        
 # The list of all areas.
 arealist = areadict.keys();
 
 # Consider pubs in this range only.
 startyear = 1970
 endyear   = 2016
-
-   
 
 def csv2dict_str_str(fname):
     with open(fname, mode='r') as infile:
