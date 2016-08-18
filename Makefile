@@ -1,4 +1,6 @@
-TARGETS = csrankings.js generated-author-info.csv # faculty-coauthors.csv
+TARGETS = csrankings.js generated-author-info.csv homepages.csv
+
+.PHONY: home-pages fix-affiliations
 
 all: $(TARGETS)
 
@@ -6,6 +8,7 @@ clean:
 	rm $(TARGETS)
 
 csrankings.js: csrankings.ts
+	@echo "Rebuilding JavaScript code."
 	tsc --noImplicitAny --noImplicitReturns csrankings.ts
 
 update-dblp:
@@ -17,14 +20,21 @@ update-dblp:
 	mv dblp-fixed.xml dblp.xml
 	@echo "Done."
 
-fix-affiliations:
-	python util/fix-affiliations.py | sort -k2 -t"," | uniq  >  /tmp/f.csv
-	mv /tmp/f.csv faculty-affiliations.csv
+home-pages: faculty-affiliations.csv
+	@echo "Rebuilding home pages."
+	@python util/make-web-pages.py >> homepages.csv
 
-faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py util/csrankings.py
-	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
-	python util/generate-faculty-coauthors.py
-	@echo "Done."
+fix-affiliations: faculty-affiliations.csv
+	@echo "Updating affiliations."
+	@python util/fix-affiliations.py | sort -k2 -t"," | uniq > /tmp/f1.csv
+	@echo "name , affiliation" | cat - /tmp/f1.csv >  /tmp/f2.csv
+	@rm /tmp/f1.csv
+	@mv /tmp/f2.csv faculty-affiliations.csv
+
+#faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py util/csrankings.py
+#	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
+#	python util/generate-faculty-coauthors.py
+#	@echo "Done."
 
 generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
