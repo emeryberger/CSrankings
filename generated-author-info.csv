@@ -1095,7 +1095,22 @@ Isaac D. Scherson,University of California - Irvine,metrics,1.0,0.5,1996
 Isaac D. Scherson,University of California - Irvine,theory,1.0,0.333333333333,1986
 Isaac D. Scherson,University of California - Irvine,networks,1.0,0.333333333333,1990
 Fran Berman,Rensselaer Polytechnic Institute,highperf,1.0,0.2,1996
-Tony Field,Imperial College London,highperf,1.0,0.166666666667,2001
+Ko Nishino,Drexel University,graphics,1.0,0.5,2004
+Ko Nishino,Drexel University,robotics,1.0,0.25,2001
+Ko Nishino,Drexel University,vision,2.0,0.666666666667,1999
+Ko Nishino,Drexel University,vision,2.0,0.666666666667,2001
+Ko Nishino,Drexel University,vision,3.0,0.916666666667,2003
+Ko Nishino,Drexel University,vision,1.0,0.5,2004
+Ko Nishino,Drexel University,vision,2.0,0.666666666667,2005
+Ko Nishino,Drexel University,vision,1.0,0.5,2007
+Ko Nishino,Drexel University,vision,1.0,0.5,2008
+Ko Nishino,Drexel University,vision,4.0,2.5,2009
+Ko Nishino,Drexel University,vision,3.0,1.5,2010
+Ko Nishino,Drexel University,vision,1.0,0.2,2011
+Ko Nishino,Drexel University,vision,5.0,2.33333333333,2012
+Ko Nishino,Drexel University,vision,1.0,0.25,2013
+Ko Nishino,Drexel University,vision,1.0,0.5,2014
+Ko Nishino,Drexel University,vision,2.0,0.833333333333,2015
 Yannis Papakonstantinou,University of California - San Diego,database,2.0,0.583333333333,1996
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.5,1997
 Yannis Papakonstantinou,University of California - San Diego,database,1.0,0.5,1999
@@ -2402,6 +2417,20 @@ Premkumar T. Devanbu,University of California - Davis,softeng,3.0,1.0,2013
 Premkumar T. Devanbu,University of California - Davis,softeng,6.0,1.53333333333,2014
 Premkumar T. Devanbu,University of California - Davis,softeng,3.0,0.65,2015
 Premkumar T. Devanbu,University of California - Davis,softeng,3.0,0.642857142857,2016
+Gustavo Carneiro,University of Adelaide,web,1.0,0.5,2005
+Gustavo Carneiro,University of Adelaide,vision,2.0,1.0,2002
+Gustavo Carneiro,University of Adelaide,vision,1.0,0.5,2003
+Gustavo Carneiro,University of Adelaide,vision,1.0,0.5,2004
+Gustavo Carneiro,University of Adelaide,vision,2.0,1.0,2005
+Gustavo Carneiro,University of Adelaide,vision,2.0,0.833333333333,2006
+Gustavo Carneiro,University of Adelaide,vision,1.0,0.125,2007
+Gustavo Carneiro,University of Adelaide,vision,1.0,0.2,2008
+Gustavo Carneiro,University of Adelaide,vision,2.0,1.5,2010
+Gustavo Carneiro,University of Adelaide,vision,1.0,0.5,2011
+Gustavo Carneiro,University of Adelaide,vision,3.0,0.95,2012
+Gustavo Carneiro,University of Adelaide,vision,1.0,0.5,2013
+Gustavo Carneiro,University of Adelaide,vision,2.0,1.0,2014
+Gustavo Carneiro,University of Adelaide,vision,2.0,0.5,2015
 Kevin Elphinstone,UNSW,opsys,1.0,0.0769230769231,2009
 Kevin Elphinstone,UNSW,opsys,2.0,0.75,2013
 Jia Deng,University of Michigan,graphics,1.0,0.2,2007
@@ -2418,11 +2447,38 @@ Ali Mili,NJIT,softeng,1.0,1.0,1982
 Ali Mili,NJIT,softeng,1.0,0.5,1984
 Ali Mili,NJIT,softeng,1.0,0.333333333333,1994
 Ali Mili,NJIT,softeng,1.0,0.25,2000
-Kai Hwang 0001,University of Southern California,arch,1.0,0.333333333333,1981
-Kai Hwang 0001,University of Southern California,arch,2.0,0.833333333333,1984
-Kai Hwang 0001,University of Southern California,arch,2.0,1.0,1988
-Kai Hwang 0001,University of Southern California,highperf,2.0,0.576923076923,1990
-Kai Hwang 0001,University of Southern California,highperf,1.0,0.333333333333,2000
+Ian D. Reid 0001,University of Adelaide,mlmining,1.0,0.25,2015
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.2,1993
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.333333333333,1994
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.5,2000
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.333333333333,2001
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.5,2005
+Ian D. Reid 0001,University of Adelaide,robotics,3.0,1.03333333333,2007
+Ian D. Reid 0001,University of Adelaide,robotics,2.0,0.666666666667,2008
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.25,2009
+Ian D. Reid 0001,University of Adelaide,robotics,4.0,1.75,2010
+Ian D. Reid 0001,University of Adelaide,robotics,2.0,0.533333333333,2011
+Ian D. Reid 0001,University of Adelaide,robotics,2.0,0.583333333333,2012
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.5,2014
+Ian D. Reid 0001,University of Adelaide,robotics,1.0,0.333333333333,2015
+Ian D. Reid 0001,University of Adelaide,vision,3.0,1.25,1993
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.333333333333,1994
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.333333333333,1995
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.5,1996
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.333333333333,1998
+Ian D. Reid 0001,University of Adelaide,vision,2.0,0.583333333333,1999
+Ian D. Reid 0001,University of Adelaide,vision,3.0,1.08333333333,2000
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.333333333333,2001
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.333333333333,2003
+Ian D. Reid 0001,University of Adelaide,vision,2.0,1.0,2004
+Ian D. Reid 0001,University of Adelaide,vision,2.0,1.0,2005
+Ian D. Reid 0001,University of Adelaide,vision,1.0,0.5,2006
+Ian D. Reid 0001,University of Adelaide,vision,2.0,0.666666666667,2007
+Ian D. Reid 0001,University of Adelaide,vision,4.0,1.75,2008
+Ian D. Reid 0001,University of Adelaide,vision,3.0,1.0,2010
+Ian D. Reid 0001,University of Adelaide,vision,5.0,2.33333333333,2011
+Ian D. Reid 0001,University of Adelaide,vision,3.0,1.0,2013
+Ian D. Reid 0001,University of Adelaide,vision,3.0,0.666666666667,2015
 Subbarao Kambhampati,Arizona State University,mlmining,1.0,0.333333333333,2012
 Subbarao Kambhampati,Arizona State University,mlmining,1.0,0.333333333333,2013
 Subbarao Kambhampati,Arizona State University,ai,1.0,0.5,1989
@@ -3016,6 +3072,13 @@ Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0.666666666667,2014
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,4.0,0.816666666667,2015
 Aditya G. Parameswaran,University of Illinois at Urbana-Champaign,database,2.0,0.5,2016
+Patrick Jaillet,Massachusetts Institute of Technology,theory,1.0,0.5,2015
+Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2013
+Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2014
+Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
+Patrick Jaillet,Massachusetts Institute of Technology,ai,1.0,0.333333333333,2014
+Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.5,2015
+Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.666666666667,2016
 Santosh Pande,Georgia Institute of Technology,networks,1.0,0.5,2006
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,1999
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,2004
@@ -3878,6 +3941,7 @@ Thomas E. Anderson,University of Washington,arch,2.0,0.375,1997
 Thomas E. Anderson,University of Washington,arch,1.0,0.2,1998
 Thomas E. Anderson,University of Washington,arch,1.0,0.2,2016
 Thomas E. Anderson,University of Washington,highperf,1.0,0.142857142857,1998
+Zbigniew Michalewicz,University of Adelaide,robotics,1.0,0.333333333333,1994
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.333333333333,1972
 Richard M. Karp,University of California - Berkeley,theory,1.0,0.2,1979
 Richard M. Karp,University of California - Berkeley,theory,3.0,1.5,1980
@@ -6821,6 +6885,14 @@ Michael E. Locasto,University of Calgary,opsys,1.0,0.25,2007
 Michael E. Locasto,University of Calgary,security,2.0,0.45,2007
 Michael E. Locasto,University of Calgary,security,1.0,0.2,2008
 Theo Mary,Ecole Normale Superieure de Lyon,highperf,1.0,0.166666666667,2015
+Tat-Jun Chin,University of Adelaide,mlmining,1.0,0.25,2011
+Tat-Jun Chin,University of Adelaide,vision,2.0,0.833333333333,2009
+Tat-Jun Chin,University of Adelaide,vision,2.0,0.666666666667,2010
+Tat-Jun Chin,University of Adelaide,vision,3.0,0.833333333333,2011
+Tat-Jun Chin,University of Adelaide,vision,2.0,0.45,2012
+Tat-Jun Chin,University of Adelaide,vision,1.0,0.25,2013
+Tat-Jun Chin,University of Adelaide,vision,2.0,0.583333333333,2014
+Tat-Jun Chin,University of Adelaide,vision,3.0,1.0,2015
 Frank M. Shipman III,Texas A&M University,hci,2.0,0.7,1994
 Frank M. Shipman III,Texas A&M University,hci,1.0,0.333333333333,1995
 Frank M. Shipman III,Texas A&M University,hci,1.0,0.5,2002
@@ -6917,6 +6989,7 @@ Erin Treacy Solovey,Drexel University,hci,1.0,0.166666666667,2012
 Erin Treacy Solovey,Drexel University,hci,2.0,0.325,2014
 Sjouke Mauw,University of Luxembourg,logic,1.0,0.5,1991
 Sjouke Mauw,University of Luxembourg,security,1.0,0.333333333333,2011
+Bradley James Alexander,University of Adelaide,robotics,1.0,0.5,2013
 Mathieu Desbrun,California Institute of Technology,graphics,1.0,0.25,1999
 Mathieu Desbrun,California Institute of Technology,graphics,2.0,0.75,2001
 Mathieu Desbrun,California Institute of Technology,graphics,2.0,0.666666666667,2002
@@ -6935,22 +7008,7 @@ Mathieu Desbrun,California Institute of Technology,graphics,3.0,0.566666666667,2
 Mathieu Desbrun,California Institute of Technology,graphics,2.0,0.5,2016
 Mathieu Desbrun,California Institute of Technology,robotics,1.0,0.25,2002
 Mathieu Desbrun,California Institute of Technology,robotics,1.0,0.25,2007
-Ko Nishino,Drexel University,graphics,1.0,0.5,2004
-Ko Nishino,Drexel University,robotics,1.0,0.25,2001
-Ko Nishino,Drexel University,vision,2.0,0.666666666667,1999
-Ko Nishino,Drexel University,vision,2.0,0.666666666667,2001
-Ko Nishino,Drexel University,vision,3.0,0.916666666667,2003
-Ko Nishino,Drexel University,vision,1.0,0.5,2004
-Ko Nishino,Drexel University,vision,2.0,0.666666666667,2005
-Ko Nishino,Drexel University,vision,1.0,0.5,2007
-Ko Nishino,Drexel University,vision,1.0,0.5,2008
-Ko Nishino,Drexel University,vision,4.0,2.5,2009
-Ko Nishino,Drexel University,vision,3.0,1.5,2010
-Ko Nishino,Drexel University,vision,1.0,0.2,2011
-Ko Nishino,Drexel University,vision,5.0,2.33333333333,2012
-Ko Nishino,Drexel University,vision,1.0,0.25,2013
-Ko Nishino,Drexel University,vision,1.0,0.5,2014
-Ko Nishino,Drexel University,vision,2.0,0.833333333333,2015
+Tony Field,Imperial College London,highperf,1.0,0.166666666667,2001
 Denis Zorin,New York University,graphics,1.0,0.5,1995
 Denis Zorin,New York University,graphics,1.0,0.333333333333,1997
 Denis Zorin,New York University,graphics,2.0,0.833333333333,2000
@@ -8177,6 +8235,21 @@ Luo Si,Purdue University,web,1.0,0.142857142857,2015
 Luo Si,Purdue University,web,1.0,0.25,2016
 Luo Si,Purdue University,vision,1.0,0.333333333333,2012
 Luo Si,Purdue University,vision,2.0,0.533333333333,2014
+David Suter,University of Adelaide,mlmining,1.0,0.25,2011
+David Suter,University of Adelaide,vision,1.0,0.5,1997
+David Suter,University of Adelaide,vision,1.0,0.5,2003
+David Suter,University of Adelaide,vision,1.0,0.5,2004
+David Suter,University of Adelaide,vision,1.0,0.5,2005
+David Suter,University of Adelaide,vision,1.0,0.333333333333,2006
+David Suter,University of Adelaide,vision,2.0,1.0,2007
+David Suter,University of Adelaide,vision,1.0,0.5,2008
+David Suter,University of Adelaide,vision,2.0,0.833333333333,2009
+David Suter,University of Adelaide,vision,2.0,0.666666666667,2010
+David Suter,University of Adelaide,vision,3.0,0.833333333333,2011
+David Suter,University of Adelaide,vision,2.0,0.45,2012
+David Suter,University of Adelaide,vision,2.0,0.5,2013
+David Suter,University of Adelaide,vision,3.0,0.783333333333,2014
+David Suter,University of Adelaide,vision,2.0,0.5,2015
 John Shepherd,UNSW,web,1.0,0.25,2006
 David Pointcheval,Ecole Normale Superieure,crypto,1.0,1.0,1995
 David Pointcheval,Ecole Normale Superieure,crypto,1.0,0.5,1996
@@ -9837,13 +9910,22 @@ Sangtae Ha,University of Colorado Boulder,networks,1.0,0.25,2009
 Sangtae Ha,University of Colorado Boulder,networks,1.0,0.2,2012
 Sangtae Ha,University of Colorado Boulder,networks,2.0,0.533333333333,2013
 Sangtae Ha,University of Colorado Boulder,networks,2.0,0.533333333333,2015
-Patrick Jaillet,Massachusetts Institute of Technology,theory,1.0,0.5,2015
-Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2013
-Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.25,2014
-Patrick Jaillet,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
-Patrick Jaillet,Massachusetts Institute of Technology,ai,1.0,0.333333333333,2014
-Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.5,2015
-Patrick Jaillet,Massachusetts Institute of Technology,ai,2.0,0.666666666667,2016
+Anton van den Hengel,University of Adelaide,graphics,1.0,0.2,2007
+Anton van den Hengel,University of Adelaide,mlmining,1.0,0.25,2009
+Anton van den Hengel,University of Adelaide,mlmining,1.0,0.25,2012
+Anton van den Hengel,University of Adelaide,mlmining,1.0,0.2,2014
+Anton van den Hengel,University of Adelaide,mlmining,1.0,0.25,2015
+Anton van den Hengel,University of Adelaide,ai,1.0,0.166666666667,2016
+Anton van den Hengel,University of Adelaide,web,1.0,0.25,2015
+Anton van den Hengel,University of Adelaide,vision,1.0,0.25,1998
+Anton van den Hengel,University of Adelaide,vision,1.0,0.25,2001
+Anton van den Hengel,University of Adelaide,vision,1.0,0.333333333333,2005
+Anton van den Hengel,University of Adelaide,vision,1.0,0.5,2010
+Anton van den Hengel,University of Adelaide,vision,3.0,0.95,2011
+Anton van den Hengel,University of Adelaide,vision,4.0,1.06666666667,2012
+Anton van den Hengel,University of Adelaide,vision,8.0,2.01666666667,2013
+Anton van den Hengel,University of Adelaide,vision,2.0,0.533333333333,2014
+Anton van den Hengel,University of Adelaide,vision,8.0,2.06904761905,2015
 Kang Zhang,University of Texas - Dallas,ai,1.0,0.5,1991
 Kang Zhang,University of Texas - Dallas,vision,1.0,0.142857142857,2014
 Kang Zhang,University of Texas - Dallas,vision,1.0,0.2,2015
@@ -10007,6 +10089,9 @@ Bin Ren,College of William and Mary,proglang,1.0,0.2,2015
 Bin Ren,College of William and Mary,highperf,1.0,0.333333333333,2014
 David Jones,University College London,hci,1.0,0.166666666667,2015
 David Jones,University College London,database,1.0,0.0526315789474,2014
+Alfred L. Brown,University of Adelaide,proglang,1.0,0.2,1981
+Alfred L. Brown,University of Adelaide,proglang,1.0,0.25,1989
+Alfred L. Brown,University of Adelaide,softeng,1.0,0.2,1985
 Byron Cook,University College London,hci,1.0,0.125,2013
 Byron Cook,University College London,opsys,1.0,0.111111111111,2006
 Byron Cook,University College London,proglang,1.0,0.333333333333,2006
@@ -10761,6 +10846,13 @@ Alex Lascarides,University of Edinburgh,nlp,1.0,0.5,1997
 Alex Lascarides,University of Edinburgh,nlp,2.0,0.833333333333,2001
 Alex Lascarides,University of Edinburgh,nlp,1.0,0.5,2004
 Alex Lascarides,University of Edinburgh,nlp,1.0,0.25,2013
+Christoph Treude,University of Adelaide,hci,1.0,0.166666666667,2016
+Christoph Treude,University of Adelaide,softeng,1.0,0.25,2007
+Christoph Treude,University of Adelaide,softeng,1.0,0.5,2009
+Christoph Treude,University of Adelaide,softeng,1.0,0.5,2010
+Christoph Treude,University of Adelaide,softeng,1.0,0.5,2011
+Christoph Treude,University of Adelaide,softeng,1.0,0.333333333333,2015
+Christoph Treude,University of Adelaide,softeng,2.0,0.75,2016
 Nigel P. Topham,University of Edinburgh,proglang,1.0,0.2,2011
 Nigel P. Topham,University of Edinburgh,arch,1.0,0.333333333333,1985
 Nigel P. Topham,University of Edinburgh,arch,2.0,0.833333333333,1997
@@ -11245,6 +11337,8 @@ Jason Tsong-Li Wang,NJIT,database,1.0,0.333333333333,2002
 Semih Salihoglu,University of Waterloo,database,1.0,0.25,2013
 Semih Salihoglu,University of Waterloo,database,1.0,0.5,2014
 Semih Salihoglu,University of Waterloo,database,1.0,0.2,2015
+Muhammad Ali Babar,University of Adelaide,softeng,1.0,0.2,2005
+Muhammad Ali Babar,University of Adelaide,softeng,1.0,0.25,2015
 Anthony D. Joseph,University of California - Berkeley,metrics,1.0,0.2,1999
 Anthony D. Joseph,University of California - Berkeley,metrics,1.0,0.125,2009
 Anthony D. Joseph,University of California - Berkeley,mlmining,1.0,0.166666666667,2006
@@ -13066,6 +13160,10 @@ Gene Tsudik,University of California - Irvine,security,2.0,0.833333333333,2007
 Gene Tsudik,University of California - Irvine,security,1.0,0.2,2011
 Gene Tsudik,University of California - Irvine,security,1.0,0.25,2012
 Gene Tsudik,University of California - Irvine,security,1.0,0.142857142857,2015
+Mingyu Guo,University of Adelaide,ai,1.0,0.5,2010
+Mingyu Guo,University of Adelaide,ai,1.0,1.0,2011
+Mingyu Guo,University of Adelaide,ai,1.0,0.5,2013
+Mingyu Guo,University of Adelaide,ai,1.0,0.333333333333,2014
 Amit Sahai,University of California - Los Angeles,theory,1.0,0.5,1996
 Amit Sahai,University of California - Los Angeles,theory,1.0,0.5,1997
 Amit Sahai,University of California - Los Angeles,theory,3.0,0.866666666667,1998
@@ -16214,6 +16312,16 @@ Jitendra Malik,University of California - Berkeley,vision,5.0,1.7,2012
 Jitendra Malik,University of California - Berkeley,vision,6.0,2.0,2013
 Jitendra Malik,University of California - Berkeley,vision,6.0,1.53333333333,2014
 Jitendra Malik,University of California - Berkeley,vision,16.0,4.86666666667,2015
+Qinfeng Shi,University of Adelaide,mlmining,1.0,0.25,2012
+Qinfeng Shi,University of Adelaide,ai,1.0,0.166666666667,2015
+Qinfeng Shi,University of Adelaide,web,1.0,0.25,2015
+Qinfeng Shi,University of Adelaide,vision,1.0,0.25,2008
+Qinfeng Shi,University of Adelaide,vision,1.0,0.333333333333,2010
+Qinfeng Shi,University of Adelaide,vision,2.0,0.583333333333,2011
+Qinfeng Shi,University of Adelaide,vision,2.0,0.4,2012
+Qinfeng Shi,University of Adelaide,vision,3.0,0.65,2013
+Qinfeng Shi,University of Adelaide,vision,1.0,0.2,2014
+Qinfeng Shi,University of Adelaide,vision,3.0,0.47619047619,2015
 Ariel J. Feldman,University of Chicago,opsys,1.0,0.166666666667,2013
 Ariel J. Feldman,University of Chicago,security,1.0,0.111111111111,2008
 Ariel J. Feldman,University of Chicago,security,1.0,0.25,2012
@@ -16717,6 +16825,10 @@ David Naccache,Ecole Normale Superieure,crypto,1.0,0.333333333333,2012
 David Naccache,Ecole Normale Superieure,security,1.0,0.5,1998
 David Naccache,Ecole Normale Superieure,security,1.0,0.333333333333,2001
 David Leake,Indiana University,ai,1.0,0.5,2014
+Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.142857142857,2012
+Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.5,2014
+Matthew Fredrikson,Carnegie Mellon University,security,1.0,0.25,2011
+Matthew Fredrikson,Carnegie Mellon University,security,3.0,0.766666666667,2014
 Dimitris N. Metaxas,Rutgers University,graphics,1.0,0.5,1997
 Dimitris N. Metaxas,Rutgers University,graphics,1.0,0.333333333333,1998
 Dimitris N. Metaxas,Rutgers University,graphics,1.0,0.5,2001
@@ -18398,6 +18510,22 @@ Jan Prins,University of North Carolina,mlmining,1.0,0.2,2006
 Jan Prins,University of North Carolina,proglang,2.0,0.666666666667,1988
 Jan Prins,University of North Carolina,arch,1.0,0.25,1982
 Peter Schachte,University of Melbourne,ai,1.0,0.25,2016
+Chunhua Shen,University of Adelaide,mlmining,1.0,0.333333333333,2008
+Chunhua Shen,University of Adelaide,mlmining,1.0,0.25,2009
+Chunhua Shen,University of Adelaide,mlmining,1.0,0.25,2012
+Chunhua Shen,University of Adelaide,mlmining,1.0,0.2,2014
+Chunhua Shen,University of Adelaide,mlmining,1.0,0.25,2015
+Chunhua Shen,University of Adelaide,ai,1.0,0.25,2011
+Chunhua Shen,University of Adelaide,vision,1.0,0.333333333333,2005
+Chunhua Shen,University of Adelaide,vision,1.0,0.333333333333,2007
+Chunhua Shen,University of Adelaide,vision,1.0,0.333333333333,2008
+Chunhua Shen,University of Adelaide,vision,1.0,0.333333333333,2009
+Chunhua Shen,University of Adelaide,vision,2.0,0.666666666667,2010
+Chunhua Shen,University of Adelaide,vision,6.0,1.95,2011
+Chunhua Shen,University of Adelaide,vision,3.0,0.733333333333,2012
+Chunhua Shen,University of Adelaide,vision,9.0,2.26666666667,2013
+Chunhua Shen,University of Adelaide,vision,3.0,0.866666666667,2014
+Chunhua Shen,University of Adelaide,vision,9.0,2.34285714286,2015
 Chaoli Wang,University of Notre Dame,robotics,1.0,0.25,2000
 Chaoli Wang,University of Notre Dame,robotics,1.0,1.0,2011
 Chaoli Wang,University of Notre Dame,highperf,1.0,0.333333333333,2007
@@ -20643,6 +20771,8 @@ Amihai Motro,George Mason University,database,1.0,1.0,1984
 Amihai Motro,George Mason University,database,2.0,2.0,1986
 Amihai Motro,George Mason University,database,1.0,1.0,1989
 Amihai Motro,George Mason University,database,1.0,0.5,1990
+Hong Shen,University of Adelaide,networks,1.0,0.5,2015
+Hong Shen,University of Adelaide,vision,1.0,0.2,2001
 Allan Borodin,University of Toronto,theory,1.0,0.5,1974
 Allan Borodin,University of Toronto,theory,2.0,0.45,1979
 Allan Borodin,University of Toronto,theory,1.0,0.5,1980
@@ -22464,6 +22594,7 @@ Martin Karsten,University of Waterloo,metrics,1.0,0.333333333333,2014
 Martin Karsten,University of Waterloo,networks,1.0,0.333333333333,2001
 Martin Karsten,University of Waterloo,networks,1.0,1.0,2006
 Martin Karsten,University of Waterloo,networks,1.0,0.25,2007
+Sergey Polyakovskiy,University of Adelaide,theory,1.0,0.25,2010
 Eric Paulos,University of California - Berkeley,hci,1.0,0.5,1998
 Eric Paulos,University of California - Berkeley,hci,1.0,0.5,2004
 Eric Paulos,University of California - Berkeley,hci,1.0,0.5,2005
@@ -26952,6 +27083,7 @@ David K. Lowenthal,University of Arizona,highperf,1.0,0.166666666667,2009
 David K. Lowenthal,University of Arizona,highperf,2.0,0.342857142857,2013
 David K. Lowenthal,University of Arizona,highperf,1.0,0.166666666667,2014
 David K. Lowenthal,University of Arizona,highperf,3.0,0.42619047619,2015
+Claudia Szabo,University of Adelaide,softeng,3.0,1.45,2015
 Erez Petrank,Technion - Israel Institute of Technology,theory,1.0,0.5,1991
 Erez Petrank,Technion - Israel Institute of Technology,theory,1.0,0.5,1992
 Erez Petrank,Technion - Israel Institute of Technology,theory,1.0,0.333333333333,1994
@@ -27703,10 +27835,15 @@ Rajiv K. Kalia,University of Southern California,highperf,1.0,0.1,2002
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.142857142857,2006
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.2,2013
 Rajiv K. Kalia,University of Southern California,highperf,1.0,0.111111111111,2014
-Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.142857142857,2012
-Matthew Fredrikson,Carnegie Mellon University,logic,1.0,0.5,2014
-Matthew Fredrikson,Carnegie Mellon University,security,1.0,0.25,2011
-Matthew Fredrikson,Carnegie Mellon University,security,3.0,0.766666666667,2014
+Anthony R. Dick,University of Adelaide,graphics,1.0,0.2,2007
+Anthony R. Dick,University of Adelaide,robotics,1.0,0.333333333333,2015
+Anthony R. Dick,University of Adelaide,vision,1.0,0.333333333333,2000
+Anthony R. Dick,University of Adelaide,vision,1.0,0.25,2001
+Anthony R. Dick,University of Adelaide,vision,1.0,0.333333333333,2002
+Anthony R. Dick,University of Adelaide,vision,1.0,0.2,2011
+Anthony R. Dick,University of Adelaide,vision,1.0,0.2,2012
+Anthony R. Dick,University of Adelaide,vision,2.0,0.45,2013
+Anthony R. Dick,University of Adelaide,vision,2.0,0.309523809524,2015
 Abhishek Bhattacharjee,Rutgers University,arch,1.0,0.5,2009
 Abhishek Bhattacharjee,Rutgers University,arch,1.0,0.5,2010
 Abhishek Bhattacharjee,Rutgers University,arch,2.0,0.45,2012
@@ -30506,6 +30643,11 @@ Amnon Ta-Shma,Tel Aviv University,theory,1.0,1.0,2013
 Amnon Ta-Shma,Tel Aviv University,crypto,1.0,0.5,1999
 Amnon Ta-Shma,Tel Aviv University,crypto,1.0,0.333333333333,2004
 Jan-Willem van de Meent,Northeastern University,mlmining,1.0,0.142857142857,2016
+Kai Hwang 0001,University of Southern California,arch,1.0,0.333333333333,1981
+Kai Hwang 0001,University of Southern California,arch,2.0,0.833333333333,1984
+Kai Hwang 0001,University of Southern California,arch,2.0,1.0,1988
+Kai Hwang 0001,University of Southern California,highperf,2.0,0.576923076923,1990
+Kai Hwang 0001,University of Southern California,highperf,1.0,0.333333333333,2000
 Richard Cleve,University of Waterloo,theory,1.0,1.0,1986
 Richard Cleve,University of Waterloo,theory,1.0,1.0,1990
 Richard Cleve,University of Waterloo,theory,1.0,0.333333333333,1991
@@ -33199,6 +33341,7 @@ Tim Brecht,University of Waterloo,mobile,1.0,0.25,2007
 Éva Tardos,Cornell University,web,1.0,0.333333333333,2012
 Éva Tardos,Cornell University,highperf,1.0,0.25,2011
 Éva Tardos,Cornell University,vision,1.0,0.25,2010
+Cruz Izu,University of Adelaide,highperf,1.0,0.166666666667,2000
 Gabriel J. Brostow,University College London,graphics,1.0,0.5,2001
 Gabriel J. Brostow,University College London,graphics,1.0,0.25,2010
 Gabriel J. Brostow,University College London,graphics,1.0,0.333333333333,2015
@@ -36978,6 +37121,7 @@ Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2009
 Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.5,2010
 Michael Werman,Hebrew University of Jerusalem,vision,2.0,0.666666666667,2013
 Michael Werman,Hebrew University of Jerusalem,vision,1.0,0.25,2014
+Quan Z. Sheng,University of Adelaide,web,1.0,0.2,2003
 Charles M. Eastman,Georgia Institute of Technology,ai,1.0,1.0,1971
 Helmut Seidl,TU Munich,theory,1.0,0.5,2001
 Helmut Seidl,TU Munich,theory,1.0,0.333333333333,2015
@@ -37437,6 +37581,7 @@ Janardhan Rao Doppa,Washington State University,ai,2.0,0.4,2014
 Janardhan Rao Doppa,Washington State University,ai,1.0,0.142857142857,2015
 Janardhan Rao Doppa,Washington State University,vision,1.0,0.25,2015
 Chun-Hsi Huang,University of Connecticut,theory,1.0,0.333333333333,1999
+Markus Wagner 0007,University of Adelaide,ai,1.0,0.25,2011
 Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2008
 Karthik Sridharan,Cornell University,mlmining,1.0,0.25,2009
 Karthik Sridharan,Cornell University,mlmining,2.0,0.666666666667,2010
@@ -40377,6 +40522,9 @@ Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,ai,1.0,0.5,1999
 Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,networks,1.0,0.5,2009
 Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,highperf,1.0,1.0,1988
 Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,highperf,1.0,0.333333333333,1998
+Frank Neumann,University of Adelaide,ai,1.0,0.25,2011
+Frank Neumann,University of Adelaide,ai,1.0,0.5,2012
+Frank Neumann,University of Adelaide,ai,1.0,0.5,2015
 Gordon V. Cormack,University of Waterloo,mlmining,1.0,0.5,2009
 Gordon V. Cormack,University of Waterloo,proglang,2.0,1.5,1989
 Gordon V. Cormack,University of Waterloo,proglang,1.0,0.5,1990
@@ -41524,6 +41672,7 @@ Krzysztof Gajos,Harvard University,hci,2.0,0.5,2012
 Krzysztof Gajos,Harvard University,ai,1.0,0.142857142857,2003
 Ingolf H. Krüger,University of California - San Diego,softeng,1.0,0.5,2005
 Ingolf H. Krüger,University of California - San Diego,softeng,1.0,0.333333333333,2006
+Chris J. Barter,University of Adelaide,networks,1.0,0.333333333333,1990
 Kin K. Leung,Imperial College London,metrics,1.0,0.2,2013
 Kin K. Leung,Imperial College London,metrics,1.0,0.166666666667,2014
 Kin K. Leung,Imperial College London,networks,1.0,0.5,1989
@@ -43631,6 +43780,11 @@ Andréa W. Richa,Arizona State University,theory,2.0,0.625,1998
 Andréa W. Richa,Arizona State University,theory,1.0,0.333333333333,2007
 Andréa W. Richa,Arizona State University,networks,1.0,0.5,2009
 Andréa W. Richa,Arizona State University,networks,1.0,0.2,2014
+Michael J. Brooks,University of Adelaide,vision,1.0,0.25,1996
+Michael J. Brooks,University of Adelaide,vision,2.0,0.583333333333,1998
+Michael J. Brooks,University of Adelaide,vision,1.0,0.5,1999
+Michael J. Brooks,University of Adelaide,vision,1.0,0.25,2001
+Michael J. Brooks,University of Adelaide,vision,1.0,0.333333333333,2005
 Viorela Ila,Australian National University,robotics,1.0,0.25,2007
 Viorela Ila,Australian National University,robotics,1.0,0.333333333333,2009
 Viorela Ila,Australian National University,robotics,2.0,0.45,2010
