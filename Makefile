@@ -38,6 +38,6 @@ fix-affiliations: faculty-affiliations.csv
 
 generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
-	python util/regenerate-data.py
+	pypy util/regenerate-data.py
 	@echo "Done."
 
