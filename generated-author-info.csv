@@ -1,4 +1,12 @@
 "name","dept","area","count","adjustedcount","year"
+Ian H. Witten,University of Waikato,graphics,1.0,0.333333333333,1989
+Ian H. Witten,University of Waikato,hci,1.0,0.5,1989
+Ian H. Witten,University of Waikato,nlp,1.0,0.333333333333,2009
+Ian H. Witten,University of Waikato,mlmining,1.0,0.5,1997
+Ian H. Witten,University of Waikato,mlmining,2.0,1.0,1998
+Ian H. Witten,University of Waikato,mlmining,1.0,0.5,1999
+Ian H. Witten,University of Waikato,mlmining,1.0,0.5,2002
+Ian H. Witten,University of Waikato,ai,1.0,0.2,1999
 Liqing Zhang,Virginia Tech,mlmining,1.0,0.5,1998
 Liqing Zhang,Virginia Tech,mlmining,1.0,0.333333333333,1999
 Liqing Zhang,Virginia Tech,mlmining,1.0,0.5,2008
@@ -9390,6 +9398,13 @@ Stephen D. Brookes,Carnegie Mellon University,proglang,1.0,0.5,1995
 Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1986
 Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1993
 Stephen D. Brookes,Carnegie Mellon University,logic,1.0,1.0,1996
+Bernhard Pfahringer,University of Waikato,mlmining,2.0,1.5,1995
+Bernhard Pfahringer,University of Waikato,mlmining,1.0,0.333333333333,2000
+Bernhard Pfahringer,University of Waikato,mlmining,1.0,0.2,2009
+Bernhard Pfahringer,University of Waikato,mlmining,2.0,0.392857142857,2011
+Bernhard Pfahringer,University of Waikato,mlmining,1.0,0.2,2015
+Bernhard Pfahringer,University of Waikato,ai,1.0,0.5,2009
+Bernhard Pfahringer,University of Waikato,ai,1.0,0.333333333333,2015
 Kathleen Fisher,Tufts University,mlmining,1.0,0.25,2000
 Kathleen Fisher,Tufts University,proglang,1.0,0.5,1999
 Kathleen Fisher,Tufts University,proglang,1.0,0.5,2005
@@ -28020,6 +28035,7 @@ Mitchell P. Marcus,University of Pennsylvania,nlp,1.0,0.5,1989
 Mitchell P. Marcus,University of Pennsylvania,nlp,2.0,0.533333333333,2006
 Mitchell P. Marcus,University of Pennsylvania,ai,1.0,0.5,1990
 Mitchell P. Marcus,University of Pennsylvania,robotics,1.0,0.166666666667,2013
+Richard Nelson,University of Waikato,metrics,1.0,0.5,2012
 Kasper Green Larsen,Aarhus University,theory,2.0,1.5,2011
 Kasper Green Larsen,Aarhus University,theory,3.0,2.5,2012
 Kasper Green Larsen,Aarhus University,theory,2.0,1.0,2013
@@ -34528,6 +34544,11 @@ Vipin Kumar,University of Minnesota,highperf,1.0,0.333333333333,2000
 David N. Turner,University of Kent,proglang,1.0,0.333333333333,1992
 David N. Turner,University of Kent,proglang,1.0,0.333333333333,1996
 David N. Turner,University of Kent,proglang,1.0,0.5,1998
+Matthew J. Luckie,University of Waikato,metrics,2.0,1.5,2010
+Matthew J. Luckie,University of Waikato,metrics,1.0,0.166666666667,2012
+Matthew J. Luckie,University of Waikato,metrics,2.0,0.45,2013
+Matthew J. Luckie,University of Waikato,metrics,2.0,0.45,2014
+Matthew J. Luckie,University of Waikato,metrics,1.0,0.2,2015
 Devorah Kletenik,CUNY,theory,1.0,0.333333333333,2014
 A. Jefferson Offutt,George Mason University,proglang,1.0,0.5,1987
 A. Jefferson Offutt,George Mason University,softeng,1.0,0.333333333333,1993
@@ -40487,6 +40508,7 @@ David P. Helmbold,University of California - Santa Cruz,mlmining,1.0,0.25,1996
 David P. Helmbold,University of California - Santa Cruz,mlmining,1.0,0.5,1999
 David P. Helmbold,University of California - Santa Cruz,mlmining,1.0,0.5,2011
 David P. Helmbold,University of California - Santa Cruz,mobile,1.0,0.333333333333,1996
+Mark Utting,University of Waikato,logic,1.0,0.333333333333,1995
 Michael Thielscher,UNSW,ai,2.0,2.0,1995
 Michael Thielscher,UNSW,ai,1.0,1.0,1997
 Michael Thielscher,UNSW,ai,1.0,1.0,2000
@@ -40833,6 +40855,13 @@ Walter S. Lasecki,University of Michigan,hci,4.0,0.75,2015
 Walter S. Lasecki,University of Michigan,hci,1.0,0.333333333333,2016
 Walter S. Lasecki,University of Michigan,nlp,1.0,0.25,2013
 Walter S. Lasecki,University of Michigan,ai,2.0,0.5,2012
+Eibe Frank,University of Waikato,nlp,1.0,0.333333333333,2009
+Eibe Frank,University of Waikato,mlmining,2.0,1.0,1998
+Eibe Frank,University of Waikato,mlmining,1.0,0.5,1999
+Eibe Frank,University of Waikato,mlmining,1.0,0.5,2004
+Eibe Frank,University of Waikato,ai,1.0,0.2,1999
+Eibe Frank,University of Waikato,ai,1.0,0.25,2010
+Eibe Frank,University of Waikato,ai,1.0,0.333333333333,2015
 Pranjal Awasthi,Rutgers University,theory,1.0,0.333333333333,2010
 Pranjal Awasthi,Rutgers University,theory,1.0,0.333333333333,2014
 Pranjal Awasthi,Rutgers University,mlmining,1.0,0.5,2010
