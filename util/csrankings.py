@@ -59,7 +59,7 @@ areadict = {
     'ai' : ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
     'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
-    'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
+    'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH','IEEE Trans. Vis. Comput. Graph.','IEEE Visualization'],
     'metrics' : ['SIGMETRICS','SIGMETRICS/Performance','IMC','Internet Measurement Conference'],
     # Two variants for each, as in DBLP.
     'web' : ['WWW', 'SIGIR'],
