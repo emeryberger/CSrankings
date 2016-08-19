@@ -38,6 +38,33 @@ var color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "
 var RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
 var DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
 var PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+function translateNameToDBLP(name) {
+    // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
+    // First, replace spaces and non-ASCII characters (not complete).
+    // Known issue: does not properly handle suffixes like Jr., III, etc.
+    name = name.replace(/\-/g, "=");
+    name = name.replace(/\./g, "=");
+    name = name.replace(/Á/g, "=Aacute=");
+    name = name.replace(/á/g, "=aacute=");
+    name = name.replace(/è/g, "=egrave=");
+    name = name.replace(/é/g, "=eacute=");
+    name = name.replace(/ó/g, "=oacute=");
+    name = name.replace(/ç/g, "=ccedil=");
+    name = name.replace(/ä/g, "=auml=");
+    name = name.replace(/ö/g, "=ouml=");
+    name = name.replace(/ü/g, "=uuml=");
+    var splitName = name.split(" ");
+    var newname = "";
+    var lastName = splitName[splitName.length - 1];
+    splitName.pop();
+    var newName = splitName.join(" ");
+    newName = newName.replace(/\s/g, "_");
+    newName = newName.replace(/\-/g, "=");
+    var str = "http://dblp.uni-trier.de/pers/hd";
+    var lastInitial = lastName[0].toLowerCase();
+    str += "/" + lastInitial + "/" + lastName + ":" + newName;
+    return str;
+}
 /* Build the areaDict dictionary: areas -> names used in pie charts
    and areaPosition dictionary: areas -> position in area array
 */
@@ -707,7 +734,8 @@ function rank() {
                 + "')\" class=\"hovertip\" ><font color=\"blue\">" + PieChart + "</font></span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
-                + '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
+                + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+                + translateNameToDBLP(name) + '">'
                 + facultycount[name + dept]
                 + '</a>'
                 + "</small></td>"
