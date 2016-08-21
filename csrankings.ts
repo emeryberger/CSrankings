@@ -264,7 +264,7 @@ function makeChart(name : string) : void {
 function toggleChart(name : string) : void {
     var chart = document.getElementById(name+"-chart");
     var widget = document.getElementById(name+"-widget");
-    if (chart.style.display == 'block') {
+    if (chart.style.display === 'block') {
 	chart.style.display = 'none';
 	chart.innerHTML = '';
     } else {
@@ -278,7 +278,7 @@ function toggleChart(name : string) : void {
 function toggleFaculty(dept : string) : void {
     var e = document.getElementById(dept+"-faculty");
     var widget = document.getElementById(dept+"-widget");
-    if (e.style.display == 'block') {
+    if (e.style.display === 'block') {
 	e.style.display = 'none';
 	widget.innerHTML = RightTriangle;
     } else {
@@ -497,7 +497,7 @@ function computeCoauthors(coauthors : Array<Coauthor>,
 	if (!(author in coauthorList)) {
 	    coauthorList[author] = new Set([]);
 	}
-	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+	if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
 	    continue;
 	}
 	coauthorList[author].add(coauthor);
@@ -514,25 +514,8 @@ function countAuthorAreas(areacount : {[key:string] : number},
 {
     /* Delete everything from authorAreas. */
     // Build up an associative array of depts.
-    var depts : {[key:string] : number} = {}; 
-    for (var r in authors) {
-	// If we haven't seen this dept yet, add it.
-	const dept = authors[r].dept;
-	if (!depts.hasOwnProperty(dept)) {
-	    depts[dept] = 1;
-	}
-	// Now trash the existing name entry.
-	const name : string  = authors[r].name;
-	if (authorAreas.hasOwnProperty(name)) {
-	    delete authorAreas[name];
-	}
-    }
-    // Clean up department entries, too.
-    for (var d in depts) {
-	if (authorAreas.hasOwnProperty(d)) {
-	    delete authorAreas[d];
-	}
-    }
+    var depts : {[key:string] : number} = {};
+    authorAreas = {};
     /* Now rebuild. */
     for (var r in authors) {
 	const dept  = authors[r].dept;
@@ -543,7 +526,7 @@ function countAuthorAreas(areacount : {[key:string] : number},
 	    name = aliases[name];
 	}
 	var year = authors[r].year;
-	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+	if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
 	    continue;
 	}
 	if (!(name in authorAreas)) {
@@ -585,7 +568,7 @@ function countPapers(areacount : {[key:string] : number},
 	const year = authors[r].year;
 	const areaDept = area+dept;
 	areaDeptAdjustedCount[areaDept] = 0;
-	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+	if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
 	    continue;
 	}
 	const count = parseFloat(authors[r].count);
@@ -649,7 +632,7 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 	if (!(areaDept in areaDeptAdjustedCount)) {
 	    areaDeptAdjustedCount[areaDept] = 0;
 	}
-	if (weights[area] == 0) {
+	if (weights[area] === 0) {
 	    continue;
 	}
 	const name : string  = authors[r].name;
@@ -767,7 +750,7 @@ function rank() : boolean {
     /* Update the 'weights' of each area from the checkboxes. */
     for (var ind = 0; ind < areas.length; ind++) {
 	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
-	if (weights[areas[ind]] == 1) {
+	if (weights[areas[ind]] === 1) {
 	    /* One more area checked. */
 	    numAreas++;
 	}
@@ -821,7 +804,7 @@ function rank() : boolean {
 	    if (showCoauthors) {
 		/* Build up text for co-authors. */
 		var coauthorStr = "";
-		if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
+		if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
 		    coauthorList[name] = new Set([]);
 		    coauthorStr = "(no senior co-authors on these papers)";
 		} else {

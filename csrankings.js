@@ -212,7 +212,7 @@ function makeChart(name) {
 function toggleChart(name) {
     var chart = document.getElementById(name + "-chart");
     var widget = document.getElementById(name + "-widget");
-    if (chart.style.display == 'block') {
+    if (chart.style.display === 'block') {
         chart.style.display = 'none';
         chart.innerHTML = '';
     }
@@ -225,7 +225,7 @@ function toggleChart(name) {
 function toggleFaculty(dept) {
     var e = document.getElementById(dept + "-faculty");
     var widget = document.getElementById(dept + "-widget");
-    if (e.style.display == 'block') {
+    if (e.style.display === 'block') {
         e.style.display = 'none';
         widget.innerHTML = RightTriangle;
     }
@@ -420,7 +420,7 @@ function computeCoauthors(coauthors, startyear, endyear, weights) {
         if (!(author in coauthorList)) {
             coauthorList[author] = new Set([]);
         }
-        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+        if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
             continue;
         }
         coauthorList[author].add(coauthor);
@@ -431,24 +431,7 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
     /* Delete everything from authorAreas. */
     // Build up an associative array of depts.
     var depts = {};
-    for (var r in authors) {
-        // If we haven't seen this dept yet, add it.
-        var dept = authors[r].dept;
-        if (!depts.hasOwnProperty(dept)) {
-            depts[dept] = 1;
-        }
-        // Now trash the existing name entry.
-        var name_1 = authors[r].name;
-        if (authorAreas.hasOwnProperty(name_1)) {
-            delete authorAreas[name_1];
-        }
-    }
-    // Clean up department entries, too.
-    for (var d in depts) {
-        if (authorAreas.hasOwnProperty(d)) {
-            delete authorAreas[d];
-        }
-    }
+    authorAreas = {};
     /* Now rebuild. */
     for (var r in authors) {
         var dept = authors[r].dept;
@@ -459,7 +442,7 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
             name = aliases[name];
         }
         var year = authors[r].year;
-        if ((weights[area_1] == 0) || (year < startyear) || (year > endyear)) {
+        if ((weights[area_1] === 0) || (year < startyear) || (year > endyear)) {
             continue;
         }
         if (!(name in authorAreas)) {
@@ -492,7 +475,7 @@ function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, author
         var year = authors[r].year;
         var areaDept = area + dept;
         areaDeptAdjustedCount[areaDept] = 0;
-        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
+        if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
             continue;
         }
         var count = parseFloat(authors[r].count);
@@ -544,29 +527,29 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
         if (!(areaDept in areaDeptAdjustedCount)) {
             areaDeptAdjustedCount[areaDept] = 0;
         }
-        if (weights[area] == 0) {
+        if (weights[area] === 0) {
             continue;
         }
-        var name_2 = authors[r].name;
+        var name_1 = authors[r].name;
         var count = parseInt(authors[r].count);
         var adjustedCount = parseFloat(authors[r].adjustedcount);
         var year = authors[r].year;
         if ((year >= startyear) && (year <= endyear)) {
             areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name_2 in visited)) {
-                visited[name_2] = true;
-                facultycount[name_2 + dept] = 0;
-                facultyAdjustedCount[name_2 + dept] = 0;
+            if (!(name_1 in visited)) {
+                visited[name_1] = true;
+                facultycount[name_1 + dept] = 0;
+                facultyAdjustedCount[name_1 + dept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name_2);
+                deptNames[dept].push(name_1);
                 deptCounts[dept] += 1;
             }
-            facultycount[name_2 + dept] += count;
-            facultyAdjustedCount[name_2 + dept] += adjustedCount;
+            facultycount[name_1 + dept] += count;
+            facultyAdjustedCount[name_1 + dept] += adjustedCount;
         }
     }
 }
@@ -650,7 +633,7 @@ function rank() {
     /* Update the 'weights' of each area from the checkboxes. */
     for (var ind = 0; ind < areas.length; ind++) {
         weights[areas[ind]] = jQuery('input[name=field_' + (ind + 1) + ']').prop('checked') ? 1 : 0;
-        if (weights[areas[ind]] == 1) {
+        if (weights[areas[ind]] === 1) {
             /* One more area checked. */
             numAreas++;
         }
@@ -700,7 +683,7 @@ function rank() {
             if (showCoauthors) {
                 /* Build up text for co-authors. */
                 var coauthorStr = "";
-                if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
+                if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
                     coauthorList[name] = new Set([]);
                     coauthorStr = "(no senior co-authors on these papers)";
                 }
