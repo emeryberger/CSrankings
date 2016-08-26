@@ -1,5 +1,5 @@
 "name","dept","area","count","adjustedcount","year"
-Martin Vingron,Max Planck Institute,compbio,1.0,0.2,2004
+Martin Vingron,Max Planck Institute,compbio,3.0,0.733333333333,2004
 Rui Kuang,University of Minnesota,compbio,1.0,0.333333333333,2004
 Pierre Baldi,University of California - Irvine,compbio,2.0,0.75,2001
 Tijana Milenkovic,University of Notre Dame,compbio,1.0,0.333333333333,2012
@@ -41,7 +41,7 @@ Derek G. Corneil,University of Toronto,compbio,1.0,0.333333333333,2004
 Tony Jebara,Columbia University,compbio,1.0,0.333333333333,2006
 Walter L. Ruzzo,University of Washington,compbio,3.0,1.03333333333,2001
 Xiaohui Xie,University of California - Irvine,compbio,1.0,0.2,2016
-Roded Sharan,Tel Aviv University,compbio,4.0,1.00952380952,2007
+Roded Sharan,Tel Aviv University,compbio,5.0,1.20952380952,2007
 Ambuj K. Singh,University of California - Santa Barbara,compbio,1.0,0.2,2013
 David S. Wishart,University of Alberta,compbio,1.0,0.333333333333,2000
 Xiaohui Xie,University of California - Irvine,compbio,2.0,1.0,2014
@@ -110,7 +110,7 @@ Chengxiang Zhai,University of Illinois at Urbana-Champaign,compbio,1.0,0.1666666
 Vipin Kumar,University of Minnesota,compbio,1.0,0.125,2008
 Rui Kuang,University of Minnesota,compbio,1.0,0.125,2008
 Guoliang Xing,Michigan State University,compbio,1.0,0.0833333333333,2006
-Srinivasan Parthasarathy,Ohio State University,compbio,1.0,0.142857142857,2007
+Srinivasan Parthasarathy,Ohio State University,compbio,2.0,0.47619047619,2007
 Wei Wang,University of California - Los Angeles,compbio,1.0,0.25,2012
 Giovanni De Micheli,EPFL,compbio,1.0,0.2,2008
 Zhen Zhang,Ecole Normale Superieure,compbio,1.0,0.111111111111,2009
@@ -121,7 +121,7 @@ Dan Tsafrir,Technion - Israel Institute of Technology,compbio,1.0,0.166666666667
 Sven Laur,University of Tartu,compbio,1.0,0.25,2012
 Jaak Vilo,University of Tartu,compbio,1.0,0.25,2012
 Daniel P. Miranker,University of Texas - Austin,compbio,2.0,0.277777777778,2009
-Daniel P. Miranker,University of Texas - Austin,compbio,1.0,0.5,2004
+Daniel P. Miranker,University of Texas - Austin,compbio,2.0,0.642857142857,2004
 Duane Szafron,University of Alberta,compbio,1.0,0.25,2009
 Paul Lu,University of Alberta,compbio,1.0,0.25,2009
 Sanne Abeln,VU Amsterdam,compbio,2.0,0.342857142857,2014
@@ -131,7 +131,7 @@ Alexander Schliep,Rutgers University,compbio,1.0,0.5,2002
 Eileen Kraemer,Clemson University,compbio,1.0,0.2,2001
 Süleyman Cenk Sahinalp,Indiana University,compbio,2.0,0.3,2011
 Nir Yosef,University of California - Berkeley,compbio,1.0,0.142857142857,2007
-Eytan Ruppin,University of Maryland - College Park,compbio,4.0,0.842857142857,2007
+Eytan Ruppin,University of Maryland - College Park,compbio,6.0,1.20952380952,2007
 Süleyman Cenk Sahinalp,Indiana University,compbio,3.0,0.433766233766,2010
 Shaojie Zhang,University of Central Florida,compbio,1.0,0.5,2011
 Vineet Bafna,University of California - San Diego,compbio,2.0,0.833333333333,2012
@@ -227,11 +227,11 @@ Süleyman Cenk Sahinalp,Indiana University,compbio,1.0,0.25,2009
 Yuzhen Ye,Indiana University,compbio,1.0,0.25,2012
 Michael S. Waterman,University of Southern California,compbio,1.0,0.25,2006
 Eleazar Eskin,University of California - Los Angeles,compbio,5.0,0.959523809524,2014
-Olga G. Troyanskaya,Princeton University,compbio,2.0,0.666666666667,2007
+Olga G. Troyanskaya,Princeton University,compbio,3.0,0.916666666667,2007
 Shuiwang Ji,Washington State University,compbio,1.0,0.333333333333,2016
 Christopher Bystroff,Rensselaer Polytechnic Institute,compbio,1.0,0.166666666667,2014
 Xianghong Jasmine Zhou,University of Southern California,compbio,1.0,0.25,2012
-Martin Vingron,Max Planck Institute,compbio,3.0,0.833333333333,2007
+Martin Vingron,Max Planck Institute,compbio,4.0,1.16666666667,2007
 Benjamin J. Hescott,Tufts University,compbio,2.0,0.5,2011
 Anselm Blumer,Tufts University,compbio,1.0,0.25,2011
 Donna K. Slonim,Tufts University,compbio,1.0,0.25,2011
@@ -388,7 +388,7 @@ Tamer Kahveci,University of Florida,compbio,1.0,0.25,2013
 Sanjay Ranka,University of Florida,compbio,1.0,0.25,2013
 Roded Sharan,Tel Aviv University,compbio,3.0,0.866666666667,2003
 Ron Shamir,Tel Aviv University,compbio,3.0,1.16666666667,2003
-Pierre Baldi,University of California - Irvine,compbio,1.0,0.2,2007
+Pierre Baldi,University of California - Irvine,compbio,2.0,0.290909090909,2007
 Jun Wang,University College London,compbio,1.0,0.111111111111,2013
 Bernard M. E. Moret,EPFL,compbio,3.0,1.08333333333,2014
 Pierre Baldi,University of California - Irvine,compbio,4.0,1.2,2000
@@ -414,7 +414,7 @@ Süleyman Cenk Sahinalp,Indiana University,compbio,1.0,0.166666666667,2015
 Zhen Zhang,Ecole Normale Superieure,compbio,1.0,0.166666666667,2015
 Natasa Przulj,University College London,compbio,2.0,0.833333333333,2014
 Geoffrey I. Webb,Monash University,compbio,1.0,0.142857142857,2015
-Burkhard Rost,TU Munich,compbio,1.0,0.333333333333,2007
+Burkhard Rost,TU Munich,compbio,2.0,0.666666666667,2007
 Bobby Bhattacharjee,University of Maryland - College Park,compbio,1.0,0.2,2016
 Héctor Corrada Bravo,University of Maryland - College Park,compbio,2.0,0.533333333333,2016
 Shuiwang Ji,Washington State University,compbio,1.0,0.125,2014
@@ -535,14 +535,14 @@ Derek G. Corneil,University of Toronto,compbio,1.0,0.333333333333,2006
 Arun Siddharth Konagurthu,Monash University,compbio,1.0,0.333333333333,2008
 Peter J. Stuckey,University of Melbourne,compbio,1.0,0.333333333333,2008
 Ting Chen,University of Southern California,compbio,1.0,0.333333333333,2009
-Nir Friedman,Hebrew University of Jerusalem,compbio,1.0,0.25,2007
+Nir Friedman,Hebrew University of Jerusalem,compbio,2.0,0.5,2007
 Olga G. Troyanskaya,Princeton University,compbio,1.0,0.25,2013
 Peter J. Stuckey,University of Melbourne,compbio,1.0,0.166666666667,2010
 Chitta Baral,Arizona State University,compbio,1.0,0.2,2010
 Randy Goebel,University of Alberta,compbio,1.0,0.166666666667,2007
 Guohui Lin,University of Alberta,compbio,1.0,0.166666666667,2007
 Thomas R. Ioerger,Texas A&M University,compbio,1.0,0.166666666667,2013
-Tomer Shlomi,Technion - Israel Institute of Technology,compbio,2.0,0.366666666667,2007
+Tomer Shlomi,Technion - Israel Institute of Technology,compbio,3.0,0.566666666667,2007
 Ron Y. Pinter,Technion - Israel Institute of Technology,compbio,1.0,0.2,2007
 Jeremy Buhler,Washington University - St. Louis,compbio,2.0,1.5,2001
 Eleazar Eskin,University of California - Los Angeles,compbio,2.0,0.583333333333,2011
@@ -586,7 +586,7 @@ K. Anton Feenstra,VU Amsterdam,compbio,1.0,0.142857142857,2014
 Xi Chen,Columbia University,compbio,1.0,0.25,2008
 Christina Boucher,Colorado State University,compbio,1.0,0.25,2012
 Pavel A. Pevzner,University of California - San Diego,compbio,2.0,0.416666666667,2012
-Pavel A. Pevzner,University of California - San Diego,compbio,2.0,0.666666666667,2004
+Pavel A. Pevzner,University of California - San Diego,compbio,3.0,1.16666666667,2004
 Haixu Tang,Indiana University,compbio,2.0,0.666666666667,2004
 Leonard McMillan,University of North Carolina,compbio,1.0,0.142857142857,2013
 Mark Silberstein,Technion - Israel Institute of Technology,compbio,1.0,0.0714285714286,2013
@@ -620,10 +620,10 @@ Ian T. Foster,University of Chicago,compbio,1.0,0.1,2014
 Manolis Kellis,Massachusetts Institute of Technology,compbio,1.0,0.333333333333,2012
 Yun S. Song,University of California - Berkeley,compbio,2.0,0.75,2012
 Robert Patro,Stony Brook University,compbio,1.0,0.25,2016
-Raymond T. Ng,University of British Columbia,compbio,1.0,0.1,2007
+Raymond T. Ng,University of British Columbia,compbio,2.0,0.35,2007
 Feng Liu,University of Queensland,compbio,1.0,0.166666666667,2016
 Hao Li,University of Southern California,compbio,1.0,0.166666666667,2016
-Saurabh Sinha,University of Illinois at Urbana-Champaign,compbio,1.0,0.5,2007
+Saurabh Sinha,University of Illinois at Urbana-Champaign,compbio,2.0,0.833333333333,2007
 Pavel A. Pevzner,University of California - San Diego,compbio,2.0,0.75,2010
 Ting Chen,University of Southern California,compbio,1.0,0.5,2007
 Miriah D. Meyer,University of Utah,compbio,1.0,0.142857142857,2010
@@ -635,7 +635,7 @@ Jinbo Bi,University of Connecticut,compbio,1.0,0.25,2016
 Eleazar Eskin,University of California - Los Angeles,compbio,3.0,0.783333333333,2012
 Robert Patro,Stony Brook University,compbio,2.0,1.0,2015
 Tomer Shlomi,Technion - Israel Institute of Technology,compbio,1.0,0.5,2013
-Ziv Bar-Joseph,Carnegie Mellon University,compbio,1.0,1.0,2004
+Ziv Bar-Joseph,Carnegie Mellon University,compbio,2.0,1.2,2004
 Guido Sanguinetti,University of Edinburgh,compbio,1.0,0.5,2010
 Stefano Lonardi,University of California - Riverside,compbio,2.0,0.47619047619,2015
 Ping Ji,CUNY,compbio,1.0,0.25,2014
@@ -698,8 +698,8 @@ Jan Schröder,University of Melbourne,compbio,1.0,0.333333333333,2013
 Holger H. Hoos,University of British Columbia,compbio,1.0,0.111111111111,2012
 Nir Friedman,Hebrew University of Jerusalem,compbio,1.0,0.1,2014
 John Shawe-Taylor,University College London,compbio,1.0,0.1,2014
-Tom M. Mitchell,Carnegie Mellon University,compbio,1.0,0.333333333333,2007
-Ziv Bar-Joseph,Carnegie Mellon University,compbio,1.0,0.333333333333,2007
+Tom M. Mitchell,Carnegie Mellon University,compbio,2.0,0.533333333333,2007
+Ziv Bar-Joseph,Carnegie Mellon University,compbio,2.0,0.533333333333,2007
 Suchendra M. Bhandarkar,University of Georgia,compbio,1.0,0.5,2003
 Weixiong Zhang,Washington University - St. Louis,compbio,1.0,0.25,2009
 Guido Sanguinetti,University of Edinburgh,compbio,1.0,0.333333333333,2008
@@ -716,7 +716,7 @@ Dan Ventura,Brigham Young University,compbio,1.0,0.2,2016
 Mark J. Clement,Brigham Young University,compbio,1.0,0.2,2016
 Yuan-Fang Wang,University of California - Santa Barbara,compbio,1.0,0.25,2003
 Jianwen Su,University of California - Santa Barbara,compbio,1.0,0.25,2003
-Nir Friedman,Hebrew University of Jerusalem,compbio,1.0,0.142857142857,2004
+Nir Friedman,Hebrew University of Jerusalem,compbio,2.0,0.47619047619,2004
 Raymond T. Ng,University of British Columbia,compbio,1.0,0.333333333333,2006
 Vladimir Pavlovic,Rutgers University,compbio,1.0,0.333333333333,2002
 Bruce Tidor,Massachusetts Institute of Technology,compbio,1.0,0.5,2009
@@ -730,7 +730,7 @@ Yufeng Wu,University of Connecticut,compbio,1.0,1.0,2015
 Walter L. Ruzzo,University of Washington,compbio,1.0,0.333333333333,2006
 Natasa Przulj,University College London,compbio,1.0,0.333333333333,2008
 Nadia El-Mabrouk,University of Montreal,compbio,1.0,0.5,2004
-Philip S. Yu,University of Illinois - Chicago,compbio,1.0,0.2,2007
+Philip S. Yu,University of Illinois - Chicago,compbio,2.0,0.366666666667,2007
 Bruce Randall Donald,Duke University,compbio,1.0,0.25,2014
 Eran Halperin,Tel Aviv University,compbio,1.0,0.25,2015
 Sriram Sankararaman,University of California - Los Angeles,compbio,1.0,0.25,2015
@@ -11174,7 +11174,7 @@ Richard M. Karp,University of California - Berkeley,compbio,2.0,0.7,2004
 Michael S. Waterman,University of Southern California,compbio,2.0,0.583333333333,2003
 Ting Chen,University of Southern California,compbio,2.0,0.583333333333,2003
 John D. Kececioglu,University of Arizona,compbio,2.0,0.4,1997
-Roni Rosenfeld,Carnegie Mellon University,compbio,1.0,0.125,2004
+Roni Rosenfeld,Carnegie Mellon University,compbio,2.0,0.325,2004
 Bruce Randall Donald,Duke University,compbio,4.0,0.9,2011
 Benny Chor,Tel Aviv University,compbio,1.0,0.5,1997
 Serafim Batzoglou,Stanford University,compbio,2.0,0.533333333333,2008
@@ -11239,8 +11239,8 @@ Eleazar Eskin,University of California - Los Angeles,compbio,1.0,0.333333333333,
 Eran Halperin,Tel Aviv University,compbio,1.0,0.333333333333,2003
 Richard M. Karp,University of California - Berkeley,compbio,1.0,0.333333333333,2003
 Yufeng Wu,University of Connecticut,compbio,1.0,1.0,2013
-Lydia Tapia,University of New Mexico,compbio,1.0,0.25,2007
-Nancy M. Amato,Texas A&M University,compbio,1.0,0.25,2007
+Lydia Tapia,University of New Mexico,compbio,2.0,0.5,2007
+Nancy M. Amato,Texas A&M University,compbio,2.0,0.5,2007
 Benny Chor,Tel Aviv University,compbio,2.0,0.75,2005
 Guohui Lin,University of Alberta,compbio,1.0,0.333333333333,2001
 Richard H. Lathrop,University of California - Irvine,compbio,1.0,1.0,1999
@@ -11329,7 +11329,7 @@ Jian Peng 0001,University of Illinois at Urbana-Champaign,compbio,2.0,0.66666666
 Jinbo Xu,University of Chicago,compbio,2.0,0.666666666667,2009
 Serafim Batzoglou,Stanford University,compbio,2.0,0.533333333333,2006
 Xiaohui Xie,University of California - Irvine,compbio,1.0,0.2,2011
-Walter L. Ruzzo,University of Washington,compbio,1.0,0.5,2004
+Walter L. Ruzzo,University of Washington,compbio,2.0,1.0,2004
 Gene Myers,Max Planck Institute,compbio,1.0,0.25,1997
 Bhaskar DasGupta,University of Illinois - Chicago,compbio,1.0,0.2,1997
 Sampath Kannan,University of Pennsylvania,compbio,1.0,0.2,1997
@@ -11377,7 +11377,7 @@ Wojciech Szpankowski,Purdue University,compbio,1.0,0.333333333333,2005
 Yanni Sun,Michigan State University,compbio,1.0,0.5,2004
 Jeremy Buhler,Washington University - St. Louis,compbio,1.0,0.5,2004
 Michael S. Waterman,University of Southern California,compbio,1.0,0.142857142857,2005
-Dan Geiger,Technion - Israel Institute of Technology,compbio,1.0,0.25,2004
+Dan Geiger,Technion - Israel Institute of Technology,compbio,3.0,0.892857142857,2004
 Nir Friedman,Hebrew University of Jerusalem,compbio,1.0,0.25,2003
 Tommy Kaplan,Hebrew University of Jerusalem,compbio,1.0,0.25,2003
 David Kempe,University of Southern California,compbio,1.0,0.25,2004
@@ -11423,7 +11423,7 @@ Luay Nakhleh,Rice University,compbio,1.0,0.333333333333,2004
 Tandy J. Warnow,University of Illinois at Urbana-Champaign,compbio,1.0,0.333333333333,2004
 Gill Bejerano,Stanford University,compbio,1.0,1.0,2003
 Bruce Randall Donald,Duke University,compbio,1.0,0.25,2013
-Eric P. Xing,Carnegie Mellon University,compbio,2.0,0.583333333333,2007
+Eric P. Xing,Carnegie Mellon University,compbio,3.0,1.08333333333,2007
 Christopher James Langmead,Carnegie Mellon University,compbio,1.0,0.333333333333,2007
 Vladimir Filkov,University of California - Davis,compbio,1.0,0.333333333333,2005
 John D. Kececioglu,University of Arizona,compbio,1.0,0.5,2004
@@ -11443,7 +11443,7 @@ Alexis Battle,Johns Hopkins University,compbio,1.0,0.333333333333,2004
 Daphne Koller,Stanford University,compbio,1.0,0.333333333333,2004
 Alberto Apostolico,Georgia Institute of Technology,compbio,1.0,0.5,2000
 Gill Bejerano,Stanford University,compbio,1.0,0.5,2000
-T. M. Murali,Virginia Tech,compbio,1.0,0.5,2007
+T. M. Murali,Virginia Tech,compbio,2.0,0.833333333333,2007
 Vineet Bafna,University of California - San Diego,compbio,1.0,0.333333333333,2008
 Roded Sharan,Tel Aviv University,compbio,1.0,0.333333333333,2008
 Bonnie Berger,Massachusetts Institute of Technology,compbio,1.0,0.333333333333,2014
@@ -16082,8 +16082,13 @@ Richard R. Muntz,University of California - Los Angeles,database,1.0,0.333333333
 Serge Abiteboul,Ecole Normale Superieure de Cachan,database,2.0,1.0,1985
 Hagit Shatkay,University of Delaware,compbio,1.0,0.25,2000
 Jaak Vilo,University of Tartu,compbio,1.0,0.25,1997
+Anshul Kundaje,Stanford University,compbio,1.0,0.2,2004
+Yoav Freund,University of California - San Diego,compbio,1.0,0.2,2004
+Chris Bystroff,Rensselaer Polytechnic Institute,compbio,1.0,0.25,2004
+Chitta Baral,Arizona State University,compbio,1.0,0.166666666667,2004
 Roded Sharan,Tel Aviv University,compbio,1.0,0.5,2000
 Ron Shamir,Tel Aviv University,compbio,2.0,1.0,2000
+Bruce Randall Donald,Duke University,compbio,1.0,0.5,2007
 Bud Mishra,New York University,compbio,1.0,0.333333333333,1999
 Krys Kochut,University of Georgia,compbio,1.0,0.25,1993
 John A. Miller,University of Georgia,compbio,1.0,0.25,1993
@@ -16091,6 +16096,8 @@ Walter D. Potter,University of Georgia,compbio,1.0,0.25,1993
 Casimir A. Kulikowski,Rutgers University,compbio,2.0,0.666666666667,1993
 Jude W. Shavlik,University of Wisconsin - Madison,compbio,1.0,0.25,1996
 James A. Reggia,University of Maryland - College Park,compbio,1.0,0.25,1993
+Wojciech Szpankowski,Purdue University,compbio,1.0,0.166666666667,2007
+Ananth Grama,Purdue University,compbio,1.0,0.166666666667,2007
 Itsik Pe'er,Columbia University,compbio,1.0,0.5,2000
 Yanjun Qi,University of Virginia,compbio,1.0,0.2,2008
 Christos Faloutsos,Carnegie Mellon University,compbio,1.0,0.2,2008
@@ -16098,17 +16105,24 @@ Dan Geiger,Technion - Israel Institute of Technology,compbio,1.0,0.5,2002
 Kenneth Baclawski,Northeastern University,compbio,1.0,0.25,1993
 Mathieu Blanchette,McGill University,compbio,1.0,0.333333333333,2000
 Martin Tompa,University of Washington,compbio,2.0,0.833333333333,2000
+Anne Condon,University of British Columbia,compbio,1.0,0.2,2007
+Holger H. Hoos,University of British Columbia,compbio,1.0,0.2,2007
 Pierre Baldi,University of California - Irvine,compbio,2.0,0.7,1995
 Stephanie Forrest,University of New Mexico,compbio,1.0,0.333333333333,1993
 Dmitry Korkin,WPI,compbio,1.0,0.5,2002
 Kenneth Baclawski,Northeastern University,compbio,1.0,0.2,1994
 Weixiong Zhang,Washington University - St. Louis,compbio,1.0,0.333333333333,2008
 Nathan Linial,Hebrew University of Jerusalem,compbio,1.0,0.333333333333,2002
+Ananth Grama,Purdue University,compbio,1.0,0.333333333333,2004
+Wojciech Szpankowski,Purdue University,compbio,1.0,0.333333333333,2004
 Thomas Lengauer,Max Planck Institute,compbio,2.0,0.666666666667,1995
 Martin Tompa,University of Washington,compbio,2.0,1.5,1999
+Gill Bejerano,Stanford University,compbio,1.0,0.333333333333,2004
+Mathieu Blanchette,McGill University,compbio,1.0,0.333333333333,2004
 Hao Li,University of Southern California,compbio,1.0,0.333333333333,2000
 Charles Elkan,University of California - San Diego,compbio,1.0,0.5,1994
 Thomas R. Ioerger,Texas A&M University,compbio,1.0,1.0,1997
+Leonard McMillan,University of North Carolina,compbio,1.0,0.166666666667,2007
 Dinesh Manocha,University of North Carolina,compbio,1.0,0.5,1994
 Vineet Bafna,University of California - San Diego,compbio,1.0,0.5,2000
 Alexander Schliep,Rutgers University,compbio,1.0,0.25,2008
@@ -16118,24 +16132,35 @@ John F. Canny,University of California - Berkeley,compbio,1.0,0.5,1994
 William H. Hsu,Kansas State University,compbio,1.0,0.25,1993
 Tommy Kaplan,Hebrew University of Jerusalem,compbio,1.0,0.25,2008
 Nir Friedman,Hebrew University of Jerusalem,compbio,1.0,0.25,2008
+Haiyan Hu,University of Central Florida,compbio,1.0,0.142857142857,2007
+Xifeng Yan,University of California - Santa Barbara,compbio,2.0,0.309523809524,2007
+Michael S. Waterman,University of Southern California,compbio,2.0,0.309523809524,2007
+Xianghong Jasmine Zhou,University of Southern California,compbio,2.0,0.309523809524,2007
 Richard H. Lathrop,University of California - Irvine,compbio,1.0,0.2,1996
 Eleazar Eskin,University of California - Los Angeles,compbio,1.0,0.333333333333,2000
+Jaap Heringa,VU Amsterdam,compbio,1.0,0.5,2004
 Jude W. Shavlik,University of Wisconsin - Madison,compbio,1.0,0.5,1993
+Benjamin J. Raphael,Brown University,compbio,1.0,0.5,2004
 Jude W. Shavlik,University of Wisconsin - Madison,compbio,1.0,0.2,2000
 Bernard M. E. Moret,EPFL,compbio,1.0,0.142857142857,2000
 Tandy J. Warnow,University of Illinois at Urbana-Champaign,compbio,1.0,0.142857142857,2000
 Anthony J. Bonner,University of Toronto,compbio,1.0,0.5,1994
 Gabriel Robins,University of Virginia,compbio,1.0,0.25,1995
 Thomas R. Ioerger,Texas A&M University,compbio,1.0,0.333333333333,1993
+Pengyu Hong,Brandeis University,compbio,1.0,0.5,2007
+Dennis E. Shasha,New York University,compbio,1.0,0.2,2007
 Itsik Pe'er,Columbia University,compbio,1.0,0.333333333333,1999
 Bruce Randall Donald,Duke University,compbio,1.0,0.2,2008
 Walter L. Ruzzo,University of Washington,compbio,1.0,0.5,1999
+Burkhard Rost,TU Munich,compbio,1.0,0.5,2004
 Saurabh Sinha,University of Illinois at Urbana-Champaign,compbio,1.0,0.5,2000
 Casimir A. Kulikowski,Rutgers University,compbio,1.0,0.142857142857,1999
 Eric Torng,Michigan State University,compbio,1.0,0.25,1996
 Sanjay Ranka,University of Florida,compbio,1.0,0.333333333333,2008
 Eleazar Eskin,University of California - Los Angeles,compbio,1.0,0.5,2002
+Vladimir Jojic,University of North Carolina,compbio,1.0,0.142857142857,2004
 Richard H. Lathrop,University of California - Irvine,compbio,1.0,0.2,2002
+Alexander Schliep,Rutgers University,compbio,2.0,0.533333333333,2004
 Noga Alon,Tel Aviv University,compbio,1.0,0.2,2008
 Richard H. Lathrop,University of California - Irvine,compbio,1.0,0.2,1998
 Clifford Stein,Columbia University,compbio,1.0,0.25,2000
@@ -16146,8 +16171,11 @@ Anthony J. Bonner,University of Toronto,compbio,1.0,0.333333333333,1996
 Haim J. Wolfson,Tel Aviv University,compbio,1.0,0.25,1999
 Tandy J. Warnow,University of Illinois at Urbana-Champaign,compbio,1.0,0.333333333333,2002
 Jaak Vilo,University of Tartu,compbio,1.0,0.2,2000
+Tanya Y. Berger-Wolf,University of Illinois - Chicago,compbio,1.0,0.142857142857,2007
+Bhaskar DasGupta,University of Illinois - Chicago,compbio,1.0,0.142857142857,2007
 Tommy Kaplan,Hebrew University of Jerusalem,compbio,1.0,0.333333333333,2000
 Thomas R. Ioerger,Texas A&M University,compbio,1.0,0.25,1999
+John D. Kececioglu,University of Arizona,compbio,1.0,0.5,2007
 Steffen Heber,North Carolina State University,compbio,1.0,0.2,2002
 Sing-Hoi Sze,Texas A&M University,compbio,1.0,0.2,2002
 Haixu Tang,Indiana University,compbio,1.0,0.2,2002
@@ -16161,14 +16189,19 @@ Alexander J. Hartemink,Duke University,compbio,1.0,0.333333333333,2002
 Burkhard Rost,TU Munich,compbio,1.0,1.0,1995
 Gunnar Rätsch,ETH Zurich,compbio,1.0,0.25,2008
 Mark Herbster,University College London,compbio,1.0,0.166666666667,1994
+Padmini Srinivasan,University of Iowa,compbio,1.0,0.5,2004
 Roded Sharan,Tel Aviv University,compbio,1.0,0.333333333333,2002
 Luay Nakhleh,Rice University,compbio,1.0,0.25,2008
+Dan Halperin,Tel Aviv University,compbio,1.0,0.25,2004
 Tommi S. Jaakkola,Massachusetts Institute of Technology,compbio,1.0,0.333333333333,1999
 Charles Elkan,University of California - San Diego,compbio,1.0,0.5,1995
 Sing-Hoi Sze,Texas A&M University,compbio,1.0,0.5,2000
 Jude W. Shavlik,University of Wisconsin - Madison,compbio,1.0,0.2,2002
 Chris Bystroff,Rensselaer Polytechnic Institute,compbio,1.0,0.5,2002
 Jude W. Shavlik,University of Wisconsin - Madison,compbio,1.0,0.25,1997
+Le Song,Georgia Institute of Technology,compbio,1.0,0.2,2007
+David K. Gifford,Massachusetts Institute of Technology,compbio,1.0,0.2,2004
+Richard H. Lathrop,University of California - Irvine,compbio,1.0,0.2,2007
 Salvatore J. Stolfo,Columbia University,compbio,1.0,0.5,1993
 Devika Subramanian,Rice University,compbio,1.0,0.2,1994
 Karl Aberer,EPFL,compbio,1.0,0.333333333333,1995
