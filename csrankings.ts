@@ -434,7 +434,7 @@ function activateTheory(value : boolean) : boolean {
 }
 
 function activateOthers(value : boolean) : boolean {
-    const otherFields   : Array<number> = [19, 20, 21];
+    const otherFields   : Array<number> = [19, 20, 21, 22];
     return activateFields(value, otherFields);
 }
 

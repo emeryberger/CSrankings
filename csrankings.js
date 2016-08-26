@@ -367,7 +367,7 @@ function activateTheory(value) {
     return activateFields(value, theoryFields);
 }
 function activateOthers(value) {
-    var otherFields = [19, 20, 21];
+    var otherFields = [19, 20, 21, 22];
     return activateFields(value, otherFields);
 }
 function deactivateSystems() {
