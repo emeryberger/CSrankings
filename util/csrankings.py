@@ -69,10 +69,20 @@ areadict = {
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
     'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
-    'compbio' : ['RECOMB', 'ISMB']
-    # Will need ad hoc handling for ISMB proceedings in Bioinformatics special issues.
+    'compbio' : ['RECOMB', 'ISMB', 'Bioinformatics']
+    # See below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
 }
 
+# ISMB proceedings are published as special issues of Bioinformatics.
+# Here is the list.
+ISMB_Bioinformatics = { 2015 : (31, 12),
+                        2014 : (30, 12),
+                        2013 : (29, 13),
+                        2012 : (28, 12),
+                        2011 : (27, 13),
+                        2010 : (26, 12),
+                        2009 : (25, 12) }
+                                
 # Build a dictionary mapping conferences to areas.
 # e.g., confdict['CVPR'] = 'vision'.
 confdict = {}
