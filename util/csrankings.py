@@ -68,7 +68,9 @@ areadict = {
     'vision' : ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
-    'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)']
+    'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
+    'compbio' : ['RECOMB', 'ISMB']
+    # Will need ad hoc handling for ISMB proceedings in Bioinformatics special issues.
 }
 
 # Build a dictionary mapping conferences to areas.

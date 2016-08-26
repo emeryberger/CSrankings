@@ -26,11 +26,11 @@ var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competiti
 var areas = ["ai", "vision", "mlmining", "nlp", "web",
     "arch", "networks", "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
     "theory", "crypto", "logic",
-    "graphics", "hci", "robotics"];
+    "graphics", "hci", "robotics", "compbio"];
 var areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
     "Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
     "Theory", "Crypto", "Logic",
-    "Graphics", "HCI", "Robotics"];
+    "Graphics", "HCI", "Robotics", "Computational Biology"];
 var areaDict = {};
 var areaPosition = {};
 /* Colors for all areas. */
