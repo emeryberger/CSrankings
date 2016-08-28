@@ -132,9 +132,11 @@ function makeChart(name) {
     var data = [];
     var keys = areas;
     for (var i = 0; i < keys.length; i++) {
-        data.push({ "label": areaDict[keys[i]],
-            "value": authorAreas[unescape(name)][keys[i]],
-            "color": color[i] });
+        if (authorAreas[unescape(name)][keys[i]] > 0) {
+            data.push({ "label": areaDict[keys[i]],
+                "value": authorAreas[unescape(name)][keys[i]],
+                "color": color[i] });
+        }
     }
     var pie = new d3pie(name + "-chart", {
         "header": {
@@ -434,42 +436,48 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
     authorAreas = {};
     /* Now rebuild. */
     for (var r in authors) {
-        var dept = authors[r].dept;
-        var area_1 = authors[r].area;
-        var count = parseFloat(authors[r].count);
+        var theDept = authors[r].dept;
+        var theArea = authors[r].area;
+        var theCount = parseFloat(authors[r].count);
         var name = authors[r].name;
         if (name in aliases) {
             name = aliases[name];
         }
         var year = authors[r].year;
-        if ((weights[area_1] === 0) || (year < startyear) || (year > endyear)) {
-            continue;
-        }
         if (!(name in authorAreas)) {
             authorAreas[name] = {};
-            for (var area in areas) {
-                authorAreas[name][area_1] = 0;
+            for (var area in areaDict) {
+                if (areaDict.hasOwnProperty(area)) {
+                    authorAreas[name][area] = 0;
+                }
             }
         }
-        if (!(dept in authorAreas)) {
-            authorAreas[dept] = {};
-            for (var area in areas) {
-                authorAreas[dept][area_1] = 0;
+        if (!(theDept in authorAreas)) {
+            authorAreas[theDept] = {};
+            for (var area in areaDict) {
+                if (areaDict.hasOwnProperty(area)) {
+                    authorAreas[theDept][area] = 0;
+                }
             }
         }
-        if (!(area_1 in authorAreas[name])) {
-            authorAreas[name][area_1] = 0;
+        if (!(theArea in authorAreas[name])) {
+            authorAreas[name][theArea] = 0;
         }
-        if (!(area_1 in authorAreas[dept])) {
-            authorAreas[dept][area_1] = 0;
+        if (!(theArea in authorAreas[theDept])) {
+            authorAreas[theDept][theArea] = 0;
         }
-        authorAreas[name][area_1] += count;
-        authorAreas[dept][area_1] += count;
+        if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
+            authorAreas[name][theArea] += theCount;
+            authorAreas[theDept][theArea] += theCount;
+        }
     }
 }
 function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
     /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
+        if (!authors.hasOwnProperty(r)) {
+            continue;
+        }
         var area = authors[r].area;
         var dept = authors[r].dept;
         var year = authors[r].year;
@@ -488,6 +496,9 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited = {}; /* contains an author name if that author has been processed. */
     for (var r in authors) {
+        if (!authors.hasOwnProperty(r)) {
+            continue;
+        }
         var area = authors[r].area;
         var dept = authors[r].dept;
         switch (regions) {
