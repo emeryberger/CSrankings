@@ -523,6 +523,11 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
                     continue;
                 }
                 break;
+            case "northamerica":
+                if ((dept in countryInfo) && (countryInfo[dept] != "canada")) {
+                    continue;
+                }
+                break;
             case "australasia":
                 if (!(dept in countryInfo)) {
                     continue;
