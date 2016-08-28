@@ -628,6 +628,11 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 		continue;
 	    }
 	    break;
+	case "northamerica":
+	    if ((dept in countryInfo) && (countryInfo[dept] != "canada")) {
+		continue;
+	    }
+	    break;
 	case "australasia":
 	    if (!(dept in countryInfo)) { // USA
 		continue;
