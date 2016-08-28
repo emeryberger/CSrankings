@@ -183,9 +183,11 @@ function makeChart(name : string) : void {
     var data : any = [];
     var keys = areas;
     for (var i = 0; i < keys.length; i++) {
-	data.push({ "label" : areaDict[keys[i]],
-		    "value" : authorAreas[unescape(name)][keys[i]],
-		    "color" : color[i] });
+	if (authorAreas[unescape(name)][keys[i]] > 0) {
+	    data.push({ "label" : areaDict[keys[i]],
+			"value" : authorAreas[unescape(name)][keys[i]],
+			"color" : color[i] });
+	}
     }
     var pie = new d3pie(name + "-chart", {
 	"header": {
@@ -518,37 +520,40 @@ function countAuthorAreas(areacount : {[key:string] : number},
     authorAreas = {};
     /* Now rebuild. */
     for (var r in authors) {
-	const dept  = authors[r].dept;
-	const area  = authors[r].area;
-	const count = parseFloat(authors[r].count);
+	const theDept  = authors[r].dept;
+	const theArea  = authors[r].area;
+	const theCount = parseFloat(authors[r].count);
 	var name : string  = authors[r].name;
 	if (name in aliases) {
 	    name = aliases[name];
 	}
 	var year = authors[r].year;
-	if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
-	    continue;
-	}
 	if (!(name in authorAreas)) {
 	    authorAreas[name] = {};
-	    for (var area in areas) {
-		authorAreas[name][area] = 0;
+	    for (var area in areaDict) {
+		if (areaDict.hasOwnProperty(area)) {
+		    authorAreas[name][area] = 0;
+		}
 	    }
 	}
-	if (!(dept in authorAreas)) {
-	    authorAreas[dept] = {};
-	    for (var area in areas) {
-		authorAreas[dept][area] = 0;
+	if (!(theDept in authorAreas)) {
+	    authorAreas[theDept] = {};
+	    for (var area in areaDict) {
+		if (areaDict.hasOwnProperty(area)) {
+		    authorAreas[theDept][area] = 0;
+		}
 	    }
 	}
-	if (!(area in authorAreas[name])) {
-	    authorAreas[name][area] = 0;
+	if (!(theArea in authorAreas[name])) {
+	    authorAreas[name][theArea] = 0;
 	}
-	if (!(area in authorAreas[dept])) {
-	    authorAreas[dept][area] = 0;
+	if (!(theArea in authorAreas[theDept])) {
+	    authorAreas[theDept][theArea] = 0;
 	}
-	authorAreas[name][area] += count;
-	authorAreas[dept][area] += count;
+	if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
+	    authorAreas[name][theArea] += theCount;
+	    authorAreas[theDept][theArea] += theCount;
+	}
     }
     
 }
@@ -563,6 +568,9 @@ function countPapers(areacount : {[key:string] : number},
 {
     /* Count the total number of papers (raw and adjusted) in each area. */
     for (var r in authors) {
+	if (!authors.hasOwnProperty(r)) {
+	    continue;
+	}
 	const area = authors[r].area;
 	const dept = authors[r].dept;
 	const year = authors[r].year;
@@ -593,6 +601,9 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
     /* Build the dictionary of departments (and count) to be ranked. */
     var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
     for (var r in authors) {
+	if (!authors.hasOwnProperty(r)) {
+	    continue;
+	}
 	const area : string = authors[r].area;
 	const dept : string = authors[r].dept;
 	switch (regions) {
