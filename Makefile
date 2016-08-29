@@ -27,7 +27,7 @@ home-pages: faculty-affiliations.csv
 fix-affiliations: faculty-affiliations.csv
 	@echo "Updating affiliations."
 	@python util/fix-affiliations.py | sort -k2 -t"," | uniq > /tmp/f1.csv
-	@echo "name , affiliation" | cat - /tmp/f1.csv >  /tmp/f2.csv
+	@echo "name,affiliation" | cat - /tmp/f1.csv >  /tmp/f2.csv
 	@rm /tmp/f1.csv
 	@mv /tmp/f2.csv faculty-affiliations.csv
 
