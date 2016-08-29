@@ -69,7 +69,7 @@ def parseDBLP(facultydict):
                 if (confname == 'Bioinformatics'):
                     if ISMB_Bioinformatics.has_key(year):
                         (vol, num) = ISMB_Bioinformatics[year]
-                        if (volume != vol) or (number != num):
+                        if (volume != str(vol)) or (number != str(num)):
                             continue
                     else:
                         continue
@@ -111,8 +111,8 @@ def parseDBLP(facultydict):
                 for child in node:
                     if child.tag == 'author':
                         authorName = child.text
-                        if authorName is not None:
-                            print authorName.encode('utf-8') + "," + areaname + "," + str(volume) + "," + str(number) + "," + str(year) + "," + str(pageCount) + "," + str(startPage) + "," + str(authorsOnPaper)
+                        # if authorName is not None:
+                        # print authorName.encode('utf-8') + "," + areaname + "," + str(volume) + "," + str(number) + "," + str(year) + "," + str(pageCount) + "," + str(startPage) + "," + str(authorsOnPaper)
                 
 
                 if ((confname == 'ASE') and (pageCount <= 6)):
