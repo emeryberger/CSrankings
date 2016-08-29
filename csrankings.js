@@ -445,16 +445,16 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
         var theDept = authors[r].dept;
         var theArea = authors[r].area;
         var theCount = parseFloat(authors[r].count);
-        var name = authors[r].name;
-        if (name in aliases) {
-            name = aliases[name];
+        var name_1 = authors[r].name;
+        if (name_1 in aliases) {
+            name_1 = aliases[name_1];
         }
         var year = authors[r].year;
-        if (!(name in authorAreas)) {
-            authorAreas[name] = {};
+        if (!(name_1 in authorAreas)) {
+            authorAreas[name_1] = {};
             for (var area in areaDict) {
                 if (areaDict.hasOwnProperty(area)) {
-                    authorAreas[name][area] = 0;
+                    authorAreas[name_1][area] = 0;
                 }
             }
         }
@@ -466,14 +466,14 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
                 }
             }
         }
-        if (!(theArea in authorAreas[name])) {
-            authorAreas[name][theArea] = 0;
+        if (!(theArea in authorAreas[name_1])) {
+            authorAreas[name_1][theArea] = 0;
         }
         if (!(theArea in authorAreas[theDept])) {
             authorAreas[theDept][theArea] = 0;
         }
         if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
-            authorAreas[name][theArea] += theCount;
+            authorAreas[name_1][theArea] += theCount;
             authorAreas[theDept][theArea] += theCount;
         }
     }
@@ -552,26 +552,26 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
         if (weights[area] === 0) {
             continue;
         }
-        var name_1 = authors[r].name;
+        var name_2 = authors[r].name;
         var count = parseInt(authors[r].count);
         var adjustedCount = parseFloat(authors[r].adjustedcount);
         var year = authors[r].year;
         if ((year >= startyear) && (year <= endyear)) {
             areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name_1 in visited)) {
-                visited[name_1] = true;
-                facultycount[name_1 + dept] = 0;
-                facultyAdjustedCount[name_1 + dept] = 0;
+            if (!(name_2 in visited)) {
+                visited[name_2] = true;
+                facultycount[name_2 + dept] = 0;
+                facultyAdjustedCount[name_2 + dept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name_1);
+                deptNames[dept].push(name_2);
                 deptCounts[dept] += 1;
             }
-            facultycount[name_1 + dept] += count;
-            facultyAdjustedCount[name_1 + dept] += adjustedCount;
+            facultycount[name_2 + dept] += count;
+            facultyAdjustedCount[name_2 + dept] += adjustedCount;
         }
     }
 }
@@ -639,7 +639,7 @@ function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas
 }
 function rank() {
     var form = document.getElementById("rankform");
-    var s = "";
+    //    let s : string = "";
     var deptNames = {}; /* names of departments. */
     var deptCounts = {}; /* number of faculty in each department. */
     var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
@@ -676,7 +676,7 @@ function rank() {
     var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
     var univtext = {};
     /* Canonicalize names. */
-    for (dept in deptNames) {
+    for (var dept in deptNames) {
         for (var ind = 0; ind < deptNames[dept].length; ind++) {
             name = deptNames[dept][ind];
             if (name in aliases) {
@@ -693,7 +693,7 @@ function rank() {
         }
     }
     /* Build drop down for faculty names and paper counts. */
-    for (dept in deptNames) {
+    var _loop_1 = function(dept) {
         var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
         /* Build a dict of just faculty from this department for sorting purposes. */
         var fc = {};
@@ -703,33 +703,33 @@ function rank() {
         }
         var keys = Object.keys(fc);
         keys.sort(function (a, b) { return fc[b] - fc[a]; });
-        for (var ind = 0; ind < keys.length; ind++) {
+        var _loop_2 = function(ind) {
             name = keys[ind];
             if (showCoauthors) {
                 /* Build up text for co-authors. */
-                var coauthorStr = "";
+                var coauthorStr_1 = "";
                 if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
                     coauthorList[name] = new Set([]);
-                    coauthorStr = "(no senior co-authors on these papers)";
+                    coauthorStr_1 = "(no senior co-authors on these papers)";
                 }
                 else {
-                    coauthorStr = "Senior co-authors on these papers:\n";
+                    coauthorStr_1 = "Senior co-authors on these papers:\n";
                 }
                 /* Sort it by last name. */
-                var l = [];
+                var l_1 = [];
                 coauthorList[name].forEach(function (item, coauthors) {
-                    l.push(item);
+                    l_1.push(item);
                 });
-                if (l.length > maxCoauthors) {
-                    coauthorStr = "(more than " + maxCoauthors + " senior co-authors)";
+                if (l_1.length > maxCoauthors) {
+                    coauthorStr_1 = "(more than " + maxCoauthors + " senior co-authors)";
                 }
                 else {
-                    l.sort(compareNames);
-                    l.forEach(function (item, coauthors) {
-                        coauthorStr += item + "\n";
+                    l_1.sort(compareNames);
+                    l_1.forEach(function (item, coauthors) {
+                        coauthorStr_1 += item + "\n";
                     });
                     /* Trim off the trailing newline. */
-                    coauthorStr = coauthorStr.slice(0, coauthorStr.length - 1);
+                    coauthorStr_1 = coauthorStr_1.slice(0, coauthorStr_1.length - 1);
                 }
             }
             p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
@@ -755,9 +755,15 @@ function rank() {
                 + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
                 + '</div>'
                 + "</td></tr>";
+        };
+        for (var ind = 0; ind < keys.length; ind++) {
+            _loop_2(ind);
         }
         p += "</tbody></table></div></div>";
         univtext[dept] = p;
+    };
+    for (var dept in deptNames) {
+        _loop_1(dept);
     }
     /* Start building up the string to output. */
     var s = makePrologue();
@@ -771,7 +777,7 @@ function rank() {
     /* As long as there is at least one thing selected, compute and display a ranking. */
     if (numAreas > 0) {
         var ties = 1; /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
-        var rank = 0; /* index */
+        var rank_1 = 0; /* index */
         var oldv = null; /* old number - to track ties */
         /* Sort the university aggregate count from largest to smallest. */
         var keys2 = sortIndex(univagg);
@@ -794,14 +800,14 @@ function rank() {
             }
             if (oldv != v) {
                 if (useDenseRankings) {
-                    rank = rank + 1;
+                    rank_1 = rank_1 + 1;
                 }
                 else {
-                    rank = rank + ties;
+                    rank_1 = rank_1 + ties;
                     ties = 0;
                 }
             }
-            s += "\n<tr><td>" + rank + "</td>";
+            s += "\n<tr><td>" + rank_1 + "</td>";
             s += "<font color=\"blue\"><td><span onclick=\"toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + RightTriangle + "</span></font>&nbsp;" + dept;
             s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"toggleChart('"
                 + escape(dept)
