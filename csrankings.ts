@@ -492,6 +492,9 @@ function computeCoauthors(coauthors : Array<Coauthor>,
 {
     var coauthorList : {[key : string] : Set<string> } = {};
     for (var c in coauthors) {
+	if (!coauthors.hasOwnProperty(c)) {
+	    continue;
+	}
 	var author = coauthors[c].author;
 	var coauthor = coauthors[c].coauthor;
 	var year = coauthors[c].year;
@@ -520,6 +523,9 @@ function countAuthorAreas(areacount : {[key:string] : number},
     authorAreas = {};
     /* Now rebuild. */
     for (var r in authors) {
+	if (!authors.hasOwnProperty(r)) {
+	    continue;
+	}
 	const theDept  = authors[r].dept;
 	const theArea  = authors[r].area;
 	const theCount = parseFloat(authors[r].count);
@@ -688,6 +694,9 @@ function computeStats(deptNames : {[key:string] : Array<string> },
    
     var univagg : {[key: string] : number} = {};
     for (var dept in deptNames) {
+	if (!deptNames.hasOwnProperty(dept)) {
+	    continue;
+	}
 	if (displayPercentages) {
 	    if (useArithmeticMean) {
 		univagg[dept] = 0;

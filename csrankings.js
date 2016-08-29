@@ -415,6 +415,9 @@ function sortIndex(univagg) {
 function computeCoauthors(coauthors, startyear, endyear, weights) {
     var coauthorList = {};
     for (var c in coauthors) {
+        if (!coauthors.hasOwnProperty(c)) {
+            continue;
+        }
         var author = coauthors[c].author;
         var coauthor = coauthors[c].coauthor;
         var year = coauthors[c].year;
@@ -436,6 +439,9 @@ function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
     authorAreas = {};
     /* Now rebuild. */
     for (var r in authors) {
+        if (!authors.hasOwnProperty(r)) {
+            continue;
+        }
         var theDept = authors[r].dept;
         var theArea = authors[r].area;
         var theCount = parseFloat(authors[r].count);
@@ -573,6 +579,9 @@ function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultyc
 function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
     var univagg = {};
     for (var dept in deptNames) {
+        if (!deptNames.hasOwnProperty(dept)) {
+            continue;
+        }
         if (displayPercentages) {
             if (useArithmeticMean) {
                 univagg[dept] = 0;
