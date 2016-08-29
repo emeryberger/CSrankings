@@ -10,16 +10,27 @@ import re
 # parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
 parser = ElementTree.XMLParser()
 
-# Author paper count threshold - the author must have written at least this many top papers to count as a co-author.
-# This is meant to generally exclude students.
-authorPaperCountThreshold = 5
-
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
 pageCounterNormal = re.compile('(\d+)-(\d+)')
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
+
+def startpage(input):
+    if (input is None):
+        return 0
+    pageCounterMatcher1 = pageCounterNormal.match(input)
+    pageCounterMatcher2 = pageCounterColon.match(input)
+    start = 0
+    
+    if (not (pageCounterMatcher1 is None)):
+        start = int(pageCounterMatcher1.group(1))
+    else:
+        if (not (pageCounterMatcher2 is None)):
+            start = int(pageCounterMatcher2.group(1))
+    return start
+
 
 def pagecount(input):
     if (input is None):
@@ -68,8 +79,40 @@ areadict = {
     'vision' : ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
-    'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)']
+    'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
+    'compbio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)']
+    # See below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
 }
+
+# ISMB proceedings are published as special issues of Bioinformatics.
+# Here is the list.
+ISMB_Bioinformatics = { 2015 : (31, 12),
+                        2014 : (30, 12),
+                        2013 : (29, 13),
+                        2012 : (28, 12),
+                        2011 : (27, 13),
+                        2010 : (26, 12),
+                        2009 : (25, 12) }
+
+# ICSE special handling to omit short papers.
+# Contributed by Zhendong Su, UC Davis.
+# Short papers start at this page number for these proceedings of ICSE (and are thus omitted,
+# as the acceptance criteria differ).
+ICSE_ShortPaperStart = { 2013 : 851,
+                         2012 : 957,
+                         2011 : 620,
+                         2010 : 544,
+                         2009 : 550,
+                         2007 : 510,
+                         2006 : 411,
+                         2005 : 478,
+                         2003 : 477,
+                         2002 : 534,
+                         2001 : 502,
+                         2000 : 518,
+                         1999 : 582,
+                         1998 : 419,
+                         1997 : 535 }
 
 # Build a dictionary mapping conferences to areas.
 # e.g., confdict['CVPR'] = 'vision'.
