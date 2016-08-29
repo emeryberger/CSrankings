@@ -102,7 +102,7 @@
 		entry.
 	      </p>
 	      Rank the top
-	      <select id="minToRank" name="minToRank" onchange="rank();">
+	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
 		<option value="10">10</option>
 		<option value="25">25</option>
 		<option value="50" selected="selected">50</option>
@@ -110,7 +110,7 @@
 		<option value="100">100</option>
 	      </select>
 	      institutions in
-	      <select id="regions" name="regions" onchange="rank();">
+	      <select id="regions" name="regions" onchange="CSRankings.rank();">
 		<option value="USA" selected="selected">the USA only</option>
 		<option value="canada">Canada only</option>
 		<option value="northamerica">USA and Canada</option>
@@ -120,7 +120,7 @@
 	      </select>
 	      by
 	      <!--
-	      <select id="minToRank" name="minToRank" onchange="rank();">
+	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
 		<option value="10">10</option>
 		<option value="15">15</option>
 		<option value="20">20</option>
@@ -132,12 +132,12 @@
 		<option value="50">50</option>
 	      </select>
 		-->
-	      <select id="displayPercent" name="displayPercent" onchange="rank();" >
+	      <select id="displayPercent" name="displayPercent" onchange="CSRankings.rank();" >
 		<option value="1" selected="selected">average count</option>
 		<option value="0">total count</option>
 	      </select>
 	      of publications from
-	      <select onchange="rank();" id="startyear" name="startyear">
+	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
 		<option value="1970">1970</option>  
 		<option value="1971">1971</option>  
 		<option value="1972">1972</option>  
@@ -187,7 +187,7 @@
 		<option value="2014">2016</option>
 	      </select>
 	      to
-	      <select onchange="rank();" id="endyear" name="endyear">
+	      <select onchange="CSRankings.rank();" id="endyear" name="endyear">
 		<option value="1980">1980</option>  
 		<option value="1981">1981</option>  
 		<option value="1982">1982</option>  
@@ -226,7 +226,7 @@
 		<option value="2015">2015</option>
 		<option selected="selected" value="2016">2016</option>
 	      </select>
-	      &nbsp;[<a class="only_these_areas" onClick="activateNone(); return false;"><font color="blue"><b>all areas off</b></font></a> | <a class="only_these_areas" onClick="activateAll(); return false;"><font color="blue"><b>all areas on</b></font></a>]&nbsp;
+	      &nbsp;[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>all areas off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>all areas on</b></font></a>]&nbsp;
 	    </div>
 	  </div>
 	  
@@ -240,7 +240,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p>AI
-			  [<a class="only_these_areas" onClick="deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="activateAI(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -307,7 +307,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p>Systems
-			  [<a class="only_these_areas" onClick="deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="activateSystems(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -423,7 +423,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p>Theory
-			  [<a class="only_these_areas" onClick="deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="activateTheory(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -467,7 +467,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p>Interdisciplinary Areas
-			  [<a class="only_these_areas" onClick="deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="activateOthers(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
