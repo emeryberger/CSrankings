@@ -365,10 +365,13 @@ class CSRankings {
 		self.authors = data as Array<Author>;
 		for (let i = 1; i <= self.areas.length; i++) {
 		    let str = 'input[name=field_'+i+']';
+		    jQuery(str).click(function() { self.rank(); });
+/*
 		    (function(s : string) {
 			jQuery(s).click(function() {
 			    self.rank();
 			});})(str);
+*/
 		}
 		cont();
 		/*	    rank(); */
@@ -511,16 +514,15 @@ class CSRankings {
     }
 
     private static countAuthorAreas(areacount : {[key:string] : number},
-			     authors : Array<Author>,
-			     startyear : number,
-			     endyear : number,
-			     weights : {[key:string] : number}) : void
+				    authors : Array<Author>,
+				    startyear : number,
+				    endyear : number,
+				    weights : {[key:string] : number},
+				    authorAreas : {[name : string] : {[area : string] : number }}) : void
     
     {
 	// Build up an associative array of depts.
 	let depts : {[key:string] : number} = {};
-	/* Delete everything from authorAreas. */
-	CSRankings.authorAreas = {};
 	/* Now rebuild. */
 	for (let r in authors) {
 	    if (!authors.hasOwnProperty(r)) {
@@ -534,34 +536,27 @@ class CSRankings {
 		name = CSRankings.aliases[name];
 	    }
 	    let year = authors[r].year;
-	    if (!(name in CSRankings.authorAreas)) {
-		CSRankings.authorAreas[name] = {};
+	    if (!(name in authorAreas)) {
+		authorAreas[name] = {};
 		for (let area in CSRankings.areaDict) {
 		    if (CSRankings.areaDict.hasOwnProperty(area)) {
-			CSRankings.authorAreas[name][area] = 0;
+			authorAreas[name][area] = 0;
 		    }
 		}
 	    }
-	    if (!(theDept in CSRankings.authorAreas)) {
-		CSRankings.authorAreas[theDept] = {};
+	    if (!(theDept in authorAreas)) {
+		authorAreas[theDept] = {};
 		for (let area in CSRankings.areaDict) {
 		    if (CSRankings.areaDict.hasOwnProperty(area)) {
-			CSRankings.authorAreas[theDept][area] = 0;
+			authorAreas[theDept][area] = 0;
 		    }
 		}
-	    }
-	    if (!(theArea in CSRankings.authorAreas[name])) {
-		CSRankings.authorAreas[name][theArea] = 0;
-	    }
-	    if (!(theArea in CSRankings.authorAreas[theDept])) {
-		CSRankings.authorAreas[theDept][theArea] = 0;
 	    }
 	    if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
-		CSRankings.authorAreas[name][theArea] += theCount;
-		CSRankings.authorAreas[theDept][theArea] += theCount;
+		authorAreas[name][theArea] += theCount;
+		authorAreas[theDept][theArea] += theCount;
 	    }
 	}
-	
     }
 
     private static countPapers(areacount : {[key:string] : number},
@@ -578,13 +573,16 @@ class CSRankings {
 		continue;
 	    }
 	    const area = authors[r].area;
-	    const dept = authors[r].dept;
-	    const year = authors[r].year;
-	    const areaDept = area+dept;
-	    areaDeptAdjustedCount[areaDept] = 0;
-	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+	    if (weights[area] == 0) {
 		continue;
 	    }
+	    const year = authors[r].year;
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
+	    }
+	    const dept = authors[r].dept;
+	    const areaDept = area+dept;
+	    areaDeptAdjustedCount[areaDept] = 0;
 	    const count = parseFloat(authors[r].count);
 	    const adjustedCount = parseFloat(authors[r].adjustedcount);
 	    areacount[area] += count;
@@ -594,15 +592,15 @@ class CSRankings {
 
 
     private static buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
-			     deptCounts : {[key:string] : number},
-			     deptNames  : {[key:string] : Array<string>},
-			     facultycount : {[key:string] : number},
-			     facultyAdjustedCount : {[key:string] : number},
-			     authors : Array<Author>,
-			     startyear : number,
-			     endyear : number,
-			     weights : {[key:string] : number},
-			     regions : string) : void
+				    deptCounts : {[key:string] : number},
+				    deptNames  : {[key:string] : Array<string>},
+				    facultycount : {[key:string] : number},
+				    facultyAdjustedCount : {[key:string] : number},
+				    authors : Array<Author>,
+				    startyear : number,
+				    endyear : number,
+				    weights : {[key:string] : number},
+				    regions : string) : void
     {
 	/* Build the dictionary of departments (and count) to be ranked. */
 	let visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
@@ -610,8 +608,19 @@ class CSRankings {
 	    if (!authors.hasOwnProperty(r)) {
 		continue;
 	    }
+	    const year = authors[r].year;
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
+	    }
 	    const area : string = authors[r].area;
 	    const dept : string = authors[r].dept;
+	    const areaDept : string = area+dept;
+	    if (!(areaDept in areaDeptAdjustedCount)) {
+		areaDeptAdjustedCount[areaDept] = 0;
+	    }
+	    if (weights[area] === 0) {
+		continue;
+	    }
 	    switch (regions) {
 	    case "USA":
 		if (dept in CSRankings.countryInfo) {
@@ -650,17 +659,9 @@ class CSRankings {
 	    case "world":
 		break;
 	    }
-	    const areaDept : string = area+dept;
-	    if (!(areaDept in areaDeptAdjustedCount)) {
-		areaDeptAdjustedCount[areaDept] = 0;
-	    }
-	    if (weights[area] === 0) {
-		continue;
-	    }
 	    const name : string  = authors[r].name;
 	    const count : number = parseInt(authors[r].count);
 	    const adjustedCount : number = parseFloat(authors[r].adjustedcount);
-	    const year : number  = authors[r].year;
 	    if ((year >= startyear) && (year <= endyear)) {
 		areaDeptAdjustedCount[areaDept] += adjustedCount;
 		/* Is this the first time we have seen this person? */
@@ -683,16 +684,14 @@ class CSRankings {
 
     /* Compute aggregate statistics. */
     private static computeStats(deptNames : {[key:string] : Array<string> },
-			  areaAdjustedCount : {[key:string] : number},
-			  areaDeptAdjustedCount : {[key:string] : number},
-			  areas : Array<string>,
-			  numAreas : number,
-			  displayPercentages : boolean,
-			  weights : {[key:string] : number})
-    : {[key: string] : number}
+				areaAdjustedCount : {[key:string] : number},
+				areaDeptAdjustedCount : {[key:string] : number},
+				areas : Array<string>,
+				numAreas : number,
+				displayPercentages : boolean,
+				weights : {[key:string] : number},
+			        univagg : {[key: string] : number}) : void
     {
-	
-	let univagg : {[key: string] : number} = {};
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
 		continue;
@@ -748,7 +747,6 @@ class CSRankings {
 		}
 	    }
 	}
-	return univagg;
     }
 
     public static rank() : boolean {
@@ -788,15 +786,18 @@ class CSRankings {
 	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
 	}
 	CSRankings.countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
-	CSRankings.countAuthorAreas(areacount, CSRankings.authors, startyear, endyear, weights);
+	CSRankings.authorAreas = {};
+	CSRankings.countAuthorAreas(areacount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
 	CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
 	
 	/* (university, total or average number of papers) */
-	let univagg = CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights);
+	let univagg : {[key: string] : number} = {};
+	CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
 
 	let univtext : {[key:string] : string} = {};
 
 	/* Canonicalize names. */
+	
 	for (let dept in deptNames) {
 	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
 		name = deptNames[dept][ind];
