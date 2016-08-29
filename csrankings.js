@@ -273,11 +273,7 @@ var CSRankings = (function () {
                 self.authors = data;
                 for (var i = 1; i <= self.areas.length; i++) {
                     var str = 'input[name=field_' + i + ']';
-                    (function (s) {
-                        jQuery(s).click(function () {
-                            self.rank();
-                        });
-                    })(str);
+                    jQuery(str).click(function () { self.rank(); });
                 }
                 cont();
                 /*	    rank(); */
@@ -400,11 +396,9 @@ var CSRankings = (function () {
         }
         return coauthorList;
     };
-    CSRankings.countAuthorAreas = function (areacount, authors, startyear, endyear, weights) {
+    CSRankings.countAuthorAreas = function (areacount, authors, startyear, endyear, weights, authorAreas) {
         // Build up an associative array of depts.
         var depts = {};
-        /* Delete everything from authorAreas. */
-        CSRankings.authorAreas = {};
         /* Now rebuild. */
         for (var r in authors) {
             if (!authors.hasOwnProperty(r)) {
@@ -418,31 +412,25 @@ var CSRankings = (function () {
                 name_1 = CSRankings.aliases[name_1];
             }
             var year = authors[r].year;
-            if (!(name_1 in CSRankings.authorAreas)) {
-                CSRankings.authorAreas[name_1] = {};
+            if (!(name_1 in authorAreas)) {
+                authorAreas[name_1] = {};
                 for (var area in CSRankings.areaDict) {
                     if (CSRankings.areaDict.hasOwnProperty(area)) {
-                        CSRankings.authorAreas[name_1][area] = 0;
+                        authorAreas[name_1][area] = 0;
                     }
                 }
             }
-            if (!(theDept in CSRankings.authorAreas)) {
-                CSRankings.authorAreas[theDept] = {};
+            if (!(theDept in authorAreas)) {
+                authorAreas[theDept] = {};
                 for (var area in CSRankings.areaDict) {
                     if (CSRankings.areaDict.hasOwnProperty(area)) {
-                        CSRankings.authorAreas[theDept][area] = 0;
+                        authorAreas[theDept][area] = 0;
                     }
                 }
-            }
-            if (!(theArea in CSRankings.authorAreas[name_1])) {
-                CSRankings.authorAreas[name_1][theArea] = 0;
-            }
-            if (!(theArea in CSRankings.authorAreas[theDept])) {
-                CSRankings.authorAreas[theDept][theArea] = 0;
             }
             if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
-                CSRankings.authorAreas[name_1][theArea] += theCount;
-                CSRankings.authorAreas[theDept][theArea] += theCount;
+                authorAreas[name_1][theArea] += theCount;
+                authorAreas[theDept][theArea] += theCount;
             }
         }
     };
@@ -453,13 +441,16 @@ var CSRankings = (function () {
                 continue;
             }
             var area = authors[r].area;
-            var dept = authors[r].dept;
-            var year = authors[r].year;
-            var areaDept = area + dept;
-            areaDeptAdjustedCount[areaDept] = 0;
-            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+            if (weights[area] == 0) {
                 continue;
             }
+            var year = authors[r].year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            var dept = authors[r].dept;
+            var areaDept = area + dept;
+            areaDeptAdjustedCount[areaDept] = 0;
             var count = parseFloat(authors[r].count);
             var adjustedCount = parseFloat(authors[r].adjustedcount);
             areacount[area] += count;
@@ -473,8 +464,19 @@ var CSRankings = (function () {
             if (!authors.hasOwnProperty(r)) {
                 continue;
             }
+            var year = authors[r].year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
             var area = authors[r].area;
             var dept = authors[r].dept;
+            var areaDept = area + dept;
+            if (!(areaDept in areaDeptAdjustedCount)) {
+                areaDeptAdjustedCount[areaDept] = 0;
+            }
+            if (weights[area] === 0) {
+                continue;
+            }
             switch (regions) {
                 case "USA":
                     if (dept in CSRankings.countryInfo) {
@@ -513,17 +515,9 @@ var CSRankings = (function () {
                 case "world":
                     break;
             }
-            var areaDept = area + dept;
-            if (!(areaDept in areaDeptAdjustedCount)) {
-                areaDeptAdjustedCount[areaDept] = 0;
-            }
-            if (weights[area] === 0) {
-                continue;
-            }
             var name_2 = authors[r].name;
             var count = parseInt(authors[r].count);
             var adjustedCount = parseFloat(authors[r].adjustedcount);
-            var year = authors[r].year;
             if ((year >= startyear) && (year <= endyear)) {
                 areaDeptAdjustedCount[areaDept] += adjustedCount;
                 /* Is this the first time we have seen this person? */
@@ -544,8 +538,7 @@ var CSRankings = (function () {
         }
     };
     /* Compute aggregate statistics. */
-    CSRankings.computeStats = function (deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
-        var univagg = {};
+    CSRankings.computeStats = function (deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights, univagg) {
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
@@ -603,7 +596,6 @@ var CSRankings = (function () {
                 }
             }
         }
-        return univagg;
     };
     CSRankings.rank = function () {
         var form = document.getElementById("rankform");
@@ -638,10 +630,12 @@ var CSRankings = (function () {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
         }
         CSRankings.countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
-        CSRankings.countAuthorAreas(areacount, CSRankings.authors, startyear, endyear, weights);
+        CSRankings.authorAreas = {};
+        CSRankings.countAuthorAreas(areacount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
         CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
         /* (university, total or average number of papers) */
-        var univagg = CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights);
+        var univagg = {};
+        CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
         var univtext = {};
         /* Canonicalize names. */
         for (var dept in deptNames) {
