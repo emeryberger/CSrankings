@@ -41,44 +41,39 @@ def parseDBLP(facultydict):
                         confname = child.text
                         if (confname in confdict):
                             foundArticle = True
-                        break
                     if (child.tag == 'volume'):
                         volume = child.text
                     if (child.tag == 'number'):
                         number = child.text
-                
-                if not foundArticle:
-                    if confname is not None:
-                        for a in venues:
-                            if (a in confname):
-                                # print "WHOA: " + a + " --> " + confname
-                                break
+                    if child.tag == 'year':
+                        if child.text is not None:
+                            year = int(child.text)
+                    if child.tag == 'pages':
+                        pageCount = pagecount(child.text)
+                        startPage = startpage(child.text)
+                    if child.tag == 'author':
+                        authorName = child.text
+                        if authorName is not None:
+                            authorName = authorName.strip()
+                            authorsOnPaper += 1
+                            if authorName in facultydict:
+                                foundOneInDict = True
 
                 if (not foundArticle):
                     # Not one of our conferences.
                     continue
 
+                areaname = confdict[confname]
+                
                 # Special handling for ISMB.
                 if (confname == 'Bioinformatics'):
                     if ISMB_Bioinformatics.has_key(year):
                         (vol, num) = ISMB_Bioinformatics[year]
                         if (volume != vol) or (number != num):
                             continue
+                    else:
+                        continue
 
-                # Count the number of pages. It needs to exceed our threshold to be considered.
-                for child in node:
-                    if child.tag == 'pages':
-                        pageCount = pagecount(child.text)
-                        startPage = startpage(child.text)
-                
-                # Check that dates are in the specified range.
-                for child in node:
-                    if child.tag == 'year': #  and type(child.text) is str):
-                        year = int(child.text)
-                        if ((year >= startyear) and (year <= endyear)):
-                            inRange = True
-                        break
-                    
                 # Special handling for ICSE.
                 if ((confname == 'ICSE') or (confname == 'ICSE (1)') or (confname == 'ICSE (2)')):
                     if ICSE_ShortPaperStart.has_key(year):
@@ -88,26 +83,22 @@ def parseDBLP(facultydict):
                             # since they are "short papers" (regardless of their length).
                             continue
                 
+                # Check that dates are in the specified range.
+                if ((year >= startyear) and (year <= endyear)):
+                    inRange = True
+                    
                 if year == -1:
                     # No year.
                     print "NO YEAR WAT", confname
                     continue
-
-                # Count up how many authors are on this paper.
-                for child in node:
-                    if child.tag == 'author':
-                        authorName = child.text
-                        authorName = authorName.strip()
-                        authorsOnPaper += 1
-                        if authorName in facultydict:
-                            foundOneInDict = True
-
+               
                 tooFewPages = False
                 if ((pageCount != -1) and (pageCount < pageCountThreshold)):
                     tooFewPages = True
                     exceptionConference = ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'PLDI') or (confname == 'ACM Trans. Graph.'))
                     if ((pageCount == 0) and exceptionConference):
                         tooFewPages = False
+
                     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
                     # Only skip papers with a very small paper count,
                     # but above 1. Why?
@@ -117,10 +108,15 @@ def parseDBLP(facultydict):
                     # entries in DBLP.
                     # print "Skipping article with "+str(pageCount)+" pages."
 
+                for child in node:
+                    if child.tag == 'author':
+                        authorName = child.text
+                        if authorName is not None:
+                            print authorName.encode('utf-8') + "," + areaname + "," + str(volume) + "," + str(number) + "," + str(year) + "," + str(pageCount) + "," + str(startPage) + "," + str(authorsOnPaper)
+                
+
                 if ((confname == 'ASE') and (pageCount <= 6)):
                     tooFewPages = True
-
-                areaname = confdict[confname]
 
                 if (not inRange) or (not foundOneInDict) or tooFewPages:
                     continue
