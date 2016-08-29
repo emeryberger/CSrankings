@@ -28,7 +28,7 @@ const useArithmeticMean = false;
 const useGeometricMean  = true;    /* This is the default and arguably only principled choice. */
 const useHarmonicMean   = false;
 
-var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
+let useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
 
 /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
@@ -42,8 +42,8 @@ const areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
 				   "Theory", "Crypto", "Logic",
 				   "Graphics", "HCI", "Robotics", "Computational Biology"];
 
-var areaDict : {[key : string] : string } = {};
-var areaPosition : {[key : string] : number } = {};
+let areaDict : {[key : string] : string } = {};
+let areaPosition : {[key : string] : number } = {};
 
 /* Colors for all areas. */
 const color : Array<string> =
@@ -70,15 +70,15 @@ function translateNameToDBLP(name : string) : string {
     name = name.replace(/ä/g, "=auml=");
     name = name.replace(/ö/g, "=ouml=");
     name = name.replace(/ü/g, "=uuml=");
-    var splitName = name.split(" ");
-    var newname = "";
-    var lastName = splitName[splitName.length - 1];
+    let splitName = name.split(" ");
+    let newname = "";
+    let lastName = splitName[splitName.length - 1];
     splitName.pop();
-    var newName = splitName.join(" ");
+    let newName = splitName.join(" ");
     newName = newName.replace(/\s/g, "_");
     newName = newName.replace(/\-/g, "=");
-    var str = "http://dblp.uni-trier.de/pers/hd";
-    var lastInitial = lastName[0].toLowerCase();
+    let str = "http://dblp.uni-trier.de/pers/hd";
+    let lastInitial = lastName[0].toLowerCase();
     str += "/" + lastInitial + "/" + lastName + ":" + newName;
     return str;
 }
@@ -88,7 +88,7 @@ function translateNameToDBLP(name : string) : string {
    and areaPosition dictionary: areas -> position in area array
 */
 function initAreaDict() : void {
-    for (var i = 0; i < areaNames.length; i++) {
+    for (let i = 0; i < areaNames.length; i++) {
 	areaDict[areas[i]] = areaNames[i];
 	areaPosition[areas[i]] = i;
     }
@@ -126,17 +126,17 @@ interface HomePage {
 };
 
 
-var authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
-var coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
-var countryInfo : {[key : string] : string } = {}; /* Maps institutions to (non-US) regions. */
-var aliases : {[key : string] : string } = {}; /* Maps aliases to canonical author name. */
-var homepages : {[key : string] : string } = {}; /* Maps names to home pages. */
-var authorAreas : {[name : string] : {[area : string] : number } } = {};
+let authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
+let coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
+let countryInfo : {[key : string] : string } = {}; /* Maps institutions to (non-US) regions. */
+let aliases : {[key : string] : string } = {}; /* Maps aliases to canonical author name. */
+let homepages : {[key : string] : string } = {}; /* Maps names to home pages. */
+let authorAreas : {[name : string] : {[area : string] : number } } = {};
 /* Maps authors to the areas they have published in (for pie chart display). */
 
 /* Create the prologue that we preface each generated HTML page with (the results). */
 function makePrologue() : string {
-    var s = "<html>"
+    let s = "<html>"
 	+ "<head>"
 	+ '<style type="text/css">'
 	+ '  body { font-family: "Helvetica", "Arial"; }'
@@ -155,15 +155,15 @@ function makePrologue() : string {
 function compareNames (a : string, b : string) : number {
 
     //split the names as strings into arrays
-    var aName = a.split(" ");
-    var bName = b.split(" ");
+    let aName = a.split(" ");
+    let bName = b.split(" ");
 
     // get the last names by selecting
     // the last element in the name arrays
     // using array.length - 1 since full names
     // may also have a middle name or initial
-    var aLastName = aName[aName.length - 1];
-    var bLastName = bName[bName.length - 1];
+    let aLastName = aName[aName.length - 1];
+    let bLastName = bName[bName.length - 1];
 
     // compare the names and return either
     // a negative number, positive number
@@ -180,16 +180,16 @@ function redisplay(str : string) : void {
 /* Create a pie chart */
 function makeChart(name : string) : void {
     console.assert (color.length >= areas.length, "Houston, we have a problem.");
-    var data : any = [];
-    var keys = areas;
-    for (var i = 0; i < keys.length; i++) {
+    let data : any = [];
+    let keys = areas;
+    for (let i = 0; i < keys.length; i++) {
 	if (authorAreas[unescape(name)][keys[i]] > 0) {
 	    data.push({ "label" : areaDict[keys[i]],
 			"value" : authorAreas[unescape(name)][keys[i]],
 			"color" : color[i] });
 	}
     }
-    var pie = new d3pie(name + "-chart", {
+    let pie = new d3pie(name + "-chart", {
 	"header": {
 	    "title": {
 		"text": unescape(name),
@@ -264,8 +264,8 @@ function makeChart(name : string) : void {
 
 /* Turn the chart display on or off. */
 function toggleChart(name : string) : void {
-    var chart = document.getElementById(name+"-chart");
-    var widget = document.getElementById(name+"-widget");
+    let chart = document.getElementById(name+"-chart");
+    let widget = document.getElementById(name+"-widget");
     if (chart.style.display === 'block') {
 	chart.style.display = 'none';
 	chart.innerHTML = '';
@@ -278,8 +278,8 @@ function toggleChart(name : string) : void {
 
 /* Expand or collape the view of all faculty in a department. */
 function toggleFaculty(dept : string) : void {
-    var e = document.getElementById(dept+"-faculty");
-    var widget = document.getElementById(dept+"-widget");
+    let e = document.getElementById(dept+"-faculty");
+    let widget = document.getElementById(dept+"-widget");
     if (e.style.display === 'block') {
 	e.style.display = 'none';
 	widget.innerHTML = RightTriangle;
@@ -291,8 +291,8 @@ function toggleFaculty(dept : string) : void {
 
 /* Set all checkboxes to true. */
 function setAllCheckboxes() : void {
-    for (var i = 1; i <= areas.length; i++) {
-	var str = 'input[name=field_'+i+']';
+    for (let i = 1; i <= areas.length; i++) {
+	let str = 'input[name=field_'+i+']';
 	jQuery(str).prop('checked', true);
     }
 }
@@ -305,7 +305,7 @@ function loadCoauthors(cont : () => void ) : void {
 	download : true,
 	header: true,
 	complete : function(results) {
-	    var data : any = results.data;
+	    let data : any = results.data;
 	    coauthors = data as Array<Coauthor>;
 	    cont();
 	}
@@ -317,9 +317,9 @@ function loadAliases(cont : ()=> void ) : void {
 	header: true,
 	download : true,
 	complete : function(results) {
-	    var data : any = results.data;
-	    var d = data as Array<Alias>;
-	    for (var i = 0; i < d.length; i++) {
+	    let data : any = results.data;
+	    let d = data as Array<Alias>;
+	    for (let i = 0; i < d.length; i++) {
 		aliases[d[i].alias] = d[i].name;
 	    }
 	    cont();
@@ -332,9 +332,9 @@ function loadCountryInfo(cont : () => void ) : void {
 	header: true,
 	download : true,
 	complete : function(results) {
-	    var data : any = results.data;
-	    var ci = data as Array<CountryInfo>;
-	    for (var i = 0; i < ci.length; i++) {
+	    let data : any = results.data;
+	    let ci = data as Array<CountryInfo>;
+	    for (let i = 0; i < ci.length; i++) {
 		countryInfo[ci[i].institution] = ci[i].region;
 	    }
 	    cont();
@@ -347,10 +347,10 @@ function loadAuthorInfo(cont : () => void) : void {
 	download : true,
 	header : true,
 	complete: function(results) {
-	    var data : any = results.data;
+	    let data : any = results.data;
 	    authors = data as Array<Author>;
-	    for (var i = 1; i <= areas.length; i++) {
-		var str = 'input[name=field_'+i+']';
+	    for (let i = 1; i <= areas.length; i++) {
+		let str = 'input[name=field_'+i+']';
 		(function(s : string) {
 		    jQuery(s).click(function() {
 			rank();
@@ -367,9 +367,9 @@ function loadHomepages(cont : ()=> void ) : void {
 	header: true,
 	download : true,
 	complete : function(results) {
-	    var data : any = results.data;
-	    var d = data as Array<HomePage>;
-	    for (var i = 0; i < d.length; i++) {
+	    let data : any = results.data;
+	    let d = data as Array<HomePage>;
+	    for (let i = 0; i < d.length; i++) {
 		homepages[d[i].name] = d[i].homepage;
 	    }
 	    cont();
@@ -396,8 +396,8 @@ function activateAll(value : boolean) : boolean {
     if (value === undefined) {
 	value = true;
     }
-    for (var i = 1; i <= areas.length; i++) {
-	var str = "input[name=field_"+i+"]";
+    for (let i = 1; i <= areas.length; i++) {
+	let str = "input[name=field_"+i+"]";
 	jQuery(str).prop('checked', value);
     }
     rank();
@@ -412,8 +412,8 @@ function activateFields(value : boolean, fields : Array<number>) : boolean {
     if (value === undefined) {
 	value = true;
     }
-    for (var i = 0; i <= fields.length; i++) {
-	var str = "input[name=field_"+fields[i]+"]";
+    for (let i = 0; i <= fields.length; i++) {
+	let str = "input[name=field_"+fields[i]+"]";
 	jQuery(str).prop('checked', value);
     }
     rank();
@@ -466,7 +466,7 @@ function toggleAI(cb : any) : boolean {
 }
 
 function sortIndex(univagg : {[key: string] : number}) : string[] {
-    var keys = Object.keys(univagg);
+    let keys = Object.keys(univagg);
     keys.sort(function(a,b) {
 	if (univagg[a] > univagg[b]) {
 	    return -1;
@@ -490,15 +490,15 @@ function computeCoauthors(coauthors : Array<Coauthor>,
 			  weights : {[key:string] : number})
 : {[key : string] : Set<string> }
 {
-    var coauthorList : {[key : string] : Set<string> } = {};
-    for (var c in coauthors) {
+    let coauthorList : {[key : string] : Set<string> } = {};
+    for (let c in coauthors) {
 	if (!coauthors.hasOwnProperty(c)) {
 	    continue;
 	}
-	var author = coauthors[c].author;
-	var coauthor = coauthors[c].coauthor;
-	var year = coauthors[c].year;
-	var area = coauthors[c].area;
+	let author = coauthors[c].author;
+	let coauthor = coauthors[c].coauthor;
+	let year = coauthors[c].year;
+	let area = coauthors[c].area;
 	if (!(author in coauthorList)) {
 	    coauthorList[author] = new Set([]);
 	}
@@ -519,24 +519,24 @@ function countAuthorAreas(areacount : {[key:string] : number},
 {
     /* Delete everything from authorAreas. */
     // Build up an associative array of depts.
-    var depts : {[key:string] : number} = {};
+    let depts : {[key:string] : number} = {};
     authorAreas = {};
     /* Now rebuild. */
-    for (var r in authors) {
+    for (let r in authors) {
 	if (!authors.hasOwnProperty(r)) {
 	    continue;
 	}
 	const theDept  = authors[r].dept;
 	const theArea  = authors[r].area;
 	const theCount = parseFloat(authors[r].count);
-	var name : string  = authors[r].name;
+	let name : string  = authors[r].name;
 	if (name in aliases) {
 	    name = aliases[name];
 	}
-	var year = authors[r].year;
+	let year = authors[r].year;
 	if (!(name in authorAreas)) {
 	    authorAreas[name] = {};
-	    for (var area in areaDict) {
+	    for (let area in areaDict) {
 		if (areaDict.hasOwnProperty(area)) {
 		    authorAreas[name][area] = 0;
 		}
@@ -544,7 +544,7 @@ function countAuthorAreas(areacount : {[key:string] : number},
 	}
 	if (!(theDept in authorAreas)) {
 	    authorAreas[theDept] = {};
-	    for (var area in areaDict) {
+	    for (let area in areaDict) {
 		if (areaDict.hasOwnProperty(area)) {
 		    authorAreas[theDept][area] = 0;
 		}
@@ -573,7 +573,7 @@ function countPapers(areacount : {[key:string] : number},
 		     weights : {[key:string] : number}) : void
 {
     /* Count the total number of papers (raw and adjusted) in each area. */
-    for (var r in authors) {
+    for (let r in authors) {
 	if (!authors.hasOwnProperty(r)) {
 	    continue;
 	}
@@ -605,8 +605,8 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 			  regions : string) : void
 {
     /* Build the dictionary of departments (and count) to be ranked. */
-    var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
-    for (var r in authors) {
+    let visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
+    for (let r in authors) {
 	if (!authors.hasOwnProperty(r)) {
 	    continue;
 	}
@@ -692,8 +692,8 @@ function computeStats(deptNames : {[key:string] : Array<string> },
 : {[key: string] : number}
 {
    
-    var univagg : {[key: string] : number} = {};
-    for (var dept in deptNames) {
+    let univagg : {[key: string] : number} = {};
+    for (let dept in deptNames) {
 	if (!deptNames.hasOwnProperty(dept)) {
 	    continue;
 	}
@@ -710,9 +710,9 @@ function computeStats(deptNames : {[key:string] : Array<string> },
 	} else {
 	    univagg[dept] = 0;
 	}
-	for (var ind = 0; ind < areas.length; ind++) {
-	    var area = areas[ind];
-	    var areaDept = area+dept;
+	for (let ind = 0; ind < areas.length; ind++) {
+	    let area = areas[ind];
+	    let areaDept = area+dept;
 	    if (!(areaDept in areaDeptAdjustedCount)) {
 		areaDeptAdjustedCount[areaDept] = 0;
 	    }
@@ -752,28 +752,28 @@ function computeStats(deptNames : {[key:string] : Array<string> },
 }
 
 function rank() : boolean {
-    var form = document.getElementById("rankform");
-    var s : string = "";
-    var deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
-    var deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
-    var facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
-    var facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
-    var weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-    var areacount : {[key: string] : number} = {};          /* raw number of papers in each area */
-    var areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
-    var areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
+    let form = document.getElementById("rankform");
+//    let s : string = "";
+    let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
+    let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
+    let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
+    let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
+    let weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+    let areacount : {[key: string] : number} = {};          /* raw number of papers in each area */
+    let areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
+    let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
     
     const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
     const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
     const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
     /* Show the top N (with more if tied at the end) */
-    var minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
+    let minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
     const whichRegions       = jQuery("#regions").find(":selected").val();
 
-    var numAreas = 0; /* Total number of areas checked */
+    let numAreas = 0; /* Total number of areas checked */
 
     /* Update the 'weights' of each area from the checkboxes. */
-    for (var ind = 0; ind < areas.length; ind++) {
+    for (let ind = 0; ind < areas.length; ind++) {
 	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
 	if (weights[areas[ind]] === 1) {
 	    /* One more area checked. */
@@ -783,7 +783,7 @@ function rank() : boolean {
 	areaAdjustedCount[areas[ind]] = 0;
     }
 
-    var coauthorList : {[key : string] : Set<string> } = {};
+    let coauthorList : {[key : string] : Set<string> } = {};
     if (showCoauthors) {
 	coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
     }
@@ -792,13 +792,13 @@ function rank() : boolean {
     buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
     
     /* (university, total or average number of papers) */
-    var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
+    let univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
 
-    var univtext : {[key:string] : string} = {};
+    let univtext : {[key:string] : string} = {};
 
     /* Canonicalize names. */
-    for (dept in deptNames) {
-	for (var ind = 0; ind < deptNames[dept].length; ind++) {
+    for (let dept in deptNames) {
+	for (let ind = 0; ind < deptNames[dept].length; ind++) {
 	    name = deptNames[dept][ind];
 	    if (name in aliases) {
 		deptNames[dept][ind] = aliases[name];
@@ -814,21 +814,21 @@ function rank() : boolean {
     }
     
     /* Build drop down for faculty names and paper counts. */
-    for (dept in deptNames) {
-	var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+    for (let dept in deptNames) {
+	let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	/* Build a dict of just faculty from this department for sorting purposes. */
-	var fc : {[key:string] : number} = {};
-	for (var ind = 0; ind < deptNames[dept].length; ind++) {
+	let fc : {[key:string] : number} = {};
+	for (let ind = 0; ind < deptNames[dept].length; ind++) {
 	    name = deptNames[dept][ind];
 	    fc[name] = facultycount[name+dept];
 	}
-	var keys = Object.keys(fc);
+	let keys = Object.keys(fc);
 	keys.sort(function(a : string, b : string){ return fc[b] - fc[a];});
-	for (var ind = 0; ind < keys.length; ind++) {
+	for (let ind = 0; ind < keys.length; ind++) {
 	    name = keys[ind];
 	    if (showCoauthors) {
 		/* Build up text for co-authors. */
-		var coauthorStr = "";
+		let coauthorStr = "";
 		if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
 		    coauthorList[name] = new Set([]);
 		    coauthorStr = "(no senior co-authors on these papers)";
@@ -836,7 +836,7 @@ function rank() : boolean {
 		    coauthorStr = "Senior co-authors on these papers:\n";
 		}
 		/* Sort it by last name. */
-		var l : Array<string> = [];
+		let l : Array<string> = [];
 		coauthorList[name].forEach(function (item, coauthors) {
 		    l.push(item);
 		});
@@ -884,7 +884,7 @@ function rank() : boolean {
     }
 
     /* Start building up the string to output. */
-    var s = makePrologue();
+    let s = makePrologue();
 
     if (displayPercentages) {
 	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
@@ -894,16 +894,16 @@ function rank() : boolean {
     s = s + "<tbody>";
     /* As long as there is at least one thing selected, compute and display a ranking. */
     if (numAreas > 0) {
-	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
-	var rank = 0;        /* index */
-	var oldv : any = null;     /* old number - to track ties */
+	let ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
+	let rank = 0;        /* index */
+	let oldv : any = null;     /* old number - to track ties */
 	/* Sort the university aggregate count from largest to smallest. */
-	var keys2 = sortIndex(univagg);
+	let keys2 = sortIndex(univagg);
 	/* Display rankings until we have shown `minToRank` items or
 	   while there is a tie (those all get the same rank). */
-	for (var ind = 0; ind < keys2.length; ind++) {
-	    var dept = keys2[ind];
-	    var v = univagg[dept];
+	for (let ind = 0; ind < keys2.length; ind++) {
+	    let dept = keys2[ind];
+	    let v = univagg[dept];
 	    
 	    if (useArithmeticMean || useHarmonicMean) {
 		v = (Math.floor(10000.0 * v) / (100.0));
