@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, ElementTree, pageCountThreshold, ISMB_Bioinformatics
+from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart
 
 def parseDBLP(facultydict):
     authlogs = {}
@@ -27,6 +27,7 @@ def parseDBLP(facultydict):
             confname = ""
             year = -1
             pageCount = -1
+            startPage = -1
             foundOneInDict = False
             number = 0
             volume = 0
@@ -63,7 +64,13 @@ def parseDBLP(facultydict):
                         (vol, num) = ISMB_Bioinformatics[year]
                         if (volume != vol) or (number != num):
                             continue
-                        
+
+                # Count the number of pages. It needs to exceed our threshold to be considered.
+                for child in node:
+                    if child.tag == 'pages':
+                        pageCount = pagecount(child.text)
+                        startPage = startpage(child.text)
+                
                 # Check that dates are in the specified range.
                 for child in node:
                     if child.tag == 'year': #  and type(child.text) is str):
@@ -72,6 +79,15 @@ def parseDBLP(facultydict):
                             inRange = True
                         break
                     
+                # Special handling for ICSE.
+                if ((confname == 'ICSE') or (confname == 'ICSE (1)') or (confname == 'ICSE (2)')):
+                    if ICSE_ShortPaperStart.has_key(year):
+                        pageno = ICSE_ShortPaperStart[year]
+                        if startPage >= pageno:
+                            # Omit papers that start at or beyond this page,
+                            # since they are "short papers" (regardless of their length).
+                            continue
+                
                 if year == -1:
                     # No year.
                     print "NO YEAR WAT", confname
@@ -85,11 +101,6 @@ def parseDBLP(facultydict):
                         authorsOnPaper += 1
                         if authorName in facultydict:
                             foundOneInDict = True
-
-                # Count the number of pages. It needs to exceed our threshold to be considered.
-                for child in node:
-                    if child.tag == 'pages':
-                        pageCount = pagecount(child.text)
 
                 tooFewPages = False
                 if ((pageCount != -1) and (pageCount < pageCountThreshold)):
