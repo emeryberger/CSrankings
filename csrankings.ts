@@ -866,7 +866,7 @@ class CSRankings {
 		    + facultycount[name+dept]
 		    + '</a>'
 		    + "</small></td>"
-		    + '</a></small></td><td align="right"><small>'
+		    + '<td align="right"><small>'
 		//		+ '<abbr title="' + coauthorStr + '">'
 		    + (Math.floor(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 		//		+ '</abbr>'
