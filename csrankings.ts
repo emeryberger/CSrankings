@@ -366,15 +366,8 @@ class CSRankings {
 		for (let i = 1; i <= self.areas.length; i++) {
 		    let str = 'input[name=field_'+i+']';
 		    jQuery(str).click(function() { self.rank(); });
-/*
-		    (function(s : string) {
-			jQuery(s).click(function() {
-			    self.rank();
-			});})(str);
-*/
 		}
 		cont();
-		/*	    rank(); */
 	    }
 	});
     }
@@ -528,14 +521,20 @@ class CSRankings {
 	    if (!authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    const theDept  = authors[r].dept;
+	    let year = authors[r].year;
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
+	    }
 	    const theArea  = authors[r].area;
+	    if (weights[theArea] === 0) {
+		continue;
+	    }
+	    const theDept  = authors[r].dept;
 	    const theCount = parseFloat(authors[r].count);
 	    let name : string  = authors[r].name;
 	    if (name in CSRankings.aliases) {
 		name = CSRankings.aliases[name];
 	    }
-	    let year = authors[r].year;
 	    if (!(name in authorAreas)) {
 		authorAreas[name] = {};
 		for (let area in CSRankings.areaDict) {
@@ -552,10 +551,8 @@ class CSRankings {
 		    }
 		}
 	    }
-	    if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
-		authorAreas[name][theArea] += theCount;
-		authorAreas[theDept][theArea] += theCount;
-	    }
+	    authorAreas[name][theArea] += theCount;
+	    authorAreas[theDept][theArea] += theCount;
 	}
     }
 
