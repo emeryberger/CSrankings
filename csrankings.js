@@ -713,7 +713,7 @@ var CSRankings = (function () {
                     + facultycount[name + dept]
                     + '</a>'
                     + "</small></td>"
-                    + '</a></small></td><td align="right"><small>'
+                    + '<td align="right"><small>'
                     + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
