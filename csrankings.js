@@ -276,7 +276,6 @@ var CSRankings = (function () {
                     jQuery(str).click(function () { self.rank(); });
                 }
                 cont();
-                /*	    rank(); */
             }
         });
     };
@@ -404,14 +403,20 @@ var CSRankings = (function () {
             if (!authors.hasOwnProperty(r)) {
                 continue;
             }
-            var theDept = authors[r].dept;
+            var year = authors[r].year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
             var theArea = authors[r].area;
+            if (weights[theArea] === 0) {
+                continue;
+            }
+            var theDept = authors[r].dept;
             var theCount = parseFloat(authors[r].count);
             var name_1 = authors[r].name;
             if (name_1 in CSRankings.aliases) {
                 name_1 = CSRankings.aliases[name_1];
             }
-            var year = authors[r].year;
             if (!(name_1 in authorAreas)) {
                 authorAreas[name_1] = {};
                 for (var area in CSRankings.areaDict) {
@@ -428,10 +433,8 @@ var CSRankings = (function () {
                     }
                 }
             }
-            if ((weights[theArea] !== 0) && (year >= startyear) && (year <= endyear)) {
-                authorAreas[name_1][theArea] += theCount;
-                authorAreas[theDept][theArea] += theCount;
-            }
+            authorAreas[name_1][theArea] += theCount;
+            authorAreas[theDept][theArea] += theCount;
         }
     };
     CSRankings.countPapers = function (areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
