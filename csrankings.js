@@ -614,6 +614,24 @@ var CSRankings = (function () {
         }
         return numAreas;
     };
+    CSRankings.canonicalizeNames = function (deptNames, facultycount, facultyAdjustedCount) {
+        for (var dept in deptNames) {
+            for (var ind = 0; ind < deptNames[dept].length; ind++) {
+                name = deptNames[dept][ind];
+                if (name in CSRankings.aliases) {
+                    deptNames[dept][ind] = CSRankings.aliases[name];
+                    if (!(CSRankings.aliases[name] + dept in facultycount)) {
+                        facultycount[CSRankings.aliases[name] + dept] = facultycount[name + dept];
+                        facultyAdjustedCount[CSRankings.aliases[name] + dept] = facultyAdjustedCount[name + dept];
+                    }
+                    else {
+                        facultycount[CSRankings.aliases[name] + dept] += facultycount[name + dept];
+                        facultyAdjustedCount[CSRankings.aliases[name] + dept] += facultyAdjustedCount[name + dept];
+                    }
+                }
+            }
+        }
+    };
     CSRankings.rank = function () {
         var form = document.getElementById("rankform");
         //    let s : string = "";
@@ -646,22 +664,7 @@ var CSRankings = (function () {
         CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
         var univtext = {};
         /* Canonicalize names. */
-        for (var dept in deptNames) {
-            for (var ind = 0; ind < deptNames[dept].length; ind++) {
-                name = deptNames[dept][ind];
-                if (name in CSRankings.aliases) {
-                    deptNames[dept][ind] = CSRankings.aliases[name];
-                    if (!(CSRankings.aliases[name] + dept in facultycount)) {
-                        facultycount[CSRankings.aliases[name] + dept] = facultycount[name + dept];
-                        facultyAdjustedCount[CSRankings.aliases[name] + dept] = facultyAdjustedCount[name + dept];
-                    }
-                    else {
-                        facultycount[CSRankings.aliases[name] + dept] += facultycount[name + dept];
-                        facultyAdjustedCount[CSRankings.aliases[name] + dept] += facultyAdjustedCount[name + dept];
-                    }
-                }
-            }
-        }
+        CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         /* Build drop down for faculty names and paper counts. */
         var _loop_1 = function(dept) {
             var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
