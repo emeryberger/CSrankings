@@ -746,6 +746,24 @@ class CSRankings {
 	}
     }
 
+    public static updateWeights(weights : {[key: string] : number},
+				areaCount :  {[key: string] : number},
+				areaAdjustedCount : {[key: string] : number}) : number
+    {
+	let numAreas = 0;
+	/* Update the 'weights' of each area from the checkboxes. */
+	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
+	    weights[CSRankings.areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
+	    if (weights[CSRankings.areas[ind]] === 1) {
+		/* One more area checked. */
+		numAreas++;
+	    }
+	    areaCount[CSRankings.areas[ind]] = 0;
+	    areaAdjustedCount[CSRankings.areas[ind]] = 0;
+	}
+	return numAreas;
+    }
+    
     public static rank() : boolean {
 	let form = document.getElementById("rankform");
 	//    let s : string = "";
@@ -754,7 +772,7 @@ class CSRankings {
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
 	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
 	let weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-	let areacount : {[key: string] : number} = {};          /* raw number of papers in each area */
+	let areaCount : {[key: string] : number} = {};          /* raw number of papers in each area */
 	let areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
 	let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
 	
@@ -765,26 +783,17 @@ class CSRankings {
 	let minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
-	let numAreas = 0; /* Total number of areas checked */
-	
-	/* Update the 'weights' of each area from the checkboxes. */
-	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
-	    weights[CSRankings.areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
-	    if (weights[CSRankings.areas[ind]] === 1) {
-		/* One more area checked. */
-		numAreas++;
-	    }
-	    areacount[CSRankings.areas[ind]] = 0;
-	    areaAdjustedCount[CSRankings.areas[ind]] = 0;
-	}
+//	let numAreas = 0; /* Total number of areas checked */
 
+	let numAreas = CSRankings.updateWeights(weights, areaCount, areaAdjustedCount);
+	
 	let coauthorList : {[key : string] : Set<string> } = {};
 	if (CSRankings.showCoauthors) {
 	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
 	}
-	CSRankings.countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
+	CSRankings.countPapers(areaCount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
 	CSRankings.authorAreas = {};
-	CSRankings.countAuthorAreas(areacount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
+	CSRankings.countAuthorAreas(areaCount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
 	CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
 	
 	/* (university, total or average number of papers) */
@@ -971,7 +980,7 @@ class CSRankings {
 	    /* Nothing selected. */
 	    s = "<h4>Please select at least one area.</h4>";
 	}
-	setTimeout((function(str : string) { CSRankings.redisplay(str); })(s), 0);
+	setTimeout((function() { CSRankings.redisplay(s); }), 0);
 	return false; 
     }
 
