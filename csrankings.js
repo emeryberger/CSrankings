@@ -707,42 +707,10 @@ var CSRankings = (function () {
             _loop_1(dept);
         }
     };
-    CSRankings.rank = function () {
-        var form = document.getElementById("rankform");
-        //    let s : string = "";
-        var deptNames = {}; /* names of departments. */
-        var deptCounts = {}; /* number of faculty in each department. */
-        var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
-        var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
-        var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-        var areaCount = {}; /* raw number of papers in each area */
-        var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
-        var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
-        var startyear = parseInt(jQuery("#startyear").find(":selected").text());
-        var endyear = parseInt(jQuery("#endyear").find(":selected").text());
-        var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+    CSRankings.buildOutputString = function (displayPercentages, numAreas, univagg, deptCounts, univtext) {
+        var s = CSRankings.makePrologue();
         /* Show the top N (with more if tied at the end) */
         var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
-        var whichRegions = jQuery("#regions").find(":selected").val();
-        //	let numAreas = 0; /* Total number of areas checked */
-        var numAreas = CSRankings.updateWeights(weights, areaCount, areaAdjustedCount);
-        var coauthorList = {};
-        if (CSRankings.showCoauthors) {
-            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
-        }
-        CSRankings.countPapers(areaCount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
-        CSRankings.authorAreas = {};
-        CSRankings.countAuthorAreas(areaCount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
-        CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
-        /* (university, total or average number of papers) */
-        var univagg = {};
-        CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
-        var univtext = {};
-        /* Canonicalize names. */
-        CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
-        CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext);
-        /* Start building up the string to output. */
-        var s = CSRankings.makePrologue();
         if (displayPercentages) {
             s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
         }
@@ -832,6 +800,42 @@ var CSRankings = (function () {
             /* Nothing selected. */
             s = "<h4>Please select at least one area.</h4>";
         }
+        return s;
+    };
+    CSRankings.rank = function () {
+        var form = document.getElementById("rankform");
+        //    let s : string = "";
+        var deptNames = {}; /* names of departments. */
+        var deptCounts = {}; /* number of faculty in each department. */
+        var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
+        var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
+        var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
+        var areaCount = {}; /* raw number of papers in each area */
+        var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
+        var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
+        var startyear = parseInt(jQuery("#startyear").find(":selected").text());
+        var endyear = parseInt(jQuery("#endyear").find(":selected").text());
+        var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+        var whichRegions = jQuery("#regions").find(":selected").val();
+        //	let numAreas = 0; /* Total number of areas checked */
+        var numAreas = CSRankings.updateWeights(weights, areaCount, areaAdjustedCount);
+        var coauthorList = {};
+        if (CSRankings.showCoauthors) {
+            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
+        }
+        CSRankings.countPapers(areaCount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
+        CSRankings.authorAreas = {};
+        CSRankings.countAuthorAreas(areaCount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
+        CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
+        /* (university, total or average number of papers) */
+        var univagg = {};
+        CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
+        var univtext = {};
+        /* Canonicalize names. */
+        CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
+        CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext);
+        /* Start building up the string to output. */
+        var s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
         setTimeout((function () { CSRankings.redisplay(s); }), 0);
         return false;
     };

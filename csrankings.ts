@@ -861,54 +861,17 @@ class CSRankings {
 	    univtext[dept] = p;
 	}
     }
-    
-    public static rank() : boolean {
-	let form = document.getElementById("rankform");
-	//    let s : string = "";
-	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
-	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
-	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
-	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
-	let weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-	let areaCount : {[key: string] : number} = {};          /* raw number of papers in each area */
-	let areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
-	let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
-	
-	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
-	const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
-	const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+
+
+    private static buildOutputString(displayPercentages : boolean,
+				     numAreas : number,
+			             univagg : {[key: string] : number},
+				     deptCounts: {[key: string] : number},
+				     univtext: {[key:string] : string}) : string
+    {
+	let s = CSRankings.makePrologue();
 	/* Show the top N (with more if tied at the end) */
 	let minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
-	const whichRegions       = jQuery("#regions").find(":selected").val();
-
-//	let numAreas = 0; /* Total number of areas checked */
-
-	let numAreas = CSRankings.updateWeights(weights, areaCount, areaAdjustedCount);
-	
-	let coauthorList : {[key : string] : Set<string> } = {};
-	if (CSRankings.showCoauthors) {
-	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
-	}
-	CSRankings.countPapers(areaCount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
-	CSRankings.authorAreas = {};
-	CSRankings.countAuthorAreas(areaCount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
-	CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
-	
-	/* (university, total or average number of papers) */
-	let univagg : {[key: string] : number} = {};
-	CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
-
-	let univtext : {[key:string] : string} = {};
-
-	/* Canonicalize names. */
-
-	CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
-
-	CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext);
-
-
-	/* Start building up the string to output. */
-	let s = CSRankings.makePrologue();
 
 	if (displayPercentages) {
 	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
@@ -997,6 +960,54 @@ class CSRankings {
 	    /* Nothing selected. */
 	    s = "<h4>Please select at least one area.</h4>";
 	}
+	return s;
+    }
+    
+    public static rank() : boolean {
+	let form = document.getElementById("rankform");
+	//    let s : string = "";
+	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
+	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
+	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
+	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
+	let weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+	let areaCount : {[key: string] : number} = {};          /* raw number of papers in each area */
+	let areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
+	let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
+	
+	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
+	const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
+	const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+	const whichRegions       = jQuery("#regions").find(":selected").val();
+
+//	let numAreas = 0; /* Total number of areas checked */
+
+	let numAreas = CSRankings.updateWeights(weights, areaCount, areaAdjustedCount);
+	
+	let coauthorList : {[key : string] : Set<string> } = {};
+	if (CSRankings.showCoauthors) {
+	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
+	}
+	CSRankings.countPapers(areaCount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
+	CSRankings.authorAreas = {};
+	CSRankings.countAuthorAreas(areaCount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
+	CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
+	
+	/* (university, total or average number of papers) */
+	let univagg : {[key: string] : number} = {};
+	CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
+
+	let univtext : {[key:string] : string} = {};
+
+	/* Canonicalize names. */
+
+	CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
+
+	CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext);
+
+	/* Start building up the string to output. */
+	let s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
+	
 	setTimeout((function() { CSRankings.redisplay(s); }), 0);
 	return false; 
     }
