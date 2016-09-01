@@ -763,6 +763,27 @@ class CSRankings {
 	}
 	return numAreas;
     }
+
+    public static canonicalizeNames(deptNames : {[key: string] : Array<string> },
+				    facultycount :  {[key: string] : number},
+				    facultyAdjustedCount: {[key: string] : number})
+    {
+	for (let dept in deptNames) {
+	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
+		name = deptNames[dept][ind];
+		if (name in CSRankings.aliases) {
+		    deptNames[dept][ind] = CSRankings.aliases[name];
+		    if (!(CSRankings.aliases[name]+dept in facultycount)) {
+			facultycount[CSRankings.aliases[name]+dept] = facultycount[name+dept];
+			facultyAdjustedCount[CSRankings.aliases[name]+dept] = facultyAdjustedCount[name+dept];
+		    } else {
+			facultycount[CSRankings.aliases[name]+dept] += facultycount[name+dept];
+			facultyAdjustedCount[CSRankings.aliases[name]+dept] += facultyAdjustedCount[name+dept];
+		    }
+		}
+	    }
+	}
+    }
     
     public static rank() : boolean {
 	let form = document.getElementById("rankform");
@@ -803,22 +824,8 @@ class CSRankings {
 	let univtext : {[key:string] : string} = {};
 
 	/* Canonicalize names. */
-	
-	for (let dept in deptNames) {
-	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
-		name = deptNames[dept][ind];
-		if (name in CSRankings.aliases) {
-		    deptNames[dept][ind] = CSRankings.aliases[name];
-		    if (!(CSRankings.aliases[name]+dept in facultycount)) {
-			facultycount[CSRankings.aliases[name]+dept] = facultycount[name+dept];
-			facultyAdjustedCount[CSRankings.aliases[name]+dept] = facultyAdjustedCount[name+dept];
-		    } else {
-			facultycount[CSRankings.aliases[name]+dept] += facultycount[name+dept];
-			facultyAdjustedCount[CSRankings.aliases[name]+dept] += facultyAdjustedCount[name+dept];
-		    }
-		}
-	    }
-	}
+
+	CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
 	
 	/* Build drop down for faculty names and paper counts. */
 	for (let dept in deptNames) {
