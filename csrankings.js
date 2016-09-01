@@ -600,6 +600,20 @@ var CSRankings = (function () {
             }
         }
     };
+    CSRankings.updateWeights = function (weights, areaCount, areaAdjustedCount) {
+        var numAreas = 0;
+        /* Update the 'weights' of each area from the checkboxes. */
+        for (var ind = 0; ind < CSRankings.areas.length; ind++) {
+            weights[CSRankings.areas[ind]] = jQuery('input[name=field_' + (ind + 1) + ']').prop('checked') ? 1 : 0;
+            if (weights[CSRankings.areas[ind]] === 1) {
+                /* One more area checked. */
+                numAreas++;
+            }
+            areaCount[CSRankings.areas[ind]] = 0;
+            areaAdjustedCount[CSRankings.areas[ind]] = 0;
+        }
+        return numAreas;
+    };
     CSRankings.rank = function () {
         var form = document.getElementById("rankform");
         //    let s : string = "";
@@ -608,7 +622,7 @@ var CSRankings = (function () {
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
         var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
         var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-        var areacount = {}; /* raw number of papers in each area */
+        var areaCount = {}; /* raw number of papers in each area */
         var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
         var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
         var startyear = parseInt(jQuery("#startyear").find(":selected").text());
@@ -617,24 +631,15 @@ var CSRankings = (function () {
         /* Show the top N (with more if tied at the end) */
         var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
         var whichRegions = jQuery("#regions").find(":selected").val();
-        var numAreas = 0; /* Total number of areas checked */
-        /* Update the 'weights' of each area from the checkboxes. */
-        for (var ind = 0; ind < CSRankings.areas.length; ind++) {
-            weights[CSRankings.areas[ind]] = jQuery('input[name=field_' + (ind + 1) + ']').prop('checked') ? 1 : 0;
-            if (weights[CSRankings.areas[ind]] === 1) {
-                /* One more area checked. */
-                numAreas++;
-            }
-            areacount[CSRankings.areas[ind]] = 0;
-            areaAdjustedCount[CSRankings.areas[ind]] = 0;
-        }
+        //	let numAreas = 0; /* Total number of areas checked */
+        var numAreas = CSRankings.updateWeights(weights, areaCount, areaAdjustedCount);
         var coauthorList = {};
         if (CSRankings.showCoauthors) {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
         }
-        CSRankings.countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
+        CSRankings.countPapers(areaCount, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
         CSRankings.authorAreas = {};
-        CSRankings.countAuthorAreas(areacount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
+        CSRankings.countAuthorAreas(areaCount, CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
         CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
         /* (university, total or average number of papers) */
         var univagg = {};
@@ -821,7 +826,7 @@ var CSRankings = (function () {
             /* Nothing selected. */
             s = "<h4>Please select at least one area.</h4>";
         }
-        setTimeout((function (str) { CSRankings.redisplay(str); })(s), 0);
+        setTimeout((function () { CSRankings.redisplay(s); }), 0);
         return false;
     };
     CSRankings.activateDenseRankings = function () {
