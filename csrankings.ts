@@ -465,19 +465,19 @@ class CSRankings {
 	}
     }
 
+/*
     private static countPapers(areaDeptAdjustedCount  : {[key:string] : number},
 			       authors : Array<Author>,
 			       startyear : number,
 			       endyear : number,
 			       weights : {[key:string] : number}) : void
     {
-	/* Count the total number of papers (raw and adjusted) in each area. */
 	for (let r in authors) {
 	    if (!authors.hasOwnProperty(r)) {
 		continue;
 	    }
 	    const { area, year, dept } = authors[r];
-	    if (weights[area] == 0) {
+	    if (weights[area] === 0) {
 		continue;
 	    }
 	    if ((year < startyear) || (year > endyear)) {
@@ -486,7 +486,7 @@ class CSRankings {
 	    areaDeptAdjustedCount[area+dept] = 0;
 	}
     }
-
+*/
 
     /* Build the dictionary of departments (and count) to be ranked. */
     private static buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
@@ -863,13 +863,14 @@ class CSRankings {
 						       currentWeights);
 	}
 
+/*
 	CSRankings.countPapers(areaDeptAdjustedCount,
 			       CSRankings.authors,
 			       startyear,
 			       endyear,
 			       currentWeights);
+*/
 	
-//	CSRankings.authorAreas = {};
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
 				    endyear,
