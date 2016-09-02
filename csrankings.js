@@ -368,22 +368,28 @@ var CSRankings = (function () {
             }
         }
     };
-    CSRankings.countPapers = function (areaDeptAdjustedCount, authors, startyear, endyear, weights) {
-        /* Count the total number of papers (raw and adjusted) in each area. */
-        for (var r in authors) {
+    /*
+        private static countPapers(areaDeptAdjustedCount  : {[key:string] : number},
+                       authors : Array<Author>,
+                       startyear : number,
+                       endyear : number,
+                       weights : {[key:string] : number}) : void
+        {
+        for (let r in authors) {
             if (!authors.hasOwnProperty(r)) {
-                continue;
+            continue;
             }
-            var _a = authors[r], area = _a.area, year = _a.year, dept = _a.dept;
-            if (weights[area] == 0) {
-                continue;
+            const { area, year, dept } = authors[r];
+            if (weights[area] === 0) {
+            continue;
             }
             if ((year < startyear) || (year > endyear)) {
-                continue;
+            continue;
             }
-            areaDeptAdjustedCount[area + dept] = 0;
+            areaDeptAdjustedCount[area+dept] = 0;
         }
-    };
+        }
+    */
     /* Build the dictionary of departments (and count) to be ranked. */
     CSRankings.buildDepartments = function (areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, regions) {
         /* contains an author name if that author has been processed. */
@@ -724,8 +730,13 @@ var CSRankings = (function () {
         if (CSRankings.showCoauthors) {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
         }
-        CSRankings.countPapers(areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights);
-        //	CSRankings.authorAreas = {};
+        /*
+            CSRankings.countPapers(areaDeptAdjustedCount,
+                           CSRankings.authors,
+                           startyear,
+                           endyear,
+                           currentWeights);
+        */
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, CSRankings.previousWeights, currentWeights, CSRankings.authorAreas);
         CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights, whichRegions);
         /* (university, total or average number of papers) */
