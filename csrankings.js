@@ -454,10 +454,7 @@ var CSRankings = (function () {
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            var areaDept = area + dept;
-            areaDeptAdjustedCount[areaDept] = 0;
-            var count = parseFloat(authors[r].count);
-            var adjustedCount = parseFloat(authors[r].adjustedcount);
+            areaDeptAdjustedCount[area + dept] = 0;
         }
     };
     /* Build the dictionary of departments (and count) to be ranked. */
@@ -540,15 +537,7 @@ var CSRankings = (function () {
                 continue;
             }
             if (displayPercentages) {
-                if (CSRankings.useArithmeticMean) {
-                    univagg[dept] = 0;
-                }
-                if (CSRankings.useGeometricMean) {
-                    univagg[dept] = 1;
-                }
-                if (CSRankings.useHarmonicMean) {
-                    univagg[dept] = 0;
-                }
+                univagg[dept] = 1;
             }
             else {
                 univagg[dept] = 0;
@@ -562,15 +551,8 @@ var CSRankings = (function () {
                 if (weights[area] != 0) {
                     if (displayPercentages) {
                         if (areaDeptAdjustedCount[areaDept] != 0) {
-                            if (CSRankings.useArithmeticMean) {
-                                univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area];
-                            }
-                            if (CSRankings.useGeometricMean) {
-                                univagg[dept] *= areaDeptAdjustedCount[areaDept];
-                            }
-                            if (CSRankings.useHarmonicMean) {
-                                univagg[dept] += areaAdjustedCount[area] / areaDeptAdjustedCount[areaDept];
-                            }
+                            // geometric mean
+                            univagg[dept] *= areaDeptAdjustedCount[areaDept];
                         }
                         else {
                         }
@@ -581,15 +563,8 @@ var CSRankings = (function () {
                 }
             }
             if (displayPercentages) {
-                if (CSRankings.useArithmeticMean) {
-                    univagg[dept] = univagg[dept] / numAreas;
-                }
-                if (CSRankings.useGeometricMean) {
-                    univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
-                }
-                if (CSRankings.useHarmonicMean) {
-                    univagg[dept] = numAreas / univagg[dept];
-                }
+                // finally compute geometric mean.
+                univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
             }
         }
     };
@@ -722,13 +697,7 @@ var CSRankings = (function () {
                while there is a tie (those all get the same rank). */
             for (var ind = 0; ind < keys2.length; ind++) {
                 var dept = keys2[ind];
-                var v = univagg[dept];
-                if (CSRankings.useArithmeticMean || CSRankings.useHarmonicMean) {
-                    v = (Math.floor(10000.0 * v) / (100.0));
-                }
-                if (CSRankings.useGeometricMean) {
-                    v = (Math.floor(10.0 * v) / 10.0);
-                }
+                var v = Math.floor(10.0 * univagg[dept]) / 10.0;
                 if ((ind >= minToRank) && (v != oldv)) {
                     break;
                 }
@@ -755,12 +724,7 @@ var CSRankings = (function () {
                 s += "</td>";
                 if (displayPercentages) {
                     /* Show average */
-                    if (CSRankings.useArithmeticMean || CSRankings.useHarmonicMean) {
-                        s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2) + "%</td>";
-                    }
-                    if (CSRankings.useGeometricMean) {
-                        s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
-                    }
+                    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 }
                 else {
                     /* Show count */
@@ -802,7 +766,7 @@ var CSRankings = (function () {
         var deptCounts = {}; /* number of faculty in each department. */
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
         var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
-        var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
+        var currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
         //	let areaCount : {[key: string] : number} = {};          /* raw number of papers in each area */
         var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
         var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
@@ -810,29 +774,39 @@ var CSRankings = (function () {
         var endyear = parseInt(jQuery("#endyear").find(":selected").text());
         var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
-        /// Get total number of areas checked and update weights array.
-        var numAreas = CSRankings.updateWeights(weights);
-        // Clear out the area adjusted counts.
+        var numAreas = 0;
+        if (currentWeights === {}) {
+            // This is our first rodeo.
+            numAreas = CSRankings.updateWeights(currentWeights);
+            // Save the previous weights as the current ones.
+            CSRankings.previousWeights = currentWeights;
+        }
+        else {
+            numAreas = CSRankings.updateWeights(currentWeights);
+        }
+        // Clear out the area adjusted counts (used for computing means).
         for (var ind = 0; ind < CSRankings.areas.length; ind++) {
             areaAdjustedCount[CSRankings.areas[ind]] = 0;
         }
         var coauthorList = {};
         if (CSRankings.showCoauthors) {
-            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, weights);
+            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
         }
-        CSRankings.countPapers(areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, weights);
+        CSRankings.countPapers(areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights);
         CSRankings.authorAreas = {};
-        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, weights, CSRankings.authorAreas);
-        CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, weights, whichRegions);
+        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, currentWeights, CSRankings.authorAreas);
+        CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights, whichRegions);
         /* (university, total or average number of papers) */
         var univagg = {};
-        CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, weights, univagg);
+        CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights, univagg);
         var univtext = {};
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext);
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
+        // Save these weights for next time.
+        CSRankings.previousWeights = currentWeights;
         /* Finally done. Redraw! */
         setTimeout(function () { CSRankings.redisplay(s); }, 0);
         return false;
@@ -855,9 +829,6 @@ var CSRankings = (function () {
     CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
     CSRankings.showCoauthors = false;
     CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
-    CSRankings.useArithmeticMean = false;
-    CSRankings.useGeometricMean = true; /* This is the default and arguably only principled choice. */
-    CSRankings.useHarmonicMean = false;
     /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
     CSRankings.areas = ["ai", "vision", "mlmining", "nlp", "web",
         "arch", "networks", "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
@@ -882,6 +853,8 @@ var CSRankings = (function () {
     CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
     CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
     CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+    // Hold the weights from the previous classification (that is, before re-ranking).
+    CSRankings.previousWeights = {};
     return CSRankings;
 }());
 function init() {
