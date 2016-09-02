@@ -33,7 +33,7 @@ interface Coauthor {
 
 interface CountryInfo {
     institution : string;
-    region : string;
+    region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "world";
 };
 
 interface Alias {
@@ -51,13 +51,20 @@ class CSRankings {
     constructor() {
 	CSRankings.setAllCheckboxes();
 	CSRankings.initAreaDict();
-	CSRankings.loadAliases(function() {
-	    CSRankings.loadHomepages(function() {
-		CSRankings.loadAuthorInfo(function() {
-		    CSRankings.loadCountryInfo(CSRankings.rank);
+	let next = ()=> {
+	    CSRankings.loadAliases(function() {
+		CSRankings.loadHomepages(function() {
+		    CSRankings.loadAuthorInfo(function() {
+			CSRankings.loadCountryInfo(CSRankings.rank);
+		    });
 		});
 	    });
-	});
+	};
+	if (CSRankings.showCoauthors) {
+	    CSRankings.loadCoauthors(next);
+	} else {
+	    next();
+	}
     }
 
     private static coauthorFile       = "faculty-coauthors.csv";
@@ -120,7 +127,6 @@ class CSRankings {
 	name = name.replace(/ö/g, "=ouml=");
 	name = name.replace(/ü/g, "=uuml=");
 	let splitName = name.split(" ");
-	let newname = "";
 	let lastName = splitName[splitName.length - 1];
 	splitName.pop();
 	let newName = splitName.join(" ");
@@ -201,7 +207,7 @@ class CSRankings {
 			    "color" : CSRankings.color[i] });
 	    }
 	}
-	const pie = new d3pie(name + "-chart", {
+	new d3pie(name + "-chart", {
 	    "header": {
 		"title": {
 		    "text": unescape(name),
@@ -274,44 +280,10 @@ class CSRankings {
 	});
     }
 
-    /* Turn the chart display on or off. */
-    private static toggleChart(name : string) : void {
-	const chart = document.getElementById(name+"-chart");
-	const widget = document.getElementById(name+"-widget");
-	if (chart.style.display === 'block') {
-	    chart.style.display = 'none';
-	    chart.innerHTML = '';
-	} else {
-	    chart.style.display = 'block';
-	    CSRankings.makeChart(name);
-	}
-	
-    }
-
-    /* Expand or collape the view of all faculty in a department. */
-    private static toggleFaculty(dept : string) : void {
-	const e = document.getElementById(dept+"-faculty");
-	const widget = document.getElementById(dept+"-widget");
-	if (e.style.display === 'block') {
-	    e.style.display = 'none';
-	    widget.innerHTML = CSRankings.RightTriangle;
-	} else {
-	    e.style.display = 'block';
-	    widget.innerHTML = CSRankings.DownTriangle;
-	}
-    }
-
-    /* Set all checkboxes to true. */
-    private static setAllCheckboxes() : void {
-	for (let i = 1; i <= CSRankings.areas.length; i++) {
-	    const str = 'input[name=field_'+i+']';
-	    jQuery(str).prop('checked', true);
-	}
-    }
-
     /* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
-    private static nop() : void {}
+    //    private static nop() : void {}
 
+    
     private static loadCoauthors(cont : () => void ) : void {
 	Papa.parse(CSRankings.coauthorFile, {
 	    download : true,
@@ -319,11 +291,12 @@ class CSRankings {
 	    complete : (results)=> {
 		const data : any = results.data;
 		CSRankings.coauthors = data as Array<Coauthor>;
-		cont();
+		setTimeout(cont, 0);
 	    }
 	});
     }
-
+    
+    
     private static loadAliases(cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
 	    header: true,
@@ -334,7 +307,7 @@ class CSRankings {
 		for (let aliasPair of d) {
 		    this.aliases[aliasPair.alias] = aliasPair.name;
 		}
-		cont();
+		setTimeout(cont, 0);
 	    }
 	});
     }
@@ -349,7 +322,7 @@ class CSRankings {
 		for (let info of ci) {
 		    this.countryInfo[info.institution] = info.region;
 		}
-		cont();
+		setTimeout(cont, 0);
 	    }
 	});
     }
@@ -365,7 +338,7 @@ class CSRankings {
 		    const str = 'input[name=field_'+i+']';
 		    jQuery(str).click(()=>{ this.rank(); });
 		}
-		cont();
+		setTimeout(cont, 0);
 	    }
 	});
     }
@@ -380,25 +353,9 @@ class CSRankings {
 		for (let namePage of d) {
 		    this.homepages[namePage.name] = namePage.homepage;
 		}
-		cont();
+		setTimeout(cont, 0);
 	    }
 	});
-    }
-
-    private static activateAll(value : boolean) : boolean {
-	if (value === undefined) {
-	    value = true;
-	}
-	for (let i = 1; i <= CSRankings.areas.length; i++) {
-	    const str = "input[name=field_"+i+"]";
-	    jQuery(str).prop('checked', value);
-	}
-	CSRankings.rank();
-	return false;
-    }
-
-    private static activateNone() : boolean {
-	return CSRankings.activateAll(false);
     }
 
     private static activateFields(value : boolean, fields : Array<number>) : boolean {
@@ -410,51 +367,6 @@ class CSRankings {
 	    jQuery(str).prop('checked', value);
 	}
 	CSRankings.rank();
-	return false;
-    }
-
-    private static activateSystems(value : boolean) : boolean {
-	const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-	return CSRankings.activateFields(value, systemsFields);
-    }
-
-    private static activateAI(value : boolean) : boolean {
-	const aiFields      : Array<number> = [1, 2, 3, 4, 5];
-	return CSRankings.activateFields(value, aiFields);
-    }
-
-    private static activateTheory(value : boolean) : boolean {
-	const theoryFields  : Array<number> = [16, 17, 18];
-	return CSRankings.activateFields(value, theoryFields);
-    }
-
-    private static activateOthers(value : boolean) : boolean {
-	const otherFields   : Array<number> = [19, 20, 21, 22];
-	return CSRankings.activateFields(value, otherFields);
-    }
-
-    private static deactivateSystems() : boolean {
-	return CSRankings.activateSystems(false);
-    }
-
-    private static deactivateAI() : boolean {
-	return CSRankings.activateAI(false);
-    }
-
-    private static deactivateTheory() : boolean {
-	return CSRankings.activateTheory(false);
-    }
-
-    private static deactivateOthers() : boolean {
-	return CSRankings.activateOthers(false);
-    }
-
-    private static toggleAI(cb : any) : boolean {
-	if (cb.checked) {
-	    CSRankings.activateAI(false);
-	} else {
-	    CSRankings.activateAI(true);
-	}
 	return false;
     }
 
@@ -503,12 +415,11 @@ class CSRankings {
     private static countAuthorAreas(authors : Array<Author>,
 				    startyear : number,
 				    endyear : number,
+				    previousWeights : {[key:string] : number},
 				    weights : {[key:string] : number},
 				    authorAreas : {[name : string] : {[area : string] : number }}) : void
     
     {
-	// Build up an associative array of depts.
-	let depts : {[key:string] : number} = {};
 	/* Now rebuild. */
 	for (let r in authors) {
 	    if (!authors.hasOwnProperty(r)) {
@@ -519,7 +430,7 @@ class CSRankings {
 		continue;
 	    }
 	    const theArea  = authors[r].area;
-	    if (weights[theArea] === 0) {
+	    if (weights[theArea] === previousWeights[theArea]) {
 		continue;
 	    }
 	    const theDept  = authors[r].dept;
@@ -544,8 +455,13 @@ class CSRankings {
 		    }
 		}
 	    }
-	    authorAreas[name][theArea] += theCount;
-	    authorAreas[theDept][theArea] += theCount;
+	    if (previousWeights[theArea] === 1) {
+		authorAreas[name][theArea]    -= theCount;
+		authorAreas[theDept][theArea] -= theCount;
+	    } else {
+		authorAreas[name][theArea] += theCount;
+		authorAreas[theDept][theArea] += theCount;
+	    }
 	}
     }
 
@@ -658,7 +574,6 @@ class CSRankings {
 
     /* Compute aggregate statistics. */
     private static computeStats(deptNames : {[key:string] : Array<string> },
-				areaAdjustedCount : {[key:string] : number},
 				areaDeptAdjustedCount : {[key:string] : number},
 				areas : Array<string>,
 				numAreas : number,
@@ -702,7 +617,7 @@ class CSRankings {
 
     /* Updates the 'weights' of each area from the checkboxes. */
     /* Returns the number of areas selected (checked). */
-    public static updateWeights(weights : {[key: string] : number}) : number
+    private static updateWeights(weights : {[key: string] : number}) : number
     {
 	let numAreas = 0;
 	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
@@ -716,9 +631,9 @@ class CSRankings {
 	return numAreas;
     }
 
-    public static canonicalizeNames(deptNames : {[key: string] : Array<string> },
-				    facultycount :  {[key: string] : number},
-				    facultyAdjustedCount: {[key: string] : number}) : void
+    private static canonicalizeNames(deptNames : {[key: string] : Array<string> },
+				     facultycount :  {[key: string] : number},
+				     facultyAdjustedCount: {[key: string] : number}) : void
     {
 	for (let dept in deptNames) {
 	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
@@ -765,14 +680,14 @@ class CSRankings {
 		    }
 		    /* Sort it by last name. */
 		    let l : Array<string> = [];
-		    coauthorList[name].forEach((item, coauthors)=>{
+		    coauthorList[name].forEach((item, _)=>{
 			l.push(item);
 		    });
 		    if (l.length > CSRankings.maxCoauthors) {
 			coauthorStr = "(more than "+CSRankings.maxCoauthors+" senior co-authors)";
 		    } else {
 			l.sort(CSRankings.compareNames);
-			l.forEach((item, coauthors)=>{
+			l.forEach((item, _)=>{
 			    coauthorStr += item + "\n";
 			});
 			/* Trim off the trailing newline. */
@@ -900,16 +815,23 @@ class CSRankings {
 	}
 	return s;
     }
+
+    /* Set all checkboxes to true. */
+    private static setAllCheckboxes() : void {
+	for (let i = 1; i <= CSRankings.areas.length; i++) {
+	    const str = 'input[name=field_'+i+']';
+	    jQuery(str).prop('checked', true);
+	}
+    }
+
+    /* PUBLIC METHODS */
     
     public static rank() : boolean {
-	let form = document.getElementById("rankform");
-	//    let s : string = "";
 	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
 	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
 	let currentWeights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-//	let areaCount : {[key: string] : number} = {};          /* raw number of papers in each area */
 	let areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
 	let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
 	
@@ -947,10 +869,11 @@ class CSRankings {
 			       endyear,
 			       currentWeights);
 	
-	CSRankings.authorAreas = {};
+//	CSRankings.authorAreas = {};
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
 				    endyear,
+				    CSRankings.previousWeights,
 				    currentWeights,
 				    CSRankings.authorAreas);
 	
@@ -968,7 +891,6 @@ class CSRankings {
 	/* (university, total or average number of papers) */
 	let univagg : {[key: string] : number} = {};
 	CSRankings.computeStats(deptNames,
-				areaAdjustedCount,
 				areaDeptAdjustedCount,
 				CSRankings.areas,
 				numAreas,
@@ -1003,22 +925,89 @@ class CSRankings {
 	return false; 
     }
 
-    private static activateDenseRankings() : boolean {
-	CSRankings.useDenseRankings = true;
+    /* Turn the chart display on or off. */
+    public static toggleChart(name : string) : void {
+	const chart = document.getElementById(name+"-chart");
+	if (chart.style.display === 'block') {
+	    chart.style.display = 'none';
+	    chart.innerHTML = '';
+	} else {
+	    chart.style.display = 'block';
+	    CSRankings.makeChart(name);
+	}
+	
+    }
+
+
+    /* Expand or collape the view of all faculty in a department. */
+    public static toggleFaculty(dept : string) : void {
+	const e = document.getElementById(dept+"-faculty");
+	const widget = document.getElementById(dept+"-widget");
+	if (e.style.display === 'block') {
+	    e.style.display = 'none';
+	    widget.innerHTML = CSRankings.RightTriangle;
+	} else {
+	    e.style.display = 'block';
+	    widget.innerHTML = CSRankings.DownTriangle;
+	}
+    }
+
+    public static activateAll(value : boolean) : boolean {
+	if (value === undefined) {
+	    value = true;
+	}
+	for (let i = 1; i <= CSRankings.areas.length; i++) {
+	    const str = "input[name=field_"+i+"]";
+	    jQuery(str).prop('checked', value);
+	}
 	CSRankings.rank();
 	return false;
     }
 
-    private static deactivateDenseRankings() : boolean {
-	CSRankings.useDenseRankings = false;
-	CSRankings.rank();
-	return false;
+    public static activateNone() : boolean {
+	return CSRankings.activateAll(false);
     }
 
+    public static activateSystems(value : boolean) : boolean {
+	const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+	return CSRankings.activateFields(value, systemsFields);
+    }
+
+    public static activateAI(value : boolean) : boolean {
+	const aiFields      : Array<number> = [1, 2, 3, 4, 5];
+	return CSRankings.activateFields(value, aiFields);
+    }
+
+    public static activateTheory(value : boolean) : boolean {
+	const theoryFields  : Array<number> = [16, 17, 18];
+	return CSRankings.activateFields(value, theoryFields);
+    }
+
+    public static activateOthers(value : boolean) : boolean {
+	const otherFields   : Array<number> = [19, 20, 21, 22];
+	return CSRankings.activateFields(value, otherFields);
+    }
+
+    public static deactivateSystems() : boolean {
+	return CSRankings.activateSystems(false);
+    }
+
+    public static deactivateAI() : boolean {
+	return CSRankings.activateAI(false);
+    }
+
+    public static deactivateTheory() : boolean {
+	return CSRankings.activateTheory(false);
+    }
+
+    public static deactivateOthers() : boolean {
+	return CSRankings.activateOthers(false);
+    }
+    
 }
 
 function init() : void {
-    var ranker = new CSRankings();
+    new CSRankings();
 }
 
 window.onload=init;

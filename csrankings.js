@@ -19,13 +19,21 @@ var CSRankings = (function () {
     function CSRankings() {
         CSRankings.setAllCheckboxes();
         CSRankings.initAreaDict();
-        CSRankings.loadAliases(function () {
-            CSRankings.loadHomepages(function () {
-                CSRankings.loadAuthorInfo(function () {
-                    CSRankings.loadCountryInfo(CSRankings.rank);
+        var next = function () {
+            CSRankings.loadAliases(function () {
+                CSRankings.loadHomepages(function () {
+                    CSRankings.loadAuthorInfo(function () {
+                        CSRankings.loadCountryInfo(CSRankings.rank);
+                    });
                 });
             });
-        });
+        };
+        if (CSRankings.showCoauthors) {
+            CSRankings.loadCoauthors(next);
+        }
+        else {
+            next();
+        }
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -44,7 +52,6 @@ var CSRankings = (function () {
         name = name.replace(/ö/g, "=ouml=");
         name = name.replace(/ü/g, "=uuml=");
         var splitName = name.split(" ");
-        var newname = "";
         var lastName = splitName[splitName.length - 1];
         splitName.pop();
         var newName = splitName.join(" ");
@@ -119,7 +126,7 @@ var CSRankings = (function () {
                     "color": CSRankings.color[i] });
             }
         }
-        var pie = new d3pie(name + "-chart", {
+        new d3pie(name + "-chart", {
             "header": {
                 "title": {
                     "text": unescape(name),
@@ -191,41 +198,8 @@ var CSRankings = (function () {
             }
         });
     };
-    /* Turn the chart display on or off. */
-    CSRankings.toggleChart = function (name) {
-        var chart = document.getElementById(name + "-chart");
-        var widget = document.getElementById(name + "-widget");
-        if (chart.style.display === 'block') {
-            chart.style.display = 'none';
-            chart.innerHTML = '';
-        }
-        else {
-            chart.style.display = 'block';
-            CSRankings.makeChart(name);
-        }
-    };
-    /* Expand or collape the view of all faculty in a department. */
-    CSRankings.toggleFaculty = function (dept) {
-        var e = document.getElementById(dept + "-faculty");
-        var widget = document.getElementById(dept + "-widget");
-        if (e.style.display === 'block') {
-            e.style.display = 'none';
-            widget.innerHTML = CSRankings.RightTriangle;
-        }
-        else {
-            e.style.display = 'block';
-            widget.innerHTML = CSRankings.DownTriangle;
-        }
-    };
-    /* Set all checkboxes to true. */
-    CSRankings.setAllCheckboxes = function () {
-        for (var i = 1; i <= CSRankings.areas.length; i++) {
-            var str = 'input[name=field_' + i + ']';
-            jQuery(str).prop('checked', true);
-        }
-    };
     /* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
-    CSRankings.nop = function () { };
+    //    private static nop() : void {}
     CSRankings.loadCoauthors = function (cont) {
         Papa.parse(CSRankings.coauthorFile, {
             download: true,
@@ -233,7 +207,7 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 CSRankings.coauthors = data;
-                cont();
+                setTimeout(cont, 0);
             }
         });
     };
@@ -249,7 +223,7 @@ var CSRankings = (function () {
                     var aliasPair = d_1[_i];
                     _this.aliases[aliasPair.alias] = aliasPair.name;
                 }
-                cont();
+                setTimeout(cont, 0);
             }
         });
     };
@@ -265,7 +239,7 @@ var CSRankings = (function () {
                     var info = ci_1[_i];
                     _this.countryInfo[info.institution] = info.region;
                 }
-                cont();
+                setTimeout(cont, 0);
             }
         });
     };
@@ -281,7 +255,7 @@ var CSRankings = (function () {
                     var str = 'input[name=field_' + i + ']';
                     jQuery(str).click(function () { _this.rank(); });
                 }
-                cont();
+                setTimeout(cont, 0);
             }
         });
     };
@@ -297,23 +271,9 @@ var CSRankings = (function () {
                     var namePage = d_2[_i];
                     _this.homepages[namePage.name] = namePage.homepage;
                 }
-                cont();
+                setTimeout(cont, 0);
             }
         });
-    };
-    CSRankings.activateAll = function (value) {
-        if (value === undefined) {
-            value = true;
-        }
-        for (var i = 1; i <= CSRankings.areas.length; i++) {
-            var str = "input[name=field_" + i + "]";
-            jQuery(str).prop('checked', value);
-        }
-        CSRankings.rank();
-        return false;
-    };
-    CSRankings.activateNone = function () {
-        return CSRankings.activateAll(false);
     };
     CSRankings.activateFields = function (value, fields) {
         if (value === undefined) {
@@ -324,43 +284,6 @@ var CSRankings = (function () {
             jQuery(str).prop('checked', value);
         }
         CSRankings.rank();
-        return false;
-    };
-    CSRankings.activateSystems = function (value) {
-        var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-        return CSRankings.activateFields(value, systemsFields);
-    };
-    CSRankings.activateAI = function (value) {
-        var aiFields = [1, 2, 3, 4, 5];
-        return CSRankings.activateFields(value, aiFields);
-    };
-    CSRankings.activateTheory = function (value) {
-        var theoryFields = [16, 17, 18];
-        return CSRankings.activateFields(value, theoryFields);
-    };
-    CSRankings.activateOthers = function (value) {
-        var otherFields = [19, 20, 21, 22];
-        return CSRankings.activateFields(value, otherFields);
-    };
-    CSRankings.deactivateSystems = function () {
-        return CSRankings.activateSystems(false);
-    };
-    CSRankings.deactivateAI = function () {
-        return CSRankings.activateAI(false);
-    };
-    CSRankings.deactivateTheory = function () {
-        return CSRankings.activateTheory(false);
-    };
-    CSRankings.deactivateOthers = function () {
-        return CSRankings.activateOthers(false);
-    };
-    CSRankings.toggleAI = function (cb) {
-        if (cb.checked) {
-            CSRankings.activateAI(false);
-        }
-        else {
-            CSRankings.activateAI(true);
-        }
         return false;
     };
     CSRankings.sortIndex = function (univagg) {
@@ -399,9 +322,7 @@ var CSRankings = (function () {
         }
         return coauthorList;
     };
-    CSRankings.countAuthorAreas = function (authors, startyear, endyear, weights, authorAreas) {
-        // Build up an associative array of depts.
-        var depts = {};
+    CSRankings.countAuthorAreas = function (authors, startyear, endyear, previousWeights, weights, authorAreas) {
         /* Now rebuild. */
         for (var r in authors) {
             if (!authors.hasOwnProperty(r)) {
@@ -412,7 +333,7 @@ var CSRankings = (function () {
                 continue;
             }
             var theArea = authors[r].area;
-            if (weights[theArea] === 0) {
+            if (weights[theArea] === previousWeights[theArea]) {
                 continue;
             }
             var theDept = authors[r].dept;
@@ -437,8 +358,14 @@ var CSRankings = (function () {
                     }
                 }
             }
-            authorAreas[name_1][theArea] += theCount;
-            authorAreas[theDept][theArea] += theCount;
+            if (previousWeights[theArea] === 1) {
+                authorAreas[name_1][theArea] -= theCount;
+                authorAreas[theDept][theArea] -= theCount;
+            }
+            else {
+                authorAreas[name_1][theArea] += theCount;
+                authorAreas[theDept][theArea] += theCount;
+            }
         }
     };
     CSRankings.countPapers = function (areaDeptAdjustedCount, authors, startyear, endyear, weights) {
@@ -531,7 +458,7 @@ var CSRankings = (function () {
         }
     };
     /* Compute aggregate statistics. */
-    CSRankings.computeStats = function (deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights, univagg) {
+    CSRankings.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights, univagg) {
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
@@ -625,7 +552,7 @@ var CSRankings = (function () {
                     }
                     /* Sort it by last name. */
                     var l_1 = [];
-                    coauthorList[name_5].forEach(function (item, coauthors) {
+                    coauthorList[name_5].forEach(function (item, _) {
                         l_1.push(item);
                     });
                     if (l_1.length > CSRankings.maxCoauthors) {
@@ -633,7 +560,7 @@ var CSRankings = (function () {
                     }
                     else {
                         l_1.sort(CSRankings.compareNames);
-                        l_1.forEach(function (item, coauthors) {
+                        l_1.forEach(function (item, _) {
                             coauthorStr_1 += item + "\n";
                         });
                         /* Trim off the trailing newline. */
@@ -759,15 +686,20 @@ var CSRankings = (function () {
         }
         return s;
     };
+    /* Set all checkboxes to true. */
+    CSRankings.setAllCheckboxes = function () {
+        for (var i = 1; i <= CSRankings.areas.length; i++) {
+            var str = 'input[name=field_' + i + ']';
+            jQuery(str).prop('checked', true);
+        }
+    };
+    /* PUBLIC METHODS */
     CSRankings.rank = function () {
-        var form = document.getElementById("rankform");
-        //    let s : string = "";
         var deptNames = {}; /* names of departments. */
         var deptCounts = {}; /* number of faculty in each department. */
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
         var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
         var currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-        //	let areaCount : {[key: string] : number} = {};          /* raw number of papers in each area */
         var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
         var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
         var startyear = parseInt(jQuery("#startyear").find(":selected").text());
@@ -793,12 +725,12 @@ var CSRankings = (function () {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
         }
         CSRankings.countPapers(areaDeptAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights);
-        CSRankings.authorAreas = {};
-        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, currentWeights, CSRankings.authorAreas);
+        //	CSRankings.authorAreas = {};
+        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, CSRankings.previousWeights, currentWeights, CSRankings.authorAreas);
         CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights, whichRegions);
         /* (university, total or average number of papers) */
         var univagg = {};
-        CSRankings.computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights, univagg);
+        CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights, univagg);
         var univtext = {};
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
@@ -811,15 +743,72 @@ var CSRankings = (function () {
         setTimeout(function () { CSRankings.redisplay(s); }, 0);
         return false;
     };
-    CSRankings.activateDenseRankings = function () {
-        CSRankings.useDenseRankings = true;
+    /* Turn the chart display on or off. */
+    CSRankings.toggleChart = function (name) {
+        var chart = document.getElementById(name + "-chart");
+        if (chart.style.display === 'block') {
+            chart.style.display = 'none';
+            chart.innerHTML = '';
+        }
+        else {
+            chart.style.display = 'block';
+            CSRankings.makeChart(name);
+        }
+    };
+    /* Expand or collape the view of all faculty in a department. */
+    CSRankings.toggleFaculty = function (dept) {
+        var e = document.getElementById(dept + "-faculty");
+        var widget = document.getElementById(dept + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = CSRankings.RightTriangle;
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = CSRankings.DownTriangle;
+        }
+    };
+    CSRankings.activateAll = function (value) {
+        if (value === undefined) {
+            value = true;
+        }
+        for (var i = 1; i <= CSRankings.areas.length; i++) {
+            var str = "input[name=field_" + i + "]";
+            jQuery(str).prop('checked', value);
+        }
         CSRankings.rank();
         return false;
     };
-    CSRankings.deactivateDenseRankings = function () {
-        CSRankings.useDenseRankings = false;
-        CSRankings.rank();
-        return false;
+    CSRankings.activateNone = function () {
+        return CSRankings.activateAll(false);
+    };
+    CSRankings.activateSystems = function (value) {
+        var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        return CSRankings.activateFields(value, systemsFields);
+    };
+    CSRankings.activateAI = function (value) {
+        var aiFields = [1, 2, 3, 4, 5];
+        return CSRankings.activateFields(value, aiFields);
+    };
+    CSRankings.activateTheory = function (value) {
+        var theoryFields = [16, 17, 18];
+        return CSRankings.activateFields(value, theoryFields);
+    };
+    CSRankings.activateOthers = function (value) {
+        var otherFields = [19, 20, 21, 22];
+        return CSRankings.activateFields(value, otherFields);
+    };
+    CSRankings.deactivateSystems = function () {
+        return CSRankings.activateSystems(false);
+    };
+    CSRankings.deactivateAI = function () {
+        return CSRankings.activateAI(false);
+    };
+    CSRankings.deactivateTheory = function () {
+        return CSRankings.activateTheory(false);
+    };
+    CSRankings.deactivateOthers = function () {
+        return CSRankings.activateOthers(false);
     };
     CSRankings.coauthorFile = "faculty-coauthors.csv";
     CSRankings.authorinfoFile = "generated-author-info.csv";
@@ -858,7 +847,7 @@ var CSRankings = (function () {
     return CSRankings;
 }());
 function init() {
-    var ranker = new CSRankings();
+    new CSRankings();
 }
 window.onload = init;
 //	jQuery(document).ready(
