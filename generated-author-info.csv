@@ -6308,6 +6308,7 @@ Weikuan Yu,Florida State University,highperf,1.0,0.2,2013
 William J. Dally,Stanford University,highperf,1.0,0.25,2013
 Irad Yavneh,Technion - Israel Institute of Technology,highperf,1.0,0.25,1995
 Michael Mascagni,Florida State University,highperf,1.0,0.25,1994
+Satyajayant Misra,New Mexico State University,highperf,1.0,0.333333333333,2012
 Kamesh Madduri,Pennsylvania State University,highperf,1.0,0.333333333333,2012
 Padma Raghavan,Vanderbilt University,highperf,2.0,0.666666666667,2012
 Alex Pothen,Purdue University,highperf,1.0,0.5,2001
@@ -6969,6 +6970,7 @@ Heng Yin,University of California - Riverside,security,2.0,0.416666666667,2014
 Vinod Ganapathy,Rutgers University,security,2.0,0.47619047619,2005
 Trent Jaeger,Pennsylvania State University,security,1.0,0.333333333333,2005
 Somesh Jha,University of Wisconsin - Madison,security,4.0,1.11666666667,2005
+Ivan Visconti,University of Salerno,security,1.0,0.5,2000
 Roberto Perdisci,University of Georgia,security,2.0,0.533333333333,2013
 Stefan Katzenbeisser 0001,TU Darmstadt,security,2.0,0.533333333333,2007
 Kyu Hyung Lee,University of Georgia,security,1.0,0.333333333333,2013
@@ -7219,6 +7221,8 @@ Stanislaw Jarecki,University of California - Irvine,security,1.0,0.333333333333,
 Vinod Ganapathy,Rutgers University,security,2.0,0.583333333333,2012
 Alexandra Boldyreva,Georgia Institute of Technology,security,1.0,0.333333333333,2008
 Joshua R. Smith,University of Washington,security,1.0,0.25,2008
+Alfredo De Santis,University of Salerno,security,1.0,0.333333333333,1998
+Giuseppe Persiano,University of Salerno,security,1.0,0.333333333333,1998
 Carl Hauser,Washington State University,security,1.0,0.333333333333,2013
 Jonathan Katz,University of Maryland - College Park,security,1.0,0.25,2009
 Xinwen Fu,University of Massachusetts - Lowell,security,1.0,0.166666666667,2014
@@ -7368,6 +7372,8 @@ William Enck,North Carolina State University,security,2.0,0.7,2013
 Ting Yu,North Carolina State University,security,1.0,0.333333333333,2006
 Michael T. Goodrich,University of California - Irvine,security,1.0,1.0,2002
 Giuseppe Ateniese,Johns Hopkins University,security,1.0,0.25,2006
+Alfredo De Santis,University of Salerno,security,1.0,0.25,2006
+Barbara Masucci,University of Salerno,security,1.0,0.25,2006
 Scott D. Stoller,Stony Brook University,security,1.0,0.25,2007
 C. R. Ramakrishnan,Stony Brook University,security,1.0,0.25,2007
 David Wagner,University of California - Berkeley,security,2.0,0.45,2011
@@ -8510,6 +8516,7 @@ William W. Cohen,Carnegie Mellon University,database,1.0,1.0,1998
 Arash Termehchy,Oregon State University,database,1.0,0.25,2014
 Yossi Matias,Tel Aviv University,database,1.0,0.5,2003
 Walter A. Burkhard,University of California - San Diego,database,1.0,0.5,1988
+Jonathan E. Cook,New Mexico State University,database,1.0,0.25,1996
 Alexander L. Wolf,Imperial College London,database,1.0,0.25,1996
 David G. Andersen,Carnegie Mellon University,database,1.0,0.166666666667,2016
 Joseph M. Hellerstein,University of California - Berkeley,database,2.0,0.75,2002
@@ -8803,6 +8810,7 @@ Mohamed A. Sharaf,University of Queensland,database,1.0,0.25,2009
 Panos K. Chrysanthis,University of Pittsburgh,database,1.0,0.25,2009
 Alexandros Labrinidis,University of Pittsburgh,database,1.0,0.25,2009
 Nick Roussopoulos,University of Maryland - College Park,database,2.0,1.0,2003
+Jonathan E. Cook,New Mexico State University,database,1.0,0.333333333333,1994
 Alexander L. Wolf,Imperial College London,database,1.0,0.333333333333,1994
 Tomasz Imielinski,Rutgers University,database,1.0,0.333333333333,1991
 Jennifer Neville,Purdue University,database,1.0,0.333333333333,2010
@@ -11570,6 +11578,7 @@ David Mazières,Stanford University,opsys,2.0,0.309523809524,2012
 John C. Mitchell,Stanford University,opsys,1.0,0.142857142857,2012
 Wyatt Lloyd,University of Southern California,opsys,2.0,0.290909090909,2014
 Jinyang Li,New York University,opsys,2.0,0.45,2014
+Mai Zheng,New Mexico State University,opsys,1.0,0.125,2014
 Feng Qin,Ohio State University,opsys,1.0,0.125,2014
 Lorenzo Alvisi,Cornell University,opsys,1.0,0.142857142857,2014
 Bhuvan Urgaonkar,Pennsylvania State University,opsys,1.0,0.333333333333,2002
@@ -12226,6 +12235,7 @@ Roger Espasa,Polytechnic University of Catalonia,arch,1.0,0.333333333333,1999
 Mateo Valero,Polytechnic University of Catalonia,arch,2.0,0.533333333333,1999
 Matthew K. Farrens,University of California - Davis,arch,4.0,1.83333333333,1991
 Murali Annavaram,University of Southern California,arch,2.0,0.416666666667,2015
+Yuho Jin,New Mexico State University,arch,1.0,0.333333333333,2008
 Eun Jung Kim 0001,Texas A&M University,arch,1.0,0.333333333333,2008
 Yuan Xie 0001,University of California - Santa Barbara,arch,1.0,0.333333333333,2001
 Anand Sivasubramaniam,Pennsylvania State University,arch,2.0,0.4,2002
@@ -14404,6 +14414,7 @@ George Kesidis,Pennsylvania State University,networks,1.0,0.5,2003
 K. K. Ramakrishnan,University of California - Riverside,networks,3.0,1.0,1999
 Qun Li,College of William and Mary,networks,1.0,0.166666666667,2015
 Yashar Ganjali,University of Toronto,networks,1.0,0.5,2004
+Satyajayant Misra,New Mexico State University,networks,1.0,0.333333333333,2009
 Richard P. Martin,Rutgers University,networks,1.0,0.333333333333,2007
 Mark Crovella,Boston University,networks,1.0,0.25,2008
 Christos Papadopoulos,Colorado State University,networks,1.0,0.25,2001
@@ -14627,6 +14638,7 @@ Sanjay Jha,UNSW,networks,1.0,0.2,2011
 Philippe Nain,Ecole Normale Superieure de Lyon,networks,1.0,0.25,2005
 Benyuan Liu,University of Massachusetts - Lowell,networks,1.0,0.25,2005
 Guoliang Xue,Arizona State University,networks,1.0,0.333333333333,2007
+Satyajayant Misra,New Mexico State University,networks,1.0,0.333333333333,2007
 Kevin C. Almeroth,University of California - Santa Barbara,networks,1.0,0.333333333333,1998
 Douglas S. Reeves,North Carolina State University,networks,1.0,0.333333333333,1997
 Guohong Cao,Pennsylvania State University,networks,2.0,0.833333333333,2010
@@ -16314,6 +16326,7 @@ Lorenzo Clemente,University of Warsaw,logic,1.0,0.142857142857,2010
 Richard Mayr,University of Edinburgh,logic,1.0,0.142857142857,2010
 John C. Mitchell,Stanford University,logic,1.0,1.0,1998
 Rajeev Alur,University of Pennsylvania,logic,1.0,0.333333333333,2003
+Salvatore La Torre,University of Salerno,logic,1.0,0.333333333333,2003
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,3.0,1.58333333333,2003
 Lenore D. Zuck,University of Illinois - Chicago,logic,1.0,0.2,2001
 Christel Baier,TU Dresden,logic,1.0,0.333333333333,2001
@@ -16538,7 +16551,9 @@ Michael D. Ernst,University of Washington,logic,1.0,0.166666666667,2011
 Cesare Tinelli,University of Iowa,logic,2.0,0.4,2014
 Clark Barrett,New York University,logic,2.0,0.4,2014
 Cristian Cadar,Imperial College London,logic,1.0,0.5,2013
+Salvatore La Torre,University of Salerno,logic,1.0,0.2,2014
 Tevfik Bultan,University of California - Santa Barbara,logic,1.0,0.333333333333,2015
+Salvatore La Torre,University of Salerno,logic,1.0,0.333333333333,2009
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,2.0,0.666666666667,2009
 Pavithra Prabhakar,Kansas State University,logic,1.0,0.5,2013
 Marta Z. Kwiatkowska,University of Oxford,logic,1.0,0.2,2014
@@ -16676,6 +16691,7 @@ Thomas W. Reps,University of Wisconsin - Madison,logic,1.0,0.5,2008
 Edmund M. Clarke,Carnegie Mellon University,logic,1.0,0.166666666667,2010
 Azadeh Farzan,University of Toronto,logic,1.0,0.166666666667,2010
 Alessio Lomuscio,Imperial College London,logic,1.0,0.333333333333,2009
+Salvatore La Torre,University of Salerno,logic,1.0,0.333333333333,2010
 P. Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2010
 Azadeh Farzan,University of Toronto,logic,1.0,0.5,2013
 Moshe Y. Vardi,Rice University,logic,3.0,1.14285714286,2003
@@ -16838,6 +16854,7 @@ Leon J. Osterweil,University of Massachusetts - Amherst,softeng,1.0,0.1666666666
 Yang Liu,University of Texas - Dallas,softeng,2.0,0.4,2015
 Jonathan Aldrich,Carnegie Mellon University,softeng,1.0,0.333333333333,2008
 Sonia Haiduc,Florida State University,softeng,1.0,0.2,2012
+Andrea De Lucia,University of Salerno,softeng,1.0,0.2,2012
 Andrian Marcus,University of Texas - Dallas,softeng,1.0,0.2,2012
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.5,2003
 Atif M. Memon,University of Maryland - College Park,softeng,2.0,1.0,2007
@@ -16846,6 +16863,7 @@ Michael D. Ernst,University of Washington,softeng,5.0,1.41666666667,2007
 John Mylopoulos,University of Toronto,softeng,1.0,0.2,2015
 Tien N. Nguyen,University of Texas - Dallas,softeng,2.0,0.45,2010
 Cormac Flanagan,University of California - Santa Cruz,softeng,1.0,0.25,2015
+Andrea De Lucia,University of Salerno,softeng,1.0,0.142857142857,2016
 Denys Poshyvanyk,College of William and Mary,softeng,2.0,0.392857142857,2016
 Ivan Beschastnikh,University of British Columbia,softeng,2.0,0.583333333333,2015
 Baishakhi Ray,University of Virginia,softeng,1.0,0.25,2013
@@ -16970,6 +16988,8 @@ David Garlan,Carnegie Mellon University,softeng,1.0,0.2,2006
 Alan Bundy,University of Edinburgh,softeng,1.0,0.25,1999
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,1997
 Gail E. Kaiser,Columbia University,softeng,1.0,0.5,2006
+Andrea De Lucia,University of Salerno,softeng,1.0,0.333333333333,2008
+Genoveffa Tortora,University of Salerno,softeng,1.0,0.333333333333,2008
 Tao Xie,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2006
 Darko Marinov,University of Illinois at Urbana-Champaign,softeng,1.0,0.2,2006
 Michael D. Ernst,University of Washington,softeng,1.0,0.2,2006
@@ -16986,6 +17006,7 @@ Tevfik Bultan,University of California - Santa Barbara,softeng,3.0,1.33333333333
 Houari A. Sahraoui,University of Montreal,softeng,1.0,0.142857142857,2014
 Robert C. Miller,Massachusetts Institute of Technology,softeng,1.0,0.333333333333,2009
 Robert C. Miller,Massachusetts Institute of Technology,softeng,1.0,0.5,2007
+Andrea De Lucia,University of Salerno,softeng,3.0,0.5,2013
 Denys Poshyvanyk,College of William and Mary,softeng,4.0,0.666666666667,2013
 Joanne M. Atlee,University of Waterloo,softeng,1.0,0.5,2010
 Lukasz Ziarek,University of Buffalo,softeng,1.0,0.125,2014
@@ -17439,6 +17460,8 @@ Dan Geiger,Technion - Israel Institute of Technology,ai,1.0,0.5,1997
 Weng-Keen Wong,Oregon State University,ai,1.0,0.142857142857,2011
 Margaret M. Burnett,Oregon State University,ai,1.0,0.142857142857,2011
 Michael R. Genesereth,Stanford University,ai,1.0,1.0,1982
+Tran Cao Son,New Mexico State University,ai,1.0,0.333333333333,2006
+Enrico Pontelli,New Mexico State University,ai,1.0,0.333333333333,2006
 Michael P. Wellman,University of Michigan,ai,1.0,1.0,1992
 Darrell Whitley,Colorado State University,ai,1.0,0.333333333333,2013
 Adele E. Howe,Colorado State University,ai,1.0,0.333333333333,2013
@@ -17454,6 +17477,8 @@ Lenhart K. Schubert,University of Rochester,ai,3.0,1.5,1993
 Michael I. Jordan,University of California - Berkeley,ai,1.0,0.25,2016
 Miroslaw Truszczynski,University of Kentucky,ai,1.0,0.333333333333,2013
 Martin Ester,Simon Fraser University,ai,2.0,0.333333333333,2016
+William Yeoh 0001,New Mexico State University,ai,5.0,1.45,2016
+Enrico Pontelli,New Mexico State University,ai,1.0,0.333333333333,2016
 Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.5,1992
 Satinder P. Singh,University of Michigan,ai,2.0,0.45,2014
 Zeeshan Syed,University of Michigan,ai,2.0,0.45,2014
@@ -17705,8 +17730,10 @@ Vladimir Lifschitz,University of Texas - Austin,ai,1.0,0.5,1998
 Thomas Lukasiewicz,University of Oxford,ai,1.0,0.25,2015
 Steffen Hölldobler,TU Dresden,ai,2.0,0.833333333333,1993
 Jeffrey S. Rosenschein,Hebrew University of Jerusalem,ai,2.0,1.0,1991
+Tran Cao Son,New Mexico State University,ai,2.0,0.583333333333,2004
 Chitta Baral,Arizona State University,ai,3.0,1.08333333333,2004
 Eugenia Ternovska,Simon Fraser University,ai,1.0,0.5,2005
+Enrico Pontelli,New Mexico State University,ai,1.0,0.25,1998
 Gopal Gupta,University of Texas - Dallas,ai,1.0,0.25,1998
 Janyce Wiebe,University of Pittsburgh,ai,1.0,0.25,1998
 Chitta Baral,Arizona State University,ai,1.0,0.333333333333,2002
@@ -18006,6 +18033,8 @@ Alex Rogers,University of Oxford,ai,4.0,1.03333333333,2012
 Robin Cohen,University of Waterloo,ai,3.0,1.5,1991
 Gerald DeJong,University of Illinois at Urbana-Champaign,ai,1.0,0.333333333333,1994
 Gheorghe Tecuci,George Mason University,ai,1.0,0.166666666667,2000
+Tran Cao Son,New Mexico State University,ai,2.0,0.5,2015
+Enrico Pontelli,New Mexico State University,ai,2.0,0.5,2015
 Chitta Baral,Arizona State University,ai,2.0,0.5,2015
 Peter G. Jeavons,University of Oxford,ai,2.0,0.5,2015
 Stanislav Zivny,University of Oxford,ai,2.0,0.5,2015
@@ -18020,6 +18049,7 @@ Janet L. Kolodner,Georgia Institute of Technology,ai,1.0,0.5,1994
 Yoav Shoham,Stanford University,ai,2.0,0.833333333333,2015
 Tomasz P. Michalak,University of Warsaw,ai,2.0,0.366666666667,2016
 Holger H. Hoos,University of British Columbia,ai,2.0,0.5,2016
+Tran Cao Son,New Mexico State University,ai,2.0,0.666666666667,2008
 Rina Dechter,University of California - Irvine,ai,2.0,0.583333333333,2011
 Edith Hemaspaandra,Rochester Institute of Technology,ai,1.0,0.2,2008
 Satinder P. Singh,University of Michigan,ai,4.0,1.45,2007
@@ -18509,6 +18539,8 @@ Malik Magdon-Ismail,Rensselaer Polytechnic Institute,ai,1.0,0.2,2013
 Steven M. LaValle,University of Illinois at Urbana-Champaign,ai,1.0,0.25,2005
 Jason J. Corso,University of Michigan,ai,2.0,0.583333333333,2014
 Jonathan Schaeffer,University of Alberta,ai,1.0,0.125,2012
+Tran Cao Son,New Mexico State University,ai,5.0,1.58333333333,2011
+Enrico Pontelli,New Mexico State University,ai,6.0,1.83333333333,2011
 Fei Sha,University of California - Los Angeles,ai,1.0,0.333333333333,2016
 Rina Dechter,University of California - Irvine,ai,2.0,1.33333333333,1990
 Craig Boutilier,University of Toronto,ai,3.0,1.16666666667,1997
@@ -18660,6 +18692,8 @@ Andrea Lockerd Thomaz,Georgia Institute of Technology,ai,2.0,0.5,2011
 Avrim Blum,Carnegie Mellon University,ai,1.0,0.333333333333,2015
 Yishay Mansour,Tel Aviv University,ai,1.0,0.333333333333,2015
 Ariel D. Procaccia,Carnegie Mellon University,ai,2.0,0.583333333333,2011
+William Yeoh 0001,New Mexico State University,ai,3.0,0.783333333333,2014
+Tran Cao Son,New Mexico State University,ai,1.0,0.333333333333,2014
 Robert St. Amant,North Carolina State University,ai,1.0,0.5,2005
 Jacob William Crandall,Brigham Young University,ai,1.0,0.333333333333,2015
 Doina Precup,McGill University,ai,2.0,0.833333333333,2010
@@ -19067,6 +19101,7 @@ Julie A. Shah,Massachusetts Institute of Technology,ai,3.0,1.2,2016
 Alan Paul Fern,Oregon State University,ai,1.0,0.25,2014
 Yixin Chen,Washington University - St. Louis,ai,1.0,0.2,2013
 Kilian Q. Weinberger,Washington University - St. Louis,ai,1.0,0.2,2013
+William Yeoh 0001,New Mexico State University,ai,1.0,0.25,2015
 Donald Perlis,University of Maryland - College Park,ai,1.0,0.333333333333,1990
 Martin Müller 0003,University of Alberta,ai,1.0,0.333333333333,2011
 Bernardo Cuenca Grau,University of Oxford,ai,1.0,0.5,2005
@@ -19105,6 +19140,7 @@ William W. Cohen,Carnegie Mellon University,ai,1.0,0.333333333333,2010
 Kenneth R. Koedinger,Carnegie Mellon University,ai,1.0,0.333333333333,2010
 Daniel P. Miranker,University of Texas - Austin,ai,1.0,0.5,1994
 Sheila A. McIlraith,University of Toronto,ai,2.0,0.666666666667,2011
+Tran Cao Son,New Mexico State University,ai,1.0,0.25,2005
 Scott Kuindersma,Harvard University,ai,1.0,1.0,2010
 Yiling Chen,Harvard University,ai,3.0,1.16666666667,2015
 Pedro M. Domingos,University of Washington,ai,1.0,0.5,2011
@@ -19183,6 +19219,7 @@ David Kempe,University of Southern California,ai,1.0,0.142857142857,2012
 Satinder P. Singh,University of Michigan,ai,1.0,1.0,1992
 Miroslaw Truszczynski,University of Kentucky,ai,1.0,0.5,2000
 Yoav Shoham,Stanford University,ai,3.0,0.833333333333,2007
+Tran Cao Son,New Mexico State University,ai,2.0,0.45,2016
 Haim Schweitzer,University of Texas - Dallas,ai,1.0,1.0,1997
 Charles Elkan,University of California - San Diego,ai,2.0,1.5,1993
 Sylvie Thiébaux,Australian National University,ai,1.0,0.2,2015
@@ -19255,6 +19292,8 @@ Peter Widmayer,ETH Zurich,ai,1.0,0.333333333333,2007
 Stacy Marsella,Northeastern University,ai,1.0,0.5,2011
 Roni Khardon,Tufts University,ai,1.0,0.25,2015
 Alan Fern,Oregon State University,ai,3.0,0.833333333333,2015
+Tran Cao Son,New Mexico State University,ai,1.0,0.333333333333,2010
+Enrico Pontelli,New Mexico State University,ai,1.0,0.333333333333,2010
 Kristian J. Hammond,Northwestern University,ai,1.0,0.5,1993
 Alan Fern,Oregon State University,ai,1.0,0.333333333333,2006
 Prasad Tadepalli,Oregon State University,ai,1.0,0.333333333333,2006
@@ -19335,6 +19374,7 @@ Richard S. Sutton,University of Alberta,ai,1.0,1.0,1992
 David B. Leake,Indiana University,ai,1.0,0.333333333333,1997
 Kristen Grauman,University of Texas - Austin,ai,1.0,0.25,2012
 James A. Hendler,Rensselaer Polytechnic Institute,ai,1.0,0.333333333333,1994
+Enrico Pontelli,New Mexico State University,ai,1.0,0.333333333333,2008
 Thomas G. Dietterich,Oregon State University,ai,1.0,0.25,2010
 Dan Goldwasser,Purdue University,ai,1.0,0.333333333333,2016
 Rajesh P. N. Rao,University of Washington,ai,1.0,0.25,2005
@@ -19490,6 +19530,8 @@ Henry S. Thompson,University of Edinburgh,web,1.0,0.5,2006
 Christopher M. Jermaine,Rice University,web,1.0,0.2,2015
 Swarat Chaudhuri,Rice University,web,1.0,0.2,2015
 Scott Rixner,Rice University,web,1.0,0.2,2015
+Carlo Blundo,University of Salerno,web,1.0,0.333333333333,2002
+Annalisa De Bonis,University of Salerno,web,1.0,0.333333333333,2002
 Munindar P. Singh,North Carolina State University,web,1.0,0.5,2016
 Claire Cardie,Cornell University,web,1.0,0.333333333333,2012
 Christos Faloutsos,Carnegie Mellon University,web,2.0,0.583333333333,2014
@@ -19791,6 +19833,8 @@ Shriram Krishnamurthi,Brown University,web,1.0,0.25,2007
 Joshua D. Guttman,Worcester Polytechnic Institute,web,1.0,0.25,2007
 Yizhou Sun,Northeastern University,web,1.0,0.25,2016
 Alessandro Vespignani,Northeastern University,web,2.0,0.583333333333,2005
+Filomena Ferrucci,University of Salerno,web,1.0,0.25,2007
+Carmine Gravino,University of Salerno,web,1.0,0.25,2007
 Prashant J. Shenoy,University of Massachusetts - Amherst,web,1.0,0.333333333333,2003
 Gianluca Stringhini,University College London,web,1.0,0.142857142857,2013
 Christopher Kruegel,University of California - Santa Barbara,web,1.0,0.142857142857,2013
@@ -21837,6 +21881,7 @@ Endre Szemerédi,Rutgers University,theory,3.0,0.708333333333,1986
 Vipul Goyal,Carnegie Mellon University,theory,2.0,0.5,2014
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.25,2014
 Alessandra Scafuro,North Carolina State University,theory,1.0,0.25,2014
+Ivan Visconti,University of Salerno,theory,1.0,0.25,2014
 Yang Cai,McGill University,theory,2.0,0.666666666667,2012
 Constantinos Daskalakis,Massachusetts Institute of Technology,theory,4.0,1.33333333333,2012
 David R. Karger,Massachusetts Institute of Technology,theory,2.0,1.0,2009
@@ -22154,6 +22199,7 @@ Lance Fortnow,Georgia Institute of Technology,theory,1.0,1.0,1987
 Andrei A. Bulatov,Simon Fraser University,theory,1.0,0.333333333333,2001
 Peter Jeavons,University of Oxford,theory,1.0,0.333333333333,2001
 David Eppstein,University of California - Irvine,theory,4.0,2.75,1995
+Alfredo De Santis,University of Salerno,theory,2.0,0.5,1994
 Yvo Desmedt,University of Texas - Dallas,theory,1.0,0.25,1994
 Anna R. Karlin,University of Washington,theory,1.0,0.125,2000
 Ronitt Rubinfeld,Massachusetts Institute of Technology,theory,2.0,0.325,2000
@@ -24743,6 +24789,7 @@ Virginia Vassilevska Williams,Stanford University,theory,2.0,1.5,2011
 Timothy M. Chan,University of Waterloo,theory,2.0,2.0,1999
 Lenwood S. Heath,Virginia Tech,theory,1.0,1.0,1991
 S. Muthukrishnan,Rutgers University,theory,2.0,0.5,2009
+Gianluca De Marco,University of Salerno,theory,1.0,0.5,2001
 David Eppstein,University of California - Irvine,theory,1.0,1.0,2008
 Gill Barequet,Technion - Israel Institute of Technology,theory,1.0,0.25,2003
 Michael T. Goodrich,University of California - Irvine,theory,1.0,0.25,2003
@@ -24824,6 +24871,7 @@ Robert Kleinberg,Cornell University,theory,3.0,1.16666666667,2007
 James Aspnes,Yale University,theory,1.0,0.5,2003
 Claire Mathieu,Ecole Normale Superieure,theory,2.0,0.666666666667,2014
 Neal E. Young,University of California - Riverside,theory,1.0,0.333333333333,2014
+Giuseppe Cattaneo,University of Salerno,theory,1.0,0.333333333333,1997
 Joseph Naor,Technion - Israel Institute of Technology,theory,3.0,0.833333333333,2014
 Mohammad Taghi Hajiaghayi,University of Maryland - College Park,theory,2.0,0.75,2004
 Sofya Raskhodnikova,Pennsylvania State University,theory,1.0,0.5,2013
@@ -25669,6 +25717,7 @@ Sariel Har-Peled,University of Illinois at Urbana-Champaign,theory,2.0,1.0,2012
 David Eppstein,University of California - Irvine,theory,2.0,1.5,2001
 Roy Schwartz,Technion - Israel Institute of Technology,theory,2.0,0.666666666667,2015
 Philip N. Klein,Brown University,theory,2.0,2.0,2005
+Giuseppe Cattaneo,University of Salerno,theory,1.0,0.333333333333,1996
 Ross M. McConnell,Colorado State University,theory,1.0,0.25,2003
 Kurt Mehlhorn,Max Planck Institute,theory,1.0,0.25,2003
 Martin Fürer,Pennsylvania State University,theory,2.0,2.0,1995
@@ -25699,6 +25748,7 @@ Victor Y. Pan,CUNY,theory,4.0,1.83333333333,1992
 Petros Drineas,Rensselaer Polytechnic Institute,theory,1.0,0.5,2003
 Seth Pettie,University of Michigan,theory,2.0,1.0,2002
 Vijaya Ramachandran,University of Texas - Austin,theory,2.0,1.0,2002
+Gianluca De Marco,University of Salerno,theory,1.0,1.0,2008
 Ilan Reuven Cohen,Technion - Israel Institute of Technology,theory,1.0,0.25,2016
 Amos Fiat,Tel Aviv University,theory,1.0,0.25,2016
 Greg N. Frederickson,Purdue University,theory,1.0,1.0,1993
@@ -25716,6 +25766,8 @@ Yishay Mansour,Tel Aviv University,theory,1.0,0.25,2010
 Richard Cole 0001,New York University,theory,1.0,0.5,1996
 Yishay Mansour,Tel Aviv University,theory,1.0,0.333333333333,2013
 Timothy M. Chan,University of Waterloo,theory,1.0,0.5,2010
+Vincenzo Auletta,University of Salerno,theory,1.0,0.25,2012
+Giuseppe Persiano,University of Salerno,theory,1.0,0.25,2012
 Chee-Keng Yap,New York University,theory,1.0,0.5,2001
 David Doty,University of California - Davis,theory,1.0,0.2,2011
 Lila Kari,University of Waterloo,theory,1.0,0.2,2011
@@ -26799,6 +26851,7 @@ James K. Hahn,George Washington University,graphics,1.0,0.5,1992
 Kellogg S. Booth,University of British Columbia,graphics,1.0,0.2,1982
 Eugene Fiume,University of Toronto,graphics,1.0,0.2,1982
 Linda G. Shapiro,University of Washington,graphics,1.0,1.0,1975
+Jonathan Cook,New Mexico State University,graphics,1.0,0.25,2003
 Thomas A. DeFanti,University of Illinois - Chicago,graphics,1.0,0.2,1986
 Robert J. Fornaro,North Carolina State University,graphics,1.0,0.2,1978
 Norman I. Badler,University of Pennsylvania,graphics,1.0,0.25,2000
@@ -27182,6 +27235,8 @@ Franco P. Preparata,Brown University,theory,1.0,0.5,1982
 Ramamohan Paturi,University of California - San Diego,theory,1.0,0.5,1983
 Janos Simon,University of Chicago,theory,2.0,1.0,1983
 Tal Malkin,Columbia University,theory,1.0,0.2,2000
+Alfredo De Santis,University of Salerno,theory,1.0,0.5,1992
+Giuseppe Persiano,University of Salerno,theory,1.0,0.5,1992
 Daniel A. Spielman,Yale University,theory,1.0,1.0,2007
 Alistair Sinclair,University of California - Berkeley,theory,2.0,0.75,1999
 Bernard Chazelle,Princeton University,theory,2.0,1.33333333333,1983
@@ -27456,6 +27511,7 @@ Edmund M. Clarke,Carnegie Mellon University,theory,1.0,0.5,1979
 Joseph Naor,Technion - Israel Institute of Technology,theory,4.0,1.05952380952,2011
 Roy Schwartz,Technion - Israel Institute of Technology,theory,2.0,0.47619047619,2011
 Vipul Goyal,Carnegie Mellon University,theory,2.0,1.25,2012
+Ivan Visconti,University of Salerno,theory,1.0,0.25,2012
 Aleksander Madry,Massachusetts Institute of Technology,theory,1.0,0.5,2009
 Martin Grohe,RWTH Aachen,theory,1.0,1.0,1996
 Elham Kashefi,University of Edinburgh,theory,1.0,0.333333333333,2009
@@ -27827,6 +27883,7 @@ Milena Mihail,Georgia Institute of Technology,theory,1.0,0.25,1988
 Umesh V. Vazirani,University of California - Berkeley,theory,1.0,0.25,1988
 Gil Segev,Hebrew University of Jerusalem,theory,1.0,0.25,2007
 Rafail Ostrovsky,University of California - Los Angeles,theory,1.0,0.25,2013
+Ivan Visconti,University of Salerno,theory,1.0,0.25,2013
 John R. Gilbert,University of California - Santa Barbara,theory,1.0,0.333333333333,1990
 Adam Klivans,University of Texas - Austin,theory,1.0,0.166666666667,2011
 Sanjeev Arora,Princeton University,theory,1.0,0.333333333333,2010
@@ -27887,6 +27944,7 @@ Rajeev Alur,University of Pennsylvania,theory,1.0,0.5,1989
 Avrim Blum,Carnegie Mellon University,theory,2.0,1.0,1993
 John C. Mitchell,Stanford University,theory,1.0,1.0,1984
 Michael Ben-Or,Hebrew University of Jerusalem,theory,1.0,1.0,1994
+Alfredo De Santis,University of Salerno,theory,1.0,0.333333333333,1988
 Ben Reichardt,University of Southern California,theory,1.0,1.0,2009
 Gudmund Skovbjerg Frandsen,Aarhus University,theory,1.0,0.333333333333,1993
 Victor Y. Pan,CUNY,theory,1.0,0.333333333333,1993
@@ -28245,6 +28303,7 @@ Michelangelo Grigni,Emory University,theory,1.0,0.333333333333,1995
 Elias Koutsoupias,University of Oxford,theory,1.0,0.333333333333,1995
 Christos H. Papadimitriou,University of California - Berkeley,theory,1.0,0.333333333333,1995
 Leonard J. Schulman,California Institute of Technology,theory,1.0,0.5,1991
+Giuseppe Persiano,University of Salerno,theory,1.0,0.25,1994
 Larry Carter,University of California - San Diego,theory,1.0,0.5,1998
 Bala Kalyanasundaram,Georgetown University,theory,1.0,0.5,1997
 Kirk Pruhs,University of Pittsburgh,theory,1.0,0.5,1997
@@ -29102,6 +29161,7 @@ Padhraic Smyth,University of California - Irvine,mlmining,1.0,0.2,1998
 Michael J. Pazzani,University of California - Riverside,mlmining,1.0,0.5,2006
 Ping Li 0001,Rutgers University,mlmining,2.0,0.666666666667,2006
 Yiming Yang,Carnegie Mellon University,mlmining,1.0,0.5,2013
+Huiping Cao,New Mexico State University,mlmining,1.0,0.166666666667,2004
 George Kollios,Boston University,mlmining,1.0,0.166666666667,2004
 Yufei Tao,University of Queensland,mlmining,1.0,0.166666666667,2004
 Godmar Back,Virginia Tech,mlmining,1.0,0.333333333333,2010
@@ -30862,6 +30922,7 @@ Joseph A. Konstan,University of Minnesota,hci,2.0,0.416666666667,2007
 Lujo Bauer,Carnegie Mellon University,hci,3.0,0.433333333333,2016
 Lorrie Faith Cranor,Carnegie Mellon University,hci,3.0,0.433333333333,2016
 Michelle L. Mazurek,University of Maryland - College Park,hci,2.0,0.266666666667,2016
+Vittorio Fuccella,University of Salerno,hci,1.0,0.333333333333,2013
 Marti A. Hearst,University of California - Berkeley,hci,1.0,0.25,1996
 Charles B. Owen,Michigan State University,hci,1.0,0.25,2003
 Marti A. Hearst,University of California - Berkeley,hci,1.0,0.5,2005
@@ -30915,6 +30976,7 @@ Jan O. Borchers,RWTH Aachen,hci,1.0,0.333333333333,2005
 Maneesh Agrawala,Stanford University,hci,6.0,1.35833333333,2006
 Yvonne Jansen,DIKU,hci,1.0,0.166666666667,2014
 Lora Oehlberg,University of Calgary,hci,1.0,0.166666666667,2014
+Zachary O. Toups,New Mexico State University,hci,1.0,0.5,2007
 Andruid Kerne,Texas A&M University,hci,1.0,0.5,2007
 Susanne Bødker,Aarhus University,hci,1.0,0.5,2016
 Eric Paulos,University of California - Berkeley,hci,2.0,0.35,2016
@@ -31350,6 +31412,7 @@ Margaret M. Burnett,Oregon State University,hci,1.0,0.142857142857,2013
 Christopher Scaffidi,Oregon State University,hci,1.0,0.142857142857,2013
 Laura A. Dabbish,Carnegie Mellon University,hci,1.0,0.5,2009
 Richard Mann,University of Waterloo,hci,2.0,0.666666666667,2011
+Zachary O. Toups,New Mexico State University,hci,1.0,0.25,2011
 Andruid Kerne,Texas A&M University,hci,1.0,0.25,2011
 Juan Pablo Hourcade,University of Iowa,hci,1.0,0.25,2015
 Robert J. K. Jacob,Tufts University,hci,1.0,0.25,2002
@@ -36003,6 +36066,8 @@ Arjen K. Lenstra,EPFL,crypto,2.0,0.642857142857,1992
 Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.5,2008
 Ueli M. Maurer,ETH Zurich,crypto,2.0,0.833333333333,2000
 Yuval Ishai,Technion - Israel Institute of Technology,crypto,6.0,1.61666666667,2015
+Alfredo De Santis,University of Salerno,crypto,3.0,0.916666666667,1993
+Ugo Vaccaro,University of Salerno,crypto,2.0,0.583333333333,1993
 Ueli M. Maurer,ETH Zurich,crypto,2.0,1.5,1989
 Stefan Dziembowski,University of Warsaw,crypto,3.0,1.08333333333,2015
 Mike Rosulek,Oregon State University,crypto,3.0,0.916666666667,2015
@@ -36136,6 +36201,8 @@ Leonid Reyzin,Boston University,crypto,3.0,1.08333333333,2004
 Adam D. Smith,Pennsylvania State University,crypto,1.0,0.333333333333,2004
 Yvo Desmedt,University of Texas - Dallas,crypto,1.0,0.5,1999
 Jesper Buus Nielsen,Aarhus University,crypto,1.0,0.333333333333,2001
+Alfredo De Santis,University of Salerno,crypto,3.0,1.5,1990
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.5,1990
 Eli Biham,Technion - Israel Institute of Technology,crypto,2.0,1.0,1991
 Jesper Buus Nielsen,Aarhus University,crypto,1.0,0.333333333333,2005
 Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,1.0,0.5,2005
@@ -36150,6 +36217,7 @@ Thomas Ristenpart,Cornell University,crypto,1.0,0.5,2007
 Reihaneh Safavi-Naini,University of Calgary,crypto,1.0,0.5,1993
 Salil P. Vadhan,Harvard University,crypto,2.0,0.666666666667,2007
 Rosario Gennaro,CUNY,crypto,3.0,1.53333333333,2004
+Carlo Blundo,University of Salerno,crypto,3.0,1.03333333333,1994
 Douglas R. Stinson,University of Waterloo,crypto,2.0,0.666666666667,1994
 Stefan Dziembowski,University of Warsaw,crypto,1.0,0.5,2004
 Ueli M. Maurer,ETH Zurich,crypto,1.0,0.5,2004
@@ -36157,6 +36225,7 @@ Agnes Hui Chan,Northeastern University,crypto,2.0,0.833333333333,1989
 Andrew Klapper,University of Kentucky,crypto,1.0,0.333333333333,1989
 Jens Groth,University College London,crypto,1.0,0.5,2015
 Alessandra Scafuro,North Carolina State University,crypto,1.0,0.5,2012
+Ivan Visconti,University of Salerno,crypto,3.0,1.25,2012
 Yuval Ishai,Technion - Israel Institute of Technology,crypto,2.0,0.366666666667,2011
 Eyal Kushilevitz,Technion - Israel Institute of Technology,crypto,2.0,0.366666666667,2011
 Rafail Ostrovsky,University of California - Los Angeles,crypto,3.0,0.509523809524,2011
@@ -36185,7 +36254,9 @@ Nicholas J. Hopper,University of Minnesota,crypto,1.0,0.25,2003
 David Naccache,Ecole Normale Superieure,crypto,1.0,0.5,1997
 Jacques Stern,Ecole Normale Superieure,crypto,2.0,1.0,1997
 Eli Biham,Technion - Israel Institute of Technology,crypto,2.0,0.5,2005
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.2,2016
 Alessandra Scafuro,North Carolina State University,crypto,1.0,0.2,2016
+Ivan Visconti,University of Salerno,crypto,1.0,0.2,2016
 Michael Waidner,TU Darmstadt,crypto,1.0,1.0,1989
 Ivan Damgård,Aarhus University,crypto,5.0,1.78333333333,2007
 Daniele Micciancio,University of California - San Diego,crypto,3.0,1.33333333333,2003
@@ -36199,6 +36270,7 @@ Dan Page,University of Bristol,crypto,1.0,0.142857142857,2005
 Martijn Stam,University of Bristol,crypto,2.0,0.47619047619,2005
 Jacques Stern,Ecole Normale Superieure,crypto,2.0,0.583333333333,2007
 Rafail Ostrovsky,University of California - Los Angeles,crypto,5.0,1.45,2015
+Ivan Visconti,University of Salerno,crypto,2.0,0.666666666667,2015
 Jesper Buus Nielsen,Aarhus University,crypto,2.0,0.533333333333,2013
 Claudio Orlandi,Aarhus University,crypto,1.0,0.2,2013
 Georg Fuchsbauer,Ecole Normale Superieure,crypto,1.0,1.0,2011
@@ -36319,6 +36391,7 @@ Rafail Ostrovsky,University of California - Los Angeles,crypto,2.0,0.83333333333
 Jonathan Katz,University of Maryland - College Park,crypto,1.0,0.333333333333,2016
 Rafail Ostrovsky,University of California - Los Angeles,crypto,3.0,1.0,2013
 Alessandra Scafuro,North Carolina State University,crypto,1.0,0.25,2013
+Ivan Visconti,University of Salerno,crypto,1.0,0.25,2013
 Ueli M. Maurer,ETH Zurich,crypto,2.0,2.0,1990
 Yevgeniy Dodis,New York University,crypto,3.0,0.783333333333,2014
 Rafail Ostrovsky,University of California - Los Angeles,crypto,2.0,0.533333333333,2006
@@ -36543,6 +36616,7 @@ John F. Canny,University of California - Berkeley,crypto,1.0,0.5,2004
 John Black,University of Colorado Boulder,crypto,2.0,0.833333333333,2002
 Phillip Rogaway,University of California - Davis,crypto,2.0,0.833333333333,2002
 Rafail Ostrovsky,University of California - Los Angeles,crypto,2.0,0.75,2004
+Giuseppe Persiano,University of Salerno,crypto,2.0,0.583333333333,2004
 Brian Murphy,CUNY,crypto,1.0,0.0588235294118,2000
 Craig Putnam,Worcester Polytechnic Institute,crypto,1.0,0.0588235294118,2000
 David Pointcheval,Ecole Normale Superieure,crypto,1.0,0.333333333333,2000
@@ -36599,7 +36673,10 @@ Phillip Rogaway,University of California - Davis,crypto,2.0,0.583333333333,1998
 Daniel J. Bernstein,University of Illinois - Chicago,crypto,1.0,0.333333333333,2016
 Serge Vaudenay,EPFL,crypto,1.0,1.0,2002
 Yvo Desmedt,University of Texas - Dallas,crypto,1.0,0.5,1998
+Carlo Blundo,University of Salerno,crypto,3.0,0.666666666667,1992
+Alfredo De Santis,University of Salerno,crypto,3.0,0.666666666667,1992
 Douglas R. Stinson,University of Waterloo,crypto,2.0,1.25,1992
+Ugo Vaccaro,University of Salerno,crypto,3.0,0.666666666667,1992
 Ivan Damgård,Aarhus University,crypto,2.0,0.833333333333,2010
 Damien Stehlé,Ecole Normale Superieure de Lyon,crypto,1.0,0.5,2016
 Jacques Stern,Ecole Normale Superieure,crypto,1.0,0.333333333333,2008
@@ -36776,6 +36853,7 @@ Robert Beverly,Naval Postgraduate School,metrics,1.0,0.333333333333,2010
 Zhi-Li Zhang,University of Minnesota,metrics,1.0,0.333333333333,2004
 Dawn Song,University of California - Berkeley,metrics,1.0,0.25,2011
 Alex C. Snoeren,University of California - San Diego,metrics,1.0,0.5,2009
+Roberto De Prisco,University of Salerno,metrics,2.0,0.333333333333,2004
 Bruce M. Maggs,Duke University,metrics,3.0,0.666666666667,2004
 T. S. Eugene Ng,Rice University,metrics,1.0,0.166666666667,2006
 Peter Druschel,Max Planck Institute,metrics,1.0,0.166666666667,2006
@@ -37425,6 +37503,7 @@ Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2005
 Westley Weimer,University of Virginia,proglang,1.0,0.2,2003
 Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,2012
 Zhong Shao,Yale University,proglang,1.0,0.25,2008
+Salvatore La Torre,University of Salerno,proglang,1.0,0.333333333333,2009
 Parthasarathy Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2009
 Shmuel Sagiv,Tel Aviv University,proglang,1.0,0.333333333333,2003
 Phil Kearns,College of William and Mary,proglang,1.0,0.333333333333,1987
@@ -42259,6 +42338,7 @@ Al Davis,University of Utah,arch,1.0,0.333333333333,2009
 Saman P. Amarasinghe,Massachusetts Institute of Technology,arch,1.0,0.25,2013
 Christina Delimitrou,Cornell University,arch,1.0,0.5,2013
 Anand Sivasubramaniam,Pennsylvania State University,arch,1.0,0.333333333333,2006
+Mai Zheng,New Mexico State University,arch,1.0,0.2,2011
 Feng Qin,Ohio State University,arch,1.0,0.2,2011
 Todd M. Austin,University of Michigan,arch,1.0,0.25,2012
 Vivek Sarkar,Rice University,arch,1.0,0.142857142857,1998
@@ -42631,6 +42711,7 @@ Aloysius K. Mok,University of Texas - Austin,softeng,1.0,0.333333333333,1992
 E. Allen Emerson,University of Texas - Austin,softeng,1.0,0.333333333333,1992
 Robert V. Kenyon,University of Illinois - Chicago,softeng,1.0,0.25,1998
 Emina Torlak,University of Washington,softeng,1.0,0.5,2010
+Filomena Ferrucci,University of Salerno,softeng,1.0,0.25,2013
 Mark Harman,University College London,softeng,3.0,0.75,2013
 Lionel C. Briand,University of Luxembourg,softeng,1.0,0.333333333333,2004
 Richard W. Vuduc,Georgia Institute of Technology,softeng,1.0,0.333333333333,2010
@@ -42892,6 +42973,7 @@ Atif M. Memon,University of Maryland - College Park,softeng,1.0,0.333333333333,1
 Martha E. Pollack,University of Michigan,softeng,1.0,0.333333333333,1999
 Mary Lou Soffa,University of Virginia,softeng,1.0,0.333333333333,1999
 Martin Rinard,Massachusetts Institute of Technology,softeng,1.0,0.5,2016
+Jonathan E. Cook,New Mexico State University,softeng,1.0,0.5,1999
 Santosh Pande,Georgia Institute of Technology,softeng,1.0,0.333333333333,2004
 Lawrence Chung,University of Texas - Dallas,softeng,1.0,0.5,1995
 Mahadev Satyanarayanan,Carnegie Mellon University,softeng,1.0,1.0,1988
@@ -43165,6 +43247,7 @@ Mahesh Viswanathan 0001,University of Illinois at Urbana-Champaign,softeng,1.0,0
 Yuanyuan Zhou,University of California - San Diego,softeng,1.0,0.333333333333,2009
 Premkumar T. Devanbu,University of California - Davis,softeng,1.0,0.333333333333,2001
 Gregory D. Abowd,Georgia Institute of Technology,softeng,2.0,0.75,1994
+Andrea De Lucia,University of Salerno,softeng,1.0,0.142857142857,2015
 Denys Poshyvanyk,College of William and Mary,softeng,3.0,0.559523809524,2015
 Lori L. Pollock,University of Delaware,softeng,1.0,0.5,1989
 Vinod Ganapathy,Rutgers University,softeng,1.0,0.25,2007
@@ -43200,6 +43283,7 @@ Jeff Kramer,Imperial College London,softeng,2.0,1.0,1996
 William G. Griswold,University of California - San Diego,softeng,1.0,0.25,2003
 Gary T. Leavens,University of Central Florida,softeng,1.0,0.5,1996
 Grigore Rosu,University of Illinois at Urbana-Champaign,softeng,2.0,0.5,2011
+Jonathan E. Cook,New Mexico State University,softeng,1.0,0.5,1995
 Alexander L. Wolf,Imperial College London,softeng,1.0,0.5,1995
 Lori A. Clarke,University of Massachusetts - Amherst,softeng,1.0,0.25,2002
 Leon J. Osterweil,University of Massachusetts - Amherst,softeng,2.0,0.5,2002
@@ -43355,6 +43439,8 @@ Emery D. Berger,University of Massachusetts - Amherst,softeng,1.0,0.333333333333
 Jonathan Aldrich,Carnegie Mellon University,softeng,1.0,0.2,2004
 Alexander L. Wolf,Imperial College London,softeng,1.0,0.333333333333,1985
 Jack C. Wileden,University of Massachusetts - Amherst,softeng,1.0,0.333333333333,1985
+Alfredo De Santis,University of Salerno,crypto,1.0,0.2,2001
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.2,2001
 Amit Sahai,University of California - Los Angeles,crypto,2.0,0.342857142857,2001
 Allison Bishop Lewko,Columbia University,crypto,1.0,0.5,2015
 Ivan Damgård,Aarhus University,crypto,2.0,0.7,2009
@@ -43404,7 +43490,9 @@ Harriet J. Fell,Northeastern University,crypto,1.0,0.5,1985
 Anna Lysyanskaya,Brown University,crypto,2.0,1.5,2002
 Amit Sahai,University of California - Los Angeles,crypto,3.0,1.16666666667,1999
 Jonathan Katz,University of Maryland - College Park,crypto,1.0,0.166666666667,2009
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.166666666667,2009
 Abhi Shelat,Northeastern University,crypto,1.0,0.166666666667,2009
+Ivan Visconti,University of Salerno,crypto,1.0,0.166666666667,2009
 David Pointcheval,Ecole Normale Superieure,crypto,1.0,0.25,2001
 Jacques Stern,Ecole Normale Superieure,crypto,1.0,0.25,2001
 Maurice Herlihy,Brown University,crypto,1.0,0.5,1987
@@ -43431,6 +43519,8 @@ Victor Shoup,New York University,crypto,1.0,0.5,2003
 John Black,University of Colorado Boulder,crypto,1.0,0.5,2000
 Eli Ben-Sasson,Technion - Israel Institute of Technology,crypto,1.0,0.2,2013
 Eran Tromer,Tel Aviv University,crypto,1.0,0.2,2013
+Alfredo De Santis,University of Salerno,crypto,1.0,0.2,1994
+Ugo Vaccaro,University of Salerno,crypto,1.0,0.2,1994
 Yvo Desmedt,University of Texas - Dallas,crypto,1.0,0.5,1986
 Shafi Goldwasser,Massachusetts Institute of Technology,crypto,1.0,0.333333333333,2008
 Thomas Ristenpart,Cornell University,crypto,2.0,0.583333333333,2012
@@ -43449,6 +43539,8 @@ Douglas R. Stinson,University of Waterloo,crypto,1.0,0.5,1988
 Daniele Micciancio,University of California - San Diego,crypto,1.0,0.5,2013
 Serge Vaudenay,EPFL,crypto,1.0,0.25,2003
 Victor Shoup,New York University,crypto,1.0,0.25,2010
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.333333333333,2005
+Ivan Visconti,University of Salerno,crypto,1.0,0.333333333333,2005
 Leonid Reyzin,Boston University,crypto,1.0,0.5,2000
 Mihir Bellare,University of California - San Diego,crypto,2.0,1.0,1992
 Benny Chor,Tel Aviv University,crypto,1.0,0.333333333333,1994
@@ -43491,6 +43583,7 @@ Phillip Rogaway,University of California - Davis,crypto,1.0,0.333333333333,2005
 Nigel P. Smart,University of Bristol,crypto,1.0,0.25,2015
 Elisabeth Oswald,University of Bristol,crypto,1.0,0.5,2011
 Abhi Shelat,Northeastern University,crypto,1.0,0.333333333333,2008
+Ivan Visconti,University of Salerno,crypto,1.0,0.333333333333,2008
 Rafael Pass,Cornell University,crypto,1.0,0.333333333333,2009
 Amos Fiat,Tel Aviv University,crypto,1.0,0.5,1999
 Nicolas Courtois,University College London,crypto,1.0,1.0,2004
@@ -43532,6 +43625,7 @@ Victor Shoup,New York University,crypto,1.0,0.5,2014
 Boaz Barak,Harvard University,crypto,1.0,0.5,2009
 Eyal Kushilevitz,Technion - Israel Institute of Technology,crypto,1.0,0.5,1994
 Jacques Stern,Ecole Normale Superieure,crypto,2.0,1.5,1994
+Luisa Gargano,University of Salerno,crypto,1.0,0.25,1992
 Thomas Shrimpton,University of Florida,crypto,2.0,0.666666666667,2002
 Shang-Hua Teng,University of Southern California,crypto,1.0,1.0,1991
 Phillip Rogaway,University of California - Davis,crypto,1.0,0.5,2003
@@ -43574,9 +43668,12 @@ Avrim Blum,Carnegie Mellon University,crypto,1.0,0.25,1993
 Merrick L. Furst,Georgia Institute of Technology,crypto,1.0,0.25,1993
 Richard J. Lipton,Georgia Institute of Technology,crypto,1.0,0.25,1993
 Ran Canetti,Boston University,crypto,2.0,1.25,1997
+Carlo Blundo,University of Salerno,crypto,1.0,0.333333333333,1996
 Reihaneh Safavi-Naini,University of Calgary,crypto,1.0,0.5,2000
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,crypto,1.0,0.5,2011
+Alfredo De Santis,University of Salerno,crypto,1.0,0.333333333333,1988
 Silvio Micali,Massachusetts Institute of Technology,crypto,5.0,1.80952380952,1988
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.333333333333,1988
 Alessandra Scafuro,North Carolina State University,crypto,1.0,0.333333333333,2015
 William Aiello,University of British Columbia,crypto,2.0,0.583333333333,1998
 Manoj Prabhakaran,University of Illinois at Urbana-Champaign,crypto,1.0,0.5,2013
@@ -43610,7 +43707,9 @@ David Pointcheval,Ecole Normale Superieure,crypto,1.0,0.5,2006
 Eli Biham,Technion - Israel Institute of Technology,crypto,1.0,0.5,1997
 Matthew K. Franklin,University of California - Davis,crypto,1.0,0.5,1997
 Ran Canetti,Boston University,crypto,1.0,0.333333333333,2006
+Alfredo De Santis,University of Salerno,crypto,1.0,0.333333333333,1987
 Silvio Micali,Massachusetts Institute of Technology,crypto,1.0,0.333333333333,1987
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.333333333333,1987
 Anna Lysyanskaya,Brown University,crypto,2.0,0.45,2014
 Stanislaw Jarecki,University of California - Irvine,crypto,1.0,0.25,1995
 Serge Vaudenay,EPFL,crypto,1.0,0.333333333333,1993
@@ -43640,6 +43739,9 @@ David Wagner,University of California - Berkeley,crypto,1.0,0.333333333333,1999
 John Black,University of Colorado Boulder,crypto,1.0,0.2,1999
 Phillip Rogaway,University of California - Davis,crypto,1.0,0.2,1999
 Claude Crépeau,McGill University,crypto,1.0,1.0,1985
+Alfredo De Santis,University of Salerno,crypto,1.0,0.25,1991
+Luisa Gargano,University of Salerno,crypto,1.0,0.25,1991
+Ugo Vaccaro,University of Salerno,crypto,1.0,0.25,1991
 Rafael Pass,Cornell University,crypto,1.0,0.333333333333,2006
 Abhi Shelat,Northeastern University,crypto,1.0,0.333333333333,2006
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,crypto,1.0,0.333333333333,2006
@@ -43674,6 +43776,7 @@ Ivan Damgård,Aarhus University,crypto,2.0,0.75,1995
 Rosario Gennaro,CUNY,crypto,1.0,0.333333333333,2010
 Serge Vaudenay,EPFL,crypto,2.0,1.33333333333,2005
 Jacques Stern,Ecole Normale Superieure,crypto,1.0,0.333333333333,2006
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.166666666667,2013
 Ari Juels,Cornell University,crypto,1.0,0.333333333333,1997
 Amos Fiat,Tel Aviv University,crypto,1.0,0.333333333333,1988
 Silvio Micali,Massachusetts Institute of Technology,crypto,1.0,1.0,1992
@@ -43811,11 +43914,14 @@ Eli Biham,Technion - Israel Institute of Technology,crypto,1.0,0.5,1990
 Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.25,2015
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,crypto,2.0,0.583333333333,2015
 Amos Fiat,Tel Aviv University,crypto,1.0,0.5,1993
+Carlo Blundo,University of Salerno,crypto,1.0,0.25,1993
 Claudio Orlandi,Aarhus University,crypto,1.0,0.25,2012
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.333333333333,1993
 Mihir Bellare,University of California - San Diego,crypto,1.0,0.333333333333,2007
 Alexandra Boldyreva,Georgia Institute of Technology,crypto,1.0,0.333333333333,2007
 Adam O'Neill,Georgetown University,crypto,1.0,0.333333333333,2007
 Eyal Kushilevitz,Technion - Israel Institute of Technology,crypto,1.0,0.5,1988
+Ivan Visconti,University of Salerno,crypto,1.0,0.333333333333,2004
 Gilles Brassard,University of Montreal,crypto,1.0,0.25,1991
 Agnes Hui Chan,Northeastern University,crypto,1.0,0.5,2000
 Yossi Matias,Tel Aviv University,crypto,1.0,0.5,1987
@@ -43824,6 +43930,7 @@ Benny Chor,Tel Aviv University,crypto,1.0,0.5,1992
 John H. Reif,Duke University,crypto,1.0,0.5,1985
 J. D. Tygar,University of California - Berkeley,crypto,1.0,0.5,1985
 Yvo Desmedt,University of Texas - Dallas,crypto,1.0,0.1,1983
+Giuseppe Persiano,University of Salerno,crypto,1.0,0.333333333333,2015
 Iftach Haitner,Tel Aviv University,crypto,1.0,0.25,2015
 Manuel Blum,Carnegie Mellon University,crypto,1.0,0.5,1984
 Shafi Goldwasser,Massachusetts Institute of Technology,crypto,2.0,0.833333333333,1984
@@ -43913,6 +44020,7 @@ Franz Baader,TU Dresden,ai,1.0,1.0,1991
 David Toman,University of Waterloo,ai,3.0,0.95,2011
 Elliot Soloway,University of Michigan,ai,1.0,0.5,1977
 Jeffrey S. Rosenschein,Hebrew University of Jerusalem,ai,3.0,2.0,1993
+William Yeoh 0001,New Mexico State University,ai,2.0,0.666666666667,2009
 Luke Zettlemoyer,University of Washington,ai,1.0,0.166666666667,2015
 Eugene Charniak,Brown University,ai,2.0,1.2,1977
 Weixiong Zhang,Washington University - St. Louis,ai,2.0,1.33333333333,2003
@@ -44152,6 +44260,7 @@ Jingrui He,Arizona State University,ai,1.0,0.2,2013
 Jiawei Han,University of Illinois at Urbana-Champaign,ai,1.0,0.2,2009
 William Whittaker,Carnegie Mellon University,ai,1.0,0.166666666667,1985
 Takeo Kanade,Carnegie Mellon University,ai,2.0,0.666666666667,1985
+William Yeoh 0001,New Mexico State University,ai,1.0,0.333333333333,2013
 Henry A. Kautz,University of Rochester,ai,1.0,0.166666666667,2001
 Dimitris Achlioptas,University of California - Santa Cruz,ai,1.0,0.166666666667,2001
 Carla P. Gomes,Cornell University,ai,1.0,0.166666666667,2001
@@ -44426,6 +44535,8 @@ Steffen Hölldobler,TU Dresden,ai,1.0,0.25,2007
 Dafna Shahaf,Hebrew University of Jerusalem,ai,1.0,0.5,2009
 Kevin B. Korb,Monash University,ai,1.0,0.25,1999
 David C. Parkes,Harvard University,ai,5.0,1.75,2016
+Pasquale Foggia,University of Salerno,ai,1.0,0.25,2007
+Mario Vento,University of Salerno,ai,1.0,0.25,2007
 Qinfeng Shi,University of Adelaide,ai,1.0,0.166666666667,2015
 Alessio Lomuscio,Imperial College London,ai,3.0,1.5,2013
 Alessio Lomuscio,Imperial College London,ai,2.0,0.583333333333,2011
@@ -44492,6 +44603,7 @@ Yuval Filmus,Technion - Israel Institute of Technology,ai,1.0,0.333333333333,201
 Jingrui He,Arizona State University,ai,1.0,0.25,2015
 Hasan Davulcu,Arizona State University,ai,1.0,0.25,2015
 Mark Wallace,Monash University,ai,1.0,1.0,1991
+William Yeoh 0001,New Mexico State University,ai,1.0,0.333333333333,2011
 Bob J. Wielinga,VU Amsterdam,ai,1.0,0.5,1991
 Oliver Schulte,Simon Fraser University,ai,1.0,1.0,2009
 Chengxiang Zhai,University of Illinois at Urbana-Champaign,ai,1.0,0.5,2013
@@ -44529,6 +44641,7 @@ Santiago Ontañón,Drexel University,ai,1.0,0.5,2007
 Stuart J. Russell,University of California - Berkeley,ai,1.0,0.5,2003
 Juyang Weng,Michigan State University,ai,1.0,0.333333333333,1991
 Gautam Biswas,Vanderbilt University,ai,1.0,0.5,1989
+Tran Cao Son,New Mexico State University,ai,1.0,0.5,2009
 David Toman,University of Waterloo,ai,2.0,0.833333333333,2009
 David Poole,University of British Columbia,ai,1.0,1.0,1997
 Björn W. Schuller,Imperial College London,ai,1.0,0.25,2016
@@ -44610,6 +44723,8 @@ Stephen C. Y. Lu,University of Southern California,ai,1.0,0.25,1989
 Hector J. Levesque,University of Toronto,ai,1.0,0.5,1991
 Noga Alon,Tel Aviv University,ai,1.0,0.25,2015
 Suresh Venkatasubramanian,University of Utah,ai,1.0,0.333333333333,2009
+Vincenzo Auletta,University of Salerno,ai,1.0,0.2,2016
+Giuseppe Persiano,University of Salerno,ai,1.0,0.2,2016
 Pascal Poupart,University of Waterloo,ai,2.0,0.583333333333,2011
 Jesse Hoey,University of Waterloo,ai,1.0,0.333333333333,2011
 Prashant J. Shenoy,University of Massachusetts - Amherst,ai,1.0,0.333333333333,2009
@@ -44760,6 +44875,7 @@ Stuart J. Russell,University of California - Berkeley,ai,2.0,1.5,1989
 Xin Liu,University of California - Davis,ai,1.0,1.0,2015
 Lawrence J. Henschen,Northwestern University,ai,1.0,0.5,1989
 Volkan Isler,University of Minnesota,ai,1.0,0.5,2011
+Roger T. Hartley,New Mexico State University,ai,1.0,1.0,1981
 Joohyung Lee,Arizona State University,ai,1.0,0.333333333333,2011
 Toby Walsh,UNSW,ai,2.0,1.5,2001
 Ryan Williams,Stanford University,ai,1.0,0.333333333333,2003
@@ -45042,6 +45158,7 @@ Michael Kearns,University of Pennsylvania,ai,1.0,0.333333333333,2016
 Aaron Roth,University of Pennsylvania,ai,1.0,0.333333333333,2016
 Dave Cliff,University of Bristol,ai,1.0,0.5,2011
 Barbara Dunin-Keplicz,University of Warsaw,ai,1.0,0.5,2015
+Tran Cao Son,New Mexico State University,ai,1.0,0.333333333333,2007
 Kathleen McKeown,Columbia University,ai,1.0,1.0,1983
 Judea Pearl,University of California - Los Angeles,ai,1.0,1.0,1981
 Miroslaw Truszczynski,University of Kentucky,ai,1.0,1.0,1991
@@ -45323,6 +45440,7 @@ Samson Abramsky,University of Oxford,logic,1.0,0.5,1992
 Anuj Dawar,University of Cambridge,logic,1.0,0.333333333333,1998
 David L. Dill,Stanford University,logic,2.0,0.75,2001
 Stefan Dziembowski,University of Warsaw,logic,1.0,0.333333333333,1997
+Salvatore La Torre,University of Salerno,logic,1.0,0.5,2001
 Joseph Y. Halpern,Cornell University,logic,3.0,1.16666666667,1986
 Yoav Shoham,Stanford University,logic,1.0,0.5,1986
 Andrew M. Pitts,University of Cambridge,logic,1.0,0.5,1999
@@ -45487,6 +45605,7 @@ Nobuko Yoshida,Imperial College London,logic,1.0,0.5,2000
 Marcelo P. Fiore,University of Cambridge,logic,2.0,0.833333333333,1996
 Shmuel Safra,Tel Aviv University,logic,1.0,0.333333333333,1996
 Moshe Y. Vardi,Rice University,logic,1.0,0.5,1986
+Salvatore La Torre,University of Salerno,logic,1.0,0.333333333333,2002
 Hubert Comon,Ecole Normale Superieure de Cachan,logic,1.0,0.5,1997
 Neil Immerman,University of Massachusetts - Amherst,logic,2.0,0.833333333333,1994
 Moshe Y. Vardi,Rice University,logic,1.0,0.5,2009
@@ -45500,6 +45619,7 @@ Glynn Winskel,University of Cambridge,logic,1.0,0.333333333333,2015
 Andrew W. Appel,Princeton University,logic,1.0,1.0,2001
 Nachum Dershowitz,Tel Aviv University,logic,1.0,0.5,2003
 Phokion G. Kolaitis,University of California - Santa Cruz,logic,1.0,0.5,1999
+Salvatore La Torre,University of Salerno,logic,1.0,0.333333333333,2007
 Parthasarathy Madhusudan,University of Illinois at Urbana-Champaign,logic,1.0,0.333333333333,2007
 Eldar Fischer,Technion - Israel Institute of Technology,logic,1.0,0.333333333333,2006
 Mitchell Wand,Northeastern University,logic,1.0,1.0,1989
@@ -45826,6 +45946,7 @@ Martin P. Robillard,McGill University,softeng,1.0,0.5,2014
 Yuriy Brun,University of Massachusetts - Amherst,softeng,1.0,0.25,2009
 Nenad Medvidovic,University of Southern California,softeng,1.0,0.25,2009
 Jörg Denzinger,University of Calgary,softeng,1.0,0.25,2007
+Jonathan E. Cook,New Mexico State University,softeng,1.0,0.5,1998
 Alexander L. Wolf,Imperial College London,softeng,1.0,0.5,1998
 Christian Kästner,Carnegie Mellon University,softeng,2.0,0.583333333333,2015
 Trent Jaeger,Pennsylvania State University,softeng,1.0,0.25,2008
