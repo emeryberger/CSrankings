@@ -351,9 +351,10 @@ class CSRankings {
 		const data : any = results.data;
 		const d = data as Array<HomePage>;
 		for (let namePage of d) {
-			if (typeof namePage.homepage === 'undefined')
-        			continue
-		  	this.homepages[namePage.name.trim()] = namePage.homepage.trim();
+		    if (typeof namePage.homepage === 'undefined') {
+        		continue
+		    }
+		    this.homepages[namePage.name.trim()] = namePage.homepage.trim();
 		}
 		setTimeout(cont, 0);
 	    }
