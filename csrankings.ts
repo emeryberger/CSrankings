@@ -359,9 +359,6 @@ class CSRankings {
     }
 
     private static activateFields(value : boolean, fields : Array<number>) : boolean {
-	if (value === undefined) {
-	    value = true;
-	}
 	for (let i = 0; i <= fields.length; i++) {
 	    const str = "input[name=field_"+fields[i]+"]";
 	    jQuery(str).prop('checked', value);
@@ -507,6 +504,9 @@ class CSRankings {
 		continue;
 	    }
 	    const { name, year, area, dept } = authors[r];
+	    if (typeof dept === 'undefined') {
+		continue;
+	    }
 	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
 		continue;
 	    }
@@ -636,6 +636,9 @@ class CSRankings {
 				     facultyAdjustedCount: {[key: string] : number}) : void
     {
 	for (let dept in deptNames) {
+	    if (!deptNames.hasOwnProperty(dept)) {
+		continue;
+	    }
 	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
 		let name = deptNames[dept][ind];
 		if (name in CSRankings.aliases) {
@@ -660,6 +663,11 @@ class CSRankings {
 				 univtext : {[key: string] : string}) : void
     {
 	for (let dept in deptNames) {
+	    if (!deptNames.hasOwnProperty(dept)) {
+		continue;
+	    }
+	    console.log(dept);
+	    
 	    let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	    /* Build a dict of just faculty from this department for sorting purposes. */
 	    let fc : {[key:string] : number} = {};
@@ -954,9 +962,6 @@ class CSRankings {
     }
 
     public static activateAll(value : boolean) : boolean {
-	if (value === undefined) {
-	    value = true;
-	}
 	for (let i = 1; i <= CSRankings.areas.length; i++) {
 	    const str = "input[name=field_"+i+"]";
 	    jQuery(str).prop('checked', value);
@@ -969,22 +974,22 @@ class CSRankings {
 	return CSRankings.activateAll(false);
     }
 
-    public static activateSystems(value : boolean) : boolean {
+    public static activateSystems(value : boolean = true) : boolean {
 	const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 	return CSRankings.activateFields(value, systemsFields);
     }
 
-    public static activateAI(value : boolean) : boolean {
+    public static activateAI(value : boolean = true) : boolean {
 	const aiFields      : Array<number> = [1, 2, 3, 4, 5];
 	return CSRankings.activateFields(value, aiFields);
     }
 
-    public static activateTheory(value : boolean) : boolean {
+    public static activateTheory(value : boolean = true) : boolean {
 	const theoryFields  : Array<number> = [16, 17, 18];
 	return CSRankings.activateFields(value, theoryFields);
     }
 
-    public static activateOthers(value : boolean) : boolean {
+    public static activateOthers(value : boolean = true) : boolean {
 	const otherFields   : Array<number> = [19, 20, 21, 22];
 	return CSRankings.activateFields(value, otherFields);
     }
