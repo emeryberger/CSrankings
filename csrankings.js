@@ -276,9 +276,6 @@ var CSRankings = (function () {
         });
     };
     CSRankings.activateFields = function (value, fields) {
-        if (value === undefined) {
-            value = true;
-        }
         for (var i = 0; i <= fields.length; i++) {
             var str = "input[name=field_" + fields[i] + "]";
             jQuery(str).prop('checked', value);
@@ -399,6 +396,9 @@ var CSRankings = (function () {
                 continue;
             }
             var _a = authors[r], name_2 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
+            if (typeof dept === 'undefined') {
+                continue;
+            }
             if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
                 continue;
             }
@@ -517,6 +517,9 @@ var CSRankings = (function () {
     };
     CSRankings.canonicalizeNames = function (deptNames, facultycount, facultyAdjustedCount) {
         for (var dept in deptNames) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                continue;
+            }
             for (var ind = 0; ind < deptNames[dept].length; ind++) {
                 var name_3 = deptNames[dept][ind];
                 if (name_3 in CSRankings.aliases) {
@@ -536,6 +539,10 @@ var CSRankings = (function () {
     /* Build drop down for faculty names and paper counts. */
     CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext) {
         var _loop_1 = function(dept) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                return "continue";
+            }
+            console.log(dept);
             var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
             /* Build a dict of just faculty from this department for sorting purposes. */
             var fc = {};
@@ -780,9 +787,6 @@ var CSRankings = (function () {
         }
     };
     CSRankings.activateAll = function (value) {
-        if (value === undefined) {
-            value = true;
-        }
         for (var i = 1; i <= CSRankings.areas.length; i++) {
             var str = "input[name=field_" + i + "]";
             jQuery(str).prop('checked', value);
@@ -794,18 +798,22 @@ var CSRankings = (function () {
         return CSRankings.activateAll(false);
     };
     CSRankings.activateSystems = function (value) {
+        if (value === void 0) { value = true; }
         var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
         return CSRankings.activateFields(value, systemsFields);
     };
     CSRankings.activateAI = function (value) {
+        if (value === void 0) { value = true; }
         var aiFields = [1, 2, 3, 4, 5];
         return CSRankings.activateFields(value, aiFields);
     };
     CSRankings.activateTheory = function (value) {
+        if (value === void 0) { value = true; }
         var theoryFields = [16, 17, 18];
         return CSRankings.activateFields(value, theoryFields);
     };
     CSRankings.activateOthers = function (value) {
+        if (value === void 0) { value = true; }
         var otherFields = [19, 20, 21, 22];
         return CSRankings.activateFields(value, otherFields);
     };
