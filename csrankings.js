@@ -269,7 +269,10 @@ var CSRankings = (function () {
                 var d = data;
                 for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
                     var namePage = d_2[_i];
-                    _this.homepages[namePage.name] = namePage.homepage;
+                    if (typeof namePage.homepage === 'undefined') {
+                        continue;
+                    }
+                    _this.homepages[namePage.name.trim()] = namePage.homepage.trim();
                 }
                 setTimeout(cont, 0);
             }
