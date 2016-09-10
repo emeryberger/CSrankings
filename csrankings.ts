@@ -964,7 +964,7 @@ class CSRankings {
 	}
     }
 
-    public static activateAll(value : boolean) : boolean {
+    public static activateAll(value : boolean = true) : boolean {
 	for (let i = 1; i <= CSRankings.areas.length; i++) {
 	    const str = "input[name=field_"+i+"]";
 	    jQuery(str).prop('checked', value);

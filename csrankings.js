@@ -790,6 +790,7 @@ var CSRankings = (function () {
         }
     };
     CSRankings.activateAll = function (value) {
+        if (value === void 0) { value = true; }
         for (var i = 1; i <= CSRankings.areas.length; i++) {
             var str = "input[name=field_" + i + "]";
             jQuery(str).prop('checked', value);
