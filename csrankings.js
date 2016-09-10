@@ -802,7 +802,7 @@ var CSRankings = (function () {
     };
     CSRankings.activateSystems = function (value) {
         if (value === void 0) { value = true; }
-        var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 23];
         return CSRankings.activateFields(value, systemsFields);
     };
     CSRankings.activateAI = function (value) {
@@ -844,11 +844,11 @@ var CSRankings = (function () {
     CSRankings.areas = ["ai", "vision", "mlmining", "nlp", "web",
         "arch", "networks", "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
         "theory", "crypto", "logic",
-        "graphics", "hci", "robotics", "compbio"];
+        "graphics", "hci", "robotics", "compbio", "sigda"];
     CSRankings.areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
         "Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
         "Theory", "Crypto", "Logic",
-        "Graphics", "HCI", "Robotics", "Computational Biology"];
+        "Graphics", "HCI", "Robotics", "Comp. Biology", "Design Automation"];
     CSRankings.useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
     CSRankings.areaDict = {};
     CSRankings.areaPosition = {};

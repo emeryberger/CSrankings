@@ -80,8 +80,9 @@ areadict = {
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
     'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
-    'compbio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)']
+    'compbio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
     # See below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
+    'sigda' : ['ICCAD', 'DAC']
 }
 
 # ISMB proceedings are published as special issues of Bioinformatics.

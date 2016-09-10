@@ -81,12 +81,12 @@ class CSRankings {
     private static areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "web", 
 					     "arch",  "networks",  "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
 					     "theory",  "crypto", "logic",
-					     "graphics", "hci", "robotics", "compbio"];
+					     "graphics", "hci", "robotics", "compbio", "sigda"];
 
     private static areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
 						"Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
 						"Theory", "Crypto", "Logic",
-						"Graphics", "HCI", "Robotics", "Computational Biology"];
+						"Graphics", "HCI", "Robotics", "Comp. Biology", "Design Automation"];
 
     private static useDenseRankings : boolean = false;    /* Set to true for "dense rankings" vs. "competition rankings". */
     private static areaDict : {[key : string] : string } = {};
@@ -978,7 +978,7 @@ class CSRankings {
     }
 
     public static activateSystems(value : boolean = true) : boolean {
-	const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+	const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 23];
 	return CSRankings.activateFields(value, systemsFields);
     }
 
