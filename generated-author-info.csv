@@ -6770,6 +6770,7 @@ Anupam Datta,Carnegie Mellon University,security,1.0,0.333333333333,2011
 Fabian Monrose,University of North Carolina,security,2.0,0.666666666667,2010
 Martin C. Rinard,Massachusetts Institute of Technology,security,1.0,0.142857142857,2015
 Vipul Goyal,Carnegie Mellon University,security,1.0,0.25,2006
+Omkant Pandey,Stony Brook University,security,1.0,0.25,2006
 Amit Sahai,University of California - Los Angeles,security,1.0,0.25,2006
 Brent Waters,University of Texas - Austin,security,5.0,1.58333333333,2006
 Hao Chen 0003,University of California - Davis,security,1.0,0.5,2004
@@ -7487,6 +7488,7 @@ Dawn Song,University of California - Berkeley,security,3.0,0.5,2013
 Victor Shoup,New York University,security,1.0,0.5,1999
 Carla E. Brodley,Northeastern University,security,1.0,0.5,1998
 Aniket Kate,Purdue University,security,1.0,0.333333333333,2015
+Sanjam Garg,University of California - Berkeley,security,1.0,0.25,2010
 Amit Sahai,University of California - Los Angeles,security,3.0,1.08333333333,2010
 Yinqian Zhang,Ohio State University,security,1.0,0.25,2012
 Michael K. Reiter,University of North Carolina,security,1.0,0.25,2012
@@ -16775,6 +16777,7 @@ Eyal Kushilevitz,Technion - Israel Institute of Technology,highperf,1.0,0.333333
 Hemanta K. Maji,Purdue University,highperf,1.0,0.333333333333,2010
 Manoj Prabhakaran,University of Illinois at Urbana-Champaign,highperf,1.0,0.333333333333,2010
 Mike Rosulek,Oregon State University,highperf,1.0,0.333333333333,2010
+Alessandro Chiesa,University of California - Berkeley,highperf,1.0,0.5,2010
 Eran Tromer,Tel Aviv University,highperf,1.0,0.5,2010
 Xi Chen,Columbia University,highperf,1.0,0.5,2011
 Shang-Hua Teng,University of Southern California,highperf,1.0,0.5,2011
@@ -23344,6 +23347,7 @@ Thomas Vidick,California Institute of Technology,theory,1.0,0.5,2010
 Erik Winfree,California Institute of Technology,theory,1.0,0.5,2000
 Silvio Micali,Massachusetts Institute of Technology,theory,2.0,0.833333333333,2006
 Rafael Pass,Cornell University,theory,2.0,0.833333333333,2006
+Sanjam Garg,University of California - Berkeley,theory,2.0,0.416666666667,2013
 Amit Sahai,University of California - Los Angeles,theory,2.0,0.416666666667,2013
 Brent Waters,University of Texas - Austin,theory,2.0,0.416666666667,2013
 Amit Chakrabarti,Dartmouth College,theory,1.0,0.25,2006
@@ -23373,6 +23377,7 @@ Shafi Goldwasser,Massachusetts Institute of Technology,theory,1.0,0.25,1993
 Subhash Khot,New York University,theory,3.0,1.33333333333,2014
 Madhur Tulsiani,University of Chicago,theory,1.0,0.333333333333,2014
 Vipul Goyal,Carnegie Mellon University,theory,2.0,0.666666666667,2016
+Omkant Pandey,Stony Brook University,theory,1.0,0.333333333333,2016
 Ruta Mehta,University of Illinois at Urbana-Champaign,theory,2.0,1.33333333333,2014
 Anna Gál,University of Texas - Austin,theory,1.0,0.5,1999
 Eyal Kushilevitz,Technion - Israel Institute of Technology,theory,1.0,0.25,1993
@@ -23514,6 +23519,7 @@ Dorit Aharonov,Hebrew University of Jerusalem,theory,1.0,0.25,2000
 Umesh V. Vazirani,University of California - Berkeley,theory,2.0,0.583333333333,2000
 Alistair Sinclair,University of California - Berkeley,theory,1.0,0.5,1988
 Ran Canetti,Boston University,theory,2.0,0.583333333333,2013
+Alessandro Chiesa,University of California - Berkeley,theory,2.0,0.5,2013
 Eran Tromer,Tel Aviv University,theory,2.0,0.5,2013
 Alfred V. Aho,Columbia University,theory,2.0,1.0,1975
 Daniel M. Berry,University of Waterloo,theory,1.0,1.0,1971
@@ -24035,6 +24041,7 @@ Sheila A. Greibach,University of California - Los Angeles,theory,1.0,1.0,1973
 Robert Endre Tarjan,Princeton University,theory,1.0,0.333333333333,1976
 Vladimir Braverman,Johns Hopkins University,theory,2.0,0.5,2016
 Gary L. Miller,Carnegie Mellon University,theory,1.0,1.0,1977
+Sanjam Garg,University of California - Berkeley,theory,3.0,0.783333333333,2015
 Rafail Ostrovsky,University of California - Los Angeles,theory,3.0,0.833333333333,2015
 Alessandra Scafuro,North Carolina State University,theory,1.0,0.25,2015
 Julia Chuzhoy,University of Chicago,theory,2.0,0.833333333333,2008
@@ -30871,6 +30878,7 @@ Cas Cremers,University of Oxford,security,1.0,0.25,2016
 Deborah Estrin,Cornell University,security,1.0,0.5,1989
 Gene Tsudik,University of California - Irvine,security,1.0,0.5,1989
 Eli Ben-Sasson,Technion - Israel Institute of Technology,security,1.0,0.2,2015
+Alessandro Chiesa,University of California - Berkeley,security,1.0,0.2,2015
 Eran Tromer,Tel Aviv University,security,1.0,0.2,2015
 Gernot Heiser,UNSW,security,1.0,0.2,2015
 Naftaly H. Minsky,Rutgers University,security,1.0,1.0,1981
@@ -30912,6 +30920,7 @@ Karl N. Levitt,University of California - Davis,security,1.0,0.5,1991
 V. N. Venkatakrishnan,University of Illinois - Chicago,security,1.0,0.5,2009
 David Evans,University of Virginia,security,1.0,0.5,2013
 Eli Ben-Sasson,Technion - Israel Institute of Technology,security,2.0,0.392857142857,2014
+Alessandro Chiesa,University of California - Berkeley,security,2.0,0.392857142857,2014
 Matthew Green 0001,Johns Hopkins University,security,2.0,0.242857142857,2014
 Eran Tromer,Tel Aviv University,security,2.0,0.392857142857,2014
 Cas J. F. Cremers,University of Oxford,security,1.0,0.25,2012
@@ -37239,6 +37248,7 @@ Ran Canetti,Boston University,crypto,1.0,0.2,2016
 Leonid Reyzin,Boston University,crypto,1.0,0.2,2016
 Adam D. Smith,Pennsylvania State University,crypto,1.0,0.2,2016
 Boaz Barak,Harvard University,crypto,1.0,0.2,2014
+Sanjam Garg,University of California - Berkeley,crypto,3.0,0.95,2014
 Amit Sahai,University of California - Los Angeles,crypto,4.0,0.894444444444,2014
 Ivan Damgård,Aarhus University,crypto,2.0,1.0,1996
 Ran Canetti,Boston University,crypto,1.0,0.333333333333,2004
@@ -37320,6 +37330,7 @@ Arjen K. Lenstra,EPFL,crypto,2.0,0.75,1993
 Marc Fischlin,TU Darmstadt,crypto,1.0,1.0,1997
 Stanislaw Jarecki,University of California - Irvine,crypto,1.0,0.5,2003
 Mihir Bellare,University of California - San Diego,crypto,3.0,1.0,2001
+Omkant Pandey,Stony Brook University,crypto,2.0,0.533333333333,2008
 Rafael Pass,Cornell University,crypto,2.0,0.533333333333,2008
 Amit Sahai,University of California - Los Angeles,crypto,5.0,1.7,2008
 Muthuramakrishnan Venkitasubramaniam,University of Rochester,crypto,1.0,0.2,2008
@@ -37557,6 +37568,7 @@ Stefan Dziembowski,University of Warsaw,crypto,2.0,0.5,2016
 Bernd Meyer,Monash University,crypto,1.0,0.5,1996
 Volker Müller 0001,University of Luxembourg,crypto,1.0,0.5,1996
 Ivan Damgård,Aarhus University,crypto,3.0,1.5,2002
+Sanjam Garg,University of California - Berkeley,crypto,3.0,0.733333333333,2013
 Bogdan Warinschi,University of Bristol,crypto,1.0,0.333333333333,2011
 Michael Waidner,TU Darmstadt,crypto,1.0,0.333333333333,1998
 Ran Canetti,Boston University,crypto,3.0,1.2,2001
@@ -37587,6 +37599,7 @@ Yevgeniy Dodis,New York University,crypto,3.0,0.783333333333,2014
 Rafail Ostrovsky,University of California - Los Angeles,crypto,2.0,0.533333333333,2006
 Hovav Shacham,University of California - San Diego,crypto,1.0,0.2,2006
 Marc Fischlin,TU Darmstadt,crypto,2.0,0.75,2013
+Alessandro Chiesa,University of California - Berkeley,crypto,1.0,0.333333333333,2015
 Eran Tromer,Tel Aviv University,crypto,1.0,0.333333333333,2015
 Rafail Ostrovsky,University of California - Los Angeles,crypto,1.0,0.333333333333,1993
 Dominique Unruh,University of Tartu,crypto,1.0,1.0,2016
@@ -37653,6 +37666,7 @@ Vipul Goyal,Carnegie Mellon University,crypto,2.0,0.75,2013
 Gil Segev,Hebrew University of Jerusalem,crypto,2.0,0.833333333333,2011
 Daniel Wichs,Northeastern University,crypto,2.0,0.666666666667,2011
 Hoeteck Wee,Ecole Normale Superieure,crypto,2.0,0.5,2016
+Omkant Pandey,Stony Brook University,crypto,2.0,0.75,2012
 Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.25,2012
 Mihir Bellare,University of California - San Diego,crypto,2.0,0.833333333333,2009
 Michael Waidner,TU Darmstadt,crypto,1.0,0.5,1985
@@ -37673,6 +37687,8 @@ Yuval Ishai,Technion - Israel Institute of Technology,crypto,2.0,0.583333333333,
 Eyal Kushilevitz,Technion - Israel Institute of Technology,crypto,2.0,0.583333333333,2003
 Shafi Goldwasser,Massachusetts Institute of Technology,crypto,1.0,0.2,2007
 Vinod Vaikuntanathan,Massachusetts Institute of Technology,crypto,1.0,0.2,2007
+Sanjam Garg,University of California - Berkeley,crypto,2.0,0.583333333333,2016
+Omkant Pandey,Stony Brook University,crypto,2.0,0.583333333333,2016
 Michel Abdalla,Ecole Normale Superieure,crypto,2.0,0.666666666667,2015
 David Pointcheval,Ecole Normale Superieure,crypto,2.0,0.583333333333,2015
 Andrew Klapper,University of Kentucky,crypto,1.0,1.0,1996
@@ -37741,6 +37757,7 @@ Agnes Hui Chan,Northeastern University,crypto,1.0,0.333333333333,1998
 Ran Canetti,Boston University,crypto,1.0,0.5,2008
 Ari Juels,Cornell University,crypto,1.0,0.5,2014
 Thomas Ristenpart,Cornell University,crypto,1.0,0.5,2014
+Sanjam Garg,University of California - Berkeley,crypto,3.0,1.0,2012
 Vipul Goyal,Carnegie Mellon University,crypto,2.0,0.45,2012
 Amit Sahai,University of California - Los Angeles,crypto,4.0,1.28333333333,2012
 Dan Boneh,Stanford University,crypto,1.0,0.5,1998
@@ -44700,6 +44717,7 @@ Adam O'Neill,Georgetown University,crypto,2.0,0.666666666667,2011
 Chris Peikert,University of Michigan,crypto,1.0,0.333333333333,2011
 Silvio Micali,Massachusetts Institute of Technology,crypto,1.0,0.5,1990
 Ran Canetti,Boston University,crypto,2.0,0.666666666667,2015
+Sanjam Garg,University of California - Berkeley,crypto,1.0,0.333333333333,2008
 Phillip Rogaway,University of California - Davis,crypto,1.0,0.5,1997
 Gil Segev,Hebrew University of Jerusalem,crypto,1.0,0.333333333333,2006
 Adam D. Smith,Pennsylvania State University,crypto,2.0,0.583333333333,2006
@@ -44708,15 +44726,18 @@ Ran Canetti,Boston University,crypto,1.0,0.333333333333,1996
 Victor Shoup,New York University,crypto,1.0,0.5,2003
 John Black,University of Colorado Boulder,crypto,1.0,0.5,2000
 Eli Ben-Sasson,Technion - Israel Institute of Technology,crypto,1.0,0.2,2013
+Alessandro Chiesa,University of California - Berkeley,crypto,1.0,0.2,2013
 Eran Tromer,Tel Aviv University,crypto,1.0,0.2,2013
 Alfredo De Santis,University of Salerno,crypto,1.0,0.2,1994
 Ugo Vaccaro,University of Salerno,crypto,1.0,0.2,1994
+Omkant Pandey,Stony Brook University,crypto,1.0,0.25,2013
 Yvo Desmedt,University of Texas - Dallas,crypto,1.0,0.5,1986
 Shafi Goldwasser,Massachusetts Institute of Technology,crypto,1.0,0.333333333333,2008
 Thomas Ristenpart,Cornell University,crypto,2.0,0.583333333333,2012
 Marc Fischlin,TU Darmstadt,crypto,1.0,0.25,2015
 Guillaume Hanrot,Ecole Normale Superieure de Lyon,crypto,1.0,0.333333333333,2011
 William E. Skeith III,CUNY,crypto,1.0,0.5,2005
+Sanjam Garg,University of California - Berkeley,crypto,2.0,0.533333333333,2011
 Rafail Ostrovsky,University of California - Los Angeles,crypto,3.0,1.08333333333,1997
 Jean-Sébastien Coron,University of Luxembourg,crypto,2.0,0.444444444444,2015
 Anna Lysyanskaya,Brown University,crypto,2.0,1.0,2006
@@ -44829,6 +44850,7 @@ Richard M. Karp,University of California - Berkeley,crypto,1.0,0.333333333333,19
 Salil P. Vadhan,Harvard University,crypto,1.0,0.333333333333,1999
 Yuval Ishai,Technion - Israel Institute of Technology,crypto,1.0,0.5,1999
 Richard Cleve,University of Waterloo,crypto,1.0,1.0,1989
+Sanjam Garg,University of California - Berkeley,crypto,1.0,0.2,2015
 Eyal Kushilevitz,Technion - Israel Institute of Technology,crypto,2.0,0.45,2015
 Richard A. Kemmerer,University of California - Santa Barbara,crypto,1.0,1.0,1987
 Jens Groth,University College London,crypto,1.0,0.25,2011
@@ -44869,6 +44891,7 @@ William Aiello,University of British Columbia,crypto,2.0,0.583333333333,1998
 Manoj Prabhakaran,University of Illinois at Urbana-Champaign,crypto,1.0,0.5,2013
 Ivan Bjerre Damgård,Aarhus University,crypto,1.0,0.142857142857,2013
 Iftach Haitner,Tel Aviv University,crypto,1.0,0.333333333333,2006
+Omkant Pandey,Stony Brook University,crypto,1.0,0.333333333333,2014
 Ran Canetti,Boston University,crypto,1.0,0.166666666667,2007
 Ronald L. Rivest,Massachusetts Institute of Technology,crypto,1.0,0.166666666667,2007
 Madhu Sudan,Harvard University,crypto,1.0,0.166666666667,2007
@@ -44941,6 +44964,7 @@ Muthuramakrishnan Venkitasubramaniam,University of Rochester,crypto,1.0,0.25,201
 Arjen K. Lenstra,EPFL,crypto,1.0,0.142857142857,2009
 Mihir Bellare,University of California - San Diego,crypto,1.0,0.5,2011
 Chris Peikert,University of Michigan,crypto,2.0,1.0,2014
+Omkant Pandey,Stony Brook University,crypto,1.0,0.2,2015
 Thomas Holenstein,ETH Zurich,crypto,1.0,0.5,2005
 Thomas Shrimpton,University of Florida,crypto,1.0,0.333333333333,2016
 Bogdan Warinschi,University of Bristol,crypto,1.0,0.333333333333,2016
@@ -44974,6 +44998,7 @@ Sean Hallgren,Pennsylvania State University,crypto,1.0,0.333333333333,2011
 Adam D. Smith,Pennsylvania State University,crypto,1.0,0.333333333333,2011
 Manuel Blum,Carnegie Mellon University,crypto,1.0,0.333333333333,1988
 Nadia Heninger,University of Pennsylvania,crypto,1.0,0.5,2009
+Alessandro Chiesa,University of California - Berkeley,crypto,1.0,0.5,2012
 Serge Vaudenay,EPFL,crypto,1.0,0.5,2004
 Marc Fischlin,TU Darmstadt,crypto,1.0,0.5,2000
 Stanislaw Jarecki,University of California - Irvine,crypto,1.0,0.166666666667,2013
@@ -44986,6 +45011,7 @@ Bernd Meyer,Monash University,crypto,1.0,0.333333333333,2000
 Volker Müller 0001,University of Luxembourg,crypto,1.0,0.333333333333,2000
 David Wagner,University of California - Berkeley,crypto,1.0,0.25,1998
 Agnes Hui Chan,Northeastern University,crypto,1.0,0.25,1992
+Omkant Pandey,Stony Brook University,crypto,1.0,0.25,2009
 Salil P. Vadhan,Harvard University,crypto,1.0,0.25,2009
 Eli Biham,Technion - Israel Institute of Technology,crypto,1.0,0.333333333333,2003
 Aggelos Kiayias,University of Edinburgh,crypto,1.0,0.5,2007
@@ -45095,6 +45121,7 @@ Serge Vaudenay,EPFL,crypto,1.0,1.0,1998
 Arjen K. Lenstra,EPFL,crypto,3.0,1.16666666667,1995
 Mike Burmester,Florida State University,crypto,1.0,0.333333333333,1992
 Eli Ben-Sasson,Technion - Israel Institute of Technology,crypto,1.0,0.25,2014
+Alessandro Chiesa,University of California - Berkeley,crypto,1.0,0.25,2014
 Shmuel Safra,Tel Aviv University,crypto,1.0,0.2,1992
 Mihir Bellare,University of California - San Diego,crypto,1.0,0.333333333333,1995
 Roch Guérin,Washington University - St. Louis,crypto,1.0,0.333333333333,1995
@@ -45166,6 +45193,7 @@ Shafi Goldwasser,Massachusetts Institute of Technology,crypto,1.0,0.333333333333
 Dan Boneh,Stanford University,crypto,1.0,0.25,2007
 William E. Skeith III,CUNY,crypto,1.0,0.25,2007
 Sampath Kannan,University of Pennsylvania,crypto,1.0,0.333333333333,1985
+Abhishek Jain,Johns Hopkins University,crypto,1.0,0.5,2015
 Louis Salvail,University of Montreal,crypto,1.0,0.333333333333,2005
 Kamalika Chaudhuri,University of California - San Diego,crypto,1.0,0.5,2006
 Sergey Gorbunov,University of Waterloo,crypto,1.0,0.333333333333,2015
