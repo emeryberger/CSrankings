@@ -469,29 +469,6 @@ class CSRankings {
 	}
     }
 
-/*
-    private static countPapers(areaDeptAdjustedCount  : {[key:string] : number},
-			       authors : Array<Author>,
-			       startyear : number,
-			       endyear : number,
-			       weights : {[key:string] : number}) : void
-    {
-	for (let r in authors) {
-	    if (!authors.hasOwnProperty(r)) {
-		continue;
-	    }
-	    const { area, year, dept } = authors[r];
-	    if (weights[area] === 0) {
-		continue;
-	    }
-	    if ((year < startyear) || (year > endyear)) {
-		continue;
-	    }
-	    areaDeptAdjustedCount[area+dept] = 0;
-	}
-    }
-*/
-
     /* Build the dictionary of departments (and count) to be ranked. */
     private static buildDepartments(authors : Array<Author>,
 				    startyear : number,
@@ -585,9 +562,10 @@ class CSRankings {
 				areas : Array<string>,
 				numAreas : number,
 				displayPercentages : boolean,
-				weights : {[key:string] : number},
-			        univagg : {[key: string] : number}) : void
+				weights : {[key:string] : number})
+    : {[key: string] : number}
     {
+	let univagg : {[key: string] : number} = {};
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
 		continue;
@@ -620,6 +598,7 @@ class CSRankings {
 		univagg[dept] = Math.pow(univagg[dept], 1/numAreas);
 	    }
 	}
+	return univagg;
     }
 
     /* Updates the 'weights' of each area from the checkboxes. */
@@ -675,7 +654,6 @@ class CSRankings {
 	    if (!deptNames.hasOwnProperty(dept)) {
 		continue;
 	    }
-	    console.log(dept);
 	    
 	    let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	    /* Build a dict of just faculty from this department for sorting purposes. */
@@ -881,14 +859,6 @@ class CSRankings {
 						       currentWeights);
 	}
 
-/*
-	CSRankings.countPapers(areaDeptAdjustedCount,
-			       CSRankings.authors,
-			       startyear,
-			       endyear,
-			       currentWeights);
-*/
-	
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
 				    endyear,
@@ -908,27 +878,25 @@ class CSRankings {
 				    facultyAdjustedCount);
 	
 	/* (university, total or average number of papers) */
-	let univagg : {[key: string] : number} = {};
-	CSRankings.computeStats(deptNames,
-				areaDeptAdjustedCount,
-				CSRankings.areas,
-				numAreas,
-				displayPercentages,
-				currentWeights,
-				univagg);
+	const univagg = CSRankings.computeStats(deptNames,
+						areaDeptAdjustedCount,
+						CSRankings.areas,
+						numAreas,
+						displayPercentages,
+						currentWeights);
 
 	/* Canonicalize names. */
 	CSRankings.canonicalizeNames(deptNames,
 				     facultycount,
 				     facultyAdjustedCount);
 
-	let univtext = CSRankings.buildDropDown(deptNames,
-						facultycount,
-						facultyAdjustedCount,
-						coauthorList);
+	const univtext = CSRankings.buildDropDown(deptNames,
+						  facultycount,
+						  facultyAdjustedCount,
+						  coauthorList);
 
 	/* Start building up the string to output. */
-	let s = CSRankings.buildOutputString(displayPercentages,
+	const s = CSRankings.buildOutputString(displayPercentages,
 					     numAreas,
 					     univagg,
 					     deptCounts,
@@ -944,11 +912,11 @@ class CSRankings {
     /* Turn the chart display on or off. */
     public static toggleChart(name : string) : void {
 	const chart = document.getElementById(name+"-chart");
-	if (chart.style.display === 'block') {
-	    chart.style.display = 'none';
-	    chart.innerHTML = '';
+	if (chart!.style.display === 'block') {
+	    chart!.style.display = 'none';
+	    chart!.innerHTML = '';
 	} else {
-	    chart.style.display = 'block';
+	    chart!.style.display = 'block';
 	    CSRankings.makeChart(name);
 	}
 	
@@ -959,12 +927,12 @@ class CSRankings {
     public static toggleFaculty(dept : string) : void {
 	const e = document.getElementById(dept+"-faculty");
 	const widget = document.getElementById(dept+"-widget");
-	if (e.style.display === 'block') {
-	    e.style.display = 'none';
-	    widget.innerHTML = CSRankings.RightTriangle;
+	if (e!.style.display === 'block') {
+	    e!.style.display = 'none';
+	    widget!.innerHTML = CSRankings.RightTriangle;
 	} else {
-	    e.style.display = 'block';
-	    widget.innerHTML = CSRankings.DownTriangle;
+	    e!.style.display = 'block';
+	    widget!.innerHTML = CSRankings.DownTriangle;
 	}
     }
 
