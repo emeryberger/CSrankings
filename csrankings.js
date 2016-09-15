@@ -368,28 +368,6 @@ var CSRankings = (function () {
             }
         }
     };
-    /*
-        private static countPapers(areaDeptAdjustedCount  : {[key:string] : number},
-                       authors : Array<Author>,
-                       startyear : number,
-                       endyear : number,
-                       weights : {[key:string] : number}) : void
-        {
-        for (let r in authors) {
-            if (!authors.hasOwnProperty(r)) {
-            continue;
-            }
-            const { area, year, dept } = authors[r];
-            if (weights[area] === 0) {
-            continue;
-            }
-            if ((year < startyear) || (year > endyear)) {
-            continue;
-            }
-            areaDeptAdjustedCount[area+dept] = 0;
-        }
-        }
-    */
     /* Build the dictionary of departments (and count) to be ranked. */
     CSRankings.buildDepartments = function (authors, startyear, endyear, weights, regions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
         /* contains an author name if that author has been processed. */
@@ -467,7 +445,8 @@ var CSRankings = (function () {
         }
     };
     /* Compute aggregate statistics. */
-    CSRankings.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights, univagg) {
+    CSRankings.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+        var univagg = {};
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
@@ -503,6 +482,7 @@ var CSRankings = (function () {
                 univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
             }
         }
+        return univagg;
     };
     /* Updates the 'weights' of each area from the checkboxes. */
     /* Returns the number of areas selected (checked). */
@@ -546,7 +526,6 @@ var CSRankings = (function () {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
             }
-            console.log(dept);
             var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
             /* Build a dict of just faculty from this department for sorting purposes. */
             var fc = {};
@@ -742,18 +721,10 @@ var CSRankings = (function () {
         if (CSRankings.showCoauthors) {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
         }
-        /*
-            CSRankings.countPapers(areaDeptAdjustedCount,
-                           CSRankings.authors,
-                           startyear,
-                           endyear,
-                           currentWeights);
-        */
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, CSRankings.previousWeights, currentWeights, CSRankings.authorAreas);
         CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
-        var univagg = {};
-        CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights, univagg);
+        var univagg = CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
