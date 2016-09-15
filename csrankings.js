@@ -391,7 +391,7 @@ var CSRankings = (function () {
         }
     */
     /* Build the dictionary of departments (and count) to be ranked. */
-    CSRankings.buildDepartments = function (areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, regions) {
+    CSRankings.buildDepartments = function (authors, startyear, endyear, weights, regions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
         /* contains an author name if that author has been processed. */
         var visited = {};
         for (var r in authors) {
@@ -540,7 +540,8 @@ var CSRankings = (function () {
         }
     };
     /* Build drop down for faculty names and paper counts. */
-    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext) {
+    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
+        var univtext = {};
         var _loop_1 = function(dept) {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
@@ -617,6 +618,7 @@ var CSRankings = (function () {
         for (var dept in deptNames) {
             _loop_1(dept);
         }
+        return univtext;
     };
     CSRankings.buildOutputString = function (displayPercentages, numAreas, univagg, deptCounts, univtext) {
         var s = CSRankings.makePrologue();
@@ -748,14 +750,13 @@ var CSRankings = (function () {
                            currentWeights);
         */
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, CSRankings.previousWeights, currentWeights, CSRankings.authorAreas);
-        CSRankings.buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, CSRankings.authors, startyear, endyear, currentWeights, whichRegions);
+        CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         var univagg = {};
         CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights, univagg);
-        var univtext = {};
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
-        CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList, univtext);
+        var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
         // Save these weights for next time.
@@ -843,13 +844,16 @@ var CSRankings = (function () {
     CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
     /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
     CSRankings.areas = ["ai", "vision", "mlmining", "nlp", "web",
-        "arch", "networks", "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
-        "theory", "crypto", "logic",
+        "arch", "networks", "security", "database",
+        "highperf", "mobile", "metrics", "opsys",
+        "proglang", "softeng", "theory", "crypto", "logic",
         "graphics", "hci", "robotics", "compbio", "sigda"];
     CSRankings.areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
-        "Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
+        "Arch", "Networks", "Security", "DB", "HPC",
+        "Mobile", "Metrics", "OS", "PL", "SE",
         "Theory", "Crypto", "Logic",
-        "Graphics", "HCI", "Robotics", "Comp. Biology", "Design Automation"];
+        "Graphics", "HCI", "Robotics",
+        "Comp. Biology", "Design Automation"];
     CSRankings.useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
     CSRankings.areaDict = {};
     CSRankings.areaPosition = {};
