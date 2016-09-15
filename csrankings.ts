@@ -16,34 +16,34 @@ declare function escape(s:string): string;
 declare function unescape(s:string): string;
 
 interface Author {
-    name : string;
-    dept : string;
-    area : string;
-    count : string;
-    adjustedcount : string;
-    year : number;
+    readonly name : string;
+    readonly dept : string;
+    readonly area : string;
+    readonly count : string;
+    readonly adjustedcount : string;
+    readonly year : number;
 };
 
 interface Coauthor {
-    author : string;
-    coauthor : string;
-    year : number;
-    area : string;
+    readonly author : string;
+    readonly coauthor : string;
+    readonly year : number;
+    readonly area : string;
 };
 
 interface CountryInfo {
-    institution : string;
-    region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "world";
+    readonly institution : string;
+    readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "world";
 };
 
 interface Alias {
-    alias : string;
-    name : string;
+    readonly alias : string;
+    readonly name : string;
 };
 
 interface HomePage {
-    name : string;
-    homepage : string;
+    readonly name : string;
+    readonly homepage : string;
 };
 
 class CSRankings {
@@ -67,28 +67,32 @@ class CSRankings {
 	}
     }
 
-    private static coauthorFile       = "faculty-coauthors.csv";
-    private static authorinfoFile     = "generated-author-info.csv";
-    private static countryinfoFile    = "country-info.csv";
-    private static aliasFile          = "dblp-aliases.csv";
-    private static homepagesFile      = "homepages.csv";
-    private static allowRankingChange = false;   /* Can we change the kind of rankings being used? */
-    private static showCoauthors      = false;
-    private static maxCoauthors       = 30;      /* Max co-authors to display. */
+    private static readonly coauthorFile       = "faculty-coauthors.csv";
+    private static readonly authorinfoFile     = "generated-author-info.csv";
+    private static readonly countryinfoFile    = "country-info.csv";
+    private static readonly aliasFile          = "dblp-aliases.csv";
+    private static readonly homepagesFile      = "homepages.csv";
+    private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
+    private static readonly showCoauthors      = false;
+    private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
 
     /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
 
-    private static areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "web", 
-					     "arch",  "networks",  "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
-					     "theory",  "crypto", "logic",
-					     "graphics", "hci", "robotics", "compbio", "sigda"];
+    private static readonly areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "web",
+						      "arch",  "networks",  "security", "database",
+						      "highperf", "mobile", "metrics", "opsys",
+						      "proglang", "softeng", "theory",  "crypto", "logic",
+						      "graphics", "hci", "robotics", "compbio", "sigda"];
 
-    private static areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
-						"Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
-						"Theory", "Crypto", "Logic",
-						"Graphics", "HCI", "Robotics", "Comp. Biology", "Design Automation"];
+    private static readonly areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
+							 "Arch", "Networks", "Security", "DB", "HPC",
+							 "Mobile", "Metrics", "OS", "PL", "SE",
+							 "Theory", "Crypto", "Logic",
+							 "Graphics", "HCI", "Robotics",
+							 "Comp. Biology", "Design Automation"];
 
     private static useDenseRankings : boolean = false;    /* Set to true for "dense rankings" vs. "competition rankings". */
+
     private static areaDict : {[key : string] : string } = {};
     private static areaPosition : {[key : string] : number } = {};
     private static authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
@@ -100,12 +104,12 @@ class CSRankings {
     /* Maps authors to the areas they have published in (for pie chart display). */
 
     /* Colors for all areas. */
-    private static color : Array<string> =
+    private static readonly color : Array<string> =
 	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
 
-    private static RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
-    private static DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
-    private static PieChart      = "&#9685;"; // symbol that looks close enough to a pie chart
+    private static readonly RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+    private static readonly DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
+    private static readonly PieChart      = "&#9685;"; // symbol that looks close enough to a pie chart
 
     // Hold the weights from the previous classification (that is, before re-ranking).
     private static previousWeights : {[key: string] : number} = {};
@@ -390,9 +394,9 @@ class CSRankings {
     }
 
     private static computeCoauthors(coauthors : Array<Coauthor>,
-			      startyear : number,
-			      endyear : number,
-			      weights : {[key:string] : number})
+				    startyear : number,
+				    endyear : number,
+				    weights : {[key:string] : number})
     : {[key : string] : Set<string> }
     {
 	let coauthorList : {[key : string] : Set<string> } = {};
@@ -489,16 +493,16 @@ class CSRankings {
 */
 
     /* Build the dictionary of departments (and count) to be ranked. */
-    private static buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
-				    deptCounts : {[key:string] : number},
-				    deptNames  : {[key:string] : Array<string>},
-				    facultycount : {[key:string] : number},
-				    facultyAdjustedCount : {[key:string] : number},
-				    authors : Array<Author>,
+    private static buildDepartments(authors : Array<Author>,
 				    startyear : number,
 				    endyear : number,
 				    weights : {[key:string] : number},
-				    regions : string) : void
+				    regions : string,
+				    areaDeptAdjustedCount : {[key:string] : number},
+				    deptCounts : {[key:string] : number},
+				    deptNames  : {[key:string] : Array<string>},
+				    facultycount : {[key:string] : number},
+				    facultyAdjustedCount : {[key:string] : number}) : void
     {
 	/* contains an author name if that author has been processed. */
 	let visited : {[key:string] : boolean} = {}; 
@@ -662,9 +666,11 @@ class CSRankings {
     private static buildDropDown(deptNames : {[key: string] : Array<string> },
 				 facultycount :  {[key: string] : number},
 				 facultyAdjustedCount: {[key: string] : number},
-				 coauthorList : {[key : string] : Set<string> },
-				 univtext : {[key: string] : string}) : void
+				 coauthorList : {[key : string] : Set<string> })
+    : {[key: string] : string}
     {
+	let univtext : {[key:string] : string} = {};
+
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
 		continue;
@@ -736,6 +742,7 @@ class CSRankings {
 	    p += "</tbody></table></div></div>";
 	    univtext[dept] = p;
 	}
+	return univtext;
     }
 
 
@@ -889,16 +896,16 @@ class CSRankings {
 				    currentWeights,
 				    CSRankings.authorAreas);
 	
-	CSRankings.buildDepartments(areaDeptAdjustedCount,
-				    deptCounts,
-				    deptNames,
-				    facultycount,
-				    facultyAdjustedCount,
-				    CSRankings.authors,
+	CSRankings.buildDepartments(CSRankings.authors,
 				    startyear,
 				    endyear,
 				    currentWeights,
-				    whichRegions);
+				    whichRegions,
+				    areaDeptAdjustedCount,
+				    deptCounts,
+				    deptNames,
+				    facultycount,
+				    facultyAdjustedCount);
 	
 	/* (university, total or average number of papers) */
 	let univagg : {[key: string] : number} = {};
@@ -910,18 +917,15 @@ class CSRankings {
 				currentWeights,
 				univagg);
 
-	let univtext : {[key:string] : string} = {};
-
 	/* Canonicalize names. */
 	CSRankings.canonicalizeNames(deptNames,
 				     facultycount,
 				     facultyAdjustedCount);
 
-	CSRankings.buildDropDown(deptNames,
-				 facultycount,
-				 facultyAdjustedCount,
-				 coauthorList,
-				 univtext);
+	let univtext = CSRankings.buildDropDown(deptNames,
+						facultycount,
+						facultyAdjustedCount,
+						coauthorList);
 
 	/* Start building up the string to output. */
 	let s = CSRankings.buildOutputString(displayPercentages,
