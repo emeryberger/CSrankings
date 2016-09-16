@@ -117,7 +117,7 @@ class CSRankings {
     private static readonly homepages : {[key : string] : string } = {}; 
 
     /* Set to true for "dense rankings" vs. "competition rankings". */
-    private static useDenseRankings : boolean = false;    
+    private static readonly useDenseRankings : boolean = false;    
 
     /* The data which will hold the parsed CSV of author info. */
     private static authors   : Array<Author> = [];
@@ -206,12 +206,9 @@ class CSRankings {
 	return 0;
     }
 
-    private static redisplay(str : string) : void {
-	jQuery("#success").html(str);
-    }
-
     /* Create a pie chart */
-    private static makeChart(name : string) : void {
+    private static makeChart(name : string) : void
+    {
 	console.assert (CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
 	let data : any = [];
 	const keys = CSRankings.areas;
@@ -309,8 +306,7 @@ class CSRankings {
     }
     
     
-    private static loadAliases(this : void,
-			       aliases: {[key : string] : string },
+    private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
 	    header: true,
@@ -326,8 +322,7 @@ class CSRankings {
 	});
     }
 
-    private static loadCountryInfo(this : void,
-				   countryInfo : {[key : string] : string },
+    private static loadCountryInfo(countryInfo : {[key : string] : string },
 				   cont : () => void ) : void {
 	Papa.parse(CSRankings.countryinfoFile, {
 	    header: true,
@@ -359,8 +354,7 @@ class CSRankings {
 	});
     }
 
-    private static loadHomepages(this : void,
-				 homepages : {[key : string] : string },
+    private static loadHomepages(homepages : {[key : string] : string },
 				 cont : ()=> void ) : void {
 	Papa.parse(CSRankings.homepagesFile, {
 	    header: true,
@@ -384,6 +378,8 @@ class CSRankings {
 			    regions : string): boolean
     {
 	switch (regions) {
+	case "world":
+	    break;
 	case "USA":
 	    if (dept in CSRankings.countryInfo) {
 		return false;
@@ -418,13 +414,13 @@ class CSRankings {
 		return false;
 	    }
 	    break;
-	case "world":
-	    break;
 	}
 	return true;
     }
     
-    private static activateFields(value : boolean, fields : Array<number>) : boolean {
+    private static activateFields(value : boolean,
+				  fields : Array<number>) : boolean
+    {
 	for (let i = 0; i <= fields.length; i++) {
 	    const str = "input[name=field_"+fields[i]+"]";
 	    jQuery(str).prop('checked', value);
@@ -433,7 +429,8 @@ class CSRankings {
 	return false;
     }
 
-    private static sortIndex(univagg : {[key: string] : number}) : string[] {
+    private static sortIndex(univagg : {[key: string] : number}) : string[]
+    {
 	let keys = Object.keys(univagg);
 	keys.sort(function(a,b) {
 	    if (univagg[a] > univagg[b]) {
@@ -928,7 +925,7 @@ class CSRankings {
 	// Save these weights for next time.
 	CSRankings.previousWeights = currentWeights;
 	/* Finally done. Redraw! */
-	setTimeout(()=>{ CSRankings.redisplay(s); }, 0);
+	setTimeout(()=>{ jQuery("#success").html(s); }, 0);
 	return false; 
     }
 

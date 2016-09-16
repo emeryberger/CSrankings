@@ -107,9 +107,6 @@ var CSRankings = (function () {
             return 1;
         return 0;
     };
-    CSRankings.redisplay = function (str) {
-        jQuery("#success").html(str);
-    };
     /* Create a pie chart */
     CSRankings.makeChart = function (name) {
         console.assert(CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
@@ -272,6 +269,8 @@ var CSRankings = (function () {
     };
     CSRankings.inRegion = function (dept, regions) {
         switch (regions) {
+            case "world":
+                break;
             case "USA":
                 if (dept in CSRankings.countryInfo) {
                     return false;
@@ -305,8 +304,6 @@ var CSRankings = (function () {
                 if (CSRankings.countryInfo[dept] != "australasia") {
                     return false;
                 }
-                break;
-            case "world":
                 break;
         }
         return true;
@@ -730,7 +727,7 @@ var CSRankings = (function () {
         // Save these weights for next time.
         CSRankings.previousWeights = currentWeights;
         /* Finally done. Redraw! */
-        setTimeout(function () { CSRankings.redisplay(s); }, 0);
+        setTimeout(function () { jQuery("#success").html(s); }, 0);
         return false;
     };
     /* Turn the chart display on or off. */
