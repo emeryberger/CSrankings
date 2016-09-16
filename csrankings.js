@@ -18,12 +18,21 @@
 var CSRankings = (function () {
     function CSRankings() {
         CSRankings.setAllCheckboxes();
-        CSRankings.initAreaDict();
+        /* Build the areaDict dictionary: areas -> names used in pie charts
+           and areaPosition dictionary: areas -> position in area array
+        */
+        var position = 0;
+        for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
+            var area = _a[_i];
+            CSRankings.areaDict[area] = CSRankings.areaNames[position];
+            CSRankings.areaPosition[area] = position;
+            position++;
+        }
         var next = function () {
-            CSRankings.loadAliases(function () {
-                CSRankings.loadHomepages(function () {
+            CSRankings.loadAliases(CSRankings.aliases, function () {
+                CSRankings.loadHomepages(CSRankings.homepages, function () {
                     CSRankings.loadAuthorInfo(function () {
-                        CSRankings.loadCountryInfo(CSRankings.rank);
+                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
                     });
                 });
             });
@@ -61,18 +70,6 @@ var CSRankings = (function () {
         var lastInitial = lastName[0].toLowerCase();
         str += "/" + lastInitial + "/" + lastName + ":" + newName;
         return str;
-    };
-    /* Build the areaDict dictionary: areas -> names used in pie charts
-       and areaPosition dictionary: areas -> position in area array
-    */
-    CSRankings.initAreaDict = function () {
-        var position = 0;
-        for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
-            var area = _a[_i];
-            CSRankings.areaDict[area] = CSRankings.areaNames[position];
-            CSRankings.areaPosition[area] = position;
-            position++;
-        }
     };
     /* Create the prologue that we preface each generated HTML page with (the results). */
     CSRankings.makePrologue = function () {
@@ -198,8 +195,6 @@ var CSRankings = (function () {
             }
         });
     };
-    /* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
-    //    private static nop() : void {}
     CSRankings.loadCoauthors = function (cont) {
         Papa.parse(CSRankings.coauthorFile, {
             download: true,
@@ -211,8 +206,7 @@ var CSRankings = (function () {
             }
         });
     };
-    CSRankings.loadAliases = function (cont) {
-        var _this = this;
+    CSRankings.loadAliases = function (aliases, cont) {
         Papa.parse(CSRankings.aliasFile, {
             header: true,
             download: true,
@@ -221,14 +215,13 @@ var CSRankings = (function () {
                 var d = data;
                 for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
                     var aliasPair = d_1[_i];
-                    _this.aliases[aliasPair.alias] = aliasPair.name;
+                    aliases[aliasPair.alias] = aliasPair.name;
                 }
                 setTimeout(cont, 0);
             }
         });
     };
-    CSRankings.loadCountryInfo = function (cont) {
-        var _this = this;
+    CSRankings.loadCountryInfo = function (countryInfo, cont) {
         Papa.parse(CSRankings.countryinfoFile, {
             header: true,
             download: true,
@@ -237,7 +230,7 @@ var CSRankings = (function () {
                 var ci = data;
                 for (var _i = 0, ci_1 = ci; _i < ci_1.length; _i++) {
                     var info = ci_1[_i];
-                    _this.countryInfo[info.institution] = info.region;
+                    countryInfo[info.institution] = info.region;
                 }
                 setTimeout(cont, 0);
             }
@@ -259,8 +252,7 @@ var CSRankings = (function () {
             }
         });
     };
-    CSRankings.loadHomepages = function (cont) {
-        var _this = this;
+    CSRankings.loadHomepages = function (homepages, cont) {
         Papa.parse(CSRankings.homepagesFile, {
             header: true,
             download: true,
@@ -272,11 +264,52 @@ var CSRankings = (function () {
                     if (typeof namePage.homepage === 'undefined') {
                         continue;
                     }
-                    _this.homepages[namePage.name.trim()] = namePage.homepage.trim();
+                    homepages[namePage.name.trim()] = namePage.homepage.trim();
                 }
                 setTimeout(cont, 0);
             }
         });
+    };
+    CSRankings.inRegion = function (dept, regions) {
+        switch (regions) {
+            case "USA":
+                if (dept in CSRankings.countryInfo) {
+                    return false;
+                }
+                break;
+            case "europe":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "europe") {
+                    return false;
+                }
+                break;
+            case "canada":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "canada") {
+                    return false;
+                }
+                break;
+            case "northamerica":
+                if ((dept in CSRankings.countryInfo) && (CSRankings.countryInfo[dept] != "canada")) {
+                    return false;
+                }
+                break;
+            case "australasia":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "australasia") {
+                    return false;
+                }
+                break;
+            case "world":
+                break;
+        }
+        return true;
     };
     CSRankings.activateFields = function (value, fields) {
         for (var i = 0; i <= fields.length; i++) {
@@ -323,7 +356,6 @@ var CSRankings = (function () {
         return coauthorList;
     };
     CSRankings.countAuthorAreas = function (authors, startyear, endyear, previousWeights, weights, authorAreas) {
-        /* Now rebuild. */
         for (var r in authors) {
             if (!authors.hasOwnProperty(r)) {
                 continue;
@@ -387,43 +419,8 @@ var CSRankings = (function () {
             if (!(areaDept in areaDeptAdjustedCount)) {
                 areaDeptAdjustedCount[areaDept] = 0;
             }
-            switch (regions) {
-                case "USA":
-                    if (dept in CSRankings.countryInfo) {
-                        continue;
-                    }
-                    break;
-                case "europe":
-                    if (!(dept in CSRankings.countryInfo)) {
-                        continue;
-                    }
-                    if (CSRankings.countryInfo[dept] != "europe") {
-                        continue;
-                    }
-                    break;
-                case "canada":
-                    if (!(dept in CSRankings.countryInfo)) {
-                        continue;
-                    }
-                    if (CSRankings.countryInfo[dept] != "canada") {
-                        continue;
-                    }
-                    break;
-                case "northamerica":
-                    if ((dept in CSRankings.countryInfo) && (CSRankings.countryInfo[dept] != "canada")) {
-                        continue;
-                    }
-                    break;
-                case "australasia":
-                    if (!(dept in CSRankings.countryInfo)) {
-                        continue;
-                    }
-                    if (CSRankings.countryInfo[dept] != "australasia") {
-                        continue;
-                    }
-                    break;
-                case "world":
-                    break;
+            if (!CSRankings.inRegion(dept, regions)) {
+                continue;
             }
             var count = parseInt(authors[r].count);
             var adjustedCount = parseFloat(authors[r].adjustedcount);
@@ -825,16 +822,24 @@ var CSRankings = (function () {
         "Theory", "Crypto", "Logic",
         "Graphics", "HCI", "Robotics",
         "Comp. Biology", "Design Automation"];
-    CSRankings.useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
+    /* Map area to its name (from areaNames). */
     CSRankings.areaDict = {};
+    /* Map area to its position in the list. */
     CSRankings.areaPosition = {};
-    CSRankings.authors = []; /* The data which will hold the parsed CSV of author info. */
-    CSRankings.coauthors = []; /* The data which will hold the parsed CSV of co-author info. */
-    CSRankings.countryInfo = {}; /* Maps institutions to (non-US) regions. */
-    CSRankings.aliases = {}; /* Maps aliases to canonical author name. */
-    CSRankings.homepages = {}; /* Maps names to home pages. */
+    /* Map aliases to canonical author name. */
+    CSRankings.aliases = {};
+    /* Map institution to (non-US) region. */
+    CSRankings.countryInfo = {};
+    /* Map name to home page. */
+    CSRankings.homepages = {};
+    /* Set to true for "dense rankings" vs. "competition rankings". */
+    CSRankings.useDenseRankings = false;
+    /* The data which will hold the parsed CSV of author info. */
+    CSRankings.authors = [];
+    /* The data which will hold the parsed CSV of co-author info. */
+    CSRankings.coauthors = [];
+    /* Map authors to the areas they have published in (for pie chart display). */
     CSRankings.authorAreas = {};
-    /* Maps authors to the areas they have published in (for pie chart display). */
     /* Colors for all areas. */
     CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
     CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
