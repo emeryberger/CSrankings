@@ -50,14 +50,24 @@ class CSRankings {
     
     constructor() {
 	CSRankings.setAllCheckboxes();
-	CSRankings.initAreaDict();
+	/* Build the areaDict dictionary: areas -> names used in pie charts
+	   and areaPosition dictionary: areas -> position in area array
+	*/
+	let position = 0;
+	for (let area of CSRankings.areas) {
+	    CSRankings.areaDict[area]     = CSRankings.areaNames[position];
+	    CSRankings.areaPosition[area] = position;
+	    position++;
+	}
 	let next = ()=> {
-	    CSRankings.loadAliases(function() {
-		CSRankings.loadHomepages(function() {
-		    CSRankings.loadAuthorInfo(function() {
-			CSRankings.loadCountryInfo(CSRankings.rank);
-		    });
-		});
+	    CSRankings.loadAliases(CSRankings.aliases, function() {
+		CSRankings.loadHomepages(CSRankings.homepages,
+					 function() {
+					     CSRankings.loadAuthorInfo(function() {
+						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
+									    CSRankings.rank);
+					     });
+					 });
 	    });
 	};
 	if (CSRankings.showCoauthors) {
@@ -91,17 +101,32 @@ class CSRankings {
 							 "Graphics", "HCI", "Robotics",
 							 "Comp. Biology", "Design Automation"];
 
-    private static useDenseRankings : boolean = false;    /* Set to true for "dense rankings" vs. "competition rankings". */
+    /* Map area to its name (from areaNames). */
+    private static readonly areaDict : {[key : string] : string } = {};
 
-    private static areaDict : {[key : string] : string } = {};
-    private static areaPosition : {[key : string] : number } = {};
-    private static authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
-    private static coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
-    private static countryInfo : {[key : string] : string } = {}; /* Maps institutions to (non-US) regions. */
-    private static aliases : {[key : string] : string } = {}; /* Maps aliases to canonical author name. */
-    private static homepages : {[key : string] : string } = {}; /* Maps names to home pages. */
+    /* Map area to its position in the list. */
+    private static readonly areaPosition : {[key : string] : number } = {};
+
+    /* Map aliases to canonical author name. */
+    private static readonly aliases : {[key : string] : string } = {};
+
+    /* Map institution to (non-US) region. */
+    private static readonly countryInfo : {[key : string] : string } = {};
+
+    /* Map name to home page. */
+    private static readonly homepages : {[key : string] : string } = {}; 
+
+    /* Set to true for "dense rankings" vs. "competition rankings". */
+    private static useDenseRankings : boolean = false;    
+
+    /* The data which will hold the parsed CSV of author info. */
+    private static authors   : Array<Author> = [];
+
+    /* The data which will hold the parsed CSV of co-author info. */    
+    private static coauthors : Array<Coauthor> = [];
+    
+    /* Map authors to the areas they have published in (for pie chart display). */
     private static authorAreas : {[name : string] : {[area : string] : number } } = {};
-    /* Maps authors to the areas they have published in (for pie chart display). */
 
     /* Colors for all areas. */
     private static readonly color : Array<string> =
@@ -140,19 +165,6 @@ class CSRankings {
 	const lastInitial = lastName[0].toLowerCase();
 	str += "/" + lastInitial + "/" + lastName + ":" + newName;
 	return str;
-    }
-
-
-    /* Build the areaDict dictionary: areas -> names used in pie charts
-       and areaPosition dictionary: areas -> position in area array
-    */
-    private static initAreaDict() : void {
-	let position = 0;
-	for (let area of CSRankings.areas) {
-	    CSRankings.areaDict[area]     = CSRankings.areaNames[position];
-	    CSRankings.areaPosition[area] = position;
-	    position++;
-	}
     }
 
     /* Create the prologue that we preface each generated HTML page with (the results). */
@@ -284,10 +296,6 @@ class CSRankings {
 	});
     }
 
-    /* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
-    //    private static nop() : void {}
-
-    
     private static loadCoauthors(cont : () => void ) : void {
 	Papa.parse(CSRankings.coauthorFile, {
 	    download : true,
@@ -301,7 +309,9 @@ class CSRankings {
     }
     
     
-    private static loadAliases(cont : ()=> void ) : void {
+    private static loadAliases(this : void,
+			       aliases: {[key : string] : string },
+			       cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
 	    header: true,
 	    download : true,
@@ -309,14 +319,16 @@ class CSRankings {
 		const data : any = results.data;
 		const d = data as Array<Alias>;
 		for (let aliasPair of d) {
-		    this.aliases[aliasPair.alias] = aliasPair.name;
+		    aliases[aliasPair.alias] = aliasPair.name;
 		}
 		setTimeout(cont, 0);
 	    }
 	});
     }
 
-    private static loadCountryInfo(cont : () => void ) : void {
+    private static loadCountryInfo(this : void,
+				   countryInfo : {[key : string] : string },
+				   cont : () => void ) : void {
 	Papa.parse(CSRankings.countryinfoFile, {
 	    header: true,
 	    download : true,
@@ -324,7 +336,7 @@ class CSRankings {
 		const data : any = results.data;
 		const ci = data as Array<CountryInfo>;
 		for (let info of ci) {
-		    this.countryInfo[info.institution] = info.region;
+		    countryInfo[info.institution] = info.region;
 		}
 		setTimeout(cont, 0);
 	    }
@@ -347,7 +359,9 @@ class CSRankings {
 	});
     }
 
-    private static loadHomepages(cont : ()=> void ) : void {
+    private static loadHomepages(this : void,
+				 homepages : {[key : string] : string },
+				 cont : ()=> void ) : void {
 	Papa.parse(CSRankings.homepagesFile, {
 	    header: true,
 	    download : true,
@@ -358,13 +372,58 @@ class CSRankings {
 		    if (typeof namePage.homepage === 'undefined') {
         		continue
 		    }
-		    this.homepages[namePage.name.trim()] = namePage.homepage.trim();
+		    homepages[namePage.name.trim()] = namePage.homepage.trim();
 		}
 		setTimeout(cont, 0);
 	    }
 	});
     }
 
+
+    private static inRegion(dept : string,
+			    regions : string): boolean
+    {
+	switch (regions) {
+	case "USA":
+	    if (dept in CSRankings.countryInfo) {
+		return false;
+	    }
+	    break;
+	case "europe":
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
+	    }
+	    if (CSRankings.countryInfo[dept] != "europe") {
+		return false;
+	    }
+	    break;
+	case "canada":
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
+	    }
+	    if (CSRankings.countryInfo[dept] != "canada") {
+		return false;
+	    }
+	    break;
+	case "northamerica":
+	    if ((dept in CSRankings.countryInfo) && (CSRankings.countryInfo[dept] != "canada")) {
+		return false;
+	    }
+	    break;
+	case "australasia":
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
+	    }
+	    if (CSRankings.countryInfo[dept] != "australasia") {
+		return false;
+	    }
+	    break;
+	case "world":
+	    break;
+	}
+	return true;
+    }
+    
     private static activateFields(value : boolean, fields : Array<number>) : boolean {
 	for (let i = 0; i <= fields.length; i++) {
 	    const str = "input[name=field_"+fields[i]+"]";
@@ -424,7 +483,6 @@ class CSRankings {
 				    authorAreas : {[name : string] : {[area : string] : number }}) : void
     
     {
-	/* Now rebuild. */
 	for (let r in authors) {
 	    if (!authors.hasOwnProperty(r)) {
 		continue;
@@ -498,43 +556,8 @@ class CSRankings {
 	    if (!(areaDept in areaDeptAdjustedCount)) {
 		areaDeptAdjustedCount[areaDept] = 0;
 	    }
-	    switch (regions) {
-	    case "USA":
-		if (dept in CSRankings.countryInfo) {
-		    continue;
-		}
-		break;
-	    case "europe":
-		if (!(dept in CSRankings.countryInfo)) { // USA
-		    continue;
-		}
-		if (CSRankings.countryInfo[dept] != "europe") {
-		    continue;
-		}
-		break;
-	    case "canada":
-		if (!(dept in CSRankings.countryInfo)) { // USA
-		    continue;
-		}
-		if (CSRankings.countryInfo[dept] != "canada") {
-		    continue;
-		}
-		break;
-	    case "northamerica":
-		if ((dept in CSRankings.countryInfo) && (CSRankings.countryInfo[dept] != "canada")) {
-		    continue;
-		}
-		break;
-	    case "australasia":
-		if (!(dept in CSRankings.countryInfo)) { // USA
-		    continue;
-		}
-		if (CSRankings.countryInfo[dept] != "australasia") {
-		    continue;
-		}
-		break;
-	    case "world":
-		break;
+	    if (!CSRankings.inRegion(dept, regions)) {
+		continue;
 	    }
 	    const count : number = parseInt(authors[r].count);
 	    const adjustedCount : number = parseFloat(authors[r].adjustedcount);
