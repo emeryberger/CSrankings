@@ -6,7 +6,8 @@
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>CSRankings: Computer Science Rankings (beta)</title>
 
 <!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
@@ -73,24 +74,9 @@
 		This ranking of top computer science schools is
 		designed to identify institutions and faculty actively
 		engaged in research across a number of areas of
-		computer science. Unlike US News and World Report's approach,
-		which is <a target="_blank"
-		href="http://www.usnews.com/education/best-graduate-schools/articles/science-schools-methodology">exclusively
-		based on surveys</a>, this ranking is entirely
-		metrics-based. It measures the number of publications
+		computer science, based on the number of publications
 		by faculty that have appeared at the most selective
-		conferences in each area of computer science. This
-		approach is intended to be difficult to game, since
-		publishing in such conferences is generally difficult:
-		contrast this with other approaches like
-		citation-based metrics, which have been repeatedly
-		shown to be <a target="_blank"
-		href="http://arxiv.org/abs/1212.0638">easy</a>
-		to <a target="_blank"
-		href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulate</a>.
-		That said, incorporating citations in some form is a
-		long-term goal. <em>This site is in beta and is a work
-		in progress.</em>
+		conferences in each area of computer science.
 	      </p>
 	      <p>
 		<b>Click on a triangle</b> (&#9658;) to display names
@@ -101,6 +87,9 @@
 		the raw number of publications</b> to go to their DBLP
 		entry.
 	      </p>
+	      <div class="row">
+		<!-- col-xs-3 col-sm-6 col-md-4  -->
+		<div class="col-sm-12 col-md-12 col-lg-12">
 	      Rank the top
 	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
 		<option value="10">10</option>
@@ -228,6 +217,8 @@
 		<option selected="selected" value="2016">2016</option>
 	      </select>
 	      &nbsp;[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>all areas off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>all areas on</b></font></a>]&nbsp;
+		</div>
+		</div>
 	    </div>
 	  </div>
 	  
@@ -578,6 +569,23 @@
 	      same. Publications must be at least 6 pages long to be
 	      counted.
 	      <b>Total count</b> is the sum of the adjusted number of publications.
+	    </p>
+	    <p>
+	      Unlike US News and World Report's approach,
+	      which is <a target="_blank"
+			  href="http://www.usnews.com/education/best-graduate-schools/articles/science-schools-methodology">exclusively
+		based on surveys</a>, this ranking is entirely
+	      metrics-based. This
+	      approach is intended to be difficult to game, since
+	      publishing in such conferences is generally difficult:
+	      contrast this with other approaches like
+	      citation-based metrics, which have been repeatedly
+	      shown to be <a target="_blank"
+			     href="http://arxiv.org/abs/1212.0638">easy</a>
+	      to <a target="_blank"
+		    href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulate</a>.
+	      That said, incorporating citations in some form is a
+	      long-term goal.
 	    </p>
             <p class="text-muted">
 	      
