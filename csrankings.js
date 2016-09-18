@@ -640,14 +640,7 @@ var CSRankings = (function () {
                     + "-widget\">" + CSRankings.PieChart + "</span></font>";
                 //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
                 s += "</td>";
-                if (displayPercentages) {
-                    /* Show average */
-                    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
-                }
-                else {
-                    /* Show count */
-                    s += '<td align="right">' + (Math.floor(100.0 * v) / 100.0) + "</td>";
-                }
+                s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
