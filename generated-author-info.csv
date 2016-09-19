@@ -9321,7 +9321,7 @@ Kathleen Fisher,Tufts University,proglang,1.0,0.2,2007
 David Walker,Princeton University,proglang,2.0,0.366666666667,2007
 Tiark Rompf,Purdue University,proglang,1.0,0.111111111111,2013
 Kunle Olukotun,Stanford University,proglang,1.0,0.111111111111,2013
-Martin Odersky,EPFL,proglang,3.0,0.694444444444,2013
+Martin Odersky,EPFL,proglang,1.0,0.111111111111,2013
 Derek Dreyer,Max Planck Institute,proglang,1.0,0.2,2016
 Viktor Vafeiadis,Max Planck Institute,proglang,2.0,0.533333333333,2016
 Daniel Leivant,Indiana University,proglang,1.0,0.5,1987
@@ -9329,7 +9329,7 @@ John V. Guttag,Massachusetts Institute of Technology,proglang,1.0,0.5,1988
 Mitchell Wand,Northeastern University,proglang,1.0,0.5,1994
 Richard J. Lipton,Georgia Institute of Technology,proglang,1.0,1.0,1975
 Derek Dreyer,Max Planck Institute,proglang,2.0,0.45,2013
-Viktor Vafeiadis,Max Planck Institute,proglang,2.0,0.75,2013
+Viktor Vafeiadis,Max Planck Institute,proglang,1.0,0.25,2013
 Michael O. Rabin,Harvard University,proglang,1.0,0.5,1981
 Rajeev Alur,University of Pennsylvania,proglang,1.0,0.333333333333,2006
 Swarat Chaudhuri,Rice University,proglang,1.0,0.333333333333,2006
@@ -9396,8 +9396,8 @@ Derek Dreyer,Max Planck Institute,proglang,1.0,0.25,2007
 Robert Harper,Carnegie Mellon University,proglang,2.0,0.583333333333,2007
 Gabriele Keller,UNSW,proglang,1.0,0.25,2007
 Saumya K. Debray,University of Arizona,proglang,2.0,2.0,1988
-Suresh Jagannathan,Purdue University,proglang,2.0,0.366666666667,2013
-Jan Vitek,Northeastern University,proglang,3.0,0.566666666667,2013
+Suresh Jagannathan,Purdue University,proglang,1.0,0.166666666667,2013
+Jan Vitek,Northeastern University,proglang,2.0,0.366666666667,2013
 Dennis E. Shasha,New York University,proglang,1.0,0.333333333333,1984
 Rajiv Gupta,University of California - Riverside,proglang,1.0,0.5,2003
 Hongwei Xi,Boston University,proglang,1.0,0.5,1999
@@ -9416,8 +9416,8 @@ J. Gregory Morrisett,Cornell University,proglang,2.0,0.833333333333,1999
 Martin Odersky,EPFL,proglang,1.0,0.5,1996
 Neil Immerman,University of Massachusetts - Amherst,proglang,1.0,0.2,2016
 Mooly Sagiv,Tel Aviv University,proglang,2.0,0.4,2016
-Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,3.0,0.75,2012
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,4.0,0.95,2012
+Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,2.0,0.5,2012
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,3.0,0.7,2012
 Albert R. Meyer,Massachusetts Institute of Technology,proglang,2.0,0.833333333333,1988
 Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.333333333333,2005
 Andrew M. Pitts,University of Cambridge,proglang,1.0,0.5,2013
@@ -9453,7 +9453,7 @@ Amr Sabry,Indiana University,proglang,1.0,0.333333333333,2009
 Deepak Kapur,University of New Mexico,proglang,1.0,0.5,1980
 Cristiano Calcagno,Imperial College London,proglang,2.0,0.583333333333,2005
 Philippa Gardner,Imperial College London,proglang,1.0,0.333333333333,2005
-Suresh Jagannathan,Purdue University,proglang,4.0,1.2,2011
+Suresh Jagannathan,Purdue University,proglang,3.0,0.866666666667,2011
 John C. Mitchell,Stanford University,proglang,1.0,0.5,1985
 Gordon D. Plotkin,University of Edinburgh,proglang,1.0,0.5,1985
 David E. Culler,University of California - Berkeley,proglang,1.0,0.333333333333,1995
@@ -9476,7 +9476,7 @@ John C. Mitchell,Stanford University,proglang,2.0,1.0,1992
 Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,1994
 Lars Birkedal,Aarhus University,proglang,1.0,0.333333333333,2004
 Keith D. Cooper,Rice University,proglang,2.0,0.75,1989
-Andrew C. Myers,Cornell University,proglang,2.0,0.666666666667,2006
+Andrew C. Myers,Cornell University,proglang,1.0,0.333333333333,2006
 Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,1996
 David N. Turner,University of Kent,proglang,1.0,0.333333333333,1996
 Ranjit Jhala,University of California - San Diego,proglang,3.0,0.95,2007
@@ -9489,7 +9489,7 @@ Helmut Seidl,TU Munich,proglang,1.0,0.2,2011
 Vesal Vojdani,University of Tartu,proglang,1.0,0.2,2011
 Prakash Panangaden,McGill University,proglang,1.0,0.333333333333,1999
 Eric Van Wyk,University of Minnesota,proglang,1.0,0.25,2002
-Patrick Cousot,New York University,proglang,2.0,0.75,2012
+Patrick Cousot,New York University,proglang,1.0,0.5,2012
 Suresh Jagannathan,Purdue University,proglang,1.0,0.333333333333,2012
 Peter Sewell,University of Cambridge,proglang,1.0,0.166666666667,2006
 Lingming Zhang,University of Texas - Dallas,proglang,1.0,0.166666666667,2015
@@ -9594,7 +9594,7 @@ Martin T. Vechev,ETH Zurich,proglang,1.0,0.333333333333,2010
 Eran Yahav,Technion - Israel Institute of Technology,proglang,1.0,0.333333333333,2010
 P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2016
 Dan Roth,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2016
-Derek Dreyer,Max Planck Institute,proglang,2.0,0.583333333333,2014
+Derek Dreyer,Max Planck Institute,proglang,1.0,0.25,2014
 Zhong Shao,Yale University,proglang,1.0,0.5,2012
 Ron Y. Pinter,Technion - Israel Institute of Technology,proglang,1.0,0.5,1991
 Andrew D. Gordon,University of Edinburgh,proglang,1.0,0.166666666667,2014
@@ -9659,7 +9659,7 @@ Jeffrey S. Foster,University of Maryland - College Park,proglang,2.0,0.5,2011
 Michael Hicks,University of Maryland - College Park,proglang,1.0,0.25,2011
 Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.333333333333,2016
 Brigitte Pientka,McGill University,proglang,1.0,0.25,2013
-Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,2.0,1.0,2012
+Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,2012
 Robert Cartwright,Rice University,proglang,1.0,0.5,1978
 Andrew W. Appel,Princeton University,proglang,1.0,1.0,1985
 Suresh Jagannathan,Purdue University,proglang,1.0,0.25,1998
@@ -9673,7 +9673,7 @@ Chen Ding,University of Rochester,proglang,1.0,0.2,2006
 Mitsunori Ogihara,University of Miami,proglang,1.0,0.2,2006
 Isil Dillig,University of Texas - Austin,proglang,2.0,0.583333333333,2011
 Thomas Dillig,University of Texas - Austin,proglang,2.0,0.583333333333,2011
-Alex Aiken,Stanford University,proglang,5.0,1.11666666667,2011
+Alex Aiken,Stanford University,proglang,3.0,0.783333333333,2011
 Nate Foster,Cornell University,proglang,1.0,0.142857142857,2014
 Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.142857142857,2014
 Dexter Kozen,Cornell University,proglang,1.0,0.142857142857,2014
@@ -9698,10 +9698,10 @@ Christian S. Collberg,University of Arizona,proglang,1.0,0.5,1999
 Clark D. Thomborson,University of Auckland,proglang,1.0,0.5,1999
 Andrew W. Appel,Princeton University,proglang,1.0,0.5,1996
 Andrew D. Gordon,University of Edinburgh,proglang,1.0,0.333333333333,2004
-Jens Palsberg,University of California - Los Angeles,proglang,2.0,0.833333333333,2015
+Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.5,2015
 Viktor Kuncak,EPFL,proglang,2.0,0.666666666667,2012
 Earl T. Barr,University College London,proglang,1.0,0.25,2013
-Zhendong Su,University of California - Davis,proglang,4.0,1.25,2013
+Zhendong Su,University of California - Davis,proglang,2.0,0.5,2013
 Luca Cardelli,University of Oxford,proglang,1.0,0.5,1999
 Andrew D. Gordon,University of Edinburgh,proglang,1.0,0.5,1999
 Alfred V. Aho,Columbia University,proglang,1.0,0.333333333333,1977
@@ -9715,7 +9715,7 @@ James R. Larus,EPFL,proglang,1.0,0.5,1992
 Martin Odersky,EPFL,proglang,1.0,1.0,1994
 Hagit Attiya,Technion - Israel Institute of Technology,proglang,1.0,0.166666666667,2011
 Rachid Guerraoui,EPFL,proglang,1.0,0.166666666667,2011
-Martin T. Vechev,ETH Zurich,proglang,5.0,1.16666666667,2011
+Martin T. Vechev,ETH Zurich,proglang,2.0,0.5,2011
 Xavier Rival,Ecole Normale Superieure,proglang,1.0,0.5,2011
 Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1.0,0.5,2011
 Rajeev Alur,University of Pennsylvania,proglang,1.0,0.5,2011
@@ -9740,8 +9740,8 @@ Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2010
 Ben Hardekopf,University of California - Santa Barbara,proglang,1.0,0.5,2009
 Calvin Lin,University of Texas - Austin,proglang,1.0,0.5,2009
 Daniel Leivant,Indiana University,proglang,1.0,1.0,1985
-Ravi Chugh,University of Chicago,proglang,2.0,0.666666666667,2012
-Ranjit Jhala,University of California - San Diego,proglang,4.0,1.08333333333,2012
+Ravi Chugh,University of Chicago,proglang,1.0,0.333333333333,2012
+Ranjit Jhala,University of California - San Diego,proglang,3.0,0.75,2012
 Daniel Kroening,University of Oxford,proglang,1.0,0.333333333333,2013
 Micha Sharir,Tel Aviv University,proglang,1.0,0.333333333333,1979
 Frank Pfenning,Carnegie Mellon University,proglang,1.0,0.5,1996
@@ -9781,7 +9781,7 @@ Robert Cartwright,Rice University,proglang,1.0,1.0,1985
 Prakash Panangaden,McGill University,proglang,1.0,0.333333333333,1987
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,1.0,1988
 Daniel Kroening,University of Oxford,proglang,1.0,0.333333333333,2014
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,3.0,1.08333333333,2003
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,2.0,0.583333333333,2003
 Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.5,2004
 Stephen Chong,Harvard University,proglang,2.0,1.0,2013
 Fred B. Schneider,Cornell University,proglang,1.0,0.5,1985
@@ -9797,7 +9797,7 @@ Santosh Nagarakatte,Rutgers University,proglang,2.0,0.5,2012
 Steve Zdancewic,University of Pennsylvania,proglang,1.0,0.25,2012
 Alfred V. Aho,Columbia University,proglang,1.0,0.333333333333,1976
 Daniel P. Friedman,Indiana University,proglang,1.0,0.5,1985
-Joseph Gil,Technion - Israel Institute of Technology,proglang,2.0,1.5,2001
+Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,1.0,2001
 George C. Necula,University of California - Berkeley,proglang,1.0,0.333333333333,2002
 Westley Weimer,University of Virginia,proglang,1.0,0.333333333333,2002
 Azadeh Farzan,University of Toronto,proglang,1.0,0.333333333333,2015
@@ -9806,7 +9806,7 @@ Saumya K. Debray,University of Arizona,proglang,1.0,0.333333333333,1993
 Mitchell Wand,Northeastern University,proglang,1.0,0.5,2006
 Timothy J. Hickey,Brandeis University,proglang,1.0,1.0,2000
 Dexter Kozen,Cornell University,proglang,1.0,0.5,1984
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2.0,0.45,2014
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.25,2014
 Harry G. Mairson,Brandeis University,proglang,1.0,0.5,1998
 Adam Chlipala,Massachusetts Institute of Technology,proglang,2.0,2.0,2010
 Neil Immerman,University of Massachusetts - Amherst,proglang,1.0,0.166666666667,2015
@@ -9853,13 +9853,13 @@ George C. Necula,University of California - Berkeley,proglang,2.0,0.7,2003
 David Walker,Princeton University,proglang,1.0,1.0,2000
 Loris D'Antoni,University of Wisconsin - Madison,proglang,2.0,0.75,2014
 David A. Padua,University of Illinois at Urbana-Champaign,proglang,1.0,0.2,1981
-Martin T. Vechev,ETH Zurich,proglang,4.0,1.2,2015
+Martin T. Vechev,ETH Zurich,proglang,2.0,0.666666666667,2015
 Andreas Krause 0001,ETH Zurich,proglang,1.0,0.333333333333,2015
 Edmund M. Clarke,Carnegie Mellon University,proglang,1.0,0.25,1985
 Bud Mishra,New York University,proglang,1.0,0.25,1985
 John H. Reppy,University of Chicago,proglang,1.0,0.5,2007
 Cormac Flanagan,University of California - Santa Cruz,proglang,1.0,0.5,2001
-Alexander Aiken,Stanford University,proglang,3.0,1.03333333333,2005
+Alexander Aiken,Stanford University,proglang,2.0,0.7,2005
 Andrew C. Myers,Cornell University,proglang,1.0,0.333333333333,1997
 Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,1997
 Noam Rinetzky,Tel Aviv University,proglang,1.0,0.2,2005
@@ -9919,7 +9919,7 @@ Lars Birkedal,Aarhus University,proglang,1.0,0.166666666667,2011
 Hongseok Yang,University of Oxford,proglang,1.0,0.166666666667,2011
 Cristiano Calcagno,Imperial College London,proglang,1.0,0.333333333333,2007
 Philippa Gardner,Imperial College London,proglang,1.0,0.333333333333,2007
-Jaswinder Pal Singh,Princeton University,proglang,2.0,0.45,2002
+Jaswinder Pal Singh,Princeton University,proglang,1.0,0.25,2002
 Nobuko Yoshida,Imperial College London,proglang,1.0,1.0,2004
 Jan Hoffmann 0002,Carnegie Mellon University,proglang,1.0,0.333333333333,2011
 Peter Sewell,University of Cambridge,proglang,1.0,0.125,2009
@@ -9946,19 +9946,19 @@ Cristiano Calcagno,Imperial College London,proglang,1.0,0.333333333333,2006
 Azadeh Farzan,University of Toronto,proglang,2.0,0.666666666667,2014
 William R. Cook,University of Texas - Austin,proglang,1.0,0.5,2007
 Krzysztof R. Apt,University of Warsaw,proglang,1.0,0.5,1997
-Matthias Felleisen,Northeastern University,proglang,2.0,0.433333333333,2012
+Matthias Felleisen,Northeastern University,proglang,1.0,0.1,2012
 Matthew Flatt,University of Utah,proglang,1.0,0.1,2012
 Jay A. McCarthy,University of Massachusetts - Lowell,proglang,1.0,0.1,2012
-Sam Tobin-Hochstadt,Indiana University,proglang,3.0,0.933333333333,2012
+Sam Tobin-Hochstadt,Indiana University,proglang,1.0,0.1,2012
 Robert Bruce Findler,Northwestern University,proglang,1.0,0.1,2012
 Mahmut T. Kandemir,Pennsylvania State University,proglang,1.0,1.0,2001
 Alfred V. Aho,Columbia University,proglang,1.0,0.5,1979
-George C. Necula,University of California - Berkeley,proglang,2.0,1.0,2004
+George C. Necula,University of California - Berkeley,proglang,1.0,0.5,2004
 Luca Cardelli,University of Oxford,proglang,1.0,0.333333333333,1996
-Cormac Flanagan,University of California - Santa Cruz,proglang,2.0,0.583333333333,2011
+Cormac Flanagan,University of California - Santa Cruz,proglang,1.0,0.25,2011
 Matthias Felleisen,Northeastern University,proglang,2.0,0.45,2011
 Andrzej Filinski,DIKU,proglang,1.0,1.0,1992
-Eran Yahav,Technion - Israel Institute of Technology,proglang,3.0,1.16666666667,2008
+Eran Yahav,Technion - Israel Institute of Technology,proglang,2.0,0.833333333333,2008
 Ravi Sethi,University of Arizona,proglang,2.0,0.833333333333,1978
 Amr Sabry,Indiana University,proglang,1.0,0.5,2012
 Robert Harper,Carnegie Mellon University,proglang,1.0,0.5,2012
@@ -9974,7 +9974,7 @@ Xavier Rival,Ecole Normale Superieure,proglang,1.0,1.0,2004
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1986
 Mayur Naik,University of Pennsylvania,proglang,1.0,0.25,2012
 Hongseok Yang,University of Oxford,proglang,1.0,0.25,2012
-Mooly Sagiv,Tel Aviv University,proglang,4.0,0.95,2012
+Mooly Sagiv,Tel Aviv University,proglang,3.0,0.7,2012
 Nate Foster,Cornell University,proglang,2.0,0.45,2015
 Dexter Kozen,Cornell University,proglang,1.0,0.2,2015
 John R. Gilbert,University of California - Santa Barbara,proglang,1.0,0.25,1993
@@ -9992,7 +9992,7 @@ Samson Abramsky,University of Oxford,proglang,1.0,0.5,1991
 Pierre Lescanne,Ecole Normale Superieure de Lyon,proglang,1.0,1.0,1994
 Bharat Jayaraman,University of Buffalo,proglang,1.0,0.333333333333,1996
 Mitchell Wand,Northeastern University,proglang,1.0,0.5,1988
-Nobuko Yoshida,Imperial College London,proglang,2.0,0.47619047619,2015
+Nobuko Yoshida,Imperial College London,proglang,1.0,0.333333333333,2015
 J. Gregory Morrisett,Cornell University,proglang,2.0,0.5,1996
 Robert Harper,Carnegie Mellon University,proglang,2.0,0.5,1996
 Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.25,1989
@@ -10002,7 +10002,7 @@ David N. Turner,University of Kent,proglang,1.0,0.5,1993
 Andrew A. Chien,University of Chicago,proglang,1.0,0.333333333333,1995
 William L. Scherlis,Carnegie Mellon University,proglang,1.0,0.5,1986
 Timothy Griffin,University of Cambridge,proglang,1.0,1.0,1990
-Vivek Sarkar,Rice University,proglang,2.0,1.0,1998
+Vivek Sarkar,Rice University,proglang,1.0,0.5,1998
 Aws Albarghouthi,University of Wisconsin - Madison,proglang,1.0,0.2,2014
 Marsha Chechik,University of Toronto,proglang,1.0,0.2,2014
 Richard A. DeMillo,Georgia Institute of Technology,proglang,1.0,0.333333333333,1977
@@ -10013,7 +10013,7 @@ Iulian Neamtiu,NJIT,proglang,1.0,0.2,2005
 David Gelernter,Yale University,proglang,2.0,0.666666666667,1987
 Suresh Jagannathan,Purdue University,proglang,2.0,0.666666666667,1987
 Viktor Kuncak,EPFL,proglang,1.0,0.333333333333,2002
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,3.0,1.16666666667,2002
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2002
 Matthias Felleisen,Northeastern University,proglang,1.0,1.0,1988
 Thomas W. Doeppner Jr.,Brown University,proglang,1.0,1.0,1977
 Rastislav Bodík,University of Washington,proglang,1.0,0.166666666667,2013
@@ -10112,7 +10112,7 @@ Matthias Felleisen,Northeastern University,proglang,1.0,0.5,2008
 Ranjit Jhala,University of California - San Diego,proglang,2.0,0.666666666667,2016
 Sorin Lerner,University of California - San Diego,proglang,1.0,0.333333333333,2016
 Alex Aiken,Stanford University,proglang,3.0,0.866666666667,2014
-Matthew Might,University of Utah,proglang,2.0,0.416666666667,2011
+Matthew Might,University of Utah,proglang,1.0,0.25,2011
 Mary W. Hall,University of Utah,proglang,1.0,0.25,2011
 Stephanie Weirich,University of Pennsylvania,proglang,1.0,0.25,2011
 Steve Zdancewic,University of Pennsylvania,proglang,1.0,0.25,2011
@@ -10143,7 +10143,7 @@ Cristiano Calcagno,Imperial College London,proglang,1.0,1.0,2001
 Zhendong Su,University of California - Davis,proglang,1.0,0.2,2002
 Alexander Aiken,Stanford University,proglang,2.0,0.533333333333,2002
 Mitchell Wand,Northeastern University,proglang,1.0,1.0,1983
-Mitchell Wand,Northeastern University,proglang,2.0,1.0,1999
+Mitchell Wand,Northeastern University,proglang,1.0,0.5,1999
 Chris Hankin,Imperial College London,proglang,1.0,0.5,1994
 Benjamin C. Pierce,University of Pennsylvania,proglang,2.0,0.7,2005
 J. Nathan Foster,Cornell University,proglang,1.0,0.2,2005
@@ -10151,7 +10151,7 @@ Robert Harper,Carnegie Mellon University,proglang,1.0,0.5,2000
 Joseph Y. Halpern,Cornell University,proglang,1.0,0.5,1983
 Edmund M. Clarke,Carnegie Mellon University,proglang,1.0,0.333333333333,1992
 Orna Grumberg,Technion - Israel Institute of Technology,proglang,1.0,0.333333333333,1992
-Frank Tip,Northeastern University,proglang,2.0,0.583333333333,1999
+Frank Tip,Northeastern University,proglang,1.0,0.333333333333,1999
 Rohit Parikh,CUNY,proglang,1.0,1.0,1980
 Sam Staton,University of Oxford,proglang,1.0,0.5,2013
 Martin Rinard,Massachusetts Institute of Technology,proglang,1.0,0.5,2016
@@ -10164,8 +10164,8 @@ John Hatcliff,Kansas State University,proglang,1.0,0.5,1994
 Olivier Danvy,Aarhus University,proglang,1.0,0.5,1994
 Thomas W. Reps,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1995
 Shmuel Sagiv,Tel Aviv University,proglang,1.0,0.333333333333,1995
-Barbara Liskov,Massachusetts Institute of Technology,proglang,2.0,0.533333333333,2003
-Liuba Shrira,Brandeis University,proglang,2.0,0.533333333333,2003
+Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2003
+Liuba Shrira,Brandeis University,proglang,1.0,0.333333333333,2003
 Maurice Herlihy,Brown University,proglang,1.0,0.333333333333,2010
 P. Sadayappan,Ohio State University,proglang,2.0,0.325,2016
 Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,1.0,1992
@@ -10207,7 +10207,7 @@ Stephen Brookes,Carnegie Mellon University,proglang,1.0,0.333333333333,2014
 Peter W. O'Hearn,University College London,proglang,1.0,0.333333333333,2014
 Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,2011
 Keith D. Cooper,Rice University,proglang,1.0,1.0,1985
-Alex Aiken,Stanford University,proglang,5.0,1.45,2015
+Alex Aiken,Stanford University,proglang,3.0,0.866666666667,2015
 Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.5,1990
 Jennifer Widom,Stanford University,proglang,1.0,0.333333333333,1987
 Fred B. Schneider,Cornell University,proglang,1.0,0.333333333333,1987
@@ -38301,15 +38301,15 @@ Hari Balakrishnan,Massachusetts Institute of Technology,metrics,1.0,0.25,2014
 Jeff Huang 0001,Texas A&M University,proglang,1.0,1.0,2015
 Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.583333333333,2003
 Grant E. Weddell,University of Waterloo,proglang,1.0,0.5,1990
-Brandon Lucia,Carnegie Mellon University,proglang,3.0,1.08333333333,2015
+Brandon Lucia,Carnegie Mellon University,proglang,2.0,0.833333333333,2015
 John M. Mellor-Crummey,Rice University,proglang,1.0,0.2,2014
 Vivek Sarkar,Rice University,proglang,1.0,0.2,2014
 P. Sadayappan,Ohio State University,proglang,2.0,0.47619047619,2014
-Andrew Lumsdaine,Indiana University,proglang,2.0,0.366666666667,2006
-Jeremy G. Siek,Indiana University,proglang,2.0,0.366666666667,2006
+Andrew Lumsdaine,Indiana University,proglang,1.0,0.2,2006
+Jeremy G. Siek,Indiana University,proglang,1.0,0.2,2006
 Andrew A. Chien,University of Chicago,proglang,1.0,0.333333333333,1989
 William J. Dally,Stanford University,proglang,1.0,0.333333333333,1989
-Michael Bedford Taylor,University of California - San Diego,proglang,2.0,0.5,2011
+Michael Bedford Taylor,University of California - San Diego,proglang,1.0,0.25,2011
 Pat Hanrahan,Stanford University,proglang,1.0,0.2,2014
 Monica S. Lam,Stanford University,proglang,2.0,0.833333333333,1991
 Cormac Flanagan,University of California - Santa Cruz,proglang,1.0,0.5,2010
@@ -38329,12 +38329,12 @@ Zhendong Su,University of California - Davis,proglang,1.0,0.2,2016
 Benjamin Goldberg,New York University,proglang,1.0,0.5,1992
 Mayur Naik,University of Pennsylvania,proglang,1.0,0.333333333333,2006
 Alex Aiken,Stanford University,proglang,1.0,0.333333333333,2006
-Todd D. Millstein,University of California - Los Angeles,proglang,2.0,0.4,2011
+Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.2,2011
 Satish Narayanasamy,University of Michigan,proglang,1.0,0.2,2011
 David A. Padua,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,1998
 Colin S. Gordon,Drexel University,proglang,1.0,0.333333333333,2013
 Michael D. Ernst,University of Washington,proglang,1.0,0.333333333333,2013
-Dan Grossman,University of Washington,proglang,2.0,0.666666666667,2013
+Dan Grossman,University of Washington,proglang,1.0,0.333333333333,2013
 Vijay Nagarajan,University of Edinburgh,proglang,1.0,0.25,2013
 Gordon V. Cormack,University of Waterloo,proglang,1.0,0.5,1990
 Nate Foster,Cornell University,proglang,1.0,0.25,2016
@@ -38343,10 +38343,10 @@ Eric A. Brewer,University of California - Berkeley,proglang,1.0,0.166666666667,2
 David E. Culler,University of California - Berkeley,proglang,1.0,0.166666666667,2003
 James R. Larus,EPFL,proglang,1.0,0.5,1995
 Charles E. Leiserson,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,1998
-P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,2.0,0.666666666667,2014
+P. Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2014
 Olin Shivers,Northeastern University,proglang,1.0,1.0,1988
-Laurie J. Hendren,McGill University,proglang,2.0,0.2,2005
-Ondrej Lhoták,University of Waterloo,proglang,2.0,0.2,2005
+Laurie J. Hendren,McGill University,proglang,1.0,0.1,2005
+Ondrej Lhoták,University of Waterloo,proglang,1.0,0.1,2005
 Olaf Chitil,University of Kent,proglang,1.0,0.5,2016
 Jonathan Aldrich,Carnegie Mellon University,proglang,1.0,0.5,2005
 David Kempe,University of Southern California,proglang,1.0,0.333333333333,2016
@@ -38356,7 +38356,7 @@ Rajiv Gupta,University of California - Riverside,proglang,2.0,0.833333333333,199
 Mary Lou Soffa,University of Virginia,proglang,1.0,0.333333333333,1997
 Bryan Ford,EPFL,proglang,1.0,0.2,1997
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.5,2004
-Laurie J. Hendren,McGill University,proglang,2.0,0.666666666667,2004
+Laurie J. Hendren,McGill University,proglang,1.0,0.5,2004
 Carl Hauser,Washington State University,proglang,1.0,0.166666666667,1989
 Donald E. Porter,University of North Carolina,proglang,1.0,0.2,2009
 Michael D. Bond,Ohio State University,proglang,1.0,0.2,2009
@@ -38395,16 +38395,16 @@ Dirk Grunwald,University of Colorado Boulder,proglang,1.0,0.166666666667,1995
 James H. Martin,University of Colorado Boulder,proglang,1.0,0.166666666667,1995
 Michael Mozer,University of Colorado Boulder,proglang,1.0,0.166666666667,1995
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,2005
-Viktor Kuncak,EPFL,proglang,2.0,0.5,2013
+Viktor Kuncak,EPFL,proglang,1.0,0.25,2013
 Ruzica Piskac,Yale University,proglang,1.0,0.25,2013
 Ranjit Jhala,University of California - San Diego,proglang,1.0,0.5,2005
 Rupak Majumdar,Max Planck Institute,proglang,1.0,0.5,2005
 Josep Torrellas,University of Illinois at Urbana-Champaign,proglang,1.0,0.2,2014
 William G. Griswold,University of California - San Diego,proglang,1.0,0.5,1987
-Santosh Nagarakatte,Rutgers University,proglang,2.0,0.416666666667,2013
-Steve Zdancewic,University of Pennsylvania,proglang,2.0,0.416666666667,2013
+Santosh Nagarakatte,Rutgers University,proglang,1.0,0.25,2013
+Steve Zdancewic,University of Pennsylvania,proglang,1.0,0.25,2013
 Benjamin Goldberg,New York University,proglang,1.0,1.0,1989
-Eran Yahav,Technion - Israel Institute of Technology,proglang,3.0,1.33333333333,2014
+Eran Yahav,Technion - Israel Institute of Technology,proglang,2.0,0.833333333333,2014
 Viktor Kuncak,EPFL,proglang,1.0,0.333333333333,2009
 Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2009
 Koushik Sen,University of California - Berkeley,proglang,1.0,1.0,2008
@@ -38425,13 +38425,13 @@ Emmett Witchel,University of Texas - Austin,proglang,1.0,0.125,2007
 Ilya Sergey,University College London,proglang,1.0,0.142857142857,2013
 Matthew Might,University of Utah,proglang,1.0,0.142857142857,2013
 Jeremy G. Siek,Indiana University,proglang,1.0,0.5,2005
-Andrew Lumsdaine,Indiana University,proglang,3.0,1.33333333333,2005
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,2.0,0.666666666667,1992
+Andrew Lumsdaine,Indiana University,proglang,1.0,0.5,2005
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,1992
 Shmuel Sagiv,Tel Aviv University,proglang,1.0,0.2,2002
-Thomas R. Gross,ETH Zurich,proglang,2.0,0.833333333333,1996
+Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,1996
 Keshav Pingali,University of Texas - Austin,proglang,1.0,0.5,1995
 George C. Necula,University of California - Berkeley,proglang,1.0,0.25,2011
-Koushik Sen,University of California - Berkeley,proglang,2.0,0.583333333333,2011
+Koushik Sen,University of California - Berkeley,proglang,1.0,0.25,2011
 Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1993
 Mary Lou Soffa,University of Virginia,proglang,1.0,0.333333333333,1993
 Martin T. Vechev,ETH Zurich,proglang,1.0,0.333333333333,2006
@@ -38469,26 +38469,26 @@ Ben Liblit,University of Wisconsin - Madison,proglang,1.0,0.2,2005
 Mayur Naik,University of Pennsylvania,proglang,1.0,0.2,2005
 Michael I. Jordan,University of California - Berkeley,proglang,1.0,0.2,2005
 Laurie J. Hendren,McGill University,proglang,2.0,0.666666666667,1994
-Rastislav Bodík,University of Washington,proglang,5.0,1.33333333333,2005
+Rastislav Bodík,University of Washington,proglang,3.0,0.833333333333,2005
 Jade Alglave,University College London,proglang,1.0,0.333333333333,2014
 Ravi Chugh,University of Chicago,proglang,1.0,0.333333333333,2010
 Srinivas Devadas,Massachusetts Institute of Technology,proglang,1.0,0.2,1995
 Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.142857142857,2009
 Ondrej Lhoták,University of Waterloo,proglang,1.0,0.2,2003
 Feng Qian,Indiana University,proglang,1.0,0.2,2003
-Laurie J. Hendren,McGill University,proglang,2.0,0.45,2003
+Laurie J. Hendren,McGill University,proglang,1.0,0.2,2003
 Jade Alglave,University College London,proglang,1.0,0.125,2012
 Rupak Majumdar,Max Planck Institute,proglang,1.0,0.25,2001
 Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.25,2001
 Feng Liu,University of Queensland,proglang,1.0,0.2,2012
 Martin T. Vechev,ETH Zurich,proglang,3.0,0.65,2012
-Eran Yahav,Technion - Israel Institute of Technology,proglang,3.0,0.733333333333,2012
+Eran Yahav,Technion - Israel Institute of Technology,proglang,2.0,0.4,2012
 Alexander Aiken,Stanford University,proglang,1.0,0.5,2004
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2016
-Zhendong Su,University of California - Davis,proglang,2.0,0.533333333333,2014
+Zhendong Su,University of California - Davis,proglang,1.0,0.333333333333,2014
 Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.333333333333,2009
 Jack W. Davidson,University of Virginia,proglang,1.0,0.5,1987
-Dan Grossman,University of Washington,proglang,3.0,1.375,2007
+Dan Grossman,University of Washington,proglang,2.0,0.375,2007
 Sriram Sankaranarayanan,University of Colorado Boulder,proglang,1.0,0.333333333333,2013
 Monica S. Lam,Stanford University,proglang,1.0,0.5,2003
 J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,1.0,1987
@@ -38507,11 +38507,11 @@ Rajeev Alur,University of Pennsylvania,proglang,1.0,0.333333333333,2007
 Thomas W. Reps,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1989
 Phillip B. Gibbons,Carnegie Mellon University,proglang,1.0,0.25,2010
 Todd C. Mowry,Carnegie Mellon University,proglang,1.0,0.25,2010
-Tiark Rompf,Purdue University,proglang,3.0,0.7,2014
+Tiark Rompf,Purdue University,proglang,1.0,0.166666666667,2014
 Kunle Olukotun,Stanford University,proglang,1.0,0.166666666667,2014
 Laure Gonnord,Ecole Normale Superieure de Lyon,proglang,1.0,0.333333333333,2015
 Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2001
-Vivek Sarkar,Rice University,proglang,2.0,0.7,2012
+Vivek Sarkar,Rice University,proglang,1.0,0.2,2012
 Jeremy G. Siek,Indiana University,proglang,1.0,0.333333333333,2015
 Philip Wadler,University of Edinburgh,proglang,1.0,0.333333333333,2015
 Lukasz Ziarek,University of Buffalo,proglang,1.0,0.166666666667,2010
@@ -38520,8 +38520,8 @@ Gagan Agrawal,Ohio State University,proglang,1.0,0.333333333333,1995
 David K. Gifford,Massachusetts Institute of Technology,proglang,2.0,1.0,1989
 Aslan Askarov,Aarhus University,proglang,1.0,0.333333333333,2012
 Andrew C. Myers,Cornell University,proglang,1.0,0.333333333333,2012
-George C. Necula,University of California - Berkeley,proglang,2.0,0.583333333333,2013
-Koushik Sen,University of California - Berkeley,proglang,2.0,0.583333333333,2013
+George C. Necula,University of California - Berkeley,proglang,1.0,0.25,2013
+Koushik Sen,University of California - Berkeley,proglang,1.0,0.25,2013
 Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.2,2015
 Andrew C. Myers,Cornell University,proglang,2.0,0.45,2015
 Eric Van Wyk,University of Minnesota,proglang,1.0,0.5,2009
@@ -38529,7 +38529,7 @@ Guoqing (Harry) Xu,University of California - Irvine,proglang,2.0,0.666666666667
 Atanas Rountev,Ohio State University,proglang,2.0,0.666666666667,2010
 James R. Larus,EPFL,proglang,1.0,0.5,1993
 Xi Wang,University of Washington,proglang,1.0,0.166666666667,2008
-David Van Horn,University of Maryland - College Park,proglang,3.0,0.97619047619,2015
+David Van Horn,University of Maryland - College Park,proglang,1.0,0.5,2015
 Guy E. Blelloch,Carnegie Mellon University,proglang,1.0,0.5,2001
 David I. August,Princeton University,proglang,2.0,0.45,2012
 Youtao Zhang,University of Pittsburgh,proglang,1.0,0.5,2001
@@ -38541,9 +38541,9 @@ Matthias Felleisen,Northeastern University,proglang,1.0,0.5,1997
 Kathleen Fisher,Tufts University,proglang,1.0,0.5,2005
 Isil Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2012
 Thomas Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2012
-Alex Aiken,Stanford University,proglang,3.0,0.783333333333,2012
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2.0,1.0,1999
-Alastair F. Donaldson,Imperial College London,proglang,3.0,0.7,2015
+Alex Aiken,Stanford University,proglang,2.0,0.533333333333,2012
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.5,1999
+Alastair F. Donaldson,Imperial College London,proglang,2.0,0.45,2015
 Ravi Chugh,University of Chicago,proglang,1.0,0.25,2009
 Ranjit Jhala,University of California - San Diego,proglang,2.0,0.583333333333,2009
 Isil Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2008
@@ -38600,7 +38600,7 @@ Mary W. Hall,University of Utah,proglang,1.0,0.333333333333,2015
 Michelle Strout,University of Arizona,proglang,1.0,0.333333333333,2015
 Suresh Jagannathan,Purdue University,proglang,2.0,0.666666666667,2015
 James R. Larus,EPFL,proglang,1.0,0.333333333333,1996
-Satish Narayanasamy,University of Michigan,proglang,2.0,0.458333333333,2014
+Satish Narayanasamy,University of Michigan,proglang,1.0,0.125,2014
 Peter M. Chen,University of Michigan,proglang,1.0,0.125,2014
 Jason Flinn,University of Michigan,proglang,1.0,0.125,2014
 Anant Agarwal,Massachusetts Institute of Technology,proglang,1.0,0.166666666667,2005
@@ -38624,7 +38624,7 @@ Martin Rinard,Massachusetts Institute of Technology,proglang,1.0,0.25,2015
 Andrew W. Appel,Princeton University,proglang,1.0,0.5,1994
 Kyu Hyung Lee,University of Georgia,proglang,1.0,0.25,2011
 Nick Sumner,Simon Fraser University,proglang,1.0,0.25,2011
-Xiangyu Zhang,Purdue University,proglang,2.0,0.583333333333,2011
+Xiangyu Zhang,Purdue University,proglang,1.0,0.25,2011
 Sam Tobin-Hochstadt,Indiana University,proglang,1.0,0.25,2014
 C. R. Ramakrishnan,Stony Brook University,proglang,1.0,0.333333333333,1996
 Andrew W. Appel,Princeton University,proglang,1.0,1.0,2004
@@ -38661,7 +38661,7 @@ Cezara Dragoi,Ecole Normale Superieure,proglang,1.0,0.25,2011
 Samuel Z. Guyer,Tufts University,proglang,1.0,0.5,2009
 Keith D. Cooper,Rice University,proglang,1.0,0.5,1988
 Michael I. Schwartzbach,Aarhus University,proglang,1.0,0.25,1997
-Emery D. Berger,University of Massachusetts - Amherst,proglang,2.0,0.583333333333,2009
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2009
 Aws Albarghouthi,University of Wisconsin - Madison,proglang,1.0,0.25,2012
 Jeff Huang 0001,Texas A&M University,proglang,1.0,0.333333333333,2014
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2014
@@ -38669,7 +38669,7 @@ Markus Püschel,ETH Zurich,proglang,1.0,0.333333333333,2005
 Jean Yang,Carnegie Mellon University,proglang,1.0,0.5,2010
 Stephen M. Blackburn,Australian National University,proglang,1.0,0.2,2010
 Martin C. Rinard,Massachusetts Institute of Technology,proglang,2.0,0.7,2011
-Mooly Sagiv,Tel Aviv University,proglang,5.0,1.03333333333,2011
+Mooly Sagiv,Tel Aviv University,proglang,2.0,0.45,2011
 Benjamin M. Marlin,University of Massachusetts - Amherst,proglang,1.0,0.25,2016
 Eliot Moss,University of Massachusetts - Amherst,proglang,1.0,0.25,2016
 Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2001
@@ -38677,7 +38677,7 @@ Rastislav Bodík,University of Washington,proglang,2.0,0.666666666667,2014
 Ravi Chugh,University of Chicago,proglang,1.0,0.25,2016
 Vivek Sarkar,Rice University,proglang,1.0,0.166666666667,2002
 John Cavazos,University of Delaware,proglang,1.0,0.5,2004
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,3.0,1.0,2004
+J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.5,2004
 William D. Clinger,Northeastern University,proglang,1.0,0.5,1997
 Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2000
 Frank Mueller,North Carolina State University,proglang,1.0,0.5,1995
@@ -38696,15 +38696,15 @@ Rastislav Bodík,University of Washington,proglang,1.0,0.5,2006
 Guy E. Blelloch,Carnegie Mellon University,proglang,1.0,0.5,1999
 William N. Sumner,Simon Fraser University,proglang,1.0,0.333333333333,2008
 Xiangyu Zhang,Purdue University,proglang,1.0,0.333333333333,2008
-Samuel Z. Guyer,Tufts University,proglang,2.0,0.383333333333,2006
+Samuel Z. Guyer,Tufts University,proglang,1.0,0.333333333333,2006
 Mary W. Hall,University of Utah,proglang,1.0,0.333333333333,2002
 Peter J. Stuckey,University of Melbourne,proglang,1.0,0.25,1992
 Michael D. Smith,Harvard University,proglang,1.0,0.333333333333,1998
 Stephen Blackburn,Australian National University,proglang,1.0,0.25,2002
-Richard E. Jones,University of Kent,proglang,2.0,0.75,2002
+Richard E. Jones,University of Kent,proglang,1.0,0.25,2002
 J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.25,2002
 J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,2.0,0.666666666667,1998
-Yannis Smaragdakis,University of Athens,proglang,2.0,0.833333333333,2014
+Yannis Smaragdakis,University of Athens,proglang,1.0,0.333333333333,2014
 Todd M. Austin,University of Michigan,proglang,1.0,0.333333333333,1994
 Gurindar S. Sohi,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1994
 John L. Hennessy,Stanford University,proglang,1.0,0.333333333333,1991
@@ -38714,12 +38714,12 @@ Nate Foster,Cornell University,proglang,1.0,0.333333333333,2013
 Thomas G. Moher,University of Illinois - Chicago,proglang,1.0,0.333333333333,1991
 James R. Larus,EPFL,proglang,1.0,0.5,1998
 Swarat Chaudhuri,Rice University,proglang,1.0,0.333333333333,2015
-Isil Dillig,University of Texas - Austin,proglang,3.0,0.916666666667,2015
+Isil Dillig,University of Texas - Austin,proglang,2.0,0.666666666667,2015
 Martin T. Vechev,ETH Zurich,proglang,1.0,0.25,2007
 Eran Yahav,Technion - Israel Institute of Technology,proglang,1.0,0.25,2007
 Noam Rinetzky,Tel Aviv University,proglang,1.0,0.25,2007
 Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2008
-Rastislav Bodík,University of Washington,proglang,2.0,0.666666666667,2008
+Rastislav Bodík,University of Washington,proglang,1.0,0.333333333333,2008
 A. Jefferson Offutt,George Mason University,proglang,1.0,0.5,1987
 Iulian Neamtiu,NJIT,proglang,1.0,0.5,2009
 Michael W. Hicks,University of Maryland - College Park,proglang,2.0,0.833333333333,2009
@@ -38741,7 +38741,7 @@ David Evans,University of Virginia,proglang,1.0,1.0,1996
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.333333333333,1999
 Alexander Aiken,Stanford University,proglang,1.0,0.333333333333,1999
 Mary Jane Irwin,Pennsylvania State University,proglang,1.0,0.25,2006
-Xiangyu Zhang,Purdue University,proglang,2.0,0.416666666667,2015
+Xiangyu Zhang,Purdue University,proglang,1.0,0.25,2015
 Rupak Majumdar,Max Planck Institute,proglang,1.0,0.333333333333,2010
 Jan Hoffmann 0002,Carnegie Mellon University,proglang,1.0,0.333333333333,2015
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.25,1998
@@ -38756,12 +38756,12 @@ Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.1666666666
 James Cheney,University of Edinburgh,proglang,1.0,0.166666666667,2002
 Greg Morrisett,Cornell University,proglang,1.0,0.2,2012
 Changhee Jung,Virginia Tech,proglang,1.0,0.2,2011
-Santosh Pande,Georgia Institute of Technology,proglang,2.0,0.533333333333,2011
+Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.2,2011
 Anne Rogers,University of Chicago,proglang,1.0,0.5,1989
 Keshav Pingali,University of Texas - Austin,proglang,1.0,0.5,1989
 Todd A. Proebsting,University of Arizona,proglang,1.0,0.5,1991
 Kathleen Fisher,Tufts University,proglang,1.0,0.2,2012
-Emery D. Berger,University of Massachusetts - Amherst,proglang,3.0,1.33333333333,2014
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.5,2014
 John H. Reppy,University of Chicago,proglang,1.0,0.25,2001
 Benjamin Goldberg,New York University,proglang,1.0,1.0,1991
 C. A. R. Hoare,University of Oxford,proglang,1.0,0.2,1999
@@ -38779,8 +38779,8 @@ Isil Dillig,University of Texas - Austin,proglang,1.0,0.2,2014
 Thomas Dillig,University of Texas - Austin,proglang,1.0,0.2,2014
 Stephen M. Blackburn,Australian National University,proglang,1.0,0.5,2008
 Rajeev Alur,University of Pennsylvania,proglang,1.0,0.166666666667,2013
-Dan Grossman,University of Washington,proglang,3.0,0.75,2014
-Yannis Smaragdakis,University of Athens,proglang,4.0,1.66666666667,2013
+Dan Grossman,University of Washington,proglang,2.0,0.416666666667,2014
+Yannis Smaragdakis,University of Athens,proglang,1.0,0.5,2013
 Mahmut T. Kandemir,Pennsylvania State University,proglang,1.0,0.2,2015
 Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1.0,0.5,2010
 Mark D. Hill,University of Wisconsin - Madison,proglang,1.0,0.333333333333,2005
@@ -38792,7 +38792,7 @@ Cormac Flanagan,University of California - Santa Cruz,proglang,1.0,0.16666666666
 Stephen Chong,Harvard University,proglang,1.0,0.166666666667,2016
 Ulrich Kremer,Rutgers University,proglang,1.0,0.5,2003
 Sarita V. Adve,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,2008
-Eran Yahav,Technion - Israel Institute of Technology,proglang,5.0,1.16666666667,2011
+Eran Yahav,Technion - Israel Institute of Technology,proglang,1.0,0.333333333333,2011
 Jack W. Davidson,University of Virginia,proglang,1.0,0.5,1988
 Frank Tip,Northeastern University,proglang,1.0,0.25,2013
 Ananth Grama,Purdue University,proglang,1.0,0.333333333333,2007
@@ -38817,7 +38817,7 @@ José Nelson Amaral,University of Alberta,proglang,1.0,0.142857142857,2006
 Norman Ramsey,Tufts University,proglang,1.0,0.5,1992
 John H. Reppy,University of Chicago,proglang,1.0,1.0,1991
 Monica S. Lam,Stanford University,proglang,1.0,0.5,1995
-Swarat Chaudhuri,Rice University,proglang,2.0,0.45,2011
+Swarat Chaudhuri,Rice University,proglang,1.0,0.25,2011
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.5,2005
 Westley Weimer,University of Virginia,proglang,1.0,0.2,2003
 Gordon V. Cormack,University of Waterloo,proglang,1.0,0.5,1989
@@ -38843,23 +38843,23 @@ Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.3333333333
 Parthasarathy Madhusudan,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2013
 Frank Mueller,North Carolina State University,proglang,1.0,0.5,1992
 David B. Whalley,Florida State University,proglang,1.0,0.5,1992
-Thomas G. Moher,University of Illinois - Chicago,proglang,2.0,1.0,1989
+Thomas G. Moher,University of Illinois - Chicago,proglang,1.0,0.5,1989
 Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.25,2007
 Ramesh Govindan,University of Southern California,proglang,1.0,0.25,2007
 Mahmut T. Kandemir,Pennsylvania State University,proglang,1.0,0.25,2007
 Michael D. Bond,Ohio State University,proglang,2.0,0.666666666667,2010
 Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.2,2016
 Andrew C. Myers,Cornell University,proglang,1.0,0.2,2016
-Barbara G. Ryder,Virginia Tech,proglang,2.0,0.833333333333,2001
+Barbara G. Ryder,Virginia Tech,proglang,1.0,0.5,2001
 Barton P. Miller,University of Wisconsin - Madison,proglang,1.0,0.5,1988
 Andrew C. Myers,Cornell University,proglang,1.0,0.5,2013
-Calvin Lin,University of Texas - Austin,proglang,2.0,0.583333333333,2015
+Calvin Lin,University of Texas - Austin,proglang,1.0,0.333333333333,2015
 Eric A. Brewer,University of California - Berkeley,proglang,1.0,0.25,2008
 Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1.0,0.333333333333,2010
 Umut A. Acar,Carnegie Mellon University,proglang,1.0,0.25,2006
 Guy E. Blelloch,Carnegie Mellon University,proglang,1.0,0.25,2006
 Keith D. Cooper,Rice University,proglang,1.0,0.5,1994
-Alex Aiken,Stanford University,proglang,3.0,0.783333333333,2013
+Alex Aiken,Stanford University,proglang,1.0,0.2,2013
 Pat Hanrahan,Stanford University,proglang,1.0,0.2,2013
 Ruzica Piskac,Yale University,proglang,1.0,0.25,2010
 Antonio González 0001,Polytechnic University of Catalonia,proglang,2.0,0.416666666667,2005
@@ -38872,12 +38872,12 @@ Joseph Hummel,University of Illinois - Chicago,proglang,1.0,0.333333333333,1994
 Alexandru Nicolau,University of California - Irvine,proglang,1.0,0.333333333333,1994
 Pen-Chung Yew,University of Minnesota,proglang,1.0,0.5,2015
 Todd A. Proebsting,University of Arizona,proglang,2.0,1.2,1997
-Michael Carbin,Massachusetts Institute of Technology,proglang,2.0,0.5,2012
+Michael Carbin,Massachusetts Institute of Technology,proglang,1.0,0.25,2012
 Eduard Ayguadé,Polytechnic University of Catalonia,proglang,1.0,0.25,2000
 Mateo Valero,Polytechnic University of Catalonia,proglang,1.0,0.25,2000
 Ravi Chugh,University of Chicago,proglang,1.0,0.25,2008
-Ranjit Jhala,University of California - San Diego,proglang,3.0,0.783333333333,2008
-Sorin Lerner,University of California - San Diego,proglang,2.0,0.45,2008
+Ranjit Jhala,University of California - San Diego,proglang,2.0,0.583333333333,2008
+Sorin Lerner,University of California - San Diego,proglang,1.0,0.25,2008
 Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.25,2014
 Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.25,2014
 Stephen Chong,Harvard University,proglang,1.0,0.25,2015
@@ -38921,7 +38921,7 @@ Katherine A. Yelick,University of California - Berkeley,proglang,1.0,0.5,1995
 Jonathan Aldrich,Carnegie Mellon University,proglang,1.0,0.142857142857,2014
 Michael D. Bond,Ohio State University,proglang,1.0,0.25,2014
 Jack W. Davidson,University of Virginia,proglang,1.0,0.5,1996
-Jens Palsberg,University of California - Los Angeles,proglang,2.0,0.75,2008
+Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.5,2008
 Shmuel Sagiv,Tel Aviv University,proglang,1.0,0.333333333333,2001
 Mooly Sagiv,Tel Aviv University,proglang,1.0,0.25,2007
 Alex Aiken,Stanford University,proglang,2.0,0.583333333333,2016
@@ -38944,12 +38944,12 @@ Norman Ramsey,Tufts University,proglang,1.0,0.5,2000
 Christian S. Collberg,University of Arizona,proglang,1.0,0.142857142857,2004
 Saumya K. Debray,University of Arizona,proglang,1.0,0.142857142857,2004
 John D. Kececioglu,University of Arizona,proglang,1.0,0.142857142857,2004
-Matthew Flatt,University of Utah,proglang,2.0,0.833333333333,2004
-Robert Bruce Findler,Northwestern University,proglang,2.0,0.833333333333,2004
+Matthew Flatt,University of Utah,proglang,1.0,0.5,2004
+Robert Bruce Findler,Northwestern University,proglang,1.0,0.5,2004
 Antonio Filieri,Imperial College London,proglang,1.0,0.2,2014
-Bernhard Scholz,University of Sydney,proglang,2.0,0.666666666667,2015
+Bernhard Scholz,University of Sydney,proglang,1.0,0.333333333333,2015
 Chandra Krintz,University of California - Santa Barbara,proglang,1.0,0.5,2001
-Samuel Z. Guyer,Tufts University,proglang,2.0,0.533333333333,2010
+Samuel Z. Guyer,Tufts University,proglang,1.0,0.333333333333,2010
 Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2007
 Guoqing (Harry) Xu,University of California - Irvine,proglang,1.0,0.25,2011
 Feng Qin,Ohio State University,proglang,1.0,0.25,2011
@@ -38957,14 +38957,14 @@ Atanas Rountev,Ohio State University,proglang,1.0,0.25,2011
 Zhiyuan Li,Purdue University,proglang,1.0,0.333333333333,2013
 Michael Schapira,Hebrew University of Jerusalem,proglang,1.0,0.125,2014
 Byron Cook,University College London,proglang,1.0,0.333333333333,2006
-Mooly Sagiv,Tel Aviv University,proglang,2.0,0.583333333333,2013
+Mooly Sagiv,Tel Aviv University,proglang,1.0,0.25,2013
 Eran Yahav,Technion - Israel Institute of Technology,proglang,1.0,0.25,2013
 Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,2.0,0.291666666667,2015
 Sorin Lerner,University of California - San Diego,proglang,1.0,0.333333333333,2003
-Todd D. Millstein,University of California - Los Angeles,proglang,2.0,0.666666666667,2003
+Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.333333333333,2003
 Anders Møller,Aarhus University,proglang,1.0,0.5,2001
 Michael I. Schwartzbach,Aarhus University,proglang,1.0,0.5,2001
-Emery D. Berger,University of Massachusetts - Amherst,proglang,2.0,0.833333333333,2005
+Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2005
 Stephen McCamant,University of Minnesota,proglang,1.0,0.5,2008
 Michael D. Ernst,University of Washington,proglang,1.0,0.5,2008
 Rupak Majumdar,Max Planck Institute,proglang,1.0,0.333333333333,2012
@@ -38973,9 +38973,9 @@ James R. Larus,EPFL,proglang,1.0,0.25,2003
 Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2011
 Martin Elsman,DIKU,proglang,1.0,0.333333333333,2002
 Yannis Smaragdakis,University of Athens,proglang,1.0,0.5,2008
-Stephen M. Blackburn,Australian National University,proglang,2.0,0.416666666667,2013
+Stephen M. Blackburn,Australian National University,proglang,1.0,0.166666666667,2013
 James R. Larus,EPFL,proglang,1.0,0.166666666667,2013
-Martin T. Vechev,ETH Zurich,proglang,2.0,0.833333333333,2008
+Martin T. Vechev,ETH Zurich,proglang,1.0,0.5,2008
 Pen-Chung Yew,University of Minnesota,proglang,1.0,0.142857142857,2003
 Daniel A. Jiménez,Texas A&M University,proglang,1.0,1.0,2005
 Emina Torlak,University of Washington,proglang,1.0,0.5,2014
@@ -38984,7 +38984,7 @@ Iulian Neamtiu,NJIT,proglang,1.0,0.333333333333,2012
 Dongyoon Lee,Virginia Tech,proglang,1.0,0.25,2012
 Peter M. Chen,University of Michigan,proglang,1.0,0.25,2012
 Jason Flinn,University of Michigan,proglang,1.0,0.25,2012
-Satish Narayanasamy,University of Michigan,proglang,2.0,0.5,2012
+Satish Narayanasamy,University of Michigan,proglang,1.0,0.25,2012
 Suresh Jagannathan,Purdue University,proglang,1.0,0.333333333333,2016
 Dawson R. Engler,Stanford University,proglang,1.0,0.333333333333,1997
 M. Frans Kaashoek,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,1997
@@ -39002,10 +39002,10 @@ Rastislav Bodík,University of Washington,proglang,1.0,0.333333333333,1999
 Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,1999
 Mary Lou Soffa,University of Virginia,proglang,1.0,0.333333333333,1999
 Adrian Sampson,Cornell University,proglang,1.0,0.166666666667,2014
-Luis Ceze,University of Washington,proglang,3.0,0.75,2014
-Mary Lou Soffa,University of Virginia,proglang,2.0,1.0,1991
+Luis Ceze,University of Washington,proglang,1.0,0.166666666667,2014
+Mary Lou Soffa,University of Virginia,proglang,1.0,0.5,1991
 John Regehr,University of Utah,proglang,1.0,0.25,2011
-Dan Grossman,University of Washington,proglang,2.0,0.45,2012
+Dan Grossman,University of Washington,proglang,1.0,0.25,2012
 Christophe Dubach,University of Edinburgh,proglang,1.0,0.2,2012
 P. Sadayappan,Ohio State University,proglang,1.0,0.125,2002
 Scott A. Mahlke,University of Michigan,proglang,1.0,0.333333333333,2003
@@ -39025,7 +39025,7 @@ Erez Petrank,Technion - Israel Institute of Technology,proglang,1.0,0.5,2013
 Santosh Nagarakatte,Rutgers University,proglang,1.0,0.25,2009
 Steve Zdancewic,University of Pennsylvania,proglang,1.0,0.25,2009
 Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,2004
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2.0,1.0,2001
+Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.5,2001
 Alex Groce,Oregon State University,proglang,1.0,0.142857142857,2013
 Weng-Keen Wong,Oregon State University,proglang,1.0,0.142857142857,2013
 Xiaoli Fern,Oregon State University,proglang,1.0,0.142857142857,2013
@@ -39052,12 +39052,12 @@ Calvin Lin,University of Texas - Austin,proglang,1.0,0.5,2007
 Sam Tobin-Hochstadt,Indiana University,proglang,1.0,0.2,2011
 Matthew Flatt,University of Utah,proglang,1.0,0.2,2011
 David I. August,Princeton University,proglang,1.0,0.333333333333,2004
-Thomas W. Reps,University of Wisconsin - Madison,proglang,2.0,1.0,2015
+Thomas W. Reps,University of Wisconsin - Madison,proglang,1.0,0.5,2015
 Alexander Aiken,Stanford University,proglang,1.0,0.5,2001
 Zhong Shao,Yale University,proglang,1.0,0.5,1995
 Andrew W. Appel,Princeton University,proglang,1.0,0.5,1995
 Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1.0,0.25,2005
-Francesco Zappa Nardelli,Ecole Normale Superieure,proglang,2.0,0.533333333333,2013
+Francesco Zappa Nardelli,Ecole Normale Superieure,proglang,1.0,0.333333333333,2013
 Junfeng Yang,Columbia University,proglang,1.0,0.2,2012
 Cormac Flanagan,University of California - Santa Cruz,proglang,1.0,0.5,2003
 Mohammed Bennamoun,University of Western Australia,robotics,1.0,0.25,1991
@@ -39661,512 +39661,6 @@ Kerstin Eder,University of Bristol,robotics,1.0,0.2,2013
 Randall D. Beer,Indiana University,robotics,1.0,0.0909090909091,2001
 Sonia Chernova,Georgia Institute of Technology,robotics,1.0,0.5,2004
 Melanie E. Moses,University of New Mexico,robotics,1.0,0.333333333333,2015
-Andrew S. Grimshaw,University of Virginia,proglang,1.0,0.5,1987
-Martin T. Vechev,ETH Zurich,proglang,2.0,0.583333333333,2013
-Gary T. Leavens,University of Central Florida,proglang,2.0,0.75,2000
-Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.25,2000
-Vivek Sarkar,Rice University,proglang,1.0,0.2,2011
-Jeremy G. Siek,Indiana University,proglang,1.0,0.333333333333,1999
-Andrew Lumsdaine,Indiana University,proglang,1.0,0.333333333333,1999
-Michael J. Cafarella,University of Michigan,proglang,1.0,0.333333333333,2014
-Ryan Newton,Indiana University,proglang,1.0,0.25,2014
-Jeremy G. Siek,Indiana University,proglang,1.0,0.25,2014
-Andrew Lumsdaine,Indiana University,proglang,1.0,0.25,2014
-Guoqing (Harry) Xu,University of California - Irvine,proglang,1.0,1.0,2013
-James Noble,Victoria University of Wellington,proglang,2.0,0.583333333333,2010
-Westley Weimer,University of Virginia,proglang,1.0,0.333333333333,2011
-Samuel Z. Guyer,Tufts University,proglang,1.0,0.25,2011
-Elisa Bertino,Purdue University,proglang,1.0,0.5,1998
-Darko Stefanovic,University of New Mexico,proglang,1.0,0.333333333333,1999
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,1999
-Stanley B. Zdonik,Brown University,proglang,2.0,1.0,1987
-Joseph A. Konstan,University of Minnesota,proglang,1.0,0.5,1991
-James D. Herbsleb,Carnegie Mellon University,proglang,1.0,0.5,2007
-Jeffrey L. Overbey,Auburn University,proglang,1.0,0.5,2009
-Adrian Sampson,Cornell University,proglang,1.0,0.25,2015
-Dan Grossman,University of Washington,proglang,1.0,0.25,2015
-Luis Ceze,University of Washington,proglang,1.0,0.25,2015
-Eli Tilevich,Virginia Tech,proglang,1.0,0.5,2009
-Peter Buneman,University of Edinburgh,proglang,1.0,0.5,1989
-Suresh Jagannathan,Purdue University,proglang,1.0,0.333333333333,2005
-Antony L. Hosking,Australian National University,proglang,1.0,0.333333333333,2005
-Robert Cartwright,Rice University,proglang,1.0,0.5,1998
-Eddy Z. Zhang,Rutgers University,proglang,1.0,0.333333333333,2011
-Matthew Might,University of Utah,proglang,1.0,0.333333333333,2015
-Chandra Krintz,University of California - Santa Barbara,proglang,1.0,0.333333333333,1999
-Tim Brecht,University of Waterloo,proglang,1.0,0.25,2001
-Norman C. Hutchinson,University of British Columbia,proglang,1.0,0.25,1986
-Henry M. Levy,University of Washington,proglang,1.0,0.25,1986
-Jonathan Aldrich,Carnegie Mellon University,proglang,1.0,0.5,2007
-Roy H. Campbell,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,1996
-Witawas Srisa-an,University of Nebraska,proglang,1.0,0.333333333333,2011
-Matthew B. Dwyer,University of Nebraska,proglang,1.0,0.333333333333,2011
-Jack C. Wileden,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,1989
-Alexander L. Wolf,Imperial College London,proglang,1.0,0.333333333333,1989
-Greg Morrisett,Cornell University,proglang,1.0,0.5,2007
-Rastislav Bodík,University of Washington,proglang,1.0,0.333333333333,2011
-Matthew Flatt,University of Utah,proglang,2.0,0.533333333333,2010
-Robert Bruce Findler,Northwestern University,proglang,2.0,0.533333333333,2010
-Calvin J. Ribbens,Virginia Tech,proglang,1.0,0.333333333333,2011
-Patrick Th. Eugster,TU Darmstadt,proglang,1.0,1.0,2006
-Gail E. Kaiser,Columbia University,proglang,1.0,0.5,1987
-David Garlan,Carnegie Mellon University,proglang,1.0,0.5,1987
-Eva Darulova,Max Planck Institute,proglang,1.0,0.5,2011
-Viktor Kuncak,EPFL,proglang,1.0,0.5,2011
-Gregor Kiczales,University of British Columbia,proglang,1.0,0.5,1992
-Laurie J. Hendren,McGill University,proglang,1.0,0.5,2014
-Philip W. L. Fong,University of Calgary,proglang,1.0,1.0,2004
-Laurie J. Hendren,McGill University,proglang,1.0,0.5,2012
-Michael D. Bond,Ohio State University,proglang,2.0,0.625,2013
-Mohsen Lesani,University of California - Riverside,proglang,1.0,0.333333333333,2015
-Mira Mezini,TU Darmstadt,proglang,1.0,0.5,1998
-Karl J. Lieberherr,Northeastern University,proglang,1.0,0.5,1998
-Gregor Kiczales,University of British Columbia,proglang,1.0,0.5,2013
-Jonathan Aldrich,Carnegie Mellon University,proglang,1.0,0.2,2011
-Robert Bruce Findler,Northwestern University,proglang,1.0,0.5,2001
-Matthias Felleisen,Northeastern University,proglang,1.0,0.5,2001
-Mira Mezini,TU Darmstadt,proglang,1.0,0.2,2015
-Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,0.5,2008
-Isil Dillig,University of Texas - Austin,proglang,1.0,0.25,2013
-Thomas Dillig,University of Texas - Austin,proglang,1.0,0.25,2013
-Todd D. Millstein,University of California - Los Angeles,proglang,1.0,1.0,2004
-Michael C. Mozer,University of Colorado Boulder,proglang,1.0,0.25,2005
-Laurie J. Hendren,McGill University,proglang,1.0,0.5,2008
-Michael Hicks,University of Maryland - College Park,proglang,2.0,0.45,2012
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2014
-Alex Potanin,Victoria University of Wellington,proglang,1.0,0.25,2006
-James Noble,Victoria University of Wellington,proglang,3.0,0.625,2006
-Jan Vitek,Northeastern University,proglang,1.0,0.25,2002
-Arvind,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2000
-Thomas Kühne,Victoria University of Wellington,proglang,1.0,0.5,2007
-Jonathan Bell,George Mason University,proglang,1.0,0.5,2014
-Gail E. Kaiser,Columbia University,proglang,1.0,0.5,2014
-Philippa Gardner,Imperial College London,proglang,1.0,0.5,2015
-Yanhong A. Liu,Stony Brook University,proglang,1.0,0.2,2005
-Scott D. Stoller,Stony Brook University,proglang,1.0,0.2,2005
-Martin Odersky,EPFL,proglang,1.0,0.5,2005
-Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,0.5,1999
-Keshav Pingali,University of Texas - Austin,proglang,1.0,0.333333333333,2010
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.5,2006
-Michael D. Bond,Ohio State University,proglang,2.0,0.7,2007
-Mira Mezini,TU Darmstadt,proglang,2.0,0.45,2014
-Thomas Wies,New York University,proglang,1.0,0.333333333333,2014
-Andrew W. Appel,Princeton University,proglang,1.0,0.2,2002
-Liuba Shrira,Brandeis University,proglang,1.0,0.5,2002
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.5,2015
-Michael Franz,University of California - Irvine,proglang,1.0,0.25,2014
-Stephen Blackburn,Australian National University,proglang,1.0,0.2,2001
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.2,2001
-Xiangyu Zhang,Purdue University,proglang,1.0,0.5,2013
-Zhaojun Bai,University of California - Davis,proglang,1.0,0.333333333333,2015
-Zhendong Su,University of California - Davis,proglang,2.0,0.666666666667,2015
-Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.25,2015
-Alan Borning,University of Washington,proglang,1.0,0.25,2015
-Divyakant Agrawal,University of California - Santa Barbara,proglang,1.0,0.333333333333,1994
-Amr El Abbadi,University of California - Santa Barbara,proglang,1.0,0.333333333333,1994
-William R. Cook,University of Texas - Austin,proglang,1.0,0.166666666667,1993
-Stephen Chong,Harvard University,proglang,1.0,0.5,2012
-Naftaly H. Minsky,Rutgers University,proglang,1.0,0.5,1987
-Anand R. Tripathi,University of Minnesota,proglang,1.0,0.5,1988
-Martin Odersky,EPFL,proglang,3.0,0.866666666667,2014
-Luis Ceze,University of Washington,proglang,1.0,0.333333333333,2013
-Mark Batty,University of Kent,proglang,1.0,0.25,2015
-Martin Odersky,EPFL,proglang,1.0,0.333333333333,2008
-Henri E. Bal,VU Amsterdam,proglang,1.0,0.333333333333,1996
-Laurent Michel,University of Connecticut,proglang,1.0,0.5,2002
-Jens Dietrich,Massey University,proglang,1.0,0.333333333333,2015
-Gary T. Leavens,University of Central Florida,proglang,1.0,0.5,1998
-Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.5,1998
-Robert J. Walker,University of Calgary,proglang,1.0,0.333333333333,2010
-Charles Lee Isbell Jr.,Georgia Institute of Technology,proglang,1.0,0.25,2008
-Jim Waldo,Harvard University,proglang,1.0,1.0,2006
-Dan Tsafrir,Technion - Israel Institute of Technology,proglang,1.0,0.25,2009
-Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.25,1995
-Andrew C. Myers,Cornell University,proglang,2.0,1.25,1995
-Marcus R. Frean,Victoria University of Wellington,proglang,1.0,0.125,2006
-Ewan D. Tempero,University of Auckland,proglang,1.0,0.125,2006
-Anders Møller,Aarhus University,proglang,1.0,0.2,2015
-Jay A. McCarthy,University of Massachusetts - Lowell,proglang,1.0,1.0,2010
-Iulian Neamtiu,NJIT,proglang,1.0,0.5,2013
-Ronald Garcia,University of British Columbia,proglang,1.0,0.25,2014
-Atanas Rountev,Ohio State University,proglang,1.0,0.333333333333,2001
-Ana Milanova,Rensselaer Polytechnic Institute,proglang,1.0,0.333333333333,2001
-Viktor Kuncak,EPFL,proglang,3.0,1.08333333333,2015
-Thomas E. Anderson,University of Washington,proglang,1.0,0.25,1993
-Jeffrey S. Foster,University of Maryland - College Park,proglang,2.0,1.0,2007
-Alfred L. Brown,University of Adelaide,proglang,1.0,0.25,1989
-Gary T. Leavens,University of Central Florida,proglang,1.0,0.5,1994
-Ambuj K. Singh,University of California - Santa Barbara,proglang,1.0,0.333333333333,1997
-Michael Carbin,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2013
-Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2013
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2013
-John Cavazos,University of Delaware,proglang,1.0,0.5,2006
-Michael F. P. O'Boyle,University of Edinburgh,proglang,1.0,0.5,2006
-Gregor Richards,University of Waterloo,proglang,1.0,0.2,2013
-Eli Tilevich,Virginia Tech,proglang,1.0,0.5,2008
-Rastislav Bodík,University of Washington,proglang,1.0,0.5,2015
-Chen Ding,University of Rochester,proglang,1.0,0.166666666667,2011
-Alastair F. Donaldson,Imperial College London,proglang,1.0,0.2,2012
-Dennis G. Kafura,Virginia Tech,proglang,1.0,0.25,1991
-Stephen Chong,Harvard University,proglang,1.0,0.333333333333,2004
-Andrew C. Myers,Cornell University,proglang,1.0,0.333333333333,2004
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,2.0,2.0,2007
-Bor-Yuh Evan Chang,University of Colorado Boulder,proglang,1.0,0.333333333333,2015
-Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.5,1993
-Yuriy Brun,University of Massachusetts - Amherst,proglang,1.0,0.2,2012
-Reid Holmes,University of British Columbia,proglang,1.0,0.2,2012
-Michael D. Ernst,University of Washington,proglang,3.0,0.95,2012
-Mark Oskin,University of Washington,proglang,1.0,0.25,2014
-Scott N. Woodfield,Brigham Young University,proglang,1.0,0.333333333333,1992
-Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,0.5,1996
-Partha Dasgupta,Arizona State University,proglang,1.0,1.0,1986
-Yannis Smaragdakis,University of Athens,proglang,1.0,0.25,2007
-Michal Young,University of Oregon,proglang,1.0,0.25,2007
-John K. Bennett,University of Colorado Boulder,proglang,1.0,1.0,1987
-James Noble,Victoria University of Wellington,proglang,1.0,0.333333333333,2003
-Gail C. Murphy,University of British Columbia,proglang,1.0,0.5,1999
-Stephen Blackburn,Australian National University,proglang,1.0,0.5,2003
-Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.5,2011
-Iulian Neamtiu,NJIT,proglang,1.0,0.333333333333,2015
-Mira Mezini,TU Darmstadt,proglang,1.0,0.5,2002
-Shan Lu,University of Chicago,proglang,1.0,0.5,2014
-Brandon Lucia,Carnegie Mellon University,proglang,1.0,0.2,2012
-Luis Ceze,University of Washington,proglang,1.0,0.2,2012
-Frank Tip,Northeastern University,proglang,1.0,0.333333333333,2005
-Mira Mezini,TU Darmstadt,proglang,1.0,0.333333333333,2007
-Gregor Kiczales,University of British Columbia,proglang,1.0,0.5,2002
-Xiangyu Zhang,Purdue University,proglang,1.0,0.333333333333,2012
-Patrick Eugster,TU Darmstadt,proglang,1.0,0.333333333333,2011
-William R. Cook,University of Texas - Austin,proglang,1.0,0.333333333333,2008
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.333333333333,2009
-Robert Cartwright,Rice University,proglang,1.0,0.333333333333,2003
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.25,1994
-Darko Marinov,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,2003
-Rajiv Gupta,University of California - Riverside,proglang,1.0,0.166666666667,2015
-Zachary Tatlock,University of Washington,proglang,1.0,0.2,2008
-Vivek Sarkar,Rice University,proglang,1.0,0.333333333333,2004
-Mira Mezini,TU Darmstadt,proglang,1.0,0.5,2009
-Rajiv Gupta,University of California - Riverside,proglang,1.0,0.333333333333,2014
-Michael J. Franklin,University of Chicago,proglang,1.0,0.5,1997
-Stanley B. Zdonik,Brown University,proglang,1.0,0.5,1997
-Barbara G. Ryder,Virginia Tech,proglang,1.0,0.333333333333,2002
-Daniel P. Friedman,Indiana University,proglang,1.0,0.5,1995
-William R. Cook,University of Texas - Austin,proglang,1.0,1.0,1992
-Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.5,2010
-John C. Mitchell,Stanford University,proglang,1.0,0.5,1998
-Rachid Guerraoui,EPFL,proglang,1.0,0.25,1998
-Cristiano Calcagno,Imperial College London,proglang,1.0,0.5,2010
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,1996
-Adrian Sampson,Cornell University,proglang,1.0,0.25,2010
-Luis Ceze,University of Washington,proglang,1.0,0.25,2010
-Dan Grossman,University of Washington,proglang,2.0,0.583333333333,2010
-Antony L. Hosking,Australian National University,proglang,1.0,0.5,1993
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.5,1993
-Maurice Herlihy,Brown University,proglang,1.0,0.333333333333,2006
-Stuart Marshall,Victoria University of Wellington,proglang,1.0,0.25,2010
-Jan Vitek,Northeastern University,proglang,1.0,0.333333333333,1997
-Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,2010
-Mira Mezini,TU Darmstadt,proglang,2.0,0.45,2006
-Mira Mezini,TU Darmstadt,proglang,1.0,0.5,2001
-Stephen M. Blackburn,Australian National University,proglang,1.0,0.2,2012
-Witawas Srisa-an,University of Nebraska,proglang,1.0,0.333333333333,2007
-Michael R. Jantz,University of Tennessee,proglang,1.0,0.25,2015
-Sophia Drossopoulou,Imperial College London,proglang,1.0,0.25,2007
-James Noble,Victoria University of Wellington,proglang,1.0,0.25,2007
-Sophia Drossopoulou,Imperial College London,proglang,1.0,0.333333333333,1998
-Susan Eisenbach,Imperial College London,proglang,1.0,0.333333333333,1998
-Vivek Sarkar,Rice University,proglang,1.0,0.5,2001
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.333333333333,2004
-Todd D. Millstein,University of California - Los Angeles,proglang,2.0,0.583333333333,2006
-William R. Cook,University of Texas - Austin,proglang,2.0,0.833333333333,2011
-Don S. Batory,University of Texas - Austin,proglang,1.0,0.333333333333,2011
-Jonathan Aldrich,Carnegie Mellon University,proglang,2.0,1.0,2009
-John M. Carroll,Pennsylvania State University,proglang,1.0,0.166666666667,1994
-Neil Immerman,University of Massachusetts - Amherst,proglang,1.0,0.2,2010
-Yannis Smaragdakis,University of Athens,proglang,1.0,0.2,2010
-Andrew S. Grimshaw,University of Virginia,proglang,1.0,0.333333333333,1994
-Lingming Zhang,University of Texas - Dallas,proglang,1.0,0.333333333333,2013
-Gregor Kiczales,University of British Columbia,proglang,1.0,0.166666666667,1986
-Gernot Heiser,UNSW,proglang,1.0,0.333333333333,2013
-Marco Servetto,Victoria University of Wellington,proglang,1.0,0.5,2010
-Tao Xie,University of Illinois at Urbana-Champaign,proglang,1.0,0.2,2011
-Zhendong Su,University of California - Davis,proglang,1.0,0.2,2011
-Martha A. Kim,Columbia University,proglang,1.0,0.5,2014
-Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,1.0,0.2,2014
-Michael Carbin,Massachusetts Institute of Technology,proglang,1.0,0.2,2014
-William R. Cook,University of Texas - Austin,proglang,1.0,1.0,2009
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.333333333333,1999
-Miryung Kim,University of California - Los Angeles,proglang,1.0,0.166666666667,2010
-Tien N. Nguyen,University of Texas - Dallas,proglang,1.0,0.166666666667,2010
-Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,2001
-Saman P. Amarasinghe,Massachusetts Institute of Technology,proglang,1.0,0.25,2014
-Westley Weimer,University of Virginia,proglang,1.0,0.5,2004
-Frank Tip,Northeastern University,proglang,1.0,0.333333333333,2003
-John C. Mitchell,Stanford University,proglang,1.0,0.5,1999
-Darko Marinov,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2002
-Daniel Jackson,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2002
-Xi Wang,University of Washington,proglang,1.0,0.1,2014
-Hung-Wei Tseng,North Carolina State University,proglang,1.0,0.5,2012
-Dean M. Tullsen,University of California - San Diego,proglang,1.0,0.5,2012
-Laurie J. Hendren,McGill University,proglang,1.0,0.142857142857,2000
-Karl J. Lieberherr,Northeastern University,proglang,1.0,0.333333333333,1988
-Antony L. Hosking,Australian National University,proglang,1.0,0.5,1999
-Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.5,1991
-Michael I. Schwartzbach,Aarhus University,proglang,1.0,0.5,1991
-Willy Zwaenepoel,EPFL,proglang,1.0,0.333333333333,2002
-Antony L. Hosking,Australian National University,proglang,1.0,0.333333333333,1992
-Darko Stefanovic,University of New Mexico,proglang,1.0,0.333333333333,1992
-Eli Tilevich,Virginia Tech,proglang,1.0,0.333333333333,2010
-Frank Tip,Northeastern University,proglang,1.0,0.333333333333,2015
-Ondrej Lhoták,University of Waterloo,proglang,1.0,0.333333333333,2015
-Gregor Richards,University of Waterloo,proglang,1.0,0.25,2011
-Jan Vitek,Northeastern University,proglang,1.0,0.25,2011
-Richard E. Jones,University of Kent,proglang,1.0,0.25,2012
-Jan Vitek,Northeastern University,proglang,2.0,0.5,2012
-Michael J. Feeley,University of British Columbia,proglang,1.0,0.5,1992
-Henry M. Levy,University of Washington,proglang,2.0,0.75,1992
-Benjamin C. Pierce,University of Pennsylvania,proglang,1.0,0.333333333333,1999
-Philip Wadler,University of Edinburgh,proglang,1.0,0.333333333333,1999
-Peter Müller 0001,ETH Zurich,proglang,1.0,0.5,2011
-David Van Horn,University of Maryland - College Park,proglang,1.0,0.5,2012
-Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.333333333333,2003
-Jan Vitek,Northeastern University,proglang,1.0,0.333333333333,2003
-Michael J. Carey,University of California - Irvine,proglang,1.0,0.5,2000
-Alastair F. Donaldson,Imperial College London,proglang,1.0,0.2,2013
-Junfeng Yang,Columbia University,proglang,1.0,0.2,2010
-Zhendong Su,University of California - Davis,proglang,1.0,0.2,2010
-Andrew C. Myers,Cornell University,proglang,1.0,0.5,2010
-Bernd Bruegge,TU Munich,proglang,1.0,0.25,1992
-C.-H. Luke Ong,University of Oxford,proglang,1.0,0.333333333333,2015
-Alan Borning,University of Washington,proglang,1.0,0.333333333333,1989
-Joe Sventek,University of Oregon,proglang,1.0,0.5,2010
-Cosmin E. Oancea,DIKU,proglang,1.0,0.5,2005
-Stephen M. Watt,University of Waterloo,proglang,1.0,0.5,2005
-Roy H. Campbell,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1989
-Stanley B. Zdonik,Brown University,proglang,1.0,0.5,1986
-Michael D. Bond,Ohio State University,proglang,1.0,0.25,2015
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.5,2005
-Alex Potanin,Victoria University of Wellington,proglang,1.0,0.25,2008
-Ewan D. Tempero,University of Auckland,proglang,1.0,0.25,2008
-James Noble,Victoria University of Wellington,proglang,2.0,0.583333333333,2008
-Viktor Vafeiadis,Max Planck Institute,proglang,1.0,0.333333333333,2014
-Martin Odersky,EPFL,proglang,1.0,0.25,1998
-Philip Wadler,University of Edinburgh,proglang,1.0,0.25,1998
-Swarat Chaudhuri,Rice University,proglang,1.0,0.2,2013
-Vivek Sarkar,Rice University,proglang,1.0,0.2,2013
-Mira Mezini,TU Darmstadt,proglang,1.0,1.0,1997
-Ronald Garcia,University of British Columbia,proglang,1.0,0.2,2003
-Andrew Lumsdaine,Indiana University,proglang,1.0,0.2,2003
-Jeremy G. Siek,Indiana University,proglang,1.0,0.2,2003
-Jeremy Gibbons,University of Oxford,proglang,1.0,0.333333333333,2008
-Nobuko Yoshida,Imperial College London,proglang,1.0,0.5,2005
-Philippa Gardner,Imperial College London,proglang,1.0,0.2,2011
-Eddy Z. Zhang,Rutgers University,proglang,1.0,0.25,2010
-Daniel Jackson,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2015
-Robert Cartwright,Rice University,proglang,1.0,0.5,2007
-Patrick Th. Eugster,TU Darmstadt,proglang,1.0,0.333333333333,2001
-Rachid Guerraoui,EPFL,proglang,1.0,0.333333333333,2001
-Naftaly H. Minsky,Rutgers University,proglang,1.0,0.5,1989
-Michael I. Schwartzbach,Aarhus University,proglang,1.0,0.333333333333,1996
-Earl T. Barr,University College London,proglang,1.0,0.25,2012
-Zhendong Su,University of California - Davis,proglang,1.0,0.25,2012
-Erez Petrank,Technion - Israel Institute of Technology,proglang,1.0,0.5,2001
-Yannis Smaragdakis,University of Athens,proglang,1.0,0.5,2009
-David A. Padua,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,2015
-Clark Verbrugge,McGill University,proglang,1.0,0.5,2008
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.333333333333,2010
-Barton P. Miller,University of Wisconsin - Madison,proglang,1.0,0.333333333333,1987
-John Cavazos,University of Delaware,proglang,1.0,0.5,2012
-Clark Verbrugge,McGill University,proglang,1.0,0.25,2003
-Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.25,2011
-Umut A. Acar,Carnegie Mellon University,proglang,2.0,0.583333333333,2011
-Frank Tip,Northeastern University,proglang,1.0,0.5,2000
-Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.5,2000
-Stephen M. Blackburn,Australian National University,proglang,1.0,0.166666666667,2004
-Rachid Guerraoui,EPFL,proglang,1.0,0.25,2007
-Jan Vitek,Northeastern University,proglang,1.0,0.25,2007
-Mohsen Lesani,University of California - Riverside,proglang,1.0,0.25,2013
-Rupak Majumdar,Max Planck Institute,proglang,1.0,0.25,2013
-Todd D. Millstein,University of California - Los Angeles,proglang,1.0,0.25,2013
-Stephen M. Blackburn,Australian National University,proglang,1.0,0.05,2006
-Antony L. Hosking,Australian National University,proglang,1.0,0.05,2006
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.05,2006
-Darko Stefanovic,University of New Mexico,proglang,1.0,0.05,2006
-Daniel Jackson,Massachusetts Institute of Technology,proglang,1.0,0.25,2005
-Kaj Grønbæk,Aarhus University,proglang,1.0,0.5,1994
-Martin Odersky,EPFL,proglang,2.0,0.458333333333,2010
-Vikram S. Adve,University of Illinois at Urbana-Champaign,proglang,1.0,0.1,2009
-Danny Dig,Oregon State University,proglang,1.0,0.1,2009
-Sarita V. Adve,University of Illinois at Urbana-Champaign,proglang,1.0,0.1,2009
-Jeffrey Overbey,Auburn University,proglang,1.0,0.1,2009
-Zhijia Zhao,University of California - Riverside,proglang,1.0,0.166666666667,2012
-Kathleen Fisher,Tufts University,proglang,1.0,0.333333333333,2014
-Peter Müller 0001,ETH Zurich,proglang,1.0,0.333333333333,2014
-Hongseok Yang,University of Oxford,proglang,1.0,0.333333333333,2015
-Brad A. Myers,Carnegie Mellon University,proglang,1.0,0.5,1988
-Haryadi S. Gunawi,University of Chicago,proglang,1.0,0.333333333333,2011
-Armando Solar-Lezama,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2011
-Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.333333333333,2001
-Jan Vitek,Northeastern University,proglang,1.0,0.333333333333,2001
-Assaf Schuster,Technion - Israel Institute of Technology,proglang,1.0,0.333333333333,2004
-Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.25,2012
-Andrew McGregor,University of Massachusetts - Amherst,proglang,1.0,0.25,2012
-Barbara Liskov,Massachusetts Institute of Technology,proglang,1.0,0.5,1994
-Vivek Sarkar,Rice University,proglang,1.0,0.125,2005
-Gregor Kiczales,University of British Columbia,proglang,1.0,0.5,2010
-Earl T. Barr,University College London,proglang,1.0,0.5,2014
-Xiangyu Zhang,Purdue University,proglang,1.0,0.333333333333,2014
-Anders Møller,Aarhus University,proglang,1.0,0.5,2013
-Saurabh Sinha,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2009
-Samuel Z. Guyer,Tufts University,proglang,1.0,0.2,2007
-Robert Cartwright,Rice University,proglang,1.0,0.5,2008
-Laurie J. Hendren,McGill University,proglang,1.0,0.333333333333,2011
-Michael D. Ernst,University of Washington,proglang,2.0,0.75,2004
-Adam Chlipala,Massachusetts Institute of Technology,proglang,1.0,0.333333333333,2014
-Ben Liblit,University of Wisconsin - Madison,proglang,1.0,0.25,2010
-Shan Lu,University of Chicago,proglang,2.0,0.392857142857,2010
-John C. Mitchell,Stanford University,proglang,1.0,0.333333333333,1997
-Richard R. Muntz,University of California - Los Angeles,proglang,1.0,0.25,1989
-James Noble,Victoria University of Wellington,proglang,1.0,0.333333333333,2000
-Arjun Guha,University of Massachusetts - Amherst,proglang,1.0,0.142857142857,2009
-Shriram Krishnamurthi,Brown University,proglang,1.0,0.142857142857,2009
-Frank Tip,Northeastern University,proglang,1.0,0.25,1996
-Erez Petrank,Technion - Israel Institute of Technology,proglang,2.0,0.583333333333,2003
-Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,0.5,2002
-Yannis Smaragdakis,University of Athens,proglang,1.0,0.25,2015
-Martin Odersky,EPFL,proglang,1.0,0.25,2015
-Douglas C. Schmidt,Vanderbilt University,proglang,1.0,0.333333333333,1997
-Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,0.5,2005
-Andrew A. Chien,University of Chicago,proglang,1.0,0.5,1994
-Anders Møller,Aarhus University,proglang,2.0,1.0,2014
-Robert Bruce Findler,Northwestern University,proglang,1.0,0.333333333333,2005
-Matthew Flatt,University of Utah,proglang,1.0,0.333333333333,2005
-Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,1998
-Stephen M. Blackburn,Australian National University,proglang,1.0,0.25,2009
-Sebastian G. Elbaum,University of Nebraska,proglang,1.0,0.333333333333,2012
-Erez Petrank,Technion - Israel Institute of Technology,proglang,1.0,0.5,2015
-Yuanyuan Zhou,University of California - San Diego,proglang,1.0,0.142857142857,2010
-Grigore Rosu,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,2007
-Ondrej Lhoták,University of Waterloo,proglang,1.0,0.5,2008
-Diane J. Litman,University of Pittsburgh,proglang,1.0,0.333333333333,1997
-Clark Verbrugge,McGill University,proglang,1.0,0.166666666667,2004
-Joseph Gil,Technion - Israel Institute of Technology,proglang,1.0,0.333333333333,2006
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.5,2011
-Thomas R. Gross,ETH Zurich,proglang,1.0,0.333333333333,2015
-Henry J. Gardner,Australian National University,proglang,1.0,0.5,2010
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.5,2003
-Tiark Rompf,Purdue University,proglang,1.0,0.125,2010
-Pat Hanrahan,Stanford University,proglang,1.0,0.125,2010
-Kunle Olukotun,Stanford University,proglang,1.0,0.125,2010
-Keshav Pingali,University of Texas - Austin,proglang,1.0,0.333333333333,2012
-Christian Kästner,Carnegie Mellon University,proglang,1.0,0.333333333333,2012
-Mira Mezini,TU Darmstadt,proglang,1.0,0.25,2011
-Andrew A. Chien,University of Chicago,proglang,1.0,0.5,1998
-Thomas R. Gross,ETH Zurich,proglang,1.0,0.5,2013
-Michael D. Bond,Ohio State University,proglang,1.0,0.5,2008
-Brad A. Myers,Carnegie Mellon University,proglang,1.0,0.333333333333,1992
-Brad T. Vander Zanden,University of Tennessee,proglang,1.0,0.333333333333,1992
-Peter Sewell,University of Cambridge,proglang,1.0,0.333333333333,2007
-Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2002
-Roy H. Campbell,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1995
-Swarat Chaudhuri,Rice University,proglang,1.0,0.333333333333,2009
-Jan Vitek,Northeastern University,proglang,1.0,0.5,2005
-Erez Petrank,Technion - Israel Institute of Technology,proglang,1.0,0.25,2004
-Mira Mezini,TU Darmstadt,proglang,1.0,0.5,2000
-Stephen M. Blackburn,Australian National University,proglang,1.0,0.2,2011
-Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,proglang,1.0,0.5,1993
-Jonathan Aldrich,Carnegie Mellon University,proglang,1.0,0.333333333333,2002
-Anders Møller,Aarhus University,proglang,1.0,0.2,2011
-Frank Tip,Northeastern University,proglang,1.0,0.2,2011
-Kang G. Shin,University of Michigan,proglang,1.0,0.5,1994
-Chandra Krintz,University of California - Santa Barbara,proglang,1.0,0.5,2010
-Roy H. Campbell,University of Illinois at Urbana-Champaign,proglang,1.0,0.333333333333,1988
-Sophia Drossopoulou,Imperial College London,proglang,1.0,0.5,2002
-Matthew B. Dwyer,University of Nebraska,proglang,1.0,0.333333333333,2010
-Sebastian G. Elbaum,University of Nebraska,proglang,1.0,0.333333333333,2010
-Hans-Arno Jacobsen,TU Munich,proglang,1.0,0.2,1998
-Ana Milanova,Rensselaer Polytechnic Institute,proglang,1.0,0.25,2012
-Jeffrey S. Chase,Duke University,proglang,1.0,0.25,1992
-Edward D. Lazowska,University of Washington,proglang,1.0,0.25,1992
-Bernd Bruegge,TU Munich,proglang,1.0,0.333333333333,1993
-Alessandro Orso,Georgia Institute of Technology,proglang,1.0,0.111111111111,2001
-Saurabh Sinha,University of Illinois at Urbana-Champaign,proglang,1.0,0.111111111111,2001
-James Noble,Victoria University of Wellington,proglang,1.0,0.333333333333,1998
-Guoqing (Harry) Xu,University of California - Irvine,proglang,1.0,1.0,2012
-Michael J. Carey,University of California - Irvine,proglang,1.0,0.25,1994
-Yanhong A. Liu,Stony Brook University,proglang,1.0,0.25,2012
-Scott D. Stoller,Stony Brook University,proglang,1.0,0.25,2012
-Alan Borning,University of Washington,proglang,1.0,0.2,1987
-Ramin Zabih,Cornell University,proglang,1.0,0.5,1986
-Michael J. Carey,University of California - Irvine,proglang,1.0,0.5,1995
-Michael J. Carey,University of California - Irvine,proglang,1.0,0.333333333333,1998
-George C. Necula,University of California - Berkeley,proglang,1.0,0.25,2014
-Koushik Sen,University of California - Berkeley,proglang,1.0,0.25,2014
-Henri E. Bal,VU Amsterdam,proglang,1.0,0.5,1993
-M. Frans Kaashoek,Massachusetts Institute of Technology,proglang,1.0,0.5,1993
-Robert Muller,Boston College,proglang,1.0,0.166666666667,1993
-Peter Müller 0001,ETH Zurich,proglang,1.0,0.5,2007
-Samuel Z. Guyer,Tufts University,proglang,1.0,0.5,2004
-Stephen M. Blackburn,Australian National University,proglang,1.0,0.333333333333,2014
-Ondrej Lhoták,University of Waterloo,proglang,1.0,0.5,2012
-Hans-Arno Jacobsen,TU Munich,proglang,1.0,0.5,2004
-Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,2012
-Jeff Huang 0001,Texas A&M University,proglang,2.0,1.0,2012
-David J. Pearce,Victoria University of Wellington,proglang,1.0,0.333333333333,2008
-Peter A. Buhr,University of Waterloo,proglang,1.0,0.25,2000
-Witawas Srisa-an,University of Nebraska,proglang,1.0,0.333333333333,2008
-John V. Guttag,Massachusetts Institute of Technology,proglang,1.0,0.5,1995
-William R. Cook,University of Texas - Austin,proglang,2.0,0.75,1989
-Bhavani M. Thuraisingham,University of Texas - Dallas,proglang,1.0,1.0,1989
-Gregor Richards,University of Waterloo,proglang,1.0,0.125,2009
-Jan Vitek,Northeastern University,proglang,1.0,0.125,2009
-Pierre Baldi,University of California - Irvine,proglang,1.0,0.25,2008
-Matthew A. Hammer,University of Colorado Boulder,proglang,1.0,0.142857142857,2015
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.142857142857,2015
-Michael W. Hicks,University of Maryland - College Park,proglang,1.0,0.142857142857,2015
-Alan Borning,University of Washington,proglang,1.0,0.333333333333,1994
-Emery D. Berger,University of Massachusetts - Amherst,proglang,1.0,0.333333333333,2004
-Isil Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2010
-Thomas Dillig,University of Texas - Austin,proglang,1.0,0.333333333333,2010
-Alex Aiken,Stanford University,proglang,1.0,0.333333333333,2010
-Karsten Weihe,TU Darmstadt,proglang,1.0,1.0,1997
-Robert J. Walker,University of Calgary,proglang,1.0,0.166666666667,1998
-Gail C. Murphy,University of British Columbia,proglang,1.0,0.166666666667,1998
-Christian Kästner,Carnegie Mellon University,proglang,1.0,0.166666666667,2011
-David Garlan,Carnegie Mellon University,proglang,1.0,0.333333333333,2006
-William L. Scherlis,Carnegie Mellon University,proglang,1.0,0.333333333333,2006
-Alex Potanin,Victoria University of Wellington,proglang,1.0,0.2,2010
-Michael D. Ernst,University of Washington,proglang,1.0,0.2,2010
-Jan Vitek,Northeastern University,proglang,1.0,0.5,1999
-Matthew Flatt,University of Utah,proglang,1.0,0.333333333333,2001
-Zhijia Zhao,University of California - Riverside,proglang,1.0,0.142857142857,2014
-Gregor Richards,University of Waterloo,proglang,1.0,0.25,2012
-Scott F. Smith,Johns Hopkins University,proglang,1.0,0.333333333333,1995
-J. Eliot B. Moss,University of Massachusetts - Amherst,proglang,1.0,0.25,1997
-Frank Tip,Northeastern University,proglang,1.0,0.5,1997
-Percy Liang,Stanford University,proglang,1.0,0.25,2010
-Mayur Naik,University of Pennsylvania,proglang,1.0,0.25,2010
-Mooly Sagiv,Tel Aviv University,proglang,1.0,0.25,2010
-Jens Palsberg,University of California - Los Angeles,proglang,1.0,0.5,1989
-Gary T. Leavens,University of Central Florida,proglang,1.0,0.333333333333,2007
-Monica S. Lam,Stanford University,proglang,1.0,0.333333333333,2005
-Peter A. Dinda,Northwestern University,proglang,1.0,0.2,2010
-Shriram Krishnamurthi,Brown University,proglang,1.0,0.125,2013
-Laure Gonnord,Ecole Normale Superieure de Lyon,proglang,1.0,0.166666666667,2014
-Frank Tip,Northeastern University,proglang,1.0,0.2,2004
-Barbara G. Ryder,Virginia Tech,proglang,1.0,0.2,2004
-Shan Lu,University of Chicago,proglang,1.0,0.333333333333,2013
-Jeffrey S. Foster,University of Maryland - College Park,proglang,1.0,0.2,2012
-Santosh Pande,Georgia Institute of Technology,proglang,1.0,0.5,2013
-Robert Bruce Findler,Northwestern University,proglang,1.0,0.333333333333,2013
-Matthias Felleisen,Northeastern University,proglang,1.0,0.333333333333,2013
-Martin C. Rinard,Massachusetts Institute of Technology,proglang,1.0,0.25,2010
-Henry Hoffmann,University of Chicago,proglang,1.0,0.25,2010
-Sasa Misailovic,University of Illinois at Urbana-Champaign,proglang,1.0,0.25,2010
-Jonathan Aldrich,Carnegie Mellon University,proglang,1.0,0.333333333333,2008
-Karl J. Lieberherr,Northeastern University,proglang,1.0,0.5,1989
-Michael D. Ernst,University of Washington,proglang,1.0,0.5,2005
-Colin S. Gordon,Drexel University,proglang,1.0,0.2,2012
 Takeo Kanade,Carnegie Mellon University,vision,4.0,1.33333333333,2009
 Anton van den Hengel,University of Adelaide,vision,1.0,0.5,2010
 Thomas Hofmann,ETH Zurich,vision,1.0,0.333333333333,1997
