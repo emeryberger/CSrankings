@@ -29,6 +29,22 @@ var CSRankings = (function () {
             CSRankings.areaDict[area] = CSRankings.areaNames[position];
             CSRankings.areaPosition[area] = position;
         }
+        for (var _i = 0, _b = CSRankings.aiAreas; _i < _b.length; _i++) {
+            var area = _b[_i];
+            CSRankings.aiFields.push(CSRankings.areaPosition[area]);
+        }
+        for (var _c = 0, _d = CSRankings.systemsAreas; _c < _d.length; _c++) {
+            var area = _d[_c];
+            CSRankings.systemsFields.push(CSRankings.areaPosition[area]);
+        }
+        for (var _e = 0, _f = CSRankings.theoryAreas; _e < _f.length; _e++) {
+            var area = _f[_e];
+            CSRankings.theoryFields.push(CSRankings.areaPosition[area]);
+        }
+        for (var _g = 0, _h = CSRankings.otherAreas; _g < _h.length; _g++) {
+            var area = _h[_g];
+            CSRankings.otherFields.push(CSRankings.areaPosition[area]);
+        }
         CSRankings.setAllCheckboxes();
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
@@ -764,23 +780,19 @@ var CSRankings = (function () {
     };
     CSRankings.activateSystems = function (value) {
         if (value === void 0) { value = true; }
-        var systemsFields = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 22];
-        return CSRankings.activateFields(value, systemsFields);
+        return CSRankings.activateFields(value, CSRankings.systemsFields);
     };
     CSRankings.activateAI = function (value) {
         if (value === void 0) { value = true; }
-        var aiFields = [0, 1, 2, 3, 4];
-        return CSRankings.activateFields(value, aiFields);
+        return CSRankings.activateFields(value, CSRankings.aiFields);
     };
     CSRankings.activateTheory = function (value) {
         if (value === void 0) { value = true; }
-        var theoryFields = [15, 16, 17];
-        return CSRankings.activateFields(value, theoryFields);
+        return CSRankings.activateFields(value, CSRankings.theoryFields);
     };
     CSRankings.activateOthers = function (value) {
         if (value === void 0) { value = true; }
-        var otherFields = [18, 19, 20, 21];
-        return CSRankings.activateFields(value, otherFields);
+        return CSRankings.activateFields(value, CSRankings.otherFields);
     };
     CSRankings.deactivateSystems = function () {
         return CSRankings.activateSystems(false);
@@ -825,9 +837,17 @@ var CSRankings = (function () {
         { area: "robotics", title: "Robotics" },
         { area: "bio", title: "Comp. Biology" },
         { area: "da", title: "Design Automation" }];
+    CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+    CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da"];
+    CSRankings.theoryAreas = ["act", "crypt", "log"];
+    CSRankings.otherAreas = ["graph", "chi", "robotics", "bio"];
     CSRankings.areas = [];
     CSRankings.areaNames = [];
     CSRankings.fields = [];
+    CSRankings.aiFields = [];
+    CSRankings.systemsFields = [];
+    CSRankings.theoryFields = [];
+    CSRankings.otherFields = [];
     /* Map area to its name (from areaNames). */
     CSRankings.areaDict = {};
     /* Map area to its position in the list. */
