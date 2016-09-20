@@ -15,19 +15,21 @@
 ;
 ;
 ;
+;
 var CSRankings = (function () {
     function CSRankings() {
-        CSRankings.setAllCheckboxes();
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
-        var position = 0;
-        for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
-            var area = _a[_i];
+        for (var position = 0; position < CSRankings.areaMap.length; position++) {
+            var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
+            CSRankings.areas[position] = area;
+            CSRankings.areaNames[position] = title;
+            CSRankings.fields[position] = "field_" + area;
             CSRankings.areaDict[area] = CSRankings.areaNames[position];
             CSRankings.areaPosition[area] = position;
-            position++;
         }
+        CSRankings.setAllCheckboxes();
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
@@ -800,40 +802,32 @@ var CSRankings = (function () {
     CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
     CSRankings.showCoauthors = false;
     CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
-    CSRankings.areas = ["ai", "vision", "mlmining", "nlp", "ir",
-        "arch", "comm", "sec", "mod",
-        "hpc", "mobile", "metrics", "ops",
-        "plan", "soft", "act", "crypt", "log",
-        "graph", "chi", "robotics", "bio", "da"];
-    CSRankings.areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
-        "Arch", "Networks", "Security", "DB", "HPC",
-        "Mobile", "Metrics", "OS", "PL", "SE",
-        "Theory", "Crypto", "Logic",
-        "Graphics", "HCI", "Robotics",
-        "Comp. Biology", "Design Automation"];
-    CSRankings.fields = ["field_ai",
-        "field_vision",
-        "field_mlmining",
-        "field_nlp",
-        "field_ir",
-        "field_arch",
-        "field_comm",
-        "field_sec",
-        "field_mod",
-        "field_hpc",
-        "field_mobile",
-        "field_metrics",
-        "field_ops",
-        "field_plan",
-        "field_soft",
-        "field_act",
-        "field_crypt",
-        "field_log",
-        "field_graph",
-        "field_chi",
-        "field_robotics",
-        "field_bio",
-        "field_da"];
+    CSRankings.areaMap = [{ area: "ai", title: "AI" },
+        { area: "vision", title: "Vision" },
+        { area: "mlmining", title: "ML" },
+        { area: "nlp", title: "NLP" },
+        { area: "ir", title: "Web & IR" },
+        { area: "arch", title: "Arch" },
+        { area: "comm", title: "Networks" },
+        { area: "sec", title: "Security" },
+        { area: "mod", title: "DB" },
+        { area: "hpc", title: "HPC" },
+        { area: "mobile", title: "Mobile" },
+        { area: "metrics", title: "Metrics" },
+        { area: "ops", title: "OS" },
+        { area: "plan", title: "PL" },
+        { area: "soft", title: "SE" },
+        { area: "act", title: "Theory" },
+        { area: "crypt", title: "Crypto" },
+        { area: "log", title: "Logic" },
+        { area: "graph", title: "Graphics" },
+        { area: "chi", title: "HCI" },
+        { area: "robotics", title: "Robotics" },
+        { area: "bio", title: "Comp. Biology" },
+        { area: "da", title: "Design Automation" }];
+    CSRankings.areas = [];
+    CSRankings.areaNames = [];
+    CSRankings.fields = [];
     /* Map area to its name (from areaNames). */
     CSRankings.areaDict = {};
     /* Map area to its position in the list. */

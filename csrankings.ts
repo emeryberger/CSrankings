@@ -46,19 +46,26 @@ interface HomePage {
     readonly homepage : string;
 };
 
+interface AreaMap {
+    readonly area : string;
+    readonly title : string;
+};
+
 class CSRankings {
     
     constructor() {
-	CSRankings.setAllCheckboxes();
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
 	*/
-	let position = 0;
-	for (let area of CSRankings.areas) {
-	    CSRankings.areaDict[area]     = CSRankings.areaNames[position];
-	    CSRankings.areaPosition[area] = position;
-	    position++;
+	for (let position = 0; position < CSRankings.areaMap.length; position++) {
+	    const { area, title } = CSRankings.areaMap[position];
+	    CSRankings.areas[position]     = area;
+	    CSRankings.areaNames[position] = title;
+	    CSRankings.fields[position]    = "field_" + area;
+	    CSRankings.areaDict[area]      = CSRankings.areaNames[position];
+	    CSRankings.areaPosition[area]  = position;
 	}
+	CSRankings.setAllCheckboxes();
 	let next = ()=> {
 	    CSRankings.loadAliases(CSRankings.aliases, function() {
 		CSRankings.loadHomepages(CSRankings.homepages,
@@ -86,42 +93,34 @@ class CSRankings {
     private static readonly showCoauthors      = false;
     private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
 
-    private static readonly areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "ir",
-						      "arch",  "comm",  "sec", "mod",
-						      "hpc", "mobile", "metrics", "ops",
-						      "plan", "soft", "act",  "crypt", "log",
-						      "graph", "chi", "robotics", "bio", "da"];
-
-    private static readonly areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
-							 "Arch", "Networks", "Security", "DB", "HPC",
-							 "Mobile", "Metrics", "OS", "PL", "SE",
-							 "Theory", "Crypto", "Logic",
-							 "Graphics", "HCI", "Robotics",
-							 "Comp. Biology", "Design Automation"];
-
-    private static readonly fields : Array<string> = ["field_ai",
-						      "field_vision",
-						      "field_mlmining",
-						      "field_nlp",
-						      "field_ir",
-						      "field_arch",
-						      "field_comm",
-						      "field_sec",
-						      "field_mod",
-						      "field_hpc",
-						      "field_mobile",
-						      "field_metrics",
-						      "field_ops",
-						      "field_plan",
-						      "field_soft",
-						      "field_act",
-						      "field_crypt",
-						      "field_log",
-						      "field_graph",
-						      "field_chi",
-						      "field_robotics",
-						      "field_bio",
-						      "field_da"];
+    private static readonly areaMap : Array<AreaMap>
+	= [ { area : "ai", title : "AI" },
+	    { area : "vision", title : "Vision" },
+	    { area : "mlmining", title : "ML" },
+	    { area : "nlp",  title : "NLP" },
+	    { area : "ir", title : "Web & IR" },
+	    { area : "arch", title : "Arch" },
+	    { area : "comm", title : "Networks"},
+	    { area : "sec", title : "Security"},
+	    { area : "mod", title : "DB"},
+	    { area : "hpc", title : "HPC"},
+	    { area : "mobile", title : "Mobile"},
+	    { area : "metrics", title : "Metrics"},
+	    { area : "ops", title : "OS" },
+	    { area : "plan", title : "PL" },
+	    { area : "soft", title : "SE" },
+	    { area : "act", title : "Theory" },
+	    { area : "crypt", title: "Crypto" },
+	    { area : "log", title : "Logic" },
+	    { area : "graph", title : "Graphics" },
+	    { area : "chi", title : "HCI" },
+	    { area : "robotics", title : "Robotics" },
+	    { area : "bio", title : "Comp. Biology" },
+	    { area : "da", title : "Design Automation" } ];
+    
+    private static readonly areas : Array<string> = [];
+    private static readonly areaNames : Array<string> = [];
+    private static readonly fields : Array<string> = [];
     
     /* Map area to its name (from areaNames). */
     private static readonly areaDict : {[key : string] : string } = {};
