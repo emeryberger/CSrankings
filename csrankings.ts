@@ -65,6 +65,18 @@ class CSRankings {
 	    CSRankings.areaDict[area]      = CSRankings.areaNames[position];
 	    CSRankings.areaPosition[area]  = position;
 	}
+	for (let area of CSRankings.aiAreas) {
+	    CSRankings.aiFields.push (CSRankings.areaPosition[area]);
+	}
+	for (let area of CSRankings.systemsAreas) {
+	    CSRankings.systemsFields.push (CSRankings.areaPosition[area]);
+	}
+	for (let area of CSRankings.theoryAreas) {
+	    CSRankings.theoryFields.push (CSRankings.areaPosition[area]);
+	}
+	for (let area of CSRankings.otherAreas) {
+	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
+	}
 	CSRankings.setAllCheckboxes();
 	let next = ()=> {
 	    CSRankings.loadAliases(CSRankings.aliases, function() {
@@ -117,10 +129,19 @@ class CSRankings {
 	    { area : "robotics", title : "Robotics" },
 	    { area : "bio", title : "Comp. Biology" },
 	    { area : "da", title : "Design Automation" } ];
+
+    private static readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
+    private static readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da" ];
+    private static readonly theoryAreas  = [ "act", "crypt", "log" ];
+    private static readonly otherAreas = [ "graph", "chi", "robotics", "bio" ];
     
     private static readonly areas : Array<string> = [];
     private static readonly areaNames : Array<string> = [];
     private static readonly fields : Array<string> = [];
+    private static readonly aiFields : Array<number> = [];
+    private static readonly systemsFields : Array<number> = [];
+    private static readonly theoryFields : Array<number> = [];
+    private static readonly otherFields : Array<number> = [];
     
     /* Map area to its name (from areaNames). */
     private static readonly areaDict : {[key : string] : string } = {};
@@ -985,23 +1006,19 @@ class CSRankings {
     }
 
     public static activateSystems(value : boolean = true) : boolean {
-	const systemsFields : Array<number> = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 22];
-	return CSRankings.activateFields(value, systemsFields);
+	return CSRankings.activateFields(value, CSRankings.systemsFields);
     }
 
     public static activateAI(value : boolean = true) : boolean {
-	const aiFields      : Array<number> = [0, 1, 2, 3, 4];
-	return CSRankings.activateFields(value, aiFields);
+	return CSRankings.activateFields(value, CSRankings.aiFields);
     }
 
     public static activateTheory(value : boolean = true) : boolean {
-	const theoryFields  : Array<number> = [15, 16, 17];
-	return CSRankings.activateFields(value, theoryFields);
+	return CSRankings.activateFields(value, CSRankings.theoryFields);
     }
 
     public static activateOthers(value : boolean = true) : boolean {
-	const otherFields   : Array<number> = [18, 19, 20, 21];
-	return CSRankings.activateFields(value, otherFields);
+	return CSRankings.activateFields(value, CSRankings.otherFields);
     }
 
     public static deactivateSystems() : boolean {
