@@ -86,13 +86,11 @@ class CSRankings {
     private static readonly showCoauthors      = false;
     private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
 
-    /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-
-    private static readonly areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "web",
-						      "arch",  "networks",  "security", "database",
-						      "highperf", "mobile", "metrics", "opsys",
-						      "proglang", "softeng", "theory",  "crypto", "logic",
-						      "graphics", "hci", "robotics", "compbio", "sigda"];
+    private static readonly areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "ir",
+						      "arch",  "comm",  "sec", "mod",
+						      "hpc", "mobile", "metrics", "ops",
+						      "plan", "soft", "act",  "crypt", "log",
+						      "graph", "chi", "robotics", "bio", "da"];
 
     private static readonly areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
 							 "Arch", "Networks", "Security", "DB", "HPC",
@@ -101,6 +99,30 @@ class CSRankings {
 							 "Graphics", "HCI", "Robotics",
 							 "Comp. Biology", "Design Automation"];
 
+    private static readonly fields : Array<string> = ["field_ai",
+						      "field_vision",
+						      "field_mlmining",
+						      "field_nlp",
+						      "field_ir",
+						      "field_arch",
+						      "field_comm",
+						      "field_sec",
+						      "field_mod",
+						      "field_hpc",
+						      "field_mobile",
+						      "field_metrics",
+						      "field_ops",
+						      "field_plan",
+						      "field_soft",
+						      "field_act",
+						      "field_crypt",
+						      "field_log",
+						      "field_graph",
+						      "field_chi",
+						      "field_robotics",
+						      "field_bio",
+						      "field_da"];
+    
     /* Map area to its name (from areaNames). */
     private static readonly areaDict : {[key : string] : string } = {};
 
@@ -345,8 +367,8 @@ class CSRankings {
 	    complete: (results)=> {
 		const data : any = results.data;
 		this.authors = data as Array<Author>;
-		for (let i = 1; i <= this.areas.length; i++) {
-		    const str = 'input[name=field_'+i+']';
+		for (let i = 0; i < CSRankings.fields.length; i++) {
+		    const str = 'input[name='+CSRankings.fields[i]+']';
 		    jQuery(str).click(()=>{ this.rank(); });
 		}
 		setTimeout(cont, 0);
@@ -421,8 +443,8 @@ class CSRankings {
     private static activateFields(value : boolean,
 				  fields : Array<number>) : boolean
     {
-	for (let i = 0; i <= fields.length; i++) {
-	    const str = "input[name=field_"+fields[i]+"]";
+	for (let i = 0; i < fields.length; i++) {
+	    const str = "input[name=" + CSRankings.fields[fields[i]] + "]";
 	    jQuery(str).prop('checked', value);
 	}
 	CSRankings.rank();
@@ -628,7 +650,7 @@ class CSRankings {
 	let numAreas = 0;
 	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
 	    let area = CSRankings.areas[ind];
-	    weights[area] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
+	    weights[area] = jQuery('input[name=' + CSRankings.fields[ind] + ']').prop('checked') ? 1 : 0;
 	    if (weights[area] === 1) {
 		/* One more area checked. */
 		numAreas++;
@@ -828,8 +850,8 @@ class CSRankings {
 
     /* Set all checkboxes to true. */
     private static setAllCheckboxes() : void {
-	for (let i = 1; i <= CSRankings.areas.length; i++) {
-	    const str = 'input[name=field_'+i+']';
+	for (let i = 0; i < CSRankings.areas.length; i++) {
+	    const str = 'input[name=' + CSRankings.fields[i] + ']';
 	    jQuery(str).prop('checked', true);
 	}
     }
@@ -951,8 +973,8 @@ class CSRankings {
     }
 
     public static activateAll(value : boolean = true) : boolean {
-	for (let i = 1; i <= CSRankings.areas.length; i++) {
-	    const str = "input[name=field_"+i+"]";
+	for (let i = 0; i < CSRankings.areas.length; i++) {
+	    const str = "input[name=" + CSRankings.fields[i] + "]";
 	    jQuery(str).prop('checked', value);
 	}
 	CSRankings.rank();
@@ -964,22 +986,22 @@ class CSRankings {
     }
 
     public static activateSystems(value : boolean = true) : boolean {
-	const systemsFields : Array<number> = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 23];
+	const systemsFields : Array<number> = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 22];
 	return CSRankings.activateFields(value, systemsFields);
     }
 
     public static activateAI(value : boolean = true) : boolean {
-	const aiFields      : Array<number> = [1, 2, 3, 4, 5];
+	const aiFields      : Array<number> = [0, 1, 2, 3, 4];
 	return CSRankings.activateFields(value, aiFields);
     }
 
     public static activateTheory(value : boolean = true) : boolean {
-	const theoryFields  : Array<number> = [16, 17, 18];
+	const theoryFields  : Array<number> = [15, 16, 17];
 	return CSRankings.activateFields(value, theoryFields);
     }
 
     public static activateOthers(value : boolean = true) : boolean {
-	const otherFields   : Array<number> = [19, 20, 21, 22];
+	const otherFields   : Array<number> = [18, 19, 20, 21];
 	return CSRankings.activateFields(value, otherFields);
     }
 
