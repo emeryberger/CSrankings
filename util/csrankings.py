@@ -55,34 +55,34 @@ def pagecount(input):
     
 areadict = {
     # Max three most selective venues per area for now.
-    'proglang' : ['POPL', 'PLDI'], # , 'OOPSLA'],
-    'highperf' : ['SC', 'HPDC', 'ICS'],
-    'logic' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
-    'softeng' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
-    'opsys' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
+    'plan' : ['POPL', 'PLDI'], # , 'OOPSLA'],
+    'hpc' : ['SC', 'HPDC', 'ICS'],
+    'log' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
+    'soft' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
+    'ops' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
      # note: OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
-    'theory' : ['STOC', 'FOCS','SODA'],
-    'networks' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    'security' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],
+    'act' : ['STOC', 'FOCS','SODA'],
+    'comm' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
+    'sec' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],
     # USENIX Security listed twice to reflect variants in DBLP
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
-    'database' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
-    'graphics' : ['ACM Trans. Graph.', 'SIGGRAPH'],
+    'mod' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'graph' : ['ACM Trans. Graph.', 'SIGGRAPH'],
     'metrics' : ['SIGMETRICS','SIGMETRICS/Performance','IMC','Internet Measurement Conference'],
     # Two variants for each, as in DBLP.
-    'web' : ['WWW', 'SIGIR'],
-    'hci' : ['CHI','UbiComp','Ubicomp','UIST'],
+    'ir' : ['WWW', 'SIGIR'],
+    'chi' : ['CHI','UbiComp','Ubicomp','UIST'],
     'nlp' : ['EMNLP','ACL','ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL'],
     'vision' : ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
-    'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
-    'compbio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
+    'crypt' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
+    'bio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
     # See below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
-    'sigda' : ['ICCAD', 'DAC']
+    'da' : ['ICCAD', 'DAC']
 }
 
 # ISMB proceedings are published as special issues of Bioinformatics.

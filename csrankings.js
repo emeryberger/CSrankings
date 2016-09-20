@@ -241,8 +241,8 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 _this.authors = data;
-                for (var i = 1; i <= _this.areas.length; i++) {
-                    var str = 'input[name=field_' + i + ']';
+                for (var i = 0; i < CSRankings.fields.length; i++) {
+                    var str = 'input[name=' + CSRankings.fields[i] + ']';
                     jQuery(str).click(function () { _this.rank(); });
                 }
                 setTimeout(cont, 0);
@@ -309,8 +309,8 @@ var CSRankings = (function () {
         return true;
     };
     CSRankings.activateFields = function (value, fields) {
-        for (var i = 0; i <= fields.length; i++) {
-            var str = "input[name=field_" + fields[i] + "]";
+        for (var i = 0; i < fields.length; i++) {
+            var str = "input[name=" + CSRankings.fields[fields[i]] + "]";
             jQuery(str).prop('checked', value);
         }
         CSRankings.rank();
@@ -484,7 +484,7 @@ var CSRankings = (function () {
         var numAreas = 0;
         for (var ind = 0; ind < CSRankings.areas.length; ind++) {
             var area = CSRankings.areas[ind];
-            weights[area] = jQuery('input[name=field_' + (ind + 1) + ']').prop('checked') ? 1 : 0;
+            weights[area] = jQuery('input[name=' + CSRankings.fields[ind] + ']').prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
                 /* One more area checked. */
                 numAreas++;
@@ -672,8 +672,8 @@ var CSRankings = (function () {
     };
     /* Set all checkboxes to true. */
     CSRankings.setAllCheckboxes = function () {
-        for (var i = 1; i <= CSRankings.areas.length; i++) {
-            var str = 'input[name=field_' + i + ']';
+        for (var i = 0; i < CSRankings.areas.length; i++) {
+            var str = 'input[name=' + CSRankings.fields[i] + ']';
             jQuery(str).prop('checked', true);
         }
     };
@@ -750,8 +750,8 @@ var CSRankings = (function () {
     };
     CSRankings.activateAll = function (value) {
         if (value === void 0) { value = true; }
-        for (var i = 1; i <= CSRankings.areas.length; i++) {
-            var str = "input[name=field_" + i + "]";
+        for (var i = 0; i < CSRankings.areas.length; i++) {
+            var str = "input[name=" + CSRankings.fields[i] + "]";
             jQuery(str).prop('checked', value);
         }
         CSRankings.rank();
@@ -762,22 +762,22 @@ var CSRankings = (function () {
     };
     CSRankings.activateSystems = function (value) {
         if (value === void 0) { value = true; }
-        var systemsFields = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 23];
+        var systemsFields = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 22];
         return CSRankings.activateFields(value, systemsFields);
     };
     CSRankings.activateAI = function (value) {
         if (value === void 0) { value = true; }
-        var aiFields = [1, 2, 3, 4, 5];
+        var aiFields = [0, 1, 2, 3, 4];
         return CSRankings.activateFields(value, aiFields);
     };
     CSRankings.activateTheory = function (value) {
         if (value === void 0) { value = true; }
-        var theoryFields = [16, 17, 18];
+        var theoryFields = [15, 16, 17];
         return CSRankings.activateFields(value, theoryFields);
     };
     CSRankings.activateOthers = function (value) {
         if (value === void 0) { value = true; }
-        var otherFields = [19, 20, 21, 22];
+        var otherFields = [18, 19, 20, 21];
         return CSRankings.activateFields(value, otherFields);
     };
     CSRankings.deactivateSystems = function () {
@@ -800,18 +800,40 @@ var CSRankings = (function () {
     CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
     CSRankings.showCoauthors = false;
     CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
-    /* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-    CSRankings.areas = ["ai", "vision", "mlmining", "nlp", "web",
-        "arch", "networks", "security", "database",
-        "highperf", "mobile", "metrics", "opsys",
-        "proglang", "softeng", "theory", "crypto", "logic",
-        "graphics", "hci", "robotics", "compbio", "sigda"];
+    CSRankings.areas = ["ai", "vision", "mlmining", "nlp", "ir",
+        "arch", "comm", "sec", "mod",
+        "hpc", "mobile", "metrics", "ops",
+        "plan", "soft", "act", "crypt", "log",
+        "graph", "chi", "robotics", "bio", "da"];
     CSRankings.areaNames = ["AI", "Vision", "ML", "NLP", "Web & IR",
         "Arch", "Networks", "Security", "DB", "HPC",
         "Mobile", "Metrics", "OS", "PL", "SE",
         "Theory", "Crypto", "Logic",
         "Graphics", "HCI", "Robotics",
         "Comp. Biology", "Design Automation"];
+    CSRankings.fields = ["field_ai",
+        "field_vision",
+        "field_mlmining",
+        "field_nlp",
+        "field_ir",
+        "field_arch",
+        "field_comm",
+        "field_sec",
+        "field_mod",
+        "field_hpc",
+        "field_mobile",
+        "field_metrics",
+        "field_ops",
+        "field_plan",
+        "field_soft",
+        "field_act",
+        "field_crypt",
+        "field_log",
+        "field_graph",
+        "field_chi",
+        "field_robotics",
+        "field_bio",
+        "field_da"];
     /* Map area to its name (from areaNames). */
     CSRankings.areaDict = {};
     /* Map area to its position in the list. */
