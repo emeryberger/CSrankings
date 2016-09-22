@@ -770,7 +770,7 @@ class CSRankings {
 		    + "</small></td>"
 		    + '<td align="right"><small>'
 		//		+ '<abbr title="' + coauthorStr + '">'
-		    + (Math.floor(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
+		    + (Math.round(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 		//		+ '</abbr>'
 		    + "</small></td></tr>"
 		    + "<tr><td colspan=\"4\">"
@@ -813,7 +813,7 @@ class CSRankings {
 	       while there is a tie (those all get the same rank). */
 	    for (let ind = 0; ind < keys2.length; ind++) {
 		const dept = keys2[ind];
-		const v = Math.floor(10.0 * univagg[dept]) / 10.0;
+		const v = Math.round(10.0 * univagg[dept]) / 10.0;
 
 		if ((ind >= minToRank) && (v != oldv)) {
 		    break;
@@ -839,7 +839,7 @@ class CSRankings {
 		//	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
 		s += "</td>";
 
-		s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1)  + "</td>";
+		s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1)  + "</td>";
 		s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
 		s += "</td>";
 		s += "</tr>\n";
