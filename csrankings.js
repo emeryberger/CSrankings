@@ -592,7 +592,7 @@ var CSRankings = (function () {
                     + '</a>'
                     + "</small></td>"
                     + '<td align="right"><small>'
-                    + (Math.floor(10.0 * facultyAdjustedCount[name_5 + dept]) / 10.0).toFixed(1)
+                    + (Math.round(10.0 * facultyAdjustedCount[name_5 + dept]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
                     + '<div style="display:none;" id="' + escape(name_5) + "-chart" + '">'
@@ -633,7 +633,7 @@ var CSRankings = (function () {
                while there is a tie (those all get the same rank). */
             for (var ind = 0; ind < keys2.length; ind++) {
                 var dept = keys2[ind];
-                var v = Math.floor(10.0 * univagg[dept]) / 10.0;
+                var v = Math.round(10.0 * univagg[dept]) / 10.0;
                 if ((ind >= minToRank) && (v != oldv)) {
                     break;
                 }
@@ -658,7 +658,7 @@ var CSRankings = (function () {
                     + "-widget\">" + CSRankings.PieChart + "</span></font>";
                 //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
                 s += "</td>";
-                s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
+                s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
