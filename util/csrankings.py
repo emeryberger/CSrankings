@@ -115,6 +115,10 @@ ICSE_ShortPaperStart = { 2013 : 851,
                          1998 : 419,
                          1997 : 535 }
 
+# ASE accepts short papers and long papers. Long papers appear to be at least 10 pages long,
+# while short papers are shorter.
+ASE_LongPaperThreshold = 10
+
 # Build a dictionary mapping conferences to areas.
 # e.g., confdict['CVPR'] = 'vision'.
 confdict = {}
