@@ -22,7 +22,7 @@ update-dblp:
 
 home-pages: faculty-affiliations.csv
 	@echo "Rebuilding home pages."
-	@python util/make-web-pages.py >> homepages.csv
+	@python util/make-web-pages.py homepages.csv
 
 fix-affiliations: faculty-affiliations.csv
 	@echo "Updating affiliations."
