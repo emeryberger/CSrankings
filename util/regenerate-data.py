@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart
+from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart, ASE_LongPaperThreshold
 
 def parseDBLP(facultydict):
     authlogs = {}
@@ -83,6 +83,12 @@ def parseDBLP(facultydict):
                             # since they are "short papers" (regardless of their length).
                             continue
                 
+                # Special handling for ASE.
+                if (confname == 'ASE'):
+                    if pageCount < ASE_LongPaperThreshold:
+                        # Omit short papers (which may be demos, etc.).
+                        continue
+                    
                 # Check that dates are in the specified range.
                 if ((year >= startyear) and (year <= endyear)):
                     inRange = True
