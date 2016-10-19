@@ -128,10 +128,11 @@ class CSRankings {
 	    { area : "chi", title : "HCI" },
 	    { area : "robotics", title : "Robotics" },
 	    { area : "bio", title : "Comp. Biology" },
-	    { area : "da", title : "Design Automation" } ];
+	    { area : "da", title : "Design Automation" },
+	    { area : "bed", title : "Embedded Systems" } ];
 
     private static readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
-    private static readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da" ];
+    private static readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
     private static readonly theoryAreas  = [ "act", "crypt", "log" ];
     private static readonly otherAreas = [ "graph", "chi", "robotics", "bio" ];
     
