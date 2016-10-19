@@ -836,9 +836,10 @@ var CSRankings = (function () {
         { area: "chi", title: "HCI" },
         { area: "robotics", title: "Robotics" },
         { area: "bio", title: "Comp. Biology" },
-        { area: "da", title: "Design Automation" }];
+        { area: "da", title: "Design Automation" },
+        { area: "bed", title: "Embedded Systems" }];
     CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-    CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da"];
+    CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
     CSRankings.theoryAreas = ["act", "crypt", "log"];
     CSRankings.otherAreas = ["graph", "chi", "robotics", "bio"];
     CSRankings.areas = [];

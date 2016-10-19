@@ -69,7 +69,7 @@ areadict = {
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
-    'mod' : ['PODS', 'VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'mod' : ['VLDB', 'PVLDB', 'SIGMOD Conference'],
     'graph' : ['ACM Trans. Graph.', 'SIGGRAPH'],
     'metrics' : ['SIGMETRICS','SIGMETRICS/Performance','IMC','Internet Measurement Conference'],
     # Two variants for each, as in DBLP.
@@ -82,7 +82,8 @@ areadict = {
     'crypt' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
     'bio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
     # See below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
-    'da' : ['ICCAD', 'DAC']
+    'da' : ['ICCAD', 'DAC'],
+    'bed' : ['RTSS', 'RTAS', 'EMSOFT']
 }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
