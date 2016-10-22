@@ -612,7 +612,9 @@ class CSRankings {
 		    deptNames[dept] = <Array<string>>[];
 		}
 		deptNames[dept].push(name);
-		deptCounts[dept] += 1;
+		if (!(name in CSRankings.aliases)) {
+		    deptCounts[dept] += 1;
+		}
 	    }
 	    facultycount[name+dept] += count;
 	    facultyAdjustedCount[name+dept] += adjustedCount;
