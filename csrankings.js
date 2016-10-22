@@ -450,7 +450,9 @@ var CSRankings = (function () {
                     deptNames[dept] = [];
                 }
                 deptNames[dept].push(name_2);
-                deptCounts[dept] += 1;
+                if (!(name_2 in CSRankings.aliases)) {
+                    deptCounts[dept] += 1;
+                }
             }
             facultycount[name_2 + dept] += count;
             facultyAdjustedCount[name_2 + dept] += adjustedCount;
