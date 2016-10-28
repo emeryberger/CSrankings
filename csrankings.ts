@@ -179,9 +179,6 @@ class CSRankings {
     private static readonly DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
     private static readonly PieChart      = "&#9685;"; // symbol that looks close enough to a pie chart
 
-    // Hold the weights from the previous classification (that is, before re-ranking).
-    private static previousWeights : {[key: string] : number} = {};
-
     private static translateNameToDBLP(name : string) : string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
 	// First, replace spaces and non-ASCII characters (not complete).
@@ -518,7 +515,6 @@ class CSRankings {
     private static countAuthorAreas(authors : Array<Author>,
 				    startyear : number,
 				    endyear : number,
-				    previousWeights : {[key:string] : number},
 				    weights : {[key:string] : number},
 				    authorAreas : {[name : string] : {[area : string] : number }}) : void
     
@@ -532,7 +528,7 @@ class CSRankings {
 		continue;
 	    }
 	    const theArea  = authors[r].area;
-	    if (weights[theArea] === previousWeights[theArea]) {
+	    if (weights[theArea] === 0) {
 		continue;
 	    }
 	    const theDept  = authors[r].dept;
@@ -557,13 +553,8 @@ class CSRankings {
 		    }
 		}
 	    }
-	    if (previousWeights[theArea] === 1) {
-		authorAreas[name][theArea]    -= theCount;
-		authorAreas[theDept][theArea] -= theCount;
-	    } else {
-		authorAreas[name][theArea] += theCount;
-		authorAreas[theDept][theArea] += theCount;
-	    }
+	    authorAreas[name][theArea] += theCount;
+	    authorAreas[theDept][theArea] += theCount;
 	}
     }
 
@@ -895,15 +886,7 @@ class CSRankings {
 	const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
-	let numAreas = 0;
-	if (currentWeights === {}) {
-	    // This is our first rodeo.
-	    numAreas = CSRankings.updateWeights(currentWeights);
-	    // Save the previous weights as the current ones.
-	    CSRankings.previousWeights = currentWeights;
-	} else {
-	    numAreas = CSRankings.updateWeights(currentWeights);	
-	}
+	let numAreas = CSRankings.updateWeights(currentWeights);
 	
 	// Clear out the area adjusted counts (used for computing means).
 	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
@@ -918,10 +901,10 @@ class CSRankings {
 						       currentWeights);
 	}
 
+	CSRankings.authorAreas = {}
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
 				    endyear,
-				    CSRankings.previousWeights,
 				    currentWeights,
 				    CSRankings.authorAreas);
 	
@@ -961,8 +944,6 @@ class CSRankings {
 					     deptCounts,
 					     univtext);
 
-	// Save these weights for next time.
-	CSRankings.previousWeights = currentWeights;
 	/* Finally done. Redraw! */
 	setTimeout(()=>{ jQuery("#success").html(s); }, 0);
 	return false; 
