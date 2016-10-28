@@ -370,7 +370,7 @@ var CSRankings = (function () {
         }
         return coauthorList;
     };
-    CSRankings.countAuthorAreas = function (authors, startyear, endyear, previousWeights, weights, authorAreas) {
+    CSRankings.countAuthorAreas = function (authors, startyear, endyear, weights, authorAreas) {
         for (var r in authors) {
             if (!authors.hasOwnProperty(r)) {
                 continue;
@@ -380,7 +380,7 @@ var CSRankings = (function () {
                 continue;
             }
             var theArea = authors[r].area;
-            if (weights[theArea] === previousWeights[theArea]) {
+            if (weights[theArea] === 0) {
                 continue;
             }
             var theDept = authors[r].dept;
@@ -405,14 +405,8 @@ var CSRankings = (function () {
                     }
                 }
             }
-            if (previousWeights[theArea] === 1) {
-                authorAreas[name_1][theArea] -= theCount;
-                authorAreas[theDept][theArea] -= theCount;
-            }
-            else {
-                authorAreas[name_1][theArea] += theCount;
-                authorAreas[theDept][theArea] += theCount;
-            }
+            authorAreas[name_1][theArea] += theCount;
+            authorAreas[theDept][theArea] += theCount;
         }
     };
     /* Build the dictionary of departments (and count) to be ranked. */
@@ -710,16 +704,7 @@ var CSRankings = (function () {
         var endyear = parseInt(jQuery("#endyear").find(":selected").text());
         var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
-        var numAreas = 0;
-        if (currentWeights === {}) {
-            // This is our first rodeo.
-            numAreas = CSRankings.updateWeights(currentWeights);
-            // Save the previous weights as the current ones.
-            CSRankings.previousWeights = currentWeights;
-        }
-        else {
-            numAreas = CSRankings.updateWeights(currentWeights);
-        }
+        var numAreas = CSRankings.updateWeights(currentWeights);
         // Clear out the area adjusted counts (used for computing means).
         for (var ind = 0; ind < CSRankings.areas.length; ind++) {
             areaAdjustedCount[CSRankings.areas[ind]] = 0;
@@ -728,7 +713,8 @@ var CSRankings = (function () {
         if (CSRankings.showCoauthors) {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
         }
-        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, CSRankings.previousWeights, currentWeights, CSRankings.authorAreas);
+        CSRankings.authorAreas = {};
+        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, currentWeights, CSRankings.authorAreas);
         CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         var univagg = CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
@@ -737,8 +723,6 @@ var CSRankings = (function () {
         var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
-        // Save these weights for next time.
-        CSRankings.previousWeights = currentWeights;
         /* Finally done. Redraw! */
         setTimeout(function () { jQuery("#success").html(s); }, 0);
         return false;
@@ -874,8 +858,6 @@ var CSRankings = (function () {
     CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
     CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
     CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
-    // Hold the weights from the previous classification (that is, before re-ranking).
-    CSRankings.previousWeights = {};
     return CSRankings;
 }());
 function init() {
