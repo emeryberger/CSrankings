@@ -6888,6 +6888,7 @@ Gene Tsudik,University of California - Irvine,sec,1.0,0.333333333333,1996
 Michael Waidner,TU Darmstadt,sec,1.0,0.333333333333,1996
 XiaoFeng Wang,Indiana University,sec,7.0,1.12777777778,2015
 Ramamohan Paturi,University of California - San Diego,sec,1.0,0.333333333333,2004
+George Varghese,University of California - Los Angeles,sec,1.0,0.333333333333,2004
 Nick Nikiforakis,Stony Brook University,sec,2.0,0.375,2012
 Angelos D. Keromytis,Columbia University,sec,2.0,0.45,2015
 Reza Curtmola,NJIT,sec,1.0,0.25,2006
@@ -7939,12 +7940,12 @@ Evgenia Smirni,College of William and Mary,metrics,1.0,0.2,2009
 Ness B. Shroff,Ohio State University,metrics,1.0,0.333333333333,2009
 Adam Wierman,California Institute of Technology,metrics,1.0,0.125,2012
 Leana Golubchik,University of Southern California,metrics,1.0,0.333333333333,1995
-Richard R. Muntz,University of California - Los Angeles,metrics,1.0,0.333333333333,1995
 Antonio González 0001,Polytechnic University of Catalonia,metrics,1.0,0.142857142857,2003
 Peter Marbach,University of Toronto,metrics,1.0,0.5,2008
 Myungjin Lee,University of Edinburgh,metrics,1.0,0.25,2011
 Sharon Goldberg,Boston University,metrics,1.0,0.25,2011
 Ramana Rao Kompella,Purdue University,metrics,2.0,0.5,2011
+George Varghese,University of California - Los Angeles,metrics,1.0,0.25,2011
 Devavrat Shah,Massachusetts Institute of Technology,metrics,2.0,0.7,2008
 John N. Tsitsiklis,Massachusetts Institute of Technology,metrics,1.0,0.5,2011
 Giuliano Casale,Imperial College London,metrics,1.0,1.0,2006
@@ -8161,7 +8162,6 @@ Alex C. Snoeren,University of California - San Diego,metrics,2.0,0.5,2013
 John L. Hennessy,Stanford University,metrics,1.0,0.5,2000
 Eddie Kohler,Harvard University,metrics,1.0,0.25,2007
 Donald F. Towsley,University of Massachusetts Amherst,metrics,1.0,0.333333333333,1988
-Richard R. Muntz,University of California - Los Angeles,metrics,1.0,0.333333333333,1989
 Sharon Goldberg,Boston University,metrics,1.0,0.2,2008
 Eran Tromer,Tel Aviv University,metrics,1.0,0.2,2008
 Boaz Barak,Harvard University,metrics,1.0,0.2,2008
@@ -8273,12 +8273,12 @@ Samir Ranjan Das,Stony Brook University,metrics,1.0,0.2,1992
 Richard Fujimoto,Georgia Institute of Technology,metrics,1.0,0.2,1992
 Mostafa H. Ammar,Georgia Institute of Technology,metrics,1.0,0.333333333333,1998
 Ellen W. Zegura,Georgia Institute of Technology,metrics,1.0,0.333333333333,1998
+George Varghese,University of California - Los Angeles,metrics,1.0,0.5,1998
 Ashok K. Agrawala,University of Maryland - College Park,metrics,1.0,0.5,1983
 Garth A. Gibson,Carnegie Mellon University,metrics,2.0,0.424242424242,1997
 Lili Qiu,University of Texas at Austin,metrics,1.0,0.333333333333,2006
 Yin Zhang,University of Texas at Austin,metrics,1.0,0.333333333333,2006
 Mohammad Alizadeh,Massachusetts Institute of Technology,metrics,1.0,0.333333333333,2016
-Richard R. Muntz,University of California - Los Angeles,metrics,2.0,0.666666666667,2000
 Jennifer Rexford,Princeton University,metrics,1.0,0.5,2000
 Lili Qiu,University of Texas at Austin,metrics,1.0,0.25,2011
 Yin Zhang,University of Texas at Austin,metrics,2.0,0.375,2011
@@ -8292,7 +8292,6 @@ K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.3333333333
 Kang G. Shin,University of Michigan,metrics,1.0,0.5,1990
 Donald F. Towsley,University of Massachusetts Amherst,metrics,1.0,0.5,2001
 Max Mühlhäuser,TU Darmstadt,metrics,1.0,0.5,1983
-Richard R. Muntz,University of California - Los Angeles,metrics,1.0,0.5,1992
 Jignesh M. Patel,University of Wisconsin - Madison,metrics,1.0,0.333333333333,1994
 Michael J. Carey,University of California - Irvine,metrics,1.0,0.333333333333,1994
 Daniel A. Reed,University of Iowa,metrics,1.0,1.0,1983
@@ -8330,6 +8329,7 @@ David R. Cheriton,Stanford University,metrics,1.0,0.5,1987
 Carey L. Williamson,University of Calgary,metrics,1.0,0.5,1987
 James F. Kurose,University of Massachusetts Amherst,metrics,1.0,0.2,1993
 Donald F. Towsley,University of Massachusetts Amherst,metrics,1.0,0.2,1993
+George Varghese,University of California - Los Angeles,metrics,1.0,0.5,2003
 Boi Faltings,EPFL,metrics,1.0,0.5,1987
 John N. Tsitsiklis,Massachusetts Institute of Technology,metrics,1.0,0.5,2013
 Donald F. Towsley,University of Massachusetts Amherst,metrics,1.0,0.25,2002
@@ -8459,7 +8459,6 @@ Nick Koudas,University of Toronto,mod,4.0,1.08333333333,2006
 Anshumali Shrivastava,Rice University,mod,1.0,0.333333333333,2016
 Divyakant Agrawal,University of California - Santa Barbara,mod,1.0,0.5,1989
 Shahram Ghandeharizadeh,University of Southern California,mod,1.0,0.25,1994
-Richard R. Muntz,University of California - Los Angeles,mod,1.0,0.25,1994
 Yannis E. Ioannidis,University of Athens,mod,2.0,1.5,1989
 Joseph M. Hellerstein,University of California - Berkeley,mod,2.0,0.625,1996
 Peter J. Stuckey,University of Melbourne,mod,1.0,0.125,1996
@@ -8861,7 +8860,6 @@ Amihai Motro,George Mason University,mod,1.0,0.5,1990
 Christof Fetzer,TU Dresden,mod,1.0,0.166666666667,2015
 B. R. Badrinath,Rutgers University,mod,1.0,0.333333333333,1994
 Leana Golubchik,University of Southern California,mod,1.0,0.333333333333,1995
-Richard R. Muntz,University of California - Los Angeles,mod,1.0,0.333333333333,1995
 Héctor Corrada Bravo,University of Maryland - College Park,mod,1.0,0.5,2007
 Miron Livny,University of Wisconsin - Madison,mod,2.0,0.458333333333,1997
 Jignesh M. Patel,University of Wisconsin - Madison,mod,1.0,0.5,1996
@@ -8871,7 +8869,6 @@ Hosagrahar Visvesvaraya Jagadish,University of Michigan,mod,2.0,0.583333333333,2
 H. V. Jagadish,University of Michigan,mod,3.0,0.733333333333,1994
 Oded Shmueli,Technion - Israel Institute of Technology,mod,1.0,0.333333333333,1988
 Joseph M. Hellerstein,University of California - Berkeley,mod,2.0,0.666666666667,1997
-Alfonso F. Cardenas,University of California - Los Angeles,mod,1.0,0.2,1983
 Michael Kifer,Stony Brook University,mod,1.0,0.5,1989
 Yizhou Sun,Northeastern University,mod,1.0,0.2,2008
 Ling Liu,Georgia Institute of Technology,mod,1.0,0.5,2006
@@ -9087,6 +9084,7 @@ Dan Suciu,University of Washington,mod,3.0,2.25,1996
 Miao Qiao,Massey University,mod,1.0,0.333333333333,2016
 Yufei Tao,University of Queensland,mod,1.0,0.333333333333,2016
 Philip Brighten Godfrey,University of Illinois at Urbana-Champaign,mod,1.0,0.142857142857,2015
+George Varghese,University of California - Los Angeles,mod,1.0,0.142857142857,2015
 Ethan L. Miller,University of California - Santa Cruz,mod,1.0,0.111111111111,2015
 Douglas Stott Parker Jr.,University of California - Los Angeles,mod,1.0,0.5,1980
 Carlo Zaniolo,University of California - Los Angeles,mod,1.0,0.5,1997
@@ -9894,6 +9892,7 @@ Sergio Maffeis,Imperial College London,plan,1.0,0.125,2014
 Adam Chlipala,Massachusetts Institute of Technology,plan,3.0,2.25,2015
 Abraham Silberschatz,Yale University,plan,1.0,0.5,1986
 Gordon D. Plotkin,University of Edinburgh,plan,1.0,0.2,2016
+George Varghese,University of California - Los Angeles,plan,1.0,0.2,2016
 Jens Palsberg,University of California - Los Angeles,plan,1.0,0.5,2011
 Jeffrey S. Foster,University of Maryland - College Park,plan,2.0,0.5,2011
 Michael Hicks,University of Maryland - College Park,plan,1.0,0.25,2011
@@ -10651,6 +10650,7 @@ Richard Mortier,University of Cambridge,ops,1.0,0.0588235294118,2016
 Matteo Migliavacca,University of Kent,ops,1.0,0.0588235294118,2016
 Assaf Schuster,Technion - Israel Institute of Technology,ops,1.0,0.333333333333,2016
 Mema Roussopoulos,University of Athens,ops,1.0,0.2,2005
+George Varghese,University of California - Los Angeles,ops,1.0,0.2,2013
 Jason Flinn,University of Michigan,ops,2.0,0.533333333333,2007
 Brian D. Noble,University of Michigan,ops,1.0,0.25,2007
 Ahmad-Reza Sadeghi,TU Darmstadt,ops,1.0,0.111111111111,2016
@@ -10846,6 +10846,7 @@ Robert C. Miller,Massachusetts Institute of Technology,ops,1.0,0.5,1999
 Brad A. Myers,Carnegie Mellon University,ops,1.0,0.5,1999
 Kang G. Shin,University of Michigan,ops,1.0,0.333333333333,2003
 Junfeng Yang,Columbia University,ops,4.0,0.733333333333,2011
+George Varghese,University of California - Los Angeles,ops,1.0,0.25,2014
 Erez Zadok,Stony Brook University,ops,1.0,0.333333333333,2003
 Mema Roussopoulos,University of Athens,ops,2.0,0.666666666667,2003
 Jean-Bernard Stefani,Ecole Normale Superieure de Lyon,ops,1.0,0.25,2002
@@ -11082,6 +11083,7 @@ Christopher James Langmead,Carnegie Mellon University,bio,1.0,0.25,2014
 Chris Bailey-Kellogg,Dartmouth College,bio,1.0,0.25,2014
 John D. Kececioglu,University of Arizona,bio,1.0,0.333333333333,2000
 Vineet Bafna,University of California - San Diego,bio,1.0,0.2,2010
+George Varghese,University of California - Los Angeles,bio,1.0,0.2,2010
 Thomas Lengauer,Max Planck Institute,bio,1.0,0.142857142857,2004
 Tom M. Mitchell,Carnegie Mellon University,bio,1.0,0.25,2008
 Ziv Bar-Joseph,Carnegie Mellon University,bio,2.0,0.45,2008
@@ -11424,6 +11426,7 @@ P. Krishna Gummadi,Max Planck Institute,comm,2.0,0.416666666667,2010
 Sachin Katti,Stanford University,comm,4.0,1.08333333333,2007
 Dina Katabi,Massachusetts Institute of Technology,comm,5.0,1.33333333333,2007
 Michael J. Freedman,Princeton University,comm,2.0,0.666666666667,2007
+George Varghese,University of California - Los Angeles,comm,3.0,0.616666666667,2015
 Ramana Rao Kompella,Purdue University,comm,1.0,0.25,2005
 Alex C. Snoeren,University of California - San Diego,comm,1.0,0.25,2005
 Jun Li,University of Oregon,comm,1.0,0.0454545454545,2015
@@ -11465,6 +11468,7 @@ Haitao Zheng,University of California - Santa Barbara,comm,1.0,0.2,2010
 Michael J. Freedman,Princeton University,comm,2.0,0.5,2006
 David Mazières,Stanford University,comm,2.0,0.5,2006
 Andrew Warfield,University of British Columbia,comm,1.0,0.2,2015
+George Varghese,University of California - Los Angeles,comm,2.0,0.233766233766,2014
 Shriram Krishnamurthi,Brown University,comm,1.0,0.25,2014
 Sylvia Ratnasamy,University of California - Berkeley,comm,2.0,0.666666666667,2006
 Scott Shenker,University of California - Berkeley,comm,6.0,1.54285714286,2006
@@ -11638,6 +11642,7 @@ Jacobus E. van der Merwe,University of Utah,comm,1.0,0.166666666667,2005
 Michael J. Freedman,Princeton University,comm,1.0,0.2,2014
 Thomas E. Anderson,University of Washington,comm,2.0,0.666666666667,2005
 Aditya Akella,University of Wisconsin - Madison,comm,2.0,0.325,2010
+George Varghese,University of California - Los Angeles,comm,3.0,0.708333333333,2010
 David Mazières,Stanford University,comm,1.0,0.5,2007
 Henry M. Levy,University of Washington,comm,1.0,0.333333333333,2010
 Matei Zaharia,Massachusetts Institute of Technology,comm,3.0,0.491666666667,2011
@@ -11699,8 +11704,10 @@ Zhuoqing Morley Mao,University of Michigan,comm,3.0,0.592857142857,2005
 Jennifer Rexford,Princeton University,comm,4.0,1.08333333333,2010
 Jacobus E. van der Merwe,University of Utah,comm,1.0,0.333333333333,2010
 Zhuoqing Morley Mao,University of Michigan,comm,3.0,0.783333333333,2008
+George Varghese,University of California - Los Angeles,comm,1.0,0.333333333333,2012
 Nick McKeown,Stanford University,comm,1.0,0.333333333333,2012
 Michael Mitzenmacher,Harvard University,comm,1.0,0.333333333333,2010
+George Varghese,University of California - Los Angeles,comm,2.0,0.291666666667,2013
 Nick McKeown,Stanford University,comm,3.0,0.434523809524,2013
 Michael Walfish,New York University,comm,2.0,0.666666666667,2004
 Michalis Faloutsos,University of California - Riverside,comm,3.0,0.916666666667,2007
@@ -11715,6 +11722,7 @@ David C. Parkes,Harvard University,comm,1.0,0.333333333333,2005
 Geoffrey M. Voelker,University of California - San Diego,comm,2.0,0.444444444444,2013
 Alex C. Snoeren,University of California - San Diego,comm,1.0,0.333333333333,2013
 Subhash Suri,University of California - Santa Barbara,comm,1.0,0.2,2011
+George Varghese,University of California - Los Angeles,comm,2.0,0.45,2011
 Eric A. Brewer,University of California - Berkeley,comm,1.0,0.2,2013
 David G. Andersen,Carnegie Mellon University,comm,2.0,0.375,2015
 Hari Balakrishnan,Massachusetts Institute of Technology,comm,1.0,0.2,2011
@@ -12034,6 +12042,7 @@ David E. Culler,University of California - Berkeley,ops,1.0,0.125,2006
 Thomas E. Anderson,University of Washington,ops,1.0,0.333333333333,1999
 Stefan Savage,University of California - San Diego,ops,1.0,0.125,2008
 Alex C. Snoeren,University of California - San Diego,ops,1.0,0.125,2008
+George Varghese,University of California - Los Angeles,ops,1.0,0.125,2008
 Geoffrey M. Voelker,University of California - San Diego,ops,1.0,0.125,2008
 Luis Ceze,University of Washington,ops,1.0,0.25,2010
 Zhuoqing Morley Mao,University of Michigan,ops,1.0,0.25,2008
@@ -12049,6 +12058,7 @@ Joseph E. Gonzalez,University of California - Berkeley,ops,1.0,0.2,2012
 Carlos Guestrin,University of Washington,ops,2.0,0.533333333333,2012
 Martin C. Rinard,Massachusetts Institute of Technology,ops,1.0,0.166666666667,2004
 Cristian Cadar,Imperial College London,ops,1.0,0.166666666667,2004
+George Varghese,University of California - Los Angeles,ops,1.0,0.25,2004
 Taesoo Kim,Georgia Institute of Technology,ops,1.0,0.25,2010
 Xi Wang,University of Washington,ops,1.0,0.25,2010
 Roxana Geambasu,Columbia University,ops,1.0,0.166666666667,2012
@@ -12457,7 +12467,6 @@ Kamin Whitehouse,University of Virginia,chi,1.0,0.5,2015
 Judy Kay,University of Sydney,chi,1.0,0.166666666667,2009
 Bart P. Knijnenburg,Clemson University,chi,2.0,0.666666666667,2013
 Alfred Kobsa,University of California - Irvine,chi,2.0,0.666666666667,2013
-Richard R. Muntz,University of California - Los Angeles,chi,1.0,0.25,2001
 Yvonne Rogers,University College London,chi,2.0,0.311111111111,2010
 Paul Marshall,University College London,chi,2.0,0.533333333333,2010
 John Zimmerman,Carnegie Mellon University,chi,2.0,0.291666666667,2012
@@ -12618,6 +12627,7 @@ Al Davis,University of Utah,arch,2.0,0.342857142857,2012
 Lizhong Chen,Oregon State University,arch,1.0,0.5,2012
 Rajeev Balasubramonian,University of Utah,arch,2.0,0.666666666667,2001
 Sandhya Dwarkadas,University of Rochester,arch,2.0,0.666666666667,2001
+George Varghese,University of California - Los Angeles,arch,1.0,0.333333333333,2004
 Krste Asanovic,University of California - Berkeley,arch,1.0,0.333333333333,2000
 Scott A. Mahlke,University of Michigan,arch,1.0,0.5,1996
 Babak Falsafi,EPFL,arch,3.0,0.7,2014
@@ -13247,6 +13257,7 @@ Aleksander Madry,Massachusetts Institute of Technology,comm,1.0,0.125,2016
 Michael Schapira,Hebrew University of Jerusalem,comm,2.0,0.375,2016
 Scott Shenker,University of California - Berkeley,comm,2.0,0.291666666667,2016
 Xiuzhen Cheng,George Washington University,comm,3.0,0.566666666667,2016
+George Varghese,University of California - Los Angeles,comm,3.0,1.33333333333,2001
 Biswanath Mukherjee,University of California - Davis,comm,1.0,0.333333333333,1992
 Dilip Sarkar,University of Miami,comm,1.0,0.333333333333,1992
 Augustin Chaintreau,Columbia University,comm,1.0,0.166666666667,2006
@@ -13866,6 +13877,7 @@ Constantinos Dovrolis,Georgia Institute of Technology,comm,2.0,0.833333333333,20
 Dimitrios Koutsonikolas,University at Buffalo,comm,1.0,0.5,2013
 Kin K. Leung,Imperial College London,comm,1.0,0.333333333333,2015
 Subhash Suri,University of California - Santa Barbara,comm,1.0,0.333333333333,1997
+George Varghese,University of California - Los Angeles,comm,2.0,0.583333333333,1997
 Steven H. Low,California Institute of Technology,comm,1.0,0.5,1992
 Prasun Sinha,Ohio State University,comm,1.0,0.333333333333,2001
 Jasleen Kaur,University of North Carolina,comm,1.0,0.5,2015
@@ -14096,7 +14108,6 @@ Tao Yang,University of California - Santa Barbara,comm,1.0,0.25,2006
 Zygmunt J. Haas,University of Texas at Dallas,comm,1.0,0.5,2008
 Minaxi Gupta,Indiana University,comm,1.0,0.333333333333,2011
 Steven A. Myers,Indiana University,comm,1.0,0.333333333333,2011
-Richard R. Muntz,University of California - Los Angeles,comm,1.0,0.5,2006
 Rik Sarkar,University of Edinburgh,comm,1.0,0.2,2014
 Jie Gao,Stony Brook University,comm,3.0,0.616666666667,2014
 Andrew T. Campbell,Dartmouth College,comm,1.0,0.333333333333,2001
@@ -14142,6 +14153,7 @@ Matthias Grossglauser,EPFL,comm,2.0,1.0,2000
 Rajesh K. Gupta,University of California - San Diego,comm,1.0,0.5,2011
 Dipak Ghosal,University of California - Davis,comm,1.0,0.333333333333,1994
 Yishay Mansour,Tel Aviv University,comm,1.0,0.333333333333,2011
+George Varghese,University of California - Los Angeles,comm,3.0,0.916666666667,1998
 David R. O'Hallaron,Carnegie Mellon University,comm,1.0,0.5,2002
 Thang N. Dinh,Virginia Commonwealth University,comm,1.0,0.2,2010
 My T. Thai,University of Florida,comm,1.0,0.2,2010
@@ -14588,6 +14600,7 @@ Matt W. Mutka,Michigan State University,comm,1.0,0.333333333333,2003
 Thomas F. La Porta,Pennsylvania State University,comm,1.0,0.5,1993
 Alvaro A. Cárdenas,University of Texas at Dallas,comm,1.0,0.333333333333,2007
 Timothy Sherwood,University of California - Santa Barbara,comm,1.0,0.25,2004
+George Varghese,University of California - Los Angeles,comm,2.0,0.5,2004
 Jean-Yves Le Boudec,EPFL,comm,4.0,2.0,2002
 J. Gregory Morrisett,Cornell University,comm,1.0,0.333333333333,1998
 Xiaowei Yang,Duke University,comm,1.0,1.0,1999
@@ -14872,6 +14885,7 @@ Ioannis Stavrakakis,University of Athens,comm,2.0,1.5,1992
 Mark D. Corner,University of Massachusetts Amherst,comm,1.0,0.25,1998
 Larry L. Peterson,University of Arizona,comm,1.0,0.25,2002
 Arvind Krishnamurthy,University of Washington,comm,1.0,0.25,2002
+George Varghese,University of California - Los Angeles,comm,2.0,0.666666666667,1994
 Jennifer Widom,Stanford University,comm,1.0,0.25,1998
 Balaji Prabhakar,Stanford University,comm,1.0,0.5,2009
 Nael B. Abu-Ghazaleh,University of California - Riverside,comm,1.0,0.333333333333,2013
@@ -15085,6 +15099,7 @@ Myung Jong Lee,CUNY,comm,1.0,0.5,1989
 John V. Guttag,Massachusetts Institute of Technology,comm,1.0,0.333333333333,1998
 Joseph Naor,Technion - Israel Institute of Technology,comm,1.0,0.333333333333,1995
 Daniel P. Siewiorek,Carnegie Mellon University,comm,1.0,0.5,2005
+George Varghese,University of California - Los Angeles,comm,4.0,1.25,2003
 Magda El Zarki,University of California - Irvine,comm,1.0,0.25,1994
 Thomas E. Anderson,University of Washington,comm,2.0,0.833333333333,2003
 Kin K. Leung,Imperial College London,comm,1.0,0.333333333333,1992
@@ -15330,7 +15345,6 @@ Wenke Lee,Georgia Institute of Technology,mobile,1.0,0.5,2000
 Lili Qiu,University of Texas at Austin,mobile,1.0,0.333333333333,2013
 Srinivasan Seshan,Carnegie Mellon University,mobile,1.0,0.142857142857,2014
 Bhaskar Krishnamachari,University of Southern California,mobile,1.0,0.142857142857,2010
-Richard R. Muntz,University of California - Los Angeles,mobile,2.0,0.5,2001
 Song Min Kim,George Mason University,mobile,2.0,0.833333333333,2015
 Tian He,University of Minnesota,mobile,4.0,1.41666666667,2015
 David Kotz,Dartmouth College,mobile,1.0,0.333333333333,2004
@@ -15455,6 +15469,7 @@ David G. Andersen,Carnegie Mellon University,mobile,1.0,0.2,2008
 Dina Katabi,Massachusetts Institute of Technology,mobile,1.0,0.25,2007
 Adrian Perrig,ETH Zurich,mobile,1.0,0.2,2001
 J. D. Tygar,University of California - Berkeley,mobile,1.0,0.2,2001
+George Varghese,University of California - Los Angeles,mobile,1.0,0.125,2012
 Rik Sarkar,University of Edinburgh,mobile,1.0,0.5,2010
 Jie Gao,Stony Brook University,mobile,1.0,0.5,2010
 Ten-Hwang Lai,Ohio State University,mobile,1.0,0.333333333333,2005
@@ -16275,7 +16290,6 @@ David A. Wood,University of Wisconsin - Madison,mod,1.0,0.25,1999
 Fei Sha,University of California - Los Angeles,mod,1.0,0.333333333333,1996
 Yin Zhang,University of Texas at Austin,mod,1.0,0.166666666667,2007
 Chris Clifton,Purdue University,mod,1.0,0.5,1994
-Richard R. Muntz,University of California - Los Angeles,mod,1.0,0.5,1988
 M. Tamer Özsu,University of Waterloo,mod,1.0,0.333333333333,1998
 Daniel J. Abadi,Yale University,mod,2.0,0.404761904762,2005
 Karl Aberer,EPFL,mod,1.0,0.25,2005
@@ -16293,7 +16307,6 @@ Shivnath Babu,Duke University,mod,1.0,0.333333333333,2006
 Jeffrey S. Chase,Duke University,mod,1.0,0.333333333333,2006
 Kien A. Hua,University of Central Florida,mod,1.0,0.5,1990
 Gerhard Weikum,Max Planck Institute,mod,2.0,0.45,2006
-Alfonso F. Cardenas,University of California - Los Angeles,mod,1.0,0.25,1979
 Peter Buneman,University of Edinburgh,mod,1.0,0.2,1995
 Susan B. Davidson,University of Pennsylvania,mod,1.0,0.2,1995
 Donald Kossmann,ETH Zurich,mod,1.0,0.111111111111,2003
@@ -16377,7 +16390,6 @@ Naftaly H. Minsky,Rutgers University,mod,1.0,1.0,1981
 Christoph Koch 0001,EPFL,mod,1.0,0.25,2004
 Ke Wang,Simon Fraser University,mod,1.0,0.25,2007
 Jian Pei,Simon Fraser University,mod,3.0,0.7,2007
-Richard R. Muntz,University of California - Los Angeles,mod,1.0,0.5,1990
 Weiyi Meng,Binghamton University,mod,1.0,0.166666666667,1998
 Clement T. Yu,University of Illinois at Chicago,mod,1.0,0.166666666667,1998
 Piotr Indyk,Massachusetts Institute of Technology,mod,1.0,0.333333333333,2000
@@ -16417,7 +16429,6 @@ Christos Faloutsos,Carnegie Mellon University,mod,1.0,0.125,1983
 Walid G. Aref,Purdue University,mod,1.0,0.5,1991
 Hanan Samet,University of Maryland - College Park,mod,1.0,0.5,1991
 Amr El Abbadi,University of California - Santa Barbara,mod,1.0,0.333333333333,2005
-Alfonso F. Cardenas,University of California - Los Angeles,mod,1.0,0.333333333333,1976
 Raymond T. Ng,University of British Columbia,mod,1.0,0.2,2002
 Alin Deutsch,University of California - San Diego,mod,1.0,0.333333333333,2004
 Juliana Freire,New York University,mod,1.0,0.333333333333,2005
@@ -16514,7 +16525,6 @@ Renée J. Miller,University of Toronto,mod,1.0,0.333333333333,2000
 Krys Kochut,University of Georgia,mod,1.0,0.111111111111,1996
 John A. Miller,University of Georgia,mod,1.0,0.111111111111,1996
 Kotagiri Ramamohanarao,University of Melbourne,mod,1.0,0.333333333333,1990
-Richard R. Muntz,University of California - Los Angeles,mod,1.0,0.5,1992
 Alexander Borgida,Rutgers University,mod,1.0,0.5,1985
 B. R. Badrinath,Rutgers University,mod,1.0,0.5,1992
 Vagelis Hristidis,University of California - Riverside,mod,1.0,0.333333333333,2003
@@ -16652,7 +16662,6 @@ Chen Li 0001,University of California - Irvine,mod,1.0,0.25,2006
 Fariba Sadri,Imperial College London,mod,1.0,0.333333333333,1987
 Alan Fekete,University of Sydney,mod,1.0,0.25,2007
 Wei Wang 0010,University of California - Los Angeles,mod,1.0,0.333333333333,1997
-Richard R. Muntz,University of California - Los Angeles,mod,1.0,0.333333333333,1997
 Serge Abiteboul,Ecole Normale Superieure de Cachan,mod,1.0,0.5,1985
 Gösta Grahne,Concordia University,mod,1.0,0.5,1985
 Hagit Shatkay,University of Delaware,bio,1.0,0.25,2000
@@ -20832,6 +20841,7 @@ Yishay Mansour,Tel Aviv University,ir,1.0,0.2,2009
 Jon Crowcroft,University of Cambridge,ir,1.0,0.333333333333,2014
 Norman M. Sadeh,Carnegie Mellon University,ir,1.0,0.333333333333,2007
 John E. Hopcroft,Cornell University,ir,1.0,0.333333333333,2011
+George Varghese,University of California - Los Angeles,ir,1.0,0.2,2012
 Karrie Karahalios,University of Illinois at Urbana-Champaign,ir,1.0,0.25,2016
 Christo Wilson,Northeastern University,ir,1.0,0.142857142857,2012
 Haitao Zheng,University of California - Santa Barbara,ir,1.0,0.142857142857,2012
@@ -21253,6 +21263,7 @@ José A. B. Fortes,University of Florida,arch,1.0,0.5,1984
 Dan I. Moldovan,University of Texas at Dallas,arch,1.0,0.5,1984
 Michael Ferdman,Stony Brook University,arch,2.0,0.190909090909,2012
 Timothy Sherwood,University of California - Santa Barbara,arch,2.0,0.666666666667,2003
+George Varghese,University of California - Los Angeles,arch,1.0,0.333333333333,2003
 Feng Liu,University of Queensland,arch,1.0,0.2,2015
 David I. August,Princeton University,arch,1.0,0.2,2015
 Timothy N. Miller,Binghamton University,arch,1.0,0.25,2012
@@ -22267,7 +22278,6 @@ Nikil Dutt,University of California - Irvine,da,3.0,0.7,2014
 Alex Nicolau,University of California - Irvine,da,2.0,0.366666666667,2014
 Jason Cong,University of California - Los Angeles,da,1.0,0.333333333333,1990
 Miodrag Potkonjak,University of California - Los Angeles,da,3.0,1.08333333333,2011
-Ani Nahapetian,University of California - Los Angeles,da,2.0,0.583333333333,2011
 Sheng Wei 0001,University of Nebraska,da,3.0,1.08333333333,2011
 Subhasish Mitra,Stanford University,da,2.0,0.583333333333,2010
 Reetuparna Das,University of Michigan,da,1.0,0.142857142857,2010
@@ -22615,7 +22625,6 @@ Sri Parameswaran,UNSW,da,4.0,1.0,2013
 Yu Cao,University of Massachusetts Lowell,da,2.0,0.45,2012
 Peter Robinson 0001,University of Cambridge,da,1.0,1.0,1983
 Miodrag Potkonjak,University of California - Los Angeles,da,1.0,0.25,2009
-Ani Nahapetian,University of California - Los Angeles,da,1.0,0.25,2009
 John Lillis,University of Illinois at Chicago,da,1.0,0.5,1999
 Rajesh K. Gupta,University of California - San Diego,da,2.0,0.533333333333,1998
 Brian W. Kernighan,Princeton University,da,1.0,0.5,1972
@@ -22627,7 +22636,6 @@ Paolo Ienne,EPFL,da,4.0,1.33333333333,2004
 Luca P. Carloni,Columbia University,da,1.0,0.5,2015
 Andrew B. Kahng,University of California - San Diego,da,4.0,1.86666666667,2013
 Sheng Wei 0001,University of Nebraska,da,1.0,0.25,2014
-Ani Nahapetian,University of California - Los Angeles,da,1.0,0.25,2014
 Miodrag Potkonjak,University of California - Los Angeles,da,4.0,1.41666666667,2014
 Kartikeya Mayaram,Oregon State University,da,1.0,0.25,2005
 Randy H. Katz,University of California - Berkeley,da,1.0,0.5,1993
@@ -25258,6 +25266,7 @@ Satish Rao,University of California - Berkeley,act,3.0,0.833333333333,2006
 Umesh V. Vazirani,University of California - Berkeley,act,1.0,0.333333333333,2006
 Gary L. Miller,Carnegie Mellon University,act,1.0,0.333333333333,2012
 Richard Peng,Georgia Institute of Technology,act,1.0,0.333333333333,2012
+George Varghese,University of California - Los Angeles,act,1.0,0.2,1993
 David P. Dobkin,Princeton University,act,1.0,0.5,1973
 Lorenzo Orecchia,Boston University,act,1.0,0.333333333333,2012
 Ivan Hal Sudborough,University of Texas at Dallas,act,1.0,1.0,1977
@@ -26069,6 +26078,7 @@ Wenchao Zhou,Georgetown University,ops,1.0,0.166666666667,2011
 Andreas Haeberlen,University of Pennsylvania,ops,1.0,0.166666666667,2011
 Boon Thau Loo,University of Pennsylvania,ops,1.0,0.166666666667,2011
 Micah Sherr,Georgetown University,ops,1.0,0.166666666667,2011
+George Varghese,University of California - Los Angeles,ops,1.0,0.5,1987
 Peter J. Denning,Naval Postgraduate School,ops,1.0,0.5,1971
 Taesoo Kim,Georgia Institute of Technology,ops,1.0,0.2,2011
 David Mazières,Stanford University,ops,1.0,0.142857142857,1995
@@ -29447,6 +29457,7 @@ Thomas Holenstein,ETH Zurich,act,1.0,0.5,2012
 Tim Roughgarden,Stanford University,act,1.0,0.5,2000
 Gilles Brassard,University of Montreal,act,1.0,1.0,1979
 Neil Immerman,University of Massachusetts Amherst,act,1.0,1.0,1980
+George Varghese,University of California - Los Angeles,act,2.0,0.833333333333,1991
 Amir Nayyeri,Oregon State University,act,1.0,0.5,2015
 Benjamin Raichel,University of Texas at Dallas,act,1.0,0.5,2015
 James Aspnes,Yale University,act,1.0,0.5,1992
@@ -30068,7 +30079,6 @@ Thorsten Joachims,Cornell University,mlmining,3.0,1.08333333333,2012
 Matan Gavish,Hebrew University of Jerusalem,mlmining,1.0,0.5,2011
 Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.5,2001
 Bing Liu 0001,University of Illinois at Chicago,mlmining,1.0,0.333333333333,1999
-Richard R. Muntz,University of California - Los Angeles,mlmining,1.0,0.25,1996
 Rohini K. Srihari,University at Buffalo,mlmining,1.0,0.333333333333,2007
 Alexander G. Gray,Georgia Institute of Technology,mlmining,5.0,2.16666666667,2012
 ChengXiang Zhai,University of Illinois at Urbana-Champaign,mlmining,2.0,1.0,2005
@@ -30273,7 +30283,6 @@ Charles Elkan,University of California - San Diego,mlmining,1.0,0.5,2008
 Christos Faloutsos,Carnegie Mellon University,mlmining,2.0,0.4,2015
 Yu Sun,University of South Florida,mlmining,1.0,0.166666666667,2016
 Wang-Chien Lee,Pennsylvania State University,mlmining,1.0,0.2,2011
-Richard R. Muntz,University of California - Los Angeles,mlmining,1.0,0.0909090909091,1995
 Jinze Liu,University of Kentucky,mlmining,1.0,0.2,2006
 Wei Wang 0010,University of California - Los Angeles,mlmining,1.0,0.2,2006
 Leonard McMillan,University of North Carolina,mlmining,1.0,0.2,2006
@@ -30870,7 +30879,6 @@ Yaron Singer,Harvard University,mlmining,3.0,1.16666666667,2015
 Jun Zhang,University of Kentucky,mlmining,1.0,0.25,2012
 Padhraic Smyth,University of California - Irvine,mlmining,2.0,0.533333333333,2013
 Pedro M. Domingos,University of Washington,mlmining,4.0,2.83333333333,2000
-Alfonso F. Cardenas,University of California - Los Angeles,mlmining,1.0,0.25,2007
 Christopher W. Clifton,Purdue University,mlmining,1.0,0.5,2014
 Roni Khardon,Tufts University,mlmining,1.0,0.2,2010
 Assaf Schuster,Technion - Israel Institute of Technology,mlmining,1.0,0.25,2006
@@ -31626,7 +31634,6 @@ Ramesh K. Sitaraman,University of Massachusetts Amherst,ir,1.0,0.333333333333,20
 James P. Callan,Carnegie Mellon University,ir,2.0,1.0,2003
 Ran El-Yaniv,Technion - Israel Institute of Technology,ir,1.0,0.25,2001
 Naftali Tishby,Hebrew University of Jerusalem,ir,1.0,0.25,2001
-Richard R. Muntz,University of California - Los Angeles,ir,1.0,0.5,1996
 Jun Xu,Georgia Institute of Technology,ir,2.0,0.366666666667,2015
 Gordon V. Cormack,University of Waterloo,ir,1.0,0.333333333333,2001
 Gordon V. Cormack,University of Waterloo,ir,1.0,0.333333333333,1998
@@ -38771,6 +38778,7 @@ Neil Spring,University of Maryland - College Park,metrics,1.0,0.25,2009
 Bobby Bhattacharjee,University of Maryland - College Park,metrics,1.0,0.25,2009
 K. K. Ramakrishnan,University of California - Riverside,metrics,2.0,0.4,2011
 Ramana Rao Kompella,Purdue University,metrics,1.0,0.333333333333,2004
+George Varghese,University of California - Los Angeles,metrics,1.0,0.333333333333,2004
 Bruno F. Ribeiro,Purdue University,metrics,1.0,0.25,2006
 Donald F. Towsley,University of Massachusetts Amherst,metrics,1.0,0.25,2006
 Farnam Jahanian,Carnegie Mellon University,metrics,1.0,0.2,2010
@@ -42890,6 +42898,7 @@ Kang G. Shin,University of Michigan,comm,1.0,0.5,2003
 Mohammad Alizadeh,Massachusetts Institute of Technology,comm,2.0,0.290909090909,2014
 Devavrat Shah,Massachusetts Institute of Technology,comm,1.0,0.2,2012
 Srinivasan Seshan,Carnegie Mellon University,comm,1.0,0.25,2001
+George Varghese,University of California - Los Angeles,comm,1.0,0.333333333333,1996
 Roberto Perdisci,University of Georgia,comm,1.0,0.333333333333,2015
 Lili Qiu,University of Texas at Austin,comm,1.0,0.2,2004
 Yin Zhang,University of Texas at Austin,comm,1.0,0.2,2004
@@ -42928,6 +42937,7 @@ Jennifer Rexford,Princeton University,comm,2.0,0.533333333333,2008
 Simon S. Lam,University of Texas at Austin,comm,1.0,0.5,1981
 Jon Crowcroft,University of Cambridge,comm,2.0,0.7,1988
 Michael Mitzenmacher,Harvard University,comm,1.0,0.125,2015
+George Varghese,University of California - Los Angeles,comm,2.0,1.0,1995
 Alejandro P. Buchmann,TU Darmstadt,comm,1.0,0.25,2007
 Vern Paxson,University of California - Berkeley,comm,1.0,1.0,1996
 Srinivasan Keshav,University of Waterloo,comm,2.0,1.5,1991
@@ -42967,6 +42977,7 @@ Joseph Pasquale,University of California - San Diego,comm,1.0,0.5,1993
 Vern Paxson,University of California - Berkeley,comm,1.0,0.166666666667,2008
 Jennifer Rexford,Princeton University,comm,1.0,0.166666666667,2000
 Carey L. Williamson,University of Calgary,comm,1.0,1.0,1993
+George Varghese,University of California - Los Angeles,comm,2.0,0.533333333333,2006
 Geoffrey M. Voelker,University of California - San Diego,comm,1.0,0.25,2008
 Ramamohan Paturi,University of California - San Diego,comm,1.0,0.25,2008
 Stefan Savage,University of California - San Diego,comm,1.0,0.25,2008
@@ -43007,6 +43018,7 @@ Ethan Katz-Bassett,University of Southern California,comm,1.0,0.1,2014
 Yin Zhang,University of Texas at Austin,comm,1.0,0.25,2002
 Vern Paxson,University of California - Berkeley,comm,1.0,0.25,2002
 Ramana Rao Kompella,Purdue University,comm,1.0,0.25,2009
+George Varghese,University of California - Los Angeles,comm,1.0,0.25,2009
 Michael Hicks,University of Maryland - College Park,comm,1.0,0.333333333333,2009
 Peter Druschel,Max Planck Institute,comm,1.0,0.166666666667,2013
 Paul Francis,Max Planck Institute,comm,2.0,0.5,2013
@@ -43054,6 +43066,7 @@ Dmitri Loguinov,Texas A&M University,comm,1.0,0.25,2003
 Alvin Cheung,University of Washington,comm,1.0,0.111111111111,2016
 Mohammad Alizadeh,Massachusetts Institute of Technology,comm,4.0,0.627777777778,2016
 Hari Balakrishnan,Massachusetts Institute of Technology,comm,2.0,0.211111111111,2016
+George Varghese,University of California - Los Angeles,comm,1.0,0.111111111111,2016
 Yehuda Afek,Tel Aviv University,comm,1.0,0.333333333333,1999
 Sariel Har-Peled,University of Illinois at Urbana-Champaign,comm,1.0,0.333333333333,1999
 Yin Zhang,University of Texas at Austin,comm,2.0,0.5,2003
@@ -43072,6 +43085,8 @@ Thu D. Nguyen,Rutgers University,comm,1.0,0.25,1993
 Edward D. Lazowska,University of Washington,comm,1.0,0.25,1993
 Mohamed G. Gouda,University of Texas at Austin,comm,1.0,0.333333333333,1989
 Zhuoqing Morley Mao,University of Michigan,comm,1.0,0.25,2002
+George Varghese,University of California - Los Angeles,comm,2.0,0.75,2002
+George Varghese,University of California - Los Angeles,comm,1.0,0.5,2000
 Karthikeyan Sankaralingam,University of Wisconsin - Madison,comm,1.0,0.2,2009
 Mark Handley,University College London,comm,1.0,0.333333333333,1995
 Jon Crowcroft,University of Cambridge,comm,1.0,0.333333333333,1995
@@ -43111,6 +43126,7 @@ M. Frans Kaashoek,Massachusetts Institute of Technology,comm,2.0,0.833333333333,
 Carey L. Williamson,University of Calgary,comm,1.0,0.5,1991
 David R. Cheriton,Stanford University,comm,1.0,0.5,1991
 Subhash Suri,University of California - Santa Barbara,comm,1.0,0.333333333333,1999
+George Varghese,University of California - Los Angeles,comm,1.0,0.333333333333,1999
 Bruce M. Maggs,Duke University,comm,2.0,0.45,2004
 David Bindel,Cornell University,comm,1.0,0.333333333333,2006
 Ian M. Leslie,University of Cambridge,comm,1.0,0.333333333333,1994
