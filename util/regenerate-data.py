@@ -95,7 +95,6 @@ def parseDBLP(facultydict):
                     
                 if year == -1:
                     # No year.
-                    print "NO YEAR WAT", confname
                     continue
                
                 tooFewPages = False
