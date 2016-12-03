@@ -141,6 +141,7 @@ Changxi Zheng,Columbia University,graph,4.0,1.08333333333,2014
 Adam Finkelstein,Princeton University,graph,3.0,0.785714285714,2008
 Thomas A. Funkhouser,Princeton University,graph,2.0,0.642857142857,2008
 Szymon Rusinkiewicz,Princeton University,graph,4.0,0.596825396825,2008
+Christopher Wojtan,IST Austria,graph,1.0,0.5,2008
 Greg Turk,Georgia Institute of Technology,graph,1.0,0.5,2008
 Evangelos Kalogerakis,University of Massachusetts Amherst,graph,1.0,0.333333333333,2015
 Przemyslaw Prusinkiewicz,University of Calgary,graph,1.0,0.142857142857,2009
@@ -546,6 +547,7 @@ Hao Zhang 0002,Simon Fraser University,graph,5.0,0.861111111111,2015
 Huamin Wang,Ohio State University,graph,4.0,1.78333333333,2015
 Wolfgang Heidrich,University of British Columbia,graph,4.0,0.95,2011
 Allen Van Gelder,University of California - Santa Cruz,graph,1.0,0.5,1994
+Christopher Wojtan,IST Austria,graph,1.0,0.25,2009
 Nils Thürey,TU Munich,graph,2.0,0.5,2009
 Greg Turk,Georgia Institute of Technology,graph,2.0,0.45,2009
 Craig Schroeder,University of California - Riverside,graph,1.0,0.142857142857,2016
@@ -575,6 +577,7 @@ Jörg Peters,University of Florida,graph,1.0,1.0,2001
 Henry Fuchs,University of North Carolina,graph,1.0,0.166666666667,2013
 Aditi Majumder,University of California - Irvine,graph,1.0,0.5,2005
 Rick Stevens,University of Chicago,graph,1.0,0.5,2005
+Christopher Wojtan,IST Austria,graph,1.0,0.25,2007
 Jessica K. Hodgins,Carnegie Mellon University,graph,3.0,1.25,2007
 Greg Turk,Georgia Institute of Technology,graph,1.0,0.25,2007
 Maneesh Agrawala,Stanford University,graph,2.0,0.583333333333,2012
@@ -662,7 +665,6 @@ Scott Schaefer,Texas A&M University,graph,2.0,1.0,2013
 John C. Hart,University of Illinois at Urbana-Champaign,graph,1.0,0.333333333333,1994
 Seth Cooper,Northeastern University,graph,1.0,0.333333333333,2007
 Zoran Popovic,University of Washington,graph,2.0,0.666666666667,2007
-Chris Wojtan,IST Austria,graph,4.0,1.58333333333,2015
 Julie Dorsey,Yale University,graph,2.0,0.366666666667,2016
 Holly E. Rushmeier,Yale University,graph,2.0,0.366666666667,2016
 Tobias Ritschel,University College London,graph,2.0,0.416666666667,2009
@@ -1037,7 +1039,6 @@ John P. Lewis,Victoria University of Wellington,graph,1.0,1.0,1987
 Tamal K. Dey,Ohio State University,graph,1.0,0.25,2012
 Huamin Wang,Ohio State University,graph,1.0,0.25,2012
 Ren Ng,University of California - Berkeley,graph,1.0,0.333333333333,2003
-Chris Wojtan,IST Austria,graph,3.0,1.2,2016
 Gershon Elber,Technion - Israel Institute of Technology,graph,1.0,0.5,1998
 Dinesh K. Pai,University of British Columbia,graph,2.0,0.583333333333,2012
 Alla Sheffer,University of British Columbia,graph,1.0,0.5,2002
@@ -1045,7 +1046,6 @@ Tiberiu Popa,Concordia University,graph,1.0,0.2,2008
 James F. O'Brien,University of California - Berkeley,graph,2.0,0.833333333333,2011
 Tobias Ritschel,University College London,graph,2.0,0.416666666667,2012
 Kayvon Fatahalian,Carnegie Mellon University,graph,1.0,0.25,2015
-Chris Wojtan,IST Austria,graph,1.0,0.333333333333,2012
 Julie Dorsey,Yale University,graph,1.0,0.125,2007
 Holly E. Rushmeier,Yale University,graph,1.0,0.125,2007
 Tamar Shinar,University of California - Riverside,graph,1.0,0.25,2016
@@ -1313,7 +1313,6 @@ Michiel van de Panne,University of British Columbia,graph,1.0,0.333333333333,201
 Andrew Nealen,New York University,graph,1.0,0.25,2010
 Dinesh Manocha,University of North Carolina,graph,1.0,0.5,1994
 James Demmel,University of California - Berkeley,graph,1.0,0.5,1994
-Chris Wojtan,IST Austria,graph,1.0,0.25,2014
 Nils Thürey,TU Munich,graph,2.0,0.5,2014
 Kwan-Liu Ma,University of California - Davis,graph,1.0,0.5,2013
 Shang-Hua Teng,University of Southern California,graph,1.0,0.111111111111,2006
@@ -1413,7 +1412,6 @@ Brian Curless,University of Washington,graph,1.0,0.333333333333,2011
 Eitan Grinspun,Columbia University,graph,1.0,0.2,2013
 He Wang,Purdue University,graph,1.0,0.25,2013
 Taku Komura,University of Edinburgh,graph,1.0,0.25,2013
-Chris Wojtan,IST Austria,graph,3.0,1.33333333333,2013
 Leif Kobbelt,RWTH Aachen,graph,1.0,0.2,2013
 Peter Schröder,California Institute of Technology,graph,2.0,0.583333333333,2013
 Eugene Zhang,Oregon State University,graph,1.0,0.333333333333,2005
@@ -1494,6 +1492,7 @@ Yaser Sheikh,Carnegie Mellon University,graph,1.0,0.25,2015
 Roger D. Hersch,EPFL,graph,1.0,0.5,2014
 Stuart M. Shieber,Harvard University,graph,1.0,0.333333333333,1995
 Huamin Wang,Ohio State University,graph,1.0,0.333333333333,2011
+Christopher Wojtan,IST Austria,graph,2.0,0.5,2010
 Greg Turk,Georgia Institute of Technology,graph,2.0,0.5,2010
 Cláudio T. Silva,New York University,graph,1.0,0.25,2003
 Demetri Terzopoulos,University of California - Los Angeles,graph,1.0,0.5,2004
@@ -6310,6 +6309,7 @@ Michelangelo Grigni,Emory University,hpc,1.0,0.0909090909091,1998
 Injong Rhee,North Carolina State University,hpc,1.0,0.0909090909091,1998
 Kwan-Liu Ma,University of California - Davis,hpc,1.0,0.166666666667,2002
 Andrew A. Chien,University of Chicago,hpc,1.0,0.142857142857,2000
+David E. Irwin,University of Massachusetts Amherst,hpc,1.0,0.333333333333,2016
 Mahmut T. Kandemir,Pennsylvania State University,hpc,2.0,0.5,2008
 Manish Parashar,Rutgers University,hpc,2.0,0.188034188034,2013
 Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,hpc,1.0,0.333333333333,2000
@@ -6757,6 +6757,7 @@ David Hung-Chang Du,University of Minnesota,hpc,1.0,0.5,1990
 Robert A. van de Geijn,University of Texas at Austin,hpc,1.0,0.5,1993
 Ian T. Foster,University of Chicago,hpc,2.0,0.583333333333,2006
 Xin Yuan,Florida State University,hpc,2.0,0.666666666667,2006
+David E. Irwin,University of Massachusetts Amherst,hpc,1.0,0.166666666667,2006
 Adriana Iamnitchi,University of South Florida,hpc,2.0,0.5,2006
 Jeffrey S. Chase,Duke University,hpc,1.0,0.166666666667,2006
 Lubomir Bic,University of California - Irvine,hpc,1.0,0.333333333333,1989
@@ -11151,6 +11152,7 @@ Josep Solé-Pareta,Polytechnic University of Catalonia,ops,1.0,0.2,2007
 Robert Morris,Massachusetts Institute of Technology,ops,3.0,0.95,2001
 Juliana Freire,New York University,ops,1.0,0.2,2006
 Xiaohui Gu,North Carolina State University,ops,1.0,0.25,2014
+David E. Irwin,University of Massachusetts Amherst,ops,1.0,0.166666666667,2006
 Jeffrey S. Chase,Duke University,ops,1.0,0.166666666667,2006
 Nickolai Zeldovich,Massachusetts Institute of Technology,ops,1.0,0.166666666667,2003
 Robert Morris,Massachusetts Institute of Technology,ops,1.0,0.166666666667,2003
@@ -11921,6 +11923,7 @@ Jun Li,University of Oregon,comm,1.0,0.0454545454545,2015
 Brad Karp,University College London,comm,1.0,0.333333333333,2013
 Mark Handley,University College London,comm,1.0,0.333333333333,2013
 Kannan Srinivasan,Ohio State University,comm,2.0,0.666666666667,2015
+David E. Irwin,University of Massachusetts Amherst,comm,1.0,0.25,2013
 Prashant J. Shenoy,University of Massachusetts Amherst,comm,1.0,0.25,2013
 James W. Mickens,Harvard University,comm,3.0,0.833333333333,2010
 Ramesh Govindan,University of Southern California,comm,5.0,1.21666666667,2013
@@ -22415,6 +22418,7 @@ Mark Horowitz,Stanford University,arch,2.0,0.309523809524,2000
 Satish Narayanasamy,University of Michigan,arch,2.0,0.45,2013
 Ronald G. Dreslinski,University of Michigan,arch,1.0,0.25,2013
 Paolo Ienne,EPFL,arch,1.0,0.111111111111,2015
+David E. Irwin,University of Massachusetts Amherst,arch,1.0,0.25,2006
 Jeffrey S. Chase,Duke University,arch,1.0,0.25,2006
 Pen-Chung Yew,University of Minnesota,arch,1.0,0.333333333333,1990
 Hyesoon Kim,Georgia Institute of Technology,arch,1.0,0.166666666667,2007
@@ -22747,6 +22751,7 @@ Eyal de Lara,University of Toronto,ops,1.0,0.125,2009
 Michael Brudno,University of Toronto,ops,1.0,0.125,2009
 Mahadev Satyanarayanan,Carnegie Mellon University,ops,1.0,0.125,2009
 Xin He,University at Buffalo,ops,1.0,0.2,2016
+David E. Irwin,University of Massachusetts Amherst,ops,1.0,0.2,2016
 Prashant J. Shenoy,University of Massachusetts Amherst,ops,1.0,0.2,2016
 Willy Zwaenepoel,EPFL,ops,1.0,0.5,2010
 Joseph Devietti,University of Pennsylvania,ops,1.0,0.333333333333,2015
@@ -22806,6 +22811,7 @@ Tadayoshi Kohno,University of Washington,ops,1.0,0.2,2011
 Henry M. Levy,University of Washington,ops,1.0,0.2,2011
 Eno Thereska,Imperial College London,ops,1.0,0.333333333333,2011
 Alan L. Cox,Rice University,ops,1.0,0.333333333333,2007
+David E. Irwin,University of Massachusetts Amherst,ops,1.0,0.2,2015
 Prashant J. Shenoy,University of Massachusetts Amherst,ops,1.0,0.2,2015
 George Candea,EPFL,ops,2.0,0.75,2012
 Rupak Majumdar,Max Planck Institute,ops,1.0,0.25,2012
@@ -29552,6 +29558,7 @@ Marty Humphrey,University of Virginia,hpc,1.0,0.2,2010
 Xin He,University at Buffalo,hpc,1.0,0.25,2015
 Prashant J. Shenoy,University of Massachusetts Amherst,hpc,1.0,0.25,2015
 Ramesh K. Sitaraman,University of Massachusetts Amherst,hpc,2.0,0.583333333333,2015
+David E. Irwin,University of Massachusetts Amherst,hpc,1.0,0.25,2015
 Peter A. Dinda,Northwestern University,hpc,2.0,0.666666666667,2004
 Thu D. Nguyen,Rutgers University,hpc,1.0,0.5,2001
 Simon Delamare,Ecole Normale Superieure de Lyon,hpc,1.0,0.25,2012
@@ -29645,6 +29652,7 @@ Jaideep Srivastava,University of Minnesota,hpc,1.0,0.5,1997
 Tevfik Kosar,University at Buffalo,hpc,1.0,0.166666666667,2010
 Paul T. Groth,VU Amsterdam,hpc,1.0,0.166666666667,2005
 Jeffrey S. Chase,Duke University,hpc,1.0,0.2,2003
+David E. Irwin,University of Massachusetts Amherst,hpc,1.0,0.2,2003
 Geoffrey C. Fox,Indiana University,hpc,1.0,0.5,1997
 Laxmikant V. Kalé,University of Illinois at Urbana-Champaign,hpc,1.0,0.5,2007
 Mun Choon Chan,National University of Singapore,hpc,1.0,0.333333333333,1996
@@ -29755,6 +29763,7 @@ David W. Petr,University of Kansas,hpc,1.0,0.1,1995
 Alok N. Choudhary,Northwestern University,hpc,1.0,0.2,2006
 Abhishek Chandra,University of Minnesota,hpc,1.0,0.25,2007
 Jon B. Weissman,University of Minnesota,hpc,1.0,0.25,2007
+David E. Irwin,University of Massachusetts Amherst,hpc,1.0,0.333333333333,2004
 Wolfgang Lehner,TU Dresden,hpc,1.0,0.333333333333,2010
 Randal C. Burns,Johns Hopkins University,hpc,1.0,0.5,2005
 Michael J. Feeley,University of British Columbia,hpc,1.0,0.333333333333,1999
@@ -45351,6 +45360,7 @@ Joseph Devietti,University of Pennsylvania,arch,1.0,0.25,2009
 Mark Oskin,University of Washington,arch,1.0,0.25,2009
 Monica S. Lam,Stanford University,arch,1.0,0.333333333333,1991
 David I. August,Princeton University,arch,1.0,0.2,2013
+David E. Irwin,University of Massachusetts Amherst,arch,1.0,0.25,2011
 Prashant J. Shenoy,University of Massachusetts Amherst,arch,1.0,0.25,2011
 Keshav Pingali,University of Texas at Austin,arch,1.0,0.5,1992
 Guoliang Jin,North Carolina State University,arch,1.0,0.166666666667,2016
