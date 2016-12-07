@@ -21,8 +21,12 @@ update-dblp:
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv
-	@echo "Rebuilding home pages."
-	@python util/make-web-pages.py homepages.csv
+	@echo "Rebuilding home pages (homepages.csv)."
+	@python util/make-web-pages.py
+	@echo "Cleaning home pages."
+	@python util/clean-web-pages.py
+	@mv homepages-sorted.csv homepages.csv
+	@echo "Done."
 
 fix-affiliations: faculty-affiliations.csv
 	@echo "Updating affiliations."
