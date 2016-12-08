@@ -33,21 +33,18 @@ with open("homepages.csv", mode='a') as outfile:
                 continue
         n1 = name
         name = name.decode('utf8')
-        # str = urllib2.quote(n1 + ' ' + facultydict[n1], safe='')
-        # The URL to do an I'm Feeling Lucky search.
-        # passedurl = "http://www.google.com/search?id=gbqfbb&btnI&q=" + str
-        # passedurl = "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&gfns=1&q=" + str
-        # passedurl = "https://duckduckgo.com/?q=!ducky+" + str
-        # passedurl = "http://www.google.com/search?btnI=I%27m+Feeling+Lucky&ie=UTF-8&oe=UTF-8&q=" + str
-        h = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)' }
-        
-        # Identify the actual URL we get redirected to.
-        #  actualURL = requests.head(passedurl, timeout=1000.0 , headers=h).headers.get('location', passedurl)
-
         # Grab first result from Google search.
         str = n1 + ' ' + facultydict[n1]
         results = google.search(str, stop=1)
-        actualURL = results.next()
+        actualURL = "FIXME"
+        # Trim out LinkedIn and RateMyProfessors site....
+        for url in results:
+            actualURL = url
+            match = re.search('ratemyprofessors.com', url)
+            if (match == None):
+                match = re.search('linkedin.com', url)
+                if (match == None):
+                    break
                         
         # Output the name and this resolved URL.
         match = re.search('www.google.com', actualURL)
