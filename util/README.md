@@ -30,3 +30,9 @@ used to assist manual curation of the databases.
   and for each line, outputs the best matches found in the on-line
   DBLP database.
 
+* generate-aliases.py
+
+  Mines the DBLP file for author aliases. The generated file is
+  currently manually sorted and combined with the existing
+  `dblp-aliases.csv` file, which also contains manually-added aliases
+  not present in DBLP.
