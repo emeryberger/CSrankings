@@ -530,7 +530,7 @@ var CSRankings = (function () {
     /* Build drop down for faculty names and paper counts. */
     CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
         var univtext = {};
-        var _loop_1 = function(dept) {
+        var _loop_1 = function (dept) {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
             }
@@ -543,7 +543,7 @@ var CSRankings = (function () {
             }
             var keys = Object.keys(fc);
             keys.sort(function (a, b) { return fc[b] - fc[a]; });
-            var _loop_2 = function(name_5) {
+            var _loop_2 = function (name_5) {
                 if (CSRankings.showCoauthors) {
                     /* Build up text for co-authors. */
                     var coauthorStr_1 = "";
@@ -646,7 +646,7 @@ var CSRankings = (function () {
                     }
                 }
                 s += "\n<tr><td>" + rank + "</td>";
-                s += "<font color=\"blue\"><td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
+                s += "<td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
                 s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
                     + escape(dept)
                     + "')\" class=\"hovertip\" id=\""
@@ -745,11 +745,11 @@ var CSRankings = (function () {
         var widget = document.getElementById(dept + "-widget");
         if (e.style.display === 'block') {
             e.style.display = 'none';
-            widget.innerHTML = CSRankings.RightTriangle;
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
         }
         else {
             e.style.display = 'block';
-            widget.innerHTML = CSRankings.DownTriangle;
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
         }
     };
     CSRankings.activateAll = function (value) {
@@ -792,74 +792,74 @@ var CSRankings = (function () {
     CSRankings.deactivateOthers = function () {
         return CSRankings.activateOthers(false);
     };
-    CSRankings.coauthorFile = "faculty-coauthors.csv";
-    CSRankings.authorinfoFile = "generated-author-info.csv";
-    CSRankings.countryinfoFile = "country-info.csv";
-    CSRankings.aliasFile = "dblp-aliases.csv";
-    CSRankings.homepagesFile = "homepages.csv";
-    CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-    CSRankings.showCoauthors = false;
-    CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
-    CSRankings.areaMap = [{ area: "ai", title: "AI" },
-        { area: "vision", title: "Vision" },
-        { area: "mlmining", title: "ML" },
-        { area: "nlp", title: "NLP" },
-        { area: "ir", title: "Web & IR" },
-        { area: "arch", title: "Arch" },
-        { area: "comm", title: "Networks" },
-        { area: "sec", title: "Security" },
-        { area: "mod", title: "DB" },
-        { area: "hpc", title: "HPC" },
-        { area: "mobile", title: "Mobile" },
-        { area: "metrics", title: "Metrics" },
-        { area: "ops", title: "OS" },
-        { area: "plan", title: "PL" },
-        { area: "soft", title: "SE" },
-        { area: "act", title: "Theory" },
-        { area: "crypt", title: "Crypto" },
-        { area: "log", title: "Logic" },
-        { area: "graph", title: "Graphics" },
-        { area: "chi", title: "HCI" },
-        { area: "robotics", title: "Robotics" },
-        { area: "bio", title: "Comp. Biology" },
-        { area: "da", title: "Design Automation" },
-        { area: "bed", title: "Embedded Systems" }];
-    CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-    CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
-    CSRankings.theoryAreas = ["act", "crypt", "log"];
-    CSRankings.otherAreas = ["graph", "chi", "robotics", "bio"];
-    CSRankings.areas = [];
-    CSRankings.areaNames = [];
-    CSRankings.fields = [];
-    CSRankings.aiFields = [];
-    CSRankings.systemsFields = [];
-    CSRankings.theoryFields = [];
-    CSRankings.otherFields = [];
-    /* Map area to its name (from areaNames). */
-    CSRankings.areaDict = {};
-    /* Map area to its position in the list. */
-    CSRankings.areaPosition = {};
-    /* Map aliases to canonical author name. */
-    CSRankings.aliases = {};
-    /* Map institution to (non-US) region. */
-    CSRankings.countryInfo = {};
-    /* Map name to home page. */
-    CSRankings.homepages = {};
-    /* Set to true for "dense rankings" vs. "competition rankings". */
-    CSRankings.useDenseRankings = false;
-    /* The data which will hold the parsed CSV of author info. */
-    CSRankings.authors = [];
-    /* The data which will hold the parsed CSV of co-author info. */
-    CSRankings.coauthors = [];
-    /* Map authors to the areas they have published in (for pie chart display). */
-    CSRankings.authorAreas = {};
-    /* Colors for all areas. */
-    CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
-    CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
-    CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-    CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
     return CSRankings;
 }());
+CSRankings.coauthorFile = "faculty-coauthors.csv";
+CSRankings.authorinfoFile = "generated-author-info.csv";
+CSRankings.countryinfoFile = "country-info.csv";
+CSRankings.aliasFile = "dblp-aliases.csv";
+CSRankings.homepagesFile = "homepages.csv";
+CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
+CSRankings.showCoauthors = false;
+CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
+CSRankings.areaMap = [{ area: "ai", title: "AI" },
+    { area: "vision", title: "Vision" },
+    { area: "mlmining", title: "ML" },
+    { area: "nlp", title: "NLP" },
+    { area: "ir", title: "Web & IR" },
+    { area: "arch", title: "Arch" },
+    { area: "comm", title: "Networks" },
+    { area: "sec", title: "Security" },
+    { area: "mod", title: "DB" },
+    { area: "hpc", title: "HPC" },
+    { area: "mobile", title: "Mobile" },
+    { area: "metrics", title: "Metrics" },
+    { area: "ops", title: "OS" },
+    { area: "plan", title: "PL" },
+    { area: "soft", title: "SE" },
+    { area: "act", title: "Theory" },
+    { area: "crypt", title: "Crypto" },
+    { area: "log", title: "Logic" },
+    { area: "graph", title: "Graphics" },
+    { area: "chi", title: "HCI" },
+    { area: "robotics", title: "Robotics" },
+    { area: "bio", title: "Comp. Biology" },
+    { area: "da", title: "Design Automation" },
+    { area: "bed", title: "Embedded Systems" }];
+CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+CSRankings.theoryAreas = ["act", "crypt", "log"];
+CSRankings.otherAreas = ["graph", "chi", "robotics", "bio"];
+CSRankings.areas = [];
+CSRankings.areaNames = [];
+CSRankings.fields = [];
+CSRankings.aiFields = [];
+CSRankings.systemsFields = [];
+CSRankings.theoryFields = [];
+CSRankings.otherFields = [];
+/* Map area to its name (from areaNames). */
+CSRankings.areaDict = {};
+/* Map area to its position in the list. */
+CSRankings.areaPosition = {};
+/* Map aliases to canonical author name. */
+CSRankings.aliases = {};
+/* Map institution to (non-US) region. */
+CSRankings.countryInfo = {};
+/* Map name to home page. */
+CSRankings.homepages = {};
+/* Set to true for "dense rankings" vs. "competition rankings". */
+CSRankings.useDenseRankings = false;
+/* The data which will hold the parsed CSV of author info. */
+CSRankings.authors = [];
+/* The data which will hold the parsed CSV of co-author info. */
+CSRankings.coauthors = [];
+/* Map authors to the areas they have published in (for pie chart display). */
+CSRankings.authorAreas = {};
+/* Colors for all areas. */
+CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
+CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
 function init() {
     new CSRankings();
 }

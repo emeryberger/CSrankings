@@ -824,7 +824,7 @@ class CSRankings {
 		    }
 		}
 		s += "\n<tr><td>" + rank + "</td>";
-		s += "<font color=\"blue\"><td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
+		s += "<td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
 		s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
 		    + escape(dept)
 		    + "')\" class=\"hovertip\" id=\""
@@ -969,10 +969,10 @@ class CSRankings {
 	const widget = document.getElementById(dept+"-widget");
 	if (e!.style.display === 'block') {
 	    e!.style.display = 'none';
-	    widget!.innerHTML = CSRankings.RightTriangle;
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
 	} else {
 	    e!.style.display = 'block';
-	    widget!.innerHTML = CSRankings.DownTriangle;
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
 	}
     }
 
