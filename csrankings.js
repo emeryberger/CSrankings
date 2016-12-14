@@ -586,7 +586,12 @@ var CSRankings = (function () {
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + CSRankings.translateNameToDBLP(name_5) + '">'
+                    + CSRankings.translateNameToDBLP(name_5)
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + CSRankings.translateNameToDBLP(name_5)
+                    + '\'); return false;"'
+                    + '>'
                     + facultycount[name_5 + dept]
                     + '</a>'
                     + "</small></td>"
