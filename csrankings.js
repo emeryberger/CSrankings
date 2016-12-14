@@ -573,8 +573,11 @@ var CSRankings = (function () {
                 }
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
                     + '<a title="Click for author\'s home page." target="_blank" href="'
+                    + encodeURI(CSRankings.homepages[name_5]) + '" '
+                    + 'onclick="trackOutboundLink(\''
                     + encodeURI(CSRankings.homepages[name_5])
-                    + '">'
+                    + '\'); return false;"'
+                    + '>'
                     + name_5
                     + '</a>&nbsp;'
                     + "<span onclick=\"CSRankings.toggleChart('"

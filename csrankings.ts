@@ -748,8 +748,11 @@ class CSRankings {
 
 		p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		    + '<a title="Click for author\'s home page." target="_blank" href="'
+		    + encodeURI(CSRankings.homepages[name]) + '" '
+		    + 'onclick="trackOutboundLink(\''
 		    + encodeURI(CSRankings.homepages[name])
-		    + '">' 
+		    + '\'); return false;"'
+		    + '>' 
 		    + name
 		    + '</a>&nbsp;'
 		    + "<span onclick=\"CSRankings.toggleChart('"
