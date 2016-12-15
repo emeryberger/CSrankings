@@ -1,8 +1,8 @@
-TARGETS = csrankings.js generated-author-info.csv homepages.csv
+TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages fix-affiliations
 
-all: $(TARGETS)
+all: | $(TARGETS) fix-affiliations home-pages 
 
 clean:
 	rm $(TARGETS)
