@@ -51,19 +51,26 @@ with open("homepages.csv", mode="a") as outfile:
                         
         # Output the name and this resolved URL.
         match = re.search('www.google.com', actualURL)
-        name = name.encode('utf8')
-        if (match == None):
-            # Not a google link.
-            print(name + "," + actualURL)
-            outfile.write(name + "," + actualURL + "\n")
-        else:
-            if (not (name in homepages)):
-                # It's a new name, what are you gonna do (even if it is a
-                # Google link, include it).
+        name = name.encode('utf-8')
+        try:
+            if (match == None):
+                # Not a google link.
                 print(name + "," + actualURL)
                 outfile.write(name + "," + actualURL + "\n")
             else:
-                print("Lookup failed for "+name+" -- found "+actualURL)
+                if (not (name in homepages)):
+                    # It's a new name, what are you gonna do (even if it is a
+                    # Google link, include it).
+                    print(name + "," + actualURL)
+                    outfile.write(name + "," + actualURL + "\n")
+                else:
+                    print("Lookup failed for "+name+" -- found "+actualURL)
+        except UnicodeDecodeError as err:
+            print("Unicode error: {0}".format(err))
+            print("Lookup failed for "+name)
+            print("Decode = "+name.decode('utf8'))
+            print("URL = "+actualURL)
+        
         sys.stdout.flush()
         # Throttle lookups to avoid getting cut off by Google.
         sleep(2.0)
