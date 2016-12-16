@@ -22,7 +22,7 @@ def makegraph(institution,fname):
                             coauth = aliases[coauth]
                         if coauth in affiliation:
                             if affiliation[coauth] == institution:
-                                if not author+coauth in edges:
+                                if not (author+coauth) in edges:
                                     dot.edge(author,coauth)
                                     # print author + " -- " + coauth
                                     edges[author+coauth] = True
@@ -47,15 +47,25 @@ coauthors = {}
 with open('faculty-coauthors.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        if not coauthors.has_key(row['author']):
-            coauthors[row['author']] = []
-        coauthors[row['author']].append(row['coauthor'])
+        author = row['author']
+        coauthor = row['coauthor']
+        author = author.decode('utf8')
+        coauthor = coauthor.decode('utf8')
+        if not coauthors.has_key(author):
+            coauthors[author] = []
+        coauthors[author].append(coauthor)
+        if not coauthors.has_key(coauthor):
+            coauthors[coauthor] = []
+        coauthors[coauthor].append(author)
         
 coauthordict = csv2dict_str_str('faculty-coauthors.csv')
 aliases = csv2dict_str_str('dblp-aliases.csv')
 
 # print "}"
 
-institution = "University of Massachusetts Amherst"
-makegraph(institution,'umass')
+#institution = "University of Massachusetts Amherst"
+#makegraph(institution,'umass')
+
+institution = "ETH Zurich"
+makegraph(institution,'eth')
 
