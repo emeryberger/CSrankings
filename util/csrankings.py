@@ -54,35 +54,55 @@ def pagecount(input):
 
     
 areadict = {
+    #
     # Max three most selective venues per area for now.
+    #
+    # SIGPLAN
     'plan' : ['POPL', 'PLDI'], # , 'OOPSLA'],
+    # SIGHPC
     'hpc' : ['SC', 'HPDC', 'ICS'],
+    # SIGLOG
     'log' : ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
+    # SIGSOFT
     'soft' : ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
+    # SIGOPS
+    # - OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
     'ops' : ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
-     # note: OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
+    # SIGARCH
     'arch' : ['ISCA', 'MICRO', 'ASPLOS'],
+    # SIGACT
     'act' : ['STOC', 'FOCS','SODA'],
+    # SIGCOMM
     'comm' : ['SIGCOMM', 'INFOCOM', 'NSDI'],
+    # SIGSAC
+    # - USENIX Security listed twice to reflect variants in DBLP
     'sec' : ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],
-    # USENIX Security listed twice to reflect variants in DBLP
     'mlmining' : ['NIPS', 'ICML','KDD'],
     'ai' : ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
     'mod' : ['VLDB', 'PVLDB', 'SIGMOD Conference'],
+    # SIGGRAPH
     'graph' : ['ACM Trans. Graph.', 'SIGGRAPH'],
+    # SIGMETRICS
+    # - Two variants for each, as in DBLP.
     'metrics' : ['SIGMETRICS','SIGMETRICS/Performance','IMC','Internet Measurement Conference'],
-    # Two variants for each, as in DBLP.
+    # SIGIR
     'ir' : ['WWW', 'SIGIR'],
+    # SIGCHI
     'chi' : ['CHI','UbiComp','Ubicomp','UIST'],
+    # SIGDAT
     'nlp' : ['EMNLP','ACL','ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL'],
     'vision' : ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+    # SIGMOBILE
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
     'crypt' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
+    # SIGBio
+    # - see below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
     'bio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
-    # See below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
+    # SIGDA
     'da' : ['ICCAD', 'DAC'],
+    # SIGBED
     'bed' : ['RTSS', 'RTAS', 'EMSOFT']
 }
 
