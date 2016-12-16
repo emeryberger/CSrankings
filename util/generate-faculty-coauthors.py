@@ -1,5 +1,7 @@
 from csrankings import *
 
+authorPaperCountThreshold = 0
+
 def parseDBLP(facultydict):
     coauthors = {}
     papersWritten = {}
@@ -107,8 +109,9 @@ def parseDBLP(facultydict):
                         if (authorName in facultydict):
                             for coauth in coauthorsList:
                                 if (coauth != authorName):
-                                    coauthors[authorName][(year,areaname)].add(coauth)
-                                    coauthors[coauth][(year,areaname)].add(authorName)
+                                    if (coauth in facultydict):
+                                        coauthors[authorName][(year,areaname)].add(coauth)
+                                        coauthors[coauth][(year,areaname)].add(authorName)
 
     o = open('faculty-coauthors.csv', 'w')
     o.write('"author","coauthor","year","area"\n')
