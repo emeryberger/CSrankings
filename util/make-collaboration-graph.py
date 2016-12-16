@@ -63,9 +63,6 @@ aliases = csv2dict_str_str('dblp-aliases.csv')
 
 # print "}"
 
-#institution = "University of Massachusetts Amherst"
-#makegraph(institution,'umass')
-
-institution = "ETH Zurich"
-makegraph(institution,'eth')
+institution = "University of Massachusetts Amherst"
+makegraph(institution,'umass')
 
