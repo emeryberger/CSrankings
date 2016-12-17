@@ -154,7 +154,7 @@ arealist = areadict.keys();
 
 # Consider pubs in this range only.
 startyear = 1970
-endyear   = 2016
+endyear   = 2269
 
 def csv2dict_str_str(fname):
     with open(fname, mode='r') as infile:
