@@ -1,7 +1,8 @@
 from csrankings import *
 from graphviz import *
-
 import csv
+#import networkx as nx
+#import matplotlib.pyplot as plt
 
 aicolor = "#32CD32"     # limegreen
 syscolor = "#0000ff"    # blue
@@ -40,7 +41,8 @@ areaList = [ { "area" : "ai", "title" : "AI" },
 
 def makegraph(institution,fname):
     edges = {}
-    dot = Graph(comment=institution)
+    dot = Graph(comment=institution,engine='circo')
+    # graph = nx.Graph()
 
     for author in pubs:
         if author in aliases:
@@ -51,6 +53,7 @@ def makegraph(institution,fname):
                 continue
             if not author in coauthors:
                 dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+                # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
                 continue
             foundOne = False
             for coauth in coauthors[author]:
@@ -61,6 +64,7 @@ def makegraph(institution,fname):
                         foundOne = True
                         if not (author+coauth) in edges:
                             dot.edge(author.decode('utf8'),coauth.decode('utf8'))
+                            # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
                         dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                         if not coauth in pubs:
                             # Not in DB
@@ -71,9 +75,21 @@ def makegraph(institution,fname):
             if not foundOne:
                 # Had co-authors but not at this institution.
                 dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+                # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
 
-    dot.render(fname,view=True)
-
+    dot.render(fname)
+    # print(dot.source.encode('utf8'))
+    
+    # pos = nx.nx_agraph.graphviz_layout(graph)
+    #pos = nx.spring_layout(graph,iterations=20)
+    #nx.draw_networkx_edges(graph,pos)
+    #nx.draw_networkx_nodes(graph,pos)
+    #nx.draw_networkx_labels(graph,pos)
+    #plt.axis('off')
+    # plt.rcParams['text.usetex'] = False
+    #plt.figure(figsize=(16,16))
+    #plt.savefig("test.png",dpi=300)
+    #plt.show()
 
 # name,affiliation
 facultydict = {}
@@ -160,5 +176,31 @@ for author in maxareas:
     authorColor[author] = areaColor[maxareas[author]]
 
         
-institution = "University of Massachusetts Amherst"
-makegraph(institution,'umass')
+#institution = "University of Massachusetts Amherst"
+#makegraph(institution,'umass')
+#institution = "University of Washington"
+#makegraph(institution,'washington')
+#institution = "University of Texas at Austin"
+#makegraph(institution,'texas')
+#institution = "University of California - San Diego"
+#makegraph(institution,'ucsd')
+institution = "University of Illinois at Urbana-Champaign"
+#makegraph(institution,'uiuc')
+#institution = "Purdue University"
+#makegraph(institution,'purdue')
+#institution = "Cornell University"
+#makegraph(institution,'cornell')
+institution = "Carnegie Mellon University"
+#makegraph(institution,'cmu')
+#institution = "Princeton University"
+#makegraph(institution,'princeton')
+institution = "California Institute of Technology"
+#makegraph(institution,'caltech')
+#institution = "Harvard University"
+#makegraph(institution,'harvard')
+#institution = "Yale University"
+#makegraph(institution,'yale')
+#institution = "University of California - Berkeley"
+#makegraph(institution,'berkeley')
+#institution = "Stanford University"
+#makegraph(institution,'stanford')
