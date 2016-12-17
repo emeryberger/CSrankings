@@ -42,32 +42,36 @@ def makegraph(institution,fname):
     edges = {}
     dot = Graph(comment=institution)
 
-    # print "graph umass { "
-
-    for author in facultydict:
+    for author in pubs:
         if author in aliases:
             author = aliases[author]
         if facultydict[author] == institution:
-            print author
-            if not author in authorColor:
+            if not author in facultydict:
+                # Not in DB.
                 continue
             if not author in coauthors:
-                dot.node(author.encode('utf8'),color=authorColor[author],style="filled")
+                dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                 continue
+            foundOne = False
             for coauth in coauthors[author]:
                 if coauth in aliases:
                     coauth = aliases[coauth]
                 if coauth in facultydict:
                     if facultydict[coauth] == institution:
+                        foundOne = True
                         if not (author+coauth) in edges:
                             dot.edge(author.decode('utf8'),coauth.decode('utf8'))
                         dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+                        if not coauth in pubs:
+                            # Not in DB
+                            continue
                         dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
-                        # print author + " -- " + coauth
                         edges[author+coauth] = True
                         edges[coauth+author] = True
+            if not foundOne:
+                # Had co-authors but not at this institution.
+                dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
 
-    # print(dot.source)
     dot.render(fname,view=True)
 
 
@@ -90,9 +94,9 @@ with open('faculty-coauthors.csv', 'rb') as csvfile:
         if not coauthors.has_key(author):
             coauthors[author] = []
         coauthors[author].append(coauthor)
-        if not coauthors.has_key(coauthor):
-            coauthors[coauthor] = []
-        coauthors[coauthor].append(author)
+        #if not coauthors.has_key(coauthor):
+        #    coauthors[coauthor] = []
+        #coauthors[coauthor].append(author)
 
 # alias,name
 aliases = {}
@@ -128,7 +132,8 @@ with open('generated-author-info.csv') as csvfile:
     for row in reader:
         author = row['name'].strip()
         area = row['area'].strip()
-        # author = author.decode('utf8')
+        if author in aliases:
+            author = aliases[author]
         if not author in pubs:
             pubs[author] = {}
         if not area in pubs[author]:
@@ -152,11 +157,8 @@ for author in pubs:
 authorColor = {}
 
 for author in maxareas:
-    # print maxareas[author]
     authorColor[author] = areaColor[maxareas[author]]
 
         
-# print "}"
-
 institution = "University of Massachusetts Amherst"
 makegraph(institution,'umass')
