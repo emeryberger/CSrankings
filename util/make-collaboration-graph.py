@@ -4,6 +4,9 @@ import csv
 #import networkx as nx
 #import matplotlib.pyplot as plt
 
+startyear = 2006
+endyear = 2016
+
 aicolor = "#32CD32"     # limegreen
 syscolor = "#0000ff"    # blue
 theorycolor = "#ffff00" # yellow
@@ -39,15 +42,20 @@ areaList = [ { "area" : "ai", "title" : "AI" },
 	    { "area" : "bed", "title" : "Embedded Systems" } ]
 
 
-def makegraph(institution,fname):
+def makegraph(institution,fname,dir):
+    sumdegree = 0
+    sumnodes = 0
+    maxdegree = 0
     edges = {}
     dot = Graph(comment=institution,engine='circo')
     # graph = nx.Graph()
 
     for author in pubs:
+        degree = 0
         if author in aliases:
             author = aliases[author]
         if facultydict[author] == institution:
+            sumnodes += 1
             if not author in facultydict:
                 # Not in DB.
                 continue
@@ -63,6 +71,10 @@ def makegraph(institution,fname):
                     if facultydict[coauth] == institution:
                         foundOne = True
                         if not (author+coauth) in edges:
+                            degree += 1
+                            sumdegree += 1
+                            if degree > maxdegree:
+                                maxdegree = degree
                             dot.edge(author.decode('utf8'),coauth.decode('utf8'))
                             # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
                         dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
@@ -77,7 +89,11 @@ def makegraph(institution,fname):
                 dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                 # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
 
-    dot.render(fname)
+    dot.render(dir+fname)
+    print "Nodes = " + str(sumnodes)
+    print "Degree = " + str(sumdegree)
+    print "Max degree = " + str(maxdegree)
+    print "Average degree = " + str(float(sumdegree)/float(sumnodes))
     # print(dot.source.encode('utf8'))
     
     # pos = nx.nx_agraph.graphviz_layout(graph)
@@ -100,6 +116,11 @@ with open('faculty-affiliations.csv', 'rb') as csvfile:
         aff = row['affiliation'].strip()
         facultydict[name] = aff
 
+institutions = {}
+for name in facultydict:
+    if not facultydict[name] in institutions:
+        institutions[facultydict[name]] = True
+        
 # author,coauthor,year,area
 coauthors = {}
 with open('faculty-coauthors.csv', 'rb') as csvfile:
@@ -129,7 +150,7 @@ color = {}
 i = 0
 for c in colorList:
     color[i] = c
-    i = i + 1
+    i += 1
 
 # areaColor: area name -> color
 areaColor = {}
@@ -137,7 +158,7 @@ i = 0
 for a in areaList:
     areaName = a['area']
     areaColor[areaName] = color[i]
-    i = i + 1
+    i += 1
 
 pubs = {}
 
@@ -148,13 +169,16 @@ with open('generated-author-info.csv') as csvfile:
     for row in reader:
         author = row['name'].strip()
         area = row['area'].strip()
+        year = int(row['year'].strip())
+        if year < startyear or year > endyear:
+            continue
         if author in aliases:
             author = aliases[author]
         if not author in pubs:
             pubs[author] = {}
         if not area in pubs[author]:
             pubs[author][area] = 0
-        pubs[author][area] = pubs[author][area] + 1
+        pubs[author][area] += 1
 
 # Compute color for each author.
 # First, find max area for each author.
@@ -175,26 +199,32 @@ authorColor = {}
 for author in maxareas:
     authorColor[author] = areaColor[maxareas[author]]
 
-        
+
+dir = "graphs/"
+
+for institution in institutions:
+    print institution
+    makegraph(institution,institution+"-graph",dir)
+    
 #institution = "University of Massachusetts Amherst"
-#makegraph(institution,'umass')
+#makegraph(institution,'umass',dir)
 #institution = "University of Washington"
 #makegraph(institution,'washington')
 #institution = "University of Texas at Austin"
 #makegraph(institution,'texas')
 #institution = "University of California - San Diego"
 #makegraph(institution,'ucsd')
-institution = "University of Illinois at Urbana-Champaign"
+#institution = "University of Illinois at Urbana-Champaign"
 #makegraph(institution,'uiuc')
 #institution = "Purdue University"
 #makegraph(institution,'purdue')
 #institution = "Cornell University"
 #makegraph(institution,'cornell')
-institution = "Carnegie Mellon University"
+#institution = "Carnegie Mellon University"
 #makegraph(institution,'cmu')
 #institution = "Princeton University"
 #makegraph(institution,'princeton')
-institution = "California Institute of Technology"
+#institution = "California Institute of Technology"
 #makegraph(institution,'caltech')
 #institution = "Harvard University"
 #makegraph(institution,'harvard')
