@@ -96,7 +96,7 @@ areadict = {
     # SIGMOBILE
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','ICRA (1)', 'ICRA (2)', 'IROS','Robotics: Science and Systems'],
-    'crypt' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)'],
+    'crypt' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     # SIGBio
     # - see below for ad hoc handling for ISMB proceedings in Bioinformatics special issues.
     'bio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
