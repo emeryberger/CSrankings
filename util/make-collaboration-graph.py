@@ -11,8 +11,9 @@ aicolor = "#32CD32"     # limegreen
 syscolor = "#0000ff"    # blue
 theorycolor = "#ffff00" # yellow
 intercolor = "#ffc0cb"  # pink
+nacolor = "#00FFFF"     # cyan
 
-colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor ]
+colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, nacolor ]
 
 # colorList = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41" ]
 
@@ -39,7 +40,9 @@ areaList = [ { "area" : "ai", "title" : "AI" },
 	    { "area" : "robotics", "title" : "Robotics" },
 	    { "area" : "bio", "title" : "Comp. Biology" },
 	    { "area" : "da", "title" : "Design Automation" },
-	    { "area" : "bed", "title" : "Embedded Systems" } ]
+             { "area" : "bed", "title" : "Embedded Systems" },
+            { "area" : "na", "title" : "Other" }
+]
 
 
 def makegraph(institution,fname,dir):
@@ -121,20 +124,6 @@ for name in facultydict:
     if not facultydict[name] in institutions:
         institutions[facultydict[name]] = True
         
-# author,coauthor,year,area
-coauthors = {}
-with open('faculty-coauthors.csv', 'rb') as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-        author = row['author'].strip()
-        coauthor = row['coauthor'].strip()
-        if not coauthors.has_key(author):
-            coauthors[author] = []
-        coauthors[author].append(coauthor)
-        #if not coauthors.has_key(coauthor):
-        #    coauthors[coauthor] = []
-        #coauthors[coauthor].append(author)
-
 # alias,name
 aliases = {}
 with open('dblp-aliases.csv','rb') as csvfile:
@@ -143,6 +132,28 @@ with open('dblp-aliases.csv','rb') as csvfile:
         alias = row['alias'].strip()
         name = row['name'].strip()
         aliases[alias] = name
+
+
+# author,coauthor,year,area
+coauthors = {}
+with open('faculty-coauthors.csv', 'rb') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        year = int(row['year'].strip())
+        if year < startyear or year > endyear:
+            continue
+        author = row['author'].strip()
+        if author in aliases:
+            author = aliases[author]
+        coauthor = row['coauthor'].strip()
+        if coauthor in aliases:
+            coauthor = aliases[coauthor]
+        if not coauthors.has_key(author):
+            coauthors[author] = []
+        coauthors[author].append(coauthor)
+        #if not coauthors.has_key(coauthor):
+        #    coauthors[coauthor] = []
+        #coauthors[coauthor].append(author)
 
 # Now build up the color mapping.
 # color: int -> color
@@ -164,7 +175,7 @@ pubs = {}
 
 # "name","dept","area","count","adjustedcount","year"
 
-with open('generated-author-info.csv') as csvfile:
+with open('all-author-info.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         author = row['name'].strip()
@@ -186,14 +197,16 @@ with open('generated-author-info.csv') as csvfile:
 maxareas = {}
 
 for author in pubs:
-    maxarea = None
+    maxarea = "na"
     maxcount = 0
     for area in pubs[author]:
+        print(area,pubs[author][area])
         if pubs[author][area] > maxcount:
-            maxarea = area
-            maxcount = pubs[author][area]
+            if not area == "na":
+                maxarea = area
+                maxcount = pubs[author][area]
     maxareas[author] = maxarea
-
+        
 authorColor = {}
 
 for author in maxareas:
@@ -205,32 +218,3 @@ dir = "graphs/"
 for institution in institutions:
     print institution
     makegraph(institution,institution+"-graph",dir)
-    
-#institution = "University of Massachusetts Amherst"
-#makegraph(institution,'umass',dir)
-#institution = "University of Washington"
-#makegraph(institution,'washington')
-#institution = "University of Texas at Austin"
-#makegraph(institution,'texas')
-#institution = "University of California - San Diego"
-#makegraph(institution,'ucsd')
-#institution = "University of Illinois at Urbana-Champaign"
-#makegraph(institution,'uiuc')
-#institution = "Purdue University"
-#makegraph(institution,'purdue')
-#institution = "Cornell University"
-#makegraph(institution,'cornell')
-#institution = "Carnegie Mellon University"
-#makegraph(institution,'cmu')
-#institution = "Princeton University"
-#makegraph(institution,'princeton')
-#institution = "California Institute of Technology"
-#makegraph(institution,'caltech')
-#institution = "Harvard University"
-#makegraph(institution,'harvard')
-#institution = "Yale University"
-#makegraph(institution,'yale')
-#institution = "University of California - Berkeley"
-#makegraph(institution,'berkeley')
-#institution = "Stanford University"
-#makegraph(institution,'stanford')
