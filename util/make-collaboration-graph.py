@@ -200,7 +200,7 @@ for author in pubs:
     maxarea = "na"
     maxcount = 0
     for area in pubs[author]:
-        print(area,pubs[author][area])
+        print (author,area,pubs[author][area])
         if pubs[author][area] > maxcount:
             if not area == "na":
                 maxarea = area
