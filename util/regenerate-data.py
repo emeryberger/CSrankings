@@ -97,21 +97,23 @@ def parseDBLP(facultydict):
                     # No year.
                     continue
                
+                # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
+                # Only skip papers with a very small paper count,
+                # but above 1. Why?
+                # DBLP has real papers with incorrect page counts
+                # - usually a truncated single page. -1 means no
+                # pages found at all => some problem with journal
+                # entries in DBLP.
                 tooFewPages = False
                 if ((pageCount != -1) and (pageCount < pageCountThreshold)):
                     tooFewPages = True
-                    exceptionConference = ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'PLDI') or (confname == 'ACM Trans. Graph.'))
+                    exceptionConference = ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'ACM Trans. Graph.'))
                     if ((pageCount == 0) and exceptionConference):
                         tooFewPages = False
-
-                    # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
-                    # Only skip papers with a very small paper count,
-                    # but above 1. Why?
-                    # DBLP has real papers with incorrect page counts
-                    # - usually a truncated single page. -1 means no
-                    # pages found at all => some problem with journal
-                    # entries in DBLP.
-                    # print "Skipping article with "+str(pageCount)+" pages."
+                    if (pageCount == 0):
+                        if (confname == 'PLDI') and (year == 2014):
+                            if (startpage != 1) and (startpage != 20) and (startpage != 41):
+                                tooFewPages = False
 
                 for child in node:
                     if child.tag == 'author':
