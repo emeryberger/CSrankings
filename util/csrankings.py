@@ -120,6 +120,21 @@ ISMB_Bioinformatics = { 2015 : (31, 12),
                         2010 : (26, 12),
                         2009 : (25, 12) }
 
+# TOG special handling to count only SIGGRAPH proceedings.
+TOG_SIGGRAPH_Volume = { 2016 : (35, 4),
+                        2015 : (34, 4),
+                        2014 : (33, 4),
+                        2013 : (32, 4),
+                        2012 : (31, 4),
+                        2011 : (30, 4),
+                        2010 : (29, 4),
+                        2009 : (28, 3),
+                        2008 : (27, 3),
+                        2007 : (26, 3),
+                        2006 : (25, 3),
+                        2005 : (24, 3),
+                        2004 : (23, 3) }
+
 # ICSE special handling to omit short papers.
 # Contributed by Zhendong Su, UC Davis.
 # Short papers start at this page number for these proceedings of ICSE (and are thus omitted,
