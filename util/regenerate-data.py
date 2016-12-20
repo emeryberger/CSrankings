@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart, ASE_LongPaperThreshold
+from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart, ASE_LongPaperThreshold, TOG_SIGGRAPH_Volume
 
 def parseDBLP(facultydict):
     authlogs = {}
@@ -82,7 +82,16 @@ def parseDBLP(facultydict):
                             # Omit papers that start at or beyond this page,
                             # since they are "short papers" (regardless of their length).
                             continue
-                
+
+                # Special handling for SIGGRAPH.
+                if (confname == 'ACM Trans. Graph.'):
+                    if TOG_SIGGRAPH_Volume.has_key(year):
+                        (vol, num) = TOG_SIGGRAPH_Volume[year]
+                        if (volume != str(vol)) or (number != str(num)):
+                            continue
+                    else:
+                        continue
+                        
                 # Special handling for ASE.
                 if (confname == 'ASE'):
                     if pageCount < ASE_LongPaperThreshold:
