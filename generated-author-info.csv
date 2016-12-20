@@ -2535,15 +2535,18 @@ Peter Bailis,Stanford University,mod,2.0,0.366666666667,2014
 Alan Fekete,University of Sydney,mod,3.0,0.616666666667,2014
 Ion Stoica,University of California - Berkeley,mod,3.0,0.491666666667,2014
 Daniel Gildea,University of Rochester,nlp,3.0,1.5,2007
-Hermann Ney,RWTH Aachen,nlp,2.0,0.833333333333,2007
+Grzegorz Kondrak,University of Alberta,nlp,3.0,1.08333333333,2009
+Hermann Ney,RWTH Aachen,nlp,3.0,1.16666666667,2007
 Martha Stone Palmer,University of Colorado Boulder,nlp,1.0,0.5,1994
 Frank Keller,University of Edinburgh,nlp,1.0,0.333333333333,2001
 James Pustejovsky,Brandeis University,nlp,2.0,2.0,1987
 Regina Barzilay,Massachusetts Institute of Technology,nlp,5.0,1.1,2014
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,3.0,0.65,2014
+Martha Stone Palmer,University of Colorado Boulder,nlp,1.0,0.25,1998
 Michael Collins,Columbia University,nlp,3.0,0.95,2004
 Jinho D. Choi,Emory University,nlp,3.0,1.08333333333,2015
 Vincent Ng,University of Texas at Dallas,nlp,2.0,1.33333333333,2010
+Andrew McCallum,University of Massachusetts Amherst,nlp,4.0,1.36666666667,2009
 David Yarowsky,Johns Hopkins University,nlp,3.0,1.5,2000
 Jun Xu,Georgia Institute of Technology,nlp,1.0,0.2,2015
 Mirella Lapata,University of Edinburgh,nlp,9.0,4.08333333333,2010
@@ -2560,14 +2563,15 @@ Julia Hockenmaier,University of Illinois at Urbana-Champaign,nlp,2.0,1.111111111
 Jackie Chi Kit Cheung,McGill University,nlp,2.0,0.583333333333,2016
 Doina Precup,McGill University,nlp,2.0,0.583333333333,2016
 Shay B. Cohen,University of Edinburgh,nlp,1.0,0.2,2012
-Michael Collins,Columbia University,nlp,1.0,0.2,2012
-Lyle H. Ungar,University of Pennsylvania,nlp,1.0,0.2,2012
+Michael Collins,Columbia University,nlp,3.0,0.65,2012
+Lyle H. Ungar,University of Pennsylvania,nlp,2.0,0.4,2012
 Heng Ji,Rensselaer Polytechnic Institute,nlp,11.0,2.15757575758,2015
 Lillian Lee,Cornell University,nlp,1.0,0.5,2004
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.333333333333,2015
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.166666666667,2016
 Hongning Wang,University of Virginia,nlp,1.0,0.25,2015
 Benjamin Van Durme,Johns Hopkins University,nlp,2.0,0.75,2008
+Eugene Charniak,Brown University,nlp,1.0,0.5,1998
 Eric P. Xing,Carnegie Mellon University,nlp,3.0,0.783333333333,2015
 David Chiang,University of Notre Dame,nlp,2.0,0.416666666667,2013
 Kevin Knight,University of Southern California,nlp,2.0,0.666666666667,2013
@@ -2584,6 +2588,7 @@ Vincent Ng,University of Texas at Dallas,nlp,7.0,2.91666666667,2014
 Mohit Bansal,University of North Carolina,nlp,8.0,2.43333333333,2016
 Mark Dredze,Johns Hopkins University,nlp,7.0,2.5,2015
 Ted Briscoe,University of Cambridge,nlp,2.0,0.833333333333,2006
+Dan Jurafsky,Stanford University,nlp,1.0,0.5,2009
 Mirella Lapata,University of Edinburgh,nlp,6.0,2.5,2016
 Regina Barzilay,Massachusetts Institute of Technology,nlp,4.0,1.25,2011
 Philipp Koehn,Johns Hopkins University,nlp,5.0,1.2,2013
@@ -2605,8 +2610,8 @@ Tom M. Mitchell,Carnegie Mellon University,nlp,3.0,1.16666666667,2011
 Nianwen Xue,Brandeis University,nlp,3.0,1.5,2014
 Julia Hirschberg,Columbia University,nlp,1.0,0.5,1996
 Grzegorz Kondrak,University of Alberta,nlp,2.0,0.833333333333,2014
-Noah A. Smith,University of Washington,nlp,1.0,0.5,2005
-Jason Eisner,Johns Hopkins University,nlp,1.0,0.5,2005
+Noah A. Smith,University of Washington,nlp,3.0,1.16666666667,2005
+Jason Eisner,Johns Hopkins University,nlp,3.0,1.33333333333,2005
 Yang Liu,University of Texas at Dallas,nlp,6.0,1.45,2015
 Sharon Goldwater,University of Edinburgh,nlp,1.0,0.333333333333,2008
 Daniel Jurafsky,Stanford University,nlp,5.0,1.91666666667,2008
@@ -2628,7 +2633,9 @@ Matthew Stone,Rutgers University,nlp,1.0,0.25,1999
 Dan Goldwasser,Purdue University,nlp,1.0,0.25,2011
 Dan Roth,University of Illinois at Urbana-Champaign,nlp,6.0,2.33333333333,2011
 Ted Briscoe,University of Cambridge,nlp,2.0,0.833333333333,2007
-Frank Keller,University of Edinburgh,nlp,1.0,0.5,2005
+Anoop Sarkar,Simon Fraser University,nlp,2.0,1.33333333333,1998
+Claire Cardie,Cornell University,nlp,1.0,0.5,1998
+Frank Keller,University of Edinburgh,nlp,2.0,0.833333333333,2005
 Chris Dyer,Carnegie Mellon University,nlp,2.0,0.416666666667,2011
 Noah A. Smith,University of Washington,nlp,8.0,2.58333333333,2011
 Percy Liang,Stanford University,nlp,2.0,1.0,2014
@@ -2652,7 +2659,9 @@ Bing Liu 0001,University of Illinois at Chicago,nlp,6.0,1.78333333333,2013
 Liang Huang,Oregon State University,nlp,1.0,0.25,2011
 David Chiang,University of Notre Dame,nlp,1.0,0.25,2011
 Kenneth Heafield,University of Edinburgh,nlp,1.0,0.333333333333,2014
-Ralph Grishman,New York University,nlp,2.0,1.0,2005
+David Chiang,University of Notre Dame,nlp,2.0,0.666666666667,2009
+Kevin Knight,University of Southern California,nlp,5.0,2.16666666667,2009
+Ralph Grishman,New York University,nlp,3.0,1.33333333333,2005
 Sharon Goldwater,University of Edinburgh,nlp,2.0,0.833333333333,2007
 Mark Steedman,University of Edinburgh,nlp,2.0,1.0,1987
 Vicente Ordonez,University of Virginia,nlp,1.0,0.2,2013
@@ -2663,8 +2672,10 @@ Hwee Tou Ng,National University of Singapore,nlp,2.0,0.666666666667,2003
 Graeme Hirst,University of Toronto,nlp,4.0,0.9,2015
 Hwee Tou Ng,National University of Singapore,nlp,5.0,2.16666666667,2011
 Eric P. Xing,Carnegie Mellon University,nlp,5.0,1.75,2016
+Vincent Ng,University of Texas at Dallas,nlp,5.0,3.0,2009
 Jordan L. Boyd-Graber,University of Colorado Boulder,nlp,1.0,0.333333333333,2011
-Eugene Charniak,Brown University,nlp,2.0,1.0,2005
+Mirella Lapata,University of Edinburgh,nlp,3.0,1.5,2009
+Eugene Charniak,Brown University,nlp,3.0,1.2,2005
 Ndapandula Nakashole,University of California - San Diego,nlp,1.0,0.333333333333,2013
 Gerhard Weikum,Max Planck Institute,nlp,1.0,0.333333333333,2013
 Benjamin Van Durme,Johns Hopkins University,nlp,8.0,1.78333333333,2015
@@ -2678,6 +2689,7 @@ Joyce Y. Chai,Michigan State University,nlp,1.0,0.25,2004
 Pengyu Hong,Brandeis University,nlp,1.0,0.25,2004
 Hermann Ney,RWTH Aachen,nlp,2.0,1.0,2000
 Claire Cardie,Cornell University,nlp,5.0,2.0,2014
+Gerald Penn,University of Toronto,nlp,1.0,1.0,1998
 Regina Barzilay,Massachusetts Institute of Technology,nlp,1.0,0.5,2001
 Kathleen McKeown,Columbia University,nlp,2.0,1.0,2001
 Chris Dyer,Carnegie Mellon University,nlp,18.0,4.62777777778,2015
@@ -2690,15 +2702,17 @@ Julia Hockenmaier,University of Illinois at Urbana-Champaign,nlp,2.0,0.833333333
 Mark Steedman,University of Edinburgh,nlp,2.0,0.833333333333,2002
 Timothy Baldwin,University of Melbourne,nlp,3.0,1.03333333333,2014
 Hwee Tou Ng,National University of Singapore,nlp,3.0,1.16666666667,2010
-Iryna Gurevych,TU Darmstadt,nlp,2.0,0.666666666667,2007
+Iryna Gurevych,TU Darmstadt,nlp,3.0,0.916666666667,2007
+Liang Huang,Oregon State University,nlp,2.0,0.666666666667,2009
 Yoshua Bengio,University of Montreal,nlp,1.0,0.333333333333,2010
+Kathleen McKeown,Columbia University,nlp,2.0,1.0,1998
 Clement T. Yu,University of Illinois at Chicago,nlp,1.0,0.2,2012
 A. Prasad Sistla,University of Illinois at Chicago,nlp,1.0,0.2,2012
 Weiyi Meng,Binghamton University,nlp,1.0,0.2,2012
 William W. Cohen,Carnegie Mellon University,nlp,5.0,1.91666666667,2015
 Andrew McCallum,University of Massachusetts Amherst,nlp,1.0,0.5,2008
 Frank Keller,University of Edinburgh,nlp,1.0,0.25,2010
-Hwee Tou Ng,National University of Singapore,nlp,3.0,1.25,2012
+Hwee Tou Ng,National University of Singapore,nlp,5.0,2.08333333333,2012
 Martha Palmer,University of Colorado Boulder,nlp,2.0,0.666666666667,2014
 Christopher Homan,Rochester Institute of Technology,nlp,1.0,0.166666666667,2016
 Henry A. Kautz,University of Rochester,nlp,1.0,0.166666666667,2016
@@ -2720,7 +2734,7 @@ Giuseppe Carenini,University of British Columbia,nlp,2.0,0.833333333333,2008
 Raymond T. Ng,University of British Columbia,nlp,1.0,0.333333333333,2008
 David Yarowsky,Johns Hopkins University,nlp,2.0,0.45,2015
 Derek Ruths,McGill University,nlp,1.0,0.333333333333,2016
-Vincent Ng,University of Texas at Dallas,nlp,2.0,1.5,2007
+Vincent Ng,University of Texas at Dallas,nlp,3.0,2.0,2007
 Benjamin Van Durme,Johns Hopkins University,nlp,8.0,2.25757575758,2013
 Martha Palmer,University of Colorado Boulder,nlp,2.0,1.0,2005
 Julia Hockenmaier,University of Illinois at Urbana-Champaign,nlp,3.0,1.66666666667,2006
@@ -2744,7 +2758,7 @@ William W. Cohen,Carnegie Mellon University,nlp,3.0,1.08333333333,2008
 Kevin Knight,University of Southern California,nlp,1.0,0.5,1995
 Sameer Singh 0001,University of California - Irvine,nlp,1.0,0.333333333333,2016
 Yejin Choi,University of Washington,nlp,5.0,1.36666666667,2016
-Hwee Tou Ng,National University of Singapore,nlp,4.0,1.53333333333,2007
+Hwee Tou Ng,National University of Singapore,nlp,6.0,2.36666666667,2007
 David Chiang,University of Notre Dame,nlp,2.0,0.833333333333,2007
 Sandra Carberry,University of Delaware,nlp,2.0,1.0,1992
 Graham Neubig,Carnegie Mellon University,nlp,3.0,0.733333333333,2015
@@ -2755,7 +2769,7 @@ Diane J. Litman,University of Pittsburgh,nlp,1.0,0.5,1995
 Kevin Knight,University of Southern California,nlp,6.0,1.78333333333,2010
 Henry S. Thompson,University of Edinburgh,nlp,1.0,0.333333333333,1991
 Ellen Riloff,University of Utah,nlp,1.0,0.333333333333,2008
-Philipp Koehn,Johns Hopkins University,nlp,1.0,0.0714285714286,2007
+Philipp Koehn,Johns Hopkins University,nlp,3.0,0.904761904762,2007
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,0.0714285714286,2007
 Chris Dyer,Carnegie Mellon University,nlp,1.0,0.0714285714286,2007
 Chitta Baral,Arizona State University,nlp,3.0,0.924242424242,2015
@@ -2766,8 +2780,10 @@ Christopher D. Manning,Stanford University,nlp,1.0,0.333333333333,2007
 Mohit Bansal,University of North Carolina,nlp,3.0,1.08333333333,2014
 Chris Dyer,Carnegie Mellon University,nlp,17.0,4.02063492063,2016
 Iryna Gurevych,TU Darmstadt,nlp,5.0,2.08333333333,2016
-Noah A. Smith,University of Washington,nlp,6.0,2.25,2012
+Noah A. Smith,University of Washington,nlp,7.0,2.45,2012
 David Chiang,University of Notre Dame,nlp,3.0,1.45,2010
+Daniel Jurafsky,Stanford University,nlp,4.0,1.16666666667,2009
+Christopher D. Manning,Stanford University,nlp,6.0,2.5,2009
 Hwee Tou Ng,National University of Singapore,nlp,3.0,1.5,2013
 Eugene Charniak,Brown University,nlp,2.0,1.0,1999
 Christina Lioma,DIKU,nlp,1.0,0.5,2006
@@ -2785,13 +2801,16 @@ David Bamman,University of California - Berkeley,nlp,2.0,0.666666666667,2014
 Noah A. Smith,University of Washington,nlp,6.0,1.78333333333,2014
 Grzegorz Kondrak,University of Alberta,nlp,1.0,0.5,2011
 Barbara Di Eugenio,University of Illinois at Chicago,nlp,1.0,0.5,2004
-Dan Klein,University of California - Berkeley,nlp,4.0,1.83333333333,2007
+Dan Klein,University of California - Berkeley,nlp,7.0,2.66666666667,2007
 James H. Martin,University of Colorado Boulder,nlp,1.0,0.2,2005
 Daniel Jurafsky,Stanford University,nlp,1.0,0.2,2005
+Jackie Chi Kit Cheung,McGill University,nlp,1.0,0.5,2009
+Gerald Penn,University of Toronto,nlp,3.0,1.16666666667,2009
 Ben Shneiderman,University of Maryland - College Park,nlp,1.0,1.0,1980
-Trevor Cohn,University of Melbourne,nlp,1.0,0.5,2007
-Mirella Lapata,University of Edinburgh,nlp,2.0,1.0,2007
+Trevor Cohn,University of Melbourne,nlp,2.0,1.0,2007
+Mirella Lapata,University of Edinburgh,nlp,5.0,2.5,2007
 Raymond J. Mooney,University of Texas at Austin,nlp,2.0,1.0,2006
+Hermann Ney,RWTH Aachen,nlp,1.0,0.25,1998
 Lillian Lee,Cornell University,nlp,2.0,0.833333333333,2014
 Noah A. Smith,University of Washington,nlp,2.0,1.0,2004
 Jason Eisner,Johns Hopkins University,nlp,1.0,0.5,2004
@@ -2804,20 +2823,21 @@ Marilyn A. Walker,University of California - Santa Cruz,nlp,1.0,0.5,2000
 Wei Xu,Ohio State University,nlp,1.0,0.2,2006
 Mohit Bansal,University of North Carolina,nlp,1.0,0.5,2010
 Anoop Sarkar,Simon Fraser University,nlp,1.0,0.5,2011
+Rebecca Hwa,University of Pittsburgh,nlp,1.0,1.0,1998
 Kathleen McKeown,Columbia University,nlp,2.0,0.833333333333,1993
 Martha E. Pollack,University of Michigan,nlp,1.0,1.0,1986
 Vincent Ng,University of Texas at Dallas,nlp,3.0,1.5,2016
 Jaime G. Carbonell,Carnegie Mellon University,nlp,2.0,0.666666666667,2013
 Lillian Lee,Cornell University,nlp,2.0,1.33333333333,1997
 Tat-Seng Chua,National University of Singapore,nlp,1.0,0.25,2016
-Mirella Lapata,University of Edinburgh,nlp,4.0,1.83333333333,2012
+Mirella Lapata,University of Edinburgh,nlp,7.0,3.33333333333,2012
 Alex Lascarides,University of Edinburgh,nlp,2.0,0.833333333333,2001
 Kathleen McKeown,Columbia University,nlp,1.0,0.5,1990
 Kathleen McKeown,Columbia University,nlp,1.0,0.5,1997
 Ani Nenkova,University of Pennsylvania,nlp,2.0,0.47619047619,2007
-Daniel Jurafsky,Stanford University,nlp,4.0,1.14285714286,2007
+Daniel Jurafsky,Stanford University,nlp,5.0,1.39285714286,2007
 Benny Kimelfeld,Technion - Israel Institute of Technology,nlp,1.0,0.333333333333,2011
-Regina Barzilay,Massachusetts Institute of Technology,nlp,4.0,1.41666666667,2007
+Regina Barzilay,Massachusetts Institute of Technology,nlp,5.0,1.75,2007
 Jon Oberlander,University of Edinburgh,nlp,1.0,0.5,2006
 Percy Liang,Stanford University,nlp,4.0,1.41666666667,2015
 Ashutosh Saxena,Cornell University,nlp,1.0,0.25,2015
@@ -2846,18 +2866,22 @@ Jiawei Han,University of Illinois at Urbana-Champaign,nlp,1.0,0.142857142857,201
 Philipp Koehn,Johns Hopkins University,nlp,1.0,0.25,2016
 Jason Eisner,Johns Hopkins University,nlp,4.0,1.25,2016
 Liang Huang,Oregon State University,nlp,1.0,0.5,2007
-Sebastian Riedel,University College London,nlp,1.0,0.333333333333,2012
-Andrew McCallum,University of Massachusetts Amherst,nlp,2.0,0.666666666667,2012
+Sebastian Riedel,University College London,nlp,3.0,1.0,2012
+Andrew McCallum,University of Massachusetts Amherst,nlp,4.0,1.33333333333,2012
 Vicente Ordonez,University of Virginia,nlp,1.0,0.2,2012
 Alexander C. Berg,University of North Carolina,nlp,2.0,0.290909090909,2012
 Tamara L. Berg,University of North Carolina,nlp,2.0,0.290909090909,2012
-Yejin Choi,University of Washington,nlp,2.0,0.290909090909,2012
+Yejin Choi,University of Washington,nlp,3.0,0.624242424242,2012
 Daniel Gildea,University of Rochester,nlp,1.0,0.5,2002
 Martha Stone Palmer,University of Colorado Boulder,nlp,1.0,0.5,2002
 Christopher D. Manning,Stanford University,nlp,7.0,2.66666666667,2016
+Kathleen F. McCoy,University of Delaware,nlp,1.0,0.5,1998
 Kevin Knight,University of Southern California,nlp,2.0,1.0,2011
 Iryna Gurevych,TU Darmstadt,nlp,2.0,1.0,2014
 Benjamin Van Durme,Johns Hopkins University,nlp,7.0,2.16666666667,2014
+Percy Liang,Stanford University,nlp,2.0,0.833333333333,2009
+Michael I. Jordan,University of California - Berkeley,nlp,1.0,0.333333333333,2009
+Dan Klein,University of California - Berkeley,nlp,9.0,3.5,2009
 Xiaoli Z. Fern,Oregon State University,nlp,1.0,0.25,2016
 Prasad Tadepalli,Oregon State University,nlp,1.0,0.25,2016
 James R. Curran,University of Sydney,nlp,3.0,0.95,2013
@@ -2869,20 +2893,24 @@ Ce Zhang,ETH Zurich,nlp,1.0,0.25,2012
 Christopher Ré,Stanford University,nlp,1.0,0.25,2012
 Jude W. Shavlik,University of Wisconsin - Madison,nlp,1.0,0.25,2012
 William Yang Wang,University of California - Santa Barbara,nlp,5.0,2.08333333333,2015
+Noah A. Smith,University of Washington,nlp,7.0,2.61666666667,2009
 Kemal Oflazer,Carnegie Mellon University,nlp,1.0,0.5,1997
 Stephen Clark,University of Cambridge,nlp,3.0,1.5,2008
 Sandra Carberry,University of Delaware,nlp,1.0,0.5,1994
-Raymond J. Mooney,University of Texas at Austin,nlp,1.0,0.333333333333,2012
+Raymond J. Mooney,University of Texas at Austin,nlp,2.0,0.833333333333,2012
 Claire Cardie,Cornell University,nlp,1.0,1.0,1992
 Adam Lopez,University of Edinburgh,nlp,3.0,1.5,2011
 Dragomir R. Radev,University of Michigan,nlp,4.0,1.16666666667,2013
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.5,1994
 Graeme Hirst,University of Toronto,nlp,3.0,1.5,2014
 Yoshua Bengio,University of Montreal,nlp,4.0,1.00952380952,2016
-Regina Barzilay,Massachusetts Institute of Technology,nlp,4.0,1.28333333333,2012
-Amir Globerson,Tel Aviv University,nlp,1.0,0.333333333333,2012
-Michael Collins,Columbia University,nlp,2.0,0.666666666667,2005
+Jason Eisner,Johns Hopkins University,nlp,5.0,2.33333333333,2009
+Regina Barzilay,Massachusetts Institute of Technology,nlp,5.0,1.53333333333,2012
+Amir Globerson,Tel Aviv University,nlp,3.0,0.833333333333,2012
+Michael Collins,Columbia University,nlp,4.0,1.66666666667,2005
 Philipp Koehn,Johns Hopkins University,nlp,1.0,0.333333333333,2005
+Luke S. Zettlemoyer,University of Washington,nlp,2.0,0.75,2009
+Michael Collins,Columbia University,nlp,3.0,1.25,2009
 Martha Palmer,University of Colorado Boulder,nlp,1.0,1.0,1981
 Raymond J. Mooney,University of Texas at Austin,nlp,1.0,0.5,2004
 Barbara Di Eugenio,University of Illinois at Chicago,nlp,1.0,0.333333333333,1997
@@ -2900,6 +2928,7 @@ Vincent Ng,University of Texas at Dallas,nlp,1.0,1.0,2005
 James R. Curran,University of Sydney,nlp,4.0,1.83333333333,2006
 Stephen Clark,University of Cambridge,nlp,2.0,0.833333333333,2006
 Chitta Baral,Arizona State University,nlp,1.0,0.5,2016
+Alex Waibel,Carnegie Mellon University,nlp,3.0,1.5,1998
 Omri Abend,Hebrew University of Jerusalem,nlp,2.0,0.833333333333,2010
 Ari Rappoport,Hebrew University of Jerusalem,nlp,6.0,2.83333333333,2010
 Percy Liang,Stanford University,nlp,2.0,0.583333333333,2006
@@ -2952,11 +2981,15 @@ David Chiang,University of Notre Dame,nlp,2.0,1.33333333333,2000
 Philip Resnik,University of Maryland - College Park,nlp,3.0,1.0,2013
 Dan Klein,University of California - Berkeley,nlp,4.0,1.75,2003
 Christopher D. Manning,Stanford University,nlp,5.0,2.25,2003
+Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.333333333333,2009
+Ari Rappoport,Hebrew University of Jerusalem,nlp,4.0,1.83333333333,2009
+Philippe Langlais,University of Montreal,nlp,1.0,0.333333333333,1998
 Mark Dredze,Johns Hopkins University,nlp,4.0,1.17424242424,2013
 Gerhard Weikum,Max Planck Institute,nlp,1.0,0.5,2010
 Yezhou Yang,Arizona State University,nlp,1.0,0.25,2015
 Yiannis Aloimonos,University of Maryland - College Park,nlp,1.0,0.25,2015
 Mihai Surdeanu,University of Arizona,nlp,1.0,0.333333333333,2014
+Alois Knoll,TU Munich,nlp,1.0,0.333333333333,2009
 Wei Xu,Ohio State University,nlp,1.0,0.25,2013
 Ralph Grishman,New York University,nlp,2.0,0.45,2013
 Kevin D. Seppi,Brigham Young University,nlp,1.0,0.25,2016
@@ -3032,6 +3065,7 @@ Ewan Klein,University of Edinburgh,nlp,1.0,0.5,1999
 Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,0.25,2013
 Timothy Baldwin,University of Melbourne,nlp,2.0,1.0,2006
 Michael G. Dyer,University of California - Los Angeles,nlp,1.0,0.5,1986
+Tat-Seng Chua,National University of Singapore,nlp,1.0,0.333333333333,2009
 Mark Steedman,University of Edinburgh,nlp,3.0,1.33333333333,2013
 Ted Briscoe,University of Cambridge,nlp,1.0,0.333333333333,2005
 David Yarowsky,Johns Hopkins University,nlp,1.0,1.0,1995
@@ -3058,8 +3092,10 @@ Eugene Charniak,Brown University,nlp,1.0,0.5,2002
 Michael Collins,Columbia University,nlp,2.0,1.5,2002
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.5,2007
 Shaul Markovitch,Technion - Israel Institute of Technology,nlp,1.0,0.333333333333,1993
+Janyce Wiebe,University of Pittsburgh,nlp,4.0,1.33333333333,2009
 Yejin Choi,University of Washington,nlp,2.0,0.583333333333,2011
 Claire Cardie,Cornell University,nlp,3.0,1.0,2011
+Kevin Knight,University of Southern California,nlp,1.0,0.5,1998
 Peter A. Heeman,OHSU,nlp,1.0,0.5,1994
 Rebecca N. Wright,Rutgers University,nlp,1.0,0.5,1991
 Sandiway Fong,University of Arizona,nlp,1.0,0.5,1985
@@ -3077,9 +3113,11 @@ Wei Xu,Ohio State University,nlp,2.0,0.833333333333,2015
 Dan Klein,University of California - Berkeley,nlp,1.0,0.5,2002
 Christopher D. Manning,Stanford University,nlp,1.0,0.5,2002
 Bonnie L. Webber,University of Edinburgh,nlp,1.0,0.333333333333,2016
+Eric P. Xing,Carnegie Mellon University,nlp,1.0,0.333333333333,2009
 Roy Schwartz,Technion - Israel Institute of Technology,nlp,1.0,0.25,2011
 Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.25,2011
 Ari Rappoport,Hebrew University of Jerusalem,nlp,1.0,0.25,2011
+Regina Barzilay,Massachusetts Institute of Technology,nlp,5.0,1.58333333333,2009
 Sanguthevar Rajasekaran,University of Connecticut,nlp,1.0,1.0,1995
 Marti A. Hearst,University of California - Berkeley,nlp,1.0,1.0,2015
 Marilyn A. Walker,University of California - Santa Cruz,nlp,1.0,0.5,2007
@@ -3124,6 +3162,8 @@ Dragomir R. Radev,University of Michigan,nlp,1.0,0.2,2015
 Heng Ji,Rensselaer Polytechnic Institute,nlp,1.0,0.5,2008
 Ralph Grishman,New York University,nlp,1.0,0.5,2008
 Bing Liu 0001,University of Illinois at Chicago,nlp,2.0,1.0,2012
+William H. Wilson,UNSW,nlp,1.0,0.5,1998
+Mehryar Mohri,New York University,nlp,1.0,0.5,1998
 Ruihong Huang,Texas A&M University,nlp,1.0,0.5,2010
 Ellen Riloff,University of Utah,nlp,2.0,0.833333333333,2010
 Steven Bethard,University of Arizona,nlp,1.0,0.25,2016
@@ -3132,16 +3172,23 @@ David Yarowsky,Johns Hopkins University,nlp,1.0,0.333333333333,2011
 Vincent Ng,University of Texas at Dallas,nlp,3.0,1.5,2013
 David Yarowsky,Johns Hopkins University,nlp,1.0,0.5,2005
 Matt Huenerfauth,Rochester Institute of Technology,nlp,1.0,0.5,2016
+Sandra Carberry,University of Delaware,nlp,2.0,0.833333333333,1998
+Diane J. Litman,University of Pittsburgh,nlp,1.0,0.5,2009
 Ann A. Copestake,University of Cambridge,nlp,1.0,0.5,2004
 Hector J. Levesque,University of Toronto,nlp,1.0,0.5,1985
 Frank Keller,University of Edinburgh,nlp,3.0,1.0,2006
 Mehryar Mohri,New York University,nlp,1.0,0.333333333333,2004
 Mona T. Diab,George Washington University,nlp,1.0,1.0,2004
 Ani Nenkova,University of Pennsylvania,nlp,2.0,1.0,2008
+Kathleen McKeown,Columbia University,nlp,1.0,0.0666666666667,2009
+Mona T. Diab,George Washington University,nlp,1.0,0.0666666666667,2009
+Ralph Grishman,New York University,nlp,1.0,0.0666666666667,2009
+Heng Ji,Rensselaer Polytechnic Institute,nlp,1.0,0.0666666666667,2009
+Wei Xu,Ohio State University,nlp,1.0,0.0666666666667,2009
 Henry Thompson,University of Edinburgh,nlp,1.0,1.0,1981
 Henry Thompson,University of Edinburgh,nlp,1.0,1.0,1983
 Alan Ritter,Ohio State University,nlp,2.0,0.666666666667,2010
-Jonathan Berant,Tel Aviv University,nlp,1.0,0.25,2012
+Jonathan Berant,Tel Aviv University,nlp,2.0,0.5,2012
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.5,2011
 Justine Cassell,Carnegie Mellon University,nlp,1.0,0.2,2001
 Timothy W. Bickmore,Northeastern University,nlp,1.0,0.2,2001
@@ -3173,7 +3220,7 @@ Maarten de Rijke,VU Amsterdam,nlp,1.0,0.5,2008
 Shay B. Cohen,University of Edinburgh,nlp,2.0,0.833333333333,2010
 Noah A. Smith,University of Washington,nlp,7.0,2.53333333333,2010
 Yan Chen,Northwestern University,nlp,1.0,0.25,2014
-Noah A. Smith,University of Washington,nlp,1.0,0.333333333333,2007
+Noah A. Smith,University of Washington,nlp,4.0,1.66666666667,2007
 John D. Lafferty,University of Chicago,nlp,1.0,0.333333333333,2007
 Sylvain Schmitz,Ecole Normale Superieure de Cachan,nlp,1.0,1.0,2010
 Peter A. Flach,University of Bristol,nlp,1.0,0.5,2010
@@ -3194,6 +3241,7 @@ Grzegorz Kondrak,University of Alberta,nlp,3.0,1.33333333333,2007
 Alexander M. Rush,Harvard University,nlp,1.0,0.5,2011
 Michael Collins,Columbia University,nlp,2.0,1.0,2011
 Mitch Marcus,University of Pennsylvania,nlp,1.0,0.5,2012
+Chris Dyer,Carnegie Mellon University,nlp,3.0,1.5,2009
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.5,1988
 Stuart M. Shieber,Harvard University,nlp,1.0,0.25,1989
 Julia Hirschberg,Columbia University,nlp,1.0,0.333333333333,2008
@@ -3212,21 +3260,23 @@ Gerald Penn,University of Toronto,nlp,1.0,1.0,2001
 Doug Downey,Northwestern University,nlp,2.0,0.833333333333,2013
 Jacob Eisenstein,Georgia Institute of Technology,nlp,4.0,1.33333333333,2008
 Randall Davis,Massachusetts Institute of Technology,nlp,1.0,0.333333333333,2008
+David Yarowsky,Johns Hopkins University,nlp,1.0,0.5,2009
 Kevin Knight,University of Southern California,nlp,3.0,1.16666666667,2008
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.33333333333,2008
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.5,2006
 Dragomir R. Radev,University of Michigan,nlp,4.0,1.11666666667,2016
+William W. Cohen,Carnegie Mellon University,nlp,3.0,1.33333333333,2009
 Hermann Ney,RWTH Aachen,nlp,1.0,0.5,2002
 Timothy Baldwin,University of Melbourne,nlp,4.0,1.28333333333,2011
 Byron C. Wallace,Northeastern University,nlp,1.0,0.333333333333,2015
 Eugene Charniak,Brown University,nlp,3.0,1.16666666667,2015
 Kevin Knight,University of Southern California,nlp,7.0,1.89285714286,2016
-Julia Hirschberg,Columbia University,nlp,1.0,0.2,2007
+Julia Hirschberg,Columbia University,nlp,2.0,0.7,2007
 Lauren Wilcox,Georgia Institute of Technology,nlp,1.0,0.2,2007
 Eugene Charniak,Brown University,nlp,4.0,1.09090909091,2006
 Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.333333333333,2014
 Mark Steedman,University of Edinburgh,nlp,2.0,0.833333333333,2014
-Jordan L. Boyd-Graber,University of Colorado Boulder,nlp,2.0,0.583333333333,2012
+Jordan L. Boyd-Graber,University of Colorado Boulder,nlp,3.0,0.833333333333,2012
 Philip Resnik,University of Maryland - College Park,nlp,2.0,0.666666666667,2012
 Daphne Koller,Stanford University,nlp,2.0,0.642857142857,2008
 Jian-Yun Nie,University of Montreal,nlp,1.0,0.333333333333,2008
@@ -3252,17 +3302,18 @@ Sharon Goldwater,University of Edinburgh,nlp,2.0,0.583333333333,2014
 Kathleen McKeown,Columbia University,nlp,2.0,0.583333333333,2016
 James R. Curran,University of Sydney,nlp,2.0,0.5,2010
 Stephen Clark,University of Cambridge,nlp,4.0,1.66666666667,2010
-Tat-Seng Chua,National University of Singapore,nlp,1.0,0.25,2012
+Tat-Seng Chua,National University of Singapore,nlp,3.0,0.75,2012
 Ari Rappoport,Hebrew University of Jerusalem,nlp,1.0,0.5,2006
 Ce Zhang,ETH Zurich,nlp,1.0,0.333333333333,2013
 Christopher Ré,Stanford University,nlp,1.0,0.333333333333,2013
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.25,1995
 Barbara Di Eugenio,University of Illinois at Chicago,nlp,1.0,0.25,1995
 Suzanne Stevenson,University of Toronto,nlp,1.0,1.0,1993
-Sameer Singh 0001,University of California - Irvine,nlp,1.0,0.333333333333,2012
+Sameer Singh 0001,University of California - Irvine,nlp,2.0,0.666666666667,2012
 Mihai Surdeanu,University of Arizona,nlp,1.0,0.25,2003
 Sanda M. Harabagiu,University of Texas at Dallas,nlp,1.0,0.25,2003
 Mitchell P. Marcus,University of Pennsylvania,nlp,1.0,0.333333333333,1983
+Raymond J. Mooney,University of Texas at Austin,nlp,1.0,0.5,2009
 Marine Carpuat,University of Maryland - College Park,nlp,1.0,0.333333333333,2014
 Ani Nenkova,University of Pennsylvania,nlp,1.0,0.333333333333,2014
 Michael R. Brent,Washington University in St. Louis,nlp,1.0,1.0,1991
@@ -3271,7 +3322,7 @@ Mark Steedman,University of Edinburgh,nlp,1.0,1.0,1990
 Kathleen McKeown,Columbia University,nlp,1.0,1.0,1979
 Kevin Knight,University of Southern California,nlp,1.0,0.5,1997
 Hwee Tou Ng,National University of Singapore,nlp,1.0,0.333333333333,1999
-Christopher D. Manning,Stanford University,nlp,3.0,1.0,2005
+Christopher D. Manning,Stanford University,nlp,4.0,1.33333333333,2005
 William Yang Wang,University of California - Santa Barbara,nlp,1.0,0.25,2012
 Grzegorz Kondrak,University of Alberta,nlp,2.0,0.833333333333,2016
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.333333333333,2013
@@ -3287,6 +3338,7 @@ Marti A. Hearst,University of California - Berkeley,nlp,2.0,0.833333333333,2008
 Eugene Charniak,Brown University,nlp,1.0,0.5,1988
 Eric Nyberg,Carnegie Mellon University,nlp,1.0,0.2,2014
 Chris Dyer,Carnegie Mellon University,nlp,6.0,1.48333333333,2014
+Iryna Gurevych,TU Darmstadt,nlp,2.0,1.0,2009
 James R. Curran,University of Sydney,nlp,1.0,0.5,2008
 Eric P. Xing,Carnegie Mellon University,nlp,2.0,0.583333333333,2014
 Ralph Grishman,New York University,nlp,3.0,1.16666666667,2015
@@ -3310,15 +3362,18 @@ Tat-Seng Chua,National University of Singapore,nlp,1.0,0.333333333333,2003
 Marti A. Hearst,University of California - Berkeley,nlp,1.0,0.5,2014
 Ann A. Copestake,University of Cambridge,nlp,1.0,0.5,1997
 Alex Lascarides,University of Edinburgh,nlp,1.0,0.5,1997
+Daniel Jurafsky,Stanford University,nlp,1.0,0.5,1998
 Diane J. Litman,University of Pittsburgh,nlp,4.0,1.45,2016
 Suzanne Stevenson,University of Toronto,nlp,1.0,0.25,2002
 Hermann Ney,RWTH Aachen,nlp,3.0,1.33333333333,2004
+James R. Curran,University of Sydney,nlp,2.0,1.0,2009
 Alan Ritter,Ohio State University,nlp,2.0,0.583333333333,2014
 Alex Lascarides,University of Edinburgh,nlp,1.0,0.333333333333,1992
 Jon Oberlander,University of Edinburgh,nlp,1.0,0.333333333333,1992
 Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,1987
 Phil Blunsom,University of Oxford,nlp,4.0,2.0,2013
-Dragomir R. Radev,University of Michigan,nlp,2.0,0.75,2012
+Tom M. Mitchell,Carnegie Mellon University,nlp,1.0,0.25,2009
+Dragomir R. Radev,University of Michigan,nlp,3.0,1.08333333333,2012
 Iryna Gurevych,TU Darmstadt,nlp,4.0,1.66666666667,2013
 ChengXiang Zhai,University of Illinois at Urbana-Champaign,nlp,4.0,1.28333333333,2006
 Huan Liu,Arizona State University,nlp,1.0,0.5,2016
@@ -3332,6 +3387,8 @@ Giuseppe Carenini,University of British Columbia,nlp,3.0,0.866666666667,2014
 Raymond T. Ng,University of British Columbia,nlp,3.0,0.866666666667,2014
 Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,1988
 Julia Hirschberg,Columbia University,nlp,1.0,0.5,1991
+Claire Cardie,Cornell University,nlp,2.0,0.75,2009
+Ellen Riloff,University of Utah,nlp,3.0,1.08333333333,2009
 Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,1.0,1980
 Sabine Bergler,Concordia University,nlp,1.0,0.5,2008
 Stuart M. Shieber,Harvard University,nlp,1.0,0.5,1992
@@ -3340,7 +3397,7 @@ Graeme Hirst,University of Toronto,nlp,1.0,1.0,1983
 Jan P. H. van Santen,OHSU,nlp,1.0,0.25,2015
 Dale Schuurmans,University of Alberta,nlp,1.0,0.333333333333,2008
 Mohit Bansal,University of North Carolina,nlp,2.0,0.833333333333,2012
-Dan Klein,University of California - Berkeley,nlp,4.0,2.0,2012
+Dan Klein,University of California - Berkeley,nlp,8.0,3.58333333333,2012
 Jure Leskovec,Stanford University,nlp,1.0,0.2,2013
 Karen Livescu,Toyota Technological Institute at Chicago,nlp,1.0,0.333333333333,2012
 Ingrid Zukerman,Monash University,nlp,1.0,0.333333333333,2012
@@ -3356,10 +3413,12 @@ Rada Mihalcea,University of Michigan,nlp,1.0,0.333333333333,2013
 Louis-Philippe Morency,Carnegie Mellon University,nlp,1.0,0.333333333333,2013
 Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,1980
 Amir Globerson,Tel Aviv University,nlp,1.0,0.166666666667,2016
+Bonnie L. Webber,University of Edinburgh,nlp,1.0,1.0,2009
 Shay B. Cohen,University of Edinburgh,nlp,2.0,0.75,2016
 Ted Briscoe,University of Cambridge,nlp,2.0,0.833333333333,2016
-Regina Barzilay,Massachusetts Institute of Technology,nlp,1.0,0.5,2005
-Mirella Lapata,University of Edinburgh,nlp,1.0,0.5,2005
+Regina Barzilay,Massachusetts Institute of Technology,nlp,2.0,1.0,2005
+Mirella Lapata,University of Edinburgh,nlp,4.0,2.0,2005
+Dragomir R. Radev,University of Michigan,nlp,1.0,1.0,1998
 Kemal Oflazer,Carnegie Mellon University,nlp,1.0,0.333333333333,2007
 Peter A. Heeman,OHSU,nlp,1.0,0.5,1997
 James F. Allen,University of Rochester,nlp,1.0,0.5,1997
@@ -3369,7 +3428,7 @@ Benny Kimelfeld,Technion - Israel Institute of Technology,nlp,1.0,0.2,2013
 Russell Greiner,University of Alberta,nlp,1.0,0.2,2006
 Dale Schuurmans,University of Alberta,nlp,1.0,0.2,2006
 Liang Huang,Oregon State University,nlp,4.0,1.41666666667,2013
-Heng Ji,Rensselaer Polytechnic Institute,nlp,1.0,0.5,2005
+Heng Ji,Rensselaer Polytechnic Institute,nlp,2.0,0.833333333333,2005
 Denilson Barbosa,University of Alberta,nlp,3.0,0.866666666667,2013
 Grzegorz Kondrak,University of Alberta,nlp,3.0,1.16666666667,2013
 Eugene Charniak,Brown University,nlp,2.0,0.833333333333,2004
@@ -3396,13 +3455,14 @@ Diane J. Litman,University of Pittsburgh,nlp,1.0,0.5,1993
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.333333333333,2007
 Diane J. Litman,University of Pittsburgh,nlp,1.0,0.5,2008
 Mark Steedman,University of Edinburgh,nlp,4.0,1.22619047619,2015
+Sebastian Riedel,University College London,nlp,2.0,0.75,2009
 Sandra Carberry,University of Delaware,nlp,1.0,0.142857142857,2005
 Daniel Chester,University of Delaware,nlp,1.0,0.142857142857,2005
 Ingrid Zukerman,Monash University,nlp,1.0,0.142857142857,2005
 Raymond J. Mooney,University of Texas at Austin,nlp,1.0,0.5,1997
 Sandra Carberry,University of Delaware,nlp,1.0,0.5,1991
 Jason Eisner,Johns Hopkins University,nlp,1.0,0.5,1999
-Rada Mihalcea,University of Michigan,nlp,2.0,1.33333333333,2007
+Rada Mihalcea,University of Michigan,nlp,3.0,1.83333333333,2007
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.333333333333,2007
 Hermann Ney,RWTH Aachen,nlp,1.0,0.333333333333,2016
 James F. Allen,University of Rochester,nlp,1.0,0.25,1996
@@ -3416,6 +3476,8 @@ Rebecca Hwa,University of Pittsburgh,nlp,1.0,0.25,2002
 Johanna D. Moore,University of Edinburgh,nlp,1.0,0.5,2005
 David Yarowsky,Johns Hopkins University,nlp,1.0,1.0,1994
 Ted Briscoe,University of Cambridge,nlp,1.0,0.333333333333,2011
+Diane J. Litman,University of Pittsburgh,nlp,1.0,0.333333333333,1998
+Marilyn A. Walker,University of California - Santa Cruz,nlp,2.0,0.666666666667,1998
 Mirella Lapata,University of Edinburgh,nlp,3.0,1.5,2011
 Daniel Gildea,University of Rochester,nlp,1.0,0.5,1995
 Daniel Jurafsky,Stanford University,nlp,2.0,0.833333333333,1995
@@ -3431,7 +3493,7 @@ Candace L. Sidner,Worcester Polytechnic Institute,nlp,1.0,1.0,1979
 Ani Nenkova,University of Pennsylvania,nlp,1.0,0.25,2013
 Andrew McCallum,University of Massachusetts Amherst,nlp,2.0,0.583333333333,2015
 Nianwen Xue,Brandeis University,nlp,4.0,1.5,2015
-Mark Dredze,Johns Hopkins University,nlp,3.0,0.783333333333,2012
+Mark Dredze,Johns Hopkins University,nlp,5.0,1.36666666667,2012
 Alvin Cheung,University of Washington,nlp,1.0,0.25,2016
 J. Eric Fosler,Ohio State University,nlp,1.0,0.333333333333,1995
 Diane J. Litman,University of Pittsburgh,nlp,1.0,1.0,1986
@@ -3445,6 +3507,7 @@ Kevin Knight,University of Southern California,nlp,5.0,1.75,2003
 Yong Cao,Virginia Tech,nlp,1.0,0.2,2016
 Nianwen Xue,Brandeis University,nlp,2.0,1.33333333333,2006
 Martha Palmer,University of Colorado Boulder,nlp,3.0,0.783333333333,2006
+Philip Resnik,University of Maryland - College Park,nlp,4.0,1.41666666667,2009
 Kenneth Heafield,University of Edinburgh,nlp,2.0,0.583333333333,2013
 Mihai Surdeanu,University of Arizona,nlp,1.0,0.333333333333,2008
 Diane J. Litman,University of Pittsburgh,nlp,2.0,0.666666666667,2001
@@ -3458,19 +3521,21 @@ Daniel Gildea,University of Rochester,nlp,2.0,0.583333333333,2013
 James F. Allen,University of Rochester,nlp,1.0,0.333333333333,2013
 Wei Gao,University of Tennessee,nlp,1.0,0.2,2016
 Raymond J. Mooney,University of Texas at Austin,nlp,3.0,1.25,2016
-Christopher D. Manning,Stanford University,nlp,3.0,0.783333333333,2012
+Christopher D. Manning,Stanford University,nlp,7.0,2.28333333333,2012
 Graham Neubig,Carnegie Mellon University,nlp,2.0,0.7,2014
 Rada Mihalcea,University of Michigan,nlp,2.0,0.75,2008
 Kate Saenko,Boston University,nlp,2.0,0.5,2016
 Anna Rumshisky,University of Massachusetts Lowell,nlp,1.0,0.25,2016
-Dan Klein,University of California - Berkeley,nlp,1.0,0.333333333333,2005
+Dan Klein,University of California - Berkeley,nlp,2.0,0.666666666667,2005
 Graham Neubig,Carnegie Mellon University,nlp,7.0,1.9,2016
 Nan Yang,Australian National University,nlp,1.0,0.25,2012
+Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.5,1998
 Regina Barzilay,Massachusetts Institute of Technology,nlp,1.0,0.333333333333,1999
 Kathleen McKeown,Columbia University,nlp,1.0,0.333333333333,1999
 Hwee Tou Ng,National University of Singapore,nlp,4.0,1.33333333333,2008
 Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.5,2013
 Ari Rappoport,Hebrew University of Jerusalem,nlp,2.0,0.75,2013
+Dan Roth,University of Illinois at Urbana-Champaign,nlp,1.0,0.5,1998
 Cristian Danescu-Niculescu-Mizil,Cornell University,nlp,1.0,0.25,2015
 Philip Resnik,University of Maryland - College Park,nlp,1.0,0.333333333333,1990
 Barbara Di Eugenio,University of Illinois at Chicago,nlp,1.0,0.5,2013
@@ -3480,6 +3545,8 @@ Phil Blunsom,University of Oxford,nlp,2.0,0.833333333333,2008
 Trevor Cohn,University of Melbourne,nlp,1.0,0.333333333333,2008
 Eric Nyberg,Carnegie Mellon University,nlp,1.0,0.5,2015
 Chris Biemann,TU Darmstadt,nlp,1.0,0.166666666667,2014
+Gholamreza Haffari,Monash University,nlp,3.0,1.33333333333,2009
+Anoop Sarkar,Simon Fraser University,nlp,2.0,0.833333333333,2009
 Vittorio Ferrari,University of Edinburgh,nlp,1.0,0.333333333333,2013
 Mirella Lapata,University of Edinburgh,nlp,4.0,1.66666666667,2013
 Alan W. Black,Carnegie Mellon University,nlp,4.0,0.611111111111,2015
@@ -3490,6 +3557,7 @@ Hongning Wang,University of Virginia,nlp,1.0,0.333333333333,2011
 ChengXiang Zhai,University of Illinois at Urbana-Champaign,nlp,1.0,0.333333333333,2011
 Marti A. Hearst,University of California - Berkeley,nlp,1.0,1.0,1994
 Jackie Chi Kit Cheung,McGill University,nlp,2.0,1.0,2010
+Shrikanth Narayanan,University of Southern California,nlp,1.0,0.333333333333,1998
 Raymond J. Mooney,University of Texas at Austin,nlp,2.0,0.833333333333,2013
 Dan I. Moldovan,University of Texas at Dallas,nlp,2.0,0.611111111111,2001
 Jinho D. Choi,Emory University,nlp,1.0,0.5,2013
@@ -3497,7 +3565,7 @@ Andrew McCallum,University of Massachusetts Amherst,nlp,2.0,0.75,2013
 Amir Globerson,Tel Aviv University,nlp,1.0,0.333333333333,2013
 Partha Pratim Talukdar,IISc Bangalore,nlp,2.0,0.5,2014
 Brian Murphy,CUNY,nlp,1.0,0.25,2014
-Chris Dyer,Carnegie Mellon University,nlp,1.0,0.333333333333,2012
+Chris Dyer,Carnegie Mellon University,nlp,2.0,0.666666666667,2012
 Lu Wang,Northeastern University,nlp,1.0,0.5,2014
 Stephen Clark,University of Cambridge,nlp,2.0,0.833333333333,2013
 Pedro M. Domingos,University of Washington,nlp,1.0,0.5,2010
@@ -3516,6 +3584,7 @@ Hermann Ney,RWTH Aachen,nlp,1.0,0.333333333333,2012
 Ralph Grishman,New York University,nlp,1.0,0.333333333333,2004
 Philip Resnik,University of Maryland - College Park,nlp,1.0,1.0,1999
 Kathleen McKeown,Columbia University,nlp,1.0,0.5,1987
+Ani Nenkova,University of Pennsylvania,nlp,2.0,0.833333333333,2009
 Maarten de Rijke,VU Amsterdam,nlp,1.0,0.2,2015
 Ralph Grishman,New York University,nlp,1.0,0.5,2014
 Michael Collins,Columbia University,nlp,1.0,0.333333333333,2008
@@ -3527,7 +3596,7 @@ Jonathan Berant,Tel Aviv University,nlp,2.0,0.625,2014
 Steven Bird,University of Melbourne,nlp,1.0,0.333333333333,2011
 Diane J. Litman,University of Pittsburgh,nlp,2.0,1.0,2004
 Peter A. Heeman,OHSU,nlp,1.0,0.5,2010
-Dan Roth,University of Illinois at Urbana-Champaign,nlp,3.0,1.16666666667,2012
+Dan Roth,University of Illinois at Urbana-Champaign,nlp,7.0,2.58333333333,2012
 Hao Li,University of Southern California,nlp,1.0,0.333333333333,2014
 Simone Teufel,University of Cambridge,nlp,3.0,1.16666666667,2006
 Eugene Charniak,Brown University,nlp,1.0,0.5,2008
@@ -3565,9 +3634,10 @@ Rebecca Hwa,University of Pittsburgh,nlp,1.0,1.0,1999
 Bing Liu 0001,University of Illinois at Chicago,nlp,2.0,0.5,2014
 Fei Liu 0004,University of Central Florida,nlp,1.0,0.333333333333,2012
 John D. Lafferty,University of Chicago,nlp,1.0,0.333333333333,1992
-David Chiang,University of Notre Dame,nlp,1.0,1.0,2005
+David Chiang,University of Notre Dame,nlp,2.0,1.16666666667,2005
 Lise Getoor,University of California - Santa Cruz,nlp,3.0,0.65,2015
 Robert C. Berwick,Massachusetts Institute of Technology,nlp,1.0,0.5,1994
+Maarten de Rijke,VU Amsterdam,nlp,1.0,0.333333333333,2009
 Bert Huang,Virginia Tech,nlp,1.0,0.2,2015
 Marilyn A. Walker,University of California - Santa Cruz,nlp,3.0,0.783333333333,2015
 James Pustejovsky,Brandeis University,nlp,1.0,0.2,2006
@@ -3576,30 +3646,35 @@ Martha Palmer,University of Colorado Boulder,nlp,1.0,0.166666666667,1986
 Alexander M. Rush,Harvard University,nlp,1.0,0.25,2014
 Sandra Carberry,University of Delaware,nlp,1.0,1.0,1985
 Sanda M. Harabagiu,University of Texas at Dallas,nlp,1.0,0.25,2005
-Dan I. Moldovan,University of Texas at Dallas,nlp,1.0,0.25,2005
+Dan I. Moldovan,University of Texas at Dallas,nlp,4.0,1.75,2005
 Alex Lascarides,University of Edinburgh,nlp,1.0,0.5,1991
 Timothy Baldwin,University of Melbourne,nlp,1.0,1.0,2001
 Amir Globerson,Tel Aviv University,nlp,1.0,0.2,2014
 Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,1.0,0.25,2008
 Daniel Gildea,University of Rochester,nlp,1.0,0.5,2005
 Frank Keller,University of Edinburgh,nlp,1.0,0.5,2003
-James R. Curran,University of Sydney,nlp,2.0,1.0,2012
+James R. Curran,University of Sydney,nlp,4.0,1.45,2012
 Diane J. Litman,University of Pittsburgh,nlp,1.0,0.333333333333,1999
 Marilyn A. Walker,University of California - Santa Cruz,nlp,1.0,0.333333333333,1999
 Michael S. Kearns,University of Pennsylvania,nlp,1.0,0.333333333333,1999
 Mona T. Diab,George Washington University,nlp,1.0,0.2,2014
 Bonnie L. Webber,University of Edinburgh,nlp,1.0,0.5,1992
+Wei Gao,University of Tennessee,nlp,1.0,0.25,2009
 James R. Curran,University of Sydney,nlp,1.0,0.5,2002
 Hermann Ney,RWTH Aachen,nlp,1.0,0.333333333333,2006
-Graham Neubig,Carnegie Mellon University,nlp,1.0,0.25,2012
+Graham Neubig,Carnegie Mellon University,nlp,2.0,0.583333333333,2012
 W. Bruce Croft,University of Massachusetts Amherst,nlp,1.0,0.333333333333,2011
 Vincent Ng,University of Texas at Dallas,nlp,2.0,1.0,2011
 Philippe Langlais,University of Montreal,nlp,1.0,1.0,2013
 Ted Briscoe,University of Cambridge,nlp,1.0,1.0,1997
 Eric K. Ringger,Brigham Young University,nlp,1.0,0.25,2002
 Maarten de Rijke,VU Amsterdam,nlp,1.0,0.333333333333,2010
+Phil Blunsom,University of Oxford,nlp,3.0,1.08333333333,2009
+Trevor Cohn,University of Melbourne,nlp,3.0,1.08333333333,2009
 John D. Lafferty,University of Chicago,nlp,1.0,0.333333333333,1997
-Graeme Hirst,University of Toronto,nlp,1.0,0.5,2012
+Graeme Hirst,University of Toronto,nlp,2.0,1.0,2012
+Hui Yang 0001,Georgetown University,nlp,1.0,0.5,2009
+Jamie Callan,Carnegie Mellon University,nlp,1.0,0.5,2009
 Bing Liu 0001,University of Illinois at Chicago,nlp,2.0,0.833333333333,2015
 Gerald Penn,University of Toronto,nlp,1.0,0.333333333333,2016
 Gopalan Nadathur,University of Minnesota,nlp,1.0,0.5,1986
@@ -6121,7 +6196,7 @@ H. T. Kung,Harvard University,hpc,2.0,0.590909090909,1991
 Peter Steenkiste,Carnegie Mellon University,hpc,1.0,0.0909090909091,1991
 Mary Jane Irwin,Pennsylvania State University,hpc,2.0,0.533333333333,2006
 Padma Raghavan,Vanderbilt University,hpc,2.0,0.533333333333,2006
-Rong Ge,Clemson University,hpc,1.0,0.333333333333,2005
+Rong Ge,Duke University,hpc,1.0,0.333333333333,2005
 Kirk W. Cameron,Virginia Tech,hpc,1.0,0.333333333333,2005
 Richard Wolski,University of California - Santa Barbara,hpc,1.0,0.166666666667,2006
 Rick L. Stevens,University of Chicago,hpc,1.0,0.0666666666667,2005
@@ -6294,6 +6369,7 @@ P. Sadayappan,Ohio State University,hpc,1.0,0.5,1991
 Larry Carter,University of California - San Diego,hpc,2.0,0.75,1999
 Jeanne Ferrante,University of California - San Diego,hpc,1.0,0.25,1999
 Dean M. Tullsen,University of California - San Diego,hpc,1.0,0.25,1999
+Albert Cohen 0001,Ecole Normale Superieure,hpc,2.0,0.75,2004
 Jack Dongarra,University of Tennessee,hpc,2.0,0.533333333333,2000
 Tao Yang,University of California - Santa Barbara,hpc,3.0,0.666666666667,2004
 Hank Childs,University of Oregon,hpc,1.0,0.0769230769231,2008
@@ -6441,7 +6517,7 @@ Robert A. van de Geijn,University of Texas at Austin,hpc,1.0,0.25,2016
 Jeffrey K. Hollingsworth,University of Maryland - College Park,hpc,2.0,1.0,1998
 Francine Berman,Rensselaer Polytechnic Institute,hpc,1.0,0.5,1993
 Kirk W. Cameron,Virginia Tech,hpc,1.0,0.5,2004
-Rong Ge,Clemson University,hpc,1.0,0.5,2004
+Rong Ge,Duke University,hpc,1.0,0.5,2004
 Torsten Hoefler,ETH Zurich,hpc,2.0,0.666666666667,2010
 Andrew Lumsdaine,Indiana University,hpc,2.0,0.666666666667,2010
 Zhiyuan Li,Purdue University,hpc,1.0,0.5,2003
@@ -6585,7 +6661,7 @@ Rajeev Balasubramonian,University of Utah,hpc,1.0,0.2,2014
 Atanas Rountev,Ohio State University,hpc,1.0,0.166666666667,2012
 P. Sadayappan,Ohio State University,hpc,2.0,0.5,2012
 James C. Browne,University of Texas at Austin,hpc,1.0,0.166666666667,2010
-Rong Ge,Clemson University,hpc,1.0,0.1,2016
+Rong Ge,Duke University,hpc,1.0,0.1,2016
 Laxmi N. Bhuyan,University of California - Riverside,hpc,2.0,0.35,2016
 Zizhong Chen,University of California - Riverside,hpc,4.0,0.55,2016
 Christos Kozyrakis,EPFL,hpc,2.0,0.533333333333,2009
@@ -6906,6 +6982,7 @@ Peter A. Dinda,Northwestern University,hpc,3.0,1.16666666667,2005
 Viktor K. Prasanna,University of Southern California,hpc,1.0,0.5,2006
 David Klappholz,Stevens Institute of Technology,hpc,1.0,0.333333333333,1989
 Uday Bondhugula,IISc Bangalore,hpc,1.0,0.166666666667,2010
+Albert Cohen 0001,Ecole Normale Superieure,hpc,1.0,0.166666666667,2010
 P. Sadayappan,Ohio State University,hpc,1.0,0.166666666667,2010
 Seymour E. Goodman,Georgia Institute of Technology,hpc,1.0,0.5,1990
 Torsten Hoefler,ETH Zurich,hpc,1.0,0.333333333333,2007
@@ -8915,6 +8992,7 @@ David A. Wood,University of Wisconsin - Madison,metrics,1.0,0.5,1995
 Arvind Krishnamurthy,University of Washington,metrics,1.0,0.2,1998
 Richard P. Martin,Rutgers University,metrics,1.0,0.2,1998
 Thomas E. Anderson,University of Washington,metrics,1.0,0.2,1998
+Albert Cohen 0001,Ecole Normale Superieure,metrics,1.0,0.25,2003
 Evgenia Smirni,College of William and Mary,metrics,1.0,0.2,1993
 Amy W. Apon,Clemson University,metrics,1.0,0.2,1993
 Peter G. Harrison,Imperial College London,metrics,1.0,0.333333333333,2010
@@ -10338,6 +10416,7 @@ Eran Yahav,Technion - Israel Institute of Technology,plan,2.0,0.666666666667,201
 Samuel N. Kamin,University of Illinois at Urbana-Champaign,plan,1.0,1.0,1980
 C.-H. Luke Ong,University of Oxford,plan,1.0,0.333333333333,2014
 Uday Bondhugula,IISc Bangalore,plan,1.0,0.142857142857,2011
+Albert Cohen 0001,Ecole Normale Superieure,plan,1.0,0.142857142857,2011
 P. Sadayappan,Ohio State University,plan,1.0,0.142857142857,2011
 Dominic Duggan,Stevens Institute of Technology,plan,1.0,0.5,1988
 Sorin Lerner,University of California - San Diego,plan,2.0,0.666666666667,2002
@@ -10452,6 +10531,7 @@ Aleksandar Nanevski,IMDEA Software Institute,plan,1.0,0.333333333333,2010
 Viktor Vafeiadis,Max Planck Institute,plan,1.0,0.333333333333,2010
 William R. Cook,University of Texas at Austin,plan,1.0,0.333333333333,2006
 William L. Scherlis,Carnegie Mellon University,plan,1.0,1.0,1981
+Albert Cohen 0001,Ecole Normale Superieure,plan,1.0,0.166666666667,2006
 Marc Pouzet,Ecole Normale Superieure,plan,1.0,0.166666666667,2006
 Martin C. Rinard,Massachusetts Institute of Technology,plan,1.0,0.5,1992
 Monica S. Lam,Stanford University,plan,1.0,0.5,1992
@@ -10486,6 +10566,7 @@ Sorin Lerner,University of California - San Diego,plan,3.0,0.833333333333,2009
 Ranjit Jhala,University of California - San Diego,plan,1.0,0.333333333333,2010
 Philippa Gardner,Imperial College London,plan,1.0,0.125,2014
 Sergio Maffeis,Imperial College London,plan,1.0,0.125,2014
+Albert Cohen 0001,Ecole Normale Superieure,plan,1.0,0.333333333333,1998
 Adam Chlipala,Massachusetts Institute of Technology,plan,3.0,2.25,2015
 Abraham Silberschatz,Yale University,plan,1.0,0.5,1986
 Gordon D. Plotkin,University of Edinburgh,plan,1.0,0.2,2016
@@ -10790,6 +10871,7 @@ Mary Lou Soffa,University of Virginia,plan,1.0,0.333333333333,1995
 George C. Necula,University of California - Berkeley,plan,1.0,1.0,1997
 Gordon D. Plotkin,University of Edinburgh,plan,1.0,0.5,2009
 Cristiano Calcagno,Imperial College London,plan,1.0,0.333333333333,2006
+Albert Cohen 0001,Ecole Normale Superieure,plan,1.0,0.5,2013
 Azadeh Farzan,University of Toronto,plan,2.0,0.666666666667,2014
 William R. Cook,University of Texas at Austin,plan,1.0,0.5,2007
 Krzysztof R. Apt,University of Warsaw,plan,1.0,0.5,1997
@@ -11068,6 +11150,7 @@ Benjamin C. Pierce,University of Pennsylvania,plan,1.0,0.333333333333,2011
 Keith D. Cooper,Rice University,plan,1.0,1.0,1985
 Alex Aiken,Stanford University,plan,3.0,0.866666666667,2015
 Uday Bondhugula,IISc Bangalore,plan,1.0,0.333333333333,2016
+Albert Cohen 0001,Ecole Normale Superieure,plan,2.0,0.458333333333,2016
 Jennifer Widom,Stanford University,plan,1.0,0.333333333333,1987
 Fred B. Schneider,Cornell University,plan,1.0,0.333333333333,1987
 Rastislav Bodík,University of Washington,plan,2.0,0.833333333333,1998
@@ -18548,7 +18631,7 @@ Ronitt Rubinfeld,Massachusetts Institute of Technology,hpc,3.0,0.833333333333,20
 Paul Valiant,Brown University,hpc,1.0,0.25,2011
 Sanjeev Arora,Princeton University,hpc,1.0,0.25,2010
 Boaz Barak,Harvard University,hpc,1.0,0.25,2010
-Rong Ge,Clemson University,hpc,1.0,0.25,2010
+Rong Ge,Duke University,hpc,1.0,0.25,2010
 Toniann Pitassi,University of Toronto,hpc,2.0,0.7,2010
 Rafael Pass,Cornell University,hpc,1.0,0.5,2011
 Abhi Shelat,Northeastern University,hpc,1.0,0.5,2011
@@ -23989,6 +24072,7 @@ Zhiyuan Li,Purdue University,da,1.0,0.333333333333,2007
 Soha Hassoun,Tufts University,da,1.0,0.25,2001
 Frank Vahid,University of California - Riverside,da,1.0,0.333333333333,2004
 Sheldon X.-D. Tan,University of California - Riverside,da,1.0,0.333333333333,2004
+Albert Cohen 0001,Ecole Normale Superieure,da,1.0,0.5,2010
 Philip Brisk,University of California - Riverside,da,1.0,0.2,2011
 Douglas C. Schmidt,Vanderbilt University,da,1.0,1.0,1972
 Onur Mutlu,ETH Zurich,da,1.0,0.333333333333,2013
@@ -25077,7 +25161,7 @@ Janos Simon,University of Chicago,act,1.0,0.5,1992
 Leonard J. Schulman,California Institute of Technology,act,2.0,1.0,1999
 Vijay V. Vazirani,Georgia Institute of Technology,act,4.0,1.75,1999
 Dimitris Achlioptas,University of California - Santa Cruz,act,2.0,0.833333333333,2003
-Rong Ge,Clemson University,act,1.0,0.333333333333,2015
+Rong Ge,Duke University,act,1.0,0.333333333333,2015
 Sham M. Kakade,University of Washington,act,1.0,0.333333333333,2015
 Lenore Cowen,Tufts University,act,1.0,0.333333333333,1994
 Charles E. Leiserson,Massachusetts Institute of Technology,act,3.0,1.33333333333,1982
@@ -25815,7 +25899,7 @@ Shai Ben-David,University of Waterloo,act,1.0,0.2,1990
 Allan Borodin,University of Toronto,act,3.0,0.9,1990
 Daniele Micciancio,University of California - San Diego,act,2.0,1.33333333333,1998
 Sanjeev Arora,Princeton University,act,2.0,0.583333333333,2012
-Rong Ge,Clemson University,act,2.0,0.583333333333,2012
+Rong Ge,Duke University,act,2.0,0.583333333333,2012
 Ravindran Kannan,IISc Bangalore,act,1.0,0.25,2012
 Paul Beame,University of Washington,act,2.0,0.583333333333,1998
 Richard M. Karp,University of California - Berkeley,act,1.0,0.25,1998
@@ -26698,24 +26782,28 @@ Andrew McCallum,University of Massachusetts Amherst,nlp,1.0,0.333333333333,2007
 Diane J. Litman,University of Pittsburgh,nlp,2.0,0.833333333333,2013
 Jian-Yun Nie,University of Montreal,nlp,1.0,0.111111111111,2015
 Martha Palmer,University of Colorado Boulder,nlp,1.0,0.333333333333,2007
-Marti A. Hearst,University of California - Berkeley,nlp,1.0,0.333333333333,2007
+Marti A. Hearst,University of California - Berkeley,nlp,2.0,0.666666666667,2007
 Qiaozhu Mei,University of Michigan,nlp,1.0,0.25,2006
 Regina Barzilay,Massachusetts Institute of Technology,nlp,6.0,1.64285714286,2016
 Alan W. Black,Carnegie Mellon University,nlp,1.0,0.0714285714286,2003
 Eugene Charniak,Brown University,nlp,2.0,1.33333333333,2010
+Janyce Wiebe,University of Pittsburgh,nlp,3.0,0.777777777778,2005
 Walter S. Lasecki,University of Michigan,nlp,1.0,0.25,2013
 Jeffrey P. Bigham,Carnegie Mellon University,nlp,1.0,0.25,2013
 Jacob Eisenstein,Georgia Institute of Technology,nlp,3.0,1.5,2009
-Regina Barzilay,Massachusetts Institute of Technology,nlp,2.0,0.5,2009
 Sameer Singh 0001,University of California - Irvine,nlp,1.0,0.333333333333,2015
 Sebastian Riedel,University College London,nlp,2.0,0.833333333333,2015
 Anoop Sarkar,Simon Fraser University,nlp,2.0,0.410256410256,2004
 Rachel Greenstadt,Drexel University,nlp,1.0,0.333333333333,2013
 Dejing Dou,University of Oregon,nlp,1.0,0.5,2015
+Ani Nenkova,University of Pennsylvania,nlp,1.0,0.333333333333,2005
+Kathleen McKeown,Columbia University,nlp,3.0,1.33333333333,2005
 Ruihong Huang,Texas A&M University,nlp,3.0,1.16666666667,2013
 Amir Globerson,Tel Aviv University,nlp,1.0,0.333333333333,2015
+Joyce Y. Chai,Michigan State University,nlp,1.0,0.5,2005
 Partha Pratim Talukdar,IISc Bangalore,nlp,1.0,0.2,2015
 Brian Murphy,CUNY,nlp,1.0,0.2,2015
+James Pustejovsky,Brandeis University,nlp,1.0,0.25,2005
 Grzegorz Kondrak,University of Alberta,nlp,1.0,0.333333333333,2003
 Andrew McCallum,University of Massachusetts Amherst,nlp,1.0,0.5,2004
 Sebastian Riedel,University College London,nlp,2.0,0.833333333333,2010
@@ -26725,6 +26813,7 @@ Wray L. Buntine,Monash University,nlp,1.0,0.333333333333,2013
 Byron C. Wallace,Northeastern University,nlp,1.0,0.333333333333,2016
 William Yang Wang,University of California - Santa Barbara,nlp,1.0,0.25,2016
 Douglas Stott Parker,University of California - Los Angeles,nlp,1.0,0.5,2016
+Dan Roth,University of Illinois at Urbana-Champaign,nlp,2.0,0.583333333333,2005
 Emine Yilmaz,University College London,nlp,1.0,0.333333333333,2016
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,0.333333333333,2006
 Philipp Koehn,Johns Hopkins University,nlp,1.0,0.333333333333,2006
@@ -26735,12 +26824,12 @@ Noah A. Smith,University of Washington,nlp,8.0,2.03333333333,2016
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.33333333333,2009
 Mirella Lapata,University of Edinburgh,nlp,3.0,1.5,2004
 Alex Lascarides,University of Edinburgh,nlp,1.0,0.5,2004
+Adam Lopez,University of Edinburgh,nlp,2.0,0.666666666667,2005
+Philip Resnik,University of Maryland - College Park,nlp,3.0,1.16666666667,2005
 Lu Wang,Northeastern University,nlp,1.0,0.5,2016
-Kevin Knight,University of Southern California,nlp,3.0,1.33333333333,2009
+Claire Cardie,Cornell University,nlp,4.0,1.02777777778,2005
 Barbara Di Eugenio,University of Illinois at Chicago,nlp,2.0,0.833333333333,2003
 Mirella Lapata,University of Edinburgh,nlp,4.0,1.83333333333,2015
-Gholamreza Haffari,Monash University,nlp,2.0,0.833333333333,2009
-Anoop Sarkar,Simon Fraser University,nlp,1.0,0.333333333333,2009
 Mark Dredze,Johns Hopkins University,nlp,3.0,0.833333333333,2010
 Daniel Gildea,University of Rochester,nlp,3.0,2.0,2010
 Jesse M. Heines,University of Massachusetts Lowell,nlp,1.0,0.5,2012
@@ -26749,7 +26838,6 @@ Cristian Danescu-Niculescu-Mizil,Cornell University,nlp,2.0,0.75,2016
 Hansen Andrew Schwartz,Stony Brook University,nlp,1.0,0.0909090909091,2015
 Lyle H. Ungar,University of Pennsylvania,nlp,1.0,0.0909090909091,2015
 Tom M. Mitchell,Carnegie Mellon University,nlp,2.0,1.0,2016
-Philip Resnik,University of Maryland - College Park,nlp,3.0,1.16666666667,2009
 David Yarowsky,Johns Hopkins University,nlp,2.0,0.583333333333,2003
 Fei Liu 0004,University of Central Florida,nlp,1.0,0.25,2009
 Vicente Ordonez,University of Virginia,nlp,1.0,0.333333333333,2016
@@ -26757,6 +26845,8 @@ Ali Farhadi,University of Washington,nlp,1.0,0.333333333333,2016
 Nathan Schneider,Georgetown University,nlp,2.0,0.366666666667,2013
 Steven Bethard,University of Arizona,nlp,3.0,0.916666666667,2015
 Diane J. Litman,University of Pittsburgh,nlp,1.0,0.25,2012
+James A. Landay,Stanford University,nlp,1.0,0.0909090909091,2005
+Rada Mihalcea,University of Michigan,nlp,2.0,1.5,2005
 Kathleen McKeown,Columbia University,nlp,3.0,1.08333333333,2007
 Ralph Grishman,New York University,nlp,1.0,0.25,2007
 James Allan,University of Massachusetts Amherst,nlp,3.0,1.08333333333,2007
@@ -26764,7 +26854,7 @@ Kevin Knight,University of Southern California,nlp,2.0,0.75,2004
 Fei Liu 0004,University of Central Florida,nlp,2.0,0.533333333333,2015
 Norman M. Sadeh,Carnegie Mellon University,nlp,1.0,0.2,2015
 Honglak Lee,University of Michigan,nlp,1.0,0.333333333333,2016
-James H. Martin,University of Colorado Boulder,nlp,1.0,0.333333333333,2007
+James H. Martin,University of Colorado Boulder,nlp,2.0,0.833333333333,2007
 Randy Goebel,University of Alberta,nlp,1.0,0.2,2013
 Trevor Darrell,University of California - Berkeley,nlp,2.0,0.416666666667,2016
 Shrikanth Narayanan,University of Southern California,nlp,2.0,0.666666666667,2006
@@ -26772,70 +26862,76 @@ Dan Roth,University of Illinois at Urbana-Champaign,nlp,2.0,0.666666666667,2004
 Dan I. Moldovan,University of Texas at Dallas,nlp,1.0,0.333333333333,2003
 Eric K. Ringger,Brigham Young University,nlp,3.0,0.809523809524,2010
 Bing Liu 0001,University of Illinois at Chicago,nlp,1.0,0.5,2016
-Benjamin Van Durme,Johns Hopkins University,nlp,1.0,0.25,2012
-Jason Eisner,Johns Hopkins University,nlp,4.0,1.75,2012
+Benjamin Van Durme,Johns Hopkins University,nlp,2.0,1.25,2012
+Jason Eisner,Johns Hopkins University,nlp,5.0,2.08333333333,2012
 Iryna Gurevych,TU Darmstadt,nlp,1.0,0.25,2003
 David A. Smith,Northeastern University,nlp,2.0,0.833333333333,2016
 Philip Resnik,University of Maryland - College Park,nlp,2.0,0.416666666667,2003
 Mohit Bansal,University of North Carolina,nlp,1.0,0.25,2009
-Dan Klein,University of California - Berkeley,nlp,6.0,2.41666666667,2009
 Philipp Koehn,Johns Hopkins University,nlp,1.0,1.0,2010
 Fei Liu 0004,University of Central Florida,nlp,1.0,0.25,2016
 Eric K. Ringger,Brigham Young University,nlp,1.0,0.25,2006
 Graeme Hirst,University of Toronto,nlp,1.0,1.0,2003
 Peter A. Heeman,OHSU,nlp,2.0,1.5,2007
 Jacob Eisenstein,Georgia Institute of Technology,nlp,5.0,2.16666666667,2015
-Trevor Cohn,University of Melbourne,nlp,2.0,0.833333333333,2009
 Sharon Goldwater,University of Edinburgh,nlp,2.0,0.833333333333,2009
-Phil Blunsom,University of Oxford,nlp,2.0,0.833333333333,2009
+Dragomir R. Radev,University of Michigan,nlp,1.0,0.333333333333,2005
 Ani Nenkova,University of Pennsylvania,nlp,2.0,0.611111111111,2003
+Daphne Koller,Stanford University,nlp,1.0,0.25,2005
 Jaime G. Carbonell,Carnegie Mellon University,nlp,2.0,0.5,2016
 William W. Cohen,Carnegie Mellon University,nlp,1.0,0.25,2006
-Christopher D. Manning,Stanford University,nlp,4.0,1.75,2009
 Sameer Singh 0001,University of California - Irvine,nlp,1.0,0.333333333333,2010
 David Yarowsky,Johns Hopkins University,nlp,2.0,1.0,2001
+Yejin Choi,University of Washington,nlp,2.0,0.361111111111,2005
+Ellen Riloff,University of Utah,nlp,2.0,0.361111111111,2005
 Jaime G. Carbonell,Carnegie Mellon University,nlp,1.0,0.5,2007
 Percy Liang,Stanford University,nlp,3.0,1.0,2010
 Michael I. Jordan,University of California - Berkeley,nlp,1.0,0.333333333333,2010
 Yejin Choi,University of Washington,nlp,3.0,0.75,2015
-Noah A. Smith,University of Washington,nlp,5.0,1.78333333333,2009
+Rebecca Hwa,University of Pittsburgh,nlp,1.0,0.5,2005
 Dan Roth,University of Illinois at Urbana-Champaign,nlp,4.0,1.83333333333,2015
+Mihai Surdeanu,University of Arizona,nlp,1.0,0.25,2005
 Anoop Sarkar,Simon Fraser University,nlp,1.0,1.0,2001
 David Yarowsky,Johns Hopkins University,nlp,1.0,0.333333333333,2012
+Sharon Goldwater,University of Edinburgh,nlp,1.0,0.5,2005
 Barbara Di Eugenio,University of Illinois at Chicago,nlp,1.0,0.5,2009
-Grzegorz Kondrak,University of Alberta,nlp,1.0,0.333333333333,2009
 David Chiang,University of Notre Dame,nlp,2.0,0.533333333333,2016
 Steven Bird,University of Melbourne,nlp,3.0,0.566666666667,2016
+Charles A. Sutton,University of Edinburgh,nlp,1.0,0.5,2005
+Andrew McCallum,University of Massachusetts Amherst,nlp,1.0,0.5,2005
 Graeme Hirst,University of Toronto,nlp,2.0,0.833333333333,2013
-Hal Daumé III,University of Maryland - College Park,nlp,2.0,0.590909090909,2012
+Hal Daumé III,University of Maryland - College Park,nlp,6.0,2.00757575758,2012
 Eugene Charniak,Brown University,nlp,1.0,0.333333333333,2009
 Alan W. Black,Carnegie Mellon University,nlp,1.0,0.5,2006
 Mehryar Mohri,New York University,nlp,1.0,0.5,2006
 James Allan,University of Massachusetts Amherst,nlp,1.0,0.5,2004
 Shrikanth Narayanan,University of Southern California,nlp,1.0,0.333333333333,2007
+Peter A. Heeman,OHSU,nlp,2.0,1.0,2005
 Cristian Danescu-Niculescu-Mizil,Cornell University,nlp,1.0,0.333333333333,2009
 Lillian Lee,Cornell University,nlp,1.0,0.333333333333,2009
 Ralph Grishman,New York University,nlp,2.0,0.833333333333,2016
-William W. Cohen,Carnegie Mellon University,nlp,2.0,0.833333333333,2009
+David A. Smith,Northeastern University,nlp,1.0,0.333333333333,2005
 Stuart M. Shieber,Harvard University,nlp,1.0,0.5,2003
 Richard E. Ladner,University of Washington,nlp,1.0,0.333333333333,2006
 Jacob Eisenstein,Georgia Institute of Technology,nlp,4.0,2.5,2013
 Jacob Eisenstein,Georgia Institute of Technology,nlp,1.0,0.5,2004
 Rivka Levitan,CUNY,nlp,1.0,0.166666666667,2012
 Julia Hirschberg,Columbia University,nlp,1.0,0.166666666667,2012
-Ani Nenkova,University of Pennsylvania,nlp,1.0,0.166666666667,2012
+Ani Nenkova,University of Pennsylvania,nlp,3.0,0.866666666667,2012
+Hermann Ney,RWTH Aachen,nlp,1.0,0.5,2005
 Stuart M. Shieber,Harvard University,nlp,1.0,0.5,2009
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,4.0,0.97619047619,2016
 David R. Karger,Massachusetts Institute of Technology,nlp,1.0,0.333333333333,2007
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,2.0,1.0,2006
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2015
-Jason Eisner,Johns Hopkins University,nlp,2.0,0.583333333333,2007
+Jason Eisner,Johns Hopkins University,nlp,3.0,1.08333333333,2007
 David M. Blei,Columbia University,nlp,1.0,0.333333333333,2010
 Jason Eisner,Johns Hopkins University,nlp,1.0,1.0,2003
 Gerald Penn,University of Toronto,nlp,2.0,1.0,2006
 Giuseppe Carenini,University of British Columbia,nlp,2.0,0.583333333333,2010
 Raymond T. Ng,University of British Columbia,nlp,2.0,0.583333333333,2010
-Kevin Gimpel,Toyota Technological Institute at Chicago,nlp,1.0,0.5,2012
+Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.5,2005
+Kevin Gimpel,Toyota Technological Institute at Chicago,nlp,2.0,0.7,2012
 Vincent Ng,University of Texas at Dallas,nlp,1.0,0.5,2003
 Claire Cardie,Cornell University,nlp,1.0,0.5,2003
 Jacob Eisenstein,Georgia Institute of Technology,nlp,2.0,1.5,2006
@@ -26852,20 +26948,21 @@ Elham Kashefi,University of Edinburgh,nlp,1.0,0.333333333333,2013
 Alex Waibel,Carnegie Mellon University,nlp,2.0,0.583333333333,2004
 Chris Biemann,TU Darmstadt,nlp,1.0,1.0,2007
 Joyce Yue Chai,Michigan State University,nlp,1.0,0.333333333333,2009
+Suzanne Stevenson,University of Toronto,nlp,1.0,0.5,2005
 Andrew McCallum,University of Massachusetts Amherst,nlp,3.0,1.0,2006
-Frank Keller,University of Edinburgh,nlp,1.0,0.5,2007
-Vincent Ng,University of Texas at Dallas,nlp,3.0,2.0,2009
+Frank Keller,University of Edinburgh,nlp,2.0,0.833333333333,2007
 Eugene Charniak,Brown University,nlp,1.0,0.333333333333,2007
 Taylor Berg-Kirkpatrick,Carnegie Mellon University,nlp,2.0,0.583333333333,2015
 Eugene Agichtein,Emory University,nlp,1.0,0.25,2015
+Marti A. Hearst,University of California - Berkeley,nlp,2.0,1.0,2005
 Julia Hirschberg,Columbia University,nlp,2.0,1.0,2006
+Raymond J. Mooney,University of Texas at Austin,nlp,1.0,0.5,2005
 Song-Chun Zhu,University of California - Los Angeles,nlp,2.0,0.309523809524,2016
 Joyce Y. Chai,Michigan State University,nlp,1.0,0.166666666667,2016
 David R. Karger,Massachusetts Institute of Technology,nlp,1.0,0.25,2009
 Charles A. Sutton,University of Edinburgh,nlp,1.0,0.333333333333,2006
 Daniel Gildea,University of Rochester,nlp,2.0,1.07692307692,2004
 Dragomir R. Radev,University of Michigan,nlp,2.0,0.576923076923,2004
-Percy Liang,Stanford University,nlp,1.0,0.5,2009
 Ani Nenkova,University of Pennsylvania,nlp,1.0,0.5,2016
 Rebecca Hwa,University of Pittsburgh,nlp,2.0,1.0,2016
 Dan I. Moldovan,University of Texas at Dallas,nlp,1.0,0.5,2012
@@ -26873,12 +26970,13 @@ Jamie Callan,Carnegie Mellon University,nlp,2.0,0.75,2007
 Raman Arora,Johns Hopkins University,nlp,1.0,0.333333333333,2015
 Byron C. Wallace,Northeastern University,nlp,1.0,1.0,2012
 Shay B. Cohen,University of Edinburgh,nlp,1.0,0.5,2009
-Alexander M. Rush,Harvard University,nlp,1.0,0.5,2012
+Alexander M. Rush,Harvard University,nlp,2.0,0.75,2012
 Maarten de Rijke,VU Amsterdam,nlp,1.0,0.333333333333,2007
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.333333333333,2012
 Julia Hirschberg,Columbia University,nlp,1.0,0.333333333333,2009
-Daniel Jurafsky,Stanford University,nlp,2.0,0.666666666667,2009
 Gholamreza Haffari,Monash University,nlp,2.0,0.583333333333,2015
+Michael J. Cafarella,University of Michigan,nlp,1.0,0.25,2005
+Doug Downey,Northwestern University,nlp,1.0,0.25,2005
 Raymond J. Mooney,University of Texas at Austin,nlp,2.0,1.0,2010
 Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.25,2003
 Kurt VanLehn,Arizona State University,nlp,1.0,0.25,2003
@@ -26887,6 +26985,8 @@ Alex Waibel,Carnegie Mellon University,nlp,1.0,0.25,2013
 Sebastian Riedel,University College London,nlp,1.0,0.25,2013
 Benjamin M. Marlin,University of Massachusetts Amherst,nlp,1.0,0.25,2013
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.333333333333,2003
+James Allan,University of Massachusetts Amherst,nlp,2.0,1.0,2005
+William W. Cohen,Carnegie Mellon University,nlp,1.0,0.333333333333,2005
 Simone Teufel,University of Cambridge,nlp,1.0,0.5,2007
 Simon Lacoste-Julien,University of Montreal,nlp,1.0,0.25,2006
 Michael I. Jordan,University of California - Berkeley,nlp,1.0,0.25,2006
@@ -26899,6 +26999,7 @@ Tim Miller,University of Melbourne,nlp,2.0,2.0,2009
 Nathan Schneider,Georgetown University,nlp,1.0,0.25,2010
 Daniel Jurafsky,Stanford University,nlp,3.0,0.916666666667,2013
 Steve Renals,University of Edinburgh,nlp,1.0,0.25,2006
+Grzegorz Kondrak,University of Alberta,nlp,1.0,0.5,2005
 Fei Liu 0004,University of Central Florida,nlp,2.0,0.5,2013
 Henry A. Kautz,University of Rochester,nlp,1.0,0.142857142857,2015
 Jiebo Luo,University of Rochester,nlp,1.0,0.142857142857,2015
@@ -26913,7 +27014,7 @@ Grzegorz Kondrak,University of Alberta,nlp,1.0,0.5,2012
 Liang Huang,Oregon State University,nlp,2.0,1.25,2006
 Joyce Yue Chai,Michigan State University,nlp,1.0,0.5,2012
 Dan Goldwasser,Purdue University,nlp,1.0,0.333333333333,2012
-Vivek Srikumar,University of Utah,nlp,1.0,0.333333333333,2012
+Vivek Srikumar,University of Utah,nlp,2.0,0.666666666667,2012
 Ellen Riloff,University of Utah,nlp,2.0,0.533333333333,2016
 Marilyn A. Walker,University of California - Santa Cruz,nlp,1.0,0.333333333333,2016
 Eugene Charniak,Brown University,nlp,1.0,0.5,2012
@@ -26921,26 +27022,28 @@ Steve Renals,University of Edinburgh,nlp,1.0,1.0,2010
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,0.111111111111,2012
 Gholamreza Haffari,Monash University,nlp,3.0,0.833333333333,2016
 Jacob Eisenstein,Georgia Institute of Technology,nlp,4.0,1.5,2016
-Daniel Jurafsky,Stanford University,nlp,1.0,0.333333333333,2012
+Daniel Jurafsky,Stanford University,nlp,2.0,0.666666666667,2012
 Jan P. H. van Santen,OHSU,nlp,1.0,0.25,2013
 Chris Biemann,TU Darmstadt,nlp,3.0,1.33333333333,2013
 Frank Keller,University of Edinburgh,nlp,2.0,1.5,2004
 Alexander M. Rush,Harvard University,nlp,5.0,2.0,2016
 Stuart M. Shieber,Harvard University,nlp,2.0,0.666666666667,2016
+René Witte,Concordia University,nlp,1.0,0.5,2005
 Mihai Surdeanu,University of Arizona,nlp,2.0,0.5,2015
 Ellen Riloff,University of Utah,nlp,1.0,0.5,2004
 Rada Mihalcea,University of Michigan,nlp,2.0,0.533333333333,2010
 Ellen Riloff,University of Utah,nlp,2.0,0.833333333333,2015
 Lu Wang,Northeastern University,nlp,1.0,0.333333333333,2015
 Claire Cardie,Cornell University,nlp,1.0,0.333333333333,2015
+Simon Lacoste-Julien,University of Montreal,nlp,1.0,0.333333333333,2005
 Eric K. Ringger,Brigham Young University,nlp,2.0,0.4,2015
 Kevin D. Seppi,Brigham Young University,nlp,2.0,0.4,2015
 Timothy Baldwin,University of Melbourne,nlp,5.0,1.78333333333,2010
-Janyce Wiebe,University of Pittsburgh,nlp,3.0,0.833333333333,2009
 Rada Mihalcea,University of Michigan,nlp,3.0,1.08333333333,2009
 Dan Goldwasser,Purdue University,nlp,1.0,0.25,2010
 Vivek Srikumar,University of Utah,nlp,1.0,0.25,2010
 Roy Schwartz,Technion - Israel Institute of Technology,nlp,1.0,0.333333333333,2016
+W. Bruce Croft,University of Massachusetts Amherst,nlp,1.0,0.5,2005
 Fei Sha,University of Southern California,nlp,1.0,0.5,2003
 Victor Zue,Massachusetts Institute of Technology,nlp,1.0,0.333333333333,2010
 Luo Si,Purdue University,nlp,1.0,0.333333333333,2007
@@ -26949,14 +27052,15 @@ Dan Roth,University of Illinois at Urbana-Champaign,nlp,2.0,0.5,2009
 Suresh Venkatasubramanian,University of Utah,nlp,1.0,0.333333333333,2009
 Randall Davis,Massachusetts Institute of Technology,nlp,1.0,0.5,2006
 Ted Briscoe,University of Cambridge,nlp,1.0,0.5,2013
-Sebastian Riedel,University College London,nlp,1.0,0.5,2009
 Janyce Wiebe,University of Pittsburgh,nlp,2.0,1.0,2015
 Daniel Stefankovic,University of Rochester,nlp,1.0,0.5,2007
+Hal Daumé III,University of Maryland - College Park,nlp,1.0,0.5,2005
 Mark Steedman,University of Edinburgh,nlp,1.0,0.111111111111,2003
 Rebecca Hwa,University of Pittsburgh,nlp,1.0,0.111111111111,2003
 Stephen Clark,University of Cambridge,nlp,1.0,0.111111111111,2003
 Anoop Sarkar,Simon Fraser University,nlp,1.0,0.111111111111,2003
 Alan W. Black,Carnegie Mellon University,nlp,1.0,0.111111111111,2016
+Ping Li 0001,Rutgers University,nlp,1.0,0.5,2005
 Dale Schuurmans,University of Alberta,nlp,1.0,0.333333333333,2003
 Eric Fosler-Lussier,Ohio State University,nlp,1.0,0.25,2006
 Karen Livescu,Toyota Technological Institute at Chicago,nlp,1.0,0.2,2015
@@ -26964,19 +27068,19 @@ Tamara Sumner,University of Colorado Boulder,nlp,2.0,0.666666666667,2016
 David Chiang,University of Notre Dame,nlp,3.0,1.33333333333,2015
 Christopher Homan,Rochester Institute of Technology,nlp,2.0,0.5,2015
 Andrew McCallum,University of Massachusetts Amherst,nlp,1.0,0.2,2016
-Chris Dyer,Carnegie Mellon University,nlp,1.0,1.0,2009
 Stephen Clark,University of Cambridge,nlp,1.0,0.5,2001
 Regina Barzilay,Massachusetts Institute of Technology,nlp,2.0,0.611111111111,2003
 James Pustejovsky,Brandeis University,nlp,1.0,0.5,2003
 Marti A. Hearst,University of California - Berkeley,nlp,1.0,0.5,2003
-David Chiang,University of Notre Dame,nlp,1.0,0.333333333333,2009
 Yejin Choi,University of Washington,nlp,1.0,0.5,2007
 Claire Cardie,Cornell University,nlp,1.0,0.5,2007
 Kathleen McKeown,Columbia University,nlp,1.0,0.5,2013
 Jesse Hoey,University of Waterloo,nlp,1.0,0.5,2015
 Lillian Lee,Cornell University,nlp,1.0,0.5,2003
+Jamie Callan,Carnegie Mellon University,nlp,1.0,0.5,2005
+Philippe Langlais,University of Montreal,nlp,1.0,0.111111111111,2005
 Dong Wang,University of Notre Dame,nlp,2.0,0.5,2015
-Vincent Ng,University of Texas at Dallas,nlp,1.0,0.5,2012
+Vincent Ng,University of Texas at Dallas,nlp,2.0,1.0,2012
 Kevin Gimpel,Toyota Technological Institute at Chicago,nlp,1.0,0.166666666667,2013
 Nianwen Xue,Brandeis University,nlp,1.0,0.5,2013
 Rivka Levitan,CUNY,nlp,1.0,1.0,2013
@@ -28938,6 +29042,7 @@ José G. Delgado-Frias,Washington State University,hpc,1.0,0.5,1988
 H. T. Kung,Harvard University,hpc,1.0,1.0,1988
 Daniel A. Reed,University of Iowa,hpc,1.0,0.5,2001
 Keshav Pingali,University of Texas at Austin,hpc,1.0,0.333333333333,2005
+Albert Cohen 0001,Ecole Normale Superieure,hpc,1.0,0.125,2009
 Boyana Norris,University of Oregon,hpc,1.0,0.125,2009
 Yousef Saad,University of Minnesota,hpc,1.0,0.5,1989
 Tao Yang,University of California - Santa Barbara,hpc,1.0,0.166666666667,2006
@@ -28996,6 +29101,7 @@ David A. Bader,Georgia Institute of Technology,hpc,1.0,0.333333333333,2012
 Apostolos Gerasoulis,Rutgers University,hpc,1.0,0.333333333333,1990
 Tao Yang,University of California - Santa Barbara,hpc,1.0,0.333333333333,1990
 Jeanne Ferrante,University of California - San Diego,hpc,2.0,0.533333333333,1988
+Albert Cohen 0001,Ecole Normale Superieure,hpc,1.0,0.166666666667,2005
 Hong Jiang,University of Texas at Arlington,hpc,2.0,0.416666666667,2016
 Zizhong Chen,University of California - Riverside,hpc,2.0,1.2,2011
 Dean M. Tullsen,University of California - San Diego,hpc,1.0,0.5,2008
@@ -29163,6 +29269,7 @@ Paul Feautrier,Ecole Normale Superieure de Lyon,hpc,1.0,0.25,2002
 David A. Padua,University of Illinois at Urbana-Champaign,hpc,1.0,0.25,2002
 Lizhong Chen,Oregon State University,hpc,1.0,0.333333333333,2013
 Stephen J. Wright,University of Wisconsin - Madison,hpc,1.0,0.25,2002
+Albert Cohen 0001,Ecole Normale Superieure,hpc,1.0,0.25,2006
 Hong Jiang,University of Texas at Arlington,hpc,1.0,0.25,2015
 Wolfgang E. Nagel,TU Dresden,hpc,1.0,0.5,1991
 Mateo Valero,Polytechnic University of Catalonia,hpc,2.0,0.583333333333,2001
@@ -29205,6 +29312,7 @@ José M. Llabería,Polytechnic University of Catalonia,hpc,1.0,0.5,1989
 Alvin R. Lebeck,Duke University,hpc,1.0,0.5,2000
 R. Govindarajan,IISc Bangalore,hpc,1.0,0.25,2012
 Antonio González 0001,Polytechnic University of Catalonia,hpc,1.0,0.333333333333,2004
+Albert Cohen 0001,Ecole Normale Superieure,hpc,1.0,0.25,2001
 Mahmut T. Kandemir,Pennsylvania State University,hpc,1.0,0.25,2003
 Madhav V. Marathe,Virginia Tech,hpc,1.0,0.2,2010
 Garth A. Gibson,Carnegie Mellon University,hpc,1.0,0.333333333333,2004
@@ -30782,7 +30890,7 @@ Somesh Jha,University of Wisconsin - Madison,act,1.0,0.333333333333,1996
 Shafi Goldwasser,Massachusetts Institute of Technology,act,1.0,0.5,2005
 Debmalya Panigrahi,Duke University,act,1.0,0.5,2012
 Sanjeev Arora,Princeton University,act,1.0,0.333333333333,2013
-Rong Ge,Clemson University,act,1.0,0.333333333333,2013
+Rong Ge,Duke University,act,1.0,0.333333333333,2013
 Glencora Borradaile,Oregon State University,act,1.0,0.333333333333,2010
 Piotr Sankowski,University of Warsaw,act,1.0,0.333333333333,2010
 Kasturi R. Varadarajan,University of Iowa,act,1.0,0.5,1997
@@ -31536,7 +31644,7 @@ Naren Ramakrishnan,Virginia Tech,mlmining,1.0,0.333333333333,2008
 Yang Cao,Virginia Tech,mlmining,1.0,0.333333333333,2008
 Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.5,2013
 Evimaria Terzi,Boston University,mlmining,1.0,0.5,2007
-Rong Ge,Clemson University,mlmining,1.0,0.2,2010
+Rong Ge,Duke University,mlmining,1.0,0.2,2010
 David D. Jensen,University of Massachusetts Amherst,mlmining,3.0,0.97619047619,2007
 Martin Ester,Simon Fraser University,mlmining,1.0,0.333333333333,1995
 Lu Su,University at Buffalo,mlmining,2.0,0.242857142857,2015
@@ -31838,7 +31946,7 @@ Evimaria Terzi,Boston University,mlmining,1.0,0.333333333333,2009
 Bing Liu 0001,University of Illinois at Chicago,mlmining,1.0,0.5,2012
 Srinivasan Parthasarathy,Ohio State University,mlmining,1.0,0.166666666667,2003
 Dhabaleswar K. Panda,Ohio State University,mlmining,1.0,0.166666666667,2003
-Rong Ge,Clemson University,mlmining,2.0,0.583333333333,2007
+Rong Ge,Duke University,mlmining,2.0,0.583333333333,2007
 Gautam Das,University of Texas at Arlington,mlmining,1.0,0.333333333333,2011
 Vagelis Hristidis,University of California - Riverside,mlmining,1.0,0.333333333333,2011
 Benny Kimelfeld,Technion - Israel Institute of Technology,mlmining,1.0,0.25,2016
@@ -32073,7 +32181,7 @@ S. V. N. Vishwanathan,University of California - Santa Cruz,mlmining,2.0,1.0,201
 Steven Skiena,Stony Brook University,mlmining,1.0,0.2,2009
 Yufei Tao,University of Queensland,mlmining,1.0,0.333333333333,2006
 Martin Ester,Simon Fraser University,mlmining,1.0,0.25,2004
-Rong Ge,Clemson University,mlmining,1.0,0.25,2004
+Rong Ge,Duke University,mlmining,1.0,0.25,2004
 Michael E. Kress,CUNY,mlmining,1.0,0.2,2011
 Heng Huang,University of Texas at Arlington,mlmining,1.0,0.25,2013
 Daniel J. Abadi,Yale University,mlmining,1.0,0.5,2016
@@ -34418,6 +34526,7 @@ Sebastian Boring,DIKU,chi,1.0,0.25,2016
 Martina Angela Sasse,University College London,chi,1.0,0.2,2012
 Margaret M. Burnett,Oregon State University,chi,1.0,0.142857142857,2013
 Christopher Scaffidi,Oregon State University,chi,1.0,0.142857142857,2013
+Robert W. Lindeman,University of Canterbury,chi,1.0,0.2,2005
 Laura A. Dabbish,Carnegie Mellon University,chi,1.0,0.5,2009
 Richard Mann,University of Waterloo,chi,2.0,0.666666666667,2011
 Zachary O. Toups,New Mexico State University,chi,1.0,0.25,2011
@@ -34588,6 +34697,7 @@ Brian P. Bailey,University of Illinois at Urbana-Champaign,chi,1.0,0.16666666666
 Kay Connelly,Indiana University,chi,1.0,0.333333333333,2012
 Maneesh Agrawala,Stanford University,chi,3.0,0.833333333333,2016
 Ken Perlin,New York University,chi,1.0,0.25,2014
+Robert W. Lindeman,University of Canterbury,chi,1.0,0.333333333333,1999
 James K. Hahn,George Washington University,chi,1.0,0.333333333333,1999
 Scott R. Klemmer,University of California - San Diego,chi,1.0,0.25,2016
 Anthony Steed,University College London,chi,1.0,0.333333333333,2012
@@ -35627,7 +35737,7 @@ Alexander T. Ihler,University of California - Irvine,mlmining,1.0,0.333333333333
 Padhraic Smyth,University of California - Irvine,mlmining,1.0,0.333333333333,2009
 Tianming Liu,University of Georgia,mlmining,1.0,0.0833333333333,2010
 Sanjeev Arora,Princeton University,mlmining,1.0,0.25,2012
-Rong Ge,Clemson University,mlmining,1.0,0.25,2012
+Rong Ge,Duke University,mlmining,1.0,0.25,2012
 Ankur Moitra,Massachusetts Institute of Technology,mlmining,1.0,0.25,2012
 Christopher G. Lucas,University of Edinburgh,mlmining,1.0,0.333333333333,2011
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2015
@@ -37194,7 +37304,7 @@ David Sontag,New York University,mlmining,1.0,0.333333333333,2008
 Amir Globerson,Tel Aviv University,mlmining,1.0,0.333333333333,2008
 Tommi S. Jaakkola,Massachusetts Institute of Technology,mlmining,1.0,0.333333333333,2008
 Liqing Zhang,Virginia Tech,mlmining,1.0,0.142857142857,2011
-Rong Ge,Clemson University,mlmining,4.0,1.23333333333,2016
+Rong Ge,Duke University,mlmining,4.0,1.23333333333,2016
 Jason D. Hartline,Northwestern University,mlmining,1.0,0.333333333333,2015
 Éva Tardos,Cornell University,mlmining,1.0,0.333333333333,2015
 Yaser S. Abu-Mostafa,California Institute of Technology,mlmining,1.0,0.5,1996
@@ -38978,7 +39088,7 @@ Jonathan P. Whiteley,University of Oxford,mlmining,1.0,0.2,2000
 David Gavaghan,University of Oxford,mlmining,1.0,0.2,2000
 Gerhard Neumann,TU Darmstadt,mlmining,1.0,0.333333333333,2009
 Jan Peters 0001,TU Darmstadt,mlmining,1.0,0.333333333333,2009
-Rong Ge,Clemson University,mlmining,2.0,0.75,2015
+Rong Ge,Duke University,mlmining,2.0,0.75,2015
 Weng-Keen Wong,Oregon State University,mlmining,2.0,0.75,2003
 Jean Honorio,Purdue University,mlmining,1.0,1.0,2012
 Amos J. Storkey,University of Edinburgh,mlmining,1.0,0.5,2014
@@ -39289,7 +39399,7 @@ Richard S. Zemel,University of Toronto,mlmining,1.0,0.5,2009
 Su-In Lee,University of Washington,mlmining,1.0,0.333333333333,2014
 Abdeslam Boularias,Rutgers University,mlmining,1.0,0.5,2009
 Sanjeev Arora,Princeton University,mlmining,1.0,0.25,2014
-Rong Ge,Clemson University,mlmining,1.0,0.25,2014
+Rong Ge,Duke University,mlmining,1.0,0.25,2014
 Barbara E. Engelhardt,Princeton University,mlmining,1.0,0.333333333333,2006
 Andreas Krause 0001,ETH Zurich,mlmining,1.0,0.333333333333,2006
 Alberto Maria Segre,University of Iowa,mlmining,1.0,0.333333333333,1994
@@ -41360,6 +41470,7 @@ Weng-Keen Wong,Oregon State University,plan,1.0,0.142857142857,2013
 Xiaoli Fern,Oregon State University,plan,1.0,0.142857142857,2013
 John Regehr,University of Utah,plan,1.0,0.142857142857,2013
 David A. Padua,University of Illinois at Urbana-Champaign,plan,1.0,0.25,2001
+Albert Cohen 0001,Ecole Normale Superieure,plan,1.0,0.25,2008
 John Cavazos,University of Delaware,plan,1.0,0.25,2008
 Olaf Chitil,University of Kent,plan,1.0,0.5,2015
 Rajiv Gupta,University of California - Riverside,plan,1.0,0.333333333333,1989
@@ -41484,6 +41595,7 @@ Jeffrey C. Trinkle,Rensselaer Polytechnic Institute,robotics,2.0,2.0,1992
 Geoffrey C. Fox,Indiana University,robotics,3.0,1.16666666667,1990
 Ulrich Kremer,Rutgers University,robotics,1.0,0.5,2009
 Kenneth Salisbury,Stanford University,robotics,1.0,0.333333333333,2010
+Robert W. Lindeman,University of Canterbury,robotics,1.0,0.111111111111,2014
 Stefan Schaal,Max Planck Institute,robotics,5.0,1.91666666667,2001
 Andrea Lockerd Thomaz,Georgia Institute of Technology,robotics,1.0,0.333333333333,2014
 Roderic A. Grupen,University of Massachusetts Amherst,robotics,2.0,0.392857142857,2016
@@ -45422,6 +45534,7 @@ Santosh Pande,Georgia Institute of Technology,bed,1.0,0.333333333333,2010
 Saumya K. Debray,University of Arizona,bed,1.0,0.333333333333,2007
 Gregory R. Andrews,University of Arizona,bed,1.0,0.333333333333,2007
 Hermann Härtig,TU Dresden,bed,2.0,0.583333333333,2012
+Albert Cohen 0001,Ecole Normale Superieure,bed,1.0,0.333333333333,2012
 Marc Pouzet,Ecole Normale Superieure,bed,1.0,0.333333333333,2012
 Timothy Bourke,Ecole Normale Superieure,bed,1.0,0.25,2011
 Marc Pouzet,Ecole Normale Superieure,bed,1.0,0.25,2011
@@ -46062,6 +46175,7 @@ Pedro M. Domingos,University of Washington,nlp,1.0,0.5,2009
 Yoav Artzi,Cornell University,nlp,2.0,0.583333333333,2015
 Shih-Fu Chang,Columbia University,nlp,1.0,0.25,2015
 Niranjan Balasubramanian,Stony Brook University,nlp,1.0,0.25,2013
+Gerhard Weikum,Max Planck Institute,nlp,3.0,0.833333333333,2012
 Suzanne Stevenson,University of Toronto,nlp,1.0,0.5,2004
 Wee Sun Lee,National University of Singapore,nlp,2.0,0.583333333333,2009
 Hermann Ney,RWTH Aachen,nlp,2.0,0.583333333333,2008
@@ -46069,6 +46183,8 @@ Suzanne Stevenson,University of Toronto,nlp,1.0,0.333333333333,2015
 Luo Si,Purdue University,nlp,1.0,0.166666666667,2015
 Hal Daumé III,University of Maryland - College Park,nlp,2.0,1.0,2004
 Jian-Yun Nie,University of Montreal,nlp,1.0,0.333333333333,2011
+David A. Smith,Northeastern University,nlp,2.0,0.666666666667,2012
+Philippe Langlais,University of Montreal,nlp,1.0,0.5,2007
 Partha P. Talukdar,IISc Bangalore,nlp,2.0,0.833333333333,2015
 Shay B. Cohen,University of Edinburgh,nlp,2.0,0.666666666667,2011
 Cliff Stein,Columbia University,nlp,1.0,0.333333333333,2013
@@ -46076,10 +46192,8 @@ Xifeng Yan,University of California - Santa Barbara,nlp,2.0,0.342857142857,2016
 Cliff Stein,Columbia University,nlp,1.0,0.333333333333,2015
 Christina Lioma,DIKU,nlp,1.0,0.2,2011
 Hal Daumé III,University of Maryland - College Park,nlp,1.0,0.333333333333,2010
-Jason Eisner,Johns Hopkins University,nlp,4.0,2.0,2009
-Iryna Gurevych,TU Darmstadt,nlp,1.0,0.5,2009
+Phil Blunsom,University of Oxford,nlp,1.0,0.333333333333,2012
 Hwee Tou Ng,National University of Singapore,nlp,4.0,1.5,2009
-Ari Rappoport,Hebrew University of Jerusalem,nlp,3.0,1.5,2009
 Eric Nyberg,Carnegie Mellon University,nlp,1.0,0.25,2008
 Sanda M. Harabagiu,University of Texas at Dallas,nlp,2.0,1.0,2011
 Alexander M. Rush,Harvard University,nlp,1.0,0.333333333333,2013
@@ -46087,30 +46201,38 @@ Jackie Chi Kit Cheung,McGill University,nlp,1.0,0.5,2014
 Gerald Penn,University of Toronto,nlp,1.0,0.5,2014
 Benedikt Schmidt,IMDEA Software Institute,nlp,1.0,0.333333333333,2015
 Alan Ritter,Ohio State University,nlp,2.0,0.583333333333,2011
+Mark Steedman,University of Edinburgh,nlp,1.0,0.333333333333,2012
+Greg Durrett,University of Texas at Austin,nlp,1.0,0.333333333333,2012
 John Canny,University of California - Berkeley,nlp,1.0,0.333333333333,2013
+Sebastian Riedel,University College London,nlp,1.0,0.142857142857,2007
+Sampath Kannan,University of Pennsylvania,nlp,1.0,0.333333333333,2012
+Mitchell Marcus,University of Pennsylvania,nlp,1.0,0.333333333333,2012
 Jaime G. Carbonell,Carnegie Mellon University,nlp,1.0,0.5,2004
 Lise Getoor,University of California - Santa Cruz,nlp,1.0,0.25,2009
 Joyce Y. Chai,Michigan State University,nlp,1.0,0.25,2013
 Sebastian Riedel,University College London,nlp,3.0,1.0,2016
-Michael Collins,Columbia University,nlp,2.0,0.75,2009
+Tom M. Mitchell,Carnegie Mellon University,nlp,1.0,0.5,2012
 Stephen G. Pulman,University of Oxford,nlp,1.0,0.5,2006
 Omri Abend,Hebrew University of Jerusalem,nlp,1.0,0.25,2016
 Michael Collins,Columbia University,nlp,1.0,0.333333333333,2006
+Michael Collins,Columbia University,nlp,3.0,1.08333333333,2007
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.5,2014
-Ellen Riloff,University of Utah,nlp,2.0,0.833333333333,2009
+Kevin Knight,University of Southern California,nlp,3.0,1.08333333333,2007
 Wei Xu,Ohio State University,nlp,1.0,0.2,2011
 Percy Liang,Stanford University,nlp,2.0,0.45,2013
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.5,1998
 Claire Cardie,Cornell University,nlp,2.0,0.833333333333,2006
+James Pustejovsky,Brandeis University,nlp,1.0,0.5,2007
 Dan Goldwasser,Purdue University,nlp,1.0,0.5,2008
 Hal Daumé III,University of Maryland - College Park,nlp,3.0,1.0,2011
+Claire Cardie,Cornell University,nlp,1.0,0.5,2012
 Partha P. Talukdar,IISc Bangalore,nlp,1.0,0.333333333333,2016
 Daniel Gildea,University of Rochester,nlp,2.0,1.0,2009
-Andrew McCallum,University of Massachusetts Amherst,nlp,3.0,1.03333333333,2009
 Hwee Tou Ng,National University of Singapore,nlp,2.0,0.833333333333,2016
 Daniel Gildea,University of Rochester,nlp,2.0,1.0,2014
 Partha Pratim Talukdar,IISc Bangalore,nlp,1.0,0.166666666667,2008
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,1.0,0.333333333333,2015
+Irena Koprinska,University of Sydney,nlp,1.0,0.2,2012
 Daniel Gildea,University of Rochester,nlp,1.0,0.2,2016
 Eric P. Xing,Carnegie Mellon University,nlp,3.0,0.95,2010
 Daniel Jurafsky,Stanford University,nlp,2.0,0.583333333333,2011
@@ -46120,30 +46242,40 @@ Irena Koprinska,University of Sydney,nlp,1.0,0.2,2013
 Yezhou Yang,Arizona State University,nlp,1.0,0.25,2011
 Yiannis Aloimonos,University of Maryland - College Park,nlp,1.0,0.25,2011
 Karen Livescu,Toyota Technological Institute at Chicago,nlp,1.0,0.25,2016
-James R. Curran,University of Sydney,nlp,1.0,0.5,2009
+Qinfeng Shi,University of Adelaide,nlp,1.0,0.25,2007
+S. V. N. Vishwanathan,University of California - Santa Cruz,nlp,1.0,0.25,2007
 Graeme Hirst,University of Toronto,nlp,1.0,0.333333333333,2008
 Kemal Oflazer,Carnegie Mellon University,nlp,1.0,0.25,2014
 Anoop Sarkar,Simon Fraser University,nlp,1.0,0.333333333333,2015
 Hwee Tou Ng,National University of Singapore,nlp,1.0,0.5,2004
+Timothy Baldwin,University of Melbourne,nlp,1.0,0.2,2007
 Pedro M. Domingos,University of Washington,nlp,1.0,0.5,2008
 Padmini Srinivasan,University of Iowa,nlp,1.0,0.2,2015
+Wee Sun Lee,National University of Singapore,nlp,1.0,0.333333333333,2007
+Percy Liang,Stanford University,nlp,2.0,0.5,2007
+Michael I. Jordan,University of California - Berkeley,nlp,1.0,0.25,2007
 Vicente Ordonez,University of Virginia,nlp,1.0,0.25,2014
 Tamara L. Berg,University of North Carolina,nlp,1.0,0.25,2014
+Kevin Knight,University of Southern California,nlp,1.0,0.5,2012
 Jason Eisner,Johns Hopkins University,nlp,2.0,0.7,2011
+William W. Cohen,Carnegie Mellon University,nlp,2.0,0.5,2012
+Carolyn Penstein Rosé,Carnegie Mellon University,nlp,1.0,0.25,2012
 Andrew McCallum,University of Massachusetts Amherst,nlp,1.0,0.333333333333,2010
 Chris Callison-Burch,University of Pennsylvania,nlp,1.0,1.0,2008
 Philipp Koehn,Johns Hopkins University,nlp,1.0,0.333333333333,2011
 William W. Cohen,Carnegie Mellon University,nlp,1.0,0.333333333333,2004
 Tom M. Mitchell,Carnegie Mellon University,nlp,1.0,0.333333333333,2004
-Liang Huang,Oregon State University,nlp,1.0,0.333333333333,2009
+ChengXiang Zhai,University of Illinois at Urbana-Champaign,nlp,1.0,0.25,2012
 Cristian Danescu-Niculescu-Mizil,Cornell University,nlp,1.0,0.5,2014
 Rada Mihalcea,University of Michigan,nlp,3.0,1.0,2015
 Noah A. Smith,University of Washington,nlp,1.0,0.25,2008
 Eric P. Xing,Carnegie Mellon University,nlp,1.0,0.25,2008
+Wray L. Buntine,Monash University,nlp,1.0,0.333333333333,2012
 Rada Mihalcea,University of Michigan,nlp,1.0,0.5,2004
 Samuel R. Bowman,New York University,nlp,1.0,0.25,2015
 Mark Steedman,University of Edinburgh,nlp,3.0,1.08333333333,2011
 Hermann Ney,RWTH Aachen,nlp,1.0,0.333333333333,2009
+Anoop Sarkar,Simon Fraser University,nlp,1.0,0.5,2007
 Brendan T. O'Connor,University of Massachusetts Amherst,nlp,1.0,0.333333333333,2016
 Kevin Gimpel,Toyota Technological Institute at Chicago,nlp,1.0,0.5,2009
 Trevor Cohn,University of Melbourne,nlp,2.0,0.533333333333,2014
@@ -46151,8 +46283,11 @@ Chris Callison-Burch,University of Pennsylvania,nlp,2.0,0.833333333333,2009
 Wee Sun Lee,National University of Singapore,nlp,1.0,0.25,2008
 Luke S. Zettlemoyer,University of Washington,nlp,1.0,0.25,2008
 Mitchell Marcus,University of Pennsylvania,nlp,1.0,0.333333333333,2015
+Ellen Riloff,University of Utah,nlp,1.0,0.5,2007
 David M. Blei,Columbia University,nlp,1.0,0.25,2016
-Mirella Lapata,University of Edinburgh,nlp,2.0,1.0,2009
+Rada Mihalcea,University of Michigan,nlp,1.0,0.5,2012
+Giuseppe Carenini,University of British Columbia,nlp,1.0,0.333333333333,2012
+Raymond T. Ng,University of British Columbia,nlp,1.0,0.333333333333,2012
 Kai-Wei Chang,University of Virginia,nlp,1.0,0.25,2014
 Jackie Chi Kit Cheung,McGill University,nlp,1.0,0.5,2015
 Kai-Wei Chang,University of Virginia,nlp,1.0,0.25,2016
@@ -46164,6 +46299,8 @@ Phil Blunsom,University of Oxford,nlp,1.0,0.5,2010
 Trevor Cohn,University of Melbourne,nlp,2.0,0.833333333333,2010
 Alan Ritter,Ohio State University,nlp,1.0,0.25,2008
 Doug Downey,Northwestern University,nlp,1.0,0.25,2008
+Mihai Surdeanu,University of Arizona,nlp,2.0,0.45,2012
+Dan Jurafsky,Stanford University,nlp,1.0,0.2,2012
 David A. Smith,Northeastern University,nlp,1.0,0.5,2004
 Frank Keller,University of Edinburgh,nlp,1.0,0.333333333333,2011
 Mark Dredze,Johns Hopkins University,nlp,1.0,0.5,2008
@@ -46176,6 +46313,7 @@ Benjamin Van Durme,Johns Hopkins University,nlp,1.0,0.125,2016
 Eugene Agichtein,Emory University,nlp,1.0,0.333333333333,2008
 Ying Lu,University of Nebraska,nlp,1.0,0.166666666667,2015
 Benjamin B. Bederson,University of Maryland - College Park,nlp,1.0,0.166666666667,2010
+David A. Smith,Northeastern University,nlp,2.0,1.0,2007
 Cody Dunne,Northeastern University,nlp,1.0,0.333333333333,2009
 Gerhard Weikum,Max Planck Institute,nlp,1.0,0.5,2016
 Brendan O'Connor,University of Massachusetts Amherst,nlp,1.0,0.25,2008
@@ -46188,8 +46326,10 @@ Derek Ruths,McGill University,nlp,1.0,0.25,2015
 Vivek Srikumar,University of Utah,nlp,1.0,0.125,2014
 Steven Bethard,University of Arizona,nlp,1.0,1.0,2013
 Padhraic Smyth,University of California - Irvine,nlp,1.0,0.5,2013
+Adam Lopez,University of Edinburgh,nlp,1.0,1.0,2007
 Ali Farhadi,University of Washington,nlp,1.0,0.333333333333,2014
 Benjamin Van Durme,Johns Hopkins University,nlp,1.0,0.25,2011
+Amir Globerson,Tel Aviv University,nlp,1.0,0.25,2007
 Alexander M. Rush,Harvard University,nlp,2.0,0.45,2010
 David Sontag,New York University,nlp,2.0,0.45,2010
 Tommi S. Jaakkola,Massachusetts Institute of Technology,nlp,2.0,0.45,2010
@@ -46208,7 +46348,6 @@ David Bamman,University of California - Berkeley,nlp,1.0,0.5,2015
 Yejin Choi,University of Washington,nlp,1.0,0.5,2008
 Claire Cardie,Cornell University,nlp,1.0,0.5,2008
 Yejin Choi,University of Washington,nlp,1.0,0.5,2009
-Claire Cardie,Cornell University,nlp,1.0,0.5,2009
 Bing Liu 0001,University of Illinois at Chicago,nlp,1.0,0.333333333333,2009
 Alok N. Choudhary,Northwestern University,nlp,1.0,0.333333333333,2009
 David M. Mimno,Cornell University,nlp,1.0,0.25,2015
@@ -46217,6 +46356,9 @@ William W. Cohen,Carnegie Mellon University,nlp,1.0,0.333333333333,2011
 David Bamman,University of California - Berkeley,nlp,1.0,0.5,2016
 Vivek Srikumar,University of Utah,nlp,1.0,0.5,2016
 Sebastian Riedel,University College London,nlp,1.0,0.5,2006
+Kenneth Heafield,University of Edinburgh,nlp,1.0,0.333333333333,2012
+Philipp Koehn,Johns Hopkins University,nlp,1.0,0.333333333333,2012
+Dragomir R. Radev,University of Michigan,nlp,2.0,0.5,2007
 Brendan O'Connor,University of Massachusetts Amherst,nlp,1.0,0.166666666667,2011
 Sebastian Riedel,University College London,nlp,2.0,0.75,2011
 Naren Ramakrishnan,Virginia Tech,nlp,1.0,0.5,2008
@@ -46230,6 +46372,7 @@ Andrew D. Ker,University of Oxford,nlp,1.0,0.333333333333,2015
 Stephen Clark,University of Cambridge,nlp,1.0,0.333333333333,2009
 Mark Steedman,University of Edinburgh,nlp,1.0,0.333333333333,2009
 Anna Rumshisky,University of Massachusetts Lowell,nlp,1.0,0.333333333333,2015
+Alan W. Black,Carnegie Mellon University,nlp,1.0,0.25,2012
 Karin Verspoor,University of Melbourne,nlp,1.0,0.2,2014
 Steven Bird,University of Melbourne,nlp,1.0,0.2,2014
 Mark Dredze,Johns Hopkins University,nlp,1.0,0.333333333333,2009
@@ -46247,6 +46390,7 @@ Prasad Tadepalli,Oregon State University,nlp,1.0,0.142857142857,2014
 Nazli Goharian,Georgetown University,nlp,1.0,0.5,2015
 Gerhard Weikum,Max Planck Institute,nlp,1.0,0.111111111111,2011
 Doug Downey,Northwestern University,nlp,1.0,0.333333333333,2014
+Trevor Cohn,University of Melbourne,nlp,1.0,0.25,2012
 Jason Eisner,Johns Hopkins University,nlp,3.0,1.33333333333,2008
 Kyunghyun Cho,New York University,nlp,1.0,0.142857142857,2014
 Yoshua Bengio,University of Montreal,nlp,1.0,0.142857142857,2014
@@ -46257,23 +46401,31 @@ Louis-Philippe Morency,Carnegie Mellon University,nlp,1.0,0.333333333333,2016
 Kevin D. Seppi,Brigham Young University,nlp,1.0,0.142857142857,2010
 Mihai Surdeanu,University of Arizona,nlp,1.0,0.142857142857,2010
 Dan Jurafsky,Stanford University,nlp,1.0,0.142857142857,2010
+Pascal Poupart,University of Waterloo,nlp,1.0,0.333333333333,2007
+Chrysanne DiMarco,University of Waterloo,nlp,1.0,0.333333333333,2007
 Bing Liu 0001,University of Illinois at Chicago,nlp,2.0,0.833333333333,2010
 Mona T. Diab,George Washington University,nlp,1.0,0.5,2011
 Lakshminarayanan Subramanian,New York University,nlp,1.0,0.333333333333,2016
 Raymond J. Mooney,University of Texas at Austin,nlp,1.0,0.5,2011
+Graeme Hirst,University of Toronto,nlp,1.0,0.25,2007
 Shrikanth Narayanan,University of Southern California,nlp,1.0,0.5,2015
+Ndapandula Nakashole,University of California - San Diego,nlp,1.0,0.333333333333,2012
 Sridhar Mahadevan,University of Massachusetts Amherst,nlp,1.0,0.2,2015
 Giuseppe Carenini,University of British Columbia,nlp,1.0,0.5,2009
 Joyce Yue Chai,Michigan State University,nlp,1.0,0.5,2008
 James R. Curran,University of Sydney,nlp,1.0,0.333333333333,2014
 Brendan O'Connor,University of Massachusetts Amherst,nlp,1.0,0.5,2015
+Shay B. Cohen,University of Edinburgh,nlp,1.0,0.5,2007
 Ellen Riloff,University of Utah,nlp,1.0,0.333333333333,2006
 Mark Steedman,University of Edinburgh,nlp,1.0,0.333333333333,2004
 See-Kiong Ng,National University of Singapore,nlp,1.0,0.333333333333,2010
 See-Kiong Ng,National University of Singapore,nlp,1.0,0.333333333333,2015
 See-Kiong Ng,National University of Singapore,nlp,1.0,0.25,2016
 Dan I. Moldovan,University of Texas at Dallas,nlp,1.0,0.5,2010
+Mitchell P. Marcus,University of Pennsylvania,nlp,1.0,0.2,2007
 Daniel S. Weld,University of Washington,nlp,1.0,0.25,2014
+Timothy Baldwin,University of Melbourne,nlp,1.0,0.333333333333,2012
+Ralph Grishman,New York University,nlp,1.0,0.25,2012
 Simone Teufel,University of Cambridge,nlp,1.0,0.5,2004
 Janyce Wiebe,University of Pittsburgh,nlp,1.0,0.25,2008
 Luke S. Zettlemoyer,University of Washington,nlp,1.0,0.333333333333,2014
@@ -46287,16 +46439,21 @@ Yoav Artzi,Cornell University,nlp,1.0,0.5,2011
 David A. Smith,Northeastern University,nlp,1.0,0.5,2008
 Derek Ruths,McGill University,nlp,1.0,0.333333333333,2013
 William W. Cohen,Carnegie Mellon University,nlp,1.0,0.25,2014
+Hui Yang 0001,Georgetown University,nlp,1.0,1.0,2012
 Kevin Gimpel,Toyota Technological Institute at Chicago,nlp,1.0,0.5,2011
 Gerhard Weikum,Max Planck Institute,nlp,1.0,0.333333333333,2014
 David M. Mimno,Cornell University,nlp,1.0,0.5,2014
+Luke S. Zettlemoyer,University of Washington,nlp,1.0,0.5,2007
 Vincent Ng,University of Texas at Dallas,nlp,1.0,1.0,2008
 Nianwen Xue,Brandeis University,nlp,1.0,0.5,2004
 Martha Palmer,University of Colorado Boulder,nlp,1.0,0.5,2004
+Marine Carpuat,University of Maryland - College Park,nlp,1.0,0.5,2007
 Huan Sun,Ohio State University,nlp,1.0,0.142857142857,2016
 Johanna D. Moore,University of Edinburgh,nlp,1.0,0.333333333333,2004
 See-Kiong Ng,National University of Singapore,nlp,1.0,0.333333333333,2014
 Mitch Marcus,University of Pennsylvania,nlp,1.0,0.5,2009
+Jordan L. Boyd-Graber,University of Colorado Boulder,nlp,1.0,0.333333333333,2007
+David M. Blei,Columbia University,nlp,1.0,0.333333333333,2007
 Mark James Carman,Monash University,nlp,1.0,0.2,2016
 Vivek Srikumar,University of Utah,nlp,1.0,0.5,2011
 Ellen Riloff,University of Utah,nlp,1.0,0.5,2014
@@ -46306,7 +46463,6 @@ Mohit Gupta,University of Wisconsin - Madison,nlp,1.0,0.25,2015
 Partha Pratim Talukdar,IISc Bangalore,nlp,1.0,0.25,2013
 Tom M. Mitchell,Carnegie Mellon University,nlp,1.0,0.25,2013
 Shang-Hua Teng,University of Southern California,nlp,1.0,0.333333333333,2011
-Ani Nenkova,University of Pennsylvania,nlp,1.0,0.5,2009
 Mira Mezini,TU Darmstadt,soft,2.0,0.583333333333,2008
 Eileen Kraemer,Clemson University,soft,1.0,0.2,2008
 Laura K. Dillon,Michigan State University,soft,1.0,0.2,2008
