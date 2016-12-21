@@ -1,5 +1,8 @@
 # Identify and *verify* faculty home pages.
 
+import os
+import codecs
+import socket
 import sys
 import time
 import random
@@ -23,18 +26,35 @@ import requests
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 homepages = csv2dict_str_str('homepages.csv')
 lastvalidated = csv2dict_str_str('homepage-validated.csv')
+
+# Rewrite sorted.
+with codecs.open("homepage-validated-temp.csv", "a", "utf8") as outfile:
+    outfile.write("name,date")
+    for name in sorted(lastvalidated):
+        if (name == "name"):
+            continue
+        outfile.write(name.decode('utf8') + "," + lastvalidated[name] + "\n")
+
+os.rename("homepage-validated-temp.csv", "homepage-validated.csv")
+
 # Trim out LinkedIn and RateMyProfessors sites, etc.
 trim = ['google.com','google.fr','ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2016','2015','.pdf']
 
 now = time.time()
 
-with open("homepages.csv", mode="a") as outfile:
-    with open("homepage-validated.csv", mode="a") as appendfile:
+expirationDate = 60 * 60 # * 7 * 4 # Four weeks
+# expirationDate = 60 * 60 * 24 * 7 * 4 # Four weeks
+
+with codecs.open("homepages.csv", "a", "utf8") as outfile:
+    with codecs.open("homepage-validated.csv", "a", "utf8") as appendfile:
         facultydictkeys = list(facultydict.keys())
         random.shuffle(facultydictkeys)
         for name in facultydictkeys:
+            timedOut = False
+            if name == "name":
+                continue
             if name in lastvalidated:
-                if now - float(lastvalidated[name]) < 60 * 60 * 24 * 4:
+                if now - float(lastvalidated[name]) < expirationDate:
                     continue
             # Skip any homepages we have already in the database.
             if (name in homepages):
@@ -52,12 +72,18 @@ with open("homepages.csv", mode="a") as outfile:
                                 print str(a.getcode()) + " : " + homepages[name] + " -> " + a.geturl()
                             else:
                                 s = "%10.2f" % time.time() 
-                                appendfile.write(name + "," + s + "\n")
+                                appendfile.write(name.decode('utf8') + "," + s + "\n")
                                 appendfile.flush()
                                 continue
-                    except:
-                        # Timeout
+                    except urllib2.URLError, e:
+                        # For Python 2.6
+                        if isinstance(e.reason, socket.timeout):
+                            print "timeout: " + homepages[name]
+                            timedOut = True
+                    except socket.timeout, e:
+                        # For Python 2.7
                         print "timeout: " + homepages[name]
+                        timedOut = True
                         # continue
             str = name + ' ' + facultydict[name]
             name = name.decode('utf8')
@@ -72,16 +98,20 @@ with open("homepages.csv", mode="a") as outfile:
                     if (match != None):
                         matched = matched + 1
                 if (matched == 0):
-                    #if actualURL != homepages[name]: # Skip if we already found this was a 404...
-                    break
+                    if not timedOut:
+                        break
+                    else:
+                        # Timed out on this URL? Try another one.
+                        if actualURL == homepages[name]:
+                            continue
                         
             # Output the name and this resolved URL.
             match = re.search('www.google.com', actualURL)
-            name = name.encode('utf-8')
-            try:
+            if True: # indentation foo
                 if (match == None):
                     # Not a google link.
                     print(name + "," + actualURL)
+                    sys.stdout.flush()
                     outfile.write(name + "," + actualURL + "\n")
                     outfile.flush()
                     s = "%10.2f" % time.time() 
@@ -92,6 +122,7 @@ with open("homepages.csv", mode="a") as outfile:
                         # It's a new name, what are you gonna do (even if it is a
                         # Google link, include it).
                         print(name + "," + actualURL)
+                        sys.stdout.flush()
                         outfile.write(name + "," + actualURL + "\n")
                         outfile.flush()
                         s = "%10.2f" % time.time() 
@@ -99,11 +130,6 @@ with open("homepages.csv", mode="a") as outfile:
                         appendfile.flush()
                     else:
                         print("Lookup failed for "+name+" -- found "+actualURL)
-            except UnicodeDecodeError as err:
-                print("Unicode error: {0}".format(err))
-                print("Lookup failed for "+name)
-                print("Decode = "+name.decode('utf8'))
-                print("URL = "+actualURL)
         
             sys.stdout.flush()
             # Throttle lookups to avoid getting cut off by Google.
