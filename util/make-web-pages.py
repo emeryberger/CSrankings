@@ -54,7 +54,6 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
         print(name)
         try:
             if (match == None):
-                print("Not a Google link.")
                 print(name + "," + actualURL)
                 outfile.write(name + "," + actualURL + "\n")
                 outfile.flush()
