@@ -8,10 +8,10 @@ startyear = 2006
 endyear = 2016
 
 aicolor = "#32CD32"     # limegreen
-syscolor = "#0000ff"    # blue
+syscolor = "#00bfff"    # blue
 theorycolor = "#ffff00" # yellow
 intercolor = "#ffc0cb"  # pink
-nacolor = "#00FFFF"     # cyan
+nacolor = "#d3d3d3"     # light gray
 
 colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, nacolor ]
 
@@ -51,6 +51,7 @@ def makegraph(institution,fname,dir):
     maxdegree = 0
     edges = {}
     dot = Graph(comment=institution,engine='circo')
+    # dot = Graph(comment=institution,engine='neato')
     # graph = nx.Graph()
 
     for author in pubs:
