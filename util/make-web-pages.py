@@ -1,6 +1,6 @@
-# Identify faculty home pages by using Google's "I'm Feeling Lucky"
-# search for both their name and their home page.
+# Identify faculty home pages.
 
+import codecs
 import sys
 import random
 import urllib2
@@ -22,9 +22,9 @@ import requests
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 homepages = csv2dict_str_str('homepages.csv')
 # Trim out LinkedIn and RateMyProfessors sites, etc.
-trim = ['ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2016','2015','.pdf']
+trim = ['dblp.uni-trier.','ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2016','2015','.pdf']
 
-with open("homepages.csv", mode="a") as outfile:
+with codecs.open("homepages.csv", "a", "utf8") as outfile:
     facultydictkeys = list(facultydict.keys())
     random.shuffle(facultydictkeys)
     for name in facultydictkeys:
@@ -51,25 +51,24 @@ with open("homepages.csv", mode="a") as outfile:
                         
         # Output the name and this resolved URL.
         match = re.search('www.google.com', actualURL)
-        name = name.encode('utf-8')
+        print(name)
         try:
             if (match == None):
-                # Not a google link.
+                print("Not a Google link.")
                 print(name + "," + actualURL)
                 outfile.write(name + "," + actualURL + "\n")
+                outfile.flush()
             else:
                 if (not (name in homepages)):
                     # It's a new name, what are you gonna do (even if it is a
                     # Google link, include it).
                     print(name + "," + actualURL)
                     outfile.write(name + "," + actualURL + "\n")
+                    outfile.flush()
                 else:
                     print("Lookup failed for "+name+" -- found "+actualURL)
-        except UnicodeDecodeError as err:
-            print("Unicode error: {0}".format(err))
-            print("Lookup failed for "+name)
-            print("Decode = "+name.decode('utf8'))
-            print("URL = "+actualURL)
+        except:
+            continue
         
         sys.stdout.flush()
         # Throttle lookups to avoid getting cut off by Google.
