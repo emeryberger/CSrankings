@@ -22,7 +22,7 @@ import requests
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 homepages = csv2dict_str_str('homepages.csv')
 # Trim out LinkedIn and RateMyProfessors sites, etc.
-trim = ['dblp.uni-trier.','ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2016','2015','.pdf']
+trim = ['researchgate', 'dblp.uni-trier.','ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2016','2015','.pdf']
 
 with codecs.open("homepages.csv", "a", "utf8") as outfile:
     facultydictkeys = list(facultydict.keys())
