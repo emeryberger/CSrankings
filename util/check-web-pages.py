@@ -102,7 +102,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                         break
                     else:
                         # Timed out on this URL? Try another one.
-                        if actualURL == homepages[name]:
+                        if actualURL == homepages[name.encode('utf8')]:
                             continue
                         
             # Output the name and this resolved URL.
