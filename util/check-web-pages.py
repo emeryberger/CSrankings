@@ -29,7 +29,7 @@ lastvalidated = csv2dict_str_str('homepage-validated.csv')
 
 # Rewrite sorted.
 with codecs.open("homepage-validated-temp.csv", "a", "utf8") as outfile:
-    outfile.write("name,date")
+    outfile.write("name,date\n")
     for name in sorted(lastvalidated):
         if (name == "name"):
             continue
@@ -62,8 +62,8 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                 if (match == None):
                     # Check for 404.
                     try:
-                        print "checking " + homepages[name] + " (" + name + ")"
-                        a=urllib2.urlopen(homepages[name], None, 10)
+                        print "checking " + homepages[name] + " (" + name + ", " + facultydict[name] + ")"
+                        a=urllib2.urlopen(homepages[name], None, 20)
                         if a.getcode() >= 400:
                             print str(a.getcode()) + " : " + homepages[name]
                         else:
