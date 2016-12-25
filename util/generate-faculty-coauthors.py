@@ -33,7 +33,8 @@ def parseDBLP(facultydict):
                 
                 for child in node:
                     if (child.tag == 'booktitle' or child.tag == 'journal'):
-                        if (child.text in confdict):
+                        if True: # INCLUDE ALL VENUES
+                            # if (confname in confdict):
                             foundArticle = True
                             confname = child.text
                         break
