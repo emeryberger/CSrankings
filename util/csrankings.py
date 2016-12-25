@@ -107,7 +107,8 @@ areadict = {
     # SIGDA
     'da' : ['ICCAD', 'DAC'],
     # SIGBED
-    'bed' : ['RTSS', 'RTAS', 'EMSOFT']
+    'bed' : ['RTSS', 'RTAS', 'EMSOFT'],
+    'vis' : ['IEEE Visualization', 'VR']
 }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
