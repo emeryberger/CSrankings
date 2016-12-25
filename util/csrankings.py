@@ -121,19 +121,32 @@ ISMB_Bioinformatics = { 2015 : (31, 12),
                         2009 : (25, 12) }
 
 # TOG special handling to count only SIGGRAPH proceedings.
-TOG_SIGGRAPH_Volume = { 2016 : (35, 4),
-                        2015 : (34, 4),
-                        2014 : (33, 4),
-                        2013 : (32, 4),
-                        2012 : (31, 4),
-                        2011 : (30, 4),
-                        2010 : (29, 4),
-                        2009 : (28, 3),
-                        2008 : (27, 3),
-                        2007 : (26, 3),
-                        2006 : (25, 3),
-                        2005 : (24, 3),
-                        2004 : (23, 3) }
+TOG_SIGGRAPH_Volume = { 2016 : (35, 4), # SIGGRAPH
+                        2015 : (34, 4), # SIGGRAPH
+                        2014 : (33, 4), # SIGGRAPH
+                        2013 : (32, 4), # SIGGRAPH
+                        2012 : (31, 4), # SIGGRAPH
+                        2011 : (30, 4), # SIGGRAPH
+                        2010 : (29, 4), # SIGGRAPH
+                        2009 : (28, 3), # SIGGRAPH
+                        2008 : (27, 3), # SIGGRAPH
+                        2007 : (26, 3), # SIGGRAPH
+                        2006 : (25, 3), # SIGGRAPH
+                        2005 : (24, 3), # SIGGRAPH
+                        2004 : (23, 3), # SIGGRAPH
+}
+
+# TOG special handling to count only SIGGRAPH Asia proceedings.
+TOG_SIGGRAPH_Asia_Volume = { 2016 : (35, 6), # SIGGRAPH Asia
+                             2015 : (34, 6), # SIGGRAPH Asia
+                             2014 : (33, 6), # SIGGRAPH Asia
+                             2013 : (32, 6), # SIGGRAPH Asia
+                             2012 : (31, 6), # SIGGRAPH Asia
+                             2011 : (30, 6), # SIGGRAPH Asia
+                             2010 : (29, 6), # SIGGRAPH Asia
+                             2009 : (28, 5), # SIGGRAPH Asia
+                             2008 : (27, 5)  # SIGGRAPH Asia
+}
 
 # ICSE special handling to omit short papers.
 # Contributed by Zhendong Su, UC Davis.
