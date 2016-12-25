@@ -119,10 +119,6 @@ def parseDBLP(facultydict):
                     exceptionConference = ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'ACM Trans. Graph.'))
                     if ((pageCount == 0) and exceptionConference):
                         tooFewPages = False
-                    if (pageCount == 0):
-                        if (confname == 'PLDI') and (year == 2014):
-                            if (startpage != 1) and (startpage != 20) and (startpage != 41):
-                                tooFewPages = False
 
                 for child in node:
                     if child.tag == 'author':
