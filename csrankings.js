@@ -833,11 +833,13 @@ CSRankings.areaMap = [{ area: "ai", title: "AI" },
     { area: "robotics", title: "Robotics" },
     { area: "bio", title: "Comp. Biology" },
     { area: "da", title: "Design Automation" },
-    { area: "bed", title: "Embedded Systems" }];
+    { area: "bed", title: "Embedded Systems" },
+    { area: "vis", title: "Visualization" }
+];
 CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
 CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
 CSRankings.theoryAreas = ["act", "crypt", "log"];
-CSRankings.otherAreas = ["graph", "chi", "robotics", "bio"];
+CSRankings.otherAreas = ["graph", "chi", "robotics", "bio", "vis"];
 CSRankings.areas = [];
 CSRankings.areaNames = [];
 CSRankings.fields = [];
