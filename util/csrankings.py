@@ -108,7 +108,7 @@ areadict = {
     'da' : ['ICCAD', 'DAC'],
     # SIGBED
     'bed' : ['RTSS', 'RTAS', 'EMSOFT'],
-    'vis' : ['IEEE Visualization', 'VR']
+    'vis' : ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.']
 }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
@@ -148,6 +148,16 @@ TOG_SIGGRAPH_Asia_Volume = { 2016 : (35, 6), # SIGGRAPH Asia
                              2009 : (28, 5), # SIGGRAPH Asia
                              2008 : (27, 5)  # SIGGRAPH Asia
 }
+
+# TVCG special handling to count only IEEE Visualization
+TVCG_Vis_Volume = { 2010 : (16, 6),
+                    2009 : (15, 6),
+                    2008 : (14, 6),
+                    2007 : (13, 6),
+                    2006 : (12, 5)
+}
+
+
 
 # ICSE special handling to omit short papers.
 # Contributed by Zhendong Su, UC Davis.
