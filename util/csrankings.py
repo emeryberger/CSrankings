@@ -150,7 +150,13 @@ TOG_SIGGRAPH_Asia_Volume = { 2016 : (35, 6), # SIGGRAPH Asia
 }
 
 # TVCG special handling to count only IEEE Visualization
-TVCG_Vis_Volume = { 2010 : (16, 6),
+TVCG_Vis_Volume = { 2017 : (23, 1),
+                    2016 : (22, 1),
+                    2014 : (20, 12),
+                    2013 : (19, 12),
+                    2012 : (18, 12),
+                    2011 : (17, 12),
+                    2010 : (16, 6),
                     2009 : (15, 6),
                     2008 : (14, 6),
                     2007 : (13, 6),
