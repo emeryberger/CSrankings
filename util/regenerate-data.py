@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart, ASE_LongPaperThreshold, TOG_SIGGRAPH_Volume, TOG_SIGGRAPH_Asia_Volume
+from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart, ASE_LongPaperThreshold, TOG_SIGGRAPH_Volume, TOG_SIGGRAPH_Asia_Volume, TVCG_Vis_Volume
 
 def parseDBLP(facultydict):
     authlogs = {}
@@ -95,6 +95,16 @@ def parseDBLP(facultydict):
                         if (volume == str(vol)) and (number == str(num)):
                             SIGGRAPH_Conf = True
                     if not SIGGRAPH_Conf:
+                        continue
+                        
+                # Special handling for IEEE Vis
+                if (confname == 'IEEE Trans. Vis. Comput. Graph.'):
+                    Vis_Conf = False
+                    if TVCG_Vis_Volume.has_key(year):
+                        (vol, num) = TVCG_Vis_Volume[year]
+                        if (volume == str(vol)) and (number == str(num)):
+                            Vis_Conf = True
+                    if not Vis_Conf:
                         continue
                         
                 # Special handling for ASE.
