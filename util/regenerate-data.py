@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, ISMB_Bioinformatics, ICSE_ShortPaperStart, ASE_LongPaperThreshold, TOG_SIGGRAPH_Volume, TOG_SIGGRAPH_Asia_Volume, TVCG_Vis_Volume
+from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, countPaper
 
 def parseDBLP(facultydict):
     authlogs = {}
@@ -21,7 +21,6 @@ def parseDBLP(facultydict):
             oldnode = node
 
             foundArticle = False
-            inRange = False
             authorsOnPaper = 0
             authorName = ""
             confname = ""
@@ -40,6 +39,7 @@ def parseDBLP(facultydict):
                     if (child.tag == 'booktitle' or child.tag == 'journal'):
                         confname = child.text
                         if (confname in confdict):
+                            areaname = confdict[confname]
                             foundArticle = True
                     if (child.tag == 'volume'):
                         volume = child.text
@@ -59,96 +59,19 @@ def parseDBLP(facultydict):
                             if authorName in facultydict:
                                 foundOneInDict = True
 
-                if (not foundArticle):
-                    # Not one of our conferences.
+                # Any authors in our affiliations?
+                if not foundOneInDict:
                     continue
 
-                areaname = confdict[confname]
+                # One of our conferences?
+                if not foundArticle:
+                    continue
+
+                # One of the papers we count?
+                if not countPaper(confname, year, volume, number, startPage, pageCount):
+                    continue
                 
-                # Special handling for ISMB.
-                if (confname == 'Bioinformatics'):
-                    if ISMB_Bioinformatics.has_key(year):
-                        (vol, num) = ISMB_Bioinformatics[year]
-                        if (volume != str(vol)) or (number != str(num)):
-                            continue
-                    else:
-                        continue
-
-                # Special handling for ICSE.
-                if ((confname == 'ICSE') or (confname == 'ICSE (1)') or (confname == 'ICSE (2)')):
-                    if ICSE_ShortPaperStart.has_key(year):
-                        pageno = ICSE_ShortPaperStart[year]
-                        if startPage >= pageno:
-                            # Omit papers that start at or beyond this page,
-                            # since they are "short papers" (regardless of their length).
-                            continue
-
-                # Special handling for SIGGRAPH and SIGGRAPH Asia.
-                if (confname == 'ACM Trans. Graph.'):
-                    SIGGRAPH_Conf = False
-                    if TOG_SIGGRAPH_Volume.has_key(year):
-                        (vol, num) = TOG_SIGGRAPH_Volume[year]
-                        if (volume == str(vol)) and (number == str(num)):
-                            SIGGRAPH_Conf = True
-                    if TOG_SIGGRAPH_Asia_Volume.has_key(year):
-                        (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-                        if (volume == str(vol)) and (number == str(num)):
-                            SIGGRAPH_Conf = True
-                    if not SIGGRAPH_Conf:
-                        continue
-                        
-                # Special handling for IEEE Vis
-                if (confname == 'IEEE Trans. Vis. Comput. Graph.'):
-                    Vis_Conf = False
-                    if TVCG_Vis_Volume.has_key(year):
-                        (vol, num) = TVCG_Vis_Volume[year]
-                        if (volume == str(vol)) and (number == str(num)):
-                            Vis_Conf = True
-                    if not Vis_Conf:
-                        continue
-                        
-                # Special handling for ASE.
-                if (confname == 'ASE'):
-                    if pageCount < ASE_LongPaperThreshold:
-                        # Omit short papers (which may be demos, etc.).
-                        continue
-                    
-                # Check that dates are in the specified range.
-                if ((year >= startyear) and (year <= endyear)):
-                    inRange = True
-                    
-                if year == -1:
-                    # No year.
-                    continue
-               
-                # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
-                # Only skip papers with a very small paper count,
-                # but above 1. Why?
-                # DBLP has real papers with incorrect page counts
-                # - usually a truncated single page. -1 means no
-                # pages found at all => some problem with journal
-                # entries in DBLP.
-                tooFewPages = False
-                if ((pageCount != -1) and (pageCount < pageCountThreshold)):
-                    tooFewPages = True
-                    exceptionConference = ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'ACM Trans. Graph.'))
-                    if ((pageCount == 0) and exceptionConference):
-                        tooFewPages = False
-
-                for child in node:
-                    if child.tag == 'author':
-                        authorName = child.text
-                        # if authorName is not None:
-                        # print authorName.encode('utf-8') + "," + areaname + "," + str(volume) + "," + str(number) + "," + str(year) + "," + str(pageCount) + "," + str(startPage) + "," + str(authorsOnPaper)
-                
-
-                if ((confname == 'ASE') and (pageCount <= 6)):
-                    tooFewPages = True
-
-                if (not inRange) or (not foundOneInDict) or tooFewPages:
-                    continue
-               
-                # If we got here, we have a winner.
+                # If we get here, we have a winner.
 
                 for child in node:
                     if child.tag == 'author':
