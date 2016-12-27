@@ -285,8 +285,10 @@ def countPaper(confname, year, volume, number, startPage, pageCount):
     tooFewPages = False
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
-        exceptionConference = ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'ACM Trans. Graph.'))
-        if ((pageCount == 0) and exceptionConference):
+        exceptionConference = confname == 'SC'
+        exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
+        exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
+        if exceptionConference:
             tooFewPages = False
     if tooFewPages:
         return False
