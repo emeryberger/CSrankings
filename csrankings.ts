@@ -753,7 +753,7 @@ class CSRankings {
 		    + encodeURI(CSRankings.homepages[name]) + '" '
 		    + 'onclick="trackOutboundLink(\''
 		    + encodeURI(CSRankings.homepages[name])
-		    + '\'); return false;"'
+		    + '\', true); return false;"'
 		    + '>' 
 		    + name
 		    + '</a>&nbsp;'
@@ -767,7 +767,7 @@ class CSRankings {
 		    + '" '
 		    + 'onclick="trackOutboundLink(\''
 		    + CSRankings.translateNameToDBLP(name)
-		    + '\'); return false;"'
+		    + '\', true); return false;"'
 		    + '>'
 		    + facultycount[name+dept]
 		    + '</a>'
