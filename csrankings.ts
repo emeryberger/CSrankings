@@ -643,8 +643,6 @@ class CSRankings {
 			if (areaDeptAdjustedCount[areaDept] != 0) {
 			    // geometric mean
 			    univagg[dept] *= areaDeptAdjustedCount[areaDept];
-			} else {
-			    /* n--; */
 			}
 		    } else {
 			univagg[dept] += areaDeptAdjustedCount[areaDept];
