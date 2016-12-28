@@ -24,16 +24,30 @@
     </script>
     <script>
       /**
-      * Function that tracks a click on an outbound link in Analytics.
-      * This function takes a valid URL string as an argument, and uses that URL string
-      * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+      * Track clicks to a link. If new_window is true the google analytics request
+      * will be made synchronously, because browsers block new windows from opening unless
+      * it is done DURING an on click event. If new_window is false, the request will
+      * be made asynchronously, and the current window url will be changed.
+      *
+      * Setting the transport method to 'beacon' lets the hit be sent
       * using 'navigator.sendBeacon' in browser that support it.
       */
-      var trackOutboundLink = function(url) {
-      ga('send', 'event', 'outbound', 'click', url, {
-      'transport': 'beacon',
-      'hitCallback': function(){document.location = url;}
-      });
+      var trackOutboundLink = function(url, new_window) {
+        /* Setting a default value for backward compatibility */
+        if (new_window === undefined) {
+          new_window = false;
+        }
+        ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
+        'hitCallback':
+          function () {
+            if (!new_window) {
+              document.location = url;
+            }
+          }
+        });
+        if (new_window){
+          window.open(url);
+        }
       }
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
