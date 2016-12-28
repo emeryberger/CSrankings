@@ -576,7 +576,7 @@ var CSRankings = (function () {
                     + encodeURI(CSRankings.homepages[name_5]) + '" '
                     + 'onclick="trackOutboundLink(\''
                     + encodeURI(CSRankings.homepages[name_5])
-                    + '\', true); return false;"'
+                    + '\'); return false;"'
                     + '>'
                     + name_5
                     + '</a>&nbsp;'
@@ -590,7 +590,7 @@ var CSRankings = (function () {
                     + '" '
                     + 'onclick="trackOutboundLink(\''
                     + CSRankings.translateNameToDBLP(name_5)
-                    + '\', true); return false;"'
+                    + '\'); return false;"'
                     + '>'
                     + facultycount[name_5 + dept]
                     + '</a>'
