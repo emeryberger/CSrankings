@@ -477,8 +477,6 @@ var CSRankings = (function () {
                             // geometric mean
                             univagg[dept] *= areaDeptAdjustedCount[areaDept];
                         }
-                        else {
-                        }
                     }
                     else {
                         univagg[dept] += areaDeptAdjustedCount[areaDept];
