@@ -13,7 +13,7 @@ theorycolor = "#ffff00" # yellow
 intercolor = "#ffc0cb"  # pink
 nacolor = "#d3d3d3"     # light gray
 
-colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, nacolor ]
+colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, intercolor, nacolor ]
 
 # colorList = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41" ]
 
@@ -40,8 +40,9 @@ areaList = [ { "area" : "ai", "title" : "AI" },
 	    { "area" : "robotics", "title" : "Robotics" },
 	    { "area" : "bio", "title" : "Comp. Biology" },
 	    { "area" : "da", "title" : "Design Automation" },
-             { "area" : "bed", "title" : "Embedded Systems" },
-            { "area" : "na", "title" : "Other" }
+            { "area" : "bed", "title" : "Embedded Systems" },
+             { "area" : "vis", "title" : "Visualization" }, 
+             { "area" : "na", "title" : "Other" }
 ]
 
 
@@ -49,6 +50,7 @@ def makegraph(institution,fname,dir):
     sumdegree = 0
     sumnodes = 0
     maxdegree = 0
+    nodes = []
     edges = {}
     dot = Graph(comment=institution,engine='circo')
     # dot = Graph(comment=institution,engine='neato')
@@ -64,6 +66,7 @@ def makegraph(institution,fname,dir):
                 # Not in DB.
                 continue
             if not author in coauthors:
+                # nodes.append((author.decode('utf8'), maxareas[author]))
                 dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                 # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
                 continue
@@ -201,7 +204,7 @@ for author in pubs:
     maxarea = "na"
     maxcount = 0
     for area in pubs[author]:
-        print (author,area,pubs[author][area])
+        # print (author,area,pubs[author][area])
         if pubs[author][area] > maxcount:
             if not area == "na":
                 maxarea = area
