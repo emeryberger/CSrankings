@@ -169,7 +169,12 @@ TVCG_Vis_Volume = { 2017 : (23, 1),
                     2006 : (12, 5)
 }
 
-
+# TVCG special handling to count only IEEE VR
+TVCG_VR_Volume = { 2016: (22, 4),
+                   2015: (21, 4),
+                   2014: (20, 4),
+                   2013: (19, 4),
+                   2012: (18, 4) }
 
 # ICSE special handling to omit short papers.
 # Contributed by Zhendong Su, UC Davis.
@@ -259,11 +264,15 @@ def countPaper(confname, year, volume, number, startPage, pageCount):
         if not SIGGRAPH_Conf:
             return False
                         
-    # Special handling for IEEE Vis
+    # Special handling for IEEE Vis and VR
     if (confname == 'IEEE Trans. Vis. Comput. Graph.'):
         Vis_Conf = False
         if TVCG_Vis_Volume.has_key(year):
             (vol, num) = TVCG_Vis_Volume[year]
+            if (volume == str(vol)) and (number == str(num)):
+                Vis_Conf = True
+        if TVCG_VR_Volume.has_key(year):
+            (vol, num) = TVCG_VR_Volume[year]
             if (volume == str(vol)) and (number == str(num)):
                 Vis_Conf = True
         if not Vis_Conf:
