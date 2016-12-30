@@ -1,6 +1,7 @@
 from csrankings import *
 from graphviz import *
 import csv
+import json
 #import networkx as nx
 #import matplotlib.pyplot as plt
 
@@ -12,6 +13,12 @@ syscolor = "#00bfff"    # blue
 theorycolor = "#ffff00" # yellow
 intercolor = "#ffc0cb"  # pink
 nacolor = "#d3d3d3"     # light gray
+
+colorGroup = { aicolor : 1,
+               syscolor : 2,
+               theorycolor : 3,
+               intercolor : 4,
+               nacolor : 5 }
 
 colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, intercolor, nacolor ]
 
@@ -45,13 +52,22 @@ areaList = [ { "area" : "ai", "title" : "AI" },
              { "area" : "na", "title" : "Other" }
 ]
 
+areaNum = {}
+ind = 0
+for i in areaList:
+    areaNum[areaList[ind]["area"]] = colorGroup[colorList[ind]]
+    ind += 1
 
 def makegraph(institution,fname,dir):
     sumdegree = 0
     sumnodes = 0
     maxdegree = 0
     nodes = []
+    addedNode = {}
+    links = []
     edges = {}
+    authorIndex = {}
+    authorInd = 0
     dot = Graph(comment=institution,engine='circo')
     # dot = Graph(comment=institution,engine='neato')
     # graph = nx.Graph()
@@ -66,7 +82,12 @@ def makegraph(institution,fname,dir):
                 # Not in DB.
                 continue
             if not author in coauthors:
-                # nodes.append((author.decode('utf8'), maxareas[author]))
+                if not addedNode.has_key(author.decode('utf8')):
+                    nodes.append({ 'nodeName' : author.decode('utf8'),
+                                   'group' : areaNum[maxareas[author]]})
+                    authorIndex[author.decode('utf8')] = authorInd
+                    authorInd += 1
+                    addedNode[author.decode('utf8')] = True
                 dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                 # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
                 continue
@@ -84,13 +105,29 @@ def makegraph(institution,fname,dir):
                                 maxdegree = degree
                             dot.edge(author.decode('utf8'),coauth.decode('utf8'))
                             # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
+                            if not addedNode.has_key(author.decode('utf8')):
+                                nodes.append({ 'nodeName' : author.decode('utf8'),
+                                               'group' : areaNum[maxareas[author]]})
+                                addedNode[author.decode('utf8')] = True
+                                authorIndex[author.decode('utf8')] = authorInd
+                                authorInd += 1
                         dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                         if not coauth in pubs:
                             # Not in DB
                             continue
                         dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
-                        edges[author+coauth] = True
-                        edges[coauth+author] = True
+                        if not addedNode.has_key(coauth.decode('utf8')):
+                            nodes.append({ 'nodeName' : coauth.decode('utf8'),
+                                           'group' : areaNum[maxareas[coauth]]})
+                            addedNode[coauth.decode('utf8')] = True
+                            authorIndex[coauth.decode('utf8')] = authorInd
+                            authorInd += 1
+                        if not edges.has_key(author+coauth):
+                            links.append({ 'source' : authorIndex[author.decode('utf8')],
+                                           'target' : authorIndex[coauth.decode('utf8')],
+                                           'value'  : 1 })
+                            edges[author+coauth] = True
+                            edges[coauth+author] = True
             if not foundOne:
                 # Had co-authors but not at this institution.
                 dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
@@ -101,6 +138,10 @@ def makegraph(institution,fname,dir):
     print "Degree = " + str(sumdegree)
     print "Max degree = " + str(maxdegree)
     print "Average degree = " + str(float(sumdegree)/float(sumnodes))
+    gr = { 'nodes' : nodes, 'links' : links }
+    # print json.dumps(gr)
+    with open(dir+fname+".json", 'wb') as f:
+        f.write("var collabs = " + json.dumps(gr) + ";")
     # print(dot.source.encode('utf8'))
     
     # pos = nx.nx_agraph.graphviz_layout(graph)
