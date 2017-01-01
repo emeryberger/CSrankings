@@ -102,55 +102,55 @@ def makegraph(institution,fname,dir):
 
     # Go through every author.
     for author in pubs:
-        realname = canonicalName(author)
         degree = 0
+        if facultydict[author] != institution:
+            continue
         if author in aliases:
             author = aliases[author]
-        # If the author is at this institution, add.
-        if facultydict[author] == institution:
-            addNode(author, nodes, addedNode, authorIndex, authorInd)
-            sumnodes += 1
-            # Check co-authors.
-            # Now go through all the coauthors (we may not find any, which we handle as a special case below).
-            foundOne = False
-            for coauth in coauthors.get(author, []):
-                if coauth in aliases:
-                    coauth = aliases[coauth]
-                if coauth in facultydict:
-                    if facultydict[coauth] == institution:
-                        coauthorrealname = canonicalName(coauth)
-                        foundOne = True
-                        # dot.edge(author.decode('utf8'),coauth.decode('utf8'))
-                        # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
-                        # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
-                        #if not coauth in pubs:
-                        #    # Not in DB
-                        #    continue
-                        # dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
-                        # Force co-author to be added here so we can reference him/her.
-                        addNode(coauth, nodes, addedNode, authorIndex, authorInd)
-                        if not edges.has_key(realname+coauthorrealname):
-                            degree += 1
-                            sumdegree += 1
-                            if degree > maxdegree:
-                                maxdegree = degree
-                            print realname + " - " + coauthorrealname
-                            links.append({ 'source' : authorIndex[realname],
-                                           'target' : authorIndex[coauthorrealname],
-                                           'value'  : 1 })
-                            edges[realname+coauthorrealname] = 0
-                            edges[coauthorrealname+realname] = 0
-                        edges[realname+coauthorrealname] += 1
-                        edges[coauthorrealname+realname] += 1
-            if not foundOne:
-                # Either had no co-authors since startyear or had co-authors but not at this institution.
-                
-                # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
-                # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
-                edges[realname+realname] = 2 # include one bogus co-authored article (2 b/c divided by 2 later)
-                links.append({ 'source' : authorIndex[realname],
-                               'target' : authorIndex[realname],
-                               'value'  : 1 })
+        realname = canonicalName(author)
+        addNode(author, nodes, addedNode, authorIndex, authorInd)
+        sumnodes += 1
+        # Check co-authors.
+        # Now go through all the coauthors (we may not find any, which we handle as a special case below).
+        foundOne = False
+        for coauth in coauthors.get(author, []):
+            if coauth in aliases:
+                coauth = aliases[coauth]
+            if coauth in facultydict:
+                if facultydict[coauth] == institution:
+                    coauthorrealname = canonicalName(coauth)
+                    foundOne = True
+                    # dot.edge(author.decode('utf8'),coauth.decode('utf8'))
+                    # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
+                    # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+                    #if not coauth in pubs:
+                    #    # Not in DB
+                    #    continue
+                    # dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
+                    # Force co-author to be added here so we can reference him/her.
+                    addNode(coauth, nodes, addedNode, authorIndex, authorInd)
+                    if not edges.has_key(realname+coauthorrealname):
+                        degree += 1
+                        sumdegree += 1
+                        if degree > maxdegree:
+                            maxdegree = degree
+                        print realname + " - " + coauthorrealname
+                        links.append({ 'source' : authorIndex[realname],
+                                       'target' : authorIndex[coauthorrealname],
+                                       'value'  : 1 })
+                        edges[realname+coauthorrealname] = 0
+                        edges[coauthorrealname+realname] = 0
+                    edges[realname+coauthorrealname] += 1
+                    edges[coauthorrealname+realname] += 1
+        if not foundOne:
+            # Either had no co-authors since startyear or had co-authors but not at this institution.
+
+            # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+            # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
+            edges[realname+realname] = 2 # include one bogus co-authored article (2 b/c divided by 2 later)
+            links.append({ 'source' : authorIndex[realname],
+                           'target' : authorIndex[realname],
+                           'value'  : 1 })
 
     # dot.render(dir+fname)
     print "Nodes = " + str(sumnodes)
