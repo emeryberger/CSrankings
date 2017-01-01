@@ -1,7 +1,10 @@
 from csrankings import *
-from graphviz import *
+# from graphviz import *
+
 import csv
 import json
+from nameparser import HumanName
+
 #import networkx as nx
 #import matplotlib.pyplot as plt
 
@@ -14,6 +17,12 @@ theorycolor = "#ffff00" # yellow
 intercolor = "#ffc0cb"  # pink
 nacolor = "#d3d3d3"     # light gray
 
+colors = [ aicolor,
+           syscolor,
+           theorycolor,
+           intercolor,
+           nacolor ]
+    
 colorGroup = { aicolor : 1,
                syscolor : 2,
                theorycolor : 3,
@@ -58,6 +67,24 @@ for i in areaList:
     areaNum[areaList[ind]["area"]] = colorGroup[colorList[ind]]
     ind += 1
 
+def canonicalName(name):
+    canonical = name.decode('utf8')
+    canonical = canonical.replace("0001","")
+    canonical = canonical.replace("0002","")
+    canonical = canonical.replace("0003","")
+    canonical = canonical.replace("0004","")
+    canonical = HumanName(canonical).first + " " + HumanName(canonical).last
+    return canonical
+
+def addNode(name, nodes, addedNode, authorIndex, authorInd):
+    if not addedNode.has_key(name.decode('utf8')):
+        nodes.append({ 'nodeName' : canonicalName(name),
+                       'group' : areaNum[maxareas[name]]})
+        addedNode[name.decode('utf8')] = True
+        authorIndex[canonicalName(name)] = authorInd
+        authorInd += 1
+        
+    
 def makegraph(institution,fname,dir):
     sumdegree = 0
     sumnodes = 0
@@ -68,72 +95,64 @@ def makegraph(institution,fname,dir):
     edges = {}
     authorIndex = {}
     authorInd = 0
-    dot = Graph(comment=institution,engine='circo')
+    # dot = Graph(comment=institution,engine='circo')
+    
     # dot = Graph(comment=institution,engine='neato')
     # graph = nx.Graph()
 
+    # Go through every author.
     for author in pubs:
+        realname = canonicalName(author)
         degree = 0
         if author in aliases:
             author = aliases[author]
+        # If the author is at this institution, add.
         if facultydict[author] == institution:
+            addNode(author, nodes, addedNode, authorIndex, authorInd)
             sumnodes += 1
-            if not author in facultydict:
-                # Not in DB.
-                continue
-            if not author in coauthors:
-                if not addedNode.has_key(author.decode('utf8')):
-                    nodes.append({ 'nodeName' : author.decode('utf8'),
-                                   'group' : areaNum[maxareas[author]]})
-                    authorIndex[author.decode('utf8')] = authorInd
-                    authorInd += 1
-                    addedNode[author.decode('utf8')] = True
-                dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
-                # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
-                continue
+            # Check co-authors.
+            # Now go through all the coauthors (we may not find any, which we handle as a special case below).
             foundOne = False
-            for coauth in coauthors[author]:
+            for coauth in coauthors.get(author, []):
                 if coauth in aliases:
                     coauth = aliases[coauth]
                 if coauth in facultydict:
                     if facultydict[coauth] == institution:
+                        coauthorrealname = canonicalName(coauth)
                         foundOne = True
-                        if not (author+coauth) in edges:
+                        # dot.edge(author.decode('utf8'),coauth.decode('utf8'))
+                        # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
+                        # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+                        #if not coauth in pubs:
+                        #    # Not in DB
+                        #    continue
+                        # dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
+                        # Force co-author to be added here so we can reference him/her.
+                        addNode(coauth, nodes, addedNode, authorIndex, authorInd)
+                        if not edges.has_key(realname+coauthorrealname):
                             degree += 1
                             sumdegree += 1
                             if degree > maxdegree:
                                 maxdegree = degree
-                            dot.edge(author.decode('utf8'),coauth.decode('utf8'))
-                            # graph.add_edge(author.decode('utf8'),coauth.decode('utf8'))
-                            if not addedNode.has_key(author.decode('utf8')):
-                                nodes.append({ 'nodeName' : author.decode('utf8'),
-                                               'group' : areaNum[maxareas[author]]})
-                                addedNode[author.decode('utf8')] = True
-                                authorIndex[author.decode('utf8')] = authorInd
-                                authorInd += 1
-                        dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
-                        if not coauth in pubs:
-                            # Not in DB
-                            continue
-                        dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
-                        if not addedNode.has_key(coauth.decode('utf8')):
-                            nodes.append({ 'nodeName' : coauth.decode('utf8'),
-                                           'group' : areaNum[maxareas[coauth]]})
-                            addedNode[coauth.decode('utf8')] = True
-                            authorIndex[coauth.decode('utf8')] = authorInd
-                            authorInd += 1
-                        if not edges.has_key(author+coauth):
-                            links.append({ 'source' : authorIndex[author.decode('utf8')],
-                                           'target' : authorIndex[coauth.decode('utf8')],
+                            print realname + " - " + coauthorrealname
+                            links.append({ 'source' : authorIndex[realname],
+                                           'target' : authorIndex[coauthorrealname],
                                            'value'  : 1 })
-                            edges[author+coauth] = True
-                            edges[coauth+author] = True
+                            edges[realname+coauthorrealname] = 0
+                            edges[coauthorrealname+realname] = 0
+                        edges[realname+coauthorrealname] += 1
+                        edges[coauthorrealname+realname] += 1
             if not foundOne:
-                # Had co-authors but not at this institution.
-                dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
+                # Either had no co-authors since startyear or had co-authors but not at this institution.
+                
+                # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
                 # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
+                edges[realname+realname] = 2 # include one bogus co-authored article (2 b/c divided by 2 later)
+                links.append({ 'source' : authorIndex[realname],
+                               'target' : authorIndex[realname],
+                               'value'  : 1 })
 
-    dot.render(dir+fname)
+    # dot.render(dir+fname)
     print "Nodes = " + str(sumnodes)
     print "Degree = " + str(sumdegree)
     print "Max degree = " + str(maxdegree)
@@ -141,7 +160,26 @@ def makegraph(institution,fname,dir):
     gr = { 'nodes' : nodes, 'links' : links }
     # print json.dumps(gr)
     with open(dir+fname+".json", 'wb') as f:
-        f.write("var collabs = " + json.dumps(gr) + ";")
+        # f.write("var collabs = " + json.dumps(gr) + ";")
+        f.write(json.dumps(gr))
+    with open(dir+fname+"-nodes.csv", 'wb') as f:
+        f.write("name,color\n")
+        for node in nodes:
+            line = node['nodeName'].encode('utf8') + "," + colors[node['group']-1] + "\n"
+            f.write(line)
+    with open(dir+fname+"-matrix.json", 'wb') as f:
+        matrix = []
+        for x in range(0,len(nodes)):
+            row = []
+            for y in range(0,len(nodes)):
+                key = nodes[x]['nodeName']+nodes[y]['nodeName']
+                if key in edges:
+                    row.append(edges[nodes[x]['nodeName']+nodes[y]['nodeName']] / 2)
+                else:
+                    row.append(0)
+            matrix.append(row)
+        f.write(json.dumps(matrix))
+        #            f.write(line)
     # print(dot.source.encode('utf8'))
     
     # pos = nx.nx_agraph.graphviz_layout(graph)
