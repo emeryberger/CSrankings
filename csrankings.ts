@@ -129,12 +129,14 @@ class CSRankings {
 	    { area : "robotics", title : "Robotics" },
 	    { area : "bio", title : "Comp. Biology" },
 	    { area : "da", title : "Design Automation" },
-	    { area : "bed", title : "Embedded Systems" } ];
+	    { area : "bed", title : "Embedded Systems" },
+	    { area : "vis", title : "Visualization" }
+	  ];
 
     private static readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
     private static readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
     private static readonly theoryAreas  = [ "act", "crypt", "log" ];
-    private static readonly otherAreas = [ "graph", "chi", "robotics", "bio" ];
+    private static readonly otherAreas   = [ "graph", "chi", "robotics", "bio", "vis" ];
     
     private static readonly areas : Array<string> = [];
     private static readonly areaNames : Array<string> = [];
@@ -641,8 +643,6 @@ class CSRankings {
 			if (areaDeptAdjustedCount[areaDept] != 0) {
 			    // geometric mean
 			    univagg[dept] *= areaDeptAdjustedCount[areaDept];
-			} else {
-			    /* n--; */
 			}
 		    } else {
 			univagg[dept] += areaDeptAdjustedCount[areaDept];
@@ -748,8 +748,11 @@ class CSRankings {
 
 		p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		    + '<a title="Click for author\'s home page." target="_blank" href="'
+		    + encodeURI(CSRankings.homepages[name]) + '" '
+		    + 'onclick="trackOutboundLink(\''
 		    + encodeURI(CSRankings.homepages[name])
-		    + '">' 
+		    + '\', true); return false;"'
+		    + '>' 
 		    + name
 		    + '</a>&nbsp;'
 		    + "<span onclick=\"CSRankings.toggleChart('"
@@ -758,7 +761,12 @@ class CSRankings {
 		    + '</small>'
 		    + '</td><td align="right"><small>'
 		    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-		    + CSRankings.translateNameToDBLP(name) + '">'
+		    + CSRankings.translateNameToDBLP(name)
+		    + '" '
+		    + 'onclick="trackOutboundLink(\''
+		    + CSRankings.translateNameToDBLP(name)
+		    + '\', true); return false;"'
+		    + '>'
 		    + facultycount[name+dept]
 		    + '</a>'
 		    + "</small></td>"
@@ -824,7 +832,7 @@ class CSRankings {
 		    }
 		}
 		s += "\n<tr><td>" + rank + "</td>";
-		s += "<font color=\"blue\"><td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
+		s += "<td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
 		s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
 		    + escape(dept)
 		    + "')\" class=\"hovertip\" id=\""
@@ -969,10 +977,10 @@ class CSRankings {
 	const widget = document.getElementById(dept+"-widget");
 	if (e!.style.display === 'block') {
 	    e!.style.display = 'none';
-	    widget!.innerHTML = CSRankings.RightTriangle;
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
 	} else {
 	    e!.style.display = 'block';
-	    widget!.innerHTML = CSRankings.DownTriangle;
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
 	}
     }
 

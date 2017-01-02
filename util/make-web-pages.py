@@ -1,11 +1,13 @@
-# Identify faculty home pages by using Google's "I'm Feeling Lucky"
-# search for both their name and their home page.
+# Identify faculty home pages.
 
+import codecs
 import sys
+import random
 import urllib2
 import csv
 import operator
 import re
+import google
 from time import sleep
 def csv2dict_str_str(fname):
     with open(fname, mode='r') as infile:
@@ -19,27 +21,55 @@ import requests
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
 homepages = csv2dict_str_str('homepages.csv')
-with open("homepages.csv", mode='a') as outfile:
-    for name in facultydict:
+# Trim out LinkedIn and RateMyProfessors sites, etc.
+trim = ['\.php\?', 'youtube', 'researchgate', 'dblp.uni-trier.','ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2016','2015','\.pdf']
+
+with codecs.open("homepages.csv", "a", "utf8") as outfile:
+    facultydictkeys = list(facultydict.keys())
+    random.shuffle(facultydictkeys)
+    for name in facultydictkeys:
         # Skip any homepages we have already in the database.
         if (name in homepages):
-            continue
-        n1 = name
+            # ...unless it's a Google search page, then we will try again to fix it.
+            match = re.search('www.google.com', homepages[name])
+            if (match == None):
+                continue
+        str = name + ' ' + facultydict[name]
         name = name.decode('utf8')
-        str = urllib2.quote(name.encode('utf8') + ' ' + facultydict[n1], safe='')
-        # The URL to do an I'm Feeling Lucky search.
-        # passedurl = "http://www.google.com/search?id=gbqfbb&btnI&q=" + str
-        passedurl = "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&gfns=1&q=" + str
-        h = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)' }
-        
-        # Identify the actual URL we get redirected to.
-        actualURL = requests.head(passedurl, timeout=100.0 , headers=h).headers.get('location', passedurl)
-        
+        # Grab first result from Google search.
+        results = google.search(str, stop=1)
+        actualURL = "FIXME"
+        for url in results:
+            actualURL = url
+            matched = 0
+            for t in trim:
+                match = re.search(t, url)
+                if (match != None):
+                    matched = matched + 1
+            if (matched == 0):
+                break
+                        
         # Output the name and this resolved URL.
-        outfile.write(name.encode('utf8') + " , " + actualURL + "\n")
-        print(name.encode('utf8') + " , " + actualURL)
+        match = re.search('www.google.com', actualURL)
+        print(name)
+        try:
+            if (match == None):
+                print(name + "," + actualURL)
+                outfile.write(name + "," + actualURL + "\n")
+                outfile.flush()
+            else:
+                if (not (name in homepages)):
+                    # It's a new name, what are you gonna do (even if it is a
+                    # Google link, include it).
+                    print(name + "," + actualURL)
+                    outfile.write(name + "," + actualURL + "\n")
+                    outfile.flush()
+                else:
+                    print("Lookup failed for "+name+" -- found "+actualURL)
+        except:
+            continue
+        
         sys.stdout.flush()
         # Throttle lookups to avoid getting cut off by Google.
         sleep(2.0)
 
-    

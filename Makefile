@@ -1,8 +1,8 @@
-TARGETS = csrankings.js generated-author-info.csv homepages.csv
+TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages fix-affiliations
 
-all: $(TARGETS)
+all: | $(TARGETS) fix-affiliations home-pages 
 
 clean:
 	rm $(TARGETS)
@@ -21,8 +21,12 @@ update-dblp:
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv
-	@echo "Rebuilding home pages."
-	@python util/make-web-pages.py homepages.csv
+	@echo "Rebuilding home pages (homepages.csv)."
+	@python util/make-web-pages.py
+	@echo "Cleaning home pages."
+	@python util/clean-web-pages.py
+	@mv homepages-sorted.csv homepages.csv
+	@echo "Done."
 
 fix-affiliations: faculty-affiliations.csv
 	@echo "Updating affiliations."

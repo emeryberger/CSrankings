@@ -22,6 +22,34 @@
       ga('send', 'pageview'); 
 
     </script>
+    <script>
+      /**
+      * Track clicks to a link. If new_window is true the google analytics request
+      * will be made synchronously, because browsers block new windows from opening unless
+      * it is done DURING an on click event. If new_window is false, the request will
+      * be made asynchronously, and the current window url will be changed.
+      *
+      * Setting the transport method to 'beacon' lets the hit be sent
+      * using 'navigator.sendBeacon' in browser that support it.
+      */
+      var trackOutboundLink = function(url, new_window) {
+        /* Setting a default value for backward compatibility */
+        if (new_window === undefined) {
+          new_window = false;
+        }
+        ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
+        'hitCallback':
+          function () {
+            if (!new_window) {
+              document.location = url;
+            }
+          }
+        });
+        if (new_window){
+          window.open(url);
+        }
+      }
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
     <script src="d3pie.min.js"></script>
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
@@ -63,11 +91,22 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
 
           <h1>Computer Science Rankings (beta)</h1>
+	  <p>
+	    <div class="fb-share-button" data-href="http://csrankings.org" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcsrankings.org%2F&amp;src=sdkpreparse">Share</a></div>
+	  </p>
 	  <div class="panel panel-info">
 	    <div class="panel-heading">
 	      <p>
@@ -76,7 +115,7 @@
 		engaged in research across a number of areas of
 		computer science, based on the number of publications
 		by faculty that have appeared at the most selective
-		conferences in each area of computer science.
+		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
 	      </p>
 	      <p>
 		<b>Click on a triangle</b> (&#9658;) to display names
@@ -160,8 +199,9 @@
 		<option value="2012">2012</option>
 		<option value="2013">2013</option>
 		<option value="2014">2014</option>
-		<option value="2014">2015</option>
-		<option value="2014">2016</option>
+		<option value="2015">2015</option>
+		<option value="2016">2016</option>
+		<option value="2017">2017</option>
 	      </select>
 	      to
 	      <select onchange="CSRankings.rank();" id="endyear" name="endyear">
@@ -202,6 +242,7 @@
 		<option value="2014">2014</option>
 		<option value="2015">2015</option>
 		<option selected="selected" value="2016">2016</option>
+		<option value="2017">2017</option>
 	      </select>
 		</div>
 		</div>
@@ -354,7 +395,6 @@
 		      </td>
 		    </tr>
 		    
-<!--
 		    <tr>
 		      <td>
 			Embedded and real-time systems
@@ -364,7 +404,6 @@
 			<input type="checkbox" name="field_bed" id="field_bed" value="1.0"/>
 		      </td>
 		    </tr>
-		    -->
 
 		    <tr>
 		      <td>
@@ -499,7 +538,7 @@
 		    <tr>
 		      <td>
 			Computer graphics
-			<small><em>SIGGRAPH, TOG</em></small>
+			<small><em>SIGGRAPH, SIGGRAPH Asia</em></small>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_graph" id="field_graph" value="1.0"/>
@@ -523,6 +562,16 @@
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_robotics" id="field_robotics" value="1.0"/>
+		      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+			Visualization
+			<small><em>VIS, VR</em></small>
+		      </td>
+		      <td>
+			<input type="checkbox" name="field_vis" id="field_vis" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -588,7 +637,7 @@
 	      Based on code and data originally collected by <a target="_blank" href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
 	      The original faculty affiliation dataset was constructed by <a
 									     target="_blank" href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>, which has been extensively cleaned and updated.<br />
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated December 1, 2016).<br />
+	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated December 24, 2016).<br />
 	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.
 	    </p>
