@@ -160,9 +160,9 @@ def makegraph(institution,fname,dir):
     #print "Average degree = " + str(float(sumdegree)/float(sumnodes))
     gr = { 'nodes' : nodes, 'links' : links }
     # print json.dumps(gr)
-    with open(dir+fname+".json", 'wb') as f:
-        # f.write("var collabs = " + json.dumps(gr) + ";")
-        f.write(json.dumps(gr))
+    #with open(dir+fname+".json", 'wb') as f:
+    # f.write("var collabs = " + json.dumps(gr) + ";")
+    # f.write(json.dumps(gr))
     with open(dir+fname+"-nodes.csv", 'wb') as f:
         f.write("name,color\n")
         for node in nodes:
@@ -299,7 +299,7 @@ for author in maxareas:
     authorColor[author] = areaColor[maxareas[author]]
 
 
-dir = "graphs/"
+dir = "collab/graphs/"
 
 for institution in institutions:
     print '<option value="' + institution + '">' + institution + "</option>" 
