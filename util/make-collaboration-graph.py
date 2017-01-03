@@ -17,6 +17,7 @@ syscolor = "#00bfff"    # blue
 theorycolor = "#ffff00" # yellow
 intercolor = "#ffc0cb"  # pink
 nacolor = "#d3d3d3"     # light gray
+nocolor = "#ffffff"     # white = no co-authors (making it invisible)
 
 colors = [ aicolor,
            syscolor,
@@ -96,6 +97,7 @@ def makegraph(institution,fname,dir):
     edges = {}
     authorIndex = {}
     authorInd = 0
+    coauthored = {}
     # dot = Graph(comment=institution,engine='circo')
     
     # dot = Graph(comment=institution,engine='neato')
@@ -143,7 +145,10 @@ def makegraph(institution,fname,dir):
                         edges[coauthorrealname+realname] = 0
                     edges[realname+coauthorrealname] += 1
                     edges[coauthorrealname+realname] += 1
-        if not foundOne:
+        if foundOne:
+            coauthored[realname] = True
+        else:
+            coauthored[realname] = False
             # Either had no co-authors since startyear or had co-authors but not at this institution.
 
             # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
@@ -164,10 +169,14 @@ def makegraph(institution,fname,dir):
     # f.write("var collabs = " + json.dumps(gr) + ";")
     # f.write(json.dumps(gr))
     with open(dir+fname+"-nodes.csv", 'wb') as f:
-        f.write("name,color\n")
+        f.write("name,color,coauthored\n")
         for node in nodes:
-            line = node['nodeName'].encode('utf8') + "," + colors[node['group']-1] + "\n"
-            f.write(line)
+            line = node['nodeName'].encode('utf8') + "," + colors[node['group']-1]
+            if coauthored[node['nodeName']]:
+                line += ",1"
+            else:
+                line += ",0"
+            f.write(line + "\n")
     with open(dir+fname+"-matrix.json", 'wb') as f:
         matrix = []
         for x in range(0,len(nodes)):
