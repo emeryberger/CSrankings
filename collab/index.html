@@ -214,15 +214,12 @@ path.chord {
   var drawnOne = false;
   
 function redraw() {
-  //  var institution = "University of Massachusetts Amherst";
   var institution = jQuery("#institution").find(":selected").text();
   
 var width = 800, // 1300, // 256,
     height = 800, // 1000, // 256,
     outerRadius = Math.min(width, height) / 2 - 10,
     innerRadius = outerRadius - radialHeight;
-
-var formatPercent = d3.format(".1%");
 
 arc = d3.svg.arc()
     .innerRadius(innerRadius)
@@ -297,7 +294,8 @@ function ready(error, authors, matrix) {
       .data(layout.chords)
     .enter().append("path")
       .attr("class", "chord")
-      .style("fill", function(d) { return authors[d.source.index].color; })
+     .style("fill", function(d) { if (authors[d.source.index].coauthored === "0") { return "none"; } else { return authors[d.source.index].color; }})
+     .style("stroke", function(d) { if (authors[d.source.index].coauthored === "0") { return "none"; } else { return "#000000"; }})
       .attr("d", path);
 
   // Add an elaborate mouseover title for each chord.
