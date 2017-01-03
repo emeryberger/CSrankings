@@ -1,4 +1,5 @@
 from csrankings import *
+from collections import *
 # from graphviz import *
 
 import csv
@@ -134,7 +135,7 @@ def makegraph(institution,fname,dir):
                         sumdegree += 1
                         if degree > maxdegree:
                             maxdegree = degree
-                        print realname + " - " + coauthorrealname
+                        # print realname + " - " + coauthorrealname
                         links.append({ 'source' : authorIndex[realname],
                                        'target' : authorIndex[coauthorrealname],
                                        'value'  : 1 })
@@ -153,10 +154,10 @@ def makegraph(institution,fname,dir):
                            'value'  : 1 })
 
     # dot.render(dir+fname)
-    print "Nodes = " + str(sumnodes)
-    print "Degree = " + str(sumdegree)
-    print "Max degree = " + str(maxdegree)
-    print "Average degree = " + str(float(sumdegree)/float(sumnodes))
+    #print "Nodes = " + str(sumnodes)
+    #print "Degree = " + str(sumdegree)
+    #print "Max degree = " + str(maxdegree)
+    #print "Average degree = " + str(float(sumdegree)/float(sumnodes))
     gr = { 'nodes' : nodes, 'links' : links }
     # print json.dumps(gr)
     with open(dir+fname+".json", 'wb') as f:
@@ -206,7 +207,9 @@ institutions = {}
 for name in facultydict:
     if not facultydict[name] in institutions:
         institutions[facultydict[name]] = True
-        
+
+institutions = OrderedDict(sorted(institutions.items(), key=lambda t: t[0]))
+
 # alias,name
 aliases = {}
 with open('dblp-aliases.csv','rb') as csvfile:
@@ -299,5 +302,5 @@ for author in maxareas:
 dir = "graphs/"
 
 for institution in institutions:
-    print institution
+    print '<option value="' + institution + '">' + institution + "</option>" 
     makegraph(institution,institution+"-graph",dir)
