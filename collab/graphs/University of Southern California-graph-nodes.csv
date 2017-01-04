@@ -1,62 +1,62 @@
-name,color,coauthored
-Kevin Knight,#32CD32,0
-Ting Chen,#ffc0cb,0
-Xianghong Zhou,#ffc0cb,1
-Michael Waterman,#ffc0cb,1
-Aristides Requicha,#ffc0cb,0
-Ramesh Govindan,#00bfff,1
-Leana Golubchik,#00bfff,1
-Gaurav Sukhatme,#ffc0cb,1
-William Halfond,#00bfff,1
-Ethan Katz-Bassett,#00bfff,1
-Milind Tambe,#32CD32,1
-Bhaskar Krishnamachari,#00bfff,1
-Fei Sha,#32CD32,1
-Shaddin Dughmi,#ffff00,1
-Shang-Hua Teng,#ffff00,1
-Kai Hwang,#d3d3d3,0
-Cauligi Raghavendra,#d3d3d3,1
-Viktor Prasanna,#00bfff,1
-Ramakant Nevatia,#32CD32,1
-Gérard Medioni,#32CD32,1
-Cyrus Shahabi,#00bfff,1
-Maja Mataric,#ffc0cb,1
-Shrikanth Narayanan,#32CD32,1
-Remo Rohs,#d3d3d3,0
-Yan Liu,#32CD32,1
-Paul Rosenbloom,#d3d3d3,1
-C.-C. Kuo,#32CD32,1
-Ilias Diakonikolas,#ffff00,0
-Melvin Breuer,#00bfff,1
-Murali Annavaram,#00bfff,1
-Aiichiro Nakano,#00bfff,1
-Rajiv Kalia,#00bfff,1
-Leonard Adleman,#d3d3d3,0
-Hao Li,#ffc0cb,1
-Joseph Lim,#32CD32,1
-Jernej Barbic,#ffc0cb,1
-Paul Debevec,#ffc0cb,1
-Nenad Medvidovic,#00bfff,1
-Ellis Horowitz,#d3d3d3,0
-Dennis McLeod,#32CD32,1
-Shahram Ghandeharizadeh,#00bfff,1
-Sven Koenig,#32CD32,1
-Nora Ayanian,#ffc0cb,1
-Aleksandra Korolova,#00bfff,0
-Haipeng Luo,#32CD32,0
-Barry Boehm,#00bfff,0
-Todd Brun,#d3d3d3,0
-Ben Reichardt,#ffff00,0
-Chao Wang,#00bfff,0
-Jeffrey Miller,#d3d3d3,0
-Francisco Cuevas,#d3d3d3,0
-Wyatt Lloyd,#00bfff,0
-Ulrich Neumann,#32CD32,1
-Muhammad Naveed,#00bfff,0
-Laurent Itti,#ffc0cb,1
-Ming-Deh Huang,#d3d3d3,0
-Morteza Dehghani,#32CD32,0
-Stephen Lu,#d3d3d3,0
-David Kempe,#d3d3d3,0
-Michael Arbib,#d3d3d3,0
-Xuehai Qian,#00bfff,0
+name,abbrv,color,coauthored
+Kevin Knight,K. Knight,#32CD32,0
+Ting Chen,T. Chen,#ffc0cb,0
+Xianghong Zhou,X. Zhou,#ffc0cb,1
+Michael Waterman,M. Waterman,#ffc0cb,1
+Aristides Requicha,A. Requicha,#ffc0cb,0
+Ramesh Govindan,R. Govindan,#00bfff,1
+Leana Golubchik,L. Golubchik,#00bfff,1
+Gaurav Sukhatme,G. Sukhatme,#ffc0cb,1
+William Halfond,W. Halfond,#00bfff,1
+Ethan Katz-Bassett,E. Katz-Bassett,#00bfff,1
+Milind Tambe,M. Tambe,#32CD32,1
+Bhaskar Krishnamachari,B. Krishnamachari,#00bfff,1
+Fei Sha,F. Sha,#32CD32,1
+Shaddin Dughmi,S. Dughmi,#ffff00,1
+Shang-Hua Teng,S. Teng,#ffff00,1
+Kai Hwang,K. Hwang,#d3d3d3,0
+Cauligi Raghavendra,C. Raghavendra,#d3d3d3,1
+Viktor Prasanna,V. Prasanna,#00bfff,1
+Ramakant Nevatia,R. Nevatia,#32CD32,1
+Gérard Medioni,G. Medioni,#32CD32,1
+Cyrus Shahabi,C. Shahabi,#00bfff,1
+Maja Mataric,M. Mataric,#ffc0cb,1
+Shrikanth Narayanan,S. Narayanan,#32CD32,1
+Remo Rohs,R. Rohs,#d3d3d3,0
+Yan Liu,Y. Liu,#32CD32,1
+Paul Rosenbloom,P. Rosenbloom,#d3d3d3,1
+C.-C. Kuo,C. Kuo,#32CD32,1
+Ilias Diakonikolas,I. Diakonikolas,#ffff00,0
+Melvin Breuer,M. Breuer,#00bfff,1
+Murali Annavaram,M. Annavaram,#00bfff,1
+Aiichiro Nakano,A. Nakano,#00bfff,1
+Rajiv Kalia,R. Kalia,#00bfff,1
+Leonard Adleman,L. Adleman,#d3d3d3,0
+Hao Li,H. Li,#ffc0cb,1
+Joseph Lim,J. Lim,#32CD32,1
+Jernej Barbic,J. Barbic,#ffc0cb,1
+Paul Debevec,P. Debevec,#ffc0cb,1
+Nenad Medvidovic,N. Medvidovic,#00bfff,1
+Ellis Horowitz,E. Horowitz,#d3d3d3,0
+Dennis McLeod,D. McLeod,#32CD32,1
+Shahram Ghandeharizadeh,S. Ghandeharizadeh,#00bfff,1
+Sven Koenig,S. Koenig,#32CD32,1
+Nora Ayanian,N. Ayanian,#ffc0cb,1
+Aleksandra Korolova,A. Korolova,#00bfff,0
+Haipeng Luo,H. Luo,#32CD32,0
+Barry Boehm,B. Boehm,#00bfff,0
+Todd Brun,T. Brun,#d3d3d3,0
+Ben Reichardt,B. Reichardt,#ffff00,0
+Chao Wang,C. Wang,#00bfff,0
+Jeffrey Miller,J. Miller,#d3d3d3,0
+Francisco Cuevas,F. Cuevas,#d3d3d3,0
+Wyatt Lloyd,W. Lloyd,#00bfff,0
+Ulrich Neumann,U. Neumann,#32CD32,1
+Muhammad Naveed,M. Naveed,#00bfff,0
+Laurent Itti,L. Itti,#ffc0cb,1
+Ming-Deh Huang,M. Huang,#d3d3d3,0
+Morteza Dehghani,M. Dehghani,#32CD32,0
+Stephen Lu,S. Lu,#d3d3d3,0
+David Kempe,D. Kempe,#d3d3d3,0
+Michael Arbib,M. Arbib,#d3d3d3,0
+Xuehai Qian,X. Qian,#00bfff,0
