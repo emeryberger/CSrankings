@@ -1,58 +1,58 @@
-name,color,coauthored
-Luca Trevisan,#ffff00,1
-Prasad Raghavendra,#ffff00,1
-Elchanan Mossel,#ffff00,1
-John Wawrzynek,#00bfff,1
-John Kubiatowicz,#00bfff,1
-James Demmel,#00bfff,1
-Katherine Yelick,#00bfff,1
-Krste Asanovic,#00bfff,1
-Koushik Sen,#00bfff,1
-Björn Hartmann,#ffc0cb,1
-Armando Fox,#00bfff,1
-Michael Jordan,#32CD32,1
-Marti Hearst,#ffc0cb,1
-Randy Katz,#00bfff,1
-Ion Stoica,#00bfff,1
-Anthony Joseph,#32CD32,1
-Richard Karp,#ffc0cb,1
-Scott Shenker,#00bfff,1
-Vern Paxson,#00bfff,1
-Dawn Song,#00bfff,1
-J. Tygar,#32CD32,1
-Umesh Vazirani,#ffff00,1
-Satish Rao,#ffff00,1
-Christos Papadimitriou,#ffff00,1
-Sylvia Ratnasamy,#00bfff,1
-David Culler,#00bfff,1
-Joseph Hellerstein,#00bfff,1
-Eric Brewer,#00bfff,1
-Joseph Gonzalez,#00bfff,1
-Pieter Abbeel,#ffc0cb,1
-Dan Klein,#32CD32,1
-Yun Song,#ffc0cb,1
-Trevor Darrell,#32CD32,1
-Benjamin Recht,#32CD32,1
-Stuart Russell,#32CD32,1
-Eric Paulos,#ffc0cb,1
-Ruzena Bajcsy,#ffc0cb,0
-Anca Dragan,#ffc0cb,1
-Kenneth Goldberg,#ffc0cb,1
-Bernd Sturmfels,#ffc0cb,1
-Lior Pachter,#ffc0cb,1
-John Canny,#ffc0cb,1
-Alistair Sinclair,#ffff00,0
-Jitendra Malik,#32CD32,1
-James O'Brien,#ffc0cb,1
-Peter Bartlett,#32CD32,1
-Ren Ng,#32CD32,0
-Jonathan Shewchuk,#ffc0cb,1
-David Bamman,#32CD32,0
-David Wagner,#00bfff,1
-Nir Yosef,#ffc0cb,0
-George Necula,#00bfff,1
-Sanjam Garg,#ffff00,0
-Brian Barsky,#ffc0cb,0
-Raluca Popa,#00bfff,1
-Alessandro Chiesa,#ffff00,1
-Alexei Efros,#32CD32,1
+name,abbrv,color,coauthored
+Luca Trevisan,L. Trevisan,#ffff00,1
+Prasad Raghavendra,P. Raghavendra,#ffff00,1
+Elchanan Mossel,E. Mossel,#ffff00,1
+John Wawrzynek,J. Wawrzynek,#00bfff,1
+John Kubiatowicz,J. Kubiatowicz,#00bfff,1
+James Demmel,J. Demmel,#00bfff,1
+Katherine Yelick,K. Yelick,#00bfff,1
+Krste Asanovic,K. Asanovic,#00bfff,1
+Koushik Sen,K. Sen,#00bfff,1
+Björn Hartmann,B. Hartmann,#ffc0cb,1
+Armando Fox,A. Fox,#00bfff,1
+Michael Jordan,M. Jordan,#32CD32,1
+Marti Hearst,M. Hearst,#ffc0cb,1
+Randy Katz,R. Katz,#00bfff,1
+Ion Stoica,I. Stoica,#00bfff,1
+Anthony Joseph,A. Joseph,#32CD32,1
+Richard Karp,R. Karp,#ffc0cb,1
+Scott Shenker,S. Shenker,#00bfff,1
+Vern Paxson,V. Paxson,#00bfff,1
+Dawn Song,D. Song,#00bfff,1
+J. Tygar,J. Tygar,#32CD32,1
+Umesh Vazirani,U. Vazirani,#ffff00,1
+Satish Rao,S. Rao,#ffff00,1
+Christos Papadimitriou,C. Papadimitriou,#ffff00,1
+Sylvia Ratnasamy,S. Ratnasamy,#00bfff,1
+David Culler,D. Culler,#00bfff,1
+Joseph Hellerstein,J. Hellerstein,#00bfff,1
+Eric Brewer,E. Brewer,#00bfff,1
+Joseph Gonzalez,J. Gonzalez,#00bfff,1
+Pieter Abbeel,P. Abbeel,#ffc0cb,1
+Dan Klein,D. Klein,#32CD32,1
+Yun Song,Y. Song,#ffc0cb,1
+Trevor Darrell,T. Darrell,#32CD32,1
+Benjamin Recht,B. Recht,#32CD32,1
+Stuart Russell,S. Russell,#32CD32,1
+Eric Paulos,E. Paulos,#ffc0cb,1
+Ruzena Bajcsy,R. Bajcsy,#ffc0cb,0
+Anca Dragan,A. Dragan,#ffc0cb,1
+Kenneth Goldberg,K. Goldberg,#ffc0cb,1
+Bernd Sturmfels,B. Sturmfels,#ffc0cb,1
+Lior Pachter,L. Pachter,#ffc0cb,1
+John Canny,J. Canny,#ffc0cb,1
+Alistair Sinclair,A. Sinclair,#ffff00,0
+Jitendra Malik,J. Malik,#32CD32,1
+James O'Brien,J. O'Brien,#ffc0cb,1
+Peter Bartlett,P. Bartlett,#32CD32,1
+Ren Ng,R. Ng,#32CD32,0
+Jonathan Shewchuk,J. Shewchuk,#ffc0cb,1
+David Bamman,D. Bamman,#32CD32,0
+David Wagner,D. Wagner,#00bfff,1
+Nir Yosef,N. Yosef,#ffc0cb,0
+George Necula,G. Necula,#00bfff,1
+Sanjam Garg,S. Garg,#ffff00,0
+Brian Barsky,B. Barsky,#ffc0cb,0
+Raluca Popa,R. Popa,#00bfff,1
+Alessandro Chiesa,A. Chiesa,#ffff00,1
+Alexei Efros,A. Efros,#32CD32,1

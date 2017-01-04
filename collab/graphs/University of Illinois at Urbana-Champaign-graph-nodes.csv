@@ -1,60 +1,60 @@
-name,color,coauthored
-Josep Torrellas,#00bfff,1
-Darko Marinov,#00bfff,1
-Craig Zilles,#00bfff,1
-Laxmikant Kalé,#00bfff,1
-Sarita Adve,#00bfff,1
-Tao Xie,#00bfff,1
-Jian Peng,#ffc0cb,1
-ChengXiang Zhai,#32CD32,1
-Sasa Misailovic,#00bfff,1
-Grigore Rosu,#00bfff,1
-Gul Agha,#00bfff,1
-Mahesh Viswanathan,#ffff00,1
-Samuel Kamin,#d3d3d3,1
-Tandy Warnow,#ffc0cb,0
-Steven LaValle,#ffc0cb,0
-P. Madhusudan,#ffff00,1
-Carl Gunter,#00bfff,1
-Dan Roth,#32CD32,1
-Julia Hockenmaier,#32CD32,1
-Svetlana Lazebnik,#32CD32,1
-Jiawei Han,#32CD32,1
-David Forsyth,#32CD32,1
-Matthew Caesar,#00bfff,1
-Brighten Godfrey,#00bfff,1
-Tarek Abdelzaher,#00bfff,1
-Jeff Erickson,#ffff00,1
-Sariel Har-Peled,#ffff00,1
-Kevin Chang,#00bfff,1
-Aditya Parameswaran,#00bfff,1
-Indranil Gupta,#00bfff,1
-Klara Nahrstedt,#00bfff,1
-Sheldon Jacobson,#d3d3d3,0
-Luke Olson,#d3d3d3,1
-Marc Snir,#00bfff,1
-William Gropp,#00bfff,1
-Karrie Karahalios,#ffc0cb,1
-Brian Bailey,#ffc0cb,1
-Marco Caccamo,#00bfff,1
-Lui Sha,#00bfff,1
-John Hart,#ffc0cb,1
-Wai-Tat Fu,#ffc0cb,1
-Alex Kirlik,#ffc0cb,1
-Ranjitha Kumar,#ffc0cb,1
-Roy Campbell,#00bfff,1
-Chandra Chekuri,#ffff00,1
-Paris Smaragdis,#32CD32,1
-Derek Hoiem,#32CD32,1
-Vikram Adve,#00bfff,1
-Robin Kravets,#00bfff,1
-Rob Rutenbar,#00bfff,1
-José Meseguer,#00bfff,1
-Andreas Klöckner,#d3d3d3,0
-Manoj Prabhakaran,#ffff00,1
-Gerald DeJong,#32CD32,1
-Anil Hirani,#ffff00,0
-Saurabh Sinha,#00bfff,0
-David Padua,#00bfff,1
-Alexandra Kolla,#ffff00,1
-Ruta Mehta,#ffff00,0
+name,abbrv,color,coauthored
+Josep Torrellas,J. Torrellas,#00bfff,1
+Darko Marinov,D. Marinov,#00bfff,1
+Craig Zilles,C. Zilles,#00bfff,1
+Laxmikant Kalé,L. Kalé,#00bfff,1
+Sarita Adve,S. Adve,#00bfff,1
+Tao Xie,T. Xie,#00bfff,1
+Jian Peng,J. Peng,#ffc0cb,1
+ChengXiang Zhai,C. Zhai,#32CD32,1
+Sasa Misailovic,S. Misailovic,#00bfff,1
+Grigore Rosu,G. Rosu,#00bfff,1
+Gul Agha,G. Agha,#00bfff,1
+Mahesh Viswanathan,M. Viswanathan,#ffff00,1
+Samuel Kamin,S. Kamin,#d3d3d3,1
+Tandy Warnow,T. Warnow,#ffc0cb,0
+Steven LaValle,S. LaValle,#ffc0cb,0
+P. Madhusudan,P. Madhusudan,#ffff00,1
+Carl Gunter,C. Gunter,#00bfff,1
+Dan Roth,D. Roth,#32CD32,1
+Julia Hockenmaier,J. Hockenmaier,#32CD32,1
+Svetlana Lazebnik,S. Lazebnik,#32CD32,1
+Jiawei Han,J. Han,#32CD32,1
+David Forsyth,D. Forsyth,#32CD32,1
+Matthew Caesar,M. Caesar,#00bfff,1
+Brighten Godfrey,B. Godfrey,#00bfff,1
+Tarek Abdelzaher,T. Abdelzaher,#00bfff,1
+Jeff Erickson,J. Erickson,#ffff00,1
+Sariel Har-Peled,S. Har-Peled,#ffff00,1
+Kevin Chang,K. Chang,#00bfff,1
+Aditya Parameswaran,A. Parameswaran,#00bfff,1
+Indranil Gupta,I. Gupta,#00bfff,1
+Klara Nahrstedt,K. Nahrstedt,#00bfff,1
+Sheldon Jacobson,S. Jacobson,#d3d3d3,0
+Luke Olson,L. Olson,#d3d3d3,1
+Marc Snir,M. Snir,#00bfff,1
+William Gropp,W. Gropp,#00bfff,1
+Karrie Karahalios,K. Karahalios,#ffc0cb,1
+Brian Bailey,B. Bailey,#ffc0cb,1
+Marco Caccamo,M. Caccamo,#00bfff,1
+Lui Sha,L. Sha,#00bfff,1
+John Hart,J. Hart,#ffc0cb,1
+Wai-Tat Fu,W. Fu,#ffc0cb,1
+Alex Kirlik,A. Kirlik,#ffc0cb,1
+Ranjitha Kumar,R. Kumar,#ffc0cb,1
+Roy Campbell,R. Campbell,#00bfff,1
+Chandra Chekuri,C. Chekuri,#ffff00,1
+Paris Smaragdis,P. Smaragdis,#32CD32,1
+Derek Hoiem,D. Hoiem,#32CD32,1
+Vikram Adve,V. Adve,#00bfff,1
+Robin Kravets,R. Kravets,#00bfff,1
+Rob Rutenbar,R. Rutenbar,#00bfff,1
+José Meseguer,J. Meseguer,#00bfff,1
+Andreas Klöckner,A. Klöckner,#d3d3d3,0
+Manoj Prabhakaran,M. Prabhakaran,#ffff00,1
+Gerald DeJong,G. DeJong,#32CD32,1
+Anil Hirani,A. Hirani,#ffff00,0
+Saurabh Sinha,S. Sinha,#00bfff,0
+David Padua,D. Padua,#00bfff,1
+Alexandra Kolla,A. Kolla,#ffff00,1
+Ruta Mehta,R. Mehta,#ffff00,0
