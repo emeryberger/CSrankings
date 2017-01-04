@@ -128,7 +128,7 @@ function ready(error, authors, matrix) {
 
   groupText.append("textPath")
       .attr("xlink:href", function(d, i) { return "#group" + i; })
-      .text(function(d, i) { return authors[i].name; });
+      .text(function(d, i) { return authors[i].abbrv; });
 
   // Remove the labels that don't fit. :(
   groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 1.1 * radialHeight < this.getComputedTextLength(); })

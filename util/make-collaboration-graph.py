@@ -78,6 +78,11 @@ def canonicalName(name):
     canonical = HumanName(canonical).first + " " + HumanName(canonical).last
     return canonical
 
+def displayName(name):
+    canonical = canonicalName(name)
+    display = HumanName(canonical).first[0] + ". " + HumanName(canonical).last
+    return display
+
 def addNode(name, nodes, addedNode, authorIndex, authorInd):
     if not addedNode.has_key(name.decode('utf8')):
         nodes.append({ 'nodeName' : canonicalName(name),
@@ -169,9 +174,14 @@ def makegraph(institution,fname,dir):
     # f.write("var collabs = " + json.dumps(gr) + ";")
     # f.write(json.dumps(gr))
     with open(dir+fname+"-nodes.csv", 'wb') as f:
-        f.write("name,color,coauthored\n")
+        f.write("name,abbrv,color,coauthored\n")
         for node in nodes:
-            line = node['nodeName'].encode('utf8') + "," + colors[node['group']-1]
+            name = node['nodeName'].encode('utf8')
+            line = name
+            line += ","
+            line += displayName(name).encode('utf8')
+            line += ","
+            line += colors[node['group']-1]
             if coauthored[node['nodeName']]:
                 line += ",1"
             else:
