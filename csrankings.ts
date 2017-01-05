@@ -832,7 +832,9 @@ class CSRankings {
 		    }
 		}
 		s += "\n<tr><td>" + rank + "</td>";
-		s += "<td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
+		s += "<td>"
+		    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;"
+		    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
 		s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
 		    + escape(dept)
 		    + "')\" class=\"hovertip\" id=\""
