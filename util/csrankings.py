@@ -104,7 +104,7 @@ areadict = {
     'crypt' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     # SIGBio
     # - special handling for ISMB proceedings in Bioinformatics special issues.
-    'bio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)'],
+    'bio' : ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
     # SIGDA
     'da' : ['ICCAD', 'DAC'],
     # SIGBED
