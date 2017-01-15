@@ -1,15 +1,17 @@
 # Identify faculty home pages.
-
+import pkg_resources
+pkg_resources.require("google==1.9.3")
+import google
 import codecs
 import sys
 import random
 import urllib2
-import csv
 import operator
 import re
-import google
-from time import sleep
+import time
+
 def csv2dict_str_str(fname):
+    import csv
     with open(fname, mode='r') as infile:
         reader = csv.reader(infile)
         #for rows in reader:
@@ -71,5 +73,5 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
         
         sys.stdout.flush()
         # Throttle lookups to avoid getting cut off by Google.
-        sleep(2.0)
+        time.sleep(2.0)
 
