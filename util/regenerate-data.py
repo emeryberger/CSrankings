@@ -24,6 +24,7 @@ def parseDBLP(facultydict):
             authorsOnPaper = 0
             authorName = ""
             confname = ""
+            title = ""
             year = -1
             pageCount = -1
             startPage = -1
@@ -41,6 +42,9 @@ def parseDBLP(facultydict):
                         if (confname in confdict):
                             areaname = confdict[confname]
                             foundArticle = True
+                    if (child.tag == 'title'):
+                        if child.text is not None:
+                            title = child.text
                     if (child.tag == 'volume'):
                         volume = child.text
                     if (child.tag == 'number'):
@@ -79,7 +83,7 @@ def parseDBLP(facultydict):
                         authorName = authorName.strip()
                         if authorName in facultydict:
                             # print "here we go",authorName, confname, authorsOnPaper, year
-                            logstring = authorName.encode('utf-8') + " ; " + confname + " " + str(year)
+                            logstring = authorName.encode('utf-8') + " ; " + confname + " " + str(year) + ": " + title.encode('utf-8')
                             tmplist = authlogs.get(authorName, [])
                             tmplist.append(logstring)
                             authlogs[authorName] = tmplist
