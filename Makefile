@@ -20,7 +20,7 @@ update-dblp:
 	mv dblp-fixed.xml dblp.xml
 	@echo "Done."
 
-home-pages: faculty-affiliations.csv
+home-pages: faculty-affiliations.csv homepages.csv
 	@echo "Rebuilding home pages (homepages.csv)."
 	@python util/make-web-pages.py
 	@echo "Cleaning home pages."
