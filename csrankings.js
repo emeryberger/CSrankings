@@ -655,10 +655,9 @@ var CSRankings = (function () {
                 s += "<td>"
                     + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;"
                     + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
-                s += "&nbsp;<font color=\"blue\">"
-                    + "<span onclick='CSRankings.toggleChart(\""
+                s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
                     + escape(dept)
-                    + "\")' class=\"hovertip\" id=\""
+                    + "')\" class=\"hovertip\" id=\""
                     + escape(dept)
                     + "-widget\">" + CSRankings.PieChart + "</span></font>";
                 //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
