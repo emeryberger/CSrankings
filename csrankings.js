@@ -569,11 +569,14 @@ var CSRankings = (function () {
                         coauthorStr_1 = coauthorStr_1.slice(0, coauthorStr_1.length - 1);
                     }
                 }
+                var homePage = encodeURI(CSRankings.homepages[name_5]);
+                var dblpName = CSRankings.translateNameToDBLP(name_5);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
                     + '<a title="Click for author\'s home page." target="_blank" href="'
-                    + encodeURI(CSRankings.homepages[name_5]) + '" '
+                    + homePage
+                    + '" '
                     + 'onclick="trackOutboundLink(\''
-                    + encodeURI(CSRankings.homepages[name_5])
+                    + homePage
                     + '\', true); return false;"'
                     + '>'
                     + name_5
@@ -584,10 +587,10 @@ var CSRankings = (function () {
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + CSRankings.translateNameToDBLP(name_5)
+                    + dblpName
                     + '" '
                     + 'onclick="trackOutboundLink(\''
-                    + CSRankings.translateNameToDBLP(name_5)
+                    + dblpName
                     + '\', true); return false;"'
                     + '>'
                     + facultycount[name_5 + dept]
