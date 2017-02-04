@@ -586,6 +586,7 @@ class CSRankings {
 		continue;
 	    }
 	    const areaDept : string = area+dept;
+	    const nameDept : string = name+dept;
 	    if (!(areaDept in areaDeptAdjustedCount)) {
 		areaDeptAdjustedCount[areaDept] = 0;
 	    }
@@ -598,8 +599,8 @@ class CSRankings {
 	    /* Is this the first time we have seen this person? */
 	    if (!(name in visited)) {
 		visited[name] = true;
-		facultycount[name+dept] = 0;
-		facultyAdjustedCount[name+dept] = 0;
+		facultycount[nameDept] = 0;
+		facultyAdjustedCount[nameDept] = 0;
 		if (!(dept in deptCounts)) {
 		    deptCounts[dept] = 0;
 		    deptNames[dept] = <Array<string>>[];
@@ -609,8 +610,8 @@ class CSRankings {
 		    deptCounts[dept] += 1;
 		}
 	    }
-	    facultycount[name+dept] += count;
-	    facultyAdjustedCount[name+dept] += adjustedCount;
+	    facultycount[nameDept] += count;
+	    facultyAdjustedCount[nameDept] += adjustedCount;
 	}
     }
 
