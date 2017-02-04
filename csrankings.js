@@ -425,6 +425,7 @@ var CSRankings = (function () {
                 continue;
             }
             var areaDept = area + dept;
+            var nameDept = name_2 + dept;
             if (!(areaDept in areaDeptAdjustedCount)) {
                 areaDeptAdjustedCount[areaDept] = 0;
             }
@@ -437,8 +438,8 @@ var CSRankings = (function () {
             /* Is this the first time we have seen this person? */
             if (!(name_2 in visited)) {
                 visited[name_2] = true;
-                facultycount[name_2 + dept] = 0;
-                facultyAdjustedCount[name_2 + dept] = 0;
+                facultycount[nameDept] = 0;
+                facultyAdjustedCount[nameDept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
@@ -448,8 +449,8 @@ var CSRankings = (function () {
                     deptCounts[dept] += 1;
                 }
             }
-            facultycount[name_2 + dept] += count;
-            facultyAdjustedCount[name_2 + dept] += adjustedCount;
+            facultycount[nameDept] += count;
+            facultyAdjustedCount[nameDept] += adjustedCount;
         }
     };
     /* Compute aggregate statistics. */
