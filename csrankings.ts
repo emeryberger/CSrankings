@@ -746,11 +746,15 @@ class CSRankings {
 		    }
 		}
 
+		let homePage = encodeURI(CSRankings.homepages[name]);
+		let dblpName = CSRankings.translateNameToDBLP(name);
+		
 		p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		    + '<a title="Click for author\'s home page." target="_blank" href="'
-		    + encodeURI(CSRankings.homepages[name]) + '" '
+		    + homePage
+		    + '" '
 		    + 'onclick="trackOutboundLink(\''
-		    + encodeURI(CSRankings.homepages[name])
+		    + homePage
 		    + '\', true); return false;"'
 		    + '>' 
 		    + name
@@ -761,10 +765,10 @@ class CSRankings {
 		    + '</small>'
 		    + '</td><td align="right"><small>'
 		    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-		    + CSRankings.translateNameToDBLP(name)
+		    + dblpName
 		    + '" '
 		    + 'onclick="trackOutboundLink(\''
-		    + CSRankings.translateNameToDBLP(name)
+		    + dblpName
 		    + '\', true); return false;"'
 		    + '>'
 		    + facultycount[name+dept]
