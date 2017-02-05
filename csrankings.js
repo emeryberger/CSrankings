@@ -73,6 +73,7 @@ var CSRankings = (function () {
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
         name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
         name = name.replace(/ç/g, "=ccedil=");
         name = name.replace(/ä/g, "=auml=");
