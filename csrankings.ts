@@ -196,6 +196,7 @@ class CSRankings {
 	name = name.replace(/ç/g, "=ccedil=");
 	name = name.replace(/ä/g, "=auml=");
 	name = name.replace(/ö/g, "=ouml=");
+	name = name.replace(/Ö/g, "=Ouml=");
 	name = name.replace(/ü/g, "=uuml=");
 	let splitName = name.split(" ");
 	let lastName = splitName[splitName.length - 1];
