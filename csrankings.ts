@@ -644,10 +644,8 @@ class CSRankings {
 		}
 		if (weights[area] != 0) {
 		    if (displayPercentages) {
-			if (areaDeptAdjustedCount[areaDept] != 0) {
-			    // geometric mean
-			    univagg[dept] *= areaDeptAdjustedCount[areaDept];
-			}
+			// Adjusted (smoothed) geometric mean.
+			univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
 		    } else {
 			univagg[dept] += areaDeptAdjustedCount[areaDept];
 		    }
@@ -896,7 +894,6 @@ class CSRankings {
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
 	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
 	let currentWeights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-	let areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
 	let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
 	
 	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
@@ -905,11 +902,6 @@ class CSRankings {
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
 	let numAreas = CSRankings.updateWeights(currentWeights);
-	
-	// Clear out the area adjusted counts (used for computing means).
-	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
-	    areaAdjustedCount[CSRankings.areas[ind]] = 0;
-	}
 	
 	let coauthorList : {[key : string] : Set<string> } = {};
 	if (CSRankings.showCoauthors) {
