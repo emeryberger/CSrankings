@@ -141,6 +141,8 @@ TOG_SIGGRAPH_Volume = { 2016 : (35, 4),
                         2006 : (25, 3), 
                         2005 : (24, 3), 
                         2004 : (23, 3), 
+                        2003 : (22, 3),
+                        2002 : (21, 3)
 }
 
 # TOG special handling to count only SIGGRAPH Asia proceedings.
