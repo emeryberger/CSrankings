@@ -608,8 +608,8 @@ class CSRankings {
 		    deptCounts[dept] = 0;
 		    deptNames[dept] = <Array<string>>[];
 		}
-		deptNames[dept].push(name);
 		if (!(name in CSRankings.aliases)) {
+		    deptNames[dept].push(name);
 		    deptCounts[dept] += 1;
 		}
 	    }
@@ -837,16 +837,17 @@ class CSRankings {
 			ties = 0;
 		    }
 		}
+		const esc = escape(dept);
 		s += "\n<tr><td>" + rank + "</td>";
 		s += "<td>"
 		    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;"
 		    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
 		s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
-		    + escape(dept)
+		    + esc
 		    + "')\" class=\"hovertip\" id=\""
-		    + escape(dept)
+		    + esc
 		    + "-widget\">" + CSRankings.PieChart + "</span></font>";
-		//	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
+		//	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
 		s += "</td>";
 
 		s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1)  + "</td>";
@@ -854,7 +855,7 @@ class CSRankings {
 		s += "</td>";
 		s += "</tr>\n";
 		s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
-		    + escape(dept)
+		    + esc
 		    + '-chart">' + '</div></td></tr>';
 		s += '<tr><td colspan="4"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
 		ties++;
