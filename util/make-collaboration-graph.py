@@ -85,11 +85,12 @@ def displayName(name):
 
 def addNode(name, nodes, addedNode, authorIndex, authorInd):
     if not addedNode.has_key(name.decode('utf8')):
-        nodes.append({ 'nodeName' : canonicalName(name),
-                       'group' : areaNum[maxareas[name]]})
-        addedNode[name.decode('utf8')] = True
-        authorIndex[canonicalName(name)] = authorInd
-        authorInd += 1
+        if name in maxareas:
+            nodes.append({ 'nodeName' : canonicalName(name),
+                           'group' : areaNum[maxareas[name]]})
+            addedNode[name.decode('utf8')] = True
+            authorIndex[canonicalName(name)] = authorInd
+            authorInd += 1
         
     
 def makegraph(institution,fname,dir):

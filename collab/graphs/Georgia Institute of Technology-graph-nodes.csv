@@ -1,7 +1,4 @@
 name,abbrv,color,coauthored
-Hyesoon Kim,H. Kim,#00bfff,1
-Richard Vuduc,R. Vuduc,#00bfff,1
-Taesoo Kim,T. Kim,#00bfff,1
 Santosh Pande,S. Pande,#00bfff,1
 Ada Gavrilovska,A. Gavrilovska,#00bfff,1
 Leo Mark,L. Mark,#d3d3d3,1
@@ -10,6 +7,9 @@ Ling Liu,L. Liu,#00bfff,1
 Srinivas Aluru,S. Aluru,#00bfff,1
 David Bader,D. Bader,#00bfff,1
 Edmond Chow,E. Chow,#00bfff,1
+Hyesoon Kim,H. Kim,#00bfff,1
+Richard Vuduc,R. Vuduc,#00bfff,1
+Taesoo Kim,T. Kim,#00bfff,1
 Richard Peng,R. Peng,#ffff00,0
 Mostafa Ammar,M. Ammar,#00bfff,1
 Ellen Zegura,E. Zegura,#00bfff,1
@@ -19,9 +19,9 @@ Umakishore Ramachandran,U. Ramachandran,#00bfff,1
 Mustaque Ahamad,M. Ahamad,#00bfff,1
 Richard Fujimoto,R. Fujimoto,#d3d3d3,1
 Amy Bruckman,A. Bruckman,#ffc0cb,1
-Annie Antón,A. Antón,#d3d3d3,1
 Betsy DiSalvo,B. DiSalvo,#ffc0cb,1
-Mark Guzdial,M. Guzdial,#d3d3d3,1
+Mark Guzdial,M. Guzdial,#ffc0cb,1
+Annie Antón,A. Antón,#d3d3d3,1
 Haesun Park,H. Park,#32CD32,1
 Eric Gilbert,E. Gilbert,#ffc0cb,1
 Milena Mihail,M. Mihail,#ffff00,1
@@ -34,8 +34,6 @@ Le Song,L. Song,#32CD32,1
 Frank Dellaert,F. Dellaert,#ffc0cb,1
 Tucker Balch,T. Balch,#ffc0cb,1
 Greg Turk,G. Turk,#ffc0cb,1
-Andrea Thomaz,A. Thomaz,#ffc0cb,1
-Charles Isbell,C. Isbell,#32CD32,1
 John Stasko,J. Stasko,#ffc0cb,1
 Jacob Eisenstein,J. Eisenstein,#32CD32,1
 Byron Boots,B. Boots,#32CD32,1
@@ -48,18 +46,23 @@ Shamkant Navathe,S. Navathe,#00bfff,1
 Wenke Lee,W. Lee,#00bfff,1
 Alexandra Boldyreva,A. Boldyreva,#00bfff,1
 Mark Riedl,M. Riedl,#32CD32,1
+Charles Isbell,C. Isbell,#32CD32,1
 Jimeng Sun,J. Sun,#32CD32,1
 Jack Poulson,J. Poulson,#d3d3d3,0
-Elizabeth Mynatt,E. Mynatt,#ffc0cb,1
-Thad Starner,T. Starner,#ffc0cb,1
 Jun Xu,J. Xu,#32CD32,1
 Prasad Tetali,P. Tetali,#ffff00,1
 Melody Jackson,M. Jackson,#ffc0cb,1
+Thad Starner,T. Starner,#ffc0cb,1
+Rahul Basole,R. Basole,#ffc0cb,1
+Munmun De Choudhury,M. De Choudhury,#ffc0cb,1
+Alex Endert,A. Endert,#ffc0cb,1
+Bistra Dilkina,B. Dilkina,#32CD32,1
+Elizabeth Mynatt,E. Mynatt,#ffc0cb,1
 Blair MacIntyre,B. MacIntyre,#ffc0cb,1
 Lance Fortnow,L. Fortnow,#00bfff,1
 Hongyuan Zha,H. Zha,#32CD32,1
-Bistra Dilkina,B. Dilkina,#32CD32,1
 Lauren Wilcox,L. Wilcox,#ffc0cb,0
+Andrea Thomaz,A. Thomaz,#ffc0cb,1
 Alessandro Orso,A. Orso,#00bfff,1
 Milos Prvulovic,M. Prvulovic,#00bfff,1
 Seymour Goodman,S. Goodman,#d3d3d3,0
@@ -70,21 +73,18 @@ Vijay Vazirani,V. Vazirani,#ffff00,1
 Eric Vigoda,E. Vigoda,#ffff00,1
 Dana Randall,D. Randall,#ffff00,1
 James Foley,J. Foley,#ffc0cb,1
-Munmun De Choudhury,M. De Choudhury,#ffc0cb,1
 Rebecca Grinter,R. Grinter,#ffc0cb,1
 Nancy Nersessian,N. Nersessian,#ffc0cb,1
+Charles Eastman,C. Eastman,#d3d3d3,1
+Ellen Yi-Luen,E. Yi-Luen,#ffc0cb,1
 Santosh Vempala,S. Vempala,#ffff00,1
 Ronald Arkin,R. Arkin,#ffc0cb,1
 Sonia Chernova,S. Chernova,#ffc0cb,1
-Rahul Basole,R. Basole,#ffc0cb,1
 Alexander Gray,A. Gray,#32CD32,1
-Ellen Yi-Luen,E. Yi-Luen,#ffc0cb,1
-Charles Eastman,C. Eastman,#d3d3d3,1
 Michael Best,M. Best,#ffc0cb,0
 H. Venkateswaran,H. Venkateswaran,#d3d3d3,0
 William Harris,W. Harris,#00bfff,0
 Hadi Esmaeilzadeh,H. Esmaeilzadeh,#00bfff,0
-Alex Endert,A. Endert,#ffc0cb,1
 Henrik Christensen,H. Christensen,#ffc0cb,1
 Devi Parikh,D. Parikh,#32CD32,0
 Janet Kolodner,J. Kolodner,#d3d3d3,0
