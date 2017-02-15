@@ -16,6 +16,7 @@
 ;
 ;
 ;
+;
 var CSRankings = (function () {
     function CSRankings() {
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -133,18 +134,20 @@ var CSRankings = (function () {
         console.assert(CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
         var data = [];
         var keys = CSRankings.areas;
+        var uname = unescape(name);
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
-            if (CSRankings.authorAreas[unescape(name)][key] > 0) {
+            var value = CSRankings.authorAreas[uname][key];
+            if (value > 0) {
                 data.push({ "label": CSRankings.areaDict[key],
-                    "value": CSRankings.authorAreas[unescape(name)][key],
+                    "value": value,
                     "color": CSRankings.color[i] });
             }
         }
         new d3pie(name + "-chart", {
             "header": {
                 "title": {
-                    "text": unescape(name),
+                    "text": uname,
                     "fontSize": 24,
                     "font": "open sans"
                 },
@@ -421,6 +424,9 @@ var CSRankings = (function () {
                 continue;
             }
             var _a = authors[r], name_2 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
+            if (name_2 in CSRankings.aliases) {
+                name_2 = CSRankings.aliases[name_2];
+            }
             if (typeof dept === 'undefined') {
                 continue;
             }
@@ -447,10 +453,8 @@ var CSRankings = (function () {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                if (!(name_2 in CSRankings.aliases)) {
-                    deptNames[dept].push(name_2);
-                    deptCounts[dept] += 1;
-                }
+                deptNames[dept].push(name_2);
+                deptCounts[dept] += 1;
             }
             facultycount[nameDept] += count;
             facultyAdjustedCount[nameDept] += adjustedCount;
@@ -633,7 +637,7 @@ var CSRankings = (function () {
         if (numAreas > 0) {
             var ties = 1; /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
             var rank = 0; /* index */
-            var oldv = null; /* old number - to track ties */
+            var oldv = 9999999.999; /* old number - to track ties */
             /* Sort the university aggregate count from largest to smallest. */
             var keys2 = CSRankings.sortIndex(univagg);
             /* Display rankings until we have shown `minToRank` items or
