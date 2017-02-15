@@ -51,6 +51,12 @@ interface AreaMap {
     readonly title : string;
 };
 
+interface ChartData {
+    readonly label : string;
+    readonly value : number;
+    readonly color : string;
+};
+
 class CSRankings {
     
     constructor() {
@@ -255,20 +261,22 @@ class CSRankings {
     private static makeChart(name : string) : void
     {
 	console.assert (CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
-	let data : any = [];
+	let data : Array<ChartData> = [];
 	const keys = CSRankings.areas;
+	const uname = unescape(name);
 	for (let i = 0; i < keys.length; i++) {
 	    const key = keys[i];
-	    if (CSRankings.authorAreas[unescape(name)][key] > 0) {
+	    const value = CSRankings.authorAreas[uname][key];
+	    if (value > 0) {
 		data.push({ "label" : CSRankings.areaDict[key],
-			    "value" : CSRankings.authorAreas[unescape(name)][key],
+			    "value" : value,
 			    "color" : CSRankings.color[i] });
 	    }
 	}
 	new d3pie(name + "-chart", {
 	    "header": {
 		"title": {
-		    "text": unescape(name),
+		    "text": uname,
 		    "fontSize": 24,
 		    "font": "open sans"
 		},
@@ -581,7 +589,10 @@ class CSRankings {
 	    if (!authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    const { name, year, area, dept } = authors[r];
+	    let { name, year, area, dept } = authors[r];
+	    if (name in CSRankings.aliases) {
+		name = CSRankings.aliases[name];
+	    }
 	    if (typeof dept === 'undefined') {
 		continue;
 	    }
@@ -608,10 +619,8 @@ class CSRankings {
 		    deptCounts[dept] = 0;
 		    deptNames[dept] = <Array<string>>[];
 		}
-		if (!(name in CSRankings.aliases)) {
-		    deptNames[dept].push(name);
-		    deptCounts[dept] += 1;
-		}
+		deptNames[dept].push(name);
+		deptCounts[dept] += 1;
 	    }
 	    facultycount[nameDept] += count;
 	    facultyAdjustedCount[nameDept] += adjustedCount;
@@ -812,9 +821,9 @@ class CSRankings {
 	s = s + "<tbody>";
 	/* As long as there is at least one thing selected, compute and display a ranking. */
 	if (numAreas > 0) {
-	    let ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
-	    let rank = 0;        /* index */
-	    let oldv : any = null;     /* old number - to track ties */
+	    let ties = 1;               /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
+	    let rank = 0;               /* index */
+	    let oldv = 9999999.999;     /* old number - to track ties */
 	    /* Sort the university aggregate count from largest to smallest. */
 	    let keys2 = CSRankings.sortIndex(univagg);
 	    /* Display rankings until we have shown `minToRank` items or
