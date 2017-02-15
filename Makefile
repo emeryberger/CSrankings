@@ -45,3 +45,9 @@ generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-dat
 	pypy util/regenerate-data.py
 	@echo "Done."
 
+collab-graph: generated-author-info.csv faculty-coauthors.csv
+	@echo "Generating the list of all publications (all-author-info.csv)."
+	pypy util/generate-all-pubs.py
+	@echo "Building collaboration graph data."
+	python util/make-collaboration-graph.py
+
