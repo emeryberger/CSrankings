@@ -1,6 +1,6 @@
 name,abbrv,color,coauthored
 Jacob White,J. White,#00bfff,1
-Bruce Tidor,B. Tidor,#ffc0cb,1
+Bruce Tidor,B. Tidor,#00bfff,1
 Luca Daniel,L. Daniel,#00bfff,1
 Elfar Adalsteinsson,E. Adalsteinsson,#d3d3d3,1
 Victor Zue,V. Zue,#32CD32,0
@@ -11,12 +11,19 @@ Ron Weiss,R. Weiss,#ffc0cb,0
 Julie Shah,J. Shah,#ffc0cb,1
 Seth Teller,S. Teller,#ffc0cb,1
 Russ Tedrake,R. Tedrake,#ffc0cb,1
-Andrew Lo,A. Lo,#d3d3d3,0
+Andrew Lo,A. Lo,#32CD32,0
 John Guttag,J. Guttag,#32CD32,1
 Jae Lim,J. Lim,#d3d3d3,0
-Charles Leiserson,C. Leiserson,#00bfff,1
+Srinivas Devadas,S. Devadas,#00bfff,1
+Bonnie Berger,B. Berger,#ffc0cb,1
+Daniel Sanchez,D. Sanchez,#00bfff,1
+Nickolai Zeldovich,N. Zeldovich,#00bfff,1
+Anant Agarwal,A. Agarwal,#00bfff,1
+Martin Rinard,M. Rinard,#00bfff,1
 Armando Solar-Lezama,A. Solar-Lezama,#00bfff,1
-Jeffrey Lang,J. Lang,#d3d3d3,0
+Daniel Jackson,D. Jackson,#00bfff,1
+Charles Leiserson,C. Leiserson,#00bfff,1
+Jeffrey Lang,J. Lang,#ffc0cb,0
 Asuman Ozdaglar,A. Ozdaglar,#00bfff,1
 Devavrat Shah,D. Shah,#32CD32,1
 Pablo Parrilo,P. Parrilo,#00bfff,1
@@ -30,11 +37,6 @@ Antonio Torralba,A. Torralba,#32CD32,1
 Berthold Horn,B. Horn,#32CD32,1
 Wojciech Matusik,W. Matusik,#ffc0cb,1
 Alan Willsky,A. Willsky,#32CD32,1
-Anant Agarwal,A. Agarwal,#00bfff,1
-Martin Rinard,M. Rinard,#00bfff,1
-Michael Carbin,M. Carbin,#00bfff,1
-Srinivas Devadas,S. Devadas,#00bfff,1
-Saman Amarasinghe,S. Amarasinghe,#00bfff,1
 Tomás Lozano-Pérez,T. Lozano-Pérez,#ffc0cb,1
 David Karger,D. Karger,#ffc0cb,1
 Rob Miller,R. Miller,#ffc0cb,1
@@ -47,13 +49,14 @@ Alexandre Megretski,A. Megretski,#00bfff,1
 Dina Katabi,D. Katabi,#00bfff,1
 Yury Polyanskiy,Y. Polyanskiy,#d3d3d3,1
 Manolis Kellis,M. Kellis,#ffc0cb,1
+Michael Carbin,M. Carbin,#00bfff,1
+Saman Amarasinghe,S. Amarasinghe,#00bfff,1
 Ankur Moitra,A. Moitra,#ffff00,1
 Erik Demaine,E. Demaine,#ffff00,1
 George Verghese,G. Verghese,#d3d3d3,0
 Collin Stultz,C. Stultz,#d3d3d3,1
 Piotr Indyk,P. Indyk,#ffff00,1
 M. Kaashoek,M. Kaashoek,#00bfff,1
-Nickolai Zeldovich,N. Zeldovich,#00bfff,1
 Joel Voldman,J. Voldman,#d3d3d3,0
 Gregory Wornell,G. Wornell,#d3d3d3,1
 Duane Boning,D. Boning,#00bfff,1
@@ -62,7 +65,6 @@ Barbara Liskov,B. Liskov,#00bfff,1
 Robert Morris,R. Morris,#00bfff,1
 Randall Davis,R. Davis,#32CD32,1
 Joel Moses,J. Moses,#d3d3d3,0
-Stephen Ward,S. Ward,#d3d3d3,0
 Tommi Jaakkola,T. Jaakkola,#32CD32,1
 Harold Abelson,H. Abelson,#d3d3d3,1
 Adam Chlipala,A. Chlipala,#00bfff,1
@@ -71,7 +73,6 @@ Arvind ,A. ,#00bfff,1
 Gerald Sussman,G. Sussman,#d3d3d3,1
 Ronitt Rubinfeld,R. Rubinfeld,#ffff00,1
 Michael Watts,M. Watts,#d3d3d3,0
-Daniel Jackson,D. Jackson,#00bfff,1
 Aleksander Madry,A. Madry,#ffff00,0
 Rajeev Ram,R. Ram,#d3d3d3,0
 Shafi Goldwasser,S. Goldwasser,#ffff00,1
@@ -79,8 +80,6 @@ Vinod Vaikuntanathan,V. Vaikuntanathan,#ffff00,1
 Justin Solomon,J. Solomon,#ffc0cb,0
 Qing Hu,Q. Hu,#d3d3d3,0
 Albert Meyer,A. Meyer,#d3d3d3,0
-Daniel Sanchez,D. Sanchez,#00bfff,1
-Bonnie Berger,B. Berger,#ffc0cb,1
 Patrick Jaillet,P. Jaillet,#32CD32,0
 Robert Berwick,R. Berwick,#32CD32,0
 Patrick Winston,P. Winston,#d3d3d3,0
