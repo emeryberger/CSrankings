@@ -10,7 +10,7 @@ from nameparser import HumanName
 #import matplotlib.pyplot as plt
 
 startyear = 2006
-endyear = 2016
+endyear = 2017
 
 aicolor = "#32CD32"     # limegreen
 syscolor = "#00bfff"    # blue
@@ -123,6 +123,7 @@ def makegraph(institution,fname,dir):
         # Now go through all the coauthors (we may not find any, which we handle as a special case below).
         foundOne = False
         for coauth in coauthors.get(author, []):
+            print "author = " + author + ", coauth = " + coauth
             if coauth in aliases:
                 coauth = aliases[coauth]
             if coauth in facultydict:
@@ -147,6 +148,7 @@ def makegraph(institution,fname,dir):
                         links.append({ 'source' : authorIndex[realname],
                                        'target' : authorIndex[coauthorrealname],
                                        'value'  : 1 })
+                        print "adding " + realname.encode('utf8') + " <-> " + coauthorrealname.encode('utf8')
                         edges[realname+coauthorrealname] = 0
                         edges[coauthorrealname+realname] = 0
                     edges[realname+coauthorrealname] += 1
@@ -245,15 +247,18 @@ coauthors = {}
 with open('faculty-coauthors.csv', 'rb') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        year = int(row['year'].strip())
-        if year < startyear or year > endyear:
-            continue
         author = row['author'].strip()
         if author in aliases:
             author = aliases[author]
         coauthor = row['coauthor'].strip()
         if coauthor in aliases:
             coauthor = aliases[coauthor]
+        print "read in " + author
+        print "  coauthor = " + coauthor
+        year = int(row['year'].strip())
+        print "year = " + str(year)
+        if year < startyear or year > endyear:
+            continue
         if not coauthors.has_key(author):
             coauthors[author] = []
         coauthors[author].append(coauthor)
