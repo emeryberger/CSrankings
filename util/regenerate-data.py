@@ -1,5 +1,7 @@
 from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, countPaper
 
+import json
+
 def parseDBLP(facultydict):
     authlogs = {}
     interestingauthors = {}
@@ -83,7 +85,10 @@ def parseDBLP(facultydict):
                         authorName = authorName.strip()
                         if authorName in facultydict:
                             # print "here we go",authorName, confname, authorsOnPaper, year
-                            logstring = authorName.encode('utf-8') + " ; " + confname + " " + str(year) + ": " + title.encode('utf-8')
+                            logstring = { 'name' : authorName.encode('utf-8'),
+                                          'conf' : confname,
+                                          'year' : year,
+                                          'title' : title.encode('utf-8') }
                             tmplist = authlogs.get(authorName, [])
                             tmplist.append(logstring)
                             authlogs[authorName] = tmplist
@@ -118,14 +123,15 @@ for (authorName, area, year) in authscores_gl:
 f.close()
 
 f = open('rankings-all.log','w')
+z = []
+length = len(authlog_gl.items())
 for v, l in authlog_gl.items():
     if intauthors_gl.has_key(v):
         if (intauthors_gl[v] >= 1):
-            f.write("Papers for " + v.encode('utf-8') + ', ' + (fdict[v]).encode('utf-8') + "\n")
+            # f.write("Papers for " + v.encode('utf-8') + ', ' + (fdict[v]).encode('utf-8') + "\n")
             for s in l:
-                f.write(s)
-                f.write('\n')
-                f.write('\n')
+                z.append(s)
+json.dump(z, f)
 f.close()
 
 
