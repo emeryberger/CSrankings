@@ -17,6 +17,7 @@
 ;
 ;
 ;
+;
 var CSRankings = (function () {
     function CSRankings() {
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -51,7 +52,9 @@ var CSRankings = (function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
                     CSRankings.loadAuthorInfo(function () {
-                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+                        CSRankings.loadArticles(function () {
+                            CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+                        });
                     });
                 });
             });
@@ -240,6 +243,12 @@ var CSRankings = (function () {
                 }
                 setTimeout(cont, 0);
             }
+        });
+    };
+    CSRankings.loadArticles = function (cont) {
+        jQuery.getJSON("articles.json", function (data) {
+            CSRankings.articles = data;
+            setTimeout(cont, 0);
         });
     };
     CSRankings.loadCountryInfo = function (countryInfo, cont) {

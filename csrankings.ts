@@ -15,6 +15,15 @@
 declare function escape(s:string): string;
 declare function unescape(s:string): string;
 
+interface Article {
+    readonly name : string;
+    readonly conf : string;
+    readonly area : string;
+    readonly year : number;
+    readonly title : string;
+    readonly institution : string;
+};
+
 interface Author {
     readonly name : string;
     readonly dept : string;
@@ -89,8 +98,10 @@ class CSRankings {
 		CSRankings.loadHomepages(CSRankings.homepages,
 					 function() {
 					     CSRankings.loadAuthorInfo(function() {
-						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
-									    CSRankings.rank);
+						 CSRankings.loadArticles(function() {
+						     CSRankings.loadCountryInfo(CSRankings.countryInfo,
+										CSRankings.rank);
+						 });
 					     });
 					 });
 	    });
@@ -164,6 +175,8 @@ class CSRankings {
     /* Map institution to (non-US) region. */
     private static readonly countryInfo : {[key : string] : string } = {};
 
+    private static articles : Array<Article>;
+    
     /* Map name to home page. */
     private static readonly homepages : {[key : string] : string } = {}; 
 
@@ -375,6 +388,13 @@ class CSRankings {
 	});
     }
 
+    private static loadArticles(cont : () => void) : void {
+	jQuery.getJSON("articles.json", (data : Array<Article>) => {
+	    CSRankings.articles = data;
+	    setTimeout(cont, 0);
+	});
+    }
+    
     private static loadCountryInfo(countryInfo : {[key : string] : string },
 				   cont : () => void ) : void {
 	Papa.parse(CSRankings.countryinfoFile, {
