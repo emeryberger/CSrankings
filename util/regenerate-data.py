@@ -87,8 +87,10 @@ def parseDBLP(facultydict):
                             # print "here we go",authorName, confname, authorsOnPaper, year
                             logstring = { 'name' : authorName.encode('utf-8'),
                                           'conf' : confname,
+                                          'area' : areaname,
                                           'year' : year,
-                                          'title' : title.encode('utf-8') }
+                                          'title' : title.encode('utf-8'),
+                                          'institution' : facultydict[authorName].encode('utf-8') }
                             tmplist = authlogs.get(authorName, [])
                             tmplist.append(logstring)
                             authlogs[authorName] = tmplist
@@ -122,7 +124,7 @@ for (authorName, area, year) in authscores_gl:
     f.write('\n')
 f.close()
 
-f = open('rankings-all.log','w')
+f = open('articles.json','w')
 z = []
 length = len(authlog_gl.items())
 for v, l in authlog_gl.items():
