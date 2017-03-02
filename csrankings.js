@@ -246,8 +246,9 @@ var CSRankings = (function () {
         });
     };
     CSRankings.loadArticles = function (cont) {
-        jQuery.getJSON("articles.json", function (data) {
-            CSRankings.articles = data;
+        jQuery.getJSON("articles.json", function (_) {
+            /* disabled for now
+                    CSRankings.articles = data; */
             setTimeout(cont, 0);
         });
     };
