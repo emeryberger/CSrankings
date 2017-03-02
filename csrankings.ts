@@ -389,8 +389,9 @@ class CSRankings {
     }
 
     private static loadArticles(cont : () => void) : void {
-	jQuery.getJSON("articles.json", (data : Array<Article>) => {
-	    CSRankings.articles = data;
+	jQuery.getJSON("articles.json", (_ : Array<Article>) => {
+/* disabled for now
+	    CSRankings.articles = data; */
 	    setTimeout(cont, 0);
 	});
     }
