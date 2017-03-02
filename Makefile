@@ -9,7 +9,7 @@ clean:
 
 csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
-	tsc --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedLocals --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
+	tsc --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
 
 update-dblp:
 	@echo "Downloading from DBLP."
