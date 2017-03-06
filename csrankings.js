@@ -143,7 +143,7 @@ var CSRankings = (function () {
             var value = CSRankings.authorAreas[uname][key];
             if (value > 0) {
                 data.push({ "label": CSRankings.areaDict[key],
-                    "value": value,
+                    "value": Math.round(value),
                     "color": CSRankings.color[i] });
             }
         }
@@ -180,8 +180,8 @@ var CSRankings = (function () {
                     "pieDistance": 32
                 },
                 "inner": {
-                    "format": "value",
-                    "hideWhenLessThanPercentage": 2
+                    "format": "percentage",
+                    "hideWhenLessThanPercentage": 2 // 100 // 2
                 },
                 "mainLabel": {
                     "fontSize": 12
@@ -400,7 +400,8 @@ var CSRankings = (function () {
                 continue;
             }
             var theDept = authors[r].dept;
-            var theCount = parseFloat(authors[r].count);
+            //	    const theCount = parseFloat(authors[r].count);
+            var theCount = parseFloat(authors[r].adjustedcount);
             var name_1 = authors[r].name;
             if (name_1 in CSRankings.aliases) {
                 name_1 = CSRankings.aliases[name_1];
