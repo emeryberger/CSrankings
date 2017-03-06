@@ -282,7 +282,7 @@ class CSRankings {
 	    const value = CSRankings.authorAreas[uname][key];
 	    if (value > 0) {
 		data.push({ "label" : CSRankings.areaDict[key],
-			    "value" : value,
+			    "value" : Math.round(value),
 			    "color" : CSRankings.color[i] });
 	    }
 	}
@@ -319,8 +319,8 @@ class CSRankings {
 		    "pieDistance": 32
 		},
 		"inner": {
-		    "format": "value",
-		    "hideWhenLessThanPercentage": 2
+		    "format": "percentage", // "value",
+		    "hideWhenLessThanPercentage": 2 // 100 // 2
 		},
 		"mainLabel": {
 		    "fontSize": 12
@@ -566,7 +566,8 @@ class CSRankings {
 		continue;
 	    }
 	    const theDept  = authors[r].dept;
-	    const theCount = parseFloat(authors[r].count);
+//	    const theCount = parseFloat(authors[r].count);
+	    const theCount = parseFloat(authors[r].adjustedcount);
 	    let name : string  = authors[r].name;
 	    if (name in CSRankings.aliases) {
 		name = CSRankings.aliases[name];
