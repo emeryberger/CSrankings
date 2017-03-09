@@ -65,19 +65,6 @@ def parseDBLP(facultydict):
                             if authorName in facultydict:
                                 foundOneInDict = True
 
-                if title == "Connectivity Oracles for Graphs Subject to Vertex Failures.":
-                    print foundOneInDict
-                    print foundArticle
-                    print countPaper(confname, year, volume, number, startPage, pageCount)
-                    print title
-                    print year
-                    print authorsOnPaper
-                    print authorName
-                    print pageCount
-                    print startPage
-                    print confname
-                    print areaname
-                    
                 # Any authors in our affiliations?
                 if not foundOneInDict:
                     continue
