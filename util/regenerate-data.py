@@ -1,6 +1,7 @@
 from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, countPaper
 
 import json
+import gzip
 
 def parseDBLP(facultydict):
     authlogs = {}
@@ -11,9 +12,8 @@ def parseDBLP(facultydict):
     papersWritten = {}
     counter = 0
 
-    with open('dblp.xml', mode='rb') as f:
-
-    # with gzip.open('dblp.xml.gz') as f:
+    # with open('dblp.xml', mode='rb') as f:
+    with gzip.open('dblp.xml.gz') as f:
 
         oldnode = None
 
