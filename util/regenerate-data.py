@@ -11,7 +11,7 @@ def parseDBLP(facultydict):
     papersWritten = {}
     counter = 0
 
-    with open('dblp.xml', mode='r') as f:
+    with open('dblp.xml', mode='rb') as f:
 
     # with gzip.open('dblp.xml.gz') as f:
 
@@ -65,6 +65,19 @@ def parseDBLP(facultydict):
                             if authorName in facultydict:
                                 foundOneInDict = True
 
+                if title == "Connectivity Oracles for Graphs Subject to Vertex Failures.":
+                    print foundOneInDict
+                    print foundArticle
+                    print countPaper(confname, year, volume, number, startPage, pageCount)
+                    print title
+                    print year
+                    print authorsOnPaper
+                    print authorName
+                    print pageCount
+                    print startPage
+                    print confname
+                    print areaname
+                    
                 # Any authors in our affiliations?
                 if not foundOneInDict:
                     continue
