@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, countPaper
+from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, countPaper
 
 import json
 import gzip
@@ -25,6 +25,7 @@ def parseDBLP(facultydict):
             foundArticle = False
             authorsOnPaper = 0
             authorName = ""
+            authorList = []
             confname = ""
             title = ""
             year = -1
@@ -44,33 +45,50 @@ def parseDBLP(facultydict):
                         if (confname in confdict):
                             areaname = confdict[confname]
                             foundArticle = True
+                            continue
+                        else:
+                            break
+
                     if (child.tag == 'title'):
                         if child.text is not None:
                             title = child.text
+                        continue
                     if (child.tag == 'volume'):
                         volume = child.text
+                        continue
                     if (child.tag == 'number'):
                         number = child.text
+                        continue
                     if child.tag == 'year':
                         if child.text is not None:
                             year = int(child.text)
+                        continue
                     if child.tag == 'pages':
                         pageCount = pagecount(child.text)
                         startPage = startpage(child.text)
+                        continue
                     if child.tag == 'author':
                         authorName = child.text
                         if authorName is not None:
                             authorName = authorName.strip()
+                            authorList.append(authorName)
                             authorsOnPaper += 1
                             if authorName in facultydict:
                                 foundOneInDict = True
+                        continue
+
+                if confname == "PVLDB":
+                    print confname + " " + str(year) + ":" + str(startPage) + "-" + str(pageCount)
+                    for a in authorList:
+                        print "  " + a.encode('utf-8')
+                    print "-----"
+                    
+                # One of our conferences?
+                if not foundArticle:
+                    continue
 
                 # Any authors in our affiliations?
                 if not foundOneInDict:
-                    continue
-
-                # One of our conferences?
-                if not foundArticle:
                     continue
 
                 # One of the papers we count?
@@ -79,24 +97,21 @@ def parseDBLP(facultydict):
                 
                 # If we get here, we have a winner.
 
-                for child in node:
-                    if child.tag == 'author':
-                        authorName = child.text
-                        authorName = authorName.strip()
-                        if authorName in facultydict:
-                            # print "here we go",authorName, confname, authorsOnPaper, year
-                            logstring = { 'name' : authorName.encode('utf-8'),
-                                          'conf' : confname,
-                                          'area' : areaname,
-                                          'year' : year,
-                                          'title' : title.encode('utf-8'),
-                                          'institution' : facultydict[authorName].encode('utf-8') }
-                            tmplist = authlogs.get(authorName, [])
-                            tmplist.append(logstring)
-                            authlogs[authorName] = tmplist
-                            interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
-                            authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
-                            authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
+                for authorName in authorList:
+                    if authorName in facultydict:
+                        # print "here we go",authorName, confname, authorsOnPaper, year
+                        logstring = { 'name' : authorName.encode('utf-8'),
+                                      'conf' : confname,
+                                      'area' : areaname,
+                                      'year' : year,
+                                      'title' : title.encode('utf-8'),
+                                      'institution' : facultydict[authorName].encode('utf-8') }
+                        tmplist = authlogs.get(authorName, [])
+                        tmplist.append(logstring)
+                        authlogs[authorName] = tmplist
+                        interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
+                        authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
+                        authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
 
     return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
 

@@ -1,7 +1,7 @@
 """Subroutines used for computing rankings for CSrankings.
 """
-# from lxml import etree as ElementTree
-import xml.etree.ElementTree as ElementTree
+from lxml import etree as ElementTree
+#import xml.etree.ElementTree as ElementTree
 import csv
 import operator
 import re
