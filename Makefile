@@ -38,12 +38,12 @@ fix-affiliations: faculty-affiliations.csv
 	@rm /tmp/f1.csv
 	@mv /tmp/f2.csv faculty-affiliations.csv
 
-faculty-coauthors.csv: dblp.xml util/generate-faculty-coauthors.py util/csrankings.py
+faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csrankings.py
 	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
 	python util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-data.py util/csrankings.py
+generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	pypy util/regenerate-data.py
 	@echo "Done."
