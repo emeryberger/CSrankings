@@ -77,12 +77,6 @@ def parseDBLP(facultydict):
                                 foundOneInDict = True
                         continue
 
-                if confname == "PVLDB":
-                    print confname + " " + str(year) + ":" + str(startPage) + "-" + str(pageCount)
-                    for a in authorList:
-                        print "  " + a.encode('utf-8')
-                    print "-----"
-                    
                 # One of our conferences?
                 if not foundArticle:
                     continue
