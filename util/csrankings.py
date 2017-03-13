@@ -198,6 +198,27 @@ ICSE_ShortPaperStart = { 2013 : 851,
                          1998 : 419,
                          1997 : 535 }
 
+# SIGMOD special handling to avoid non-research papers.
+# Contributed by Davide Martinenghi, Politecnico di Milano.
+# (More special handling is required for subsequent years.)
+SIGMOD_NonResearchPaperStart = { 2013 : 917,
+                                 2012 : 577,
+                                 2011 : 1045,
+                                 2010 : 963,
+                                 2009 : 841,
+                                 2008 : 1043,
+                                 2007 : 873,
+                                 2006 : 695,
+                                 2005 : 778,
+                                 2004 : 839,
+                                 2003 : 635,
+                                 2002 : 500,
+                                 2001 : 521,
+                                 2000 : 499,
+                                 1999 : 503,
+                                 1998 : 496 }
+
+
 # ASE accepts short papers and long papers. Long papers appear to be at least 10 pages long,
 # while short papers are shorter.
 ASE_LongPaperThreshold = 10
@@ -250,6 +271,15 @@ def countPaper(confname, year, volume, number, startPage, pageCount):
             if startPage >= pageno:
                 # Omit papers that start at or beyond this page,
                 # since they are "short papers" (regardless of their length).
+                return False
+            
+    # Special handling for SIGMOD.
+    if (confname == 'SIGMOD Conference'):
+        if SIGMOD_NonResearchPaperStart.has_key(year):
+            pageno = SIGMOD_NonResearchPaperStart[year]
+            if startPage >= pageno:
+                # Omit papers that start at or beyond this page,
+                # since they are not research-track papers.
                 return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
