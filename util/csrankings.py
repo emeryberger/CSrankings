@@ -199,9 +199,9 @@ ICSE_ShortPaperStart = { 2013 : 851,
                          1997 : 535 }
 
 # SIGMOD special handling to avoid non-research papers.
-# Contributed by Davide Martinenghi, Politecnico di Milano.
-# (More special handling is required for subsequent years.)
-SIGMOD_NonResearchPaperStart = { 2013 : 917,
+# This and other SIGMOD data below contributed by Davide Martinenghi, Politecnico di Milano.
+SIGMOD_NonResearchPaperStart = { 2016 : 2069,
+                                 2013 : 917,
                                  2012 : 577,
                                  2011 : 1045,
                                  2010 : 963,
@@ -216,7 +216,28 @@ SIGMOD_NonResearchPaperStart = { 2013 : 917,
                                  2001 : 521,
                                  2000 : 499,
                                  1999 : 503,
-                                 1998 : 496 }
+                                 1998 : 496,
+                                 1997 : 498,
+                                 1996 : 541,
+                                 1995 : 423,
+                                 1994 : 466,
+                                 1993 : 388 }
+
+# SIGMOD recently has begun intermingling research and non-research
+# track papers in their proceedings, requiring individual paper
+# filtering. 
+SIGMOD_NonResearchPapersRange = { 2016 : [(1753,1764), (1295,1306), (795,806),
+                                          (227,238), (999,1010), (1923,1934),
+                                          (1307,1318), (1951,1960), (759,771),
+                                          (253,265), (1405,1416), (215,226),
+                                          (1105,1117), (35,46), (63,75),
+                                          (807,819), (1099,1104), (1087,1098),
+                                          (847,859), (239,251), (1393,1404),
+                                          (2069,2243)],
+                                  2015 : [(227,276), (607,658), (1343,1394),
+                                          (1657,1706), (1917,1940),
+                                          (859,918), (1063,1122), (1403,1462)],
+                                  2014 : [(147,188), (337,384), (529,573), (1223,1258)] }
 
 
 # ASE accepts short papers and long papers. Long papers appear to be at least 10 pages long,
@@ -281,6 +302,11 @@ def countPaper(confname, year, volume, number, startPage, pageCount):
                 # Omit papers that start at or beyond this page,
                 # since they are not research-track papers.
                 return False
+        if SIGMOD_NonResearchPapersRange.has_key(year):
+            pageRange = SIGMOD_NonResearchPapersRange[year]
+            for p in pageRange:
+                if startPage >= p[0] and startPage+pageCount-1 <= p[1]:
+                    return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
     if (confname == 'ACM Trans. Graph.'):
