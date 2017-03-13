@@ -1,6 +1,7 @@
+"""Subroutines used for computing rankings for CSrankings.
+"""
 # from lxml import etree as ElementTree
 import xml.etree.ElementTree as ElementTree
-import htmlentitydefs
 import csv
 import operator
 import re
@@ -17,12 +18,12 @@ pageCounterNormal = re.compile('(\d+)-(\d+)')
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 
-def startpage(input):
+def startpage(pageStr):
     """Compute the starting page number from a string representing page numbers."""
-    if input is None:
+    if pageStr is None:
         return 0
-    pageCounterMatcher1 = pageCounterNormal.match(input)
-    pageCounterMatcher2 = pageCounterColon.match(input)
+    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
+    pageCounterMatcher2 = pageCounterColon.match(pageStr)
     start = 0
 
     if not pageCounterMatcher1 is None:
@@ -32,12 +33,12 @@ def startpage(input):
             start = int(pageCounterMatcher2.group(1))
     return start
 
-def pagecount(input):
+def pagecount(pageStr):
     """Compute the number of pages in a string representing a range of page numbers."""
-    if input is None:
+    if pageStr is None:
         return 0
-    pageCounterMatcher1 = pageCounterNormal.match(input)
-    pageCounterMatcher2 = pageCounterColon.match(input)
+    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
+    pageCounterMatcher2 = pageCounterColon.match(pageStr)
     start = 0
     end = 0
     count = 0
