@@ -221,6 +221,13 @@ class CSRankings {
 	name = name.replace(/ü/g, "=uuml=");
 	let splitName = name.split(" ");
 	let lastName = splitName[splitName.length - 1];
+	let disambiguation = ""
+	if (parseInt(lastName) > 0) {
+	    // this was a disambiguation entry; go back.
+	    disambiguation = lastName;
+	    splitName.pop();
+	    lastName = splitName[splitName.length - 1] + "_" + disambiguation;
+	}
 	splitName.pop();
 	let newName = splitName.join(" ");
 	newName = newName.replace(/\s/g, "_");
