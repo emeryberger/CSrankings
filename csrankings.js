@@ -87,6 +87,13 @@ var CSRankings = (function () {
         name = name.replace(/ü/g, "=uuml=");
         var splitName = name.split(" ");
         var lastName = splitName[splitName.length - 1];
+        var disambiguation = "";
+        if (parseInt(lastName) > 0) {
+            // this was a disambiguation entry; go back.
+            disambiguation = lastName;
+            splitName.pop();
+            lastName = splitName[splitName.length - 1] + "_" + disambiguation;
+        }
         splitName.pop();
         var newName = splitName.join(" ");
         newName = newName.replace(/\s/g, "_");
