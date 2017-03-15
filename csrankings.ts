@@ -192,6 +192,11 @@ class CSRankings {
     /* Map authors to the areas they have published in (for pie chart display). */
     private static authorAreas : {[name : string] : {[area : string] : number } } = {};
 
+    /* Computed stats (univagg). */
+    private static stats : {[key: string] : number} = {};
+
+    private static areaDeptAdjustedCount : {[key: string] : number} = {}; /* area+dept */
+    
     /* Colors for all areas. */
     private static readonly color : Array<string> =
 	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
@@ -286,7 +291,14 @@ class CSRankings {
 	const uname = unescape(name);
 	for (let i = 0; i < keys.length; i++) {
 	    const key = keys[i];
-	    const value = CSRankings.authorAreas[uname][key];
+	    let value = CSRankings.authorAreas[uname][key];
+	    // Use adjusted count if this is for a department.
+	    if (uname in CSRankings.stats) {
+		value = CSRankings.areaDeptAdjustedCount[key+uname] + 1;
+		if (value == 1) {
+		    value = 0;
+		}
+	    }
 	    if (value > 0) {
 		data.push({ "label" : CSRankings.areaDict[key],
 			    "value" : Math.round(value * 10) / 10,
@@ -666,7 +678,8 @@ class CSRankings {
 				displayPercentages : boolean,
 				weights : {[key:string] : number})
     : {[key: string] : number}
-    {
+	{
+	    CSRankings.stats = {};
 	let univagg : {[key: string] : number} = {};
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
@@ -935,7 +948,7 @@ class CSRankings {
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
 	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
 	let currentWeights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-	let areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
+	CSRankings.areaDeptAdjustedCount = {};
 	
 	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
 	const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
@@ -964,19 +977,19 @@ class CSRankings {
 				    endyear,
 				    currentWeights,
 				    whichRegions,
-				    areaDeptAdjustedCount,
+				    CSRankings.areaDeptAdjustedCount,
 				    deptCounts,
 				    deptNames,
 				    facultycount,
 				    facultyAdjustedCount);
 	
 	/* (university, total or average number of papers) */
-	const univagg = CSRankings.computeStats(deptNames,
-						areaDeptAdjustedCount,
-						CSRankings.areas,
-						numAreas,
-						displayPercentages,
-						currentWeights);
+	CSRankings.stats = CSRankings.computeStats(deptNames,
+						   CSRankings.areaDeptAdjustedCount,
+						   CSRankings.areas,
+						   numAreas,
+						   displayPercentages,
+						   currentWeights);
 
 	/* Canonicalize names. */
 	CSRankings.canonicalizeNames(deptNames,
@@ -991,7 +1004,7 @@ class CSRankings {
 	/* Start building up the string to output. */
 	const s = CSRankings.buildOutputString(displayPercentages,
 					     numAreas,
-					     univagg,
+					     CSRankings.stats,
 					     deptCounts,
 					     univtext);
 

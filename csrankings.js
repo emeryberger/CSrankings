@@ -148,6 +148,13 @@ var CSRankings = (function () {
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
             var value = CSRankings.authorAreas[uname][key];
+            // Use adjusted count if this is for a department.
+            if (uname in CSRankings.stats) {
+                value = CSRankings.areaDeptAdjustedCount[key + uname] + 1;
+                if (value == 1) {
+                    value = 0;
+                }
+            }
             if (value > 0) {
                 data.push({ "label": CSRankings.areaDict[key],
                     "value": Math.round(value * 10) / 10,
@@ -482,6 +489,7 @@ var CSRankings = (function () {
     };
     /* Compute aggregate statistics. */
     CSRankings.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+        CSRankings.stats = {};
         var univagg = {};
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
@@ -736,7 +744,7 @@ var CSRankings = (function () {
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
         var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
         var currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-        var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
+        CSRankings.areaDeptAdjustedCount = {};
         var startyear = parseInt(jQuery("#startyear").find(":selected").text());
         var endyear = parseInt(jQuery("#endyear").find(":selected").text());
         var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
@@ -748,14 +756,14 @@ var CSRankings = (function () {
         }
         CSRankings.authorAreas = {};
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, currentWeights, CSRankings.authorAreas);
-        CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, CSRankings.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
-        var univagg = CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
+        CSRankings.stats = CSRankings.computeStats(deptNames, CSRankings.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
         /* Start building up the string to output. */
-        var s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
+        var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
         setTimeout(function () { jQuery("#success").html(s); }, 0);
         return false;
@@ -890,6 +898,9 @@ CSRankings.authors = [];
 CSRankings.coauthors = [];
 /* Map authors to the areas they have published in (for pie chart display). */
 CSRankings.authorAreas = {};
+/* Computed stats (univagg). */
+CSRankings.stats = {};
+CSRankings.areaDeptAdjustedCount = {}; /* area+dept */
 /* Colors for all areas. */
 CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
 CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
