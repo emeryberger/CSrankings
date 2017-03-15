@@ -939,7 +939,7 @@ class CSRankings {
 	
 	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
 	const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
-	const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+	const displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
 	let numAreas = CSRankings.updateWeights(currentWeights);
