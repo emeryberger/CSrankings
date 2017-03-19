@@ -278,7 +278,7 @@ def sortdictionary(d):
     """Sorts a dictionary."""
     return sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
 
-def countPaper(confname, year, volume, number, startPage, pageCount):
+def countPaper(confname, year, volume, number, startPage, pageCount, url):
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
@@ -367,4 +367,10 @@ def countPaper(confname, year, volume, number, startPage, pageCount):
     if tooFewPages:
         return False
 
+    # Disambiguate Innovations in (Theoretical) Computer Science from
+    # International Conference on Supercomputing
+    if confname == 'ICS':
+        if url.find('innovations') != -1:
+            return False
+        
     return True

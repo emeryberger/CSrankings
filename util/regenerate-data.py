@@ -67,6 +67,9 @@ def parseDBLP(facultydict):
                         pageCount = pagecount(child.text)
                         startPage = startpage(child.text)
                         continue
+                    if child.tag == 'url':
+                        url = child.text
+                        continue
                     if child.tag == 'author':
                         authorName = child.text
                         if authorName is not None:
@@ -86,7 +89,7 @@ def parseDBLP(facultydict):
                     continue
 
                 # One of the papers we count?
-                if not countPaper(confname, year, volume, number, startPage, pageCount):
+                if not countPaper(confname, year, volume, number, startPage, pageCount, url):
                     continue
                 
                 # If we get here, we have a winner.
