@@ -575,12 +575,12 @@ var CSRankings = (function () {
             }
             var keys = Object.keys(fc);
             keys.sort(function (a, b) {
-                console.log("comparing " + a + " to " + b);
-                console.log("fc: " + fc[b] + " " + fc[a]);
                 if (fc[b] === fc[a]) {
                     var fb = Math.round(10.0 * facultyAdjustedCount[b + dept]) / 10.0;
                     var fa = Math.round(10.0 * facultyAdjustedCount[a + dept]) / 10.0;
-                    console.log("fb fa: " + fb + " " + fa);
+                    if (fb === fa) {
+                        return CSRankings.compareNames(a, b);
+                    }
                     return fb - fa;
                 }
                 else {
