@@ -574,7 +574,19 @@ var CSRankings = (function () {
                 fc[name_4] = facultycount[name_4 + dept];
             }
             var keys = Object.keys(fc);
-            keys.sort(function (a, b) { return fc[b] - fc[a]; });
+            keys.sort(function (a, b) {
+                console.log("comparing " + a + " to " + b);
+                console.log("fc: " + fc[b] + " " + fc[a]);
+                if (fc[b] === fc[a]) {
+                    var fb = Math.round(10.0 * facultyAdjustedCount[b + dept]) / 10.0;
+                    var fa = Math.round(10.0 * facultyAdjustedCount[a + dept]) / 10.0;
+                    console.log("fb fa: " + fb + " " + fa);
+                    return fb - fa;
+                }
+                else {
+                    return fc[b] - fc[a];
+                }
+            });
             var _loop_2 = function (name_5) {
                 if (CSRankings.showCoauthors) {
                     /* Build up text for co-authors. */

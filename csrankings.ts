@@ -773,7 +773,18 @@ class CSRankings {
 		fc[name] = facultycount[name+dept];
 	    }
 	    let keys = Object.keys(fc);
-	    keys.sort(function(a : string, b : string){ return fc[b] - fc[a];});
+	    keys.sort(function(a : string, b : string){
+		console.log("comparing " + a + " to " + b);
+		console.log("fc: " + fc[b] + " " + fc[a]);
+		if (fc[b] === fc[a]) {
+		    let fb = Math.round(10.0 * facultyAdjustedCount[b+dept]) / 10.0;
+		    let fa = Math.round(10.0 * facultyAdjustedCount[a+dept]) / 10.0;
+		    console.log("fb fa: " + fb + " " + fa);
+		    return fb - fa;
+		} else {
+		    return fc[b] - fc[a];
+		}
+	    });
 	    for (let name of keys) {
 		if (CSRankings.showCoauthors) {
 		    /* Build up text for co-authors. */
