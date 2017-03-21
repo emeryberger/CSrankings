@@ -1,4 +1,6 @@
 from csrankings import *
+import json
+import gzip
 
 authorPaperCountThreshold = 0
 
@@ -6,9 +8,7 @@ def parseDBLP(facultydict):
     coauthors = {}
     papersWritten = {}
     counter = 0
-    with open('dblp.xml', mode='r') as f:
-        
-    # with gzip.open('dblp.xml.gz') as f:
+    with gzip.open('dblp.xml.gz') as f:
 
         oldnode = None
         
