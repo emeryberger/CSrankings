@@ -580,18 +580,19 @@ class CSRankings {
 	    if (!authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    const year = authors[r].year;
+	    const auth = authors[r];
+	    const year = auth.year;
 	    if ((year < startyear) || (year > endyear)) {
 		continue;
 	    }
-	    const theArea  = authors[r].area;
+	    const theArea  = auth.area;
 	    if (weights[theArea] === 0) {
 		continue;
 	    }
-	    const theDept  = authors[r].dept;
-	    const theCount = parseFloat(authors[r].count);
-//	    const theCount = parseFloat(authors[r].adjustedcount);
-	    let name : string  = authors[r].name;
+	    const theDept  = auth.dept;
+	    const theCount = parseFloat(auth.count);
+//	    const theCount = parseFloat(auth.adjustedcount);
+	    let name : string  = auth.name;
 	    if (name in CSRankings.aliases) {
 		name = CSRankings.aliases[name];
 	    }
