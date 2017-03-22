@@ -409,18 +409,19 @@ var CSRankings = (function () {
             if (!authors.hasOwnProperty(r)) {
                 continue;
             }
-            var year = authors[r].year;
+            var auth = authors[r];
+            var year = auth.year;
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            var theArea = authors[r].area;
+            var theArea = auth.area;
             if (weights[theArea] === 0) {
                 continue;
             }
-            var theDept = authors[r].dept;
-            var theCount = parseFloat(authors[r].count);
-            //	    const theCount = parseFloat(authors[r].adjustedcount);
-            var name_1 = authors[r].name;
+            var theDept = auth.dept;
+            var theCount = parseFloat(auth.count);
+            //	    const theCount = parseFloat(auth.adjustedcount);
+            var name_1 = auth.name;
             if (name_1 in CSRankings.aliases) {
                 name_1 = CSRankings.aliases[name_1];
             }
