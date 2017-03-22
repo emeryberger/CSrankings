@@ -138,13 +138,12 @@ f.close()
 
 f = open('articles.json','w')
 z = []
-length = len(authlog_gl.items())
+# length = len(authlog_gl.items())
 for v, l in authlog_gl.items():
     if intauthors_gl.has_key(v):
-        if (intauthors_gl[v] >= 1):
-            # f.write("Papers for " + v.encode('utf-8') + ', ' + (fdict[v]).encode('utf-8') + "\n")
-            for s in l:
-                z.append(s)
+        # f.write("Papers for " + v.encode('utf-8') + ', ' + (fdict[v]).encode('utf-8') + "\n")
+        for s in l:
+            z.append(s)
 json.dump(z, f)
 f.close()
 
