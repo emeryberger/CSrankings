@@ -154,10 +154,12 @@ var CSRankings = (function () {
                 if (value == 1) {
                     value = 0;
                 }
+                // Round it to the nearest 0.1.
+                value = Math.round(value * 10) / 10;
             }
             if (value > 0) {
                 data.push({ "label": CSRankings.areaDict[key],
-                    "value": Math.round(value * 10) / 10,
+                    "value": value,
                     "color": CSRankings.color[i] });
             }
         }
@@ -639,7 +641,7 @@ var CSRankings = (function () {
                     + dblpName
                     + '\', true); return false;"'
                     + '>'
-                    + facultycount[name_5 + dept]
+                    + fc[name_5]
                     + '</a>'
                     + "</small></td>"
                     + '<td align="right"><small>'
