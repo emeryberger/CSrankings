@@ -66,7 +66,7 @@ areadict = {
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGSOFT
-    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE', 'ASE'],
+    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     # SIGOPS
     # - OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
     'ops': ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
@@ -370,7 +370,8 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
     # Disambiguate Innovations in (Theoretical) Computer Science from
     # International Conference on Supercomputing
     if confname == 'ICS':
-        if url.find('innovations') != -1:
-            return False
+        if not url is None:
+            if url.find('innovations') != -1:
+                return False
         
     return True
