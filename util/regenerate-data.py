@@ -144,7 +144,7 @@ for v, l in authlog_gl.items():
         # f.write("Papers for " + v.encode('utf-8') + ', ' + (fdict[v]).encode('utf-8') + "\n")
         for s in l:
             z.append(s)
-json.dump(z, f)
+json.dump(z, f, indent=2)
 f.close()
 
 
