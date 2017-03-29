@@ -9,436 +9,658 @@
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/set.d.ts" />
-/// <reference path="./typescript/pako.d.ts" />
+/// <reference path="./typescript/d3.d.ts" />
+/// <reference path="./typescript/d3pie.d.ts" />
 
-const coauthorFile       = "faculty-coauthors.csv";
-const authorinfoFile     = "generated-author-info.csv";
-const countryinfoFile    = "country-info.csv";
-const allowRankingChange = false;   /* Can we change the kind of rankings being used? */
-const showCoauthors      = false;
-const maxCoauthors       = 30;      /* Max co-authors to display. */
+declare function escape(s:string): string;
+declare function unescape(s:string): string;
 
-const useArithmeticMean = false;
-const useGeometricMean  = true;    /* This is the default and arguably only principled choice. */
-const useHarmonicMean   = false;
-
-var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "competition rankings". */
-
-/* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-
-const areas : Array<string> = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
+interface Article {
+    readonly name : string;
+    readonly conf : string;
+    readonly area : string;
+    readonly year : number;
+    readonly title : string;
+    readonly institution : string;
+};
 
 interface Author {
-    name : string;
-    dept : string;
-    area : string;
-    count : string;
-    adjustedcount : string;
-    year : number;
+    readonly name : string;
+    readonly dept : string;
+    readonly area : string;
+    readonly count : string;
+    readonly adjustedcount : string;
+    readonly year : number;
 };
 
 interface Coauthor {
-    author : string;
-    coauthor : string;
-    year : number;
-    area : string;
+    readonly author : string;
+    readonly coauthor : string;
+    readonly year : number;
+    readonly area : string;
 };
 
 interface CountryInfo {
-    institution : string;
-    region : string;
+    readonly institution : string;
+    readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "world";
 };
 
-var authors   : Array<Author> = [];       /* The data which will hold the parsed CSV of author info. */
-var coauthors : Array<Coauthor> = [];     /* The data which will hold the parsed CSV of co-author info. */
-var countryInfo : {[key : string] : string } = {};
+interface Alias {
+    readonly alias : string;
+    readonly name : string;
+};
 
-/* The prologue that we preface each generated HTML page with (the results). */
+interface HomePage {
+    readonly name : string;
+    readonly homepage : string;
+};
 
-function makePrologue() : string {
-    var s = "<html>"
-	+ "<head>"
-	+ '<style type="text/css">'
-	+ '  body { font-family: "Helvetica", "Arial"; }'
-	+ "  table td { vertical-align: top; }"
-	+ "</style>"
-	+ "</head>"
-	+ "<body>"
-	+ '<div class="row">'
-	+ '<div class="table" style="overflow:auto; height: 650px;">'
-	+ '<table class="table-sm table-striped"'
-	+ 'id="ranking" valign="top">';
-    return s;
-}
+interface AreaMap {
+    readonly area : string;
+    readonly title : string;
+};
 
-/* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
-function compareNames (a : string, b : string) : number {
+interface ChartData {
+    readonly label : string;
+    readonly value : number;
+    readonly color : string;
+};
 
-    //split the names as strings into arrays
-    var aName = a.split(" ");
-    var bName = b.split(" ");
-
-    // get the last names by selecting
-    // the last element in the name arrays
-    // using array.length - 1 since full names
-    // may also have a middle name or initial
-    var aLastName = aName[aName.length - 1];
-    var bLastName = bName[bName.length - 1];
-
-    // compare the names and return either
-    // a negative number, positive number
-    // or zero.
-    if (aLastName < bLastName) return -1;
-    if (aLastName > bLastName) return 1;
-    return 0;
-}
-
-/* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
-function zlibDecompress(url : string, callback : (x : any) => void) : void {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'blob';
-
-    xhr.onload = function(oEvent : any) {
-	// Base64 encode
-	var reader = new FileReader();
-	reader.readAsDataURL(xhr.response);
-	reader.onloadend = function() {
-	    var base64data      = reader.result;
-
-	    //console.log(base64data);
-	    var base64      = base64data.split(',')[1];
-
-	    // Decode base64 (convert ascii to binary)
-	    var strData     = atob(base64);
-
-	    // Convert binary string to character-number array
-	    var charData    = strData.split('').map(function(x){return x.charCodeAt(0);});
-
-	    // Turn number array into byte-array
-	    var binData     = new Uint8Array(charData);
-
-	    // Pako inflate
-	    var data        = pako.inflate(binData, { to: 'string' });
-
-	    callback(data);
+class CSRankings {
+    
+    constructor() {
+	/* Build the areaDict dictionary: areas -> names used in pie charts
+	   and areaPosition dictionary: areas -> position in area array
+	*/
+	for (let position = 0; position < CSRankings.areaMap.length; position++) {
+	    const { area, title } = CSRankings.areaMap[position];
+	    CSRankings.areas[position]     = area;
+	    CSRankings.areaNames[position] = title;
+	    CSRankings.fields[position]    = "field_" + area;
+	    CSRankings.areaDict[area]      = CSRankings.areaNames[position];
+	    CSRankings.areaPosition[area]  = position;
 	}
-    };
-
-    xhr.send();
-}
-
-
-function redisplay(str : string) : void {
-    jQuery("#success").html(str);
-}
-
-function toggle(dept : string) : void {
-    var e = document.getElementById(dept);
-    var widget = document.getElementById(dept+"-widget");
-    if (e.style.display == 'block') {
-	e.style.display = 'none';
-	widget.innerHTML = '<font color="blue">&#9658;</font>&nbsp;' + dept;
-    } else {
-	e.style.display = 'block';
-	widget.innerHTML = '<font color="blue">&#9660;</font>&nbsp;' + dept;
-    }
-}
-
-function setAllCheckboxes() : void {
-    /* Set the _default_ (not "other") checkboxes to true. */
-    for (var i = 1; i <= areas.length; i++) {
-	var str = 'input[name=field_'+i+']';
-	jQuery(str).prop('checked', true);
-    }
-}
-
-/* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
-function nop() : void {}
-
-function loadCoauthors(cont : () => void ) : void {
-    Papa.parse(coauthorFile, {
-	download : true,
-	header: true,
-	complete : function(results) {
-	    var data : any = results.data;
-	    coauthors = data as Array<Coauthor>;
-	    cont();
+	for (let area of CSRankings.aiAreas) {
+	    CSRankings.aiFields.push (CSRankings.areaPosition[area]);
 	}
-    });
-}
-
-function loadCountryInfo(cont : () => void ) : void {
-    Papa.parse(countryinfoFile, {
-	header: true,
-	download : true,
-	complete : function(results) {
-	    var data : any = results.data;
-	    var ci = data as Array<CountryInfo>;
-	    for (var i = 0; i < ci.length; i++) {
-		countryInfo[ci[i].institution] = ci[i].region;
-	    }
-	    cont();
+	for (let area of CSRankings.systemsAreas) {
+	    CSRankings.systemsFields.push (CSRankings.areaPosition[area]);
 	}
-    });
-}
-
-function loadAuthorInfo(cont : () => void) : void {
-    Papa.parse(authorinfoFile, {
-	download : true,
-	header : true,
-	complete: function(results) {
-	    var data : any = results.data;
-	    authors = data as Array<Author>;
-	    for (var i = 1; i <= areas.length; i++) {
-		var str = 'input[name=field_'+i+']';
-		(function(s : string) {
-		    jQuery(s).click(function() {
-			rank();
-		    });})(str);
-	    }
-	    cont();
-/*	    rank(); */
+	for (let area of CSRankings.theoryAreas) {
+	    CSRankings.theoryFields.push (CSRankings.areaPosition[area]);
 	}
-    });
-}
-
-function init() : void {
-    jQuery(document).ready(
-	function() {
-	    setAllCheckboxes();
-	    loadAuthorInfo(function() {
-		loadCountryInfo(rank);
+	for (let area of CSRankings.otherAreas) {
+	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
+	}
+	CSRankings.setAllCheckboxes();
+	let next = ()=> {
+	    CSRankings.loadAliases(CSRankings.aliases, function() {
+		CSRankings.loadHomepages(CSRankings.homepages,
+					 function() {
+					     CSRankings.loadAuthorInfo(function() {
+						 CSRankings.loadArticles(function() {
+						     CSRankings.loadCountryInfo(CSRankings.countryInfo,
+										CSRankings.rank);
+						 });
+					     });
+					 });
 	    });
+	};
+	if (CSRankings.showCoauthors) {
+	    CSRankings.loadCoauthors(next);
+	} else {
+	    next();
+	}
+    }
+
+    private static readonly coauthorFile       = "faculty-coauthors.csv";
+    private static readonly authorinfoFile     = "generated-author-info.csv";
+    private static readonly countryinfoFile    = "country-info.csv";
+    private static readonly aliasFile          = "dblp-aliases.csv";
+    private static readonly homepagesFile      = "homepages.csv";
+    private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
+    private static readonly showCoauthors      = false;
+    private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
+
+    private static readonly areaMap : Array<AreaMap>
+	= [ { area : "ai", title : "AI" },
+	    { area : "vision", title : "Vision" },
+	    { area : "mlmining", title : "ML" },
+	    { area : "nlp",  title : "NLP" },
+	    { area : "ir", title : "Web & IR" },
+	    { area : "arch", title : "Arch" },
+	    { area : "comm", title : "Networks"},
+	    { area : "sec", title : "Security"},
+	    { area : "mod", title : "DB"},
+	    { area : "hpc", title : "HPC"},
+	    { area : "mobile", title : "Mobile"},
+	    { area : "metrics", title : "Metrics"},
+	    { area : "ops", title : "OS" },
+	    { area : "plan", title : "PL" },
+	    { area : "soft", title : "SE" },
+	    { area : "act", title : "Theory" },
+	    { area : "crypt", title: "Crypto" },
+	    { area : "log", title : "Logic" },
+	    { area : "graph", title : "Graphics" },
+	    { area : "chi", title : "HCI" },
+	    { area : "robotics", title : "Robotics" },
+	    { area : "bio", title : "Comp. Biology" },
+	    { area : "da", title : "Design Automation" },
+	    { area : "bed", title : "Embedded Systems" },
+	    { area : "vis", title : "Visualization" }
+	  ];
+
+    private static readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
+    private static readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
+    private static readonly theoryAreas  = [ "act", "crypt", "log" ];
+    private static readonly otherAreas   = [ "graph", "chi", "robotics", "bio", "vis" ];
+    
+    private static readonly areas : Array<string> = [];
+    private static readonly areaNames : Array<string> = [];
+    private static readonly fields : Array<string> = [];
+    private static readonly aiFields : Array<number> = [];
+    private static readonly systemsFields : Array<number> = [];
+    private static readonly theoryFields : Array<number> = [];
+    private static readonly otherFields : Array<number> = [];
+    
+    /* Map area to its name (from areaNames). */
+    private static readonly areaDict : {[key : string] : string } = {};
+
+    /* Map area to its position in the list. */
+    private static readonly areaPosition : {[key : string] : number } = {};
+
+    /* Map aliases to canonical author name. */
+    private static readonly aliases : {[key : string] : string } = {};
+
+    /* Map institution to (non-US) region. */
+    private static readonly countryInfo : {[key : string] : string } = {};
+
+    private static articles : Array<Article>;
+    
+    /* Map name to home page. */
+    private static readonly homepages : {[key : string] : string } = {}; 
+
+    /* Set to true for "dense rankings" vs. "competition rankings". */
+    private static readonly useDenseRankings : boolean = false;    
+
+    /* The data which will hold the parsed CSV of author info. */
+    private static authors   : Array<Author> = [];
+
+    /* The data which will hold the parsed CSV of co-author info. */    
+    private static coauthors : Array<Coauthor> = [];
+    
+    /* Map authors to the areas they have published in (for pie chart display). */
+    private static authorAreas : {[name : string] : {[area : string] : number } } = {};
+
+    /* Computed stats (univagg). */
+    private static stats : {[key: string] : number} = {};
+
+    private static areaDeptAdjustedCount : {[key: string] : number} = {}; /* area+dept */
+    
+    /* Colors for all areas. */
+    private static readonly color : Array<string> =
+	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
+
+    private static readonly RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+    private static readonly DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
+    private static readonly PieChart      = "&#9685;"; // symbol that looks close enough to a pie chart
+
+    private static translateNameToDBLP(name : string) : string {
+	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
+	// First, replace spaces and non-ASCII characters (not complete).
+	// Known issue: does not properly handle suffixes like Jr., III, etc.
+	name = name.replace(/'/g, "=");
+	name = name.replace(/\-/g, "=");
+	name = name.replace(/\./g, "=");
+	name = name.replace(/Á/g, "=Aacute=");
+	name = name.replace(/á/g, "=aacute=");
+	name = name.replace(/è/g, "=egrave=");
+	name = name.replace(/é/g, "=eacute=");
+	name = name.replace(/ï/g, "=iuml=");
+	name = name.replace(/ó/g, "=oacute=");
+	name = name.replace(/ç/g, "=ccedil=");
+	name = name.replace(/ä/g, "=auml=");
+	name = name.replace(/ö/g, "=ouml=");
+	name = name.replace(/ø/g, "=oslash=");
+	name = name.replace(/Ö/g, "=Ouml=");
+	name = name.replace(/ü/g, "=uuml=");
+	let splitName = name.split(" ");
+	let lastName = splitName[splitName.length - 1];
+	let disambiguation = ""
+	if (parseInt(lastName) > 0) {
+	    // this was a disambiguation entry; go back.
+	    disambiguation = lastName;
+	    splitName.pop();
+	    lastName = splitName[splitName.length - 1] + "_" + disambiguation;
+	}
+	splitName.pop();
+	let newName = splitName.join(" ");
+	newName = newName.replace(/\s/g, "_");
+	newName = newName.replace(/\-/g, "=");
+	let str = "http://dblp.uni-trier.de/pers/hd";
+	const lastInitial = lastName[0].toLowerCase();
+	str += "/" + lastInitial + "/" + lastName + ":" + newName;
+	return str;
+    }
+
+    /* Create the prologue that we preface each generated HTML page with (the results). */
+    private static makePrologue() : string {
+	const s = "<html>"
+	    + "<head>"
+	    + '<style type="text/css">'
+	    + '  body { font-family: "Helvetica", "Arial"; }'
+	    + "  table td { vertical-align: top; }"
+	    + "</style>"
+	    + "</head>"
+	    + "<body>"
+	    + '<div class="row">'
+	    + '<div class="table" style="overflow:auto; height: 650px;">'
+	    + '<table class="table-sm table-striped"'
+	    + 'id="ranking" valign="top">';
+	return s;
+    }
+
+    /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
+    private static compareNames (a : string, b : string) : number {
+
+	//split the names as strings into arrays
+	const aName = a.split(" ");
+	const bName = b.split(" ");
+
+	// get the last names by selecting
+	// the last element in the name arrays
+	// using array.length - 1 since full names
+	// may also have a middle name or initial
+	const aLastName = aName[aName.length - 1];
+	const bLastName = bName[bName.length - 1];
+
+	// compare the names and return either
+	// a negative number, positive number
+	// or zero.
+	if (aLastName < bLastName) return -1;
+	if (aLastName > bLastName) return 1;
+	return 0;
+    }
+
+    /* Create a pie chart */
+    private static makeChart(name : string) : void
+    {
+	console.assert (CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
+	let data : Array<ChartData> = [];
+	const keys = CSRankings.areas;
+	const uname = unescape(name);
+	for (let i = 0; i < keys.length; i++) {
+	    const key = keys[i];
+	    let value = CSRankings.authorAreas[uname][key];
+	    // Use adjusted count if this is for a department.
+	    if (uname in CSRankings.stats) {
+		value = CSRankings.areaDeptAdjustedCount[key+uname] + 1;
+		if (value == 1) {
+		    value = 0;
+		}
+		// Round it to the nearest 0.1.
+		value = Math.round(value * 10) / 10;
+	    }
+	    if (value > 0) {
+		data.push({ "label" : CSRankings.areaDict[key],
+			    "value" : value,
+			    "color" : CSRankings.color[i] });
+	    }
+	}
+	new d3pie(name + "-chart", {
+	    "header": {
+		"title": {
+		    "text": uname,
+		    "fontSize": 24,
+		    "font": "open sans"
+		},
+		"subtitle": {
+		    "text": "Publication Profile",
+		    "color": "#999999",
+		    "fontSize": 14,
+		    "font": "open sans"
+		},
+		"titleSubtitlePadding": 9
+	    },
+	    "size": {
+		"canvasHeight": 500,
+		"canvasWidth": 500,
+		"pieInnerRadius": "38%",
+		"pieOuterRadius": "83%"
+	    },
+	    "data": {
+		"content": data,
+		"smallSegmentGrouping": {
+		    "enabled": true,
+		    "value": 1
+		},
+	    },
+	    "labels": {
+		"outer": {
+		    "pieDistance": 32
+		},
+		"inner": {
+		    //"format": "percentage", // "value",
+		    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
+		    "format": "value",
+		    "hideWhenLessThanPercentage": 2 // 100 // 2
+		},
+		"mainLabel": {
+		    "fontSize": 12
+		},
+		"percentage": {
+		    "color": "#ffffff",
+		    "decimalPlaces": 0
+		},
+		"value": {
+		    "color": "#ffffff", // "#adadad",
+		    "fontSize": 10
+		},
+		"lines": {
+		    "enabled": true
+		},
+		"truncation": {
+		    "enabled": true
+		}
+	    },
+	    "effects": {
+		"load": {
+		    "effect": "none"
+		},
+		"pullOutSegmentOnClick": {
+		    "effect": "linear",
+		    "speed": 400,
+		    "size": 8
+		}
+	    },
+	    "misc": {
+		"gradient": {
+		    "enabled": true,
+		    "percentage": 100
+		}
+	    }
 	});
-}
+    }
 
-/* 
-function init() : void {
-    jQuery(document).ready(
-	function() {
-	    setAllCheckboxes();
-	    loadAuthorInfo(function() {
-		loadCountryInfo(function() {
-		    loadCoauthors(rank);
-		});
-	    });
+    private static loadCoauthors(cont : () => void ) : void {
+	Papa.parse(CSRankings.coauthorFile, {
+	    download : true,
+	    header: true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		CSRankings.coauthors = data as Array<Coauthor>;
+		setTimeout(cont, 0);
+	    }
 	});
-}
-*/
-
-function activateAll(value : boolean) : boolean {
-    if (value === undefined) {
-	value = true;
     }
-    for (var i = 1; i <= areas.length; i++) {
-	var str = "input[name=field_"+i+"]";
-	jQuery(str).prop('checked', value);
+    
+    
+    private static loadAliases(aliases: {[key : string] : string },
+			       cont : ()=> void ) : void {
+	Papa.parse(CSRankings.aliasFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const d = data as Array<Alias>;
+		for (let aliasPair of d) {
+		    aliases[aliasPair.alias] = aliasPair.name;
+		}
+		setTimeout(cont, 0);
+	    }
+	});
     }
-    rank();
-    return false;
-}
 
-function activateNone() : boolean {
-    return activateAll(false);
-}
-
-function activateFields(value : boolean, fields : Array<number>) : boolean {
-    if (value === undefined) {
-	value = true;
+    private static loadArticles(cont : () => void) : void {
+	jQuery.getJSON("articles.json", (_ : Array<Article>) => {
+/* disabled for now
+	    CSRankings.articles = data; */
+	    setTimeout(cont, 0);
+	});
     }
-    for (var i = 0; i <= fields.length; i++) {
-	var str = "input[name=field_"+fields[i]+"]";
-	jQuery(str).prop('checked', value);
+    
+    private static loadCountryInfo(countryInfo : {[key : string] : string },
+				   cont : () => void ) : void {
+	Papa.parse(CSRankings.countryinfoFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const ci = data as Array<CountryInfo>;
+		for (let info of ci) {
+		    countryInfo[info.institution] = info.region;
+		}
+		setTimeout(cont, 0);
+	    }
+	});
     }
-    rank();
-    return false;
-}
 
-function activatePL(value : boolean) : boolean {
-    const plFields      : Array<number> = [1, 2, 21];
-    return activateFields(value, plFields);
-}
-
-function activateSystems(value : boolean) : boolean {
-    activatePL(value);
-    const systemsFields : Array<number> = [3, 4, 5, 6, 7, 15, 18, 20];
-    return activateFields(value, systemsFields);
-}
-
-function activateAI(value : boolean) : boolean {
-    const aiFields      : Array<number> = [8, 9, 10, 11, 12];
-    return activateFields(value, aiFields);
-}
-
-function activateTheory(value : boolean) : boolean {
-    const theoryFields  : Array<number> = [13, 14, 22];
-    return activateFields(value, theoryFields);
-}
-
-function activateOthers(value : boolean) : boolean {
-    const otherFields   : Array<number> = [16, 17, 19];
-    return activateFields(value, otherFields);
-}
-
-function deactivatePL() : boolean {
-    return activatePL(false);
-}
-
-function deactivateSystems() : boolean {
-    return activateSystems(false);
-}
-
-function deactivateAI() : boolean {
-    return activateAI(false);
-}
-
-function deactivateTheory() : boolean {
-    return activateTheory(false);
-}
-
-function deactivateOthers() : boolean {
-    return activateOthers(false);
-}
-
-function toggleAI(cb : any) : boolean {
-    if (cb.checked) {
-	console.log("checked");
-	activateAI(false);
-    } else {
-	console.log("not checked");
-	activateAI(true);
+    private static loadAuthorInfo(cont : () => void) : void {
+	Papa.parse(CSRankings.authorinfoFile, {
+	    download : true,
+	    header : true,
+	    complete: (results)=> {
+		const data : any = results.data;
+		this.authors = data as Array<Author>;
+		for (let i = 0; i < CSRankings.fields.length; i++) {
+		    const str = 'input[name='+CSRankings.fields[i]+']';
+		    jQuery(str).click(()=>{ this.rank(); });
+		}
+		setTimeout(cont, 0);
+	    }
+	});
     }
-    return false;
-}
 
-function sortIndex(univagg : {[key: string] : number}) : string[] {
-    var keys = Object.keys(univagg);
-    keys.sort(function(a,b) {
-	if (univagg[a] > univagg[b]) {
-	    return -1;
-	}
-	if (univagg[b] > univagg[a]) {
-	    return 1;
-	}
-	if (a < b) {
-	    return -1;
-	}
-	if (b < a) {
-	    return 1;
-	}
-	return 0;});
-    return keys;
-}
-
-function computeCoauthors(coauthors : Array<Coauthor>,
-			  startyear : number,
-			  endyear : number,
-			  weights : {[key:string] : number})
-: {[key : string] : Set<string> }
-{
-    var coauthorList : {[key : string] : Set<string> } = {};
-    for (var c in coauthors) {
-	var author = coauthors[c].author;
-	var coauthor = coauthors[c].coauthor;
-	var year = coauthors[c].year;
-	var area = coauthors[c].area;
-	if (!(author in coauthorList)) {
-	    coauthorList[author] = new Set([]);
-	}
-	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
-	    continue;
-	}
-	coauthorList[author].add(coauthor);
+    private static loadHomepages(homepages : {[key : string] : string },
+				 cont : ()=> void ) : void {
+	Papa.parse(CSRankings.homepagesFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const d = data as Array<HomePage>;
+		for (let namePage of d) {
+		    if (typeof namePage.homepage === 'undefined') {
+        		continue
+		    }
+		    homepages[namePage.name.trim()] = namePage.homepage.trim();
+		}
+		setTimeout(cont, 0);
+	    }
+	});
     }
-    return coauthorList;
-}
-
-function countPapers(areacount : {[key:string] : number},
-		     areaAdjustedCount : {[key:string] : number},
-		     areaDeptAdjustedCount  : {[key:string] : number},
-		     authors : Array<Author>,
-		     startyear : number,
-		     endyear : number,
-		     weights : {[key:string] : number}) : void
-{
-    /* Count the total number of papers (raw and adjusted) in each area. */
-    for (var r in authors) {
-	var area = authors[r].area;
-	var dept = authors[r].dept;
-	var year = authors[r].year;
-	var areaDept = area+dept;
-	areaDeptAdjustedCount[areaDept] = 0;
-	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
-	    continue;
-	}
-	var count = parseFloat(authors[r].count);
-	var adjustedCount = parseFloat(authors[r].adjustedcount);
-	areacount[area] += count;
-	areaAdjustedCount[area] += adjustedCount;
-    }
-}
 
 
-function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
-			  deptCounts : {[key:string] : number},
-			  deptNames  : {[key:string] : Array<string>},
-			  facultycount : {[key:string] : number},
-			  facultyAdjustedCount : {[key:string] : number},
-			  authors : Array<Author>,
-			  startyear : number,
-			  endyear : number,
-			  weights : {[key:string] : number},
-			  regions : string) : void
-{
-    /* Build the dictionary of departments (and count) to be ranked. */
-    var visited : {[key:string] : boolean} = {};            /* contains an author name if that author has been processed. */
-    for (var r in authors) {
-	const area : string = authors[r].area;
-	const dept : string = authors[r].dept;
+    private static inRegion(dept : string,
+			    regions : string): boolean
+    {
 	switch (regions) {
+	case "world":
+	    break;
 	case "USA":
-	    if (dept in countryInfo) {
-		continue;
+	    if (dept in CSRankings.countryInfo) {
+		return false;
 	    }
 	    break;
 	case "europe":
-	    if (!(dept in countryInfo)) { // USA
-		continue;
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
 	    }
-	    if (countryInfo[dept] != "europe") {
-		continue;
+	    if (CSRankings.countryInfo[dept] != "europe") {
+		return false;
 	    }
 	    break;
 	case "canada":
-	    if (!(dept in countryInfo)) { // USA
-		continue;
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
 	    }
-	    if (countryInfo[dept] != "canada") {
-		continue;
+	    if (CSRankings.countryInfo[dept] != "canada") {
+		return false;
 	    }
 	    break;
-	case "world":
+	case "northamerica":
+	    if ((dept in CSRankings.countryInfo) && (CSRankings.countryInfo[dept] != "canada")) {
+		return false;
+	    }
+	    break;
+	case "australasia":
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
+	    }
+	    if (CSRankings.countryInfo[dept] != "australasia") {
+		return false;
+	    }
 	    break;
 	}
-	const areaDept : string = area+dept;
-	if (!(areaDept in areaDeptAdjustedCount)) {
-	    areaDeptAdjustedCount[areaDept] = 0;
+	return true;
+    }
+    
+    private static activateFields(value : boolean,
+				  fields : Array<number>) : boolean
+    {
+	for (let i = 0; i < fields.length; i++) {
+	    const str = "input[name=" + CSRankings.fields[fields[i]] + "]";
+	    jQuery(str).prop('checked', value);
 	}
-	if (weights[area] == 0) {
-	    continue;
+	CSRankings.rank();
+	return false;
+    }
+
+    private static sortIndex(univagg : {[key: string] : number}) : string[]
+    {
+	let keys = Object.keys(univagg);
+	keys.sort(function(a,b) {
+	    if (univagg[a] > univagg[b]) {
+		return -1;
+	    }
+	    if (univagg[b] > univagg[a]) {
+		return 1;
+	    }
+	    if (a < b) {
+		return -1;
+	    }
+	    if (b < a) {
+		return 1;
+	    }
+	    return 0;});
+	return keys;
+    }
+
+    private static computeCoauthors(coauthors : Array<Coauthor>,
+				    startyear : number,
+				    endyear : number,
+				    weights : {[key:string] : number})
+    : {[key : string] : Set<string> }
+    {
+	let coauthorList : {[key : string] : Set<string> } = {};
+	for (let c in coauthors) {
+	    if (!coauthors.hasOwnProperty(c)) {
+		continue;
+	    }
+	    const { author, coauthor, year, area } = coauthors[c];
+	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+		continue;
+	    }
+	    if (!(author in coauthorList)) {
+		coauthorList[author] = new Set([]);
+	    }
+	    coauthorList[author].add(coauthor);
 	}
-	const name : string  = authors[r].name;
-	const count : number = parseInt(authors[r].count);
-	const adjustedCount : number = parseFloat(authors[r].adjustedcount);
-	const year : number  = authors[r].year;
-	if ((year >= startyear) && (year <= endyear)) {
+	return coauthorList;
+    }
+
+    private static countAuthorAreas(authors : Array<Author>,
+				    startyear : number,
+				    endyear : number,
+				    weights : {[key:string] : number},
+				    authorAreas : {[name : string] : {[area : string] : number }}) : void
+    
+    {
+	for (let r in authors) {
+	    if (!authors.hasOwnProperty(r)) {
+		continue;
+	    }
+	    const auth = authors[r];
+	    const year = auth.year;
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
+	    }
+	    const theArea  = auth.area;
+	    if (weights[theArea] === 0) {
+		continue;
+	    }
+	    const theDept  = auth.dept;
+	    const theCount = parseFloat(auth.count);
+//	    const theCount = parseFloat(auth.adjustedcount);
+	    let name : string  = auth.name;
+	    if (name in CSRankings.aliases) {
+		name = CSRankings.aliases[name];
+	    }
+	    if (!(name in authorAreas)) {
+		authorAreas[name] = {};
+		for (let area in CSRankings.areaDict) {
+		    if (CSRankings.areaDict.hasOwnProperty(area)) {
+			authorAreas[name][area] = 0;
+		    }
+		}
+	    }
+	    if (!(theDept in authorAreas)) {
+		authorAreas[theDept] = {};
+		for (let area in CSRankings.areaDict) {
+		    if (CSRankings.areaDict.hasOwnProperty(area)) {
+			authorAreas[theDept][area] = 0;
+		    }
+		}
+	    }
+	    authorAreas[name][theArea] += theCount;
+	    authorAreas[theDept][theArea] += theCount;
+	}
+    }
+
+    /* Build the dictionary of departments (and count) to be ranked. */
+    private static buildDepartments(authors : Array<Author>,
+				    startyear : number,
+				    endyear : number,
+				    weights : {[key:string] : number},
+				    regions : string,
+				    areaDeptAdjustedCount : {[key:string] : number},
+				    deptCounts : {[key:string] : number},
+				    deptNames  : {[key:string] : Array<string>},
+				    facultycount : {[key:string] : number},
+				    facultyAdjustedCount : {[key:string] : number}) : void
+    {
+	/* contains an author name if that author has been processed. */
+	let visited : {[key:string] : boolean} = {}; 
+	for (let r in authors) {
+	    if (!authors.hasOwnProperty(r)) {
+		continue;
+	    }
+	    let { name, year, area, dept } = authors[r];
+	    if (name in CSRankings.aliases) {
+		name = CSRankings.aliases[name];
+	    }
+	    if (typeof dept === 'undefined') {
+		continue;
+	    }
+	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+		continue;
+	    }
+	    const areaDept : string = area+dept;
+	    const nameDept : string = name+dept;
+	    if (!(areaDept in areaDeptAdjustedCount)) {
+		areaDeptAdjustedCount[areaDept] = 0;
+	    }
+	    if (!CSRankings.inRegion(dept, regions)) {
+		continue;
+	    }
+	    const count : number = parseInt(authors[r].count);
+	    const adjustedCount : number = parseFloat(authors[r].adjustedcount);
 	    areaDeptAdjustedCount[areaDept] += adjustedCount;
 	    /* Is this the first time we have seen this person? */
 	    if (!(name in visited)) {
 		visited[name] = true;
-		facultycount[name+dept] = 0;
-		facultyAdjustedCount[name+dept] = 0;
+		facultycount[nameDept] = 0;
+		facultyAdjustedCount[nameDept] = 0;
 		if (!(dept in deptCounts)) {
 		    deptCounts[dept] = 0;
 		    deptNames[dept] = <Array<string>>[];
@@ -446,276 +668,442 @@ function buildDepartments(areaDeptAdjustedCount : {[key:string] : number},
 		deptNames[dept].push(name);
 		deptCounts[dept] += 1;
 	    }
-	    facultycount[name+dept] += count;
-	    facultyAdjustedCount[name+dept] += adjustedCount;
+	    facultycount[nameDept] += count;
+	    facultyAdjustedCount[nameDept] += adjustedCount;
 	}
     }
-}
 
-/* Compute aggregate statistics. */
-function computeStats(deptNames : {[key:string] : Array<string> },
-		      areaAdjustedCount : {[key:string] : number},
-		      areaDeptAdjustedCount : {[key:string] : number},
-		      areas : Array<string>,
-		      numAreas : number,
-		      displayPercentages : boolean,
-		      weights : {[key:string] : number})
-: {[key: string] : number}
-{
-   
-    var univagg : {[key: string] : number} = {};
-    for (var dept in deptNames) {
-	if (displayPercentages) {
-	    if (useArithmeticMean) {
-		univagg[dept] = 0;
+    /* Compute aggregate statistics. */
+    private static computeStats(deptNames : {[key:string] : Array<string> },
+				areaDeptAdjustedCount : {[key:string] : number},
+				areas : Array<string>,
+				numAreas : number,
+				displayPercentages : boolean,
+				weights : {[key:string] : number})
+    : {[key: string] : number}
+	{
+	    CSRankings.stats = {};
+	let univagg : {[key: string] : number} = {};
+	for (let dept in deptNames) {
+	    if (!deptNames.hasOwnProperty(dept)) {
+		continue;
 	    }
-	    if (useGeometricMean) {
+	    if (displayPercentages) {
 		univagg[dept] = 1;
-	    }
-	    if (useHarmonicMean) {
+	    } else {
 		univagg[dept] = 0;
 	    }
-	} else {
-	    univagg[dept] = 0;
-	}
-	for (var ind = 0; ind < areas.length; ind++) {
-	    var area = areas[ind];
-	    var areaDept = area+dept;
-	    if (!(areaDept in areaDeptAdjustedCount)) {
-		areaDeptAdjustedCount[areaDept] = 0;
-	    }
-	    if (weights[area] != 0) {
-		if (displayPercentages) {
-		    if (areaDeptAdjustedCount[areaDept] != 0) {
-			if (useArithmeticMean) {
-			    univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area];
-			}
-			if (useGeometricMean) {
-			    univagg[dept] *= areaDeptAdjustedCount[areaDept];
-			}
-			if (useHarmonicMean) {
-			    univagg[dept] += areaAdjustedCount[area] / areaDeptAdjustedCount[areaDept];
-			}
+	    for (let area of areas) {
+		let areaDept = area+dept;
+		if (!(areaDept in areaDeptAdjustedCount)) {
+		    areaDeptAdjustedCount[areaDept] = 0;
+		}
+		if (weights[area] != 0) {
+		    if (displayPercentages) {
+			// Adjusted (smoothed) geometric mean.
+			univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
 		    } else {
-			/* n--; */
+			univagg[dept] += areaDeptAdjustedCount[areaDept];
 		    }
-		} else {
-		    univagg[dept] += areaDeptAdjustedCount[areaDept];
 		}
 	    }
-	}
-	if (displayPercentages) {
-	    if (useArithmeticMean) {
-		univagg[dept] = univagg[dept] / numAreas;
-	    }
-	    if (useGeometricMean) {
+	    if (displayPercentages) {
+		// finally compute geometric mean.
 		univagg[dept] = Math.pow(univagg[dept], 1/numAreas);
 	    }
-	    if (useHarmonicMean) {
-		univagg[dept] = numAreas / univagg[dept];
+	}
+	return univagg;
+    }
+
+    /* Updates the 'weights' of each area from the checkboxes. */
+    /* Returns the number of areas selected (checked). */
+    private static updateWeights(weights : {[key: string] : number}) : number
+    {
+	let numAreas = 0;
+	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
+	    let area = CSRankings.areas[ind];
+	    weights[area] = jQuery('input[name=' + CSRankings.fields[ind] + ']').prop('checked') ? 1 : 0;
+	    if (weights[area] === 1) {
+		/* One more area checked. */
+		numAreas++;
+	    }
+	}
+	return numAreas;
+    }
+
+    private static canonicalizeNames(deptNames : {[key: string] : Array<string> },
+				     facultycount :  {[key: string] : number},
+				     facultyAdjustedCount: {[key: string] : number}) : void
+    {
+	for (let dept in deptNames) {
+	    if (!deptNames.hasOwnProperty(dept)) {
+		continue;
+	    }
+	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
+		let name = deptNames[dept][ind];
+		if (name in CSRankings.aliases) {
+		    deptNames[dept][ind] = CSRankings.aliases[name];
+		    if (!(CSRankings.aliases[name]+dept in facultycount)) {
+			facultycount[CSRankings.aliases[name]+dept] = facultycount[name+dept];
+			facultyAdjustedCount[CSRankings.aliases[name]+dept] = facultyAdjustedCount[name+dept];
+		    } else {
+			facultycount[CSRankings.aliases[name]+dept] += facultycount[name+dept];
+			facultyAdjustedCount[CSRankings.aliases[name]+dept] += facultyAdjustedCount[name+dept];
+		    }
+		}
 	    }
 	}
     }
-    return univagg;
-}
-
-function rank() : boolean {
-    var form = document.getElementById("rankform");
-    var s : string = "";
-    var deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
-    var deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
-    var facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
-    var facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
-    var weights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
-    var areacount : {[key: string] : number} = {};          /* raw number of papers in each area */
-    var areaAdjustedCount : {[key: string] : number} = {};  /* adjusted number of papers in each area (split among faculty authors). */
-    var areaDeptAdjustedCount : {[key: string] : number} = {}; /* as above, but for area+dept. */
-    
-    const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
-    const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
-    const displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
-    /* Show the top N (with more if tied at the end) */
-    const minToRank          = 50; /* parseInt(jQuery("#minToRank").find(":selected").val()); */
-    const whichRegions       = jQuery("#regions").find(":selected").val();
-
-    var numAreas = 0; /* Total number of areas checked */
-
-    /* Update the 'weights' of each area from the checkboxes. */
-    for (var ind = 0; ind < areas.length; ind++) {
-	weights[areas[ind]] = jQuery('input[name=field_'+(ind+1)+']').prop('checked') ? 1 : 0;
-	if (weights[areas[ind]] == 1) {
-	    /* One more area checked. */
-	    numAreas++;
-	}
-	areacount[areas[ind]] = 0;
-	areaAdjustedCount[areas[ind]] = 0;
-    }
-
-    var coauthorList : {[key : string] : Set<string> } = {};
-    if (showCoauthors) {
-	coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
-    }
-    countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
-    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
-    
-    /* (university, total or average number of papers) */
-    var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
-
-    var s = makePrologue();
-    var univtext : {[key:string] : string} = {};
 
     /* Build drop down for faculty names and paper counts. */
-    for (dept in deptNames) {
-	var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
-	/* Build a dict of just faculty from this department for sorting purposes. */
-	var fc : {[key:string] : number} = {};
-	for (var ind = 0; ind < deptNames[dept].length; ind++) {
-	    name = deptNames[dept][ind];
-	    fc[name] = facultycount[name+dept];
-	}
-	var keys = Object.keys(fc);
-	keys.sort(function(a : string, b : string){ return fc[b] - fc[a];});
-	for (var ind = 0; ind < keys.length; ind++) {
-	    name = keys[ind];
-	    if (showCoauthors) {
-		/* Build up text for co-authors. */
-		var coauthorStr = "";
-		if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
-		    coauthorList[name] = new Set([]);
-		    coauthorStr = "(no senior co-authors on these papers)";
+    private static buildDropDown(deptNames : {[key: string] : Array<string> },
+				 facultycount :  {[key: string] : number},
+				 facultyAdjustedCount: {[key: string] : number},
+				 coauthorList : {[key : string] : Set<string> })
+    : {[key: string] : string}
+    {
+	let univtext : {[key:string] : string} = {};
+
+	for (let dept in deptNames) {
+	    if (!deptNames.hasOwnProperty(dept)) {
+		continue;
+	    }
+	    
+	    let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	    /* Build a dict of just faculty from this department for sorting purposes. */
+	    let fc : {[key:string] : number} = {};
+	    for (let name of deptNames[dept]) {
+		fc[name] = facultycount[name+dept];
+	    }
+	    let keys = Object.keys(fc);
+	    keys.sort(function(a : string, b : string){
+		if (fc[b] === fc[a]) {
+		    let fb = Math.round(10.0 * facultyAdjustedCount[b+dept]) / 10.0;
+		    let fa = Math.round(10.0 * facultyAdjustedCount[a+dept]) / 10.0;
+		    if (fb === fa) {
+			return CSRankings.compareNames(a, b);
+		    }
+		    return fb - fa;
 		} else {
-		    coauthorStr = "Senior co-authors on these papers:\n";
+		    return fc[b] - fc[a];
 		}
-		/* Sort it by last name. */
-		var l : Array<string> = [];
-		coauthorList[name].forEach(function (item, coauthors) {
-		    l.push(item);
-		});
-		if (l.length > maxCoauthors) {
-		    coauthorStr = "(more than "+maxCoauthors+" senior co-authors)";
-		} else {
-		    l.sort(compareNames);
-		    l.forEach(function (item, coauthors) {
-			coauthorStr += item + "\n";
+	    });
+	    for (let name of keys) {
+		if (CSRankings.showCoauthors) {
+		    /* Build up text for co-authors. */
+		    let coauthorStr = "";
+		    if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
+			coauthorList[name] = new Set([]);
+			coauthorStr = "(no senior co-authors on these papers)";
+		    } else {
+			coauthorStr = "Senior co-authors on these papers:\n";
+		    }
+		    /* Sort it by last name. */
+		    let l : Array<string> = [];
+		    coauthorList[name].forEach((item, _)=>{
+			l.push(item);
 		    });
-		    /* Trim off the trailing newline. */
-		    coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
+		    if (l.length > CSRankings.maxCoauthors) {
+			coauthorStr = "(more than "+CSRankings.maxCoauthors+" senior co-authors)";
+		    } else {
+			l.sort(CSRankings.compareNames);
+			l.forEach((item, _)=>{
+			    coauthorStr += item + "\n";
+			});
+			/* Trim off the trailing newline. */
+			coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
+		    }
 		}
-	    }
-	    
-	    p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-		+ '<a title="Click for author\'s home page." target="_blank" href="https://www.google.com/search?q='
-		+ encodeURI(name + " " + dept)
-		+ '&gws_rd=ssl">'
-		+ name
-		+ '</a></small></td><td align="right"><small>'
-		+ '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
-		+ facultycount[name+dept]
-		+ '</a>'
-		+ "</small></td>"
-		+ '</a></small></td><td align="right"><small>'
-//		+ '<abbr title="' + coauthorStr + '">'
-		+ facultyAdjustedCount[name+dept].toPrecision(2)
-//		+ '</abbr>'
-		+ "</small></td></tr>";
-	}
-	p += "</tbody></table></div></div>";
-	univtext[dept] = p;
-    }
-    
-    if (displayPercentages) {
-	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
-    } else {
-	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
-    }
-    s = s + "<tbody>";
-    /* As long as there is at least one thing selected, compute and display a ranking. */
-    if (numAreas > 0) {
-	var ties = 1;        /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
-	var rank = 0;        /* index */
-	var oldv : any = null;     /* old number - to track ties */
-	/* Sort the university aggregate count from largest to smallest. */
-	var keys2 = sortIndex(univagg);
-	/* Display rankings until we have shown `minToRank` items or
-	   while there is a tie (those all get the same rank). */
-	for (var ind = 0; ind < keys2.length; ind++) {
-	    var dept = keys2[ind];
-	    var v = univagg[dept];
-	    
-	    if (useArithmeticMean || useHarmonicMean) {
-		v = (Math.floor(10000.0 * v) / (100.0));
-	    }
-	    if (useGeometricMean) {
-		v = (Math.floor(10.0 * v) / 10.0);
-	    }
 
-	    if ((ind >= minToRank) && (v != oldv)) {
-		break;
+		let homePage = encodeURI(CSRankings.homepages[name]);
+		let dblpName = CSRankings.translateNameToDBLP(name);
+		
+		p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+		    + '<a title="Click for author\'s home page." target="_blank" href="'
+		    + homePage
+		    + '" '
+		    + 'onclick="trackOutboundLink(\''
+		    + homePage
+		    + '\', true); return false;"'
+		    + '>' 
+		    + name
+		    + '</a>&nbsp;'
+		    + "<span onclick=\"CSRankings.toggleChart('"
+		    + escape(name)
+		    + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
+		    + '</small>'
+		    + '</td><td align="right"><small>'
+		    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+		    + dblpName
+		    + '" '
+		    + 'onclick="trackOutboundLink(\''
+		    + dblpName
+		    + '\', true); return false;"'
+		    + '>'
+		    + fc[name]
+		    + '</a>'
+		    + "</small></td>"
+		    + '<td align="right"><small>'
+		//		+ '<abbr title="' + coauthorStr + '">'
+		    + (Math.round(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
+		//		+ '</abbr>'
+		    + "</small></td></tr>"
+		    + "<tr><td colspan=\"4\">"
+		    + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
+		    + '</div>'
+		    + "</td></tr>"
+		;
 	    }
-	    if (v === 0.0) {
-		break;
+	    p += "</tbody></table></div></div>";
+	    univtext[dept] = p;
+	}
+	return univtext;
+    }
+
+
+    private static buildOutputString(displayPercentages : boolean,
+				     numAreas : number,
+			             univagg : {[key: string] : number},
+				     deptCounts: {[key: string] : number},
+				     univtext: {[key:string] : string}) : string
+    {
+	let s = CSRankings.makePrologue();
+	/* Show the top N (with more if tied at the end) */
+	let minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
+
+	if (displayPercentages) {
+	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+	} else {
+	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
+	}
+	s = s + "<tbody>";
+	/* As long as there is at least one thing selected, compute and display a ranking. */
+	if (numAreas > 0) {
+	    let ties = 1;               /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
+	    let rank = 0;               /* index */
+	    let oldv = 9999999.999;     /* old number - to track ties */
+	    /* Sort the university aggregate count from largest to smallest. */
+	    let keys2 = CSRankings.sortIndex(univagg);
+	    /* Display rankings until we have shown `minToRank` items or
+	       while there is a tie (those all get the same rank). */
+	    for (let ind = 0; ind < keys2.length; ind++) {
+		const dept = keys2[ind];
+		const v = Math.round(10.0 * univagg[dept]) / 10.0;
+
+		if ((ind >= minToRank) && (v != oldv)) {
+		    break;
+		}
+		if (v === 0.0) {
+		    break;
+		}
+		if (oldv != v) {
+		    if (CSRankings.useDenseRankings) {
+			rank = rank + 1;
+		    } else {
+			rank = rank + ties;
+			ties = 0;
+		    }
+		}
+		const esc = escape(dept);
+		s += "\n<tr><td>" + rank + "</td>";
+		s += "<td>"
+		    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</span></font>&nbsp;"
+		    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
+		s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
+		    + esc
+		    + "')\" class=\"hovertip\" id=\""
+		    + esc
+		    + "-widget\">" + CSRankings.PieChart + "</span></font>";
+		//	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
+		s += "</td>";
+
+		s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1)  + "</td>";
+		s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
+		s += "</td>";
+		s += "</tr>\n";
+		s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+		    + esc
+		    + '-chart">' + '</div></td></tr>';
+		s += '<tr><td colspan="4"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
+		ties++;
+		oldv = v;
 	    }
-	    if (oldv != v) {
-		if (useDenseRankings) {
-		    rank = rank + 1;
+	    s += "</tbody>" + "</table>" + "<br />";
+	    if (CSRankings.allowRankingChange) {
+		/* Disable option to change ranking approach for now. */
+		if (CSRankings.useDenseRankings) {
+		    s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
 		} else {
-		    rank = rank + ties;
-		    ties = 0;
+		    s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
 		}
 	    }
-	    s += "\n<tr><td>" + rank + "</td>";
-	    s += "<td><div onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">&#9658;</font>&nbsp" + dept + "</div>";
-	    s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
-    
-	    s += "</td>";
-
-	    if (displayPercentages) {
-		/* Show average */
-		if (useArithmeticMean || useHarmonicMean) {
-		    s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2)  + "%</td>";
-		}
-		if (useGeometricMean) {
-		    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1)  + "</td>";
-		}
-	    } else {
-		/* Show count */
-		s += '<td align="right">' + (Math.floor(100.0 * v) / 100.0)  + "</td>";
-	    }
-	    s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
-	    s += "</td>";
-	    s += "</tr>\n";
-	    ties++;
-	    oldv = v;
+	    s += "</div>" + "</div>" + "\n";
+	    s += "<br>" + "</body>" + "</html>";
+	} else {
+	    /* Nothing selected. */
+	    s = "<h4>Please select at least one area.</h4>";
 	}
-	s += "</tbody>" + "</table>" + "<br />";
-	if (allowRankingChange) {
-	    /* Disable option to change ranking approach for now. */
-	    if (useDenseRankings) {
-		s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
-	    } else {
-		s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
-	    }
-	}
-	s += "</div>" + "</div>" + "\n";
-	s += "<br>" + "</body>" + "</html>";
-    } else {
-	/* Nothing selected. */
-	s = "<h4>Please select at least one area.</h4>";
+	return s;
     }
-    setTimeout((function(str : string) { redisplay(str); })(s), 0);
-    return false; 
+
+    /* Set all checkboxes to true. */
+    private static setAllCheckboxes() : void {
+	for (let i = 0; i < CSRankings.areas.length; i++) {
+	    const str = 'input[name=' + CSRankings.fields[i] + ']';
+	    jQuery(str).prop('checked', true);
+	}
+    }
+
+    /* PUBLIC METHODS */
+    
+    public static rank() : boolean {
+	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
+	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
+	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
+	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
+	let currentWeights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+	CSRankings.areaDeptAdjustedCount = {};
+	
+	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
+	const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
+	const displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+	const whichRegions       = jQuery("#regions").find(":selected").val();
+
+	let numAreas = CSRankings.updateWeights(currentWeights);
+	
+	let coauthorList : {[key : string] : Set<string> } = {};
+	if (CSRankings.showCoauthors) {
+	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors,
+						       startyear,
+						       endyear,
+						       currentWeights);
+	}
+
+	CSRankings.authorAreas = {}
+	CSRankings.countAuthorAreas(CSRankings.authors,
+				    startyear,
+				    endyear,
+				    currentWeights,
+				    CSRankings.authorAreas);
+	
+	CSRankings.buildDepartments(CSRankings.authors,
+				    startyear,
+				    endyear,
+				    currentWeights,
+				    whichRegions,
+				    CSRankings.areaDeptAdjustedCount,
+				    deptCounts,
+				    deptNames,
+				    facultycount,
+				    facultyAdjustedCount);
+	
+	/* (university, total or average number of papers) */
+	CSRankings.stats = CSRankings.computeStats(deptNames,
+						   CSRankings.areaDeptAdjustedCount,
+						   CSRankings.areas,
+						   numAreas,
+						   displayPercentages,
+						   currentWeights);
+
+	/* Canonicalize names. */
+	CSRankings.canonicalizeNames(deptNames,
+				     facultycount,
+				     facultyAdjustedCount);
+
+	const univtext = CSRankings.buildDropDown(deptNames,
+						  facultycount,
+						  facultyAdjustedCount,
+						  coauthorList);
+
+	/* Start building up the string to output. */
+	const s = CSRankings.buildOutputString(displayPercentages,
+					     numAreas,
+					     CSRankings.stats,
+					     deptCounts,
+					     univtext);
+
+	/* Finally done. Redraw! */
+	setTimeout(()=>{ jQuery("#success").html(s); }, 0);
+	return false; 
+    }
+
+    /* Turn the chart display on or off. */
+    public static toggleChart(name : string) : void {
+	const chart = document.getElementById(name+"-chart");
+	if (chart!.style.display === 'block') {
+	    chart!.style.display = 'none';
+	    chart!.innerHTML = '';
+	} else {
+	    chart!.style.display = 'block';
+	    CSRankings.makeChart(name);
+	}
+	
+    }
+
+
+    /* Expand or collape the view of all faculty in a department. */
+    public static toggleFaculty(dept : string) : void {
+	const e = document.getElementById(dept+"-faculty");
+	const widget = document.getElementById(dept+"-widget");
+	if (e!.style.display === 'block') {
+	    e!.style.display = 'none';
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
+	} else {
+	    e!.style.display = 'block';
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+	}
+    }
+
+    public static activateAll(value : boolean = true) : boolean {
+	for (let i = 0; i < CSRankings.areas.length; i++) {
+	    const str = "input[name=" + CSRankings.fields[i] + "]";
+	    jQuery(str).prop('checked', value);
+	}
+	CSRankings.rank();
+	return false;
+    }
+
+    public static activateNone() : boolean {
+	return CSRankings.activateAll(false);
+    }
+
+    public static activateSystems(value : boolean = true) : boolean {
+	return CSRankings.activateFields(value, CSRankings.systemsFields);
+    }
+
+    public static activateAI(value : boolean = true) : boolean {
+	return CSRankings.activateFields(value, CSRankings.aiFields);
+    }
+
+    public static activateTheory(value : boolean = true) : boolean {
+	return CSRankings.activateFields(value, CSRankings.theoryFields);
+    }
+
+    public static activateOthers(value : boolean = true) : boolean {
+	return CSRankings.activateFields(value, CSRankings.otherFields);
+    }
+
+    public static deactivateSystems() : boolean {
+	return CSRankings.activateSystems(false);
+    }
+
+    public static deactivateAI() : boolean {
+	return CSRankings.activateAI(false);
+    }
+
+    public static deactivateTheory() : boolean {
+	return CSRankings.activateTheory(false);
+    }
+
+    public static deactivateOthers() : boolean {
+	return CSRankings.activateOthers(false);
+    }
+    
 }
 
-function activateDenseRankings() : boolean {
-    useDenseRankings = true;
-    rank();
-    return false;
-}
-
-function deactivateDenseRankings() : boolean {
-    useDenseRankings = false;
-    rank();
-    return false;
+function init() : void {
+    new CSRankings();
 }
 
 window.onload=init;
+//	jQuery(document).ready(
