@@ -2,6 +2,16 @@
 <html>
   <head>
     <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="description" content="Computer Science Rankings">
+    <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CSRankings: Computer Science Rankings (beta)</title>
+
+<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -12,15 +22,54 @@
       ga('send', 'pageview'); 
 
     </script>
-    <meta name="description" content="Computer Science Rankings">
-    <meta name="keywords" content="computer science, rankings, US News">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>CSRankings: Computer Science Rankings (beta)</title>
+    <script>
+      window.twttr = (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0],
+	t = window.twttr || {};
+	if (d.getElementById(id)) return t;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+	t._e = [];
+	t.ready = function(f) {
+	t._e.push(f);
+	};
 
+	return t;
+	}(document, "script", "twitter-wjs"));
+    </script>
+    <script>
+      /**
+      * Track clicks to a link. If new_window is true the google analytics request
+      * will be made synchronously, because browsers block new windows from opening unless
+      * it is done DURING an on click event. If new_window is false, the request will
+      * be made asynchronously, and the current window url will be changed.
+      *
+      * Setting the transport method to 'beacon' lets the hit be sent
+      * using 'navigator.sendBeacon' in browser that support it.
+      */
+      var trackOutboundLink = function(url, new_window) {
+        /* Setting a default value for backward compatibility */
+        if (new_window === undefined) {
+          new_window = false;
+        }
+        ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
+        'hitCallback':
+          function () {
+            if (!new_window) {
+              document.location = url;
+            }
+          }
+        });
+        if (new_window){
+          window.open(url);
+        }
+      }
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+    <script src="d3pie.min.js"></script>
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
     <script src="js/papaparse.min.js" type="text/javascript"></script>
     <script src="js/pako.min.js" type="text/javascript"></script>
@@ -40,7 +89,6 @@
       padding-bottom: 2px;
       }
 
-      
       a {
       color : blue ;
       }
@@ -53,69 +101,93 @@
       cursor: pointer;
       }
 
+      span.hovertip {
+      cursor: pointer;
+      }
+
     </style>
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
 
           <h1>Computer Science Rankings (beta)</h1>
+	  <p>
+	    <div class="fb-share-button" data-href="http://csrankings.org" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcsrankings.org%2F&amp;src=sdkpreparse">Share</a></div>
+	    <a class="twitter-share-button"
+	       href="https://twitter.com/intent/tweet">
+	      Tweet</a>
+	  </p>
 	  <div class="panel panel-info">
 	    <div class="panel-heading">
 	      <p>
-		This ranking makes it easy to identify institutions
-		and faculty actively engaged in research in a number
-		of areas of computer science. Unlike US News and World
-		Report's, which
-		is <a target="_blank" href="http://www.usnews.com/education/best-graduate-schools/articles/science-schools-methodology">exclusively
-		based on surveys</a>, this ranking is entirely
-		objective. It measures the number of publications by
-		faculty that have appeared at the most selective
-		conferences in each area of computer science. This
-		approach is deliberately difficult to game: contrast
-		this with other approaches like citation-based
-		metrics, which have been repeatedly shown to
-		be <a target="_blank" href="http://arxiv.org/abs/1212.0638">easy</a>
-		to <a target="_blank" href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulate</a>.
-		That said, incorporating citations in some form is a
-		long-term goal. <em>This site is in beta and is a work
-		in progress.</em>
+		This ranking of top computer science schools is
+		designed to identify institutions and faculty actively
+		engaged in research across a number of areas of
+		computer science, based on the number of publications
+		by faculty that have appeared at the most selective
+		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
+	      </p>
+	      <p>
+		<b>NEW: <a href="collab/">Click here to see collaboration graphs.</a></b>
 	      </p>
 	      <p>
 		<b>Click on a triangle</b> (&#9658;) to display names
-		and number of publications. Click on a name to go to a
-		faculty member's home page; click on the raw number of
-		publications to go to their DBLP entry.
+		and number of publications. <b>Click on a name</b> to
+		go to a faculty member's home page. <b>Click on a
+		pie</b> (the &#9685; after a name or institution) to
+		see a publication profile as a pie chart. <b>Click on
+		the raw number of publications</b> to go to their DBLP
+		entry.
 	      </p>
-	      Rank the top 50 institutions in
-	      <select id="regions" name="regions" onchange="rank();">
+	      <div class="row">
+		<!-- col-xs-3 col-sm-6 col-md-4  -->
+		<div class="col-sm-12 col-md-12 col-lg-12">
+	      Rank the top
+	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
+		<option value="10">10</option>
+		<option value="25">25</option>
+		<option value="50" selected="selected">50</option>
+		<option value="75">75</option>
+		<option value="100">100</option>
+		<option value="99999">(all)</option>
+	      </select>
+	      institutions in
+	      <select id="regions" name="regions" onchange="CSRankings.rank();">
 		<option value="USA" selected="selected">the USA only</option>
 		<option value="canada">Canada only</option>
+		<option value="northamerica">USA and Canada</option>
+		<option value="australasia">Australasia only</option>
 		<option value="europe">Europe only</option>
-		<option value="world">USA, Canada, and Europe</option>
+		<option value="world">USA, Canada, Europe, and Australasia</option>
 	      </select>
-	      by
-	      <!--
-	      <select id="minToRank" name="minToRank" onchange="rank();">
-		<option value="10">10</option>
-		<option value="15">15</option>
-		<option value="20">20</option>
-		<option value="25" selected="selected">25</option>
-		<option value="30">30</option>
-		<option value="35">35</option>
-		<option value="40">40</option>
-		<option value="45">45</option>
-		<option value="50">50</option>
-	      </select>
-		-->
-	      <select id="displayPercent" name="displayPercent" onchange="rank();" >
+	      by average count
+<!--	      <select id="displayPercent" name="displayPercent" onchange="CSRankings.rank();" >
 		<option value="1" selected="selected">average count</option>
 		<option value="0">total count</option>
-	      </select>
+	      </select> -->
 	      of publications from
-	      <select onchange="rank();" id="startyear" name="startyear">
+	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
+		<option value="1970">1970</option>  
+		<option value="1971">1971</option>  
+		<option value="1972">1972</option>  
+		<option value="1973">1973</option>  
+		<option value="1974">1974</option>  
+		<option value="1975">1975</option>  
+		<option value="1976">1976</option>  
+		<option value="1977">1977</option>  
+		<option value="1978">1978</option>  
+		<option value="1979">1979</option>  
 		<option value="1980">1980</option>  
 		<option value="1981">1981</option>  
 		<option value="1982">1982</option>  
@@ -136,13 +208,13 @@
 		<option value="1997">1997</option>  
 		<option value="1998">1998</option>  
 		<option value="1999">1999</option>  
-		<option selected="selected" value="2000">2000</option>
+		<option value="2000">2000</option>
 		<option value="2001">2001</option>  
 		<option value="2002">2002</option>
 		<option value="2003">2003</option>
 		<option value="2004">2004</option>
 		<option value="2005">2005</option>
-		<option value="2006">2006</option>
+		<option selected="selected" value="2006">2006</option>
 		<option value="2007">2007</option>
 		<option value="2008">2008</option>
 		<option value="2009">2009</option>
@@ -151,11 +223,12 @@
 		<option value="2012">2012</option>
 		<option value="2013">2013</option>
 		<option value="2014">2014</option>
-		<option value="2014">2015</option>
-		<option value="2014">2016</option>
+		<option value="2015">2015</option>
+		<option value="2016">2016</option>
+		<option value="2017">2017</option>
 	      </select>
 	      to
-	      <select onchange="rank();" id="endyear" name="endyear">
+	      <select onchange="CSRankings.rank();" id="endyear" name="endyear">
 		<option value="1980">1980</option>  
 		<option value="1981">1981</option>  
 		<option value="1982">1982</option>  
@@ -192,9 +265,11 @@
 		<option value="2013">2013</option>
 		<option value="2014">2014</option>
 		<option value="2015">2015</option>
-		<option selected="selected" value="2016">2016</option>
+		<option value="2016">2016</option>
+		<option selected="selected" value="2017">2017</option>
 	      </select>
-	      &nbsp;[<a class="only_these_areas" onClick="activateNone(); return false;"><font color="blue"><b>all areas off</b></font></a> | <a class="only_these_areas" onClick="activateAll(); return false;"><font color="blue"><b>all areas on</b></font></a>]&nbsp;
+		</div>
+		</div>
 	    </div>
 	  </div>
 	  
@@ -203,12 +278,23 @@
 	    <div class="col-sm-6 col-md-6 col-lg-6">
 	      <div class="table">
 		<table class="table-sm table-striped">
-		  
+
+		  <thead>
+		    <tr>
+		      <th colspan="2">
+			<p style="font-size: 125%">All Areas
+			  &nbsp;<span style="font-size: 80%">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>on</b></font></a>]</span>
+			</p>
+		      </th>
+		    </tr>
+		  </thead>
+			
+		  </thead>
 		  <thead>
 		    <tr>
 		      <th colspan="2">
 			<p>AI
-			  [<a class="only_these_areas" onClick="deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="activateAI(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -222,7 +308,7 @@
 			<small><em>AAAI, IJCAI</em></small>
 		      </td>
 		      <td width="40px"> 
-			<input type="checkbox" name="field_9" id="field_9" value="1.0"/>
+			<input type="checkbox" name="field_ai" id="field_ai" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -232,7 +318,7 @@
 			<small><em>CVPR, ECCV, ICCV</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_12" id="field_12" value="1.0"/>
+			<input type="checkbox" name="field_vision" id="field_vision" value="1.0"/>
 		      </td>
 		    </tr>
 		    
@@ -242,7 +328,7 @@
 			<small><em>ICML, KDD, NIPS</em>&nbsp;&nbsp;&nbsp;&nbsp;</small>
 		      </td>
 		      <td> 
-			<input type="checkbox" name="field_8" id="field_8" value="1.0"/>
+			<input type="checkbox" name="field_mlmining" id="field_mlmining" value="1.0"/>
 		      </td>
 		    </tr>
 		    
@@ -252,7 +338,7 @@
 			<small><em>ACL, EMNLP, NAACL</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_10" id="field_10" value="1.0"/>
+			<input type="checkbox" name="field_nlp" id="field_nlp" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -262,7 +348,7 @@
 			<small><em>SIGIR, WWW</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_11" id="field_11" value="1.0"/>
+			<input type="checkbox" name="field_ir" id="field_ir" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -275,7 +361,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p>Systems
-			  [<a class="only_these_areas" onClick="deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="activateSystems(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -289,7 +375,7 @@
 			<small><em>ASPLOS, ISCA, MICRO</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_15" id="field_15" value="1.0"/>
+			<input type="checkbox" name="field_arch" id="field_arch" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -299,7 +385,7 @@
 			<small><em>INFOCOM, SIGCOMM, NSDI</em></small>
 		      </td>
 		      <td>  
-			<input type="checkbox" name="field_4" id="field_4" value="1.0"/>
+			<input type="checkbox" name="field_comm" id="field_comm" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -309,27 +395,47 @@
 			<small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
 		      </td>
 		      <td>  
-			<input type="checkbox" name="field_5" id="field_5" value="1.0"/>
+			<input type="checkbox" name="field_sec" id="field_sec" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
 			Databases
-			<small><em>PODS, SIGMOD, VLDB</em></small>
+			<small><em>SIGMOD, VLDB</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_6" id="field_6" value="1.0"/>
+			<input type="checkbox" name="field_mod" id="field_mod" value="1.0"/>
+		      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+			Design automation
+			<small><em>DAC, ICCAD</em></small>
+		      </td>
+		      <td>
+			<input type="checkbox" name="field_da" id="field_da" value="1.0"/>
+		      </td>
+		    </tr>
+		    
+		    <tr>
+		      <td>
+			Embedded and real-time systems
+			<small><em>EMSOFT, RTAS, RTSS</em></small>
+		      </td>
+		      <td>
+			<input type="checkbox" name="field_bed" id="field_bed" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
 			High-performance computing
-			<small><em>PPOPP, SC</em></small>
+			<small><em>HPDC, ICS, SC</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_20" id="field_20" value="1.0"/>
+			<input type="checkbox" name="field_hpc" id="field_hpc" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -339,7 +445,7 @@
 			<small><em>MobiCom, MobiSys, SenSys</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_18" id="field_18" value="1.0"/>
+			<input type="checkbox" name="field_mobile" id="field_mobile" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -349,49 +455,38 @@
 			<small><em>IMC, SIGMETRICS</em></small>
 		      </td>
 		      <td> 
-			<input type="checkbox" name="field_7" id="field_7" value="1.0"/>
+			<input type="checkbox" name="field_metrics" id="field_metrics" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>  
 			Operating systems
-			<small><em>SOSP, OSDI</em></small>
+			<small><em>EuroSys, OSDI/SOSP, USENIX ATC</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_3" id="field_3" value="1.0"/>
+			<input type="checkbox" name="field_ops" id="field_ops" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
 			Programming languages
-			<small><em>OOPSLA, PLDI, POPL</em></small>
+			<small><em>PLDI, POPL</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_1" id="field_1" value="1.0"/>
+			<input type="checkbox" name="field_plan" id="field_plan" value="1.0"/>
 		      </td>
 		    </tr>
 
-<!--
-		    <tr>
-		      <td>
-			Functional &amp; object-oriented languages
-			<small><em>ICFP, OOPSLA</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_21" id="field_21" value="1.0"/>
-		      </td>
-		    </tr>
-		    -->
-		  
+	  
 		    <tr>
 		      <td>
 			Software engineering
-			<small><em>ESEC/FSE, FSE, ICSE</em></small>
+			<small><em>FSE, ICSE</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_2" id="field_2" value="1.0"/>
+			<input type="checkbox" name="field_soft" id="field_soft" value="1.0"/>
 		      </td>
 		    </tr>
 		    
@@ -402,7 +497,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p>Theory
-			  [<a class="only_these_areas" onClick="deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="activateTheory(); return false;">on</a>]
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -416,7 +511,7 @@
 			<small><em>FOCS, SODA, STOC</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_13" id="field_13" value="1.0"/>
+			<input type="checkbox" name="field_act" id="field_act" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -426,7 +521,7 @@
 			<small><em>CRYPTO, EuroCrypt</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_22" id="field_22" value="1.0"/>
+			<input type="checkbox" name="field_crypt" id="field_crypt" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -436,7 +531,7 @@
 			<small><em>CAV, LICS</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_14" id="field_14" value="1.0"/>
+			<input type="checkbox" name="field_log" id="field_log" value="1.0"/>
 		      </td>
 		    </tr>
 		  </tbody>
@@ -445,8 +540,8 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p>Other Areas
-			  [<a class="only_these_areas" onClick="deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="activateOthers(); return false;">on</a>]
+			<p>Interdisciplinary Areas
+			  [<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -456,11 +551,21 @@
 
 		    <tr>
 		      <td>
-			Computer graphics
-			<small><em>SIGGRAPH, TOG</em></small>
+			Computational bio &amp; bioinformatics
+			<small><em>ISMB, RECOMB</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_16" id="field_16" value="1.0"/>
+			<input type="checkbox" name="field_bio" id="field_bio" value="1.0"/>
+		      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+			Computer graphics
+			<small><em>SIGGRAPH, SIGGRAPH Asia</em></small>
+		      </td>
+		      <td>
+			<input type="checkbox" name="field_graph" id="field_graph" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -470,7 +575,7 @@
 			<small><em>CHI, UbiComp, UIST</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_17" id="field_17" value="1.0"/>
+			<input type="checkbox" name="field_chi" id="field_chi" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -480,7 +585,17 @@
 			<small><em>ICRA, IROS, RSS</em></small>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_19" id="field_19" value="1.0"/>
+			<input type="checkbox" name="field_robotics" id="field_robotics" value="1.0"/>
+		      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+			Visualization
+			<small><em>VIS, VR</em></small>
+		      </td>
+		      <td>
+			<input type="checkbox" name="field_vis" id="field_vis" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -499,49 +614,38 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="page-footer">
-	    <p>
-		The areas and the conferences listed (at most three
-		per area) were developed in consultation with faculty
-		across a range of institutions. They are meant to span
-		most established research-centric subareas of computer
-		science, and are not intended to be comprehensive.  In
-		particular, only areas where at least 50 institutions
-		have publications since 2000 are included.  The
-		rubrics (<em>AI</em>, <em>Systems</em>, and <em>Theory</em>)
-		are provided for ease of comparison with rankings
-		published by US News and World Report.
+<div class="page-footer">
+  <p>
+	    The rubrics (<em>AI</em>, <em>Systems</em>,
+	    and <em>Theory</em>) are provided for ease of
+	    comparison with rankings published by US News and
+	    World Report.
 	    </p>
 	    <p>Output is attributed to the institution where authors
 		are <em>currently affiliated</em> full-time,
-		tenure-track faculty members. An author's publications
-		follow them if they move. Currently, this database
-		includes US and selected Canadian and European CS or
-		EECS departments (or equivalent); other
-		institutions will be added in the near future.
+		tenure-track faculty members who can advise CS PhD
+		students. An author's publications follow them if they
+		move. Currently, this database includes selected US,
+		Canadian, European, and Australasian CS or EECS
+		departments (or equivalent); please submit pull
+		requests (see below) to add any unlisted institution.
 	    </p>
 	    <p><b>Adjusted counts</b>: each publication is counted
 	      exactly once, with credit adjusted by splitting evenly
 	      across all co-authors. This approach makes it impossible to
 	      boost rankings simply by adding authors to a paper.
 	      <b>Average count</b> computes the geometric mean of
-	      the adjusted number of publications in each area by
-	      institution. This normalizes for the size of areas, so
+	      the adjusted counts in each area (+ 1) for each
+	      institution. This approach normalizes for the size of areas, so
 	      that large and small areas are weighed the
 	      same. Publications must be at least 6 pages long to be
 	      counted.
-	      <b>Total count</b> is the sum of the adjusted number of publications.
+<!--	      <b>Total count</b> is the sum of the adjusted number of publications. -->
 	    </p>
             <p class="text-muted">
-	      
-	      This site was developed and is maintained by <a target="_blank" href="http://www.emeryberger.com">Emery Berger</a>, incorporating feedback from faculty across a wide range of institutions.<br />
-	      Based on code and data originally collected by <a target="_blank" href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
-	      The original faculty affiliation dataset was constructed by <a
-									     target="_blank" href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>, which has been extensively cleaned and updated.<br />
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated July 16, 2016).<br />
-	      Some faculty members are listed multiple times to account for multiple variants of their names in DBLP.<br />
-	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or via a pull request.<br />
-	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>.
+	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated March 24, 2017).<br />
+	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
+	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.
 	    </p>
 	  </div>
 	</div>
