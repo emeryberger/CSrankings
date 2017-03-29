@@ -15,9 +15,11 @@ update-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
 	wget http://dblp.uni-trier.de/xml/dblp.xml.gz
-	@echo "Fixing character encodings."
-	sh ./util/fix-dblp.sh
-	mv dblp-fixed.xml dblp.xml
+	# @echo "Fixing character encodings."
+	# sh ./util/fix-dblp.sh
+	# mv dblp-fixed.xml dblp.xml
+	# gzip dblp.xml
+	gunzip dblp.xml.gz
 	basex -c filter.xq > dblp2.xml
 	gzip dblp2.xml
 	mv dblp2.xml.gz dblp.xml.gz
