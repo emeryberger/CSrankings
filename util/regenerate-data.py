@@ -48,8 +48,6 @@ def parseDBLP(facultydict):
                     elif child.tag == 'title':
                         if child.text is not None:
                             title = child.text
-                            if title == "Creating Competitive Products.":
-                                print title
                     elif child.tag == 'volume':
                         volume = child.text
                     elif child.tag == 'number':
@@ -74,20 +72,14 @@ def parseDBLP(facultydict):
                 
                 # One of our conferences?
                 if not foundArticle:
-                    if title == "Creating Competitive Products.":
-                        print title
                     continue
 
                 # Any authors in our affiliations?
                 if not foundOneInDict:
-                    if title == "Creating Competitive Products.":
-                        print title
                     continue
 
                 # One of the papers we count?
                 if not countPaper(confname, year, volume, number, startPage, pageCount, url):
-                    if title == "Creating Competitive Products.":
-                        print title
                     continue
 
                 # If we get here, we have a winner.
