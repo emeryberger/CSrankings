@@ -8,9 +8,9 @@ import re
 
 # import gzip
 
-# parser = ElementTree.XMLParser(attribute_defaults=True, load_dtd=True)
-parser = ElementTree.XMLParser()
-
+#parser = ElementTree.HTMLParser(recover=True)
+#dtd = ElementTree.DTD(file='dblp.dtd')
+                
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
@@ -270,6 +270,7 @@ def csv2dict_str_str(fname):
         reader = csv.reader(infile)
         # for rows in reader:
         #    print rows[0], "-->", rows[1]
+        # d = {rows[0].strip() : rows[1].strip() for rows in reader}
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in reader}
     return d
 
