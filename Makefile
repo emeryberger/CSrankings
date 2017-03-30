@@ -19,10 +19,10 @@ update-dblp:
 	# sh ./util/fix-dblp.sh
 	# mv dblp-fixed.xml dblp.xml
 	# gzip dblp.xml
-	gunzip dblp.xml.gz
-	basex -c filter.xq > dblp2.xml
-	gzip dblp2.xml
-	mv dblp2.xml.gz dblp.xml.gz
+	#gunzip dblp.xml.gz
+	#basex -c filter.xq > dblp2.xml
+	#gzip dblp2.xml
+	#mv dblp2.xml.gz dblp.xml.gz
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv
