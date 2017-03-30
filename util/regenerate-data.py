@@ -17,7 +17,8 @@ def parseDBLP(facultydict):
 
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(f, events=['start', 'end']):
+        dtd = ElementTree.DTD(file='dblp.dtd')       
+        for (event, node) in ElementTree.iterparse(f, events=['start', 'end'], load_dtd=True):
             if (oldnode is not None):
                 oldnode.clear()
             oldnode = node
@@ -35,63 +36,60 @@ def parseDBLP(facultydict):
             number = 0
             volume = 0
             
-            if (node.tag == 'inproceedings' or node.tag == 'article'):
-
-                # First, check if this is one of the conferences we are looking for.
+            if node.tag == 'inproceedings' or node.tag == 'article':
 
                 for child in node:
-                    if (child.tag == 'booktitle' or child.tag == 'journal'):
-                        confname = child.text
-                        if (confname in confdict):
-                            areaname = confdict[confname]
-                            foundArticle = True
-                            continue
-                        else:
-                            break
-
-                    if (child.tag == 'title'):
+                    if child.tag == 'booktitle' or child.tag == 'journal':
+                        if child.text is not None:
+                            confname = child.text
+                            if confname in confdict:
+                                areaname = confdict[confname]
+                                foundArticle = True
+                    elif child.tag == 'title':
                         if child.text is not None:
                             title = child.text
-                        continue
-                    if (child.tag == 'volume'):
+                            if title == "Creating Competitive Products.":
+                                print title
+                    elif child.tag == 'volume':
                         volume = child.text
-                        continue
-                    if (child.tag == 'number'):
+                    elif child.tag == 'number':
                         number = child.text
-                        continue
-                    if child.tag == 'year':
+                    elif child.tag == 'year':
                         if child.text is not None:
                             year = int(child.text)
-                        continue
-                    if child.tag == 'pages':
+                    elif child.tag == 'pages':
                         pageCount = pagecount(child.text)
                         startPage = startpage(child.text)
-                        continue
-                    if child.tag == 'url':
+                    elif child.tag == 'url':
                         url = child.text
-                        continue
-                    if child.tag == 'author':
-                        authorName = child.text
-                        if authorName is not None:
+                    elif child.tag == 'author':
+                        if child.text is not None:
+                            authorName = child.text
                             authorName = authorName.strip()
                             authorList.append(authorName)
                             authorsOnPaper += 1
                             if authorName in facultydict:
                                 foundOneInDict = True
-                        continue
 
+                
                 # One of our conferences?
                 if not foundArticle:
+                    if title == "Creating Competitive Products.":
+                        print title
                     continue
 
                 # Any authors in our affiliations?
                 if not foundOneInDict:
+                    if title == "Creating Competitive Products.":
+                        print title
                     continue
 
                 # One of the papers we count?
                 if not countPaper(confname, year, volume, number, startPage, pageCount, url):
+                    if title == "Creating Competitive Products.":
+                        print title
                     continue
-                
+
                 # If we get here, we have a winner.
 
                 for authorName in authorList:
@@ -102,13 +100,14 @@ def parseDBLP(facultydict):
                                       'area' : areaname,
                                       'year' : year,
                                       'title' : title.encode('utf-8'),
-                                      'institution' : facultydict[authorName].encode('utf-8') }
+                                      'institution' : facultydict[authorName] }
                         tmplist = authlogs.get(authorName, [])
                         tmplist.append(logstring)
                         authlogs[authorName] = tmplist
                         interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
                         authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
                         authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
+
 
     return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
 
@@ -124,7 +123,7 @@ for (authorName, area, year) in authscores_gl:
     countAdjusted = authscoresAdjusted_gl[(authorName, area, year)]
     f.write(authorName.encode('utf-8'))
     f.write(',')
-    f.write((fdict[authorName]).encode('utf-8'))
+    f.write((fdict[authorName].encode('utf-8')))
     f.write(',')
     f.write(area)
     f.write(',')
