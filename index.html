@@ -1,46 +1,47 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
-  <head>
-    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <meta name="description" content="Computer Science Rankings">
-    <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>CSRankings: Computer Science Rankings (beta)</title>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-select.min.css">
+	<meta name="description" content="Computer Science Rankings">
+	<meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+	<title>CSRankings: Computer Science Rankings</title>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
-      ga('create', 'UA-78147305-1', 'auto');
-      ga('send', 'pageview'); 
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    </script>
-    <script>
-      window.twttr = (function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0],
-	t = window.twttr || {};
-	if (d.getElementById(id)) return t;
-	js = d.createElement(s);
-	js.id = id;
-	js.src = "https://platform.twitter.com/widgets.js";
-	fjs.parentNode.insertBefore(js, fjs);
+	ga('create', 'UA-78147305-1', 'auto');
+	ga('send', 'pageview'); 
 
-	t._e = [];
-	t.ready = function(f) {
-	t._e.push(f);
-	};
+	</script>
+	<script>
+	window.twttr = (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0],
+		t = window.twttr || {};
+		if (d.getElementById(id)) return t;
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "https://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js, fjs);
 
-	return t;
+		t._e = [];
+		t.ready = function(f) {
+			t._e.push(f);
+		};
+
+		return t;
 	}(document, "script", "twitter-wjs"));
-    </script>
-    <script>
+	</script>
+	<script>
       /**
       * Track clicks to a link. If new_window is true the google analytics request
       * will be made synchronously, because browsers block new windows from opening unless
@@ -51,606 +52,706 @@
       * using 'navigator.sendBeacon' in browser that support it.
       */
       var trackOutboundLink = function(url, new_window) {
-        /* Setting a default value for backward compatibility */
-        if (new_window === undefined) {
-          new_window = false;
-        }
-        ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
-        'hitCallback':
-          function () {
-            if (!new_window) {
-              document.location = url;
-            }
-          }
-        });
-        if (new_window){
-          window.open(url);
-        }
+      	/* Setting a default value for backward compatibility */
+      	if (new_window === undefined) {
+      		new_window = false;
+      	}
+      	ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
+      		'hitCallback':
+      		function () {
+      			if (!new_window) {
+      				document.location = url;
+      			}
+      		}
+      	});
+      	if (new_window){
+      		window.open(url);
+      	}
       }
-    </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
-    <script src="d3pie.min.js"></script>
-    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
-    <script src="js/papaparse.min.js" type="text/javascript"></script>
-    <script src="js/pako.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
-    
-    <style type="text/css">
-      body {
-      font-family: Helvetica, Arial;
-      }
+      </script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+      <script src="d3pie.min.js"></script>
+      <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+      <script src="js/papaparse.min.js" type="text/javascript"></script>
+      <script src="js/pako.min.js" type="text/javascript"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/bootstrap-select.min.js"></script>
 
-      table td {
-      vertical-align: top;
+      <style type="text/css">
+      body {
+      	font-family: Helvetica, Arial;
+      	background:#edeef0;
       }
 
       td {
-      padding-top: 2px;
-      padding-bottom: 2px;
-      }
-
-      a {
-      color : blue ;
+      	padding-top: 2px;
+      	padding-bottom: 2px;
       }
 
       a.only_these_areas {
-      cursor: pointer;
+      	cursor: pointer;
       }
 
       div.hovertip {
-      cursor: pointer;
+      	cursor: pointer;
       }
 
       span.hovertip {
-      cursor: pointer;
+      	cursor: pointer;
+      }
+      #mainContainer {
+      	background:white;
+      	padding:20px;
+      	padding-top:80px;
+      }
+      @media screen and (min-width:1024px) {
+      	#mainContainer {
+      		width:1000px;
+      	}
+      }
+      #config table{
+      	font-size:14px;
+      }
+      #config td{
+      	padding:0px 2px;
+      }
+      h5{
+      	font-size:16px;
       }
 
-    </style>
+      </style>
   </head>
 
-  <body>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="container">
-      <form id="rankform" name="rankform" action="" method="get" target="_blank">
-	<div class="page-header">
+<body>
+	<div id="fb-root"></div>
+  	<script>(function(d, s, id) {
+  		var js, fjs = d.getElementsByTagName(s)[0];
+  		if (d.getElementById(id)) return;
+  		js = d.createElement(s); js.id = id;
+  		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  		fjs.parentNode.insertBefore(js, fjs);
+  	}(document, 'script', 'facebook-jssdk'));</script>
+  	<div style="position:fixed; width:100%; background:white; z-index:60;border-bottom: solid 2px #ddd;">
+  		<h1 style="text-align:center; margin-bottom:-20px">Computer Science Rankings</h1>
+  		<ul class="nav nav-tabs" role="tablist">
+  			<li role="presentation" class="active"><a href="#rankContent" aria-controls="home" role="tab" data-toggle="tab">Rankings</a></li>
+  			<li role="presentation"><a href="#aboutContent" aria-controls="profile" role="tab" data-toggle="tab">About</a></li>
+  		</ul>
+  	</div>
+  	<div class="container" id="mainContainer">
+  		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="rankContent">
+				<div class="row">
+					<h3 style="text-align:center;">Configure Rankings</h3>
+					<div id="config" class="panel panel-default" style="width:850px; margin:20px 75px 5px 75px;">
+						<div class="panel-heading" data-toggle="collapse" data-target="#areasall" style="padding-bottom:0px">
 
-          <h1>Computer Science Rankings (beta)</h1>
-	  <p>
-	    <div class="fb-share-button" data-href="http://csrankings.org" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcsrankings.org%2F&amp;src=sdkpreparse">Share</a></div>
-	    <a class="twitter-share-button"
-	       href="https://twitter.com/intent/tweet">
-	      Tweet</a>
-	  </p>
-	  <div class="panel panel-info">
-	    <div class="panel-heading">
-	      <p>
-		This ranking of top computer science schools is
-		designed to identify institutions and faculty actively
-		engaged in research across a number of areas of
-		computer science, based on the number of publications
-		by faculty that have appeared at the most selective
-		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
-	      </p>
-	      <p>
-		<b>NEW: <a href="collab/">Click here to see collaboration graphs.</a></b>
-	      </p>
-	      <p>
-		<b>Click on a triangle</b> (&#9658;) to display names
-		and number of publications. <b>Click on a name</b> to
-		go to a faculty member's home page. <b>Click on a
-		pie</b> (the &#9685; after a name or institution) to
-		see a publication profile as a pie chart. <b>Click on
-		the raw number of publications</b> to go to their DBLP
-		entry.
-	      </p>
-	      <div class="row">
-		<!-- col-xs-3 col-sm-6 col-md-4  -->
-		<div class="col-sm-12 col-md-12 col-lg-12">
-	      Rank the top
-	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
-		<option value="10">10</option>
-		<option value="25">25</option>
-		<option value="50" selected="selected">50</option>
-		<option value="75">75</option>
-		<option value="100">100</option>
-		<option value="99999">(all)</option>
-	      </select>
-	      institutions in
-	      <select id="regions" name="regions" onchange="CSRankings.rank();">
-		<option value="USA" selected="selected">the USA only</option>
-		<option value="canada">Canada only</option>
-		<option value="northamerica">USA and Canada</option>
-		<option value="australasia">Australasia only</option>
-		<option value="europe">Europe only</option>
-		<option value="world">USA, Canada, Europe, and Australasia</option>
-	      </select>
-	      by average count
-<!--	      <select id="displayPercent" name="displayPercent" onchange="CSRankings.rank();" >
-		<option value="1" selected="selected">average count</option>
-		<option value="0">total count</option>
-	      </select> -->
-	      of publications from
-	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
-		<option value="1970">1970</option>  
-		<option value="1971">1971</option>  
-		<option value="1972">1972</option>  
-		<option value="1973">1973</option>  
-		<option value="1974">1974</option>  
-		<option value="1975">1975</option>  
-		<option value="1976">1976</option>  
-		<option value="1977">1977</option>  
-		<option value="1978">1978</option>  
-		<option value="1979">1979</option>  
-		<option value="1980">1980</option>  
-		<option value="1981">1981</option>  
-		<option value="1982">1982</option>  
-		<option value="1983">1983</option>  
-		<option value="1984">1984</option>  
-		<option value="1985">1985</option>  
-		<option value="1986">1986</option>  
-		<option value="1987">1987</option>  
-		<option value="1988">1988</option>  
-		<option value="1989">1989</option>  
-		<option value="1990">1990</option>  
-		<option value="1991">1991</option>  
-		<option value="1992">1992</option>  
-		<option value="1993">1993</option>  
-		<option value="1994">1994</option>  
-		<option value="1995">1995</option>  
-		<option value="1996">1996</option>  
-		<option value="1997">1997</option>  
-		<option value="1998">1998</option>  
-		<option value="1999">1999</option>  
-		<option value="2000">2000</option>
-		<option value="2001">2001</option>  
-		<option value="2002">2002</option>
-		<option value="2003">2003</option>
-		<option value="2004">2004</option>
-		<option value="2005">2005</option>
-		<option selected="selected" value="2006">2006</option>
-		<option value="2007">2007</option>
-		<option value="2008">2008</option>
-		<option value="2009">2009</option>
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2014">2014</option>
-		<option value="2015">2015</option>
-		<option value="2016">2016</option>
-		<option value="2017">2017</option>
-	      </select>
-	      to
-	      <select onchange="CSRankings.rank();" id="endyear" name="endyear">
-		<option value="1980">1980</option>  
-		<option value="1981">1981</option>  
-		<option value="1982">1982</option>  
-		<option value="1983">1983</option>  
-		<option value="1984">1984</option>  
-		<option value="1985">1985</option>  
-		<option value="1986">1986</option>  
-		<option value="1987">1987</option>  
-		<option value="1988">1988</option>  
-		<option value="1989">1989</option>  
-		<option value="1990">1990</option>  
-		<option value="1991">1991</option>  
-		<option value="1992">1992</option>  
-		<option value="1993">1993</option>  
-		<option value="1994">1994</option>  
-		<option value="1995">1995</option>  
-		<option value="1996">1996</option>  
-		<option value="1997">1997</option>  
-		<option value="1998">1998</option>  
-		<option value="1999">1999</option>  
-		<option value="2000">2000</option>
-		<option value="2001">2001</option>  
-		<option value="2002">2002</option>
-		<option value="2003">2003</option>
-		<option value="2004">2004</option>
-		<option value="2005">2005</option>
-		<option value="2006">2006</option>  
-		<option value="2007">2007</option>
-		<option value="2008">2008</option>
-		<option value="2009">2009</option>
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2014">2014</option>
-		<option value="2015">2015</option>
-		<option value="2016">2016</option>
-		<option selected="selected" value="2017">2017</option>
-	      </select>
+							<h4 style="margin-bottom:0px"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>  All Areas of Study
+								&nbsp;<span style="font-size: 80%">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="black"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="black"><b>on</b></font></a>]</span>
+							</h4>
+							<p style="font-size:14px">expand to select specific areas for your ranking.</p>
+
+						</div>
+						<div id="areasall" class="panels-body collapse">
+							<div class="row">
+								<div class="col-sm-6">
+									<div style="padding-left:10px;">
+										<div>
+											<h5><strong>Systems</strong>
+												[<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;" style="color:black">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;" style="color:black">on</a>]
+											</h5>
+										</div>
+										<table class="table table-striped">
+											<tbody>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#ARCHpub">   
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Computer architecture
+														</div>
+														<div id="ARCHpub" class="collapse">
+															<small><em>ASPLOS, ISCA, MICRO</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_arch" id="field_arch" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">  
+														<div data-toggle="collapse" data-target="#NETpub">  
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Computer networks
+														</div>
+														<div id="NETpub" class="collapse">
+															<small><em>INFOCOM, SIGCOMM, NSDI</em></small>
+														</div>
+													</td>
+													<td>  
+														<input type="checkbox" name="field_comm" id="field_comm" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">  
+														<div data-toggle="collapse" data-target="#SECpub">  
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Computer security
+														</div>
+														<div id="SECpub" class="collapse">
+															<small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
+														</div>
+													</td>
+													<td>  
+														<input type="checkbox" name="field_sec" id="field_sec" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#DATApub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Databases
+														</div>
+														<div id="DATApub" class="collapse">
+															<small><em>SIGMOD, VLDB</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_mod" id="field_mod" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#AUTOpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Design automation
+														</div>
+														<div id="AUTOpub" class="collapse">
+															<small><em>DAC, ICCAD</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_da" id="field_da" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#ERSpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Embedded and real-time systems
+														</div>
+														<div id="ERSpub" class="collapse">
+															<small><em>EMSOFT, RTAS, RTSS</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_bed" id="field_bed" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#HPpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> High-performance computing
+														</div>
+														<div id="HPpub" class="collapse">
+															<small><em>HPDC, ICS, SC</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_hpc" id="field_hpc" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#MOBpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Mobile computing
+														</div>
+														<div id="MOBpub" class="collapse">
+															<small><em>MobiCom, MobiSys, SenSys</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_mobile" id="field_mobile" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#MPApub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Measurement &amp; performance analysis
+														</div>
+														<div id="MPApub" class="collapse">
+															<small><em>IMC, SIGMETRICS</em></small>
+														</div>
+													</td>
+													<td> 
+														<input type="checkbox" name="field_metrics" id="field_metrics" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">  
+														<div data-toggle="collapse" data-target="#OSpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Operating systems
+														</div>
+														<div id="OSpub" class="collapse">
+															<small><em>EuroSys, OSDI/SOSP, USENIX ATC</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_ops" id="field_ops" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#PLpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Programming languages
+														</div>
+														<div id="PLpub" class="collapse">
+															<small><em>PLDI, POPL</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_plan" id="field_plan" value="1.0"/>
+													</td>
+												</tr>
+
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#SEpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Software engineering
+														</div>
+														<div id="SEpub" class="collapse">
+															<small><em>ASE, FSE, ICSE</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_soft" id="field_soft" value="1.0"/>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+									<div style="padding-left:10px;">
+										<div>
+											<h5><strong>Theory</strong>
+												[<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;" style="color:black">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;" style="color:black">on</a>]
+											</h5>
+										</div>
+										<table class="table table-striped">
+
+											<tbody>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#ALGpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Algorithms &amp; complexity
+														</div>
+														<div id="ALGpub" class="collapse">
+															<small><em>FOCS, SODA, STOC</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_act" id="field_act" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#CRYPTpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cryptography
+														</div>
+														<div id="CRYPTpub" class="collapse">
+															<small><em>CRYPTO, EuroCrypt</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_crypt" id="field_crypt" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#LOGpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Logic and verification
+														</div>
+														<div id="LOGpub" class="collapse">
+															<small><em>CAV, LICS</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_log" id="field_log" value="1.0"/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div>
+										<div>
+											<h5><strong>AI</strong>
+												[<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;" style="color:black">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;" style="color:black">on</a>]
+											</h5>
+										</div>
+										<table class="table table-striped">
+											<tbody>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#AIpub">
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Artificial intelligence
+														</div>
+														<div id="AIpub" class="collapse">
+															<small><em>AAAI, IJCAI</em></small>
+														</div>
+													</td>
+													<td width="40px"> 
+														<input type="checkbox" name="field_ai" id="field_ai" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area"> 
+														<div data-toggle="collapse" data-target="#CVpub">
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Computer vision
+														</div>
+														<div id="CVpub" class="collapse">
+															<small><em>CVPR, ECCV, ICCV</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_vision" id="field_vision" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#MLpub">
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Machine learning &amp; data mining
+														</div>
+														<div id="MLpub" class="collapse">
+															<small><em>ICML, KDD, NIPS</em>&nbsp;&nbsp;&nbsp;&nbsp;</small>
+														</div>
+													</td>
+													<td> 
+														<input type="checkbox" name="field_mlmining" id="field_mlmining" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area"> 
+														<div data-toggle="collapse" data-target="#LANGpub">
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Natural language processing
+														</div>
+														<div id="LANGpub" class="collapse">
+															<small><em>ACL, EMNLP, NAACL</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_nlp" id="field_nlp" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#WEBpub">
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> The web &amp; information retrieval
+														</div>
+														<div id="WEBpub" class="collapse">
+															<small><em>SIGIR, WWW</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_ir" id="field_ir" value="1.0"/>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+									<br>
+									<div>
+										<div>
+											<h5><strong>Interdisciplinary Areas</strong>
+												[<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;" style="color:black">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;" style="color:black">on</a>]
+											</h5>
+										</div>
+										<table class="table table-striped">
+
+											<tbody>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#BIOpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Computational bio &amp; bioinformatics
+														</div>
+														<div id="BIOpub" class="collapse">
+															<small><em>ISMB, RECOMB</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_bio" id="field_bio" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#GRAPHpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Computer graphics
+														</div>
+														<div id="GRAPHpub" class="collapse">
+															<small><em>SIGGRAPH, SIGGRAPH Asia</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_graph" id="field_graph" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area"> 
+														<div data-toggle="collapse" data-target="#HUMpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Human-computer interaction
+														</div>
+														<div id="HUMpub" class="collapse">
+															<small><em>CHI, UbiComp, UIST</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_chi" id="field_chi" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#ROBpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Robotics
+														</div>
+														<div id="ROBpub" class="collapse">
+															<small><em>ICRA, IROS, RSS</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_robotics" id="field_robotics" value="1.0"/>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="area">
+														<div data-toggle="collapse" data-target="#VISpub"> 
+															<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Visualization
+														</div>
+														<div id="VISpub" class="collapse">
+															<small><em>VIS, VR</em></small>
+														</div>
+													</td>
+													<td>
+														<input type="checkbox" name="field_vis" id="field_vis" value="1.0"/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div style="display:inline-block; margin-left:60px;">
+							<select id="minToRank" name="minToRank" onchange="CSRankings.rank();" class="selectpicker">
+								<option value="10">Top 10</option>
+								<option value="25" selected="selected">Top 25</option>
+								<option value="50">Top 50</option>
+								<option value="75">Top 75</option>
+								<option value="100">Top 100</option>
+								<option value="99999">(all)</option>
+							</select>
+						</div>
+						<div style="display:inline-block; margin-left:72px;">
+							<select id="regions" name="regions" onchange="CSRankings.rank();" class="selectpicker">
+								<option value="USA" selected="selected">the USA only</option>
+								<option value="canada">Canada only</option>
+								<option value="northamerica">USA and Canada</option>
+								<option value="australasia">Australasia only</option>
+								<option value="europe">Europe only</option>
+								<option value="world">USA, Canada, Europe, and Australasia</option>
+							</select>
+						</div>
+						<div style="display:inline-block; margin-left:72px;">
+							<select id="displayPercent" name="displayPercent" onchange="CSRankings.rank();" class="selectpicker">
+								<option value="1" selected="selected">average count</option>
+								<option value="0">total count</option>
+							</select>
+						</div>
+						<div style="display:inline-block; margin-left:72px;">
+							<select onchange="CSRankings.rank();" id="startyear" name="startyear" class="selectpicker">
+								<option value="1970">From 1970</option>  
+								<option value="1971">From 1971</option>  
+								<option value="1972">From 1972</option>  
+								<option value="1973">From 1973</option>  
+								<option value="1974">From 1974</option>  
+								<option value="1975">From 1975</option>  
+								<option value="1976">From 1976</option>  
+								<option value="1977">From 1977</option>  
+								<option value="1978">From 1978</option>  
+								<option value="1979">From 1979</option>  
+								<option value="1980">From 1980</option>  
+								<option value="1981">From 1981</option>  
+								<option value="1982">From 1982</option>  
+								<option value="1983">From 1983</option>  
+								<option value="1984">From 1984</option>  
+								<option value="1985">From 1985</option>  
+								<option value="1986">From 1986</option>  
+								<option value="1987">From 1987</option>  
+								<option value="1988">From 1988</option>  
+								<option value="1989">From 1989</option>  
+								<option value="1990">From 1990</option>  
+								<option value="1991">From 1991</option>  
+								<option value="1992">From 1992</option>  
+								<option value="1993">From 1993</option>  
+								<option value="1994">From 1994</option>  
+								<option value="1995">From 1995</option>  
+								<option value="1996">From 1996</option>  
+								<option value="1997">From 1997</option>  
+								<option value="1998">From 1998</option>  
+								<option value="1999">From 1999</option>  
+								<option value="2000">From 2000</option>
+								<option value="2001">From 2001</option>  
+								<option value="2002">From 2002</option>
+								<option value="2003">From 2003</option>
+								<option value="2004">From 2004</option>
+								<option value="2005">From 2005</option>
+								<option selected="selected" value="2006">From 2006</option>
+								<option value="2007">From 2007</option>
+								<option value="2008">From 2008</option>
+								<option value="2009">From 2009</option>
+								<option value="2010">From 2010</option>
+								<option value="2011">From 2011</option>
+								<option value="2012">From 2012</option>
+								<option value="2013">From 2013</option>
+								<option value="2014">From 2014</option>
+								<option value="2015">From 2015</option>
+								<option value="2016">From 2016</option>
+								<option value="2017">From 2017</option>
+							</select>
+						</div>
+						<div style="display:inline-block; margin-left:72px;">
+							<select onchange="CSRankings.rank();" id="endyear" name="endyear" class="selectpicker">
+								<option value="1980">To 1980</option>  
+								<option value="1981">To 1981</option>  
+								<option value="1982">To 1982</option>  
+								<option value="1983">To 1983</option>  
+								<option value="1984">To 1984</option>  
+								<option value="1985">To 1985</option>  
+								<option value="1986">To 1986</option>  
+								<option value="1987">To 1987</option>  
+								<option value="1988">To 1988</option>  
+								<option value="1989">To 1989</option>  
+								<option value="1990">To 1990</option>  
+								<option value="1991">To 1991</option>  
+								<option value="1992">To 1992</option>  
+								<option value="1993">To 1993</option>  
+								<option value="1994">To 1994</option>  
+								<option value="1995">To 1995</option>  
+								<option value="1996">To 1996</option>  
+								<option value="1997">To 1997</option>  
+								<option value="1998">To 1998</option>  
+								<option value="1999">To 1999</option>  
+								<option value="2000">To 2000</option>
+								<option value="2001">To 2001</option>  
+								<option value="2002">To 2002</option>
+								<option value="2003">To 2003</option>
+								<option value="2004">To 2004</option>
+								<option value="2005">To 2005</option>
+								<option value="2006">To 2006</option>  
+								<option value="2007">To 2007</option>
+								<option value="2008">To 2008</option>
+								<option value="2009">To 2009</option>
+								<option value="2010">To 2010</option>
+								<option value="2011">To 2011</option>
+								<option value="2012">To 2012</option>
+								<option value="2013">To 2013</option>
+								<option value="2014">To 2014</option>
+								<option value="2015">To 2015</option>
+								<option value="2016">To 2016</option>
+								<option selected="selected" value="2017">To 2017</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<h3 style="text-align:center">Ranking Results</h3>
+					<div id="success">
+						<strong><h4>Loading and processing data. Please wait.</h4></strong>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="aboutContent">
+				<div class="panel panel-info">
+				    <div class="panel-heading">
+				    	<p>
+							This ranking of top computer science schools is
+							designed to identify institutions and faculty actively
+							engaged in research across a number of areas of
+							computer science, based on the number of publications
+							by faculty that have appeared at the most selective
+							conferences and journals in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
+				      	</p>
+				      	<p>
+							<b><a href="collab/">Click here to see collaboration graphs.</a></b>
+					    </p>
+					    <p>
+							Click on a <span class="glyphicon glyphicon-chevron-right"></span> to expand an area of study or a university.  Click on a name to
+							go to a faculty member's home page.  Click on a
+							pie &#9685; to
+							see a publication profile as a pie chart. Click on
+							the raw number of publications to go to their DBLP
+							entry.
+					    </p>
+				  	</div>
+				</div>
+				<div class="page-footer">
+					<p>
+						The rubrics (<em>AI</em>, <em>Systems</em>,
+						and <em>Theory</em>) are provided for ease of
+						comparison with rankings published by US News and
+						World Report.
+					</p>
+					<p>Output is attributed to the institution where authors
+						are <em>currently affiliated</em> full-time,
+						tenure-track faculty members who can advise CS PhD
+						students. An author's publications follow them if they
+						move. Currently, this database includes selected US,
+						Canadian, European, and Australasian CS or EECS
+						departments (or equivalent); please submit pull
+						requests (see below) to add any unlisted institution.
+					</p>
+					<p><b>Adjusted counts</b>: each publication is counted
+						exactly once, with credit adjusted by splitting evenly
+						across all co-authors. This approach makes it impossible to
+						boost rankings simply by adding authors to a paper.
+						<b>Average count</b> computes the geometric mean of
+						the adjusted number of publications in each area by
+						institution. This normalizes for the size of areas, so
+						that large and small areas are weighed the
+						same. Publications must be at least 6 pages long to be
+						counted.
+						<b>Total count</b> is the sum of the adjusted number of publications.
+					</p>
+					<p class="text-muted">
+						All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated February 19, 2017).<br />
+						Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
+						All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.
+					</p>
+				</div>
+			</div>
 		</div>
-		</div>
-	    </div>
-	  </div>
-	  
-	  <div class="row">
-	    <!-- col-xs-3 col-sm-6 col-md-4  -->
-	    <div class="col-sm-6 col-md-6 col-lg-6">
-	      <div class="table">
-		<table class="table-sm table-striped">
-
-		  <thead>
-		    <tr>
-		      <th colspan="2">
-			<p style="font-size: 125%">All Areas
-			  &nbsp;<span style="font-size: 80%">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>on</b></font></a>]</span>
-			</p>
-		      </th>
-		    </tr>
-		  </thead>
-			
-		  </thead>
-		  <thead>
-		    <tr>
-		      <th colspan="2">
-			<p>AI
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;">on</a>]
-			</p>
-		      </th>
-		    </tr>
-		  </thead>
-
-		  <tbody>
-
-		    <tr>
-		      <td>
-			Artificial intelligence
-			<small><em>AAAI, IJCAI</em></small>
-		      </td>
-		      <td width="40px"> 
-			<input type="checkbox" name="field_ai" id="field_ai" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td> 
-			Computer vision
-			<small><em>CVPR, ECCV, ICCV</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_vision" id="field_vision" value="1.0"/>
-		      </td>
-		    </tr>
-		    
-		    <tr>
-		      <td>
-			Machine learning &amp; data mining
-			<small><em>ICML, KDD, NIPS</em>&nbsp;&nbsp;&nbsp;&nbsp;</small>
-		      </td>
-		      <td> 
-			<input type="checkbox" name="field_mlmining" id="field_mlmining" value="1.0"/>
-		      </td>
-		    </tr>
-		    
-		    <tr>
-		      <td> 
-			Natural language processing
-			<small><em>ACL, EMNLP, NAACL</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_nlp" id="field_nlp" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			The web &amp; information retrieval
-			<small><em>SIGIR, WWW</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_ir" id="field_ir" value="1.0"/>
-		      </td>
-		    </tr>
-
-		  </tbody>
-
-
-	  
-		  <thead>
-		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
-		    <tr>
-		      <th colspan="2">
-			<p>Systems
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;">on</a>]
-			</p>
-		      </th>
-		    </tr>
-		  </thead>
-
-		  <tbody>
-
-		    <tr>
-		      <td>   
-			Computer architecture
-			<small><em>ASPLOS, ISCA, MICRO</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_arch" id="field_arch" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>  
-			Computer networks
-			<small><em>INFOCOM, SIGCOMM, NSDI</em></small>
-		      </td>
-		      <td>  
-			<input type="checkbox" name="field_comm" id="field_comm" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>  
-			Computer security
-			<small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
-		      </td>
-		      <td>  
-			<input type="checkbox" name="field_sec" id="field_sec" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Databases
-			<small><em>SIGMOD, VLDB</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_mod" id="field_mod" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Design automation
-			<small><em>DAC, ICCAD</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_da" id="field_da" value="1.0"/>
-		      </td>
-		    </tr>
-		    
-		    <tr>
-		      <td>
-			Embedded and real-time systems
-			<small><em>EMSOFT, RTAS, RTSS</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_bed" id="field_bed" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			High-performance computing
-			<small><em>HPDC, ICS, SC</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_hpc" id="field_hpc" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Mobile computing
-			<small><em>MobiCom, MobiSys, SenSys</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_mobile" id="field_mobile" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Measurement &amp; performance analysis
-			<small><em>IMC, SIGMETRICS</em></small>
-		      </td>
-		      <td> 
-			<input type="checkbox" name="field_metrics" id="field_metrics" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>  
-			Operating systems
-			<small><em>EuroSys, OSDI/SOSP, USENIX ATC</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_ops" id="field_ops" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Programming languages
-			<small><em>PLDI, POPL</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_plan" id="field_plan" value="1.0"/>
-		      </td>
-		    </tr>
-
-	  
-		    <tr>
-		      <td>
-			Software engineering
-			<small><em>FSE, ICSE</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_soft" id="field_soft" value="1.0"/>
-		      </td>
-		    </tr>
-		    
-		  </tbody>
-
-		  <thead>
-		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
-		    <tr>
-		      <th colspan="2">
-			<p>Theory
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;">on</a>]
-			</p>
-		      </th>
-		    </tr>
-		  </thead>
-
-		  <tbody>
-
-		    <tr>
-		      <td>
-			Algorithms &amp; complexity
-			<small><em>FOCS, SODA, STOC</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_act" id="field_act" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Cryptography
-			<small><em>CRYPTO, EuroCrypt</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_crypt" id="field_crypt" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Logic and verification
-			<small><em>CAV, LICS</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_log" id="field_log" value="1.0"/>
-		      </td>
-		    </tr>
-		  </tbody>
-
-		  <thead>
-		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
-		    <tr>
-		      <th colspan="2">
-			<p>Interdisciplinary Areas
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;">on</a>]
-			</p>
-		      </th>
-		    </tr>
-		  </thead>
-
-		  <tbody>
-
-		    <tr>
-		      <td>
-			Computational bio &amp; bioinformatics
-			<small><em>ISMB, RECOMB</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_bio" id="field_bio" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Computer graphics
-			<small><em>SIGGRAPH, SIGGRAPH Asia</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_graph" id="field_graph" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td> 
-			Human-computer interaction
-			<small><em>CHI, UbiComp, UIST</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_chi" id="field_chi" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Robotics
-			<small><em>ICRA, IROS, RSS</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_robotics" id="field_robotics" value="1.0"/>
-		      </td>
-		    </tr>
-
-		    <tr>
-		      <td>
-			Visualization
-			<small><em>VIS, VR</em></small>
-		      </td>
-		      <td>
-			<input type="checkbox" name="field_vis" id="field_vis" value="1.0"/>
-		      </td>
-		    </tr>
-
-		  </tbody>
-		  
-		</table>
-	      </div>
-	    </div>
-	    
-	    <div class="row">
-	      <!-- col-xs-6 col-sm-6 col-md-4  -->
-	      <div class="col-sm-6 col-md-6 col-lg-6">
-		<div id="success">
-		  <strong><h4>Loading and processing data. Please wait.</h4></strong>
-		</div>
-	      </div>
-	    </div>
-	  </div>
-<div class="page-footer">
-  <p>
-	    The rubrics (<em>AI</em>, <em>Systems</em>,
-	    and <em>Theory</em>) are provided for ease of
-	    comparison with rankings published by US News and
-	    World Report.
-	    </p>
-	    <p>Output is attributed to the institution where authors
-		are <em>currently affiliated</em> full-time,
-		tenure-track faculty members who can advise CS PhD
-		students. An author's publications follow them if they
-		move. Currently, this database includes selected US,
-		Canadian, European, and Australasian CS or EECS
-		departments (or equivalent); please submit pull
-		requests (see below) to add any unlisted institution.
-	    </p>
-	    <p><b>Adjusted counts</b>: each publication is counted
-	      exactly once, with credit adjusted by splitting evenly
-	      across all co-authors. This approach makes it impossible to
-	      boost rankings simply by adding authors to a paper.
-	      <b>Average count</b> computes the geometric mean of
-	      the adjusted counts in each area (+ 1) for each
-	      institution. This approach normalizes for the size of areas, so
-	      that large and small areas are weighed the
-	      same. Publications must be at least 6 pages long to be
-	      counted.
-<!--	      <b>Total count</b> is the sum of the adjusted number of publications. -->
-	    </p>
-            <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated March 29, 2017).<br />
-	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
-	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.
-	    </p>
-	  </div>
 	</div>
-      </form>
-      </div>
-      <script src="csrankings.js"></script>
-  </body>
+<script src="csrankings.js"></script>
+</body>
 </html>
