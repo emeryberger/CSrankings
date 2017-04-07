@@ -99,6 +99,7 @@ Aaron F. Bobick,Georgia Institute of Technology,vision,4.0,2.0,1998
 Hanghang Tong,Arizona State University,ir,1.0,0.166666666667,2015
 William G. Griswold,University of California - San Diego,chi,1.0,0.166666666667,2005
 Dimitris N. Metaxas,Rutgers University,vision,1.0,0.5,1991
+Brian Keegan,University of Colorado Boulder,chi,1.0,0.166666666667,2015
 Willy Zwaenepoel,EPFL,ir,1.0,0.25,2004
 Lisa Hellerstein,New York University,act,1.0,0.333333333333,2014
 Feng Liu,University of Queensland,vision,1.0,0.25,2012
@@ -122,6 +123,7 @@ Randall Davis,Massachusetts Institute of Technology,ai,1.0,0.5,1987
 Bogdan Warinschi,University of Bristol,sec,2.0,0.75,2011
 Brian D. Noble,University of Michigan,mobile,1.0,0.5,2008
 Randall Davis,Massachusetts Institute of Technology,ai,1.0,0.25,2013
+Emmanuel Filiot,Université libre de Bruxelles,log,1.0,0.25,2013
 Bruno Ribeiro,Purdue University,ir,1.0,1.0,2014
 Brad T. Vander Zanden,University of Tennessee,chi,1.0,0.5,1990
 Ron Y. Pinter,Technion - Israel Institute of Technology,act,1.0,0.2,2005
@@ -541,6 +543,7 @@ Shengdong Zhao,National University of Singapore,chi,1.0,0.25,2012
 Nassir Navab,TU Munich,vision,3.0,0.75,2007
 Bernhard Pfahringer,University of Waikato,mlmining,2.0,0.392857142857,2011
 David L. Dill,Stanford University,bed,1.0,0.166666666667,2003
+Tom Lenaerts,Université libre de Bruxelles,bio,1.0,0.2,2016
 Leonard J. Schulman,California Institute of Technology,act,1.0,0.25,2008
 Matei Zaharia,Stanford University,mlmining,2.0,0.253968253968,2016
 William T. Freeman,Massachusetts Institute of Technology,vision,2.0,0.666666666667,2004
@@ -652,6 +655,7 @@ Nick Koudas,University of Toronto,mod,3.0,0.833333333333,2004
 Alvaro A. Cárdenas,University of Texas at Dallas,sec,1.0,0.333333333333,2006
 Daniel Wigdor,University of Toronto,chi,2.0,0.342857142857,2009
 Aditya Akella,University of Wisconsin - Madison,sec,1.0,0.166666666667,2006
+Jean Cardinal,Université libre de Bruxelles,act,1.0,0.2,2010
 Qi Yu,Rochester Institute of Technology,ai,1.0,0.25,2011
 Michael Benedikt,University of Oxford,mod,1.0,0.2,2003
 Rajesh K. Gupta,University of California - San Diego,hpc,1.0,0.1,2010
@@ -1757,6 +1761,7 @@ Dirk Grunwald,University of Colorado Boulder,mobile,1.0,0.2,2006
 Joseph M. Hellerstein,University of California - Berkeley,mod,1.0,0.333333333333,1995
 Kay Connelly,Indiana University,chi,1.0,0.333333333333,2012
 Isil Dillig,University of Texas at Austin,soft,1.0,0.25,2014
+Brian Keegan,University of Colorado Boulder,ir,1.0,0.25,2013
 Michael I. Jordan,University of California - Berkeley,ir,1.0,0.5,2003
 Wenjun Hu,Yale University,mobile,1.0,0.2,2012
 Nazim H. Madhavji,Western University,soft,1.0,1.0,1985
@@ -3171,7 +3176,7 @@ Arie van Deursen,TU Delft,soft,1.0,0.5,1999
 Myra B. Cohen,University of Nebraska,soft,1.0,0.2,2014
 Xenofon D. Koutsoukos,Vanderbilt University,bed,1.0,0.333333333333,2007
 Steven P. Reiss,Brown University,chi,1.0,0.111111111111,2010
-Stefan Decker,RWTH Aachen,ir,1.0,0.111111111111,2002
+Emmanuel Filiot,Université libre de Bruxelles,log,2.0,0.533333333333,2012
 Takeo Kanade,Carnegie Mellon University,vision,2.0,0.7,1999
 Adrian Sampson,Cornell University,plan,1.0,0.166666666667,2014
 Julian Padget,University of Bath,ai,1.0,0.25,2016
@@ -4554,9 +4559,11 @@ Kunle Olukotun,Stanford University,arch,1.0,0.5,1997
 Christos Faloutsos,Carnegie Mellon University,ir,1.0,0.333333333333,2015
 Petros Drineas,Purdue University,mlmining,1.0,0.333333333333,2010
 Krithi Ramamritham,IIT Bombay,mod,1.0,0.333333333333,2003
+Melanie E. Moses,University of New Mexico,robotics,1.0,0.333333333333,2015
 Jason I. Hong,Carnegie Mellon University,chi,2.0,0.5,2009
 Benjamin Van Durme,Johns Hopkins University,ai,1.0,0.5,2015
 Kwan-Liu Ma,University of California - Davis,vis,1.0,0.5,1994
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.333333333333,2004
 Michael L. Littman,Brown University,mlmining,2.0,0.75,2007
 Juliana Freire,New York University,mod,1.0,0.2,2003
 David Walker,Princeton University,plan,1.0,0.25,1998
@@ -4662,6 +4669,7 @@ Rasmus Pagh,IT University of Copenhagen,act,1.0,0.333333333333,2013
 Prasad Tetali,Georgia Institute of Technology,act,3.0,0.916666666667,2010
 P. Sadayappan,Ohio State University,plan,1.0,0.166666666667,2007
 Nam Sung Kim,University of Illinois at Urbana-Champaign,hpc,1.0,0.5,2003
+John D. Lafferty,University of Chicago,arch,1.0,0.25,2015
 Darius Burschka,TU Munich,robotics,1.0,0.5,2001
 Christopher Kruegel,University of California - Santa Barbara,sec,6.0,1.29166666667,2012
 John L. Barron,Western University,da,1.0,0.142857142857,1982
@@ -5103,6 +5111,7 @@ Christopher M. Brown,University of Rochester,robotics,1.0,0.5,1993
 Un-Ku Moon,Oregon State University,da,2.0,0.366666666667,2007
 Björn B. Brandenburg,Max Planck Institute,bed,2.0,0.833333333333,2010
 Margrit Betke,Boston University,vision,1.0,0.5,1998
+Amy Voida,University of Colorado Boulder,chi,1.0,0.5,2016
 Junfeng Yang,Columbia University,ops,1.0,0.333333333333,2006
 Wenke Lee,Georgia Institute of Technology,sec,4.0,1.0,2009
 Alexandru Nicolau,University of California - Irvine,da,1.0,0.125,2002
@@ -5311,7 +5320,7 @@ Alois Knoll,TU Munich,bed,1.0,0.2,2015
 John Canny,University of California - Berkeley,chi,2.0,0.833333333333,2007
 Ian D. Reid 0001,University of Adelaide,vision,4.0,1.75,2008
 Claudio Orlandi,Aarhus University,crypt,1.0,0.25,2011
-Tulika Mitra,National University of Singapore,hpc,1.0,0.25,2004
+Luca Daniel,Massachusetts Institute of Technology,da,1.0,0.333333333333,2013
 Kenneth M. Anderson,University of Colorado Boulder,soft,1.0,1.0,1999
 Sariel Har-Peled,University of Illinois at Urbana-Champaign,act,6.0,3.75,2001
 Yin Zhang,University of Texas at Austin,comm,2.0,0.45,2007
@@ -5882,6 +5891,7 @@ Bing Liu 0001,University of Illinois at Chicago,nlp,2.0,0.5,2014
 Richard J. Lipton,Georgia Institute of Technology,act,2.0,1.0,1981
 Noga Alon,Tel Aviv University,act,3.0,1.7,2010
 Xiangyu Zhang,Purdue University,vision,2.0,0.45,2015
+Amy Voida,University of Colorado Boulder,chi,1.0,0.25,2014
 Alvin R. Lebeck,Duke University,arch,1.0,0.166666666667,1994
 Andrew Gordon Wilson,Cornell University,mlmining,3.0,0.95,2015
 Sri Parameswaran,UNSW,da,3.0,0.733333333333,2014
@@ -6120,7 +6130,7 @@ Anirban Dasgupta 0001,IIT Gandhinagar,act,1.0,0.25,2003
 Aditi Majumder,University of California - Irvine,vis,1.0,0.333333333333,2006
 Henning Köhler,Massey University,mod,1.0,0.5,2016
 Xiaokui Xiao,Nanyang Technological University,mod,2.0,1.0,2006
-Chitta Baral,Arizona State University,ai,1.0,0.333333333333,1999
+Michael J. Paul,University of Colorado Boulder,ir,1.0,0.333333333333,2015
 Gernot Heiser,UNSW,bed,1.0,0.2,2011
 Vineet Bafna,University of California - San Diego,bio,2.0,0.7,2003
 Changxi Zheng,Columbia University,graph,1.0,0.5,2011
@@ -6373,6 +6383,7 @@ Hasan Davulcu,Arizona State University,vis,1.0,0.111111111111,2016
 Luke Zettlemoyer,University of Washington,mlmining,1.0,0.333333333333,2014
 Michael Werman,Hebrew University of Jerusalem,mlmining,1.0,0.25,2013
 Mona T. Diab,George Washington University,nlp,1.0,1.0,2004
+Stefan Decker,RWTH Aachen,ir,1.0,0.2,2007
 Jeremy P. Spinrad,Vanderbilt University,act,1.0,0.5,1990
 Trevor N. Mudge,University of Michigan,da,1.0,0.333333333333,1996
 Yanxi Liu,Pennsylvania State University,vision,1.0,0.5,2009
@@ -7014,7 +7025,7 @@ Giovanni Agosta,Politecnico di Milano,da,1.0,0.25,2007
 Sven Koenig,University of Southern California,robotics,2.0,0.533333333333,2016
 Gerardo Pelosi,Politecnico di Milano,da,1.0,0.25,2013
 Prasad Tadepalli,Oregon State University,ai,4.0,0.983333333333,2014
-Ingrid Zukerman,Monash University,ai,1.0,0.5,1995
+Michael J. Paul,University of Colorado Boulder,ai,1.0,0.25,2016
 Kasper Hornbæk,DIKU,chi,1.0,0.5,2008
 Eugene Charniak,Brown University,nlp,1.0,0.5,2008
 Hari Balakrishnan,Massachusetts Institute of Technology,mobile,1.0,0.25,2012
@@ -7345,6 +7356,7 @@ Rajeev Alur,University of Pennsylvania,bed,1.0,0.0909090909091,2001
 Alan Bundy,University of Edinburgh,ai,1.0,0.5,1995
 Gruia-Catalin Roman,University of New Mexico,ai,1.0,0.333333333333,1991
 Russell H. Taylor,Johns Hopkins University,robotics,1.0,0.2,1995
+Ian Horrocks,University of Oxford,ai,1.0,0.5,2001
 Michael I. Jordan,University of California - Berkeley,comm,1.0,0.2,2011
 Lili Qiu,University of Texas at Austin,comm,1.0,0.142857142857,2010
 Gene Tsudik,University of California - Irvine,comm,1.0,0.333333333333,1997
@@ -7832,6 +7844,7 @@ Jun Yang,Duke University,arch,2.0,0.583333333333,2015
 Yang Richard Yang,Yale University,act,1.0,0.333333333333,2007
 Shan Lu,University of Chicago,arch,1.0,0.333333333333,2014
 H. V. Jagadish,University of Michigan,mod,1.0,0.25,1996
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.25,2005
 Richard M. Karp,University of California - Berkeley,bio,1.0,0.5,2001
 Gurindar S. Sohi,University of Wisconsin - Madison,plan,2.0,0.666666666667,2014
 Leonid A. Levin,Boston University,act,2.0,0.7,1990
@@ -9057,7 +9070,7 @@ James D. Herbsleb,Carnegie Mellon University,soft,1.0,0.25,2007
 Nathan Schneider,Georgetown University,nlp,2.0,0.366666666667,2013
 Xue Li,University of Queensland,hpc,1.0,0.333333333333,2011
 Randall Davis,Massachusetts Institute of Technology,ai,1.0,0.5,2001
-George C. Necula,University of California - Berkeley,soft,1.0,0.25,2015
+Gilles Geeraerts,Université libre de Bruxelles,log,1.0,0.333333333333,2005
 Xi Chen,Columbia University,comm,1.0,0.2,2015
 S. V. N. Vishwanathan,University of California - Santa Cruz,mlmining,1.0,0.333333333333,2003
 Miodrag Potkonjak,University of California - Los Angeles,da,2.0,0.583333333333,2015
@@ -9398,7 +9411,7 @@ Arindam Banerjee,University of Minnesota,mlmining,3.0,0.95,2004
 Gurindar S. Sohi,University of Wisconsin - Madison,arch,1.0,0.5,2011
 Kim Marriott,Monash University,plan,1.0,0.5,1993
 Raju S. Bapi,IIIT Hyderabad,ai,2.0,0.533333333333,2007
-Ping Li 0001,Rutgers University,mlmining,2.0,0.833333333333,2012
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.5,2009
 Mohamed Y. Eltabakh,Worcester Polytechnic Institute,mod,2.0,0.583333333333,2015
 Roni Rosenfeld,Carnegie Mellon University,chi,1.0,0.142857142857,2013
 Kristoffer Arnsfelt Hansen,Aarhus University,act,1.0,0.2,2012
@@ -10869,6 +10882,7 @@ Daniel Sanchez,Massachusetts Institute of Technology,arch,3.0,0.866666666667,201
 Brad A. Myers,Carnegie Mellon University,chi,2.0,0.285714285714,2002
 Glencora Borradaile,Oregon State University,act,1.0,0.333333333333,2007
 Kwan-Liu Ma,University of California - Davis,vis,1.0,0.5,2000
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.2,2014
 Krste Asanovic,University of California - Berkeley,mobile,1.0,0.5,2003
 Magdalena Balazinska,University of Washington,mod,2.0,0.45,2013
 Cindy Rubio-González,University of California - Davis,plan,1.0,0.2,2009
@@ -12134,7 +12148,7 @@ Trevor Darrell,University of California - Berkeley,mlmining,1.0,0.333333333333,1
 Richard I. Hartley,Australian National University,vision,1.0,0.333333333333,1996
 Bing Liu 0001,University of Illinois at Chicago,nlp,2.0,0.833333333333,2015
 Christian Theobalt,Max Planck Institute,vision,3.0,0.916666666667,2013
-Jenny Waycott,University of Melbourne,chi,1.0,0.142857142857,2014
+Amy Voida,University of Colorado Boulder,chi,1.0,0.5,2009
 Satish Rao,University of California - Berkeley,act,1.0,0.333333333333,2013
 Alvin R. Lebeck,Duke University,arch,1.0,0.5,1995
 Sorin Lerner,University of California - San Diego,chi,1.0,0.333333333333,2015
@@ -13134,7 +13148,7 @@ Robert C. Berwick,Massachusetts Institute of Technology,nlp,2.0,1.0,1985
 Noa Agmon,Bar-Ilan University,ai,1.0,0.2,2015
 Junghoo Cho,University of California - Los Angeles,ir,1.0,0.333333333333,2005
 Ely Porat,Bar-Ilan University,act,1.0,0.5,2012
-Ian Horrocks,University of Oxford,ai,1.0,0.5,2001
+Gianluca Bontempi,Université libre de Bruxelles,mlmining,1.0,0.333333333333,1998
 David Meger,McGill University,robotics,1.0,0.333333333333,2016
 Julita Corbalán,Polytechnic University of Catalonia,hpc,1.0,0.333333333333,2001
 Dieter Fox,University of Washington,robotics,2.0,0.366666666667,2015
@@ -13305,6 +13319,7 @@ James Worrell,University of Oxford,log,3.0,0.67619047619,2012
 David M. Mimno,Cornell University,mlmining,2.0,0.833333333333,2007
 Vijay Natarajan,IISc Bangalore,hpc,1.0,0.125,2012
 Irfan A. Essa,Georgia Institute of Technology,mlmining,1.0,0.5,2000
+Michael J. Paul,University of Colorado Boulder,nlp,1.0,0.333333333333,2010
 Mayur Naik,University of Pennsylvania,soft,1.0,0.25,2010
 Raymond T. Ng,University of British Columbia,mlmining,1.0,0.25,2004
 Aravind Srinivasan,University of Maryland - College Park,act,1.0,1.0,2007
@@ -13447,7 +13462,7 @@ Kannan Srinivasan,Ohio State University,mobile,1.0,0.2,2016
 John Shawe-Taylor,University College London,mlmining,1.0,0.2,2014
 David A. Forsyth,University of Illinois at Urbana-Champaign,graph,1.0,0.25,2011
 Isabel F. Cruz,University of Illinois at Chicago,mod,1.0,1.0,1992
-Maja J. Mataric,University of Southern California,robotics,1.0,0.5,2006
+Samuel Fiorini,Université libre de Bruxelles,act,2.0,0.45,2012
 Mathieu Blanchette,McGill University,bio,1.0,1.0,2003
 Tom Yeh,University of Colorado Boulder,ir,1.0,0.2,2011
 Yasutaka Furukawa,Washington University in St. Louis,vision,1.0,0.25,2010
@@ -13983,7 +13998,7 @@ Kirk Pruhs,University of Pittsburgh,act,1.0,0.5,1995
 Jeffrey Huang,EPFL,chi,2.0,0.342857142857,2010
 Robert Patro,Stony Brook University,bio,1.0,0.5,2013
 H. V. Jagadish,University of Michigan,mod,3.0,0.783333333333,2004
-Ping Li 0001,Rutgers University,mlmining,1.0,0.333333333333,2008
+Stephen Voida,University of Colorado Boulder,chi,2.0,0.366666666667,2013
 Satish Rao,University of California - Berkeley,act,2.0,0.833333333333,1988
 Jitendra Malik,University of California - Berkeley,vision,3.0,1.25,2002
 James Davis,University of California - Santa Cruz,graph,2.0,0.416666666667,2005
@@ -14860,6 +14875,7 @@ Karthik Sridharan,Cornell University,mlmining,1.0,0.25,2009
 Ben Shneiderman,University of Maryland - College Park,chi,1.0,0.333333333333,1992
 Alex Pang,University of California - Santa Cruz,mod,1.0,0.25,1999
 Ross A. Knepper,Cornell University,robotics,2.0,0.583333333333,2015
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.25,2016
 A. Jefferson Offutt,George Mason University,soft,1.0,0.333333333333,1993
 Subhash Khot,New York University,act,4.0,2.75,2004
 Yixin Chen,Washington University in St. Louis,mlmining,1.0,0.333333333333,2005
@@ -15676,6 +15692,7 @@ Guy Kindler,Hebrew University of Jerusalem,act,1.0,0.2,1999
 Mohamed Sarwat,Arizona State University,mod,1.0,0.5,2016
 Xenofon D. Koutsoukos,Vanderbilt University,bed,2.0,0.583333333333,2005
 Alistair Moffat,University of Melbourne,ir,1.0,0.25,2015
+Emmanuel Filiot,Université libre de Bruxelles,log,1.0,0.333333333333,2014
 Paul Dourish,University of California - Irvine,chi,1.0,0.166666666667,1999
 Kurt Mehlhorn,Max Planck Institute,act,1.0,0.333333333333,2016
 Michael Gleicher,University of Wisconsin - Madison,chi,2.0,0.5,2012
@@ -16726,6 +16743,7 @@ Hanghang Tong,Arizona State University,mlmining,1.0,0.333333333333,2009
 David R. O'Hallaron,Carnegie Mellon University,hpc,1.0,0.0909090909091,2003
 Dale Schuurmans,University of Alberta,ai,2.0,0.583333333333,2015
 Vladimir Lifschitz,University of Texas at Austin,ai,2.0,0.833333333333,2007
+Jenny Waycott,University of Melbourne,chi,1.0,0.142857142857,2014
 Krzysztof Pawlikowski,University of Canterbury,comm,1.0,0.5,1996
 Greg Turk,Georgia Institute of Technology,graph,1.0,0.5,2008
 Sethu Vijayakumar,University of Edinburgh,ai,2.0,0.666666666667,2007
@@ -18535,6 +18553,7 @@ Boleslaw K. Szymanski,Rensselaer Polytechnic Institute,hpc,1.0,0.333333333333,19
 Stanley B. Zdonik,Brown University,mod,1.0,0.333333333333,2014
 Antonio González 0001,Polytechnic University of Catalonia,arch,1.0,0.333333333333,2014
 Deming Chen,University of Illinois at Urbana-Champaign,da,2.0,0.833333333333,2009
+Tevfik Bultan,University of California - Santa Barbara,soft,1.0,0.5,2010
 Tim Kraska,Brown University,mod,4.0,0.66978021978,2015
 Robert R. Kessler,University of Utah,arch,1.0,0.5,1978
 Ari Juels,Cornell University,sec,3.0,1.08333333333,2007
@@ -18842,6 +18861,7 @@ Chris Bailey-Kellogg,Dartmouth College,bio,1.0,0.333333333333,2006
 Lisong Xu,University of Nebraska,comm,1.0,0.5,2005
 Zhendong Su,University of California - Davis,plan,1.0,0.2,2002
 Hu Fu,University of British Columbia,act,1.0,0.166666666667,2012
+Stefan Decker,RWTH Aachen,ir,1.0,0.111111111111,2002
 Francesco Orabona,Stony Brook University,mlmining,2.0,1.0,2010
 P. Sadayappan,Ohio State University,robotics,1.0,0.25,1988
 Yoshua Bengio,University of Montreal,nlp,4.0,1.00952380952,2016
@@ -19711,6 +19731,7 @@ Benjamin Livshits,Imperial College London,sec,1.0,0.5,2014
 José María Cela,Polytechnic University of Catalonia,hpc,1.0,0.333333333333,2010
 Donald P. Greenberg,Cornell University,graph,2.0,0.583333333333,2000
 Lina Yao,UNSW,chi,1.0,0.166666666667,2016
+David A. McAllester,Toyota Technological Institute at Chicago,log,1.0,0.25,1996
 Peter A. Dinda,Northwestern University,hpc,1.0,0.25,2013
 Joachim M. Buhmann,ETH Zurich,mlmining,2.0,0.833333333333,1993
 Eleazar Eskin,University of California - Los Angeles,bio,2.0,0.583333333333,2007
@@ -20128,7 +20149,7 @@ Joseph Naor,Technion - Israel Institute of Technology,act,3.0,1.25,1997
 Mohsen Ghaffari,ETH Zurich,act,4.0,1.41666666667,2014
 Aixin Sun,Nanyang Technological University,ir,3.0,1.16666666667,2014
 Michael James Gratton,UNSW,ai,1.0,1.0,2013
-Neil Immerman,University of Massachusetts Amherst,log,1.0,0.5,1987
+Michael J. Paul,University of Colorado Boulder,nlp,1.0,0.5,2009
 Lu Su,University at Buffalo,mobile,1.0,0.166666666667,2011
 Alan K. Mackworth,University of British Columbia,ai,1.0,0.333333333333,1990
 John F. Canny,University of California - Berkeley,vision,1.0,0.333333333333,1988
@@ -20212,6 +20233,7 @@ J. Doug Tygar,University of California - Berkeley,sec,1.0,0.5,1994
 Martial Hebert,Carnegie Mellon University,vision,6.0,2.03333333333,2008
 Anshul Kundaje,Stanford University,mlmining,1.0,0.166666666667,2016
 Alan Sussman,University of Maryland - College Park,hpc,1.0,0.25,2001
+Ping Li 0001,Rutgers University,mlmining,1.0,1.0,2009
 Peter Steenkiste,Carnegie Mellon University,comm,1.0,0.5,1998
 Tevfik Bultan,University of California - Santa Barbara,soft,1.0,0.2,2016
 Zhendong Su,University of California - Davis,soft,4.0,1.36666666667,2015
@@ -20339,7 +20361,7 @@ Kirk Pruhs,University of Pittsburgh,act,1.0,0.5,1994
 Jeffrey Huang,EPFL,chi,1.0,0.5,2009
 Rupak Majumdar,Max Planck Institute,ai,1.0,0.25,2014
 H. V. Jagadish,University of Michigan,mod,4.0,1.47619047619,2007
-Ping Li 0001,Rutgers University,mlmining,1.0,1.0,2009
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.333333333333,2012
 Barzan Mozafari,University of Michigan,mod,1.0,0.333333333333,2016
 Satish Rao,University of California - Berkeley,act,1.0,0.2,1989
 Todd M. Austin,University of Michigan,arch,1.0,0.333333333333,2001
@@ -21079,7 +21101,7 @@ Barbara Liskov,Massachusetts Institute of Technology,ops,1.0,0.5,1999
 Christoph H. Lampert,IST Austria,vision,3.0,1.83333333333,2009
 Lars Birkedal,Aarhus University,log,1.0,0.333333333333,2005
 Giuseppe Carenini,University of British Columbia,ai,1.0,0.333333333333,2016
-Philipp Krähenbühl,University of Texas at Austin,graph,1.0,0.25,2010
+Tuomas Sandholm,Carnegie Mellon University,ai,6.0,2.33333333333,2007
 Isil Dillig,University of Texas at Austin,plan,2.0,0.583333333333,2011
 Yusu Wang,Ohio State University,da,1.0,0.25,2005
 Volkan Isler,University of Minnesota,robotics,3.0,0.916666666667,2011
@@ -21106,6 +21128,7 @@ William J. Dally,Stanford University,plan,1.0,0.333333333333,1989
 Agnes Hui Chan,Northeastern University,crypt,1.0,0.25,1992
 Krithi Ramamritham,IIT Bombay,bed,1.0,0.5,1987
 Richard H. Lathrop,University of California - Irvine,bio,1.0,0.2,2007
+Piotr Indyk,Massachusetts Institute of Technology,mlmining,2.0,0.533333333333,2015
 Matthew B. Dwyer,University of Nebraska,soft,1.0,0.25,2002
 Henry M. Levy,University of Washington,ops,2.0,0.45,1989
 Jacob Sorber,Clemson University,mobile,1.0,0.0769230769231,2016
@@ -21341,6 +21364,7 @@ Luis Rademacher,Ohio State University,act,1.0,0.5,2010
 Frank Wang,University of Kent,sec,1.0,0.142857142857,2012
 Carlo Pinciroli,Worcester Polytechnic Institute,robotics,2.0,0.271428571429,2011
 Lance Fortnow,Georgia Institute of Technology,act,2.0,0.392857142857,2003
+Bernard Fortz,Université libre de Bruxelles,comm,1.0,0.5,2000
 Ram Nevatia,University of Southern California,vision,1.0,0.5,2014
 Daniel Walter,Australian National University,vision,1.0,0.2,2015
 Moses Charikar,Stanford University,act,1.0,0.5,2017
@@ -21443,6 +21467,7 @@ Jeff Erickson,University of Illinois at Urbana-Champaign,act,1.0,1.0,2010
 Alex C. Snoeren,University of California - San Diego,ops,2.0,0.267857142857,2005
 Julia Chuzhoy,Toyota Technological Institute at Chicago,act,2.0,0.833333333333,2016
 Dani Lischinski,Hebrew University of Jerusalem,vision,2.0,0.666666666667,2013
+Yves Roggeman,Université libre de Bruxelles,crypt,1.0,1.0,1989
 Vipul Goyal,Carnegie Mellon University,crypt,1.0,1.0,2007
 Kian-Lee Tan,National University of Singapore,mod,1.0,0.333333333333,1990
 Shie Mannor,Technion - Israel Institute of Technology,mlmining,8.0,2.83333333333,2014
@@ -22334,7 +22359,7 @@ Chunhua Shen,University of Adelaide,vision,9.0,2.34285714286,2015
 Robert C. Miller,Massachusetts Institute of Technology,comm,1.0,0.25,2014
 Anant Agarwal,Massachusetts Institute of Technology,arch,1.0,0.111111111111,1995
 Hai Zhou,Northwestern University,da,2.0,0.75,2012
-Tuomas Sandholm,Carnegie Mellon University,ai,6.0,2.33333333333,2007
+Philipp Krähenbühl,University of Texas at Austin,graph,1.0,0.25,2010
 Martial Hebert,Carnegie Mellon University,ai,1.0,0.25,2012
 Peter K. Allen,Columbia University,robotics,1.0,0.333333333333,2001
 Mark Oskin,University of Washington,arch,2.0,0.5,2003
@@ -23220,7 +23245,7 @@ Aaron F. Bobick,Georgia Institute of Technology,chi,1.0,0.333333333333,1997
 Paul Feautrier,Ecole Normale Superieure de Lyon,hpc,1.0,1.0,1988
 Nicola Gatti 0001,Politecnico di Milano,ai,3.0,1.0,2017
 K. K. Ramakrishnan,University of California - Riverside,metrics,1.0,0.5,1997
-Luca Daniel,Massachusetts Institute of Technology,da,1.0,0.333333333333,2013
+David J. Crandall,Indiana University,ir,1.0,0.25,2009
 Jon Crowcroft,University of Cambridge,comm,1.0,0.5,1997
 Pranjal Awasthi,Rutgers University,mlmining,1.0,0.5,2010
 Dexter Kozen,Cornell University,plan,1.0,0.5,1984
@@ -23529,6 +23554,7 @@ Rajeev Balasubramonian,University of Utah,arch,2.0,0.333333333333,2010
 Martin Strauss,University of Michigan,crypt,1.0,0.333333333333,1998
 Brad A. Myers,Carnegie Mellon University,chi,1.0,0.333333333333,2000
 T. S. E. Maibaum,McMaster University,mod,1.0,0.333333333333,1983
+Stefan Langerman,Université libre de Bruxelles,act,2.0,0.533333333333,2008
 Simon Peter,University of Texas at Austin,arch,1.0,0.2,2016
 Jeffrey Heer,University of Washington,chi,1.0,0.333333333333,2005
 Magdalena Balazinska,University of Washington,mod,3.0,1.0,2015
@@ -23657,6 +23683,7 @@ Philip S. Yu,University of Illinois at Chicago,ai,1.0,0.333333333333,2007
 Neil Spring,University of Maryland - College Park,metrics,1.0,0.25,2010
 Niranjan Balasubramanian,Stony Brook University,ir,1.0,0.333333333333,2010
 Junaed Sattar,University of Minnesota,robotics,2.0,0.833333333333,2014
+Tom Lenaerts,Université libre de Bruxelles,ai,2.0,0.583333333333,2013
 Cristian Danescu-Niculescu-Mizil,Cornell University,nlp,1.0,0.333333333333,2009
 Rebecca N. Wright,Rutgers University,sec,2.0,0.75,1996
 Michael Buro,University of Alberta,ai,1.0,0.5,2015
@@ -23813,7 +23840,7 @@ Pascal Fua,EPFL,vision,10.0,2.73333333333,2010
 Laurie J. Hendren,McGill University,soft,1.0,0.166666666667,2012
 Prasad Tadepalli,Oregon State University,ai,4.0,0.97619047619,2015
 Sanjeev Arora,Princeton University,mlmining,1.0,0.2,2002
-Mihir Bellare,University of California - San Diego,act,1.0,0.5,1988
+Jed R. Brubaker,University of Colorado Boulder,chi,1.0,0.2,2013
 Gao Cong,Nanyang Technological University,mod,1.0,0.25,2005
 Lili Qiu,University of Texas at Austin,mobile,1.0,0.333333333333,2016
 V. K. Prasanna Kumar,University of Southern California,vision,1.0,0.5,1991
@@ -24174,6 +24201,7 @@ Thomas Neumann 0001,TU Munich,mod,2.0,1.5,2011
 Qiang Liu,Dartmouth College,mlmining,2.0,0.666666666667,2015
 Michael I. Jordan,University of California - Berkeley,mlmining,1.0,0.5,1991
 Anthony Hunter,University College London,ai,1.0,0.5,2011
+Samuel Fiorini,Université libre de Bruxelles,act,1.0,0.2,2010
 Manish Gupta 0001,IIIT Bangalore,mlmining,1.0,0.25,2012
 Ian D. Reid 0001,University of Adelaide,vision,2.0,0.666666666667,2007
 Janos Simon,University of Chicago,act,1.0,0.333333333333,1982
@@ -24745,6 +24773,7 @@ Hadas Kress-Gazit,Cornell University,robotics,3.0,0.866666666667,2007
 Christos Faloutsos,Carnegie Mellon University,mod,1.0,0.333333333333,2010
 Ananth Grama,Purdue University,plan,1.0,0.333333333333,2007
 Yoshua Bengio,University of Montreal,nlp,1.0,0.333333333333,2010
+Maja J. Mataric,University of Southern California,robotics,1.0,0.5,2006
 Frédéric Blanqui,Ecole Normale Superieure de Cachan,log,1.0,1.0,2001
 Earl T. Barr,University College London,sec,1.0,0.2,2007
 Carlo Tomasi,Duke University,vision,3.0,1.03333333333,2011
@@ -24799,6 +24828,7 @@ Bing Liu 0001,University of Illinois at Chicago,nlp,1.0,0.333333333333,2009
 Joseph Y. Halpern,Cornell University,plan,1.0,0.5,1981
 Noga Alon,Tel Aviv University,act,6.0,2.25,2005
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,ai,1.0,0.333333333333,2012
+Amy Voida,University of Colorado Boulder,chi,1.0,0.333333333333,2011
 Alvin R. Lebeck,Duke University,arch,1.0,0.1,1993
 Chris H. Q. Ding,University of Texas at Arlington,vision,2.0,0.5,2012
 Johan A. Pouwelse,TU Delft,mobile,1.0,0.333333333333,2001
@@ -24954,6 +24984,7 @@ Fahiem Bacchus,University of Toronto,log,1.0,0.2,2014
 Shie Mannor,Technion - Israel Institute of Technology,arch,1.0,0.25,2015
 Satish Narayanasamy,University of Michigan,arch,1.0,0.2,2012
 Ravishankar K. Iyer,University of Illinois at Urbana-Champaign,arch,1.0,0.333333333333,1994
+Emmanuel Filiot,Université libre de Bruxelles,log,2.0,0.583333333333,2016
 Victor Shoup,New York University,sec,1.0,0.333333333333,2006
 Deepak Ganesan,University of Massachusetts Amherst,mobile,1.0,0.2,2003
 Kang G. Shin,University of Michigan,comm,2.0,0.75,2001
@@ -25082,6 +25113,7 @@ Tao Xie,University of Illinois at Urbana-Champaign,soft,2.0,0.5,2011
 Srinivasan Seshan,Carnegie Mellon University,comm,2.0,0.533333333333,2004
 Elaine Shi,Cornell University,sec,4.0,0.933333333333,2016
 Sencun Zhu,Pennsylvania State University,sec,1.0,0.25,2004
+Casey Fiesler,University of Colorado Boulder,chi,1.0,0.333333333333,2016
 Nick Sumner,Simon Fraser University,hpc,1.0,0.2,2016
 Gregory Valiant,Stanford University,act,1.0,0.5,2016
 Borzoo Bonakdarpour,McMaster University,bed,1.0,0.333333333333,2008
@@ -25302,6 +25334,7 @@ Fan R. K. Chung,University of California - San Diego,comm,1.0,0.25,2004
 Mona T. Diab,George Washington University,nlp,1.0,0.0666666666667,2009
 Mitesh M. Khapra,IIT Madras,ai,1.0,0.25,2010
 Vijay V. Vazirani,Georgia Institute of Technology,act,2.0,0.583333333333,2005
+Michael J. Paul,University of Colorado Boulder,nlp,2.0,0.833333333333,2013
 Ian Horrocks,University of Oxford,ai,2.0,0.5,2007
 Zhenming Liu,College of William and Mary,act,1.0,0.5,2013
 Jacobus E. van der Merwe,University of Utah,mobile,1.0,0.2,2015
@@ -25817,6 +25850,7 @@ Thore Graepel,University College London,plan,1.0,0.125,2013
 Nick Koudas,University of Toronto,mod,2.0,0.666666666667,2000
 Gail-Joon Ahn,Arizona State University,sec,1.0,0.25,2016
 Jur van den Berg,University of Utah,ai,1.0,0.333333333333,2012
+Jean Cardinal,Université libre de Bruxelles,act,1.0,0.25,2014
 Fahiem Bacchus,University of Toronto,ai,1.0,0.25,1994
 Junghoo Cho,University of California - Los Angeles,ir,1.0,0.5,2007
 James F. O'Brien,University of California - Berkeley,graph,1.0,0.333333333333,2000
@@ -26121,6 +26155,7 @@ Dong Xuan,Ohio State University,comm,2.0,0.416666666667,2009
 Hal Daumé III,University of Maryland - College Park,nlp,3.0,0.783333333333,2016
 Mel Slater,University College London,graph,1.0,0.142857142857,1999
 Alex Aiken,Stanford University,plan,2.0,0.583333333333,2016
+Manish Parashar,Rutgers University,hpc,2.0,0.583333333333,2010
 Xiaobo Sharon Hu,University of Notre Dame,bed,1.0,0.5,2000
 M. Sheelagh T. Carpendale,University of Calgary,vis,2.0,0.583333333333,2008
 Richard J. Lipton,Georgia Institute of Technology,act,1.0,0.2,1991
@@ -26177,6 +26212,7 @@ Yair Bartal,Hebrew University of Jerusalem,act,1.0,0.25,1994
 Donald E. Porter,University of North Carolina,ops,1.0,0.2,2009
 John R. Gilbert,University of California - Santa Barbara,act,1.0,0.333333333333,1990
 Xiaoning Ding,NJIT,ops,1.0,0.166666666667,2010
+Chitta Baral,Arizona State University,ai,1.0,0.333333333333,1999
 Yonatan Aumann,Bar-Ilan University,act,1.0,0.125,2006
 Blase Ur,University of Chicago,sec,1.0,0.142857142857,2016
 Kwan-Liu Ma,University of California - Davis,hpc,1.0,0.166666666667,2002
@@ -26597,7 +26633,7 @@ Frank Dellaert,Georgia Institute of Technology,robotics,2.0,0.5,2012
 K. Selçuk Candan,Arizona State University,mod,1.0,0.2,2005
 Amitabh Varshney,University of Maryland - College Park,vis,1.0,0.5,2011
 Tulika Mitra,National University of Singapore,bed,1.0,0.25,2005
-David A. McAllester,Toyota Technological Institute at Chicago,log,1.0,0.25,1996
+David Wingate,Brigham Young University,mlmining,1.0,0.25,2014
 John C. Mitchell,Stanford University,log,1.0,0.5,1987
 Kunle Olukotun,Stanford University,mlmining,1.0,0.111111111111,2011
 Tat-Seng Chua,National University of Singapore,ir,2.0,0.583333333333,2010
@@ -26766,7 +26802,7 @@ Andries van Dam,Brown University,arch,1.0,0.25,1980
 Shan Lu,University of Chicago,arch,1.0,0.142857142857,2011
 Gerald DeJong,University of Illinois at Urbana-Champaign,vision,1.0,0.5,2005
 Santosh Pande,Georgia Institute of Technology,comm,1.0,0.5,2006
-Piotr Indyk,Massachusetts Institute of Technology,mlmining,2.0,0.533333333333,2015
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.2,2006
 Barzan Mozafari,University of Michigan,mod,1.0,0.333333333333,2010
 Satish Rao,University of California - Berkeley,act,5.0,1.5,2003
 Marcelo P. Fiore,University of Cambridge,log,2.0,0.833333333333,1998
@@ -27964,7 +28000,7 @@ Malte Jung,Cornell University,chi,1.0,0.333333333333,2012
 Andrew McGregor 0001,University of Massachusetts Amherst,act,2.0,0.833333333333,2012
 My T. Thai,University of Florida,comm,2.0,0.583333333333,2016
 Idit Keidar,Technion - Israel Institute of Technology,soft,1.0,0.25,2000
-John D. Lafferty,University of Chicago,arch,1.0,0.25,2015
+Ping Li 0001,Rutgers University,mlmining,1.0,0.333333333333,2008
 Guoliang Xing,Michigan State University,bed,2.0,0.416666666667,2009
 Steven Swanson,University of California - San Diego,arch,1.0,0.25,2003
 Gerhard Weikum,Max Planck Institute,mod,2.0,0.833333333333,1991
@@ -28516,6 +28552,7 @@ James Caverlee,Texas A&M University,ir,1.0,0.25,2013
 Clayton H. Lewis,University of Colorado Boulder,chi,1.0,0.333333333333,1997
 Alireza Entezari,University of Florida,vis,1.0,0.5,2011
 Raghu Machiraju,Ohio State University,vis,1.0,0.333333333333,2002
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.333333333333,2011
 Gil Segev,Hebrew University of Jerusalem,act,1.0,0.25,2007
 Bruno F. Ribeiro,Purdue University,metrics,1.0,0.25,2006
 Willem Heijltjes,University of Bath,log,1.0,0.5,2015
@@ -29264,6 +29301,7 @@ Ran El-Yaniv,Technion - Israel Institute of Technology,mlmining,1.0,0.25,2014
 Pedro F. Felzenszwalb,Brown University,vision,1.0,0.5,2007
 Subhash Suri,University of California - Santa Barbara,act,1.0,0.5,1991
 Dong Xuan,Ohio State University,sec,1.0,0.2,2007
+Jed R. Brubaker,University of Colorado Boulder,chi,2.0,0.75,2016
 Eli Upfal,Brown University,act,3.0,1.25,1986
 Kaleem Siddiqi,McGill University,vision,1.0,0.5,2001
 Matthijs T. J. Spaan,TU Delft,robotics,2.0,0.833333333333,2005
@@ -29349,7 +29387,7 @@ James M. Rehg,Georgia Institute of Technology,ai,1.0,0.25,2005
 Shan Lu,University of Chicago,soft,1.0,0.166666666667,2014
 Dawson R. Engler,Stanford University,sec,2.0,0.4,2006
 Luca Daniel,Massachusetts Institute of Technology,da,3.0,1.08333333333,2005
-Tevfik Bultan,University of California - Santa Barbara,soft,1.0,0.5,2010
+Eric Allender,Rutgers University,act,1.0,0.333333333333,1996
 Zhongfei (Mark) Zhang,Binghamton University,mlmining,1.0,0.25,2011
 Michael L. Scott,University of Rochester,arch,1.0,0.2,2003
 Sanjoy K. Baruah,University of North Carolina,act,1.0,0.25,1993
@@ -29624,7 +29662,7 @@ Nicola Gatti 0001,Politecnico di Milano,ai,3.0,1.33333333333,2011
 K. K. Ramakrishnan,University of California - Riverside,metrics,2.0,0.4,2011
 Mark G. J. van den Brand,TU Eindhoven,chi,1.0,0.142857142857,2015
 Orna Grumberg,Technion - Israel Institute of Technology,plan,1.0,0.333333333333,1992
-Melanie E. Moses,University of New Mexico,robotics,1.0,0.333333333333,2015
+Jed R. Brubaker,University of Colorado Boulder,chi,2.0,0.533333333333,2014
 Kyle Jamieson,Princeton University,ops,1.0,0.2,2014
 Jon Crowcroft,University of Cambridge,comm,1.0,0.5,1991
 Vincent Ng,University of Texas at Dallas,ai,1.0,1.0,2017
@@ -29683,6 +29721,7 @@ Peter Steenkiste,Carnegie Mellon University,comm,1.0,0.2,2004
 George C. Polyzos,Athens University of Economics and Business,comm,1.0,0.333333333333,2006
 Alan D. Blair,UNSW,mlmining,1.0,0.333333333333,1999
 Philip S. Yu,University of Illinois at Chicago,metrics,1.0,0.333333333333,1993
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.5,2000
 Yuval Rabani,Hebrew University of Jerusalem,act,1.0,0.5,2009
 Gul Agha,University of Illinois at Urbana-Champaign,log,1.0,0.333333333333,2004
 Magdalena Balazinska,University of Washington,mod,1.0,0.25,2007
@@ -29809,6 +29848,7 @@ Rajeev Balasubramonian,University of Utah,arch,1.0,0.166666666667,2013
 George C. Polyzos,Athens University of Economics and Business,comm,1.0,0.5,1999
 Brad A. Myers,Carnegie Mellon University,chi,1.0,0.166666666667,2015
 Kwan-Liu Ma,University of California - Davis,vis,1.0,0.5,2005
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.166666666667,2009
 Subhash Suri,University of California - Santa Barbara,ai,1.0,0.5,2011
 Michael Pradel,TU Darmstadt,plan,1.0,0.5,2012
 Cyrus Shahabi,University of Southern California,mod,1.0,0.333333333333,2016
@@ -30409,7 +30449,7 @@ Shuiwang Ji,Washington State University,vision,1.0,0.5,2008
 Inderjit S. Dhillon,University of Texas at Austin,ir,1.0,0.2,2015
 Mirella Lapata,University of Edinburgh,ai,1.0,0.166666666667,2013
 Yuanfang Cai,Drexel University,soft,1.0,0.333333333333,2014
-David J. Crandall,Indiana University,ir,1.0,0.25,2009
+Joël Goossens,Université libre de Bruxelles,bed,1.0,0.5,2008
 Jorgen Peddersen,UNSW,da,1.0,0.333333333333,2011
 Amit Sahai,University of California - Los Angeles,sec,1.0,0.25,2006
 Lawrence Rauchwerger,Texas A&M University,arch,1.0,0.333333333333,1993
@@ -30926,6 +30966,7 @@ Andrew Gordon Wilson,Cornell University,mlmining,1.0,0.5,2010
 Mainak Chaudhuri,IIT Kanpur,hpc,1.0,0.333333333333,2002
 Hanspeter Pfister,Harvard University,vis,6.0,0.995238095238,2014
 Frank Vetere,University of Melbourne,chi,1.0,0.333333333333,2009
+Michael J. Paul,University of Colorado Boulder,nlp,2.0,1.5,2012
 Soumen Chakrabarti,IIT Bombay,ir,2.0,0.583333333333,2002
 Rohini K. Srihari,University at Buffalo,ai,1.0,0.5,1994
 Anders Robertsson,Lund University,robotics,2.0,0.75,2003
@@ -31923,6 +31964,7 @@ Ouri Wolfson,University of Illinois at Urbana-Champaign,mod,1.0,0.25,1991
 Ely Porat,Bar-Ilan University,act,2.0,0.75,2010
 Eytan Ruppin,University of Maryland - College Park,mlmining,1.0,0.2,2006
 Jie Yang 0003,Florida State University,mobile,2.0,0.333333333333,2014
+Gianluca Bontempi,Université libre de Bruxelles,mlmining,1.0,0.333333333333,1999
 Yuvraj Agarwal,Carnegie Mellon University,mobile,1.0,0.166666666667,2007
 Mikkel Thorup,DIKU,metrics,1.0,0.333333333333,2004
 Vivek Sarkar,Rice University,hpc,1.0,0.25,2009
@@ -32082,6 +32124,7 @@ Alona Fyshe,University of Victoria,ai,1.0,0.1,2006
 Nicholas R. Jennings,Imperial College London,chi,1.0,0.333333333333,2012
 Kevin B. Korb,Monash University,ai,1.0,0.25,1999
 Nachum Dershowitz,Tel Aviv University,log,1.0,0.333333333333,1986
+George C. Necula,University of California - Berkeley,soft,1.0,0.25,2015
 Peter Stone,University of Texas at Austin,mlmining,1.0,0.5,2011
 Maya Cakmak,University of Washington,robotics,2.0,0.5,2007
 Elaine Shi,Cornell University,sec,8.0,1.60952380952,2014
@@ -32980,7 +33023,7 @@ Michael L. Littman,Brown University,ai,1.0,0.5,1998
 Songwu Lu,University of California - Los Angeles,sec,1.0,0.2,2016
 Ponnurangam Kumaraguru,IIIT Delhi,chi,1.0,0.333333333333,2011
 Richard Mann,University of Waterloo,vision,2.0,1.0,2001
-Eric Allender,Rutgers University,act,1.0,0.333333333333,1996
+Michael J. Paul,University of Colorado Boulder,ai,1.0,0.5,2010
 Yuan Zhou,Indiana University,robotics,1.0,0.166666666667,2014
 Stephen Marsland,Massey University,ai,2.0,0.666666666667,2011
 Somesh Jha,University of Wisconsin - Madison,plan,1.0,0.333333333333,2012
@@ -32994,6 +33037,7 @@ Steven Skiena,Stony Brook University,mlmining,1.0,0.333333333333,2014
 Shan Lu,University of Chicago,arch,1.0,0.333333333333,2010
 Barbara Liskov,Massachusetts Institute of Technology,sec,1.0,0.5,1998
 H. V. Jagadish,University of Michigan,mod,5.0,2.16666666667,1992
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.166666666667,2001
 Michael Mitzenmacher,Harvard University,mlmining,1.0,0.166666666667,2009
 Jason Cong,University of California - Los Angeles,da,2.0,0.833333333333,2010
 Shlomo Zilberstein,University of Massachusetts Amherst,vision,1.0,0.25,1999
@@ -33656,6 +33700,7 @@ Paul Valiant,Brown University,act,2.0,1.0,2016
 Alberto L. Sangiovanni-Vincentelli,University of California - Berkeley,bed,2.0,0.666666666667,2002
 Kaizhong Zhang,Western University,bio,1.0,0.2,2005
 Ron Steinfeld,Monash University,crypt,1.0,0.25,2007
+Samuel Fiorini,Université libre de Bruxelles,act,1.0,0.2,2009
 Jasleen Kaur,University of North Carolina,comm,1.0,0.5,2003
 Sean W. Smith,Dartmouth College,sec,1.0,0.333333333333,2005
 Amos Fiat,Tel Aviv University,act,1.0,0.333333333333,2008
@@ -34477,7 +34522,7 @@ Tova Milo,Tel Aviv University,mod,1.0,0.5,1994
 Paul Beame,University of Washington,act,1.0,0.5,2008
 Xenofon D. Koutsoukos,Vanderbilt University,bed,1.0,0.2,2008
 Gérard G. Medioni,University of Southern California,robotics,1.0,0.333333333333,1988
-Stefan Decker,RWTH Aachen,ir,1.0,0.2,2007
+Emmanuel Filiot,Université libre de Bruxelles,log,1.0,0.333333333333,2009
 Emad Shihab,Concordia University,soft,1.0,0.2,2011
 Jarke J. van Wijk,TU Eindhoven,vis,1.0,0.5,2001
 Prasad Raghavendra,University of California - Berkeley,act,3.0,0.97619047619,2010
@@ -34584,6 +34629,7 @@ Donald P. Greenberg,Cornell University,graph,1.0,0.2,2014
 S. Rao Kosaraju,Johns Hopkins University,act,3.0,3.0,1979
 Haim Kaplan,Tel Aviv University,act,1.0,0.5,2004
 Raghu Machiraju,Ohio State University,vis,1.0,0.2,2010
+Ingrid Zukerman,Monash University,ai,1.0,0.5,1995
 Balaji Prabhakar,Stanford University,act,1.0,0.333333333333,2002
 Kamalika Chaudhuri,University of California - San Diego,mlmining,2.0,0.833333333333,2012
 Philip N. Klein,Brown University,sec,1.0,0.333333333333,2000
@@ -35988,6 +36034,7 @@ Ming Li 0001,University of Waterloo,act,2.0,0.7,1993
 Brad A. Myers,Carnegie Mellon University,chi,3.0,1.08333333333,2014
 Alan S. Willsky,Massachusetts Institute of Technology,mlmining,4.0,1.33333333333,2007
 Kwan-Liu Ma,University of California - Davis,vis,3.0,1.2,2004
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.166666666667,2010
 Salil P. Vadhan,Harvard University,crypt,1.0,0.25,2009
 Björn B. Brandenburg,Max Planck Institute,bed,2.0,0.833333333333,2016
 Thomas A. Henzinger,IST Austria,plan,2.0,0.75,2002
@@ -37107,6 +37154,7 @@ James M. Rehg,Georgia Institute of Technology,vision,1.0,0.5,2000
 Jonathan Ullman,Northeastern University,act,1.0,0.25,2010
 Michael J. Pazzani,University of California - Riverside,mlmining,3.0,1.83333333333,1995
 Noga Alon,Tel Aviv University,act,2.0,0.583333333333,2014
+Amy Voida,University of Colorado Boulder,chi,1.0,0.333333333333,2002
 Carsten Rother,TU Dresden,vision,8.0,2.16666666667,2009
 Sri Parameswaran,UNSW,da,2.0,0.583333333333,2010
 Justine Cassell,Carnegie Mellon University,nlp,1.0,0.2,2001
@@ -38130,6 +38178,7 @@ Nick Koudas,University of Toronto,mod,4.0,0.95,2007
 Daniel E. Atkins,University of Michigan,hpc,1.0,0.2,2006
 Thomas G. Dietterich,Oregon State University,chi,1.0,0.166666666667,2010
 Jeff Erickson,University of Illinois at Urbana-Champaign,robotics,1.0,0.25,2003
+Jean Cardinal,Université libre de Bruxelles,act,2.0,0.366666666667,2009
 Huan Liu,Arizona State University,ir,1.0,0.333333333333,2014
 Sarit Kraus,Bar-Ilan University,ai,5.0,1.91666666667,2005
 Ouri Wolfson,University of Illinois at Urbana-Champaign,mod,1.0,0.5,1990
@@ -39771,6 +39820,7 @@ Peter J. Haas,University of Massachusetts Amherst,mod,3.0,0.842857142857,2004
 Yang Richard Yang,Yale University,comm,3.0,0.616666666667,2012
 John Shawe-Taylor,University College London,ai,1.0,0.25,2016
 Thad Starner,Georgia Institute of Technology,chi,2.0,0.309523809524,2004
+Gwenaël Joret,Université libre de Bruxelles,act,1.0,0.2,2009
 Süleyman Cenk Sahinalp,Indiana University,act,1.0,0.333333333333,2006
 Mehryar Mohri,New York University,mlmining,4.0,1.58333333333,2015
 Dean M. Tullsen,University of California - San Diego,arch,2.0,0.75,2002
@@ -41712,6 +41762,7 @@ Leo Bachmair,Stony Brook University,ai,1.0,0.2,1995
 Val Tannen,University of Pennsylvania,mod,2.0,0.5,2011
 Ion Stoica,University of California - Berkeley,mod,1.0,0.25,2007
 Sanjeev Setia,George Mason University,sec,1.0,0.25,2004
+Ping Li 0001,Rutgers University,mlmining,2.0,0.833333333333,2012
 Chinya V. Ravishankar,University of California - Riverside,mod,1.0,0.5,1994
 Jakob Eriksson,University of Illinois at Chicago,mobile,1.0,0.25,2010
 C. Karen Liu,Georgia Institute of Technology,graph,1.0,0.5,2010
@@ -41856,7 +41907,7 @@ Thomas Wies,New York University,log,1.0,0.2,2009
 Kihong Park,Purdue University,comm,1.0,0.5,1999
 Barbara G. Ryder,Virginia Tech,plan,1.0,0.5,1992
 James Hays,Georgia Institute of Technology,ai,1.0,0.166666666667,2016
-Manish Parashar,Rutgers University,hpc,2.0,0.583333333333,2010
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.5,2016
 C. Lee Giles,Pennsylvania State University,ir,2.0,0.5,2002
 Andrew W. Appel,Princeton University,plan,1.0,0.5,1989
 Willy Zwaenepoel,EPFL,hpc,1.0,0.333333333333,1998
@@ -42438,6 +42489,7 @@ Yevgeniy Vorobeychik,Vanderbilt University,ai,1.0,0.25,2009
 Tamara L. Berg,University of North Carolina,mlmining,1.0,0.333333333333,2011
 Prasant Mohapatra,University of California - Davis,ai,1.0,0.333333333333,2017
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,0.333333333333,2008
+Joël Goossens,Université libre de Bruxelles,bed,1.0,0.333333333333,2001
 David G. Andersen,Carnegie Mellon University,comm,2.0,0.583333333333,2014
 Rob A. Rutenbar,University of Illinois at Urbana-Champaign,da,1.0,0.333333333333,2008
 Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.333333333333,2015
@@ -42523,6 +42575,7 @@ Giovanni De Micheli,EPFL,bio,1.0,0.2,2009
 Daniel F. Keefe,University of Minnesota,vis,2.0,0.45,2013
 Richard S. Sutton,University of Alberta,mlmining,1.0,0.5,2004
 Dale Schuurmans,University of Alberta,ai,1.0,0.5,1998
+Tom Lenaerts,Université libre de Bruxelles,ai,2.0,0.583333333333,2017
 Daphna Weinshall,Hebrew University of Jerusalem,sec,1.0,1.0,2006
 Emery D. Berger,University of Massachusetts Amherst,soft,1.0,0.333333333333,2016
 Maarten de Rijke,VU Amsterdam,ai,1.0,0.5,2007
@@ -43366,6 +43419,7 @@ Michael J. Pazzani,University of California - Riverside,mlmining,2.0,1.0,1996
 Noga Alon,Tel Aviv University,act,1.0,0.25,2015
 Dawson R. Engler,Stanford University,comm,1.0,0.5,2004
 C.-H. Luke Ong,University of Oxford,log,1.0,1.0,1993
+Amy Voida,University of Colorado Boulder,chi,1.0,0.333333333333,2013
 Thomas Sauerwald,University of Cambridge,act,3.0,1.33333333333,2012
 Carsten Rother,TU Dresden,vision,6.0,1.78333333333,2008
 Andrew Gordon Wilson,Cornell University,mlmining,1.0,0.333333333333,2012
@@ -43522,6 +43576,7 @@ Kenneth A. Ross,Columbia University,mod,1.0,0.5,1998
 Mostafa H. Ammar,Georgia Institute of Technology,comm,4.0,1.25,1998
 Bruce A. Reed,McGill University,act,1.0,0.5,2001
 Sebastian Rudolph,TU Dresden,nlp,1.0,0.5,2010
+Stephen Voida,University of Colorado Boulder,chi,1.0,0.333333333333,2008
 Luca P. Carloni,Columbia University,log,1.0,0.333333333333,1999
 Pawan Goyal,IIT Kharagpur,ops,1.0,0.25,2000
 David A. McAllester,Toyota Technological Institute at Chicago,vision,1.0,0.333333333333,2010
@@ -46902,6 +46957,7 @@ Laks V. S. Lakshmanan,University of British Columbia,mod,2.0,0.833333333333,2006
 Alla Sheffer,University of British Columbia,graph,2.0,0.342857142857,2013
 David Barber,University College London,mlmining,3.0,1.5,1996
 Avrim Blum,Carnegie Mellon University,act,1.0,1.0,1989
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.5,2015
 Tamal K. Dey,Ohio State University,act,1.0,0.25,2001
 Alex Thomo,University of Victoria,mod,2.0,0.583333333333,2015
 Wulfram Gerstner,EPFL,mlmining,1.0,0.5,2015
@@ -49603,6 +49659,7 @@ S. Muthukrishnan,Rutgers University,act,2.0,0.75,2001
 Noga Alon,Tel Aviv University,act,2.0,1.33333333333,1991
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,ai,1.0,0.142857142857,1998
 Saman P. Amarasinghe,Massachusetts Institute of Technology,plan,2.0,0.291666666667,2015
+Amy Voida,University of Colorado Boulder,chi,2.0,0.7,2005
 Michael L. Littman,Brown University,ai,1.0,0.333333333333,2010
 Chris Gniady,University of Arizona,arch,1.0,0.333333333333,1999
 Ron Alterovitz,University of North Carolina,vision,1.0,0.25,2011
@@ -49746,6 +49803,7 @@ Peter L. Bartlett,University of California - Berkeley,mlmining,2.0,1.0,2000
 Kobus Barnard,University of Arizona,vision,1.0,0.333333333333,1995
 Noga Alon,Tel Aviv University,act,4.0,1.4,2008
 Leslie Pack Kaelbling,Massachusetts Institute of Technology,ai,1.0,0.5,1991
+Amy Voida,University of Colorado Boulder,chi,3.0,0.783333333333,2012
 Thomas Sauerwald,University of Cambridge,act,1.0,0.25,2013
 Michael D. Ernst,University of Washington,sec,1.0,0.0833333333333,2014
 Andrew Gordon Wilson,Cornell University,mlmining,1.0,0.5,2013
@@ -50917,6 +50975,7 @@ Mongi A. Abidi,University of Tennessee,vision,2.0,0.7,2001
 Markus H. Gross,ETH Zurich,vision,3.0,0.75,2016
 Michael K. Reiter,University of North Carolina,comm,1.0,0.166666666667,2008
 Sanjit A. Seshia,University of California - Berkeley,da,2.0,0.666666666667,2010
+Tulika Mitra,National University of Singapore,hpc,1.0,0.25,2004
 Robert C. Miller,Massachusetts Institute of Technology,chi,1.0,0.5,2007
 Anup Rao,University of Washington,act,1.0,0.333333333333,2009
 Nir Yosef,University of California - Berkeley,bio,1.0,0.333333333333,2006
@@ -51067,6 +51126,7 @@ Anand Rangarajan,University of Florida,mlmining,1.0,0.333333333333,1993
 Aloysius K. Mok,University of Texas at Austin,bed,1.0,0.5,1998
 Wee Kheng Leow,National University of Singapore,robotics,1.0,0.333333333333,2003
 Zoran Popovic,University of Washington,robotics,1.0,1.0,2000
+Samuel Fiorini,Université libre de Bruxelles,act,1.0,0.25,2015
 Toniann Pitassi,University of Toronto,act,2.0,1.0,2014
 Matei A. Zaharia,Stanford University,mobile,1.0,0.2,2006
 Fei-Fei Li,Stanford University,robotics,1.0,0.333333333333,2013
@@ -51164,6 +51224,7 @@ Mary W. Hall,University of Utah,plan,1.0,0.25,2011
 Srdjan Capkun,ETH Zurich,sec,1.0,0.5,2010
 Abhik Roychoudhury,National University of Singapore,log,1.0,0.5,2001
 Konstantin Makarychev,Northwestern University,act,1.0,0.333333333333,2009
+Gwenaël Joret,Université libre de Bruxelles,act,1.0,0.2,2010
 Carlotta Domeniconi,George Mason University,mlmining,1.0,0.5,2008
 Ian Horswill,Northwestern University,ai,1.0,1.0,1995
 Julie A. Shah,Massachusetts Institute of Technology,robotics,3.0,1.1,2016
@@ -51417,7 +51478,7 @@ Paul H. J. Kelly,Imperial College London,robotics,1.0,0.0833333333333,2015
 Devavrat Shah,Massachusetts Institute of Technology,metrics,1.0,0.333333333333,2016
 Duen Horng (Polo) Chau,Georgia Institute of Technology,mod,1.0,0.25,2016
 Kevin Chen-Chuan Chang,University of Illinois at Urbana-Champaign,ai,1.0,0.2,2015
-David Wingate,Brigham Young University,mlmining,1.0,0.25,2014
+Mihir Bellare,University of California - San Diego,act,1.0,0.5,1988
 Frank Mueller,North Carolina State University,hpc,2.0,0.7,2014
 Tobias Höllerer,University of California - Santa Barbara,vis,1.0,0.5,2007
 Juan Caballero,IMDEA Software Institute,sec,3.0,0.783333333333,2015
@@ -51892,6 +51953,7 @@ Johannes Fürnkranz,TU Darmstadt,mlmining,1.0,0.5,2003
 Vijaykrishnan Narayanan,Pennsylvania State University,da,2.0,0.416666666667,2011
 Gagan Agrawal,Ohio State University,plan,1.0,0.333333333333,1995
 Jason Cong,University of California - Los Angeles,da,5.0,1.73333333333,2013
+Samuel Fiorini,Université libre de Bruxelles,act,1.0,0.25,2017
 Miroslaw Kowaluk,University of Warsaw,act,1.0,0.333333333333,2011
 Cormac Flanagan,University of California - Santa Cruz,log,1.0,0.333333333333,2002
 Neeraj Suri,TU Darmstadt,bed,1.0,0.5,1999
@@ -52003,6 +52065,7 @@ Mark D. Reid,Australian National University,mlmining,1.0,0.5,2015
 C. Siva Ram Murthy,IIT Madras,mobile,1.0,0.333333333333,2004
 Yan Chen,Northwestern University,sec,1.0,0.166666666667,2014
 Ding-Zhu Du,University of Texas at Dallas,comm,1.0,0.142857142857,2011
+Gwenaël Joret,Université libre de Bruxelles,act,1.0,0.333333333333,2016
 Boris Grot,University of Edinburgh,arch,2.0,0.5,2013
 Aleksander Madry,Massachusetts Institute of Technology,act,1.0,1.0,2013
 Gillian Smith,Northeastern University,chi,1.0,1.0,2014
@@ -54840,6 +54903,7 @@ Neil Immerman,University of Massachusetts Amherst,log,1.0,0.166666666667,2007
 Brad A. Myers,Carnegie Mellon University,chi,1.0,0.5,2004
 Benjamin Van Durme,Johns Hopkins University,ai,1.0,0.5,2007
 Kwan-Liu Ma,University of California - Davis,vis,2.0,0.666666666667,2002
+Stefan Langerman,Université libre de Bruxelles,act,1.0,0.333333333333,2012
 Richard J. Lipton,Georgia Institute of Technology,act,1.0,0.333333333333,2003
 Magdalena Balazinska,University of Washington,mod,2.0,0.666666666667,2011
 Abhiram G. Ranade,IIT Bombay,act,1.0,0.333333333333,1994
@@ -55147,6 +55211,7 @@ Gabriel Nivasch,Ariel University,act,1.0,0.2,2008
 A. J. Kfoury,Boston University,act,1.0,0.333333333333,1990
 Charles Lee Isbell Jr.,Georgia Institute of Technology,mlmining,1.0,0.25,2014
 Jason J. Corso,University of Michigan,mlmining,1.0,0.25,2012
+Michael J. Paul,University of Colorado Boulder,mlmining,1.0,0.5,2012
 Rob A. Rutenbar,University of Illinois at Urbana-Champaign,da,2.0,0.533333333333,2010
 Ling Liu,Georgia Institute of Technology,mlmining,1.0,0.25,2009
 Daniel D. Lee,University of Pennsylvania,robotics,6.0,2.83333333333,2016
@@ -55229,6 +55294,7 @@ Eli Biham,Technion - Israel Institute of Technology,crypt,2.0,1.5,1994
 John H. Reif,Duke University,robotics,1.0,0.5,2007
 Chandra Chekuri,University of Illinois at Urbana-Champaign,act,1.0,0.5,2002
 Yuanyuan Zhou,University of California - San Diego,arch,4.0,0.634523809524,2004
+Gianluca Bontempi,Université libre de Bruxelles,mlmining,1.0,0.5,2010
 Hongyuan Zha,Georgia Institute of Technology,ai,1.0,0.5,2014
 G. Edward Suh,Cornell University,sec,1.0,0.166666666667,2012
 Stefan Leutenegger,Imperial College London,robotics,1.0,0.142857142857,2014
@@ -55585,6 +55651,7 @@ Rupak Majumdar,Max Planck Institute,bed,1.0,0.333333333333,2011
 Thenkurussi Kesavadas,University of Illinois at Urbana-Champaign,robotics,1.0,0.5,1996
 Tsuhan Chen,Cornell University,vision,2.0,1.0,2003
 John L. Hennessy,Stanford University,metrics,1.0,0.333333333333,1990
+Neil Immerman,University of Massachusetts Amherst,log,1.0,0.5,1987
 Alexandra Fedorova,University of British Columbia,hpc,1.0,0.166666666667,2012
 Shree K. Nayar,Columbia University,graph,6.0,2.08333333333,2006
 Anna R. Karlin,University of Washington,ops,1.0,0.166666666667,1995
