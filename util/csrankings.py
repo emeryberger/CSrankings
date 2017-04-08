@@ -1,7 +1,7 @@
 """Subroutines used for computing rankings for CSrankings.
 """
 from lxml import etree as ElementTree
-#import xml.etree.ElementTree as ElementTree
+# import xml.etree.ElementTree as ElementTree
 import csv
 import operator
 import re
@@ -294,7 +294,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             return False
 
     # Special handling for ICSE.
-    if confname == 'ICSE' or confname == 'ICSE (1)' or confname == 'ICSE (2)':
+    elif confname == 'ICSE' or confname == 'ICSE (1)' or confname == 'ICSE (2)':
         if ICSE_ShortPaperStart.has_key(year):
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
@@ -303,7 +303,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
                 return False
 
     # Special handling for SIGMOD.
-    if confname == 'SIGMOD Conference':
+    elif confname == 'SIGMOD Conference':
         if SIGMOD_NonResearchPaperStart.has_key(year):
             pageno = SIGMOD_NonResearchPaperStart[year]
             if startPage >= pageno:
@@ -317,7 +317,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
                     return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    if confname == 'ACM Trans. Graph.':
+    elif confname == 'ACM Trans. Graph.':
         SIGGRAPH_Conf = False
         if TOG_SIGGRAPH_Volume.has_key(year):
             (vol, num) = TOG_SIGGRAPH_Volume[year]
@@ -331,7 +331,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             return False
 
     # Special handling for IEEE Vis and VR
-    if confname == 'IEEE Trans. Vis. Comput. Graph.':
+    elif confname == 'IEEE Trans. Vis. Comput. Graph.':
         Vis_Conf = False
         if TVCG_Vis_Volume.has_key(year):
             (vol, num) = TVCG_Vis_Volume[year]
@@ -345,7 +345,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             return False
 
     # Special handling for ASE.
-    if confname == 'ASE':
+    elif confname == 'ASE':
         if pageCount < ASE_LongPaperThreshold:
             # Omit short papers (which may be demos, etc.).
             return False
