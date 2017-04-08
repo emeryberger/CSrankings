@@ -7,74 +7,6 @@ import re
 import sys
 import operator
 
-authlogs = {}
-interestingauthors = {}
-authorscores = {}
-authorscoresAdjusted = {}
-coauthors = {}
-papersWritten = {}
-counter = 0
-successes = 0
-failures = 0
-
-def do_it():
-    gz = gzip.GzipFile('dblp.xml.gz')
-    xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
-
-def csv2dict_str_str(fname):
-    """Takes a CSV files and returns a dictionary of pairs."""
-    with open(fname, mode='r') as infile:
-        rdr = csv.reader(infile)
-        d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
-    return d
-
-def startpage(pageStr):
-    """Compute the starting page number from a string representing page numbers."""
-    global pageCounterNormal
-    global pageCounterColon
-    if pageStr is None:
-        return 0
-    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
-    pageCounterMatcher2 = pageCounterColon.match(pageStr)
-    start = 0
-
-    if not pageCounterMatcher1 is None:
-        start = int(pageCounterMatcher1.group(1))
-    else:
-        if not pageCounterMatcher2 is None:
-            start = int(pageCounterMatcher2.group(1))
-    return start
-
-def pagecount(pageStr):
-    """Compute the number of pages in a string representing a range of page numbers."""
-    if pageStr is None:
-        return 0
-    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
-    pageCounterMatcher2 = pageCounterColon.match(pageStr)
-    start = 0
-    end = 0
-    count = 0
-
-    if not pageCounterMatcher1 is None:
-        start = int(pageCounterMatcher1.group(1))
-        end = int(pageCounterMatcher1.group(2))
-        count = end - start + 1
-    else:
-        if not pageCounterMatcher2 is None:
-            start = int(pageCounterMatcher2.group(1))
-            end = int(pageCounterMatcher2.group(2))
-            count = end - start + 1
-    return count
-
-facultydict = csv2dict_str_str('faculty-affiliations.csv')
-
-# Papers must be at least 6 pages long to count.
-pageCountThreshold = 6
-# Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile('(\d+)-(\d+)')
-# Match page number in the form volume:page (as in 12:140-12:150).
-pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
-
 areadict = {
     #
     # Max three most selective venues per area for now.
@@ -267,21 +199,91 @@ SIGMOD_NonResearchPapersRange = {2016: [(1753, 1764), (1295, 1306), (795, 806),
 # while short papers are shorter.
 ASE_LongPaperThreshold = 10
 
-# Build a dictionary mapping conferences to areas.
-# e.g., confdict['CVPR'] = 'vision'.
-confdict = {}
-venues = []
-for k, v in areadict.items():
-    for item in v:
-        confdict[item] = k
-        venues.append(item)
-
-# The list of all areas.
-arealist = areadict.keys()
-
 # Consider pubs in this range only.
 startyear = 1970
 endyear = 2269
+
+authlogs = {}
+interestingauthors = {}
+authorscores = {}
+authorscoresAdjusted = {}
+coauthors = {}
+papersWritten = {}
+counter = 0
+successes = 0
+failures = 0
+confdict = {}
+
+# Papers must be at least 6 pages long to count.
+pageCountThreshold = 6
+# Match ordinary page numbers (as in 10-17).
+pageCounterNormal = re.compile('(\d+)-(\d+)')
+# Match page number in the form volume:page (as in 12:140-12:150).
+pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
+
+
+def do_it():
+    gz = gzip.GzipFile('dblp.xml.gz')
+    xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
+
+def csv2dict_str_str(fname):
+    """Takes a CSV files and returns a dictionary of pairs."""
+    with open(fname, mode='r') as infile:
+        rdr = csv.reader(infile)
+        d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
+    return d
+
+def startpage(pageStr):
+    """Compute the starting page number from a string representing page numbers."""
+    global pageCounterNormal
+    global pageCounterColon
+    if pageStr is None:
+        return 0
+    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
+    pageCounterMatcher2 = pageCounterColon.match(pageStr)
+    start = 0
+
+    if not pageCounterMatcher1 is None:
+        start = int(pageCounterMatcher1.group(1))
+    else:
+        if not pageCounterMatcher2 is None:
+            start = int(pageCounterMatcher2.group(1))
+    return start
+
+def pagecount(pageStr):
+    """Compute the number of pages in a string representing a range of page numbers."""
+    if pageStr is None:
+        return 0
+    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
+    pageCounterMatcher2 = pageCounterColon.match(pageStr)
+    start = 0
+    end = 0
+    count = 0
+
+    if not pageCounterMatcher1 is None:
+        start = int(pageCounterMatcher1.group(1))
+        end = int(pageCounterMatcher1.group(2))
+        count = end - start + 1
+    else:
+        if not pageCounterMatcher2 is None:
+            start = int(pageCounterMatcher2.group(1))
+            end = int(pageCounterMatcher2.group(2))
+            count = end - start + 1
+    return count
+
+def build_dicts():
+    global areadict
+    global confdict
+    global facultydict
+    # Build a dictionary mapping conferences to areas.
+    # e.g., confdict['CVPR'] = 'vision'.
+    confdict = {}
+    venues = []
+    for k, v in areadict.items():
+        for item in v:
+            confdict[item] = k
+            venues.append(item)
+    facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
 def countPaper(confname, year, volume, number, startPage, pageCount, url):
     global ISMB_Bioinformatics
@@ -513,6 +515,7 @@ def dump_it():
                 for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')):
                     z.append(s)
         json.dump(z, f, indent=2)
-    
+
+build_dicts()
 do_it()
 dump_it()
