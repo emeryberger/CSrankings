@@ -443,17 +443,13 @@ def handle_article(_, article):
                 authorName = authorName.strip()
                 if authorName in facultydict:
                     foundOneInDict = True
-        if 'volume' in article:
-            volume = article['volume']
-        if 'number' in article:
-            number = article['number']
-        if 'year' in article:
-            year = int(article['year'])
+        volume = article.get('volume',"")
+        number = article.get('number',"")
+        url    = article.get('url',"")
+        year   = int(article.get('year',"-1"))
         if 'pages' in article:
             pageCount = pagecount(article['pages'])
             startPage = startpage(article['pages'])
-        if 'url' in article:
-            url = article['url']
         if confname != "":
             foundArticle = True
         successes += 1
@@ -466,14 +462,14 @@ def handle_article(_, article):
     if foundArticle and foundOneInDict and countPaper(confname, year, volume, number, startPage, pageCount, url):
         for authorName in authorList:
             if authorName in facultydict:
-                logstring = { 'name' : authorName.encode('utf-8'),
-                              'conf' : confname,
-                              'area' : areaname,
-                              'year' : year,
-                              'title' : title.encode('utf-8'),
-                              'institution' : facultydict[authorName] }
+                log = { 'name' : authorName.encode('utf-8'),
+                        'year' : year,
+                        'title' : title.encode('utf-8'),
+                        'conf' : confname,
+                        'area' : areaname,
+                        'institution' : facultydict[authorName] }
                 tmplist = authlogs.get(authorName, [])
-                tmplist.append(logstring)
+                tmplist.append(log)
                 authlogs[authorName] = tmplist
                 interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
                 authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
@@ -514,8 +510,7 @@ def dump_it():
         authlogs = collections.OrderedDict(sorted(authlogs.items()))
         for v, l in authlogs.iteritems():
             if interestingauthors.has_key(v):
-                # f.write("Papers for " + v.encode('utf-8') + ', ' + (facultydict[v]).encode('utf-8') + "\n")
-                for s in l:
+                for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')):
                     z.append(s)
         json.dump(z, f, indent=2)
     
