@@ -34,11 +34,15 @@ a minimum via a command line like:
 
 ### Acknowledgements and other rankings
 
-This site was developed with extensive feedback from too many folks to
-mention here. It is partially based on code and data originally
-collected by [Swarat Chaudhuri](https://www.cs.rice.edu/~sc40/) (Rice
-University). The original faculty affiliation dataset was constructed
-by [Papoutsaki et
+This site was developed primarily by and is maintained by [Emery
+Berger](https://emeryberger.com). It incorporates extensive feedback
+from too many folks to mention here, including many contributors who
+have helped to add and maintain faculty affiliations, home pages, etc.
+
+This site is partially based on code and
+data originally collected by [Swarat
+Chaudhuri](https://www.cs.rice.edu/~sc40/) (Rice University). The
+original faculty affiliation dataset was constructed by [Papoutsaki et
 al.](http://cs.brown.edu/people/alexpap/faculty_dataset.html); since
 then, it has been extensively cleaned and updated. A previous ranking
 also used DBLP and Brown's dataset for [ranking theoretical computer
