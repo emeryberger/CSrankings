@@ -445,6 +445,7 @@ def handle_article(_, article):
                 authorName = authorName.strip()
                 if authorName in facultydict:
                     foundOneInDict = True
+                    break
         volume = article.get('volume',"")
         number = article.get('number',"")
         url    = article.get('url',"")
