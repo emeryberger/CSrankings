@@ -420,24 +420,6 @@ def handle_article(_, article):
     try:
         if counter % 10000 == 0:
             print str(counter)+ " papers processed."
-        if 'booktitle' in article:
-            confname = article['booktitle']
-            if confname in confdict:
-                areaname = confdict[confname]
-            else:
-                return True
-        elif 'journal' in article:
-            confname = article['journal']
-            if confname in confdict:
-                areaname = confdict[confname]
-            else:
-                return True
-        else:
-            return True
-        if 'title' in article:
-            title = article['title']
-            if type(title) is collections.OrderedDict:
-                title = title["#text"]
         if 'author' in article:
             authorList = article['author']
             authorsOnPaper = len(authorList)
@@ -446,6 +428,24 @@ def handle_article(_, article):
                 if authorName in facultydict:
                     foundOneInDict = True
                     break
+            if not foundOneInDict:
+                return True
+        else:
+            return True
+        if 'booktitle' in article:
+            confname = article['booktitle']
+        elif 'journal' in article:
+            confname = article['journal']
+        else:
+            return True
+        if confname in confdict:
+            areaname = confdict[confname]
+        else:
+            return True
+        if 'title' in article:
+            title = article['title']
+            if type(title) is collections.OrderedDict:
+                title = title["#text"]
         volume = article.get('volume',"")
         number = article.get('number',"")
         url    = article.get('url',"")
@@ -453,8 +453,6 @@ def handle_article(_, article):
         if 'pages' in article:
             pageCount = pagecount(article['pages'])
             startPage = startpage(article['pages'])
-        if confname != "":
-            foundArticle = True
         successes += 1
     except TypeError:
         raise
@@ -462,7 +460,7 @@ def handle_article(_, article):
         print sys.exc_info()[0]
         failures += 1
         pass
-    if foundArticle and foundOneInDict and countPaper(confname, year, volume, number, startPage, pageCount, url):
+    if countPaper(confname, year, volume, number, startPage, pageCount, url):
         for authorName in authorList:
             if authorName in facultydict:
                 log = { 'name' : authorName.encode('utf-8'),
