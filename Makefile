@@ -47,7 +47,7 @@ faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csran
 
 generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
-	python util/regenerate-data.py
+	pypy util/regenerate-data.py
 	@echo "Done."
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
