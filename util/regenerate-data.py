@@ -366,6 +366,13 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             # Omit short papers (which may be demos, etc.).
             return False
 
+    # Disambiguate Innovations in (Theoretical) Computer Science from
+    # International Conference on Supercomputing
+    elif confname == 'ICS':
+        if not url is None:
+            if url.find('innovations') != -1:
+                return False
+
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -383,14 +390,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             tooFewPages = False
     if tooFewPages:
         return False
-
-    # Disambiguate Innovations in (Theoretical) Computer Science from
-    # International Conference on Supercomputing
-    if confname == 'ICS':
-        if not url is None:
-            if url.find('innovations') != -1:
-                return False
-        
+       
     return True
 
 def handle_article(_, article):
@@ -405,24 +405,13 @@ def handle_article(_, article):
     global interestingauthors
     global facultydict
     counter += 1
-    foundArticle = False
-    authorsOnPaper = 0
-    authorName = ""
-    authorList = []
-    year = -1
-    pageCount = -1
-    startPage = -1
-    foundOneInDict = False
-    number = 0
-    volume = 0
-    confname = ""
-    areaname = ""
     try:
         if counter % 10000 == 0:
             print str(counter)+ " papers processed."
         if 'author' in article:
             authorList = article['author']
             authorsOnPaper = len(authorList)
+            foundOneInDict = False
             for authorName in authorList:
                 authorName = authorName.strip()
                 if authorName in facultydict:
@@ -453,6 +442,9 @@ def handle_article(_, article):
         if 'pages' in article:
             pageCount = pagecount(article['pages'])
             startPage = startpage(article['pages'])
+        else:
+            pageCount = -1
+            startPage = -1
         successes += 1
     except TypeError:
         raise
