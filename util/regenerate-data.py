@@ -409,10 +409,15 @@ def handle_article(_, article):
         if counter % 10000 == 0:
             print str(counter)+ " papers processed."
         if 'author' in article:
+            # Fix if there is just one author.
+            if type(article['author']) != list:
+                article['author'] = [article['author']]
             authorList = article['author']
             authorsOnPaper = len(authorList)
             foundOneInDict = False
             for authorName in authorList:
+                if type(authorName) is collections.OrderedDict:
+                    authorName = authorName["#text"]
                 authorName = authorName.strip()
                 if authorName in facultydict:
                     foundOneInDict = True
