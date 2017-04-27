@@ -42,7 +42,7 @@ interface Coauthor {
 
 interface CountryInfo {
     readonly institution : string;
-    readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "world";
+    readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "asia" | "world";
 };
 
 interface Alias {
@@ -508,6 +508,14 @@ class CSRankings {
 		return false;
 	    }
 	    if (CSRankings.countryInfo[dept] != "australasia") {
+		return false;
+	    }
+	    break;
+	case "asia":
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
+	    }
+	    if (CSRankings.countryInfo[dept] != "asia") {
 		return false;
 	    }
 	    break;
