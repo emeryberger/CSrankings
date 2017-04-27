@@ -298,9 +298,9 @@ class CSRankings {
 		if (value == 1) {
 		    value = 0;
 		}
-		// Round it to the nearest 0.1.
-		value = Math.round(value * 10) / 10;
 	    }
+	    // Round it to the nearest 0.1.
+	    value = Math.round(value * 10) / 10;
 	    if (value > 0) {
 		data.push({ "label" : CSRankings.areaDict[key],
 			    "value" : value,
