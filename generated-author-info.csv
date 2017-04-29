@@ -4869,6 +4869,7 @@ Arya Mazumdar,University of Massachusetts Amherst,mlmining,2.0,0.833333333333,20
 Asa Ben-Hur,Colorado State University,mlmining,1.0,0.333333333333,1999
 Asa Ben-Hur,Colorado State University,mlmining,1.0,0.25,2000
 Asa Ben-Hur,Colorado State University,mlmining,2.0,0.45,2004
+Ashish Anand,IIT Guwahati,nlp,1.0,0.5,2016
 Ashish Choudhary,IIIT Bangalore,crypt,1.0,0.25,2009
 Ashok K. Agrawala,University of Maryland - College Park,arch,1.0,0.333333333333,1990
 Ashok K. Agrawala,University of Maryland - College Park,bed,1.0,0.5,1986
@@ -5782,13 +5783,13 @@ Benjamin J. Hescott,Tufts University,ai,1.0,0.5,2014
 Benjamin J. Hescott,Tufts University,bio,1.0,0.25,2009
 Benjamin J. Hescott,Tufts University,bio,1.0,0.25,2011
 Benjamin J. Hescott,Tufts University,bio,1.0,0.111111111111,2014
-Benjamin J. Raphael,Brown University,bio,1.0,0.333333333333,2007
-Benjamin J. Raphael,Brown University,bio,3.0,0.916666666667,2009
-Benjamin J. Raphael,Brown University,bio,1.0,0.333333333333,2010
-Benjamin J. Raphael,Brown University,bio,3.0,1.16666666667,2014
-Benjamin J. Raphael,Brown University,bio,2.0,0.583333333333,2015
-Benjamin J. Raphael,Brown University,bio,1.0,0.25,2017
-Benjamin J. Raphael,Brown University,vis,1.0,0.25,2010
+Benjamin J. Raphael,Princeton University,bio,1.0,0.333333333333,2007
+Benjamin J. Raphael,Princeton University,bio,3.0,0.916666666667,2009
+Benjamin J. Raphael,Princeton University,bio,1.0,0.333333333333,2010
+Benjamin J. Raphael,Princeton University,bio,3.0,1.16666666667,2014
+Benjamin J. Raphael,Princeton University,bio,2.0,0.583333333333,2015
+Benjamin J. Raphael,Princeton University,bio,1.0,0.25,2017
+Benjamin J. Raphael,Princeton University,vis,1.0,0.25,2010
 Benjamin Kuipers,University of Michigan,ai,1.0,1.0,1977
 Benjamin Kuipers,University of Michigan,ai,1.0,0.5,1983
 Benjamin Kuipers,University of Michigan,ai,1.0,1.0,1985
@@ -7040,6 +7041,7 @@ Brian Demsky,University of California - Irvine,soft,1.0,0.5,2005
 Brian Demsky,University of California - Irvine,soft,1.0,0.5,2010
 Brian Keegan,University of Colorado Boulder,chi,1.0,0.166666666667,2015
 Brian Keegan,University of Colorado Boulder,ir,1.0,0.25,2013
+Brian Mak,Hong Kong University of Science and Technology,mlmining,1.0,0.333333333333,2003
 Brian Murphy,CUNY,crypt,1.0,0.0588235294118,2000
 Brian Murphy,CUNY,nlp,1.0,0.333333333333,2009
 Brian Murphy,CUNY,nlp,1.0,0.25,2014
@@ -13129,6 +13131,7 @@ Deepak Kapur,University of New Mexico,soft,1.0,0.25,2012
 Deepak Kapur,University of New Mexico,soft,1.0,0.25,2014
 Deepak Kapur,University of New Mexico,vision,1.0,0.333333333333,1991
 Deepak Khemani,IIT Madras,ai,1.0,0.2,2016
+Deepanjan Kesh,IIT Guwahati,act,1.0,0.25,2006
 Deeparnab Chakrabarty,Dartmouth College,act,1.0,0.5,2008
 Deeparnab Chakrabarty,Dartmouth College,act,1.0,0.333333333333,2009
 Deeparnab Chakrabarty,Dartmouth College,act,2.0,1.0,2013
@@ -23020,6 +23023,11 @@ James T. Kwok,Hong Kong University of Science and Technology,vision,1.0,0.333333
 James T. Kwok,Hong Kong University of Science and Technology,vision,1.0,0.333333333333,2006
 James T. Kwok,Hong Kong University of Science and Technology,vision,1.0,0.333333333333,2010
 James T. Kwok,Hong Kong University of Science and Technology,vision,1.0,0.25,2011
+James Tin-Yau Kwok,Hong Kong University of Science and Technology,ai,1.0,0.333333333333,2017
+James Tin-Yau Kwok,Hong Kong University of Science and Technology,mlmining,1.0,0.5,2012
+James Tin-Yau Kwok,Hong Kong University of Science and Technology,mlmining,2.0,0.666666666667,2013
+James Tin-Yau Kwok,Hong Kong University of Science and Technology,mlmining,1.0,0.5,2014
+James Tin-Yau Kwok,Hong Kong University of Science and Technology,vision,1.0,0.25,2009
 James W. Mickens,Harvard University,comm,1.0,0.5,2006
 James W. Mickens,Harvard University,comm,3.0,0.833333333333,2010
 James W. Mickens,Harvard University,comm,1.0,0.111111111111,2014
@@ -37664,6 +37672,9 @@ Ness B. Shroff,Ohio State University,metrics,1.0,0.5,2001
 Ness B. Shroff,Ohio State University,metrics,1.0,0.333333333333,2009
 Ness B. Shroff,Ohio State University,metrics,1.0,0.333333333333,2014
 Ness B. Shroff,Ohio State University,mobile,1.0,0.333333333333,2006
+Nevin L. Zhang,Hong Kong University of Science and Technology,ai,1.0,0.25,2016
+Nevin L. Zhang,Hong Kong University of Science and Technology,ai,2.0,0.75,2017
+Nevin L. Zhang,Hong Kong University of Science and Technology,vision,1.0,0.25,2015
 Nevin Lianwen Zhang,Hong Kong University of Science and Technology,ai,1.0,0.5,1999
 Nevin Lianwen Zhang,Hong Kong University of Science and Technology,ai,2.0,1.5,2002
 Nevin Lianwen Zhang,Hong Kong University of Science and Technology,ai,1.0,0.333333333333,2008
@@ -41347,6 +41358,7 @@ Przemyslaw Prusinkiewicz,University of Calgary,graph,1.0,0.166666666667,2005
 Przemyslaw Prusinkiewicz,University of Calgary,graph,1.0,0.142857142857,2009
 Przemyslaw Prusinkiewicz,University of Calgary,graph,1.0,0.2,2016
 Przemyslaw Prusinkiewicz,University of Calgary,vis,1.0,0.25,2002
+Purandar Bhaduri,IIT Guwahati,log,1.0,0.5,1999
 Purushottam Kar,IIT Kanpur,ai,1.0,0.142857142857,2017
 Purushottam Kar,IIT Kanpur,mlmining,1.0,0.5,2010
 Purushottam Kar,IIT Kanpur,mlmining,1.0,0.5,2011
@@ -45485,6 +45497,9 @@ Ryszard Janicki,McMaster University,soft,1.0,1.0,1995
 Rüdiger L. Urbanke,EPFL,act,2.0,0.416666666667,2016
 S. Akshay,IIT Bombay,log,1.0,0.25,2012
 S. Arun-Kumar,IIT Delhi,log,1.0,0.333333333333,2012
+S. C. Cheung,Hong Kong University of Science and Technology,soft,3.0,0.833333333333,2006
+S. C. Cheung,Hong Kong University of Science and Technology,soft,2.0,0.5,2007
+S. C. Cheung,Hong Kong University of Science and Technology,vis,1.0,0.2,2009
 S. Dov Gordon,George Mason University,act,1.0,0.25,2008
 S. Dov Gordon,George Mason University,crypt,1.0,0.5,2010
 S. Dov Gordon,George Mason University,crypt,1.0,0.25,2013
@@ -45597,6 +45612,13 @@ S. V. N. Vishwanathan,University of California - Santa Cruz,nlp,1.0,0.25,2007
 S. V. N. Vishwanathan,University of California - Santa Cruz,nlp,1.0,0.2,2016
 S. V. N. Vishwanathan,University of California - Santa Cruz,vision,1.0,0.333333333333,2008
 S. V. N. Vishwanathan,University of California - Santa Cruz,vision,1.0,0.25,2011
+S. V. Rao,IIT Guwahati,comm,1.0,0.333333333333,2003
+S.-H. Gary Chan,Hong Kong University of Science and Technology,chi,1.0,0.25,2015
+S.-H. Gary Chan,Hong Kong University of Science and Technology,chi,1.0,0.333333333333,2016
+S.-H. Gary Chan,Hong Kong University of Science and Technology,comm,1.0,0.166666666667,2004
+S.-H. Gary Chan,Hong Kong University of Science and Technology,comm,1.0,0.25,2015
+S.-H. Gary Chan,Hong Kong University of Science and Technology,comm,1.0,0.333333333333,2016
+S.-H. Gary Chan,Hong Kong University of Science and Technology,mobile,1.0,0.333333333333,2015
 Saad Biaz,Auburn University,mobile,1.0,0.25,2006
 Sabarish V. Babu,Clemson University,vis,1.0,0.166666666667,2004
 Sabarish V. Babu,Clemson University,vis,1.0,0.142857142857,2009
@@ -45804,6 +45826,7 @@ Samira Manabi Khan,University of Virginia,arch,1.0,0.111111111111,2016
 Samira Manabi Khan,University of Virginia,hpc,1.0,0.25,2014
 Samira Manabi Khan,University of Virginia,metrics,1.0,0.166666666667,2014
 Samira Manabi Khan,University of Virginia,metrics,1.0,0.1,2016
+Samit Bhattacharya,IIT Guwahati,ai,1.0,0.2,2017
 Sampath Kannan,University of Pennsylvania,act,1.0,0.333333333333,1988
 Sampath Kannan,University of Pennsylvania,act,1.0,0.5,1989
 Sampath Kannan,University of Pennsylvania,act,2.0,0.833333333333,1990
@@ -45893,6 +45916,7 @@ Samuel R. Buss,University of California - San Diego,vis,1.0,0.333333333333,2009
 Samuel Z. Guyer,Tufts University,plan,1.0,0.333333333333,2006
 Samuel Z. Guyer,Tufts University,plan,1.0,0.5,2009
 Samuel Z. Guyer,Tufts University,plan,1.0,0.333333333333,2010
+Sanasam Ranbir Singh,IIT Guwahati,ai,1.0,1.0,2007
 Sanda M. Harabagiu,University of Texas at Dallas,ai,2.0,0.666666666667,2005
 Sanda M. Harabagiu,University of Texas at Dallas,ai,1.0,0.333333333333,2006
 Sanda M. Harabagiu,University of Texas at Dallas,ir,1.0,0.5,2001
@@ -53838,6 +53862,7 @@ Vincent W. Freeh,North Carolina State University,hpc,2.0,0.5,2006
 Vincent W. Freeh,North Carolina State University,hpc,1.0,0.166666666667,2007
 Vincent W. Freeh,North Carolina State University,hpc,1.0,0.166666666667,2009
 Vincent W. Freeh,North Carolina State University,ops,1.0,0.333333333333,1994
+Vincent Y. Shen,Hong Kong University of Science and Technology,soft,1.0,0.25,1987
 Vincent Yun Shen,Hong Kong University of Science and Technology,soft,1.0,0.333333333333,1981
 Vincenzo Auletta,University of Salerno,act,1.0,0.25,2012
 Vincenzo Auletta,University of Salerno,ai,1.0,0.2,2016
