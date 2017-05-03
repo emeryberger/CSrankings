@@ -466,6 +466,14 @@ def handle_article(_, article):
                         'conf' : confname,
                         'area' : areaname,
                         'institution' : facultydict[authorName] }
+                if not volume is "":
+                    log['volume'] = volume
+                if not number is "":
+                    log['number'] = number
+                if not startPage is "":
+                    log['startPage'] = startPage
+                if not pageCount is "":
+                    log['pageCount'] = pageCount
                 tmplist = authlogs.get(authorName, [])
                 tmplist.append(log)
                 authlogs[authorName] = tmplist
