@@ -62,7 +62,7 @@ areadict = {
     # SIGDA
     'da': ['ICCAD', 'DAC'],
     # SIGBED
-    'bed': ['RTSS', 'RTAS', 'EMSOFT'],
+    'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
     'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.']
 }
