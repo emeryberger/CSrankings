@@ -511,6 +511,14 @@ class CSRankings {
 		return false;
 	    }
 	    break;
+	case "southamerica":
+	    if (!(dept in CSRankings.countryInfo)) { // USA
+		return false;
+	    }
+	    if (CSRankings.countryInfo[dept] != "southamerica") {
+		return false;
+	    }
+	    break;
 	case "asia":
 	    if (!(dept in CSRankings.countryInfo)) { // USA
 		return false;

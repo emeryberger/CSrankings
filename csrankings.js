@@ -357,6 +357,14 @@ var CSRankings = (function () {
                     return false;
                 }
                 break;
+            case "southamerica":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "southamerica") {
+                    return false;
+                }
+                break;
             case "asia":
                 if (!(dept in CSRankings.countryInfo)) {
                     return false;
