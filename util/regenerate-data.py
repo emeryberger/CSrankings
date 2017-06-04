@@ -459,6 +459,8 @@ def handle_article(_, article):
         pass
     if countPaper(confname, year, volume, number, startPage, pageCount, url):
         for authorName in authorList:
+            if type(authorName) is collections.OrderedDict:
+                authorName = authorName["#text"]
             if authorName in facultydict:
                 log = { 'name' : authorName.encode('utf-8'),
                         'year' : year,
