@@ -27,6 +27,7 @@
 //inproceedings[booktitle="ACM Conference on Computer and Communications Security"],
 //inproceedings[booktitle="USENIX Security Symposium"],
 //inproceedings[booktitle="USENIX Security"],
+//inproceedings[booktitle="NDSS"],
 //inproceedings[booktitle="CHI"],
 //inproceedings[booktitle="UbiComp"],
 //inproceedings[booktitle="Ubicomp"],
