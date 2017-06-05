@@ -41,15 +41,6 @@
 	}(document, "script", "twitter-wjs"));
     </script>
     <script>
-      /**
-      * Track clicks to a link. If new_window is true the google analytics request
-      * will be made synchronously, because browsers block new windows from opening unless
-      * it is done DURING an on click event. If new_window is false, the request will
-      * be made asynchronously, and the current window url will be changed.
-      *
-      * Setting the transport method to 'beacon' lets the hit be sent
-      * using 'navigator.sendBeacon' in browser that support it.
-      */
       var trackOutboundLink = function(url, new_window) {
         /* Setting a default value for backward compatibility */
         if (new_window === undefined) {
@@ -176,10 +167,6 @@
 		<option value="world">the world</option>
 	      </select>
 	      by average count
-<!--	      <select id="displayPercent" name="displayPercent" onchange="CSRankings.rank();" >
-		<option value="1" selected="selected">average count</option>
-		<option value="0">total count</option>
-	      </select> -->
 	      of publications from
 	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
 		<option value="1970">1970</option>  
