@@ -1,0 +1,111 @@
+area,conf,default
+"nlp","EMNLP",True
+"nlp","ACL",True
+"nlp","ACL (1)",True
+"nlp","ACL (2)",True
+"nlp","NAACL",True
+"nlp","HLT-NAACL",True
+"nlp","ACL/IJCNLP",True
+"nlp","COLING-ACL",True
+"nlp","EMNLP-CoNLL",True
+"nlp","HLT/EMNLP",True
+"ai","AAAI",True
+"ai","AAAI/IAAI",True
+"ai","IJCAI",True
+"ir","WWW",True
+"ir","SIGIR",True
+"vis","IEEE Visualization",True
+"vis","VR",True
+"vis","IEEE Trans. Vis. Comput. Graph.",True
+"sec","IEEE Symposium on Security and Privacy",True
+"sec","ACM Conference on Computer and Communications Security",True
+"sec","USENIX Security Symposium",True
+"sec","USENIX Security",True
+"chi","CHI",True
+"chi","UbiComp",True
+"chi","Ubicomp",True
+"chi","UIST",True
+"log","CAV",True
+"log","CAV (1)",True
+"log","CAV (2)",True
+"log","LICS",True
+"log","CSL-LICS",True
+"mlmining","NIPS",True
+"mlmining","ICML",True
+"mlmining","ICML (1)",True
+"mlmining","ICML (2)",True
+"mlmining","ICML (3)",True
+"mlmining","KDD",True
+"crypt","CRYPTO",True
+"crypt","CRYPTO (1)",True
+"crypt","CRYPTO (2)",True
+"crypt","CRYPTO (3)",True
+"crypt","EUROCRYPT",True
+"crypt","EUROCRYPT (1)",True
+"crypt","EUROCRYPT (2)",True
+"crypt","EUROCRYPT (3)",True
+"hpc","SC",True
+"hpc","HPDC",True
+"hpc","ICS",True
+"bio","RECOMB",True
+"bio","ISMB",True
+"bio","Bioinformatics",True
+"bio","ISMB/ECCB (Supplement of Bioinformatics)",True
+"bio","Bioinformatics [ISMB/ECCB]",True
+"bio","ISMB (Supplement of Bioinformatics)",True
+"robotics","ICRA",True
+"robotics","ICRA (1)",True
+"robotics","ICRA (2)",True
+"robotics","IROS",True
+"robotics","Robotics: Science and Systems",True
+"ops","SOSP",True
+"ops","OSDI",True
+"ops","EuroSys",True
+"ops","USENIX Annual Technical Conference",True
+"ops","USENIX Annual Technical Conference, General Track",True
+"act","STOC",True
+"act","FOCS",True
+"act","SODA",True
+"da","ICCAD",True
+"da","DAC",True
+"metrics","SIGMETRICS",True
+"metrics","SIGMETRICS/Performance",True
+"metrics","IMC",True
+"metrics","Internet Measurement Conference",True
+"comm","SIGCOMM",True
+"comm","INFOCOM",True
+"comm","NSDI",True
+"plan","POPL",True
+"plan","PLDI",True
+"arch","ISCA",True
+"arch","MICRO",True
+"arch","ASPLOS",True
+"mod","VLDB",True
+"mod","PVLDB",True
+"mod","SIGMOD Conference",True
+"mobile","MobiSys",True
+"mobile","MobiCom",True
+"mobile","MOBICOM",True
+"mobile","SenSys",True
+"bed","RTSS",True
+"bed","RTAS",True
+"bed","IEEE Real-Time and Embedded Technology and Applications Symposium",True
+"bed","EMSOFT",True
+"graph","ACM Trans. Graph.",True
+"graph","SIGGRAPH",True
+"soft","ICSE",True
+"soft","ICSE (1)",True
+"soft","ICSE (2)",True
+"soft","SIGSOFT FSE",True
+"soft","ESEC/SIGSOFT FSE",True
+"vision","CVPR",True
+"vision","CVPR (1)",True
+"vision","CVPR (2)",True
+"vision","ICCV",True
+"vision","ECCV (1)",True
+"vision","ECCV (2)",True
+"vision","ECCV (3)",True
+"vision","ECCV (4)",True
+"vision","ECCV (5)",True
+"vision","ECCV (6)",True
+"vision","ECCV (7)",True
