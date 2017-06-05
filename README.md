@@ -27,10 +27,10 @@ upwards of 19GiB of memory). To then rebuild the databases, just run
 ``make``.
 
 You will also need to install libxml2-utils (or whatever package
-includes xmllint on your distro), npm, typescript, and python-lxml at
+includes xmllint on your distro), npm, typescript, python-lxml, and basex at
 a minimum via a command line like:
 
-``apt-get install libxml2-utils, npm, python-lxml; npm install -g typescript``
+``apt-get install libxml2-utils npm python-lxml basex; npm install -g typescript``
 
 ### Acknowledgements and other rankings
 
