@@ -51,7 +51,7 @@ areadict = {
             'EMNLP-CoNLL',  # -- in 2012 was joint
             'HLT/EMNLP',  # -- in 2005 was joint
             ],
-    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     # SIGMOBILE
     'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
     'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
