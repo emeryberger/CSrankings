@@ -1056,6 +1056,19 @@ class CSRankings {
 	
     }
 
+    /* Expand or collape the view of conferences in a given area. */
+    public static toggleConferences(area : string) : void {
+	const e = document.getElementById(area+"-conferences");
+	const widget = document.getElementById(area+"-widget");
+	if (e!.style.display === 'block') {
+	    e!.style.display = 'none';
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
+	} else {
+	    e!.style.display = 'block';
+	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+	}
+    }
+
 
     /* Expand or collape the view of all faculty in a department. */
     public static toggleFaculty(dept : string) : void {

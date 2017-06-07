@@ -135,12 +135,13 @@
 	      </p>
 -->
 	      <p>
-		<b>Click on a triangle</b> (&#9658;) to display names
-		and number of publications. <b>Click on a name</b> to
-		go to a faculty member's home page. <b>Click on a
-		pie</b> (the &#9685; after a name or institution) to
-		see a publication profile as a pie chart. <b>Click on
-		the raw number of publications</b> to go to their DBLP
+		<b>Click on a triangle</b> (&#9658;) to see conferences
+		or faculty names and number of
+		publications. <b>Click on a name</b> to go to a
+		faculty member's home page. <b>Click on a pie</b> (the
+		&#9685; after a name or institution) to see a
+		publication profile as a pie chart. <b>Click on the
+		raw number of publications</b> to go to their DBLP
 		entry.
 	      </p>
 	      <div class="row">
@@ -266,7 +267,7 @@
 	  
 	  <div class="row">
 	    <!-- col-xs-3 col-sm-6 col-md-4  -->
-	    <div class="col-sm-6 col-md-6 col-lg-6">
+	    <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6">
 	      <div class="table">
 		<table class="table-sm table-striped">
 
@@ -296,7 +297,12 @@
 		    <tr>
 		      <td>
 			Artificial intelligence
-			<small><em>AAAI, IJCAI</em></small>
+			<span onclick="CSRankings.toggleConferences('ai')" class="hovertip" id="ai-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="ai-conferences">
+			  <small><em>AAAI, IJCAI</em></small>
+			</div>
 		      </td>
 		      <td width="40px"> 
 			<input type="checkbox" name="field_ai" id="field_ai" value="1.0"/>
@@ -306,7 +312,12 @@
 		    <tr>
 		      <td> 
 			Computer vision
-			<small><em>CVPR, ECCV, ICCV</em></small>
+			<span onclick="CSRankings.toggleConferences('vision')" class="hovertip" id="vision-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="vision-conferences">
+			  <small><em>CVPR, ECCV, ICCV</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_vision" id="field_vision" value="1.0"/>
@@ -316,7 +327,12 @@
 		    <tr>
 		      <td>
 			Machine learning &amp; data mining
-			<small><em>ICML, KDD, NIPS</em>&nbsp;&nbsp;&nbsp;&nbsp;</small>
+			<span onclick="CSRankings.toggleConferences('mlmining')" class="hovertip" id="mlmining-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="mlmining-conferences">
+			  <small><em>ICML, KDD, NIPS</em>&nbsp;&nbsp;&nbsp;&nbsp;</small>
+			</div>
 		      </td>
 		      <td> 
 			<input type="checkbox" name="field_mlmining" id="field_mlmining" value="1.0"/>
@@ -326,7 +342,12 @@
 		    <tr>
 		      <td> 
 			Natural language processing
-			<small><em>ACL, EMNLP, NAACL</em></small>
+			<span onclick="CSRankings.toggleConferences('nlp')" class="hovertip" id="nlp-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="nlp-conferences">
+			  <small><em>ACL, EMNLP, NAACL</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_nlp" id="field_nlp" value="1.0"/>
@@ -336,7 +357,12 @@
 		    <tr>
 		      <td>
 			The web &amp; information retrieval
-			<small><em>SIGIR, WWW</em></small>
+			<span onclick="CSRankings.toggleConferences('ir')" class="hovertip" id="ir-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="ir-conferences">
+			  <small><em>SIGIR, WWW</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_ir" id="field_ir" value="1.0"/>
@@ -363,7 +389,12 @@
 		    <tr>
 		      <td>   
 			Computer architecture
-			<small><em>ASPLOS, ISCA, MICRO</em></small>
+			<span onclick="CSRankings.toggleConferences('arch')" class="hovertip" id="arch-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="arch-conferences">
+			  <small><em>ASPLOS, ISCA, MICRO</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_arch" id="field_arch" value="1.0"/>
@@ -373,7 +404,12 @@
 		    <tr>
 		      <td>  
 			Computer networks
-			<small><em>INFOCOM, SIGCOMM, NSDI</em></small>
+			<span onclick="CSRankings.toggleConferences('comm')" class="hovertip" id="comm-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="comm-conferences">
+			  <small><em>INFOCOM, SIGCOMM, NSDI</em></small>
+			</div>
 		      </td>
 		      <td>  
 			<input type="checkbox" name="field_comm" id="field_comm" value="1.0"/>
@@ -383,7 +419,12 @@
 		    <tr>
 		      <td>  
 			Computer security
-			<small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
+			<span onclick="CSRankings.toggleConferences('sec')" class="hovertip" id="sec-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="sec-conferences">
+			  <small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
+			</div>
 		      </td>
 		      <td>  
 			<input type="checkbox" name="field_sec" id="field_sec" value="1.0"/>
@@ -393,7 +434,12 @@
 		    <tr>
 		      <td>
 			Databases
-			<small><em>SIGMOD, VLDB</em></small>
+			<span onclick="CSRankings.toggleConferences('mod')" class="hovertip" id="mod-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="mod-conferences">
+			  <small><em>SIGMOD, VLDB</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_mod" id="field_mod" value="1.0"/>
@@ -403,7 +449,12 @@
 		    <tr>
 		      <td>
 			Design automation
-			<small><em>DAC, ICCAD</em></small>
+			<span onclick="CSRankings.toggleConferences('da')" class="hovertip" id="da-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="da-conferences">
+			  <small><em>DAC, ICCAD</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_da" id="field_da" value="1.0"/>
@@ -413,7 +464,12 @@
 		    <tr>
 		      <td>
 			Embedded and real-time systems
-			<small><em>EMSOFT, RTAS, RTSS</em></small>
+			<span onclick="CSRankings.toggleConferences('bed')" class="hovertip" id="bed-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="bed-conferences">
+			  <small><em>EMSOFT, RTAS, RTSS</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_bed" id="field_bed" value="1.0"/>
@@ -423,7 +479,12 @@
 		    <tr>
 		      <td>
 			High-performance computing
-			<small><em>HPDC, ICS, SC</em></small>
+			<span onclick="CSRankings.toggleConferences('hpc')" class="hovertip" id="hpc-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="hpc-conferences">
+			  <small><em>HPDC, ICS, SC</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_hpc" id="field_hpc" value="1.0"/>
@@ -433,7 +494,12 @@
 		    <tr>
 		      <td>
 			Mobile computing
-			<small><em>MobiCom, MobiSys, SenSys</em></small>
+			<span onclick="CSRankings.toggleConferences('mobile')" class="hovertip" id="mobile-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="mobile-conferences">
+			  <small><em>MobiCom, MobiSys, SenSys</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_mobile" id="field_mobile" value="1.0"/>
@@ -443,7 +509,13 @@
 		    <tr>
 		      <td>
 			Measurement &amp; performance analysis
-			<small><em>IMC, SIGMETRICS</em></small>
+			<span onclick="CSRankings.toggleConferences('metrics')" class="hovertip" id="metrics-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			&nbsp;&nbsp;&nbsp;
+			<div style="display:none;" id="metrics-conferences">
+			  <small><em>IMC, SIGMETRICS</em></small>
+			</div>
 		      </td>
 		      <td> 
 			<input type="checkbox" name="field_metrics" id="field_metrics" value="1.0"/>
@@ -453,7 +525,12 @@
 		    <tr>
 		      <td>  
 			Operating systems
-			<small><em>EuroSys, OSDI/SOSP, USENIX ATC</em></small>
+			<span onclick="CSRankings.toggleConferences('ops')" class="hovertip" id="ops-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="ops-conferences">
+			  <small><em>EuroSys, OSDI/SOSP, USENIX ATC</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_ops" id="field_ops" value="1.0"/>
@@ -463,7 +540,12 @@
 		    <tr>
 		      <td>
 			Programming languages
-			<small><em>PLDI, POPL</em></small>
+			<span onclick="CSRankings.toggleConferences('plan')" class="hovertip" id="plan-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="plan-conferences">
+			  <small><em>PLDI, POPL</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_plan" id="field_plan" value="1.0"/>
@@ -474,7 +556,12 @@
 		    <tr>
 		      <td>
 			Software engineering
-			<small><em>FSE, ICSE</em></small>
+			<span onclick="CSRankings.toggleConferences('soft')" class="hovertip" id="soft-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="soft-conferences">
+			  <small><em>FSE, ICSE</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_soft" id="field_soft" value="1.0"/>
@@ -499,7 +586,12 @@
 		    <tr>
 		      <td>
 			Algorithms &amp; complexity
-			<small><em>FOCS, SODA, STOC</em></small>
+			<span onclick="CSRankings.toggleConferences('act')" class="hovertip" id="act-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="act-conferences">
+			  <small><em>FOCS, SODA, STOC</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_act" id="field_act" value="1.0"/>
@@ -509,7 +601,12 @@
 		    <tr>
 		      <td>
 			Cryptography
-			<small><em>CRYPTO, EuroCrypt</em></small>
+			<span onclick="CSRankings.toggleConferences('crypt')" class="hovertip" id="crypt-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="crypt-conferences">
+			  <small><em>CRYPTO, EuroCrypt</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_crypt" id="field_crypt" value="1.0"/>
@@ -519,7 +616,12 @@
 		    <tr>
 		      <td>
 			Logic and verification
-			<small><em>CAV, LICS</em></small>
+			<span onclick="CSRankings.toggleConferences('log')" class="hovertip" id="log-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="log-conferences">
+			  <small><em>CAV, LICS</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_log" id="field_log" value="1.0"/>
@@ -543,7 +645,12 @@
 		    <tr>
 		      <td>
 			Computational bio &amp; bioinformatics
-			<small><em>ISMB, RECOMB</em></small>
+			<span onclick="CSRankings.toggleConferences('bio')" class="hovertip" id="bio-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="bio-conferences">
+			  <small><em>ISMB, RECOMB</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_bio" id="field_bio" value="1.0"/>
@@ -553,7 +660,12 @@
 		    <tr>
 		      <td>
 			Computer graphics
-			<small><em>SIGGRAPH, SIGGRAPH Asia</em></small>
+			<span onclick="CSRankings.toggleConferences('graph')" class="hovertip" id="graph-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="graph-conferences">
+			  <small><em>SIGGRAPH, SIGGRAPH Asia</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_graph" id="field_graph" value="1.0"/>
@@ -563,7 +675,12 @@
 		    <tr>
 		      <td> 
 			Human-computer interaction
-			<small><em>CHI, UbiComp, UIST</em></small>
+			<span onclick="CSRankings.toggleConferences('chi')" class="hovertip" id="chi-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="chi-conferences">
+			  <small><em>CHI, UbiComp, UIST</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_chi" id="field_chi" value="1.0"/>
@@ -573,7 +690,12 @@
 		    <tr>
 		      <td>
 			Robotics
-			<small><em>ICRA, IROS, RSS</em></small>
+			<span onclick="CSRankings.toggleConferences('robotics')" class="hovertip" id="robotics-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="robotics-conferences">
+			  <small><em>ICRA, IROS, RSS</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_robotics" id="field_robotics" value="1.0"/>
@@ -583,7 +705,12 @@
 		    <tr>
 		      <td>
 			Visualization
-			<small><em>VIS, VR</em></small>
+			<span onclick="CSRankings.toggleConferences('vis')" class="hovertip" id="vis-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			<div style="display:none;" id="vis-conferences">
+			  <small><em>VIS, VR</em></small>
+			</div>
 		      </td>
 		      <td>
 			<input type="checkbox" name="field_vis" id="field_vis" value="1.0"/>
