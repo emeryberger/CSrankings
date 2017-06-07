@@ -811,6 +811,19 @@ var CSRankings = (function () {
             CSRankings.makeChart(name);
         }
     };
+    /* Expand or collape the view of conferences in a given area. */
+    CSRankings.toggleConferences = function (area) {
+        var e = document.getElementById(area + "-conferences");
+        var widget = document.getElementById(area + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+        }
+    };
     /* Expand or collape the view of all faculty in a department. */
     CSRankings.toggleFaculty = function (dept) {
         var e = document.getElementById(dept + "-faculty");
