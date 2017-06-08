@@ -124,6 +124,8 @@ class CSRankings {
 
     private static readonly areaMap : Array<AreaMap>
 	= [ { area : "ai", title : "AI" },
+	    { area : "ai-aaai", title : "AI" },
+	    { area : "ai-ijcai", title : "AI" },
 	    { area : "vision", title : "Vision" },
 	    { area : "mlmining", title : "ML" },
 	    { area : "nlp",  title : "NLP" },
@@ -1066,6 +1068,12 @@ class CSRankings {
 	} else {
 	    e!.style.display = 'block';
 	    widget!.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+	}
+	const boxes = document.getElementById(area+"-conferences-checkboxes");
+	if (boxes!.style.display === 'block') {
+	    boxes!.style.display = 'none';
+	} else {
+	    boxes!.style.display = 'block';
 	}
     }
 
