@@ -823,6 +823,13 @@ var CSRankings = (function () {
             e.style.display = 'block';
             widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
         }
+        var boxes = document.getElementById(area + "-conferences-checkboxes");
+        if (boxes.style.display === 'block') {
+            boxes.style.display = 'none';
+        }
+        else {
+            boxes.style.display = 'block';
+        }
     };
     /* Expand or collape the view of all faculty in a department. */
     CSRankings.toggleFaculty = function (dept) {
@@ -888,6 +895,8 @@ CSRankings.allowRankingChange = false; /* Can we change the kind of rankings bei
 CSRankings.showCoauthors = false;
 CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
 CSRankings.areaMap = [{ area: "ai", title: "AI" },
+    { area: "ai-aaai", title: "AI" },
+    { area: "ai-ijcai", title: "AI" },
     { area: "vision", title: "Vision" },
     { area: "mlmining", title: "ML" },
     { area: "nlp", title: "NLP" },
