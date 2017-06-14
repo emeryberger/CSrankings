@@ -14,7 +14,7 @@ csrankings.js: csrankings.ts
 update-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
-	wget http://dblp.uni-trier.de/xml/dblp.xml.gz
+	wget http://dblp.org/xml/dblp.xml.gz
 	@echo "Fixing character encodings."
 	sh ./util/fix-dblp.sh
 	mv dblp-fixed.xml dblp.xml
