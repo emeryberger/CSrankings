@@ -43,7 +43,7 @@ var CSRankings = (function () {
             var area = _f[_e];
             CSRankings.theoryFields.push(CSRankings.areaPosition[area]);
         }
-        for (var _g = 0, _h = CSRankings.otherAreas; _g < _h.length; _g++) {
+        for (var _g = 0, _h = CSRankings.interdisciplinaryAreas; _g < _h.length; _g++) {
             var area = _h[_g];
             CSRankings.otherFields.push(CSRankings.areaPosition[area]);
         }
@@ -70,9 +70,9 @@ var CSRankings = (function () {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
         // Known issue: does not properly handle suffixes like Jr., III, etc.
-        name = name.replace(/'/g, "=");
-        name = name.replace(/\-/g, "=");
-        name = name.replace(/\./g, "=");
+        name = name.replace(/'|\-|\./g, "=");
+        //	name = name.replace(/\-/g, "=");
+        //	name = name.replace(/\./g, "=");
         name = name.replace(/Á/g, "=Aacute=");
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
@@ -381,6 +381,8 @@ var CSRankings = (function () {
             var str = "input[name=" + CSRankings.fields[fields[i]] + "]";
             jQuery(str).prop('checked', value);
         }
+        /*	const str = "input[name=field_ai]";
+            jQuery(str).prop('disabled', value); */
         CSRankings.rank();
         return false;
     };
@@ -895,8 +897,9 @@ CSRankings.allowRankingChange = false; /* Can we change the kind of rankings bei
 CSRankings.showCoauthors = false;
 CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
 CSRankings.areaMap = [{ area: "ai", title: "AI" },
-    { area: "ai-aaai", title: "AI" },
-    { area: "ai-ijcai", title: "AI" },
+    //	    { area : "ai-aaai", title : "AI" },
+    //	    { area : "ai-ijcai", title : "AI" },
+    //	    { area : "ecom", title : "ECom" },
     { area: "vision", title: "Vision" },
     { area: "mlmining", title: "ML" },
     { area: "nlp", title: "NLP" },
@@ -925,7 +928,7 @@ CSRankings.areaMap = [{ area: "ai", title: "AI" },
 CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
 CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
 CSRankings.theoryAreas = ["act", "crypt", "log"];
-CSRankings.otherAreas = ["graph", "chi", "robotics", "bio", "vis"];
+CSRankings.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "vis", "ecom"];
 CSRankings.areas = [];
 CSRankings.areaNames = [];
 CSRankings.fields = [];
