@@ -18,12 +18,15 @@ update-dblp:
 	@echo "Fixing character encodings."
 	sh ./util/fix-dblp.sh
 	mv dblp-fixed.xml dblp.xml
+	$(MAKE) shrink
+	@echo "Done."
+
+shrink:
 	@echo "Shrinking the file."
 	basex -c filter.xq > dblp2.xml
 	gzip dblp2.xml
 	mv dblp.xml.gz dblp-original.xml.gz
 	mv dblp2.xml.gz dblp.xml.gz
-	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv
 	@echo "Rebuilding home pages (homepages.csv)."
