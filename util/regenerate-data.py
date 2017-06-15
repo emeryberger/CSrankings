@@ -64,7 +64,8 @@ areadict = {
     # SIGBED
     'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
-    'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.']
+    'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.'],
+    'ecom' : ['EC', 'WINE']
 }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
@@ -227,7 +228,7 @@ def do_it():
     xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
 
 def csv2dict_str_str(fname):
-    """Takes a CSV files and returns a dictionary of pairs."""
+    """Takes a CSV file and returns a dictionary of pairs."""
     with open(fname, mode='r') as infile:
         rdr = csv.reader(infile)
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
