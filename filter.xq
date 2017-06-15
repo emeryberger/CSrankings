@@ -115,7 +115,9 @@
 //inproceedings[booktitle="ECCV (4)"],
 //inproceedings[booktitle="ECCV (5)"],
 //inproceedings[booktitle="ECCV (6)"],
-//inproceedings[booktitle="ECCV (7)"]}</dblp>
+//inproceedings[booktitle="ECCV (7)"],
+//inproceedings[booktitle="EC"],
+//inproceedings[booktitle="WINE"]}</dblp>
 ]]>
 </xquery>
 <close />

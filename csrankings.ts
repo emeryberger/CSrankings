@@ -89,7 +89,7 @@ class CSRankings {
 	for (let area of CSRankings.theoryAreas) {
 	    CSRankings.theoryFields.push (CSRankings.areaPosition[area]);
 	}
-	for (let area of CSRankings.otherAreas) {
+	for (let area of CSRankings.interdisciplinaryAreas) {
 	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
 	}
 	CSRankings.setAllCheckboxes();
@@ -124,8 +124,9 @@ class CSRankings {
 
     private static readonly areaMap : Array<AreaMap>
 	= [ { area : "ai", title : "AI" },
-	    { area : "ai-aaai", title : "AI" },
-	    { area : "ai-ijcai", title : "AI" },
+//	    { area : "ai-aaai", title : "AI" },
+//	    { area : "ai-ijcai", title : "AI" },
+//	    { area : "ecom", title : "ECom" },
 	    { area : "vision", title : "Vision" },
 	    { area : "mlmining", title : "ML" },
 	    { area : "nlp",  title : "NLP" },
@@ -155,7 +156,7 @@ class CSRankings {
     private static readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
     private static readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
     private static readonly theoryAreas  = [ "act", "crypt", "log" ];
-    private static readonly otherAreas   = [ "graph", "chi", "robotics", "bio", "vis" ];
+    private static readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "vis", "ecom" ];
     
     private static readonly areas : Array<string> = [];
     private static readonly areaNames : Array<string> = [];
@@ -211,9 +212,9 @@ class CSRankings {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
 	// First, replace spaces and non-ASCII characters (not complete).
 	// Known issue: does not properly handle suffixes like Jr., III, etc.
-	name = name.replace(/'/g, "=");
-	name = name.replace(/\-/g, "=");
-	name = name.replace(/\./g, "=");
+	name = name.replace(/'|\-|\./g, "=");
+//	name = name.replace(/\-/g, "=");
+//	name = name.replace(/\./g, "=");
 	name = name.replace(/Á/g, "=Aacute=");
 	name = name.replace(/á/g, "=aacute=");
 	name = name.replace(/è/g, "=egrave=");
@@ -540,6 +541,8 @@ class CSRankings {
 	    const str = "input[name=" + CSRankings.fields[fields[i]] + "]";
 	    jQuery(str).prop('checked', value);
 	}
+/*	const str = "input[name=field_ai]";
+	jQuery(str).prop('disabled', value); */
 	CSRankings.rank();
 	return false;
     }
