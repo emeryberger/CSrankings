@@ -64,9 +64,26 @@ areadict = {
     # SIGBED
     'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
-    'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.'],
-    'ecom' : ['EC', 'WINE']
+    'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.']
+#    'ecom' : ['EC', 'WINE']
 }
+
+subareaName = {
+    'AAAI' : 'aaai',
+    'AAAI/IAAI' : 'aaai',
+    'IJCAI' : 'ijcai',
+    'CVPR' : 'cvpr',
+    'CVPR (1)' : 'cvpr',
+    'CVPR (2)' : 'cvpr',
+    'ICCV' : 'iccv',
+    'ECCV' : 'eccv',
+    'ECCV (1)' : 'eccv',
+    'ECCV (2)' : 'eccv',
+    'ECCV (3)' : 'eccv',
+    'ECCV (4)' : 'eccv',
+    'ECCV (5)' : 'eccv',
+    'ECCV (6)' : 'eccv',
+    'ECCV (7)' : 'eccv'  }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
@@ -396,6 +413,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
 
 def handle_article(_, article):
     global confdict
+    global subareaName
     global counter
     global successes
     global failures
@@ -481,8 +499,13 @@ def handle_article(_, article):
                 tmplist.append(log)
                 authlogs[authorName] = tmplist
                 interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
-                authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
-                authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
+                if confname in subareaName:
+                    subarea = subareaName[confname]
+                    # areaname = subarea # FIXME?
+                else:
+                    subarea = ""
+                authorscores[(authorName, areaname, subarea, year)] = authorscores.get((authorName, areaname, subarea, year), 0) + 1.0
+                authorscoresAdjusted[(authorName, areaname, subarea, year)] = authorscoresAdjusted.get((authorName, areaname, subarea, year), 0) + 1.0 / authorsOnPaper
     return True
 
 def sortdictionary(d):
@@ -496,16 +519,18 @@ def dump_it():
     global interestingauthors
     global facultydict
     with open('generated-author-info.csv','w') as f:
-        f.write('"name","dept","area","count","adjustedcount","year"\n')
+        f.write('"name","dept","area","subarea","count","adjustedcount","year"\n')
         authorscores = collections.OrderedDict(sorted(authorscores.iteritems()))
-        for ((authorName, area, year), count) in authorscores.iteritems():
+        for ((authorName, area, subarea, year), count) in authorscores.iteritems():
             # count = authorscores[(authorName, area, year)]
-            countAdjusted = authorscoresAdjusted[(authorName, area, year)]
+            countAdjusted = authorscoresAdjusted[(authorName, area, subarea, year)]
             f.write(authorName.encode('utf-8'))
             f.write(',')
             f.write((facultydict[authorName].encode('utf-8')))
             f.write(',')
             f.write(area)
+            f.write(',')
+            f.write(subarea)
             f.write(',')
             f.write(str(count))
             f.write(',')
