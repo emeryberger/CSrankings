@@ -304,46 +304,40 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 _this.authors = data;
-                var _loop_1 = function (i) {
+                for (var i = 0; i < CSRankings.fields.length; i++) {
                     var str = 'input[name=' + CSRankings.fields[i] + ']';
                     jQuery(str).click(function () {
-                        if (jQuery(str).hasClass("parent")) {
-                            // Parent (un)checked => all children (un)checked
-                            var isChecked = jQuery(str).prop('checked');
-                            var parent_1 = CSRankings.fields[i];
-                            for (var _i = 0, _a = CSRankings.childMap[parent_1]; _i < _a.length; _i++) {
-                                var kid = _a[_i];
-                                jQuery("input[name=" + kid + "]").prop('checked', isChecked);
-                            }
-                        }
-                        if (jQuery(str).hasClass("child")) {
-                            var s = jQuery(str).attr("id");
-                            var parent_2 = CSRankings.parentMap[s];
-                            // Uncheck a child => uncheck the parent.
-                            if (!jQuery("input[name=" + CSRankings.fields[i] + "]").prop('checked')) {
-                                jQuery("input[name=" + parent_2 + "]").prop('checked', false);
-                            }
-                            else {
-                                // All children checked => check the parent.
-                                var v = true;
-                                for (var _b = 0, _c = CSRankings.childMap[parent_2]; _b < _c.length; _b++) {
-                                    var kid = _c[_b];
-                                    var checked = jQuery("input[name=" + kid + "]").prop('checked');
-                                    if (!checked) {
-                                        v = false;
-                                        break;
+                        /*			if (jQuery(str).hasClass("parent")) {
+                                        // Parent (un)checked => all children (un)checked
+                                        let isChecked = jQuery(str).prop('checked');
+                                        let parent = CSRankings.fields[i];
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                        jQuery("input[name="+kid+"]").prop('checked', isChecked);
+                                        }
                                     }
-                                }
-                                if (v) {
-                                    jQuery("input[name=" + parent_2 + "]").prop('checked', true);
-                                }
-                            }
-                        }
+                                    if (jQuery(str).hasClass("child")) {
+                                        let s = jQuery(str).attr("id");
+                                        let parent = CSRankings.parentMap[s];
+                                        // Uncheck a child => uncheck the parent.
+                                        if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
+                                        jQuery("input[name="+parent+"]").prop('checked', false);
+                                        } else {
+                                        // All children checked => check the parent.
+                                        let v = true;
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                            let checked = jQuery("input[name="+kid+"]").prop('checked');
+                                            if (!checked) {
+                                            v = false;
+                                            break;
+                                            }
+                                        }
+                                        if (v) {
+                                            jQuery("input[name="+parent+"]").prop('checked', true);
+                                        }
+                                        }
+                                    } */
                         _this.rank();
                     });
-                };
-                for (var i = 0; i < CSRankings.fields.length; i++) {
-                    _loop_1(i);
                 }
                 setTimeout(cont, 0);
             }
@@ -637,7 +631,7 @@ var CSRankings = (function () {
     /* Build drop down for faculty names and paper counts. */
     CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
         var univtext = {};
-        var _loop_2 = function (dept) {
+        var _loop_1 = function (dept) {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
             }
@@ -662,7 +656,7 @@ var CSRankings = (function () {
                     return fc[b] - fc[a];
                 }
             });
-            var _loop_3 = function (name_5) {
+            var _loop_2 = function (name_5) {
                 if (CSRankings.showCoauthors) {
                     /* Build up text for co-authors. */
                     var coauthorStr_1 = "";
@@ -727,13 +721,13 @@ var CSRankings = (function () {
             };
             for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
                 var name_5 = keys_1[_b];
-                _loop_3(name_5);
+                _loop_2(name_5);
             }
             p += "</tbody></table></div></div>";
             univtext[dept] = p;
         };
         for (var dept in deptNames) {
-            _loop_2(dept);
+            _loop_1(dept);
         }
         return univtext;
     };
@@ -903,8 +897,8 @@ var CSRankings = (function () {
             var str = "input[name=" + CSRankings.fields[i] + "]";
             jQuery(str).prop('checked', value);
             if (CSRankings.fields[i] in CSRankings.childMap) {
-                var parent_3 = CSRankings.fields[i];
-                for (var _i = 0, _a = CSRankings.childMap[parent_3]; _i < _a.length; _i++) {
+                var parent_1 = CSRankings.fields[i];
+                for (var _i = 0, _a = CSRankings.childMap[parent_1]; _i < _a.length; _i++) {
                     var kid = _a[_i];
                     jQuery("input[name=" + kid + "]").prop('checked', value);
                 }
