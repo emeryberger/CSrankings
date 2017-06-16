@@ -19,6 +19,7 @@ interface Article {
     readonly name : string;
     readonly conf : string;
     readonly area : string;
+    readonly subarea : string;
     readonly year : number;
     readonly title : string;
     readonly institution : string;
@@ -28,6 +29,7 @@ interface Author {
     readonly name : string;
     readonly dept : string;
     readonly area : string;
+    readonly subarea : string;
     readonly count : string;
     readonly adjustedcount : string;
     readonly year : number;
@@ -76,7 +78,7 @@ class CSRankings {
 	    const { area, title } = CSRankings.areaMap[position];
 	    CSRankings.areas[position]     = area;
 	    CSRankings.areaNames[position] = title;
-	    CSRankings.fields[position]    = "field_" + area;
+	    CSRankings.fields[position]    = area;
 	    CSRankings.areaDict[area]      = CSRankings.areaNames[position];
 	    CSRankings.areaPosition[area]  = position;
 	}
@@ -92,7 +94,7 @@ class CSRankings {
 	for (let area of CSRankings.interdisciplinaryAreas) {
 	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
 	}
-	CSRankings.setAllCheckboxes();
+	// CSRankings.setAllCheckboxes();
 	let next = ()=> {
 	    CSRankings.loadAliases(CSRankings.aliases, function() {
 		CSRankings.loadHomepages(CSRankings.homepages,
@@ -106,6 +108,7 @@ class CSRankings {
 					 });
 	    });
 	};
+	CSRankings.activateAll();
 	if (CSRankings.showCoauthors) {
 	    CSRankings.loadCoauthors(next);
 	} else {
@@ -122,12 +125,27 @@ class CSRankings {
     private static readonly showCoauthors      = false;
     private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
 
+    private static readonly parentMap : {[key : string] : string }
+	= { 'aaai' : 'ai',
+	    'ijcai' : 'ai',
+	    'cvpr' : 'vision',
+	    'eccv' : 'vision',
+	    'iccv' : 'vision'
+	  };
+    
+    private static readonly childMap : {[key : string] : [string] }
+	= { 'ai' : ['aaai', 'ijcai'],
+	    'vision' : ['cvpr', 'eccv', 'iccv'] };
+    
     private static readonly areaMap : Array<AreaMap>
 	= [ { area : "ai", title : "AI" },
-//	    { area : "ai-aaai", title : "AI" },
-//	    { area : "ai-ijcai", title : "AI" },
+//	    { area : "aaai", title : "AI" },
+//	    { area : "ijcai", title : "AI" },
 //	    { area : "ecom", title : "ECom" },
 	    { area : "vision", title : "Vision" },
+//	    { area : "cvpr", title : "Vision" },
+//	    { area : "eccv", title : "Vision" },
+//	    { area : "iccv", title : "Vision" },
 	    { area : "mlmining", title : "ML" },
 	    { area : "nlp",  title : "NLP" },
 	    { area : "ir", title : "Web & IR" },
@@ -290,10 +308,11 @@ class CSRankings {
     {
 	console.assert (CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
 	let data : Array<ChartData> = [];
+	let datadict : {[key : string] : number } = {};
 	const keys = CSRankings.areas;
 	const uname = unescape(name);
 	for (let i = 0; i < keys.length; i++) {
-	    const key = keys[i];
+	    let key = keys[i];
 	    let value = CSRankings.authorAreas[uname][key];
 	    // Use adjusted count if this is for a department.
 	    if (uname in CSRankings.stats) {
@@ -305,10 +324,19 @@ class CSRankings {
 	    // Round it to the nearest 0.1.
 	    value = Math.round(value * 10) / 10;
 	    if (value > 0) {
-		data.push({ "label" : CSRankings.areaDict[key],
-			    "value" : value,
-			    "color" : CSRankings.color[i] });
+		if (key in CSRankings.parentMap) {
+		    // key = CSRankings.parentMap[key];
+		}
+		if (!(key in datadict)) {
+		    datadict[key] = 0;
+		}
+		datadict[key] += value;
 	    }
+	}
+	for (let key in datadict) {
+	    data.push({ "label" : CSRankings.areaDict[key],
+			"value" : datadict[key],
+			"color" : CSRankings.color[CSRankings.areaPosition[key]] });
 	}
 	new d3pie(name + "-chart", {
 	    "header": {
@@ -447,7 +475,38 @@ class CSRankings {
 		this.authors = data as Array<Author>;
 		for (let i = 0; i < CSRankings.fields.length; i++) {
 		    const str = 'input[name='+CSRankings.fields[i]+']';
-		    jQuery(str).click(()=>{ this.rank(); });
+		    jQuery(str).click(()=>{
+			if (jQuery(str).hasClass("parent")) {
+			    // Parent (un)checked => all children (un)checked
+			    let isChecked = jQuery(str).prop('checked');
+			    let parent = CSRankings.fields[i];
+			    for (let kid of CSRankings.childMap[parent]) {
+				jQuery("input[name="+kid+"]").prop('checked', isChecked);
+			    }
+			}
+			if (jQuery(str).hasClass("child")) {
+			    let s = jQuery(str).attr("id");
+			    let parent = CSRankings.parentMap[s];
+			    // Uncheck a child => uncheck the parent.
+			    if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
+				jQuery("input[name="+parent+"]").prop('checked', false);
+			    } else {
+				// All children checked => check the parent.
+				let v = true;
+				for (let kid of CSRankings.childMap[parent]) {
+				    let checked = jQuery("input[name="+kid+"]").prop('checked');
+				    if (!checked) {
+					v = false;
+					break;
+				    }
+				}
+				if (v) {
+				    jQuery("input[name="+parent+"]").prop('checked', true);
+				}
+			    }
+			}
+			this.rank();
+		    });
 		}
 		setTimeout(cont, 0);
 	    }
@@ -541,8 +600,6 @@ class CSRankings {
 	    const str = "input[name=" + CSRankings.fields[fields[i]] + "]";
 	    jQuery(str).prop('checked', value);
 	}
-/*	const str = "input[name=field_ai]";
-	jQuery(str).prop('disabled', value); */
 	CSRankings.rank();
 	return false;
     }
@@ -666,13 +723,17 @@ class CSRankings {
 	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
 		continue;
 	    }
+	    if (!CSRankings.inRegion(dept, regions)) {
+		continue;
+	    }
+	    // If this area is a child area, accumulate totals for parent.
+	    if (area in CSRankings.parentMap) {
+		area = CSRankings.parentMap[area];
+	    }
 	    const areaDept : string = area+dept;
 	    const nameDept : string = name+dept;
 	    if (!(areaDept in areaDeptAdjustedCount)) {
 		areaDeptAdjustedCount[areaDept] = 0;
-	    }
-	    if (!CSRankings.inRegion(dept, regions)) {
-		continue;
 	    }
 	    const count : number = parseInt(authors[r].count);
 	    const adjustedCount : number = parseFloat(authors[r].adjustedcount);
@@ -702,8 +763,8 @@ class CSRankings {
 				displayPercentages : boolean,
 				weights : {[key:string] : number})
     : {[key: string] : number}
-	{
-	    CSRankings.stats = {};
+    {
+	CSRankings.stats = {};
 	let univagg : {[key: string] : number} = {};
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
@@ -715,6 +776,10 @@ class CSRankings {
 		univagg[dept] = 0;
 	    }
 	    for (let area of areas) {
+		// If the area is a child, ignore it.
+		if (area in CSRankings.parentMap) {
+		    continue;
+		}
 		let areaDept = area+dept;
 		if (!(areaDept in areaDeptAdjustedCount)) {
 		    areaDeptAdjustedCount[areaDept] = 0;
@@ -969,10 +1034,7 @@ class CSRankings {
 
     /* Set all checkboxes to true. */
     private static setAllCheckboxes() : void {
-	for (let i = 0; i < CSRankings.areas.length; i++) {
-	    const str = 'input[name=' + CSRankings.fields[i] + ']';
-	    jQuery(str).prop('checked', true);
-	}
+	CSRankings.activateAll();
     }
 
     /* PUBLIC METHODS */
@@ -1098,6 +1160,12 @@ class CSRankings {
 	for (let i = 0; i < CSRankings.areas.length; i++) {
 	    const str = "input[name=" + CSRankings.fields[i] + "]";
 	    jQuery(str).prop('checked', value);
+	    if (CSRankings.fields[i] in CSRankings.childMap) {
+		let parent = CSRankings.fields[i];
+		for (let kid of CSRankings.childMap[parent]) {
+		    jQuery("input[name="+kid+"]").prop('checked', value);
+		}
+	    }
 	}
 	CSRankings.rank();
 	return false;
