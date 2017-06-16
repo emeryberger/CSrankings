@@ -27,7 +27,7 @@ var CSRankings = (function () {
             var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
             CSRankings.areaNames[position] = title;
-            CSRankings.fields[position] = "field_" + area;
+            CSRankings.fields[position] = area;
             CSRankings.areaDict[area] = CSRankings.areaNames[position];
             CSRankings.areaPosition[area] = position;
         }
@@ -47,7 +47,7 @@ var CSRankings = (function () {
             var area = _h[_g];
             CSRankings.otherFields.push(CSRankings.areaPosition[area]);
         }
-        CSRankings.setAllCheckboxes();
+        // CSRankings.setAllCheckboxes();
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
@@ -59,6 +59,7 @@ var CSRankings = (function () {
                 });
             });
         };
+        CSRankings.activateAll();
         if (CSRankings.showCoauthors) {
             CSRankings.loadCoauthors(next);
         }
@@ -143,6 +144,7 @@ var CSRankings = (function () {
     CSRankings.makeChart = function (name) {
         console.assert(CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
         var data = [];
+        var datadict = {};
         var keys = CSRankings.areas;
         var uname = unescape(name);
         for (var i = 0; i < keys.length; i++) {
@@ -158,10 +160,19 @@ var CSRankings = (function () {
             // Round it to the nearest 0.1.
             value = Math.round(value * 10) / 10;
             if (value > 0) {
-                data.push({ "label": CSRankings.areaDict[key],
-                    "value": value,
-                    "color": CSRankings.color[i] });
+                if (key in CSRankings.parentMap) {
+                    // key = CSRankings.parentMap[key];
+                }
+                if (!(key in datadict)) {
+                    datadict[key] = 0;
+                }
+                datadict[key] += value;
             }
+        }
+        for (var key in datadict) {
+            data.push({ "label": CSRankings.areaDict[key],
+                "value": datadict[key],
+                "color": CSRankings.color[CSRankings.areaPosition[key]] });
         }
         new d3pie(name + "-chart", {
             "header": {
@@ -295,7 +306,38 @@ var CSRankings = (function () {
                 _this.authors = data;
                 for (var i = 0; i < CSRankings.fields.length; i++) {
                     var str = 'input[name=' + CSRankings.fields[i] + ']';
-                    jQuery(str).click(function () { _this.rank(); });
+                    jQuery(str).click(function () {
+                        /*			if (jQuery(str).hasClass("parent")) {
+                                        // Parent (un)checked => all children (un)checked
+                                        let isChecked = jQuery(str).prop('checked');
+                                        let parent = CSRankings.fields[i];
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                        jQuery("input[name="+kid+"]").prop('checked', isChecked);
+                                        }
+                                    }
+                                    if (jQuery(str).hasClass("child")) {
+                                        let s = jQuery(str).attr("id");
+                                        let parent = CSRankings.parentMap[s];
+                                        // Uncheck a child => uncheck the parent.
+                                        if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
+                                        jQuery("input[name="+parent+"]").prop('checked', false);
+                                        } else {
+                                        // All children checked => check the parent.
+                                        let v = true;
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                            let checked = jQuery("input[name="+kid+"]").prop('checked');
+                                            if (!checked) {
+                                            v = false;
+                                            break;
+                                            }
+                                        }
+                                        if (v) {
+                                            jQuery("input[name="+parent+"]").prop('checked', true);
+                                        }
+                                        }
+                                    } */
+                        _this.rank();
+                    });
                 }
                 setTimeout(cont, 0);
             }
@@ -381,8 +423,6 @@ var CSRankings = (function () {
             var str = "input[name=" + CSRankings.fields[fields[i]] + "]";
             jQuery(str).prop('checked', value);
         }
-        /*	const str = "input[name=field_ai]";
-            jQuery(str).prop('disabled', value); */
         CSRankings.rank();
         return false;
     };
@@ -481,13 +521,17 @@ var CSRankings = (function () {
             if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
                 continue;
             }
+            if (!CSRankings.inRegion(dept, regions)) {
+                continue;
+            }
+            // If this area is a child area, accumulate totals for parent.
+            if (area in CSRankings.parentMap) {
+                area = CSRankings.parentMap[area];
+            }
             var areaDept = area + dept;
             var nameDept = name_2 + dept;
             if (!(areaDept in areaDeptAdjustedCount)) {
                 areaDeptAdjustedCount[areaDept] = 0;
-            }
-            if (!CSRankings.inRegion(dept, regions)) {
-                continue;
             }
             var count = parseInt(authors[r].count);
             var adjustedCount = parseFloat(authors[r].adjustedcount);
@@ -524,6 +568,10 @@ var CSRankings = (function () {
             }
             for (var _i = 0, areas_1 = areas; _i < areas_1.length; _i++) {
                 var area = areas_1[_i];
+                // If the area is a child, ignore it.
+                if (area in CSRankings.parentMap) {
+                    continue;
+                }
                 var areaDept = area + dept;
                 if (!(areaDept in areaDeptAdjustedCount)) {
                     areaDeptAdjustedCount[areaDept] = 0;
@@ -765,10 +813,7 @@ var CSRankings = (function () {
     };
     /* Set all checkboxes to true. */
     CSRankings.setAllCheckboxes = function () {
-        for (var i = 0; i < CSRankings.areas.length; i++) {
-            var str = 'input[name=' + CSRankings.fields[i] + ']';
-            jQuery(str).prop('checked', true);
-        }
+        CSRankings.activateAll();
     };
     /* PUBLIC METHODS */
     CSRankings.rank = function () {
@@ -851,6 +896,13 @@ var CSRankings = (function () {
         for (var i = 0; i < CSRankings.areas.length; i++) {
             var str = "input[name=" + CSRankings.fields[i] + "]";
             jQuery(str).prop('checked', value);
+            if (CSRankings.fields[i] in CSRankings.childMap) {
+                var parent_1 = CSRankings.fields[i];
+                for (var _i = 0, _a = CSRankings.childMap[parent_1]; _i < _a.length; _i++) {
+                    var kid = _a[_i];
+                    jQuery("input[name=" + kid + "]").prop('checked', value);
+                }
+            }
         }
         CSRankings.rank();
         return false;
@@ -896,11 +948,22 @@ CSRankings.homepagesFile = "homepages.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
 CSRankings.showCoauthors = false;
 CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
+CSRankings.parentMap = { 'aaai': 'ai',
+    'ijcai': 'ai',
+    'cvpr': 'vision',
+    'eccv': 'vision',
+    'iccv': 'vision'
+};
+CSRankings.childMap = { 'ai': ['aaai', 'ijcai'],
+    'vision': ['cvpr', 'eccv', 'iccv'] };
 CSRankings.areaMap = [{ area: "ai", title: "AI" },
-    //	    { area : "ai-aaai", title : "AI" },
-    //	    { area : "ai-ijcai", title : "AI" },
+    //	    { area : "aaai", title : "AI" },
+    //	    { area : "ijcai", title : "AI" },
     //	    { area : "ecom", title : "ECom" },
     { area: "vision", title: "Vision" },
+    //	    { area : "cvpr", title : "Vision" },
+    //	    { area : "eccv", title : "Vision" },
+    //	    { area : "iccv", title : "Vision" },
     { area: "mlmining", title: "ML" },
     { area: "nlp", title: "NLP" },
     { area: "ir", title: "Web & IR" },
