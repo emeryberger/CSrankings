@@ -476,7 +476,7 @@ class CSRankings {
 		for (let i = 0; i < CSRankings.fields.length; i++) {
 		    const str = 'input[name='+CSRankings.fields[i]+']';
 		    jQuery(str).click(()=>{
-			if (jQuery(str).hasClass("parent")) {
+/*			if (jQuery(str).hasClass("parent")) {
 			    // Parent (un)checked => all children (un)checked
 			    let isChecked = jQuery(str).prop('checked');
 			    let parent = CSRankings.fields[i];
@@ -504,7 +504,7 @@ class CSRankings {
 				    jQuery("input[name="+parent+"]").prop('checked', true);
 				}
 			    }
-			}
+			} */
 			this.rank();
 		    });
 		}
