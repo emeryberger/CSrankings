@@ -983,8 +983,8 @@ CSRankings.areaMap = [{ area: "ai", title: "AI" },
     { area: "chi", title: "HCI" },
     { area: "robotics", title: "Robotics" },
     { area: "bio", title: "Comp. Biology" },
-    { area: "da", title: "Design Auto." },
-    { area: "bed", title: "Embedded Sys" },
+    { area: "da", title: "EDA" },
+    { area: "bed", title: "Embedded" },
     { area: "vis", title: "Visualization" }
     //,{ area : "ecom", title : "ECom" }
     //,{ area : "cse", title : "CSEd" }
