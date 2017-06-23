@@ -65,7 +65,8 @@ areadict = {
     'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
     'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.']
-#    'ecom' : ['EC', 'WINE']
+    # ,'ecom' : ['EC', 'WINE']
+    # ,'cse' : ['SIGCSE']
 }
 
 subareaName = {
