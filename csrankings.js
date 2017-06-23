@@ -959,7 +959,6 @@ CSRankings.childMap = { 'ai': ['aaai', 'ijcai'],
 CSRankings.areaMap = [{ area: "ai", title: "AI" },
     //	    { area : "aaai", title : "AI" },
     //	    { area : "ijcai", title : "AI" },
-    //	    { area : "ecom", title : "ECom" },
     { area: "vision", title: "Vision" },
     //	    { area : "cvpr", title : "Vision" },
     //	    { area : "eccv", title : "Vision" },
@@ -987,6 +986,8 @@ CSRankings.areaMap = [{ area: "ai", title: "AI" },
     { area: "da", title: "Design Automation" },
     { area: "bed", title: "Embedded Systems" },
     { area: "vis", title: "Visualization" }
+    //,{ area : "ecom", title : "ECom" }
+    //,{ area : "cse", title : "CSEd" }
 ];
 CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
 CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];

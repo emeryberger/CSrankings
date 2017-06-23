@@ -141,7 +141,6 @@ class CSRankings {
 	= [ { area : "ai", title : "AI" },
 //	    { area : "aaai", title : "AI" },
 //	    { area : "ijcai", title : "AI" },
-//	    { area : "ecom", title : "ECom" },
 	    { area : "vision", title : "Vision" },
 //	    { area : "cvpr", title : "Vision" },
 //	    { area : "eccv", title : "Vision" },
@@ -169,6 +168,8 @@ class CSRankings {
 	    { area : "da", title : "Design Automation" },
 	    { area : "bed", title : "Embedded Systems" },
 	    { area : "vis", title : "Visualization" }
+	    //,{ area : "ecom", title : "ECom" }
+	    //,{ area : "cse", title : "CSEd" }
 	  ];
 
     private static readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
