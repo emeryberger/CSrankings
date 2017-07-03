@@ -47108,8 +47108,25 @@ Robert H. Sloan,University of Illinois at Chicago,ai,aaai,1.0,0.5,1988
 Robert H. Sloan,University of Illinois at Chicago,ai,aaai,1.0,0.25,2008
 Robert Harle,University of Cambridge,chi,,1.0,0.5,2008
 Robert Harle,University of Cambridge,chi,,1.0,0.5,2013
-Robert Harper,Carnegie Mellon University,plan,,1.0,0.5,1993
-Robert Harper,Carnegie Mellon University,plan,,1.0,0.5,1994
+Robert Harper 0001,Carnegie Mellon University,act,,1.0,0.2,2004
+Robert Harper 0001,Carnegie Mellon University,log,,1.0,0.333333333333,1987
+Robert Harper 0001,Carnegie Mellon University,log,,1.0,0.333333333333,1989
+Robert Harper 0001,Carnegie Mellon University,log,,1.0,0.25,2004
+Robert Harper 0001,Carnegie Mellon University,log,,1.0,0.333333333333,2008
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.5,1988
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.333333333333,1990
+Robert Harper 0001,Carnegie Mellon University,plan,,2.0,0.833333333333,1991
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.5,1995
+Robert Harper 0001,Carnegie Mellon University,plan,,2.0,0.5,1996
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.333333333333,1998
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.333333333333,1999
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.5,2000
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.333333333333,2002
+Robert Harper 0001,Carnegie Mellon University,plan,,3.0,0.916666666667,2003
+Robert Harper 0001,Carnegie Mellon University,plan,,2.0,0.583333333333,2007
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.5,2012
+Robert Harper 0001,Carnegie Mellon University,plan,,1.0,0.5,2013
+Robert Harper 0001,Carnegie Mellon University,plan,,3.0,1.0,2017
 Robert Hoehndorf,KAUST,bio,,1.0,0.166666666667,2006
 Robert Holte,University of Alberta,ai,aaai,1.0,0.25,2006
 Robert Holte,University of Alberta,ai,aaai,2.0,0.5,2010
@@ -60425,34 +60442,6 @@ Yang Cao,Virginia Tech,robotics,,1.0,0.166666666667,2015
 Yang Cao,Virginia Tech,vision,cvpr,1.0,0.2,2010
 Yang Cao,Virginia Tech,vision,cvpr,1.0,0.25,2011
 Yang Cao,Virginia Tech,vision,eccv,1.0,0.333333333333,2010
-Yang Liu,University of Texas at Dallas,ai,aaai,5.0,1.4,2015
-Yang Liu,University of Texas at Dallas,ai,aaai,2.0,0.583333333333,2016
-Yang Liu,University of Texas at Dallas,ai,aaai,5.0,1.4,2017
-Yang Liu,University of Texas at Dallas,ai,ijcai,2.0,0.416666666667,2015
-Yang Liu,University of Texas at Dallas,ai,ijcai,2.0,0.642857142857,2016
-Yang Liu,University of Texas at Dallas,arch,,1.0,0.166666666667,2011
-Yang Liu,University of Texas at Dallas,da,,1.0,0.333333333333,2014
-Yang Liu,University of Texas at Dallas,da,,1.0,0.142857142857,2015
-Yang Liu,University of Texas at Dallas,graph,,1.0,0.25,2014
-Yang Liu,University of Texas at Dallas,graph,,2.0,0.5,2015
-Yang Liu,University of Texas at Dallas,graph,,2.0,0.833333333333,2016
-Yang Liu,University of Texas at Dallas,hpc,,1.0,0.25,2016
-Yang Liu,University of Texas at Dallas,ir,,1.0,0.2,2012
-Yang Liu,University of Texas at Dallas,mlmining,,1.0,0.5,2016
-Yang Liu,University of Texas at Dallas,nlp,,6.0,1.45,2015
-Yang Liu,University of Texas at Dallas,nlp,,6.0,1.51904761905,2016
-Yang Liu,University of Texas at Dallas,ops,,1.0,0.125,2012
-Yang Liu,University of Texas at Dallas,ops,,1.0,0.125,2014
-Yang Liu,University of Texas at Dallas,robotics,,1.0,0.2,2005
-Yang Liu,University of Texas at Dallas,robotics,,1.0,0.5,2008
-Yang Liu,University of Texas at Dallas,robotics,,1.0,0.333333333333,2010
-Yang Liu,University of Texas at Dallas,robotics,,2.0,1.0,2012
-Yang Liu,University of Texas at Dallas,robotics,,1.0,0.333333333333,2015
-Yang Liu,University of Texas at Dallas,robotics,,1.0,0.333333333333,2016
-Yang Liu,University of Texas at Dallas,soft,,1.0,0.2,2015
-Yang Liu,University of Texas at Dallas,soft,,2.0,0.533333333333,2016
-Yang Liu,University of Texas at Dallas,vision,cvpr,1.0,0.25,2016
-Yang Liu,University of Texas at Dallas,vision,eccv,1.0,0.25,2016
 Yang Liu 0003,Nanyang Technological University,ai,aaai,1.0,0.25,2016
 Yang Liu 0003,Nanyang Technological University,ir,,1.0,0.166666666667,2014
 Yang Liu 0003,Nanyang Technological University,log,,1.0,0.25,2009
@@ -60465,6 +60454,23 @@ Yang Liu 0003,Nanyang Technological University,soft,,1.0,0.166666666667,2013
 Yang Liu 0003,Nanyang Technological University,soft,,1.0,0.142857142857,2014
 Yang Liu 0003,Nanyang Technological University,soft,,2.0,0.309523809524,2016
 Yang Liu 0003,Nanyang Technological University,soft,,2.0,0.4,2017
+Yang Liu 0004,University of Texas at Dallas,ai,aaai,1.0,0.333333333333,2010
+Yang Liu 0004,University of Texas at Dallas,ai,aaai,1.0,0.333333333333,2011
+Yang Liu 0004,University of Texas at Dallas,ai,aaai,1.0,0.5,2012
+Yang Liu 0004,University of Texas at Dallas,ai,ijcai,1.0,0.5,2015
+Yang Liu 0004,University of Texas at Dallas,nlp,,1.0,1.0,2003
+Yang Liu 0004,University of Texas at Dallas,nlp,,1.0,0.25,2004
+Yang Liu 0004,University of Texas at Dallas,nlp,,1.0,0.25,2005
+Yang Liu 0004,University of Texas at Dallas,nlp,,2.0,1.09090909091,2006
+Yang Liu 0004,University of Texas at Dallas,nlp,,1.0,0.5,2007
+Yang Liu 0004,University of Texas at Dallas,nlp,,2.0,1.0,2008
+Yang Liu 0004,University of Texas at Dallas,nlp,,3.0,0.916666666667,2009
+Yang Liu 0004,University of Texas at Dallas,nlp,,1.0,0.5,2010
+Yang Liu 0004,University of Texas at Dallas,nlp,,2.0,0.833333333333,2011
+Yang Liu 0004,University of Texas at Dallas,nlp,,2.0,1.0,2012
+Yang Liu 0004,University of Texas at Dallas,nlp,,4.0,1.58333333333,2013
+Yang Liu 0004,University of Texas at Dallas,nlp,,2.0,0.7,2014
+Yang Liu 0004,University of Texas at Dallas,nlp,,3.0,1.16666666667,2015
 Yang Richard Yang,Yale University,act,,1.0,0.333333333333,2007
 Yang Richard Yang,Yale University,comm,,2.0,0.583333333333,2001
 Yang Richard Yang,Yale University,comm,,2.0,0.583333333333,2003
