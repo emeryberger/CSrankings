@@ -42,7 +42,7 @@ areadict = {
     # - Two variants for each, as in DBLP.
     'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'IMC', 'Internet Measurement Conference'],
     # SIGIR
-    'ir': ['WWW', 'SIGIR'],
+    'ir': ['WWW', 'SIGIR', 'ICWSM'],
     # SIGCHI
     'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST'],
     'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
