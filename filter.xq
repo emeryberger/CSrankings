@@ -20,6 +20,7 @@
 //inproceedings[booktitle="IJCAI"],
 //inproceedings[booktitle="WWW"],
 //inproceedings[booktitle="SIGIR"],
+//inproceedings[booktitle="ICWSM"],
 //inproceedings[booktitle="IEEE Visualization"],
 //inproceedings[booktitle="VR"],
 //article[journal="IEEE Trans. Vis. Comput. Graph."],
