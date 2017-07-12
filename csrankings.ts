@@ -100,10 +100,8 @@ class CSRankings {
 		CSRankings.loadHomepages(CSRankings.homepages,
 					 function() {
 					     CSRankings.loadAuthorInfo(function() {
-						 CSRankings.loadArticles(function() {
-						     CSRankings.loadCountryInfo(CSRankings.countryInfo,
-										CSRankings.rank);
-						 });
+						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
+									    CSRankings.rank);
 					     });
 					 });
 	    });
