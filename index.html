@@ -22,8 +22,46 @@
       ga('send', 'pageview'); 
 
     </script>
+    <script>
+      window.twttr = (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0],
+	t = window.twttr || {};
+	if (d.getElementById(id)) return t;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
+
+	t._e = [];
+	t.ready = function(f) {
+	t._e.push(f);
+	};
+
+	return t;
+	}(document, "script", "twitter-wjs"));
+    </script>
+    <script>
+      var trackOutboundLink = function(url, new_window) {
+        /* Setting a default value for backward compatibility */
+        if (new_window === undefined) {
+          new_window = false;
+        }
+        ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
+        'hitCallback':
+          function () {
+            if (!new_window) {
+              document.location = url;
+            }
+          }
+        });
+        if (new_window){
+          window.open(url);
+        }
+      }
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
-    <script src="d3pie.min.js"></script>
+    <!-- <script src="js/d3.min.js"></script> -->
+    <script src="js/d3pie.min.js"></script>
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
     <script src="js/papaparse.min.js" type="text/javascript"></script>
     <script src="js/pako.min.js" type="text/javascript"></script>
@@ -63,11 +101,25 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
 
           <h1>Computer Science Rankings (beta)</h1>
+	  <p>
+	    <div class="fb-share-button" data-href="http://csrankings.org" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcsrankings.org%2F&amp;src=sdkpreparse">Share</a></div>
+	    <a class="twitter-share-button"
+	       href="https://twitter.com/intent/tweet">
+	      Tweet</a>
+	  </p>
 	  <div class="panel panel-info">
 	    <div class="panel-heading">
 	      <p>
@@ -76,43 +128,47 @@
 		engaged in research across a number of areas of
 		computer science, based on the number of publications
 		by faculty that have appeared at the most selective
-		conferences in each area of computer science.
+		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
 	      </p>
+
+<!--	      <p>
+		<b>NEW: <a href="collab/">Click here to see collaboration graphs.</a></b>
+	      </p>
+-->
 	      <p>
-		<b>Click on a triangle</b> (&#9658;) to display names
-		and number of publications. <b>Click on a name</b> to
-		go to a faculty member's home page. <b>Click on a
-		pie</b> (the &#9685; after a name or institution) to
-		see a publication profile as a pie chart. <b>Click on
-		the raw number of publications</b> to go to their DBLP
+		<b>Click on a triangle</b> (&#9658;) to see conferences
+		or faculty names and number of
+		publications. <b>Click on a name</b> to go to a
+		faculty member's home page. <b>Click on a pie</b> (the
+		&#9685; after a name or institution) to see a
+		publication profile as a pie chart. <b>Click on the
+		raw number of publications</b> to go to their DBLP
 		entry.
 	      </p>
 	      <div class="row">
 		<!-- col-xs-3 col-sm-6 col-md-4  -->
 		<div class="col-sm-12 col-md-12 col-lg-12">
-	      Rank the top
+	      Rank 
 	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
-		<option value="10">10</option>
-		<option value="25">25</option>
-		<option value="50" selected="selected">50</option>
-		<option value="75">75</option>
-		<option value="100">100</option>
-		<option value="99999">(all)</option>
+		<option value="10">the top 10</option>
+		<option value="25">the top 25</option>
+		<option value="50" selected="selected">the top 50</option>
+		<option value="75">the top 75</option>
+		<option value="100">the top 100</option>
+		<option value="99999">all</option>
 	      </select>
 	      institutions in
 	      <select id="regions" name="regions" onchange="CSRankings.rank();">
-		<option value="USA" selected="selected">the USA only</option>
-		<option value="canada">Canada only</option>
+		<option value="USA" selected="selected">the USA</option>
+		<option value="canada">Canada</option>
 		<option value="northamerica">USA and Canada</option>
-		<option value="australasia">Australasia only</option>
-		<option value="europe">Europe only</option>
-		<option value="world">USA, Canada, Europe, and Australasia</option>
+		<option value="southamerica">South America</option>
+		<option value="asia">Asia</option>
+		<option value="australasia">Australasia</option>
+		<option value="europe">Europe</option>
+		<option value="world">the world</option>
 	      </select>
-	      by
-	      <select id="displayPercent" name="displayPercent" onchange="CSRankings.rank();" >
-		<option value="1" selected="selected">average count</option>
-		<option value="0">total count</option>
-	      </select>
+	      by average count
 	      of publications from
 	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
 		<option value="1970">1970</option>  
@@ -160,8 +216,9 @@
 		<option value="2012">2012</option>
 		<option value="2013">2013</option>
 		<option value="2014">2014</option>
-		<option value="2014">2015</option>
-		<option value="2014">2016</option>
+		<option value="2015">2015</option>
+		<option value="2016">2016</option>
+		<option value="2017">2017</option>
 	      </select>
 	      to
 	      <select onchange="CSRankings.rank();" id="endyear" name="endyear">
@@ -201,7 +258,8 @@
 		<option value="2013">2013</option>
 		<option value="2014">2014</option>
 		<option value="2015">2015</option>
-		<option selected="selected" value="2016">2016</option>
+		<option value="2016">2016</option>
+		<option selected="selected" value="2017">2017</option>
 	      </select>
 		</div>
 		</div>
@@ -210,7 +268,7 @@
 	  
 	  <div class="row">
 	    <!-- col-xs-3 col-sm-6 col-md-4  -->
-	    <div class="col-sm-6 col-md-6 col-lg-6">
+	    <div class="col-xs-3 col-sm-6 col-md-6 col-lg-6">
 	      <div class="table">
 		<table class="table-sm table-striped">
 
@@ -239,51 +297,138 @@
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('ai')" class="hovertip" id="ai-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Artificial intelligence
-			<small><em>AAAI, IJCAI</em></small>
+			<div class="table" style="display:none;" id="ai-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/aaai/">AAAI</a>
+				  <br />
+				  <a href="http://dblp.uni-trier.de/db/conf/ijcai/index.html">IJCAI</a>
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td width="40px"> 
-			<input type="checkbox" name="field_ai" id="field_ai" value="1.0"/>
+			<input type="checkbox" class="parent" name="ai" id="ai" value="1.0"/>
+<!--			<div style="display:none" id="ai-conferences-checkboxes">
+			<input type="checkbox" class="child" name="aaai" id="aaai" value="1.0"/><br />
+			<input type="checkbox" class="child" name="ijcai" id="ijcai" value="1.0"/><br />
+			</div>
+-->
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td> 
+			<span onclick="CSRankings.toggleConferences('vision')" class="hovertip" id="vision-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Computer vision
-			<small><em>CVPR, ECCV, ICCV</em></small>
+			<div class="table" style="display:none;" id="vision-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/cvpr/index.html">CVPR</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/eccv/index.html">ECCV</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/iccv/index.html">ICCV</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_vision" id="field_vision" value="1.0"/>
+			<input type="checkbox" class="parent" name="vision" id="vision" value="1.0"/>
+<!--
+			<div style="display:none" id="vision-conferences-checkboxes">
+			  <input type="checkbox" class="child" name="cvpr" id="cvpr" value="1.0"/><br />
+			  <input type="checkbox" class="child" name="eccv" id="eccv" value="1.0"/><br />
+			  <input type="checkbox" class="child" name="iccv" id="iccv" value="1.0"/><br />
+			</div>
+-->
+		      </td>
 		      </td>
 		    </tr>
 		    
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('mlmining')" class="hovertip" id="mlmining-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Machine learning &amp; data mining
-			<small><em>ICML, KDD, NIPS</em>&nbsp;&nbsp;&nbsp;&nbsp;</small>
+			<div class="table" style="display:none;" id="mlmining-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/icml/index.html">ICML</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/kdd/index.html">KDD</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/nips/index.html">NIPS</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td> 
-			<input type="checkbox" name="field_mlmining" id="field_mlmining" value="1.0"/>
+			<input type="checkbox" name="mlmining" id="mlmining" value="1.0"/>
 		      </td>
 		    </tr>
 		    
 		    <tr>
 		      <td> 
+			<span onclick="CSRankings.toggleConferences('nlp')" class="hovertip" id="nlp-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Natural language processing
-			<small><em>ACL, EMNLP, NAACL</em></small>
+			<div class="table" style="display:none;" id="nlp-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/acl/index.html">ACL</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/emnlp/index.html">EMNLP</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/naacl/index.html">NAACL</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_nlp" id="field_nlp" value="1.0"/>
+			<input type="checkbox" name="nlp" id="nlp" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('ir')" class="hovertip" id="ir-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			The web &amp; information retrieval
-			<small><em>SIGIR, WWW</em></small>
+			<div class="table" style="display:none;" id="ir-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/sigir/index.html">SIGIR</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/www/index.html">WWW</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_ir" id="field_ir" value="1.0"/>
+			<input type="checkbox" name="ir" id="ir" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -306,124 +451,298 @@
 
 		    <tr>
 		      <td>   
+			<span onclick="CSRankings.toggleConferences('arch')" class="hovertip" id="arch-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Computer architecture
-			<small><em>ASPLOS, ISCA, MICRO</em></small>
+			<div class="table" style="display:none;" id="arch-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/asplos/index.html">ASPLOS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/isca/index.html">ISCA</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/micro/index.html">MICRO</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_arch" id="field_arch" value="1.0"/>
+			<input type="checkbox" name="arch" id="arch" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>  
+			<span onclick="CSRankings.toggleConferences('comm')" class="hovertip" id="comm-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Computer networks
-			<small><em>INFOCOM, SIGCOMM, NSDI</em></small>
+			<div class="table" style="display:none;" id="comm-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/infocom/index.html">INFOCOM</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/sigcomm/index.html">SIGCOMM</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/nsdi/index.html">NSDI</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>  
-			<input type="checkbox" name="field_comm" id="field_comm" value="1.0"/>
+			<input type="checkbox" name="comm" id="comm" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>  
+			<span onclick="CSRankings.toggleConferences('sec')" class="hovertip" id="sec-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Computer security
-			<small><em>CCS, Oakland, USENIX Sec.</em></small>&nbsp;&nbsp;&nbsp;
+			<div class="table" style="display:none;" id="sec-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/ccs/index.html">CCS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/sp/">IEEE S&amp;P ("Oakland")</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/uss/">USENIX Security</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>  
-			<input type="checkbox" name="field_sec" id="field_sec" value="1.0"/>
+			<input type="checkbox" name="sec" id="sec" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('mod')" class="hovertip" id="mod-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Databases
-			<small><em>SIGMOD, VLDB</em></small>
+			<div class="table" style="display:none;" id="mod-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/sigmod/">SIGMOD</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/vldb/">VLDB</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_mod" id="field_mod" value="1.0"/>
+			<input type="checkbox" name="mod" id="mod" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('da')" class="hovertip" id="da-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Design automation
-			<small><em>DAC, ICCAD</em></small>
+			<div class="table" style="display:none;" id="da-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/dac/">DAC</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/iccad/">ICCAD</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_da" id="field_da" value="1.0"/>
+			<input type="checkbox" name="da" id="da" value="1.0"/>
 		      </td>
 		    </tr>
 		    
-<!--
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('bed')" class="hovertip" id="bed-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Embedded and real-time systems
-			<small><em>EMSOFT, RTAS, RTSS</em></small>
+			<div class="table" style="display:none;" id="bed-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/emsoft/">EMSOFT</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/rtas/">RTAS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/rtss/">RTSS</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_bed" id="field_bed" value="1.0"/>
+			<input type="checkbox" name="bed" id="bed" value="1.0"/>
 		      </td>
 		    </tr>
-		    -->
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('hpc')" class="hovertip" id="hpc-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			High-performance computing
-			<small><em>HPDC, ICS, SC</em></small>
+			<div class="table" style="display:none;" id="hpc-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/hpdc/">HPDC</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/ics/">ICS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/sc/">SC</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_hpc" id="field_hpc" value="1.0"/>
+			<input type="checkbox" name="hpc" id="hpc" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('mobile')" class="hovertip" id="mobile-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Mobile computing
-			<small><em>MobiCom, MobiSys, SenSys</em></small>
+			<div class="table" style="display:none;" id="mobile-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/mobicom/">MobiCom</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/mobisys/">MobiSys</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/sensys/">SenSys</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_mobile" id="field_mobile" value="1.0"/>
+			<input type="checkbox" name="mobile" id="mobile" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('metrics')" class="hovertip" id="metrics-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Measurement &amp; performance analysis
-			<small><em>IMC, SIGMETRICS</em></small>
+			&nbsp;&nbsp;&nbsp;
+			<div class="table" style="display:none;" id="metrics-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/imc/">IMC</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/sigmetrics/">SIGMETRICS</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td> 
-			<input type="checkbox" name="field_metrics" id="field_metrics" value="1.0"/>
+			<input type="checkbox" name="metrics" id="metrics" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>  
+			<span onclick="CSRankings.toggleConferences('ops')" class="hovertip" id="ops-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Operating systems
-			<small><em>EuroSys, OSDI/SOSP, USENIX ATC</em></small>
+			<div class="table" style="display:none;" id="ops-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/eurosys/">EuroSys</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/osdi/">OSDI</a> / <a href="http://dblp.uni-trier.de/db/conf/sosp/">SOSP</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/usenix/">USENIX Annual Technical Conf.</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_ops" id="field_ops" value="1.0"/>
+			<input type="checkbox" name="ops" id="ops" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('plan')" class="hovertip" id="plan-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Programming languages
-			<small><em>PLDI, POPL</em></small>
+			<div class="table" style="display:none;" id="plan-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/pldi/">PLDI</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/popl/">POPL</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_plan" id="field_plan" value="1.0"/>
+			<input type="checkbox" name="plan" id="plan" value="1.0"/>
 		      </td>
 		    </tr>
 
 	  
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('soft')" class="hovertip" id="soft-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Software engineering
-			<small><em>ASE, FSE, ICSE</em></small>
+			<div class="table" style="display:none;" id="soft-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/sigsoft/">FSE</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/icse/">ICSE</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_soft" id="field_soft" value="1.0"/>
+			<input type="checkbox" name="soft" id="soft" value="1.0"/>
 		      </td>
 		    </tr>
 		    
@@ -444,31 +763,74 @@
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('act')" class="hovertip" id="act-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Algorithms &amp; complexity
-			<small><em>FOCS, SODA, STOC</em></small>
+			<div class="table" style="display:none;" id="act-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/focs/">FOCS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/soda/">SODA</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/stoc/">STOC</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_act" id="field_act" value="1.0"/>
+			<input type="checkbox" name="act" id="act" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('crypt')" class="hovertip" id="crypt-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Cryptography
-			<small><em>CRYPTO, EuroCrypt</em></small>
+			<div class="table" style="display:none;" id="crypt-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/crypto/">CRYPTO</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/eurocrypt/">EuroCrypt</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_crypt" id="field_crypt" value="1.0"/>
+			<input type="checkbox" name="crypt" id="crypt" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('log')" class="hovertip" id="log-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Logic and verification
-			<small><em>CAV, LICS</em></small>
+			<div class="table" style="display:none;" id="log-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/cav/">CAV</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/lics/">LICS</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_log" id="field_log" value="1.0"/>
+			<input type="checkbox" name="log" id="log" value="1.0"/>
 		      </td>
 		    </tr>
 		  </tbody>
@@ -488,41 +850,179 @@
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('bio')" class="hovertip" id="bio-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Computational bio &amp; bioinformatics
-			<small><em>ISMB, RECOMB</em></small>
+			<div class="table" style="display:none;" id="bio-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/ismb/">ISMB</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/recomb/">RECOMB</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_bio" id="field_bio" value="1.0"/>
+			<input type="checkbox" name="bio" id="bio" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('graph')" class="hovertip" id="graph-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Computer graphics
-			<small><em>SIGGRAPH, TOG</em></small>
+			<div class="table" style="display:none;" id="graph-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/siggraph/">SIGGRAPH</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/siggraph/">SIGGRAPH Asia</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_graph" id="field_graph" value="1.0"/>
+			<input type="checkbox" name="graph" id="graph" value="1.0"/>
 		      </td>
 		    </tr>
+
+<!--
+		    <tr>
+		      <td>
+			<span onclick="CSRankings.toggleConferences('ecom')" class="hovertip" id="ecom-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			Electronic commerce
+			<div class="table" style="display:none;" id="ecom-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/ec/">EC</a><br />
+				</td>
+			      </tr>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/wine/">WINE</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		      </td>
+		      <td>
+			<input type="checkbox" name="ecom" id="ecom" value="1.0"/>
+		      </td>
+		    </tr>
+		    -->
+
+
+                   <!--
+		     <tr>
+		      <td>
+			<span onclick="CSRankings.toggleConferences('cse')" class="hovertip" id="cse-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			CS Education
+			<div class="table" style="display:none;" id="cse-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/sigcse/">SIGCSE</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		      </td>
+		      <td>
+			<input type="checkbox" name="cse" id="cse" value="1.0"/>
+		      </td>
+		    </tr>
+		    -->
 
 		    <tr>
 		      <td> 
+			<span onclick="CSRankings.toggleConferences('chi')" class="hovertip" id="chi-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Human-computer interaction
-			<small><em>CHI, UbiComp, UIST</em></small>
+			<div class="table" style="display:none;" id="chi-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/chi/">CHI</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/huc/">UbiComp</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/uist/">UIST</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_chi" id="field_chi" value="1.0"/>
+			<input type="checkbox" name="chi" id="chi" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td>
+			<span onclick="CSRankings.toggleConferences('robotics')" class="hovertip" id="robotics-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
 			Robotics
-			<small><em>ICRA, IROS, RSS</em></small>
+			<div class="table" style="display:none;" id="robotics-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/icra/">ICRA</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/iros/">IROS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/rss/">RSS</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="field_robotics" id="field_robotics" value="1.0"/>
+			<input type="checkbox" name="robotics" id="robotics" value="1.0"/>
+		      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+			<span onclick="CSRankings.toggleConferences('vis')" class="hovertip" id="vis-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			Visualization
+			<div class="table" style="display:none;" id="vis-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td>
+				  <a href="http://dblp.uni-trier.de/db/conf/tvcg/">VIS</a><br />
+				  <a href="http://dblp.uni-trier.de/db/conf/vr/">VR</a><br />
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		      </td>
+		      <td>
+			<input type="checkbox" name="vis" id="vis" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -541,56 +1041,44 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="page-footer">
-	    <p>
-		The conferences listed (<em>at most three per
-		area</em>) were developed in consultation with faculty
-		across a range of institutions. These
-		are <a href="https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng">the
-		most impactful</a> and selective conferences for each
-		area.  The areas are meant to span most established
-		research-centric areas of computer science - in
-		particular, those with their own
-		research-focused <a href="http://www.acm.org/special-interest-groups">ACM
-		SIG</a> - and are not intended to be comprehensive.
-		In particular, only areas where at least 50
-		<a href="https://en.wikipedia.org/wiki/List_of_research_universities_in_the_United_States#Universities_classified_as_.22R1:_Doctoral_Universities_-_Highest_Research_Activity.22">R1
-		institutions</a> have publications since 2000 are
-		included.  The rubrics (<em>AI</em>, <em>Systems</em>,
-		and <em>Theory</em>) are provided for ease of
-		comparison with rankings published by US News and
-		World Report.
-	    </p>
-	    <p>Output is attributed to the institution where authors
-		are <em>currently affiliated</em> full-time,
-		tenure-track faculty members who can advise CS PhD
-		students. An author's publications follow them if they
-		move. Currently, this database includes selected US,
-		Canadian, European, and Australasian CS or EECS
-		departments (or equivalent); please submit pull
-		requests (see below) to add any unlisted institution.
-	    </p>
+<div class="page-footer">
+  <!--
+      <p>
+	The rubrics (<em>AI</em>, <em>Systems</em>,
+	and <em>Theory</em>) are provided for ease of
+	comparison with rankings published by US News and
+	World Report.
+      </p>
+      <p>Output is attributed to the institution where authors
+	are <em>currently affiliated</em> full-time,
+	tenure-track faculty members who can advise CS PhD
+	students. An author's publications follow them if they
+	move. Currently, this database includes selected US,
+	Canadian, European, and Australasian CS or EECS
+	departments (or equivalent); please submit pull
+	requests (see below) to add any unlisted institution.
+      </p>
+      -->
 	    <p><b>Adjusted counts</b>: each publication is counted
 	      exactly once, with credit adjusted by splitting evenly
 	      across all co-authors. This approach makes it impossible to
 	      boost rankings simply by adding authors to a paper.
 	      <b>Average count</b> computes the geometric mean of
-	      the adjusted number of publications in each area by
-	      institution. This normalizes for the size of areas, so
+	      the adjusted counts in each area (+ 1) for each
+	      institution. This approach normalizes for the size of areas, so
 	      that large and small areas are weighed the
-	      same. Publications must be at least 6 pages long to be
-	      counted.
-	      <b>Total count</b> is the sum of the adjusted number of publications.
+	      same.
+<!--	       Publications must be at least 6 pages long to be
+	      counted. -->
+<!--	      <b>Total count</b> is the sum of the adjusted number of publications. -->
 	    </p>
             <p class="text-muted">
-	      
-	      This site was developed and is maintained by <a target="_blank" href="http://www.emeryberger.com">Emery Berger</a>, incorporating feedback from faculty across a wide range of institutions.<br />
-	      Based on code and data originally collected by <a target="_blank" href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a>.<br />
-	      The original faculty affiliation dataset was constructed by <a
-									     target="_blank" href="http://cs.brown.edu/people/alexpap/faculty_dataset.html">Papoutsaki et al.</a>, which has been extensively cleaned and updated.<br />
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated December 1, 2016).<br />
+	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated June 22, 2017).<br />
 	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
-	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.
+	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
+	      <br />
+	      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSrankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.org" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/emeryberger/CSrankings" rel="dct:source">https://github.com/emeryberger/CSrankings</a>.<br />
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="png/80x15.png" /></a>
 	    </p>
 	  </div>
 	</div>

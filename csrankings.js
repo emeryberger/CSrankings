@@ -16,6 +16,8 @@
 ;
 ;
 ;
+;
+;
 var CSRankings = (function () {
     function CSRankings() {
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -25,7 +27,7 @@ var CSRankings = (function () {
             var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
             CSRankings.areaNames[position] = title;
-            CSRankings.fields[position] = "field_" + area;
+            CSRankings.fields[position] = area;
             CSRankings.areaDict[area] = CSRankings.areaNames[position];
             CSRankings.areaPosition[area] = position;
         }
@@ -41,11 +43,11 @@ var CSRankings = (function () {
             var area = _f[_e];
             CSRankings.theoryFields.push(CSRankings.areaPosition[area]);
         }
-        for (var _g = 0, _h = CSRankings.otherAreas; _g < _h.length; _g++) {
+        for (var _g = 0, _h = CSRankings.interdisciplinaryAreas; _g < _h.length; _g++) {
             var area = _h[_g];
             CSRankings.otherFields.push(CSRankings.areaPosition[area]);
         }
-        CSRankings.setAllCheckboxes();
+        // CSRankings.setAllCheckboxes();
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
@@ -55,6 +57,7 @@ var CSRankings = (function () {
                 });
             });
         };
+        CSRankings.activateAll();
         if (CSRankings.showCoauthors) {
             CSRankings.loadCoauthors(next);
         }
@@ -66,20 +69,30 @@ var CSRankings = (function () {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
         // Known issue: does not properly handle suffixes like Jr., III, etc.
-        name = name.replace(/'/g, "=");
-        name = name.replace(/\-/g, "=");
-        name = name.replace(/\./g, "=");
+        name = name.replace(/'|\-|\./g, "=");
+        //	name = name.replace(/\-/g, "=");
+        //	name = name.replace(/\./g, "=");
         name = name.replace(/Á/g, "=Aacute=");
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
         name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
         name = name.replace(/ç/g, "=ccedil=");
         name = name.replace(/ä/g, "=auml=");
         name = name.replace(/ö/g, "=ouml=");
+        name = name.replace(/ø/g, "=oslash=");
+        name = name.replace(/Ö/g, "=Ouml=");
         name = name.replace(/ü/g, "=uuml=");
         var splitName = name.split(" ");
         var lastName = splitName[splitName.length - 1];
+        var disambiguation = "";
+        if (parseInt(lastName) > 0) {
+            // this was a disambiguation entry; go back.
+            disambiguation = lastName;
+            splitName.pop();
+            lastName = splitName[splitName.length - 1] + "_" + disambiguation;
+        }
         splitName.pop();
         var newName = splitName.join(" ");
         newName = newName.replace(/\s/g, "_");
@@ -129,19 +142,40 @@ var CSRankings = (function () {
     CSRankings.makeChart = function (name) {
         console.assert(CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
         var data = [];
+        var datadict = {};
         var keys = CSRankings.areas;
+        var uname = unescape(name);
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
-            if (CSRankings.authorAreas[unescape(name)][key] > 0) {
-                data.push({ "label": CSRankings.areaDict[key],
-                    "value": CSRankings.authorAreas[unescape(name)][key],
-                    "color": CSRankings.color[i] });
+            var value = CSRankings.authorAreas[uname][key];
+            // Use adjusted count if this is for a department.
+            if (uname in CSRankings.stats) {
+                value = CSRankings.areaDeptAdjustedCount[key + uname] + 1;
+                if (value == 1) {
+                    value = 0;
+                }
             }
+            // Round it to the nearest 0.1.
+            value = Math.round(value * 10) / 10;
+            if (value > 0) {
+                if (key in CSRankings.parentMap) {
+                    // key = CSRankings.parentMap[key];
+                }
+                if (!(key in datadict)) {
+                    datadict[key] = 0;
+                }
+                datadict[key] += value;
+            }
+        }
+        for (var key in datadict) {
+            data.push({ "label": CSRankings.areaDict[key],
+                "value": datadict[key],
+                "color": CSRankings.color[CSRankings.areaPosition[key]] });
         }
         new d3pie(name + "-chart", {
             "header": {
                 "title": {
-                    "text": unescape(name),
+                    "text": uname,
                     "fontSize": 24,
                     "font": "open sans"
                 },
@@ -171,8 +205,10 @@ var CSRankings = (function () {
                     "pieDistance": 32
                 },
                 "inner": {
+                    //"format": "percentage", // "value",
+                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
                     "format": "value",
-                    "hideWhenLessThanPercentage": 2
+                    "hideWhenLessThanPercentage": 2 // 100 // 2
                 },
                 "mainLabel": {
                     "fontSize": 12
@@ -236,6 +272,13 @@ var CSRankings = (function () {
             }
         });
     };
+    CSRankings.loadArticles = function (cont) {
+        jQuery.getJSON("articles.json", function (_) {
+            /* disabled for now
+                    CSRankings.articles = data; */
+            setTimeout(cont, 0);
+        });
+    };
     CSRankings.loadCountryInfo = function (countryInfo, cont) {
         Papa.parse(CSRankings.countryinfoFile, {
             header: true,
@@ -261,7 +304,38 @@ var CSRankings = (function () {
                 _this.authors = data;
                 for (var i = 0; i < CSRankings.fields.length; i++) {
                     var str = 'input[name=' + CSRankings.fields[i] + ']';
-                    jQuery(str).click(function () { _this.rank(); });
+                    jQuery(str).click(function () {
+                        /*			if (jQuery(str).hasClass("parent")) {
+                                        // Parent (un)checked => all children (un)checked
+                                        let isChecked = jQuery(str).prop('checked');
+                                        let parent = CSRankings.fields[i];
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                        jQuery("input[name="+kid+"]").prop('checked', isChecked);
+                                        }
+                                    }
+                                    if (jQuery(str).hasClass("child")) {
+                                        let s = jQuery(str).attr("id");
+                                        let parent = CSRankings.parentMap[s];
+                                        // Uncheck a child => uncheck the parent.
+                                        if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
+                                        jQuery("input[name="+parent+"]").prop('checked', false);
+                                        } else {
+                                        // All children checked => check the parent.
+                                        let v = true;
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                            let checked = jQuery("input[name="+kid+"]").prop('checked');
+                                            if (!checked) {
+                                            v = false;
+                                            break;
+                                            }
+                                        }
+                                        if (v) {
+                                            jQuery("input[name="+parent+"]").prop('checked', true);
+                                        }
+                                        }
+                                    } */
+                        _this.rank();
+                    });
                 }
                 setTimeout(cont, 0);
             }
@@ -323,6 +397,22 @@ var CSRankings = (function () {
                     return false;
                 }
                 break;
+            case "southamerica":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "southamerica") {
+                    return false;
+                }
+                break;
+            case "asia":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "asia") {
+                    return false;
+                }
+                break;
         }
         return true;
     };
@@ -375,17 +465,19 @@ var CSRankings = (function () {
             if (!authors.hasOwnProperty(r)) {
                 continue;
             }
-            var year = authors[r].year;
+            var auth = authors[r];
+            var year = auth.year;
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            var theArea = authors[r].area;
+            var theArea = auth.area;
             if (weights[theArea] === 0) {
                 continue;
             }
-            var theDept = authors[r].dept;
-            var theCount = parseFloat(authors[r].count);
-            var name_1 = authors[r].name;
+            var theDept = auth.dept;
+            var theCount = parseFloat(auth.count);
+            //	    const theCount = parseFloat(auth.adjustedcount);
+            var name_1 = auth.name;
             if (name_1 in CSRankings.aliases) {
                 name_1 = CSRankings.aliases[name_1];
             }
@@ -418,18 +510,26 @@ var CSRankings = (function () {
                 continue;
             }
             var _a = authors[r], name_2 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
+            if (name_2 in CSRankings.aliases) {
+                name_2 = CSRankings.aliases[name_2];
+            }
             if (typeof dept === 'undefined') {
                 continue;
             }
             if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
                 continue;
             }
-            var areaDept = area + dept;
-            if (!(areaDept in areaDeptAdjustedCount)) {
-                areaDeptAdjustedCount[areaDept] = 0;
-            }
             if (!CSRankings.inRegion(dept, regions)) {
                 continue;
+            }
+            // If this area is a child area, accumulate totals for parent.
+            if (area in CSRankings.parentMap) {
+                area = CSRankings.parentMap[area];
+            }
+            var areaDept = area + dept;
+            var nameDept = name_2 + dept;
+            if (!(areaDept in areaDeptAdjustedCount)) {
+                areaDeptAdjustedCount[areaDept] = 0;
             }
             var count = parseInt(authors[r].count);
             var adjustedCount = parseFloat(authors[r].adjustedcount);
@@ -437,23 +537,22 @@ var CSRankings = (function () {
             /* Is this the first time we have seen this person? */
             if (!(name_2 in visited)) {
                 visited[name_2] = true;
-                facultycount[name_2 + dept] = 0;
-                facultyAdjustedCount[name_2 + dept] = 0;
+                facultycount[nameDept] = 0;
+                facultyAdjustedCount[nameDept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
                 deptNames[dept].push(name_2);
-                if (!(name_2 in CSRankings.aliases)) {
-                    deptCounts[dept] += 1;
-                }
+                deptCounts[dept] += 1;
             }
-            facultycount[name_2 + dept] += count;
-            facultyAdjustedCount[name_2 + dept] += adjustedCount;
+            facultycount[nameDept] += count;
+            facultyAdjustedCount[nameDept] += adjustedCount;
         }
     };
     /* Compute aggregate statistics. */
     CSRankings.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+        CSRankings.stats = {};
         var univagg = {};
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
@@ -467,18 +566,18 @@ var CSRankings = (function () {
             }
             for (var _i = 0, areas_1 = areas; _i < areas_1.length; _i++) {
                 var area = areas_1[_i];
+                // If the area is a child, ignore it.
+                if (area in CSRankings.parentMap) {
+                    continue;
+                }
                 var areaDept = area + dept;
                 if (!(areaDept in areaDeptAdjustedCount)) {
                     areaDeptAdjustedCount[areaDept] = 0;
                 }
                 if (weights[area] != 0) {
                     if (displayPercentages) {
-                        if (areaDeptAdjustedCount[areaDept] != 0) {
-                            // geometric mean
-                            univagg[dept] *= areaDeptAdjustedCount[areaDept];
-                        }
-                        else {
-                        }
+                        // Adjusted (smoothed) geometric mean.
+                        univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
                     }
                     else {
                         univagg[dept] += areaDeptAdjustedCount[areaDept];
@@ -530,7 +629,7 @@ var CSRankings = (function () {
     /* Build drop down for faculty names and paper counts. */
     CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
         var univtext = {};
-        var _loop_1 = function(dept) {
+        var _loop_1 = function (dept) {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
             }
@@ -542,8 +641,20 @@ var CSRankings = (function () {
                 fc[name_4] = facultycount[name_4 + dept];
             }
             var keys = Object.keys(fc);
-            keys.sort(function (a, b) { return fc[b] - fc[a]; });
-            var _loop_2 = function(name_5) {
+            keys.sort(function (a, b) {
+                if (fc[b] === fc[a]) {
+                    var fb = Math.round(10.0 * facultyAdjustedCount[b + dept]) / 10.0;
+                    var fa = Math.round(10.0 * facultyAdjustedCount[a + dept]) / 10.0;
+                    if (fb === fa) {
+                        return CSRankings.compareNames(a, b);
+                    }
+                    return fb - fa;
+                }
+                else {
+                    return fc[b] - fc[a];
+                }
+            });
+            var _loop_2 = function (name_5) {
                 if (CSRankings.showCoauthors) {
                     /* Build up text for co-authors. */
                     var coauthorStr_1 = "";
@@ -571,10 +682,16 @@ var CSRankings = (function () {
                         coauthorStr_1 = coauthorStr_1.slice(0, coauthorStr_1.length - 1);
                     }
                 }
+                var homePage = encodeURI(CSRankings.homepages[name_5]);
+                var dblpName = CSRankings.translateNameToDBLP(name_5);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
                     + '<a title="Click for author\'s home page." target="_blank" href="'
-                    + encodeURI(CSRankings.homepages[name_5])
-                    + '">'
+                    + homePage
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + homePage
+                    + '\', true); return false;"'
+                    + '>'
                     + name_5
                     + '</a>&nbsp;'
                     + "<span onclick=\"CSRankings.toggleChart('"
@@ -583,8 +700,13 @@ var CSRankings = (function () {
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + CSRankings.translateNameToDBLP(name_5) + '">'
-                    + facultycount[name_5 + dept]
+                    + dblpName
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + dblpName
+                    + '\', true); return false;"'
+                    + '>'
+                    + fc[name_5]
                     + '</a>'
                     + "</small></td>"
                     + '<td align="right"><small>'
@@ -612,7 +734,7 @@ var CSRankings = (function () {
         /* Show the top N (with more if tied at the end) */
         var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
         if (displayPercentages) {
-            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
         }
         else {
             s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
@@ -622,7 +744,7 @@ var CSRankings = (function () {
         if (numAreas > 0) {
             var ties = 1; /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
             var rank = 0; /* index */
-            var oldv = null; /* old number - to track ties */
+            var oldv = 9999999.999; /* old number - to track ties */
             /* Sort the university aggregate count from largest to smallest. */
             var keys2 = CSRankings.sortIndex(univagg);
             /* Display rankings until we have shown `minToRank` items or
@@ -645,21 +767,24 @@ var CSRankings = (function () {
                         ties = 0;
                     }
                 }
+                var esc = escape(dept);
                 s += "\n<tr><td>" + rank + "</td>";
-                s += "<font color=\"blue\"><td><span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + CSRankings.RightTriangle + "</span></font>&nbsp;" + dept;
+                s += "<td>"
+                    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</font></span>&nbsp;"
+                    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
                 s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
-                    + escape(dept)
+                    + esc
                     + "')\" class=\"hovertip\" id=\""
-                    + escape(dept)
+                    + esc
                     + "-widget\">" + CSRankings.PieChart + "</span></font>";
-                //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
+                //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
                 s += "</td>";
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
                 s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
-                    + escape(dept)
+                    + esc
                     + '-chart">' + '</div></td></tr>';
                 s += '<tr><td colspan="4"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
                 ties++;
@@ -686,10 +811,7 @@ var CSRankings = (function () {
     };
     /* Set all checkboxes to true. */
     CSRankings.setAllCheckboxes = function () {
-        for (var i = 0; i < CSRankings.areas.length; i++) {
-            var str = 'input[name=' + CSRankings.fields[i] + ']';
-            jQuery(str).prop('checked', true);
-        }
+        CSRankings.activateAll();
     };
     /* PUBLIC METHODS */
     CSRankings.rank = function () {
@@ -698,31 +820,26 @@ var CSRankings = (function () {
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
         var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
         var currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-        var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
-        var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
+        CSRankings.areaDeptAdjustedCount = {};
         var startyear = parseInt(jQuery("#startyear").find(":selected").text());
         var endyear = parseInt(jQuery("#endyear").find(":selected").text());
-        var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+        var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
         var numAreas = CSRankings.updateWeights(currentWeights);
-        // Clear out the area adjusted counts (used for computing means).
-        for (var ind = 0; ind < CSRankings.areas.length; ind++) {
-            areaAdjustedCount[CSRankings.areas[ind]] = 0;
-        }
         var coauthorList = {};
         if (CSRankings.showCoauthors) {
             coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
         }
         CSRankings.authorAreas = {};
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, currentWeights, CSRankings.authorAreas);
-        CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, CSRankings.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
-        var univagg = CSRankings.computeStats(deptNames, areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
+        CSRankings.stats = CSRankings.computeStats(deptNames, CSRankings.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
         /* Start building up the string to output. */
-        var s = CSRankings.buildOutputString(displayPercentages, numAreas, univagg, deptCounts, univtext);
+        var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
         setTimeout(function () { jQuery("#success").html(s); }, 0);
         return false;
@@ -739,17 +856,37 @@ var CSRankings = (function () {
             CSRankings.makeChart(name);
         }
     };
+    /* Expand or collape the view of conferences in a given area. */
+    CSRankings.toggleConferences = function (area) {
+        var e = document.getElementById(area + "-conferences");
+        var widget = document.getElementById(area + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+        }
+        var boxes = document.getElementById(area + "-conferences-checkboxes");
+        if (boxes.style.display === 'block') {
+            boxes.style.display = 'none';
+        }
+        else {
+            boxes.style.display = 'block';
+        }
+    };
     /* Expand or collape the view of all faculty in a department. */
     CSRankings.toggleFaculty = function (dept) {
         var e = document.getElementById(dept + "-faculty");
         var widget = document.getElementById(dept + "-widget");
         if (e.style.display === 'block') {
             e.style.display = 'none';
-            widget.innerHTML = CSRankings.RightTriangle;
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
         }
         else {
             e.style.display = 'block';
-            widget.innerHTML = CSRankings.DownTriangle;
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
         }
     };
     CSRankings.activateAll = function (value) {
@@ -757,6 +894,13 @@ var CSRankings = (function () {
         for (var i = 0; i < CSRankings.areas.length; i++) {
             var str = "input[name=" + CSRankings.fields[i] + "]";
             jQuery(str).prop('checked', value);
+            if (CSRankings.fields[i] in CSRankings.childMap) {
+                var parent_1 = CSRankings.fields[i];
+                for (var _i = 0, _a = CSRankings.childMap[parent_1]; _i < _a.length; _i++) {
+                    var kid = _a[_i];
+                    jQuery("input[name=" + kid + "]").prop('checked', value);
+                }
+            }
         }
         CSRankings.rank();
         return false;
@@ -792,74 +936,94 @@ var CSRankings = (function () {
     CSRankings.deactivateOthers = function () {
         return CSRankings.activateOthers(false);
     };
-    CSRankings.coauthorFile = "faculty-coauthors.csv";
-    CSRankings.authorinfoFile = "generated-author-info.csv";
-    CSRankings.countryinfoFile = "country-info.csv";
-    CSRankings.aliasFile = "dblp-aliases.csv";
-    CSRankings.homepagesFile = "homepages.csv";
-    CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-    CSRankings.showCoauthors = false;
-    CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
-    CSRankings.areaMap = [{ area: "ai", title: "AI" },
-        { area: "vision", title: "Vision" },
-        { area: "mlmining", title: "ML" },
-        { area: "nlp", title: "NLP" },
-        { area: "ir", title: "Web & IR" },
-        { area: "arch", title: "Arch" },
-        { area: "comm", title: "Networks" },
-        { area: "sec", title: "Security" },
-        { area: "mod", title: "DB" },
-        { area: "hpc", title: "HPC" },
-        { area: "mobile", title: "Mobile" },
-        { area: "metrics", title: "Metrics" },
-        { area: "ops", title: "OS" },
-        { area: "plan", title: "PL" },
-        { area: "soft", title: "SE" },
-        { area: "act", title: "Theory" },
-        { area: "crypt", title: "Crypto" },
-        { area: "log", title: "Logic" },
-        { area: "graph", title: "Graphics" },
-        { area: "chi", title: "HCI" },
-        { area: "robotics", title: "Robotics" },
-        { area: "bio", title: "Comp. Biology" },
-        { area: "da", title: "Design Automation" },
-        { area: "bed", title: "Embedded Systems" }];
-    CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-    CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
-    CSRankings.theoryAreas = ["act", "crypt", "log"];
-    CSRankings.otherAreas = ["graph", "chi", "robotics", "bio"];
-    CSRankings.areas = [];
-    CSRankings.areaNames = [];
-    CSRankings.fields = [];
-    CSRankings.aiFields = [];
-    CSRankings.systemsFields = [];
-    CSRankings.theoryFields = [];
-    CSRankings.otherFields = [];
-    /* Map area to its name (from areaNames). */
-    CSRankings.areaDict = {};
-    /* Map area to its position in the list. */
-    CSRankings.areaPosition = {};
-    /* Map aliases to canonical author name. */
-    CSRankings.aliases = {};
-    /* Map institution to (non-US) region. */
-    CSRankings.countryInfo = {};
-    /* Map name to home page. */
-    CSRankings.homepages = {};
-    /* Set to true for "dense rankings" vs. "competition rankings". */
-    CSRankings.useDenseRankings = false;
-    /* The data which will hold the parsed CSV of author info. */
-    CSRankings.authors = [];
-    /* The data which will hold the parsed CSV of co-author info. */
-    CSRankings.coauthors = [];
-    /* Map authors to the areas they have published in (for pie chart display). */
-    CSRankings.authorAreas = {};
-    /* Colors for all areas. */
-    CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
-    CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
-    CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-    CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
     return CSRankings;
 }());
+CSRankings.coauthorFile = "faculty-coauthors.csv";
+CSRankings.authorinfoFile = "generated-author-info.csv";
+CSRankings.countryinfoFile = "country-info.csv";
+CSRankings.aliasFile = "dblp-aliases.csv";
+CSRankings.homepagesFile = "homepages.csv";
+CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
+CSRankings.showCoauthors = false;
+CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
+CSRankings.parentMap = { 'aaai': 'ai',
+    'ijcai': 'ai',
+    'cvpr': 'vision',
+    'eccv': 'vision',
+    'iccv': 'vision'
+};
+CSRankings.childMap = { 'ai': ['aaai', 'ijcai'],
+    'vision': ['cvpr', 'eccv', 'iccv'] };
+CSRankings.areaMap = [{ area: "ai", title: "AI" },
+    //	    { area : "aaai", title : "AI" },
+    //	    { area : "ijcai", title : "AI" },
+    { area: "vision", title: "Vision" },
+    //	    { area : "cvpr", title : "Vision" },
+    //	    { area : "eccv", title : "Vision" },
+    //	    { area : "iccv", title : "Vision" },
+    { area: "mlmining", title: "ML" },
+    { area: "nlp", title: "NLP" },
+    { area: "ir", title: "Web & IR" },
+    { area: "arch", title: "Arch" },
+    { area: "comm", title: "Networks" },
+    { area: "sec", title: "Security" },
+    { area: "mod", title: "DB" },
+    { area: "hpc", title: "HPC" },
+    { area: "mobile", title: "Mobile" },
+    { area: "metrics", title: "Metrics" },
+    { area: "ops", title: "OS" },
+    { area: "plan", title: "PL" },
+    { area: "soft", title: "SE" },
+    { area: "act", title: "Theory" },
+    { area: "crypt", title: "Crypto" },
+    { area: "log", title: "Logic" },
+    { area: "graph", title: "Graphics" },
+    { area: "chi", title: "HCI" },
+    { area: "robotics", title: "Robotics" },
+    { area: "bio", title: "Comp. Biology" },
+    { area: "da", title: "EDA" },
+    { area: "bed", title: "Embedded" },
+    { area: "vis", title: "Visualization" }
+    //,{ area : "ecom", title : "ECom" }
+    //,{ area : "cse", title : "CSEd" }
+];
+CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+CSRankings.theoryAreas = ["act", "crypt", "log"];
+CSRankings.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "vis", "ecom"];
+CSRankings.areas = [];
+CSRankings.areaNames = [];
+CSRankings.fields = [];
+CSRankings.aiFields = [];
+CSRankings.systemsFields = [];
+CSRankings.theoryFields = [];
+CSRankings.otherFields = [];
+/* Map area to its name (from areaNames). */
+CSRankings.areaDict = {};
+/* Map area to its position in the list. */
+CSRankings.areaPosition = {};
+/* Map aliases to canonical author name. */
+CSRankings.aliases = {};
+/* Map institution to (non-US) region. */
+CSRankings.countryInfo = {};
+/* Map name to home page. */
+CSRankings.homepages = {};
+/* Set to true for "dense rankings" vs. "competition rankings". */
+CSRankings.useDenseRankings = false;
+/* The data which will hold the parsed CSV of author info. */
+CSRankings.authors = [];
+/* The data which will hold the parsed CSV of co-author info. */
+CSRankings.coauthors = [];
+/* Map authors to the areas they have published in (for pie chart display). */
+CSRankings.authorAreas = {};
+/* Computed stats (univagg). */
+CSRankings.stats = {};
+CSRankings.areaDeptAdjustedCount = {}; /* area+dept */
+/* Colors for all areas. */
+CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
+CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
 function init() {
     new CSRankings();
 }
