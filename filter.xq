@@ -84,6 +84,8 @@
 //inproceedings[booktitle="NSDI"],
 //inproceedings[booktitle="POPL"],
 //inproceedings[booktitle="PLDI"],
+//inproceedings[booktitle="ICFP"],
+//inproceedings[booktitle="OOPSLA"],
 //inproceedings[booktitle="ISCA"],
 //inproceedings[booktitle="MICRO"],
 //inproceedings[booktitle="ASPLOS"],
