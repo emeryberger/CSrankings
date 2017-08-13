@@ -31,6 +31,8 @@
 //inproceedings[booktitle="CHI"],
 //inproceedings[booktitle="UbiComp"],
 //inproceedings[booktitle="Ubicomp"],
+//inproceedings[booktitle="Pervasive"],
+//article[journal="IMWUT"],
 //inproceedings[booktitle="UIST"],
 //inproceedings[booktitle="CAV"],
 //inproceedings[booktitle="CAV (1)"],
