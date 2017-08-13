@@ -44,7 +44,7 @@ areadict = {
     # SIGIR
     'ir': ['WWW', 'SIGIR'],
     # SIGCHI
-    'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST'],
+    'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
     'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
             'ACL/IJCNLP',  # -- in 2009 was joint
             'COLING-ACL',  # -- in 1998 was joint
