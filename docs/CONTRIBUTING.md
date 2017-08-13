@@ -19,6 +19,8 @@ department.
 
 **Adding one or more faculty members (including an entire department)**
 
+- [ ] If the department is not yet listed in CSrankings, the entire faculty needs to be added (not just one faculty member).
+
 - [ ] Enter each faculty member's [DBLP](http://dblp.org) name by modifying `faculty-affiliations.csv`; include disambiguation suffixes like 0001 as needed.
 
 - [ ] If DBLP has multiple entries for this person, all of them need to be listed. If an alias is not already present in `dblp-aliases.csv`, add it.
