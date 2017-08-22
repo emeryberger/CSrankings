@@ -359,6 +359,7 @@ Abhishek Jain 0002,Johns Hopkins University,crypt,,2.0,0.444444444444,2014
 Abhishek Jain 0002,Johns Hopkins University,crypt,,2.0,0.833333333333,2015
 Abhishek Jain 0002,Johns Hopkins University,crypt,,2.0,0.666666666667,2017
 Abhishek Jain 0002,Johns Hopkins University,sec,,1.0,0.333333333333,2014
+Abolfazl Razi,Northern Arizona University,mlmining,,1.0,0.2,2014
 Abraham Bernstein,University of Zurich,ai,ijcai,1.0,0.25,2016
 Abraham Bernstein,University of Zurich,ir,,1.0,0.2,2008
 Abraham Bernstein,University of Zurich,ir,,1.0,0.25,2015
@@ -1545,13 +1546,13 @@ Alex Endert,Georgia Institute of Technology,vis,,1.0,0.333333333333,2012
 Alex Endert,Georgia Institute of Technology,vis,,1.0,0.142857142857,2014
 Alex Endert,Georgia Institute of Technology,vis,,2.0,0.5,2016
 Alex Endert,Georgia Institute of Technology,vis,,3.0,0.666666666667,2017
-Alex Groce,Oregon State University,log,,1.0,0.333333333333,2001
-Alex Groce,Oregon State University,plan,,1.0,0.142857142857,2013
-Alex Groce,Oregon State University,soft,,1.0,0.2,2003
-Alex Groce,Oregon State University,soft,,1.0,0.333333333333,2004
-Alex Groce,Oregon State University,soft,,1.0,0.333333333333,2010
-Alex Groce,Oregon State University,soft,,1.0,0.333333333333,2014
-Alex Groce,Oregon State University,soft,,2.0,0.4,2016
+Alex Groce,Northern Arizona University,log,,1.0,0.333333333333,2001
+Alex Groce,Northern Arizona University,plan,,1.0,0.142857142857,2013
+Alex Groce,Northern Arizona University,soft,,1.0,0.2,2003
+Alex Groce,Northern Arizona University,soft,,1.0,0.333333333333,2004
+Alex Groce,Northern Arizona University,soft,,1.0,0.333333333333,2010
+Alex Groce,Northern Arizona University,soft,,1.0,0.333333333333,2014
+Alex Groce,Northern Arizona University,soft,,2.0,0.4,2016
 Alex Kirlik,University of Illinois at Urbana-Champaign,chi,,1.0,0.142857142857,2016
 Alex Kirlik,University of Illinois at Urbana-Champaign,chi,,1.0,0.25,2017
 Alex Lascarides,University of Edinburgh,nlp,,1.0,0.5,1991
@@ -3739,6 +3740,11 @@ Andrew Pavlo,Carnegie Mellon University,mod,,2.0,0.325,2014
 Andrew Pavlo,Carnegie Mellon University,mod,,3.0,0.576923076923,2015
 Andrew Pavlo,Carnegie Mellon University,mod,,5.0,1.25,2016
 Andrew Pavlo,Carnegie Mellon University,mod,,5.0,1.45,2017
+Andrew Richardson,Northern Arizona University,robotics,,1.0,0.333333333333,2010
+Andrew Richardson,Northern Arizona University,robotics,,1.0,0.5,2011
+Andrew Richardson,Northern Arizona University,robotics,,2.0,0.833333333333,2013
+Andrew Richardson,Northern Arizona University,robotics,,1.0,0.5,2014
+Andrew Richardson,Northern Arizona University,robotics,,1.0,0.5,2015
 Andrew Robb,Clemson University,vis,,1.0,0.142857142857,2013
 Andrew Robb,Clemson University,vis,,1.0,0.166666666667,2015
 Andrew Robb,Clemson University,vis,,1.0,0.142857142857,2016
@@ -5283,6 +5289,24 @@ Ashok K. Agrawala,University of Maryland - College Park,mobile,,1.0,0.2,2006
 Ashok K. Agrawala,University of Maryland - College Park,mobile,,1.0,0.333333333333,2007
 Ashok K. Agrawala,University of Maryland - College Park,ops,,1.0,0.5,1975
 Ashok Srinivasan,Florida State University,hpc,,1.0,0.2,2006
+Ashok Veeraraghavan,Rice University,graph,,1.0,0.2,2007
+Ashok Veeraraghavan,Rice University,graph,,1.0,0.25,2008
+Ashok Veeraraghavan,Rice University,graph,,1.0,0.2,2010
+Ashok Veeraraghavan,Rice University,graph,,1.0,0.2,2014
+Ashok Veeraraghavan,Rice University,robotics,,1.0,0.166666666667,2010
+Ashok Veeraraghavan,Rice University,robotics,,1.0,0.166666666667,2011
+Ashok Veeraraghavan,Rice University,vision,cvpr,1.0,0.333333333333,2004
+Ashok Veeraraghavan,Rice University,vision,cvpr,1.0,0.5,2006
+Ashok Veeraraghavan,Rice University,vision,cvpr,1.0,0.333333333333,2007
+Ashok Veeraraghavan,Rice University,vision,cvpr,2.0,0.533333333333,2008
+Ashok Veeraraghavan,Rice University,vision,cvpr,6.0,1.43333333333,2010
+Ashok Veeraraghavan,Rice University,vision,cvpr,2.0,0.583333333333,2011
+Ashok Veeraraghavan,Rice University,vision,cvpr,1.0,0.25,2015
+Ashok Veeraraghavan,Rice University,vision,cvpr,1.0,0.142857142857,2016
+Ashok Veeraraghavan,Rice University,vision,eccv,2.0,0.5,2010
+Ashok Veeraraghavan,Rice University,vision,iccv,1.0,0.333333333333,2007
+Ashok Veeraraghavan,Rice University,vision,iccv,1.0,0.333333333333,2013
+Ashok Veeraraghavan,Rice University,vision,iccv,1.0,0.333333333333,2015
 Ashutosh Trivedi,IIT Bombay,bed,,1.0,0.5,2011
 Ashutosh Trivedi,IIT Bombay,da,,1.0,0.25,2015
 Ashutosh Trivedi,IIT Bombay,log,,1.0,0.333333333333,2012
@@ -13951,6 +13975,8 @@ David Sarne,Bar-Ilan University,ai,aaai,1.0,0.5,2016
 David Sarne,Bar-Ilan University,ai,aaai,3.0,1.08333333333,2017
 David Sarne,Bar-Ilan University,ai,ijcai,1.0,0.333333333333,2007
 David Sarne,Bar-Ilan University,robotics,,1.0,0.333333333333,2014
+David Scott,Northern Arizona University,hpc,,1.0,0.333333333333,1992
+David Scott,Northern Arizona University,robotics,,1.0,0.2,1986
 David Sontag,Massachusetts Institute of Technology,ai,aaai,1.0,0.25,2016
 David Sontag,Massachusetts Institute of Technology,ai,aaai,1.0,0.333333333333,2017
 David Sontag,Massachusetts Institute of Technology,ai,ijcai,1.0,0.166666666667,2005
@@ -16351,6 +16377,39 @@ Edward W. Felten,Princeton University,sec,,1.0,0.166666666667,2009
 Edward W. Felten,Princeton University,sec,,2.0,0.533333333333,2011
 Edward W. Felten,Princeton University,sec,,1.0,0.25,2012
 Edward W. Felten,Princeton University,sec,,2.0,0.366666666667,2015
+Edward W. Knightly,Rice University,comm,,1.0,0.5,1995
+Edward W. Knightly,Rice University,comm,,1.0,1.0,1996
+Edward W. Knightly,Rice University,comm,,1.0,1.0,1998
+Edward W. Knightly,Rice University,comm,,2.0,1.0,1999
+Edward W. Knightly,Rice University,comm,,2.0,0.7,2000
+Edward W. Knightly,Rice University,comm,,1.0,0.5,2001
+Edward W. Knightly,Rice University,comm,,1.0,0.25,2002
+Edward W. Knightly,Rice University,comm,,3.0,1.5,2003
+Edward W. Knightly,Rice University,comm,,2.0,0.833333333333,2004
+Edward W. Knightly,Rice University,comm,,1.0,0.5,2005
+Edward W. Knightly,Rice University,comm,,2.0,0.583333333333,2006
+Edward W. Knightly,Rice University,comm,,3.0,1.16666666667,2007
+Edward W. Knightly,Rice University,comm,,3.0,0.783333333333,2008
+Edward W. Knightly,Rice University,comm,,1.0,0.25,2009
+Edward W. Knightly,Rice University,comm,,4.0,1.33333333333,2010
+Edward W. Knightly,Rice University,comm,,1.0,0.142857142857,2011
+Edward W. Knightly,Rice University,comm,,3.0,1.03333333333,2012
+Edward W. Knightly,Rice University,comm,,2.0,0.833333333333,2013
+Edward W. Knightly,Rice University,comm,,2.0,0.5,2015
+Edward W. Knightly,Rice University,comm,,2.0,0.666666666667,2016
+Edward W. Knightly,Rice University,metrics,,1.0,0.5,1994
+Edward W. Knightly,Rice University,metrics,,1.0,0.25,1995
+Edward W. Knightly,Rice University,metrics,,1.0,1.0,1997
+Edward W. Knightly,Rice University,metrics,,1.0,0.2,2005
+Edward W. Knightly,Rice University,mobile,,1.0,0.2,2001
+Edward W. Knightly,Rice University,mobile,,1.0,0.25,2002
+Edward W. Knightly,Rice University,mobile,,2.0,0.666666666667,2004
+Edward W. Knightly,Rice University,mobile,,1.0,0.333333333333,2005
+Edward W. Knightly,Rice University,mobile,,1.0,0.25,2006
+Edward W. Knightly,Rice University,mobile,,3.0,1.16666666667,2008
+Edward W. Knightly,Rice University,mobile,,2.0,0.583333333333,2010
+Edward W. Knightly,Rice University,mobile,,1.0,0.333333333333,2012
+Edward W. Knightly,Rice University,mobile,,1.0,0.333333333333,2014
 Edwin B. Olson,University of Michigan,robotics,,1.0,1.0,2009
 Edwin B. Olson,University of Michigan,robotics,,1.0,0.5,2010
 Edwin B. Olson,University of Michigan,robotics,,1.0,0.5,2011
@@ -29627,6 +29686,10 @@ Joseph Pasquale,University of California - San Diego,hpc,,1.0,0.5,2006
 Joseph Pasquale,University of California - San Diego,ir,,1.0,0.5,2002
 Joseph Pasquale,University of California - San Diego,ir,,1.0,0.5,2004
 Joseph Pasquale,University of California - San Diego,ops,,1.0,0.5,1991
+Joseph R. Cavallaro,Rice University,robotics,,2.0,0.833333333333,1993
+Joseph R. Cavallaro,Rice University,robotics,,1.0,0.333333333333,1994
+Joseph R. Cavallaro,Rice University,robotics,,1.0,0.333333333333,1999
+Joseph R. Cavallaro,Rice University,robotics,,1.0,0.333333333333,2002
 Joseph S. Sventek,University of Oregon,comm,,1.0,0.5,2005
 Joseph Sifakis,EPFL,act,,1.0,0.5,1982
 Joseph Sifakis,EPFL,arch,,1.0,0.25,1976
@@ -34373,6 +34436,34 @@ Lin Tan,University of Waterloo,soft,,1.0,0.333333333333,2011
 Lin Tan,University of Waterloo,soft,,1.0,0.2,2014
 Lin Tan,University of Waterloo,soft,,3.0,0.592857142857,2015
 Lin Tan,University of Waterloo,soft,,3.0,0.809523809524,2016
+Lin Zhong,Rice University,arch,,1.0,0.25,2012
+Lin Zhong,Rice University,arch,,2.0,0.583333333333,2014
+Lin Zhong,Rice University,arch,,1.0,0.25,2015
+Lin Zhong,Rice University,arch,,1.0,0.2,2016
+Lin Zhong,Rice University,chi,,1.0,0.2,2007
+Lin Zhong,Rice University,chi,,1.0,0.166666666667,2011
+Lin Zhong,Rice University,chi,,1.0,0.2,2012
+Lin Zhong,Rice University,comm,,1.0,0.333333333333,2009
+Lin Zhong,Rice University,da,,1.0,0.5,2002
+Lin Zhong,Rice University,da,,1.0,0.333333333333,2003
+Lin Zhong,Rice University,da,,1.0,0.25,2004
+Lin Zhong,Rice University,da,,1.0,0.333333333333,2006
+Lin Zhong,Rice University,da,,1.0,0.333333333333,2009
+Lin Zhong,Rice University,ir,,1.0,0.25,2012
+Lin Zhong,Rice University,ir,,1.0,0.333333333333,2017
+Lin Zhong,Rice University,mobile,,1.0,0.5,2005
+Lin Zhong,Rice University,mobile,,1.0,0.5,2007
+Lin Zhong,Rice University,mobile,,1.0,0.5,2008
+Lin Zhong,Rice University,mobile,,1.0,0.142857142857,2009
+Lin Zhong,Rice University,mobile,,1.0,0.333333333333,2010
+Lin Zhong,Rice University,mobile,,3.0,1.25,2011
+Lin Zhong,Rice University,mobile,,1.0,0.142857142857,2012
+Lin Zhong,Rice University,mobile,,2.0,0.45,2013
+Lin Zhong,Rice University,mobile,,3.0,0.916666666667,2014
+Lin Zhong,Rice University,mobile,,2.0,0.833333333333,2015
+Lin Zhong,Rice University,ops,,1.0,0.333333333333,2017
+Lin Zhong,Rice University,vision,cvpr,1.0,0.166666666667,2012
+Lin Zhong,Rice University,vision,cvpr,1.0,0.2,2013
 Lina Yao,UNSW,chi,,1.0,0.166666666667,2016
 Linda G. Shapiro,University of Washington,ai,aaai,1.0,0.5,2017
 Linda G. Shapiro,University of Washington,graph,,1.0,1.0,1975
@@ -36267,6 +36358,7 @@ Marcin Pilipczuk,University of Warsaw,act,,1.0,0.2,2015
 Marcin Pilipczuk,University of Warsaw,act,,4.0,1.25,2016
 Marcin Pilipczuk,University of Warsaw,act,,1.0,0.5,2017
 Marco Antonio Zúñiga Zamalloa,TU Delft,bed,,1.0,0.25,2012
+Marco Aurélio Gerosa,Northern Arizona University,soft,,1.0,0.25,2016
 Marco Brambilla 0001,Politecnico di Milano,ir,,1.0,0.25,2005
 Marco Brambilla 0001,Politecnico di Milano,ir,,1.0,0.25,2010
 Marco Brambilla 0001,Politecnico di Milano,ir,,1.0,0.333333333333,2012
@@ -42207,6 +42299,11 @@ Neil Bergmann,University of Queensland,da,,1.0,1.0,1985
 Neil C. Rowe,Naval Postgraduate School,mod,,1.0,1.0,1983
 Neil C. Rowe,Naval Postgraduate School,robotics,,1.0,0.333333333333,1986
 Neil C. Rowe,Naval Postgraduate School,robotics,,1.0,0.25,1987
+Neil Dantam,Colorado School of Mines,robotics,,1.0,0.333333333333,2010
+Neil Dantam,Colorado School of Mines,robotics,,2.0,0.833333333333,2011
+Neil Dantam,Colorado School of Mines,robotics,,1.0,0.333333333333,2012
+Neil Dantam,Colorado School of Mines,robotics,,1.0,0.25,2013
+Neil Dantam,Colorado School of Mines,robotics,,1.0,0.5,2014
 Neil Immerman,University of Massachusetts Amherst,act,,1.0,0.333333333333,1978
 Neil Immerman,University of Massachusetts Amherst,act,,1.0,1.0,1979
 Neil Immerman,University of Massachusetts Amherst,act,,1.0,1.0,1980
@@ -44921,6 +45018,14 @@ Peter J. Stuckey,University of Melbourne,mod,,1.0,0.125,1996
 Peter J. Stuckey,University of Melbourne,plan,,1.0,0.25,1992
 Peter J. Stuckey,University of Melbourne,plan,,1.0,0.5,1993
 Peter J. Stuckey,University of Melbourne,vis,,1.0,0.166666666667,2008
+Peter J. Varman,Rice University,arch,,1.0,0.5,1982
+Peter J. Varman,Rice University,arch,,1.0,0.5,1984
+Peter J. Varman,Rice University,arch,,1.0,0.5,1987
+Peter J. Varman,Rice University,metrics,,1.0,0.333333333333,2007
+Peter J. Varman,Rice University,metrics,,1.0,0.333333333333,2013
+Peter J. Varman,Rice University,mod,,1.0,0.333333333333,1989
+Peter J. Varman,Rice University,ops,,1.0,0.333333333333,2010
+Peter J. Varman,Rice University,ops,,1.0,0.25,2012
 Peter James Stuckey,University of Melbourne,ai,aaai,1.0,0.25,2015
 Peter James Stuckey,University of Melbourne,ai,ijcai,1.0,0.25,2013
 Peter Jeavons,University of Oxford,act,,1.0,0.333333333333,2001
@@ -48792,6 +48897,18 @@ Richard Fujimoto,Georgia Institute of Technology,metrics,,1.0,0.333333333333,199
 Richard Fujimoto,Georgia Institute of Technology,metrics,,1.0,0.2,1992
 Richard Fujimoto,Georgia Institute of Technology,metrics,,2.0,0.833333333333,1994
 Richard Furuta,Texas A&M University,ai,aaai,1.0,0.125,2015
+Richard G. Baraniuk,Rice University,comm,,1.0,0.25,2000
+Richard G. Baraniuk,Rice University,comm,,1.0,0.333333333333,2005
+Richard G. Baraniuk,Rice University,metrics,,1.0,0.25,1999
+Richard G. Baraniuk,Rice University,mlmining,,1.0,0.2,2005
+Richard G. Baraniuk,Rice University,mlmining,,1.0,0.333333333333,2007
+Richard G. Baraniuk,Rice University,mlmining,,1.0,0.25,2008
+Richard G. Baraniuk,Rice University,mlmining,,1.0,0.333333333333,2011
+Richard G. Baraniuk,Rice University,mlmining,,1.0,0.5,2013
+Richard G. Baraniuk,Rice University,mlmining,,1.0,0.333333333333,2014
+Richard G. Baraniuk,Rice University,mlmining,,2.0,0.583333333333,2016
+Richard G. Baraniuk,Rice University,vision,eccv,1.0,0.166666666667,2008
+Richard G. Baraniuk,Rice University,vision,eccv,1.0,0.25,2010
 Richard H. Lathrop,University of California - Irvine,ai,aaai,1.0,0.125,1998
 Richard H. Lathrop,University of California - Irvine,bio,,1.0,0.2,1996
 Richard H. Lathrop,University of California - Irvine,bio,,1.0,0.166666666667,1997
@@ -59516,6 +59633,9 @@ Troels Bjerre Sørensen,IT University of Copenhagen,act,,1.0,0.5,2008
 Troels Bjerre Sørensen,IT University of Copenhagen,ai,aaai,1.0,0.333333333333,2007
 Troels Bjerre Sørensen,IT University of Copenhagen,ai,aaai,1.0,0.333333333333,2008
 Troels Bjerre Sørensen,IT University of Copenhagen,ai,aaai,1.0,0.2,2014
+Truong Nghiem,Northern Arizona University,bed,,1.0,0.25,2006
+Truong Nghiem,Northern Arizona University,bed,,1.0,0.142857142857,2011
+Truong Nghiem,Northern Arizona University,bed,,1.0,0.333333333333,2012
 Tsu-Jae King Liu,University of California - Berkeley,da,,1.0,0.166666666667,2008
 Tsuhan Chen,Cornell University,ai,ijcai,1.0,0.333333333333,2011
 Tsuhan Chen,Cornell University,da,,2.0,0.583333333333,2003
@@ -60174,6 +60294,7 @@ Vernon Rego,Purdue University,hpc,,1.0,0.333333333333,1992
 Verónica Becher,University of Buenos Aires,ai,aaai,1.0,0.5,1993
 Vesal Vojdani,University of Tartu,plan,,1.0,0.2,2011
 Vesal Vojdani,University of Tartu,plan,,1.0,0.333333333333,2013
+Viacheslav Fofanov,Northern Arizona University,bio,,1.0,0.111111111111,2006
 Vibhav Gogate,University of Texas at Dallas,ai,aaai,1.0,0.5,2007
 Vibhav Gogate,University of Texas at Dallas,ai,aaai,1.0,0.5,2008
 Vibhav Gogate,University of Texas at Dallas,ai,aaai,1.0,0.333333333333,2012
