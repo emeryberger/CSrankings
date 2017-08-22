@@ -166,7 +166,7 @@ class CSRankings {
 	    { area : "da", title : "EDA" },
 	    { area : "bed", title : "Embedded" },
 	    { area : "vis", title : "Visualization" }
-	    //,{ area : "ecom", title : "ECom" }
+	    ,{ area : "ecom", title : "ECom" }
 	    //,{ area : "cse", title : "CSEd" }
 	  ];
 

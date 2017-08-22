@@ -983,8 +983,8 @@ CSRankings.areaMap = [{ area: "ai", title: "AI" },
     { area: "bio", title: "Comp. Biology" },
     { area: "da", title: "EDA" },
     { area: "bed", title: "Embedded" },
-    { area: "vis", title: "Visualization" }
-    //,{ area : "ecom", title : "ECom" }
+    { area: "vis", title: "Visualization" },
+    { area: "ecom", title: "ECom" }
     //,{ area : "cse", title : "CSEd" }
 ];
 CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
