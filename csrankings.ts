@@ -334,7 +334,7 @@ class CSRankings {
 	}
 	for (let key in datadict) {
 	    data.push({ "label" : CSRankings.areaDict[key],
-			"value" : datadict[key],
+			"value" : Math.round(datadict[key] * 10)/10;
 			"color" : CSRankings.color[CSRankings.areaPosition[key]] });
 	}
 	new d3pie(name + "-chart", {
@@ -373,7 +373,7 @@ class CSRankings {
 		    //"format": "percentage", // "value",
 		    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
 		    "format": "value",
-		    "hideWhenLessThanPercentage": 2 // 100 // 2
+		    "hideWhenLessThanPercentage": 5 // 100 // 2
 		},
 		"mainLabel": {
 		    "fontSize": 12
