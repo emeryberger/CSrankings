@@ -79,6 +79,7 @@
 //inproceedings[booktitle="DAC"],
 //inproceedings[booktitle="SIGMETRICS"],
 //inproceedings[booktitle="SIGMETRICS/Performance"],
+//article[journal="POMACS"],
 //inproceedings[booktitle="IMC"],
 //inproceedings[booktitle="Internet Measurement Conference"],
 //inproceedings[booktitle="SIGCOMM"],

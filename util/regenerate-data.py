@@ -40,7 +40,7 @@ areadict = {
     'graph': ['ACM Trans. Graph.', 'SIGGRAPH'],
     # SIGMETRICS
     # - Two variants for each, as in DBLP.
-    'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'IMC', 'Internet Measurement Conference'],
+    'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
     # SIGIR
     'ir': ['WWW', 'SIGIR'],
     # SIGCHI
