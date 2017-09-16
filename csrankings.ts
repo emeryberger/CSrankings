@@ -323,9 +323,9 @@ class CSRankings {
 	    // Round it to the nearest 0.1.
 	    value = Math.round(value * 10) / 10;
 	    if (value > 0) {
-		if (key in CSRankings.parentMap) {
+//		if (key in CSRankings.parentMap) {
 		    // key = CSRankings.parentMap[key];
-		}
+//		}
 		if (!(key in datadict)) {
 		    datadict[key] = 0;
 		}
@@ -334,7 +334,7 @@ class CSRankings {
 	}
 	for (let key in datadict) {
 	    data.push({ "label" : CSRankings.areaDict[key],
-			"value" : Math.round(datadict[key] * 10)/10;
+			"value" : Math.round(datadict[key] * 10)/10,
 			"color" : CSRankings.color[CSRankings.areaPosition[key]] });
 	}
 	new d3pie(name + "-chart", {
