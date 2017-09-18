@@ -153,23 +153,21 @@
   </head>
 
   <body>
-<!--
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.async=true;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
--->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id; js.async=true;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
 
           <h1>Computer Science Rankings</h1>
-<!--
+
+	  <!--
 	  <p>
 	    <div class="fb-share-button" data-href="http://csrankings.org" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcsrankings.org%2F&amp;src=sdkpreparse">Share</a></div>
 	    <a class="twitter-share-button"
@@ -1133,6 +1131,9 @@
 	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
 	      <br />
+	      <br>
+	  <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+	      </br>
 	      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSrankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.org" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/emeryberger/CSrankings" rel="dct:source">https://github.com/emeryberger/CSrankings</a>.<br />
 	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="png/80x15.png" /></a>
 	    </p>
