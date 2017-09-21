@@ -314,12 +314,16 @@ class CSRankings {
 	    let key = keys[i];
 	    let value = CSRankings.authorAreas[uname][key];
 	    // Use adjusted count if this is for a department.
+	    /*
+            DISABLED so department charts are invariant.
+
 	    if (uname in CSRankings.stats) {
 		value = CSRankings.areaDeptAdjustedCount[key+uname] + 1;
 		if (value == 1) {
 		    value = 0;
 		}
 	    }
+	    */
 	    // Round it to the nearest 0.1.
 	    value = Math.round(value * 10) / 10;
 	    if (value > 0) {
@@ -649,7 +653,7 @@ class CSRankings {
     private static countAuthorAreas(authors : Array<Author>,
 				    startyear : number,
 				    endyear : number,
-				    weights : {[key:string] : number},
+//				    weights : {[key:string] : number},
 				    authorAreas : {[name : string] : {[area : string] : number }}) : void
     
     {
@@ -663,9 +667,14 @@ class CSRankings {
 		continue;
 	    }
 	    const theArea  = auth.area;
+	    /*
+	      DISABLING weight selection so all pie charts look the
+	      same regardless of which areas are currently selected:
+
 	    if (weights[theArea] === 0) {
 		continue;
 	    }
+	    */
 	    const theDept  = auth.dept;
 	    const theCount = parseFloat(auth.count);
 //	    const theCount = parseFloat(auth.adjustedcount);
@@ -1065,7 +1074,7 @@ class CSRankings {
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
 				    endyear,
-				    currentWeights,
+//				    currentWeights,
 				    CSRankings.authorAreas);
 	
 	CSRankings.buildDepartments(CSRankings.authors,
