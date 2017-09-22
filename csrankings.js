@@ -1,48 +1,1044 @@
-var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.ASSUME_ES5=!1;$jscomp.ASSUME_NO_NATIVE_MAP=!1;$jscomp.ASSUME_NO_NATIVE_SET=!1;$jscomp.defineProperty=$jscomp.ASSUME_ES5||"function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value)};$jscomp.getGlobal=function(a){return"undefined"!=typeof window&&window===a?a:"undefined"!=typeof global&&null!=global?global:a};$jscomp.global=$jscomp.getGlobal(this);$jscomp.SYMBOL_PREFIX="jscomp_symbol_";
-$jscomp.initSymbol=function(){$jscomp.initSymbol=function(){};$jscomp.global.Symbol||($jscomp.global.Symbol=$jscomp.Symbol)};$jscomp.Symbol=function(){var a=0;return function(b){return $jscomp.SYMBOL_PREFIX+(b||"")+a++}}();
-$jscomp.initSymbolIterator=function(){$jscomp.initSymbol();var a=$jscomp.global.Symbol.iterator;a||(a=$jscomp.global.Symbol.iterator=$jscomp.global.Symbol("iterator"));"function"!=typeof Array.prototype[a]&&$jscomp.defineProperty(Array.prototype,a,{configurable:!0,writable:!0,value:function(){return $jscomp.arrayIterator(this)}});$jscomp.initSymbolIterator=function(){}};$jscomp.arrayIterator=function(a){var b=0;return $jscomp.iteratorPrototype(function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}})};
-$jscomp.iteratorPrototype=function(a){$jscomp.initSymbolIterator();a={next:a};a[$jscomp.global.Symbol.iterator]=function(){return this};return a};$jscomp.iteratorFromArray=function(a,b){$jscomp.initSymbolIterator();a instanceof String&&(a+="");var c=0,d={next:function(){if(c<a.length){var e=c++;return{value:b(e,a[e]),done:!1}}d.next=function(){return{done:!0,value:void 0}};return d.next()}};d[Symbol.iterator]=function(){return d};return d};
-$jscomp.polyfill=function(a,b,c,d){if(b){c=$jscomp.global;a=a.split(".");for(d=0;d<a.length-1;d++){var e=a[d];e in c||(c[e]={});c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&null!=b&&$jscomp.defineProperty(c,a,{configurable:!0,writable:!0,value:b})}};$jscomp.polyfill("Array.prototype.keys",function(a){return a?a:function(){return $jscomp.iteratorFromArray(this,function(a){return a})}},"es6","es3");
-$jscomp.makeIterator=function(a){$jscomp.initSymbolIterator();var b=a[Symbol.iterator];return b?b.call(a):$jscomp.arrayIterator(a)};$jscomp.owns=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)};
-$jscomp.polyfill("WeakMap",function(a){function b(a){$jscomp.owns(a,d)||$jscomp.defineProperty(a,d,{value:{}})}function c(a){var c=Object[a];c&&(Object[a]=function(a){b(a);return c(a)})}if(function(){if(!a||!Object.seal)return!1;try{var b=Object.seal({}),c=Object.seal({}),d=new a([[b,2],[c,3]]);if(2!=d.get(b)||3!=d.get(c))return!1;d.delete(b);d.set(c,4);return!d.has(b)&&4==d.get(c)}catch(q){return!1}}())return a;var d="$jscomp_hidden_"+Math.random().toString().substring(2);c("freeze");c("preventExtensions");
-c("seal");var e=0,g=function(a){this.id_=(e+=Math.random()+1).toString();if(a){$jscomp.initSymbol();$jscomp.initSymbolIterator();a=$jscomp.makeIterator(a);for(var b;!(b=a.next()).done;)b=b.value,this.set(b[0],b[1])}};g.prototype.set=function(a,c){b(a);if(!$jscomp.owns(a,d))throw Error("WeakMap key fail: "+a);a[d][this.id_]=c;return this};g.prototype.get=function(a){return $jscomp.owns(a,d)?a[d][this.id_]:void 0};g.prototype.has=function(a){return $jscomp.owns(a,d)&&$jscomp.owns(a[d],this.id_)};g.prototype.delete=
-function(a){return $jscomp.owns(a,d)&&$jscomp.owns(a[d],this.id_)?delete a[d][this.id_]:!1};return g},"es6","es3");$jscomp.MapEntry=function(){};
-$jscomp.polyfill("Map",function(a){if(!$jscomp.ASSUME_NO_NATIVE_MAP&&function(){if(!a||!a.prototype.entries||"function"!=typeof Object.seal)return!1;try{var b=Object.seal({x:4}),c=new a($jscomp.makeIterator([[b,"s"]]));if("s"!=c.get(b)||1!=c.size||c.get({x:4})||c.set({x:4},"t")!=c||2!=c.size)return!1;var d=c.entries(),e=d.next();if(e.done||e.value[0]!=b||"s"!=e.value[1])return!1;e=d.next();return e.done||4!=e.value[0].x||"t"!=e.value[1]||!d.next().done?!1:!0}catch(l){return!1}}())return a;$jscomp.initSymbol();
-$jscomp.initSymbolIterator();var b=new WeakMap,c=function(a){this.data_={};this.head_=g();this.size=0;if(a){a=$jscomp.makeIterator(a);for(var b;!(b=a.next()).done;)b=b.value,this.set(b[0],b[1])}};c.prototype.set=function(a,b){var c=d(this,a);c.list||(c.list=this.data_[c.id]=[]);c.entry?c.entry.value=b:(c.entry={next:this.head_,previous:this.head_.previous,head:this.head_,key:a,value:b},c.list.push(c.entry),this.head_.previous.next=c.entry,this.head_.previous=c.entry,this.size++);return this};c.prototype.delete=
-function(a){a=d(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this.data_[a.id],a.entry.previous.next=a.entry.next,a.entry.next.previous=a.entry.previous,a.entry.head=null,this.size--,!0):!1};c.prototype.clear=function(){this.data_={};this.head_=this.head_.previous=g();this.size=0};c.prototype.has=function(a){return!!d(this,a).entry};c.prototype.get=function(a){return(a=d(this,a).entry)&&a.value};c.prototype.entries=function(){return e(this,function(a){return[a.key,
-a.value]})};c.prototype.keys=function(){return e(this,function(a){return a.key})};c.prototype.values=function(){return e(this,function(a){return a.value})};c.prototype.forEach=function(a,b){for(var c=this.entries(),d;!(d=c.next()).done;)d=d.value,a.call(b,d[1],d[0],this)};c.prototype[Symbol.iterator]=c.prototype.entries;var d=function(a,c){var d=c&&typeof c;"object"==d||"function"==d?b.has(c)?d=b.get(c):(d=""+ ++f,b.set(c,d)):d="p_"+c;var e=a.data_[d];if(e&&$jscomp.owns(a.data_,d))for(a=0;a<e.length;a++){var g=
-e[a];if(c!==c&&g.key!==g.key||c===g.key)return{id:d,list:e,index:a,entry:g}}return{id:d,list:e,index:-1,entry:void 0}},e=function(a,b){var c=a.head_;return $jscomp.iteratorPrototype(function(){if(c){for(;c.head!=a.head_;)c=c.previous;for(;c.next!=c.head;)return c=c.next,{done:!1,value:b(c)};c=null}return{done:!0,value:void 0}})},g=function(){var a={};return a.previous=a.next=a.head=a},f=0;return c},"es6","es3");
-$jscomp.polyfill("Set",function(a){if(!$jscomp.ASSUME_NO_NATIVE_SET&&function(){if(!a||!a.prototype.entries||"function"!=typeof Object.seal)return!1;try{var b=Object.seal({x:4}),d=new a($jscomp.makeIterator([b]));if(!d.has(b)||1!=d.size||d.add(b)!=d||1!=d.size||d.add({x:4})!=d||2!=d.size)return!1;var e=d.entries(),g=e.next();if(g.done||g.value[0]!=b||g.value[1]!=b)return!1;g=e.next();return g.done||g.value[0]==b||4!=g.value[0].x||g.value[1]!=g.value[0]?!1:e.next().done}catch(f){return!1}}())return a;
-$jscomp.initSymbol();$jscomp.initSymbolIterator();var b=function(a){this.map_=new Map;if(a){a=$jscomp.makeIterator(a);for(var b;!(b=a.next()).done;)this.add(b.value)}this.size=this.map_.size};b.prototype.add=function(a){this.map_.set(a,a);this.size=this.map_.size;return this};b.prototype.delete=function(a){a=this.map_.delete(a);this.size=this.map_.size;return a};b.prototype.clear=function(){this.map_.clear();this.size=0};b.prototype.has=function(a){return this.map_.has(a)};b.prototype.entries=function(){return this.map_.entries()};
-b.prototype.values=function(){return this.map_.values()};b.prototype.keys=b.prototype.values;b.prototype[Symbol.iterator]=b.prototype.values;b.prototype.forEach=function(a,b){var c=this;this.map_.forEach(function(d){return a.call(b,d,d,c)})};return b},"es6","es3");$jscomp.findInternal=function(a,b,c){a instanceof String&&(a=String(a));for(var d=a.length,e=0;e<d;e++){var g=a[e];if(b.call(c,g,e,a))return{i:e,v:g}}return{i:-1,v:void 0}};
-$jscomp.polyfill("Array.prototype.find",function(a){return a?a:function(a,c){return $jscomp.findInternal(this,a,c).v}},"es6","es3");
-var CSRankings=function(){function a(){for(var b=0;b<a.areaMap.length;b++){var c=a.areaMap[b],d=c.area;c=c.title;a.areas[b]=d;a.areaNames[b]=c;a.fields[b]=d;a.areaDict[d]=a.areaNames[b];a.areaPosition[d]=b}b=0;for(c=a.aiAreas;b<c.length;b++)d=c[b],a.aiFields.push(a.areaPosition[d]);b=0;for(c=a.systemsAreas;b<c.length;b++)d=c[b],a.systemsFields.push(a.areaPosition[d]);b=0;for(c=a.theoryAreas;b<c.length;b++)d=c[b],a.theoryFields.push(a.areaPosition[d]);b=0;for(c=a.interdisciplinaryAreas;b<c.length;b++)d=
-c[b],a.otherFields.push(a.areaPosition[d]);d=function(){a.loadAliases(a.aliases,function(){a.loadHomepages(a.homepages,function(){a.loadAuthorInfo(function(){a.loadCountryInfo(a.countryInfo,a.rank)})})})};a.activateAll();a.showCoauthors?a.loadCoauthors(d):d()}a.translateNameToDBLP=function(a){a=a.replace(/'|\-|\./g,"=");a=a.replace(/\u00c1/g,"=Aacute=");a=a.replace(/\u00e1/g,"=aacute=");a=a.replace(/\u00e8/g,"=egrave=");a=a.replace(/\u00e9/g,"=eacute=");a=a.replace(/\u00ef/g,"=iuml=");a=a.replace(/\u00f3/g,
-"=oacute=");a=a.replace(/\u00e7/g,"=ccedil=");a=a.replace(/\u00e4/g,"=auml=");a=a.replace(/\u00f6/g,"=ouml=");a=a.replace(/\u00f8/g,"=oslash=");a=a.replace(/\u00d6/g,"=Ouml=");a=a.replace(/\u00fc/g,"=uuml=");a=a.split(" ");var b=a[a.length-1];0<parseInt(b)&&(a.pop(),b=a[a.length-1]+"_"+b);a.pop();a=a.join(" ");a=a.replace(/\s/g,"_");a=a.replace(/\-/g,"=");return"http://dblp.uni-trier.de/pers/hd"+("/"+b[0].toLowerCase()+"/"+b+":"+a)};a.makePrologue=function(){return'<html><head><style type="text/css">  body { font-family: "Helvetica", "Arial"; }  table td { vertical-align: top; }</style></head><body><div class="row"><div class="table" style="overflow:auto; height: 650px;"><table class="table-sm table-striped"id="ranking" valign="top">'};
-a.compareNames=function(a,c){a=a.split(" ");c=c.split(" ");a=a[a.length-1];c=c[c.length-1];return a<c?-1:a>c?1:0};a.makeChart=function(b){console.assert(a.color.length>=a.areas.length,"Houston, we have a problem.");for(var c=[],d={},e=a.areas,g=unescape(b),f=0;f<e.length;f++){var h=e[f],k=a.authorAreas[g][h];k=Math.round(10*k)/10;0<k&&(h in d||(d[h]=0),d[h]+=k)}for(h in d)c.push({label:a.areaDict[h],value:Math.round(10*d[h])/10,color:a.color[a.areaPosition[h]]});new d3pie(b+"-chart",{header:{title:{text:g,
-fontSize:24,font:"open sans"},subtitle:{text:"Publication Profile",color:"#999999",fontSize:14,font:"open sans"},titleSubtitlePadding:9},size:{canvasHeight:500,canvasWidth:500,pieInnerRadius:"38%",pieOuterRadius:"83%"},data:{content:c,smallSegmentGrouping:{enabled:!0,value:1}},labels:{outer:{pieDistance:32},inner:{format:"value",hideWhenLessThanPercentage:5},mainLabel:{fontSize:12},percentage:{color:"#ffffff",decimalPlaces:0},value:{color:"#ffffff",fontSize:10},lines:{enabled:!0},truncation:{enabled:!0}},
-effects:{load:{effect:"none"},pullOutSegmentOnClick:{effect:"linear",speed:400,size:8}},misc:{gradient:{enabled:!0,percentage:100}}})};a.loadCoauthors=function(b){Papa.parse(a.coauthorFile,{download:!0,header:!0,complete:function(c){a.coauthors=c.data;setTimeout(b,0)}})};a.loadAliases=function(b,c){Papa.parse(a.aliasFile,{header:!0,download:!0,complete:function(a){var d=0;for(a=a.data;d<a.length;d++){var g=a[d];b[g.alias]=g.name}setTimeout(c,0)}})};a.loadArticles=function(a){jQuery.getJSON("articles.json",
-function(b){setTimeout(a,0)})};a.loadCountryInfo=function(b,c){Papa.parse(a.countryinfoFile,{header:!0,download:!0,complete:function(a){var d=0;for(a=a.data;d<a.length;d++){var g=a[d];b[g.institution]=g.region}setTimeout(c,0)}})};a.loadAuthorInfo=function(b){var c=this;Papa.parse(a.authorinfoFile,{download:!0,header:!0,complete:function(d){c.authors=d.data;for(d=0;d<a.fields.length;d++)jQuery("input[name="+a.fields[d]+"]").click(function(){c.rank()});setTimeout(b,0)}})};a.loadHomepages=function(b,
-c){Papa.parse(a.homepagesFile,{header:!0,download:!0,complete:function(a){var d=0;for(a=a.data;d<a.length;d++){var g=a[d];"undefined"!==typeof g.homepage&&(b[g.name.trim()]=g.homepage.trim())}setTimeout(c,0)}})};a.inRegion=function(b,c){switch(c){case "USA":if(b in a.countryInfo)return!1;break;case "europe":if(!(b in a.countryInfo)||"europe"!=a.countryInfo[b])return!1;break;case "canada":if(!(b in a.countryInfo)||"canada"!=a.countryInfo[b])return!1;break;case "northamerica":if(b in a.countryInfo&&
-"canada"!=a.countryInfo[b])return!1;break;case "australasia":if(!(b in a.countryInfo)||"australasia"!=a.countryInfo[b])return!1;break;case "southamerica":if(!(b in a.countryInfo)||"southamerica"!=a.countryInfo[b])return!1;break;case "asia":if(!(b in a.countryInfo)||"asia"!=a.countryInfo[b])return!1}return!0};a.activateFields=function(b,c){for(var d=0;d<c.length;d++)jQuery("input[name="+a.fields[c[d]]+"]").prop("checked",b);a.rank();return!1};a.sortIndex=function(a){var b=Object.keys(a);b.sort(function(b,
-c){return a[b]>a[c]?-1:a[c]>a[b]?1:b<c?-1:c<b?1:0});return b};a.computeCoauthors=function(a,c,d,e){var b={},f;for(f in a)if(a.hasOwnProperty(f)){var h=a[f],k=h.author,q=h.coauthor,m=h.year;0===e[h.area]||m<c||m>d||(k in b||(b[k]=new Set([])),b[k].add(q))}return b};a.countAuthorAreas=function(b,c,d,e){for(var g in b)if(b.hasOwnProperty(g)){var f=b[g],h=f.year;if(!(h<c||h>d)){h=f.area;var k=f.dept,q=parseFloat(f.count);f=f.name;f in a.aliases&&(f=a.aliases[f]);if(!(f in e)){e[f]={};for(var m in a.areaDict)a.areaDict.hasOwnProperty(m)&&
-(e[f][m]=0)}if(!(k in e))for(m in e[k]={},a.areaDict)a.areaDict.hasOwnProperty(m)&&(e[k][m]=0);e[f][h]+=q;e[k][h]+=q}}};a.buildDepartments=function(b,c,d,e,g,f,h,k,q,m){var l={},p;for(p in b)if(b.hasOwnProperty(p)){var n=b[p],t=n.name,u=n.year,r=n.area;n=n.dept;t in a.aliases&&(t=a.aliases[t]);if("undefined"!==typeof n&&!(0===e[r]||u<c||u>d)&&a.inRegion(n,g)){r in a.parentMap&&(r=a.parentMap[r]);u=r+n;r=t+n;u in f||(f[u]=0);var w=parseInt(b[p].count),v=parseFloat(b[p].adjustedcount);f[u]+=v;t in l||
-(l[t]=!0,q[r]=0,m[r]=0,n in h||(h[n]=0,k[n]=[]),k[n].push(t),h[n]+=1);q[r]+=w;m[r]+=v}}};a.computeStats=function(b,c,d,e,g,f){a.stats={};var h={},k;for(k in b)if(b.hasOwnProperty(k)){h[k]=g?1:0;for(var q=0,m=d;q<m.length;q++){var l=m[q];if(!(l in a.parentMap)){var p=l+k;p in c||(c[p]=0);0!=f[l]&&(h[k]=g?h[k]*(c[p]+1):h[k]+c[p])}}g&&(h[k]=Math.pow(h[k],1/e))}return h};a.updateWeights=function(b){for(var c=0,d=0;d<a.areas.length;d++){var e=a.areas[d];b[e]=jQuery("input[name="+a.fields[d]+"]").prop("checked")?
-1:0;1===b[e]&&c++}return c};a.canonicalizeNames=function(b,c,d){for(var e in b)if(b.hasOwnProperty(e))for(var g=0;g<b[e].length;g++){var f=b[e][g];f in a.aliases&&(b[e][g]=a.aliases[f],a.aliases[f]+e in c?(c[a.aliases[f]+e]+=c[f+e],d[a.aliases[f]+e]+=d[f+e]):(c[a.aliases[f]+e]=c[f+e],d[a.aliases[f]+e]=d[f+e]))}};a.buildDropDown=function(b,c,d,e){var g={},f=function(f){if(!b.hasOwnProperty(f))return"continue";for(var h='<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;#</abbr></em></small></td></thead><tbody>',
-k={},l=0,p=b[f];l<p.length;l++){var n=p[l];k[n]=c[n+f]}l=Object.keys(k);l.sort(function(b,c){if(k[c]===k[b]){var e=Math.round(10*d[c+f])/10,g=Math.round(10*d[b+f])/10;return e===g?a.compareNames(b,c):e-g}return k[c]-k[b]});p=function(b){if(a.showCoauthors){var c="";b in e&&0!==e[b].size?c="Senior co-authors on these papers:\n":(e[b]=new Set([]),c="(no senior co-authors on these papers)");var g=[];e[b].forEach(function(a,b){g.push(a)});g.length>a.maxCoauthors?c="(more than "+a.maxCoauthors+" senior co-authors)":
-(g.sort(a.compareNames),g.forEach(function(a,b){c+=a+"\n"}),c=c.slice(0,c.length-1))}var l=encodeURI(a.homepages[b]),m=a.translateNameToDBLP(b);h+='<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small><a title="Click for author\'s home page." target="_blank" href="'+l+'" onclick="trackOutboundLink(\''+l+"', true); return false;\">"+b+"</a>&nbsp;<span onclick=\"CSRankings.toggleChart('"+escape(b)+'\')" class="hovertip" ><font color="blue">'+a.PieChart+'</font></span></small></td><td align="right"><small><a title="Click for author\'s DBLP entry." target="_blank" href="'+
-m+'" onclick="trackOutboundLink(\''+m+"', true); return false;\">"+k[b]+'</a></small></td><td align="right"><small>'+(Math.round(10*d[b+f])/10).toFixed(1)+'</small></td></tr><tr><td colspan="4"><div style="display:none;" id="'+escape(b)+'-chart"></div></td></tr>'};for(n=0;n<l.length;n++)p(l[n]);h+="</tbody></table></div></div>";g[f]=h},h;for(h in b)f(h);return g};a.buildOutputString=function(b,c,d,e,g){var f=a.makePrologue(),h=parseInt(jQuery("#minToRank").find(":selected").val());f=(b?f+'<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>':
-f+'<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>')+"<tbody>";if(0<c){b=1;c=0;for(var k=9999999.999,q=a.sortIndex(d),m=0;m<q.length;m++){var l=q[m],p=Math.round(10*d[l])/10;if(m>=h&&p!=k)break;if(0===p)break;k!=p&&(a.useDenseRankings?c+=1:(c+=b,b=0));k=escape(l);f+="\n<tr><td>"+c+"</td>";f+="<td><span onclick=\"CSRankings.toggleFaculty('"+
-l+'\')" class="hovertip" id="'+l+'-widget"><font color="blue">'+a.RightTriangle+"</font></span>&nbsp;<span onclick=\"CSRankings.toggleFaculty('"+l+'\')" class="hovertip">'+l+"</span>";f+='&nbsp;<font color="blue"><span onclick="CSRankings.toggleChart(\''+k+'\')" class="hovertip" id="'+k+'-widget">'+a.PieChart+"</span></font>";f+="</td>";f+='<td align="right">'+(Math.round(10*p)/10).toFixed(1)+"</td>";f+='<td align="right">'+e[l]+"<br />";f+="</td>";f+="</tr>\n";f+='<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'+
-k+'-chart"></div></td></tr>';f+='<tr><td colspan="4"><div style="display:none;" id="'+l+'-faculty">'+g[l]+"</div></td></tr>";b++;k=p}f+="</tbody></table><br />";a.allowRankingChange&&(f=a.useDenseRankings?f+'<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>':f+'<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>');
-f+="</div></div>\n<br></body></html>"}else f="<h4>Please select at least one area.</h4>";return f};a.setAllCheckboxes=function(){a.activateAll()};a.rank=function(){var b={},c={},d={},e={},g={};a.areaDeptAdjustedCount={};var f=parseInt(jQuery("#startyear").find(":selected").text()),h=parseInt(jQuery("#endyear").find(":selected").text()),k=jQuery("#regions").find(":selected").val(),q=a.updateWeights(g),m={};a.showCoauthors&&(m=a.computeCoauthors(a.coauthors,f,h,g));a.authorAreas={};a.countAuthorAreas(a.authors,
-f,h,a.authorAreas);a.buildDepartments(a.authors,f,h,g,k,a.areaDeptAdjustedCount,c,b,d,e);a.stats=a.computeStats(b,a.areaDeptAdjustedCount,a.areas,q,!0,g);a.canonicalizeNames(b,d,e);b=a.buildDropDown(b,d,e,m);var l=a.buildOutputString(!0,q,a.stats,c,b);setTimeout(function(){jQuery("#success").html(l)},0);return!1};a.toggleChart=function(b){var c=document.getElementById(b+"-chart");"block"===c.style.display?(c.style.display="none",c.innerHTML=""):(c.style.display="block",a.makeChart(b))};a.toggleConferences=
-function(b){var c=document.getElementById(b+"-conferences"),d=document.getElementById(b+"-widget");"block"===c.style.display?(c.style.display="none",d.innerHTML='<font color="blue">'+a.RightTriangle+"</font>"):(c.style.display="block",d.innerHTML='<font color="blue">'+a.DownTriangle+"</font>");b=document.getElementById(b+"-conferences-checkboxes");b.style.display="block"===b.style.display?"none":"block"};a.toggleFaculty=function(b){var c=document.getElementById(b+"-faculty");b=document.getElementById(b+
-"-widget");"block"===c.style.display?(c.style.display="none",b.innerHTML='<font color="blue">'+a.RightTriangle+"</font>"):(c.style.display="block",b.innerHTML='<font color="blue">'+a.DownTriangle+"</font>")};a.activateAll=function(b){void 0===b&&(b=!0);for(var c=0;c<a.areas.length;c++)if(jQuery("input[name="+a.fields[c]+"]").prop("checked",b),a.fields[c]in a.childMap)for(var d=0,e=a.childMap[a.fields[c]];d<e.length;d++)jQuery("input[name="+e[d]+"]").prop("checked",b);a.rank();return!1};a.activateNone=
-function(){return a.activateAll(!1)};a.activateSystems=function(b){void 0===b&&(b=!0);return a.activateFields(b,a.systemsFields)};a.activateAI=function(b){void 0===b&&(b=!0);return a.activateFields(b,a.aiFields)};a.activateTheory=function(b){void 0===b&&(b=!0);return a.activateFields(b,a.theoryFields)};a.activateOthers=function(b){void 0===b&&(b=!0);return a.activateFields(b,a.otherFields)};a.deactivateSystems=function(){return a.activateSystems(!1)};a.deactivateAI=function(){return a.activateAI(!1)};
-a.deactivateTheory=function(){return a.activateTheory(!1)};a.deactivateOthers=function(){return a.activateOthers(!1)};return a}();CSRankings.coauthorFile="faculty-coauthors.csv";CSRankings.authorinfoFile="generated-author-info.csv";CSRankings.countryinfoFile="country-info.csv";CSRankings.aliasFile="dblp-aliases.csv";CSRankings.homepagesFile="homepages.csv";CSRankings.allowRankingChange=!1;CSRankings.showCoauthors=!1;CSRankings.maxCoauthors=30;
-CSRankings.parentMap={aaai:"ai",ijcai:"ai",cvpr:"vision",eccv:"vision",iccv:"vision"};CSRankings.childMap={ai:["aaai","ijcai"],vision:["cvpr","eccv","iccv"]};
-CSRankings.areaMap=[{area:"ai",title:"AI"},{area:"vision",title:"Vision"},{area:"mlmining",title:"ML"},{area:"nlp",title:"NLP"},{area:"ir",title:"Web & IR"},{area:"arch",title:"Arch"},{area:"comm",title:"Networks"},{area:"sec",title:"Security"},{area:"mod",title:"DB"},{area:"hpc",title:"HPC"},{area:"mobile",title:"Mobile"},{area:"metrics",title:"Metrics"},{area:"ops",title:"OS"},{area:"plan",title:"PL"},{area:"soft",title:"SE"},{area:"act",title:"Theory"},{area:"crypt",title:"Crypto"},{area:"log",
-title:"Logic"},{area:"graph",title:"Graphics"},{area:"chi",title:"HCI"},{area:"robotics",title:"Robotics"},{area:"bio",title:"Comp. Biology"},{area:"da",title:"EDA"},{area:"bed",title:"Embedded"},{area:"vis",title:"Visualization"},{area:"ecom",title:"ECom"}];CSRankings.aiAreas=["ai","vision","mlmining","nlp","ir"];CSRankings.systemsAreas="arch comm sec mod hpc mobile metrics ops plan soft da bed".split(" ");CSRankings.theoryAreas=["act","crypt","log"];CSRankings.interdisciplinaryAreas="graph chi robotics bio vis ecom".split(" ");
-CSRankings.areas=[];CSRankings.areaNames=[];CSRankings.fields=[];CSRankings.aiFields=[];CSRankings.systemsFields=[];CSRankings.theoryFields=[];CSRankings.otherFields=[];CSRankings.areaDict={};CSRankings.areaPosition={};CSRankings.aliases={};CSRankings.countryInfo={};CSRankings.homepages={};CSRankings.useDenseRankings=!1;CSRankings.authors=[];CSRankings.coauthors=[];CSRankings.authorAreas={};CSRankings.stats={};CSRankings.areaDeptAdjustedCount={};CSRankings.color="#f30000 #0600f3 #00b109 #14e4b4 #0fe7fb #67f200 #ff7e00 #8fe4fa #ff5300 #640000 #3854d1 #d00ed8 #7890ff #01664d #04231b #e9f117 #f3228e #7ce8ca #ff5300 #ff5300 #7eff30 #9a8cf6 #79aff9 #bfbfbf #56b510 #00e2f6 #ff4141 #61ff41".split(" ");
-CSRankings.RightTriangle="&#9658;";CSRankings.DownTriangle="&#9660;";CSRankings.PieChart="&#9685;";function init(){new CSRankings}window.onload=init;
+/*
+
+  CSrankings.ts
+
+  @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
+
+*/
+/// <reference path="./typescript/jquery.d.ts" />
+/// <reference path="./typescript/papaparse.d.ts" />
+/// <reference path="./typescript/set.d.ts" />
+/// <reference path="./typescript/d3.d.ts" />
+/// <reference path="./typescript/d3pie.d.ts" />
+;
+;
+;
+;
+;
+;
+;
+;
+var CSRankings = (function () {
+    function CSRankings() {
+        /* Build the areaDict dictionary: areas -> names used in pie charts
+           and areaPosition dictionary: areas -> position in area array
+        */
+        for (var position = 0; position < CSRankings.areaMap.length; position++) {
+            var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
+            CSRankings.areas[position] = area;
+            CSRankings.areaNames[position] = title;
+            CSRankings.fields[position] = area;
+            CSRankings.areaDict[area] = CSRankings.areaNames[position];
+            CSRankings.areaPosition[area] = position;
+        }
+        for (var _i = 0, _b = CSRankings.aiAreas; _i < _b.length; _i++) {
+            var area = _b[_i];
+            CSRankings.aiFields.push(CSRankings.areaPosition[area]);
+        }
+        for (var _c = 0, _d = CSRankings.systemsAreas; _c < _d.length; _c++) {
+            var area = _d[_c];
+            CSRankings.systemsFields.push(CSRankings.areaPosition[area]);
+        }
+        for (var _e = 0, _f = CSRankings.theoryAreas; _e < _f.length; _e++) {
+            var area = _f[_e];
+            CSRankings.theoryFields.push(CSRankings.areaPosition[area]);
+        }
+        for (var _g = 0, _h = CSRankings.interdisciplinaryAreas; _g < _h.length; _g++) {
+            var area = _h[_g];
+            CSRankings.otherFields.push(CSRankings.areaPosition[area]);
+        }
+        // CSRankings.setAllCheckboxes();
+        var next = function () {
+            CSRankings.loadAliases(CSRankings.aliases, function () {
+                CSRankings.loadHomepages(CSRankings.homepages, function () {
+                    CSRankings.loadAuthorInfo(function () {
+                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+                    });
+                });
+            });
+        };
+        CSRankings.activateAll();
+        if (CSRankings.showCoauthors) {
+            CSRankings.loadCoauthors(next);
+        }
+        else {
+            next();
+        }
+    }
+    CSRankings.translateNameToDBLP = function (name) {
+        // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
+        // First, replace spaces and non-ASCII characters (not complete).
+        // Known issue: does not properly handle suffixes like Jr., III, etc.
+        name = name.replace(/'|\-|\./g, "=");
+        //	name = name.replace(/\-/g, "=");
+        //	name = name.replace(/\./g, "=");
+        name = name.replace(/Á/g, "=Aacute=");
+        name = name.replace(/á/g, "=aacute=");
+        name = name.replace(/è/g, "=egrave=");
+        name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/ï/g, "=iuml=");
+        name = name.replace(/ó/g, "=oacute=");
+        name = name.replace(/ç/g, "=ccedil=");
+        name = name.replace(/ä/g, "=auml=");
+        name = name.replace(/ö/g, "=ouml=");
+        name = name.replace(/ø/g, "=oslash=");
+        name = name.replace(/Ö/g, "=Ouml=");
+        name = name.replace(/ü/g, "=uuml=");
+        var splitName = name.split(" ");
+        var lastName = splitName[splitName.length - 1];
+        var disambiguation = "";
+        if (parseInt(lastName) > 0) {
+            // this was a disambiguation entry; go back.
+            disambiguation = lastName;
+            splitName.pop();
+            lastName = splitName[splitName.length - 1] + "_" + disambiguation;
+        }
+        splitName.pop();
+        var newName = splitName.join(" ");
+        newName = newName.replace(/\s/g, "_");
+        newName = newName.replace(/\-/g, "=");
+        var str = "http://dblp.uni-trier.de/pers/hd";
+        var lastInitial = lastName[0].toLowerCase();
+        str += "/" + lastInitial + "/" + lastName + ":" + newName;
+        return str;
+    };
+    /* Create the prologue that we preface each generated HTML page with (the results). */
+    CSRankings.makePrologue = function () {
+        var s = "<html>"
+            + "<head>"
+            + '<style type="text/css">'
+            + '  body { font-family: "Helvetica", "Arial"; }'
+            + "  table td { vertical-align: top; }"
+            + "</style>"
+            + "</head>"
+            + "<body>"
+            + '<div class="row">'
+            + '<div class="table" style="overflow:auto; height: 650px;">'
+            + '<table class="table-sm table-striped"'
+            + 'id="ranking" valign="top">';
+        return s;
+    };
+    /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
+    CSRankings.compareNames = function (a, b) {
+        //split the names as strings into arrays
+        var aName = a.split(" ");
+        var bName = b.split(" ");
+        // get the last names by selecting
+        // the last element in the name arrays
+        // using array.length - 1 since full names
+        // may also have a middle name or initial
+        var aLastName = aName[aName.length - 1];
+        var bLastName = bName[bName.length - 1];
+        // compare the names and return either
+        // a negative number, positive number
+        // or zero.
+        if (aLastName < bLastName)
+            return -1;
+        if (aLastName > bLastName)
+            return 1;
+        return 0;
+    };
+    /* Create a pie chart */
+    CSRankings.makeChart = function (name) {
+        console.assert(CSRankings.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
+        var data = [];
+        var datadict = {};
+        var keys = CSRankings.areas;
+        var uname = unescape(name);
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            var value = CSRankings.authorAreas[uname][key];
+            // Use adjusted count if this is for a department.
+            /*
+                DISABLED so department charts are invariant.
+    
+            if (uname in CSRankings.stats) {
+            value = CSRankings.areaDeptAdjustedCount[key+uname] + 1;
+            if (value == 1) {
+                value = 0;
+            }
+            }
+            */
+            // Round it to the nearest 0.1.
+            value = Math.round(value * 10) / 10;
+            if (value > 0) {
+                //		if (key in CSRankings.parentMap) {
+                // key = CSRankings.parentMap[key];
+                //		}
+                if (!(key in datadict)) {
+                    datadict[key] = 0;
+                }
+                datadict[key] += value;
+            }
+        }
+        for (var key in datadict) {
+            data.push({ "label": CSRankings.areaDict[key],
+                "value": Math.round(datadict[key] * 10) / 10,
+                "color": CSRankings.color[CSRankings.areaPosition[key]] });
+        }
+        new d3pie(name + "-chart", {
+            "header": {
+                "title": {
+                    "text": uname,
+                    "fontSize": 24,
+                    "font": "open sans"
+                },
+                "subtitle": {
+                    "text": "Publication Profile",
+                    "color": "#999999",
+                    "fontSize": 14,
+                    "font": "open sans"
+                },
+                "titleSubtitlePadding": 9
+            },
+            "size": {
+                "canvasHeight": 500,
+                "canvasWidth": 500,
+                "pieInnerRadius": "38%",
+                "pieOuterRadius": "83%"
+            },
+            "data": {
+                "content": data,
+                "smallSegmentGrouping": {
+                    "enabled": true,
+                    "value": 1
+                }
+            },
+            "labels": {
+                "outer": {
+                    "pieDistance": 32
+                },
+                "inner": {
+                    //"format": "percentage", // "value",
+                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
+                    "format": "value",
+                    "hideWhenLessThanPercentage": 5 // 100 // 2
+                },
+                "mainLabel": {
+                    "fontSize": 12
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "decimalPlaces": 0
+                },
+                "value": {
+                    "color": "#ffffff",
+                    "fontSize": 10
+                },
+                "lines": {
+                    "enabled": true
+                },
+                "truncation": {
+                    "enabled": true
+                }
+            },
+            "effects": {
+                "load": {
+                    "effect": "none"
+                },
+                "pullOutSegmentOnClick": {
+                    "effect": "linear",
+                    "speed": 400,
+                    "size": 8
+                }
+            },
+            "misc": {
+                "gradient": {
+                    "enabled": true,
+                    "percentage": 100
+                }
+            }
+        });
+    };
+    CSRankings.loadCoauthors = function (cont) {
+        Papa.parse(CSRankings.coauthorFile, {
+            download: true,
+            header: true,
+            complete: function (results) {
+                var data = results.data;
+                CSRankings.coauthors = data;
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.loadAliases = function (aliases, cont) {
+        Papa.parse(CSRankings.aliasFile, {
+            header: true,
+            download: true,
+            complete: function (results) {
+                var data = results.data;
+                var d = data;
+                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
+                    var aliasPair = d_1[_i];
+                    aliases[aliasPair.alias] = aliasPair.name;
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.loadArticles = function (cont) {
+        jQuery.getJSON("articles.json", function (_) {
+            /* disabled for now
+                    CSRankings.articles = data; */
+            setTimeout(cont, 0);
+        });
+    };
+    CSRankings.loadCountryInfo = function (countryInfo, cont) {
+        Papa.parse(CSRankings.countryinfoFile, {
+            header: true,
+            download: true,
+            complete: function (results) {
+                var data = results.data;
+                var ci = data;
+                for (var _i = 0, ci_1 = ci; _i < ci_1.length; _i++) {
+                    var info = ci_1[_i];
+                    countryInfo[info.institution] = info.region;
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.loadAuthorInfo = function (cont) {
+        var _this = this;
+        Papa.parse(CSRankings.authorinfoFile, {
+            download: true,
+            header: true,
+            complete: function (results) {
+                var data = results.data;
+                _this.authors = data;
+                for (var i = 0; i < CSRankings.fields.length; i++) {
+                    var str = 'input[name=' + CSRankings.fields[i] + ']';
+                    jQuery(str).click(function () {
+                        /*			if (jQuery(str).hasClass("parent")) {
+                                        // Parent (un)checked => all children (un)checked
+                                        let isChecked = jQuery(str).prop('checked');
+                                        let parent = CSRankings.fields[i];
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                        jQuery("input[name="+kid+"]").prop('checked', isChecked);
+                                        }
+                                    }
+                                    if (jQuery(str).hasClass("child")) {
+                                        let s = jQuery(str).attr("id");
+                                        let parent = CSRankings.parentMap[s];
+                                        // Uncheck a child => uncheck the parent.
+                                        if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
+                                        jQuery("input[name="+parent+"]").prop('checked', false);
+                                        } else {
+                                        // All children checked => check the parent.
+                                        let v = true;
+                                        for (let kid of CSRankings.childMap[parent]) {
+                                            let checked = jQuery("input[name="+kid+"]").prop('checked');
+                                            if (!checked) {
+                                            v = false;
+                                            break;
+                                            }
+                                        }
+                                        if (v) {
+                                            jQuery("input[name="+parent+"]").prop('checked', true);
+                                        }
+                                        }
+                                    } */
+                        _this.rank();
+                    });
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.loadHomepages = function (homepages, cont) {
+        Papa.parse(CSRankings.homepagesFile, {
+            header: true,
+            download: true,
+            complete: function (results) {
+                var data = results.data;
+                var d = data;
+                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
+                    var namePage = d_2[_i];
+                    if (typeof namePage.homepage === 'undefined') {
+                        continue;
+                    }
+                    homepages[namePage.name.trim()] = namePage.homepage.trim();
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.inRegion = function (dept, regions) {
+        switch (regions) {
+            case "world":
+                break;
+            case "USA":
+                if (dept in CSRankings.countryInfo) {
+                    return false;
+                }
+                break;
+            case "europe":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "europe") {
+                    return false;
+                }
+                break;
+            case "canada":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "canada") {
+                    return false;
+                }
+                break;
+            case "northamerica":
+                if ((dept in CSRankings.countryInfo) && (CSRankings.countryInfo[dept] != "canada")) {
+                    return false;
+                }
+                break;
+            case "australasia":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "australasia") {
+                    return false;
+                }
+                break;
+            case "southamerica":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "southamerica") {
+                    return false;
+                }
+                break;
+            case "asia":
+                if (!(dept in CSRankings.countryInfo)) {
+                    return false;
+                }
+                if (CSRankings.countryInfo[dept] != "asia") {
+                    return false;
+                }
+                break;
+        }
+        return true;
+    };
+    CSRankings.activateFields = function (value, fields) {
+        for (var i = 0; i < fields.length; i++) {
+            var str = "input[name=" + CSRankings.fields[fields[i]] + "]";
+            jQuery(str).prop('checked', value);
+        }
+        CSRankings.rank();
+        return false;
+    };
+    CSRankings.sortIndex = function (univagg) {
+        var keys = Object.keys(univagg);
+        keys.sort(function (a, b) {
+            if (univagg[a] > univagg[b]) {
+                return -1;
+            }
+            if (univagg[b] > univagg[a]) {
+                return 1;
+            }
+            if (a < b) {
+                return -1;
+            }
+            if (b < a) {
+                return 1;
+            }
+            return 0;
+        });
+        return keys;
+    };
+    CSRankings.computeCoauthors = function (coauthors, startyear, endyear, weights) {
+        var coauthorList = {};
+        for (var c in coauthors) {
+            if (!coauthors.hasOwnProperty(c)) {
+                continue;
+            }
+            var _a = coauthors[c], author = _a.author, coauthor = _a.coauthor, year = _a.year, area = _a.area;
+            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+                continue;
+            }
+            if (!(author in coauthorList)) {
+                coauthorList[author] = new Set([]);
+            }
+            coauthorList[author].add(coauthor);
+        }
+        return coauthorList;
+    };
+    CSRankings.countAuthorAreas = function (authors, startyear, endyear, 
+        //				    weights : {[key:string] : number},
+        authorAreas) {
+        for (var r in authors) {
+            if (!authors.hasOwnProperty(r)) {
+                continue;
+            }
+            var auth = authors[r];
+            var year = auth.year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            var theArea = auth.area;
+            /*
+              DISABLING weight selection so all pie charts look the
+              same regardless of which areas are currently selected:
+    
+            if (weights[theArea] === 0) {
+            continue;
+            }
+            */
+            var theDept = auth.dept;
+            var theCount = parseFloat(auth.count);
+            //	    const theCount = parseFloat(auth.adjustedcount);
+            var name_1 = auth.name;
+            if (name_1 in CSRankings.aliases) {
+                name_1 = CSRankings.aliases[name_1];
+            }
+            if (!(name_1 in authorAreas)) {
+                authorAreas[name_1] = {};
+                for (var area in CSRankings.areaDict) {
+                    if (CSRankings.areaDict.hasOwnProperty(area)) {
+                        authorAreas[name_1][area] = 0;
+                    }
+                }
+            }
+            if (!(theDept in authorAreas)) {
+                authorAreas[theDept] = {};
+                for (var area in CSRankings.areaDict) {
+                    if (CSRankings.areaDict.hasOwnProperty(area)) {
+                        authorAreas[theDept][area] = 0;
+                    }
+                }
+            }
+            authorAreas[name_1][theArea] += theCount;
+            authorAreas[theDept][theArea] += theCount;
+        }
+    };
+    /* Build the dictionary of departments (and count) to be ranked. */
+    CSRankings.buildDepartments = function (authors, startyear, endyear, weights, regions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
+        /* contains an author name if that author has been processed. */
+        var visited = {};
+        for (var r in authors) {
+            if (!authors.hasOwnProperty(r)) {
+                continue;
+            }
+            var _a = authors[r], name_2 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
+            if (name_2 in CSRankings.aliases) {
+                name_2 = CSRankings.aliases[name_2];
+            }
+            if (typeof dept === 'undefined') {
+                continue;
+            }
+            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+                continue;
+            }
+            if (!CSRankings.inRegion(dept, regions)) {
+                continue;
+            }
+            // If this area is a child area, accumulate totals for parent.
+            if (area in CSRankings.parentMap) {
+                area = CSRankings.parentMap[area];
+            }
+            var areaDept = area + dept;
+            var nameDept = name_2 + dept;
+            if (!(areaDept in areaDeptAdjustedCount)) {
+                areaDeptAdjustedCount[areaDept] = 0;
+            }
+            var count = parseInt(authors[r].count);
+            var adjustedCount = parseFloat(authors[r].adjustedcount);
+            areaDeptAdjustedCount[areaDept] += adjustedCount;
+            /* Is this the first time we have seen this person? */
+            if (!(name_2 in visited)) {
+                visited[name_2] = true;
+                facultycount[nameDept] = 0;
+                facultyAdjustedCount[nameDept] = 0;
+                if (!(dept in deptCounts)) {
+                    deptCounts[dept] = 0;
+                    deptNames[dept] = [];
+                }
+                deptNames[dept].push(name_2);
+                deptCounts[dept] += 1;
+            }
+            facultycount[nameDept] += count;
+            facultyAdjustedCount[nameDept] += adjustedCount;
+        }
+    };
+    /* Compute aggregate statistics. */
+    CSRankings.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+        CSRankings.stats = {};
+        var univagg = {};
+        for (var dept in deptNames) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                continue;
+            }
+            if (displayPercentages) {
+                univagg[dept] = 1;
+            }
+            else {
+                univagg[dept] = 0;
+            }
+            for (var _i = 0, areas_1 = areas; _i < areas_1.length; _i++) {
+                var area = areas_1[_i];
+                // If the area is a child, ignore it.
+                if (area in CSRankings.parentMap) {
+                    continue;
+                }
+                var areaDept = area + dept;
+                if (!(areaDept in areaDeptAdjustedCount)) {
+                    areaDeptAdjustedCount[areaDept] = 0;
+                }
+                if (weights[area] != 0) {
+                    if (displayPercentages) {
+                        // Adjusted (smoothed) geometric mean.
+                        univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
+                    }
+                    else {
+                        univagg[dept] += areaDeptAdjustedCount[areaDept];
+                    }
+                }
+            }
+            if (displayPercentages) {
+                // finally compute geometric mean.
+                univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
+            }
+        }
+        return univagg;
+    };
+    /* Updates the 'weights' of each area from the checkboxes. */
+    /* Returns the number of areas selected (checked). */
+    CSRankings.updateWeights = function (weights) {
+        var numAreas = 0;
+        for (var ind = 0; ind < CSRankings.areas.length; ind++) {
+            var area = CSRankings.areas[ind];
+            weights[area] = jQuery('input[name=' + CSRankings.fields[ind] + ']').prop('checked') ? 1 : 0;
+            if (weights[area] === 1) {
+                /* One more area checked. */
+                numAreas++;
+            }
+        }
+        return numAreas;
+    };
+    CSRankings.canonicalizeNames = function (deptNames, facultycount, facultyAdjustedCount) {
+        for (var dept in deptNames) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                continue;
+            }
+            for (var ind = 0; ind < deptNames[dept].length; ind++) {
+                var name_3 = deptNames[dept][ind];
+                if (name_3 in CSRankings.aliases) {
+                    deptNames[dept][ind] = CSRankings.aliases[name_3];
+                    if (!(CSRankings.aliases[name_3] + dept in facultycount)) {
+                        facultycount[CSRankings.aliases[name_3] + dept] = facultycount[name_3 + dept];
+                        facultyAdjustedCount[CSRankings.aliases[name_3] + dept] = facultyAdjustedCount[name_3 + dept];
+                    }
+                    else {
+                        facultycount[CSRankings.aliases[name_3] + dept] += facultycount[name_3 + dept];
+                        facultyAdjustedCount[CSRankings.aliases[name_3] + dept] += facultyAdjustedCount[name_3 + dept];
+                    }
+                }
+            }
+        }
+    };
+    /* Build drop down for faculty names and paper counts. */
+    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
+        var univtext = {};
+        var _loop_1 = function (dept) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                return "continue";
+            }
+            var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+            /* Build a dict of just faculty from this department for sorting purposes. */
+            var fc = {};
+            for (var _i = 0, _a = deptNames[dept]; _i < _a.length; _i++) {
+                var name_4 = _a[_i];
+                fc[name_4] = facultycount[name_4 + dept];
+            }
+            var keys = Object.keys(fc);
+            keys.sort(function (a, b) {
+                if (fc[b] === fc[a]) {
+                    var fb = Math.round(10.0 * facultyAdjustedCount[b + dept]) / 10.0;
+                    var fa = Math.round(10.0 * facultyAdjustedCount[a + dept]) / 10.0;
+                    if (fb === fa) {
+                        return CSRankings.compareNames(a, b);
+                    }
+                    return fb - fa;
+                }
+                else {
+                    return fc[b] - fc[a];
+                }
+            });
+            var _loop_2 = function (name_5) {
+                if (CSRankings.showCoauthors) {
+                    /* Build up text for co-authors. */
+                    var coauthorStr_1 = "";
+                    if ((!(name_5 in coauthorList)) || (coauthorList[name_5].size === 0)) {
+                        coauthorList[name_5] = new Set([]);
+                        coauthorStr_1 = "(no senior co-authors on these papers)";
+                    }
+                    else {
+                        coauthorStr_1 = "Senior co-authors on these papers:\n";
+                    }
+                    /* Sort it by last name. */
+                    var l_1 = [];
+                    coauthorList[name_5].forEach(function (item, _) {
+                        l_1.push(item);
+                    });
+                    if (l_1.length > CSRankings.maxCoauthors) {
+                        coauthorStr_1 = "(more than " + CSRankings.maxCoauthors + " senior co-authors)";
+                    }
+                    else {
+                        l_1.sort(CSRankings.compareNames);
+                        l_1.forEach(function (item, _) {
+                            coauthorStr_1 += item + "\n";
+                        });
+                        /* Trim off the trailing newline. */
+                        coauthorStr_1 = coauthorStr_1.slice(0, coauthorStr_1.length - 1);
+                    }
+                }
+                var homePage = encodeURI(CSRankings.homepages[name_5]);
+                var dblpName = CSRankings.translateNameToDBLP(name_5);
+                p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+                    + '<a title="Click for author\'s home page." target="_blank" href="'
+                    + homePage
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + homePage
+                    + '\', true); return false;"'
+                    + '>'
+                    + name_5
+                    + '</a>&nbsp;'
+                    + "<span onclick=\"CSRankings.toggleChart('"
+                    + escape(name_5)
+                    + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
+                    + '</small>'
+                    + '</td><td align="right"><small>'
+                    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+                    + dblpName
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + dblpName
+                    + '\', true); return false;"'
+                    + '>'
+                    + fc[name_5]
+                    + '</a>'
+                    + "</small></td>"
+                    + '<td align="right"><small>'
+                    + (Math.round(10.0 * facultyAdjustedCount[name_5 + dept]) / 10.0).toFixed(1)
+                    + "</small></td></tr>"
+                    + "<tr><td colspan=\"4\">"
+                    + '<div style="display:none;" id="' + escape(name_5) + "-chart" + '">'
+                    + '</div>'
+                    + "</td></tr>";
+            };
+            for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
+                var name_5 = keys_1[_b];
+                _loop_2(name_5);
+            }
+            p += "</tbody></table></div></div>";
+            univtext[dept] = p;
+        };
+        for (var dept in deptNames) {
+            _loop_1(dept);
+        }
+        return univtext;
+    };
+    CSRankings.buildOutputString = function (displayPercentages, numAreas, univagg, deptCounts, univtext) {
+        var s = CSRankings.makePrologue();
+        /* Show the top N (with more if tied at the end) */
+        var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
+        if (displayPercentages) {
+            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+        }
+        else {
+            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
+        }
+        s = s + "<tbody>";
+        /* As long as there is at least one thing selected, compute and display a ranking. */
+        if (numAreas > 0) {
+            var ties = 1; /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
+            var rank = 0; /* index */
+            var oldv = 9999999.999; /* old number - to track ties */
+            /* Sort the university aggregate count from largest to smallest. */
+            var keys2 = CSRankings.sortIndex(univagg);
+            /* Display rankings until we have shown `minToRank` items or
+               while there is a tie (those all get the same rank). */
+            for (var ind = 0; ind < keys2.length; ind++) {
+                var dept = keys2[ind];
+                var v = Math.round(10.0 * univagg[dept]) / 10.0;
+                if ((ind >= minToRank) && (v != oldv)) {
+                    break;
+                }
+                if (v === 0.0) {
+                    break;
+                }
+                if (oldv != v) {
+                    if (CSRankings.useDenseRankings) {
+                        rank = rank + 1;
+                    }
+                    else {
+                        rank = rank + ties;
+                        ties = 0;
+                    }
+                }
+                var esc = escape(dept);
+                s += "\n<tr><td>" + rank + "</td>";
+                s += "<td>"
+                    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\">" + "<font color=\"blue\">" + CSRankings.RightTriangle + "</font></span>&nbsp;"
+                    + "<span onclick=\"CSRankings.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
+                s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleChart('"
+                    + esc
+                    + "')\" class=\"hovertip\" id=\""
+                    + esc
+                    + "-widget\">" + CSRankings.PieChart + "</span></font>";
+                //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
+                s += "</td>";
+                s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
+                s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
+                s += "</td>";
+                s += "</tr>\n";
+                s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+                    + esc
+                    + '-chart">' + '</div></td></tr>';
+                s += '<tr><td colspan="4"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
+                ties++;
+                oldv = v;
+            }
+            s += "</tbody>" + "</table>" + "<br />";
+            if (CSRankings.allowRankingChange) {
+                /* Disable option to change ranking approach for now. */
+                if (CSRankings.useDenseRankings) {
+                    s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
+                }
+                else {
+                    s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+                }
+            }
+            s += "</div>" + "</div>" + "\n";
+            s += "<br>" + "</body>" + "</html>";
+        }
+        else {
+            /* Nothing selected. */
+            s = "<h4>Please select at least one area.</h4>";
+        }
+        return s;
+    };
+    /* Set all checkboxes to true. */
+    CSRankings.setAllCheckboxes = function () {
+        CSRankings.activateAll();
+    };
+    /* PUBLIC METHODS */
+    CSRankings.rank = function () {
+        var deptNames = {}; /* names of departments. */
+        var deptCounts = {}; /* number of faculty in each department. */
+        var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
+        var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
+        var currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
+        CSRankings.areaDeptAdjustedCount = {};
+        var startyear = parseInt(jQuery("#startyear").find(":selected").text());
+        var endyear = parseInt(jQuery("#endyear").find(":selected").text());
+        var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
+        var whichRegions = jQuery("#regions").find(":selected").val();
+        var numAreas = CSRankings.updateWeights(currentWeights);
+        var coauthorList = {};
+        if (CSRankings.showCoauthors) {
+            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
+        }
+        CSRankings.authorAreas = {};
+        CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, 
+        //				    currentWeights,
+        CSRankings.authorAreas);
+        CSRankings.buildDepartments(CSRankings.authors, startyear, endyear, currentWeights, whichRegions, CSRankings.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        /* (university, total or average number of papers) */
+        CSRankings.stats = CSRankings.computeStats(deptNames, CSRankings.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
+        /* Canonicalize names. */
+        CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
+        var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
+        /* Start building up the string to output. */
+        var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
+        /* Finally done. Redraw! */
+        setTimeout(function () { jQuery("#success").html(s); }, 0);
+        return false;
+    };
+    /* Turn the chart display on or off. */
+    CSRankings.toggleChart = function (name) {
+        var chart = document.getElementById(name + "-chart");
+        if (chart.style.display === 'block') {
+            chart.style.display = 'none';
+            chart.innerHTML = '';
+        }
+        else {
+            chart.style.display = 'block';
+            CSRankings.makeChart(name);
+        }
+    };
+    /* Expand or collape the view of conferences in a given area. */
+    CSRankings.toggleConferences = function (area) {
+        var e = document.getElementById(area + "-conferences");
+        var widget = document.getElementById(area + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+        }
+        var boxes = document.getElementById(area + "-conferences-checkboxes");
+        if (boxes.style.display === 'block') {
+            boxes.style.display = 'none';
+        }
+        else {
+            boxes.style.display = 'block';
+        }
+    };
+    /* Expand or collape the view of all faculty in a department. */
+    CSRankings.toggleFaculty = function (dept) {
+        var e = document.getElementById(dept + "-faculty");
+        var widget = document.getElementById(dept + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.RightTriangle + "</font>";
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = "<font color=\"blue\">" + CSRankings.DownTriangle + "</font>";
+        }
+    };
+    CSRankings.activateAll = function (value) {
+        if (value === void 0) { value = true; }
+        for (var i = 0; i < CSRankings.areas.length; i++) {
+            var str = "input[name=" + CSRankings.fields[i] + "]";
+            jQuery(str).prop('checked', value);
+            if (CSRankings.fields[i] in CSRankings.childMap) {
+                var parent_1 = CSRankings.fields[i];
+                for (var _i = 0, _a = CSRankings.childMap[parent_1]; _i < _a.length; _i++) {
+                    var kid = _a[_i];
+                    jQuery("input[name=" + kid + "]").prop('checked', value);
+                }
+            }
+        }
+        CSRankings.rank();
+        return false;
+    };
+    CSRankings.activateNone = function () {
+        return CSRankings.activateAll(false);
+    };
+    CSRankings.activateSystems = function (value) {
+        if (value === void 0) { value = true; }
+        return CSRankings.activateFields(value, CSRankings.systemsFields);
+    };
+    CSRankings.activateAI = function (value) {
+        if (value === void 0) { value = true; }
+        return CSRankings.activateFields(value, CSRankings.aiFields);
+    };
+    CSRankings.activateTheory = function (value) {
+        if (value === void 0) { value = true; }
+        return CSRankings.activateFields(value, CSRankings.theoryFields);
+    };
+    CSRankings.activateOthers = function (value) {
+        if (value === void 0) { value = true; }
+        return CSRankings.activateFields(value, CSRankings.otherFields);
+    };
+    CSRankings.deactivateSystems = function () {
+        return CSRankings.activateSystems(false);
+    };
+    CSRankings.deactivateAI = function () {
+        return CSRankings.activateAI(false);
+    };
+    CSRankings.deactivateTheory = function () {
+        return CSRankings.activateTheory(false);
+    };
+    CSRankings.deactivateOthers = function () {
+        return CSRankings.activateOthers(false);
+    };
+    return CSRankings;
+}());
+CSRankings.coauthorFile = "faculty-coauthors.csv";
+CSRankings.authorinfoFile = "generated-author-info.csv";
+CSRankings.countryinfoFile = "country-info.csv";
+CSRankings.aliasFile = "dblp-aliases.csv";
+CSRankings.homepagesFile = "homepages.csv";
+CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
+CSRankings.showCoauthors = false;
+CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
+CSRankings.parentMap = { 'aaai': 'ai',
+    'ijcai': 'ai',
+    'cvpr': 'vision',
+    'eccv': 'vision',
+    'iccv': 'vision'
+};
+CSRankings.childMap = { 'ai': ['aaai', 'ijcai'],
+    'vision': ['cvpr', 'eccv', 'iccv'] };
+CSRankings.areaMap = [{ area: "ai", title: "AI" },
+    //	    { area : "aaai", title : "AI" },
+    //	    { area : "ijcai", title : "AI" },
+    { area: "vision", title: "Vision" },
+    //	    { area : "cvpr", title : "Vision" },
+    //	    { area : "eccv", title : "Vision" },
+    //	    { area : "iccv", title : "Vision" },
+    { area: "mlmining", title: "ML" },
+    { area: "nlp", title: "NLP" },
+    { area: "ir", title: "Web & IR" },
+    { area: "arch", title: "Arch" },
+    { area: "comm", title: "Networks" },
+    { area: "sec", title: "Security" },
+    { area: "mod", title: "DB" },
+    { area: "hpc", title: "HPC" },
+    { area: "mobile", title: "Mobile" },
+    { area: "metrics", title: "Metrics" },
+    { area: "ops", title: "OS" },
+    { area: "plan", title: "PL" },
+    { area: "soft", title: "SE" },
+    { area: "act", title: "Theory" },
+    { area: "crypt", title: "Crypto" },
+    { area: "log", title: "Logic" },
+    { area: "graph", title: "Graphics" },
+    { area: "chi", title: "HCI" },
+    { area: "robotics", title: "Robotics" },
+    { area: "bio", title: "Comp. Biology" },
+    { area: "da", title: "EDA" },
+    { area: "bed", title: "Embedded" },
+    { area: "vis", title: "Visualization" },
+    { area: "ecom", title: "ECom" }
+    //,{ area : "cse", title : "CSEd" }
+];
+CSRankings.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+CSRankings.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+CSRankings.theoryAreas = ["act", "crypt", "log"];
+CSRankings.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "vis", "ecom"];
+CSRankings.areas = [];
+CSRankings.areaNames = [];
+CSRankings.fields = [];
+CSRankings.aiFields = [];
+CSRankings.systemsFields = [];
+CSRankings.theoryFields = [];
+CSRankings.otherFields = [];
+/* Map area to its name (from areaNames). */
+CSRankings.areaDict = {};
+/* Map area to its position in the list. */
+CSRankings.areaPosition = {};
+/* Map aliases to canonical author name. */
+CSRankings.aliases = {};
+/* Map institution to (non-US) region. */
+CSRankings.countryInfo = {};
+/* Map name to home page. */
+CSRankings.homepages = {};
+/* Set to true for "dense rankings" vs. "competition rankings". */
+CSRankings.useDenseRankings = false;
+/* The data which will hold the parsed CSV of author info. */
+CSRankings.authors = [];
+/* The data which will hold the parsed CSV of co-author info. */
+CSRankings.coauthors = [];
+/* Map authors to the areas they have published in (for pie chart display). */
+CSRankings.authorAreas = {};
+/* Computed stats (univagg). */
+CSRankings.stats = {};
+CSRankings.areaDeptAdjustedCount = {}; /* area+dept */
+/* Colors for all areas. */
+CSRankings.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
+CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+function init() {
+    new CSRankings();
+}
+window.onload = init;
+//	jQuery(document).ready(
