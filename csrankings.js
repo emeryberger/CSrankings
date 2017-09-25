@@ -10,6 +10,7 @@
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
+/// <reference path="./typescript/navigo.d.ts" />
 ;
 ;
 ;
