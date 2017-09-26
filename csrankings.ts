@@ -71,6 +71,8 @@ interface ChartData {
 
 class CSRankings {
     
+    private static navigoRouter : Navigo;
+    
     constructor() {
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
@@ -113,13 +115,27 @@ class CSRankings {
 	} else {
 	    next();
 	}
+	CSRankings.navigoRouter = new Navigo(null, true);
+	CSRankings.navigoRouter.on('/index', function(params, query) {
+	    let par = params;
+	    // Clear everything.
+	    for (let a in CSRankings.areas) {
+		jQuery("input[name="+CSRankings.areas[a]+"]").prop('checked', false);
+	    }
+	    // Now check everything listed in the query string.
+	    query.split('&').forEach(function(item) {
+		if (item != "none") {
+		    jQuery("input[name="+item+"]").prop('checked', true);
+		}
+	    });
+	}).resolve();
     }
 
-    private static readonly coauthorFile       = "faculty-coauthors.csv";
-    private static readonly authorinfoFile     = "generated-author-info.csv";
-    private static readonly countryinfoFile    = "country-info.csv";
-    private static readonly aliasFile          = "dblp-aliases.csv";
-    private static readonly homepagesFile      = "homepages.csv";
+    private static readonly coauthorFile       = "/faculty-coauthors.csv";
+    private static readonly authorinfoFile     = "/generated-author-info.csv";
+    private static readonly countryinfoFile    = "/country-info.csv";
+    private static readonly aliasFile          = "/dblp-aliases.csv";
+    private static readonly homepagesFile      = "/homepages.csv";
     private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
     private static readonly showCoauthors      = false;
     private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
@@ -508,7 +524,7 @@ class CSRankings {
 				    jQuery("input[name="+parent+"]").prop('checked', true);
 				}
 			    }
-			} */
+			    } */
 			this.rank();
 		    });
 		}
@@ -1115,7 +1131,7 @@ class CSRankings {
 					     univtext);
 
 	/* Finally done. Redraw! */
-	setTimeout(()=>{ jQuery("#success").html(s); }, 0);
+	setTimeout(()=>{ jQuery("#success").html(s); CSRankings.urlUpdate(); }, 0);
 	return false; 
     }
 
@@ -1215,11 +1231,36 @@ class CSRankings {
     public static deactivateOthers() : boolean {
 	return CSRankings.activateOthers(false);
     }
-    
+
+    // Update the URL according to the selected checkboxes.
+    private static urlUpdate() {
+	let s = '';
+	let count = 0;
+	for (let i = 0; i < CSRankings.fields.length; i++) {
+	    const str = 'input[name='+CSRankings.fields[i]+']';
+	    if (jQuery(str).prop('checked')) {
+		s += CSRankings.fields[i] + '&';
+//		console.log(CSRankings.fields[i]);
+		count += 1;
+	    }
+	}
+	if (count > 0) {
+	    // Trim off the trailing '&'.
+	    s = s.slice(0, -1);
+	}
+	if (count == CSRankings.fields.length) {
+	    s = ''; // Distinguished special URL - default = all selected.
+	} else if (count == 0) {
+	    s = '/index?none'; // Distinguished special URL - none selected.
+	} else {
+	    s = '/index?' + s;
+	}
+	CSRankings.navigoRouter.navigate(s);
+    }
 }
 
 function init() : void {
-    new CSRankings();
+    let csr = new CSRankings();
 }
 
 window.onload=init;
