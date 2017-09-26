@@ -65,6 +65,20 @@ var CSRankings = (function () {
         else {
             next();
         }
+        CSRankings.navigoRouter = new Navigo(null, true);
+        CSRankings.navigoRouter.on('/index', function (params, query) {
+            var par = params;
+            // Clear everything.
+            for (var a in CSRankings.areas) {
+                jQuery("input[name=" + CSRankings.areas[a] + "]").prop('checked', false);
+            }
+            // Now check everything listed in the query string.
+            query.split('&').forEach(function (item) {
+                if (item != "none") {
+                    jQuery("input[name=" + item + "]").prop('checked', true);
+                }
+            });
+        }).resolve();
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -338,7 +352,7 @@ var CSRankings = (function () {
                                             jQuery("input[name="+parent+"]").prop('checked', true);
                                         }
                                         }
-                                    } */
+                                        } */
                         _this.rank();
                     });
                 }
@@ -855,7 +869,7 @@ var CSRankings = (function () {
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
-        setTimeout(function () { jQuery("#success").html(s); }, 0);
+        setTimeout(function () { jQuery("#success").html(s); CSRankings.urlUpdate(); }, 0);
         return false;
     };
     /* Turn the chart display on or off. */
@@ -950,13 +964,40 @@ var CSRankings = (function () {
     CSRankings.deactivateOthers = function () {
         return CSRankings.activateOthers(false);
     };
+    // Update the URL according to the selected checkboxes.
+    CSRankings.urlUpdate = function () {
+        var s = '';
+        var count = 0;
+        for (var i = 0; i < CSRankings.fields.length; i++) {
+            var str = 'input[name=' + CSRankings.fields[i] + ']';
+            if (jQuery(str).prop('checked')) {
+                s += CSRankings.fields[i] + '&';
+                //		console.log(CSRankings.fields[i]);
+                count += 1;
+            }
+        }
+        if (count > 0) {
+            // Trim off the trailing '&'.
+            s = s.slice(0, -1);
+        }
+        if (count == CSRankings.fields.length) {
+            s = ''; // Distinguished special URL - default = all selected.
+        }
+        else if (count == 0) {
+            s = '/index?none'; // Distinguished special URL - none selected.
+        }
+        else {
+            s = '/index?' + s;
+        }
+        CSRankings.navigoRouter.navigate(s);
+    };
     return CSRankings;
 }());
-CSRankings.coauthorFile = "faculty-coauthors.csv";
-CSRankings.authorinfoFile = "generated-author-info.csv";
-CSRankings.countryinfoFile = "country-info.csv";
-CSRankings.aliasFile = "dblp-aliases.csv";
-CSRankings.homepagesFile = "homepages.csv";
+CSRankings.coauthorFile = "/faculty-coauthors.csv";
+CSRankings.authorinfoFile = "/generated-author-info.csv";
+CSRankings.countryinfoFile = "/country-info.csv";
+CSRankings.aliasFile = "/dblp-aliases.csv";
+CSRankings.homepagesFile = "/homepages.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
 CSRankings.showCoauthors = false;
 CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
@@ -1039,7 +1080,7 @@ CSRankings.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed
 CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
 CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
 function init() {
-    new CSRankings();
+    var csr = new CSRankings();
 }
 window.onload = init;
 //	jQuery(document).ready(
