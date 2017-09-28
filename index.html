@@ -1,8 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
   <head>
-<!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/csrankings.css">
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,6 +13,72 @@
 
 <!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
+<!-- <script async src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>-->
+    <style type="text/css">
+      body {
+      font-family: Helvetica, Arial;
+      }
+
+      table td {
+      vertical-align: top;
+      }
+
+      td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      }
+
+      a {
+      color : blue ;
+      }
+
+      a.only_these_areas {
+      cursor: pointer;
+      }
+
+      div.hovertip {
+      cursor: pointer;
+      }
+
+      span.hovertip {
+      cursor: pointer;
+      }
+
+
+/* latin-ext */
+@font-face {
+  font-family: 'News Cycle';
+  font-style: normal;
+  font-weight: 400;
+  src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/d03oiboZGiaNuMDvH253CgsYbbCjybiHxArTLjt7FRU.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'News Cycle';
+  font-style: normal;
+  font-weight: 400;
+  src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/9Xe8dq6pQDsPyVH2D3tMQgzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'News Cycle';
+  font-style: normal;
+  font-weight: 700;
+  src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljtzrEaqfC9P2pvLXik1Kbr9s.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'News Cycle';
+  font-style: normal;
+  font-weight: 700;
+  src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+      }
+      
+    </style>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -61,78 +128,6 @@
         }
       }
     </script>
-    <script async src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
-    <!-- <script src="js/d3.min.js"></script> -->
-    <script async src="js/d3pie.min.js"></script>
-    <script async src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
-    <script async src="js/papaparse.min.js" type="text/javascript"></script>
-    <script async src="js/pako.min.js" type="text/javascript"></script>
-    <script async src="js/bootstrap.min.js"></script>
-    
-    <style type="text/css">
-      body {
-      font-family: Helvetica, Arial;
-      }
-
-      table td {
-      vertical-align: top;
-      }
-
-      td {
-      padding-top: 2px;
-      padding-bottom: 2px;
-      }
-
-      a {
-      color : blue ;
-      }
-
-      a.only_these_areas {
-      cursor: pointer;
-      }
-
-      div.hovertip {
-      cursor: pointer;
-      }
-
-      span.hovertip {
-      cursor: pointer;
-      }
-
-/* latin-ext */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 400;
-  src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/d03oiboZGiaNuMDvH253CgsYbbCjybiHxArTLjt7FRU.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 400;
-  src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/9Xe8dq6pQDsPyVH2D3tMQgzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 700;
-  src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljtzrEaqfC9P2pvLXik1Kbr9s.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 700;
-  src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-      }
-      
-    </style>
     <!-- Facebook Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -150,6 +145,14 @@
   src="https://www.facebook.com/tr?id=1437880419634625&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+<script async src="js/d3.min.js"></script>
+<script async src="js/d3pie.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+<script async src="js/papaparse.min.js" type="text/javascript"></script>
+<script async src="js/pako.min.js" type="text/javascript"></script>
+<script async src="js/bootstrap.min.js" type="text/javascript"></script>
+<script async src="js/navigo.min.js"></script>
+<script defer src="csrankings.min.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -341,7 +344,7 @@
 		  <thead>
 		    <tr>
 		      <th colspan="2">
-			<p>AI
+			<p class="text-muted">AI
 			  [<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;">on</a>]
 			</p>
 		      </th>
@@ -361,6 +364,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigai.acm.org/index.html">acm sigai</a>, <a href="http://aaai.org/">aaai</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/aaai/">AAAI</a>
 				  <br />
 				  <a href="http://dblp.uni-trier.de/db/conf/ijcai/index.html">IJCAI</a>
@@ -391,6 +395,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://www.cv-foundation.org/">cvf</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/cvpr/index.html">CVPR</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/eccv/index.html">ECCV</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/iccv/index.html">ICCV</a><br />
@@ -424,6 +429,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://nips.cc/">nips</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/icml/index.html">ICML</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/kdd/index.html">KDD</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/nips/index.html">NIPS</a><br />
@@ -449,6 +455,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://www.aclweb.org/portal/">acl</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/acl/index.html">ACL</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/emnlp/index.html">EMNLP</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/naacl/index.html">NAACL</a><br />
@@ -468,12 +475,13 @@
 			<span onclick="CSRankings.toggleConferences('ir')" class="hovertip" id="ir-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			The web &amp; information retrieval
+			The Web &amp; information retrieval
 			<div class="table" style="display:none;" id="ir-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigir.org">acm sigir</a></p> <!-- , <a href="http://sigweb.org">acm sigweb</a></p> -->
 				  <a href="http://dblp.uni-trier.de/db/conf/sigir/index.html">SIGIR</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/www/index.html">WWW</a><br />
 				</td>
@@ -495,7 +503,7 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p>Systems
+			<p class="text-muted">Systems
 			  [<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;">on</a>]
 			</p>
 		      </th>
@@ -515,6 +523,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://www.sigarch.org/">acm sigarch</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/asplos/index.html">ASPLOS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/isca/index.html">ISCA</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/micro/index.html">MICRO</a><br />
@@ -540,6 +549,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigcomm.org">acm sigcomm</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/infocom/index.html">INFOCOM</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/sigcomm/index.html">SIGCOMM</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/nsdi/index.html">NSDI</a><br />
@@ -565,6 +575,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigsac.org">acm sigsac</a>, <a href="https://www.ieee-security.org/">ieee s&amp;p</p>, <a href="https://www.usenix.org/">usenix</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/ccs/index.html">CCS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/sp/">IEEE S&amp;P ("Oakland")</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/uss/">USENIX Security</a><br />
@@ -590,6 +601,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigmod.org">acm sigmod</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/sigmod/">SIGMOD</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/vldb/">VLDB</a><br />
 				</td>
@@ -614,6 +626,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigda.org">acm sigda</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/dac/">DAC</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/iccad/">ICCAD</a><br />
 				</td>
@@ -638,6 +651,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigbed.org">acm sigbed</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/emsoft/">EMSOFT</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/rtas/">RTAS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/rtss/">RTSS</a><br />
@@ -663,6 +677,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sighpc.org">acm sighpc</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/hpdc/">HPDC</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/ics/">ICS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/sc/">SC</a><br />
@@ -688,6 +703,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigmobile.org">acm sigmobile</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/mobicom/">MobiCom</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/mobisys/">MobiSys</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/sensys/">SenSys</a><br />
@@ -714,6 +730,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigmetrics.org">acm sigmetrics</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/imc/">IMC</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/sigmetrics/">SIGMETRICS</a><br />
 				</td>
@@ -738,6 +755,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigops.org">acm sigops</a>, <a href="https://www.usenix.org/">usenix</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/eurosys/">EuroSys</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/osdi/">OSDI</a> / <a href="http://dblp.uni-trier.de/db/conf/sosp/">SOSP</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/usenix/">USENIX Annual Technical Conf.</a><br />
@@ -763,6 +781,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigplan.org">acm sigplan</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/pldi/">PLDI</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/popl/">POPL</a><br />
 				</td>
@@ -788,6 +807,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigsoft.org">acm sigsoft</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/sigsoft/">FSE</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/icse/">ICSE</a><br />
 				</td>
@@ -807,7 +827,7 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p>Theory
+			<p class="text-muted">Theory
 			  [<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;">on</a>]
 			</p>
 		      </th>
@@ -827,6 +847,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigact.org">acm sigact</a>, <a href="https://www.computer.org/portal/web/tcmf">ieee tcmf</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/focs/">FOCS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/soda/">SODA</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/stoc/">STOC</a><br />
@@ -852,6 +873,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://www.iacr.org/">iacr</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/crypto/">CRYPTO</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/eurocrypt/">EuroCrypt</a><br />
 				</td>
@@ -876,6 +898,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://siglog.org/">acm siglog</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/cav/">CAV</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/lics/">LICS</a><br />
 				</td>
@@ -894,7 +917,7 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p>Interdisciplinary Areas
+			<p class="text-muted">Interdisciplinary Areas
 			  [<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;">on</a>]
 			</p>
 		      </th>
@@ -914,6 +937,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigbio.org/">acm sigbio</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/ismb/">ISMB</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/recomb/">RECOMB</a><br />
 				</td>
@@ -938,6 +962,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://siggraph.org/">acm siggraph</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/siggraph/">SIGGRAPH</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/siggraph/">SIGGRAPH Asia</a><br />
 				</td>
@@ -963,11 +988,8 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigecom.org/">acm sigecom</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/sigecom/">EC</a><br />
-				</td>
-			      </tr>
-			      <tr style="width:100%">
-				<td>
 				  <a href="http://dblp.uni-trier.de/db/conf/wine/">WINE</a><br />
 				</td>
 			      </tr>
@@ -1017,6 +1039,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigchi.org/">acm sigchi</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/chi/">CHI</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/huc/">UbiComp</a> / <a href="http://dblp.uni-trier.de/db/conf/pervasive/">Pervasive</a> / <a href="http://dblp.uni-trier.de/db/journals/imwut/">IMWUT</a><br /> 
 				  <a href="http://dblp.uni-trier.de/db/conf/uist/">UIST</a><br />
@@ -1042,6 +1065,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://www.ieee-ras.org/">ieee ras</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/icra/">ICRA</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/iros/">IROS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/rss/">RSS</a><br />
@@ -1067,6 +1091,7 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://vgtc.org/">ieee vgtc</a></p>
 				  <a href="http://dblp.uni-trier.de/db/conf/tvcg/">VIS</a><br />
 				  <a href="http://dblp.uni-trier.de/db/conf/vr/">VR</a><br />
 				</td>
@@ -1127,18 +1152,17 @@
 <!--	      <b>Total count</b> is the sum of the adjusted number of publications. -->
 	    </p>
             <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated September 15, 2017).<br />
-	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">via this form</a></b> or (preferably) via a <b><a href="https://github.com/emeryberger/CSRankings">pull request</a></b>. Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.<br />
+	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated September 25, 2017).<br />
+	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP. Alternatively, use <b><a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">this form</a></b> for individual updates.<br />
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
+	      <br>Copyright 2017 © <a href="http://emeryberger.com">Emery Berger</a><br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-	      <br />
-	      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSrankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.org" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/emeryberger/CSrankings" rel="dct:source">https://github.com/emeryberger/CSrankings</a>.<br />
-	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="png/80x15.png" /></a>
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.com" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://github.com/CSrankings" rel="dct:source">http://github.com/CSrankings</a>.
+      <br />
 	    </p>
 	  </div>
 	</div>
       </form>
       </div>
-      <script src="csrankings.js"></script>
-  </body>
+</body>
 </html>

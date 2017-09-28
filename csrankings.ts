@@ -11,6 +11,7 @@
 /// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
+/// <reference path="./typescript/navigo.d.ts" />
 
 declare function escape(s:string): string;
 declare function unescape(s:string): string;
@@ -70,6 +71,8 @@ interface ChartData {
 
 class CSRankings {
     
+    private static navigoRouter : Navigo;
+    
     constructor() {
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
@@ -112,13 +115,27 @@ class CSRankings {
 	} else {
 	    next();
 	}
+	CSRankings.navigoRouter = new Navigo(null, true);
+	CSRankings.navigoRouter.on('/index', function(params, query) {
+	    let par = params;
+	    // Clear everything.
+	    for (let a in CSRankings.areas) {
+		jQuery("input[name="+CSRankings.areas[a]+"]").prop('checked', false);
+	    }
+	    // Now check everything listed in the query string.
+	    query.split('&').forEach(function(item) {
+		if (item != "none") {
+		    jQuery("input[name="+item+"]").prop('checked', true);
+		}
+	    });
+	}).resolve();
     }
 
-    private static readonly coauthorFile       = "faculty-coauthors.csv";
-    private static readonly authorinfoFile     = "generated-author-info.csv";
-    private static readonly countryinfoFile    = "country-info.csv";
-    private static readonly aliasFile          = "dblp-aliases.csv";
-    private static readonly homepagesFile      = "homepages.csv";
+    private static readonly coauthorFile       = "/faculty-coauthors.csv";
+    private static readonly authorinfoFile     = "/generated-author-info.csv";
+    private static readonly countryinfoFile    = "/country-info.csv";
+    private static readonly aliasFile          = "/dblp-aliases.csv";
+    private static readonly homepagesFile      = "/homepages.csv";
     private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
     private static readonly showCoauthors      = false;
     private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
@@ -314,12 +331,16 @@ class CSRankings {
 	    let key = keys[i];
 	    let value = CSRankings.authorAreas[uname][key];
 	    // Use adjusted count if this is for a department.
+	    /*
+            DISABLED so department charts are invariant.
+
 	    if (uname in CSRankings.stats) {
 		value = CSRankings.areaDeptAdjustedCount[key+uname] + 1;
 		if (value == 1) {
 		    value = 0;
 		}
 	    }
+	    */
 	    // Round it to the nearest 0.1.
 	    value = Math.round(value * 10) / 10;
 	    if (value > 0) {
@@ -503,7 +524,7 @@ class CSRankings {
 				    jQuery("input[name="+parent+"]").prop('checked', true);
 				}
 			    }
-			} */
+			    } */
 			this.rank();
 		    });
 		}
@@ -649,7 +670,7 @@ class CSRankings {
     private static countAuthorAreas(authors : Array<Author>,
 				    startyear : number,
 				    endyear : number,
-				    weights : {[key:string] : number},
+//				    weights : {[key:string] : number},
 				    authorAreas : {[name : string] : {[area : string] : number }}) : void
     
     {
@@ -663,9 +684,14 @@ class CSRankings {
 		continue;
 	    }
 	    const theArea  = auth.area;
+	    /*
+	      DISABLING weight selection so all pie charts look the
+	      same regardless of which areas are currently selected:
+
 	    if (weights[theArea] === 0) {
 		continue;
 	    }
+	    */
 	    const theDept  = auth.dept;
 	    const theCount = parseFloat(auth.count);
 //	    const theCount = parseFloat(auth.adjustedcount);
@@ -1065,7 +1091,7 @@ class CSRankings {
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
 				    endyear,
-				    currentWeights,
+//				    currentWeights,
 				    CSRankings.authorAreas);
 	
 	CSRankings.buildDepartments(CSRankings.authors,
@@ -1105,7 +1131,7 @@ class CSRankings {
 					     univtext);
 
 	/* Finally done. Redraw! */
-	setTimeout(()=>{ jQuery("#success").html(s); }, 0);
+	setTimeout(()=>{ jQuery("#success").html(s); CSRankings.urlUpdate(); }, 0);
 	return false; 
     }
 
@@ -1205,11 +1231,36 @@ class CSRankings {
     public static deactivateOthers() : boolean {
 	return CSRankings.activateOthers(false);
     }
-    
+
+    // Update the URL according to the selected checkboxes.
+    private static urlUpdate() {
+	let s = '';
+	let count = 0;
+	for (let i = 0; i < CSRankings.fields.length; i++) {
+	    const str = 'input[name='+CSRankings.fields[i]+']';
+	    if (jQuery(str).prop('checked')) {
+		s += CSRankings.fields[i] + '&';
+//		console.log(CSRankings.fields[i]);
+		count += 1;
+	    }
+	}
+	if (count > 0) {
+	    // Trim off the trailing '&'.
+	    s = s.slice(0, -1);
+	}
+	if (count == CSRankings.fields.length) {
+	    s = ''; // Distinguished special URL - default = all selected.
+	} else if (count == 0) {
+	    s = '/index?none'; // Distinguished special URL - none selected.
+	} else {
+	    s = '/index?' + s;
+	}
+	CSRankings.navigoRouter.navigate(s);
+    }
 }
 
 function init() : void {
-    new CSRankings();
+    let csr = new CSRankings();
 }
 
 window.onload=init;
