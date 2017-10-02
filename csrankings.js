@@ -86,7 +86,7 @@ var CSRankings = (function () {
                 case "US":
                     jQuery("#regions").val("USA");
                     break;
-                case "CAN":
+                case "CA":
                     jQuery("#regions").val("northamerica");
                     break;
                 default:
