@@ -80,15 +80,16 @@ var CSRankings = (function () {
             });
         }).resolve();
         // Figure out which country clients are coming from and set
-        // the default regions accordingly. Arbitrary choices right now.
+        // the default regions accordingly. Arbitrary choices right now:
+        // US gets USA only, everyone else gets "world".
         jQuery.getJSON('http://freegeoip.net/json/', function (result) {
             switch (result.country_code) {
                 case "US":
                     jQuery("#regions").val("USA");
                     break;
-                case "CA":
-                    jQuery("#regions").val("northamerica");
-                    break;
+                //	    case "CA" :
+                //		jQuery("#regions").val("northamerica");
+                //		break;
                 default:
                     jQuery("#regions").val("world");
                     break;
