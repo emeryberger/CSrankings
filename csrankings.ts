@@ -129,6 +129,20 @@ class CSRankings {
 		}
 	    });
 	}).resolve();
+	// Figure out which country clients are coming from and set
+	// the default regions accordingly. Arbitrary choices right now.
+	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
+	    switch (result.country_code) {
+	    case "US" :
+		jQuery("#regions").val("USA");
+		break;
+	    case "CAN" :
+		jQuery("#regions").val("northamerica");
+		break;
+	    default :
+		jQuery("#regions").val("world");
+		break;
+	    }});
     }
 
     private static readonly coauthorFile       = "/faculty-coauthors.csv";

@@ -79,6 +79,21 @@ var CSRankings = (function () {
                 }
             });
         }).resolve();
+        // Figure out which country clients are coming from and set
+        // the default regions accordingly. Arbitrary choices right now.
+        jQuery.getJSON('http://freegeoip.net/json/', function (result) {
+            switch (result.country_code) {
+                case "US":
+                    jQuery("#regions").val("USA");
+                    break;
+                case "CAN":
+                    jQuery("#regions").val("northamerica");
+                    break;
+                default:
+                    jQuery("#regions").val("world");
+                    break;
+            }
+        });
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
