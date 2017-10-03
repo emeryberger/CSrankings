@@ -34,7 +34,9 @@
 
       div { cursor: pointer; }
       a { cursor : pointer; }
+      a.only_these_areas { cursor : pointer; }
       .only_these_areas { cursor : pointer; }
+      hovertip { cursor : pointer; }
       
 /* latin-ext */
 @font-face {
@@ -337,7 +339,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p style="font-size: 125%">All Areas
-			  &nbsp;<span style="font-size: 80%; cursor : pointer;">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>on</b></font></a>]</span>
+			  &nbsp;<span style="font-size: 80%;">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>on</b></font></a>]</span>
 			</p>
 		      </th>
 		    </tr>
