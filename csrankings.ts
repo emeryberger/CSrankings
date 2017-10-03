@@ -497,35 +497,6 @@ class CSRankings {
 		for (let i = 0; i < CSRankings.fields.length; i++) {
 		    const str = 'input[name='+CSRankings.fields[i]+']';
 		    jQuery(str).click(()=>{
-/*			if (jQuery(str).hasClass("parent")) {
-			    // Parent (un)checked => all children (un)checked
-			    let isChecked = jQuery(str).prop('checked');
-			    let parent = CSRankings.fields[i];
-			    for (let kid of CSRankings.childMap[parent]) {
-				jQuery("input[name="+kid+"]").prop('checked', isChecked);
-			    }
-			}
-			if (jQuery(str).hasClass("child")) {
-			    let s = jQuery(str).attr("id");
-			    let parent = CSRankings.parentMap[s];
-			    // Uncheck a child => uncheck the parent.
-			    if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
-				jQuery("input[name="+parent+"]").prop('checked', false);
-			    } else {
-				// All children checked => check the parent.
-				let v = true;
-				for (let kid of CSRankings.childMap[parent]) {
-				    let checked = jQuery("input[name="+kid+"]").prop('checked');
-				    if (!checked) {
-					v = false;
-					break;
-				    }
-				}
-				if (v) {
-				    jQuery("input[name="+parent+"]").prop('checked', true);
-				}
-			    }
-			    } */
 			this.rank();
 		    });
 		}
