@@ -79,7 +79,7 @@ var CSRankings = (function () {
                 }
             });
         }).resolve();
-        // CSRankings.geoCheck();
+        CSRankings.geoCheck();
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -994,16 +994,14 @@ var CSRankings = (function () {
     };
     CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
-        // the default regions accordingly. Arbitrary choices right now:
-        // US gets USA only, everyone else gets "world".
+        // the default regions accordingly.
         jQuery.getJSON('http://freegeoip.net/json/', function (result) {
             switch (result.country_code) {
                 case "US":
+                case "CN":
+                case "IN":
                     jQuery("#regions").val("USA");
                     break;
-                //	    case "CA" :
-                //		jQuery("#regions").val("northamerica");
-                //		break;
                 default:
                     jQuery("#regions").val("world");
                     break;
