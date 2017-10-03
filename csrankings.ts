@@ -129,21 +129,7 @@ class CSRankings {
 		}
 	    });
 	}).resolve();
-	// Figure out which country clients are coming from and set
-	// the default regions accordingly. Arbitrary choices right now:
-	// US gets USA only, everyone else gets "world".
-	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
-	    switch (result.country_code) {
-	    case "US" :
-		jQuery("#regions").val("USA");
-		break;
-//	    case "CA" :
-//		jQuery("#regions").val("northamerica");
-//		break;
-	    default :
-		jQuery("#regions").val("world");
-		break;
-	    }});
+	// CSRankings.geoCheck();
     }
 
     private static readonly coauthorFile       = "/faculty-coauthors.csv";
@@ -1272,6 +1258,25 @@ class CSRankings {
 	}
 	CSRankings.navigoRouter.navigate(s);
     }
+
+    private static geoCheck() {
+	// Figure out which country clients are coming from and set
+	// the default regions accordingly. Arbitrary choices right now:
+	// US gets USA only, everyone else gets "world".
+	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
+	    switch (result.country_code) {
+	    case "US" :
+		jQuery("#regions").val("USA");
+		break;
+//	    case "CA" :
+//		jQuery("#regions").val("northamerica");
+//		break;
+	    default :
+		jQuery("#regions").val("world");
+		break;
+	    }});
+    }
+    
 }
 
 function init() : void {
