@@ -24,6 +24,7 @@ var CSRankings = (function () {
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
+        CSRankings.geoCheck();
         for (var position = 0; position < CSRankings.areaMap.length; position++) {
             var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
@@ -79,7 +80,6 @@ var CSRankings = (function () {
                 }
             });
         }).resolve();
-        CSRankings.geoCheck();
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -971,7 +971,8 @@ var CSRankings = (function () {
                 case "US":
                 case "CN":
                 case "IN":
-                    jQuery("#regions").val("USA");
+                    // jQuery("#regions").val("USA");
+                    // This is currently the default.
                     break;
                 default:
                     jQuery("#regions").val("world");
