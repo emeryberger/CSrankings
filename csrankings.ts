@@ -1235,9 +1235,13 @@ class CSRankings {
 	// the default regions accordingly.
 	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
 	    switch (result.country_code) {
-	    case "US" :
+	    case "US":
 	    case "CN":
 	    case "IN":
+	    case "KR":
+	    case "JP":
+	    case "TW":
+	    case "SG":
 		// jQuery("#regions").val("USA");
 		// This is currently the default.
 		break;
