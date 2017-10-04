@@ -77,6 +77,7 @@ class CSRankings {
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
 	*/
+	CSRankings.geoCheck();
 	for (let position = 0; position < CSRankings.areaMap.length; position++) {
 	    const { area, title } = CSRankings.areaMap[position];
 	    CSRankings.areas[position]     = area;
@@ -129,7 +130,6 @@ class CSRankings {
 		}
 	    });
 	}).resolve();
-	CSRankings.geoCheck();
     }
 
     private static readonly coauthorFile       = "/faculty-coauthors.csv";
@@ -1238,7 +1238,8 @@ class CSRankings {
 	    case "US" :
 	    case "CN":
 	    case "IN":
-		jQuery("#regions").val("USA");
+		// jQuery("#regions").val("USA");
+		// This is currently the default.
 		break;
 	    default :
 		jQuery("#regions").val("world");
