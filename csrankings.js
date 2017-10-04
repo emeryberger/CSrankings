@@ -971,6 +971,10 @@ var CSRankings = (function () {
                 case "US":
                 case "CN":
                 case "IN":
+                case "KR":
+                case "JP":
+                case "TW":
+                case "SG":
                     // jQuery("#regions").val("USA");
                     // This is currently the default.
                     break;
