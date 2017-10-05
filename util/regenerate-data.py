@@ -101,7 +101,13 @@ ISMB_Bioinformatics = {2016: (32, 12),
                        }
 
 # TOG special handling to count only SIGGRAPH proceedings.
-TOG_SIGGRAPH_Volume = {2016: (35, 4),
+# Assuming all will be in the same issues through 2021.
+TOG_SIGGRAPH_Volume = {2021: (40, 4),
+                       2020: (39, 4),
+                       2019: (38, 4),
+                       2018: (37, 4),
+                       2017: (36, 4),
+                       2016: (35, 4),
                        2015: (34, 4),
                        2014: (33, 4),
                        2013: (32, 4),
@@ -119,7 +125,13 @@ TOG_SIGGRAPH_Volume = {2016: (35, 4),
                        }
 
 # TOG special handling to count only SIGGRAPH Asia proceedings.
-TOG_SIGGRAPH_Asia_Volume = {2016: (35, 6),
+# Assuming all will be in the same issues through 2021.
+TOG_SIGGRAPH_Asia_Volume = {2021: (40, 6),
+                            2020: (39, 6),
+                            2019: (38, 6),
+                            2018: (37, 6),
+                            2017: (36, 6),
+                            2016: (35, 6),
                             2015: (34, 6),
                             2014: (33, 6),
                             2013: (32, 6),
