@@ -186,7 +186,8 @@ ICSE_ShortPaperStart = {2013: 851,
 # SIGMOD special handling to avoid non-research papers.
 # This and other SIGMOD data below contributed by Davide Martinenghi,
 # Politecnico di Milano.
-SIGMOD_NonResearchPaperStart = {2016: 2069,
+SIGMOD_NonResearchPaperStart = {2017: 1586,
+                                2016: 2069,
                                 2013: 917,
                                 2012: 577,
                                 2011: 1045,
