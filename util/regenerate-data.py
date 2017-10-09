@@ -186,7 +186,7 @@ ICSE_ShortPaperStart = {2013: 851,
 # SIGMOD special handling to avoid non-research papers.
 # This and other SIGMOD data below contributed by Davide Martinenghi,
 # Politecnico di Milano.
-SIGMOD_NonResearchPaperStart = {2017: 1586,
+SIGMOD_NonResearchPaperStart = {2017: 1587,
                                 2016: 2069,
                                 2013: 917,
                                 2012: 577,
@@ -213,7 +213,9 @@ SIGMOD_NonResearchPaperStart = {2017: 1586,
 # SIGMOD recently has begun intermingling research and non-research
 # track papers in their proceedings, requiring individual paper
 # filtering.
-SIGMOD_NonResearchPapersRange = {2016: [(1753, 1764), (1295, 1306), (795, 806),
+SIGMOD_NonResearchPapersRange = { 2017: [(1, 3), (51, 63), (125, 138), (331, 343),
+                                         (1041, 1052), (511, 526), (1587, 1782)],
+                                  2016: [(1753, 1764), (1295, 1306), (795, 806),
                                         (227, 238), (999, 1010), (1923, 1934),
                                         (1307, 1318), (1951, 1960), (759, 771),
                                         (253, 265), (1405, 1416), (215, 226),
