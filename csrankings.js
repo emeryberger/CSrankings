@@ -24,6 +24,7 @@ var CSRankings = (function () {
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
+        CSRankings.geoCheck();
         for (var position = 0; position < CSRankings.areaMap.length; position++) {
             var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
@@ -324,35 +325,6 @@ var CSRankings = (function () {
                 for (var i = 0; i < CSRankings.fields.length; i++) {
                     var str = 'input[name=' + CSRankings.fields[i] + ']';
                     jQuery(str).click(function () {
-                        /*			if (jQuery(str).hasClass("parent")) {
-                                        // Parent (un)checked => all children (un)checked
-                                        let isChecked = jQuery(str).prop('checked');
-                                        let parent = CSRankings.fields[i];
-                                        for (let kid of CSRankings.childMap[parent]) {
-                                        jQuery("input[name="+kid+"]").prop('checked', isChecked);
-                                        }
-                                    }
-                                    if (jQuery(str).hasClass("child")) {
-                                        let s = jQuery(str).attr("id");
-                                        let parent = CSRankings.parentMap[s];
-                                        // Uncheck a child => uncheck the parent.
-                                        if (!jQuery("input[name="+CSRankings.fields[i]+"]").prop('checked')) {
-                                        jQuery("input[name="+parent+"]").prop('checked', false);
-                                        } else {
-                                        // All children checked => check the parent.
-                                        let v = true;
-                                        for (let kid of CSRankings.childMap[parent]) {
-                                            let checked = jQuery("input[name="+kid+"]").prop('checked');
-                                            if (!checked) {
-                                            v = false;
-                                            break;
-                                            }
-                                        }
-                                        if (v) {
-                                            jQuery("input[name="+parent+"]").prop('checked', true);
-                                        }
-                                        }
-                                        } */
                         _this.rank();
                     });
                 }
@@ -990,6 +962,27 @@ var CSRankings = (function () {
             s = '/index?' + s;
         }
         CSRankings.navigoRouter.navigate(s);
+    };
+    CSRankings.geoCheck = function () {
+        // Figure out which country clients are coming from and set
+        // the default regions accordingly.
+        jQuery.getJSON('http://freegeoip.net/json/', function (result) {
+            switch (result.country_code) {
+                case "US":
+                case "CN":
+                case "IN":
+                case "KR":
+                case "JP":
+                case "TW":
+                case "SG":
+                    // jQuery("#regions").val("USA");
+                    // This is currently the default.
+                    break;
+                default:
+                    jQuery("#regions").val("world");
+                    break;
+            }
+        });
     };
     return CSRankings;
 }());
