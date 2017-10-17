@@ -3,7 +3,8 @@
 
         http://dblp.uni-trier.de/xml/
 
-	DBLP: Copyright 1993-2016 by Michael Ley (Universität Trier, Informatik, ley@uni-trier.de)
+	DBLP: Copyright 1993-2016 by Schloss Dagstuhl - Leibniz Center for Informatics (German: Schloss Dagstuhl - Leibniz-Zentrum für Informatik GmbH)
+	and Michael Ley (Universität Trier, Informatik, ley@uni-trier.de) and 
 
 	The data provided by DBLP on its webpages as well as the XML files available at http://dblp.uni-trier.de/xml/
 	are released under the Open Data Commons Attribution License (ODC-BY 1.0). You are free to copy, distribute, use, modify,
@@ -18,16 +19,19 @@
 	attribution criterion. Individual use of only a small number of records (such as a publication list of a few authors or the
 	table of content of a proceedings volume) does not need attribution. Of course, we are always happy if you link to us.
 
-	publtype:
-	encyclopedia entry
-	informal publication
-	edited publication
-	survey
+    For further details on the content of attributes see http://dblp.org/faq/What+do+I+find+in+dblp+xml.html
+	
+	Date of this File: Mar 27, 2017
+	
+	A changelog for the dblp.dtd can be found at: dblp.org/xml
+	
 -->
 
 <!ELEMENT dblp (article|inproceedings|proceedings|book|incollection|
-                phdthesis|mastersthesis|www)*>
-<!ENTITY % field "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter">
+                phdthesis|mastersthesis|www|person|data)*>
+<!ATTLIST dblp mdate CDATA #IMPLIED >                
+                
+<!ENTITY % field "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter|publnr">
 
 <!ELEMENT article       (%field;)*>
 <!ATTLIST article
@@ -36,58 +40,81 @@
                         publtype CDATA #IMPLIED
                         reviewid CDATA #IMPLIED
                         rating CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT inproceedings (%field;)*>
 <!ATTLIST inproceedings key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT proceedings   (%field;)*>
 <!ATTLIST proceedings   key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT book          (%field;)*>
 <!ATTLIST book          key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT incollection  (%field;)*>
 <!ATTLIST incollection  key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT phdthesis     (%field;)*>
 <!ATTLIST phdthesis     key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT mastersthesis (%field;)*>
 <!ATTLIST mastersthesis key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
 
 <!ELEMENT www           (%field;)*>
 <!ATTLIST www           key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
                         publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
 >
+
+<!ELEMENT data          (%field;)*>
+<!ATTLIST data          key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT person ((author*, (note|url|cite)*)|crossref) > 
+<!ATTLIST person key CDATA #REQUIRED
+          mdate CDATA #IMPLIED
+          cdate CDATA #IMPLIED
+ >
 
 <!ELEMENT author    (#PCDATA)>
 <!ATTLIST author
                     aux CDATA #IMPLIED
                     bibtex CDATA #IMPLIED
+                    orcid CDATA #IMPLIED
 >
 <!ELEMENT editor    (#PCDATA)>
 <!ATTLIST editor
                     aux CDATA #IMPLIED
+                    orcid CDATA #IMPLIED
 >
 <!ELEMENT address   (#PCDATA)>
 
@@ -98,13 +125,23 @@
 >
 <!ELEMENT booktitle (#PCDATA)>
 <!ELEMENT pages     (#PCDATA)>
+<!ATTLIST pages
+                    type CDATA #IMPLIED
+>   
 <!ELEMENT year      (#PCDATA)>
 <!ELEMENT journal   (#PCDATA)>
 <!ELEMENT volume    (#PCDATA)>
 <!ELEMENT number    (#PCDATA)>
 <!ELEMENT month     (#PCDATA)>
 <!ELEMENT url       (#PCDATA)>
+<!ATTLIST url
+                    aux CDATA #IMPLIED
+>
 <!ELEMENT ee        (#PCDATA)>
+<!ATTLIST ee
+                    aux CDATA #IMPLIED
+                    type CDATA #IMPLIED
+>
 <!ELEMENT cite      (#PCDATA)>
 <!ELEMENT school    (#PCDATA)>
 <!ELEMENT publisher (#PCDATA)>
@@ -113,7 +150,9 @@
 >
 <!ELEMENT note      (#PCDATA)>
 <!ATTLIST note
-                    type CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED                   
 >
 <!ELEMENT cdrom     (#PCDATA)>
 <!ATTLIST cite
@@ -131,6 +170,8 @@
 <!ATTLIST layout
                     logo CDATA #IMPLIED
 >
+
+<!ELEMENT publnr (#PCDATA) >
 
 <!ELEMENT ref (#PCDATA)>
 <!ATTLIST ref href CDATA #REQUIRED>
