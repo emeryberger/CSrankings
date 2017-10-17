@@ -367,7 +367,6 @@ Sundar Balasubramaniam , BITS Pilani
 Sundaresan Raman , BITS Pilani
 Vandana Agarwal , BITS Pilani
 Virendra Singh Shekhawat , BITS Pilani
-Vishal Gupta , BITS Pilani
 Yashvardhan Sharma , BITS Pilani
 Amihood Amir , Bar-Ilan University
 Amir Herzberg , Bar-Ilan University
@@ -1126,6 +1125,8 @@ Ansaf Salleb , Columbia University
 Ansaf Salleb-Aouissi , Columbia University
 Augustin Chaintreau , Columbia University
 Changxi Zheng , Columbia University
+Christos H. Papadimitriou , Columbia University
+Christos Harilaos Papadimitriou , Columbia University
 Cliff Stein , Columbia University
 Clifford Stein , Columbia University
 Dan Rubenstein , Columbia University
@@ -1997,7 +1998,7 @@ Thomas M. Conte , Georgia Institute of Technology
 Tucker Balch , Georgia Institute of Technology
 Tucker R. Balch , Georgia Institute of Technology
 Umakishore Ramachandran , Georgia Institute of Technology
-Vijay V. Vazirani , Georgia Institute of Technology
+Vijay V. Vazirani ,  University of California - Irvine
 Vivek Sarkar , Georgia Institute of Technology
 Wenke Lee , Georgia Institute of Technology
 William R. Harris , Georgia Institute of Technology
@@ -2148,7 +2149,6 @@ Xiaojuan Ma , Hong Kong University of Science and Technology
 Xin Li 0028 , Hong Kong University of Science and Technology
 Yangqiu Song , Hong Kong University of Science and Technology
 Amit Chattopadhyay , IIIT Bangalore
-Amit Prakash , IIIT Bangalore
 Ashish Choudhary , IIIT Bangalore
 Ashish Choudhury , IIIT Bangalore
 Balaji Parthasarathy , IIIT Bangalore
@@ -2625,7 +2625,6 @@ Partha Pratim Roy , IIT Roorkee
 Rajdeep Niyogi , IIT Roorkee
 Raman Balasubramanian , IIT Roorkee
 Ranita Biswas , IIT Roorkee
-Sandeep Kumar , IIT Roorkee
 Subhankar Mishra , IIT Roorkee
 Sudip Roy 0001 , IIT Roorkee
 Sugata Gangopadhyay , IIT Roorkee
@@ -3900,6 +3899,7 @@ Zachary O. Toups , New Mexico State University
 Allan Gottlieb , New York University
 Andrew Nealen , New York University
 Andy Nealen , New York University
+Anirudh Sivaraman , New York University
 Benjamin Goldberg , New York University
 Bhubaneswar Mishra , New York University
 Boris Aronov , New York University
@@ -3908,8 +3908,6 @@ Bud Mishra , New York University
 Chee K. Yap , New York University
 Chee Yap , New York University
 Chee-Keng Yap , New York University
-Chris Bregler , New York University
-Christoph Bregler , New York University
 Clark Barrett , New York University
 Clark W. Barrett , New York University
 Cláudio T. Silva , New York University
@@ -3926,9 +3924,12 @@ Ernest Davis , New York University
 Guido Gerig , New York University
 Helen Nissenbaum , New York University
 Jinyang Li , New York University
+Joan Bruna , New York University
+Joan Bruna Estrach , New York University
 Joel H. Spencer , New York University
 Joel Spencer , New York University
 John Iacono , New York University
+Joseph Bonneau , New York University
 Julian Togelius , New York University
 Juliana Freire , New York University
 Justin Cappos , New York University
@@ -3936,17 +3937,19 @@ Ken Perlin , New York University
 Kok-Ming Leung , New York University
 KyungHyun Cho , New York University
 Kyunghyun Cho , New York University
+Kyunghyuns Cho , New York University
 Lakshmi Subramanian , New York University
 Lakshminarayanan Subramanian , New York University
 Lisa Hellerstein , New York University
 Margaret H. Wright , New York University
+Marsha J. Berger , New York University
 Mehryar Mohri , New York University
 Michael L. Overton , New York University
 Michael Walfish , New York University
 Mohamed Zahran , New York University
 Nasir D. Memon , New York University
 Nasir Memon , New York University
-Oded Regev , New York University
+Oded Regev 0001 , New York University
 Olof B. Widlund , New York University
 Panayotis Mavromatis , New York University
 Patrick Cousot , New York University
@@ -3956,11 +3959,15 @@ Ramesh Karri , New York University
 Richard A. Bonneau , New York University
 Richard Bonneau , New York University
 Richard Cole 0001 , New York University
+Rob Fergus , New York University
+Robert Fergus , New York University
 Rumi Chunara , New York University
 Sam Bowman , New York University
 Samuel R. Bowman , New York University
 Siddharth Garg , New York University
 Subhash Khot , New York University
+Theodore S. Rappaport , New York University
+Theodore Ted S. Rappaport , New York University
 Thomas Wies , New York University
 Torsten Suel , New York University
 Victor Shoup , New York University
@@ -4594,6 +4601,7 @@ Thomas A. Funkhouser , Princeton University
 Warren B. Powell , Princeton University
 Warren Buckler Powell , Princeton University
 Wyatt Lloyd , Princeton University
+Yoram Singer , Princeton University
 Yuxin Chen , Princeton University
 Zachary Kincaid , Princeton University
 Zeev Dvir , Princeton University
@@ -6223,7 +6231,6 @@ Anthony Steed , University College London
 Antoaneta Serguieva , University College London
 Bangti Jin , University College London
 Brad Karp , University College London
-Byron Cook , University College London
 Catherine Holloway , University College London
 Catherine S. Holloway , University College London
 Chris Clack , University College London
@@ -6683,7 +6690,6 @@ Arvind Gupta , University of British Columbia
 Bill Aiello , University of British Columbia
 Chen Greif , University of British Columbia
 Cristina Conati , University of British Columbia
-David G. Kirkpatrick , University of British Columbia
 David Poole , University of British Columbia
 Dinesh K. Pai , University of British Columbia
 Dongwook Yoon , University of British Columbia
@@ -6704,7 +6710,6 @@ Julia Mosin , University of British Columbia
 Julia Rubin , University of British Columbia
 Karon E. MacLean , University of British Columbia
 Karthik Pattabiraman , University of British Columbia
-Kellogg S. Booth , University of British Columbia
 Kevin Leyton-Brown , University of British Columbia
 Laks V. S. Lakshmanan , University of British Columbia
 Leonid Sigal , University of British Columbia
@@ -6731,7 +6736,7 @@ Uri M. Ascher , University of British Columbia
 V. S. Lakshmanan , University of British Columbia
 William Aiello , University of British Columbia
 William S. Evans , University of British Columbia
-Wolfgang Heidrich , University of British Columbia
+Wolfgang Heidrich , KAUST
 Agustín Gravano , University of Buenos Aires
 Alejandro Martínez-Ríos , University of Buenos Aires
 Carlos Gustavo López Pombo , University of Buenos Aires
@@ -6848,8 +6853,6 @@ Björn Hartmann , University of California - Berkeley
 Borivoje Nikolic , University of California - Berkeley
 Brian A. Barsky , University of California - Berkeley
 Chang Ming Wu , University of California - Berkeley
-Christos H. Papadimitriou , University of California - Berkeley
-Christos Harilaos Papadimitriou , University of California - Berkeley
 Chunlei Liu , University of California - Berkeley
 Claire J. Tomlin , University of California - Berkeley
 Claire Tomlin , University of California - Berkeley
@@ -8656,6 +8659,7 @@ Eduardo Velloso , University of Melbourne
 Egemen Tanin , University of Melbourne
 Frank Vetere , University of Melbourne
 George Buchanan , University of Melbourne
+George R. Buchanan , University of Melbourne
 Gil Tidhar , University of Melbourne
 Graeme G. Shanks , University of Melbourne
 Greg Wadley , University of Melbourne
@@ -10112,7 +10116,6 @@ Bianca Schroeder , University of Toronto
 Bianca Schröder , University of Toronto
 Bogdan Simion , University of Toronto
 Brendan J. Frey , University of Toronto
-Charles Rackoff , University of Toronto
 Christina C. Christara , University of Toronto
 Cristiana Amza , University of Toronto
 Daniel J. Wigdor , University of Toronto
@@ -10121,7 +10124,6 @@ David I. W. Levin , University of Toronto
 David J. Fleet , University of Toronto
 David K. Duvenaud , University of Toronto
 David Lie , University of Toronto
-David Liu , University of Toronto
 Derek G. Corneil , University of Toronto
 Derek Gordon Corneil , University of Toronto
 Diane Horton , University of Toronto
@@ -10173,7 +10175,6 @@ Rudolf Mathon , University of Toronto
 Sam Toueg , University of Toronto
 Sanja Fidler , University of Toronto
 Sheila A. McIlraith , University of Toronto
-Stephen A. Cook , University of Toronto
 Steve Easterbrook , University of Toronto
 Steve Engels , University of Toronto
 Steve M. Easterbrook , University of Toronto
@@ -10554,7 +10555,6 @@ Ondrej Lhoták , University of Waterloo
 Pascal Poupart , University of Waterloo
 Patrick Lam , University of Waterloo
 Peter A. Buhr , University of Waterloo
-Peter A. Forsyth , University of Waterloo
 Peter van Beek , University of Waterloo
 Prabhakar Ragde , University of Waterloo
 Raouf Boutaba , University of Waterloo
@@ -11065,6 +11065,7 @@ Vaithianathan Mani Venkatasubramanian , Washington State University
 Venera Arnaoudova , Washington State University
 Yinghui Wu , Washington State University
 Zhe Dang , Washington State University
+Ayan Chakrabarti , Washington University in St. Louis
 Benjamin Moseley , Washington University in St. Louis
 Brendan Juba , Washington University in St. Louis
 Caitlin Kelleher , Washington University in St. Louis
@@ -11236,48 +11237,50 @@ Vassilios Tzerpos , York University
 Yves Lesperance , York University
 Zbigniew Stachniak , York University
 Zhen Ming (Jack) Jiang , York University
+Chunming Wu , Zhejiang University
 Deng Cai , Zhejiang University
+Fangtian Ying , Zhejiang University
+Gang Pan , Zhejiang University
 Guofeng Zhang 0001 , Zhejiang University
+Hai Lin 0003 , Zhejiang University
+Haifeng Liu , Zhejiang University
 Hongzhi Wu , Zhejiang University
+Huajun Chen , Zhejiang University
 Hujun Bao , Zhejiang University
+Jian Wu , Zhejiang University
 Jin Huang 0001 , Zhejiang University
+Kai Bu , Zhejiang University
+Kejun Zhang , Zhejiang University
 Kun Zhou , Zhejiang University
+Lingyun Sun , Zhejiang University
+Min Yao , Zhejiang University
+Mingmin Zhang , Zhejiang University
 Qiming Hou , Zhejiang University
+Qinming He , Zhejiang University
 Rui Wang 0004 , Zhejiang University
+Shijian Li , Zhejiang University
+Shouling Ji , Zhejiang University
+ShuiGuang Deng , Zhejiang University
+Shuming Gao , Zhejiang University
 Tianjia Shao , Zhejiang University
 Wei Chen 0001 , Zhejiang University
 Weiwei Xu , Zhejiang University
+Wenzhi Chen , Zhejiang University
+Xiang Chen 0001 , Zhejiang University
 Xiaofei He , Zhejiang University
+Xiaogang Jin 0001 , Zhejiang University
+Xiaohong Jiang , Zhejiang University
 Xinguo Liu , Zhejiang University
+Yang Xiang , Zhejiang University
 Yingcai Wu , Zhejiang University
+Yingjie Xia , Zhejiang University
+Yongchuan Tang , Zhejiang University
 Youyi Zheng , Zhejiang University
 Yubo Tao , Zhejiang University
-Zhong Ren 0001 , Zhejiang University
-Hai Lin 0003 , Zhejiang University
-Xiaogang Jin 0001 , Zhejiang University
-Shuming Gao , Zhejiang University
-ShuiGuang Deng , Zhejiang University
-Yang Xiang , Zhejiang University
-Qinming He , Zhejiang University
-Xiaohong Jiang , Zhejiang University
-Shouling Ji , Zhejiang University
-Wenzhi Chen , Zhejiang University
-Shijian Li , Zhejiang University
-Haifeng Liu , Zhejiang University
-Zhipeng Wang , Zhejiang University
-Zonghui Wang , Zhejiang University
-Gang Pan , Zhejiang University
 Zhaohui Wu , Zhejiang University
-Jian Wu , Zhejiang University
+Zhipeng Wang , Zhejiang University
+Zhong Ren 0001 , Zhejiang University
 Zonghua Gu , Zhejiang University
-Huajun Chen , Zhejiang University
-Kai Bu , Zhejiang University
-Chunming Wu , Zhejiang University
-Mingmin Zhang , Zhejiang University
-Yingjie Xia , Zhejiang University
-Min Yao , Zhejiang University
-Lingyun Sun , Zhejiang University
-Yongchuan Tang , Zhejiang University
-Fangtian Ying , Zhejiang University
-Kejun Zhang, Zhejiang University
-Xiang Chen 0001 , Zhejiang University
+Zonghui Wang , Zhejiang University
+K. V. Rashmi , Carnegie Mellon University
+Nihar B. Shah , Carnegie Mellon University
