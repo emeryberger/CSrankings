@@ -5,7 +5,7 @@ This ranking of top computer science schools is designed to identify institution
 
 This approach is intended to be difficult to game, since publishing in such conferences is generally difficult: contrast this with other approaches like citation-based metrics, which have been repeatedly shown to be <a target="_blank" href="http://arxiv.org/abs/1212.0638">easy</a> to <a target="_blank" href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulate</a>. That said, incorporating citations in some form is a long-term goal.
 
-See the <a href="FAQ.html">FAQ</a> for more details.
+See the <a href="http://csrankings.org/faq.html">FAQ</a> for more details.
 
 ---
 
