@@ -2,7 +2,7 @@ TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations
 
-all: generated-author-info.csv csrankings.js fix-affiliations home-pages scholar-links
+all: generated-author-info.csv csrankings.js fix-affiliations home-pages # scholar-links
 
 clean:
 	rm $(TARGETS)
