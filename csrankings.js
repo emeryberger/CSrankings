@@ -18,7 +18,6 @@
 ;
 ;
 ;
-;
 var CSRankings = (function () {
     function CSRankings() {
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -60,12 +59,7 @@ var CSRankings = (function () {
             });
         };
         CSRankings.activateAll();
-        if (CSRankings.showCoauthors) {
-            CSRankings.loadCoauthors(next);
-        }
-        else {
-            next();
-        }
+        next();
         CSRankings.navigoRouter = new Navigo(null, true);
         CSRankings.navigoRouter.on('/index', function (params, query) {
             var par = params;
@@ -266,17 +260,6 @@ var CSRankings = (function () {
             }
         });
     };
-    CSRankings.loadCoauthors = function (cont) {
-        Papa.parse(CSRankings.coauthorFile, {
-            download: true,
-            header: true,
-            complete: function (results) {
-                var data = results.data;
-                CSRankings.coauthors = data;
-                setTimeout(cont, 0);
-            }
-        });
-    };
     CSRankings.loadAliases = function (aliases, cont) {
         Papa.parse(CSRankings.aliasFile, {
             header: true,
@@ -433,23 +416,6 @@ var CSRankings = (function () {
             return 0;
         });
         return keys;
-    };
-    CSRankings.computeCoauthors = function (coauthors, startyear, endyear, weights) {
-        var coauthorList = {};
-        for (var c in coauthors) {
-            if (!coauthors.hasOwnProperty(c)) {
-                continue;
-            }
-            var _a = coauthors[c], author = _a.author, coauthor = _a.coauthor, year = _a.year, area = _a.area;
-            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
-                continue;
-            }
-            if (!(author in coauthorList)) {
-                coauthorList[author] = new Set([]);
-            }
-            coauthorList[author].add(coauthor);
-        }
-        return coauthorList;
     };
     CSRankings.countAuthorAreas = function (authors, startyear, endyear, 
         //				    weights : {[key:string] : number},
@@ -625,7 +591,7 @@ var CSRankings = (function () {
         }
     };
     /* Build drop down for faculty names and paper counts. */
-    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
+    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount) {
         var univtext = {};
         var _loop_1 = function (dept) {
             if (!deptNames.hasOwnProperty(dept)) {
@@ -652,34 +618,8 @@ var CSRankings = (function () {
                     return fc[b] - fc[a];
                 }
             });
-            var _loop_2 = function (name_5) {
-                if (CSRankings.showCoauthors) {
-                    /* Build up text for co-authors. */
-                    var coauthorStr_1 = "";
-                    if ((!(name_5 in coauthorList)) || (coauthorList[name_5].size === 0)) {
-                        coauthorList[name_5] = new Set([]);
-                        coauthorStr_1 = "(no senior co-authors on these papers)";
-                    }
-                    else {
-                        coauthorStr_1 = "Senior co-authors on these papers:\n";
-                    }
-                    /* Sort it by last name. */
-                    var l_1 = [];
-                    coauthorList[name_5].forEach(function (item, _) {
-                        l_1.push(item);
-                    });
-                    if (l_1.length > CSRankings.maxCoauthors) {
-                        coauthorStr_1 = "(more than " + CSRankings.maxCoauthors + " senior co-authors)";
-                    }
-                    else {
-                        l_1.sort(CSRankings.compareNames);
-                        l_1.forEach(function (item, _) {
-                            coauthorStr_1 += item + "\n";
-                        });
-                        /* Trim off the trailing newline. */
-                        coauthorStr_1 = coauthorStr_1.slice(0, coauthorStr_1.length - 1);
-                    }
-                }
+            for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
+                var name_5 = keys_1[_b];
                 var homePage = encodeURI(CSRankings.homepages[name_5]);
                 var dblpName = CSRankings.translateNameToDBLP(name_5);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
@@ -714,10 +654,6 @@ var CSRankings = (function () {
                     + '<div style="display:none;" id="' + escape(name_5) + "-chart" + '">'
                     + '</div>'
                     + "</td></tr>";
-            };
-            for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
-                var name_5 = keys_1[_b];
-                _loop_2(name_5);
             }
             p += "</tbody></table></div></div>";
             univtext[dept] = p;
@@ -824,10 +760,6 @@ var CSRankings = (function () {
         var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
         var numAreas = CSRankings.updateWeights(currentWeights);
-        var coauthorList = {};
-        if (CSRankings.showCoauthors) {
-            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
-        }
         CSRankings.authorAreas = {};
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, 
         //				    currentWeights,
@@ -837,7 +769,7 @@ var CSRankings = (function () {
         CSRankings.stats = CSRankings.computeStats(deptNames, CSRankings.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
-        var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
+        var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
@@ -986,14 +918,11 @@ var CSRankings = (function () {
     };
     return CSRankings;
 }());
-CSRankings.coauthorFile = "/faculty-coauthors.csv";
 CSRankings.authorinfoFile = "/generated-author-info.csv";
 CSRankings.countryinfoFile = "/country-info.csv";
 CSRankings.aliasFile = "/dblp-aliases.csv";
 CSRankings.homepagesFile = "/homepages.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-CSRankings.showCoauthors = false;
-CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
 CSRankings.parentMap = { 'aaai': 'ai',
     'ijcai': 'ai',
     'cvpr': 'vision',
@@ -1060,8 +989,6 @@ CSRankings.homepages = {};
 CSRankings.useDenseRankings = false;
 /* The data which will hold the parsed CSV of author info. */
 CSRankings.authors = [];
-/* The data which will hold the parsed CSV of co-author info. */
-CSRankings.coauthors = [];
 /* Map authors to the areas they have published in (for pie chart display). */
 CSRankings.authorAreas = {};
 /* Computed stats (univagg). */
