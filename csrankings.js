@@ -18,6 +18,7 @@
 ;
 ;
 ;
+;
 var CSRankings = (function () {
     function CSRankings() {
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -53,7 +54,9 @@ var CSRankings = (function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
                     CSRankings.loadAuthorInfo(function () {
-                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+                        CSRankings.loadCountryInfo(CSRankings.countryInfo, function () {
+                            CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank);
+                        });
                     });
                 });
             });
@@ -260,6 +263,21 @@ var CSRankings = (function () {
             }
         });
     };
+    CSRankings.loadScholarInfo = function (scholarInfo, cont) {
+        Papa.parse(CSRankings.scholarFile, {
+            header: true,
+            download: true,
+            complete: function (results) {
+                var data = results.data;
+                var d = data;
+                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
+                    var scholarPair = d_1[_i];
+                    scholarInfo[scholarPair.name] = scholarPair.scholarid;
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
     CSRankings.loadAliases = function (aliases, cont) {
         Papa.parse(CSRankings.aliasFile, {
             header: true,
@@ -267,8 +285,8 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 var d = data;
-                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
-                    var aliasPair = d_1[_i];
+                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
+                    var aliasPair = d_2[_i];
                     aliases[aliasPair.alias] = aliasPair.name;
                 }
                 setTimeout(cont, 0);
@@ -322,8 +340,8 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 var d = data;
-                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
-                    var namePage = d_2[_i];
+                for (var _i = 0, d_3 = d; _i < d_3.length; _i++) {
+                    var namePage = d_3[_i];
                     if (typeof namePage.homepage === 'undefined') {
                         continue;
                     }
@@ -631,8 +649,20 @@ var CSRankings = (function () {
                     + '\', true); return false;"'
                     + '>'
                     + name_5
-                    + '</a>&nbsp;'
-                    + "<span onclick=\"CSRankings.toggleChart('"
+                    + '</a>&nbsp;';
+                if (CSRankings.scholarInfo.hasOwnProperty(name_5)) {
+                    var url = 'https://scholar.google.com/citations?user='
+                        + CSRankings.scholarInfo[name_5]
+                        + '&hl=en&oi=ao';
+                    p += '<a target="_blank" href="' + url + '" '
+                        + 'onclick="trackOutboundLink(\''
+                        + url
+                        + '\', true); return false;"'
+                        + '>'
+                        + '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
+                        + '</a>&nbsp;';
+                }
+                p += "<span onclick=\"CSRankings.toggleChart('"
                     + escape(name_5)
                     + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
                     + '</small>'
@@ -922,6 +952,7 @@ CSRankings.authorinfoFile = "/generated-author-info.csv";
 CSRankings.countryinfoFile = "/country-info.csv";
 CSRankings.aliasFile = "/dblp-aliases.csv";
 CSRankings.homepagesFile = "/homepages.csv";
+CSRankings.scholarFile = "/scholar.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
 CSRankings.parentMap = { 'aaai': 'ai',
     'ijcai': 'ai',
@@ -979,6 +1010,8 @@ CSRankings.otherFields = [];
 CSRankings.areaDict = {};
 /* Map area to its position in the list. */
 CSRankings.areaPosition = {};
+/* Map names to Google Scholar IDs. */
+CSRankings.scholarInfo = {};
 /* Map aliases to canonical author name. */
 CSRankings.aliases = {};
 /* Map institution to (non-US) region. */

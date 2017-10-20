@@ -51,6 +51,11 @@ interface HomePage {
     readonly homepage : string;
 };
 
+interface ScholarID {
+    readonly name : string;
+    readonly scholarid : string;
+};
+
 interface AreaMap {
     readonly area : string;
     readonly title : string;
@@ -98,7 +103,8 @@ class CSRankings {
 					 function() {
 					     CSRankings.loadAuthorInfo(function() {
 						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
-									    CSRankings.rank);
+									    function() {
+										CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank); });
 					     });
 					 });
 	    });
@@ -125,6 +131,7 @@ class CSRankings {
     private static readonly countryinfoFile    = "/country-info.csv";
     private static readonly aliasFile          = "/dblp-aliases.csv";
     private static readonly homepagesFile      = "/homepages.csv";
+    private static readonly scholarFile        = "/scholar.csv";
     private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
     private static readonly parentMap : {[key : string] : string }
@@ -193,6 +200,9 @@ class CSRankings {
     /* Map area to its position in the list. */
     private static readonly areaPosition : {[key : string] : number } = {};
 
+    /* Map names to Google Scholar IDs. */
+    private static readonly scholarInfo : {[key : string] : string } = {};
+    
     /* Map aliases to canonical author name. */
     private static readonly aliases : {[key : string] : string } = {};
 
@@ -417,6 +427,22 @@ class CSRankings {
 	});
     }
 
+    private static loadScholarInfo(scholarInfo: {[key : string] : string },
+				   cont : ()=> void ) : void {
+	Papa.parse(CSRankings.scholarFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const d = data as Array<ScholarID>;
+		for (let scholarPair of d) {
+		    scholarInfo[scholarPair.name] = scholarPair.scholarid;
+		}
+		setTimeout(cont, 0);
+	    }
+	});
+    }
+    
     private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
@@ -831,8 +857,20 @@ class CSRankings {
 		    + '\', true); return false;"'
 		    + '>' 
 		    + name
-		    + '</a>&nbsp;'
-		    + "<span onclick=\"CSRankings.toggleChart('"
+		    + '</a>&nbsp;';
+		if (CSRankings.scholarInfo.hasOwnProperty(name)) {
+		    let url = 'https://scholar.google.com/citations?user='
+			+ CSRankings.scholarInfo[name]
+			+ '&hl=en&oi=ao';
+		    p += '<a target="_blank" href="' + url + '" '
+			+ 'onclick="trackOutboundLink(\''
+			+ url
+			+ '\', true); return false;"'
+			+ '>'
+			+ '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
+			+'</a>&nbsp;';
+		}
+		p += "<span onclick=\"CSRankings.toggleChart('"
 		    + escape(name)
 		    + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
 		    + '</small>'
