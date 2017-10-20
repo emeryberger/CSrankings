@@ -36,13 +36,6 @@ interface Author {
     readonly year : number;
 };
 
-interface Coauthor {
-    readonly author : string;
-    readonly coauthor : string;
-    readonly year : number;
-    readonly area : string;
-};
-
 interface CountryInfo {
     readonly institution : string;
     readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "asia" | "world";
@@ -111,11 +104,7 @@ class CSRankings {
 	    });
 	};
 	CSRankings.activateAll();
-	if (CSRankings.showCoauthors) {
-	    CSRankings.loadCoauthors(next);
-	} else {
-	    next();
-	}
+	next();
 	CSRankings.navigoRouter = new Navigo(null, true);
 	CSRankings.navigoRouter.on('/index', function(params, query) {
 	    let par = params;
@@ -132,14 +121,11 @@ class CSRankings {
 	}).resolve();
     }
 
-    private static readonly coauthorFile       = "/faculty-coauthors.csv";
     private static readonly authorinfoFile     = "/generated-author-info.csv";
     private static readonly countryinfoFile    = "/country-info.csv";
     private static readonly aliasFile          = "/dblp-aliases.csv";
     private static readonly homepagesFile      = "/homepages.csv";
     private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
-    private static readonly showCoauthors      = false;
-    private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
 
     private static readonly parentMap : {[key : string] : string }
 	= { 'aaai' : 'ai',
@@ -224,9 +210,6 @@ class CSRankings {
     /* The data which will hold the parsed CSV of author info. */
     private static authors   : Array<Author> = [];
 
-    /* The data which will hold the parsed CSV of co-author info. */    
-    private static coauthors : Array<Coauthor> = [];
-    
     /* Map authors to the areas they have published in (for pie chart display). */
     private static authorAreas : {[name : string] : {[area : string] : number } } = {};
 
@@ -434,19 +417,6 @@ class CSRankings {
 	});
     }
 
-    private static loadCoauthors(cont : () => void ) : void {
-	Papa.parse(CSRankings.coauthorFile, {
-	    download : true,
-	    header: true,
-	    complete : (results)=> {
-		const data : any = results.data;
-		CSRankings.coauthors = data as Array<Coauthor>;
-		setTimeout(cont, 0);
-	    }
-	});
-    }
-    
-    
     private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
@@ -614,29 +584,6 @@ class CSRankings {
 	    }
 	    return 0;});
 	return keys;
-    }
-
-    private static computeCoauthors(coauthors : Array<Coauthor>,
-				    startyear : number,
-				    endyear : number,
-				    weights : {[key:string] : number})
-    : {[key : string] : Set<string> }
-    {
-	let coauthorList : {[key : string] : Set<string> } = {};
-	for (let c in coauthors) {
-	    if (!coauthors.hasOwnProperty(c)) {
-		continue;
-	    }
-	    const { author, coauthor, year, area } = coauthors[c];
-	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
-		continue;
-	    }
-	    if (!(author in coauthorList)) {
-		coauthorList[author] = new Set([]);
-	    }
-	    coauthorList[author].add(coauthor);
-	}
-	return coauthorList;
     }
 
     private static countAuthorAreas(authors : Array<Author>,
@@ -841,8 +788,7 @@ class CSRankings {
     /* Build drop down for faculty names and paper counts. */
     private static buildDropDown(deptNames : {[key: string] : Array<string> },
 				 facultycount :  {[key: string] : number},
-				 facultyAdjustedCount: {[key: string] : number},
-				 coauthorList : {[key : string] : Set<string> })
+				 facultyAdjustedCount: {[key: string] : number})
     : {[key: string] : string}
     {
 	let univtext : {[key:string] : string} = {};
@@ -872,31 +818,6 @@ class CSRankings {
 		}
 	    });
 	    for (let name of keys) {
-		if (CSRankings.showCoauthors) {
-		    /* Build up text for co-authors. */
-		    let coauthorStr = "";
-		    if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
-			coauthorList[name] = new Set([]);
-			coauthorStr = "(no senior co-authors on these papers)";
-		    } else {
-			coauthorStr = "Senior co-authors on these papers:\n";
-		    }
-		    /* Sort it by last name. */
-		    let l : Array<string> = [];
-		    coauthorList[name].forEach((item, _)=>{
-			l.push(item);
-		    });
-		    if (l.length > CSRankings.maxCoauthors) {
-			coauthorStr = "(more than "+CSRankings.maxCoauthors+" senior co-authors)";
-		    } else {
-			l.sort(CSRankings.compareNames);
-			l.forEach((item, _)=>{
-			    coauthorStr += item + "\n";
-			});
-			/* Trim off the trailing newline. */
-			coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
-		    }
-		}
 
 		let homePage = encodeURI(CSRankings.homepages[name]);
 		let dblpName = CSRankings.translateNameToDBLP(name);
@@ -927,7 +848,6 @@ class CSRankings {
 		    + '</a>'
 		    + "</small></td>"
 		    + '<td align="right"><small>'
-		//		+ '<abbr title="' + coauthorStr + '">'
 		    + (Math.round(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 		//		+ '</abbr>'
 		    + "</small></td></tr>"
@@ -1051,14 +971,6 @@ class CSRankings {
 
 	let numAreas = CSRankings.updateWeights(currentWeights);
 	
-	let coauthorList : {[key : string] : Set<string> } = {};
-	if (CSRankings.showCoauthors) {
-	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors,
-						       startyear,
-						       endyear,
-						       currentWeights);
-	}
-
 	CSRankings.authorAreas = {}
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
@@ -1092,8 +1004,7 @@ class CSRankings {
 
 	const univtext = CSRankings.buildDropDown(deptNames,
 						  facultycount,
-						  facultyAdjustedCount,
-						  coauthorList);
+						  facultyAdjustedCount);
 
 	/* Start building up the string to output. */
 	const s = CSRankings.buildOutputString(displayPercentages,
