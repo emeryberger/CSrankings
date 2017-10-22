@@ -117,7 +117,7 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
                 if now - float(checked[name]) < expirationDate:
                     continue
             s = "%10.2f" % time.time() 
-            visitedFile.write(name + "," + s + "\n")
+            visitedFile.write(name.decode('utf8') + "," + s + "\n")
             visitedFile.flush()
             dept = facultydict[name]
             print "checking "+name+" at "+dept
