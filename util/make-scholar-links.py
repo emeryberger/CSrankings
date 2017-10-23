@@ -141,7 +141,7 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
                 print(name + "," + id)
                 actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
             else:
-                print("Already there: "+name+" "+id)
+                print("Already there: "+name.decode('utf8')+" "+id)
         
             sys.stdout.flush()
 
