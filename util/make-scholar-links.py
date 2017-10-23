@@ -31,7 +31,7 @@ scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
 
 checked = csv2dict_str_str('scholar-visited.csv')
 now = time.time()
-expirationDate = 60 * 60 * 7 # One week
+expirationDate = 60 * 60 * 7 * 4 # Four weeks
 
 def getScholarID(name):
     print "Checking "+name
@@ -42,13 +42,13 @@ def getScholarID(name):
     if name in checked:
         if now - float(checked[name]) < expirationDate:
             return None
-    else:
-        checked[name] = now
     origname = name
     # Trim off any trailing numerical suffixes.
     r = re.match(".*\s\d\d\d\d$", name)
     if r != None:
         name = name[:-5]
+    if (name in scholarLinks):
+        return scholarLinks[name]
     actualID = "FIXME"
     try:
         search_query = scholarly.search_author(name)
@@ -106,8 +106,8 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
         random.shuffle(facultydictkeys)
         for name in facultydictkeys:
             now = time.time()
-            if facultydict[name] not in schools:
-                continue
+            #if facultydict[name] not in schools:
+            #    continue
             # Skip any scholarLinks we have already in the database.
             if name in aliases:
                 name = aliases[name]
@@ -116,7 +116,8 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
             if name in checked:
                 if now - float(checked[name]) < expirationDate:
                     continue
-            s = "%10.2f" % time.time() 
+            now = time.time()
+            s = "%10.2f" % now
             visitedFile.write(name.decode('utf8') + "," + s + "\n")
             visitedFile.flush()
             dept = facultydict[name]
@@ -140,6 +141,7 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
                 outfile.flush()
                 print(name + "," + id)
                 actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
+                scholarLinks[name] = id
             else:
                 print("Already there: "+name.decode('utf8')+" "+id)
         
