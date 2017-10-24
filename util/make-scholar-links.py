@@ -62,7 +62,7 @@ def getScholarID(name):
                 return actualID
     except:
         return None
-    
+    return None
 
 import requests
 
@@ -86,6 +86,20 @@ schoolList = ["Carnegie Mellon University",
               "Purdue University",
               "University of California - Los Angeles"]
 
+schoolList = [
+    "Northeastern University",
+    "New York University",
+    "University of California - Irvine",
+    "Harvard University",
+    "Pennsylvania State University",
+    "University of California - Santa Barbara",
+    "Stony Brook University",
+    "Ohio State University",
+    "Rutgers University",
+    "University of Utah",
+    "University of Minnesota",
+    "Rice University" ]
+
 schools = {}
 for s in schoolList:
     schools[s] = True
@@ -106,8 +120,8 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
         random.shuffle(facultydictkeys)
         for name in facultydictkeys:
             now = time.time()
-            #if facultydict[name] not in schools:
-            #    continue
+            if facultydict[name] not in schools:
+                continue
             # Skip any scholarLinks we have already in the database.
             if name in aliases:
                 name = aliases[name]
@@ -133,17 +147,13 @@ with codecs.open("scholar.csv", "a", "utf8") as outfile:
                 continue
             str = name + ", " + dept
             print str
-            if (not (name in scholarLinks)):
-                # It's a new name, what are you gonna do (even if it is a
-                # Google link, include it).
-                name = name.decode('utf8')
-                outfile.write(name + "," + id + "\n")
-                outfile.flush()
-                print(name + "," + id)
-                actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
-                scholarLinks[name] = id
-            else:
-                print("Already there: "+name.decode('utf8')+" "+id)
+            # It's a new name, what are you gonna do (even if it is a
+            # Google link, include it).
+            name = name.decode('utf8')
+            outfile.write(name + "," + id + "\n")
+            outfile.flush()
+            print(name + "," + id)
+            actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
         
             sys.stdout.flush()
 
