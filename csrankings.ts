@@ -862,7 +862,7 @@ class CSRankings {
 		    let url = 'https://scholar.google.com/citations?user='
 			+ CSRankings.scholarInfo[name]
 			+ '&hl=en&oi=ao';
-		    p += '<a target="_blank" href="' + url + '" '
+		    p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
 			+ 'onclick="trackOutboundLink(\''
 			+ url
 			+ '\', true); return false;"'
@@ -870,7 +870,7 @@ class CSRankings {
 			+ '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
 			+'</a>&nbsp;';
 		}
-		p += "<span onclick=\"CSRankings.toggleChart('"
+		p += "<span title=\"Click for author's publication profile.\" onclick=\"CSRankings.toggleChart('"
 		    + escape(name)
 		    + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
 		    + '</small>'
