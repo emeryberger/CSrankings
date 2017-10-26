@@ -24,6 +24,7 @@ var CSRankings = (function () {
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
+        CSRankings.geoCheck();
         for (var position = 0; position < CSRankings.areaMap.length; position++) {
             var _a = CSRankings.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
@@ -53,18 +54,15 @@ var CSRankings = (function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
                     CSRankings.loadAuthorInfo(function () {
-                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+                        CSRankings.loadCountryInfo(CSRankings.countryInfo, function () {
+                            CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank);
+                        });
                     });
                 });
             });
         };
         CSRankings.activateAll();
-        if (CSRankings.showCoauthors) {
-            CSRankings.loadCoauthors(next);
-        }
-        else {
-            next();
-        }
+        next();
         CSRankings.navigoRouter = new Navigo(null, true);
         CSRankings.navigoRouter.on('/index', function (params, query) {
             var par = params;
@@ -79,7 +77,6 @@ var CSRankings = (function () {
                 }
             });
         }).resolve();
-        CSRankings.geoCheck();
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -266,13 +263,17 @@ var CSRankings = (function () {
             }
         });
     };
-    CSRankings.loadCoauthors = function (cont) {
-        Papa.parse(CSRankings.coauthorFile, {
-            download: true,
+    CSRankings.loadScholarInfo = function (scholarInfo, cont) {
+        Papa.parse(CSRankings.scholarFile, {
             header: true,
+            download: true,
             complete: function (results) {
                 var data = results.data;
-                CSRankings.coauthors = data;
+                var d = data;
+                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
+                    var scholarPair = d_1[_i];
+                    scholarInfo[scholarPair.name] = scholarPair.scholarid;
+                }
                 setTimeout(cont, 0);
             }
         });
@@ -284,8 +285,8 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 var d = data;
-                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
-                    var aliasPair = d_1[_i];
+                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
+                    var aliasPair = d_2[_i];
                     aliases[aliasPair.alias] = aliasPair.name;
                 }
                 setTimeout(cont, 0);
@@ -339,8 +340,8 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 var d = data;
-                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
-                    var namePage = d_2[_i];
+                for (var _i = 0, d_3 = d; _i < d_3.length; _i++) {
+                    var namePage = d_3[_i];
                     if (typeof namePage.homepage === 'undefined') {
                         continue;
                     }
@@ -433,23 +434,6 @@ var CSRankings = (function () {
             return 0;
         });
         return keys;
-    };
-    CSRankings.computeCoauthors = function (coauthors, startyear, endyear, weights) {
-        var coauthorList = {};
-        for (var c in coauthors) {
-            if (!coauthors.hasOwnProperty(c)) {
-                continue;
-            }
-            var _a = coauthors[c], author = _a.author, coauthor = _a.coauthor, year = _a.year, area = _a.area;
-            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
-                continue;
-            }
-            if (!(author in coauthorList)) {
-                coauthorList[author] = new Set([]);
-            }
-            coauthorList[author].add(coauthor);
-        }
-        return coauthorList;
     };
     CSRankings.countAuthorAreas = function (authors, startyear, endyear, 
         //				    weights : {[key:string] : number},
@@ -625,13 +609,13 @@ var CSRankings = (function () {
         }
     };
     /* Build drop down for faculty names and paper counts. */
-    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount, coauthorList) {
+    CSRankings.buildDropDown = function (deptNames, facultycount, facultyAdjustedCount) {
         var univtext = {};
         var _loop_1 = function (dept) {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
             }
-            var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+            var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adjusted&nbsp;\#</abbr></em></small></td></thead><tbody>';
             /* Build a dict of just faculty from this department for sorting purposes. */
             var fc = {};
             for (var _i = 0, _a = deptNames[dept]; _i < _a.length; _i++) {
@@ -652,34 +636,8 @@ var CSRankings = (function () {
                     return fc[b] - fc[a];
                 }
             });
-            var _loop_2 = function (name_5) {
-                if (CSRankings.showCoauthors) {
-                    /* Build up text for co-authors. */
-                    var coauthorStr_1 = "";
-                    if ((!(name_5 in coauthorList)) || (coauthorList[name_5].size === 0)) {
-                        coauthorList[name_5] = new Set([]);
-                        coauthorStr_1 = "(no senior co-authors on these papers)";
-                    }
-                    else {
-                        coauthorStr_1 = "Senior co-authors on these papers:\n";
-                    }
-                    /* Sort it by last name. */
-                    var l_1 = [];
-                    coauthorList[name_5].forEach(function (item, _) {
-                        l_1.push(item);
-                    });
-                    if (l_1.length > CSRankings.maxCoauthors) {
-                        coauthorStr_1 = "(more than " + CSRankings.maxCoauthors + " senior co-authors)";
-                    }
-                    else {
-                        l_1.sort(CSRankings.compareNames);
-                        l_1.forEach(function (item, _) {
-                            coauthorStr_1 += item + "\n";
-                        });
-                        /* Trim off the trailing newline. */
-                        coauthorStr_1 = coauthorStr_1.slice(0, coauthorStr_1.length - 1);
-                    }
-                }
+            for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
+                var name_5 = keys_1[_b];
                 var homePage = encodeURI(CSRankings.homepages[name_5]);
                 var dblpName = CSRankings.translateNameToDBLP(name_5);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
@@ -691,8 +649,20 @@ var CSRankings = (function () {
                     + '\', true); return false;"'
                     + '>'
                     + name_5
-                    + '</a>&nbsp;'
-                    + "<span onclick=\"CSRankings.toggleChart('"
+                    + '</a>&nbsp;';
+                if (CSRankings.scholarInfo.hasOwnProperty(name_5)) {
+                    var url = 'https://scholar.google.com/citations?user='
+                        + CSRankings.scholarInfo[name_5]
+                        + '&hl=en&oi=ao';
+                    p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
+                        + 'onclick="trackOutboundLink(\''
+                        + url
+                        + '\', true); return false;"'
+                        + '>'
+                        + '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
+                        + '</a>&nbsp;';
+                }
+                p += "<span title=\"Click for author's publication profile.\" onclick=\"CSRankings.toggleChart('"
                     + escape(name_5)
                     + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
                     + '</small>'
@@ -714,10 +684,6 @@ var CSRankings = (function () {
                     + '<div style="display:none;" id="' + escape(name_5) + "-chart" + '">'
                     + '</div>'
                     + "</td></tr>";
-            };
-            for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
-                var name_5 = keys_1[_b];
-                _loop_2(name_5);
             }
             p += "</tbody></table></div></div>";
             univtext[dept] = p;
@@ -732,10 +698,10 @@ var CSRankings = (function () {
         /* Show the top N (with more if tied at the end) */
         var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
         if (displayPercentages) {
-            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Avg.&nbsp;Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
         }
         else {
-            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
+            s = s + '<thead><tr><th align="left">Rank&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;Faculty</th></tr></thead>';
         }
         s = s + "<tbody>";
         /* As long as there is at least one thing selected, compute and display a ranking. */
@@ -824,10 +790,6 @@ var CSRankings = (function () {
         var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
         var numAreas = CSRankings.updateWeights(currentWeights);
-        var coauthorList = {};
-        if (CSRankings.showCoauthors) {
-            coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors, startyear, endyear, currentWeights);
-        }
         CSRankings.authorAreas = {};
         CSRankings.countAuthorAreas(CSRankings.authors, startyear, endyear, 
         //				    currentWeights,
@@ -837,7 +799,7 @@ var CSRankings = (function () {
         CSRankings.stats = CSRankings.computeStats(deptNames, CSRankings.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
         /* Canonicalize names. */
         CSRankings.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
-        var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount, coauthorList);
+        var univtext = CSRankings.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
@@ -971,7 +933,12 @@ var CSRankings = (function () {
                 case "US":
                 case "CN":
                 case "IN":
-                    jQuery("#regions").val("USA");
+                case "KR":
+                case "JP":
+                case "TW":
+                case "SG":
+                    // jQuery("#regions").val("USA");
+                    // This is currently the default.
                     break;
                 default:
                     jQuery("#regions").val("world");
@@ -981,14 +948,12 @@ var CSRankings = (function () {
     };
     return CSRankings;
 }());
-CSRankings.coauthorFile = "/faculty-coauthors.csv";
 CSRankings.authorinfoFile = "/generated-author-info.csv";
 CSRankings.countryinfoFile = "/country-info.csv";
 CSRankings.aliasFile = "/dblp-aliases.csv";
 CSRankings.homepagesFile = "/homepages.csv";
+CSRankings.scholarFile = "/scholar.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-CSRankings.showCoauthors = false;
-CSRankings.maxCoauthors = 30; /* Max co-authors to display. */
 CSRankings.parentMap = { 'aaai': 'ai',
     'ijcai': 'ai',
     'cvpr': 'vision',
@@ -1045,6 +1010,8 @@ CSRankings.otherFields = [];
 CSRankings.areaDict = {};
 /* Map area to its position in the list. */
 CSRankings.areaPosition = {};
+/* Map names to Google Scholar IDs. */
+CSRankings.scholarInfo = {};
 /* Map aliases to canonical author name. */
 CSRankings.aliases = {};
 /* Map institution to (non-US) region. */
@@ -1055,8 +1022,6 @@ CSRankings.homepages = {};
 CSRankings.useDenseRankings = false;
 /* The data which will hold the parsed CSV of author info. */
 CSRankings.authors = [];
-/* The data which will hold the parsed CSV of co-author info. */
-CSRankings.coauthors = [];
 /* Map authors to the areas they have published in (for pie chart display). */
 CSRankings.authorAreas = {};
 /* Computed stats (univagg). */

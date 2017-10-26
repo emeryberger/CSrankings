@@ -36,13 +36,6 @@ interface Author {
     readonly year : number;
 };
 
-interface Coauthor {
-    readonly author : string;
-    readonly coauthor : string;
-    readonly year : number;
-    readonly area : string;
-};
-
 interface CountryInfo {
     readonly institution : string;
     readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "asia" | "world";
@@ -56,6 +49,11 @@ interface Alias {
 interface HomePage {
     readonly name : string;
     readonly homepage : string;
+};
+
+interface ScholarID {
+    readonly name : string;
+    readonly scholarid : string;
 };
 
 interface AreaMap {
@@ -77,6 +75,7 @@ class CSRankings {
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
 	*/
+	CSRankings.geoCheck();
 	for (let position = 0; position < CSRankings.areaMap.length; position++) {
 	    const { area, title } = CSRankings.areaMap[position];
 	    CSRankings.areas[position]     = area;
@@ -104,17 +103,14 @@ class CSRankings {
 					 function() {
 					     CSRankings.loadAuthorInfo(function() {
 						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
-									    CSRankings.rank);
+									    function() {
+										CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank); });
 					     });
 					 });
 	    });
 	};
 	CSRankings.activateAll();
-	if (CSRankings.showCoauthors) {
-	    CSRankings.loadCoauthors(next);
-	} else {
-	    next();
-	}
+	next();
 	CSRankings.navigoRouter = new Navigo(null, true);
 	CSRankings.navigoRouter.on('/index', function(params, query) {
 	    let par = params;
@@ -129,17 +125,14 @@ class CSRankings {
 		}
 	    });
 	}).resolve();
-	CSRankings.geoCheck();
     }
 
-    private static readonly coauthorFile       = "/faculty-coauthors.csv";
     private static readonly authorinfoFile     = "/generated-author-info.csv";
     private static readonly countryinfoFile    = "/country-info.csv";
     private static readonly aliasFile          = "/dblp-aliases.csv";
     private static readonly homepagesFile      = "/homepages.csv";
+    private static readonly scholarFile        = "/scholar.csv";
     private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
-    private static readonly showCoauthors      = false;
-    private static readonly maxCoauthors       = 30;      /* Max co-authors to display. */
 
     private static readonly parentMap : {[key : string] : string }
 	= { 'aaai' : 'ai',
@@ -207,6 +200,9 @@ class CSRankings {
     /* Map area to its position in the list. */
     private static readonly areaPosition : {[key : string] : number } = {};
 
+    /* Map names to Google Scholar IDs. */
+    private static readonly scholarInfo : {[key : string] : string } = {};
+    
     /* Map aliases to canonical author name. */
     private static readonly aliases : {[key : string] : string } = {};
 
@@ -224,9 +220,6 @@ class CSRankings {
     /* The data which will hold the parsed CSV of author info. */
     private static authors   : Array<Author> = [];
 
-    /* The data which will hold the parsed CSV of co-author info. */    
-    private static coauthors : Array<Coauthor> = [];
-    
     /* Map authors to the areas they have published in (for pie chart display). */
     private static authorAreas : {[name : string] : {[area : string] : number } } = {};
 
@@ -434,18 +427,21 @@ class CSRankings {
 	});
     }
 
-    private static loadCoauthors(cont : () => void ) : void {
-	Papa.parse(CSRankings.coauthorFile, {
-	    download : true,
+    private static loadScholarInfo(scholarInfo: {[key : string] : string },
+				   cont : ()=> void ) : void {
+	Papa.parse(CSRankings.scholarFile, {
 	    header: true,
+	    download : true,
 	    complete : (results)=> {
 		const data : any = results.data;
-		CSRankings.coauthors = data as Array<Coauthor>;
+		const d = data as Array<ScholarID>;
+		for (let scholarPair of d) {
+		    scholarInfo[scholarPair.name] = scholarPair.scholarid;
+		}
 		setTimeout(cont, 0);
 	    }
 	});
     }
-    
     
     private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
@@ -614,29 +610,6 @@ class CSRankings {
 	    }
 	    return 0;});
 	return keys;
-    }
-
-    private static computeCoauthors(coauthors : Array<Coauthor>,
-				    startyear : number,
-				    endyear : number,
-				    weights : {[key:string] : number})
-    : {[key : string] : Set<string> }
-    {
-	let coauthorList : {[key : string] : Set<string> } = {};
-	for (let c in coauthors) {
-	    if (!coauthors.hasOwnProperty(c)) {
-		continue;
-	    }
-	    const { author, coauthor, year, area } = coauthors[c];
-	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
-		continue;
-	    }
-	    if (!(author in coauthorList)) {
-		coauthorList[author] = new Set([]);
-	    }
-	    coauthorList[author].add(coauthor);
-	}
-	return coauthorList;
     }
 
     private static countAuthorAreas(authors : Array<Author>,
@@ -841,8 +814,7 @@ class CSRankings {
     /* Build drop down for faculty names and paper counts. */
     private static buildDropDown(deptNames : {[key: string] : Array<string> },
 				 facultycount :  {[key: string] : number},
-				 facultyAdjustedCount: {[key: string] : number},
-				 coauthorList : {[key : string] : Set<string> })
+				 facultyAdjustedCount: {[key: string] : number})
     : {[key: string] : string}
     {
 	let univtext : {[key:string] : string} = {};
@@ -852,7 +824,7 @@ class CSRankings {
 		continue;
 	    }
 	    
-	    let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	    let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adjusted&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	    /* Build a dict of just faculty from this department for sorting purposes. */
 	    let fc : {[key:string] : number} = {};
 	    for (let name of deptNames[dept]) {
@@ -872,31 +844,6 @@ class CSRankings {
 		}
 	    });
 	    for (let name of keys) {
-		if (CSRankings.showCoauthors) {
-		    /* Build up text for co-authors. */
-		    let coauthorStr = "";
-		    if ((!(name in coauthorList)) || (coauthorList[name].size === 0)) {
-			coauthorList[name] = new Set([]);
-			coauthorStr = "(no senior co-authors on these papers)";
-		    } else {
-			coauthorStr = "Senior co-authors on these papers:\n";
-		    }
-		    /* Sort it by last name. */
-		    let l : Array<string> = [];
-		    coauthorList[name].forEach((item, _)=>{
-			l.push(item);
-		    });
-		    if (l.length > CSRankings.maxCoauthors) {
-			coauthorStr = "(more than "+CSRankings.maxCoauthors+" senior co-authors)";
-		    } else {
-			l.sort(CSRankings.compareNames);
-			l.forEach((item, _)=>{
-			    coauthorStr += item + "\n";
-			});
-			/* Trim off the trailing newline. */
-			coauthorStr = coauthorStr.slice(0,coauthorStr.length-1);
-		    }
-		}
 
 		let homePage = encodeURI(CSRankings.homepages[name]);
 		let dblpName = CSRankings.translateNameToDBLP(name);
@@ -910,8 +857,20 @@ class CSRankings {
 		    + '\', true); return false;"'
 		    + '>' 
 		    + name
-		    + '</a>&nbsp;'
-		    + "<span onclick=\"CSRankings.toggleChart('"
+		    + '</a>&nbsp;';
+		if (CSRankings.scholarInfo.hasOwnProperty(name)) {
+		    let url = 'https://scholar.google.com/citations?user='
+			+ CSRankings.scholarInfo[name]
+			+ '&hl=en&oi=ao';
+		    p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
+			+ 'onclick="trackOutboundLink(\''
+			+ url
+			+ '\', true); return false;"'
+			+ '>'
+			+ '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
+			+'</a>&nbsp;';
+		}
+		p += "<span title=\"Click for author's publication profile.\" onclick=\"CSRankings.toggleChart('"
 		    + escape(name)
 		    + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
 		    + '</small>'
@@ -927,7 +886,6 @@ class CSRankings {
 		    + '</a>'
 		    + "</small></td>"
 		    + '<td align="right"><small>'
-		//		+ '<abbr title="' + coauthorStr + '">'
 		    + (Math.round(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
 		//		+ '</abbr>'
 		    + "</small></td></tr>"
@@ -955,9 +913,9 @@ class CSRankings {
 	let minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
 
 	if (displayPercentages) {
-	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Avg.&nbsp;Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
 	} else {
-	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
+	    s = s + '<thead><tr><th align="left">Rank&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;Faculty</th></tr></thead>';
 	}
 	s = s + "<tbody>";
 	/* As long as there is at least one thing selected, compute and display a ranking. */
@@ -1051,14 +1009,6 @@ class CSRankings {
 
 	let numAreas = CSRankings.updateWeights(currentWeights);
 	
-	let coauthorList : {[key : string] : Set<string> } = {};
-	if (CSRankings.showCoauthors) {
-	    coauthorList = CSRankings.computeCoauthors(CSRankings.coauthors,
-						       startyear,
-						       endyear,
-						       currentWeights);
-	}
-
 	CSRankings.authorAreas = {}
 	CSRankings.countAuthorAreas(CSRankings.authors,
 				    startyear,
@@ -1092,8 +1042,7 @@ class CSRankings {
 
 	const univtext = CSRankings.buildDropDown(deptNames,
 						  facultycount,
-						  facultyAdjustedCount,
-						  coauthorList);
+						  facultyAdjustedCount);
 
 	/* Start building up the string to output. */
 	const s = CSRankings.buildOutputString(displayPercentages,
@@ -1235,10 +1184,15 @@ class CSRankings {
 	// the default regions accordingly.
 	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
 	    switch (result.country_code) {
-	    case "US" :
+	    case "US":
 	    case "CN":
 	    case "IN":
-		jQuery("#regions").val("USA");
+	    case "KR":
+	    case "JP":
+	    case "TW":
+	    case "SG":
+		// jQuery("#regions").val("USA");
+		// This is currently the default.
 		break;
 	    default :
 		jQuery("#regions").val("world");
