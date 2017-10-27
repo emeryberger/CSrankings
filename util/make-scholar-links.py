@@ -1,5 +1,10 @@
-# Identify faculty home pages.
-#import google
+# CSRankings
+# Copyright (C) 2017 by Emery Berger <http://emeryberger.com>
+# See COPYING for license information.
+
+#
+# Gather Google Scholar links for faculty.
+#
 
 import os
 import scholarly
@@ -12,7 +17,36 @@ import urllib2
 import operator
 import re
 import time
+import fcntl
 
+theCounter = 0
+maxBeforeEnd = 20 # Only do this many lookups before exiting.
+expirationDate = 60 * 60 * 7 * 4 # Try again after four weeks
+
+def lockfile(x):
+    while True:
+        try:
+            fcntl.flock(x, fcntl.LOCK_EX)
+            break
+        except IOError as e:
+            # raise on unrelated IOErrors
+            if e.errno != errno.EAGAIN:
+                raise
+            else:
+                time.sleep(0.1)
+
+def unlockfile(x):
+    while True:
+        try:
+            fcntl.flock(x, fcntl.LOCK_UN)
+            break
+        except IOError as e:
+            # raise on unrelated IOErrors
+            if e.errno != errno.EAGAIN:
+                raise
+            else:
+                time.sleep(0.1)
+    
 def csv2dict_str_str(fname):
     import csv
     with open(fname, mode='r') as infile:
@@ -31,13 +65,16 @@ scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
 
 checked = csv2dict_str_str('scholar-visited.csv')
 now = time.time()
-expirationDate = 60 * 60 * 7 * 4 # Four weeks
+
+countryInfo = csv2dict_str_str('country-info.csv')
+
+me = str(os.getpid())
 
 def getScholarID(name):
-    print "Checking "+name
+    print "["+me+"] Checking "+name
     if name in scholarLinks:
         # Already there.
-        print "Found"
+        print "["+me+"] Found"
         return scholarLinks[name]
     if name in checked:
         if now - float(checked[name]) < expirationDate:
@@ -60,100 +97,73 @@ def getScholarID(name):
                 actualID = value
                 scholarLinks[origname] = actualID
                 return actualID
-    except:
+    except Exception:
         return None
     return None
 
 import requests
 
-# Working through top 20 US first, then the rest.
-schoolList = ["Carnegie Mellon University",
-              "Massachusetts Institute of Technology",
-              "Stanford University",
-              "University of California - Berkeley",
-              "University of Illinois at Urbana-Champaign",
-              "Cornell University",
-              "University of Michigan",
-              "University of Washington",
-              "Georgia Institute of Technology",
-              "University of California - San Diego",
-              "Columbia University",
-              "University of Wisconsin - Madison",
-              "University of Southern California",
-              "University of Pennsylvania",
-              "University of Texas at Austin",
-              "Princeton University",
-              "Purdue University",
-              "University of California - Los Angeles"]
+              
+newvisited = {}
+newscholarLinks = {}
 
-schoolList = [
-    "Northeastern University",
-    "New York University",
-    "University of California - Irvine",
-    "Harvard University",
-    "Pennsylvania State University",
-    "University of California - Santa Barbara",
-    "Stony Brook University",
-    "Ohio State University",
-    "Rutgers University",
-    "University of Utah",
-    "University of Minnesota",
-    "Rice University" ]
+facultydictkeys = list(facultydict.keys())
+random.shuffle(facultydictkeys)
+for name in facultydictkeys:
+    if theCounter >= maxBeforeEnd:
+        # Write everything out.
+        with codecs.open("scholar.csv", "a+", "utf8") as scholarFile:
+            lockfile(scholarFile)
+            for n in newscholarLinks:
+                try:
+                    scholarFile.write(n.decode('utf8')+","+newscholarLinks[n]+"\n")
+                except Exception:
+                    pass
+            unlockfile(scholarFile)
+        with codecs.open("scholar-visited.csv", "a+", "utf8") as visitedFile:
+            lockfile(visitedFile)
+            for n in newvisited:
+                try:
+                    visitedFile.write(n.decode('utf8')+","+newvisited[n]+"\n")
+                except Exception:
+                    pass
+            unlockfile(visitedFile)
+            exit()
+    now = time.time()
+    #if facultydict[name] not in countryInfo:
+    #    continue
 
-schools = {}
-for s in schoolList:
-    schools[s] = True
-
-with codecs.open("scholar2.csv", "w", "utf8") as outfile:
-    outfile.write("name,scholarid\n")
-    for name in scholarLinks:
-        if (name == "name"):
+    # Canonicalize.
+    if name in aliases:
+        name = aliases[name]
+    # Skip any scholarLinks we have already in the database.
+    if name in scholarLinks:
+        continue
+    # Check expiration date.
+    if name in checked:
+        if now - float(checked[name]) < expirationDate:
             continue
-        outfile.write(name.decode('utf8') + "," + scholarLinks[name] + "\n")
-    outfile.flush()
-
-os.rename("scholar2.csv","scholar.csv")
-
-with codecs.open("scholar.csv", "a", "utf8") as outfile:
-    with codecs.open("scholar-visited.csv", "a", "utf8") as visitedFile:
-        facultydictkeys = list(facultydict.keys())
-        random.shuffle(facultydictkeys)
-        for name in facultydictkeys:
-            now = time.time()
-            if facultydict[name] not in schools:
-                continue
-            # Skip any scholarLinks we have already in the database.
-            if name in aliases:
-                name = aliases[name]
-            if name in scholarLinks:
-                continue
-            if name in checked:
-                if now - float(checked[name]) < expirationDate:
-                    continue
-            now = time.time()
-            s = "%10.2f" % now
-            visitedFile.write(name.decode('utf8') + "," + s + "\n")
-            visitedFile.flush()
-            dept = facultydict[name]
-            print "checking "+name+" at "+dept
-            id = getScholarID(name)
-            if id == None:
-                # Try to remove a middle name.
-                r = re.match(".* [A-Z]\. *", name)
-                if r != None:
-                    nomiddlename = re.sub(" [A-Z]\. ", " ", name)
-                    id = getScholarID(nomiddlename)
-            if id == None:
-                continue
-            str = name + ", " + dept
-            print str
-            # It's a new name, what are you gonna do (even if it is a
-            # Google link, include it).
-            name = name.decode('utf8')
-            outfile.write(name + "," + id + "\n")
-            outfile.flush()
-            print(name + "," + id)
-            actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
-        
-            sys.stdout.flush()
+    s = "%10.2f" % now
+    theCounter += 1
+    newvisited[name] = s
+    dept = facultydict[name]
+    print "["+me+"] checking "+name+" at "+dept
+    id = getScholarID(name)
+    if id == None:
+        # Try to remove a middle name.
+        r = re.match(".* [A-Z]\. *", name)
+        if r != None:
+            nomiddlename = re.sub(" [A-Z]\. ", " ", name)
+            id = getScholarID(nomiddlename)
+    if id == None:
+        continue
+    str = name + ", " + dept
+    print "["+me+"] "+str
+    name = name.decode('utf8')
+    print("["+me+"] " + name + "," + id)
+    newscholarLinks[name] = id
+    # actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
+    
+    sys.stdout.flush()
+    time.sleep(2)
 
