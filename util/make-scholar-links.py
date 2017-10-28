@@ -164,9 +164,9 @@ for name in facultydictkeys:
         continue
     str = name + ", " + dept
     print "["+me+"] "+str
+    newscholarLinks[name] = id
     name = name.decode('utf8')
     print("["+me+"] " + name + "," + id)
-    newscholarLinks[name] = id
     # actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
     
     sys.stdout.flush()
