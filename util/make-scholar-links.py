@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # CSRankings
 # Copyright (C) 2017 by Emery Berger <http://emeryberger.com>
 # See COPYING for license information.
@@ -18,8 +20,8 @@ import operator
 import re
 import time
 import fcntl
+import requests
 
-theCounter = 0
 maxBeforeEnd = 20 # Only do this many lookups before exiting.
 expirationDate = 60 * 60 * 7 * 4 # Try again after four weeks
 
@@ -58,17 +60,13 @@ def csv2dict_str_str(fname):
 
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
-scholarLinks1 = csv2dict_str_str('scholar.csv')
+facultydictkeys = list(facultydict.keys())
 aliases = csv2dict_str_str('dblp-aliases.csv')
-# Sort
-scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
-
-checked = csv2dict_str_str('scholar-visited.csv')
-now = time.time()
-
 countryInfo = csv2dict_str_str('country-info.csv')
-
+scholarLinks = {}
+checked = {}
 me = str(os.getpid())
+
 
 def getScholarID(name):
     print "["+me+"] Checking "+name
@@ -101,13 +99,20 @@ def getScholarID(name):
         return None
     return None
 
-import requests
 
+theCounter = 0
+scholarLinks1 = csv2dict_str_str('scholar.csv')
+# Sort
+scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
+
+checked = csv2dict_str_str('scholar-visited.csv')
+now = time.time()
               
 newvisited = {}
 newscholarLinks = {}
 
-facultydictkeys = list(facultydict.keys())
+print sys.argv[0]
+
 random.shuffle(facultydictkeys)
 for name in facultydictkeys:
     if theCounter >= maxBeforeEnd:
@@ -128,7 +133,7 @@ for name in facultydictkeys:
                 except Exception:
                     pass
             unlockfile(visitedFile)
-            exit()
+            os.system(sys.argv[0])
     now = time.time()
     #if facultydict[name] not in countryInfo:
     #    continue
