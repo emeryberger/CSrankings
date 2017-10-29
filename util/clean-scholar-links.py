@@ -1,4 +1,11 @@
+#!/usr/bin/env python
+
+# CSRankings
+# Copyright (C) 2017 by Emery Berger <http://emeryberger.com>
+# See COPYING for license information.
+
 # Clean faculty scholar links (sort).
+
 #import google
 
 import os
