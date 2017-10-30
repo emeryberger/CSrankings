@@ -76,6 +76,7 @@ def getScholarID(name):
         return scholarLinks[name]
     if name in checked:
         if now - float(checked[name]) < expirationDate:
+            print "["+me+"] last visited too recently."
             return None
     origname = name
     # Trim off any trailing numerical suffixes.
@@ -95,7 +96,8 @@ def getScholarID(name):
                 actualID = value
                 scholarLinks[origname] = actualID
                 return actualID
-    except Exception:
+    except Exception as e:
+        print "["+me+"] not found (exception)."
         return None
     return None
 
@@ -152,7 +154,7 @@ for name in facultydictkeys:
     theCounter += 1
     newvisited[name] = s
     dept = facultydict[name]
-    print "["+me+"] checking "+name+" at "+dept
+    # print "["+me+"] checking "+name+" at "+dept
     id = getScholarID(name)
     if id == None:
         # Try to remove a middle name.
