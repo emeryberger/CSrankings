@@ -118,24 +118,7 @@ print sys.argv[0]
 random.shuffle(facultydictkeys)
 for name in facultydictkeys:
     if theCounter >= maxBeforeEnd:
-        # Write everything out.
-        with codecs.open("scholar.csv", "a+", "utf8") as scholarFile:
-            lockfile(scholarFile)
-            for n in newscholarLinks:
-                try:
-                    scholarFile.write(n.decode('utf8')+","+newscholarLinks[n]+"\n")
-                except Exception:
-                    pass
-            unlockfile(scholarFile)
-        with codecs.open("scholar-visited.csv", "a+", "utf8") as visitedFile:
-            lockfile(visitedFile)
-            for n in newvisited:
-                try:
-                    visitedFile.write(n.decode('utf8')+","+newvisited[n]+"\n")
-                except Exception:
-                    pass
-            unlockfile(visitedFile)
-            os.system(sys.argv[0])
+        break
     now = time.time()
     #if facultydict[name] not in countryInfo:
     #    continue
@@ -173,4 +156,27 @@ for name in facultydictkeys:
     
     sys.stdout.flush()
     time.sleep(2)
+
+# Write everything out.
+with codecs.open("scholar.csv", "a+", "utf8") as scholarFile:
+    lockfile(scholarFile)
+    for n in newscholarLinks:
+        try:
+            scholarFile.write(n.decode('utf8')+","+newscholarLinks[n]+"\n")
+        except Exception as e:
+            print "file writing exception."
+            pass
+    unlockfile(scholarFile)
+with codecs.open("scholar-visited.csv", "a+", "utf8") as visitedFile:
+    lockfile(visitedFile)
+    for n in newvisited:
+        try:
+            visitedFile.write(n.decode('utf8')+","+newvisited[n]+"\n")
+        except Exception:
+            pass
+    unlockfile(visitedFile)
+
+if theCounter >= maxBeforeEnd:
+    # Reload and keep going.
+    os.system(sys.argv[0])
 
