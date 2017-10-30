@@ -23,7 +23,7 @@ import fcntl
 import requests
 
 maxBeforeEnd = 20 # Only do this many lookups before exiting.
-expirationDate = 60 * 60 * 7 * 4 # Try again after four weeks
+expirationDate = 60 * 60 * 24 * 7 * 4 # Try again after four weeks
 
 def lockfile(x):
     while True:
