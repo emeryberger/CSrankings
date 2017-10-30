@@ -113,8 +113,6 @@ now = time.time()
 newvisited = {}
 newscholarLinks = {}
 
-print sys.argv[0]
-
 random.shuffle(facultydictkeys)
 for name in facultydictkeys:
     if theCounter >= maxBeforeEnd:
