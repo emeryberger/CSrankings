@@ -23,7 +23,7 @@ import fcntl
 import requests
 
 maxBeforeEnd = 20 # Only do this many lookups before exiting.
-expirationDate = 60 * 60 * 24 * 7 * 4 # Try again after four weeks
+expirationDate = 60 * 60 * 24 * 7 * 5 # Try again after five weeks
 
 def lockfile(x):
     while True:
@@ -176,7 +176,7 @@ with codecs.open("scholar-visited.csv", "a+", "utf8") as visitedFile:
             pass
     unlockfile(visitedFile)
 
-if theCounter >= maxBeforeEnd:
+#if theCounter >= maxBeforeEnd:
     # Reload and keep going.
-    os.system(sys.argv[0])
+    # os.system(sys.argv[0])
 
