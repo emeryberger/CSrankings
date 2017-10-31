@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # CSRankings
 # Copyright (C) 2017 by Emery Berger <http://emeryberger.com>
 # See COPYING for license information.
@@ -18,10 +20,10 @@ import operator
 import re
 import time
 import fcntl
+import requests
 
-theCounter = 0
 maxBeforeEnd = 20 # Only do this many lookups before exiting.
-expirationDate = 60 * 60 * 7 * 4 # Try again after four weeks
+expirationDate = 60 * 60 * 24 * 7 * 5 # Try again after five weeks
 
 def lockfile(x):
     while True:
@@ -58,17 +60,13 @@ def csv2dict_str_str(fname):
 
 
 facultydict = csv2dict_str_str('faculty-affiliations.csv')
-scholarLinks1 = csv2dict_str_str('scholar.csv')
+facultydictkeys = list(facultydict.keys())
 aliases = csv2dict_str_str('dblp-aliases.csv')
-# Sort
-scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
-
-checked = csv2dict_str_str('scholar-visited.csv')
-now = time.time()
-
 countryInfo = csv2dict_str_str('country-info.csv')
-
+scholarLinks = {}
+checked = {}
 me = str(os.getpid())
+
 
 def getScholarID(name):
     print "["+me+"] Checking "+name
@@ -78,6 +76,7 @@ def getScholarID(name):
         return scholarLinks[name]
     if name in checked:
         if now - float(checked[name]) < expirationDate:
+            print "["+me+"] last visited too recently."
             return None
     origname = name
     # Trim off any trailing numerical suffixes.
@@ -97,38 +96,27 @@ def getScholarID(name):
                 actualID = value
                 scholarLinks[origname] = actualID
                 return actualID
-    except Exception:
+    except Exception as e:
+        print "["+me+"] not found (exception)."
         return None
     return None
 
-import requests
 
+theCounter = 0
+scholarLinks1 = csv2dict_str_str('scholar.csv')
+# Sort
+scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
+
+checked = csv2dict_str_str('scholar-visited.csv')
+now = time.time()
               
 newvisited = {}
 newscholarLinks = {}
 
-facultydictkeys = list(facultydict.keys())
 random.shuffle(facultydictkeys)
 for name in facultydictkeys:
     if theCounter >= maxBeforeEnd:
-        # Write everything out.
-        with codecs.open("scholar.csv", "a+", "utf8") as scholarFile:
-            lockfile(scholarFile)
-            for n in newscholarLinks:
-                try:
-                    scholarFile.write(n.decode('utf8')+","+newscholarLinks[n]+"\n")
-                except Exception:
-                    pass
-            unlockfile(scholarFile)
-        with codecs.open("scholar-visited.csv", "a+", "utf8") as visitedFile:
-            lockfile(visitedFile)
-            for n in newvisited:
-                try:
-                    visitedFile.write(n.decode('utf8')+","+newvisited[n]+"\n")
-                except Exception:
-                    pass
-            unlockfile(visitedFile)
-            exit()
+        break
     now = time.time()
     #if facultydict[name] not in countryInfo:
     #    continue
@@ -147,7 +135,7 @@ for name in facultydictkeys:
     theCounter += 1
     newvisited[name] = s
     dept = facultydict[name]
-    print "["+me+"] checking "+name+" at "+dept
+    # print "["+me+"] checking "+name+" at "+dept
     id = getScholarID(name)
     if id == None:
         # Try to remove a middle name.
@@ -159,11 +147,34 @@ for name in facultydictkeys:
         continue
     str = name + ", " + dept
     print "["+me+"] "+str
+    newscholarLinks[name] = id
     name = name.decode('utf8')
     print("["+me+"] " + name + "," + id)
-    newscholarLinks[name] = id
     # actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
     
     sys.stdout.flush()
     time.sleep(2)
+
+# Write everything out.
+with codecs.open("scholar.csv", "a+", "utf8") as scholarFile:
+    lockfile(scholarFile)
+    for n in newscholarLinks:
+        try:
+            scholarFile.write(n.decode('utf8')+","+newscholarLinks[n]+"\n")
+        except Exception as e:
+            print "file writing exception."
+            pass
+    unlockfile(scholarFile)
+with codecs.open("scholar-visited.csv", "a+", "utf8") as visitedFile:
+    lockfile(visitedFile)
+    for n in newvisited:
+        try:
+            visitedFile.write(n.decode('utf8')+","+newvisited[n]+"\n")
+        except Exception:
+            pass
+    unlockfile(visitedFile)
+
+#if theCounter >= maxBeforeEnd:
+    # Reload and keep going.
+    # os.system(sys.argv[0])
 
