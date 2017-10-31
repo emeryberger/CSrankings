@@ -2,7 +2,7 @@ TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations
 
-all: generated-author-info.csv csrankings.js fix-affiliations home-pages # scholar-links
+all: generated-author-info.csv csrankings.js fix-affiliations home-pages scholar-links
 
 clean:
 	rm $(TARGETS)
@@ -40,7 +40,8 @@ home-pages: faculty-affiliations.csv homepages.csv
 scholar-links: faculty-affiliations.csv homepages.csv
 	@echo "Rebuilding Google Scholar links (scholar.csv)."
 	@python util/make-scholar-links.py
-#	@echo "Cleaning home pages."
+	@echo "Cleaning Scholar links."
+	@python util/clean-scholar-links.py
 #	@python util/clean-web-pages.py
 #	@mv homepages-sorted.csv homepages.csv
 	@echo "Done."

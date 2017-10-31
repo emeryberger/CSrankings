@@ -17,6 +17,8 @@ department.
 
 - [ ] Change the home page by modifying the file `homepages.csv`.
 
+- [ ] Update the Google Scholar entry by modifying the file `scholar.csv` (not the entire Google Scholar URL; just the alphanumeric identifier in the middle of the URL).
+
 **Adding one or more faculty members (including an entire department)**
 
 - [ ] If the department is not yet listed in CSrankings, the entire faculty needs to be added (not just one faculty member).
@@ -27,6 +29,8 @@ department.
 
 - [ ] Enter their home page by modifying the file `homepages.csv`.
 (CSrankings has an automatic home page generator, but it is not perfect.)
+
+- [ ] Enter their Google Scholar entry by modifying the file `scholar.csv` (not the entire Google Scholar URL; just the alphanumeric identifier in the middle of the URL).
 
 - [ ] If the institution you are adding is not in the US,
 update `country-info.csv`.

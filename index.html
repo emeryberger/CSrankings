@@ -7,7 +7,7 @@
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     <title>CSRankings: Computer Science Rankings</title>
 
@@ -146,20 +146,12 @@
 	  <div class="panel panel-info">
 	    <div class="panel-heading">
 	      <p>
-		This ranking of top computer science schools is
-		designed to identify institutions and faculty actively
-		engaged in research across a number of areas of
-		computer science, based on the number of publications
-		by faculty that have appeared at the most selective
-		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
-	      </p>
-
-	      <p>
-		<b>Click on a triangle</b> (&#9658;) to see
+		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to see
 		conferences or faculty names and number of
 		publications. <b>Click on a name</b> to go to a
 		faculty member's home page. <b>Click on a pie</b> (the
-		<b>&#9685;</b> after a name or institution) to see their
+		<font color="blue"><b>&#9685;</b></font>
+		after a name or institution) to see their
 		publication profile as a pie chart. <b>Click on a
 		Google Scholar icon</b>
 		(<img src="https://scholar.google.com/favicon.ico"
@@ -169,7 +161,7 @@
 	      </p>
 	      <div class="row">
 		<!-- col-xs-3 col-sm-6 col-md-4  -->
-		<div class="col-3 col-xs-3 col-sm-6 col-md-12 col-lg-12">
+		<div class="col-6 col-xs-6 col-sm-12 col-md-12 col-lg-12">
 	      Rank 
 	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
 		<option value="10">the top 10</option>
@@ -190,8 +182,9 @@
 		<option value="europe">Europe</option>
 		<option value="world">the world</option>
 	      </select>
-	      by average count
-	      of publications from
+	      by publications from
+<!--	      by average count
+	      of publications from -->
 	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
 		<option value="1970">1970</option>  
 		<option value="1971">1971</option>  
@@ -290,7 +283,7 @@
 	  
 	  <div class="row">
 	    <!-- col-xs-3 col-sm-6 col-md-4  -->
-	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	    <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
 	      <div class="table">
 		<table class="table-sm table-striped">
 
@@ -427,7 +420,7 @@
 			<span onclick="CSRankings.toggleConferences('ir')" class="hovertip" id="ir-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			The Web &amp; information retrieval
+			The Web &amp; information retrieval&nbsp;
 			<div class="table" style="display:none;" id="ir-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -597,7 +590,7 @@
 			<span onclick="CSRankings.toggleConferences('bed')" class="hovertip" id="bed-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Embedded and real-time systems
+			Embedded &amp; real-time systems
 			<div class="table" style="display:none;" id="bed-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -675,8 +668,7 @@
 			<span onclick="CSRankings.toggleConferences('metrics')" class="hovertip" id="metrics-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Measurement &amp; performance analysis
-			&nbsp;&nbsp;&nbsp;
+			Measurement &amp; perf. analysis&nbsp;
 			<div class="table" style="display:none;" id="metrics-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -844,7 +836,7 @@
 			<span onclick="CSRankings.toggleConferences('log')" class="hovertip" id="log-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Logic and verification
+			Logic &amp; verification
 			<div class="table" style="display:none;" id="log-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -883,7 +875,7 @@
 			<span onclick="CSRankings.toggleConferences('bio')" class="hovertip" id="bio-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Computational bio &amp; bioinformatics
+			Comp. bio &amp; bioinformatics
 			<div class="table" style="display:none;" id="bio-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -1039,7 +1031,7 @@
 	    
 	    <div class="row">
 	      <!-- col-xs-6 col-sm-6 col-md-4  -->
-	      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	      <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
 		<div id="success">
 		  <strong><h4>Loading and processing data. Please wait.</h4></strong>
 		</div>
@@ -1047,9 +1039,18 @@
 	    </div>
 	  </div>
 <div class="page-footer">
+	      <p>
+		This ranking of top computer science schools is
+		designed to identify institutions and faculty actively
+		engaged in research across a number of areas of
+		computer science, based on the number of publications
+		by faculty that have appeared at the most selective
+		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
+	      </p>
+
             <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated October 17, 2017).<br />
-	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP. Alternatively, use <b><a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">this form</a></b> for individual updates.<br />
+	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated October 30, 2017).<br />
+	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP. Alternatively, use <b><a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">this form</a></b> for individual updates.
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 	      <p>

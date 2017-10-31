@@ -286,6 +286,7 @@ class CSRankings {
 	    + "<body>"
 	    + '<div class="row">'
 	    + '<div class="table" style="overflow:auto; height: 650px;">'
+	    //+ '<div class="table" style="height: 650px;">'
 	    + '<table class="table-sm table-striped"'
 	    + 'id="ranking" valign="top">';
 	return s;

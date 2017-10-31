@@ -85,6 +85,7 @@
 //inproceedings[booktitle="SIGCOMM"],
 //inproceedings[booktitle="INFOCOM"],
 //inproceedings[booktitle="NSDI"],
+//article[journal="PACMPL"],
 //inproceedings[booktitle="POPL"],
 //inproceedings[booktitle="PLDI"],
 //inproceedings[booktitle="ICFP"],
