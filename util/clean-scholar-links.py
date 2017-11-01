@@ -39,12 +39,18 @@ with codecs.open("scholar2.csv", "w", "utf8") as outfile:
 
 os.rename("scholar2.csv","scholar.csv")
 
-checked = csv2dict_str_str('scholar-visited.csv')
-os.rename('scholar-visited.csv','scholar-visited-'+str(time.time())+'.csv')
+checked1 = csv2dict_str_str('scholar-visited.csv')
+# Sort
+checked = OrderedDict(sorted(checked1.items(), key=lambda t: t[0]))
+
+now = time.time()
+os.rename('scholar-visited.csv','scholar-visited-'+str(now)+'.csv')
 with codecs.open("scholar-visited.csv", "w", "utf8") as visitedFile:
     visitedFile.write('name,date\n')
     for name in checked:
         visitedFile.write(name.decode('utf8') + "," + str(checked[name]) + "\n")
+
+os.remove('scholar-visited-'+str(now)+'.csv')
 
         
 
