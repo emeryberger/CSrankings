@@ -12,7 +12,7 @@ areadict = {
     # Max three most selective venues per area for now.
     #
     # SIGPLAN
-    'plan': ['POPL', 'PLDI'],  # , 'OOPSLA'],
+    'plan': ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
     # SIGHPC
     'hpc': ['SC', 'HPDC', 'ICS'],
     # SIGLOG
@@ -407,6 +407,11 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             if url.find('innovations') != -1:
                 return False
 
+    elif confname == 'PACMPL':
+        # POPL special handling
+        if number != 'POPL':
+            return False
+        
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
