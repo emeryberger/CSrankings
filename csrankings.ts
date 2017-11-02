@@ -1202,6 +1202,8 @@ class CSRankings {
     }
 
     public static addListeners() : void {
+	// Add listeners for clicks on area widgets (left side of screen)
+	// e.g., 'ai'
 	for (let position = 0; position < CSRankings.areas.length; position++) {
 	    let area = CSRankings.areas[position];
 	    const widget = document.getElementById(area+'-widget');

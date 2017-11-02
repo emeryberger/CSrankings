@@ -954,6 +954,8 @@ var CSRankings = (function () {
                 CSRankings.toggleConferences(area);
             });
         };
+        // Add listeners for clicks on area widgets (left side of screen)
+        // e.g., 'ai'
         for (var position = 0; position < CSRankings.areas.length; position++) {
             _loop_2(position);
         }
