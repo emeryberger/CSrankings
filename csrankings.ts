@@ -1200,11 +1200,22 @@ class CSRankings {
 		break;
 	    }});
     }
+
+    public static addListeners() : void {
+	for (let position = 0; position < CSRankings.areas.length; position++) {
+	    let area = CSRankings.areas[position];
+	    const widget = document.getElementById(area+'-widget');
+	    widget!.addEventListener("click", function() {
+		CSRankings.toggleConferences(area);
+	    });
+	}
+    }
     
 }
 
 function init() : void {
     let csr = new CSRankings();
+    CSRankings.addListeners();
 }
 
 window.onload=init;
