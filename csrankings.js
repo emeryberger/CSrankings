@@ -946,6 +946,18 @@ var CSRankings = (function () {
             }
         });
     };
+    CSRankings.addListeners = function () {
+        var _loop_2 = function (position) {
+            var area = CSRankings.areas[position];
+            var widget = document.getElementById(area + '-widget');
+            widget.addEventListener("click", function () {
+                CSRankings.toggleConferences(area);
+            });
+        };
+        for (var position = 0; position < CSRankings.areas.length; position++) {
+            _loop_2(position);
+        }
+    };
     return CSRankings;
 }());
 CSRankings.authorinfoFile = "/generated-author-info.csv";
@@ -1034,6 +1046,7 @@ CSRankings.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expande
 CSRankings.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
 function init() {
     var csr = new CSRankings();
+    CSRankings.addListeners();
 }
 window.onload = init;
 //	jQuery(document).ready(
