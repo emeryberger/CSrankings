@@ -679,7 +679,7 @@ var CSRankings = (function () {
     CSRankings.buildOutputString = function (displayPercentages, numAreas, univagg, deptCounts, univtext) {
         var s = CSRankings.makePrologue();
         /* Show the top N (with more if tied at the end) */
-        var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
+        var minToRank = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
         if (displayPercentages) {
             s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
         }
