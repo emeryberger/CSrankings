@@ -275,7 +275,7 @@ class CSRankings {
 
     /* Create the prologue that we preface each generated HTML page with (the results). */
     private static makePrologue() : string {
-	const s = '<div class="table-responsive" style="overflow:auto; height: 650px;">'
+	const s = '<div class="table-responsive" style="overflow:auto; height: 720px;">'
 	    + '<table class="table table-sm table-striped"'
 	    + 'id="ranking" valign="top">';
 	return s;
@@ -806,7 +806,7 @@ class CSRankings {
 		continue;
 	    }
 	    
-	    let p = '<div class="table"><table class="table-responsive table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	    let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	    /* Build a dict of just faculty from this department for sorting purposes. */
 	    let fc : {[key:string] : number} = {};
 	    for (let name of deptNames[dept]) {
