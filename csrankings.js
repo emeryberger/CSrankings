@@ -49,7 +49,6 @@ var CSRankings = (function () {
             var area = _h[_g];
             CSRankings.otherFields.push(CSRankings.areaPosition[area]);
         }
-        // CSRankings.setAllCheckboxes();
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadHomepages(CSRankings.homepages, function () {
@@ -117,17 +116,8 @@ var CSRankings = (function () {
     };
     /* Create the prologue that we preface each generated HTML page with (the results). */
     CSRankings.makePrologue = function () {
-        var s = "<html>"
-            + "<head>"
-            + '<style type="text/css">'
-            + '  body { font-family: "Helvetica", "Arial"; }'
-            + "  table td { vertical-align: top; }"
-            + "</style>"
-            + "</head>"
-            + "<body>"
-            + '<div class="row">'
-            + '<div class="table" style="overflow:auto; height: 650px;">'
-            + '<table class="table-sm table-striped"'
+        var s = '<div class="table-responsive" style="overflow:auto; height: 650px;">'
+            + '<table class="table table-sm table-striped"'
             + 'id="ranking" valign="top">';
         return s;
     };
@@ -291,13 +281,6 @@ var CSRankings = (function () {
                 }
                 setTimeout(cont, 0);
             }
-        });
-    };
-    CSRankings.loadArticles = function (cont) {
-        jQuery.getJSON("articles.json", function (_) {
-            /* disabled for now
-                    CSRankings.articles = data; */
-            setTimeout(cont, 0);
         });
     };
     CSRankings.loadCountryInfo = function (countryInfo, cont) {
@@ -615,7 +598,7 @@ var CSRankings = (function () {
             if (!deptNames.hasOwnProperty(dept)) {
                 return "continue";
             }
-            var p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adjusted&nbsp;\#</abbr></em></small></td></thead><tbody>';
+            var p = '<div class="table"><table class="table-responsive table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adjusted&nbsp;\#</abbr></em></small></td></thead><tbody>';
             /* Build a dict of just faculty from this department for sorting purposes. */
             var fc = {};
             for (var _i = 0, _a = deptNames[dept]; _i < _a.length; _i++) {
@@ -685,7 +668,7 @@ var CSRankings = (function () {
                     + '</div>'
                     + "</td></tr>";
             }
-            p += "</tbody></table></div></div>";
+            p += "</tbody></table></div>";
             univtext[dept] = p;
         };
         for (var dept in deptNames) {
@@ -906,7 +889,6 @@ var CSRankings = (function () {
             var str = 'input[name=' + CSRankings.fields[i] + ']';
             if (jQuery(str).prop('checked')) {
                 s += CSRankings.fields[i] + '&';
-                //		console.log(CSRankings.fields[i]);
                 count += 1;
             }
         }
@@ -1051,4 +1033,3 @@ function init() {
     CSRankings.addListeners();
 }
 window.onload = init;
-//	jQuery(document).ready(
