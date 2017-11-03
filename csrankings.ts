@@ -806,7 +806,7 @@ class CSRankings {
 		continue;
 	    }
 	    
-	    let p = '<div class="table"><table class="table-responsive table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adjusted&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	    let p = '<div class="table"><table class="table-responsive table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	    /* Build a dict of just faculty from this department for sorting purposes. */
 	    let fc : {[key:string] : number} = {};
 	    for (let name of deptNames[dept]) {
