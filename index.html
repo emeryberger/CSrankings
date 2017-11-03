@@ -15,7 +15,19 @@
 
     <!-- <script async src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>-->
     <style type="text/css">
-      body {
+      @media (max-width: 768px) {
+      .row.switch-xs {
+      transform: rotate(180deg);
+      direction: rtl;
+      }
+      
+      .row.switch-xs > [class^="col-"] {
+      transform: rotate(-180deg);
+      direction: ltr;
+      }
+      }
+      
+body {
       font-family: Helvetica, Arial;
       }
 
@@ -23,6 +35,11 @@
       vertical-align: top;
       }
 
+      .table-fit {
+      white-space: nowrap;
+      width: 5%;
+      }
+      
       td {
       padding-top: 2px;
       padding-bottom: 2px;
@@ -164,8 +181,8 @@
 		  Rank 
 		  <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
 		    <option value="10">the top 10</option>
-		    <option value="25">the top 25</option>
-		    <option value="50" selected="selected">the top 50</option>
+		    <option value="25" selected="selected">the top 25</option>
+		    <option value="50">the top 50</option>
 		    <option value="75">the top 75</option>
 		    <option value="100">the top 100</option>
 		    <option value="99999">all</option>
@@ -280,10 +297,13 @@
 	    </div>
 	  </div>
 
-	  <div class="row">
-	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+	  <div class="row switch-xs">
+
+	    <!-- start area selection -->
+	    
+	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div class="table-responsive">
-		<table class="table table-sm table-striped">
+		<table class="table-fit table table-sm table-striped">
 		  
 		  <thead>
 		    <tr>
@@ -414,7 +434,7 @@
 			<span class="hovertip" id="ir-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			The Web &amp; information retrieval&nbsp;
+			The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<div class="table-responsive" style="display:none;" id="ir-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -584,7 +604,7 @@
 			<span class="hovertip" id="bed-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Embedded &amp; real-time systems
+			Embedded &amp; real-time systems&nbsp;&nbsp;
 			<div class="table-responsive" style="display:none;" id="bed-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -1023,13 +1043,21 @@
 	      </div>
 	    </div>
 
+	    <!-- end area selection -->
+
+	    <!-- start ranking window -->
 	    
-	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div id="success">
 		<strong><h4>Loading and processing data. Please wait.</h4></strong>
 	      </div>
 	    </div>
+	    
+	    <!-- end ranking window -->
+
+	    
 	  </div>
+	  
 	  <div class="page-footer">
 	    <p>
 	      This ranking of top computer science schools is
