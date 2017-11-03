@@ -116,8 +116,8 @@ var CSRankings = (function () {
     };
     /* Create the prologue that we preface each generated HTML page with (the results). */
     CSRankings.makePrologue = function () {
-        var s = '<div class="table-responsive" style="overflow:auto; height: 720px;">'
-            + '<table class="table table-sm table-striped"'
+        var s = '<div class="table-responsive" style="overflow:auto; height:65%;">'
+            + '<table class="table table-fit table-sm table-striped"'
             + 'id="ranking" valign="top">';
         return s;
     };
