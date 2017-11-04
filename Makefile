@@ -1,3 +1,10 @@
+#
+# CSrankings
+# http://csrankings.org
+# Copyright (C) 2017 by Emery Berger <http://emeryberger.org>
+# See COPYING for license information.
+#
+
 TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations
@@ -23,7 +30,7 @@ update-dblp:
 	@echo "Done."
 
 shrink:
-	@echo "Shrinking the file."
+	@echo "Shrinking the DBLP file."
 	basex -c filter.xq > dblp2.xml
 	gzip dblp2.xml
 	mv dblp.xml.gz dblp-original.xml.gz
@@ -42,8 +49,6 @@ scholar-links: faculty-affiliations.csv homepages.csv
 	@python util/make-scholar-links.py
 	@echo "Cleaning Scholar links."
 	@python util/clean-scholar-links.py
-#	@python util/clean-web-pages.py
-#	@mv homepages-sorted.csv homepages.csv
 	@echo "Done."
 
 fix-affiliations: faculty-affiliations.csv
@@ -60,7 +65,7 @@ faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csran
 
 generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
-	pypy util/regenerate-data.py
+	@pypy util/regenerate-data.py
 	@echo "Done."
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
