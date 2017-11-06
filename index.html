@@ -21,6 +21,18 @@
       direction: rtl;
       }
       
+      @media (max-width: 768px) {
+      .col-centered {
+      display:inline-block;
+      float: none;
+      text-align: left;
+      margin-right:-4px;
+      }
+      .row-centered {
+      text-align: center;
+      }
+      }
+      
       .row.switch-xs > [class^="col-"] {
       transform: rotate(-180deg);
       direction: ltr;
@@ -299,11 +311,11 @@
 	    </div>
 	  </div>
 
-	  <div class="row switch-xs">
+	  <div class="row switch-xs row-centered">
 
 	    <!-- start area selection -->
 	    
-	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
+	    <div class="col-centered col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div class="table-responsive">
 		<table class="table-fit table table-sm table-striped">
 		  
