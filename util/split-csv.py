@@ -17,14 +17,6 @@ def csv2dict_str_str(fname):
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
     return d
 
-#facultydict1 = csv2dict_str_str('faculty-affiliations.csv')
-#facultydict = OrderedDict(sorted(facultydict1.items(), key=lambda t: t[0]))
-#homepages = csv2dict_str_str('homepages.csv')
-#theCounter = 0
-#scholarLinks1 = csv2dict_str_str('scholar.csv')
-# Sort
-#scholarLinks = OrderedDict(sorted(scholarLinks1.items(), key=lambda t: t[0]))
-
 with open('csrankings.csv', mode='rb') as infile:
     reader = csv.DictReader(infile)
     with open('homepages.csv', mode='wb') as homepages:
@@ -50,5 +42,4 @@ with open('csrankings.csv', mode='rb') as infile:
                     f = { 'name' : row['name'],
                           'affiliation' : row['affiliation'] }
                     facWriter.writerow(f)
-                    print(row['name'], row['affiliation'], row['homepage'], row['scholarid'])
 
