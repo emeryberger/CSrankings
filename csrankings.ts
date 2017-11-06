@@ -26,6 +26,13 @@ interface Article {
     readonly institution : string;
 };
 
+interface AuthorInfo {
+    readonly name        : string;
+    readonly affiliation : string;
+    readonly homepage    : string;
+    readonly scholarid   : string;
+};
+
 interface Author {
     readonly name : string;
     readonly dept : string;
@@ -98,14 +105,11 @@ class CSRankings {
 	}
 	let next = ()=> {
 	    CSRankings.loadAliases(CSRankings.aliases, function() {
-		CSRankings.loadHomepages(CSRankings.homepages,
-					 function() {
-					     CSRankings.loadAuthorInfo(function() {
-						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
-									    function() {
-										CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank); });
-					     });
-					 });
+		CSRankings.loadAuthorInfo(function() {
+		    CSRankings.loadAuthors(function() {
+			CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+		    });
+		});
 	    });
 	};
 	CSRankings.activateAll();
@@ -126,6 +130,7 @@ class CSRankings {
 	}).resolve();
     }
 
+    private static readonly authorFile         = "/csrankings.csv";
     private static readonly authorinfoFile     = "/generated-author-info.csv";
     private static readonly countryinfoFile    = "/country-info.csv";
     private static readonly aliasFile          = "/dblp-aliases.csv";
@@ -466,6 +471,24 @@ class CSRankings {
     }
 
     private static loadAuthorInfo(cont : () => void) : void {
+	Papa.parse(CSRankings.authorFile, {
+	    download : true,
+	    header : true,
+	    complete: (results)=> {
+		const data : any = results.data;
+		const ai = data as Array<AuthorInfo>;
+		for (let counter = 0; counter < ai.length; counter++) {
+		    const record = ai[counter];
+		    let name = record['name']
+        	    CSRankings.homepages[name.trim()]   = record['homepage'];
+		    CSRankings.scholarInfo[name.trim()] = record['scholarid'];
+		}
+		setTimeout(cont, 0);
+	    }
+	});
+    }
+
+    private static loadAuthors(cont : () => void) : void {
 	Papa.parse(CSRankings.authorinfoFile, {
 	    download : true,
 	    header : true,
