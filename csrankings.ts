@@ -830,7 +830,7 @@ class CSRankings {
 			+ url
 			+ '\', true); return false;"'
 			+ '>'
-			+ '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
+			+ '<img src="scholar-favicon.ico" height="10" width="10">'
 			+'</a>&nbsp;';
 		}
 		p += "<span title=\"Click for author's publication profile.\" onclick=\"CSRankings.toggleChart('"
