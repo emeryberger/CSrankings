@@ -306,12 +306,6 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 _this.authors = data;
-                for (var i = 0; i < CSRankings.fields.length; i++) {
-                    var str = 'input[name=' + CSRankings.fields[i] + ']';
-                    jQuery(str).click(function () {
-                        _this.rank();
-                    });
-                }
                 setTimeout(cont, 0);
             }
         });
@@ -929,6 +923,7 @@ var CSRankings = (function () {
         });
     };
     CSRankings.addListeners = function () {
+        var _this = this;
         var _loop_2 = function (position) {
             var area = CSRankings.areas[position];
             var widget = document.getElementById(area + '-widget');
@@ -940,6 +935,13 @@ var CSRankings = (function () {
         // e.g., 'ai'
         for (var position = 0; position < CSRankings.areas.length; position++) {
             _loop_2(position);
+        }
+        // Initialize callbacks for area checkboxes.
+        for (var i = 0; i < CSRankings.fields.length; i++) {
+            var str = 'input[name=' + CSRankings.fields[i] + ']';
+            jQuery(str).click(function () {
+                _this.rank();
+            });
         }
     };
     return CSRankings;
