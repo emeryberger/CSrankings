@@ -422,22 +422,6 @@ class CSRankings {
 	});
     }
 
-    private static loadScholarInfo(scholarInfo: {[key : string] : string },
-				   cont : ()=> void ) : void {
-	Papa.parse(CSRankings.scholarFile, {
-	    header: true,
-	    download : true,
-	    complete : (results)=> {
-		const data : any = results.data;
-		const d = data as Array<ScholarID>;
-		for (let scholarPair of d) {
-		    scholarInfo[scholarPair.name] = scholarPair.scholarid;
-		}
-		setTimeout(cont, 0);
-	    }
-	});
-    }
-    
     private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
@@ -479,7 +463,7 @@ class CSRankings {
 		const ai = data as Array<AuthorInfo>;
 		for (let counter = 0; counter < ai.length; counter++) {
 		    const record = ai[counter];
-		    let name = record['name']
+		    let name = record['name'];
         	    CSRankings.homepages[name.trim()]   = record['homepage'];
 		    CSRankings.scholarInfo[name.trim()] = record['scholarid'];
 		}
@@ -499,26 +483,6 @@ class CSRankings {
 	    }
 	});
     }
-
-    private static loadHomepages(homepages : {[key : string] : string },
-				 cont : ()=> void ) : void {
-	Papa.parse(CSRankings.homepagesFile, {
-	    header: true,
-	    download : true,
-	    complete : (results)=> {
-		const data : any = results.data;
-		const d = data as Array<HomePage>;
-		for (let namePage of d) {
-		    if (typeof namePage.homepage === 'undefined') {
-        		continue
-		    }
-		    homepages[namePage.name.trim()] = namePage.homepage.trim();
-		}
-		setTimeout(cont, 0);
-	    }
-	});
-    }
-
 
     private static inRegion(dept : string,
 			    regions : string): boolean
