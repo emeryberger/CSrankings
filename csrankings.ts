@@ -472,12 +472,6 @@ class CSRankings {
 	    complete: (results)=> {
 		const data : any = results.data;
 		this.authors = data as Array<Author>;
-		for (let i = 0; i < CSRankings.fields.length; i++) {
-		    const str = 'input[name='+CSRankings.fields[i]+']';
-		    jQuery(str).click(()=>{
-			this.rank();
-		    });
-		}
 		setTimeout(cont, 0);
 	    }
 	});
@@ -1191,6 +1185,14 @@ class CSRankings {
 		CSRankings.toggleConferences(area);
 	    });
 	}
+	// Initialize callbacks for area checkboxes.
+	for (let i = 0; i < CSRankings.fields.length; i++) {
+	    const str = 'input[name='+CSRankings.fields[i]+']';
+	    jQuery(str).click(()=>{
+		this.rank();
+	    });
+	}
+	
     }
     
 }
