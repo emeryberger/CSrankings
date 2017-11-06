@@ -19,6 +19,7 @@
 ;
 ;
 ;
+;
 var CSRankings = (function () {
     function CSRankings() {
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -51,11 +52,9 @@ var CSRankings = (function () {
         }
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
-                CSRankings.loadHomepages(CSRankings.homepages, function () {
-                    CSRankings.loadAuthorInfo(function () {
-                        CSRankings.loadCountryInfo(CSRankings.countryInfo, function () {
-                            CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank);
-                        });
+                CSRankings.loadAuthorInfo(function () {
+                    CSRankings.loadAuthors(function () {
+                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
                     });
                 });
             });
@@ -299,6 +298,23 @@ var CSRankings = (function () {
         });
     };
     CSRankings.loadAuthorInfo = function (cont) {
+        Papa.parse(CSRankings.authorFile, {
+            download: true,
+            header: true,
+            complete: function (results) {
+                var data = results.data;
+                var ai = data;
+                for (var counter = 0; counter < ai.length; counter++) {
+                    var record = ai[counter];
+                    var name_1 = record['name'];
+                    CSRankings.homepages[name_1.trim()] = record['homepage'];
+                    CSRankings.scholarInfo[name_1.trim()] = record['scholarid'];
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.loadAuthors = function (cont) {
         var _this = this;
         Papa.parse(CSRankings.authorinfoFile, {
             download: true,
@@ -436,15 +452,15 @@ var CSRankings = (function () {
             var theDept = auth.dept;
             var theCount = parseFloat(auth.count);
             //	    const theCount = parseFloat(auth.adjustedcount);
-            var name_1 = auth.name;
-            if (name_1 in CSRankings.aliases) {
-                name_1 = CSRankings.aliases[name_1];
+            var name_2 = auth.name;
+            if (name_2 in CSRankings.aliases) {
+                name_2 = CSRankings.aliases[name_2];
             }
-            if (!(name_1 in authorAreas)) {
-                authorAreas[name_1] = {};
+            if (!(name_2 in authorAreas)) {
+                authorAreas[name_2] = {};
                 for (var area in CSRankings.areaDict) {
                     if (CSRankings.areaDict.hasOwnProperty(area)) {
-                        authorAreas[name_1][area] = 0;
+                        authorAreas[name_2][area] = 0;
                     }
                 }
             }
@@ -456,7 +472,7 @@ var CSRankings = (function () {
                     }
                 }
             }
-            authorAreas[name_1][theArea] += theCount;
+            authorAreas[name_2][theArea] += theCount;
             authorAreas[theDept][theArea] += theCount;
         }
     };
@@ -468,9 +484,9 @@ var CSRankings = (function () {
             if (!authors.hasOwnProperty(r)) {
                 continue;
             }
-            var _a = authors[r], name_2 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
-            if (name_2 in CSRankings.aliases) {
-                name_2 = CSRankings.aliases[name_2];
+            var _a = authors[r], name_3 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
+            if (name_3 in CSRankings.aliases) {
+                name_3 = CSRankings.aliases[name_3];
             }
             if (typeof dept === 'undefined') {
                 continue;
@@ -486,7 +502,7 @@ var CSRankings = (function () {
                 area = CSRankings.parentMap[area];
             }
             var areaDept = area + dept;
-            var nameDept = name_2 + dept;
+            var nameDept = name_3 + dept;
             if (!(areaDept in areaDeptAdjustedCount)) {
                 areaDeptAdjustedCount[areaDept] = 0;
             }
@@ -494,15 +510,15 @@ var CSRankings = (function () {
             var adjustedCount = parseFloat(authors[r].adjustedcount);
             areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name_2 in visited)) {
-                visited[name_2] = true;
+            if (!(name_3 in visited)) {
+                visited[name_3] = true;
                 facultycount[nameDept] = 0;
                 facultyAdjustedCount[nameDept] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name_2);
+                deptNames[dept].push(name_3);
                 deptCounts[dept] += 1;
             }
             facultycount[nameDept] += count;
@@ -570,16 +586,16 @@ var CSRankings = (function () {
                 continue;
             }
             for (var ind = 0; ind < deptNames[dept].length; ind++) {
-                var name_3 = deptNames[dept][ind];
-                if (name_3 in CSRankings.aliases) {
-                    deptNames[dept][ind] = CSRankings.aliases[name_3];
-                    if (!(CSRankings.aliases[name_3] + dept in facultycount)) {
-                        facultycount[CSRankings.aliases[name_3] + dept] = facultycount[name_3 + dept];
-                        facultyAdjustedCount[CSRankings.aliases[name_3] + dept] = facultyAdjustedCount[name_3 + dept];
+                var name_4 = deptNames[dept][ind];
+                if (name_4 in CSRankings.aliases) {
+                    deptNames[dept][ind] = CSRankings.aliases[name_4];
+                    if (!(CSRankings.aliases[name_4] + dept in facultycount)) {
+                        facultycount[CSRankings.aliases[name_4] + dept] = facultycount[name_4 + dept];
+                        facultyAdjustedCount[CSRankings.aliases[name_4] + dept] = facultyAdjustedCount[name_4 + dept];
                     }
                     else {
-                        facultycount[CSRankings.aliases[name_3] + dept] += facultycount[name_3 + dept];
-                        facultyAdjustedCount[CSRankings.aliases[name_3] + dept] += facultyAdjustedCount[name_3 + dept];
+                        facultycount[CSRankings.aliases[name_4] + dept] += facultycount[name_4 + dept];
+                        facultyAdjustedCount[CSRankings.aliases[name_4] + dept] += facultyAdjustedCount[name_4 + dept];
                     }
                 }
             }
@@ -596,8 +612,8 @@ var CSRankings = (function () {
             /* Build a dict of just faculty from this department for sorting purposes. */
             var fc = {};
             for (var _i = 0, _a = deptNames[dept]; _i < _a.length; _i++) {
-                var name_4 = _a[_i];
-                fc[name_4] = facultycount[name_4 + dept];
+                var name_5 = _a[_i];
+                fc[name_5] = facultycount[name_5 + dept];
             }
             var keys = Object.keys(fc);
             keys.sort(function (a, b) {
@@ -614,9 +630,9 @@ var CSRankings = (function () {
                 }
             });
             for (var _b = 0, keys_1 = keys; _b < keys_1.length; _b++) {
-                var name_5 = keys_1[_b];
-                var homePage = encodeURI(CSRankings.homepages[name_5]);
-                var dblpName = CSRankings.translateNameToDBLP(name_5);
+                var name_6 = keys_1[_b];
+                var homePage = encodeURI(CSRankings.homepages[name_6]);
+                var dblpName = CSRankings.translateNameToDBLP(name_6);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
                     + '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
@@ -625,11 +641,11 @@ var CSRankings = (function () {
                     + homePage
                     + '\', true); return false;"'
                     + '>'
-                    + name_5
+                    + name_6
                     + '</a>&nbsp;';
-                if (CSRankings.scholarInfo.hasOwnProperty(name_5)) {
+                if (CSRankings.scholarInfo.hasOwnProperty(name_6)) {
                     var url = 'https://scholar.google.com/citations?user='
-                        + CSRankings.scholarInfo[name_5]
+                        + CSRankings.scholarInfo[name_6]
                         + '&hl=en&oi=ao';
                     p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
                         + 'onclick="trackOutboundLink(\''
@@ -640,7 +656,7 @@ var CSRankings = (function () {
                         + '</a>&nbsp;';
                 }
                 p += "<span title=\"Click for author's publication profile.\" onclick=\"CSRankings.toggleChart('"
-                    + escape(name_5)
+                    + escape(name_6)
                     + "')\" class=\"hovertip\" ><font color=\"blue\">" + CSRankings.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
@@ -651,14 +667,14 @@ var CSRankings = (function () {
                     + dblpName
                     + '\', true); return false;"'
                     + '>'
-                    + fc[name_5]
+                    + fc[name_6]
                     + '</a>'
                     + "</small></td>"
                     + '<td align="right"><small>'
-                    + (Math.round(10.0 * facultyAdjustedCount[name_5 + dept]) / 10.0).toFixed(1)
+                    + (Math.round(10.0 * facultyAdjustedCount[name_6 + dept]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
-                    + '<div style="display:none;" id="' + escape(name_5) + "-chart" + '">'
+                    + '<div style="display:none;" id="' + escape(name_6) + "-chart" + '">'
                     + '</div>'
                     + "</td></tr>";
             }
@@ -946,6 +962,7 @@ var CSRankings = (function () {
     };
     return CSRankings;
 }());
+CSRankings.authorFile = "/csrankings.csv";
 CSRankings.authorinfoFile = "/generated-author-info.csv";
 CSRankings.countryinfoFile = "/country-info.csv";
 CSRankings.aliasFile = "/dblp-aliases.csv";
