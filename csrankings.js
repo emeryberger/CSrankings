@@ -252,21 +252,6 @@ var CSRankings = (function () {
             }
         });
     };
-    CSRankings.loadScholarInfo = function (scholarInfo, cont) {
-        Papa.parse(CSRankings.scholarFile, {
-            header: true,
-            download: true,
-            complete: function (results) {
-                var data = results.data;
-                var d = data;
-                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
-                    var scholarPair = d_1[_i];
-                    scholarInfo[scholarPair.name] = scholarPair.scholarid;
-                }
-                setTimeout(cont, 0);
-            }
-        });
-    };
     CSRankings.loadAliases = function (aliases, cont) {
         Papa.parse(CSRankings.aliasFile, {
             header: true,
@@ -274,8 +259,8 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 var d = data;
-                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
-                    var aliasPair = d_2[_i];
+                for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
+                    var aliasPair = d_1[_i];
                     aliases[aliasPair.alias] = aliasPair.name;
                 }
                 setTimeout(cont, 0);
@@ -322,24 +307,6 @@ var CSRankings = (function () {
             complete: function (results) {
                 var data = results.data;
                 _this.authors = data;
-                setTimeout(cont, 0);
-            }
-        });
-    };
-    CSRankings.loadHomepages = function (homepages, cont) {
-        Papa.parse(CSRankings.homepagesFile, {
-            header: true,
-            download: true,
-            complete: function (results) {
-                var data = results.data;
-                var d = data;
-                for (var _i = 0, d_3 = d; _i < d_3.length; _i++) {
-                    var namePage = d_3[_i];
-                    if (typeof namePage.homepage === 'undefined') {
-                        continue;
-                    }
-                    homepages[namePage.name.trim()] = namePage.homepage.trim();
-                }
                 setTimeout(cont, 0);
             }
         });
