@@ -36,9 +36,11 @@ shrink:
 	mv dblp.xml.gz dblp-original.xml.gz
 	mv dblp2.xml.gz dblp.xml.gz
 
-faculty-affiliations.csv homepages.csv scholar.csv:
+faculty-affiliations.csv homepages.csv scholar.csv: csrankings.csv
 	@echo "Splitting main datafile (csrankings.csv)."
 	@python util/split-csv.py
+	@echo "Sorting."
+	@python util/merge-csv.py
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv

@@ -29,7 +29,8 @@ with open('csrankings.csv', mode='wb') as outfile:
     writer.writeheader()
     
     for authorName in facultydict:
-        print authorName
+        if authorName == "name":
+            continue
         if scholarLinks.get(authorName, "XX") == "NOENTRYYET":
             scholarLinks[authorName] = "NOSCHOLARPAGE"
         entry = { 'name' : authorName.encode('utf8'),
