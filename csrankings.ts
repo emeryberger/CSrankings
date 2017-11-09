@@ -945,7 +945,7 @@ class CSRankings {
 	    s += "<br>" + "</body>" + "</html>";
 	} else {
 	    /* Nothing selected. */
-	    s = "<h4>Please select at least one area.</h4>";
+	    s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
 	}
 	return s;
     }
@@ -1179,7 +1179,68 @@ class CSRankings {
 		this.rank();
 	    });
 	}
-	
+	// Add group selectors.
+	// TBD
+	{
+	    const widget = document.getElementById('all_areas_on');
+	    widget!.addEventListener("click", function() {
+		CSRankings.activateAll();
+	    });
+	}
+	{
+	    const widget = document.getElementById('all_areas_off');
+	    widget!.addEventListener("click", function() {
+		CSRankings.activateNone();
+	    });
+	}
+	{
+	    const widget = document.getElementById('ai_areas_on');
+	    widget!.addEventListener("click", function() {
+		CSRankings.activateAI();
+	    });
+	}
+	{
+	    const widget = document.getElementById('ai_areas_off');
+	    widget!.addEventListener("click", function() {
+		CSRankings.deactivateAI();
+	    });
+	}
+	{
+	    const widget = document.getElementById('systems_areas_on');
+	    widget!.addEventListener("click", function() {
+		CSRankings.activateSystems();
+	    });
+	}
+	{
+	    const widget = document.getElementById('systems_areas_off');
+	    widget!.addEventListener("click", function() {
+		CSRankings.deactivateSystems();
+	    });
+	}
+	{
+	    const widget = document.getElementById('theory_areas_on');
+	    widget!.addEventListener("click", function() {
+		CSRankings.activateTheory();
+	    });
+	}
+	{
+	    const widget = document.getElementById('theory_areas_off');
+	    widget!.addEventListener("click", function() {
+		CSRankings.deactivateTheory();
+	    });
+	}
+	{
+	    const widget = document.getElementById('other_areas_on');
+	    widget!.addEventListener("click", function() {
+		CSRankings.activateOthers();
+	    });
+	}
+	{
+	    const widget = document.getElementById('other_areas_off');
+	    widget!.addEventListener("click", function() {
+		CSRankings.deactivateOthers();
+	    });
+	}
     }
     
 }
