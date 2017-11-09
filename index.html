@@ -61,7 +61,7 @@
       color : blue ;
       }
 
-      .only_these_areas { cursor : pointer; }
+      .area_group_selector { cursor : pointer; }
       .hovertip { cursor : pointer; }
       input { cursor : pointer; }
       
@@ -323,7 +323,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p style="font-size: 125%">All Areas
-			  &nbsp;<span style="font-size: 80%;">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>on</b></font></a>]</span>
+			  &nbsp;<span style="font-size: 80%;">[<a class="area_group_selector" id="all_areas_off"><font color="blue"><b>off</b></font></a> | <a class="area_group_selector" id="all_areas_on"><font color="blue"><b>on</b></font></a>]</span>
 			</p>
 		      </th>
 		    </tr>
@@ -332,7 +332,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">AI
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;">on</a>]
+			  [<a class="area_group_selector" id="ai_areas_off">off</a> | <a class="area_group_selector" id="ai_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -477,7 +477,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">Systems
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;">on</a>]
+			  [<a class="area_group_selector" id="systems_areas_off">off</a> | <a class="area_group_selector" id="systems_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -800,7 +800,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">Theory
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;">on</a>]
+			  [<a class="area_group_selector" id="theory_areas_off">off</a> | <a class="area_group_selector" id="theory_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -890,7 +890,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">Interdisciplinary Areas
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;">on</a>]
+			  [<a class="area_group_selector" id="other_areas_off">off</a> | <a class="area_group_selector" id="other_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
