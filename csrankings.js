@@ -729,7 +729,7 @@ var CSRankings = (function () {
         }
         else {
             /* Nothing selected. */
-            s = "<h4>Please select at least one area.</h4>";
+            s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
         }
         return s;
     };
@@ -924,6 +924,68 @@ var CSRankings = (function () {
             var str = 'input[name=' + CSRankings.fields[i] + ']';
             jQuery(str).click(function () {
                 _this.rank();
+            });
+        }
+        // Add group selectors.
+        // TBD
+        {
+            var widget = document.getElementById('all_areas_on');
+            widget.addEventListener("click", function () {
+                CSRankings.activateAll();
+            });
+        }
+        {
+            var widget = document.getElementById('all_areas_off');
+            widget.addEventListener("click", function () {
+                CSRankings.activateNone();
+            });
+        }
+        {
+            var widget = document.getElementById('ai_areas_on');
+            widget.addEventListener("click", function () {
+                CSRankings.activateAI();
+            });
+        }
+        {
+            var widget = document.getElementById('ai_areas_off');
+            widget.addEventListener("click", function () {
+                CSRankings.deactivateAI();
+            });
+        }
+        {
+            var widget = document.getElementById('systems_areas_on');
+            widget.addEventListener("click", function () {
+                CSRankings.activateSystems();
+            });
+        }
+        {
+            var widget = document.getElementById('systems_areas_off');
+            widget.addEventListener("click", function () {
+                CSRankings.deactivateSystems();
+            });
+        }
+        {
+            var widget = document.getElementById('theory_areas_on');
+            widget.addEventListener("click", function () {
+                CSRankings.activateTheory();
+            });
+        }
+        {
+            var widget = document.getElementById('theory_areas_off');
+            widget.addEventListener("click", function () {
+                CSRankings.deactivateTheory();
+            });
+        }
+        {
+            var widget = document.getElementById('other_areas_on');
+            widget.addEventListener("click", function () {
+                CSRankings.activateOthers();
+            });
+        }
+        {
+            var widget = document.getElementById('other_areas_off');
+            widget.addEventListener("click", function () {
+                CSRankings.deactivateOthers();
             });
         }
     };
