@@ -927,66 +927,25 @@ var CSRankings = (function () {
             });
         }
         // Add group selectors.
-        // TBD
-        {
-            var widget = document.getElementById('all_areas_on');
+        var listeners = { 'all_areas_on': (function () { CSRankings.activateAll(); }),
+            'all_areas_off': (function () { CSRankings.activateNone(); }),
+            'ai_areas_on': (function () { CSRankings.activateAI(); }),
+            'ai_areas_off': (function () { CSRankings.deactivateAI(); }),
+            'systems_areas_on': (function () { CSRankings.activateSystems(); }),
+            'systems_areas_off': (function () { CSRankings.deactivateSystems(); }),
+            'theory_areas_on': (function () { CSRankings.activateTheory(); }),
+            'theory_areas_off': (function () { CSRankings.deactivateTheory(); }),
+            'other_areas_on': (function () { CSRankings.activateOthers(); }),
+            'other_areas_off': (function () { CSRankings.deactivateOthers(); })
+        };
+        var _loop_3 = function (item) {
+            var widget = document.getElementById(item);
             widget.addEventListener("click", function () {
-                CSRankings.activateAll();
+                listeners[item]();
             });
-        }
-        {
-            var widget = document.getElementById('all_areas_off');
-            widget.addEventListener("click", function () {
-                CSRankings.activateNone();
-            });
-        }
-        {
-            var widget = document.getElementById('ai_areas_on');
-            widget.addEventListener("click", function () {
-                CSRankings.activateAI();
-            });
-        }
-        {
-            var widget = document.getElementById('ai_areas_off');
-            widget.addEventListener("click", function () {
-                CSRankings.deactivateAI();
-            });
-        }
-        {
-            var widget = document.getElementById('systems_areas_on');
-            widget.addEventListener("click", function () {
-                CSRankings.activateSystems();
-            });
-        }
-        {
-            var widget = document.getElementById('systems_areas_off');
-            widget.addEventListener("click", function () {
-                CSRankings.deactivateSystems();
-            });
-        }
-        {
-            var widget = document.getElementById('theory_areas_on');
-            widget.addEventListener("click", function () {
-                CSRankings.activateTheory();
-            });
-        }
-        {
-            var widget = document.getElementById('theory_areas_off');
-            widget.addEventListener("click", function () {
-                CSRankings.deactivateTheory();
-            });
-        }
-        {
-            var widget = document.getElementById('other_areas_on');
-            widget.addEventListener("click", function () {
-                CSRankings.activateOthers();
-            });
-        }
-        {
-            var widget = document.getElementById('other_areas_off');
-            widget.addEventListener("click", function () {
-                CSRankings.deactivateOthers();
-            });
+        };
+        for (var item in listeners) {
+            _loop_3(item);
         }
     };
     return CSRankings;
