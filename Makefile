@@ -7,7 +7,7 @@
 
 TARGETS = csrankings.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
 all: generated-author-info.csv csrankings.js fix-affiliations # home-pages scholar-links
 
@@ -20,16 +20,22 @@ csrankings.js: csrankings.ts
 	closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
-	@echo "Downloading from DBLP."
-	rm -f dblp.xml.gz
-	wget http://dblp.org/xml/dblp.xml.gz
+	$(MAKE) download-dblp
+	$(MAKE) clean-dblp
+	@echo "Done."
+
+clean-dblp:
 	@echo "Fixing character encodings."
 	sh ./util/fix-dblp.sh
 	mv dblp-fixed.xml dblp.xml
-	$(MAKE) shrink
-	@echo "Done."
+	$(MAKE) shrink-dblp
 
-shrink:
+download-dblp:
+	@echo "Downloading from DBLP."
+	rm -f dblp.xml.gz
+	wget http://dblp.org/xml/dblp.xml.gz
+
+shrink-dblp:
 	@echo "Shrinking the DBLP file."
 	basex -c filter.xq > dblp2.xml
 	gzip dblp2.xml
