@@ -2,19 +2,43 @@
 <html>
   <head>
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
-<!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/csrankings.css">
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>CSRankings: Computer Science Rankings</title>
 
-<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+    <!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
-<!-- <script async src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>-->
+    <!-- <script async src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>-->
     <style type="text/css">
+      @media (max-width: 768px) {
+      .row.switch-xs {
+      transform: rotate(180deg);
+      direction: rtl;
+      }
+      
+      @media (max-width: 768px) {
+      .col-centered {
+      display:inline-block;
+      float: none;
+      text-align: left;
+      margin-right:-4px;
+      }
+      .row-centered {
+      text-align: center;
+      }
+      }
+      
+      .row.switch-xs > [class^="col-"] {
+      transform: rotate(-180deg);
+      direction: ltr;
+      }
+      }
+      
       body {
       font-family: Helvetica, Arial;
       }
@@ -23,6 +47,11 @@
       vertical-align: top;
       }
 
+      .table-fit {
+      white-space: nowrap;
+      width: 5%;
+      }
+      
       td {
       padding-top: 2px;
       padding-bottom: 2px;
@@ -32,41 +61,41 @@
       color : blue ;
       }
 
-      .only_these_areas { cursor : pointer; }
+      .area_group_selector { cursor : pointer; }
       .hovertip { cursor : pointer; }
       input { cursor : pointer; }
       
-/* latin-ext */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 400;
-  src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/d03oiboZGiaNuMDvH253CgsYbbCjybiHxArTLjt7FRU.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 400;
-  src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/9Xe8dq6pQDsPyVH2D3tMQgzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 700;
-  src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljtzrEaqfC9P2pvLXik1Kbr9s.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'News Cycle';
-  font-style: normal;
-  font-weight: 700;
-  src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+      /* latin-ext */
+      @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 400;
+      src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/d03oiboZGiaNuMDvH253CgsYbbCjybiHxArTLjt7FRU.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 400;
+      src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/9Xe8dq6pQDsPyVH2D3tMQgzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+      }
+      /* latin-ext */
+      @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 700;
+      src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljtzrEaqfC9P2pvLXik1Kbr9s.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 700;
+      src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
       }
       
     </style>
@@ -82,61 +111,61 @@
     </script>
     <script>
       var trackOutboundLink = function(url, new_window) {
-        /* Setting a default value for backward compatibility */
-        if (new_window === undefined) {
-          new_window = false;
-        }
-        ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
-        'hitCallback':
-          function () {
-            if (!new_window) {
-              document.location = url;
-            }
-          }
-        });
-        if (new_window){
-          window.open(url);
-        }
+      /* Setting a default value for backward compatibility */
+      if (new_window === undefined) {
+      new_window = false;
+      }
+      ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
+      'hitCallback':
+      function () {
+      if (!new_window) {
+      document.location = url;
+      }
+      }
+      });
+      if (new_window){
+      window.open(url);
+      }
       }
     </script>
     <!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1437880419634625');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1437880419634625&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1437880419634625');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+		   src="https://www.facebook.com/tr?id=1437880419634625&ev=PageView&noscript=1"
+		   /></noscript>
+    <!-- End Facebook Pixel Code -->
 
-<script async src="js/d3.min.js"></script>
-<script async src="js/d3pie.min.js" type="text/javascript"></script>
-<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
-<script async src="js/papaparse.min.js" type="text/javascript"></script>
-<script async src="js/pako.min.js" type="text/javascript"></script>
-<script async src="js/bootstrap.min.js" type="text/javascript"></script>
-<script async src="js/navigo.min.js"></script>
-<script defer src="csrankings.min.js" type="text/javascript"></script>
+    <script async src="js/d3.min.js"></script>
+    <script async src="js/d3pie.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <script async src="js/papaparse.min.js" type="text/javascript"></script>
+    <script async src="js/pako.min.js" type="text/javascript"></script>
+    <script async src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script async src="js/navigo.min.js"></script>
+    <script defer src="csrankings.min.js" type="text/javascript"></script>
 
   </head>
 
   <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id; js.async=true;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id; js.async=true;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
@@ -153,171 +182,172 @@
 		<font color="blue"><b>&#9685;</b></font>
 		after a name or institution) to see their
 		publication profile as a pie chart. <b>Click on a
-		Google Scholar icon</b>
-		(<img src="https://scholar.google.com/favicon.ico"
-		height="10" width="10">) to see publications,
+		  Google Scholar icon</b>
+		(<img src="scholar-favicon.ico"
+		      height="10" width="10">) to see publications,
 		and <b>click on the raw number of publications</b> to
 		go to a DBLP entry.
 	      </p>
 	      <div class="row">
-		<!-- col-xs-3 col-sm-6 col-md-4  -->
-		<div class="col-6 col-xs-6 col-sm-12 col-md-12 col-lg-12">
-	      Rank 
-	      <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
-		<option value="10">the top 10</option>
-		<option value="25">the top 25</option>
-		<option value="50" selected="selected">the top 50</option>
-		<option value="75">the top 75</option>
-		<option value="100">the top 100</option>
-		<option value="99999">all</option>
-	      </select>
-	      institutions in
-	      <select id="regions" name="regions" onchange="CSRankings.rank();">
-		<option value="USA" selected="selected">the USA</option>
-		<option value="canada">Canada</option>
-		<option value="northamerica">USA and Canada</option>
-		<option value="southamerica">South America</option>
-		<option value="asia">Asia</option>
-		<option value="australasia">Australasia</option>
-		<option value="europe">Europe</option>
-		<option value="world">the world</option>
-	      </select>
-	      by publications from
-<!--	      by average count
-	      of publications from -->
-	      <select onchange="CSRankings.rank();" id="startyear" name="startyear">
-		<option value="1970">1970</option>  
-		<option value="1971">1971</option>  
-		<option value="1972">1972</option>  
-		<option value="1973">1973</option>  
-		<option value="1974">1974</option>  
-		<option value="1975">1975</option>  
-		<option value="1976">1976</option>  
-		<option value="1977">1977</option>  
-		<option value="1978">1978</option>  
-		<option value="1979">1979</option>  
-		<option value="1980">1980</option>  
-		<option value="1981">1981</option>  
-		<option value="1982">1982</option>  
-		<option value="1983">1983</option>  
-		<option value="1984">1984</option>  
-		<option value="1985">1985</option>  
-		<option value="1986">1986</option>  
-		<option value="1987">1987</option>  
-		<option value="1988">1988</option>  
-		<option value="1989">1989</option>  
-		<option value="1990">1990</option>  
-		<option value="1991">1991</option>  
-		<option value="1992">1992</option>  
-		<option value="1993">1993</option>  
-		<option value="1994">1994</option>  
-		<option value="1995">1995</option>  
-		<option value="1996">1996</option>  
-		<option value="1997">1997</option>  
-		<option value="1998">1998</option>  
-		<option value="1999">1999</option>  
-		<option value="2000">2000</option>
-		<option value="2001">2001</option>  
-		<option value="2002">2002</option>
-		<option value="2003">2003</option>
-		<option value="2004">2004</option>
-		<option value="2005">2005</option>
-		<option value="2006">2006</option>
-		<option selected="selected" value="2007">2007</option>
-		<option value="2008">2008</option>
-		<option value="2009">2009</option>
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2014">2014</option>
-		<option value="2015">2015</option>
-		<option value="2016">2016</option>
-		<option value="2017">2017</option>
-	      </select>
-	      to
-	      <select onchange="CSRankings.rank();" id="endyear" name="endyear">
-		<option value="1980">1980</option>  
-		<option value="1981">1981</option>  
-		<option value="1982">1982</option>  
-		<option value="1983">1983</option>  
-		<option value="1984">1984</option>  
-		<option value="1985">1985</option>  
-		<option value="1986">1986</option>  
-		<option value="1987">1987</option>  
-		<option value="1988">1988</option>  
-		<option value="1989">1989</option>  
-		<option value="1990">1990</option>  
-		<option value="1991">1991</option>  
-		<option value="1992">1992</option>  
-		<option value="1993">1993</option>  
-		<option value="1994">1994</option>  
-		<option value="1995">1995</option>  
-		<option value="1996">1996</option>  
-		<option value="1997">1997</option>  
-		<option value="1998">1998</option>  
-		<option value="1999">1999</option>  
-		<option value="2000">2000</option>
-		<option value="2001">2001</option>  
-		<option value="2002">2002</option>
-		<option value="2003">2003</option>
-		<option value="2004">2004</option>
-		<option value="2005">2005</option>
-		<option value="2006">2006</option>  
-		<option value="2007">2007</option>
-		<option value="2008">2008</option>
-		<option value="2009">2009</option>
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2014">2014</option>
-		<option value="2015">2015</option>
-		<option value="2016">2016</option>
-		<option selected="selected" value="2017">2017</option>
-	      </select>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		  Rank 
+<!--
+		  <select id="minToRank" name="minToRank" onchange="CSRankings.rank();">
+		    <option value="10">the top 10</option>
+		    <option value="25" selected="selected">the top 25</option>
+		    <option value="50">the top 50</option>
+		    <option value="75">the top 75</option>
+		    <option value="100">the top 100</option>
+		    <option value="99999">all</option>
+		  </select>
+-->
+		  institutions in
+		  <select id="regions" name="regions" onchange="CSRankings.rank();">
+		    <option value="USA" selected="selected">the USA</option>
+		    <option value="canada">Canada</option>
+		    <option value="northamerica">USA and Canada</option>
+		    <option value="southamerica">South America</option>
+		    <option value="asia">Asia</option>
+		    <option value="australasia">Australasia</option>
+		    <option value="europe">Europe</option>
+		    <option value="world">the world</option>
+		  </select>
+		  by publications from
+		  <!--	      by average count
+			      of publications from -->
+		  <select onchange="CSRankings.rank();" id="startyear" name="startyear">
+		    <option value="1970">1970</option>  
+		    <option value="1971">1971</option>  
+		    <option value="1972">1972</option>  
+		    <option value="1973">1973</option>  
+		    <option value="1974">1974</option>  
+		    <option value="1975">1975</option>  
+		    <option value="1976">1976</option>  
+		    <option value="1977">1977</option>  
+		    <option value="1978">1978</option>  
+		    <option value="1979">1979</option>  
+		    <option value="1980">1980</option>  
+		    <option value="1981">1981</option>  
+		    <option value="1982">1982</option>  
+		    <option value="1983">1983</option>  
+		    <option value="1984">1984</option>  
+		    <option value="1985">1985</option>  
+		    <option value="1986">1986</option>  
+		    <option value="1987">1987</option>  
+		    <option value="1988">1988</option>  
+		    <option value="1989">1989</option>  
+		    <option value="1990">1990</option>  
+		    <option value="1991">1991</option>  
+		    <option value="1992">1992</option>  
+		    <option value="1993">1993</option>  
+		    <option value="1994">1994</option>  
+		    <option value="1995">1995</option>  
+		    <option value="1996">1996</option>  
+		    <option value="1997">1997</option>  
+		    <option value="1998">1998</option>  
+		    <option value="1999">1999</option>  
+		    <option value="2000">2000</option>
+		    <option value="2001">2001</option>  
+		    <option value="2002">2002</option>
+		    <option value="2003">2003</option>
+		    <option value="2004">2004</option>
+		    <option value="2005">2005</option>
+		    <option value="2006">2006</option>
+		    <option selected="selected" value="2007">2007</option>
+		    <option value="2008">2008</option>
+		    <option value="2009">2009</option>
+		    <option value="2010">2010</option>
+		    <option value="2011">2011</option>
+		    <option value="2012">2012</option>
+		    <option value="2013">2013</option>
+		    <option value="2014">2014</option>
+		    <option value="2015">2015</option>
+		    <option value="2016">2016</option>
+		    <option value="2017">2017</option>
+		  </select>
+		  to
+		  <select onchange="CSRankings.rank();" id="endyear" name="endyear">
+		    <option value="1980">1980</option>  
+		    <option value="1981">1981</option>  
+		    <option value="1982">1982</option>  
+		    <option value="1983">1983</option>  
+		    <option value="1984">1984</option>  
+		    <option value="1985">1985</option>  
+		    <option value="1986">1986</option>  
+		    <option value="1987">1987</option>  
+		    <option value="1988">1988</option>  
+		    <option value="1989">1989</option>  
+		    <option value="1990">1990</option>  
+		    <option value="1991">1991</option>  
+		    <option value="1992">1992</option>  
+		    <option value="1993">1993</option>  
+		    <option value="1994">1994</option>  
+		    <option value="1995">1995</option>  
+		    <option value="1996">1996</option>  
+		    <option value="1997">1997</option>  
+		    <option value="1998">1998</option>  
+		    <option value="1999">1999</option>  
+		    <option value="2000">2000</option>
+		    <option value="2001">2001</option>  
+		    <option value="2002">2002</option>
+		    <option value="2003">2003</option>
+		    <option value="2004">2004</option>
+		    <option value="2005">2005</option>
+		    <option value="2006">2006</option>  
+		    <option value="2007">2007</option>
+		    <option value="2008">2008</option>
+		    <option value="2009">2009</option>
+		    <option value="2010">2010</option>
+		    <option value="2011">2011</option>
+		    <option value="2012">2012</option>
+		    <option value="2013">2013</option>
+		    <option value="2014">2014</option>
+		    <option value="2015">2015</option>
+		    <option value="2016">2016</option>
+		    <option selected="selected" value="2017">2017</option>
+		  </select>
 		</div>
-		</div>
+	      </div>
 	    </div>
 	  </div>
-	  
-	  <div class="row">
-	    <!-- col-xs-3 col-sm-6 col-md-4  -->
-	    <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	      <div class="table">
-		<table class="table-sm table-striped">
 
+	  <div class="row switch-xs row-centered">
+
+	    <!-- start area selection -->
+	    
+	    <div class="col-centered col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
+	      <div class="table-responsive">
+		<table class="table-fit table table-sm table-striped">
+		  
 		  <thead>
 		    <tr>
 		      <th colspan="2">
 			<p style="font-size: 125%">All Areas
-			  &nbsp;<span style="font-size: 80%;">[<a class="only_these_areas" onClick="CSRankings.activateNone(); return false;"><font color="blue"><b>off</b></font></a> | <a class="only_these_areas" onClick="CSRankings.activateAll(); return false;"><font color="blue"><b>on</b></font></a>]</span>
+			  &nbsp;<span style="font-size: 80%;">[<a class="area_group_selector" id="all_areas_off"><font color="blue"><b>off</b></font></a> | <a class="area_group_selector" id="all_areas_on"><font color="blue"><b>on</b></font></a>]</span>
 			</p>
 		      </th>
 		    </tr>
-		  </thead>
-			
 		  </thead>
 		  <thead>
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">AI
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateAI(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateAI(); return false;">on</a>]
+			  [<a class="area_group_selector" id="ai_areas_off">off</a> | <a class="area_group_selector" id="ai_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
-
+		  
 		  <tbody>
-
+		    
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('ai')" class="hovertip" id="ai-widget">
+			<span class="hovertip" id="ai-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Artificial intelligence
-			<div class="table" style="display:none;" id="ai-conferences">
-			  <table class="table-sm" style="width:100%">
+			<div class="table-responsive" style="display:none;" id="ai-conferences">
+			  <table class="table-sm">
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
@@ -331,18 +361,18 @@
 			  </table>
 			</div>
 		      </td>
-		      <td width="40px"> 
+		      <td width="40px">
 			<input type="checkbox" class="parent" name="ai" id="ai" value="1.0"/>
 		      </td>
 		    </tr>
 
 		    <tr>
 		      <td> 
-			<span onclick="CSRankings.toggleConferences('vision')" class="hovertip" id="vision-widget">
+			<span class="hovertip" id="vision-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Computer vision
-			<div class="table" style="display:none;" id="vision-conferences">
+			<div class="table-responsive" style="display:none;" id="vision-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -360,16 +390,14 @@
 		      <td>
 			<input type="checkbox" class="parent" name="vision" id="vision" value="1.0"/>
 		      </td>
-		      </td>
 		    </tr>
-		    
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('mlmining')" class="hovertip" id="mlmining-widget">
+			<span class="hovertip" id="mlmining-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Machine learning &amp; data mining
-			<div class="table" style="display:none;" id="mlmining-conferences">
+			<div class="table-responsive" style="display:none;" id="mlmining-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -388,14 +416,14 @@
 			<input type="checkbox" name="mlmining" id="mlmining" value="1.0"/>
 		      </td>
 		    </tr>
-		    
+
 		    <tr>
 		      <td> 
-			<span onclick="CSRankings.toggleConferences('nlp')" class="hovertip" id="nlp-widget">
+			<span class="hovertip" id="nlp-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Natural language processing
-			<div class="table" style="display:none;" id="nlp-conferences">
+			<div class="table-responsive" style="display:none;" id="nlp-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -417,11 +445,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('ir')" class="hovertip" id="ir-widget">
+			<span class="hovertip" id="ir-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			The Web &amp; information retrieval&nbsp;
-			<div class="table" style="display:none;" id="ir-conferences">
+			The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<div class="table-responsive" style="display:none;" id="ir-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -443,13 +471,13 @@
 		  </tbody>
 
 
-	  
+
 		  <thead>
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">Systems
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateSystems(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateSystems(); return false;">on</a>]
+			  [<a class="area_group_selector" id="systems_areas_off">off</a> | <a class="area_group_selector" id="systems_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -459,11 +487,11 @@
 
 		    <tr>
 		      <td>   
-			<span onclick="CSRankings.toggleConferences('arch')" class="hovertip" id="arch-widget">
+			<span class="hovertip" id="arch-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Computer architecture
-			<div class="table" style="display:none;" id="arch-conferences">
+			<div class="table-responsive" style="display:none;" id="arch-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -485,11 +513,11 @@
 
 		    <tr>
 		      <td>  
-			<span onclick="CSRankings.toggleConferences('comm')" class="hovertip" id="comm-widget">
+			<span class="hovertip" id="comm-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Computer networks
-			<div class="table" style="display:none;" id="comm-conferences">
+			<div class="table-responsive" style="display:none;" id="comm-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -511,11 +539,11 @@
 
 		    <tr>
 		      <td>  
-			<span onclick="CSRankings.toggleConferences('sec')" class="hovertip" id="sec-widget">
+			<span class="hovertip" id="sec-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Computer security
-			<div class="table" style="display:none;" id="sec-conferences">
+			<div class="table-responsive" style="display:none;" id="sec-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -537,11 +565,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('mod')" class="hovertip" id="mod-widget">
+			<span class="hovertip" id="mod-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Databases
-			<div class="table" style="display:none;" id="mod-conferences">
+			<div class="table-responsive" style="display:none;" id="mod-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -562,11 +590,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('da')" class="hovertip" id="da-widget">
+			<span class="hovertip" id="da-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Design automation
-			<div class="table" style="display:none;" id="da-conferences">
+			<div class="table-responsive" style="display:none;" id="da-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -587,11 +615,11 @@
 		    
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('bed')" class="hovertip" id="bed-widget">
+			<span class="hovertip" id="bed-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Embedded &amp; real-time systems
-			<div class="table" style="display:none;" id="bed-conferences">
+			Embedded &amp; real-time systems&nbsp;&nbsp;
+			<div class="table-responsive" style="display:none;" id="bed-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -613,11 +641,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('hpc')" class="hovertip" id="hpc-widget">
+			<span class="hovertip" id="hpc-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			High-performance computing
-			<div class="table" style="display:none;" id="hpc-conferences">
+			<div class="table-responsive" style="display:none;" id="hpc-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -639,11 +667,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('mobile')" class="hovertip" id="mobile-widget">
+			<span class="hovertip" id="mobile-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Mobile computing
-			<div class="table" style="display:none;" id="mobile-conferences">
+			<div class="table-responsive" style="display:none;" id="mobile-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -665,11 +693,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('metrics')" class="hovertip" id="metrics-widget">
+			<span class="hovertip" id="metrics-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Measurement &amp; perf. analysis&nbsp;
-			<div class="table" style="display:none;" id="metrics-conferences">
+			<div class="table-responsive" style="display:none;" id="metrics-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -690,11 +718,11 @@
 
 		    <tr>
 		      <td>  
-			<span onclick="CSRankings.toggleConferences('ops')" class="hovertip" id="ops-widget">
+			<span class="hovertip" id="ops-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Operating systems
-			<div class="table" style="display:none;" id="ops-conferences">
+			<div class="table-responsive" style="display:none;" id="ops-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -716,11 +744,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('plan')" class="hovertip" id="plan-widget">
+			<span class="hovertip" id="plan-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Programming languages
-			<div class="table" style="display:none;" id="plan-conferences">
+			<div class="table-responsive" style="display:none;" id="plan-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -739,14 +767,14 @@
 		      </td>
 		    </tr>
 
-	  
+		    
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('soft')" class="hovertip" id="soft-widget">
+			<span class="hovertip" id="soft-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Software engineering
-			<div class="table" style="display:none;" id="soft-conferences">
+			<div class="table-responsive" style="display:none;" id="soft-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -772,7 +800,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">Theory
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateTheory(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateTheory(); return false;">on</a>]
+			  [<a class="area_group_selector" id="theory_areas_off">off</a> | <a class="area_group_selector" id="theory_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -782,11 +810,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('act')" class="hovertip" id="act-widget">
+			<span class="hovertip" id="act-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Algorithms &amp; complexity
-			<div class="table" style="display:none;" id="act-conferences">
+			<div class="table-responsive" style="display:none;" id="act-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -808,11 +836,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('crypt')" class="hovertip" id="crypt-widget">
+			<span class="hovertip" id="crypt-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Cryptography
-			<div class="table" style="display:none;" id="crypt-conferences">
+			<div class="table-responsive" style="display:none;" id="crypt-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -833,11 +861,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('log')" class="hovertip" id="log-widget">
+			<span class="hovertip" id="log-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Logic &amp; verification
-			<div class="table" style="display:none;" id="log-conferences">
+			<div class="table-responsive" style="display:none;" id="log-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -862,7 +890,7 @@
 		    <tr>
 		      <th colspan="2">
 			<p class="text-muted">Interdisciplinary Areas
-			  [<a class="only_these_areas" onClick="CSRankings.deactivateOthers(); return false;">off</a> | <a class="only_these_areas" onClick="CSRankings.activateOthers(); return false;">on</a>]
+			  [<a class="area_group_selector" id="other_areas_off">off</a> | <a class="area_group_selector" id="other_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
@@ -872,11 +900,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('bio')" class="hovertip" id="bio-widget">
+			<span class="hovertip" id="bio-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Comp. bio &amp; bioinformatics
-			<div class="table" style="display:none;" id="bio-conferences">
+			<div class="table-responsive" style="display:none;" id="bio-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -897,11 +925,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('graph')" class="hovertip" id="graph-widget">
+			<span class="hovertip" id="graph-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Computer graphics
-			<div class="table" style="display:none;" id="graph-conferences">
+			<div class="table-responsive" style="display:none;" id="graph-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -923,11 +951,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('ecom')" class="hovertip" id="ecom-widget">
+			<span class="hovertip" id="ecom-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Economics &amp; computation
-			<div class="table" style="display:none;" id="ecom-conferences">
+			<div class="table-responsive" style="display:none;" id="ecom-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -948,11 +976,11 @@
 
 		    <tr>
 		      <td> 
-			<span onclick="CSRankings.toggleConferences('chi')" class="hovertip" id="chi-widget">
+			<span class="hovertip" id="chi-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Human-computer interaction
-			<div class="table" style="display:none;" id="chi-conferences">
+			<div class="table-responsive" style="display:none;" id="chi-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -974,11 +1002,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('robotics')" class="hovertip" id="robotics-widget">
+			<span class="hovertip" id="robotics-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Robotics
-			<div class="table" style="display:none;" id="robotics-conferences">
+			<div class="table-responsive" style="display:none;" id="robotics-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -1000,11 +1028,11 @@
 
 		    <tr>
 		      <td>
-			<span onclick="CSRankings.toggleConferences('vis')" class="hovertip" id="vis-widget">
+			<span class="hovertip" id="vis-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
 			Visualization
-			<div class="table" style="display:none;" id="vis-conferences">
+			<div class="table-responsive" style="display:none;" id="vis-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -1024,43 +1052,49 @@
 		    </tr>
 
 		  </tbody>
-		  
+
 		</table>
 	      </div>
 	    </div>
+
+	    <!-- end area selection -->
+
+	    <!-- start ranking window -->
 	    
-	    <div class="row">
-	      <!-- col-xs-6 col-sm-6 col-md-4  -->
-	      <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		<div id="success">
-		  <strong><h4>Loading and processing data. Please wait.</h4></strong>
-		</div>
+	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
+	      <div id="success">
+		<strong><h4>Loading and processing data. Please wait.</h4></strong>
 	      </div>
 	    </div>
-	  </div>
-<div class="page-footer">
-	      <p>
-		This ranking of top computer science schools is
-		designed to identify institutions and faculty actively
-		engaged in research across a number of areas of
-		computer science, based on the number of publications
-		by faculty that have appeared at the most selective
-		conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
-	      </p>
+	    
+	    <!-- end ranking window -->
 
-            <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated October 30, 2017).<br />
-	      Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/faculty-affiliations.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP. Alternatively, use <b><a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">this form</a></b> for individual updates.
+	    
+	  </div>
+	  
+	  <div class="page-footer">
+	    <p>
+	      <br />
+	      This ranking of top computer science schools is
+	      designed to identify institutions and faculty actively
+	      engaged in research across a number of areas of
+	      computer science, based on the number of publications
+	      by faculty that have appeared at the most selective
+	      conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
+	    </p>
+
+	    <p class="text-muted">
+	      All publication data is from <a target="_blank" href="http://dblp.uni-trier.de/">DBLP</a> (last updated November 9, 2017). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP. Alternatively, use <b><a target="_blank" href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">this form</a></b> for individual updates.
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-	      <p>
-		<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.com" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://github.com/emeryberger/CSrankings" rel="dct:source">http://github.com/emeryberger/CSrankings</a>.
+	    <p>
+	      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.com" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://github.com/emeryberger/CSrankings" rel="dct:source">http://github.com/emeryberger/CSrankings</a>.
 	      <br>Copyright 2017 © <a href="http://emeryberger.com">Emery Berger</a><br />
-	      </p>
+	    </p>
 	    </p>
 	  </div>
 	</div>
       </form>
-      </div>
-</body>
+    </div>
+  </body>
 </html>

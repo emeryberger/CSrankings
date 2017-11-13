@@ -26,6 +26,13 @@ interface Article {
     readonly institution : string;
 };
 
+interface AuthorInfo {
+    readonly name        : string;
+    readonly affiliation : string;
+    readonly homepage    : string;
+    readonly scholarid   : string;
+};
+
 interface Author {
     readonly name : string;
     readonly dept : string;
@@ -96,17 +103,13 @@ class CSRankings {
 	for (let area of CSRankings.interdisciplinaryAreas) {
 	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
 	}
-	// CSRankings.setAllCheckboxes();
 	let next = ()=> {
 	    CSRankings.loadAliases(CSRankings.aliases, function() {
-		CSRankings.loadHomepages(CSRankings.homepages,
-					 function() {
-					     CSRankings.loadAuthorInfo(function() {
-						 CSRankings.loadCountryInfo(CSRankings.countryInfo,
-									    function() {
-										CSRankings.loadScholarInfo(CSRankings.scholarInfo, CSRankings.rank); });
-					     });
-					 });
+		CSRankings.loadAuthorInfo(function() {
+		    CSRankings.loadAuthors(function() {
+			CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+		    });
+		});
 	    });
 	};
 	CSRankings.activateAll();
@@ -127,6 +130,7 @@ class CSRankings {
 	}).resolve();
     }
 
+    private static readonly authorFile         = "/csrankings.csv";
     private static readonly authorinfoFile     = "/generated-author-info.csv";
     private static readonly countryinfoFile    = "/country-info.csv";
     private static readonly aliasFile          = "/dblp-aliases.csv";
@@ -276,18 +280,8 @@ class CSRankings {
 
     /* Create the prologue that we preface each generated HTML page with (the results). */
     private static makePrologue() : string {
-	const s = "<html>"
-	    + "<head>"
-	    + '<style type="text/css">'
-	    + '  body { font-family: "Helvetica", "Arial"; }'
-	    + "  table td { vertical-align: top; }"
-	    + "</style>"
-	    + "</head>"
-	    + "<body>"
-	    + '<div class="row">'
-	    + '<div class="table" style="overflow:auto; height: 650px;">'
-	    //+ '<div class="table" style="height: 650px;">'
-	    + '<table class="table-sm table-striped"'
+	const s = '<div class="table-responsive" style="overflow:auto; height:700px;">'
+	    + '<table class="table table-fit table-sm table-striped"'
 	    + 'id="ranking" valign="top">';
 	return s;
     }
@@ -428,22 +422,6 @@ class CSRankings {
 	});
     }
 
-    private static loadScholarInfo(scholarInfo: {[key : string] : string },
-				   cont : ()=> void ) : void {
-	Papa.parse(CSRankings.scholarFile, {
-	    header: true,
-	    download : true,
-	    complete : (results)=> {
-		const data : any = results.data;
-		const d = data as Array<ScholarID>;
-		for (let scholarPair of d) {
-		    scholarInfo[scholarPair.name] = scholarPair.scholarid;
-		}
-		setTimeout(cont, 0);
-	    }
-	});
-    }
-    
     private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
 	Papa.parse(CSRankings.aliasFile, {
@@ -460,14 +438,6 @@ class CSRankings {
 	});
     }
 
-    private static loadArticles(cont : () => void) : void {
-	jQuery.getJSON("articles.json", (_ : Array<Article>) => {
-/* disabled for now
-	    CSRankings.articles = data; */
-	    setTimeout(cont, 0);
-	});
-    }
-    
     private static loadCountryInfo(countryInfo : {[key : string] : string },
 				   cont : () => void ) : void {
 	Papa.parse(CSRankings.countryinfoFile, {
@@ -485,42 +455,34 @@ class CSRankings {
     }
 
     private static loadAuthorInfo(cont : () => void) : void {
+	Papa.parse(CSRankings.authorFile, {
+	    download : true,
+	    header : true,
+	    complete: (results)=> {
+		const data : any = results.data;
+		const ai = data as Array<AuthorInfo>;
+		for (let counter = 0; counter < ai.length; counter++) {
+		    const record = ai[counter];
+		    let name = record['name'];
+        	    CSRankings.homepages[name.trim()]   = record['homepage'];
+		    CSRankings.scholarInfo[name.trim()] = record['scholarid'];
+		}
+		setTimeout(cont, 0);
+	    }
+	});
+    }
+
+    private static loadAuthors(cont : () => void) : void {
 	Papa.parse(CSRankings.authorinfoFile, {
 	    download : true,
 	    header : true,
 	    complete: (results)=> {
 		const data : any = results.data;
 		this.authors = data as Array<Author>;
-		for (let i = 0; i < CSRankings.fields.length; i++) {
-		    const str = 'input[name='+CSRankings.fields[i]+']';
-		    jQuery(str).click(()=>{
-			this.rank();
-		    });
-		}
 		setTimeout(cont, 0);
 	    }
 	});
     }
-
-    private static loadHomepages(homepages : {[key : string] : string },
-				 cont : ()=> void ) : void {
-	Papa.parse(CSRankings.homepagesFile, {
-	    header: true,
-	    download : true,
-	    complete : (results)=> {
-		const data : any = results.data;
-		const d = data as Array<HomePage>;
-		for (let namePage of d) {
-		    if (typeof namePage.homepage === 'undefined') {
-        		continue
-		    }
-		    homepages[namePage.name.trim()] = namePage.homepage.trim();
-		}
-		setTimeout(cont, 0);
-	    }
-	});
-    }
-
 
     private static inRegion(dept : string,
 			    regions : string): boolean
@@ -825,7 +787,7 @@ class CSRankings {
 		continue;
 	    }
 	    
-	    let p = '<div class="row"><div class="table"><table class="table-striped" width="100%"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adjusted&nbsp;\#</abbr></em></small></td></thead><tbody>';
+	    let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em></small></td></thead><tbody>';
 	    /* Build a dict of just faculty from this department for sorting purposes. */
 	    let fc : {[key:string] : number} = {};
 	    for (let name of deptNames[dept]) {
@@ -868,7 +830,7 @@ class CSRankings {
 			+ url
 			+ '\', true); return false;"'
 			+ '>'
-			+ '<img src="https://scholar.google.com/favicon.ico" height="10" width="10">'
+			+ '<img src="scholar-favicon.ico" height="10" width="10">'
 			+'</a>&nbsp;';
 		}
 		p += "<span title=\"Click for author's publication profile.\" onclick=\"CSRankings.toggleChart('"
@@ -896,7 +858,7 @@ class CSRankings {
 		    + "</td></tr>"
 		;
 	    }
-	    p += "</tbody></table></div></div>";
+	    p += "</tbody></table></div>";
 	    univtext[dept] = p;
 	}
 	return univtext;
@@ -911,10 +873,10 @@ class CSRankings {
     {
 	let s = CSRankings.makePrologue();
 	/* Show the top N (with more if tied at the end) */
-	let minToRank            = parseInt(jQuery("#minToRank").find(":selected").val());
+	let minToRank            = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
 
 	if (displayPercentages) {
-	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Avg.&nbsp;Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
 	} else {
 	    s = s + '<thead><tr><th align="left">Rank&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;Faculty</th></tr></thead>';
 	}
@@ -983,7 +945,7 @@ class CSRankings {
 	    s += "<br>" + "</body>" + "</html>";
 	} else {
 	    /* Nothing selected. */
-	    s = "<h4>Please select at least one area.</h4>";
+	    s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
 	}
 	return s;
     }
@@ -1162,7 +1124,6 @@ class CSRankings {
 	    const str = 'input[name='+CSRankings.fields[i]+']';
 	    if (jQuery(str).prop('checked')) {
 		s += CSRankings.fields[i] + '&';
-//		console.log(CSRankings.fields[i]);
 		count += 1;
 	    }
 	}
@@ -1200,12 +1161,50 @@ class CSRankings {
 		break;
 	    }});
     }
+
+    public static addListeners() : void {
+	// Add listeners for clicks on area widgets (left side of screen)
+	// e.g., 'ai'
+	for (let position = 0; position < CSRankings.areas.length; position++) {
+	    let area = CSRankings.areas[position];
+	    const widget = document.getElementById(area+'-widget');
+	    widget!.addEventListener("click", function() {
+		CSRankings.toggleConferences(area);
+	    });
+	}
+	// Initialize callbacks for area checkboxes.
+	for (let i = 0; i < CSRankings.fields.length; i++) {
+	    const str = 'input[name='+CSRankings.fields[i]+']';
+	    jQuery(str).click(()=>{
+		this.rank();
+	    });
+	}
+	// Add group selectors.
+	const listeners : {[key : string] : ()=>void } =
+	    { 'all_areas_on'  : (()=> { CSRankings.activateAll(); }),
+	      'all_areas_off' : (()=> { CSRankings.activateNone(); }),
+	      'ai_areas_on'   : (()=> { CSRankings.activateAI(); }),
+	      'ai_areas_off'  : (()=> { CSRankings.deactivateAI(); }),
+	      'systems_areas_on'   : (()=> { CSRankings.activateSystems(); }),
+	      'systems_areas_off'  : (()=> { CSRankings.deactivateSystems(); }),
+	      'theory_areas_on'    : (()=> { CSRankings.activateTheory(); }),
+	      'theory_areas_off'   : (()=> { CSRankings.deactivateTheory(); }),
+	      'other_areas_on'     : (()=> { CSRankings.activateOthers(); }),
+	      'other_areas_off'    : (()=> { CSRankings.deactivateOthers(); })
+	    };
+	for (let item in listeners) {
+	    const widget = document.getElementById(item);
+	    widget!.addEventListener("click", function() {
+		listeners[item]();
+	    });
+	}
+    }
     
 }
 
 function init() : void {
     let csr = new CSRankings();
+    CSRankings.addListeners();
 }
 
 window.onload=init;
-//	jQuery(document).ready(
