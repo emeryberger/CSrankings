@@ -115,19 +115,8 @@ class CSRankings {
 	CSRankings.activateAll();
 	next();
 	CSRankings.navigoRouter = new Navigo(null, true);
-	CSRankings.navigoRouter.on('/index', function(params, query) {
-	    let par = params;
-	    // Clear everything.
-	    for (let a in CSRankings.areas) {
-		jQuery("input[name="+CSRankings.areas[a]+"]").prop('checked', false);
-	    }
-	    // Now check everything listed in the query string.
-	    query.split('&').forEach(function(item) {
-		if (item != "none") {
-		    jQuery("input[name="+item+"]").prop('checked', true);
-		}
-	    });
-	}).resolve();
+	CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
+	CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
     }
 
     private static readonly authorFile         = "/csrankings.csv";
@@ -965,8 +954,8 @@ class CSRankings {
 	let currentWeights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
 	CSRankings.areaDeptAdjustedCount = {};
 	
-	const startyear          = parseInt(jQuery("#startyear").find(":selected").text());
-	const endyear            = parseInt(jQuery("#endyear").find(":selected").text());
+	const startyear          = parseInt(jQuery("#fromyear").find(":selected").text());
+	const endyear            = parseInt(jQuery("#toyear").find(":selected").text());
 	const displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
@@ -1162,7 +1151,31 @@ class CSRankings {
 	    }});
     }
 
+    public static navigator(params : { [key : string ] : string }, query : string ) : void {
+	console.log(params);
+	if (params !== null) {
+	    Object.keys(params).forEach(function (key) {
+		jQuery("#"+key).prop('value', params[key]);
+		console.log(key + " --> " + params[key]);
+	    });
+	}
+	// Clear everything.
+	for (let a in CSRankings.areas) {
+	    jQuery("input[name="+CSRankings.areas[a]+"]").prop('checked', false);
+	}
+	// Now check everything listed in the query string.
+	query.split('&').forEach(function(item) {
+	    if ((item != "none") && (item != "")) {
+		jQuery("input[name="+item+"]").prop('checked', true);
+	    }
+	});
+    }
+
     public static addListeners() : void {
+	["toyear", "fromyear", "regions"].forEach(function(key) {
+	    const widget = document.getElementById(key);
+	    widget!.addEventListener("change", CSRankings.rank);
+	});
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'
 	for (let position = 0; position < CSRankings.areas.length; position++) {
