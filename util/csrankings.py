@@ -75,7 +75,7 @@ areadict = {
     # SIGACT
     'act': ['STOC', 'FOCS', 'SODA'],
     # SIGCOMM
-    'comm': ['SIGCOMM', 'INFOCOM', 'NSDI'],
+    'comm': ['SIGCOMM', 'NSDI'],
     # SIGSAC
     # - USENIX Security listed twice to reflect variants in DBLP
     'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'],

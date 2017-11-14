@@ -84,7 +84,6 @@
 //inproceedings[booktitle="IMC"],
 //inproceedings[booktitle="Internet Measurement Conference"],
 //inproceedings[booktitle="SIGCOMM"],
-//inproceedings[booktitle="INFOCOM"],
 //inproceedings[booktitle="NSDI"],
 //article[journal="PACMPL"],
 //inproceedings[booktitle="POPL"],
