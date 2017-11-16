@@ -112,8 +112,8 @@ class CSRankings {
 		});
 	    });
 	};
-	CSRankings.activateAll();
 	next();
+	CSRankings.activateAll();
 	CSRankings.navigoRouter = new Navigo(null, true);
 	CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
 	CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
@@ -123,8 +123,6 @@ class CSRankings {
     private static readonly authorinfoFile     = "/generated-author-info.csv";
     private static readonly countryinfoFile    = "/country-info.csv";
     private static readonly aliasFile          = "/dblp-aliases.csv";
-    private static readonly homepagesFile      = "/homepages.csv";
-    private static readonly scholarFile        = "/scholar.csv";
     private static readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
     private static readonly parentMap : {[key : string] : string }

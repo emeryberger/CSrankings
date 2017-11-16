@@ -59,8 +59,8 @@ var CSRankings = (function () {
                 });
             });
         };
-        CSRankings.activateAll();
         next();
+        CSRankings.activateAll();
         CSRankings.navigoRouter = new Navigo(null, true);
         CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
         CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
@@ -966,8 +966,6 @@ CSRankings.authorFile = "/csrankings.csv";
 CSRankings.authorinfoFile = "/generated-author-info.csv";
 CSRankings.countryinfoFile = "/country-info.csv";
 CSRankings.aliasFile = "/dblp-aliases.csv";
-CSRankings.homepagesFile = "/homepages.csv";
-CSRankings.scholarFile = "/scholar.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
 CSRankings.parentMap = { 'aaai': 'ai',
     'ijcai': 'ai',
