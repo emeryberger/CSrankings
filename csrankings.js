@@ -59,22 +59,11 @@ var CSRankings = (function () {
                 });
             });
         };
-        CSRankings.activateAll();
         next();
+        CSRankings.activateAll();
         CSRankings.navigoRouter = new Navigo(null, true);
-        CSRankings.navigoRouter.on('/index', function (params, query) {
-            var par = params;
-            // Clear everything.
-            for (var a in CSRankings.areas) {
-                jQuery("input[name=" + CSRankings.areas[a] + "]").prop('checked', false);
-            }
-            // Now check everything listed in the query string.
-            query.split('&').forEach(function (item) {
-                if (item != "none") {
-                    jQuery("input[name=" + item + "]").prop('checked', true);
-                }
-            });
-        }).resolve();
+        CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
+        CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -745,8 +734,8 @@ var CSRankings = (function () {
         var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
         var currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
         CSRankings.areaDeptAdjustedCount = {};
-        var startyear = parseInt(jQuery("#startyear").find(":selected").text());
-        var endyear = parseInt(jQuery("#endyear").find(":selected").text());
+        var startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        var endyear = parseInt(jQuery("#toyear").find(":selected").text());
         var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
         var numAreas = CSRankings.updateWeights(currentWeights);
@@ -905,8 +894,31 @@ var CSRankings = (function () {
             }
         });
     };
+    CSRankings.navigator = function (params, query) {
+        console.log(params);
+        if (params !== null) {
+            Object.keys(params).forEach(function (key) {
+                jQuery("#" + key).prop('value', params[key]);
+                console.log(key + " --> " + params[key]);
+            });
+        }
+        // Clear everything.
+        for (var a in CSRankings.areas) {
+            jQuery("input[name=" + CSRankings.areas[a] + "]").prop('checked', false);
+        }
+        // Now check everything listed in the query string.
+        query.split('&').forEach(function (item) {
+            if ((item != "none") && (item != "")) {
+                jQuery("input[name=" + item + "]").prop('checked', true);
+            }
+        });
+    };
     CSRankings.addListeners = function () {
         var _this = this;
+        ["toyear", "fromyear", "regions"].forEach(function (key) {
+            var widget = document.getElementById(key);
+            widget.addEventListener("change", CSRankings.rank);
+        });
         var _loop_2 = function (position) {
             var area = CSRankings.areas[position];
             var widget = document.getElementById(area + '-widget');
@@ -954,8 +966,6 @@ CSRankings.authorFile = "/csrankings.csv";
 CSRankings.authorinfoFile = "/generated-author-info.csv";
 CSRankings.countryinfoFile = "/country-info.csv";
 CSRankings.aliasFile = "/dblp-aliases.csv";
-CSRankings.homepagesFile = "/homepages.csv";
-CSRankings.scholarFile = "/scholar.csv";
 CSRankings.allowRankingChange = false; /* Can we change the kind of rankings being used? */
 CSRankings.parentMap = { 'aaai': 'ai',
     'ijcai': 'ai',
