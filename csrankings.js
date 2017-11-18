@@ -54,8 +54,8 @@ var CSRankings = (function () {
             CSRankings.loadAuthorInfo(function () {
                 CSRankings.loadAuthors(function () {
                     CSRankings.loadCountryInfo(CSRankings.countryInfo, function () {
-                        CSRankings.rank();
                         CSRankings.activateAll();
+                        CSRankings.rank();
                         CSRankings.navigoRouter = new Navigo(null, true);
                         CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
                         CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
@@ -256,6 +256,8 @@ var CSRankings = (function () {
         });
     };
     CSRankings.loadCountryInfo = function (countryInfo, cont) {
+        var s = "<strong><h4>Computing ranking.</h4></strong>";
+        jQuery("#success").html(s);
         Papa.parse(CSRankings.countryinfoFile, {
             header: true,
             download: true,
@@ -271,6 +273,8 @@ var CSRankings = (function () {
         });
     };
     CSRankings.loadAuthorInfo = function (cont) {
+        var s = "<strong><h4>Loading author information.</h4></strong>";
+        jQuery("#success").html(s);
         Papa.parse(CSRankings.authorFile, {
             download: true,
             header: true,
@@ -289,6 +293,8 @@ var CSRankings = (function () {
     };
     CSRankings.loadAuthors = function (cont) {
         var _this = this;
+        var s = "<strong><h4>Loading publication data.</h4></strong>";
+        jQuery("#success").html(s);
         Papa.parse(CSRankings.authorinfoFile, {
             download: true,
             header: true,
@@ -751,7 +757,8 @@ var CSRankings = (function () {
         /* Start building up the string to output. */
         var s = CSRankings.buildOutputString(displayPercentages, numAreas, CSRankings.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
-        setTimeout(function () { jQuery("#success").html(s); CSRankings.urlUpdate(); }, 0);
+        jQuery("#success").html(s);
+        CSRankings.urlUpdate();
         return false;
     };
     /* Turn the chart display on or off. */
