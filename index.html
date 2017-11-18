@@ -3,7 +3,9 @@
   <head>
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="preload" href="css/csrankings.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/csrankings.css"></noscript>
+    
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -1063,7 +1065,10 @@
 	    
 	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div id="success">
-		<strong><h4>Loading and processing data. Please wait.</h4></strong>
+		<strong><h3>Loading and processing data</h3>
+		  <div id="progress">
+		  </div>
+		</strong>
 	      </div>
 	    </div>
 	    

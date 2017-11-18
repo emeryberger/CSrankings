@@ -242,7 +242,7 @@ var CSRankings = (function () {
     };
     CSRankings.loadAliases = function (aliases, cont) {
         var s = "<strong><h4>Loading data.</h4></strong>";
-        jQuery("#success").html(s);
+        jQuery("#progress").html(s);
         Papa.parse(CSRankings.aliasFile, {
             header: true,
             download: true,
@@ -259,7 +259,7 @@ var CSRankings = (function () {
     };
     CSRankings.loadCountryInfo = function (countryInfo, cont) {
         var s = "<strong><h4>Computing ranking.</h4></strong>";
-        jQuery("#success").html(s);
+        jQuery("#progress").html(s);
         Papa.parse(CSRankings.countryinfoFile, {
             header: true,
             download: true,
@@ -276,7 +276,7 @@ var CSRankings = (function () {
     };
     CSRankings.loadAuthorInfo = function (cont) {
         var s = "<strong><h4>Loading author information.</h4></strong>";
-        jQuery("#success").html(s);
+        jQuery("#progress").html(s);
         Papa.parse(CSRankings.authorFile, {
             download: true,
             header: true,
@@ -296,7 +296,7 @@ var CSRankings = (function () {
     CSRankings.loadAuthors = function (cont) {
         var _this = this;
         var s = "<strong><h4>Loading publication data.</h4></strong>";
-        jQuery("#success").html(s);
+        jQuery("#progress").html(s);
         Papa.parse(CSRankings.authorinfoFile, {
             download: true,
             header: true,
