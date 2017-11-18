@@ -50,20 +50,19 @@ var CSRankings = (function () {
             var area = _h[_g];
             CSRankings.otherFields.push(CSRankings.areaPosition[area]);
         }
-        var next = function () {
-            CSRankings.loadAliases(CSRankings.aliases, function () {
-                CSRankings.loadAuthorInfo(function () {
-                    CSRankings.loadAuthors(function () {
-                        CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+        CSRankings.loadAliases(CSRankings.aliases, function () {
+            CSRankings.loadAuthorInfo(function () {
+                CSRankings.loadAuthors(function () {
+                    CSRankings.loadCountryInfo(CSRankings.countryInfo, function () {
+                        CSRankings.rank();
+                        CSRankings.activateAll();
+                        CSRankings.navigoRouter = new Navigo(null, true);
+                        CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
+                        CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
                     });
                 });
             });
-        };
-        next();
-        CSRankings.activateAll();
-        CSRankings.navigoRouter = new Navigo(null, true);
-        CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
-        CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
+        });
     }
     CSRankings.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
