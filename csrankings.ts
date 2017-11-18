@@ -103,20 +103,20 @@ class CSRankings {
 	for (let area of CSRankings.interdisciplinaryAreas) {
 	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
 	}
-	let next = ()=> {
-	    CSRankings.loadAliases(CSRankings.aliases, function() {
-		CSRankings.loadAuthorInfo(function() {
-		    CSRankings.loadAuthors(function() {
-			CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
-		    });
+	CSRankings.loadAliases(CSRankings.aliases, ()=> {
+	    CSRankings.loadAuthorInfo(()=> {
+		CSRankings.loadAuthors(()=> {
+		    CSRankings.loadCountryInfo(CSRankings.countryInfo,
+					       ()=> {
+						   CSRankings.rank();
+						   CSRankings.activateAll();
+						   CSRankings.navigoRouter = new Navigo(null, true);
+						   CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
+						   CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
+					       });
 		});
 	    });
-	};
-	next();
-	CSRankings.activateAll();
-	CSRankings.navigoRouter = new Navigo(null, true);
-	CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
-	CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
+	});
     }
 
     private static readonly authorFile         = "/csrankings.csv";
@@ -545,7 +545,7 @@ class CSRankings {
     private static sortIndex(univagg : {[key: string] : number}) : string[]
     {
 	let keys = Object.keys(univagg);
-	keys.sort(function(a,b) {
+	keys.sort((a,b)=> {
 	    if (univagg[a] > univagg[b]) {
 		return -1;
 	    }
@@ -781,7 +781,7 @@ class CSRankings {
 		fc[name] = facultycount[name+dept];
 	    }
 	    let keys = Object.keys(fc);
-	    keys.sort(function(a : string, b : string){
+	    keys.sort((a : string, b : string) => {
 		if (fc[b] === fc[a]) {
 		    let fb = Math.round(10.0 * facultyAdjustedCount[b+dept]) / 10.0;
 		    let fa = Math.round(10.0 * facultyAdjustedCount[a+dept]) / 10.0;
@@ -1131,7 +1131,7 @@ class CSRankings {
     private static geoCheck() {
 	// Figure out which country clients are coming from and set
 	// the default regions accordingly.
-	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
+	jQuery.getJSON('http://freegeoip.net/json/', (result)=> {
 	    switch (result.country_code) {
 	    case "US":
 	    case "CN":
@@ -1152,7 +1152,7 @@ class CSRankings {
     public static navigator(params : { [key : string ] : string }, query : string ) : void {
 	console.log(params);
 	if (params !== null) {
-	    Object.keys(params).forEach(function (key) {
+	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
 		console.log(key + " --> " + params[key]);
 	    });
@@ -1162,7 +1162,7 @@ class CSRankings {
 	    jQuery("input[name="+CSRankings.areas[a]+"]").prop('checked', false);
 	}
 	// Now check everything listed in the query string.
-	query.split('&').forEach(function(item) {
+	query.split('&').forEach((item)=> {
 	    if ((item != "none") && (item != "")) {
 		jQuery("input[name="+item+"]").prop('checked', true);
 	    }
@@ -1170,7 +1170,7 @@ class CSRankings {
     }
 
     public static addListeners() : void {
-	["toyear", "fromyear", "regions"].forEach(function(key) {
+	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
 	    widget!.addEventListener("change", CSRankings.rank);
 	});
@@ -1179,7 +1179,7 @@ class CSRankings {
 	for (let position = 0; position < CSRankings.areas.length; position++) {
 	    let area = CSRankings.areas[position];
 	    const widget = document.getElementById(area+'-widget');
-	    widget!.addEventListener("click", function() {
+	    widget!.addEventListener("click", ()=> {
 		CSRankings.toggleConferences(area);
 	    });
 	}
@@ -1205,7 +1205,7 @@ class CSRankings {
 	    };
 	for (let item in listeners) {
 	    const widget = document.getElementById(item);
-	    widget!.addEventListener("click", function() {
+	    widget!.addEventListener("click", ()=> {
 		listeners[item]();
 	    });
 	}
