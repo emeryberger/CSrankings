@@ -108,8 +108,8 @@ class CSRankings {
 		CSRankings.loadAuthors(()=> {
 		    CSRankings.loadCountryInfo(CSRankings.countryInfo,
 					       ()=> {
-						   CSRankings.rank();
 						   CSRankings.activateAll();
+						   CSRankings.rank();
 						   CSRankings.navigoRouter = new Navigo(null, true);
 						   CSRankings.navigoRouter.on('/index', CSRankings.navigator).resolve();
 						   CSRankings.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', CSRankings.navigator).resolve();
@@ -427,6 +427,8 @@ class CSRankings {
 
     private static loadCountryInfo(countryInfo : {[key : string] : string },
 				   cont : () => void ) : void {
+	let s = "<strong><h4>Computing ranking.</h4></strong>";
+	jQuery("#success").html(s);
 	Papa.parse(CSRankings.countryinfoFile, {
 	    header: true,
 	    download : true,
@@ -442,6 +444,8 @@ class CSRankings {
     }
 
     private static loadAuthorInfo(cont : () => void) : void {
+	let s = "<strong><h4>Loading author information.</h4></strong>";
+	jQuery("#success").html(s);
 	Papa.parse(CSRankings.authorFile, {
 	    download : true,
 	    header : true,
@@ -460,6 +464,8 @@ class CSRankings {
     }
 
     private static loadAuthors(cont : () => void) : void {
+	let s = "<strong><h4>Loading publication data.</h4></strong>";
+	jQuery("#success").html(s);
 	Papa.parse(CSRankings.authorinfoFile, {
 	    download : true,
 	    header : true,
@@ -1002,7 +1008,8 @@ class CSRankings {
 					     univtext);
 
 	/* Finally done. Redraw! */
-	setTimeout(()=>{ jQuery("#success").html(s); CSRankings.urlUpdate(); }, 0);
+	jQuery("#success").html(s);
+	CSRankings.urlUpdate();
 	return false; 
     }
 
