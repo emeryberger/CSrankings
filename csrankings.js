@@ -241,6 +241,8 @@ var CSRankings = (function () {
         });
     };
     CSRankings.loadAliases = function (aliases, cont) {
+        var s = "<strong><h4>Loading data.</h4></strong>";
+        jQuery("#success").html(s);
         Papa.parse(CSRankings.aliasFile, {
             header: true,
             download: true,

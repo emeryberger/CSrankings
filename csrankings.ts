@@ -411,6 +411,8 @@ class CSRankings {
 
     private static loadAliases(aliases: {[key : string] : string },
 			       cont : ()=> void ) : void {
+	let s = "<strong><h4>Loading data.</h4></strong>";
+	jQuery("#success").html(s);
 	Papa.parse(CSRankings.aliasFile, {
 	    header: true,
 	    download : true,
