@@ -694,16 +694,18 @@ var CSRankings = /** @class */ (function () {
                     + name_6
                     + '</a>&nbsp;';
                 if (this_1.scholarInfo.hasOwnProperty(name_6)) {
-                    var url = 'https://scholar.google.com/citations?user='
-                        + this_1.scholarInfo[name_6]
-                        + '&hl=en&oi=ao';
-                    p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
-                        + 'onclick="trackOutboundLink(\''
-                        + url
-                        + '\', true); return false;"'
-                        + '>'
-                        + '<img src="scholar-favicon.ico" height="10" width="10">'
-                        + '</a>&nbsp;';
+                    if (this_1.scholarInfo[name_6] != "NOSCHOLARPAGE") {
+                        var url = 'https://scholar.google.com/citations?user='
+                            + this_1.scholarInfo[name_6]
+                            + '&hl=en&oi=ao';
+                        p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
+                            + 'onclick="trackOutboundLink(\''
+                            + url
+                            + '\', true); return false;"'
+                            + '>'
+                            + '<img src="scholar-favicon.ico" height="10" width="10">'
+                            + '</a>&nbsp;';
+                    }
                 }
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
@@ -712,7 +714,7 @@ var CSRankings = /** @class */ (function () {
                     + homePage
                     + '\', true); return false;"'
                     + '>' + '<img src=\"' + this_1.homepageImage + '\"></a>&nbsp;';
-                p += "<span onclick='csr.toggleChart(\"" + escape(name_6) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font size=\"+1\" color=\"blue\">" + this_1.PieChart + "</font></span>"
+                p += "<span onclick='csr.toggleChart(\"" + escape(name_6) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this_1.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -798,7 +800,7 @@ var CSRankings = /** @class */ (function () {
                             + "-widget\">" + this.PieChart + "</span></font>";
                 */
                 s += "&nbsp;" + dept + "&nbsp;"
-                    + "<font size=\"+1\" color=\"blue\">"
+                    + "<font color=\"blue\">"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
                     + this.PieChart
                     + "</span></font>";
