@@ -27,6 +27,7 @@ var CSRankings = /** @class */ (function () {
         this.authorinfoFile = "/generated-author-info.csv";
         this.countryinfoFile = "/country-info.csv";
         this.aliasFile = "/dblp-aliases.csv";
+        this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
         this.parentMap = { 'aaai': 'ai',
             'ijcai': 'ai',
@@ -704,7 +705,14 @@ var CSRankings = /** @class */ (function () {
                         + '<img src="scholar-favicon.ico" height="10" width="10">'
                         + '</a>&nbsp;';
                 }
-                p += "<span onclick='csr.toggleChart(\"" + escape(name_6) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this_1.PieChart + "</font></span>"
+                p += '<a title="Click for author\'s home page." target="_blank" href="'
+                    + homePage
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + homePage
+                    + '\', true); return false;"'
+                    + '>' + '<img src=\"' + this_1.homepageImage + '\"></a>&nbsp;';
+                p += "<span onclick='csr.toggleChart(\"" + escape(name_6) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font size=\"+1\" color=\"blue\">" + this_1.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -790,7 +798,7 @@ var CSRankings = /** @class */ (function () {
                             + "-widget\">" + this.PieChart + "</span></font>";
                 */
                 s += "&nbsp;" + dept + "&nbsp;"
-                    + "<font color=\"blue\">"
+                    + "<font size=\"+1\" color=\"blue\">"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
                     + this.PieChart
                     + "</span></font>";
