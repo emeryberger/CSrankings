@@ -1170,11 +1170,11 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
-	console.log(params);
+//	console.log(params);
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
-		console.log(key + " --> " + params[key]);
+//		console.log(key + " --> " + params[key]);
 	    });
 	}
 	// Clear everything.
@@ -1215,7 +1215,7 @@ class CSRankings {
     public addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
-	    console.log(widget);
+//	    console.log(widget);
 	    widget!.addEventListener("change", ()=> { this.rank(); });
 	});
 	// Add listeners for clicks on area widgets (left side of screen)
