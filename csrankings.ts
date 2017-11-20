@@ -819,16 +819,18 @@ class CSRankings {
 		    + name
 		    + '</a>&nbsp;';
 		if (this.scholarInfo.hasOwnProperty(name)) {
-		    let url = 'https://scholar.google.com/citations?user='
-			+ this.scholarInfo[name]
-			+ '&hl=en&oi=ao';
-		    p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
-			+ 'onclick="trackOutboundLink(\''
-			+ url
-			+ '\', true); return false;"'
-			+ '>'
-			+ '<img src="scholar-favicon.ico" height="10" width="10">'
-			+'</a>&nbsp;';
+		    if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
+			let url = 'https://scholar.google.com/citations?user='
+			    + this.scholarInfo[name]
+			    + '&hl=en&oi=ao';
+			p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
+			    + 'onclick="trackOutboundLink(\''
+			    + url
+			    + '\', true); return false;"'
+			    + '>'
+			    + '<img src="scholar-favicon.ico" height="10" width="10">'
+			    +'</a>&nbsp;';
+		    }
 		}
 		
 		p += '<a title="Click for author\'s home page." target="_blank" href="'
@@ -839,7 +841,7 @@ class CSRankings {
 		    + '\', true); return false;"'
 		    + '>' + '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
 
-		p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font size=\"+1\" color=\"blue\">" + this.PieChart + "</font></span>"
+		p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this.PieChart + "</font></span>"
 		    + '</small>'
 		    + '</td><td align="right"><small>'
 		    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -929,7 +931,7 @@ class CSRankings {
 		    + "-widget\">" + this.PieChart + "</span></font>";
 */
 		s += "&nbsp;" + dept + "&nbsp;"
-		    + "<font size=\"+1\" color=\"blue\">"
+		    + "<font color=\"blue\">"
 		    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
 		    + this.PieChart
 		    + "</span></font>";
