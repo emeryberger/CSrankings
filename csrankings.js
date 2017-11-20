@@ -1001,11 +1001,11 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.navigator = function (params, query) {
-        console.log(params);
+        //	console.log(params);
         if (params !== null) {
             Object.keys(params).forEach(function (key) {
                 jQuery("#" + key).prop('value', params[key]);
-                console.log(key + " --> " + params[key]);
+                //		console.log(key + " --> " + params[key]);
             });
         }
         // Clear everything.
@@ -1044,7 +1044,7 @@ var CSRankings = /** @class */ (function () {
         var _this = this;
         ["toyear", "fromyear", "regions"].forEach(function (key) {
             var widget = document.getElementById(key);
-            console.log(widget);
+            //	    console.log(widget);
             widget.addEventListener("change", function () { _this.rank(); });
         });
         var _loop_2 = function (position) {
