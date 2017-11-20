@@ -828,7 +828,7 @@ class CSRankings {
 			+ '<img src="scholar-favicon.ico" height="10" width="10">'
 			+'</a>&nbsp;';
 		}
-		p += "<span onclick='csr.toggleFaculty(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this.PieChart + "</font></span>"
+		p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this.PieChart + "</font></span>"
 		    + '</small>'
 		    + '</td><td align="right"><small>'
 		    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
