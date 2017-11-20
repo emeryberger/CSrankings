@@ -1012,7 +1012,7 @@ class CSRankings {
 
 	/* Finally done. Redraw! */
 	jQuery("#success").html(s);
-	this.addNewListeners(facultycount, this.stats);
+//	this.addNewListeners(facultycount, this.stats);
 	this.urlUpdate();
 	return false; 
     }
