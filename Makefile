@@ -17,7 +17,7 @@ clean:
 csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
-	closure-compiler --js csrankings.js > csrankings.min.js
+#	closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
 	$(MAKE) download-dblp
