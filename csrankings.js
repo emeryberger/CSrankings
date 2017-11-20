@@ -704,7 +704,7 @@ var CSRankings = /** @class */ (function () {
                         + '<img src="scholar-favicon.ico" height="10" width="10">'
                         + '</a>&nbsp;';
                 }
-                p += "<span id=\"" + escape(name_6) + "-chart\" title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this_1.PieChart + "</font></span>"
+                p += "<span onclick='csr.toggleFaculty(\"" + escape(name_6) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this_1.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -776,13 +776,22 @@ var CSRankings = /** @class */ (function () {
                 var esc = escape(dept);
                 s += "\n<tr><td>" + rank + "</td>";
                 s += "<td>"
-                    + "<span class=\"hovertip\" id=\"" + esc + "-widget\">"
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + dept + "')\";\" id=\"" + dept + "-widget\">"
                     + "<font color=\"blue\">"
                     + this.RightTriangle
-                    + "</font>&nbsp;" + dept
+                    + "</font>"
                     + "</span>";
-                s += "&nbsp;<font color=\"blue\">"
-                    + "<span class=\"hovertip\" id=\"" + esc + "-chart\" onclick=\"console.log('WAT');\" >"
+                //		    + "<span onclick=\"csr.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
+                /*
+                        s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleFaculty('"
+                            + esc
+                            + "')\" class=\"hovertip\" id=\""
+                            + esc
+                            + "-widget\">" + this.PieChart + "</span></font>";
+                */
+                s += "&nbsp;" + dept + "&nbsp;"
+                    + "<font color=\"blue\">"
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
                     + this.PieChart
                     + "</span></font>";
                 //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
@@ -848,7 +857,7 @@ var CSRankings = /** @class */ (function () {
         var s = this.buildOutputString(displayPercentages, numAreas, this.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
-        this.addNewListeners(facultycount, this.stats);
+        //	this.addNewListeners(facultycount, this.stats);
         this.urlUpdate();
         return false;
     };
@@ -1082,8 +1091,8 @@ var CSRankings = /** @class */ (function () {
     };
     return CSRankings;
 }());
+var csr = new CSRankings();
 function init() {
-    var csr = new CSRankings();
     csr.addListeners();
 }
 window.onload = init;
