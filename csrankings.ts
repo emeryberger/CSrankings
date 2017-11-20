@@ -123,6 +123,8 @@ class CSRankings {
     private readonly authorinfoFile     = "/generated-author-info.csv";
     private readonly countryinfoFile    = "/country-info.csv";
     private readonly aliasFile          = "/dblp-aliases.csv";
+    private readonly homepageImage      ="/house-logo.png";
+    
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
     private readonly parentMap : {[key : string] : string }
@@ -223,10 +225,10 @@ class CSRankings {
     private readonly color : Array<string> =
 	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
 
-    private readonly RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
-    private readonly DownTriangle  = "&#9660;"; // downward-facing triangle symbol (expanded view)
-    private readonly PieChart      = "&#9685;"; // symbol that looks close enough to a pie chart
-
+    private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
+    private readonly DownTriangle  = "&#9660;";   // downward-facing triangle symbol (expanded view)
+    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
+    
     private translateNameToDBLP(name : string) : string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
 	// First, replace spaces and non-ASCII characters (not complete).
@@ -828,7 +830,16 @@ class CSRankings {
 			+ '<img src="scholar-favicon.ico" height="10" width="10">'
 			+'</a>&nbsp;';
 		}
-		p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this.PieChart + "</font></span>"
+		
+		p += '<a title="Click for author\'s home page." target="_blank" href="'
+		    + homePage
+		    + '" '
+		    + 'onclick="trackOutboundLink(\''
+		    + homePage
+		    + '\', true); return false;"'
+		    + '>' + '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+
+		p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font size=\"+1\" color=\"blue\">" + this.PieChart + "</font></span>"
 		    + '</small>'
 		    + '</td><td align="right"><small>'
 		    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -918,7 +929,7 @@ class CSRankings {
 		    + "-widget\">" + this.PieChart + "</span></font>";
 */
 		s += "&nbsp;" + dept + "&nbsp;"
-		    + "<font color=\"blue\">"
+		    + "<font size=\"+1\" color=\"blue\">"
 		    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
 		    + this.PieChart
 		    + "</span></font>";
