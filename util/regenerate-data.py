@@ -21,16 +21,16 @@ areadict = {
     'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     # SIGOPS
     # - OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
-    'ops': ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
+    'ops': ['SOSP', 'OSDI'], # , 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
     # SIGARCH
     'arch': ['ISCA', 'MICRO', 'ASPLOS'],
     # SIGACT
     'act': ['STOC', 'FOCS', 'SODA'],
     # SIGCOMM
-    'comm': ['SIGCOMM', 'INFOCOM', 'NSDI'],
+    'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
     # SIGSAC
     # - USENIX Security listed twice to reflect variants in DBLP
-    'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security'], # , 'NDSS'],
+    'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
     'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
     'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
