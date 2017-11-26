@@ -12,14 +12,15 @@ import operator
 
 # Load alias lists (name -> [aliases])
 aliases = {}
+aliasToName = {}
 with open('dblp-aliases.csv', mode='rb') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
-        print row
         if row['name'] in aliases:
             aliases[row['name']].append(row['alias'])
         else:
             aliases[row['name']] = [row['alias']]
+        aliasToName[row['alias']] = row['name']
 
 # Read in CSrankings file.
 csrankings = {}
@@ -30,7 +31,7 @@ with open('csrankings.csv', mode='rb') as infile:
                                     'homepage'    : row['homepage'],
                                     'scholarid'   : row['scholarid'] }
 
-# Now process for aliases.
+# Add any missing aliases.
 for name in aliases:
     if name in csrankings:
         # Make sure all aliases are there.
@@ -39,8 +40,15 @@ for name in aliases:
             if not a in csrankings:
                 # print("Missing "+a+"\n")
                 csrankings[a] = csrankings[name]
+    else:
+        # There might be a name that isn't there but an alias that IS. If so, add the name.
+        for a in aliases[name]:
+            if a in csrankings:
+                csrankings[name] = csrankings[a]
+                print "WOT "+name
+                break
 
-# Now correct any missing scholar pages.
+# Correct any missing scholar pages.
 for name in csrankings:
     if csrankings[name]['scholarid'] == 'NOSCHOLARPAGE':
         page = "NOSCHOLARPAGE"
@@ -48,6 +56,10 @@ for name in csrankings:
             for a in aliases[name]:
                 if csrankings[a]['scholarid'] != 'NOSCHOLARPAGE':
                     page = csrankings[a]['scholarid']
+        if name in aliasToName:
+            if csrankings[aliasToName[name]] != 'NOSCHOLARPAGE':
+                page = csrankings[aliasToName[name]]['scholarid']
+                
         if page != "NOSCHOLARPAGE":
             csrankings[name]['scholarid'] = page
 
