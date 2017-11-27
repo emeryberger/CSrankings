@@ -477,12 +477,12 @@ var CSRankings = /** @class */ (function () {
         });
         return keys;
     };
-    CSRankings.prototype.countAuthorAreas = function (authors, startyear, endyear, authorAreas) {
-        for (var r in authors) {
-            if (!authors.hasOwnProperty(r)) {
+    CSRankings.prototype.countAuthorAreas = function (startyear, endyear) {
+        for (var r in this.authors) {
+            if (!this.authors.hasOwnProperty(r)) {
                 continue;
             }
-            var auth = authors[r];
+            var auth = this.authors[r];
             var year = auth.year;
             if ((year < startyear) || (year > endyear)) {
                 continue;
@@ -503,35 +503,35 @@ var CSRankings = /** @class */ (function () {
             if (name_2 in this.aliases) {
                 name_2 = this.aliases[name_2];
             }
-            if (!(name_2 in authorAreas)) {
-                authorAreas[name_2] = {};
+            if (!(name_2 in this.authorAreas)) {
+                this.authorAreas[name_2] = {};
                 for (var area in this.areaDict) {
                     if (this.areaDict.hasOwnProperty(area)) {
-                        authorAreas[name_2][area] = 0;
+                        this.authorAreas[name_2][area] = 0;
                     }
                 }
             }
-            if (!(theDept in authorAreas)) {
-                authorAreas[theDept] = {};
+            if (!(theDept in this.authorAreas)) {
+                this.authorAreas[theDept] = {};
                 for (var area in this.areaDict) {
                     if (this.areaDict.hasOwnProperty(area)) {
-                        authorAreas[theDept][area] = 0;
+                        this.authorAreas[theDept][area] = 0;
                     }
                 }
             }
-            authorAreas[name_2][theArea] += theCount;
-            authorAreas[theDept][theArea] += theCount;
+            this.authorAreas[name_2][theArea] += theCount;
+            this.authorAreas[theDept][theArea] += theCount;
         }
     };
     /* Build the dictionary of departments (and count) to be ranked. */
-    CSRankings.prototype.buildDepartments = function (authors, startyear, endyear, weights, regions, areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
+    CSRankings.prototype.buildDepartments = function (startyear, endyear, weights, regions, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
         /* contains an author name if that author has been processed. */
         var visited = {};
-        for (var r in authors) {
-            if (!authors.hasOwnProperty(r)) {
+        for (var r in this.authors) {
+            if (!this.authors.hasOwnProperty(r)) {
                 continue;
             }
-            var _a = authors[r], name_3 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
+            var _a = this.authors[r], name_3 = _a.name, year = _a.year, area = _a.area, dept = _a.dept;
             if (name_3 in this.aliases) {
                 name_3 = this.aliases[name_3];
             }
@@ -550,12 +550,12 @@ var CSRankings = /** @class */ (function () {
             }
             var areaDept = area + dept;
             var nameDept = name_3 + dept;
-            if (!(areaDept in areaDeptAdjustedCount)) {
-                areaDeptAdjustedCount[areaDept] = 0;
+            if (!(areaDept in this.areaDeptAdjustedCount)) {
+                this.areaDeptAdjustedCount[areaDept] = 0;
             }
-            var count = parseInt(authors[r].count);
-            var adjustedCount = parseFloat(authors[r].adjustedcount);
-            areaDeptAdjustedCount[areaDept] += adjustedCount;
+            var count = parseInt(this.authors[r].count);
+            var adjustedCount = parseFloat(this.authors[r].adjustedcount);
+            this.areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
             if (!(name_3 in visited)) {
                 visited[name_3] = true;
@@ -847,8 +847,8 @@ var CSRankings = /** @class */ (function () {
         var whichRegions = jQuery("#regions").find(":selected").val();
         var numAreas = this.updateWeights(currentWeights);
         this.authorAreas = {};
-        this.countAuthorAreas(this.authors, startyear, endyear, this.authorAreas);
-        this.buildDepartments(this.authors, startyear, endyear, currentWeights, whichRegions, this.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        this.countAuthorAreas(startyear, endyear);
+        this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
         /* Canonicalize names. */
