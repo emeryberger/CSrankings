@@ -687,8 +687,6 @@ class CSRankings {
 
     /* Compute aggregate statistics. */
     private computeStats(deptNames : {[key:string] : Array<string> },
-			 areaDeptAdjustedCount : {[key:string] : number},
-			 areas : Array<string>,
 			 numAreas : number,
 			 weights : {[key:string] : number})
     {
@@ -698,18 +696,18 @@ class CSRankings {
 		continue;
 	    }
 	    this.stats[dept] = 1;
-	    for (let area of areas) {
+	    for (let area of CSRankings.areas) {
 		// If the area is a child, ignore it.
 		if (area in this.parentMap) {
 		    continue;
 		}
 		let areaDept = area+dept;
-		if (!(areaDept in areaDeptAdjustedCount)) {
-		    areaDeptAdjustedCount[areaDept] = 0;
+		if (!(areaDept in this.areaDeptAdjustedCount)) {
+		    this.areaDeptAdjustedCount[areaDept] = 0;
 		}
 		if (weights[area] != 0) {
 		    // Adjusted (smoothed) geometric mean.
-		    this.stats[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
+		    this.stats[dept] *= (this.areaDeptAdjustedCount[areaDept] + 1.0);
 		}
 	    }
 	    // finally compute geometric mean.
@@ -1003,8 +1001,6 @@ class CSRankings {
 	
 	/* (university, total or average number of papers) */
 	this.computeStats(deptNames,
-			  this.areaDeptAdjustedCount,
-			  CSRankings.areas,
 			  numAreas,
 			  currentWeights);
 
