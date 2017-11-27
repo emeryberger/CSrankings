@@ -45,7 +45,6 @@ for name in aliases:
         for a in aliases[name]:
             if a in csrankings:
                 csrankings[name] = csrankings[a]
-                print "WOT "+name
                 break
 
 # Correct any missing scholar pages.
@@ -69,14 +68,11 @@ csrankings = OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
 
 # Now rewrite csrankings.csv.
 
-print csrankings
-
 with open('csrankings.csv', mode='wb') as outfile:
     sfieldnames = ['name', 'affiliation', 'homepage', 'scholarid']
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
     for n in csrankings:
-        print("yomama "+n+"\n")
         h = { 'name' : n,
               'affiliation' : csrankings[n]['affiliation'],
               'homepage'    : csrankings[n]['homepage'],
