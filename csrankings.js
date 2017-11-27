@@ -477,9 +477,7 @@ var CSRankings = /** @class */ (function () {
         });
         return keys;
     };
-    CSRankings.prototype.countAuthorAreas = function (authors, startyear, endyear, 
-        //				    weights : {[key:string] : number},
-        authorAreas) {
+    CSRankings.prototype.countAuthorAreas = function (authors, startyear, endyear, authorAreas) {
         for (var r in authors) {
             if (!authors.hasOwnProperty(r)) {
                 continue;
@@ -575,19 +573,14 @@ var CSRankings = /** @class */ (function () {
         }
     };
     /* Compute aggregate statistics. */
-    CSRankings.prototype.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
+    CSRankings.prototype.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, weights) {
         this.stats = {};
         var univagg = {};
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
             }
-            if (displayPercentages) {
-                univagg[dept] = 1;
-            }
-            else {
-                univagg[dept] = 0;
-            }
+            univagg[dept] = 1;
             for (var _i = 0, areas_1 = areas; _i < areas_1.length; _i++) {
                 var area = areas_1[_i];
                 // If the area is a child, ignore it.
@@ -599,19 +592,12 @@ var CSRankings = /** @class */ (function () {
                     areaDeptAdjustedCount[areaDept] = 0;
                 }
                 if (weights[area] != 0) {
-                    if (displayPercentages) {
-                        // Adjusted (smoothed) geometric mean.
-                        univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
-                    }
-                    else {
-                        univagg[dept] += areaDeptAdjustedCount[areaDept];
-                    }
+                    // Adjusted (smoothed) geometric mean.
+                    univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
                 }
             }
-            if (displayPercentages) {
-                // finally compute geometric mean.
-                univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
-            }
+            // finally compute geometric mean.
+            univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
         }
         return univagg;
     };
@@ -745,16 +731,11 @@ var CSRankings = /** @class */ (function () {
         }
         return univtext;
     };
-    CSRankings.prototype.buildOutputString = function (displayPercentages, numAreas, univagg, deptCounts, univtext) {
+    CSRankings.prototype.buildOutputString = function (numAreas, univagg, deptCounts, univtext) {
         var s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
         var minToRank = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
-        if (displayPercentages) {
-            s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
-        }
-        else {
-            s = s + '<thead><tr><th align="left">Rank&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;Faculty</th></tr></thead>';
-        }
+        s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
         s = s + "<tbody>";
         /* As long as there is at least one thing selected, compute and display a ranking. */
         if (numAreas > 0) {
@@ -840,6 +821,21 @@ var CSRankings = /** @class */ (function () {
     CSRankings.prototype.setAllCheckboxes = function () {
         this.activateAll();
     };
+    /* This activates all checkboxes _without_ triggering ranking. */
+    CSRankings.prototype.setAllOn = function (value) {
+        if (value === void 0) { value = true; }
+        for (var i = 0; i < CSRankings.areas.length; i++) {
+            var str = "input[name=" + this.fields[i] + "]";
+            jQuery(str).prop('checked', value);
+            if (this.fields[i] in this.childMap) {
+                var parent_1 = this.fields[i];
+                for (var _i = 0, _a = this.childMap[parent_1]; _i < _a.length; _i++) {
+                    var kid = _a[_i];
+                    jQuery("input[name=" + kid + "]").prop('checked', value);
+                }
+            }
+        }
+    };
     /* PUBLIC METHODS */
     CSRankings.prototype.rank = function () {
         var deptNames = {}; /* names of departments. */
@@ -850,21 +846,18 @@ var CSRankings = /** @class */ (function () {
         this.areaDeptAdjustedCount = {};
         var startyear = parseInt(jQuery("#fromyear").find(":selected").text());
         var endyear = parseInt(jQuery("#toyear").find(":selected").text());
-        var displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
         var whichRegions = jQuery("#regions").find(":selected").val();
         var numAreas = this.updateWeights(currentWeights);
         this.authorAreas = {};
-        this.countAuthorAreas(this.authors, startyear, endyear, 
-        //				    currentWeights,
-        this.authorAreas);
+        this.countAuthorAreas(this.authors, startyear, endyear, this.authorAreas);
         this.buildDepartments(this.authors, startyear, endyear, currentWeights, whichRegions, this.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
-        this.stats = this.computeStats(deptNames, this.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
+        this.stats = this.computeStats(deptNames, this.areaDeptAdjustedCount, CSRankings.areas, numAreas, currentWeights);
         /* Canonicalize names. */
         this.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        var s = this.buildOutputString(displayPercentages, numAreas, this.stats, deptCounts, univtext);
+        var s = this.buildOutputString(numAreas, this.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
         this.urlUpdate();
@@ -913,20 +906,6 @@ var CSRankings = /** @class */ (function () {
         else {
             e.style.display = 'block';
             widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
-        }
-    };
-    CSRankings.prototype.setAllOn = function (value) {
-        if (value === void 0) { value = true; }
-        for (var i = 0; i < CSRankings.areas.length; i++) {
-            var str = "input[name=" + this.fields[i] + "]";
-            jQuery(str).prop('checked', value);
-            if (this.fields[i] in this.childMap) {
-                var parent_1 = this.fields[i];
-                for (var _i = 0, _a = this.childMap[parent_1]; _i < _a.length; _i++) {
-                    var kid = _a[_i];
-                    jQuery("input[name=" + kid + "]").prop('checked', value);
-                }
-            }
         }
     };
     CSRankings.prototype.activateAll = function (value) {
