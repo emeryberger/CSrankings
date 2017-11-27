@@ -575,12 +575,11 @@ var CSRankings = /** @class */ (function () {
     /* Compute aggregate statistics. */
     CSRankings.prototype.computeStats = function (deptNames, areaDeptAdjustedCount, areas, numAreas, weights) {
         this.stats = {};
-        var univagg = {};
         for (var dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
             }
-            univagg[dept] = 1;
+            this.stats[dept] = 1;
             for (var _i = 0, areas_1 = areas; _i < areas_1.length; _i++) {
                 var area = areas_1[_i];
                 // If the area is a child, ignore it.
@@ -593,13 +592,12 @@ var CSRankings = /** @class */ (function () {
                 }
                 if (weights[area] != 0) {
                     // Adjusted (smoothed) geometric mean.
-                    univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
+                    this.stats[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
                 }
             }
             // finally compute geometric mean.
-            univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
+            this.stats[dept] = Math.pow(this.stats[dept], 1 / numAreas);
         }
-        return univagg;
     };
     /* Updates the 'weights' of each area from the checkboxes. */
     /* Returns the number of areas selected (checked). */
@@ -852,7 +850,7 @@ var CSRankings = /** @class */ (function () {
         this.countAuthorAreas(this.authors, startyear, endyear, this.authorAreas);
         this.buildDepartments(this.authors, startyear, endyear, currentWeights, whichRegions, this.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
-        this.stats = this.computeStats(deptNames, this.areaDeptAdjustedCount, CSRankings.areas, numAreas, currentWeights);
+        this.computeStats(deptNames, this.areaDeptAdjustedCount, CSRankings.areas, numAreas, currentWeights);
         /* Canonicalize names. */
         this.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
