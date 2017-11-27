@@ -413,7 +413,7 @@ class CSRankings {
     }
 
     private loadAliases(aliases: {[key : string] : string },
-			       cont : ()=> void ) : void {
+			cont : ()=> void ) : void {
 	let s = "<strong><h4>Loading data.</h4></strong>";
 	jQuery("#progress").html(s);
 	Papa.parse(this.aliasFile, {
@@ -431,7 +431,7 @@ class CSRankings {
     }
 
     private loadCountryInfo(countryInfo : {[key : string] : string },
-				   cont : () => void ) : void {
+			    cont : () => void ) : void {
 	let s = "<strong><h4>Computing ranking.</h4></strong>";
 	jQuery("#progress").html(s);
 	Papa.parse(this.countryinfoFile, {
@@ -574,10 +574,9 @@ class CSRankings {
     }
 
     private countAuthorAreas(authors : Array<Author>,
-				    startyear : number,
-				    endyear : number,
-//				    weights : {[key:string] : number},
-				    authorAreas : {[name : string] : {[area : string] : number }}) : void
+			     startyear : number,
+			     endyear : number,
+			     authorAreas : {[name : string] : {[area : string] : number }}) : void
     
     {
 	for (let r in authors) {
@@ -628,15 +627,15 @@ class CSRankings {
 
     /* Build the dictionary of departments (and count) to be ranked. */
     private buildDepartments(authors : Array<Author>,
-				    startyear : number,
-				    endyear : number,
-				    weights : {[key:string] : number},
-				    regions : string,
-				    areaDeptAdjustedCount : {[key:string] : number},
-				    deptCounts : {[key:string] : number},
-				    deptNames  : {[key:string] : Array<string>},
-				    facultycount : {[key:string] : number},
-				    facultyAdjustedCount : {[key:string] : number}) : void
+			     startyear : number,
+			     endyear : number,
+			     weights : {[key:string] : number},
+			     regions : string,
+			     areaDeptAdjustedCount : {[key:string] : number},
+			     deptCounts : {[key:string] : number},
+			     deptNames  : {[key:string] : Array<string>},
+			     facultycount : {[key:string] : number},
+			     facultyAdjustedCount : {[key:string] : number}) : void
     {
 	/* contains an author name if that author has been processed. */
 	let visited : {[key:string] : boolean} = {}; 
@@ -691,7 +690,6 @@ class CSRankings {
 			 areaDeptAdjustedCount : {[key:string] : number},
 			 areas : Array<string>,
 			 numAreas : number,
-			 displayPercentages : boolean,
 			 weights : {[key:string] : number})
     : {[key: string] : number}
     {
@@ -701,11 +699,7 @@ class CSRankings {
 	    if (!deptNames.hasOwnProperty(dept)) {
 		continue;
 	    }
-	    if (displayPercentages) {
-		univagg[dept] = 1;
-	    } else {
-		univagg[dept] = 0;
-	    }
+	    univagg[dept] = 1;
 	    for (let area of areas) {
 		// If the area is a child, ignore it.
 		if (area in this.parentMap) {
@@ -716,18 +710,12 @@ class CSRankings {
 		    areaDeptAdjustedCount[areaDept] = 0;
 		}
 		if (weights[area] != 0) {
-		    if (displayPercentages) {
-			// Adjusted (smoothed) geometric mean.
-			univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
-		    } else {
-			univagg[dept] += areaDeptAdjustedCount[areaDept];
-		    }
+		    // Adjusted (smoothed) geometric mean.
+		    univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
 		}
 	    }
-	    if (displayPercentages) {
-		// finally compute geometric mean.
-		univagg[dept] = Math.pow(univagg[dept], 1/numAreas);
-	    }
+	    // finally compute geometric mean.
+	    univagg[dept] = Math.pow(univagg[dept], 1/numAreas);
 	}
 	return univagg;
     }
@@ -749,8 +737,8 @@ class CSRankings {
     }
 
     private canonicalizeNames(deptNames : {[key: string] : Array<string> },
-				     facultycount :  {[key: string] : number},
-				     facultyAdjustedCount: {[key: string] : number}) : void
+			      facultycount :  {[key: string] : number},
+			      facultyAdjustedCount: {[key: string] : number}) : void
     {
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
@@ -774,8 +762,8 @@ class CSRankings {
 
     /* Build drop down for faculty names and paper counts. */
     private buildDropDown(deptNames : {[key: string] : Array<string> },
-				 facultycount :  {[key: string] : number},
-				 facultyAdjustedCount: {[key: string] : number})
+			  facultycount :  {[key: string] : number},
+			  facultyAdjustedCount: {[key: string] : number})
     : {[key: string] : string}
     {
 	let univtext : {[key:string] : string} = {};
@@ -872,21 +860,17 @@ class CSRankings {
     }
 
 
-    private buildOutputString(displayPercentages : boolean,
-				     numAreas : number,
-			             univagg : {[key: string] : number},
-				     deptCounts: {[key: string] : number},
-				     univtext: {[key:string] : string}) : string
+    private buildOutputString(numAreas : number,
+			      univagg : {[key: string] : number},
+			      deptCounts: {[key: string] : number},
+			      univtext: {[key:string] : string}) : string
     {
 	let s = this.makePrologue();
 	/* Show the top N (with more if tied at the end) */
 	let minToRank            = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
 
-	if (displayPercentages) {
-	    s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
-	} else {
-	    s = s + '<thead><tr><th align="left">Rank&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;Faculty</th></tr></thead>';
-	}
+	s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean count of papers published across all areas.">Count</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+	
 	s = s + "<tbody>";
 	/* As long as there is at least one thing selected, compute and display a ranking. */
 	if (numAreas > 0) {
@@ -974,6 +958,20 @@ class CSRankings {
 	this.activateAll();
     }
 
+    /* This activates all checkboxes _without_ triggering ranking. */
+    private setAllOn(value : boolean = true) : void {
+	for (let i = 0; i < CSRankings.areas.length; i++) {
+	    const str = "input[name=" + this.fields[i] + "]";
+	    jQuery(str).prop('checked', value);
+	    if (this.fields[i] in this.childMap) {
+		let parent = this.fields[i];
+		for (let kid of this.childMap[parent]) {
+		    jQuery("input[name="+kid+"]").prop('checked', value);
+		}
+	    }
+	}
+    }
+    
     /* PUBLIC METHODS */
     
     public rank() : boolean {
@@ -986,7 +984,6 @@ class CSRankings {
 	
 	const startyear          = parseInt(jQuery("#fromyear").find(":selected").text());
 	const endyear            = parseInt(jQuery("#toyear").find(":selected").text());
-	const displayPercentages = true; // Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
 	let numAreas = this.updateWeights(currentWeights);
@@ -995,7 +992,6 @@ class CSRankings {
 	this.countAuthorAreas(this.authors,
 			      startyear,
 			      endyear,
-			      //				    currentWeights,
 			      this.authorAreas);
 	
 	this.buildDepartments(this.authors,
@@ -1014,21 +1010,19 @@ class CSRankings {
 				       this.areaDeptAdjustedCount,
 				       CSRankings.areas,
 				       numAreas,
-				       displayPercentages,
 				       currentWeights);
 
 	/* Canonicalize names. */
 	this.canonicalizeNames(deptNames,
-				     facultycount,
-				     facultyAdjustedCount);
+			       facultycount,
+			       facultyAdjustedCount);
 
 	const univtext = this.buildDropDown(deptNames,
 					    facultycount,
 					    facultyAdjustedCount);
 
 	/* Start building up the string to output. */
-	const s = this.buildOutputString(displayPercentages,
-					 numAreas,
+	const s = this.buildOutputString(numAreas,
 					 this.stats,
 					 deptCounts,
 					 univtext);
@@ -1082,19 +1076,6 @@ class CSRankings {
 	} else {
 	    e!.style.display = 'block';
 	    widget!.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
-	}
-    }
-    
-    private setAllOn(value : boolean = true) : void {
-	for (let i = 0; i < CSRankings.areas.length; i++) {
-	    const str = "input[name=" + this.fields[i] + "]";
-	    jQuery(str).prop('checked', value);
-	    if (this.fields[i] in this.childMap) {
-		let parent = this.fields[i];
-		for (let kid of this.childMap[parent]) {
-		    jQuery("input[name="+kid+"]").prop('checked', value);
-		}
-	    }
 	}
     }
     
