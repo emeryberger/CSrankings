@@ -731,7 +731,7 @@ var CSRankings = /** @class */ (function () {
         }
         return univtext;
     };
-    CSRankings.prototype.buildOutputString = function (numAreas, univagg, deptCounts, univtext) {
+    CSRankings.prototype.buildOutputString = function (numAreas, deptCounts, univtext) {
         var s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
         var minToRank = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
@@ -743,12 +743,12 @@ var CSRankings = /** @class */ (function () {
             var rank = 0; /* index */
             var oldv = 9999999.999; /* old number - to track ties */
             /* Sort the university aggregate count from largest to smallest. */
-            var keys2 = this.sortIndex(univagg);
+            var keys2 = this.sortIndex(this.stats);
             /* Display rankings until we have shown `minToRank` items or
                while there is a tie (those all get the same rank). */
             for (var ind = 0; ind < keys2.length; ind++) {
                 var dept = keys2[ind];
-                var v = Math.round(10.0 * univagg[dept]) / 10.0;
+                var v = Math.round(10.0 * this.stats[dept]) / 10.0;
                 if ((ind >= minToRank) && (v != oldv)) {
                     break;
                 }
@@ -857,7 +857,7 @@ var CSRankings = /** @class */ (function () {
         this.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        var s = this.buildOutputString(numAreas, this.stats, deptCounts, univtext);
+        var s = this.buildOutputString(numAreas, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
         this.urlUpdate();
