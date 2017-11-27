@@ -573,17 +573,15 @@ class CSRankings {
 	return keys;
     }
 
-    private countAuthorAreas(authors : Array<Author>,
-			     startyear : number,
-			     endyear : number,
-			     authorAreas : {[name : string] : {[area : string] : number }}) : void
+    private countAuthorAreas(startyear : number,
+			     endyear : number) : void
     
     {
-	for (let r in authors) {
-	    if (!authors.hasOwnProperty(r)) {
+	for (let r in this.authors) {
+	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    const auth = authors[r];
+	    const auth = this.authors[r];
 	    const year = auth.year;
 	    if ((year < startyear) || (year > endyear)) {
 		continue;
@@ -604,34 +602,32 @@ class CSRankings {
 	    if (name in this.aliases) {
 		name = this.aliases[name];
 	    }
-	    if (!(name in authorAreas)) {
-		authorAreas[name] = {};
+	    if (!(name in this.authorAreas)) {
+		this.authorAreas[name] = {};
 		for (let area in this.areaDict) {
 		    if (this.areaDict.hasOwnProperty(area)) {
-			authorAreas[name][area] = 0;
+			this.authorAreas[name][area] = 0;
 		    }
 		}
 	    }
-	    if (!(theDept in authorAreas)) {
-		authorAreas[theDept] = {};
+	    if (!(theDept in this.authorAreas)) {
+		this.authorAreas[theDept] = {};
 		for (let area in this.areaDict) {
 		    if (this.areaDict.hasOwnProperty(area)) {
-			authorAreas[theDept][area] = 0;
+			this.authorAreas[theDept][area] = 0;
 		    }
 		}
 	    }
-	    authorAreas[name][theArea] += theCount;
-	    authorAreas[theDept][theArea] += theCount;
+	    this.authorAreas[name][theArea] += theCount;
+	    this.authorAreas[theDept][theArea] += theCount;
 	}
     }
 
     /* Build the dictionary of departments (and count) to be ranked. */
-    private buildDepartments(authors : Array<Author>,
-			     startyear : number,
+    private buildDepartments(startyear : number,
 			     endyear : number,
 			     weights : {[key:string] : number},
 			     regions : string,
-			     areaDeptAdjustedCount : {[key:string] : number},
 			     deptCounts : {[key:string] : number},
 			     deptNames  : {[key:string] : Array<string>},
 			     facultycount : {[key:string] : number},
@@ -639,11 +635,11 @@ class CSRankings {
     {
 	/* contains an author name if that author has been processed. */
 	let visited : {[key:string] : boolean} = {}; 
-	for (let r in authors) {
-	    if (!authors.hasOwnProperty(r)) {
+	for (let r in this.authors) {
+	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { name, year, area, dept } = authors[r];
+	    let { name, year, area, dept } = this.authors[r];
 	    if (name in this.aliases) {
 		name = this.aliases[name];
 	    }
@@ -662,12 +658,12 @@ class CSRankings {
 	    }
 	    const areaDept : string = area+dept;
 	    const nameDept : string = name+dept;
-	    if (!(areaDept in areaDeptAdjustedCount)) {
-		areaDeptAdjustedCount[areaDept] = 0;
+	    if (!(areaDept in this.areaDeptAdjustedCount)) {
+		this.areaDeptAdjustedCount[areaDept] = 0;
 	    }
-	    const count : number = parseInt(authors[r].count);
-	    const adjustedCount : number = parseFloat(authors[r].adjustedcount);
-	    areaDeptAdjustedCount[areaDept] += adjustedCount;
+	    const count : number = parseInt(this.authors[r].count);
+	    const adjustedCount : number = parseFloat(this.authors[r].adjustedcount);
+	    this.areaDeptAdjustedCount[areaDept] += adjustedCount;
 	    /* Is this the first time we have seen this person? */
 	    if (!(name in visited)) {
 		visited[name] = true;
@@ -983,17 +979,13 @@ class CSRankings {
 	let numAreas = this.updateWeights(currentWeights);
 	
 	this.authorAreas = {}
-	this.countAuthorAreas(this.authors,
-			      startyear,
-			      endyear,
-			      this.authorAreas);
+	this.countAuthorAreas(startyear,
+			      endyear);
 	
-	this.buildDepartments(this.authors,
-			      startyear,
+	this.buildDepartments(startyear,
 			      endyear,
 			      currentWeights,
 			      whichRegions,
-			      this.areaDeptAdjustedCount,
 			      deptCounts,
 			      deptNames,
 			      facultycount,
