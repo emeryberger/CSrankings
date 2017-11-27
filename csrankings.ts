@@ -543,7 +543,7 @@ class CSRankings {
     }
     
     private activateFields(value : boolean,
-				  fields : Array<number>) : boolean
+			   fields : Array<number>) : boolean
     {
 	for (let i = 0; i < fields.length; i++) {
 	    const str = "input[name=" + this.fields[fields[i]] + "]";
@@ -861,7 +861,6 @@ class CSRankings {
 
 
     private buildOutputString(numAreas : number,
-			      univagg : {[key: string] : number},
 			      deptCounts: {[key: string] : number},
 			      univtext: {[key:string] : string}) : string
     {
@@ -878,12 +877,12 @@ class CSRankings {
 	    let rank = 0;               /* index */
 	    let oldv = 9999999.999;     /* old number - to track ties */
 	    /* Sort the university aggregate count from largest to smallest. */
-	    let keys2 = this.sortIndex(univagg);
+	    let keys2 = this.sortIndex(this.stats);
 	    /* Display rankings until we have shown `minToRank` items or
 	       while there is a tie (those all get the same rank). */
 	    for (let ind = 0; ind < keys2.length; ind++) {
 		const dept = keys2[ind];
-		const v = Math.round(10.0 * univagg[dept]) / 10.0;
+		const v = Math.round(10.0 * this.stats[dept]) / 10.0;
 
 		if ((ind >= minToRank) && (v != oldv)) {
 		    break;
@@ -1023,7 +1022,6 @@ class CSRankings {
 
 	/* Start building up the string to output. */
 	const s = this.buildOutputString(numAreas,
-					 this.stats,
 					 deptCounts,
 					 univtext);
 
