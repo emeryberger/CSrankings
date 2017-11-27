@@ -1,6 +1,6 @@
 /*
 
-  CSrankings.ts
+  CSRankings.ts
 
   @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
 
@@ -86,7 +86,7 @@ class CSRankings {
 	this.geoCheck();
 	for (let position = 0; position < this.areaMap.length; position++) {
 	    const { area, title } = this.areaMap[position];
-	    this.areas[position]     = area;
+	    CSRankings.areas[position]     = area;
 	    this.areaNames[position] = title;
 	    this.fields[position]    = area;
 	    this.areaDict[area]      = this.areaNames[position];
@@ -109,10 +109,11 @@ class CSRankings {
 		this.loadAuthors(()=> {
 		    this.loadCountryInfo(this.countryInfo,
 					 ()=> {
+//					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
 					     this.setAllOn();
 					     this.navigoRouter.on('/index', this.navigator).resolve();
-//					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
 					     this.rank();
+					     this.addListeners();
 					 });
 		});
 	    });
@@ -179,7 +180,7 @@ class CSRankings {
     private readonly theoryAreas  = [ "act", "crypt", "log" ];
     private readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "vis", "ecom" ];
     
-    private readonly areas : Array<string> = [];
+    public static readonly areas : Array<string> = [];
     private readonly areaNames : Array<string> = [];
     private readonly fields : Array<string> = [];
     private readonly aiFields : Array<number> = [];
@@ -300,10 +301,10 @@ class CSRankings {
     /* Create a pie chart */
     private makeChart(name : string) : void
     {
-	console.assert (this.color.length >= this.areas.length, "Houston, we have a problem.");
+	console.assert (this.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
 	let data : Array<ChartData> = [];
 	let datadict : {[key : string] : number } = {};
-	const keys = this.areas;
+	const keys = CSRankings.areas;
 	const uname = unescape(name);
 	for (let i = 0; i < keys.length; i++) {
 	    let key = keys[i];
@@ -687,11 +688,11 @@ class CSRankings {
 
     /* Compute aggregate statistics. */
     private computeStats(deptNames : {[key:string] : Array<string> },
-				areaDeptAdjustedCount : {[key:string] : number},
-				areas : Array<string>,
-				numAreas : number,
-				displayPercentages : boolean,
-				weights : {[key:string] : number})
+			 areaDeptAdjustedCount : {[key:string] : number},
+			 areas : Array<string>,
+			 numAreas : number,
+			 displayPercentages : boolean,
+			 weights : {[key:string] : number})
     : {[key: string] : number}
     {
 	this.stats = {};
@@ -736,8 +737,8 @@ class CSRankings {
     private updateWeights(weights : {[key: string] : number}) : number
     {
 	let numAreas = 0;
-	for (let ind = 0; ind < this.areas.length; ind++) {
-	    let area = this.areas[ind];
+	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
+	    let area = CSRankings.areas[ind];
 	    weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
 	    if (weights[area] === 1) {
 		/* One more area checked. */
@@ -992,29 +993,29 @@ class CSRankings {
 	
 	this.authorAreas = {}
 	this.countAuthorAreas(this.authors,
-				    startyear,
-				    endyear,
-//				    currentWeights,
-				    this.authorAreas);
+			      startyear,
+			      endyear,
+			      //				    currentWeights,
+			      this.authorAreas);
 	
 	this.buildDepartments(this.authors,
-				    startyear,
-				    endyear,
-				    currentWeights,
-				    whichRegions,
-				    this.areaDeptAdjustedCount,
-				    deptCounts,
-				    deptNames,
-				    facultycount,
-				    facultyAdjustedCount);
+			      startyear,
+			      endyear,
+			      currentWeights,
+			      whichRegions,
+			      this.areaDeptAdjustedCount,
+			      deptCounts,
+			      deptNames,
+			      facultycount,
+			      facultyAdjustedCount);
 	
 	/* (university, total or average number of papers) */
 	this.stats = this.computeStats(deptNames,
-						   this.areaDeptAdjustedCount,
-						   this.areas,
-						   numAreas,
-						   displayPercentages,
-						   currentWeights);
+				       this.areaDeptAdjustedCount,
+				       CSRankings.areas,
+				       numAreas,
+				       displayPercentages,
+				       currentWeights);
 
 	/* Canonicalize names. */
 	this.canonicalizeNames(deptNames,
@@ -1085,7 +1086,7 @@ class CSRankings {
     }
     
     private setAllOn(value : boolean = true) : void {
-	for (let i = 0; i < this.areas.length; i++) {
+	for (let i = 0; i < CSRankings.areas.length; i++) {
 	    const str = "input[name=" + this.fields[i] + "]";
 	    jQuery(str).prop('checked', value);
 	    if (this.fields[i] in this.childMap) {
@@ -1155,7 +1156,7 @@ class CSRankings {
 	    s = s.slice(0, -1);
 	}
 	if (count == this.fields.length) {
-	    s = ''; // Distinguished special URL - default = all selected.
+	    s = '/index?all'; // Distinguished special URL - default = all selected.
 	} else if (count == 0) {
 	    s = '/index?none'; // Distinguished special URL - none selected.
 	} else {
@@ -1186,26 +1187,38 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
-//	console.log(params);
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
-//		console.log(key + " --> " + params[key]);
 	    });
 	}
 	// Clear everything.
-	for (let a in this.areas) {
-	    jQuery("input[name="+this.areas[a]+"]").prop('checked', false);
+	for (let position = 0; position < CSRankings.areas.length; position++) {
+	    jQuery("input[name="+CSRankings.areas[position]+"]").prop('checked', false);
 	}
 	// Now check everything listed in the query string.
-	query.split('&').forEach((item)=> {
-	    if ((item != "none") && (item != "")) {
-		jQuery("input[name="+item+"]").prop('checked', true);
-	    }
+	let q = query.split('&');
+	// If there is an 'all' in the query string, set everything to true.
+	let foundAll = q.some((elem)=>{
+	    return (elem == "all");
 	});
+	if (foundAll) {
+	    // Set everything.
+	    for (let position = 0; position < CSRankings.areas.length; position++) {
+		jQuery("input[name="+CSRankings.areas[position]+"]").prop('checked', true);
+	    }
+	    // And we're out.
+	    return;
+	} else {
+	    for (let item of q) {
+		if ((item != "none") && (item != "")) {
+		    jQuery("input[name="+item+"]").prop('checked', true);
+		}
+	    }
+	}
     }
 
-    public addListeners() : void {
+    private addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
 //	    console.log(widget);
@@ -1213,8 +1226,8 @@ class CSRankings {
 	});
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'
-	for (let position = 0; position < this.areas.length; position++) {
-	    let area = this.areas[position];
+	for (let position = 0; position < CSRankings.areas.length; position++) {
+	    let area = CSRankings.areas[position];
 	    const widget = document.getElementById(area+'-widget');
 	    widget!.addEventListener("click", ()=> {
 		this.toggleConferences(area);
@@ -1247,13 +1260,6 @@ class CSRankings {
 	    });
 	}
     }
-    
 }
 
 var csr : CSRankings = new CSRankings();
-
-function init() : void {
-    csr.addListeners();
-}
-
-window.onload=init;
