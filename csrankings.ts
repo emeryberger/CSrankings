@@ -691,15 +691,13 @@ class CSRankings {
 			 areas : Array<string>,
 			 numAreas : number,
 			 weights : {[key:string] : number})
-    : {[key: string] : number}
     {
 	this.stats = {};
-	let univagg : {[key: string] : number} = {};
 	for (let dept in deptNames) {
 	    if (!deptNames.hasOwnProperty(dept)) {
 		continue;
 	    }
-	    univagg[dept] = 1;
+	    this.stats[dept] = 1;
 	    for (let area of areas) {
 		// If the area is a child, ignore it.
 		if (area in this.parentMap) {
@@ -711,13 +709,12 @@ class CSRankings {
 		}
 		if (weights[area] != 0) {
 		    // Adjusted (smoothed) geometric mean.
-		    univagg[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
+		    this.stats[dept] *= (areaDeptAdjustedCount[areaDept] + 1.0);
 		}
 	    }
 	    // finally compute geometric mean.
-	    univagg[dept] = Math.pow(univagg[dept], 1/numAreas);
+	    this.stats[dept] = Math.pow(this.stats[dept], 1/numAreas);
 	}
-	return univagg;
     }
 
     /* Updates the 'weights' of each area from the checkboxes. */
@@ -1005,11 +1002,11 @@ class CSRankings {
 			      facultyAdjustedCount);
 	
 	/* (university, total or average number of papers) */
-	this.stats = this.computeStats(deptNames,
-				       this.areaDeptAdjustedCount,
-				       CSRankings.areas,
-				       numAreas,
-				       currentWeights);
+	this.computeStats(deptNames,
+			  this.areaDeptAdjustedCount,
+			  CSRankings.areas,
+			  numAreas,
+			  currentWeights);
 
 	/* Canonicalize names. */
 	this.canonicalizeNames(deptNames,
