@@ -140,10 +140,10 @@ var CSRankings = /** @class */ (function () {
             _this.loadAuthorInfo(function () {
                 _this.loadAuthors(function () {
                     _this.loadCountryInfo(_this.countryInfo, function () {
-                        _this.activateAll();
-                        _this.rank();
+                        _this.setAllOn();
                         _this.navigoRouter.on('/index', _this.navigator).resolve();
-                        _this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', _this.navigator).resolve();
+                        //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
+                        _this.rank();
                     });
                 });
             });
@@ -867,7 +867,6 @@ var CSRankings = /** @class */ (function () {
         var s = this.buildOutputString(displayPercentages, numAreas, this.stats, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
-        //	this.addNewListeners(facultycount, this.stats);
         this.urlUpdate();
         return false;
     };
@@ -916,7 +915,7 @@ var CSRankings = /** @class */ (function () {
             widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
         }
     };
-    CSRankings.prototype.activateAll = function (value) {
+    CSRankings.prototype.setAllOn = function (value) {
         if (value === void 0) { value = true; }
         for (var i = 0; i < this.areas.length; i++) {
             var str = "input[name=" + this.fields[i] + "]";
@@ -929,6 +928,10 @@ var CSRankings = /** @class */ (function () {
                 }
             }
         }
+    };
+    CSRankings.prototype.activateAll = function (value) {
+        if (value === void 0) { value = true; }
+        this.setAllOn(value);
         this.rank();
         return false;
     };
@@ -1026,27 +1029,6 @@ var CSRankings = /** @class */ (function () {
         query.split('&').forEach(function (item) {
             if ((item != "none") && (item != "")) {
                 jQuery("input[name=" + item + "]").prop('checked', true);
-            }
-        });
-    };
-    CSRankings.prototype.addNewListeners = function (facultycount, univagg) {
-        var _this = this;
-        // Add listeners for clicks to toggle department dropdowns.
-        var fc = facultycount;
-        Object.keys(univagg).forEach(function (k) {
-            var dept = escape(k);
-            var str = '#' + dept + '-widget';
-            jQuery(str).click(function () {
-                _this.toggleFaculty(dept);
-            });
-            var chart = document.getElementById(dept + '-chart');
-            if (chart != null) {
-                console.log(dept);
-                console.log(chart);
-                chart.addEventListener("click", function () {
-                    console.log("CHARTO MOFO\n");
-                    _this.toggleChart(dept);
-                });
             }
         });
     };
