@@ -1,6 +1,6 @@
 /*
 
-  CSrankings.ts
+  CSRankings.ts
 
   @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
 
@@ -74,7 +74,6 @@ var CSRankings = /** @class */ (function () {
         this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
         this.theoryAreas = ["act", "crypt", "log"];
         this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "vis", "ecom"];
-        this.areas = [];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -114,7 +113,7 @@ var CSRankings = /** @class */ (function () {
         this.geoCheck();
         for (var position = 0; position < this.areaMap.length; position++) {
             var _a = this.areaMap[position], area = _a.area, title = _a.title;
-            this.areas[position] = area;
+            CSRankings.areas[position] = area;
             this.areaNames[position] = title;
             this.fields[position] = area;
             this.areaDict[area] = this.areaNames[position];
@@ -140,10 +139,11 @@ var CSRankings = /** @class */ (function () {
             _this.loadAuthorInfo(function () {
                 _this.loadAuthors(function () {
                     _this.loadCountryInfo(_this.countryInfo, function () {
+                        //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.setAllOn();
                         _this.navigoRouter.on('/index', _this.navigator).resolve();
-                        //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.rank();
+                        _this.addListeners();
                     });
                 });
             });
@@ -215,10 +215,10 @@ var CSRankings = /** @class */ (function () {
     };
     /* Create a pie chart */
     CSRankings.prototype.makeChart = function (name) {
-        console.assert(this.color.length >= this.areas.length, "Houston, we have a problem.");
+        console.assert(this.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
         var data = [];
         var datadict = {};
-        var keys = this.areas;
+        var keys = CSRankings.areas;
         var uname = unescape(name);
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
@@ -619,8 +619,8 @@ var CSRankings = /** @class */ (function () {
     /* Returns the number of areas selected (checked). */
     CSRankings.prototype.updateWeights = function (weights) {
         var numAreas = 0;
-        for (var ind = 0; ind < this.areas.length; ind++) {
-            var area = this.areas[ind];
+        for (var ind = 0; ind < CSRankings.areas.length; ind++) {
+            var area = CSRankings.areas[ind];
             weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
                 /* One more area checked. */
@@ -859,7 +859,7 @@ var CSRankings = /** @class */ (function () {
         this.authorAreas);
         this.buildDepartments(this.authors, startyear, endyear, currentWeights, whichRegions, this.areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
-        this.stats = this.computeStats(deptNames, this.areaDeptAdjustedCount, this.areas, numAreas, displayPercentages, currentWeights);
+        this.stats = this.computeStats(deptNames, this.areaDeptAdjustedCount, CSRankings.areas, numAreas, displayPercentages, currentWeights);
         /* Canonicalize names. */
         this.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
         var univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
@@ -917,7 +917,7 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.setAllOn = function (value) {
         if (value === void 0) { value = true; }
-        for (var i = 0; i < this.areas.length; i++) {
+        for (var i = 0; i < CSRankings.areas.length; i++) {
             var str = "input[name=" + this.fields[i] + "]";
             jQuery(str).prop('checked', value);
             if (this.fields[i] in this.childMap) {
@@ -982,7 +982,7 @@ var CSRankings = /** @class */ (function () {
             s = s.slice(0, -1);
         }
         if (count == this.fields.length) {
-            s = ''; // Distinguished special URL - default = all selected.
+            s = '/index?all'; // Distinguished special URL - default = all selected.
         }
         else if (count == 0) {
             s = '/index?none'; // Distinguished special URL - none selected.
@@ -1014,23 +1014,37 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.navigator = function (params, query) {
-        //	console.log(params);
         if (params !== null) {
             Object.keys(params).forEach(function (key) {
                 jQuery("#" + key).prop('value', params[key]);
-                //		console.log(key + " --> " + params[key]);
             });
         }
         // Clear everything.
-        for (var a in this.areas) {
-            jQuery("input[name=" + this.areas[a] + "]").prop('checked', false);
+        for (var position = 0; position < CSRankings.areas.length; position++) {
+            jQuery("input[name=" + CSRankings.areas[position] + "]").prop('checked', false);
         }
         // Now check everything listed in the query string.
-        query.split('&').forEach(function (item) {
-            if ((item != "none") && (item != "")) {
-                jQuery("input[name=" + item + "]").prop('checked', true);
-            }
+        var q = query.split('&');
+        // If there is an 'all' in the query string, set everything to true.
+        var foundAll = q.some(function (elem) {
+            return (elem == "all");
         });
+        if (foundAll) {
+            // Set everything.
+            for (var position = 0; position < CSRankings.areas.length; position++) {
+                jQuery("input[name=" + CSRankings.areas[position] + "]").prop('checked', true);
+            }
+            // And we're out.
+            return;
+        }
+        else {
+            for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
+                var item = q_1[_i];
+                if ((item != "none") && (item != "")) {
+                    jQuery("input[name=" + item + "]").prop('checked', true);
+                }
+            }
+        }
     };
     CSRankings.prototype.addListeners = function () {
         var _this = this;
@@ -1040,16 +1054,15 @@ var CSRankings = /** @class */ (function () {
             widget.addEventListener("change", function () { _this.rank(); });
         });
         var _loop_2 = function (position) {
-            var area = this_2.areas[position];
+            var area = CSRankings.areas[position];
             var widget = document.getElementById(area + '-widget');
             widget.addEventListener("click", function () {
                 _this.toggleConferences(area);
             });
         };
-        var this_2 = this;
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
-        for (var position = 0; position < this.areas.length; position++) {
+        for (var position = 0; position < CSRankings.areas.length; position++) {
             _loop_2(position);
         }
         // Initialize callbacks for area checkboxes.
@@ -1081,10 +1094,7 @@ var CSRankings = /** @class */ (function () {
             _loop_3(item);
         }
     };
+    CSRankings.areas = [];
     return CSRankings;
 }());
 var csr = new CSRankings();
-function init() {
-    csr.addListeners();
-}
-window.onload = init;
