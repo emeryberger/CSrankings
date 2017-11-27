@@ -108,12 +108,12 @@ class CSRankings {
 	    this.loadAuthorInfo(()=> {
 		this.loadAuthors(()=> {
 		    this.loadCountryInfo(this.countryInfo,
-					       ()=> {
-						   this.activateAll();
-						   this.rank();
-						   this.navigoRouter.on('/index', this.navigator).resolve();
-						   this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
-					       });
+					 ()=> {
+					     this.setAllOn();
+					     this.navigoRouter.on('/index', this.navigator).resolve();
+//					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
+					     this.rank();
+					 });
 		});
 	    });
 	});
@@ -1034,7 +1034,6 @@ class CSRankings {
 
 	/* Finally done. Redraw! */
 	jQuery("#success").html(s);
-//	this.addNewListeners(facultycount, this.stats);
 	this.urlUpdate();
 	return false; 
     }
@@ -1084,8 +1083,8 @@ class CSRankings {
 	    widget!.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
 	}
     }
-
-    public activateAll(value : boolean = true) : boolean {
+    
+    private setAllOn(value : boolean = true) : void {
 	for (let i = 0; i < this.areas.length; i++) {
 	    const str = "input[name=" + this.fields[i] + "]";
 	    jQuery(str).prop('checked', value);
@@ -1096,6 +1095,10 @@ class CSRankings {
 		}
 	    }
 	}
+    }
+    
+    public activateAll(value : boolean = true) : boolean {
+	this.setAllOn(value);
 	this.rank();
 	return false;
     }
@@ -1202,29 +1205,6 @@ class CSRankings {
 	});
     }
 
-    private addNewListeners(facultycount : {[key: string] : number} ,
-			    univagg : {[key: string] : number}) : void
-    {
-	// Add listeners for clicks to toggle department dropdowns.
-	let fc = facultycount;
-	Object.keys(univagg).forEach((k)=> {
-	    const dept = escape(k);
-	    const str = '#'+dept+'-widget';
-	    jQuery(str).click(()=>{
-		this.toggleFaculty(dept);
-	    });
-	    const chart = document.getElementById(dept+'-chart');
-	    if (chart != null) {
-		console.log(dept);
-		console.log(chart);
-		chart!.addEventListener("click", ()=> {
-		    console.log("CHARTO MOFO\n");
-		    this.toggleChart(dept);
-		});
-	    }
-	});
-    }
-    
     public addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
