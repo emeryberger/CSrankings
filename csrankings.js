@@ -765,7 +765,7 @@ var CSRankings = /** @class */ (function () {
                 var esc = escape(dept);
                 s += "\n<tr><td>" + rank + "</td>";
                 s += "<td>"
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + dept + "')\";\" id=\"" + dept + "-widget\">"
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "')\";\" id=\"" + esc + "-widget\">"
                     + "<font color=\"blue\">"
                     + this.RightTriangle
                     + "</font>"
@@ -791,7 +791,7 @@ var CSRankings = /** @class */ (function () {
                 s += "</tr>\n";
                 s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
                     + esc + '-chart">' + '</div></td></tr>';
-                s += '<tr><td colspan="4"><div style="display:none;" id="' + dept + '-faculty">' + univtext[dept] + '</div></td></tr>';
+                s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
                 ties++;
                 oldv = v;
             }
@@ -884,13 +884,6 @@ var CSRankings = /** @class */ (function () {
         else {
             e.style.display = 'block';
             widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
-        }
-        var boxes = document.getElementById(area + "-conferences-checkboxes");
-        if (boxes.style.display === 'block') {
-            boxes.style.display = 'none';
-        }
-        else {
-            boxes.style.display = 'block';
         }
     };
     /* Expand or collape the view of all faculty in a department. */
