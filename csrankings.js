@@ -951,6 +951,7 @@ var CSRankings = /** @class */ (function () {
             // Trim off the trailing '&'.
             s = s.slice(0, -1);
         }
+        var region = jQuery("#regions").find(":selected").val();
         if (count == this.fields.length) {
             s = '/index?all'; // Distinguished special URL - default = all selected.
         }
@@ -959,6 +960,9 @@ var CSRankings = /** @class */ (function () {
         }
         else {
             s = '/index?' + s;
+        }
+        if (region != "USA") {
+            s = s + '&' + region;
         }
         this.navigoRouter.navigate(s);
     };
@@ -984,6 +988,7 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.navigator = function (params, query) {
+        var regions = ["USA", "europe", "canada", "northamerica", "australasia", "asia", "world"];
         if (params !== null) {
             Object.keys(params).forEach(function (key) {
                 jQuery("#" + key).prop('value', params[key]);
@@ -999,6 +1004,22 @@ var CSRankings = /** @class */ (function () {
         var foundAll = q.some(function (elem) {
             return (elem == "all");
         });
+        // Check for regions and strip them out.
+        var foundRegion = q.some(function (elem) {
+            return regions.indexOf(elem) >= 0;
+        });
+        if (foundRegion) {
+            var index_1 = 0;
+            q.forEach(function (elem) {
+                // Splice it out.
+                if (regions.indexOf(elem) >= 0) {
+                    q.splice(index_1, 1);
+                }
+                // Set the region.
+                jQuery("#regions").val(elem);
+                index_1 += 1;
+            });
+        }
         if (foundAll) {
             // Set everything.
             for (var position = 0; position < CSRankings.areas.length; position++) {
