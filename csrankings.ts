@@ -1113,12 +1113,16 @@ class CSRankings {
 	    // Trim off the trailing '&'.
 	    s = s.slice(0, -1);
 	}
+	let region = jQuery("#regions").find(":selected").val();	
 	if (count == this.fields.length) {
 	    s = '/index?all'; // Distinguished special URL - default = all selected.
 	} else if (count == 0) {
 	    s = '/index?none'; // Distinguished special URL - none selected.
 	} else {
 	    s = '/index?' + s;
+	}
+	if (region != "USA") {
+	    s = s + '&' + region;
 	}
 	this.navigoRouter.navigate(s);
     }
@@ -1145,6 +1149,7 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
+	let regions : Array<string> = ["USA", "europe", "canada", "northamerica", "australasia", "asia", "world"]
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
@@ -1160,6 +1165,22 @@ class CSRankings {
 	let foundAll = q.some((elem)=>{
 	    return (elem == "all");
 	});
+	// Check for regions and strip them out.
+	let foundRegion = q.some((elem)=>{
+	    return regions.indexOf(elem) >= 0;
+	});
+	if (foundRegion) {
+	    let index = 0;
+	    q.forEach((elem) => {
+		// Splice it out.
+		if (regions.indexOf(elem) >= 0) {
+		    q.splice(index, 1);
+		}
+		// Set the region.
+		jQuery("#regions").val(elem);
+		index += 1;
+	    });
+	}
 	if (foundAll) {
 	    // Set everything.
 	    for (let position = 0; position < CSRankings.areas.length; position++) {
