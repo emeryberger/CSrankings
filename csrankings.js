@@ -221,6 +221,11 @@ var CSRankings = /** @class */ (function () {
         var uname = unescape(name);
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
+            if (!(uname in this.authorAreas)) {
+                // Defensive programming.
+                // This should only happen if we have an error in the aliases file.
+                return;
+            }
             var value = this.authorAreas[uname][key];
             // Use adjusted count if this is for a department.
             /*
