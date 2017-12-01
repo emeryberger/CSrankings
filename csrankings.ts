@@ -45,7 +45,7 @@ interface Author {
 
 interface CountryInfo {
     readonly institution : string;
-    readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "asia" | "world";
+    readonly region : "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "world";
 };
 
 interface Alias {
@@ -83,7 +83,6 @@ class CSRankings {
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
 	*/
-	this.geoCheck();
 	for (let position = 0; position < this.areaMap.length; position++) {
 	    const { area, title } = this.areaMap[position];
 	    CSRankings.areas[position]     = area;
@@ -1127,7 +1126,7 @@ class CSRankings {
 	this.navigoRouter.navigate(s);
     }
 
-    private geoCheck() {
+    public static geoCheck() : void {
 	// Figure out which country clients are coming from and set
 	// the default regions accordingly.
 	jQuery.getJSON('http://freegeoip.net/json/', (result)=> {
@@ -1139,8 +1138,7 @@ class CSRankings {
 	    case "JP":
 	    case "TW":
 	    case "SG":
-		// jQuery("#regions").val("USA");
-		// This is currently the default.
+		jQuery("#regions").val("USA");
 		break;
 	    default :
 		jQuery("#regions").val("world");
@@ -1149,7 +1147,7 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
-	let regions : Array<string> = ["USA", "europe", "canada", "northamerica", "australasia", "asia", "world"]
+	let regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
@@ -1180,6 +1178,8 @@ class CSRankings {
 		jQuery("#regions").val(elem);
 		index += 1;
 	    });
+	} else {
+	    CSRankings.geoCheck();
 	}
 	if (foundAll) {
 	    // Set everything.
