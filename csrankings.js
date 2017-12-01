@@ -110,7 +110,6 @@ var CSRankings = /** @class */ (function () {
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
-        this.geoCheck();
         for (var position = 0; position < this.areaMap.length; position++) {
             var _a = this.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
@@ -966,7 +965,7 @@ var CSRankings = /** @class */ (function () {
         }
         this.navigoRouter.navigate(s);
     };
-    CSRankings.prototype.geoCheck = function () {
+    CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
         // the default regions accordingly.
         jQuery.getJSON('http://freegeoip.net/json/', function (result) {
@@ -978,8 +977,7 @@ var CSRankings = /** @class */ (function () {
                 case "JP":
                 case "TW":
                 case "SG":
-                    // jQuery("#regions").val("USA");
-                    // This is currently the default.
+                    jQuery("#regions").val("USA");
                     break;
                 default:
                     jQuery("#regions").val("world");
@@ -988,7 +986,7 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.navigator = function (params, query) {
-        var regions = ["USA", "europe", "canada", "northamerica", "australasia", "asia", "world"];
+        var regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
         if (params !== null) {
             Object.keys(params).forEach(function (key) {
                 jQuery("#" + key).prop('value', params[key]);
@@ -1019,6 +1017,9 @@ var CSRankings = /** @class */ (function () {
                 jQuery("#regions").val(elem);
                 index_1 += 1;
             });
+        }
+        else {
+            CSRankings.geoCheck();
         }
         if (foundAll) {
             // Set everything.
