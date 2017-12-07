@@ -991,7 +991,6 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.navigator = function (params, query) {
-        var regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
         if (params !== null) {
             Object.keys(params).forEach(function (key) {
                 jQuery("#" + key).prop('value', params[key]);
@@ -1009,13 +1008,13 @@ var CSRankings = /** @class */ (function () {
         });
         // Check for regions and strip them out.
         var foundRegion = q.some(function (elem) {
-            return regions.indexOf(elem) >= 0;
+            return CSRankings.regions.indexOf(elem) >= 0;
         });
         if (foundRegion) {
             var index_1 = 0;
             q.forEach(function (elem) {
                 // Splice it out.
-                if (regions.indexOf(elem) >= 0) {
+                if (CSRankings.regions.indexOf(elem) >= 0) {
                     q.splice(index_1, 1);
                 }
                 // Set the region.
@@ -1092,6 +1091,7 @@ var CSRankings = /** @class */ (function () {
         }
     };
     CSRankings.areas = [];
+    CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     return CSRankings;
 }());
 var csr = new CSRankings();
