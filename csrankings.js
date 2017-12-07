@@ -29,12 +29,6 @@ var CSRankings = /** @class */ (function () {
         this.aliasFile = "/dblp-aliases.csv";
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-        this.parentMap = { 'aaai': 'ai',
-            'ijcai': 'ai',
-            'cvpr': 'vision',
-            'eccv': 'vision',
-            'iccv': 'vision'
-        };
         /*    private readonly childMap : {[key : string] : [string] }
             = { 'ai' : ['aaai', 'ijcai'],
                 'vision' : ['cvpr', 'eccv', 'iccv'] };
@@ -57,6 +51,8 @@ var CSRankings = /** @class */ (function () {
             { area: "mobile", title: "Mobile" },
             { area: "metrics", title: "Metrics" },
             { area: "ops", title: "OS" },
+            { area: "popl", title: "PL" },
+            { area: "pldi", title: "PL" },
             { area: "plan", title: "PL" },
             { area: "soft", title: "SE" },
             { area: "act", title: "Theory" },
@@ -135,6 +131,15 @@ var CSRankings = /** @class */ (function () {
         for (var _g = 0, _h = this.interdisciplinaryAreas; _g < _h.length; _g++) {
             var area = _h[_g];
             this.otherFields.push(this.areaPosition[area]);
+        }
+        for (var child in CSRankings.parentMap) {
+            var parent_1 = CSRankings.parentMap[child];
+            if (!(parent_1 in CSRankings.childMap)) {
+                CSRankings.childMap[parent_1] = [child];
+            }
+            else {
+                CSRankings.childMap[parent_1].push(child);
+            }
         }
         this.loadAliases(this.aliases, function () {
             _this.loadAuthorInfo(function () {
@@ -243,9 +248,9 @@ var CSRankings = /** @class */ (function () {
             // Round it to the nearest 0.1.
             value = Math.round(value * 10) / 10;
             if (value > 0) {
-                //		if (key in this.parentMap) {
-                // key = this.parentMap[key];
-                //		}
+                if (key in CSRankings.parentMap) {
+                    key = CSRankings.parentMap[key];
+                }
                 if (!(key in datadict)) {
                     datadict[key] = 0;
                 }
@@ -551,8 +556,8 @@ var CSRankings = /** @class */ (function () {
                 continue;
             }
             // If this area is a child area, accumulate totals for parent.
-            if (area in this.parentMap) {
-                area = this.parentMap[area];
+            if (area in CSRankings.parentMap) {
+                area = CSRankings.parentMap[area];
             }
             var areaDept = area + dept;
             var nameDept = name_3 + dept;
@@ -588,8 +593,8 @@ var CSRankings = /** @class */ (function () {
             this.stats[dept] = 1;
             for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
                 var area = _a[_i];
-                // If the area is a child, ignore it.
-                if (area in this.parentMap) {
+                // If this area is a child area, skip it.
+                if (area in CSRankings.parentMap) {
                     continue;
                 }
                 var areaDept = area + dept;
@@ -613,6 +618,10 @@ var CSRankings = /** @class */ (function () {
             var area = CSRankings.areas[ind];
             weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
+                if (area in CSRankings.parentMap) {
+                    // Don't count children.
+                    continue;
+                }
                 /* One more area checked. */
                 numAreas++;
             }
@@ -1038,27 +1047,55 @@ var CSRankings = /** @class */ (function () {
         var _this = this;
         ["toyear", "fromyear", "regions"].forEach(function (key) {
             var widget = document.getElementById(key);
-            //	    console.log(widget);
             widget.addEventListener("change", function () { _this.rank(); });
         });
         var _loop_2 = function (position) {
             var area = CSRankings.areas[position];
-            var widget = document.getElementById(area + '-widget');
-            widget.addEventListener("click", function () {
-                _this.toggleConferences(area);
-            });
+            if (!(area in CSRankings.parentMap)) {
+                // Not a child.
+                var widget = document.getElementById(area + '-widget');
+                widget.addEventListener("click", function () {
+                    _this.toggleConferences(area);
+                });
+            }
         };
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
         for (var position = 0; position < CSRankings.areas.length; position++) {
             _loop_2(position);
         }
-        // Initialize callbacks for area checkboxes.
-        for (var i = 0; i < this.fields.length; i++) {
-            var str = 'input[name=' + this.fields[i] + ']';
+        var _loop_3 = function (i) {
+            var str = 'input[name=' + this_2.fields[i] + ']';
             jQuery(str).click(function () {
+                if (_this.fields[i] in CSRankings.parentMap) {
+                    // If any child is on, activate the parent.
+                    // If all are off, deactivate parent.
+                    var parent_2 = CSRankings.parentMap[_this.fields[i]];
+                    var strparent = 'input[name=' + parent_2 + ']';
+                    var anyChecked_1 = 0;
+                    CSRankings.childMap[parent_2].forEach(function (k) {
+                        var val = jQuery('input[name=' + k + ']').prop('checked');
+                        anyChecked_1 |= val;
+                    });
+                    // Activate parent if any checked, else deactivate.
+                    jQuery(strparent).prop('checked', anyChecked_1);
+                }
+                else {
+                    // Parent: activate or deactivate all children.
+                    var val = jQuery(str).prop('checked');
+                    for (var _i = 0, _a = CSRankings.childMap[_this.fields[i]]; _i < _a.length; _i++) {
+                        var child = _a[_i];
+                        var strchild = 'input[name=' + child + ']';
+                        jQuery(strchild).prop('checked', val);
+                    }
+                }
                 _this.rank();
             });
+        };
+        var this_2 = this;
+        // Initialize callbacks for area checkboxes.
+        for (var i = 0; i < this.fields.length; i++) {
+            _loop_3(i);
         }
         // Add group selectors.
         var listeners = { 'all_areas_on': (function () { _this.activateAll(); }),
@@ -1072,18 +1109,23 @@ var CSRankings = /** @class */ (function () {
             'other_areas_on': (function () { _this.activateOthers(); }),
             'other_areas_off': (function () { _this.deactivateOthers(); })
         };
-        var _loop_3 = function (item) {
+        var _loop_4 = function (item) {
             var widget = document.getElementById(item);
             widget.addEventListener("click", function () {
                 listeners[item]();
             });
         };
         for (var item in listeners) {
-            _loop_3(item);
+            _loop_4(item);
         }
     };
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+    CSRankings.parentMap = {
+        'popl': 'plan',
+        'pldi': 'plan'
+    };
+    CSRankings.childMap = {};
     return CSRankings;
 }());
 var csr = new CSRankings();
