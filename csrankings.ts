@@ -180,6 +180,8 @@ class CSRankings {
     private readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "vis", "ecom" ];
     
     public static readonly areas : Array<string> = [];
+    public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
+
     private readonly areaNames : Array<string> = [];
     private readonly fields : Array<string> = [];
     private readonly aiFields : Array<number> = [];
@@ -1153,7 +1155,6 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
-	let regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
@@ -1171,13 +1172,13 @@ class CSRankings {
 	});
 	// Check for regions and strip them out.
 	let foundRegion = q.some((elem)=>{
-	    return regions.indexOf(elem) >= 0;
+	    return CSRankings.regions.indexOf(elem) >= 0;
 	});
 	if (foundRegion) {
 	    let index = 0;
 	    q.forEach((elem) => {
 		// Splice it out.
-		if (regions.indexOf(elem) >= 0) {
+		if (CSRankings.regions.indexOf(elem) >= 0) {
 		    q.splice(index, 1);
 		}
 		// Set the region.
