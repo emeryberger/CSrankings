@@ -106,6 +106,14 @@ class CSRankings {
 	for (let area of this.interdisciplinaryAreas) {
 	    this.otherFields.push (this.areaPosition[area]);
 	}
+	for (let child in CSRankings.parentMap) {
+	    let parent = CSRankings.parentMap[child];
+	    if (!(parent in CSRankings.childMap)) {
+		CSRankings.childMap[parent] = [child];
+	    } else {
+		CSRankings.childMap[parent].push(child);
+	    }
+	}
 	this.loadAliases(this.aliases, ()=> {
 	    this.loadAuthorInfo(()=> {
 		this.loadAuthors(()=> {
@@ -130,13 +138,17 @@ class CSRankings {
     
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
-    private readonly parentMap : {[key : string] : string }
-	= { 'aaai' : 'ai',
+    public static readonly parentMap : {[key : string] : string }
+	= { /* 'aaai' : 'ai',
 	    'ijcai' : 'ai',
 	    'cvpr' : 'vision',
 	    'eccv' : 'vision',
-	    'iccv' : 'vision'
+	    'iccv' : 'vision', */
+	    'popl' : 'plan',
+	    'pldi' : 'plan'
 	  };
+
+    public static readonly childMap : {[key : string] : [string] } = {};
     
 /*    private readonly childMap : {[key : string] : [string] }
 	= { 'ai' : ['aaai', 'ijcai'],
@@ -162,6 +174,8 @@ class CSRankings {
 	    { area : "mobile", title : "Mobile"},
 	    { area : "metrics", title : "Metrics"},
 	    { area : "ops", title : "OS" },
+	    { area : "popl", title : "PL" },
+	    { area : "pldi", title : "PL" },
 	    { area : "plan", title : "PL" },
 	    { area : "soft", title : "SE" },
 	    { area : "act", title : "Theory" },
@@ -331,9 +345,9 @@ class CSRankings {
 	    // Round it to the nearest 0.1.
 	    value = Math.round(value * 10) / 10;
 	    if (value > 0) {
-//		if (key in this.parentMap) {
-		    // key = this.parentMap[key];
-//		}
+		if (key in CSRankings.parentMap) {
+		    key = CSRankings.parentMap[key];
+		}
 		if (!(key in datadict)) {
 		    datadict[key] = 0;
 		}
@@ -661,8 +675,8 @@ class CSRankings {
 		continue;
 	    }
 	    // If this area is a child area, accumulate totals for parent.
-	    if (area in this.parentMap) {
-		area = this.parentMap[area];
+	    if (area in CSRankings.parentMap) {
+		area = CSRankings.parentMap[area];
 	    }
 	    const areaDept : string = area+dept;
 	    const nameDept : string = name+dept;
@@ -701,8 +715,8 @@ class CSRankings {
 	    }
 	    this.stats[dept] = 1;
 	    for (let area of CSRankings.areas) {
-		// If the area is a child, ignore it.
-		if (area in this.parentMap) {
+		// If this area is a child area, skip it.
+		if (area in CSRankings.parentMap) {
 		    continue;
 		}
 		let areaDept = area+dept;
@@ -728,6 +742,10 @@ class CSRankings {
 	    let area = CSRankings.areas[ind];
 	    weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
 	    if (weights[area] === 1) {
+		if (area in CSRankings.parentMap) {
+		    // Don't count children.
+		    continue;
+		}
 		/* One more area checked. */
 		numAreas++;
 	    }
@@ -1200,22 +1218,44 @@ class CSRankings {
     private addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
-//	    console.log(widget);
 	    widget!.addEventListener("change", ()=> { this.rank(); });
 	});
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'
 	for (let position = 0; position < CSRankings.areas.length; position++) {
 	    let area = CSRankings.areas[position];
-	    const widget = document.getElementById(area+'-widget');
-	    widget!.addEventListener("click", ()=> {
-		this.toggleConferences(area);
-	    });
+	    if (!(area in CSRankings.parentMap)) {
+		// Not a child.
+		const widget = document.getElementById(area+'-widget');
+		widget!.addEventListener("click", ()=> {
+		    this.toggleConferences(area);
+		});
+	    }
 	}
 	// Initialize callbacks for area checkboxes.
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
 	    jQuery(str).click(()=>{
+		if (this.fields[i] in CSRankings.parentMap) {
+		    // If any child is on, activate the parent.
+		    // If all are off, deactivate parent.
+		    let parent = CSRankings.parentMap[this.fields[i]];
+		    const strparent = 'input[name='+parent+']';
+		    let anyChecked = 0;
+		    CSRankings.childMap[parent].forEach((k)=> {
+			let val = jQuery('input[name='+k+']').prop('checked');
+			anyChecked |= val;
+		    });
+		    // Activate parent if any checked, else deactivate.
+		    jQuery(strparent).prop('checked', anyChecked);
+		} else {
+		    // Parent: activate or deactivate all children.
+		    let val = jQuery(str).prop('checked');
+		    for (let child of CSRankings.childMap[this.fields[i]]) {
+			const strchild = 'input[name='+child+']';
+			jQuery(strchild).prop('checked', val);
+		    }
+		}
 		this.rank();
 	    });
 	}

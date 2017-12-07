@@ -12,7 +12,10 @@ areadict = {
     # Max three most selective venues per area for now.
     #
     # SIGPLAN
-    'plan': ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
+#    'plan' : ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
+    'popl' : ['POPL'],
+    'pldi' : ['PLDI'],
+    'popl' : ['POPL'],
     # SIGHPC
     'hpc': ['SC', 'HPDC', 'ICS'],
     # SIGLOG
