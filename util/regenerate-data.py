@@ -540,7 +540,7 @@ def dump_it():
     global interestingauthors
     global facultydict
     with open('generated-author-info.csv','w') as f:
-        f.write('"name","dept","area","subarea","count","adjustedcount","year"\n')
+        f.write('"name","dept","area","count","adjustedcount","year"\n')
         authorscores = collections.OrderedDict(sorted(authorscores.iteritems()))
         for ((authorName, area, subarea, year), count) in authorscores.iteritems():
             # count = authorscores[(authorName, area, year)]
@@ -550,8 +550,8 @@ def dump_it():
             f.write((facultydict[authorName].encode('utf-8')))
             f.write(',')
             f.write(area)
-            f.write(',')
-            f.write(subarea)
+#            f.write(',')
+#            f.write(subarea)
             f.write(',')
             f.write(str(count))
             f.write(',')
