@@ -35,8 +35,10 @@ var CSRankings = /** @class */ (function () {
             'eccv': 'vision',
             'iccv': 'vision'
         };
-        this.childMap = { 'ai': ['aaai', 'ijcai'],
-            'vision': ['cvpr', 'eccv', 'iccv'] };
+        /*    private readonly childMap : {[key : string] : [string] }
+            = { 'ai' : ['aaai', 'ijcai'],
+                'vision' : ['cvpr', 'eccv', 'iccv'] };
+        */
         this.areaMap = [{ area: "ai", title: "AI" },
             //	    { area : "aaai", title : "AI" },
             //	    { area : "ijcai", title : "AI" },
@@ -717,7 +719,6 @@ var CSRankings = /** @class */ (function () {
                     + "</small></td>"
                     + '<td align="right"><small>'
                     + (Math.round(10.0 * facultyAdjustedCount[name_6 + dept]) / 10.0).toFixed(1)
-                    //		+ '</abbr>'
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
                     + '<div style="display:none;" id="' + escape(name_6) + "-chart" + '">'
@@ -774,20 +775,11 @@ var CSRankings = /** @class */ (function () {
                     + this.RightTriangle
                     + "</font>"
                     + "</span>";
-                //		    + "<span onclick=\"csr.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
-                /*
-                        s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleFaculty('"
-                            + esc
-                            + "')\" class=\"hovertip\" id=\""
-                            + esc
-                            + "-widget\">" + this.PieChart + "</span></font>";
-                */
                 s += "&nbsp;" + dept + "&nbsp;"
                     + "<font color=\"blue\">"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
                     + this.PieChart
                     + "</span></font>";
-                //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
                 s += "</td>";
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
@@ -829,13 +821,13 @@ var CSRankings = /** @class */ (function () {
         for (var i = 0; i < CSRankings.areas.length; i++) {
             var str = "input[name=" + this.fields[i] + "]";
             jQuery(str).prop('checked', value);
-            if (this.fields[i] in this.childMap) {
-                var parent_1 = this.fields[i];
-                for (var _i = 0, _a = this.childMap[parent_1]; _i < _a.length; _i++) {
-                    var kid = _a[_i];
-                    jQuery("input[name=" + kid + "]").prop('checked', value);
-                }
-            }
+            /*	    if (this.fields[i] in this.childMap) {
+                    let parent = this.fields[i];
+                    for (let kid of this.childMap[parent]) {
+                        jQuery("input[name="+kid+"]").prop('checked', value);
+                    }
+                    }
+            */
         }
     };
     /* PUBLIC METHODS */

@@ -76,6 +76,9 @@ interface ChartData {
 
 class CSRankings {
     
+    public static readonly areas   : Array<string> = [];
+    public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
+
     private navigoRouter : Navigo;
     
     constructor() {
@@ -84,12 +87,12 @@ class CSRankings {
 	   and areaPosition dictionary: areas -> position in area array
 	*/
 	for (let position = 0; position < this.areaMap.length; position++) {
-	    const { area, title } = this.areaMap[position];
-	    CSRankings.areas[position]     = area;
-	    this.areaNames[position] = title;
-	    this.fields[position]    = area;
-	    this.areaDict[area]      = this.areaNames[position];
-	    this.areaPosition[area]  = position;
+	    const { area, title }      = this.areaMap[position];
+	    CSRankings.areas[position] = area;
+	    this.areaNames[position]   = title;
+	    this.fields[position]      = area;
+	    this.areaDict[area]        = this.areaNames[position];
+	    this.areaPosition[area]    = position;
 	}
 	for (let area of this.aiAreas) {
 	    this.aiFields.push (this.areaPosition[area]);
@@ -135,9 +138,10 @@ class CSRankings {
 	    'iccv' : 'vision'
 	  };
     
-    private readonly childMap : {[key : string] : [string] }
+/*    private readonly childMap : {[key : string] : [string] }
 	= { 'ai' : ['aaai', 'ijcai'],
 	    'vision' : ['cvpr', 'eccv', 'iccv'] };
+*/
     
     private readonly areaMap : Array<AreaMap>
 	= [ { area : "ai", title : "AI" },
@@ -179,15 +183,12 @@ class CSRankings {
     private readonly theoryAreas  = [ "act", "crypt", "log" ];
     private readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "vis", "ecom" ];
     
-    public static readonly areas : Array<string> = [];
-    public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
-
-    private readonly areaNames : Array<string> = [];
-    private readonly fields : Array<string> = [];
-    private readonly aiFields : Array<number> = [];
+    private readonly areaNames :     Array<string> = [];
+    private readonly fields :        Array<string> = [];
+    private readonly aiFields :      Array<number> = [];
     private readonly systemsFields : Array<number> = [];
-    private readonly theoryFields : Array<number> = [];
-    private readonly otherFields : Array<number> = [];
+    private readonly theoryFields :  Array<number> = [];
+    private readonly otherFields :   Array<number> = [];
     
     /* Map area to its name (from areaNames). */
     private readonly areaDict : {[key : string] : string } = {};
@@ -843,7 +844,6 @@ class CSRankings {
 		    + "</small></td>"
 		    + '<td align="right"><small>'
 		    + (Math.round(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
-		//		+ '</abbr>'
 		    + "</small></td></tr>"
 		    + "<tr><td colspan=\"4\">"
 		    + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
@@ -904,20 +904,12 @@ class CSRankings {
 		    + this.RightTriangle
 		    + "</font>"
 		    + "</span>";
-//		    + "<span onclick=\"csr.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
-/*
-		s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleFaculty('"
-		    + esc
-		    + "')\" class=\"hovertip\" id=\""
-		    + esc
-		    + "-widget\">" + this.PieChart + "</span></font>";
-*/
+
 		s += "&nbsp;" + dept + "&nbsp;"
 		    + "<font color=\"blue\">"
 		    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
 		    + this.PieChart
 		    + "</span></font>";
-		//	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
 		s += "</td>";
 
 		s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1)  + "</td>";
@@ -960,12 +952,13 @@ class CSRankings {
 	for (let i = 0; i < CSRankings.areas.length; i++) {
 	    const str = "input[name=" + this.fields[i] + "]";
 	    jQuery(str).prop('checked', value);
-	    if (this.fields[i] in this.childMap) {
+/*	    if (this.fields[i] in this.childMap) {
 		let parent = this.fields[i];
 		for (let kid of this.childMap[parent]) {
 		    jQuery("input[name="+kid+"]").prop('checked', value);
 		}
 	    }
+*/
 	}
     }
     
