@@ -47,6 +47,8 @@ var CSRankings = /** @class */ (function () {
             { area: "comm", title: "Networks" },
             { area: "sec", title: "Security" },
             { area: "mod", title: "DB" },
+            { area: "sigmod", title: "DB" },
+            { area: "vldb", title: "DB" },
             { area: "hpc", title: "HPC" },
             { area: "sc", title: "HPC" },
             { area: "hpdc", title: "HPC" },
@@ -1162,6 +1164,8 @@ var CSRankings = /** @class */ (function () {
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     CSRankings.parentMap = {
+        'vldb': 'mod',
+        'sigmod': 'mod',
         'dac': 'da',
         'iccad': 'da',
         'emsoft': 'bed',
