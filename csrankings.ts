@@ -144,6 +144,8 @@ class CSRankings {
 	    'cvpr' : 'vision',
 	    'eccv' : 'vision',
 	    'iccv' : 'vision', */
+	    'vldb' : 'mod',
+	    'sigmod' : 'mod',
 	    'dac' : 'da',
 	    'iccad' : 'da',
 	    'emsoft' : 'bed',
@@ -188,6 +190,8 @@ class CSRankings {
 	    { area : "comm", title : "Networks"},
 	    { area : "sec", title : "Security"},
 	    { area : "mod", title : "DB"},
+	    { area : "sigmod", title : "DB"},
+	    { area : "vldb", title : "DB"},
 	    { area : "hpc", title : "HPC"},
 	    { area : "sc", title : "HPC"},
 	    { area : "hpdc", title : "HPC"},
