@@ -26,6 +26,11 @@ areadict = {
     'sosp' : ['SOSP'],
     'osdi' : ['OSDI'],
     'eurosys' : ['EuroSys'],
+    # SIGMETRICS
+    # - Two variants for each, as in DBLP.
+    # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
+    'imc': ['IMC', 'Internet Measurement Conference'],
+    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance'],
     # SIGHPC
     'hpc': ['SC', 'HPDC', 'ICS'],
     # SIGLOG
@@ -46,9 +51,6 @@ areadict = {
     # SIGGRAPH
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
     'graph': ['ACM Trans. Graph.', 'SIGGRAPH'],
-    # SIGMETRICS
-    # - Two variants for each, as in DBLP.
-    'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
     # SIGIR
     'ir': ['WWW', 'SIGIR'],
     # SIGCHI
