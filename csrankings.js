@@ -48,6 +48,9 @@ var CSRankings = /** @class */ (function () {
             { area: "sec", title: "Security" },
             { area: "mod", title: "DB" },
             { area: "hpc", title: "HPC" },
+            { area: "sc", title: "HPC" },
+            { area: "hpdc", title: "HPC" },
+            { area: "ics", title: "HPC" },
             { area: "mobile", title: "Mobile" },
             { area: "mobicom", title: "Mobile" },
             { area: "mobisys", title: "Mobile" },
@@ -1159,6 +1162,9 @@ var CSRankings = /** @class */ (function () {
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     CSRankings.parentMap = {
+        'sc': 'hpc',
+        'hpdc': 'hpc',
+        'ics': 'hpc',
         'mobicom': 'mobile',
         'mobisys': 'mobile',
         'sensys': 'mobile',
