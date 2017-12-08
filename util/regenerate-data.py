@@ -60,14 +60,16 @@ areadict = {
     'ccs': ['CCS', 'ACM Conference on Computer and Communications Security'],
     'oakland' : ['IEEE Symposium on Security and Privacy'],
     'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
+    # SIGCOMM
+    # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
+    'sigcomm': ['SIGCOMM'],
+    'nsdi': ['NSDI'], # INFOCOM
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGARCH
     'arch': ['ISCA', 'MICRO', 'ASPLOS'],
     # SIGACT
     'act': ['STOC', 'FOCS', 'SODA'],
-    # SIGCOMM
-    'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
     'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
     'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
