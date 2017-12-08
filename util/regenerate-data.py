@@ -54,6 +54,12 @@ areadict = {
     # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
     'vldb' : ['VLDB', 'PVLDB'],
     'sigmod' : ['SIGMOD Conference'],
+    # SIGSAC
+    # - USENIX Security listed twice to reflect variants in DBLP
+    # 'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
+    'ccs': ['CCS', 'ACM Conference on Computer and Communications Security'],
+    'oakland' : ['IEEE Symposium on Security and Privacy'],
+    'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGARCH
@@ -62,9 +68,6 @@ areadict = {
     'act': ['STOC', 'FOCS', 'SODA'],
     # SIGCOMM
     'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
-    # SIGSAC
-    # - USENIX Security listed twice to reflect variants in DBLP
-    'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
     'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
     'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
