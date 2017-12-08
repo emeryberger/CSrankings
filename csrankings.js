@@ -30,15 +30,23 @@ var CSRankings = /** @class */ (function () {
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
         this.areaMap = [{ area: "ai", title: "AI" },
-            //	    { area : "aaai", title : "AI" },
-            //	    { area : "ijcai", title : "AI" },
+            { area: "aaai", title: "AI" },
+            { area: "ijcai", title: "AI" },
             { area: "vision", title: "Vision" },
-            //	    { area : "cvpr", title : "Vision" },
-            //	    { area : "eccv", title : "Vision" },
-            //	    { area : "iccv", title : "Vision" },
+            { area: "cvpr", title: "Vision" },
+            { area: "eccv", title: "Vision" },
+            { area: "iccv", title: "Vision" },
             { area: "mlmining", title: "ML" },
+            { area: "icml", title: "ML" },
+            { area: "kdd", title: "ML" },
+            { area: "nips", title: "ML" },
             { area: "nlp", title: "NLP" },
+            { area: "acl", title: "NLP" },
+            { area: "emnlp", title: "NLP" },
+            { area: "naacl", title: "NLP" },
             { area: "ir", title: "Web & IR" },
+            { area: "sigir", title: "Web & IR" },
+            { area: "www", title: "Web & IR" },
             { area: "arch", title: "Arch" },
             { area: "asplos", title: "Arch" },
             { area: "isca", title: "Arch" },
@@ -492,8 +500,17 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.activateFields = function (value, fields) {
         for (var i = 0; i < fields.length; i++) {
-            var str = "input[name=" + this.fields[fields[i]] + "]";
+            var item = this.fields[fields[i]];
+            var str = "input[name=" + item + "]";
             jQuery(str).prop('checked', value);
+            if (item in CSRankings.childMap) {
+                // It's a parent.
+                jQuery(str).prop('disabled', false);
+                // Activate / deactivate all children as appropriate.
+                CSRankings.childMap[item].forEach(function (k) {
+                    jQuery('input[name=' + k + ']').prop('checked', value);
+                });
+            }
         }
         this.rank();
         return false;
@@ -1211,7 +1228,19 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
-    CSRankings.parentMap = {
+    CSRankings.parentMap = { 'aaai': 'ai',
+        'ijcai': 'ai',
+        'cvpr': 'vision',
+        'eccv': 'vision',
+        'iccv': 'vision',
+        'icml': 'mlmining',
+        'kdd': 'mlmining',
+        'nips': 'mlmining',
+        'acl': 'nlp',
+        'emnlp': 'nlp',
+        'naacl': 'nlp',
+        'sigir': 'ir',
+        'www': 'ir',
         'asplos': 'arch',
         'isca': 'arch',
         'micro': 'arch',
