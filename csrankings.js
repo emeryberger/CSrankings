@@ -76,6 +76,8 @@ var CSRankings = /** @class */ (function () {
             { area: "robotics", title: "Robotics" },
             { area: "bio", title: "Comp. Biology" },
             { area: "da", title: "EDA" },
+            { area: "dac", title: "EDA" },
+            { area: "iccad", title: "EDA" },
             { area: "bed", title: "Embedded" },
             { area: "emsoft", title: "Embedded" },
             { area: "rtas", title: "Embedded" },
@@ -1067,7 +1069,6 @@ var CSRankings = /** @class */ (function () {
                     jQuery(str).prop('checked', true);
                     jQuery(str).prop('disabled', false);
                     if (item in CSRankings.childMap) {
-                        console.log("activating all children.");
                         // Activate all children.
                         CSRankings.childMap[item].forEach(function (k) {
                             jQuery('input[name=' + k + ']').prop('checked', true);
@@ -1102,7 +1103,6 @@ var CSRankings = /** @class */ (function () {
             var str = 'input[name=' + this_2.fields[i] + ']';
             jQuery(str).click(function () {
                 if (_this.fields[i] in CSRankings.parentMap) {
-                    console.log("child " + _this.fields[i]);
                     // Child:
                     // If any child is on, activate the parent.
                     // If all are off, deactivate parent.
@@ -1115,15 +1115,12 @@ var CSRankings = /** @class */ (function () {
                         anyChecked_1 |= val;
                         allChecked_1 &= val;
                     });
-                    console.log("any checked = " + anyChecked_1);
-                    console.log("all checked = " + allChecked_1);
                     // Activate parent if any checked.
                     jQuery(strparent).prop('checked', anyChecked_1);
                     // Mark the parent as disabled unless all are checked.
                     jQuery(strparent).prop('disabled', !allChecked_1);
                 }
                 else {
-                    console.log("parent");
                     // Parent: activate or deactivate all children.
                     var val = jQuery(str).prop('checked');
                     for (var _i = 0, _a = CSRankings.childMap[_this.fields[i]]; _i < _a.length; _i++) {
@@ -1165,6 +1162,8 @@ var CSRankings = /** @class */ (function () {
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     CSRankings.parentMap = {
+        'dac': 'da',
+        'iccad': 'da',
         'emsoft': 'bed',
         'rtas': 'bed',
         'rtss': 'bed',
