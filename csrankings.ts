@@ -83,6 +83,7 @@ class CSRankings {
     
     constructor() {
 	this.navigoRouter = new Navigo(null, true);
+
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
 	*/
@@ -122,6 +123,11 @@ class CSRankings {
 //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
 					     this.setAllOn();
 					     this.navigoRouter.on('/index', this.navigator).resolve();
+					     // Set end year to the current year, and start year 10 years earlier.
+					     let d = new Date();
+					     let currYear = d.getFullYear();
+					     jQuery('#fromyear').val((currYear-10).toString());
+					     jQuery('#toyear').val(currYear.toString());
 					     this.rank();
 					     this.addListeners();
 					 });
