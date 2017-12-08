@@ -51,6 +51,9 @@ var CSRankings = /** @class */ (function () {
             { area: "mobile", title: "Mobile" },
             { area: "metrics", title: "Metrics" },
             { area: "ops", title: "OS" },
+            { area: "sosp", title: "OS" },
+            { area: "osdi", title: "OS" },
+            { area: "eurosys", title: "OS" },
             { area: "popl", title: "PL" },
             { area: "pldi", title: "PL" },
             { area: "plan", title: "PL" },
@@ -1151,6 +1154,9 @@ var CSRankings = /** @class */ (function () {
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     CSRankings.parentMap = {
+        'osdi': 'ops',
+        'sosp': 'ops',
+        'eurosys': 'ops',
         'popl': 'plan',
         'pldi': 'plan',
         'fse': 'soft',
