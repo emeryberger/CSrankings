@@ -144,6 +144,9 @@ class CSRankings {
 	    'cvpr' : 'vision',
 	    'eccv' : 'vision',
 	    'iccv' : 'vision', */
+	    'emsoft' : 'bed',
+	    'rtas' : 'bed',
+	    'rtss' : 'bed',
 	    'sc' : 'hpc',
 	    'hpdc' : 'hpc',
 	    'ics' : 'hpc',
@@ -213,6 +216,9 @@ class CSRankings {
 	    { area : "bio", title : "Comp. Biology" },
 	    { area : "da", title : "EDA" },
 	    { area : "bed", title : "Embedded" },
+	    { area : "emsoft", title : "Embedded" },
+	    { area : "rtas", title : "Embedded" },
+	    { area : "rtss", title : "Embedded" },
 	    { area : "vis", title : "Visualization" }
 	    ,{ area : "ecom", title : "ECom" }
 	    //,{ area : "cse", title : "CSEd" }
