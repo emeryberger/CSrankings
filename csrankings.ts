@@ -1357,9 +1357,11 @@ class CSRankings {
 		} else {
 		    // Parent: activate or deactivate all children.
 		    let val = jQuery(str).prop('checked');
-		    for (let child of CSRankings.childMap[field]) {
-			const strchild = 'input[name='+child+']';
-			jQuery(strchild).prop('checked', val);
+		    if (field in CSRankings.childMap) {
+			for (let child of CSRankings.childMap[field]) {
+			    const strchild = 'input[name='+child+']';
+			    jQuery(strchild).prop('checked', val);
+			}
 		    }
 		}
 		this.rank(updateURL);

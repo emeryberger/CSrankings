@@ -1166,10 +1166,12 @@ var CSRankings = /** @class */ (function () {
                 else {
                     // Parent: activate or deactivate all children.
                     var val = jQuery(str).prop('checked');
-                    for (var _i = 0, _a = CSRankings.childMap[field]; _i < _a.length; _i++) {
-                        var child = _a[_i];
-                        var strchild = 'input[name=' + child + ']';
-                        jQuery(strchild).prop('checked', val);
+                    if (field in CSRankings.childMap) {
+                        for (var _i = 0, _a = CSRankings.childMap[field]; _i < _a.length; _i++) {
+                            var child = _a[_i];
+                            var strchild = 'input[name=' + child + ']';
+                            jQuery(strchild).prop('checked', val);
+                        }
                     }
                 }
                 _this.rank(updateURL);
