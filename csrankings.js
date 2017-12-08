@@ -29,10 +29,6 @@ var CSRankings = /** @class */ (function () {
         this.aliasFile = "/dblp-aliases.csv";
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-        /*    private readonly childMap : {[key : string] : [string] }
-            = { 'ai' : ['aaai', 'ijcai'],
-                'vision' : ['cvpr', 'eccv', 'iccv'] };
-        */
         this.areaMap = [{ area: "ai", title: "AI" },
             //	    { area : "aaai", title : "AI" },
             //	    { area : "ijcai", title : "AI" },
@@ -973,15 +969,29 @@ var CSRankings = /** @class */ (function () {
     CSRankings.prototype.urlUpdate = function () {
         var s = '';
         var count = 0;
-        for (var i = 0; i < this.fields.length; i++) {
-            var str = 'input[name=' + this.fields[i] + ']';
+        var _loop_2 = function (i) {
+            var str = 'input[name=' + this_2.fields[i] + ']';
             if (jQuery(str).prop('checked')) {
-                if (!(this.fields[i] in CSRankings.parentMap)) {
-                    // Don't add children.
-                    s += this.fields[i] + '&';
+                // Only add parents.
+                if (!(this_2.fields[i] in CSRankings.parentMap)) {
+                    // And only add if every child is checked.
+                    var allChecked_1 = 1;
+                    if (this_2.fields[i] in CSRankings.childMap) {
+                        CSRankings.childMap[this_2.fields[i]].forEach(function (k) {
+                            var val = jQuery('input[name=' + k + ']').prop('checked');
+                            allChecked_1 &= val;
+                        });
+                    }
+                    if (allChecked_1) {
+                        s += this_2.fields[i] + '&';
+                        count += 1;
+                    }
                 }
-                count += 1;
             }
+        };
+        var this_2 = this;
+        for (var i = 0; i < this.fields.length; i++) {
+            _loop_2(i);
         }
         if (count > 0) {
             // Trim off the trailing '&'.
@@ -1060,10 +1070,14 @@ var CSRankings = /** @class */ (function () {
         if (foundAll) {
             // Set everything.
             for (var position = 0; position < CSRankings.areas.length; position++) {
-                jQuery("input[name=" + CSRankings.areas[position] + "]").prop('checked', true);
-                if (CSRankings.areas[position] in CSRankings.childMap) {
-                    // Activate all children.
-                    CSRankings.childMap[CSRankings.areas[position]].forEach(function (k) {
+                var item = CSRankings.areas[position];
+                var str = "input[name=" + item + "]";
+                jQuery(str).prop('checked', true);
+                if (item in CSRankings.childMap) {
+                    // It's a parent. Enable it.
+                    jQuery(str).prop('disabled', false);
+                    // and activate all children.
+                    CSRankings.childMap[item].forEach(function (k) {
                         jQuery('input[name=' + k + ']').prop('checked', true);
                     });
                 }
@@ -1094,7 +1108,7 @@ var CSRankings = /** @class */ (function () {
             var widget = document.getElementById(key);
             widget.addEventListener("change", function () { _this.rank(); });
         });
-        var _loop_2 = function (position) {
+        var _loop_3 = function (position) {
             var area = CSRankings.areas[position];
             if (!(area in CSRankings.parentMap)) {
                 // Not a child.
@@ -1107,10 +1121,10 @@ var CSRankings = /** @class */ (function () {
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
         for (var position = 0; position < CSRankings.areas.length; position++) {
-            _loop_2(position);
+            _loop_3(position);
         }
-        var _loop_3 = function (i) {
-            var str = 'input[name=' + this_2.fields[i] + ']';
+        var _loop_4 = function (i) {
+            var str = 'input[name=' + this_3.fields[i] + ']';
             jQuery(str).click(function () {
                 if (_this.fields[i] in CSRankings.parentMap) {
                     // Child:
@@ -1119,16 +1133,23 @@ var CSRankings = /** @class */ (function () {
                     var parent_2 = CSRankings.parentMap[_this.fields[i]];
                     var strparent = 'input[name=' + parent_2 + ']';
                     var anyChecked_1 = 0;
-                    var allChecked_1 = 1;
+                    var allChecked_2 = 1;
                     CSRankings.childMap[parent_2].forEach(function (k) {
                         var val = jQuery('input[name=' + k + ']').prop('checked');
                         anyChecked_1 |= val;
-                        allChecked_1 &= val;
+                        allChecked_2 &= val;
                     });
+                    console.log("any checked = " + anyChecked_1 + ", all checked = " + allChecked_2);
                     // Activate parent if any checked.
                     jQuery(strparent).prop('checked', anyChecked_1);
                     // Mark the parent as disabled unless all are checked.
-                    jQuery(strparent).prop('disabled', !allChecked_1);
+                    if (!anyChecked_1 || allChecked_2) {
+                        console.log("enabling.");
+                        jQuery(strparent).prop('disabled', false);
+                    }
+                    else {
+                        jQuery(strparent).prop('disabled', true);
+                    }
                 }
                 else {
                     // Parent: activate or deactivate all children.
@@ -1142,10 +1163,10 @@ var CSRankings = /** @class */ (function () {
                 _this.rank();
             });
         };
-        var this_2 = this;
+        var this_3 = this;
         // Initialize callbacks for area checkboxes.
         for (var i = 0; i < this.fields.length; i++) {
-            _loop_3(i);
+            _loop_4(i);
         }
         // Add group selectors.
         var listeners = { 'all_areas_on': (function () { _this.activateAll(); }),
@@ -1159,14 +1180,14 @@ var CSRankings = /** @class */ (function () {
             'other_areas_on': (function () { _this.activateOthers(); }),
             'other_areas_off': (function () { _this.deactivateOthers(); })
         };
-        var _loop_4 = function (item) {
+        var _loop_5 = function (item) {
             var widget = document.getElementById(item);
             widget.addEventListener("click", function () {
                 listeners[item]();
             });
         };
         for (var item in listeners) {
-            _loop_4(item);
+            _loop_5(item);
         }
     };
     CSRankings.areas = [];
