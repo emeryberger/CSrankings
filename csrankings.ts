@@ -1170,10 +1170,15 @@ class CSRankings {
 
     // Update the URL according to the selected checkboxes.
     private urlUpdate() {
+//	console.log("url update");
 	let s = '';
 	let count = 0;
+	let totalParents = 0;
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
+	    if (!(this.fields[i] in CSRankings.parentMap)) {
+		totalParents += 1;
+	    }
 	    if (jQuery(str).prop('checked')) {
 		// Only add parents.
 		if (!(this.fields[i] in CSRankings.parentMap)) {
@@ -1197,7 +1202,7 @@ class CSRankings {
 	    s = s.slice(0, -1);
 	}
 	let region = jQuery("#regions").find(":selected").val();	
-	if (count == this.fields.length) {
+	if (count == totalParents) {
 	    s = '/index?all'; // Distinguished special URL - default = all selected.
 	} else if (count == 0) {
 	    s = '/index?none'; // Distinguished special URL - none selected.
@@ -1231,6 +1236,7 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
+//	console.log("navigator " + query);
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key]);
@@ -1332,6 +1338,8 @@ class CSRankings {
 			anyChecked |= val;
 			allChecked &= val;
 		    });
+//		    console.log("any checked = " + anyChecked);
+//		    console.log("all checked = " + allChecked);
 		    // Activate parent if any checked.
 		    jQuery(strparent).prop('checked', anyChecked);
 		    // Mark the parent as disabled unless all are checked.
