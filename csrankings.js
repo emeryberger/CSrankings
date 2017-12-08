@@ -175,7 +175,7 @@ var CSRankings = /** @class */ (function () {
                         // Set end year to the current year, and start year 10 years earlier.
                         var d = new Date();
                         var currYear = d.getFullYear();
-                        jQuery('#fromyear').val((currYear - 20).toString()); // FIXME
+                        jQuery('#fromyear').val((currYear - 10).toString());
                         jQuery('#toyear').val(currYear.toString());
                         _this.rank();
                         _this.addListeners();
