@@ -44,6 +44,9 @@ var CSRankings = /** @class */ (function () {
             { area: "nlp", title: "NLP" },
             { area: "ir", title: "Web & IR" },
             { area: "arch", title: "Arch" },
+            { area: "asplos", title: "Arch" },
+            { area: "isca", title: "Arch" },
+            { area: "micro", title: "Arch" },
             { area: "comm", title: "Networks" },
             { area: "sigcomm", title: "Networks" },
             { area: "nsdi", title: "Networks" },
@@ -1169,6 +1172,9 @@ var CSRankings = /** @class */ (function () {
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     CSRankings.parentMap = {
+        'asplos': 'arch',
+        'isca': 'arch',
+        'micro': 'arch',
         'ccs': 'sec',
         'oakland': 'sec',
         'usenixsec': 'sec',
