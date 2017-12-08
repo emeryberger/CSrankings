@@ -55,6 +55,8 @@ var CSRankings = /** @class */ (function () {
             { area: "pldi", title: "PL" },
             { area: "plan", title: "PL" },
             { area: "soft", title: "SE" },
+            { area: "fse", title: "SE" },
+            { area: "icse", title: "SE" },
             { area: "act", title: "Theory" },
             { area: "crypt", title: "Crypto" },
             { area: "log", title: "Logic" },
@@ -948,7 +950,10 @@ var CSRankings = /** @class */ (function () {
         for (var i = 0; i < this.fields.length; i++) {
             var str = 'input[name=' + this.fields[i] + ']';
             if (jQuery(str).prop('checked')) {
-                s += this.fields[i] + '&';
+                if (!(this.fields[i] in CSRankings.parentMap)) {
+                    // Don't add children.
+                    s += this.fields[i] + '&';
+                }
                 count += 1;
             }
         }
@@ -1030,6 +1035,12 @@ var CSRankings = /** @class */ (function () {
             // Set everything.
             for (var position = 0; position < CSRankings.areas.length; position++) {
                 jQuery("input[name=" + CSRankings.areas[position] + "]").prop('checked', true);
+                if (CSRankings.areas[position] in CSRankings.childMap) {
+                    // Activate all children.
+                    CSRankings.childMap[CSRankings.areas[position]].forEach(function (k) {
+                        jQuery('input[name=' + k + ']').prop('checked', true);
+                    });
+                }
             }
             // And we're out.
             return;
@@ -1038,7 +1049,16 @@ var CSRankings = /** @class */ (function () {
             for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
                 var item = q_1[_i];
                 if ((item != "none") && (item != "")) {
-                    jQuery("input[name=" + item + "]").prop('checked', true);
+                    var str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', true);
+                    jQuery(str).prop('disabled', false);
+                    if (item in CSRankings.childMap) {
+                        console.log("activating all children.");
+                        // Activate all children.
+                        CSRankings.childMap[item].forEach(function (k) {
+                            jQuery('input[name=' + k + ']').prop('checked', true);
+                        });
+                    }
                 }
             }
         }
@@ -1068,6 +1088,7 @@ var CSRankings = /** @class */ (function () {
             var str = 'input[name=' + this_2.fields[i] + ']';
             jQuery(str).click(function () {
                 if (_this.fields[i] in CSRankings.parentMap) {
+                    console.log("child " + _this.fields[i]);
                     // Child:
                     // If any child is on, activate the parent.
                     // If all are off, deactivate parent.
@@ -1080,11 +1101,15 @@ var CSRankings = /** @class */ (function () {
                         anyChecked_1 |= val;
                         allChecked_1 &= val;
                     });
-                    // Activate parent if any checked, else deactivate.
+                    console.log("any checked = " + anyChecked_1);
+                    console.log("all checked = " + allChecked_1);
+                    // Activate parent if any checked.
                     jQuery(strparent).prop('checked', anyChecked_1);
+                    // Mark the parent as disabled unless all are checked.
                     jQuery(strparent).prop('disabled', !allChecked_1);
                 }
                 else {
+                    console.log("parent");
                     // Parent: activate or deactivate all children.
                     var val = jQuery(str).prop('checked');
                     for (var _i = 0, _a = CSRankings.childMap[_this.fields[i]]; _i < _a.length; _i++) {
@@ -1127,7 +1152,9 @@ var CSRankings = /** @class */ (function () {
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
     CSRankings.parentMap = {
         'popl': 'plan',
-        'pldi': 'plan'
+        'pldi': 'plan',
+        'fse': 'soft',
+        'icse': 'soft'
     };
     CSRankings.childMap = {};
     return CSRankings;

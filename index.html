@@ -154,8 +154,8 @@
     <script src="js/pako.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/navigo.min.js"></script>
-    <script src="csrankings.min.js" type="text/javascript"></script>
-<!--    <script src="csrankings.js" type="text/javascript"></script> -->
+<!--    <script src="csrankings.min.js" type="text/javascript"></script> -->
+    <script src="csrankings.js" type="text/javascript"></script>
 
   </head>
 
@@ -803,8 +803,24 @@
 			      <tr style="width:100%">
 				<td>
 				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigsoft.org">acm sigsoft</a></p>
-				  <a href="http://dblp.uni-trier.de/db/conf/sigsoft/">FSE</a><br />
-				  <a href="http://dblp.uni-trier.de/db/conf/icse/">ICSE</a><br />
+				  <table class="table-sm" style="width:50%">
+				    <tr>
+				      <td>
+					<a href="http://dblp.uni-trier.de/db/conf/sigsoft/">FSE</a><br />
+				      </td>
+				      <td>
+					<input type="checkbox" name="fse" id="fse" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<a href="http://dblp.uni-trier.de/db/conf/icse/">ICSE</a>
+				      </td>
+				      <td>
+					<input type="checkbox" name="icse" id="icse" value="1.0"/>
+				      </td>
+				    </tr>
+				  </table>
 				</td>
 			      </tr>
 			    </tbody>
