@@ -168,7 +168,9 @@ class CSRankings {
 	    'popl' : 'plan',
 	    'pldi' : 'plan',
 	    'fse'  : 'soft',
-	    'icse' : 'soft'
+	    'icse' : 'soft',
+	    'nsdi' : 'comm',
+	    'sigcomm' : 'comm'
 	  };
 
     public static readonly childMap : {[key : string] : [string] } = {};
@@ -191,6 +193,8 @@ class CSRankings {
 	    { area : "ir", title : "Web & IR" },
 	    { area : "arch", title : "Arch" },
 	    { area : "comm", title : "Networks"},
+	    { area : "sigcomm", title : "Networks"},
+	    { area : "nsdi", title : "Networks"},
 	    { area : "sec", title : "Security"},
 	    { area : "ccs", title : "Security"},
 	    { area : "oakland", title : "Security"},
