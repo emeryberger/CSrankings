@@ -178,11 +178,7 @@ class CSRankings {
 
     public static readonly childMap : {[key : string] : [string] } = {};
     
-/*    private readonly childMap : {[key : string] : [string] }
-	= { 'ai' : ['aaai', 'ijcai'],
-	    'vision' : ['cvpr', 'eccv', 'iccv'] };
-*/
-    
+   
     private readonly areaMap : Array<AreaMap>
 	= [ { area : "ai", title : "AI" },
 //	    { area : "aaai", title : "AI" },
@@ -1179,11 +1175,21 @@ class CSRankings {
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
 	    if (jQuery(str).prop('checked')) {
+		// Only add parents.
 		if (!(this.fields[i] in CSRankings.parentMap)) {
-		    // Don't add children.
-		    s += this.fields[i] + '&';
+		    // And only add if every child is checked.
+		    let allChecked = 1;
+		    if (this.fields[i] in CSRankings.childMap) {
+			CSRankings.childMap[this.fields[i]].forEach((k)=> {
+			    let val = jQuery('input[name='+k+']').prop('checked');
+			    allChecked &= val;
+			});
+		    }
+		    if (allChecked) {
+			s += this.fields[i] + '&';
+			count += 1;
+		    }
 		}
-		count += 1;
 	    }
 	}
 	if (count > 0) {
@@ -1261,10 +1267,14 @@ class CSRankings {
 	if (foundAll) {
 	    // Set everything.
 	    for (let position = 0; position < CSRankings.areas.length; position++) {
-		jQuery("input[name="+CSRankings.areas[position]+"]").prop('checked', true);
-		if (CSRankings.areas[position] in CSRankings.childMap) {
-		    // Activate all children.
-		    CSRankings.childMap[CSRankings.areas[position]].forEach((k)=> {
+		let item = CSRankings.areas[position]
+		let str = "input[name="+item+"]";
+		jQuery(str).prop('checked', true);
+		if (item in CSRankings.childMap) {
+		    // It's a parent. Enable it.
+		    jQuery(str).prop('disabled', false);
+		    // and activate all children.
+		    CSRankings.childMap[item].forEach((k)=> {
 			jQuery('input[name='+k+']').prop('checked', true);
 		    });
 		}
@@ -1322,10 +1332,16 @@ class CSRankings {
 			anyChecked |= val;
 			allChecked &= val;
 		    });
+		    console.log("any checked = "+anyChecked+", all checked = "+allChecked);
 		    // Activate parent if any checked.
 		    jQuery(strparent).prop('checked', anyChecked);
 		    // Mark the parent as disabled unless all are checked.
-		    jQuery(strparent).prop('disabled', !allChecked);
+		    if (!anyChecked || allChecked) {
+			console.log("enabling.");
+			jQuery(strparent).prop('disabled', false);
+		    } else {
+			jQuery(strparent).prop('disabled', true);
+		    }
 		} else {
 		    // Parent: activate or deactivate all children.
 		    let val = jQuery(str).prop('checked');
