@@ -64,10 +64,13 @@ areadict = {
     # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
     'sigcomm': ['SIGCOMM'],
     'nsdi': ['NSDI'], # INFOCOM
+    # SIGARCH
+    # 'arch': ['ISCA', 'MICRO', 'ASPLOS'],
+    'asplos': ['ASPLOS'],
+    'isca': ['ISCA'],
+    'micro': ['MICRO'],
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
-    # SIGARCH
-    'arch': ['ISCA', 'MICRO', 'ASPLOS'],
     # SIGACT
     'act': ['STOC', 'FOCS', 'SODA'],
     'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
