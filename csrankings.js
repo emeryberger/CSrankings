@@ -172,6 +172,11 @@ var CSRankings = /** @class */ (function () {
                         //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.setAllOn();
                         _this.navigoRouter.on('/index', _this.navigator).resolve();
+                        // Set end year to the current year, and start year 10 years earlier.
+                        var d = new Date();
+                        var currYear = d.getFullYear();
+                        jQuery('#fromyear').val((currYear - 20).toString()); // FIXME
+                        jQuery('#toyear').val(currYear.toString());
                         _this.rank();
                         _this.addListeners();
                     });
