@@ -864,7 +864,8 @@ var CSRankings = /** @class */ (function () {
         }
     };
     /* PUBLIC METHODS */
-    CSRankings.prototype.rank = function () {
+    CSRankings.prototype.rank = function (update) {
+        if (update === void 0) { update = true; }
         var deptNames = {}; /* names of departments. */
         var deptCounts = {}; /* number of faculty in each department. */
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
@@ -887,7 +888,9 @@ var CSRankings = /** @class */ (function () {
         var s = this.buildOutputString(numAreas, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
-        this.urlUpdate();
+        if (update) {
+            this.urlUpdate();
+        }
         return false;
     };
     /* Turn the chart display on or off. */
@@ -1131,12 +1134,15 @@ var CSRankings = /** @class */ (function () {
         }
         var _loop_4 = function (i) {
             var str = 'input[name=' + this_3.fields[i] + ']';
+            var field = this_3.fields[i];
             jQuery(str).click(function () {
-                if (_this.fields[i] in CSRankings.parentMap) {
+                var updateURL = true;
+                if (field in CSRankings.parentMap) {
                     // Child:
                     // If any child is on, activate the parent.
                     // If all are off, deactivate parent.
-                    var parent_2 = CSRankings.parentMap[_this.fields[i]];
+                    updateURL = false;
+                    var parent_2 = CSRankings.parentMap[field];
                     var strparent = 'input[name=' + parent_2 + ']';
                     var anyChecked_1 = 0;
                     var allChecked_2 = 1;
@@ -1153,20 +1159,20 @@ var CSRankings = /** @class */ (function () {
                     if (!anyChecked_1 || allChecked_2) {
                         jQuery(strparent).prop('disabled', false);
                     }
-                    else {
+                    if (anyChecked_1 && !allChecked_2) {
                         jQuery(strparent).prop('disabled', true);
                     }
                 }
                 else {
                     // Parent: activate or deactivate all children.
                     var val = jQuery(str).prop('checked');
-                    for (var _i = 0, _a = CSRankings.childMap[_this.fields[i]]; _i < _a.length; _i++) {
+                    for (var _i = 0, _a = CSRankings.childMap[field]; _i < _a.length; _i++) {
                         var child = _a[_i];
                         var strchild = 'input[name=' + child + ']';
                         jQuery(strchild).prop('checked', val);
                     }
                 }
-                _this.rank();
+                _this.rank(updateURL);
             });
         };
         var this_3 = this;
