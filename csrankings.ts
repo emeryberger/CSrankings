@@ -1332,12 +1332,10 @@ class CSRankings {
 			anyChecked |= val;
 			allChecked &= val;
 		    });
-		    console.log("any checked = "+anyChecked+", all checked = "+allChecked);
 		    // Activate parent if any checked.
 		    jQuery(strparent).prop('checked', anyChecked);
 		    // Mark the parent as disabled unless all are checked.
 		    if (!anyChecked || allChecked) {
-			console.log("enabling.");
 			jQuery(strparent).prop('disabled', false);
 		    } else {
 			jQuery(strparent).prop('disabled', true);
