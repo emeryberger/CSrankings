@@ -31,6 +31,11 @@ areadict = {
     # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
     'imc': ['IMC', 'Internet Measurement Conference'],
     'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance'],
+    # SIGMOBILE
+    # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
+    'mobisys' : ['MobiSys'],
+    'mobicom' : ['MobiCom', 'MOBICOM'],
+    'sensys'  : ['SenSys'],
     # SIGHPC
     'hpc': ['SC', 'HPDC', 'ICS'],
     # SIGLOG
@@ -62,8 +67,6 @@ areadict = {
             'HLT/EMNLP',  # -- in 2005 was joint
             ],
     'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
-    # SIGMOBILE
-    'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
     'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
     'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     # SIGBio
