@@ -73,8 +73,13 @@ areadict = {
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGACT
     'act': ['STOC', 'FOCS', 'SODA'],
-    'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
-    'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
+    # 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
+    'nips': ['NIPS'],
+    'icml': ['ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)'],
+    'kdd' : ['KDD'],
+    # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
+    'aaai': ['AAAI', 'AAAI/IAAI'],
+    'ijcai': ['IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
     # SIGGRAPH
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
@@ -83,13 +88,19 @@ areadict = {
     'ir': ['WWW', 'SIGIR'],
     # SIGCHI
     'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
-    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
-            'ACL/IJCNLP',  # -- in 2009 was joint
-            'COLING-ACL',  # -- in 1998 was joint
-            'EMNLP-CoNLL',  # -- in 2012 was joint
-            'HLT/EMNLP',  # -- in 2005 was joint
-            ],
-    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+#    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
+#            'ACL/IJCNLP',  # -- in 2009 was joint
+#            'COLING-ACL',  # -- in 1998 was joint
+#            'EMNLP-CoNLL',  # -- in 2012 was joint
+#            'HLT/EMNLP',  # -- in 2005 was joint
+#            ],
+    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP'],
+    'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
+    'naacl' : ['NAACL', 'HLT-NAACL'],
+#    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+    'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
+    'iccv': ['ICCV'],
+    'eccv': ['ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
     'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     # SIGBio
