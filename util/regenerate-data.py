@@ -46,6 +46,10 @@ areadict = {
     'emsoft': ['EMSOFT'],
     'rtss' : ['RTSS'],
     'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
+    # SIGDA
+    # 'da': ['ICCAD', 'DAC'],
+    'iccad': ['ICCAD'],
+    'dac' : ['DAC'],
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGARCH
@@ -80,8 +84,6 @@ areadict = {
     # SIGBio
     # - special handling for ISMB proceedings in Bioinformatics special issues.
     'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
-    # SIGDA
-    'da': ['ICCAD', 'DAC'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
     'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.'],
     'ecom' : ['EC', 'WINE']
