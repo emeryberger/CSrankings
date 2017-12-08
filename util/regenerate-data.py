@@ -37,7 +37,10 @@ areadict = {
     'mobicom' : ['MobiCom', 'MOBICOM'],
     'sensys'  : ['SenSys'],
     # SIGHPC
-    'hpc': ['SC', 'HPDC', 'ICS'],
+    # 'hpc': ['SC', 'HPDC', 'ICS'],
+    'sc': ['SC'],
+    'hpdc': ['HPDC'],
+    'ics': ['ICS'],
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGARCH
