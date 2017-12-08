@@ -1034,7 +1034,7 @@ class CSRankings {
     
     /* PUBLIC METHODS */
     
-    public rank() : boolean {
+    public rank(update : boolean = true) : boolean {
 	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
@@ -1082,7 +1082,9 @@ class CSRankings {
 
 	/* Finally done. Redraw! */
 	jQuery("#success").html(s);
-	this.urlUpdate();
+	if (update) {
+	    this.urlUpdate();
+	}
 	return false; 
     }
 
@@ -1324,12 +1326,15 @@ class CSRankings {
 	// Initialize callbacks for area checkboxes.
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
+	    const field = this.fields[i];
 	    jQuery(str).click(()=>{
-		if (this.fields[i] in CSRankings.parentMap) {
+		let updateURL : boolean = true;
+		if (field in CSRankings.parentMap) {
 		    // Child:
 		    // If any child is on, activate the parent.
 		    // If all are off, deactivate parent.
-		    let parent = CSRankings.parentMap[this.fields[i]];
+		    updateURL = false;
+		    let parent = CSRankings.parentMap[field];
 		    const strparent = 'input[name='+parent+']';
 		    let anyChecked = 0;
 		    let allChecked = 1;
@@ -1345,18 +1350,19 @@ class CSRankings {
 		    // Mark the parent as disabled unless all are checked.
 		    if (!anyChecked || allChecked) {
 			jQuery(strparent).prop('disabled', false);
-		    } else {
+		    }
+		    if (anyChecked && !allChecked) {
 			jQuery(strparent).prop('disabled', true);
 		    }
 		} else {
 		    // Parent: activate or deactivate all children.
 		    let val = jQuery(str).prop('checked');
-		    for (let child of CSRankings.childMap[this.fields[i]]) {
+		    for (let child of CSRankings.childMap[field]) {
 			const strchild = 'input[name='+child+']';
 			jQuery(strchild).prop('checked', val);
 		    }
 		}
-		this.rank();
+		this.rank(updateURL);
 	    });
 	}
 	// Add group selectors.
