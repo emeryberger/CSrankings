@@ -145,7 +145,9 @@ class CSRankings {
 	    'eccv' : 'vision',
 	    'iccv' : 'vision', */
 	    'popl' : 'plan',
-	    'pldi' : 'plan'
+	    'pldi' : 'plan',
+	    'fse'  : 'soft',
+	    'icse' : 'soft'
 	  };
 
     public static readonly childMap : {[key : string] : [string] } = {};
@@ -178,6 +180,8 @@ class CSRankings {
 	    { area : "pldi", title : "PL" },
 	    { area : "plan", title : "PL" },
 	    { area : "soft", title : "SE" },
+	    { area : "fse", title : "SE" },
+	    { area : "icse", title : "SE" },
 	    { area : "act", title : "Theory" },
 	    { area : "crypt", title: "Crypto" },
 	    { area : "log", title : "Logic" },
@@ -1123,7 +1127,10 @@ class CSRankings {
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
 	    if (jQuery(str).prop('checked')) {
-		s += this.fields[i] + '&';
+		if (!(this.fields[i] in CSRankings.parentMap)) {
+		    // Don't add children.
+		    s += this.fields[i] + '&';
+		}
 		count += 1;
 	    }
 	}
@@ -1203,13 +1210,28 @@ class CSRankings {
 	    // Set everything.
 	    for (let position = 0; position < CSRankings.areas.length; position++) {
 		jQuery("input[name="+CSRankings.areas[position]+"]").prop('checked', true);
+		if (CSRankings.areas[position] in CSRankings.childMap) {
+		    // Activate all children.
+		    CSRankings.childMap[CSRankings.areas[position]].forEach((k)=> {
+			jQuery('input[name='+k+']').prop('checked', true);
+		    });
+		}
 	    }
 	    // And we're out.
 	    return;
 	} else {
 	    for (let item of q) {
 		if ((item != "none") && (item != "")) {
-		    jQuery("input[name="+item+"]").prop('checked', true);
+		    const str = "input[name="+item+"]";
+		    jQuery(str).prop('checked', true);
+		    jQuery(str).prop('disabled', false);
+		    if (item in CSRankings.childMap) {
+			console.log("activating all children.");
+			// Activate all children.
+			CSRankings.childMap[item].forEach((k)=> {
+			    jQuery('input[name='+k+']').prop('checked', true);
+			});
+		    }
 		}
 	    }
 	}
@@ -1237,6 +1259,7 @@ class CSRankings {
 	    const str = 'input[name='+this.fields[i]+']';
 	    jQuery(str).click(()=>{
 		if (this.fields[i] in CSRankings.parentMap) {
+		    console.log("child "+this.fields[i]);
 		    // Child:
 		    // If any child is on, activate the parent.
 		    // If all are off, deactivate parent.
@@ -1249,10 +1272,14 @@ class CSRankings {
 			anyChecked |= val;
 			allChecked &= val;
 		    });
-		    // Activate parent if any checked, else deactivate.
+		    console.log("any checked = "+anyChecked);
+		    console.log("all checked = "+allChecked);
+		    // Activate parent if any checked.
 		    jQuery(strparent).prop('checked', anyChecked);
+		    // Mark the parent as disabled unless all are checked.
 		    jQuery(strparent).prop('disabled', !allChecked);
 		} else {
+		    console.log("parent");
 		    // Parent: activate or deactivate all children.
 		    let val = jQuery(str).prop('checked');
 		    for (let child of CSRankings.childMap[this.fields[i]]) {
