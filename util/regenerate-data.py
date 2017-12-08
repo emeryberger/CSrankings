@@ -50,6 +50,10 @@ areadict = {
     # 'da': ['ICCAD', 'DAC'],
     'iccad': ['ICCAD'],
     'dac' : ['DAC'],
+    # SIGMOD
+    # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'vldb' : ['VLDB', 'PVLDB'],
+    'sigmod' : ['SIGMOD Conference'],
     # SIGLOG
     'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     # SIGARCH
@@ -64,7 +68,6 @@ areadict = {
     'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
     'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     # AAAI listed to account for AAAI/IAAI joint conference
-    'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
     # SIGGRAPH
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
     'graph': ['ACM Trans. Graph.', 'SIGGRAPH'],
