@@ -94,7 +94,10 @@ areadict = {
     'sigir': ['SIGIR'],
     'www': ['WWW'],
     # SIGCHI
-    'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
+    # 'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
+    'chiconf' : ['CHI'],
+    'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive'],
+    'uist' : ['UIST'],
 #    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
 #            'ACL/IJCNLP',  # -- in 2009 was joint
 #            'COLING-ACL',  # -- in 1998 was joint
@@ -108,7 +111,10 @@ areadict = {
     'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
     'iccv': ['ICCV'],
     'eccv': ['ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
-    'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
+    # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
+    'icra': ['ICRA', 'ICRA (1)', 'ICRA (2)'],
+    'iros': ['IROS'],
+    'rss': ['Robotics: Science and Systems'],
     # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     'crypto': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)'],
     'eurocrypt': ['EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
@@ -117,7 +123,9 @@ areadict = {
     'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
     'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.'],
-    'ecom' : ['EC', 'WINE']
+    # 'ecom' : ['EC', 'WINE']
+    'ec' : ['EC'],
+    'wine' : ['WINE']
     # ,'cse' : ['SIGCSE']
 }
 
