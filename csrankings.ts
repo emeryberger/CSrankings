@@ -184,6 +184,8 @@ class CSRankings {
 	    'eurosys' : 'ops',
 	    'popl' : 'plan',
 	    'pldi' : 'plan',
+	    'oopsla' : 'plan', // next tier (see below)
+	    'icfp' : 'plan',   // next tier
 	    'fse'  : 'soft',
 	    'icse' : 'soft',
 	    'nsdi' : 'comm',
@@ -207,6 +209,12 @@ class CSRankings {
 	    'rss' : 'robotics'
 	  };
 
+    public static readonly nextTier : {[key : string] : boolean } =
+	{
+	    'icfp' : true,
+	    'oopsla' : true
+	};
+    
     public static readonly childMap : {[key : string] : [string] } = {};
     
    
@@ -258,8 +266,10 @@ class CSRankings {
 	    { area : "sosp", title : "OS" },
 	    { area : "osdi", title : "OS" },
 	    { area : "eurosys", title : "OS" },
-	    { area : "popl", title : "PL" },
 	    { area : "pldi", title : "PL" },
+	    { area : "popl", title : "PL" },
+	    { area : "icfp", title : "PL" },   // next tier
+	    { area : "oopsla", title : "PL" }, // next tier
 	    { area : "plan", title : "PL" },
 	    { area : "soft", title : "SE" },
 	    { area : "fse", title : "SE" },
@@ -684,7 +694,9 @@ class CSRankings {
 		jQuery(str).prop('disabled', false);
 		// Activate / deactivate all children as appropriate.
 		CSRankings.childMap[item].forEach((k)=> {
-		    jQuery('input[name='+k+']').prop('checked', value);
+		    if (!(k in CSRankings.nextTier)) {
+			jQuery('input[name='+k+']').prop('checked', value);
+		    }
 		});
 	    }
 	}
@@ -1085,15 +1097,11 @@ class CSRankings {
     /* This activates all checkboxes _without_ triggering ranking. */
     private setAllOn(value : boolean = true) : void {
 	for (let i = 0; i < CSRankings.areas.length; i++) {
-	    const str = "input[name=" + this.fields[i] + "]";
-	    jQuery(str).prop('checked', value);
-/*	    if (this.fields[i] in this.childMap) {
-		let parent = this.fields[i];
-		for (let kid of this.childMap[parent]) {
-		    jQuery("input[name="+kid+"]").prop('checked', value);
-		}
+	    // Only activate top tier venues.
+	    if (!(this.fields[i] in CSRankings.nextTier)) {
+		const str = "input[name=" + this.fields[i] + "]";
+		jQuery(str).prop('checked', value);
 	    }
-*/
 	}
     }
     
@@ -1249,12 +1257,18 @@ class CSRankings {
 	    if (jQuery(str).prop('checked')) {
 		// Only add parents.
 		if (!(this.fields[i] in CSRankings.parentMap)) {
-		    // And only add if every child is checked.
+		    // And only add if every top tier child is checked
+		    // and only if every next tier child is NOT
+		    // checked.
 		    let allChecked = 1;
 		    if (this.fields[i] in CSRankings.childMap) {
 			CSRankings.childMap[this.fields[i]].forEach((k)=> {
 			    let val = jQuery('input[name='+k+']').prop('checked');
-			    allChecked &= val;
+			    if (!(k in CSRankings.nextTier)) {
+				allChecked &= val;
+			    } else {
+				allChecked &= val ? 0 : 1;
+			    }
 			});
 		    }
 		    if (allChecked) {
@@ -1341,15 +1355,19 @@ class CSRankings {
 	    // Set everything.
 	    for (let position = 0; position < CSRankings.areas.length; position++) {
 		let item = CSRankings.areas[position]
-		let str = "input[name="+item+"]";
-		jQuery(str).prop('checked', true);
-		if (item in CSRankings.childMap) {
-		    // It's a parent. Enable it.
-		    jQuery(str).prop('disabled', false);
-		    // and activate all children.
-		    CSRankings.childMap[item].forEach((k)=> {
-			jQuery('input[name='+k+']').prop('checked', true);
-		    });
+		if (!(item in CSRankings.nextTier)) {
+		    let str = "input[name="+item+"]";
+		    jQuery(str).prop('checked', true);
+		    if (item in CSRankings.childMap) {
+			// It's a parent. Enable it.
+			jQuery(str).prop('disabled', false);
+			// and activate all children.
+			CSRankings.childMap[item].forEach((k)=> {
+			    if (!(k in CSRankings.nextTier)) {
+				jQuery('input[name='+k+']').prop('checked', true);
+			    }
+			});
+		    }
 		}
 	    }
 	    // And we're out.
@@ -1363,7 +1381,9 @@ class CSRankings {
 		    if (item in CSRankings.childMap) {
 			// Activate all children.
 			CSRankings.childMap[item].forEach((k)=> {
-			    jQuery('input[name='+k+']').prop('checked', true);
+			    if (!(k in CSRankings.nextTier)) {
+				jQuery('input[name='+k+']').prop('checked', true);
+			    }
 			});
 		    }
 		}
@@ -1392,7 +1412,9 @@ class CSRankings {
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
 	    const field = this.fields[i];
+	    console.log("initializing "+str);
 	    jQuery(str).click(()=>{
+		console.log("Clicked "+str);
 		let updateURL : boolean = true;
 		if (field in CSRankings.parentMap) {
 		    // Child:
@@ -1404,12 +1426,20 @@ class CSRankings {
 		    let anyChecked = 0;
 		    let allChecked = 1;
 		    CSRankings.childMap[parent].forEach((k)=> {
+			console.log("Checking "+k);
 			let val = jQuery('input[name='+k+']').prop('checked');
 			anyChecked |= val;
-			allChecked &= val;
+			// allChcked means all top tier conferences
+			// are on and all next tier conferences are
+			// off.
+			if (!(k in CSRankings.nextTier)) {
+			    // All need to be on.
+			    allChecked &= val;
+			} else {
+			    // All need to be off.
+			    allChecked &= val ? 0 : 1;
+			}
 		    });
-//		    console.log("any checked = " + anyChecked);
-//		    console.log("all checked = " + allChecked);
 		    // Activate parent if any checked.
 		    jQuery(strparent).prop('checked', anyChecked);
 		    // Mark the parent as disabled unless all are checked.
@@ -1425,7 +1455,12 @@ class CSRankings {
 		    if (field in CSRankings.childMap) {
 			for (let child of CSRankings.childMap[field]) {
 			    const strchild = 'input[name='+child+']';
-			    jQuery(strchild).prop('checked', val);
+			    if (!(child in CSRankings.nextTier)) {
+				jQuery(strchild).prop('checked', val);
+			    } else {
+				// Always deactivate next tier conferences.
+				jQuery(strchild).prop('checked', false);
+			    }
 			}
 		    }
 		}
