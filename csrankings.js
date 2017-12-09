@@ -94,7 +94,13 @@ var CSRankings = /** @class */ (function () {
             { area: "lics", title: "Logic" },
             { area: "graph", title: "Graphics" },
             { area: "chi", title: "HCI" },
+            { area: "chiconf", title: "HCI" },
+            { area: "ubicomp", title: "HCI" },
+            { area: "uist", title: "HCI" },
             { area: "robotics", title: "Robotics" },
+            { area: "icra", title: "Robotics" },
+            { area: "iros", title: "Robotics" },
+            { area: "rss", title: "Robotics" },
             { area: "bio", title: "Comp. Biology" },
             { area: "da", title: "EDA" },
             { area: "dac", title: "EDA" },
@@ -104,7 +110,9 @@ var CSRankings = /** @class */ (function () {
             { area: "rtas", title: "Embedded" },
             { area: "rtss", title: "Embedded" },
             { area: "vis", title: "Visualization" },
-            { area: "ecom", title: "ECom" }
+            { area: "ecom", title: "ECom" },
+            { area: "ec", title: "ECom" },
+            { area: "wine", title: "ECom" }
             //,{ area : "cse", title : "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
@@ -1284,7 +1292,15 @@ var CSRankings = /** @class */ (function () {
         'crypto': 'crypt',
         'eurocrypt': 'crypt',
         'cav': 'log',
-        'lics': 'log'
+        'lics': 'log',
+        'ec': 'ecom',
+        'wine': 'ecom',
+        'chiconf': 'chi',
+        'ubicomp': 'chi',
+        'uist': 'chi',
+        'icra': 'robotics',
+        'iros': 'robotics',
+        'rss': 'robotics'
     };
     CSRankings.childMap = {};
     return CSRankings;
