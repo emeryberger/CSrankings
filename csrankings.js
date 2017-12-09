@@ -76,8 +76,10 @@ var CSRankings = /** @class */ (function () {
             { area: "sosp", title: "OS" },
             { area: "osdi", title: "OS" },
             { area: "eurosys", title: "OS" },
-            { area: "popl", title: "PL" },
             { area: "pldi", title: "PL" },
+            { area: "popl", title: "PL" },
+            { area: "icfp", title: "PL" },
+            { area: "oopsla", title: "PL" },
             { area: "plan", title: "PL" },
             { area: "soft", title: "SE" },
             { area: "fse", title: "SE" },
@@ -525,7 +527,10 @@ var CSRankings = /** @class */ (function () {
                 jQuery(str).prop('disabled', false);
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach(function (k) {
-                    jQuery('input[name=' + k + ']').prop('checked', value);
+                    // FIXME needs updating.
+                    if (!(k in CSRankings.nextTier)) {
+                        jQuery('input[name=' + k + ']').prop('checked', value);
+                    }
                 });
             }
         }
@@ -891,15 +896,11 @@ var CSRankings = /** @class */ (function () {
     CSRankings.prototype.setAllOn = function (value) {
         if (value === void 0) { value = true; }
         for (var i = 0; i < CSRankings.areas.length; i++) {
-            var str = "input[name=" + this.fields[i] + "]";
-            jQuery(str).prop('checked', value);
-            /*	    if (this.fields[i] in this.childMap) {
-                    let parent = this.fields[i];
-                    for (let kid of this.childMap[parent]) {
-                        jQuery("input[name="+kid+"]").prop('checked', value);
-                    }
-                    }
-            */
+            // Only activate top tier venues.
+            if (!(this.fields[i] in CSRankings.nextTier)) {
+                var str = "input[name=" + this.fields[i] + "]";
+                jQuery(str).prop('checked', value);
+            }
         }
     };
     /* PUBLIC METHODS */
@@ -1021,12 +1022,19 @@ var CSRankings = /** @class */ (function () {
             if (jQuery(str).prop('checked')) {
                 // Only add parents.
                 if (!(this_2.fields[i] in CSRankings.parentMap)) {
-                    // And only add if every child is checked.
+                    // And only add if every top tier child is checked
+                    // and only if every next tier child is NOT
+                    // checked.
                     var allChecked_1 = 1;
                     if (this_2.fields[i] in CSRankings.childMap) {
                         CSRankings.childMap[this_2.fields[i]].forEach(function (k) {
                             var val = jQuery('input[name=' + k + ']').prop('checked');
-                            allChecked_1 &= val;
+                            if (!(k in CSRankings.nextTier)) {
+                                allChecked_1 &= val;
+                            }
+                            else {
+                                allChecked_1 &= val ? 0 : 1;
+                            }
                         });
                     }
                     if (allChecked_1) {
@@ -1119,15 +1127,19 @@ var CSRankings = /** @class */ (function () {
             // Set everything.
             for (var position = 0; position < CSRankings.areas.length; position++) {
                 var item = CSRankings.areas[position];
-                var str = "input[name=" + item + "]";
-                jQuery(str).prop('checked', true);
-                if (item in CSRankings.childMap) {
-                    // It's a parent. Enable it.
-                    jQuery(str).prop('disabled', false);
-                    // and activate all children.
-                    CSRankings.childMap[item].forEach(function (k) {
-                        jQuery('input[name=' + k + ']').prop('checked', true);
-                    });
+                if (!(item in CSRankings.nextTier)) {
+                    var str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', true);
+                    if (item in CSRankings.childMap) {
+                        // It's a parent. Enable it.
+                        jQuery(str).prop('disabled', false);
+                        // and activate all children.
+                        CSRankings.childMap[item].forEach(function (k) {
+                            if (!(k in CSRankings.nextTier)) {
+                                jQuery('input[name=' + k + ']').prop('checked', true);
+                            }
+                        });
+                    }
                 }
             }
             // And we're out.
@@ -1143,7 +1155,9 @@ var CSRankings = /** @class */ (function () {
                     if (item in CSRankings.childMap) {
                         // Activate all children.
                         CSRankings.childMap[item].forEach(function (k) {
-                            jQuery('input[name=' + k + ']').prop('checked', true);
+                            if (!(k in CSRankings.nextTier)) {
+                                jQuery('input[name=' + k + ']').prop('checked', true);
+                            }
                         });
                     }
                 }
@@ -1174,7 +1188,9 @@ var CSRankings = /** @class */ (function () {
         var _loop_4 = function (i) {
             var str = 'input[name=' + this_3.fields[i] + ']';
             var field = this_3.fields[i];
+            console.log("initializing " + str);
             jQuery(str).click(function () {
+                console.log("Clicked " + str);
                 var updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
@@ -1186,12 +1202,21 @@ var CSRankings = /** @class */ (function () {
                     var anyChecked_1 = 0;
                     var allChecked_2 = 1;
                     CSRankings.childMap[parent_2].forEach(function (k) {
+                        console.log("Checking " + k);
                         var val = jQuery('input[name=' + k + ']').prop('checked');
                         anyChecked_1 |= val;
-                        allChecked_2 &= val;
+                        // allChcked means all top tier conferences
+                        // are on and all next tier conferences are
+                        // off.
+                        if (!(k in CSRankings.nextTier)) {
+                            // All need to be on.
+                            allChecked_2 &= val;
+                        }
+                        else {
+                            // All need to be off.
+                            allChecked_2 &= val ? 0 : 1;
+                        }
                     });
-                    //		    console.log("any checked = " + anyChecked);
-                    //		    console.log("all checked = " + allChecked);
                     // Activate parent if any checked.
                     jQuery(strparent).prop('checked', anyChecked_1);
                     // Mark the parent as disabled unless all are checked.
@@ -1209,7 +1234,13 @@ var CSRankings = /** @class */ (function () {
                         for (var _i = 0, _a = CSRankings.childMap[field]; _i < _a.length; _i++) {
                             var child = _a[_i];
                             var strchild = 'input[name=' + child + ']';
-                            jQuery(strchild).prop('checked', val);
+                            if (!(child in CSRankings.nextTier)) {
+                                jQuery(strchild).prop('checked', val);
+                            }
+                            else {
+                                // Always deactivate next tier conferences.
+                                jQuery(strchild).prop('checked', false);
+                            }
                         }
                     }
                 }
@@ -1284,6 +1315,8 @@ var CSRankings = /** @class */ (function () {
         'eurosys': 'ops',
         'popl': 'plan',
         'pldi': 'plan',
+        'oopsla': 'plan',
+        'icfp': 'plan',
         'fse': 'soft',
         'icse': 'soft',
         'nsdi': 'comm',
@@ -1305,6 +1338,10 @@ var CSRankings = /** @class */ (function () {
         'icra': 'robotics',
         'iros': 'robotics',
         'rss': 'robotics'
+    };
+    CSRankings.nextTier = {
+        'icfp': true,
+        'oopsla': true
     };
     CSRankings.childMap = {};
     return CSRankings;

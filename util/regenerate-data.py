@@ -13,9 +13,12 @@ areadict = {
     #
     # SIGPLAN
 #    'plan' : ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
-    'popl' : ['POPL'],
+    'popl' : ['POPL'], 
     'pldi' : ['PLDI'],
-    'popl' : ['POPL'],
+    # "Next tier" - see csrankings.ts
+    'oopsla' : ['OOPSLA'], # Next tier
+    'icfp'   : ['ICFP'],   # Next tier
+    'pacmpl' : ['PACMPL'], # Special PACMPL handling below
     # SIGSOFT
     #    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     'icse' : ['ICSE', 'ICSE (1)', 'ICSE (2)'],
@@ -130,23 +133,6 @@ areadict = {
     'wine' : ['WINE']
     # ,'cse' : ['SIGCSE']
 }
-
-subareaName = {
-    'AAAI' : 'aaai',
-    'AAAI/IAAI' : 'aaai',
-    'IJCAI' : 'ijcai',
-    'CVPR' : 'cvpr',
-    'CVPR (1)' : 'cvpr',
-    'CVPR (2)' : 'cvpr',
-    'ICCV' : 'iccv',
-    'ECCV' : 'eccv',
-    'ECCV (1)' : 'eccv',
-    'ECCV (2)' : 'eccv',
-    'ECCV (3)' : 'eccv',
-    'ECCV (4)' : 'eccv',
-    'ECCV (5)' : 'eccv',
-    'ECCV (6)' : 'eccv',
-    'ECCV (7)' : 'eccv'  }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
@@ -469,11 +455,6 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
         if not url is None:
             if url.find('innovations') != -1:
                 return False
-
-    elif confname == 'PACMPL':
-        # POPL special handling
-        if number != 'POPL':
-            return False
         
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
@@ -497,7 +478,6 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
 
 def handle_article(_, article):
     global confdict
-    global subareaName
     global counter
     global successes
     global failures
@@ -535,10 +515,19 @@ def handle_article(_, article):
             confname = article['journal']
         else:
             return True
+
         if confname in confdict:
             areaname = confdict[confname]
+            #Special handling for PACMPL
+            if confname == 'PACMPL':
+                confname = article['number']
+                if confname in confdict:
+                    areaname = confdict[confname]
+                else:
+                    return True
         else:
             return True
+        
         if 'title' in article:
             title = article['title']
             if type(title) is collections.OrderedDict:
@@ -559,6 +548,7 @@ def handle_article(_, article):
     except:
         print sys.exc_info()[0]
         failures += 1
+        raise
         pass
     if countPaper(confname, year, volume, number, startPage, pageCount, url):
         for authorName in authorList:
@@ -583,13 +573,8 @@ def handle_article(_, article):
                 tmplist.append(log)
                 authlogs[authorName] = tmplist
                 interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
-                if confname in subareaName:
-                    subarea = subareaName[confname]
-                    # areaname = subarea # FIXME?
-                else:
-                    subarea = ""
-                authorscores[(authorName, areaname, subarea, year)] = authorscores.get((authorName, areaname, subarea, year), 0) + 1.0
-                authorscoresAdjusted[(authorName, areaname, subarea, year)] = authorscoresAdjusted.get((authorName, areaname, subarea, year), 0) + 1.0 / authorsOnPaper
+                authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
+                authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
     return True
 
 def sortdictionary(d):
@@ -605,9 +590,9 @@ def dump_it():
     with open('generated-author-info.csv','w') as f:
         f.write('"name","dept","area","count","adjustedcount","year"\n')
         authorscores = collections.OrderedDict(sorted(authorscores.iteritems()))
-        for ((authorName, area, subarea, year), count) in authorscores.iteritems():
+        for ((authorName, area, year), count) in authorscores.iteritems():
             # count = authorscores[(authorName, area, year)]
-            countAdjusted = authorscoresAdjusted[(authorName, area, subarea, year)]
+            countAdjusted = authorscoresAdjusted[(authorName, area, year)]
             f.write(authorName.encode('utf-8'))
             f.write(',')
             f.write((facultydict[authorName].encode('utf-8')))
