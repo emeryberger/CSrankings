@@ -527,7 +527,6 @@ var CSRankings = /** @class */ (function () {
                 jQuery(str).prop('disabled', false);
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach(function (k) {
-                    // FIXME needs updating.
                     if (!(k in CSRankings.nextTier)) {
                         jQuery('input[name=' + k + ']').prop('checked', value);
                     }
