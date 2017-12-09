@@ -70,9 +70,14 @@ areadict = {
     'isca': ['ISCA'],
     'micro': ['MICRO'],
     # SIGLOG
-    'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
+    # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
+    'cav': ['CAV', 'CAV (1)', 'CAV (2)'],
+    'lics' : ['LICS', 'CSL-LICS'],
     # SIGACT
-    'act': ['STOC', 'FOCS', 'SODA'],
+    # 'act': ['STOC', 'FOCS', 'SODA'],
+    'focs': ['FOCS'],
+    'stoc': ['STOC'],
+    'soda': ['SODA'],
     # 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
     'nips': ['NIPS'],
     'icml': ['ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)'],
@@ -85,7 +90,9 @@ areadict = {
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
     'graph': ['ACM Trans. Graph.', 'SIGGRAPH'],
     # SIGIR
-    'ir': ['WWW', 'SIGIR'],
+    # 'ir': ['WWW', 'SIGIR'],
+    'sigir': ['SIGIR'],
+    'www': ['WWW'],
     # SIGCHI
     'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
 #    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
@@ -102,7 +109,9 @@ areadict = {
     'iccv': ['ICCV'],
     'eccv': ['ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
-    'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
+    # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
+    'crypto': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)'],
+    'eurocrypt': ['EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     # SIGBio
     # - special handling for ISMB proceedings in Bioinformatics special issues.
     'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
