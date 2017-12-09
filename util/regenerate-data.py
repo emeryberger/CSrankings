@@ -150,7 +150,8 @@ subareaName = {
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2016: (32, 12),
+ISMB_Bioinformatics = {2017: (33, 14),
+                       2016: (32, 12),
                        2015: (31, 12),
                        2014: (30, 12),
                        2013: (29, 13),
