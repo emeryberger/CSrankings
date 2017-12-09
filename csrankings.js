@@ -83,8 +83,15 @@ var CSRankings = /** @class */ (function () {
             { area: "fse", title: "SE" },
             { area: "icse", title: "SE" },
             { area: "act", title: "Theory" },
+            { area: "focs", title: "Theory" },
+            { area: "soda", title: "Theory" },
+            { area: "stoc", title: "Theory" },
             { area: "crypt", title: "Crypto" },
+            { area: "crypto", title: "Crypto" },
+            { area: "eurocrypt", title: "Crypto" },
             { area: "log", title: "Logic" },
+            { area: "cav", title: "Logic" },
+            { area: "lics", title: "Logic" },
             { area: "graph", title: "Graphics" },
             { area: "chi", title: "HCI" },
             { area: "robotics", title: "Robotics" },
@@ -1270,7 +1277,14 @@ var CSRankings = /** @class */ (function () {
         'fse': 'soft',
         'icse': 'soft',
         'nsdi': 'comm',
-        'sigcomm': 'comm'
+        'sigcomm': 'comm',
+        'focs': 'act',
+        'soda': 'act',
+        'stoc': 'act',
+        'crypto': 'crypt',
+        'eurocrypt': 'crypt',
+        'cav': 'log',
+        'lics': 'log'
     };
     CSRankings.childMap = {};
     return CSRankings;
