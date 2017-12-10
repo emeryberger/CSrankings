@@ -76,6 +76,7 @@ areadict = {
     'asplos': ['ASPLOS'],
     'isca': ['ISCA'],
     'micro': ['MICRO'],
+    'hpca': ['HPCA'], # next tier
     # SIGLOG
     # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     'cav': ['CAV', 'CAV (1)', 'CAV (2)'],
