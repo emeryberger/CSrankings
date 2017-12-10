@@ -182,9 +182,11 @@ class CSRankings {
 	    'osdi' : 'ops',
 	    'sosp' : 'ops',
 	    'eurosys' : 'ops',
+	    'fast' : 'ops',       // next tier (see below)
+	    'usenixatc' : 'ops',  // next tier
 	    'popl' : 'plan',
 	    'pldi' : 'plan',
-	    'oopsla' : 'plan', // next tier (see below)
+	    'oopsla' : 'plan', // next tier 
 	    'icfp' : 'plan',   // next tier
 	    'fse'  : 'soft',
 	    'icse' : 'soft',
@@ -211,6 +213,8 @@ class CSRankings {
 
     public static readonly nextTier : {[key : string] : boolean } =
 	{
+	    'fast' : true,
+	    'usenixatc' : true,
 	    'icfp' : true,
 	    'oopsla' : true
 	};
@@ -265,6 +269,8 @@ class CSRankings {
 	    { area : "ops", title : "OS" },
 	    { area : "sosp", title : "OS" },
 	    { area : "osdi", title : "OS" },
+	    { area : "fast", title : "OS" },   // next tier
+	    { area : "usenixatc", title : "OS" },   // next tier
 	    { area : "eurosys", title : "OS" },
 	    { area : "pldi", title : "PL" },
 	    { area : "popl", title : "PL" },
