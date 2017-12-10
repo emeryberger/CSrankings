@@ -164,6 +164,8 @@ class CSRankings {
 	    'ccs' : 'sec',
 	    'oakland' : 'sec',
 	    'usenixsec' : 'sec',
+	    'ndss' : 'sec', // next tier (for now)
+	    'pets' : 'sec', // next tier
 	    'vldb' : 'mod',
 	    'sigmod' : 'mod',
 	    'dac' : 'da',
@@ -213,6 +215,8 @@ class CSRankings {
 
     public static readonly nextTier : {[key : string] : boolean } =
 	{
+	    'ndss' : true, // for now
+	    'pets' : true,
 	    'fast' : true,
 	    'usenixatc' : true,
 	    'icfp' : true,
@@ -252,6 +256,8 @@ class CSRankings {
 	    { area : "ccs", title : "Security"},
 	    { area : "oakland", title : "Security"},
 	    { area : "usenixsec", title : "Security"},
+	    { area : "ndss", title : "Security"},
+	    { area : "pets", title : "Security"},
 	    { area : "mod", title : "DB"},
 	    { area : "sigmod", title : "DB"},
 	    { area : "vldb", title : "DB"},
