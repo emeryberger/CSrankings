@@ -58,6 +58,8 @@ var CSRankings = /** @class */ (function () {
             { area: "ccs", title: "Security" },
             { area: "oakland", title: "Security" },
             { area: "usenixsec", title: "Security" },
+            { area: "ndss", title: "Security" },
+            { area: "pets", title: "Security" },
             { area: "mod", title: "DB" },
             { area: "sigmod", title: "DB" },
             { area: "vldb", title: "DB" },
@@ -1296,6 +1298,8 @@ var CSRankings = /** @class */ (function () {
         'ccs': 'sec',
         'oakland': 'sec',
         'usenixsec': 'sec',
+        'ndss': 'sec',
+        'pets': 'sec',
         'vldb': 'mod',
         'sigmod': 'mod',
         'dac': 'da',
@@ -1343,6 +1347,8 @@ var CSRankings = /** @class */ (function () {
         'rss': 'robotics'
     };
     CSRankings.nextTier = {
+        'ndss': true,
+        'pets': true,
         'fast': true,
         'usenixatc': true,
         'icfp': true,
