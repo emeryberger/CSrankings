@@ -75,6 +75,8 @@ var CSRankings = /** @class */ (function () {
             { area: "ops", title: "OS" },
             { area: "sosp", title: "OS" },
             { area: "osdi", title: "OS" },
+            { area: "fast", title: "OS" },
+            { area: "usenixatc", title: "OS" },
             { area: "eurosys", title: "OS" },
             { area: "pldi", title: "PL" },
             { area: "popl", title: "PL" },
@@ -1312,6 +1314,8 @@ var CSRankings = /** @class */ (function () {
         'osdi': 'ops',
         'sosp': 'ops',
         'eurosys': 'ops',
+        'fast': 'ops',
+        'usenixatc': 'ops',
         'popl': 'plan',
         'pldi': 'plan',
         'oopsla': 'plan',
@@ -1339,6 +1343,8 @@ var CSRankings = /** @class */ (function () {
         'rss': 'robotics'
     };
     CSRankings.nextTier = {
+        'fast': true,
+        'usenixatc': true,
         'icfp': true,
         'oopsla': true
     };

@@ -29,6 +29,8 @@ areadict = {
     'sosp' : ['SOSP'],
     'osdi' : ['OSDI'],
     'eurosys' : ['EuroSys'],
+    'fast' : ['FAST'], # next tier
+    'usenixatc' : ['USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'], # next tier
     # SIGMETRICS
     # - Two variants for each, as in DBLP.
     # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
