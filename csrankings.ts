@@ -161,6 +161,7 @@ class CSRankings {
 	    'asplos' : 'arch',
 	    'isca' : 'arch',
 	    'micro' : 'arch',
+	    'hpca' : 'arch', // next tier
 	    'ccs' : 'sec',
 	    'oakland' : 'sec',
 	    'usenixsec' : 'sec',
@@ -215,6 +216,7 @@ class CSRankings {
 
     public static readonly nextTier : {[key : string] : boolean } =
 	{
+	    'hpca' : true,
 	    'ndss' : true, // for now
 	    'pets' : true,
 	    'fast' : true,
@@ -249,6 +251,7 @@ class CSRankings {
 	    { area : "asplos", title : "Arch" },
 	    { area : "isca", title : "Arch" },
 	    { area : "micro", title : "Arch" },
+	    { area : "hpca", title : "Arch" },
 	    { area : "comm", title : "Networks"},
 	    { area : "sigcomm", title : "Networks"},
 	    { area : "nsdi", title : "Networks"},
@@ -458,6 +461,9 @@ class CSRankings {
 		// Defensive programming.
 		// This should only happen if we have an error in the aliases file.
 		return;
+	    }
+	    if (key in CSRankings.nextTier) {
+		continue;
 	    }
 	    let value = this.authorAreas[uname][key];
 	    

@@ -51,6 +51,7 @@ var CSRankings = /** @class */ (function () {
             { area: "asplos", title: "Arch" },
             { area: "isca", title: "Arch" },
             { area: "micro", title: "Arch" },
+            { area: "hpca", title: "Arch" },
             { area: "comm", title: "Networks" },
             { area: "sigcomm", title: "Networks" },
             { area: "nsdi", title: "Networks" },
@@ -292,6 +293,9 @@ var CSRankings = /** @class */ (function () {
                 // Defensive programming.
                 // This should only happen if we have an error in the aliases file.
                 return;
+            }
+            if (key in CSRankings.nextTier) {
+                continue;
             }
             var value = this.authorAreas[uname][key];
             // Use adjusted count if this is for a department.
@@ -1295,6 +1299,7 @@ var CSRankings = /** @class */ (function () {
         'asplos': 'arch',
         'isca': 'arch',
         'micro': 'arch',
+        'hpca': 'arch',
         'ccs': 'sec',
         'oakland': 'sec',
         'usenixsec': 'sec',
@@ -1347,6 +1352,7 @@ var CSRankings = /** @class */ (function () {
         'rss': 'robotics'
     };
     CSRankings.nextTier = {
+        'hpca': true,
         'ndss': true,
         'pets': true,
         'fast': true,
