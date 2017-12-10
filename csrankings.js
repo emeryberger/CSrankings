@@ -535,7 +535,7 @@ var CSRankings = /** @class */ (function () {
                 jQuery(str).prop('disabled', false);
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach(function (k) {
-                    if (!(k in CSRankings.nextTier)) {
+                    if (!(k in CSRankings.nextTier) || !value) {
                         jQuery('input[name=' + k + ']').prop('checked', value);
                     }
                 });
