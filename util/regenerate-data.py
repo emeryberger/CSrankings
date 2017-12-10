@@ -65,6 +65,8 @@ areadict = {
     'ccs': ['CCS', 'ACM Conference on Computer and Communications Security'],
     'oakland' : ['IEEE Symposium on Security and Privacy'],
     'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
+    'ndss' : ['NDSS'],
+    'pets' : ['PoPETs', 'Privacy Enhancing Technologies'],
     # SIGCOMM
     # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
     'sigcomm': ['SIGCOMM'],
