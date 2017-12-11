@@ -1360,6 +1360,8 @@ var CSRankings = /** @class */ (function () {
         'rss': 'robotics'
     };
     CSRankings.nextTier = {
+        'ase': true,
+        'issta': true,
         'icde': true,
         'pods': true,
         'hpca': true,
