@@ -169,6 +169,8 @@ class CSRankings {
 	    'pets' : 'sec', // next tier
 	    'vldb' : 'mod',
 	    'sigmod' : 'mod',
+	    'icde' : 'mod', // next tier
+	    'pods' : 'mod',
 	    'dac' : 'da',
 	    'iccad' : 'da',
 	    'emsoft' : 'bed',
@@ -216,6 +218,8 @@ class CSRankings {
 
     public static readonly nextTier : {[key : string] : boolean } =
 	{
+	    'icde' : true,
+	    'pods' : true,
 	    'hpca' : true,
 	    'ndss' : true, // for now
 	    'pets' : true,
@@ -264,6 +268,8 @@ class CSRankings {
 	    { area : "mod", title : "DB"},
 	    { area : "sigmod", title : "DB"},
 	    { area : "vldb", title : "DB"},
+	    { area : "icde", title : "DB"}, // next tier
+	    { area : "pods", title : "DB"}, // next tier
 	    { area : "hpc", title : "HPC"},
 	    { area : "sc", title : "HPC"},
 	    { area : "hpdc", title : "HPC"},

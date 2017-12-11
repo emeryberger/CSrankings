@@ -59,6 +59,8 @@ areadict = {
     # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
     'vldb' : ['VLDB', 'PVLDB'],
     'sigmod' : ['SIGMOD Conference'],
+    'icde' : ['ICDE'], # next tier
+    'pods' : ['PODS'], # next tier
     # SIGSAC
     # - USENIX Security listed twice to reflect variants in DBLP
     # 'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],

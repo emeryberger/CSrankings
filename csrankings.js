@@ -64,6 +64,8 @@ var CSRankings = /** @class */ (function () {
             { area: "mod", title: "DB" },
             { area: "sigmod", title: "DB" },
             { area: "vldb", title: "DB" },
+            { area: "icde", title: "DB" },
+            { area: "pods", title: "DB" },
             { area: "hpc", title: "HPC" },
             { area: "sc", title: "HPC" },
             { area: "hpdc", title: "HPC" },
@@ -1307,6 +1309,8 @@ var CSRankings = /** @class */ (function () {
         'pets': 'sec',
         'vldb': 'mod',
         'sigmod': 'mod',
+        'icde': 'mod',
+        'pods': 'mod',
         'dac': 'da',
         'iccad': 'da',
         'emsoft': 'bed',
@@ -1352,6 +1356,8 @@ var CSRankings = /** @class */ (function () {
         'rss': 'robotics'
     };
     CSRankings.nextTier = {
+        'icde': true,
+        'pods': true,
         'hpca': true,
         'ndss': true,
         'pets': true,
