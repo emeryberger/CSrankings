@@ -118,6 +118,7 @@
 //inproceedings[booktitle="EMSOFT"],
 //article[journal="ACM Trans. Graph."],
 //inproceedings[booktitle="SIGGRAPH"],
+//inproceedings[booktitle="ASE"],
 //inproceedings[booktitle="ICSE"],
 //inproceedings[booktitle="ICSE (1)"],
 //inproceedings[booktitle="ICSE (2)"],

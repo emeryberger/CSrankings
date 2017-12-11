@@ -195,6 +195,8 @@ class CSRankings {
 	    'icfp' : 'plan',   // next tier
 	    'fse'  : 'soft',
 	    'icse' : 'soft',
+	    'ase' : 'soft',    // next tier
+	    'issta' : 'soft',  // next tier
 	    'nsdi' : 'comm',
 	    'sigcomm' : 'comm',
 	    'focs' : 'act',
@@ -295,6 +297,8 @@ class CSRankings {
 	    { area : "soft", title : "SE" },
 	    { area : "fse", title : "SE" },
 	    { area : "icse", title : "SE" },
+	    { area : "ase", title : "SE" },    // next tier
+	    { area : "issta", title : "SE" },  // next tier
 	    { area : "act", title : "Theory" },
 	    { area : "focs", title : "Theory" },
 	    { area : "soda", title : "Theory" },
