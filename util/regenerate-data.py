@@ -100,7 +100,9 @@ areadict = {
     # AAAI listed to account for AAAI/IAAI joint conference
     # SIGGRAPH
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
-    'graph': ['ACM Trans. Graph.', 'SIGGRAPH'],
+    'siggraph': ['ACM Trans. Graph.', 'SIGGRAPH'],
+#    'siggraph' : ['SIGGRAPH'],
+    'siggraph-asia' : ['SIGGRAPH Asia'],
     # SIGIR
     # 'ir': ['WWW', 'SIGIR'],
     'sigir': ['SIGIR'],
@@ -496,6 +498,8 @@ def handle_article(_, article):
     global authlogs
     global interestingauthors
     global facultydict
+    global TOG_SIGGRAPH_Volume
+    global TOG_SIGGRAPH_Asia_Volume
     counter += 1
     try:
         if counter % 10000 == 0:
@@ -525,6 +529,11 @@ def handle_article(_, article):
         else:
             return True
 
+        volume = article.get('volume',"")
+        number = article.get('number',"")
+        url    = article.get('url',"")
+        year   = int(article.get('year',"-1"))
+        
         if confname in confdict:
             areaname = confdict[confname]
             #Special handling for PACMPL
@@ -534,6 +543,17 @@ def handle_article(_, article):
                     areaname = confdict[confname]
                 else:
                     return True
+            elif confname == 'ACM Trans. Graph.':
+                if TOG_SIGGRAPH_Volume.has_key(year):
+                    (vol, num) = TOG_SIGGRAPH_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        confname = 'SIGGRAPH'
+                        areaname = confdict[confname]
+                if TOG_SIGGRAPH_Asia_Volume.has_key(year):
+                    (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        confname = 'SIGGRAPH Asia'
+                        areaname = confdict[confname]
         else:
             return True
         
@@ -541,10 +561,6 @@ def handle_article(_, article):
             title = article['title']
             if type(title) is collections.OrderedDict:
                 title = title["#text"]
-        volume = article.get('volume',"")
-        number = article.get('number',"")
-        url    = article.get('url',"")
-        year   = int(article.get('year',"-1"))
         if 'pages' in article:
             pageCount = pagecount(article['pages'])
             startPage = startpage(article['pages'])

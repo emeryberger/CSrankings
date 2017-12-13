@@ -199,6 +199,8 @@ class CSRankings {
 	    'issta' : 'soft',  // next tier
 	    'nsdi' : 'comm',
 	    'sigcomm' : 'comm',
+	    'siggraph' : 'graph',
+	    'siggraph-asia' : 'graph',
 	    'focs' : 'act',
 	    'soda' : 'act',
 	    'stoc' : 'act',
@@ -312,6 +314,8 @@ class CSRankings {
 	    { area : "cav", title : "Logic" },
 	    { area : "lics", title : "Logic" },
 	    { area : "graph", title : "Graphics" },
+	    { area : "siggraph", title : "Graphics" },
+	    { area : "siggraph-asia", title : "Graphics" },
 	    { area : "chi", title : "HCI" },
 	    { area : "chiconf", title : "HCI" },
 	    { area : "ubicomp", title : "HCI" },
