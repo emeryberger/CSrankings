@@ -124,7 +124,9 @@ var CSRankings = /** @class */ (function () {
             { area: "emsoft", title: "Embedded" },
             { area: "rtas", title: "Embedded" },
             { area: "rtss", title: "Embedded" },
+            { area: "visualization", title: "Visualization" },
             { area: "vis", title: "Visualization" },
+            { area: "vr", title: "Visualization" },
             { area: "ecom", title: "ECom" },
             { area: "ec", title: "ECom" },
             { area: "wine", title: "ECom" }
@@ -133,7 +135,7 @@ var CSRankings = /** @class */ (function () {
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "vis", "ecom"];
+        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -1201,9 +1203,7 @@ var CSRankings = /** @class */ (function () {
         var _loop_4 = function (i) {
             var str = 'input[name=' + this_3.fields[i] + ']';
             var field = this_3.fields[i];
-            console.log("initializing " + str);
             jQuery(str).click(function () {
-                console.log("Clicked " + str);
                 var updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
@@ -1215,7 +1215,6 @@ var CSRankings = /** @class */ (function () {
                     var anyChecked_1 = 0;
                     var allChecked_2 = 1;
                     CSRankings.childMap[parent_2].forEach(function (k) {
-                        console.log("Checking " + k);
                         var val = jQuery('input[name=' + k + ']').prop('checked');
                         anyChecked_1 |= val;
                         // allChcked means all top tier conferences
@@ -1361,7 +1360,9 @@ var CSRankings = /** @class */ (function () {
         'uist': 'chi',
         'icra': 'robotics',
         'iros': 'robotics',
-        'rss': 'robotics'
+        'rss': 'robotics',
+        'vis': 'visualization',
+        'vr': 'visualization'
     };
     CSRankings.nextTier = {
         'ase': true,
