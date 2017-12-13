@@ -138,7 +138,8 @@ areadict = {
     'ismb': ['ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
     'recomb' : ['RECOMB'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
-    'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.'],
+    'vis': ['IEEE Visualization', 'IEEE Trans. Vis. Comput. Graph.'],
+    'vr' : ['VR'],
     # 'ecom' : ['EC', 'WINE']
     'ec' : ['EC'],
     'wine' : ['WINE']
@@ -202,8 +203,12 @@ TOG_SIGGRAPH_Asia_Volume = {2021: (40, 6),
                             2008: (27, 5)
                             }
 
-# TVCG special handling to count only IEEE Visualization
-TVCG_Vis_Volume = {2017: (23, 1),
+# TVCG special handling to count only IEEE VIS
+TVCG_Vis_Volume = {2021: (27, 1),
+                   2020: (26, 1),
+                   2019: (25, 1),
+                   2018: (24, 1),
+                   2017: (23, 1),
                    2016: (22, 1),
                    2014: (20, 12),
                    2013: (19, 12),
@@ -217,7 +222,12 @@ TVCG_Vis_Volume = {2017: (23, 1),
                    }
 
 # TVCG special handling to count only IEEE VR
-TVCG_VR_Volume = {2016: (22, 4),
+TVCG_VR_Volume = {2021: (27, 4),
+                  2020: (26, 4),
+                  2019: (25, 4),
+                  2018: (24, 4),
+                  2017: (23, 4),
+                  2016: (22, 4),
                   2015: (21, 4),
                   2014: (20, 4),
                   2013: (19, 4),
@@ -500,6 +510,8 @@ def handle_article(_, article):
     global facultydict
     global TOG_SIGGRAPH_Volume
     global TOG_SIGGRAPH_Asia_Volume
+    global TVCG_Vis_Volume
+    global TVCG_VR_Volume
     counter += 1
     try:
         if counter % 10000 == 0:
@@ -554,6 +566,17 @@ def handle_article(_, article):
                     if (volume == str(vol)) and (number == str(num)):
                         confname = 'SIGGRAPH Asia'
                         areaname = confdict[confname]
+            elif confname == 'IEEE Trans. Vis. Comput. Graph.':
+                if TVCG_Vis_Volume.has_key(year):
+                    (vol, num) = TVCG_Vis_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        areaname = 'vis'
+                if TVCG_VR_Volume.has_key(year):
+                    (vol, num) = TVCG_VR_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        confname = 'VR'
+                        areaname = 'vr'
+
         else:
             return True
         
