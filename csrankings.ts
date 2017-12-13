@@ -217,7 +217,9 @@ class CSRankings {
 	    'uist' : 'chi',
 	    'icra' : 'robotics',
 	    'iros' : 'robotics',
-	    'rss' : 'robotics'
+	    'rss' : 'robotics',
+	    'vis' : 'visualization',
+	    'vr' : 'visualization'
 	  };
 
     public static readonly nextTier : {[key : string] : boolean } =
@@ -334,7 +336,9 @@ class CSRankings {
 	    { area : "emsoft", title : "Embedded" },
 	    { area : "rtas", title : "Embedded" },
 	    { area : "rtss", title : "Embedded" },
+	    { area : "visualization", title : "Visualization" },
 	    { area : "vis", title : "Visualization" },
+	    { area : "vr", title : "Visualization" },
 	    { area : "ecom", title : "ECom" },
 	    { area : "ec", title : "ECom" },
 	    { area : "wine", title : "ECom" }
@@ -344,7 +348,7 @@ class CSRankings {
     private readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
     private readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
     private readonly theoryAreas  = [ "act", "crypt", "log" ];
-    private readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "vis", "ecom" ];
+    private readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "visualization", "ecom" ];
     
     private readonly areaNames :     Array<string> = [];
     private readonly fields :        Array<string> = [];
@@ -1446,9 +1450,7 @@ class CSRankings {
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name='+this.fields[i]+']';
 	    const field = this.fields[i];
-	    console.log("initializing "+str);
 	    jQuery(str).click(()=>{
-		console.log("Clicked "+str);
 		let updateURL : boolean = true;
 		if (field in CSRankings.parentMap) {
 		    // Child:
@@ -1460,7 +1462,6 @@ class CSRankings {
 		    let anyChecked = 0;
 		    let allChecked = 1;
 		    CSRankings.childMap[parent].forEach((k)=> {
-			console.log("Checking "+k);
 			let val = jQuery('input[name='+k+']').prop('checked');
 			anyChecked |= val;
 			// allChcked means all top tier conferences
