@@ -1193,9 +1193,12 @@ class CSRankings {
 
 	/* Finally done. Redraw! */
 	jQuery("#success").html(s);
-	if (update) {
-	    this.urlUpdate();
+	if (!update) {
+	    this.navigoRouter.pause();
+	} else {
+	    this.navigoRouter.resume();
 	}
+	this.urlUpdate();
 	return false; 
     }
 

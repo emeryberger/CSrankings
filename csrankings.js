@@ -943,9 +943,13 @@ var CSRankings = /** @class */ (function () {
         var s = this.buildOutputString(numAreas, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
-        if (update) {
-            this.urlUpdate();
+        if (!update) {
+            this.navigoRouter.pause();
         }
+        else {
+            this.navigoRouter.resume();
+        }
+        this.urlUpdate();
         return false;
     };
     /* Turn the chart display on or off. */
