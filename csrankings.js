@@ -211,12 +211,11 @@ var CSRankings = /** @class */ (function () {
                     _this.loadCountryInfo(_this.countryInfo, function () {
                         //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.setAllOn();
-                        _this.navigoRouter.on('/index', _this.navigator).resolve();
-                        // Set end year to the current year, and start year 10 years earlier.
-                        var d = new Date();
-                        var currYear = d.getFullYear();
-                        jQuery('#fromyear').val((currYear - 10).toString());
-                        jQuery('#toyear').val(currYear.toString());
+                        // this.navigoRouter.on('/index', this.navigator).resolve();
+                        _this.navigoRouter.on({
+                            '/index': _this.navigator,
+                            '/fromyear/:fromyear/toyear/:toyear/index': _this.navigator
+                        }).resolve();
                         _this.rank();
                         _this.addListeners();
                     });
@@ -1029,7 +1028,6 @@ var CSRankings = /** @class */ (function () {
     };
     // Update the URL according to the selected checkboxes.
     CSRankings.prototype.urlUpdate = function () {
-        //	console.log("url update");
         var s = '';
         var count = 0;
         var totalParents = 0;
@@ -1072,19 +1070,29 @@ var CSRankings = /** @class */ (function () {
             s = s.slice(0, -1);
         }
         var region = jQuery("#regions").find(":selected").val();
+        var start = '';
+        // Check the dates.
+        var d = new Date();
+        var currYear = d.getFullYear();
+        var startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        var endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        if ((startyear != currYear - 10) || (endyear != currYear)) {
+            start += '/fromyear/' + startyear.toString();
+            start += '/toyear/' + endyear.toString();
+        }
         if (count == totalParents) {
-            s = '/index?all'; // Distinguished special URL - default = all selected.
+            start += '/index?all'; // Distinguished special URL - default = all selected.
         }
         else if (count == 0) {
-            s = '/index?none'; // Distinguished special URL - none selected.
+            start += '/index?none'; // Distinguished special URL - none selected.
         }
         else {
-            s = '/index?' + s;
+            start += '/index?' + s;
         }
         if (region != "USA") {
-            s = s + '&' + region;
+            start += '&' + region;
         }
-        this.navigoRouter.navigate(s);
+        this.navigoRouter.navigate(start);
     };
     CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
@@ -1107,10 +1115,9 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.navigator = function (params, query) {
-        //	console.log("navigator " + query);
         if (params !== null) {
             Object.keys(params).forEach(function (key) {
-                jQuery("#" + key).prop('value', params[key]);
+                jQuery("#" + key).prop('value', params[key].toString());
             });
         }
         // Clear everything.
