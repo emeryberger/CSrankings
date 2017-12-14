@@ -122,12 +122,11 @@ class CSRankings {
 					 ()=> {
 //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
 					     this.setAllOn();
-					     this.navigoRouter.on('/index', this.navigator).resolve();
-					     // Set end year to the current year, and start year 10 years earlier.
-					     let d = new Date();
-					     let currYear = d.getFullYear();
-					     jQuery('#fromyear').val((currYear-10).toString());
-					     jQuery('#toyear').val(currYear.toString());
+					     // this.navigoRouter.on('/index', this.navigator).resolve();
+					     this.navigoRouter.on({
+						 '/index' : this.navigator,
+						 '/fromyear/:fromyear/toyear/:toyear/index' : this.navigator
+					     }).resolve();
 					     this.rank();
 					     this.addListeners();
 					 });
@@ -1286,7 +1285,6 @@ class CSRankings {
 
     // Update the URL according to the selected checkboxes.
     private urlUpdate() {
-//	console.log("url update");
 	let s = '';
 	let count = 0;
 	let totalParents = 0;
@@ -1323,18 +1321,28 @@ class CSRankings {
 	    // Trim off the trailing '&'.
 	    s = s.slice(0, -1);
 	}
-	let region = jQuery("#regions").find(":selected").val();	
+	let region = jQuery("#regions").find(":selected").val();
+	let start = '';
+	// Check the dates.
+	let d = new Date();
+	const currYear  = d.getFullYear();
+	const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+	const endyear   = parseInt(jQuery("#toyear").find(":selected").text());
+	if ((startyear != currYear-10) || (endyear != currYear)) {
+	    start += '/fromyear/' + startyear.toString();
+	    start += '/toyear/' + endyear.toString();
+	}
 	if (count == totalParents) {
-	    s = '/index?all'; // Distinguished special URL - default = all selected.
+	    start += '/index?all'; // Distinguished special URL - default = all selected.
 	} else if (count == 0) {
-	    s = '/index?none'; // Distinguished special URL - none selected.
+	    start += '/index?none'; // Distinguished special URL - none selected.
 	} else {
-	    s = '/index?' + s;
+	    start += '/index?' + s;
 	}
 	if (region != "USA") {
-	    s = s + '&' + region;
+	    start += '&' + region;
 	}
-	this.navigoRouter.navigate(s);
+	this.navigoRouter.navigate(start);
     }
 
     public static geoCheck() : void {
@@ -1358,10 +1366,9 @@ class CSRankings {
     }
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
-//	console.log("navigator " + query);
 	if (params !== null) {
 	    Object.keys(params).forEach((key)=> {
-		jQuery("#"+key).prop('value', params[key]);
+		jQuery("#"+key).prop('value', params[key].toString());
 	    });
 	}
 	// Clear everything.
