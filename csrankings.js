@@ -372,7 +372,7 @@ var CSRankings = /** @class */ (function () {
                     "hideWhenLessThanPercentage": 5 // 100 // 2
                 },
                 "mainLabel": {
-                    "fontSize": 12
+                    "fontSize": 10.5
                 },
                 "percentage": {
                     "color": "#ffffff",
