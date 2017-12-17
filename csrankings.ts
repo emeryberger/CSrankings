@@ -731,7 +731,9 @@ class CSRankings {
 		jQuery(str).prop('disabled', false);
 		// Activate / deactivate all children as appropriate.
 		CSRankings.childMap[item].forEach((k)=> {
-		    if (!(k in CSRankings.nextTier) || !value) {
+		    if (k in CSRankings.nextTier) {
+			jQuery('input[name='+k+']').prop('checked', false);
+		    }  else {
 			jQuery('input[name='+k+']').prop('checked', value);
 		    }
 		});
@@ -1134,10 +1136,20 @@ class CSRankings {
     /* This activates all checkboxes _without_ triggering ranking. */
     private setAllOn(value : boolean = true) : void {
 	for (let i = 0; i < CSRankings.areas.length; i++) {
-	    // Only activate top tier venues.
-	    if (!(this.fields[i] in CSRankings.nextTier)) {
-		const str = "input[name=" + this.fields[i] + "]";
-		jQuery(str).prop('checked', value);
+	    const item = this.fields[i];
+	    const str = "input[name=" + item + "]";
+	    if (value) {
+		// Turn off all next tier venues.
+		if (item in CSRankings.nextTier) {
+		    jQuery(str).prop('checked', false);
+		} else {
+		    jQuery(str).prop('checked', true);
+		    jQuery(str).prop('disabled', false);
+		}
+	    } else {
+		// turn everything off.
+		jQuery(str).prop('checked', false);
+		jQuery(str).prop('disabled', false);
 	    }
 	}
     }
@@ -1367,19 +1379,43 @@ class CSRankings {
 
     public navigator(params : { [key : string ] : string }, query : string ) : void {
 	if (params !== null) {
+	    // Set params (fromyear and toyear).
 	    Object.keys(params).forEach((key)=> {
 		jQuery("#"+key).prop('value', params[key].toString());
 	    });
 	}
-	// Clear everything.
+	// Clear everything *unless* there are subsets / below-the-fold selected.
 	for (let position = 0; position < CSRankings.areas.length; position++) {
-	    jQuery("input[name="+CSRankings.areas[position]+"]").prop('checked', false);
+	    const item = CSRankings.areas[position];
+	    if (item in CSRankings.nextTier) { // below-the-fold
+		continue;
+	    }
+	    if (!(item in CSRankings.childMap)) { // child
+		// Iterate through the siblings and see if there is
+		// any subsetting or below-the-fold children selected.
+		// If so, continue.
+		const myParent   = CSRankings.parentMap[item];
+		const mySiblings = CSRankings.childMap[myParent];
+		if (this.subsetting(mySiblings)) {
+		    continue;
+		}
+	    } else {
+		// Parent, same deal.
+		const kids = CSRankings.childMap[item];
+		if (this.subsetting(kids)) {
+		    continue;
+		}
+	    }
+	    jQuery("input[name="+item+"]").prop('checked', false);
 	}
 	// Now check everything listed in the query string.
 	let q = query.split('&');
 	// If there is an 'all' in the query string, set everything to true.
 	let foundAll = q.some((elem)=>{
 	    return (elem == "all");
+	});
+	let foundNone = q.some((elem)=>{
+	    return (elem == "none");
 	});
 	// Check for regions and strip them out.
 	let foundRegion = q.some((elem)=>{
@@ -1421,6 +1457,16 @@ class CSRankings {
 	    // And we're out.
 	    return;
 	} else {
+	    if (foundNone) {
+		// Clear everything and return.
+		for (let position = 0; position < CSRankings.areas.length; position++) {
+		    const item = CSRankings.areas[position];
+		    const str = "input[name="+item+"]";
+		    jQuery(str).prop('checked', false);
+		    jQuery(str).prop('disabled', false);
+		}
+		return;
+	    }
 	    for (let item of q) {
 		if ((item != "none") && (item != "")) {
 		    const str = "input[name="+item+"]";
@@ -1439,6 +1485,25 @@ class CSRankings {
 	}
     }
 
+    private subsetting(sibs : [string]) : boolean {
+	let someActivated = sibs.some((elem)=> {
+	    return jQuery('input[name='+elem+']').prop('checked');
+	});
+	let someNotActivated = sibs.some((elem)=> {
+	    return !jQuery('input[name='+elem+']').prop('checked');
+	});
+	let someBelowTheFold = sibs.some((elem)=> {
+	    return jQuery('input[name='+elem+']').prop('checked')
+		&& (elem in CSRankings.nextTier);
+	});
+	if ((someActivated && someNotActivated) // subsetting
+	    || someBelowTheFold) {
+	    return true;
+	} else {
+	    return false;
+	}
+    }
+    
     private addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
