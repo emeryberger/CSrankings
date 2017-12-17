@@ -37,7 +37,7 @@ areadict = {
     # - Two variants for each, as in DBLP.
     # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
     'imc': ['IMC', 'Internet Measurement Conference'],
-    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance'],
+    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS'],
     # SIGMOBILE
     # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
     'mobisys' : ['MobiSys'],
