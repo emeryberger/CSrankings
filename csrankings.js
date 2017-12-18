@@ -223,6 +223,10 @@ var CSRankings = /** @class */ (function () {
             });
         });
     }
+    // Return the DOM element corresponding to a field name.
+    CSRankings.toDOM = function (item) {
+        return "input[name=" + item + "]";
+    };
     CSRankings.prototype.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
@@ -535,7 +539,7 @@ var CSRankings = /** @class */ (function () {
     CSRankings.prototype.activateFields = function (value, fields) {
         for (var i = 0; i < fields.length; i++) {
             var item = this.fields[fields[i]];
-            var str = "input[name=" + item + "]";
+            var str = CSRankings.toDOM(item);
             jQuery(str).prop('checked', value);
             if (item in CSRankings.childMap) {
                 // It's a parent.
@@ -543,10 +547,10 @@ var CSRankings = /** @class */ (function () {
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach(function (k) {
                     if (k in CSRankings.nextTier) {
-                        jQuery('input[name=' + k + ']').prop('checked', false);
+                        jQuery(CSRankings.toDOM(k)).prop('checked', false);
                     }
                     else {
-                        jQuery('input[name=' + k + ']').prop('checked', value);
+                        jQuery(CSRankings.toDOM(k)).prop('checked', value);
                     }
                 });
             }
@@ -701,7 +705,7 @@ var CSRankings = /** @class */ (function () {
         var numAreas = 0;
         for (var ind = 0; ind < CSRankings.areas.length; ind++) {
             var area = CSRankings.areas[ind];
-            weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
+            weights[area] = jQuery(CSRankings.toDOM(this.fields[ind])).prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
                 if (area in CSRankings.parentMap) {
                     // Don't count children.
@@ -914,7 +918,7 @@ var CSRankings = /** @class */ (function () {
         if (value === void 0) { value = true; }
         for (var i = 0; i < CSRankings.areas.length; i++) {
             var item = this.fields[i];
-            var str = "input[name=" + item + "]";
+            var str = CSRankings.toDOM(item);
             if (value) {
                 // Turn off all next tier venues.
                 if (item in CSRankings.nextTier) {
@@ -1047,7 +1051,7 @@ var CSRankings = /** @class */ (function () {
         var count = 0;
         var totalParents = 0;
         var _loop_2 = function (i) {
-            var str = 'input[name=' + this_2.fields[i] + ']';
+            var str = CSRankings.toDOM(this_2.fields[i]);
             if (!(this_2.fields[i] in CSRankings.parentMap)) {
                 totalParents += 1;
             }
@@ -1060,7 +1064,7 @@ var CSRankings = /** @class */ (function () {
                     var allChecked_1 = 1;
                     if (this_2.fields[i] in CSRankings.childMap) {
                         CSRankings.childMap[this_2.fields[i]].forEach(function (k) {
-                            var val = jQuery('input[name=' + k + ']').prop('checked');
+                            var val = jQuery(CSRankings.toDOM(k)).prop('checked');
                             if (!(k in CSRankings.nextTier)) {
                                 allChecked_1 &= val;
                             }
@@ -1159,7 +1163,7 @@ var CSRankings = /** @class */ (function () {
                     continue;
                 }
             }
-            jQuery("input[name=" + item + "]").prop('checked', false);
+            jQuery(CSRankings.toDOM(item)).prop('checked', false);
         }
         // Now check everything listed in the query string.
         var q = query.split('&');
@@ -1194,7 +1198,7 @@ var CSRankings = /** @class */ (function () {
             for (var position = 0; position < CSRankings.areas.length; position++) {
                 var item = CSRankings.areas[position];
                 if (!(item in CSRankings.nextTier)) {
-                    var str = "input[name=" + item + "]";
+                    var str = CSRankings.toDOM(item);
                     jQuery(str).prop('checked', true);
                     if (item in CSRankings.childMap) {
                         // It's a parent. Enable it.
@@ -1202,7 +1206,7 @@ var CSRankings = /** @class */ (function () {
                         // and activate all children.
                         CSRankings.childMap[item].forEach(function (k) {
                             if (!(k in CSRankings.nextTier)) {
-                                jQuery('input[name=' + k + ']').prop('checked', true);
+                                jQuery(CSRankings.toDOM(k)).prop('checked', true);
                             }
                         });
                     }
@@ -1216,7 +1220,7 @@ var CSRankings = /** @class */ (function () {
                 // Clear everything and return.
                 for (var position = 0; position < CSRankings.areas.length; position++) {
                     var item = CSRankings.areas[position];
-                    var str = "input[name=" + item + "]";
+                    var str = CSRankings.toDOM(item);
                     jQuery(str).prop('checked', false);
                     jQuery(str).prop('disabled', false);
                 }
@@ -1225,14 +1229,14 @@ var CSRankings = /** @class */ (function () {
             for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
                 var item = q_1[_i];
                 if ((item != "none") && (item != "")) {
-                    var str = "input[name=" + item + "]";
+                    var str = CSRankings.toDOM(item);
                     jQuery(str).prop('checked', true);
                     jQuery(str).prop('disabled', false);
                     if (item in CSRankings.childMap) {
                         // Activate all children.
                         CSRankings.childMap[item].forEach(function (k) {
                             if (!(k in CSRankings.nextTier)) {
-                                jQuery('input[name=' + k + ']').prop('checked', true);
+                                jQuery(CSRankings.toDOM(k)).prop('checked', true);
                             }
                         });
                     }
@@ -1242,13 +1246,13 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.subsetting = function (sibs) {
         var someActivated = sibs.some(function (elem) {
-            return jQuery('input[name=' + elem + ']').prop('checked');
+            return jQuery(CSRankings.toDOM(elem)).prop('checked');
         });
         var someNotActivated = sibs.some(function (elem) {
-            return !jQuery('input[name=' + elem + ']').prop('checked');
+            return !jQuery(CSRankings.toDOM(elem)).prop('checked');
         });
         var someBelowTheFold = sibs.some(function (elem) {
-            return jQuery('input[name=' + elem + ']').prop('checked')
+            return jQuery(CSRankings.toDOM(elem)).prop('checked')
                 && (elem in CSRankings.nextTier);
         });
         if ((someActivated && someNotActivated) // subsetting
@@ -1281,7 +1285,7 @@ var CSRankings = /** @class */ (function () {
             _loop_3(position);
         }
         var _loop_4 = function (i) {
-            var str = 'input[name=' + this_3.fields[i] + ']';
+            var str = CSRankings.toDOM(this_3.fields[i]);
             var field = this_3.fields[i];
             jQuery(str).click(function () {
                 var updateURL = true;
@@ -1291,11 +1295,11 @@ var CSRankings = /** @class */ (function () {
                     // If all are off, deactivate parent.
                     updateURL = false;
                     var parent_2 = CSRankings.parentMap[field];
-                    var strparent = 'input[name=' + parent_2 + ']';
+                    var strparent = CSRankings.toDOM(parent_2);
                     var anyChecked_1 = 0;
                     var allChecked_2 = 1;
                     CSRankings.childMap[parent_2].forEach(function (k) {
-                        var val = jQuery('input[name=' + k + ']').prop('checked');
+                        var val = jQuery(CSRankings.toDOM(k)).prop('checked');
                         anyChecked_1 |= val;
                         // allChcked means all top tier conferences
                         // are on and all next tier conferences are
@@ -1325,7 +1329,7 @@ var CSRankings = /** @class */ (function () {
                     if (field in CSRankings.childMap) {
                         for (var _i = 0, _a = CSRankings.childMap[field]; _i < _a.length; _i++) {
                             var child = _a[_i];
-                            var strchild = 'input[name=' + child + ']';
+                            var strchild = CSRankings.toDOM(child);
                             if (!(child in CSRankings.nextTier)) {
                                 jQuery(strchild).prop('checked', val);
                             }

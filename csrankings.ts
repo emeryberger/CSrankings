@@ -80,6 +80,11 @@ class CSRankings {
     public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
 
     private navigoRouter : Navigo;
+
+    // Return the DOM element corresponding to a field name.
+    private static toDOM(item : string) : string {
+	return "input[name=" + item + "]";
+    }
     
     constructor() {
 	this.navigoRouter = new Navigo(null, true);
@@ -724,7 +729,7 @@ class CSRankings {
     {
 	for (let i = 0; i < fields.length; i++) {
 	    let item = this.fields[fields[i]];
-	    const str = "input[name=" + item + "]";
+	    const str = CSRankings.toDOM(item);
 	    jQuery(str).prop('checked', value);
 	    if (item in CSRankings.childMap) {
 		// It's a parent.
@@ -732,9 +737,9 @@ class CSRankings {
 		// Activate / deactivate all children as appropriate.
 		CSRankings.childMap[item].forEach((k)=> {
 		    if (k in CSRankings.nextTier) {
-			jQuery('input[name='+k+']').prop('checked', false);
+			jQuery(CSRankings.toDOM(k)).prop('checked', false);
 		    }  else {
-			jQuery('input[name='+k+']').prop('checked', value);
+			jQuery(CSRankings.toDOM(k)).prop('checked', value);
 		    }
 		});
 	    }
@@ -908,7 +913,7 @@ class CSRankings {
 	let numAreas = 0;
 	for (let ind = 0; ind < CSRankings.areas.length; ind++) {
 	    let area = CSRankings.areas[ind];
-	    weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
+	    weights[area] = jQuery(CSRankings.toDOM(this.fields[ind])).prop('checked') ? 1 : 0;
 	    if (weights[area] === 1) {
 		if (area in CSRankings.parentMap) {
 		    // Don't count children.
@@ -1137,7 +1142,7 @@ class CSRankings {
     private setAllOn(value : boolean = true) : void {
 	for (let i = 0; i < CSRankings.areas.length; i++) {
 	    const item = this.fields[i];
-	    const str = "input[name=" + item + "]";
+	    const str = CSRankings.toDOM(item);
 	    if (value) {
 		// Turn off all next tier venues.
 		if (item in CSRankings.nextTier) {
@@ -1301,7 +1306,7 @@ class CSRankings {
 	let count = 0;
 	let totalParents = 0;
 	for (let i = 0; i < this.fields.length; i++) {
-	    const str = 'input[name='+this.fields[i]+']';
+	    const str = CSRankings.toDOM(this.fields[i]);
 	    if (!(this.fields[i] in CSRankings.parentMap)) {
 		totalParents += 1;
 	    }
@@ -1314,7 +1319,7 @@ class CSRankings {
 		    let allChecked = 1;
 		    if (this.fields[i] in CSRankings.childMap) {
 			CSRankings.childMap[this.fields[i]].forEach((k)=> {
-			    let val = jQuery('input[name='+k+']').prop('checked');
+			    let val = jQuery(CSRankings.toDOM(k)).prop('checked');
 			    if (!(k in CSRankings.nextTier)) {
 				allChecked &= val;
 			    } else {
@@ -1406,7 +1411,7 @@ class CSRankings {
 		    continue;
 		}
 	    }
-	    jQuery("input[name="+item+"]").prop('checked', false);
+	    jQuery(CSRankings.toDOM(item)).prop('checked', false);
 	}
 	// Now check everything listed in the query string.
 	let q = query.split('&');
@@ -1440,7 +1445,7 @@ class CSRankings {
 	    for (let position = 0; position < CSRankings.areas.length; position++) {
 		let item = CSRankings.areas[position]
 		if (!(item in CSRankings.nextTier)) {
-		    let str = "input[name="+item+"]";
+		    let str = CSRankings.toDOM(item);
 		    jQuery(str).prop('checked', true);
 		    if (item in CSRankings.childMap) {
 			// It's a parent. Enable it.
@@ -1448,7 +1453,7 @@ class CSRankings {
 			// and activate all children.
 			CSRankings.childMap[item].forEach((k)=> {
 			    if (!(k in CSRankings.nextTier)) {
-				jQuery('input[name='+k+']').prop('checked', true);
+				jQuery(CSRankings.toDOM(k)).prop('checked', true);
 			    }
 			});
 		    }
@@ -1461,7 +1466,7 @@ class CSRankings {
 		// Clear everything and return.
 		for (let position = 0; position < CSRankings.areas.length; position++) {
 		    const item = CSRankings.areas[position];
-		    const str = "input[name="+item+"]";
+		    const str = CSRankings.toDOM(item);
 		    jQuery(str).prop('checked', false);
 		    jQuery(str).prop('disabled', false);
 		}
@@ -1469,14 +1474,14 @@ class CSRankings {
 	    }
 	    for (let item of q) {
 		if ((item != "none") && (item != "")) {
-		    const str = "input[name="+item+"]";
+		    const str = CSRankings.toDOM(item);
 		    jQuery(str).prop('checked', true);
 		    jQuery(str).prop('disabled', false);
 		    if (item in CSRankings.childMap) {
 			// Activate all children.
 			CSRankings.childMap[item].forEach((k)=> {
 			    if (!(k in CSRankings.nextTier)) {
-				jQuery('input[name='+k+']').prop('checked', true);
+				jQuery(CSRankings.toDOM(k)).prop('checked', true);
 			    }
 			});
 		    }
@@ -1487,13 +1492,13 @@ class CSRankings {
 
     private subsetting(sibs : [string]) : boolean {
 	let someActivated = sibs.some((elem)=> {
-	    return jQuery('input[name='+elem+']').prop('checked');
+	    return jQuery(CSRankings.toDOM(elem)).prop('checked');
 	});
 	let someNotActivated = sibs.some((elem)=> {
-	    return !jQuery('input[name='+elem+']').prop('checked');
+	    return !jQuery(CSRankings.toDOM(elem)).prop('checked');
 	});
 	let someBelowTheFold = sibs.some((elem)=> {
-	    return jQuery('input[name='+elem+']').prop('checked')
+	    return jQuery(CSRankings.toDOM(elem)).prop('checked')
 		&& (elem in CSRankings.nextTier);
 	});
 	if ((someActivated && someNotActivated) // subsetting
@@ -1523,7 +1528,7 @@ class CSRankings {
 	}
 	// Initialize callbacks for area checkboxes.
 	for (let i = 0; i < this.fields.length; i++) {
-	    const str = 'input[name='+this.fields[i]+']';
+	    const str = CSRankings.toDOM(this.fields[i]);
 	    const field = this.fields[i];
 	    jQuery(str).click(()=>{
 		let updateURL : boolean = true;
@@ -1533,11 +1538,11 @@ class CSRankings {
 		    // If all are off, deactivate parent.
 		    updateURL = false;
 		    let parent = CSRankings.parentMap[field];
-		    const strparent = 'input[name='+parent+']';
+		    const strparent = CSRankings.toDOM(parent);
 		    let anyChecked = 0;
 		    let allChecked = 1;
 		    CSRankings.childMap[parent].forEach((k)=> {
-			let val = jQuery('input[name='+k+']').prop('checked');
+			let val = jQuery(CSRankings.toDOM(k)).prop('checked');
 			anyChecked |= val;
 			// allChcked means all top tier conferences
 			// are on and all next tier conferences are
@@ -1564,7 +1569,7 @@ class CSRankings {
 		    let val = jQuery(str).prop('checked');
 		    if (field in CSRankings.childMap) {
 			for (let child of CSRankings.childMap[field]) {
-			    const strchild = 'input[name='+child+']';
+			    const strchild = CSRankings.toDOM(child);
 			    if (!(child in CSRankings.nextTier)) {
 				jQuery(strchild).prop('checked', val);
 			    } else {
