@@ -85,6 +85,25 @@ class CSRankings {
     private static toDOM(item : string) : string {
 	return "input[name=" + item + "]";
     }
+
+    private displayProgress(step : number) : string {
+	let msgs = ["Loading alias data.",
+		    "Loading author information.",
+		    "Loading publication data.",
+		    "Computing ranking."];
+	let s = "";
+	let count = 1;
+	msgs.map((elem) =>{
+	    if (count == step) {
+		s += "<strong>" + elem + "</strong>";
+	    } else {
+		s += "<font color='gray'>" + elem + "</font>";
+	    }
+	    s += "<br />";
+	    count += 1;
+	});
+	return s;
+    }
     
     constructor() {
 	this.navigoRouter = new Navigo(null, true);
@@ -595,8 +614,9 @@ class CSRankings {
     }
 
     private loadAliases(aliases: {[key : string] : string },
-			cont : ()=> void ) : void {
-	let s = "<strong><h4>Loading data.</h4></strong>";
+			cont : ()=> void ) : void
+    {
+	let s = this.displayProgress(1);
 	jQuery("#progress").html(s);
 	Papa.parse(this.aliasFile, {
 	    header: true,
@@ -613,8 +633,9 @@ class CSRankings {
     }
 
     private loadCountryInfo(countryInfo : {[key : string] : string },
-			    cont : () => void ) : void {
-	let s = "<strong><h4>Computing ranking.</h4></strong>";
+			    cont : () => void ) : void
+    {
+	let s = this.displayProgress(4);
 	jQuery("#progress").html(s);
 	Papa.parse(this.countryinfoFile, {
 	    header: true,
@@ -631,7 +652,7 @@ class CSRankings {
     }
 
     private loadAuthorInfo(cont : () => void) : void {
-	let s = "<strong><h4>Loading author information.</h4></strong>";
+	let s = this.displayProgress(2);
 	jQuery("#progress").html(s);
 	Papa.parse(this.authorFile, {
 	    download : true,
@@ -651,7 +672,7 @@ class CSRankings {
     }
 
     private loadAuthors(cont : () => void) : void {
-	let s = "<strong><h4>Loading publication data.</h4></strong>";
+	let s = this.displayProgress(3);
 	jQuery("#progress").html(s);
 	Papa.parse(this.authorinfoFile, {
 	    download : true,
@@ -1401,13 +1422,13 @@ class CSRankings {
 		// If so, continue.
 		const myParent   = CSRankings.parentMap[item];
 		const mySiblings = CSRankings.childMap[myParent];
-		if (this.subsetting(mySiblings)) {
+		if (CSRankings.subsetting(mySiblings)) {
 		    continue;
 		}
 	    } else {
 		// Parent, same deal.
 		const kids = CSRankings.childMap[item];
-		if (this.subsetting(kids)) {
+		if (CSRankings.subsetting(kids)) {
 		    continue;
 		}
 	    }
@@ -1490,7 +1511,7 @@ class CSRankings {
 	}
     }
 
-    private subsetting(sibs : [string]) : boolean {
+    public static subsetting(sibs : [string]) : boolean {
 	let someActivated = sibs.some((elem)=> {
 	    return jQuery(CSRankings.toDOM(elem)).prop('checked');
 	});
