@@ -227,6 +227,25 @@ var CSRankings = /** @class */ (function () {
     CSRankings.toDOM = function (item) {
         return "input[name=" + item + "]";
     };
+    CSRankings.prototype.displayProgress = function (step) {
+        var msgs = ["Loading alias data.",
+            "Loading author information.",
+            "Loading publication data.",
+            "Computing ranking."];
+        var s = "";
+        var count = 1;
+        msgs.map(function (elem) {
+            if (count == step) {
+                s += "<strong>" + elem + "</strong>";
+            }
+            else {
+                s += "<font color='gray'>" + elem + "</font>";
+            }
+            s += "<br />";
+            count += 1;
+        });
+        return s;
+    };
     CSRankings.prototype.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
@@ -412,7 +431,7 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.loadAliases = function (aliases, cont) {
-        var s = "<strong><h4>Loading data.</h4></strong>";
+        var s = this.displayProgress(1);
         jQuery("#progress").html(s);
         Papa.parse(this.aliasFile, {
             header: true,
@@ -429,7 +448,7 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.loadCountryInfo = function (countryInfo, cont) {
-        var s = "<strong><h4>Computing ranking.</h4></strong>";
+        var s = this.displayProgress(4);
         jQuery("#progress").html(s);
         Papa.parse(this.countryinfoFile, {
             header: true,
@@ -447,7 +466,7 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.loadAuthorInfo = function (cont) {
         var _this = this;
-        var s = "<strong><h4>Loading author information.</h4></strong>";
+        var s = this.displayProgress(2);
         jQuery("#progress").html(s);
         Papa.parse(this.authorFile, {
             download: true,
@@ -467,7 +486,7 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.loadAuthors = function (cont) {
         var _this = this;
-        var s = "<strong><h4>Loading publication data.</h4></strong>";
+        var s = this.displayProgress(3);
         jQuery("#progress").html(s);
         Papa.parse(this.authorinfoFile, {
             download: true,
@@ -1152,14 +1171,14 @@ var CSRankings = /** @class */ (function () {
                 // If so, continue.
                 var myParent = CSRankings.parentMap[item];
                 var mySiblings = CSRankings.childMap[myParent];
-                if (this.subsetting(mySiblings)) {
+                if (CSRankings.subsetting(mySiblings)) {
                     continue;
                 }
             }
             else {
                 // Parent, same deal.
                 var kids = CSRankings.childMap[item];
-                if (this.subsetting(kids)) {
+                if (CSRankings.subsetting(kids)) {
                     continue;
                 }
             }
@@ -1244,7 +1263,7 @@ var CSRankings = /** @class */ (function () {
             }
         }
     };
-    CSRankings.prototype.subsetting = function (sibs) {
+    CSRankings.subsetting = function (sibs) {
         var someActivated = sibs.some(function (elem) {
             return jQuery(CSRankings.toDOM(elem)).prop('checked');
         });
