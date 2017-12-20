@@ -1152,30 +1152,7 @@ var CSRankings = /** @class */ (function () {
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
-        for (var position = 0; position < CSRankings.areas.length; position++) {
-            var item = CSRankings.areas[position];
-            if (item in CSRankings.nextTier) {
-                continue;
-            }
-            if (!(item in CSRankings.childMap)) {
-                // Iterate through the siblings and see if there is
-                // any subsetting or below-the-fold children selected.
-                // If so, continue.
-                var myParent = CSRankings.parentMap[item];
-                var mySiblings = CSRankings.childMap[myParent];
-                if (CSRankings.subsetting(mySiblings)) {
-                    continue;
-                }
-            }
-            else {
-                // Parent, same deal.
-                var kids = CSRankings.childMap[item];
-                if (CSRankings.subsetting(kids)) {
-                    continue;
-                }
-            }
-            jQuery("input[name=" + item + "]").prop('checked', false);
-        }
+        CSRankings.clearNonSubsetted();
         // Now check everything listed in the query string.
         var q = query.split('&');
         // If there is an 'all' in the query string, set everything to true.
@@ -1226,38 +1203,80 @@ var CSRankings = /** @class */ (function () {
             // And we're out.
             return;
         }
-        else {
-            if (foundNone) {
-                // Clear everything and return.
-                for (var position = 0; position < CSRankings.areas.length; position++) {
-                    var item = CSRankings.areas[position];
+        if (foundNone) {
+            // Clear everything and return.
+            CSRankings.clearNonSubsetted();
+            return;
+        }
+        // Just a list of areas.
+        // First, clear everything that isn't subsetted.
+        CSRankings.clearNonSubsetted();
+        // Then, activate the areas in the query.
+        for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
+            var item = q_1[_i];
+            if ((item != "none") && (item != "")) {
+                var str = "input[name=" + item + "]";
+                jQuery(str).prop('checked', true);
+                jQuery(str).prop('disabled', false);
+                if (item in CSRankings.childMap) {
+                    // Activate all children.
+                    CSRankings.childMap[item].forEach(function (k) {
+                        if (!(k in CSRankings.nextTier)) {
+                            jQuery('input[name=' + k + ']').prop('checked', true);
+                        }
+                    });
+                }
+            }
+        }
+    };
+    CSRankings.clearNonSubsetted = function () {
+        for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (item in CSRankings.childMap) {
+                var kids = CSRankings.childMap[item];
+                if (!CSRankings.subsetting(kids)) {
                     var str = "input[name=" + item + "]";
                     jQuery(str).prop('checked', false);
                     jQuery(str).prop('disabled', false);
-                }
-                return;
-            }
-            for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
-                var item = q_1[_i];
-                if ((item != "none") && (item != "")) {
-                    var str = "input[name=" + item + "]";
-                    jQuery(str).prop('checked', true);
-                    jQuery(str).prop('disabled', false);
-                    if (item in CSRankings.childMap) {
-                        // Activate all children.
-                        CSRankings.childMap[item].forEach(function (k) {
-                            if (!(k in CSRankings.nextTier)) {
-                                jQuery('input[name=' + k + ']').prop('checked', true);
-                            }
-                        });
-                    }
+                    kids.forEach(function (item) {
+                        jQuery("input[name=" + item + "]").prop('checked', false);
+                    });
                 }
             }
         }
     };
     CSRankings.subsetting = function (sibs) {
-        sibs;
-        return false;
+        // Separate the siblings into above and below the fold.
+        var aboveFold = [];
+        var belowFold = [];
+        sibs.forEach(function (elem) {
+            if (elem in CSRankings.nextTier) {
+                belowFold.push(elem);
+            }
+            else {
+                aboveFold.push(elem);
+            }
+        });
+        // Count how many are checked above and below.
+        var numCheckedAbove = 0;
+        aboveFold.forEach(function (elem) {
+            var str = "input[name=" + elem + "]";
+            var val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedAbove++;
+            }
+        });
+        var numCheckedBelow = 0;
+        belowFold.forEach(function (elem) {
+            var str = "input[name=" + elem + "]";
+            var val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedBelow++;
+            }
+        });
+        var subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+        var subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+        return subsettedAbove || subsettedBelow;
     };
     CSRankings.prototype.addListeners = function () {
         var _this = this;
