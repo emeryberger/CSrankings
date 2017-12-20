@@ -1402,29 +1402,7 @@ class CSRankings {
 	    });
 	}
 	// Clear everything *unless* there are subsets / below-the-fold selected.
-	for (let position = 0; position < CSRankings.areas.length; position++) {
-	    const item = CSRankings.areas[position];
-	    if (item in CSRankings.nextTier) { // below-the-fold
-		continue;
-	    }
-	    if (!(item in CSRankings.childMap)) { // child
-		// Iterate through the siblings and see if there is
-		// any subsetting or below-the-fold children selected.
-		// If so, continue.
-		const myParent   = CSRankings.parentMap[item];
-		const mySiblings = CSRankings.childMap[myParent];
-		if (CSRankings.subsetting(mySiblings)) {
-		    continue;
-		}
-	    } else {
-		// Parent, same deal.
-		const kids = CSRankings.childMap[item];
-		if (CSRankings.subsetting(kids)) {
-		    continue;
-		}
-	    }
-	    jQuery("input[name="+item+"]").prop('checked', false);
-	}
+	CSRankings.clearNonSubsetted();
 	// Now check everything listed in the query string.
 	let q = query.split('&');
 	// If there is an 'all' in the query string, set everything to true.
@@ -1473,38 +1451,80 @@ class CSRankings {
 	    }
 	    // And we're out.
 	    return;
-	} else {
-	    if (foundNone) {
-		// Clear everything and return.
-		for (let position = 0; position < CSRankings.areas.length; position++) {
-		    const item = CSRankings.areas[position];
-		    const str = "input[name="+item+"]";
-		    jQuery(str).prop('checked', false);
-		    jQuery(str).prop('disabled', false);
-		}
-		return;
-	    }
-	    for (let item of q) {
-		if ((item != "none") && (item != "")) {
-		    const str = "input[name="+item+"]";
-		    jQuery(str).prop('checked', true);
-		    jQuery(str).prop('disabled', false);
-		    if (item in CSRankings.childMap) {
-			// Activate all children.
-			CSRankings.childMap[item].forEach((k)=> {
-			    if (!(k in CSRankings.nextTier)) {
-				jQuery('input[name='+k+']').prop('checked', true);
-			    }
-			});
-		    }
+	} 
+	if (foundNone) {
+	    // Clear everything and return.
+	    CSRankings.clearNonSubsetted();
+	    return;
+	}
+	// Just a list of areas.
+	// First, clear everything that isn't subsetted.
+	CSRankings.clearNonSubsetted();
+	// Then, activate the areas in the query.
+	for (let item of q) {
+	    if ((item != "none") && (item != "")) {
+		const str = "input[name="+item+"]";
+		jQuery(str).prop('checked', true);
+		jQuery(str).prop('disabled', false);
+		if (item in CSRankings.childMap) {
+		    // Activate all children.
+		    CSRankings.childMap[item].forEach((k)=> {
+			if (!(k in CSRankings.nextTier)) {
+			    jQuery('input[name='+k+']').prop('checked', true);
+			}
+		    });
 		}
 	    }
 	}
     }
 
+    public static clearNonSubsetted() : void {
+	for (let item of CSRankings.areas) {
+	    if (item in CSRankings.childMap) {
+		const kids = CSRankings.childMap[item];
+		if (!CSRankings.subsetting(kids)) {
+		    const str = "input[name="+item+"]";
+		    jQuery(str).prop('checked', false);
+		    jQuery(str).prop('disabled', false);
+		    kids.forEach((item)=> {
+			jQuery("input[name="+item+"]").prop('checked', false);
+		    });
+		}
+	    }
+	}
+    }
+    
     public static subsetting(sibs : [string]) : boolean {
-	sibs;
-	return false;
+	// Separate the siblings into above and below the fold.
+	let aboveFold : string[] = [];
+	let belowFold : string[] = [];
+	sibs.forEach((elem) => {
+	    if (elem in CSRankings.nextTier) {
+		belowFold.push(elem);
+	    } else {
+		aboveFold.push(elem);
+	    }
+	});
+	// Count how many are checked above and below.
+	let numCheckedAbove = 0;
+	aboveFold.forEach((elem) => {
+	    let str = "input[name="+elem+"]";
+	    let val = jQuery(str).prop('checked');
+	    if (val) {
+		numCheckedAbove++;
+	    }
+	});
+	let numCheckedBelow = 0;
+	belowFold.forEach((elem)=> {
+	    let str = "input[name="+elem+"]";
+	    let val = jQuery(str).prop('checked');
+	    if (val) {
+		numCheckedBelow++;
+	    }
+	});
+	let subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+	let subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+	return subsettedAbove || subsettedBelow;
     }
     
     private addListeners() : void {
