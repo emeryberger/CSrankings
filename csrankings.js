@@ -205,9 +205,13 @@ var CSRankings = /** @class */ (function () {
                 CSRankings.childMap[parent_1].push(child);
             }
         }
+        this.displayProgress(1);
         this.loadAliases(this.aliases, function () {
+            _this.displayProgress(2);
             _this.loadAuthorInfo(function () {
+                _this.displayProgress(3);
                 _this.loadAuthors(function () {
+                    _this.displayProgress(4);
                     _this.loadCountryInfo(_this.countryInfo, function () {
                         //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.setAllOn();
@@ -407,9 +411,26 @@ var CSRankings = /** @class */ (function () {
             }
         });
     };
-    CSRankings.prototype.loadAliases = function (aliases, cont) {
-        var s = "<strong><h4>Loading data.</h4></strong>";
+    CSRankings.prototype.displayProgress = function (step) {
+        var msgs = ["Loading alias data.",
+            "Loading author information.",
+            "Loading publication data.",
+            "Computing ranking."];
+        var s = "";
+        var count = 1;
+        msgs.map(function (elem) {
+            if (count == step) {
+                s += "<strong>" + elem + "</strong>";
+            }
+            else {
+                s += "<font color='gray'>" + elem + "</font>";
+            }
+            s += "<br />";
+            count += 1;
+        });
         jQuery("#progress").html(s);
+    };
+    CSRankings.prototype.loadAliases = function (aliases, cont) {
         Papa.parse(this.aliasFile, {
             header: true,
             download: true,
@@ -425,8 +446,6 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.loadCountryInfo = function (countryInfo, cont) {
-        var s = "<strong><h4>Computing ranking.</h4></strong>";
-        jQuery("#progress").html(s);
         Papa.parse(this.countryinfoFile, {
             header: true,
             download: true,
@@ -443,8 +462,6 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.loadAuthorInfo = function (cont) {
         var _this = this;
-        var s = "<strong><h4>Loading author information.</h4></strong>";
-        jQuery("#progress").html(s);
         Papa.parse(this.authorFile, {
             download: true,
             header: true,
@@ -463,8 +480,6 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.loadAuthors = function (cont) {
         var _this = this;
-        var s = "<strong><h4>Loading publication data.</h4></strong>";
-        jQuery("#progress").html(s);
         Papa.parse(this.authorinfoFile, {
             download: true,
             header: true,
