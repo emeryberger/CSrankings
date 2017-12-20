@@ -115,9 +115,13 @@ class CSRankings {
 		CSRankings.childMap[parent].push(child);
 	    }
 	}
+	this.displayProgress(1);
 	this.loadAliases(this.aliases, ()=> {
+	    this.displayProgress(2);
 	    this.loadAuthorInfo(()=> {
+		this.displayProgress(3);
 		this.loadAuthors(()=> {
+		    this.displayProgress(4);
 		    this.loadCountryInfo(this.countryInfo,
 					 ()=> {
 //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
@@ -589,10 +593,29 @@ class CSRankings {
 	});
     }
 
-    private loadAliases(aliases: {[key : string] : string },
-			cont : ()=> void ) : void {
-	let s = "<strong><h4>Loading data.</h4></strong>";
+    private displayProgress(step : number) {
+	let msgs = ["Loading alias data.",
+                    "Loading author information.",
+                    "Loading publication data.",
+                    "Computing ranking."];
+	let s = "";
+	let count = 1;
+	msgs.map((elem) =>{
+            if (count == step) {
+		s += "<strong>" + elem + "</strong>";
+            } else {
+		s += "<font color='gray'>" + elem + "</font>";
+            }
+            s += "<br />";
+            count += 1;
+	});
 	jQuery("#progress").html(s);
+    }
+
+
+    private loadAliases(aliases: {[key : string] : string },
+			cont : ()=> void ) : void
+    {
 	Papa.parse(this.aliasFile, {
 	    header: true,
 	    download : true,
@@ -609,8 +632,6 @@ class CSRankings {
 
     private loadCountryInfo(countryInfo : {[key : string] : string },
 			    cont : () => void ) : void {
-	let s = "<strong><h4>Computing ranking.</h4></strong>";
-	jQuery("#progress").html(s);
 	Papa.parse(this.countryinfoFile, {
 	    header: true,
 	    download : true,
@@ -626,8 +647,6 @@ class CSRankings {
     }
 
     private loadAuthorInfo(cont : () => void) : void {
-	let s = "<strong><h4>Loading author information.</h4></strong>";
-	jQuery("#progress").html(s);
 	Papa.parse(this.authorFile, {
 	    download : true,
 	    header : true,
@@ -646,8 +665,6 @@ class CSRankings {
     }
 
     private loadAuthors(cont : () => void) : void {
-	let s = "<strong><h4>Loading publication data.</h4></strong>";
-	jQuery("#progress").html(s);
 	Papa.parse(this.authorinfoFile, {
 	    download : true,
 	    header : true,
