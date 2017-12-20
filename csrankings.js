@@ -29,51 +29,113 @@ var CSRankings = /** @class */ (function () {
         this.aliasFile = "/dblp-aliases.csv";
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
-        this.parentMap = { 'aaai': 'ai',
-            'ijcai': 'ai',
-            'cvpr': 'vision',
-            'eccv': 'vision',
-            'iccv': 'vision'
-        };
-        this.childMap = { 'ai': ['aaai', 'ijcai'],
-            'vision': ['cvpr', 'eccv', 'iccv'] };
         this.areaMap = [{ area: "ai", title: "AI" },
-            //	    { area : "aaai", title : "AI" },
-            //	    { area : "ijcai", title : "AI" },
+            { area: "aaai", title: "AI" },
+            { area: "ijcai", title: "AI" },
             { area: "vision", title: "Vision" },
-            //	    { area : "cvpr", title : "Vision" },
-            //	    { area : "eccv", title : "Vision" },
-            //	    { area : "iccv", title : "Vision" },
+            { area: "cvpr", title: "Vision" },
+            { area: "eccv", title: "Vision" },
+            { area: "iccv", title: "Vision" },
             { area: "mlmining", title: "ML" },
+            { area: "icml", title: "ML" },
+            { area: "kdd", title: "ML" },
+            { area: "nips", title: "ML" },
             { area: "nlp", title: "NLP" },
+            { area: "acl", title: "NLP" },
+            { area: "emnlp", title: "NLP" },
+            { area: "naacl", title: "NLP" },
             { area: "ir", title: "Web & IR" },
+            { area: "sigir", title: "Web & IR" },
+            { area: "www", title: "Web & IR" },
             { area: "arch", title: "Arch" },
+            { area: "asplos", title: "Arch" },
+            { area: "isca", title: "Arch" },
+            { area: "micro", title: "Arch" },
+            { area: "hpca", title: "Arch" },
             { area: "comm", title: "Networks" },
+            { area: "sigcomm", title: "Networks" },
+            { area: "nsdi", title: "Networks" },
             { area: "sec", title: "Security" },
+            { area: "ccs", title: "Security" },
+            { area: "oakland", title: "Security" },
+            { area: "usenixsec", title: "Security" },
+            { area: "ndss", title: "Security" },
+            { area: "pets", title: "Security" },
             { area: "mod", title: "DB" },
+            { area: "sigmod", title: "DB" },
+            { area: "vldb", title: "DB" },
+            { area: "icde", title: "DB" },
+            { area: "pods", title: "DB" },
             { area: "hpc", title: "HPC" },
+            { area: "sc", title: "HPC" },
+            { area: "hpdc", title: "HPC" },
+            { area: "ics", title: "HPC" },
             { area: "mobile", title: "Mobile" },
+            { area: "mobicom", title: "Mobile" },
+            { area: "mobisys", title: "Mobile" },
+            { area: "sensys", title: "Mobile" },
             { area: "metrics", title: "Metrics" },
+            { area: "imc", title: "Metrics" },
+            { area: "sigmetrics", title: "Metrics" },
             { area: "ops", title: "OS" },
+            { area: "sosp", title: "OS" },
+            { area: "osdi", title: "OS" },
+            { area: "fast", title: "OS" },
+            { area: "usenixatc", title: "OS" },
+            { area: "eurosys", title: "OS" },
+            { area: "pldi", title: "PL" },
+            { area: "popl", title: "PL" },
+            { area: "icfp", title: "PL" },
+            { area: "oopsla", title: "PL" },
             { area: "plan", title: "PL" },
             { area: "soft", title: "SE" },
+            { area: "fse", title: "SE" },
+            { area: "icse", title: "SE" },
+            { area: "ase", title: "SE" },
+            { area: "issta", title: "SE" },
             { area: "act", title: "Theory" },
+            { area: "focs", title: "Theory" },
+            { area: "soda", title: "Theory" },
+            { area: "stoc", title: "Theory" },
             { area: "crypt", title: "Crypto" },
+            { area: "crypto", title: "Crypto" },
+            { area: "eurocrypt", title: "Crypto" },
             { area: "log", title: "Logic" },
+            { area: "cav", title: "Logic" },
+            { area: "lics", title: "Logic" },
             { area: "graph", title: "Graphics" },
+            { area: "siggraph", title: "Graphics" },
+            { area: "siggraph-asia", title: "Graphics" },
             { area: "chi", title: "HCI" },
+            { area: "chiconf", title: "HCI" },
+            { area: "ubicomp", title: "HCI" },
+            { area: "uist", title: "HCI" },
             { area: "robotics", title: "Robotics" },
+            { area: "icra", title: "Robotics" },
+            { area: "iros", title: "Robotics" },
+            { area: "rss", title: "Robotics" },
             { area: "bio", title: "Comp. Biology" },
+            { area: "ismb", title: "Comp. Biology" },
+            { area: "recomb", title: "Comp. Biology" },
             { area: "da", title: "EDA" },
+            { area: "dac", title: "EDA" },
+            { area: "iccad", title: "EDA" },
             { area: "bed", title: "Embedded" },
+            { area: "emsoft", title: "Embedded" },
+            { area: "rtas", title: "Embedded" },
+            { area: "rtss", title: "Embedded" },
+            { area: "visualization", title: "Visualization" },
             { area: "vis", title: "Visualization" },
-            { area: "ecom", title: "ECom" }
+            { area: "vr", title: "Visualization" },
+            { area: "ecom", title: "ECom" },
+            { area: "ec", title: "ECom" },
+            { area: "wine", title: "ECom" }
             //,{ area : "cse", title : "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "vis", "ecom"];
+        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -110,7 +172,6 @@ var CSRankings = /** @class */ (function () {
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
-        this.geoCheck();
         for (var position = 0; position < this.areaMap.length; position++) {
             var _a = this.areaMap[position], area = _a.area, title = _a.title;
             CSRankings.areas[position] = area;
@@ -135,13 +196,30 @@ var CSRankings = /** @class */ (function () {
             var area = _h[_g];
             this.otherFields.push(this.areaPosition[area]);
         }
+        for (var child in CSRankings.parentMap) {
+            var parent_1 = CSRankings.parentMap[child];
+            if (!(parent_1 in CSRankings.childMap)) {
+                CSRankings.childMap[parent_1] = [child];
+            }
+            else {
+                CSRankings.childMap[parent_1].push(child);
+            }
+        }
+        this.displayProgress(1);
         this.loadAliases(this.aliases, function () {
+            _this.displayProgress(2);
             _this.loadAuthorInfo(function () {
+                _this.displayProgress(3);
                 _this.loadAuthors(function () {
+                    _this.displayProgress(4);
                     _this.loadCountryInfo(_this.countryInfo, function () {
                         //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.setAllOn();
-                        _this.navigoRouter.on('/index', _this.navigator).resolve();
+                        // this.navigoRouter.on('/index', this.navigator).resolve();
+                        _this.navigoRouter.on({
+                            '/index': _this.navigator,
+                            '/fromyear/:fromyear/toyear/:toyear/index': _this.navigator
+                        }).resolve();
                         _this.rank();
                         _this.addListeners();
                     });
@@ -222,6 +300,14 @@ var CSRankings = /** @class */ (function () {
         var uname = unescape(name);
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
+            if (!(uname in this.authorAreas)) {
+                // Defensive programming.
+                // This should only happen if we have an error in the aliases file.
+                return;
+            }
+            if (key in CSRankings.nextTier) {
+                continue;
+            }
             var value = this.authorAreas[uname][key];
             // Use adjusted count if this is for a department.
             /*
@@ -237,9 +323,9 @@ var CSRankings = /** @class */ (function () {
             // Round it to the nearest 0.1.
             value = Math.round(value * 10) / 10;
             if (value > 0) {
-                //		if (key in this.parentMap) {
-                // key = this.parentMap[key];
-                //		}
+                if (key in CSRankings.parentMap) {
+                    key = CSRankings.parentMap[key];
+                }
                 if (!(key in datadict)) {
                     datadict[key] = 0;
                 }
@@ -290,7 +376,7 @@ var CSRankings = /** @class */ (function () {
                     "hideWhenLessThanPercentage": 5 // 100 // 2
                 },
                 "mainLabel": {
-                    "fontSize": 12
+                    "fontSize": 10.5
                 },
                 "percentage": {
                     "color": "#ffffff",
@@ -325,9 +411,26 @@ var CSRankings = /** @class */ (function () {
             }
         });
     };
-    CSRankings.prototype.loadAliases = function (aliases, cont) {
-        var s = "<strong><h4>Loading data.</h4></strong>";
+    CSRankings.prototype.displayProgress = function (step) {
+        var msgs = ["Loading alias data.",
+            "Loading author information.",
+            "Loading publication data.",
+            "Computing ranking."];
+        var s = "";
+        var count = 1;
+        msgs.map(function (elem) {
+            if (count == step) {
+                s += "<strong>" + elem + "</strong>";
+            }
+            else {
+                s += "<font color='gray'>" + elem + "</font>";
+            }
+            s += "<br />";
+            count += 1;
+        });
         jQuery("#progress").html(s);
+    };
+    CSRankings.prototype.loadAliases = function (aliases, cont) {
         Papa.parse(this.aliasFile, {
             header: true,
             download: true,
@@ -343,8 +446,6 @@ var CSRankings = /** @class */ (function () {
         });
     };
     CSRankings.prototype.loadCountryInfo = function (countryInfo, cont) {
-        var s = "<strong><h4>Computing ranking.</h4></strong>";
-        jQuery("#progress").html(s);
         Papa.parse(this.countryinfoFile, {
             header: true,
             download: true,
@@ -361,8 +462,6 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.loadAuthorInfo = function (cont) {
         var _this = this;
-        var s = "<strong><h4>Loading author information.</h4></strong>";
-        jQuery("#progress").html(s);
         Papa.parse(this.authorFile, {
             download: true,
             header: true,
@@ -381,8 +480,6 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.loadAuthors = function (cont) {
         var _this = this;
-        var s = "<strong><h4>Loading publication data.</h4></strong>";
-        jQuery("#progress").html(s);
         Papa.parse(this.authorinfoFile, {
             download: true,
             header: true,
@@ -452,8 +549,22 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.activateFields = function (value, fields) {
         for (var i = 0; i < fields.length; i++) {
-            var str = "input[name=" + this.fields[fields[i]] + "]";
+            var item = this.fields[fields[i]];
+            var str = "input[name=" + item + "]";
             jQuery(str).prop('checked', value);
+            if (item in CSRankings.childMap) {
+                // It's a parent.
+                jQuery(str).prop('disabled', false);
+                // Activate / deactivate all children as appropriate.
+                CSRankings.childMap[item].forEach(function (k) {
+                    if (k in CSRankings.nextTier) {
+                        jQuery('input[name=' + k + ']').prop('checked', false);
+                    }
+                    else {
+                        jQuery('input[name=' + k + ']').prop('checked', value);
+                    }
+                });
+            }
         }
         this.rank();
         return false;
@@ -545,8 +656,8 @@ var CSRankings = /** @class */ (function () {
                 continue;
             }
             // If this area is a child area, accumulate totals for parent.
-            if (area in this.parentMap) {
-                area = this.parentMap[area];
+            if (area in CSRankings.parentMap) {
+                area = CSRankings.parentMap[area];
             }
             var areaDept = area + dept;
             var nameDept = name_3 + dept;
@@ -582,8 +693,8 @@ var CSRankings = /** @class */ (function () {
             this.stats[dept] = 1;
             for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
                 var area = _a[_i];
-                // If the area is a child, ignore it.
-                if (area in this.parentMap) {
+                // If this area is a child area, skip it.
+                if (area in CSRankings.parentMap) {
                     continue;
                 }
                 var areaDept = area + dept;
@@ -607,6 +718,10 @@ var CSRankings = /** @class */ (function () {
             var area = CSRankings.areas[ind];
             weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
+                if (area in CSRankings.parentMap) {
+                    // Don't count children.
+                    continue;
+                }
                 /* One more area checked. */
                 numAreas++;
             }
@@ -713,7 +828,6 @@ var CSRankings = /** @class */ (function () {
                     + "</small></td>"
                     + '<td align="right"><small>'
                     + (Math.round(10.0 * facultyAdjustedCount[name_6 + dept]) / 10.0).toFixed(1)
-                    //		+ '</abbr>'
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
                     + '<div style="display:none;" id="' + escape(name_6) + "-chart" + '">'
@@ -770,20 +884,11 @@ var CSRankings = /** @class */ (function () {
                     + this.RightTriangle
                     + "</font>"
                     + "</span>";
-                //		    + "<span onclick=\"csr.toggleFaculty('" + dept + "')\" class=\"hovertip\">" + dept + "</span>";
-                /*
-                        s += "&nbsp;<font color=\"blue\">" + "<span onclick=\"CSRankings.toggleFaculty('"
-                            + esc
-                            + "')\" class=\"hovertip\" id=\""
-                            + esc
-                            + "-widget\">" + this.PieChart + "</span></font>";
-                */
                 s += "&nbsp;" + dept + "&nbsp;"
                     + "<font color=\"blue\">"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
                     + this.PieChart
                     + "</span></font>";
-                //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + esc + '">' + '</div>';
                 s += "</td>";
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
@@ -823,19 +928,28 @@ var CSRankings = /** @class */ (function () {
     CSRankings.prototype.setAllOn = function (value) {
         if (value === void 0) { value = true; }
         for (var i = 0; i < CSRankings.areas.length; i++) {
-            var str = "input[name=" + this.fields[i] + "]";
-            jQuery(str).prop('checked', value);
-            if (this.fields[i] in this.childMap) {
-                var parent_1 = this.fields[i];
-                for (var _i = 0, _a = this.childMap[parent_1]; _i < _a.length; _i++) {
-                    var kid = _a[_i];
-                    jQuery("input[name=" + kid + "]").prop('checked', value);
+            var item = this.fields[i];
+            var str = "input[name=" + item + "]";
+            if (value) {
+                // Turn off all next tier venues.
+                if (item in CSRankings.nextTier) {
+                    jQuery(str).prop('checked', false);
                 }
+                else {
+                    jQuery(str).prop('checked', true);
+                    jQuery(str).prop('disabled', false);
+                }
+            }
+            else {
+                // turn everything off.
+                jQuery(str).prop('checked', false);
+                jQuery(str).prop('disabled', false);
             }
         }
     };
     /* PUBLIC METHODS */
-    CSRankings.prototype.rank = function () {
+    CSRankings.prototype.rank = function (update) {
+        if (update === void 0) { update = true; }
         var deptNames = {}; /* names of departments. */
         var deptCounts = {}; /* number of faculty in each department. */
         var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
@@ -858,6 +972,12 @@ var CSRankings = /** @class */ (function () {
         var s = this.buildOutputString(numAreas, deptCounts, univtext);
         /* Finally done. Redraw! */
         jQuery("#success").html(s);
+        if (!update) {
+            this.navigoRouter.pause();
+        }
+        else {
+            this.navigoRouter.resume();
+        }
         this.urlUpdate();
         return false;
     };
@@ -940,29 +1060,71 @@ var CSRankings = /** @class */ (function () {
     CSRankings.prototype.urlUpdate = function () {
         var s = '';
         var count = 0;
-        for (var i = 0; i < this.fields.length; i++) {
-            var str = 'input[name=' + this.fields[i] + ']';
-            if (jQuery(str).prop('checked')) {
-                s += this.fields[i] + '&';
-                count += 1;
+        var totalParents = 0;
+        var _loop_2 = function (i) {
+            var str = 'input[name=' + this_2.fields[i] + ']';
+            if (!(this_2.fields[i] in CSRankings.parentMap)) {
+                totalParents += 1;
             }
+            if (jQuery(str).prop('checked')) {
+                // Only add parents.
+                if (!(this_2.fields[i] in CSRankings.parentMap)) {
+                    // And only add if every top tier child is checked
+                    // and only if every next tier child is NOT
+                    // checked.
+                    var allChecked_1 = 1;
+                    if (this_2.fields[i] in CSRankings.childMap) {
+                        CSRankings.childMap[this_2.fields[i]].forEach(function (k) {
+                            var val = jQuery('input[name=' + k + ']').prop('checked');
+                            if (!(k in CSRankings.nextTier)) {
+                                allChecked_1 &= val;
+                            }
+                            else {
+                                allChecked_1 &= val ? 0 : 1;
+                            }
+                        });
+                    }
+                    if (allChecked_1) {
+                        s += this_2.fields[i] + '&';
+                        count += 1;
+                    }
+                }
+            }
+        };
+        var this_2 = this;
+        for (var i = 0; i < this.fields.length; i++) {
+            _loop_2(i);
         }
         if (count > 0) {
             // Trim off the trailing '&'.
             s = s.slice(0, -1);
         }
-        if (count == this.fields.length) {
-            s = '/index?all'; // Distinguished special URL - default = all selected.
+        var region = jQuery("#regions").find(":selected").val();
+        var start = '';
+        // Check the dates.
+        var d = new Date();
+        var currYear = d.getFullYear();
+        var startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        var endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        if ((startyear != currYear - 10) || (endyear != currYear)) {
+            start += '/fromyear/' + startyear.toString();
+            start += '/toyear/' + endyear.toString();
+        }
+        if (count == totalParents) {
+            start += '/index?all'; // Distinguished special URL - default = all selected.
         }
         else if (count == 0) {
-            s = '/index?none'; // Distinguished special URL - none selected.
+            start += '/index?none'; // Distinguished special URL - none selected.
         }
         else {
-            s = '/index?' + s;
+            start += '/index?' + s;
         }
-        this.navigoRouter.navigate(s);
+        if (region != "USA") {
+            start += '&' + region;
+        }
+        this.navigoRouter.navigate(start);
     };
-    CSRankings.prototype.geoCheck = function () {
+    CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
         // the default regions accordingly.
         jQuery.getJSON('http://freegeoip.net/json/', function (result) {
@@ -974,8 +1136,7 @@ var CSRankings = /** @class */ (function () {
                 case "JP":
                 case "TW":
                 case "SG":
-                    // jQuery("#regions").val("USA");
-                    // This is currently the default.
+                    jQuery("#regions").val("USA");
                     break;
                 default:
                     jQuery("#regions").val("world");
@@ -985,62 +1146,222 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.prototype.navigator = function (params, query) {
         if (params !== null) {
+            // Set params (fromyear and toyear).
             Object.keys(params).forEach(function (key) {
-                jQuery("#" + key).prop('value', params[key]);
+                jQuery("#" + key).prop('value', params[key].toString());
             });
         }
-        // Clear everything.
-        for (var position = 0; position < CSRankings.areas.length; position++) {
-            jQuery("input[name=" + CSRankings.areas[position] + "]").prop('checked', false);
-        }
+        // Clear everything *unless* there are subsets / below-the-fold selected.
+        CSRankings.clearNonSubsetted();
         // Now check everything listed in the query string.
         var q = query.split('&');
         // If there is an 'all' in the query string, set everything to true.
         var foundAll = q.some(function (elem) {
             return (elem == "all");
         });
+        var foundNone = q.some(function (elem) {
+            return (elem == "none");
+        });
+        // Check for regions and strip them out.
+        var foundRegion = q.some(function (elem) {
+            return CSRankings.regions.indexOf(elem) >= 0;
+        });
+        if (foundRegion) {
+            var index_1 = 0;
+            q.forEach(function (elem) {
+                // Splice it out.
+                if (CSRankings.regions.indexOf(elem) >= 0) {
+                    q.splice(index_1, 1);
+                }
+                // Set the region.
+                jQuery("#regions").val(elem);
+                index_1 += 1;
+            });
+        }
+        else {
+            CSRankings.geoCheck();
+        }
         if (foundAll) {
             // Set everything.
             for (var position = 0; position < CSRankings.areas.length; position++) {
-                jQuery("input[name=" + CSRankings.areas[position] + "]").prop('checked', true);
+                var item = CSRankings.areas[position];
+                if (!(item in CSRankings.nextTier)) {
+                    var str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', true);
+                    if (item in CSRankings.childMap) {
+                        // It's a parent. Enable it.
+                        jQuery(str).prop('disabled', false);
+                        // and activate all children.
+                        CSRankings.childMap[item].forEach(function (k) {
+                            if (!(k in CSRankings.nextTier)) {
+                                jQuery('input[name=' + k + ']').prop('checked', true);
+                            }
+                        });
+                    }
+                }
             }
             // And we're out.
             return;
         }
-        else {
-            for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
-                var item = q_1[_i];
-                if ((item != "none") && (item != "")) {
-                    jQuery("input[name=" + item + "]").prop('checked', true);
+        if (foundNone) {
+            // Clear everything and return.
+            CSRankings.clearNonSubsetted();
+            return;
+        }
+        // Just a list of areas.
+        // First, clear everything that isn't subsetted.
+        CSRankings.clearNonSubsetted();
+        // Then, activate the areas in the query.
+        for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
+            var item = q_1[_i];
+            if ((item != "none") && (item != "")) {
+                var str = "input[name=" + item + "]";
+                jQuery(str).prop('checked', true);
+                jQuery(str).prop('disabled', false);
+                if (item in CSRankings.childMap) {
+                    // Activate all children.
+                    CSRankings.childMap[item].forEach(function (k) {
+                        if (!(k in CSRankings.nextTier)) {
+                            jQuery('input[name=' + k + ']').prop('checked', true);
+                        }
+                    });
                 }
             }
         }
+    };
+    CSRankings.clearNonSubsetted = function () {
+        for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (item in CSRankings.childMap) {
+                var kids = CSRankings.childMap[item];
+                if (!CSRankings.subsetting(kids)) {
+                    var str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', false);
+                    jQuery(str).prop('disabled', false);
+                    kids.forEach(function (item) {
+                        jQuery("input[name=" + item + "]").prop('checked', false);
+                    });
+                }
+            }
+        }
+    };
+    CSRankings.subsetting = function (sibs) {
+        // Separate the siblings into above and below the fold.
+        var aboveFold = [];
+        var belowFold = [];
+        sibs.forEach(function (elem) {
+            if (elem in CSRankings.nextTier) {
+                belowFold.push(elem);
+            }
+            else {
+                aboveFold.push(elem);
+            }
+        });
+        // Count how many are checked above and below.
+        var numCheckedAbove = 0;
+        aboveFold.forEach(function (elem) {
+            var str = "input[name=" + elem + "]";
+            var val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedAbove++;
+            }
+        });
+        var numCheckedBelow = 0;
+        belowFold.forEach(function (elem) {
+            var str = "input[name=" + elem + "]";
+            var val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedBelow++;
+            }
+        });
+        var subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+        var subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+        return subsettedAbove || subsettedBelow;
     };
     CSRankings.prototype.addListeners = function () {
         var _this = this;
         ["toyear", "fromyear", "regions"].forEach(function (key) {
             var widget = document.getElementById(key);
-            //	    console.log(widget);
             widget.addEventListener("change", function () { _this.rank(); });
         });
-        var _loop_2 = function (position) {
+        var _loop_3 = function (position) {
             var area = CSRankings.areas[position];
-            var widget = document.getElementById(area + '-widget');
-            widget.addEventListener("click", function () {
-                _this.toggleConferences(area);
-            });
+            if (!(area in CSRankings.parentMap)) {
+                // Not a child.
+                var widget = document.getElementById(area + '-widget');
+                widget.addEventListener("click", function () {
+                    _this.toggleConferences(area);
+                });
+            }
         };
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
         for (var position = 0; position < CSRankings.areas.length; position++) {
-            _loop_2(position);
+            _loop_3(position);
         }
+        var _loop_4 = function (i) {
+            var str = 'input[name=' + this_3.fields[i] + ']';
+            var field = this_3.fields[i];
+            jQuery(str).click(function () {
+                var updateURL = true;
+                if (field in CSRankings.parentMap) {
+                    // Child:
+                    // If any child is on, activate the parent.
+                    // If all are off, deactivate parent.
+                    updateURL = false;
+                    var parent_2 = CSRankings.parentMap[field];
+                    var strparent = 'input[name=' + parent_2 + ']';
+                    var anyChecked_1 = 0;
+                    var allChecked_2 = 1;
+                    CSRankings.childMap[parent_2].forEach(function (k) {
+                        var val = jQuery('input[name=' + k + ']').prop('checked');
+                        anyChecked_1 |= val;
+                        // allChcked means all top tier conferences
+                        // are on and all next tier conferences are
+                        // off.
+                        if (!(k in CSRankings.nextTier)) {
+                            // All need to be on.
+                            allChecked_2 &= val;
+                        }
+                        else {
+                            // All need to be off.
+                            allChecked_2 &= val ? 0 : 1;
+                        }
+                    });
+                    // Activate parent if any checked.
+                    jQuery(strparent).prop('checked', anyChecked_1);
+                    // Mark the parent as disabled unless all are checked.
+                    if (!anyChecked_1 || allChecked_2) {
+                        jQuery(strparent).prop('disabled', false);
+                    }
+                    if (anyChecked_1 && !allChecked_2) {
+                        jQuery(strparent).prop('disabled', true);
+                    }
+                }
+                else {
+                    // Parent: activate or deactivate all children.
+                    var val = jQuery(str).prop('checked');
+                    if (field in CSRankings.childMap) {
+                        for (var _i = 0, _a = CSRankings.childMap[field]; _i < _a.length; _i++) {
+                            var child = _a[_i];
+                            var strchild = 'input[name=' + child + ']';
+                            if (!(child in CSRankings.nextTier)) {
+                                jQuery(strchild).prop('checked', val);
+                            }
+                            else {
+                                // Always deactivate next tier conferences.
+                                jQuery(strchild).prop('checked', false);
+                            }
+                        }
+                    }
+                }
+                _this.rank(updateURL);
+            });
+        };
+        var this_3 = this;
         // Initialize callbacks for area checkboxes.
         for (var i = 0; i < this.fields.length; i++) {
-            var str = 'input[name=' + this.fields[i] + ']';
-            jQuery(str).click(function () {
-                _this.rank();
-            });
+            _loop_4(i);
         }
         // Add group selectors.
         var listeners = { 'all_areas_on': (function () { _this.activateAll(); }),
@@ -1054,17 +1375,108 @@ var CSRankings = /** @class */ (function () {
             'other_areas_on': (function () { _this.activateOthers(); }),
             'other_areas_off': (function () { _this.deactivateOthers(); })
         };
-        var _loop_3 = function (item) {
+        var _loop_5 = function (item) {
             var widget = document.getElementById(item);
             widget.addEventListener("click", function () {
                 listeners[item]();
             });
         };
         for (var item in listeners) {
-            _loop_3(item);
+            _loop_5(item);
         }
     };
     CSRankings.areas = [];
+    CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+    CSRankings.parentMap = { 'aaai': 'ai',
+        'ijcai': 'ai',
+        'cvpr': 'vision',
+        'eccv': 'vision',
+        'iccv': 'vision',
+        'icml': 'mlmining',
+        'kdd': 'mlmining',
+        'nips': 'mlmining',
+        'acl': 'nlp',
+        'emnlp': 'nlp',
+        'naacl': 'nlp',
+        'sigir': 'ir',
+        'www': 'ir',
+        'asplos': 'arch',
+        'isca': 'arch',
+        'micro': 'arch',
+        'hpca': 'arch',
+        'ccs': 'sec',
+        'oakland': 'sec',
+        'usenixsec': 'sec',
+        'ndss': 'sec',
+        'pets': 'sec',
+        'vldb': 'mod',
+        'sigmod': 'mod',
+        'icde': 'mod',
+        'pods': 'mod',
+        'dac': 'da',
+        'iccad': 'da',
+        'emsoft': 'bed',
+        'rtas': 'bed',
+        'rtss': 'bed',
+        'sc': 'hpc',
+        'hpdc': 'hpc',
+        'ics': 'hpc',
+        'mobicom': 'mobile',
+        'mobisys': 'mobile',
+        'sensys': 'mobile',
+        'imc': 'metrics',
+        'sigmetrics': 'metrics',
+        'osdi': 'ops',
+        'sosp': 'ops',
+        'eurosys': 'ops',
+        'fast': 'ops',
+        'usenixatc': 'ops',
+        'popl': 'plan',
+        'pldi': 'plan',
+        'oopsla': 'plan',
+        'icfp': 'plan',
+        'fse': 'soft',
+        'icse': 'soft',
+        'ase': 'soft',
+        'issta': 'soft',
+        'nsdi': 'comm',
+        'sigcomm': 'comm',
+        'siggraph': 'graph',
+        'siggraph-asia': 'graph',
+        'focs': 'act',
+        'soda': 'act',
+        'stoc': 'act',
+        'crypto': 'crypt',
+        'eurocrypt': 'crypt',
+        'cav': 'log',
+        'lics': 'log',
+        'ismb': 'bio',
+        'recomb': 'bio',
+        'ec': 'ecom',
+        'wine': 'ecom',
+        'chiconf': 'chi',
+        'ubicomp': 'chi',
+        'uist': 'chi',
+        'icra': 'robotics',
+        'iros': 'robotics',
+        'rss': 'robotics',
+        'vis': 'visualization',
+        'vr': 'visualization'
+    };
+    CSRankings.nextTier = {
+        'ase': true,
+        'issta': true,
+        'icde': true,
+        'pods': true,
+        'hpca': true,
+        'ndss': true,
+        'pets': true,
+        'fast': true,
+        'usenixatc': true,
+        'icfp': true,
+        'oopsla': true
+    };
+    CSRankings.childMap = {};
     return CSRankings;
 }());
 var csr = new CSRankings();
