@@ -21,7 +21,7 @@ areadict = {
     'pacmpl' : ['PACMPL'], # Special PACMPL handling below
     # SIGSOFT
     #    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
-    'icse' : ['ICSE', 'ICSE (1)', 'ICSE (2)'],
+    'icse' : ['ICSE', 'ICSE (1)'],
     'fse'  : ['SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     'ase'  : ['ASE'], # Next tier
     'issta'  : ['ISSTA'], # Next tier
