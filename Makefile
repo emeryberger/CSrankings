@@ -9,7 +9,7 @@ TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
-all: generated-author-info.csv csrankings.js # fix-affiliations home-pages scholar-links
+all: generated-author-info.csv csrankings.js fix-affiliations # home-pages scholar-links
 
 clean:
 	rm $(TARGETS)
@@ -47,8 +47,6 @@ faculty-affiliations.csv homepages.csv scholar.csv: csrankings.csv
 	@python util/split-csv.py
 	@echo "Sorting."
 	@python util/merge-csv.py
-	@echo "Cleaning."
-	@python util/clean-csrankings.py
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv

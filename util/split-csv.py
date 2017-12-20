@@ -31,6 +31,7 @@ with open('csrankings.csv', mode='rb') as infile:
                 facfieldnames = ['name', 'affiliation']
                 facWriter = csv.DictWriter(facultyaffs, fieldnames=facfieldnames)
                 facWriter.writeheader()
+                
                 for row in reader:
                     h = { 'name' : row['name'],
                           'homepage' : row['homepage'] }
@@ -40,6 +41,5 @@ with open('csrankings.csv', mode='rb') as infile:
                     scholarWriter.writerow(s)
                     f = { 'name' : row['name'],
                           'affiliation' : row['affiliation'] }
-                    
                     facWriter.writerow(f)
 
