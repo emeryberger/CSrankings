@@ -81,6 +81,11 @@ areadict = {
     'isca': ['ISCA'],
     'micro': ['MICRO'],
     'hpca': ['HPCA'], # next tier
+    # RECONFIG
+    'fpga': ['FPGA'],
+    'fccm': ['FCCM'],
+    'fpt': ['FPT'],
+    'fpl': ['FPL'], 
     # SIGLOG
     # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
     'cav': ['CAV', 'CAV (1)', 'CAV (2)'],

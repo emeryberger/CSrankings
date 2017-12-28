@@ -47,6 +47,11 @@ var CSRankings = /** @class */ (function () {
             { area: "ir", title: "Web & IR" },
             { area: "sigir", title: "Web & IR" },
             { area: "www", title: "Web & IR" },
+            { area: "reconfig", title: "Reconfig" },
+            { area: "fpga", title: "Reconfig" },
+            { area: "fccm", title: "Reconfig" },
+            { area: "fpl", title: "Reconfig" },
+            { area: "fpt", title: "Reconfig" },
             { area: "arch", title: "Arch" },
             { area: "asplos", title: "Arch" },
             { area: "isca", title: "Arch" },
@@ -133,7 +138,7 @@ var CSRankings = /** @class */ (function () {
             //,{ area : "cse", title : "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-        this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+        this.systemsAreas = ["reconfig", "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
         this.theoryAreas = ["act", "crypt", "log"];
         this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
         this.areaNames = [];
@@ -1400,6 +1405,10 @@ var CSRankings = /** @class */ (function () {
         'naacl': 'nlp',
         'sigir': 'ir',
         'www': 'ir',
+        'fpga': 'reconfig',
+        'fccm': 'reconfig',
+        'fpl': 'reconfig',
+        'fpt': 'reconfig',
         'asplos': 'arch',
         'isca': 'arch',
         'micro': 'arch',
