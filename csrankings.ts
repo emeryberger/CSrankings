@@ -161,6 +161,10 @@ class CSRankings {
 	    'naacl' : 'nlp',
 	    'sigir' : 'ir',
 	    'www' : 'ir',
+	    'fpga' : 'reconfig',
+	    'fccm' : 'reconfig',
+	    'fpl' : 'reconfig',
+	    'fpt' : 'reconfig',
 	    'asplos' : 'arch',
 	    'isca' : 'arch',
 	    'micro' : 'arch',
@@ -262,6 +266,11 @@ class CSRankings {
 	    { area : "ir", title : "Web & IR" },
 	    { area : "sigir", title : "Web & IR" },
 	    { area : "www", title : "Web & IR" },
+	    { area : "reconfig", title : "Reconfig" },
+	    { area : "fpga", title : "Reconfig" },
+	    { area : "fccm", title : "Reconfig" },
+	    { area : "fpl", title : "Reconfig" },
+	    { area : "fpt", title : "Reconfig" },
 	    { area : "arch", title : "Arch" },
 	    { area : "asplos", title : "Arch" },
 	    { area : "isca", title : "Arch" },
@@ -349,7 +358,7 @@ class CSRankings {
 	  ];
 
     private readonly aiAreas      = [ "ai", "vision", "mlmining", "nlp", "ir" ];
-    private readonly systemsAreas = [ "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
+    private readonly systemsAreas = [ "reconfig", "arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed" ];
     private readonly theoryAreas  = [ "act", "crypt", "log" ];
     private readonly interdisciplinaryAreas   = [ "graph", "chi", "robotics", "bio", "visualization", "ecom" ];
     
