@@ -8984,11 +8984,9 @@ Bin Cui 0001,Peking University,vldb,1.0,0.333333333333,2014
 Bin Cui 0001,Peking University,vldb,1.0,0.2,2015
 Bin Cui 0001,Peking University,vldb,2.0,0.5,2017
 Bin Cui 0001,Peking University,www,1.0,0.25,2010
-Bin Liu,Tsinghua University,aaai,1.0,0.166666666667,2017
-Bin Liu,Tsinghua University,dac,1.0,0.5,2012
-Bin Liu,Tsinghua University,icde,1.0,0.2,2014
-Bin Liu,Tsinghua University,siggraph-asia,1.0,0.166666666667,2013
-Bin Liu,Tsinghua University,vldb,1.0,0.5,2010
+Bin Liu 0001,Tsinghua University,ndss,1.0,0.142857142857,2011
+Bin Liu 0001,Tsinghua University,nsdi,1.0,0.0833333333333,2013
+Bin Liu 0001,Tsinghua University,sigcomm,1.0,0.125,2010
 Bin Luo,Nanjing University,aaai,1.0,0.25,2012
 Bin Luo,Nanjing University,aaai,1.0,0.25,2013
 Bin Luo,Nanjing University,aaai,1.0,0.25,2014
@@ -9318,47 +9316,10 @@ Bo Yuan,Rochester Institute of Technology,iccad,1.0,0.333333333333,2011
 Bo Yuan,Rochester Institute of Technology,icde,1.0,0.142857142857,2017
 Bo Yuan,Rochester Institute of Technology,icml,1.0,0.166666666667,2017
 Bo Yuan,Rochester Institute of Technology,micro,1.0,0.0625,2017
-Bo Zhang,Tsinghua University,aaai,1.0,0.25,2014
-Bo Zhang,Tsinghua University,aaai,2.0,0.366666666667,2016
-Bo Zhang,Tsinghua University,acl,1.0,0.333333333333,2013
-Bo Zhang,Tsinghua University,acl,2.0,0.533333333333,2016
-Bo Zhang,Tsinghua University,cvpr,1.0,0.2,2014
-Bo Zhang,Tsinghua University,cvpr,1.0,0.25,2017
-Bo Zhang,Tsinghua University,iccv,1.0,0.2,2013
-Bo Zhang,Tsinghua University,iccv,1.0,0.2,2015
-Bo Zhang,Tsinghua University,icde,1.0,0.5,2009
-Bo Zhang,Tsinghua University,icml,1.0,0.2,2005
-Bo Zhang,Tsinghua University,icml,1.0,0.25,2007
-Bo Zhang,Tsinghua University,icml,1.0,0.333333333333,2008
-Bo Zhang,Tsinghua University,icml,2.0,0.583333333333,2013
-Bo Zhang,Tsinghua University,icml,1.0,0.333333333333,2014
-Bo Zhang,Tsinghua University,icml,1.0,0.333333333333,2016
-Bo Zhang,Tsinghua University,icra,1.0,0.5,1992
-Bo Zhang,Tsinghua University,icra,1.0,0.5,1994
-Bo Zhang,Tsinghua University,icra,1.0,0.2,2011
-Bo Zhang,Tsinghua University,icra,2.0,0.410256410256,2014
-Bo Zhang,Tsinghua University,ijcai,1.0,0.333333333333,1989
-Bo Zhang,Tsinghua University,ijcai,1.0,0.25,2013
-Bo Zhang,Tsinghua University,ijcai,1.0,0.333333333333,2015
-Bo Zhang,Tsinghua University,ijcai,1.0,0.2,2016
-Bo Zhang,Tsinghua University,ijcai,2.0,0.45,2017
-Bo Zhang,Tsinghua University,imc,1.0,0.166666666667,2006
-Bo Zhang,Tsinghua University,imc,1.0,0.333333333333,2007
-Bo Zhang,Tsinghua University,iros,1.0,0.5,1994
-Bo Zhang,Tsinghua University,iros,1.0,0.1,2013
-Bo Zhang,Tsinghua University,kdd,1.0,0.2,2006
-Bo Zhang,Tsinghua University,kdd,1.0,0.2,2007
-Bo Zhang,Tsinghua University,kdd,1.0,0.333333333333,2009
-Bo Zhang,Tsinghua University,kdd,1.0,0.25,2013
-Bo Zhang,Tsinghua University,nips,1.0,0.333333333333,2008
-Bo Zhang,Tsinghua University,nips,1.0,0.333333333333,2012
-Bo Zhang,Tsinghua University,nips,1.0,0.2,2013
-Bo Zhang,Tsinghua University,nips,1.0,0.2,2014
-Bo Zhang,Tsinghua University,nips,2.0,0.583333333333,2015
-Bo Zhang,Tsinghua University,nips,1.0,0.25,2017
-Bo Zhang,Tsinghua University,sc,1.0,0.142857142857,2011
-Bo Zhang,Tsinghua University,www,1.0,0.2,2009
-Bo Zhang,Tsinghua University,www,1.0,0.333333333333,2013
+Bo Zhang 0010,Tsinghua University,aaai,1.0,0.2,2014
+Bo Zhang 0010,Tsinghua University,cvpr,1.0,0.333333333333,2008
+Bo Zhang 0010,Tsinghua University,iros,1.0,0.333333333333,2006
+Bo Zhang 0010,Tsinghua University,nips,1.0,0.2,2012
 Boaz Barak,Harvard University,ccs,1.0,0.25,1999
 Boaz Barak,Harvard University,ccs,1.0,0.5,2005
 Boaz Barak,Harvard University,crypto,1.0,0.142857142857,2001
@@ -11230,6 +11191,8 @@ Cezara Dragoi,Ecole Normale Superieure,cav,1.0,0.333333333333,2013
 Cezara Dragoi,Ecole Normale Superieure,pldi,1.0,0.25,2011
 Cezara Dragoi,Ecole Normale Superieure,popl,1.0,0.333333333333,2016
 Chagit Attiya,Technion,icde,1.0,0.5,1984
+Chakkrit Tantithamthavorn,University of Adelaide,icse,1.0,0.2,2015
+Chakkrit Tantithamthavorn,University of Adelaide,icse,1.0,0.25,2016
 Chan-Mo Park,POSTECH,iros,1.0,0.25,2002
 Chandan K. Reddy,Virginia Tech,aaai,1.0,0.166666666667,2017
 Chandan K. Reddy,Virginia Tech,kdd,1.0,0.0833333333333,2010
@@ -28031,6 +27994,16 @@ Hai Zhou,Northwestern University,iccad,2.0,0.75,2012
 Hai Zhou,Northwestern University,iccad,1.0,0.2,2013
 Hai Zhou,Northwestern University,iccad,1.0,0.5,2014
 Hai Zhou,Northwestern University,micro,1.0,0.2,2006
+Hai-Xin Duan,Tsinghua University,ccs,1.0,0.166666666667,2016
+Hai-Xin Duan,Tsinghua University,ccs,1.0,0.166666666667,2017
+Hai-Xin Duan,Tsinghua University,ndss,1.0,0.166666666667,2012
+Hai-Xin Duan,Tsinghua University,ndss,1.0,0.125,2016
+Hai-Xin Duan,Tsinghua University,oakland,1.0,0.166666666667,2014
+Hai-Xin Duan,Tsinghua University,oakland,1.0,0.0833333333333,2016
+Hai-Xin Duan,Tsinghua University,oakland,1.0,0.111111111111,2017
+Hai-Xin Duan,Tsinghua University,sigcomm,1.0,0.142857142857,2013
+Hai-Xin Duan,Tsinghua University,usenixsec,1.0,0.142857142857,2015
+Hai-Xin Duan,Tsinghua University,usenixsec,1.0,0.2,2016
 Haibin Ling,Temple University,aaai,1.0,0.5,2014
 Haibin Ling,Temple University,aaai,1.0,0.5,2016
 Haibin Ling,Temple University,cvpr,1.0,0.5,2005
@@ -39336,6 +39309,7 @@ Julián Mestre,University of Sydney,soda,1.0,1.0,2008
 Julián Mestre,University of Sydney,vldb,1.0,0.166666666667,2013
 Julián Mestre,University of Sydney,wine,1.0,0.333333333333,2009
 Julián Urbano,TU Delft,sigir,1.0,0.333333333333,2013
+Jun Bi,Tsinghua University,sigcomm,1.0,0.2,2017
 Jun Gao,Peking University,aaai,1.0,0.2,2017
 Jun Gao,Peking University,iccv,1.0,0.333333333333,2011
 Jun Gao,Peking University,icde,2.0,0.5,2014
@@ -44423,22 +44397,19 @@ Liam Roditty,Bar-Ilan University,stoc,1.0,0.5,2004
 Liam Roditty,Bar-Ilan University,stoc,1.0,0.25,2009
 Liam Roditty,Bar-Ilan University,stoc,1.0,0.5,2013
 Liam Roditty,Bar-Ilan University,stoc,1.0,0.333333333333,2016
-Liang Huang,Oregon State University,acl,1.0,0.5,2007
-Liang Huang,Oregon State University,acl,2.0,1.25,2008
-Liang Huang,Oregon State University,acl,1.0,0.333333333333,2009
-Liang Huang,Oregon State University,acl,1.0,0.5,2010
-Liang Huang,Oregon State University,acl,1.0,0.333333333333,2012
-Liang Huang,Oregon State University,acl,1.0,0.333333333333,2013
-Liang Huang,Oregon State University,acl,1.0,0.25,2015
-Liang Huang,Oregon State University,acl,1.0,0.25,2016
-Liang Huang,Oregon State University,acl,1.0,0.25,2017
-Liang Huang,Oregon State University,dac,1.0,0.142857142857,2005
-Liang Huang,Oregon State University,emnlp,1.0,0.333333333333,2009
-Liang Huang,Oregon State University,emnlp,1.0,0.5,2014
-Liang Huang,Oregon State University,emnlp,1.0,0.333333333333,2017
-Liang Huang,Oregon State University,naacl,2.0,1.25,2006
-Liang Huang,Oregon State University,naacl,1.0,0.333333333333,2012
-Liang Huang,Oregon State University,naacl,1.0,0.142857142857,2015
+Liang Huang 0001,Oregon State University,acl,1.0,0.333333333333,2008
+Liang Huang 0001,Oregon State University,acl,1.0,0.25,2011
+Liang Huang 0001,Oregon State University,acl,1.0,0.333333333333,2013
+Liang Huang 0001,Oregon State University,acl,1.0,0.25,2014
+Liang Huang 0001,Oregon State University,acl,1.0,0.5,2016
+Liang Huang 0001,Oregon State University,emnlp,1.0,0.5,2008
+Liang Huang 0001,Oregon State University,emnlp,1.0,0.5,2010
+Liang Huang 0001,Oregon State University,emnlp,2.0,0.583333333333,2013
+Liang Huang 0001,Oregon State University,emnlp,1.0,0.333333333333,2015
+Liang Huang 0001,Oregon State University,emnlp,1.0,0.5,2016
+Liang Huang 0001,Oregon State University,emnlp,2.0,0.833333333333,2017
+Liang Huang 0001,Oregon State University,naacl,1.0,0.5,2013
+Liang Huang 0001,Oregon State University,naacl,2.0,1.0,2015
 Liang-Tien Chia,Nanyang Technological University,cvpr,2.0,0.45,2010
 Liang-Tien Chia,Nanyang Technological University,cvpr,1.0,0.333333333333,2011
 Liang-Tien Chia,Nanyang Technological University,eccv,1.0,0.25,2008
@@ -48897,6 +48868,36 @@ Martin Rinard,Massachusetts Institute of Technology,ndss,1.0,0.111111111111,2013
 Martin Rinard,Massachusetts Institute of Technology,oakland,1.0,0.111111111111,2015
 Martin Rinard,Massachusetts Institute of Technology,pldi,1.0,0.25,2015
 Martin Rinard,Massachusetts Institute of Technology,popl,1.0,0.5,2016
+Martin Schulz 0001,TU Munich,asplos,1.0,0.2,2004
+Martin Schulz 0001,TU Munich,asplos,1.0,0.2,2006
+Martin Schulz 0001,TU Munich,hpdc,1.0,1.0,2002
+Martin Schulz 0001,TU Munich,hpdc,1.0,0.142857142857,2013
+Martin Schulz 0001,TU Munich,hpdc,1.0,0.166666666667,2014
+Martin Schulz 0001,TU Munich,hpdc,1.0,0.142857142857,2015
+Martin Schulz 0001,TU Munich,ics,1.0,0.166666666667,2005
+Martin Schulz 0001,TU Munich,ics,2.0,0.416666666667,2008
+Martin Schulz 0001,TU Munich,ics,2.0,0.416666666667,2009
+Martin Schulz 0001,TU Munich,ics,1.0,0.2,2010
+Martin Schulz 0001,TU Munich,ics,1.0,0.166666666667,2011
+Martin Schulz 0001,TU Munich,ics,2.0,0.45,2012
+Martin Schulz 0001,TU Munich,ics,1.0,0.2,2013
+Martin Schulz 0001,TU Munich,ics,1.0,0.142857142857,2016
+Martin Schulz 0001,TU Munich,pldi,1.0,0.166666666667,2014
+Martin Schulz 0001,TU Munich,sc,1.0,0.166666666667,2003
+Martin Schulz 0001,TU Munich,sc,1.0,0.166666666667,2004
+Martin Schulz 0001,TU Munich,sc,3.0,0.490909090909,2006
+Martin Schulz 0001,TU Munich,sc,2.0,0.666666666667,2007
+Martin Schulz 0001,TU Munich,sc,2.0,0.325,2008
+Martin Schulz 0001,TU Munich,sc,1.0,0.142857142857,2009
+Martin Schulz 0001,TU Munich,sc,1.0,0.166666666667,2010
+Martin Schulz 0001,TU Munich,sc,1.0,0.125,2011
+Martin Schulz 0001,TU Munich,sc,5.0,0.842857142857,2012
+Martin Schulz 0001,TU Munich,sc,1.0,0.166666666667,2013
+Martin Schulz 0001,TU Munich,sc,5.0,0.858333333333,2015
+Martin Schulz 0001,TU Munich,sc,4.0,1.075,2016
+Martin Schulz 0001,TU Munich,sc,2.0,0.361111111111,2017
+Martin Schulz 0001,TU Munich,vis,1.0,0.111111111111,2012
+Martin Schulz 0001,TU Munich,vis,1.0,0.142857142857,2014
 Martin Strauss,University of Michigan,ccs,1.0,0.333333333333,1999
 Martin Strauss,University of Michigan,eurocrypt,1.0,0.333333333333,1998
 Martin Strauss,University of Michigan,focs,1.0,0.5,1994
@@ -52865,16 +52866,23 @@ Min Suk Kang,National University of Singapore,ndss,1.0,0.333333333333,2016
 Min Suk Kang,National University of Singapore,oakland,1.0,0.333333333333,2013
 Min Tang 0001,Zhejiang University,siggraph,1.0,0.25,2012
 Min Yao,Zhejiang University,aaai,1.0,0.166666666667,2017
-Min Zhang,Tsinghua University,aaai,1.0,0.166666666667,2017
-Min Zhang,Tsinghua University,acl,2.0,0.392857142857,2015
-Min Zhang,Tsinghua University,acl,1.0,0.142857142857,2016
-Min Zhang,Tsinghua University,acl,1.0,0.166666666667,2017
-Min Zhang,Tsinghua University,cvpr,1.0,0.333333333333,2008
-Min Zhang,Tsinghua University,emnlp,2.0,0.5,2015
-Min Zhang,Tsinghua University,emnlp,3.0,0.592857142857,2016
-Min Zhang,Tsinghua University,emnlp,2.0,0.5,2017
-Min Zhang,Tsinghua University,sigir,3.0,0.458333333333,2017
-Min Zhang,Tsinghua University,vr,1.0,0.2,2011
+Min Zhang 0006,Tsinghua University,aaai,1.0,0.25,2014
+Min Zhang 0006,Tsinghua University,acl,1.0,0.5,2002
+Min Zhang 0006,Tsinghua University,ijcai,1.0,0.166666666667,2011
+Min Zhang 0006,Tsinghua University,ijcai,2.0,0.333333333333,2015
+Min Zhang 0006,Tsinghua University,ijcai,3.0,0.75,2016
+Min Zhang 0006,Tsinghua University,sigir,1.0,0.5,2008
+Min Zhang 0006,Tsinghua University,sigir,1.0,0.166666666667,2012
+Min Zhang 0006,Tsinghua University,sigir,2.0,0.392857142857,2013
+Min Zhang 0006,Tsinghua University,sigir,1.0,0.166666666667,2014
+Min Zhang 0006,Tsinghua University,sigir,2.0,0.342857142857,2015
+Min Zhang 0006,Tsinghua University,sigir,2.0,0.236111111111,2016
+Min Zhang 0006,Tsinghua University,sigir,1.0,0.2,2017
+Min Zhang 0006,Tsinghua University,www,1.0,0.25,2008
+Min Zhang 0006,Tsinghua University,www,1.0,0.2,2013
+Min Zhang 0006,Tsinghua University,www,1.0,0.142857142857,2015
+Min Zhang 0006,Tsinghua University,www,1.0,0.142857142857,2016
+Min Zhang 0006,Tsinghua University,www,1.0,0.2,2017
 Min-Yen Kan,National University of Singapore,aaai,1.0,0.2,2015
 Min-Yen Kan,National University of Singapore,aaai,1.0,0.25,2017
 Min-Yen Kan,National University of Singapore,acl,1.0,0.5,1998
@@ -57581,6 +57589,7 @@ Pat Morin,Carleton University,soda,1.0,0.2,2006
 Pat Morin,Carleton University,soda,1.0,0.2,2008
 Pat Morin,Carleton University,soda,2.0,0.533333333333,2009
 Pat Morin,Carleton University,soda,1.0,0.166666666667,2015
+Patanamon Thongtanunam,University of Adelaide,icse,1.0,0.25,2016
 Patrice Delmas,University of Auckland,eccv,1.0,0.333333333333,2008
 Patrice Marcotte,University of Montreal,nips,1.0,0.2,2005
 Patricia Bouyer,Ecole Normale Superieure de Cachan,cav,1.0,0.25,2000
@@ -69923,6 +69932,30 @@ Shi-Kuo Chang,University of Pittsburgh,sc,1.0,0.333333333333,1992
 Shi-Kuo Chang,University of Pittsburgh,sigmod,1.0,1.0,1975
 Shi-Kuo Chang,University of Pittsburgh,stoc,1.0,1.0,1970
 Shi-Kuo Chang,University of Pittsburgh,stoc,1.0,1.0,1971
+Shi-Min Hu,Tsinghua University,ccs,1.0,0.125,2015
+Shi-Min Hu,Tsinghua University,cvpr,1.0,0.333333333333,2001
+Shi-Min Hu,Tsinghua University,cvpr,1.0,0.2,2011
+Shi-Min Hu,Tsinghua University,cvpr,1.0,0.166666666667,2016
+Shi-Min Hu,Tsinghua University,eccv,1.0,0.142857142857,2016
+Shi-Min Hu,Tsinghua University,oakland,1.0,0.142857142857,2016
+Shi-Min Hu,Tsinghua University,siggraph,1.0,0.142857142857,2003
+Shi-Min Hu,Tsinghua University,siggraph,1.0,0.333333333333,2009
+Shi-Min Hu,Tsinghua University,siggraph,2.0,0.4,2010
+Shi-Min Hu,Tsinghua University,siggraph,1.0,0.25,2011
+Shi-Min Hu,Tsinghua University,siggraph,1.0,0.166666666667,2012
+Shi-Min Hu,Tsinghua University,siggraph,3.0,0.67619047619,2013
+Shi-Min Hu,Tsinghua University,siggraph,1.0,0.2,2015
+Shi-Min Hu,Tsinghua University,siggraph,1.0,0.2,2016
+Shi-Min Hu,Tsinghua University,siggraph-asia,2.0,0.4,2009
+Shi-Min Hu,Tsinghua University,siggraph-asia,2.0,0.45,2011
+Shi-Min Hu,Tsinghua University,siggraph-asia,2.0,0.416666666667,2012
+Shi-Min Hu,Tsinghua University,siggraph-asia,5.0,0.983333333333,2013
+Shi-Min Hu,Tsinghua University,siggraph-asia,2.0,0.4,2014
+Shi-Min Hu,Tsinghua University,siggraph-asia,2.0,0.366666666667,2015
+Shi-Min Hu,Tsinghua University,siggraph-asia,1.0,0.2,2016
+Shi-Min Hu,Tsinghua University,siggraph-asia,1.0,0.166666666667,2017
+Shi-Min Hu,Tsinghua University,usenixatc,1.0,0.25,2016
+Shi-Min Hu,Tsinghua University,usenixsec,1.0,0.111111111111,2017
 Shiaofen Fang,IUPUI,cvpr,1.0,0.1,2012
 Shiaofen Fang,IUPUI,hpdc,1.0,0.166666666667,2010
 Shiaofen Fang,IUPUI,vis,1.0,0.25,1996
@@ -71291,6 +71324,7 @@ Song-Chun Zhu,University of California - Los Angeles,ijcai,2.0,0.583333333333,20
 Song-Chun Zhu,University of California - Los Angeles,iros,1.0,0.2,2016
 Song-Chun Zhu,University of California - Los Angeles,naacl,1.0,0.166666666667,2016
 Song-Chun Zhu,University of California - Los Angeles,vr,1.0,0.166666666667,2017
+Song-Hai Zhang,Tsinghua University,cvpr,1.0,0.166666666667,2016
 Songqing Chen,George Mason University,imc,1.0,0.166666666667,2006
 Songqing Chen,George Mason University,kdd,1.0,0.2,2009
 Songqing Chen,George Mason University,ndss,1.0,0.25,2012
@@ -80632,6 +80666,16 @@ Wenke Lee,Georgia Institute of Technology,www,1.0,0.25,2016
 Wenli Zheng,Shanghai Jiao Tong University,hpca,1.0,0.333333333333,2014
 Wenpin Jiao,Peking University,fse,1.0,0.166666666667,2005
 Wensheng Zhang 0001,Iowa State University,rtss,1.0,0.25,2010
+Wenwu Zhu 0001,Tsinghua University,aaai,1.0,0.2,2015
+Wenwu Zhu 0001,Tsinghua University,aaai,1.0,0.166666666667,2017
+Wenwu Zhu 0001,Tsinghua University,icml,1.0,0.2,2017
+Wenwu Zhu 0001,Tsinghua University,ijcai,1.0,0.25,2015
+Wenwu Zhu 0001,Tsinghua University,ijcai,1.0,0.125,2017
+Wenwu Zhu 0001,Tsinghua University,kdd,2.0,0.333333333333,2013
+Wenwu Zhu 0001,Tsinghua University,kdd,1.0,0.166666666667,2014
+Wenwu Zhu 0001,Tsinghua University,kdd,1.0,0.2,2015
+Wenwu Zhu 0001,Tsinghua University,kdd,3.0,0.67619047619,2016
+Wenwu Zhu 0001,Tsinghua University,kdd,1.0,0.25,2017
 Wenyao Xu,University at Buffalo,asplos,1.0,0.2,2017
 Wenyao Xu,University at Buffalo,ccs,1.0,0.166666666667,2016
 Wenyao Xu,University at Buffalo,dac,1.0,0.2,2014
@@ -84882,6 +84926,12 @@ Yong Yu,Shanghai Jiao Tong University,www,2.0,0.366666666667,2008
 Yong Yu,Shanghai Jiao Tong University,www,1.0,0.2,2009
 Yong Yu,Shanghai Jiao Tong University,www,1.0,0.2,2011
 Yong Yu,Shanghai Jiao Tong University,www,1.0,0.166666666667,2017
+Yong-Jin Liu,Tsinghua University,cvpr,1.0,0.25,2016
+Yong-Jin Liu,Tsinghua University,cvpr,1.0,0.333333333333,2017
+Yong-Jin Liu,Tsinghua University,icra,1.0,0.2,2017
+Yong-Jin Liu,Tsinghua University,iros,1.0,0.2,2016
+Yong-Jin Liu,Tsinghua University,siggraph-asia,1.0,0.25,2015
+Yong-Jin Liu,Tsinghua University,siggraph-asia,1.0,0.2,2016
 Yong-Lae Park,Carnegie Mellon University,eccv,1.0,0.2,2016
 Yong-Lae Park,Carnegie Mellon University,icra,1.0,0.25,2007
 Yong-Lae Park,Carnegie Mellon University,icra,1.0,0.2,2008
@@ -85341,6 +85391,7 @@ Yu Yu,Shanghai Jiao Tong University,crypto,1.0,0.333333333333,2013
 Yu Yu,Shanghai Jiao Tong University,crypto,1.0,0.25,2015
 Yu Yu,Shanghai Jiao Tong University,crypto,1.0,0.5,2016
 Yu Yu,Shanghai Jiao Tong University,eurocrypt,1.0,0.5,2016
+Yu-Ping Wang,Tsinghua University,usenixatc,1.0,0.25,2016
 Yuan Jiang,Nanjing University,aaai,1.0,0.25,2011
 Yuan Jiang,Nanjing University,aaai,1.0,0.25,2012
 Yuan Jiang,Nanjing University,aaai,1.0,0.333333333333,2014
@@ -85787,7 +85838,6 @@ Yunjun Gao,Zhejiang University,sigmod,1.0,0.5,2009
 Yunjun Gao,Zhejiang University,sigmod,2.0,0.366666666667,2015
 Yunjun Gao,Zhejiang University,vldb,1.0,0.2,2015
 Yunjun Gao,Zhejiang University,vldb,1.0,0.166666666667,2017
-Yuping Wang,Tsinghua University,icde,1.0,0.166666666667,2016
 Yuqing Wu,Indiana University,icde,1.0,0.166666666667,2002
 Yuqing Wu,Indiana University,icde,1.0,0.333333333333,2003
 Yuqing Wu,Indiana University,sigmod,1.0,0.25,2004
@@ -86521,6 +86571,7 @@ Zhijia Zhao,University of California - Riverside,ics,1.0,0.2,2017
 Zhijia Zhao,University of California - Riverside,oopsla,1.0,0.166666666667,2012
 Zhijia Zhao,University of California - Riverside,oopsla,1.0,0.142857142857,2014
 Zhijia Zhao,University of California - Riverside,ubicomp,1.0,0.333333333333,2014
+Zhiliang Wang,Tsinghua University,imc,1.0,0.2,2012
 Zhipeng Wang,Zhejiang University,vis,1.0,0.142857142857,2017
 Zhiqiang Lin,University of Texas at Dallas,ccs,1.0,0.25,2012
 Zhiqiang Lin,University of Texas at Dallas,ccs,1.0,0.166666666667,2013
@@ -86576,24 +86627,6 @@ Zhiyuan Li,Purdue University,pldi,1.0,0.5,2004
 Zhiyuan Li,Purdue University,pldi,1.0,0.333333333333,2013
 Zhiyuan Li,Purdue University,sc,1.0,0.333333333333,1995
 Zhiyuan Li,Purdue University,sc,1.0,0.5,2003
-Zhiyuan Liu,Tsinghua University,aaai,4.0,0.983333333333,2015
-Zhiyuan Liu,Tsinghua University,aaai,2.0,0.342857142857,2016
-Zhiyuan Liu,Tsinghua University,acl,1.0,0.166666666667,2014
-Zhiyuan Liu,Tsinghua University,acl,1.0,0.25,2015
-Zhiyuan Liu,Tsinghua University,acl,2.0,0.45,2016
-Zhiyuan Liu,Tsinghua University,acl,3.0,0.833333333333,2017
-Zhiyuan Liu,Tsinghua University,emnlp,1.0,0.25,2009
-Zhiyuan Liu,Tsinghua University,emnlp,1.0,0.25,2010
-Zhiyuan Liu,Tsinghua University,emnlp,1.0,0.333333333333,2011
-Zhiyuan Liu,Tsinghua University,emnlp,1.0,0.333333333333,2014
-Zhiyuan Liu,Tsinghua University,emnlp,2.0,0.416666666667,2015
-Zhiyuan Liu,Tsinghua University,emnlp,1.0,0.2,2016
-Zhiyuan Liu,Tsinghua University,emnlp,1.0,0.25,2017
-Zhiyuan Liu,Tsinghua University,ijcai,1.0,0.2,2009
-Zhiyuan Liu,Tsinghua University,ijcai,3.0,0.733333333333,2015
-Zhiyuan Liu,Tsinghua University,ijcai,3.0,0.916666666667,2016
-Zhiyuan Liu,Tsinghua University,ijcai,5.0,1.25,2017
-Zhiyuan Liu,Tsinghua University,sigir,1.0,0.2,2017
 Zhiyun Qian,University of California - Riverside,ccs,1.0,0.333333333333,2012
 Zhiyun Qian,University of California - Riverside,ccs,2.0,0.533333333333,2015
 Zhiyun Qian,University of California - Riverside,ccs,2.0,0.533333333333,2016
