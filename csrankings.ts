@@ -124,9 +124,7 @@ class CSRankings {
 		    this.displayProgress(4);
 		    this.loadCountryInfo(this.countryInfo,
 					 ()=> {
-//					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
 					     this.setAllOn();
-					     // this.navigoRouter.on('/index', this.navigator).resolve();
 					     this.navigoRouter.on({
 						 '/index' : this.navigator,
 						 '/fromyear/:fromyear/toyear/:toyear/index' : this.navigator
