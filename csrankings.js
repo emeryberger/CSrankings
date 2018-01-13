@@ -213,9 +213,7 @@ var CSRankings = /** @class */ (function () {
                 _this.loadAuthors(function () {
                     _this.displayProgress(4);
                     _this.loadCountryInfo(_this.countryInfo, function () {
-                        //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
                         _this.setAllOn();
-                        // this.navigoRouter.on('/index', this.navigator).resolve();
                         _this.navigoRouter.on({
                             '/index': _this.navigator,
                             '/fromyear/:fromyear/toyear/:toyear/index': _this.navigator
