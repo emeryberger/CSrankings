@@ -1128,29 +1128,29 @@ var CSRankings = /** @class */ (function () {
     CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
         // the default region accordingly.
-        try {
-            jQuery.getJSON('http://freegeoip.net/json/', function (result) {
-                switch (result.country_code) {
-                    case "US":
-                    case "CN":
-                    case "IN":
-                    case "KR":
-                    case "JP":
-                    case "TW":
-                    case "SG":
-                        jQuery("#regions").val("USA");
-                        CSRankings.getInstance().rank();
-                        break;
-                    default:
-                        jQuery("#regions").val("world");
-                        CSRankings.getInstance().rank();
-                        break;
-                }
-            });
-        }
-        catch (_a) {
+        var theUrl = 'http://freegeoip.net/json/';
+        jQuery.getJSON(theUrl, function (result) {
+            switch (result.country_code) {
+                case "US":
+                case "CN":
+                case "IN":
+                case "KR":
+                case "JP":
+                case "TW":
+                case "SG":
+                    jQuery("#regions").val("USA");
+                    CSRankings.getInstance().rank();
+                    break;
+                default:
+                    jQuery("#regions").val("world");
+                    CSRankings.getInstance().rank();
+                    break;
+            }
+        }).fail(function () {
+            // If we can't find a location (e.g., because this site is
+            // blocked by an ad blocker), just rank anyway.
             CSRankings.getInstance().rank();
-        }
+        });
     };
     CSRankings.prototype.navigation = function (params, query) {
         if (params !== null) {

@@ -1379,8 +1379,8 @@ class CSRankings {
     public static geoCheck() : void {
 	// Figure out which country clients are coming from and set
 	// the default region accordingly.
-	try {
-	jQuery.getJSON('http://freegeoip.net/json/', (result)=> {
+	let theUrl = 'http://freegeoip.net/json/';
+	jQuery.getJSON(theUrl, (result)=> {
 	    switch (result.country_code) {
 	    case "US":
 	    case "CN":
@@ -1396,11 +1396,11 @@ class CSRankings {
 		jQuery("#regions").val("world");
 		CSRankings.getInstance().rank();
 		break;
-	    }});
-	}
-	catch {
-	    CSRankings.getInstance().rank();
-	}
+	    }
+	}).fail(()=> {
+	    // If we can't find a location (e.g., because this site is
+	    // blocked by an ad blocker), just rank anyway.
+	    CSRankings.getInstance().rank(); });
     }
 
     public navigation(params : { [key : string ] : string }, query : string ) : void {
