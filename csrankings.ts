@@ -1379,6 +1379,7 @@ class CSRankings {
     public static geoCheck() : void {
 	// Figure out which country clients are coming from and set
 	// the default region accordingly.
+	try {
 	jQuery.getJSON('http://freegeoip.net/json/', (result)=> {
 	    switch (result.country_code) {
 	    case "US":
@@ -1396,6 +1397,10 @@ class CSRankings {
 		CSRankings.getInstance().rank();
 		break;
 	    }});
+	}
+	catch {
+	    CSRankings.getInstance().rank();
+	}
     }
 
     public navigation(params : { [key : string ] : string }, query : string ) : void {
