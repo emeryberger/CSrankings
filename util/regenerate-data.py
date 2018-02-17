@@ -30,7 +30,7 @@ areadict = {
     # 'ops': ['SOSP', 'OSDI', 'EuroSys'], # 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
     'sosp' : ['SOSP'],
     'osdi' : ['OSDI'],
-    'eurosys' : ['EuroSys'],
+    'eurosys' : ['EuroSys'], # next tier
     'fast' : ['FAST'], # next tier
     'usenixatc' : ['USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'], # next tier
     # SIGMETRICS

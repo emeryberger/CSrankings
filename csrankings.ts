@@ -196,8 +196,8 @@ class CSRankings {
 	    'sigmetrics' : 'metrics',
 	    'osdi' : 'ops',
 	    'sosp' : 'ops',
-	    'eurosys' : 'ops',
-	    'fast' : 'ops',       // next tier (see below)
+	    'eurosys' : 'ops',    // next tier (see below)
+	    'fast' : 'ops',       // next tier
 	    'usenixatc' : 'ops',  // next tier
 	    'popl' : 'plan',
 	    'pldi' : 'plan',
@@ -241,6 +241,7 @@ class CSRankings {
 	    'hpca' : true,
 	    'ndss' : true, // for now
 	    'pets' : true,
+	    'eurosys' : true,
 	    'fast' : true,
 	    'usenixatc' : true,
 	    'icfp' : true,
