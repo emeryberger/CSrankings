@@ -1476,6 +1476,7 @@ var CSRankings = /** @class */ (function () {
         'hpca': true,
         'ndss': true,
         'pets': true,
+        'eurosys': true,
         'fast': true,
         'usenixatc': true,
         'icfp': true,
