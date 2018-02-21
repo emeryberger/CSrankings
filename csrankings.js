@@ -168,6 +168,7 @@ var CSRankings = /** @class */ (function () {
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
         this.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+        CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
@@ -211,22 +212,26 @@ var CSRankings = /** @class */ (function () {
             _this.loadAuthorInfo(function () {
                 _this.displayProgress(3);
                 _this.loadAuthors(function () {
+                    _this.setAllOn();
+                    _this.navigoRouter.on({
+                        '/index': _this.navigation,
+                        '/fromyear/:fromyear/toyear/:toyear/index': _this.navigation
+                    }).resolve();
                     _this.displayProgress(4);
                     _this.loadCountryInfo(_this.countryInfo, function () {
-                        //					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
-                        _this.setAllOn();
-                        // this.navigoRouter.on('/index', this.navigator).resolve();
-                        _this.navigoRouter.on({
-                            '/index': _this.navigator,
-                            '/fromyear/:fromyear/toyear/:toyear/index': _this.navigator
-                        }).resolve();
-                        _this.rank();
-                        _this.addListeners();
+                        setTimeout(function () {
+                            _this.addListeners();
+                            CSRankings.geoCheck();
+                        }, 0);
                     });
                 });
             });
         });
     }
+    // Return the singleton corresponding to this object.
+    CSRankings.getInstance = function () {
+        return CSRankings.theInstance;
+    };
     CSRankings.prototype.translateNameToDBLP = function (name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
@@ -920,10 +925,6 @@ var CSRankings = /** @class */ (function () {
         }
         return s;
     };
-    /* Set all checkboxes to true. */
-    CSRankings.prototype.setAllCheckboxes = function () {
-        this.activateAll();
-    };
     /* This activates all checkboxes _without_ triggering ranking. */
     CSRankings.prototype.setAllOn = function (value) {
         if (value === void 0) { value = true; }
@@ -1126,8 +1127,9 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
-        // the default regions accordingly.
-        jQuery.getJSON('http://freegeoip.net/json/', function (result) {
+        // the default region accordingly.
+        var theUrl = 'http://freegeoip.net/json/';
+        jQuery.getJSON(theUrl, function (result) {
             switch (result.country_code) {
                 case "US":
                 case "CN":
@@ -1137,14 +1139,20 @@ var CSRankings = /** @class */ (function () {
                 case "TW":
                 case "SG":
                     jQuery("#regions").val("USA");
+                    CSRankings.getInstance().rank();
                     break;
                 default:
                     jQuery("#regions").val("world");
+                    CSRankings.getInstance().rank();
                     break;
             }
+        }).fail(function () {
+            // If we can't find a location (e.g., because this site is
+            // blocked by an ad blocker), just rank anyway.
+            CSRankings.getInstance().rank();
         });
     };
-    CSRankings.prototype.navigator = function (params, query) {
+    CSRankings.prototype.navigation = function (params, query) {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach(function (key) {
@@ -1177,9 +1185,6 @@ var CSRankings = /** @class */ (function () {
                 jQuery("#regions").val(elem);
                 index_1 += 1;
             });
-        }
-        else {
-            CSRankings.geoCheck();
         }
         if (foundAll) {
             // Set everything.
@@ -1471,6 +1476,7 @@ var CSRankings = /** @class */ (function () {
         'hpca': true,
         'ndss': true,
         'pets': true,
+        'eurosys': true,
         'fast': true,
         'usenixatc': true,
         'icfp': true,

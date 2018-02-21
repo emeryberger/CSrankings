@@ -75,13 +75,21 @@ interface ChartData {
 };
 
 class CSRankings {
+
+    private static theInstance : CSRankings; // singleton for this object
     
     public static readonly areas   : Array<string> = [];
     public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
 
     private navigoRouter : Navigo;
+
+    // Return the singleton corresponding to this object.
+    public static getInstance() : CSRankings {
+	return CSRankings.theInstance;
+    }
     
     constructor() {
+	CSRankings.theInstance = this;
 	this.navigoRouter = new Navigo(null, true);
 
 	/* Build the areaDict dictionary: areas -> names used in pie charts
@@ -121,19 +129,18 @@ class CSRankings {
 	    this.loadAuthorInfo(()=> {
 		this.displayProgress(3);
 		this.loadAuthors(()=> {
+		    this.setAllOn();
+		    this.navigoRouter.on({
+			'/index' : this.navigation,
+			'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
+		    }).resolve();
 		    this.displayProgress(4);
-		    this.loadCountryInfo(this.countryInfo,
-					 ()=> {
-//					     this.navigoRouter.on('/fromyear/:fromyear/toyear/:toyear/index', this.navigator).resolve();
-					     this.setAllOn();
-					     // this.navigoRouter.on('/index', this.navigator).resolve();
-					     this.navigoRouter.on({
-						 '/index' : this.navigator,
-						 '/fromyear/:fromyear/toyear/:toyear/index' : this.navigator
-					     }).resolve();
-					     this.rank();
-					     this.addListeners();
-					 });
+		    this.loadCountryInfo(this.countryInfo, ()=> {
+			setTimeout(()=> {
+			    this.addListeners();
+			    CSRankings.geoCheck();
+			}, 0);
+		    });
 		});
 	    });
 	});
@@ -189,8 +196,8 @@ class CSRankings {
 	    'sigmetrics' : 'metrics',
 	    'osdi' : 'ops',
 	    'sosp' : 'ops',
-	    'eurosys' : 'ops',
-	    'fast' : 'ops',       // next tier (see below)
+	    'eurosys' : 'ops',    // next tier (see below)
+	    'fast' : 'ops',       // next tier
 	    'usenixatc' : 'ops',  // next tier
 	    'popl' : 'plan',
 	    'pldi' : 'plan',
@@ -234,6 +241,7 @@ class CSRankings {
 	    'hpca' : true,
 	    'ndss' : true, // for now
 	    'pets' : true,
+	    'eurosys' : true,
 	    'fast' : true,
 	    'usenixatc' : true,
 	    'icfp' : true,
@@ -1145,11 +1153,6 @@ class CSRankings {
 	return s;
     }
 
-    /* Set all checkboxes to true. */
-    private setAllCheckboxes() : void {
-	this.activateAll();
-    }
-
     /* This activates all checkboxes _without_ triggering ranking. */
     private setAllOn(value : boolean = true) : void {
 	for (let i = 0; i < CSRankings.areas.length; i++) {
@@ -1376,8 +1379,9 @@ class CSRankings {
 
     public static geoCheck() : void {
 	// Figure out which country clients are coming from and set
-	// the default regions accordingly.
-	jQuery.getJSON('http://freegeoip.net/json/', (result)=> {
+	// the default region accordingly.
+	let theUrl = 'http://freegeoip.net/json/';
+	jQuery.getJSON(theUrl, (result)=> {
 	    switch (result.country_code) {
 	    case "US":
 	    case "CN":
@@ -1387,14 +1391,20 @@ class CSRankings {
 	    case "TW":
 	    case "SG":
 		jQuery("#regions").val("USA");
+		CSRankings.getInstance().rank();
 		break;
 	    default :
 		jQuery("#regions").val("world");
+		CSRankings.getInstance().rank();
 		break;
-	    }});
+	    }
+	}).fail(()=> {
+	    // If we can't find a location (e.g., because this site is
+	    // blocked by an ad blocker), just rank anyway.
+	    CSRankings.getInstance().rank(); });
     }
 
-    public navigator(params : { [key : string ] : string }, query : string ) : void {
+    public navigation(params : { [key : string ] : string }, query : string ) : void {
 	if (params !== null) {
 	    // Set params (fromyear and toyear).
 	    Object.keys(params).forEach((key)=> {
@@ -1427,8 +1437,6 @@ class CSRankings {
 		jQuery("#regions").val(elem);
 		index += 1;
 	    });
-	} else {
-	    CSRankings.geoCheck();
 	}
 	if (foundAll) {
 	    // Set everything.
