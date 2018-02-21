@@ -21,7 +21,58 @@ areadict = {
     'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     # SIGOPS
     # - OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
+<<<<<<< HEAD
     'ops': ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
+=======
+    # 'ops': ['SOSP', 'OSDI', 'EuroSys'], # 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
+    'sosp' : ['SOSP'],
+    'osdi' : ['OSDI'],
+    'eurosys' : ['EuroSys'], # next tier
+    'fast' : ['FAST'], # next tier
+    'usenixatc' : ['USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'], # next tier
+    # SIGMETRICS
+    # - Two variants for each, as in DBLP.
+    # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
+    'imc': ['IMC', 'Internet Measurement Conference'],
+    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS'],
+    # SIGMOBILE
+    # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
+    'mobisys' : ['MobiSys'],
+    'mobicom' : ['MobiCom', 'MOBICOM'],
+    'sensys'  : ['SenSys'],
+    # SIGHPC
+    # 'hpc': ['SC', 'HPDC', 'ICS'],
+    'sc': ['SC'],
+    'hpdc': ['HPDC'],
+    'ics': ['ICS'],
+    # SIGBED
+    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
+    'emsoft': ['EMSOFT'],
+    'rtss' : ['RTSS'],
+    'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
+    # SIGDA
+    # 'da': ['ICCAD', 'DAC'],
+    'iccad': ['ICCAD'],
+    'dac' : ['DAC'],
+    # SIGMOD
+    # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'vldb' : ['VLDB', 'PVLDB'],
+    'sigmod' : ['SIGMOD Conference'],
+    'icde' : ['ICDE'], # next tier
+    'pods' : ['PODS'], # next tier
+    # SIGSAC
+    # - USENIX Security listed twice to reflect variants in DBLP
+    # 'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
+    'ccs': ['CCS', 'ACM Conference on Computer and Communications Security'],
+    'oakland' : ['IEEE Symposium on Security and Privacy'],
+    'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
+    'ndss' : ['NDSS'],
+    'pets' : ['PoPETs', 'Privacy Enhancing Technologies'],
+    # SIGCOMM
+    # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
+    'sigcomm': ['SIGCOMM'],
+    'nsdi': ['NSDI'], # INFOCOM
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
     # SIGARCH
     'arch': ['ISCA', 'MICRO', 'ASPLOS'],
     # SIGACT

@@ -45,8 +45,15 @@ shrink-dblp:
 faculty-affiliations.csv homepages.csv scholar.csv: csrankings.csv
 	@echo "Splitting main datafile (csrankings.csv)."
 	@python util/split-csv.py
+<<<<<<< HEAD
 	@echo "Sorting."
 	@python util/merge-csv.py
+=======
+	#@echo "Sorting."
+	#@python util/merge-csv.py
+	@echo "Cleaning."
+	@python util/clean-csrankings.py
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv

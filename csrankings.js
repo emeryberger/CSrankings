@@ -22,6 +22,157 @@
 ;
 var CSRankings = (function () {
     function CSRankings() {
+<<<<<<< HEAD
+=======
+        var _this = this;
+        this.authorFile = "/csrankings.csv";
+        this.authorinfoFile = "/generated-author-info.csv";
+        this.countryinfoFile = "/country-info.csv";
+        this.aliasFile = "/dblp-aliases.csv";
+        this.homepageImage = "/house-logo.png";
+        this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
+        this.areaMap = [{ area: "ai", title: "AI" },
+            { area: "aaai", title: "AI" },
+            { area: "ijcai", title: "AI" },
+            { area: "vision", title: "Vision" },
+            { area: "cvpr", title: "Vision" },
+            { area: "eccv", title: "Vision" },
+            { area: "iccv", title: "Vision" },
+            { area: "mlmining", title: "ML" },
+            { area: "icml", title: "ML" },
+            { area: "kdd", title: "ML" },
+            { area: "nips", title: "ML" },
+            { area: "nlp", title: "NLP" },
+            { area: "acl", title: "NLP" },
+            { area: "emnlp", title: "NLP" },
+            { area: "naacl", title: "NLP" },
+            { area: "ir", title: "Web & IR" },
+            { area: "sigir", title: "Web & IR" },
+            { area: "www", title: "Web & IR" },
+            { area: "arch", title: "Arch" },
+            { area: "asplos", title: "Arch" },
+            { area: "isca", title: "Arch" },
+            { area: "micro", title: "Arch" },
+            { area: "hpca", title: "Arch" },
+            { area: "comm", title: "Networks" },
+            { area: "sigcomm", title: "Networks" },
+            { area: "nsdi", title: "Networks" },
+            { area: "sec", title: "Security" },
+            { area: "ccs", title: "Security" },
+            { area: "oakland", title: "Security" },
+            { area: "usenixsec", title: "Security" },
+            { area: "ndss", title: "Security" },
+            { area: "pets", title: "Security" },
+            { area: "mod", title: "DB" },
+            { area: "sigmod", title: "DB" },
+            { area: "vldb", title: "DB" },
+            { area: "icde", title: "DB" },
+            { area: "pods", title: "DB" },
+            { area: "hpc", title: "HPC" },
+            { area: "sc", title: "HPC" },
+            { area: "hpdc", title: "HPC" },
+            { area: "ics", title: "HPC" },
+            { area: "mobile", title: "Mobile" },
+            { area: "mobicom", title: "Mobile" },
+            { area: "mobisys", title: "Mobile" },
+            { area: "sensys", title: "Mobile" },
+            { area: "metrics", title: "Metrics" },
+            { area: "imc", title: "Metrics" },
+            { area: "sigmetrics", title: "Metrics" },
+            { area: "ops", title: "OS" },
+            { area: "sosp", title: "OS" },
+            { area: "osdi", title: "OS" },
+            { area: "fast", title: "OS" },
+            { area: "usenixatc", title: "OS" },
+            { area: "eurosys", title: "OS" },
+            { area: "pldi", title: "PL" },
+            { area: "popl", title: "PL" },
+            { area: "icfp", title: "PL" },
+            { area: "oopsla", title: "PL" },
+            { area: "plan", title: "PL" },
+            { area: "soft", title: "SE" },
+            { area: "fse", title: "SE" },
+            { area: "icse", title: "SE" },
+            { area: "ase", title: "SE" },
+            { area: "issta", title: "SE" },
+            { area: "act", title: "Theory" },
+            { area: "focs", title: "Theory" },
+            { area: "soda", title: "Theory" },
+            { area: "stoc", title: "Theory" },
+            { area: "crypt", title: "Crypto" },
+            { area: "crypto", title: "Crypto" },
+            { area: "eurocrypt", title: "Crypto" },
+            { area: "log", title: "Logic" },
+            { area: "cav", title: "Logic" },
+            { area: "lics", title: "Logic" },
+            { area: "graph", title: "Graphics" },
+            { area: "siggraph", title: "Graphics" },
+            { area: "siggraph-asia", title: "Graphics" },
+            { area: "chi", title: "HCI" },
+            { area: "chiconf", title: "HCI" },
+            { area: "ubicomp", title: "HCI" },
+            { area: "uist", title: "HCI" },
+            { area: "robotics", title: "Robotics" },
+            { area: "icra", title: "Robotics" },
+            { area: "iros", title: "Robotics" },
+            { area: "rss", title: "Robotics" },
+            { area: "bio", title: "Comp. Biology" },
+            { area: "ismb", title: "Comp. Biology" },
+            { area: "recomb", title: "Comp. Biology" },
+            { area: "da", title: "EDA" },
+            { area: "dac", title: "EDA" },
+            { area: "iccad", title: "EDA" },
+            { area: "bed", title: "Embedded" },
+            { area: "emsoft", title: "Embedded" },
+            { area: "rtas", title: "Embedded" },
+            { area: "rtss", title: "Embedded" },
+            { area: "visualization", title: "Visualization" },
+            { area: "vis", title: "Visualization" },
+            { area: "vr", title: "Visualization" },
+            { area: "ecom", title: "ECom" },
+            { area: "ec", title: "ECom" },
+            { area: "wine", title: "ECom" }
+            //,{ area : "cse", title : "CSEd" }
+        ];
+        this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+        this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+        this.theoryAreas = ["act", "crypt", "log"];
+        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
+        this.areaNames = [];
+        this.fields = [];
+        this.aiFields = [];
+        this.systemsFields = [];
+        this.theoryFields = [];
+        this.otherFields = [];
+        /* Map area to its name (from areaNames). */
+        this.areaDict = {};
+        /* Map area to its position in the list. */
+        this.areaPosition = {};
+        /* Map names to Google Scholar IDs. */
+        this.scholarInfo = {};
+        /* Map aliases to canonical author name. */
+        this.aliases = {};
+        /* Map institution to (non-US) region. */
+        this.countryInfo = {};
+        /* Map name to home page. */
+        this.homepages = {};
+        /* Set to true for "dense rankings" vs. "competition rankings". */
+        this.useDenseRankings = false;
+        /* The data which will hold the parsed CSV of author info. */
+        this.authors = [];
+        /* Map authors to the areas they have published in (for pie chart display). */
+        this.authorAreas = {};
+        /* Computed stats (univagg). */
+        this.stats = {};
+        this.areaDeptAdjustedCount = {}; /* area+dept */
+        /* Colors for all areas. */
+        this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+        this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+        this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
+        this.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+        CSRankings.theInstance = this;
+        this.navigoRouter = new Navigo(null, true);
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
         /* Build the areaDict dictionary: areas -> names used in pie charts
            and areaPosition dictionary: areas -> position in area array
         */
@@ -50,11 +201,31 @@ var CSRankings = (function () {
             var area = _h[_g];
             CSRankings.otherFields.push(CSRankings.areaPosition[area]);
         }
+<<<<<<< HEAD
         var next = function () {
             CSRankings.loadAliases(CSRankings.aliases, function () {
                 CSRankings.loadAuthorInfo(function () {
                     CSRankings.loadAuthors(function () {
                         CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+=======
+        this.displayProgress(1);
+        this.loadAliases(this.aliases, function () {
+            _this.displayProgress(2);
+            _this.loadAuthorInfo(function () {
+                _this.displayProgress(3);
+                _this.loadAuthors(function () {
+                    _this.setAllOn();
+                    _this.navigoRouter.on({
+                        '/index': _this.navigation,
+                        '/fromyear/:fromyear/toyear/:toyear/index': _this.navigation
+                    }).resolve();
+                    _this.displayProgress(4);
+                    _this.loadCountryInfo(_this.countryInfo, function () {
+                        setTimeout(function () {
+                            _this.addListeners();
+                            CSRankings.geoCheck();
+                        }, 0);
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
                     });
                 });
             });
@@ -76,7 +247,15 @@ var CSRankings = (function () {
             });
         }).resolve();
     }
+<<<<<<< HEAD
     CSRankings.translateNameToDBLP = function (name) {
+=======
+    // Return the singleton corresponding to this object.
+    CSRankings.getInstance = function () {
+        return CSRankings.theInstance;
+    };
+    CSRankings.prototype.translateNameToDBLP = function (name) {
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
         // Known issue: does not properly handle suffixes like Jr., III, etc.
@@ -733,9 +912,34 @@ var CSRankings = (function () {
         }
         return s;
     };
+<<<<<<< HEAD
     /* Set all checkboxes to true. */
     CSRankings.setAllCheckboxes = function () {
         CSRankings.activateAll();
+=======
+    /* This activates all checkboxes _without_ triggering ranking. */
+    CSRankings.prototype.setAllOn = function (value) {
+        if (value === void 0) { value = true; }
+        for (var i = 0; i < CSRankings.areas.length; i++) {
+            var item = this.fields[i];
+            var str = "input[name=" + item + "]";
+            if (value) {
+                // Turn off all next tier venues.
+                if (item in CSRankings.nextTier) {
+                    jQuery(str).prop('checked', false);
+                }
+                else {
+                    jQuery(str).prop('checked', true);
+                    jQuery(str).prop('disabled', false);
+                }
+            }
+            else {
+                // turn everything off.
+                jQuery(str).prop('checked', false);
+                jQuery(str).prop('disabled', false);
+            }
+        }
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
     };
     /* PUBLIC METHODS */
     CSRankings.rank = function () {
@@ -886,8 +1090,9 @@ var CSRankings = (function () {
     };
     CSRankings.geoCheck = function () {
         // Figure out which country clients are coming from and set
-        // the default regions accordingly.
-        jQuery.getJSON('http://freegeoip.net/json/', function (result) {
+        // the default region accordingly.
+        var theUrl = 'http://freegeoip.net/json/';
+        jQuery.getJSON(theUrl, function (result) {
             switch (result.country_code) {
                 case "US":
                 case "CN":
@@ -896,16 +1101,161 @@ var CSRankings = (function () {
                 case "JP":
                 case "TW":
                 case "SG":
+<<<<<<< HEAD
                     // jQuery("#regions").val("USA");
                     // This is currently the default.
+=======
+                    jQuery("#regions").val("USA");
+                    CSRankings.getInstance().rank();
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
                     break;
                 default:
                     jQuery("#regions").val("world");
+                    CSRankings.getInstance().rank();
                     break;
             }
+        }).fail(function () {
+            // If we can't find a location (e.g., because this site is
+            // blocked by an ad blocker), just rank anyway.
+            CSRankings.getInstance().rank();
         });
     };
+<<<<<<< HEAD
     CSRankings.addListeners = function () {
+=======
+    CSRankings.prototype.navigation = function (params, query) {
+        if (params !== null) {
+            // Set params (fromyear and toyear).
+            Object.keys(params).forEach(function (key) {
+                jQuery("#" + key).prop('value', params[key].toString());
+            });
+        }
+        // Clear everything *unless* there are subsets / below-the-fold selected.
+        CSRankings.clearNonSubsetted();
+        // Now check everything listed in the query string.
+        var q = query.split('&');
+        // If there is an 'all' in the query string, set everything to true.
+        var foundAll = q.some(function (elem) {
+            return (elem == "all");
+        });
+        var foundNone = q.some(function (elem) {
+            return (elem == "none");
+        });
+        // Check for regions and strip them out.
+        var foundRegion = q.some(function (elem) {
+            return CSRankings.regions.indexOf(elem) >= 0;
+        });
+        if (foundRegion) {
+            var index_1 = 0;
+            q.forEach(function (elem) {
+                // Splice it out.
+                if (CSRankings.regions.indexOf(elem) >= 0) {
+                    q.splice(index_1, 1);
+                }
+                // Set the region.
+                jQuery("#regions").val(elem);
+                index_1 += 1;
+            });
+        }
+        if (foundAll) {
+            // Set everything.
+            for (var position = 0; position < CSRankings.areas.length; position++) {
+                var item = CSRankings.areas[position];
+                if (!(item in CSRankings.nextTier)) {
+                    var str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', true);
+                    if (item in CSRankings.childMap) {
+                        // It's a parent. Enable it.
+                        jQuery(str).prop('disabled', false);
+                        // and activate all children.
+                        CSRankings.childMap[item].forEach(function (k) {
+                            if (!(k in CSRankings.nextTier)) {
+                                jQuery('input[name=' + k + ']').prop('checked', true);
+                            }
+                        });
+                    }
+                }
+            }
+            // And we're out.
+            return;
+        }
+        if (foundNone) {
+            // Clear everything and return.
+            CSRankings.clearNonSubsetted();
+            return;
+        }
+        // Just a list of areas.
+        // First, clear everything that isn't subsetted.
+        CSRankings.clearNonSubsetted();
+        // Then, activate the areas in the query.
+        for (var _i = 0, q_1 = q; _i < q_1.length; _i++) {
+            var item = q_1[_i];
+            if ((item != "none") && (item != "")) {
+                var str = "input[name=" + item + "]";
+                jQuery(str).prop('checked', true);
+                jQuery(str).prop('disabled', false);
+                if (item in CSRankings.childMap) {
+                    // Activate all children.
+                    CSRankings.childMap[item].forEach(function (k) {
+                        if (!(k in CSRankings.nextTier)) {
+                            jQuery('input[name=' + k + ']').prop('checked', true);
+                        }
+                    });
+                }
+            }
+        }
+    };
+    CSRankings.clearNonSubsetted = function () {
+        for (var _i = 0, _a = CSRankings.areas; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (item in CSRankings.childMap) {
+                var kids = CSRankings.childMap[item];
+                if (!CSRankings.subsetting(kids)) {
+                    var str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', false);
+                    jQuery(str).prop('disabled', false);
+                    kids.forEach(function (item) {
+                        jQuery("input[name=" + item + "]").prop('checked', false);
+                    });
+                }
+            }
+        }
+    };
+    CSRankings.subsetting = function (sibs) {
+        // Separate the siblings into above and below the fold.
+        var aboveFold = [];
+        var belowFold = [];
+        sibs.forEach(function (elem) {
+            if (elem in CSRankings.nextTier) {
+                belowFold.push(elem);
+            }
+            else {
+                aboveFold.push(elem);
+            }
+        });
+        // Count how many are checked above and below.
+        var numCheckedAbove = 0;
+        aboveFold.forEach(function (elem) {
+            var str = "input[name=" + elem + "]";
+            var val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedAbove++;
+            }
+        });
+        var numCheckedBelow = 0;
+        belowFold.forEach(function (elem) {
+            var str = "input[name=" + elem + "]";
+            var val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedBelow++;
+            }
+        });
+        var subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+        var subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+        return subsettedAbove || subsettedBelow;
+    };
+    CSRankings.prototype.addListeners = function () {
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
         var _this = this;
         var _loop_2 = function (position) {
             var area = CSRankings.areas[position];
@@ -948,6 +1298,102 @@ var CSRankings = (function () {
             _loop_3(item);
         }
     };
+<<<<<<< HEAD
+=======
+    CSRankings.areas = [];
+    CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+    CSRankings.parentMap = { 'aaai': 'ai',
+        'ijcai': 'ai',
+        'cvpr': 'vision',
+        'eccv': 'vision',
+        'iccv': 'vision',
+        'icml': 'mlmining',
+        'kdd': 'mlmining',
+        'nips': 'mlmining',
+        'acl': 'nlp',
+        'emnlp': 'nlp',
+        'naacl': 'nlp',
+        'sigir': 'ir',
+        'www': 'ir',
+        'asplos': 'arch',
+        'isca': 'arch',
+        'micro': 'arch',
+        'hpca': 'arch',
+        'ccs': 'sec',
+        'oakland': 'sec',
+        'usenixsec': 'sec',
+        'ndss': 'sec',
+        'pets': 'sec',
+        'vldb': 'mod',
+        'sigmod': 'mod',
+        'icde': 'mod',
+        'pods': 'mod',
+        'dac': 'da',
+        'iccad': 'da',
+        'emsoft': 'bed',
+        'rtas': 'bed',
+        'rtss': 'bed',
+        'sc': 'hpc',
+        'hpdc': 'hpc',
+        'ics': 'hpc',
+        'mobicom': 'mobile',
+        'mobisys': 'mobile',
+        'sensys': 'mobile',
+        'imc': 'metrics',
+        'sigmetrics': 'metrics',
+        'osdi': 'ops',
+        'sosp': 'ops',
+        'eurosys': 'ops',
+        'fast': 'ops',
+        'usenixatc': 'ops',
+        'popl': 'plan',
+        'pldi': 'plan',
+        'oopsla': 'plan',
+        'icfp': 'plan',
+        'fse': 'soft',
+        'icse': 'soft',
+        'ase': 'soft',
+        'issta': 'soft',
+        'nsdi': 'comm',
+        'sigcomm': 'comm',
+        'siggraph': 'graph',
+        'siggraph-asia': 'graph',
+        'focs': 'act',
+        'soda': 'act',
+        'stoc': 'act',
+        'crypto': 'crypt',
+        'eurocrypt': 'crypt',
+        'cav': 'log',
+        'lics': 'log',
+        'ismb': 'bio',
+        'recomb': 'bio',
+        'ec': 'ecom',
+        'wine': 'ecom',
+        'chiconf': 'chi',
+        'ubicomp': 'chi',
+        'uist': 'chi',
+        'icra': 'robotics',
+        'iros': 'robotics',
+        'rss': 'robotics',
+        'vis': 'visualization',
+        'vr': 'visualization'
+    };
+    CSRankings.nextTier = {
+        'ase': true,
+        'issta': true,
+        'icde': true,
+        'pods': true,
+        'hpca': true,
+        'ndss': true,
+        'pets': true,
+        'eurosys': true,
+        'fast': true,
+        'usenixatc': true,
+        'icfp': true,
+        'oopsla': true
+    };
+    CSRankings.childMap = {};
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
     return CSRankings;
 }());
 CSRankings.authorFile = "/csrankings.csv";

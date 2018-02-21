@@ -75,10 +75,29 @@ interface ChartData {
 };
 
 class CSRankings {
+
+    private static theInstance : CSRankings; // singleton for this object
     
+<<<<<<< HEAD
     private static navigoRouter : Navigo;
     
     constructor() {
+=======
+    public static readonly areas   : Array<string> = [];
+    public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
+
+    private navigoRouter : Navigo;
+
+    // Return the singleton corresponding to this object.
+    public static getInstance() : CSRankings {
+	return CSRankings.theInstance;
+    }
+    
+    constructor() {
+	CSRankings.theInstance = this;
+	this.navigoRouter = new Navigo(null, true);
+
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
 	/* Build the areaDict dictionary: areas -> names used in pie charts
 	   and areaPosition dictionary: areas -> position in area array
 	*/
@@ -103,11 +122,31 @@ class CSRankings {
 	for (let area of CSRankings.interdisciplinaryAreas) {
 	    CSRankings.otherFields.push (CSRankings.areaPosition[area]);
 	}
+<<<<<<< HEAD
 	let next = ()=> {
 	    CSRankings.loadAliases(CSRankings.aliases, function() {
 		CSRankings.loadAuthorInfo(function() {
 		    CSRankings.loadAuthors(function() {
 			CSRankings.loadCountryInfo(CSRankings.countryInfo, CSRankings.rank);
+=======
+	this.displayProgress(1);
+	this.loadAliases(this.aliases, ()=> {
+	    this.displayProgress(2);
+	    this.loadAuthorInfo(()=> {
+		this.displayProgress(3);
+		this.loadAuthors(()=> {
+		    this.setAllOn();
+		    this.navigoRouter.on({
+			'/index' : this.navigation,
+			'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
+		    }).resolve();
+		    this.displayProgress(4);
+		    this.loadCountryInfo(this.countryInfo, ()=> {
+			setTimeout(()=> {
+			    this.addListeners();
+			    CSRankings.geoCheck();
+			}, 0);
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
 		    });
 		});
 	    });
@@ -143,8 +182,99 @@ class CSRankings {
 	    'ijcai' : 'ai',
 	    'cvpr' : 'vision',
 	    'eccv' : 'vision',
+<<<<<<< HEAD
 	    'iccv' : 'vision'
 	  };
+=======
+	    'iccv' : 'vision',
+	    'icml' : 'mlmining',
+	    'kdd' : 'mlmining',
+	    'nips' : 'mlmining',
+	    'acl' : 'nlp',
+	    'emnlp' : 'nlp',
+	    'naacl' : 'nlp',
+	    'sigir' : 'ir',
+	    'www' : 'ir',
+	    'asplos' : 'arch',
+	    'isca' : 'arch',
+	    'micro' : 'arch',
+	    'hpca' : 'arch', // next tier
+	    'ccs' : 'sec',
+	    'oakland' : 'sec',
+	    'usenixsec' : 'sec',
+	    'ndss' : 'sec', // next tier (for now)
+	    'pets' : 'sec', // next tier
+	    'vldb' : 'mod',
+	    'sigmod' : 'mod',
+	    'icde' : 'mod', // next tier
+	    'pods' : 'mod',
+	    'dac' : 'da',
+	    'iccad' : 'da',
+	    'emsoft' : 'bed',
+	    'rtas' : 'bed',
+	    'rtss' : 'bed',
+	    'sc' : 'hpc',
+	    'hpdc' : 'hpc',
+	    'ics' : 'hpc',
+	    'mobicom' : 'mobile',
+	    'mobisys' : 'mobile',
+	    'sensys' : 'mobile',
+	    'imc' : 'metrics',
+	    'sigmetrics' : 'metrics',
+	    'osdi' : 'ops',
+	    'sosp' : 'ops',
+	    'eurosys' : 'ops',    // next tier (see below)
+	    'fast' : 'ops',       // next tier
+	    'usenixatc' : 'ops',  // next tier
+	    'popl' : 'plan',
+	    'pldi' : 'plan',
+	    'oopsla' : 'plan', // next tier 
+	    'icfp' : 'plan',   // next tier
+	    'fse'  : 'soft',
+	    'icse' : 'soft',
+	    'ase' : 'soft',    // next tier
+	    'issta' : 'soft',  // next tier
+	    'nsdi' : 'comm',
+	    'sigcomm' : 'comm',
+	    'siggraph' : 'graph',
+	    'siggraph-asia' : 'graph',
+	    'focs' : 'act',
+	    'soda' : 'act',
+	    'stoc' : 'act',
+	    'crypto' : 'crypt',
+	    'eurocrypt' : 'crypt',
+	    'cav' : 'log',
+	    'lics' : 'log',
+	    'ismb' : 'bio',
+	    'recomb' : 'bio',
+	    'ec' : 'ecom',
+	    'wine' : 'ecom',
+	    'chiconf' : 'chi',
+	    'ubicomp' : 'chi',
+	    'uist' : 'chi',
+	    'icra' : 'robotics',
+	    'iros' : 'robotics',
+	    'rss' : 'robotics',
+	    'vis' : 'visualization',
+	    'vr' : 'visualization'
+	  };
+
+    public static readonly nextTier : {[key : string] : boolean } =
+	{
+	    'ase' : true,
+	    'issta' : true,
+	    'icde' : true,
+	    'pods' : true,
+	    'hpca' : true,
+	    'ndss' : true, // for now
+	    'pets' : true,
+	    'eurosys' : true,
+	    'fast' : true,
+	    'usenixatc' : true,
+	    'icfp' : true,
+	    'oopsla' : true
+	};
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
     
     private static readonly childMap : {[key : string] : [string] }
 	= { 'ai' : ['aaai', 'ijcai'],
@@ -950,11 +1080,35 @@ class CSRankings {
 	return s;
     }
 
+<<<<<<< HEAD
     /* Set all checkboxes to true. */
     private static setAllCheckboxes() : void {
 	CSRankings.activateAll();
     }
 
+=======
+    /* This activates all checkboxes _without_ triggering ranking. */
+    private setAllOn(value : boolean = true) : void {
+	for (let i = 0; i < CSRankings.areas.length; i++) {
+	    const item = this.fields[i];
+	    const str = "input[name=" + item + "]";
+	    if (value) {
+		// Turn off all next tier venues.
+		if (item in CSRankings.nextTier) {
+		    jQuery(str).prop('checked', false);
+		} else {
+		    jQuery(str).prop('checked', true);
+		    jQuery(str).prop('disabled', false);
+		}
+	    } else {
+		// turn everything off.
+		jQuery(str).prop('checked', false);
+		jQuery(str).prop('disabled', false);
+	    }
+	}
+    }
+    
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
     /* PUBLIC METHODS */
     
     public static rank() : boolean {
@@ -1143,8 +1297,14 @@ class CSRankings {
 
     private static geoCheck() {
 	// Figure out which country clients are coming from and set
+<<<<<<< HEAD
 	// the default regions accordingly.
 	jQuery.getJSON('http://freegeoip.net/json/', function(result) {
+=======
+	// the default region accordingly.
+	let theUrl = 'http://freegeoip.net/json/';
+	jQuery.getJSON(theUrl, (result)=> {
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
 	    switch (result.country_code) {
 	    case "US":
 	    case "CN":
@@ -1153,16 +1313,165 @@ class CSRankings {
 	    case "JP":
 	    case "TW":
 	    case "SG":
+<<<<<<< HEAD
 		// jQuery("#regions").val("USA");
 		// This is currently the default.
+=======
+		jQuery("#regions").val("USA");
+		CSRankings.getInstance().rank();
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
 		break;
 	    default :
 		jQuery("#regions").val("world");
+		CSRankings.getInstance().rank();
 		break;
-	    }});
+	    }
+	}).fail(()=> {
+	    // If we can't find a location (e.g., because this site is
+	    // blocked by an ad blocker), just rank anyway.
+	    CSRankings.getInstance().rank(); });
     }
 
+<<<<<<< HEAD
     public static addListeners() : void {
+=======
+    public navigation(params : { [key : string ] : string }, query : string ) : void {
+	if (params !== null) {
+	    // Set params (fromyear and toyear).
+	    Object.keys(params).forEach((key)=> {
+		jQuery("#"+key).prop('value', params[key].toString());
+	    });
+	}
+	// Clear everything *unless* there are subsets / below-the-fold selected.
+	CSRankings.clearNonSubsetted();
+	// Now check everything listed in the query string.
+	let q = query.split('&');
+	// If there is an 'all' in the query string, set everything to true.
+	let foundAll = q.some((elem)=>{
+	    return (elem == "all");
+	});
+	let foundNone = q.some((elem)=>{
+	    return (elem == "none");
+	});
+	// Check for regions and strip them out.
+	let foundRegion = q.some((elem)=>{
+	    return CSRankings.regions.indexOf(elem) >= 0;
+	});
+	if (foundRegion) {
+	    let index = 0;
+	    q.forEach((elem) => {
+		// Splice it out.
+		if (CSRankings.regions.indexOf(elem) >= 0) {
+		    q.splice(index, 1);
+		}
+		// Set the region.
+		jQuery("#regions").val(elem);
+		index += 1;
+	    });
+	}
+	if (foundAll) {
+	    // Set everything.
+	    for (let position = 0; position < CSRankings.areas.length; position++) {
+		let item = CSRankings.areas[position]
+		if (!(item in CSRankings.nextTier)) {
+		    let str = "input[name="+item+"]";
+		    jQuery(str).prop('checked', true);
+		    if (item in CSRankings.childMap) {
+			// It's a parent. Enable it.
+			jQuery(str).prop('disabled', false);
+			// and activate all children.
+			CSRankings.childMap[item].forEach((k)=> {
+			    if (!(k in CSRankings.nextTier)) {
+				jQuery('input[name='+k+']').prop('checked', true);
+			    }
+			});
+		    }
+		}
+	    }
+	    // And we're out.
+	    return;
+	} 
+	if (foundNone) {
+	    // Clear everything and return.
+	    CSRankings.clearNonSubsetted();
+	    return;
+	}
+	// Just a list of areas.
+	// First, clear everything that isn't subsetted.
+	CSRankings.clearNonSubsetted();
+	// Then, activate the areas in the query.
+	for (let item of q) {
+	    if ((item != "none") && (item != "")) {
+		const str = "input[name="+item+"]";
+		jQuery(str).prop('checked', true);
+		jQuery(str).prop('disabled', false);
+		if (item in CSRankings.childMap) {
+		    // Activate all children.
+		    CSRankings.childMap[item].forEach((k)=> {
+			if (!(k in CSRankings.nextTier)) {
+			    jQuery('input[name='+k+']').prop('checked', true);
+			}
+		    });
+		}
+	    }
+	}
+    }
+
+    public static clearNonSubsetted() : void {
+	for (let item of CSRankings.areas) {
+	    if (item in CSRankings.childMap) {
+		const kids = CSRankings.childMap[item];
+		if (!CSRankings.subsetting(kids)) {
+		    const str = "input[name="+item+"]";
+		    jQuery(str).prop('checked', false);
+		    jQuery(str).prop('disabled', false);
+		    kids.forEach((item)=> {
+			jQuery("input[name="+item+"]").prop('checked', false);
+		    });
+		}
+	    }
+	}
+    }
+    
+    public static subsetting(sibs : [string]) : boolean {
+	// Separate the siblings into above and below the fold.
+	let aboveFold : string[] = [];
+	let belowFold : string[] = [];
+	sibs.forEach((elem) => {
+	    if (elem in CSRankings.nextTier) {
+		belowFold.push(elem);
+	    } else {
+		aboveFold.push(elem);
+	    }
+	});
+	// Count how many are checked above and below.
+	let numCheckedAbove = 0;
+	aboveFold.forEach((elem) => {
+	    let str = "input[name="+elem+"]";
+	    let val = jQuery(str).prop('checked');
+	    if (val) {
+		numCheckedAbove++;
+	    }
+	});
+	let numCheckedBelow = 0;
+	belowFold.forEach((elem)=> {
+	    let str = "input[name="+elem+"]";
+	    let val = jQuery(str).prop('checked');
+	    if (val) {
+		numCheckedBelow++;
+	    }
+	});
+	let subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+	let subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+	return subsettedAbove || subsettedBelow;
+    }
+    
+    private addListeners() : void {
+	["toyear", "fromyear", "regions"].forEach((key)=> {
+	    const widget = document.getElementById(key);
+	    widget!.addEventListener("change", ()=> { this.rank(); });
+	});
+>>>>>>> 58a0a3c3b83716bc6105f7d53579a9f65f588617
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'
 	for (let position = 0; position < CSRankings.areas.length; position++) {
