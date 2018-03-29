@@ -20,6 +20,7 @@
 ;
 ;
 ;
+;
 var CSRankings = /** @class */ (function () {
     function CSRankings() {
         var _this = this;
@@ -27,6 +28,7 @@ var CSRankings = /** @class */ (function () {
         this.authorinfoFile = "/generated-author-info.csv";
         this.countryinfoFile = "/country-info.csv";
         this.aliasFile = "/dblp-aliases.csv";
+        this.turingFile = "./turing.csv";
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
         this.areaMap = [{ area: "ai", title: "AI" },
@@ -150,6 +152,8 @@ var CSRankings = /** @class */ (function () {
         this.scholarInfo = {};
         /* Map aliases to canonical author name. */
         this.aliases = {};
+        /* Map Turing award winners to year */
+        this.turing = {};
         /* Map institution to (non-US) region. */
         this.countryInfo = {};
         /* Map name to home page. */
@@ -208,21 +212,23 @@ var CSRankings = /** @class */ (function () {
         }
         this.displayProgress(1);
         this.loadAliases(this.aliases, function () {
-            _this.displayProgress(2);
-            _this.loadAuthorInfo(function () {
-                _this.displayProgress(3);
-                _this.loadAuthors(function () {
-                    _this.setAllOn();
-                    _this.navigoRouter.on({
-                        '/index': _this.navigation,
-                        '/fromyear/:fromyear/toyear/:toyear/index': _this.navigation
-                    }).resolve();
-                    _this.displayProgress(4);
-                    _this.loadCountryInfo(_this.countryInfo, function () {
-                        setTimeout(function () {
-                            _this.addListeners();
-                            CSRankings.geoCheck();
-                        }, 0);
+            _this.loadTuring(_this.turing, function () {
+                _this.displayProgress(2);
+                _this.loadAuthorInfo(function () {
+                    _this.displayProgress(3);
+                    _this.loadAuthors(function () {
+                        _this.setAllOn();
+                        _this.navigoRouter.on({
+                            '/index': _this.navigation,
+                            '/fromyear/:fromyear/toyear/:toyear/index': _this.navigation
+                        }).resolve();
+                        _this.displayProgress(4);
+                        _this.loadCountryInfo(_this.countryInfo, function () {
+                            setTimeout(function () {
+                                _this.addListeners();
+                                CSRankings.geoCheck();
+                            }, 0);
+                        });
                     });
                 });
             });
@@ -445,6 +451,21 @@ var CSRankings = /** @class */ (function () {
                 for (var _i = 0, d_1 = d; _i < d_1.length; _i++) {
                     var aliasPair = d_1[_i];
                     aliases[aliasPair.alias] = aliasPair.name;
+                }
+                setTimeout(cont, 0);
+            }
+        });
+    };
+    CSRankings.prototype.loadTuring = function (turing, cont) {
+        Papa.parse(this.turingFile, {
+            header: true,
+            download: true,
+            complete: function (results) {
+                var data = results.data;
+                var d = data;
+                for (var _i = 0, d_2 = d; _i < d_2.length; _i++) {
+                    var turingPair = d_2[_i];
+                    turing[turingPair.name] = turingPair.year;
                 }
                 setTimeout(cont, 0);
             }
@@ -797,6 +818,9 @@ var CSRankings = /** @class */ (function () {
                     + '>'
                     + name_6
                     + '</a>&nbsp;';
+                if (this_1.turing.hasOwnProperty(name_6)) {
+                    p += '<b>[Turing Award winner]</b>&nbsp;';
+                }
                 if (this_1.scholarInfo.hasOwnProperty(name_6)) {
                     if (this_1.scholarInfo[name_6] != "NOSCHOLARPAGE") {
                         var url = 'https://scholar.google.com/citations?user='
