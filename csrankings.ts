@@ -53,6 +53,11 @@ interface Alias {
     readonly name : string;
 };
 
+interface Turing {
+    readonly name : string;
+    readonly year : number;
+};
+
 interface HomePage {
     readonly name : string;
     readonly homepage : string;
@@ -125,21 +130,23 @@ class CSRankings {
 	}
 	this.displayProgress(1);
 	this.loadAliases(this.aliases, ()=> {
-	    this.displayProgress(2);
-	    this.loadAuthorInfo(()=> {
-		this.displayProgress(3);
-		this.loadAuthors(()=> {
-		    this.setAllOn();
-		    this.navigoRouter.on({
-			'/index' : this.navigation,
-			'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
-		    }).resolve();
-		    this.displayProgress(4);
-		    this.loadCountryInfo(this.countryInfo, ()=> {
-			setTimeout(()=> {
-			    this.addListeners();
-			    CSRankings.geoCheck();
-			}, 0);
+	    this.loadTuring(this.turing, ()=> {
+		this.displayProgress(2);
+		this.loadAuthorInfo(()=> {
+		    this.displayProgress(3);
+		    this.loadAuthors(()=> {
+			this.setAllOn();
+			this.navigoRouter.on({
+			    '/index' : this.navigation,
+			    '/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
+			}).resolve();
+			this.displayProgress(4);
+			this.loadCountryInfo(this.countryInfo, ()=> {
+			    setTimeout(()=> {
+				this.addListeners();
+				CSRankings.geoCheck();
+			    }, 0);
+			});
 		    });
 		});
 	    });
@@ -150,6 +157,7 @@ class CSRankings {
     private readonly authorinfoFile     = "/generated-author-info.csv";
     private readonly countryinfoFile    = "/country-info.csv";
     private readonly aliasFile          = "/dblp-aliases.csv";
+    private readonly turingFile         = "./turing.csv";
     private readonly homepageImage      ="/house-logo.png";
     
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
@@ -379,6 +387,9 @@ class CSRankings {
     
     /* Map aliases to canonical author name. */
     private readonly aliases : {[key : string] : string } = {};
+
+    /* Map Turing award winners to year */
+    private readonly turing : {[key : string] : number } = {};
 
     /* Map institution to (non-US) region. */
     private readonly countryInfo : {[key : string] : string } = {};
@@ -632,6 +643,23 @@ class CSRankings {
 		const d = data as Array<Alias>;
 		for (let aliasPair of d) {
 		    aliases[aliasPair.alias] = aliasPair.name;
+		}
+		setTimeout(cont, 0);
+	    }
+	});
+    }
+
+    private loadTuring(turing: {[key : string] : number },
+		       cont : ()=> void ) : void
+    {
+	Papa.parse(this.turingFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const d = data as Array<Turing>;
+		for (let turingPair of d) {
+		    turing[turingPair.name] = turingPair.year;
 		}
 		setTimeout(cont, 0);
 	    }
@@ -1017,6 +1045,9 @@ class CSRankings {
 		    + '>' 
 		    + name
 		    + '</a>&nbsp;';
+		if (this.turing.hasOwnProperty(name)) {
+		    p += '<b>[Turing Award winner]</b>&nbsp;';
+		}
 		if (this.scholarInfo.hasOwnProperty(name)) {
 		    if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
 			let url = 'https://scholar.google.com/citations?user='
