@@ -608,7 +608,8 @@ def handle_article(_, article):
                         'title' : title.encode('utf-8'),
                         'conf' : confname,
                         'area' : areaname,
-                        'institution' : facultydict[authorName] }
+                        'institution' : facultydict[authorName],
+                        'numauthors' : authorsOnPaper }
                 if not volume is "":
                     log['volume'] = volume
                 if not number is "":
