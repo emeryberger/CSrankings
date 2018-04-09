@@ -1048,6 +1048,16 @@ class CSRankings {
 		if (this.turing.hasOwnProperty(name)) {
 		    p += '<b>[Turing Award winner]</b>&nbsp;';
 		}
+
+		p += '<a title="Click for author\'s home page." target="_blank" href="'
+		    + homePage
+		    + '" '
+		    + 'onclick="trackOutboundLink(\''
+		    + homePage
+		    + '\', true); return false;"'
+		    + '>'
+		    + '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+
 		if (this.scholarInfo.hasOwnProperty(name)) {
 		    if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
 			let url = 'https://scholar.google.com/citations?user='
@@ -1062,14 +1072,16 @@ class CSRankings {
 			    +'</a>&nbsp;';
 		    }
 		}
-		
-		p += '<a title="Click for author\'s home page." target="_blank" href="'
-		    + homePage
+
+		p += '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+		    + dblpName
 		    + '" '
 		    + 'onclick="trackOutboundLink(\''
-		    + homePage
+		    + dblpName
 		    + '\', true); return false;"'
-		    + '>' + '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+		    + '>'
+		    + '<img src="dblp.png">'
+		    + '</a>'
 
 		p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this.PieChart + "</font></span>"
 		    + '</small>'
