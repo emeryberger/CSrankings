@@ -821,6 +821,14 @@ var CSRankings = /** @class */ (function () {
                 if (this_1.turing.hasOwnProperty(name_6)) {
                     p += '<b>[Turing Award winner]</b>&nbsp;';
                 }
+                p += '<a title="Click for author\'s home page." target="_blank" href="'
+                    + homePage
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + homePage
+                    + '\', true); return false;"'
+                    + '>'
+                    + '<img src=\"' + this_1.homepageImage + '\"></a>&nbsp;';
                 if (this_1.scholarInfo.hasOwnProperty(name_6)) {
                     if (this_1.scholarInfo[name_6] != "NOSCHOLARPAGE") {
                         var url = 'https://scholar.google.com/citations?user='
@@ -835,13 +843,15 @@ var CSRankings = /** @class */ (function () {
                             + '</a>&nbsp;';
                     }
                 }
-                p += '<a title="Click for author\'s home page." target="_blank" href="'
-                    + homePage
+                p += '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+                    + dblpName
                     + '" '
                     + 'onclick="trackOutboundLink(\''
-                    + homePage
+                    + dblpName
                     + '\', true); return false;"'
-                    + '>' + '<img src=\"' + this_1.homepageImage + '\"></a>&nbsp;';
+                    + '>'
+                    + '<img src="dblp.png">'
+                    + '</a>';
                 p += "<span onclick='csr.toggleChart(\"" + escape(name_6) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font color=\"blue\">" + this_1.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
