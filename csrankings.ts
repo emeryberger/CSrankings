@@ -120,10 +120,13 @@ class CSRankings {
 	for (let area of this.interdisciplinaryAreas) {
 	    this.otherFields.push (this.areaPosition[area]);
 	}
+	let parentCounter = 0;
 	for (let child in CSRankings.parentMap) {
 	    let parent = CSRankings.parentMap[child];
 	    if (!(parent in CSRankings.childMap)) {
 		CSRankings.childMap[parent] = [child];
+		CSRankings.parentIndex[parent] = parentCounter;
+		parentCounter += 1;
 	    } else {
 		CSRankings.childMap[parent].push(child);
 	    }
@@ -162,6 +165,8 @@ class CSRankings {
     
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
+    public static readonly parentIndex : {[key : string] : number } = {}; // For color lookups
+    
     public static readonly parentMap : {[key : string] : string }
 	= { 'aaai' : 'ai',
 	    'ijcai' : 'ai',
@@ -492,7 +497,6 @@ class CSRankings {
     /* Create a pie chart */
     private makeChart(name : string) : void
     {
-	console.assert (this.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
 	let data : Array<ChartData> = [];
 	let datadict : {[key : string] : number } = {};
 	const keys = CSRankings.areas;
@@ -533,9 +537,10 @@ class CSRankings {
 	    }
 	}
 	for (let key in datadict) {
-	    data.push({ "label" : this.areaDict[key],
-			"value" : Math.round(datadict[key] * 10)/10,
-			"color" : this.color[this.areaPosition[key]] });
+	    let newSlice = { "label" : this.areaDict[key],
+			     "value" : Math.round(datadict[key] * 10)/10,
+			     "color" : this.color[CSRankings.parentIndex[key]] };
+	    data.push(newSlice);
 	}
 	new d3pie(name + "-chart", {
 	    "header": {

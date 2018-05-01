@@ -201,10 +201,13 @@ var CSRankings = /** @class */ (function () {
             var area = _h[_g];
             this.otherFields.push(this.areaPosition[area]);
         }
+        var parentCounter = 0;
         for (var child in CSRankings.parentMap) {
             var parent_1 = CSRankings.parentMap[child];
             if (!(parent_1 in CSRankings.childMap)) {
                 CSRankings.childMap[parent_1] = [child];
+                CSRankings.parentIndex[parent_1] = parentCounter;
+                parentCounter += 1;
             }
             else {
                 CSRankings.childMap[parent_1].push(child);
@@ -304,7 +307,6 @@ var CSRankings = /** @class */ (function () {
     };
     /* Create a pie chart */
     CSRankings.prototype.makeChart = function (name) {
-        console.assert(this.color.length >= CSRankings.areas.length, "Houston, we have a problem.");
         var data = [];
         var datadict = {};
         var keys = CSRankings.areas;
@@ -344,9 +346,10 @@ var CSRankings = /** @class */ (function () {
             }
         }
         for (var key in datadict) {
-            data.push({ "label": this.areaDict[key],
+            var newSlice = { "label": this.areaDict[key],
                 "value": Math.round(datadict[key] * 10) / 10,
-                "color": this.color[this.areaPosition[key]] });
+                "color": this.color[CSRankings.parentIndex[key]] };
+            data.push(newSlice);
         }
         new d3pie(name + "-chart", {
             "header": {
@@ -1426,6 +1429,7 @@ var CSRankings = /** @class */ (function () {
     };
     CSRankings.areas = [];
     CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+    CSRankings.parentIndex = {}; // For color lookups
     CSRankings.parentMap = { 'aaai': 'ai',
         'ijcai': 'ai',
         'cvpr': 'vision',
