@@ -8,7 +8,6 @@
 
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
-/// <reference path="./typescript/set.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
@@ -105,7 +104,7 @@ class CSRankings {
 	    CSRankings.areas[position] = area;
 	    this.areaNames[position]   = title;
 	    this.fields[position]      = area;
-	    this.areaDict[area]        = this.areaNames[position];
+	    this.areaDict[area]        = title; // this.areaNames[position];
 	    this.areaPosition[area]    = position;
 	}
 	for (let area of this.aiAreas) {
@@ -262,6 +261,7 @@ class CSRankings {
 	};
     
     public static readonly childMap : {[key : string] : [string] } = {};
+
     
    
     private readonly areaMap : Array<AreaMap>
@@ -280,9 +280,9 @@ class CSRankings {
 	    { area : "acl",  title : "NLP" },
 	    { area : "emnlp",  title : "NLP" },
 	    { area : "naacl",  title : "NLP" },
-	    { area : "ir", title : "Web & IR" },
-	    { area : "sigir", title : "Web & IR" },
-	    { area : "www", title : "Web & IR" },
+	    { area : "ir", title : "Web+IR" },
+	    { area : "sigir", title : "Web+IR" },
+	    { area : "www", title : "Web+IR" },
 	    { area : "arch", title : "Arch" },
 	    { area : "asplos", title : "Arch" },
 	    { area : "isca", title : "Arch" },
@@ -472,6 +472,60 @@ class CSRankings {
 	return s;
     }
 
+    private areaString(name : string) : string
+    {
+	// Find the area with the most pubs, breaking ties by alphabetical order.
+	if (!this.authorAreas[name]) {
+	    return "";
+	}
+	// This is essentially duplicated logic from makeChart and
+	// should be factored out.
+	let datadict : {[key : string] : number } = {};
+	const keys = CSRankings.areas;
+	let maxValue = 0;
+	for (let i = 0; i < keys.length; i++) {
+	    let key = keys[i];
+	    if (key in CSRankings.nextTier) {
+		continue;
+	    }
+	    let value = this.authorAreas[name][key];
+	    if (key in CSRankings.parentMap) {
+		key = this.areaDict[key]; // CSRankings.parentMap[key];
+	    }
+	    if (value > 0) {
+		if (!(key in datadict)) {
+		    datadict[key] = 0;
+		}
+		datadict[key] += value;
+		maxValue = (datadict[key] > maxValue) ? datadict[key] : maxValue;
+	    }
+	}
+	// Strip out everything not equal to the max.
+	let maxes : Array<string> = [];
+	for (let key in datadict) {
+	    if (datadict[key] == maxValue) {
+		maxes.push(key);
+	    }
+	}
+/*
+	let   newStrList : Array<string> = []
+	datadict.forEach((x) =>
+			   {
+			       if (this.authorAreas[name][maxArea] == this.authorAreas[name][x]) {
+				   newStrList.push(this.areaDict[x]);
+			       }
+			   });
+*/
+	// Filter out duplicates.
+	//	const newStrListNoDups = Array.from(new Set(newStrList));
+	let str = maxes.join(",");
+	if (name == "Evangelos Kalogerakis") {
+	    console.log(name + str);
+	}
+	return str;
+    }
+
+    
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
     private compareNames (a : string, b : string) : number {
 
@@ -835,6 +889,9 @@ class CSRankings {
 		continue;
 	    }
 	    const theArea  = auth.area;
+	    if (theArea in CSRankings.nextTier) {
+		continue;
+	    }
 	    /*
 	      DISABLING weight selection so all pie charts look the
 	      same regardless of which areas are currently selected:
@@ -1053,7 +1110,8 @@ class CSRankings {
 		if (this.turing.hasOwnProperty(name)) {
 		    p += '<b>[Turing Award winner]</b>&nbsp;';
 		}
-
+		p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
+		
 		p += '<a title="Click for author\'s home page." target="_blank" href="'
 		    + homePage
 		    + '" '
