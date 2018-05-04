@@ -180,9 +180,7 @@ TOG_SIGGRAPH_Volume = {2021: (40, 4),
                        2007: (26, 3),
                        2006: (25, 3),
                        2005: (24, 3),
-                       2004: (23, 3),
-                       2003: (22, 3),
-                       2002: (21, 3)
+                       2004: (23, 3)
                        }
 
 # TOG special handling to count only SIGGRAPH Asia proceedings.
@@ -327,6 +325,7 @@ pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 
 
 def do_it():
+#    gz = gzip.GzipFile('dblp-original.xml.gz')
     gz = gzip.GzipFile('dblp.xml.gz')
     xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
 
@@ -389,7 +388,7 @@ def build_dicts():
             venues.append(item)
     facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
-def countPaper(confname, year, volume, number, startPage, pageCount, url):
+def countPaper(confname, year, volume, number, startPage, pageCount, url, title):
     global ISMB_Bioinformatics
     global ICSE_ShortPaperStart
     global SIGMOD_NonResearchPaperStart
@@ -437,18 +436,17 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
                     return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    elif confname == 'ACM Trans. Graph.':
-        SIGGRAPH_Conf = False
+    elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
         if TOG_SIGGRAPH_Volume.has_key(year):
             (vol, num) = TOG_SIGGRAPH_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                SIGGRAPH_Conf = True
+            if not ((volume == str(vol)) and (number == str(num))):
+                return False
+        
+    elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
         if TOG_SIGGRAPH_Asia_Volume.has_key(year):
             (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                SIGGRAPH_Conf = True
-        if not SIGGRAPH_Conf:
-            return False
+            if not((volume == str(vol)) and (number == str(num))):
+                return False
 
     # Special handling for IEEE Vis and VR
     elif confname == 'IEEE Trans. Vis. Comput. Graph.':
@@ -490,6 +488,7 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
         exceptionConference = confname == 'SC'
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
@@ -541,8 +540,8 @@ def handle_article(_, article):
         else:
             return True
 
-        volume = article.get('volume',"")
-        number = article.get('number',"")
+        volume = article.get('volume',"0")
+        number = article.get('number',"0")
         url    = article.get('url',"")
         year   = int(article.get('year',"-1"))
         
@@ -598,7 +597,7 @@ def handle_article(_, article):
         failures += 1
         raise
         pass
-    if countPaper(confname, year, volume, number, startPage, pageCount, url):
+    if countPaper(confname, year, volume, number, startPage, pageCount, url, title):
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
                 authorName = authorName["#text"]
