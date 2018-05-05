@@ -486,13 +486,32 @@ class CSRankings {
 	return CSRankings.sum(n) / n.length;
     }
 
-    
+    private static stddev(n : Array<number>) : number
+    {
+	let avg = CSRankings.average(n);
+	let squareDiffs = n.map(function(value){
+	    let diff = value - avg;
+	    return (diff * diff);
+	});
+	let sigma = Math.sqrt(CSRankings.sum(squareDiffs) / (n.length - 1));
+	return sigma;
+    }
+
     private areaString(name : string) : string
     {
-	// Find the area with the most pubs, breaking ties by alphabetical order.
+	// Create a summary of areas, separated by commas,
+	// corresponding to a faculty member's publications.  We only
+	// consider areas within a fixed number of standard deviations
+	// of the max that also comprise a threshold fraction of pubs
+	// (and at least crossing a nin count).
+	const pubThreshold = 0.2;
+	const numStddevs = 1.0;
+	const topN = 3;
+	const minPubThreshold = 1;
 	if (!this.authorAreas[name]) {
 	    return "";
 	}
+	// Create an object containing areas and number of publications.
 	// This is essentially duplicated logic from makeChart and
 	// should be factored out.
 	let datadict : {[key : string] : number } = {};
@@ -505,7 +524,7 @@ class CSRankings {
 	    }
 	    let value = this.authorAreas[name][key];
 	    if (key in CSRankings.parentMap) {
-		key = this.areaDict[key]; // CSRankings.parentMap[key];
+		key = this.areaDict[key];
 	    }
 	    if (value > 0) {
 		if (!(key in datadict)) {
@@ -515,32 +534,30 @@ class CSRankings {
 		maxValue = (datadict[key] > maxValue) ? datadict[key] : maxValue;
 	    }
 	}
-	// Compute std dev.
+	// Now compute the standard deviation.
 	let values : Array<number> = [];
-	// First, the average.
 	for (let key in datadict) {
 	    values.push(datadict[key]);
 	}
-	let avg = CSRankings.average(values);
-	// Now the square differences.
-	let squareDiffs = values.map(function(value){
-	    let diff = value - avg;
-	    return (diff * diff);
-	});
-	let stddev = 0;
+	let sum = CSRankings.sum(values);
+	let stddevs = 0.0;
 	if (values.length > 1) {
-	    stddev = Math.ceil(Math.sqrt(CSRankings.sum(squareDiffs) / (values.length - 1)));
+	    stddevs = Math.ceil(numStddevs * CSRankings.stddev(values));
 	}
-	// Strip out everything not equal to the max.
+	// Strip out everything not within the desired number of
+	// standard deviations of the max and not crossing the
+	// publication threshold.
 	let maxes : Array<string> = [];
-	let maxlen = 0;
 	for (let key in datadict) {
-	    if (datadict[key] >= maxValue - stddev) {
+	    if ((datadict[key] >= maxValue - stddevs) &&
+		((1.0 * datadict[key]) / sum >= pubThreshold) &&
+		(datadict[key] > minPubThreshold))
+	    {
 		maxes.push(key);
 	    }
 	}
-	// Pick at most the top 3.
-	let str = maxes.sort((x, y) => { return datadict[y] - datadict[x];} ).slice(0,3).join(",");
+	// Finally, pick at most the top N.
+	let str = maxes.sort((x, y) => { return datadict[y] - datadict[x];} ).slice(0,topN).join(",");
 	return str;
     }
 
