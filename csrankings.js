@@ -279,6 +279,16 @@ class CSRankings {
             + 'id="ranking" valign="top">';
         return s;
     }
+    static sum(n) {
+        let s = 0.0;
+        for (let i = 0; i < n.length; i++) {
+            s += n[i];
+        }
+        return s;
+    }
+    static average(n) {
+        return CSRankings.sum(n) / n.length;
+    }
     areaString(name) {
         // Find the area with the most pubs, breaking ties by alphabetical order.
         if (!this.authorAreas[name]) {
@@ -306,28 +316,30 @@ class CSRankings {
                 maxValue = (datadict[key] > maxValue) ? datadict[key] : maxValue;
             }
         }
+        // Compute std dev.
+        let values = [];
+        // First, the average.
+        for (let key in datadict) {
+            values.push(datadict[key]);
+        }
+        let avg = CSRankings.average(values);
+        // Now the square differences.
+        let squareDiffs = values.map(function (value) {
+            let diff = value - avg;
+            return (diff * diff);
+        });
+        let stddev = 0;
+        if (values.length > 1) {
+            stddev = Math.ceil(Math.sqrt(CSRankings.sum(squareDiffs) / (values.length - 1)));
+        }
         // Strip out everything not equal to the max.
         let maxes = [];
         for (let key in datadict) {
-            if (datadict[key] == maxValue) {
+            if (datadict[key] >= maxValue - stddev) {
                 maxes.push(key);
             }
         }
-        /*
-            let   newStrList : Array<string> = []
-            datadict.forEach((x) =>
-                       {
-                           if (this.authorAreas[name][maxArea] == this.authorAreas[name][x]) {
-                           newStrList.push(this.areaDict[x]);
-                           }
-                       });
-        */
-        // Filter out duplicates.
-        //	const newStrListNoDups = Array.from(new Set(newStrList));
         let str = maxes.join(",");
-        if (name == "Evangelos Kalogerakis") {
-            console.log(name + str);
-        }
         return str;
     }
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */

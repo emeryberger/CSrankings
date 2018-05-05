@@ -472,6 +472,21 @@ class CSRankings {
 	return s;
     }
 
+    private static sum(n : Array<number>) : number
+    {
+	let s = 0.0;
+	for (let i = 0; i < n.length; i++) {
+	    s += n[i];
+	}
+	return s;
+    }
+
+    private static average(n : Array<number>) : number
+    {
+	return CSRankings.sum(n) / n.length;
+    }
+
+    
     private areaString(name : string) : string
     {
 	// Find the area with the most pubs, breaking ties by alphabetical order.
@@ -500,28 +515,30 @@ class CSRankings {
 		maxValue = (datadict[key] > maxValue) ? datadict[key] : maxValue;
 	    }
 	}
+	// Compute std dev.
+	let values : Array<number> = [];
+	// First, the average.
+	for (let key in datadict) {
+	    values.push(datadict[key]);
+	}
+	let avg = CSRankings.average(values);
+	// Now the square differences.
+	let squareDiffs = values.map(function(value){
+	    let diff = value - avg;
+	    return (diff * diff);
+	});
+	let stddev = 0;
+	if (values.length > 1) {
+	    stddev = Math.ceil(Math.sqrt(CSRankings.sum(squareDiffs) / (values.length - 1)));
+	}
 	// Strip out everything not equal to the max.
 	let maxes : Array<string> = [];
 	for (let key in datadict) {
-	    if (datadict[key] == maxValue) {
+	    if (datadict[key] >= maxValue - stddev) {
 		maxes.push(key);
 	    }
 	}
-/*
-	let   newStrList : Array<string> = []
-	datadict.forEach((x) =>
-			   {
-			       if (this.authorAreas[name][maxArea] == this.authorAreas[name][x]) {
-				   newStrList.push(this.areaDict[x]);
-			       }
-			   });
-*/
-	// Filter out duplicates.
-	//	const newStrListNoDups = Array.from(new Set(newStrList));
 	let str = maxes.join(",");
-	if (name == "Evangelos Kalogerakis") {
-	    console.log(name + str);
-	}
 	return str;
     }
 
