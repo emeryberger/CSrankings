@@ -303,7 +303,7 @@ class CSRankings {
         // corresponding to a faculty member's publications.  We only
         // consider areas within a fixed number of standard deviations
         // of the max that also comprise a threshold fraction of pubs
-        // (and at least crossing a nin count).
+        // (and at least crossing a min count threshold).
         const pubThreshold = 0.2;
         const numStddevs = 1.0;
         const topN = 3;
