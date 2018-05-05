@@ -334,12 +334,14 @@ class CSRankings {
         }
         // Strip out everything not equal to the max.
         let maxes = [];
+        let maxlen = 0;
         for (let key in datadict) {
             if (datadict[key] >= maxValue - stddev) {
                 maxes.push(key);
             }
         }
-        let str = maxes.join(",");
+        // Pick at most the top 3.
+        let str = maxes.sort((x, y) => { return datadict[y] - datadict[x]; }).slice(0, 3).join(",");
         return str;
     }
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
