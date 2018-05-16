@@ -13,20 +13,15 @@ department.
 
 **Updating an affiliation or home page**
 
-- [ ] Update affiliations by modifying `faculty-affiliations.csv`
-
-- [ ] Change the home page by modifying the file `homepages.csv`.
+- [ ] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings.csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put NOSCHOLARPAGE.
 
 **Adding one or more faculty members (including an entire department)**
 
 - [ ] If the department is not yet listed in CSrankings, the entire faculty needs to be added (not just one faculty member).
 
-- [ ] Enter each faculty member's [DBLP](http://dblp.org) name by modifying `faculty-affiliations.csv`; include disambiguation suffixes like 0001 as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
+- [ ] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings.csv`; include disambiguation suffixes like 0001 as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
 
 - [ ] If DBLP has multiple entries for this person, all of them need to be listed. If an alias is not already present in `dblp-aliases.csv`, add it.
-
-- [ ] Enter their home page by modifying the file `homepages.csv`.
-(CSrankings has an automatic home page generator, but it is not perfect.)
 
 - [ ] If the institution you are adding is not in the US,
 update `country-info.csv`.
