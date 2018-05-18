@@ -239,7 +239,8 @@ class CSRankings {
     // Promises polyfill.
     static promise(cont) {
         if (Promise) {
-            Promise.resolve().then(cont);
+            var resolved = Promise.resolve();
+            resolved.then(cont);
         }
         else {
             setTimeout(cont, 0);

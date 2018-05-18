@@ -95,7 +95,8 @@ class CSRankings {
     // Promises polyfill.
     public static promise(cont: () => void) : void {
 	if (Promise) {
-	    Promise.resolve().then(cont);
+	    var resolved = Promise.resolve();
+	    resolved.then(cont);
 	} else {
 	    setTimeout(cont, 0);
 	}
