@@ -169,7 +169,8 @@ class CSRankings {
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-        this.PieChart = "&#9685;"; // symbol that looks close enough to a pie chart
+        //    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
+        this.PieChart = "<img src='png/piechart.png'>"; // symbol that looks close enough to a pie chart
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -234,6 +235,16 @@ class CSRankings {
     // Return the singleton corresponding to this object.
     static getInstance() {
         return CSRankings.theInstance;
+    }
+    // Promises polyfill.
+    static promise(cont) {
+        if (Promise) {
+            var resolved = Promise.resolve();
+            resolved.then(cont);
+        }
+        else {
+            setTimeout(cont, 0);
+        }
     }
     translateNameToDBLP(name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -528,7 +539,7 @@ class CSRankings {
                 for (let aliasPair of d) {
                     aliases[aliasPair.alias] = aliasPair.name;
                 }
-                setTimeout(cont, 0);
+                CSRankings.promise(cont);
             }
         });
     }
@@ -542,7 +553,7 @@ class CSRankings {
                 for (let turingPair of d) {
                     turing[turingPair.name] = turingPair.year;
                 }
-                setTimeout(cont, 0);
+                CSRankings.promise(cont);
             }
         });
     }
@@ -556,7 +567,7 @@ class CSRankings {
                 for (let info of ci) {
                     countryInfo[info.institution] = info.region;
                 }
-                setTimeout(cont, 0);
+                CSRankings.promise(cont);
             }
         });
     }
@@ -573,7 +584,7 @@ class CSRankings {
                     this.homepages[name.trim()] = record['homepage'];
                     this.scholarInfo[name.trim()] = record['scholarid'];
                 }
-                setTimeout(cont, 0);
+                CSRankings.promise(cont);
             }
         });
     }
@@ -584,7 +595,7 @@ class CSRankings {
             complete: (results) => {
                 const data = results.data;
                 this.authors = data;
-                setTimeout(cont, 0);
+                CSRankings.promise(cont);
             }
         });
     }
