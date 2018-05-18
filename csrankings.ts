@@ -91,6 +91,16 @@ class CSRankings {
     public static getInstance() : CSRankings {
 	return CSRankings.theInstance;
     }
+
+    // Promises polyfill.
+    public static promise(cont: () => void) : void {
+	if (Promise) {
+	    var resolved = Promise.resolve();
+	    resolved.then(cont);
+	} else {
+	    setTimeout(cont, 0);
+	}
+    }
     
     constructor() {
 	CSRankings.theInstance = this;
@@ -424,7 +434,8 @@ class CSRankings {
 
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle  = "&#9660;";   // downward-facing triangle symbol (expanded view)
-    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
+//    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
+    private readonly PieChart      = "<img src='png/piechart.png'>";   // symbol that looks close enough to a pie chart
     
     private translateNameToDBLP(name : string) : string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -739,7 +750,7 @@ class CSRankings {
 		for (let aliasPair of d) {
 		    aliases[aliasPair.alias] = aliasPair.name;
 		}
-		setTimeout(cont, 0);
+		CSRankings.promise(cont);
 	    }
 	});
     }
@@ -756,7 +767,7 @@ class CSRankings {
 		for (let turingPair of d) {
 		    turing[turingPair.name] = turingPair.year;
 		}
-		setTimeout(cont, 0);
+		CSRankings.promise(cont);
 	    }
 	});
     }
@@ -772,7 +783,7 @@ class CSRankings {
 		for (let info of ci) {
 		    countryInfo[info.institution] = info.region;
 		}
-		setTimeout(cont, 0);
+		CSRankings.promise(cont);
 	    }
 	});
     }
@@ -790,7 +801,7 @@ class CSRankings {
         	    this.homepages[name.trim()]   = record['homepage'];
 		    this.scholarInfo[name.trim()] = record['scholarid'];
 		}
-		setTimeout(cont, 0);
+		CSRankings.promise(cont);
 	    }
 	});
     }
@@ -802,7 +813,7 @@ class CSRankings {
 	    complete: (results)=> {
 		const data : any = results.data;
 		this.authors = data as Array<Author>;
-		setTimeout(cont, 0);
+		CSRankings.promise(cont);
 	    }
 	});
     }
