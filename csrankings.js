@@ -238,7 +238,7 @@ class CSRankings {
     }
     // Promises polyfill.
     static promise(cont) {
-        if (Promise) {
+        if (typeof Promise !== "undefined") {
             var resolved = Promise.resolve();
             resolved.then(cont);
         }
