@@ -12,83 +12,144 @@ areadict = {
     # Max three most selective venues per area for now.
     #
     # SIGPLAN
-    'plan': ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
-    # SIGHPC
-    'hpc': ['SC', 'HPDC', 'ICS'],
-    # SIGLOG
-    'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
+#    'plan' : ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
+    'popl' : ['POPL'], 
+    'pldi' : ['PLDI'],
+    # "Next tier" - see csrankings.ts
+    'oopsla' : ['OOPSLA'], # Next tier
+    'icfp'   : ['ICFP'],   # Next tier
+    'pacmpl' : ['PACMPL'], # Special PACMPL handling below
     # SIGSOFT
-    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+    #    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+    'icse' : ['ICSE', 'ICSE (1)'],
+    'fse'  : ['SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
+    'ase'  : ['ASE'], # Next tier
+    'issta'  : ['ISSTA'], # Next tier
     # SIGOPS
     # - OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
-    'ops': ['SOSP', 'OSDI', 'EuroSys', 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
-    # SIGARCH
-    'arch': ['ISCA', 'MICRO', 'ASPLOS'],
-    # SIGACT
-    'act': ['STOC', 'FOCS', 'SODA'],
-    # SIGCOMM
-    'comm': ['SIGCOMM', 'INFOCOM', 'NSDI'],
-    # SIGSAC
-    # - USENIX Security listed twice to reflect variants in DBLP
-    'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
-    'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
-    'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
-    # AAAI listed to account for AAAI/IAAI joint conference
-    'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
-    # SIGGRAPH
-    # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
-    'graph': ['ACM Trans. Graph.', 'SIGGRAPH'],
+    # 'ops': ['SOSP', 'OSDI', 'EuroSys'], # 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
+    'sosp' : ['SOSP'],
+    'osdi' : ['OSDI'],
+    'eurosys' : ['EuroSys'], # next tier
+    'fast' : ['FAST'], # next tier
+    'usenixatc' : ['USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'], # next tier
     # SIGMETRICS
     # - Two variants for each, as in DBLP.
-    'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
-    # SIGIR
-    'ir': ['WWW', 'SIGIR'],
-    # SIGCHI
-    'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
-    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
-            'ACL/IJCNLP',  # -- in 2009 was joint
-            'COLING-ACL',  # -- in 1998 was joint
-            'EMNLP-CoNLL',  # -- in 2012 was joint
-            'HLT/EMNLP',  # -- in 2005 was joint
-            ],
-    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+    # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
+    'imc': ['IMC', 'Internet Measurement Conference'],
+    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS'],
     # SIGMOBILE
-    'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
-    'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
-    'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
+    # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
+    'mobisys' : ['MobiSys'],
+    'mobicom' : ['MobiCom', 'MOBICOM'],
+    'sensys'  : ['SenSys'],
+    # SIGHPC
+    # 'hpc': ['SC', 'HPDC', 'ICS'],
+    'sc': ['SC'],
+    'hpdc': ['HPDC'],
+    'ics': ['ICS'],
+    # SIGBED
+    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
+    'emsoft': ['EMSOFT'],
+    'rtss' : ['RTSS'],
+    'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
+    # SIGDA
+    # 'da': ['ICCAD', 'DAC'],
+    'iccad': ['ICCAD'],
+    'dac' : ['DAC'],
+    # SIGMOD
+    # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
+    'vldb' : ['VLDB', 'PVLDB'],
+    'sigmod' : ['SIGMOD Conference'],
+    'icde' : ['ICDE'], # next tier
+    'pods' : ['PODS'], # next tier
+    # SIGSAC
+    # - USENIX Security listed twice to reflect variants in DBLP
+    # 'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
+    'ccs': ['CCS', 'ACM Conference on Computer and Communications Security'],
+    'oakland' : ['IEEE Symposium on Security and Privacy'],
+    'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
+    'ndss' : ['NDSS'],
+    'pets' : ['PoPETs', 'Privacy Enhancing Technologies'],
+    # SIGCOMM
+    # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
+    'sigcomm': ['SIGCOMM'],
+    'nsdi': ['NSDI'], # INFOCOM
+    # SIGARCH
+    # 'arch': ['ISCA', 'MICRO', 'ASPLOS'],
+    'asplos': ['ASPLOS'],
+    'isca': ['ISCA'],
+    'micro': ['MICRO'],
+    'hpca': ['HPCA'], # next tier
+    # SIGLOG
+    # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
+    'cav': ['CAV', 'CAV (1)', 'CAV (2)'],
+    'lics' : ['LICS', 'CSL-LICS'],
+    # SIGACT
+    # 'act': ['STOC', 'FOCS', 'SODA'],
+    'focs': ['FOCS'],
+    'stoc': ['STOC'],
+    'soda': ['SODA'],
+    # 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
+    'nips': ['NIPS'],
+    'icml': ['ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)'],
+    'kdd' : ['KDD'],
+    # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
+    'aaai': ['AAAI', 'AAAI/IAAI'],
+    'ijcai': ['IJCAI'],
+    # AAAI listed to account for AAAI/IAAI joint conference
+    # SIGGRAPH
+    # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
+    'siggraph': ['ACM Trans. Graph.', 'SIGGRAPH'],
+#    'siggraph' : ['SIGGRAPH'],
+    'siggraph-asia' : ['SIGGRAPH Asia'],
+    # SIGIR
+    # 'ir': ['WWW', 'SIGIR'],
+    'sigir': ['SIGIR'],
+    'www': ['WWW'],
+    # SIGCHI
+    # 'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
+    'chiconf' : ['CHI'],
+    'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive'],
+    'uist' : ['UIST'],
+#    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
+#            'ACL/IJCNLP',  # -- in 2009 was joint
+#            'COLING-ACL',  # -- in 1998 was joint
+#            'EMNLP-CoNLL',  # -- in 2012 was joint
+#            'HLT/EMNLP',  # -- in 2005 was joint
+#            ],
+    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP'],
+    'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
+    'naacl' : ['NAACL', 'HLT-NAACL'],
+#    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+    'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
+    'iccv': ['ICCV'],
+    'eccv': ['ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
+    # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
+    'icra': ['ICRA', 'ICRA (1)', 'ICRA (2)'],
+    'iros': ['IROS'],
+    'rss': ['Robotics: Science and Systems'],
+    # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
+    'crypto': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)'],
+    'eurocrypt': ['EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
     # SIGBio
     # - special handling for ISMB proceedings in Bioinformatics special issues.
-    'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
-    # SIGDA
-    'da': ['ICCAD', 'DAC'],
-    # SIGBED
-    'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
+    # 'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
+    'ismb': ['ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
+    'recomb' : ['RECOMB'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
-    'vis': ['IEEE Visualization', 'VR', 'IEEE Trans. Vis. Comput. Graph.'],
-    'ecom' : ['EC', 'WINE']
+    'vis': ['IEEE Visualization', 'IEEE Trans. Vis. Comput. Graph.'],
+    'vr' : ['VR'],
+    # 'ecom' : ['EC', 'WINE']
+    'ec' : ['EC'],
+    'wine' : ['WINE']
     # ,'cse' : ['SIGCSE']
 }
 
-subareaName = {
-    'AAAI' : 'aaai',
-    'AAAI/IAAI' : 'aaai',
-    'IJCAI' : 'ijcai',
-    'CVPR' : 'cvpr',
-    'CVPR (1)' : 'cvpr',
-    'CVPR (2)' : 'cvpr',
-    'ICCV' : 'iccv',
-    'ECCV' : 'eccv',
-    'ECCV (1)' : 'eccv',
-    'ECCV (2)' : 'eccv',
-    'ECCV (3)' : 'eccv',
-    'ECCV (4)' : 'eccv',
-    'ECCV (5)' : 'eccv',
-    'ECCV (6)' : 'eccv',
-    'ECCV (7)' : 'eccv'  }
-
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2016: (32, 12),
+ISMB_Bioinformatics = {2017: (33, 14),
+                       2016: (32, 12),
                        2015: (31, 12),
                        2014: (30, 12),
                        2013: (29, 13),
@@ -119,9 +180,7 @@ TOG_SIGGRAPH_Volume = {2021: (40, 4),
                        2007: (26, 3),
                        2006: (25, 3),
                        2005: (24, 3),
-                       2004: (23, 3),
-                       2003: (22, 3),
-                       2002: (21, 3)
+                       2004: (23, 3)
                        }
 
 # TOG special handling to count only SIGGRAPH Asia proceedings.
@@ -142,8 +201,12 @@ TOG_SIGGRAPH_Asia_Volume = {2021: (40, 6),
                             2008: (27, 5)
                             }
 
-# TVCG special handling to count only IEEE Visualization
-TVCG_Vis_Volume = {2017: (23, 1),
+# TVCG special handling to count only IEEE VIS
+TVCG_Vis_Volume = {2021: (27, 1),
+                   2020: (26, 1),
+                   2019: (25, 1),
+                   2018: (24, 1),
+                   2017: (23, 1),
                    2016: (22, 1),
                    2014: (20, 12),
                    2013: (19, 12),
@@ -157,7 +220,12 @@ TVCG_Vis_Volume = {2017: (23, 1),
                    }
 
 # TVCG special handling to count only IEEE VR
-TVCG_VR_Volume = {2016: (22, 4),
+TVCG_VR_Volume = {2021: (27, 4),
+                  2020: (26, 4),
+                  2019: (25, 4),
+                  2018: (24, 4),
+                  2017: (23, 4),
+                  2016: (22, 4),
                   2015: (21, 4),
                   2014: (20, 4),
                   2013: (19, 4),
@@ -257,6 +325,7 @@ pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 
 
 def do_it():
+#    gz = gzip.GzipFile('dblp-original.xml.gz')
     gz = gzip.GzipFile('dblp.xml.gz')
     xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
 
@@ -319,7 +388,7 @@ def build_dicts():
             venues.append(item)
     facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
-def countPaper(confname, year, volume, number, startPage, pageCount, url):
+def countPaper(confname, year, volume, number, startPage, pageCount, url, title):
     global ISMB_Bioinformatics
     global ICSE_ShortPaperStart
     global SIGMOD_NonResearchPaperStart
@@ -367,18 +436,17 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
                     return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    elif confname == 'ACM Trans. Graph.':
-        SIGGRAPH_Conf = False
+    elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
         if TOG_SIGGRAPH_Volume.has_key(year):
             (vol, num) = TOG_SIGGRAPH_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                SIGGRAPH_Conf = True
+            if not ((volume == str(vol)) and (number == str(num))):
+                return False
+        
+    elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
         if TOG_SIGGRAPH_Asia_Volume.has_key(year):
             (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                SIGGRAPH_Conf = True
-        if not SIGGRAPH_Conf:
-            return False
+            if not((volume == str(vol)) and (number == str(num))):
+                return False
 
     # Special handling for IEEE Vis and VR
     elif confname == 'IEEE Trans. Vis. Comput. Graph.':
@@ -406,11 +474,6 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
         if not url is None:
             if url.find('innovations') != -1:
                 return False
-
-    elif confname == 'PACMPL':
-        # POPL special handling
-        if number != 'POPL':
-            return False
         
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
@@ -425,6 +488,9 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
         exceptionConference = confname == 'SC'
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
+        exceptionConference |= confname == 'NSDI' and year == 2018 # FIXME - hopefully DBLP will fix
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
@@ -434,7 +500,6 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
 
 def handle_article(_, article):
     global confdict
-    global subareaName
     global counter
     global successes
     global failures
@@ -444,6 +509,10 @@ def handle_article(_, article):
     global authlogs
     global interestingauthors
     global facultydict
+    global TOG_SIGGRAPH_Volume
+    global TOG_SIGGRAPH_Asia_Volume
+    global TVCG_Vis_Volume
+    global TVCG_VR_Volume
     counter += 1
     try:
         if counter % 10000 == 0:
@@ -472,18 +541,50 @@ def handle_article(_, article):
             confname = article['journal']
         else:
             return True
+
+        volume = article.get('volume',"0")
+        number = article.get('number',"0")
+        url    = article.get('url',"")
+        year   = int(article.get('year',"-1"))
+        
         if confname in confdict:
             areaname = confdict[confname]
+            #Special handling for PACMPL
+            if confname == 'PACMPL':
+                confname = article['number']
+                if confname in confdict:
+                    areaname = confdict[confname]
+                else:
+                    return True
+            elif confname == 'ACM Trans. Graph.':
+                if TOG_SIGGRAPH_Volume.has_key(year):
+                    (vol, num) = TOG_SIGGRAPH_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        confname = 'SIGGRAPH'
+                        areaname = confdict[confname]
+                if TOG_SIGGRAPH_Asia_Volume.has_key(year):
+                    (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        confname = 'SIGGRAPH Asia'
+                        areaname = confdict[confname]
+            elif confname == 'IEEE Trans. Vis. Comput. Graph.':
+                if TVCG_Vis_Volume.has_key(year):
+                    (vol, num) = TVCG_Vis_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        areaname = 'vis'
+                if TVCG_VR_Volume.has_key(year):
+                    (vol, num) = TVCG_VR_Volume[year]
+                    if (volume == str(vol)) and (number == str(num)):
+                        confname = 'VR'
+                        areaname = 'vr'
+
         else:
             return True
+        
         if 'title' in article:
             title = article['title']
             if type(title) is collections.OrderedDict:
                 title = title["#text"]
-        volume = article.get('volume',"")
-        number = article.get('number',"")
-        url    = article.get('url',"")
-        year   = int(article.get('year',"-1"))
         if 'pages' in article:
             pageCount = pagecount(article['pages'])
             startPage = startpage(article['pages'])
@@ -496,8 +597,9 @@ def handle_article(_, article):
     except:
         print sys.exc_info()[0]
         failures += 1
+        raise
         pass
-    if countPaper(confname, year, volume, number, startPage, pageCount, url):
+    if countPaper(confname, year, volume, number, startPage, pageCount, url, title):
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
                 authorName = authorName["#text"]
@@ -507,7 +609,8 @@ def handle_article(_, article):
                         'title' : title.encode('utf-8'),
                         'conf' : confname,
                         'area' : areaname,
-                        'institution' : facultydict[authorName] }
+                        'institution' : facultydict[authorName],
+                        'numauthors' : authorsOnPaper }
                 if not volume is "":
                     log['volume'] = volume
                 if not number is "":
@@ -520,13 +623,8 @@ def handle_article(_, article):
                 tmplist.append(log)
                 authlogs[authorName] = tmplist
                 interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
-                if confname in subareaName:
-                    subarea = subareaName[confname]
-                    # areaname = subarea # FIXME?
-                else:
-                    subarea = ""
-                authorscores[(authorName, areaname, subarea, year)] = authorscores.get((authorName, areaname, subarea, year), 0) + 1.0
-                authorscoresAdjusted[(authorName, areaname, subarea, year)] = authorscoresAdjusted.get((authorName, areaname, subarea, year), 0) + 1.0 / authorsOnPaper
+                authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
+                authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
     return True
 
 def sortdictionary(d):
@@ -540,18 +638,18 @@ def dump_it():
     global interestingauthors
     global facultydict
     with open('generated-author-info.csv','w') as f:
-        f.write('"name","dept","area","subarea","count","adjustedcount","year"\n')
+        f.write('"name","dept","area","count","adjustedcount","year"\n')
         authorscores = collections.OrderedDict(sorted(authorscores.iteritems()))
-        for ((authorName, area, subarea, year), count) in authorscores.iteritems():
+        for ((authorName, area, year), count) in authorscores.iteritems():
             # count = authorscores[(authorName, area, year)]
-            countAdjusted = authorscoresAdjusted[(authorName, area, subarea, year)]
+            countAdjusted = authorscoresAdjusted[(authorName, area, year)]
             f.write(authorName.encode('utf-8'))
             f.write(',')
             f.write((facultydict[authorName].encode('utf-8')))
             f.write(',')
             f.write(area)
-            f.write(',')
-            f.write(subarea)
+#            f.write(',')
+#            f.write(subarea)
             f.write(',')
             f.write(str(count))
             f.write(',')
