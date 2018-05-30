@@ -6,7 +6,7 @@ Thanks for contributing to CSrankings! Here are some guidelines to getting your 
 
 - [ ] Make sure that any faculty you add meet the inclusion
 criteria. Eligible faculty include only full-time, tenure-track
-faculty members on a given campus who can advise PhD students in
+faculty members on a given campus who can *solely* advise PhD students in
 Computer Science. Faculty not in a CS department or similar who can
 advise PhD students in CS can be included regardless of their home
 department.
