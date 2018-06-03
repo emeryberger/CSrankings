@@ -1,28 +1,41 @@
 institution,region
+Aalto University,europe
 Aarhus University,europe
 American University of Beirut,asia
 Ariel University,europe
-Athens University of Economics and Business,europe
+AUEB,europe
 Australian National University,australasia
 BITS Pilani,asia
 Bar-Ilan University,europe
+Beihang University,asia
+Ben-Gurion University of the Negev,europe
 CMI,asia
 CWI,europe
 Carleton University,canada
-Chinese University of Hong Kong,asia
+CISPA Helmholtz Center i.G.,europe
+Chinese Academy of Sciences,asia
 Chinese University of Hong Kong,asia
 Chulalongkorn University,asia
 Concordia University,canada
+Cyprus University of Technology,europe
 DAIICT,asia
 Dalhousie University,canada
-DIKU,europe
+University of Copenhagen,europe
 EPFL,europe
 ETH Zurich,europe
+ETS Montreal,canada
 Ecole Normale Superieure de Cachan,europe
 Ecole Normale Superieure de Lyon,europe
 Ecole Normale Superieure,europe
+EURECOM,europe
+Qatar Computing Research Institute,asia
+Queen Mary University of London,europe
+Hacettepe University,europe
+Harbin Institute of Technology,asia
+HEC Montreal,canada
 Hebrew University of Jerusalem,europe
-Hong Kong University of Science and Technology,asia
+HKUST,asia
+Hong Kong Baptist University,asia
 IIIT Bangalore,asia
 IIIT Delhi,asia
 IIIT Hyderabad,asia
@@ -44,47 +57,59 @@ IIT Patna,asia
 IIT Roorkee,asia
 IIT Ropar,asia
 IMDEA Software Institute,europe
+IMSc,asia
+Institute of Computing Technology, asia
 IST Austria,europe
 IT University of Copenhagen,europe
 Imperial College London,europe
 KAIST,asia
 KAUST,asia
 King Abdulaziz University,asia
+KU Leuven,europe
 Lebanese American University,asia
 Lund University,europe
-Masdar Institute of Science and Technology,asia
+Masdar Institute,asia
 Massey University,australasia
 Max Planck Institute,europe
 McGill University,canada
 McMaster University,canada
 Monash University,australasia
-Nanjing University, asia
+Nanjing University,asia
 NYU Shanghai,asia
 Nanyang Technological University,asia
 National Taiwan University,asia
 National University of Singapore,asia
+Peking University,asia
 Politecnico di Milano,europe
 Polytechnic University of Catalonia,europe
 POSTECH,asia
 Qatar University,asia
 Queen’s University,canada
 RWTH Aachen,europe
+Ryerson University,canada
 Shanghai Jiao Tong University,asia
+Shanghai University of Finance and Economics,asia
 Sharif University of Technology,asia
 Simon Fraser University,canada
-Singapore University of Technology and Design,asia
+Singapore Management University,asia
+SUTD,asia
+Tata Institute of Fundamental Research,asia
 Tsinghua University,asia
 TU Darmstadt,europe
 TU Delft,europe
 TU Dresden,europe
 TU Eindhoven,europe
 TU Munich,europe
-Technion - Israel Institute of Technology,europe
+Technion,europe
 Tel Aviv University,europe
 Texas A&M at Qatar,asia
 UNSW,australasia
+USTC,asia
+UNIST,asia
 Universidad de Chile,southamerica
+Universidade de Brasília,southamerica
 Universidade de Lisboa,europe
+UFMG,southamerica
 Université Jean Monnet,europe
 University College London,europe
 University of Adelaide,australasia
@@ -92,14 +117,20 @@ University of Alberta,canada
 University of Athens,europe
 University of Auckland,australasia
 University of Bath,europe
+University of Bern,europe
 University of Bristol,europe
 University of British Columbia,canada
 University of Buenos Aires,southamerica
 University of Calgary,canada
 University of Cambridge,europe
-University of Campinas,southamerica
+UNICAMP,southamerica
 University of Canterbury,australasia
+University of Chinese Academy of Sciences,asia
+University of Dundee,europe
 University of Edinburgh,europe
+University of Freiburg,europe
+University of Glasgow,europe
+University of Guelph,canada
 University of Jordan,asia
 University of Kent,europe
 University of Liverpool,europe
@@ -108,6 +139,8 @@ University of Manchester,europe
 University of Manitoba,canada
 University of Melbourne,australasia
 University of Montreal,canada
+University of Murcia,europe
+University of New Brunswick,canada
 University of Otago,australasia
 University of Ottawa,canada
 University of Oxford,europe
@@ -115,8 +148,9 @@ University of Passau,europe
 University of Pisa, europe
 University of Queensland,australasia
 University of Salerno,europe
+USP,southamerica
+University of Salzburg,europe
 University of Saskatchewan,canada
-University of Science and Technology of China,asia
 University of Sydney,australasia
 University of Tartu,europe
 University of Tokyo,asia
@@ -134,3 +168,18 @@ VU Amsterdam,europe
 Victoria University of Wellington,australasia
 Western University,canada
 York University,canada
+Zhejiang University,asia
+Bielefeld University,europe
+KTH Royal Institute of Technology,europe
+UFPE,southamerica
+UFRGS,southamerica
+UFU,southamerica
+UFRJ,southamerica
+PUC-RIO,southamerica
+USP-ICMC,southamerica
+UFF,southamerica
+PUC-RS,southamerica
+Universidade Federal de Viçosa,southamerica
+Koç University,europe
+RMIT University,australasia
+University of Sussex,europe
