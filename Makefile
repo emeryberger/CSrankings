@@ -1,44 +1,76 @@
+#
+# CSrankings
+# http://csrankings.org
+# Copyright (C) 2017 by Emery Berger <http://emeryberger.org>
+# See COPYING for license information.
+#
+
 TARGETS = csrankings.js generated-author-info.csv
 
-.PHONY: home-pages fix-affiliations
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
-all: generated-author-info.csv csrankings.js fix-affiliations home-pages 
+PYTHON = python2.7
+
+all: generated-author-info.csv csrankings.js # fix-affiliations home-pages scholar-links
 
 clean:
 	rm $(TARGETS)
 
 csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
-	tsc --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
+	tsc --target es6 --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
+	closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
-	@echo "Downloading from DBLP."
-	rm -f dblp.xml.gz
-	wget http://dblp.org/xml/dblp.xml.gz
+	$(MAKE) download-dblp
+	$(MAKE) clean-dblp
+	@echo "Done."
+
+clean-dblp:
 	@echo "Fixing character encodings."
 	sh ./util/fix-dblp.sh
 	mv dblp-fixed.xml dblp.xml
-	$(MAKE) shrink
-	@echo "Done."
+	$(MAKE) shrink-dblp
 
-shrink:
-	@echo "Shrinking the file."
+download-dblp:
+	@echo "Downloading from DBLP."
+	rm -f dblp.xml.gz
+	wget http://dblp.org/xml/dblp.xml.gz
+
+shrink-dblp:
+	@echo "Shrinking the DBLP file."
 	basex -c filter.xq > dblp2.xml
 	gzip dblp2.xml
 	mv dblp.xml.gz dblp-original.xml.gz
 	mv dblp2.xml.gz dblp.xml.gz
 
+faculty-affiliations.csv homepages.csv scholar.csv: csrankings.csv
+	@echo "Splitting main datafile (csrankings.csv)."
+	@$(PYTHON) util/split-csv.py
+# @echo "Sorting."
+# @$(PYTHON) util/merge-csv.py
+#	@echo "Cleaning."
+#	@$(PYTHON) util/clean-csrankings.py
+	@echo "Done."
+
 home-pages: faculty-affiliations.csv homepages.csv
 	@echo "Rebuilding home pages (homepages.csv)."
-	@python util/make-web-pages.py
+	@$(PYTHON) util/make-web-pages.py
 	@echo "Cleaning home pages."
-	@python util/clean-web-pages.py
+	@$(PYTHON) util/clean-web-pages.py
 	@mv homepages-sorted.csv homepages.csv
+	@echo "Done."
+
+scholar-links: faculty-affiliations.csv homepages.csv
+	@echo "Rebuilding Google Scholar links (scholar.csv)."
+	@$(PYTHON) util/make-scholar-links.py
+	@echo "Cleaning Scholar links."
+	@$(PYTHON) util/clean-scholar-links.py
 	@echo "Done."
 
 fix-affiliations: faculty-affiliations.csv
 	@echo "Updating affiliations."
-	@python util/fix-affiliations.py | sort -k2 -t"," | uniq > /tmp/f1.csv
+	@$(PYTHON) util/fix-affiliations.py | sort -k2 -t"," | uniq > /tmp/f1.csv
 	@echo "name,affiliation" | cat - /tmp/f1.csv >  /tmp/f2.csv
 	@rm /tmp/f1.csv
 	@mv /tmp/f2.csv faculty-affiliations.csv
@@ -50,7 +82,7 @@ faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csran
 
 generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate-data.py util/csrankings.py
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
-	pypy util/regenerate-data.py
+	@pypy util/regenerate-data.py
 	@echo "Done."
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv

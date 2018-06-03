@@ -6,6 +6,6 @@ fi
 IFS='
 '
 for i in $(<$1)
-do xmllint --xpath 'string(//authors/author)' "http://dblp.uni-trier.de/search/author?xauthor=$i" 
+do xmllint --xpath 'string(//authors/author)' "http://dblp.org/search/author?xauthor=$i" 
    echo ""
 done
