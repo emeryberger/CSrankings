@@ -112,7 +112,7 @@ areadict = {
     'chiconf' : ['CHI'],
     'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive'],
     'uist' : ['UIST'],
-#    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL',
+#    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL', 'NAACL-HLT',
 #            'ACL/IJCNLP',  # -- in 2009 was joint
 #            'COLING-ACL',  # -- in 1998 was joint
 #            'EMNLP-CoNLL',  # -- in 2012 was joint
@@ -120,7 +120,7 @@ areadict = {
 #            ],
     'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP'],
     'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
-    'naacl' : ['NAACL', 'HLT-NAACL'],
+    'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT'],
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
     'iccv': ['ICCV'],
