@@ -116,6 +116,7 @@
 //inproceedings[booktitle="RTAS"],
 //inproceedings[booktitle="IEEE Real-Time and Embedded Technology and Applications Symposium"],
 //inproceedings[booktitle="EMSOFT"],
+//article[journal="ACM Trans. Embedded Comput. Syst."],
 //article[journal="ACM Trans. Graph."],
 //inproceedings[booktitle="SIGGRAPH"],
 //inproceedings[booktitle="ASE"],
