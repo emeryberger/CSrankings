@@ -50,7 +50,7 @@ areadict = {
     'ics': ['ICS'],
     # SIGBED
     # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
-    'emsoft': ['EMSOFT'],
+    'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.'], # TECS: issue number & page numbers must be checked
     'rtss' : ['RTSS'],
     'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
     # SIGDA
@@ -145,6 +145,10 @@ areadict = {
     'wine' : ['WINE']
     # ,'cse' : ['SIGCSE']
 }
+
+# EMSOFT is now published as a special issue of TECS, in a particular page range.
+EMSOFT_TECS = { 2017: (16, 5) }
+EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
@@ -322,7 +326,8 @@ pageCountThreshold = 6
 pageCounterNormal = re.compile('(\d+)-(\d+)')
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
-
+# Special regexp for extracting pseudo-volumes (paper number) from TECS.
+TECSCounterColon = re.compile('([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*')
 
 def do_it():
 #    gz = gzip.GzipFile('dblp-original.xml.gz')
@@ -388,7 +393,10 @@ def build_dicts():
             venues.append(item)
     facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
-def countPaper(confname, year, volume, number, startPage, pageCount, url, title):
+def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
+    global EMSOFT_TECS
+    global EMSOFT_TECS_PaperNumbers
+    global TECSCounterColon
     global ISMB_Bioinformatics
     global ICSE_ShortPaperStart
     global SIGMOD_NonResearchPaperStart
@@ -403,6 +411,18 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url, title)
     if year < startyear or year > endyear:
         return False
 
+    # Special handling for EMSOFT.
+    if confname == 'ACM Trans. Embedded Comput. Syst.':
+        if EMSOFT_TECS.has_key(year):
+            pvmatcher = TECSCounterColon.match(pages)
+            if not pvmatcher is None:
+                pseudovolume = int(pvmatcher.group(1))
+                (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
+                if pseudovolume < int(startpv) or pseudovolume > int(endpv):
+                    return False
+        else:
+            return False
+        
     # Special handling for ISMB.
     if confname == 'Bioinformatics':
         if ISMB_Bioinformatics.has_key(year):
@@ -546,6 +566,7 @@ def handle_article(_, article):
         number = article.get('number',"0")
         url    = article.get('url',"")
         year   = int(article.get('year',"-1"))
+        pages  = ""
         
         if confname in confdict:
             areaname = confdict[confname]
@@ -586,8 +607,9 @@ def handle_article(_, article):
             if type(title) is collections.OrderedDict:
                 title = title["#text"]
         if 'pages' in article:
-            pageCount = pagecount(article['pages'])
-            startPage = startpage(article['pages'])
+            pages = article['pages']
+            pageCount = pagecount(pages)
+            startPage = startpage(pages)
         else:
             pageCount = -1
             startPage = -1
@@ -599,7 +621,7 @@ def handle_article(_, article):
         failures += 1
         raise
         pass
-    if countPaper(confname, year, volume, number, startPage, pageCount, url, title):
+    if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
                 authorName = authorName["#text"]
