@@ -20,6 +20,7 @@ for i in row_box:
             year = year.text
         else:
             year = "0"
+        # Process the name, adding dots to middle names if needed.
         name = HumanName(name)
         if len(name.first) == 1:
             name.first = name.first + "."
@@ -30,19 +31,10 @@ for i in row_box:
         else:
             names[name.first + ' ' + name.last] = year
 
+# Write out a csv.
 with open('acm-fellows.csv', 'w', newline='') as csvfile:
     fieldnames = ['name','year']
     wr = csv.DictWriter(csvfile, fieldnames = fieldnames)
     wr.writeheader()
     for n in names:
         wr.writerow({'name' : n, 'year' : names[n]})
-
-                
-
-#                print(name.first+' '+name.middle+'. '+name.last)
-#            else:
-#                print(name.first+' '+name.middle+' '+name.last)
-#        else:
-#            print(name.first+' '+name.last)
-#print(row_box.text)
-
