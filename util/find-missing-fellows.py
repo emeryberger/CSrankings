@@ -37,12 +37,16 @@ for name in fellowdict:
         continue
     # Clear hit in faculty DB.
     if name in facultydict:
-        print name + "," + fellowdict[name]
+        if name in aliasdict:
+            print aliasdict[name].encode('utf8'),
+        else:
+            print name.encode('utf8'),
+        print "," + fellowdict[name]
         continue
     # In the alias DB. Look for a clear match there.
     if name in aliasdict:
         if aliasdict[name] in fellowdict:
-            print name + "," + fellowdict[name]
+            print aliasdict[name] + "," + fellowdict[name]
             continue
     # Look for a fuzzy match.
     if name in fuzzfac:
