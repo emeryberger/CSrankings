@@ -57,6 +57,11 @@ interface Turing {
     readonly year : number;
 };
 
+interface ACMFellow {
+    readonly name : string;
+    readonly year : number;
+};
+
 interface HomePage {
     readonly name : string;
     readonly homepage : string;
@@ -143,21 +148,23 @@ class CSRankings {
 	this.displayProgress(1);
 	this.loadAliases(this.aliases, ()=> {
 	    this.loadTuring(this.turing, ()=> {
-		this.displayProgress(2);
-		this.loadAuthorInfo(()=> {
-		    this.displayProgress(3);
-		    this.loadAuthors(()=> {
-			this.setAllOn();
-			this.navigoRouter.on({
-			    '/index' : this.navigation,
-			    '/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
-			}).resolve();
-			this.displayProgress(4);
-			this.loadCountryInfo(this.countryInfo, ()=> {
-			    setTimeout(()=> {
-				this.addListeners();
-				CSRankings.geoCheck();
-			    }, 0);
+		this.loadACMFellow(this.acmfellow, ()=> {
+		    this.displayProgress(2);
+		    this.loadAuthorInfo(()=> {
+			this.displayProgress(3);
+			this.loadAuthors(()=> {
+			    this.setAllOn();
+			    this.navigoRouter.on({
+				'/index' : this.navigation,
+				'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
+			    }).resolve();
+			    this.displayProgress(4);
+			    this.loadCountryInfo(this.countryInfo, ()=> {
+				setTimeout(()=> {
+				    this.addListeners();
+				    CSRankings.geoCheck();
+				}, 0);
+			    });
 			});
 		    });
 		});
@@ -170,6 +177,7 @@ class CSRankings {
     private readonly countryinfoFile    = "/country-info.csv";
     private readonly aliasFile          = "/dblp-aliases.csv";
     private readonly turingFile         = "./turing.csv";
+    private readonly acmfellowFile      = "./acm-fellows.csv";
     private readonly homepageImage      ="/house-logo.png";
     
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
@@ -405,6 +413,9 @@ class CSRankings {
 
     /* Map Turing award winners to year */
     private readonly turing : {[key : string] : number } = {};
+
+    /* Map ACM Fellow award winners to year */
+    private readonly acmfellow : {[key : string] : number } = {};
 
     /* Map institution to (non-US) region. */
     private readonly countryInfo : {[key : string] : string } = {};
@@ -766,6 +777,23 @@ class CSRankings {
 		const d = data as Array<Turing>;
 		for (let turingPair of d) {
 		    turing[turingPair.name] = turingPair.year;
+		}
+		CSRankings.promise(cont);
+	    }
+	});
+    }
+
+    private loadACMFellow(acmfellow: {[key : string] : number },
+		       cont : ()=> void ) : void
+    {
+	Papa.parse(this.acmfellowFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const d = data as Array<ACMFellow>;
+		for (let acmfellowPair of d) {
+		    acmfellow[acmfellowPair.name] = acmfellowPair.year;
 		}
 		CSRankings.promise(cont);
 	    }
@@ -1154,8 +1182,15 @@ class CSRankings {
 		    + '>' 
 		    + name
 		    + '</a>&nbsp;';
-		if (this.turing.hasOwnProperty(name)) {
-		    p += '<b>[Turing Award winner]</b>&nbsp;';
+		if (this.acmfellow.hasOwnProperty(name) && this.turing.hasOwnProperty(name)) {
+			p += '<b>[Turing Award, ACM Fellow]</b>&nbsp;';
+		} else {
+		    if (this.acmfellow.hasOwnProperty(name)) {
+			p += '<b>[ACM Fellow]</b>&nbsp;';
+		    }
+		    if (this.turing.hasOwnProperty(name)) {
+			p += '<b>[Turing Award]</b>&nbsp;';
+		    }
 		}
 		p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
 		
