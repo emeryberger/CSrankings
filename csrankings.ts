@@ -1182,15 +1182,11 @@ class CSRankings {
 		    + '>' 
 		    + name
 		    + '</a>&nbsp;';
-		if (this.acmfellow.hasOwnProperty(name) && this.turing.hasOwnProperty(name)) {
-			p += '<b>[Turing Award, ACM Fellow]</b>&nbsp;';
-		} else {
-		    if (this.acmfellow.hasOwnProperty(name)) {
-			p += '<b>[ACM Fellow]</b>&nbsp;';
-		    }
-		    if (this.turing.hasOwnProperty(name)) {
-			p += '<b>[Turing Award]</b>&nbsp;';
-		    }
+		if (this.acmfellow.hasOwnProperty(name)) {
+		    p += '<span title="ACM Fellow"><img src="png/acm.png"></span>&nbsp;';
+		}
+		if (this.turing.hasOwnProperty(name)) {
+		    p += '<span title="Turing Award"><img src="png/acm-turing-award.png"></span>&nbsp;';
 		}
 		p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
 		
