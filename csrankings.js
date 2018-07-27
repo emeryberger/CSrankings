@@ -20,6 +20,7 @@
 ;
 ;
 ;
+;
 class CSRankings {
     constructor() {
         this.authorFile = "/csrankings.csv";
@@ -27,6 +28,7 @@ class CSRankings {
         this.countryinfoFile = "/country-info.csv";
         this.aliasFile = "/dblp-aliases.csv";
         this.turingFile = "./turing.csv";
+        this.acmfellowFile = "./acm-fellows.csv";
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
         this.areaMap = [{ area: "ai", title: "AI" },
@@ -152,6 +154,8 @@ class CSRankings {
         this.aliases = {};
         /* Map Turing award winners to year */
         this.turing = {};
+        /* Map ACM Fellow award winners to year */
+        this.acmfellow = {};
         /* Map institution to (non-US) region. */
         this.countryInfo = {};
         /* Map name to home page. */
@@ -211,21 +215,23 @@ class CSRankings {
         this.displayProgress(1);
         this.loadAliases(this.aliases, () => {
             this.loadTuring(this.turing, () => {
-                this.displayProgress(2);
-                this.loadAuthorInfo(() => {
-                    this.displayProgress(3);
-                    this.loadAuthors(() => {
-                        this.setAllOn();
-                        this.navigoRouter.on({
-                            '/index': this.navigation,
-                            '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
-                        }).resolve();
-                        this.displayProgress(4);
-                        this.loadCountryInfo(this.countryInfo, () => {
-                            setTimeout(() => {
-                                this.addListeners();
-                                CSRankings.geoCheck();
-                            }, 0);
+                this.loadACMFellow(this.acmfellow, () => {
+                    this.displayProgress(2);
+                    this.loadAuthorInfo(() => {
+                        this.displayProgress(3);
+                        this.loadAuthors(() => {
+                            this.setAllOn();
+                            this.navigoRouter.on({
+                                '/index': this.navigation,
+                                '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
+                            }).resolve();
+                            this.displayProgress(4);
+                            this.loadCountryInfo(this.countryInfo, () => {
+                                setTimeout(() => {
+                                    this.addListeners();
+                                    CSRankings.geoCheck();
+                                }, 0);
+                            });
                         });
                     });
                 });
@@ -552,6 +558,20 @@ class CSRankings {
                 const d = data;
                 for (let turingPair of d) {
                     turing[turingPair.name] = turingPair.year;
+                }
+                CSRankings.promise(cont);
+            }
+        });
+    }
+    loadACMFellow(acmfellow, cont) {
+        Papa.parse(this.acmfellowFile, {
+            header: true,
+            download: true,
+            complete: (results) => {
+                const data = results.data;
+                const d = data;
+                for (let acmfellowPair of d) {
+                    acmfellow[acmfellowPair.name] = acmfellowPair.year;
                 }
                 CSRankings.promise(cont);
             }
@@ -900,8 +920,11 @@ class CSRankings {
                     + '>'
                     + name
                     + '</a>&nbsp;';
+                if (this.acmfellow.hasOwnProperty(name)) {
+                    p += '<span title="ACM Fellow"><img src="png/acm.png"></span>&nbsp;';
+                }
                 if (this.turing.hasOwnProperty(name)) {
-                    p += '<b>[Turing Award winner]</b>&nbsp;';
+                    p += '<span title="Turing Award"><img src="png/acm-turing-award.png"></span>&nbsp;';
                 }
                 p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
