@@ -152,7 +152,8 @@ EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2017: (33, 14),
+ISMB_Bioinformatics = {2018: (34, 13),
+                       2017: (33, 14),
                        2016: (32, 12),
                        2015: (31, 12),
                        2014: (30, 12),
