@@ -32,6 +32,11 @@ interface AuthorInfo {
     readonly scholarid   : string;
 };
 
+interface DBLPName {
+    readonly name : string;
+    readonly dblpname : string;
+};
+
 interface Author {
     readonly name : string;
     readonly dept : string;
@@ -422,8 +427,6 @@ class CSRankings {
     /* Map institution to (non-US) region. */
     private readonly countryInfo : {[key : string] : string } = {};
 
-    private articles : Array<Article>;
-    
     /* Map name to home page. */
     private readonly homepages : {[key : string] : string } = {}; 
 
@@ -433,6 +436,9 @@ class CSRankings {
     /* The data which will hold the parsed CSV of author info. */
     private authors   : Array<Author> = [];
 
+    /* The DBLP-transformed strings per author. */
+    private dblpAuthors : {[name : string] : string} = {};
+    
     /* Map authors to the areas they have published in (for pie chart display). */
     private authorAreas : {[name : string] : {[area : string] : number } } = {};
 
@@ -447,16 +453,13 @@ class CSRankings {
 
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle  = "&#9660;";   // downward-facing triangle symbol (expanded view)
-//    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
-    private readonly PieChart      = "<img src='png/piechart.png'>";   // symbol that looks close enough to a pie chart
+    private readonly PieChart      = "<img src='png/piechart.png'>"; // pie chart image
     
     private translateNameToDBLP(name : string) : string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
 	// First, replace spaces and non-ASCII characters (not complete).
 	// Known issue: does not properly handle suffixes like Jr., III, etc.
 	name = name.replace(/'|\-|\./g, "=");
-//	name = name.replace(/\-/g, "=");
-//	name = name.replace(/\./g, "=");
 	name = name.replace(/Á/g, "=Aacute=");
 	name = name.replace(/á/g, "=aacute=");
 	name = name.replace(/è/g, "=egrave=");
@@ -827,9 +830,12 @@ class CSRankings {
 		const ai = data as Array<AuthorInfo>;
 		for (let counter = 0; counter < ai.length; counter++) {
 		    const record = ai[counter];
-		    let name = record['name'];
-        	    this.homepages[name.trim()]   = record['homepage'];
-		    this.scholarInfo[name.trim()] = record['scholarid'];
+		    let name = record['name'].trim();
+		    if (name !== "") {
+			this.dblpAuthors[name] = this.translateNameToDBLP(name);
+        		this.homepages[name]   = record['homepage'];
+			this.scholarInfo[name] = record['scholarid'];
+		    }
 		}
 		CSRankings.promise(cont);
 	    }
@@ -1172,7 +1178,7 @@ class CSRankings {
 	    for (let name of keys) {
 
 		let homePage = encodeURI(this.homepages[name]);
-		let dblpName = this.translateNameToDBLP(name);
+		let dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
 		
 		p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		    + '<a title="Click for author\'s home page." target="_blank" href="'

@@ -21,6 +21,7 @@
 ;
 ;
 ;
+;
 class CSRankings {
     constructor() {
         this.authorFile = "/csrankings.csv";
@@ -166,6 +167,8 @@ class CSRankings {
         this.useDenseRankings = false;
         /* The data which will hold the parsed CSV of author info. */
         this.authors = [];
+        /* The DBLP-transformed strings per author. */
+        this.dblpAuthors = {};
         /* Map authors to the areas they have published in (for pie chart display). */
         this.authorAreas = {};
         /* Computed stats (univagg). */
@@ -175,8 +178,7 @@ class CSRankings {
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-        //    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
-        this.PieChart = "<img src='png/piechart.png'>"; // symbol that looks close enough to a pie chart
+        this.PieChart = "<img src='png/piechart.png'>"; // pie chart image
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -259,8 +261,6 @@ class CSRankings {
         // First, replace spaces and non-ASCII characters (not complete).
         // Known issue: does not properly handle suffixes like Jr., III, etc.
         name = name.replace(/'|\-|\./g, "=");
-        //	name = name.replace(/\-/g, "=");
-        //	name = name.replace(/\./g, "=");
         name = name.replace(/Á/g, "=Aacute=");
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
@@ -602,9 +602,12 @@ class CSRankings {
                 const ai = data;
                 for (let counter = 0; counter < ai.length; counter++) {
                     const record = ai[counter];
-                    let name = record['name'];
-                    this.homepages[name.trim()] = record['homepage'];
-                    this.scholarInfo[name.trim()] = record['scholarid'];
+                    let name = record['name'].trim();
+                    if (name !== "") {
+                        this.dblpAuthors[name] = this.translateNameToDBLP(name);
+                        this.homepages[name] = record['homepage'];
+                        this.scholarInfo[name] = record['scholarid'];
+                    }
                 }
                 CSRankings.promise(cont);
             }
@@ -911,7 +914,7 @@ class CSRankings {
             });
             for (let name of keys) {
                 let homePage = encodeURI(this.homepages[name]);
-                let dblpName = this.translateNameToDBLP(name);
+                let dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
                     + '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
