@@ -28,7 +28,9 @@ class CSRankings {
         this.countryinfoFile = "/country-info.csv";
         this.aliasFile = "/dblp-aliases.csv";
         this.turingFile = "./turing.csv";
+        this.turingImage = "./png/acm-turing-award.png";
         this.acmfellowFile = "./acm-fellows.csv";
+        this.acmfellowImage = "./png/acm.png";
         this.homepageImage = "/house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
         this.areaMap = [{ area: "ai", title: "AI" },
@@ -921,10 +923,12 @@ class CSRankings {
                     + name
                     + '</a>&nbsp;';
                 if (this.acmfellow.hasOwnProperty(name)) {
-                    p += '<span title="ACM Fellow"><img src="png/acm.png"></span>&nbsp;';
+                    p += '<span title="ACM Fellow"><img src="' +
+                        this.acmfellowImage + '"></span>&nbsp;';
                 }
                 if (this.turing.hasOwnProperty(name)) {
-                    p += '<span title="Turing Award"><img src="png/acm-turing-award.png"></span>&nbsp;';
+                    p += '<span title="Turing Award"><img src="' +
+                        this.turingImage + '"></span>&nbsp;';
                 }
                 p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
