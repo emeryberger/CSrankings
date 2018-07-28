@@ -177,7 +177,9 @@ class CSRankings {
     private readonly countryinfoFile    = "/country-info.csv";
     private readonly aliasFile          = "/dblp-aliases.csv";
     private readonly turingFile         = "./turing.csv";
+    private readonly turingImage        = "./png/acm-turing-award.png";
     private readonly acmfellowFile      = "./acm-fellows.csv";
+    private readonly acmfellowImage     = "./png/acm.png";
     private readonly homepageImage      ="/house-logo.png";
     
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
@@ -1183,10 +1185,12 @@ class CSRankings {
 		    + name
 		    + '</a>&nbsp;';
 		if (this.acmfellow.hasOwnProperty(name)) {
-		    p += '<span title="ACM Fellow"><img src="png/acm.png"></span>&nbsp;';
+		    p += '<span title="ACM Fellow"><img src="' +
+			this.acmfellowImage + '"></span>&nbsp;';
 		}
 		if (this.turing.hasOwnProperty(name)) {
-		    p += '<span title="Turing Award"><img src="png/acm-turing-award.png"></span>&nbsp;';
+		    p += '<span title="Turing Award"><img src="' +
+			this.turingImage + '"></span>&nbsp;';
 		}
 		p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
 		
