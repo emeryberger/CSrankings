@@ -1028,17 +1028,17 @@ class CSRankings {
 		continue;
 	    }
 	    let { name, year, area, dept } = this.authors[r];
-	    if (name in this.aliases) {
-		name = this.aliases[name];
-	    }
-	    if (typeof dept === 'undefined') {
-		continue;
-	    }
 	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
 		continue;
 	    }
 	    if (!this.inRegion(dept, regions)) {
 		continue;
+	    }
+	    if (typeof dept === 'undefined') {
+		continue;
+	    }
+	    if (name in this.aliases) {
+		name = this.aliases[name];
 	    }
 	    // If this area is a child area, accumulate totals for parent.
 	    if (area in CSRankings.parentMap) {
