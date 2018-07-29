@@ -727,13 +727,14 @@ class CSRankings {
             if (!this.authors.hasOwnProperty(r)) {
                 continue;
             }
-            const auth = this.authors[r];
-            const year = auth.year;
+            let { name, year, area, dept, count, adjustedcount } = this.authors[r];
+            //	    const auth = this.authors[r];
+            //	    const year = auth.year;
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            const theArea = auth.area;
-            if (theArea in CSRankings.nextTier) {
+            //	    const theArea  = auth.area;
+            if (area in CSRankings.nextTier) {
                 continue;
             }
             /*
@@ -744,10 +745,10 @@ class CSRankings {
             continue;
             }
             */
-            const theDept = auth.dept;
-            const theCount = parseFloat(auth.count);
-            //	    const theCount = parseFloat(auth.adjustedcount);
-            let name = auth.name;
+            //	    const theDept  = auth.dept;
+            const theCount = parseFloat(count);
+            //	    const theCount = parseFloat(adjustedcount);
+            //	    let name : string  = auth.name;
             if (name in this.aliases) {
                 name = this.aliases[name];
             }
@@ -759,16 +760,16 @@ class CSRankings {
                     }
                 }
             }
-            if (!(theDept in this.authorAreas)) {
-                this.authorAreas[theDept] = {};
+            if (!(dept in this.authorAreas)) {
+                this.authorAreas[dept] = {};
                 for (let area in this.areaDict) {
                     if (this.areaDict.hasOwnProperty(area)) {
-                        this.authorAreas[theDept][area] = 0;
+                        this.authorAreas[dept][area] = 0;
                     }
                 }
             }
-            this.authorAreas[name][theArea] += theCount;
-            this.authorAreas[theDept][theArea] += theCount;
+            this.authorAreas[name][area] += theCount;
+            this.authorAreas[dept][area] += theCount;
         }
     }
     /* Build the dictionary of departments (and count) to be ranked. */
