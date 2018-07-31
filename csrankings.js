@@ -614,12 +614,20 @@ class CSRankings {
         });
     }
     loadAuthors(cont) {
+        // NOTE: aliases MUST have been loaded already.
         Papa.parse(this.authorinfoFile, {
             download: true,
             header: true,
             complete: (results) => {
                 const data = results.data;
                 this.authors = data;
+                for (let r in this.authors) {
+                    let { name, area, dept, subarea, count, adjustedcount, year } = this.authors[r];
+                    if (name in this.aliases) {
+                        name = this.aliases[name];
+                        this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
+                    }
+                }
                 CSRankings.promise(cont);
             }
         });
@@ -749,9 +757,9 @@ class CSRankings {
             const theCount = parseFloat(count);
             //	    const theCount = parseFloat(adjustedcount);
             //	    let name : string  = auth.name;
-            if (name in this.aliases) {
-                name = this.aliases[name];
-            }
+            //	    if (name in this.aliases) {
+            //		name = this.aliases[name];
+            //	    }
             if (!(name in this.authorAreas)) {
                 this.authorAreas[name] = {};
                 for (let area in this.areaDict) {
@@ -790,9 +798,9 @@ class CSRankings {
             if (typeof dept === 'undefined') {
                 continue;
             }
-            if (name in this.aliases) {
-                name = this.aliases[name];
-            }
+            //	    if (name in this.aliases) {
+            //		name = this.aliases[name];
+            //	    }
             // If this area is a child area, accumulate totals for parent.
             if (area in CSRankings.parentMap) {
                 area = CSRankings.parentMap[area];
