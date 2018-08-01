@@ -1,12 +1,14 @@
 from csrankings import *
+import json
+import gzip
+
+authorPaperCountThreshold = 0
 
 def parseDBLP(facultydict):
     coauthors = {}
     papersWritten = {}
     counter = 0
-    with open('dblp.xml', mode='r') as f:
-        
-    # with gzip.open('dblp.xml.gz') as f:
+    with gzip.open('dblp.xml.gz') as f:
 
         oldnode = None
         
@@ -31,10 +33,18 @@ def parseDBLP(facultydict):
                 
                 for child in node:
                     if (child.tag == 'booktitle' or child.tag == 'journal'):
-                        if (child.text in confdict):
+                        if True: # INCLUDE ALL VENUES
+                            # if (confname in confdict):
                             foundArticle = True
                             confname = child.text
                         break
+                    if (child.tag == 'volume'):
+                        volume = child.text
+                    if (child.tag == 'number'):
+                        number = child.text
+                    if child.tag == 'year':
+                        if child.text is not None:
+                            year = int(child.text)
 
                 if (not foundArticle):
                     # Nope.
@@ -44,19 +54,36 @@ def parseDBLP(facultydict):
 
                 # Check that dates are in the specified range.
                 
-                for child in node:
-                    if (child.tag == 'year'): #  and type(child.text) is str):
-                        year = int(child.text)
-                        if ((year >= startyear) and (year <= endyear)):
-                            inRange = True
-                        break
+                if ((year >= startyear) and (year <= endyear)):
+                    inRange = True
 
                 if (not inRange):
                     # Out of range.
                     continue
 
+                # Count the number of pages. It needs to exceed our threshold to be considered.
+                pageCount = -1
+                for child in node:
+                    if (child.tag == 'pages'):
+                        pageCount = pagecount(child.text)
+
+                tooFewPages = False
+                if ((pageCount != -1) and (pageCount < pageCountThreshold)):
+                    tooFewPages = True
+                    exceptionConference = confname == 'SC'
+                    exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
+                    exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
+                    if exceptionConference:
+                        tooFewPages = False
+
+                if (tooFewPages):
+                    continue
+
                 coauthorsList = []
-                areaname = confdict[confname]
+                if not confname in confdict:
+                    areaname = "na"
+                else:
+                    areaname = confdict[confname]
 
                 for child in node:
                     if (child.tag == 'author'):
@@ -75,29 +102,6 @@ def parseDBLP(facultydict):
                 if (authorsOnPaper == 0):
                     continue
                 
-                # Count the number of pages. It needs to exceed our threshold to be considered.
-                pageCount = -1
-                for child in node:
-                    if (child.tag == 'pages'):
-                        pageCount = pagecount(child.text)
-
-                tooFewPages = False
-                if ((pageCount != -1) and (pageCount < pageCountThreshold)):
-                    tooFewPages = True
-                    if ((pageCount == 0) and ((confname == 'SC') or (confname == 'SIGSOFT FSE') or (confname == 'PLDI') or (confname == 'ACM Trans. Graph.'))):
-                        tooFewPages = False
-                    # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
-                    # Only skip papers with a very small paper count,
-                    # but above 1. Why?
-                    # DBLP has real papers with incorrect page counts
-                    # - usually a truncated single page. -1 means no
-                    # pages found at all => some problem with journal
-                    # entries in DBLP.
-                    # print "Skipping article with "+str(pageCount)+" pages."
-
-                if (tooFewPages):
-                    continue
-
                 counter = counter + 1
                 
                 for child in node:
@@ -107,8 +111,9 @@ def parseDBLP(facultydict):
                         if (authorName in facultydict):
                             for coauth in coauthorsList:
                                 if (coauth != authorName):
-                                    coauthors[authorName][(year,areaname)].add(coauth)
-                                    coauthors[coauth][(year,areaname)].add(authorName)
+                                    if (coauth in facultydict):
+                                        coauthors[authorName][(year,areaname)].add(coauth)
+                                        coauthors[coauth][(year,areaname)].add(authorName)
 
     o = open('faculty-coauthors.csv', 'w')
     o.write('"author","coauthor","year","area"\n')
