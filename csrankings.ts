@@ -93,6 +93,8 @@ class CSRankings {
     private static theInstance : CSRankings; // singleton for this object
     
     public static readonly areas   : Array<string> = [];
+    public static readonly topLevelAreas : {[key : string] : string } = {};
+    public static readonly topTierAreas : {[key : string] : string }  = {};
     public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
 
     private navigoRouter : Navigo;
@@ -122,6 +124,12 @@ class CSRankings {
 	for (let position = 0; position < this.areaMap.length; position++) {
 	    const { area, title }      = this.areaMap[position];
 	    CSRankings.areas[position] = area;
+	    if (!(area in CSRankings.parentMap)) {
+		CSRankings.topLevelAreas[area] = area;
+	    }
+	    if (!(area in CSRankings.nextTier)) {
+		CSRankings.topTierAreas[area] = area;
+	    }
 	    this.areaNames[position]   = title;
 	    this.fields[position]      = area;
 	    this.areaDict[area]        = title; // this.areaNames[position];
@@ -542,13 +550,13 @@ class CSRankings {
 	// This is essentially duplicated logic from makeChart and
 	// should be factored out.
 	let datadict : {[key : string] : number } = {};
-	const keys = CSRankings.areas;
+	const keys = CSRankings.topTierAreas;
 	let maxValue = 0;
-	for (let i = 0; i < keys.length; i++) {
-	    let key = keys[i];
-	    if (key in CSRankings.nextTier) {
-		continue;
-	    }
+	for (let key in keys) { // i = 0; i < keys.length; i++) {
+//	    let key = keys[i];
+//	    if (key in CSRankings.nextTier) {
+//		continue;
+//	    }
 	    let value = this.authorAreas[name][key];
 	    if (key in CSRankings.parentMap) {
 		key = this.areaDict[key];
@@ -616,18 +624,18 @@ class CSRankings {
     {
 	let data : Array<ChartData> = [];
 	let datadict : {[key : string] : number } = {};
-	const keys = CSRankings.areas;
+	const keys = CSRankings.topTierAreas;
 	const uname = unescape(name);
-	for (let i = 0; i < keys.length; i++) {
-	    let key = keys[i];
+	for (let key in keys) { // i = 0; i < keys.length; i++) {
+//	    let key = keys[i];
 	    if (!(uname in this.authorAreas)) {
 		// Defensive programming.
 		// This should only happen if we have an error in the aliases file.
 		return;
 	    }
-	    if (key in CSRankings.nextTier) {
-		continue;
-	    }
+//	    if (key in CSRankings.nextTier) {
+//		continue;
+//	    }
 	    let value = this.authorAreas[uname][key];
 	    
 	    // Use adjusted count if this is for a department.
@@ -974,7 +982,7 @@ class CSRankings {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { name, year, area, dept, count, adjustedcount } = this.authors[r];
+	    let { name, year, area, dept, count } = this.authors[r];
 //	    const auth = this.authors[r];
 //	    const year = auth.year;
 	    if ((year < startyear) || (year > endyear)) {
@@ -1090,11 +1098,11 @@ class CSRankings {
 		continue;
 	    }
 	    this.stats[dept] = 1;
-	    for (let area of CSRankings.areas) {
+	    for (let area in CSRankings.topLevelAreas) {
 		// If this area is a child area, skip it.
-		if (area in CSRankings.parentMap) {
-		    continue;
-		}
+//		if (area in CSRankings.parentMap) {
+//		    continue;
+//		}
 		let areaDept = area+dept;
 		if (!(areaDept in this.areaDeptAdjustedCount)) {
 		    this.areaDeptAdjustedCount[areaDept] = 0;
@@ -1644,22 +1652,21 @@ class CSRankings {
 	}
 	if (foundAll) {
 	    // Set everything.
-	    for (let position = 0; position < CSRankings.areas.length; position++) {
-		let item = CSRankings.areas[position]
-		if (!(item in CSRankings.nextTier)) {
-		    let str = "input[name="+item+"]";
-		    jQuery(str).prop('checked', true);
-		    if (item in CSRankings.childMap) {
-			// It's a parent. Enable it.
-			jQuery(str).prop('disabled', false);
-			// and activate all children.
-			CSRankings.childMap[item].forEach((k)=> {
-			    if (!(k in CSRankings.nextTier)) {
-				jQuery('input[name='+k+']').prop('checked', true);
-			    }
-			});
-		    }
+	    for (let item in CSRankings.topTierAreas) {
+//		if (!(item in CSRankings.nextTier)) {
+		let str = "input[name="+item+"]";
+		jQuery(str).prop('checked', true);
+		if (item in CSRankings.childMap) {
+		    // It's a parent. Enable it.
+		    jQuery(str).prop('disabled', false);
+		    // and activate all children.
+		    CSRankings.childMap[item].forEach((k)=> {
+			if (!(k in CSRankings.nextTier)) {
+			    jQuery('input[name='+k+']').prop('checked', true);
+			}
+		    });
 		}
+		//		}
 	    }
 	    // And we're out.
 	    return;
