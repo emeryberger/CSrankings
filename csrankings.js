@@ -21,7 +21,6 @@
 ;
 ;
 ;
-;
 class CSRankings {
     constructor() {
         this.authorFile = "/csrankings.csv";
@@ -628,10 +627,12 @@ class CSRankings {
                 const data = results.data;
                 this.authors = data;
                 for (let r in this.authors) {
-                    let { name, area, dept, subarea, count, adjustedcount, year } = this.authors[r];
+                    let name = this.authors[r].name;
                     if (name in this.aliases) {
                         name = this.aliases[name];
-                        this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
+                        this.authors[r].name = name;
+                        //			let { area, dept, subarea, count, adjustedcount, year } = this.authors[r];
+                        //			this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
                     }
                 }
                 CSRankings.promise(cont);
@@ -741,16 +742,14 @@ class CSRankings {
             if (!this.authors.hasOwnProperty(r)) {
                 continue;
             }
-            let { name, year, area, dept, count } = this.authors[r];
-            //	    const auth = this.authors[r];
-            //	    const year = auth.year;
-            if ((year < startyear) || (year > endyear)) {
-                continue;
-            }
-            //	    const theArea  = auth.area;
+            let { year, area } = this.authors[r];
             if (area in CSRankings.nextTier) {
                 continue;
             }
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            let { name, dept, count } = this.authors[r];
             /*
               DISABLING weight selection so all pie charts look the
               same regardless of which areas are currently selected:
@@ -759,13 +758,7 @@ class CSRankings {
             continue;
             }
             */
-            //	    const theDept  = auth.dept;
             const theCount = parseFloat(count);
-            //	    const theCount = parseFloat(adjustedcount);
-            //	    let name : string  = auth.name;
-            //	    if (name in this.aliases) {
-            //		name = this.aliases[name];
-            //	    }
             if (!(name in this.authorAreas)) {
                 this.authorAreas[name] = {};
                 for (let area in this.areaDict) {
@@ -795,18 +788,15 @@ class CSRankings {
                 continue;
             }
             let { name, year, area, dept } = this.authors[r];
-            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+            if (!this.inRegion(dept, regions)) {
                 continue;
             }
-            if (!this.inRegion(dept, regions)) {
+            if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
                 continue;
             }
             if (typeof dept === 'undefined') {
                 continue;
             }
-            //	    if (name in this.aliases) {
-            //		name = this.aliases[name];
-            //	    }
             // If this area is a child area, accumulate totals for parent.
             if (area in CSRankings.parentMap) {
                 area = CSRankings.parentMap[area];
@@ -844,10 +834,6 @@ class CSRankings {
             }
             this.stats[dept] = 1;
             for (let area in CSRankings.topLevelAreas) {
-                // If this area is a child area, skip it.
-                //		if (area in CSRankings.parentMap) {
-                //		    continue;
-                //		}
                 let areaDept = area + dept;
                 if (!(areaDept in this.areaDeptAdjustedCount)) {
                     this.areaDeptAdjustedCount[areaDept] = 0;
@@ -879,6 +865,7 @@ class CSRankings {
         }
         return numAreas;
     }
+    /// This is no longer necessary since we pre-canonicalize all names.
     canonicalizeNames(deptNames, facultycount, facultyAdjustedCount) {
         for (let dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
@@ -1123,7 +1110,9 @@ class CSRankings {
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
         /* Canonicalize names. */
-        this.canonicalizeNames(deptNames, facultycount, facultyAdjustedCount);
+        //	this.canonicalizeNames(deptNames,
+        //			       facultycount,
+        //			       facultyAdjustedCount);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         const s = this.buildOutputString(numAreas, deptCounts, univtext);
