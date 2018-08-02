@@ -86,7 +86,7 @@ class CSRankings {
     public static readonly topLevelAreas : {[key : string] : string } = {};
     public static readonly topTierAreas : {[key : string] : string }  = {};
     public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
-
+    
     private navigoRouter : Navigo;
 
     // Return the singleton corresponding to this object.
@@ -445,6 +445,8 @@ class CSRankings {
 
     private areaDeptAdjustedCount : {[key: string] : number} = {}; /* area+dept */
     
+    private areaStringMap : {[key : string] : string } = {}; // name -> areaString (memoized)
+
     /* Colors for all areas. */
     private readonly color : Array<string> =
 	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
@@ -524,6 +526,9 @@ class CSRankings {
 
     private areaString(name : string) : string
     {
+	if (name in this.areaStringMap) {
+	    return this.areaStringMap[name];
+	}
 	// Create a summary of areas, separated by commas,
 	// corresponding to a faculty member's publications.  We only
 	// consider areas within a fixed number of standard deviations
@@ -583,6 +588,9 @@ class CSRankings {
 	}
 	// Finally, pick at most the top N.
 	let str = maxes.sort((x, y) => { return datadict[y] - datadict[x];} ).slice(0,topN).join(",");
+	// Cache the result.
+	this.areaStringMap[name] = str;
+	// Return it.
 	return str;
     }
 
@@ -974,10 +982,11 @@ class CSRankings {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { year, area } = this.authors[r];
+	    let { area } = this.authors[r];
 	    if (area in CSRankings.nextTier) {
 		continue;
 	    }
+	    let { year } = this.authors[r];
 	    if ((year < startyear) || (year > endyear)) {
 		continue;
 	    }
@@ -1374,7 +1383,7 @@ class CSRankings {
     /* PUBLIC METHODS */
     
     public rank(update : boolean = true) : boolean {
-//	let start = performance.now();
+	let start = performance.now();
 	
 	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
@@ -1431,8 +1440,8 @@ class CSRankings {
 	}
 	this.urlUpdate();
 	
-//	let stop = performance.now();
-//	console.log("Rank took "+(stop - start)+" milliseconds.");
+	let stop = performance.now();
+	console.log("Rank took "+(stop - start)+" milliseconds.");
 	
 	return false; 
     }
