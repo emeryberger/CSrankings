@@ -162,6 +162,7 @@ class CSRankings {
 				'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
 			    }).resolve();
 			    this.displayProgress(4);
+			    this.countAuthorAreas();
 			    this.loadCountryInfo(this.countryInfo, ()=> {
 				setTimeout(()=> {
 				    this.addListeners();
@@ -974,10 +975,11 @@ class CSRankings {
 	return keys;
     }
 
-    private countAuthorAreas(startyear : number,
-			     endyear : number) : void
-    
+    private countAuthorAreas() : void
     {
+	const startyear          = parseInt(jQuery("#fromyear").find(":selected").text());
+	const endyear            = parseInt(jQuery("#toyear").find(":selected").text());
+	this.authorAreas = {}
 	for (let r in this.authors) {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
@@ -1398,9 +1400,7 @@ class CSRankings {
 
 	let numAreas = this.updateWeights(currentWeights);
 	
-	this.authorAreas = {}
-	this.countAuthorAreas(startyear,
-			      endyear);
+//	this.countAuthorAreas();
 	
 	this.buildDepartments(startyear,
 			      endyear,
@@ -1750,7 +1750,7 @@ class CSRankings {
     private addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
-	    widget!.addEventListener("change", ()=> { this.rank(); });
+	    widget!.addEventListener("change", ()=> { this.countAuthorAreas(); this.rank(); });
 	});
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'
