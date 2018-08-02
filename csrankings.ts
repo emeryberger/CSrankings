@@ -863,11 +863,9 @@ class CSRankings {
     }
 
     private inRegion(dept : string,
-			    regions : string): boolean
+		     regions : string): boolean
     {
 	switch (regions) {
-	case "world":
-	    break;
 	case "USA":
 	    if (dept in this.countryInfo) {
 		return false;
@@ -917,6 +915,8 @@ class CSRankings {
 	    if (this.countryInfo[dept] != "asia") {
 		return false;
 	    }
+	    break;
+	case "world":
 	    break;
 	}
 	return true;
@@ -1028,16 +1028,24 @@ class CSRankings {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { name, year, area, dept } = this.authors[r];
+	    let auth = this.authors[r];
+	    let dept = auth.dept;
+//	    if (!(dept in regionMap)) {
 	    if (!this.inRegion(dept, regions)) {
 		continue;
 	    }
-	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+	    let area = auth.area;
+	    if (weights[area] === 0) {
+		continue;
+	    }
+	    let year = auth.year;
+	    if ((year < startyear) || (year > endyear)) {
 		continue;
 	    }
 	    if (typeof dept === 'undefined') {
 		continue;
 	    }
+	    let name = auth.name;
 	    // If this area is a child area, accumulate totals for parent.
 	    if (area in CSRankings.parentMap) {
 		area = CSRankings.parentMap[area];
@@ -1366,6 +1374,8 @@ class CSRankings {
     /* PUBLIC METHODS */
     
     public rank(update : boolean = true) : boolean {
+//	let start = performance.now();
+	
 	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
@@ -1420,6 +1430,10 @@ class CSRankings {
 	    this.navigoRouter.resume();
 	}
 	this.urlUpdate();
+	
+//	let stop = performance.now();
+//	console.log("Rank took "+(stop - start)+" milliseconds.");
+	
 	return false; 
     }
 
