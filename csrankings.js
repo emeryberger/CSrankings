@@ -173,6 +173,7 @@ class CSRankings {
         /* Computed stats (univagg). */
         this.stats = {};
         this.areaDeptAdjustedCount = {}; /* area+dept */
+        this.areaStringMap = {}; // name -> areaString (memoized)
         /* Colors for all areas. */
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
@@ -323,6 +324,9 @@ class CSRankings {
         return sigma;
     }
     areaString(name) {
+        if (name in this.areaStringMap) {
+            return this.areaStringMap[name];
+        }
         // Create a summary of areas, separated by commas,
         // corresponding to a faculty member's publications.  We only
         // consider areas within a fixed number of standard deviations
@@ -381,6 +385,7 @@ class CSRankings {
         }
         // Finally, pick at most the top N.
         let str = maxes.sort((x, y) => { return datadict[y] - datadict[x]; }).slice(0, topN).join(",");
+        this.areaStringMap[name] = str;
         return str;
     }
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
@@ -1102,7 +1107,7 @@ class CSRankings {
     }
     /* PUBLIC METHODS */
     rank(update = true) {
-        //	let start = performance.now();
+        let start = performance.now();
         let deptNames = {}; /* names of departments. */
         let deptCounts = {}; /* number of faculty in each department. */
         let facultycount = {}; /* name + dept -> raw count of pubs per name / department */
@@ -1134,8 +1139,8 @@ class CSRankings {
             this.navigoRouter.resume();
         }
         this.urlUpdate();
-        //	let stop = performance.now();
-        //	console.log("Rank took "+(stop - start)+" milliseconds.");
+        let stop = performance.now();
+        console.log("Rank took " + (stop - start) + " milliseconds.");
         return false;
     }
     /* Turn the chart display on or off. */
