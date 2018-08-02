@@ -236,6 +236,7 @@ class CSRankings {
                                 '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
                             }).resolve();
                             this.displayProgress(4);
+                            this.countAuthorAreas();
                             this.loadCountryInfo(this.countryInfo, () => {
                                 setTimeout(() => {
                                     this.addListeners();
@@ -385,7 +386,9 @@ class CSRankings {
         }
         // Finally, pick at most the top N.
         let str = maxes.sort((x, y) => { return datadict[y] - datadict[x]; }).slice(0, topN).join(",");
+        // Cache the result.
         this.areaStringMap[name] = str;
+        // Return it.
         return str;
     }
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
@@ -742,15 +745,19 @@ class CSRankings {
         });
         return keys;
     }
-    countAuthorAreas(startyear, endyear) {
+    countAuthorAreas() {
+        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        this.authorAreas = {};
         for (let r in this.authors) {
             if (!this.authors.hasOwnProperty(r)) {
                 continue;
             }
-            let { year, area } = this.authors[r];
+            let { area } = this.authors[r];
             if (area in CSRankings.nextTier) {
                 continue;
             }
+            let { year } = this.authors[r];
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
@@ -1118,8 +1125,7 @@ class CSRankings {
         const endyear = parseInt(jQuery("#toyear").find(":selected").text());
         const whichRegions = jQuery("#regions").find(":selected").val();
         let numAreas = this.updateWeights(currentWeights);
-        this.authorAreas = {};
-        this.countAuthorAreas(startyear, endyear);
+        //	this.countAuthorAreas();
         this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
@@ -1435,7 +1441,7 @@ class CSRankings {
     addListeners() {
         ["toyear", "fromyear", "regions"].forEach((key) => {
             const widget = document.getElementById(key);
-            widget.addEventListener("change", () => { this.rank(); });
+            widget.addEventListener("change", () => { this.countAuthorAreas(); this.rank(); });
         });
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
