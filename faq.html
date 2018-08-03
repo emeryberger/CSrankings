@@ -7,6 +7,12 @@
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+      });
+    </script>
+    <script type="text/javascript" src="https://www.tuhh.de/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
     
     <title>FAQ - CSRankings: Computer Science Rankings (beta)</title>
 
@@ -194,13 +200,15 @@
 			    exactly once, with credit adjusted by splitting evenly
 			    across all co-authors. This approach makes it impossible to
 			    boost rankings simply by adding authors to a paper.
-			    <b>Average count</b> computes the
-			    geometric mean of the adjusted counts in
-			    each area (+ 1) for each
-			    institution. <em>This approach normalizes
-			    for the size of areas, so that large and
-			    small areas are weighed the same,
-			    regardless of publication rate.</em>
+			  </p>
+			  <p>
+			    <b>Average count</b> is the geometric mean
+			    of the adjusted counts per area (for n areas selected, this is the nth
+			    root of the product of all adjusted counts (+ 1)).
+			    $$averageCount = \sqrt[N]{\prod_{i=1}^N(adjustedCounts_i + 1)}$$
+			    <em>This
+			      computation implicitly normalizes for publication rates and sizes of
+			      areas.</em>
 			  </p>
 			  <p>
 			    Note that publications must be at least 6 pages long to be counted.
