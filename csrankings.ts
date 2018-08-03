@@ -15,16 +15,6 @@
 declare function escape(s:string): string;
 declare function unescape(s:string): string;
 
-interface Article {
-    readonly name : string;
-    readonly conf : string;
-    readonly area : string;
-    readonly subarea : string;
-    readonly year : number;
-    readonly title : string;
-    readonly institution : string;
-};
-
 interface AuthorInfo {
     readonly name        : string;
     readonly affiliation : string;
@@ -32,8 +22,13 @@ interface AuthorInfo {
     readonly scholarid   : string;
 };
 
-interface Author {
+interface DBLPName {
     readonly name : string;
+    readonly dblpname : string;
+};
+
+interface Author {
+    name : string;
     readonly dept : string;
     readonly area : string;
     readonly subarea : string;
@@ -53,6 +48,11 @@ interface Alias {
 };
 
 interface Turing {
+    readonly name : string;
+    readonly year : number;
+};
+
+interface ACMFellow {
     readonly name : string;
     readonly year : number;
 };
@@ -83,8 +83,10 @@ class CSRankings {
     private static theInstance : CSRankings; // singleton for this object
     
     public static readonly areas   : Array<string> = [];
+    public static readonly topLevelAreas : {[key : string] : string } = {};
+    public static readonly topTierAreas : {[key : string] : string }  = {};
     public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
-
+    
     private navigoRouter : Navigo;
 
     // Return the singleton corresponding to this object.
@@ -112,6 +114,12 @@ class CSRankings {
 	for (let position = 0; position < this.areaMap.length; position++) {
 	    const { area, title }      = this.areaMap[position];
 	    CSRankings.areas[position] = area;
+	    if (!(area in CSRankings.parentMap)) {
+		CSRankings.topLevelAreas[area] = area;
+	    }
+	    if (!(area in CSRankings.nextTier)) {
+		CSRankings.topTierAreas[area] = area;
+	    }
 	    this.areaNames[position]   = title;
 	    this.fields[position]      = area;
 	    this.areaDict[area]        = title; // this.areaNames[position];
@@ -143,21 +151,24 @@ class CSRankings {
 	this.displayProgress(1);
 	this.loadAliases(this.aliases, ()=> {
 	    this.loadTuring(this.turing, ()=> {
-		this.displayProgress(2);
-		this.loadAuthorInfo(()=> {
-		    this.displayProgress(3);
-		    this.loadAuthors(()=> {
-			this.setAllOn();
-			this.navigoRouter.on({
-			    '/index' : this.navigation,
-			    '/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
-			}).resolve();
-			this.displayProgress(4);
-			this.loadCountryInfo(this.countryInfo, ()=> {
-			    setTimeout(()=> {
-				this.addListeners();
-				CSRankings.geoCheck();
-			    }, 0);
+		this.loadACMFellow(this.acmfellow, ()=> {
+		    this.displayProgress(2);
+		    this.loadAuthorInfo(()=> {
+			this.displayProgress(3);
+			this.loadAuthors(()=> {
+			    this.setAllOn();
+			    this.navigoRouter.on({
+				'/index' : this.navigation,
+				'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
+			    }).resolve();
+			    this.displayProgress(4);
+			    this.countAuthorAreas();
+			    this.loadCountryInfo(this.countryInfo, ()=> {
+				setTimeout(()=> {
+				    this.addListeners();
+				    CSRankings.geoCheck();
+				}, 0);
+			    });
 			});
 		    });
 		});
@@ -170,6 +181,9 @@ class CSRankings {
     private readonly countryinfoFile    = "/country-info.csv";
     private readonly aliasFile          = "/dblp-aliases.csv";
     private readonly turingFile         = "./turing.csv";
+    private readonly turingImage        = "./png/acm-turing-award.png";
+    private readonly acmfellowFile      = "./acm-fellows.csv";
+    private readonly acmfellowImage     = "./png/acm.png";
     private readonly homepageImage      ="/house-logo.png";
     
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
@@ -406,11 +420,12 @@ class CSRankings {
     /* Map Turing award winners to year */
     private readonly turing : {[key : string] : number } = {};
 
+    /* Map ACM Fellow award winners to year */
+    private readonly acmfellow : {[key : string] : number } = {};
+
     /* Map institution to (non-US) region. */
     private readonly countryInfo : {[key : string] : string } = {};
 
-    private articles : Array<Article>;
-    
     /* Map name to home page. */
     private readonly homepages : {[key : string] : string } = {}; 
 
@@ -420,6 +435,9 @@ class CSRankings {
     /* The data which will hold the parsed CSV of author info. */
     private authors   : Array<Author> = [];
 
+    /* The DBLP-transformed strings per author. */
+    private dblpAuthors : {[name : string] : string} = {};
+    
     /* Map authors to the areas they have published in (for pie chart display). */
     private authorAreas : {[name : string] : {[area : string] : number } } = {};
 
@@ -428,22 +446,21 @@ class CSRankings {
 
     private areaDeptAdjustedCount : {[key: string] : number} = {}; /* area+dept */
     
+    private areaStringMap : {[key : string] : string } = {}; // name -> areaString (memoized)
+
     /* Colors for all areas. */
     private readonly color : Array<string> =
 	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
 
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle  = "&#9660;";   // downward-facing triangle symbol (expanded view)
-//    private readonly PieChart      = "&#9685;";   // symbol that looks close enough to a pie chart
-    private readonly PieChart      = "<img src='png/piechart.png'>";   // symbol that looks close enough to a pie chart
+    private readonly PieChart      = "<img src='png/piechart.png'>"; // pie chart image
     
     private translateNameToDBLP(name : string) : string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
 	// First, replace spaces and non-ASCII characters (not complete).
 	// Known issue: does not properly handle suffixes like Jr., III, etc.
 	name = name.replace(/'|\-|\./g, "=");
-//	name = name.replace(/\-/g, "=");
-//	name = name.replace(/\./g, "=");
 	name = name.replace(/Á/g, "=Aacute=");
 	name = name.replace(/á/g, "=aacute=");
 	name = name.replace(/è/g, "=egrave=");
@@ -510,6 +527,9 @@ class CSRankings {
 
     private areaString(name : string) : string
     {
+	if (name in this.areaStringMap) {
+	    return this.areaStringMap[name];
+	}
 	// Create a summary of areas, separated by commas,
 	// corresponding to a faculty member's publications.  We only
 	// consider areas within a fixed number of standard deviations
@@ -526,13 +546,13 @@ class CSRankings {
 	// This is essentially duplicated logic from makeChart and
 	// should be factored out.
 	let datadict : {[key : string] : number } = {};
-	const keys = CSRankings.areas;
+	const keys = CSRankings.topTierAreas;
 	let maxValue = 0;
-	for (let i = 0; i < keys.length; i++) {
-	    let key = keys[i];
-	    if (key in CSRankings.nextTier) {
-		continue;
-	    }
+	for (let key in keys) { // i = 0; i < keys.length; i++) {
+//	    let key = keys[i];
+//	    if (key in CSRankings.nextTier) {
+//		continue;
+//	    }
 	    let value = this.authorAreas[name][key];
 	    if (key in CSRankings.parentMap) {
 		key = this.areaDict[key];
@@ -569,6 +589,9 @@ class CSRankings {
 	}
 	// Finally, pick at most the top N.
 	let str = maxes.sort((x, y) => { return datadict[y] - datadict[x];} ).slice(0,topN).join(",");
+	// Cache the result.
+	this.areaStringMap[name] = str;
+	// Return it.
 	return str;
     }
 
@@ -600,18 +623,18 @@ class CSRankings {
     {
 	let data : Array<ChartData> = [];
 	let datadict : {[key : string] : number } = {};
-	const keys = CSRankings.areas;
+	const keys = CSRankings.topTierAreas;
 	const uname = unescape(name);
-	for (let i = 0; i < keys.length; i++) {
-	    let key = keys[i];
+	for (let key in keys) { // i = 0; i < keys.length; i++) {
+//	    let key = keys[i];
 	    if (!(uname in this.authorAreas)) {
 		// Defensive programming.
 		// This should only happen if we have an error in the aliases file.
 		return;
 	    }
-	    if (key in CSRankings.nextTier) {
-		continue;
-	    }
+//	    if (key in CSRankings.nextTier) {
+//		continue;
+//	    }
 	    let value = this.authorAreas[uname][key];
 	    
 	    // Use adjusted count if this is for a department.
@@ -772,6 +795,23 @@ class CSRankings {
 	});
     }
 
+    private loadACMFellow(acmfellow: {[key : string] : number },
+		       cont : ()=> void ) : void
+    {
+	Papa.parse(this.acmfellowFile, {
+	    header: true,
+	    download : true,
+	    complete : (results)=> {
+		const data : any = results.data;
+		const d = data as Array<ACMFellow>;
+		for (let acmfellowPair of d) {
+		    acmfellow[acmfellowPair.name] = acmfellowPair.year;
+		}
+		CSRankings.promise(cont);
+	    }
+	});
+    }
+
     private loadCountryInfo(countryInfo : {[key : string] : string },
 			    cont : () => void ) : void {
 	Papa.parse(this.countryinfoFile, {
@@ -797,9 +837,12 @@ class CSRankings {
 		const ai = data as Array<AuthorInfo>;
 		for (let counter = 0; counter < ai.length; counter++) {
 		    const record = ai[counter];
-		    let name = record['name'];
-        	    this.homepages[name.trim()]   = record['homepage'];
-		    this.scholarInfo[name.trim()] = record['scholarid'];
+		    let name = record['name'].trim();
+		    if (name !== "") {
+			this.dblpAuthors[name] = this.translateNameToDBLP(name);
+        		this.homepages[name]   = record['homepage'];
+			this.scholarInfo[name] = record['scholarid'];
+		    }
 		}
 		CSRankings.promise(cont);
 	    }
@@ -807,23 +850,31 @@ class CSRankings {
     }
 
     private loadAuthors(cont : () => void) : void {
+	// NOTE: aliases MUST have been loaded already.
 	Papa.parse(this.authorinfoFile, {
 	    download : true,
 	    header : true,
 	    complete: (results)=> {
 		const data : any = results.data;
 		this.authors = data as Array<Author>;
+		for (let r in this.authors) {
+		    let name = this.authors[r].name;
+		    if (name in this.aliases) {
+			name = this.aliases[name];
+			this.authors[r].name = name;
+//			let { area, dept, subarea, count, adjustedcount, year } = this.authors[r];
+//			this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
+		    }
+		}
 		CSRankings.promise(cont);
 	    }
 	});
     }
 
     private inRegion(dept : string,
-			    regions : string): boolean
+		     regions : string): boolean
     {
 	switch (regions) {
-	case "world":
-	    break;
 	case "USA":
 	    if (dept in this.countryInfo) {
 		return false;
@@ -874,6 +925,8 @@ class CSRankings {
 		return false;
 	    }
 	    break;
+	case "world":
+	    break;
 	}
 	return true;
     }
@@ -922,23 +975,24 @@ class CSRankings {
 	return keys;
     }
 
-    private countAuthorAreas(startyear : number,
-			     endyear : number) : void
-    
+    private countAuthorAreas() : void
     {
+	const startyear          = parseInt(jQuery("#fromyear").find(":selected").text());
+	const endyear            = parseInt(jQuery("#toyear").find(":selected").text());
+	this.authorAreas = {}
 	for (let r in this.authors) {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    const auth = this.authors[r];
-	    const year = auth.year;
+	    let { area } = this.authors[r];
+	    if (area in CSRankings.nextTier) {
+		continue;
+	    }
+	    let { year } = this.authors[r];
 	    if ((year < startyear) || (year > endyear)) {
 		continue;
 	    }
-	    const theArea  = auth.area;
-	    if (theArea in CSRankings.nextTier) {
-		continue;
-	    }
+	    let { name, dept, count } = this.authors[r];
 	    /*
 	      DISABLING weight selection so all pie charts look the
 	      same regardless of which areas are currently selected:
@@ -947,13 +1001,7 @@ class CSRankings {
 		continue;
 	    }
 	    */
-	    const theDept  = auth.dept;
-	    const theCount = parseFloat(auth.count);
-//	    const theCount = parseFloat(auth.adjustedcount);
-	    let name : string  = auth.name;
-	    if (name in this.aliases) {
-		name = this.aliases[name];
-	    }
+	    const theCount = parseFloat(count);
 	    if (!(name in this.authorAreas)) {
 		this.authorAreas[name] = {};
 		for (let area in this.areaDict) {
@@ -962,16 +1010,16 @@ class CSRankings {
 		    }
 		}
 	    }
-	    if (!(theDept in this.authorAreas)) {
-		this.authorAreas[theDept] = {};
+	    if (!(dept in this.authorAreas)) {
+		this.authorAreas[dept] = {};
 		for (let area in this.areaDict) {
 		    if (this.areaDict.hasOwnProperty(area)) {
-			this.authorAreas[theDept][area] = 0;
+			this.authorAreas[dept][area] = 0;
 		    }
 		}
 	    }
-	    this.authorAreas[name][theArea] += theCount;
-	    this.authorAreas[theDept][theArea] += theCount;
+	    this.authorAreas[name][area] += theCount;
+	    this.authorAreas[dept][area] += theCount;
 	}
     }
 
@@ -991,19 +1039,24 @@ class CSRankings {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { name, year, area, dept } = this.authors[r];
-	    if (name in this.aliases) {
-		name = this.aliases[name];
+	    let auth = this.authors[r];
+	    let dept = auth.dept;
+//	    if (!(dept in regionMap)) {
+	    if (!this.inRegion(dept, regions)) {
+		continue;
+	    }
+	    let area = auth.area;
+	    if (weights[area] === 0) {
+		continue;
+	    }
+	    let year = auth.year;
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
 	    }
 	    if (typeof dept === 'undefined') {
 		continue;
 	    }
-	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
-		continue;
-	    }
-	    if (!this.inRegion(dept, regions)) {
-		continue;
-	    }
+	    let name = auth.name;
 	    // If this area is a child area, accumulate totals for parent.
 	    if (area in CSRankings.parentMap) {
 		area = CSRankings.parentMap[area];
@@ -1044,11 +1097,7 @@ class CSRankings {
 		continue;
 	    }
 	    this.stats[dept] = 1;
-	    for (let area of CSRankings.areas) {
-		// If this area is a child area, skip it.
-		if (area in CSRankings.parentMap) {
-		    continue;
-		}
+	    for (let area in CSRankings.topLevelAreas) {
 		let areaDept = area+dept;
 		if (!(areaDept in this.areaDeptAdjustedCount)) {
 		    this.areaDeptAdjustedCount[areaDept] = 0;
@@ -1083,6 +1132,7 @@ class CSRankings {
 	return numAreas;
     }
 
+    /// This is no longer necessary since we pre-canonicalize all names.
     private canonicalizeNames(deptNames : {[key: string] : Array<string> },
 			      facultycount :  {[key: string] : number},
 			      facultyAdjustedCount: {[key: string] : number}) : void
@@ -1142,7 +1192,7 @@ class CSRankings {
 	    for (let name of keys) {
 
 		let homePage = encodeURI(this.homepages[name]);
-		let dblpName = this.translateNameToDBLP(name);
+		let dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
 		
 		p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
 		    + '<a title="Click for author\'s home page." target="_blank" href="'
@@ -1154,8 +1204,13 @@ class CSRankings {
 		    + '>' 
 		    + name
 		    + '</a>&nbsp;';
+		if (this.acmfellow.hasOwnProperty(name)) {
+		    p += '<span title="ACM Fellow"><img src="' +
+			this.acmfellowImage + '"></span>&nbsp;';
+		}
 		if (this.turing.hasOwnProperty(name)) {
-		    p += '<b>[Turing Award winner]</b>&nbsp;';
+		    p += '<span title="Turing Award"><img src="' +
+			this.turingImage + '"></span>&nbsp;';
 		}
 		p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
 		
@@ -1330,6 +1385,8 @@ class CSRankings {
     /* PUBLIC METHODS */
     
     public rank(update : boolean = true) : boolean {
+	let start = performance.now();
+	
 	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
@@ -1343,9 +1400,7 @@ class CSRankings {
 
 	let numAreas = this.updateWeights(currentWeights);
 	
-	this.authorAreas = {}
-	this.countAuthorAreas(startyear,
-			      endyear);
+//	this.countAuthorAreas();
 	
 	this.buildDepartments(startyear,
 			      endyear,
@@ -1362,9 +1417,10 @@ class CSRankings {
 			  currentWeights);
 
 	/* Canonicalize names. */
-	this.canonicalizeNames(deptNames,
-			       facultycount,
-			       facultyAdjustedCount);
+//	this.canonicalizeNames(deptNames,
+//			       facultycount,
+//			       facultyAdjustedCount);
+	
 
 	const univtext = this.buildDropDown(deptNames,
 					    facultycount,
@@ -1383,6 +1439,10 @@ class CSRankings {
 	    this.navigoRouter.resume();
 	}
 	this.urlUpdate();
+	
+	let stop = performance.now();
+	console.log("Rank took "+(stop - start)+" milliseconds.");
+	
 	return false; 
     }
 
@@ -1593,22 +1653,21 @@ class CSRankings {
 	}
 	if (foundAll) {
 	    // Set everything.
-	    for (let position = 0; position < CSRankings.areas.length; position++) {
-		let item = CSRankings.areas[position]
-		if (!(item in CSRankings.nextTier)) {
-		    let str = "input[name="+item+"]";
-		    jQuery(str).prop('checked', true);
-		    if (item in CSRankings.childMap) {
-			// It's a parent. Enable it.
-			jQuery(str).prop('disabled', false);
-			// and activate all children.
-			CSRankings.childMap[item].forEach((k)=> {
-			    if (!(k in CSRankings.nextTier)) {
-				jQuery('input[name='+k+']').prop('checked', true);
-			    }
-			});
-		    }
+	    for (let item in CSRankings.topTierAreas) {
+//		if (!(item in CSRankings.nextTier)) {
+		let str = "input[name="+item+"]";
+		jQuery(str).prop('checked', true);
+		if (item in CSRankings.childMap) {
+		    // It's a parent. Enable it.
+		    jQuery(str).prop('disabled', false);
+		    // and activate all children.
+		    CSRankings.childMap[item].forEach((k)=> {
+			if (!(k in CSRankings.nextTier)) {
+			    jQuery('input[name='+k+']').prop('checked', true);
+			}
+		    });
 		}
+		//		}
 	    }
 	    // And we're out.
 	    return;
@@ -1691,7 +1750,7 @@ class CSRankings {
     private addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
-	    widget!.addEventListener("change", ()=> { this.rank(); });
+	    widget!.addEventListener("change", ()=> { this.countAuthorAreas(); this.rank(); });
 	});
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'
