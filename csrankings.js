@@ -293,7 +293,7 @@ class CSRankings {
         let newName = splitName.join(" ");
         newName = newName.replace(/\s/g, "_");
         newName = newName.replace(/\-/g, "=");
-        let str = "http://dblp.uni-trier.de/pers/hd";
+        let str = "https://dblp.uni-trier.de/pers/hd";
         const lastInitial = lastName[0].toLowerCase();
         str += "/" + lastInitial + "/" + lastName + ":" + newName;
         return str;
@@ -864,7 +864,7 @@ class CSRankings {
                 }
             }
             // finally compute geometric mean.
-            this.stats[dept] = Math.pow(this.stats[dept], 1 / numAreas);
+            this.stats[dept] = Math.pow(this.stats[dept], 1 / numAreas); // - 1.0;
         }
     }
     /* Updates the 'weights' of each area from the checkboxes. */
@@ -884,28 +884,6 @@ class CSRankings {
             }
         }
         return numAreas;
-    }
-    /// This is no longer necessary since we pre-canonicalize all names.
-    canonicalizeNames(deptNames, facultycount, facultyAdjustedCount) {
-        for (let dept in deptNames) {
-            if (!deptNames.hasOwnProperty(dept)) {
-                continue;
-            }
-            for (let ind = 0; ind < deptNames[dept].length; ind++) {
-                let name = deptNames[dept][ind];
-                if (name in this.aliases) {
-                    deptNames[dept][ind] = this.aliases[name];
-                    if (!(this.aliases[name] + dept in facultycount)) {
-                        facultycount[this.aliases[name] + dept] = facultycount[name + dept];
-                        facultyAdjustedCount[this.aliases[name] + dept] = facultyAdjustedCount[name + dept];
-                    }
-                    else {
-                        facultycount[this.aliases[name] + dept] += facultycount[name + dept];
-                        facultyAdjustedCount[this.aliases[name] + dept] += facultyAdjustedCount[name + dept];
-                    }
-                }
-            }
-        }
     }
     /* Build drop down for faculty names and paper counts. */
     buildDropDown(deptNames, facultycount, facultyAdjustedCount) {
@@ -1025,12 +1003,18 @@ class CSRankings {
             let rank = 0; /* index */
             let oldv = 9999999.999; /* old number - to track ties */
             /* Sort the university aggregate count from largest to smallest. */
+            // First, round the stats.
+            for (let k in this.stats) {
+                const v = Math.round(10.0 * this.stats[k]) / 10.0;
+                this.stats[k] = v;
+            }
+            // Now sort them,
             let keys2 = this.sortIndex(this.stats);
             /* Display rankings until we have shown `minToRank` items or
                while there is a tie (those all get the same rank). */
             for (let ind = 0; ind < keys2.length; ind++) {
                 const dept = keys2[ind];
-                const v = Math.round(10.0 * this.stats[dept]) / 10.0;
+                const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
                 if ((ind >= minToRank) && (v != oldv)) {
                     break;
                 }
@@ -1114,7 +1098,6 @@ class CSRankings {
     }
     /* PUBLIC METHODS */
     rank(update = true) {
-        let start = performance.now();
         let deptNames = {}; /* names of departments. */
         let deptCounts = {}; /* number of faculty in each department. */
         let facultycount = {}; /* name + dept -> raw count of pubs per name / department */
@@ -1125,14 +1108,9 @@ class CSRankings {
         const endyear = parseInt(jQuery("#toyear").find(":selected").text());
         const whichRegions = jQuery("#regions").find(":selected").val();
         let numAreas = this.updateWeights(currentWeights);
-        //	this.countAuthorAreas();
         this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
-        /* Canonicalize names. */
-        //	this.canonicalizeNames(deptNames,
-        //			       facultycount,
-        //			       facultyAdjustedCount);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         const s = this.buildOutputString(numAreas, deptCounts, univtext);
@@ -1144,9 +1122,10 @@ class CSRankings {
         else {
             this.navigoRouter.resume();
         }
-        this.urlUpdate();
-        let stop = performance.now();
-        console.log("Rank took " + (stop - start) + " milliseconds.");
+        let str = this.updatedURL();
+        this.navigoRouter.navigate(str);
+        //	let stop = performance.now();
+        // 	console.log("Rank took "+(stop - start)+" milliseconds.");
         return false;
     }
     /* Turn the chart display on or off. */
@@ -1220,7 +1199,7 @@ class CSRankings {
         return this.activateOthers(false);
     }
     // Update the URL according to the selected checkboxes.
-    urlUpdate() {
+    updatedURL() {
         let s = '';
         let count = 0;
         let totalParents = 0;
@@ -1281,7 +1260,7 @@ class CSRankings {
         if (region != "USA") {
             start += '&' + region;
         }
-        this.navigoRouter.navigate(start);
+        return start;
     }
     static geoCheck() {
         // Figure out which country clients are coming from and set
