@@ -486,7 +486,7 @@ class CSRankings {
 	let newName = splitName.join(" ");
 	newName = newName.replace(/\s/g, "_");
 	newName = newName.replace(/\-/g, "=");
-	let str = "http://dblp.uni-trier.de/pers/hd";
+	let str = "https://dblp.uni-trier.de/pers/hd";
 	const lastInitial = lastName[0].toLowerCase();
 	str += "/" + lastInitial + "/" + lastName + ":" + newName;
 	return str;
@@ -1108,7 +1108,7 @@ class CSRankings {
 		}
 	    }
 	    // finally compute geometric mean.
-	    this.stats[dept] = Math.pow(this.stats[dept], 1/numAreas);
+	    this.stats[dept] = Math.pow(this.stats[dept], 1/numAreas); // - 1.0;
 	}
     }
 
@@ -1130,31 +1130,6 @@ class CSRankings {
 	    }
 	}
 	return numAreas;
-    }
-
-    /// This is no longer necessary since we pre-canonicalize all names.
-    private canonicalizeNames(deptNames : {[key: string] : Array<string> },
-			      facultycount :  {[key: string] : number},
-			      facultyAdjustedCount: {[key: string] : number}) : void
-    {
-	for (let dept in deptNames) {
-	    if (!deptNames.hasOwnProperty(dept)) {
-		continue;
-	    }
-	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
-		let name = deptNames[dept][ind];
-		if (name in this.aliases) {
-		    deptNames[dept][ind] = this.aliases[name];
-		    if (!(this.aliases[name]+dept in facultycount)) {
-			facultycount[this.aliases[name]+dept] = facultycount[name+dept];
-			facultyAdjustedCount[this.aliases[name]+dept] = facultyAdjustedCount[name+dept];
-		    } else {
-			facultycount[this.aliases[name]+dept] += facultycount[name+dept];
-			facultyAdjustedCount[this.aliases[name]+dept] += facultyAdjustedCount[name+dept];
-		    }
-		}
-	    }
-	}
     }
 
     /* Build drop down for faculty names and paper counts. */
@@ -1294,12 +1269,18 @@ class CSRankings {
 	    let rank = 0;               /* index */
 	    let oldv = 9999999.999;     /* old number - to track ties */
 	    /* Sort the university aggregate count from largest to smallest. */
+	    // First, round the stats.
+	    for (let k in this.stats) {
+		const v = Math.round(10.0 * this.stats[k]) / 10.0;
+		this.stats[k] = v;
+	    }
+	    // Now sort them,
 	    let keys2 = this.sortIndex(this.stats);
 	    /* Display rankings until we have shown `minToRank` items or
 	       while there is a tie (those all get the same rank). */
 	    for (let ind = 0; ind < keys2.length; ind++) {
 		const dept = keys2[ind];
-		const v = Math.round(10.0 * this.stats[dept]) / 10.0;
+		const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
 
 		if ((ind >= minToRank) && (v != oldv)) {
 		    break;
@@ -1385,8 +1366,6 @@ class CSRankings {
     /* PUBLIC METHODS */
     
     public rank(update : boolean = true) : boolean {
-	let start = performance.now();
-	
 	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
 	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
@@ -1399,9 +1378,7 @@ class CSRankings {
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
 	let numAreas = this.updateWeights(currentWeights);
-	
-//	this.countAuthorAreas();
-	
+
 	this.buildDepartments(startyear,
 			      endyear,
 			      currentWeights,
@@ -1410,17 +1387,11 @@ class CSRankings {
 			      deptNames,
 			      facultycount,
 			      facultyAdjustedCount);
-	
+
 	/* (university, total or average number of papers) */
 	this.computeStats(deptNames,
 			  numAreas,
 			  currentWeights);
-
-	/* Canonicalize names. */
-//	this.canonicalizeNames(deptNames,
-//			       facultycount,
-//			       facultyAdjustedCount);
-	
 
 	const univtext = this.buildDropDown(deptNames,
 					    facultycount,
@@ -1433,15 +1404,18 @@ class CSRankings {
 
 	/* Finally done. Redraw! */
 	jQuery("#success").html(s);
+	
 	if (!update) {
 	    this.navigoRouter.pause();
 	} else {
 	    this.navigoRouter.resume();
 	}
-	this.urlUpdate();
+	let str = this.updatedURL();
+
+	this.navigoRouter.navigate(str);
 	
-	let stop = performance.now();
-	console.log("Rank took "+(stop - start)+" milliseconds.");
+//	let stop = performance.now();
+// 	console.log("Rank took "+(stop - start)+" milliseconds.");
 	
 	return false; 
     }
@@ -1529,7 +1503,7 @@ class CSRankings {
     }
 
     // Update the URL according to the selected checkboxes.
-    private urlUpdate() {
+    private updatedURL() : string {
 	let s = '';
 	let count = 0;
 	let totalParents = 0;
@@ -1587,7 +1561,7 @@ class CSRankings {
 	if (region != "USA") {
 	    start += '&' + region;
 	}
-	this.navigoRouter.navigate(start);
+	return start;
     }
 
     public static geoCheck() : void {
