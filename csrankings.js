@@ -822,7 +822,6 @@ class CSRankings {
                 area = CSRankings.parentMap[area];
             }
             const areaDept = area + dept;
-            const nameDept = name + dept;
             if (!(areaDept in this.areaDeptAdjustedCount)) {
                 this.areaDeptAdjustedCount[areaDept] = 0;
             }
@@ -832,8 +831,8 @@ class CSRankings {
             /* Is this the first time we have seen this person? */
             if (!(name in visited)) {
                 visited[name] = true;
-                facultycount[nameDept] = 0;
-                facultyAdjustedCount[nameDept] = 0;
+                facultycount[name] = 0;
+                facultyAdjustedCount[name] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
@@ -841,8 +840,8 @@ class CSRankings {
                 deptNames[dept].push(name);
                 deptCounts[dept] += 1;
             }
-            facultycount[nameDept] += count;
-            facultyAdjustedCount[nameDept] += adjustedCount;
+            facultycount[name] += count;
+            facultyAdjustedCount[name] += adjustedCount;
         }
     }
     /* Compute aggregate statistics. */
@@ -896,17 +895,18 @@ class CSRankings {
             /* Build a dict of just faculty from this department for sorting purposes. */
             let fc = {};
             for (let name of deptNames[dept]) {
-                fc[name] = facultycount[name + dept];
+                fc[name] = facultycount[name];
             }
             let keys = Object.keys(fc);
             keys.sort((a, b) => {
                 if (fc[b] === fc[a]) {
-                    let fb = Math.round(10.0 * facultyAdjustedCount[b + dept]) / 10.0;
-                    let fa = Math.round(10.0 * facultyAdjustedCount[a + dept]) / 10.0;
-                    if (fb === fa) {
-                        return this.compareNames(a, b);
-                    }
-                    return fb - fa;
+                    return this.compareNames(a, b);
+                    /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                                let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                                if (fb === fa) {
+                                return this.compareNames(a, b);
+                                }
+                                return fb - fa; */
                 }
                 else {
                     return fc[b] - fc[a];
@@ -979,7 +979,7 @@ class CSRankings {
                     + '</a>'
                     + "</small></td>"
                     + '<td align="right"><small>'
-                    + (Math.round(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
+                    + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
                     + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
@@ -1100,8 +1100,8 @@ class CSRankings {
     rank(update = true) {
         let deptNames = {}; /* names of departments. */
         let deptCounts = {}; /* number of faculty in each department. */
-        let facultycount = {}; /* name + dept -> raw count of pubs per name / department */
-        let facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
+        let facultycount = {}; /* name -> raw count of pubs per name / department */
+        let facultyAdjustedCount = {}; /* name -> adjusted count of pubs per name / department */
         let currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
         this.areaDeptAdjustedCount = {};
         const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
