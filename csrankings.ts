@@ -1366,6 +1366,9 @@ class CSRankings {
     /* PUBLIC METHODS */
     
     public rank(update : boolean = true) : boolean {
+
+	let start = performance.now();
+	
 	let deptNames : {[key: string] : Array<string> } = {};    /* names of departments. */
 	let deptCounts : {[key: string] : number} = {};           /* number of faculty in each department. */
 	let facultycount : {[key: string] : number} = {};         /* name -> raw count of pubs per name / department */
@@ -1414,8 +1417,8 @@ class CSRankings {
 
 	this.navigoRouter.navigate(str);
 	
-//	let stop = performance.now();
-// 	console.log("Rank took "+(stop - start)+" milliseconds.");
+	let stop = performance.now();
+ 	console.log("Rank took "+(stop - start)+" milliseconds.");
 	
 	return false; 
     }
