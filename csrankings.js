@@ -1098,6 +1098,7 @@ class CSRankings {
     }
     /* PUBLIC METHODS */
     rank(update = true) {
+        let start = performance.now();
         let deptNames = {}; /* names of departments. */
         let deptCounts = {}; /* number of faculty in each department. */
         let facultycount = {}; /* name -> raw count of pubs per name / department */
@@ -1124,8 +1125,8 @@ class CSRankings {
         }
         let str = this.updatedURL();
         this.navigoRouter.navigate(str);
-        //	let stop = performance.now();
-        // 	console.log("Rank took "+(stop - start)+" milliseconds.");
+        let stop = performance.now();
+        console.log("Rank took " + (stop - start) + " milliseconds.");
         return false;
     }
     /* Turn the chart display on or off. */
