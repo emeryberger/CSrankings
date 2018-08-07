@@ -15,16 +15,6 @@
 declare function escape(s:string): string;
 declare function unescape(s:string): string;
 
-interface Article {
-    readonly name : string;
-    readonly conf : string;
-    readonly area : string;
-    readonly subarea : string;
-    readonly year : number;
-    readonly title : string;
-    readonly institution : string;
-};
-
 interface AuthorInfo {
     readonly name        : string;
     readonly affiliation : string;
@@ -38,7 +28,7 @@ interface DBLPName {
 };
 
 interface Author {
-    readonly name : string;
+    name : string;
     readonly dept : string;
     readonly area : string;
     readonly subarea : string;
@@ -93,8 +83,10 @@ class CSRankings {
     private static theInstance : CSRankings; // singleton for this object
     
     public static readonly areas   : Array<string> = [];
+    public static readonly topLevelAreas : {[key : string] : string } = {};
+    public static readonly topTierAreas : {[key : string] : string }  = {};
     public static readonly regions : Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
-
+    
     private navigoRouter : Navigo;
 
     // Return the singleton corresponding to this object.
@@ -122,6 +114,12 @@ class CSRankings {
 	for (let position = 0; position < this.areaMap.length; position++) {
 	    const { area, title }      = this.areaMap[position];
 	    CSRankings.areas[position] = area;
+	    if (!(area in CSRankings.parentMap)) {
+		CSRankings.topLevelAreas[area] = area;
+	    }
+	    if (!(area in CSRankings.nextTier)) {
+		CSRankings.topTierAreas[area] = area;
+	    }
 	    this.areaNames[position]   = title;
 	    this.fields[position]      = area;
 	    this.areaDict[area]        = title; // this.areaNames[position];
@@ -164,6 +162,7 @@ class CSRankings {
 				'/fromyear/:fromyear/toyear/:toyear/index' : this.navigation
 			    }).resolve();
 			    this.displayProgress(4);
+			    this.countAuthorAreas();
 			    this.loadCountryInfo(this.countryInfo, ()=> {
 				setTimeout(()=> {
 				    this.addListeners();
@@ -447,6 +446,8 @@ class CSRankings {
 
     private areaDeptAdjustedCount : {[key: string] : number} = {}; /* area+dept */
     
+    private areaStringMap : {[key : string] : string } = {}; // name -> areaString (memoized)
+
     /* Colors for all areas. */
     private readonly color : Array<string> =
 	["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141",      "#61ff41" ];
@@ -485,7 +486,7 @@ class CSRankings {
 	let newName = splitName.join(" ");
 	newName = newName.replace(/\s/g, "_");
 	newName = newName.replace(/\-/g, "=");
-	let str = "http://dblp.uni-trier.de/pers/hd";
+	let str = "https://dblp.uni-trier.de/pers/hd";
 	const lastInitial = lastName[0].toLowerCase();
 	str += "/" + lastInitial + "/" + lastName + ":" + newName;
 	return str;
@@ -526,6 +527,9 @@ class CSRankings {
 
     private areaString(name : string) : string
     {
+	if (name in this.areaStringMap) {
+	    return this.areaStringMap[name];
+	}
 	// Create a summary of areas, separated by commas,
 	// corresponding to a faculty member's publications.  We only
 	// consider areas within a fixed number of standard deviations
@@ -542,13 +546,13 @@ class CSRankings {
 	// This is essentially duplicated logic from makeChart and
 	// should be factored out.
 	let datadict : {[key : string] : number } = {};
-	const keys = CSRankings.areas;
+	const keys = CSRankings.topTierAreas;
 	let maxValue = 0;
-	for (let i = 0; i < keys.length; i++) {
-	    let key = keys[i];
-	    if (key in CSRankings.nextTier) {
-		continue;
-	    }
+	for (let key in keys) { // i = 0; i < keys.length; i++) {
+//	    let key = keys[i];
+//	    if (key in CSRankings.nextTier) {
+//		continue;
+//	    }
 	    let value = this.authorAreas[name][key];
 	    if (key in CSRankings.parentMap) {
 		key = this.areaDict[key];
@@ -585,6 +589,9 @@ class CSRankings {
 	}
 	// Finally, pick at most the top N.
 	let str = maxes.sort((x, y) => { return datadict[y] - datadict[x];} ).slice(0,topN).join(",");
+	// Cache the result.
+	this.areaStringMap[name] = str;
+	// Return it.
 	return str;
     }
 
@@ -616,18 +623,18 @@ class CSRankings {
     {
 	let data : Array<ChartData> = [];
 	let datadict : {[key : string] : number } = {};
-	const keys = CSRankings.areas;
+	const keys = CSRankings.topTierAreas;
 	const uname = unescape(name);
-	for (let i = 0; i < keys.length; i++) {
-	    let key = keys[i];
+	for (let key in keys) { // i = 0; i < keys.length; i++) {
+//	    let key = keys[i];
 	    if (!(uname in this.authorAreas)) {
 		// Defensive programming.
 		// This should only happen if we have an error in the aliases file.
 		return;
 	    }
-	    if (key in CSRankings.nextTier) {
-		continue;
-	    }
+//	    if (key in CSRankings.nextTier) {
+//		continue;
+//	    }
 	    let value = this.authorAreas[uname][key];
 	    
 	    // Use adjusted count if this is for a department.
@@ -843,23 +850,31 @@ class CSRankings {
     }
 
     private loadAuthors(cont : () => void) : void {
+	// NOTE: aliases MUST have been loaded already.
 	Papa.parse(this.authorinfoFile, {
 	    download : true,
 	    header : true,
 	    complete: (results)=> {
 		const data : any = results.data;
 		this.authors = data as Array<Author>;
+		for (let r in this.authors) {
+		    let name = this.authors[r].name;
+		    if (name in this.aliases) {
+			name = this.aliases[name];
+			this.authors[r].name = name;
+//			let { area, dept, subarea, count, adjustedcount, year } = this.authors[r];
+//			this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
+		    }
+		}
 		CSRankings.promise(cont);
 	    }
 	});
     }
 
     private inRegion(dept : string,
-			    regions : string): boolean
+		     regions : string): boolean
     {
 	switch (regions) {
-	case "world":
-	    break;
 	case "USA":
 	    if (dept in this.countryInfo) {
 		return false;
@@ -910,6 +925,8 @@ class CSRankings {
 		return false;
 	    }
 	    break;
+	case "world":
+	    break;
 	}
 	return true;
     }
@@ -958,24 +975,24 @@ class CSRankings {
 	return keys;
     }
 
-    private countAuthorAreas(startyear : number,
-			     endyear : number) : void
-    
+    private countAuthorAreas() : void
     {
+	const startyear          = parseInt(jQuery("#fromyear").find(":selected").text());
+	const endyear            = parseInt(jQuery("#toyear").find(":selected").text());
+	this.authorAreas = {}
 	for (let r in this.authors) {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { name, year, area, dept, count, adjustedcount } = this.authors[r];
-//	    const auth = this.authors[r];
-//	    const year = auth.year;
-	    if ((year < startyear) || (year > endyear)) {
-		continue;
-	    }
-//	    const theArea  = auth.area;
+	    let { area } = this.authors[r];
 	    if (area in CSRankings.nextTier) {
 		continue;
 	    }
+	    let { year } = this.authors[r];
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
+	    }
+	    let { name, dept, count } = this.authors[r];
 	    /*
 	      DISABLING weight selection so all pie charts look the
 	      same regardless of which areas are currently selected:
@@ -984,13 +1001,7 @@ class CSRankings {
 		continue;
 	    }
 	    */
-//	    const theDept  = auth.dept;
 	    const theCount = parseFloat(count);
-//	    const theCount = parseFloat(adjustedcount);
-//	    let name : string  = auth.name;
-	    if (name in this.aliases) {
-		name = this.aliases[name];
-	    }
 	    if (!(name in this.authorAreas)) {
 		this.authorAreas[name] = {};
 		for (let area in this.areaDict) {
@@ -1028,25 +1039,29 @@ class CSRankings {
 	    if (!this.authors.hasOwnProperty(r)) {
 		continue;
 	    }
-	    let { name, year, area, dept } = this.authors[r];
-	    if ((weights[area] === 0) || (year < startyear) || (year > endyear)) {
+	    let auth = this.authors[r];
+	    let dept = auth.dept;
+//	    if (!(dept in regionMap)) {
+	    if (!this.inRegion(dept, regions)) {
 		continue;
 	    }
-	    if (!this.inRegion(dept, regions)) {
+	    let area = auth.area;
+	    if (weights[area] === 0) {
+		continue;
+	    }
+	    let year = auth.year;
+	    if ((year < startyear) || (year > endyear)) {
 		continue;
 	    }
 	    if (typeof dept === 'undefined') {
 		continue;
 	    }
-	    if (name in this.aliases) {
-		name = this.aliases[name];
-	    }
+	    let name = auth.name;
 	    // If this area is a child area, accumulate totals for parent.
 	    if (area in CSRankings.parentMap) {
 		area = CSRankings.parentMap[area];
 	    }
 	    const areaDept : string = area+dept;
-	    const nameDept : string = name+dept;
 	    if (!(areaDept in this.areaDeptAdjustedCount)) {
 		this.areaDeptAdjustedCount[areaDept] = 0;
 	    }
@@ -1056,8 +1071,8 @@ class CSRankings {
 	    /* Is this the first time we have seen this person? */
 	    if (!(name in visited)) {
 		visited[name] = true;
-		facultycount[nameDept] = 0;
-		facultyAdjustedCount[nameDept] = 0;
+		facultycount[name] = 0;
+		facultyAdjustedCount[name] = 0;
 		if (!(dept in deptCounts)) {
 		    deptCounts[dept] = 0;
 		    deptNames[dept] = <Array<string>>[];
@@ -1065,8 +1080,8 @@ class CSRankings {
 		deptNames[dept].push(name);
 		deptCounts[dept] += 1;
 	    }
-	    facultycount[nameDept] += count;
-	    facultyAdjustedCount[nameDept] += adjustedCount;
+	    facultycount[name] += count;
+	    facultyAdjustedCount[name] += adjustedCount;
 	}
     }
 
@@ -1081,11 +1096,7 @@ class CSRankings {
 		continue;
 	    }
 	    this.stats[dept] = 1;
-	    for (let area of CSRankings.areas) {
-		// If this area is a child area, skip it.
-		if (area in CSRankings.parentMap) {
-		    continue;
-		}
+	    for (let area in CSRankings.topLevelAreas) {
 		let areaDept = area+dept;
 		if (!(areaDept in this.areaDeptAdjustedCount)) {
 		    this.areaDeptAdjustedCount[areaDept] = 0;
@@ -1096,7 +1107,7 @@ class CSRankings {
 		}
 	    }
 	    // finally compute geometric mean.
-	    this.stats[dept] = Math.pow(this.stats[dept], 1/numAreas);
+	    this.stats[dept] = Math.pow(this.stats[dept], 1/numAreas); // - 1.0;
 	}
     }
 
@@ -1120,30 +1131,6 @@ class CSRankings {
 	return numAreas;
     }
 
-    private canonicalizeNames(deptNames : {[key: string] : Array<string> },
-			      facultycount :  {[key: string] : number},
-			      facultyAdjustedCount: {[key: string] : number}) : void
-    {
-	for (let dept in deptNames) {
-	    if (!deptNames.hasOwnProperty(dept)) {
-		continue;
-	    }
-	    for (let ind = 0; ind < deptNames[dept].length; ind++) {
-		let name = deptNames[dept][ind];
-		if (name in this.aliases) {
-		    deptNames[dept][ind] = this.aliases[name];
-		    if (!(this.aliases[name]+dept in facultycount)) {
-			facultycount[this.aliases[name]+dept] = facultycount[name+dept];
-			facultyAdjustedCount[this.aliases[name]+dept] = facultyAdjustedCount[name+dept];
-		    } else {
-			facultycount[this.aliases[name]+dept] += facultycount[name+dept];
-			facultyAdjustedCount[this.aliases[name]+dept] += facultyAdjustedCount[name+dept];
-		    }
-		}
-	    }
-	}
-    }
-
     /* Build drop down for faculty names and paper counts. */
     private buildDropDown(deptNames : {[key: string] : Array<string> },
 			  facultycount :  {[key: string] : number},
@@ -1161,17 +1148,18 @@ class CSRankings {
 	    /* Build a dict of just faculty from this department for sorting purposes. */
 	    let fc : {[key:string] : number} = {};
 	    for (let name of deptNames[dept]) {
-		fc[name] = facultycount[name+dept];
+		fc[name] = facultycount[name];
 	    }
 	    let keys = Object.keys(fc);
 	    keys.sort((a : string, b : string) => {
 		if (fc[b] === fc[a]) {
-		    let fb = Math.round(10.0 * facultyAdjustedCount[b+dept]) / 10.0;
-		    let fa = Math.round(10.0 * facultyAdjustedCount[a+dept]) / 10.0;
+		    return this.compareNames(a, b);
+/*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+		    let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
 		    if (fb === fa) {
 			return this.compareNames(a, b);
 		    }
-		    return fb - fa;
+		    return fb - fa; */
 		} else {
 		    return fc[b] - fc[a];
 		}
@@ -1249,7 +1237,7 @@ class CSRankings {
 		    + '</a>'
 		    + "</small></td>"
 		    + '<td align="right"><small>'
-		    + (Math.round(10.0 * facultyAdjustedCount[name+dept]) / 10.0).toFixed(1)
+		    + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
 		    + "</small></td></tr>"
 		    + "<tr><td colspan=\"4\">"
 		    + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
@@ -1281,12 +1269,18 @@ class CSRankings {
 	    let rank = 0;               /* index */
 	    let oldv = 9999999.999;     /* old number - to track ties */
 	    /* Sort the university aggregate count from largest to smallest. */
+	    // First, round the stats.
+	    for (let k in this.stats) {
+		const v = Math.round(10.0 * this.stats[k]) / 10.0;
+		this.stats[k] = v;
+	    }
+	    // Now sort them,
 	    let keys2 = this.sortIndex(this.stats);
 	    /* Display rankings until we have shown `minToRank` items or
 	       while there is a tie (those all get the same rank). */
 	    for (let ind = 0; ind < keys2.length; ind++) {
 		const dept = keys2[ind];
-		const v = Math.round(10.0 * this.stats[dept]) / 10.0;
+		const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
 
 		if ((ind >= minToRank) && (v != oldv)) {
 		    break;
@@ -1372,11 +1366,11 @@ class CSRankings {
     /* PUBLIC METHODS */
     
     public rank(update : boolean = true) : boolean {
-	let deptNames : {[key: string] : Array<string> } = {};              /* names of departments. */
-	let deptCounts : {[key: string] : number} = {};         /* number of faculty in each department. */
-	let facultycount : {[key: string] : number} = {};       /* name + dept -> raw count of pubs per name / department */
-	let facultyAdjustedCount : {[key: string] : number} = {}; /* name + dept -> adjusted count of pubs per name / department */
-	let currentWeights : {[key: string] : number} = {};            /* array to hold 1 or 0, depending on if the area is checked or not. */
+	let deptNames : {[key: string] : Array<string> } = {};    /* names of departments. */
+	let deptCounts : {[key: string] : number} = {};           /* number of faculty in each department. */
+	let facultycount : {[key: string] : number} = {};         /* name -> raw count of pubs per name / department */
+	let facultyAdjustedCount : {[key: string] : number} = {}; /* name -> adjusted count of pubs per name / department */
+	let currentWeights : {[key: string] : number} = {};       /* array to hold 1 or 0, depending on if the area is checked or not. */
 	this.areaDeptAdjustedCount = {};
 	
 	const startyear          = parseInt(jQuery("#fromyear").find(":selected").text());
@@ -1384,11 +1378,7 @@ class CSRankings {
 	const whichRegions       = jQuery("#regions").find(":selected").val();
 
 	let numAreas = this.updateWeights(currentWeights);
-	
-	this.authorAreas = {}
-	this.countAuthorAreas(startyear,
-			      endyear);
-	
+
 	this.buildDepartments(startyear,
 			      endyear,
 			      currentWeights,
@@ -1397,16 +1387,11 @@ class CSRankings {
 			      deptNames,
 			      facultycount,
 			      facultyAdjustedCount);
-	
+
 	/* (university, total or average number of papers) */
 	this.computeStats(deptNames,
 			  numAreas,
 			  currentWeights);
-
-	/* Canonicalize names. */
-	this.canonicalizeNames(deptNames,
-			       facultycount,
-			       facultyAdjustedCount);
 
 	const univtext = this.buildDropDown(deptNames,
 					    facultycount,
@@ -1419,12 +1404,19 @@ class CSRankings {
 
 	/* Finally done. Redraw! */
 	jQuery("#success").html(s);
+	
 	if (!update) {
 	    this.navigoRouter.pause();
 	} else {
 	    this.navigoRouter.resume();
 	}
-	this.urlUpdate();
+	let str = this.updatedURL();
+
+	this.navigoRouter.navigate(str);
+	
+//	let stop = performance.now();
+// 	console.log("Rank took "+(stop - start)+" milliseconds.");
+	
 	return false; 
     }
 
@@ -1511,7 +1503,7 @@ class CSRankings {
     }
 
     // Update the URL according to the selected checkboxes.
-    private urlUpdate() {
+    private updatedURL() : string {
 	let s = '';
 	let count = 0;
 	let totalParents = 0;
@@ -1569,7 +1561,7 @@ class CSRankings {
 	if (region != "USA") {
 	    start += '&' + region;
 	}
-	this.navigoRouter.navigate(start);
+	return start;
     }
 
     public static geoCheck() : void {
@@ -1635,22 +1627,21 @@ class CSRankings {
 	}
 	if (foundAll) {
 	    // Set everything.
-	    for (let position = 0; position < CSRankings.areas.length; position++) {
-		let item = CSRankings.areas[position]
-		if (!(item in CSRankings.nextTier)) {
-		    let str = "input[name="+item+"]";
-		    jQuery(str).prop('checked', true);
-		    if (item in CSRankings.childMap) {
-			// It's a parent. Enable it.
-			jQuery(str).prop('disabled', false);
-			// and activate all children.
-			CSRankings.childMap[item].forEach((k)=> {
-			    if (!(k in CSRankings.nextTier)) {
-				jQuery('input[name='+k+']').prop('checked', true);
-			    }
-			});
-		    }
+	    for (let item in CSRankings.topTierAreas) {
+//		if (!(item in CSRankings.nextTier)) {
+		let str = "input[name="+item+"]";
+		jQuery(str).prop('checked', true);
+		if (item in CSRankings.childMap) {
+		    // It's a parent. Enable it.
+		    jQuery(str).prop('disabled', false);
+		    // and activate all children.
+		    CSRankings.childMap[item].forEach((k)=> {
+			if (!(k in CSRankings.nextTier)) {
+			    jQuery('input[name='+k+']').prop('checked', true);
+			}
+		    });
 		}
+		//		}
 	    }
 	    // And we're out.
 	    return;
@@ -1733,7 +1724,7 @@ class CSRankings {
     private addListeners() : void {
 	["toyear", "fromyear", "regions"].forEach((key)=> {
 	    const widget = document.getElementById(key);
-	    widget!.addEventListener("change", ()=> { this.rank(); });
+	    widget!.addEventListener("change", ()=> { this.countAuthorAreas(); this.rank(); });
 	});
 	// Add listeners for clicks on area widgets (left side of screen)
 	// e.g., 'ai'

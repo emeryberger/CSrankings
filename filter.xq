@@ -10,6 +10,7 @@
 //inproceedings[booktitle="ACL (1)"],
 //inproceedings[booktitle="ACL (2)"],
 //inproceedings[booktitle="NAACL"],
+//inproceedings[booktitle="NAACL-HLT"],
 //inproceedings[booktitle="HLT-NAACL"],
 //inproceedings[booktitle="ACL/IJCNLP"],
 //inproceedings[booktitle="COLING-ACL"],
