@@ -329,6 +329,9 @@ pageCounterNormal = re.compile('(\d+)-(\d+)')
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
 TECSCounterColon = re.compile('([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*')
+# Extract the ISMB proceedings page numbers.
+ISMBpageCounter = re.compile('i(\d+)-i(\d+)')
+
 
 def do_it():
 #    gz = gzip.GzipFile('dblp-original.xml.gz')
@@ -408,6 +411,8 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     global TVCG_VR_Volume
     global ASE_LongPaperThreshold
     global pageCountThreshold
+    global ISMBpageCounter
+    
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
@@ -430,6 +435,14 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
             (vol, num) = ISMB_Bioinformatics[year]
             if (volume != str(vol)) or (number != str(num)):
                 return False
+            else:
+                if (int(volume) >= 33): # Hopefully this works going forward.
+                    pg = ISMBpageCounter.match(pages)
+                    if pg is None:
+                        return False
+                    startPage = int(pg.group(1))
+                    end = int(pg.group(2))
+                    pageCount = end - startPage + 1
         else:
             return False
 
