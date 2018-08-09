@@ -95,7 +95,7 @@ for name in ks:
             failure = True
             # prints the int of the status code. Find more at httpstatusrappers.com :)
     except requests.ConnectionError:
-        failure = True
+        failure = False
         print("failed to connect")
     except:
         print("got me")
