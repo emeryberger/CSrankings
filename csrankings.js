@@ -346,7 +346,7 @@ class CSRankings {
         let datadict = {};
         const keys = CSRankings.topTierAreas;
         let maxValue = 0;
-        for (let key in keys) {
+        for (let key in keys) { // i = 0; i < keys.length; i++) {
             //	    let key = keys[i];
             //	    if (key in CSRankings.nextTier) {
             //		continue;
@@ -417,7 +417,7 @@ class CSRankings {
         let datadict = {};
         const keys = CSRankings.topTierAreas;
         const uname = unescape(name);
-        for (let key in keys) {
+        for (let key in keys) { // i = 0; i < keys.length; i++) {
             //	    let key = keys[i];
             if (!(uname in this.authorAreas)) {
                 // Defensive programming.
@@ -452,9 +452,11 @@ class CSRankings {
             }
         }
         for (let key in datadict) {
-            let newSlice = { "label": this.areaDict[key],
+            let newSlice = {
+                "label": this.areaDict[key],
                 "value": Math.round(datadict[key] * 10) / 10,
-                "color": this.color[CSRankings.parentIndex[key]] };
+                "color": this.color[CSRankings.parentIndex[key]]
+            };
             data.push(newSlice);
         }
         new d3pie(name + "-chart", {
@@ -655,7 +657,7 @@ class CSRankings {
                 }
                 break;
             case "europe":
-                if (!(dept in this.countryInfo)) {
+                if (!(dept in this.countryInfo)) { // USA
                     return false;
                 }
                 if (this.countryInfo[dept] != "europe") {
@@ -663,7 +665,7 @@ class CSRankings {
                 }
                 break;
             case "canada":
-                if (!(dept in this.countryInfo)) {
+                if (!(dept in this.countryInfo)) { // USA
                     return false;
                 }
                 if (this.countryInfo[dept] != "canada") {
@@ -676,7 +678,7 @@ class CSRankings {
                 }
                 break;
             case "australasia":
-                if (!(dept in this.countryInfo)) {
+                if (!(dept in this.countryInfo)) { // USA
                     return false;
                 }
                 if (this.countryInfo[dept] != "australasia") {
@@ -684,7 +686,7 @@ class CSRankings {
                 }
                 break;
             case "southamerica":
-                if (!(dept in this.countryInfo)) {
+                if (!(dept in this.countryInfo)) { // USA
                     return false;
                 }
                 if (this.countryInfo[dept] != "southamerica") {
@@ -692,7 +694,7 @@ class CSRankings {
                 }
                 break;
             case "asia":
-                if (!(dept in this.countryInfo)) {
+                if (!(dept in this.countryInfo)) { // USA
                     return false;
                 }
                 if (this.countryInfo[dept] != "asia") {
@@ -706,7 +708,7 @@ class CSRankings {
     }
     activateFields(value, fields) {
         for (let i = 0; i < fields.length; i++) {
-            let item = this.fields[fields[i]];
+            const item = this.fields[fields[i]];
             const str = "input[name=" + item + "]";
             jQuery(str).prop('checked', value);
             if (item in CSRankings.childMap) {
@@ -714,11 +716,12 @@ class CSRankings {
                 jQuery(str).prop('disabled', false);
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach((k) => {
+                    const str = 'input[name=' + k + ']';
                     if (k in CSRankings.nextTier) {
-                        jQuery('input[name=' + k + ']').prop('checked', false);
+                        jQuery(str).prop('checked', false);
                     }
                     else {
-                        jQuery('input[name=' + k + ']').prop('checked', value);
+                        jQuery(str).prop('checked', value);
                     }
                 });
             }
@@ -729,12 +732,17 @@ class CSRankings {
     sortIndex(univagg) {
         let keys = Object.keys(univagg);
         keys.sort((a, b) => {
+            if (univagg[a] != univagg[b]) {
+                return univagg[b] - univagg[a];
+            }
+            /*
             if (univagg[a] > univagg[b]) {
                 return -1;
             }
             if (univagg[b] > univagg[a]) {
                 return 1;
             }
+            */
             if (a < b) {
                 return -1;
             }
@@ -1495,7 +1503,8 @@ class CSRankings {
             });
         }
         // Add group selectors.
-        const listeners = { 'all_areas_on': (() => { this.activateAll(); }),
+        const listeners = {
+            'all_areas_on': (() => { this.activateAll(); }),
             'all_areas_off': (() => { this.activateNone(); }),
             'ai_areas_on': (() => { this.activateAI(); }),
             'ai_areas_off': (() => { this.deactivateAI(); }),
@@ -1519,7 +1528,8 @@ CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
 CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
 CSRankings.parentIndex = {}; // For color lookups
-CSRankings.parentMap = { 'aaai': 'ai',
+CSRankings.parentMap = {
+    'aaai': 'ai',
     'ijcai': 'ai',
     'cvpr': 'vision',
     'eccv': 'vision',
