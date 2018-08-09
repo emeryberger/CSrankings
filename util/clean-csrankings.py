@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from collections import *
+import collections
 import random
 import requests
 import gzip
@@ -84,9 +84,12 @@ count = 0
 
 for name in ks:
     count = count + 1
-    if count > 50:
+    if count > 1000:
         break
     page = csrankings[name]['homepage']
+    if page == "http://csrankings.org":
+        count = count - 1
+        continue
     failure = False
     try:
         r = requests.head(page)
@@ -107,7 +110,7 @@ for name in ks:
 
 # Now rewrite csrankings.csv.
 
-csrankings = OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
+csrankings = collections.OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
 with open('csrankings.csv', mode='w') as outfile:
     sfieldnames = ['name', 'affiliation', 'homepage', 'scholarid']
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
