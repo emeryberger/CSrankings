@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 from collections import *
+import random
+import requests
 import gzip
 import xmltodict
 import collections
@@ -10,10 +12,21 @@ import re
 import sys
 import operator
 
+seed = random.SystemRandom().random()
+random.seed(seed)
+
+def csv2dict_str_str(fname):
+    with open(fname, mode='r') as infile:
+        reader = csv.reader(infile)
+        #for rows in reader:
+        #    print rows[0], "-->", rows[1]
+        d = { rows[0].strip(): rows[1].strip() for rows in reader}
+    return d
+
 # Load alias lists (name -> [aliases])
 aliases = {}
 aliasToName = {}
-with open('dblp-aliases.csv', mode='rb') as infile:
+with open('dblp-aliases.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         if row['name'] in aliases:
@@ -24,7 +37,7 @@ with open('dblp-aliases.csv', mode='rb') as infile:
 
 # Read in CSrankings file.
 csrankings = {}
-with open('csrankings.csv', mode='rb') as infile:
+with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         csrankings[row['name']] = { 'affiliation' : row['affiliation'],
@@ -62,13 +75,40 @@ for name in csrankings:
         if page != "NOSCHOLARPAGE":
             csrankings[name]['scholarid'] = page
 
-# Sort csrankings by name.
+# Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
-csrankings = OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
+ks = list(csrankings.keys())
+random.shuffle(ks)
+
+count = 0
+
+for name in ks:
+    count = count + 1
+    if count > 50:
+        break
+    page = csrankings[name]['homepage']
+    failure = False
+    try:
+        r = requests.head(page)
+        print(r.status_code)
+        if (r.status_code == 404):
+            failure = True
+            # prints the int of the status code. Find more at httpstatusrappers.com :)
+    except requests.ConnectionError:
+        failure = True
+        print("failed to connect")
+    except:
+        print("got me")
+        failure = True
+    if failure:
+        print(name + " , " + page)
+        csrankings[name]['homepage'] = 'http://csrankings.org'
+
 
 # Now rewrite csrankings.csv.
 
-with open('csrankings.csv', mode='wb') as outfile:
+csrankings = OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
+with open('csrankings.csv', mode='w') as outfile:
     sfieldnames = ['name', 'affiliation', 'homepage', 'scholarid']
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
