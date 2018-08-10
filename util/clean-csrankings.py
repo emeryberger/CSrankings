@@ -28,7 +28,6 @@ trimstrings = ['\.php\?', 'youtube', 'researchgate', 'dblp.uni-trier.','ratemypr
 def find_fix(name,affiliation):
     string = name + ' ' + affiliation
     results = google.search(string, stop=1)
-    print(str(results))
     actualURL = "http://csrankings.org"
     for url in results:
         actualURL = url
@@ -51,14 +50,6 @@ def find_fix(name,affiliation):
 
 # sys.exit()
 
-        
-def csv2dict_str_str(fname):
-    with open(fname, mode='r') as infile:
-        reader = csv.reader(infile)
-        #for rows in reader:
-        #    print rows[0], "-->", rows[1]
-        d = { rows[0].strip(): rows[1].strip() for rows in reader}
-    return d
 
 # Load alias lists (name -> [aliases])
 aliases = {}
@@ -121,7 +112,7 @@ count = 0
 
 for name in ks:
     count = count + 1
-    if count > 10:
+    if count > 30:
         break
     page = csrankings[name]['homepage']
     if page == "http://csrankings.org":
