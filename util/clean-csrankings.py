@@ -1,20 +1,57 @@
 #!/usr/bin/env python
 
+import codecs
 import collections
-import random
-import requests
-import gzip
-import xmltodict
-import collections
-import json
 import csv
-import re
-import sys
+import google
+import gzip
+import json
 import operator
+import pkg_resources
+import random
+import re
+import requests
+import sys
+import time
+#import urllib2
+import xmltodict
 
+
+# make random REALLY random.
 seed = random.SystemRandom().random()
 random.seed(seed)
 
+# Trim out LinkedIn and RateMyProfessors sites, etc.
+trimstrings = ['\.php\?', 'youtube', 'researchgate', 'dblp.uni-trier.','ratemyprofessors.com', 'linkedin.com', 'wikipedia.org','2018','2017','2016','2015','\.pdf','wikipedia']
+
+
+def find_fix(name,affiliation):
+    string = name + ' ' + affiliation
+    results = google.search(string, stop=1)
+    print(str(results))
+    actualURL = "http://csrankings.org"
+    for url in results:
+        actualURL = url
+        matched = 0
+        for t in trimstrings:
+            match = re.search(t, url)
+            if (match != None):
+                matched = matched + 1
+        if (matched == 0):
+            break
+                        
+    # Output the name and this resolved URL.
+    match = re.search('www.google.com', actualURL)
+    if (match == None):
+        return actualURL
+    else:
+        return "http://csrankings.org"
+
+#print(find_fix("Michael H. Albert","University of Otago"))
+
+# sys.exit()
+
+        
 def csv2dict_str_str(fname):
     with open(fname, mode='r') as infile:
         reader = csv.reader(infile)
@@ -84,28 +121,44 @@ count = 0
 
 for name in ks:
     count = count + 1
-    if count > 1000:
+    if count > 100:
         break
     page = csrankings[name]['homepage']
     if page == "http://csrankings.org":
-        count = count - 1
+        # Placeholder page.
+        # Try to fix it.
+        print("SEARCHING NOW FOR FIX FOR "+name)
+        actualURL = find_fix(name, csrankings[name]['affiliation'])
+        csrankings[name]['homepage'] = actualURL
         continue
+    
     failure = False
     try:
-        r = requests.head(page)
+        r = requests.head(page,allow_redirects=True)
         print(r.status_code)
         if (r.status_code == 404):
             failure = True
             # prints the int of the status code. Find more at httpstatusrappers.com :)
+            actualURL = find_fix(name, csrankings[name]['affiliation'])
+            csrankings[name]['homepage'] = actualURL
+        if (r.status_code == 301):
+            failure = False
+            print("changing home page to "+r.url)
+            csrankings[name]['homepage'] = r.url
+            # Forward
+            
     except requests.ConnectionError:
         failure = False
         print("failed to connect")
     except:
         print("got me")
         failure = True
+        
     if failure:
-        print(name + " , " + page)
-        csrankings[name]['homepage'] = 'http://csrankings.org'
+        print("FAILED: " + name + " , " + page)
+        print("SEARCHING NOW FOR FIX FOR "+name)
+        actualURL = find_fix(name, csrankings[name]['affiliation'])
+        csrankings[name]['homepage'] = actualURL
 
 
 # Now rewrite csrankings.csv.
@@ -118,7 +171,7 @@ with open('csrankings.csv', mode='w') as outfile:
     for n in csrankings:
         h = { 'name' : n,
               'affiliation' : csrankings[n]['affiliation'],
-              'homepage'    : csrankings[n]['homepage'],
+              'homepage'    : csrankings[n]['homepage'].rstrip('/'),
               'scholarid'   : csrankings[n]['scholarid'] }
         swriter.writerow(h)
         
