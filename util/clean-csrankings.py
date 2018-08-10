@@ -121,7 +121,7 @@ count = 0
 
 for name in ks:
     count = count + 1
-    if count > 100:
+    if count > 10:
         break
     page = csrankings[name]['homepage']
     if page == "http://csrankings.org":
@@ -129,22 +129,26 @@ for name in ks:
         # Try to fix it.
         print("SEARCHING NOW FOR FIX FOR "+name)
         actualURL = find_fix(name, csrankings[name]['affiliation'])
+        print("changed to "+actualURL)
         csrankings[name]['homepage'] = actualURL
         continue
     
-    failure = False
     try:
         r = requests.head(page,allow_redirects=True)
         print(r.status_code)
         if (r.status_code == 404):
             failure = True
             # prints the int of the status code. Find more at httpstatusrappers.com :)
+            print("SEARCHING NOW FOR FIX FOR "+name)
             actualURL = find_fix(name, csrankings[name]['affiliation'])
+            print("changed to "+actualURL)
             csrankings[name]['homepage'] = actualURL
+            continue
         if (r.status_code == 301):
             failure = False
-            print("changing home page to "+r.url)
+            print("redirect: changing home page to "+r.url)
             csrankings[name]['homepage'] = r.url
+            continue
             # Forward
             
     except requests.ConnectionError:
@@ -152,13 +156,7 @@ for name in ks:
         print("failed to connect")
     except:
         print("got me")
-        failure = True
-        
-    if failure:
-        print("FAILED: " + name + " , " + page)
-        print("SEARCHING NOW FOR FIX FOR "+name)
-        actualURL = find_fix(name, csrankings[name]['affiliation'])
-        csrankings[name]['homepage'] = actualURL
+        failure = False
 
 
 # Now rewrite csrankings.csv.
