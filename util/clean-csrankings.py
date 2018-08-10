@@ -112,7 +112,7 @@ count = 0
 
 for name in ks:
     count = count + 1
-    if count > 30:
+    if count > 75:
         break
     page = csrankings[name]['homepage']
     if page == "http://csrankings.org":
