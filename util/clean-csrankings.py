@@ -103,18 +103,44 @@ for name in csrankings:
         if page != "NOSCHOLARPAGE":
             csrankings[name]['scholarid'] = page
 
+# Fix inconsistent home pages.
+for name in csrankings:
+    page = csrankings[name]['homepage']
+    if name in aliases:
+        for a in aliases[name]:
+            if csrankings[a]['homepage'] != page:
+                if page == "http://csrankings.org":
+                    page = csrankings[a]['homepage']
+                csrankings[a]['homepage'] = page
+
+# Find and flag inconsistent affiliations.
+for name in csrankings:
+    aff = csrankings[name]['affiliation']
+    if name in aliases:
+        for a in aliases[name]:
+            if csrankings[a]['affiliation'] != aff:
+                print("INCONSISTENT AFFILIATION: "+name)
+
+# Find and flag inconsistent Google Scholar pages.
+for name in csrankings:
+    sch = csrankings[name]['scholarid']
+    if name in aliases:
+        for a in aliases[name]:
+            if csrankings[a]['scholarid'] != sch:
+                print("INCONSISTENT SCHOLAR PAGE: "+name)
+
+    
+
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
+count = 25
 ks = list(csrankings.keys())
+ks = ks[:count]
 random.shuffle(ks)
 
-count = 0
-
 for name in ks:
-    count = count + 1
-    if count > 75:
-        break
     page = csrankings[name]['homepage']
+    print("Testing "+page+" ("+name+")")
     if page == "http://csrankings.org":
         # Placeholder page.
         # Try to fix it.
