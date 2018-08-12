@@ -63,6 +63,11 @@ with open('dblp-aliases.csv', mode='r') as infile:
             aliases[row['name']] = [row['alias']]
         aliasToName[row['alias']] = row['name']
 
+#c = 0
+#for n in aliases:
+#    c = c +1
+#print("c = "+str(c))
+
 # Read in CSrankings file.
 csrankings = {}
 with open('csrankings.csv', mode='r') as infile:
@@ -144,8 +149,7 @@ for name in ks:
     try:
         r = requests.head(page,allow_redirects=True,timeout=3)
         print(r.status_code)
-        if ((r.status_code == 404) or (r.status_code == 410)):
-            failure = True
+        if ((r.status_code == 404) or (r.status_code == 410) or (r.status_code == 500)):
             # prints the int of the status code. Find more at httpstatusrappers.com :)
             print("SEARCHING NOW FOR FIX FOR "+name)
             actualURL = find_fix(name, csrankings[name]['affiliation'])
@@ -153,18 +157,19 @@ for name in ks:
             csrankings[name]['homepage'] = actualURL
             continue
         if (r.status_code == 301):
-            failure = False
-            print("redirect: changing home page to "+r.url)
+            print("redirect: changing home page from " + page + " to " + r.url)
             csrankings[name]['homepage'] = r.url
             continue
-            # Forward
             
     except requests.ConnectionError:
-        failure = False
         print("failed to connect")
+        print("SEARCHING NOW FOR FIX FOR "+name)
+        actualURL = find_fix(name, csrankings[name]['affiliation'])
+        print("changed to "+actualURL)
+        csrankings[name]['homepage'] = actualURL
     except:
         print("got me")
-        failure = False
+
 
 
 # Now rewrite csrankings.csv.
