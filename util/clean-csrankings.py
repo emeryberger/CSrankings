@@ -133,7 +133,7 @@ for name in csrankings:
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
-count = 25
+count = 200
 ks = list(csrankings.keys())
 ks = ks[:count]
 random.shuffle(ks)
@@ -141,19 +141,10 @@ random.shuffle(ks)
 for name in ks:
     page = csrankings[name]['homepage']
     print("Testing "+page+" ("+name+")")
-    if page == "http://csrankings.org":
-        # Placeholder page.
-        # Try to fix it.
-        print("SEARCHING NOW FOR FIX FOR "+name)
-        actualURL = find_fix(name, csrankings[name]['affiliation'])
-        print("changed to "+actualURL)
-        csrankings[name]['homepage'] = actualURL
-        continue
-    
     try:
-        r = requests.head(page,allow_redirects=True)
+        r = requests.head(page,allow_redirects=True,timeout=3)
         print(r.status_code)
-        if (r.status_code == 404):
+        if ((r.status_code == 404) or (r.status_code == 410)):
             failure = True
             # prints the int of the status code. Find more at httpstatusrappers.com :)
             print("SEARCHING NOW FOR FIX FOR "+name)
