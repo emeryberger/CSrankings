@@ -286,7 +286,9 @@ SIGMOD_NonResearchPaperStart = {2017: 1587,
 # SIGMOD recently has begun intermingling research and non-research
 # track papers in their proceedings, requiring individual paper
 # filtering.
-SIGMOD_NonResearchPapersRange = { 2017: [(1, 3), (51, 63), (125, 138), (331, 343),
+SIGMOD_NonResearchPapersRange = { 2018 : [(177, 230), (583, 627), (789, 839), (1393, 1459),
+                                          (1637, 1845)],
+                                  2017: [(1, 3), (51, 63), (125, 138), (331, 343),
                                          (1041, 1052), (511, 526), (1587, 1782)],
                                   2016: [(1753, 1764), (1295, 1306), (795, 806),
                                         (227, 238), (999, 1010), (1923, 1934),
@@ -550,7 +552,7 @@ def handle_article(_, article):
     counter += 1
     try:
         if counter % 10000 == 0:
-            print str(counter)+ " papers processed."
+            print(str(counter)+ " papers processed.")
         if 'author' in article:
             # Fix if there is just one author.
             if type(article['author']) != list:
@@ -631,10 +633,10 @@ def handle_article(_, article):
     except TypeError:
         raise
     except:
-        print sys.exc_info()[0]
+        print(sys.exc_info()[0])
         failures += 1
         raise
-        pass
+
     if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
