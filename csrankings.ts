@@ -149,26 +149,24 @@ class CSRankings {
 			}
 		}
 		this.displayProgress(1);
-		this.loadAliases(this.aliases, () => {
-			this.loadTuring(this.turing, () => {
-				this.loadACMFellow(this.acmfellow, () => {
-					this.displayProgress(2);
-					this.loadAuthorInfo(() => {
-						this.displayProgress(3);
-						this.loadAuthors(() => {
-							this.setAllOn();
-							this.navigoRouter.on({
-								'/index': this.navigation,
-								'/fromyear/:fromyear/toyear/:toyear/index': this.navigation
-							}).resolve();
-							this.displayProgress(4);
-							this.countAuthorAreas();
-							this.loadCountryInfo(this.countryInfo, () => {
-								setTimeout(() => {
-									this.addListeners();
-									CSRankings.geoCheck();
-								}, 0);
-							});
+		this.loadTuring(this.turing, () => {
+			this.loadACMFellow(this.acmfellow, () => {
+				this.displayProgress(2);
+				this.loadAuthorInfo(() => {
+					this.displayProgress(3);
+					this.loadAuthors(() => {
+						this.setAllOn();
+						this.navigoRouter.on({
+							'/index': this.navigation,
+							'/fromyear/:fromyear/toyear/:toyear/index': this.navigation
+						}).resolve();
+						this.displayProgress(4);
+						this.countAuthorAreas();
+						this.loadCountryInfo(this.countryInfo, () => {
+							setTimeout(() => {
+								this.addListeners();
+								CSRankings.geoCheck();
+							}, 0);
 						});
 					});
 				});
@@ -179,7 +177,7 @@ class CSRankings {
 	private readonly authorFile = "/csrankings.csv";
 	private readonly authorinfoFile = "/generated-author-info.csv";
 	private readonly countryinfoFile = "/country-info.csv";
-	private readonly aliasFile = "/dblp-aliases.csv";
+	// private readonly aliasFile = "/dblp-aliases.csv";
 	private readonly turingFile = "./turing.csv";
 	private readonly turingImage = "./png/acm-turing-award.png";
 	private readonly acmfellowFile = "./acm-fellows.csv";
@@ -739,8 +737,8 @@ class CSRankings {
 	}
 
 	private displayProgress(step: number) {
-		let msgs = ["Loading alias data.",
-			"Loading author information.",
+		let msgs = ["Initializing.",
+		    "Loading author information.",
 			"Loading publication data.",
 			"Computing ranking."];
 		let s = "";
@@ -758,6 +756,7 @@ class CSRankings {
 	}
 
 
+/*
 	private loadAliases(aliases: { [key: string]: string },
 		cont: () => void): void {
 		Papa.parse(this.aliasFile, {
@@ -773,6 +772,7 @@ class CSRankings {
 			}
 		});
 	}
+*/
 
 	private loadTuring(turing: { [key: string]: number },
 		cont: () => void): void {
@@ -844,7 +844,6 @@ class CSRankings {
 	}
 
 	private loadAuthors(cont: () => void): void {
-		// NOTE: aliases MUST have been loaded already.
 		Papa.parse(this.authorinfoFile, {
 			download: true,
 			header: true,
@@ -853,12 +852,6 @@ class CSRankings {
 				this.authors = data as Array<Author>;
 				for (let r in this.authors) {
 					let name = this.authors[r].name;
-					if (name in this.aliases) {
-						name = this.aliases[name];
-						this.authors[r].name = name;
-						//			let { area, dept, subarea, count, adjustedcount, year } = this.authors[r];
-						//			this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
-					}
 				}
 				CSRankings.promise(cont);
 			}
@@ -1137,7 +1130,11 @@ class CSRankings {
 				continue;
 			}
 
-			let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em></small></td></thead><tbody>';
+			let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
+			+ '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
+			+ '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
+			+ ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
+			+ '</small></td></thead><tbody>';
 			/* Build a dict of just faculty from this department for sorting purposes. */
 			let fc: { [key: string]: number } = {};
 			for (let name of deptNames[dept]) {
