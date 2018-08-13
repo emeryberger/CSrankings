@@ -26,7 +26,7 @@ class CSRankings {
         this.authorFile = "/csrankings.csv";
         this.authorinfoFile = "/generated-author-info.csv";
         this.countryinfoFile = "/country-info.csv";
-        this.aliasFile = "/dblp-aliases.csv";
+        // private readonly aliasFile = "/dblp-aliases.csv";
         this.turingFile = "./turing.csv";
         this.turingImage = "./png/acm-turing-award.png";
         this.acmfellowFile = "./acm-fellows.csv";
@@ -223,26 +223,24 @@ class CSRankings {
             }
         }
         this.displayProgress(1);
-        this.loadAliases(this.aliases, () => {
-            this.loadTuring(this.turing, () => {
-                this.loadACMFellow(this.acmfellow, () => {
-                    this.displayProgress(2);
-                    this.loadAuthorInfo(() => {
-                        this.displayProgress(3);
-                        this.loadAuthors(() => {
-                            this.setAllOn();
-                            this.navigoRouter.on({
-                                '/index': this.navigation,
-                                '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
-                            }).resolve();
-                            this.displayProgress(4);
-                            this.countAuthorAreas();
-                            this.loadCountryInfo(this.countryInfo, () => {
-                                setTimeout(() => {
-                                    this.addListeners();
-                                    CSRankings.geoCheck();
-                                }, 0);
-                            });
+        this.loadTuring(this.turing, () => {
+            this.loadACMFellow(this.acmfellow, () => {
+                this.displayProgress(2);
+                this.loadAuthorInfo(() => {
+                    this.displayProgress(3);
+                    this.loadAuthors(() => {
+                        this.setAllOn();
+                        this.navigoRouter.on({
+                            '/index': this.navigation,
+                            '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
+                        }).resolve();
+                        this.displayProgress(4);
+                        this.countAuthorAreas();
+                        this.loadCountryInfo(this.countryInfo, () => {
+                            setTimeout(() => {
+                                this.addListeners();
+                                CSRankings.geoCheck();
+                            }, 0);
                         });
                     });
                 });
@@ -534,7 +532,7 @@ class CSRankings {
         });
     }
     displayProgress(step) {
-        let msgs = ["Loading alias data.",
+        let msgs = ["Initializing.",
             "Loading author information.",
             "Loading publication data.",
             "Computing ranking."];
@@ -552,20 +550,23 @@ class CSRankings {
         });
         jQuery("#progress").html(s);
     }
-    loadAliases(aliases, cont) {
-        Papa.parse(this.aliasFile, {
-            header: true,
-            download: true,
-            complete: (results) => {
-                const data = results.data;
-                const d = data;
-                for (let aliasPair of d) {
-                    aliases[aliasPair.alias] = aliasPair.name;
+    /*
+        private loadAliases(aliases: { [key: string]: string },
+            cont: () => void): void {
+            Papa.parse(this.aliasFile, {
+                header: true,
+                download: true,
+                complete: (results) => {
+                    const data: any = results.data;
+                    const d = data as Array<Alias>;
+                    for (let aliasPair of d) {
+                        aliases[aliasPair.alias] = aliasPair.name;
+                    }
+                    CSRankings.promise(cont);
                 }
-                CSRankings.promise(cont);
-            }
-        });
-    }
+            });
+        }
+    */
     loadTuring(turing, cont) {
         Papa.parse(this.turingFile, {
             header: true,
@@ -629,7 +630,6 @@ class CSRankings {
         });
     }
     loadAuthors(cont) {
-        // NOTE: aliases MUST have been loaded already.
         Papa.parse(this.authorinfoFile, {
             download: true,
             header: true,
@@ -638,12 +638,6 @@ class CSRankings {
                 this.authors = data;
                 for (let r in this.authors) {
                     let name = this.authors[r].name;
-                    if (name in this.aliases) {
-                        name = this.aliases[name];
-                        this.authors[r].name = name;
-                        //			let { area, dept, subarea, count, adjustedcount, year } = this.authors[r];
-                        //			this.authors[r] = { name, area, dept, subarea, count, adjustedcount, year };
-                    }
                 }
                 CSRankings.promise(cont);
             }
@@ -899,7 +893,11 @@ class CSRankings {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
             }
-            let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em></small></td></thead><tbody>';
+            let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
+                + '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
+                + '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
+                + ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
+                + '</small></td></thead><tbody>';
             /* Build a dict of just faculty from this department for sorting purposes. */
             let fc = {};
             for (let name of deptNames[dept]) {
