@@ -529,7 +529,6 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
-        exceptionConference |= confname == 'NSDI' and year == 2018 # FIXME - hopefully DBLP will fix
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
