@@ -1563,7 +1563,7 @@ class CSRankings {
 	public static geoCheck(): void {
 		// Figure out which country clients are coming from and set
 		// the default region accordingly.
-		let theUrl = 'https://geoip-db.com/jsonp'; // 'http://freegeoip.net/json/';
+		let theUrl = 'https://freegeoip.app/json/'; // 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
 		jQuery.getJSON(theUrl, (result) => {
 			switch (result.country_code) {
 				case "US":
