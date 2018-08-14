@@ -971,7 +971,8 @@ class CSRankings {
                     + '>'
                     + '<img src="dblp.png">'
                     + '</a>';
-                p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" ><font size=\"+1\" color=\"blue\">" + this.PieChart + "</font></span>"
+                p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" >"
+                    + "<font size=\"+1\" color=\"blue\">" + this.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
