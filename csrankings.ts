@@ -164,8 +164,9 @@ class CSRankings {
 						this.countAuthorAreas();
 						this.loadCountryInfo(this.countryInfo, () => {
 							setTimeout(() => {
-								this.addListeners();
-//								CSRankings.geoCheck();
+							    this.addListeners();
+							    /* CSRankings.geoCheck(); */
+							    CSRankings.getInstance().rank();
 							}, 0);
 						});
 					});
@@ -1560,6 +1561,7 @@ class CSRankings {
 		return start;
 	}
 
+/*
 	public static geoCheck(): void {
 		// Figure out which country clients are coming from and set
 		// the default region accordingly.
@@ -1587,7 +1589,8 @@ class CSRankings {
 			CSRankings.getInstance().rank();
 		});
 	}
-
+*/
+    
 	public navigation(params: { [key: string]: string }, query: string): void {
 		if (params !== null) {
 			// Set params (fromyear and toyear).
