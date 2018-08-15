@@ -165,7 +165,7 @@ class CSRankings {
 						this.loadCountryInfo(this.countryInfo, () => {
 							setTimeout(() => {
 								this.addListeners();
-								CSRankings.geoCheck();
+//								CSRankings.geoCheck();
 							}, 0);
 						});
 					});
