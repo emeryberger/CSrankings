@@ -239,7 +239,8 @@ class CSRankings {
                         this.loadCountryInfo(this.countryInfo, () => {
                             setTimeout(() => {
                                 this.addListeners();
-                                //								CSRankings.geoCheck();
+                                /* CSRankings.geoCheck(); */
+                                CSRankings.getInstance().rank();
                             }, 0);
                         });
                     });
@@ -1273,33 +1274,35 @@ class CSRankings {
         }
         return start;
     }
-    static geoCheck() {
-        // Figure out which country clients are coming from and set
-        // the default region accordingly.
-        let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
-        jQuery.getJSON(theUrl, (result) => {
-            switch (result.country_code) {
-                case "US":
-                case "CN":
-                case "IN":
-                case "KR":
-                case "JP":
-                case "TW":
-                case "SG":
-                    jQuery("#regions").val("USA");
-                    CSRankings.getInstance().rank();
-                    break;
-                default:
-                    jQuery("#regions").val("world");
-                    CSRankings.getInstance().rank();
-                    break;
-            }
-        }).fail(() => {
-            // If we can't find a location (e.g., because this site is
-            // blocked by an ad blocker), just rank anyway.
-            CSRankings.getInstance().rank();
-        });
-    }
+    /*
+        public static geoCheck(): void {
+            // Figure out which country clients are coming from and set
+            // the default region accordingly.
+            let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
+            jQuery.getJSON(theUrl, (result) => {
+                switch (result.country_code) {
+                    case "US":
+                    case "CN":
+                    case "IN":
+                    case "KR":
+                    case "JP":
+                    case "TW":
+                    case "SG":
+                        jQuery("#regions").val("USA");
+                        CSRankings.getInstance().rank();
+                        break;
+                    default:
+                        jQuery("#regions").val("world");
+                        CSRankings.getInstance().rank();
+                        break;
+                }
+            }).fail(() => {
+                // If we can't find a location (e.g., because this site is
+                // blocked by an ad blocker), just rank anyway.
+                CSRankings.getInstance().rank();
+            });
+        }
+    */
     navigation(params, query) {
         if (params !== null) {
             // Set params (fromyear and toyear).
