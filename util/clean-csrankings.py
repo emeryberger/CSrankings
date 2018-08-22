@@ -138,7 +138,7 @@ for name in csrankings:
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
-count = 200
+count = 10
 ks = list(csrankings.keys())
 ks = ks[:count]
 random.shuffle(ks)
