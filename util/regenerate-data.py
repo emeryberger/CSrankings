@@ -152,7 +152,8 @@ EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2017: (33, 14),
+ISMB_Bioinformatics = {2018: (34, 13),
+                       2017: (33, 14),
                        2016: (32, 12),
                        2015: (31, 12),
                        2014: (30, 12),
@@ -285,7 +286,9 @@ SIGMOD_NonResearchPaperStart = {2017: 1587,
 # SIGMOD recently has begun intermingling research and non-research
 # track papers in their proceedings, requiring individual paper
 # filtering.
-SIGMOD_NonResearchPapersRange = { 2017: [(1, 3), (51, 63), (125, 138), (331, 343),
+SIGMOD_NonResearchPapersRange = { 2018 : [(177, 230), (583, 627), (789, 839), (1393, 1459),
+                                          (1637, 1845)],
+                                  2017: [(1, 3), (51, 63), (125, 138), (331, 343),
                                          (1041, 1052), (511, 526), (1587, 1782)],
                                   2016: [(1753, 1764), (1295, 1306), (795, 806),
                                         (227, 238), (999, 1010), (1923, 1934),
@@ -319,6 +322,7 @@ counter = 0
 successes = 0
 failures = 0
 confdict = {}
+aliasdict = {}
 
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
@@ -328,6 +332,9 @@ pageCounterNormal = re.compile('(\d+)-(\d+)')
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
 TECSCounterColon = re.compile('([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*')
+# Extract the ISMB proceedings page numbers.
+ISMBpageCounter = re.compile('i(\d+)-i(\d+)')
+
 
 def do_it():
 #    gz = gzip.GzipFile('dblp-original.xml.gz')
@@ -383,6 +390,7 @@ def build_dicts():
     global areadict
     global confdict
     global facultydict
+    global aliasdict
     # Build a dictionary mapping conferences to areas.
     # e.g., confdict['CVPR'] = 'vision'.
     confdict = {}
@@ -392,6 +400,7 @@ def build_dicts():
             confdict[item] = k
             venues.append(item)
     facultydict = csv2dict_str_str('faculty-affiliations.csv')
+    aliasdict = csv2dict_str_str('dblp-aliases.csv')
 
 def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
     global EMSOFT_TECS
@@ -407,13 +416,15 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     global TVCG_VR_Volume
     global ASE_LongPaperThreshold
     global pageCountThreshold
+    global ISMBpageCounter
+    
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
 
     # Special handling for EMSOFT.
     if confname == 'ACM Trans. Embedded Comput. Syst.':
-        if EMSOFT_TECS.has_key(year):
+        if year in EMSOFT_TECS:
             pvmatcher = TECSCounterColon.match(pages)
             if not pvmatcher is None:
                 pseudovolume = int(pvmatcher.group(1))
@@ -425,16 +436,24 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         
     # Special handling for ISMB.
     if confname == 'Bioinformatics':
-        if ISMB_Bioinformatics.has_key(year):
+        if year in ISMB_Bioinformatics:
             (vol, num) = ISMB_Bioinformatics[year]
             if (volume != str(vol)) or (number != str(num)):
                 return False
+            else:
+                if (int(volume) >= 33): # Hopefully this works going forward.
+                    pg = ISMBpageCounter.match(pages)
+                    if pg is None:
+                        return False
+                    startPage = int(pg.group(1))
+                    end = int(pg.group(2))
+                    pageCount = end - startPage + 1
         else:
             return False
 
     # Special handling for ICSE.
     elif confname == 'ICSE' or confname == 'ICSE (1)' or confname == 'ICSE (2)':
-        if ICSE_ShortPaperStart.has_key(year):
+        if year in ICSE_ShortPaperStart:
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
                 # Omit papers that start at or beyond this page,
@@ -443,13 +462,13 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
 
     # Special handling for SIGMOD.
     elif confname == 'SIGMOD Conference':
-        if SIGMOD_NonResearchPaperStart.has_key(year):
+        if year in SIGMOD_NonResearchPaperStart:
             pageno = SIGMOD_NonResearchPaperStart[year]
             if startPage >= pageno:
                 # Omit papers that start at or beyond this page,
                 # since they are not research-track papers.
                 return False
-        if SIGMOD_NonResearchPapersRange.has_key(year):
+        if year in SIGMOD_NonResearchPapersRange:
             pageRange = SIGMOD_NonResearchPapersRange[year]
             for p in pageRange:
                 if startPage >= p[0] and startPage + pageCount - 1 <= p[1]:
@@ -457,13 +476,13 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
     elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
-        if TOG_SIGGRAPH_Volume.has_key(year):
+        if year in TOG_SIGGRAPH_Volume:
             (vol, num) = TOG_SIGGRAPH_Volume[year]
             if not ((volume == str(vol)) and (number == str(num))):
                 return False
         
     elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
-        if TOG_SIGGRAPH_Asia_Volume.has_key(year):
+        if year in TOG_SIGGRAPH_Asia_Volume:
             (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
             if not((volume == str(vol)) and (number == str(num))):
                 return False
@@ -471,11 +490,11 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     # Special handling for IEEE Vis and VR
     elif confname == 'IEEE Trans. Vis. Comput. Graph.':
         Vis_Conf = False
-        if TVCG_Vis_Volume.has_key(year):
+        if year in TVCG_Vis_Volume:
             (vol, num) = TVCG_Vis_Volume[year]
             if (volume == str(vol)) and (number == str(num)):
                 Vis_Conf = True
-        if TVCG_VR_Volume.has_key(year):
+        if year in TVCG_VR_Volume:
             (vol, num) = TVCG_VR_Volume[year]
             if (volume == str(vol)) and (number == str(num)):
                 Vis_Conf = True
@@ -510,7 +529,6 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
-        exceptionConference |= confname == 'NSDI' and year == 2018 # FIXME - hopefully DBLP will fix
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
@@ -529,6 +547,7 @@ def handle_article(_, article):
     global authlogs
     global interestingauthors
     global facultydict
+    global aliasdict
     global TOG_SIGGRAPH_Volume
     global TOG_SIGGRAPH_Asia_Volume
     global TVCG_Vis_Volume
@@ -536,7 +555,7 @@ def handle_article(_, article):
     counter += 1
     try:
         if counter % 10000 == 0:
-            print str(counter)+ " papers processed."
+            print(str(counter)+ " papers processed.")
         if 'author' in article:
             # Fix if there is just one author.
             if type(article['author']) != list:
@@ -551,6 +570,10 @@ def handle_article(_, article):
                 if authorName in facultydict:
                     foundOneInDict = True
                     break
+                if authorName in aliasdict:
+                    if aliasdict[authorName] in facultydict:
+                        foundOneInDict = True
+                        break
             if not foundOneInDict:
                 return True
         else:
@@ -578,22 +601,22 @@ def handle_article(_, article):
                 else:
                     return True
             elif confname == 'ACM Trans. Graph.':
-                if TOG_SIGGRAPH_Volume.has_key(year):
+                if year in TOG_SIGGRAPH_Volume:
                     (vol, num) = TOG_SIGGRAPH_Volume[year]
                     if (volume == str(vol)) and (number == str(num)):
                         confname = 'SIGGRAPH'
                         areaname = confdict[confname]
-                if TOG_SIGGRAPH_Asia_Volume.has_key(year):
+                if year in TOG_SIGGRAPH_Asia_Volume:
                     (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
                     if (volume == str(vol)) and (number == str(num)):
                         confname = 'SIGGRAPH Asia'
                         areaname = confdict[confname]
             elif confname == 'IEEE Trans. Vis. Comput. Graph.':
-                if TVCG_Vis_Volume.has_key(year):
+                if year in TVCG_Vis_Volume:
                     (vol, num) = TVCG_Vis_Volume[year]
                     if (volume == str(vol)) and (number == str(num)):
                         areaname = 'vis'
-                if TVCG_VR_Volume.has_key(year):
+                if year in TVCG_VR_Volume:
                     (vol, num) = TVCG_VR_Volume[year]
                     if (volume == str(vol)) and (number == str(num)):
                         confname = 'VR'
@@ -617,14 +640,16 @@ def handle_article(_, article):
     except TypeError:
         raise
     except:
-        print sys.exc_info()[0]
+        print(sys.exc_info()[0])
         failures += 1
         raise
-        pass
+
     if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
                 authorName = authorName["#text"]
+            if authorName in aliasdict:
+                authorName = aliasdict[authorName]
             if authorName in facultydict:
                 log = { 'name' : authorName.encode('utf-8'),
                         'year' : year,
@@ -684,7 +709,7 @@ def dump_it():
         z = []
         authlogs = collections.OrderedDict(sorted(authlogs.items()))
         for v, l in authlogs.iteritems():
-            if interestingauthors.has_key(v):
+            if v in interestingauthors:
                 for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')):
                     z.append(s)
         json.dump(z, f, indent=2)
