@@ -1,849 +1,1628 @@
 /*
 
-  CSrankings.ts
+  CSRankings.ts
 
   @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
 
 */
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
-/// <reference path="./typescript/set.d.ts" />
-/// <reference path="./typescript/pako.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
-var coauthorFile = "faculty-coauthors.csv";
-var authorinfoFile = "generated-author-info.csv";
-var countryinfoFile = "country-info.csv";
-var aliasFile = "dblp-aliases.csv";
-var homepagesFile = "homepages.csv";
-var allowRankingChange = false; /* Can we change the kind of rankings being used? */
-var showCoauthors = false;
-var maxCoauthors = 30; /* Max co-authors to display. */
-var useArithmeticMean = false;
-var useGeometricMean = true; /* This is the default and arguably only principled choice. */
-var useHarmonicMean = false;
-var useDenseRankings = false; /* Set to true for "dense rankings" vs. "competition rankings". */
-/* All the areas, in order by their 'field_' number (the checkboxes) in index.html. */
-var areas = ["proglang", "softeng", "opsys", "networks", "security", "database", "metrics", "mlmining", "ai", "nlp", "web", "vision", "theory", "logic", "arch", "graphics", "hci", "mobile", "robotics", "highperf", "nada", "crypto"];
-var areaNames = ["PL", "SE", "OS", "Networks", "Security", "DB", "Metrics", "ML", "AI", "NLP", "Web & IR", "Vision", "Theory", "Logic", "Arch.", "Graphics", "HCI", "Mobile", "Robotics", "HPC", "nada", "Crypto"];
-var areaDict = {};
-/* Colors for all areas. */
-var color = ["#2484c1", "#0c6197", "#4daa4b", "#90c469", "#daca61", "#e4a14b", "#e98125", "#cb2121", "#830909", "#923e99", "#ae83d5", "#bf273e", "#ce2aeb", "#bca44a", "#618d1b", "#1ee67b", "#b0ec44", "#a4a0c9", "#322849", "#86f71a", "#d1c87f", "#7d9058", "#44b9b0", "#7c37c0", "#cc9fb1", "#e65414", "#8b6834", "#248838"];
-var RightTriangle = "&#9658;";
-var DownTriangle = "&#9660;";
-var PieChart = "&#9685;";
-function initAreaDict() {
-    for (var i = 0; i < areaNames.length; i++) {
-        areaDict[areas[i]] = areaNames[i];
-    }
-}
+/// <reference path="./typescript/navigo.d.ts" />
 ;
 ;
 ;
 ;
 ;
-var authors = []; /* The data which will hold the parsed CSV of author info. */
-var coauthors = []; /* The data which will hold the parsed CSV of co-author info. */
-var countryInfo = {};
-var aliases = {};
-var homepages = {};
-var authorAreas = {};
-/* The prologue that we preface each generated HTML page with (the results). */
-function makePrologue() {
-    var s = "<html>"
-        + "<head>"
-        + '<style type="text/css">'
-        + '  body { font-family: "Helvetica", "Arial"; }'
-        + "  table td { vertical-align: top; }"
-        + "</style>"
-        + "</head>"
-        + "<body>"
-        + '<div class="row">'
-        + '<div class="table" style="overflow:auto; height: 650px;">'
-        + '<table class="table-sm table-striped"'
-        + 'id="ranking" valign="top">';
-    return s;
-}
-/* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
-function compareNames(a, b) {
-    //split the names as strings into arrays
-    var aName = a.split(" ");
-    var bName = b.split(" ");
-    // get the last names by selecting
-    // the last element in the name arrays
-    // using array.length - 1 since full names
-    // may also have a middle name or initial
-    var aLastName = aName[aName.length - 1];
-    var bLastName = bName[bName.length - 1];
-    // compare the names and return either
-    // a negative number, positive number
-    // or zero.
-    if (aLastName < bLastName)
-        return -1;
-    if (aLastName > bLastName)
-        return 1;
-    return 0;
-}
-/* from http://www.html5gamedevs.com/topic/20052-tutorial-efficiently-load-large-amounts-of-game-data-into-memory/ */
-function zlibDecompress(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'blob';
-    xhr.onload = function (oEvent) {
-        // Base64 encode
-        var reader = new FileReader();
-        reader.readAsDataURL(xhr.response);
-        reader.onloadend = function () {
-            var base64data = reader.result;
-            var base64 = base64data.split(',')[1];
-            // Decode base64 (convert ascii to binary)
-            var strData = atob(base64);
-            // Convert binary string to character-number array
-            var charData = strData.split('').map(function (x) { return x.charCodeAt(0); });
-            // Turn number array into byte-array
-            var binData = new Uint8Array(charData);
-            // Pako inflate
-            var data = pako.inflate(binData, { to: 'string' });
-            callback(data);
-        };
-    };
-    xhr.send();
-}
-function redisplay(str) {
-    jQuery("#success").html(str);
-}
-function makeChart(name) {
-    console.assert(color.length >= areas.length, "Houston, we have a problem.");
-    var data = [];
-    var keys = Object.keys(authorAreas[unescape(name)]);
-    for (var i = 0; i < keys.length; i++) {
-        data.push({ "label": areaDict[keys[i]],
-            "value": authorAreas[unescape(name)][keys[i]],
-            "color": color[i] });
-    }
-    var pie = new d3pie(name, {
-        "header": {
-            "title": {
-                "text": unescape(name),
-                "fontSize": 24,
-                "font": "open sans"
-            },
-            "subtitle": {
-                "text": "Publication Profile",
-                "color": "#999999",
-                "fontSize": 14,
-                "font": "open sans"
-            },
-            "titleSubtitlePadding": 9
-        },
-        "size": {
-            "canvasHeight": 500,
-            "canvasWidth": 500,
-            "pieInnerRadius": "38%",
-            "pieOuterRadius": "83%"
-        },
-        "data": {
-            "sortOrder": "value-desc",
-            "content": data,
-            "smallSegmentGrouping": {
-                "enabled": true,
-                "value": 1
+;
+;
+;
+;
+;
+;
+class CSRankings {
+    constructor() {
+        this.authorFile = "/csrankings.csv";
+        this.authorinfoFile = "/generated-author-info.csv";
+        this.countryinfoFile = "/country-info.csv";
+        // private readonly aliasFile = "/dblp-aliases.csv";
+        this.turingFile = "./turing.csv";
+        this.turingImage = "./png/acm-turing-award.png";
+        this.acmfellowFile = "./acm-fellows.csv";
+        this.acmfellowImage = "./png/acm.png";
+        this.homepageImage = "/house-logo.png";
+        this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
+        this.areaMap = [{ area: "ai", title: "AI" },
+            { area: "aaai", title: "AI" },
+            { area: "ijcai", title: "AI" },
+            { area: "vision", title: "Vision" },
+            { area: "cvpr", title: "Vision" },
+            { area: "eccv", title: "Vision" },
+            { area: "iccv", title: "Vision" },
+            { area: "mlmining", title: "ML" },
+            { area: "icml", title: "ML" },
+            { area: "kdd", title: "ML" },
+            { area: "nips", title: "ML" },
+            { area: "nlp", title: "NLP" },
+            { area: "acl", title: "NLP" },
+            { area: "emnlp", title: "NLP" },
+            { area: "naacl", title: "NLP" },
+            { area: "ir", title: "Web+IR" },
+            { area: "sigir", title: "Web+IR" },
+            { area: "www", title: "Web+IR" },
+            { area: "arch", title: "Arch" },
+            { area: "asplos", title: "Arch" },
+            { area: "isca", title: "Arch" },
+            { area: "micro", title: "Arch" },
+            { area: "hpca", title: "Arch" },
+            { area: "comm", title: "Networks" },
+            { area: "sigcomm", title: "Networks" },
+            { area: "nsdi", title: "Networks" },
+            { area: "sec", title: "Security" },
+            { area: "ccs", title: "Security" },
+            { area: "oakland", title: "Security" },
+            { area: "usenixsec", title: "Security" },
+            { area: "ndss", title: "Security" },
+            { area: "pets", title: "Security" },
+            { area: "mod", title: "DB" },
+            { area: "sigmod", title: "DB" },
+            { area: "vldb", title: "DB" },
+            { area: "icde", title: "DB" },
+            { area: "pods", title: "DB" },
+            { area: "hpc", title: "HPC" },
+            { area: "sc", title: "HPC" },
+            { area: "hpdc", title: "HPC" },
+            { area: "ics", title: "HPC" },
+            { area: "mobile", title: "Mobile" },
+            { area: "mobicom", title: "Mobile" },
+            { area: "mobisys", title: "Mobile" },
+            { area: "sensys", title: "Mobile" },
+            { area: "metrics", title: "Metrics" },
+            { area: "imc", title: "Metrics" },
+            { area: "sigmetrics", title: "Metrics" },
+            { area: "ops", title: "OS" },
+            { area: "sosp", title: "OS" },
+            { area: "osdi", title: "OS" },
+            { area: "fast", title: "OS" },
+            { area: "usenixatc", title: "OS" },
+            { area: "eurosys", title: "OS" },
+            { area: "pldi", title: "PL" },
+            { area: "popl", title: "PL" },
+            { area: "icfp", title: "PL" },
+            { area: "oopsla", title: "PL" },
+            { area: "plan", title: "PL" },
+            { area: "soft", title: "SE" },
+            { area: "fse", title: "SE" },
+            { area: "icse", title: "SE" },
+            { area: "ase", title: "SE" },
+            { area: "issta", title: "SE" },
+            { area: "act", title: "Theory" },
+            { area: "focs", title: "Theory" },
+            { area: "soda", title: "Theory" },
+            { area: "stoc", title: "Theory" },
+            { area: "crypt", title: "Crypto" },
+            { area: "crypto", title: "Crypto" },
+            { area: "eurocrypt", title: "Crypto" },
+            { area: "log", title: "Logic" },
+            { area: "cav", title: "Logic" },
+            { area: "lics", title: "Logic" },
+            { area: "graph", title: "Graphics" },
+            { area: "siggraph", title: "Graphics" },
+            { area: "siggraph-asia", title: "Graphics" },
+            { area: "chi", title: "HCI" },
+            { area: "chiconf", title: "HCI" },
+            { area: "ubicomp", title: "HCI" },
+            { area: "uist", title: "HCI" },
+            { area: "robotics", title: "Robotics" },
+            { area: "icra", title: "Robotics" },
+            { area: "iros", title: "Robotics" },
+            { area: "rss", title: "Robotics" },
+            { area: "bio", title: "Comp. Bio" },
+            { area: "ismb", title: "Comp. Bio" },
+            { area: "recomb", title: "Comp. Bio" },
+            { area: "da", title: "EDA" },
+            { area: "dac", title: "EDA" },
+            { area: "iccad", title: "EDA" },
+            { area: "bed", title: "Embedded" },
+            { area: "emsoft", title: "Embedded" },
+            { area: "rtas", title: "Embedded" },
+            { area: "rtss", title: "Embedded" },
+            { area: "visualization", title: "Visualization" },
+            { area: "vis", title: "Visualization" },
+            { area: "vr", title: "Visualization" },
+            { area: "ecom", title: "ECom" },
+            { area: "ec", title: "ECom" },
+            { area: "wine", title: "ECom" }
+            //,{ area : "cse", title : "CSEd" }
+        ];
+        this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+        this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+        this.theoryAreas = ["act", "crypt", "log"];
+        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
+        this.areaNames = [];
+        this.fields = [];
+        this.aiFields = [];
+        this.systemsFields = [];
+        this.theoryFields = [];
+        this.otherFields = [];
+        /* Map area to its name (from areaNames). */
+        this.areaDict = {};
+        /* Map area to its position in the list. */
+        this.areaPosition = {};
+        /* Map names to Google Scholar IDs. */
+        this.scholarInfo = {};
+        /* Map aliases to canonical author name. */
+        this.aliases = {};
+        /* Map Turing award winners to year */
+        this.turing = {};
+        /* Map ACM Fellow award winners to year */
+        this.acmfellow = {};
+        /* Map institution to (non-US) region. */
+        this.countryInfo = {};
+        /* Map name to home page. */
+        this.homepages = {};
+        /* Set to true for "dense rankings" vs. "competition rankings". */
+        this.useDenseRankings = false;
+        /* The data which will hold the parsed CSV of author info. */
+        this.authors = [];
+        /* The DBLP-transformed strings per author. */
+        this.dblpAuthors = {};
+        /* Map authors to the areas they have published in (for pie chart display). */
+        this.authorAreas = {};
+        /* Computed stats (univagg). */
+        this.stats = {};
+        this.areaDeptAdjustedCount = {}; /* area+dept */
+        this.areaStringMap = {}; // name -> areaString (memoized)
+        /* Colors for all areas. */
+        this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+        this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
+        this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
+        this.PieChart = "<img src='png/piechart.png'>"; // pie chart image
+        CSRankings.theInstance = this;
+        this.navigoRouter = new Navigo(null, true);
+        /* Build the areaDict dictionary: areas -> names used in pie charts
+           and areaPosition dictionary: areas -> position in area array
+        */
+        for (let position = 0; position < this.areaMap.length; position++) {
+            const { area, title } = this.areaMap[position];
+            CSRankings.areas[position] = area;
+            if (!(area in CSRankings.parentMap)) {
+                CSRankings.topLevelAreas[area] = area;
             }
-        },
-        "labels": {
-            "outer": {
-                "pieDistance": 32
-            },
-            "inner": {
-                "format": "value",
-                "hideWhenLessThanPercentage": 5
-            },
-            "mainLabel": {
-                "fontSize": 12
-            },
-            "percentage": {
-                "color": "#ffffff",
-                "decimalPlaces": 0
-            },
-            "value": {
-                "color": "#ffffff",
-                "fontSize": 11
-            },
-            "lines": {
-                "enabled": true
-            },
-            "truncation": {
-                "enabled": true
+            if (!(area in CSRankings.nextTier)) {
+                CSRankings.topTierAreas[area] = area;
             }
-        },
-        "effects": {
-            "load": {
-                "effect": "none"
-            },
-            "pullOutSegmentOnClick": {
-                "effect": "linear",
-                "speed": 400,
-                "size": 8
+            this.areaNames[position] = title;
+            this.fields[position] = area;
+            this.areaDict[area] = title; // this.areaNames[position];
+            this.areaPosition[area] = position;
+        }
+        for (let area of this.aiAreas) {
+            this.aiFields.push(this.areaPosition[area]);
+        }
+        for (let area of this.systemsAreas) {
+            this.systemsFields.push(this.areaPosition[area]);
+        }
+        for (let area of this.theoryAreas) {
+            this.theoryFields.push(this.areaPosition[area]);
+        }
+        for (let area of this.interdisciplinaryAreas) {
+            this.otherFields.push(this.areaPosition[area]);
+        }
+        let parentCounter = 0;
+        for (let child in CSRankings.parentMap) {
+            let parent = CSRankings.parentMap[child];
+            if (!(parent in CSRankings.childMap)) {
+                CSRankings.childMap[parent] = [child];
+                CSRankings.parentIndex[parent] = parentCounter;
+                parentCounter += 1;
             }
-        },
-        "misc": {
-            "gradient": {
-                "enabled": true,
-                "percentage": 100
+            else {
+                CSRankings.childMap[parent].push(child);
             }
         }
-    });
-}
-function toggleChart(name) {
-    var e = document.getElementById(name);
-    if (e.style.display == 'block') {
-        e.style.display = 'none';
-        var widget = document.getElementById(name);
-        widget.innerHTML = '';
-    }
-    else {
-        e.style.display = 'block';
-        makeChart(name);
-    }
-}
-function toggle(dept) {
-    var e = document.getElementById(dept);
-    var widget = document.getElementById(dept + "-widget");
-    if (e.style.display == 'block') {
-        e.style.display = 'none';
-        widget.innerHTML = '<font color="blue">' + RightTriangle + '</font>&nbsp;' + dept;
-    }
-    else {
-        e.style.display = 'block';
-        widget.innerHTML = '<font color="blue">' + DownTriangle + '</font>&nbsp;' + dept;
-    }
-}
-function setAllCheckboxes() {
-    /* Set the _default_ (not "other") checkboxes to true. */
-    for (var i = 1; i <= areas.length; i++) {
-        var str = 'input[name=field_' + i + ']';
-        jQuery(str).prop('checked', true);
-    }
-}
-/* A convenience function for ending a pipeline of function calls executed in continuation-passing style. */
-function nop() { }
-function loadCoauthors(cont) {
-    Papa.parse(coauthorFile, {
-        download: true,
-        header: true,
-        complete: function (results) {
-            var data = results.data;
-            coauthors = data;
-            cont();
-        }
-    });
-}
-function loadAliases(cont) {
-    Papa.parse(aliasFile, {
-        header: true,
-        download: true,
-        complete: function (results) {
-            var data = results.data;
-            var d = data;
-            for (var i = 0; i < d.length; i++) {
-                aliases[d[i].alias] = d[i].name;
-            }
-            cont();
-        }
-    });
-}
-function loadCountryInfo(cont) {
-    Papa.parse(countryinfoFile, {
-        header: true,
-        download: true,
-        complete: function (results) {
-            var data = results.data;
-            var ci = data;
-            for (var i = 0; i < ci.length; i++) {
-                countryInfo[ci[i].institution] = ci[i].region;
-            }
-            cont();
-        }
-    });
-}
-function loadAuthorInfo(cont) {
-    Papa.parse(authorinfoFile, {
-        download: true,
-        header: true,
-        complete: function (results) {
-            var data = results.data;
-            authors = data;
-            for (var i = 1; i <= areas.length; i++) {
-                var str = 'input[name=field_' + i + ']';
-                (function (s) {
-                    jQuery(s).click(function () {
-                        rank();
+        this.displayProgress(1);
+        this.loadTuring(this.turing, () => {
+            this.loadACMFellow(this.acmfellow, () => {
+                this.displayProgress(2);
+                this.loadAuthorInfo(() => {
+                    this.displayProgress(3);
+                    this.loadAuthors(() => {
+                        this.setAllOn();
+                        this.navigoRouter.on({
+                            '/index': this.navigation,
+                            '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
+                        }).resolve();
+                        this.displayProgress(4);
+                        this.countAuthorAreas();
+                        this.loadCountryInfo(this.countryInfo, () => {
+                            setTimeout(() => {
+                                this.addListeners();
+                                /* CSRankings.geoCheck(); */
+                                CSRankings.getInstance().rank();
+                            }, 0);
+                        });
                     });
-                })(str);
-            }
-            cont();
-            /*	    rank(); */
-        }
-    });
-}
-function loadHomepages(cont) {
-    Papa.parse(homepagesFile, {
-        header: true,
-        download: true,
-        complete: function (results) {
-            var data = results.data;
-            var d = data;
-            for (var i = 0; i < d.length; i++) {
-                homepages[d[i].name] = d[i].homepage;
-            }
-            cont();
-        }
-    });
-}
-function init() {
-    jQuery(document).ready(function () {
-        setAllCheckboxes();
-        initAreaDict();
-        loadAliases(function () {
-            loadHomepages(function () {
-                loadAuthorInfo(function () {
-                    loadCountryInfo(rank);
                 });
             });
         });
-    });
-}
-/*
-function init() : void {
-    jQuery(document).ready(
-    function() {
-        setAllCheckboxes();
-        loadAuthorInfo(function() {
-        loadCountryInfo(function() {
-            loadCoauthors(rank);
+    }
+    // Return the singleton corresponding to this object.
+    static getInstance() {
+        return CSRankings.theInstance;
+    }
+    // Promises polyfill.
+    static promise(cont) {
+        if (typeof Promise !== "undefined") {
+            var resolved = Promise.resolve();
+            resolved.then(cont);
+        }
+        else {
+            setTimeout(cont, 0);
+        }
+    }
+    translateNameToDBLP(name) {
+        // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
+        // First, replace spaces and non-ASCII characters (not complete).
+        // Known issue: does not properly handle suffixes like Jr., III, etc.
+        name = name.replace(/'|\-|\./g, "=");
+        name = name.replace(/Á/g, "=Aacute=");
+        name = name.replace(/á/g, "=aacute=");
+        name = name.replace(/è/g, "=egrave=");
+        name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/ï/g, "=iuml=");
+        name = name.replace(/ó/g, "=oacute=");
+        name = name.replace(/ç/g, "=ccedil=");
+        name = name.replace(/ä/g, "=auml=");
+        name = name.replace(/ö/g, "=ouml=");
+        name = name.replace(/ø/g, "=oslash=");
+        name = name.replace(/Ö/g, "=Ouml=");
+        name = name.replace(/ü/g, "=uuml=");
+        let splitName = name.split(" ");
+        let lastName = splitName[splitName.length - 1];
+        let disambiguation = "";
+        if (parseInt(lastName) > 0) {
+            // this was a disambiguation entry; go back.
+            disambiguation = lastName;
+            splitName.pop();
+            lastName = splitName[splitName.length - 1] + "_" + disambiguation;
+        }
+        splitName.pop();
+        let newName = splitName.join(" ");
+        newName = newName.replace(/\s/g, "_");
+        newName = newName.replace(/\-/g, "=");
+        let str = "https://dblp.uni-trier.de/pers/hd";
+        const lastInitial = lastName[0].toLowerCase();
+        str += "/" + lastInitial + "/" + lastName + ":" + newName;
+        return str;
+    }
+    /* Create the prologue that we preface each generated HTML page with (the results). */
+    makePrologue() {
+        const s = '<div class="table-responsive" style="overflow:auto; height:700px;">'
+            + '<table class="table table-fit table-sm table-striped"'
+            + 'id="ranking" valign="top">';
+        return s;
+    }
+    static sum(n) {
+        let s = 0.0;
+        for (let i = 0; i < n.length; i++) {
+            s += n[i];
+        }
+        return s;
+    }
+    static average(n) {
+        return CSRankings.sum(n) / n.length;
+    }
+    static stddev(n) {
+        let avg = CSRankings.average(n);
+        let squareDiffs = n.map(function (value) {
+            let diff = value - avg;
+            return (diff * diff);
         });
-        });
-    });
-}
-*/
-function activateAll(value) {
-    if (value === undefined) {
-        value = true;
+        let sigma = Math.sqrt(CSRankings.sum(squareDiffs) / (n.length - 1));
+        return sigma;
     }
-    for (var i = 1; i <= areas.length; i++) {
-        var str = "input[name=field_" + i + "]";
-        jQuery(str).prop('checked', value);
+    areaString(name) {
+        if (name in this.areaStringMap) {
+            return this.areaStringMap[name];
+        }
+        // Create a summary of areas, separated by commas,
+        // corresponding to a faculty member's publications.  We only
+        // consider areas within a fixed number of standard deviations
+        // of the max that also comprise a threshold fraction of pubs
+        // (and at least crossing a min count threshold).
+        const pubThreshold = 0.2;
+        const numStddevs = 1.0;
+        const topN = 3;
+        const minPubThreshold = 1;
+        if (!this.authorAreas[name]) {
+            return "";
+        }
+        // Create an object containing areas and number of publications.
+        // This is essentially duplicated logic from makeChart and
+        // should be factored out.
+        let datadict = {};
+        const keys = CSRankings.topTierAreas;
+        let maxValue = 0;
+        for (let key in keys) { // i = 0; i < keys.length; i++) {
+            //	    let key = keys[i];
+            //	    if (key in CSRankings.nextTier) {
+            //		continue;
+            //	    }
+            let value = this.authorAreas[name][key];
+            if (key in CSRankings.parentMap) {
+                key = this.areaDict[key];
+            }
+            if (value > 0) {
+                if (!(key in datadict)) {
+                    datadict[key] = 0;
+                }
+                datadict[key] += value;
+                maxValue = (datadict[key] > maxValue) ? datadict[key] : maxValue;
+            }
+        }
+        // Now compute the standard deviation.
+        let values = [];
+        for (let key in datadict) {
+            values.push(datadict[key]);
+        }
+        let sum = CSRankings.sum(values);
+        let stddevs = 0.0;
+        if (values.length > 1) {
+            stddevs = Math.ceil(numStddevs * CSRankings.stddev(values));
+        }
+        // Strip out everything not within the desired number of
+        // standard deviations of the max and not crossing the
+        // publication threshold.
+        let maxes = [];
+        for (let key in datadict) {
+            if ((datadict[key] >= maxValue - stddevs) &&
+                ((1.0 * datadict[key]) / sum >= pubThreshold) &&
+                (datadict[key] > minPubThreshold)) {
+                maxes.push(key);
+            }
+        }
+        // Finally, pick at most the top N.
+        let str = maxes.sort((x, y) => { return datadict[y] - datadict[x]; }).slice(0, topN).join(",");
+        // Cache the result.
+        this.areaStringMap[name] = str;
+        // Return it.
+        return str;
     }
-    rank();
-    return false;
-}
-function activateNone() {
-    return activateAll(false);
-}
-function activateFields(value, fields) {
-    if (value === undefined) {
-        value = true;
-    }
-    for (var i = 0; i <= fields.length; i++) {
-        var str = "input[name=field_" + fields[i] + "]";
-        jQuery(str).prop('checked', value);
-    }
-    rank();
-    return false;
-}
-function activatePL(value) {
-    var plFields = [1, 2, 21];
-    return activateFields(value, plFields);
-}
-function activateSystems(value) {
-    activatePL(value);
-    var systemsFields = [3, 4, 5, 6, 7, 15, 18, 20];
-    return activateFields(value, systemsFields);
-}
-function activateAI(value) {
-    var aiFields = [8, 9, 10, 11, 12];
-    return activateFields(value, aiFields);
-}
-function activateTheory(value) {
-    var theoryFields = [13, 14, 22];
-    return activateFields(value, theoryFields);
-}
-function activateOthers(value) {
-    var otherFields = [16, 17, 19];
-    return activateFields(value, otherFields);
-}
-function deactivatePL() {
-    return activatePL(false);
-}
-function deactivateSystems() {
-    return activateSystems(false);
-}
-function deactivateAI() {
-    return activateAI(false);
-}
-function deactivateTheory() {
-    return activateTheory(false);
-}
-function deactivateOthers() {
-    return activateOthers(false);
-}
-function toggleAI(cb) {
-    if (cb.checked) {
-        activateAI(false);
-    }
-    else {
-        activateAI(true);
-    }
-    return false;
-}
-function sortIndex(univagg) {
-    var keys = Object.keys(univagg);
-    keys.sort(function (a, b) {
-        if (univagg[a] > univagg[b]) {
+    /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
+    compareNames(a, b) {
+        //split the names as strings into arrays
+        const aName = a.split(" ");
+        const bName = b.split(" ");
+        // get the last names by selecting
+        // the last element in the name arrays
+        // using array.length - 1 since full names
+        // may also have a middle name or initial
+        const aLastName = aName[aName.length - 1];
+        const bLastName = bName[bName.length - 1];
+        // compare the names and return either
+        // a negative number, positive number
+        // or zero.
+        if (aLastName < bLastName)
             return -1;
-        }
-        if (univagg[b] > univagg[a]) {
+        if (aLastName > bLastName)
             return 1;
-        }
-        if (a < b) {
-            return -1;
-        }
-        if (b < a) {
-            return 1;
-        }
         return 0;
-    });
-    return keys;
-}
-function computeCoauthors(coauthors, startyear, endyear, weights) {
-    var coauthorList = {};
-    for (var c in coauthors) {
-        var author = coauthors[c].author;
-        var coauthor = coauthors[c].coauthor;
-        var year = coauthors[c].year;
-        var area = coauthors[c].area;
-        if (!(author in coauthorList)) {
-            coauthorList[author] = new Set([]);
-        }
-        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
-            continue;
-        }
-        coauthorList[author].add(coauthor);
     }
-    return coauthorList;
-}
-function countAuthorAreas(areacount, authors, startyear, endyear, weights) {
-    /* Delete everything from authorAreas. */
-    // Build up an associative array of depts.
-    var depts = {};
-    for (var r in authors) {
-        // If we haven't seen this dept yet, add it.
-        var dept = authors[r].dept;
-        if (!depts.hasOwnProperty(dept)) {
-            depts[dept] = 1;
+    /* Create a pie chart */
+    makeChart(name) {
+        let data = [];
+        let datadict = {};
+        const keys = CSRankings.topTierAreas;
+        const uname = unescape(name);
+        for (let key in keys) { // i = 0; i < keys.length; i++) {
+            //	    let key = keys[i];
+            if (!(uname in this.authorAreas)) {
+                // Defensive programming.
+                // This should only happen if we have an error in the aliases file.
+                return;
+            }
+            //	    if (key in CSRankings.nextTier) {
+            //		continue;
+            //	    }
+            let value = this.authorAreas[uname][key];
+            // Use adjusted count if this is for a department.
+            /*
+                DISABLED so department charts are invariant.
+    
+            if (uname in this.stats) {
+            value = this.areaDeptAdjustedCount[key+uname] + 1;
+            if (value == 1) {
+                value = 0;
+            }
+            }
+            */
+            // Round it to the nearest 0.1.
+            value = Math.round(value * 10) / 10;
+            if (value > 0) {
+                if (key in CSRankings.parentMap) {
+                    key = CSRankings.parentMap[key];
+                }
+                if (!(key in datadict)) {
+                    datadict[key] = 0;
+                }
+                datadict[key] += value;
+            }
         }
-        // Now trash the existing name entry.
-        var name_1 = authors[r].name;
-        if (authorAreas.hasOwnProperty(name_1)) {
-            delete authorAreas[name_1];
+        for (let key in datadict) {
+            let newSlice = {
+                "label": this.areaDict[key],
+                "value": Math.round(datadict[key] * 10) / 10,
+                "color": this.color[CSRankings.parentIndex[key]]
+            };
+            data.push(newSlice);
         }
+        new d3pie(name + "-chart", {
+            "header": {
+                "title": {
+                    "text": uname,
+                    "fontSize": 24,
+                    "font": "open sans"
+                },
+                "subtitle": {
+                    "text": "Publication Profile",
+                    "color": "#999999",
+                    "fontSize": 14,
+                    "font": "open sans"
+                },
+                "titleSubtitlePadding": 9
+            },
+            "size": {
+                "canvasHeight": 500,
+                "canvasWidth": 500,
+                "pieInnerRadius": "38%",
+                "pieOuterRadius": "83%"
+            },
+            "data": {
+                "content": data,
+                "smallSegmentGrouping": {
+                    "enabled": true,
+                    "value": 1
+                },
+            },
+            "labels": {
+                "outer": {
+                    "pieDistance": 32
+                },
+                "inner": {
+                    //"format": "percentage", // "value",
+                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
+                    "format": "value",
+                    "hideWhenLessThanPercentage": 5 // 100 // 2
+                },
+                "mainLabel": {
+                    "fontSize": 10.5
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "decimalPlaces": 0
+                },
+                "value": {
+                    "color": "#ffffff",
+                    "fontSize": 10
+                },
+                "lines": {
+                    "enabled": true
+                },
+                "truncation": {
+                    "enabled": true
+                }
+            },
+            "effects": {
+                "load": {
+                    "effect": "none"
+                },
+                "pullOutSegmentOnClick": {
+                    "effect": "linear",
+                    "speed": 400,
+                    "size": 8
+                }
+            },
+            "misc": {
+                "gradient": {
+                    "enabled": true,
+                    "percentage": 100
+                }
+            }
+        });
     }
-    // Clean up department entries, too.
-    for (var d in depts) {
-        if (authorAreas.hasOwnProperty(d)) {
-            delete authorAreas[d];
-        }
+    displayProgress(step) {
+        let msgs = ["Initializing.",
+            "Loading author information.",
+            "Loading publication data.",
+            "Computing ranking."];
+        let s = "";
+        let count = 1;
+        msgs.map((elem) => {
+            if (count == step) {
+                s += "<strong>" + elem + "</strong>";
+            }
+            else {
+                s += "<font color='gray'>" + elem + "</font>";
+            }
+            s += "<br />";
+            count += 1;
+        });
+        jQuery("#progress").html(s);
     }
-    /* Now rebuild. */
-    for (var r in authors) {
-        var dept = authors[r].dept;
-        var area = authors[r].area;
-        var count = parseFloat(authors[r].count);
-        var name = authors[r].name;
-        if (name in aliases) {
-            name = aliases[name];
+    /*
+        private loadAliases(aliases: { [key: string]: string },
+            cont: () => void): void {
+            Papa.parse(this.aliasFile, {
+                header: true,
+                download: true,
+                complete: (results) => {
+                    const data: any = results.data;
+                    const d = data as Array<Alias>;
+                    for (let aliasPair of d) {
+                        aliases[aliasPair.alias] = aliasPair.name;
+                    }
+                    CSRankings.promise(cont);
+                }
+            });
         }
-        var year = authors[r].year;
-        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
-            continue;
-        }
-        if (!(name in authorAreas)) {
-            authorAreas[name] = {};
-        }
-        if (!(dept in authorAreas)) {
-            authorAreas[dept] = {};
-        }
-        if (!(area in authorAreas[name])) {
-            authorAreas[name][area] = 0;
-        }
-        if (!(area in authorAreas[dept])) {
-            authorAreas[dept][area] = 0;
-        }
-        authorAreas[name][area] += count;
-        authorAreas[dept][area] += count;
+    */
+    loadTuring(turing, cont) {
+        Papa.parse(this.turingFile, {
+            header: true,
+            download: true,
+            complete: (results) => {
+                const data = results.data;
+                const d = data;
+                for (let turingPair of d) {
+                    turing[turingPair.name] = turingPair.year;
+                }
+                CSRankings.promise(cont);
+            }
+        });
     }
-}
-function countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights) {
-    /* Count the total number of papers (raw and adjusted) in each area. */
-    for (var r in authors) {
-        var area = authors[r].area;
-        var dept = authors[r].dept;
-        var year = authors[r].year;
-        var areaDept = area + dept;
-        areaDeptAdjustedCount[areaDept] = 0;
-        if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
-            continue;
-        }
-        var count = parseFloat(authors[r].count);
-        var adjustedCount = parseFloat(authors[r].adjustedcount);
-        areacount[area] += count;
-        areaAdjustedCount[area] += adjustedCount;
+    loadACMFellow(acmfellow, cont) {
+        Papa.parse(this.acmfellowFile, {
+            header: true,
+            download: true,
+            complete: (results) => {
+                const data = results.data;
+                const d = data;
+                for (let acmfellowPair of d) {
+                    acmfellow[acmfellowPair.name] = acmfellowPair.year;
+                }
+                CSRankings.promise(cont);
+            }
+        });
     }
-}
-function buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, regions) {
-    /* Build the dictionary of departments (and count) to be ranked. */
-    var visited = {}; /* contains an author name if that author has been processed. */
-    for (var r in authors) {
-        var area = authors[r].area;
-        var dept = authors[r].dept;
+    loadCountryInfo(countryInfo, cont) {
+        Papa.parse(this.countryinfoFile, {
+            header: true,
+            download: true,
+            complete: (results) => {
+                const data = results.data;
+                const ci = data;
+                for (let info of ci) {
+                    countryInfo[info.institution] = info.region;
+                }
+                CSRankings.promise(cont);
+            }
+        });
+    }
+    loadAuthorInfo(cont) {
+        Papa.parse(this.authorFile, {
+            download: true,
+            header: true,
+            complete: (results) => {
+                const data = results.data;
+                const ai = data;
+                for (let counter = 0; counter < ai.length; counter++) {
+                    const record = ai[counter];
+                    let name = record['name'].trim();
+                    if (name !== "") {
+                        this.dblpAuthors[name] = this.translateNameToDBLP(name);
+                        this.homepages[name] = record['homepage'];
+                        this.scholarInfo[name] = record['scholarid'];
+                    }
+                }
+                CSRankings.promise(cont);
+            }
+        });
+    }
+    loadAuthors(cont) {
+        Papa.parse(this.authorinfoFile, {
+            download: true,
+            header: true,
+            complete: (results) => {
+                const data = results.data;
+                this.authors = data;
+                for (let r in this.authors) {
+                    let name = this.authors[r].name;
+                }
+                CSRankings.promise(cont);
+            }
+        });
+    }
+    inRegion(dept, regions) {
         switch (regions) {
             case "USA":
-                if (dept in countryInfo) {
-                    continue;
+                if (dept in this.countryInfo) {
+                    return false;
                 }
                 break;
             case "europe":
-                if (!(dept in countryInfo)) {
-                    continue;
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
                 }
-                if (countryInfo[dept] != "europe") {
-                    continue;
+                if (this.countryInfo[dept] != "europe") {
+                    return false;
                 }
                 break;
             case "canada":
-                if (!(dept in countryInfo)) {
-                    continue;
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
                 }
-                if (countryInfo[dept] != "canada") {
-                    continue;
+                if (this.countryInfo[dept] != "canada") {
+                    return false;
+                }
+                break;
+            case "northamerica":
+                if ((dept in this.countryInfo) && (this.countryInfo[dept] != "canada")) {
+                    return false;
+                }
+                break;
+            case "australasia":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "australasia") {
+                    return false;
+                }
+                break;
+            case "southamerica":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "southamerica") {
+                    return false;
+                }
+                break;
+            case "asia":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "asia") {
+                    return false;
                 }
                 break;
             case "world":
                 break;
         }
-        var areaDept = area + dept;
-        if (!(areaDept in areaDeptAdjustedCount)) {
-            areaDeptAdjustedCount[areaDept] = 0;
+        return true;
+    }
+    activateFields(value, fields) {
+        for (let i = 0; i < fields.length; i++) {
+            const item = this.fields[fields[i]];
+            const str = "input[name=" + item + "]";
+            jQuery(str).prop('checked', value);
+            if (item in CSRankings.childMap) {
+                // It's a parent.
+                jQuery(str).prop('disabled', false);
+                // Activate / deactivate all children as appropriate.
+                CSRankings.childMap[item].forEach((k) => {
+                    const str = 'input[name=' + k + ']';
+                    if (k in CSRankings.nextTier) {
+                        jQuery(str).prop('checked', false);
+                    }
+                    else {
+                        jQuery(str).prop('checked', value);
+                    }
+                });
+            }
         }
-        if (weights[area] == 0) {
+        this.rank();
+        return false;
+    }
+    sortIndex(univagg) {
+        let keys = Object.keys(univagg);
+        keys.sort((a, b) => {
+            if (univagg[a] != univagg[b]) {
+                return univagg[b] - univagg[a];
+            }
+            /*
+            if (univagg[a] > univagg[b]) {
+                return -1;
+            }
+            if (univagg[b] > univagg[a]) {
+                return 1;
+            }
+            */
+            if (a < b) {
+                return -1;
+            }
+            if (b < a) {
+                return 1;
+            }
+            return 0;
+        });
+        return keys;
+    }
+    countAuthorAreas() {
+        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        this.authorAreas = {};
+        for (let r in this.authors) {
+            if (!this.authors.hasOwnProperty(r)) {
+                continue;
+            }
+            let { area } = this.authors[r];
+            if (area in CSRankings.nextTier) {
+                continue;
+            }
+            let { year } = this.authors[r];
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            let { name, dept, count } = this.authors[r];
+            /*
+              DISABLING weight selection so all pie charts look the
+              same regardless of which areas are currently selected:
+    
+            if (weights[theArea] === 0) {
             continue;
+            }
+            */
+            const theCount = parseFloat(count);
+            if (!(name in this.authorAreas)) {
+                this.authorAreas[name] = {};
+                for (let area in this.areaDict) {
+                    if (this.areaDict.hasOwnProperty(area)) {
+                        this.authorAreas[name][area] = 0;
+                    }
+                }
+            }
+            if (!(dept in this.authorAreas)) {
+                this.authorAreas[dept] = {};
+                for (let area in this.areaDict) {
+                    if (this.areaDict.hasOwnProperty(area)) {
+                        this.authorAreas[dept][area] = 0;
+                    }
+                }
+            }
+            this.authorAreas[name][area] += theCount;
+            this.authorAreas[dept][area] += theCount;
         }
-        var name_2 = authors[r].name;
-        var count = parseInt(authors[r].count);
-        var adjustedCount = parseFloat(authors[r].adjustedcount);
-        var year = authors[r].year;
-        if ((year >= startyear) && (year <= endyear)) {
-            areaDeptAdjustedCount[areaDept] += adjustedCount;
+    }
+    /* Build the dictionary of departments (and count) to be ranked. */
+    buildDepartments(startyear, endyear, weights, regions, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
+        /* contains an author name if that author has been processed. */
+        let visited = {};
+        for (let r in this.authors) {
+            if (!this.authors.hasOwnProperty(r)) {
+                continue;
+            }
+            let auth = this.authors[r];
+            let dept = auth.dept;
+            //	    if (!(dept in regionMap)) {
+            if (!this.inRegion(dept, regions)) {
+                continue;
+            }
+            let area = auth.area;
+            if (weights[area] === 0) {
+                continue;
+            }
+            let year = auth.year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            if (typeof dept === 'undefined') {
+                continue;
+            }
+            let name = auth.name;
+            // If this area is a child area, accumulate totals for parent.
+            if (area in CSRankings.parentMap) {
+                area = CSRankings.parentMap[area];
+            }
+            const areaDept = area + dept;
+            if (!(areaDept in this.areaDeptAdjustedCount)) {
+                this.areaDeptAdjustedCount[areaDept] = 0;
+            }
+            const count = parseInt(this.authors[r].count);
+            const adjustedCount = parseFloat(this.authors[r].adjustedcount);
+            this.areaDeptAdjustedCount[areaDept] += adjustedCount;
             /* Is this the first time we have seen this person? */
-            if (!(name_2 in visited)) {
-                visited[name_2] = true;
-                facultycount[name_2 + dept] = 0;
-                facultyAdjustedCount[name_2 + dept] = 0;
+            if (!(name in visited)) {
+                visited[name] = true;
+                facultycount[name] = 0;
+                facultyAdjustedCount[name] = 0;
                 if (!(dept in deptCounts)) {
                     deptCounts[dept] = 0;
                     deptNames[dept] = [];
                 }
-                deptNames[dept].push(name_2);
+                deptNames[dept].push(name);
                 deptCounts[dept] += 1;
             }
-            facultycount[name_2 + dept] += count;
-            facultyAdjustedCount[name_2 + dept] += adjustedCount;
+            facultycount[name] += count;
+            facultyAdjustedCount[name] += adjustedCount;
         }
     }
-}
-/* Compute aggregate statistics. */
-function computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights) {
-    var univagg = {};
-    for (var dept in deptNames) {
-        if (displayPercentages) {
-            if (useArithmeticMean) {
-                univagg[dept] = 0;
+    /* Compute aggregate statistics. */
+    computeStats(deptNames, numAreas, weights) {
+        this.stats = {};
+        for (let dept in deptNames) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                continue;
             }
-            if (useGeometricMean) {
-                univagg[dept] = 1;
-            }
-            if (useHarmonicMean) {
-                univagg[dept] = 0;
-            }
-        }
-        else {
-            univagg[dept] = 0;
-        }
-        for (var ind = 0; ind < areas.length; ind++) {
-            var area = areas[ind];
-            var areaDept = area + dept;
-            if (!(areaDept in areaDeptAdjustedCount)) {
-                areaDeptAdjustedCount[areaDept] = 0;
-            }
-            if (weights[area] != 0) {
-                if (displayPercentages) {
-                    if (areaDeptAdjustedCount[areaDept] != 0) {
-                        if (useArithmeticMean) {
-                            univagg[dept] += areaDeptAdjustedCount[areaDept] / areaAdjustedCount[area];
-                        }
-                        if (useGeometricMean) {
-                            univagg[dept] *= areaDeptAdjustedCount[areaDept];
-                        }
-                        if (useHarmonicMean) {
-                            univagg[dept] += areaAdjustedCount[area] / areaDeptAdjustedCount[areaDept];
-                        }
-                    }
-                    else {
-                    }
+            this.stats[dept] = 1;
+            for (let area in CSRankings.topLevelAreas) {
+                let areaDept = area + dept;
+                if (!(areaDept in this.areaDeptAdjustedCount)) {
+                    this.areaDeptAdjustedCount[areaDept] = 0;
                 }
-                else {
-                    univagg[dept] += areaDeptAdjustedCount[areaDept];
+                if (weights[area] != 0) {
+                    // Adjusted (smoothed) geometric mean.
+                    this.stats[dept] *= (this.areaDeptAdjustedCount[areaDept] + 1.0);
                 }
             }
-        }
-        if (displayPercentages) {
-            if (useArithmeticMean) {
-                univagg[dept] = univagg[dept] / numAreas;
-            }
-            if (useGeometricMean) {
-                univagg[dept] = Math.pow(univagg[dept], 1 / numAreas);
-            }
-            if (useHarmonicMean) {
-                univagg[dept] = numAreas / univagg[dept];
-            }
+            // finally compute geometric mean.
+            this.stats[dept] = Math.pow(this.stats[dept], 1 / numAreas); // - 1.0;
         }
     }
-    return univagg;
-}
-function rank() {
-    var form = document.getElementById("rankform");
-    var s = "";
-    var deptNames = {}; /* names of departments. */
-    var deptCounts = {}; /* number of faculty in each department. */
-    var facultycount = {}; /* name + dept -> raw count of pubs per name / department */
-    var facultyAdjustedCount = {}; /* name + dept -> adjusted count of pubs per name / department */
-    var weights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
-    var areacount = {}; /* raw number of papers in each area */
-    var areaAdjustedCount = {}; /* adjusted number of papers in each area (split among faculty authors). */
-    var areaDeptAdjustedCount = {}; /* as above, but for area+dept. */
-    var startyear = parseInt(jQuery("#startyear").find(":selected").text());
-    var endyear = parseInt(jQuery("#endyear").find(":selected").text());
-    var displayPercentages = Boolean(parseInt(jQuery("#displayPercent").find(":selected").val()));
-    /* Show the top N (with more if tied at the end) */
-    var minToRank = parseInt(jQuery("#minToRank").find(":selected").val());
-    var whichRegions = jQuery("#regions").find(":selected").val();
-    var numAreas = 0; /* Total number of areas checked */
-    /* Update the 'weights' of each area from the checkboxes. */
-    for (var ind = 0; ind < areas.length; ind++) {
-        weights[areas[ind]] = jQuery('input[name=field_' + (ind + 1) + ']').prop('checked') ? 1 : 0;
-        if (weights[areas[ind]] == 1) {
-            /* One more area checked. */
-            numAreas++;
-        }
-        areacount[areas[ind]] = 0;
-        areaAdjustedCount[areas[ind]] = 0;
-    }
-    var coauthorList = {};
-    if (showCoauthors) {
-        coauthorList = computeCoauthors(coauthors, startyear, endyear, weights);
-    }
-    countPapers(areacount, areaAdjustedCount, areaDeptAdjustedCount, authors, startyear, endyear, weights);
-    countAuthorAreas(areacount, authors, startyear, endyear, weights);
-    buildDepartments(areaDeptAdjustedCount, deptCounts, deptNames, facultycount, facultyAdjustedCount, authors, startyear, endyear, weights, whichRegions);
-    /* (university, total or average number of papers) */
-    var univagg = computeStats(deptNames, areaAdjustedCount, areaDeptAdjustedCount, areas, numAreas, displayPercentages, weights);
-    var univtext = {};
-    /* Canonicalize names. */
-    for (dept in deptNames) {
-        for (var ind = 0; ind < deptNames[dept].length; ind++) {
-            name = deptNames[dept][ind];
-            if (name in aliases) {
-                deptNames[dept][ind] = aliases[name];
-                if (!(aliases[name] + dept in facultycount)) {
-                    facultycount[aliases[name] + dept] = facultycount[name + dept];
-                    facultyAdjustedCount[aliases[name] + dept] = facultyAdjustedCount[name + dept];
+    /* Updates the 'weights' of each area from the checkboxes. */
+    /* Returns the number of areas selected (checked). */
+    updateWeights(weights) {
+        let numAreas = 0;
+        for (let ind = 0; ind < CSRankings.areas.length; ind++) {
+            let area = CSRankings.areas[ind];
+            weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
+            if (weights[area] === 1) {
+                if (area in CSRankings.parentMap) {
+                    // Don't count children.
+                    continue;
                 }
-                else {
-                    facultycount[aliases[name] + dept] += facultycount[name + dept];
-                    facultyAdjustedCount[aliases[name] + dept] += facultyAdjustedCount[name + dept];
-                }
+                /* One more area checked. */
+                numAreas++;
             }
         }
+        return numAreas;
     }
     /* Build drop down for faculty names and paper counts. */
-    for (dept in deptNames) {
-        var p = '<div class="row"><div class="table"><table class="table-striped" width="400px"><thead><th></th><td><small><em><abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">Raw&nbsp;\#&nbsp;Pubs</abbr></em></small></td><td align="right"><small><em>&nbsp;&nbsp;<abbr title="Count divided by number of co-authors">Adjusted&nbsp;&nbsp;\#</abbr></em></small></td></thead><tbody>';
-        /* Build a dict of just faculty from this department for sorting purposes. */
-        var fc = {};
-        for (var ind = 0; ind < deptNames[dept].length; ind++) {
-            name = deptNames[dept][ind];
-            fc[name] = facultycount[name + dept];
+    buildDropDown(deptNames, facultycount, facultyAdjustedCount) {
+        let univtext = {};
+        for (let dept in deptNames) {
+            if (!deptNames.hasOwnProperty(dept)) {
+                continue;
+            }
+            let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
+                + '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
+                + '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
+                + ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
+                + '</small></td></thead><tbody>';
+            /* Build a dict of just faculty from this department for sorting purposes. */
+            let fc = {};
+            for (let name of deptNames[dept]) {
+                fc[name] = facultycount[name];
+            }
+            let keys = Object.keys(fc);
+            keys.sort((a, b) => {
+                if (fc[b] === fc[a]) {
+                    return this.compareNames(a, b);
+                    /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                                let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                                if (fb === fa) {
+                                return this.compareNames(a, b);
+                                }
+                                return fb - fa; */
+                }
+                else {
+                    return fc[b] - fc[a];
+                }
+            });
+            for (let name of keys) {
+                let homePage = encodeURI(this.homepages[name]);
+                let dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
+                p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+                    + '<a title="Click for author\'s home page." target="_blank" href="'
+                    + homePage
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + homePage
+                    + '\', true); return false;"'
+                    + '>'
+                    + name
+                    + '</a>&nbsp;';
+                if (this.acmfellow.hasOwnProperty(name)) {
+                    p += '<span title="ACM Fellow"><img src="' +
+                        this.acmfellowImage + '"></span>&nbsp;';
+                }
+                if (this.turing.hasOwnProperty(name)) {
+                    p += '<span title="Turing Award"><img src="' +
+                        this.turingImage + '"></span>&nbsp;';
+                }
+                p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
+                p += '<a title="Click for author\'s home page." target="_blank" href="'
+                    + homePage
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + homePage
+                    + '\', true); return false;"'
+                    + '>'
+                    + '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+                if (this.scholarInfo.hasOwnProperty(name)) {
+                    if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
+                        let url = 'https://scholar.google.com/citations?user='
+                            + this.scholarInfo[name]
+                            + '&hl=en&oi=ao';
+                        p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
+                            + 'onclick="trackOutboundLink(\''
+                            + url
+                            + '\', true); return false;"'
+                            + '>'
+                            + '<img src="scholar-favicon.ico" height="10" width="10">'
+                            + '</a>&nbsp;';
+                    }
+                }
+                p += '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+                    + dblpName
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + dblpName
+                    + '\', true); return false;"'
+                    + '>'
+                    + '<img src="dblp.png">'
+                    + '</a>';
+                p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" >"
+                    + "<font size=\"+1\" color=\"blue\">" + this.PieChart + "</font></span>"
+                    + '</small>'
+                    + '</td><td align="right"><small>'
+                    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
+                    + dblpName
+                    + '" '
+                    + 'onclick="trackOutboundLink(\''
+                    + dblpName
+                    + '\', true); return false;"'
+                    + '>'
+                    + fc[name]
+                    + '</a>'
+                    + "</small></td>"
+                    + '<td align="right"><small>'
+                    + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
+                    + "</small></td></tr>"
+                    + "<tr><td colspan=\"4\">"
+                    + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
+                    + '</div>'
+                    + "</td></tr>";
+            }
+            p += "</tbody></table></div>";
+            univtext[dept] = p;
         }
-        var keys = Object.keys(fc);
-        keys.sort(function (a, b) { return fc[b] - fc[a]; });
-        for (var ind = 0; ind < keys.length; ind++) {
-            name = keys[ind];
-            if (showCoauthors) {
-                /* Build up text for co-authors. */
-                var coauthorStr = "";
-                if ((!(name in coauthorList)) || (coauthorList[name].size == 0)) {
-                    coauthorList[name] = new Set([]);
-                    coauthorStr = "(no senior co-authors on these papers)";
+        return univtext;
+    }
+    buildOutputString(numAreas, deptCounts, univtext) {
+        let s = this.makePrologue();
+        /* Show the top N (with more if tied at the end) */
+        let minToRank = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
+        s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
+            + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
+            + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
+            + '</abbr></th></th></tr></thead>';
+        s = s + "<tbody>";
+        /* As long as there is at least one thing selected, compute and display a ranking. */
+        if (numAreas > 0) {
+            let ties = 1; /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
+            let rank = 0; /* index */
+            let oldv = 9999999.999; /* old number - to track ties */
+            /* Sort the university aggregate count from largest to smallest. */
+            // First, round the stats.
+            for (let k in this.stats) {
+                const v = Math.round(10.0 * this.stats[k]) / 10.0;
+                this.stats[k] = v;
+            }
+            // Now sort them,
+            let keys2 = this.sortIndex(this.stats);
+            /* Display rankings until we have shown `minToRank` items or
+               while there is a tie (those all get the same rank). */
+            for (let ind = 0; ind < keys2.length; ind++) {
+                const dept = keys2[ind];
+                const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
+                if ((ind >= minToRank) && (v != oldv)) {
+                    break;
+                }
+                if (v === 0.0) {
+                    break;
+                }
+                if (oldv != v) {
+                    if (this.useDenseRankings) {
+                        rank = rank + 1;
+                    }
+                    else {
+                        rank = rank + ties;
+                        ties = 0;
+                    }
+                }
+                const esc = escape(dept);
+                s += "\n<tr><td>" + rank + "&nbsp;</td>";
+                s += "<td>"
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "')\";\" id=\"" + esc + "-widget\">"
+                    + "<font color=\"blue\">"
+                    + this.RightTriangle
+                    + "</font>"
+                    + "</span>";
+                s += "&nbsp;" + dept + "&nbsp;"
+                    + "<font color=\"blue\">"
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
+                    + this.PieChart
+                    + "</span></font>";
+                s += "</td>";
+                s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
+                s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
+                s += "</td>";
+                s += "</tr>\n";
+                s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+                    + esc + '-chart">' + '</div></td></tr>';
+                s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
+                ties++;
+                oldv = v;
+            }
+            s += "</tbody>" + "</table>" + "<br />";
+            /*
+              if (this.allowRankingChange) {
+              // Disable option to change ranking approach for now.
+              if (this.useDenseRankings) {
+              s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
+              } else {
+              s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+              }
+              }
+            */
+            s += "</div>" + "</div>" + "\n";
+            s += "<br>" + "</body>" + "</html>";
+        }
+        else {
+            /* Nothing selected. */
+            s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
+        }
+        return s;
+    }
+    /* This activates all checkboxes _without_ triggering ranking. */
+    setAllOn(value = true) {
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const item = this.fields[i];
+            const str = "input[name=" + item + "]";
+            if (value) {
+                // Turn off all next tier venues.
+                if (item in CSRankings.nextTier) {
+                    jQuery(str).prop('checked', false);
                 }
                 else {
-                    coauthorStr = "Senior co-authors on these papers:\n";
+                    jQuery(str).prop('checked', true);
+                    jQuery(str).prop('disabled', false);
                 }
-                /* Sort it by last name. */
-                var l = [];
-                coauthorList[name].forEach(function (item, coauthors) {
-                    l.push(item);
-                });
-                if (l.length > maxCoauthors) {
-                    coauthorStr = "(more than " + maxCoauthors + " senior co-authors)";
+            }
+            else {
+                // turn everything off.
+                jQuery(str).prop('checked', false);
+                jQuery(str).prop('disabled', false);
+            }
+        }
+    }
+    /* PUBLIC METHODS */
+    rank(update = true) {
+        let start = performance.now();
+        let deptNames = {}; /* names of departments. */
+        let deptCounts = {}; /* number of faculty in each department. */
+        let facultycount = {}; /* name -> raw count of pubs per name / department */
+        let facultyAdjustedCount = {}; /* name -> adjusted count of pubs per name / department */
+        let currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
+        this.areaDeptAdjustedCount = {};
+        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        const whichRegions = jQuery("#regions").find(":selected").val();
+        let numAreas = this.updateWeights(currentWeights);
+        this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        /* (university, total or average number of papers) */
+        this.computeStats(deptNames, numAreas, currentWeights);
+        const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
+        /* Start building up the string to output. */
+        const s = this.buildOutputString(numAreas, deptCounts, univtext);
+        /* Finally done. Redraw! */
+        jQuery("#success").html(s);
+        if (!update) {
+            this.navigoRouter.pause();
+        }
+        else {
+            this.navigoRouter.resume();
+        }
+        let str = this.updatedURL();
+        this.navigoRouter.navigate(str);
+        let stop = performance.now();
+        console.log("Rank took " + (stop - start) + " milliseconds.");
+        return false;
+    }
+    /* Turn the chart display on or off. */
+    toggleChart(name) {
+        const chart = document.getElementById(name + "-chart");
+        if (chart.style.display === 'block') {
+            chart.style.display = 'none';
+            chart.innerHTML = '';
+        }
+        else {
+            chart.style.display = 'block';
+            this.makeChart(name);
+        }
+    }
+    /* Expand or collape the view of conferences in a given area. */
+    toggleConferences(area) {
+        const e = document.getElementById(area + "-conferences");
+        const widget = document.getElementById(area + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = "<font color=\"blue\">" + this.RightTriangle + "</font>";
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
+        }
+    }
+    /* Expand or collape the view of all faculty in a department. */
+    toggleFaculty(dept) {
+        const e = document.getElementById(dept + "-faculty");
+        const widget = document.getElementById(dept + "-widget");
+        if (e.style.display === 'block') {
+            e.style.display = 'none';
+            widget.innerHTML = "<font color=\"blue\">" + this.RightTriangle + "</font>";
+        }
+        else {
+            e.style.display = 'block';
+            widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
+        }
+    }
+    activateAll(value = true) {
+        this.setAllOn(value);
+        this.rank();
+        return false;
+    }
+    activateNone() {
+        return this.activateAll(false);
+    }
+    activateSystems(value = true) {
+        return this.activateFields(value, this.systemsFields);
+    }
+    activateAI(value = true) {
+        return this.activateFields(value, this.aiFields);
+    }
+    activateTheory(value = true) {
+        return this.activateFields(value, this.theoryFields);
+    }
+    activateOthers(value = true) {
+        return this.activateFields(value, this.otherFields);
+    }
+    deactivateSystems() {
+        return this.activateSystems(false);
+    }
+    deactivateAI() {
+        return this.activateAI(false);
+    }
+    deactivateTheory() {
+        return this.activateTheory(false);
+    }
+    deactivateOthers() {
+        return this.activateOthers(false);
+    }
+    // Update the URL according to the selected checkboxes.
+    updatedURL() {
+        let s = '';
+        let count = 0;
+        let totalParents = 0;
+        for (let i = 0; i < this.fields.length; i++) {
+            const str = 'input[name=' + this.fields[i] + ']';
+            if (!(this.fields[i] in CSRankings.parentMap)) {
+                totalParents += 1;
+            }
+            if (jQuery(str).prop('checked')) {
+                // Only add parents.
+                if (!(this.fields[i] in CSRankings.parentMap)) {
+                    // And only add if every top tier child is checked
+                    // and only if every next tier child is NOT
+                    // checked.
+                    let allChecked = 1;
+                    if (this.fields[i] in CSRankings.childMap) {
+                        CSRankings.childMap[this.fields[i]].forEach((k) => {
+                            let val = jQuery('input[name=' + k + ']').prop('checked');
+                            if (!(k in CSRankings.nextTier)) {
+                                allChecked &= val;
+                            }
+                            else {
+                                allChecked &= val ? 0 : 1;
+                            }
+                        });
+                    }
+                    if (allChecked) {
+                        s += this.fields[i] + '&';
+                        count += 1;
+                    }
                 }
-                else {
-                    l.sort(compareNames);
-                    l.forEach(function (item, coauthors) {
-                        coauthorStr += item + "\n";
+            }
+        }
+        if (count > 0) {
+            // Trim off the trailing '&'.
+            s = s.slice(0, -1);
+        }
+        let region = jQuery("#regions").find(":selected").val();
+        let start = '';
+        // Check the dates.
+        let d = new Date();
+        const currYear = d.getFullYear();
+        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
+        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        if ((startyear != currYear - 10) || (endyear != currYear)) {
+            start += '/fromyear/' + startyear.toString();
+            start += '/toyear/' + endyear.toString();
+        }
+        if (count == totalParents) {
+            start += '/index?all'; // Distinguished special URL - default = all selected.
+        }
+        else if (count == 0) {
+            start += '/index?none'; // Distinguished special URL - none selected.
+        }
+        else {
+            start += '/index?' + s;
+        }
+        if (region != "USA") {
+            start += '&' + region;
+        }
+        return start;
+    }
+    /*
+        public static geoCheck(): void {
+            // Figure out which country clients are coming from and set
+            // the default region accordingly.
+            let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
+            jQuery.getJSON(theUrl, (result) => {
+                switch (result.country_code) {
+                    case "US":
+                    case "CN":
+                    case "IN":
+                    case "KR":
+                    case "JP":
+                    case "TW":
+                    case "SG":
+                        jQuery("#regions").val("USA");
+                        CSRankings.getInstance().rank();
+                        break;
+                    default:
+                        jQuery("#regions").val("world");
+                        CSRankings.getInstance().rank();
+                        break;
+                }
+            }).fail(() => {
+                // If we can't find a location (e.g., because this site is
+                // blocked by an ad blocker), just rank anyway.
+                CSRankings.getInstance().rank();
+            });
+        }
+    */
+    navigation(params, query) {
+        if (params !== null) {
+            // Set params (fromyear and toyear).
+            Object.keys(params).forEach((key) => {
+                jQuery("#" + key).prop('value', params[key].toString());
+            });
+        }
+        // Clear everything *unless* there are subsets / below-the-fold selected.
+        CSRankings.clearNonSubsetted();
+        // Now check everything listed in the query string.
+        let q = query.split('&');
+        // If there is an 'all' in the query string, set everything to true.
+        let foundAll = q.some((elem) => {
+            return (elem == "all");
+        });
+        let foundNone = q.some((elem) => {
+            return (elem == "none");
+        });
+        // Check for regions and strip them out.
+        let foundRegion = q.some((elem) => {
+            return CSRankings.regions.indexOf(elem) >= 0;
+        });
+        if (foundRegion) {
+            let index = 0;
+            q.forEach((elem) => {
+                // Splice it out.
+                if (CSRankings.regions.indexOf(elem) >= 0) {
+                    q.splice(index, 1);
+                }
+                // Set the region.
+                jQuery("#regions").val(elem);
+                index += 1;
+            });
+        }
+        if (foundAll) {
+            // Set everything.
+            for (let item in CSRankings.topTierAreas) {
+                //		if (!(item in CSRankings.nextTier)) {
+                let str = "input[name=" + item + "]";
+                jQuery(str).prop('checked', true);
+                if (item in CSRankings.childMap) {
+                    // It's a parent. Enable it.
+                    jQuery(str).prop('disabled', false);
+                    // and activate all children.
+                    CSRankings.childMap[item].forEach((k) => {
+                        if (!(k in CSRankings.nextTier)) {
+                            jQuery('input[name=' + k + ']').prop('checked', true);
+                        }
                     });
-                    /* Trim off the trailing newline. */
-                    coauthorStr = coauthorStr.slice(0, coauthorStr.length - 1);
+                }
+                //		}
+            }
+            // And we're out.
+            return;
+        }
+        if (foundNone) {
+            // Clear everything and return.
+            CSRankings.clearNonSubsetted();
+            return;
+        }
+        // Just a list of areas.
+        // First, clear everything that isn't subsetted.
+        CSRankings.clearNonSubsetted();
+        // Then, activate the areas in the query.
+        for (let item of q) {
+            if ((item != "none") && (item != "")) {
+                const str = "input[name=" + item + "]";
+                jQuery(str).prop('checked', true);
+                jQuery(str).prop('disabled', false);
+                if (item in CSRankings.childMap) {
+                    // Activate all children.
+                    CSRankings.childMap[item].forEach((k) => {
+                        if (!(k in CSRankings.nextTier)) {
+                            jQuery('input[name=' + k + ']').prop('checked', true);
+                        }
+                    });
                 }
             }
-            p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                + '<a title="Click for author\'s home page." target="_blank" href="'
-                + encodeURI(homepages[name])
-                + '">'
-                + name
-                + '</a>&nbsp;'
-                + "<span onclick=\"toggleChart('"
-                + escape(name)
-                + "')\" class=\"hovertip\" id=\""
-                + escape(name)
-                + "-widget\"><font color=\"blue\">" + PieChart + "</font></span>"
-                + '</small>'
-                + '</td><td align="right"><small>'
-                + '<a title="Click for author\'s DBLP entry." target="_blank" href="http://dblp.uni-trier.de/search?q=' + encodeURI(name) + '">'
-                + facultycount[name + dept]
-                + '</a>'
-                + "</small></td>"
-                + '</a></small></td><td align="right"><small>'
-                + (Math.floor(10.0 * facultyAdjustedCount[name + dept]) / 10.0).toFixed(1)
-                + "</small></td></tr>"
-                + "<tr><td colspan=\"4\">"
-                + '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(name) + '">'
-                + '</div>'
-                + "</td></tr>";
         }
-        p += "</tbody></table></div></div>";
-        univtext[dept] = p;
     }
-    /* Start building up the string to output. */
-    var s = makePrologue();
-    if (displayPercentages) {
-        s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right"><abbr title="Geometric mean number of papers published across all areas.">Average&nbsp;Count</abbr></th><th align="right">&nbsp;&nbsp;&nbsp;<abbr title="Number of faculty who have published in these areas.">Faculty</abbr></th></th></tr></thead>';
+    static clearNonSubsetted() {
+        for (let item of CSRankings.areas) {
+            if (item in CSRankings.childMap) {
+                const kids = CSRankings.childMap[item];
+                if (!CSRankings.subsetting(kids)) {
+                    const str = "input[name=" + item + "]";
+                    jQuery(str).prop('checked', false);
+                    jQuery(str).prop('disabled', false);
+                    kids.forEach((item) => {
+                        jQuery("input[name=" + item + "]").prop('checked', false);
+                    });
+                }
+            }
+        }
     }
-    else {
-        s = s + '<thead><tr><th align="left">Rank&nbsp;&nbsp;</th><th align="right">Institution&nbsp;&nbsp;</th><th align="right">Adjusted&nbsp;Pub&nbsp;Count</th><th align="right">&nbsp;&nbsp;&nbsp;Faculty</th></tr></thead>';
+    static subsetting(sibs) {
+        // Separate the siblings into above and below the fold.
+        let aboveFold = [];
+        let belowFold = [];
+        sibs.forEach((elem) => {
+            if (elem in CSRankings.nextTier) {
+                belowFold.push(elem);
+            }
+            else {
+                aboveFold.push(elem);
+            }
+        });
+        // Count how many are checked above and below.
+        let numCheckedAbove = 0;
+        aboveFold.forEach((elem) => {
+            let str = "input[name=" + elem + "]";
+            let val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedAbove++;
+            }
+        });
+        let numCheckedBelow = 0;
+        belowFold.forEach((elem) => {
+            let str = "input[name=" + elem + "]";
+            let val = jQuery(str).prop('checked');
+            if (val) {
+                numCheckedBelow++;
+            }
+        });
+        let subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+        let subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+        return subsettedAbove || subsettedBelow;
     }
-    s = s + "<tbody>";
-    /* As long as there is at least one thing selected, compute and display a ranking. */
-    if (numAreas > 0) {
-        var ties = 1; /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
-        var rank = 0; /* index */
-        var oldv = null; /* old number - to track ties */
-        /* Sort the university aggregate count from largest to smallest. */
-        var keys2 = sortIndex(univagg);
-        /* Display rankings until we have shown `minToRank` items or
-           while there is a tie (those all get the same rank). */
-        for (var ind = 0; ind < keys2.length; ind++) {
-            var dept = keys2[ind];
-            var v = univagg[dept];
-            if (useArithmeticMean || useHarmonicMean) {
-                v = (Math.floor(10000.0 * v) / (100.0));
+    addListeners() {
+        ["toyear", "fromyear", "regions"].forEach((key) => {
+            const widget = document.getElementById(key);
+            widget.addEventListener("change", () => { this.countAuthorAreas(); this.rank(); });
+        });
+        // Add listeners for clicks on area widgets (left side of screen)
+        // e.g., 'ai'
+        for (let position = 0; position < CSRankings.areas.length; position++) {
+            let area = CSRankings.areas[position];
+            if (!(area in CSRankings.parentMap)) {
+                // Not a child.
+                const widget = document.getElementById(area + '-widget');
+                widget.addEventListener("click", () => {
+                    this.toggleConferences(area);
+                });
             }
-            if (useGeometricMean) {
-                v = (Math.floor(10.0 * v) / 10.0);
-            }
-            if ((ind >= minToRank) && (v != oldv)) {
-                break;
-            }
-            if (v === 0.0) {
-                break;
-            }
-            if (oldv != v) {
-                if (useDenseRankings) {
-                    rank = rank + 1;
+        }
+        // Initialize callbacks for area checkboxes.
+        for (let i = 0; i < this.fields.length; i++) {
+            const str = 'input[name=' + this.fields[i] + ']';
+            const field = this.fields[i];
+            jQuery(str).click(() => {
+                let updateURL = true;
+                if (field in CSRankings.parentMap) {
+                    // Child:
+                    // If any child is on, activate the parent.
+                    // If all are off, deactivate parent.
+                    updateURL = false;
+                    let parent = CSRankings.parentMap[field];
+                    const strparent = 'input[name=' + parent + ']';
+                    let anyChecked = 0;
+                    let allChecked = 1;
+                    CSRankings.childMap[parent].forEach((k) => {
+                        let val = jQuery('input[name=' + k + ']').prop('checked');
+                        anyChecked |= val;
+                        // allChcked means all top tier conferences
+                        // are on and all next tier conferences are
+                        // off.
+                        if (!(k in CSRankings.nextTier)) {
+                            // All need to be on.
+                            allChecked &= val;
+                        }
+                        else {
+                            // All need to be off.
+                            allChecked &= val ? 0 : 1;
+                        }
+                    });
+                    // Activate parent if any checked.
+                    jQuery(strparent).prop('checked', anyChecked);
+                    // Mark the parent as disabled unless all are checked.
+                    if (!anyChecked || allChecked) {
+                        jQuery(strparent).prop('disabled', false);
+                    }
+                    if (anyChecked && !allChecked) {
+                        jQuery(strparent).prop('disabled', true);
+                    }
                 }
                 else {
-                    rank = rank + ties;
-                    ties = 0;
+                    // Parent: activate or deactivate all children.
+                    let val = jQuery(str).prop('checked');
+                    if (field in CSRankings.childMap) {
+                        for (let child of CSRankings.childMap[field]) {
+                            const strchild = 'input[name=' + child + ']';
+                            if (!(child in CSRankings.nextTier)) {
+                                jQuery(strchild).prop('checked', val);
+                            }
+                            else {
+                                // Always deactivate next tier conferences.
+                                jQuery(strchild).prop('checked', false);
+                            }
+                        }
+                    }
                 }
-            }
-            s += "\n<tr><td>" + rank + "</td>";
-            s += "<td><span onclick=\"toggle('" + dept + "')\" class=\"hovertip\" id=\"" + dept + "-widget\"><font color=\"blue\">" + RightTriangle + "</font>&nbsp;" + dept + "</span>";
-            s += "&nbsp;<span onclick=\"toggleChart('"
-                + escape(dept)
-                + "')\" class=\"hovertip\" id=\""
-                + escape(dept)
-                + "-widget\"><font color=\"blue\">" + PieChart + "</font></span>";
-            //	    s += '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
-            s +=
-                '<div style="display:none;" style="width: 100%; height: 350px;" id="' + escape(dept) + '">' + '</div>';
-            s += '<div style="display:none;" id="' + dept + '">' + univtext[dept] + '</div>';
-            s += "</td>";
-            if (displayPercentages) {
-                /* Show average */
-                if (useArithmeticMean || useHarmonicMean) {
-                    s += '<td align="right">' + (Math.floor(10000.0 * v) / (100.0)).toPrecision(2) + "%</td>";
-                }
-                if (useGeometricMean) {
-                    s += '<td align="right">' + (Math.floor(10.0 * v) / 10.0).toFixed(1) + "</td>";
-                }
-            }
-            else {
-                /* Show count */
-                s += '<td align="right">' + (Math.floor(100.0 * v) / 100.0) + "</td>";
-            }
-            s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
-            s += "</td>";
-            s += "</tr>\n";
-            ties++;
-            oldv = v;
+                this.rank(updateURL);
+            });
         }
-        s += "</tbody>" + "</table>" + "<br />";
-        if (allowRankingChange) {
-            /* Disable option to change ranking approach for now. */
-            if (useDenseRankings) {
-                s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
-            }
-            else {
-                s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
-            }
+        // Add group selectors.
+        const listeners = {
+            'all_areas_on': (() => { this.activateAll(); }),
+            'all_areas_off': (() => { this.activateNone(); }),
+            'ai_areas_on': (() => { this.activateAI(); }),
+            'ai_areas_off': (() => { this.deactivateAI(); }),
+            'systems_areas_on': (() => { this.activateSystems(); }),
+            'systems_areas_off': (() => { this.deactivateSystems(); }),
+            'theory_areas_on': (() => { this.activateTheory(); }),
+            'theory_areas_off': (() => { this.deactivateTheory(); }),
+            'other_areas_on': (() => { this.activateOthers(); }),
+            'other_areas_off': (() => { this.deactivateOthers(); })
+        };
+        for (let item in listeners) {
+            const widget = document.getElementById(item);
+            widget.addEventListener("click", () => {
+                listeners[item]();
+            });
         }
-        s += "</div>" + "</div>" + "\n";
-        s += "<br>" + "</body>" + "</html>";
     }
-    else {
-        /* Nothing selected. */
-        s = "<h4>Please select at least one area.</h4>";
-    }
-    setTimeout((function (str) { redisplay(str); })(s), 0);
-    return false;
 }
-function activateDenseRankings() {
-    useDenseRankings = true;
-    rank();
-    return false;
-}
-function deactivateDenseRankings() {
-    useDenseRankings = false;
-    rank();
-    return false;
-}
-window.onload = init;
+CSRankings.areas = [];
+CSRankings.topLevelAreas = {};
+CSRankings.topTierAreas = {};
+CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+CSRankings.parentIndex = {}; // For color lookups
+CSRankings.parentMap = {
+    'aaai': 'ai',
+    'ijcai': 'ai',
+    'cvpr': 'vision',
+    'eccv': 'vision',
+    'iccv': 'vision',
+    'icml': 'mlmining',
+    'kdd': 'mlmining',
+    'nips': 'mlmining',
+    'acl': 'nlp',
+    'emnlp': 'nlp',
+    'naacl': 'nlp',
+    'sigir': 'ir',
+    'www': 'ir',
+    'asplos': 'arch',
+    'isca': 'arch',
+    'micro': 'arch',
+    'hpca': 'arch',
+    'ccs': 'sec',
+    'oakland': 'sec',
+    'usenixsec': 'sec',
+    'ndss': 'sec',
+    'pets': 'sec',
+    'vldb': 'mod',
+    'sigmod': 'mod',
+    'icde': 'mod',
+    'pods': 'mod',
+    'dac': 'da',
+    'iccad': 'da',
+    'emsoft': 'bed',
+    'rtas': 'bed',
+    'rtss': 'bed',
+    'sc': 'hpc',
+    'hpdc': 'hpc',
+    'ics': 'hpc',
+    'mobicom': 'mobile',
+    'mobisys': 'mobile',
+    'sensys': 'mobile',
+    'imc': 'metrics',
+    'sigmetrics': 'metrics',
+    'osdi': 'ops',
+    'sosp': 'ops',
+    'eurosys': 'ops',
+    'fast': 'ops',
+    'usenixatc': 'ops',
+    'popl': 'plan',
+    'pldi': 'plan',
+    'oopsla': 'plan',
+    'icfp': 'plan',
+    'fse': 'soft',
+    'icse': 'soft',
+    'ase': 'soft',
+    'issta': 'soft',
+    'nsdi': 'comm',
+    'sigcomm': 'comm',
+    'siggraph': 'graph',
+    'siggraph-asia': 'graph',
+    'focs': 'act',
+    'soda': 'act',
+    'stoc': 'act',
+    'crypto': 'crypt',
+    'eurocrypt': 'crypt',
+    'cav': 'log',
+    'lics': 'log',
+    'ismb': 'bio',
+    'recomb': 'bio',
+    'ec': 'ecom',
+    'wine': 'ecom',
+    'chiconf': 'chi',
+    'ubicomp': 'chi',
+    'uist': 'chi',
+    'icra': 'robotics',
+    'iros': 'robotics',
+    'rss': 'robotics',
+    'vis': 'visualization',
+    'vr': 'visualization'
+};
+CSRankings.nextTier = {
+    'ase': true,
+    'issta': true,
+    'icde': true,
+    'pods': true,
+    'hpca': true,
+    'ndss': true,
+    'pets': true,
+    'eurosys': true,
+    'fast': true,
+    'usenixatc': true,
+    'icfp': true,
+    'oopsla': true
+};
+CSRankings.childMap = {};
+var csr = new CSRankings();
