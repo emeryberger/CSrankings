@@ -140,8 +140,8 @@ for name in csrankings:
 
 count = 10
 ks = list(csrankings.keys())
-ks = ks[:count]
 random.shuffle(ks)
+ks = ks[:count]
 
 for name in ks:
     page = csrankings[name]['homepage']
