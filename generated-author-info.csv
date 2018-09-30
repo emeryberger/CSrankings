@@ -61,6 +61,17 @@ Aaram Yun,UNIST,crypto,1.0,0.5,2017
 Aaram Yun,UNIST,eurocrypt,1.0,0.142857142857,2013
 Aaram Yun,UNIST,eurocrypt,1.0,1.0,2015
 Aaram Yun,UNIST,imc,1.0,0.333333333333,2010
+Aaron Bernstein,Rutgers University,focs,1.0,1.0,2009
+Aaron Bernstein,Rutgers University,soda,1.0,0.5,2008
+Aaron Bernstein,Rutgers University,soda,1.0,1.0,2010
+Aaron Bernstein,Rutgers University,soda,1.0,0.5,2011
+Aaron Bernstein,Rutgers University,soda,1.0,1.0,2012
+Aaron Bernstein,Rutgers University,soda,1.0,0.5,2016
+Aaron Bernstein,Rutgers University,soda,1.0,0.5,2017
+Aaron Bernstein,Rutgers University,soda,2.0,0.833333333333,2018
+Aaron Bernstein,Rutgers University,stoc,1.0,0.5,2009
+Aaron Bernstein,Rutgers University,stoc,1.0,1.0,2013
+Aaron Bernstein,Rutgers University,stoc,1.0,0.5,2016
 Aaron C. Courville,University of Montreal,aaai,1.0,0.25,2014
 Aaron C. Courville,University of Montreal,aaai,1.0,0.2,2016
 Aaron C. Courville,University of Montreal,aaai,2.0,0.285714285714,2017
@@ -1200,6 +1211,7 @@ Ahmed Abdelali,Qatar Computing Research Institute,acl,1.0,0.166666666667,2017
 Ahmed Abdelali,Qatar Computing Research Institute,emnlp,1.0,0.166666666667,2015
 Ahmed Abdelali,Qatar Computing Research Institute,kdd,1.0,0.25,2007
 Ahmed Abdelali,Qatar Computing Research Institute,naacl,1.0,0.142857142857,2016
+Ahmed Awad,University of Tartu,iccad,1.0,0.25,2014
 Ahmed E. Hassan,Queen’s University,ase,1.0,0.5,2006
 Ahmed E. Hassan,Queen’s University,ase,1.0,0.333333333333,2010
 Ahmed E. Hassan,Queen’s University,ase,1.0,0.166666666667,2018
@@ -53486,6 +53498,25 @@ Marko B. Popovic,Worcester Polytechnic Institute,iros,1.0,0.25,2004
 Marko B. Popovic,Worcester Polytechnic Institute,iros,1.0,0.5,2005
 Marko B. Popovic,Worcester Polytechnic Institute,iros,1.0,0.25,2012
 Marko Nieminen,Aalto University,chiconf,1.0,0.25,2016
+Markulf Kohlweiss,University of Edinburgh,ccs,1.0,0.2,2006
+Markulf Kohlweiss,University of Edinburgh,ccs,1.0,0.333333333333,2011
+Markulf Kohlweiss,University of Edinburgh,ccs,1.0,0.166666666667,2015
+Markulf Kohlweiss,University of Edinburgh,ccs,1.0,0.166666666667,2016
+Markulf Kohlweiss,University of Edinburgh,crypto,1.0,0.166666666667,2009
+Markulf Kohlweiss,University of Edinburgh,crypto,1.0,0.166666666667,2014
+Markulf Kohlweiss,University of Edinburgh,crypto,1.0,0.2,2018
+Markulf Kohlweiss,University of Edinburgh,eurocrypt,1.0,0.25,2012
+Markulf Kohlweiss,University of Edinburgh,eurocrypt,2.0,0.75,2015
+Markulf Kohlweiss,University of Edinburgh,oakland,1.0,0.2,2013
+Markulf Kohlweiss,University of Edinburgh,oakland,2.0,0.25,2015
+Markulf Kohlweiss,University of Edinburgh,oakland,2.0,0.416666666667,2016
+Markulf Kohlweiss,University of Edinburgh,oakland,1.0,0.1,2017
+Markulf Kohlweiss,University of Edinburgh,pets,1.0,0.2,2007
+Markulf Kohlweiss,University of Edinburgh,pets,1.0,0.25,2012
+Markulf Kohlweiss,University of Edinburgh,pets,1.0,0.2,2013
+Markulf Kohlweiss,University of Edinburgh,pets,1.0,0.5,2015
+Markulf Kohlweiss,University of Edinburgh,popl,1.0,0.0833333333333,2016
+Markulf Kohlweiss,University of Edinburgh,usenixsec,1.0,0.25,2013
 Markus Dürmuth,Ruhr-University Bochum,ccs,1.0,0.25,2013
 Markus Dürmuth,Ruhr-University Bochum,ccs,1.0,0.333333333333,2016
 Markus Dürmuth,Ruhr-University Bochum,eurocrypt,1.0,0.5,2011
@@ -55652,6 +55683,8 @@ Mayur Naik,University of Pennsylvania,usenixsec,1.0,0.166666666667,2016
 Medha Atre,IIT Kanpur,icde,1.0,0.142857142857,2010
 Medha Atre,IIT Kanpur,sigmod,1.0,1.0,2015
 Medha Atre,IIT Kanpur,www,1.0,0.25,2010
+Meelis Kull,University of Tartu,kdd,1.0,0.111111111111,2018
+Meelis Kull,University of Tartu,nips,1.0,0.5,2015
 Meena Mahajan,IMSc,soda,1.0,0.5,1997
 Meena Mahajan,IMSc,stoc,1.0,0.5,2000
 Meenakshisundaram Gopi,University of California - Irvine,siggraph,1.0,0.333333333333,2012
@@ -61637,19 +61670,19 @@ Niels da Vitoria Lobo,University of Central Florida,icra,1.0,0.333333333333,2011
 Nigel H. Goddard,University of Edinburgh,aaai,1.0,0.2,2018
 Nigel H. Goddard,University of Edinburgh,nips,1.0,0.333333333333,2014
 Nigel H. Goddard,University of Edinburgh,nips,1.0,0.333333333333,2015
-Nigel P. Smart,University of Bristol,ccs,2.0,0.583333333333,2013
-Nigel P. Smart,University of Bristol,ccs,1.0,0.2,2016
-Nigel P. Smart,University of Bristol,crypto,1.0,0.25,2002
-Nigel P. Smart,University of Bristol,crypto,1.0,0.25,2006
-Nigel P. Smart,University of Bristol,crypto,2.0,0.583333333333,2012
-Nigel P. Smart,University of Bristol,crypto,1.0,0.333333333333,2014
-Nigel P. Smart,University of Bristol,crypto,1.0,0.25,2015
-Nigel P. Smart,University of Bristol,crypto,1.0,0.142857142857,2018
-Nigel P. Smart,University of Bristol,eurocrypt,1.0,1.0,1999
-Nigel P. Smart,University of Bristol,eurocrypt,1.0,1.0,2001
-Nigel P. Smart,University of Bristol,eurocrypt,1.0,0.333333333333,2002
-Nigel P. Smart,University of Bristol,eurocrypt,1.0,0.333333333333,2004
-Nigel P. Smart,University of Bristol,eurocrypt,1.0,0.333333333333,2012
+Nigel P. Smart,KU Leuven,ccs,2.0,0.583333333333,2013
+Nigel P. Smart,KU Leuven,ccs,1.0,0.2,2016
+Nigel P. Smart,KU Leuven,crypto,1.0,0.25,2002
+Nigel P. Smart,KU Leuven,crypto,1.0,0.25,2006
+Nigel P. Smart,KU Leuven,crypto,2.0,0.583333333333,2012
+Nigel P. Smart,KU Leuven,crypto,1.0,0.333333333333,2014
+Nigel P. Smart,KU Leuven,crypto,1.0,0.25,2015
+Nigel P. Smart,KU Leuven,crypto,1.0,0.142857142857,2018
+Nigel P. Smart,KU Leuven,eurocrypt,1.0,1.0,1999
+Nigel P. Smart,KU Leuven,eurocrypt,1.0,1.0,2001
+Nigel P. Smart,KU Leuven,eurocrypt,1.0,0.333333333333,2002
+Nigel P. Smart,KU Leuven,eurocrypt,1.0,0.333333333333,2004
+Nigel P. Smart,KU Leuven,eurocrypt,1.0,0.333333333333,2012
 Nigel P. Topham,University of Edinburgh,dac,1.0,0.25,2013
 Nigel P. Topham,University of Edinburgh,hpca,1.0,0.2,2012
 Nigel P. Topham,University of Edinburgh,isca,1.0,0.333333333333,1985
@@ -77459,6 +77492,9 @@ Shengyu Zhang,Chinese University of Hong Kong,stoc,1.0,0.333333333333,2013
 Sheqin Dong,Tsinghua University,dac,1.0,0.166666666667,2001
 Sheqin Dong,Tsinghua University,dac,1.0,0.142857142857,2003
 Sheqin Dong,Tsinghua University,iccad,1.0,0.2,2008
+Sherif Sakr,University of Tartu,vldb,1.0,0.333333333333,2004
+Sherif Sakr,University of Tartu,vldb,1.0,0.25,2008
+Sherif Sakr,University of Tartu,vldb,1.0,0.2,2015
 Shi Bai,Ecole Normale Superieure de Lyon,crypto,1.0,0.333333333333,2016
 Shi Bai,Ecole Normale Superieure de Lyon,icra,1.0,0.333333333333,2017
 Shi Bai,Ecole Normale Superieure de Lyon,iros,1.0,0.25,2016
@@ -79567,6 +79603,9 @@ Srinivas Devadas,Massachusetts Institute of Technology,usenixsec,2.0,0.342857142
 Srinivas Devadas,Massachusetts Institute of Technology,usenixsec,1.0,0.333333333333,2016
 Srinivas Devadas,Massachusetts Institute of Technology,vldb,1.0,0.2,2014
 Srinivas Devadas,Massachusetts Institute of Technology,vldb,1.0,0.166666666667,2018
+Srinivas Narayana,Rutgers University,nsdi,1.0,0.25,2016
+Srinivas Narayana,Rutgers University,sigcomm,1.0,0.125,2017
+Srinivas Narayana,Rutgers University,sigcomm,1.0,0.125,2018
 Srinivasa G. Narasimhan,Carnegie Mellon University,cvpr,1.0,0.5,2000
 Srinivasa G. Narasimhan,Carnegie Mellon University,cvpr,2.0,0.833333333333,2001
 Srinivasa G. Narasimhan,Carnegie Mellon University,cvpr,1.0,0.5,2003
@@ -81908,6 +81947,11 @@ Sunghun Kim 0001,HKUST,ijcai,1.0,0.25,2017
 Sunghun Kim 0001,HKUST,issta,1.0,0.25,2010
 Sunghun Kim 0001,HKUST,issta,1.0,0.25,2014
 Sunghun Kim 0001,HKUST,sosp,1.0,0.0714285714286,2009
+Sungjin Ahn,Rutgers University,aaai,1.0,0.25,2017
+Sungjin Ahn,Rutgers University,acl,2.0,0.342857142857,2016
+Sungjin Ahn,Rutgers University,icml,1.0,0.333333333333,2012
+Sungjin Ahn,Rutgers University,icml,1.0,0.333333333333,2014
+Sungjin Ahn,Rutgers University,kdd,1.0,0.2,2015
 Sungwoo Park,POSTECH,icde,1.0,0.2,2009
 Sungwoo Park,POSTECH,icfp,1.0,1.0,2007
 Sungwoo Park,POSTECH,icfp,1.0,0.333333333333,2008
@@ -87104,6 +87148,15 @@ Vassilis Kostakos,University of Melbourne,ubicomp,2.0,0.375,2016
 Vassilis Kostakos,University of Melbourne,ubicomp,5.0,0.917857142857,2017
 Vassilis Kostakos,University of Melbourne,ubicomp,4.0,0.726923076923,2018
 Vassilis Kostakos,University of Melbourne,uist,1.0,0.2,2014
+Vassilis Zikas,University of Edinburgh,crypto,1.0,0.25,2012
+Vassilis Zikas,University of Edinburgh,crypto,2.0,0.583333333333,2014
+Vassilis Zikas,University of Edinburgh,crypto,1.0,0.25,2015
+Vassilis Zikas,University of Edinburgh,crypto,2.0,0.5,2016
+Vassilis Zikas,University of Edinburgh,crypto,2.0,0.5,2017
+Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.5,2010
+Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.333333333333,2016
+Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.2,2018
+Vassilis Zikas,University of Edinburgh,focs,1.0,0.2,2013
 Vassos Hadzilacos,University of Toronto,pods,1.0,1.0,1983
 Vassos Hadzilacos,University of Toronto,pods,1.0,1.0,1987
 Vassos Hadzilacos,University of Toronto,pods,1.0,0.5,1988
