@@ -714,6 +714,10 @@ def dump_it():
                     z.append(s)
         json.dump(z, f, indent=2)
 
-build_dicts()
-do_it()
-dump_it()
+def main():
+    build_dicts()
+    do_it()
+    dump_it()
+
+if __name__== "__main__":
+  main()
