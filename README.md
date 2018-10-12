@@ -21,13 +21,14 @@ Please read <a href="CONTRIBUTING.md">```CONTRIBUTING.md```</a> for full details
 Because of GitHub size limits, to run this site, you will want to download the DBLP
 data by running ``make update-dblp`` (note that this will consume
 upwards of 19GiB of memory). To then rebuild the databases, just run
-``make``.
+``make``. Make sure you run it on a local web server (like apache) as different
+browsers behave diffrently otherwise.
 
 You will also need to install libxml2-utils (or whatever package
-includes xmllint on your distro), npm, typescript, python-lxml, and basex at
-a minimum via a command line like:
+includes xmllint on your distro), npm, typescript, closure-compiler, python-lxml, [pypy](http://doc.pypy.org/en/latest/install.html),
+and basex at a minimum via a command line like:
 
-``apt-get install libxml2-utils npm python-lxml basex; npm install -g typescript``
+``apt-get install libxml2-utils npm python-lxml basex; npm install -g typescript google-closure-compiler``
 
 ### Acknowledgements and other rankings
 
