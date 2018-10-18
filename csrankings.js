@@ -973,7 +973,7 @@ class CSRankings {
                     + '<img src="dblp.png">'
                     + '</a>';
                 p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" >"
-                    + "<font size=\"+1\" color=\"blue\">" + this.PieChart + "</font></span>"
+                    + "<font size=\"+1\">" + this.PieChart + "</font></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1044,19 +1044,17 @@ class CSRankings {
                 const esc = escape(dept);
                 s += "\n<tr><td>" + rank + "&nbsp;</td>";
                 s += "<td>"
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "')\";\" id=\"" + esc + "-widget\">"
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
                     + "<font color=\"blue\">"
                     + this.RightTriangle
                     + "</font>"
                     + "</span>";
                 s += "&nbsp;" + dept + "&nbsp;"
-                    + "<font color=\"blue\">"
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "')\";\" >"
-                    + this.PieChart
-                    + "</span></font>";
+                    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" >"
+                    + this.PieChart + "</span>";
                 s += "</td>";
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
-                s += '<td align="right">' + deptCounts[dept] + "<br />"; /* number of faculty */
+                s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
                 s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
