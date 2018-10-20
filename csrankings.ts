@@ -455,6 +455,7 @@ class CSRankings {
 	private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
 	private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
 	private readonly PieChart = "<img src='png/piechart.png'>"; // pie chart image
+	private readonly OpenPieChart = "<img src='png/piechart-open.png'>"; // opened pie chart image
 
 	private translateNameToDBLP(name: string): string {
 		// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -1214,7 +1215,7 @@ class CSRankings {
 					+ '<img src="dblp.png">'
 					+ '</a>'
 
-				p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" >"
+				p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
 				    + "<font size=\"+1\">" + this.PieChart + "</font></span>"
 					+ '</small>'
 					+ '</td><td align="right"><small>'
@@ -1300,7 +1301,7 @@ class CSRankings {
 					+ "</span>";
 
 				s += "&nbsp;" + dept + "&nbsp;"
-					+ "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" >"
+					+ "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
 					+ this.PieChart + "</span>";
 				s += "</td>";
 
@@ -1418,12 +1419,15 @@ class CSRankings {
 	/* Turn the chart display on or off. */
 	public toggleChart(name: string): void {
 		const chart = document.getElementById(name + "-chart");
+		const chartwidget = document.getElementById(name + "-chartwidget");
 		if (chart!.style.display === 'block') {
 			chart!.style.display = 'none';
 			chart!.innerHTML = '';
+			chartwidget!.innerHTML = this.PieChart;
 		} else {
 			chart!.style.display = 'block';
 			this.makeChart(name);
+			chartwidget!.innerHTML = this.OpenPieChart;
 		}
 
 	}
