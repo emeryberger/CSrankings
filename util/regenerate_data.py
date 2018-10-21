@@ -522,6 +522,14 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     # pages found at all => some problem with journal
     # entries in DBLP.
     tooFewPages = False
+    
+    # AAAI 2018 has no page numbers listed for anything, making it impossible to
+    # distinguish short papers (2 pages!) from full papers. Delisting for now.
+    # Mails sent to DBLP and AAAI.
+    # [Oct 21, 2018]
+    if (pageCount == -1) and (confname == 'AAAI') and year == 2018:
+        tooFewPages = True
+        
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = confname == 'SC'
