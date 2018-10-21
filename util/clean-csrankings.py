@@ -70,7 +70,7 @@ with open('dblp-aliases.csv', mode='r') as infile:
 
 # Read in CSrankings file.
 csrankings = {}
-with open('csrankings.csv', mode='r') as infile:
+with open('csrankings.csv', mode='rb') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         csrankings[row['name']] = { 'affiliation' : row['affiliation'],
@@ -84,7 +84,6 @@ for name in aliases:
         for a in aliases[name]:
             # Add any missing aliases.
             if not a in csrankings:
-                # print("Missing "+a+"\n")
                 csrankings[a] = csrankings[name]
     else:
         # There might be a name that isn't there but an alias that IS. If so, add the name.
@@ -138,7 +137,7 @@ for name in csrankings:
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
-count = 10
+count = 0
 ks = list(csrankings.keys())
 random.shuffle(ks)
 ks = ks[:count]
