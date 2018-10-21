@@ -463,17 +463,17 @@ qp('track', 'ViewContent');
 		    </tr>
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mlmining-widget">
+			<span class="hovertip" id="ml-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Machine learning &amp; data mining
-			<div class="table-responsive" style="display:none;" id="mlmining-conferences">
+			Machine learning
+			<div class="table-responsive" style="display:none;" id="ml-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://nips.cc/">nips</a>
+				    <a href="http://www.machinelearning.org/">imls</a>, <a href="https://nips.cc/">nips</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
@@ -486,18 +486,23 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
-				      </td>
-				      <td align="right">
-					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
-				      </td>
-				    </tr>
-				    <tr>
-				      <td>
 					<a href="http://dblp.org/db/conf/nips/index.html">NIPS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nips" id="nips" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td colspan="2">
+					<hr>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<a href="http://dblp.org/db/journals/jmlr/index.html">JMLR</a>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="jmlr" id="jmlr" value="1.0"/>
 				      </td>
 				    </tr>
 				  </table>
@@ -508,7 +513,58 @@ qp('track', 'ViewContent');
 			</div>
 		      </td>
 		      <td> 
-			<input type="checkbox" name="mlmining" id="mlmining" value="1.0"/>
+			<input type="checkbox" name="ml" id="ml" value="1.0"/>
+		      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+			<span class="hovertip" id="dm-widget">
+			  <font color="blue">&#9658;</font>
+			</span>
+			Knowledge discovery and data mining
+			<div class="table-responsive" style="display:none;" id="dm-conferences">
+			  <table class="table-sm" style="width:100%">
+			    <tbody>
+			      <tr style="width:100%">
+				<td style="width:100%">
+				  <p class="text-muted" style="font-variant:small-caps;">
+				    <a href="http://www.kdd.org/">acm sigkdd</a>
+				  </p>
+				  <table class="table-sm" style="width:100%;">
+				    <tr>
+				      <td>
+					<a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<a href="http://dblp.org/db/conf/sdm/index.html">SDM</a>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="sdm" id="sdm" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<a href="http://dblp.org/db/conf/icdm/index.html">ICDM</a>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="icdm" id="icdm" value="1.0"/>
+				      </td>
+				    </tr>
+				  </table>
+				</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		      </td>
+		      <td> 
+			<input type="checkbox" name="dm" id="dm" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -592,6 +648,19 @@ qp('track', 'ViewContent');
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="www" id="www" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td colspan="2">
+					<hr>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<a href="http://dblp.org/db/conf/cikm/index.html">CIKM</a>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="cikm" id="cikm" value="1.0"/>
 				      </td>
 				    </tr>
 				  </table>

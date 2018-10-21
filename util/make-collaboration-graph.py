@@ -37,7 +37,8 @@ colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, sy
 
 areaList = [ { "area" : "ai", "title" : "AI" },
 	    { "area" : "vision", "title" : "Vision" },
-	    { "area" : "mlmining", "title" : "ML" },
+	    { "area" : "ml", "title" : "ML" },
+	    { "area" : "dm", "title" : "DM" },
 	    { "area" : "nlp",  "title" : "NLP" },
 	    { "area" : "ir", "title" : "Web & IR" },
 	    { "area" : "arch", "title" : "Arch" },

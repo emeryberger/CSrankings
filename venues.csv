@@ -44,6 +44,7 @@ area,canonical,alternate,default
 "hpc","ICS","ICS",True
 "ir","WWW","WWW",True
 "ir","SIGIR","SIGIR",True
+"ir","CIKM","CIKM",True
 "log","CAV","CAV",True
 "log","CAV","CAV (1)",True
 "log","CAV","CAV (2)",True
@@ -53,12 +54,15 @@ area,canonical,alternate,default
 "metrics","SIGMETRICS","SIGMETRICS/Performance",True
 "metrics","IMC","IMC",True
 "metrics","IMC","Internet Measurement Conference",True
-"mlmining","NIPS","NIPS",True
-"mlmining","ICML","ICML",True
-"mlmining","ICML","ICML (1)",True
-"mlmining","ICML","ICML (2)",True
-"mlmining","ICML","ICML (3)",True
-"mlmining","KDD","KDD",True
+"ml","NIPS","NIPS",True
+"ml","ICML","ICML",True
+"ml","ICML","ICML (1)",True
+"ml","ICML","ICML (2)",True
+"ml","ICML","ICML (3)",True
+"ml","JMLR","JMLR",True
+"datamining","KDD","KDD",True
+"datamining","SDM","SDM",True
+"datamining","ICDM","ICDM",True
 "mobile","MobiSys","MobiSys",True
 "mobile","MobiCom","MobiCom",True
 "mobile","MobiCom","MOBICOM",True
@@ -66,6 +70,7 @@ area,canonical,alternate,default
 "mod","VLDB","VLDB",True
 "mod","VLDB","PVLDB",True
 "mod","SIGMOD Conference","SIGMOD Conference",True
+"mod","ICDE","ICDE",True
 "nlp","EMNLP","EMNLP",True
 "nlp","ACL","ACL",True
 "nlp","ACL","ACL (1)",True

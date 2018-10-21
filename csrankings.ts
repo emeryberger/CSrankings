@@ -196,14 +196,18 @@ class CSRankings {
 			'cvpr': 'vision',
 			'eccv': 'vision',
 			'iccv': 'vision',
-			'icml': 'mlmining',
-			'kdd': 'mlmining',
-			'nips': 'mlmining',
+			'icml': 'ml',
+			'nips': 'ml',
+			'jmlr': 'ml', // next tier
+			'kdd': 'dm',
+			'sdm': 'dm',
+			'icdm': 'dm',
 			'acl': 'nlp',
 			'emnlp': 'nlp',
 			'naacl': 'nlp',
 			'sigir': 'ir',
 			'www': 'ir',
+			'cikm': 'ir', // next tier
 			'asplos': 'arch',
 			'isca': 'arch',
 			'micro': 'arch',
@@ -215,8 +219,8 @@ class CSRankings {
 			'pets': 'sec', // next tier
 			'vldb': 'mod',
 			'sigmod': 'mod',
-			'icde': 'mod', // next tier
-			'pods': 'mod',
+			'icde': 'mod',
+			'pods': 'mod', // next tier
 			'dac': 'da',
 			'iccad': 'da',
 			'emsoft': 'bed',
@@ -272,8 +276,10 @@ class CSRankings {
 		{
 			'ase': true,
 			'issta': true,
+			'jmlr': true,
 			'icde': true,
 			'pods': true,
+			'cikm': true,
 			'hpca': true,
 			'ndss': true, // for now
 			'pets': true,
@@ -296,10 +302,14 @@ class CSRankings {
 		{ area: "cvpr", title: "Vision" },
 		{ area: "eccv", title: "Vision" },
 		{ area: "iccv", title: "Vision" },
-		{ area: "mlmining", title: "ML" },
+		{ area: "ml", title: "ML" },
 		{ area: "icml", title: "ML" },
-		{ area: "kdd", title: "ML" },
 		{ area: "nips", title: "ML" },
+		{ area: "jmlr", title: "ML" },
+		{ area: "dm", title: "KDD" },
+		{ area: "kdd", title: "KDD" },
+		{ area: "sdm", title: "KDD" },
+		{ area: "icdm", title: "KDD" },
 		{ area: "nlp", title: "NLP" },
 		{ area: "acl", title: "NLP" },
 		{ area: "emnlp", title: "NLP" },
@@ -307,6 +317,7 @@ class CSRankings {
 		{ area: "ir", title: "Web+IR" },
 		{ area: "sigir", title: "Web+IR" },
 		{ area: "www", title: "Web+IR" },
+		{ area: "cikm", title: "Web+IR" },
 		{ area: "arch", title: "Arch" },
 		{ area: "asplos", title: "Arch" },
 		{ area: "isca", title: "Arch" },
@@ -393,7 +404,7 @@ class CSRankings {
 			//,{ area : "cse", title : "CSEd" }
 		];
 
-	private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+	private readonly aiAreas = ["ai", "vision", "ml", "dm", "nlp", "ir"];
 	private readonly systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
 	private readonly theoryAreas = ["act", "crypt", "log"];
 	private readonly interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
