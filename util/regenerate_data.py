@@ -6,6 +6,7 @@ import csv
 import re
 import sys
 import operator
+# from typing import Dict
 
 areadict = {
     #
@@ -341,6 +342,7 @@ def do_it():
     gz = gzip.GzipFile('dblp.xml.gz')
     xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
 
+#def csv2dict_str_str(fname : str) -> Dict[str, str]:
 def csv2dict_str_str(fname):
     """Takes a CSV file and returns a dictionary of pairs."""
     with open(fname, mode='r') as infile:
@@ -365,6 +367,7 @@ def startpage(pageStr):
             start = int(pageCounterMatcher2.group(1))
     return start
 
+#def pagecount(pageStr : str) : int:
 def pagecount(pageStr):
     """Compute the number of pages in a string representing a range of page numbers."""
     if pageStr is None:
@@ -523,13 +526,6 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     # entries in DBLP.
     tooFewPages = False
     
-    # AAAI 2018 has no page numbers listed for anything, making it impossible to
-    # distinguish short papers (2 pages!) from full papers. Delisting for now.
-    # Mails sent to DBLP and AAAI.
-    # [Oct 21, 2018]
-    if (pageCount == -1) and (confname == 'AAAI') and year == 2018:
-        tooFewPages = True
-        
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = confname == 'SC'
