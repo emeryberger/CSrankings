@@ -404,6 +404,13 @@ def build_dicts():
             venues.append(item)
     facultydict = csv2dict_str_str('faculty-affiliations.csv')
     aliasdict = csv2dict_str_str('dblp-aliases.csv')
+    totalFaculty = 0
+    for name in facultydict:
+        if name in aliasdict:
+            continue
+        totalFaculty += 1
+    print("Total faculty members currently in the database: "+str(totalFaculty))
+
 
 def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
     global EMSOFT_TECS
