@@ -9,7 +9,7 @@ TARGETS = csrankings.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
-PYTHON = python2.7
+PYTHON = python3.6
 
 all: generated-author-info.csv csrankings.js # fix-affiliations home-pages scholar-links
 
@@ -78,7 +78,7 @@ fix-affiliations: faculty-affiliations.csv
 
 faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csrankings.py
 	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
-	python util/generate-faculty-coauthors.py
+	$(PYTHON) util/generate-faculty-coauthors.py
 	@echo "Done."
 
 generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py
@@ -88,7 +88,7 @@ generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
 	@echo "Generating the list of all publications (all-author-info.csv)."
-	python util/generate-all-pubs.py
+	$(PYTHON) util/generate-all-pubs.py
 	@echo "Building collaboration graph data."
-	python util/make-collaboration-graph.py
+	$(PYTHON) util/make-collaboration-graph.py
 
