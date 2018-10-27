@@ -313,6 +313,7 @@ ASE_LongPaperThreshold = 10
 startyear = 1970
 endyear = 2269
 
+totalPapers = 0 # for statistics reporting purposes only
 authlogs = {}
 interestingauthors = {}
 authorscores = {}
@@ -404,8 +405,11 @@ def build_dicts():
             venues.append(item)
     facultydict = csv2dict_str_str('faculty-affiliations.csv')
     aliasdict = csv2dict_str_str('dblp-aliases.csv')
+    
+    # Count and report the total number of faculty in the database.
     totalFaculty = 0
     for name in facultydict:
+        # Exclude aliases.
         if name in aliasdict:
             continue
         totalFaculty += 1
@@ -548,6 +552,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     return True
 
 def handle_article(_, article):
+    global totalPapers
     global confdict
     global counter
     global successes
@@ -656,6 +661,7 @@ def handle_article(_, article):
         raise
 
     if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
+        totalPapers += 1
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
                 authorName = authorName["#text"]
@@ -729,6 +735,7 @@ def main():
     build_dicts()
     do_it()
     dump_it()
+    print("Total papers counted = "+str(totalPapers))
 
 if __name__== "__main__":
   main()
