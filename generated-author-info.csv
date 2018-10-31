@@ -1,5 +1,6 @@
 "name","dept","area","count","adjustedcount","year"
 A. Aldo Faisal,Imperial College London,icra,1.0,0.333333333333,2016
+A. Cüneyd Tantug,Istanbul Technical University,acl,1.0,0.333333333333,2007
 A. E. Eiben,VU Amsterdam,ijcai,1.0,0.5,2007
 A. Ercument Cicek,Bilkent University,ismb,1.0,0.333333333333,2014
 A. Jefferson Offutt,George Mason University,fse,1.0,0.166666666667,2016
@@ -46,6 +47,11 @@ A. Robert Calderbank,Duke University,nips,1.0,0.166666666667,2013
 A. Robert Calderbank,Duke University,nips,1.0,0.25,2015
 A. Robert Calderbank,Duke University,soda,1.0,0.2,2005
 A. T. Chamillard,Univ. of Colorado Colorado Springs,issta,1.0,0.5,1996
+A. Taylan Cemgil,Boğaziçi University,cvpr,1.0,0.333333333333,2005
+A. Taylan Cemgil,Boğaziçi University,icml,1.0,0.333333333333,2013
+A. Taylan Cemgil,Boğaziçi University,nips,1.0,0.5,2001
+A. Taylan Cemgil,Boğaziçi University,nips,1.0,0.333333333333,2011
+A. Taylan Cemgil,Boğaziçi University,nips,1.0,0.5,2013
 A. Udaya Shankar,University of Maryland - College Park,mobisys,1.0,0.2,2006
 A. Udaya Shankar,University of Maryland - College Park,oakland,1.0,0.333333333333,1991
 A. Udaya Shankar,University of Maryland - College Park,rtss,1.0,1.0,1992
@@ -1820,6 +1826,9 @@ Alastair R. Beresford,University of Cambridge,oopsla,1.0,0.25,2017
 Alastair R. Beresford,University of Cambridge,pets,1.0,0.2,2018
 Alastair R. Beresford,University of Cambridge,ubicomp,1.0,0.333333333333,2004
 Alastair R. Beresford,University of Cambridge,ubicomp,1.0,0.333333333333,2006
+Albert Ali Salah,Boğaziçi University,eccv,1.0,0.333333333333,2012
+Albert Ali Salah,Boğaziçi University,iccv,1.0,0.333333333333,2013
+Albert Ali Salah,Boğaziçi University,ijcai,1.0,0.166666666667,2015
 Albert C. S. Chung,HKUST,cvpr,1.0,0.2,2003
 Albert C. S. Chung,HKUST,cvpr,1.0,0.333333333333,2005
 Albert C. S. Chung,HKUST,cvpr,1.0,0.142857142857,2008
@@ -3736,6 +3745,7 @@ Aloysius K. Mok,University of Texas at Austin,rtss,1.0,0.166666666667,2013
 Aloysius K. Mok,University of Texas at Austin,rtss,1.0,0.166666666667,2014
 Aloysius K. Mok,University of Texas at Austin,rtss,1.0,0.166666666667,2015
 Aloysius K. Mok,University of Texas at Austin,rtss,1.0,0.2,2017
+Alper Sen 0001,Boğaziçi University,dac,1.0,0.333333333333,2008
 Alptekin Küpçü,Koç University,ccs,1.0,0.25,2009
 Alptekin Küpçü,Koç University,eurocrypt,1.0,0.333333333333,2013
 Alptekin Küpçü,Koç University,pets,1.0,0.25,2018
@@ -7750,6 +7760,12 @@ Aryeh Kontorovich,Ben-Gurion University of the Negev,nips,2.0,0.833333333333,201
 Aryeh Kontorovich,Ben-Gurion University of the Negev,nips,1.0,0.333333333333,2015
 Aryeh Kontorovich,Ben-Gurion University of the Negev,nips,1.0,0.333333333333,2016
 Aryeh Kontorovich,Ben-Gurion University of the Negev,nips,1.0,0.333333333333,2017
+Arzucan Özgür,Boğaziçi University,emnlp,1.0,0.333333333333,2007
+Arzucan Özgür,Boğaziçi University,emnlp,1.0,0.5,2009
+Arzucan Özgür,Boğaziçi University,emnlp,1.0,0.5,2014
+Arzucan Özgür,Boğaziçi University,ismb,1.0,0.25,2008
+Arzucan Özgür,Boğaziçi University,ismb,1.0,0.333333333333,2017
+Arzucan Özgür,Boğaziçi University,ismb,1.0,0.333333333333,2018
 Asa Ben-Hur,Colorado State University,ismb,2.0,0.75,2003
 Asa Ben-Hur,Colorado State University,ismb,1.0,0.5,2005
 Asa Ben-Hur,Colorado State University,nips,1.0,0.333333333333,1999
@@ -8305,6 +8321,9 @@ Aylin Caliskan,George Washington University,ndss,1.0,0.142857142857,2018
 Aylin Caliskan,George Washington University,oakland,1.0,0.2,2014
 Aylin Caliskan,George Washington University,pets,1.0,0.2,2012
 Aylin Caliskan,George Washington University,usenixsec,1.0,0.142857142857,2015
+Ayse Tosun Misirli,Istanbul Technical University,fse,1.0,0.166666666667,2012
+Ayse Tosun Misirli,Istanbul Technical University,icse,1.0,0.333333333333,2015
+Ayse Yilmazer,Istanbul Technical University,asplos,1.0,0.166666666667,2015
 Azadeh Farzan,University of Toronto,cav,1.0,0.5,2006
 Azadeh Farzan,University of Toronto,cav,1.0,0.5,2008
 Azadeh Farzan,University of Toronto,cav,1.0,0.333333333333,2009
@@ -25060,6 +25079,15 @@ Emo Welzl,ETH Zurich,stoc,1.0,0.2,2001
 Emre Akbas,Middle East Technical University,cvpr,1.0,0.5,2007
 Emre Akbas,Middle East Technical University,eccv,1.0,0.25,2018
 Emre Telatar,EPFL,sigmetrics,1.0,0.25,2006
+Emre Ugur,Boğaziçi University,icra,1.0,0.25,2007
+Emre Ugur,Boğaziçi University,icra,1.0,0.25,2008
+Emre Ugur,Boğaziçi University,icra,2.0,0.666666666667,2011
+Emre Ugur,Boğaziçi University,icra,2.0,0.5,2012
+Emre Ugur,Boğaziçi University,icra,1.0,0.5,2015
+Emre Ugur,Boğaziçi University,iros,1.0,0.25,2007
+Emre Ugur,Boğaziçi University,iros,1.0,0.333333333333,2012
+Emre Ugur,Boğaziçi University,iros,1.0,0.333333333333,2014
+Emre Ugur,Boğaziçi University,iros,1.0,0.25,2016
 Endre Szemerédi,Rutgers University,focs,1.0,0.25,1983
 Endre Szemerédi,Rutgers University,focs,1.0,0.5,1984
 Endre Szemerédi,Rutgers University,focs,1.0,0.333333333333,1989
@@ -25945,6 +25973,9 @@ Ethan L. Miller,University of California - Santa Cruz,sigmetrics,1.0,0.166666666
 Ethan L. Miller,University of California - Santa Cruz,usenixatc,1.0,0.25,2007
 Ethan L. Miller,University of California - Santa Cruz,usenixatc,1.0,0.25,2008
 Ethan L. Miller,University of California - Santa Cruz,vldb,1.0,0.5,1998
+Ethem Alpaydin,Boğaziçi University,icml,2.0,1.0,2000
+Ethem Alpaydin,Boğaziçi University,icml,1.0,0.5,2008
+Ethem Alpaydin,Boğaziçi University,nips,1.0,1.0,1995
 Etienne Vouga,University of Texas at Austin,cvpr,1.0,0.2,2016
 Etienne Vouga,University of Texas at Austin,eccv,1.0,0.142857142857,2016
 Etienne Vouga,University of Texas at Austin,siggraph,1.0,0.25,2008
@@ -29965,6 +29996,14 @@ Godmar Back,Virginia Tech,sosp,1.0,0.166666666667,1997
 Godmar Back,Virginia Tech,sosp,1.0,0.5,2013
 Godmar Back,Virginia Tech,usenixatc,1.0,0.2,2000
 Godmar Back,Virginia Tech,usenixatc,1.0,0.333333333333,2001
+Gokhan Ince,Istanbul Technical University,icra,1.0,0.166666666667,2010
+Gokhan Ince,Istanbul Technical University,icra,1.0,0.2,2011
+Gokhan Ince,Istanbul Technical University,icra,1.0,0.25,2012
+Gokhan Ince,Istanbul Technical University,iros,1.0,0.25,2008
+Gokhan Ince,Istanbul Technical University,iros,1.0,0.166666666667,2009
+Gokhan Ince,Istanbul Technical University,iros,3.0,0.7,2010
+Gokhan Ince,Istanbul Technical University,iros,3.0,0.583333333333,2011
+Gokhan Ince,Istanbul Technical University,iros,3.0,0.809523809524,2012
 Gokhan Memik,Northwestern University,asplos,1.0,0.2,2008
 Gokhan Memik,Northwestern University,dac,1.0,0.5,2002
 Gokhan Memik,Northwestern University,dac,1.0,0.25,2003
@@ -31277,6 +31316,12 @@ Gösta Grahne,Concordia University,sigmod,1.0,0.333333333333,1987
 Gösta Grahne,Concordia University,vldb,1.0,0.5,1983
 Gösta Grahne,Concordia University,vldb,1.0,1.0,1984
 Gösta Grahne,Concordia University,vldb,1.0,0.5,1985
+Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.5,2004
+Gözde B. Ünal,Istanbul Technical University,cvpr,2.0,1.0,2005
+Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.25,2006
+Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.333333333333,2007
+Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.25,2011
+Gülsen Eryigit,Istanbul Technical University,emnlp,1.0,0.142857142857,2007
 Günther Ruhe,University of Calgary,chiconf,1.0,0.166666666667,2015
 Günther Ruhe,University of Calgary,fse,1.0,0.5,2007
 H. Altay Guvenir,Bilkent University,icml,1.0,0.5,1996
@@ -31286,6 +31331,7 @@ H. Andrew Schwartz,Stony Brook University,emnlp,2.0,0.375,2016
 H. Andrew Schwartz,Stony Brook University,emnlp,2.0,0.366666666667,2017
 H. Andrew Schwartz,Stony Brook University,emnlp,4.0,0.866666666667,2018
 H. Andrew Schwartz,Stony Brook University,naacl,1.0,0.0909090909091,2015
+H. Levent Akin,Boğaziçi University,icra,1.0,0.333333333333,2012
 H. Sebastian Seung,Princeton University,cvpr,1.0,0.0588235294118,2010
 H. Sebastian Seung,Princeton University,iccv,1.0,0.111111111111,2007
 H. Sebastian Seung,Princeton University,icra,1.0,0.25,2004
@@ -31969,6 +32015,7 @@ Hal Daumé III,University of Maryland - College Park,nips,1.0,0.25,2013
 Hal Daumé III,University of Maryland - College Park,nips,1.0,0.333333333333,2014
 Hal Daumé III,University of Maryland - College Park,nips,1.0,0.2,2016
 Hal Daumé III,University of Maryland - College Park,usenixsec,1.0,0.2,2018
+Haluk Bingol,Boğaziçi University,ismb,1.0,0.2,2007
 Hamdi Dibeklioglu,Bilkent University,eccv,1.0,0.333333333333,2012
 Hamdi Dibeklioglu,Bilkent University,iccv,1.0,0.333333333333,2013
 Hamdi Dibeklioglu,Bilkent University,iccv,1.0,1.0,2017
@@ -32766,6 +32813,8 @@ Haym Hirsh,Cornell University,ijcai,1.0,0.25,2001
 Haym Hirsh,Cornell University,sigir,1.0,0.2,2001
 Hayri Sever,Hacettepe University,kdd,1.0,0.333333333333,1995
 Hayri Sever,Hacettepe University,sigir,1.0,0.5,1995
+Hazim Kemal Ekenel,Istanbul Technical University,cvpr,1.0,0.25,2007
+Hazim Kemal Ekenel,Istanbul Technical University,iccv,1.0,0.333333333333,2007
 He He 0001,New York University,emnlp,1.0,0.25,2012
 He He 0001,New York University,emnlp,1.0,0.333333333333,2013
 He He 0001,New York University,emnlp,1.0,0.2,2014
@@ -48743,6 +48792,7 @@ Lakshminarayanan Subramanian,New York University,usenixatc,1.0,0.333333333333,20
 Lakshminarayanan Subramanian,New York University,wine,1.0,0.166666666667,2005
 Lakshminarayanan Subramanian,New York University,www,1.0,0.333333333333,2009
 Lakshmish Ramaswamy,University of Georgia,www,1.0,0.25,2004
+Lale Akarun,Boğaziçi University,eccv,1.0,0.25,2012
 Lan Zhang,USTC,mobicom,1.0,0.166666666667,2013
 Lan Zhang,USTC,mobicom,1.0,0.111111111111,2014
 Lan Zhang,USTC,mobicom,1.0,0.142857142857,2015
@@ -61678,6 +61728,7 @@ Nadia El-Mabrouk,University of Montreal,recomb,1.0,0.333333333333,1999
 Nadia El-Mabrouk,University of Montreal,recomb,1.0,0.5,2002
 Nadia El-Mabrouk,University of Montreal,recomb,1.0,0.5,2009
 Nadia El-Mabrouk,University of Montreal,recomb,1.0,0.25,2012
+Nadia Erdogan,Istanbul Technical University,iros,1.0,0.333333333333,2007
 Nadia Heninger,University of Pennsylvania,ccs,1.0,0.0714285714286,2015
 Nadia Heninger,University of Pennsylvania,ccs,1.0,0.1,2016
 Nadia Heninger,University of Pennsylvania,ccs,1.0,0.333333333333,2018
@@ -67899,6 +67950,7 @@ Pinar Tözün,IT University of Copenhagen,sigmod,1.0,0.25,2016
 Pinar Tözün,IT University of Copenhagen,vldb,1.0,0.25,2011
 Pinar Tözün,IT University of Copenhagen,vldb,1.0,0.2,2012
 Pinar Tözün,IT University of Copenhagen,vldb,1.0,0.25,2014
+Pinar Yolum,Boğaziçi University,ijcai,1.0,0.5,2017
 Pinar Öztürk,Norwegian University of Science and Technology,emnlp,1.0,0.5,2015
 Ping Ji,CUNY,kdd,1.0,0.2,2015
 Ping Ji,CUNY,sigcomm,1.0,0.25,2003
@@ -76045,6 +76097,9 @@ Sandy Irani,University of California - Irvine,soda,1.0,0.333333333333,2003
 Sandy Irani,University of California - Irvine,stoc,1.0,0.25,1991
 Sandy Irani,University of California - Irvine,stoc,1.0,0.5,1995
 Sandy Irani,University of California - Irvine,stoc,1.0,1.0,1997
+Sanem Sariel,Istanbul Technical University,aaai,1.0,0.5,2010
+Sanem Sariel,Istanbul Technical University,aaai,1.0,0.5,2012
+Sanem Sariel,Istanbul Technical University,iros,1.0,0.333333333333,2007
 Sang Kil Cha,KAIST,ase,1.0,0.142857142857,2017
 Sang Kil Cha,KAIST,ccs,1.0,0.25,2010
 Sang Kil Cha,KAIST,ccs,1.0,0.25,2013
@@ -83435,6 +83490,7 @@ Sukyoung Ryu,KAIST,fse,1.0,0.25,2014
 Sukyoung Ryu,KAIST,oopsla,1.0,0.142857142857,2011
 Sukyoung Ryu,KAIST,oopsla,1.0,0.5,2012
 Sulamita Klein,UFRJ,stoc,1.0,0.25,1999
+Sule Gündüz Ögüdücü,Istanbul Technical University,kdd,1.0,0.5,2003
 Suman Banerjee,University of Wisconsin - Madison,emnlp,1.0,0.25,2018
 Suman Banerjee,University of Wisconsin - Madison,imc,1.0,0.333333333333,2004
 Suman Banerjee,University of Wisconsin - Madison,imc,1.0,0.2,2007
@@ -85167,6 +85223,9 @@ Tawanna Dillahunt,University of Michigan,chiconf,3.0,1.0,2018
 Tawanna Dillahunt,University of Michigan,ubicomp,1.0,0.25,2009
 Tawanna Dillahunt,University of Michigan,ubicomp,1.0,0.333333333333,2010
 Tawanna Dillahunt,University of Michigan,ubicomp,1.0,0.25,2015
+Taylan Cemgil,Boğaziçi University,icml,1.0,0.25,2016
+Taylan Cemgil,Boğaziçi University,icml,1.0,0.2,2018
+Taylan Cemgil,Boğaziçi University,icra,1.0,0.166666666667,2018
 Taylor Berg-Kirkpatrick,Carnegie Mellon University,aaai,3.0,0.783333333333,2018
 Taylor Berg-Kirkpatrick,Carnegie Mellon University,acl,1.0,0.25,2008
 Taylor Berg-Kirkpatrick,Carnegie Mellon University,acl,1.0,0.5,2010
@@ -88248,6 +88307,7 @@ Tulika Mitra,National University of Singapore,rtss,1.0,0.333333333333,2004
 Tulika Mitra,National University of Singapore,rtss,1.0,0.25,2005
 Tulika Mitra,National University of Singapore,rtss,1.0,0.2,2009
 Tulika Mitra,National University of Singapore,vis,1.0,0.333333333333,2000
+Tunga Güngör,Boğaziçi University,ismb,1.0,0.142857142857,2017
 Tuomas Aura,Aalto University,oakland,1.0,0.333333333333,2000
 Tuomas Aura,Aalto University,oakland,1.0,0.333333333333,2004
 Tuomas Aura,Aalto University,pets,1.0,0.25,2008
@@ -98189,6 +98249,7 @@ Zeev Dvir,Princeton University,stoc,2.0,0.75,2012
 Zeev Dvir,Princeton University,stoc,1.0,0.333333333333,2013
 Zeev Dvir,Princeton University,stoc,1.0,0.333333333333,2014
 Zeev Dvir,Princeton University,stoc,1.0,0.5,2015
+Zehra Cataltepe,Istanbul Technical University,nips,1.0,0.5,1997
 Zekeriya Erkin,TU Delft,pets,1.0,0.166666666667,2009
 Zeljko Agic,IT University of Copenhagen,acl,1.0,0.333333333333,2013
 Zeljko Agic,IT University of Copenhagen,acl,1.0,0.166666666667,2015
