@@ -1679,6 +1679,7 @@ Alan L. Yuille,Johns Hopkins University,eccv,2.0,0.833333333333,2010
 Alan L. Yuille,Johns Hopkins University,eccv,3.0,1.08333333333,2014
 Alan L. Yuille,Johns Hopkins University,eccv,4.0,1.45,2016
 Alan L. Yuille,Johns Hopkins University,eccv,1.0,0.1,2018
+Alan L. Yuille,Johns Hopkins University,emnlp,1.0,0.2,2018
 Alan L. Yuille,Johns Hopkins University,iccv,1.0,0.5,1988
 Alan L. Yuille,Johns Hopkins University,iccv,2.0,1.0,1995
 Alan L. Yuille,Johns Hopkins University,iccv,2.0,0.666666666667,1998
@@ -3237,6 +3238,7 @@ Ali Mesbah 0001,University of British Columbia,fse,1.0,0.333333333333,2009
 Ali Mesbah 0001,University of British Columbia,fse,1.0,0.333333333333,2014
 Ali Mesbah 0001,University of British Columbia,fse,1.0,0.5,2015
 Ali Mesbah 0001,University of British Columbia,fse,1.0,0.333333333333,2016
+Ali Mesbah 0001,University of British Columbia,fse,1.0,0.333333333333,2018
 Ali Mesbah 0001,University of British Columbia,icse,1.0,0.5,2009
 Ali Mesbah 0001,University of British Columbia,icse,1.0,0.5,2011
 Ali Mesbah 0001,University of British Columbia,icse,1.0,0.5,2012
@@ -7581,6 +7583,15 @@ Arti Ramesh,Binghamton University,www,1.0,0.2,2018
 Artur Jez,University of Wroclaw,soda,1.0,0.142857142857,2009
 Arun K. Sood,George Mason University,cvpr,1.0,0.333333333333,1988
 Arun K. Sood,George Mason University,hpdc,1.0,0.5,1997
+Arun Kumar 0001,University of California - San Diego,sigmod,1.0,0.25,2012
+Arun Kumar 0001,University of California - San Diego,sigmod,1.0,0.333333333333,2014
+Arun Kumar 0001,University of California - San Diego,sigmod,1.0,0.333333333333,2015
+Arun Kumar 0001,University of California - San Diego,sigmod,1.0,0.25,2016
+Arun Kumar 0001,University of California - San Diego,sigmod,1.0,0.166666666667,2017
+Arun Kumar 0001,University of California - San Diego,vldb,1.0,0.5,2011
+Arun Kumar 0001,University of California - San Diego,vldb,1.0,0.0909090909091,2012
+Arun Kumar 0001,University of California - San Diego,vldb,2.0,0.583333333333,2017
+Arun Kumar 0001,University of California - San Diego,vldb,1.0,0.166666666667,2018
 Arun Ross,Michigan State University,cvpr,1.0,0.333333333333,2007
 Arun Siddharth Konagurthu,Monash University,ismb,1.0,0.25,2011
 Arun Siddharth Konagurthu,Monash University,ismb,1.0,0.333333333333,2012
@@ -8749,6 +8760,7 @@ Baris Kasikci,University of Michigan,sosp,1.0,0.2,2015
 Baris Kasikci,University of Michigan,sosp,1.0,0.25,2017
 Baris Kasikci,University of Michigan,usenixatc,1.0,0.2,2014
 Baris Kasikci,University of Michigan,usenixatc,1.0,0.25,2018
+Baris Kasikci,University of Michigan,usenixsec,1.0,0.1,2018
 Barna Saha,University of Massachusetts Amherst,aaai,1.0,0.5,2017
 Barna Saha,University of Massachusetts Amherst,aaai,1.0,0.25,2018
 Barna Saha,University of Massachusetts Amherst,focs,1.0,0.333333333333,2010
@@ -17574,7 +17586,7 @@ Daniel Genkin,University of Michigan,oakland,2.0,0.325,2018
 Daniel Genkin,University of Michigan,stoc,1.0,0.25,2013
 Daniel Genkin,University of Michigan,stoc,1.0,0.2,2014
 Daniel Genkin,University of Michigan,usenixsec,1.0,0.25,2017
-Daniel Genkin,University of Michigan,usenixsec,1.0,0.0833333333333,2018
+Daniel Genkin,University of Michigan,usenixsec,2.0,0.183333333333,2018
 Daniel Gildea,University of Rochester,aaai,1.0,0.333333333333,2013
 Daniel Gildea,University of Rochester,aaai,1.0,0.166666666667,2014
 Daniel Gildea,University of Rochester,aaai,1.0,0.333333333333,2018
@@ -27421,6 +27433,7 @@ Frank Piessens,KU Leuven,usenixsec,1.0,0.111111111111,2013
 Frank Piessens,KU Leuven,usenixsec,1.0,0.5,2015
 Frank Piessens,KU Leuven,usenixsec,3.0,1.25,2016
 Frank Piessens,KU Leuven,usenixsec,1.0,0.2,2017
+Frank Piessens,KU Leuven,usenixsec,1.0,0.1,2018
 Frank Piessens,KU Leuven,www,1.0,0.166666666667,2013
 Frank Piessens,KU Leuven,www,1.0,0.111111111111,2014
 Frank Rudzicz,University of Toronto,acl,1.0,1.0,2006
@@ -32069,7 +32082,7 @@ Han Liu 0001,Northwestern University,icml,2.0,1.0,2013
 Han Liu 0001,Northwestern University,icml,1.0,0.2,2015
 Han Liu 0001,Northwestern University,icml,3.0,0.733333333333,2016
 Han Liu 0001,Northwestern University,icml,1.0,0.333333333333,2017
-Han Liu 0001,Northwestern University,icml,2.0,0.45,2018
+Han Liu 0001,Northwestern University,icml,3.0,0.65,2018
 Han Liu 0001,Northwestern University,kdd,1.0,0.166666666667,2016
 Han Liu 0001,Northwestern University,nips,1.0,0.25,2007
 Han Liu 0001,Northwestern University,nips,1.0,0.333333333333,2008
@@ -38930,6 +38943,7 @@ Jeff Huang 0001,Texas A&M University,ase,1.0,0.333333333333,2017
 Jeff Huang 0001,Texas A&M University,fse,1.0,0.333333333333,2010
 Jeff Huang 0001,Texas A&M University,fse,1.0,0.5,2015
 Jeff Huang 0001,Texas A&M University,fse,1.0,0.5,2016
+Jeff Huang 0001,Texas A&M University,fse,2.0,1.0,2018
 Jeff Huang 0001,Texas A&M University,icse,2.0,0.433333333333,2015
 Jeff Huang 0001,Texas A&M University,icse,1.0,1.0,2016
 Jeff Huang 0001,Texas A&M University,icse,1.0,1.0,2018
@@ -50320,7 +50334,7 @@ Liang Huang 0001,Oregon State University,emnlp,1.0,0.5,2014
 Liang Huang 0001,Oregon State University,emnlp,1.0,0.333333333333,2015
 Liang Huang 0001,Oregon State University,emnlp,1.0,0.5,2016
 Liang Huang 0001,Oregon State University,emnlp,3.0,1.16666666667,2017
-Liang Huang 0001,Oregon State University,emnlp,3.0,0.866666666667,2018
+Liang Huang 0001,Oregon State University,emnlp,4.0,1.11666666667,2018
 Liang Huang 0001,Oregon State University,naacl,2.0,1.25,2006
 Liang Huang 0001,Oregon State University,naacl,1.0,0.333333333333,2012
 Liang Huang 0001,Oregon State University,naacl,1.0,0.5,2013
@@ -54540,6 +54554,7 @@ Mark Silberstein,Technion,sc,1.0,0.25,2009
 Mark Silberstein,Technion,sosp,1.0,0.2,2011
 Mark Silberstein,Technion,usenixatc,1.0,0.25,2017
 Mark Silberstein,Technion,usenixatc,1.0,0.2,2018
+Mark Silberstein,Technion,usenixsec,1.0,0.1,2018
 Mark Smotherman,Clemson University,micro,1.0,0.25,1991
 Mark Smotherman,Clemson University,micro,1.0,0.25,1993
 Mark Smotherman,Clemson University,micro,1.0,0.5,1994
@@ -60903,11 +60918,10 @@ Momotaz Begum,University of New Hampshire,icra,1.0,0.5,2011
 Momotaz Begum,University of New Hampshire,iros,1.0,0.333333333333,2005
 Momotaz Begum,University of New Hampshire,iros,1.0,0.333333333333,2006
 Momotaz Begum,University of New Hampshire,iros,1.0,0.25,2008
-Mona Singh,Princeton University,ec,1.0,0.333333333333,1999
-Mona Singh,Princeton University,ismb,1.0,0.2,2005
-Mona Singh,Princeton University,ismb,1.0,0.5,2008
-Mona Singh,Princeton University,recomb,1.0,0.5,1997
-Mona Singh,Princeton University,recomb,1.0,0.5,2001
+Mona Singh 0001,Princeton University,ismb,1.0,0.2,2005
+Mona Singh 0001,Princeton University,ismb,1.0,0.5,2008
+Mona Singh 0001,Princeton University,recomb,1.0,0.5,1997
+Mona Singh 0001,Princeton University,recomb,1.0,0.5,2001
 Mona T. Diab,George Washington University,acl,1.0,0.5,2002
 Mona T. Diab,George Washington University,acl,1.0,1.0,2004
 Mona T. Diab,George Washington University,acl,1.0,0.5,2006
@@ -85819,6 +85833,7 @@ Thomas F. Wenisch,University of Michigan,osdi,1.0,0.2,2014
 Thomas F. Wenisch,University of Michigan,osdi,1.0,0.5,2018
 Thomas F. Wenisch,University of Michigan,pldi,1.0,0.166666666667,2018
 Thomas F. Wenisch,University of Michigan,sigmod,1.0,0.25,2017
+Thomas F. Wenisch,University of Michigan,usenixsec,1.0,0.1,2018
 Thomas F. Wenisch,University of Michigan,vldb,1.0,0.25,2013
 Thomas Fritz,University of Zurich,chiconf,1.0,0.25,2014
 Thomas Fritz,University of Zurich,chiconf,1.0,0.5,2015
@@ -86475,6 +86490,7 @@ Tianyin Xu,Univ. of Illinois at Urbana-Champaign,sosp,1.0,0.125,2013
 Tianyin Xu,Univ. of Illinois at Urbana-Champaign,usenixatc,1.0,0.142857142857,2017
 Tianzheng Wang 0001,Simon Fraser University,dac,1.0,0.166666666667,2014
 Tianzheng Wang 0001,Simon Fraser University,emsoft,1.0,0.125,2014
+Tianzheng Wang 0001,Simon Fraser University,icde,1.0,0.333333333333,2018
 Tianzheng Wang 0001,Simon Fraser University,rtss,1.0,0.2,2011
 Tianzheng Wang 0001,Simon Fraser University,sigmod,1.0,0.25,2016
 Tianzheng Wang 0001,Simon Fraser University,vldb,1.0,0.5,2014
@@ -93998,12 +94014,12 @@ Xin Liu,University of California - Davis,usenixsec,1.0,0.333333333333,2005
 Xin Liu,University of California - Davis,www,1.0,0.5,2013
 Xin Wang 0001,Stony Brook University,sigmetrics,1.0,0.25,2000
 Xin Wang 0001,Stony Brook University,sigmetrics,1.0,0.142857142857,2018
-Xin Xia,Monash University,ase,1.0,0.333333333333,2014
-Xin Xia,Monash University,ase,1.0,0.166666666667,2016
-Xin Xia,Monash University,ase,1.0,0.25,2017
-Xin Xia,Monash University,ase,2.0,0.366666666667,2018
-Xin Xia,Monash University,ijcai,1.0,0.166666666667,2018
-Xin Xia,Monash University,issta,1.0,0.25,2016
+Xin Xia 0001,Monash University,ase,1.0,0.333333333333,2014
+Xin Xia 0001,Monash University,ase,1.0,0.166666666667,2016
+Xin Xia 0001,Monash University,ase,1.0,0.25,2017
+Xin Xia 0001,Monash University,ase,2.0,0.366666666667,2018
+Xin Xia 0001,Monash University,ijcai,1.0,0.166666666667,2018
+Xin Xia 0001,Monash University,issta,1.0,0.25,2016
 Xin Yuan 0001,Florida State University,hpca,1.0,0.333333333333,1997
 Xin Yuan 0001,Florida State University,hpdc,1.0,0.142857142857,2013
 Xin Yuan 0001,Florida State University,ics,1.0,0.5,2005
@@ -97973,7 +97989,7 @@ Yuval Yarom,University of Adelaide,oakland,1.0,0.2,2015
 Yuval Yarom,University of Adelaide,oakland,1.0,0.125,2018
 Yuval Yarom,University of Adelaide,usenixsec,1.0,0.5,2014
 Yuval Yarom,University of Adelaide,usenixsec,1.0,0.25,2017
-Yuval Yarom,University of Adelaide,usenixsec,1.0,0.0833333333333,2018
+Yuval Yarom,University of Adelaide,usenixsec,2.0,0.183333333333,2018
 Yuvraj Agarwal,Carnegie Mellon University,ase,1.0,0.166666666667,2017
 Yuvraj Agarwal,Carnegie Mellon University,chiconf,1.0,0.125,2015
 Yuvraj Agarwal,Carnegie Mellon University,dac,1.0,0.5,2010
