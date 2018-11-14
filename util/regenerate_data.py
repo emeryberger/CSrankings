@@ -665,15 +665,20 @@ def handle_article(_, article):
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
                 authorName = authorName["#text"]
-            if authorName in aliasdict:
-                authorName = aliasdict[authorName]
-            if authorName in facultydict:
-                log = { 'name' : authorName.encode('utf-8'),
+            realName = aliasdict.get(authorName, authorName)
+            #            if authorName in aliasdict:
+            #                authorName = aliasdict[authorName]
+            foundAuthor = None
+            if realName in facultydict:
+                foundAuthor = realName
+            if foundAuthor is not None:
+                print("name = " + foundAuthor.encode('utf-8'))
+                log = { 'name' : foundAuthor.encode('utf-8'),
                         'year' : year,
                         'title' : title.encode('utf-8'),
                         'conf' : confname,
                         'area' : areaname,
-                        'institution' : facultydict[authorName],
+                        'institution' : facultydict[foundAuthor],
                         'numauthors' : authorsOnPaper }
                 if not volume is "":
                     log['volume'] = volume
@@ -683,12 +688,12 @@ def handle_article(_, article):
                     log['startPage'] = startPage
                 if not pageCount is "":
                     log['pageCount'] = pageCount
-                tmplist = authlogs.get(authorName, [])
+                tmplist = authlogs.get(foundAuthor, [])
                 tmplist.append(log)
-                authlogs[authorName] = tmplist
-                interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
-                authorscores[(authorName, areaname, year)] = authorscores.get((authorName, areaname, year), 0) + 1.0
-                authorscoresAdjusted[(authorName, areaname, year)] = authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
+                authlogs[foundAuthor] = tmplist
+                interestingauthors[foundAuthor] = interestingauthors.get(foundAuthor, 0) + 1
+                authorscores[(foundAuthor, areaname, year)] = authorscores.get((foundAuthor, areaname, year), 0) + 1.0
+                authorscoresAdjusted[(foundAuthor, areaname, year)] = authorscoresAdjusted.get((foundAuthor, areaname, year), 0) + 1.0 / authorsOnPaper
     return True
 
 def sortdictionary(d):
