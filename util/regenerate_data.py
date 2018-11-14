@@ -672,7 +672,6 @@ def handle_article(_, article):
             if realName in facultydict:
                 foundAuthor = realName
             if foundAuthor is not None:
-                print("name = " + foundAuthor.encode('utf-8'))
                 log = { 'name' : foundAuthor.encode('utf-8'),
                         'year' : year,
                         'title' : title.encode('utf-8'),
