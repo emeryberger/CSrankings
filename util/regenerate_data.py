@@ -536,6 +536,9 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     # pages found at all => some problem with journal
     # entries in DBLP.
     tooFewPages = False
+
+    if pageCount == -1 and confname == 'ACM Conference on Computer and Communications Security':
+        tooFewPages = True
     
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
