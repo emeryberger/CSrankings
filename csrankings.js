@@ -23,15 +23,15 @@
 ;
 class CSRankings {
     constructor() {
-        this.authorFile = "/csrankings.csv";
-        this.authorinfoFile = "/generated-author-info.csv";
-        this.countryinfoFile = "/country-info.csv";
-        // private readonly aliasFile = "/dblp-aliases.csv";
+        this.authorFile = "./csrankings.csv";
+        this.authorinfoFile = "./generated-author-info.csv";
+        this.countryinfoFile = "./country-info.csv";
+        // private readonly aliasFile = "./dblp-aliases.csv";
         this.turingFile = "./turing.csv";
         this.turingImage = "./png/acm-turing-award.png";
         this.acmfellowFile = "./acm-fellows.csv";
         this.acmfellowImage = "./png/acm.png";
-        this.homepageImage = "/house-logo.png";
+        this.homepageImage = "./house-logo.png";
         this.allowRankingChange = false; /* Can we change the kind of rankings being used? */
         this.areaMap = [{ area: "ai", title: "AI" },
             { area: "aaai", title: "AI" },
