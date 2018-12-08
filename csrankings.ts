@@ -454,8 +454,8 @@ class CSRankings {
 
 	private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
 	private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
-	private readonly PieChart = "<img src='png/piechart.png'>"; // pie chart image
-	private readonly OpenPieChart = "<img src='png/piechart-open.png'>"; // opened pie chart image
+	private readonly PieChart = "<img alt='closed piechart' src='png/piechart.png'>"; // pie chart image
+	private readonly OpenPieChart = "<img alt='opened piechart' src='png/piechart-open.png'>"; // opened pie chart image
 
 	private translateNameToDBLP(name: string): string {
 		// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -1172,11 +1172,11 @@ class CSRankings {
 					+ name
 					+ '</a>&nbsp;';
 				if (this.acmfellow.hasOwnProperty(name)) {
-					p += '<span title="ACM Fellow"><img src="' +
+					p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
 						this.acmfellowImage + '"></span>&nbsp;';
 				}
 				if (this.turing.hasOwnProperty(name)) {
-					p += '<span title="Turing Award"><img src="' +
+					p += '<span title="Turing Award"><img alt="Turing Award" src="' +
 						this.turingImage + '"></span>&nbsp;';
 				}
 				p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
@@ -1188,7 +1188,7 @@ class CSRankings {
 					+ homePage
 					+ '\', true); return false;"'
 					+ '>'
-					+ '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+					+ '<img alt=\"Home page\" src=\"' + this.homepageImage + '\"></a>&nbsp;';
 
 				if (this.scholarInfo.hasOwnProperty(name)) {
 					if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
@@ -1200,7 +1200,7 @@ class CSRankings {
 							+ url
 							+ '\', true); return false;"'
 							+ '>'
-							+ '<img src="scholar-favicon.ico" height="10" width="10">'
+							+ '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10">'
 							+ '</a>&nbsp;';
 					}
 				}
@@ -1212,7 +1212,7 @@ class CSRankings {
 					+ dblpName
 					+ '\', true); return false;"'
 					+ '>'
-					+ '<img src="dblp.png">'
+					+ '<img alt="DBLP" src="dblp.png">'
 					+ '</a>'
 
 				p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
