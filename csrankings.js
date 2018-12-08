@@ -178,8 +178,8 @@ class CSRankings {
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-        this.PieChart = "<img src='png/piechart.png'>"; // pie chart image
-        this.OpenPieChart = "<img src='png/piechart-open.png'>"; // opened pie chart image
+        this.PieChart = "<img alt='closed piechart' src='png/piechart.png'>"; // pie chart image
+        this.OpenPieChart = "<img alt='opened piechart' src='png/piechart-open.png'>"; // opened pie chart image
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -934,11 +934,11 @@ class CSRankings {
                     + name
                     + '</a>&nbsp;';
                 if (this.acmfellow.hasOwnProperty(name)) {
-                    p += '<span title="ACM Fellow"><img src="' +
+                    p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
                         this.acmfellowImage + '"></span>&nbsp;';
                 }
                 if (this.turing.hasOwnProperty(name)) {
-                    p += '<span title="Turing Award"><img src="' +
+                    p += '<span title="Turing Award"><img alt="Turing Award" src="' +
                         this.turingImage + '"></span>&nbsp;';
                 }
                 p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
@@ -949,7 +949,7 @@ class CSRankings {
                     + homePage
                     + '\', true); return false;"'
                     + '>'
-                    + '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+                    + '<img alt=\"Home page\" src=\"' + this.homepageImage + '\"></a>&nbsp;';
                 if (this.scholarInfo.hasOwnProperty(name)) {
                     if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
                         let url = 'https://scholar.google.com/citations?user='
@@ -960,7 +960,7 @@ class CSRankings {
                             + url
                             + '\', true); return false;"'
                             + '>'
-                            + '<img src="scholar-favicon.ico" height="10" width="10">'
+                            + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10">'
                             + '</a>&nbsp;';
                     }
                 }
@@ -971,7 +971,7 @@ class CSRankings {
                     + dblpName
                     + '\', true); return false;"'
                     + '>'
-                    + '<img src="dblp.png">'
+                    + '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
                 p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
                     + "<font size=\"+1\">" + this.PieChart + "</font></span>"
