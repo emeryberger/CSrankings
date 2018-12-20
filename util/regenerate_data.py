@@ -92,7 +92,7 @@ areadict = {
     'stoc': ['STOC'],
     'soda': ['SODA'],
     # 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
-    'nips': ['NIPS'],
+    'nips': ['NIPS', 'NeurIPS'],
     'icml': ['ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)'],
     'kdd' : ['KDD'],
     # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
