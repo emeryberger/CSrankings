@@ -45,6 +45,7 @@
 //inproceedings[booktitle="CAV (2)"],
 //inproceedings[booktitle="LICS"],
 //inproceedings[booktitle="CSL-LICS"],
+//inproceedings[booktitle="NeurIPS"],
 //inproceedings[booktitle="NIPS"],
 //inproceedings[booktitle="ICML"],
 //inproceedings[booktitle="ICML (1)"],
