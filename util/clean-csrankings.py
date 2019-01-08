@@ -133,7 +133,31 @@ for name in csrankings:
             if csrankings[a]['scholarid'] != sch:
                 print("INCONSISTENT SCHOLAR PAGE: "+name)
 
-    
+
+# Make sure that Google Scholar pages are not accidentally duplicated across different authors.
+# This can mean one of two things:
+# (a) the Google Scholar entries are wrong, and/or
+# (b) there is a missing alias that needs to be added to dblp-aliases.csv.
+
+scholars = {}
+for name in csrankings:
+    sch = csrankings[name]['scholarid']
+    if sch == "NOSCHOLARPAGE":
+        continue
+    if sch in scholars:
+        scholars[sch].append(name)
+    else:
+        scholars[sch] = [name]
+
+for sch in scholars:
+    if len(scholars[sch]) > 1:
+        # Verify all are aliases.
+        total = len(scholars[sch])
+        for name in scholars[sch]:
+            if name in aliases:
+                total -= len(aliases[name])
+        if total >= 2: # At least one name is not an alias!
+            print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
