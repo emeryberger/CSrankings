@@ -385,14 +385,12 @@ startyear = 1970
 endyear = 2269
 
 
+#def csv2dict_str_str(fname : str) -> Dict[str, str]:
 def csv2dict_str_str(fname):
-    """Takes a CSV files and returns a dictionary of pairs."""
+    """Takes a CSV file and returns a dictionary of pairs."""
     with open(fname, mode='r') as infile:
-        reader = csv.reader(infile)
-        # for rows in reader:
-        #    print rows[0], "-->", rows[1]
-        # d = {rows[0].strip() : rows[1].strip() for rows in reader}
-        d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in reader}
+        rdr = csv.reader(infile)
+        d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
     return d
 
 
