@@ -1,4 +1,4 @@
-from csrankings import csv2dict_str_str, startyear, endyear, areadict, confdict, arealist, venues, pagecount, startpage, ElementTree, pageCountThreshold, countPaper
+from csrankings import *
 
 import gzip
 
@@ -102,8 +102,12 @@ def parseDBLP(facultydict):
                         authorName = child.text
                         authorName = authorName.strip()
                         if authorName in facultydict:
-                            print "here we go",authorName, confname, authorsOnPaper, year
-                            logstring = authorName.encode('utf-8') + " ; " + confname.encode('utf-8') + " " + str(year)
+                            print("here we go" + authorName + " " + confname + " " + str(authorsOnPaper) + " " + str(year))
+                            logstring = authorName.encode('utf-8')
+                            logstring += " ; ".encode('utf-8')
+                            logstring += confname.encode('utf-8')
+                            logstring += " ".encode('utf-8')
+                            logstring += str(year).encode('utf-8')
                             tmplist = authlogs.get(authorName, [])
                             tmplist.append(logstring)
                             authlogs[authorName] = tmplist
@@ -123,9 +127,11 @@ f.write('"name","dept","area","count","adjustedcount","year"\n')
 for (authorName, area, year) in authscores_gl:
     count = authscores_gl[(authorName, area, year)]
     countAdjusted = authscoresAdjusted_gl[(authorName, area, year)]
-    f.write(authorName.encode('utf-8'))
+    # f.write(authorName.encode('utf-8'))
+    f.write(authorName)
     f.write(',')
-    f.write((fdict[authorName]).encode('utf-8'))
+    # f.write((fdict[authorName]).encode('utf-8'))
+    f.write((fdict[authorName]))
     f.write(',')
     f.write(area)
     f.write(',')
