@@ -14,20 +14,23 @@ import re
 import sys
 import operator
 
-# import gzip
 
-#parser = ElementTree.HTMLParser(recover=True)
-#dtd = ElementTree.DTD(file='dblp.dtd')
-                
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
 pageCounterNormal = re.compile('(\d+)-(\d+)')
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
+# Special regexp for extracting pseudo-volumes (paper number) from TECS.
+TECSCounterColon = re.compile('([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*')
+# Extract the ISMB proceedings page numbers.
+ISMBpageCounter = re.compile('i(\d+)-i(\d+)')
+
 
 def startpage(pageStr):
     """Compute the starting page number from a string representing page numbers."""
+    global pageCounterNormal
+    global pageCounterColon
     if pageStr is None:
         return 0
     pageCounterMatcher1 = pageCounterNormal.match(pageStr)
@@ -41,6 +44,7 @@ def startpage(pageStr):
             start = int(pageCounterMatcher2.group(1))
     return start
 
+#def pagecount(pageStr : str) : int:
 def pagecount(pageStr):
     """Compute the number of pages in a string representing a range of page numbers."""
     if pageStr is None:
@@ -392,27 +396,58 @@ def csv2dict_str_str(fname):
     return d
 
 
-def sortdictionary(d):
-    """Sorts a dictionary."""
-    return sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
-
-def countPaper(confname, year, volume, number, startPage, pageCount, url):
+def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
+    global EMSOFT_TECS
+    global EMSOFT_TECS_PaperNumbers
+    global TECSCounterColon
+    global ISMB_Bioinformatics
+    global ICSE_ShortPaperStart
+    global SIGMOD_NonResearchPaperStart
+    global SIGMOD_NonResearchPapersRange
+    global TOG_SIGGRAPH_Volume
+    global TOG_SIGGRAPH_Asia_Volume
+    global TVCG_Vis_Volume
+    global TVCG_VR_Volume
+    global ASE_LongPaperThreshold
+    global pageCountThreshold
+    global ISMBpageCounter
+    
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
 
+    # Special handling for EMSOFT.
+    if confname == 'ACM Trans. Embedded Comput. Syst.':
+        if year in EMSOFT_TECS:
+            pvmatcher = TECSCounterColon.match(pages)
+            if not pvmatcher is None:
+                pseudovolume = int(pvmatcher.group(1))
+                (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
+                if pseudovolume < int(startpv) or pseudovolume > int(endpv):
+                    return False
+        else:
+            return False
+        
     # Special handling for ISMB.
     if confname == 'Bioinformatics':
-        if ISMB_Bioinformatics.has_key(year):
+        if year in ISMB_Bioinformatics:
             (vol, num) = ISMB_Bioinformatics[year]
             if (volume != str(vol)) or (number != str(num)):
                 return False
+            else:
+                if (int(volume) >= 33): # Hopefully this works going forward.
+                    pg = ISMBpageCounter.match(pages)
+                    if pg is None:
+                        return False
+                    startPage = int(pg.group(1))
+                    end = int(pg.group(2))
+                    pageCount = end - startPage + 1
         else:
             return False
 
     # Special handling for ICSE.
     elif confname == 'ICSE' or confname == 'ICSE (1)' or confname == 'ICSE (2)':
-        if ICSE_ShortPaperStart.has_key(year):
+        if year in ICSE_ShortPaperStart:
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
                 # Omit papers that start at or beyond this page,
@@ -421,40 +456,39 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
 
     # Special handling for SIGMOD.
     elif confname == 'SIGMOD Conference':
-        if SIGMOD_NonResearchPaperStart.has_key(year):
+        if year in SIGMOD_NonResearchPaperStart:
             pageno = SIGMOD_NonResearchPaperStart[year]
             if startPage >= pageno:
                 # Omit papers that start at or beyond this page,
                 # since they are not research-track papers.
                 return False
-        if SIGMOD_NonResearchPapersRange.has_key(year):
+        if year in SIGMOD_NonResearchPapersRange:
             pageRange = SIGMOD_NonResearchPapersRange[year]
             for p in pageRange:
                 if startPage >= p[0] and startPage + pageCount - 1 <= p[1]:
                     return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    elif confname == 'ACM Trans. Graph.':
-        SIGGRAPH_Conf = False
-        if TOG_SIGGRAPH_Volume.has_key(year):
+    elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
+        if year in TOG_SIGGRAPH_Volume:
             (vol, num) = TOG_SIGGRAPH_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                SIGGRAPH_Conf = True
-        if TOG_SIGGRAPH_Asia_Volume.has_key(year):
+            if not ((volume == str(vol)) and (number == str(num))):
+                return False
+        
+    elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
+        if year in TOG_SIGGRAPH_Asia_Volume:
             (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                SIGGRAPH_Conf = True
-        if not SIGGRAPH_Conf:
-            return False
+            if not((volume == str(vol)) and (number == str(num))):
+                return False
 
     # Special handling for IEEE Vis and VR
     elif confname == 'IEEE Trans. Vis. Comput. Graph.':
         Vis_Conf = False
-        if TVCG_Vis_Volume.has_key(year):
+        if year in TVCG_Vis_Volume:
             (vol, num) = TVCG_Vis_Volume[year]
             if (volume == str(vol)) and (number == str(num)):
                 Vis_Conf = True
-        if TVCG_VR_Volume.has_key(year):
+        if year in TVCG_VR_Volume:
             (vol, num) = TVCG_VR_Volume[year]
             if (volume == str(vol)) and (number == str(num)):
                 Vis_Conf = True
@@ -467,6 +501,13 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
             # Omit short papers (which may be demos, etc.).
             return False
 
+    # Disambiguate Innovations in (Theoretical) Computer Science from
+    # International Conference on Supercomputing
+    elif confname == 'ICS':
+        if not url is None:
+            if url.find('innovations') != -1:
+                return False
+        
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -475,21 +516,20 @@ def countPaper(confname, year, volume, number, startPage, pageCount, url):
     # pages found at all => some problem with journal
     # entries in DBLP.
     tooFewPages = False
+
+    if pageCount == -1 and confname == 'ACM Conference on Computer and Communications Security':
+        tooFewPages = True
+    
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = confname == 'SC'
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
         return False
-
-    # Disambiguate Innovations in (Theoretical) Computer Science from
-    # International Conference on Supercomputing
-    if confname == 'ICS':
-        if not url is None:
-            if url.find('innovations') != -1:
-                return False
-        
+       
     return True
