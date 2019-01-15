@@ -32,14 +32,6 @@ def do_it():
     gz = gzip.GzipFile('dblp.xml.gz')
     xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
 
-#def csv2dict_str_str(fname : str) -> Dict[str, str]:
-def csv2dict_str_str(fname):
-    """Takes a CSV file and returns a dictionary of pairs."""
-    with open(fname, mode='r') as infile:
-        rdr = csv.reader(infile)
-        d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
-    return d
-
 
 def build_dicts():
     global areadict
@@ -211,10 +203,6 @@ def handle_article(_, article):
                 authorscores[(foundAuthor, areaname, year)] = authorscores.get((foundAuthor, areaname, year), 0) + 1.0
                 authorscoresAdjusted[(foundAuthor, areaname, year)] = authorscoresAdjusted.get((foundAuthor, areaname, year), 0) + 1.0 / authorsOnPaper
     return True
-
-def sortdictionary(d):
-    """Sorts a dictionary."""
-    return sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
 
 def dump_it():
     global authorscores
