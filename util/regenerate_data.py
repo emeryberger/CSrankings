@@ -9,11 +9,6 @@ import operator
 # from typing import Dict
 from csrankings import *
 
-
-# ASE accepts short papers and long papers. Long papers appear to be at least 10 pages long,
-# while short papers are shorter.
-ASE_LongPaperThreshold = 10
-
 # Consider pubs in this range only.
 startyear = 1970
 endyear = 2269
@@ -31,17 +26,6 @@ failures = 0
 confdict = {}
 aliasdict = {}
 
-# Papers must be at least 6 pages long to count.
-pageCountThreshold = 6
-# Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile('(\d+)-(\d+)')
-# Match page number in the form volume:page (as in 12:140-12:150).
-pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
-# Special regexp for extracting pseudo-volumes (paper number) from TECS.
-TECSCounterColon = re.compile('([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*')
-# Extract the ISMB proceedings page numbers.
-ISMBpageCounter = re.compile('i(\d+)-i(\d+)')
-
 
 def do_it():
 #    gz = gzip.GzipFile('dblp-original.xml.gz')
@@ -56,44 +40,6 @@ def csv2dict_str_str(fname):
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
     return d
 
-def startpage(pageStr):
-    """Compute the starting page number from a string representing page numbers."""
-    global pageCounterNormal
-    global pageCounterColon
-    if pageStr is None:
-        return 0
-    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
-    pageCounterMatcher2 = pageCounterColon.match(pageStr)
-    start = 0
-
-    if not pageCounterMatcher1 is None:
-        start = int(pageCounterMatcher1.group(1))
-    else:
-        if not pageCounterMatcher2 is None:
-            start = int(pageCounterMatcher2.group(1))
-    return start
-
-#def pagecount(pageStr : str) : int:
-def pagecount(pageStr):
-    """Compute the number of pages in a string representing a range of page numbers."""
-    if pageStr is None:
-        return 0
-    pageCounterMatcher1 = pageCounterNormal.match(pageStr)
-    pageCounterMatcher2 = pageCounterColon.match(pageStr)
-    start = 0
-    end = 0
-    count = 0
-
-    if not pageCounterMatcher1 is None:
-        start = int(pageCounterMatcher1.group(1))
-        end = int(pageCounterMatcher1.group(2))
-        count = end - start + 1
-    else:
-        if not pageCounterMatcher2 is None:
-            start = int(pageCounterMatcher2.group(1))
-            end = int(pageCounterMatcher2.group(2))
-            count = end - start + 1
-    return count
 
 def build_dicts():
     global areadict
@@ -121,143 +67,6 @@ def build_dicts():
     print("Total faculty members currently in the database: "+str(totalFaculty))
 
 
-def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
-    global EMSOFT_TECS
-    global EMSOFT_TECS_PaperNumbers
-    global TECSCounterColon
-    global ISMB_Bioinformatics
-    global ICSE_ShortPaperStart
-    global SIGMOD_NonResearchPaperStart
-    global SIGMOD_NonResearchPapersRange
-    global TOG_SIGGRAPH_Volume
-    global TOG_SIGGRAPH_Asia_Volume
-    global TVCG_Vis_Volume
-    global TVCG_VR_Volume
-    global ASE_LongPaperThreshold
-    global pageCountThreshold
-    global ISMBpageCounter
-    
-    """Returns true iff this paper will be included in the rankings."""
-    if year < startyear or year > endyear:
-        return False
-
-    # Special handling for EMSOFT.
-    if confname == 'ACM Trans. Embedded Comput. Syst.':
-        if year in EMSOFT_TECS:
-            pvmatcher = TECSCounterColon.match(pages)
-            if not pvmatcher is None:
-                pseudovolume = int(pvmatcher.group(1))
-                (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
-                if pseudovolume < int(startpv) or pseudovolume > int(endpv):
-                    return False
-        else:
-            return False
-        
-    # Special handling for ISMB.
-    if confname == 'Bioinformatics':
-        if year in ISMB_Bioinformatics:
-            (vol, num) = ISMB_Bioinformatics[year]
-            if (volume != str(vol)) or (number != str(num)):
-                return False
-            else:
-                if (int(volume) >= 33): # Hopefully this works going forward.
-                    pg = ISMBpageCounter.match(pages)
-                    if pg is None:
-                        return False
-                    startPage = int(pg.group(1))
-                    end = int(pg.group(2))
-                    pageCount = end - startPage + 1
-        else:
-            return False
-
-    # Special handling for ICSE.
-    elif confname == 'ICSE' or confname == 'ICSE (1)' or confname == 'ICSE (2)':
-        if year in ICSE_ShortPaperStart:
-            pageno = ICSE_ShortPaperStart[year]
-            if startPage >= pageno:
-                # Omit papers that start at or beyond this page,
-                # since they are "short papers" (regardless of their length).
-                return False
-
-    # Special handling for SIGMOD.
-    elif confname == 'SIGMOD Conference':
-        if year in SIGMOD_NonResearchPaperStart:
-            pageno = SIGMOD_NonResearchPaperStart[year]
-            if startPage >= pageno:
-                # Omit papers that start at or beyond this page,
-                # since they are not research-track papers.
-                return False
-        if year in SIGMOD_NonResearchPapersRange:
-            pageRange = SIGMOD_NonResearchPapersRange[year]
-            for p in pageRange:
-                if startPage >= p[0] and startPage + pageCount - 1 <= p[1]:
-                    return False
-
-    # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
-        if year in TOG_SIGGRAPH_Volume:
-            (vol, num) = TOG_SIGGRAPH_Volume[year]
-            if not ((volume == str(vol)) and (number == str(num))):
-                return False
-        
-    elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
-        if year in TOG_SIGGRAPH_Asia_Volume:
-            (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-            if not((volume == str(vol)) and (number == str(num))):
-                return False
-
-    # Special handling for IEEE Vis and VR
-    elif confname == 'IEEE Trans. Vis. Comput. Graph.':
-        Vis_Conf = False
-        if year in TVCG_Vis_Volume:
-            (vol, num) = TVCG_Vis_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                Vis_Conf = True
-        if year in TVCG_VR_Volume:
-            (vol, num) = TVCG_VR_Volume[year]
-            if (volume == str(vol)) and (number == str(num)):
-                Vis_Conf = True
-        if not Vis_Conf:
-            return False
-
-    # Special handling for ASE.
-    elif confname == 'ASE':
-        if pageCount < ASE_LongPaperThreshold:
-            # Omit short papers (which may be demos, etc.).
-            return False
-
-    # Disambiguate Innovations in (Theoretical) Computer Science from
-    # International Conference on Supercomputing
-    elif confname == 'ICS':
-        if not url is None:
-            if url.find('innovations') != -1:
-                return False
-        
-    # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
-    # Only skip papers with a very small paper count,
-    # but above 1. Why?
-    # DBLP has real papers with incorrect page counts
-    # - usually a truncated single page. -1 means no
-    # pages found at all => some problem with journal
-    # entries in DBLP.
-    tooFewPages = False
-
-    if pageCount == -1 and confname == 'ACM Conference on Computer and Communications Security':
-        tooFewPages = True
-    
-    if ((pageCount != -1) and (pageCount < pageCountThreshold)):
-        tooFewPages = True
-        exceptionConference = confname == 'SC'
-        exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
-        exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
-        exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
-        exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
-        if exceptionConference:
-            tooFewPages = False
-    if tooFewPages:
-        return False
-       
-    return True
 
 def handle_article(_, article):
     global totalPapers
