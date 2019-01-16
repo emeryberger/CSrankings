@@ -13,7 +13,7 @@ import csv
 import re
 import sys
 import operator
-
+from builtins import str
 
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
@@ -384,13 +384,17 @@ arealist = areadict.keys()
 startyear = 1970
 endyear = 2269
 
-
+import sys
+if sys.version_info.major == 3:
+    unicode = str
+    
 #def csv2dict_str_str(fname : str) -> Dict[str, str]:
 def csv2dict_str_str(fname):
     """Takes a CSV file and returns a dictionary of pairs."""
     with open(fname, mode='r') as infile:
         rdr = csv.reader(infile)
-        d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
+        # d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
+        d = {unicode(rows[0].strip()): unicode(rows[1].strip()) for rows in rdr}
     return d
 
 
