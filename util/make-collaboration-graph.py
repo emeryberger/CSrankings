@@ -9,8 +9,8 @@ from nameparser import HumanName
 #import networkx as nx
 #import matplotlib.pyplot as plt
 
-startyear = 2009
-endyear = 2019
+startyear = 2013
+endyear = 2018
 
 aicolor = "#32CD32"     # limegreen
 syscolor = "#00bfff"    # blue
@@ -148,7 +148,7 @@ for i in areaList:
     ind += 1
 
 def canonicalName(name):
-    canonical = name.decode('utf8')
+    canonical = name # .decode('utf8')
     canonical = canonical.replace("0001","")
     canonical = canonical.replace("0002","")
     canonical = canonical.replace("0003","")
@@ -173,11 +173,13 @@ def displayName(name):
     return display
 
 def addNode(name, nodes, addedNode, authorIndex, authorInd):
-    if not name.decode('utf8') in addedNode:
+    # if not name.decode('utf8') in addedNode:
+    if not name in addedNode:
         if name in maxareas:
             nodes.append({ 'nodeName' : canonicalName(name),
                            'group' : areaNum[maxareas[name]]})
-            addedNode[name.decode('utf8')] = True
+            addedNode[name] = True
+            # addedNode[name.decode('utf8')] = True
             authorIndex[canonicalName(name)] = authorInd
             authorInd += 1
         
@@ -228,7 +230,7 @@ def makegraph(institution,fname,dir):
                     # dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
                     # Force co-author to be added here so we can reference him/her.
                     addNode(coauth, nodes, addedNode, authorIndex, authorInd)
-                    if not edges.has_key(realname+coauthorrealname):
+                    if not realname+coauthorrealname in edges:
                         degree += 1
                         sumdegree += 1
                         if degree > maxdegree:
@@ -237,7 +239,8 @@ def makegraph(institution,fname,dir):
                         links.append({ 'source' : authorIndex[realname],
                                        'target' : authorIndex[coauthorrealname],
                                        'value'  : 1 })
-                        print("adding " + realname.encode('utf8') + " <-> " + coauthorrealname.encode('utf8'))
+                        # print("adding " + realname.encode('utf8') + " <-> " + coauthorrealname.encode('utf8'))
+                        print("adding " + realname + " <-> " + coauthorrealname)
                         edges[realname+coauthorrealname] = 0
                         edges[coauthorrealname+realname] = 0
                     edges[realname+coauthorrealname] += 1
@@ -271,13 +274,15 @@ def makegraph(institution,fname,dir):
     #with open(dir+fname+".json", 'wb') as f:
     # f.write("var collabs = " + json.dumps(gr) + ";")
     # f.write(json.dumps(gr))
-    with open(dir+fname+"-nodes.csv", 'wb') as f:
+    with open(dir+fname+"-nodes.csv", 'w') as f:
         f.write("name,abbrv,color,coauthored\n")
         for node in nodes:
-            name = node['nodeName'].encode('utf8')
+            name = node['nodeName']
+            # name = node['nodeName'].encode('utf8')
             line = name
             line += ","
-            line += displayName(name).encode('utf8')
+            # line += displayName(name).encode('utf8')
+            line += displayName(name)
             line += ","
             line += colors[node['group']-1]
             if coauthored[node['nodeName']]:
@@ -285,7 +290,7 @@ def makegraph(institution,fname,dir):
             else:
                 line += ",0"
             f.write(line + "\n")
-    with open(dir+fname+"-matrix.json", 'wb') as f:
+    with open(dir+fname+"-matrix.json", 'w') as f:
         matrix = []
         for x in range(0,len(nodes)):
             row = []

@@ -2,6 +2,9 @@ from csrankings import *
 
 import gzip
 
+startyear = 2013
+endyear   = 2018
+
 def parseDBLP(facultydict):
     authlogs = {}
     interestingauthors = {}
