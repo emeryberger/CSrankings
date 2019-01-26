@@ -3054,6 +3054,10 @@ Alexandre d'Aspremont,Ecole Normale Superieure,nips,1.0,0.25,2013
 Alexandre d'Aspremont,Ecole Normale Superieure,nips,1.0,0.333333333333,2014
 Alexandre d'Aspremont,Ecole Normale Superieure,nips,1.0,0.333333333333,2016
 Alexandre d'Aspremont,Ecole Normale Superieure,nips,3.0,1.08333333333,2017
+Alexandros Daglis,Georgia Institute of Technology,asplos,1.0,0.2,2014
+Alexandros Daglis,Georgia Institute of Technology,isca,1.0,0.2,2015
+Alexandros Daglis,Georgia Institute of Technology,isca,1.0,0.125,2017
+Alexandros Daglis,Georgia Institute of Technology,micro,1.0,0.166666666667,2016
 Alexandros G. Dimakis,University of Texas at Austin,aaai,1.0,0.25,2017
 Alexandros G. Dimakis,University of Texas at Austin,hpca,1.0,0.166666666667,2015
 Alexandros G. Dimakis,University of Texas at Austin,icml,1.0,0.333333333333,2013
@@ -10565,6 +10569,18 @@ Bin Cui 0001,Peking University,vldb,1.0,0.333333333333,2014
 Bin Cui 0001,Peking University,vldb,1.0,0.2,2015
 Bin Cui 0001,Peking University,vldb,2.0,0.5,2017
 Bin Cui 0001,Peking University,www,1.0,0.25,2010
+Bin Li 0015,Fudan University,aaai,1.0,0.2,2011
+Bin Li 0015,Fudan University,aaai,1.0,0.2,2016
+Bin Li 0015,Fudan University,icml,1.0,0.25,2007
+Bin Li 0015,Fudan University,icml,1.0,0.333333333333,2009
+Bin Li 0015,Fudan University,icml,1.0,0.25,2012
+Bin Li 0015,Fudan University,icml,1.0,0.25,2015
+Bin Li 0015,Fudan University,ijcai,1.0,0.333333333333,2009
+Bin Li 0015,Fudan University,ijcai,1.0,0.166666666667,2011
+Bin Li 0015,Fudan University,ijcai,1.0,0.2,2016
+Bin Li 0015,Fudan University,ijcai,1.0,0.2,2017
+Bin Li 0015,Fudan University,ijcai,1.0,0.25,2018
+Bin Li 0015,Fudan University,www,1.0,0.25,2017
 Bin Liu 0001,Tsinghua University,ndss,1.0,0.142857142857,2011
 Bin Liu 0001,Tsinghua University,nsdi,1.0,0.0833333333333,2013
 Bin Liu 0001,Tsinghua University,sigcomm,1.0,0.125,2010
@@ -10966,6 +10982,7 @@ Bo Wu 0002,Colorado School of Mines,micro,1.0,0.25,2014
 Bo Wu 0002,Colorado School of Mines,oopsla,1.0,0.166666666667,2012
 Bo Wu 0002,Colorado School of Mines,oopsla,1.0,0.142857142857,2014
 Bo Wu 0002,Colorado School of Mines,sc,1.0,0.5,2015
+Bo Yan 0001,Fudan University,cvpr,1.0,0.333333333333,2018
 Bo Yuan,Rochester Institute of Technology,dac,1.0,0.2,2015
 Bo Yuan,Rochester Institute of Technology,iccad,1.0,0.333333333333,2011
 Bo Yuan,Rochester Institute of Technology,icde,1.0,0.142857142857,2017
@@ -13605,6 +13622,9 @@ Chao Xu 0006,Peking University,kdd,1.0,0.2,2018
 Chao Xu 0006,Peking University,nips,1.0,0.2,2016
 Chao Xu 0006,Peking University,nips,1.0,0.2,2018
 Chao Zhang 0001,Peking University,iccv,1.0,0.2,2011
+Chaofeng Sha,Fudan University,aaai,1.0,0.25,2018
+Chaofeng Sha,Fudan University,icde,1.0,0.2,2007
+Chaofeng Sha,Fudan University,ijcai,1.0,0.333333333333,2016
 Chaokun Wang,Tsinghua University,aaai,1.0,0.333333333333,2014
 Chaokun Wang,Tsinghua University,aaai,2.0,0.666666666667,2015
 Chaokun Wang,Tsinghua University,aaai,1.0,0.25,2017
@@ -13969,6 +13989,17 @@ Chenfanfu Jiang,University of Pennsylvania,siggraph,2.0,0.285714285714,2018
 Chenfanfu Jiang,University of Pennsylvania,siggraph-asia,2.0,0.45,2017
 Chenfanfu Jiang,University of Pennsylvania,siggraph-asia,1.0,0.142857142857,2018
 Chenfanfu Jiang,University of Pennsylvania,vr,1.0,0.142857142857,2018
+Cheng Jin,Fudan University,aaai,1.0,0.2,2011
+Cheng Jin,Fudan University,aaai,1.0,0.2,2015
+Cheng Jin,Fudan University,ccs,1.0,0.333333333333,2003
+Cheng Jin,Fudan University,cvpr,1.0,0.25,2012
+Cheng Jin,Fudan University,icml,1.0,0.25,2012
+Cheng Jin,Fudan University,ijcai,2.0,0.4,2011
+Cheng Jin,Fudan University,ijcai,1.0,0.166666666667,2013
+Cheng Jin,Fudan University,ijcai,1.0,0.333333333333,2016
+Cheng Jin,Fudan University,imc,1.0,0.111111111111,2014
+Cheng Jin,Fudan University,sc,1.0,0.1,2003
+Cheng Jin,Fudan University,sigir,1.0,0.5,2011
 Cheng-Hsin Hsu,National Tsing Hua University,rtas,1.0,0.2,2012
 ChengXiang Zhai,Univ. of Illinois at Urbana-Champaign,aaai,1.0,0.333333333333,2017
 ChengXiang Zhai,Univ. of Illinois at Urbana-Champaign,acl,1.0,0.5,1996
@@ -46356,23 +46387,7 @@ Jun Yang 0001,Duke University,vldb,2.0,0.45,2015
 Jun Yang 0001,Duke University,vldb,1.0,0.5,2016
 Jun Yang 0001,Duke University,vldb,2.0,0.75,2017
 Jun Yang 0001,Duke University,vldb,2.0,0.583333333333,2018
-Jun Zhang,University of Kentucky,aaai,1.0,0.333333333333,2014
-Jun Zhang,University of Kentucky,cav,1.0,0.25,2018
-Jun Zhang,University of Kentucky,eccv,1.0,0.333333333333,2012
-Jun Zhang,University of Kentucky,iros,1.0,0.166666666667,2015
-Jun Zhang,University of Kentucky,kdd,1.0,0.25,2012
-Jun Zhang,University of Kentucky,sc,1.0,0.2,2018
-Jun Zhang,University of Kentucky,sigir,1.0,0.25,2013
-Jun Zhang,University of Kentucky,sigmod,1.0,0.2,2013
-Jun Zhang,University of Kentucky,sigmod,1.0,0.2,2014
-Jun Zhang,University of Kentucky,sigmod,1.0,0.2,2015
-Jun Zhang,University of Kentucky,sigmod,1.0,0.333333333333,2016
-Jun Zhang,University of Kentucky,vis,1.0,0.5,2006
-Jun Zhang,University of Kentucky,vldb,1.0,0.2,2004
-Jun Zhang,University of Kentucky,vldb,1.0,0.2,2012
-Jun Zhang,University of Kentucky,vldb,1.0,0.25,2014
-Jun Zhang,University of Kentucky,vldb,1.0,0.25,2015
-Jun Zhang,University of Kentucky,www,1.0,0.333333333333,2014
+Jun Zhang 0001,University of Kentucky,sc,1.0,0.333333333333,2003
 Jun Zhu,Tsinghua University,aaai,1.0,0.25,2016
 Jun Zhu,Tsinghua University,eccv,1.0,0.333333333333,2014
 Jun Zhu,Tsinghua University,emsoft,1.0,0.333333333333,2008
@@ -46674,6 +46689,8 @@ Junya Honda,University of Tokyo,icml,1.0,0.333333333333,2016
 Junya Honda,University of Tokyo,icml,1.0,0.25,2018
 Junya Honda,University of Tokyo,nips,1.0,0.333333333333,2015
 Junya Honda,University of Tokyo,nips,1.0,0.333333333333,2017
+Junyu Niu,Fudan University,ec,1.0,0.25,2009
+Junyu Niu,Fudan University,ijcai,1.0,0.333333333333,2016
 Junyuan Xie,Nanjing University,aaai,1.0,0.2,2013
 Junyuan Xie,Nanjing University,aaai,1.0,0.2,2017
 Junyuan Xie,Nanjing University,aaai,1.0,0.25,2018
@@ -47243,6 +47260,10 @@ Kai Zhang 0001,Temple University,kdd,2.0,0.277777777778,2016
 Kai Zhang 0001,Temple University,kdd,1.0,0.166666666667,2017
 Kai Zhang 0001,Temple University,nips,1.0,0.5,2006
 Kai Zhang 0001,Temple University,nips,1.0,0.142857142857,2016
+Kai Zhang 0006,Fudan University,icde,1.0,0.25,2017
+Kai Zhang 0006,Fudan University,nsdi,1.0,0.142857142857,2018
+Kai Zhang 0006,Fudan University,vldb,1.0,0.142857142857,2014
+Kai Zhang 0006,Fudan University,vldb,1.0,0.166666666667,2015
 Kai Zheng 0001,UESTC,icde,1.0,0.25,2012
 Kai Zheng 0001,UESTC,icde,2.0,0.5,2013
 Kai Zheng 0001,UESTC,icde,1.0,0.166666666667,2014
@@ -58902,6 +58923,10 @@ Matthias Althoff,TU Munich,iros,1.0,0.333333333333,2014
 Matthias Althoff,TU Munich,iros,2.0,0.833333333333,2015
 Matthias Althoff,TU Munich,iros,1.0,0.5,2016
 Matthias Althoff,TU Munich,iros,3.0,0.916666666667,2017
+Matthias Boehm 0001,Graz University of Technology,sigmod,1.0,0.166666666667,2015
+Matthias Boehm 0001,Graz University of Technology,vldb,1.0,0.142857142857,2014
+Matthias Boehm 0001,Graz University of Technology,vldb,2.0,0.290909090909,2016
+Matthias Boehm 0001,Graz University of Technology,vldb,1.0,0.166666666667,2018
 Matthias F. Stallmann,North Carolina State University,dac,1.0,0.333333333333,2005
 Matthias F. Stallmann,North Carolina State University,focs,1.0,0.5,1984
 Matthias Felleisen,Northeastern University,ase,1.0,0.25,2001
@@ -59549,6 +59574,7 @@ Metin Sitti,Max Planck Institute,rss,1.0,0.2,2014
 Mi Zhang,Michigan State University,cvpr,1.0,0.166666666667,2015
 Mi Zhang,Michigan State University,icml,1.0,0.333333333333,2018
 Mi Zhang,Michigan State University,www,1.0,0.2,2018
+Mi Zhang 0001,Fudan University,sigir,1.0,0.25,2014
 Miao Qiao,Massey University,icde,1.0,0.25,2012
 Miao Qiao,Massey University,icde,1.0,0.166666666667,2018
 Miao Qiao,Massey University,pods,1.0,0.333333333333,2014
@@ -62463,6 +62489,12 @@ Min Suk Kang,National University of Singapore,ndss,1.0,0.333333333333,2016
 Min Suk Kang,National University of Singapore,oakland,1.0,0.333333333333,2013
 Min Tang 0001,Zhejiang University,siggraph,1.0,0.25,2012
 Min Tang 0001,Zhejiang University,siggraph-asia,1.0,0.2,2018
+Min Yang 0002,Fudan University,ccs,2.0,0.291666666667,2013
+Min Yang 0002,Fudan University,ccs,2.0,0.225,2018
+Min Yang 0002,Fudan University,ndss,1.0,0.166666666667,2018
+Min Yang 0002,Fudan University,usenixatc,1.0,0.2,2011
+Min Yang 0002,Fudan University,usenixsec,1.0,0.166666666667,2015
+Min Yang 0002,Fudan University,usenixsec,3.0,0.396825396825,2018
 Min Yao,Zhejiang University,aaai,1.0,0.166666666667,2017
 Min Zhang 0006,Tsinghua University,aaai,1.0,0.25,2014
 Min Zhang 0006,Tsinghua University,acl,1.0,0.5,2002
@@ -62699,6 +62731,9 @@ Minglu Li 0001,Shanghai Jiao Tong University,kdd,1.0,0.2,2015
 Minglu Li 0001,Shanghai Jiao Tong University,sensys,1.0,0.166666666667,2008
 Minglu Li 0001,Shanghai Jiao Tong University,sensys,1.0,0.125,2013
 Minglu Li 0001,Shanghai Jiao Tong University,wine,1.0,0.333333333333,2005
+Mingmin Chi,Fudan University,iccv,1.0,0.166666666667,2007
+Mingmin Chi,Fudan University,icml,1.0,0.333333333333,2006
+Mingmin Chi,Fudan University,icml,1.0,0.25,2007
 Mingsheng Long,Tsinghua University,aaai,2.0,0.533333333333,2012
 Mingsheng Long,Tsinghua University,aaai,2.0,0.45,2016
 Mingsheng Long,Tsinghua University,aaai,2.0,0.5,2017
@@ -65999,6 +66034,12 @@ Nina Amenta,University of California - Davis,soda,1.0,1.0,1992
 Nina Amenta,University of California - Davis,soda,1.0,0.333333333333,1997
 Nina Amenta,University of California - Davis,soda,1.0,0.333333333333,2007
 Nina Amenta,University of California - Davis,vis,1.0,0.1,2005
+Ning Gu,Fudan University,chiconf,1.0,0.25,2012
+Ning Gu,Fudan University,chiconf,1.0,0.2,2014
+Ning Gu,Fudan University,nips,1.0,0.166666666667,2017
+Ning Gu,Fudan University,ubicomp,1.0,0.2,2013
+Ning Gu,Fudan University,www,1.0,0.166666666667,2008
+Ning Gu,Fudan University,www,1.0,0.125,2018
 Ning Xie 0002,Florida International University,focs,1.0,0.25,2013
 Ning Xie 0002,Florida International University,soda,1.0,0.5,2010
 Ning Xie 0002,Florida International University,soda,1.0,0.25,2012
@@ -68963,6 +69004,9 @@ Peng Liu 0005,Pennsylvania State University,usenixatc,1.0,0.333333333333,2015
 Peng Liu 0005,Pennsylvania State University,usenixsec,1.0,0.25,2006
 Peng Liu 0005,Pennsylvania State University,usenixsec,3.0,0.525,2015
 Peng Liu 0005,Pennsylvania State University,usenixsec,1.0,0.166666666667,2017
+Peng Wang 0027,Fudan University,sigmod,1.0,0.25,2010
+Peng Wang 0027,Fudan University,sigmod,1.0,0.333333333333,2011
+Peng Wang 0027,Fudan University,vldb,1.0,0.2,2013
 Peng-Jun Wan,Illinois Institute of Technology,soda,1.0,0.166666666667,2008
 Pengcheng Shi,Rochester Institute of Technology,cvpr,1.0,0.5,2003
 Pengcheng Shi,Rochester Institute of Technology,cvpr,1.0,0.25,2005
@@ -71688,6 +71732,26 @@ Qi Yu,Rochester Institute of Technology,aaai,1.0,0.25,2011
 Qi Yu,Rochester Institute of Technology,ijcai,1.0,0.25,2017
 Qi Yu,Rochester Institute of Technology,kdd,1.0,0.333333333333,2014
 Qi Yu,Rochester Institute of Technology,nips,1.0,0.333333333333,2014
+Qi Zhang 0001,Fudan University,aaai,1.0,0.25,2015
+Qi Zhang 0001,Fudan University,aaai,1.0,0.25,2016
+Qi Zhang 0001,Fudan University,aaai,1.0,0.25,2018
+Qi Zhang 0001,Fudan University,acl,1.0,0.2,2016
+Qi Zhang 0001,Fudan University,emnlp,1.0,0.25,2009
+Qi Zhang 0001,Fudan University,emnlp,1.0,0.2,2010
+Qi Zhang 0001,Fudan University,emnlp,1.0,0.25,2011
+Qi Zhang 0001,Fudan University,emnlp,1.0,0.2,2013
+Qi Zhang 0001,Fudan University,emnlp,1.0,0.333333333333,2015
+Qi Zhang 0001,Fudan University,emnlp,2.0,0.45,2016
+Qi Zhang 0001,Fudan University,emnlp,1.0,0.2,2017
+Qi Zhang 0001,Fudan University,icml,1.0,0.2,2009
+Qi Zhang 0001,Fudan University,ijcai,1.0,0.25,2013
+Qi Zhang 0001,Fudan University,ijcai,2.0,0.533333333333,2017
+Qi Zhang 0001,Fudan University,nips,1.0,0.2,2017
+Qi Zhang 0001,Fudan University,sigir,1.0,0.25,2010
+Qi Zhang 0001,Fudan University,sigir,1.0,0.25,2012
+Qi Zhang 0001,Fudan University,sigir,1.0,0.25,2014
+Qi Zhang 0001,Fudan University,sigir,1.0,0.25,2017
+Qi Zhang 0001,Fudan University,sigir,1.0,0.2,2018
 Qi Zhu 0002,Northwestern University,cvpr,1.0,0.25,2018
 Qi Zhu 0002,Northwestern University,dac,1.0,0.25,2006
 Qi Zhu 0002,Northwestern University,dac,1.0,0.166666666667,2007
@@ -81706,6 +81770,11 @@ Shane McIntosh,McGill University,fse,1.0,0.142857142857,2015
 Shane McIntosh,McGill University,icse,1.0,0.2,2011
 Shane McIntosh,McGill University,icse,2.0,0.533333333333,2015
 Shane McIntosh,McGill University,icse,2.0,0.5,2016
+Shanfeng Zhu,Fudan University,ijcai,1.0,0.25,2015
+Shanfeng Zhu,Fudan University,ijcai,1.0,0.2,2016
+Shanfeng Zhu,Fudan University,ismb,1.0,0.166666666667,2015
+Shanfeng Zhu,Fudan University,ismb,2.0,0.333333333333,2016
+Shanfeng Zhu,Fudan University,kdd,1.0,0.25,2013
 Shang-Hong Lai,National Tsing Hua University,cvpr,1.0,0.5,1994
 Shang-Hong Lai,National Tsing Hua University,cvpr,1.0,0.5,2006
 Shang-Hong Lai,National Tsing Hua University,cvpr,1.0,0.5,2008
@@ -83144,6 +83213,29 @@ Shuichi Sakai,University of Tokyo,micro,1.0,0.0909090909091,2018
 Shuichi Sakai,University of Tokyo,rtss,1.0,0.25,1992
 Shuichi Sakai,University of Tokyo,sc,1.0,0.333333333333,1991
 Shuichi Sakai,University of Tokyo,sc,1.0,0.2,1994
+Shuigeng Zhou,Fudan University,aaai,1.0,0.5,2014
+Shuigeng Zhou,Fudan University,aaai,1.0,0.5,2015
+Shuigeng Zhou,Fudan University,aaai,1.0,0.5,2016
+Shuigeng Zhou,Fudan University,aaai,1.0,0.25,2017
+Shuigeng Zhou,Fudan University,aaai,1.0,0.333333333333,2018
+Shuigeng Zhou,Fudan University,cvpr,2.0,0.366666666667,2018
+Shuigeng Zhou,Fudan University,iccv,1.0,0.166666666667,2017
+Shuigeng Zhou,Fudan University,icde,1.0,0.25,2007
+Shuigeng Zhou,Fudan University,icde,1.0,0.25,2008
+Shuigeng Zhou,Fudan University,icde,1.0,0.25,2012
+Shuigeng Zhou,Fudan University,icde,1.0,0.166666666667,2014
+Shuigeng Zhou,Fudan University,icde,1.0,0.166666666667,2016
+Shuigeng Zhou,Fudan University,ijcai,1.0,0.2,2013
+Shuigeng Zhou,Fudan University,ijcai,1.0,0.2,2015
+Shuigeng Zhou,Fudan University,ismb,1.0,0.2,2015
+Shuigeng Zhou,Fudan University,kdd,1.0,0.333333333333,2006
+Shuigeng Zhou,Fudan University,kdd,1.0,0.166666666667,2016
+Shuigeng Zhou,Fudan University,recomb,1.0,0.2,2013
+Shuigeng Zhou,Fudan University,sigmod,2.0,0.666666666667,2013
+Shuigeng Zhou,Fudan University,sigmod,1.0,0.2,2015
+Shuigeng Zhou,Fudan University,sigmod,1.0,0.2,2018
+Shuigeng Zhou,Fudan University,soda,1.0,0.2,2013
+Shuigeng Zhou,Fudan University,vldb,1.0,0.166666666667,2012
 Shuiwang Ji,Texas A&M University,cvpr,1.0,0.5,2008
 Shuiwang Ji,Texas A&M University,icml,1.0,0.333333333333,2007
 Shuiwang Ji,Texas A&M University,icml,1.0,0.333333333333,2008
@@ -86492,6 +86584,7 @@ Stéphane Mallat,Ecole Normale Superieure,siggraph,1.0,0.5,2005
 Stéphanie Delaune,Ecole Normale Superieure de Cachan,ccs,1.0,0.5,2004
 Stéphanie Delaune,Ecole Normale Superieure de Cachan,ccs,1.0,0.333333333333,2011
 Stéphanie Delaune,Ecole Normale Superieure de Cachan,oakland,1.0,0.333333333333,2016
+Su Yang,Fudan University,ubicomp,1.0,0.142857142857,2017
 Su-In Lee,University of Washington,aaai,1.0,0.25,2006
 Su-In Lee,University of Washington,aaai,1.0,0.25,2015
 Su-In Lee,University of Washington,icml,1.0,0.25,2007
@@ -91841,6 +91934,11 @@ Tulika Mitra,National University of Singapore,rtss,1.0,0.333333333333,2004
 Tulika Mitra,National University of Singapore,rtss,1.0,0.25,2005
 Tulika Mitra,National University of Singapore,rtss,1.0,0.2,2009
 Tulika Mitra,National University of Singapore,vis,1.0,0.333333333333,2000
+Tun Lu,Fudan University,chiconf,1.0,0.25,2012
+Tun Lu,Fudan University,chiconf,1.0,0.2,2014
+Tun Lu,Fudan University,nips,1.0,0.166666666667,2017
+Tun Lu,Fudan University,ubicomp,1.0,0.2,2013
+Tun Lu,Fudan University,www,1.0,0.125,2018
 Tunga Güngör,Boğaziçi University,ismb,1.0,0.142857142857,2017
 Tuomas Aura,Aalto University,oakland,1.0,0.333333333333,2000
 Tuomas Aura,Aalto University,oakland,1.0,0.333333333333,2004
@@ -94554,6 +94652,7 @@ Wei Le,Iowa State University,icse,1.0,0.5,2014
 Wei Le,Iowa State University,icse,1.0,0.333333333333,2016
 Wei Le,Iowa State University,issta,1.0,0.5,2011
 Wei Le,Iowa State University,issta,1.0,0.2,2015
+Wei Li 0012,Fudan University,sigir,1.0,0.333333333333,2010
 Wei Li 0022,Beihang University,ijcai,1.0,0.25,1993
 Wei Lu,SUTD,aaai,1.0,0.333333333333,2016
 Wei Lu,SUTD,aaai,4.0,1.83333333333,2017
@@ -94598,6 +94697,24 @@ Wei Tsang Ooi,National University of Singapore,dac,1.0,0.333333333333,2006
 Wei Tsang Ooi,National University of Singapore,dac,1.0,0.25,2007
 Wei Tsang Ooi,National University of Singapore,mobicom,1.0,0.333333333333,2006
 Wei Tsang Ooi,National University of Singapore,rtss,1.0,0.25,2004
+Wei Wang 0009,Fudan University,aaai,1.0,0.142857142857,2016
+Wei Wang 0009,Fudan University,aaai,1.0,0.166666666667,2017
+Wei Wang 0009,Fudan University,acl,1.0,0.25,2012
+Wei Wang 0009,Fudan University,icde,1.0,0.166666666667,2012
+Wei Wang 0009,Fudan University,ijcai,1.0,0.25,2015
+Wei Wang 0009,Fudan University,ijcai,1.0,0.166666666667,2016
+Wei Wang 0009,Fudan University,ijcai,1.0,0.2,2017
+Wei Wang 0009,Fudan University,kdd,1.0,0.0833333333333,1996
+Wei Wang 0009,Fudan University,kdd,1.0,0.2,2004
+Wei Wang 0009,Fudan University,kdd,1.0,0.166666666667,2006
+Wei Wang 0009,Fudan University,kdd,1.0,0.142857142857,2016
+Wei Wang 0009,Fudan University,sigir,1.0,0.166666666667,2009
+Wei Wang 0009,Fudan University,sigmod,1.0,0.25,2010
+Wei Wang 0009,Fudan University,sigmod,1.0,0.333333333333,2011
+Wei Wang 0009,Fudan University,sigmod,1.0,0.2,2013
+Wei Wang 0009,Fudan University,sigmod,1.0,0.25,2014
+Wei Wang 0009,Fudan University,vldb,1.0,0.2,2013
+Wei Wang 0009,Fudan University,vldb,1.0,0.166666666667,2017
 Wei Wang 0010,University of California - Los Angeles,icde,1.0,0.25,1996
 Wei Wang 0010,University of California - Los Angeles,icde,1.0,0.333333333333,1999
 Wei Wang 0010,University of California - Los Angeles,icde,1.0,0.333333333333,2001
@@ -94704,6 +94821,16 @@ Wei Zeng,Florida International University,vis,1.0,0.2,2013
 Wei Zeng,Florida International University,vis,1.0,0.2,2014
 Wei Zeng,Florida International University,vis,1.0,0.142857142857,2018
 Wei Zhang 0004,Peking University,oopsla,1.0,0.166666666667,2012
+Wei Zhang 0016,Fudan University,aaai,1.0,0.25,2014
+Wei Zhang 0016,Fudan University,cvpr,1.0,0.25,2012
+Wei Zhang 0016,Fudan University,cvpr,1.0,0.25,2015
+Wei Zhang 0016,Fudan University,iccv,1.0,0.166666666667,2007
+Wei Zhang 0016,Fudan University,iccv,2.0,0.416666666667,2011
+Wei Zhang 0016,Fudan University,iccv,1.0,0.166666666667,2015
+Wei Zhang 0016,Fudan University,icml,1.0,0.2,2007
+Wei Zhang 0016,Fudan University,ijcai,1.0,0.166666666667,2011
+Wei Zhang 0016,Fudan University,ijcai,2.0,0.5,2013
+Wei Zhang 0016,Fudan University,ijcai,1.0,0.2,2016
 Wei Zhu,Stony Brook University,aaai,1.0,0.333333333333,2016
 Wei Zhu,Stony Brook University,aaai,1.0,0.333333333333,2017
 Wei Zhu,Stony Brook University,cvpr,1.0,0.166666666667,2018
@@ -94767,6 +94894,7 @@ Weidong Shi,University of Houston,isca,1.0,0.2,2005
 Weidong Shi,University of Houston,isca,1.0,0.25,2006
 Weidong Shi,University of Houston,isca,1.0,0.166666666667,2013
 Weidong Shi,University of Houston,micro,1.0,0.5,2006
+Weidong Zhao,Fudan University,cvpr,1.0,0.2,2016
 Weifa Liang,Australian National University,sigmod,1.0,0.166666666667,2013
 Weifeng Lv,Beihang University,aaai,1.0,0.166666666667,2018
 Weifeng Lv,Beihang University,dac,1.0,0.142857142857,2016
@@ -94780,6 +94908,8 @@ Weihang Wang,University at Buffalo,issta,1.0,0.166666666667,2016
 Weihang Wang,University at Buffalo,issta,1.0,0.2,2017
 Weihang Wang,University at Buffalo,ndss,2.0,0.22619047619,2018
 Weihang Wang,University at Buffalo,www,1.0,0.142857142857,2018
+Weihua Zhang,Fudan University,dac,1.0,0.111111111111,2012
+Weihua Zhang,Fudan University,dac,1.0,0.125,2014
 Weijia Jia,Shanghai Jiao Tong University,acl,1.0,0.125,2017
 Weijia Jia,Shanghai Jiao Tong University,ccs,1.0,0.166666666667,2009
 Weijia Jia,Shanghai Jiao Tong University,emnlp,1.0,0.25,2018
@@ -94794,6 +94924,7 @@ Weikuan Yu,Florida State University,sc,1.0,0.333333333333,2012
 Weikuan Yu,Florida State University,sc,1.0,0.2,2013
 Weikuan Yu,Florida State University,sc,1.0,0.2,2016
 Weikuan Yu,Florida State University,sigmetrics,1.0,0.25,2014
+Weili Han,Fudan University,usenixsec,1.0,0.333333333333,2014
 Weili Wu,University of Texas at Dallas,kdd,1.0,0.166666666667,2009
 Weili Wu,University of Texas at Dallas,nips,1.0,0.333333333333,2018
 Weili Wu,University of Texas at Dallas,soda,1.0,0.166666666667,2008
@@ -94855,25 +94986,25 @@ Weisi Lin,Nanyang Technological University,iros,1.0,0.333333333333,2015
 Weisong Shi,Wayne State University,eurosys,1.0,0.1,2016
 Weisong Shi,Wayne State University,rtas,1.0,0.166666666667,2012
 Weisong Shi,Wayne State University,ubicomp,1.0,0.25,2014
-Weiwei Sun,Peking University,acl,1.0,1.0,2011
-Weiwei Sun,Peking University,acl,2.0,1.0,2012
-Weiwei Sun,Peking University,acl,1.0,0.2,2014
-Weiwei Sun,Peking University,acl,1.0,0.333333333333,2015
-Weiwei Sun,Peking University,acl,2.0,0.583333333333,2017
-Weiwei Sun,Peking University,acl,3.0,0.916666666667,2018
-Weiwei Sun,Peking University,emnlp,1.0,0.25,2009
-Weiwei Sun,Peking University,emnlp,1.0,0.5,2011
-Weiwei Sun,Peking University,emnlp,1.0,0.25,2017
-Weiwei Sun,Peking University,emnlp,1.0,0.2,2018
-Weiwei Sun,Peking University,icra,1.0,0.2,2004
-Weiwei Sun,Peking University,ijcai,1.0,0.2,2017
-Weiwei Sun,Peking University,ijcai,1.0,0.25,2018
-Weiwei Sun,Peking University,iros,1.0,0.2,2006
-Weiwei Sun,Peking University,kdd,1.0,0.142857142857,2016
-Weiwei Sun,Peking University,ubicomp,1.0,0.25,2015
-Weiwei Sun,Peking University,ubicomp,1.0,0.333333333333,2016
-Weiwei Sun,Peking University,ubicomp,1.0,0.2,2017
-Weiwei Sun,Peking University,vldb,1.0,0.25,2014
+Weiwei Sun,Fudan University,acl,1.0,1.0,2011
+Weiwei Sun,Fudan University,acl,2.0,1.0,2012
+Weiwei Sun,Fudan University,acl,1.0,0.2,2014
+Weiwei Sun,Fudan University,acl,1.0,0.333333333333,2015
+Weiwei Sun,Fudan University,acl,2.0,0.583333333333,2017
+Weiwei Sun,Fudan University,acl,3.0,0.916666666667,2018
+Weiwei Sun,Fudan University,emnlp,1.0,0.25,2009
+Weiwei Sun,Fudan University,emnlp,1.0,0.5,2011
+Weiwei Sun,Fudan University,emnlp,1.0,0.25,2017
+Weiwei Sun,Fudan University,emnlp,1.0,0.2,2018
+Weiwei Sun,Fudan University,icra,1.0,0.2,2004
+Weiwei Sun,Fudan University,ijcai,1.0,0.2,2017
+Weiwei Sun,Fudan University,ijcai,1.0,0.25,2018
+Weiwei Sun,Fudan University,iros,1.0,0.2,2006
+Weiwei Sun,Fudan University,kdd,1.0,0.142857142857,2016
+Weiwei Sun,Fudan University,ubicomp,1.0,0.25,2015
+Weiwei Sun,Fudan University,ubicomp,1.0,0.333333333333,2016
+Weiwei Sun,Fudan University,ubicomp,1.0,0.2,2017
+Weiwei Sun,Fudan University,vldb,1.0,0.25,2014
 Weiwei Xu,Zhejiang University,cvpr,1.0,0.166666666667,2013
 Weiwei Xu,Zhejiang University,iros,1.0,0.5,2008
 Weiwei Xu,Zhejiang University,siggraph,2.0,0.366666666667,2007
@@ -95286,6 +95417,7 @@ Wenke Lee,Georgia Institute of Technology,www,1.0,0.142857142857,2015
 Wenke Lee,Georgia Institute of Technology,www,1.0,0.25,2016
 Wenli Zheng,Shanghai Jiao Tong University,hpca,1.0,0.333333333333,2014
 Wenpin Jiao,Peking University,fse,1.0,0.166666666667,2005
+Wenqing Zhang,Fudan University,aaai,1.0,0.2,2017
 Wensheng Dou,Chinese Academy of Sciences,ase,1.0,0.142857142857,2017
 Wensheng Dou,Chinese Academy of Sciences,ase,1.0,0.2,2018
 Wensheng Dou,Chinese Academy of Sciences,fse,1.0,0.166666666667,2016
@@ -96746,11 +96878,21 @@ Xiang-Yang Li 0001,USTC,sensys,1.0,0.166666666667,2014
 Xiang-Yang Li 0001,USTC,soda,1.0,0.5,2001
 Xiang-Yang Li 0001,USTC,ubicomp,2.0,0.277777777778,2016
 Xiang-Yang Li 0001,USTC,wine,1.0,0.333333333333,2005
+Xiangdong Zhou,Fudan University,acl,1.0,0.25,2012
+Xiangdong Zhou,Fudan University,cvpr,1.0,0.25,2009
+Xiangdong Zhou,Fudan University,cvpr,1.0,0.2,2010
+Xiangdong Zhou,Fudan University,eccv,1.0,0.25,2012
+Xiangdong Zhou,Fudan University,ijcai,1.0,0.166666666667,2018
 Xianghong Jasmine Zhou,University of Southern California,ismb,1.0,0.2,2005
 Xianghong Jasmine Zhou,University of Southern California,ismb,2.0,0.309523809524,2007
 Xianghong Jasmine Zhou,University of Southern California,ismb,1.0,0.25,2011
 Xianghong Jasmine Zhou,University of Southern California,kdd,1.0,0.333333333333,2005
 Xianghong Jasmine Zhou,University of Southern California,recomb,1.0,0.2,2008
+Xianghua Ding,Fudan University,chiconf,1.0,0.125,2007
+Xianghua Ding,Fudan University,chiconf,1.0,0.25,2012
+Xianghua Ding,Fudan University,chiconf,1.0,0.2,2014
+Xianghua Ding,Fudan University,ubicomp,1.0,0.166666666667,2008
+Xianghua Ding,Fudan University,ubicomp,1.0,0.2,2013
 Xianghua Ying,Peking University,cvpr,1.0,0.25,2010
 Xianghua Ying,Peking University,cvpr,1.0,0.2,2016
 Xianghua Ying,Peking University,eccv,1.0,0.5,2004
@@ -96788,6 +96930,32 @@ Xiangqun Chen,Peking University,ubicomp,1.0,0.333333333333,2016
 Xiangqun Chen,Peking University,ubicomp,1.0,0.25,2017
 Xiangqun Chen,Peking University,www,1.0,0.25,2014
 Xiangqun Chen,Peking University,www,1.0,0.142857142857,2017
+Xiangyang Xue,Fudan University,aaai,1.0,0.2,2011
+Xiangyang Xue,Fudan University,aaai,1.0,0.166666666667,2013
+Xiangyang Xue,Fudan University,aaai,2.0,0.583333333333,2014
+Xiangyang Xue,Fudan University,aaai,1.0,0.2,2015
+Xiangyang Xue,Fudan University,cvpr,1.0,0.25,2007
+Xiangyang Xue,Fudan University,cvpr,1.0,0.25,2012
+Xiangyang Xue,Fudan University,cvpr,1.0,0.25,2015
+Xiangyang Xue,Fudan University,cvpr,1.0,0.142857142857,2017
+Xiangyang Xue,Fudan University,cvpr,1.0,0.142857142857,2018
+Xiangyang Xue,Fudan University,eccv,2.0,0.533333333333,2012
+Xiangyang Xue,Fudan University,eccv,1.0,0.25,2014
+Xiangyang Xue,Fudan University,eccv,2.0,0.325,2018
+Xiangyang Xue,Fudan University,iccv,1.0,0.166666666667,2007
+Xiangyang Xue,Fudan University,iccv,2.0,0.416666666667,2011
+Xiangyang Xue,Fudan University,iccv,1.0,0.166666666667,2015
+Xiangyang Xue,Fudan University,iccv,3.0,0.566666666667,2017
+Xiangyang Xue,Fudan University,icml,2.0,0.45,2007
+Xiangyang Xue,Fudan University,icml,1.0,0.333333333333,2009
+Xiangyang Xue,Fudan University,icml,1.0,0.25,2012
+Xiangyang Xue,Fudan University,ijcai,1.0,0.333333333333,2009
+Xiangyang Xue,Fudan University,ijcai,4.0,0.733333333333,2011
+Xiangyang Xue,Fudan University,ijcai,4.0,0.916666666667,2013
+Xiangyang Xue,Fudan University,ijcai,1.0,0.2,2016
+Xiangyang Xue,Fudan University,ijcai,1.0,0.142857142857,2018
+Xiangyang Xue,Fudan University,sigir,1.0,0.333333333333,2010
+Xiangyang Xue,Fudan University,sigir,1.0,0.25,2014
 Xiangyu Zhang 0001,Purdue University,ase,1.0,0.25,2005
 Xiangyu Zhang 0001,Purdue University,ase,2.0,0.833333333333,2013
 Xiangyu Zhang 0001,Purdue University,ase,2.0,0.3,2017
@@ -97425,6 +97593,12 @@ Xiaoping Chen,USTC,iros,3.0,0.535714285714,2017
 Xiaoping Chen,USTC,nips,1.0,0.333333333333,2013
 Xiaoqing Liu,University of Arkansas,cvpr,1.0,0.333333333333,2008
 Xiaoqing Lu,Peking University,iccv,1.0,0.2,2017
+Xiaoqing Zheng,Fudan University,aaai,1.0,0.2,2017
+Xiaoqing Zheng,Fudan University,aaai,3.0,0.866666666667,2018
+Xiaoqing Zheng,Fudan University,emnlp,1.0,0.333333333333,2013
+Xiaoqing Zheng,Fudan University,emnlp,1.0,1.0,2017
+Xiaoqing Zheng,Fudan University,ijcai,1.0,0.2,2015
+Xiaoqing Zheng,Fudan University,ijcai,1.0,0.25,2016
 Xiaoru Yuan,Peking University,eccv,1.0,0.2,2010
 Xiaoru Yuan,Peking University,vis,1.0,0.25,2005
 Xiaoru Yuan,Peking University,vis,2.0,0.4,2009
@@ -97560,6 +97734,16 @@ Xiaoyan Zhu,Tsinghua University,kdd,1.0,0.2,2007
 Xiaoyan Zhu,Tsinghua University,naacl,1.0,0.25,2010
 Xiaoyan Zhu,Tsinghua University,sigir,1.0,0.25,2013
 Xiaoyan Zhu,Tsinghua University,www,2.0,0.342857142857,2018
+Xiaoyang Sean Wang,Fudan University,ccs,2.0,0.291666666667,2013
+Xiaoyang Sean Wang,Fudan University,ijcai,1.0,0.166666666667,2017
+Xiaoyang Sean Wang,Fudan University,pods,1.0,0.5,1992
+Xiaoyang Sean Wang,Fudan University,pods,1.0,0.333333333333,1996
+Xiaoyang Sean Wang,Fudan University,sigmod,1.0,0.333333333333,1993
+Xiaoyang Sean Wang,Fudan University,sigmod,1.0,0.25,1995
+Xiaoyang Sean Wang,Fudan University,sigmod,1.0,0.5,2002
+Xiaoyang Sean Wang,Fudan University,vldb,1.0,0.25,2002
+Xiaoyang Sean Wang,Fudan University,vldb,1.0,0.333333333333,2005
+Xiaoyang Sean Wang,Fudan University,vldb,1.0,0.25,2014
 Xiaoyao Liang,Shanghai Jiao Tong University,dac,1.0,0.166666666667,2015
 Xiaoyao Liang,Shanghai Jiao Tong University,dac,2.0,0.342857142857,2017
 Xiaoyao Liang,Shanghai Jiao Tong University,hpca,1.0,0.166666666667,2012
@@ -97940,6 +98124,24 @@ Xinyuan Wang,George Mason University,ccs,1.0,0.333333333333,2007
 Xinyuan Wang,George Mason University,iccad,1.0,0.333333333333,2017
 Xinyuan Wang,George Mason University,iccad,1.0,0.25,2018
 Xinyuan Wang,George Mason University,oakland,1.0,0.333333333333,2007
+Xipeng Qiu,Fudan University,aaai,2.0,0.5,2018
+Xipeng Qiu,Fudan University,acl,1.0,0.333333333333,2013
+Xipeng Qiu,Fudan University,acl,2.0,0.5,2015
+Xipeng Qiu,Fudan University,acl,4.0,1.11666666667,2016
+Xipeng Qiu,Fudan University,acl,2.0,0.583333333333,2017
+Xipeng Qiu,Fudan University,emnlp,1.0,0.2,2012
+Xipeng Qiu,Fudan University,emnlp,1.0,0.333333333333,2013
+Xipeng Qiu,Fudan University,emnlp,4.0,0.8,2015
+Xipeng Qiu,Fudan University,emnlp,4.0,1.11666666667,2016
+Xipeng Qiu,Fudan University,emnlp,1.0,0.25,2017
+Xipeng Qiu,Fudan University,emnlp,1.0,0.2,2018
+Xipeng Qiu,Fudan University,iccv,1.0,0.5,2005
+Xipeng Qiu,Fudan University,ijcai,1.0,0.5,2005
+Xipeng Qiu,Fudan University,ijcai,1.0,0.25,2013
+Xipeng Qiu,Fudan University,ijcai,2.0,0.833333333333,2015
+Xipeng Qiu,Fudan University,ijcai,2.0,0.666666666667,2016
+Xipeng Qiu,Fudan University,ijcai,4.0,1.25,2017
+Xipeng Qiu,Fudan University,ijcai,3.0,0.75,2018
 Xipeng Shen,North Carolina State University,ase,1.0,0.111111111111,2014
 Xipeng Shen,North Carolina State University,asplos,1.0,0.333333333333,2004
 Xipeng Shen,North Carolina State University,asplos,1.0,0.2,2011
@@ -98036,6 +98238,36 @@ Xuandong Li,Nanjing University,issta,1.0,0.2,2017
 Xuandong Li,Nanjing University,oopsla,1.0,0.25,2013
 Xuandong Li,Nanjing University,rtas,1.0,0.166666666667,2015
 Xuandong Li,Nanjing University,rtss,1.0,0.333333333333,2014
+Xuanjing Huang,Fudan University,aaai,1.0,0.25,2015
+Xuanjing Huang,Fudan University,aaai,1.0,0.25,2016
+Xuanjing Huang,Fudan University,aaai,3.0,0.75,2018
+Xuanjing Huang,Fudan University,acl,1.0,0.333333333333,2013
+Xuanjing Huang,Fudan University,acl,2.0,0.5,2015
+Xuanjing Huang,Fudan University,acl,4.0,1.11666666667,2016
+Xuanjing Huang,Fudan University,acl,2.0,0.583333333333,2017
+Xuanjing Huang,Fudan University,acl,2.0,0.375,2018
+Xuanjing Huang,Fudan University,emnlp,1.0,0.25,2005
+Xuanjing Huang,Fudan University,emnlp,1.0,0.25,2009
+Xuanjing Huang,Fudan University,emnlp,1.0,0.2,2010
+Xuanjing Huang,Fudan University,emnlp,1.0,0.25,2011
+Xuanjing Huang,Fudan University,emnlp,1.0,0.2,2012
+Xuanjing Huang,Fudan University,emnlp,2.0,0.533333333333,2013
+Xuanjing Huang,Fudan University,emnlp,5.0,1.13333333333,2015
+Xuanjing Huang,Fudan University,emnlp,6.0,1.56666666667,2016
+Xuanjing Huang,Fudan University,emnlp,2.0,0.45,2017
+Xuanjing Huang,Fudan University,emnlp,3.0,0.592857142857,2018
+Xuanjing Huang,Fudan University,icml,1.0,0.2,2009
+Xuanjing Huang,Fudan University,ijcai,1.0,0.25,2013
+Xuanjing Huang,Fudan University,ijcai,2.0,0.833333333333,2015
+Xuanjing Huang,Fudan University,ijcai,2.0,0.666666666667,2016
+Xuanjing Huang,Fudan University,ijcai,6.0,1.78333333333,2017
+Xuanjing Huang,Fudan University,ijcai,2.0,0.45,2018
+Xuanjing Huang,Fudan University,nips,1.0,0.2,2017
+Xuanjing Huang,Fudan University,sigir,1.0,0.25,2010
+Xuanjing Huang,Fudan University,sigir,1.0,0.25,2012
+Xuanjing Huang,Fudan University,sigir,1.0,0.25,2014
+Xuanjing Huang,Fudan University,sigir,1.0,0.25,2017
+Xuanjing Huang,Fudan University,sigir,1.0,0.2,2018
 Xuanzhe Liu,Peking University,eurosys,1.0,0.2,2018
 Xuanzhe Liu,Peking University,icse,1.0,0.125,2016
 Xuanzhe Liu,Peking University,imc,1.0,0.125,2015
@@ -98059,6 +98291,8 @@ Xubin He,Temple University,usenixatc,1.0,0.333333333333,2018
 Xubo Yang,Shanghai Jiao Tong University,cvpr,1.0,0.25,2007
 Xubo Yang,Shanghai Jiao Tong University,vr,1.0,0.2,2014
 Xubo Yang,Shanghai Jiao Tong University,vr,1.0,0.333333333333,2017
+Xudong Li,Fudan University,icml,1.0,0.333333333333,2018
+Xudong Li,Fudan University,icra,1.0,0.333333333333,2001
 Xudong Liu,Beihang University,aaai,1.0,0.5,2015
 Xudong Liu,Beihang University,ijcai,1.0,0.2,2016
 Xudong Liu,Beihang University,www,1.0,0.25,2014
@@ -98567,6 +98801,12 @@ Yan-Bin Jia,Iowa State University,iros,1.0,0.333333333333,2013
 Yan-Bin Jia,Iowa State University,iros,1.0,0.333333333333,2015
 Yan-Bin Jia,Iowa State University,iros,1.0,0.333333333333,2016
 Yanchun Sun,Peking University,fse,1.0,0.166666666667,2005
+Yanchun Zhang,Fudan University,aaai,1.0,0.2,2011
+Yanchun Zhang,Fudan University,aaai,1.0,0.2,2015
+Yanchun Zhang,Fudan University,aaai,1.0,0.25,2018
+Yanchun Zhang,Fudan University,acl,1.0,0.142857142857,2018
+Yanchun Zhang,Fudan University,icde,1.0,0.166666666667,2013
+Yanchun Zhang,Fudan University,sigmod,1.0,0.166666666667,2015
 Yang Cai 0001,Yale University,ec,1.0,0.5,2014
 Yang Cai 0001,Yale University,focs,1.0,0.5,2011
 Yang Cai 0001,Yale University,focs,1.0,0.333333333333,2012
@@ -98584,6 +98824,7 @@ Yang Cai 0001,Yale University,stoc,1.0,0.5,2017
 Yang Cai 0001,Yale University,wine,1.0,0.25,2013
 Yang Cai 0001,Yale University,wine,1.0,0.25,2014
 Yang Cai 0001,Yale University,wine,1.0,0.333333333333,2015
+Yang Chen 0001,Fudan University,icde,1.0,0.142857142857,2016
 Yang Gao,Nanjing University,aaai,1.0,0.2,2016
 Yang Gao,Nanjing University,aaai,1.0,0.25,2017
 Yang Gao,Nanjing University,aaai,1.0,0.166666666667,2018
@@ -98773,6 +99014,8 @@ Yangdong Deng,Tsinghua University,eccv,1.0,0.166666666667,2018
 Yangdong Deng,Tsinghua University,iccad,2.0,0.5,2009
 Yangdong Deng,Tsinghua University,iccad,1.0,0.5,2011
 Yangdong Deng,Tsinghua University,isca,1.0,0.166666666667,2017
+Yangfan Zhou,Fudan University,fse,1.0,0.25,2016
+Yangfan Zhou,Fudan University,icse,1.0,0.142857142857,2016
 Yangfeng Ji,University of Virginia,acl,1.0,0.5,2014
 Yangfeng Ji,University of Virginia,acl,1.0,0.111111111111,2015
 Yangfeng Ji,University of Virginia,acl,1.0,0.25,2016
@@ -98787,6 +99030,19 @@ Yanghee Choi,Seoul National University,imc,1.0,0.25,2013
 Yanghee Choi,Seoul National University,sigmetrics,1.0,0.166666666667,2012
 Yanghee Choi,Seoul National University,sigmetrics,1.0,0.166666666667,2014
 Yanghee Choi,Seoul National University,www,1.0,0.166666666667,2014
+Yanghua Xiao,Fudan University,aaai,1.0,0.142857142857,2016
+Yanghua Xiao,Fudan University,aaai,2.0,0.366666666667,2017
+Yanghua Xiao,Fudan University,emnlp,1.0,0.25,2016
+Yanghua Xiao,Fudan University,icde,1.0,0.166666666667,2012
+Yanghua Xiao,Fudan University,icde,1.0,0.25,2014
+Yanghua Xiao,Fudan University,ijcai,1.0,0.25,2015
+Yanghua Xiao,Fudan University,ijcai,1.0,0.166666666667,2016
+Yanghua Xiao,Fudan University,ijcai,2.0,0.5,2017
+Yanghua Xiao,Fudan University,sigmod,1.0,0.2,2013
+Yanghua Xiao,Fudan University,sigmod,1.0,0.25,2014
+Yanghua Xiao,Fudan University,vldb,1.0,0.25,2013
+Yanghua Xiao,Fudan University,vldb,1.0,0.2,2016
+Yanghua Xiao,Fudan University,vldb,2.0,0.309523809524,2017
 Yangqiu Song,HKUST,aaai,1.0,0.166666666667,2010
 Yangqiu Song,HKUST,aaai,1.0,0.5,2014
 Yangqiu Song,HKUST,aaai,2.0,0.533333333333,2015
@@ -98815,6 +99071,9 @@ Yangqiu Song,HKUST,nips,1.0,0.2,2018
 Yangqiu Song,HKUST,vis,1.0,0.125,2011
 Yangqiu Song,HKUST,vldb,1.0,0.166666666667,2017
 Yangqiu Song,HKUST,www,1.0,0.125,2018
+Yangyong Zhu,Fudan University,aaai,1.0,0.25,2013
+Yangyong Zhu,Fudan University,kdd,1.0,0.25,2016
+Yangyong Zhu,Fudan University,www,1.0,0.166666666667,2018
 Yanhong A. Liu,Stony Brook University,cav,1.0,0.5,1998
 Yanhong A. Liu,Stony Brook University,cav,1.0,0.333333333333,2000
 Yanhong A. Liu,Stony Brook University,oopsla,1.0,0.2,2005
@@ -99032,6 +99291,16 @@ Yansong Feng,Peking University,ijcai,1.0,0.166666666667,2018
 Yansong Feng,Peking University,naacl,2.0,1.0,2010
 Yansong Feng,Peking University,naacl,1.0,0.5,2018
 Yansong Feng,Peking University,vldb,1.0,0.2,2013
+Yanwei Fu,Fudan University,aaai,1.0,0.2,2016
+Yanwei Fu,Fudan University,cvpr,2.0,0.75,2016
+Yanwei Fu,Fudan University,cvpr,1.0,0.142857142857,2018
+Yanwei Fu,Fudan University,eccv,1.0,0.25,2012
+Yanwei Fu,Fudan University,eccv,2.0,0.4,2014
+Yanwei Fu,Fudan University,eccv,2.0,0.291666666667,2018
+Yanwei Fu,Fudan University,iccv,1.0,0.2,2017
+Yanwei Fu,Fudan University,icml,1.0,0.2,2018
+Yanwei Fu,Fudan University,ijcai,2.0,0.342857142857,2018
+Yanwei Fu,Fudan University,nips,1.0,0.166666666667,2018
 Yanwen Guo,Nanjing University,aaai,1.0,0.2,2016
 Yanwen Guo,Nanjing University,eccv,1.0,0.25,2010
 Yanxi Liu,Pennsylvania State University,aaai,1.0,0.5,1990
@@ -99140,6 +99409,11 @@ Yaoyun Shi,University of Michigan,focs,1.0,1.0,2002
 Yaoyun Shi,University of Michigan,soda,1.0,0.25,2013
 Yaoyun Shi,University of Michigan,stoc,1.0,1.0,2005
 Yaoyun Shi,University of Michigan,stoc,1.0,0.5,2014
+Yaqian Zhou,Fudan University,emnlp,1.0,0.25,2003
+Yaqian Zhou,Fudan University,emnlp,1.0,0.2,2010
+Yaqian Zhou,Fudan University,emnlp,1.0,0.2,2015
+Yaqian Zhou,Fudan University,emnlp,2.0,0.4,2016
+Yaqian Zhou,Fudan University,emnlp,1.0,0.25,2018
 Yarin Gal,University of Oxford,cvpr,1.0,0.333333333333,2018
 Yarin Gal,University of Oxford,icml,1.0,0.5,2014
 Yarin Gal,University of Oxford,icml,2.0,0.833333333333,2015
@@ -99638,6 +99912,12 @@ Yih-Chun Hu,Univ. of Illinois at Urbana-Champaign,pets,1.0,0.5,2016
 Yih-Chun Hu,Univ. of Illinois at Urbana-Champaign,sigcomm,1.0,0.333333333333,2004
 Yih-Chun Hu,Univ. of Illinois at Urbana-Champaign,sigcomm,1.0,0.166666666667,2007
 Yih-Chun Hu,Univ. of Illinois at Urbana-Champaign,sigcomm,1.0,0.166666666667,2014
+Yijia Chen,Fudan University,focs,1.0,0.5,2016
+Yijia Chen,Fudan University,ijcai,1.0,0.333333333333,2018
+Yijia Chen,Fudan University,lics,1.0,0.5,2009
+Yijia Chen,Fudan University,lics,1.0,0.5,2011
+Yijia Chen,Fudan University,lics,1.0,0.5,2012
+Yijia Chen,Fudan University,lics,2.0,0.833333333333,2018
 Yike Guo,Imperial College London,iccv,1.0,0.25,2017
 Yike Guo,Imperial College London,ismb,1.0,0.2,2003
 Yike Guo,Imperial College London,kdd,1.0,0.142857142857,2002
@@ -101061,6 +101341,25 @@ Yu Yu 0001,Shanghai Jiao Tong University,crypto,1.0,0.333333333333,2013
 Yu Yu 0001,Shanghai Jiao Tong University,crypto,1.0,0.25,2015
 Yu Yu 0001,Shanghai Jiao Tong University,crypto,1.0,0.5,2016
 Yu Yu 0001,Shanghai Jiao Tong University,eurocrypt,1.0,0.5,2016
+Yu-Gang Jiang,Fudan University,aaai,1.0,0.166666666667,2013
+Yu-Gang Jiang,Fudan University,aaai,1.0,0.333333333333,2014
+Yu-Gang Jiang,Fudan University,aaai,1.0,0.2,2017
+Yu-Gang Jiang,Fudan University,acl,1.0,0.25,2018
+Yu-Gang Jiang,Fudan University,cvpr,1.0,0.333333333333,2009
+Yu-Gang Jiang,Fudan University,cvpr,1.0,0.25,2011
+Yu-Gang Jiang,Fudan University,cvpr,1.0,0.2,2012
+Yu-Gang Jiang,Fudan University,cvpr,1.0,0.25,2016
+Yu-Gang Jiang,Fudan University,cvpr,1.0,0.142857142857,2017
+Yu-Gang Jiang,Fudan University,cvpr,1.0,0.142857142857,2018
+Yu-Gang Jiang,Fudan University,eccv,2.0,0.533333333333,2012
+Yu-Gang Jiang,Fudan University,eccv,2.0,0.583333333333,2014
+Yu-Gang Jiang,Fudan University,eccv,4.0,0.658333333333,2018
+Yu-Gang Jiang,Fudan University,iccv,1.0,0.25,2009
+Yu-Gang Jiang,Fudan University,iccv,1.0,0.25,2013
+Yu-Gang Jiang,Fudan University,iccv,2.0,0.366666666667,2017
+Yu-Gang Jiang,Fudan University,ijcai,1.0,0.25,2013
+Yu-Gang Jiang,Fudan University,ijcai,1.0,0.2,2015
+Yu-Gang Jiang,Fudan University,ijcai,1.0,0.142857142857,2018
 Yu-Ping Wang,Tsinghua University,usenixatc,1.0,0.25,2016
 Yu-Ping Wang,Tsinghua University,usenixatc,1.0,0.25,2018
 Yu-Xiang Wang,University of California - Santa Barbara,icml,1.0,0.5,2012
@@ -101386,6 +101685,9 @@ Yue Zhang,SUTD,www,1.0,0.2,2018
 Yue Zhang 0009,Oregon State University,vis,1.0,0.2,2018
 Yue Zhang 0009,Oregon State University,vis,1.0,0.25,2019
 Yue-Zhi Zhou,Tsinghua University,sigir,1.0,0.142857142857,2011
+Yuejie Zhang,Fudan University,aaai,1.0,0.2,2015
+Yuejie Zhang,Fudan University,ijcai,2.0,0.4,2011
+Yuejie Zhang,Fudan University,ijcai,1.0,0.166666666667,2013
 Yueting Zhuang,Zhejiang University,aaai,2.0,0.4,2010
 Yueting Zhuang,Zhejiang University,aaai,2.0,0.366666666667,2013
 Yueting Zhuang,Zhejiang University,aaai,3.0,0.566666666667,2015
@@ -101588,6 +101890,9 @@ Yun S. Song,University of California - Berkeley,recomb,1.0,0.333333333333,2008
 Yun S. Song,University of California - Berkeley,recomb,2.0,0.833333333333,2010
 Yun S. Song,University of California - Berkeley,recomb,2.0,0.392857142857,2014
 Yun Sing Koh,University of Auckland,ijcai,1.0,0.333333333333,2017
+Yun Xiong,Fudan University,aaai,1.0,0.25,2013
+Yun Xiong,Fudan University,kdd,1.0,0.25,2016
+Yun Xiong,Fudan University,www,1.0,0.166666666667,2018
 Yun-Nung Chen,National Taiwan University,acl,1.0,0.25,2015
 Yun-Nung Chen,National Taiwan University,acl,1.0,0.142857142857,2017
 Yun-Nung Chen,National Taiwan University,emnlp,1.0,0.5,2017
@@ -101723,6 +102028,12 @@ Yunjun Gao,Zhejiang University,sigmod,2.0,0.366666666667,2015
 Yunjun Gao,Zhejiang University,vldb,1.0,0.2,2015
 Yunjun Gao,Zhejiang University,vldb,1.0,0.166666666667,2017
 Yunjun Gao,Zhejiang University,vldb,1.0,0.2,2018
+Yunlei Zhao,Fudan University,ccs,1.0,0.5,2013
+Yunlei Zhao,Fudan University,ccs,1.0,1.0,2016
+Yunlei Zhao,Fudan University,eurocrypt,1.0,0.25,2003
+Yunlei Zhao,Fudan University,eurocrypt,1.0,0.5,2007
+Yunlei Zhao,Fudan University,eurocrypt,1.0,0.2,2014
+Yunlei Zhao,Fudan University,wine,2.0,0.5,2005
 Yunpeng Li,University of Surrey,cvpr,1.0,0.5,2008
 Yunpeng Li,University of Surrey,cvpr,1.0,0.2,2010
 Yunpeng Li,University of Surrey,cvpr,1.0,0.333333333333,2013
@@ -102250,13 +102561,13 @@ Zena M. Ariola,University of Oregon,lics,1.0,0.5,1994
 Zena M. Ariola,University of Oregon,pldi,1.0,0.25,2017
 Zena M. Ariola,University of Oregon,popl,1.0,0.2,1995
 Zena M. Ariola,University of Oregon,popl,1.0,0.5,1998
-Zengfeng Huang,UNSW,focs,1.0,0.5,2014
-Zengfeng Huang,UNSW,icde,1.0,0.2,2017
-Zengfeng Huang,UNSW,icml,1.0,1.0,2018
-Zengfeng Huang,UNSW,pods,2.0,0.5,2012
-Zengfeng Huang,UNSW,pods,1.0,0.25,2017
-Zengfeng Huang,UNSW,sigmod,1.0,0.25,2011
-Zengfeng Huang,UNSW,vldb,1.0,0.2,2016
+Zengfeng Huang,Fudan University,focs,1.0,0.5,2014
+Zengfeng Huang,Fudan University,icde,1.0,0.2,2017
+Zengfeng Huang,Fudan University,icml,1.0,1.0,2018
+Zengfeng Huang,Fudan University,pods,2.0,0.5,2012
+Zengfeng Huang,Fudan University,pods,1.0,0.25,2017
+Zengfeng Huang,Fudan University,sigmod,1.0,0.25,2011
+Zengfeng Huang,Fudan University,vldb,1.0,0.2,2016
 Zenglin Xu,UESTC,aaai,1.0,0.2,2010
 Zenglin Xu,UESTC,aaai,1.0,0.333333333333,2011
 Zenglin Xu,UESTC,aaai,2.0,0.5,2015
@@ -102346,6 +102657,12 @@ Zhe Dang,Washington State University,cav,1.0,1.0,2001
 Zhe Dang,Washington State University,cav,1.0,0.25,2003
 Zhe Dang,Washington State University,icse,1.0,0.5,1999
 Zhe Dang,Washington State University,icse,1.0,0.5,2000
+Zhemin Yang,Fudan University,ccs,2.0,0.291666666667,2013
+Zhemin Yang,Fudan University,ccs,2.0,0.225,2018
+Zhemin Yang,Fudan University,ndss,1.0,0.166666666667,2018
+Zhemin Yang,Fudan University,usenixatc,1.0,0.2,2011
+Zhemin Yang,Fudan University,usenixsec,1.0,0.166666666667,2015
+Zhemin Yang,Fudan University,usenixsec,1.0,0.111111111111,2018
 Zhen Liu,Shanghai Jiao Tong University,ccs,1.0,0.333333333333,2013
 Zhen Liu,Shanghai Jiao Tong University,cvpr,1.0,0.125,2018
 Zhen Liu,Shanghai Jiao Tong University,icml,2.0,0.291666666667,2018
@@ -102510,6 +102827,8 @@ Zhenming Liu,College of William and Mary,soda,1.0,0.5,2013
 Zhentao Li,Ecole Normale Superieure,ec,1.0,0.333333333333,2015
 Zhentao Li,Ecole Normale Superieure,nips,1.0,0.333333333333,2014
 Zhentao Li,Ecole Normale Superieure,soda,1.0,0.333333333333,2010
+Zhenying He,Fudan University,icde,1.0,0.166666666667,2012
+Zhenying He,Fudan University,ijcai,1.0,0.2,2013
 Zhi Jin,Peking University,aaai,1.0,0.2,2016
 Zhi Jin,Peking University,acl,2.0,0.342857142857,2016
 Zhi Jin,Peking University,emnlp,3.0,0.5,2015
@@ -102703,6 +103022,9 @@ Zhiling Lan,Illinois Institute of Technology,sc,1.0,0.2,2012
 Zhiling Lan,Illinois Institute of Technology,sc,1.0,0.142857142857,2013
 Zhiling Lan,Illinois Institute of Technology,sc,2.0,0.342857142857,2016
 Zhipeng Cai,Georgia State University,eccv,2.0,0.583333333333,2018
+Zhipeng Xie,Fudan University,icra,1.0,0.166666666667,2018
+Zhipeng Xie,Fudan University,ijcai,1.0,0.2,2013
+Zhipeng Xie,Fudan University,ismb,1.0,0.25,2011
 Zhiqiang Lin,Ohio State University,ccs,1.0,0.25,2012
 Zhiqiang Lin,Ohio State University,ccs,1.0,0.166666666667,2013
 Zhiqiang Lin,Ohio State University,ccs,3.0,0.783333333333,2017
@@ -102891,6 +103213,18 @@ Zhongfei Zhang,Binghamton University,kdd,1.0,0.25,2016
 Zhongfei Zhang,Binghamton University,nips,1.0,0.25,2016
 Zhongfei Zhang,Binghamton University,nips,1.0,0.166666666667,2018
 Zhongfei Zhang,Binghamton University,sigir,1.0,0.166666666667,2013
+Zhongyu Wei,Fudan University,acl,1.0,0.25,2015
+Zhongyu Wei,Fudan University,acl,1.0,0.333333333333,2016
+Zhongyu Wei,Fudan University,acl,1.0,0.125,2018
+Zhongyu Wei,Fudan University,emnlp,1.0,0.2,2011
+Zhongyu Wei,Fudan University,emnlp,1.0,0.142857142857,2014
+Zhongyu Wei,Fudan University,emnlp,1.0,0.2,2015
+Zhongyu Wei,Fudan University,emnlp,1.0,0.25,2018
+Zhongyu Wei,Fudan University,ijcai,1.0,0.2,2016
+Zhongyu Wei,Fudan University,ijcai,1.0,0.2,2018
+Zhongzhi Zhang,Fudan University,ijcai,2.0,0.583333333333,2018
+Zhongzhi Zhang,Fudan University,soda,1.0,0.5,2018
+Zhongzhi Zhang,Fudan University,www,1.0,0.333333333333,2017
 Zhou Yu,University of California - Davis,acl,1.0,0.5,2018
 Zhou Yu,University of California - Davis,emnlp,2.0,0.583333333333,2018
 Zhou Yu,University of California - Davis,iccv,1.0,0.25,2017
@@ -103105,6 +103439,8 @@ Zihe Wang,Shanghai Univ. of Finance and Economics,ec,2.0,0.833333333333,2016
 Zihe Wang,Shanghai Univ. of Finance and Economics,ijcai,1.0,0.5,2015
 Zihe Wang,Shanghai Univ. of Finance and Economics,ijcai,1.0,0.333333333333,2018
 Zihe Wang,Shanghai Univ. of Finance and Economics,stoc,1.0,0.333333333333,2018
+Zijing Tan,Fudan University,ijcai,1.0,0.166666666667,2018
+Zijing Tan,Fudan University,sigmod,1.0,0.166666666667,2011
 Ziming Zhao 0001,Rochester Institute of Technology,ccs,1.0,0.2,2018
 Ziming Zhao 0001,Rochester Institute of Technology,ndss,1.0,0.142857142857,2017
 Ziming Zhao 0001,Rochester Institute of Technology,oakland,1.0,0.25,2016
