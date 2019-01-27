@@ -454,8 +454,8 @@ class CSRankings {
 
 	private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
 	private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
-	private readonly PieChart = "<img src='png/piechart.png'>"; // pie chart image
-	private readonly OpenPieChart = "<img src='png/piechart-open.png'>"; // opened pie chart image
+	private readonly PieChart = "<img alt='closed piechart' src='png/piechart.png'>"; // pie chart image
+	private readonly OpenPieChart = "<img alt='opened piechart' src='png/piechart-open.png'>"; // opened pie chart image
 
 	private translateNameToDBLP(name: string): string {
 		// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -754,7 +754,7 @@ class CSRankings {
 			s += "<br />";
 			count += 1;
 		});
-		jQuery("#progress").html(s);
+		$("#progress").html(s);
 	}
 
 
@@ -924,17 +924,17 @@ class CSRankings {
 		for (let i = 0; i < fields.length; i++) {
 			const item = this.fields[fields[i]];
 			const str = "input[name=" + item + "]";
-			jQuery(str).prop('checked', value);
+			$(str).prop('checked', value);
 			if (item in CSRankings.childMap) {
 				// It's a parent.
-				jQuery(str).prop('disabled', false);
+				$(str).prop('disabled', false);
 				// Activate / deactivate all children as appropriate.
 				CSRankings.childMap[item].forEach((k) => {
 					const str = 'input[name=' + k + ']';
 					if (k in CSRankings.nextTier) {
-						jQuery(str).prop('checked', false);
+						$(str).prop('checked', false);
 					} else {
-						jQuery(str).prop('checked', value);
+						$(str).prop('checked', value);
 					}
 				});
 			}
@@ -969,8 +969,8 @@ class CSRankings {
 	}
 
 	private countAuthorAreas(): void {
-		const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
-		const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+		const startyear = parseInt($("#fromyear").find(":selected").text());
+		const endyear = parseInt($("#toyear").find(":selected").text());
 		this.authorAreas = {}
 		for (let r in this.authors) {
 			if (!this.authors.hasOwnProperty(r)) {
@@ -1107,7 +1107,7 @@ class CSRankings {
 		let numAreas = 0;
 		for (let ind = 0; ind < CSRankings.areas.length; ind++) {
 			let area = CSRankings.areas[ind];
-			weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
+			weights[area] = $('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
 			if (weights[area] === 1) {
 				if (area in CSRankings.parentMap) {
 					// Don't count children.
@@ -1172,11 +1172,11 @@ class CSRankings {
 					+ name
 					+ '</a>&nbsp;';
 				if (this.acmfellow.hasOwnProperty(name)) {
-					p += '<span title="ACM Fellow"><img src="' +
+					p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
 						this.acmfellowImage + '"></span>&nbsp;';
 				}
 				if (this.turing.hasOwnProperty(name)) {
-					p += '<span title="Turing Award"><img src="' +
+					p += '<span title="Turing Award"><img alt="Turing Award" src="' +
 						this.turingImage + '"></span>&nbsp;';
 				}
 				p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
@@ -1188,7 +1188,7 @@ class CSRankings {
 					+ homePage
 					+ '\', true); return false;"'
 					+ '>'
-					+ '<img src=\"' + this.homepageImage + '\"></a>&nbsp;';
+					+ '<img alt=\"Home page\" src=\"' + this.homepageImage + '\"></a>&nbsp;';
 
 				if (this.scholarInfo.hasOwnProperty(name)) {
 					if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
@@ -1200,7 +1200,7 @@ class CSRankings {
 							+ url
 							+ '\', true); return false;"'
 							+ '>'
-							+ '<img src="scholar-favicon.ico" height="10" width="10">'
+							+ '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10">'
 							+ '</a>&nbsp;';
 					}
 				}
@@ -1212,7 +1212,7 @@ class CSRankings {
 					+ dblpName
 					+ '\', true); return false;"'
 					+ '>'
-					+ '<img src="dblp.png">'
+					+ '<img alt="DBLP" src="dblp.png">'
 					+ '</a>'
 
 				p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
@@ -1250,7 +1250,7 @@ class CSRankings {
 		univtext: { [key: string]: string }): string {
 		let s = this.makePrologue();
 		/* Show the top N (with more if tied at the end) */
-		let minToRank = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
+		let minToRank = 99999; // parseInt($("#minToRank").find(":selected").val());
 
 		s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
 			+ '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
@@ -1343,15 +1343,15 @@ class CSRankings {
 			if (value) {
 				// Turn off all next tier venues.
 				if (item in CSRankings.nextTier) {
-					jQuery(str).prop('checked', false);
+					$(str).prop('checked', false);
 				} else {
-					jQuery(str).prop('checked', true);
-					jQuery(str).prop('disabled', false);
+					$(str).prop('checked', true);
+					$(str).prop('disabled', false);
 				}
 			} else {
 				// turn everything off.
-				jQuery(str).prop('checked', false);
-				jQuery(str).prop('disabled', false);
+				$(str).prop('checked', false);
+				$(str).prop('disabled', false);
 			}
 		}
 	}
@@ -1360,60 +1360,60 @@ class CSRankings {
 
 	public rank(update: boolean = true): boolean {
 
-		let start = performance.now();
+	    let start = performance.now();
+	    
+	    let deptNames: { [key: string]: Array<string> } = {};    /* names of departments. */
+	    let deptCounts: { [key: string]: number } = {};           /* number of faculty in each department. */
+	    let facultycount: { [key: string]: number } = {};         /* name -> raw count of pubs per name / department */
+	    let facultyAdjustedCount: { [key: string]: number } = {}; /* name -> adjusted count of pubs per name / department */
+	    let currentWeights: { [key: string]: number } = {};       /* array to hold 1 or 0, depending on if the area is checked or not. */
+	    this.areaDeptAdjustedCount = {};
 
-		let deptNames: { [key: string]: Array<string> } = {};    /* names of departments. */
-		let deptCounts: { [key: string]: number } = {};           /* number of faculty in each department. */
-		let facultycount: { [key: string]: number } = {};         /* name -> raw count of pubs per name / department */
-		let facultyAdjustedCount: { [key: string]: number } = {}; /* name -> adjusted count of pubs per name / department */
-		let currentWeights: { [key: string]: number } = {};       /* array to hold 1 or 0, depending on if the area is checked or not. */
-		this.areaDeptAdjustedCount = {};
-
-		const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
-		const endyear = parseInt(jQuery("#toyear").find(":selected").text());
-		const whichRegions = jQuery("#regions").find(":selected").val();
-
-		let numAreas = this.updateWeights(currentWeights);
-
-		this.buildDepartments(startyear,
-			endyear,
-			currentWeights,
-			whichRegions,
-			deptCounts,
-			deptNames,
-			facultycount,
-			facultyAdjustedCount);
-
-		/* (university, total or average number of papers) */
-		this.computeStats(deptNames,
-			numAreas,
-			currentWeights);
-
-		const univtext = this.buildDropDown(deptNames,
-			facultycount,
-			facultyAdjustedCount);
-
-		/* Start building up the string to output. */
-		const s = this.buildOutputString(numAreas,
-			deptCounts,
-			univtext);
-
-		/* Finally done. Redraw! */
-		jQuery("#success").html(s);
-
-		if (!update) {
-			this.navigoRouter.pause();
-		} else {
-			this.navigoRouter.resume();
-		}
-		let str = this.updatedURL();
-
-		this.navigoRouter.navigate(str);
-
-		let stop = performance.now();
-		console.log("Rank took " + (stop - start) + " milliseconds.");
-
-		return false;
+	    const startyear = parseInt($("#fromyear").find(":selected").text());
+	    const endyear   = parseInt($("#toyear").find(":selected").text());
+	    const whichRegions = String($("#regions").find(":selected").val());
+	    
+	    let numAreas = this.updateWeights(currentWeights);
+	    
+	    this.buildDepartments(startyear,
+				  endyear,
+				  currentWeights,
+				  whichRegions,
+				  deptCounts,
+				  deptNames,
+				  facultycount,
+				  facultyAdjustedCount);
+	    
+	    /* (university, total or average number of papers) */
+	    this.computeStats(deptNames,
+			      numAreas,
+			      currentWeights);
+	    
+	    const univtext = this.buildDropDown(deptNames,
+						facultycount,
+						facultyAdjustedCount);
+	    
+	    /* Start building up the string to output. */
+	    const s = this.buildOutputString(numAreas,
+					     deptCounts,
+					     univtext);
+	    
+	    /* Finally done. Redraw! */
+	    $("#success").html(s);
+	    
+	    if (!update) {
+		this.navigoRouter.pause();
+	    } else {
+		this.navigoRouter.resume();
+	    }
+	    let str = this.updatedURL();
+	    
+	    this.navigoRouter.navigate(str);
+	    
+	    let stop = performance.now();
+	    console.log("Rank took " + (stop - start) + " milliseconds.");
+	    
+	    return false;
 	}
 
 	/* Turn the chart display on or off. */
@@ -1511,7 +1511,7 @@ class CSRankings {
 			if (!(this.fields[i] in CSRankings.parentMap)) {
 				totalParents += 1;
 			}
-			if (jQuery(str).prop('checked')) {
+			if ($(str).prop('checked')) {
 				// Only add parents.
 				if (!(this.fields[i] in CSRankings.parentMap)) {
 					// And only add if every top tier child is checked
@@ -1520,7 +1520,7 @@ class CSRankings {
 					let allChecked = 1;
 					if (this.fields[i] in CSRankings.childMap) {
 						CSRankings.childMap[this.fields[i]].forEach((k) => {
-							let val = jQuery('input[name=' + k + ']').prop('checked');
+							let val = $('input[name=' + k + ']').prop('checked');
 							if (!(k in CSRankings.nextTier)) {
 								allChecked &= val;
 							} else {
@@ -1539,13 +1539,13 @@ class CSRankings {
 			// Trim off the trailing '&'.
 			s = s.slice(0, -1);
 		}
-		let region = jQuery("#regions").find(":selected").val();
+		let region = $("#regions").find(":selected").val();
 		let start = '';
 		// Check the dates.
 		let d = new Date();
 		const currYear = d.getFullYear();
-		const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
-		const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+		const startyear = parseInt($("#fromyear").find(":selected").text());
+		const endyear = parseInt($("#toyear").find(":selected").text());
 		if ((startyear != currYear - 10) || (endyear != currYear)) {
 			start += '/fromyear/' + startyear.toString();
 			start += '/toyear/' + endyear.toString();
@@ -1568,7 +1568,7 @@ class CSRankings {
 		// Figure out which country clients are coming from and set
 		// the default region accordingly.
 		let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
-		jQuery.getJSON(theUrl, (result) => {
+		$.getJSON(theUrl, (result) => {
 			switch (result.country_code) {
 				case "US":
 				case "CN":
@@ -1577,11 +1577,11 @@ class CSRankings {
 				case "JP":
 				case "TW":
 				case "SG":
-					jQuery("#regions").val("USA");
+					$("#regions").val("USA");
 					CSRankings.getInstance().rank();
 					break;
 				default:
-					jQuery("#regions").val("world");
+					$("#regions").val("world");
 					CSRankings.getInstance().rank();
 					break;
 			}
@@ -1597,7 +1597,7 @@ class CSRankings {
 		if (params !== null) {
 			// Set params (fromyear and toyear).
 			Object.keys(params).forEach((key) => {
-				jQuery("#" + key).prop('value', params[key].toString());
+				$("#" + key).prop('value', params[key].toString());
 			});
 		}
 		// Clear everything *unless* there are subsets / below-the-fold selected.
@@ -1623,7 +1623,7 @@ class CSRankings {
 					q.splice(index, 1);
 				}
 				// Set the region.
-				jQuery("#regions").val(elem);
+				$("#regions").val(elem);
 				index += 1;
 			});
 		}
@@ -1632,14 +1632,14 @@ class CSRankings {
 			for (let item in CSRankings.topTierAreas) {
 				//		if (!(item in CSRankings.nextTier)) {
 				let str = "input[name=" + item + "]";
-				jQuery(str).prop('checked', true);
+				$(str).prop('checked', true);
 				if (item in CSRankings.childMap) {
 					// It's a parent. Enable it.
-					jQuery(str).prop('disabled', false);
+					$(str).prop('disabled', false);
 					// and activate all children.
 					CSRankings.childMap[item].forEach((k) => {
 						if (!(k in CSRankings.nextTier)) {
-							jQuery('input[name=' + k + ']').prop('checked', true);
+							$('input[name=' + k + ']').prop('checked', true);
 						}
 					});
 				}
@@ -1660,13 +1660,13 @@ class CSRankings {
 		for (let item of q) {
 			if ((item != "none") && (item != "")) {
 				const str = "input[name=" + item + "]";
-				jQuery(str).prop('checked', true);
-				jQuery(str).prop('disabled', false);
+				$(str).prop('checked', true);
+				$(str).prop('disabled', false);
 				if (item in CSRankings.childMap) {
 					// Activate all children.
 					CSRankings.childMap[item].forEach((k) => {
 						if (!(k in CSRankings.nextTier)) {
-							jQuery('input[name=' + k + ']').prop('checked', true);
+							$('input[name=' + k + ']').prop('checked', true);
 						}
 					});
 				}
@@ -1680,10 +1680,10 @@ class CSRankings {
 				const kids = CSRankings.childMap[item];
 				if (!CSRankings.subsetting(kids)) {
 					const str = "input[name=" + item + "]";
-					jQuery(str).prop('checked', false);
-					jQuery(str).prop('disabled', false);
+					$(str).prop('checked', false);
+					$(str).prop('disabled', false);
 					kids.forEach((item) => {
-						jQuery("input[name=" + item + "]").prop('checked', false);
+						$("input[name=" + item + "]").prop('checked', false);
 					});
 				}
 			}
@@ -1705,7 +1705,7 @@ class CSRankings {
 		let numCheckedAbove = 0;
 		aboveFold.forEach((elem) => {
 			let str = "input[name=" + elem + "]";
-			let val = jQuery(str).prop('checked');
+			let val = $(str).prop('checked');
 			if (val) {
 				numCheckedAbove++;
 			}
@@ -1713,7 +1713,7 @@ class CSRankings {
 		let numCheckedBelow = 0;
 		belowFold.forEach((elem) => {
 			let str = "input[name=" + elem + "]";
-			let val = jQuery(str).prop('checked');
+			let val = $(str).prop('checked');
 			if (val) {
 				numCheckedBelow++;
 			}
@@ -1744,7 +1744,7 @@ class CSRankings {
 		for (let i = 0; i < this.fields.length; i++) {
 			const str = 'input[name=' + this.fields[i] + ']';
 			const field = this.fields[i];
-			jQuery(str).click(() => {
+			$(str).click(() => {
 				let updateURL: boolean = true;
 				if (field in CSRankings.parentMap) {
 					// Child:
@@ -1756,7 +1756,7 @@ class CSRankings {
 					let anyChecked = 0;
 					let allChecked = 1;
 					CSRankings.childMap[parent].forEach((k) => {
-						let val = jQuery('input[name=' + k + ']').prop('checked');
+						let val = $('input[name=' + k + ']').prop('checked');
 						anyChecked |= val;
 						// allChcked means all top tier conferences
 						// are on and all next tier conferences are
@@ -1770,25 +1770,25 @@ class CSRankings {
 						}
 					});
 					// Activate parent if any checked.
-					jQuery(strparent).prop('checked', anyChecked);
+					$(strparent).prop('checked', anyChecked);
 					// Mark the parent as disabled unless all are checked.
 					if (!anyChecked || allChecked) {
-						jQuery(strparent).prop('disabled', false);
+						$(strparent).prop('disabled', false);
 					}
 					if (anyChecked && !allChecked) {
-						jQuery(strparent).prop('disabled', true);
+						$(strparent).prop('disabled', true);
 					}
 				} else {
 					// Parent: activate or deactivate all children.
-					let val = jQuery(str).prop('checked');
+					let val = $(str).prop('checked');
 					if (field in CSRankings.childMap) {
 						for (let child of CSRankings.childMap[field]) {
 							const strchild = 'input[name=' + child + ']';
 							if (!(child in CSRankings.nextTier)) {
-								jQuery(strchild).prop('checked', val);
+								$(strchild).prop('checked', val);
 							} else {
 								// Always deactivate next tier conferences.
-								jQuery(strchild).prop('checked', false);
+								$(strchild).prop('checked', false);
 							}
 						}
 					}
