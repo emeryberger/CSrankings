@@ -162,7 +162,8 @@
 		   /></noscript>
     <!-- End Facebook Pixel Code -->
 
-    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
     <script src="js/d3.min.js"></script>
     <script src="js/d3pie.min.js" type="text/javascript"></script>
@@ -170,16 +171,7 @@
     <script src="js/pako.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/navigo.min.js"></script>
-<!-- DO NOT MODIFY -->
-<!-- Quora Pixel Code (JS Helper) -->
-<!--<script>
-!function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
-qp('init', '34f10aba9efc41e89be7e8cb752617ab');
-qp('track', 'ViewContent');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/34f10aba9efc41e89be7e8cb752617ab/pixel?tag=ViewContent&noscript=1"/></noscript>
-<!-- End of Quora Pixel Code -->
-<!--<script>qp('track', 'Generic');</script> -->
+    
   </head>
 
   <body>
@@ -205,13 +197,13 @@ qp('track', 'ViewContent');
 		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to expand
 		areas or institutions. <b>Click on a name</b> to go to a
 		faculty member's home page. <b>Click on a pie</b> (the
-		<img src="png/piechart.png">
+		<img alt="Piechart" src="png/piechart.png">
 		after a name or institution) to see their
 		publication profile as a pie chart. <b>Click on a
 		  Google Scholar icon</b>
-		(<img src="scholar-favicon.ico"
+		(<img src="scholar-favicon.ico" alt="Google Scholar"
 		      height="10" width="10">) to see publications,
-		and <b>click on the DBLP logo</b> (<img src="dblp.png">) to
+		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
 		go to a DBLP entry.
 	      </p>
 	      <div class="row">
@@ -280,8 +272,8 @@ qp('track', 'ViewContent');
 		    <option value="2005">2005</option>
 		    <option value="2006">2006</option>
 		    <option value="2007">2007</option>
-		    <option selected="selected" value="2008">2008</option>
-		    <option value="2009">2009</option>
+		    <option value="2008">2008</option>
+		    <option selected="selected" value="2009">2009</option>
 		    <option value="2010">2010</option>
 		    <option value="2011">2011</option>
 		    <option value="2012">2012</option>
@@ -291,6 +283,7 @@ qp('track', 'ViewContent');
 		    <option value="2016">2016</option>
 		    <option value="2017">2017</option>
 		    <option value="2018">2018</option>
+		    <option value="2019">2019</option>
 		  </select>
 		  to
 		  <select id="toyear" name="toyear">
@@ -332,7 +325,8 @@ qp('track', 'ViewContent');
 		    <option value="2015">2015</option>
 		    <option value="2016">2016</option>
 		    <option value="2017">2017</option>
-		    <option selected="selected" value="2018">2018</option>
+		    <option value="2018">2018</option>
+		    <option selected="selected" value="2019">2019</option>
 		  </select>
 		</div>
 	      </div>
@@ -473,7 +467,7 @@ qp('track', 'ViewContent');
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://nips.cc/">nips</a>
+				    <a href="http://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
@@ -494,7 +488,7 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/nips/index.html">NIPS</a>
+					<a href="http://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nips" id="nips" value="1.0"/>
@@ -1776,7 +1770,7 @@ qp('track', 'ViewContent');
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update November 15, 2018). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.
+	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update December 26, 2018). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.
 	      <!-- Alternatively, use <b><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeIatTH6sgaaBCGKbOV6l4xk6kqF564ThUvzfwV0Vl3pSKTKw/viewform?c=0&w=1">this form</a></b> for individual updates. -->
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
