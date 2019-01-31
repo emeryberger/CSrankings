@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-78147305-1', 'auto');
+      ga('send', 'pageview'); 
+
+    </script>
+    <script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <title>Collaboration Graphs</title>
+  </head>
+  <body>
+<style>
+
+@import url(style.css);
+
+#circle circle {
+  fill: none;
+  pointer-events: all;
+}
+
+.group path {
+  fill-opacity: .5;
+}
+
+path.chord {
+  stroke: #000;
+  stroke-width: .25px;
+}
+
+#circle:hover path.fade {
+  display: none;
+}
+
+</style>
+
+	    <!-- <h1>Collaboration Graph</h1> -->
+
+	    <p>&nbsp;</p>
+
+	    <script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	    <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	    <script src="../js/d3.min.js"></script>
+<!--	    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+	    <script src="//d3js.org/queue.v1.min.js"></script>
+
+<script src="collab.js"></script>
+
+<div class="col-sm-12 col-md-12 col-lg-12">
+<div class="table">
+  <table class="table-sm">
+    <tr>
+      <td>
+	<div class="col-sm-6 col-md-6 col-lg-6">
+	</div>
+      </td>
+      <td>
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	&nbsp;
+      </td>
+      <td valign="center">
+	<div class="col-sm-6 col-md-6 col-lg-6">
+  <select onchange="redraw();" id="institution" name="institution">
+  <option value="Aarhus University">Aarhus University</option>
+  <option value="Arizona State University">Arizona State University</option>
+  <option value="Auburn University">Auburn University</option>
+  <option value="Australian National University">Australian National University</option>
+  <option value="Binghamton University">Binghamton University</option>
+  <option value="Boston College">Boston College</option>
+  <option value="Boston University">Boston University</option>
+  <option value="Brandeis University">Brandeis University</option>
+  <option value="Brigham Young University">Brigham Young University</option>
+  <option value="Brown University">Brown University</option>
+  <option value="CUNY">CUNY</option>
+  <option value="California Institute of Technology">California Institute of Technology</option>
+  <option value="Carleton University">Carleton University</option>
+  <option value="Carnegie Mellon University">Carnegie Mellon University</option>
+  <option value="Clemson University">Clemson University</option>
+  <option value="College of William and Mary">College of William and Mary</option>
+  <option value="Colorado State University">Colorado State University</option>
+  <option value="Columbia University">Columbia University</option>
+  <option value="Concordia University">Concordia University</option>
+  <option value="Cornell University">Cornell University</option>
+  <option value="DIKU">DIKU</option>
+  <option value="Dartmouth College">Dartmouth College</option>
+  <option value="Drexel University">Drexel University</option>
+  <option value="Duke University">Duke University</option>
+  <option value="EPFL">EPFL</option>
+  <option value="ETH Zurich">ETH Zurich</option>
+  <option value="Ecole Normale Superieure">Ecole Normale Superieure</option>
+  <option value="Ecole Normale Superieure de Cachan">Ecole Normale Superieure de Cachan</option>
+  <option value="Ecole Normale Superieure de Lyon">Ecole Normale Superieure de Lyon</option>
+  <option value="Emory University">Emory University</option>
+  <option value="Florida State University">Florida State University</option>
+  <option value="George Mason University">George Mason University</option>
+  <option value="George Washington University">George Washington University</option>
+  <option value="Georgetown University">Georgetown University</option>
+  <option value="Georgia Institute of Technology">Georgia Institute of Technology</option>
+  <option value="Harvard University">Harvard University</option>
+  <option value="Hebrew University of Jerusalem">Hebrew University of Jerusalem</option>
+  <option value="IISc Bangalore">IISc Bangalore</option>
+  <option value="IMDEA Software Institute">IMDEA Software Institute</option>
+  <option value="IST Austria">IST Austria</option>
+  <option value="Imperial College London">Imperial College London</option>
+  <option value="Indiana University">Indiana University</option>
+  <option value="Johns Hopkins University">Johns Hopkins University</option>
+  <option value="Kansas State University">Kansas State University</option>
+  <option value="Massachusetts Institute of Technology">Massachusetts Institute of Technology</option>
+  <option value="Massey University">Massey University</option>
+  <option value="Max Planck Institute">Max Planck Institute</option>
+  <option value="McGill University">McGill University</option>
+  <option value="Michigan State University">Michigan State University</option>
+  <option value="Monash University">Monash University</option>
+  <option value="NJIT">NJIT</option>
+  <option value="National University of Singapore">National University of Singapore</option>
+  <option value="Naval Postgraduate School">Naval Postgraduate School</option>
+  <option value="New Mexico State University">New Mexico State University</option>
+  <option value="New York University">New York University</option>
+  <option value="North Carolina State University">North Carolina State University</option>
+  <option value="Northeastern University">Northeastern University</option>
+  <option value="Northwestern University">Northwestern University</option>
+  <option value="OHSU">OHSU</option>
+  <option value="Ohio State University">Ohio State University</option>
+  <option value="Oregon State University">Oregon State University</option>
+  <option value="Pennsylvania State University">Pennsylvania State University</option>
+  <option value="Polytechnic University of Catalonia">Polytechnic University of Catalonia</option>
+  <option value="Polytechnic University of Milan">Polytechnic University of Milan</option>
+  <option value="Princeton University">Princeton University</option>
+  <option value="Purdue University">Purdue University</option>
+  <option value="RWTH Aachen">RWTH Aachen</option>
+  <option value="Rensselaer Polytechnic Institute">Rensselaer Polytechnic Institute</option>
+  <option value="Rice University">Rice University</option>
+  <option value="Rochester Institute of Technology">Rochester Institute of Technology</option>
+  <option value="Rutgers University">Rutgers University</option>
+  <option value="Simon Fraser University">Simon Fraser University</option>
+  <option value="Stanford University">Stanford University</option>
+  <option value="Stevens Institute of Technology">Stevens Institute of Technology</option>
+  <option value="Stony Brook University">Stony Brook University</option>
+  <option value="TU Darmstadt">TU Darmstadt</option>
+  <option value="TU Dresden">TU Dresden</option>
+  <option value="TU Munich">TU Munich</option>
+  <option value="Technion - Israel Institute of Technology">Technion - Israel Institute of Technology</option>
+  <option value="Tel Aviv University">Tel Aviv University</option>
+  <option value="Texas A&M University">Texas A&M University</option>
+  <option value="Toyota Technological Institute at Chicago">Toyota Technological Institute at Chicago</option>
+  <option value="Tufts University">Tufts University</option>
+  <option value="UNSW">UNSW</option>
+  <option value="University College London">University College London</option>
+  <option value="University at Buffalo">University at Buffalo</option>
+  <option value="University of Adelaide">University of Adelaide</option>
+  <option value="University of Alberta">University of Alberta</option>
+  <option value="University of Arizona">University of Arizona</option>
+  <option value="University of Athens">University of Athens</option>
+  <option value="University of Auckland">University of Auckland</option>
+  <option value="University of Bath">University of Bath</option>
+  <option value="University of Bristol">University of Bristol</option>
+  <option value="University of British Columbia">University of British Columbia</option>
+  <option value="University of Calgary">University of Calgary</option>
+  <option value="University of California - Berkeley">University of California - Berkeley</option>
+  <option value="University of California - Davis">University of California - Davis</option>
+  <option value="University of California - Irvine">University of California - Irvine</option>
+  <option value="University of California - Los Angeles">University of California - Los Angeles</option>
+  <option value="University of California - Riverside">University of California - Riverside</option>
+  <option value="University of California - San Diego">University of California - San Diego</option>
+  <option value="University of California - Santa Barbara">University of California - Santa Barbara</option>
+  <option value="University of California - Santa Cruz">University of California - Santa Cruz</option>
+  <option value="University of Cambridge">University of Cambridge</option>
+  <option value="University of Canterbury">University of Canterbury</option>
+  <option value="University of Central Florida">University of Central Florida</option>
+  <option value="University of Chicago">University of Chicago</option>
+  <option value="University of Colorado Boulder">University of Colorado Boulder</option>
+  <option value="University of Connecticut">University of Connecticut</option>
+  <option value="University of Delaware">University of Delaware</option>
+  <option value="University of Edinburgh">University of Edinburgh</option>
+  <option value="University of Florida">University of Florida</option>
+  <option value="University of Georgia">University of Georgia</option>
+  <option value="University of Illinois at Chicago">University of Illinois at Chicago</option>
+  <option value="University of Illinois at Urbana-Champaign">University of Illinois at Urbana-Champaign</option>
+  <option value="University of Iowa">University of Iowa</option>
+  <option value="University of Kansas">University of Kansas</option>
+  <option value="University of Kent">University of Kent</option>
+  <option value="University of Kentucky">University of Kentucky</option>
+  <option value="University of Luxembourg">University of Luxembourg</option>
+  <option value="University of Maryland - College Park">University of Maryland - College Park</option>
+  <option selected="selected" value="University of Massachusetts Amherst">University of Massachusetts Amherst</option>
+  <option value="University of Massachusetts Lowell">University of Massachusetts Lowell</option>
+  <option value="University of Melbourne">University of Melbourne</option>
+  <option value="University of Miami">University of Miami</option>
+  <option value="University of Michigan">University of Michigan</option>
+  <option value="University of Minnesota">University of Minnesota</option>
+  <option value="University of Montreal">University of Montreal</option>
+  <option value="University of Nebraska">University of Nebraska</option>
+  <option value="University of Nevada">University of Nevada</option>
+  <option value="University of New Mexico">University of New Mexico</option>
+  <option value="University of North Carolina">University of North Carolina</option>
+  <option value="University of Notre Dame">University of Notre Dame</option>
+  <option value="University of Oregon">University of Oregon</option>
+  <option value="University of Otago">University of Otago</option>
+  <option value="University of Oxford">University of Oxford</option>
+  <option value="University of Pennsylvania">University of Pennsylvania</option>
+  <option value="University of Pittsburgh">University of Pittsburgh</option>
+  <option value="University of Queensland">University of Queensland</option>
+  <option value="University of Rochester">University of Rochester</option>
+  <option value="University of Salerno">University of Salerno</option>
+  <option value="University of South Florida">University of South Florida</option>
+  <option value="University of Southern California">University of Southern California</option>
+  <option value="University of Sydney">University of Sydney</option>
+  <option value="University of Tartu">University of Tartu</option>
+  <option value="University of Tennessee">University of Tennessee</option>
+  <option value="University of Texas at Arlington">University of Texas at Arlington</option>
+  <option value="University of Texas at Austin">University of Texas at Austin</option>
+  <option value="University of Texas at Dallas">University of Texas at Dallas</option>
+  <option value="University of Toronto">University of Toronto</option>
+  <option value="University of Utah">University of Utah</option>
+  <option value="University of Virginia">University of Virginia</option>
+  <option value="University of Waikato">University of Waikato</option>
+  <option value="University of Warsaw">University of Warsaw</option>
+  <option value="University of Washington">University of Washington</option>
+  <option value="University of Waterloo">University of Waterloo</option>
+  <option value="University of Western Australia">University of Western Australia</option>
+  <option value="University of Wisconsin - Madison">University of Wisconsin - Madison</option>
+  <option value="University of Zurich">University of Zurich</option>
+  <option value="VU Amsterdam">VU Amsterdam</option>
+  <option value="Vanderbilt University">Vanderbilt University</option>
+  <option value="Victoria University of Wellington">Victoria University of Wellington</option>
+  <option value="Virginia Commonwealth University">Virginia Commonwealth University</option>
+  <option value="Virginia Tech">Virginia Tech</option>
+  <option value="Washington State University">Washington State University</option>
+  <option value="Washington University in St. Louis">Washington University in St. Louis</option>
+  <option value="Worcester Polytechnic Institute">Worcester Polytechnic Institute</option>
+  <option value="Yale University">Yale University</option>
+  </select>
+  <br />
+  <br />
+  <p>
+  This graph shows co-authorship relationships between faculty at the
+  same institution since 2013.
+  </p>
+  <p>
+    Colors are based on which area a faculty member primarily publishes in:
+    <span style="background-color:#32cd32;">AI</span>,
+    <span style="background-color:#00bfff;">Systems</span>,
+    <span style="background-color:#ffff00;">Theory</span>,
+    <span style="background-color:#ffc0cb;">Interdisciplinary</span>.
+    (<span style="background-color:lightgray;">Gray</span> means that the author has not
+  published any papers indexed by <a href="http://csrankings.org">CSrankings</a> since 2013). Width is proportional to the number of co-authored papers.
+  </p>
+  <p>
+    Hover over an author box to see the author's full name and the
+    number of co-authored papers; hover over an arc to see the
+    co-author relationship and number of papers.
+  </p>
+  <button type="button" onClick="redraw();">Reset</button>
+  </div>
+      </td>
+  </tr>
+</table>
+</div>
+</div>
+  </body>
+</html>
