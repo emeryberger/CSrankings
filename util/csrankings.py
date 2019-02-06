@@ -511,7 +511,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         if not url is None:
             if url.find('innovations') != -1:
                 return False
-        
+
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -526,11 +526,14 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
-        exceptionConference = confname == 'SC'
+        exceptionConference = False
+        exceptionConference |= confname == 'SC' and year <= 2012
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
+        exceptionConference |= confname == 'ICCAD' and year == 2018
+    
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
