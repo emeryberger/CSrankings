@@ -98,7 +98,7 @@ for name in csrankings:
         page = "NOSCHOLARPAGE"
         if name in aliases:
             for a in aliases[name]:
-                if csrankings[a]['scholarid'] != 'NOSCHOLARPAGE':
+                if a in csrankings and csrankings[a]['scholarid'] != 'NOSCHOLARPAGE':
                     page = csrankings[a]['scholarid']
         if name in aliasToName:
             if csrankings[aliasToName[name]] != 'NOSCHOLARPAGE':
@@ -112,7 +112,7 @@ for name in csrankings:
     page = csrankings[name]['homepage']
     if name in aliases:
         for a in aliases[name]:
-            if csrankings[a]['homepage'] != page:
+            if a in csrankings and csrankings[a]['homepage'] != page:
                 if page == "http://csrankings.org":
                     page = csrankings[a]['homepage']
                 csrankings[a]['homepage'] = page
@@ -122,7 +122,7 @@ for name in csrankings:
     aff = csrankings[name]['affiliation']
     if name in aliases:
         for a in aliases[name]:
-            if csrankings[a]['affiliation'] != aff:
+            if a in csrankings and csrankings[a]['affiliation'] != aff:
                 print("INCONSISTENT AFFILIATION: "+name)
 
 # Find and flag inconsistent Google Scholar pages.
@@ -130,7 +130,7 @@ for name in csrankings:
     sch = csrankings[name]['scholarid']
     if name in aliases:
         for a in aliases[name]:
-            if csrankings[a]['scholarid'] != sch:
+            if a in csrankings and csrankings[a]['scholarid'] != sch:
                 print("INCONSISTENT SCHOLAR PAGE: "+name)
 
 
