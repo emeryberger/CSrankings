@@ -218,10 +218,19 @@ for sch in scholars:
             # print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
 
 for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
-    score = max(generated.get(name, 0) for name in n)
-    if score > 0:
+    maxscore = max(generated.get(name, 0) for name in n)
+    if maxscore > 0:
+        mapscores = map(lambda name: (name, generated.get(name, 0)), n)
         # No point in trying to fix clashes if they don't appear in the output of CSrankings
-        print("Google scholar entry " + reverse_scholar[n[0]] + " clashes:" + str(n) + " - score = " + str(score))
+        print("Google scholar entry " + reverse_scholar[n[0]] + " clashes and scores:" + str(mapscores))
+        affiliations = map(lambda (name, _): csrankings[name]['affiliation'], mapscores)
+        affiliations.sort()
+        if affiliations[0] == affiliations[-1]:
+            # All affiliations the same.
+            for (n, v) in mapscores:
+                if v == 0.0:
+                    print("DELETING " + n)
+                    del csrankings[n]
 
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
