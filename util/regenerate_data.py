@@ -181,13 +181,15 @@ def handle_article(_, article):
             if realName in facultydict:
                 foundAuthor = realName
             if foundAuthor is not None:
-                log = { 'name' : foundAuthor.encode('utf-8'),
-                        'year' : year,
-                        'title' : title.encode('utf-8'),
-                        'conf' : confname,
-                        'area' : areaname,
-                        'institution' : facultydict[foundAuthor],
-                        'numauthors' : authorsOnPaper }
+                log = collections.OrderedDict([
+                    ('name', foundAuthor.encode('utf-8')),
+                    ('year', year),
+                    ('title', title.encode('utf-8')),
+                    ('conf', confname),
+                    ('area', areaname),
+                    ('institution', facultydict[foundAuthor]),
+                    ('numauthors', authorsOnPaper),
+                ])
                 if not volume is "":
                     log['volume'] = volume
                 if not number is "":

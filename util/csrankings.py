@@ -15,8 +15,17 @@ import sys
 import operator
 from builtins import str
 
-# Papers must be at least 6 pages long to count.
-pageCountThreshold = 6
+# Papers must be at least 6 pages long to count, unless overridden
+# in pageCountThresholdDict.
+defaultPageCountThreshold = 6
+
+# Optional override of page count threshold for specific venues.
+pageCountThresholdDict = {
+    'FOCS': 4,
+    'SODA': 4,
+    'STOC': 4,
+}
+
 # Match ordinary page numbers (as in 10-17).
 pageCounterNormal = re.compile('(\d+)-(\d+)')
 # Match page number in the form volume:page (as in 12:140-12:150).
@@ -413,9 +422,10 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     global TVCG_Vis_Volume
     global TVCG_VR_Volume
     global ASE_LongPaperThreshold
-    global pageCountThreshold
+    global defaultPageCountThreshold
+    global pageCountThresholdDict
     global ISMBpageCounter
-    
+
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
@@ -524,6 +534,8 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     if pageCount == -1 and confname == 'ACM Conference on Computer and Communications Security':
         tooFewPages = True
     
+    pageCountThreshold = pageCountThresholdDict.get(confname, defaultPageCountThreshold)
+
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = False
