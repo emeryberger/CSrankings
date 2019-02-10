@@ -90,13 +90,13 @@ def visit_aliases(n):
 for n in aliases:
     visit_aliases(n)
 
-if False:
-    aliases = new_aliases
+if True:
+    aliases = new_aliases.copy()
     for ca in cycle_aliases:
         n = aliasToName[ca]
-        if n in aliases:
-            aliases[n] = [a for a in aliases[n] if a != ca]
-    #        del aliases[n]
+        # Conservatively delete cycles when they are paired.
+        if n in aliases and ca in aliases:
+            del aliases[ca]
 
 # Remove any aliases for names that aren't in the database.
 new_aliases = aliases.copy()
