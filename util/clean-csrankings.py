@@ -60,6 +60,15 @@ with open('dblp-aliases.csv', mode='r') as infile:
         aliasToName[row['alias']] = row['name']
 
 
+# Read in generated data file. We use this to weigh things that need fixing.
+generated = {}
+
+with open('generated-author-info.csv', mode='rb') as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        generated[row['name']] = generated.get(row['name'], 0) + float(row['count'])
+    
+
 # Read in CSrankings file.
 csrankings = {}
 with open('csrankings.csv', mode='rb') as infile:
@@ -170,6 +179,7 @@ for name in csrankings:
             if a in csrankings and csrankings[a]['affiliation'] != aff:
                 print("INCONSISTENT AFFILIATION: "+name)
 
+
 # Find and flag inconsistent Google Scholar pages.
 for name in csrankings:
     sch = csrankings[name]['scholarid']
@@ -177,7 +187,6 @@ for name in csrankings:
         for a in aliases[name]:
             if a in csrankings and csrankings[a]['scholarid'] != sch:
                 print("INCONSISTENT SCHOLAR PAGE: "+name)
-
 
 # Make sure that Google Scholar pages are not accidentally duplicated across different authors.
 # This can mean one of two things:
@@ -194,15 +203,23 @@ for name in csrankings:
     else:
         scholars[sch] = [name]
 
+clashes = []
+reverse_scholar = {}
 for sch in scholars:
     if len(scholars[sch]) > 1:
         # Verify all are aliases.
         total = len(scholars[sch])
         for name in scholars[sch]:
+            reverse_scholar[name] = sch
             if name in aliases:
                 total -= len(aliases[name])
         if total >= 2: # At least one name is not an alias!
-            print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
+            clashes.append(scholars[sch])
+            # print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
+
+for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
+    print("Google scholar entry " + reverse_scholar[n[0]] + " clashes:" + str(n))
+
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
