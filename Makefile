@@ -19,7 +19,7 @@ clean:
 
 csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
-	tsc --target es6 --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
+	tsc --project tsconfig.json
 	closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
