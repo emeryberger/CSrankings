@@ -46,10 +46,6 @@ def find_fix(name,affiliation):
     else:
         return "http://csrankings.org"
 
-#print(find_fix("Michael H. Albert","University of Otago"))
-
-# sys.exit()
-
 
 # Load alias lists (name -> [aliases])
 aliases = {}
@@ -63,10 +59,6 @@ with open('dblp-aliases.csv', mode='r') as infile:
             aliases[row['name']] = [row['alias']]
         aliasToName[row['alias']] = row['name']
 
-#c = 0
-#for n in aliases:
-#    c = c +1
-#print("c = "+str(c))
 
 # Read in CSrankings file.
 csrankings = {}
@@ -76,6 +68,57 @@ with open('csrankings.csv', mode='rb') as infile:
         csrankings[row['name']] = { 'affiliation' : row['affiliation'],
                                     'homepage'    : row['homepage'],
                                     'scholarid'   : row['scholarid'] }
+
+# Remove any cycles in the aliases (that is, name -> alias -> name).
+
+visited = {}
+new_aliases = {}
+cycle_aliases = {}
+
+def visit_aliases(n):
+    if n in aliases:
+        alias_list = aliases[n]
+        for a in alias_list:
+            if a in visited:
+                print("Cycle discovered: "+a)
+                cycle_aliases[a] = True
+            else:
+                visited[a] = True
+                new_aliases[n] = new_aliases.get(n, []) + [a]
+                visit_aliases(a)
+    
+for n in aliases:
+    visit_aliases(n)
+
+aliases = new_aliases
+for ca in cycle_aliases:
+    n = aliasToName[ca]
+    if n in aliases:
+        del aliases[n]
+
+# Remove any aliases for names that aren't in the database.
+new_aliases = aliases.copy()
+for n in aliases:
+    if not n in csrankings:
+        found = False
+        for a in aliases[n]:
+            if a in csrankings:
+                found = True
+                break
+        if not found:
+            del new_aliases[n]
+aliases = new_aliases
+    
+# Rewrite aliases file without cycles or names not in the csrankings database.
+with open('dblp-aliases.csv', mode='w') as outfile:
+    sfieldnames = ['alias', 'name']
+    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter.writeheader()
+    for n in collections.OrderedDict(sorted(aliases.items(), key=lambda t: t[0])):
+        for a in aliases[n]:
+            h = { 'alias' : a, 'name' : n }
+            swriter.writerow(h)
+
 
 # Add any missing aliases.
 for name in aliases:
