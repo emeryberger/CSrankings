@@ -218,7 +218,10 @@ for sch in scholars:
             # print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
 
 for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
-    print("Google scholar entry " + reverse_scholar[n[0]] + " clashes:" + str(n))
+    score = max(generated.get(name, 0) for name in n)
+    if score > 0:
+        # No point in trying to fix clashes if they don't appear in the output of CSrankings
+        print("Google scholar entry " + reverse_scholar[n[0]] + " clashes:" + str(n) + " - score = " + str(score))
 
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
