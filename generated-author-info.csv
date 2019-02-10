@@ -1,5 +1,6 @@
 "name","dept","area","count","adjustedcount","year"
 A. Aldo Faisal,Imperial College London,icra,1.0,0.333333333333,2016
+A. Aldo Faisal,Imperial College London,nips,1.0,0.142857142857,2018
 A. Cüneyd Tantug,Istanbul Technical University,acl,1.0,0.333333333333,2007
 A. E. Eiben,VU Amsterdam,ijcai,1.0,0.5,2007
 A. Ercument Cicek,Bilkent University,ismb,1.0,0.333333333333,2014
@@ -1574,8 +1575,6 @@ Alain Tapp,University of Montreal,focs,1.0,0.25,2000
 Alain Tapp,University of Montreal,focs,1.0,0.2,2002
 Alain Tapp,University of Montreal,focs,1.0,0.2,2014
 Alain Trémeau,Université Jean Monnet,eccv,1.0,0.25,2006
-Alan Blair,UNSW,iros,1.0,0.333333333333,2003
-Alan Blair,UNSW,nips,1.0,0.25,2009
 Alan Borning,University of Washington,chiconf,1.0,0.5,1991
 Alan Borning,University of Washington,chiconf,2.0,0.5,2010
 Alan Borning,University of Washington,chiconf,1.0,0.166666666667,2011
@@ -1623,9 +1622,11 @@ Alan Burns,University of York,rtss,1.0,0.333333333333,2011
 Alan Burns,University of York,rtss,2.0,0.833333333333,2014
 Alan Burns,University of York,rtss,1.0,0.333333333333,2015
 Alan C. H. Ling,University of Vermont,iccad,1.0,0.333333333333,2006
+Alan D. Blair,UNSW,iros,1.0,0.333333333333,2003
 Alan D. Blair,UNSW,iros,1.0,0.5,2007
 Alan D. Blair,UNSW,nips,1.0,0.5,1996
 Alan D. Blair,UNSW,nips,1.0,0.333333333333,1999
+Alan D. Blair,UNSW,nips,1.0,0.25,2009
 Alan F. Blackwell,University of Cambridge,chiconf,1.0,0.142857142857,2006
 Alan F. Blackwell,University of Cambridge,chiconf,1.0,0.2,2012
 Alan F. Blackwell,University of Cambridge,chiconf,1.0,0.333333333333,2015
@@ -2167,7 +2168,6 @@ Albrecht Schmidt 0001,LMU Munich,ubicomp,1.0,0.333333333333,2016
 Albrecht Schmidt 0001,LMU Munich,ubicomp,2.0,0.533333333333,2017
 Albrecht Schmidt 0001,LMU Munich,www,1.0,0.5,2001
 Albrecht Schmidt 0001,LMU Munich,www,1.0,0.333333333333,2006
-Aldo A. Faisal,Imperial College London,nips,1.0,0.142857142857,2018
 Alec Jacobson,University of Toronto,siggraph,1.0,0.25,2011
 Alec Jacobson,University of Toronto,siggraph,1.0,0.2,2012
 Alec Jacobson,University of Toronto,siggraph,1.0,0.333333333333,2013
@@ -57373,6 +57373,9 @@ Marcus A. Maloof,Georgetown University,icml,1.0,0.5,2005
 Marcus A. Maloof,Georgetown University,kdd,1.0,0.5,2004
 Marcus A. Maloof,Georgetown University,nips,1.0,0.5,2010
 Marcus Frean,Victoria University of Wellington,icml,1.0,0.166666666667,2017
+Marcus Frean,Victoria University of Wellington,nips,1.0,0.25,1999
+Marcus Frean,Victoria University of Wellington,nips,1.0,0.5,2004
+Marcus Frean,Victoria University of Wellington,oopsla,1.0,0.125,2006
 Marcus Gallagher,University of Queensland,icml,1.0,0.333333333333,2018
 Marcus Hutter,Australian National University,aaai,1.0,0.25,2010
 Marcus Hutter,Australian National University,aaai,1.0,0.333333333333,2012
@@ -57388,9 +57391,6 @@ Marcus Hutter,Australian National University,nips,1.0,0.5,2007
 Marcus Hutter,Australian National University,nips,1.0,1.0,2009
 Marcus Poggi de Aragão,PUC-RIO,ijcai,1.0,0.25,1995
 Marcus Poggi de Aragão,PUC-RIO,www,1.0,0.333333333333,2004
-Marcus R. Frean,Victoria University of Wellington,nips,1.0,0.25,1999
-Marcus R. Frean,Victoria University of Wellington,nips,1.0,0.5,2004
-Marcus R. Frean,Victoria University of Wellington,oopsla,1.0,0.125,2006
 Marcus Ritt,UFRGS,ijcai,1.0,0.2,2016
 Marcus Ritt,UFRGS,ijcai,1.0,0.333333333333,2018
 Marcus Ritt,UFRGS,iros,1.0,0.333333333333,2008
