@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+	"target": "es6",
+	"skipLibCheck": true,
+	"noImplicitAny": true,
+	"noImplicitReturns": true,
+	"forceConsistentCasingInFileNames": true,
+	"noImplicitThis": true,
+	"noUnusedParameters": true,
+	"noFallthroughCasesInSwitch": true,
+	"strictNullChecks": true,
+	"pretty": true
+    },
+    "files": [ "csrankings.ts" ]
+}
