@@ -70,8 +70,10 @@ area,canonical,alternate,default
 "nlp","ACL","ACL",True
 "nlp","ACL","ACL (1)",True
 "nlp","ACL","ACL (2)",True
+"nlp","ACL","ACL (4)",True
 "nlp","NAACL","NAACL",True
 "nlp","NAACL","HLT-NAACL",True
+"nlp","NAACL","NAACL-HLT",True
 "nlp","ACL","ACL/IJCNLP",True
 "nlp","ACL","COLING-ACL",True
 "nlp","EMNLP","EMNLP-CoNLL",True
