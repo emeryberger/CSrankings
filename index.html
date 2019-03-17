@@ -3,16 +3,33 @@
   <head>
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/csrankings.css">
-    <link rel="prefetch" href="./csrankings.csv">
-    <link rel="prefetch" href="./generated-author-info.csv">
-    <link rel="prefetch" href="./dblp-aliases.csv">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://connect.facebook.net">
-    <link rel="dns-prefetch" href="https://www.facebook.com">
-    <link rel="dns-prefetch" href="http://dblp.org">
+    <link rel="preload" as="style" href="css/csrankings.css">
     
+    <link rel="preload" href="./csrankings.csv">
+    <link rel="preload" href="./generated-author-info.csv">
+    <link rel="preload" href="./dblp-aliases.csv">
+    
+    <link rel="preload" href="./csrankings.csv">
+    <link rel="preload" href="./generated-author-info.csv">
+    <link rel="preload" href="./dblp-aliases.csv">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="preconnect" href="http://dblp.org">
+
+    
+    <link rel="preload" as="script" src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
+<!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
+    <link rel="preload" as="script" src="js/d3.min.js"></script>
+    <link rel="preload" as="script" src="js/d3pie.min.js" type="text/javascript"></script>
+    <link rel="preload" as="script" src="js/papaparse.min.js" type="text/javascript"></script>
+    <link rel="preload" as="script" src="js/pako.min.js" type="text/javascript"></script>
+<!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
+    <link rel="preload" as="script" src="js/navigo.min.js"></script>
+
+
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,6 +41,7 @@
     <meta name="citation_publisher" content="">
     <meta name="citation_fulltext_world_readable" content="">
     
+    <link rel="stylesheet" href="css/csrankings.css">
     
     <title>CSRankings: Computer Science Rankings</title>
 
@@ -165,8 +183,8 @@
     <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3pie.min.js" type="text/javascript"></script>
+    <script defer src="js/d3.min.js"></script>
+    <script defer src="js/d3pie.min.js" type="text/javascript"></script>
     <script src="js/papaparse.min.js" type="text/javascript"></script>
     <script src="js/pako.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -1770,7 +1788,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update February 19, 2019). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.
+	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update March 16, 2019). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.
 	      <!-- Alternatively, use <b><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeIatTH6sgaaBCGKbOV6l4xk6kqF564ThUvzfwV0Vl3pSKTKw/viewform?c=0&w=1">this form</a></b> for individual updates. -->
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
