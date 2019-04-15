@@ -272,6 +272,7 @@ class CSRankings {
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
         name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/í/g, "=iacute=");
         name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
         name = name.replace(/ç/g, "=ccedil=");
