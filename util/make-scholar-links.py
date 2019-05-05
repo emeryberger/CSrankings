@@ -72,8 +72,9 @@ def getScholarID(name):
     print "["+me+"] Checking "+name
     if name in scholarLinks:
         # Already there.
-        print "["+me+"] Found"
-        return scholarLinks[name]
+        if scholarLinks[name] != "NOSCHOLARPAGE":
+            print "["+me+"] Found"
+            return scholarLinks[name]
     if name in checked:
         if now - float(checked[name]) < expirationDate:
             print "["+me+"] last visited too recently."
@@ -84,7 +85,8 @@ def getScholarID(name):
     if r != None:
         name = name[:-5]
     if (name in scholarLinks):
-        return scholarLinks[name]
+        if scholarLinks[name] == "NOSCHOLARPAGE":
+            return scholarLinks[name]
     actualID = "FIXME"
     try:
         search_query = scholarly.search_author(name)
@@ -113,6 +115,7 @@ now = time.time()
 newvisited = {}
 newscholarLinks = {}
 
+
 random.shuffle(facultydictkeys)
 for name in facultydictkeys:
     if theCounter >= maxBeforeEnd:
@@ -126,7 +129,8 @@ for name in facultydictkeys:
         name = aliases[name]
     # Skip any scholarLinks we have already in the database.
     if name in scholarLinks:
-        continue
+        if scholarLinks[name] != "NOSCHOLARPAGE":
+            continue
     # Check expiration date.
     if name in checked:
         if now - float(checked[name]) < expirationDate:
@@ -135,7 +139,7 @@ for name in facultydictkeys:
     theCounter += 1
     newvisited[name] = s
     dept = facultydict[name]
-    # print "["+me+"] checking "+name+" at "+dept
+    print "["+me+"] checking "+name+" at "+dept
     id = getScholarID(name)
     if id == None:
         # Try to remove a middle name.
