@@ -533,6 +533,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
         exceptionConference |= confname == 'ICCAD' and year == 2018
+        exceptionConference |= confname == 'CHI' and year == 2019
         exceptionConference |= confname == 'FAST' and year == 2012
         
     
