@@ -698,6 +698,14 @@ class CSRankings {
                     return false;
                 }
                 break;
+            case "africa":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "africa") {
+                    return false;
+                }
+                break;
             case "world":
                 break;
         }
@@ -1534,7 +1542,7 @@ class CSRankings {
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',
