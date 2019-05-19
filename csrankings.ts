@@ -39,7 +39,7 @@ interface Author {
 
 interface CountryInfo {
 	readonly institution: string;
-	readonly region: "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "world";
+	readonly region: "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "africa" | "world";
 };
 
 interface Alias {
@@ -85,7 +85,7 @@ class CSRankings {
 	public static readonly areas: Array<string> = [];
 	public static readonly topLevelAreas: { [key: string]: string } = {};
 	public static readonly topTierAreas: { [key: string]: string } = {};
-	public static readonly regions: Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
+    public static readonly regions: Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
 
 	private navigoRouter: Navigo;
 
@@ -911,6 +911,14 @@ class CSRankings {
 					return false;
 				}
 				if (this.countryInfo[dept] != "asia") {
+					return false;
+				}
+				break;
+			case "africa":
+				if (!(dept in this.countryInfo)) { // USA
+					return false;
+				}
+				if (this.countryInfo[dept] != "africa") {
 					return false;
 				}
 				break;
