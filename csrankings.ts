@@ -82,6 +82,7 @@ class CSRankings {
 
 	private static theInstance: CSRankings; // singleton for this object
 
+    private static minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
 	public static readonly areas: Array<string> = [];
 	public static readonly topLevelAreas: { [key: string]: string } = {};
 	public static readonly topTierAreas: { [key: string]: string } = {};
@@ -89,6 +90,14 @@ class CSRankings {
 
 	private navigoRouter: Navigo;
 
+    // We have scrolled: increase the number we rank to the max (for now).
+    public static updateMinimum() {
+	if (CSRankings.minToRank != 100000) {
+	    CSRankings.minToRank = 100000;
+	    CSRankings.getInstance().rank();
+	}
+    }
+    
 	// Return the singleton corresponding to this object.
 	public static getInstance(): CSRankings {
 		return CSRankings.theInstance;
@@ -755,7 +764,7 @@ class CSRankings {
 			s += "<br />";
 			count += 1;
 		});
-		$("#progress").html(s);
+	    $("#progress").html(s);
 	}
 
 
@@ -1252,11 +1261,11 @@ class CSRankings {
 
 
 	private buildOutputString(numAreas: number,
-		deptCounts: { [key: string]: number },
-		univtext: { [key: string]: string }): string {
+				  deptCounts: { [key: string]: number },
+				  univtext: { [key: string]: string },
+				  minToRank: number): string {
 		let s = this.makePrologue();
 		/* Show the top N (with more if tied at the end) */
-		let minToRank = 99999; // parseInt($("#minToRank").find(":selected").val());
 
 		s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
 			+ '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
@@ -1402,10 +1411,13 @@ class CSRankings {
 	    /* Start building up the string to output. */
 	    const s = this.buildOutputString(numAreas,
 					     deptCounts,
-					     univtext);
+					     univtext,
+					    CSRankings.minToRank);
 	    
 	    /* Finally done. Redraw! */
 	    $("#success").html(s);
+	    console.log("installing scroll thang.");
+	    $("div").scroll(function(){ CSRankings.updateMinimum(); });
 	    
 	    if (!update) {
 		this.navigoRouter.pause();
