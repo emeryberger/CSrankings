@@ -249,10 +249,10 @@ class CSRankings {
             });
         });
     }
-    // We have scrolled: increase the number we rank to the max (for now).
+    // We have scrolled: increase the number we rank.
     static updateMinimum() {
-        if (CSRankings.minToRank != 100000) {
-            CSRankings.minToRank = 100000;
+        if (CSRankings.minToRank <= 500) {
+            CSRankings.minToRank *= 2;
             CSRankings.getInstance().rank();
         }
     }
