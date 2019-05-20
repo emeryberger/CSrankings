@@ -764,6 +764,7 @@ class CSRankings {
         this.authorAreas = {};
         for (let r in this.authors) {
             if (!this.authors.hasOwnProperty(r)) {
+                console.log("no property " + JSON.stringify(r));
                 continue;
             }
             let { area } = this.authors[r];
