@@ -93,7 +93,7 @@ class CSRankings {
     // We have scrolled: increase the number we rank.
     public static updateMinimum() {
 	if (CSRankings.minToRank <= 500) {
-	    CSRankings.minToRank = 500;
+	    CSRankings.minToRank = 5000;
 	    CSRankings.getInstance().rank();
 	}
     }
