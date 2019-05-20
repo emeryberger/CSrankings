@@ -1416,8 +1416,11 @@ class CSRankings {
 	    
 	    /* Finally done. Redraw! */
 	    $("#success").html(s);
-	    console.log("installing scroll thang.");
-	    $("div").scroll(function(){ CSRankings.updateMinimum(); });
+	    $("div").scroll(function() {
+		if (this.scrollTop > 50) {
+		    CSRankings.updateMinimum();
+		}
+	    });
 	    
 	    if (!update) {
 		this.navigoRouter.pause();
