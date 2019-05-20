@@ -982,9 +982,6 @@ class CSRankings {
 		const endyear = parseInt($("#toyear").find(":selected").text());
 		this.authorAreas = {}
 		for (let r in this.authors) {
-			if (!this.authors.hasOwnProperty(r)) {
-				continue;
-			}
 			let { area } = this.authors[r];
 			if (area in CSRankings.nextTier) {
 				continue;
