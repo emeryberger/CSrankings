@@ -91,10 +91,14 @@ class CSRankings {
 	private navigoRouter: Navigo;
 
     // We have scrolled: increase the number we rank.
-    public static updateMinimum() {
+    public static updateMinimum(obj : any) : number {
 	if (CSRankings.minToRank <= 500) {
+	    let t = obj.scrollTop;
 	    CSRankings.minToRank = 5000;
 	    CSRankings.getInstance().rank();
+	    return t;
+	} else {
+	    return 0;
 	}
     }
     
@@ -1417,8 +1421,14 @@ class CSRankings {
 	    /* Finally done. Redraw! */
 	    $("#success").html(s);
 	    $("div").scroll(function() {
-		if (this.scrollTop > 50) {
-		    CSRankings.updateMinimum();
+//		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+		// If we are nearly at the bottom, update the minimum.
+		if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
+		    let t = CSRankings.updateMinimum(this);
+		    if (t) {
+//			console.log("scrolling to " + t);
+			$("div").scrollTop(t);
+		    }
 		}
 	    });
 	    
