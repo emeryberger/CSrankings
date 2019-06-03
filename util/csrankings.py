@@ -162,7 +162,7 @@ areadict = {
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
     'siggraph': ['ACM Trans. Graph.', 'SIGGRAPH'],
 #    'siggraph' : ['SIGGRAPH'],
-    'siggraph-asia' : ['SIGGRAPH Asia'],
+    'siggraph-asia' : ['ACM Trans. Graph.','SIGGRAPH Asia'],
     # SIGIR
     # 'ir': ['WWW', 'SIGIR'],
     'sigir': ['SIGIR'],
@@ -245,7 +245,9 @@ TOG_SIGGRAPH_Volume = {2021: (40, 4),
                        2007: (26, 3),
                        2006: (25, 3),
                        2005: (24, 3),
-                       2004: (23, 3)
+                       2004: (23, 3),
+                       2003: (22, 3),
+                       2002: (21, 3)
                        }
 
 # TOG special handling to count only SIGGRAPH Asia proceedings.
@@ -473,17 +475,8 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
                     return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
-        if year in TOG_SIGGRAPH_Volume:
-            (vol, num) = TOG_SIGGRAPH_Volume[year]
-            if not ((volume == str(vol)) and (number == str(num))):
-                return False
-        
-    elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
-        if year in TOG_SIGGRAPH_Asia_Volume:
-            (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-            if not((volume == str(vol)) and (number == str(num))):
-                return False
+    elif confname == 'ACM Trans. Graph.':
+        return False # should already have been handled by regenerate_data.py.
 
     # Special handling for IEEE Vis and VR
     elif confname == 'IEEE Trans. Vis. Comput. Graph.':
@@ -531,6 +524,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'SIGGRAPH Asia'
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
         exceptionConference |= confname == 'ICCAD' and year == 2018
         exceptionConference |= confname == 'CHI' and year == 2019
