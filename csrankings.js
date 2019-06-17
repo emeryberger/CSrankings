@@ -249,6 +249,18 @@ class CSRankings {
             });
         });
     }
+    // We have scrolled: increase the number we rank.
+    static updateMinimum(obj) {
+        if (CSRankings.minToRank <= 500) {
+            let t = obj.scrollTop;
+            CSRankings.minToRank = 5000;
+            CSRankings.getInstance().rank();
+            return t;
+        }
+        else {
+            return 0;
+        }
+    }
     // Return the singleton corresponding to this object.
     static getInstance() {
         return CSRankings.theInstance;
@@ -272,6 +284,7 @@ class CSRankings {
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
         name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/í/g, "=iacute=");
         name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
         name = name.replace(/ç/g, "=ccedil=");
@@ -550,7 +563,7 @@ class CSRankings {
             s += "<br />";
             count += 1;
         });
-        jQuery("#progress").html(s);
+        $("#progress").html(s);
     }
     /*
         private loadAliases(aliases: { [key: string]: string },
@@ -697,6 +710,14 @@ class CSRankings {
                     return false;
                 }
                 break;
+            case "africa":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "africa") {
+                    return false;
+                }
+                break;
             case "world":
                 break;
         }
@@ -706,18 +727,18 @@ class CSRankings {
         for (let i = 0; i < fields.length; i++) {
             const item = this.fields[fields[i]];
             const str = "input[name=" + item + "]";
-            jQuery(str).prop('checked', value);
+            $(str).prop('checked', value);
             if (item in CSRankings.childMap) {
                 // It's a parent.
-                jQuery(str).prop('disabled', false);
+                $(str).prop('disabled', false);
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach((k) => {
                     const str = 'input[name=' + k + ']';
                     if (k in CSRankings.nextTier) {
-                        jQuery(str).prop('checked', false);
+                        $(str).prop('checked', false);
                     }
                     else {
-                        jQuery(str).prop('checked', value);
+                        $(str).prop('checked', value);
                     }
                 });
             }
@@ -750,13 +771,10 @@ class CSRankings {
         return keys;
     }
     countAuthorAreas() {
-        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
-        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        const startyear = parseInt($("#fromyear").find(":selected").text());
+        const endyear = parseInt($("#toyear").find(":selected").text());
         this.authorAreas = {};
         for (let r in this.authors) {
-            if (!this.authors.hasOwnProperty(r)) {
-                continue;
-            }
             let { area } = this.authors[r];
             if (area in CSRankings.nextTier) {
                 continue;
@@ -876,7 +894,7 @@ class CSRankings {
         let numAreas = 0;
         for (let ind = 0; ind < CSRankings.areas.length; ind++) {
             let area = CSRankings.areas[ind];
-            weights[area] = jQuery('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
+            weights[area] = $('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
                 if (area in CSRankings.parentMap) {
                     // Don't count children.
@@ -1000,10 +1018,9 @@ class CSRankings {
         }
         return univtext;
     }
-    buildOutputString(numAreas, deptCounts, univtext) {
+    buildOutputString(numAreas, deptCounts, univtext, minToRank) {
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
-        let minToRank = 99999; // parseInt(jQuery("#minToRank").find(":selected").val());
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
             + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
@@ -1092,17 +1109,17 @@ class CSRankings {
             if (value) {
                 // Turn off all next tier venues.
                 if (item in CSRankings.nextTier) {
-                    jQuery(str).prop('checked', false);
+                    $(str).prop('checked', false);
                 }
                 else {
-                    jQuery(str).prop('checked', true);
-                    jQuery(str).prop('disabled', false);
+                    $(str).prop('checked', true);
+                    $(str).prop('disabled', false);
                 }
             }
             else {
                 // turn everything off.
-                jQuery(str).prop('checked', false);
-                jQuery(str).prop('disabled', false);
+                $(str).prop('checked', false);
+                $(str).prop('disabled', false);
             }
         }
     }
@@ -1115,18 +1132,29 @@ class CSRankings {
         let facultyAdjustedCount = {}; /* name -> adjusted count of pubs per name / department */
         let currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
         this.areaDeptAdjustedCount = {};
-        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
-        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
-        const whichRegions = jQuery("#regions").find(":selected").val();
+        const startyear = parseInt($("#fromyear").find(":selected").text());
+        const endyear = parseInt($("#toyear").find(":selected").text());
+        const whichRegions = String($("#regions").find(":selected").val());
         let numAreas = this.updateWeights(currentWeights);
         this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        const s = this.buildOutputString(numAreas, deptCounts, univtext);
+        const s = this.buildOutputString(numAreas, deptCounts, univtext, CSRankings.minToRank);
         /* Finally done. Redraw! */
-        jQuery("#success").html(s);
+        $("#success").html(s);
+        $("div").scroll(function () {
+            //		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+            // If we are nearly at the bottom, update the minimum.
+            if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
+                let t = CSRankings.updateMinimum(this);
+                if (t) {
+                    //			console.log("scrolling to " + t);
+                    $("div").scrollTop(t);
+                }
+            }
+        });
         if (!update) {
             this.navigoRouter.pause();
         }
@@ -1222,7 +1250,7 @@ class CSRankings {
             if (!(this.fields[i] in CSRankings.parentMap)) {
                 totalParents += 1;
             }
-            if (jQuery(str).prop('checked')) {
+            if ($(str).prop('checked')) {
                 // Only add parents.
                 if (!(this.fields[i] in CSRankings.parentMap)) {
                     // And only add if every top tier child is checked
@@ -1231,7 +1259,7 @@ class CSRankings {
                     let allChecked = 1;
                     if (this.fields[i] in CSRankings.childMap) {
                         CSRankings.childMap[this.fields[i]].forEach((k) => {
-                            let val = jQuery('input[name=' + k + ']').prop('checked');
+                            let val = $('input[name=' + k + ']').prop('checked');
                             if (!(k in CSRankings.nextTier)) {
                                 allChecked &= val;
                             }
@@ -1251,13 +1279,13 @@ class CSRankings {
             // Trim off the trailing '&'.
             s = s.slice(0, -1);
         }
-        let region = jQuery("#regions").find(":selected").val();
+        let region = $("#regions").find(":selected").val();
         let start = '';
         // Check the dates.
         let d = new Date();
         const currYear = d.getFullYear();
-        const startyear = parseInt(jQuery("#fromyear").find(":selected").text());
-        const endyear = parseInt(jQuery("#toyear").find(":selected").text());
+        const startyear = parseInt($("#fromyear").find(":selected").text());
+        const endyear = parseInt($("#toyear").find(":selected").text());
         if ((startyear != currYear - 10) || (endyear != currYear)) {
             start += '/fromyear/' + startyear.toString();
             start += '/toyear/' + endyear.toString();
@@ -1281,7 +1309,7 @@ class CSRankings {
             // Figure out which country clients are coming from and set
             // the default region accordingly.
             let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
-            jQuery.getJSON(theUrl, (result) => {
+            $.getJSON(theUrl, (result) => {
                 switch (result.country_code) {
                     case "US":
                     case "CN":
@@ -1290,11 +1318,11 @@ class CSRankings {
                     case "JP":
                     case "TW":
                     case "SG":
-                        jQuery("#regions").val("USA");
+                        $("#regions").val("USA");
                         CSRankings.getInstance().rank();
                         break;
                     default:
-                        jQuery("#regions").val("world");
+                        $("#regions").val("world");
                         CSRankings.getInstance().rank();
                         break;
                 }
@@ -1309,7 +1337,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                jQuery("#" + key).prop('value', params[key].toString());
+                $("#" + key).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
@@ -1335,7 +1363,7 @@ class CSRankings {
                     q.splice(index, 1);
                 }
                 // Set the region.
-                jQuery("#regions").val(elem);
+                $("#regions").val(elem);
                 index += 1;
             });
         }
@@ -1344,14 +1372,14 @@ class CSRankings {
             for (let item in CSRankings.topTierAreas) {
                 //		if (!(item in CSRankings.nextTier)) {
                 let str = "input[name=" + item + "]";
-                jQuery(str).prop('checked', true);
+                $(str).prop('checked', true);
                 if (item in CSRankings.childMap) {
                     // It's a parent. Enable it.
-                    jQuery(str).prop('disabled', false);
+                    $(str).prop('disabled', false);
                     // and activate all children.
                     CSRankings.childMap[item].forEach((k) => {
                         if (!(k in CSRankings.nextTier)) {
-                            jQuery('input[name=' + k + ']').prop('checked', true);
+                            $('input[name=' + k + ']').prop('checked', true);
                         }
                     });
                 }
@@ -1372,13 +1400,13 @@ class CSRankings {
         for (let item of q) {
             if ((item != "none") && (item != "")) {
                 const str = "input[name=" + item + "]";
-                jQuery(str).prop('checked', true);
-                jQuery(str).prop('disabled', false);
+                $(str).prop('checked', true);
+                $(str).prop('disabled', false);
                 if (item in CSRankings.childMap) {
                     // Activate all children.
                     CSRankings.childMap[item].forEach((k) => {
                         if (!(k in CSRankings.nextTier)) {
-                            jQuery('input[name=' + k + ']').prop('checked', true);
+                            $('input[name=' + k + ']').prop('checked', true);
                         }
                     });
                 }
@@ -1391,10 +1419,10 @@ class CSRankings {
                 const kids = CSRankings.childMap[item];
                 if (!CSRankings.subsetting(kids)) {
                     const str = "input[name=" + item + "]";
-                    jQuery(str).prop('checked', false);
-                    jQuery(str).prop('disabled', false);
+                    $(str).prop('checked', false);
+                    $(str).prop('disabled', false);
                     kids.forEach((item) => {
-                        jQuery("input[name=" + item + "]").prop('checked', false);
+                        $("input[name=" + item + "]").prop('checked', false);
                     });
                 }
             }
@@ -1416,7 +1444,7 @@ class CSRankings {
         let numCheckedAbove = 0;
         aboveFold.forEach((elem) => {
             let str = "input[name=" + elem + "]";
-            let val = jQuery(str).prop('checked');
+            let val = $(str).prop('checked');
             if (val) {
                 numCheckedAbove++;
             }
@@ -1424,7 +1452,7 @@ class CSRankings {
         let numCheckedBelow = 0;
         belowFold.forEach((elem) => {
             let str = "input[name=" + elem + "]";
-            let val = jQuery(str).prop('checked');
+            let val = $(str).prop('checked');
             if (val) {
                 numCheckedBelow++;
             }
@@ -1454,7 +1482,7 @@ class CSRankings {
         for (let i = 0; i < this.fields.length; i++) {
             const str = 'input[name=' + this.fields[i] + ']';
             const field = this.fields[i];
-            jQuery(str).click(() => {
+            $(str).click(() => {
                 let updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
@@ -1466,7 +1494,7 @@ class CSRankings {
                     let anyChecked = 0;
                     let allChecked = 1;
                     CSRankings.childMap[parent].forEach((k) => {
-                        let val = jQuery('input[name=' + k + ']').prop('checked');
+                        let val = $('input[name=' + k + ']').prop('checked');
                         anyChecked |= val;
                         // allChcked means all top tier conferences
                         // are on and all next tier conferences are
@@ -1481,27 +1509,27 @@ class CSRankings {
                         }
                     });
                     // Activate parent if any checked.
-                    jQuery(strparent).prop('checked', anyChecked);
+                    $(strparent).prop('checked', anyChecked);
                     // Mark the parent as disabled unless all are checked.
                     if (!anyChecked || allChecked) {
-                        jQuery(strparent).prop('disabled', false);
+                        $(strparent).prop('disabled', false);
                     }
                     if (anyChecked && !allChecked) {
-                        jQuery(strparent).prop('disabled', true);
+                        $(strparent).prop('disabled', true);
                     }
                 }
                 else {
                     // Parent: activate or deactivate all children.
-                    let val = jQuery(str).prop('checked');
+                    let val = $(str).prop('checked');
                     if (field in CSRankings.childMap) {
                         for (let child of CSRankings.childMap[field]) {
                             const strchild = 'input[name=' + child + ']';
                             if (!(child in CSRankings.nextTier)) {
-                                jQuery(strchild).prop('checked', val);
+                                $(strchild).prop('checked', val);
                             }
                             else {
                                 // Always deactivate next tier conferences.
-                                jQuery(strchild).prop('checked', false);
+                                $(strchild).prop('checked', false);
                             }
                         }
                     }
@@ -1530,10 +1558,11 @@ class CSRankings {
         }
     }
 }
+CSRankings.minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',
