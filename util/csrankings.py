@@ -289,7 +289,7 @@ TVCG_Vis_Volume = {2021: (27, 1),
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {2021: (27, 4),
                   2020: (26, 4),
-                  2019: (25, 4),
+                  2019: (25, 5),
                   2018: (24, 4),
                   2017: (23, 4),
                   2016: (22, 4),
