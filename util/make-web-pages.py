@@ -1,6 +1,6 @@
 # Identify faculty home pages.
 import pkg_resources
-pkg_resources.require("google==1.9.3")
+# pkg_resources.require("google==1.9.3")
 import google
 import codecs
 import sys

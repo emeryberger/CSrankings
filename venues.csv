@@ -1,0 +1,115 @@
+area,canonical,alternate,default
+"act","STOC","STOC",True
+"act","FOCS","FOCS",True
+"act","SODA","SODA",True
+"ai","AAAI","AAAI",True
+"ai","AAAI","AAAI/IAAI",True
+"ai","IJCAI","IJCAI",True
+"arch","ISCA","ISCA",True
+"arch","MICRO","MICRO",True
+"arch","ASPLOS","ASPLOS",True
+"bed","RTSS","RTSS",True
+"bed","RTAS","RTAS",True
+"bed","RTAS","IEEE Real-Time and Embedded Technology and Applications Symposium",True
+"bed","EMSOFT","EMSOFT",True
+"bio","RECOMB","RECOMB",True
+"bio","ISMB","ISMB",True
+"bio","Bioinformatics","Bioinformatics",True
+"bio","ISMB","ISMB/ECCB (Supplement of Bioinformatics)",True
+"bio","ISMB","Bioinformatics [ISMB/ECCB]",True
+"bio","ISMB","ISMB (Supplement of Bioinformatics)",True
+"chi","CHI","CHI",True
+"chi","UbiComp","UbiComp",True
+"chi","UbiComp","Ubicomp",True
+"chi","Pervasive","Pervasive Computing",True
+"chi","IMWUT","Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",True
+"chi","UIST","UIST",True
+"comm","SIGCOMM","SIGCOMM",True
+"comm","INFOCOM","INFOCOM",True
+"comm","NSDI","NSDI",True
+"crypt","CRYPTO","CRYPTO",True
+"crypt","CRYPTO","CRYPTO (1)",True
+"crypt","CRYPTO","CRYPTO (2)",True
+"crypt","CRYPTO","CRYPTO (3)",True
+"crypt","EUROCRYPT","EUROCRYPT",True
+"crypt","EUROCRYPT","EUROCRYPT (1)",True
+"crypt","EUROCRYPT","EUROCRYPT (2)",True
+"crypt","EUROCRYPT","EUROCRYPT (3)",True
+"da","ICCAD","ICCAD",True
+"da","DAC","DAC",True
+"graph","ACM Trans. Graph.","ACM Trans. Graph.",True
+"graph","SIGGRAPH","SIGGRAPH",True
+"hpc","SC","SC",True
+"hpc","HPDC","HPDC",True
+"hpc","ICS","ICS",True
+"ir","WWW","WWW",True
+"ir","SIGIR","SIGIR",True
+"log","CAV","CAV",True
+"log","CAV","CAV (1)",True
+"log","CAV","CAV (2)",True
+"log","LICS","LICS",True
+"log","LICS","CSL-LICS",True
+"metrics","SIGMETRICS","SIGMETRICS",True
+"metrics","SIGMETRICS","SIGMETRICS/Performance",True
+"metrics","IMC","IMC",True
+"metrics","IMC","Internet Measurement Conference",True
+"mlmining","NIPS","NIPS",True
+"mlmining","ICML","ICML",True
+"mlmining","ICML","ICML (1)",True
+"mlmining","ICML","ICML (2)",True
+"mlmining","ICML","ICML (3)",True
+"mlmining","KDD","KDD",True
+"mobile","MobiSys","MobiSys",True
+"mobile","MobiCom","MobiCom",True
+"mobile","MobiCom","MOBICOM",True
+"mobile","SenSys","SenSys",True
+"mod","VLDB","VLDB",True
+"mod","VLDB","PVLDB",True
+"mod","SIGMOD Conference","SIGMOD Conference",True
+"nlp","EMNLP","EMNLP",True
+"nlp","ACL","ACL",True
+"nlp","ACL","ACL (1)",True
+"nlp","ACL","ACL (2)",True
+"nlp","ACL","ACL (4)",True
+"nlp","NAACL","NAACL",True
+"nlp","NAACL","HLT-NAACL",True
+"nlp","NAACL","NAACL-HLT",True
+"nlp","ACL","ACL/IJCNLP",True
+"nlp","ACL","COLING-ACL",True
+"nlp","EMNLP","EMNLP-CoNLL",True
+"nlp","EMNLP","HLT/EMNLP",True
+"ops","SOSP","SOSP",True
+"ops","OSDI","OSDI",True
+"ops","EuroSys","EuroSys",True
+"ops","USENIX Annual Technical Conference","USENIX Annual Technical Conference",True
+"ops","USENIX Annual Technical Conference","USENIX Annual Technical Conference, General Track",True
+"plan","POPL","POPL",True
+"plan","PLDI","PLDI",True
+"robotics","ICRA","ICRA",True
+"robotics","ICRA","ICRA (1)",True
+"robotics","ICRA","ICRA (2)",True
+"robotics","IROS","IROS",True
+"robotics","Robotics: Science and Systems","Robotics: Science and Systems",True
+"sec","IEEE Symposium on Security and Privacy","IEEE Symposium on Security and Privacy",True
+"sec","ACM Conference on Computer and Communications Security","ACM Conference on Computer and Communications Security",True
+"sec","USENIX Security","USENIX Security Symposium",True
+"sec","USENIX Security","USENIX Security",True
+"soft","ICSE","ICSE",True
+"soft","ICSE","ICSE (1)",True
+"soft","ICSE","ICSE (2)",True
+"soft","SIGSOFT FSE","SIGSOFT FSE",True
+"soft","SIGSOFT FSE","ESEC/SIGSOFT FSE",True
+"vis","IEEE Visualization","IEEE Visualization",True
+"vis","VR","VR",True
+"vis","IEEE Trans. Vis. Comput. Graph.","IEEE Trans. Vis. Comput. Graph.",True
+"vision","CVPR","CVPR",True
+"vision","CVPR","CVPR (1)",True
+"vision","CVPR","CVPR (2)",True
+"vision","ICCV","ICCV",True
+"vision","ECCV","ECCV (1)",True
+"vision","ECCV","ECCV (2)",True
+"vision","ECCV","ECCV (3)",True
+"vision","ECCV","ECCV (4)",True
+"vision","ECCV","ECCV (5)",True
+"vision","ECCV","ECCV (6)",True
+"vision","ECCV","ECCV (7)",True
