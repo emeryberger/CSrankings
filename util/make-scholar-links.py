@@ -99,15 +99,15 @@ def searchAuthor(name):
 #exit(0)
 
 def getScholarID(name):
-    print("["+me+"] Checking "+name)
+    #print("["+me+"] Checking "+name)
     if name in scholarLinks:
         # Already there.
         if scholarLinks[name] != "NOSCHOLARPAGE":
-            print("["+me+"] already found")
+            #print("["+me+"] already found")
             return scholarLinks[name]
     if name in checked:
         if now - float(checked[name]) < expirationDate:
-            print("["+me+"] last visited too recently.")
+            #print("["+me+"] last visited too recently.")
             return None
     origname = name
     # Trim off any trailing numerical suffixes.
@@ -121,15 +121,16 @@ def getScholarID(name):
     try:
         print("searching for "+name)
         res = searchAuthor(name)
-        print(res)
+        #print(res)
         if res:
             (author,link) = res
-            print("found "+author+", "+link+" (for " + name + ")")
+            #print("found "+author+", "+link+" (for " + name + ")")
             if author == name:
                 scholarLinks[origname] = link
                 return link
         else:
-            print("SEARCH FAILED")
+            pass
+            # print("SEARCH FAILED")
 #        search_query = scholarly.search_author(name)
 #        name = name.decode('utf8')
 #        author = next(search_query).fill()
@@ -183,7 +184,7 @@ for name in facultydictkeys:
     newvisited[name] = s
     
    
-    print("["+me+"] checking "+name+" at "+dept)
+    # print("["+me+"] checking "+name+" at "+dept)
     id = getScholarID(name)
     if id == None:
         # Try to remove a middle name.
@@ -193,12 +194,13 @@ for name in facultydictkeys:
             id = getScholarID(nomiddlename)
     if id == None:
         continue
-    print("found "+id)
+    #print("found "+id)
     str = name + ", " + dept
-    print("["+me+"] "+str)
+    #print("["+me+"] "+str)
     newscholarLinks[name] = id
 #    name = name.decode('utf8')
-    print("["+me+"] " + name + "," + id)
+    #print("["+me+"] " + name + "," + id)
+    print(n+","+facultydict[n]+","+homepages[n]+","+newscholarLinks[n]+"\n")
     # actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
     
     sys.stdout.flush()
