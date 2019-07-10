@@ -249,6 +249,18 @@ class CSRankings {
             });
         });
     }
+    // We have scrolled: increase the number we rank.
+    static updateMinimum(obj) {
+        if (CSRankings.minToRank <= 500) {
+            let t = obj.scrollTop;
+            CSRankings.minToRank = 5000;
+            CSRankings.getInstance().rank();
+            return t;
+        }
+        else {
+            return 0;
+        }
+    }
     // Return the singleton corresponding to this object.
     static getInstance() {
         return CSRankings.theInstance;
@@ -698,6 +710,14 @@ class CSRankings {
                     return false;
                 }
                 break;
+            case "africa":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "africa") {
+                    return false;
+                }
+                break;
             case "world":
                 break;
         }
@@ -755,9 +775,6 @@ class CSRankings {
         const endyear = parseInt($("#toyear").find(":selected").text());
         this.authorAreas = {};
         for (let r in this.authors) {
-            if (!this.authors.hasOwnProperty(r)) {
-                continue;
-            }
             let { area } = this.authors[r];
             if (area in CSRankings.nextTier) {
                 continue;
@@ -1001,10 +1018,9 @@ class CSRankings {
         }
         return univtext;
     }
-    buildOutputString(numAreas, deptCounts, univtext) {
+    buildOutputString(numAreas, deptCounts, univtext, minToRank) {
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
-        let minToRank = 99999; // parseInt($("#minToRank").find(":selected").val());
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
             + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
@@ -1125,9 +1141,20 @@ class CSRankings {
         this.computeStats(deptNames, numAreas, currentWeights);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        const s = this.buildOutputString(numAreas, deptCounts, univtext);
+        const s = this.buildOutputString(numAreas, deptCounts, univtext, CSRankings.minToRank);
         /* Finally done. Redraw! */
         $("#success").html(s);
+        $("div").scroll(function () {
+            //		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+            // If we are nearly at the bottom, update the minimum.
+            if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
+                let t = CSRankings.updateMinimum(this);
+                if (t) {
+                    //			console.log("scrolling to " + t);
+                    $("div").scrollTop(t);
+                }
+            }
+        });
         if (!update) {
             this.navigoRouter.pause();
         }
@@ -1531,10 +1558,11 @@ class CSRankings {
         }
     }
 }
+CSRankings.minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',
