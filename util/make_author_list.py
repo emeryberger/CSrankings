@@ -4,8 +4,35 @@
 
 import json
 import csv
+from optparse import OptionParser
 
-filename = 'articles.json';
+# Default filename.
+filename = 'articles.json'
+start_year = 2000
+end_year = 2020
+
+parser = OptionParser()
+
+parser.add_option("-f", "--file", dest="filename",
+                  help="read data from FILE", metavar="FILE")
+
+parser.add_option("-s", "--start-year", dest="start_year",
+                  help="start year for counting publications", metavar="START_YEAR")
+
+parser.add_option("-e", "--end-year", dest="end_year",
+                  help="end year for counting publications", metavar="END_YEAR")
+
+(options, args) = parser.parse_args()
+
+if options.filename:
+    filename = options.filename
+
+if options.start_year:
+    start_year = int(options.start_year)
+
+if options.end_year:
+    end_year = int(options.end_year)
+    
 
 with open(filename, 'r') as f:
     datastore = json.load(f)
@@ -30,21 +57,26 @@ count = {} # dict: count[name][conf] = total count of pubs by name in that confe
 # Note that articles.json is sorted by author name and then by date.
 while (i < len(datastore)):
     name = datastore[i]["name"]
+    totalPubs = 0
     year[name] = {}
     count[name] = {}
     # Collect all conference data for this author.
     while ((i < len(datastore)) and (datastore[i]["name"] == name)):
         conf = datastore[i]["conf"]
+        pubyear = int(datastore[i]["year"])
         if (conf in confdict):
-            year[name][conf] = min(year[name].get(conf, 99999), datastore[i]["year"])
-            count[name][conf] = count[name].get(conf, 0) + 1
+            if (pubyear >= start_year) and (pubyear <= end_year):
+                year[name][conf] = min(year[name].get(conf, 99999), pubyear)
+                count[name][conf] = count[name].get(conf, 0) + 1
+                totalPubs += 1
         i += 1
     # Spit out a CSV record.
-    print(name + ",", end='')
-    for c in conflist:
-        if c in year[name]:
-            print(str(year[name][c]) + "," + str(count[name][c]) + ",", end='')
-        else:
-            print("0,0,", end='')
-    print('NA')
+    if totalPubs > 0:
+        print(name + ",", end='')
+        for c in conflist:
+            if c in year[name]:
+                print(str(year[name][c]) + "," + str(count[name][c]) + ",", end='')
+            else:
+                print("0,0,", end='')
+        print('NA')
 
