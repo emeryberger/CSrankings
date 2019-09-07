@@ -178,7 +178,7 @@ areadict = {
 #            'EMNLP-CoNLL',  # -- in 2012 was joint
 #            'HLT/EMNLP',  # -- in 2005 was joint
 #            ],
-    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP'],
+    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP'],
     'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
     'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT', 'NAACL-HLT (1)'],
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
