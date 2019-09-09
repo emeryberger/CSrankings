@@ -39,7 +39,7 @@ interface Author {
 
 interface CountryInfo {
 	readonly institution: string;
-	readonly region: "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "world";
+	readonly region: "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "africa" | "world";
 };
 
 interface Alias {
@@ -82,13 +82,26 @@ class CSRankings {
 
 	private static theInstance: CSRankings; // singleton for this object
 
+    private static minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
 	public static readonly areas: Array<string> = [];
 	public static readonly topLevelAreas: { [key: string]: string } = {};
 	public static readonly topTierAreas: { [key: string]: string } = {};
-	public static readonly regions: Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"]
+    public static readonly regions: Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
 
 	private navigoRouter: Navigo;
 
+    // We have scrolled: increase the number we rank.
+    public static updateMinimum(obj : any) : number {
+	if (CSRankings.minToRank <= 500) {
+	    let t = obj.scrollTop;
+	    CSRankings.minToRank = 5000;
+	    CSRankings.getInstance().rank();
+	    return t;
+	} else {
+	    return 0;
+	}
+    }
+    
 	// Return the singleton corresponding to this object.
 	public static getInstance(): CSRankings {
 		return CSRankings.theInstance;
@@ -465,7 +478,8 @@ class CSRankings {
 		name = name.replace(/Á/g, "=Aacute=");
 		name = name.replace(/á/g, "=aacute=");
 		name = name.replace(/è/g, "=egrave=");
-		name = name.replace(/é/g, "=eacute=");
+		name = name.replace(/é/g, "=eacute=");		
+		name = name.replace(/í/g, "=iacute=");
 		name = name.replace(/ï/g, "=iuml=");
 		name = name.replace(/ó/g, "=oacute=");
 		name = name.replace(/ç/g, "=ccedil=");
@@ -754,7 +768,7 @@ class CSRankings {
 			s += "<br />";
 			count += 1;
 		});
-		$("#progress").html(s);
+	    $("#progress").html(s);
 	}
 
 
@@ -913,6 +927,14 @@ class CSRankings {
 					return false;
 				}
 				break;
+			case "africa":
+				if (!(dept in this.countryInfo)) { // USA
+					return false;
+				}
+				if (this.countryInfo[dept] != "africa") {
+					return false;
+				}
+				break;
 			case "world":
 				break;
 		}
@@ -973,9 +995,6 @@ class CSRankings {
 		const endyear = parseInt($("#toyear").find(":selected").text());
 		this.authorAreas = {}
 		for (let r in this.authors) {
-			if (!this.authors.hasOwnProperty(r)) {
-				continue;
-			}
 			let { area } = this.authors[r];
 			if (area in CSRankings.nextTier) {
 				continue;
@@ -1246,11 +1265,11 @@ class CSRankings {
 
 
 	private buildOutputString(numAreas: number,
-		deptCounts: { [key: string]: number },
-		univtext: { [key: string]: string }): string {
+				  deptCounts: { [key: string]: number },
+				  univtext: { [key: string]: string },
+				  minToRank: number): string {
 		let s = this.makePrologue();
 		/* Show the top N (with more if tied at the end) */
-		let minToRank = 99999; // parseInt($("#minToRank").find(":selected").val());
 
 		s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
 			+ '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
@@ -1396,10 +1415,22 @@ class CSRankings {
 	    /* Start building up the string to output. */
 	    const s = this.buildOutputString(numAreas,
 					     deptCounts,
-					     univtext);
+					     univtext,
+					    CSRankings.minToRank);
 	    
 	    /* Finally done. Redraw! */
 	    $("#success").html(s);
+	    $("div").scroll(function() {
+//		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+		// If we are nearly at the bottom, update the minimum.
+		if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
+		    let t = CSRankings.updateMinimum(this);
+		    if (t) {
+//			console.log("scrolling to " + t);
+			$("div").scrollTop(t);
+		    }
+		}
+	    });
 	    
 	    if (!update) {
 		this.navigoRouter.pause();
