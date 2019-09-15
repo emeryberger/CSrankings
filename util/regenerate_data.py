@@ -212,13 +212,13 @@ def dump_it():
     global facultydict
     with open('generated-author-info.csv','w') as f:
         f.write('"name","dept","area","count","adjustedcount","year"\n')
-        authorscores = collections.OrderedDict(sorted(authorscores.iteritems()))
-        for ((authorName, area, year), count) in authorscores.iteritems():
+        authorscores = collections.OrderedDict(sorted(authorscores.items()))
+        for ((authorName, area, year), count) in authorscores.items():
             # count = authorscores[(authorName, area, year)]
             countAdjusted = authorscoresAdjusted[(authorName, area, year)]
-            f.write(authorName.encode('utf-8'))
+            f.write(authorName)
             f.write(',')
-            f.write((facultydict[authorName].encode('utf-8')))
+            f.write(facultydict[authorName])
             f.write(',')
             f.write(area)
 #            f.write(',')
@@ -234,9 +234,11 @@ def dump_it():
     with open('articles.json','w') as f:
         z = []
         authlogs = collections.OrderedDict(sorted(authlogs.items()))
-        for v, l in authlogs.iteritems():
+        for v, l in authlogs.items():
             if v in interestingauthors:
                 for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')):
+                    s['name'] = s['name'].decode('utf-8')
+                    s['title'] = s['title'].decode('utf-8')
                     z.append(s)
         json.dump(z, f, indent=2)
 
