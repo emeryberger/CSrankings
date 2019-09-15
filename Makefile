@@ -10,7 +10,7 @@ TARGETS = csrankings.js generated-author-info.csv
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
 PYTHON = python2.7
-PYPY   = pypy
+PYPY   = python # pypy
 
 all: generated-author-info.csv csrankings.js # fix-affiliations home-pages scholar-links
 
