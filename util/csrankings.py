@@ -13,7 +13,7 @@ import csv
 import re
 import sys
 import operator
-from builtins import str
+#from builtins import str
 
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
