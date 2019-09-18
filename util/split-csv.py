@@ -17,17 +17,17 @@ def csv2dict_str_str(fname):
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
     return d
 
-with open('csrankings.csv', mode='rb') as infile:
+with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
-    with open('homepages.csv', mode='wb') as homepages:
+    with open('homepages.csv', mode='w') as homepages:
         homefieldnames = ['name', 'homepage']
         homepageWriter = csv.DictWriter(homepages, fieldnames=homefieldnames)
         homepageWriter.writeheader()
-        with open('scholar.csv', mode='wb') as scholarlinks:
+        with open('scholar.csv', mode='w') as scholarlinks:
             scholarfieldnames = ['name', 'scholarid']
             scholarWriter = csv.DictWriter(scholarlinks, fieldnames=scholarfieldnames)
             scholarWriter.writeheader()
-            with open('faculty-affiliations.csv', 'wb') as facultyaffs:
+            with open('faculty-affiliations.csv', 'w') as facultyaffs:
                 facfieldnames = ['name', 'affiliation']
                 facWriter = csv.DictWriter(facultyaffs, fieldnames=facfieldnames)
                 facWriter.writeheader()
