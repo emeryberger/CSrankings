@@ -76,7 +76,7 @@ areadict = {
     'popl' : ['POPL'], 
     'pldi' : ['PLDI'],
     # "Next tier" - see csrankings.ts
-    'oopsla' : ['OOPSLA'], # Next tier
+    'oopsla' : ['OOPSLA', 'OOPSLA/ECOOP'], # Next tier; note in 1990 the conference was merged with ECOOP
     'icfp'   : ['ICFP'],   # Next tier
     'pacmpl' : ['PACMPL'], # Special PACMPL handling below
     # SIGSOFT
