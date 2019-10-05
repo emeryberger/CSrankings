@@ -63,7 +63,7 @@ with open('dblp-aliases.csv', mode='r') as infile:
 # Read in generated data file. We use this to weigh things that need fixing.
 generated = {}
 
-with open('generated-author-info.csv', mode='rb') as infile:
+with open('generated-author-info.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         generated[row['name']] = generated.get(row['name'], 0) + float(row['count'])
@@ -71,7 +71,7 @@ with open('generated-author-info.csv', mode='rb') as infile:
 
 # Read in CSrankings file.
 csrankings = {}
-with open('csrankings.csv', mode='rb') as infile:
+with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         csrankings[row['name']] = { 'affiliation' : row['affiliation'],
@@ -220,11 +220,11 @@ for sch in scholars:
 for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
     maxscore = max(generated.get(name, 0) for name in n)
     if maxscore > 0:
-        mapscores = map(lambda name: (name, generated.get(name, 0)), n)
+        mapscores = list(map(lambda name: (name, generated.get(name, 0)), n))
         # No point in trying to fix clashes if they don't appear in the output of CSrankings
-        print("Google scholar entry " + reverse_scholar[n[0]] + " clashes and scores:" + str(mapscores))
-        affiliations = map(lambda (name, _): csrankings[name]['affiliation'], mapscores)
-        affiliations.sort()
+        print("Google scholar entry " + str(reverse_scholar[n[0]]) + " clashes and scores:" + str(mapscores))
+        affiliations = list(map(lambda nv: csrankings[nv[0]]['affiliation'], mapscores))
+        print(affiliations)
         if affiliations[0] == affiliations[-1]:
             # All affiliations the same.
             for (n, v) in mapscores:
