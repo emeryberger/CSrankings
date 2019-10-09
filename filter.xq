@@ -101,6 +101,7 @@
 //inproceedings[booktitle="PLDI"],
 //inproceedings[booktitle="ICFP"],
 //inproceedings[booktitle="OOPSLA"],
+//inproceedings[booktitle="OOPSLA/ECOOP"],
 //inproceedings[booktitle="ISCA"],
 //inproceedings[booktitle="MICRO"],
 //inproceedings[booktitle="HPCA"],
