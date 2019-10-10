@@ -2,6 +2,10 @@
 
 Thanks for contributing to CSrankings! Here are some guidelines to getting your pull request accepted.
 
+_Do not use Excel to edit any .csv files; Excel incorrectly tries to
+convert some Google Scholar entries to formulas, corrupting the
+database. Use a text editor like emacs or NotePad instead._
+
 **Inclusion criteria**
 
 - [ ] Make sure that any faculty you add meet the inclusion
