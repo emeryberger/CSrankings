@@ -443,14 +443,14 @@ class CSRankings {
             let value = this.authorAreas[uname][key];
             // Use adjusted count if this is for a department.
             /*
-                DISABLED so department charts are invariant.
-    
-            if (uname in this.stats) {
-            value = this.areaDeptAdjustedCount[key+uname] + 1;
-            if (value == 1) {
-                value = 0;
-            }
-            }
+              DISABLED so department charts are invariant.
+              
+              if (uname in this.stats) {
+              value = this.areaDeptAdjustedCount[key+uname] + 1;
+              if (value == 1) {
+              value = 0;
+              }
+              }
             */
             // Round it to the nearest 0.1.
             value = Math.round(value * 10) / 10;
@@ -566,21 +566,21 @@ class CSRankings {
         $("#progress").html(s);
     }
     /*
-        private loadAliases(aliases: { [key: string]: string },
-            cont: () => void): void {
-            Papa.parse(this.aliasFile, {
-                header: true,
-                download: true,
-                complete: (results) => {
-                    const data: any = results.data;
-                    const d = data as Array<Alias>;
-                    for (let aliasPair of d) {
-                        aliases[aliasPair.alias] = aliasPair.name;
-                    }
-                    CSRankings.promise(cont);
-                }
-            });
-        }
+      private loadAliases(aliases: { [key: string]: string },
+      cont: () => void): void {
+      Papa.parse(this.aliasFile, {
+      header: true,
+      download: true,
+      complete: (results) => {
+      const data: any = results.data;
+      const d = data as Array<Alias>;
+      for (let aliasPair of d) {
+      aliases[aliasPair.alias] = aliasPair.name;
+      }
+      CSRankings.promise(cont);
+      }
+      });
+      }
     */
     loadTuring(turing, cont) {
         Papa.parse(this.turingFile, {
@@ -753,12 +753,12 @@ class CSRankings {
                 return univagg[b] - univagg[a];
             }
             /*
-            if (univagg[a] > univagg[b]) {
-                return -1;
-            }
-            if (univagg[b] > univagg[a]) {
-                return 1;
-            }
+              if (univagg[a] > univagg[b]) {
+              return -1;
+              }
+              if (univagg[b] > univagg[a]) {
+              return 1;
+              }
             */
             if (a < b) {
                 return -1;
@@ -787,10 +787,10 @@ class CSRankings {
             /*
               DISABLING weight selection so all pie charts look the
               same regardless of which areas are currently selected:
-    
-            if (weights[theArea] === 0) {
-            continue;
-            }
+              
+              if (weights[theArea] === 0) {
+              continue;
+              }
             */
             const theCount = parseFloat(count);
             if (!(name in this.authorAreas)) {
@@ -928,11 +928,11 @@ class CSRankings {
                 if (fc[b] === fc[a]) {
                     return this.compareNames(a, b);
                     /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                                let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                                if (fb === fa) {
-                                return this.compareNames(a, b);
-                                }
-                                return fb - fa; */
+                            let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                            if (fb === fa) {
+                            return this.compareNames(a, b);
+                            }
+                            return fb - fa; */
                 }
                 else {
                     return fc[b] - fc[a];
@@ -1040,7 +1040,7 @@ class CSRankings {
             // Now sort them,
             let keys2 = this.sortIndex(this.stats);
             /* Display rankings until we have shown `minToRank` items or
-               while there is a tie (those all get the same rank). */
+           while there is a tie (those all get the same rank). */
             for (let ind = 0; ind < keys2.length; ind++) {
                 const dept = keys2[ind];
                 const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
@@ -1083,14 +1083,14 @@ class CSRankings {
             }
             s += "</tbody>" + "</table>" + "<br />";
             /*
-              if (this.allowRankingChange) {
-              // Disable option to change ranking approach for now.
-              if (this.useDenseRankings) {
-              s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
-              } else {
-              s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
-              }
-              }
+          if (this.allowRankingChange) {
+          // Disable option to change ranking approach for now.
+          if (this.useDenseRankings) {
+          s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
+          } else {
+          s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+          }
+          }
             */
             s += "</div>" + "</div>" + "\n";
             s += "<br>" + "</body>" + "</html>";
@@ -1305,33 +1305,33 @@ class CSRankings {
         return start;
     }
     /*
-        public static geoCheck(): void {
-            // Figure out which country clients are coming from and set
-            // the default region accordingly.
-            let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
-            $.getJSON(theUrl, (result) => {
-                switch (result.country_code) {
-                    case "US":
-                    case "CN":
-                    case "IN":
-                    case "KR":
-                    case "JP":
-                    case "TW":
-                    case "SG":
-                        $("#regions").val("USA");
-                        CSRankings.getInstance().rank();
-                        break;
-                    default:
-                        $("#regions").val("world");
-                        CSRankings.getInstance().rank();
-                        break;
-                }
-            }).fail(() => {
-                // If we can't find a location (e.g., because this site is
-                // blocked by an ad blocker), just rank anyway.
-                CSRankings.getInstance().rank();
-            });
-        }
+      public static geoCheck(): void {
+      // Figure out which country clients are coming from and set
+      // the default region accordingly.
+      let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
+      $.getJSON(theUrl, (result) => {
+      switch (result.country_code) {
+      case "US":
+      case "CN":
+      case "IN":
+      case "KR":
+      case "JP":
+      case "TW":
+      case "SG":
+      $("#regions").val("USA");
+      CSRankings.getInstance().rank();
+      break;
+      default:
+      $("#regions").val("world");
+      CSRankings.getInstance().rank();
+      break;
+      }
+      }).fail(() => {
+      // If we can't find a location (e.g., because this site is
+      // blocked by an ad blocker), just rank anyway.
+      CSRankings.getInstance().rank();
+      });
+      }
     */
     navigation(params, query) {
         if (params !== null) {
