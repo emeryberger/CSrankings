@@ -942,29 +942,30 @@ class CSRankings {
 		     }
 
     private activateFields(value: boolean,
-			   fields: Array<number>): boolean {
-			       for (let i = 0; i < fields.length; i++) {
-				   const item = this.fields[fields[i]];
-				   const str = "input[name=" + item + "]";
-				   $(str).prop('checked', value);
-				   if (item in CSRankings.childMap) {
-				       // It's a parent.
-				       $(str).prop('disabled', false);
-				       // Activate / deactivate all children as appropriate.
-				       CSRankings.childMap[item].forEach((k) => {
-					   const str = 'input[name=' + k + ']';
-					   if (k in CSRankings.nextTier) {
-					       $(str).prop('checked', false);
-					   } else {
-					       $(str).prop('checked', value);
-					   }
-				       });
-				   }
-			       }
-			       this.rank();
-			       return false;
-			   }
-
+			   fields: Array<number>): boolean
+    {
+	for (let i = 0; i < fields.length; i++) {
+	    const item = this.fields[fields[i]];
+	    const str = "input[name=" + item + "]";
+	    $(str).prop('checked', value);
+	    if (item in CSRankings.childMap) {
+		// It's a parent.
+		$(str).prop('disabled', false);
+		// Activate / deactivate all children as appropriate.
+		CSRankings.childMap[item].forEach((k) => {
+		    const str = 'input[name=' + k + ']';
+		    if (k in CSRankings.nextTier) {
+			$(str).prop('checked', false);
+		    } else {
+			$(str).prop('checked', value);
+		    }
+		});
+	    }
+	}
+	this.rank();
+	return false;
+    }
+    
     private sortIndex(univagg: { [key: string]: number }): string[] {
 	let keys = Object.keys(univagg);
 	keys.sort((a, b) => {
@@ -1042,58 +1043,59 @@ class CSRankings {
 			     deptCounts: { [key: string]: number },
 			     deptNames: { [key: string]: Array<string> },
 			     facultycount: { [key: string]: number },
-			     facultyAdjustedCount: { [key: string]: number }): void {
-				 /* contains an author name if that author has been processed. */
-				 let visited: { [key: string]: boolean } = {};
-				 for (let r in this.authors) {
-				     if (!this.authors.hasOwnProperty(r)) {
-					 continue;
-				     }
-				     let auth = this.authors[r];
-				     let dept = auth.dept;
-				     //	    if (!(dept in regionMap)) {
-				     if (!this.inRegion(dept, regions)) {
-					 continue;
-				     }
-				     let area = auth.area;
-				     if (weights[area] === 0) {
-					 continue;
-				     }
-				     let year = auth.year;
-				     if ((year < startyear) || (year > endyear)) {
-					 continue;
-				     }
-				     if (typeof dept === 'undefined') {
-					 continue;
-				     }
-				     let name = auth.name;
-				     // If this area is a child area, accumulate totals for parent.
-				     if (area in CSRankings.parentMap) {
-					 area = CSRankings.parentMap[area];
-				     }
-				     const areaDept: string = area + dept;
-				     if (!(areaDept in this.areaDeptAdjustedCount)) {
-					 this.areaDeptAdjustedCount[areaDept] = 0;
-				     }
-				     const count: number = parseInt(this.authors[r].count);
-				     const adjustedCount: number = parseFloat(this.authors[r].adjustedcount);
-				     this.areaDeptAdjustedCount[areaDept] += adjustedCount;
-				     /* Is this the first time we have seen this person? */
-				     if (!(name in visited)) {
-					 visited[name] = true;
-					 facultycount[name] = 0;
-					 facultyAdjustedCount[name] = 0;
-					 if (!(dept in deptCounts)) {
-					     deptCounts[dept] = 0;
-					     deptNames[dept] = <Array<string>>[];
-					 }
-					 deptNames[dept].push(name);
-					 deptCounts[dept] += 1;
-				     }
-				     facultycount[name] += count;
-				     facultyAdjustedCount[name] += adjustedCount;
-				 }
-			     }
+			     facultyAdjustedCount: { [key: string]: number }): void
+    {
+	/* contains an author name if that author has been processed. */
+	let visited: { [key: string]: boolean } = {};
+	for (let r in this.authors) {
+	    if (!this.authors.hasOwnProperty(r)) {
+		continue;
+	    }
+	    let auth = this.authors[r];
+	    let dept = auth.dept;
+	    //	    if (!(dept in regionMap)) {
+	    if (!this.inRegion(dept, regions)) {
+		continue;
+	    }
+	    let area = auth.area;
+	    if (weights[area] === 0) {
+		continue;
+	    }
+	    let year = auth.year;
+	    if ((year < startyear) || (year > endyear)) {
+		continue;
+	    }
+	    if (typeof dept === 'undefined') {
+		continue;
+	    }
+	    let name = auth.name;
+	    // If this area is a child area, accumulate totals for parent.
+	    if (area in CSRankings.parentMap) {
+		area = CSRankings.parentMap[area];
+	    }
+	    const areaDept: string = area + dept;
+	    if (!(areaDept in this.areaDeptAdjustedCount)) {
+		this.areaDeptAdjustedCount[areaDept] = 0;
+	    }
+	    const count: number = parseInt(this.authors[r].count);
+	    const adjustedCount: number = parseFloat(this.authors[r].adjustedcount);
+	    this.areaDeptAdjustedCount[areaDept] += adjustedCount;
+	    /* Is this the first time we have seen this person? */
+	    if (!(name in visited)) {
+		visited[name] = true;
+		facultycount[name] = 0;
+		facultyAdjustedCount[name] = 0;
+		if (!(dept in deptCounts)) {
+		    deptCounts[dept] = 0;
+		    deptNames[dept] = <Array<string>>[];
+		}
+		deptNames[dept].push(name);
+		deptCounts[dept] += 1;
+	    }
+	    facultycount[name] += count;
+	    facultyAdjustedCount[name] += adjustedCount;
+	}
+    }
 
     /* Compute aggregate statistics. */
     private computeStats(deptNames: { [key: string]: Array<string> },
@@ -1268,92 +1270,93 @@ class CSRankings {
     private buildOutputString(numAreas: number,
 			      deptCounts: { [key: string]: number },
 			      univtext: { [key: string]: string },
-			      minToRank: number): string {
-				  let s = this.makePrologue();
-				  /* Show the top N (with more if tied at the end) */
+			      minToRank: number): string
+    {
+	let s = this.makePrologue();
+	/* Show the top N (with more if tied at the end) */
+	
+	s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
+	    + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
+	    + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
+	    + '</abbr></th></th></tr></thead>';
+	
+	s = s + "<tbody>";
+	/* As long as there is at least one thing selected, compute and display a ranking. */
+	if (numAreas > 0) {
+	    let ties = 1;               /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
+	    let rank = 0;               /* index */
+	    let oldv = 9999999.999;     /* old number - to track ties */
+	    /* Sort the university aggregate count from largest to smallest. */
+	    // First, round the stats.
+	    for (let k in this.stats) {
+		const v = Math.round(10.0 * this.stats[k]) / 10.0;
+		this.stats[k] = v;
+	    }
+	    // Now sort them,
+	    let keys2 = this.sortIndex(this.stats);
+	    /* Display rankings until we have shown `minToRank` items or
+	       while there is a tie (those all get the same rank). */
+	    for (let ind = 0; ind < keys2.length; ind++) {
+		const dept = keys2[ind];
+		const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
 
-				  s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
-				      + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
-				      + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
-				      + '</abbr></th></th></tr></thead>';
+		if ((ind >= minToRank) && (v != oldv)) {
+		    break;
+		}
+		if (v === 0.0) {
+		    break;
+		}
+		if (oldv != v) {
+		    if (this.useDenseRankings) {
+			rank = rank + 1;
+		    } else {
+			rank = rank + ties;
+			ties = 0;
+		    }
+		}
+		const esc = escape(dept);
+		s += "\n<tr><td>" + rank + "&nbsp;</td>";
+		s += "<td>"
+		    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
+		    + "<font color=\"blue\">"
+		    + this.RightTriangle
+		    + "</font>"
+		    + "</span>";
 
-				  s = s + "<tbody>";
-				  /* As long as there is at least one thing selected, compute and display a ranking. */
-				  if (numAreas > 0) {
-				      let ties = 1;               /* number of tied entries so far (1 = no tie yet); used to implement "competition rankings" */
-				      let rank = 0;               /* index */
-				      let oldv = 9999999.999;     /* old number - to track ties */
-				      /* Sort the university aggregate count from largest to smallest. */
-				      // First, round the stats.
-				      for (let k in this.stats) {
-					  const v = Math.round(10.0 * this.stats[k]) / 10.0;
-					  this.stats[k] = v;
-				      }
-				      // Now sort them,
-				      let keys2 = this.sortIndex(this.stats);
-				      /* Display rankings until we have shown `minToRank` items or
-					 while there is a tie (those all get the same rank). */
-				      for (let ind = 0; ind < keys2.length; ind++) {
-					  const dept = keys2[ind];
-					  const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
+		s += "&nbsp;" + dept + "&nbsp;"
+		    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
+		    + this.PieChart + "</span>";
+		s += "</td>";
 
-					  if ((ind >= minToRank) && (v != oldv)) {
-					      break;
-					  }
-					  if (v === 0.0) {
-					      break;
-					  }
-					  if (oldv != v) {
-					      if (this.useDenseRankings) {
-						  rank = rank + 1;
-					      } else {
-						  rank = rank + ties;
-						  ties = 0;
-					      }
-					  }
-					  const esc = escape(dept);
-					  s += "\n<tr><td>" + rank + "&nbsp;</td>";
-					  s += "<td>"
-					      + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
-					      + "<font color=\"blue\">"
-					      + this.RightTriangle
-					      + "</font>"
-					      + "</span>";
-
-					  s += "&nbsp;" + dept + "&nbsp;"
-					      + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
-					      + this.PieChart + "</span>";
-					  s += "</td>";
-
-					  s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
-					  s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
-					  s += "</td>";
-					  s += "</tr>\n";
-					  s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
-					      + esc + '-chart">' + '</div></td></tr>';
-					  s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
-					  ties++;
-					  oldv = v;
-				      }
-				      s += "</tbody>" + "</table>" + "<br />";
-				      /*
-					if (this.allowRankingChange) {
-					// Disable option to change ranking approach for now.
-					if (this.useDenseRankings) {
-					s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
-					} else {
-					s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
-					}
-					}
-				      */
-				      s += "</div>" + "</div>" + "\n";
-				      s += "<br>" + "</body>" + "</html>";
-				  } else {
-				      /* Nothing selected. */
-				      s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
-				  }
-				  return s;
-			      }
+		s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
+		s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
+		s += "</td>";
+		s += "</tr>\n";
+		s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+		    + esc + '-chart">' + '</div></td></tr>';
+		s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
+		ties++;
+		oldv = v;
+	    }
+	    s += "</tbody>" + "</table>" + "<br />";
+	    /*
+	      if (this.allowRankingChange) {
+	      // Disable option to change ranking approach for now.
+	      if (this.useDenseRankings) {
+	      s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
+	      } else {
+	      s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+	      }
+	      }
+	    */
+	    s += "</div>" + "</div>" + "\n";
+	    s += "<br>" + "</body>" + "</html>";
+	} else {
+	    /* Nothing selected. */
+	    s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
+	}
+	return s;
+    }
 
     /* This activates all checkboxes _without_ triggering ranking. */
     private setAllOn(value: boolean = true): void {
