@@ -1040,7 +1040,7 @@ class CSRankings {
             // Now sort them,
             let keys2 = this.sortIndex(this.stats);
             /* Display rankings until we have shown `minToRank` items or
-           while there is a tie (those all get the same rank). */
+               while there is a tie (those all get the same rank). */
             for (let ind = 0; ind < keys2.length; ind++) {
                 const dept = keys2[ind];
                 const v = this.stats[dept]; // Math.round(10.0 * this.stats[dept]) / 10.0;
@@ -1083,14 +1083,14 @@ class CSRankings {
             }
             s += "</tbody>" + "</table>" + "<br />";
             /*
-          if (this.allowRankingChange) {
-          // Disable option to change ranking approach for now.
-          if (this.useDenseRankings) {
-          s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
-          } else {
-          s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
-          }
-          }
+              if (this.allowRankingChange) {
+              // Disable option to change ranking approach for now.
+              if (this.useDenseRankings) {
+              s += '<em><a class="only_these_areas" onClick="deactivateDenseRankings(); return false;"><font color="blue"><b>Using dense rankings. Click to use competition rankings.</b></font></a><em>';
+              } else {
+              s += '<em><a class="only_these_areas" onClick="activateDenseRankings(); return false;"><font color="blue"><b>Using competition rankings. Click to use dense rankings.</b></font></a></em>';
+              }
+              }
             */
             s += "</div>" + "</div>" + "\n";
             s += "<br>" + "</body>" + "</html>";
