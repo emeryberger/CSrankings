@@ -13,7 +13,7 @@ import csv
 import re
 import sys
 import operator
-from builtins import str
+#from builtins import str
 
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
@@ -76,7 +76,7 @@ areadict = {
     'popl' : ['POPL'], 
     'pldi' : ['PLDI'],
     # "Next tier" - see csrankings.ts
-    'oopsla' : ['OOPSLA'], # Next tier
+    'oopsla' : ['OOPSLA', 'OOPSLA/ECOOP'], # Next tier; note in 1990 the conference was merged with ECOOP
     'icfp'   : ['ICFP'],   # Next tier
     'pacmpl' : ['PACMPL'], # Special PACMPL handling below
     # SIGSOFT
@@ -178,9 +178,9 @@ areadict = {
 #            'EMNLP-CoNLL',  # -- in 2012 was joint
 #            'HLT/EMNLP',  # -- in 2005 was joint
 #            ],
-    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP'],
+    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP'],
     'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
-    'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT'],
+    'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT', 'NAACL-HLT (1)'],
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
     'iccv': ['ICCV'],
@@ -212,7 +212,8 @@ EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2018: (34, 13),
+ISMB_Bioinformatics = {2019: (35, 14),
+                       2018: (34, 13),
                        2017: (33, 14),
                        2016: (32, 12),
                        2015: (31, 12),
