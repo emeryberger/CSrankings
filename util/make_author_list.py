@@ -39,13 +39,14 @@ with open(filename, 'r') as f:
 
 # Change this to use other conferences. Note that if they aren't indexed by CSrankings, they won't appear.
 confdict = { "PLDI", "POPL", "ICFP", "OOPSLA" }
+confdict = { "ISCA", "MICRO", "ASPLOS" }
 conflist = list(confdict)
 conflist.sort()
 
 # Generate the header.
 print("name,", end='')
 for k in conflist:
-    print(k+","+k+"year"+","+k+"count"+",",end='')
+    print(k+"year"+","+k+"count"+",",end='')
 print("dummy")
 
 # Now start iterating through the data.
