@@ -188,8 +188,8 @@ Andrea Herrera,Andrea Herrera Suescún
 Andrea Lockerd,Andrea Lockerd Thomaz
 Andrea Thomaz,Andrea Lockerd Thomaz
 Andreas Albrecht,Andreas Alexander Albrecht
-Andreas Stafylopatis,Andreas-Georgios Stafylopatis
 Andrzej Wichert,Andreas Wichert
+Andreas Stafylopatis,Andreas-Georgios Stafylopatis
 Andrei Bulatov,Andrei A. Bulatov
 Andrei C. Jalba,Andrei Jalba
 Andrew Colin Rice,Andrew C. Rice
@@ -537,7 +537,6 @@ Colin Graeme Johnson,Colin G. Johnson
 Colin S. Perkins,Colin Perkins
 Collin F. Lynch,Collin Lynch
 Conor J. Houghton,Conor Houghton
-Costas S. Tzafestas,Costas Tzafestas
 Konstantinos Daskalakis,Constantinos Daskalakis
 Costis Daskalakis,Constantinos Daskalakis
 Constantine Dovrolis,Constantinos Dovrolis
@@ -546,6 +545,7 @@ Kees Huizing,Cornelis Huizing
 Aaron Visaggio,Corrado Aaron Visaggio
 Cory Beard,Cory C. Beard
 Cosmin Eugen Oancea,Cosmin E. Oancea
+Costas S. Tzafestas,Costas Tzafestas
 Craig Macdonald,Craig MacDonald
 Cristian Calude,Cristian S. Calude
 Cristina Gomes Fernandes,Cristina G. Fernandes
@@ -559,6 +559,7 @@ Célio Vinicius Neves de Albuquerque,Célio Vinicius N. de Albuquerque
 César Augusto Fonticielha De Rose,César A. F. De Rose
 César Augusto Missio Marcon,César A. M. Marcon
 Daochuan Hung,D. C. Douglas Hung
+Dimitrios Soudris,D. J. Soudris
 D. Janakiram,D. Janaki Ram
 Dharanipragada Janakiram,D. Janaki Ram
 Janakiram Dharanipragada,D. Janaki Ram
@@ -679,20 +680,17 @@ Dilma M. Da Silva,Dilma Da Silva
 Dilvan A. Moreira,Dilvan de Abreu Moreira
 Dimitra I. Kaklamani,Dimitra-Theodora I. Kaklamani
 Dimitris Askounis,Dimitrios Askounis
-Dimitris Fotakis,Dimitris A. Fotakis
-Dimitris Koutsouris,Dimitrios D. Koutsouris,
-Dimitris Koutsouris,Dimitrios Dionisios Koutsouris
+Dimitris Koutsouris,Dimitrios D. Koutsouris
 Dimitris Makrakis,Dimitrios Makrakis
 Dimitrios Pezaros,Dimitrios P. Pezaros
 Dimitris Pezaros,Dimitrios P. Pezaros
-Dimitrios Soudris,D. J. Soudris
 Dimitris S. Kolovos,Dimitrios S. Kolovos
+Dimitris Fotakis,Dimitris A. Fotakis
 Demetrios Achlioptas,Dimitris Achlioptas
 Dimitris Papailiopoulos,Dimitris S. Papailiopoulos
 Dina Duhovny,Dina Schneidman-Duhovny
 Dinesh Babu J.,Dinesh Babu Jayagopi
 Dionisios N. Pnevmatikatos,Dionisis N. Pnevmatikatos
-Dionisios N. Pnevmatikatos,Dionysios N. Pnevmatikatos
 Divanilson R. Campelo,Divanilson Campelo
 Divy Agrawal,Divyakant Agrawal
 Dmitry Ponomarev,Dmitry V. Ponomarev
@@ -710,6 +708,7 @@ Donald Greenberg,Donald P. Greenberg
 Don Perlis,Donald Perlis
 Don Fussell,Donald S. Fussell
 Donna Cox,Donna J. Cox
+Theodora A. Varvarigou,Dora Varvarigou
 Dorgival Olavo Guedes Neto,Dorgival O. Guedes
 Doron Peled,Doron A. Peled
 Doug Sicker,Douglas C. Sicker
@@ -821,6 +820,7 @@ Vagelis Papalexakis,Evangelos E. Papalexakis
 Vangelis Markakis,Evangelos Markakis
 Eve Elizabeth Hoggan,Eve E. Hoggan
 Evgueni Nikolaevich Smirnov,Evgueni N. Smirnov
+Efstathios D. Sykas,Eystathios D. Sykas
 Fabian Wirth,Fabian R. Wirth
 Fabiano A. Dorça,Fabiano Azevedo Dorça
 Fabiano Passuelo Hessel,Fabiano Hessel
@@ -915,17 +915,16 @@ Geoffrey Werner Challen,Geoffrey Challen
 Geoff Voelker,Geoffrey M. Voelker
 Geoffrey S. Smith,Geoffrey Smith
 Georgios A. Dafoulas,George A. Dafoulas
-Georgios I. Goumas,George I. Goumas
 George R. Buchanan,George Buchanan
 George Robert Buchanan,George Buchanan
 George Darmiton da Cunha Cavalcanti,George D. C. Cavalcanti
+Georgios I. Goumas,George I. Goumas
 George Turkiyyah,George M. Turkiyyah
 George Parissis,George Parisis
 George Traian Amariucai,George T. Amariucai
 George Luiz Medeiros Teodoro,George Teodoro
 Georgi Nedeltchev Gaydadjiev,Georgi Gaydadjiev
 Georgios Fainekos,Georgios E. Fainekos
-Giorgos B. Stamou,Giorgos Stamou
 Giorgos Gousios,Georgios Gousios
 George Tziritas,Georgios Tziritas
 Gerald B. Baumgartner,Gerald Baumgartner
@@ -941,6 +940,7 @@ Gernot R. Müller,Gernot R. Müller-Putz
 Reza Haffari,Gholamreza Haffari
 Gil A. Tidhar,Gil Tidhar
 Gina M. B. Oliveira,Gina Maira Barbosa de Oliveira
+Giorgos B. Stamou,Giorgos Stamou
 Giovanni V. Comarela,Giovanni Comarela
 Gisele Lobo Pappa,Gisele L. Pappa
 Gita Sukthankar,Gita Reese Sukthankar
@@ -954,11 +954,11 @@ Gordon S. Novak Jr.,Gordon S. Novak
 Hui Yang 0001,Grace Hui Yang
 Grace Rumantir,Grace W. Rumantir
 Grant Robert Schoenebeck,Grant Schoenebeck
-Gregoris Mentzas,Gregory Mentzas
 Gregory Wadley,Greg Wadley
 Gregory F. Welch,Greg Welch
 Nils Gregor Leander,Gregor Leander
 Greg Butler,Gregory Butler
+Gregoris Mentzas,Gregory Mentzas
 Greg Ganger,Gregory R. Ganger
 Greg Shakhnarovich,Gregory Shakhnarovich
 Greg W. Wasilkowski,Grzegorz W. Wasilkowski
@@ -1094,6 +1094,7 @@ Inna V. Pivkina,Inna Pivkina
 Jo Iacovides,Ioanna Iacovides
 Ioannis Georgiou Katakis,Ioannis Katakis
 Yiannis Koutis,Ioannis Koutis
+John E. Psarras,Ioannis Psarras
 Ioannis Pavlidis,Ioannis T. Pavlidis
 Ira Kemelmacher,Ira Kemelmacher-Shlizerman
 Isabel Maria Cacho Teixeira,Isabel C. Teixeira
@@ -1274,7 +1275,6 @@ John Grundy 0001,John C. Grundy
 John Chi-Shing Lui,John C. S. Lui
 John Lafferty,John D. Lafferty
 John G. Daugman,John Daugman
-John E. Psarras,Ioannis Psarras
 John Edwin Laird,John E. Laird
 John Canny,John F. Canny
 J. Kenneth Salisbury,John Kenneth Salisbury Jr.
@@ -1895,7 +1895,6 @@ Nikolaos Drivalos Matragkas,Nicholas Drivalos Matragkas
 Nikolaos Drivalos,Nicholas Drivalos Matragkas
 Nikolas Drivalos Matragkas,Nicholas Drivalos Matragkas
 Nikos Drivalos,Nicholas Drivalos Matragkas
-Nikolaos S. Papaspyrou,Nikolaos Papaspyrou
 Nicholas J. Hopper,Nicholas Hopper
 Nicholas Scott Mattei,Nicholas Mattei
 Nicholas Robert Jennings,Nicholas R. Jennings
@@ -1923,6 +1922,7 @@ Nikil Dutt,Nikil D. Dutt
 Nikos Hardavellas,Nikolaos Hardavellas
 Nikolaos P. Papanikolopoulos,Nikolaos Papanikolopoulos
 Nikos Papanikolopoulos,Nikolaos Papanikolopoulos
+Nikolaos S. Papaspyrou,Nikolaos Papaspyrou
 Nikos P. Chrisochoides,Nikos Chrisochoides
 Nils Thuerey,Nils Thürey
 Nina S. T. Hirata,Nina Sumiko Tomita Hirata
@@ -1964,9 +1964,6 @@ Partha Pratim Chakrabarti,P. P. Chakrabarti
 Paolo Roberto Oliveira,P. Roberto Oliveira
 Paulo Roberto Oliveira,P. Roberto Oliveira
 Ponnuswamy Sadayappan,P. Sadayappan
-Panagiotis Frangos,Panayiotis Frangos
-Panayiotis Tsanakas,Panagiotis Tsanakas
-Panayiotis Tsanakas,Panayotis Tsanakas
 Panayiotis Takis Mathiopoulos,P. Takis Mathiopoulos
 Tom Fletcher,P. Thomas Fletcher
 Pablo Figueroa,Pablo Alejandro Figueroa
@@ -1976,6 +1973,8 @@ Pamela Karr Wisniewski,Pamela J. Wisniewski
 Pamela Karr,Pamela J. Wisniewski
 Pete Manolios,Panagiotis Manolios
 Peter Manolios,Panagiotis Manolios
+Panayiotis Tsanakas,Panagiotis Tsanakas
+Panagiotis Frangos,Panayiotis Frangos
 Pankaj Kumar Agarwal,Pankaj K. Agarwal
 Panagiotis Rondogiannis,Panos Rondogiannis
 Udaya Parampalli,Parampalli Udaya
@@ -1996,13 +1995,13 @@ Patrick Eugster,Patrick Th. Eugster
 P. Patrick van der Smagt,Patrick van der Smagt
 Paul E. S. Dunne,Paul E. Dunne
 Paul Newbury,Paul F. Newbury
-Paul P. Sotiriadis,Paul-Peter Sotiriadis
 Paul Pavlos Spirakis,Paul G. Spirakis
 Paul V. Gratz,Paul Gratz
 Paul D. H. Hines,Paul Hines
 Paul John Lyons,Paul J. Lyons
 Paul Tymann,Paul T. Tymann
 Paul Goldberg,Paul W. Goldberg
+Paul P. Sotiriadis,Paul-Peter Sotiriadis
 Paulo J. F. Carreira,Paulo Carreira
 Paulo Lilles Jorge Drews Junior,Paulo Drews Jr.
 Paulo L. J. Drews-Jr,Paulo Drews Jr.
@@ -2462,7 +2461,6 @@ Steve Tanimoto,Steven L. Tanimoto
 Steve Bellovin,Steven M. Bellovin
 Steven A. Myers,Steven Myers
 Steven Lumetta,Steven S. Lumetta
-Efstathios D. Sykas,Eystathios D. Sykas
 Efstratios Viglas,Stratis Viglas
 Stratis D. Viglas,Stratis Viglas
 Stuart Russell,Stuart J. Russell
@@ -2529,7 +2527,6 @@ T. Kesavadas,Thenkurussi Kesavadas
 T. Z. Kalamboukis,Theodore Kalamboukis
 Theodore Ted S. Rappaport,Theodore S. Rappaport
 Theo Tryfonas,Theodore Tryfonas
-Theodora A. Varvarigou,Dora Varvarigou
 Theophilus A. Benson,Theophilus Benson
 Tess Tanenbaum,Theresa Jean Tanenbaum
 J. G. Tanenbaum 0001,Theresa Jean Tanenbaum
