@@ -69,6 +69,25 @@ with open('generated-author-info.csv', mode='r') as infile:
         generated[row['name']] = generated.get(row['name'], 0) + float(row['count'])
     
 
+# Read in country-info file.
+countryinfo = {}
+with open('country-info.csv', mode='r') as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        if row['institution'] != "":
+            countryinfo[row['institution']] = { 'region' : row['region'] }
+
+# Sort it and write it back.
+with open('country-info.csv', mode='w') as outfile:
+    sfieldnames = ['institution', 'region']
+    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter.writeheader()
+    for n in collections.OrderedDict(sorted(countryinfo.items())):
+        h = { 'institution' : n,
+              'region'      : countryinfo[n]['region'] }
+        swriter.writerow(h)
+        
+
 # Read in CSrankings file.
 csrankings = {}
 with open('csrankings.csv', mode='r') as infile:
