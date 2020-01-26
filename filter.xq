@@ -16,6 +16,7 @@
 //inproceedings[booktitle="ACL/IJCNLP"],
 //inproceedings[booktitle="COLING-ACL"],
 //inproceedings[booktitle="EMNLP-CoNLL"],
+//inproceedings[booktitle="EMNLP/IJCNLP (1)"],
 //inproceedings[booktitle="HLT/EMNLP"],
 //inproceedings[booktitle="AAAI"],
 //inproceedings[booktitle="AAAI/IAAI"],
