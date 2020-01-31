@@ -1,11 +1,12 @@
+import gzip
 from csrankings import *
 
 def parseDBLP(facultydict):
     counter = 0
 
-    with open('dblp.xml', mode='r') as f:
+    # with open('dblp.xml', mode='r') as f:
         
-    # with gzip.open('dblp.xml.gz') as f:
+    with gzip.open('dblp.xml.gz', mode='rb') as f:
 
         oldnode = None
         

@@ -46,10 +46,6 @@ def find_fix(name,affiliation):
     else:
         return "http://csrankings.org"
 
-#print(find_fix("Michael H. Albert","University of Otago"))
-
-# sys.exit()
-
 
 # Load alias lists (name -> [aliases])
 aliases = {}
@@ -63,19 +59,96 @@ with open('dblp-aliases.csv', mode='r') as infile:
             aliases[row['name']] = [row['alias']]
         aliasToName[row['alias']] = row['name']
 
-#c = 0
-#for n in aliases:
-#    c = c +1
-#print("c = "+str(c))
+
+# Read in generated data file. We use this to weigh things that need fixing.
+generated = {}
+
+with open('generated-author-info.csv', mode='r') as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        generated[row['name']] = generated.get(row['name'], 0) + float(row['count'])
+    
+
+# Read in country-info file.
+countryinfo = {}
+with open('country-info.csv', mode='r') as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        if row['institution'] != "":
+            countryinfo[row['institution']] = { 'region' : row['region'] }
+
+# Sort it and write it back.
+with open('country-info.csv', mode='w') as outfile:
+    sfieldnames = ['institution', 'region']
+    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter.writeheader()
+    for n in collections.OrderedDict(sorted(countryinfo.items())):
+        h = { 'institution' : n,
+              'region'      : countryinfo[n]['region'] }
+        swriter.writerow(h)
+        
 
 # Read in CSrankings file.
 csrankings = {}
-with open('csrankings.csv', mode='rb') as infile:
+with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         csrankings[row['name']] = { 'affiliation' : row['affiliation'],
                                     'homepage'    : row['homepage'],
                                     'scholarid'   : row['scholarid'] }
+
+# Remove any cycles in the aliases (that is, name -> alias -> name).
+
+visited = {}
+new_aliases = {}
+cycle_aliases = {}
+
+def visit_aliases(n):
+    if n in aliases:
+        alias_list = aliases[n]
+        for a in alias_list:
+            if a in visited:
+                print("Cycle discovered: "+a)
+                cycle_aliases[a] = True
+            else:
+                visited[a] = True
+                new_aliases[n] = new_aliases.get(n, []) + [a]
+                visit_aliases(a)
+    
+for n in aliases:
+    visit_aliases(n)
+
+if True:
+    aliases = new_aliases.copy()
+    for ca in cycle_aliases:
+        n = aliasToName[ca]
+        # Conservatively delete cycles when they are paired.
+        if n in aliases and ca in aliases:
+            del aliases[ca]
+
+# Remove any aliases for names that aren't in the database.
+new_aliases = aliases.copy()
+for n in aliases:
+    if not n in csrankings:
+        found = False
+        for a in aliases[n]:
+            if a in csrankings:
+                found = True
+                break
+        if not found:
+            del new_aliases[n]
+aliases = new_aliases
+    
+# Rewrite aliases file without cycles or names not in the csrankings database.
+with open('dblp-aliases.csv', mode='w') as outfile:
+    sfieldnames = ['alias', 'name']
+    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter.writeheader()
+    for n in collections.OrderedDict(sorted(aliases.items(), key=lambda t: t[0])):
+        for a in aliases[n]:
+            h = { 'alias' : a, 'name' : n }
+            swriter.writerow(h)
+
 
 # Add any missing aliases.
 for name in aliases:
@@ -98,7 +171,7 @@ for name in csrankings:
         page = "NOSCHOLARPAGE"
         if name in aliases:
             for a in aliases[name]:
-                if csrankings[a]['scholarid'] != 'NOSCHOLARPAGE':
+                if a in csrankings and csrankings[a]['scholarid'] != 'NOSCHOLARPAGE':
                     page = csrankings[a]['scholarid']
         if name in aliasToName:
             if csrankings[aliasToName[name]] != 'NOSCHOLARPAGE':
@@ -112,7 +185,7 @@ for name in csrankings:
     page = csrankings[name]['homepage']
     if name in aliases:
         for a in aliases[name]:
-            if csrankings[a]['homepage'] != page:
+            if a in csrankings and csrankings[a]['homepage'] != page:
                 if page == "http://csrankings.org":
                     page = csrankings[a]['homepage']
                 csrankings[a]['homepage'] = page
@@ -122,18 +195,62 @@ for name in csrankings:
     aff = csrankings[name]['affiliation']
     if name in aliases:
         for a in aliases[name]:
-            if csrankings[a]['affiliation'] != aff:
+            if a in csrankings and csrankings[a]['affiliation'] != aff:
                 print("INCONSISTENT AFFILIATION: "+name)
+
 
 # Find and flag inconsistent Google Scholar pages.
 for name in csrankings:
     sch = csrankings[name]['scholarid']
     if name in aliases:
         for a in aliases[name]:
-            if csrankings[a]['scholarid'] != sch:
+            if a in csrankings and csrankings[a]['scholarid'] != sch:
                 print("INCONSISTENT SCHOLAR PAGE: "+name)
 
-    
+# Make sure that Google Scholar pages are not accidentally duplicated across different authors.
+# This can mean one of two things:
+# (a) the Google Scholar entries are wrong, and/or
+# (b) there is a missing alias that needs to be added to dblp-aliases.csv.
+
+scholars = {}
+for name in csrankings:
+    sch = csrankings[name]['scholarid']
+    if sch == "NOSCHOLARPAGE":
+        continue
+    if sch in scholars:
+        scholars[sch].append(name)
+    else:
+        scholars[sch] = [name]
+
+clashes = []
+reverse_scholar = {}
+for sch in scholars:
+    if len(scholars[sch]) > 1:
+        # Verify all are aliases.
+        total = len(scholars[sch])
+        for name in scholars[sch]:
+            reverse_scholar[name] = sch
+            if name in aliases:
+                total -= len(aliases[name])
+        if total >= 2: # At least one name is not an alias!
+            clashes.append(scholars[sch])
+            # print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
+
+for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
+    maxscore = max(generated.get(name, 0) for name in n)
+    if maxscore > 0:
+        mapscores = list(map(lambda name: (name, generated.get(name, 0)), n))
+        # No point in trying to fix clashes if they don't appear in the output of CSrankings
+        print("Google scholar entry " + str(reverse_scholar[n[0]]) + " clashes and scores:" + str(mapscores))
+        affiliations = list(map(lambda nv: csrankings[nv[0]]['affiliation'], mapscores))
+        print(affiliations)
+        if affiliations[0] == affiliations[-1]:
+            # All affiliations the same.
+            for (n, v) in mapscores:
+                if v == 0.0:
+                    print("DELETING " + n)
+                    del csrankings[n]
+
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
 
