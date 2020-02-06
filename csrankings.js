@@ -959,7 +959,8 @@ class CSRankings {
                     p += '<span title="Turing Award"><img alt="Turing Award" src="' +
                         this.turingImage + '"></span>&nbsp;';
                 }
-                p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
+                p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
+                // p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
                     + '" '
@@ -992,7 +993,7 @@ class CSRankings {
                     + '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
                 p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
-                    + "<font size=\"+1\">" + this.PieChart + "</font></span>"
+                    + "<span class='piechart'>" + this.PieChart + "</span></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
