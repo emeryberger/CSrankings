@@ -1,7 +1,7 @@
 #
 # CSrankings
 # http://csrankings.org
-# Copyright (C) 2017 by Emery Berger <http://emeryberger.org>
+# Copyright (C) 2017-2020 by Emery Berger <http://emeryberger.org>
 # See COPYING for license information.
 #
 
