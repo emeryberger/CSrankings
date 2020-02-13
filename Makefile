@@ -5,14 +5,14 @@
 # See COPYING for license information.
 #
 
-TARGETS = csrankings.js generated-author-info.csv
+TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
 PYTHON = python3.7 # 2.7
 PYPY   = python3.7 # pypy
 
-all: generated-author-info.csv csrankings.js # fix-affiliations home-pages scholar-links
+all: generated-author-info.csv csrankings.js csrankings.min.js # fix-affiliations home-pages scholar-links
 
 clean:
 	rm $(TARGETS)
@@ -20,6 +20,8 @@ clean:
 csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --project tsconfig.json
+
+csrankings.min.js: csrankings.js
 	closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
