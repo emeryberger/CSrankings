@@ -490,6 +490,7 @@ class CSRankings {
 	name = name.replace(/ø/g, "=oslash=");
 	name = name.replace(/Ö/g, "=Ouml=");
 	name = name.replace(/ü/g, "=uuml=");
+	name = name.replace(/ß/g, "=szlig=");
 	let splitName = name.split(" ");
 	let lastName = splitName[splitName.length - 1];
 	let disambiguation = ""
