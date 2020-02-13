@@ -278,7 +278,9 @@ class CSRankings {
     translateNameToDBLP(name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
-        // Known issue: does not properly handle suffixes like Jr., III, etc.
+        name = name.replace(/ Jr\./g, "_Jr.");
+        name = name.replace(/ II/g, "_II");
+        name = name.replace(/ III/g, "_III");
         name = name.replace(/'|\-|\./g, "=");
         name = name.replace(/Á/g, "=Aacute=");
         name = name.replace(/á/g, "=aacute=");
