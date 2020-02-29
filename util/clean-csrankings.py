@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import codecs
 import collections
 import csv
-import google
+#import google
 import gzip
 import json
 import operator
@@ -27,7 +27,7 @@ trimstrings = ['\.php\?', 'youtube', 'researchgate', 'dblp.uni-trier.','ratemypr
 
 def find_fix(name,affiliation):
     string = name + ' ' + affiliation
-    results = google.search(string, stop=1)
+    results = "" # DISABLED GOOGLE SEARCH google.search(string, stop=1)
     actualURL = "http://csrankings.org"
     for url in results:
         actualURL = url
