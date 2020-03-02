@@ -249,6 +249,18 @@ class CSRankings {
             });
         });
     }
+    // We have scrolled: increase the number we rank.
+    static updateMinimum(obj) {
+        if (CSRankings.minToRank <= 500) {
+            let t = obj.scrollTop;
+            CSRankings.minToRank = 5000;
+            CSRankings.getInstance().rank();
+            return t;
+        }
+        else {
+            return 0;
+        }
+    }
     // Return the singleton corresponding to this object.
     static getInstance() {
         return CSRankings.theInstance;
@@ -266,12 +278,15 @@ class CSRankings {
     translateNameToDBLP(name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
-        // Known issue: does not properly handle suffixes like Jr., III, etc.
+        name = name.replace(/ Jr\./g, "_Jr.");
+        name = name.replace(/ II/g, "_II");
+        name = name.replace(/ III/g, "_III");
         name = name.replace(/'|\-|\./g, "=");
         name = name.replace(/Á/g, "=Aacute=");
         name = name.replace(/á/g, "=aacute=");
         name = name.replace(/è/g, "=egrave=");
         name = name.replace(/é/g, "=eacute=");
+        name = name.replace(/í/g, "=iacute=");
         name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
         name = name.replace(/ç/g, "=ccedil=");
@@ -280,6 +295,7 @@ class CSRankings {
         name = name.replace(/ø/g, "=oslash=");
         name = name.replace(/Ö/g, "=Ouml=");
         name = name.replace(/ü/g, "=uuml=");
+        name = name.replace(/ß/g, "=szlig=");
         let splitName = name.split(" ");
         let lastName = splitName[splitName.length - 1];
         let disambiguation = "";
@@ -430,14 +446,14 @@ class CSRankings {
             let value = this.authorAreas[uname][key];
             // Use adjusted count if this is for a department.
             /*
-                DISABLED so department charts are invariant.
-    
-            if (uname in this.stats) {
-            value = this.areaDeptAdjustedCount[key+uname] + 1;
-            if (value == 1) {
-                value = 0;
-            }
-            }
+              DISABLED so department charts are invariant.
+              
+              if (uname in this.stats) {
+              value = this.areaDeptAdjustedCount[key+uname] + 1;
+              if (value == 1) {
+              value = 0;
+              }
+              }
             */
             // Round it to the nearest 0.1.
             value = Math.round(value * 10) / 10;
@@ -553,21 +569,21 @@ class CSRankings {
         $("#progress").html(s);
     }
     /*
-        private loadAliases(aliases: { [key: string]: string },
-            cont: () => void): void {
-            Papa.parse(this.aliasFile, {
-                header: true,
-                download: true,
-                complete: (results) => {
-                    const data: any = results.data;
-                    const d = data as Array<Alias>;
-                    for (let aliasPair of d) {
-                        aliases[aliasPair.alias] = aliasPair.name;
-                    }
-                    CSRankings.promise(cont);
-                }
-            });
-        }
+      private loadAliases(aliases: { [key: string]: string },
+      cont: () => void): void {
+      Papa.parse(this.aliasFile, {
+      header: true,
+      download: true,
+      complete: (results) => {
+      const data: any = results.data;
+      const d = data as Array<Alias>;
+      for (let aliasPair of d) {
+      aliases[aliasPair.alias] = aliasPair.name;
+      }
+      CSRankings.promise(cont);
+      }
+      });
+      }
     */
     loadTuring(turing, cont) {
         Papa.parse(this.turingFile, {
@@ -697,6 +713,14 @@ class CSRankings {
                     return false;
                 }
                 break;
+            case "africa":
+                if (!(dept in this.countryInfo)) { // USA
+                    return false;
+                }
+                if (this.countryInfo[dept] != "africa") {
+                    return false;
+                }
+                break;
             case "world":
                 break;
         }
@@ -732,12 +756,12 @@ class CSRankings {
                 return univagg[b] - univagg[a];
             }
             /*
-            if (univagg[a] > univagg[b]) {
-                return -1;
-            }
-            if (univagg[b] > univagg[a]) {
-                return 1;
-            }
+              if (univagg[a] > univagg[b]) {
+              return -1;
+              }
+              if (univagg[b] > univagg[a]) {
+              return 1;
+              }
             */
             if (a < b) {
                 return -1;
@@ -754,9 +778,6 @@ class CSRankings {
         const endyear = parseInt($("#toyear").find(":selected").text());
         this.authorAreas = {};
         for (let r in this.authors) {
-            if (!this.authors.hasOwnProperty(r)) {
-                continue;
-            }
             let { area } = this.authors[r];
             if (area in CSRankings.nextTier) {
                 continue;
@@ -769,10 +790,10 @@ class CSRankings {
             /*
               DISABLING weight selection so all pie charts look the
               same regardless of which areas are currently selected:
-    
-            if (weights[theArea] === 0) {
-            continue;
-            }
+              
+              if (weights[theArea] === 0) {
+              continue;
+              }
             */
             const theCount = parseFloat(count);
             if (!(name in this.authorAreas)) {
@@ -910,11 +931,11 @@ class CSRankings {
                 if (fc[b] === fc[a]) {
                     return this.compareNames(a, b);
                     /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                                let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                                if (fb === fa) {
-                                return this.compareNames(a, b);
-                                }
-                                return fb - fa; */
+                            let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                            if (fb === fa) {
+                            return this.compareNames(a, b);
+                            }
+                            return fb - fa; */
                 }
                 else {
                     return fc[b] - fc[a];
@@ -941,7 +962,8 @@ class CSRankings {
                     p += '<span title="Turing Award"><img alt="Turing Award" src="' +
                         this.turingImage + '"></span>&nbsp;';
                 }
-                p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
+                p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
+                // p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
                     + '" '
@@ -974,7 +996,7 @@ class CSRankings {
                     + '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
                 p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
-                    + "<font size=\"+1\">" + this.PieChart + "</font></span>"
+                    + "<span class='piechart'>" + this.PieChart + "</span></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1000,10 +1022,9 @@ class CSRankings {
         }
         return univtext;
     }
-    buildOutputString(numAreas, deptCounts, univtext) {
+    buildOutputString(numAreas, deptCounts, univtext, minToRank) {
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
-        let minToRank = 99999; // parseInt($("#minToRank").find(":selected").val());
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
             + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
@@ -1124,9 +1145,20 @@ class CSRankings {
         this.computeStats(deptNames, numAreas, currentWeights);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        const s = this.buildOutputString(numAreas, deptCounts, univtext);
+        const s = this.buildOutputString(numAreas, deptCounts, univtext, CSRankings.minToRank);
         /* Finally done. Redraw! */
         $("#success").html(s);
+        $("div").scroll(function () {
+            //		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+            // If we are nearly at the bottom, update the minimum.
+            if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
+                let t = CSRankings.updateMinimum(this);
+                if (t) {
+                    //			console.log("scrolling to " + t);
+                    $("div").scrollTop(t);
+                }
+            }
+        });
         if (!update) {
             this.navigoRouter.pause();
         }
@@ -1277,33 +1309,33 @@ class CSRankings {
         return start;
     }
     /*
-        public static geoCheck(): void {
-            // Figure out which country clients are coming from and set
-            // the default region accordingly.
-            let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
-            $.getJSON(theUrl, (result) => {
-                switch (result.country_code) {
-                    case "US":
-                    case "CN":
-                    case "IN":
-                    case "KR":
-                    case "JP":
-                    case "TW":
-                    case "SG":
-                        $("#regions").val("USA");
-                        CSRankings.getInstance().rank();
-                        break;
-                    default:
-                        $("#regions").val("world");
-                        CSRankings.getInstance().rank();
-                        break;
-                }
-            }).fail(() => {
-                // If we can't find a location (e.g., because this site is
-                // blocked by an ad blocker), just rank anyway.
-                CSRankings.getInstance().rank();
-            });
-        }
+      public static geoCheck(): void {
+      // Figure out which country clients are coming from and set
+      // the default region accordingly.
+      let theUrl = 'https://geoip-db.com/jsonp/'; // 'http://freegeoip.net/json/';
+      $.getJSON(theUrl, (result) => {
+      switch (result.country_code) {
+      case "US":
+      case "CN":
+      case "IN":
+      case "KR":
+      case "JP":
+      case "TW":
+      case "SG":
+      $("#regions").val("USA");
+      CSRankings.getInstance().rank();
+      break;
+      default:
+      $("#regions").val("world");
+      CSRankings.getInstance().rank();
+      break;
+      }
+      }).fail(() => {
+      // If we can't find a location (e.g., because this site is
+      // blocked by an ad blocker), just rank anyway.
+      CSRankings.getInstance().rank();
+      });
+      }
     */
     navigation(params, query) {
         if (params !== null) {
@@ -1530,10 +1562,11 @@ class CSRankings {
         }
     }
 }
+CSRankings.minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "world"];
+CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',

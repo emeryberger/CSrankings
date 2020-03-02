@@ -13,7 +13,7 @@ import csv
 import re
 import sys
 import operator
-from builtins import str
+#from builtins import str
 
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
@@ -76,7 +76,7 @@ areadict = {
     'popl' : ['POPL'], 
     'pldi' : ['PLDI'],
     # "Next tier" - see csrankings.ts
-    'oopsla' : ['OOPSLA'], # Next tier
+    'oopsla' : ['OOPSLA', 'OOPSLA/ECOOP'], # Next tier; note in 1990 the conference was merged with ECOOP
     'icfp'   : ['ICFP'],   # Next tier
     'pacmpl' : ['PACMPL'], # Special PACMPL handling below
     # SIGSOFT
@@ -162,7 +162,7 @@ areadict = {
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
     'siggraph': ['ACM Trans. Graph.', 'SIGGRAPH'],
 #    'siggraph' : ['SIGGRAPH'],
-    'siggraph-asia' : ['SIGGRAPH Asia'],
+    'siggraph-asia' : ['ACM Trans. Graph.','SIGGRAPH Asia'],
     # SIGIR
     # 'ir': ['WWW', 'SIGIR'],
     'sigir': ['SIGIR'],
@@ -178,9 +178,9 @@ areadict = {
 #            'EMNLP-CoNLL',  # -- in 2012 was joint
 #            'HLT/EMNLP',  # -- in 2005 was joint
 #            ],
-    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP'],
+    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP', 'EMNLP/IJCNLP (1)'],
     'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
-    'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT'],
+    'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT', 'NAACL-HLT (1)'],
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
     'iccv': ['ICCV'],
@@ -212,7 +212,8 @@ EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2018: (34, 13),
+ISMB_Bioinformatics = {2019: (35, 14),
+                       2018: (34, 13),
                        2017: (33, 14),
                        2016: (32, 12),
                        2015: (31, 12),
@@ -245,7 +246,9 @@ TOG_SIGGRAPH_Volume = {2021: (40, 4),
                        2007: (26, 3),
                        2006: (25, 3),
                        2005: (24, 3),
-                       2004: (23, 3)
+                       2004: (23, 3),
+                       2003: (22, 3),
+                       2002: (21, 3)
                        }
 
 # TOG special handling to count only SIGGRAPH Asia proceedings.
@@ -287,7 +290,7 @@ TVCG_Vis_Volume = {2021: (27, 1),
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {2021: (27, 4),
                   2020: (26, 4),
-                  2019: (25, 4),
+                  2019: (25, 5),
                   2018: (24, 4),
                   2017: (23, 4),
                   2016: (22, 4),
@@ -473,17 +476,8 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
                     return False
 
     # Special handling for SIGGRAPH and SIGGRAPH Asia.
-    elif confname in areadict['siggraph']: # == 'ACM Trans. Graph.':
-        if year in TOG_SIGGRAPH_Volume:
-            (vol, num) = TOG_SIGGRAPH_Volume[year]
-            if not ((volume == str(vol)) and (number == str(num))):
-                return False
-        
-    elif confname in areadict['siggraph-asia']: # == 'ACM Trans. Graph.':
-        if year in TOG_SIGGRAPH_Asia_Volume:
-            (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-            if not((volume == str(vol)) and (number == str(num))):
-                return False
+    elif confname == 'ACM Trans. Graph.':
+        return False # should already have been handled by regenerate_data.py.
 
     # Special handling for IEEE Vis and VR
     elif confname == 'IEEE Trans. Vis. Comput. Graph.':
@@ -511,7 +505,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         if not url is None:
             if url.find('innovations') != -1:
                 return False
-        
+
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -526,11 +520,18 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
-        exceptionConference = confname == 'SC'
+        exceptionConference = False
+        exceptionConference |= confname == 'SC' and year <= 2012
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'SIGGRAPH Asia'
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
+        exceptionConference |= confname == 'ICCAD' and year == 2018
+        exceptionConference |= confname == 'CHI' and year == 2019
+        exceptionConference |= confname == 'FAST' and year == 2012
+        
+    
         if exceptionConference:
             tooFewPages = False
     if tooFewPages:
