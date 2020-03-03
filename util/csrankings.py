@@ -109,7 +109,7 @@ areadict = {
     'hpdc': ['HPDC'],
     'ics': ['ICS'],
     # SIGBED
-    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
+    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT', 'ACM Trans. Embedded Comput. Syst.'],
     'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.'], # TECS: issue number & page numbers must be checked
     'rtss' : ['RTSS'],
     'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
@@ -207,8 +207,8 @@ areadict = {
 }
 
 # EMSOFT is now published as a special issue of TECS, in a particular page range.
-EMSOFT_TECS = { 2017: (16, 5) }
-EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
+EMSOFT_TECS = { 2017: (16, 5), 2019: (18, "5s") }
+EMSOFT_TECS_PaperNumbers = { 2017: (163, 190), 2019: (84, 110) }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
