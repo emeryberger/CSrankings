@@ -210,6 +210,9 @@ areadict = {
 EMSOFT_TECS = { 2017: (16, 5), 2019: (18, "5s") }
 EMSOFT_TECS_PaperNumbers = { 2017: (163, 190), 2019: (84, 110) }
 
+# DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
+DAC_TooShortPapers = { 2019: { 21, 22, 43, 44, 45, 76, 77, 78, 79, 100, 101, 121, 152, 153, 154, 175, 176, 197, 198, 199 } }
+
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
 ISMB_Bioinformatics = {2019: (35, 14),
@@ -418,6 +421,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     global ASE_LongPaperThreshold
     global pageCountThreshold
     global ISMBpageCounter
+    global DAC_TooShortPapers
     
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
@@ -506,6 +510,12 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
             if url.find('innovations') != -1:
                 return False
 
+    # Special handling for DAC.
+    elif confname == 'DAC':
+        if year in DAC_TooShortPapers:
+            if int(pages) in DAC_TooShortPapers[year]:
+                return False
+    
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -517,7 +527,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
 
     if pageCount == -1 and confname == 'ACM Conference on Computer and Communications Security':
         tooFewPages = True
-    
+
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = False
@@ -530,6 +540,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'ICCAD' and year == 2018
         exceptionConference |= confname == 'CHI' and year == 2019
         exceptionConference |= confname == 'FAST' and year == 2012
+        exceptionConference |= confname == 'DAC' and year == 2019
         
     
         if exceptionConference:
