@@ -68,6 +68,7 @@
 //inproceedings[booktitle="IPDPS"],
 //inproceedings[booktitle="RECOMB"],
 //inproceedings[booktitle="ISMB"],
+//article[journal="Bioinform."],
 //article[journal="Bioinformatics"],
 //article[journal="Bioinformatics [ISMB/ECCB]"],
 //inproceedings[booktitle="ISMB/ECCB (Supplement of Bioinformatics)"],
