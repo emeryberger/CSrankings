@@ -87,7 +87,10 @@ class CSRankings {
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
     public static readonly regions: Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
-
+    private static readonly nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
+    
+    private note: { [name: string]: string } = {};
+    
     private navigoRouter: Navigo;
 
     // We have scrolled: increase the number we rank.
@@ -299,7 +302,10 @@ class CSRankings {
 
     public static readonly childMap: { [key: string]: [string] } = {};
 
-
+    private static readonly noteMap: { [note: string]: string } =
+	{
+	    'Tech': 'https://tech.cornell.edu/'
+	};
 
     private readonly areaMap: Array<AreaMap>
 	= [{ area: "ai", title: "AI" },
@@ -851,6 +857,11 @@ class CSRankings {
 		for (let counter = 0; counter < ai.length; counter++) {
 		    const record = ai[counter];
 		    let name = record['name'].trim();
+		    let result = name.match(CSRankings.nameMatcher);
+		    if (result) {
+			name = result[1].trim();
+			this.note[name] = result[2];
+		    }
 		    if (name !== "") {
 			this.dblpAuthors[name] = this.translateNameToDBLP(name);
 			this.homepages[name] = record['homepage'];
@@ -869,9 +880,16 @@ class CSRankings {
 	    complete: (results) => {
 		const data: any = results.data;
 		this.authors = data as Array<Author>;
+		/*
 		for (let r in this.authors) {
 		    let name = this.authors[r].name;
-		}
+		    let result = name.match(CSRankings.nameMatcher);
+		    if (result) {
+			name = result[1];
+			this.authors[r].name = name;
+			this.note[name] = result[3];
+		    }
+		}*/
 		CSRankings.promise(cont);
 	    }
 	});
@@ -1196,6 +1214,11 @@ class CSRankings {
 		    + '>'
 		    + name
 		    + '</a>&nbsp;';
+		if (this.note.hasOwnProperty(name)) {
+		    const url = CSRankings.noteMap[this.note[name]];
+		    const href = '<a href="' + url + '">';
+		    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+		}
 		if (this.acmfellow.hasOwnProperty(name)) {
 		    p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
 			this.acmfellowImage + '"></span>&nbsp;';
