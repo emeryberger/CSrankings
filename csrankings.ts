@@ -304,7 +304,13 @@ class CSRankings {
 
     private static readonly noteMap: { [note: string]: string } =
 	{
-	    'Tech': 'https://tech.cornell.edu/'
+	    'Tech': 'https://tech.cornell.edu/',
+	    'CBG': 'https://www.mpi-cbg.de/',
+	    'INF': 'https://www.mpi-inf.mpg.de/',
+	    'IS': 'https://www.is.mpg.de/',
+	    'MG': 'https://www.molgen.mpg.de/2168/en',
+	    'SP': 'https://www.mpi-sp.org/',
+	    'SWS': 'https://www.mpi-sws.org/' 
 	};
 
     private readonly areaMap: Array<AreaMap>
