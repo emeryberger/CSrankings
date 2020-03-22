@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import codecs
 import collections
 import csv
-import google
+#import google
 import gzip
 import json
 import operator
@@ -27,7 +27,7 @@ trimstrings = ['\.php\?', 'youtube', 'researchgate', 'dblp.uni-trier.','ratemypr
 
 def find_fix(name,affiliation):
     string = name + ' ' + affiliation
-    results = google.search(string, stop=1)
+    results = "" # DISABLED GOOGLE SEARCH google.search(string, stop=1)
     actualURL = "http://csrankings.org"
     for url in results:
         actualURL = url
@@ -130,11 +130,13 @@ if True:
 new_aliases = aliases.copy()
 for n in aliases:
     if not n in csrankings:
-        found = False
+        # Temporarily disabling culling of aliases because of the note suffix issue.
+        found = True # False
         for a in aliases[n]:
-            if a in csrankings:
-                found = True
-                break
+            pass
+            #if a in csrankings:
+            #    found = True
+            #    break
         if not found:
             del new_aliases[n]
 aliases = new_aliases
