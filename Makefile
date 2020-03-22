@@ -9,8 +9,8 @@ TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
-PYTHON = python3.7 # 2.7
-PYPY   = python3.7 # pypy
+PYTHON = python3 # 2.7
+PYPY   = python3 # pypy
 
 all: generated-author-info.csv csrankings.js csrankings.min.js # fix-affiliations home-pages scholar-links
 
@@ -84,7 +84,7 @@ faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csran
 	$(PYTHON) util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py
+generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py dblp-aliases.csv
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	@$(PYPY) util/regenerate_data.py
 	@echo "Done."
