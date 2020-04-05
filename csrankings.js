@@ -23,6 +23,7 @@
 ;
 class CSRankings {
     constructor() {
+        this.note = {};
         this.authorFile = "./csrankings.csv";
         this.authorinfoFile = "./generated-author-info.csv";
         this.countryinfoFile = "./country-info.csv";
@@ -637,6 +638,11 @@ class CSRankings {
                 for (let counter = 0; counter < ai.length; counter++) {
                     const record = ai[counter];
                     let name = record['name'].trim();
+                    let result = name.match(CSRankings.nameMatcher);
+                    if (result) {
+                        name = result[1].trim();
+                        this.note[name] = result[2];
+                    }
                     if (name !== "") {
                         this.dblpAuthors[name] = this.translateNameToDBLP(name);
                         this.homepages[name] = record['homepage'];
@@ -654,9 +660,16 @@ class CSRankings {
             complete: (results) => {
                 const data = results.data;
                 this.authors = data;
+                /*
                 for (let r in this.authors) {
                     let name = this.authors[r].name;
-                }
+                    let result = name.match(CSRankings.nameMatcher);
+                    if (result) {
+                    name = result[1];
+                    this.authors[r].name = name;
+                    this.note[name] = result[3];
+                    }
+                }*/
                 CSRankings.promise(cont);
             }
         });
@@ -954,6 +967,11 @@ class CSRankings {
                     + '>'
                     + name
                     + '</a>&nbsp;';
+                if (this.note.hasOwnProperty(name)) {
+                    const url = CSRankings.noteMap[this.note[name]];
+                    const href = '<a href="' + url + '">';
+                    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+                }
                 if (this.acmfellow.hasOwnProperty(name)) {
                     p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
                         this.acmfellowImage + '"></span>&nbsp;';
@@ -1567,6 +1585,7 @@ CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
 CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
+CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',
@@ -1660,4 +1679,13 @@ CSRankings.nextTier = {
     'oopsla': true
 };
 CSRankings.childMap = {};
+CSRankings.noteMap = {
+    'Tech': 'https://tech.cornell.edu/',
+    'CBG': 'https://www.cis.mpg.de/cbg/',
+    'INF': 'https://www.cis.mpg.de/mpi-inf/',
+    'IS': 'https://www.cis.mpg.de/is/',
+    'MG': 'https://www.cis.mpg.de/molgen/',
+    'SP': 'https://www.cis.mpg.de/mpi-for-cyber-for-security-and-privacy/',
+    'SWS': 'https://www.cis.mpg.de/mpi-sws/'
+};
 var csr = new CSRankings();

@@ -84,7 +84,7 @@ faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csran
 	$(PYTHON) util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py
+generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py dblp-aliases.csv
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	@$(PYPY) util/regenerate_data.py
 	@echo "Done."
