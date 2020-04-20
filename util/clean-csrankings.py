@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import codecs
 import collections
 import csv
-import google
+#import google
 import gzip
 import json
 import operator
@@ -27,7 +27,7 @@ trimstrings = ['\.php\?', 'youtube', 'researchgate', 'dblp.uni-trier.','ratemypr
 
 def find_fix(name,affiliation):
     string = name + ' ' + affiliation
-    results = google.search(string, stop=1)
+    results = "" # DISABLED GOOGLE SEARCH google.search(string, stop=1)
     actualURL = "http://csrankings.org"
     for url in results:
         actualURL = url
@@ -63,15 +63,34 @@ with open('dblp-aliases.csv', mode='r') as infile:
 # Read in generated data file. We use this to weigh things that need fixing.
 generated = {}
 
-with open('generated-author-info.csv', mode='rb') as infile:
+with open('generated-author-info.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         generated[row['name']] = generated.get(row['name'], 0) + float(row['count'])
     
 
+# Read in country-info file.
+countryinfo = {}
+with open('country-info.csv', mode='r') as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        if row['institution'] != "":
+            countryinfo[row['institution']] = { 'region' : row['region'] }
+
+# Sort it and write it back.
+with open('country-info.csv', mode='w') as outfile:
+    sfieldnames = ['institution', 'region']
+    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter.writeheader()
+    for n in collections.OrderedDict(sorted(countryinfo.items())):
+        h = { 'institution' : n,
+              'region'      : countryinfo[n]['region'] }
+        swriter.writerow(h)
+        
+
 # Read in CSrankings file.
 csrankings = {}
-with open('csrankings.csv', mode='rb') as infile:
+with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         csrankings[row['name']] = { 'affiliation' : row['affiliation'],
@@ -111,11 +130,13 @@ if True:
 new_aliases = aliases.copy()
 for n in aliases:
     if not n in csrankings:
-        found = False
+        # Temporarily disabling culling of aliases because of the note suffix issue.
+        found = True # False
         for a in aliases[n]:
-            if a in csrankings:
-                found = True
-                break
+            pass
+            #if a in csrankings:
+            #    found = True
+            #    break
         if not found:
             del new_aliases[n]
 aliases = new_aliases
@@ -220,11 +241,11 @@ for sch in scholars:
 for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
     maxscore = max(generated.get(name, 0) for name in n)
     if maxscore > 0:
-        mapscores = map(lambda name: (name, generated.get(name, 0)), n)
+        mapscores = list(map(lambda name: (name, generated.get(name, 0)), n))
         # No point in trying to fix clashes if they don't appear in the output of CSrankings
-        print("Google scholar entry " + reverse_scholar[n[0]] + " clashes and scores:" + str(mapscores))
-        affiliations = map(lambda (name, _): csrankings[name]['affiliation'], mapscores)
-        affiliations.sort()
+        print("Google scholar entry " + str(reverse_scholar[n[0]]) + " clashes and scores:" + str(mapscores))
+        affiliations = list(map(lambda nv: csrankings[nv[0]]['affiliation'], mapscores))
+        print(affiliations)
         if affiliations[0] == affiliations[-1]:
             # All affiliations the same.
             for (n, v) in mapscores:
