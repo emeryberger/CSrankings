@@ -78,7 +78,7 @@ areadict = {
     # "Next tier" - see csrankings.ts
     'oopsla' : ['OOPSLA', 'OOPSLA/ECOOP'], # Next tier; note in 1990 the conference was merged with ECOOP
     'icfp'   : ['ICFP'],   # Next tier
-    'pacmpl' : ['PACMPL'], # Special PACMPL handling below
+    'pacmpl' : ['PACMPL', 'Proc. ACM Program. Lang.'], # Special PACMPL handling below
     # SIGSOFT
     #    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     'icse' : ['ICSE', 'ICSE (1)'],
@@ -119,7 +119,7 @@ areadict = {
     'dac' : ['DAC'],
     # SIGMOD
     # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
-    'vldb' : ['VLDB', 'PVLDB'],
+    'vldb' : ['VLDB', 'PVLDB', 'Proc. VLDB Endow.'],
     'sigmod' : ['SIGMOD Conference'],
     'icde' : ['ICDE'], # next tier
     'pods' : ['PODS'], # next tier
