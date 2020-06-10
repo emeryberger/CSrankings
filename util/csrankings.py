@@ -18,7 +18,7 @@ import operator
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile('(\d+)-(\d+)')
+pageCounterNormal = re.compile('(\d+)-(\d+)', flags=re.ASCII)
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
