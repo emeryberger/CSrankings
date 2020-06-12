@@ -1,24 +1,27 @@
 #
 # CSrankings
 # http://csrankings.org
-# Copyright (C) 2017 by Emery Berger <http://emeryberger.org>
+# Copyright (C) 2017-2020 by Emery Berger <http://emeryberger.org>
 # See COPYING for license information.
 #
 
-TARGETS = csrankings.js generated-author-info.csv
+TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
-PYTHON = python2.7
+PYTHON = python3 # 2.7
+PYPY   = python3 # pypy
 
-all: generated-author-info.csv csrankings.js # fix-affiliations home-pages scholar-links
+all: generated-author-info.csv csrankings.js csrankings.min.js # fix-affiliations home-pages scholar-links
 
 clean:
 	rm $(TARGETS)
 
 csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
-	tsc --target es6 --noImplicitAny --noImplicitReturns --forceConsistentCasingInFileNames --noImplicitThis --noUnusedParameters --noFallthroughCasesInSwitch --strictNullChecks --pretty csrankings.ts
+	tsc --project tsconfig.json
+
+csrankings.min.js: csrankings.js
 	closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
@@ -81,9 +84,9 @@ faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csran
 	$(PYTHON) util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py
+generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py dblp-aliases.csv
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
-	@pypy util/regenerate_data.py
+	@$(PYPY) util/regenerate_data.py
 	@echo "Done."
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
