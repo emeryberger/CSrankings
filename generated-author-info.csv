@@ -8103,6 +8103,14 @@ Anja Feldmann,Max Planck Society,stoc,1.0,0.25,1993
 Anja Feldmann,Max Planck Society,usenixatc,1.0,0.25,2011
 Anja Feldmann,Max Planck Society,usenixatc,2.0,0.3666666666666667,2014
 Anja Feldmann,Max Planck Society,usenixsec,1.0,0.5,2006
+Anja Lehmann,Hasso Plattner Institute,ccs,2.0,0.8333333333333333,2015
+Anja Lehmann,Hasso Plattner Institute,crypto,1.0,0.5,2007
+Anja Lehmann,Hasso Plattner Institute,crypto,1.0,0.25,2014
+Anja Lehmann,Hasso Plattner Institute,crypto,1.0,0.3333333333333333,2017
+Anja Lehmann,Hasso Plattner Institute,eurocrypt,2.0,0.7,2018
+Anja Lehmann,Hasso Plattner Institute,eurocrypt,1.0,0.3333333333333333,2019
+Anja Lehmann,Hasso Plattner Institute,oakland,1.0,0.16666666666666666,2017
+Anja Lehmann,Hasso Plattner Institute,pets,1.0,1.0,2019
 Anjan Dutta 0001,University of Exeter,cvpr,2.0,0.7,2019
 Ankit Singla,ETH Zurich,icml,1.0,0.125,2019
 Ankit Singla,ETH Zurich,nsdi,2.0,0.5833333333333333,2012
@@ -11099,6 +11107,8 @@ Azer Bestavros,Boston University,sigmetrics,1.0,0.5,2002
 Azer Bestavros,Boston University,vldb,1.0,0.5,1995
 Azer Bestavros,Boston University,vldb,1.0,0.2,2012
 Aziz Mohaisen,University of Central Florida,ccs,1.0,0.25,2018
+Aziz Mohaisen,University of Central Florida,imc,1.0,0.3333333333333333,2010
+Aziz Mohaisen,University of Central Florida,ndss,1.0,0.16666666666666666,2011
 Aziz Mohaisen,University of Central Florida,ndss,1.0,0.2,2016
 Aziz Mohaisen,University of Central Florida,ndss,1.0,0.16666666666666666,2018
 Aïda Ouangraoua,Université de Sherbrooke,ismb,1.0,0.5,2018
@@ -11665,6 +11675,9 @@ Bart Mennink,Radboud University,crypto,1.0,1.0,2016
 Bart Mennink,Radboud University,crypto,2.0,1.5,2017
 Bart Mennink,Radboud University,crypto,1.0,0.3333333333333333,2019
 Bart Mennink,Radboud University,eurocrypt,1.0,0.25,2016
+Bart P. F. Jacobs,Radboud University,lics,1.0,1.0,2013
+Bart P. F. Jacobs,Radboud University,lics,1.0,0.25,2016
+Bart P. F. Jacobs,Radboud University,oopsla,1.0,0.25,1998
 Bart P. Knijnenburg,Clemson University,chiconf,1.0,0.3333333333333333,2013
 Bart P. Knijnenburg,Clemson University,chiconf,1.0,0.3333333333333333,2014
 Bart P. Knijnenburg,Clemson University,pets,1.0,0.25,2017
@@ -19063,9 +19076,9 @@ Christian Chiarcos,Goethe University Frankfurt,acl,1.0,0.3333333333333333,2017
 Christian Chiarcos,Goethe University Frankfurt,naacl,1.0,0.5,2016
 Christian D. Jensen,DTU,usenixsec,1.0,0.5,2001
 Christian Desrosiers,ETS Montreal,cvpr,1.0,0.3333333333333333,2017
-Christian Doerr,TU Delft,ccs,1.0,0.3333333333333333,2019
-Christian Doerr,TU Delft,mobisys,1.0,0.2,2006
-Christian Doerr,TU Delft,usenixsec,1.0,0.3333333333333333,2019
+Christian Doerr,Hasso Plattner Institute,ccs,1.0,0.3333333333333333,2019
+Christian Doerr,Hasso Plattner Institute,mobisys,1.0,0.2,2006
+Christian Doerr,Hasso Plattner Institute,usenixsec,1.0,0.3333333333333333,2019
 Christian Dondrup,Heriot-Watt University,icra,1.0,0.2,2014
 Christian Dondrup,Heriot-Watt University,iros,1.0,0.3333333333333333,2019
 Christian Duriez,CRIStAL,icra,1.0,1.0,2013
@@ -26210,8 +26223,6 @@ David Miller,DePaul University,eurocrypt,1.0,0.3333333333333333,2019
 David Miller,DePaul University,icra,1.0,1.0,1985
 David Miller,DePaul University,kdd,1.0,0.14285714285714285,2015
 David Miller,DePaul University,siggraph,1.0,0.3333333333333333,1981
-David Mohaisen,University of Central Florida,imc,1.0,0.3333333333333333,2010
-David Mohaisen,University of Central Florida,ndss,1.0,0.16666666666666666,2011
 David N. Chin,University of Hawaii at Manoa,aaai,1.0,1.0,1988
 David N. Turner,University of Kent,popl,1.0,0.3333333333333333,1992
 David N. Turner,University of Kent,popl,1.0,0.5,1993
@@ -40620,6 +40631,32 @@ Guo Freeman,Clemson University,chiconf,1.0,0.3333333333333333,2016
 Guo Freeman,Clemson University,chiconf,2.0,0.6666666666666666,2018
 Guo Freeman,Clemson University,chiconf,1.0,0.16666666666666666,2019
 Guo Freeman,Clemson University,chiconf,1.0,0.25,2020
+Guo-Jun Qi,University of Central Florida,aaai,1.0,0.16666666666666666,2017
+Guo-Jun Qi,University of Central Florida,aaai,1.0,0.3333333333333333,2019
+Guo-Jun Qi,University of Central Florida,aaai,1.0,0.25,2020
+Guo-Jun Qi,University of Central Florida,cvpr,1.0,0.16666666666666666,2007
+Guo-Jun Qi,University of Central Florida,cvpr,3.0,0.5333333333333333,2008
+Guo-Jun Qi,University of Central Florida,cvpr,2.0,0.5,2011
+Guo-Jun Qi,University of Central Florida,cvpr,1.0,0.25,2015
+Guo-Jun Qi,University of Central Florida,cvpr,2.0,1.2,2016
+Guo-Jun Qi,University of Central Florida,cvpr,2.0,0.3333333333333333,2018
+Guo-Jun Qi,University of Central Florida,cvpr,2.0,0.75,2019
+Guo-Jun Qi,University of Central Florida,eccv,2.0,0.7,2018
+Guo-Jun Qi,University of Central Florida,iccv,1.0,0.3333333333333333,2015
+Guo-Jun Qi,University of Central Florida,iccv,1.0,0.25,2017
+Guo-Jun Qi,University of Central Florida,iccv,2.0,0.41666666666666663,2019
+Guo-Jun Qi,University of Central Florida,icde,1.0,0.3333333333333333,2012
+Guo-Jun Qi,University of Central Florida,icde,1.0,0.3333333333333333,2013
+Guo-Jun Qi,University of Central Florida,icml,1.0,0.2,2009
+Guo-Jun Qi,University of Central Florida,icml,1.0,0.5,2017
+Guo-Jun Qi,University of Central Florida,ijcai,1.0,0.14285714285714285,2019
+Guo-Jun Qi,University of Central Florida,kdd,3.0,0.7,2015
+Guo-Jun Qi,University of Central Florida,kdd,1.0,0.3333333333333333,2016
+Guo-Jun Qi,University of Central Florida,kdd,2.0,0.5833333333333333,2017
+Guo-Jun Qi,University of Central Florida,nips,1.0,0.3333333333333333,2018
+Guo-Jun Qi,University of Central Florida,rtss,1.0,0.16666666666666666,2011
+Guo-Jun Qi,University of Central Florida,www,1.0,0.3333333333333333,2011
+Guo-Jun Qi,University of Central Florida,www,1.0,0.25,2013
 Guodong Guo,West Virginia University,aaai,1.0,0.2,2020
 Guodong Guo,West Virginia University,cvpr,1.0,0.25,2001
 Guodong Guo,West Virginia University,cvpr,1.0,0.5,2003
@@ -70945,6 +70982,10 @@ Marc Toussaint,University of Stuttgart,rss,2.0,0.5333333333333333,2012
 Marc Toussaint,University of Stuttgart,rss,1.0,0.2,2015
 Marc Toussaint,University of Stuttgart,rss,1.0,0.5,2016
 Marc Toussaint,University of Stuttgart,rss,1.0,0.25,2018
+Marcel A. J. van Gerven,Radboud University,nips,1.0,0.25,2009
+Marcel A. J. van Gerven,Radboud University,nips,2.0,0.4,2016
+Marcel A. J. van Gerven,Radboud University,nips,2.0,0.41666666666666663,2017
+Marcel A. J. van Gerven,Radboud University,nips,1.0,0.16666666666666666,2018
 Marcel Böhme,Monash University,ase,1.0,0.3333333333333333,2016
 Marcel Böhme,Monash University,ase,1.0,0.2,2017
 Marcel Böhme,Monash University,ccs,1.0,0.3333333333333333,2016
@@ -71971,6 +72012,10 @@ Marius Lindauer,University of Hannover,ijcai,1.0,0.3333333333333333,2018
 Marius Lindauer,University of Hannover,ijcai,1.0,0.25,2019
 Marius Zimand,Towson University,stoc,1.0,1.0,2017
 Mariya Zheleva,University at Albany - SUNY,mobisys,1.0,0.25,2013
+Mariëlle I. A. Stoelinga,Radboud University,emsoft,1.0,0.3333333333333333,2002
+Mariëlle I. A. Stoelinga,Radboud University,emsoft,1.0,0.25,2003
+Mariëlle I. A. Stoelinga,Radboud University,emsoft,1.0,0.5,2008
+Mariëlle I. A. Stoelinga,Radboud University,lics,1.0,0.25,2007
 Mark A. Finlayson,Florida International University,acl,1.0,0.5,2019
 Mark A. Finlayson,Florida International University,emnlp,1.0,0.5,2017
 Mark A. Heinrich,University of Central Florida,asplos,1.0,0.07692307692307693,1994
@@ -115251,6 +115296,9 @@ Tian He 0001,University of Minnesota,ubicomp,1.0,0.1111111111111111,2018
 Tian He 0001,University of Minnesota,ubicomp,2.0,0.325,2019
 Tian He 0001,University of Minnesota,www,1.0,0.2,2019
 Tian Liu 0001,Peking University,ijcai,1.0,0.2,2011
+Tian Tan 0001,Nanjing University,fse,1.0,0.25,2018
+Tian Tan 0001,Nanjing University,oopsla,1.0,0.25,2018
+Tian Tan 0001,Nanjing University,pldi,1.0,0.3333333333333333,2017
 Tian Zhao,University of Wisconsin - Milwaukee,isca,1.0,0.1111111111111111,2017
 Tian Zhao,University of Wisconsin - Milwaukee,lics,1.0,0.5,2000
 Tian Zhao,University of Wisconsin - Milwaukee,lics,1.0,0.5,2002
