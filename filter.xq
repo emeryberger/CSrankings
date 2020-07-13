@@ -95,7 +95,7 @@
 //inproceedings[booktitle="SIGMETRICS"],
 //inproceedings[booktitle="SIGMETRICS/Performance"],
 //article[journal="POMACS"],
-//article[journal="Proc. ACM Meas. Anal. Comput. Syst."]
+//article[journal="Proc. ACM Meas. Anal. Comput. Syst."],
 //inproceedings[booktitle="IMC"],
 //inproceedings[booktitle="Internet Measurement Conference"],
 //inproceedings[booktitle="SIGCOMM"],
