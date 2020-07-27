@@ -1,29 +1,41 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
   <head>
+   
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/csrankings.css">
-    <link rel="prefetch" href="./csrankings.csv">
-    <link rel="prefetch" href="./generated-author-info.csv">
-    <link rel="prefetch" href="./dblp-aliases.csv">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://connect.facebook.net">
-    <link rel="dns-prefetch" href="https://www.facebook.com">
-    <link rel="dns-prefetch" href="http://dblp.org">
+    <link rel="preload" as="style" href="css/csrankings.css">
     
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="preconnect" href="http://dblp.org">
+
+    
+    <link rel="preload" as="script" href="js/jquery-3.3.1.min.js" type="text/javascript">
+<!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
+<!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
+    <link rel="preload" as="script" href="js/d3.min.js">
+    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript">
+    <link rel="preload" as="script" href="js/papaparse.min.js" type="text/javascript">
+    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript">
+<!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
+    <link rel="preload" as="script" href="js/navigo.min.js">
+
+
     <meta name="description" content="Computer Science Rankings">
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="citation_title" content="CSRankings">
     <meta name="citation_author" content="Berger, Emery D.">
-    <meta name="citation_publication_date" content="2016">
+    <meta name="citation_publication_date" content="2019">
     <meta name="citation_fulltext_html_url" content="https://csrankings.org">
     <meta name="citation_publisher" content="">
     <meta name="citation_fulltext_world_readable" content="">
     
+    <link rel="stylesheet" href="css/csrankings.css">
     
     <title>CSRankings: Computer Science Rankings</title>
 
@@ -113,7 +125,19 @@
       src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
       }
-      
+
+      .note {
+      font-weight: bold;
+      }
+
+      .areaname {
+      font-variant:small-caps;
+      font-size: -1;
+      }
+
+      .piechart {
+      font-size: +1;
+      }
     </style>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -162,24 +186,16 @@
 		   /></noscript>
     <!-- End Facebook Pixel Code -->
 
-    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3pie.min.js" type="text/javascript"></script>
+    <script defer src="js/d3.min.js"></script>
+    <script defer src="js/d3pie.min.js" type="text/javascript"></script>
     <script src="js/papaparse.min.js" type="text/javascript"></script>
     <script src="js/pako.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/navigo.min.js"></script>
-<!-- DO NOT MODIFY -->
-<!-- Quora Pixel Code (JS Helper) -->
-<!--<script>
-!function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
-qp('init', '34f10aba9efc41e89be7e8cb752617ab');
-qp('track', 'ViewContent');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/34f10aba9efc41e89be7e8cb752617ab/pixel?tag=ViewContent&noscript=1"/></noscript>
-<!-- End of Quora Pixel Code -->
-<!--<script>qp('track', 'Generic');</script> -->
+    
   </head>
 
   <body>
@@ -212,7 +228,8 @@ qp('track', 'ViewContent');
 		(<img src="scholar-favicon.ico" alt="Google Scholar"
 		      height="10" width="10">) to see publications,
 		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
-		go to a DBLP entry.
+		go to a DBLP entry. <br />
+		<b><a href="advice.html">Applying to grad school? Read this first.</a></b>
 	      </p>
 	      <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -227,7 +244,7 @@ qp('track', 'ViewContent');
 		    <option value="99999">all</option>
 		  </select>
 -->
-		  institutions in
+		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
 		    <option value="USA" selected="selected">the USA</option>
 		    <option value="canada">Canada</option>
@@ -236,9 +253,10 @@ qp('track', 'ViewContent');
 		    <option value="asia">Asia</option>
 		    <option value="australasia">Australasia</option>
 		    <option value="europe">Europe</option>
+		    <option value="africa">Africa</option>
 		    <option value="world">the world</option>
 		  </select>
-		  by publications from
+		  <label for="fromyear">by publications from</label>
 		  <!--	      by average count
 			      of publications from -->
 		  <select id="fromyear" name="fromyear">
@@ -280,9 +298,9 @@ qp('track', 'ViewContent');
 		    <option value="2005">2005</option>
 		    <option value="2006">2006</option>
 		    <option value="2007">2007</option>
-		    <option selected="selected" value="2008">2008</option>
+		    <option value="2008">2008</option>
 		    <option value="2009">2009</option>
-		    <option value="2010">2010</option>
+		    <option selected="selected" value="2010">2010</option>
 		    <option value="2011">2011</option>
 		    <option value="2012">2012</option>
 		    <option value="2013">2013</option>
@@ -291,8 +309,10 @@ qp('track', 'ViewContent');
 		    <option value="2016">2016</option>
 		    <option value="2017">2017</option>
 		    <option value="2018">2018</option>
+		    <option value="2019">2019</option>
+		    <option value="2020">2020</option>
 		  </select>
-		  to
+		  <label for="toyear">to</label>
 		  <select id="toyear" name="toyear">
 		    <option value="1980">1980</option>  
 		    <option value="1981">1981</option>  
@@ -332,7 +352,9 @@ qp('track', 'ViewContent');
 		    <option value="2015">2015</option>
 		    <option value="2016">2016</option>
 		    <option value="2017">2017</option>
-		    <option selected="selected" value="2018">2018</option>
+		    <option value="2018">2018</option>
+		    <option value="2019">2019</option>
+		    <option selected="selected" value="2020">2020</option>
 		  </select>
 		</div>
 	      </div>
@@ -373,7 +395,9 @@ qp('track', 'ViewContent');
 			<span class="hovertip" id="ai-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Artificial intelligence
+			<label for="ai">
+			  Artificial intelligence
+			</label>
 			<div class="table-responsive" style="display:none;" id="ai-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -385,7 +409,9 @@ qp('track', 'ViewContent');
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/aaai/">AAAI</a>
+					<label for="aaai">
+					  <a href="http://dblp.org/db/conf/aaai/">AAAI</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="aaai" id="aaai" value="1.0"/>
@@ -393,7 +419,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/ijcai/index.html">IJCAI</a>
+					<label for="ijcai">
+					  <a href="http://dblp.org/db/conf/ijcai/index.html">IJCAI</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ijcai" id="ijcai" value="1.0"/>
@@ -416,7 +444,9 @@ qp('track', 'ViewContent');
 			<span class="hovertip" id="vision-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Computer vision
+			<label for="vision">
+			  Computer vision
+			</label>
 			<div class="table-responsive" style="display:none;" id="vision-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -428,7 +458,9 @@ qp('track', 'ViewContent');
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/cvpr/index.html">CVPR</a>
+					<label for="cvpr">
+					  <a href="http://dblp.org/db/conf/cvpr/index.html">CVPR</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="cvpr" id="cvpr" value="1.0"/>
@@ -436,7 +468,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/eccv/index.html">ECCV</a>
+					<label for="eccv">
+					  <a href="http://dblp.org/db/conf/eccv/index.html">ECCV</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="eccv" id="eccv" value="1.0"/>
@@ -444,7 +478,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/iccv/index.html">ICCV</a>
+					<label for="iccv">
+					  <a href="http://dblp.org/db/conf/iccv/index.html">ICCV</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="iccv" id="iccv" value="1.0"/>
@@ -478,7 +514,9 @@ qp('track', 'ViewContent');
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/icml/index.html">ICML</a>
+					<label for="icml">
+					  <a href="http://dblp.org/db/conf/icml/index.html">ICML</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="icml" id="icml" value="1.0"/>
@@ -486,7 +524,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
+					<label for="kdd">
+					  <a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
@@ -494,7 +534,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
+					<label for="nips">
+					  <a href="http://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nips" id="nips" value="1.0"/>
@@ -517,7 +559,9 @@ qp('track', 'ViewContent');
 			<span class="hovertip" id="nlp-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Natural language processing
+			<label for="nlp">
+			  Natural language processing
+			</label>
 			<div class="table-responsive" style="display:none;" id="nlp-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -529,7 +573,9 @@ qp('track', 'ViewContent');
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/acl/index.html">ACL</a>
+					<label for="acl">
+					  <a href="http://dblp.org/db/conf/acl/index.html">ACL</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="acl" id="acl" value="1.0"/>
@@ -537,7 +583,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/emnlp/index.html">EMNLP</a>
+					<label for="emnlp">
+					  <a href="http://dblp.org/db/conf/emnlp/index.html">EMNLP</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="emnlp" id="emnlp" value="1.0"/>
@@ -545,7 +593,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/naacl/index.html">NAACL</a>
+					<label for="naacl">
+					  <a href="http://dblp.org/db/conf/naacl/index.html">NAACL</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="naacl" id="naacl" value="1.0"/>
@@ -568,7 +618,9 @@ qp('track', 'ViewContent');
 			<span class="hovertip" id="ir-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="ir">
+			  The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</label>
 			<div class="table-responsive" style="display:none;" id="ir-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -580,7 +632,9 @@ qp('track', 'ViewContent');
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigir/index.html">SIGIR</a>
+					<label for="sigir">
+					  <a href="http://dblp.org/db/conf/sigir/index.html">SIGIR</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sigir" id="sigir" value="1.0"/>
@@ -588,7 +642,9 @@ qp('track', 'ViewContent');
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/www/index.html">WWW</a>
+					<label for="www">
+					  <a href="http://dblp.org/db/conf/www/index.html">WWW</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="www" id="www" value="1.0"/>
@@ -1771,19 +1827,18 @@ qp('track', 'ViewContent');
 	    </p>
 	    
 	    <p>
-	      <em>Prominent mentions of CSrankings:</em> <a href="https://eecs.berkeley.edu/about/by-the-numbers">Berkeley</a> | CMU (<a href="https://www.facebook.com/mldcmu/photos/a.1951141291831706.1073741828.1950839991861836/2031085493837285/?type=3&theater">1</a>, <a href="http://www.cbd.cmu.edu/carnegie-mellon-ranked-first-in-publications-in-highly-selective-computational-biology-conferences/">2</a>) | <a href="https://www.cs.cornell.edu/research/ai">Cornell</a> | <a href="http://edinburghnlp.inf.ed.ac.uk/">Edinburgh</a> | <a href="https://cse.umich.edu/cse/about/by-the-numbers.html">Michigan</a> | <a href="https://www.cs.rutgers.edu/">Rutgers</a> | <a href="https://www.technion.ac.il/2017/02/%D7%94%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F-%D7%91%D7%97%D7%96%D7%99%D7%AA-%D7%94%D7%9E%D7%97%D7%A7%D7%A8-%D7%94%D7%A2%D7%95%D7%9C%D7%9E%D7%99%D7%AA/">Technion</a> | <a href="https://www.cs.ubc.ca/nest/imager/newsandevents.php#5">UBC</a> | <a href="http://cs.unc.edu/about/rankings/">UNC</a> | <a href="http://www.cs.utah.edu/soc-ranks-high-for-productivity/">Utah</a> | <a href="https://uwaterloo.ca/artificial-intelligence-institute/rankings">Waterloo</a> | <a href="http://www.cs.wisc.edu/news/2017-07-13-csrankingsorg-rates-uw-madison-highly-several-fields">Wisconsin</a> |
-	      <a href="https://www.facebook.com/yann.lecun/posts/10154886059272143">Yann LeCun</a> | <a href="https://blog.regehr.org/archives/1558">John Regehr</a> | <a href="http://www.theexclusive.org/2017/11/cs-rankings.html">Charles Sutton</a>
+	      <em>Prominent mentions of CSrankings:</em> <a href="https://eecs.berkeley.edu/about/by-the-numbers">Berkeley</a> | CMU (<a href="https://www.facebook.com/mldcmu/photos/a.1951141291831706.1073741828.1950839991861836/2031085493837285/?type=3&theater">1</a>, <a href="http://www.cbd.cmu.edu/carnegie-mellon-ranked-first-in-publications-in-highly-selective-computational-biology-conferences/">2</a>) | <a href="http://edinburghnlp.inf.ed.ac.uk/">Edinburgh</a> | <a href="https://cse.umich.edu/cse/about/by-the-numbers.html">Michigan</a> | <a href="https://www.cs.rutgers.edu/">Rutgers</a> | <a href="https://www.technion.ac.il/2017/02/%D7%94%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F-%D7%91%D7%97%D7%96%D7%99%D7%AA-%D7%94%D7%9E%D7%97%D7%A7%D7%A8-%D7%94%D7%A2%D7%95%D7%9C%D7%9E%D7%99%D7%AA/">Technion</a> | <a href="https://www.cs.ubc.ca/nest/imager/newsandevents.php#5">UBC</a> | <a href="http://cs.unc.edu/about/rankings/">UNC</a> | <a href="http://www.cs.utah.edu/soc-ranks-high-for-productivity/">Utah</a> | <a href="https://uwaterloo.ca/artificial-intelligence-institute/rankings">Waterloo</a> | <a href="https://www.facebook.com/yann.lecun/posts/10154886059272143">Yann LeCun</a> | <a href="https://blog.regehr.org/archives/1558">John Regehr</a> | <a href="http://www.theexclusive.org/2017/11/cs-rankings.html">Charles Sutton</a>
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update December 2, 2018). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track members of a CS department (or similar), and that their names are as they appear in DBLP.
-	      <!-- Alternatively, use <b><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeIatTH6sgaaBCGKbOV6l4xk6kqF564ThUvzfwV0Vl3pSKTKw/viewform?c=0&w=1">this form</a></b> for individual updates. -->
-	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>.<br />
+	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update July 13, 2020). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). If you absolutely cannot do a pull request, you can submit a single update here, but as this involves manual labor, it will result in a slower update: <a href="https://github.com/emeryberger/CSrankings/issues/new?assignees=&labels=&template=updating-a-single-faculty-member-s-entry.md&title=Faculty+member+name+goes+here%2C+plus+%28ADD%7CUPDATE%7CDELETE%29">new issue</a>. Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.
+	      
+	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 	    <p>
 	      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.com" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://github.com/emeryberger/CSrankings" rel="dct:source">http://github.com/emeryberger/CSrankings</a>.
 	      Follow <b><a href="https://twitter.com/CSrankings">@csrankings</a></b> for updates.<br />
-	      <br>Copyright 2017-2018 © <a href="http://emeryberger.com">Emery Berger</a><br />
+	      <br>Copyright 2017-2020 © <a href="http://emeryberger.com">Emery Berger</a><br />
 	    </p>
 	    </p>
 	  </div>
