@@ -9,8 +9,8 @@ from nameparser import HumanName
 #import networkx as nx
 #import matplotlib.pyplot as plt
 
-startyear = 2006
-endyear = 2017
+startyear = 2013
+endyear = 2018
 
 aicolor = "#32CD32"     # limegreen
 syscolor = "#00bfff"    # blue
@@ -31,37 +31,115 @@ colorGroup = { aicolor : 1,
                intercolor : 4,
                nacolor : 5 }
 
-colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, intercolor, nacolor ]
+#colorList = [aicolor, aicolor, aicolor, aicolor, aicolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, syscolor, theorycolor, theorycolor, theorycolor, intercolor, intercolor, intercolor, intercolor, syscolor, syscolor, intercolor, nacolor ]
 
 # colorList = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41" ]
 
-areaList = [ { "area" : "ai", "title" : "AI" },
-	    { "area" : "vision", "title" : "Vision" },
-	    { "area" : "mlmining", "title" : "ML" },
-	    { "area" : "nlp",  "title" : "NLP" },
-	    { "area" : "ir", "title" : "Web & IR" },
-	    { "area" : "arch", "title" : "Arch" },
-	    { "area" : "comm", "title" : "Networks"},
-	    { "area" : "sec", "title" : "Security"},
-	    { "area" : "mod", "title" : "DB"},
-	    { "area" : "hpc", "title" : "HPC"},
-	    { "area" : "mobile", "title" : "Mobile"},
-	    { "area" : "metrics", "title" : "Metrics"},
-	    { "area" : "ops", "title" : "OS" },
-	    { "area" : "plan", "title" : "PL" },
-	    { "area" : "soft", "title" : "SE" },
-	    { "area" : "act", "title" : "Theory" },
-	    { "area" : "crypt", "title" : "Crypto" },
-	    { "area" : "log", "title" : "Logic" },
-	    { "area" : "graph", "title" : "Graphics" },
-	    { "area" : "chi", "title" : "HCI" },
-	    { "area" : "robotics", "title" : "Robotics" },
-	    { "area" : "bio", "title" : "Comp. Biology" },
-	    { "area" : "da", "title" : "Design Automation" },
-            { "area" : "bed", "title" : "Embedded Systems" },
-             { "area" : "vis", "title" : "Visualization" }, 
-             { "area" : "na", "title" : "Other" }
+areaList = [{ "area" : "ai", "title" : "AI", "color" : aicolor },
+            { "area" : "aaai", "title" : "AI", "color" : aicolor },
+            { "area" : "ijcai", "title" : "AI", "color" : aicolor },
+	    { "area" : "vision", "title" : "Vision", "color" : aicolor },
+	    { "area" : "cvpr", "title" : "Vision", "color" : aicolor },
+	    { "area" : "iccv", "title" : "Vision", "color" : aicolor },
+	    { "area" : "eccv", "title" : "Vision", "color" : aicolor },
+	    { "area" : "mlmining", "title" : "ML", "color" : aicolor },
+	    { "area" : "kdd", "title" : "ML", "color" : aicolor },
+	    { "area" : "nips", "title" : "ML", "color" : aicolor },
+	    { "area" : "icml", "title" : "ML", "color" : aicolor },
+ 	    { "area" : "nlp",  "title" : "NLP", "color" : aicolor },
+ 	    { "area" : "emnlp",  "title" : "NLP", "color" : aicolor },
+ 	    { "area" : "naacl",  "title" : "NLP", "color" : aicolor },
+	    { "area" : "acl",  "title" : "NLP", "color" : aicolor },
+	    { "area" : "ir", "title" : "Web & IR", "color" : aicolor },
+	    { "area" : "sigir", "title" : "Web & IR", "color" : aicolor },
+	    { "area" : "www", "title" : "Web & IR", "color" : aicolor },
+	    { "area" : "arch", "title" : "Arch", "color" : syscolor },
+	    { "area" : "asplos", "title" : "Arch", "color" : syscolor },
+	    { "area" : "hpca", "title" : "Arch", "color" : syscolor },
+	    { "area" : "isca", "title" : "Arch", "color" : syscolor },
+	    { "area" : "micro", "title" : "Arch", "color" : syscolor },
+	    { "area" : "sec", "title" : "Security", "color" : syscolor },
+	    { "area" : "usenixsec", "title" : "Security", "color" : syscolor },
+	    { "area" : "oakland", "title" : "Security", "color" : syscolor },
+	    { "area" : "ccs", "title" : "Security", "color" : syscolor },
+	    { "area" : "ndss", "title" : "Security", "color" : syscolor },
+	    { "area" : "pets", "title" : "Security", "color" : syscolor },
+	    { "area" : "comm", "title" : "Networks", "color" : syscolor },
+	    { "area" : "sigcomm", "title" : "Networks", "color" : syscolor },
+	    { "area" : "nsdi", "title" : "Networks", "color" : syscolor },
+	    { "area" : "mod", "title" : "DB", "color" : syscolor },
+	    { "area" : "icde", "title" : "DB", "color" : syscolor },
+	    { "area" : "vldb", "title" : "DB", "color" : syscolor },
+	    { "area" : "pods", "title" : "DB", "color" : syscolor },
+	    { "area" : "sigmod", "title" : "DB", "color" : syscolor },
+	    { "area" : "hpc", "title" : "HPC", "color" : syscolor },
+	    { "area" : "hpdc", "title" : "HPC", "color" : syscolor },
+	    { "area" : "ics", "title" : "HPC", "color" : syscolor },
+	    { "area" : "sc", "title" : "HPC", "color" : syscolor },
+	    { "area" : "mobile", "title" : "Mobile", "color" : syscolor },
+	    { "area" : "mobicom", "title" : "Mobile", "color" : syscolor },
+	    { "area" : "ubicomp", "title" : "Mobile", "color" : syscolor },
+	    { "area" : "sensys", "title" : "Mobile", "color" : syscolor },
+	    { "area" : "mobisys", "title" : "Mobile", "color" : syscolor },
+	    { "area" : "metrics", "title" : "Metrics", "color" : syscolor },
+	    { "area" : "imc", "title" : "Metrics", "color" : syscolor },
+	    { "area" : "sigmetrics", "title" : "Metrics", "color" : syscolor },
+	    { "area" : "ops", "title" : "OS" , "color" : syscolor },
+	    { "area" : "plan", "title" : "PL" , "color" : syscolor },
+	    { "area" : "pacmpl", "title" : "PL" , "color" : syscolor },
+	    { "area" : "popl", "title" : "PL" , "color" : syscolor },
+	    { "area" : "pldi", "title" : "PL" , "color" : syscolor },
+	    { "area" : "oopsla", "title" : "PL" , "color" : syscolor },
+	    { "area" : "icfp", "title" : "PL" , "color" : syscolor },
+	    { "area" : "soft", "title" : "SE" , "color" : syscolor },
+	    { "area" : "issta", "title" : "SE" , "color" : syscolor },
+	    { "area" : "icse", "title" : "SE" , "color" : syscolor },
+	    { "area" : "ase", "title" : "SE" , "color" : syscolor },
+	    { "area" : "fse", "title" : "SE" , "color" : syscolor },
+	    { "area" : "fast", "title" : "Systems" , "color" : syscolor },
+	    { "area" : "usenixatc", "title" : "Systems" , "color" : syscolor },
+	    { "area" : "eurosys", "title" : "Systems" , "color" : syscolor },
+	    { "area" : "sosp", "title" : "Systems" , "color" : syscolor },
+	    { "area" : "osdi", "title" : "Systems" , "color" : syscolor },
+	    { "area" : "act", "title" : "Theory", "color" : theorycolor },
+	    { "area" : "soda", "title" : "Theory", "color" : theorycolor },
+	    { "area" : "focs", "title" : "Theory", "color" : theorycolor },
+	    { "area" : "stoc", "title" : "Theory", "color" : theorycolor },
+	    { "area" : "crypt", "title" : "Crypto" , "color" : theorycolor },
+	    { "area" : "crypto", "title" : "Crypto" , "color" : theorycolor },
+	    { "area" : "eurocrypt", "title" : "Crypto" , "color" : theorycolor },
+	    { "area" : "log", "title" : "Logic" , "color" : theorycolor },
+	    { "area" : "lics", "title" : "Logic" , "color" : theorycolor },
+	    { "area" : "cav", "title" : "Logic" , "color" : theorycolor },
+	    { "area" : "ec", "title" : "Econ" , "color" : theorycolor },
+	    { "area" : "wine", "title" : "Econ" , "color" : theorycolor },
+	    { "area" : "graph", "title" : "Graphics" , "color" : intercolor },
+	    { "area" : "siggraph", "title" : "Graphics" , "color" : intercolor },
+	    { "area" : "chi", "title" : "HCI" , "color" : intercolor },
+	    { "area" : "chiconf", "title" : "HCI" , "color" : intercolor },
+	    { "area" : "uist", "title" : "HCI" , "color" : intercolor },
+	    { "area" : "robotics", "title" : "Robotics" , "color" : intercolor },
+	    { "area" : "rss", "title" : "Robotics" , "color" : intercolor },
+	    { "area" : "iros", "title" : "Robotics" , "color" : intercolor },
+	    { "area" : "icra", "title" : "Robotics" , "color" : intercolor },
+	    { "area" : "bio", "title" : "Comp. Biology" , "color" : intercolor },
+	    { "area" : "ismb", "title" : "Comp. Biology" , "color" : intercolor },
+	    { "area" : "recomb", "title" : "Comp. Biology" , "color" : intercolor },
+	    { "area" : "da", "title" : "Design Automation", "color" : syscolor },
+	    { "area" : "dac", "title" : "Design Automation", "color" : syscolor },
+	    { "area" : "iccad", "title" : "Design Automation", "color" : syscolor },
+            { "area" : "bed", "title" : "Embedded Systems", "color" : syscolor },
+            { "area" : "emsoft", "title" : "Embedded Systems", "color" : syscolor },
+            { "area" : "rtas", "title" : "Embedded Systems", "color" : syscolor },
+            { "area" : "rtss", "title" : "Embedded Systems", "color" : syscolor },
+            { "area" : "vis", "title" : "Visualization", "color" : intercolor }, 
+            { "area" : "vr", "title" : "Visualization", "color" : intercolor }, 
+            { "area" : "na", "title" : "Other", "color" : nacolor }
 ]
+
+colorList = []
+for item in areaList:
+    colorList.append(item["color"])
 
 areaNum = {}
 ind = 0
@@ -70,11 +148,22 @@ for i in areaList:
     ind += 1
 
 def canonicalName(name):
-    canonical = name.decode('utf8')
+    canonical = name # .decode('utf8')
     canonical = canonical.replace("0001","")
     canonical = canonical.replace("0002","")
     canonical = canonical.replace("0003","")
     canonical = canonical.replace("0004","")
+    canonical = canonical.replace("0005","")
+    canonical = canonical.replace("0006","")
+    canonical = canonical.replace("0007","")
+    canonical = canonical.replace("0008","")
+    canonical = canonical.replace("0009","")
+    canonical = canonical.replace("0010","")
+    canonical = canonical.replace("0011","")
+    canonical = canonical.replace("0012","")
+    canonical = canonical.replace("0013","")
+    canonical = canonical.replace("0014","")
+    canonical = canonical.replace("0015","")
     canonical = HumanName(canonical).first + " " + HumanName(canonical).last
     return canonical
 
@@ -84,11 +173,13 @@ def displayName(name):
     return display
 
 def addNode(name, nodes, addedNode, authorIndex, authorInd):
-    if not addedNode.has_key(name.decode('utf8')):
+    # if not name.decode('utf8') in addedNode:
+    if not name in addedNode:
         if name in maxareas:
             nodes.append({ 'nodeName' : canonicalName(name),
                            'group' : areaNum[maxareas[name]]})
-            addedNode[name.decode('utf8')] = True
+            addedNode[name] = True
+            # addedNode[name.decode('utf8')] = True
             authorIndex[canonicalName(name)] = authorInd
             authorInd += 1
         
@@ -123,7 +214,7 @@ def makegraph(institution,fname,dir):
         # Now go through all the coauthors (we may not find any, which we handle as a special case below).
         foundOne = False
         for coauth in coauthors.get(author, []):
-            print "author = " + author + ", coauth = " + coauth
+            print("author = " + author + ", coauth = " + coauth)
             if coauth in aliases:
                 coauth = aliases[coauth]
             if coauth in facultydict:
@@ -139,7 +230,7 @@ def makegraph(institution,fname,dir):
                     # dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
                     # Force co-author to be added here so we can reference him/her.
                     addNode(coauth, nodes, addedNode, authorIndex, authorInd)
-                    if not edges.has_key(realname+coauthorrealname):
+                    if not realname+coauthorrealname in edges:
                         degree += 1
                         sumdegree += 1
                         if degree > maxdegree:
@@ -148,7 +239,8 @@ def makegraph(institution,fname,dir):
                         links.append({ 'source' : authorIndex[realname],
                                        'target' : authorIndex[coauthorrealname],
                                        'value'  : 1 })
-                        print "adding " + realname.encode('utf8') + " <-> " + coauthorrealname.encode('utf8')
+                        # print("adding " + realname.encode('utf8') + " <-> " + coauthorrealname.encode('utf8'))
+                        print("adding " + realname + " <-> " + coauthorrealname)
                         edges[realname+coauthorrealname] = 0
                         edges[coauthorrealname+realname] = 0
                     edges[realname+coauthorrealname] += 1
@@ -162,6 +254,12 @@ def makegraph(institution,fname,dir):
             # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
             # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
             edges[realname+realname] = 2 # include one bogus co-authored article (2 b/c divided by 2 later)
+            if realname not in authorIndex:
+                print(realname + " NOT FOUND")
+                if author not in authorIndex:
+                    print(author + " ALSO NOT FOUND")
+                print(authorIndex)
+                    
             links.append({ 'source' : authorIndex[realname],
                            'target' : authorIndex[realname],
                            'value'  : 1 })
@@ -176,13 +274,15 @@ def makegraph(institution,fname,dir):
     #with open(dir+fname+".json", 'wb') as f:
     # f.write("var collabs = " + json.dumps(gr) + ";")
     # f.write(json.dumps(gr))
-    with open(dir+fname+"-nodes.csv", 'wb') as f:
+    with open(dir+fname+"-nodes.csv", 'w') as f:
         f.write("name,abbrv,color,coauthored\n")
         for node in nodes:
-            name = node['nodeName'].encode('utf8')
+            name = node['nodeName']
+            # name = node['nodeName'].encode('utf8')
             line = name
             line += ","
-            line += displayName(name).encode('utf8')
+            # line += displayName(name).encode('utf8')
+            line += displayName(name)
             line += ","
             line += colors[node['group']-1]
             if coauthored[node['nodeName']]:
@@ -190,7 +290,7 @@ def makegraph(institution,fname,dir):
             else:
                 line += ",0"
             f.write(line + "\n")
-    with open(dir+fname+"-matrix.json", 'wb') as f:
+    with open(dir+fname+"-matrix.json", 'w') as f:
         matrix = []
         for x in range(0,len(nodes)):
             row = []
@@ -218,7 +318,7 @@ def makegraph(institution,fname,dir):
 
 # name,affiliation
 facultydict = {}
-with open('faculty-affiliations.csv', 'rb') as csvfile:
+with open('faculty-affiliations.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         name = row['name'].strip()
@@ -234,7 +334,7 @@ institutions = OrderedDict(sorted(institutions.items(), key=lambda t: t[0]))
 
 # alias,name
 aliases = {}
-with open('dblp-aliases.csv','rb') as csvfile:
+with open('dblp-aliases.csv','r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         alias = row['alias'].strip()
@@ -244,7 +344,7 @@ with open('dblp-aliases.csv','rb') as csvfile:
 
 # author,coauthor,year,area
 coauthors = {}
-with open('faculty-coauthors.csv', 'rb') as csvfile:
+with open('faculty-coauthors.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         author = row['author'].strip()
@@ -253,13 +353,13 @@ with open('faculty-coauthors.csv', 'rb') as csvfile:
         coauthor = row['coauthor'].strip()
         if coauthor in aliases:
             coauthor = aliases[coauthor]
-        print "read in " + author
-        print "  coauthor = " + coauthor
+#        print("read in " + author)
+#        print("  coauthor = " + coauthor)
         year = int(row['year'].strip())
-        print "year = " + str(year)
+#        print("year = " + str(year))
         if year < startyear or year > endyear:
             continue
-        if not coauthors.has_key(author):
+        if not author in coauthors:
             coauthors[author] = []
         coauthors[author].append(coauthor)
         #if not coauthors.has_key(coauthor):
@@ -327,5 +427,5 @@ for author in maxareas:
 dir = "collab/graphs/"
 
 for institution in institutions:
-    print '<option value="' + institution + '">' + institution + "</option>" 
+    print('<option value="' + institution + '">' + institution + "</option>" )
     makegraph(institution,institution+"-graph",dir)
