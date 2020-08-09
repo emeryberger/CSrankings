@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
   <head>
+   
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="preload" as="style" href="css/csrankings.css">
@@ -124,7 +125,19 @@
       src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
       }
-      
+
+      .note {
+      font-weight: bold;
+      }
+
+      .areaname {
+      font-variant:small-caps;
+      font-size: -1;
+      }
+
+      .piechart {
+      font-size: +1;
+      }
     </style>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -231,7 +244,7 @@
 		    <option value="99999">all</option>
 		  </select>
 -->
-		  institutions in
+		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
 		    <option value="USA" selected="selected">the USA</option>
 		    <option value="canada">Canada</option>
@@ -243,7 +256,7 @@
 		    <option value="africa">Africa</option>
 		    <option value="world">the world</option>
 		  </select>
-		  by publications from
+		  <label for="fromyear">by publications from</label>
 		  <!--	      by average count
 			      of publications from -->
 		  <select id="fromyear" name="fromyear">
@@ -299,7 +312,7 @@
 		    <option value="2019">2019</option>
 		    <option value="2020">2020</option>
 		  </select>
-		  to
+		  <label for="toyear">to</label>
 		  <select id="toyear" name="toyear">
 		    <option value="1980">1980</option>  
 		    <option value="1981">1981</option>  
@@ -382,7 +395,9 @@
 			<span class="hovertip" id="ai-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Artificial intelligence
+			<label for="ai">
+			  Artificial intelligence
+			</label>
 			<div class="table-responsive" style="display:none;" id="ai-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -394,7 +409,9 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/aaai/">AAAI</a>
+					<label for="aaai">
+					  <a href="http://dblp.org/db/conf/aaai/">AAAI</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="aaai" id="aaai" value="1.0"/>
@@ -402,7 +419,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/ijcai/index.html">IJCAI</a>
+					<label for="ijcai">
+					  <a href="http://dblp.org/db/conf/ijcai/index.html">IJCAI</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ijcai" id="ijcai" value="1.0"/>
@@ -425,7 +444,9 @@
 			<span class="hovertip" id="vision-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Computer vision
+			<label for="vision">
+			  Computer vision
+			</label>
 			<div class="table-responsive" style="display:none;" id="vision-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -437,7 +458,9 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/cvpr/index.html">CVPR</a>
+					<label for="cvpr">
+					  <a href="http://dblp.org/db/conf/cvpr/index.html">CVPR</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="cvpr" id="cvpr" value="1.0"/>
@@ -445,7 +468,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/eccv/index.html">ECCV</a>
+					<label for="eccv">
+					  <a href="http://dblp.org/db/conf/eccv/index.html">ECCV</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="eccv" id="eccv" value="1.0"/>
@@ -453,7 +478,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/iccv/index.html">ICCV</a>
+					<label for="iccv">
+					  <a href="http://dblp.org/db/conf/iccv/index.html">ICCV</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="iccv" id="iccv" value="1.0"/>
@@ -487,7 +514,9 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/icml/index.html">ICML</a>
+					<label for="icml">
+					  <a href="http://dblp.org/db/conf/icml/index.html">ICML</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="icml" id="icml" value="1.0"/>
@@ -495,7 +524,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
+					<label for="kdd">
+					  <a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
@@ -503,7 +534,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
+					<label for="nips">
+					  <a href="http://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nips" id="nips" value="1.0"/>
@@ -526,7 +559,9 @@
 			<span class="hovertip" id="nlp-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			Natural language processing
+			<label for="nlp">
+			  Natural language processing
+			</label>
 			<div class="table-responsive" style="display:none;" id="nlp-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -538,7 +573,9 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/acl/index.html">ACL</a>
+					<label for="acl">
+					  <a href="http://dblp.org/db/conf/acl/index.html">ACL</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="acl" id="acl" value="1.0"/>
@@ -546,7 +583,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/emnlp/index.html">EMNLP</a>
+					<label for="emnlp">
+					  <a href="http://dblp.org/db/conf/emnlp/index.html">EMNLP</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="emnlp" id="emnlp" value="1.0"/>
@@ -554,7 +593,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/naacl/index.html">NAACL</a>
+					<label for="naacl">
+					  <a href="http://dblp.org/db/conf/naacl/index.html">NAACL</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="naacl" id="naacl" value="1.0"/>
@@ -577,7 +618,9 @@
 			<span class="hovertip" id="ir-widget">
 			  <font color="blue">&#9658;</font>
 			</span>
-			The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="ir">
+			  The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</label>
 			<div class="table-responsive" style="display:none;" id="ir-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
@@ -589,7 +632,9 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigir/index.html">SIGIR</a>
+					<label for="sigir">
+					  <a href="http://dblp.org/db/conf/sigir/index.html">SIGIR</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sigir" id="sigir" value="1.0"/>
@@ -597,7 +642,9 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/www/index.html">WWW</a>
+					<label for="www">
+					  <a href="http://dblp.org/db/conf/www/index.html">WWW</a>
+					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="www" id="www" value="1.0"/>
@@ -1784,7 +1831,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update January 25, 2020). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates <a href="https://github.com/emeryberger/CSrankings/issues/new?assignees=&labels=&template=updating-a-single-faculty-member-s-entry.md&title=Faculty+member+name+goes+here%2C+plus+%28ADD%7CUPDATE%7CDELETE%29">here</a> (for a single update) or via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.
+	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update July 13, 2020). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). If you absolutely cannot do a pull request, you can submit a single update here, but as this involves manual labor, it will result in a slower update: <a href="https://github.com/emeryberger/CSrankings/issues/new?assignees=&labels=&template=updating-a-single-faculty-member-s-entry.md&title=Faculty+member+name+goes+here%2C+plus+%28ADD%7CUPDATE%7CDELETE%29">new issue</a>. Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

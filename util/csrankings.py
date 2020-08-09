@@ -18,7 +18,7 @@ import operator
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile('(\d+)-(\d+)')
+pageCounterNormal = re.compile('([0-9]+)-([0-9]+)') #  flags=re.ASCII)
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
@@ -78,7 +78,7 @@ areadict = {
     # "Next tier" - see csrankings.ts
     'oopsla' : ['OOPSLA', 'OOPSLA/ECOOP'], # Next tier; note in 1990 the conference was merged with ECOOP
     'icfp'   : ['ICFP'],   # Next tier
-    'pacmpl' : ['PACMPL'], # Special PACMPL handling below
+    'pacmpl' : ['PACMPL', 'Proc. ACM Program. Lang.'], # Special PACMPL handling below
     # SIGSOFT
     #    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
     'icse' : ['ICSE', 'ICSE (1)'],
@@ -97,7 +97,7 @@ areadict = {
     # - Two variants for each, as in DBLP.
     # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
     'imc': ['IMC', 'Internet Measurement Conference'],
-    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS'],
+    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS', 'Proc. ACM Meas. Anal. Comput. Syst.'],
     # SIGMOBILE
     # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
     'mobisys' : ['MobiSys'],
@@ -109,7 +109,7 @@ areadict = {
     'hpdc': ['HPDC'],
     'ics': ['ICS'],
     # SIGBED
-    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT'],
+    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT', 'ACM Trans. Embedded Comput. Syst.'],
     'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.'], # TECS: issue number & page numbers must be checked
     'rtss' : ['RTSS'],
     'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
@@ -119,7 +119,7 @@ areadict = {
     'dac' : ['DAC'],
     # SIGMOD
     # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
-    'vldb' : ['VLDB', 'PVLDB'],
+    'vldb' : ['VLDB', 'PVLDB', 'Proc. VLDB Endow.'],
     'sigmod' : ['SIGMOD Conference'],
     'icde' : ['ICDE'], # next tier
     'pods' : ['PODS'], # next tier
@@ -195,7 +195,7 @@ areadict = {
     # SIGBio
     # - special handling for ISMB proceedings in Bioinformatics special issues.
     # 'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
-    'ismb': ['ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
+    'ismb': ['ISMB', 'Bioinformatics', 'Bioinform.', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
     'recomb' : ['RECOMB'],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
     'vis': ['IEEE Visualization', 'IEEE Trans. Vis. Comput. Graph.'],
@@ -207,8 +207,11 @@ areadict = {
 }
 
 # EMSOFT is now published as a special issue of TECS, in a particular page range.
-EMSOFT_TECS = { 2017: (16, 5) }
-EMSOFT_TECS_PaperNumbers = { 2017: (163, 190) } # "pages" 163--190
+EMSOFT_TECS = { 2017: (16, 5), 2019: (18, "5s") }
+EMSOFT_TECS_PaperNumbers = { 2017: (163, 190), 2019: (84, 110) }
+
+# DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
+DAC_TooShortPapers = { 2019: { 21, 22, 43, 44, 45, 76, 77, 78, 79, 100, 101, 121, 152, 153, 154, 175, 176, 197, 198, 199 } }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
@@ -288,8 +291,8 @@ TVCG_Vis_Volume = {2021: (27, 1),
                    }
 
 # TVCG special handling to count only IEEE VR
-TVCG_VR_Volume = {2021: (27, 4),
-                  2020: (26, 4),
+TVCG_VR_Volume = {2021: (27, 5),
+                  2020: (26, 5),
                   2019: (25, 5),
                   2018: (24, 4),
                   2017: (23, 4),
@@ -418,6 +421,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     global ASE_LongPaperThreshold
     global pageCountThreshold
     global ISMBpageCounter
+    global DAC_TooShortPapers
     
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
@@ -436,7 +440,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
             return False
         
     # Special handling for ISMB.
-    if confname == 'Bioinformatics':
+    if confname == 'Bioinformatics' or confname == 'Bioinform.':
         if year in ISMB_Bioinformatics:
             (vol, num) = ISMB_Bioinformatics[year]
             if (volume != str(vol)) or (number != str(num)):
@@ -506,6 +510,15 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
             if url.find('innovations') != -1:
                 return False
 
+    # Special handling for DAC.
+    elif confname == 'DAC':
+        if year in DAC_TooShortPapers:
+            try:
+                if int(pages) in DAC_TooShortPapers[year]:
+                    return False
+            except Exception as e:
+                pass
+    
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -517,7 +530,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
 
     if pageCount == -1 and confname == 'ACM Conference on Computer and Communications Security':
         tooFewPages = True
-    
+
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = False
@@ -527,9 +540,10 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
         exceptionConference |= confname == 'SIGGRAPH Asia'
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
-        exceptionConference |= confname == 'ICCAD' and year == 2018
+        exceptionConference |= confname == 'ICCAD' and (year == 2016 or year == 2018)
         exceptionConference |= confname == 'CHI' and year == 2019
         exceptionConference |= confname == 'FAST' and year == 2012
+        exceptionConference |= confname == 'DAC' and year == 2019
         
     
         if exceptionConference:
