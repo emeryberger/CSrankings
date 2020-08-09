@@ -4,6 +4,9 @@ import gzip
 
 authorPaperCountThreshold = 0
 
+startyear = 2013
+endyear   = 2018
+
 def parseDBLP(facultydict):
     coauthors = {}
     papersWritten = {}
@@ -122,9 +125,11 @@ def parseDBLP(facultydict):
             for (year,area) in coauthors[auth]:
                 for coauth in coauthors[auth][(year,area)]:
                     if (papersWritten[coauth] >= authorPaperCountThreshold):
-                        o.write(auth.encode('utf-8'))
+                        o.write(auth)
+                        # o.write(auth.encode('utf-8'))
                         o.write(',')
-                        o.write(coauth.encode('utf-8'))
+                        o.write(coauth)
+                        # o.write(coauth.encode('utf-8'))
                         o.write(',')
                         o.write(str(year))
                         o.write(',')
