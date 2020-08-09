@@ -23,6 +23,7 @@
 ;
 class CSRankings {
     constructor() {
+        this.note = {};
         this.authorFile = "./csrankings.csv";
         this.authorinfoFile = "./generated-author-info.csv";
         this.countryinfoFile = "./country-info.csv";
@@ -278,7 +279,9 @@ class CSRankings {
     translateNameToDBLP(name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
         // First, replace spaces and non-ASCII characters (not complete).
-        // Known issue: does not properly handle suffixes like Jr., III, etc.
+        name = name.replace(/ Jr\./g, "_Jr.");
+        name = name.replace(/ II/g, "_II");
+        name = name.replace(/ III/g, "_III");
         name = name.replace(/'|\-|\./g, "=");
         name = name.replace(/Á/g, "=Aacute=");
         name = name.replace(/á/g, "=aacute=");
@@ -293,6 +296,7 @@ class CSRankings {
         name = name.replace(/ø/g, "=oslash=");
         name = name.replace(/Ö/g, "=Ouml=");
         name = name.replace(/ü/g, "=uuml=");
+        name = name.replace(/ß/g, "=szlig=");
         let splitName = name.split(" ");
         let lastName = splitName[splitName.length - 1];
         let disambiguation = "";
@@ -634,6 +638,11 @@ class CSRankings {
                 for (let counter = 0; counter < ai.length; counter++) {
                     const record = ai[counter];
                     let name = record['name'].trim();
+                    let result = name.match(CSRankings.nameMatcher);
+                    if (result) {
+                        name = result[1].trim();
+                        this.note[name] = result[2];
+                    }
                     if (name !== "") {
                         this.dblpAuthors[name] = this.translateNameToDBLP(name);
                         this.homepages[name] = record['homepage'];
@@ -651,9 +660,16 @@ class CSRankings {
             complete: (results) => {
                 const data = results.data;
                 this.authors = data;
+                /*
                 for (let r in this.authors) {
                     let name = this.authors[r].name;
-                }
+                    let result = name.match(CSRankings.nameMatcher);
+                    if (result) {
+                    name = result[1];
+                    this.authors[r].name = name;
+                    this.note[name] = result[3];
+                    }
+                }*/
                 CSRankings.promise(cont);
             }
         });
@@ -951,6 +967,11 @@ class CSRankings {
                     + '>'
                     + name
                     + '</a>&nbsp;';
+                if (this.note.hasOwnProperty(name)) {
+                    const url = CSRankings.noteMap[this.note[name]];
+                    const href = '<a href="' + url + '">';
+                    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+                }
                 if (this.acmfellow.hasOwnProperty(name)) {
                     p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
                         this.acmfellowImage + '"></span>&nbsp;';
@@ -959,7 +980,8 @@ class CSRankings {
                     p += '<span title="Turing Award"><img alt="Turing Award" src="' +
                         this.turingImage + '"></span>&nbsp;';
                 }
-                p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
+                p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
+                // p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
                     + '" '
@@ -992,7 +1014,7 @@ class CSRankings {
                     + '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
                 p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
-                    + "<font size=\"+1\">" + this.PieChart + "</font></span>"
+                    + "<span class='piechart'>" + this.PieChart + "</span></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1563,6 +1585,7 @@ CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
 CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
+CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',
@@ -1656,4 +1679,13 @@ CSRankings.nextTier = {
     'oopsla': true
 };
 CSRankings.childMap = {};
+CSRankings.noteMap = {
+    'Tech': 'https://tech.cornell.edu/',
+    'CBG': 'https://www.cis.mpg.de/cbg/',
+    'INF': 'https://www.cis.mpg.de/mpi-inf/',
+    'IS': 'https://www.cis.mpg.de/is/',
+    'MG': 'https://www.cis.mpg.de/molgen/',
+    'SP': 'https://www.cis.mpg.de/mpi-for-cyber-for-security-and-privacy/',
+    'SWS': 'https://www.cis.mpg.de/mpi-sws/'
+};
 var csr = new CSRankings();
