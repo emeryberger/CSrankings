@@ -18,7 +18,7 @@ import operator
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile('(\d+)-(\d+)')
+pageCounterNormal = re.compile('([0-9]+)-([0-9]+)') #  flags=re.ASCII)
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile('[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)')
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
@@ -97,7 +97,7 @@ areadict = {
     # - Two variants for each, as in DBLP.
     # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
     'imc': ['IMC', 'Internet Measurement Conference'],
-    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS'],
+    'sigmetrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS', 'Proc. ACM Meas. Anal. Comput. Syst.'],
     # SIGMOBILE
     # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
     'mobisys' : ['MobiSys'],
@@ -291,8 +291,8 @@ TVCG_Vis_Volume = {2021: (27, 1),
                    }
 
 # TVCG special handling to count only IEEE VR
-TVCG_VR_Volume = {2021: (27, 4),
-                  2020: (26, 4),
+TVCG_VR_Volume = {2021: (27, 5),
+                  2020: (26, 5),
                   2019: (25, 5),
                   2018: (24, 4),
                   2017: (23, 4),
