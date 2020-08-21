@@ -7546,10 +7546,10 @@ Andrew W. Moore 0002,University of Cambridge,sigcomm,1.0,0.16666666666666666,201
 Andrew W. Moore 0002,University of Cambridge,sigmetrics,1.0,0.5,2005
 Andrew W. Moore 0002,University of Cambridge,usenixatc,1.0,0.058823529411764705,2016
 Andrew W. Moore 0002,University of Cambridge,usenixatc,1.0,0.06666666666666667,2017
-Andrey Bogdanov,DTU,ccs,1.0,0.5,2015
-Andrey Bogdanov,DTU,crypto,2.0,0.5333333333333333,2013
-Andrey Bogdanov,DTU,eurocrypt,1.0,0.16666666666666666,2012
-Andrey Bogdanov,DTU,eurocrypt,1.0,0.25,2015
+Andrey Bogdanov,University of Bergen,ccs,1.0,0.5,2015
+Andrey Bogdanov,University of Bergen,crypto,2.0,0.5333333333333333,2013
+Andrey Bogdanov,University of Bergen,eurocrypt,1.0,0.16666666666666666,2012
+Andrey Bogdanov,University of Bergen,eurocrypt,1.0,0.25,2015
 Andrey N. Chernikov,Old Dominion University,ics,1.0,0.5,2004
 Andrey N. Chernikov,Old Dominion University,ics,1.0,0.16666666666666666,2005
 Andrey N. Chernikov,Old Dominion University,ics,1.0,0.5,2008
@@ -32241,8 +32241,8 @@ Elisa Rubegni,Lancaster University,chiconf,1.0,0.5,2018
 Elisabeth André,University of Augsburg,chiconf,1.0,0.16666666666666666,2015
 Elisabeth André,University of Augsburg,vis,1.0,0.2,2018
 Elisabeth Lex,Graz University of Technology,www,1.0,0.3333333333333333,2017
-Elisabeth Oswald,University of Bristol,crypto,1.0,0.5,2011
-Elisabeth Oswald,University of Bristol,usenixsec,1.0,0.3333333333333333,2017
+Elisabeth Oswald,University of Klagenfurt,crypto,1.0,0.5,2011
+Elisabeth Oswald,University of Klagenfurt,usenixsec,1.0,0.3333333333333333,2017
 Elisabetta Di Nitto,Politecnico di Milano,icse,1.0,0.25,1995
 Elisabetta Di Nitto,Politecnico di Milano,icse,1.0,0.3333333333333333,1998
 Elisabetta Di Nitto,Politecnico di Milano,icse,1.0,0.5,1999
@@ -35177,6 +35177,31 @@ Federica Sarro,University College London,fse,1.0,0.16666666666666666,2019
 Federica Sarro,University College London,icse,1.0,0.25,2013
 Federica Sarro,University College London,icse,1.0,0.3333333333333333,2016
 Federica Sarro,University College London,issta,1.0,0.16666666666666666,2016
+Fedor V. Fomin,University of Bergen,aaai,1.0,0.25,2010
+Fedor V. Fomin,University of Bergen,aaai,1.0,0.3333333333333333,2013
+Fedor V. Fomin,University of Bergen,aaai,2.0,0.75,2020
+Fedor V. Fomin,University of Bergen,focs,1.0,0.16666666666666666,2009
+Fedor V. Fomin,University of Bergen,focs,1.0,0.25,2012
+Fedor V. Fomin,University of Bergen,focs,1.0,0.16666666666666666,2013
+Fedor V. Fomin,University of Bergen,focs,1.0,0.16666666666666666,2016
+Fedor V. Fomin,University of Bergen,icml,1.0,0.25,2019
+Fedor V. Fomin,University of Bergen,ijcai,1.0,0.16666666666666666,2009
+Fedor V. Fomin,University of Bergen,soda,1.0,0.5,2003
+Fedor V. Fomin,University of Bergen,soda,1.0,0.25,2004
+Fedor V. Fomin,University of Bergen,soda,1.0,0.3333333333333333,2006
+Fedor V. Fomin,University of Bergen,soda,1.0,0.3333333333333333,2008
+Fedor V. Fomin,University of Bergen,soda,1.0,0.25,2009
+Fedor V. Fomin,University of Bergen,soda,2.0,0.5,2010
+Fedor V. Fomin,University of Bergen,soda,1.0,0.25,2011
+Fedor V. Fomin,University of Bergen,soda,3.0,1.0833333333333333,2012
+Fedor V. Fomin,University of Bergen,soda,1.0,0.5,2013
+Fedor V. Fomin,University of Bergen,soda,1.0,0.3333333333333333,2014
+Fedor V. Fomin,University of Bergen,soda,1.0,0.2,2015
+Fedor V. Fomin,University of Bergen,soda,2.0,0.39285714285714285,2016
+Fedor V. Fomin,University of Bergen,soda,2.0,0.45,2017
+Fedor V. Fomin,University of Bergen,soda,1.0,0.25,2020
+Fedor V. Fomin,University of Bergen,stoc,1.0,0.25,2016
+Fedor V. Fomin,University of Bergen,stoc,1.0,0.2,2020
 Fei Chiang,McMaster University,icde,1.0,0.14285714285714285,2008
 Fei Chiang,McMaster University,icde,1.0,0.5,2011
 Fei Chiang,McMaster University,icde,1.0,0.25,2014
@@ -38209,14 +38234,14 @@ Georg Carle,TU Munich,imc,1.0,0.16666666666666666,2017
 Georg Carle,TU Munich,imc,2.0,0.2361111111111111,2018
 Georg Carle,TU Munich,imc,1.0,0.2,2019
 Georg Carle,TU Munich,sigcomm,1.0,0.2,2018
-Georg Fuchsbauer,Ecole Normale Superieure,ccs,1.0,0.25,2016
-Georg Fuchsbauer,Ecole Normale Superieure,ccs,1.0,1.0,2019
-Georg Fuchsbauer,Ecole Normale Superieure,crypto,1.0,0.2,2010
-Georg Fuchsbauer,Ecole Normale Superieure,crypto,2.0,0.6666666666666666,2015
-Georg Fuchsbauer,Ecole Normale Superieure,crypto,1.0,0.3333333333333333,2018
-Georg Fuchsbauer,Ecole Normale Superieure,eurocrypt,1.0,1.0,2011
-Georg Fuchsbauer,Ecole Normale Superieure,eurocrypt,1.0,0.3333333333333333,2019
-Georg Fuchsbauer,Ecole Normale Superieure,eurocrypt,1.0,0.3333333333333333,2020
+Georg Fuchsbauer,TU Wien,ccs,1.0,0.25,2016
+Georg Fuchsbauer,TU Wien,ccs,1.0,1.0,2019
+Georg Fuchsbauer,TU Wien,crypto,1.0,0.2,2010
+Georg Fuchsbauer,TU Wien,crypto,2.0,0.6666666666666666,2015
+Georg Fuchsbauer,TU Wien,crypto,1.0,0.3333333333333333,2018
+Georg Fuchsbauer,TU Wien,eurocrypt,1.0,1.0,2011
+Georg Fuchsbauer,TU Wien,eurocrypt,1.0,0.3333333333333333,2019
+Georg Fuchsbauer,TU Wien,eurocrypt,1.0,0.3333333333333333,2020
 Georg Gottlob,University of Oxford,aaai,1.0,0.3333333333333333,1990
 Georg Gottlob,University of Oxford,aaai,1.0,0.3333333333333333,2006
 Georg Gottlob,University of Oxford,aaai,1.0,0.3333333333333333,2007
@@ -44301,10 +44326,10 @@ Helge Rhodin,University of British Columbia,siggraph,1.0,0.1111111111111111,2017
 Helge Rhodin,University of British Columbia,siggraph-asia,1.0,0.14285714285714285,2015
 Helge Rhodin,University of British Columbia,siggraph-asia,1.0,0.125,2016
 Helge Rhodin,University of British Columbia,vr,1.0,0.14285714285714285,2019
-Helger Lipmaa,University of Tartu,ccs,1.0,0.3333333333333333,2000
-Helger Lipmaa,University of Tartu,crypto,1.0,0.25,1998
-Helger Lipmaa,University of Tartu,kdd,1.0,0.3333333333333333,2006
-Helger Lipmaa,University of Tartu,pets,1.0,0.2,2015
+Helger Lipmaa,Simula UiB,ccs,1.0,0.3333333333333333,2000
+Helger Lipmaa,Simula UiB,crypto,1.0,0.25,1998
+Helger Lipmaa,Simula UiB,kdd,1.0,0.3333333333333333,2006
+Helger Lipmaa,Simula UiB,pets,1.0,0.2,2015
 Helmut Hlavacs,University of Vienna,ubicomp,1.0,0.2,2012
 Helmut Mayer 0001,Bundeswehr University Munich,eccv,1.0,0.3333333333333333,1998
 Helmut Mayer 0001,Bundeswehr University Munich,iccv,1.0,0.5,2017
@@ -74508,16 +74533,16 @@ Martial Hebert,Carnegie Mellon University,rss,1.0,0.25,2009
 Martial Hebert,Carnegie Mellon University,rss,1.0,0.25,2012
 Martial Hebert,Carnegie Mellon University,rss,1.0,0.1,2015
 Martial Hebert,Carnegie Mellon University,siggraph,1.0,0.3333333333333333,2005
-Martijn Stam,University of Bristol,crypto,1.0,0.3333333333333333,2005
-Martijn Stam,University of Bristol,crypto,1.0,1.0,2008
-Martijn Stam,University of Bristol,crypto,1.0,0.3333333333333333,2011
-Martijn Stam,University of Bristol,crypto,1.0,0.3333333333333333,2016
-Martijn Stam,University of Bristol,eurocrypt,1.0,0.14285714285714285,2005
-Martijn Stam,University of Bristol,eurocrypt,1.0,0.25,2009
-Martijn Stam,University of Bristol,eurocrypt,1.0,0.25,2012
-Martijn Stam,University of Bristol,eurocrypt,1.0,0.25,2013
-Martijn Stam,University of Bristol,eurocrypt,1.0,0.25,2016
-Martijn Stam,University of Bristol,eurocrypt,1.0,0.5,2018
+Martijn Stam,Simula UiB,crypto,1.0,0.3333333333333333,2005
+Martijn Stam,Simula UiB,crypto,1.0,1.0,2008
+Martijn Stam,Simula UiB,crypto,1.0,0.3333333333333333,2011
+Martijn Stam,Simula UiB,crypto,1.0,0.3333333333333333,2016
+Martijn Stam,Simula UiB,eurocrypt,1.0,0.14285714285714285,2005
+Martijn Stam,Simula UiB,eurocrypt,1.0,0.25,2009
+Martijn Stam,Simula UiB,eurocrypt,1.0,0.25,2012
+Martijn Stam,Simula UiB,eurocrypt,1.0,0.25,2013
+Martijn Stam,Simula UiB,eurocrypt,1.0,0.25,2016
+Martijn Stam,Simula UiB,eurocrypt,1.0,0.5,2018
 Martijn van Otterlo,Tilburg University,aaai,1.0,0.25,2010
 Martijn van Otterlo,Tilburg University,icml,1.0,0.3333333333333333,2004
 Martijn van Otterlo,Tilburg University,icra,1.0,0.2,2012
