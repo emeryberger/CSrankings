@@ -1,7 +1,7 @@
 ---
 name: Updating a single faculty member's entry
 about: Use this form to make a single modification to a faculty member entry in CSrankings
-title: DEPRECATED: Faculty member name goes here, plus (ADD|UPDATE|DELETE)
+title: Faculty member name goes here, plus (ADD|UPDATE|DELETE) -- DEPRECATED
 labels: ''
 assignees: ''
 
