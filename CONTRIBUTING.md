@@ -2,18 +2,24 @@
 
 Thanks for contributing to CSrankings! Here are some guidelines to getting your pull request accepted.
 
-_Do not use Excel to edit any .csv files; Excel incorrectly tries to
+
+1. _Do not use Excel to edit any .csv files; Excel incorrectly tries to
 convert some Google Scholar entries to formulas, corrupting the
 database. Use a text editor like emacs or NotePad instead._
+
+2. _Insert new faculty **in alphabetical order**, not at the end of `csrankings.csv`._
+
+3. _Read and check **all** the boxes below by filling them in with an X._
 
 **Inclusion criteria**
 
 - [ ] Make sure that any faculty you add meet the inclusion
-criteria. Eligible faculty include only full-time, tenure-track
+criteria. Eligible faculty include only full-time, tenure-track research
 faculty members on a given campus who can *solely* advise PhD students in
 Computer Science. Faculty not in a CS department or similar who can
 advise PhD students in CS can be included regardless of their home
-department.
+department. Faculty should also have a 75%+ time appointment (check
+`old/industry.csv` for faculty who are now more than 25% in industry).
 
 **Updating an affiliation or home page**
 
