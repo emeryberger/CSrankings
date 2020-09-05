@@ -119,7 +119,7 @@ def handle_article(_, article):
         if confname in confdict:
             areaname = confdict[confname]
             #Special handling for PACMPL
-            if confname == 'PACMPL':
+            if areaname == 'pacmpl':
                 confname = article['number']
                 if confname in confdict:
                     areaname = confdict[confname]
