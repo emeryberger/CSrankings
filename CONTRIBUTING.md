@@ -14,11 +14,12 @@ database. Use a text editor like emacs or NotePad instead._
 **Inclusion criteria**
 
 - [ ] Make sure that any faculty you add meet the inclusion
-criteria. Eligible faculty include only full-time, tenure-track
+criteria. Eligible faculty include only full-time, tenure-track research
 faculty members on a given campus who can *solely* advise PhD students in
 Computer Science. Faculty not in a CS department or similar who can
 advise PhD students in CS can be included regardless of their home
-department.
+department. Faculty should also have a 75%+ time appointment (check
+`old/industry.csv` for faculty who are now more than 25% in industry).
 
 **Updating an affiliation or home page**
 
