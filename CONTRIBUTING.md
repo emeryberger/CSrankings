@@ -40,7 +40,7 @@ update `country-info.csv`.
 
 A full clone of the CSrankings repository is almost 2GB, and the `csrankings.csv` file is too large to edit via the GitHub web site.  To contribute a change without creating a full local clone of the CSrankings repo, you can do a _shallow clone_.  To do so, follow these steps:
 
-1. Fork the CSrankings repo.  If your fork is not up to date with the main repository, this technique may not work.  If necessary, delete and re-create your fork to get it up to date.
+1. Fork the CSrankings repo.  If your fork is not up to date with the main repository, this technique may not work.  If necessary, delete and re-create your fork to get it up to date.  (Do **not** delete your existing fork if it has unmerged changes you want to preserve!)
 2. Do a shallow clone of your fork: `git clone --depth 1 https://github.com/yourusername/CSrankings`.  This will only download the most recent commit, not the full git history.
 3. Make your changes on a branch, push them to your clone, and create a pull request on GitHub as usual.
 
