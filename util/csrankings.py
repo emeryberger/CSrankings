@@ -110,7 +110,7 @@ areadict = {
     'ics': ['ICS'],
     # SIGBED
     # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT', 'ACM Trans. Embedded Comput. Syst.'],
-    'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.'], # TECS: issue number & page numbers must be checked
+    'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.', 'ACM Trans. Embed. Comput. Syst.'], # TECS: issue number & page numbers must be checked
     'rtss' : ['RTSS'],
     'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
     # SIGDA
@@ -130,7 +130,7 @@ areadict = {
     'oakland' : ['IEEE Symposium on Security and Privacy'],
     'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
     'ndss' : ['NDSS'],
-    'pets' : ['PoPETs', 'Privacy Enhancing Technologies'],
+    'pets' : ['PoPETs', 'Privacy Enhancing Technologies', 'Proc. Priv. Enhancing Technol.'],
     # SIGCOMM
     # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
     'sigcomm': ['SIGCOMM'],
@@ -170,7 +170,7 @@ areadict = {
     # SIGCHI
     # 'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
     'chiconf' : ['CHI'],
-    'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive'],
+    'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive', 'Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.'],
     'uist' : ['UIST'],
 #    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL', 'NAACL-HLT',
 #            'ACL/IJCNLP',  # -- in 2009 was joint
