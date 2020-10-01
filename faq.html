@@ -7,8 +7,14 @@
     <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+      });
+    </script>
+    <script type="text/javascript" src="https://www.tuhh.de/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
     
-    <title>FAQ - CSRankings: Computer Science Rankings (beta)</title>
+    <title>FAQ - CSRankings: Computer Science Rankings</title>
 
 <!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
@@ -61,7 +67,7 @@
     <div class="container">
       <div class="page-header">
 	
-        <h1>FAQ Computer Science Rankings (beta)</h1>
+        <h1>FAQ Computer Science Rankings</h1>
 	<div class="panel panel-info">
 	  <div class="panel-heading">
 	    <p>
@@ -115,7 +121,16 @@
 			    difficult. It is admittedly bean-counting,
 			    but its intent is to "count the right
 			    beans." It is also entirely transparent;
-			    all code and data are publicly available.
+			    all code and data are publicly available
+			    at <a href="https://github.com/emeryberger/CSRankings">
+			      https://github.com/emeryberger/CSRankings
+			    </a> under a <a rel="license"
+			    href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative
+			    Commons
+			    Attribution-NonCommercial-NoDerivatives
+			    4.0 International License</a> (note: this
+			    means you may not distribute anything built from
+			    CSrankings' code or data).
 			  </p>
 			  <p>
 			</td>
@@ -136,22 +151,28 @@
 		      <tr>
 			<td>
 			  <p>
-			    Unfortunately, citation-based metrics have been
-			    repeatedly shown to be <a target="_blank"
-			    href="http://arxiv.org/abs/1212.0638">easy</a>
+			    Unfortunately, citation-based metrics have
+			    been repeatedly shown to
+			    be <a target="_blank"
+			    href="http://arxiv.org/abs/1212.0638">subject</a>
 			    to <a target="_blank"
-				  href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulate</a>. It costs nothing to add a citation. Sadly, there are communities that routinely cite each other in an effort to increase their perceived impact. Getting a paper into a top conference is not so easy.
+			    href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulation</a>. There
+			    are <a href="http://retractionwatch.com/2017/08/22/one-way-boost-unis-ranking-ask-faculty-cite/">universities
+			    instructing faculty</a> to cite each
+			    other, and the phenomenon
+			    of <a href="https://www.statnews.com/2017/01/13/citation-cartels-science/">"citation
+			    cartels"</a> is well documented.
 			  </p>
 			  <p>There are also methodological challenges:
 			    citations for all papers are not freely
 			    available and change rapidly, and citation
-			    count systems like Google Scholar don't do
+			    count systems like Google Scholar do not do
 			    a great job of disambiguating
 			    authors <em>and</em> can be gamed by
 			    authors. (See <a href="https://scholar.google.com/citations?user=qGuYgMsAAAAJ&hl=en">Et
 			    al.'s</a> page for a humorous example.)
 			  </p>
-			  <p>However, selective conferences are
+			  <p>Note that selective conferences are
 			    already a proxy for citation impact:
 			    papers published at these conferences are
 			    on average much more highly cited than
@@ -162,7 +183,41 @@
 		      </tr>
 		    </tbody>
 
-		    
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />What do <em>adjusted counts</em> and <em>average counts</em> mean?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p><b>Adjusted counts</b>: each publication is counted
+			    exactly once, with credit adjusted by splitting evenly
+			    across all co-authors. This approach makes it impossible to
+			    boost rankings simply by adding authors to a paper.
+			  </p>
+			  <p>
+			    <b>Average count</b> is the geometric mean
+			    of the adjusted counts per area (for n areas selected, this is the nth
+			    root of the product of all adjusted counts (+ 1)).
+			    $$averageCount = \sqrt[N]{\prod_{i=1}^N(adjustedCounts_i + 1)}$$
+			    <em>This
+			      computation implicitly normalizes for publication rates and sizes of
+			      areas.</em>
+			  </p>
+			  <p>
+			    Note that publications must be at least 6 pages long to be counted.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+	    
 		    <thead>
 		      <tr>
 			<th>
@@ -178,12 +233,12 @@
 		      <tr>
 			<td>
 			  <p>
-			  The areas are intended to span <em>most</em>
-			  established research-centric areas of
-			  computer science. Nearly all of these areas
-			  are backed by their own
-			  research-focused <a href="http://www.acm.org/special-interest-groups">ACM
-			  SIG</a>.
+			    Nearly all categories are based on
+			    research-focused <a href="http://www.acm.org/special-interest-groups">ACM
+			    SIGs</a>.  Areas not represented by ACM
+			    SIGs are intended to span <em>most</em>
+			    established research-centric areas of
+			    computer science.
 			  </p>
 			</td>
 		      </tr>
@@ -205,11 +260,11 @@
 			    For any research-focused area to be
 			    included, at least 50
 			    <a href="https://en.wikipedia.org/wiki/List_of_research_universities_in_the_United_States#Universities_classified_as_.22R1:_Doctoral_Universities_-_Highest_Research_Activity.22">R1
-			    institutions</a> have publications in the
-			    top conferences in that area since
-			    2000. This threshold is to ensure that there is
+			    institutions</a> must have publications in the
+			    top conferences in that area in the last 10 years.
+			    This threshold is to ensure that there is
 			    enough research activity in an area to
-			    enable a meaningful ranking. A number of
+			    enable a meaningful ranking. A number of ACM
 			    SIGs do not meet this criteria.
 			  </p>
 			</td>
@@ -232,13 +287,9 @@
 		      <tr>
 			<td>
 			  <p>
-			    The conferences listed (<em>at most three
-			    per area; see below</em>) were developed in
-			    consultation with faculty across a range
-			    of institutions. These
-			    are <a href="https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng">the
-			    most impactful</a> and selective
-			    conferences for each area.
+			    The conferences listed were developed in consultation
+			    with faculty across a range of
+			    institutions, including via community surveys.
 			  </p>
 			</td>
 		      </tr>
@@ -248,7 +299,7 @@
 		    <thead>
 		      <tr>
 			<th>
-			  <p><br />Why is there a cap of three conferences per area?<br />
+			  <p><br />Why so few conferences per area?<br />
 			  </p>
 			</th>
 		      </tr>
@@ -258,9 +309,8 @@
 		      <tr>
 			<td>
 			  <p>
-			    The cap is arbitrary but meant to include
-			    only the very top conferences in each
-			    area. All conferences listed must be
+			    Only the very top conferences in each area
+			    are listed. All conferences listed must be
 			    roughly equivalent in terms of number of
 			    submissions, selectivity and impact to
 			    avoid creating incentives to target less
@@ -283,29 +333,12 @@
 		      <tr>
 			<td>
 			  <p>
-			    Currently, only at most three conferences
-			    are listed per area.  Additional
+			    Additional
 			    conferences are not listed when they
-			    are not roughly equivalent to the rest in
-			    terms of number of submissions,
-			    selectivity and citation impact.
-			  </p>
-			  <p>For example: in the area of programming
-			    languages, PLDI and POPL
-			    currently get roughly 300 and 220
-			    submissions each year, respectively. Their
-			    acceptance rates over the last 10 years
-			    are 20% and 21%, while their
-			    citation impacts (measured by h5-median,
-			    via Google Scholar) are 69 and 65 (higher is better).
-			  </p>
-			  <p>For illustration, here are the stats for
-			  other conferences in this area which did not make the cut:
-			    <ul>
-			      <li>OOPSLA: 200 submissions / year, 25% acceptance rate, h5-median: 49.</li>
-			      <li>PPoPP: 150 submissions / year, 21% acceptance rate, h5-median: 50.</li>
-			      <li>ICFP: 100 submissions / year, 31% acceptance rate, h5-median: 35.</li>
-			    </ul>
+			    are not roughly equivalent to the rest.
+			    This selection is generally uncontroversial
+			    but in some communites has been established by surveying
+			    recent program committees from their indisputably top conference(s).
 			  </p>
 			</td>
 		      </tr>
@@ -336,11 +369,12 @@
 			    would make it trivial to inflate the
 			    effect of writing a single paper simply by
 			    adding authors.  Splitting authorship
-			    credit means that authors will be
-			    incentivized to
+			    credit means that authors are incentivized
+			    to
 			    appropriately <a href="http://www.acm.org/publications/policies/policy_on_authorship">treat
-			    authorship credit with the seriousness it
-			    deserves</a>.
+			    authorship credits</a>. Note that
+			    publication rates are normalized across
+			    areas.
 			  </p>
 			</td>
 		      </tr>
@@ -375,7 +409,7 @@
 			      would have to have their credit
 			      increased (talk about perverse
 			      incentives).</li>
-			      <li>It would create a perverse incentive
+			      <li>It would create an incentive
 			      for senior faculty to have their junior
 			      collaborators not get tenure (since they
 			      would then likely leave the
@@ -383,7 +417,7 @@
 			      <li>It would favor collaboration with
 			      industry (not in the database) over
 			      collaboration with academics. Note that
-			      for very good reasons, companies do not
+			      companies do not
 			      generally provide public access to their
 			      employee directories.</li>
 			      <li>It would create a disincentive for
@@ -409,18 +443,17 @@
 		      <tr>
 			<td>
 			  <p>
-			    The criteria for inclusion (which have
-			    been refined since CSRankings' inception)
-			    are that anyone who is a full-time,
+			    The criteria for inclusion are that anyone who is a full-time,
 			    tenure-track faculty member on a given
-			    campus <em>who can advise PhD
+			    campus <em>who can <b>solely</b> advise PhD
 			    students</em> in Computer Science can be
 			    included in the database. This approach
 			    thus extends the reach of the database to
 			    a number of faculty from other departments
 			    who have adjunct appointments with a CS
 			    department or similar that let them advise
-			    CS PhD students.
+			    CS PhD students. Note that full-time means an at least 75% appointment for
+			    the entire academic year.
 			  </p>
 			</td>
 		      </tr>
@@ -439,16 +472,13 @@
 		      <tr>
 			<td>
 			  <p>
-			    The primary audience of CSRankings is
-			    prospective graduate students who are
-			    seeking a postgraduate degree in Computer
-			    Science. Including ECE and other
-			    departments (when these are not just the
-			    local name for computer science) would likely
-			    sow confusion. As mentioned above,
-			    tenure-track faculty who can advise PhD
-			    students in CS can be included regardless
-			    of their home department.
+                            As mentioned above, tenure-track faculty
+			    who can advise PhD students in CS can be
+			    included regardless of their home
+			    department.  The primary audience of
+			    CSRankings is prospective graduate
+			    students who are seeking a postgraduate
+			    degree in Computer Science.
 			  </p>
 			</td>
 		      </tr>
@@ -491,26 +521,18 @@
 		      <tr>
 			<td>
 			  <p>
-			    There are two ways you can do this:
-			    <ul>
-			      <li>
-				<em>Just a few changes:</em> Use this Google Form to enter the additions or changes: <a href="http://goo.gl/forms/MDDMN0UKuCwkOyFT2">http://goo.gl/forms/MDDMN0UKuCwkOyFT2</a>.
-			      </li>
-			      <li>
-				<em>Extensive modifications:</em> Issue a
-				pull request for
-				the <a href="https://github.com/emeryberger/CSRankings">GitHub
-				  repo</a>. To add or modify a faculty
-				member's affiliation, update the
-				file <tt>faculty-affiliations.csv</tt>
-				and <tt>homepages.csv</tt>. If you are
-				adding a non-US institution, add
-				it to <tt>country-info.csv</tt>.
-			      </li>
-			    </ul>
-			    In either case, please make sure that the
-			      faculty's name corresponds to their <a href="http://dblp.uni-trier.de/search/">DBLP</a>
-			      author entry.
+			    <em>Submit a pull request</em> for
+			    the <a href="https://github.com/emeryberger/CSRankings">CSrankings GitHub repo</a>.
+			    <a href="https://github.com/emeryberger/CSrankings/blob/gh-pages/docs/CONTRIBUTING.md">More details<//a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>.
+</p>
+<p>
+			    Make sure that faculty members' names correspond to
+			      their <a href="http://dblp.uni-trier.de/search/">DBLP</a>
+			    author entries.
+			    <b>Please
+			      also read <a href="https://github.com/emeryberger/CSrankings/blob/gh-pages/docs/CONTRIBUTING.md">this
+			      guide to contributing</a> before
+			      submitting any proposed changes.</b>
 			  </p>
 			</td>
 		      </tr>
