@@ -428,7 +428,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         return False
 
     # Special handling for EMSOFT.
-    if confname == 'ACM Trans. Embedded Comput. Syst.':
+    if confname == 'ACM Trans. Embedded Comput. Syst.' or confname == 'ACM Trans. Embed. Comput. Syst.':
         if year in EMSOFT_TECS:
             pvmatcher = TECSCounterColon.match(pages)
             if not pvmatcher is None:
