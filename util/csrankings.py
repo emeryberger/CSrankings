@@ -110,7 +110,7 @@ areadict = {
     'ics': ['ICS'],
     # SIGBED
     # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT', 'ACM Trans. Embedded Comput. Syst.'],
-    'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.'], # TECS: issue number & page numbers must be checked
+    'emsoft': ['EMSOFT', 'ACM Trans. Embedded Comput. Syst.', 'ACM Trans. Embed. Comput. Syst.'], # TECS: issue number & page numbers must be checked
     'rtss' : ['RTSS'],
     'rtas' : ['RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium'],
     # SIGDA
@@ -130,7 +130,7 @@ areadict = {
     'oakland' : ['IEEE Symposium on Security and Privacy'],
     'usenixsec' : ['USENIX Security Symposium', 'USENIX Security'],
     'ndss' : ['NDSS'],
-    'pets' : ['PoPETs', 'Privacy Enhancing Technologies'],
+    'pets' : ['PoPETs', 'Privacy Enhancing Technologies', 'Proc. Priv. Enhancing Technol.'],
     # SIGCOMM
     # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
     'sigcomm': ['SIGCOMM'],
@@ -170,7 +170,7 @@ areadict = {
     # SIGCHI
     # 'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
     'chiconf' : ['CHI'],
-    'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive'],
+    'ubicomp' : ['UbiComp', 'Ubicomp', 'IMWUT', 'Pervasive', 'Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.'],
     'uist' : ['UIST'],
 #    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL', 'NAACL-HLT',
 #            'ACL/IJCNLP',  # -- in 2009 was joint
@@ -428,7 +428,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         return False
 
     # Special handling for EMSOFT.
-    if confname == 'ACM Trans. Embedded Comput. Syst.':
+    if confname == 'ACM Trans. Embedded Comput. Syst.' or confname == 'ACM Trans. Embed. Comput. Syst.':
         if year in EMSOFT_TECS:
             pvmatcher = TECSCounterColon.match(pages)
             if not pvmatcher is None:
@@ -536,8 +536,8 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference = False
         exceptionConference |= confname == 'SC' and year <= 2012
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
-        exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 36
-        exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 36
+        exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 39
+        exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 39
         exceptionConference |= confname == 'SIGGRAPH Asia'
         exceptionConference |= confname == 'CHI' and year == 2018 # FIXME - hopefully DBLP will fix
         exceptionConference |= confname == 'ICCAD' and (year == 2016 or year == 2018)
