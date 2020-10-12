@@ -2,11 +2,15 @@
 
 Thanks for contributing to CSrankings! Here are some guidelines to getting your pull request accepted.
 
+_Do not use Excel to edit any .csv files; Excel incorrectly tries to
+convert some Google Scholar entries to formulas, corrupting the
+database. Use a text editor like emacs or NotePad instead._
+
 **Inclusion criteria**
 
 - [ ] Make sure that any faculty you add meet the inclusion
 criteria. Eligible faculty include only full-time, tenure-track
-faculty members on a given campus who can advise PhD students in
+faculty members on a given campus who can *solely* advise PhD students in
 Computer Science. Faculty not in a CS department or similar who can
 advise PhD students in CS can be included regardless of their home
 department.
