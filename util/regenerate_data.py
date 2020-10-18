@@ -180,7 +180,7 @@ def handle_article(_, article):
             foundAuthor = None
             if realName in facultydict:
                 foundAuthor = realName
-            if foundAuthor is not None:
+            if foundAuthor != None:
                 log = { 'name' : foundAuthor.encode('utf-8'),
                         'year' : year,
                         'title' : title.encode('utf-8'),
@@ -188,13 +188,13 @@ def handle_article(_, article):
                         'area' : areaname,
                         'institution' : facultydict[foundAuthor],
                         'numauthors' : authorsOnPaper }
-                if not volume is "":
+                if volume != "":
                     log['volume'] = volume
-                if not number is "":
+                if number != "":
                     log['number'] = number
-                if not startPage is "":
+                if startPage != "":
                     log['startPage'] = startPage
-                if not pageCount is "":
+                if pageCount != "":
                     log['pageCount'] = pageCount
                 tmplist = authlogs.get(foundAuthor, [])
                 tmplist.append(log)
