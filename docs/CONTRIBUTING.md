@@ -10,7 +10,7 @@ database. Use a text editor like emacs or NotePad instead._
 
 3. _Read and check **all** the boxes below by filling them in with an X._
 
-**Inclusion criteria**
+**Inclusion criteria
 
 - [ ] Make sure that any faculty you add meet the inclusion
 criteria. Eligible faculty include only full-time, tenure-track
