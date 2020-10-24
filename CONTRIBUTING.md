@@ -45,3 +45,5 @@ A full clone of the CSrankings repository is almost 2GB, and the `csrankings.csv
 3. Make your changes on a branch, push them to your clone, and create a pull request on GitHub as usual.
 
 If you want to do another contribution and some time has passed, perform steps 1-3 again, creating a fresh fork and shallow clone.
+
+
