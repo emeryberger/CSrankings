@@ -3573,6 +3573,13 @@ Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,nips,4.0,1.6666666666
 Alexander Gammerman,Royal Holloway University of London,icml,1.0,0.3333333333333333,1998
 Alexander Gammerman,Royal Holloway University of London,icml,1.0,0.3333333333333333,1999
 Alexander Gammerman,Royal Holloway University of London,icml,1.0,0.3333333333333333,2003
+Alexander Golovnev,Georgetown University,eurocrypt,1.0,0.2,2015
+Alexander Golovnev,Georgetown University,focs,1.0,0.25,2016
+Alexander Golovnev,Georgetown University,focs,1.0,0.3333333333333333,2017
+Alexander Golovnev,Georgetown University,icml,1.0,0.3333333333333333,2019
+Alexander Golovnev,Georgetown University,soda,1.0,0.14285714285714285,2016
+Alexander Golovnev,Georgetown University,stoc,1.0,0.3333333333333333,2019
+Alexander Golovnev,Georgetown University,stoc,1.0,0.2,2020
 Alexander Herzog,Clemson University,icra,1.0,0.16666666666666666,2012
 Alexander Herzog,Clemson University,icra,1.0,0.25,2014
 Alexander Herzog,Clemson University,icra,1.0,0.2,2018
@@ -12890,6 +12897,8 @@ Benjamin Delaware,Purdue University,oopsla,1.0,0.3333333333333333,2011
 Benjamin Delaware,Purdue University,oopsla,1.0,0.25,2019
 Benjamin Delaware,Purdue University,popl,1.0,0.3333333333333333,2013
 Benjamin Delaware,Purdue University,popl,1.0,0.25,2015
+Benjamin E. Ujcich,Georgetown University,ccs,1.0,0.1,2018
+Benjamin E. Ujcich,Georgetown University,ndss,1.0,0.14285714285714285,2020
 Benjamin Goldberg,New York University,icfp,1.0,0.5,1997
 Benjamin Goldberg,New York University,icra,2.0,0.3611111111111111,2014
 Benjamin Goldberg,New York University,icra,2.0,0.5833333333333333,2017
@@ -13275,6 +13284,8 @@ Benyuan Liu,University of Massachusetts Lowell,ijcai,1.0,0.2,2019
 Benyuan Liu,University of Massachusetts Lowell,imc,1.0,0.25,2004
 Benyuan Liu,University of Massachusetts Lowell,mobicom,1.0,0.16666666666666666,2009
 Benyuan Liu,University of Massachusetts Lowell,rtss,1.0,0.25,2009
+Berk Ustun,University of California - San Diego,icml,2.0,0.6666666666666666,2019
+Berk Ustun,University of California - San Diego,kdd,1.0,0.5,2017
 Bernard Carré,CRIStAL,oopsla,1.0,0.5,1990
 Bernard Chazelle,Princeton University,eccv,1.0,0.2,2002
 Bernard Chazelle,Princeton University,focs,1.0,1.0,1982
@@ -13421,6 +13432,8 @@ Bernd Brügge,TU Munich,icse,1.0,0.5,1997
 Bernd Brügge,TU Munich,oopsla,1.0,0.25,1992
 Bernd Brügge,TU Munich,oopsla,1.0,0.3333333333333333,1993
 Bernd Brügge,TU Munich,ubicomp,1.0,0.25,2018
+Bernd Burgstaller,Yonsei University,asplos,1.0,0.25,2011
+Bernd Burgstaller,Yonsei University,pldi,1.0,0.3333333333333333,2015
 Bernd E. Wolfinger,University of Hamburg,sigmetrics,1.0,0.5,1983
 Bernd Finkbeiner,CISPA Helmholtz Center,cav,1.0,0.5,2014
 Bernd Finkbeiner,CISPA Helmholtz Center,cav,2.0,0.6666666666666666,2015
@@ -44796,6 +44809,7 @@ Hao-Chuan Wang,National Tsing Hua University,chiconf,2.0,0.6666666666666666,2018
 Hao-Chuan Wang,National Tsing Hua University,ijcai,1.0,0.2,2007
 Hao-Chuan Wang,National Tsing Hua University,ubicomp,1.0,0.07692307692307693,2018
 Hao-Chuan Wang,National Tsing Hua University,vr,1.0,0.25,2019
+Haodong Wang,Cleveland State University,ubicomp,1.0,0.25,2008
 Haojin Zhu,Shanghai Jiao Tong University,ccs,1.0,0.14285714285714285,2016
 Haojin Zhu,Shanghai Jiao Tong University,ccs,2.0,0.3333333333333333,2018
 Haojin Zhu,Shanghai Jiao Tong University,mobicom,1.0,0.25,2014
@@ -46507,6 +46521,26 @@ Hoeteck Wee,Ecole Normale Superieure,stoc,1.0,1.0,2005
 Hoeteck Wee,Ecole Normale Superieure,stoc,1.0,0.25,2009
 Hoeteck Wee,Ecole Normale Superieure,stoc,1.0,0.3333333333333333,2013
 Hoeteck Wee,Ecole Normale Superieure,usenixsec,1.0,0.25,2020
+Hojung Cha,Yonsei University,dac,1.0,0.3333333333333333,2014
+Hojung Cha,Yonsei University,dac,1.0,0.3333333333333333,2015
+Hojung Cha,Yonsei University,emsoft,1.0,0.5,2013
+Hojung Cha,Yonsei University,ics,1.0,0.5,1991
+Hojung Cha,Yonsei University,mobicom,1.0,0.3333333333333333,2019
+Hojung Cha,Yonsei University,mobisys,1.0,0.25,2011
+Hojung Cha,Yonsei University,mobisys,1.0,0.3333333333333333,2019
+Hojung Cha,Yonsei University,rtss,1.0,0.25,2010
+Hojung Cha,Yonsei University,sensys,1.0,0.25,2011
+Hojung Cha,Yonsei University,sensys,1.0,0.1111111111111111,2013
+Hojung Cha,Yonsei University,sensys,1.0,0.25,2017
+Hojung Cha,Yonsei University,ubicomp,1.0,0.3333333333333333,2008
+Hojung Cha,Yonsei University,ubicomp,1.0,0.5,2011
+Hojung Cha,Yonsei University,ubicomp,1.0,0.2,2012
+Hojung Cha,Yonsei University,ubicomp,1.0,0.2,2013
+Hojung Cha,Yonsei University,ubicomp,3.0,0.7499999999999999,2014
+Hojung Cha,Yonsei University,ubicomp,2.0,0.41666666666666663,2015
+Hojung Cha,Yonsei University,ubicomp,1.0,0.25,2016
+Hojung Cha,Yonsei University,usenixatc,1.0,0.5,2006
+Hojung Cha,Yonsei University,usenixatc,1.0,0.2,2012
 Holger Dell,IT University of Copenhagen,soda,1.0,0.5,2012
 Holger Dell,IT University of Copenhagen,soda,1.0,0.3333333333333333,2020
 Holger Dell,IT University of Copenhagen,stoc,1.0,0.5,2010
@@ -46952,6 +46986,12 @@ Hongkai Wen 0001,University of Warwick,sensys,1.0,0.2,2015
 Hongkai Wen 0001,University of Warwick,ubicomp,1.0,0.125,2017
 Hongkai Wen 0001,University of Warwick,ubicomp,1.0,0.16666666666666666,2020
 Hongkai Wen 0001,University of Warwick,www,1.0,0.125,2019
+Hongkai Yu,Cleveland State University,aaai,1.0,0.16666666666666666,2018
+Hongkai Yu,Cleveland State University,aaai,1.0,0.14285714285714285,2020
+Hongkai Yu,Cleveland State University,cvpr,1.0,0.125,2016
+Hongkai Yu,Cleveland State University,cvpr,1.0,0.2,2019
+Hongkai Yu,Cleveland State University,iccv,1.0,0.14285714285714285,2015
+Hongkai Yu,Cleveland State University,iccv,1.0,0.14285714285714285,2017
 Hongliang Li,UESTC,cvpr,1.0,0.14285714285714285,2016
 Hongliang Li,UESTC,cvpr,1.0,0.25,2019
 Hongliang Li,UESTC,cvpr,1.0,0.25,2020
@@ -48190,6 +48230,9 @@ HweeHwa Pang,Singapore Management University,vldb,1.0,0.3333333333333333,2015
 Hye-Chung Kum,Texas A&M University,chiconf,1.0,0.25,2018
 Hyeonsang Eom,Seoul National University,hpdc,1.0,0.16666666666666666,2020
 Hyeonsang Eom,Seoul National University,usenixatc,1.0,0.2,2014
+Hyeran Byun,Yonsei University,aaai,1.0,0.3333333333333333,2020
+Hyeran Byun,Yonsei University,cvpr,1.0,0.5,2020
+Hyeran Byun,Yonsei University,iros,1.0,0.25,1999
 Hyeran Jeon,University of California - Merced,asplos,1.0,0.2,2019
 Hyeran Jeon,University of California - Merced,hpca,1.0,0.2,2017
 Hyeran Jeon,University of California - Merced,isca,1.0,0.16666666666666666,2015
@@ -48295,6 +48338,9 @@ Hyung Jin Chang,University of Birmingham,iros,1.0,0.3333333333333333,2015
 Hyung Jin Chang,University of Birmingham,iros,1.0,0.3333333333333333,2016
 Hyung Jin Chang,University of Birmingham,iros,1.0,0.16666666666666666,2018
 Hyung Jin Chang,University of Birmingham,vr,1.0,0.2,2015
+Hyung-Chan An,Yonsei University,focs,1.0,0.3333333333333333,2014
+Hyung-Chan An,Yonsei University,soda,1.0,0.3333333333333333,2015
+Hyung-Chan An,Yonsei University,stoc,1.0,0.3333333333333333,2012
 Hyungon Moon,UNIST,ccs,1.0,0.16666666666666666,2012
 Hyungon Moon,UNIST,oakland,1.0,0.125,2016
 Hyungon Moon,UNIST,oakland,1.0,0.2,2019
@@ -49024,6 +49070,9 @@ Immanuel Trummer,Cornell University,vldb,1.0,0.3333333333333333,2017
 Immanuel Trummer,Cornell University,vldb,1.0,0.3333333333333333,2018
 Immanuel Trummer,Cornell University,vldb,1.0,0.16666666666666666,2019
 Immanuel Trummer,Cornell University,vldb,1.0,0.25,2020
+In-Kwon Lee,Yonsei University,icra,1.0,0.5,1990
+In-Kwon Lee,Yonsei University,vr,2.0,0.6666666666666666,2019
+In-Kwon Lee,Yonsei University,vr,2.0,0.5,2020
 In-So Kweon,KAIST,aaai,2.0,0.5,2018
 In-So Kweon,KAIST,aaai,2.0,0.5333333333333333,2019
 In-So Kweon,KAIST,aaai,2.0,0.41666666666666663,2020
@@ -57242,6 +57291,7 @@ Jingling Xue,UNSW,usenixatc,1.0,0.1111111111111111,2020
 Jingqiang Lin,Chinese Academy of Sciences,ccs,1.0,0.14285714285714285,2019
 Jingqiang Lin,Chinese Academy of Sciences,ndss,1.0,0.25,2014
 Jingqiang Lin,Chinese Academy of Sciences,oakland,1.0,0.2,2015
+Jingru Zhang,Cleveland State University,sc,1.0,0.16666666666666666,2011
 Jingrui He,Univ. of Illinois at Urbana-Champaign,aaai,1.0,0.3333333333333333,2012
 Jingrui He,Univ. of Illinois at Urbana-Champaign,aaai,1.0,0.5,2017
 Jingrui He,Univ. of Illinois at Urbana-Champaign,aaai,1.0,0.2,2020
@@ -57340,6 +57390,13 @@ Jinho D. Choi,Emory University,ijcai,1.0,0.3333333333333333,2019
 Jinho D. Choi,Emory University,naacl,2.0,0.75,2015
 Jinho D. Choi,Emory University,naacl,1.0,1.0,2016
 Jinho D. Choi,Emory University,naacl,1.0,0.3333333333333333,2018
+Jinho Lee,Yonsei University,dac,1.0,0.25,2020
+Jinho Lee,Yonsei University,iccv,1.0,0.25,2005
+Jinho Lee,Yonsei University,ijcai,1.0,0.25,2020
+Jinho Lee,Yonsei University,mobisys,1.0,0.14285714285714285,2018
+Jinho Lee,Yonsei University,siggraph,1.0,0.09090909090909091,2006
+Jinho Lee,Yonsei University,vis,1.0,0.3333333333333333,2001
+Jinho Lee,Yonsei University,vldb,1.0,0.125,2017
 Jinhui Xu 0001,University at Buffalo,aaai,1.0,0.5,2014
 Jinhui Xu 0001,University at Buffalo,aaai,2.0,0.75,2015
 Jinhui Xu 0001,University at Buffalo,aaai,1.0,0.25,2017
@@ -57481,6 +57538,10 @@ Jinyang Li 0001,New York University,usenixatc,1.0,0.14285714285714285,2015
 Jinyang Li 0001,New York University,usenixatc,1.0,0.2,2016
 Jinyang Li 0001,New York University,usenixatc,1.0,0.14285714285714285,2017
 Jinyang Li 0001,New York University,www,1.0,0.3333333333333333,2009
+Jinyoung Yeo,Yonsei University,aaai,1.0,0.3333333333333333,2016
+Jinyoung Yeo,Yonsei University,aaai,1.0,0.2,2018
+Jinyoung Yeo,Yonsei University,acl,1.0,0.25,2019
+Jinyoung Yeo,Yonsei University,emnlp,1.0,0.16666666666666666,2019
 Jinze Liu,University of Kentucky,iccv,1.0,0.25,2009
 Jinze Liu,University of Kentucky,icde,2.0,0.6666666666666666,2008
 Jinze Liu,University of Kentucky,kdd,1.0,0.3333333333333333,2004
@@ -67620,6 +67681,7 @@ Kyomin Jung,Seoul National University,sigmetrics,1.0,0.2,2008
 Kyomin Jung,Seoul National University,sigmetrics,1.0,0.25,2015
 Kyomin Jung,Seoul National University,soda,1.0,0.2,2009
 Kyomin Jung,Seoul National University,stoc,1.0,0.3333333333333333,2007
+Kyong-Ho Lee,Yonsei University,emnlp,1.0,0.2,2019
 Kyoung Mu Lee,Seoul National University,aaai,1.0,0.2,2020
 Kyoung Mu Lee,Seoul National University,cvpr,1.0,0.5,1992
 Kyoung Mu Lee,Seoul National University,cvpr,1.0,0.5,1998
@@ -67682,6 +67744,9 @@ KyoungSoo Park,KAIST,usenixatc,1.0,0.25,2007
 KyoungSoo Park,KAIST,usenixatc,1.0,0.3333333333333333,2010
 KyoungSoo Park,KAIST,usenixatc,1.0,0.3333333333333333,2012
 KyoungSoo Park,KAIST,usenixatc,1.0,0.2,2015
+Kyoungwoo Lee,Yonsei University,dac,1.0,0.2,2015
+Kyoungwoo Lee,Yonsei University,iccad,1.0,0.2,2016
+Kyoungwoo Lee,Yonsei University,ubicomp,1.0,0.16666666666666666,2015
 Kyriakos Mouratidis,Singapore Management University,icde,1.0,0.25,2004
 Kyriakos Mouratidis,Singapore Management University,icde,2.0,0.6666666666666666,2010
 Kyriakos Mouratidis,Singapore Management University,ijcai,1.0,0.3333333333333333,2011
@@ -71101,6 +71166,22 @@ Long Quan,HKUST,siggraph,1.0,0.25,2008
 Long Quan,HKUST,siggraph-asia,2.0,0.3666666666666667,2008
 Long Quan,HKUST,siggraph-asia,1.0,0.2,2009
 Long Quan,HKUST,vr,1.0,0.25,2000
+Long Tran-Thanh,University of Warwick,aaai,1.0,0.2,2010
+Long Tran-Thanh,University of Warwick,aaai,1.0,0.25,2012
+Long Tran-Thanh,University of Warwick,aaai,1.0,0.2,2015
+Long Tran-Thanh,University of Warwick,aaai,1.0,0.25,2017
+Long Tran-Thanh,University of Warwick,aaai,2.0,0.3666666666666667,2019
+Long Tran-Thanh,University of Warwick,aaai,3.0,0.8333333333333333,2020
+Long Tran-Thanh,University of Warwick,ec,1.0,0.16666666666666666,2019
+Long Tran-Thanh,University of Warwick,ijcai,2.0,0.4,2013
+Long Tran-Thanh,University of Warwick,ijcai,1.0,0.25,2015
+Long Tran-Thanh,University of Warwick,ijcai,1.0,0.25,2016
+Long Tran-Thanh,University of Warwick,ijcai,2.0,0.5,2017
+Long Tran-Thanh,University of Warwick,ijcai,3.0,0.7833333333333333,2018
+Long Tran-Thanh,University of Warwick,ijcai,2.0,0.6666666666666666,2019
+Long Tran-Thanh,University of Warwick,ijcai,2.0,0.5333333333333333,2020
+Long Tran-Thanh,University of Warwick,nips,1.0,0.2,2015
+Long Tran-Thanh,University of Warwick,nips,2.0,0.5333333333333333,2019
 Long-Wen Chang,National Tsing Hua University,aaai,1.0,0.25,2018
 Long-Wen Chang,National Tsing Hua University,iros,1.0,0.3333333333333333,1992
 Longbo Huang,Tsinghua University,aaai,1.0,0.2,2019
@@ -87941,6 +88022,7 @@ Niels da Vitoria Lobo,University of Central Florida,iccv,2.0,0.8333333333333333,
 Niels da Vitoria Lobo,University of Central Florida,iccv,1.0,0.25,1998
 Niels da Vitoria Lobo,University of Central Florida,iccv,1.0,0.3333333333333333,2005
 Niels da Vitoria Lobo,University of Central Florida,icra,1.0,0.3333333333333333,2011
+Nigamanth Sridhar,Cleveland State University,sensys,1.0,0.5,2006
 Nigel Davies 0001,Lancaster University,chiconf,1.0,0.2,2000
 Nigel Davies 0001,Lancaster University,chiconf,1.0,0.14285714285714285,2014
 Nigel Davies 0001,Lancaster University,chiconf,1.0,0.25,2015
@@ -89210,6 +89292,11 @@ Norman W. Paton,University of Manchester,sigmod,1.0,0.2,2020
 Norman W. Paton,University of Manchester,vldb,1.0,0.3333333333333333,1991
 Norman W. Paton,University of Manchester,vldb,1.0,0.2,1994
 Norman W. Paton,University of Manchester,vldb,1.0,0.5,2001
+Noseong Park,Yonsei University,ijcai,1.0,0.2,2018
+Noseong Park,Yonsei University,ijcai,1.0,0.16666666666666666,2019
+Noseong Park,Yonsei University,kdd,1.0,0.25,2016
+Noseong Park,Yonsei University,kdd,1.0,0.25,2019
+Noseong Park,Yonsei University,vldb,1.0,0.16666666666666666,2018
 Noura Al Moubayed,Durham University,icra,1.0,0.25,2019
 Novi Quadrianto,University of Sussex,aaai,1.0,0.2,2020
 Novi Quadrianto,University of Sussex,cvpr,1.0,0.25,2009
@@ -105978,6 +106065,12 @@ SangKeun Lee 0001,Korea University,www,1.0,0.2,2019
 Sangeetha Abdu Jyothi,University of California - Irvine,nsdi,1.0,0.16666666666666666,2019
 Sangeetha Abdu Jyothi,University of California - Irvine,osdi,1.0,0.09090909090909091,2016
 Sangeetha Abdu Jyothi,University of California - Irvine,sc,1.0,0.25,2016
+Sanghyun Park,Yonsei University,icde,1.0,0.25,2000
+Sanghyun Park,Yonsei University,icde,1.0,0.3333333333333333,2001
+Sanghyun Park,Yonsei University,icde,3.0,0.7,2003
+Sanghyun Park,Yonsei University,ismb,1.0,0.2,2011
+Sanghyun Park,Yonsei University,sigmod,1.0,0.25,2003
+Sanghyun Park,Yonsei University,vldb,1.0,0.2,2011
 Sanglu Lu,Nanjing University,ijcai,1.0,0.16666666666666666,2018
 Sanglu Lu,Nanjing University,ijcai,1.0,0.2,2019
 Sanglu Lu,Nanjing University,mobicom,1.0,0.2,2015
@@ -108063,6 +108156,26 @@ Seokin Hong,Kyungpook National University,hpca,1.0,0.25,2017
 Seokin Hong,Kyungpook National University,micro,1.0,0.25,2011
 Seokin Hong,Kyungpook National University,micro,1.0,0.16666666666666666,2018
 Seokin Hong,Kyungpook National University,micro,1.0,0.2,2019
+Seon Joo Kim,Yonsei University,cvpr,1.0,0.5,2004
+Seon Joo Kim,Yonsei University,cvpr,1.0,0.3333333333333333,2008
+Seon Joo Kim,Yonsei University,cvpr,1.0,0.3333333333333333,2011
+Seon Joo Kim,Yonsei University,cvpr,1.0,0.2,2012
+Seon Joo Kim,Yonsei University,cvpr,1.0,0.25,2014
+Seon Joo Kim,Yonsei University,cvpr,2.0,0.5,2016
+Seon Joo Kim,Yonsei University,cvpr,3.0,0.7,2018
+Seon Joo Kim,Yonsei University,cvpr,2.0,0.41666666666666663,2019
+Seon Joo Kim,Yonsei University,eccv,1.0,0.25,2010
+Seon Joo Kim,Yonsei University,eccv,1.0,0.25,2012
+Seon Joo Kim,Yonsei University,eccv,1.0,0.25,2018
+Seon Joo Kim,Yonsei University,iccv,1.0,0.3333333333333333,2007
+Seon Joo Kim,Yonsei University,iccv,1.0,0.25,2011
+Seon Joo Kim,Yonsei University,iccv,1.0,0.2,2013
+Seon Joo Kim,Yonsei University,iccv,1.0,0.2,2015
+Seon Joo Kim,Yonsei University,iccv,1.0,0.5,2017
+Seon Joo Kim,Yonsei University,iccv,3.0,0.75,2019
+Seon Joo Kim,Yonsei University,nips,1.0,0.3333333333333333,2018
+Seon Joo Kim,Yonsei University,nips,1.0,0.25,2019
+Seon Joo Kim,Yonsei University,vis,1.0,0.2,2010
 Seong Jae Hwang,University of Pittsburgh,cvpr,1.0,0.14285714285714285,2016
 Seong Jae Hwang,University of Pittsburgh,cvpr,1.0,0.2,2017
 Seong Jae Hwang,University of Pittsburgh,cvpr,1.0,0.16666666666666666,2018
@@ -108628,6 +108741,41 @@ Seung Ryoul Maeng,KAIST,micro,1.0,0.25,2018
 Seung Ryoul Maeng,KAIST,ubicomp,1.0,0.125,2017
 Seung-Hee Bae,Western Michigan University,hpdc,2.0,0.39285714285714285,2010
 Seung-Hee Bae,Western Michigan University,sc,1.0,0.5,2015
+Seung-Jae Han,Yonsei University,mobicom,1.0,0.3333333333333333,2004
+Seung-won Hwang,Yonsei University,aaai,1.0,0.25,2010
+Seung-won Hwang,Yonsei University,aaai,1.0,0.2,2011
+Seung-won Hwang,Yonsei University,aaai,1.0,0.3333333333333333,2012
+Seung-won Hwang,Yonsei University,aaai,1.0,0.5,2014
+Seung-won Hwang,Yonsei University,aaai,1.0,0.3333333333333333,2015
+Seung-won Hwang,Yonsei University,aaai,3.0,0.8095238095238095,2016
+Seung-won Hwang,Yonsei University,aaai,1.0,0.2,2017
+Seung-won Hwang,Yonsei University,aaai,1.0,0.2,2018
+Seung-won Hwang,Yonsei University,aaai,2.0,0.47619047619047616,2019
+Seung-won Hwang,Yonsei University,aaai,1.0,0.2,2020
+Seung-won Hwang,Yonsei University,acl,1.0,0.5,2013
+Seung-won Hwang,Yonsei University,acl,1.0,0.5,2014
+Seung-won Hwang,Yonsei University,acl,2.0,0.5,2018
+Seung-won Hwang,Yonsei University,acl,1.0,0.25,2019
+Seung-won Hwang,Yonsei University,emnlp,1.0,0.2,2010
+Seung-won Hwang,Yonsei University,emnlp,3.0,0.6166666666666667,2019
+Seung-won Hwang,Yonsei University,fse,1.0,0.25,2010
+Seung-won Hwang,Yonsei University,icde,1.0,0.5,2009
+Seung-won Hwang,Yonsei University,icde,1.0,0.3333333333333333,2012
+Seung-won Hwang,Yonsei University,icde,1.0,0.25,2013
+Seung-won Hwang,Yonsei University,ijcai,1.0,0.16666666666666666,2017
+Seung-won Hwang,Yonsei University,ijcai,1.0,0.25,2018
+Seung-won Hwang,Yonsei University,kdd,1.0,0.25,2009
+Seung-won Hwang,Yonsei University,naacl,1.0,0.3333333333333333,2018
+Seung-won Hwang,Yonsei University,sigir,1.0,0.14285714285714285,2014
+Seung-won Hwang,Yonsei University,sigmod,1.0,0.5,2002
+Seung-won Hwang,Yonsei University,sigmod,1.0,0.3333333333333333,2004
+Seung-won Hwang,Yonsei University,sigmod,1.0,0.16666666666666666,2006
+Seung-won Hwang,Yonsei University,sigmod,2.0,0.4,2011
+Seung-won Hwang,Yonsei University,vldb,1.0,0.5,2010
+Seung-won Hwang,Yonsei University,vldb,1.0,0.25,2011
+Seung-won Hwang,Yonsei University,vldb,1.0,0.16666666666666666,2015
+Seung-won Hwang,Yonsei University,vldb,1.0,0.16666666666666666,2017
+Seung-won Hwang,Yonsei University,vldb,1.0,0.25,2018
 Seunghee Shin,Binghamton University,isca,1.0,0.3333333333333333,2017
 Seunghee Shin,Binghamton University,isca,1.0,0.14285714285714285,2018
 Seunghee Shin,Binghamton University,micro,1.0,0.25,2017
@@ -116275,6 +116423,7 @@ Sung Ju Hwang,KAIST,nips,3.0,0.6761904761904762,2018
 Sung Woo Chung,Korea University,dac,1.0,0.2,2009
 Sung Woo Chung,Korea University,dac,1.0,0.5,2012
 Sung Woo Chung,Korea University,iccad,1.0,0.16666666666666666,2009
+Sung-Bae Cho,Yonsei University,icra,1.0,0.3333333333333333,2005
 Sung-Eui Yoon,KAIST,cvpr,1.0,0.2,2012
 Sung-Eui Yoon,KAIST,cvpr,1.0,0.3333333333333333,2014
 Sung-Eui Yoon,KAIST,cvpr,1.0,0.2,2016
@@ -117466,6 +117615,7 @@ Tachio Terauchi,Waseda University,popl,1.0,1.0,2010
 Tachio Terauchi,Waseda University,popl,1.0,0.3333333333333333,2013
 Tachio Terauchi,Waseda University,popl,1.0,0.2,2016
 Tachio Terauchi,Waseda University,popl,1.0,0.3333333333333333,2018
+Tack-Don Han,Yonsei University,siggraph-asia,1.0,0.14285714285714285,2011
 Tadayoshi Kohno,University of Washington,ccs,1.0,0.3333333333333333,2002
 Tadayoshi Kohno,University of Washington,ccs,1.0,1.0,2004
 Tadayoshi Kohno,University of Washington,ccs,1.0,0.3333333333333333,2006
@@ -135370,6 +135520,9 @@ Ymir Vigfusson,Emory University,usenixatc,1.0,0.16666666666666666,2017
 Ymir Vigfusson,Emory University,vldb,1.0,0.25,2009
 Yngve Dahl,NTNU,chiconf,1.0,0.5,2016
 Yngve Dahl,NTNU,chiconf,1.0,0.5,2020
+Yo-Sub Han,Yonsei University,acl,1.0,0.3333333333333333,2019
+Yo-Sub Han,Yonsei University,emnlp,1.0,0.3333333333333333,2018
+Yo-Sub Han,Yonsei University,emnlp,1.0,0.25,2019
 Yoav Artzi,Cornell University,acl,2.0,0.5,2014
 Yoav Artzi,Cornell University,acl,1.0,0.25,2017
 Yoav Artzi,Cornell University,acl,1.0,0.5,2018
@@ -135841,6 +135994,8 @@ Yonghwi Kwon,University of Virginia,oopsla,1.0,0.16666666666666666,2019
 Yonghwi Kwon,University of Virginia,usenixatc,1.0,0.1,2018
 Yonghwi Kwon,University of Virginia,www,1.0,0.14285714285714285,2017
 Yonghwi Kwon,University of Virginia,www,1.0,0.14285714285714285,2018
+Yongjian Fu,Cleveland State University,kdd,1.0,0.08333333333333333,1996
+Yongjian Fu,Cleveland State University,vldb,1.0,0.5,1995
 Yongjie Zheng,University of Missouri - Kansas City,icse,1.0,0.5,2012
 Yongjoo Park,Univ. of Illinois at Urbana-Champaign,icde,1.0,0.3333333333333333,2016
 Yongjoo Park,Univ. of Illinois at Urbana-Champaign,sigmod,1.0,0.25,2017
@@ -136388,6 +136543,16 @@ Youngmoon Lee,Hanyang University,mobisys,1.0,0.3333333333333333,2020
 Youngmoon Lee,Hanyang University,nsdi,1.0,0.2,2017
 Youngmoon Lee,Hanyang University,rtss,1.0,0.2,2016
 Youngmoon Lee,Hanyang University,ubicomp,1.0,0.3333333333333333,2020
+Youngsok Kim,Yonsei University,asplos,1.0,0.09090909090909091,2018
+Youngsok Kim,Yonsei University,eurosys,1.0,0.2,2019
+Youngsok Kim,Yonsei University,hpca,1.0,0.25,2014
+Youngsok Kim,Yonsei University,hpca,1.0,0.14285714285714285,2016
+Youngsok Kim,Yonsei University,isca,2.0,0.29166666666666663,2018
+Youngsok Kim,Yonsei University,micro,1.0,0.16666666666666666,2015
+Youngsok Kim,Yonsei University,micro,1.0,0.16666666666666666,2017
+Youngsok Kim,Yonsei University,micro,1.0,0.25,2019
+Youngsok Kim,Yonsei University,oakland,1.0,0.25,2014
+Youngsok Kim,Yonsei University,rtas,1.0,0.25,2020
 Yousef Saad,University of Minnesota,icml,1.0,0.3333333333333333,2015
 Yousef Saad,University of Minnesota,icml,1.0,0.5,2016
 Yousef Saad,University of Minnesota,ics,1.0,0.5,1987
@@ -137811,23 +137976,23 @@ Yury Makarychev,TTI Chicago,stoc,1.0,0.25,2018
 Yury Makarychev,TTI Chicago,stoc,1.0,0.3333333333333333,2019
 Yury Polyanskiy,Massachusetts Institute of Technology,icml,1.0,0.14285714285714285,2019
 Yury Polyanskiy,Massachusetts Institute of Technology,stoc,1.0,0.25,2019
-Yusu Wang,Ohio State University,iccad,1.0,0.25,2005
-Yusu Wang,Ohio State University,icml,1.0,0.25,2017
-Yusu Wang,Ohio State University,ijcai,1.0,0.16666666666666666,2019
-Yusu Wang,Ohio State University,kdd,1.0,0.3333333333333333,2017
-Yusu Wang,Ohio State University,nips,1.0,0.25,2011
-Yusu Wang,Ohio State University,nips,1.0,0.3333333333333333,2014
-Yusu Wang,Ohio State University,nips,1.0,0.3333333333333333,2016
-Yusu Wang,Ohio State University,nips,1.0,0.5,2019
-Yusu Wang,Ohio State University,siggraph,1.0,0.3333333333333333,2013
-Yusu Wang,Ohio State University,siggraph-asia,1.0,0.1,2013
-Yusu Wang,Ohio State University,soda,1.0,0.3333333333333333,2002
-Yusu Wang,Ohio State University,soda,2.0,0.6666666666666666,2009
-Yusu Wang,Ohio State University,soda,1.0,0.3333333333333333,2010
-Yusu Wang,Ohio State University,soda,1.0,0.3333333333333333,2013
-Yusu Wang,Ohio State University,soda,1.0,0.3333333333333333,2016
-Yusu Wang,Ohio State University,soda,2.0,0.6666666666666666,2017
-Yusu Wang,Ohio State University,vis,1.0,0.2,2020
+Yusu Wang,University of California - San Diego,iccad,1.0,0.25,2005
+Yusu Wang,University of California - San Diego,icml,1.0,0.25,2017
+Yusu Wang,University of California - San Diego,ijcai,1.0,0.16666666666666666,2019
+Yusu Wang,University of California - San Diego,kdd,1.0,0.3333333333333333,2017
+Yusu Wang,University of California - San Diego,nips,1.0,0.25,2011
+Yusu Wang,University of California - San Diego,nips,1.0,0.3333333333333333,2014
+Yusu Wang,University of California - San Diego,nips,1.0,0.3333333333333333,2016
+Yusu Wang,University of California - San Diego,nips,1.0,0.5,2019
+Yusu Wang,University of California - San Diego,siggraph,1.0,0.3333333333333333,2013
+Yusu Wang,University of California - San Diego,siggraph-asia,1.0,0.1,2013
+Yusu Wang,University of California - San Diego,soda,1.0,0.3333333333333333,2002
+Yusu Wang,University of California - San Diego,soda,2.0,0.6666666666666666,2009
+Yusu Wang,University of California - San Diego,soda,1.0,0.3333333333333333,2010
+Yusu Wang,University of California - San Diego,soda,1.0,0.3333333333333333,2013
+Yusu Wang,University of California - San Diego,soda,1.0,0.3333333333333333,2016
+Yusu Wang,University of California - San Diego,soda,2.0,0.6666666666666666,2017
+Yusu Wang,University of California - San Diego,vis,1.0,0.2,2020
 Yusuf Sahillioglu,Middle East Technical University,cvpr,1.0,0.5,2010
 Yusuf Yaslan,Istanbul Technical University,iros,1.0,0.25,2018
 Yusuke Miyao,University of Tokyo,acl,1.0,1.0,1999
@@ -139150,6 +139315,8 @@ Zhiping Jia,Shandong University,dac,1.0,0.2,2019
 Zhiping Jia,Shandong University,dac,1.0,0.14285714285714285,2020
 Zhiping Jia,Shandong University,iccad,1.0,0.16666666666666666,2019
 Zhiping Jia,Shandong University,rtas,1.0,0.2,2017
+Zhiqiang Gao,Cleveland State University,aaai,1.0,0.2,2016
+Zhiqiang Gao,Cleveland State University,ijcai,1.0,0.25,2015
 Zhiqiang Lin,Ohio State University,ccs,1.0,0.25,2012
 Zhiqiang Lin,Ohio State University,ccs,1.0,0.16666666666666666,2013
 Zhiqiang Lin,Ohio State University,ccs,3.0,0.7833333333333333,2017
@@ -139233,6 +139400,29 @@ Zhishan Guo,University of Central Florida,rtss,2.0,0.3666666666666667,2019
 Zhisheng Yan,Georgia State University,mobicom,1.0,0.5,2016
 Zhisheng Yan,Georgia State University,ndss,1.0,0.16666666666666666,2020
 Zhisheng Yan,Georgia State University,ubicomp,1.0,0.1,2019
+Zhiting Hu,University of California - San Diego,aaai,1.0,0.3333333333333333,2014
+Zhiting Hu,University of California - San Diego,aaai,1.0,0.25,2019
+Zhiting Hu,University of California - San Diego,acl,1.0,0.2,2015
+Zhiting Hu,University of California - San Diego,acl,2.0,0.3666666666666667,2016
+Zhiting Hu,University of California - San Diego,acl,1.0,0.2,2017
+Zhiting Hu,University of California - San Diego,acl,1.0,0.125,2018
+Zhiting Hu,University of California - San Diego,acl,1.0,0.16666666666666666,2019
+Zhiting Hu,University of California - San Diego,emnlp,1.0,0.25,2016
+Zhiting Hu,University of California - San Diego,iccv,2.0,0.3666666666666667,2017
+Zhiting Hu,University of California - San Diego,iccv,1.0,0.125,2019
+Zhiting Hu,University of California - San Diego,icde,1.0,0.14285714285714285,2016
+Zhiting Hu,University of California - San Diego,icml,1.0,0.25,2015
+Zhiting Hu,University of California - San Diego,icml,2.0,0.45,2017
+Zhiting Hu,University of California - San Diego,ijcai,1.0,0.2,2016
+Zhiting Hu,University of California - San Diego,kdd,1.0,0.2,2013
+Zhiting Hu,University of California - San Diego,kdd,1.0,0.2,2017
+Zhiting Hu,University of California - San Diego,kdd,1.0,0.16666666666666666,2018
+Zhiting Hu,University of California - San Diego,nips,1.0,0.25,2016
+Zhiting Hu,University of California - San Diego,nips,4.0,0.7928571428571429,2018
+Zhiting Hu,University of California - San Diego,nips,1.0,0.2,2019
+Zhiting Hu,University of California - San Diego,sigmod,1.0,0.2,2014
+Zhiting Hu,University of California - San Diego,sigmod,1.0,0.25,2015
+Zhiting Hu,University of California - San Diego,usenixatc,1.0,0.1,2017
 Zhiwei Steven Wu,University of Minnesota,ec,1.0,0.25,2015
 Zhiwei Steven Wu,University of Minnesota,ec,2.0,0.39285714285714285,2017
 Zhiwei Steven Wu,University of Minnesota,ec,1.0,0.2,2018
@@ -139780,6 +139970,13 @@ Ziawasch Abedjan,TU Berlin,vldb,1.0,0.2,2013
 Ziawasch Abedjan,TU Berlin,vldb,1.0,0.2,2015
 Ziawasch Abedjan,TU Berlin,vldb,1.0,0.1111111111111111,2016
 Ziawasch Abedjan,TU Berlin,vldb,1.0,0.5,2020
+Zicheng Chi,Cleveland State University,mobisys,1.0,0.25,2018
+Zicheng Chi,Cleveland State University,nsdi,1.0,0.2,2020
+Zicheng Chi,Cleveland State University,sensys,1.0,0.14285714285714285,2013
+Zicheng Chi,Cleveland State University,sensys,1.0,0.16666666666666666,2016
+Zicheng Chi,Cleveland State University,sensys,2.0,0.39285714285714285,2018
+Zicheng Chi,Cleveland State University,sensys,1.0,0.16666666666666666,2019
+Zicheng Chi,Cleveland State University,sigcomm,1.0,0.2,2020
 Zicheng Liao,Zhejiang University,cvpr,1.0,0.3333333333333333,2011
 Zicheng Liao,Zhejiang University,cvpr,1.0,0.2,2012
 Zicheng Liao,Zhejiang University,cvpr,2.0,0.45,2013
