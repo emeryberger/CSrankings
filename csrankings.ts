@@ -340,7 +340,7 @@ class CSRankings {
 	   { area: "oakland", title: "Security" },
 	   { area: "usenixsec", title: "Security" },
 	   { area: "ndss", title: "Security" },
-	   { area: "pets", title: "Security" },
+//	   { area: "pets", title: "Security" },
 	   { area: "mod", title: "DB" },
 	   { area: "sigmod", title: "DB" },
 	   { area: "vldb", title: "DB" },
@@ -778,7 +778,7 @@ class CSRankings {
 	    s += "<br />";
 	    count += 1;
 	});
-	$("#progress").html(s);
+	document.querySelector("#progress")!.innerHTML = s;
     }
 
     private async loadTuring(turing: { [key: string]: number }): Promise<void> {
@@ -1412,9 +1412,9 @@ class CSRankings {
 	console.log("Before render: rank took " + (stop - start) + " milliseconds.");
 
 	/* Finally done. Redraw! */
-	$("#success").html(s);
+	document.getElementById("success")!.innerHTML = s;
 	$("div").scroll(function() {
-	    //		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+	    // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
 	    // If we are nearly at the bottom, update the minimum.
 	    if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
 		let t = CSRankings.updateMinimum(this);
@@ -1767,7 +1767,7 @@ class CSRankings {
 	for (let i = 0; i < this.fields.length; i++) {
 	    const str = 'input[name=' + this.fields[i] + ']';
 	    const field = this.fields[i];
-	    $(str).click(() => {
+	    document.getElementById(this.fields[i])!.addEventListener("click", () => {
 		let updateURL: boolean = true;
 		if (field in CSRankings.parentMap) {
 		    // Child:
