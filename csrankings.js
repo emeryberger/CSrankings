@@ -1146,7 +1146,7 @@ class CSRankings {
         /* Finally done. Redraw! */
         document.getElementById("success").innerHTML = s;
         $("div").scroll(function () {
-            console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+            // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
             // If we are nearly at the bottom, update the minimum.
             if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
                 let t = CSRankings.updateMinimum(this);
