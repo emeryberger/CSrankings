@@ -74,7 +74,7 @@ class CSRankings {
             { area: "oakland", title: "Security" },
             { area: "usenixsec", title: "Security" },
             { area: "ndss", title: "Security" },
-            //	   { area: "pets", title: "Security" },
+            { area: "pets", title: "Security" },
             { area: "mod", title: "DB" },
             { area: "sigmod", title: "DB" },
             { area: "vldb", title: "DB" },
@@ -1473,16 +1473,22 @@ class CSRankings {
             if (!(area in CSRankings.parentMap)) {
                 // Not a child.
                 const widget = document.getElementById(area + '-widget');
-                widget.addEventListener("click", () => {
-                    this.toggleConferences(area);
-                });
+                if (widget) {
+                    widget.addEventListener("click", () => {
+                        this.toggleConferences(area);
+                    });
+                }
             }
         }
         // Initialize callbacks for area checkboxes.
         for (let i = 0; i < this.fields.length; i++) {
             const str = 'input[name=' + this.fields[i] + ']';
             const field = this.fields[i];
-            document.getElementById(this.fields[i]).addEventListener("click", () => {
+            const fieldElement = document.getElementById(this.fields[i]);
+            if (!fieldElement) {
+                continue;
+            }
+            fieldElement.addEventListener("click", () => {
                 let updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
