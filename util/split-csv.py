@@ -32,6 +32,9 @@ with open('csrankings.csv', mode='r') as infile:
                 facWriter = csv.DictWriter(facultyaffs, fieldnames=facfieldnames)
                 facWriter.writeheader()
                 for row in reader:
+                    match = re.match('(.*)\s+\[(.*)\]', row['name'])
+                    if match:
+                        row['name'] = match.group(1)
                     h = { 'name' : row['name'],
                           'homepage' : row['homepage'] }
                     homepageWriter.writerow(h)

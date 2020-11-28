@@ -5,6 +5,15 @@
   @author Emery Berger <emery@cs.umass.edu> http://www.emeryberger.com
 
 */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
@@ -23,6 +32,7 @@
 ;
 class CSRankings {
     constructor() {
+        this.note = {};
         this.authorFile = "./csrankings.csv";
         this.authorinfoFile = "./generated-author-info.csv";
         this.countryinfoFile = "./country-info.csv";
@@ -224,30 +234,25 @@ class CSRankings {
             }
         }
         this.displayProgress(1);
-        this.loadTuring(this.turing, () => {
-            this.loadACMFellow(this.acmfellow, () => {
-                this.displayProgress(2);
-                this.loadAuthorInfo(() => {
-                    this.displayProgress(3);
-                    this.loadAuthors(() => {
-                        this.setAllOn();
-                        this.navigoRouter.on({
-                            '/index': this.navigation,
-                            '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
-                        }).resolve();
-                        this.displayProgress(4);
-                        this.countAuthorAreas();
-                        this.loadCountryInfo(this.countryInfo, () => {
-                            setTimeout(() => {
-                                this.addListeners();
-                                /* CSRankings.geoCheck(); */
-                                CSRankings.getInstance().rank();
-                            }, 0);
-                        });
-                    });
-                });
-            });
-        });
+        (() => __awaiter(this, void 0, void 0, function* () {
+            yield this.loadTuring(this.turing);
+            yield this.loadACMFellow(this.acmfellow);
+            this.displayProgress(2);
+            yield this.loadAuthorInfo();
+            this.displayProgress(3);
+            yield this.loadAuthors();
+            this.setAllOn();
+            this.navigoRouter.on({
+                '/index': this.navigation,
+                '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
+            }).resolve();
+            this.displayProgress(4);
+            this.countAuthorAreas();
+            yield this.loadCountryInfo(this.countryInfo);
+            this.addListeners();
+            /* CSRankings.geoCheck(); */
+            this.rank();
+        }))();
     }
     // We have scrolled: increase the number we rank.
     static updateMinimum(obj) {
@@ -566,99 +571,99 @@ class CSRankings {
             s += "<br />";
             count += 1;
         });
-        $("#progress").html(s);
+        document.querySelector("#progress").innerHTML = s;
     }
-    /*
-      private loadAliases(aliases: { [key: string]: string },
-      cont: () => void): void {
-      Papa.parse(this.aliasFile, {
-      header: true,
-      download: true,
-      complete: (results) => {
-      const data: any = results.data;
-      const d = data as Array<Alias>;
-      for (let aliasPair of d) {
-      aliases[aliasPair.alias] = aliasPair.name;
-      }
-      CSRankings.promise(cont);
-      }
-      });
-      }
-    */
-    loadTuring(turing, cont) {
-        Papa.parse(this.turingFile, {
-            header: true,
-            download: true,
-            complete: (results) => {
-                const data = results.data;
-                const d = data;
-                for (let turingPair of d) {
-                    turing[turingPair.name] = turingPair.year;
-                }
-                CSRankings.promise(cont);
-            }
-        });
-    }
-    loadACMFellow(acmfellow, cont) {
-        Papa.parse(this.acmfellowFile, {
-            header: true,
-            download: true,
-            complete: (results) => {
-                const data = results.data;
-                const d = data;
-                for (let acmfellowPair of d) {
-                    acmfellow[acmfellowPair.name] = acmfellowPair.year;
-                }
-                CSRankings.promise(cont);
-            }
-        });
-    }
-    loadCountryInfo(countryInfo, cont) {
-        Papa.parse(this.countryinfoFile, {
-            header: true,
-            download: true,
-            complete: (results) => {
-                const data = results.data;
-                const ci = data;
-                for (let info of ci) {
-                    countryInfo[info.institution] = info.region;
-                }
-                CSRankings.promise(cont);
-            }
-        });
-    }
-    loadAuthorInfo(cont) {
-        Papa.parse(this.authorFile, {
-            download: true,
-            header: true,
-            complete: (results) => {
-                const data = results.data;
-                const ai = data;
-                for (let counter = 0; counter < ai.length; counter++) {
-                    const record = ai[counter];
-                    let name = record['name'].trim();
-                    if (name !== "") {
-                        this.dblpAuthors[name] = this.translateNameToDBLP(name);
-                        this.homepages[name] = record['homepage'];
-                        this.scholarInfo[name] = record['scholarid'];
+    loadTuring(turing) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield new Promise((resolve) => {
+                Papa.parse(this.turingFile, {
+                    header: true,
+                    download: true,
+                    complete: (results) => {
+                        resolve(results.data);
                     }
-                }
-                CSRankings.promise(cont);
+                });
+            });
+            const d = data;
+            for (let turingPair of d) {
+                turing[turingPair.name] = turingPair.year;
             }
         });
     }
-    loadAuthors(cont) {
-        Papa.parse(this.authorinfoFile, {
-            download: true,
-            header: true,
-            complete: (results) => {
-                const data = results.data;
-                this.authors = data;
-                for (let r in this.authors) {
-                    let name = this.authors[r].name;
-                }
-                CSRankings.promise(cont);
+    loadACMFellow(acmfellow) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield new Promise((resolve) => {
+                Papa.parse(this.acmfellowFile, {
+                    header: true,
+                    download: true,
+                    complete: (results) => {
+                        resolve(results.data);
+                    }
+                });
+            });
+            const d = data;
+            for (let acmfellowPair of d) {
+                acmfellow[acmfellowPair.name] = acmfellowPair.year;
             }
+        });
+    }
+    loadCountryInfo(countryInfo) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield new Promise((resolve) => {
+                Papa.parse(this.countryinfoFile, {
+                    header: true,
+                    download: true,
+                    complete: (results) => {
+                        resolve(results.data);
+                    }
+                });
+            });
+            const ci = data;
+            for (let info of ci) {
+                countryInfo[info.institution] = info.region;
+            }
+        });
+    }
+    loadAuthorInfo() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield new Promise((resolve) => {
+                Papa.parse(this.authorFile, {
+                    download: true,
+                    header: true,
+                    complete: (results) => {
+                        resolve(results.data);
+                    }
+                });
+            });
+            const ai = data;
+            for (let counter = 0; counter < ai.length; counter++) {
+                const record = ai[counter];
+                let name = record['name'].trim();
+                let result = name.match(CSRankings.nameMatcher);
+                if (result) {
+                    name = result[1].trim();
+                    this.note[name] = result[2];
+                }
+                if (name !== "") {
+                    this.dblpAuthors[name] = this.translateNameToDBLP(name);
+                    this.homepages[name] = record['homepage'];
+                    this.scholarInfo[name] = record['scholarid'];
+                }
+            }
+        });
+    }
+    loadAuthors() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield new Promise((resolve) => {
+                Papa.parse(this.authorinfoFile, {
+                    download: true,
+                    header: true,
+                    complete: (results) => {
+                        resolve(results.data);
+                    }
+                });
+            });
+            this.authors = data;
         });
     }
     inRegion(dept, regions) {
@@ -954,6 +959,11 @@ class CSRankings {
                     + '>'
                     + name
                     + '</a>&nbsp;';
+                if (this.note.hasOwnProperty(name)) {
+                    const url = CSRankings.noteMap[this.note[name]];
+                    const href = '<a href="' + url + '">';
+                    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+                }
                 if (this.acmfellow.hasOwnProperty(name)) {
                     p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
                         this.acmfellowImage + '"></span>&nbsp;';
@@ -963,7 +973,6 @@ class CSRankings {
                         this.turingImage + '"></span>&nbsp;';
                 }
                 p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
-                // p += '<font style="font-variant:small-caps" size="-1">' + this.areaString(name).toLowerCase() + '</em></font>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
                     + '" '
@@ -974,29 +983,16 @@ class CSRankings {
                     + '<img alt=\"Home page\" src=\"' + this.homepageImage + '\"></a>&nbsp;';
                 if (this.scholarInfo.hasOwnProperty(name)) {
                     if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
-                        let url = 'https://scholar.google.com/citations?user='
-                            + this.scholarInfo[name]
-                            + '&hl=en&oi=ao';
-                        p += '<a title="Click for author\'s Google Scholar page." target="_blank" href="' + url + '" '
-                            + 'onclick="trackOutboundLink(\''
-                            + url
-                            + '\', true); return false;"'
-                            + '>'
-                            + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10">'
-                            + '</a>&nbsp;';
+                        let url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
+                        p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
+                            + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
                     }
                 }
-                p += '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + dblpName
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + dblpName
-                    + '\', true); return false;"'
-                    + '>'
-                    + '<img alt="DBLP" src="dblp.png">'
+                p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
+                p += '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
-                p += "<span onclick='csr.toggleChart(\"" + escape(name) + "\");' title=\"Click for author's publication profile.\" class=\"hovertip\" id=\"" + escape(name) + "-chartwidget\">"
-                    + "<span class='piechart'>" + this.PieChart + "</span></span>"
+                p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+                p += "<span class='piechart'>" + this.PieChart + "</span></span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1013,7 +1009,7 @@ class CSRankings {
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
-                    + '<div style="display:none;" id="' + escape(name) + "-chart" + '">'
+                    + '<div class="csr-piechart" id="' + escape(name) + "-chart" + '">'
                     + '</div>'
                     + "</td></tr>";
             }
@@ -1067,9 +1063,7 @@ class CSRankings {
                 s += "\n<tr><td>" + rank + "&nbsp;</td>";
                 s += "<td>"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
-                    + "<font color=\"blue\">"
                     + this.RightTriangle
-                    + "</font>"
                     + "</span>";
                 s += "&nbsp;" + dept + "&nbsp;"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
@@ -1079,7 +1073,8 @@ class CSRankings {
                 s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
-                s += '<tr><td colspan="4"><div style="display:none;" style="width: 100%; height: 350px;" id="'
+                // style="width: 100%; height: 350px;" 
+                s += '<tr><td colspan="4"><div class="csr-piechart" id="'
                     + esc + '-chart">' + '</div></td></tr>';
                 s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
                 ties++;
@@ -1146,15 +1141,16 @@ class CSRankings {
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         const s = this.buildOutputString(numAreas, deptCounts, univtext, CSRankings.minToRank);
+        let stop = performance.now();
+        console.log("Before render: rank took " + (stop - start) + " milliseconds.");
         /* Finally done. Redraw! */
-        $("#success").html(s);
+        document.getElementById("success").innerHTML = s;
         $("div").scroll(function () {
-            //		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+            // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
             // If we are nearly at the bottom, update the minimum.
             if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
                 let t = CSRankings.updateMinimum(this);
                 if (t) {
-                    //			console.log("scrolling to " + t);
                     $("div").scrollTop(t);
                 }
             }
@@ -1167,7 +1163,7 @@ class CSRankings {
         }
         let str = this.updatedURL();
         this.navigoRouter.navigate(str);
-        let stop = performance.now();
+        stop = performance.now();
         console.log("Rank took " + (stop - start) + " milliseconds.");
         return false;
     }
@@ -1192,11 +1188,11 @@ class CSRankings {
         const widget = document.getElementById(area + "-widget");
         if (e.style.display === 'block') {
             e.style.display = 'none';
-            widget.innerHTML = "<font color=\"blue\">" + this.RightTriangle + "</font>";
+            widget.innerHTML = this.RightTriangle;
         }
         else {
             e.style.display = 'block';
-            widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
+            widget.innerHTML = this.DownTriangle;
         }
     }
     /* Expand or collape the view of all faculty in a department. */
@@ -1205,11 +1201,11 @@ class CSRankings {
         const widget = document.getElementById(dept + "-widget");
         if (e.style.display === 'block') {
             e.style.display = 'none';
-            widget.innerHTML = "<font color=\"blue\">" + this.RightTriangle + "</font>";
+            widget.innerHTML = this.RightTriangle;
         }
         else {
             e.style.display = 'block';
-            widget.innerHTML = "<font color=\"blue\">" + this.DownTriangle + "</font>";
+            widget.innerHTML = this.DownTriangle;
         }
     }
     activateAll(value = true) {
@@ -1477,16 +1473,22 @@ class CSRankings {
             if (!(area in CSRankings.parentMap)) {
                 // Not a child.
                 const widget = document.getElementById(area + '-widget');
-                widget.addEventListener("click", () => {
-                    this.toggleConferences(area);
-                });
+                if (widget) {
+                    widget.addEventListener("click", () => {
+                        this.toggleConferences(area);
+                    });
+                }
             }
         }
         // Initialize callbacks for area checkboxes.
         for (let i = 0; i < this.fields.length; i++) {
             const str = 'input[name=' + this.fields[i] + ']';
             const field = this.fields[i];
-            $(str).click(() => {
+            const fieldElement = document.getElementById(this.fields[i]);
+            if (!fieldElement) {
+                continue;
+            }
+            fieldElement.addEventListener("click", () => {
                 let updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
@@ -1500,7 +1502,7 @@ class CSRankings {
                     CSRankings.childMap[parent].forEach((k) => {
                         let val = $('input[name=' + k + ']').prop('checked');
                         anyChecked |= val;
-                        // allChcked means all top tier conferences
+                        // allChecked means all top tier conferences
                         // are on and all next tier conferences are
                         // off.
                         if (!(k in CSRankings.nextTier)) {
@@ -1567,6 +1569,7 @@ CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
 CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
+CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
     'aaai': 'ai',
@@ -1660,4 +1663,13 @@ CSRankings.nextTier = {
     'oopsla': true
 };
 CSRankings.childMap = {};
+CSRankings.noteMap = {
+    'Tech': 'https://tech.cornell.edu/',
+    'CBG': 'https://www.cis.mpg.de/cbg/',
+    'INF': 'https://www.cis.mpg.de/mpi-inf/',
+    'IS': 'https://www.cis.mpg.de/is/',
+    'MG': 'https://www.cis.mpg.de/molgen/',
+    'SP': 'https://www.cis.mpg.de/mpi-for-cyber-for-security-and-privacy/',
+    'SWS': 'https://www.cis.mpg.de/mpi-sws/'
+};
 var csr = new CSRankings();
