@@ -1262,7 +1262,9 @@ class CSRankings {
 	let s = this.makePrologue();
 	/* Show the top N (with more if tied at the end) */
 	
-	s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
+	s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
+	    + '&nbsp;'.repeat(20)      /* Hopefully max length of an institution. */
+	    + '</th><th align="right">'
 	    + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
 	    + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
 	    + '</abbr></th></th></tr></thead>';
