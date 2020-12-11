@@ -1062,7 +1062,10 @@ class CSRankings {
                     }
                 }
                 const esc = escape(dept);
-                s += "\n<tr><td>" + rank + "&nbsp;</td>";
+                s += "\n<tr><td>" + rank;
+                // Print spaces to hold up to 4 digits of ranked schools.
+                s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
+                s += "</td>";
                 s += "<td>"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
                     + this.RightTriangle
