@@ -304,7 +304,7 @@ class CSRankings {
 	    'INF': 'https://www.cis.mpg.de/mpi-inf/',
 	    'IS': 'https://www.cis.mpg.de/is/',
 	    'MG': 'https://www.cis.mpg.de/molgen/',
-	    'SP': 'https://www.cis.mpg.de/mpi-for-cyber-for-security-and-privacy/',
+	    'SP': 'https://www.cis.mpg.de/mpi-for-security-and-privacy/',
 	    'SWS': 'https://www.cis.mpg.de/mpi-sws/' 
 	};
 
