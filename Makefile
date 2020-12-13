@@ -9,7 +9,7 @@ TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
 
-PYTHON = python3 # 2.7
+PYTHON = python3 # 3.7
 PYPY   = python3 # pypy
 
 all: generated-author-info.csv csrankings.js csrankings.min.js # fix-affiliations home-pages scholar-links
@@ -38,7 +38,7 @@ clean-dblp:
 download-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
-	wget http://dblp.org/xml/dblp.xml.gz
+	wget https://dblp.org/xml/dblp.xml.gz
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file."
