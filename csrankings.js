@@ -571,7 +571,7 @@ class CSRankings {
             s += "<br />";
             count += 1;
         });
-        $("#progress").html(s);
+        document.querySelector("#progress").innerHTML = s;
     }
     loadTuring(turing) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -1021,7 +1021,9 @@ class CSRankings {
     buildOutputString(numAreas, deptCounts, univtext, minToRank) {
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
-        s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font></th><th align="right">'
+        s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
+            + '&nbsp;'.repeat(20) /* Hopefully max length of an institution. */
+            + '</th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
             + '</abbr></th><th align="right">&nbsp;<abbr title="Number of faculty who have published in these areas."><font color="#777">Faculty</font>'
             + '</abbr></th></th></tr></thead>';
@@ -1060,7 +1062,10 @@ class CSRankings {
                     }
                 }
                 const esc = escape(dept);
-                s += "\n<tr><td>" + rank + "&nbsp;</td>";
+                s += "\n<tr><td>" + rank;
+                // Print spaces to hold up to 4 digits of ranked schools.
+                s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
+                s += "</td>";
                 s += "<td>"
                     + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
                     + this.RightTriangle
@@ -1144,9 +1149,9 @@ class CSRankings {
         let stop = performance.now();
         console.log("Before render: rank took " + (stop - start) + " milliseconds.");
         /* Finally done. Redraw! */
-        $("#success").html(s);
+        document.getElementById("success").innerHTML = s;
         $("div").scroll(function () {
-            //		console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
+            // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
             // If we are nearly at the bottom, update the minimum.
             if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
                 let t = CSRankings.updateMinimum(this);
@@ -1473,16 +1478,22 @@ class CSRankings {
             if (!(area in CSRankings.parentMap)) {
                 // Not a child.
                 const widget = document.getElementById(area + '-widget');
-                widget.addEventListener("click", () => {
-                    this.toggleConferences(area);
-                });
+                if (widget) {
+                    widget.addEventListener("click", () => {
+                        this.toggleConferences(area);
+                    });
+                }
             }
         }
         // Initialize callbacks for area checkboxes.
         for (let i = 0; i < this.fields.length; i++) {
             const str = 'input[name=' + this.fields[i] + ']';
             const field = this.fields[i];
-            $(str).click(() => {
+            const fieldElement = document.getElementById(this.fields[i]);
+            if (!fieldElement) {
+                continue;
+            }
+            fieldElement.addEventListener("click", () => {
                 let updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
