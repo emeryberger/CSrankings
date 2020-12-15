@@ -11619,6 +11619,8 @@ Aylin Caliskan,George Washington University,oakland,1.0,0.2,2014
 Aylin Caliskan,George Washington University,pets,1.0,0.2,2012
 Aylin Caliskan,George Washington University,pets,1.0,0.14285714285714285,2019
 Aylin Caliskan,George Washington University,usenixsec,1.0,0.14285714285714285,2015
+Ayon Chakraborty,IIT Madras,imc,1.0,0.2,2014
+Ayon Chakraborty,IIT Madras,nsdi,1.0,0.25,2019
 Ayse Tosun Misirli,Istanbul Technical University,fse,1.0,0.16666666666666666,2012
 Ayse Tosun Misirli,Istanbul Technical University,icse,1.0,0.3333333333333333,2015
 Ayse Yilmazer,Istanbul Technical University,asplos,1.0,0.16666666666666666,2015
@@ -16501,7 +16503,9 @@ Bryan Parno,Carnegie Mellon University,usenixatc,1.0,0.25,2014
 Bryan Parno,Carnegie Mellon University,usenixsec,1.0,0.3333333333333333,2008
 Bryan Parno,Carnegie Mellon University,usenixsec,1.0,0.1111111111111111,2017
 Bryan S. Kim,Syracuse University,fast,1.0,0.3333333333333333,2019
+Bryan S. Kim,Syracuse University,rtas,1.0,0.5,2017
 Bryan S. Kim,Syracuse University,sigmetrics,1.0,0.2,2019
+Bryan S. Kim,Syracuse University,usenixatc,1.0,0.3333333333333333,2018
 Bryan S. Morse,Brigham Young University,aaai,1.0,0.25,2010
 Bryan S. Morse,Brigham Young University,cvpr,1.0,0.5,2001
 Bryan S. Morse,Brigham Young University,cvpr,1.0,0.25,2005
@@ -27558,6 +27562,45 @@ David M. Mount,University of Maryland - College Park,stoc,1.0,0.2,1995
 David M. Mount,University of Maryland - College Park,stoc,1.0,0.3333333333333333,2002
 David M. Mount,University of Maryland - College Park,stoc,1.0,0.3333333333333333,2006
 David M. Mount,University of Maryland - College Park,stoc,1.0,0.3333333333333333,2011
+David M. Pennock,Rutgers University,aaai,1.0,0.3333333333333333,2000
+David M. Pennock,Rutgers University,aaai,1.0,0.3333333333333333,2008
+David M. Pennock,Rutgers University,aaai,1.0,0.25,2014
+David M. Pennock,Rutgers University,aaai,1.0,0.3333333333333333,2017
+David M. Pennock,Rutgers University,aaai,1.0,0.2,2018
+David M. Pennock,Rutgers University,aaai,1.0,0.3333333333333333,2019
+David M. Pennock,Rutgers University,aaai,1.0,0.25,2020
+David M. Pennock,Rutgers University,ec,2.0,0.5,2003
+David M. Pennock,Rutgers University,ec,1.0,1.0,2004
+David M. Pennock,Rutgers University,ec,1.0,0.25,2005
+David M. Pennock,Rutgers University,ec,2.0,0.75,2007
+David M. Pennock,Rutgers University,ec,3.0,0.6761904761904762,2008
+David M. Pennock,Rutgers University,ec,1.0,0.3333333333333333,2009
+David M. Pennock,Rutgers University,ec,2.0,0.5,2010
+David M. Pennock,Rutgers University,ec,1.0,0.3333333333333333,2012
+David M. Pennock,Rutgers University,ec,1.0,0.25,2013
+David M. Pennock,Rutgers University,ec,1.0,0.25,2014
+David M. Pennock,Rutgers University,ec,1.0,0.25,2015
+David M. Pennock,Rutgers University,ec,1.0,0.3333333333333333,2016
+David M. Pennock,Rutgers University,ec,1.0,0.3333333333333333,2017
+David M. Pennock,Rutgers University,icml,1.0,0.25,2000
+David M. Pennock,Rutgers University,icml,1.0,0.25,2003
+David M. Pennock,Rutgers University,ijcai,1.0,0.5,2011
+David M. Pennock,Rutgers University,ijcai,1.0,0.3333333333333333,2016
+David M. Pennock,Rutgers University,ijcai,1.0,0.5,2018
+David M. Pennock,Rutgers University,ijcai,1.0,0.3333333333333333,2020
+David M. Pennock,Rutgers University,kdd,1.0,0.25,2001
+David M. Pennock,Rutgers University,kdd,1.0,0.2,2006
+David M. Pennock,Rutgers University,kdd,1.0,0.5,2007
+David M. Pennock,Rutgers University,nips,1.0,0.5,2002
+David M. Pennock,Rutgers University,nips,1.0,0.3333333333333333,2004
+David M. Pennock,Rutgers University,sigir,2.0,0.5,2002
+David M. Pennock,Rutgers University,stoc,1.0,0.3333333333333333,2008
+David M. Pennock,Rutgers University,vldb,1.0,0.3333333333333333,2002
+David M. Pennock,Rutgers University,wine,2.0,0.3666666666666667,2007
+David M. Pennock,Rutgers University,wine,2.0,0.5833333333333333,2008
+David M. Pennock,Rutgers University,wine,1.0,0.3333333333333333,2009
+David M. Pennock,Rutgers University,www,2.0,0.45,2002
+David M. Pennock,Rutgers University,www,1.0,0.3333333333333333,2003
 David Madigan,Northeastern University,kdd,1.0,0.5,2002
 David Madigan,Northeastern University,kdd,1.0,0.5,2003
 David Madigan,Northeastern University,sigir,1.0,0.2,2006
@@ -38587,6 +38630,15 @@ Gabriel Robins,University of Virginia,dac,1.0,0.3333333333333333,2012
 Gabriel Robins,University of Virginia,iccad,1.0,0.16666666666666666,2015
 Gabriel Robins,University of Virginia,ismb,1.0,0.25,1995
 Gabriel Robins,University of Virginia,soda,1.0,0.5,2000
+Gabriel Stanovsky,Hebrew University of Jerusalem,acl,1.0,0.3333333333333333,2015
+Gabriel Stanovsky,Hebrew University of Jerusalem,acl,2.0,0.8333333333333333,2016
+Gabriel Stanovsky,Hebrew University of Jerusalem,acl,1.0,0.2,2017
+Gabriel Stanovsky,Hebrew University of Jerusalem,acl,1.0,0.3333333333333333,2019
+Gabriel Stanovsky,Hebrew University of Jerusalem,acl,3.0,0.6583333333333333,2020
+Gabriel Stanovsky,Hebrew University of Jerusalem,emnlp,2.0,0.75,2016
+Gabriel Stanovsky,Hebrew University of Jerusalem,emnlp,2.0,1.0,2018
+Gabriel Stanovsky,Hebrew University of Jerusalem,naacl,1.0,0.25,2018
+Gabriel Stanovsky,Hebrew University of Jerusalem,naacl,1.0,0.16666666666666666,2019
 Gabriel Zachmann,University of Bremen,chiconf,1.0,0.2,2020
 Gabriel Zachmann,University of Bremen,iros,1.0,0.3333333333333333,2019
 Gabriel Zachmann,University of Bremen,rss,1.0,0.5,2009
@@ -49453,6 +49505,19 @@ Ihsan Ayyub Qazi,LUMS,imc,1.0,0.16666666666666666,2016
 Ihsan Ayyub Qazi,LUMS,sigcomm,1.0,0.16666666666666666,2014
 Ihsan Ayyub Qazi,LUMS,sigcomm,1.0,0.25,2018
 Ihsan Ayyub Qazi,LUMS,www,1.0,0.2,2020
+Ilan Komargodski,Hebrew University of Jerusalem,crypto,1.0,0.16666666666666666,2017
+Ilan Komargodski,Hebrew University of Jerusalem,crypto,2.0,0.75,2018
+Ilan Komargodski,Hebrew University of Jerusalem,crypto,1.0,0.3333333333333333,2019
+Ilan Komargodski,Hebrew University of Jerusalem,eurocrypt,1.0,0.3333333333333333,2016
+Ilan Komargodski,Hebrew University of Jerusalem,eurocrypt,1.0,0.5,2017
+Ilan Komargodski,Hebrew University of Jerusalem,eurocrypt,3.0,1.0833333333333333,2018
+Ilan Komargodski,Hebrew University of Jerusalem,eurocrypt,1.0,0.25,2019
+Ilan Komargodski,Hebrew University of Jerusalem,eurocrypt,3.0,0.6666666666666666,2020
+Ilan Komargodski,Hebrew University of Jerusalem,focs,1.0,0.3333333333333333,2013
+Ilan Komargodski,Hebrew University of Jerusalem,focs,1.0,0.16666666666666666,2014
+Ilan Komargodski,Hebrew University of Jerusalem,focs,1.0,0.3333333333333333,2017
+Ilan Komargodski,Hebrew University of Jerusalem,soda,1.0,0.25,2016
+Ilan Komargodski,Hebrew University of Jerusalem,stoc,1.0,0.5,2013
 Ilan Newman,University of Haifa,ec,1.0,0.25,2009
 Ilan Newman,University of Haifa,focs,1.0,0.25,1991
 Ilan Newman,University of Haifa,focs,2.0,0.5,1999
@@ -57069,13 +57134,13 @@ Jie Fu,Worcester Polytechnic Institute,ijcai,1.0,0.2,2016
 Jie Fu,Worcester Polytechnic Institute,ijcai,2.0,0.625,2020
 Jie Fu,Worcester Polytechnic Institute,iros,1.0,0.25,2013
 Jie Fu,Worcester Polytechnic Institute,rss,1.0,0.5,2014
-Jie Gao 0001,Stony Brook University,ec,1.0,0.3333333333333333,2013
-Jie Gao 0001,Stony Brook University,ec,1.0,0.25,2016
-Jie Gao 0001,Stony Brook University,icra,1.0,0.2,2017
-Jie Gao 0001,Stony Brook University,mobicom,2.0,0.6666666666666666,2006
-Jie Gao 0001,Stony Brook University,mobicom,1.0,0.5,2010
-Jie Gao 0001,Stony Brook University,soda,1.0,0.25,2008
-Jie Gao 0001,Stony Brook University,vis,1.0,0.14285714285714285,2013
+Jie Gao 0001,Rutgers University,ec,1.0,0.3333333333333333,2013
+Jie Gao 0001,Rutgers University,ec,1.0,0.25,2016
+Jie Gao 0001,Rutgers University,icra,1.0,0.2,2017
+Jie Gao 0001,Rutgers University,mobicom,2.0,0.6666666666666666,2006
+Jie Gao 0001,Rutgers University,mobicom,1.0,0.5,2010
+Jie Gao 0001,Rutgers University,soda,1.0,0.25,2008
+Jie Gao 0001,Rutgers University,vis,1.0,0.14285714285714285,2013
 Jie Gu,Northwestern University,aaai,1.0,0.2,2019
 Jie Gu,Northwestern University,dac,1.0,0.3333333333333333,2007
 Jie Gu,Northwestern University,dac,1.0,0.25,2016
@@ -66229,6 +66294,16 @@ Kevin Gimpel,TTI Chicago,nips,1.0,0.25,2016
 Kevin Gimpel,TTI Chicago,nips,1.0,0.25,2018
 Kevin J. Compton,University of Michigan,lics,1.0,0.5,1988
 Kevin J. Compton,University of Michigan,pods,1.0,0.3333333333333333,1992
+Kevin Jamieson,University of Washington,fast,1.0,0.1,2014
+Kevin Jamieson,University of Washington,icml,1.0,0.5,2018
+Kevin Jamieson,University of Washington,icra,1.0,0.125,2017
+Kevin Jamieson,University of Washington,nips,1.0,0.5,2011
+Kevin Jamieson,University of Washington,nips,1.0,0.3333333333333333,2012
+Kevin Jamieson,University of Washington,nips,1.0,0.2,2015
+Kevin Jamieson,University of Washington,nips,2.0,0.6666666666666666,2016
+Kevin Jamieson,University of Washington,nips,1.0,0.25,2017
+Kevin Jamieson,University of Washington,nips,1.0,0.5,2018
+Kevin Jamieson,University of Washington,nips,3.0,1.25,2019
 Kevin Jeffay,University of North Carolina,emsoft,1.0,0.5,2001
 Kevin Jeffay,University of North Carolina,imc,1.0,0.25,2003
 Kevin Jeffay,University of North Carolina,rtss,1.0,0.5,1987
@@ -91698,6 +91773,7 @@ Pallab Dasgupta,IIT Kharagpur,dac,1.0,0.2,2006
 Pallab Dasgupta,IIT Kharagpur,dac,1.0,0.2,2019
 Pallab Dasgupta,IIT Kharagpur,emsoft,1.0,0.25,2017
 Pallab Dasgupta,IIT Kharagpur,iccad,1.0,0.125,2004
+Pallavi Jain 0001,IIT Jodhpur,ijcai,2.0,0.6666666666666666,2020
 Palle Dahlstedt,Chalmers/GU,chiconf,1.0,0.2,2017
 Pamela J. Wisniewski,University of Central Florida,chiconf,1.0,0.3333333333333333,2012
 Pamela J. Wisniewski,University of Central Florida,chiconf,1.0,0.3333333333333333,2014
@@ -100855,20 +100931,20 @@ Rebecca J. Passonneau,Pennsylvania State University,naacl,1.0,0.5,2004
 Rebecca J. Passonneau,Pennsylvania State University,naacl,1.0,0.2,2010
 Rebecca J. Passonneau,Pennsylvania State University,naacl,1.0,0.5,2013
 Rebecca J. Passonneau,Pennsylvania State University,sigir,1.0,0.2,2005
-Rebecca N. Wright,Rutgers University,acl,1.0,0.5,1991
-Rebecca N. Wright,Rutgers University,ccs,2.0,0.75,1996
-Rebecca N. Wright,Rutgers University,ccs,1.0,0.3333333333333333,2000
-Rebecca N. Wright,Rutgers University,crypto,1.0,0.5,1991
-Rebecca N. Wright,Rutgers University,eurocrypt,1.0,0.5,1998
-Rebecca N. Wright,Rutgers University,icml,1.0,0.3333333333333333,2008
-Rebecca N. Wright,Rutgers University,kdd,1.0,0.5,2004
-Rebecca N. Wright,Rutgers University,kdd,2.0,0.8333333333333333,2005
-Rebecca N. Wright,Rutgers University,pets,1.0,0.25,2018
-Rebecca N. Wright,Rutgers University,pods,1.0,0.3333333333333333,2005
-Rebecca N. Wright,Rutgers University,pods,1.0,0.25,2011
-Rebecca N. Wright,Rutgers University,sigcomm,1.0,0.2,2008
-Rebecca N. Wright,Rutgers University,sigmetrics,1.0,0.25,2013
-Rebecca N. Wright,Rutgers University,soda,1.0,0.5,1993
+Rebecca N. Wright,Columbia University,acl,1.0,0.5,1991
+Rebecca N. Wright,Columbia University,ccs,2.0,0.75,1996
+Rebecca N. Wright,Columbia University,ccs,1.0,0.3333333333333333,2000
+Rebecca N. Wright,Columbia University,crypto,1.0,0.5,1991
+Rebecca N. Wright,Columbia University,eurocrypt,1.0,0.5,1998
+Rebecca N. Wright,Columbia University,icml,1.0,0.3333333333333333,2008
+Rebecca N. Wright,Columbia University,kdd,1.0,0.5,2004
+Rebecca N. Wright,Columbia University,kdd,2.0,0.8333333333333333,2005
+Rebecca N. Wright,Columbia University,pets,1.0,0.25,2018
+Rebecca N. Wright,Columbia University,pods,1.0,0.3333333333333333,2005
+Rebecca N. Wright,Columbia University,pods,1.0,0.25,2011
+Rebecca N. Wright,Columbia University,sigcomm,1.0,0.2,2008
+Rebecca N. Wright,Columbia University,sigmetrics,1.0,0.25,2013
+Rebecca N. Wright,Columbia University,soda,1.0,0.5,1993
 Rebecca Willett,University of Chicago,aaai,1.0,0.2,2017
 Rebecca Willett,University of Chicago,icml,1.0,0.5,2013
 Rebecca Willett,University of Chicago,icml,1.0,0.25,2017
@@ -129732,6 +129808,11 @@ William L. Scherlis,Carnegie Mellon University,icse,1.0,0.5,2002
 William L. Scherlis,Carnegie Mellon University,oopsla,1.0,0.3333333333333333,2006
 William L. Scherlis,Carnegie Mellon University,popl,1.0,1.0,1981
 William L. Scherlis,Carnegie Mellon University,popl,1.0,0.5,1986
+William L. Steiger,Rutgers University,focs,1.0,0.3333333333333333,1989
+William L. Steiger,Rutgers University,soda,1.0,0.5,2000
+William L. Steiger,Rutgers University,stoc,1.0,0.25,1986
+William L. Steiger,Rutgers University,stoc,1.0,0.3333333333333333,1988
+William L. Steiger,Rutgers University,stoc,1.0,0.3333333333333333,1992
 William Mansky,University of Illinois at Chicago,cav,1.0,0.3333333333333333,2015
 William Mansky,University of Illinois at Chicago,oopsla,1.0,0.3333333333333333,2017
 William Mansky,University of Illinois at Chicago,pldi,1.0,0.16666666666666666,2015
