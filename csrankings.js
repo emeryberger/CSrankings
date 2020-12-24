@@ -294,11 +294,13 @@ class CSRankings {
         name = name.replace(/í/g, "=iacute=");
         name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
+        name = name.replace(/Ç/g, "=Ccedil=");
         name = name.replace(/ç/g, "=ccedil=");
         name = name.replace(/ä/g, "=auml=");
         name = name.replace(/ö/g, "=ouml=");
         name = name.replace(/ø/g, "=oslash=");
         name = name.replace(/Ö/g, "=Ouml=");
+        name = name.replace(/Ü/g, "=Uuml=");
         name = name.replace(/ü/g, "=uuml=");
         name = name.replace(/ß/g, "=szlig=");
         let splitName = name.split(" ");
@@ -314,7 +316,7 @@ class CSRankings {
         let newName = splitName.join(" ");
         newName = newName.replace(/\s/g, "_");
         newName = newName.replace(/\-/g, "=");
-        let str = "https://dblp.uni-trier.de/pers/hd";
+        let str = "https://dblp.org/pers/hd";
         const lastInitial = lastName[0].toLowerCase();
         str += "/" + lastInitial + "/" + lastName + ":" + newName;
         return str;
@@ -1674,7 +1676,7 @@ CSRankings.noteMap = {
     'INF': 'https://www.cis.mpg.de/mpi-inf/',
     'IS': 'https://www.cis.mpg.de/is/',
     'MG': 'https://www.cis.mpg.de/molgen/',
-    'SP': 'https://www.cis.mpg.de/mpi-for-cyber-for-security-and-privacy/',
+    'SP': 'https://www.cis.mpg.de/mpi-for-security-and-privacy/',
     'SWS': 'https://www.cis.mpg.de/mpi-sws/'
 };
 var csr = new CSRankings();
