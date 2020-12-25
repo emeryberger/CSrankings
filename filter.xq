@@ -18,6 +18,7 @@
 //inproceedings[booktitle="EMNLP-CoNLL"],
 //inproceedings[booktitle="EMNLP/IJCNLP (1)"],
 //inproceedings[booktitle="HLT/EMNLP"],
+//inproceedings[booktitle="EMNLP (1)"],
 //inproceedings[booktitle="AAAI"],
 //inproceedings[booktitle="AAAI/IAAI"],
 //inproceedings[booktitle="IJCAI"],
