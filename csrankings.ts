@@ -491,11 +491,13 @@ class CSRankings {
 	name = name.replace(/í/g, "=iacute=");
 	name = name.replace(/ï/g, "=iuml=");
 	name = name.replace(/ó/g, "=oacute=");
+	name = name.replace(/Ç/g, "=Ccedil=");
 	name = name.replace(/ç/g, "=ccedil=");
 	name = name.replace(/ä/g, "=auml=");
 	name = name.replace(/ö/g, "=ouml=");
 	name = name.replace(/ø/g, "=oslash=");
 	name = name.replace(/Ö/g, "=Ouml=");
+	name = name.replace(/Ü/g, "=Uuml=");
 	name = name.replace(/ü/g, "=uuml=");
 	name = name.replace(/ß/g, "=szlig=");
 	let splitName = name.split(" ");
@@ -511,7 +513,7 @@ class CSRankings {
 	let newName = splitName.join(" ");
 	newName = newName.replace(/\s/g, "_");
 	newName = newName.replace(/\-/g, "=");
-	let str = "https://dblp.uni-trier.de/pers/hd";
+	let str = "https://dblp.org/pers/hd";
 	const lastInitial = lastName[0].toLowerCase();
 	str += "/" + lastInitial + "/" + lastName + ":" + newName;
 	return str;
