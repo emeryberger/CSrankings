@@ -30,6 +30,29 @@ and basex via a command line like:
 
 ``apt-get install libxml2-utils npm python-lxml basex; npm install -g typescript google-closure-compiler``
 
+### Quick contribution via a shallow clone
+
+A full clone of the CSrankings repository is almost 2GB, and the
+`csrankings.csv` file is too large to edit via the GitHub web site. To
+contribute a change without creating a full local clone of the
+CSrankings repo, you can do a shallow clone. To do so, follow these
+steps:
+
+1. Fork the CSrankings repo. If you have an existing fork, but it is
+not up to date with the main repository, this technique may not
+work. If necessary, delete and re-create your fork to get it up to
+date. (Do not delete your existing fork if it has unmerged changes you
+want to preserve!)
+1. Do a shallow clone of your fork: `git clone --depth 1
+https://github.com/yourusername/CSrankings`. This will only download
+the most recent commit, not the full git history.
+1. Make your changes on a branch, push them to your clone, and create
+a pull request on GitHub as usual.
+
+If you want to make another contribution and some time has passed,
+perform steps 1-3 again, creating a fresh fork and shallow clone.
+
+
 ### Acknowledgements and other rankings
 
 This site was developed primarily by and is maintained by [Emery
