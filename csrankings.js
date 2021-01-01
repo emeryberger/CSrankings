@@ -1316,6 +1316,7 @@ class CSRankings {
         navigator.geolocation.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = document.getElementById("regions");
+            console.log("continent = " + continent);
             switch (continent) {
                 case "northamerica":
                     return;
