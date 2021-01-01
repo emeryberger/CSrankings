@@ -11,6 +11,7 @@
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
+/// <reference path="./typescript/continents.d.ts" />
 
 declare function escape(s: string): string;
 declare function unescape(s: string): string;
@@ -181,7 +182,7 @@ class CSRankings {
 	    this.countAuthorAreas();
 	    await this.loadCountryInfo(this.countryInfo);
 	    this.addListeners();
-	    /* CSRankings.geoCheck(); */
+	    CSRankings.geoCheck();
 	    this.rank();
 	})();
     }
@@ -1593,6 +1594,27 @@ class CSRankings {
 	return start;
     }
 
+    public static geoCheck(): void {
+        navigator.geolocation.getCurrentPosition((position) => {
+	  const continent = whichContinent(position.coords.latitude, position.coords.longitude);
+	  let regions = (<HTMLInputElement> document.getElementById("regions"));
+          switch (continent) {
+	  case "northamerica":
+	    return;
+	  case "europe":
+	  case "asia":
+	  case "southamerica":
+	  case "africa":
+            regions!.value = continent;
+	    break;
+	  default:
+	    regions!.value = "world";
+	    break;
+          }
+	  CSRankings.getInstance().rank();
+      });
+      }
+      
     /*
       public static geoCheck(): void {
       // Figure out which country clients are coming from and set
@@ -1856,3 +1878,4 @@ class CSRankings {
 }
 
 var csr: CSRankings = new CSRankings();
+		      

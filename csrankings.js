@@ -19,6 +19,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
+/// <reference path="./typescript/continents.d.ts" />
 ;
 ;
 ;
@@ -250,7 +251,7 @@ class CSRankings {
             this.countAuthorAreas();
             yield this.loadCountryInfo(this.countryInfo);
             this.addListeners();
-            /* CSRankings.geoCheck(); */
+            CSRankings.geoCheck();
             this.rank();
         }))();
     }
@@ -1310,6 +1311,26 @@ class CSRankings {
             start += '&' + region;
         }
         return start;
+    }
+    static geoCheck() {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const continent = whichContinent(position.coords.latitude, position.coords.longitude);
+            let regions = document.getElementById("regions");
+            switch (continent) {
+                case "northamerica":
+                    return;
+                case "europe":
+                case "asia":
+                case "southamerica":
+                case "africa":
+                    regions.value = continent;
+                    break;
+                default:
+                    regions.value = "world";
+                    break;
+            }
+            CSRankings.getInstance().rank();
+        });
     }
     /*
       public static geoCheck(): void {
