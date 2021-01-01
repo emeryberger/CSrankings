@@ -17,12 +17,12 @@ all: generated-author-info.csv csrankings.js csrankings.min.js # fix-affiliation
 clean:
 	rm $(TARGETS)
 
-csrankings.js: csrankings.ts
+csrankings.js: csrankings.ts continents.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --project tsconfig.json
 
-csrankings.min.js: csrankings.js
-	closure-compiler --js csrankings.js > csrankings.min.js
+csrankings.min.js: csrankings.js csrankings.ts
+	google-closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
 	$(MAKE) download-dblp
