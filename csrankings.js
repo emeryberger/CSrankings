@@ -679,20 +679,24 @@ class CSRankings {
                     return false;
                 }
                 break;
+            case "at":
             case "au":
             case "br":
             case "ca":
             case "ch":
             case "cn":
             case "de":
+            case "dk":
             case "es":
             case "fr":
+            case "hk":
             case "il":
             case "in":
             case "it":
             case "jp":
             case "kr":
             case "nl":
+            case "nz":
             case "tr":
             case "uk":
                 if (this.countryAbbrv[dept] != regions) {
