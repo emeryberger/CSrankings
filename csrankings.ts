@@ -1325,7 +1325,6 @@ class CSRankings {
 
 		let abbrv = "us";
 		if (dept in countryAbbrv) {
-		console.log("dept = " + dept + ", abbrv = " + countryAbbrv[dept]);
 		  abbrv = countryAbbrv[dept];
 		}
 
