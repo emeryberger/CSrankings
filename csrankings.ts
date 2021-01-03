@@ -1325,10 +1325,11 @@ class CSRankings {
 
 		let abbrv = "us";
 		if (dept in countryAbbrv) {
+		console.log("dept = " + dept + ", abbrv = " + countryAbbrv[dept]);
 		  abbrv = countryAbbrv[dept];
 		}
 
-		s += "&nbsp;" + dept + `&nbsp;<img src="flags/${abbrv}.png">&nbsp;`
+		s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
 		    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
 		    + this.PieChart + "</span>";
 		s += "</td>";
