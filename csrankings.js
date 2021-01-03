@@ -674,8 +674,28 @@ class CSRankings {
     }
     inRegion(dept, regions) {
         switch (regions) {
-            case "USA":
+            case "us":
                 if (dept in this.countryInfo) {
+                    return false;
+                }
+                break;
+            case "au":
+            case "br":
+            case "ca":
+            case "ch":
+            case "cn":
+            case "de":
+            case "es":
+            case "fr":
+            case "il":
+            case "in":
+            case "it":
+            case "jp":
+            case "kr":
+            case "nl":
+            case "tr":
+            case "uk":
+                if (this.countryAbbrv[dept] != regions) {
                     return false;
                 }
                 break;
@@ -684,14 +704,6 @@ class CSRankings {
                     return false;
                 }
                 if (this.countryInfo[dept] != "europe") {
-                    return false;
-                }
-                break;
-            case "canada":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
-                if (this.countryInfo[dept] != "canada") {
                     return false;
                 }
                 break;
@@ -1603,7 +1615,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
+CSRankings.regions = ["us", "europe", "ca", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
