@@ -171,6 +171,8 @@ class CSRankings {
         this.acmfellow = {};
         /* Map institution to (non-US) region. */
         this.countryInfo = {};
+        /* Map institution to (non-US) abbreviation. */
+        this.countryAbbrv = {};
         /* Map name to home page. */
         this.homepages = {};
         /* Set to true for "dense rankings" vs. "competition rankings". */
@@ -249,7 +251,7 @@ class CSRankings {
             }).resolve();
             this.displayProgress(4);
             this.countAuthorAreas();
-            yield this.loadCountryInfo(this.countryInfo);
+            yield this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
@@ -610,7 +612,7 @@ class CSRankings {
             }
         });
     }
-    loadCountryInfo(countryInfo) {
+    loadCountryInfo(countryInfo, countryAbbrv) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
                 Papa.parse(this.countryinfoFile, {
@@ -624,6 +626,7 @@ class CSRankings {
             const ci = data;
             for (let info of ci) {
                 countryInfo[info.institution] = info.region;
+                countryAbbrv[info.institution] = info.countryabbrv;
             }
         });
     }
@@ -1021,7 +1024,7 @@ class CSRankings {
         }
         return univtext;
     }
-    buildOutputString(numAreas, deptCounts, univtext, minToRank) {
+    buildOutputString(numAreas, countryAbbrv, deptCounts, univtext, minToRank) {
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
@@ -1073,7 +1076,11 @@ class CSRankings {
                     + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
                     + this.RightTriangle
                     + "</span>";
-                s += "&nbsp;" + dept + "&nbsp;"
+                let abbrv = "us";
+                if (dept in countryAbbrv) {
+                    abbrv = countryAbbrv[dept];
+                }
+                s += "&nbsp;" + dept + `&nbsp;<img src="flags/${abbrv}.png">&nbsp;`
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
                     + this.PieChart + "</span>";
                 s += "</td>";
@@ -1148,7 +1155,7 @@ class CSRankings {
         this.computeStats(deptNames, numAreas, currentWeights);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        const s = this.buildOutputString(numAreas, deptCounts, univtext, CSRankings.minToRank);
+        const s = this.buildOutputString(numAreas, this.countryAbbrv, deptCounts, univtext, CSRankings.minToRank);
         let stop = performance.now();
         console.log("Before render: rank took " + (stop - start) + " milliseconds.");
         /* Finally done. Redraw! */
