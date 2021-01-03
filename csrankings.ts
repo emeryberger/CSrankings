@@ -41,6 +41,7 @@ interface Author {
 interface CountryInfo {
     readonly institution: string;
     readonly region: "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "africa" | "world";
+    readonly countryabbrv: string;
 };
 
 interface Alias {
@@ -180,7 +181,7 @@ class CSRankings {
 	    }).resolve();
 	    this.displayProgress(4);
 	    this.countAuthorAreas();
-	    await this.loadCountryInfo(this.countryInfo);
+	    await this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
 	    this.addListeners();
 	    CSRankings.geoCheck();
 	    this.rank();
@@ -446,6 +447,9 @@ class CSRankings {
 
     /* Map institution to (non-US) region. */
     private readonly countryInfo: { [key: string]: string } = {};
+
+    /* Map institution to (non-US) abbreviation. */
+    private readonly countryAbbrv: { [key: string]: string } = {};
 
     /* Map name to home page. */
     private readonly homepages: { [key: string]: string } = {};
@@ -816,7 +820,8 @@ class CSRankings {
 	}
     }
 
-    private async loadCountryInfo(countryInfo: { [key: string]: string }): Promise<void> {
+    private async loadCountryInfo(countryInfo: { [key: string]: string },
+                                  countryAbbrv : { [key: string]: string }): Promise<void> {
 	const data = await new Promise((resolve) => {
 	    Papa.parse(this.countryinfoFile, {
 		header: true,
@@ -829,6 +834,7 @@ class CSRankings {
 	const ci = data as Array<CountryInfo>;
 	for (let info of ci) {
 	    countryInfo[info.institution] = info.region;
+	    countryAbbrv[info.institution] = info.countryabbrv;
 	}
     }
 
@@ -1258,6 +1264,7 @@ class CSRankings {
 
 
     private buildOutputString(numAreas: number,
+                              countryAbbrv : { [key: string] : string },
 			      deptCounts: { [key: string]: number },
 			      univtext: { [key: string]: string },
 			      minToRank: number): string
@@ -1316,7 +1323,12 @@ class CSRankings {
 		    + this.RightTriangle
 		    + "</span>";
 
-		s += "&nbsp;" + dept + "&nbsp;"
+		let abbrv = "us";
+		if (dept in countryAbbrv) {
+		  abbrv = countryAbbrv[dept];
+		}
+
+		s += "&nbsp;" + dept + `&nbsp;<img src="flags/${abbrv}.png">&nbsp;`
 		    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
 		    + this.PieChart + "</span>";
 		s += "</td>";
@@ -1412,6 +1424,7 @@ class CSRankings {
 	
 	/* Start building up the string to output. */
 	const s = this.buildOutputString(numAreas,
+	                                 this.countryAbbrv,
 					 deptCounts,
 					 univtext,
 					 CSRankings.minToRank);
