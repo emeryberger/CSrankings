@@ -5,6 +5,7 @@
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
     
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -36,6 +37,7 @@
     <meta name="citation_fulltext_world_readable" content="">
     
     <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
     
     <title>CSRankings: Computer Science Rankings</title>
 
@@ -251,15 +253,33 @@
 		  Rank 
 		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
-		    <option value="USA" selected="selected">the USA</option>
-		    <option value="canada">Canada</option>
-		    <option value="northamerica">USA and Canada</option>
-		    <option value="southamerica">South America</option>
-		    <option value="asia">Asia</option>
-		    <option value="australasia">Australasia</option>
-		    <option value="europe">Europe</option>
-		    <option value="africa">Africa</option>
-		    <option value="world">the world</option>
+		    <optgroup label="by country">
+		      <option value="au">Australia</option>
+		      <option value="br">Brazil</option>
+		      <option value="ca">Canada</option>
+		      <option value="cn">China</option>
+		      <option value="fr">France</option>
+		      <option value="de">Germany</option>
+		      <option value="in">India</option>
+		      <option value="il">Israel</option>
+		      <option value="it">Italy</option>
+		      <option value="nl">Netherlands</option>
+		      <option value="kr">South Korea</option>
+		      <option value="es">Spain</option>
+		      <option value="ch">Switzerland</option>
+		      <option value="tr">Turkey</option>
+		      <option value="uk">United Kingdom</option>
+		      <option value="us" selected="selected">USA</option>
+		    </optgroup>
+		    <optgroup label="by region">
+		      <option value="northamerica">USA and Canada</option>
+		      <option value="southamerica">South America</option>
+		      <option value="africa">Africa</option>
+		      <option value="asia">Asia</option>
+		      <option value="australasia">Australasia</option>
+		      <option value="europe">Europe</option>
+		      <option value="world">the world</option>
+		    </optgroup>
 		  </select>
 		  <label for="fromyear">by publications from</label>
 		  <!--	      by average count

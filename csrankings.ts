@@ -40,7 +40,7 @@ interface Author {
 
 interface CountryInfo {
     readonly institution: string;
-    readonly region: "USA" | "europe" | "canada" | "northamerica" | "australasia" | "southamerica" | "asia" | "africa" | "world";
+    readonly region: "us" | "europe" | "ca" | "northamerica" | "australasia" | "southamerica" | "asia" | "africa" | "world";
     readonly countryabbrv: string;
 };
 
@@ -88,7 +88,7 @@ class CSRankings {
     public static readonly areas: Array<string> = [];
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
-    public static readonly regions: Array<string> = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
+    public static readonly regions: Array<string> = ["us", "europe", "ca", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
     private static readonly nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
     
     private note: { [name: string]: string } = {};
@@ -881,8 +881,28 @@ class CSRankings {
     private inRegion(dept: string,
 		     regions: string): boolean {
 			 switch (regions) {
-			 case "USA":
+			 case "us":
 			     if (dept in this.countryInfo) {
+				 return false;
+			     }
+			     break;
+			 case "au":
+			 case "br":
+			 case "ca":
+			 case "ch":
+			 case "cn":
+			 case "de":
+			 case "es":
+			 case "fr":
+			 case "il":
+			 case "in":
+			 case "it":
+			 case "jp":
+			 case "kr":
+			 case "nl":
+			 case "tr":
+			 case "uk":
+			     if (this.countryAbbrv[dept] != regions) {
 				 return false;
 			     }
 			     break;
@@ -891,14 +911,6 @@ class CSRankings {
 				 return false;
 			     }
 			     if (this.countryInfo[dept] != "europe") {
-				 return false;
-			     }
-			     break;
-			 case "canada":
-			     if (!(dept in this.countryInfo)) { // USA
-				 return false;
-			     }
-			     if (this.countryInfo[dept] != "canada") {
 				 return false;
 			     }
 			     break;
