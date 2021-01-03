@@ -1078,7 +1078,6 @@ class CSRankings {
                     + "</span>";
                 let abbrv = "us";
                 if (dept in countryAbbrv) {
-                    console.log("dept = " + dept + ", abbrv = " + countryAbbrv[dept]);
                     abbrv = countryAbbrv[dept];
                 }
                 s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
