@@ -1217,7 +1217,7 @@ class CSRankings {
                     p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
                 }
                 if (this.acmfellow.hasOwnProperty(name)) {
-                    p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
+                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="` +
                         this.acmfellowImage + '"></span>&nbsp;';
                 }
                 if (this.turing.hasOwnProperty(name)) {
