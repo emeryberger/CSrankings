@@ -391,21 +391,6 @@ arealist = areadict.keys()
 startyear = 1970
 endyear = 2269
 
-import sys
-if sys.version_info.major == 3:
-    unicode = str
-    
-#def csv2dict_str_str(fname : str) -> Dict[str, str]:
-def csv2dict_str_str(fname):
-    """Takes a CSV file and returns a dictionary of pairs."""
-    with open(fname, mode='r') as infile:
-        rdr = csv.reader(infile)
-        if sys.version_info.major == 3:
-            d = {unicode(rows[0].strip()): unicode(rows[1].strip()) for rows in rdr}
-        else:
-            d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
-    return d
-
 
 def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
     global EMSOFT_TECS
