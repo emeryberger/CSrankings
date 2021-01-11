@@ -26,6 +26,9 @@ with open('csrankings.csv', mode='r') as infile:
             try:
                 count = 0
                 while count < len(arr) / 10:
+                    for i in fieldnames:
+                        if arr[index][i] == "":
+                            print(arr[index][i], index)
                     if arr[index]["scholarid"] == "":
                         arr[index]["scholarid"] = "NOSCHOLARPAGE"
                     if arr[index]["scholarid"] != "NOSCHOLARPAGE" and arr[index]["scholarid"][-5:] != "AAAAJ":
