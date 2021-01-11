@@ -25,7 +25,6 @@ with open('csrankings.csv', mode='w') as outfile:
     for i in range(10):
         try:
             fname = "csrankings-" + str(i) + ".csv"
-            print(fname)
             with open(fname, mode='r') as infile:
                 reader = csv.DictReader(infile)
                 for row in reader:
