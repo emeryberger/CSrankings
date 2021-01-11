@@ -14,7 +14,11 @@ http://csrankings.org
 
 ### Adding or modifying affiliations
 
-Please read <a href="CONTRIBUTING.md">```CONTRIBUTING.md```</a> for full details on how to contribute.
+**You can now edit files directly in GitHub to create pull requests.** All data is
+in the files `csrankings-[0-9].csv`, with authors listed in
+alphabetical order by their first name. Please read <a
+href="CONTRIBUTING.md">```CONTRIBUTING.md```</a> for full details on
+how to contribute.
 
 ### Trying it out at home
 
