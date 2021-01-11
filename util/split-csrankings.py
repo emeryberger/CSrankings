@@ -30,5 +30,5 @@ with open('csrankings.csv', mode='r') as infile:
                     index += 1
                     count += 1
             except:
-                print("count = " + str(count))
+                # We will hit this at the end of the file.
                 pass
