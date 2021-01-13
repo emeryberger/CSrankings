@@ -1,7 +1,7 @@
 ---
-name: DO NOT use issues to update entries: edit the appropriate files and issue a pull request
-about: DO NOT use issues to update entries: edit the appropriate files and issue a pull request
-title: DO NOT use issues to update entries: edit the appropriate files and issue a pull request
+name: DO NOT use issues to update entries -- edit the appropriate files and issue a pull request
+about: DO NOT use issues to update entries -- edit the appropriate files and issue a pull request
+title: DO NOT use issues to update entries
 labels: ''
 assignees: ''
 
