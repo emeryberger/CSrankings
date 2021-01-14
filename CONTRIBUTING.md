@@ -7,7 +7,7 @@ Thanks for contributing to CSrankings! Here are some guidelines to getting your 
 convert some Google Scholar entries to formulas, corrupting the
 database. Use a text editor like emacs or NotePad instead._
 
-2. _Insert new faculty **in alphabetical order**, not at the end of `csrankings-[0-9].csv`._
+2. _Insert new faculty **in alphabetical order**, not at the end of `csrankings-[0-9].csv`._ **Do not modify `csrankings.csv`, which is auto-generated.**
 
 3. _Read and check **all** the boxes below by filling them in with an X._
 
