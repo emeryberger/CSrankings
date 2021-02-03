@@ -178,7 +178,7 @@ areadict = {
 #            'EMNLP-CoNLL',  # -- in 2012 was joint
 #            'HLT/EMNLP',  # -- in 2005 was joint
 #            ],
-    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP', 'EMNLP/IJCNLP (1)'],
+    'emnlp': ['EMNLP', 'EMNLP (1)', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP', 'EMNLP/IJCNLP (1)'],
     'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
     'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT', 'NAACL-HLT (1)'],
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
@@ -211,11 +211,12 @@ EMSOFT_TECS = { 2017: (16, 5), 2019: (18, "5s") }
 EMSOFT_TECS_PaperNumbers = { 2017: (163, 190), 2019: (84, 110) }
 
 # DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
-DAC_TooShortPapers = { 2019: { 21, 22, 43, 44, 45, 76, 77, 78, 79, 100, 101, 121, 152, 153, 154, 175, 176, 197, 198, 199 } }
+DAC_TooShortPapers = { 2019: { 21, 22, 43, 44, 45, 76, 77, 78, 79, 100, 101, 121, 152, 153, 154, 175, 176, 197, 198, 199,222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240} }
 
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
-ISMB_Bioinformatics = {2019: (35, 14),
+ISMB_Bioinformatics = {2020: (36, "Supplement-1"),
+                       2019: (35, 14),
                        2018: (34, 13),
                        2017: (33, 14),
                        2016: (32, 12),
@@ -390,21 +391,6 @@ arealist = areadict.keys()
 startyear = 1970
 endyear = 2269
 
-import sys
-if sys.version_info.major == 3:
-    unicode = str
-    
-#def csv2dict_str_str(fname : str) -> Dict[str, str]:
-def csv2dict_str_str(fname):
-    """Takes a CSV file and returns a dictionary of pairs."""
-    with open(fname, mode='r') as infile:
-        rdr = csv.reader(infile)
-        if sys.version_info.major == 3:
-            d = {unicode(rows[0].strip()): unicode(rows[1].strip()) for rows in rdr}
-        else:
-            d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
-    return d
-
 
 def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
     global EMSOFT_TECS
@@ -446,7 +432,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
             if (volume != str(vol)) or (number != str(num)):
                 return False
             else:
-                if (int(volume) >= 33): # Hopefully this works going forward.
+                if int(volume) >= 33: # Hopefully this works going forward.
                     pg = ISMBpageCounter.match(pages)
                     if pg is None:
                         return False
