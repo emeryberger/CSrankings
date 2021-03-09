@@ -19,6 +19,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 /// <reference path="./typescript/d3.d.ts" />
 /// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
+/// <reference path="./typescript/continents.d.ts" />
 ;
 ;
 ;
@@ -170,6 +171,8 @@ class CSRankings {
         this.acmfellow = {};
         /* Map institution to (non-US) region. */
         this.countryInfo = {};
+        /* Map institution to (non-US) abbreviation. */
+        this.countryAbbrv = {};
         /* Map name to home page. */
         this.homepages = {};
         /* Set to true for "dense rankings" vs. "competition rankings". */
@@ -248,9 +251,9 @@ class CSRankings {
             }).resolve();
             this.displayProgress(4);
             this.countAuthorAreas();
-            yield this.loadCountryInfo(this.countryInfo);
+            yield this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
             this.addListeners();
-            /* CSRankings.geoCheck(); */
+            CSRankings.geoCheck();
             this.rank();
         }))();
     }
@@ -294,11 +297,13 @@ class CSRankings {
         name = name.replace(/í/g, "=iacute=");
         name = name.replace(/ï/g, "=iuml=");
         name = name.replace(/ó/g, "=oacute=");
+        name = name.replace(/Ç/g, "=Ccedil=");
         name = name.replace(/ç/g, "=ccedil=");
         name = name.replace(/ä/g, "=auml=");
         name = name.replace(/ö/g, "=ouml=");
         name = name.replace(/ø/g, "=oslash=");
         name = name.replace(/Ö/g, "=Ouml=");
+        name = name.replace(/Ü/g, "=Uuml=");
         name = name.replace(/ü/g, "=uuml=");
         name = name.replace(/ß/g, "=szlig=");
         let splitName = name.split(" ");
@@ -314,7 +319,7 @@ class CSRankings {
         let newName = splitName.join(" ");
         newName = newName.replace(/\s/g, "_");
         newName = newName.replace(/\-/g, "=");
-        let str = "https://dblp.uni-trier.de/pers/hd";
+        let str = "https://dblp.org/pers/hd";
         const lastInitial = lastName[0].toLowerCase();
         str += "/" + lastInitial + "/" + lastName + ":" + newName;
         return str;
@@ -607,7 +612,7 @@ class CSRankings {
             }
         });
     }
-    loadCountryInfo(countryInfo) {
+    loadCountryInfo(countryInfo, countryAbbrv) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
                 Papa.parse(this.countryinfoFile, {
@@ -621,6 +626,7 @@ class CSRankings {
             const ci = data;
             for (let info of ci) {
                 countryInfo[info.institution] = info.region;
+                countryAbbrv[info.institution] = info.countryabbrv;
             }
         });
     }
@@ -668,8 +674,33 @@ class CSRankings {
     }
     inRegion(dept, regions) {
         switch (regions) {
-            case "USA":
+            case "us":
                 if (dept in this.countryInfo) {
+                    return false;
+                }
+                break;
+            case "at":
+            case "au":
+            case "br":
+            case "ca":
+            case "ch":
+            case "cn":
+            case "de":
+            case "dk":
+            case "es":
+            case "fr":
+            case "gr":
+            case "hk":
+            case "il":
+            case "in":
+            case "it":
+            case "jp":
+            case "kr":
+            case "nl":
+            case "nz":
+            case "tr":
+            case "uk":
+                if (this.countryAbbrv[dept] != regions) {
                     return false;
                 }
                 break;
@@ -678,14 +709,6 @@ class CSRankings {
                     return false;
                 }
                 if (this.countryInfo[dept] != "europe") {
-                    return false;
-                }
-                break;
-            case "canada":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
-                if (this.countryInfo[dept] != "canada") {
                     return false;
                 }
                 break;
@@ -965,7 +988,7 @@ class CSRankings {
                     p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
                 }
                 if (this.acmfellow.hasOwnProperty(name)) {
-                    p += '<span title="ACM Fellow"><img alt="ACM Fellow" src="' +
+                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="` +
                         this.acmfellowImage + '"></span>&nbsp;';
                 }
                 if (this.turing.hasOwnProperty(name)) {
@@ -1018,7 +1041,7 @@ class CSRankings {
         }
         return univtext;
     }
-    buildOutputString(numAreas, deptCounts, univtext, minToRank) {
+    buildOutputString(numAreas, countryAbbrv, deptCounts, univtext, minToRank) {
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
@@ -1070,7 +1093,11 @@ class CSRankings {
                     + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
                     + this.RightTriangle
                     + "</span>";
-                s += "&nbsp;" + dept + "&nbsp;"
+                let abbrv = "us";
+                if (dept in countryAbbrv) {
+                    abbrv = countryAbbrv[dept];
+                }
+                s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
                     + this.PieChart + "</span>";
                 s += "</td>";
@@ -1145,7 +1172,7 @@ class CSRankings {
         this.computeStats(deptNames, numAreas, currentWeights);
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
-        const s = this.buildOutputString(numAreas, deptCounts, univtext, CSRankings.minToRank);
+        const s = this.buildOutputString(numAreas, this.countryAbbrv, deptCounts, univtext, CSRankings.minToRank);
         let stop = performance.now();
         console.log("Before render: rank took " + (stop - start) + " milliseconds.");
         /* Finally done. Redraw! */
@@ -1308,6 +1335,26 @@ class CSRankings {
             start += '&' + region;
         }
         return start;
+    }
+    static geoCheck() {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const continent = whichContinent(position.coords.latitude, position.coords.longitude);
+            let regions = document.getElementById("regions");
+            switch (continent) {
+                case "northamerica":
+                    return;
+                case "europe":
+                case "asia":
+                case "southamerica":
+                case "africa":
+                    regions.value = continent;
+                    break;
+                default:
+                    regions.value = "world";
+                    break;
+            }
+            CSRankings.getInstance().rank();
+        });
     }
     /*
       public static geoCheck(): void {
@@ -1573,7 +1620,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["USA", "europe", "canada", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
+CSRankings.regions = ["us", "europe", "ca", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
@@ -1674,7 +1721,7 @@ CSRankings.noteMap = {
     'INF': 'https://www.cis.mpg.de/mpi-inf/',
     'IS': 'https://www.cis.mpg.de/is/',
     'MG': 'https://www.cis.mpg.de/molgen/',
-    'SP': 'https://www.cis.mpg.de/mpi-for-cyber-for-security-and-privacy/',
+    'SP': 'https://www.cis.mpg.de/mpi-for-security-and-privacy/',
     'SWS': 'https://www.cis.mpg.de/mpi-sws/'
 };
 var csr = new CSRankings();
