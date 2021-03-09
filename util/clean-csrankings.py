@@ -75,16 +75,18 @@ with open('country-info.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         if row['institution'] != "":
-            countryinfo[row['institution']] = { 'region' : row['region'] }
+            countryinfo[row['institution']] = { 'region' : row['region'],
+                                                'countryabbrv' : row['countryabbrv'] }
 
 # Sort it and write it back.
 with open('country-info.csv', mode='w') as outfile:
-    sfieldnames = ['institution', 'region']
+    sfieldnames = ['institution', 'region', 'countryabbrv']
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
     for n in collections.OrderedDict(sorted(countryinfo.items())):
         h = { 'institution' : n,
-              'region'      : countryinfo[n]['region'] }
+              'region'      : countryinfo[n]['region'],
+              'countryabbrv': countryinfo[n]['countryabbrv'] }
         swriter.writerow(h)
         
 

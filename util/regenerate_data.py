@@ -46,8 +46,19 @@ def build_dicts():
         for item in v:
             confdict[item] = k
             venues.append(item)
-    facultydict = csv2dict_str_str('faculty-affiliations.csv')
-    aliasdict = csv2dict_str_str('dblp-aliases.csv')
+
+    facultydict = {}
+    aliasdict = {}
+    
+    with open("faculty-affiliations.csv") as f:
+        rdr = csv.DictReader(f)
+        for row in rdr:
+            facultydict[row["name"]] = row["affiliation"]
+            
+    with open("dblp-aliases.csv") as f:
+        rdr = csv.DictReader(f)
+        for row in rdr:
+            aliasdict[row["alias"]] = row["name"]
     
     # Count and report the total number of faculty in the database.
     totalFaculty = 0

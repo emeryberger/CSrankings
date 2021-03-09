@@ -5,6 +5,7 @@
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
     
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -36,6 +37,7 @@
     <meta name="citation_fulltext_world_readable" content="">
     
     <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
     
     <title>CSRankings: Computer Science Rankings</title>
 
@@ -203,6 +205,7 @@
     <script src="js/d3.min.js"></script>
     <script src="js/d3pie.min.js" type="text/javascript"></script>
     <script defer src="js/papaparse.min.js" type="text/javascript"></script>
+    <script defer src="continents.js" type="text/javascript"></script>
 <!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
     <script defer src="js/bootstrap.min.js" type="text/javascript"></script>
     <script defer src="js/navigo.min.js"></script>
@@ -250,15 +253,40 @@
 		  Rank 
 		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
-		    <option value="USA" selected="selected">the USA</option>
-		    <option value="canada">Canada</option>
-		    <option value="northamerica">USA and Canada</option>
-		    <option value="southamerica">South America</option>
-		    <option value="asia">Asia</option>
-		    <option value="australasia">Australasia</option>
-		    <option value="europe">Europe</option>
-		    <option value="africa">Africa</option>
-		    <option value="world">the world</option>
+		    <optgroup label="by country">
+		      <!-- at least 5 institutions in the DB -->
+		      <option value="au">Australia</option>
+		      <option value="at">Austria</option>
+		      <option value="br">Brazil</option>
+		      <option value="ca">Canada</option>
+		      <option value="cn">China</option>
+		      <option value="dk">Denmark</option>
+		      <option value="fr">France</option>
+		      <option value="de">Germany</option>
+		      <option value="gr">Greece</option>
+		      <option value="hk">Hong Kong</option>
+		      <option value="in">India</option>
+		      <option value="il">Israel</option>
+		      <option value="it">Italy</option>
+		      <option value="jp">Japan</option>
+		      <option value="nl">Netherlands</option>
+		      <option value="nz">New Zealand</option>
+		      <option value="kr">South Korea</option>
+		      <option value="es">Spain</option>
+		      <option value="ch">Switzerland</option>
+		      <option value="tr">Turkey</option>
+		      <option value="uk">United Kingdom</option>
+		      <option value="us" selected="selected">USA</option>
+		    </optgroup>
+		    <optgroup label="by region">
+		      <option value="northamerica">North America</option>
+		      <option value="southamerica">South America</option>
+		      <option value="africa">Africa</option>
+		      <option value="asia">Asia</option>
+		      <option value="australasia">Australasia</option>
+		      <option value="europe">Europe</option>
+		      <option value="world">the world</option>
+		    </optgroup>
 		  </select>
 		  <label for="fromyear">by publications from</label>
 		  <!--	      by average count
@@ -304,8 +332,8 @@
 		    <option value="2007">2007</option>
 		    <option value="2008">2008</option>
 		    <option value="2009">2009</option>
-		    <option selected="selected" value="2010">2010</option>
-		    <option value="2011">2011</option>
+		    <option value="2010">2010</option>
+		    <option selected="selected" value="2011">2011</option>
 		    <option value="2012">2012</option>
 		    <option value="2013">2013</option>
 		    <option value="2014">2014</option>
@@ -359,8 +387,8 @@
 		    <option value="2017">2017</option>
 		    <option value="2018">2018</option>
 		    <option value="2019">2019</option>
-		    <option selected="selected" value="2020">2020</option>
-		    <option value="2021">2021</option>
+		    <option value="2020">2020</option>
+		    <option selected="selected" value="2021">2021</option>
 		  </select>
 		</div>
 	      </div>
@@ -1834,7 +1862,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated monthly; last update December 2, 2020). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). If you absolutely cannot do a pull request, you can submit a single update here, but as this involves manual labor, it will result in a slower update: <a href="https://github.com/emeryberger/CSrankings/issues/new?assignees=&labels=&template=updating-a-single-faculty-member-s-entry.md&title=Faculty+member+name+goes+here%2C+plus+%28ADD%7CUPDATE%7CDELETE%29">new issue</a>. Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated monthly; last update January 28, 2021). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
