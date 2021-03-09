@@ -178,7 +178,7 @@ areadict = {
 #            'EMNLP-CoNLL',  # -- in 2012 was joint
 #            'HLT/EMNLP',  # -- in 2005 was joint
 #            ],
-    'emnlp': ['EMNLP', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP', 'EMNLP/IJCNLP (1)'],
+    'emnlp': ['EMNLP', 'EMNLP (1)', 'EMNLP-CoNLL', 'HLT/EMNLP', 'EMNLP-IJCNLP', 'EMNLP/IJCNLP (1)'],
     'acl' : ['ACL', 'ACL (1)', 'ACL (2)', 'ACL/IJCNLP', 'COLING-ACL'],
     'naacl' : ['NAACL', 'HLT-NAACL', 'NAACL-HLT', 'NAACL-HLT (1)'],
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
@@ -274,7 +274,7 @@ TOG_SIGGRAPH_Asia_Volume = {2021: (40, 6),
                             }
 
 # TVCG special handling to count only IEEE VIS
-TVCG_Vis_Volume = {2021: (27, 1),
+TVCG_Vis_Volume = {2021: (27, 2),
                    2020: (26, 1),
                    2019: (25, 1),
                    2018: (24, 1),
@@ -390,21 +390,6 @@ arealist = areadict.keys()
 # Consider pubs in this range only.
 startyear = 1970
 endyear = 2269
-
-import sys
-if sys.version_info.major == 3:
-    unicode = str
-    
-#def csv2dict_str_str(fname : str) -> Dict[str, str]:
-def csv2dict_str_str(fname):
-    """Takes a CSV file and returns a dictionary of pairs."""
-    with open(fname, mode='r') as infile:
-        rdr = csv.reader(infile)
-        if sys.version_info.major == 3:
-            d = {unicode(rows[0].strip()): unicode(rows[1].strip()) for rows in rdr}
-        else:
-            d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
-    return d
 
 
 def countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
