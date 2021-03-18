@@ -12,7 +12,7 @@ TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 PYTHON = python3 # 3.7
 PYPY   = python3 # pypy
 
-all: generated-author-info.csv csrankings.js csrankings.min.js # fix-affiliations home-pages scholar-links
+all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  # fix-affiliations home-pages scholar-links
 
 clean:
 	rm $(TARGETS)
@@ -47,7 +47,7 @@ shrink-dblp:
 	mv dblp.xml.gz dblp-original.xml.gz
 	mv dblp2.xml.gz dblp.xml.gz
 
-faculty-affiliations.csv homepages.csv scholar.csv: csrankings-*.csv
+faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.csv
 	@echo "Splitting main datafile."
 	@$(PYTHON) util/split-csv.py
 	@echo "Done."

@@ -274,7 +274,7 @@ TOG_SIGGRAPH_Asia_Volume = {2021: (40, 6),
                             }
 
 # TVCG special handling to count only IEEE VIS
-TVCG_Vis_Volume = {2021: (27, 1),
+TVCG_Vis_Volume = {2021: (27, 2),
                    2020: (26, 1),
                    2019: (25, 1),
                    2018: (24, 1),
@@ -520,7 +520,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
         tooFewPages = True
         exceptionConference = False
-        exceptionConference |= confname == 'SC' and year <= 2012
+        exceptionConference |= confname == 'SC' and (year <= 2012 or year == 2020)
         exceptionConference |= confname == 'SIGSOFT FSE' and year == 2012
         exceptionConference |= confname == 'ACM Trans. Graph.' and int(volume) >= 26 and int(volume) <= 39
         exceptionConference |= confname == 'SIGGRAPH' and int(volume) >= 26 and int(volume) <= 39
