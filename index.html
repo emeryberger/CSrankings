@@ -5,12 +5,13 @@
     <!--    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'> -->
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
     
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="preconnect" href="https://www.facebook.com">
-    <link rel="preconnect" href="http://dblp.org">
+    <link rel="preconnect" href="https://dblp.org">
 
     
     <link rel="preload" as="script" href="js/jquery-3.3.1.min.js" type="text/javascript">
@@ -19,7 +20,7 @@
     <link rel="preload" as="script" href="js/d3.min.js">
     <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript">
     <link rel="preload" as="script" href="js/papaparse.min.js" type="text/javascript">
-    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript">
+<!--    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript"> -->
 <!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
     <link rel="preload" as="script" href="js/navigo.min.js">
 
@@ -30,12 +31,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="citation_title" content="CSRankings">
     <meta name="citation_author" content="Berger, Emery D.">
-    <meta name="citation_publication_date" content="2019">
+    <meta name="citation_publication_date" content="2020">
     <meta name="citation_fulltext_html_url" content="https://csrankings.org">
     <meta name="citation_publisher" content="">
     <meta name="citation_fulltext_world_readable" content="">
     
     <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
     
     <title>CSRankings: Computer Science Rankings</title>
 
@@ -89,8 +91,19 @@
       color : blue ;
       }
 
+      .csr-piechart {
+	  display: none;
+      }
+      
       .area_group_selector { cursor : pointer; }
-      .hovertip { cursor : pointer; }
+
+      .hovertip { cursor : pointer;
+		  color : blue }
+      
+      .bluefont  {
+	  color : blue;
+      }
+      
       input { cursor : pointer; }
       
       /* latin-ext */
@@ -139,7 +152,7 @@
       font-size: +1;
       }
     </style>
-    <script>
+    <script defer>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -149,7 +162,7 @@
       ga('send', 'pageview'); 
 
     </script>
-    <script>
+    <script defer>
       var trackOutboundLink = function(url, new_window) {
       /* Setting a default value for backward compatibility */
       if (new_window === undefined) {
@@ -169,7 +182,7 @@
       }
     </script>
     <!-- Facebook Pixel Code -->
-    <script>
+    <script defer>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -189,12 +202,16 @@
     <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <script defer src="js/d3.min.js"></script>
-    <script defer src="js/d3pie.min.js" type="text/javascript"></script>
-    <script src="js/papaparse.min.js" type="text/javascript"></script>
-    <script src="js/pako.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/navigo.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3pie.min.js" type="text/javascript"></script>
+    <script defer src="js/papaparse.min.js" type="text/javascript"></script>
+    <script defer src="continents.js" type="text/javascript"></script>
+<!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
+    <script defer src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script defer src="js/navigo.min.js"></script>
+    <script defer src="csrankings.min.js" type="text/javascript"></script>
+    <!-- <script src="csrankings.js" type="text/javascript" defer></script> -->
+    
     
   </head>
 
@@ -234,27 +251,42 @@
 	      <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 		  Rank 
-<!--
-		  <select id="minToRank" name="minToRank">
-		    <option value="10">the top 10</option>
-		    <option value="25" selected="selected">the top 25</option>
-		    <option value="50">the top 50</option>
-		    <option value="75">the top 75</option>
-		    <option value="100">the top 100</option>
-		    <option value="99999">all</option>
-		  </select>
--->
 		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
-		    <option value="USA" selected="selected">the USA</option>
-		    <option value="canada">Canada</option>
-		    <option value="northamerica">USA and Canada</option>
-		    <option value="southamerica">South America</option>
-		    <option value="asia">Asia</option>
-		    <option value="australasia">Australasia</option>
-		    <option value="europe">Europe</option>
-		    <option value="africa">Africa</option>
-		    <option value="world">the world</option>
+		    <optgroup label="by country">
+		      <!-- at least 5 institutions in the DB -->
+		      <option value="au">Australia</option>
+		      <option value="at">Austria</option>
+		      <option value="br">Brazil</option>
+		      <option value="ca">Canada</option>
+		      <option value="cn">China</option>
+		      <option value="dk">Denmark</option>
+		      <option value="fr">France</option>
+		      <option value="de">Germany</option>
+		      <option value="gr">Greece</option>
+		      <option value="hk">Hong Kong</option>
+		      <option value="in">India</option>
+		      <option value="il">Israel</option>
+		      <option value="it">Italy</option>
+		      <option value="jp">Japan</option>
+		      <option value="nl">Netherlands</option>
+		      <option value="nz">New Zealand</option>
+		      <option value="kr">South Korea</option>
+		      <option value="es">Spain</option>
+		      <option value="ch">Switzerland</option>
+		      <option value="tr">Turkey</option>
+		      <option value="uk">United Kingdom</option>
+		      <option value="us" selected="selected">USA</option>
+		    </optgroup>
+		    <optgroup label="by region">
+		      <option value="northamerica">North America</option>
+		      <option value="southamerica">South America</option>
+		      <option value="africa">Africa</option>
+		      <option value="asia">Asia</option>
+		      <option value="australasia">Australasia</option>
+		      <option value="europe">Europe</option>
+		      <option value="world">the world</option>
+		    </optgroup>
 		  </select>
 		  <label for="fromyear">by publications from</label>
 		  <!--	      by average count
@@ -300,8 +332,8 @@
 		    <option value="2007">2007</option>
 		    <option value="2008">2008</option>
 		    <option value="2009">2009</option>
-		    <option selected="selected" value="2010">2010</option>
-		    <option value="2011">2011</option>
+		    <option value="2010">2010</option>
+		    <option selected="selected" value="2011">2011</option>
 		    <option value="2012">2012</option>
 		    <option value="2013">2013</option>
 		    <option value="2014">2014</option>
@@ -311,6 +343,7 @@
 		    <option value="2018">2018</option>
 		    <option value="2019">2019</option>
 		    <option value="2020">2020</option>
+		    <option value="2021">2021</option>
 		  </select>
 		  <label for="toyear">to</label>
 		  <select id="toyear" name="toyear">
@@ -354,7 +387,8 @@
 		    <option value="2017">2017</option>
 		    <option value="2018">2018</option>
 		    <option value="2019">2019</option>
-		    <option selected="selected" value="2020">2020</option>
+		    <option value="2020">2020</option>
+		    <option selected="selected" value="2021">2021</option>
 		  </select>
 		</div>
 	      </div>
@@ -392,9 +426,7 @@
 		    
 		    <tr>
 		      <td>
-			<span class="hovertip" id="ai-widget">
-			  <font color="blue">&#9658;</font>
-			</span>
+			<span class="hovertip" id="ai-widget">&#9658;</span>
 			<label for="ai">
 			  Artificial intelligence
 			</label>
@@ -404,13 +436,13 @@
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://sigai.acm.org/index.html">acm sigai</a>, <a href="http://aaai.org/">aaai</a>
+				    <a href="http://sigai.acm.org/index.html">acm sigai</a>, <a href="https://aaai.org/">aaai</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
 					<label for="aaai">
-					  <a href="http://dblp.org/db/conf/aaai/">AAAI</a>
+					  <a href="https://dblp.org/db/conf/aaai/index.html">AAAI</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -420,7 +452,7 @@
 				    <tr>
 				      <td>
 					<label for="ijcai">
-					  <a href="http://dblp.org/db/conf/ijcai/index.html">IJCAI</a>
+					  <a href="https://dblp.org/db/conf/ijcai/index.html">IJCAI</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -441,8 +473,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="vision-widget">
-			  <font color="blue">&#9658;</font>
+			<span class="hovertip" id="vision-widget">&#9658;
 			</span>
 			<label for="vision">
 			  Computer vision
@@ -459,7 +490,7 @@
 				    <tr>
 				      <td>
 					<label for="cvpr">
-					  <a href="http://dblp.org/db/conf/cvpr/index.html">CVPR</a>
+					  <a href="https://dblp.org/db/conf/nips/index.html">CVPR</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -469,7 +500,7 @@
 				    <tr>
 				      <td>
 					<label for="eccv">
-					  <a href="http://dblp.org/db/conf/eccv/index.html">ECCV</a>
+					  <a href="https://dblp.org/db/conf/eccv/index.html">ECCV</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -479,7 +510,7 @@
 				    <tr>
 				      <td>
 					<label for="iccv">
-					  <a href="http://dblp.org/db/conf/iccv/index.html">ICCV</a>
+					  <a href="https://dblp.org/db/conf/iccv/index.html">ICCV</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -500,7 +531,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="mlmining-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Machine learning &amp; data mining
 			<div class="table-responsive" style="display:none;" id="mlmining-conferences">
@@ -509,13 +540,13 @@
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
+				    <a href="https://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
 					<label for="icml">
-					  <a href="http://dblp.org/db/conf/icml/index.html">ICML</a>
+					  <a href="https://dblp.org/db/conf/icml/index.html">ICML</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -525,7 +556,7 @@
 				    <tr>
 				      <td>
 					<label for="kdd">
-					  <a href="http://dblp.org/db/conf/kdd/index.html">KDD</a>
+					  <a href="https://dblp.org/db/conf/kdd/index.html">KDD</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -535,7 +566,7 @@
 				    <tr>
 				      <td>
 					<label for="nips">
-					  <a href="http://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
+					  <a href="https://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -557,7 +588,7 @@
 		    <tr>
 		      <td> 
 			<span class="hovertip" id="nlp-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			<label for="nlp">
 			  Natural language processing
@@ -574,7 +605,7 @@
 				    <tr>
 				      <td>
 					<label for="acl">
-					  <a href="http://dblp.org/db/conf/acl/index.html">ACL</a>
+					  <a href="https://dblp.org/db/conf/acl/index.html">ACL</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -584,7 +615,7 @@
 				    <tr>
 				      <td>
 					<label for="emnlp">
-					  <a href="http://dblp.org/db/conf/emnlp/index.html">EMNLP</a>
+					  <a href="https://dblp.org/db/conf/emnlp/index.html">EMNLP</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -594,7 +625,7 @@
 				    <tr>
 				      <td>
 					<label for="naacl">
-					  <a href="http://dblp.org/db/conf/naacl/index.html">NAACL</a>
+					  <a href="https://dblp.org/db/conf/naacl/index.html">NAACL</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -616,7 +647,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="ir-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			<label for="ir">
 			  The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -628,12 +659,12 @@
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
 				    <a href="http://sigir.org">acm sigir</a>
-				  </p> <!-- , <a href="http://sigweb.org">acm sigweb</a></p> -->
+				  </p> <!-- , <a href="https://sigweb.org">acm sigweb</a></p> -->
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
 					<label for="sigir">
-					  <a href="http://dblp.org/db/conf/sigir/index.html">SIGIR</a>
+					  <a href="https://dblp.org/db/conf/sigir/index.html">SIGIR</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -643,7 +674,7 @@
 				    <tr>
 				      <td>
 					<label for="www">
-					  <a href="http://dblp.org/db/conf/www/index.html">WWW</a>
+					  <a href="https://dblp.org/db/conf/www/index.html">WWW</a>
 					</label>
 				      </td>
 				      <td align="right">
@@ -682,7 +713,7 @@
 		    <tr>
 		      <td>   
 			<span class="hovertip" id="arch-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Computer architecture
 			<div class="table-responsive" style="display:none;" id="arch-conferences">
@@ -694,7 +725,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/asplos/index.html">ASPLOS</a>
+					<a href="https://dblp.org/db/conf/asplos/index.html">ASPLOS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="asplos" id="asplos" value="1.0"/>
@@ -702,7 +733,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/isca/index.html">ISCA</a>
+					<a href="https://dblp.org/db/conf/isca/index.html">ISCA</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="isca" id="isca" value="1.0"/>
@@ -710,7 +741,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/micro/index.html">MICRO</a>
+					<a href="https://dblp.org/db/conf/micro/index.html">MICRO</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="micro" id="micro" value="1.0"/>
@@ -723,7 +754,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/hpca/index.html">HPCA</a>
+					<a href="https://dblp.org/db/conf/hpca/index.html">HPCA</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="hpca" id="hpca" value="1.0"/>
@@ -744,7 +775,7 @@
 		    <tr>
 		      <td>  
 			<span class="hovertip" id="comm-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Computer networks
 			<div class="table-responsive" style="display:none;" id="comm-conferences">
@@ -753,11 +784,11 @@
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigcomm.org">acm sigcomm</a></p>
-				  <!--				  <a href="http://dblp.org/db/conf/infocom/index.html">INFOCOM</a><br /> -->
+				  <!--				  <a href="https://dblp.org/db/conf/infocom/index.html">INFOCOM</a><br /> -->
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigcomm/index.html">SIGCOMM</a>
+					<a href="https://dblp.org/db/conf/sigcomm/index.html">SIGCOMM</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sigcomm" id="sigcomm" value="1.0"/>
@@ -765,7 +796,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/nsdi/index.html">NSDI</a>
+					<a href="https://dblp.org/db/conf/nsdi/index.html">NSDI</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nsdi" id="nsdi" value="1.0"/>
@@ -786,7 +817,7 @@
 		    <tr>
 		      <td>  
 			<span class="hovertip" id="sec-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Computer security
 			<div class="table-responsive" style="display:none;" id="sec-conferences">
@@ -798,7 +829,7 @@
 				  <table class="table-sm" style="width:100%">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/ccs/index.html">CCS</a>
+					<a href="https://dblp.org/db/conf/ccs/index.html">CCS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ccs" id="ccs" value="1.0"/>
@@ -806,7 +837,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sp/">IEEE S&amp;P ("Oakland")</a>
+					<a href="https://dblp.org/db/conf/sp/index.html">IEEE S&amp;P ("Oakland")</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="oakland" id="oakland" value="1.0"/>
@@ -814,7 +845,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/uss/">USENIX Security</a>
+					<a href="https://dblp.org/db/conf/uss/index.html">USENIX Security</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="usenixsec" id="usenixsec" value="1.0"/>
@@ -827,7 +858,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/ndss/">NDSS</a>
+					<a href="https://dblp.org/db/conf/ndss/index.html">NDSS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ndss" id="ndss" value="1.0"/>
@@ -848,7 +879,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="mod-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Databases
 			<div class="table-responsive" style="display:none;" id="mod-conferences">
@@ -856,11 +887,11 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
-				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigmod.org">acm sigmod</a></p>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigmod.org/">acm sigmod</a></p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigmod/">SIGMOD</a>
+					<a href="https://dblp.org/db/conf/sigmod/index.html">SIGMOD</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sigmod" id="sigmod" value="1.0"/>
@@ -868,7 +899,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/vldb/">VLDB</a>
+					<a href="https://dblp.org/db/conf/vldb/index.html">VLDB</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="vldb" id="vldb" value="1.0"/>
@@ -881,7 +912,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/icde/">ICDE</a>
+					<a href="https://dblp.org/db/conf/icde/index.html">ICDE</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="icde" id="icde" value="1.0"/>
@@ -889,7 +920,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/pods/">PODS</a>
+					<a href="https://dblp.org/db/conf/pods/index.html">PODS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="pods" id="pods" value="1.0"/>
@@ -911,7 +942,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="da-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Design automation
 			<div class="table-responsive" style="display:none;" id="da-conferences">
@@ -919,11 +950,11 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
-				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigda.org">acm sigda</a></p>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigda.org/">acm sigda</a></p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/dac/">DAC</a>
+					<a href="https://dblp.org/db/conf/dac/index.html">DAC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="dac" id="dac" value="1.0"/>
@@ -931,7 +962,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/iccad/">ICCAD</a>
+					<a href="https://dblp.org/db/conf/iccad/index.html">ICCAD</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="iccad" id="iccad" value="1.0"/>
@@ -952,7 +983,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="bed-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Embedded &amp; real-time systems&nbsp;&nbsp;
 			<div class="table-responsive" style="display:none;" id="bed-conferences">
@@ -960,11 +991,11 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
-				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigbed.org">acm sigbed</a></p>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigbed.org/">acm sigbed</a></p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/emsoft/">EMSOFT</a>
+					<a href="https://dblp.org/db/conf/emsoft/index.html">EMSOFT</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="emsoft" id="emsoft" value="1.0"/>
@@ -972,7 +1003,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/rtas/">RTAS</a>
+					<a href="https://dblp.org/db/conf/rtas/index.html">RTAS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="rtas" id="rtas" value="1.0"/>
@@ -980,7 +1011,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/rtss/">RTSS</a>
+					<a href="https://dblp.org/db/conf/rtss/index.html">RTSS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="rtss" id="rtss" value="1.0"/>
@@ -1001,7 +1032,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="hpc-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			High-performance computing
 			<div class="table-responsive" style="display:none;" id="hpc-conferences">
@@ -1009,11 +1040,11 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
-				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sighpc.org">acm sighpc</a></p>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://www.sighpc.org/">acm sighpc</a></p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/hpdc/">HPDC</a>
+					<a href="https://dblp.org/db/conf/hpdc/index.html">HPDC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="hpdc" id="hpdc" value="1.0"/>
@@ -1021,7 +1052,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/ics/">ICS</a>
+					<a href="https://dblp.org/db/conf/ics/index.html">ICS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ics" id="ics" value="1.0"/>
@@ -1029,7 +1060,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sc/">SC</a>
+					<a href="https://dblp.org/db/conf/sc/index.html">SC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sc" id="sc" value="1.0"/>
@@ -1050,7 +1081,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="mobile-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Mobile computing
 			<div class="table-responsive" style="display:none;" id="mobile-conferences">
@@ -1058,11 +1089,11 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
-				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigmobile.org">acm sigmobile</a></p>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigmobile.org/">acm sigmobile</a></p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/mobicom/">MobiCom</a>
+					<a href="https://dblp.org/db/conf/mobicom/index.html">MobiCom</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="mobicom" id="mobicom" value="1.0"/>
@@ -1070,7 +1101,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/mobisys/">MobiSys</a>
+					<a href="https://dblp.org/db/conf/mobisys/index.html">MobiSys</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="mobisys" id="mobisys" value="1.0"/>
@@ -1078,7 +1109,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sensys/">SenSys</a>
+					<a href="https://dblp.org/db/conf/sensys/index.html">SenSys</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sensys" id="sensys" value="1.0"/>
@@ -1099,7 +1130,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="metrics-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Measurement &amp; perf. analysis&nbsp;
 			<div class="table-responsive" style="display:none;" id="metrics-conferences">
@@ -1111,7 +1142,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/imc/">IMC</a>
+					<a href="https://dblp.org/db/conf/imc/index.html">IMC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="imc" id="imc" value="1.0"/>
@@ -1119,7 +1150,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigmetrics/">SIGMETRICS</a>
+					<a href="https://dblp.org/db/conf/sigmetrics/index.html">SIGMETRICS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sigmetrics" id="sigmetrics" value="1.0"/>
@@ -1140,7 +1171,7 @@
 		    <tr>
 		      <td>  
 			<span class="hovertip" id="ops-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Operating systems
 			<div class="table-responsive" style="display:none;" id="ops-conferences">
@@ -1148,11 +1179,11 @@
 			    <tbody>
 			      <tr style="width:100%">
 				<td>
-				  <p class="text-muted" style="font-variant:small-caps;"><a href="http://sigops.org">acm sigops</a>, <a href="https://www.usenix.org/">usenix</a></p>
+				  <p class="text-muted" style="font-variant:small-caps;"><a href="https://sigops.org/">acm sigops</a>, <a href="https://www.usenix.org/">usenix</a></p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/osdi/">OSDI</a>
+					<a href="https://dblp.org/db/conf/osdi/index.html">OSDI</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="osdi" id="osdi" value="1.0"/>
@@ -1160,7 +1191,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sosp/">SOSP</a>
+					<a href="https://dblp.org/db/conf/sosp/index.html">SOSP</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="sosp" id="sosp" value="1.0"/>
@@ -1173,7 +1204,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/eurosys/">EuroSys</a>
+					<a href="https://dblp.org/db/conf/eurosys/index.html">EuroSys</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="eurosys" id="eurosys" value="1.0"/>
@@ -1181,7 +1212,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/fast/">FAST</a>
+					<a href="https://dblp.org/db/conf/fast/index.html">FAST</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="fast" id="fast" value="1.0"/>
@@ -1189,7 +1220,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/usenix/">USENIX ATC</a>
+					<a href="https://dblp.org/db/conf/usenix/index.html">USENIX ATC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="usenixatc" id="usenixatc" value="1.0"/>
@@ -1197,7 +1228,7 @@
 				    </tr>
 				  </table>
 				  <!--
-				  <a href="http://dblp.org/db/conf/usenix/">USENIX Annual Technical Conf.</a><br />
+				  <a href="https://dblp.org/db/conf/usenix/index.html">USENIX Annual Technical Conf.</a><br />
 -->
 				</td>
 			      </tr>
@@ -1213,7 +1244,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="plan-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Programming languages
 			<div class="table-responsive" style="display:none;" id="plan-conferences">
@@ -1227,7 +1258,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/pldi/">PLDI</a>
+					<a href="https://dblp.org/db/conf/pldi/index.html">PLDI</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="pldi" id="pldi" value="1.0"/>
@@ -1235,7 +1266,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/popl/">POPL</a>
+					<a href="https://dblp.org/db/conf/popl/index.html">POPL</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="popl" id="popl" value="1.0"/>
@@ -1248,7 +1279,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/icfp/">ICFP</a>
+					<a href="https://dblp.org/db/conf/icfp/index.html">ICFP</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="icfp" id="icfp" value="1.0"/>
@@ -1256,7 +1287,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/oopsla/">OOPSLA</a>
+					<a href="https://dblp.org/db/conf/oopsla/index.html">OOPSLA</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="oopsla" id="oopsla" value="1.0"/>
@@ -1278,7 +1309,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="soft-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Software engineering
 			<div class="table-responsive" style="display:none;" id="soft-conferences">
@@ -1287,12 +1318,12 @@
 			      <tr style="width:100%">
 				<td>
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://sigsoft.org">acm sigsoft</a>
+				    <a href="https://www.sigsoft.org/index.html">acm sigsoft</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigsoft/">FSE</a><br />
+					<a href="https://dblp.org/db/conf/sigsoft/index.html">FSE</a><br />
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="fse" id="fse" value="1.0"/>
@@ -1300,7 +1331,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/icse/">ICSE</a><br />
+					<a href="https://dblp.org/db/conf/icse/index.html">ICSE</a><br />
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="icse" id="icse" value="1.0"/>
@@ -1313,7 +1344,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/kbse/">ASE</a>
+					<a href="https://dblp.org/db/conf/kbse/index.html">ASE</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ase" id="ase" value="1.0"/>
@@ -1321,7 +1352,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/issta/">ISSTA</a>
+					<a href="https://dblp.org/db/conf/issta/index.html">ISSTA</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="issta" id="issta" value="1.0"/>
@@ -1357,7 +1388,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="act-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Algorithms &amp; complexity
 			<div class="table-responsive" style="display:none;" id="act-conferences">
@@ -1366,12 +1397,12 @@
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://sigact.org">acm sigact</a>, <a href="https://www.computer.org/portal/web/tcmf">ieee tcmf</a>
+				    <a href="https://sigact.org/">acm sigact</a>, <a href="https://www.computer.org/communities/technical-committees/tcmf">ieee tcmf</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/focs/">FOCS</a>
+					<a href="https://dblp.org/db/conf/focs/index.html">FOCS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="focs" id="focs" value="1.0"/>
@@ -1379,7 +1410,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/soda/">SODA</a>
+					<a href="https://dblp.org/db/conf/soda/index.html">SODA</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="soda" id="soda" value="1.0"/>
@@ -1387,7 +1418,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/stoc/">STOC</a>
+					<a href="https://dblp.org/db/conf/stoc/index.html">STOC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="stoc" id="stoc" value="1.0"/>
@@ -1408,7 +1439,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="crypt-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Cryptography
 			<div class="table-responsive" style="display:none;" id="crypt-conferences">
@@ -1421,7 +1452,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/crypto/">CRYPTO</a>
+					<a href="https://dblp.org/db/conf/crypto/index.html">CRYPTO</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="crypto" id="crypto" value="1.0"/>
@@ -1429,7 +1460,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/eurocrypt/">EuroCrypt</a>
+					<a href="https://dblp.org/db/conf/eurocrypt/index.html">EuroCrypt</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="eurocrypt" id="eurocrypt" value="1.0"/>
@@ -1450,7 +1481,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="log-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Logic &amp; verification
 			<div class="table-responsive" style="display:none;" id="log-conferences">
@@ -1463,7 +1494,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/cav/">CAV</a>
+					<a href="https://dblp.org/db/conf/cav/index.html">CAV</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="cav" id="cav" value="1.0"/>
@@ -1471,7 +1502,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/lics/">LICS</a>
+					<a href="https://dblp.org/db/conf/lics/index.html">LICS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="lics" id="lics" value="1.0"/>
@@ -1506,7 +1537,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="bio-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Comp. bio &amp; bioinformatics
 			<div class="table-responsive" style="display:none;" id="bio-conferences">
@@ -1520,7 +1551,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/ismb/">ISMB</a>
+					<a href="https://dblp.org/db/conf/ismb/index.html">ISMB</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ismb" id="ismb" value="1.0"/>
@@ -1528,7 +1559,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/recomb/">RECOMB</a>
+					<a href="https://dblp.org/db/conf/recomb/index.html">RECOMB</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="recomb" id="recomb" value="1.0"/>
@@ -1549,7 +1580,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="graph-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Computer graphics
 			<div class="table-responsive" style="display:none;" id="graph-conferences">
@@ -1563,7 +1594,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/siggraph/">SIGGRAPH</a>
+					<a href="https://dblp.org/db/conf/siggraph/index.html">SIGGRAPH</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="siggraph" id="siggraph" value="1.0"/>
@@ -1571,7 +1602,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/siggraph/">SIGGRAPH Asia</a>
+					<a href="https://dblp.org/db/conf/siggrapha/index.html">SIGGRAPH Asia</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="siggraph-asia" id="siggraph-asia" value="1.0"/>
@@ -1593,7 +1624,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="ecom-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Economics &amp; computation
 			<div class="table-responsive" style="display:none;" id="ecom-conferences">
@@ -1607,7 +1638,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/sigecom/">EC</a>
+					<a href="https://dblp.org/db/conf/sigecom/index.html">EC</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ec" id="ec" value="1.0"/>
@@ -1615,7 +1646,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/wine/">WINE</a>
+					<a href="https://dblp.org/db/conf/wine/index.html">WINE</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="wine" id="wine" value="1.0"/>
@@ -1636,7 +1667,7 @@
 		    <tr>
 		      <td> 
 			<span class="hovertip" id="chi-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Human-computer interaction
 			<div class="table-responsive" style="display:none;" id="chi-conferences">
@@ -1650,7 +1681,7 @@
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/chi/">CHI</a>
+					<a href="https://dblp.org/db/conf/chi/index.html">CHI</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="chiconf" id="chiconf" value="1.0"/>
@@ -1658,7 +1689,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/huc/">UbiComp</a> / <a href="http://dblp.org/db/conf/pervasive/">Pervasive</a> / <a href="http://dblp.org/db/journals/imwut/">IMWUT</a>
+					<a href="https://dblp.org/db/conf/huc/index.html">UbiComp</a> / <a href="https://dblp.org/db/conf/pervasive/index.html">Pervasive</a> / <a href="https://dblp.org/db/journals/imwut/index.html">IMWUT</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="ubicomp" id="ubicomp" value="1.0"/>
@@ -1666,7 +1697,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/uist/">UIST</a>
+					<a href="https://dblp.org/db/conf/uist/index.html">UIST</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="uist" id="uist" value="1.0"/>
@@ -1687,7 +1718,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="robotics-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Robotics
 			<div class="table-responsive" style="display:none;" id="robotics-conferences">
@@ -1696,12 +1727,12 @@
 			      <tr style="width:100%">
 				<td>
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://www.ieee-ras.org/">ieee ras</a>
+				    <a href="https://www.ieee-ras.org/">ieee ras</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/icra/">ICRA</a>
+					<a href="https://dblp.org/db/conf/icra/index.html">ICRA</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="icra" id="icra" value="1.0"/>
@@ -1709,14 +1740,14 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/iros/">IROS</a>
+					<a href="https://dblp.org/db/conf/iros/index.html">IROS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="iros" id="iros" value="1.0"/>
 				      </td>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/rss/">RSS</a>
+					<a href="https://dblp.org/db/conf/rss/index.html">RSS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="rss" id="rss" value="1.0"/>
@@ -1737,7 +1768,7 @@
 		    <tr>
 		      <td>
 			<span class="hovertip" id="visualization-widget">
-			  <font color="blue">&#9658;</font>
+			  &#9658;
 			</span>
 			Visualization
 			<div class="table-responsive" style="display:none;" id="visualization-conferences">
@@ -1746,12 +1777,12 @@
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="http://vgtc.org/">ieee vgtc</a>
+				    <a href="https://tc.computer.org/vgtc/">ieee vgtc</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/journals/tvcg/">VIS</a>
+					<a href="https://dblp.org/db/journals/tvcg/index.html">VIS</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="vis" id="vis" value="1.0"/>
@@ -1759,7 +1790,7 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<a href="http://dblp.org/db/conf/vr/">VR</a>
+					<a href="https://dblp.org/db/conf/vr/index.html">VR</a>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="vr" id="vr" value="1.0"/>
@@ -1827,25 +1858,23 @@
 	    </p>
 	    
 	    <p>
-	      <em>Prominent mentions of CSrankings:</em> <a href="https://eecs.berkeley.edu/about/by-the-numbers">Berkeley</a> | CMU (<a href="https://www.facebook.com/mldcmu/photos/a.1951141291831706.1073741828.1950839991861836/2031085493837285/?type=3&theater">1</a>, <a href="http://www.cbd.cmu.edu/carnegie-mellon-ranked-first-in-publications-in-highly-selective-computational-biology-conferences/">2</a>) | <a href="http://edinburghnlp.inf.ed.ac.uk/">Edinburgh</a> | <a href="https://cse.umich.edu/cse/about/by-the-numbers.html">Michigan</a> | <a href="https://www.cs.rutgers.edu/">Rutgers</a> | <a href="https://www.technion.ac.il/2017/02/%D7%94%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F-%D7%91%D7%97%D7%96%D7%99%D7%AA-%D7%94%D7%9E%D7%97%D7%A7%D7%A8-%D7%94%D7%A2%D7%95%D7%9C%D7%9E%D7%99%D7%AA/">Technion</a> | <a href="https://www.cs.ubc.ca/nest/imager/newsandevents.php#5">UBC</a> | <a href="http://cs.unc.edu/about/rankings/">UNC</a> | <a href="http://www.cs.utah.edu/soc-ranks-high-for-productivity/">Utah</a> | <a href="https://uwaterloo.ca/artificial-intelligence-institute/rankings">Waterloo</a> | <a href="https://www.facebook.com/yann.lecun/posts/10154886059272143">Yann LeCun</a> | <a href="https://blog.regehr.org/archives/1558">John Regehr</a> | <a href="http://www.theexclusive.org/2017/11/cs-rankings.html">Charles Sutton</a>
+	      <em>Prominent mentions of CSrankings:</em> CMU (<a href="https://www.facebook.com/mldcmu/photos/a.1951141291831706.1073741828.1950839991861836/2031085493837285/?type=3&theater">1</a>, <a href="http://www.cbd.cmu.edu/carnegie-mellon-ranked-first-in-publications-in-highly-selective-computational-biology-conferences/">2</a>) | <a href="http://edinburghnlp.inf.ed.ac.uk/">Edinburgh</a> | <a href="https://cse.engin.umich.edu/about/by-the-numbers/">Michigan</a> | <a href="https://www.cs.rutgers.edu/">Rutgers</a> | <a href="https://www.technion.ac.il/2017/02/%D7%94%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F-%D7%91%D7%97%D7%96%D7%99%D7%AA-%D7%94%D7%9E%D7%97%D7%A7%D7%A8-%D7%94%D7%A2%D7%95%D7%9C%D7%9E%D7%99%D7%AA/">Technion</a> | <a href="https://www.cs.ubc.ca/labs/imager/newsandevents.php#5">UBC</a> | <a href="https://cs.unc.edu/about/rankings/">UNC</a> | <a href="https://www.cs.utah.edu/soc-ranks-high-for-productivity/">Utah</a> | <a href="https://www.facebook.com/yann.lecun/posts/10154886059272143">Yann LeCun</a> | <a href="https://blog.regehr.org/archives/1558">John Regehr</a> | <a href="http://www.theexclusive.org/2017/11/cs-rankings.html">Charles Sutton</a>
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="http://dblp.org/">DBLP</a> (updated monthly; last update July 13, 2020). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates via a <a href="https://github.com/emeryberger/CSRankings">pull request</a></b> (<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>). If you absolutely cannot do a pull request, you can submit a single update here, but as this involves manual labor, it will result in a slower update: <a href="https://github.com/emeryberger/CSrankings/issues/new?assignees=&labels=&template=updating-a-single-faculty-member-s-entry.md&title=Faculty+member+name+goes+here%2C+plus+%28ADD%7CUPDATE%7CDELETE%29">new issue</a>. Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated monthly; last update January 28, 2021). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 	    <p>
-	      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://emeryberger.com" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://github.com/emeryberger/CSrankings" rel="dct:source">http://github.com/emeryberger/CSrankings</a>.
+	      <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://emeryberger.com/" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/" href="https://github.com/emeryberger/CSrankings" rel="dct:source">https://github.com/emeryberger/CSrankings</a>.
 	      Follow <b><a href="https://twitter.com/CSrankings">@csrankings</a></b> for updates.<br />
-	      <br>Copyright 2017-2020 © <a href="http://emeryberger.com">Emery Berger</a><br />
+	      <br>Copyright 2017-2020 © <a href="https://emeryberger.com/">Emery Berger</a><br />
 	    </p>
 	    </p>
 	  </div>
 	</div>
       </form>
     </div>
-    <script src="csrankings.min.js" type="text/javascript"></script>
-<!-- <script src="csrankings.js" type="text/javascript"></script> -->
   </body>
 </html>

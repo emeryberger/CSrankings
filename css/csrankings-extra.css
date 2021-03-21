@@ -1,0 +1,10 @@
+/* Adapted from https://stackoverflow.com/questions/899148/html-select-option-separator */
+
+optgroup + optgroup {
+    border-top: 1px solid black
+}
+
+optgroup { padding-bottom: 8px; }
+optgroup:not(:first-child) {
+    padding-top: 8px; border-top: solid 1px #666;
+}
