@@ -408,7 +408,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
     global pageCountThreshold
     global ISMBpageCounter
     global DAC_TooShortPapers
-    
+
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
@@ -530,10 +530,19 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'CHI' and year == 2019
         exceptionConference |= confname == 'FAST' and year == 2012
         exceptionConference |= confname == 'DAC' and year == 2019
+        exceptionConference |= confname == 'ISCA' and ((pageCount <= 0) or pageCount >= 6)
+
+        try:
+            if confname == 'ISCA':
+                if int(pages) < 6:
+                    print(title,pages,pageCount)
+                    exceptionConference = False
+        except:
+            pass
         
-    
         if exceptionConference:
             tooFewPages = False
+            
     if tooFewPages:
         return False
        
