@@ -6,6 +6,7 @@
 
 */
 
+/// <reference path="./node_modules/@types/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
@@ -483,45 +484,54 @@ class CSRankings {
     private readonly OpenPieChart = "<img alt='opened piechart' src='png/piechart-open.png'>"; // opened pie chart image
 
     private translateNameToDBLP(name: string): string {
-        // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
-        // First, replace spaces and non-ASCII characters (not complete).
-        name = name.replace(/ Jr\./g, "_Jr.");
-        name = name.replace(/ II/g, "_II");
-        name = name.replace(/ III/g, "_III");
-        name = name.replace(/'|\-|\./g, "=");
-        name = name.replace(/Á/g, "=Aacute=");
-        name = name.replace(/á/g, "=aacute=");
-        name = name.replace(/è/g, "=egrave=");
-        name = name.replace(/é/g, "=eacute=");
-        name = name.replace(/í/g, "=iacute=");
-        name = name.replace(/ï/g, "=iuml=");
-        name = name.replace(/ó/g, "=oacute=");
-        name = name.replace(/Ç/g, "=Ccedil=");
-        name = name.replace(/ç/g, "=ccedil=");
-        name = name.replace(/ä/g, "=auml=");
-        name = name.replace(/ö/g, "=ouml=");
-        name = name.replace(/ø/g, "=oslash=");
-        name = name.replace(/Ö/g, "=Ouml=");
-        name = name.replace(/Ü/g, "=Uuml=");
-        name = name.replace(/ü/g, "=uuml=");
-        name = name.replace(/ß/g, "=szlig=");
-        let splitName = name.split(" ");
-        let lastName = splitName[splitName.length - 1];
-        let disambiguation = ""
-        if (parseInt(lastName) > 0) {
+	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
+	// First, replace spaces and non-ASCII characters (not complete).
+	name = name.replace(/ Jr\./g, "_Jr.");
+	name = name.replace(/ II/g, "_II");
+	name = name.replace(/ III/g, "_III");
+	name = name.replace(/'|\-|\./g, "=");
+	// Now replace diacritics.
+	name = he.encode(name, { 'useNamedReferences' : true, 'allowUnsafeSymbols' : true });
+	name = name.replace(/&/g, "=");
+	name = name.replace(/;/g, "=");
+	if (false) {
+	    name = name.replace(/Á/g, "=Aacute=");
+	    name = name.replace(/á/g, "=aacute=");
+	    name = name.replace(/è/g, "=egrave=");
+	    name = name.replace(/é/g, "=eacute=");
+	    name = name.replace(/í/g, "=iacute=");
+	    name = name.replace(/ï/g, "=iuml=");
+	    name = name.replace(/ó/g, "=oacute=");
+	    name = name.replace(/Ç/g, "=Ccedil=");
+	    name = name.replace(/ç/g, "=ccedil=");
+	    name = name.replace(/ä/g, "=auml=");
+	    name = name.replace(/ö/g, "=ouml=");
+	    name = name.replace(/ø/g, "=oslash=");
+	    name = name.replace(/Ö/g, "=Ouml=");
+	    name = name.replace(/Ü/g, "=Uuml=");
+	    name = name.replace(/ü/g, "=uuml=");
+	    name = name.replace(/ß/g, "=szlig=");
+	    name = name.replace(/ý/g, "=yacute=");
+	}
+	
+	let splitName = name.split(" ");
+	let lastName = splitName[splitName.length - 1];
+	let disambiguation = ""
+	if (parseInt(lastName) > 0) {
             // this was a disambiguation entry; go back.
             disambiguation = lastName;
             splitName.pop();
             lastName = splitName[splitName.length - 1] + "_" + disambiguation;
-        }
-        splitName.pop();
-        let newName = splitName.join(" ");
-        newName = newName.replace(/\s/g, "_");
-        newName = newName.replace(/\-/g, "=");
-        let str = "https://dblp.org/pers/hd";
-        const lastInitial = lastName[0].toLowerCase();
-        str += "/" + lastInitial + "/" + lastName + ":" + newName;
-        return str;
+	}
+	splitName.pop();
+	let newName = splitName.join(" ");
+	newName = newName.replace(/\s/g, "_");
+	newName = newName.replace(/\-/g, "=");
+	newName = encodeURIComponent(newName);
+	let str = "https://dblp.org/pers/hd";
+	const lastInitial = lastName[0].toLowerCase();
+	str += "/" + lastInitial + "/" + lastName + ":" + newName;
+	return str;
     }
 
     /* Create the prologue that we preface each generated HTML page with (the results). */
