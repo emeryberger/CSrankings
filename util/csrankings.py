@@ -184,7 +184,7 @@ areadict = {
 #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     'cvpr': ['CVPR', 'CVPR (1)', 'CVPR (2)'],
     'iccv': ['ICCV'],
-    'eccv': ['ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)', 'ECCV (8)', 'ECCV (9)', 'ECCV (10)', 'ECCV (11)', 'ECCV (12)', 'ECCV (13)', 'ECCV (14)', 'ECCV (15)', 'ECCV (16)'],
+    'eccv': ['ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)', 'ECCV (8)', 'ECCV (9)', 'ECCV (10)', 'ECCV (11)', 'ECCV (12)', 'ECCV (13)', 'ECCV (14)', 'ECCV (15)', 'ECCV (16)', 'ECCV (17)', 'ECCV (18)', 'ECCV (19)', 'ECCV (20)', 'ECCV (21)', 'ECCV (22)', 'ECCV (23)', 'ECCV (24)', 'ECCV (25)', 'ECCV (26)', 'ECCV (27)', 'ECCV (28)', 'ECCV (29)', 'ECCV (30)'],
     # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
     'icra': ['ICRA', 'ICRA (1)', 'ICRA (2)'],
     'iros': ['IROS'],
