@@ -27,13 +27,13 @@ department. Faculty should also have a 75%+ time appointment (check
 
 **Adding one or more faculty members (including an entire department)**
 
-- [X] If the department is not yet listed in CSrankings, the entire faculty needs to be added (not just one faculty member).
+- [ ] If the department is not yet listed in CSrankings, the entire faculty needs to be added (not just one faculty member).
 
-- [X] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings-[0-9].csv`; include disambiguation suffixes like 0001 as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
+- [ ] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings-[0-9].csv`; include disambiguation suffixes like 0001 as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
 
-- [X] If DBLP has multiple entries for this person, all of them need to be listed. If an alias is not already present in `dblp-aliases.csv`, add it.
+- [ ] If DBLP has multiple entries for this person, all of them need to be listed. If an alias is not already present in `dblp-aliases.csv`, add it.
 
-- [X] If the institution you are adding is not in the US,
+- [ ] If the institution you are adding is not in the US,
 update `country-info.csv`.
 
 **(Advanced) Quick contribution via a shallow clone** 
