@@ -6,7 +6,7 @@
 
 */
 
-/// <reference path="./node_modules/@types/he/index.d.ts" />
+/// <reference path="./typescript/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />

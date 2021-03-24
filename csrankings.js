@@ -14,7 +14,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-/// <reference path="./node_modules/@types/he/index.d.ts" />
+/// <reference path="./typescript/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/d3.d.ts" />
