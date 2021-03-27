@@ -518,6 +518,7 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         tooFewPages = True
 
     if ((pageCount != -1) and (pageCount < pageCountThreshold)):
+
         tooFewPages = True
         exceptionConference = False
         exceptionConference |= confname == 'SC' and (year <= 2012 or year == 2020)
@@ -530,16 +531,8 @@ def countPaper(confname, year, volume, number, pages, startPage, pageCount, url,
         exceptionConference |= confname == 'CHI' and year == 2019
         exceptionConference |= confname == 'FAST' and year == 2012
         exceptionConference |= confname == 'DAC' and year == 2019
-        exceptionConference |= confname == 'ISCA' and ((pageCount <= 0) or pageCount >= 6)
+        exceptionConference |= confname == 'ISCA' and ((pageCount < 0) or pageCount >= 3) # to handle very old ISCA conferences; all papers are full papers in ISCA now
 
-        try:
-            if confname == 'ISCA':
-                if int(pages) < 6:
-                    print(title,pages,pageCount)
-                    exceptionConference = False
-        except:
-            pass
-        
         if exceptionConference:
             tooFewPages = False
             

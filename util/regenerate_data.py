@@ -226,7 +226,7 @@ def dump_it():
         authorscores = collections.OrderedDict(sorted(authorscores.items()))
         for ((authorName, area, year), count) in authorscores.items():
             # count = authorscores[(authorName, area, year)]
-            print(authorName)
+            # print(authorName)
             countAdjusted = authorscoresAdjusted[(authorName, area, year)]
             f.write(authorName)
             f.write(',')
