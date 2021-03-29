@@ -93,22 +93,10 @@ def build_dicts() -> None:
 
 
 def handle_article(_ : Any, article : ArticleType) -> bool:
-    global totalPapers
-    global confdict
     global counter
     global successes
     global failures
-    global interestingauthors
-    global authorscores
-    global authorscoresAdjusted
-    global authlogs
-    global interestingauthors
-    global facultydict
-    global aliasdict
-    global TOG_SIGGRAPH_Volume
-    global TOG_SIGGRAPH_Asia_Volume
-    global TVCG_Vis_Volume
-    global TVCG_VR_Volume
+    global totalPapers
     counter += 1
     try:
         if counter % 10000 == 0:

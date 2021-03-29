@@ -14,6 +14,13 @@ import csv
 import re
 import sys
 
+from typing import Dict, List, NewType
+
+Title = NewType("Title", str)
+Author = NewType("Author", str)
+Area = NewType("Area", str)
+Conference = NewType("Conference", str)
+
 # from builtins import str
 
 # Papers must be at least 6 pages long to count.
@@ -30,8 +37,6 @@ ISMBpageCounter = re.compile("i(\d+)-i(\d+)")
 
 def startpage(pageStr: str) -> int:
     """Compute the starting page number from a string representing page numbers."""
-    global pageCounterNormal
-    global pageCounterColon
     if pageStr is None:
         return 0
     pageCounterMatcher1 = pageCounterNormal.match(pageStr)
@@ -68,210 +73,198 @@ def pagecount(pageStr: str) -> int:
     return count
 
 
-areadict = {
+areadict : Dict[Area, List[Conference]] = {
     #
     # Max three most selective venues per area for now.
     #
     # SIGPLAN
     #    'plan' : ['POPL', 'PLDI', 'PACMPL'],  # PACMPL, issue POPL
-    "popl": ["POPL"],
-    "pldi": ["PLDI"],
+    Area("popl"): [Conference("POPL")],
+    Area("pldi"): [Conference("PLDI")],
     # "Next tier" - see csrankings.ts
-    "oopsla": [
-        "OOPSLA",
-        "OOPSLA/ECOOP",
+    Area("oopsla"): [
+        Conference("OOPSLA"),
+        Conference("OOPSLA/ECOOP"),
     ],  # Next tier; note in 1990 the conference was merged with ECOOP
-    "icfp": ["ICFP"],  # Next tier
-    "pacmpl": [
-        "PACMPL",
-        "Proc. ACM Program. Lang.",
+    Area("icfp"): [Conference("ICFP")],  # Next tier
+    Area("pacmpl"): [
+        Conference("PACMPL"),
+        Conference("Proc. ACM Program. Lang."),
     ],  # Special PACMPL handling below
     # SIGSOFT
-    #    'soft': ['ICSE', 'ICSE (1)', 'ICSE (2)', 'SIGSOFT FSE', 'ESEC/SIGSOFT FSE'],
-    "icse": ["ICSE", "ICSE (1)"],
-    "fse": ["SIGSOFT FSE", "ESEC/SIGSOFT FSE"],
-    "ase": ["ASE"],  # Next tier
-    "issta": ["ISSTA"],  # Next tier
+    Area("icse"): [Conference("ICSE"), Conference("ICSE (1)")],
+    Area("fse"): [Conference("SIGSOFT FSE"), Conference("ESEC/SIGSOFT FSE")],
+    Area("ase"): [Conference("ASE")],  # Next tier
+    Area("issta"): [Conference("ISSTA")],  # Next tier
     # SIGOPS
-    # - OSDI/SOSP alternate years, so are treated as one venue; USENIX ATC has two variants in DBLP
-    # 'ops': ['SOSP', 'OSDI', 'EuroSys'], # 'USENIX Annual Technical Conference', 'USENIX Annual Technical Conference, General Track'],
-    "sosp": ["SOSP"],
-    "osdi": ["OSDI"],
-    "eurosys": ["EuroSys"],  # next tier
-    "fast": ["FAST"],  # next tier
-    "usenixatc": [
-        "USENIX Annual Technical Conference",
-        "USENIX Annual Technical Conference, General Track",
+    Area("sosp"): [Conference("SOSP")],
+    Area("osdi"): [Conference("OSDI")],
+    Area("eurosys"): [Conference("EuroSys")],  # next tier
+    Area("fast"): [Conference("FAST")],  # next tier
+    Area("usenixatc"): [
+        Conference("USENIX Annual Technical Conference"),
+        Conference("USENIX Annual Technical Conference, General Track"),
     ],  # next tier
     # SIGMETRICS
     # - Two variants for each, as in DBLP.
-    # 'metrics': ['SIGMETRICS', 'SIGMETRICS/Performance', 'POMACS','IMC', 'Internet Measurement Conference'],
-    "imc": ["IMC", "Internet Measurement Conference"],
-    "sigmetrics": [
-        "SIGMETRICS",
-        "SIGMETRICS/Performance",
-        "POMACS",
-        "Proc. ACM Meas. Anal. Comput. Syst.",
+    Area("imc"): [Conference("IMC"), Conference("Internet Measurement Conference")],
+    Area("sigmetrics"): [
+        Conference("SIGMETRICS"),
+        Conference("SIGMETRICS/Performance"),
+        Conference("POMACS"),
+        Conference("Proc. ACM Meas. Anal. Comput. Syst."),
     ],
     # SIGMOBILE
-    # 'mobile': ['MobiSys', 'MobiCom', 'MOBICOM', 'SenSys'],
-    "mobisys": ["MobiSys"],
-    "mobicom": ["MobiCom", "MOBICOM"],
-    "sensys": ["SenSys"],
+    Area("mobisys"): [Conference("MobiSys")],
+    Area("mobicom"): [Conference("MobiCom"), Conference("MOBICOM")],
+    Area("sensys"): [Conference("SenSys")],
     # SIGHPC
     # 'hpc': ['SC', 'HPDC', 'ICS'],
-    "sc": ["SC"],
-    "hpdc": ["HPDC"],
-    "ics": ["ICS"],
+    Area("sc"): [Conference("SC")],
+    Area("hpdc"): [Conference("HPDC")],
+    Area("ics"): [Conference("ICS")],
     # SIGBED
-    # 'bed': ['RTSS', 'RTAS', 'IEEE Real-Time and Embedded Technology and Applications Symposium', 'EMSOFT', 'ACM Trans. Embedded Comput. Syst.'],
-    "emsoft": [
-        "EMSOFT",
-        "ACM Trans. Embedded Comput. Syst.",
-        "ACM Trans. Embed. Comput. Syst.",
+    Area("emsoft"): [
+        Conference("EMSOFT"),
+        Conference("ACM Trans. Embedded Comput. Syst."),
+        Conference("ACM Trans. Embed. Comput. Syst."),
     ],  # TECS: issue number & page numbers must be checked
-    "rtss": ["RTSS"],
-    "rtas": [
-        "RTAS",
-        "IEEE Real-Time and Embedded Technology and Applications Symposium",
+    Area("rtss"): [Conference("RTSS")],
+    Area("rtas"): [
+        Conference("RTAS"),
+        Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
     ],
     # SIGDA
-    # 'da': ['ICCAD', 'DAC'],
-    "iccad": ["ICCAD"],
-    "dac": ["DAC"],
+    Area("iccad"): [Conference("ICCAD")],
+    Area("dac"): [Conference("DAC")],
     # SIGMOD
-    # 'mod': ['VLDB', 'PVLDB', 'SIGMOD Conference'],
-    "vldb": ["VLDB", "PVLDB", "Proc. VLDB Endow."],
-    "sigmod": ["SIGMOD Conference"],
-    "icde": ["ICDE"],  # next tier
-    "pods": ["PODS"],  # next tier
+    Area("vldb"): [Conference("VLDB"), Conference("PVLDB"), Conference("Proc. VLDB Endow.")],
+    Area("sigmod"): [Conference("SIGMOD Conference")],
+    Area("icde"): [Conference("ICDE")],  # next tier
+    Area("pods"): [Conference("PODS")],  # next tier
     # SIGSAC
-    # - USENIX Security listed twice to reflect variants in DBLP
-    # 'sec': ['IEEE Symposium on Security and Privacy', 'ACM Conference on Computer and Communications Security', 'USENIX Security Symposium', 'USENIX Security', 'CCS'], # , 'NDSS'],
-    "ccs": ["CCS", "ACM Conference on Computer and Communications Security"],
-    "oakland": ["IEEE Symposium on Security and Privacy"],
-    "usenixsec": ["USENIX Security Symposium", "USENIX Security"],
-    "ndss": ["NDSS"],
-    "pets": [
-        "PoPETs",
-        "Privacy Enhancing Technologies",
-        "Proc. Priv. Enhancing Technol.",
+    Area("ccs"): [Conference("CCS"), Conference("ACM Conference on Computer and Communications Security")],
+    Area("oakland"): [Conference("IEEE Symposium on Security and Privacy")],
+    Area("usenixsec"): [Conference("USENIX Security Symposium"), Conference("USENIX Security")],
+    Area("ndss"): [Conference("NDSS")],
+    Area("pets"): [
+        Conference("PoPETs"),
+        Conference("Privacy Enhancing Technologies"),
+        Conference("Proc. Priv. Enhancing Technol."),
     ],
     # SIGCOMM
-    # 'comm': ['SIGCOMM', 'NSDI'], # INFOCOM
-    "sigcomm": ["SIGCOMM"],
-    "nsdi": ["NSDI"],  # INFOCOM
+    Area("sigcomm"): [Conference("SIGCOMM")],
+    Area("nsdi"): [Conference("NSDI")],
     # SIGARCH
-    # 'arch': ['ISCA', 'MICRO', 'ASPLOS'],
-    "asplos": ["ASPLOS"],
-    "isca": ["ISCA"],
-    "micro": ["MICRO"],
-    "hpca": ["HPCA"],  # next tier
+    Area("asplos"): [Conference("ASPLOS")],
+    Area("isca"): [Conference("ISCA")],
+    Area("micro"): [Conference("MICRO")],
+    Area("hpca"): [Conference("HPCA")],  # next tier
     # SIGLOG
     # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
-    "cav": ["CAV", "CAV (1)", "CAV (2)"],
-    "lics": ["LICS", "CSL-LICS"],
+    Area("cav"): [Conference("CAV"), Conference("CAV (1)"), Conference("CAV (2)")],
+    Area("lics"): [Conference("LICS"), Conference("CSL-LICS")],
     # SIGACT
     # 'act': ['STOC', 'FOCS', 'SODA'],
-    "focs": ["FOCS"],
-    "stoc": ["STOC"],
-    "soda": ["SODA"],
+    Area("focs"): [Conference("FOCS")],
+    Area("stoc"): [Conference("STOC")],
+    Area("soda"): [Conference("SODA")],
     # 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
-    "nips": ["NIPS", "NeurIPS"],
-    "icml": ["ICML", "ICML (1)", "ICML (2)", "ICML (3)"],
-    "kdd": ["KDD"],
+    Area("nips"): [Conference("NIPS"), Conference("NeurIPS")],
+    Area("icml"): [Conference("ICML"), Conference("ICML (1)"), Conference("ICML (2)"), Conference("ICML (3)")],
+    Area("kdd"): [Conference("KDD")],
     # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
-    "aaai": ["AAAI", "AAAI/IAAI"],
-    "ijcai": ["IJCAI"],
+    Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
+    Area("ijcai"): [Conference("IJCAI")],
     # AAAI listed to account for AAAI/IAAI joint conference
     # SIGGRAPH
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
-    "siggraph": ["ACM Trans. Graph.", "SIGGRAPH"],
+    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH")],
     #    'siggraph' : ['SIGGRAPH'],
-    "siggraph-asia": ["ACM Trans. Graph.", "SIGGRAPH Asia"],
+    Area("siggraph-asia"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH Asia")],
     # SIGIR
     # 'ir': ['WWW', 'SIGIR'],
-    "sigir": ["SIGIR"],
-    "www": ["WWW"],
+    Area("sigir"): [Conference("SIGIR")],
+    Area("www"): [Conference("WWW")],
     # SIGCHI
     # 'chi': ['CHI', 'UbiComp', 'Ubicomp', 'UIST', 'IMWUT', 'Pervasive'],
-    "chiconf": ["CHI"],
-    "ubicomp": [
-        "UbiComp",
-        "Ubicomp",
-        "IMWUT",
-        "Pervasive",
-        "Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.",
+    Area("chiconf"): [Conference("CHI")],
+    Area("ubicomp"): [
+        Conference("UbiComp"),
+        Conference("Ubicomp"),
+        Conference("IMWUT"),
+        Conference("Pervasive"),
+        Conference("Proc. ACM Interact. Mob. Wearable Ubiquitous Technol."),
     ],
-    "uist": ["UIST"],
+    Area("uist"): [Conference("UIST")],
     #    'nlp': ['EMNLP', 'ACL', 'ACL (1)', 'ACL (2)', 'NAACL', 'HLT-NAACL', 'NAACL-HLT',
     #            'ACL/IJCNLP',  # -- in 2009 was joint
     #            'COLING-ACL',  # -- in 1998 was joint
     #            'EMNLP-CoNLL',  # -- in 2012 was joint
     #            'HLT/EMNLP',  # -- in 2005 was joint
     #            ],
-    "emnlp": [
-        "EMNLP",
-        "EMNLP (1)",
-        "EMNLP-CoNLL",
-        "HLT/EMNLP",
-        "EMNLP-IJCNLP",
-        "EMNLP/IJCNLP (1)",
+    Area("emnlp"): [
+        Conference("EMNLP"),
+        Conference("EMNLP (1)"),
+        Conference("EMNLP-CoNLL"),
+        Conference("HLT/EMNLP"),
+        Conference("EMNLP-IJCNLP"),
+        Conference("EMNLP/IJCNLP (1)"),
     ],
-    "acl": ["ACL", "ACL (1)", "ACL (2)", "ACL/IJCNLP", "COLING-ACL"],
-    "naacl": ["NAACL", "HLT-NAACL", "NAACL-HLT", "NAACL-HLT (1)"],
+    Area("acl"): [Conference("ACL"), Conference("ACL (1)"), Conference("ACL (2)"), Conference("ACL/IJCNLP"), Conference("COLING-ACL")],
+    Area("naacl"): [Conference("NAACL"), Conference("HLT-NAACL"), Conference("NAACL-HLT"), Conference("NAACL-HLT (1)")],
     #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
-    "cvpr": ["CVPR", "CVPR (1)", "CVPR (2)"],
-    "iccv": ["ICCV"],
-    "eccv": [
-        "ECCV",
-        "ECCV (1)",
-        "ECCV (2)",
-        "ECCV (3)",
-        "ECCV (4)",
-        "ECCV (5)",
-        "ECCV (6)",
-        "ECCV (7)",
-        "ECCV (8)",
-        "ECCV (9)",
-        "ECCV (10)",
-        "ECCV (11)",
-        "ECCV (12)",
-        "ECCV (13)",
-        "ECCV (14)",
-        "ECCV (15)",
-        "ECCV (16)",
+    Area("cvpr"): [Conference("CVPR"), Conference("CVPR (1)"), Conference("CVPR (2)")],
+    Area("iccv"): [Conference("ICCV")],
+    Area("eccv"): [
+        Conference("ECCV"),
+        Conference("ECCV (1)"),
+        Conference("ECCV (2)"),
+        Conference("ECCV (3)"),
+        Conference("ECCV (4)"),
+        Conference("ECCV (5)"),
+        Conference("ECCV (6)"),
+        Conference("ECCV (7)"),
+        Conference("ECCV (8)"),
+        Conference("ECCV (9)"),
+        Conference("ECCV (10)"),
+        Conference("ECCV (11)"),
+        Conference("ECCV (12)"),
+        Conference("ECCV (13)"),
+        Conference("ECCV (14)"),
+        Conference("ECCV (15)"),
+        Conference("ECCV (16)"),
     ],
     # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
-    "icra": ["ICRA", "ICRA (1)", "ICRA (2)"],
-    "iros": ["IROS"],
-    "rss": ["Robotics: Science and Systems"],
+    Area("icra"): [Conference("ICRA"), Conference("ICRA (1)"), Conference("ICRA (2)")],
+    Area("iros"): [Conference("IROS")],
+    Area("rss"): [Conference("Robotics: Science and Systems")],
     # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
-    "crypto": ["CRYPTO", "CRYPTO (1)", "CRYPTO (2)", "CRYPTO (3)"],
-    "eurocrypt": [
-        "EUROCRYPT",
-        "EUROCRYPT (1)",
-        "EUROCRYPT (2)",
-        "EUROCRYPT (3)",
+    Area("crypto"): [Conference("CRYPTO"), Conference("CRYPTO (1)"), Conference("CRYPTO (2)"), Conference("CRYPTO (3)")],
+    Area("eurocrypt"): [
+        Conference("EUROCRYPT"),
+        Conference("EUROCRYPT (1)"),
+        Conference("EUROCRYPT (2)"),
+        Conference("EUROCRYPT (3)"),
     ],
     # SIGBio
     # - special handling for ISMB proceedings in Bioinformatics special issues.
     # 'bio': ['RECOMB', 'ISMB', 'Bioinformatics', 'ISMB/ECCB (Supplement of Bioinformatics)', 'Bioinformatics [ISMB/ECCB]', 'ISMB (Supplement of Bioinformatics)'],
-    "ismb": [
-        "ISMB",
-        "Bioinformatics",
-        "Bioinform.",
-        "ISMB/ECCB (Supplement of Bioinformatics)",
-        "Bioinformatics [ISMB/ECCB]",
-        "ISMB (Supplement of Bioinformatics)",
+    Area("ismb"): [
+        Conference("ISMB"),
+        Conference("Bioinformatics"),
+        Conference("Bioinform."),
+        Conference("ISMB/ECCB (Supplement of Bioinformatics)"),
+        Conference("Bioinformatics [ISMB/ECCB]"),
+        Conference("ISMB (Supplement of Bioinformatics)"),
     ],
-    "recomb": ["RECOMB"],
+    Area("recomb"): [Conference("RECOMB")],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
-    "vis": ["IEEE Visualization", "IEEE Trans. Vis. Comput. Graph."],
-    "vr": ["VR"],
+    Area("vis"): [Conference("IEEE Visualization"), Conference("IEEE Trans. Vis. Comput. Graph.")],
+    Area("vr"): [Conference("VR")],
     # 'ecom' : ['EC', 'WINE']
-    "ec": ["EC"],
-    "wine": ["WINE"]
+    Area("ec"): [Conference("EC")],
+    Area("wine"): [Conference("WINE")]
     # ,'cse' : ['SIGCSE']
 }
 
@@ -545,7 +538,7 @@ endyear = 2269
 
 
 def countPaper(
-    confname: str,
+    confname: Conference,
     year: int,
     volume: str,
     number: str,
@@ -553,24 +546,8 @@ def countPaper(
     startPage: int,
     pageCount: int,
     url: str,
-    title: str,
+    title: Title,
 ) -> bool:
-    global EMSOFT_TECS
-    global EMSOFT_TECS_PaperNumbers
-    global TECSCounterColon
-    global ISMB_Bioinformatics
-    global ICSE_ShortPaperStart
-    global SIGMOD_NonResearchPaperStart
-    global SIGMOD_NonResearchPapersRange
-    global TOG_SIGGRAPH_Volume
-    global TOG_SIGGRAPH_Asia_Volume
-    global TVCG_Vis_Volume
-    global TVCG_VR_Volume
-    global ASE_LongPaperThreshold
-    global pageCountThreshold
-    global ISMBpageCounter
-    global DAC_TooShortPapers
-
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
