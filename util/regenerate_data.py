@@ -6,34 +6,42 @@ import csv
 import re
 import sys
 import operator
-# from typing import Dict
+from typing import cast, Any, Dict, List, Tuple, TypedDict, Union
 from csrankings import *
+from collections import defaultdict
 
 # Consider pubs in this range only.
 startyear = 1970
 endyear = 2269
 
+ArticleType = TypedDict('ArticleType', { 'author' : List[str],
+                                         'booktitle' : str,
+                                         'journal' : str,
+                                         'volume' : str,
+                                         'number' : str,
+                                         'url' : str,
+                                         'year' : str,
+                                         'pages' : str,
+                                         'title' : str })
+
 totalPapers = 0 # for statistics reporting purposes only
-authlogs = {}
-interestingauthors = {}
-authorscores = {}
-authorscoresAdjusted = {}
-coauthors = {}
-papersWritten = {}
+authlogs : Dict[str, List[str]] = defaultdict(list)
+interestingauthors : Dict[str, int] = defaultdict(int)
+authorscores : Dict[Tuple[str, str, int], float] = defaultdict(float)
+authorscoresAdjusted : Dict[Tuple[str, str, int], float] = defaultdict(float)
+facultydict : Dict[str, str] = {}
+aliasdict : Dict[str, str] = {}
 counter = 0
 successes = 0
 failures = 0
-confdict = {}
-aliasdict = {}
 
 
-def do_it():
-#    gz = gzip.GzipFile('dblp-original.xml.gz')
+def do_it() -> None:
     gz = gzip.GzipFile('dblp.xml.gz')
     xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
 
 
-def build_dicts():
+def build_dicts() -> None:
     global areadict
     global confdict
     global facultydict
@@ -71,7 +79,7 @@ def build_dicts():
 
 
 
-def handle_article(_, article):
+def handle_article(_ : Any, article : ArticleType) -> bool:
     global totalPapers
     global confdict
     global counter
@@ -92,27 +100,34 @@ def handle_article(_, article):
     try:
         if counter % 10000 == 0:
             print(str(counter)+ " papers processed.")
-        if 'author' in article:
-            # Fix if there is just one author.
-            if type(article['author']) != list:
-                article['author'] = [article['author']]
-            authorList = article['author']
-            authorsOnPaper = len(authorList)
-            foundOneInDict = False
-            for authorName in authorList:
-                if type(authorName) is collections.OrderedDict:
-                    authorName = authorName["#text"]
-                authorName = authorName.strip()
-                if authorName in facultydict:
+        if not 'author' in article:
+            return True
+        # Fix if there is just one author.
+        if type(article['author']) != list:
+            if type(article['author']) == str:
+                article['author'] = [str(article['author'])]
+            elif type(article['author']) is collections.OrderedDict:
+                article['author'] = [article['author']["#text"]]
+            else:
+                print("***Unknown record type, skipping.***")
+                return True
+        authorList = article['author']
+        authorsOnPaper = len(authorList)
+        foundOneInDict = False
+        for authorName in authorList:
+            if type(authorName) is collections.OrderedDict:
+                aName = cast(str, authorName["#text"])
+            else:
+                aName = authorName
+            aName = aName.strip()
+            if aName in facultydict:
+                foundOneInDict = True
+                break
+            if aName in aliasdict:
+                if aliasdict[aName] in facultydict:
                     foundOneInDict = True
                     break
-                if authorName in aliasdict:
-                    if aliasdict[authorName] in facultydict:
-                        foundOneInDict = True
-                        break
-            if not foundOneInDict:
-                return True
-        else:
+        if not foundOneInDict:
             return True
         if 'booktitle' in article:
             confname = article['booktitle']
@@ -121,46 +136,45 @@ def handle_article(_, article):
         else:
             return True
 
+        if not confname in confdict:
+            return True
+        
         volume = article.get('volume',"0")
         number = article.get('number',"0")
         url    = article.get('url',"")
         year   = int(article.get('year',"-1"))
         pages  = ""
         
-        if confname in confdict:
-            areaname = confdict[confname]
-            #Special handling for PACMPL
-            if areaname == 'pacmpl':
-                confname = article['number']
-                if confname in confdict:
+        areaname = confdict[confname]
+        #Special handling for PACMPL
+        if areaname == 'pacmpl':
+            confname = article['number']
+            if confname in confdict:
+                areaname = confdict[confname]
+            else:
+                return True
+        elif confname == 'ACM Trans. Graph.':
+            if year in TOG_SIGGRAPH_Volume:
+                (vol, num) = TOG_SIGGRAPH_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    confname = 'SIGGRAPH'
                     areaname = confdict[confname]
-                else:
-                    return True
-            elif confname == 'ACM Trans. Graph.':
-                if year in TOG_SIGGRAPH_Volume:
-                    (vol, num) = TOG_SIGGRAPH_Volume[year]
-                    if (volume == str(vol)) and (number == str(num)):
-                        confname = 'SIGGRAPH'
-                        areaname = confdict[confname]
-                if year in TOG_SIGGRAPH_Asia_Volume:
-                    (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
-                    if (volume == str(vol)) and (number == str(num)):
-                        confname = 'SIGGRAPH Asia'
-                        areaname = confdict[confname]
-            elif confname == 'IEEE Trans. Vis. Comput. Graph.':
-                if year in TVCG_Vis_Volume:
-                    (vol, num) = TVCG_Vis_Volume[year]
-                    if (volume == str(vol)) and (number == str(num)):
-                        areaname = 'vis'
-                if year in TVCG_VR_Volume:
-                    (vol, num) = TVCG_VR_Volume[year]
-                    if (volume == str(vol)) and (number == str(num)):
-                        confname = 'VR'
-                        areaname = 'vr'
+            if year in TOG_SIGGRAPH_Asia_Volume:
+                (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    confname = 'SIGGRAPH Asia'
+                    areaname = confdict[confname]
+        elif confname == 'IEEE Trans. Vis. Comput. Graph.':
+            if year in TVCG_Vis_Volume:
+                (vol, num) = TVCG_Vis_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    areaname = 'vis'
+            if year in TVCG_VR_Volume:
+                (vol, num) = TVCG_VR_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    confname = 'VR'
+                    areaname = 'vr'
 
-        else:
-            return True
-        
         if 'title' in article:
             title = article['title']
             if type(title) is collections.OrderedDict:
@@ -183,21 +197,17 @@ def handle_article(_, article):
     if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
         totalPapers += 1
         for authorName in authorList:
+            aName = cast(str, authorName)
             if type(authorName) is collections.OrderedDict:
-                authorName = authorName["#text"]
-            realName = aliasdict.get(authorName, authorName)
-            #            if authorName in aliasdict:
-            #                authorName = aliasdict[authorName]
-            foundAuthor = None
+                aName = cast(str, authorName["#text"])
+            realName = aliasdict.get(aName, aName)
             if realName in facultydict:
-                foundAuthor = realName
-            if foundAuthor != None:
-                log = { 'name' : foundAuthor.encode('utf-8'),
+                log = { 'name' : realName.encode('utf-8'),
                         'year' : year,
                         'title' : title.encode('utf-8'),
                         'conf' : confname,
                         'area' : areaname,
-                        'institution' : facultydict[foundAuthor],
+                        'institution' : facultydict[realName],
                         'numauthors' : authorsOnPaper }
                 if volume != "":
                     log['volume'] = volume
@@ -207,15 +217,15 @@ def handle_article(_, article):
                     log['startPage'] = startPage
                 if pageCount != "":
                     log['pageCount'] = pageCount
-                tmplist = authlogs.get(foundAuthor, [])
+                tmplist = authlogs.get(realName, [])
                 tmplist.append(log)
-                authlogs[foundAuthor] = tmplist
-                interestingauthors[foundAuthor] = interestingauthors.get(foundAuthor, 0) + 1
-                authorscores[(foundAuthor, areaname, year)] = authorscores.get((foundAuthor, areaname, year), 0) + 1.0
-                authorscoresAdjusted[(foundAuthor, areaname, year)] = authorscoresAdjusted.get((foundAuthor, areaname, year), 0) + 1.0 / authorsOnPaper
+                authlogs[realName] = tmplist
+                interestingauthors[realName] += 1
+                authorscores[(realName, areaname, year)] += 1.0
+                authorscoresAdjusted[(realName, areaname, year)] += 1.0 / authorsOnPaper
     return True
 
-def dump_it():
+def dump_it() -> None:
     global authorscores
     global authorscoresAdjusted
     global authlogs
@@ -254,7 +264,7 @@ def dump_it():
                     z.append(s)
         json.dump(z, f, indent=2)
 
-def main():
+def main() -> None:
     build_dicts()
     do_it()
     dump_it()
