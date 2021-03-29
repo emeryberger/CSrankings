@@ -7,7 +7,7 @@ import re
 import sys
 import operator
 from typing import cast, Any, Dict, List, Tuple, TypedDict, Union
-from csrankings import *
+from csrankings import Area, Conference, Title, countPaper, pagecount, startpage, confdict, areadict, TOG_SIGGRAPH_Volume, TOG_SIGGRAPH_Asia_Volume, TVCG_Vis_Volume, TVCG_VR_Volume
 from collections import defaultdict
 
 # Consider pubs in this range only.
@@ -51,7 +51,7 @@ failures = 0
 
 def do_it() -> None:
     gz = gzip.GzipFile('dblp.xml.gz')
-    xmltodict.parse(gz, item_depth=2, item_callback=handle_article)
+    xmltodict.parse(gz, item_depth=2, item_callback=handle_article) # type: ignore
 
 
 def build_dicts() -> None:
@@ -92,7 +92,7 @@ def build_dicts() -> None:
 
 
 
-def handle_article(_ : Any, article : ArticleType) -> bool:
+def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
     global counter
     global successes
     global failures
@@ -133,9 +133,9 @@ def handle_article(_ : Any, article : ArticleType) -> bool:
         if not foundOneInDict:
             return True
         if 'booktitle' in article:
-            confname = article['booktitle']
+            confname = Conference(article['booktitle'])
         elif 'journal' in article:
-            confname = article['journal']
+            confname = Conference(article['journal'])
         else:
             return True
 
@@ -150,40 +150,40 @@ def handle_article(_ : Any, article : ArticleType) -> bool:
         
         areaname = confdict[confname]
         #Special handling for PACMPL
-        if areaname == 'pacmpl':
-            confname = article['number']
+        if areaname == Area('pacmpl'):
+            confname = Conference(article['number'])
             if confname in confdict:
                 areaname = confdict[confname]
             else:
                 return True
-        elif confname == 'ACM Trans. Graph.':
+        elif confname == Conference('ACM Trans. Graph.'):
             if year in TOG_SIGGRAPH_Volume:
                 (vol, num) = TOG_SIGGRAPH_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
-                    confname = 'SIGGRAPH'
+                    confname = Conference('SIGGRAPH')
                     areaname = confdict[confname]
             if year in TOG_SIGGRAPH_Asia_Volume:
                 (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
-                    confname = 'SIGGRAPH Asia'
+                    confname = Conference('SIGGRAPH Asia')
                     areaname = confdict[confname]
         elif confname == 'IEEE Trans. Vis. Comput. Graph.':
             if year in TVCG_Vis_Volume:
                 (vol, num) = TVCG_Vis_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
-                    areaname = 'vis'
+                    areaname = Area('vis')
             if year in TVCG_VR_Volume:
                 (vol, num) = TVCG_VR_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
-                    confname = 'VR'
-                    areaname = 'vr'
+                    confname = Conference('VR')
+                    areaname = Area('vr')
 
         if 'title' in article:
-            title : str = ""
+            title = Title("")
             if type(article['title']) is collections.OrderedDict:
-                title = article['title']["#text"] # type: ignore
+                title = Title(article['title']["#text"]) # type: ignore
             else:
-                title = article['title']
+                title = Title(article['title'])
                 
         if 'pages' in article:
             pages = article['pages']
@@ -262,7 +262,7 @@ def dump_it() -> None:
         authlogs = collections.OrderedDict(sorted(authlogs.items()))
         for v, l in authlogs.items():
             if v in interestingauthors:
-                for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')):
+                for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')): # type: ignore
                     s['name'] = s['name'].decode('utf-8') # type: ignore
                     s['title'] = s['title'].decode('utf-8') # type: ignore
                     z.append(s)
