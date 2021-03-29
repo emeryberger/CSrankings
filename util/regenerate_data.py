@@ -14,6 +14,19 @@ from collections import defaultdict
 startyear = 1970
 endyear = 2269
 
+LogType = TypedDict('LogType', { 'name' : bytes,
+                                 'year' : int,
+                                 'title' : bytes,
+                                 'conf' : str,
+                                 'area' : str,
+                                 'institution' : str,
+                                 'numauthors' : int,
+                                 'volume' : str,
+                                 'number' : str,
+                                 'startPage' : int,
+                                 'pageCount' : int
+                                })
+                    
 ArticleType = TypedDict('ArticleType', { 'author' : List[str],
                                          'booktitle' : str,
                                          'journal' : str,
@@ -25,7 +38,7 @@ ArticleType = TypedDict('ArticleType', { 'author' : List[str],
                                          'title' : str })
 
 totalPapers = 0 # for statistics reporting purposes only
-authlogs : Dict[str, List[str]] = defaultdict(list)
+authlogs : Dict[str, List[LogType]] = defaultdict(list)
 interestingauthors : Dict[str, int] = defaultdict(int)
 authorscores : Dict[Tuple[str, str, int], float] = defaultdict(float)
 authorscoresAdjusted : Dict[Tuple[str, str, int], float] = defaultdict(float)
@@ -103,20 +116,22 @@ def handle_article(_ : Any, article : ArticleType) -> bool:
         if not 'author' in article:
             return True
         # Fix if there is just one author.
-        if type(article['author']) != list:
+        authorList : List[str] = []
+        if type(article['author']) == list:
+            authorList = article['author']
+        else:
             if type(article['author']) == str:
-                article['author'] = [str(article['author'])]
+                authorList = [str(article['author'])]
             elif type(article['author']) is collections.OrderedDict:
-                article['author'] = [article['author']["#text"]]
+                authorList = [article['author']["#text"]] # type: ignore
             else:
                 print("***Unknown record type, skipping.***")
                 return True
-        authorList = article['author']
         authorsOnPaper = len(authorList)
         foundOneInDict = False
         for authorName in authorList:
             if type(authorName) is collections.OrderedDict:
-                aName = cast(str, authorName["#text"])
+                aName = authorName["#text"] # type: ignore
             else:
                 aName = authorName
             aName = aName.strip()
@@ -176,9 +191,12 @@ def handle_article(_ : Any, article : ArticleType) -> bool:
                     areaname = 'vr'
 
         if 'title' in article:
-            title = article['title']
-            if type(title) is collections.OrderedDict:
-                title = title["#text"]
+            title : str = ""
+            if type(article['title']) is collections.OrderedDict:
+                title = article['title']["#text"] # type: ignore
+            else:
+                title = article['title']
+                
         if 'pages' in article:
             pages = article['pages']
             pageCount = pagecount(pages)
@@ -197,27 +215,25 @@ def handle_article(_ : Any, article : ArticleType) -> bool:
     if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
         totalPapers += 1
         for authorName in authorList:
-            aName = cast(str, authorName)
+            aName = ""
             if type(authorName) is collections.OrderedDict:
-                aName = cast(str, authorName["#text"])
+                aName = authorName["#text"] # type: ignore
+            elif type(authorName) is str:
+                aName = authorName
             realName = aliasdict.get(aName, aName)
             if realName in facultydict:
-                log = { 'name' : realName.encode('utf-8'),
-                        'year' : year,
-                        'title' : title.encode('utf-8'),
-                        'conf' : confname,
-                        'area' : areaname,
-                        'institution' : facultydict[realName],
-                        'numauthors' : authorsOnPaper }
-                if volume != "":
-                    log['volume'] = volume
-                if number != "":
-                    log['number'] = number
-                if startPage != "":
-                    log['startPage'] = startPage
-                if pageCount != "":
-                    log['pageCount'] = pageCount
-                tmplist = authlogs.get(realName, [])
+                log : LogType = { 'name' : realName.encode('utf-8'),
+                                  'year' : year,
+                                  'title' : title.encode('utf-8'),
+                                  'conf' : confname,
+                                  'area' : areaname,
+                                  'institution' : facultydict[realName],
+                                  'numauthors' : authorsOnPaper,
+                                  'volume' : volume,
+                                  'number' : number,
+                                  'startPage' : startPage,
+                                  'pageCount' : pageCount }
+                tmplist : List[LogType] = authlogs.get(realName, [])
                 tmplist.append(log)
                 authlogs[realName] = tmplist
                 interestingauthors[realName] += 1
@@ -259,8 +275,8 @@ def dump_it() -> None:
         for v, l in authlogs.items():
             if v in interestingauthors:
                 for s in sorted(l, key=lambda x: x['name'].decode('utf-8')+str(x['year'])+x['conf']+x['title'].decode('utf-8')):
-                    s['name'] = s['name'].decode('utf-8')
-                    s['title'] = s['title'].decode('utf-8')
+                    s['name'] = s['name'].decode('utf-8') # type: ignore
+                    s['title'] = s['title'].decode('utf-8') # type: ignore
                     z.append(s)
         json.dump(z, f, indent=2)
 
