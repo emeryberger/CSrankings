@@ -68,6 +68,7 @@ authorscores : Dict[Tuple[str, str, int], float] = defaultdict(float)
 authorscoresAdjusted : Dict[Tuple[str, str, int], float] = defaultdict(float)
 facultydict : Dict[str, str] = defaultdict(str)
 aliasdict : Dict[str, str] = {}
+reversealiasdict : Dict[str, str] = {}
 counter = 0
 successes = 0
 failures = 0
@@ -83,6 +84,7 @@ def build_dicts() -> None:
     global confdict
     global facultydict
     global aliasdict
+    global reversealiasdict
     # Build a dictionary mapping conferences to areas.
     # e.g., confdict['CVPR'] = 'vision'.
     confdict = {}
@@ -94,6 +96,7 @@ def build_dicts() -> None:
 
     facultydict = defaultdict(str)
     aliasdict = {}
+    reversealiasdict = {}
     
     with open("faculty-affiliations.csv") as f:
         rdr = csv.DictReader(f)
@@ -104,6 +107,7 @@ def build_dicts() -> None:
         rdr = csv.DictReader(f)
         for row in rdr:
             aliasdict[row["alias"]] = row["name"]
+            reversealiasdict[row["name"]] = row["alias"]
     
     # Count and report the total number of faculty in the database.
     totalFaculty = 0
@@ -151,10 +155,16 @@ def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
                 if aName in facultydict or args.all:
                     foundOneInDict = True
                     break
-                if aName in aliasdict:
+                try:
                     if aliasdict[aName] in facultydict:
                         foundOneInDict = True
                         break
+                    if reversealiasdict[aName] in facultydict:
+                        foundOneInDict = True
+                        break
+                except:
+                    pass
+                        
             if not foundOneInDict:
                 return True
         if 'booktitle' in article:
@@ -237,13 +247,23 @@ def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
             elif type(authorName) is str:
                 aName = authorName
             realName = aliasdict.get(aName, aName)
-            if realName in facultydict or args.all:
+            affiliation = facultydict[realName]
+            try:
+                if not affiliation:
+                    if realName in aliasdict:
+                        affiliation = facultydict[aliasdict[realName]]
+                    else:
+                        affiliation = facultydict[reversealiasdict[realName]]
+            except:
+                pass
+                                              
+            if realName in facultydict or realName in aliasdict or realName in reversealiasdict or args.all:
                 log : LogType = { 'name' : realName.encode('utf-8'),
                                   'year' : year,
                                   'title' : title.encode('utf-8'),
                                   'conf' : confname,
                                   'area' : areaname,
-                                  'institution' : facultydict[realName],
+                                  'institution' : affiliation,
                                   'numauthors' : authorsOnPaper,
                                   'volume' : volume,
                                   'number' : number,
