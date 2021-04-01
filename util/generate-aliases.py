@@ -24,7 +24,7 @@ def parseDBLP(facultydict):
             authors = 0
             authorList = []
 
-            print((node.tag))
+            # print((node.tag))
             if (node.tag == 'www'):
                 for child in node:
                     if (child.tag == 'author'):
@@ -36,7 +36,7 @@ def parseDBLP(facultydict):
                 if (authors > 1):
                     pairs = [(authorList[0],item) for item in authorList[1:]]
                     for p in pairs:
-                        print(p[1] + "," + p[0])
+                        print(p[1].decode('utf-8') + "," + p[0].decode('utf-8'))
                 
 
 parseDBLP(facultydict)
