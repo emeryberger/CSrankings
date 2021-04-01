@@ -1,3 +1,4 @@
+import argparse
 import gzip
 import xmltodict
 import collections
@@ -10,6 +11,29 @@ from typing import cast, Any, Dict, List, Tuple, TypedDict, Union
 from csrankings import Area, Conference, Title, countPaper, pagecount, startpage, confdict, areadict, TOG_SIGGRAPH_Volume, TOG_SIGGRAPH_Asia_Volume, TVCG_Vis_Volume, TVCG_VR_Volume
 from collections import defaultdict
 
+parser = argparse.ArgumentParser(
+    prog="csrankings",
+    description="Regenerate CSrankings data.",
+    formatter_class=argparse.RawTextHelpFormatter,
+    allow_abbrev=False)
+
+parser.add_argument(
+    "--all",
+    dest="all",
+    action="store_const",
+    const=True,
+    default=False,
+    help="Generate data for all authors, not just authors in the faculty database (csrankings-[0-9].csv) (default: False)")
+
+parser.add_argument(
+    "--conference",
+    dest="conference",
+    type=str,
+    default="",
+    help="Only use conferences that match this string (default: all conferences)")
+
+args, left = parser.parse_known_args()
+    
 # Consider pubs in this range only.
 startyear = 1970
 endyear = 2269
@@ -42,7 +66,7 @@ authlogs : Dict[str, List[LogType]] = defaultdict(list)
 interestingauthors : Dict[str, int] = defaultdict(int)
 authorscores : Dict[Tuple[str, str, int], float] = defaultdict(float)
 authorscoresAdjusted : Dict[Tuple[str, str, int], float] = defaultdict(float)
-facultydict : Dict[str, str] = {}
+facultydict : Dict[str, str] = defaultdict(str)
 aliasdict : Dict[str, str] = {}
 counter = 0
 successes = 0
@@ -68,7 +92,7 @@ def build_dicts() -> None:
             confdict[item] = k
             venues.append(item)
 
-    facultydict = {}
+    facultydict = defaultdict(str)
     aliasdict = {}
     
     with open("faculty-affiliations.csv") as f:
@@ -116,22 +140,23 @@ def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
                 print("***Unknown record type, skipping.***")
                 return True
         authorsOnPaper = len(authorList)
-        foundOneInDict = False
-        for authorName in authorList:
-            if type(authorName) is collections.OrderedDict:
-                aName = authorName["#text"] # type: ignore
-            else:
-                aName = authorName
-            aName = aName.strip()
-            if aName in facultydict:
-                foundOneInDict = True
-                break
-            if aName in aliasdict:
-                if aliasdict[aName] in facultydict:
+        foundOneInDict = False or args.all
+        if not args.all:
+            for authorName in authorList:
+                if type(authorName) is collections.OrderedDict:
+                    aName = authorName["#text"] # type: ignore
+                else:
+                    aName = authorName
+                aName = aName.strip()
+                if aName in facultydict or args.all:
                     foundOneInDict = True
                     break
-        if not foundOneInDict:
-            return True
+                if aName in aliasdict:
+                    if aliasdict[aName] in facultydict:
+                        foundOneInDict = True
+                        break
+            if not foundOneInDict:
+                return True
         if 'booktitle' in article:
             confname = Conference(article['booktitle'])
         elif 'journal' in article:
@@ -139,6 +164,9 @@ def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
         else:
             return True
 
+        if not args.conference in confname:
+            return True
+        
         if not confname in confdict:
             return True
         
@@ -209,7 +237,7 @@ def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
             elif type(authorName) is str:
                 aName = authorName
             realName = aliasdict.get(aName, aName)
-            if realName in facultydict:
+            if realName in facultydict or args.all:
                 log : LogType = { 'name' : realName.encode('utf-8'),
                                   'year' : year,
                                   'title' : title.encode('utf-8'),
