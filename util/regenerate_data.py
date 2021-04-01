@@ -247,17 +247,16 @@ def handle_article(_ : Any, article : ArticleType) -> bool: # type: ignore
             elif type(authorName) is str:
                 aName = authorName
             realName = aliasdict.get(aName, aName)
-            affiliation = facultydict[realName]
-            try:
-                if not affiliation:
-                    if realName in aliasdict:
-                        affiliation = facultydict[aliasdict[realName]]
-                    else:
-                        affiliation = facultydict[reversealiasdict[realName]]
-            except:
-                pass
-                                              
-            if realName in facultydict or realName in aliasdict or realName in reversealiasdict or args.all:
+            affiliation = ""
+            if realName in facultydict:
+                affiliation = facultydict[realName]
+            elif realName in aliasdict:
+                affiliation = facultydict[aliasdict[realName]]
+            elif realName in reversealiasdict:
+                affiliation = facultydict[reversealiasdict[realName]]
+            facultydict[realName] = affiliation
+            
+            if (affiliation and (realName in facultydict or realName in aliasdict or realName in reversealiasdict)) or args.all:
                 log : LogType = { 'name' : realName.encode('utf-8'),
                                   'year' : year,
                                   'title' : title.encode('utf-8'),
