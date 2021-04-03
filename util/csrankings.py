@@ -564,6 +564,8 @@ def countPaper(
                 (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
                 if pseudovolume < int(startpv) or pseudovolume > int(endpv):
                     return False
+                if number != EMSOFT_TECS[year][1]:
+                    return False
         else:
             return False
 
