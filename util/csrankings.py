@@ -574,7 +574,7 @@ def countPaper(
                     if number != EMSOFT_TECS[year][1]:
                         return False
             else:
-                if volume != EMSOFT_TCAD[year][0] or number != EMSOFT_TCAD[year][1] or startPage not in EMSOFT_TCAD_PaperStart[year]:
+                if not(int(volume) == EMSOFT_TCAD[year][0] and int(number) == EMSOFT_TCAD[year][1] and int(startPage) in EMSOFT_TCAD_PaperStart[year]):
                     return False
         else:
             return False
