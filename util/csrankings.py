@@ -128,6 +128,7 @@ areadict : Dict[Area, List[Conference]] = {
         Conference("EMSOFT"),
         Conference("ACM Trans. Embedded Comput. Syst."),
         Conference("ACM Trans. Embed. Comput. Syst."),
+        Conference("IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.")
     ],  # TECS: issue number & page numbers must be checked
     Area("rtss"): [Conference("RTSS")],
     Area("rtas"): [
@@ -268,9 +269,13 @@ areadict : Dict[Area, List[Conference]] = {
     # ,'cse' : ['SIGCSE']
 }
 
-# EMSOFT is now published as a special issue of TECS, in a particular page range.
+# EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
 EMSOFT_TECS = {2017: (16, 5), 2019: (18, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110)}
+
+EMSOFT_TCAD = {2020: (39, 11)}
+EMSOFT_TCAD_PaperStart = { 2020: { 3215, 3227, 3288, 3323, 3336, 3348, 3385, 3420, 3433, 3467, 3492, 3506, 3555, 3566, 3650, 3662, 3674, 3711, 3762, 3809, 3856, 3868, 3893, 3906, 3931, 3944, 3981, 3993, 4006, 4018, 4090, 4102, 4142, 4166, 4205}}
+
 
 # DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
 DAC_TooShortPapers = {
@@ -554,17 +559,22 @@ def countPaper(
 
     # Special handling for EMSOFT.
     if (
-        confname == "ACM Trans. Embedded Comput. Syst."
-        or confname == "ACM Trans. Embed. Comput. Syst."
+            confname == "ACM Trans. Embedded Comput. Syst."
+            or confname == "ACM Trans. Embed. Comput. Syst."
+            or confname == "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."
     ):
-        if year in EMSOFT_TECS:
-            pvmatcher = TECSCounterColon.match(pages)
-            if not pvmatcher is None:
-                pseudovolume = int(pvmatcher.group(1))
-                (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
-                if pseudovolume < int(startpv) or pseudovolume > int(endpv):
-                    return False
-                if number != EMSOFT_TECS[year][1]:
+        if year in EMSOFT_TECS or year in EMSOFT_TCAD:
+            if year in EMSOFT_TECS:
+                pvmatcher = TECSCounterColon.match(pages)
+                if not pvmatcher is None:
+                    pseudovolume = int(pvmatcher.group(1))
+                    (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
+                    if pseudovolume < int(startpv) or pseudovolume > int(endpv):
+                        return False
+                    if number != EMSOFT_TECS[year][1]:
+                        return False
+            else:
+                if volume != EMSOFT_TCAD[year][0] or number != EMSOFT_TCAD[year][1] or startPage not in EMSOFT_TCAD_PaperStart[year]:
                     return False
         else:
             return False
