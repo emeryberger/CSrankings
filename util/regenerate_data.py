@@ -286,23 +286,8 @@ def dump_it() -> None:
         f.write('"name","dept","area","count","adjustedcount","year"\n')
         authorscores = collections.OrderedDict(sorted(authorscores.items()))
         for ((authorName, area, year), count) in authorscores.items():
-            # count = authorscores[(authorName, area, year)]
-            # print(authorName)
             countAdjusted = authorscoresAdjusted[(authorName, area, year)]
-            f.write(authorName)
-            f.write(',')
-            f.write(facultydict[authorName])
-            f.write(',')
-            f.write(area)
-#            f.write(',')
-#            f.write(subarea)
-            f.write(',')
-            f.write(str(count))
-            f.write(',')
-            f.write(str(countAdjusted))
-            f.write(',')
-            f.write(str(year))
-            f.write('\n')
+            f.write(f"{authorName},{facultydict[authorName]},{area},{count},{countAdjusted:1.5},{year}\n")
 
     with open('articles.json','w') as f:
         z = []
