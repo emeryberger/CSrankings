@@ -38,7 +38,7 @@ clean-dblp:
 download-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
-	wget https://dblp.org/xml/dblp.xml.gz
+	curl -o dblp.xml.gz https://dblp.org/xml/dblp.xml.gz
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file."
