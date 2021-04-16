@@ -557,26 +557,27 @@ def countPaper(
     if year < startyear or year > endyear:
         return False
 
-    # Special handling for EMSOFT.
+    # Special handling for EMSOFT (TECS).
     if (
             confname == "ACM Trans. Embedded Comput. Syst."
             or confname == "ACM Trans. Embed. Comput. Syst."
-            or confname == "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."
     ):
-        if year in EMSOFT_TECS or year in EMSOFT_TCAD:
-            if year in EMSOFT_TECS:
-                pvmatcher = TECSCounterColon.match(pages)
-                if not pvmatcher is None:
-                    pseudovolume = int(pvmatcher.group(1))
-                    (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
-                    if pseudovolume < int(startpv) or pseudovolume > int(endpv):
-                        return False
-                    if number != EMSOFT_TECS[year][1]:
-                        return False
-            else:
-                if not(int(volume) == EMSOFT_TCAD[year][0] and int(number) == EMSOFT_TCAD[year][1] and int(startPage) in EMSOFT_TCAD_PaperStart[year]):
-                    return False
-        else:
+        if not year in EMSOFT_TECS:
+            return False
+        pvmatcher = TECSCounterColon.match(pages)
+        if pvmatcher:
+            pseudovolume = int(pvmatcher.group(1))
+            (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
+            if pseudovolume < int(startpv) or pseudovolume > int(endpv):
+                return False
+            if number != EMSOFT_TECS[year][1]:
+                return False
+
+    # Special handling for EMSOFT (TCAD)
+    if (confname == "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."):
+        if not year in EMSOFT_TCAD:
+            return False
+        if not(int(volume) == EMSOFT_TCAD[year][0] and int(number) == EMSOFT_TCAD[year][1] and int(startPage) in EMSOFT_TCAD_PaperStart[year]):
             return False
 
     # Special handling for ISMB.
