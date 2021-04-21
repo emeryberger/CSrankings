@@ -11,5 +11,6 @@
 	"strictNullChecks": true,
 	"pretty": true
     },
-    "files": [ "csrankings.ts" ]
+    "files": [ "csrankings.ts", "continents.ts" ],
+    "moduleResolution": "node"
 }
