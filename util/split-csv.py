@@ -17,6 +17,22 @@ def csv2dict_str_str(fname):
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
     return d
 
+# Merge all 'csrankings-[0-9].csv' into 'csrankings.csv'.
+with open('csrankings.csv', mode='w') as outfile:
+    fieldnames = ["name","affiliation","homepage","scholarid"]
+    writer = csv.DictWriter(outfile, fieldnames)
+    writer.writeheader()
+    for i in range(10):
+        try:
+            fname = "csrankings-" + str(i) + ".csv"
+            with open(fname, mode='r') as infile:
+                reader = csv.DictReader(infile)
+                for row in reader:
+                    writer.writerow(row)
+        except BaseException as be:
+            pass
+
+# Now create all the subsidiary files.
 with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     with open('homepages.csv', mode='w') as homepages:

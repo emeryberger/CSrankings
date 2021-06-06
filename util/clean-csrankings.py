@@ -7,6 +7,7 @@ import csv
 import gzip
 import json
 import operator
+import os
 import pkg_resources
 import random
 import re
@@ -53,6 +54,10 @@ aliasToName = {}
 with open('dblp-aliases.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
+        if not row['name']:
+            print(row)
+        if not row['alias']:
+            print(row)
         if row['name'] in aliases:
             aliases[row['name']].append(row['alias'])
         else:
@@ -75,16 +80,18 @@ with open('country-info.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         if row['institution'] != "":
-            countryinfo[row['institution']] = { 'region' : row['region'] }
+            countryinfo[row['institution']] = { 'region' : row['region'],
+                                                'countryabbrv' : row['countryabbrv'] }
 
 # Sort it and write it back.
 with open('country-info.csv', mode='w') as outfile:
-    sfieldnames = ['institution', 'region']
+    sfieldnames = ['institution', 'region', 'countryabbrv']
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
     for n in collections.OrderedDict(sorted(countryinfo.items())):
         h = { 'institution' : n,
-              'region'      : countryinfo[n]['region'] }
+              'region'      : countryinfo[n]['region'],
+              'countryabbrv': countryinfo[n]['countryabbrv'] }
         swriter.writerow(h)
         
 
@@ -142,7 +149,7 @@ for n in aliases:
 aliases = new_aliases
     
 # Rewrite aliases file without cycles or names not in the csrankings database.
-with open('dblp-aliases.csv', mode='w') as outfile:
+with open('dblp-aliases.csv-x', mode='w') as outfile:
     sfieldnames = ['alias', 'name']
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
@@ -150,7 +157,10 @@ with open('dblp-aliases.csv', mode='w') as outfile:
         for a in aliases[n]:
             h = { 'alias' : a, 'name' : n }
             swriter.writerow(h)
+    outfile.flush()
+    os.fsync(outfile.fileno())
 
+os.rename('dblp-aliases.csv-x', 'dblp-aliases.csv')
 
 # Add any missing aliases.
 for name in aliases:
@@ -250,8 +260,8 @@ for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reve
             # All affiliations the same.
             for (n, v) in mapscores:
                 if v == 0.0:
-                    print("DELETING " + n)
-                    del csrankings[n]
+                    print("DELETING " + n + " (currently disabled)")
+                    # del csrankings[n]
 
 
 # Look up web sites. If we get a 404 or similar, disable the homepage for now.
