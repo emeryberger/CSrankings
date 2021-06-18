@@ -19,17 +19,22 @@ def csv2dict_str_str(fname):
     return d
 
 # Merge all 'csrankings-*.csv' into 'csrankings.csv'.
+
+added = set()
 with open('csrankings.csv', mode='w') as outfile:
     fieldnames = ["name","affiliation","homepage","scholarid"]
     writer = csv.DictWriter(outfile, fieldnames)
     writer.writeheader()
     for i in list(string.ascii_lowercase + string.digits):
+        print("processing " + i)
         try:
             fname = "csrankings-" + i + ".csv"
             with open(fname, mode='r') as infile:
                 reader = csv.DictReader(infile)
                 for row in reader:
-                    writer.writerow(row)
+                    if str(row) not in added:
+                        writer.writerow(row)
+                        added.add(str(row))
         except BaseException as be:
             pass
 
