@@ -88,6 +88,9 @@ generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	@$(PYPY) util/regenerate_data.py
 	@echo "Done."
+	@$(MAKE) clean-csrankings
+	@$(PYPY) util/split-csrankings.py
+	@$(MAKE) clean-csrankings
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
 	@echo "Generating the list of all publications (all-author-info.csv)."
