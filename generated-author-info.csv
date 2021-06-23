@@ -12030,6 +12030,17 @@ Avigdor Gal,Technion,ijcai,1.0,0.33333,2020
 Avigdor Gal,Technion,vldb,1.0,0.25,2016
 Avigdor Gal,Technion,vldb,1.0,0.33333,2020
 Avigdor Gal,Technion,www,1.0,0.33333,2016
+Avinash Karanth,Ohio University,dac,1.0,0.25,2018
+Avinash Karanth,Ohio University,hpca,1.0,0.33333,2014
+Avinash Karanth,Ohio University,hpca,1.0,0.25,2018
+Avinash Karanth,Ohio University,hpca,1.0,0.25,2020
+Avinash Karanth,Ohio University,hpca,2.0,0.5,2021
+Avinash Karanth,Ohio University,iccad,1.0,0.2,2011
+Avinash Karanth,Ohio University,isca,1.0,0.33333,2008
+Avinash Karanth,Ohio University,isca,1.0,0.25,2019
+Avinash Karanth,Ohio University,micro,1.0,0.33333,2012
+Avinash Karanth,Ohio University,micro,1.0,0.25,2016
+Avinash Karanth,Ohio University,sc,1.0,0.5,2007
 Avinash Sharma 0001,IIIT Hyderabad,cvpr,1.0,0.25,2011
 Avinash Sharma 0001,IIIT Hyderabad,eccv,1.0,0.5,2008
 Avinash Sharma 0001,IIIT Hyderabad,eccv,1.0,0.33333,2010
@@ -12356,6 +12367,8 @@ B. Aditya Prakash,Georgia Institute of Technology,www,1.0,0.2,2018
 B. John Oommen,Carleton University,aaai,1.0,0.25,1986
 B. John Oommen,Carleton University,icra,1.0,0.5,1986
 B. John Oommen,Carleton University,sigir,1.0,0.5,1987
+B. Prabhakaran 0001,University of Texas at Dallas,icde,1.0,0.33333,1998
+B. Prabhakaran 0001,University of Texas at Dallas,vldb,1.0,0.33333,2017
 B. R. Badrinath,Rutgers University,icde,1.0,0.5,1987
 B. R. Badrinath,Rutgers University,icde,1.0,0.5,1999
 B. R. Badrinath,Rutgers University,mobicom,2.0,1.0,1995
@@ -17310,10 +17323,10 @@ Bruno C. da Silva 0001,University of Massachusetts Amherst,icml,1.0,0.33333,2014
 Bruno C. da Silva 0001,University of Massachusetts Amherst,icml,1.0,0.25,2016
 Bruno C. da Silva 0001,University of Massachusetts Amherst,icra,1.0,0.25,2014
 Bruno C. da Silva 0001,University of Massachusetts Amherst,iros,1.0,0.33333,2017
-Bruno Crispo,KU Leuven,ccs,1.0,0.33333,1997
-Bruno Crispo,KU Leuven,pets,1.0,0.2,2017
-Bruno Crispo,KU Leuven,usenixsec,1.0,0.16667,2020
-Bruno Crispo,KU Leuven,www,1.0,0.16667,2018
+Bruno Crispo,University of Trento,ccs,1.0,0.33333,1997
+Bruno Crispo,University of Trento,pets,1.0,0.2,2017
+Bruno Crispo,University of Trento,usenixsec,1.0,0.16667,2020
+Bruno Crispo,University of Trento,www,1.0,0.16667,2018
 Bruno Lang,University of Wuppertal,ics,1.0,0.25,2001
 Bruno Martins 0001,Universidade de Lisboa,emnlp,1.0,0.33333,2015
 Bruno Martins 0001,Universidade de Lisboa,ubicomp,1.0,0.33333,2012
@@ -20947,66 +20960,66 @@ Chris Clifton,Purdue University,sigmod,1.0,0.14286,1998
 Chris Clifton,Purdue University,sigmod,1.0,0.33333,2007
 Chris Clifton,Purdue University,vldb,1.0,0.5,1990
 Chris Clifton,Purdue University,vldb,1.0,0.5,1994
-Chris Ding,University of Texas at Arlington,aaai,1.0,0.33333,2006
-Chris Ding,University of Texas at Arlington,aaai,2.0,0.66667,2010
-Chris Ding,University of Texas at Arlington,aaai,3.0,1.0,2011
-Chris Ding,University of Texas at Arlington,aaai,1.0,0.33333,2012
-Chris Ding,University of Texas at Arlington,aaai,2.0,0.5,2013
-Chris Ding,University of Texas at Arlington,aaai,4.0,1.5,2014
-Chris Ding,University of Texas at Arlington,aaai,2.0,0.45,2015
-Chris Ding,University of Texas at Arlington,aaai,2.0,0.5,2017
-Chris Ding,University of Texas at Arlington,aaai,1.0,0.11111,2018
-Chris Ding,University of Texas at Arlington,aaai,1.0,0.33333,2019
-Chris Ding,University of Texas at Arlington,cvpr,2.0,0.83333,2008
-Chris Ding,University of Texas at Arlington,cvpr,1.0,0.33333,2009
-Chris Ding,University of Texas at Arlington,cvpr,1.0,0.33333,2011
-Chris Ding,University of Texas at Arlington,cvpr,1.0,0.25,2012
-Chris Ding,University of Texas at Arlington,cvpr,2.0,0.5,2013
-Chris Ding,University of Texas at Arlington,cvpr,1.0,0.25,2017
-Chris Ding,University of Texas at Arlington,eccv,3.0,1.0,2010
-Chris Ding,University of Texas at Arlington,eccv,1.0,0.25,2012
-Chris Ding,University of Texas at Arlington,eccv,1.0,0.16667,2018
-Chris Ding,University of Texas at Arlington,iccv,1.0,0.33333,2009
-Chris Ding,University of Texas at Arlington,iccv,4.0,0.97619,2011
-Chris Ding,University of Texas at Arlington,iccv,1.0,0.5,2013
-Chris Ding,University of Texas at Arlington,icde,1.0,0.25,2011
-Chris Ding,University of Texas at Arlington,icml,2.0,1.0,2004
-Chris Ding,University of Texas at Arlington,icml,1.0,0.25,2006
-Chris Ding,University of Texas at Arlington,icml,1.0,0.5,2007
-Chris Ding,University of Texas at Arlington,icml,1.0,0.25,2011
-Chris Ding,University of Texas at Arlington,icml,1.0,0.25,2012
-Chris Ding,University of Texas at Arlington,ics,1.0,0.5,2000
-Chris Ding,University of Texas at Arlington,ijcai,1.0,1.0,2003
-Chris Ding,University of Texas at Arlington,ijcai,4.0,1.1167,2011
-Chris Ding,University of Texas at Arlington,ijcai,4.0,1.0333,2013
-Chris Ding,University of Texas at Arlington,ijcai,1.0,0.33333,2016
-Chris Ding,University of Texas at Arlington,ijcai,1.0,0.5,2019
-Chris Ding,University of Texas at Arlington,ismb,1.0,0.25,2012
-Chris Ding,University of Texas at Arlington,kdd,1.0,0.33333,2001
-Chris Ding,University of Texas at Arlington,kdd,1.0,0.25,2006
-Chris Ding,University of Texas at Arlington,kdd,1.0,0.25,2007
-Chris Ding,University of Texas at Arlington,kdd,2.0,0.58333,2008
-Chris Ding,University of Texas at Arlington,kdd,1.0,0.33333,2009
-Chris Ding,University of Texas at Arlington,kdd,1.0,0.25,2013
-Chris Ding,University of Texas at Arlington,nips,1.0,0.2,2001
-Chris Ding,University of Texas at Arlington,nips,1.0,0.33333,2005
-Chris Ding,University of Texas at Arlington,nips,1.0,0.25,2010
-Chris Ding,University of Texas at Arlington,nips,1.0,0.2,2011
-Chris Ding,University of Texas at Arlington,nips,2.0,0.5,2012
-Chris Ding,University of Texas at Arlington,nips,1.0,0.2,2014
-Chris Ding,University of Texas at Arlington,nips,1.0,0.2,2017
-Chris Ding,University of Texas at Arlington,recomb,1.0,1.0,2002
-Chris Ding,University of Texas at Arlington,recomb,2.0,0.58333,2012
-Chris Ding,University of Texas at Arlington,recomb,1.0,0.33333,2014
-Chris Ding,University of Texas at Arlington,sc,1.0,1.0,1993
-Chris Ding,University of Texas at Arlington,sc,1.0,0.5,1996
-Chris Ding,University of Texas at Arlington,sc,1.0,0.055556,1997
-Chris Ding,University of Texas at Arlington,sc,2.0,0.75,1999
-Chris Ding,University of Texas at Arlington,sc,1.0,0.5,2001
-Chris Ding,University of Texas at Arlington,sc,1.0,0.5,2002
-Chris Ding,University of Texas at Arlington,sigir,1.0,1.0,1999
-Chris Ding,University of Texas at Arlington,sigir,2.0,0.5,2008
-Chris Ding,University of Texas at Arlington,sigir,1.0,0.25,2011
+Chris Ding,The Chinese University of Hong Kong,aaai,1.0,0.33333,2006
+Chris Ding,The Chinese University of Hong Kong,aaai,2.0,0.66667,2010
+Chris Ding,The Chinese University of Hong Kong,aaai,3.0,1.0,2011
+Chris Ding,The Chinese University of Hong Kong,aaai,1.0,0.33333,2012
+Chris Ding,The Chinese University of Hong Kong,aaai,2.0,0.5,2013
+Chris Ding,The Chinese University of Hong Kong,aaai,4.0,1.5,2014
+Chris Ding,The Chinese University of Hong Kong,aaai,2.0,0.45,2015
+Chris Ding,The Chinese University of Hong Kong,aaai,2.0,0.5,2017
+Chris Ding,The Chinese University of Hong Kong,aaai,1.0,0.11111,2018
+Chris Ding,The Chinese University of Hong Kong,aaai,1.0,0.33333,2019
+Chris Ding,The Chinese University of Hong Kong,cvpr,2.0,0.83333,2008
+Chris Ding,The Chinese University of Hong Kong,cvpr,1.0,0.33333,2009
+Chris Ding,The Chinese University of Hong Kong,cvpr,1.0,0.33333,2011
+Chris Ding,The Chinese University of Hong Kong,cvpr,1.0,0.25,2012
+Chris Ding,The Chinese University of Hong Kong,cvpr,2.0,0.5,2013
+Chris Ding,The Chinese University of Hong Kong,cvpr,1.0,0.25,2017
+Chris Ding,The Chinese University of Hong Kong,eccv,3.0,1.0,2010
+Chris Ding,The Chinese University of Hong Kong,eccv,1.0,0.25,2012
+Chris Ding,The Chinese University of Hong Kong,eccv,1.0,0.16667,2018
+Chris Ding,The Chinese University of Hong Kong,iccv,1.0,0.33333,2009
+Chris Ding,The Chinese University of Hong Kong,iccv,4.0,0.97619,2011
+Chris Ding,The Chinese University of Hong Kong,iccv,1.0,0.5,2013
+Chris Ding,The Chinese University of Hong Kong,icde,1.0,0.25,2011
+Chris Ding,The Chinese University of Hong Kong,icml,2.0,1.0,2004
+Chris Ding,The Chinese University of Hong Kong,icml,1.0,0.25,2006
+Chris Ding,The Chinese University of Hong Kong,icml,1.0,0.5,2007
+Chris Ding,The Chinese University of Hong Kong,icml,1.0,0.25,2011
+Chris Ding,The Chinese University of Hong Kong,icml,1.0,0.25,2012
+Chris Ding,The Chinese University of Hong Kong,ics,1.0,0.5,2000
+Chris Ding,The Chinese University of Hong Kong,ijcai,1.0,1.0,2003
+Chris Ding,The Chinese University of Hong Kong,ijcai,4.0,1.1167,2011
+Chris Ding,The Chinese University of Hong Kong,ijcai,4.0,1.0333,2013
+Chris Ding,The Chinese University of Hong Kong,ijcai,1.0,0.33333,2016
+Chris Ding,The Chinese University of Hong Kong,ijcai,1.0,0.5,2019
+Chris Ding,The Chinese University of Hong Kong,ismb,1.0,0.25,2012
+Chris Ding,The Chinese University of Hong Kong,kdd,1.0,0.33333,2001
+Chris Ding,The Chinese University of Hong Kong,kdd,1.0,0.25,2006
+Chris Ding,The Chinese University of Hong Kong,kdd,1.0,0.25,2007
+Chris Ding,The Chinese University of Hong Kong,kdd,2.0,0.58333,2008
+Chris Ding,The Chinese University of Hong Kong,kdd,1.0,0.33333,2009
+Chris Ding,The Chinese University of Hong Kong,kdd,1.0,0.25,2013
+Chris Ding,The Chinese University of Hong Kong,nips,1.0,0.2,2001
+Chris Ding,The Chinese University of Hong Kong,nips,1.0,0.33333,2005
+Chris Ding,The Chinese University of Hong Kong,nips,1.0,0.25,2010
+Chris Ding,The Chinese University of Hong Kong,nips,1.0,0.2,2011
+Chris Ding,The Chinese University of Hong Kong,nips,2.0,0.5,2012
+Chris Ding,The Chinese University of Hong Kong,nips,1.0,0.2,2014
+Chris Ding,The Chinese University of Hong Kong,nips,1.0,0.2,2017
+Chris Ding,The Chinese University of Hong Kong,recomb,1.0,1.0,2002
+Chris Ding,The Chinese University of Hong Kong,recomb,2.0,0.58333,2012
+Chris Ding,The Chinese University of Hong Kong,recomb,1.0,0.33333,2014
+Chris Ding,The Chinese University of Hong Kong,sc,1.0,1.0,1993
+Chris Ding,The Chinese University of Hong Kong,sc,1.0,0.5,1996
+Chris Ding,The Chinese University of Hong Kong,sc,1.0,0.055556,1997
+Chris Ding,The Chinese University of Hong Kong,sc,2.0,0.75,1999
+Chris Ding,The Chinese University of Hong Kong,sc,1.0,0.5,2001
+Chris Ding,The Chinese University of Hong Kong,sc,1.0,0.5,2002
+Chris Ding,The Chinese University of Hong Kong,sigir,1.0,1.0,1999
+Chris Ding,The Chinese University of Hong Kong,sigir,2.0,0.5,2008
+Chris Ding,The Chinese University of Hong Kong,sigir,1.0,0.25,2011
 Chris Evans,University College London,ccs,1.0,0.25,2010
 Chris Fox,University of Essex,naacl,1.0,0.25,2012
 Chris Gniady,University of Arizona,aaai,1.0,0.5,2006
@@ -24974,10 +24987,12 @@ Dan Gusfield,Univ. of California - Davis,focs,1.0,0.33333,1990
 Dan Gusfield,Univ. of California - Davis,ismb,1.0,1.0,2000
 Dan Gusfield,Univ. of California - Davis,ismb,1.0,0.33333,2005
 Dan Gusfield,Univ. of California - Davis,ismb,1.0,0.5,2009
+Dan Gusfield,Univ. of California - Davis,oakland,1.0,1.0,1990
 Dan Gusfield,Univ. of California - Davis,recomb,1.0,0.33333,1997
-Dan Gusfield,Univ. of California - Davis,recomb,1.0,0.5,2002
+Dan Gusfield,Univ. of California - Davis,recomb,2.0,1.5,2002
 Dan Gusfield,Univ. of California - Davis,recomb,2.0,0.83333,2005
 Dan Gusfield,Univ. of California - Davis,recomb,1.0,0.2,2006
+Dan Gusfield,Univ. of California - Davis,recomb,1.0,1.0,2009
 Dan Gusfield,Univ. of California - Davis,soda,1.0,0.5,1990
 Dan Gusfield,Univ. of California - Davis,soda,1.0,0.33333,1992
 Dan Gusfield,Univ. of California - Davis,soda,1.0,0.5,1994
@@ -45851,6 +45866,10 @@ Gözde B. Ünal,Istanbul Technical University,cvpr,2.0,1.0,2005
 Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.25,2006
 Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.33333,2007
 Gözde B. Ünal,Istanbul Technical University,cvpr,1.0,0.25,2011
+Gül Çalikli,Chalmers/GU,fse,1.0,0.16667,2012
+Gül Çalikli,Chalmers/GU,fse,1.0,0.2,2019
+Gül Çalikli,Chalmers/GU,icse,1.0,0.33333,2020
+Gül Çalikli,Chalmers/GU,ubicomp,1.0,0.11111,2017
 Gülsen Eryigit,Istanbul Technical University,emnlp,1.0,0.14286,2007
 Günter Rote,Freie Universitaet Berlin,focs,1.0,0.33333,2000
 Günter Rote,Freie Universitaet Berlin,soda,2.0,1.25,2003
@@ -55398,6 +55417,9 @@ James Laird,University of Bath,lics,1.0,0.33333,2011
 James Laird,University of Bath,lics,1.0,0.25,2013
 James Laird,University of Bath,lics,1.0,0.5,2018
 James M. Bieman,Colorado State University,icse,1.0,0.33333,1999
+James M. Purtilo,University of Maryland - College Park,hpdc,1.0,0.5,1996
+James M. Purtilo,University of Maryland - College Park,icse,1.0,0.33333,1991
+James M. Purtilo,University of Maryland - College Park,usenixsec,1.0,0.33333,2018
 James M. Rehg,Georgia Institute of Technology,aaai,1.0,0.25,1988
 James M. Rehg,Georgia Institute of Technology,aaai,1.0,0.25,2005
 James M. Rehg,Georgia Institute of Technology,cvpr,2.0,0.83333,1997
@@ -56032,6 +56054,7 @@ Jan P. H. van Santen,OHSU,naacl,1.0,0.25,2013
 Jan P. H. van Santen,OHSU,soda,1.0,0.5,1996
 Jan Paredis,Maastricht University,ijcai,1.0,1.0,1993
 Jan Paredis,Maastricht University,ijcai,1.0,1.0,1999
+Jan Pedersen 0001,University of Nevada Las Vegas,icse,1.0,0.2,2016
 Jan Peter de Ruiter,Tufts University,iros,1.0,0.16667,2012
 Jan Peters 0001,TU Darmstadt,aaai,1.0,0.25,2008
 Jan Peters 0001,TU Darmstadt,aaai,1.0,0.33333,2010
@@ -57919,7 +57942,7 @@ Jen-Hui Chuang,National Chiao Tung University,eccv,1.0,0.33333,2006
 Jen-Hui Chuang,National Chiao Tung University,icra,1.0,0.5,1991
 Jen-Hui Chuang,National Chiao Tung University,icra,2.0,0.83333,2003
 Jen-Hui Chuang,National Chiao Tung University,icra,1.0,0.25,2005
-Jenay M. Beer,University of South Carolina,icra,1.0,0.25,2011
+Jenay M. Beer,University of Georgia,icra,1.0,0.25,2011
 Jeni Paay,Aalborg University,chiconf,1.0,0.25,2012
 Jeni Paay,Aalborg University,chiconf,1.0,0.16667,2014
 Jeni Paay,Aalborg University,chiconf,1.0,0.2,2015
@@ -58874,11 +58897,11 @@ Jia Li 0003,Beihang University,iccv,1.0,0.2,2015
 Jia Li 0003,Beihang University,iccv,3.0,0.75,2017
 Jia Li 0003,Beihang University,iccv,2.0,0.41667,2019
 Jia Li 0003,Beihang University,iros,1.0,0.2,2019
-Jia Liu 0002,Iowa State University,icml,1.0,0.33333,2020
-Jia Liu 0002,Iowa State University,nips,1.0,0.33333,2019
-Jia Liu 0002,Iowa State University,nips,1.0,0.33333,2020
-Jia Liu 0002,Iowa State University,sigmetrics,1.0,1.0,2016
-Jia Liu 0002,Iowa State University,www,1.0,0.33333,2020
+Jia Liu 0002,Ohio State University,icml,1.0,0.33333,2020
+Jia Liu 0002,Ohio State University,nips,1.0,0.33333,2019
+Jia Liu 0002,Ohio State University,nips,1.0,0.33333,2020
+Jia Liu 0002,Ohio State University,sigmetrics,1.0,1.0,2016
+Jia Liu 0002,Ohio State University,www,1.0,0.33333,2020
 Jia Liu 0008,Nanjing University,nsdi,1.0,0.16667,2020
 Jia Liu 0008,Nanjing University,usenixatc,1.0,0.16667,2020
 Jia Pan,University of Hong Kong,aaai,1.0,0.33333,2010
@@ -61289,40 +61312,40 @@ Jingwen Leng,Shanghai Jiao Tong University,micro,2.0,0.36667,2015
 Jingwen Leng,Shanghai Jiao Tong University,micro,1.0,0.14286,2018
 Jingwen Leng,Shanghai Jiao Tong University,micro,1.0,0.2,2020
 Jingwen Leng,Shanghai Jiao Tong University,sc,1.0,0.1,2020
-Jingyi Yu,University of Delaware,aaai,1.0,0.125,2019
-Jingyi Yu,University of Delaware,cvpr,1.0,0.5,2005
-Jingyi Yu,University of Delaware,cvpr,1.0,0.33333,2006
-Jingyi Yu,University of Delaware,cvpr,4.0,1.2333,2008
-Jingyi Yu,University of Delaware,cvpr,2.0,0.58333,2009
-Jingyi Yu,University of Delaware,cvpr,1.0,0.25,2010
-Jingyi Yu,University of Delaware,cvpr,2.0,0.66667,2011
-Jingyi Yu,University of Delaware,cvpr,2.0,0.5,2012
-Jingyi Yu,University of Delaware,cvpr,3.0,0.91667,2013
-Jingyi Yu,University of Delaware,cvpr,5.0,1.1,2014
-Jingyi Yu,University of Delaware,cvpr,2.0,0.5,2015
-Jingyi Yu,University of Delaware,cvpr,1.0,0.2,2016
-Jingyi Yu,University of Delaware,cvpr,1.0,0.33333,2017
-Jingyi Yu,University of Delaware,cvpr,5.0,1.0929,2018
-Jingyi Yu,University of Delaware,cvpr,1.0,0.25,2019
-Jingyi Yu,University of Delaware,cvpr,3.0,0.51786,2020
-Jingyi Yu,University of Delaware,eccv,1.0,0.5,2004
-Jingyi Yu,University of Delaware,eccv,1.0,0.33333,2010
-Jingyi Yu,University of Delaware,eccv,1.0,0.25,2012
-Jingyi Yu,University of Delaware,eccv,3.0,0.575,2014
-Jingyi Yu,University of Delaware,eccv,2.0,0.45,2018
-Jingyi Yu,University of Delaware,eccv,1.0,0.25,2020
-Jingyi Yu,University of Delaware,iccv,1.0,0.5,2005
-Jingyi Yu,University of Delaware,iccv,1.0,0.16667,2007
-Jingyi Yu,University of Delaware,iccv,1.0,0.33333,2009
-Jingyi Yu,University of Delaware,iccv,3.0,0.66667,2011
-Jingyi Yu,University of Delaware,iccv,3.0,0.78333,2013
-Jingyi Yu,University of Delaware,iccv,2.0,0.5,2015
-Jingyi Yu,University of Delaware,iccv,2.0,0.4,2017
-Jingyi Yu,University of Delaware,iccv,1.0,0.2,2019
-Jingyi Yu,University of Delaware,ijcai,1.0,0.2,2017
-Jingyi Yu,University of Delaware,iros,1.0,0.33333,2017
-Jingyi Yu,University of Delaware,siggraph,1.0,0.2,2004
-Jingyi Yu,University of Delaware,siggraph-asia,1.0,0.25,2008
+Jingyi Yu,ShanghaiTech University,aaai,1.0,0.125,2019
+Jingyi Yu,ShanghaiTech University,cvpr,1.0,0.5,2005
+Jingyi Yu,ShanghaiTech University,cvpr,1.0,0.33333,2006
+Jingyi Yu,ShanghaiTech University,cvpr,4.0,1.2333,2008
+Jingyi Yu,ShanghaiTech University,cvpr,2.0,0.58333,2009
+Jingyi Yu,ShanghaiTech University,cvpr,1.0,0.25,2010
+Jingyi Yu,ShanghaiTech University,cvpr,2.0,0.66667,2011
+Jingyi Yu,ShanghaiTech University,cvpr,2.0,0.5,2012
+Jingyi Yu,ShanghaiTech University,cvpr,3.0,0.91667,2013
+Jingyi Yu,ShanghaiTech University,cvpr,5.0,1.1,2014
+Jingyi Yu,ShanghaiTech University,cvpr,2.0,0.5,2015
+Jingyi Yu,ShanghaiTech University,cvpr,1.0,0.2,2016
+Jingyi Yu,ShanghaiTech University,cvpr,1.0,0.33333,2017
+Jingyi Yu,ShanghaiTech University,cvpr,5.0,1.0929,2018
+Jingyi Yu,ShanghaiTech University,cvpr,1.0,0.25,2019
+Jingyi Yu,ShanghaiTech University,cvpr,3.0,0.51786,2020
+Jingyi Yu,ShanghaiTech University,eccv,1.0,0.5,2004
+Jingyi Yu,ShanghaiTech University,eccv,1.0,0.33333,2010
+Jingyi Yu,ShanghaiTech University,eccv,1.0,0.25,2012
+Jingyi Yu,ShanghaiTech University,eccv,3.0,0.575,2014
+Jingyi Yu,ShanghaiTech University,eccv,2.0,0.45,2018
+Jingyi Yu,ShanghaiTech University,eccv,1.0,0.25,2020
+Jingyi Yu,ShanghaiTech University,iccv,1.0,0.5,2005
+Jingyi Yu,ShanghaiTech University,iccv,1.0,0.16667,2007
+Jingyi Yu,ShanghaiTech University,iccv,1.0,0.33333,2009
+Jingyi Yu,ShanghaiTech University,iccv,3.0,0.66667,2011
+Jingyi Yu,ShanghaiTech University,iccv,3.0,0.78333,2013
+Jingyi Yu,ShanghaiTech University,iccv,2.0,0.5,2015
+Jingyi Yu,ShanghaiTech University,iccv,2.0,0.4,2017
+Jingyi Yu,ShanghaiTech University,iccv,1.0,0.2,2019
+Jingyi Yu,ShanghaiTech University,ijcai,1.0,0.2,2017
+Jingyi Yu,ShanghaiTech University,iros,1.0,0.33333,2017
+Jingyi Yu,ShanghaiTech University,siggraph,1.0,0.2,2004
+Jingyi Yu,ShanghaiTech University,siggraph-asia,1.0,0.25,2008
 Jingyuan Wang,Beihang University,aaai,1.0,0.2,2017
 Jingyuan Wang,Beihang University,aaai,1.0,0.14286,2018
 Jingyuan Wang,Beihang University,aaai,1.0,0.33333,2019
@@ -61419,6 +61442,14 @@ Jinsong Han,Zhejiang University,sensys,2.0,0.29167,2015
 Jinsong Han,Zhejiang University,ubicomp,2.0,0.28571,2016
 Jinsong Han,Zhejiang University,ubicomp,1.0,0.14286,2018
 Jinsong Han,Zhejiang University,vldb,1.0,0.14286,2015
+Jinwoo Choi,Kyung Hee University,eccv,1.0,0.25,2020
+Jinwoo Choi,Kyung Hee University,icra,2.0,0.5,2009
+Jinwoo Choi,Kyung Hee University,icra,1.0,0.25,2010
+Jinwoo Choi,Kyung Hee University,icra,2.0,0.58333,2012
+Jinwoo Choi,Kyung Hee University,iros,1.0,0.33333,2005
+Jinwoo Choi,Kyung Hee University,iros,2.0,0.5,2006
+Jinwoo Choi,Kyung Hee University,iros,1.0,0.33333,2009
+Jinwoo Choi,Kyung Hee University,nips,1.0,0.25,2019
 Jinwoo Shin,KAIST,aaai,1.0,0.125,2021
 Jinwoo Shin,KAIST,cvpr,1.0,0.16667,2018
 Jinwoo Shin,KAIST,cvpr,2.0,0.58333,2020
@@ -64863,6 +64894,7 @@ Joshua San Miguel,University of Wisconsin - Madison,micro,2.0,0.58333,2015
 Joshua San Miguel,University of Wisconsin - Madison,micro,1.0,0.25,2016
 Joshua San Miguel,University of Wisconsin - Madison,micro,1.0,0.14286,2018
 Joshua San Miguel,University of Wisconsin - Madison,micro,1.0,0.2,2019
+Joshua Siegel,Michigan State University,vr,1.0,0.2,2019
 Joshua T. Vogelstein,Johns Hopkins University,fast,1.0,0.16667,2015
 Joshua T. Vogelstein,Johns Hopkins University,hpdc,1.0,0.2,2017
 Joshua T. Vogelstein,Johns Hopkins University,kdd,1.0,0.14286,2020
@@ -68499,6 +68531,9 @@ Kartikeya Mayaram,Oregon State University,dac,1.0,0.14286,1986
 Kartikeya Mayaram,Oregon State University,dac,1.0,0.25,2005
 Kartikeya Mayaram,Oregon State University,dac,1.0,0.16667,2007
 Kartikeya Mayaram,Oregon State University,iccad,1.0,0.2,2007
+Kasim Sinan Yildirim,University of Trento,asplos,2.0,0.36667,2020
+Kasim Sinan Yildirim,University of Trento,sensys,1.0,0.16667,2018
+Kasim Sinan Yildirim,University of Trento,ubicomp,1.0,0.16667,2020
 Kasper Bonne Rasmussen,University of Oxford,ccs,1.0,0.5,2008
 Kasper Bonne Rasmussen,University of Oxford,ccs,1.0,0.25,2009
 Kasper Bonne Rasmussen,University of Oxford,ccs,1.0,0.25,2011
@@ -73099,7 +73134,7 @@ Lars Mikelsons,University of Augsburg,icra,1.0,0.25,2008
 Lars Nagel 0001,Loughborough University,fast,1.0,0.16667,2015
 Lars Nagel 0001,Loughborough University,sc,1.0,0.2,2016
 Lars Nagel 0001,Loughborough University,sigmod,1.0,0.2,2019
-Lars R. Knudsen,DTU,crypto,1.0,0.5,1992
+Lars R. Knudsen,DTU,crypto,2.0,1.5,1992
 Lars R. Knudsen,DTU,crypto,1.0,1.0,1995
 Lars R. Knudsen,DTU,crypto,1.0,0.5,1996
 Lars R. Knudsen,DTU,crypto,1.0,0.5,1997
@@ -78168,6 +78203,17 @@ Magnus Madsen,Aarhus University,oopsla,1.0,0.33333,2017
 Magnus Madsen,Aarhus University,oopsla,1.0,0.25,2018
 Magnus Madsen,Aarhus University,oopsla,3.0,1.5,2020
 Magnus Madsen,Aarhus University,pldi,1.0,0.33333,2016
+Magnus O. Myreen,Chalmers/GU,cav,1.0,0.25,2019
+Magnus O. Myreen,Chalmers/GU,icfp,1.0,0.5,2012
+Magnus O. Myreen,Chalmers/GU,icfp,1.0,0.16667,2016
+Magnus O. Myreen,Chalmers/GU,icfp,1.0,0.2,2017
+Magnus O. Myreen,Chalmers/GU,oopsla,1.0,0.2,2020
+Magnus O. Myreen,Chalmers/GU,pldi,1.0,0.33333,2013
+Magnus O. Myreen,Chalmers/GU,pldi,1.0,0.2,2018
+Magnus O. Myreen,Chalmers/GU,pldi,1.0,0.14286,2019
+Magnus O. Myreen,Chalmers/GU,popl,1.0,0.125,2009
+Magnus O. Myreen,Chalmers/GU,popl,1.0,1.0,2010
+Magnus O. Myreen,Chalmers/GU,popl,1.0,0.25,2014
 Magnus Själander,NTNU,hpca,1.0,0.25,2020
 Magnus Själander,NTNU,isca,1.0,0.2,2019
 Magnus Själander,NTNU,pldi,1.0,0.16667,2018
@@ -80441,20 +80487,20 @@ Marianne Graves Petersen,Aarhus University,chiconf,2.0,0.41667,2020
 Marianne Graves Petersen,Aarhus University,chiconf,1.0,0.33333,2021
 Maribel Fernández,King's College London,lics,1.0,0.33333,1994
 Maribel Fernández,King's College London,lics,1.0,0.5,1998
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,1.0,0.5,1998
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,2.0,1.0,2005
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,1.0,0.16667,2006
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,1.0,0.5,2010
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,1.0,0.5,2011
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,1.0,0.5,2013
-Marie desJardins,Univ. of Maryland - Baltimore County,aaai,1.0,0.125,2020
-Marie desJardins,Univ. of Maryland - Baltimore County,icml,1.0,0.33333,2006
-Marie desJardins,Univ. of Maryland - Baltimore County,icml,1.0,0.25,2008
-Marie desJardins,Univ. of Maryland - Baltimore County,ijcai,1.0,0.16667,2015
-Marie desJardins,Univ. of Maryland - Baltimore County,ijcai,1.0,0.25,2019
-Marie desJardins,Univ. of Maryland - Baltimore County,ismb,1.0,0.2,1997
-Marie desJardins,Univ. of Maryland - Baltimore County,rss,1.0,0.11111,2015
-Marie desJardins,Univ. of Maryland - Baltimore County,vis,1.0,0.33333,2012
+Marie desJardins,Simmons University,aaai,1.0,0.5,1998
+Marie desJardins,Simmons University,aaai,2.0,1.0,2005
+Marie desJardins,Simmons University,aaai,1.0,0.16667,2006
+Marie desJardins,Simmons University,aaai,1.0,0.5,2010
+Marie desJardins,Simmons University,aaai,1.0,0.5,2011
+Marie desJardins,Simmons University,aaai,1.0,0.5,2013
+Marie desJardins,Simmons University,aaai,1.0,0.125,2020
+Marie desJardins,Simmons University,icml,1.0,0.33333,2006
+Marie desJardins,Simmons University,icml,1.0,0.25,2008
+Marie desJardins,Simmons University,ijcai,1.0,0.16667,2015
+Marie desJardins,Simmons University,ijcai,1.0,0.25,2019
+Marie desJardins,Simmons University,ismb,1.0,0.2,1997
+Marie desJardins,Simmons University,rss,1.0,0.11111,2015
+Marie desJardins,Simmons University,vis,1.0,0.33333,2012
 Marie-Francine Moens,KU Leuven,aaai,1.0,0.16667,2014
 Marie-Francine Moens,KU Leuven,aaai,1.0,0.33333,2017
 Marie-Francine Moens,KU Leuven,aaai,1.0,0.33333,2018
@@ -88171,6 +88217,7 @@ Michel C. A. Klein,VU Amsterdam,www,1.0,0.16667,2001
 Michel F. Valstar,University of Nottingham,cvpr,1.0,0.25,2010
 Michel F. Valstar,University of Nottingham,eccv,1.0,0.25,2016
 Michel F. Valstar,University of Nottingham,iccv,2.0,0.53333,2015
+Michel R. V. Chaudron,Chalmers/GU,icse,1.0,0.5,2006
 Michel Steuwer,University of Edinburgh,asplos,1.0,0.16667,2018
 Michel Steuwer,University of Edinburgh,icfp,1.0,0.25,2015
 Michel Steuwer,University of Edinburgh,icfp,1.0,0.16667,2020
@@ -89593,6 +89640,7 @@ Mingyu Xiao,UESTC,aaai,3.0,0.78333,2021
 Mingyu Xiao,UESTC,ijcai,1.0,0.5,2017
 Mingyu Xiao,UESTC,ijcai,1.0,0.5,2018
 Mingyu Xiao,UESTC,ijcai,1.0,0.33333,2019
+Mingzhou Song 0001,New Mexico State University,ijcai,1.0,0.33333,2020
 Minh Hoai,Stony Brook University,aaai,1.0,0.25,2021
 Minh Hoai,Stony Brook University,cvpr,2.0,1.0,2008
 Minh Hoai,Stony Brook University,cvpr,1.0,0.25,2010
@@ -103253,14 +103301,14 @@ Qiang Liu 0001,University of Texas at Austin,nips,7.0,1.6917,2020
 Qiang Ma 0001,Kyoto University,ijcai,1.0,0.2,2017
 Qiang Ma 0001,Kyoto University,sigmod,1.0,0.2,2019
 Qiang Ma 0001,Kyoto University,www,1.0,0.5,2018
-Qiang Tang 0005,NJIT,ccs,1.0,0.5,2013
-Qiang Tang 0005,NJIT,ccs,1.0,0.5,2015
-Qiang Tang 0005,NJIT,ccs,1.0,0.25,2017
-Qiang Tang 0005,NJIT,ccs,1.0,0.2,2020
-Qiang Tang 0005,NJIT,crypto,1.0,0.25,2018
-Qiang Tang 0005,NJIT,eurocrypt,1.0,0.33333,2016
-Qiang Tang 0005,NJIT,ndss,1.0,0.25,2020
-Qiang Tang 0005,NJIT,pets,1.0,0.2,2015
+Qiang Tang 0005,University of Sydney,ccs,1.0,0.5,2013
+Qiang Tang 0005,University of Sydney,ccs,1.0,0.5,2015
+Qiang Tang 0005,University of Sydney,ccs,1.0,0.25,2017
+Qiang Tang 0005,University of Sydney,ccs,1.0,0.2,2020
+Qiang Tang 0005,University of Sydney,crypto,1.0,0.25,2018
+Qiang Tang 0005,University of Sydney,eurocrypt,1.0,0.33333,2016
+Qiang Tang 0005,University of Sydney,ndss,1.0,0.25,2020
+Qiang Tang 0005,University of Sydney,pets,1.0,0.2,2015
 Qiang Xu 0001,Chinese University of Hong Kong,aaai,1.0,0.25,2018
 Qiang Xu 0001,Chinese University of Hong Kong,ccs,1.0,0.33333,2014
 Qiang Xu 0001,Chinese University of Hong Kong,ccs,1.0,0.16667,2016
@@ -107994,6 +108042,7 @@ Richard P. Martin,Rutgers University,sigmetrics,1.0,0.2,1998
 Richard P. Martin,Rutgers University,sigmetrics,1.0,0.5,1999
 Richard P. Martin,Rutgers University,sigmetrics,1.0,0.33333,2002
 Richard P. Martin,Rutgers University,usenixatc,1.0,0.16667,2006
+Richard P. Wildes,York University,aaai,1.0,1.0,1993
 Richard P. Wildes,York University,cvpr,1.0,0.25,1997
 Richard P. Wildes,York University,cvpr,1.0,0.5,2000
 Richard P. Wildes,York University,cvpr,1.0,0.25,2001
@@ -116539,6 +116588,8 @@ Shahriar Nirjon,University of North Carolina,rtas,1.0,0.2,2012
 Shahriar Nirjon,University of North Carolina,rtas,2.0,1.0,2020
 Shahriar Nirjon,University of North Carolina,sensys,1.0,0.1,2012
 Shahriar Nirjon,University of North Carolina,sensys,1.0,0.5,2019
+Shahriar Nirjon,University of North Carolina,ubicomp,1.0,0.25,2019
+Shahriar Nirjon,University of North Carolina,ubicomp,1.0,0.5,2020
 Shai Avidan,Tel Aviv University,aaai,1.0,0.25,2020
 Shai Avidan,Tel Aviv University,cvpr,1.0,0.25,1996
 Shai Avidan,Tel Aviv University,cvpr,1.0,0.5,1997
@@ -117483,6 +117534,8 @@ Sheng Zhong,Nanjing University,mobisys,1.0,0.125,2020
 Sheng Zhong,Nanjing University,pods,1.0,0.33333,2005
 Sheng-Tzong Cheng,National Cheng Kung University,ics,1.0,0.25,2020
 Sheng-hua Zhong,Shenzhen University,aaai,1.0,0.33333,2012
+Sheng-hua Zhong,Shenzhen University,aaai,1.0,0.2,2013
+Sheng-hua Zhong,Shenzhen University,emnlp,1.0,0.25,2020
 Shengdong Zhao,National University of Singapore,chiconf,1.0,0.33333,2006
 Shengdong Zhao,National University of Singapore,chiconf,2.0,0.34286,2007
 Shengdong Zhao,National University of Singapore,chiconf,1.0,0.25,2009
@@ -118570,6 +118623,17 @@ Shree K. Nayar,Columbia University,uist,1.0,0.25,2013
 Shree K. Nayar,Columbia University,uist,1.0,0.5,2016
 Shree K. Nayar,Columbia University,uist,1.0,0.25,2017
 Shree K. Nayar,Columbia University,vr,1.0,0.2,2008
+Shri Narayanan,University of Southern California,aaai,1.0,0.16667,2019
+Shri Narayanan,University of Southern California,acl,1.0,0.33333,1998
+Shri Narayanan,University of Southern California,acl,1.0,0.2,2017
+Shri Narayanan,University of Southern California,acl,1.0,0.33333,2018
+Shri Narayanan,University of Southern California,acl,1.0,0.25,2020
+Shri Narayanan,University of Southern California,emnlp,1.0,0.33333,2006
+Shri Narayanan,University of Southern California,emnlp,2.0,0.75,2015
+Shri Narayanan,University of Southern California,emnlp,1.0,0.25,2020
+Shri Narayanan,University of Southern California,naacl,1.0,0.33333,2006
+Shri Narayanan,University of Southern California,naacl,1.0,0.33333,2007
+Shri Narayanan,University of Southern California,ubicomp,1.0,0.16667,2020
 Shrideep Pallickara,Colorado State University,sc,1.0,0.33333,2004
 Shriram Krishnamurthi,Brown University,ase,1.0,0.25,2001
 Shriram Krishnamurthi,Brown University,ase,1.0,0.33333,2002
@@ -122631,6 +122695,11 @@ Stephen Gould,Australian National University,nips,2.0,0.75,2008
 Stephen Gould,Australian National University,nips,1.0,0.33333,2009
 Stephen Gould,Australian National University,nips,1.0,0.33333,2018
 Stephen Gould,Australian National University,nips,1.0,0.2,2020
+Stephen Hailes,University College London,aaai,1.0,0.33333,2020
+Stephen Hailes,University College London,iros,1.0,0.25,2014
+Stephen Hailes,University College London,iros,1.0,0.2,2016
+Stephen Hailes,University College London,sigir,1.0,0.25,2010
+Stephen Hailes,University College London,ubicomp,1.0,0.33333,2008
 Stephen J. Guy,University of Minnesota,aaai,1.0,0.25,2016
 Stephen J. Guy,University of Minnesota,aaai,1.0,0.2,2018
 Stephen J. Guy,University of Minnesota,icra,1.0,0.25,2011
@@ -124731,6 +124800,10 @@ Surya P. N. Singh,University of Queensland,iros,2.0,0.47619,2010
 Surya P. N. Singh,University of Queensland,iros,1.0,0.33333,2011
 Surya P. N. Singh,University of Queensland,iros,2.0,0.66667,2013
 Surya P. N. Singh,University of Queensland,iros,1.0,0.2,2014
+Sus Lundgren,Chalmers/GU,chiconf,1.0,1.0,2013
+Sus Lundgren,Chalmers/GU,chiconf,1.0,0.33333,2016
+Sus Lundgren,Chalmers/GU,chiconf,1.0,0.2,2017
+Sus Lundgren,Chalmers/GU,chiconf,1.0,0.33333,2019
 Susan A. Murphy,Harvard University,icml,1.0,0.33333,2010
 Susan A. Murphy,Harvard University,icml,1.0,0.14286,2017
 Susan A. Murphy,Harvard University,nips,1.0,0.25,2017
@@ -142355,6 +142428,9 @@ Yang Zhou 0001,Auburn University,vldb,1.0,0.25,2015
 Yang Zhou 0007,Shenzhen University,cvpr,1.0,0.2,2018
 Yang Zhou 0007,Shenzhen University,siggraph,2.0,0.36667,2018
 Yang Zhou 0007,Shenzhen University,siggraph-asia,1.0,0.16667,2015
+YangQuan Chen,Univ. of California - Merced,icra,1.0,0.2,2002
+YangQuan Chen,Univ. of California - Merced,icra,1.0,0.33333,2004
+YangQuan Chen,Univ. of California - Merced,iros,4.0,1.3333,2005
 Yangdong Deng,Tsinghua University,aaai,2.0,0.41667,2018
 Yangdong Deng,Tsinghua University,dac,1.0,0.33333,2010
 Yangdong Deng,Tsinghua University,dac,1.0,0.33333,2011
@@ -144271,18 +144347,18 @@ Ying-li Tian,CUNY,cvpr,1.0,0.33333,2000
 Ying-li Tian,CUNY,cvpr,1.0,0.33333,2005
 Ying-li Tian,CUNY,cvpr,2.0,0.5,2007
 Ying-li Tian,CUNY,www,1.0,0.33333,2007
-Yingbin Liang,Syracuse University,aaai,1.0,0.14286,2020
-Yingbin Liang,Syracuse University,aaai,1.0,0.25,2021
-Yingbin Liang,Syracuse University,icml,1.0,0.33333,2016
-Yingbin Liang,Syracuse University,icml,1.0,0.25,2017
-Yingbin Liang,Syracuse University,icml,1.0,0.25,2019
-Yingbin Liang,Syracuse University,icml,1.0,0.16667,2020
-Yingbin Liang,Syracuse University,ijcai,2.0,0.45,2020
-Yingbin Liang,Syracuse University,nips,1.0,0.33333,2015
-Yingbin Liang,Syracuse University,nips,1.0,0.5,2016
-Yingbin Liang,Syracuse University,nips,2.0,0.83333,2018
-Yingbin Liang,Syracuse University,nips,3.0,0.86667,2019
-Yingbin Liang,Syracuse University,nips,3.0,0.83333,2020
+Yingbin Liang,Ohio State University,aaai,1.0,0.14286,2020
+Yingbin Liang,Ohio State University,aaai,1.0,0.25,2021
+Yingbin Liang,Ohio State University,icml,1.0,0.33333,2016
+Yingbin Liang,Ohio State University,icml,1.0,0.25,2017
+Yingbin Liang,Ohio State University,icml,1.0,0.25,2019
+Yingbin Liang,Ohio State University,icml,1.0,0.16667,2020
+Yingbin Liang,Ohio State University,ijcai,2.0,0.45,2020
+Yingbin Liang,Ohio State University,nips,1.0,0.33333,2015
+Yingbin Liang,Ohio State University,nips,1.0,0.5,2016
+Yingbin Liang,Ohio State University,nips,2.0,0.83333,2018
+Yingbin Liang,Ohio State University,nips,3.0,0.86667,2019
+Yingbin Liang,Ohio State University,nips,3.0,0.83333,2020
 Yingcai Wu,Zhejiang University,chiconf,1.0,0.2,2018
 Yingcai Wu,Zhejiang University,chiconf,1.0,0.11111,2021
 Yingcai Wu,Zhejiang University,ubicomp,1.0,0.11111,2020
