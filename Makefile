@@ -91,6 +91,7 @@ generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_
 	@$(MAKE) clean-csrankings
 	@$(PYPY) util/split-csrankings.py
 	@$(MAKE) clean-csrankings
+	@$(PYPY) util/split-csv.py
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
 	@echo "Generating the list of all publications (all-author-info.csv)."
