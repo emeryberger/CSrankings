@@ -12,7 +12,7 @@ def parseDBLP(facultydict):
 
     # with open('dblp.xml', mode='r') as f:
         
-    with gzip.open('dblp.xml.gz', mode='rb') as f:
+    with gzip.open('dblp.xml.gz-full', mode='rb') as f:
 
         oldnode = None
         
