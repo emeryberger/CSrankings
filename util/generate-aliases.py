@@ -1,11 +1,18 @@
+import gzip
 from csrankings import *
+
+facultydict = {}
+with open("faculty-affiliations.csv") as f:
+    rdr = csv.DictReader(f)
+    for row in rdr:
+        facultydict[row["name"]] = row["affiliation"]
 
 def parseDBLP(facultydict):
     counter = 0
 
-    with open('dblp.xml', mode='r') as f:
+    # with open('dblp.xml', mode='r') as f:
         
-    # with gzip.open('dblp.xml.gz') as f:
+    with gzip.open('dblp.xml.gz-full', mode='rb') as f:
 
         oldnode = None
         
@@ -17,6 +24,7 @@ def parseDBLP(facultydict):
             authors = 0
             authorList = []
 
+            # print((node.tag))
             if (node.tag == 'www'):
                 for child in node:
                     if (child.tag == 'author'):
@@ -28,10 +36,8 @@ def parseDBLP(facultydict):
                 if (authors > 1):
                     pairs = [(authorList[0],item) for item in authorList[1:]]
                     for p in pairs:
-                        print p[1] + "," + p[0]
+                        print(p[1].decode('utf-8') + "," + p[0].decode('utf-8'))
                 
-
-facultydict = csv2dict_str_str('faculty-affiliations.csv')
 
 parseDBLP(facultydict)
 
