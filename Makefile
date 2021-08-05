@@ -38,7 +38,7 @@ clean-dblp:
 download-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
-	wget https://dblp.org/xml/dblp.xml.gz
+	curl -o dblp.xml.gz https://dblp.org/xml/dblp.xml.gz
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file."
@@ -88,6 +88,10 @@ generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	@$(PYPY) util/regenerate_data.py
 	@echo "Done."
+	@$(MAKE) clean-csrankings
+	@$(PYPY) util/split-csrankings.py
+	@$(MAKE) clean-csrankings
+	@$(PYPY) util/split-csv.py
 
 collab-graph: generated-author-info.csv faculty-coauthors.csv
 	@echo "Generating the list of all publications (all-author-info.csv)."
