@@ -9,6 +9,7 @@ import csv
 import re
 import sys
 import operator
+import string
 
 def csv2dict_str_str(fname):
     """Takes a CSV file and returns a dictionary of pairs."""
@@ -17,6 +18,27 @@ def csv2dict_str_str(fname):
         d = {unicode(rows[0].strip(), 'utf-8'): unicode(rows[1].strip(), 'utf-8') for rows in rdr}
     return d
 
+# Merge all 'csrankings-*.csv' into 'csrankings.csv'.
+
+added = set()
+with open('csrankings.csv', mode='w') as outfile:
+    fieldnames = ["name","affiliation","homepage","scholarid"]
+    writer = csv.DictWriter(outfile, fieldnames)
+    writer.writeheader()
+    for i in list(string.ascii_lowercase + string.digits):
+        print("processing " + i)
+        try:
+            fname = "csrankings-" + i + ".csv"
+            with open(fname, mode='r') as infile:
+                reader = csv.DictReader(infile)
+                for row in reader:
+                    if str(row) not in added:
+                        writer.writerow(row)
+                        added.add(str(row))
+        except BaseException as be:
+            pass
+
+# Now create all the subsidiary files.
 with open('csrankings.csv', mode='r') as infile:
     reader = csv.DictReader(infile)
     with open('homepages.csv', mode='w') as homepages:
