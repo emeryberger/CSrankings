@@ -234,7 +234,20 @@ areadict : Dict[Area, List[Conference]] = {
         Conference("ECCV (13)"),
         Conference("ECCV (14)"),
         Conference("ECCV (15)"),
-        Conference("ECCV (16)"),
+        Conference("ECCV (17)"),
+        Conference("ECCV (18)"),
+        Conference("ECCV (19)"),
+        Conference("ECCV (20)"),
+        Conference("ECCV (21)"),
+        Conference("ECCV (22)"),
+        Conference("ECCV (23)"),
+        Conference("ECCV (24)"),
+        Conference("ECCV (25)"),
+        Conference("ECCV (26)"),
+        Conference("ECCV (27)"),
+        Conference("ECCV (28)"),
+        Conference("ECCV (29)"),
+        Conference("ECCV (30)"),
     ],
     # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
     Area("icra"): [Conference("ICRA"), Conference("ICRA (1)"), Conference("ICRA (2)")],
@@ -273,8 +286,12 @@ areadict : Dict[Area, List[Conference]] = {
 EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110)}
 
-EMSOFT_TCAD = {2020: (39, 11)}
-EMSOFT_TCAD_PaperStart = { 2020: { 3215, 3227, 3288, 3323, 3336, 3348, 3385, 3420, 3433, 3467, 3492, 3506, 3555, 3566, 3650, 3662, 3674, 3711, 3762, 3809, 3856, 3868, 3893, 3906, 3931, 3944, 3981, 3993, 4006, 4018, 4090, 4102, 4142, 4166, 4205}}
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11)}
+EMSOFT_TCAD_PaperStart = {
+    # 2018 page numbers contributed by Ezio Bartocci
+    2018: {2188, 2200, 2233, 2244, 2311, 2393, 2404, 2474, 2578, 2636, 2649, 2673, 2743, 2768, 2812, 2845, 2869, 2894, 2906, 2952},
+    2020: { 3215, 3227, 3288, 3323, 3336, 3348, 3385, 3420, 3433, 3467, 3492, 3506, 3555, 3566, 3650, 3662, 3674, 3711, 3762, 3809, 3856, 3868, 3893, 3906, 3931, 3944, 3981, 3993, 4006, 4018, 4090, 4102, 4142, 4166, 4205}
+}
 
 
 # DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
