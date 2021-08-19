@@ -149,18 +149,19 @@ for n in aliases:
 aliases = new_aliases
     
 # Rewrite aliases file without cycles or names not in the csrankings database.
-with open('dblp-aliases.csv-x', mode='w') as outfile:
-    sfieldnames = ['alias', 'name']
-    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
-    swriter.writeheader()
-    for n in collections.OrderedDict(sorted(aliases.items(), key=lambda t: t[0])):
-        for a in aliases[n]:
-            h = { 'alias' : a, 'name' : n }
-            swriter.writerow(h)
-    outfile.flush()
-    os.fsync(outfile.fileno())
+if False:
+    with open('dblp-aliases.csv-x', mode='w') as outfile:
+        sfieldnames = ['alias', 'name']
+        swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+        swriter.writeheader()
+        for n in collections.OrderedDict(sorted(aliases.items(), key=lambda t: t[0])):
+            for a in aliases[n]:
+                h = { 'alias' : a, 'name' : n }
+                swriter.writerow(h)
+        outfile.flush()
+        os.fsync(outfile.fileno())
 
-os.rename('dblp-aliases.csv-x', 'dblp-aliases.csv')
+    os.rename('dblp-aliases.csv-x', 'dblp-aliases.csv')
 
 # Add any missing aliases.
 for name in aliases:
@@ -193,14 +194,15 @@ for name in csrankings:
             csrankings[name]['scholarid'] = page
 
 # Fix inconsistent home pages.
-for name in csrankings:
-    page = csrankings[name]['homepage']
-    if name in aliases:
-        for a in aliases[name]:
-            if a in csrankings and csrankings[a]['homepage'] != page:
-                if page == "http://csrankings.org":
-                    page = csrankings[a]['homepage']
-                csrankings[a]['homepage'] = page
+if False:
+    for name in csrankings:
+        page = csrankings[name]['homepage']
+        if name in aliases:
+            for a in aliases[name]:
+                if a in csrankings and csrankings[a]['homepage'] != page:
+                    if page == "http://csrankings.org":
+                        page = csrankings[a]['homepage']
+                    csrankings[a]['homepage'] = page
 
 # Find and flag inconsistent affiliations.
 for name in csrankings:
