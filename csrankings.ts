@@ -197,7 +197,7 @@ class CSRankings {
     private readonly turingImage = "./png/acm-turing-award.png";
     private readonly acmfellowFile = "./acm-fellows.csv";
     private readonly acmfellowImage = "./png/acm.png";
-    private readonly homepageImage = "./house-logo.png";
+    private readonly homepageImage = "./png/house-logo.png";
 
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
