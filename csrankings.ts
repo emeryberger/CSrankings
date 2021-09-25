@@ -1234,7 +1234,7 @@ class CSRankings {
                     + '</a>';
 
                 p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += "<span class='piechart'>" + this.BarChart + "</span>"
+                p += this.BarChart + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
