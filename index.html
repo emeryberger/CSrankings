@@ -18,8 +18,8 @@
     <link rel="preload" as="script" href="js/he-1.2.0.js" type="text/javascript">
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <link rel="preload" as="script" href="js/d3.min.js">
-    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript">
+<!--    <link rel="preload" as="script" href="js/d3.min.js"> -->
+<!--    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript"> -->
     <link rel="preload" as="script" href="js/papaparse.min.js" type="text/javascript">
 <!--    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript"> -->
 <!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
@@ -92,7 +92,7 @@
       color : blue ;
       }
 
-      .csr-piechart {
+      .csr-barchart {
 	  display: none;
       }
       
@@ -149,7 +149,7 @@
       font-size: -1;
       }
 
-      .piechart {
+      .barchart {
       font-size: +1;
       }
     </style>
@@ -204,8 +204,11 @@
     <script src="js/he-1.2.0.js" type="text/javascript"></script>
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3pie.min.js" type="text/javascript"></script>
+<!--    <script src="js/d3.min.js"></script> -->
+<!--    <script src="js/d3pie.min.js" type="text/javascript"></script> -->
+    <script defer src="js/vega-5.20.2.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-lite-5.1.1.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-embed-6.18.2.min.js" type="text/javascript"></script>
     <script defer src="js/papaparse.min.js" type="text/javascript"></script>
     <script defer src="continents.js" type="text/javascript"></script>
 <!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
@@ -239,10 +242,10 @@
 		science institutions around the world.
 		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to expand
 		areas or institutions. <b>Click on a name</b> to go to a
-		faculty member's home page. <b>Click on a pie</b> (the
-		<img alt="Piechart" src="png/piechart.png">
-		after a name or institution) to see their
-		publication profile as a pie chart. <b>Click on a
+		faculty member's home page. <b>Click on a chart icon</b> (the
+		<img alt="bar chart" src="png/barchart.png">
+		after a name or institution) to see the distribution of
+		their publication areas. <b>Click on a
 		  Google Scholar icon</b>
 		(<img src="scholar-favicon.ico" alt="Google Scholar"
 		      height="10" width="10">) to see publications,
