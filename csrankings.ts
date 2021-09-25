@@ -415,9 +415,9 @@ class CSRankings {
         ];
 
     private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-    private readonly systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+    private readonly systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
     private readonly theoryAreas = ["act", "crypt", "log"];
-    private readonly interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
+    private readonly interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
 
     private readonly areaNames: Array<string> = [];
     private readonly fields: Array<string> = [];
