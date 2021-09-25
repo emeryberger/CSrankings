@@ -451,6 +451,7 @@ class CSRankings {
         let datadict = {};
         const keys = CSRankings.topTierAreas;
         const uname = unescape(name);
+        // Areas with their category info for color map (selected from https://colorbrewer2.org)
         const areas = [
             ...this.aiAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#8da0cb" })),
             ...this.systemsAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#fc8d62" })),
