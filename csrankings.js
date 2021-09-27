@@ -1406,14 +1406,6 @@ class CSRankings {
             start += '/fromyear/' + startyear.toString();
             start += '/toyear/' + endyear.toString();
         }
-        const chartType = $("#charttype").find(":selected").val();
-        if (chartType == "pie") {
-            this.usePieChart = true;
-            start += '/chart/pie';
-        }
-        else {
-            this.usePieChart = false;
-        }
         if (count == totalParents) {
             start += '/index?all'; // Distinguished special URL - default = all selected.
         }
@@ -1425,6 +1417,14 @@ class CSRankings {
         }
         if (region != "USA") {
             start += '&' + region;
+        }
+        const chartType = $("#charttype").find(":selected").val();
+        if (chartType == "pie") {
+            this.usePieChart = true;
+            start += '&pie';
+        }
+        else {
+            this.usePieChart = false;
         }
         return start;
     }
@@ -1510,6 +1510,13 @@ class CSRankings {
                 $("#regions").val(elem);
                 index += 1;
             });
+        }
+        // Check for pie chart
+        let foundPie = q.some((elem) => {
+            return (elem == "pie");
+        });
+        if (foundPie) {
+            $("#charttype").val("pie");
         }
         if (foundAll) {
             // Set everything.
