@@ -16,9 +16,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 /// <reference path="./typescript/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
+/// <reference path="./typescript/vega-embed.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
-/// <reference path="./typescript/d3.d.ts" />
-/// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
 /// <reference path="./typescript/continents.d.ts" />
 ;
@@ -149,9 +148,9 @@ class CSRankings {
             //,{ area : "cse", title : "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-        this.systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+        this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
+        this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -192,8 +191,8 @@ class CSRankings {
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-        this.PieChart = "<img alt='closed piechart' src='png/piechart.png'>"; // pie chart image
-        this.OpenPieChart = "<img alt='opened piechart' src='png/piechart-open.png'>"; // opened pie chart image
+        this.BarChart = "<img alt='closed barchart' src='png/barchart.png'>"; // bar chart image
+        this.OpenBarChart = "<img alt='opened barchart' src='png/barchart-open.png'>"; // opened bar chart image
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build the areaDict dictionary: areas -> names used in pie charts
@@ -295,25 +294,6 @@ class CSRankings {
         name = he.encode(name, { 'useNamedReferences': true, 'allowUnsafeSymbols': true });
         name = name.replace(/&/g, "=");
         name = name.replace(/;/g, "=");
-        if (false) {
-            name = name.replace(/Á/g, "=Aacute=");
-            name = name.replace(/á/g, "=aacute=");
-            name = name.replace(/è/g, "=egrave=");
-            name = name.replace(/é/g, "=eacute=");
-            name = name.replace(/í/g, "=iacute=");
-            name = name.replace(/ï/g, "=iuml=");
-            name = name.replace(/ó/g, "=oacute=");
-            name = name.replace(/Ç/g, "=Ccedil=");
-            name = name.replace(/ç/g, "=ccedil=");
-            name = name.replace(/ä/g, "=auml=");
-            name = name.replace(/ö/g, "=ouml=");
-            name = name.replace(/ø/g, "=oslash=");
-            name = name.replace(/Ö/g, "=Ouml=");
-            name = name.replace(/Ü/g, "=Uuml=");
-            name = name.replace(/ü/g, "=uuml=");
-            name = name.replace(/ß/g, "=szlig=");
-            name = name.replace(/ý/g, "=yacute=");
-        }
         let splitName = name.split(" ");
         let lastName = splitName[splitName.length - 1];
         let disambiguation = "";
@@ -452,6 +432,14 @@ class CSRankings {
         let datadict = {};
         const keys = CSRankings.topTierAreas;
         const uname = unescape(name);
+        // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
+        const areas = [
+            ...this.aiAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#377eb8" })),
+            ...this.systemsAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#ff7f00" })),
+            ...this.theoryAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#4daf4a" })),
+            ...this.interdisciplinaryAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#984ea3" }))
+        ];
+        areas.forEach(area => datadict[area.key] = 0);
         for (let key in keys) { // i = 0; i < keys.length; i++) {
             //	    let key = keys[i];
             if (!(uname in this.authorAreas)) {
@@ -480,92 +468,53 @@ class CSRankings {
                 if (key in CSRankings.parentMap) {
                     key = CSRankings.parentMap[key];
                 }
-                if (!(key in datadict)) {
-                    datadict[key] = 0;
-                }
                 datadict[key] += value;
             }
         }
-        for (let key in datadict) {
+        areas.forEach(area => {
             let newSlice = {
-                "label": this.areaDict[key],
-                "value": Math.round(datadict[key] * 10) / 10,
-                "color": this.color[CSRankings.parentIndex[key]]
+                "area": this.areaDict[area.key],
+                "value": Math.round(datadict[area.key] * 10) / 10
             };
             data.push(newSlice);
-        }
-        new d3pie(name + "-chart", {
-            "header": {
-                "title": {
-                    "text": uname,
-                    "fontSize": 24,
-                    "font": "open sans"
-                },
-                "subtitle": {
-                    "text": "Publication Profile",
-                    "color": "#999999",
-                    "fontSize": 14,
-                    "font": "open sans"
-                },
-                "titleSubtitlePadding": 9
+            area.label = this.areaDict[area.key];
+        });
+        const colors = areas.sort((a, b) => a.label > b.label ? 1 : (a.label < b.label ? -1 : 0)).map(area => area.color);
+        const vegaLiteSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            data: {
+                values: data
             },
-            "size": {
-                "canvasHeight": 500,
-                "canvasWidth": 500,
-                "pieInnerRadius": "38%",
-                "pieOuterRadius": "83%"
-            },
-            "data": {
-                "content": data,
-                "smallSegmentGrouping": {
-                    "enabled": true,
-                    "value": 1
+            mark: "bar",
+            encoding: {
+                x: {
+                    field: "area",
+                    type: "nominal",
+                    sort: null,
+                    axis: { title: null }
                 },
-            },
-            "labels": {
-                "outer": {
-                    "pieDistance": 32
+                y: {
+                    field: "value",
+                    type: "quantitative",
+                    axis: { title: null }
                 },
-                "inner": {
-                    //"format": "percentage", // "value",
-                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
-                    "format": "value",
-                    "hideWhenLessThanPercentage": 5 // 100 // 2
-                },
-                "mainLabel": {
-                    "fontSize": 10.5
-                },
-                "percentage": {
-                    "color": "#ffffff",
-                    "decimalPlaces": 0
-                },
-                "value": {
-                    "color": "#ffffff",
-                    "fontSize": 10
-                },
-                "lines": {
-                    "enabled": true
-                },
-                "truncation": {
-                    "enabled": true
+                tooltip: [
+                    { "field": "area", "type": "nominal", "title": "Area" },
+                    { "field": "value", "type": "quantitative", "title": "Count" }
+                ],
+                color: {
+                    field: "area",
+                    type: "nominal",
+                    scale: { "range": colors },
+                    legend: null
                 }
             },
-            "effects": {
-                "load": {
-                    "effect": "none"
-                },
-                "pullOutSegmentOnClick": {
-                    "effect": "linear",
-                    "speed": 400,
-                    "size": 8
-                }
-            },
-            "misc": {
-                "gradient": {
-                    "enabled": true,
-                    "percentage": 100
-                }
-            }
+            width: 420,
+            height: 80,
+            padding: { left: 25, top: 3 }
+        };
+        vegaEmbed(`div[id="${name}-chart"]`, vegaLiteSpec, {
+            actions: false,
         });
     }
     displayProgress(step) {
@@ -1024,7 +973,7 @@ class CSRankings {
                 p += '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
                 p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += "<span class='piechart'>" + this.PieChart + "</span></span>"
+                p += this.BarChart + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1041,7 +990,7 @@ class CSRankings {
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
-                    + '<div class="csr-piechart" id="' + escape(name) + "-chart" + '">'
+                    + '<div class="csr-barchart" id="' + escape(name) + "-chart" + '">'
                     + '</div>'
                     + "</td></tr>";
             }
@@ -1108,14 +1057,14 @@ class CSRankings {
                 }
                 s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
-                    + this.PieChart + "</span>";
+                    + this.BarChart + "</span>";
                 s += "</td>";
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
                 // style="width: 100%; height: 350px;" 
-                s += '<tr><td colspan="4"><div class="csr-piechart" id="'
+                s += '<tr><td colspan="4"><div class="csr-barchart" id="'
                     + esc + '-chart">' + '</div></td></tr>';
                 s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
                 ties++;
@@ -1215,12 +1164,12 @@ class CSRankings {
         if (chart.style.display === 'block') {
             chart.style.display = 'none';
             chart.innerHTML = '';
-            chartwidget.innerHTML = this.PieChart;
+            chartwidget.innerHTML = this.BarChart;
         }
         else {
             chart.style.display = 'block';
             this.makeChart(name);
-            chartwidget.innerHTML = this.OpenPieChart;
+            chartwidget.innerHTML = this.OpenBarChart;
         }
     }
     /* Expand or collape the view of conferences in a given area. */
