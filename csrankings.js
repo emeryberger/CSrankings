@@ -438,8 +438,8 @@ class CSRankings {
         const uname = unescape(name);
         // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
         const areas = [
-            ...this.aiAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#e41a1c" })),
-            ...this.systemsAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#377eb8" })),
+            ...this.aiAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#377eb8" })),
+            ...this.systemsAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#ff7f00" })),
             ...this.theoryAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#4daf4a" })),
             ...this.interdisciplinaryAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#984ea3" }))
         ];
