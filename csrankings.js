@@ -16,10 +16,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 /// <reference path="./typescript/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
+/// <reference path="./typescript/d3.d.ts" />
+/// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/vega-embed.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
 /// <reference path="./typescript/continents.d.ts" />
+;
 ;
 ;
 ;
@@ -187,6 +190,7 @@ class CSRankings {
         this.stats = {};
         this.areaDeptAdjustedCount = {}; /* area+dept */
         this.areaStringMap = {}; // name -> areaString (memoized)
+        this.usePieChart = false;
         /* Colors for all areas. */
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
@@ -426,8 +430,8 @@ class CSRankings {
             return 1;
         return 0;
     }
-    /* Create a pie chart */
-    makeChart(name) {
+    /* Create a bar chart */
+    makeBarChart(name) {
         let data = [];
         let datadict = {};
         const keys = CSRankings.topTierAreas;
@@ -515,6 +519,128 @@ class CSRankings {
         };
         vegaEmbed(`div[id="${name}-chart"]`, vegaLiteSpec, {
             actions: false,
+        });
+    }
+    /* Create a pie chart */
+    makePieChart(name) {
+        let data = [];
+        let datadict = {};
+        const keys = CSRankings.topTierAreas;
+        const uname = unescape(name);
+        for (let key in keys) { // i = 0; i < keys.length; i++) {
+            //	    let key = keys[i];
+            if (!(uname in this.authorAreas)) {
+                // Defensive programming.
+                // This should only happen if we have an error in the aliases file.
+                return;
+            }
+            //	    if (key in CSRankings.nextTier) {
+            //		continue;
+            //	    }
+            let value = this.authorAreas[uname][key];
+            // Use adjusted count if this is for a department.
+            /*
+              DISABLED so department charts are invariant.
+              
+              if (uname in this.stats) {
+              value = this.areaDeptAdjustedCount[key+uname] + 1;
+              if (value == 1) {
+              value = 0;
+              }
+              }
+            */
+            // Round it to the nearest 0.1.
+            value = Math.round(value * 10) / 10;
+            if (value > 0) {
+                if (key in CSRankings.parentMap) {
+                    key = CSRankings.parentMap[key];
+                }
+                if (!(key in datadict)) {
+                    datadict[key] = 0;
+                }
+                datadict[key] += value;
+            }
+        }
+        for (let key in datadict) {
+            let newSlice = {
+                "label": this.areaDict[key],
+                "value": Math.round(datadict[key] * 10) / 10,
+                "color": this.color[CSRankings.parentIndex[key]]
+            };
+            data.push(newSlice);
+        }
+        new d3pie(name + "-chart", {
+            "header": {
+                "title": {
+                    "text": uname,
+                    "fontSize": 24,
+                    "font": "open sans"
+                },
+                "subtitle": {
+                    "text": "Publication Profile",
+                    "color": "#999999",
+                    "fontSize": 14,
+                    "font": "open sans"
+                },
+                "titleSubtitlePadding": 9
+            },
+            "size": {
+                "canvasHeight": 500,
+                "canvasWidth": 500,
+                "pieInnerRadius": "38%",
+                "pieOuterRadius": "83%"
+            },
+            "data": {
+                "content": data,
+                "smallSegmentGrouping": {
+                    "enabled": true,
+                    "value": 1
+                },
+            },
+            "labels": {
+                "outer": {
+                    "pieDistance": 32
+                },
+                "inner": {
+                    //"format": "percentage", // "value",
+                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
+                    "format": "value",
+                    "hideWhenLessThanPercentage": 5 // 100 // 2
+                },
+                "mainLabel": {
+                    "fontSize": 10.5
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "decimalPlaces": 0
+                },
+                "value": {
+                    "color": "#ffffff",
+                    "fontSize": 10
+                },
+                "lines": {
+                    "enabled": true
+                },
+                "truncation": {
+                    "enabled": true
+                }
+            },
+            "effects": {
+                "load": {
+                    "effect": "none"
+                },
+                "pullOutSegmentOnClick": {
+                    "effect": "linear",
+                    "speed": 400,
+                    "size": 8
+                }
+            },
+            "misc": {
+                "gradient": {
+                    "enabled": true,
+                    "percentage": 100
+                }
+            }
         });
     }
     displayProgress(step) {
@@ -990,7 +1116,7 @@ class CSRankings {
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
-                    + '<div class="csr-barchart" id="' + escape(name) + "-chart" + '">'
+                    + '<div class="csr-chart" id="' + escape(name) + "-chart" + '">'
                     + '</div>'
                     + "</td></tr>";
             }
@@ -1064,7 +1190,7 @@ class CSRankings {
                 s += "</td>";
                 s += "</tr>\n";
                 // style="width: 100%; height: 350px;" 
-                s += '<tr><td colspan="4"><div class="csr-barchart" id="'
+                s += '<tr><td colspan="4"><div class="csr-chart" id="'
                     + esc + '-chart">' + '</div></td></tr>';
                 s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
                 ties++;
@@ -1168,7 +1294,7 @@ class CSRankings {
         }
         else {
             chart.style.display = 'block';
-            this.makeChart(name);
+            this.usePieChart ? this.makePieChart(name) : this.makeBarChart(name);
             chartwidget.innerHTML = this.OpenBarChart;
         }
     }
@@ -1292,6 +1418,14 @@ class CSRankings {
         if (region != "USA") {
             start += '&' + region;
         }
+        const chartType = $("#charttype").find(":selected").val();
+        if (chartType == "pie") {
+            this.usePieChart = true;
+            start += '&pie';
+        }
+        else {
+            this.usePieChart = false;
+        }
         return start;
     }
     static geoCheck() {
@@ -1376,6 +1510,13 @@ class CSRankings {
                 $("#regions").val(elem);
                 index += 1;
             });
+        }
+        // Check for pie chart
+        let foundPie = q.some((elem) => {
+            return (elem == "pie");
+        });
+        if (foundPie) {
+            $("#charttype").val("pie");
         }
         if (foundAll) {
             // Set everything.
@@ -1472,7 +1613,7 @@ class CSRankings {
         return subsettedAbove || subsettedBelow;
     }
     addListeners() {
-        ["toyear", "fromyear", "regions"].forEach((key) => {
+        ["toyear", "fromyear", "regions", "charttype"].forEach((key) => {
             const widget = document.getElementById(key);
             widget.addEventListener("change", () => { this.countAuthorAreas(); this.rank(); });
         });
