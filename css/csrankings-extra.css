@@ -8,3 +8,19 @@ optgroup { padding-bottom: 8px; }
 optgroup:not(:first-child) {
     padding-top: 8px; border-top: solid 1px #666;
 }
+
+.ai-area {
+    color: #377eb8
+}
+
+.systems-area {
+    color: #ff7f00
+}
+
+.theory-area {
+    color: #4daf4a
+}
+
+.interdisciplinary-area {
+    color: #984ea3
+}
