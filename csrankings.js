@@ -197,8 +197,12 @@ class CSRankings {
         this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
-        this.BarChart = "<img alt='closed barchart' src='png/barchart.png'>"; // bar chart image
-        this.OpenBarChart = "<img alt='opened barchart' src='png/barchart-open.png'>"; // opened bar chart image
+        this.BarChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/barchart.png'>"; // bar chart image
+        this.OpenBarChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/barchart-open.png'>"; // opened bar chart image
+        this.PieChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/piechart.png'>";
+        this.OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart.png'>";
+        this.ChartIcon = this.BarChartIcon;
+        this.OpenChartIcon = this.OpenBarChartIcon;
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build dictionaries:
@@ -1114,7 +1118,7 @@ class CSRankings {
                 p += '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
                 p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += this.BarChart + "</span>"
+                p += this.ChartIcon + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1198,7 +1202,7 @@ class CSRankings {
                 }
                 s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
-                    + this.BarChart + "</span>";
+                    + this.ChartIcon + "</span>";
                 s += "</td>";
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
                 s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
@@ -1305,12 +1309,12 @@ class CSRankings {
         if (chart.style.display === 'block') {
             chart.style.display = 'none';
             chart.innerHTML = '';
-            chartwidget.innerHTML = this.BarChart;
+            chartwidget.innerHTML = this.ChartIcon;
         }
         else {
             chart.style.display = 'block';
             this.usePieChart ? this.makePieChart(name) : this.makeBarChart(name);
-            chartwidget.innerHTML = this.OpenBarChart;
+            chartwidget.innerHTML = this.OpenChartIcon;
         }
     }
     /* Expand or collape the view of conferences in a given area. */
@@ -1436,10 +1440,32 @@ class CSRankings {
         const chartType = $("#charttype").find(":selected").val();
         if (chartType == "pie") {
             this.usePieChart = true;
+            for (const elt of document.getElementsByClassName("chart_icon")) {
+                elt.src = "png/piechart.png";
+            }
+            for (const elt of document.getElementsByClassName("open_chart_icon")) {
+                elt.src = "png/piechart.png";
+            }
+            for (const elt of document.getElementsByClassName("closed_chart_icon")) {
+                elt.src = "png/piechart.png";
+            }
+            this.ChartIcon = this.PieChartIcon;
+            this.OpenChartIcon = this.OpenPieChartIcon;
             start += '&pie';
         }
         else {
             this.usePieChart = false;
+            for (const elt of document.getElementsByClassName("chart_icon")) {
+                elt.src = "png/barchart.png";
+            }
+            for (const elt of document.getElementsByClassName("open_chart_icon")) {
+                elt.src = "png/open_barchart.png";
+            }
+            for (const elt of document.getElementsByClassName("closed_chart_icon")) {
+                elt.src = "png/barchart.png";
+            }
+            this.ChartIcon = this.BarChartIcon;
+            this.OpenChartIcon = this.OpenBarChartIcon;
         }
         return start;
     }
