@@ -1200,7 +1200,8 @@ class CSRankings {
                 if (dept in countryAbbrv) {
                     abbrv = countryAbbrv[dept];
                 }
-                s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
+                s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
+                    + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
                     + this.ChartIcon + "</span>";
                 s += "</td>";
