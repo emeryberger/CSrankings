@@ -508,8 +508,12 @@ class CSRankings {
 
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
-    private readonly BarChart = "<img alt='closed barchart' src='png/barchart.png'>"; // bar chart image
-    private readonly OpenBarChart = "<img alt='opened barchart' src='png/barchart-open.png'>"; // opened bar chart image
+    private readonly BarChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/barchart.png'>"; // bar chart image
+    private readonly OpenBarChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/barchart-open.png'>"; // opened bar chart image
+    private readonly PieChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/piechart.png'>";
+    private readonly OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart.png'>";
+    private ChartIcon = this.BarChartIcon;
+    private OpenChartIcon = this.OpenBarChartIcon;
 
     private translateNameToDBLP(name: string): string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -1372,7 +1376,7 @@ class CSRankings {
                     + '</a>';
 
                 p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += this.BarChart + "</span>"
+                p += this.ChartIcon + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
                     + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
@@ -1467,7 +1471,7 @@ class CSRankings {
 
                 s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
                     + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
-                    + this.BarChart + "</span>";
+                    + this.ChartIcon + "</span>";
                 s += "</td>";
 
                 s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
@@ -1604,11 +1608,11 @@ class CSRankings {
         if (chart!.style.display === 'block') {
             chart!.style.display = 'none';
             chart!.innerHTML = '';
-            chartwidget!.innerHTML = this.BarChart;
+            chartwidget!.innerHTML = this.ChartIcon;
         } else {
             chart!.style.display = 'block';
             this.usePieChart ? this.makePieChart(name) : this.makeBarChart(name);
-            chartwidget!.innerHTML = this.OpenBarChart;
+            chartwidget!.innerHTML = this.OpenChartIcon;
         }
 
     }
@@ -1746,9 +1750,31 @@ class CSRankings {
         const chartType = $("#charttype").find(":selected").val();
         if (chartType == "pie") {
             this.usePieChart = true;
+	    for (const elt of document.getElementsByClassName("chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	    }
+	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	    }
+	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	    }
+	    this.ChartIcon = this.PieChartIcon;
+	    this.OpenChartIcon = this.OpenPieChartIcon;
             start += '&pie';
         } else {
             this.usePieChart = false;
+	    for (const elt of document.getElementsByClassName("chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/barchart.png";
+	    }
+	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/open_barchart.png";
+	    }
+	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/barchart.png";
+	    }
+	    this.ChartIcon = this.BarChartIcon;
+	    this.OpenChartIcon = this.OpenBarChartIcon;
         }
         
         return start;
