@@ -32,7 +32,7 @@ pageCounterColon = re.compile("[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)")
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
 TECSCounterColon = re.compile("([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*")
 # Extract the ISMB proceedings page numbers.
-ISMBpageCounter = re.compile("i(\d+)-i(\d+)")
+ISMBpageCounter = re.compile(r"i(\d+)-i(\d+)")
 
 
 def startpage(pageStr: str) -> int:
@@ -50,6 +50,9 @@ def startpage(pageStr: str) -> int:
             start = int(pageCounterMatcher2.group(1))
     return start
 
+def test_startpage():
+    assert startpage("117-128") == 117
+    assert startpage("138:1-138:28") == 1
 
 def pagecount(pageStr: str) -> int:
     """Compute the number of pages in a string representing a range of page numbers."""
@@ -72,7 +75,10 @@ def pagecount(pageStr: str) -> int:
             count = end - start + 1
     return count
 
-
+def test_pagecount():
+    assert pagecount("117-128") == 12
+    assert pagecount("138:1-138:28") == 28
+    
 areadict : Dict[Area, List[Conference]] = {
     #
     # Max three most selective venues per area for now.
@@ -732,3 +738,13 @@ def countPaper(
         return False
 
     return True
+
+
+def test_countPaper():
+    # Discard papers before or after the year range.
+    assert not countPaper("anything", startyear-1, "1", "1", "1-10", 1, 10, "", "nothing")
+    assert not countPaper("anything", endyear+1, "1", "1", "1-10", 1, 10, "", "nothing")
+    # Discard short papers.
+    assert not countPaper("anything", endyear-1, "1", "1", "1-5", 1, 5, "", "nothing")
+    # Ignore page counts if we are in an exception conference (like SIGGRAPH)
+    assert countPaper("SIGGRAPH", endyear-1, "1", "1", "1", 1, -1, "", "Some Graphics Paper")
