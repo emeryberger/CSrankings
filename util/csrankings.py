@@ -51,8 +51,12 @@ def startpage(pageStr: str) -> int:
     return start
 
 def test_startpage():
+    # Check without a colon
     assert startpage("117-128") == 117
+    # Check with a colon
     assert startpage("138:1-138:28") == 1
+    # Make sure it's not coincidentally getting the first digit of the volume
+    assert startpage("138:200-138:208") == 200
 
 def pagecount(pageStr: str) -> int:
     """Compute the number of pages in a string representing a range of page numbers."""
@@ -78,6 +82,7 @@ def pagecount(pageStr: str) -> int:
 def test_pagecount():
     assert pagecount("117-128") == 12
     assert pagecount("138:1-138:28") == 28
+    assert pagecount("138:200-138:208") == 9
     
 areadict : Dict[Area, List[Conference]] = {
     #
@@ -748,3 +753,7 @@ def test_countPaper():
     assert not countPaper("anything", endyear-1, "1", "1", "1-5", 1, 5, "", "nothing")
     # Ignore page counts if we are in an exception conference (like SIGGRAPH)
     assert countPaper("SIGGRAPH", endyear-1, "1", "1", "1", 1, -1, "", "Some Graphics Paper")
+    # Check TECS
+    assert not countPaper("ACM Trans. Embedded Comput. Syst.", 2017, "16", "5s", "120:1-120:21", 1, 21, "DOI", "Some EMSOFT Paper")
+    assert countPaper("ACM Trans. Embedded Comput. Syst.", 2017, "16", "5s", "163:1-163:21", 1, 21, "DOI", "Some EMSOFT Paper")
+
