@@ -18,8 +18,8 @@
     <link rel="preload" as="script" href="js/he-1.2.0.js" type="text/javascript">
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <link rel="preload" as="script" href="js/d3.min.js">
-    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript">
+<!--    <link rel="preload" as="script" href="js/d3.min.js"> -->
+<!--    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript"> -->
     <link rel="preload" as="script" href="js/papaparse.min.js" type="text/javascript">
 <!--    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript"> -->
 <!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
@@ -92,7 +92,7 @@
       color : blue ;
       }
 
-      .csr-piechart {
+      .csr-barchart {
 	  display: none;
       }
       
@@ -149,7 +149,7 @@
       font-size: -1;
       }
 
-      .piechart {
+      .barchart {
       font-size: +1;
       }
     </style>
@@ -206,6 +206,9 @@
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
     <script src="js/d3.min.js"></script>
     <script src="js/d3pie.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-5.20.2.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-lite-5.1.1.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-embed-6.18.2.min.js" type="text/javascript"></script>
     <script defer src="js/papaparse.min.js" type="text/javascript"></script>
     <script defer src="continents.js" type="text/javascript"></script>
 <!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
@@ -239,15 +242,19 @@
 		science institutions around the world.
 		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to expand
 		areas or institutions. <b>Click on a name</b> to go to a
-		faculty member's home page. <b>Click on a pie</b> (the
-		<img alt="Piechart" src="png/piechart.png">
-		after a name or institution) to see their
-		publication profile as a pie chart. <b>Click on a
+		faculty member's home page. <b>Click on a chart icon</b> (the
+		<img class="chart_icon" alt="chart icon" src="png/barchart.png">
+		after a name or institution) to see the distribution of
+		their publication areas as a 
+		<select id="charttype">
+			<option value="bar">bar chart</option>
+			<option value="pie">pie chart</option>
+		</select>. <b>Click on a
 		  Google Scholar icon</b>
 		(<img src="scholar-favicon.ico" alt="Google Scholar"
 		      height="10" width="10">) to see publications,
 		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
-		go to a DBLP entry. <em><b><a href="https://github.com/sponsors/emeryberger">Consider sponsoring CSrankings.</a></em></b><br />
+		go to a DBLP entry.<br />
 		<b><a href="advice.html">Applying to grad school? Read this first.</a></b>
 	      </p>
 	      <div class="row">
@@ -417,14 +424,14 @@
 		  <thead>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">AI
+			<p class="ai-area">AI
 			  [<a class="area_group_selector" id="ai_areas_off">off</a> | <a class="area_group_selector" id="ai_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 		  
-		  <tbody>
+		  <tbody class="ai-area">
 		    
 		    <tr>
 		      <td>
@@ -703,14 +710,14 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">Systems
+			<p class="systems-area">Systems
 			  [<a class="area_group_selector" id="systems_areas_off">off</a> | <a class="area_group_selector" id="systems_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 
-		  <tbody>
+		  <tbody class="systems-area">
 
 		    <tr>
 		      <td>   
@@ -1378,14 +1385,14 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">Theory
+			<p class="theory-area">Theory
 			  [<a class="area_group_selector" id="theory_areas_off">off</a> | <a class="area_group_selector" id="theory_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 
-		  <tbody>
+		  <tbody class="theory-area">
 
 		    <tr>
 		      <td>
@@ -1527,14 +1534,14 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">Interdisciplinary Areas
+			<p class="interdisciplinary-area">Interdisciplinary Areas
 			  [<a class="area_group_selector" id="other_areas_off">off</a> | <a class="area_group_selector" id="other_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 
-		  <tbody>
+		  <tbody class="interdisciplinary-area">
 
 		    <tr>
 		      <td>
