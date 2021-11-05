@@ -1076,27 +1076,20 @@ class CSRankings {
                 const homePage = encodeURI(this.homepages[name]);
                 const dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                    + '<a title="Click for author\'s home page." target="_blank" href="'
-                    + homePage
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + homePage
-                    + '\', true); return false;"'
-                    + '>'
-                    + name
-                    + '</a>&nbsp;';
+                    + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                    + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                    + `>${name}</a>&nbsp;`;
                 if (this.note.hasOwnProperty(name)) {
                     const url = CSRankings.noteMap[this.note[name]];
-                    const href = '<a href="' + url + '">';
-                    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+                    const href = `<a href="${url}">`;
+                    p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
                 }
                 if (this.acmfellow.hasOwnProperty(name)) {
                     p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="` +
                         this.acmfellowImage + '"></span>&nbsp;';
                 }
                 if (this.turing.hasOwnProperty(name)) {
-                    p += '<span title="Turing Award"><img alt="Turing Award" src="' +
-                        this.turingImage + '"></span>&nbsp;';
+                    p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
                 }
                 p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
@@ -1121,15 +1114,8 @@ class CSRankings {
                 p += this.ChartIcon + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
-                    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + dblpName
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + dblpName
-                    + '\', true); return false;"'
-                    + '>'
-                    + fc[name]
-                    + '</a>'
+                    + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
+                    + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
                     + "</small></td>"
                     + '<td align="right"><small>'
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
