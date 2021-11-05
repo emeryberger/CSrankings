@@ -1345,7 +1345,7 @@ class CSRankings {
                 if (this.turing.hasOwnProperty(name)) {
                     p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
                 }
-                p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
+                p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
 
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
@@ -1368,7 +1368,7 @@ class CSRankings {
                 p += '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
 
-                p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+                p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
                 p += this.ChartIcon + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
