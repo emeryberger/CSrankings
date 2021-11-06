@@ -500,7 +500,7 @@ class CSRankings {
     private readonly BarChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/barchart.png'>"; // bar chart image
     private readonly OpenBarChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/barchart-open.png'>"; // opened bar chart image
     private readonly PieChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/piechart.png'>";
-    private readonly OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart.png'>";
+    private readonly OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart-open.png'>";
     private ChartIcon = this.BarChartIcon;
     private OpenChartIcon = this.OpenBarChartIcon;
 
@@ -1672,7 +1672,7 @@ class CSRankings {
 	      (<HTMLInputElement>elt).src = "png/piechart.png";
 	    }
 	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
-	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	      (<HTMLInputElement>elt).src = "png/piechart-open.png";
 	    }
 	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
 	      (<HTMLInputElement>elt).src = "png/piechart.png";
@@ -1686,7 +1686,7 @@ class CSRankings {
 	      (<HTMLInputElement>elt).src = "png/barchart.png";
 	    }
 	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
-	      (<HTMLInputElement>elt).src = "png/open_barchart.png";
+	      (<HTMLInputElement>elt).src = "png/barchart-open.png";
 	    }
 	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
 	      (<HTMLInputElement>elt).src = "png/barchart.png";
