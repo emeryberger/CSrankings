@@ -8,8 +8,6 @@
 
 /// <reference path="./typescript/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
-/// <reference path="./typescript/d3.d.ts" />
-/// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/vega-embed.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
@@ -76,15 +74,9 @@ interface AreaMap {
     readonly title: string;
 };
 
-interface BarChartData {
+interface ChartData {
     readonly area: string;
     readonly value: number;
-};
-
-interface PieChartData {
-    readonly label: string;
-    readonly value: number;
-    readonly color: string;
 };
 
 class CSRankings {
@@ -502,16 +494,13 @@ class CSRankings {
 
     private usePieChart: boolean = false;
 
-    /* Colors for all areas. */
-    private readonly color: Array<string> =
-        ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
-
+    /* Colors. */
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
     private readonly BarChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/barchart.png'>"; // bar chart image
     private readonly OpenBarChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/barchart-open.png'>"; // opened bar chart image
     private readonly PieChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/piechart.png'>";
-    private readonly OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart.png'>";
+    private readonly OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart-open.png'>";
     private ChartIcon = this.BarChartIcon;
     private OpenChartIcon = this.OpenBarChartIcon;
 
@@ -668,9 +657,9 @@ class CSRankings {
         return 0;
     }
 
-    /* Create a bar chart */
-    private makeBarChart(name: string): void {
-        let data: Array<BarChartData> = [];
+    /* Create a bar or pie chart using Vega. Modified by Minsuk Kahng (https://minsuk.com) */
+    private makeChart(name: string, isPieChart: boolean): void {
+        let data: Array<ChartData> = [];
         let datadict: { [key: string]: number } = {};
         const keys = CSRankings.topTierAreas;
         const uname = unescape(name);
@@ -720,10 +709,17 @@ class CSRankings {
                 datadict[key] += value;
             }
         }
+
+        let valueSum = 0;
         areas.forEach(area => {
+            valueSum += datadict[area.key];
+        });
+        areas.forEach((area, index) => {
             const newSlice = {
-                "area": this.areaDict[area.key],
-                "value": Math.round(datadict[area.key] * 10) / 10
+                index: index,
+                area: this.areaDict[area.key],
+                value: Math.round(datadict[area.key] * 10) / 10,
+                ratio: datadict[area.key] / valueSum
             };
             data.push(newSlice);
 
@@ -734,7 +730,7 @@ class CSRankings {
             a.label > b.label ? 1 : (a.label < b.label ? -1 : 0)
             ).map(area => area.color);
 
-        const vegaLiteSpec = {
+        const vegaLiteBarChartSpec = {
             $schema: "https://vega.github.io/schema/vega-lite/v5.json",
             data: {
                 values: data
@@ -767,134 +763,69 @@ class CSRankings {
             height: 80,
             padding: {left: 25, top: 3}
         };
+
+        const vegaLitePieChartSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            data: {
+                values: data
+            },
+            encoding: {
+                theta: {
+                    field: "value",
+                    type: "quantitative",
+                    stack: true
+                },
+                color: {
+                    field: "area",
+                    type: "nominal",
+                    scale: {"range": colors},
+                    legend: null
+                },
+                order: {field: "index"},
+                tooltip: [
+                    {field: "area", type: "nominal", title: "Area"},
+                    {field: "value", type: "quantitative", title: "Count"},
+                    {field: "ratio", type: "quantitative", title: "Ratio", format: ".1%"}
+                ]
+            },
+            layer: [
+                {
+                    mark: {type: "arc", outerRadius: 90, stroke: "#fdfdfd", strokeWidth: 1}
+                },
+                {
+                    mark: {type: "text", radius: 108, dy: -3},
+                    encoding: {
+                        text: {field: "area", type: "nominal"},
+                        color: {
+                            condition: {test: "datum.ratio < 0.03", value: "rgba(255, 255, 255, 0)"},
+                            field: "area",
+                            type: "nominal",
+                            scale: {"range": colors}
+                        }
+                    }
+                },
+                {
+                    mark: {type: "text", radius: 108, fontSize: 9, dy: 7},
+                    encoding: {
+                        text: {field: "value", type: "quantitative"},
+                        color: {
+                            condition: {test: "datum.ratio < 0.03", value: "rgba(255, 255, 255, 0)"},
+                            field: "area",
+                            type: "nominal",
+                            scale: {"range": colors}
+                        }
+                    }
+                }
+            ],
+            width: 400,
+            height: 250,
+            padding: {left: 25, top: 3}
+        };
         
-        vegaEmbed(`div[id="${name}-chart"]`, vegaLiteSpec, {
-            actions: false,
-        });
-    }
-
-    /* Create a pie chart */
-    private makePieChart(name: string): void {
-        let data: Array<PieChartData> = [];
-        let datadict: { [key: string]: number } = {};
-        const keys = CSRankings.topTierAreas;
-        const uname = unescape(name);
-        for (let key in keys) { // i = 0; i < keys.length; i++) {
-            //	    let key = keys[i];
-            if (!(uname in this.authorAreas)) {
-                // Defensive programming.
-                // This should only happen if we have an error in the aliases file.
-                return;
-            }
-            //	    if (key in CSRankings.nextTier) {
-            //		continue;
-            //	    }
-            let value = this.authorAreas[uname][key];
-
-            // Use adjusted count if this is for a department.
-            /*
-              DISABLED so department charts are invariant.
-              
-              if (uname in this.stats) {
-              value = this.areaDeptAdjustedCount[key+uname] + 1;
-              if (value == 1) {
-              value = 0;
-              }
-              }
-            */
-            // Round it to the nearest 0.1.
-            value = Math.round(value * 10) / 10;
-            if (value > 0) {
-                if (key in CSRankings.parentMap) {
-                    key = CSRankings.parentMap[key];
-                }
-                if (!(key in datadict)) {
-                    datadict[key] = 0;
-                }
-                datadict[key] += value;
-            }
-        }
-        for (const key in datadict) {
-            const newSlice = {
-                "label": this.areaDict[key],
-                "value": Math.round(datadict[key] * 10) / 10,
-                "color": this.color[CSRankings.parentIndex[key]]
-            };
-            data.push(newSlice);
-        }
-        new d3pie(name + "-chart", {
-            "header": {
-                "title": {
-                    "text": uname,
-                    "fontSize": 24,
-                    "font": "open sans"
-                },
-                "subtitle": {
-                    "text": "Publication Profile",
-                    "color": "#999999",
-                    "fontSize": 14,
-                    "font": "open sans"
-                },
-                "titleSubtitlePadding": 9
-            },
-            "size": {
-                "canvasHeight": 500,
-                "canvasWidth": 500,
-                "pieInnerRadius": "38%",
-                "pieOuterRadius": "83%"
-            },
-            "data": {
-                "content": data,
-                "smallSegmentGrouping": {
-                    "enabled": true,
-                    "value": 1
-                },
-            },
-            "labels": {
-                "outer": {
-                    "pieDistance": 32
-                },
-                "inner": {
-                    //"format": "percentage", // "value",
-                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
-                    "format": "value",
-                    "hideWhenLessThanPercentage": 5 // 100 // 2
-                },
-                "mainLabel": {
-                    "fontSize": 10.5
-                },
-                "percentage": {
-                    "color": "#ffffff",
-                    "decimalPlaces": 0
-                },
-                "value": {
-                    "color": "#ffffff", // "#adadad",
-                    "fontSize": 10
-                },
-                "lines": {
-                    "enabled": true
-                },
-                "truncation": {
-                    "enabled": true
-                }
-            },
-            "effects": {
-                "load": {
-                    "effect": "none"
-                },
-                "pullOutSegmentOnClick": {
-                    "effect": "linear",
-                    "speed": 400,
-                    "size": 8
-                }
-            },
-            "misc": {
-                "gradient": {
-                    "enabled": true,
-                    "percentage": 100
-                }
-            }
-        });
+        vegaEmbed(`div[id="${name}-chart"]`, 
+            isPieChart ? vegaLitePieChartSpec : vegaLiteBarChartSpec,
+            {actions: false}
+        );
     }
 
     private displayProgress(step: number) {
@@ -1330,29 +1261,22 @@ class CSRankings {
                 const dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
 
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                    + '<a title="Click for author\'s home page." target="_blank" href="'
-                    + homePage
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + homePage
-                    + '\', true); return false;"'
-                    + '>'
-                    + name
-                    + '</a>&nbsp;';
+                    + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                    + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                    + `>${name}</a>&nbsp;`;
                 if (this.note.hasOwnProperty(name)) {
                     const url = CSRankings.noteMap[this.note[name]];
-                    const href = '<a href="' + url + '">';
-                    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+                    const href = `<a href="${url}">`;
+                    p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
                 }
                 if (this.acmfellow.hasOwnProperty(name)) {
                     p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="` +
                         this.acmfellowImage + '"></span>&nbsp;';
                 }
                 if (this.turing.hasOwnProperty(name)) {
-                    p += '<span title="Turing Award"><img alt="Turing Award" src="' +
-                        this.turingImage + '"></span>&nbsp;';
+                    p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
                 }
-                p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
+                p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
 
                 p += '<a title="Click for author\'s home page." target="_blank" href="'
                     + homePage
@@ -1375,19 +1299,12 @@ class CSRankings {
                 p += '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
 
-                p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+                p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
                 p += this.ChartIcon + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
-                    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + dblpName
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + dblpName
-                    + '\', true); return false;"'
-                    + '>'
-                    + fc[name]
-                    + '</a>'
+                    + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
+                    + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
                     + "</small></td>"
                     + '<td align="right"><small>'
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
@@ -1471,7 +1388,7 @@ class CSRankings {
 
                 s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
 		  + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
                     + this.ChartIcon + "</span>";
                 s += "</td>";
 
@@ -1612,7 +1529,7 @@ class CSRankings {
             chartwidget!.innerHTML = this.ChartIcon;
         } else {
             chart!.style.display = 'block';
-            this.usePieChart ? this.makePieChart(name) : this.makeBarChart(name);
+            this.makeChart(name, this.usePieChart);
             chartwidget!.innerHTML = this.OpenChartIcon;
         }
 
@@ -1755,7 +1672,7 @@ class CSRankings {
 	      (<HTMLInputElement>elt).src = "png/piechart.png";
 	    }
 	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
-	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	      (<HTMLInputElement>elt).src = "png/piechart-open.png";
 	    }
 	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
 	      (<HTMLInputElement>elt).src = "png/piechart.png";
@@ -1769,7 +1686,7 @@ class CSRankings {
 	      (<HTMLInputElement>elt).src = "png/barchart.png";
 	    }
 	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
-	      (<HTMLInputElement>elt).src = "png/open_barchart.png";
+	      (<HTMLInputElement>elt).src = "png/barchart-open.png";
 	    }
 	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
 	      (<HTMLInputElement>elt).src = "png/barchart.png";
