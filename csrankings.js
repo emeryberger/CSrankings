@@ -31,7 +31,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 ;
 ;
 ;
-;
 class CSRankings {
     constructor() {
         this.note = {};
@@ -191,8 +190,7 @@ class CSRankings {
         this.areaDeptAdjustedCount = {}; /* area+dept */
         this.areaStringMap = {}; // name -> areaString (memoized)
         this.usePieChart = false;
-        /* Colors for all areas. */
-        this.color = ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+        /* Colors. */
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
         this.BarChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/barchart.png'>"; // bar chart image
@@ -447,8 +445,8 @@ class CSRankings {
             return 1;
         return 0;
     }
-    /* Create a bar chart */
-    makeBarChart(name) {
+    /* Create a bar or pie chart using Vega. Modified by Minsuk Kahng (https://minsuk.com) */
+    makeChart(name, isPieChart) {
         let data = [];
         let datadict = {};
         const keys = CSRankings.topTierAreas;
@@ -492,16 +490,22 @@ class CSRankings {
                 datadict[key] += value;
             }
         }
+        let valueSum = 0;
         areas.forEach(area => {
+            valueSum += datadict[area.key];
+        });
+        areas.forEach((area, index) => {
             const newSlice = {
-                "area": this.areaDict[area.key],
-                "value": Math.round(datadict[area.key] * 10) / 10
+                index: index,
+                area: this.areaDict[area.key],
+                value: Math.round(datadict[area.key] * 10) / 10,
+                ratio: datadict[area.key] / valueSum
             };
             data.push(newSlice);
             area.label = this.areaDict[area.key];
         });
         const colors = areas.sort((a, b) => a.label > b.label ? 1 : (a.label < b.label ? -1 : 0)).map(area => area.color);
-        const vegaLiteSpec = {
+        const vegaLiteBarChartSpec = {
             $schema: "https://vega.github.io/schema/vega-lite/v5.json",
             data: {
                 values: data
@@ -534,54 +538,7 @@ class CSRankings {
             height: 80,
             padding: { left: 25, top: 3 }
         };
-        vegaEmbed(`div[id="${name}-chart"]`, vegaLiteSpec, {
-            actions: false,
-        });
-    }
-    /* Create a pie chart (with Vega) */
-    makePieChart(name) {
-        let data = [];
-        let datadict = {};
-        const keys = CSRankings.topTierAreas;
-        const uname = unescape(name);
-        // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
-        const areas = [
-            ...this.aiAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#377eb8" })),
-            ...this.systemsAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#ff7f00" })),
-            ...this.theoryAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#4daf4a" })),
-            ...this.interdisciplinaryAreas.map(key => ({ key: key, label: this.areaDict[key], color: "#984ea3" }))
-        ];
-        areas.forEach(area => datadict[area.key] = 0);
-        for (let key in keys) {
-            if (!(uname in this.authorAreas)) {
-                return;
-            }
-            let value = this.authorAreas[uname][key];
-            value = Math.round(value * 10) / 10;
-            if (value > 0) {
-                if (key in CSRankings.parentMap) {
-                    key = CSRankings.parentMap[key];
-                }
-                datadict[key] += value;
-            }
-        }
-        let valueSum = 0;
-        areas.forEach(area => {
-            valueSum += datadict[area.key];
-        });
-        areas.forEach((area, index) => {
-            const newSlice = {
-                index: index,
-                area: this.areaDict[area.key],
-                value: Math.round(datadict[area.key] * 10) / 10,
-                ratio: datadict[area.key] / valueSum
-            };
-            data.push(newSlice);
-            area.label = this.areaDict[area.key];
-        });
-        console.log(data);
-        const colors = areas.sort((a, b) => a.label > b.label ? 1 : (a.label < b.label ? -1 : 0)).map(area => area.color);
-        const vegaLiteSpec = {
+        const vegaLitePieChartSpec = {
             $schema: "https://vega.github.io/schema/vega-lite/v5.json",
             data: {
                 values: data
@@ -638,9 +595,7 @@ class CSRankings {
             height: 250,
             padding: { left: 25, top: 3 }
         };
-        vegaEmbed(`div[id="${name}-chart"]`, vegaLiteSpec, {
-            actions: false,
-        });
+        vegaEmbed(`div[id="${name}-chart"]`, isPieChart ? vegaLitePieChartSpec : vegaLiteBarChartSpec, { actions: false });
     }
     displayProgress(step) {
         const msgs = ["Initializing.",
@@ -1280,7 +1235,7 @@ class CSRankings {
         }
         else {
             chart.style.display = 'block';
-            this.usePieChart ? this.makePieChart(name) : this.makeBarChart(name);
+            this.makeChart(name, this.usePieChart);
             chartwidget.innerHTML = this.OpenChartIcon;
         }
     }
