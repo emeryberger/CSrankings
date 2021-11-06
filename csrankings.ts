@@ -773,8 +773,126 @@ class CSRankings {
         });
     }
 
-    /* Create a pie chart */
+    /* Create a pie chart (with Vega) */
     private makePieChart(name: string): void {
+        let data: Array<BarChartData> = [];
+        let datadict: { [key: string]: number } = {};
+        const keys = CSRankings.topTierAreas;
+        const uname = unescape(name);
+
+        // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
+        const areas = [
+            ...this.aiAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#377eb8"})),
+            ...this.systemsAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#ff7f00"})),
+            ...this.theoryAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#4daf4a"})),
+            ...this.interdisciplinaryAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#984ea3"}))
+        ];
+        areas.forEach(area => datadict[area.key] = 0);
+
+        for (let key in keys) {
+            if (!(uname in this.authorAreas)) {
+                return;
+            }
+            let value = this.authorAreas[uname][key];
+            value = Math.round(value * 10) / 10;
+            if (value > 0) {
+                if (key in CSRankings.parentMap) {
+                    key = CSRankings.parentMap[key];
+                }
+                datadict[key] += value;
+            }
+        }
+
+        let valueSum = 0;
+        areas.forEach(area => {
+            valueSum += datadict[area.key];
+        });
+        areas.forEach((area, index) => {
+            const newSlice = {
+                index: index,
+                area: this.areaDict[area.key],
+                value: Math.round(datadict[area.key] * 10) / 10,
+                ratio: datadict[area.key] / valueSum
+            };
+            data.push(newSlice);
+
+            area.label = this.areaDict[area.key];
+        });
+        console.log(data)
+
+        const colors = areas.sort((a, b) => 
+            a.label > b.label ? 1 : (a.label < b.label ? -1 : 0)
+            ).map(area => area.color);
+
+        const vegaLiteSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            data: {
+                values: data
+            },
+            encoding: {
+                theta: {
+                    field: "value",
+                    type: "quantitative",
+                    stack: true
+                },
+                color: {
+                    field: "area",
+                    type: "nominal",
+                    scale: {"range": colors},
+                    legend: null
+                },
+                order: {field: "index"},
+                tooltip: [
+                    {field: "area", type: "nominal", title: "Area"},
+                    {field: "value", type: "quantitative", title: "Count"},
+                    {field: "ratio", type: "quantitative", title: "Ratio", format: ".1%"}
+                ]
+            },
+            layer: [
+                {
+                    mark: {type: "arc", outerRadius: 90, stroke: "#fdfdfd", strokeWidth: 1}
+                },
+                {
+                    mark: {type: "text", radius: 108, dy: -3},
+                    encoding: {
+                        text: {field: "area", type: "nominal"},
+                        color: {
+                            condition: {test: "datum.ratio < 0.03", value: "rgba(255, 255, 255, 0)"},
+                            field: "area",
+                            type: "nominal",
+                            scale: {"range": colors}
+                        }
+                    }
+                },
+                {
+                    mark: {type: "text", radius: 108, fontSize: 9, dy: 7},
+                    encoding: {
+                        text: {field: "value", type: "quantitative"},
+                        color: {
+                            condition: {test: "datum.ratio < 0.03", value: "rgba(255, 255, 255, 0)"},
+                            field: "area",
+                            type: "nominal",
+                            scale: {"range": colors}
+                        }
+                    }
+                }
+            ],
+            width: 400,
+            height: 250,
+            padding: {left: 25, top: 3}
+        };
+        
+        vegaEmbed(`div[id="${name}-chart"]`, vegaLiteSpec, {
+            actions: false,
+        });
+    }
+
+    /* Create a pie chart */
+    private makeOldPieChart(name: string): void {
         let data: Array<PieChartData> = [];
         let datadict: { [key: string]: number } = {};
         const keys = CSRankings.topTierAreas;
