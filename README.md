@@ -10,7 +10,7 @@ See the <a href="http://csrankings.org/faq.html">FAQ</a> for more details.
 ---
 
 This repository contains all code and data used to build the computer science rankings website, hosted here:
-http://csrankings.org
+https://csrankings.org
 
 ### Adding or modifying affiliations
 
