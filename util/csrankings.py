@@ -223,7 +223,15 @@ areadict : Dict[Area, List[Conference]] = {
         Conference("EMNLP-IJCNLP"),
         Conference("EMNLP/IJCNLP (1)"),
     ],
-    Area("acl"): [Conference("ACL"), Conference("ACL (1)"), Conference("ACL (2)"), Conference("ACL/IJCNLP"), Conference("COLING-ACL")],
+    Area("acl"): [
+        Conference("ACL"), 
+        Conference("ACL (1)"), 
+        Conference("ACL (2)"), 
+        Conference("ACL/IJCNLP"), 
+        Conference("ACL/IJCNLP (1)"),
+        Conference("ACL/IJCNLP (2)"),
+        Conference("COLING-ACL")
+    ],
     Area("naacl"): [Conference("NAACL"), Conference("HLT-NAACL"), Conference("NAACL-HLT"), Conference("NAACL-HLT (1)")],
     #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
     Area("cvpr"): [Conference("CVPR"), Conference("CVPR (1)"), Conference("CVPR (2)")],
