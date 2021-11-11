@@ -5,16 +5,19 @@
 <create-db name='dblp'>dblp.xml</create-db>
 <xquery>
 <![CDATA[
-<dblp>{ //inproceedings[booktitle="EMNLP"],
+<dblp>{ 
 //inproceedings[booktitle="ACL"],
 //inproceedings[booktitle="ACL (1)"],
 //inproceedings[booktitle="ACL (2)"],
+//inproceedings[booktitle="ACL/IJCNLP"],
+//inproceedings[booktitle="COLING-ACL"],
+//inproceedings[booktitle="ACL/IJCNLP (1)"],
+//inproceedings[booktitle="ACL/IJCNLP (2)"],
 //inproceedings[booktitle="NAACL"],
 //inproceedings[booktitle="NAACL-HLT"],
 //inproceedings[booktitle="NAACL-HLT (1)"],
 //inproceedings[booktitle="HLT-NAACL"],
-//inproceedings[booktitle="ACL/IJCNLP"],
-//inproceedings[booktitle="COLING-ACL"],
+//inproceedings[booktitle="EMNLP"],
 //inproceedings[booktitle="EMNLP-CoNLL"],
 //inproceedings[booktitle="EMNLP/IJCNLP (1)"],
 //inproceedings[booktitle="HLT/EMNLP"],
