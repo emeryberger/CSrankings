@@ -3,16 +3,8 @@
 from lxml import etree as ElementTree
 
 # import xml.etree.ElementTree as ElementTree
-import csv
-import operator
+
 import re
-import gzip
-import xmltodict
-import collections
-import json
-import csv
-import re
-import sys
 
 from typing import Dict, List, NewType
 
@@ -26,7 +18,7 @@ Conference = NewType("Conference", str)
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile("([0-9]+)-([0-9]+)")  #  flags=re.ASCII)
+pageCounterNormal = re.compile("([0-9]+)-([0-9]+)")
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile("[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)")
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
