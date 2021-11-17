@@ -35,10 +35,10 @@ def startpage(pageStr: str) -> int:
     pageCounterMatcher2 = pageCounterColon.match(pageStr)
     start = 0
 
-    if not pageCounterMatcher1 is None:
+    if pageCounterMatcher1 is not None:
         start = int(pageCounterMatcher1.group(1))
     else:
-        if not pageCounterMatcher2 is None:
+        if pageCounterMatcher2 is not None:
             start = int(pageCounterMatcher2.group(1))
     return start
 
@@ -60,12 +60,12 @@ def pagecount(pageStr: str) -> int:
     end = 0
     count = 0
 
-    if not pageCounterMatcher1 is None:
+    if pageCounterMatcher1 is not None:
         start = int(pageCounterMatcher1.group(1))
         end = int(pageCounterMatcher1.group(2))
         count = end - start + 1
     else:
-        if not pageCounterMatcher2 is None:
+        if pageCounterMatcher2 is not None:
             start = int(pageCounterMatcher2.group(1))
             end = int(pageCounterMatcher2.group(2))
             count = end - start + 1
@@ -75,7 +75,7 @@ def test_pagecount():
     assert pagecount("117-128") == 12
     assert pagecount("138:1-138:28") == 28
     assert pagecount("138:200-138:208") == 9
-    
+
 areadict : Dict[Area, List[Conference]] = {
     #
     # Max three most selective venues per area for now.
