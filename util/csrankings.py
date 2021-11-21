@@ -247,11 +247,13 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("EMNLP/IJCNLP (1)"),
     ],
     Area("acl"): [
-        Conference("ACL"),
-        Conference("ACL (1)"),
-        Conference("ACL (2)"),
-        Conference("ACL/IJCNLP"),
-        Conference("COLING-ACL"),
+        Conference("ACL"), 
+        Conference("ACL (1)"), 
+        Conference("ACL (2)"), 
+        Conference("ACL/IJCNLP"), 
+        Conference("ACL/IJCNLP (1)"),
+        Conference("ACL/IJCNLP (2)"),
+        Conference("COLING-ACL")
     ],
     Area("naacl"): [
         Conference("NAACL"),
