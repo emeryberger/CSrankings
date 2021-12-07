@@ -346,8 +346,8 @@ areadict: Dict[Area, List[Conference]] = {
 }
 
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110)}
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
 
 EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11)}
 EMSOFT_TCAD_PaperStart = {
