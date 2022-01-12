@@ -38,9 +38,11 @@ __revision__ = "$Rev$"
 
 import difflib
 
+
 class FuzzyDict(dict):
     "Provides a dictionary that performs fuzzy lookup"
-    def __init__(self, items = None, cutoff = .6):
+
+    def __init__(self, items=None, cutoff=0.6):
         """Construct a new FuzzyDict instance
 
         items is an dictionary to copy items from (optional)
@@ -51,16 +53,18 @@ class FuzzyDict(dict):
 
         if items:
             self.update(items)
-        self.cutoff =  cutoff
+        self.cutoff = cutoff
 
         # short wrapper around some super (dict) methods
-        self._dict_contains = lambda key: \
-            super(FuzzyDict,self).__contains__(key)
+        self._dict_contains = lambda key: super(FuzzyDict, self).__contains__(
+            key
+        )
 
-        self._dict_getitem = lambda key: \
-            super(FuzzyDict,self).__getitem__(key)
+        self._dict_getitem = lambda key: super(FuzzyDict, self).__getitem__(
+            key
+        )
 
-    def _search(self, lookfor, stop_on_first = False):
+    def _search(self, lookfor, stop_on_first=False):
         """Returns the value whose key best matches lookfor
 
         if stop_on_first is True then the method returns as soon
@@ -93,7 +97,7 @@ class FuzzyDict(dict):
             # string - if it cannot be fuzzy matched and we are here
             # this it is defintely not in the dictionary
             try:
-            # calculate the match value
+                # calculate the match value
                 ratio = ratio_calc.ratio()
             except TypeError:
                 break
@@ -107,12 +111,7 @@ class FuzzyDict(dict):
             if stop_on_first and ratio >= self.cutoff:
                 break
 
-        return (
-            best_ratio >= self.cutoff,
-            best_key,
-            best_match,
-            best_ratio)
-
+        return (best_ratio >= self.cutoff, best_key, best_match, best_ratio)
 
     def __contains__(self, item):
         "Overides Dictionary __contains__ to use fuzzy matching"
@@ -127,24 +126,19 @@ class FuzzyDict(dict):
 
         if not matched:
             raise KeyError(
-                "'%s'. closest match: '%s' with ratio %.3f"%
-                    (str(lookfor), str(key), ratio))
+                "'%s'. closest match: '%s' with ratio %.3f"
+                % (str(lookfor), str(key), ratio)
+            )
 
         return item
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     import unittest
 
     class FuzzyTestCase(unittest.TestCase):
         "Perform some tests"
-        test_dict = {
-            'Hiya'  : 1,
-            u'hiy\xe4' : 2,
-            'test3' : 3,
-            1: 324}
-
+        test_dict = {"Hiya": 1, u"hiy\xe4": 2, "test3": 3, 1: 324}
 
         def testCreation_Empty(self):
             "Verify that not specifying any values creates an empty dictionary"
@@ -156,40 +150,38 @@ if __name__ == '__main__':
             "Test creating a fuzzy dict"
             fd = FuzzyDict(self.test_dict)
             self.assertEquals(fd, self.test_dict)
-            self.assertEquals(self.test_dict['Hiya'], fd['hiya'])
+            self.assertEquals(self.test_dict["Hiya"], fd["hiya"])
 
-            fd2 = FuzzyDict(self.test_dict, cutoff = .8)
+            fd2 = FuzzyDict(self.test_dict, cutoff=0.8)
             self.assertEquals(fd, self.test_dict)
-            self.assertRaises(KeyError, fd2.__getitem__, 'hiya')
-
+            self.assertRaises(KeyError, fd2.__getitem__, "hiya")
 
         def testContains(self):
             "Test checking if an item is in a FuzzyDict"
             fd = FuzzyDict(self.test_dict)
 
-            self.assertEquals(True, fd.__contains__('hiya'))
+            self.assertEquals(True, fd.__contains__("hiya"))
 
-            self.assertEquals(True, fd.__contains__(u'test3'))
+            self.assertEquals(True, fd.__contains__(u"test3"))
 
-            self.assertEquals(True, fd.__contains__(u'hiy\xe4'))
+            self.assertEquals(True, fd.__contains__(u"hiy\xe4"))
 
-            self.assertEquals(False, fd.__contains__('FuzzyWuzzy'))
+            self.assertEquals(False, fd.__contains__("FuzzyWuzzy"))
 
             self.assertEquals(True, fd.__contains__(1))
 
             self.assertEquals(False, fd.__contains__(23))
 
-
         def testGetItem(self):
             "Test getting items from a FuzzyDict"
             fd = FuzzyDict(self.test_dict)
 
-            self.assertEquals(self.test_dict["Hiya"], fd['hiya'])
-            self.assertRaises(KeyError, fd.__getitem__, 'FuzzyWuzzy')
+            self.assertEquals(self.test_dict["Hiya"], fd["hiya"])
+            self.assertRaises(KeyError, fd.__getitem__, "FuzzyWuzzy")
 
-            fd2 = FuzzyDict(self.test_dict, cutoff = .14)
+            fd2 = FuzzyDict(self.test_dict, cutoff=0.14)
 
-            self.assertEquals(1, fd2['FuzzyWuzzy'])
+            self.assertEquals(1, fd2["FuzzyWuzzy"])
             self.assertEquals(324, fd2[1])
             self.assertRaises(KeyError, fd2.__getitem__, 23)
 
