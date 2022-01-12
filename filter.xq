@@ -65,6 +65,7 @@
 //inproceedings[booktitle="CRYPTO (1)"],
 //inproceedings[booktitle="CRYPTO (2)"],
 //inproceedings[booktitle="CRYPTO (3)"],
+//inproceedings[booktitle="CRYPTO (4)"],
 //inproceedings[booktitle="EUROCRYPT"],
 //inproceedings[booktitle="EUROCRYPT (1)"],
 //inproceedings[booktitle="EUROCRYPT (2)"],
