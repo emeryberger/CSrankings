@@ -1468,9 +1468,9 @@ class CSRankings {
                 // Splice it out.
                 if (CSRankings.regions.indexOf(elem) >= 0) {
                     q.splice(index, 1);
+                    // Set the region.
+                    $("#regions").val(elem);
                 }
-                // Set the region.
-                $("#regions").val(elem);
                 index += 1;
             });
         }
@@ -1682,7 +1682,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["us", "europe", "ca", "northamerica", "southamerica", "australasia", "asia", "africa", "world"];
+CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "au", "at", "br", "ca", "cn", "dk", "fr", "de", "gr", "hk", "in", "il", "it", "jp", "nl", "nz", "kr", "es", "ch", "tr", "uk", "us"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
