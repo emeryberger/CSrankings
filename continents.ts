@@ -1,4 +1,4 @@
-export function whichContinent(latitude: number, longitude: number) : string {
+function whichContinent(latitude: number, longitude: number) : string {
     const point = [longitude, latitude];
     for (const cont in continents) {
 	if (inPolygon(point, pathToList(continents[cont]))) {
