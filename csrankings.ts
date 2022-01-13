@@ -87,7 +87,7 @@ class CSRankings {
     public static readonly areas: Array<string> = [];
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
-    public static readonly regions: Array<string> = ["us", "europe", "ca", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
+    public static readonly regions: Array<string> = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "au", "at", "br", "ca", "cn", "dk", "fr", "de", "gr", "hk", "in", "il", "it", "jp", "nl", "nz", "kr", "es", "ch", "tr", "uk", "us"]
     private static readonly nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 
     private note: { [name: string]: string } = {};
@@ -1777,9 +1777,9 @@ class CSRankings {
                 // Splice it out.
                 if (CSRankings.regions.indexOf(elem) >= 0) {
                     q.splice(index, 1);
+                    // Set the region.
+		    $("#regions").val(elem);
                 }
-                // Set the region.
-                $("#regions").val(elem);
                 index += 1;
             });
         }
