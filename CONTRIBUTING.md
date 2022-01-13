@@ -22,7 +22,7 @@ database. Use a text editor like emacs or NotePad instead._
 
 1. _Insert new faculty **in alphabetical order**, not at the end of `csrankings-[a-z].csv`._ **Do not modify `csrankings.csv`, which is auto-generated.**
 
-1. _Read and check **all** the boxes below by filling them in with an X._ Do not update the file `CONTRIBUTING.md`. **IF YOU DO NOT DO THIS, YOUR COMMIT MAY BE SUMMARILY REJECTED.**
+1. _When submitting the PR request, make sure to read and check **all** the boxes in the PR template below by filling them in with an X._ Do not update the file `CONTRIBUTING.md` in your commit, only in the PR. **IF YOU DO NOT DO THIS, YOUR COMMIT MAY BE SUMMARILY REJECTED.**
 
 **Inclusion criteria**
 
