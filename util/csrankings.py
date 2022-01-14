@@ -247,11 +247,13 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("EMNLP/IJCNLP (1)"),
     ],
     Area("acl"): [
-        Conference("ACL"),
-        Conference("ACL (1)"),
-        Conference("ACL (2)"),
-        Conference("ACL/IJCNLP"),
-        Conference("COLING-ACL"),
+        Conference("ACL"), 
+        Conference("ACL (1)"), 
+        Conference("ACL (2)"), 
+        Conference("ACL/IJCNLP"), 
+        Conference("ACL/IJCNLP (1)"),
+        Conference("ACL/IJCNLP (2)"),
+        Conference("COLING-ACL")
     ],
     Area("naacl"): [
         Conference("NAACL"),
@@ -298,7 +300,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (29)"),
         Conference("ECCV (30)"),
     ],
-    # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
+    # 'robotics'
     Area("icra"): [
         Conference("ICRA"),
         Conference("ICRA (1)"),
@@ -306,12 +308,13 @@ areadict: Dict[Area, List[Conference]] = {
     ],
     Area("iros"): [Conference("IROS")],
     Area("rss"): [Conference("Robotics: Science and Systems")],
-    # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
+    # 'crypt'
     Area("crypto"): [
         Conference("CRYPTO"),
         Conference("CRYPTO (1)"),
         Conference("CRYPTO (2)"),
         Conference("CRYPTO (3)"),
+        Conference("CRYPTO (4)")
     ],
     Area("eurocrypt"): [
         Conference("EUROCRYPT"),
@@ -344,8 +347,8 @@ areadict: Dict[Area, List[Conference]] = {
 }
 
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110)}
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
 
 EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11)}
 EMSOFT_TCAD_PaperStart = {
