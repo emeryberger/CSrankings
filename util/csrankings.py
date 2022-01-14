@@ -300,7 +300,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (29)"),
         Conference("ECCV (30)"),
     ],
-    # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
+    # 'robotics'
     Area("icra"): [
         Conference("ICRA"),
         Conference("ICRA (1)"),
@@ -308,12 +308,13 @@ areadict: Dict[Area, List[Conference]] = {
     ],
     Area("iros"): [Conference("IROS")],
     Area("rss"): [Conference("Robotics: Science and Systems")],
-    # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
+    # 'crypt'
     Area("crypto"): [
         Conference("CRYPTO"),
         Conference("CRYPTO (1)"),
         Conference("CRYPTO (2)"),
         Conference("CRYPTO (3)"),
+        Conference("CRYPTO (4)")
     ],
     Area("eurocrypt"): [
         Conference("EUROCRYPT"),
