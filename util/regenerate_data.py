@@ -35,7 +35,7 @@ parser.add_argument(
     action="store_const",
     const=True,
     default=False,
-    help="Generate data for all authors, not just authors in the faculty database (csrankings-[0-9].csv) (default: False)",
+    help="Generate data for all authors, not just authors in the faculty database (csrankings-[a-z].csv) (default: False)",
 )
 
 parser.add_argument(
