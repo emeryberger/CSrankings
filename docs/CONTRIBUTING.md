@@ -1,15 +1,28 @@
 # Contributing to CSrankings
 
-Thanks for contributing to CSrankings! Here are some guidelines to getting your pull request accepted.
+Thanks for contributing to CSrankings! Please read **all** these guidelines to getting your pull request accepted. **IF YOU DO NOT DO THIS, YOUR COMMIT WILL BE SUMMARILY REJECTED.**
 
+1. Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
+
+1. Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv`.
 
 1. _Do not use Excel to edit any .csv files; Excel incorrectly tries to
 convert some Google Scholar entries to formulas, corrupting the
 database. Use a text editor like emacs or NotePad instead._
 
-2. _Insert new faculty **in alphabetical order**, not at the end of `csrankings-[0-9].csv`._ **Do not modify `csrankings.csv`, which is auto-generated.**
+1. Check to make sure that you have no spaces after commas, or any missing fields.
 
-3. _Read and check **all** the boxes below by filling them in with an X._
+1. Check to make sure the home page is correct.
+
+1. Make sure the Google Scholar IDs are just the alphanumeric identifier (not a URL or with `&hl=en`).
+
+1. Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org).
+
+1. If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
+
+1. _Insert new faculty **in alphabetical order**, not at the end of `csrankings-[a-z].csv`._ **Do not modify `csrankings.csv`, which is auto-generated.**
+
+1. _Read and check **all** the boxes below by filling them in with an X._ Do not update the file `CONTRIBUTING.md`. **IF YOU DO NOT DO THIS, YOUR COMMIT MAY BE SUMMARILY REJECTED.**
 
 **Inclusion criteria**
 
@@ -23,15 +36,15 @@ department. Faculty should also have a 75%+ time appointment (check
 
 **Updating an affiliation or home page**
 
-- [ ] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[0-9].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put NOSCHOLARPAGE.
+- [ ] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put NOSCHOLARPAGE.
 
 **Adding one or more faculty members (including an entire department)**
 
 - [ ] If the department is not yet listed in CSrankings, the entire faculty needs to be added (not just one faculty member).
 
-- [ ] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings-[0-9].csv`; include disambiguation suffixes like 0001 as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
+- [ ] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings-[a-z].csv` (**the letters correspond to the first letter of the faculty members' names**); include disambiguation suffixes like 0001 as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
 
-- [ ] If DBLP has multiple entries for this person, all of them need to be listed.
+- [ ] If DBLP has multiple entries for this person, all of them need to be listed. Do not update `dblp-aliases.csv`.
 
 - [ ] If the institution you are adding is not in the US,
 update `country-info.csv`.
