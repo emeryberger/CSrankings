@@ -1179,13 +1179,13 @@ Adam Lopez,University of Edinburgh,emnlp,2.0,0.5,2019
 Adam Lopez,University of Edinburgh,naacl,1.0,0.33333,2013
 Adam Lopez,University of Edinburgh,naacl,1.0,0.33333,2018
 Adam Lopez,University of Edinburgh,naacl,3.0,1.0333,2019
-Adam M. Smith,Univ. of California - Santa Cruz,aaai,1.0,0.5,2020
-Adam M. Smith,Univ. of California - Santa Cruz,aaai,1.0,0.5,2021
-Adam M. Smith,Univ. of California - Santa Cruz,chiconf,1.0,0.2,2015
-Adam M. Smith,Univ. of California - Santa Cruz,ijcai,1.0,0.16667,2015
-Adam M. Smith,Univ. of California - Santa Cruz,ubicomp,1.0,0.25,2008
-Adam M. Smith,Univ. of California - Santa Cruz,uist,1.0,0.25,2013
-Adam M. Smith,Univ. of California - Santa Cruz,vis,1.0,0.14286,2019
+Adam M. Smith 0001,Univ. of California - Santa Cruz,aaai,1.0,0.5,2020
+Adam M. Smith 0001,Univ. of California - Santa Cruz,aaai,1.0,0.5,2021
+Adam M. Smith 0001,Univ. of California - Santa Cruz,chiconf,1.0,0.2,2015
+Adam M. Smith 0001,Univ. of California - Santa Cruz,ijcai,1.0,0.16667,2015
+Adam M. Smith 0001,Univ. of California - Santa Cruz,ubicomp,1.0,0.25,2008
+Adam M. Smith 0001,Univ. of California - Santa Cruz,uist,1.0,0.25,2013
+Adam M. Smith 0001,Univ. of California - Santa Cruz,vis,1.0,0.14286,2019
 Adam Morrison 0001,Tel Aviv University,asplos,1.0,0.5,2014
 Adam Morrison 0001,Tel Aviv University,asplos,1.0,0.5,2015
 Adam Morrison 0001,Tel Aviv University,asplos,2.0,0.66667,2016
@@ -4163,6 +4163,7 @@ Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,icml,1.0,0.25,2016
 Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,icml,1.0,0.25,2021
 Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,iros,1.0,0.25,2021
 Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.16667,2019
+Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.2,2021
 Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.1,2018
 Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,nips,1.0,0.25,2012
 Alexander G. Schwing,Univ. of Illinois at Urbana-Champaign,nips,1.0,0.33333,2013
@@ -13272,7 +13273,6 @@ Aziz Mohaisen,University of Central Florida,imc,1.0,0.33333,2010
 Aziz Mohaisen,University of Central Florida,ndss,1.0,0.16667,2011
 Aziz Mohaisen,University of Central Florida,ndss,1.0,0.2,2016
 Aziz Mohaisen,University of Central Florida,ndss,1.0,0.16667,2018
-Aziz Mohaisen,University of Central Florida,pets,1.0,0.25,2020
 Aïda Ouangraoua,Université de Sherbrooke,ismb,1.0,0.5,2018
 B. Aditya Prakash,Georgia Institute of Technology,aaai,1.0,0.33333,2017
 B. Aditya Prakash,Georgia Institute of Technology,aaai,1.0,0.33333,2018
@@ -31585,6 +31585,7 @@ David Miller,DePaul University,icra,1.0,1.0,1985
 David Miller,DePaul University,kdd,1.0,0.14286,2015
 David Miller,DePaul University,siggraph,1.0,0.33333,1981
 David Mohaisen,University of Central Florida,ccs,2.0,0.58333,2021
+David Mohaisen,University of Central Florida,pets,1.0,0.25,2020
 David N. Turner,University of Kent,popl,1.0,0.33333,1992
 David N. Turner,University of Kent,popl,1.0,0.5,1993
 David N. Turner,University of Kent,popl,1.0,0.33333,1996
@@ -43954,7 +43955,7 @@ Fuchun Sun 0001,Tsinghua University,icra,2.0,0.36667,2017
 Fuchun Sun 0001,Tsinghua University,icra,1.0,0.125,2018
 Fuchun Sun 0001,Tsinghua University,icra,4.0,0.78333,2019
 Fuchun Sun 0001,Tsinghua University,icra,1.0,0.16667,2020
-Fuchun Sun 0001,Tsinghua University,icra,2.0,0.4,2021
+Fuchun Sun 0001,Tsinghua University,icra,3.0,0.65,2021
 Fuchun Sun 0001,Tsinghua University,ijcai,2.0,0.45,2015
 Fuchun Sun 0001,Tsinghua University,ijcai,1.0,0.16667,2016
 Fuchun Sun 0001,Tsinghua University,ijcai,1.0,0.2,2017
@@ -80524,7 +80525,7 @@ Lei Chen 0002,HKUST,sigmod,2.0,0.5,2015
 Lei Chen 0002,HKUST,sigmod,2.0,0.58333,2017
 Lei Chen 0002,HKUST,sigmod,2.0,0.5,2018
 Lei Chen 0002,HKUST,sigmod,3.0,0.54286,2020
-Lei Chen 0002,HKUST,sigmod,2.0,0.5,2021
+Lei Chen 0002,HKUST,sigmod,3.0,0.75,2021
 Lei Chen 0002,HKUST,vldb,1.0,0.5,2004
 Lei Chen 0002,HKUST,vldb,1.0,0.2,2007
 Lei Chen 0002,HKUST,vldb,2.0,0.4,2008
@@ -112467,7 +112468,7 @@ Qi Liu 0003,USTC,ijcai,2.0,0.33333,2017
 Qi Liu 0003,USTC,ijcai,1.0,0.16667,2018
 Qi Liu 0003,USTC,ijcai,1.0,0.16667,2019
 Qi Liu 0003,USTC,ijcai,1.0,0.16667,2020
-Qi Liu 0003,USTC,ijcai,2.0,0.26786,2021
+Qi Liu 0003,USTC,ijcai,3.0,0.41071,2021
 Qi Liu 0003,USTC,kdd,1.0,0.2,2011
 Qi Liu 0003,USTC,kdd,3.0,0.48571,2016
 Qi Liu 0003,USTC,kdd,1.0,0.14286,2017
@@ -113080,6 +113081,7 @@ Qing Li 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2017
 Qing Li 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.5,2018
 Qing Li 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2019
 Qing Li 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.25,2021
+Qing Li 0001,The Hong Kong Polytechnic University,iros,1.0,0.16667,2021
 Qing Li 0001,The Hong Kong Polytechnic University,sigir,1.0,0.25,2021
 Qing Li 0001,The Hong Kong Polytechnic University,vldb,1.0,0.33333,1997
 Qing Li 0001,The Hong Kong Polytechnic University,www,1.0,0.33333,2002
@@ -113332,6 +113334,7 @@ Quan Chen 0002,Shanghai Jiao Tong University,ics,2.0,0.29167,2019
 Quan Chen 0002,Shanghai Jiao Tong University,isca,1.0,0.11111,2015
 Quan Chen 0002,Shanghai Jiao Tong University,isca,1.0,0.16667,2017
 Quan Chen 0002,Shanghai Jiao Tong University,sc,1.0,0.1,2020
+Quan Chen 0002,Shanghai Jiao Tong University,sc,1.0,0.090909,2021
 Quan Chen 0002,Shanghai Jiao Tong University,usenixatc,1.0,0.076923,2020
 Quan Li,ShanghaiTech University,chiconf,1.0,0.25,2019
 Quan Li,ShanghaiTech University,chiconf,1.0,0.125,2020
@@ -117722,6 +117725,8 @@ Richard M. Fujimoto,Georgia Institute of Technology,isca,1.0,0.33333,1988
 Richard M. Fujimoto,Georgia Institute of Technology,sigmetrics,1.0,0.33333,1991
 Richard M. Fujimoto,Georgia Institute of Technology,sigmetrics,1.0,0.2,1992
 Richard M. Fujimoto,Georgia Institute of Technology,sigmetrics,2.0,0.83333,1994
+Richard M. Jiang 0001,Lancaster University,aaai,1.0,0.5,2012
+Richard M. Jiang 0001,Lancaster University,aaai,1.0,0.5,2014
 Richard M. Karp,Univ. of California - Berkeley,asplos,1.0,0.2,1989
 Richard M. Karp,Univ. of California - Berkeley,crypto,1.0,0.33333,1982
 Richard M. Karp,Univ. of California - Berkeley,focs,1.0,0.2,1979
@@ -148295,28 +148300,15 @@ Weitao Xu,City University of Hong Kong,mobicom,1.0,0.25,2020
 Weitao Xu,City University of Hong Kong,ndss,1.0,0.14286,2017
 Weitao Xu,City University of Hong Kong,ubicomp,1.0,0.2,2017
 Weitao Xu,City University of Hong Kong,ubicomp,1.0,0.125,2020
-Weiwei Sun,Fudan University,aaai,1.0,0.16667,2020
-Weiwei Sun,Fudan University,acl,1.0,1.0,2010
-Weiwei Sun,Fudan University,acl,1.0,1.0,2011
-Weiwei Sun,Fudan University,cvpr,1.0,0.14286,2019
-Weiwei Sun,Fudan University,cvpr,1.0,0.2,2020
-Weiwei Sun,Fudan University,emnlp,1.0,0.25,2009
-Weiwei Sun,Fudan University,emnlp,1.0,0.5,2011
-Weiwei Sun,Fudan University,iccv,1.0,0.2,2019
-Weiwei Sun,Fudan University,icra,1.0,0.2,2004
-Weiwei Sun,Fudan University,ijcai,1.0,0.2,2017
-Weiwei Sun,Fudan University,ijcai,1.0,0.25,2018
-Weiwei Sun,Fudan University,ijcai,1.0,0.14286,2020
-Weiwei Sun,Fudan University,ijcai,1.0,0.25,2021
-Weiwei Sun,Fudan University,iros,1.0,0.2,2006
-Weiwei Sun,Fudan University,kdd,1.0,0.14286,2016
-Weiwei Sun,Fudan University,naacl,1.0,0.2,2021
-Weiwei Sun,Fudan University,sigir,1.0,0.14286,2020
-Weiwei Sun,Fudan University,sigir,2.0,0.28571,2021
-Weiwei Sun,Fudan University,ubicomp,1.0,0.25,2015
-Weiwei Sun,Fudan University,ubicomp,1.0,0.33333,2016
-Weiwei Sun,Fudan University,ubicomp,1.0,0.2,2017
-Weiwei Sun,Fudan University,vldb,1.0,0.25,2014
+Weiwei Sun 0008,Fudan University,ijcai,1.0,0.2,2017
+Weiwei Sun 0008,Fudan University,ijcai,1.0,0.25,2018
+Weiwei Sun 0008,Fudan University,ijcai,1.0,0.14286,2020
+Weiwei Sun 0008,Fudan University,ijcai,1.0,0.25,2021
+Weiwei Sun 0008,Fudan University,kdd,1.0,0.14286,2016
+Weiwei Sun 0008,Fudan University,ubicomp,1.0,0.25,2015
+Weiwei Sun 0008,Fudan University,ubicomp,1.0,0.33333,2016
+Weiwei Sun 0008,Fudan University,ubicomp,1.0,0.2,2017
+Weiwei Sun 0008,Fudan University,vldb,1.0,0.25,2014
 Weiwei Xu,Zhejiang University,aaai,1.0,0.1,2020
 Weiwei Xu,Zhejiang University,cvpr,1.0,0.16667,2013
 Weiwei Xu,Zhejiang University,cvpr,1.0,0.14286,2019
