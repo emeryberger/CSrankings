@@ -1,18 +1,7 @@
 """Subroutines used for computing rankings for CSrankings.
 """
-from lxml import etree as ElementTree
 
-# import xml.etree.ElementTree as ElementTree
-import csv
-import operator
 import re
-import gzip
-import xmltodict
-import collections
-import json
-import csv
-import re
-import sys
 
 from typing import Dict, List, NewType
 
@@ -26,7 +15,7 @@ Conference = NewType("Conference", str)
 # Papers must be at least 6 pages long to count.
 pageCountThreshold = 6
 # Match ordinary page numbers (as in 10-17).
-pageCounterNormal = re.compile("([0-9]+)-([0-9]+)")  #  flags=re.ASCII)
+pageCounterNormal = re.compile("([0-9]+)-([0-9]+)")
 # Match page number in the form volume:page (as in 12:140-12:150).
 pageCounterColon = re.compile("[0-9]+:([1-9][0-9]*)-[0-9]+:([1-9][0-9]*)")
 # Special regexp for extracting pseudo-volumes (paper number) from TECS.
@@ -43,12 +32,13 @@ def startpage(pageStr: str) -> int:
     pageCounterMatcher2 = pageCounterColon.match(pageStr)
     start = 0
 
-    if not pageCounterMatcher1 is None:
+    if pageCounterMatcher1 is not None:
         start = int(pageCounterMatcher1.group(1))
     else:
-        if not pageCounterMatcher2 is None:
+        if pageCounterMatcher2 is not None:
             start = int(pageCounterMatcher2.group(1))
     return start
+
 
 def test_startpage():
     # Check without a colon
@@ -57,6 +47,7 @@ def test_startpage():
     assert startpage("138:1-138:28") == 1
     # Make sure it's not coincidentally getting the first digit of the volume
     assert startpage("138:200-138:208") == 200
+
 
 def pagecount(pageStr: str) -> int:
     """Compute the number of pages in a string representing a range of page numbers."""
@@ -68,23 +59,25 @@ def pagecount(pageStr: str) -> int:
     end = 0
     count = 0
 
-    if not pageCounterMatcher1 is None:
+    if pageCounterMatcher1 is not None:
         start = int(pageCounterMatcher1.group(1))
         end = int(pageCounterMatcher1.group(2))
         count = end - start + 1
     else:
-        if not pageCounterMatcher2 is None:
+        if pageCounterMatcher2 is not None:
             start = int(pageCounterMatcher2.group(1))
             end = int(pageCounterMatcher2.group(2))
             count = end - start + 1
     return count
 
+
 def test_pagecount():
     assert pagecount("117-128") == 12
     assert pagecount("138:1-138:28") == 28
     assert pagecount("138:200-138:208") == 9
-    
-areadict : Dict[Area, List[Conference]] = {
+
+
+areadict: Dict[Area, List[Conference]] = {
     #
     # Max three most selective venues per area for now.
     #
@@ -118,7 +111,10 @@ areadict : Dict[Area, List[Conference]] = {
     ],  # next tier
     # SIGMETRICS
     # - Two variants for each, as in DBLP.
-    Area("imc"): [Conference("IMC"), Conference("Internet Measurement Conference")],
+    Area("imc"): [
+        Conference("IMC"),
+        Conference("Internet Measurement Conference"),
+    ],
     Area("sigmetrics"): [
         Conference("SIGMETRICS"),
         Conference("SIGMETRICS/Performance"),
@@ -139,25 +135,37 @@ areadict : Dict[Area, List[Conference]] = {
         Conference("EMSOFT"),
         Conference("ACM Trans. Embedded Comput. Syst."),
         Conference("ACM Trans. Embed. Comput. Syst."),
-        Conference("IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.")
+        Conference("IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."),
     ],  # TECS: issue number & page numbers must be checked
     Area("rtss"): [Conference("RTSS")],
     Area("rtas"): [
         Conference("RTAS"),
-        Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
+        Conference(
+            "IEEE Real-Time and Embedded Technology and Applications Symposium"
+        ),
     ],
     # SIGDA
     Area("iccad"): [Conference("ICCAD")],
     Area("dac"): [Conference("DAC")],
     # SIGMOD
-    Area("vldb"): [Conference("VLDB"), Conference("PVLDB"), Conference("Proc. VLDB Endow.")],
+    Area("vldb"): [
+        Conference("VLDB"),
+        Conference("PVLDB"),
+        Conference("Proc. VLDB Endow."),
+    ],
     Area("sigmod"): [Conference("SIGMOD Conference")],
     Area("icde"): [Conference("ICDE")],  # next tier
     Area("pods"): [Conference("PODS")],  # next tier
     # SIGSAC
-    Area("ccs"): [Conference("CCS"), Conference("ACM Conference on Computer and Communications Security")],
+    Area("ccs"): [
+        Conference("CCS"),
+        Conference("ACM Conference on Computer and Communications Security"),
+    ],
     Area("oakland"): [Conference("IEEE Symposium on Security and Privacy")],
-    Area("usenixsec"): [Conference("USENIX Security Symposium"), Conference("USENIX Security")],
+    Area("usenixsec"): [
+        Conference("USENIX Security Symposium"),
+        Conference("USENIX Security"),
+    ],
     Area("ndss"): [Conference("NDSS")],
     Area("pets"): [
         Conference("PoPETs"),
@@ -174,7 +182,11 @@ areadict : Dict[Area, List[Conference]] = {
     Area("hpca"): [Conference("HPCA")],  # next tier
     # SIGLOG
     # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
-    Area("cav"): [Conference("CAV"), Conference("CAV (1)"), Conference("CAV (2)")],
+    Area("cav"): [
+        Conference("CAV"),
+        Conference("CAV (1)"),
+        Conference("CAV (2)"),
+    ],
     Area("lics"): [Conference("LICS"), Conference("CSL-LICS")],
     # SIGACT
     # 'act': ['STOC', 'FOCS', 'SODA'],
@@ -183,7 +195,12 @@ areadict : Dict[Area, List[Conference]] = {
     Area("soda"): [Conference("SODA")],
     # 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
     Area("nips"): [Conference("NIPS"), Conference("NeurIPS")],
-    Area("icml"): [Conference("ICML"), Conference("ICML (1)"), Conference("ICML (2)"), Conference("ICML (3)")],
+    Area("icml"): [
+        Conference("ICML"),
+        Conference("ICML (1)"),
+        Conference("ICML (2)"),
+        Conference("ICML (3)"),
+    ],
     Area("kdd"): [Conference("KDD")],
     # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
@@ -191,9 +208,15 @@ areadict : Dict[Area, List[Conference]] = {
     # AAAI listed to account for AAAI/IAAI joint conference
     # SIGGRAPH
     # - special handling of TOG to select SIGGRAPH and SIGGRAPH Asia
-    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH")],
+    Area("siggraph"): [
+        Conference("ACM Trans. Graph."),
+        Conference("SIGGRAPH"),
+    ],
     #    'siggraph' : ['SIGGRAPH'],
-    Area("siggraph-asia"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH Asia")],
+    Area("siggraph-asia"): [
+        Conference("ACM Trans. Graph."),
+        Conference("SIGGRAPH Asia"),
+    ],
     # SIGIR
     # 'ir': ['WWW', 'SIGIR'],
     Area("sigir"): [Conference("SIGIR")],
@@ -223,10 +246,27 @@ areadict : Dict[Area, List[Conference]] = {
         Conference("EMNLP-IJCNLP"),
         Conference("EMNLP/IJCNLP (1)"),
     ],
-    Area("acl"): [Conference("ACL"), Conference("ACL (1)"), Conference("ACL (2)"), Conference("ACL/IJCNLP"), Conference("COLING-ACL")],
-    Area("naacl"): [Conference("NAACL"), Conference("HLT-NAACL"), Conference("NAACL-HLT"), Conference("NAACL-HLT (1)")],
+    Area("acl"): [
+        Conference("ACL"), 
+        Conference("ACL (1)"), 
+        Conference("ACL (2)"), 
+        Conference("ACL/IJCNLP"), 
+        Conference("ACL/IJCNLP (1)"),
+        Conference("ACL/IJCNLP (2)"),
+        Conference("COLING-ACL")
+    ],
+    Area("naacl"): [
+        Conference("NAACL"),
+        Conference("HLT-NAACL"),
+        Conference("NAACL-HLT"),
+        Conference("NAACL-HLT (1)"),
+    ],
     #    'vision': ['CVPR', 'CVPR (1)', 'CVPR (2)', 'ICCV', 'ECCV', 'ECCV (1)', 'ECCV (2)', 'ECCV (3)', 'ECCV (4)', 'ECCV (5)', 'ECCV (6)', 'ECCV (7)'],
-    Area("cvpr"): [Conference("CVPR"), Conference("CVPR (1)"), Conference("CVPR (2)")],
+    Area("cvpr"): [
+        Conference("CVPR"),
+        Conference("CVPR (1)"),
+        Conference("CVPR (2)"),
+    ],
     Area("iccv"): [Conference("ICCV")],
     Area("eccv"): [
         Conference("ECCV"),
@@ -260,12 +300,22 @@ areadict : Dict[Area, List[Conference]] = {
         Conference("ECCV (29)"),
         Conference("ECCV (30)"),
     ],
-    # 'robotics': ['ICRA', 'ICRA (1)', 'ICRA (2)', 'IROS', 'Robotics: Science and Systems'],
-    Area("icra"): [Conference("ICRA"), Conference("ICRA (1)"), Conference("ICRA (2)")],
+    # 'robotics'
+    Area("icra"): [
+        Conference("ICRA"),
+        Conference("ICRA (1)"),
+        Conference("ICRA (2)"),
+    ],
     Area("iros"): [Conference("IROS")],
     Area("rss"): [Conference("Robotics: Science and Systems")],
-    # 'crypt': ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'CRYPTO (3)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)', 'EUROCRYPT (3)'],
-    Area("crypto"): [Conference("CRYPTO"), Conference("CRYPTO (1)"), Conference("CRYPTO (2)"), Conference("CRYPTO (3)")],
+    # 'crypt'
+    Area("crypto"): [
+        Conference("CRYPTO"),
+        Conference("CRYPTO (1)"),
+        Conference("CRYPTO (2)"),
+        Conference("CRYPTO (3)"),
+        Conference("CRYPTO (4)")
+    ],
     Area("eurocrypt"): [
         Conference("EUROCRYPT"),
         Conference("EUROCRYPT (1)"),
@@ -285,7 +335,10 @@ areadict : Dict[Area, List[Conference]] = {
     ],
     Area("recomb"): [Conference("RECOMB")],
     # special handling of IEEE TVCG to select IEEE Vis and VR proceedings
-    Area("vis"): [Conference("IEEE Visualization"), Conference("IEEE Trans. Vis. Comput. Graph.")],
+    Area("vis"): [
+        Conference("IEEE Visualization"),
+        Conference("IEEE Trans. Vis. Comput. Graph."),
+    ],
     Area("vr"): [Conference("VR")],
     # 'ecom' : ['EC', 'WINE']
     Area("ec"): [Conference("EC")],
@@ -294,14 +347,71 @@ areadict : Dict[Area, List[Conference]] = {
 }
 
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110)}
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
 
 EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11)}
 EMSOFT_TCAD_PaperStart = {
     # 2018 page numbers contributed by Ezio Bartocci
-    2018: {2188, 2200, 2233, 2244, 2311, 2393, 2404, 2474, 2578, 2636, 2649, 2673, 2743, 2768, 2812, 2845, 2869, 2894, 2906, 2952},
-    2020: { 3215, 3227, 3288, 3323, 3336, 3348, 3385, 3420, 3433, 3467, 3492, 3506, 3555, 3566, 3650, 3662, 3674, 3711, 3762, 3809, 3856, 3868, 3893, 3906, 3931, 3944, 3981, 3993, 4006, 4018, 4090, 4102, 4142, 4166, 4205}
+    2018: {
+        2188,
+        2200,
+        2233,
+        2244,
+        2311,
+        2393,
+        2404,
+        2474,
+        2578,
+        2636,
+        2649,
+        2673,
+        2743,
+        2768,
+        2812,
+        2845,
+        2869,
+        2894,
+        2906,
+        2952,
+    },
+    2020: {
+        3215,
+        3227,
+        3288,
+        3323,
+        3336,
+        3348,
+        3385,
+        3420,
+        3433,
+        3467,
+        3492,
+        3506,
+        3555,
+        3566,
+        3650,
+        3662,
+        3674,
+        3711,
+        3762,
+        3809,
+        3856,
+        3868,
+        3893,
+        3906,
+        3931,
+        3944,
+        3981,
+        3993,
+        4006,
+        4018,
+        4090,
+        4102,
+        4142,
+        4166,
+        4205,
+    },
 }
 
 
@@ -587,10 +697,10 @@ def countPaper(
 
     # Special handling for EMSOFT (TECS).
     if (
-            confname == "ACM Trans. Embedded Comput. Syst."
-            or confname == "ACM Trans. Embed. Comput. Syst."
+        confname == "ACM Trans. Embedded Comput. Syst."
+        or confname == "ACM Trans. Embed. Comput. Syst."
     ):
-        if not year in EMSOFT_TECS:
+        if year not in EMSOFT_TECS:
             return False
         pvmatcher = TECSCounterColon.match(pages)
         if pvmatcher:
@@ -602,10 +712,14 @@ def countPaper(
                 return False
 
     # Special handling for EMSOFT (TCAD)
-    if (confname == "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."):
-        if not year in EMSOFT_TCAD:
+    if confname == "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.":
+        if year not in EMSOFT_TCAD:
             return False
-        if not(int(volume) == EMSOFT_TCAD[year][0] and int(number) == EMSOFT_TCAD[year][1] and int(startPage) in EMSOFT_TCAD_PaperStart[year]):
+        if not (
+            int(volume) == EMSOFT_TCAD[year][0]
+            and int(number) == EMSOFT_TCAD[year][1]
+            and int(startPage) in EMSOFT_TCAD_PaperStart[year]
+        ):
             return False
 
     # Special handling for ISMB.
@@ -677,7 +791,7 @@ def countPaper(
     # Disambiguate Innovations in (Theoretical) Computer Science from
     # International Conference on Supercomputing
     elif confname == "ICS":
-        if not url is None:
+        if url is not None:
             if url.find("innovations") != -1:
                 return False
 
@@ -687,7 +801,7 @@ def countPaper(
             try:
                 if int(pages) in DAC_TooShortPapers[year]:
                     return False
-            except Exception as e:
+            except Exception:
                 pass
 
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
@@ -747,13 +861,48 @@ def countPaper(
 
 def test_countPaper():
     # Discard papers before or after the year range.
-    assert not countPaper("anything", startyear-1, "1", "1", "1-10", 1, 10, "", "nothing")
-    assert not countPaper("anything", endyear+1, "1", "1", "1-10", 1, 10, "", "nothing")
+    assert not countPaper(
+        "anything", startyear - 1, "1", "1", "1-10", 1, 10, "", "nothing"
+    )
+    assert not countPaper(
+        "anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing"
+    )
     # Discard short papers.
-    assert not countPaper("anything", endyear-1, "1", "1", "1-5", 1, 5, "", "nothing")
+    assert not countPaper(
+        "anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing"
+    )
     # Ignore page counts if we are in an exception conference (like SIGGRAPH)
-    assert countPaper("SIGGRAPH", endyear-1, "1", "1", "1", 1, -1, "", "Some Graphics Paper")
+    assert countPaper(
+        "SIGGRAPH",
+        endyear - 1,
+        "1",
+        "1",
+        "1",
+        1,
+        -1,
+        "",
+        "Some Graphics Paper",
+    )
     # Check TECS
-    assert not countPaper("ACM Trans. Embedded Comput. Syst.", 2017, "16", "5s", "120:1-120:21", 1, 21, "DOI", "Some EMSOFT Paper")
-    assert countPaper("ACM Trans. Embedded Comput. Syst.", 2017, "16", "5s", "163:1-163:21", 1, 21, "DOI", "Some EMSOFT Paper")
-
+    assert not countPaper(
+        "ACM Trans. Embedded Comput. Syst.",
+        2017,
+        "16",
+        "5s",
+        "120:1-120:21",
+        1,
+        21,
+        "DOI",
+        "Some EMSOFT Paper",
+    )
+    assert countPaper(
+        "ACM Trans. Embedded Comput. Syst.",
+        2017,
+        "16",
+        "5s",
+        "163:1-163:21",
+        1,
+        21,
+        "DOI",
+        "Some EMSOFT Paper",
+    )
