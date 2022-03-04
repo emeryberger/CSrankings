@@ -46,6 +46,7 @@ areaList = [
     {"area": "kdd", "title": "ML", "color": aicolor},
     {"area": "nips", "title": "ML", "color": aicolor},
     {"area": "icml", "title": "ML", "color": aicolor},
+    {"area": "iclr", "title": "ML", "color": aicolor},
     {"area": "nlp", "title": "NLP", "color": aicolor},
     {"area": "emnlp", "title": "NLP", "color": aicolor},
     {"area": "naacl", "title": "NLP", "color": aicolor},
