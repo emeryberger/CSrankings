@@ -27,23 +27,23 @@ def csv2dict_str_str(fname):
 
 # Merge all 'csrankings-*.csv' into 'csrankings.csv'.
 
+import hashlib
+
 added = set()
 with open("csrankings.csv", mode="w") as outfile:
     fieldnames = ["name", "affiliation", "homepage", "scholarid"]
     writer = csv.DictWriter(outfile, fieldnames)
     writer.writeheader()
-    for i in list(string.ascii_lowercase + string.digits):
+    for i in list(string.ascii_lowercase):
         print("processing " + i)
-        try:
-            fname = "csrankings-" + i + ".csv"
-            with open(fname, mode="r") as infile:
-                reader = csv.DictReader(infile)
-                for row in reader:
-                    if str(row) not in added:
-                        writer.writerow(row)
-                        added.add(str(row))
-        except BaseException as be:
-            pass
+        fname = "csrankings-" + i + ".csv"
+        with open(fname, mode="r") as infile:
+            reader = csv.DictReader(infile)
+            for row in reader:
+                hashrow = hashlib.md5(str(row).encode('utf8'))
+                if hashrow not in added:
+                    writer.writerow(row)
+                    added.add(hashrow)
 
 # Now create all the subsidiary files.
 with open("csrankings.csv", mode="r") as infile:
