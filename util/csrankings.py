@@ -285,6 +285,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (13)"),
         Conference("ECCV (14)"),
         Conference("ECCV (15)"),
+		Conference("ECCV (16)"),
         Conference("ECCV (17)"),
         Conference("ECCV (18)"),
         Conference("ECCV (19)"),
