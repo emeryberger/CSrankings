@@ -285,6 +285,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (13)"),
         Conference("ECCV (14)"),
         Conference("ECCV (15)"),
+		Conference("ECCV (16)"),
         Conference("ECCV (17)"),
         Conference("ECCV (18)"),
         Conference("ECCV (19)"),
@@ -463,6 +464,9 @@ DAC_TooShortPapers = {
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
 ISMB_Bioinformatics = {
+    2023: (39, "Supplement"), # The entries for 2022 and 2023 are speculative.
+    2022: (38, "Supplement"),
+    2021: (37, "Supplement"),
     2020: (36, "Supplement-1"),
     2019: (35, 14),
     2018: (34, 13),
@@ -729,7 +733,7 @@ def countPaper(
             if (volume != str(vol)) or (number != str(num)):
                 return False
             else:
-                if int(volume) >= 33:  # Hopefully this works going forward.
+                if int(volume) >= 33 and int(volume) < 37:  # Hopefully this works going forward.
                     pg = ISMBpageCounter.match(pages)
                     if pg is None:
                         return False
