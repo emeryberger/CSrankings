@@ -529,6 +529,7 @@ TOG_SIGGRAPH_Asia_Volume = {
 
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2022: (28, 1),
     2021: (27, 2),
     2020: (26, 1),
     2019: (25, 1),
