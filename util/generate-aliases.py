@@ -1,4 +1,5 @@
 import csv
+import gzip
 
 from lxml import etree as ElementTree
 
@@ -11,13 +12,14 @@ with open("faculty-affiliations.csv") as f:
 
 def parseDBLP(facultydict):
     # with open('dblp.xml', mode='r') as f:
-    # with gzip.open('dblp.xml.gz-full', mode='r', encoding='utf-8') as f:
     print("alias,name")
-    with open("dblp.xml", mode="r", encoding="utf-8") as f:
+    dtd = ElementTree.DTD(file='dblp.dtd')
+    with open('dblp.xml-full', mode='rb') as f:
+    # with open("dblp.xml", mode="r", encoding="utf-8") as f:
 
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"]):
+        for (event, node) in ElementTree.iterparse(f, events=["start", "end"], load_dtd=True):
 
             if oldnode is not None:
                 oldnode.clear()
