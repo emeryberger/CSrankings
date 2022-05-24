@@ -1270,8 +1270,7 @@ class CSRankings {
                     p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
                 }
                 if (this.acmfellow.hasOwnProperty(name)) {
-                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="` +
-                        this.acmfellowImage + '"></span>&nbsp;';
+                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="${this.acmfellowImage}"></span>&nbsp;`;
                 }
                 if (this.turing.hasOwnProperty(name)) {
                     p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
@@ -1605,7 +1604,7 @@ class CSRankings {
         let count = 0;
         let totalParents = 0;
         for (let i = 0; i < this.fields.length; i++) {
-            const str = 'input[name=' + this.fields[i] + ']';
+            const str = `input[name=${this.fields[i]}]`;
             if (!(this.fields[i] in CSRankings.parentMap)) {
                 totalParents += 1;
             }
@@ -1618,7 +1617,7 @@ class CSRankings {
                     let allChecked = 1;
                     if (this.fields[i] in CSRankings.childMap) {
                         CSRankings.childMap[this.fields[i]].forEach((k) => {
-                            let val = $('input[name=' + k + ']').prop('checked');
+                            let val = $(`input[name=${k}]`).prop('checked');
                             if (!(k in CSRankings.nextTier)) {
                                 allChecked &= val;
                             } else {
@@ -1627,7 +1626,7 @@ class CSRankings {
                         });
                     }
                     if (allChecked) {
-                        s += this.fields[i] + '&';
+                        s += `${this.fields[i]}&`;
                         count += 1;
                     }
                 }
@@ -1654,7 +1653,7 @@ class CSRankings {
         } else if (count == 0) {
             start += '/index?none'; // Distinguished special URL - none selected.
         } else {
-            start += '/index?' + s;
+            start += `/index?${s}`;
         }
         if (region != "USA") {
             start += `&${region}`;
