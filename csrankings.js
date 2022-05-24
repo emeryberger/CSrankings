@@ -1052,7 +1052,7 @@ class CSRankings {
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
-                    + '<div class="csr-chart" id="' + escape(name) + "-chart" + '">'
+                    + `<div class="csr-chart" id="${escape(name)}-chart">`
                     + '</div>'
                     + "</td></tr>";
             }
@@ -1110,7 +1110,7 @@ class CSRankings {
                 s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
                 s += "</td>";
                 s += "<td>"
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
+                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget">`
                     + this.RightTriangle
                     + "</span>";
                 let abbrv = "us";
@@ -1156,7 +1156,7 @@ class CSRankings {
     setAllOn(value = true) {
         for (let i = 0; i < CSRankings.areas.length; i++) {
             const item = this.fields[i];
-            const str = "input[name=" + item + "]";
+            const str = `input[name=${item}]`;
             if (value) {
                 // Turn off all next tier venues.
                 if (item in CSRankings.nextTier) {
@@ -1194,7 +1194,7 @@ class CSRankings {
         /* Start building up the string to output. */
         const s = this.buildOutputString(numAreas, this.countryAbbrv, deptCounts, univtext, CSRankings.minToRank);
         let stop = performance.now();
-        console.log("Before render: rank took " + (stop - start) + " milliseconds.");
+        console.log(`Before render: rank took ${(stop - start)} milliseconds.`);
         /* Finally done. Redraw! */
         document.getElementById("success").innerHTML = s;
         $("div").scroll(function () {
@@ -1216,7 +1216,7 @@ class CSRankings {
         const str = this.updatedURL();
         this.navigoRouter.navigate(str);
         stop = performance.now();
-        console.log("Rank took " + (stop - start) + " milliseconds.");
+        console.log(`Rank took ${(stop - start)} milliseconds.`);
         return false;
     }
     /* Turn the chart display on or off. */
@@ -1439,7 +1439,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $("#" + key).prop('value', params[key].toString());
+                $(`#{key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
@@ -1552,7 +1552,7 @@ class CSRankings {
         // Count how many are checked above and below.
         let numCheckedAbove = 0;
         aboveFold.forEach((elem) => {
-            let str = "input[name=" + elem + "]";
+            let str = `input[name=${elem}]`;
             let val = $(str).prop('checked');
             if (val) {
                 numCheckedAbove++;
