@@ -274,6 +274,8 @@ class CSRankings {
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
+            // We've finished loading; remove the overlay.
+            document.getElementById("overlay").style.display = "none";
         }))();
     }
     // We have scrolled: increase the number we rank.
@@ -602,19 +604,11 @@ class CSRankings {
             "Loading author information.",
             "Loading publication data.",
             "Computing ranking."];
-        let s = "";
-        let count = 1;
-        msgs.map((elem) => {
-            if (count == step) {
-                s += `<strong>${elem}</strong>`;
-            }
-            else {
-                s += `<font color='gray'>${elem}</font>`;
-            }
-            s += "<br />";
-            count += 1;
-        });
-        document.querySelector("#progress").innerHTML = s;
+        const s = `<strong>${msgs[step - 1]}</strong><br />`;
+        const progress = document.querySelector("#progress");
+        if (progress) {
+            progress.innerHTML = s;
+        }
     }
     loadTuring(turing) {
         return __awaiter(this, void 0, void 0, function* () {
