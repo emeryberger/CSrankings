@@ -154,8 +154,8 @@ class CSRankings {
             ...this.interdisciplinaryAreas.map(key =>
                 ({[this.areaDict[key]] : "interdisciplinary"})),
         ];
-	for (let item of subareaList) {
-	    for (let key in item) {
+	for (const item of subareaList) {
+	    for (const key in item) {
 	    	this.subareas[key] = item[key];
 	    }
 	}
@@ -202,7 +202,20 @@ class CSRankings {
             CSRankings.geoCheck();
             this.rank();
 	    // We've finished loading; remove the overlay.
-	    document!.getElementById("overlay")!.style.display = "none";
+	    document!.getElementById("overlay-loading")!.style.display = "none";
+	    // Randomly display a survey.
+	    const surveyFrequency = 1000; // One out of this many users gets the survey (on average).
+	    // Check to see if survey has already been displayed (via a cookie).
+            if (!document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed'))) {
+	      // Not shown yet.
+	      const displaySurvey = (Math.floor(Math.random() * surveyFrequency) == 0);
+	      if (false && displaySurvey) { // currently disabled; remove 'false' to enable.
+	        // Set a cookie indicating the survey has been displayed; set cookie to expire in one year.
+	        document!.cookie = "surveyDisplayed=true;max-age=60*60*24*365";
+		// Now reveal the survey.
+	        document!.getElementById("overlay-survey")!.style.display = "block";
+              }
+	    }
         })();
     }
 
@@ -561,7 +574,7 @@ class CSRankings {
     private static stddev(n: Array<number>): number {
         const avg = CSRankings.average(n);
         const squareDiffs = n.map(function(value) {
-            let diff = value - avg;
+            const diff = value - avg;
             return (diff * diff);
         });
         const sigma = Math.sqrt(CSRankings.sum(squareDiffs) / (n.length - 1));
@@ -595,7 +608,7 @@ class CSRankings {
             //	    if (key in CSRankings.nextTier) {
             //		continue;
             //	    }
-            let value = this.authorAreas[name][key];
+            const value = this.authorAreas[name][key];
             if (key in CSRankings.parentMap) {
                 key = this.areaDict[key];
             }
@@ -689,7 +702,8 @@ class CSRankings {
             //	    if (key in CSRankings.nextTier) {
             //		continue;
             //	    }
-            let value = this.authorAreas[uname][key];
+            // Round it to the nearest 0.1.
+            const value = Math.round(this.authorAreas[uname][key] * 10) / 10;
 
             // Use adjusted count if this is for a department.
             /*
@@ -702,8 +716,6 @@ class CSRankings {
               }
               }
             */
-            // Round it to the nearest 0.1.
-            value = Math.round(value * 10) / 10;
             if (value > 0) {
                 if (key in CSRankings.parentMap) {
                     key = CSRankings.parentMap[key];
@@ -1119,7 +1131,7 @@ class CSRankings {
         facultycount: { [key: string]: number },
         facultyAdjustedCount: { [key: string]: number }): void {
         /* contains an author name if that author has been processed. */
-        let visited: { [key: string]: boolean } = {};
+        const visited: { [key: string]: boolean } = {};
         for (const r in this.authors) {
             if (!this.authors.hasOwnProperty(r)) {
                 continue;
@@ -1750,14 +1762,21 @@ class CSRankings {
         // Now check everything listed in the query string.
         let q = query.split('&');
         // If there is an 'all' in the query string, set everything to true.
-        let foundAll = q.some((elem) => {
+        const foundAll = q.some((elem) => {
             return (elem == "all");
         });
-        let foundNone = q.some((elem) => {
+	// For testing: if 'survey' is in the query string, reveal the survey overlay.
+	const foundSurvey = q.some((elem) => {
+	    return (elem == "survey");
+	});
+	if (foundSurvey) {
+	    document!.getElementById("overlay-survey")!.style.display = "block";
+	}
+        const foundNone = q.some((elem) => {
             return (elem == "none");
         });
         // Check for regions and strip them out.
-        let foundRegion = q.some((elem) => {
+        const foundRegion = q.some((elem) => {
             return CSRankings.regions.indexOf(elem) >= 0;
         });
         if (foundRegion) {
@@ -1773,7 +1792,7 @@ class CSRankings {
             });
         }
         // Check for pie chart
-        let foundPie = q.some((elem) => {
+        const foundPie = q.some((elem) => {
             return (elem == "pie");
         });
         if (foundPie) {
@@ -1782,7 +1801,7 @@ class CSRankings {
         
         if (foundAll) {
             // Set everything.
-            for (let item in CSRankings.topTierAreas) {
+            for (const item in CSRankings.topTierAreas) {
                 //		if (!(item in CSRankings.nextTier)) {
                 let str = `input[name=${item}]`;
                 $(str).prop('checked', true);
@@ -1810,7 +1829,7 @@ class CSRankings {
         // First, clear everything that isn't subsetted.
         CSRankings.clearNonSubsetted();
         // Then, activate the areas in the query.
-        for (let item of q) {
+        for (const item of q) {
             if ((item != "none") && (item != "")) {
                 const str = `input[name=${item}]`;
                 $(str).prop('checked', true);
@@ -1828,7 +1847,7 @@ class CSRankings {
     }
 
     public static clearNonSubsetted(): void {
-        for (let item of CSRankings.areas) {
+        for (const item of CSRankings.areas) {
             if (item in CSRankings.childMap) {
                 const kids = CSRankings.childMap[item];
                 if (!CSRankings.subsetting(kids)) {
@@ -1871,8 +1890,8 @@ class CSRankings {
                 numCheckedBelow++;
             }
         });
-        let subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
-        let subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+        const subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+        const subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
         return subsettedAbove || subsettedBelow;
     }
 
