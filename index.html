@@ -229,9 +229,28 @@
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));    </script>
-    <div id="overlay">
+    <div class="overlay" id="overlay-loading">
       <div class="centerscreen overlaytext">
-	<center><font color="white" size="15vw"><div id="progress">Loading.<br /></div></font></center>
+	<center>
+	  <font color="white" size="15vw">
+	    <div id="progress">Loading.<br /></div>
+	  </font>
+	</center>
+      </div>
+    </div>
+    <!-- survey, initially off (activated randomly). -->
+    <div class="overlay" onclick="document.getElementById('overlay-survey').style.display = 'none';" id="overlay-survey" style="display:none">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="10vw">
+	    <div id="survey">
+	      You have been randomly selected to take a 5-minute
+	      survey on CSrankings for a scientific study.<br />
+	      <button onclick="event.stopPropagation(); console.log('YES'); window.location.href = 'https://plasma-umass.org';">Take survey</button>
+	      <button onclick="">Exit to CSrankings</button>
+	    </div>
+	  </font>
+	</center>
       </div>
     </div>
     <div class="container">
