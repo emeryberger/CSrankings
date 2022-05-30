@@ -25,7 +25,7 @@ optgroup:not(:first-child) {
     color: #984ea3
 }
 
-#overlay {
+.overlay {
   position: fixed;
   display: block;
   width: 100%;
