@@ -277,12 +277,13 @@ class CSRankings {
             // We've finished loading; remove the overlay.
             document.getElementById("overlay-loading").style.display = "none";
             // Randomly display a survey.
-            const surveyFrequency = 1000; // One out of this many users gets the survey (on average).
+            const surveyFrequency = 10; // One out of this many users gets the survey (on average).
             // Check to see if survey has already been displayed (via a cookie).
             if (!document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed'))) {
                 // Not shown yet.
-                const displaySurvey = (Math.floor(Math.random() * surveyFrequency) == 0);
-                if (false && displaySurvey) { // currently disabled; remove 'false' to enable.
+                const randomValue = Math.floor(Math.random() * surveyFrequency);
+                const displaySurvey = (randomValue == 0);
+                if (displaySurvey) {
                     // Set a cookie indicating the survey has been displayed; set cookie to expire in one year.
                     document.cookie = "surveyDisplayed=true;max-age=60*60*24*365";
                     // Now reveal the survey.
