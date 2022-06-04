@@ -238,6 +238,30 @@
 	</center>
       </div>
     </div>
+    <!-- sponsorship link, initially off (activated randomly). -->
+    <div class="overlay" onclick="document.getElementById('overlay-sponsor').style.display = 'none';" id="overlay-sponsor" style="display:none">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="10vw">
+	    <div id="sponsor">
+	      If you find CSrankings useful,<br />
+	      please consider becoming a sponsor.<br />
+	      <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/emeryberger');">
+		<font size="5vw">
+		  Open sponsor page
+		</font>
+	      </button>
+	      <button onclick="">
+		<font size="5vw">
+		  Exit to CSrankings
+		</font>
+	      </button>
+	    </div>
+	  </font>
+	</center>
+      </div>
+    </div>
+    
     <!-- survey, initially off (activated randomly). -->
     <div class="overlay" onclick="document.getElementById('overlay-survey').style.display = 'none';" id="overlay-survey" style="display:none">
       <div class="centerscreen overlaytext">

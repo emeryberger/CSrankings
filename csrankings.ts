@@ -205,17 +205,34 @@ class CSRankings {
 	    document!.getElementById("overlay-loading")!.style.display = "none";
 	    // Randomly display a survey.
 	    const surveyFrequency = 10; // One out of this many users gets the survey (on average).
-	    // Check to see if survey has already been displayed (via a cookie).
-            if (!document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed'))) {
-	      // Not shown yet.
-	      const randomValue = Math.floor(Math.random() * surveyFrequency);
-	      const displaySurvey = (randomValue == 0);
-	      if (displaySurvey) {
-	        // Set a cookie indicating the survey has been displayed; set cookie to expire in one year.
-	        document!.cookie = "surveyDisplayed=true;max-age=60*60*24*365";
-		// Now reveal the survey.
-	        document!.getElementById("overlay-survey")!.style.display = "block";
-              }
+	    // Check to see if survey has already been displayed.
+	    let displaySurvey = false;
+	    // Keep the cookie for backwards compatibility (for now).
+	    let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
+		localStorage.getItem('surveyDisplayed');
+            if (!shownAlready) {
+		// Not shown yet.
+		const randomValue = Math.floor(Math.random() * surveyFrequency);
+		displaySurvey = (randomValue == 0);
+		if (displaySurvey) {
+		    localStorage.setItem('surveyDisplayed', 'true');
+		    // Now reveal the survey.
+	            document!.getElementById("overlay-survey")!.style.display = "block";
+		}
+            }
+	    // Randomly display a sponsorship request.
+	    // In the future, tie to amount of use of the site, a la Wikipedia.
+	    const sponsorshipFrequency = 20; // One out of this many users gets the sponsor page (on average).
+	    // Check to see if the sponsorship page has already been displayed.
+            if (!localStorage.getItem('sponsorshipDisplayed')) {
+		// Not shown yet.
+		const randomValue = Math.floor(Math.random() * sponsorshipFrequency);
+		const displaySponsor = (randomValue == 0);
+		if (!displaySurvey && displaySponsor) { // Only show if we have not shown the survey page as well.
+		    localStorage.setItem('sponsorshipDisplayed', 'true');
+		    // Now reveal the sponsorship page.
+	            document!.getElementById("overlay-sponsor")!.style.display = "block";
+		}
 	    }
         })();
     }
