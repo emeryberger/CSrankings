@@ -1635,7 +1635,7 @@ class CSRankings {
                     // If all are off, deactivate parent.
                     updateURL = false;
                     let parent = CSRankings.parentMap[field];
-                    const strparent = `input[name={parent}]`;
+                    const strparent = `input[name=${parent}]`;
                     let anyChecked = 0;
                     let allChecked = 1;
                     CSRankings.childMap[parent].forEach((k) => {
