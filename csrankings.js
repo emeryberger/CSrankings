@@ -283,6 +283,8 @@ class CSRankings {
             // Keep the cookie for backwards compatibility (for now).
             let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
                 localStorage.getItem('surveyDisplayed');
+            // DISABLE SURVEY (remove the next line to re-enable)
+            shownAlready = 'disabled';
             if (!shownAlready) {
                 // Not shown yet.
                 const randomValue = Math.floor(Math.random() * surveyFrequency);
