@@ -160,7 +160,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         else:
             if type(article["author"]) == str:
                 authorList = [str(article["author"])]
-            elif type(article["author"]) is collections.OrderedDict:
+            elif type(article["author"]) is collections.OrderedDict or type(article["author"]) is dict:
                 authorList = [article["author"]["#text"]]  # type: ignore
             else:
                 print("***Unknown record type, skipping.***")
@@ -169,7 +169,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         foundOneInDict = False or args.all
         if not args.all:
             for authorName in authorList:
-                if type(authorName) is collections.OrderedDict:
+                if type(authorName) is collections.OrderedDict or type(authorName) is dict:
                     aName = authorName["#text"]  # type: ignore
                 else:
                     aName = authorName
@@ -240,7 +240,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
 
         if "title" in article:
             title = Title("")
-            if type(article["title"]) is collections.OrderedDict:
+            if type(article["title"]) is collections.OrderedDict or type(article["title"]) is dict:
                 title = Title(article["title"]["#text"])  # type: ignore
             else:
                 title = Title(article["title"])
@@ -266,7 +266,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         totalPapers += 1
         for authorName in authorList:
             aName = ""
-            if type(authorName) is collections.OrderedDict:
+            if type(authorName) is collections.OrderedDict or type(authorName) is dict:
                 aName = authorName["#text"]  # type: ignore
             elif type(authorName) is str:
                 aName = authorName
