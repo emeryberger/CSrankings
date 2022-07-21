@@ -14,7 +14,7 @@ def parseDBLP(facultydict):
     # with open('dblp.xml', mode='r') as f:
     print("alias,name")
     dtd = ElementTree.DTD(file='dblp.dtd')
-    with open('dblp.xml-full', mode='rb') as f:
+    with gzip.open('dblp-original.xml.gz', mode='rb') as f:
     # with open("dblp.xml", mode="r", encoding="utf-8") as f:
 
         oldnode = None
