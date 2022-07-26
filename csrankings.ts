@@ -210,6 +210,8 @@ class CSRankings {
 	    // Keep the cookie for backwards compatibility (for now).
 	    let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
 		localStorage.getItem('surveyDisplayed');
+	    // DISABLE SURVEY (remove the next line to re-enable)
+	    shownAlready = 'disabled';
             if (!shownAlready) {
 		// Not shown yet.
 		const randomValue = Math.floor(Math.random() * surveyFrequency);
@@ -1948,7 +1950,7 @@ class CSRankings {
                     // If all are off, deactivate parent.
                     updateURL = false;
                     let parent = CSRankings.parentMap[field];
-                    const strparent = `input[name={parent}]`;
+                    const strparent = `input[name=${parent}]`;
                     let anyChecked = 0;
                     let allChecked = 1;
                     CSRankings.childMap[parent].forEach((k) => {
