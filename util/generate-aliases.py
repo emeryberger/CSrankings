@@ -29,13 +29,16 @@ def parseDBLP(facultydict):
 
             # print((node.tag))
             if node.tag == "www":
-                for child in node:
-                    if child.tag == "author":
-                        authorName = child.text
-                        if authorName:
-                            authorName = authorName.strip()
-                            authors += 1
-                            authorList.append(authorName.encode("utf-8"))
+                if node.get("key", "").startswith("homepages/"):
+                    for child in node:
+                        if child.tag == "author":
+                            # print("WWW adding", child.text)
+                            authorName = child.text
+                            if authorName:
+                                authorName = authorName.strip()
+                                authors += 1
+                                authorList.append(authorName.encode("utf-8"))
+                                # print("author list", authorList)
                 if authors:
                     pairs = [(authorList[0], item) for item in authorList[1:]]
                     for p in pairs:
