@@ -61,14 +61,15 @@ def pagecount(pageStr: str) -> int:
     count = 0
 
     if pageCounterMatcher1 is not None:
-        start = int(pageCounterMatcher1.group(1))
-        end = int(pageCounterMatcher1.group(2))
-        count = end - start + 1
+        count = _extract_pagecount(pageCounterMatcher1)
     elif pageCounterMatcher2 is not None:
-        start = int(pageCounterMatcher2.group(1))
-        end = int(pageCounterMatcher2.group(2))
-        count = end - start + 1
+        count = _extract_pagecount(pageCounterMatcher2)
     return count
+
+def _extract_pagecount(arg0):
+    start = int(arg0.group(1))
+    end = int(arg0.group(2))
+    return end - start + 1
 
 
 def test_pagecount():
