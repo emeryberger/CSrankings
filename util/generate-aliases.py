@@ -13,7 +13,7 @@ with open("faculty-affiliations.csv") as f:
 def parseDBLP(facultydict):
     # with open('dblp.xml', mode='r') as f:
     print("alias,name")
-    dtd = ElementTree.DTD(file='dblp.dtd')
+    # dtd = ElementTree.DTD(file='dblp.dtd')
     with gzip.open('dblp-original.xml.gz', mode='rb') as f:
     # with open("dblp.xml", mode="r", encoding="utf-8") as f:
 
