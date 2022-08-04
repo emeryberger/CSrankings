@@ -1,6 +1,8 @@
 """Subroutines used for computing rankings for CSrankings.
 """
 
+
+import contextlib
 import re
 
 from typing import Dict, List, NewType
@@ -34,9 +36,8 @@ def startpage(pageStr: str) -> int:
 
     if pageCounterMatcher1 is not None:
         start = int(pageCounterMatcher1.group(1))
-    else:
-        if pageCounterMatcher2 is not None:
-            start = int(pageCounterMatcher2.group(1))
+    elif pageCounterMatcher2 is not None:
+        start = int(pageCounterMatcher2.group(1))
     return start
 
 
@@ -60,15 +61,15 @@ def pagecount(pageStr: str) -> int:
     count = 0
 
     if pageCounterMatcher1 is not None:
-        start = int(pageCounterMatcher1.group(1))
-        end = int(pageCounterMatcher1.group(2))
-        count = end - start + 1
-    else:
-        if pageCounterMatcher2 is not None:
-            start = int(pageCounterMatcher2.group(1))
-            end = int(pageCounterMatcher2.group(2))
-            count = end - start + 1
+        count = _extract_pagecount(pageCounterMatcher1)
+    elif pageCounterMatcher2 is not None:
+        count = _extract_pagecount(pageCounterMatcher2)
     return count
+
+def _extract_pagecount(arg0):
+    start = int(arg0.group(1))
+    end = int(arg0.group(2))
+    return end - start + 1
 
 
 def test_pagecount():
@@ -140,9 +141,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("rtss"): [Conference("RTSS")],
     Area("rtas"): [
         Conference("RTAS"),
-        Conference(
-            "IEEE Real-Time and Embedded Technology and Applications Symposium"
-        ),
+        Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
     ],
     # SIGDA
     Area("iccad"): [Conference("ICCAD")],
@@ -247,13 +246,13 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("EMNLP/IJCNLP (1)"),
     ],
     Area("acl"): [
-        Conference("ACL"), 
-        Conference("ACL (1)"), 
-        Conference("ACL (2)"), 
-        Conference("ACL/IJCNLP"), 
+        Conference("ACL"),
+        Conference("ACL (1)"),
+        Conference("ACL (2)"),
+        Conference("ACL/IJCNLP"),
         Conference("ACL/IJCNLP (1)"),
         Conference("ACL/IJCNLP (2)"),
-        Conference("COLING-ACL")
+        Conference("COLING-ACL"),
     ],
     Area("naacl"): [
         Conference("NAACL"),
@@ -285,7 +284,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (13)"),
         Conference("ECCV (14)"),
         Conference("ECCV (15)"),
-		Conference("ECCV (16)"),
+        Conference("ECCV (16)"),
         Conference("ECCV (17)"),
         Conference("ECCV (18)"),
         Conference("ECCV (19)"),
@@ -315,7 +314,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("CRYPTO (1)"),
         Conference("CRYPTO (2)"),
         Conference("CRYPTO (3)"),
-        Conference("CRYPTO (4)")
+        Conference("CRYPTO (4)"),
     ],
     Area("eurocrypt"): [
         Conference("EUROCRYPT"),
@@ -464,7 +463,7 @@ DAC_TooShortPapers = {
 # ISMB proceedings are published as special issues of Bioinformatics.
 # Here is the list.
 ISMB_Bioinformatics = {
-    2023: (39, "Supplement"), # The entries for 2022 and 2023 are speculative.
+    2023: (39, "Supplement"),  # The entries for 2022 and 2023 are speculative.
     2022: (38, "Supplement"),
     2021: (37, "Supplement"),
     2020: (36, "Supplement-1"),
@@ -529,6 +528,7 @@ TOG_SIGGRAPH_Asia_Volume = {
 
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2022: (28, 1),
     2021: (27, 2),
     2020: (26, 1),
     2019: (25, 1),
@@ -700,14 +700,13 @@ def countPaper(
         return False
 
     # Special handling for EMSOFT (TECS).
-    if (
-        confname == "ACM Trans. Embedded Comput. Syst."
-        or confname == "ACM Trans. Embed. Comput. Syst."
-    ):
+    if confname in [
+        "ACM Trans. Embedded Comput. Syst.",
+        "ACM Trans. Embed. Comput. Syst.",
+    ]:
         if year not in EMSOFT_TECS:
             return False
-        pvmatcher = TECSCounterColon.match(pages)
-        if pvmatcher:
+        if pvmatcher := TECSCounterColon.match(pages):
             pseudovolume = int(pvmatcher.group(1))
             (startpv, endpv) = EMSOFT_TECS_PaperNumbers[year]
             if pseudovolume < int(startpv) or pseudovolume > int(endpv):
@@ -719,34 +718,31 @@ def countPaper(
     if confname == "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.":
         if year not in EMSOFT_TCAD:
             return False
-        if not (
-            int(volume) == EMSOFT_TCAD[year][0]
-            and int(number) == EMSOFT_TCAD[year][1]
-            and int(startPage) in EMSOFT_TCAD_PaperStart[year]
+        if (
+            int(volume) != EMSOFT_TCAD[year][0]
+            or int(number) != EMSOFT_TCAD[year][1]
+            or startPage not in EMSOFT_TCAD_PaperStart[year]
         ):
             return False
 
     # Special handling for ISMB.
-    if confname == "Bioinformatics" or confname == "Bioinform.":
-        if year in ISMB_Bioinformatics:
-            (vol, num) = ISMB_Bioinformatics[year]
-            if (volume != str(vol)) or (number != str(num)):
-                return False
-            else:
-                if int(volume) >= 33 and int(volume) < 37:  # Hopefully this works going forward.
-                    pg = ISMBpageCounter.match(pages)
-                    if pg is None:
-                        return False
-                    startPage = int(pg.group(1))
-                    end = int(pg.group(2))
-                    pageCount = end - startPage + 1
-        else:
+    if confname in ["Bioinformatics", "Bioinform."]:
+        if year not in ISMB_Bioinformatics:
             return False
 
-    # Special handling for ICSE.
-    elif (
-        confname == "ICSE" or confname == "ICSE (1)" or confname == "ICSE (2)"
-    ):
+        (vol, num) = ISMB_Bioinformatics[year]
+        if volume != str(vol) or number != str(num):
+            return False
+        if (
+            int(volume) >= 33 and int(volume) < 37
+        ):  # Hopefully this works going forward.
+            pg = ISMBpageCounter.match(pages)
+            if pg is None:
+                return False
+            startPage = int(pg.group(1))
+            end = int(pg.group(2))
+            pageCount = end - startPage + 1
+    elif confname in ["ICSE", "ICSE (1)", "ICSE (2)"]:
         if year in ICSE_ShortPaperStart:
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
@@ -754,7 +750,6 @@ def countPaper(
                 # since they are "short papers" (regardless of their length).
                 return False
 
-    # Special handling for SIGMOD.
     elif confname == "SIGMOD Conference":
         if year in SIGMOD_NonResearchPaperStart:
             pageno = SIGMOD_NonResearchPaperStart[year]
@@ -768,11 +763,9 @@ def countPaper(
                 if startPage >= p[0] and startPage + pageCount - 1 <= p[1]:
                     return False
 
-    # Special handling for SIGGRAPH and SIGGRAPH Asia.
     elif confname == "ACM Trans. Graph.":
         return False  # should already have been handled by regenerate_data.py.
 
-    # Special handling for IEEE Vis and VR
     elif confname == "IEEE Trans. Vis. Comput. Graph.":
         Vis_Conf = False
         if year in TVCG_Vis_Volume:
@@ -786,28 +779,20 @@ def countPaper(
         if not Vis_Conf:
             return False
 
-    # Special handling for ASE.
     elif confname == "ASE":
         if pageCount < ASE_LongPaperThreshold:
             # Omit short papers (which may be demos, etc.).
             return False
 
-    # Disambiguate Innovations in (Theoretical) Computer Science from
-    # International Conference on Supercomputing
     elif confname == "ICS":
-        if url is not None:
-            if url.find("innovations") != -1:
-                return False
+        if url is not None and "innovations" in url:
+            return False
 
-    # Special handling for DAC.
     elif confname == "DAC":
         if year in DAC_TooShortPapers:
-            try:
+            with contextlib.suppress(Exception):
                 if int(pages) in DAC_TooShortPapers[year]:
                     return False
-            except Exception:
-                pass
-
     # SPECIAL CASE FOR conferences that have incorrect entries (as of 6/22/2016).
     # Only skip papers with a very small paper count,
     # but above 1. Why?
@@ -819,23 +804,17 @@ def countPaper(
 
     if (
         pageCount == -1
-        and confname
-        == "ACM Conference on Computer and Communications Security"
+        and confname == "ACM Conference on Computer and Communications Security"
     ):
         tooFewPages = True
 
     if (pageCount != -1) and (pageCount < pageCountThreshold):
 
-        tooFewPages = True
         exceptionConference = False
-        exceptionConference |= confname == "SC" and (
-            year <= 2012 or year == 2020
-        )
+        exceptionConference |= confname == "SC" and (year <= 2012 or year == 2020)
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
-            confname == "ACM Trans. Graph."
-            and int(volume) >= 26
-            and int(volume) <= 39
+            confname == "ACM Trans. Graph." and int(volume) >= 26 and int(volume) <= 39
         )
         exceptionConference |= (
             confname == "SIGGRAPH" and int(volume) >= 26 and int(volume) <= 39
@@ -844,9 +823,7 @@ def countPaper(
         exceptionConference |= (
             confname == "CHI" and year == 2018
         )  # FIXME - hopefully DBLP will fix
-        exceptionConference |= confname == "ICCAD" and (
-            year == 2016 or year == 2018
-        )
+        exceptionConference |= confname == "ICCAD" and year in {2016, 2018}
         exceptionConference |= confname == "CHI" and year == 2019
         exceptionConference |= confname == "FAST" and year == 2012
         exceptionConference |= confname == "DAC" and year == 2019
@@ -854,9 +831,7 @@ def countPaper(
             (pageCount < 0) or pageCount >= 3
         )  # to handle very old ISCA conferences; all papers are full papers in ISCA now
 
-        if exceptionConference:
-            tooFewPages = False
-
+        tooFewPages = not exceptionConference
     if tooFewPages:
         return False
 
@@ -872,9 +847,7 @@ def test_countPaper():
         "anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing"
     )
     # Discard short papers.
-    assert not countPaper(
-        "anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing"
-    )
+    assert not countPaper("anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing")
     # Ignore page counts if we are in an exception conference (like SIGGRAPH)
     assert countPaper(
         "SIGGRAPH",
