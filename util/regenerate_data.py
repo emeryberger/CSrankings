@@ -2,7 +2,6 @@ import argparse
 import contextlib
 import gzip
 import xmltodict
-import collections
 import json
 import csv
 import sys
@@ -21,7 +20,7 @@ from csrankings import (
     TVCG_Vis_Volume,
     TVCG_VR_Volume,
 )
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 
 parser = argparse.ArgumentParser(
     prog="csrankings",
@@ -154,7 +153,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         elif type(article["author"]) == str:
             authorList = [str(article["author"])]
         elif (
-            type(article["author"]) is collections.OrderedDict
+            type(article["author"]) is OrderedDict
             or type(article["author"]) is dict
         ):
             authorList = [article["author"]["#text"]]  # type: ignore
@@ -166,7 +165,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         if not args.all:
             for authorName in authorList:
                 if (
-                    type(authorName) is collections.OrderedDict
+                    type(authorName) is OrderedDict
                     or type(authorName) is dict
                 ):
                     aName = authorName["#text"]  # type: ignore
@@ -237,7 +236,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         if "title" in article:
             title = Title("")
             if (
-                type(article["title"]) is collections.OrderedDict
+                type(article["title"]) is OrderedDict
                 or type(article["title"]) is dict
             ):
                 title = Title(article["title"]["#text"])  # type: ignore
@@ -265,7 +264,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         totalPapers += 1
         for authorName in authorList:
             aName = ""
-            if type(authorName) is collections.OrderedDict or type(authorName) is dict:
+            if type(authorName) is OrderedDict or type(authorName) is dict:
                 aName = authorName["#text"]  # type: ignore
             elif type(authorName) is str:
                 aName = authorName
@@ -317,7 +316,7 @@ def dump_it() -> None:
     global facultydict
     with open("generated-author-info.csv", "w") as f:
         f.write('"name","dept","area","count","adjustedcount","year"\n')
-        authorscores = collections.OrderedDict(sorted(authorscores.items()))
+        authorscores = OrderedDict(sorted(authorscores.items()))
         for ((authorName, area, year), count) in authorscores.items():
             countAdjusted = authorscoresAdjusted[(authorName, area, year)]
             f.write(
@@ -326,7 +325,7 @@ def dump_it() -> None:
 
     with open("articles.json", "w") as f:
         z = []
-        authlogs = collections.OrderedDict(sorted(authlogs.items()))
+        authlogs = OrderedDict(sorted(authlogs.items()))
         for v, l in authlogs.items():
             if v in interestingauthors:
                 for s in sorted(l, key=lambda x: x["name"].decode("utf-8") + str(x["year"]) + x["conf"] + x["title"].decode("utf-8")):  # type: ignore
