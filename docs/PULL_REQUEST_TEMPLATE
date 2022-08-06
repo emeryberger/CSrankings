@@ -6,7 +6,7 @@ Thanks for contributing to CSrankings! Please read and indicate you agree with *
 
 **NOTE:** IF YOU DO NOT FOLLOW THE STEPS BELOW, YOUR COMMIT MAY BE SUMMARILY REJECTED.
 
-1. _Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
+1. _Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv")._
 
 1. _Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv`._
 
@@ -22,9 +22,9 @@ database. Use a text editor like emacs or NotePad instead._
 
 1. _Make sure the Google Scholar IDs are just the alphanumeric identifier (not a URL or with `&hl=en`)._
 
-1. Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org).
+1. _Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org)._
 
-1. If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
+1. _If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below)._
 
 1. _Read and check **all** the boxes below by filling them in with an X._
 
