@@ -1,30 +1,32 @@
 <!--
-	DBLP XML Records are available from
+	The dblp computer science bibliography is copyright by Schloss Dagstuhl - Leibniz Center for Informatics.
 
-        http://dblp.uni-trier.de/xml/
+	The metadata provided by dblp on its webpages, as well as their XML, JSON, RDF, RIS, BibTeX, and text export formats
+	available at our website, is released under the CC0 1.0 Public Domain Dedication license. That is, you are free to copy,
+	distribute, use, modify, transform, build upon, and produce derived works from our data, even for commercial purposes,
+	all without asking permission. Of course, we are always happy if you provide a link to us as the source of the data.
 
-	DBLP: Copyright 1993-2016 by Schloss Dagstuhl - Leibniz Center for Informatics (German: Schloss Dagstuhl - Leibniz-Zentrum für Informatik GmbH)
-	and Michael Ley (Universität Trier, Informatik, ley@uni-trier.de) and 
+	Read the full CC0 1.0 legal code for the exact terms that apply:
 
-	The data provided by DBLP on its webpages as well as the XML files available at http://dblp.uni-trier.de/xml/
-	are released under the Open Data Commons Attribution License (ODC-BY 1.0). You are free to copy, distribute, use, modify,
-	transform, build upon and produce derived works from our data as long as you attribute any public use of the data, or works
-	produced from the data, in the manner specified in the license. Read the full ODC-BY 1.0 license text for the exact terms
-	that apply. The ODC-BY 1.0 license is courtesy of the Open Knowledge Foundation.  
+	https://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-	http://opendatacommons.org/licenses/by/1.0/
-	http://okfn.org/
+	A daily updated dblp XML record dump is available at:
 
-	In the eyes of DBLP, a simple note refering to DBLP and/or a link back to http://dblp.uni-trier.de/ is sufficient to meet the
-	attribution criterion. Individual use of only a small number of records (such as a publication list of a few authors or the
-	table of content of a proceedings volume) does not need attribution. Of course, we are always happy if you link to us.
+        https://dblp.org/xml/dblp.xml.gz
 
-    For further details on the content of attributes see http://dblp.org/faq/What+do+I+find+in+dblp+xml.html
-	
-	Date of this File: Mar 27, 2017
-	
-	A changelog for the dblp.dtd can be found at: dblp.org/xml
-	
+	Persistent snapshots of the dblp XML record dumps are available at:
+
+        https://dblp.org/xml/release/
+
+	Date of this DTD file: November 23, 2019		
+
+	A changelog for this dblp.dtd can be found at:
+
+	https://dblp.org/xml/CHANGES.txt
+
+	For further details on the content of dblp XML records see:
+
+	https://dblp.org/faq/16154937.html
 -->
 
 <!ELEMENT dblp (article|inproceedings|proceedings|book|incollection|
@@ -110,69 +112,154 @@
                     aux CDATA #IMPLIED
                     bibtex CDATA #IMPLIED
                     orcid CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
 >
+
 <!ELEMENT editor    (#PCDATA)>
 <!ATTLIST editor
                     aux CDATA #IMPLIED
                     orcid CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
 >
+
 <!ELEMENT address   (#PCDATA)>
+<!ATTLIST address
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
 
 <!ENTITY % titlecontents "#PCDATA|sub|sup|i|tt|ref">
 <!ELEMENT title     (%titlecontents;)*>
 <!ATTLIST title
                     bibtex CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
 >
+
 <!ELEMENT booktitle (#PCDATA)>
+<!ATTLIST booktitle
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT pages     (#PCDATA)>
 <!ATTLIST pages
-                    type CDATA #IMPLIED
->   
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT year      (#PCDATA)>
+<!ATTLIST year
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT journal   (#PCDATA)>
+<!ATTLIST journal
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT volume    (#PCDATA)>
+<!ATTLIST volume
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT number    (#PCDATA)>
+<!ATTLIST number
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT month     (#PCDATA)>
+<!ATTLIST month
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT url       (#PCDATA)>
 <!ATTLIST url
                     aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
 >
+
 <!ELEMENT ee        (#PCDATA)>
 <!ATTLIST ee
                     aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
                     type CDATA #IMPLIED
 >
+
 <!ELEMENT cite      (#PCDATA)>
+<!ATTLIST cite
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED
+                    ref CDATA #IMPLIED
+>
+
 <!ELEMENT school    (#PCDATA)>
+<!ATTLIST school
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT publisher (#PCDATA)>
 <!ATTLIST publisher
                     href CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
 >
+
 <!ELEMENT note      (#PCDATA)>
 <!ATTLIST note
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
                     type CDATA #IMPLIED                   
 >
+
 <!ELEMENT cdrom     (#PCDATA)>
-<!ATTLIST cite
-                    label CDATA #IMPLIED
-                    ref CDATA #IMPLIED
->
+
 <!ELEMENT crossref  (#PCDATA)>
 <!ELEMENT isbn      (#PCDATA)>
+<!ATTLIST isbn
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
 <!ELEMENT chapter   (#PCDATA)>
 <!ELEMENT series    (#PCDATA)>
 <!ATTLIST series
                     href CDATA #IMPLIED
->
-<!ELEMENT layout    ANY>
-<!ATTLIST layout
-                    logo CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
 >
 
 <!ELEMENT publnr (#PCDATA) >
+<!ATTLIST publnr
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
 
+<!--  sub elements of the title element -->
 <!ELEMENT ref (#PCDATA)>
 <!ATTLIST ref href CDATA #REQUIRED>
 <!ELEMENT sup (%titlecontents;)*>
