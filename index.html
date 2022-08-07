@@ -228,7 +228,64 @@
       js = d.createElement(s); js.id = id; js.async=true;
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
       fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+      }(document, 'script', 'facebook-jssdk'));    </script>
+    <div class="overlay" id="overlay-loading">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="15vw">
+	    <div id="progress">Loading.<br /></div>
+	  </font>
+	</center>
+      </div>
+    </div>
+    <!-- sponsorship link, initially off (activated randomly). -->
+    <div class="overlay" onclick="document.getElementById('overlay-sponsor').style.display = 'none';" id="overlay-sponsor" style="display:none">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="10vw">
+	    <div id="sponsor">
+	      If you find CSrankings useful,<br />
+	      please consider becoming a sponsor.<br />
+	      <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');">
+		<font size="5vw">
+		  Open sponsor page
+		</font>
+	      </button>
+	      <button onclick="">
+		<font size="5vw">
+		  Exit to CSrankings
+		</font>
+	      </button>
+	    </div>
+	  </font>
+	</center>
+      </div>
+    </div>
+    
+    <!-- survey, initially off (activated randomly). -->
+    <div class="overlay" onclick="document.getElementById('overlay-survey').style.display = 'none';" id="overlay-survey" style="display:none">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="10vw">
+	    <div id="survey">
+	      You have been randomly selected to take a 5-minute
+	      survey on CSrankings for a scientific study.<br />
+	      <button onclick="event.stopPropagation(); window.open('https://umassamherst.co1.qualtrics.com/jfe/form/SV_4YObOmlDUfbh2Cy');">
+	      <!-- <button onclick="event.stopPropagation(); window.open('https://umassamherst.co1.qualtrics.com/jfe/form/SV_4YObOmlDUfbh2Cy');"> <!-- was https://umassamherst.co1.qualtrics.com/jfe/form/SV_4YObOmlDUfbh2Cy -->
+		<font size="5vw">
+		  Take survey
+		</font>
+	      </button>
+	      <button onclick="">
+		<font size="5vw">
+		  Exit to CSrankings
+		</font>
+	      </button>
+	    </div>
+	  </font>
+	</center>
+      </div>
+    </div>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
@@ -254,8 +311,9 @@
 		(<img src="scholar-favicon.ico" alt="Google Scholar"
 		      height="10" width="10">) to see publications,
 		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
-		go to a DBLP entry.<br />
-		<b><a href="advice.html">Applying to grad school? Read this first.</a></b>
+		go to a DBLP entry.
+		<em><a href="advice.html">Applying to grad school? Read this first.</a></em>
+		<b>Do you find CSrankings useful? <a href="https://github.com/sponsors/csrankings">Sponsor CSrankings on GitHub</a>.</b>
 	      </p>
 	      <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -342,8 +400,8 @@
 		    <option value="2008">2008</option>
 		    <option value="2009">2009</option>
 		    <option value="2010">2010</option>
-		    <option selected="selected" value="2011">2011</option>
-		    <option value="2012">2012</option>
+		    <option value="2011">2011</option>
+		    <option selected="selected" value="2012">2012</option>
 		    <option value="2013">2013</option>
 		    <option value="2014">2014</option>
 		    <option value="2015">2015</option>
@@ -398,8 +456,8 @@
 		    <option value="2018">2018</option>
 		    <option value="2019">2019</option>
 		    <option value="2020">2020</option>
-		    <option selected="selected" value="2021">2021</option>
-		    <option value="2022">2022</option>
+		    <option value="2021">2021</option>
+		    <option selected="selected" value="2022">2022</option>
 		  </select>
 		</div>
 	      </div>
@@ -1831,10 +1889,6 @@
 	    
 	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div id="success">
-		<strong><h3>Loading and processing data</h3>
-		  <div id="progress">
-		  </div>
-		</strong>
 	      </div>
 	    </div>
 	    
@@ -1873,7 +1927,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated monthly; last update January 15, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated quarterly; last update July 10, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
