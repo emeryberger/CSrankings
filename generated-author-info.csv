@@ -4841,6 +4841,11 @@ Alexandre Alahi,EPFL,icra,1.0,0.25,2020
 Alexandre Alahi,EPFL,icra,1.0,0.25,2021
 Alexandre Alahi,EPFL,nips,1.0,0.25,2020
 Alexandre Alahi,EPFL,nips,1.0,0.16667,2021
+Alexandre Allauzen,Université Paris Dauphine,acl,1.0,0.5,2021
+Alexandre Allauzen,Université Paris Dauphine,emnlp,2.0,0.58333,2010
+Alexandre Allauzen,Université Paris Dauphine,emnlp,2.0,0.66667,2015
+Alexandre Allauzen,Université Paris Dauphine,icml,1.0,0.25,2022
+Alexandre Allauzen,Université Paris Dauphine,naacl,1.0,0.33333,2012
 Alexandre Bergel,Universidad de Chile,icra,1.0,0.33333,2021
 Alexandre Bergel,Universidad de Chile,icse,1.0,0.33333,2012
 Alexandre Bergel,Universidad de Chile,icse,1.0,0.33333,2018
@@ -9296,6 +9301,7 @@ André Platzer,Carnegie Mellon University,lics,1.0,0.5,2016
 André Platzer,Carnegie Mellon University,lics,2.0,1.0,2018
 André Platzer,Carnegie Mellon University,pldi,1.0,0.2,2018
 André Platzer,Carnegie Mellon University,rss,1.0,0.33333,2013
+André Rossi,Université Paris Dauphine,dac,1.0,0.2,2015
 André van der Hoek,Univ. of California - Irvine,ase,1.0,0.33333,2006
 André van der Hoek,Univ. of California - Irvine,ase,1.0,0.33333,2007
 André van der Hoek,Univ. of California - Irvine,ase,1.0,0.5,2009
@@ -15117,6 +15123,16 @@ Ben Carterette,University of Delaware,sigir,1.0,0.071429,2021
 Ben Carterette,University of Delaware,www,1.0,0.2,2020
 Ben Carterette,University of Delaware,www,1.0,0.16667,2021
 Ben Carterette,University of Delaware,www,2.0,0.27778,2022
+Ben Fisch,Yale University,ccs,1.0,0.25,2017
+Ben Fisch,Yale University,ccs,1.0,0.25,2019
+Ben Fisch,Yale University,crypto,1.0,0.33333,2014
+Ben Fisch,Yale University,crypto,1.0,0.25,2018
+Ben Fisch,Yale University,crypto,1.0,0.33333,2019
+Ben Fisch,Yale University,crypto,1.0,0.25,2021
+Ben Fisch,Yale University,eurocrypt,1.0,1.0,2019
+Ben Fisch,Yale University,eurocrypt,1.0,0.33333,2020
+Ben Fisch,Yale University,oakland,1.0,0.14286,2015
+Ben Fisch,Yale University,wine,1.0,0.33333,2017
 Ben Glocker,Imperial College London,cvpr,3.0,0.61667,2008
 Ben Glocker,Imperial College London,cvpr,1.0,0.16667,2009
 Ben Glocker,Imperial College London,cvpr,1.0,0.16667,2013
@@ -30074,39 +30090,6 @@ Daniel Kifer,Pennsylvania State University,vldb,1.0,0.2,2018
 Daniel Kifer,Pennsylvania State University,vldb,1.0,0.25,2019
 Daniel Kifer,Pennsylvania State University,vldb,1.0,0.2,2021
 Daniel Kifer,Pennsylvania State University,www,1.0,0.2,2010
-Daniel Kroening,University of Oxford,aaai,1.0,0.2,2021
-Daniel Kroening,University of Oxford,ase,1.0,0.2,2015
-Daniel Kroening,University of Oxford,ase,1.0,0.25,2016
-Daniel Kroening,University of Oxford,ase,1.0,0.16667,2018
-Daniel Kroening,University of Oxford,cav,1.0,0.25,2004
-Daniel Kroening,University of Oxford,cav,1.0,0.5,2006
-Daniel Kroening,University of Oxford,cav,1.0,0.25,2009
-Daniel Kroening,University of Oxford,cav,2.0,0.58333,2010
-Daniel Kroening,University of Oxford,cav,3.0,0.95,2011
-Daniel Kroening,University of Oxford,cav,2.0,0.66667,2013
-Daniel Kroening,University of Oxford,cav,1.0,0.25,2014
-Daniel Kroening,University of Oxford,cav,2.0,0.375,2017
-Daniel Kroening,University of Oxford,cav,3.0,0.56667,2018
-Daniel Kroening,University of Oxford,ccs,1.0,0.33333,2019
-Daniel Kroening,University of Oxford,dac,1.0,0.5,2001
-Daniel Kroening,University of Oxford,dac,1.0,0.33333,2004
-Daniel Kroening,University of Oxford,dac,1.0,0.25,2005
-Daniel Kroening,University of Oxford,dac,1.0,0.33333,2010
-Daniel Kroening,University of Oxford,dac,1.0,0.33333,2011
-Daniel Kroening,University of Oxford,dac,1.0,0.25,2017
-Daniel Kroening,University of Oxford,dac,1.0,0.25,2020
-Daniel Kroening,University of Oxford,eccv,1.0,0.25,2020
-Daniel Kroening,University of Oxford,emsoft,1.0,0.16667,2019
-Daniel Kroening,University of Oxford,iccad,1.0,0.5,2004
-Daniel Kroening,University of Oxford,iccad,1.0,0.5,2007
-Daniel Kroening,University of Oxford,iccad,1.0,0.5,2008
-Daniel Kroening,University of Oxford,iccv,1.0,0.33333,2021
-Daniel Kroening,University of Oxford,ijcai,1.0,0.16667,2019
-Daniel Kroening,University of Oxford,issta,1.0,0.25,2021
-Daniel Kroening,University of Oxford,nips,1.0,0.25,2021
-Daniel Kroening,University of Oxford,popl,1.0,0.33333,2013
-Daniel Kroening,University of Oxford,popl,1.0,0.33333,2014
-Daniel Kroening,University of Oxford,usenixsec,1.0,0.33333,2018
 Daniel Král,Masaryk University,focs,1.0,0.33333,2010
 Daniel Král,Masaryk University,soda,1.0,1.0,2004
 Daniel Král,Masaryk University,soda,1.0,0.25,2005
@@ -30548,6 +30531,7 @@ Daniel Sánchez 0003,Massachusetts Institute of Technology,micro,2.0,0.64286,202
 Daniel Sánchez 0003,Massachusetts Institute of Technology,sc,1.0,0.125,2017
 Daniel Sánchez 0003,Massachusetts Institute of Technology,sigmod,1.0,0.25,2016
 Daniel Sánchez 0003,Massachusetts Institute of Technology,vldb,1.0,0.16667,2018
+Daniel Vanderpooten,Université Paris Dauphine,sigir,1.0,0.5,2007
 Daniel Vogel 0001,University of Waterloo,chiconf,1.0,0.5,2007
 Daniel Vogel 0001,University of Waterloo,chiconf,1.0,0.5,2008
 Daniel Vogel 0001,University of Waterloo,chiconf,1.0,0.2,2009
@@ -30674,6 +30658,7 @@ Daniela E. Damian,University of Victoria,icse,1.0,0.2,2013
 Daniela E. Damian,University of Victoria,icse,1.0,0.2,2015
 Daniela E. Damian,University of Victoria,icse,1.0,0.14286,2016
 Daniela E. Damian,University of Victoria,icse,1.0,0.2,2018
+Daniela Grigori,Université Paris Dauphine,vldb,1.0,0.25,2001
 Daniela Rus,Massachusetts Institute of Technology,aaai,1.0,0.25,2012
 Daniela Rus,Massachusetts Institute of Technology,aaai,1.0,0.16667,2020
 Daniela Rus,Massachusetts Institute of Technology,aaai,1.0,0.2,2021
@@ -30955,34 +30940,34 @@ Danqi Chen,Princeton University,nips,1.0,0.25,2013
 Dansong Cheng,Harbin Institute of Technology,cvpr,1.0,0.25,2017
 Dante Augusto Couto Barone,UFRGS,cvpr,1.0,0.33333,2004
 Dante Augusto Couto Barone,UFRGS,icra,1.0,0.5,2002
-Danupon Nanongkai,University of Copenhagen,focs,2.0,0.66667,2013
-Danupon Nanongkai,University of Copenhagen,focs,2.0,0.66667,2014
-Danupon Nanongkai,University of Copenhagen,focs,3.0,0.80952,2017
-Danupon Nanongkai,University of Copenhagen,focs,1.0,0.5,2018
-Danupon Nanongkai,University of Copenhagen,focs,3.0,1.1667,2019
-Danupon Nanongkai,University of Copenhagen,focs,2.0,0.29167,2020
-Danupon Nanongkai,University of Copenhagen,focs,1.0,0.16667,2021
-Danupon Nanongkai,University of Copenhagen,icde,1.0,0.2,2011
-Danupon Nanongkai,University of Copenhagen,sigmetrics,1.0,0.25,2015
-Danupon Nanongkai,University of Copenhagen,sigmod,1.0,0.25,2012
-Danupon Nanongkai,University of Copenhagen,soda,1.0,0.33333,2013
-Danupon Nanongkai,University of Copenhagen,soda,1.0,0.33333,2014
-Danupon Nanongkai,University of Copenhagen,soda,1.0,0.25,2015
-Danupon Nanongkai,University of Copenhagen,soda,1.0,0.33333,2017
-Danupon Nanongkai,University of Copenhagen,soda,1.0,0.25,2018
-Danupon Nanongkai,University of Copenhagen,soda,2.0,0.53333,2020
-Danupon Nanongkai,University of Copenhagen,soda,1.0,0.25,2021
-Danupon Nanongkai,University of Copenhagen,stoc,1.0,0.125,2011
-Danupon Nanongkai,University of Copenhagen,stoc,2.0,1.3333,2014
-Danupon Nanongkai,University of Copenhagen,stoc,2.0,0.5,2015
-Danupon Nanongkai,University of Copenhagen,stoc,2.0,0.66667,2016
-Danupon Nanongkai,University of Copenhagen,stoc,1.0,0.5,2017
-Danupon Nanongkai,University of Copenhagen,stoc,3.0,1.0833,2019
-Danupon Nanongkai,University of Copenhagen,stoc,1.0,0.5,2020
-Danupon Nanongkai,University of Copenhagen,stoc,3.0,0.7,2021
-Danupon Nanongkai,University of Copenhagen,vldb,1.0,0.25,2009
-Danupon Nanongkai,University of Copenhagen,vldb,1.0,0.2,2010
-Danupon Nanongkai,University of Copenhagen,wine,1.0,0.2,2010
+Danupon Nanongkai,Max Planck Society,focs,2.0,0.66667,2013
+Danupon Nanongkai,Max Planck Society,focs,2.0,0.66667,2014
+Danupon Nanongkai,Max Planck Society,focs,3.0,0.80952,2017
+Danupon Nanongkai,Max Planck Society,focs,1.0,0.5,2018
+Danupon Nanongkai,Max Planck Society,focs,3.0,1.1667,2019
+Danupon Nanongkai,Max Planck Society,focs,2.0,0.29167,2020
+Danupon Nanongkai,Max Planck Society,focs,1.0,0.16667,2021
+Danupon Nanongkai,Max Planck Society,icde,1.0,0.2,2011
+Danupon Nanongkai,Max Planck Society,sigmetrics,1.0,0.25,2015
+Danupon Nanongkai,Max Planck Society,sigmod,1.0,0.25,2012
+Danupon Nanongkai,Max Planck Society,soda,1.0,0.33333,2013
+Danupon Nanongkai,Max Planck Society,soda,1.0,0.33333,2014
+Danupon Nanongkai,Max Planck Society,soda,1.0,0.25,2015
+Danupon Nanongkai,Max Planck Society,soda,1.0,0.33333,2017
+Danupon Nanongkai,Max Planck Society,soda,1.0,0.25,2018
+Danupon Nanongkai,Max Planck Society,soda,2.0,0.53333,2020
+Danupon Nanongkai,Max Planck Society,soda,1.0,0.25,2021
+Danupon Nanongkai,Max Planck Society,stoc,1.0,0.125,2011
+Danupon Nanongkai,Max Planck Society,stoc,2.0,1.3333,2014
+Danupon Nanongkai,Max Planck Society,stoc,2.0,0.5,2015
+Danupon Nanongkai,Max Planck Society,stoc,2.0,0.66667,2016
+Danupon Nanongkai,Max Planck Society,stoc,1.0,0.5,2017
+Danupon Nanongkai,Max Planck Society,stoc,3.0,1.0833,2019
+Danupon Nanongkai,Max Planck Society,stoc,1.0,0.5,2020
+Danupon Nanongkai,Max Planck Society,stoc,3.0,0.7,2021
+Danupon Nanongkai,Max Planck Society,vldb,1.0,0.25,2009
+Danupon Nanongkai,Max Planck Society,vldb,1.0,0.2,2010
+Danupon Nanongkai,Max Planck Society,wine,1.0,0.2,2010
 Danushka Bollegala,University of Liverpool,aaai,1.0,0.11111,2006
 Danushka Bollegala,University of Liverpool,aaai,1.0,0.33333,2011
 Danushka Bollegala,University of Liverpool,aaai,2.0,0.66667,2012
@@ -31094,6 +31079,11 @@ Daqing Zhang 0001,Peking University,ubicomp,6.0,0.92024,2020
 Daqing Zhang 0001,Peking University,ubicomp,7.0,1.0373,2021
 Daqing Zhang 0001,Peking University,ubicomp,3.0,0.42857,2022
 Daqing Zhang 0001,Peking University,www,1.0,0.16667,2017
+Dario Colazzo,Université Paris Dauphine,icfp,1.0,0.25,2004
+Dario Colazzo,Université Paris Dauphine,lics,1.0,0.5,1999
+Dario Colazzo,Université Paris Dauphine,vldb,1.0,0.25,2006
+Dario Colazzo,Université Paris Dauphine,vldb,1.0,0.33333,2012
+Dario Colazzo,Université Paris Dauphine,www,1.0,0.25,2014
 Dario D. Salvucci,Drexel University,chiconf,1.0,1.0,1999
 Dario D. Salvucci,Drexel University,chiconf,1.0,0.5,2000
 Dario D. Salvucci,Drexel University,chiconf,1.0,1.0,2001
@@ -35086,6 +35076,7 @@ Denilson Barbosa,University of Alberta,vldb,1.0,0.33333,2005
 Denilson Barbosa,University of Alberta,www,1.0,0.33333,2003
 Denilson Barbosa,University of Alberta,www,1.0,0.33333,2018
 Denilson Barbosa,University of Alberta,www,1.0,0.5,2021
+Denis Cornaz,Université Paris Dauphine,ijcai,1.0,0.33333,2013
 Denis Deratani Mauá,USP,aaai,1.0,0.5,2015
 Denis Deratani Mauá,USP,aaai,1.0,0.25,2019
 Denis Deratani Mauá,USP,icml,1.0,0.5,2012
@@ -41854,16 +41845,16 @@ Erik Stolterman,Indiana University,chiconf,1.0,0.25,2009
 Erik Stolterman,Indiana University,chiconf,2.0,0.66667,2011
 Erik Stolterman,Indiana University,chiconf,1.0,0.33333,2014
 Erik Stolterman,Indiana University,chiconf,1.0,0.33333,2019
-Erik Waingarten,University of Pennsylvannia,focs,1.0,0.33333,2017
-Erik Waingarten,University of Pennsylvannia,focs,1.0,0.2,2018
-Erik Waingarten,University of Pennsylvannia,focs,1.0,0.25,2019
-Erik Waingarten,University of Pennsylvannia,soda,1.0,0.25,2017
-Erik Waingarten,University of Pennsylvannia,soda,2.0,0.66667,2020
-Erik Waingarten,University of Pennsylvannia,soda,2.0,0.45,2021
-Erik Waingarten,University of Pennsylvannia,stoc,2.0,0.53333,2017
-Erik Waingarten,University of Pennsylvannia,stoc,1.0,0.2,2018
-Erik Waingarten,University of Pennsylvannia,stoc,1.0,0.5,2019
-Erik Waingarten,University of Pennsylvannia,stoc,1.0,0.25,2022
+Erik Waingarten,University of Pennsylvania,focs,1.0,0.33333,2017
+Erik Waingarten,University of Pennsylvania,focs,1.0,0.2,2018
+Erik Waingarten,University of Pennsylvania,focs,1.0,0.25,2019
+Erik Waingarten,University of Pennsylvania,soda,1.0,0.25,2017
+Erik Waingarten,University of Pennsylvania,soda,2.0,0.66667,2020
+Erik Waingarten,University of Pennsylvania,soda,2.0,0.45,2021
+Erik Waingarten,University of Pennsylvania,stoc,2.0,0.53333,2017
+Erik Waingarten,University of Pennsylvania,stoc,1.0,0.2,2018
+Erik Waingarten,University of Pennsylvania,stoc,1.0,0.5,2019
+Erik Waingarten,University of Pennsylvania,stoc,1.0,0.25,2022
 Erik Winfree,California Institute of Technology,nips,1.0,0.33333,2004
 Erik Winfree,California Institute of Technology,stoc,1.0,0.5,2000
 Erik van der Kouwe,VU Amsterdam,asplos,1.0,0.25,2019
@@ -43324,14 +43315,14 @@ Fan Zhang 0010,Zhejiang University,ase,1.0,0.2,2019
 Fan Zhang 0010,Zhejiang University,dac,2.0,0.39286,2020
 Fan Zhang 0010,Zhejiang University,issta,1.0,0.2,2020
 Fan Zhang 0010,Zhejiang University,www,1.0,0.125,2021
-Fan Zhang 0022,Duke University,ccs,1.0,0.2,2016
-Fan Zhang 0022,Duke University,ccs,1.0,0.16667,2017
-Fan Zhang 0022,Duke University,ccs,2.0,0.30952,2019
-Fan Zhang 0022,Duke University,ccs,1.0,0.2,2020
-Fan Zhang 0022,Duke University,crypto,1.0,0.25,2020
-Fan Zhang 0022,Duke University,oakland,1.0,0.1,2021
-Fan Zhang 0022,Duke University,usenixsec,1.0,0.2,2016
-Fan Zhang 0022,Duke University,usenixsec,1.0,0.2,2017
+Fan Zhang 0022,Yale University,ccs,1.0,0.2,2016
+Fan Zhang 0022,Yale University,ccs,1.0,0.16667,2017
+Fan Zhang 0022,Yale University,ccs,2.0,0.30952,2019
+Fan Zhang 0022,Yale University,ccs,1.0,0.2,2020
+Fan Zhang 0022,Yale University,crypto,1.0,0.25,2020
+Fan Zhang 0022,Yale University,oakland,1.0,0.1,2021
+Fan Zhang 0022,Yale University,usenixsec,1.0,0.2,2016
+Fan Zhang 0022,Yale University,usenixsec,1.0,0.2,2017
 Fan Zhong,Shandong University,cvpr,1.0,0.33333,2010
 Fan Zhong,Shandong University,siggraph-asia,1.0,0.25,2012
 Fan Zhong,Shandong University,siggraph-asia,1.0,0.16667,2014
@@ -48418,36 +48409,36 @@ Gerhard Lakemeyer,RWTH Aachen,ijcai,3.0,1.1667,2021
 Gerhard Lakemeyer,RWTH Aachen,iros,1.0,0.33333,2012
 Gerhard Lakemeyer,RWTH Aachen,iros,1.0,0.33333,2020
 Gerhard Lakemeyer,RWTH Aachen,iros,1.0,0.33333,2021
-Gerhard Neumann,TU Darmstadt,aaai,1.0,0.25,2013
-Gerhard Neumann,TU Darmstadt,aaai,1.0,0.33333,2016
-Gerhard Neumann,TU Darmstadt,aaai,2.0,0.5,2017
-Gerhard Neumann,TU Darmstadt,icml,1.0,0.33333,2009
-Gerhard Neumann,TU Darmstadt,icml,1.0,1.0,2011
-Gerhard Neumann,TU Darmstadt,icml,1.0,0.25,2016
-Gerhard Neumann,TU Darmstadt,icml,1.0,0.25,2017
-Gerhard Neumann,TU Darmstadt,icml,1.0,0.33333,2018
-Gerhard Neumann,TU Darmstadt,icml,2.0,0.41667,2019
-Gerhard Neumann,TU Darmstadt,icra,1.0,0.25,2013
-Gerhard Neumann,TU Darmstadt,icra,3.0,0.7,2014
-Gerhard Neumann,TU Darmstadt,icra,3.0,0.56667,2015
-Gerhard Neumann,TU Darmstadt,icra,2.0,0.30952,2016
-Gerhard Neumann,TU Darmstadt,icra,3.0,0.66667,2017
-Gerhard Neumann,TU Darmstadt,icra,3.0,0.7,2018
-Gerhard Neumann,TU Darmstadt,icra,1.0,0.16667,2020
-Gerhard Neumann,TU Darmstadt,ijcai,1.0,0.2,2017
-Gerhard Neumann,TU Darmstadt,iros,2.0,0.53333,2012
-Gerhard Neumann,TU Darmstadt,iros,1.0,0.2,2014
-Gerhard Neumann,TU Darmstadt,iros,2.0,0.5,2015
-Gerhard Neumann,TU Darmstadt,iros,2.0,0.58333,2016
-Gerhard Neumann,TU Darmstadt,iros,1.0,0.16667,2017
-Gerhard Neumann,TU Darmstadt,iros,3.0,0.65,2018
-Gerhard Neumann,TU Darmstadt,iros,2.0,0.36667,2019
-Gerhard Neumann,TU Darmstadt,iros,2.0,0.31111,2021
-Gerhard Neumann,TU Darmstadt,nips,1.0,0.5,2008
-Gerhard Neumann,TU Darmstadt,nips,1.0,0.25,2013
-Gerhard Neumann,TU Darmstadt,nips,1.0,0.16667,2015
-Gerhard Neumann,TU Darmstadt,nips,1.0,0.25,2016
-Gerhard Neumann,TU Darmstadt,rss,1.0,0.2,2021
+Gerhard Neumann,Karlsruhe Institute of Technology,aaai,1.0,0.25,2013
+Gerhard Neumann,Karlsruhe Institute of Technology,aaai,1.0,0.33333,2016
+Gerhard Neumann,Karlsruhe Institute of Technology,aaai,2.0,0.5,2017
+Gerhard Neumann,Karlsruhe Institute of Technology,icml,1.0,0.33333,2009
+Gerhard Neumann,Karlsruhe Institute of Technology,icml,1.0,1.0,2011
+Gerhard Neumann,Karlsruhe Institute of Technology,icml,1.0,0.25,2016
+Gerhard Neumann,Karlsruhe Institute of Technology,icml,1.0,0.25,2017
+Gerhard Neumann,Karlsruhe Institute of Technology,icml,1.0,0.33333,2018
+Gerhard Neumann,Karlsruhe Institute of Technology,icml,2.0,0.41667,2019
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,1.0,0.25,2013
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,3.0,0.7,2014
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,3.0,0.56667,2015
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,2.0,0.30952,2016
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,3.0,0.66667,2017
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,3.0,0.7,2018
+Gerhard Neumann,Karlsruhe Institute of Technology,icra,1.0,0.16667,2020
+Gerhard Neumann,Karlsruhe Institute of Technology,ijcai,1.0,0.2,2017
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,2.0,0.53333,2012
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,1.0,0.2,2014
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,2.0,0.5,2015
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,2.0,0.58333,2016
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,1.0,0.16667,2017
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,3.0,0.65,2018
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,2.0,0.36667,2019
+Gerhard Neumann,Karlsruhe Institute of Technology,iros,2.0,0.31111,2021
+Gerhard Neumann,Karlsruhe Institute of Technology,nips,1.0,0.5,2008
+Gerhard Neumann,Karlsruhe Institute of Technology,nips,1.0,0.25,2013
+Gerhard Neumann,Karlsruhe Institute of Technology,nips,1.0,0.16667,2015
+Gerhard Neumann,Karlsruhe Institute of Technology,nips,1.0,0.25,2016
+Gerhard Neumann,Karlsruhe Institute of Technology,rss,1.0,0.2,2021
 Gerhard P. Hancke 0002,City University of Hong Kong,iccv,1.0,0.33333,2021
 Gerhard P. Hancke 0002,City University of Hong Kong,oakland,1.0,1.0,2006
 Gerhard Sagerer,Bielefeld University,aaai,1.0,0.2,1997
@@ -51899,16 +51890,16 @@ Gurminder Singh,Naval Postgraduate School,uist,1.0,0.5,1989
 Gurminder Singh,Naval Postgraduate School,uist,1.0,0.33333,1990
 Gurpur M. Prabhu,Iowa State University,sc,1.0,0.33333,1994
 Gursimran Singh Walia,Augusta University,icse,1.0,0.33333,2008
-Gushu Li,University of Pennsylvannia,asplos,1.0,0.33333,2019
-Gushu Li,University of Pennsylvannia,asplos,1.0,0.33333,2020
-Gushu Li,University of Pennsylvannia,asplos,1.0,0.16667,2022
-Gushu Li,University of Pennsylvannia,dac,1.0,0.14286,2015
-Gushu Li,University of Pennsylvannia,dac,1.0,0.33333,2020
-Gushu Li,University of Pennsylvannia,isca,1.0,0.33333,2021
-Gushu Li,University of Pennsylvannia,isca,1.0,0.16667,2022
-Gushu Li,University of Pennsylvannia,oopsla,1.0,0.16667,2020
-Gushu Li,University of Pennsylvannia,osdi,1.0,0.14286,2021
-Gushu Li,University of Pennsylvannia,usenixatc,1.0,0.2,2021
+Gushu Li,University of Pennsylvania,asplos,1.0,0.33333,2019
+Gushu Li,University of Pennsylvania,asplos,1.0,0.33333,2020
+Gushu Li,University of Pennsylvania,asplos,1.0,0.16667,2022
+Gushu Li,University of Pennsylvania,dac,1.0,0.14286,2015
+Gushu Li,University of Pennsylvania,dac,1.0,0.33333,2020
+Gushu Li,University of Pennsylvania,isca,1.0,0.33333,2021
+Gushu Li,University of Pennsylvania,isca,1.0,0.16667,2022
+Gushu Li,University of Pennsylvania,oopsla,1.0,0.16667,2020
+Gushu Li,University of Pennsylvania,osdi,1.0,0.14286,2021
+Gushu Li,University of Pennsylvania,usenixatc,1.0,0.2,2021
 Gustavo Alonso,ETH Zurich,asplos,1.0,0.076923,2022
 Gustavo Alonso,ETH Zurich,eurosys,2.0,0.83333,2007
 Gustavo Alonso,ETH Zurich,eurosys,1.0,0.33333,2008
@@ -62544,6 +62535,14 @@ Jakub Szefer,Yale University,iccad,1.0,0.5,2020
 Jakub Szefer,Yale University,isca,1.0,0.25,2010
 Jakub Szefer,Yale University,isca,1.0,0.33333,2019
 Jakub Szefer,Yale University,oakland,1.0,0.33333,2020
+Jamal Atif,Université Paris Dauphine,aaai,1.0,0.25,2021
+Jamal Atif,Université Paris Dauphine,icml,1.0,0.2,2020
+Jamal Atif,Université Paris Dauphine,icml,1.0,0.2,2021
+Jamal Atif,Université Paris Dauphine,ijcai,1.0,0.2,2007
+Jamal Atif,Université Paris Dauphine,ijcai,1.0,0.25,2021
+Jamal Atif,Université Paris Dauphine,nips,1.0,0.25,2018
+Jamal Atif,Université Paris Dauphine,nips,1.0,0.14286,2019
+Jamal Atif,Université Paris Dauphine,nips,1.0,0.25,2021
 James A. Hendler,Rensselaer Polytechnic Institute,aaai,1.0,0.33333,1993
 James A. Hendler,Rensselaer Polytechnic Institute,aaai,1.0,0.33333,1994
 James A. Hendler,Rensselaer Polytechnic Institute,aaai,1.0,0.33333,1997
@@ -73178,6 +73177,17 @@ Jonghyuk Kim,University of Technology Sydney,icra,1.0,0.5,2012
 Jonghyuk Kim,University of Technology Sydney,iros,1.0,0.2,2008
 Jonghyuk Kim,University of Technology Sydney,iros,1.0,0.5,2012
 Jonghyuk Kim,University of Technology Sydney,iros,2.0,0.83333,2013
+Jonghyun Choi,Yonsei University,aaai,1.0,0.25,2016
+Jonghyun Choi,Yonsei University,cvpr,1.0,0.25,2013
+Jonghyun Choi,Yonsei University,cvpr,2.0,0.45,2016
+Jonghyun Choi,Yonsei University,cvpr,1.0,0.16667,2017
+Jonghyun Choi,Yonsei University,cvpr,1.0,0.25,2018
+Jonghyun Choi,Yonsei University,cvpr,1.0,0.33333,2020
+Jonghyun Choi,Yonsei University,cvpr,1.0,0.2,2021
+Jonghyun Choi,Yonsei University,eccv,1.0,0.33333,2020
+Jonghyun Choi,Yonsei University,emnlp,1.0,0.0625,2021
+Jonghyun Choi,Yonsei University,iccv,4.0,1.0667,2021
+Jonghyun Choi,Yonsei University,icml,1.0,0.2,2013
 Jongse Park,KAIST,asplos,1.0,0.2,2016
 Jongse Park,KAIST,fse,1.0,0.2,2015
 Jongse Park,KAIST,hpca,1.0,0.14286,2016
@@ -76504,6 +76514,32 @@ Jérémy Barbay,Universidad de Chile,soda,1.0,0.25,2007
 Jérôme Feret,Ecole Normale Superieure,ismb,1.0,0.11111,2018
 Jérôme Feret,Ecole Normale Superieure,lics,1.0,0.2,2010
 Jérôme Feret,Ecole Normale Superieure,pldi,1.0,0.125,2003
+Jérôme Lang,Université Paris Dauphine,aaai,2.0,0.66667,1998
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.25,2000
+Jérôme Lang,Université Paris Dauphine,aaai,2.0,0.66667,2007
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.33333,2008
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.25,2010
+Jérôme Lang,Université Paris Dauphine,aaai,2.0,0.5,2014
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.33333,2015
+Jérôme Lang,Université Paris Dauphine,aaai,2.0,0.83333,2016
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.25,2017
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.2,2018
+Jérôme Lang,Université Paris Dauphine,aaai,1.0,0.2,2021
+Jérôme Lang,Université Paris Dauphine,ec,1.0,0.33333,2011
+Jérôme Lang,Université Paris Dauphine,ijcai,1.0,0.2,1993
+Jérôme Lang,Université Paris Dauphine,ijcai,1.0,0.25,2001
+Jérôme Lang,Université Paris Dauphine,ijcai,4.0,1.3333,2003
+Jérôme Lang,Université Paris Dauphine,ijcai,4.0,1.5833,2005
+Jérôme Lang,Université Paris Dauphine,ijcai,4.0,2.5333,2007
+Jérôme Lang,Université Paris Dauphine,ijcai,5.0,1.9167,2009
+Jérôme Lang,Université Paris Dauphine,ijcai,4.0,1.4167,2011
+Jérôme Lang,Université Paris Dauphine,ijcai,2.0,1.0,2015
+Jérôme Lang,Université Paris Dauphine,ijcai,3.0,1.0333,2016
+Jérôme Lang,Université Paris Dauphine,ijcai,1.0,0.25,2017
+Jérôme Lang,Université Paris Dauphine,ijcai,1.0,0.16667,2019
+Jérôme Lang,Université Paris Dauphine,ijcai,1.0,1.0,2020
+Jérôme Lang,Université Paris Dauphine,ijcai,1.0,0.25,2021
+Jérôme Lang,Université Paris Dauphine,wine,1.0,0.16667,2012
 Jérôme Waldispühl,McGill University,ismb,1.0,0.14286,2011
 Jérôme Waldispühl,McGill University,ismb,1.0,0.33333,2012
 Jérôme Waldispühl,McGill University,ismb,1.0,0.33333,2013
@@ -80390,6 +80426,13 @@ Khaled M. Elbassioni,Masdar Institute,soda,1.0,0.2,2006
 Khaled M. Elbassioni,Masdar Institute,soda,1.0,0.25,2009
 Khaled M. Elbassioni,Masdar Institute,soda,1.0,0.5,2010
 Khaled M. Elbassioni,Masdar Institute,wine,2.0,0.66667,2010
+Khaled N. Khasawneh,George Mason University,asplos,1.0,0.14286,2021
+Khaled N. Khasawneh,George Mason University,dac,1.0,0.14286,2017
+Khaled N. Khasawneh,George Mason University,dac,1.0,0.16667,2019
+Khaled N. Khasawneh,George Mason University,iccad,1.0,0.33333,2021
+Khaled N. Khasawneh,George Mason University,micro,2.0,0.58333,2017
+Khaled N. Khasawneh,George Mason University,micro,1.0,0.2,2019
+Khaled N. Khasawneh,George Mason University,oakland,1.0,0.2,2020
 Khalil Sima'an,University of Amsterdam,acl,1.0,1.0,2000
 Khalil Sima'an,University of Amsterdam,acl,1.0,0.33333,2007
 Khalil Sima'an,University of Amsterdam,acl,1.0,0.5,2011
@@ -83580,6 +83623,15 @@ Laurent El Ghaoui,Univ. of California - Berkeley,nips,1.0,0.33333,2012
 Laurent El Ghaoui,Univ. of California - Berkeley,nips,1.0,0.2,2020
 Laurent Fribourg,Ecole Normale Superieure de Cachan,cav,1.0,0.5,1999
 Laurent Fribourg,Ecole Normale Superieure de Cachan,lics,1.0,1.0,1992
+Laurent Gourvès,Université Paris Dauphine,ijcai,1.0,0.33333,2013
+Laurent Gourvès,Université Paris Dauphine,ijcai,2.0,0.53333,2016
+Laurent Gourvès,Université Paris Dauphine,ijcai,1.0,0.33333,2017
+Laurent Gourvès,Université Paris Dauphine,ijcai,1.0,0.33333,2019
+Laurent Gourvès,Université Paris Dauphine,wine,1.0,0.25,2007
+Laurent Gourvès,Université Paris Dauphine,wine,1.0,0.5,2008
+Laurent Gourvès,Université Paris Dauphine,wine,2.0,0.83333,2009
+Laurent Gourvès,Université Paris Dauphine,wine,1.0,0.33333,2013
+Laurent Gourvès,Université Paris Dauphine,wine,1.0,0.33333,2016
 Laurent Grisoni,CRIStAL,chiconf,1.0,0.25,2017
 Laurent Grisoni,CRIStAL,chiconf,1.0,0.25,2019
 Laurent Grisoni,CRIStAL,iros,1.0,0.2,2016
@@ -86444,18 +86496,18 @@ Lingjia Tang,University of Michigan,pldi,1.0,0.16667,2016
 Lingjia Tang,University of Michigan,sc,1.0,0.16667,2013
 Lingjia Tang,University of Michigan,uist,1.0,0.14286,2018
 Lingjia Tang,University of Michigan,usenixatc,1.0,0.2,2014
-Lingjie Liu,University of Pennsylvannia,cvpr,1.0,0.14286,2020
-Lingjie Liu,University of Pennsylvannia,cvpr,3.0,0.56667,2021
-Lingjie Liu,University of Pennsylvannia,eccv,1.0,0.25,2020
-Lingjie Liu,University of Pennsylvannia,iccv,4.0,0.70952,2021
-Lingjie Liu,University of Pennsylvannia,ijcai,1.0,0.14286,2019
-Lingjie Liu,University of Pennsylvannia,nips,1.0,0.2,2020
-Lingjie Liu,University of Pennsylvannia,nips,1.0,0.16667,2021
-Lingjie Liu,University of Pennsylvannia,siggraph,1.0,0.2,2017
-Lingjie Liu,University of Pennsylvannia,siggraph,1.0,0.16667,2020
-Lingjie Liu,University of Pennsylvannia,siggraph,1.0,0.16667,2021
-Lingjie Liu,University of Pennsylvannia,siggraph-asia,1.0,0.16667,2018
-Lingjie Liu,University of Pennsylvannia,siggraph-asia,1.0,0.16667,2021
+Lingjie Liu,University of Pennsylvania,cvpr,1.0,0.14286,2020
+Lingjie Liu,University of Pennsylvania,cvpr,3.0,0.56667,2021
+Lingjie Liu,University of Pennsylvania,eccv,1.0,0.25,2020
+Lingjie Liu,University of Pennsylvania,iccv,4.0,0.70952,2021
+Lingjie Liu,University of Pennsylvania,ijcai,1.0,0.14286,2019
+Lingjie Liu,University of Pennsylvania,nips,1.0,0.2,2020
+Lingjie Liu,University of Pennsylvania,nips,1.0,0.16667,2021
+Lingjie Liu,University of Pennsylvania,siggraph,1.0,0.2,2017
+Lingjie Liu,University of Pennsylvania,siggraph,1.0,0.16667,2020
+Lingjie Liu,University of Pennsylvania,siggraph,1.0,0.16667,2021
+Lingjie Liu,University of Pennsylvania,siggraph-asia,1.0,0.16667,2018
+Lingjie Liu,University of Pennsylvania,siggraph-asia,1.0,0.16667,2021
 Lingling Li 0002,Xidian University,acl,1.0,0.2,2021
 Lingming Zhang,Univ. of Illinois at Urbana-Champaign,ase,1.0,0.25,2013
 Lingming Zhang,Univ. of Illinois at Urbana-Champaign,ase,1.0,0.14286,2016
@@ -86734,33 +86786,33 @@ Lipyeow Lim,University of Hawaii at Manoa,vldb,1.0,0.33333,2005
 Lipyeow Lim,University of Hawaii at Manoa,vldb,1.0,0.33333,2007
 Lipyeow Lim,University of Hawaii at Manoa,vldb,1.0,0.11111,2009
 Lipyeow Lim,University of Hawaii at Manoa,www,1.0,0.2,2003
-Liqiang Nie,Shandong University,aaai,3.0,0.61667,2016
-Liqiang Nie,Shandong University,aaai,2.0,0.36667,2017
-Liqiang Nie,Shandong University,aaai,2.0,0.34286,2018
-Liqiang Nie,Shandong University,aaai,1.0,0.16667,2019
-Liqiang Nie,Shandong University,aaai,1.0,0.2,2020
-Liqiang Nie,Shandong University,acl,1.0,0.25,2018
-Liqiang Nie,Shandong University,acl,1.0,0.33333,2022
-Liqiang Nie,Shandong University,cvpr,1.0,0.14286,2017
-Liqiang Nie,Shandong University,emnlp,1.0,0.16667,2019
-Liqiang Nie,Shandong University,iccv,2.0,0.325,2021
-Liqiang Nie,Shandong University,ijcai,2.0,0.4,2015
-Liqiang Nie,Shandong University,ijcai,2.0,0.4,2016
-Liqiang Nie,Shandong University,ijcai,3.0,0.49167,2017
-Liqiang Nie,Shandong University,ijcai,4.0,0.64286,2018
-Liqiang Nie,Shandong University,ijcai,1.0,0.16667,2020
-Liqiang Nie,Shandong University,ijcai,1.0,0.16667,2021
-Liqiang Nie,Shandong University,sigir,1.0,0.2,2011
-Liqiang Nie,Shandong University,sigir,1.0,0.2,2015
-Liqiang Nie,Shandong University,sigir,5.0,0.98333,2017
-Liqiang Nie,Shandong University,sigir,5.0,0.86667,2018
-Liqiang Nie,Shandong University,sigir,5.0,0.9,2019
-Liqiang Nie,Shandong University,sigir,2.0,0.36667,2020
-Liqiang Nie,Shandong University,sigir,4.0,0.76667,2021
-Liqiang Nie,Shandong University,sigir,3.0,0.58333,2022
-Liqiang Nie,Shandong University,www,1.0,0.16667,2017
-Liqiang Nie,Shandong University,www,2.0,0.4,2018
-Liqiang Nie,Shandong University,www,1.0,0.2,2021
+Liqiang Nie,Harbin Institute of Technology,aaai,3.0,0.61667,2016
+Liqiang Nie,Harbin Institute of Technology,aaai,2.0,0.36667,2017
+Liqiang Nie,Harbin Institute of Technology,aaai,2.0,0.34286,2018
+Liqiang Nie,Harbin Institute of Technology,aaai,1.0,0.16667,2019
+Liqiang Nie,Harbin Institute of Technology,aaai,1.0,0.2,2020
+Liqiang Nie,Harbin Institute of Technology,acl,1.0,0.25,2018
+Liqiang Nie,Harbin Institute of Technology,acl,1.0,0.33333,2022
+Liqiang Nie,Harbin Institute of Technology,cvpr,1.0,0.14286,2017
+Liqiang Nie,Harbin Institute of Technology,emnlp,1.0,0.16667,2019
+Liqiang Nie,Harbin Institute of Technology,iccv,2.0,0.325,2021
+Liqiang Nie,Harbin Institute of Technology,ijcai,2.0,0.4,2015
+Liqiang Nie,Harbin Institute of Technology,ijcai,2.0,0.4,2016
+Liqiang Nie,Harbin Institute of Technology,ijcai,3.0,0.49167,2017
+Liqiang Nie,Harbin Institute of Technology,ijcai,4.0,0.64286,2018
+Liqiang Nie,Harbin Institute of Technology,ijcai,1.0,0.16667,2020
+Liqiang Nie,Harbin Institute of Technology,ijcai,1.0,0.16667,2021
+Liqiang Nie,Harbin Institute of Technology,sigir,1.0,0.2,2011
+Liqiang Nie,Harbin Institute of Technology,sigir,1.0,0.2,2015
+Liqiang Nie,Harbin Institute of Technology,sigir,5.0,0.98333,2017
+Liqiang Nie,Harbin Institute of Technology,sigir,5.0,0.86667,2018
+Liqiang Nie,Harbin Institute of Technology,sigir,5.0,0.9,2019
+Liqiang Nie,Harbin Institute of Technology,sigir,2.0,0.36667,2020
+Liqiang Nie,Harbin Institute of Technology,sigir,4.0,0.76667,2021
+Liqiang Nie,Harbin Institute of Technology,sigir,3.0,0.58333,2022
+Liqiang Nie,Harbin Institute of Technology,www,1.0,0.16667,2017
+Liqiang Nie,Harbin Institute of Technology,www,2.0,0.4,2018
+Liqiang Nie,Harbin Institute of Technology,www,1.0,0.2,2021
 Liqiang Wang,University of Central Florida,aaai,3.0,1.0833,2019
 Liqiang Wang,University of Central Florida,aaai,1.0,0.25,2020
 Liqiang Wang,University of Central Florida,aaai,1.0,0.33333,2021
@@ -97249,6 +97301,9 @@ Melissa Mazmanian,Univ. of California - Irvine,chiconf,1.0,0.5,2021
 Melissa Mazmanian,Univ. of California - Irvine,ubicomp,1.0,0.2,2013
 Melody Moore Jackson,Georgia Institute of Technology,ubicomp,1.0,0.125,2017
 Melody Moore Jackson,Georgia Institute of Technology,uist,1.0,0.2,2014
+Meltem Öztürk,Université Paris Dauphine,ijcai,1.0,0.25,2018
+Meltem Öztürk,Université Paris Dauphine,ijcai,1.0,0.33333,2019
+Meltem Öztürk,Université Paris Dauphine,ijcai,1.0,0.25,2020
 Melvin A. Breuer,University of Southern California,dac,1.0,0.5,1974
 Melvin A. Breuer,University of Southern California,dac,3.0,1.8333,1977
 Melvin A. Breuer,University of Southern California,dac,1.0,0.33333,1979
@@ -98428,27 +98483,6 @@ Michael Gleicher,University of Wisconsin - Madison,vis,2.0,1.5,2018
 Michael Gleicher,University of Wisconsin - Madison,vis,1.0,0.11111,2021
 Michael Gleicher,University of Wisconsin - Madison,vr,1.0,0.33333,2012
 Michael Gleicher,University of Wisconsin - Madison,vr,1.0,0.25,2013
-Michael Goesele,TU Darmstadt,chiconf,1.0,0.2,2017
-Michael Goesele,TU Darmstadt,cvpr,2.0,0.66667,2006
-Michael Goesele,TU Darmstadt,cvpr,1.0,0.16667,2009
-Michael Goesele,TU Darmstadt,cvpr,2.0,0.58333,2012
-Michael Goesele,TU Darmstadt,cvpr,1.0,0.25,2018
-Michael Goesele,TU Darmstadt,eccv,1.0,0.33333,2014
-Michael Goesele,TU Darmstadt,eccv,1.0,0.25,2016
-Michael Goesele,TU Darmstadt,iccv,1.0,0.2,2007
-Michael Goesele,TU Darmstadt,iccv,1.0,0.33333,2009
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.25,2003
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.2,2004
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.14286,2010
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.2,2012
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.5,2014
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.16667,2017
-Michael Goesele,TU Darmstadt,siggraph,1.0,0.11111,2018
-Michael Goesele,TU Darmstadt,siggraph-asia,1.0,0.5,2011
-Michael Goesele,TU Darmstadt,siggraph-asia,1.0,0.2,2013
-Michael Goesele,TU Darmstadt,siggraph-asia,1.0,0.2,2016
-Michael Goesele,TU Darmstadt,siggraph-asia,1.0,0.2,2017
-Michael Goesele,TU Darmstadt,siggraph-asia,1.0,0.25,2018
 Michael Goldsmith,University of Oxford,cav,1.0,0.14286,2012
 Michael Granitzer,University of Passau,sigir,1.0,0.33333,2010
 Michael Granitzer,University of Passau,sigir,1.0,0.33333,2016
@@ -106774,43 +106808,43 @@ Niao He,ETH Zurich,nips,3.0,0.70833,2018
 Niao He,ETH Zurich,nips,2.0,0.39286,2019
 Niao He,ETH Zurich,nips,6.0,1.7833,2020
 Niao He,ETH Zurich,nips,1.0,0.33333,2021
-Nicholas D. Lane,University of Oxford,aaai,1.0,0.2,2010
-Nicholas D. Lane,University of Oxford,aaai,1.0,0.33333,2012
-Nicholas D. Lane,University of Oxford,dac,1.0,0.16667,2020
-Nicholas D. Lane,University of Oxford,eccv,1.0,0.14286,2020
-Nicholas D. Lane,University of Oxford,iccad,1.0,0.25,2020
-Nicholas D. Lane,University of Oxford,ijcai,1.0,0.16667,2018
-Nicholas D. Lane,University of Oxford,imc,1.0,0.16667,2021
-Nicholas D. Lane,University of Oxford,mobicom,1.0,0.090909,2014
-Nicholas D. Lane,University of Oxford,mobicom,1.0,0.25,2016
-Nicholas D. Lane,University of Oxford,mobicom,1.0,0.2,2019
-Nicholas D. Lane,University of Oxford,mobicom,1.0,0.2,2020
-Nicholas D. Lane,University of Oxford,mobisys,1.0,0.2,2009
-Nicholas D. Lane,University of Oxford,mobisys,2.0,0.34091,2013
-Nicholas D. Lane,University of Oxford,mobisys,1.0,0.25,2015
-Nicholas D. Lane,University of Oxford,mobisys,1.0,0.2,2016
-Nicholas D. Lane,University of Oxford,mobisys,2.0,0.41667,2017
-Nicholas D. Lane,University of Oxford,nips,1.0,0.16667,2020
-Nicholas D. Lane,University of Oxford,nips,1.0,0.16667,2021
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.16667,2007
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.11111,2008
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.16667,2010
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.125,2011
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.11111,2013
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.25,2014
-Nicholas D. Lane,University of Oxford,sensys,1.0,0.5,2016
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.25,2008
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.25,2010
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.14286,2011
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.2,2012
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.2,2013
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.25,2014
-Nicholas D. Lane,University of Oxford,ubicomp,3.0,0.78333,2015
-Nicholas D. Lane,University of Oxford,ubicomp,1.0,0.33333,2016
-Nicholas D. Lane,University of Oxford,ubicomp,3.0,0.59286,2017
-Nicholas D. Lane,University of Oxford,ubicomp,2.0,0.41667,2019
-Nicholas D. Lane,University of Oxford,ubicomp,2.0,0.30952,2020
-Nicholas D. Lane,University of Oxford,ubicomp,2.0,0.5,2021
+Nicholas D. Lane,University of Cambridge,aaai,1.0,0.2,2010
+Nicholas D. Lane,University of Cambridge,aaai,1.0,0.33333,2012
+Nicholas D. Lane,University of Cambridge,dac,1.0,0.16667,2020
+Nicholas D. Lane,University of Cambridge,eccv,1.0,0.14286,2020
+Nicholas D. Lane,University of Cambridge,iccad,1.0,0.25,2020
+Nicholas D. Lane,University of Cambridge,ijcai,1.0,0.16667,2018
+Nicholas D. Lane,University of Cambridge,imc,1.0,0.16667,2021
+Nicholas D. Lane,University of Cambridge,mobicom,1.0,0.090909,2014
+Nicholas D. Lane,University of Cambridge,mobicom,1.0,0.25,2016
+Nicholas D. Lane,University of Cambridge,mobicom,1.0,0.2,2019
+Nicholas D. Lane,University of Cambridge,mobicom,1.0,0.2,2020
+Nicholas D. Lane,University of Cambridge,mobisys,1.0,0.2,2009
+Nicholas D. Lane,University of Cambridge,mobisys,2.0,0.34091,2013
+Nicholas D. Lane,University of Cambridge,mobisys,1.0,0.25,2015
+Nicholas D. Lane,University of Cambridge,mobisys,1.0,0.2,2016
+Nicholas D. Lane,University of Cambridge,mobisys,2.0,0.41667,2017
+Nicholas D. Lane,University of Cambridge,nips,1.0,0.16667,2020
+Nicholas D. Lane,University of Cambridge,nips,1.0,0.16667,2021
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.16667,2007
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.11111,2008
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.16667,2010
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.125,2011
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.11111,2013
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.25,2014
+Nicholas D. Lane,University of Cambridge,sensys,1.0,0.5,2016
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.25,2008
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.25,2010
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.14286,2011
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.2,2012
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.2,2013
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.25,2014
+Nicholas D. Lane,University of Cambridge,ubicomp,3.0,0.78333,2015
+Nicholas D. Lane,University of Cambridge,ubicomp,1.0,0.33333,2016
+Nicholas D. Lane,University of Cambridge,ubicomp,3.0,0.59286,2017
+Nicholas D. Lane,University of Cambridge,ubicomp,2.0,0.41667,2019
+Nicholas D. Lane,University of Cambridge,ubicomp,2.0,0.30952,2020
+Nicholas D. Lane,University of Cambridge,ubicomp,2.0,0.5,2021
 Nicholas Gibbins,University of Southampton,ijcai,1.0,0.33333,2011
 Nicholas Gibbins,University of Southampton,sigir,1.0,0.2,2009
 Nicholas Gibbins,University of Southampton,www,1.0,0.33333,2003
@@ -106872,45 +106906,45 @@ Nicholas Mattei,Tulane University,ijcai,1.0,0.33333,2017
 Nicholas Mattei,Tulane University,ijcai,3.0,0.89286,2019
 Nicholas Mattei,Tulane University,ijcai,2.0,0.58333,2020
 Nicholas Mattei,Tulane University,nips,1.0,0.16667,2021
-Nicholas R. Jennings,Imperial College London,aaai,1.0,0.5,1992
-Nicholas R. Jennings,Imperial College London,aaai,1.0,0.5,2005
-Nicholas R. Jennings,Imperial College London,aaai,1.0,0.25,2006
-Nicholas R. Jennings,Imperial College London,aaai,3.0,0.78333,2007
-Nicholas R. Jennings,Imperial College London,aaai,2.0,1.0,2008
-Nicholas R. Jennings,Imperial College London,aaai,4.0,0.9,2010
-Nicholas R. Jennings,Imperial College London,aaai,3.0,0.59286,2011
-Nicholas R. Jennings,Imperial College London,aaai,5.0,1.3667,2012
-Nicholas R. Jennings,Imperial College London,aaai,2.0,0.75,2014
-Nicholas R. Jennings,Imperial College London,aaai,4.0,0.98333,2015
-Nicholas R. Jennings,Imperial College London,aaai,1.0,0.33333,2016
-Nicholas R. Jennings,Imperial College London,aaai,1.0,0.25,2017
-Nicholas R. Jennings,Imperial College London,aaai,1.0,0.2,2019
-Nicholas R. Jennings,Imperial College London,chiconf,1.0,0.16667,2014
-Nicholas R. Jennings,Imperial College London,chiconf,1.0,0.14286,2018
-Nicholas R. Jennings,Imperial College London,ec,1.0,0.2,2005
-Nicholas R. Jennings,Imperial College London,ec,1.0,0.14286,2009
-Nicholas R. Jennings,Imperial College London,icra,1.0,0.2,2012
-Nicholas R. Jennings,Imperial College London,ijcai,1.0,1.0,1999
-Nicholas R. Jennings,Imperial College London,ijcai,1.0,0.25,2003
-Nicholas R. Jennings,Imperial College London,ijcai,4.0,1.1667,2007
-Nicholas R. Jennings,Imperial College London,ijcai,5.0,1.2333,2009
-Nicholas R. Jennings,Imperial College London,ijcai,3.0,0.91667,2011
-Nicholas R. Jennings,Imperial College London,ijcai,6.0,1.2929,2013
-Nicholas R. Jennings,Imperial College London,ijcai,4.0,0.86667,2015
-Nicholas R. Jennings,Imperial College London,ijcai,1.0,0.2,2016
-Nicholas R. Jennings,Imperial College London,ijcai,2.0,0.41667,2017
-Nicholas R. Jennings,Imperial College London,ijcai,1.0,0.33333,2018
-Nicholas R. Jennings,Imperial College London,ijcai,1.0,0.2,2020
-Nicholas R. Jennings,Imperial College London,nips,1.0,0.33333,2019
-Nicholas R. Jennings,Imperial College London,ubicomp,1.0,0.33333,2012
-Nicholas R. Jennings,Imperial College London,ubicomp,1.0,0.25,2013
-Nicholas R. Jennings,Imperial College London,vldb,1.0,0.33333,2022
-Nicholas R. Jennings,Imperial College London,wine,1.0,0.25,2008
-Nicholas R. Jennings,Imperial College London,wine,1.0,0.25,2009
-Nicholas R. Jennings,Imperial College London,wine,2.0,0.58333,2010
-Nicholas R. Jennings,Imperial College London,wine,1.0,0.2,2011
-Nicholas R. Jennings,Imperial College London,wine,1.0,0.2,2012
-Nicholas R. Jennings,Imperial College London,www,1.0,0.14286,2015
+Nicholas R. Jennings,Loughborough University,aaai,1.0,0.5,1992
+Nicholas R. Jennings,Loughborough University,aaai,1.0,0.5,2005
+Nicholas R. Jennings,Loughborough University,aaai,1.0,0.25,2006
+Nicholas R. Jennings,Loughborough University,aaai,3.0,0.78333,2007
+Nicholas R. Jennings,Loughborough University,aaai,2.0,1.0,2008
+Nicholas R. Jennings,Loughborough University,aaai,4.0,0.9,2010
+Nicholas R. Jennings,Loughborough University,aaai,3.0,0.59286,2011
+Nicholas R. Jennings,Loughborough University,aaai,5.0,1.3667,2012
+Nicholas R. Jennings,Loughborough University,aaai,2.0,0.75,2014
+Nicholas R. Jennings,Loughborough University,aaai,4.0,0.98333,2015
+Nicholas R. Jennings,Loughborough University,aaai,1.0,0.33333,2016
+Nicholas R. Jennings,Loughborough University,aaai,1.0,0.25,2017
+Nicholas R. Jennings,Loughborough University,aaai,1.0,0.2,2019
+Nicholas R. Jennings,Loughborough University,chiconf,1.0,0.16667,2014
+Nicholas R. Jennings,Loughborough University,chiconf,1.0,0.14286,2018
+Nicholas R. Jennings,Loughborough University,ec,1.0,0.2,2005
+Nicholas R. Jennings,Loughborough University,ec,1.0,0.14286,2009
+Nicholas R. Jennings,Loughborough University,icra,1.0,0.2,2012
+Nicholas R. Jennings,Loughborough University,ijcai,1.0,1.0,1999
+Nicholas R. Jennings,Loughborough University,ijcai,1.0,0.25,2003
+Nicholas R. Jennings,Loughborough University,ijcai,4.0,1.1667,2007
+Nicholas R. Jennings,Loughborough University,ijcai,5.0,1.2333,2009
+Nicholas R. Jennings,Loughborough University,ijcai,3.0,0.91667,2011
+Nicholas R. Jennings,Loughborough University,ijcai,6.0,1.2929,2013
+Nicholas R. Jennings,Loughborough University,ijcai,4.0,0.86667,2015
+Nicholas R. Jennings,Loughborough University,ijcai,1.0,0.2,2016
+Nicholas R. Jennings,Loughborough University,ijcai,2.0,0.41667,2017
+Nicholas R. Jennings,Loughborough University,ijcai,1.0,0.33333,2018
+Nicholas R. Jennings,Loughborough University,ijcai,1.0,0.2,2020
+Nicholas R. Jennings,Loughborough University,nips,1.0,0.33333,2019
+Nicholas R. Jennings,Loughborough University,ubicomp,1.0,0.33333,2012
+Nicholas R. Jennings,Loughborough University,ubicomp,1.0,0.25,2013
+Nicholas R. Jennings,Loughborough University,vldb,1.0,0.33333,2022
+Nicholas R. Jennings,Loughborough University,wine,1.0,0.25,2008
+Nicholas R. Jennings,Loughborough University,wine,1.0,0.25,2009
+Nicholas R. Jennings,Loughborough University,wine,2.0,0.58333,2010
+Nicholas R. Jennings,Loughborough University,wine,1.0,0.2,2011
+Nicholas R. Jennings,Loughborough University,wine,1.0,0.2,2012
+Nicholas R. Jennings,Loughborough University,www,1.0,0.14286,2015
 Nicholas Ruozzi,University of Texas at Dallas,aaai,1.0,0.25,2016
 Nicholas Ruozzi,University of Texas at Dallas,aaai,1.0,0.2,2018
 Nicholas Ruozzi,University of Texas at Dallas,aaai,1.0,0.33333,2019
@@ -110450,31 +110484,31 @@ Osamu Tatebe,University of Tsukuba,sc,1.0,0.14286,2006
 Osamu Tatebe,University of Tsukuba,vldb,1.0,0.25,2020
 Osamu Watanabe 0001,Tokyo Institute of Technology,ijcai,1.0,0.33333,2011
 Osamu Watanabe 0001,Tokyo Institute of Technology,stoc,1.0,0.5,1990
-Osbert Bastani,University of Pennsylvannia,acl,1.0,0.25,2022
-Osbert Bastani,University of Pennsylvannia,cav,1.0,0.2,2020
-Osbert Bastani,University of Pennsylvannia,emsoft,1.0,0.16667,2021
-Osbert Bastani,University of Pennsylvannia,fse,1.0,0.25,2016
-Osbert Bastani,University of Pennsylvannia,fse,1.0,0.14286,2019
-Osbert Bastani,University of Pennsylvannia,iccv,1.0,0.25,2021
-Osbert Bastani,University of Pennsylvannia,icml,1.0,0.33333,2019
-Osbert Bastani,University of Pennsylvannia,icml,2.0,0.5,2020
-Osbert Bastani,University of Pennsylvannia,icml,1.0,0.25,2021
-Osbert Bastani,University of Pennsylvannia,icml,3.0,0.83333,2022
-Osbert Bastani,University of Pennsylvannia,icra,1.0,0.5,2020
-Osbert Bastani,University of Pennsylvannia,iros,1.0,0.11111,2019
-Osbert Bastani,University of Pennsylvannia,ndss,1.0,0.2,2017
-Osbert Bastani,University of Pennsylvannia,nips,1.0,0.16667,2016
-Osbert Bastani,University of Pennsylvannia,nips,1.0,0.33333,2018
-Osbert Bastani,University of Pennsylvannia,nips,1.0,0.33333,2019
-Osbert Bastani,University of Pennsylvannia,nips,1.0,0.125,2020
-Osbert Bastani,University of Pennsylvannia,nips,4.0,1.0833,2021
-Osbert Bastani,University of Pennsylvannia,oopsla,1.0,0.33333,2015
-Osbert Bastani,University of Pennsylvannia,oopsla,2.0,0.53333,2019
-Osbert Bastani,University of Pennsylvannia,pldi,1.0,0.25,2017
-Osbert Bastani,University of Pennsylvannia,pldi,2.0,0.5,2018
-Osbert Bastani,University of Pennsylvannia,pldi,1.0,0.16667,2021
-Osbert Bastani,University of Pennsylvannia,popl,1.0,0.33333,2015
-Osbert Bastani,University of Pennsylvannia,rss,1.0,0.5,2021
+Osbert Bastani,University of Pennsylvania,acl,1.0,0.25,2022
+Osbert Bastani,University of Pennsylvania,cav,1.0,0.2,2020
+Osbert Bastani,University of Pennsylvania,emsoft,1.0,0.16667,2021
+Osbert Bastani,University of Pennsylvania,fse,1.0,0.25,2016
+Osbert Bastani,University of Pennsylvania,fse,1.0,0.14286,2019
+Osbert Bastani,University of Pennsylvania,iccv,1.0,0.25,2021
+Osbert Bastani,University of Pennsylvania,icml,1.0,0.33333,2019
+Osbert Bastani,University of Pennsylvania,icml,2.0,0.5,2020
+Osbert Bastani,University of Pennsylvania,icml,1.0,0.25,2021
+Osbert Bastani,University of Pennsylvania,icml,3.0,0.83333,2022
+Osbert Bastani,University of Pennsylvania,icra,1.0,0.5,2020
+Osbert Bastani,University of Pennsylvania,iros,1.0,0.11111,2019
+Osbert Bastani,University of Pennsylvania,ndss,1.0,0.2,2017
+Osbert Bastani,University of Pennsylvania,nips,1.0,0.16667,2016
+Osbert Bastani,University of Pennsylvania,nips,1.0,0.33333,2018
+Osbert Bastani,University of Pennsylvania,nips,1.0,0.33333,2019
+Osbert Bastani,University of Pennsylvania,nips,1.0,0.125,2020
+Osbert Bastani,University of Pennsylvania,nips,4.0,1.0833,2021
+Osbert Bastani,University of Pennsylvania,oopsla,1.0,0.33333,2015
+Osbert Bastani,University of Pennsylvania,oopsla,2.0,0.53333,2019
+Osbert Bastani,University of Pennsylvania,pldi,1.0,0.25,2017
+Osbert Bastani,University of Pennsylvania,pldi,2.0,0.5,2018
+Osbert Bastani,University of Pennsylvania,pldi,1.0,0.16667,2021
+Osbert Bastani,University of Pennsylvania,popl,1.0,0.33333,2015
+Osbert Bastani,University of Pennsylvania,rss,1.0,0.5,2021
 Oscar Chaparro,College of William and Mary,fse,1.0,0.125,2017
 Oscar Chaparro,College of William and Mary,fse,1.0,0.125,2019
 Oscar Chaparro,College of William and Mary,icse,1.0,0.16667,2020
@@ -113486,6 +113520,8 @@ Peng Zou,Harbin Institute of Technology,dac,1.0,0.14286,2020
 Peng Zou,Harbin Institute of Technology,ics,1.0,0.2,2014
 Peng Zou,Harbin Institute of Technology,iros,1.0,0.25,2020
 Peng-Jun Wan,Illinois Institute of Technology,soda,1.0,0.16667,2008
+Pengbo Bo,Harbin Institute of Technology,siggraph,1.0,0.14286,2008
+Pengbo Bo,Harbin Institute of Technology,siggraph,1.0,0.2,2011
 Pengcheng Shi,Rochester Institute of Technology,aaai,1.0,0.2,2021
 Pengcheng Shi,Rochester Institute of Technology,cvpr,1.0,0.5,2003
 Pengcheng Shi,Rochester Institute of Technology,cvpr,1.0,0.25,2005
@@ -117289,15 +117325,15 @@ Pratik Chaudhari,University of Pennsylvania,iros,1.0,0.33333,2020
 Pratik Chaudhari,University of Pennsylvania,iros,1.0,0.25,2021
 Pratik Chaudhari,University of Pennsylvania,nips,1.0,0.2,2020
 Pratik Chaudhari,University of Pennsylvania,nips,1.0,0.2,2021
-Pratyush Mishra,University of Pennsylvannia,chiconf,1.0,0.16667,2015
-Pratyush Mishra,University of Pennsylvannia,crypto,1.0,0.2,2021
-Pratyush Mishra,University of Pennsylvannia,eurocrypt,1.0,0.16667,2017
-Pratyush Mishra,University of Pennsylvannia,eurocrypt,1.0,0.16667,2020
-Pratyush Mishra,University of Pennsylvannia,oakland,1.0,0.2,2018
-Pratyush Mishra,University of Pennsylvannia,oakland,1.0,0.16667,2020
-Pratyush Mishra,University of Pennsylvannia,usenixsec,1.0,0.125,2016
-Pratyush Mishra,University of Pennsylvannia,usenixsec,1.0,0.2,2020
-Pratyush Mishra,University of Pennsylvannia,usenixsec,1.0,0.25,2021
+Pratyush Mishra,University of Pennsylvania,chiconf,1.0,0.16667,2015
+Pratyush Mishra,University of Pennsylvania,crypto,1.0,0.2,2021
+Pratyush Mishra,University of Pennsylvania,eurocrypt,1.0,0.16667,2017
+Pratyush Mishra,University of Pennsylvania,eurocrypt,1.0,0.16667,2020
+Pratyush Mishra,University of Pennsylvania,oakland,1.0,0.2,2018
+Pratyush Mishra,University of Pennsylvania,oakland,1.0,0.16667,2020
+Pratyush Mishra,University of Pennsylvania,usenixsec,1.0,0.125,2016
+Pratyush Mishra,University of Pennsylvania,usenixsec,1.0,0.2,2020
+Pratyush Mishra,University of Pennsylvania,usenixsec,1.0,0.25,2021
 Praveen Paruchuri,IIIT Hyderabad,aaai,1.0,0.33333,2017
 Praveen Paruchuri,IIIT Hyderabad,aaai,1.0,0.33333,2018
 Praveen Paruchuri,IIIT Hyderabad,aaai,2.0,0.53333,2019
@@ -117494,45 +117530,45 @@ Purushottam Kulkarni,IIT Bombay,hpdc,1.0,0.5,2012
 Purushottam Kulkarni,IIT Bombay,usenixatc,1.0,0.25,2004
 Purushottam Kulkarni,IIT Bombay,www,1.0,0.2,2002
 Purushottam Kulkarni,IIT Bombay,www,1.0,0.33333,2003
-Pushpak Bhattacharyya,IIT Patna,aaai,1.0,0.25,2010
-Pushpak Bhattacharyya,IIT Patna,aaai,1.0,0.33333,2015
-Pushpak Bhattacharyya,IIT Patna,aaai,1.0,0.33333,2016
-Pushpak Bhattacharyya,IIT Patna,aaai,1.0,0.2,2017
-Pushpak Bhattacharyya,IIT Patna,aaai,1.0,0.25,2021
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.25,2006
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.25,2009
-Pushpak Bhattacharyya,IIT Patna,acl,2.0,0.58333,2010
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.25,2011
-Pushpak Bhattacharyya,IIT Patna,acl,3.0,0.83333,2013
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.25,2014
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.33333,2015
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.2,2016
-Pushpak Bhattacharyya,IIT Patna,acl,1.0,0.33333,2017
-Pushpak Bhattacharyya,IIT Patna,acl,4.0,0.95,2018
-Pushpak Bhattacharyya,IIT Patna,acl,4.0,1.0,2019
-Pushpak Bhattacharyya,IIT Patna,acl,2.0,0.5,2020
-Pushpak Bhattacharyya,IIT Patna,emnlp,1.0,0.25,2009
-Pushpak Bhattacharyya,IIT Patna,emnlp,1.0,0.33333,2011
-Pushpak Bhattacharyya,IIT Patna,emnlp,1.0,0.16667,2012
-Pushpak Bhattacharyya,IIT Patna,emnlp,2.0,0.58333,2015
-Pushpak Bhattacharyya,IIT Patna,emnlp,2.0,0.7,2016
-Pushpak Bhattacharyya,IIT Patna,emnlp,2.0,0.45,2017
-Pushpak Bhattacharyya,IIT Patna,emnlp,1.0,0.16667,2018
-Pushpak Bhattacharyya,IIT Patna,emnlp,1.0,0.25,2019
-Pushpak Bhattacharyya,IIT Patna,emnlp,2.0,0.4,2021
-Pushpak Bhattacharyya,IIT Patna,icml,1.0,0.25,2005
-Pushpak Bhattacharyya,IIT Patna,ijcai,1.0,0.5,2007
-Pushpak Bhattacharyya,IIT Patna,ijcai,1.0,0.5,2009
-Pushpak Bhattacharyya,IIT Patna,ijcai,1.0,0.25,2020
-Pushpak Bhattacharyya,IIT Patna,naacl,1.0,0.33333,2010
-Pushpak Bhattacharyya,IIT Patna,naacl,1.0,0.33333,2013
-Pushpak Bhattacharyya,IIT Patna,naacl,2.0,0.45,2015
-Pushpak Bhattacharyya,IIT Patna,naacl,2.0,0.4,2018
-Pushpak Bhattacharyya,IIT Patna,naacl,3.0,0.75,2019
-Pushpak Bhattacharyya,IIT Patna,naacl,2.0,0.58333,2021
-Pushpak Bhattacharyya,IIT Patna,sigir,1.0,0.33333,2010
-Pushpak Bhattacharyya,IIT Patna,sigir,2.0,0.58333,2022
-Pushpak Bhattacharyya,IIT Patna,www,1.0,0.25,2004
+Pushpak Bhattacharyya,IIT Bombay,aaai,1.0,0.25,2010
+Pushpak Bhattacharyya,IIT Bombay,aaai,1.0,0.33333,2015
+Pushpak Bhattacharyya,IIT Bombay,aaai,1.0,0.33333,2016
+Pushpak Bhattacharyya,IIT Bombay,aaai,1.0,0.2,2017
+Pushpak Bhattacharyya,IIT Bombay,aaai,1.0,0.25,2021
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.25,2006
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.25,2009
+Pushpak Bhattacharyya,IIT Bombay,acl,2.0,0.58333,2010
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.25,2011
+Pushpak Bhattacharyya,IIT Bombay,acl,3.0,0.83333,2013
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.25,2014
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.33333,2015
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.2,2016
+Pushpak Bhattacharyya,IIT Bombay,acl,1.0,0.33333,2017
+Pushpak Bhattacharyya,IIT Bombay,acl,4.0,0.95,2018
+Pushpak Bhattacharyya,IIT Bombay,acl,4.0,1.0,2019
+Pushpak Bhattacharyya,IIT Bombay,acl,2.0,0.5,2020
+Pushpak Bhattacharyya,IIT Bombay,emnlp,1.0,0.25,2009
+Pushpak Bhattacharyya,IIT Bombay,emnlp,1.0,0.33333,2011
+Pushpak Bhattacharyya,IIT Bombay,emnlp,1.0,0.16667,2012
+Pushpak Bhattacharyya,IIT Bombay,emnlp,2.0,0.58333,2015
+Pushpak Bhattacharyya,IIT Bombay,emnlp,2.0,0.7,2016
+Pushpak Bhattacharyya,IIT Bombay,emnlp,2.0,0.45,2017
+Pushpak Bhattacharyya,IIT Bombay,emnlp,1.0,0.16667,2018
+Pushpak Bhattacharyya,IIT Bombay,emnlp,1.0,0.25,2019
+Pushpak Bhattacharyya,IIT Bombay,emnlp,2.0,0.4,2021
+Pushpak Bhattacharyya,IIT Bombay,icml,1.0,0.25,2005
+Pushpak Bhattacharyya,IIT Bombay,ijcai,1.0,0.5,2007
+Pushpak Bhattacharyya,IIT Bombay,ijcai,1.0,0.5,2009
+Pushpak Bhattacharyya,IIT Bombay,ijcai,1.0,0.25,2020
+Pushpak Bhattacharyya,IIT Bombay,naacl,1.0,0.33333,2010
+Pushpak Bhattacharyya,IIT Bombay,naacl,1.0,0.33333,2013
+Pushpak Bhattacharyya,IIT Bombay,naacl,2.0,0.45,2015
+Pushpak Bhattacharyya,IIT Bombay,naacl,2.0,0.4,2018
+Pushpak Bhattacharyya,IIT Bombay,naacl,3.0,0.75,2019
+Pushpak Bhattacharyya,IIT Bombay,naacl,2.0,0.58333,2021
+Pushpak Bhattacharyya,IIT Bombay,sigir,1.0,0.33333,2010
+Pushpak Bhattacharyya,IIT Bombay,sigir,2.0,0.58333,2022
+Pushpak Bhattacharyya,IIT Bombay,www,1.0,0.25,2004
 Pushpendra Singh 0001,IIIT Delhi,chiconf,1.0,0.33333,2015
 Pushpendra Singh 0001,IIIT Delhi,chiconf,1.0,0.052632,2016
 Pushpendra Singh 0001,IIIT Delhi,chiconf,1.0,0.25,2020
@@ -117871,6 +117907,9 @@ Qiang Tang 0005,University of Sydney,crypto,1.0,0.5,2021
 Qiang Tang 0005,University of Sydney,eurocrypt,1.0,0.33333,2016
 Qiang Tang 0005,University of Sydney,ndss,1.0,0.25,2020
 Qiang Tang 0005,University of Sydney,pets,1.0,0.2,2015
+Qiang Wang 0022,Harbin Institute of Technology,cvpr,1.0,0.16667,2021
+Qiang Wang 0022,Harbin Institute of Technology,icra,1.0,0.2,2020
+Qiang Wang 0022,Harbin Institute of Technology,ijcai,1.0,0.2,2019
 Qiang Xu 0001,Chinese University of Hong Kong,aaai,1.0,0.25,2018
 Qiang Xu 0001,Chinese University of Hong Kong,ccs,1.0,0.33333,2014
 Qiang Xu 0001,Chinese University of Hong Kong,ccs,1.0,0.16667,2016
@@ -119082,6 +119121,10 @@ Radu Calinescu,University of York,ase,1.0,0.2,2020
 Radu Calinescu,University of York,ase,1.0,0.16667,2021
 Radu Calinescu,University of York,icse,1.0,0.5,2009
 Radu Calinescu,University of York,icse,1.0,0.25,2021
+Radu Dobrin,Mälardalen University,rtas,1.0,0.25,2017
+Radu Dobrin,Mälardalen University,rtas,1.0,0.33333,2020
+Radu Dobrin,Mälardalen University,rtss,1.0,0.33333,2001
+Radu Dobrin,Mälardalen University,rtss,1.0,0.2,2015
 Radu Grigore,University of Kent,cav,1.0,0.5,2015
 Radu Grigore,University of Kent,cav,1.0,0.25,2017
 Radu Grigore,University of Kent,oopsla,1.0,0.25,2017
@@ -122631,6 +122674,21 @@ Reuven Bar-Yehuda,Technion,soda,1.0,0.2,2002
 Reuven Bar-Yehuda,Technion,stoc,1.0,0.5,1982
 Reuven Bar-Yehuda,Technion,stoc,1.0,0.2,2000
 Reuven Cohen,Technion,kdd,1.0,0.33333,2017
+Rex Ying,Yale University,aaai,1.0,0.25,2021
+Rex Ying,Yale University,icml,1.0,0.2,2018
+Rex Ying,Yale University,icml,1.0,0.33333,2019
+Rex Ying,Yale University,icml,1.0,0.16667,2020
+Rex Ying,Yale University,icml,1.0,0.11111,2022
+Rex Ying,Yale University,ijcai,1.0,0.25,2021
+Rex Ying,Yale University,kdd,1.0,0.16667,2018
+Rex Ying,Yale University,kdd,1.0,0.16667,2020
+Rex Ying,Yale University,kdd,1.0,0.16667,2021
+Rex Ying,Yale University,naacl,1.0,0.14286,2021
+Rex Ying,Yale University,nips,1.0,0.33333,2017
+Rex Ying,Yale University,nips,2.0,0.36667,2018
+Rex Ying,Yale University,nips,2.0,0.45,2019
+Rex Ying,Yale University,nips,1.0,0.33333,2020
+Rex Ying,Yale University,nips,2.0,0.41667,2021
 Reyer Zwiggelaar,Aberystwyth University,aaai,1.0,0.5,2011
 Reyhaneh Jabbarvand Behrouz,Univ. of Illinois at Urbana-Champaign,ase,1.0,0.33333,2019
 Reyhaneh Jabbarvand Behrouz,Univ. of Illinois at Urbana-Champaign,fse,2.0,0.83333,2017
@@ -127563,14 +127621,14 @@ Ryan Kastner,Univ. of California - San Diego,isca,1.0,0.14286,2013
 Ryan Kastner,Univ. of California - San Diego,isca,1.0,0.14286,2018
 Ryan Kastner,Univ. of California - San Diego,oakland,1.0,0.125,2007
 Ryan Kok Leong Ko,University of Queensland,www,1.0,0.2,2021
-Ryan Marcus,University of Pennsylvannia,nips,1.0,0.058824,2019
-Ryan Marcus,University of Pennsylvannia,sigmod,1.0,0.25,2018
-Ryan Marcus,University of Pennsylvannia,sigmod,1.0,0.16667,2019
-Ryan Marcus,University of Pennsylvannia,sigmod,2.0,0.30952,2021
-Ryan Marcus,University of Pennsylvannia,vldb,1.0,0.5,2016
-Ryan Marcus,University of Pennsylvannia,vldb,2.0,0.625,2019
-Ryan Marcus,University of Pennsylvannia,vldb,2.0,0.29167,2020
-Ryan Marcus,University of Pennsylvannia,vldb,1.0,0.14286,2021
+Ryan Marcus,University of Pennsylvania,nips,1.0,0.058824,2019
+Ryan Marcus,University of Pennsylvania,sigmod,1.0,0.25,2018
+Ryan Marcus,University of Pennsylvania,sigmod,1.0,0.16667,2019
+Ryan Marcus,University of Pennsylvania,sigmod,2.0,0.30952,2021
+Ryan Marcus,University of Pennsylvania,vldb,1.0,0.5,2016
+Ryan Marcus,University of Pennsylvania,vldb,2.0,0.625,2019
+Ryan Marcus,University of Pennsylvania,vldb,2.0,0.29167,2020
+Ryan Marcus,University of Pennsylvania,vldb,1.0,0.14286,2021
 Ryan O'Donnell,Carnegie Mellon University,focs,1.0,0.33333,2002
 Ryan O'Donnell,Carnegie Mellon University,focs,1.0,0.25,2003
 Ryan O'Donnell,Carnegie Mellon University,focs,1.0,0.25,2004
@@ -142286,14 +142344,14 @@ Suranga Seneviratne,University of Sydney,ubicomp,1.0,0.16667,2018
 Suranga Seneviratne,University of Sydney,ubicomp,1.0,0.14286,2021
 Suranga Seneviratne,University of Sydney,www,1.0,0.2,2015
 Suranga Seneviratne,University of Sydney,www,1.0,0.2,2019
-Surbhi Goel,University of Pennsylvannia,icml,1.0,0.33333,2018
-Surbhi Goel,University of Pennsylvannia,icml,3.0,0.7,2020
-Surbhi Goel,University of Pennsylvannia,icml,2.0,0.53333,2021
-Surbhi Goel,University of Pennsylvannia,icml,2.0,0.375,2022
-Surbhi Goel,University of Pennsylvannia,nips,1.0,0.5,2017
-Surbhi Goel,University of Pennsylvannia,nips,1.0,0.33333,2019
-Surbhi Goel,University of Pennsylvannia,nips,2.0,0.66667,2020
-Surbhi Goel,University of Pennsylvannia,nips,1.0,0.25,2021
+Surbhi Goel,University of Pennsylvania,icml,1.0,0.33333,2018
+Surbhi Goel,University of Pennsylvania,icml,3.0,0.7,2020
+Surbhi Goel,University of Pennsylvania,icml,2.0,0.53333,2021
+Surbhi Goel,University of Pennsylvania,icml,2.0,0.375,2022
+Surbhi Goel,University of Pennsylvania,nips,1.0,0.5,2017
+Surbhi Goel,University of Pennsylvania,nips,1.0,0.33333,2019
+Surbhi Goel,University of Pennsylvania,nips,2.0,0.66667,2020
+Surbhi Goel,University of Pennsylvania,nips,1.0,0.25,2021
 Surender Baswana,IIT Kanpur,cav,1.0,0.33333,2008
 Surender Baswana,IIT Kanpur,focs,1.0,0.5,2006
 Surender Baswana,IIT Kanpur,focs,1.0,0.33333,2011
@@ -145094,6 +145152,7 @@ Terry R. Payne,University of Liverpool,aaai,1.0,0.25,2015
 Terry R. Payne,University of Liverpool,chiconf,1.0,0.16667,2004
 Terry R. Payne,University of Liverpool,ijcai,1.0,0.25,2009
 Terry R. Payne,University of Liverpool,vldb,1.0,0.25,2000
+Tesca Fitzgerald,Yale University,ijcai,1.0,0.14286,2021
 Teseo Schneider,University of Victoria,cvpr,1.0,0.16667,2019
 Teseo Schneider,University of Victoria,icra,1.0,0.2,2021
 Teseo Schneider,University of Victoria,siggraph,1.0,0.14286,2019
@@ -150009,6 +150068,11 @@ Trinabh Gupta,Univ. of California - Santa Barbara,osdi,1.0,0.2,2021
 Trinabh Gupta,Univ. of California - Santa Barbara,sigcomm,1.0,0.25,2017
 Trinabh Gupta,Univ. of California - Santa Barbara,sigmod,1.0,0.16667,2016
 Trinabh Gupta,Univ. of California - Santa Barbara,sosp,1.0,0.2,2021
+Tristan Cazenave,Université Paris Dauphine,aaai,1.0,0.25,2016
+Tristan Cazenave,Université Paris Dauphine,ijcai,1.0,1.0,2001
+Tristan Cazenave,Université Paris Dauphine,ijcai,1.0,1.0,2009
+Tristan Cazenave,Université Paris Dauphine,ijcai,1.0,1.0,2015
+Tristan Cazenave,Université Paris Dauphine,iros,1.0,0.2,2019
 Tristan Glatard,Concordia University,hpdc,1.0,0.33333,2009
 Tristan Henderson,University of St Andrews,mobicom,1.0,0.33333,2004
 Tristan Henderson,University of St Andrews,ubicomp,1.0,0.25,2007
@@ -151384,6 +151448,7 @@ Vanessa Teague,University of Melbourne,aaai,1.0,0.25,2020
 Vanessa Teague,University of Melbourne,oakland,1.0,0.25,2020
 Vanessa Teague,University of Melbourne,stoc,1.0,0.5,2001
 Vanessa Teague,University of Melbourne,stoc,1.0,0.5,2004
+Vangelis Th. Paschos,Université Paris Dauphine,wine,1.0,0.25,2007
 Varmo Vene,University of Tartu,ase,1.0,0.16667,2016
 Varmo Vene,University of Tartu,icfp,1.0,0.25,2005
 Varun Chandola,University at Buffalo,kdd,1.0,0.33333,2013
@@ -151603,22 +151668,22 @@ Vassilis Papaefstathiou,University of Crete,hpca,1.0,0.25,2020
 Vassilis Papaefstathiou,University of Crete,ics,1.0,0.25,2006
 Vassilis Papaefstathiou,University of Crete,ics,1.0,0.33333,2007
 Vassilis Papaefstathiou,University of Crete,ics,1.0,0.25,2013
-Vassilis Zikas,University of Edinburgh,ccs,1.0,0.2,2018
-Vassilis Zikas,University of Edinburgh,ccs,1.0,0.33333,2019
-Vassilis Zikas,University of Edinburgh,crypto,1.0,0.25,2012
-Vassilis Zikas,University of Edinburgh,crypto,2.0,0.58333,2014
-Vassilis Zikas,University of Edinburgh,crypto,1.0,0.25,2015
-Vassilis Zikas,University of Edinburgh,crypto,2.0,0.5,2016
-Vassilis Zikas,University of Edinburgh,crypto,2.0,0.5,2017
-Vassilis Zikas,University of Edinburgh,crypto,1.0,0.33333,2021
-Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.5,2010
-Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.33333,2016
-Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.2,2018
-Vassilis Zikas,University of Edinburgh,eurocrypt,2.0,0.53333,2020
-Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.2,2021
-Vassilis Zikas,University of Edinburgh,eurocrypt,1.0,0.25,2022
-Vassilis Zikas,University of Edinburgh,focs,1.0,0.2,2013
-Vassilis Zikas,University of Edinburgh,oakland,1.0,0.25,2019
+Vassilis Zikas,Purdue University,ccs,1.0,0.2,2018
+Vassilis Zikas,Purdue University,ccs,1.0,0.33333,2019
+Vassilis Zikas,Purdue University,crypto,1.0,0.25,2012
+Vassilis Zikas,Purdue University,crypto,2.0,0.58333,2014
+Vassilis Zikas,Purdue University,crypto,1.0,0.25,2015
+Vassilis Zikas,Purdue University,crypto,2.0,0.5,2016
+Vassilis Zikas,Purdue University,crypto,2.0,0.5,2017
+Vassilis Zikas,Purdue University,crypto,1.0,0.33333,2021
+Vassilis Zikas,Purdue University,eurocrypt,1.0,0.5,2010
+Vassilis Zikas,Purdue University,eurocrypt,1.0,0.33333,2016
+Vassilis Zikas,Purdue University,eurocrypt,1.0,0.2,2018
+Vassilis Zikas,Purdue University,eurocrypt,2.0,0.53333,2020
+Vassilis Zikas,Purdue University,eurocrypt,1.0,0.2,2021
+Vassilis Zikas,Purdue University,eurocrypt,1.0,0.25,2022
+Vassilis Zikas,Purdue University,focs,1.0,0.2,2013
+Vassilis Zikas,Purdue University,oakland,1.0,0.25,2019
 Vassos Hadzilacos,University of Toronto,pods,1.0,1.0,1983
 Vassos Hadzilacos,University of Toronto,pods,1.0,1.0,1987
 Vassos Hadzilacos,University of Toronto,pods,1.0,0.5,1988
@@ -158680,6 +158745,17 @@ Xiangyu Zhang 0001,Purdue University,www,1.0,0.33333,2011
 Xiangyu Zhang 0001,Purdue University,www,1.0,0.14286,2017
 Xiangyu Zhang 0001,Purdue University,www,1.0,0.14286,2018
 Xianhua Liu 0001,Peking University,ics,1.0,0.25,2012
+Xianming Liu,Harbin Institute of Technology,aaai,1.0,0.14286,2022
+Xianming Liu,Harbin Institute of Technology,cvpr,1.0,0.25,2012
+Xianming Liu,Harbin Institute of Technology,cvpr,2.0,0.41667,2015
+Xianming Liu,Harbin Institute of Technology,cvpr,2.0,0.36667,2021
+Xianming Liu,Harbin Institute of Technology,iccv,1.0,0.083333,2015
+Xianming Liu,Harbin Institute of Technology,iccv,1.0,0.14286,2017
+Xianming Liu,Harbin Institute of Technology,iccv,1.0,0.16667,2021
+Xianming Liu,Harbin Institute of Technology,icml,1.0,0.2,2021
+Xianming Liu,Harbin Institute of Technology,icml,1.0,0.16667,2022
+Xianming Liu,Harbin Institute of Technology,ijcai,1.0,0.16667,2013
+Xianming Liu,Harbin Institute of Technology,ijcai,1.0,0.2,2018
 Xianpei Han,Chinese Academy of Sciences,aaai,2.0,0.83333,2016
 Xianpei Han,Chinese Academy of Sciences,aaai,1.0,0.5,2017
 Xianpei Han,Chinese Academy of Sciences,aaai,1.0,0.16667,2018
@@ -159249,6 +159325,9 @@ Xiaogang Wang 0001,Chinese University of Hong Kong,nips,1.0,0.16667,2017
 Xiaogang Wang 0001,Chinese University of Hong Kong,nips,1.0,0.14286,2018
 Xiaogang Wang 0001,Chinese University of Hong Kong,nips,1.0,0.2,2019
 Xiaogang Wang 0001,Chinese University of Hong Kong,nips,1.0,0.14286,2021
+Xiaohe Wu,Harbin Institute of Technology,cvpr,1.0,0.11111,2018
+Xiaohe Wu,Harbin Institute of Technology,eccv,1.0,0.2,2018
+Xiaohe Wu,Harbin Institute of Technology,eccv,1.0,0.2,2020
 Xiaohong Guan,Xi'an Jiaotong University,icde,1.0,0.2,2013
 Xiaohong Guan,Xi'an Jiaotong University,icde,1.0,0.2,2015
 Xiaohong Guan,Xi'an Jiaotong University,icde,2.0,0.33333,2019
@@ -159594,6 +159673,14 @@ Xiaokang Yang,Shanghai Jiao Tong University,nips,1.0,0.14286,2017
 Xiaokang Yang,Shanghai Jiao Tong University,nips,1.0,0.33333,2018
 Xiaokang Yang,Shanghai Jiao Tong University,nips,1.0,0.33333,2020
 Xiaokang Yang,Shanghai Jiao Tong University,nips,1.0,0.11111,2021
+Xiaokuan Zhang,George Mason University,ccs,1.0,0.33333,2016
+Xiaokuan Zhang,George Mason University,ccs,1.0,0.16667,2018
+Xiaokuan Zhang,George Mason University,ccs,2.0,0.29167,2021
+Xiaokuan Zhang,George Mason University,ndss,1.0,0.2,2018
+Xiaokuan Zhang,George Mason University,ndss,1.0,0.25,2019
+Xiaokuan Zhang,George Mason University,uist,1.0,0.066667,2020
+Xiaokuan Zhang,George Mason University,usenixsec,1.0,0.25,2016
+Xiaokuan Zhang,George Mason University,usenixsec,1.0,0.25,2020
 Xiaokui Xiao,National University of Singapore,aaai,1.0,0.25,2017
 Xiaokui Xiao,National University of Singapore,ase,1.0,0.33333,2011
 Xiaokui Xiao,National University of Singapore,ccs,1.0,0.16667,2016
@@ -160503,6 +160590,7 @@ Xilin Chen 0001,Chinese Academy of Sciences,ijcai,1.0,0.25,2017
 Xilin Chen 0001,Chinese Academy of Sciences,nips,1.0,0.25,2014
 Xilin Chen 0001,Chinese Academy of Sciences,nips,2.0,0.45,2019
 Xilin Chen 0001,Chinese Academy of Sciences,nips,1.0,0.14286,2021
+Ximing Fu,Harbin Institute of Technology,crypto,1.0,0.25,2018
 Xin Cao 0001,UNSW,icde,1.0,0.33333,2012
 Xin Cao 0001,UNSW,icde,1.0,0.25,2015
 Xin Cao 0001,UNSW,icde,1.0,0.25,2016
@@ -161174,6 +161262,13 @@ Xiu Li,Tsinghua University,cvpr,2.0,0.5,2021
 Xiu Li,Tsinghua University,eccv,1.0,0.14286,2020
 Xiu Li,Tsinghua University,iccv,1.0,0.2,2019
 Xiu Li,Tsinghua University,iccv,2.0,0.4,2021
+Xiucheng Li,Harbin Institute of Technology,icde,2.0,0.36667,2018
+Xiucheng Li,Harbin Institute of Technology,icde,1.0,0.33333,2020
+Xiucheng Li,Harbin Institute of Technology,kdd,1.0,0.25,2017
+Xiucheng Li,Harbin Institute of Technology,sensys,1.0,0.14286,2014
+Xiucheng Li,Harbin Institute of Technology,vldb,1.0,0.125,2021
+Xiucheng Li,Harbin Institute of Technology,www,1.0,0.25,2019
+Xiucheng Li,Harbin Institute of Technology,www,1.0,0.25,2021
 Xiujuan Chai,Chinese Academy of Sciences,cvpr,1.0,0.25,2020
 Xiujuan Chai,Chinese Academy of Sciences,eccv,2.0,0.5,2012
 Xiujuan Chai,Chinese Academy of Sciences,eccv,1.0,0.33333,2016
@@ -161790,6 +161885,13 @@ Xueru Zhang,Ohio State University,icml,1.0,0.2,2022
 Xueru Zhang,Ohio State University,nips,1.0,0.25,2019
 Xueru Zhang,Ohio State University,nips,1.0,0.14286,2020
 Xueru Zhang,Ohio State University,nips,1.0,0.33333,2021
+Xuesu Xiao,George Mason University,icml,1.0,0.2,2022
+Xuesu Xiao,George Mason University,icra,1.0,0.125,2015
+Xuesu Xiao,George Mason University,icra,1.0,0.5,2018
+Xuesu Xiao,George Mason University,icra,3.0,0.65833,2021
+Xuesu Xiao,George Mason University,iros,1.0,0.25,2017
+Xuesu Xiao,George Mason University,iros,2.0,0.58333,2018
+Xuesu Xiao,George Mason University,iros,2.0,0.45833,2021
 Xuetao Wei,SUSTech,mobicom,1.0,0.25,2012
 Xuetao Wei,SUSTech,mobicom,1.0,0.25,2015
 Xueyan Tang,Nanyang Technological University,hpdc,1.0,0.1,2019
@@ -163217,6 +163319,18 @@ Yanmin Zhu,Shanghai Jiao Tong University,sensys,1.0,0.125,2013
 Yanmin Zhu,Shanghai Jiao Tong University,sigir,1.0,0.25,2022
 Yanmin Zhu,Shanghai Jiao Tong University,ubicomp,1.0,0.16667,2014
 Yanmin Zhu,Shanghai Jiao Tong University,ubicomp,1.0,0.16667,2019
+Yann Chevaleyre,Université Paris Dauphine,aaai,1.0,0.33333,2007
+Yann Chevaleyre,Université Paris Dauphine,aaai,1.0,0.25,2010
+Yann Chevaleyre,Université Paris Dauphine,aaai,1.0,0.25,2021
+Yann Chevaleyre,Université Paris Dauphine,icml,1.0,0.33333,2013
+Yann Chevaleyre,Université Paris Dauphine,icml,1.0,0.2,2020
+Yann Chevaleyre,Université Paris Dauphine,icml,2.0,0.4,2021
+Yann Chevaleyre,Université Paris Dauphine,icra,1.0,0.25,2020
+Yann Chevaleyre,Université Paris Dauphine,ijcai,1.0,0.33333,2005
+Yann Chevaleyre,Université Paris Dauphine,ijcai,1.0,0.25,2007
+Yann Chevaleyre,Université Paris Dauphine,ijcai,1.0,0.25,2009
+Yann Chevaleyre,Université Paris Dauphine,ijcai,1.0,0.25,2017
+Yann Chevaleyre,Université Paris Dauphine,ijcai,1.0,0.16667,2018
 Yann-Gaël Guéhéneuc,Concordia University,icse,2.0,0.5,2010
 Yann-Gaël Guéhéneuc,Concordia University,oopsla,1.0,0.5,2004
 Yanni Sun,Michigan State University,ismb,1.0,0.25,2015
