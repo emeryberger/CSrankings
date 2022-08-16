@@ -43,7 +43,7 @@ download-dblp:
 shrink-dblp:
 	@echo "Shrinking the DBLP file."
 	gunzip -dc dblp-original.xml.gz > dblp.xml
-        basex -c filter.xq  > dblp2.xml
+	basex -c filter.xq  > dblp2.xml
 	gzip dblp2.xml
 	mv dblp2.xml.gz dblp.xml.gz
 
