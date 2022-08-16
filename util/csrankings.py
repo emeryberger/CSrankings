@@ -138,7 +138,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ACM Trans. Embed. Comput. Syst."),
         Conference("IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."),
     ],  # TECS: issue number & page numbers must be checked
-    Area("rtss"): [Conference("RTSS")],
+    Area("rtss"): [Conference("RTSS"), Conference("rtss")],
     Area("rtas"): [
         Conference("RTAS"),
         Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
