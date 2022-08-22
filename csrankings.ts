@@ -553,7 +553,7 @@ class CSRankings {
 	
 	let splitName = name.split(" ");
 	let lastName = splitName[splitName.length - 1];
-	let disambiguation = ""
+	let disambiguation = "";
 	if (parseInt(lastName) > 0) {
             // this was a disambiguation entry; go back.
             disambiguation = lastName;
@@ -1100,7 +1100,7 @@ class CSRankings {
     private countAuthorAreas(): void {
         const startyear = parseInt($("#fromyear").find(":selected").text());
         const endyear = parseInt($("#toyear").find(":selected").text());
-        this.authorAreas = {}
+        this.authorAreas = {};
         for (const r in this.authors) {
             const { area } = this.authors[r];
             if (area in CSRankings.nextTier) {
@@ -1304,7 +1304,7 @@ class CSRankings {
                 }
                 p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
 
-                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage} `
+                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
                     + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
                     + '>'
                     + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
