@@ -1052,7 +1052,7 @@ class CSRankings {
                     p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
                 }
                 p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
-                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage} `
+                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
                     + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
                     + '>'
                     + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
