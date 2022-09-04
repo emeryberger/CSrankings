@@ -131,6 +131,7 @@
 //inproceedings[booktitle="MOBICOM"],
 //inproceedings[booktitle="SenSys"],
 //inproceedings[booktitle="RTSS"],
+//inproceedings[booktitle="rtss"],
 //inproceedings[booktitle="RTAS"],
 //inproceedings[booktitle="IEEE Real-Time and Embedded Technology and Applications Symposium"],
 //inproceedings[booktitle="EMSOFT"],
