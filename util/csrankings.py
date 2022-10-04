@@ -66,6 +66,7 @@ def pagecount(pageStr: str) -> int:
         count = _extract_pagecount(pageCounterMatcher2)
     return count
 
+
 def _extract_pagecount(arg0):
     start = int(arg0.group(1))
     end = int(arg0.group(2))
@@ -141,7 +142,9 @@ areadict: Dict[Area, List[Conference]] = {
     Area("rtss"): [Conference("RTSS"), Conference("rtss")],
     Area("rtas"): [
         Conference("RTAS"),
-        Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
+        Conference(
+            "IEEE Real-Time and Embedded Technology and Applications Symposium"
+        ),
     ],
     # SIGDA
     Area("iccad"): [Conference("ICCAD")],
@@ -804,17 +807,22 @@ def countPaper(
 
     if (
         pageCount == -1
-        and confname == "ACM Conference on Computer and Communications Security"
+        and confname
+        == "ACM Conference on Computer and Communications Security"
     ):
         tooFewPages = True
 
     if (pageCount != -1) and (pageCount < pageCountThreshold):
 
         exceptionConference = False
-        exceptionConference |= confname == "SC" and (year <= 2012 or year == 2020)
+        exceptionConference |= confname == "SC" and (
+            year <= 2012 or year == 2020
+        )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
-            confname == "ACM Trans. Graph." and int(volume) >= 26 and int(volume) <= 39
+            confname == "ACM Trans. Graph."
+            and int(volume) >= 26
+            and int(volume) <= 39
         )
         exceptionConference |= (
             confname == "SIGGRAPH" and int(volume) >= 26 and int(volume) <= 39
@@ -847,7 +855,9 @@ def test_countPaper():
         "anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing"
     )
     # Discard short papers.
-    assert not countPaper("anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing")
+    assert not countPaper(
+        "anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing"
+    )
     # Ignore page counts if we are in an exception conference (like SIGGRAPH)
     assert countPaper(
         "SIGGRAPH",
