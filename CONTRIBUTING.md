@@ -40,17 +40,17 @@ department. Faculty should also have a 75%+ time appointment (check
 
 **Updating an affiliation or home page**
 
-- [ ] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`.
+- [X] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`.
 
 **Adding one or more faculty members (including an entire department)**
 
-- [ ] If the department is not yet listed in CSrankings, the entire CS faculty needs to be added (not just one faculty member).
+- [X] If the department is not yet listed in CSrankings, the entire CS faculty needs to be added (not just one faculty member).
 
-- [ ] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings-[a-z].csv` (**the letters correspond to the first letter of the faculty members' names**); include disambiguation suffixes like `0001` as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
+- [X] Enter each faculty member's [DBLP](http://dblp.org) name, home page, and Google Scholar entry (just the alphanumeric identifier, not the whole URL) by modifying `csrankings-[a-z].csv` (**the letters correspond to the first letter of the faculty members' names**); include disambiguation suffixes like `0001` as needed. If the faculty entry is currently ambiguous, please do not include them. Send mail to the DBLP maintainers (dblp@dagstuhl.de) with a few publications by a particular faculty member; also, open an issue so that when the DBLP database is updated, that faculty member's information can be added.
 
-- [ ] If DBLP has multiple entries for this person, *all of them need to be listed*. Do not update `dblp-aliases.csv`.
+- [X] If DBLP has multiple entries for this person, *all of them need to be listed*. Do not update `dblp-aliases.csv`.
 
-- [ ] If the institution you are adding is not in the US,
+- [X] If the institution you are adding is not in the US,
 update `country-info.csv` and add *all* of the faculty in the CS department.
 
 **(Advanced) Quick contribution via a shallow clone** 
