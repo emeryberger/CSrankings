@@ -246,7 +246,7 @@
 	    <div id="sponsor">
 	      If you find CSrankings useful,<br />
 	      please consider becoming a sponsor.<br />
-	      <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/emeryberger');">
+	      <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');">
 		<font size="5vw">
 		  Open sponsor page
 		</font>
@@ -313,7 +313,7 @@
 		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
 		go to a DBLP entry.
 		<em><a href="advice.html">Applying to grad school? Read this first.</a></em>
-		<b>Do you find CSrankings useful? <a href="https://github.com/sponsors/emeryberger">Sponsor CSrankings on GitHub</a>.</b>
+		<b>Do you find CSrankings useful? <a href="https://github.com/sponsors/csrankings">Sponsor CSrankings on GitHub</a>.</b>
 	      </p>
 	      <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -321,27 +321,59 @@
 		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
 		    <optgroup label="by country/region">
-		      <!-- at least 5 institutions in the DB -->
-		      <option value="au">Australia</option>
-		      <option value="at">Austria</option>
+		      <option value="ar">Argentina</option>
+                      <option value="au">Australia</option>
+                      <option value="at">Austria</option>
+		      <option value="bd">Bangladesh</option>
+		      <option value="be">Belgium</option>
 		      <option value="br">Brazil</option>
-		      <option value="ca">Canada</option>
+                      <option value="ca">Canada</option>
+		      <option value="cl">Chile</option>
 		      <option value="cn">China</option>
+		      <option value="co">Colombia</option>
+		      <option value="cy">Cyprus</option>
+		      <option value="cz">Czech Republic</option>
 		      <option value="dk">Denmark</option>
+		      <option value="eg">Egypt</option>
+		      <option value="ee">Estonia</option>
+		      <option value="fi">Finland</option>
 		      <option value="fr">France</option>
 		      <option value="de">Germany</option>
 		      <option value="gr">Greece</option>
 		      <option value="hk">Hong Kong</option>
+		      <option value="hu">Hungary</option>
 		      <option value="in">India</option>
+		      <option value="ir">Iran</option>
+		      <option value="ie">Ireland</option>
 		      <option value="il">Israel</option>
 		      <option value="it">Italy</option>
 		      <option value="jp">Japan</option>
+		      <option value="jo">Jordan</option>
+		      <option value="lb">Lebanon</option>
+		      <option value="lu">Luxembourg</option>
+		      <option value="my">Malaysia</option>
+		      <option value="mt">Malta</option>
 		      <option value="nl">Netherlands</option>
 		      <option value="nz">New Zealand</option>
+		      <option value="no">Norway</option>
+		      <option value="pk">Pakistan</option>
+		      <option value="ph">Philippines</option>
+		      <option value="pl">Poland</option>
+		      <option value="pt">Portugal</option>
+		      <option value="qa">Qatar</option>
+		      <option value="ro">Romania</option>
+		      <option value="ru">Russia</option>
+		      <option value="sa">Saudi Arabia</option>
+		      <option value="sg">Singapore</option>
+		      <option value="za">South Africa</option>
 		      <option value="kr">South Korea</option>
 		      <option value="es">Spain</option>
+		      <option value="se">Sweden</option>"
 		      <option value="ch">Switzerland</option>
+		      <option value="th">Thailand</option>
+		      <option value="tw">Taiwan</option>
 		      <option value="tr">Turkey</option>
+		      <option value="ae">United Arab Emirates</option>
 		      <option value="uk">United Kingdom</option>
 		      <option value="us" selected="selected">USA</option>
 		    </optgroup>
@@ -715,13 +747,13 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="ir-widget">
+			<span class="hovertip" id="inforet-widget">
 			  &#9658;
 			</span>
-			<label for="ir">
+			<label for="inforet">
 			  The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			</label>
-			<div class="table-responsive" style="display:none;" id="ir-conferences">
+			<div class="table-responsive" style="display:none;" id="inforet-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -758,7 +790,7 @@
 			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="ir" id="ir" value="1.0"/>
+			<input type="checkbox" name="inforet" id="inforet" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -1927,7 +1959,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated quarterly; last update July 10, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated quarterly; last update August 13, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

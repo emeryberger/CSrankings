@@ -26,7 +26,7 @@ csrankings.min.js: csrankings.js csrankings.ts
 
 update-dblp:
 	$(MAKE) download-dblp
-	$(MAKE) clean-dblp
+	$(MAKE) shrink-dblp
 	@echo "Done."
 
 clean-dblp:
@@ -38,13 +38,13 @@ clean-dblp:
 download-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
-	curl -o dblp.xml.gz https://dblp.org/xml/dblp.xml.gz
+	curl -o dblp-original.xml.gz https://dblp.org/xml/dblp.xml.gz
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file."
-	basex -c filter.xq > dblp2.xml
+	gunzip -dc dblp-original.xml.gz > dblp.xml
+	basex -c filter.xq  > dblp2.xml
 	gzip dblp2.xml
-	mv dblp.xml.gz dblp-original.xml.gz
 	mv dblp2.xml.gz dblp.xml.gz
 
 faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.csv

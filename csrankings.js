@@ -59,7 +59,7 @@ class CSRankings {
             { area: "acl", title: "NLP" },
             { area: "emnlp", title: "NLP" },
             { area: "naacl", title: "NLP" },
-            { area: "ir", title: "Web+IR" },
+            { area: "inforet", title: "Web+IR" },
             { area: "sigir", title: "Web+IR" },
             { area: "www", title: "Web+IR" },
             { area: "arch", title: "Arch" },
@@ -147,7 +147,7 @@ class CSRankings {
             { area: "wine", title: "ECom" }
             //,{ area : "cse", title : "CSEd" }
         ];
-        this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+        this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
         this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
@@ -743,31 +743,6 @@ class CSRankings {
                     return false;
                 }
                 break;
-            case "at":
-            case "au":
-            case "br":
-            case "ca":
-            case "ch":
-            case "cn":
-            case "de":
-            case "dk":
-            case "es":
-            case "fr":
-            case "gr":
-            case "hk":
-            case "il":
-            case "in":
-            case "it":
-            case "jp":
-            case "kr":
-            case "nl":
-            case "nz":
-            case "tr":
-            case "uk":
-                if (this.countryAbbrv[dept] != regions) {
-                    return false;
-                }
-                break;
             case "europe":
                 if (!(dept in this.countryInfo)) { // USA
                     return false;
@@ -814,6 +789,11 @@ class CSRankings {
                 }
                 break;
             case "world":
+                break;
+            default:
+                if (this.countryAbbrv[dept] != regions) {
+                    return false;
+                }
                 break;
         }
         return true;
@@ -1052,7 +1032,7 @@ class CSRankings {
                     p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
                 }
                 p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
-                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage} `
+                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
                     + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
                     + '>'
                     + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
@@ -1709,7 +1689,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "au", "at", "br", "ca", "cn", "dk", "fr", "de", "gr", "hk", "in", "il", "it", "jp", "nl", "nz", "kr", "es", "ch", "tr", "uk", "us"];
+CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
@@ -1724,8 +1704,8 @@ CSRankings.parentMap = {
     'acl': 'nlp',
     'emnlp': 'nlp',
     'naacl': 'nlp',
-    'sigir': 'ir',
-    'www': 'ir',
+    'sigir': 'inforet',
+    'www': 'inforet',
     'asplos': 'arch',
     'isca': 'arch',
     'micro': 'arch',
