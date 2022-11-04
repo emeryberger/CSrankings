@@ -219,6 +219,10 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ACM Trans. Graph."),
         Conference("SIGGRAPH Asia"),
     ],
+    Area("eurographics"): [
+        Conference("Comput. Graph. Forum"),
+        Conference("EUROGRAPHICS"),
+    ],
     # SIGIR
     # 'ir': ['WWW', 'SIGIR'],
     Area("sigir"): [Conference("SIGIR")],
@@ -485,7 +489,7 @@ ISMB_Bioinformatics = {
     2007: (23, 13),
 }
 
-# TOG special handling to count only SIGGRAPH proceedings.
+# TOG special handling to count only EUROGRAPHICS proceedings.
 # Assuming all will be in the same issues through 2021.
 TOG_SIGGRAPH_Volume = {
     2021: (40, 4),
@@ -528,6 +532,41 @@ TOG_SIGGRAPH_Asia_Volume = {
     2009: (28, 5),
     2008: (27, 5),
 }
+
+# CGF special handling to count only EUROGRAPHICS proceedings.
+CGF_EUROGRAPHICS_Volume = {
+    2021: (40, 2),
+    2020: (39, 2),
+    2019: (38, 2),
+    2018: (37, 2),
+    2017: (36, 2),
+    2016: (35, 2),
+    2015: (34, 2),
+    2014: (33, 2),
+    2013: (32, 2),
+    2012: (31, 2),
+    2011: (30, 2),
+    2010: (29, 2),
+    2009: (28, 2),
+    2008: (27, 2),
+    2007: (26, 3),
+    2006: (25, 3),
+    2005: (24, 3),
+    2004: (23, 3),
+    2003: (22, 3),
+    2002: (21, 3),
+    2001: (20, 3),
+    2000: (19, 3),
+    1999: (18, 3),
+    1998: (17, 3),
+    1997: (16, 3),
+    1996: (15, 3),
+    1995: (14, 3),
+    1994: (13, 3),
+    1993: (12, 3),
+    1992: (11, 3),
+}
+
 
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
