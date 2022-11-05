@@ -1783,7 +1783,8 @@ CSRankings.nextTier = {
     'fast': true,
     'usenixatc': true,
     'icfp': true,
-    'oopsla': true
+    'oopsla': true,
+    'eurographics': true
 };
 CSRankings.childMap = {};
 CSRankings.noteMap = {
