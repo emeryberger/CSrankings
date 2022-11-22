@@ -73,18 +73,18 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                 if match == None:
                     # Check for 404.
                     try:
-                        print "checking " + homepages[
+                        print("checking " + homepages[
                             name
-                        ] + " (" + name + ", " + facultydict[name] + ")"
+                        ] + " (" + name + ", " + facultydict[name] + ")")
                         a = urllib2.urlopen(homepages[name], None, 20)
                         if a.getcode() >= 400:
-                            print str(a.getcode()) + " : " + homepages[name]
+                            print(str(a.getcode()) + " : " + homepages[name])
                         else:
                             if a.getcode() >= 300:
                                 # Redirect
-                                print str(a.getcode()) + " : " + homepages[
+                                print(str(a.getcode()) + " : " + homepages[
                                     name
-                                ] + " -> " + a.geturl()
+                                ] + " -> " + a.geturl())
                             else:
                                 s = "%10.2f" % time.time()
                                 appendfile.write(
@@ -95,11 +95,11 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                     except urllib2.URLError, e:
                         # For Python 2.6
                         if isinstance(e.reason, socket.timeout):
-                            print "timeout: " + homepages[name]
+                            print("timeout: " + homepages[name])
                             timedOut = True
                     except socket.timeout, e:
                         # For Python 2.7
-                        print "timeout: " + homepages[name]
+                        print("timeout: " + homepages[name])
                         timedOut = True
                         # continue
             str = name + " " + facultydict[name]
@@ -127,7 +127,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
             if True:  # indentation foo
                 if match == None:
                     # Not a google link.
-                    print (name + "," + actualURL)
+                    print(name + "," + actualURL)
                     sys.stdout.flush()
                     outfile.write(name + "," + actualURL + "\n")
                     outfile.flush()
@@ -138,7 +138,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                     if not (name in homepages):
                         # It's a new name, what are you gonna do (even if it is a
                         # Google link, include it).
-                        print (name + "," + actualURL)
+                        print(name + "," + actualURL)
                         sys.stdout.flush()
                         outfile.write(name + "," + actualURL + "\n")
                         outfile.flush()
@@ -146,7 +146,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                         appendfile.write(name + "," + s + "\n")
                         appendfile.flush()
                     else:
-                        print (
+                        print(
                             "Lookup failed for "
                             + name
                             + " -- found "
