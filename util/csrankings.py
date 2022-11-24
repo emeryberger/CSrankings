@@ -66,6 +66,7 @@ def pagecount(pageStr: str) -> int:
         count = _extract_pagecount(pageCounterMatcher2)
     return count
 
+
 def _extract_pagecount(arg0):
     start = int(arg0.group(1))
     end = int(arg0.group(2))
@@ -138,10 +139,12 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ACM Trans. Embed. Comput. Syst."),
         Conference("IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."),
     ],  # TECS: issue number & page numbers must be checked
-    Area("rtss"): [Conference("RTSS")],
+    Area("rtss"): [Conference("RTSS"), Conference("rtss")],
     Area("rtas"): [
         Conference("RTAS"),
-        Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
+        Conference(
+            "IEEE Real-Time and Embedded Technology and Applications Symposium"
+        ),
     ],
     # SIGDA
     Area("iccad"): [Conference("ICCAD")],
@@ -350,7 +353,7 @@ areadict: Dict[Area, List[Conference]] = {
 EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
 
-EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11)}
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11),  2022: (41, 11)}
 EMSOFT_TCAD_PaperStart = {
     # 2018 page numbers contributed by Ezio Bartocci
     2018: {
@@ -412,6 +415,9 @@ EMSOFT_TCAD_PaperStart = {
         4166,
         4205,
     },
+    # 2022 numbers contributed by Changhee Jang
+    2022: {3614,3638,3673,3757,3779,3850,3874,3886,3898,3957,3969,3981,4016,4028,4157,4193,4205,4253,4265,4361,4373,4409,4421,4445,4457,4469,4492,4504,4539,4563, },
+    
 }
 
 
@@ -804,17 +810,22 @@ def countPaper(
 
     if (
         pageCount == -1
-        and confname == "ACM Conference on Computer and Communications Security"
+        and confname
+        == "ACM Conference on Computer and Communications Security"
     ):
         tooFewPages = True
 
     if (pageCount != -1) and (pageCount < pageCountThreshold):
 
         exceptionConference = False
-        exceptionConference |= confname == "SC" and (year <= 2012 or year == 2020)
+        exceptionConference |= confname == "SC" and (
+            year <= 2012 or year == 2020
+        )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
-            confname == "ACM Trans. Graph." and int(volume) >= 26 and int(volume) <= 39
+            confname == "ACM Trans. Graph."
+            and int(volume) >= 26
+            and int(volume) <= 39
         )
         exceptionConference |= (
             confname == "SIGGRAPH" and int(volume) >= 26 and int(volume) <= 39
@@ -847,7 +858,9 @@ def test_countPaper():
         "anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing"
     )
     # Discard short papers.
-    assert not countPaper("anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing")
+    assert not countPaper(
+        "anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing"
+    )
     # Ignore page counts if we are in an exception conference (like SIGGRAPH)
     assert countPaper(
         "SIGGRAPH",
