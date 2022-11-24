@@ -132,7 +132,9 @@ def build_dicts() -> None:
 
     # Count and report the total number of faculty in the database.
     totalFaculty = sum(name not in aliasdict for name in facultydict)
-    print(f"Total faculty members currently in the database: {str(totalFaculty)}")
+    print(
+        f"Total faculty members currently in the database: {str(totalFaculty)}"
+    )
 
 
 def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
@@ -164,10 +166,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         foundOneInDict = False or args.all
         if not args.all:
             for authorName in authorList:
-                if (
-                    type(authorName) is OrderedDict
-                    or type(authorName) is dict
-                ):
+                if type(authorName) is OrderedDict or type(authorName) is dict:
                     aName = authorName["#text"]  # type: ignore
                 else:
                     aName = authorName
@@ -304,7 +303,9 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 authlogs[realName] = tmplist
                 interestingauthors[realName] += 1
                 authorscores[(realName, areaname, year)] += 1.0
-                authorscoresAdjusted[(realName, areaname, year)] += 1.0 / authorsOnPaper
+                authorscoresAdjusted[(realName, areaname, year)] += (
+                    1.0 / authorsOnPaper
+                )
     return True
 
 
