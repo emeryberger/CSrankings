@@ -13,13 +13,15 @@ with open("faculty-affiliations.csv") as f:
 def parseDBLP(facultydict):
     # with open('dblp.xml', mode='r') as f:
     print("alias,name")
-    # dtd = ElementTree.DTD(file='dblp.dtd')
-    with gzip.open('dblp-original.xml.gz', mode='rb') as f:
-    # with open("dblp.xml", mode="r", encoding="utf-8") as f:
+    dtd = ElementTree.DTD(file="dblp.dtd")
+    with gzip.open("dblp-original.xml.gz", mode="rb") as f:
+        # with open("dblp.xml", mode="r", encoding="utf-8") as f:
 
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"], load_dtd=True):
+        for (event, node) in ElementTree.iterparse(
+            f, events=["start", "end"], load_dtd=True
+        ):
 
             if oldnode is not None:
                 oldnode.clear()
@@ -27,24 +29,46 @@ def parseDBLP(facultydict):
             authors = 0
             authorList = []
 
-            # print((node.tag))
-            if node.tag == "www":
-                if node.get("key", "").startswith("homepages/"):
-                    for child in node:
-                        if child.tag == "author":
-                            # print("WWW adding", child.text)
-                            authorName = child.text
-                            if authorName:
-                                authorName = authorName.strip()
-                                authors += 1
-                                authorList.append(authorName.encode("utf-8"))
-                                # print("author list", authorList)
-                if authors:
-                    pairs = [(authorList[0], item) for item in authorList[1:]]
-                    for p in pairs:
-                        print(
-                            p[1].decode("utf-8") + "," + p[0].decode("utf-8")
-                        )
+            if node.tag != "www":
+                continue
+
+            # print("FIND: ", node.findtext("author", default="None"))
+            # print("DATE", node.get("mdate", ""))
+            # print("KEY", node.get("key",""))
+
+            # Skip non-home page entries.
+            if not node.get("key", "").startswith("homepages/"):
+                continue
+
+            # print("WWW")
+            # print(node.getchildren())
+            for child in node.getchildren():
+                # from pprint import pprint
+                # print(child)
+                # print(child.tag)
+                # print(child.findtext("author", "NOTEXT"))
+                if child.tag != "author":
+                    continue
+                # print(dir(child))
+                # print("AUTHOR", child.text)
+                # print(dir(child))
+                # print("WWW adding", child.text)
+                authorName = child.text
+                if not authorName:
+                    continue
+                # print("ADDING ", authorName)
+                authorName = authorName.strip()
+                authors += 1
+                authorList.append(authorName.encode("utf-8"))
+                # print("author list", authorList)
+
+            if not authors:
+                continue
+
+            # print("AUTHORS", authorList)
+            pairs = [(authorList[0], item) for item in authorList[1:]]
+            for p in pairs:
+                print(p[1].decode("utf-8") + "," + p[0].decode("utf-8"))
 
 
 parseDBLP(facultydict)
