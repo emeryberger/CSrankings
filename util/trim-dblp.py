@@ -97,7 +97,7 @@ def parseDBLP():
                     continue
 
                 count = count + 1
-                print str(count)
+                print(str(count))
                 output.write(ElementTree.tostring(node, pretty_print=True))
                 node.clear()
                 # If we got here, we have a winner.
