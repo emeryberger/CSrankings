@@ -222,7 +222,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 if (volume == str(vol)) and (number == str(num)):
                     confname = Conference("SIGGRAPH Asia")
                     areaname = confdict[confname]
-       elif confname == Conference("Comput. Graph. Forum"):
+        elif confname == Conference("Comput. Graph. Forum"):
             if year in CGF_EUROGRAPHICS_Volume:
                 (vol, num) = CGF_EUROGRAPHICS_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
