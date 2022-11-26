@@ -139,6 +139,7 @@
 //article[journal="ACM Trans. Graph."],
 //article[journal="ACM Trans. Embed. Comput. Syst."],
 //inproceedings[booktitle="SIGGRAPH"],
+//article[journal="Comput. Graph. Forum"],
 //inproceedings[booktitle="ASE"],
 //inproceedings[booktitle="ICSE"],
 //inproceedings[booktitle="ICSE (1)"],
