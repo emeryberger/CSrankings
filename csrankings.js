@@ -59,7 +59,7 @@ class CSRankings {
             { area: "acl", title: "NLP" },
             { area: "emnlp", title: "NLP" },
             { area: "naacl", title: "NLP" },
-            { area: "ir", title: "Web+IR" },
+            { area: "inforet", title: "Web+IR" },
             { area: "sigir", title: "Web+IR" },
             { area: "www", title: "Web+IR" },
             { area: "arch", title: "Arch" },
@@ -147,7 +147,7 @@ class CSRankings {
             { area: "wine", title: "ECom" }
             //,{ area : "cse", title : "CSEd" }
         ];
-        this.aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+        this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
         this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
@@ -1704,8 +1704,8 @@ CSRankings.parentMap = {
     'acl': 'nlp',
     'emnlp': 'nlp',
     'naacl': 'nlp',
-    'sigir': 'ir',
-    'www': 'ir',
+    'sigir': 'inforet',
+    'www': 'inforet',
     'asplos': 'arch',
     'isca': 'arch',
     'micro': 'arch',
