@@ -353,7 +353,7 @@ areadict: Dict[Area, List[Conference]] = {
 EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
 
-EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11)}
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11),  2022: (41, 11)}
 EMSOFT_TCAD_PaperStart = {
     # 2018 page numbers contributed by Ezio Bartocci
     2018: {
@@ -415,6 +415,9 @@ EMSOFT_TCAD_PaperStart = {
         4166,
         4205,
     },
+    # 2022 numbers contributed by Changhee Jang
+    2022: {3614,3638,3673,3757,3779,3850,3874,3886,3898,3957,3969,3981,4016,4028,4157,4193,4205,4253,4265,4361,4373,4409,4421,4445,4457,4469,4492,4504,4539,4563, },
+    
 }
 
 
