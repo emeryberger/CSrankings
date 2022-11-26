@@ -40,7 +40,7 @@ with open("csrankings.csv", mode="w") as outfile:
         with open(fname, mode="r") as infile:
             reader = csv.DictReader(infile)
             for row in reader:
-                hashrow = hashlib.md5(str(row).encode('utf8'))
+                hashrow = hashlib.md5(str(row).encode("utf8"))
                 if hashrow not in added:
                     writer.writerow(row)
                     added.add(hashrow)
