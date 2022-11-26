@@ -17,6 +17,7 @@ from csrankings import (
     confdict,
     TOG_SIGGRAPH_Volume,
     TOG_SIGGRAPH_Asia_Volume,
+    CGF_EUROGRAPHICS_Volume,
     TVCG_Vis_Volume,
     TVCG_VR_Volume,
 )
@@ -220,6 +221,12 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
                     confname = Conference("SIGGRAPH Asia")
+                    areaname = confdict[confname]
+       elif confname == Conference("Comput. Graph. Forum"):
+            if year in CGF_EUROGRAPHICS_Volume:
+                (vol, num) = CGF_EUROGRAPHICS_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    confname = Conference("EUROGRAPHICS")
                     areaname = confdict[confname]
         elif confname == "IEEE Trans. Vis. Comput. Graph.":
             if year in TVCG_Vis_Volume:
