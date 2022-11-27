@@ -17,6 +17,7 @@ from csrankings import (
     confdict,
     TOG_SIGGRAPH_Volume,
     TOG_SIGGRAPH_Asia_Volume,
+    CGF_EUROGRAPHICS_Volume,
     TVCG_Vis_Volume,
     TVCG_VR_Volume,
 )
@@ -132,7 +133,9 @@ def build_dicts() -> None:
 
     # Count and report the total number of faculty in the database.
     totalFaculty = sum(name not in aliasdict for name in facultydict)
-    print(f"Total faculty members currently in the database: {str(totalFaculty)}")
+    print(
+        f"Total faculty members currently in the database: {str(totalFaculty)}"
+    )
 
 
 def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
@@ -164,10 +167,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         foundOneInDict = False or args.all
         if not args.all:
             for authorName in authorList:
-                if (
-                    type(authorName) is OrderedDict
-                    or type(authorName) is dict
-                ):
+                if type(authorName) is OrderedDict or type(authorName) is dict:
                     aName = authorName["#text"]  # type: ignore
                 else:
                     aName = authorName
@@ -221,6 +221,12 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 (vol, num) = TOG_SIGGRAPH_Asia_Volume[year]
                 if (volume == str(vol)) and (number == str(num)):
                     confname = Conference("SIGGRAPH Asia")
+                    areaname = confdict[confname]
+        elif confname == Conference("Comput. Graph. Forum"):
+            if year in CGF_EUROGRAPHICS_Volume:
+                (vol, num) = CGF_EUROGRAPHICS_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    confname = Conference("EUROGRAPHICS")
                     areaname = confdict[confname]
         elif confname == "IEEE Trans. Vis. Comput. Graph.":
             if year in TVCG_Vis_Volume:
@@ -304,7 +310,9 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 authlogs[realName] = tmplist
                 interestingauthors[realName] += 1
                 authorscores[(realName, areaname, year)] += 1.0
-                authorscoresAdjusted[(realName, areaname, year)] += 1.0 / authorsOnPaper
+                authorscoresAdjusted[(realName, areaname, year)] += (
+                    1.0 / authorsOnPaper
+                )
     return True
 
 

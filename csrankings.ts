@@ -266,8 +266,8 @@ class CSRankings {
             'acl': 'nlp',
             'emnlp': 'nlp',
             'naacl': 'nlp',
-            'sigir': 'ir',
-            'www': 'ir',
+            'sigir': 'inforet',
+            'www': 'inforet',
             'asplos': 'arch',
             'isca': 'arch',
             'micro': 'arch',
@@ -311,6 +311,7 @@ class CSRankings {
             'sigcomm': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
+            'eurographics': 'graph',
             'focs': 'act',
             'soda': 'act',
             'stoc': 'act',
@@ -377,7 +378,7 @@ class CSRankings {
         { area: "acl", title: "NLP" },
         { area: "emnlp", title: "NLP" },
         { area: "naacl", title: "NLP" },
-        { area: "ir", title: "Web+IR" },
+        { area: "inforet", title: "Web+IR" },
         { area: "sigir", title: "Web+IR" },
         { area: "www", title: "Web+IR" },
         { area: "arch", title: "Arch" },
@@ -439,6 +440,7 @@ class CSRankings {
         { area: "graph", title: "Graphics" },
         { area: "siggraph", title: "Graphics" },
         { area: "siggraph-asia", title: "Graphics" },
+        { area: "eurographics", title: "Graphics" },
         { area: "chi", title: "HCI" },
         { area: "chiconf", title: "HCI" },
         { area: "ubicomp", title: "HCI" },
@@ -466,7 +468,7 @@ class CSRankings {
             //,{ area : "cse", title : "CSEd" }
         ];
 
-    private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+    private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
     private readonly systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
     private readonly theoryAreas = ["act", "crypt", "log"];
     private readonly interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
