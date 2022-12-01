@@ -20257,6 +20257,10 @@ Brian A. Barsky,Univ. of California - Berkeley,siggraph,1.0,0.25,2014
 Brian A. Barsky,Univ. of California - Berkeley,siggraph-asia,1.0,0.25,2012
 Brian A. Malloy,Clemson University,issta,1.0,0.33333,1993
 Brian A. Malloy,Clemson University,micro,1.0,0.25,1993
+Brian Bullins,Purdue University,icml,2.0,0.34286,2019
+Brian Bullins,Purdue University,icml,1.0,0.125,2020
+Brian Bullins,Purdue University,nips,1.0,0.33333,2016
+Brian Bullins,Purdue University,nips,2.0,0.53333,2021
 Brian C. Dean,Clemson University,focs,1.0,0.33333,2004
 Brian C. Dean,Clemson University,soda,1.0,0.33333,2005
 Brian C. Lovell,University of Queensland,aaai,1.0,0.2,2021
@@ -44588,9 +44592,6 @@ Eric W. Frew,University of Colorado Boulder,iros,1.0,0.33333,2014
 Eric W. Frew,University of Colorado Boulder,iros,1.0,0.25,2016
 Eric W. Frew,University of Colorado Boulder,iros,1.0,0.33333,2020
 Eric W. Frew,University of Colorado Boulder,iros,1.0,0.2,2021
-Eric Walkingshaw,Oregon State University,icfp,1.0,0.33333,2012
-Eric Walkingshaw,Oregon State University,icfp,1.0,0.33333,2018
-Eric Walkingshaw,Oregon State University,popl,1.0,0.25,2018
 Eric Wong 0001,University of Pennsylvania,aaai,1.0,0.5,2015
 Eric Wong 0001,University of Pennsylvania,icml,1.0,0.33333,2017
 Eric Wong 0001,University of Pennsylvania,icml,1.0,0.5,2018
@@ -57417,6 +57418,7 @@ Han Liu 0001,Northwestern University,nips,6.0,1.6667,2015
 Han Liu 0001,Northwestern University,nips,4.0,1.2,2016
 Han Liu 0001,Northwestern University,nips,2.0,0.5,2017
 Han Liu 0001,Northwestern University,nips,2.0,0.5,2018
+Han Liu 0002,Shenzhen University,www,1.0,0.25,2019
 Han Yu 0001,Nanyang Technological University,aaai,1.0,0.16667,2015
 Han Yu 0001,Nanyang Technological University,aaai,1.0,0.25,2017
 Han Yu 0001,Nanyang Technological University,aaai,1.0,0.16667,2018
@@ -111530,56 +111532,56 @@ Monica S. Lam,Stanford University,usenixsec,1.0,0.5,2008
 Monica S. Lam,Stanford University,vldb,1.0,0.25,2013
 Monica S. Lam,Stanford University,www,1.0,0.2,2012
 Monica S. Lam,Stanford University,www,1.0,0.2,2017
-Monika Henzinger,University of Vienna,cav,1.0,0.25,2011
-Monika Henzinger,University of Vienna,cav,1.0,0.2,2018
-Monika Henzinger,University of Vienna,focs,1.0,1.0,1992
-Monika Henzinger,University of Vienna,focs,1.0,1.0,1994
-Monika Henzinger,University of Vienna,focs,2.0,0.83333,1995
-Monika Henzinger,University of Vienna,focs,1.0,0.33333,1996
-Monika Henzinger,University of Vienna,focs,1.0,0.25,1998
-Monika Henzinger,University of Vienna,focs,1.0,0.33333,2013
-Monika Henzinger,University of Vienna,focs,1.0,0.33333,2014
-Monika Henzinger,University of Vienna,focs,1.0,0.33333,2019
-Monika Henzinger,University of Vienna,focs,1.0,0.2,2020
-Monika Henzinger,University of Vienna,icml,1.0,0.2,2017
-Monika Henzinger,University of Vienna,ijcai,1.0,0.33333,2003
-Monika Henzinger,University of Vienna,lics,1.0,0.33333,2015
-Monika Henzinger,University of Vienna,lics,1.0,0.25,2016
-Monika Henzinger,University of Vienna,lics,1.0,0.25,2021
-Monika Henzinger,University of Vienna,sigir,1.0,0.5,1998
-Monika Henzinger,University of Vienna,sigir,1.0,1.0,2006
-Monika Henzinger,University of Vienna,sigmetrics,1.0,0.33333,2019
-Monika Henzinger,University of Vienna,soda,1.0,0.5,1995
-Monika Henzinger,University of Vienna,soda,1.0,0.33333,1996
-Monika Henzinger,University of Vienna,soda,1.0,0.33333,1998
-Monika Henzinger,University of Vienna,soda,1.0,0.5,1999
-Monika Henzinger,University of Vienna,soda,1.0,0.5,2011
-Monika Henzinger,University of Vienna,soda,1.0,0.5,2012
-Monika Henzinger,University of Vienna,soda,1.0,0.33333,2014
-Monika Henzinger,University of Vienna,soda,1.0,0.33333,2015
-Monika Henzinger,University of Vienna,soda,2.0,0.66667,2017
-Monika Henzinger,University of Vienna,soda,2.0,0.5,2018
-Monika Henzinger,University of Vienna,soda,1.0,0.33333,2019
-Monika Henzinger,University of Vienna,soda,4.0,1.0333,2021
-Monika Henzinger,University of Vienna,soda,1.0,0.33333,2022
-Monika Henzinger,University of Vienna,sosp,1.0,0.1,1997
-Monika Henzinger,University of Vienna,stoc,2.0,1.25,1994
-Monika Henzinger,University of Vienna,stoc,1.0,0.5,1995
-Monika Henzinger,University of Vienna,stoc,1.0,0.5,1997
-Monika Henzinger,University of Vienna,stoc,1.0,0.25,1999
-Monika Henzinger,University of Vienna,stoc,1.0,0.33333,2014
-Monika Henzinger,University of Vienna,stoc,2.0,0.5,2015
-Monika Henzinger,University of Vienna,stoc,2.0,0.66667,2016
-Monika Henzinger,University of Vienna,stoc,1.0,0.25,2019
-Monika Henzinger,University of Vienna,vldb,1.0,0.33333,2008
-Monika Henzinger,University of Vienna,wine,1.0,0.33333,2009
-Monika Henzinger,University of Vienna,wine,1.0,0.33333,2012
-Monika Henzinger,University of Vienna,wine,1.0,0.33333,2013
-Monika Henzinger,University of Vienna,wine,1.0,0.25,2014
-Monika Henzinger,University of Vienna,wine,2.0,0.58333,2015
-Monika Henzinger,University of Vienna,www,1.0,0.25,2003
-Monika Henzinger,University of Vienna,www,1.0,0.25,2009
-Monika Henzinger,University of Vienna,www,1.0,0.33333,2011
+Monika Henzinger,IST Austria,cav,1.0,0.25,2011
+Monika Henzinger,IST Austria,cav,1.0,0.2,2018
+Monika Henzinger,IST Austria,focs,1.0,1.0,1992
+Monika Henzinger,IST Austria,focs,1.0,1.0,1994
+Monika Henzinger,IST Austria,focs,2.0,0.83333,1995
+Monika Henzinger,IST Austria,focs,1.0,0.33333,1996
+Monika Henzinger,IST Austria,focs,1.0,0.25,1998
+Monika Henzinger,IST Austria,focs,1.0,0.33333,2013
+Monika Henzinger,IST Austria,focs,1.0,0.33333,2014
+Monika Henzinger,IST Austria,focs,1.0,0.33333,2019
+Monika Henzinger,IST Austria,focs,1.0,0.2,2020
+Monika Henzinger,IST Austria,icml,1.0,0.2,2017
+Monika Henzinger,IST Austria,ijcai,1.0,0.33333,2003
+Monika Henzinger,IST Austria,lics,1.0,0.33333,2015
+Monika Henzinger,IST Austria,lics,1.0,0.25,2016
+Monika Henzinger,IST Austria,lics,1.0,0.25,2021
+Monika Henzinger,IST Austria,sigir,1.0,0.5,1998
+Monika Henzinger,IST Austria,sigir,1.0,1.0,2006
+Monika Henzinger,IST Austria,sigmetrics,1.0,0.33333,2019
+Monika Henzinger,IST Austria,soda,1.0,0.5,1995
+Monika Henzinger,IST Austria,soda,1.0,0.33333,1996
+Monika Henzinger,IST Austria,soda,1.0,0.33333,1998
+Monika Henzinger,IST Austria,soda,1.0,0.5,1999
+Monika Henzinger,IST Austria,soda,1.0,0.5,2011
+Monika Henzinger,IST Austria,soda,1.0,0.5,2012
+Monika Henzinger,IST Austria,soda,1.0,0.33333,2014
+Monika Henzinger,IST Austria,soda,1.0,0.33333,2015
+Monika Henzinger,IST Austria,soda,2.0,0.66667,2017
+Monika Henzinger,IST Austria,soda,2.0,0.5,2018
+Monika Henzinger,IST Austria,soda,1.0,0.33333,2019
+Monika Henzinger,IST Austria,soda,4.0,1.0333,2021
+Monika Henzinger,IST Austria,soda,1.0,0.33333,2022
+Monika Henzinger,IST Austria,sosp,1.0,0.1,1997
+Monika Henzinger,IST Austria,stoc,2.0,1.25,1994
+Monika Henzinger,IST Austria,stoc,1.0,0.5,1995
+Monika Henzinger,IST Austria,stoc,1.0,0.5,1997
+Monika Henzinger,IST Austria,stoc,1.0,0.25,1999
+Monika Henzinger,IST Austria,stoc,1.0,0.33333,2014
+Monika Henzinger,IST Austria,stoc,2.0,0.5,2015
+Monika Henzinger,IST Austria,stoc,2.0,0.66667,2016
+Monika Henzinger,IST Austria,stoc,1.0,0.25,2019
+Monika Henzinger,IST Austria,vldb,1.0,0.33333,2008
+Monika Henzinger,IST Austria,wine,1.0,0.33333,2009
+Monika Henzinger,IST Austria,wine,1.0,0.33333,2012
+Monika Henzinger,IST Austria,wine,1.0,0.33333,2013
+Monika Henzinger,IST Austria,wine,1.0,0.25,2014
+Monika Henzinger,IST Austria,wine,2.0,0.58333,2015
+Monika Henzinger,IST Austria,www,1.0,0.25,2003
+Monika Henzinger,IST Austria,www,1.0,0.25,2009
+Monika Henzinger,IST Austria,www,1.0,0.33333,2011
 Monowar Hasan,Washington State University,rtss,1.0,0.25,2016
 Monowar Hasan,Washington State University,rtss,1.0,0.14286,2017
 Montek Singh,University of North Carolina,eurographics,1.0,0.2,2005
@@ -120222,7 +120224,6 @@ Patrick Carrington,Carnegie Mellon University,chiconf,1.0,0.14286,2020
 Patrick Carrington,Carnegie Mellon University,chiconf,2.0,0.45,2021
 Patrick Carrington,Carnegie Mellon University,chiconf,1.0,0.125,2022
 Patrick Carrington,Carnegie Mellon University,www,1.0,0.16667,2019
-Patrick Chiang,Oregon State University,dac,1.0,0.33333,2012
 Patrick Chiang,Oregon State University,isca,1.0,0.33333,2012
 Patrick Cousot,New York University,cav,1.0,0.5,1995
 Patrick Cousot,New York University,cav,1.0,0.5,2002
@@ -127582,18 +127583,6 @@ Rachel Pottinger,University of British Columbia,sigmod,1.0,0.33333,2020
 Rachel Pottinger,University of British Columbia,vldb,1.0,0.5,2000
 Rachel Pottinger,University of British Columbia,vldb,1.0,0.5,2003
 Rachel Pottinger,University of British Columbia,vldb,1.0,0.33333,2011
-Rachel Rudinger,University of Maryland - College Park,aaai,1.0,0.25,2019
-Rachel Rudinger,University of Maryland - College Park,aaai,1.0,0.25,2021
-Rachel Rudinger,University of Maryland - College Park,aaai,1.0,0.33333,2022
-Rachel Rudinger,University of Maryland - College Park,acl,1.0,0.16667,2013
-Rachel Rudinger,University of Maryland - College Park,acl,1.0,0.5,2021
-Rachel Rudinger,University of Maryland - College Park,emnlp,1.0,0.25,2015
-Rachel Rudinger,University of Maryland - College Park,emnlp,1.0,0.125,2016
-Rachel Rudinger,University of Maryland - College Park,emnlp,4.0,0.79286,2018
-Rachel Rudinger,University of Maryland - College Park,emnlp,2.0,0.66667,2020
-Rachel Rudinger,University of Maryland - College Park,naacl,1.0,0.33333,2018
-Rachel Rudinger,University of Maryland - College Park,naacl,1.0,0.2,2019
-Rachel Rudinger,University of Maryland - College Park,naacl,3.0,1.2,2022
 Rachid Guerraoui,EPFL,aaai,1.0,0.2,2021
 Rachid Guerraoui,EPFL,asplos,1.0,0.33333,2014
 Rachid Guerraoui,EPFL,asplos,1.0,0.33333,2015
@@ -130606,6 +130595,18 @@ Rayid Ghani,Carnegie Mellon University,kdd,1.0,0.5,2011
 Rayid Ghani,Carnegie Mellon University,kdd,3.0,0.44286,2015
 Rayid Ghani,Carnegie Mellon University,kdd,4.0,0.51071,2016
 Rayid Ghani,Carnegie Mellon University,kdd,2.0,0.18182,2018
+Raymond A. Yeh,Purdue University,cvpr,1.0,0.16667,2017
+Raymond A. Yeh,Purdue University,cvpr,1.0,0.33333,2018
+Raymond A. Yeh,Purdue University,cvpr,1.0,0.25,2019
+Raymond A. Yeh,Purdue University,cvpr,1.0,0.25,2021
+Raymond A. Yeh,Purdue University,cvpr,1.0,0.25,2022
+Raymond A. Yeh,Purdue University,iccv,1.0,0.2,2017
+Raymond A. Yeh,Purdue University,iccv,1.0,0.16667,2019
+Raymond A. Yeh,Purdue University,icml,1.0,0.25,2021
+Raymond A. Yeh,Purdue University,iros,1.0,0.25,2021
+Raymond A. Yeh,Purdue University,nips,1.0,0.2,2017
+Raymond A. Yeh,Purdue University,nips,1.0,0.33333,2019
+Raymond A. Yeh,Purdue University,nips,2.0,0.66667,2020
 Raymond Chi-Wing Wong,HKUST,icde,1.0,0.33333,2011
 Raymond Chi-Wing Wong,HKUST,icde,1.0,0.25,2012
 Raymond Chi-Wing Wong,HKUST,icde,1.0,0.5,2014
@@ -163504,7 +163505,6 @@ Vincent Gramoli,University of Sydney,eurosys,1.0,0.33333,2012
 Vincent Gramoli,University of Sydney,ndss,1.0,0.33333,2020
 Vincent Gramoli,University of Sydney,oakland,1.0,0.33333,2021
 Vincent Heuveline,Heidelberg University,icml,1.0,0.33333,2019
-Vincent Immler,Oregon State University,dac,1.0,0.25,2018
 Vincent J. Hellendoorn,Carnegie Mellon University,ase,1.0,0.2,2017
 Vincent J. Hellendoorn,Carnegie Mellon University,ase,1.0,0.25,2020
 Vincent J. Hellendoorn,Carnegie Mellon University,fse,1.0,0.5,2017
@@ -171016,7 +171016,6 @@ Xiaolei Huang,Pennsylvania State University,iccv,1.0,0.33333,2009
 Xiaolei Huang,Pennsylvania State University,iccv,2.0,0.41667,2011
 Xiaolei Huang,Pennsylvania State University,naacl,1.0,1.0,2022
 Xiaolei Huang,Pennsylvania State University,siggraph,1.0,0.2,2010
-Xiaoli Fern,Oregon State University,icra,1.0,0.11111,2021
 Xiaoli Li 0001,Nanyang Technological University,aaai,1.0,0.25,2004
 Xiaoli Li 0001,Nanyang Technological University,aaai,1.0,0.2,2011
 Xiaoli Li 0001,Nanyang Technological University,aaai,2.0,0.53333,2017
