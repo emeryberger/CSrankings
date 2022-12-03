@@ -1701,6 +1701,7 @@ CSRankings.parentMap = {
     'eccv': 'vision',
     'iccv': 'vision',
     'icml': 'mlmining',
+    'iclr': 'mlmining',
     'kdd': 'mlmining',
     'nips': 'mlmining',
     'acl': 'nlp',
