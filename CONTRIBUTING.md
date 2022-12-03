@@ -16,6 +16,8 @@ database. Use a text editor like emacs or NotePad instead._
 
 1. _Insert new faculty **in alphabetical order** (not at the end) in the appropriate `csrankings-[a-z].csv` files._ **Do not modify `csrankings.csv`, which is auto-generated.**
 
+1. _Combine multiple updates to a single institution into a **single PR.**_
+
 1. _Check to make sure that you have no spaces after commas, or any missing fields._
 
 1. _Check to make sure the home page is correct._
