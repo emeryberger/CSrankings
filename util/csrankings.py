@@ -203,6 +203,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ICML (2)"),
         Conference("ICML (3)"),
     ],
+    Area("iclr"): [Conference("ICLR")],
     Area("kdd"): [Conference("KDD")],
     # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
