@@ -261,6 +261,7 @@ class CSRankings {
             'eccv': 'vision',
             'iccv': 'vision',
             'icml': 'mlmining',
+	    'iclr': 'mlmining',
             'kdd': 'mlmining',
             'nips': 'mlmining',
             'acl': 'nlp',
@@ -346,7 +347,8 @@ class CSRankings {
             'fast': true,
             'usenixatc': true,
             'icfp': true,
-            'oopsla': true
+            'oopsla': true,
+	    'kdd': true,
         };
 
     public static readonly childMap: { [key: string]: [string] } = {};
@@ -373,6 +375,7 @@ class CSRankings {
         { area: "mlmining", title: "ML" },
         { area: "icml", title: "ML" },
         { area: "kdd", title: "ML" },
+        { area: "iclr", title: "ML" },
         { area: "nips", title: "ML" },
         { area: "nlp", title: "NLP" },
         { area: "acl", title: "NLP" },

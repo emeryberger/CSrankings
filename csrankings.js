@@ -54,6 +54,7 @@ class CSRankings {
             { area: "mlmining", title: "ML" },
             { area: "icml", title: "ML" },
             { area: "kdd", title: "ML" },
+            { area: "iclr", title: "ML" },
             { area: "nips", title: "ML" },
             { area: "nlp", title: "NLP" },
             { area: "acl", title: "NLP" },
@@ -1700,6 +1701,7 @@ CSRankings.parentMap = {
     'eccv': 'vision',
     'iccv': 'vision',
     'icml': 'mlmining',
+    'iclr': 'mlmining',
     'kdd': 'mlmining',
     'nips': 'mlmining',
     'acl': 'nlp',
@@ -1784,7 +1786,7 @@ CSRankings.nextTier = {
     'usenixatc': true,
     'icfp': true,
     'oopsla': true,
-    'eurographics': true
+    'kdd': true,
 };
 CSRankings.childMap = {};
 CSRankings.noteMap = {
