@@ -634,16 +634,26 @@
 			<span class="hovertip" id="mlmining-widget">
 			  &#9658;
 			</span>
-			Machine learning &amp; data mining
+			Machine learning
 			<div class="table-responsive" style="display:none;" id="mlmining-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="https://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
+				    <a href="https://www.kdd.org/">acm sigkdd</a>, <a href="https://iclr.cc/">iclr</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
+				    <tr>
+				      <td>
+					<label for="iclr">
+					  <a href="https://dblp.org/db/conf/iclr/index.html">ICLR</a>
+					</label>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="iclr" id="iclr" value="1.0"/>
+				      </td>
+				    </tr>
 				    <tr>
 				      <td>
 					<label for="icml">
@@ -656,22 +666,27 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<label for="kdd">
-					  <a href="https://dblp.org/db/conf/kdd/index.html">KDD</a>
-					</label>
-				      </td>
-				      <td align="right">
-					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
-				      </td>
-				    </tr>
-				    <tr>
-				      <td>
 					<label for="nips">
 					  <a href="https://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
 					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nips" id="nips" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td colspan="2">
+					<hr>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<label for="kdd">
+					  <a href="https://dblp.org/db/conf/kdd/index.html">KDD</a>
+					</label>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
 				      </td>
 				    </tr>
 				  </table>
@@ -1974,7 +1989,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated quarterly; last update November 27, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated quarterly; last update December 4, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
