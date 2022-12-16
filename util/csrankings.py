@@ -496,6 +496,7 @@ ISMB_Bioinformatics = {
 # TOG special handling to count only EUROGRAPHICS proceedings.
 # Assuming all will be in the same issues through 2021.
 TOG_SIGGRAPH_Volume = {
+    2022: (41, 4),
     2021: (40, 4),
     2020: (39, 4),
     2019: (38, 4),
@@ -521,6 +522,7 @@ TOG_SIGGRAPH_Volume = {
 # TOG special handling to count only SIGGRAPH Asia proceedings.
 # Assuming all will be in the same issues through 2021.
 TOG_SIGGRAPH_Asia_Volume = {
+    2022: (41, 6),
     2021: (40, 6),
     2020: (39, 6),
     2019: (38, 6),
@@ -594,6 +596,7 @@ TVCG_Vis_Volume = {
 
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {
+    2022: (28, 5),
     2021: (27, 5),
     2020: (26, 5),
     2019: (25, 5),
