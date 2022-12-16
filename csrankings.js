@@ -1617,6 +1617,7 @@ class CSRankings {
                     // Child:
                     // If any child is on, activate the parent.
                     // If all are off, deactivate parent.
+                    console.log('checking ' + field);
                     updateURL = false;
                     let parent = CSRankings.parentMap[field];
                     const strparent = `input[name=${parent}]`;
@@ -1782,6 +1783,7 @@ CSRankings.nextTier = {
     'ndss': true,
     'pets': true,
     'eurosys': true,
+    'eurographics': true,
     'fast': true,
     'usenixatc': true,
     'icfp': true,
