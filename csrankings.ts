@@ -312,7 +312,7 @@ class CSRankings {
             'sigcomm': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
-            'eurographics': 'graph',
+            'eurographics': 'graph', // next tier
             'focs': 'act',
             'soda': 'act',
             'stoc': 'act',
@@ -344,6 +344,7 @@ class CSRankings {
             'ndss': true, // for now
             'pets': true,
             'eurosys': true,
+	    'eurographics': true,
             'fast': true,
             'usenixatc': true,
             'icfp': true,
