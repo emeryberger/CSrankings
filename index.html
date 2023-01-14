@@ -18,8 +18,8 @@
     <link rel="preload" as="script" href="js/he-1.2.0.js" type="text/javascript">
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <link rel="preload" as="script" href="js/d3.min.js">
-    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript">
+<!--    <link rel="preload" as="script" href="js/d3.min.js"> -->
+<!--    <link rel="preload" as="script" href="js/d3pie.min.js" type="text/javascript"> -->
     <link rel="preload" as="script" href="js/papaparse.min.js" type="text/javascript">
 <!--    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript"> -->
 <!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
@@ -92,7 +92,7 @@
       color : blue ;
       }
 
-      .csr-piechart {
+      .csr-barchart {
 	  display: none;
       }
       
@@ -149,7 +149,7 @@
       font-size: -1;
       }
 
-      .piechart {
+      .barchart {
       font-size: +1;
       }
     </style>
@@ -204,17 +204,20 @@
     <script src="js/he-1.2.0.js" type="text/javascript"></script>
 <!--    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> -->
 <!--    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script> -->
-    <script src="js/d3.min.js"></script>
-    <script src="js/d3pie.min.js" type="text/javascript"></script>
+<!--    <script src="js/d3.min.js"></script> -->
+<!--    <script src="js/d3pie.min.js" type="text/javascript"></script> -->
+    <script defer src="js/vega-5.20.2.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-lite-5.1.1.min.js" type="text/javascript"></script>
+    <script defer src="js/vega-embed-6.18.2.min.js" type="text/javascript"></script>
     <script defer src="js/papaparse.min.js" type="text/javascript"></script>
     <script defer src="continents.js" type="text/javascript"></script>
 <!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
     <script defer src="js/bootstrap.min.js" type="text/javascript"></script>
     <script defer src="js/navigo.min.js"></script>
-    <script defer src="csrankings.min.js" type="text/javascript"></script>
-    <!-- <script src="csrankings.js" type="text/javascript" defer></script> -->
-    
-    
+    <!-- <script defer src="csrankings.min.js" type="text/javascript"></script> -->
+<!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224607094172722"
+	    crossorigin="anonymous"></script> -->
+    <script src="csrankings.js" type="text/javascript" defer></script>
   </head>
 
   <body>
@@ -225,7 +228,64 @@
       js = d.createElement(s); js.id = id; js.async=true;
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
       fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+      }(document, 'script', 'facebook-jssdk'));    </script>
+    <div class="overlay" id="overlay-loading">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="15vw">
+	    <div id="progress">Loading.<br /></div>
+	  </font>
+	</center>
+      </div>
+    </div>
+    <!-- sponsorship link, initially off (activated randomly). -->
+    <div class="overlay" onclick="document.getElementById('overlay-sponsor').style.display = 'none';" id="overlay-sponsor" style="display:none">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="10vw">
+	    <div id="sponsor">
+	      If you find CSrankings useful,<br />
+	      please consider becoming a sponsor.<br />
+	      <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');">
+		<font size="5vw">
+		  Open sponsor page
+		</font>
+	      </button>
+	      <button onclick="">
+		<font size="5vw">
+		  Exit to CSrankings
+		</font>
+	      </button>
+	    </div>
+	  </font>
+	</center>
+      </div>
+    </div>
+    
+    <!-- survey, initially off (activated randomly). -->
+    <div class="overlay" onclick="document.getElementById('overlay-survey').style.display = 'none';" id="overlay-survey" style="display:none">
+      <div class="centerscreen overlaytext">
+	<center>
+	  <font color="white" size="10vw">
+	    <div id="survey">
+	      You have been randomly selected to take a 5-minute
+	      survey on CSrankings for a scientific study.<br />
+	      <button onclick="event.stopPropagation(); window.open('https://umassamherst.co1.qualtrics.com/jfe/form/SV_4YObOmlDUfbh2Cy');">
+	      <!-- <button onclick="event.stopPropagation(); window.open('https://umassamherst.co1.qualtrics.com/jfe/form/SV_4YObOmlDUfbh2Cy');"> <!-- was https://umassamherst.co1.qualtrics.com/jfe/form/SV_4YObOmlDUfbh2Cy -->
+		<font size="5vw">
+		  Take survey
+		</font>
+	      </button>
+	      <button onclick="">
+		<font size="5vw">
+		  Exit to CSrankings
+		</font>
+	      </button>
+	    </div>
+	  </font>
+	</center>
+      </div>
+    </div>
     <div class="container">
       <form id="rankform" name="rankform" action="" method="get" target="_blank">
 	<div class="page-header">
@@ -239,16 +299,21 @@
 		science institutions around the world.
 		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to expand
 		areas or institutions. <b>Click on a name</b> to go to a
-		faculty member's home page. <b>Click on a pie</b> (the
-		<img alt="Piechart" src="png/piechart.png">
-		after a name or institution) to see their
-		publication profile as a pie chart. <b>Click on a
+		faculty member's home page. <b>Click on a chart icon</b> (the
+		<img class="chart_icon" alt="chart icon" src="png/barchart.png">
+		after a name or institution) to see the distribution of
+		their publication areas as a 
+		<select id="charttype">
+			<option value="bar">bar chart</option>
+			<option value="pie">pie chart</option>
+		</select>. <b>Click on a
 		  Google Scholar icon</b>
 		(<img src="scholar-favicon.ico" alt="Google Scholar"
 		      height="10" width="10">) to see publications,
 		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
-		go to a DBLP entry. <br />
-		<b><a href="advice.html">Applying to grad school? Read this first.</a></b>
+		go to a DBLP entry.
+		<em><a href="advice.html">Applying to grad school? Read this first.</a></em>
+		<b>Do you find CSrankings useful? <a href="https://github.com/sponsors/csrankings">Sponsor CSrankings on GitHub</a>.</b>
 	      </p>
 	      <div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -256,27 +321,59 @@
 		  <label for="regions">institutions in</label>
 		  <select id="regions" name="regions">
 		    <optgroup label="by country/region">
-		      <!-- at least 5 institutions in the DB -->
-		      <option value="au">Australia</option>
-		      <option value="at">Austria</option>
+		      <option value="ar">Argentina</option>
+                      <option value="au">Australia</option>
+                      <option value="at">Austria</option>
+		      <option value="bd">Bangladesh</option>
+		      <option value="be">Belgium</option>
 		      <option value="br">Brazil</option>
-		      <option value="ca">Canada</option>
+                      <option value="ca">Canada</option>
+		      <option value="cl">Chile</option>
 		      <option value="cn">China</option>
+		      <option value="co">Colombia</option>
+		      <option value="cy">Cyprus</option>
+		      <option value="cz">Czech Republic</option>
 		      <option value="dk">Denmark</option>
+		      <option value="eg">Egypt</option>
+		      <option value="ee">Estonia</option>
+		      <option value="fi">Finland</option>
 		      <option value="fr">France</option>
 		      <option value="de">Germany</option>
 		      <option value="gr">Greece</option>
 		      <option value="hk">Hong Kong</option>
+		      <option value="hu">Hungary</option>
 		      <option value="in">India</option>
+		      <option value="ir">Iran</option>
+		      <option value="ie">Ireland</option>
 		      <option value="il">Israel</option>
 		      <option value="it">Italy</option>
 		      <option value="jp">Japan</option>
+		      <option value="jo">Jordan</option>
+		      <option value="lb">Lebanon</option>
+		      <option value="lu">Luxembourg</option>
+		      <option value="my">Malaysia</option>
+		      <option value="mt">Malta</option>
 		      <option value="nl">Netherlands</option>
 		      <option value="nz">New Zealand</option>
+		      <option value="no">Norway</option>
+		      <option value="pk">Pakistan</option>
+		      <option value="ph">Philippines</option>
+		      <option value="pl">Poland</option>
+		      <option value="pt">Portugal</option>
+		      <option value="qa">Qatar</option>
+		      <option value="ro">Romania</option>
+		      <option value="ru">Russia</option>
+		      <option value="sa">Saudi Arabia</option>
+		      <option value="sg">Singapore</option>
+		      <option value="za">South Africa</option>
 		      <option value="kr">South Korea</option>
 		      <option value="es">Spain</option>
+		      <option value="se">Sweden</option>"
 		      <option value="ch">Switzerland</option>
+		      <option value="th">Thailand</option>
+		      <option value="tw">Taiwan</option>
 		      <option value="tr">Turkey</option>
+		      <option value="ae">United Arab Emirates</option>
 		      <option value="uk">United Kingdom</option>
 		      <option value="us" selected="selected">USA</option>
 		    </optgroup>
@@ -335,8 +432,8 @@
 		    <option value="2008">2008</option>
 		    <option value="2009">2009</option>
 		    <option value="2010">2010</option>
-		    <option selected="selected" value="2011">2011</option>
-		    <option value="2012">2012</option>
+		    <option value="2011">2011</option>
+		    <option selected="selected" value="2012">2012</option>
 		    <option value="2013">2013</option>
 		    <option value="2014">2014</option>
 		    <option value="2015">2015</option>
@@ -346,6 +443,7 @@
 		    <option value="2019">2019</option>
 		    <option value="2020">2020</option>
 		    <option value="2021">2021</option>
+		    <option value="2022">2022</option>
 		  </select>
 		  <label for="toyear">to</label>
 		  <select id="toyear" name="toyear">
@@ -390,7 +488,8 @@
 		    <option value="2018">2018</option>
 		    <option value="2019">2019</option>
 		    <option value="2020">2020</option>
-		    <option selected="selected" value="2021">2021</option>
+		    <option value="2021">2021</option>
+		    <option selected="selected" value="2022">2022</option>
 		  </select>
 		</div>
 	      </div>
@@ -417,14 +516,14 @@
 		  <thead>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">AI
+			<p class="ai-area">AI
 			  [<a class="area_group_selector" id="ai_areas_off">off</a> | <a class="area_group_selector" id="ai_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 		  
-		  <tbody>
+		  <tbody class="ai-area">
 		    
 		    <tr>
 		      <td>
@@ -535,16 +634,26 @@
 			<span class="hovertip" id="mlmining-widget">
 			  &#9658;
 			</span>
-			Machine learning &amp; data mining
+			Machine learning
 			<div class="table-responsive" style="display:none;" id="mlmining-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
 				<td style="width:100%">
 				  <p class="text-muted" style="font-variant:small-caps;">
-				    <a href="https://www.kdd.org/">acm sigkdd</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
+				    <a href="https://www.kdd.org/">acm sigkdd</a>, <a href="https://iclr.cc/">iclr</a>, <a href="http://www.machinelearning.org/">imls</a>, <a href="https://neurips.cc/">neurips/nips</a>
 				  </p>
 				  <table class="table-sm" style="width:100%;">
+				    <tr>
+				      <td>
+					<label for="iclr">
+					  <a href="https://dblp.org/db/conf/iclr/index.html">ICLR</a>
+					</label>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="iclr" id="iclr" value="1.0"/>
+				      </td>
+				    </tr>
 				    <tr>
 				      <td>
 					<label for="icml">
@@ -557,22 +666,27 @@
 				    </tr>
 				    <tr>
 				      <td>
-					<label for="kdd">
-					  <a href="https://dblp.org/db/conf/kdd/index.html">KDD</a>
-					</label>
-				      </td>
-				      <td align="right">
-					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
-				      </td>
-				    </tr>
-				    <tr>
-				      <td>
 					<label for="nips">
 					  <a href="https://dblp.org/db/conf/nips/index.html">NeurIPS/NIPS</a>
 					</label>
 				      </td>
 				      <td align="right">
 					<input type="checkbox" name="nips" id="nips" value="1.0"/>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td colspan="2">
+					<hr>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>
+					<label for="kdd">
+					  <a href="https://dblp.org/db/conf/kdd/index.html">KDD</a>
+					</label>
+				      </td>
+				      <td align="right">
+					<input type="checkbox" name="kdd" id="kdd" value="1.0"/>
 				      </td>
 				    </tr>
 				  </table>
@@ -648,13 +762,13 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="ir-widget">
+			<span class="hovertip" id="inforet-widget">
 			  &#9658;
 			</span>
-			<label for="ir">
+			<label for="inforet">
 			  The Web &amp; information retrieval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			</label>
-			<div class="table-responsive" style="display:none;" id="ir-conferences">
+			<div class="table-responsive" style="display:none;" id="inforet-conferences">
 			  <table class="table-sm" style="width:100%">
 			    <tbody>
 			      <tr style="width:100%">
@@ -691,7 +805,7 @@
 			</div>
 		      </td>
 		      <td>
-			<input type="checkbox" name="ir" id="ir" value="1.0"/>
+			<input type="checkbox" name="inforet" id="inforet" value="1.0"/>
 		      </td>
 		    </tr>
 
@@ -703,14 +817,14 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">Systems
+			<p class="systems-area">Systems
 			  [<a class="area_group_selector" id="systems_areas_off">off</a> | <a class="area_group_selector" id="systems_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 
-		  <tbody>
+		  <tbody class="systems-area">
 
 		    <tr>
 		      <td>   
@@ -1378,14 +1492,14 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">Theory
+			<p class="theory-area">Theory
 			  [<a class="area_group_selector" id="theory_areas_off">off</a> | <a class="area_group_selector" id="theory_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 
-		  <tbody>
+		  <tbody class="theory-area">
 
 		    <tr>
 		      <td>
@@ -1527,14 +1641,14 @@
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
 		      <th colspan="2">
-			<p class="text-muted">Interdisciplinary Areas
+			<p class="interdisciplinary-area">Interdisciplinary Areas
 			  [<a class="area_group_selector" id="other_areas_off">off</a> | <a class="area_group_selector" id="other_areas_on">on</a>]
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 
-		  <tbody>
+		  <tbody class="interdisciplinary-area">
 
 		    <tr>
 		      <td>
@@ -1610,6 +1724,21 @@
 					<input type="checkbox" name="siggraph-asia" id="siggraph-asia" value="1.0"/>
 				      </td>
 				    </tr>
+
+				    <tr>
+						<td colspan="2">
+					  <hr>
+						</td>
+					  </tr>
+					  <tr>
+						<td>
+					  <a href="https://dblp.org/db/conf/eurographics/index.html">EUROGRAPHICS</a>
+						</td>
+						<td align="right">
+					  <input type="checkbox" name="eurographics" id="eurographics" value="1.0"/>
+						</td>
+					  </tr>
+
 				  </table>
 				</td>
 			      </tr>
@@ -1822,10 +1951,6 @@
 	    
 	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div id="success">
-		<strong><h3>Loading and processing data</h3>
-		  <div id="progress">
-		  </div>
-		</strong>
 	      </div>
 	    </div>
 	    
@@ -1864,7 +1989,7 @@
 	    </p>
 
 	    <p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated monthly; last update August 9, 2021). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (updated quarterly; last update December 4, 2022). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

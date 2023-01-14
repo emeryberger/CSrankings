@@ -8,9 +8,8 @@
 
 /// <reference path="./typescript/he/index.d.ts" />
 /// <reference path="./typescript/jquery.d.ts" />
+/// <reference path="./typescript/vega-embed.d.ts" />
 /// <reference path="./typescript/papaparse.d.ts" />
-/// <reference path="./typescript/d3.d.ts" />
-/// <reference path="./typescript/d3pie.d.ts" />
 /// <reference path="./typescript/navigo.d.ts" />
 /// <reference path="./typescript/continents.d.ts" />
 
@@ -76,9 +75,8 @@ interface AreaMap {
 };
 
 interface ChartData {
-    readonly label: string;
+    readonly area: string;
     readonly value: number;
-    readonly color: string;
 };
 
 class CSRankings {
@@ -89,7 +87,7 @@ class CSRankings {
     public static readonly areas: Array<string> = [];
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
-    public static readonly regions: Array<string> = ["us", "europe", "ca", "northamerica", "southamerica", "australasia", "asia", "africa", "world"]
+    public static readonly regions: Array<string> = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae","ar","at","au","bd","be","br","ca","ch","cl","cn","co","cy","cz","de","dk","ee","eg","es","fi","fr","gr","hk","hu","ie","il","in","ir","it","jo","jp","kr","lb","lu","mt","my","nl","no","nz","ph","pk","pl","pt","qa","ro","ru","sa","se","sg","th","tr","tw","uk","za"];
     private static readonly nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 
     private note: { [name: string]: string } = {};
@@ -99,7 +97,7 @@ class CSRankings {
     // We have scrolled: increase the number we rank.
     public static updateMinimum(obj: any): number {
         if (CSRankings.minToRank <= 500) {
-            let t = obj.scrollTop;
+            const t = obj.scrollTop;
             CSRankings.minToRank = 5000;
             CSRankings.getInstance().rank();
             return t;
@@ -127,8 +125,10 @@ class CSRankings {
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
 
-        /* Build the areaDict dictionary: areas -> names used in pie charts
-           and areaPosition dictionary: areas -> position in area array
+        /* Build dictionaries:
+	   areaDict: areas -> names used in pie charts
+           areaPosition: areas -> position in area array
+	   subareas: subareas -> areas (e.g., "Vision" -> "ai")
         */
         for (let position = 0; position < this.areaMap.length; position++) {
             const { area, title } = this.areaMap[position];
@@ -144,21 +144,36 @@ class CSRankings {
             this.areaDict[area] = title; // this.areaNames[position];
             this.areaPosition[area] = position;
         }
-        for (let area of this.aiAreas) {
+	const subareaList = [
+            ...this.aiAreas.map(key =>
+                ({[this.areaDict[key]] : "ai" })),
+            ...this.systemsAreas.map(key =>
+                ({[this.areaDict[key]] : "systems"})),
+            ...this.theoryAreas.map(key =>
+                ({[this.areaDict[key]] : "theory"})),
+            ...this.interdisciplinaryAreas.map(key =>
+                ({[this.areaDict[key]] : "interdisciplinary"})),
+        ];
+	for (const item of subareaList) {
+	    for (const key in item) {
+	    	this.subareas[key] = item[key];
+	    }
+	}
+        for (const area of this.aiAreas) {
             this.aiFields.push(this.areaPosition[area]);
         }
-        for (let area of this.systemsAreas) {
+        for (const area of this.systemsAreas) {
             this.systemsFields.push(this.areaPosition[area]);
         }
-        for (let area of this.theoryAreas) {
+        for (const area of this.theoryAreas) {
             this.theoryFields.push(this.areaPosition[area]);
         }
-        for (let area of this.interdisciplinaryAreas) {
+        for (const area of this.interdisciplinaryAreas) {
             this.otherFields.push(this.areaPosition[area]);
         }
         let parentCounter = 0;
-        for (let child in CSRankings.parentMap) {
-            let parent = CSRankings.parentMap[child];
+        for (const child in CSRankings.parentMap) {
+            const parent = CSRankings.parentMap[child];
             if (!(parent in CSRankings.childMap)) {
                 CSRankings.childMap[parent] = [child];
                 CSRankings.parentIndex[parent] = parentCounter;
@@ -186,6 +201,41 @@ class CSRankings {
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
+	    // We've finished loading; remove the overlay.
+	    document!.getElementById("overlay-loading")!.style.display = "none";
+	    // Randomly display a survey.
+	    const surveyFrequency = 10; // One out of this many users gets the survey (on average).
+	    // Check to see if survey has already been displayed.
+	    let displaySurvey = false;
+	    // Keep the cookie for backwards compatibility (for now).
+	    let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
+		localStorage.getItem('surveyDisplayed');
+	    // DISABLE SURVEY (remove the next line to re-enable)
+	    shownAlready = 'disabled';
+            if (!shownAlready) {
+		// Not shown yet.
+		const randomValue = Math.floor(Math.random() * surveyFrequency);
+		displaySurvey = (randomValue == 0);
+		if (displaySurvey) {
+		    localStorage.setItem('surveyDisplayed', 'true');
+		    // Now reveal the survey.
+	            document!.getElementById("overlay-survey")!.style.display = "block";
+		}
+            }
+	    // Randomly display a sponsorship request.
+	    // In the future, tie to amount of use of the site, a la Wikipedia.
+	    const sponsorshipFrequency = 20; // One out of this many users gets the sponsor page (on average).
+	    // Check to see if the sponsorship page has already been displayed.
+            if (!localStorage.getItem('sponsorshipDisplayed')) {
+		// Not shown yet.
+		const randomValue = Math.floor(Math.random() * sponsorshipFrequency);
+		const displaySponsor = (randomValue == 0);
+		if (!displaySurvey && displaySponsor) { // Only show if we have not shown the survey page as well.
+		    localStorage.setItem('sponsorshipDisplayed', 'true');
+		    // Now reveal the sponsorship page.
+	            document!.getElementById("overlay-sponsor")!.style.display = "block";
+		}
+	    }
         })();
     }
 
@@ -197,7 +247,7 @@ class CSRankings {
     private readonly turingImage = "./png/acm-turing-award.png";
     private readonly acmfellowFile = "./acm-fellows.csv";
     private readonly acmfellowImage = "./png/acm.png";
-    private readonly homepageImage = "./house-logo.png";
+    private readonly homepageImage = "./png/house-logo.png";
 
     private readonly allowRankingChange = false;   /* Can we change the kind of rankings being used? */
 
@@ -211,13 +261,14 @@ class CSRankings {
             'eccv': 'vision',
             'iccv': 'vision',
             'icml': 'mlmining',
+	    'iclr': 'mlmining',
             'kdd': 'mlmining',
             'nips': 'mlmining',
             'acl': 'nlp',
             'emnlp': 'nlp',
             'naacl': 'nlp',
-            'sigir': 'ir',
-            'www': 'ir',
+            'sigir': 'inforet',
+            'www': 'inforet',
             'asplos': 'arch',
             'isca': 'arch',
             'micro': 'arch',
@@ -261,6 +312,7 @@ class CSRankings {
             'sigcomm': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
+            'eurographics': 'graph', // next tier
             'focs': 'act',
             'soda': 'act',
             'stoc': 'act',
@@ -292,10 +344,12 @@ class CSRankings {
             'ndss': true, // for now
             'pets': true,
             'eurosys': true,
+	    'eurographics': true,
             'fast': true,
             'usenixatc': true,
             'icfp': true,
-            'oopsla': true
+            'oopsla': true,
+	    'kdd': true,
         };
 
     public static readonly childMap: { [key: string]: [string] } = {};
@@ -322,12 +376,13 @@ class CSRankings {
         { area: "mlmining", title: "ML" },
         { area: "icml", title: "ML" },
         { area: "kdd", title: "ML" },
+        { area: "iclr", title: "ML" },
         { area: "nips", title: "ML" },
         { area: "nlp", title: "NLP" },
         { area: "acl", title: "NLP" },
         { area: "emnlp", title: "NLP" },
         { area: "naacl", title: "NLP" },
-        { area: "ir", title: "Web+IR" },
+        { area: "inforet", title: "Web+IR" },
         { area: "sigir", title: "Web+IR" },
         { area: "www", title: "Web+IR" },
         { area: "arch", title: "Arch" },
@@ -389,6 +444,7 @@ class CSRankings {
         { area: "graph", title: "Graphics" },
         { area: "siggraph", title: "Graphics" },
         { area: "siggraph-asia", title: "Graphics" },
+        { area: "eurographics", title: "Graphics" },
         { area: "chi", title: "HCI" },
         { area: "chiconf", title: "HCI" },
         { area: "ubicomp", title: "HCI" },
@@ -416,10 +472,10 @@ class CSRankings {
             //,{ area : "cse", title : "CSEd" }
         ];
 
-    private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
-    private readonly systemsAreas = ["arch", "comm", "sec", "mod", "hpc", "mobile", "metrics", "ops", "plan", "soft", "da", "bed"];
+    private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
+    private readonly systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
     private readonly theoryAreas = ["act", "crypt", "log"];
-    private readonly interdisciplinaryAreas = ["graph", "chi", "robotics", "bio", "visualization", "ecom"];
+    private readonly interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
 
     private readonly areaNames: Array<string> = [];
     private readonly fields: Array<string> = [];
@@ -433,6 +489,9 @@ class CSRankings {
 
     /* Map area to its position in the list. */
     private readonly areaPosition: { [key: string]: number } = {};
+
+    /* Map subareas to their areas. */
+    private readonly subareas: { [key: string]: string } = {};
 
     /* Map names to Google Scholar IDs. */
     private readonly scholarInfo: { [key: string]: string } = {};
@@ -474,14 +533,17 @@ class CSRankings {
 
     private areaStringMap: { [key: string]: string } = {}; // name -> areaString (memoized)
 
-    /* Colors for all areas. */
-    private readonly color: Array<string> =
-        ["#f30000", "#0600f3", "#00b109", "#14e4b4", "#0fe7fb", "#67f200", "#ff7e00", "#8fe4fa", "#ff5300", "#640000", "#3854d1", "#d00ed8", "#7890ff", "#01664d", "#04231b", "#e9f117", "#f3228e", "#7ce8ca", "#ff5300", "#ff5300", "#7eff30", "#9a8cf6", "#79aff9", "#bfbfbf", "#56b510", "#00e2f6", "#ff4141", "#61ff41"];
+    private usePieChart: boolean = false;
 
+    /* Colors. */
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
-    private readonly PieChart = "<img alt='closed piechart' src='png/piechart.png'>"; // pie chart image
-    private readonly OpenPieChart = "<img alt='opened piechart' src='png/piechart-open.png'>"; // opened pie chart image
+    private readonly BarChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/barchart.png'>"; // bar chart image
+    private readonly OpenBarChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/barchart-open.png'>"; // opened bar chart image
+    private readonly PieChartIcon = "<img class='closed_chart_icon chart_icon' alt='closed chart' src='png/piechart.png'>";
+    private readonly OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart-open.png'>";
+    private ChartIcon = this.BarChartIcon;
+    private OpenChartIcon = this.OpenBarChartIcon;
 
     private translateNameToDBLP(name: string): string {
 	// Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -494,29 +556,10 @@ class CSRankings {
 	name = he.encode(name, { 'useNamedReferences' : true, 'allowUnsafeSymbols' : true });
 	name = name.replace(/&/g, "=");
 	name = name.replace(/;/g, "=");
-	if (false) {
-	    name = name.replace(/Á/g, "=Aacute=");
-	    name = name.replace(/á/g, "=aacute=");
-	    name = name.replace(/è/g, "=egrave=");
-	    name = name.replace(/é/g, "=eacute=");
-	    name = name.replace(/í/g, "=iacute=");
-	    name = name.replace(/ï/g, "=iuml=");
-	    name = name.replace(/ó/g, "=oacute=");
-	    name = name.replace(/Ç/g, "=Ccedil=");
-	    name = name.replace(/ç/g, "=ccedil=");
-	    name = name.replace(/ä/g, "=auml=");
-	    name = name.replace(/ö/g, "=ouml=");
-	    name = name.replace(/ø/g, "=oslash=");
-	    name = name.replace(/Ö/g, "=Ouml=");
-	    name = name.replace(/Ü/g, "=Uuml=");
-	    name = name.replace(/ü/g, "=uuml=");
-	    name = name.replace(/ß/g, "=szlig=");
-	    name = name.replace(/ý/g, "=yacute=");
-	}
 	
 	let splitName = name.split(" ");
 	let lastName = splitName[splitName.length - 1];
-	let disambiguation = ""
+	let disambiguation = "";
 	if (parseInt(lastName) > 0) {
             // this was a disambiguation entry; go back.
             disambiguation = lastName;
@@ -530,7 +573,7 @@ class CSRankings {
 	newName = encodeURIComponent(newName);
 	let str = "https://dblp.org/pers/hd";
 	const lastInitial = lastName[0].toLowerCase();
-	str += "/" + lastInitial + "/" + lastName + ":" + newName;
+	str += `/${lastInitial}/${lastName}:${newName}`;
 	return str;
     }
 
@@ -555,12 +598,12 @@ class CSRankings {
     }
 
     private static stddev(n: Array<number>): number {
-        let avg = CSRankings.average(n);
-        let squareDiffs = n.map(function(value) {
-            let diff = value - avg;
+        const avg = CSRankings.average(n);
+        const squareDiffs = n.map(function(value) {
+            const diff = value - avg;
             return (diff * diff);
         });
-        let sigma = Math.sqrt(CSRankings.sum(squareDiffs) / (n.length - 1));
+        const sigma = Math.sqrt(CSRankings.sum(squareDiffs) / (n.length - 1));
         return sigma;
     }
 
@@ -591,7 +634,7 @@ class CSRankings {
             //	    if (key in CSRankings.nextTier) {
             //		continue;
             //	    }
-            let value = this.authorAreas[name][key];
+            const value = this.authorAreas[name][key];
             if (key in CSRankings.parentMap) {
                 key = this.areaDict[key];
             }
@@ -605,10 +648,10 @@ class CSRankings {
         }
         // Now compute the standard deviation.
         let values: Array<number> = [];
-        for (let key in datadict) {
+        for (const key in datadict) {
             values.push(datadict[key]);
         }
-        let sum = CSRankings.sum(values);
+        const sum = CSRankings.sum(values);
         let stddevs = 0.0;
         if (values.length > 1) {
             stddevs = Math.ceil(numStddevs * CSRankings.stddev(values));
@@ -617,7 +660,7 @@ class CSRankings {
         // standard deviations of the max and not crossing the
         // publication threshold.
         let maxes: Array<string> = [];
-        for (let key in datadict) {
+        for (const key in datadict) {
             if ((datadict[key] >= maxValue - stddevs) &&
                 ((1.0 * datadict[key]) / sum >= pubThreshold) &&
                 (datadict[key] > minPubThreshold)) {
@@ -625,11 +668,11 @@ class CSRankings {
             }
         }
         // Finally, pick at most the top N.
-        let str = maxes.sort((x, y) => { return datadict[y] - datadict[x]; }).slice(0, topN).join(",");
+        const areaList = maxes.sort((x, y) => { return datadict[y] - datadict[x]; }).slice(0, topN);
         // Cache the result.
-        this.areaStringMap[name] = str;
+        this.areaStringMap[name] = areaList.map(n => `<span class="${this.subareas[n]}-area">${n}</span>`).join(",");
         // Return it.
-        return str;
+        return this.areaStringMap[name];
     }
 
 
@@ -655,12 +698,26 @@ class CSRankings {
         return 0;
     }
 
-    /* Create a pie chart */
-    private makeChart(name: string): void {
+    /* Create a bar or pie chart using Vega. Modified by Minsuk Kahng (https://minsuk.com) */
+    private makeChart(name: string, isPieChart: boolean): void {
         let data: Array<ChartData> = [];
         let datadict: { [key: string]: number } = {};
         const keys = CSRankings.topTierAreas;
         const uname = unescape(name);
+
+        // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
+        const areas = [
+            ...this.aiAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#377eb8"})),
+            ...this.systemsAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#ff7f00"})),
+            ...this.theoryAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#4daf4a"})),
+            ...this.interdisciplinaryAreas.map(key =>
+                ({key: key, label: this.areaDict[key], color: "#984ea3"}))
+        ];
+        areas.forEach(area => datadict[area.key] = 0);
+
         for (let key in keys) { // i = 0; i < keys.length; i++) {
             //	    let key = keys[i];
             if (!(uname in this.authorAreas)) {
@@ -671,7 +728,8 @@ class CSRankings {
             //	    if (key in CSRankings.nextTier) {
             //		continue;
             //	    }
-            let value = this.authorAreas[uname][key];
+            // Round it to the nearest 0.1.
+            const value = Math.round(this.authorAreas[uname][key] * 10) / 10;
 
             // Use adjusted count if this is for a department.
             /*
@@ -684,118 +742,142 @@ class CSRankings {
               }
               }
             */
-            // Round it to the nearest 0.1.
-            value = Math.round(value * 10) / 10;
             if (value > 0) {
                 if (key in CSRankings.parentMap) {
                     key = CSRankings.parentMap[key];
                 }
-                if (!(key in datadict)) {
-                    datadict[key] = 0;
-                }
                 datadict[key] += value;
             }
         }
-        for (let key in datadict) {
-            let newSlice = {
-                "label": this.areaDict[key],
-                "value": Math.round(datadict[key] * 10) / 10,
-                "color": this.color[CSRankings.parentIndex[key]]
+
+        let valueSum = 0;
+        areas.forEach(area => {
+            valueSum += datadict[area.key];
+        });
+        areas.forEach((area, index) => {
+            const newSlice = {
+                index: index,
+                area: this.areaDict[area.key],
+                value: Math.round(datadict[area.key] * 10) / 10,
+                ratio: datadict[area.key] / valueSum
             };
             data.push(newSlice);
-        }
-        new d3pie(name + "-chart", {
-            "header": {
-                "title": {
-                    "text": uname,
-                    "fontSize": 24,
-                    "font": "open sans"
-                },
-                "subtitle": {
-                    "text": "Publication Profile",
-                    "color": "#999999",
-                    "fontSize": 14,
-                    "font": "open sans"
-                },
-                "titleSubtitlePadding": 9
-            },
-            "size": {
-                "canvasHeight": 500,
-                "canvasWidth": 500,
-                "pieInnerRadius": "38%",
-                "pieOuterRadius": "83%"
-            },
-            "data": {
-                "content": data,
-                "smallSegmentGrouping": {
-                    "enabled": true,
-                    "value": 1
-                },
-            },
-            "labels": {
-                "outer": {
-                    "pieDistance": 32
-                },
-                "inner": {
-                    //"format": "percentage", // "value",
-                    //"hideWhenLessThanPercentage": 0 // 2 // 100 // 2
-                    "format": "value",
-                    "hideWhenLessThanPercentage": 5 // 100 // 2
-                },
-                "mainLabel": {
-                    "fontSize": 10.5
-                },
-                "percentage": {
-                    "color": "#ffffff",
-                    "decimalPlaces": 0
-                },
-                "value": {
-                    "color": "#ffffff", // "#adadad",
-                    "fontSize": 10
-                },
-                "lines": {
-                    "enabled": true
-                },
-                "truncation": {
-                    "enabled": true
-                }
-            },
-            "effects": {
-                "load": {
-                    "effect": "none"
-                },
-                "pullOutSegmentOnClick": {
-                    "effect": "linear",
-                    "speed": 400,
-                    "size": 8
-                }
-            },
-            "misc": {
-                "gradient": {
-                    "enabled": true,
-                    "percentage": 100
-                }
-            }
+
+            area.label = this.areaDict[area.key];
         });
+
+        const colors = areas.sort((a, b) => 
+            a.label > b.label ? 1 : (a.label < b.label ? -1 : 0)
+            ).map(area => area.color);
+
+        const vegaLiteBarChartSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            data: {
+                values: data
+            },
+            mark: "bar",
+            encoding: {
+                x: {
+                    field: "area",
+                    type: "nominal",
+                    sort: null,
+                    axis: {title: null}
+                },
+                y: {
+                    field: "value",
+                    type: "quantitative",
+                    axis: {title: null}
+                },
+                tooltip: [
+                    {"field": "area", "type": "nominal", "title": "Area"},
+                    {"field": "value", "type": "quantitative", "title": "Count"}
+                ],
+                color: {
+                    field: "area",
+                    type: "nominal",
+                    scale: {"range": colors},
+                    legend: null
+                }
+            },
+            width: 420,
+            height: 80,
+            padding: {left: 25, top: 3}
+        };
+
+        const vegaLitePieChartSpec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+            data: {
+                values: data
+            },
+            encoding: {
+                theta: {
+                    field: "value",
+                    type: "quantitative",
+                    stack: true
+                },
+                color: {
+                    field: "area",
+                    type: "nominal",
+                    scale: {"range": colors},
+                    legend: null
+                },
+                order: {field: "index"},
+                tooltip: [
+                    {field: "area", type: "nominal", title: "Area"},
+                    {field: "value", type: "quantitative", title: "Count"},
+                    {field: "ratio", type: "quantitative", title: "Ratio", format: ".1%"}
+                ]
+            },
+            layer: [
+                {
+                    mark: {type: "arc", outerRadius: 90, stroke: "#fdfdfd", strokeWidth: 1}
+                },
+                {
+                    mark: {type: "text", radius: 108, dy: -3},
+                    encoding: {
+                        text: {field: "area", type: "nominal"},
+                        color: {
+                            condition: {test: "datum.ratio < 0.03", value: "rgba(255, 255, 255, 0)"},
+                            field: "area",
+                            type: "nominal",
+                            scale: {"range": colors}
+                        }
+                    }
+                },
+                {
+                    mark: {type: "text", radius: 108, fontSize: 9, dy: 7},
+                    encoding: {
+                        text: {field: "value", type: "quantitative"},
+                        color: {
+                            condition: {test: "datum.ratio < 0.03", value: "rgba(255, 255, 255, 0)"},
+                            field: "area",
+                            type: "nominal",
+                            scale: {"range": colors}
+                        }
+                    }
+                }
+            ],
+            width: 400,
+            height: 250,
+            padding: {left: 25, top: 3}
+        };
+        
+        vegaEmbed(`div[id="${name}-chart"]`, 
+            isPieChart ? vegaLitePieChartSpec : vegaLiteBarChartSpec,
+            {actions: false}
+        );
     }
 
     private displayProgress(step: number) {
-        let msgs = ["Initializing.",
+        const msgs = ["Initializing.",
             "Loading author information.",
             "Loading publication data.",
             "Computing ranking."];
-        let s = "";
-        let count = 1;
-        msgs.map((elem) => {
-            if (count == step) {
-                s += "<strong>" + elem + "</strong>";
-            } else {
-                s += "<font color='gray'>" + elem + "</font>";
-            }
-            s += "<br />";
-            count += 1;
-        });
-        document.querySelector("#progress")!.innerHTML = s;
+	const s = `<strong>${msgs[step-1]}</strong><br />`;
+        const progress = document.querySelector("#progress");
+	if (progress) {
+	   progress!.innerHTML = s;
+	}
     }
 
     private async loadTuring(turing: { [key: string]: number }): Promise<void> {
@@ -809,7 +891,7 @@ class CSRankings {
             });
         });
         const d = data as Array<Turing>;
-        for (let turingPair of d) {
+        for (const turingPair of d) {
             turing[turingPair.name] = turingPair.year;
         }
     }
@@ -825,7 +907,7 @@ class CSRankings {
             });
         });
         const d = data as Array<ACMFellow>;
-        for (let acmfellowPair of d) {
+        for (const acmfellowPair of d) {
             acmfellow[acmfellowPair.name] = acmfellowPair.year;
         }
     }
@@ -842,7 +924,7 @@ class CSRankings {
             });
         });
         const ci = data as Array<CountryInfo>;
-        for (let info of ci) {
+        for (const info of ci) {
             countryInfo[info.institution] = info.region;
             countryAbbrv[info.institution] = info.countryabbrv;
         }
@@ -862,7 +944,7 @@ class CSRankings {
         for (let counter = 0; counter < ai.length; counter++) {
             const record = ai[counter];
             let name = record['name'].trim();
-            let result = name.match(CSRankings.nameMatcher);
+            const result = name.match(CSRankings.nameMatcher);
             if (result) {
                 name = result[1].trim();
                 this.note[name] = result[2];
@@ -893,31 +975,6 @@ class CSRankings {
         switch (regions) {
             case "us":
                 if (dept in this.countryInfo) {
-                    return false;
-                }
-                break;
-            case "at":
-            case "au":
-            case "br":
-            case "ca":
-            case "ch":
-            case "cn":
-            case "de":
-            case "dk":
-            case "es":
-            case "fr":
-            case "gr":
-            case "hk":
-            case "il":
-            case "in":
-            case "it":
-            case "jp":
-            case "kr":
-            case "nl":
-            case "nz":
-            case "tr":
-            case "uk":
-                if (this.countryAbbrv[dept] != regions) {
                     return false;
                 }
                 break;
@@ -968,6 +1025,11 @@ class CSRankings {
                 break;
             case "world":
                 break;
+	    default:
+                if (this.countryAbbrv[dept] != regions) {
+                    return false;
+                }
+                break;
         }
         return true;
     }
@@ -976,14 +1038,14 @@ class CSRankings {
         fields: Array<number>): boolean {
         for (let i = 0; i < fields.length; i++) {
             const item = this.fields[fields[i]];
-            const str = "input[name=" + item + "]";
+            const str = `input[name=${item}]`;
             $(str).prop('checked', value);
             if (item in CSRankings.childMap) {
                 // It's a parent.
                 $(str).prop('disabled', false);
                 // Activate / deactivate all children as appropriate.
                 CSRankings.childMap[item].forEach((k) => {
-                    const str = 'input[name=' + k + ']';
+                    const str = `input[name=${k}]`;
                     if (k in CSRankings.nextTier) {
                         $(str).prop('checked', false);
                     } else {
@@ -1024,17 +1086,17 @@ class CSRankings {
     private countAuthorAreas(): void {
         const startyear = parseInt($("#fromyear").find(":selected").text());
         const endyear = parseInt($("#toyear").find(":selected").text());
-        this.authorAreas = {}
-        for (let r in this.authors) {
-            let { area } = this.authors[r];
+        this.authorAreas = {};
+        for (const r in this.authors) {
+            const { area } = this.authors[r];
             if (area in CSRankings.nextTier) {
                 continue;
             }
-            let { year } = this.authors[r];
+            const { year } = this.authors[r];
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            let { name, dept, count } = this.authors[r];
+            const { name, dept, count } = this.authors[r];
             /*
               DISABLING weight selection so all pie charts look the
               same regardless of which areas are currently selected:
@@ -1046,7 +1108,7 @@ class CSRankings {
             const theCount = parseFloat(count);
             if (!(name in this.authorAreas)) {
                 this.authorAreas[name] = {};
-                for (let area in this.areaDict) {
+                for (const area in this.areaDict) {
                     if (this.areaDict.hasOwnProperty(area)) {
                         this.authorAreas[name][area] = 0;
                     }
@@ -1054,7 +1116,7 @@ class CSRankings {
             }
             if (!(dept in this.authorAreas)) {
                 this.authorAreas[dept] = {};
-                for (let area in this.areaDict) {
+                for (const area in this.areaDict) {
                     if (this.areaDict.hasOwnProperty(area)) {
                         this.authorAreas[dept][area] = 0;
                     }
@@ -1075,13 +1137,13 @@ class CSRankings {
         facultycount: { [key: string]: number },
         facultyAdjustedCount: { [key: string]: number }): void {
         /* contains an author name if that author has been processed. */
-        let visited: { [key: string]: boolean } = {};
-        for (let r in this.authors) {
+        const visited: { [key: string]: boolean } = {};
+        for (const r in this.authors) {
             if (!this.authors.hasOwnProperty(r)) {
                 continue;
             }
-            let auth = this.authors[r];
-            let dept = auth.dept;
+            const auth = this.authors[r];
+            const dept = auth.dept;
             //	    if (!(dept in regionMap)) {
             if (!this.inRegion(dept, regions)) {
                 continue;
@@ -1090,14 +1152,14 @@ class CSRankings {
             if (weights[area] === 0) {
                 continue;
             }
-            let year = auth.year;
+            const year = auth.year;
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
             if (typeof dept === 'undefined') {
                 continue;
             }
-            let name = auth.name;
+            const name = auth.name;
             // If this area is a child area, accumulate totals for parent.
             if (area in CSRankings.parentMap) {
                 area = CSRankings.parentMap[area];
@@ -1131,13 +1193,13 @@ class CSRankings {
         numAreas: number,
         weights: { [key: string]: number }) {
         this.stats = {};
-        for (let dept in deptNames) {
+        for (const dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
             }
             this.stats[dept] = 1;
-            for (let area in CSRankings.topLevelAreas) {
-                let areaDept = area + dept;
+            for (const area in CSRankings.topLevelAreas) {
+                const areaDept = area + dept;
                 if (!(areaDept in this.areaDeptAdjustedCount)) {
                     this.areaDeptAdjustedCount[areaDept] = 0;
                 }
@@ -1156,8 +1218,8 @@ class CSRankings {
     private updateWeights(weights: { [key: string]: number }): number {
         let numAreas = 0;
         for (let ind = 0; ind < CSRankings.areas.length; ind++) {
-            let area = CSRankings.areas[ind];
-            weights[area] = $('input[name=' + this.fields[ind] + ']').prop('checked') ? 1 : 0;
+            const area = CSRankings.areas[ind];
+            weights[area] = $(`input[name=${this.fields[ind]}]`).prop('checked') ? 1 : 0;
             if (weights[area] === 1) {
                 if (area in CSRankings.parentMap) {
                     // Don't count children.
@@ -1177,7 +1239,7 @@ class CSRankings {
         : { [key: string]: string } {
         let univtext: { [key: string]: string } = {};
 
-        for (let dept in deptNames) {
+        for (const dept in deptNames) {
             if (!deptNames.hasOwnProperty(dept)) {
                 continue;
             }
@@ -1189,7 +1251,7 @@ class CSRankings {
                 + '</small></td></thead><tbody>';
             /* Build a dict of just faculty from this department for sorting purposes. */
             let fc: { [key: string]: number } = {};
-            for (let name of deptNames[dept]) {
+            for (const name of deptNames[dept]) {
                 fc[name] = facultycount[name];
             }
             let keys = Object.keys(fc);
@@ -1197,7 +1259,7 @@ class CSRankings {
                 if (fc[b] === fc[a]) {
                     return this.compareNames(a, b);
                     /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                            let fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                            const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
                             if (fb === fa) {
                             return this.compareNames(a, b);
                             }
@@ -1206,48 +1268,36 @@ class CSRankings {
                     return fc[b] - fc[a];
                 }
             });
-            for (let name of keys) {
+            for (const name of keys) {
 
-                let homePage = encodeURI(this.homepages[name]);
-                let dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
+                const homePage = encodeURI(this.homepages[name]);
+                const dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
 
                 p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                    + '<a title="Click for author\'s home page." target="_blank" href="'
-                    + homePage
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + homePage
-                    + '\', true); return false;"'
-                    + '>'
-                    + name
-                    + '</a>&nbsp;';
+                    + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                    + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                    + `>${name}</a>&nbsp;`;
                 if (this.note.hasOwnProperty(name)) {
                     const url = CSRankings.noteMap[this.note[name]];
-                    const href = '<a href="' + url + '">';
-                    p += '<span class="note" title="Note">[' + href + this.note[name] + '</a>' + ']</span>&nbsp;';
+                    const href = `<a href="${url}">`;
+                    p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
                 }
                 if (this.acmfellow.hasOwnProperty(name)) {
-                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="` +
-                        this.acmfellowImage + '"></span>&nbsp;';
+                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="${this.acmfellowImage}"></span>&nbsp;`;
                 }
                 if (this.turing.hasOwnProperty(name)) {
-                    p += '<span title="Turing Award"><img alt="Turing Award" src="' +
-                        this.turingImage + '"></span>&nbsp;';
+                    p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
                 }
-                p += '<span class="areaname">' + this.areaString(name).toLowerCase() + '</span>&nbsp;';
+                p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
 
-                p += '<a title="Click for author\'s home page." target="_blank" href="'
-                    + homePage
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + homePage
-                    + '\', true); return false;"'
+                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                    + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
                     + '>'
-                    + '<img alt=\"Home page\" src=\"' + this.homepageImage + '\"></a>&nbsp;';
+                    + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
 
                 if (this.scholarInfo.hasOwnProperty(name)) {
                     if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
-                        let url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
+                        const url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
                         p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
                             + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
                     }
@@ -1257,25 +1307,18 @@ class CSRankings {
                 p += '<img alt="DBLP" src="dblp.png">'
                     + '</a>';
 
-                p += `<span onclick='csr.toggleChart("${escape(name)}");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += "<span class='piechart'>" + this.PieChart + "</span></span>"
+                p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+                p += this.ChartIcon + "</span>"
                     + '</small>'
                     + '</td><td align="right"><small>'
-                    + '<a title="Click for author\'s DBLP entry." target="_blank" href="'
-                    + dblpName
-                    + '" '
-                    + 'onclick="trackOutboundLink(\''
-                    + dblpName
-                    + '\', true); return false;"'
-                    + '>'
-                    + fc[name]
-                    + '</a>'
+                    + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
+                    + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
                     + "</small></td>"
                     + '<td align="right"><small>'
                     + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
                     + "</small></td></tr>"
                     + "<tr><td colspan=\"4\">"
-                    + '<div class="csr-piechart" id="' + escape(name) + "-chart" + '">'
+                    + `<div class="csr-chart" id="${escape(name)}-chart">`
                     + '</div>'
                     + "</td></tr>"
                     ;
@@ -1310,12 +1353,12 @@ class CSRankings {
             let oldv = 9999999.999;     /* old number - to track ties */
             /* Sort the university aggregate count from largest to smallest. */
             // First, round the stats.
-            for (let k in this.stats) {
+            for (const k in this.stats) {
                 const v = Math.round(10.0 * this.stats[k]) / 10.0;
                 this.stats[k] = v;
             }
             // Now sort them,
-            let keys2 = this.sortIndex(this.stats);
+            const keys2 = this.sortIndex(this.stats);
             /* Display rankings until we have shown `minToRank` items or
                while there is a tie (those all get the same rank). */
             for (let ind = 0; ind < keys2.length; ind++) {
@@ -1342,7 +1385,7 @@ class CSRankings {
                 s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
                 s += "</td>";
                 s += "<td>"
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleFaculty('" + esc + "');\" id=\"" + esc + "-widget\">"
+                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget">`
                     + this.RightTriangle
                     + "</span>";
 
@@ -1351,19 +1394,19 @@ class CSRankings {
                     abbrv = countryAbbrv[dept];
                 }
 
-                s += "&nbsp;" + dept + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
-                    + "<span class=\"hovertip\" onclick=\"csr.toggleChart('" + esc + "');\" id=\"" + esc + "-chartwidget\">"
-                    + this.PieChart + "</span>";
+                s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
+		  + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
+                    + this.ChartIcon + "</span>";
                 s += "</td>";
 
-                s += '<td align="right">' + (Math.round(10.0 * v) / 10.0).toFixed(1) + "</td>";
-                s += '<td align="right">' + deptCounts[dept]; /* number of faculty */
+                s += `<td align="right">${(Math.round(10.0 * v) / 10.0).toFixed(1)}</td>`;
+                s += `<td align="right">${deptCounts[dept]}`; /* number of faculty */
                 s += "</td>";
                 s += "</tr>\n";
                 // style="width: 100%; height: 350px;" 
-                s += '<tr><td colspan="4"><div class="csr-piechart" id="'
-                    + esc + '-chart">' + '</div></td></tr>';
-                s += '<tr><td colspan="4"><div style="display:none;" id="' + esc + '-faculty">' + univtext[dept] + '</div></td></tr>';
+                s += `<tr><td colspan="4"><div class="csr-chart" id="${esc}-chart"></div></td></tr>`;
+                s += `<tr><td colspan="4"><div style="display:none;" id="${esc}-faculty">${univtext[dept]}</div></td></tr>`;
                 ties++;
                 oldv = v;
             }
@@ -1391,7 +1434,7 @@ class CSRankings {
     private setAllOn(value: boolean = true): void {
         for (let i = 0; i < CSRankings.areas.length; i++) {
             const item = this.fields[i];
-            const str = "input[name=" + item + "]";
+            const str = `input[name=${item}]`;
             if (value) {
                 // Turn off all next tier venues.
                 if (item in CSRankings.nextTier) {
@@ -1412,7 +1455,7 @@ class CSRankings {
 
     public rank(update: boolean = true): boolean {
 
-        let start = performance.now();
+        const start = performance.now();
 
         let deptNames: { [key: string]: Array<string> } = {};    /* names of departments. */
         let deptCounts: { [key: string]: number } = {};           /* number of faculty in each department. */
@@ -1425,7 +1468,7 @@ class CSRankings {
         const endyear = parseInt($("#toyear").find(":selected").text());
         const whichRegions = String($("#regions").find(":selected").val());
 
-        let numAreas = this.updateWeights(currentWeights);
+        const numAreas = this.updateWeights(currentWeights);
 
         this.buildDepartments(startyear,
             endyear,
@@ -1453,7 +1496,7 @@ class CSRankings {
             CSRankings.minToRank);
 
         let stop = performance.now();
-        console.log("Before render: rank took " + (stop - start) + " milliseconds.");
+        console.log(`Before render: rank took ${(stop - start)} milliseconds.`);
 
         /* Finally done. Redraw! */
         document.getElementById("success")!.innerHTML = s;
@@ -1461,7 +1504,7 @@ class CSRankings {
             // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
             // If we are nearly at the bottom, update the minimum.
             if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
-                let t = CSRankings.updateMinimum(this);
+                const t = CSRankings.updateMinimum(this);
                 if (t) {
                     $("div").scrollTop(t);
                 }
@@ -1473,12 +1516,12 @@ class CSRankings {
         } else {
             this.navigoRouter.resume();
         }
-        let str = this.updatedURL();
+        const str = this.updatedURL();
 
         this.navigoRouter.navigate(str);
 
-        stop = performance.now();
-        console.log("Rank took " + (stop - start) + " milliseconds.");
+	stop = performance.now();
+        console.log(`Rank took ${(stop - start)} milliseconds.`);
 
         return false;
     }
@@ -1490,11 +1533,11 @@ class CSRankings {
         if (chart!.style.display === 'block') {
             chart!.style.display = 'none';
             chart!.innerHTML = '';
-            chartwidget!.innerHTML = this.PieChart;
+            chartwidget!.innerHTML = this.ChartIcon;
         } else {
             chart!.style.display = 'block';
-            this.makeChart(name);
-            chartwidget!.innerHTML = this.OpenPieChart;
+            this.makeChart(name, this.usePieChart);
+            chartwidget!.innerHTML = this.OpenChartIcon;
         }
 
     }
@@ -1574,7 +1617,7 @@ class CSRankings {
         let count = 0;
         let totalParents = 0;
         for (let i = 0; i < this.fields.length; i++) {
-            const str = 'input[name=' + this.fields[i] + ']';
+            const str = `input[name=${this.fields[i]}]`;
             if (!(this.fields[i] in CSRankings.parentMap)) {
                 totalParents += 1;
             }
@@ -1587,7 +1630,7 @@ class CSRankings {
                     let allChecked = 1;
                     if (this.fields[i] in CSRankings.childMap) {
                         CSRankings.childMap[this.fields[i]].forEach((k) => {
-                            let val = $('input[name=' + k + ']').prop('checked');
+                            let val = $(`input[name=${k}]`).prop('checked');
                             if (!(k in CSRankings.nextTier)) {
                                 allChecked &= val;
                             } else {
@@ -1596,7 +1639,7 @@ class CSRankings {
                         });
                     }
                     if (allChecked) {
-                        s += this.fields[i] + '&';
+                        s += `${this.fields[i]}&`;
                         count += 1;
                     }
                 }
@@ -1606,27 +1649,59 @@ class CSRankings {
             // Trim off the trailing '&'.
             s = s.slice(0, -1);
         }
-        let region = $("#regions").find(":selected").val();
+        const region = $("#regions").find(":selected").val();
         let start = '';
         // Check the dates.
-        let d = new Date();
+        const d = new Date();
         const currYear = d.getFullYear();
         const startyear = parseInt($("#fromyear").find(":selected").text());
         const endyear = parseInt($("#toyear").find(":selected").text());
         if ((startyear != currYear - 10) || (endyear != currYear)) {
-            start += '/fromyear/' + startyear.toString();
-            start += '/toyear/' + endyear.toString();
+            start += `/fromyear/${startyear.toString()}`;
+            start += `/toyear/${endyear.toString()}`;
         }
+        
         if (count == totalParents) {
             start += '/index?all'; // Distinguished special URL - default = all selected.
         } else if (count == 0) {
             start += '/index?none'; // Distinguished special URL - none selected.
         } else {
-            start += '/index?' + s;
+            start += `/index?${s}`;
         }
         if (region != "USA") {
-            start += '&' + region;
+            start += `&${region}`;
         }
+        
+        const chartType = $("#charttype").find(":selected").val();
+        if (chartType == "pie") {
+            this.usePieChart = true;
+	    for (const elt of document.getElementsByClassName("chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	    }
+	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/piechart-open.png";
+	    }
+	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/piechart.png";
+	    }
+	    this.ChartIcon = this.PieChartIcon;
+	    this.OpenChartIcon = this.OpenPieChartIcon;
+            start += '&pie';
+        } else {
+            this.usePieChart = false;
+	    for (const elt of document.getElementsByClassName("chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/barchart.png";
+	    }
+	    for (const elt of document.getElementsByClassName("open_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/barchart-open.png";
+	    }
+	    for (const elt of document.getElementsByClassName("closed_chart_icon")) {
+	      (<HTMLInputElement>elt).src = "png/barchart.png";
+	    }
+	    this.ChartIcon = this.BarChartIcon;
+	    this.OpenChartIcon = this.OpenBarChartIcon;
+        }
+        
         return start;
     }
 
@@ -1685,7 +1760,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $("#" + key).prop('value', params[key].toString());
+                $(`#${key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
@@ -1693,14 +1768,21 @@ class CSRankings {
         // Now check everything listed in the query string.
         let q = query.split('&');
         // If there is an 'all' in the query string, set everything to true.
-        let foundAll = q.some((elem) => {
+        const foundAll = q.some((elem) => {
             return (elem == "all");
         });
-        let foundNone = q.some((elem) => {
+	// For testing: if 'survey' is in the query string, reveal the survey overlay.
+	const foundSurvey = q.some((elem) => {
+	    return (elem == "survey");
+	});
+	if (foundSurvey) {
+	    document!.getElementById("overlay-survey")!.style.display = "block";
+	}
+        const foundNone = q.some((elem) => {
             return (elem == "none");
         });
         // Check for regions and strip them out.
-        let foundRegion = q.some((elem) => {
+        const foundRegion = q.some((elem) => {
             return CSRankings.regions.indexOf(elem) >= 0;
         });
         if (foundRegion) {
@@ -1709,17 +1791,25 @@ class CSRankings {
                 // Splice it out.
                 if (CSRankings.regions.indexOf(elem) >= 0) {
                     q.splice(index, 1);
+                    // Set the region.
+		    $("#regions").val(elem);
                 }
-                // Set the region.
-                $("#regions").val(elem);
                 index += 1;
             });
         }
+        // Check for pie chart
+        const foundPie = q.some((elem) => {
+            return (elem == "pie");
+        });
+        if (foundPie) {
+            $("#charttype").val("pie");
+        }
+        
         if (foundAll) {
             // Set everything.
-            for (let item in CSRankings.topTierAreas) {
+            for (const item in CSRankings.topTierAreas) {
                 //		if (!(item in CSRankings.nextTier)) {
-                let str = "input[name=" + item + "]";
+                let str = `input[name=${item}]`;
                 $(str).prop('checked', true);
                 if (item in CSRankings.childMap) {
                     // It's a parent. Enable it.
@@ -1727,7 +1817,7 @@ class CSRankings {
                     // and activate all children.
                     CSRankings.childMap[item].forEach((k) => {
                         if (!(k in CSRankings.nextTier)) {
-                            $('input[name=' + k + ']').prop('checked', true);
+                            $(`input[name=${k}]`).prop('checked', true);
                         }
                     });
                 }
@@ -1745,16 +1835,16 @@ class CSRankings {
         // First, clear everything that isn't subsetted.
         CSRankings.clearNonSubsetted();
         // Then, activate the areas in the query.
-        for (let item of q) {
+        for (const item of q) {
             if ((item != "none") && (item != "")) {
-                const str = "input[name=" + item + "]";
+                const str = `input[name=${item}]`;
                 $(str).prop('checked', true);
                 $(str).prop('disabled', false);
                 if (item in CSRankings.childMap) {
                     // Activate all children.
                     CSRankings.childMap[item].forEach((k) => {
                         if (!(k in CSRankings.nextTier)) {
-                            $('input[name=' + k + ']').prop('checked', true);
+                            $(`input[name=${k}]`).prop('checked', true);
                         }
                     });
                 }
@@ -1763,15 +1853,15 @@ class CSRankings {
     }
 
     public static clearNonSubsetted(): void {
-        for (let item of CSRankings.areas) {
+        for (const item of CSRankings.areas) {
             if (item in CSRankings.childMap) {
                 const kids = CSRankings.childMap[item];
                 if (!CSRankings.subsetting(kids)) {
-                    const str = "input[name=" + item + "]";
+                    const str = `input[name=${item}]`;
                     $(str).prop('checked', false);
                     $(str).prop('disabled', false);
                     kids.forEach((item) => {
-                        $("input[name=" + item + "]").prop('checked', false);
+                        $(`input[name=${item}]`).prop('checked', false);
                     });
                 }
             }
@@ -1792,7 +1882,7 @@ class CSRankings {
         // Count how many are checked above and below.
         let numCheckedAbove = 0;
         aboveFold.forEach((elem) => {
-            let str = "input[name=" + elem + "]";
+            let str = `input[name=${elem}]`;
             let val = $(str).prop('checked');
             if (val) {
                 numCheckedAbove++;
@@ -1800,19 +1890,19 @@ class CSRankings {
         });
         let numCheckedBelow = 0;
         belowFold.forEach((elem) => {
-            let str = "input[name=" + elem + "]";
+            let str = `input[name=${elem}]`;
             let val = $(str).prop('checked');
             if (val) {
                 numCheckedBelow++;
             }
         });
-        let subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
-        let subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
+        const subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
+        const subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
         return subsettedAbove || subsettedBelow;
     }
 
     private addListeners(): void {
-        ["toyear", "fromyear", "regions"].forEach((key) => {
+        ["toyear", "fromyear", "regions", "charttype"].forEach((key) => {
             const widget = document.getElementById(key);
             widget!.addEventListener("change", () => { this.countAuthorAreas(); this.rank(); });
         });
@@ -1822,7 +1912,7 @@ class CSRankings {
             let area = CSRankings.areas[position];
             if (!(area in CSRankings.parentMap)) {
                 // Not a child.
-                const widget = document.getElementById(area + '-widget');
+                const widget = document.getElementById(`${area}-widget`);
                 if (widget) {
                     widget!.addEventListener("click", () => {
                         this.toggleConferences(area);
@@ -1832,7 +1922,7 @@ class CSRankings {
         }
         // Initialize callbacks for area checkboxes.
         for (let i = 0; i < this.fields.length; i++) {
-            const str = 'input[name=' + this.fields[i] + ']';
+            const str = `input[name=${this.fields[i]}]`;
             const field = this.fields[i];
             const fieldElement = document.getElementById(this.fields[i]);
             if (!fieldElement) {
@@ -1846,11 +1936,11 @@ class CSRankings {
                     // If all are off, deactivate parent.
                     updateURL = false;
                     let parent = CSRankings.parentMap[field];
-                    const strparent = 'input[name=' + parent + ']';
+                    const strparent = `input[name=${parent}]`;
                     let anyChecked = 0;
                     let allChecked = 1;
                     CSRankings.childMap[parent].forEach((k) => {
-                        let val = $('input[name=' + k + ']').prop('checked');
+                        const val = $(`input[name=${k}]`).prop('checked');
                         anyChecked |= val;
                         // allChecked means all top tier conferences
                         // are on and all next tier conferences are
@@ -1874,10 +1964,10 @@ class CSRankings {
                     }
                 } else {
                     // Parent: activate or deactivate all children.
-                    let val = $(str).prop('checked');
+                    const val = $(str).prop('checked');
                     if (field in CSRankings.childMap) {
-                        for (let child of CSRankings.childMap[field]) {
-                            const strchild = 'input[name=' + child + ']';
+                        for (const child of CSRankings.childMap[field]) {
+                            const strchild = `input[name=${child}]`;
                             if (!(child in CSRankings.nextTier)) {
                                 $(strchild).prop('checked', val);
                             } else {
@@ -1904,7 +1994,7 @@ class CSRankings {
             'other_areas_on': (() => { this.activateOthers(); }),
             'other_areas_off': (() => { this.deactivateOthers(); })
         };
-        for (let item in listeners) {
+        for (const item in listeners) {
             const widget = document.getElementById(item);
             widget!.addEventListener("click", () => {
                 listeners[item]();
