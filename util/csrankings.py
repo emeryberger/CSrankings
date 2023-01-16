@@ -493,7 +493,7 @@ ISMB_Bioinformatics = {
     2007: (23, 13),
 }
 
-# TOG special handling to count only EUROGRAPHICS proceedings.
+# TOG special handling to count only SIGGRAPH proceedings.
 # Assuming all will be in the same issues through 2023.
 TOG_SIGGRAPH_Volume = {
     2023: (42, 4),
