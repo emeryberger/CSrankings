@@ -1394,7 +1394,8 @@ class CSRankings {
         return start;
     }
     static geoCheck() {
-        navigator.geolocation.getCurrentPosition((position) => {
+        var _a;
+        (_a = navigator.geolocation) === null || _a === void 0 ? void 0 : _a.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = document.getElementById("regions");
             switch (continent) {
