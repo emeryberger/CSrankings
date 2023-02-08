@@ -867,7 +867,7 @@ def countPaper(
 
         exceptionConference = False
         exceptionConference |= confname == "SC" and (
-            year <= 2012 or year == 2017 or year == 2020
+            year <= 2012 or year in [2017, 2020, 2021]
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
