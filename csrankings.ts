@@ -1706,7 +1706,7 @@ class CSRankings {
     }
 
     public static geoCheck(): void {
-        navigator.geolocation.getCurrentPosition((position) => {
+        navigator.geolocation?.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = (<HTMLInputElement>document.getElementById("regions"));
             switch (continent) {
