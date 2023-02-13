@@ -261,6 +261,7 @@ class CSRankings {
             'eccv': 'vision',
             'iccv': 'vision',
             'icml': 'mlmining',
+	    'iclr': 'mlmining',
             'kdd': 'mlmining',
             'nips': 'mlmining',
             'acl': 'nlp',
@@ -311,7 +312,7 @@ class CSRankings {
             'sigcomm': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
-            'eurographics': 'graph',
+            'eurographics': 'graph', // next tier
             'focs': 'act',
             'soda': 'act',
             'stoc': 'act',
@@ -343,10 +344,12 @@ class CSRankings {
             'ndss': true, // for now
             'pets': true,
             'eurosys': true,
+	    'eurographics': true,
             'fast': true,
             'usenixatc': true,
             'icfp': true,
-            'oopsla': true
+            'oopsla': true,
+	    'kdd': true,
         };
 
     public static readonly childMap: { [key: string]: [string] } = {};
@@ -373,6 +376,7 @@ class CSRankings {
         { area: "mlmining", title: "ML" },
         { area: "icml", title: "ML" },
         { area: "kdd", title: "ML" },
+        { area: "iclr", title: "ML" },
         { area: "nips", title: "ML" },
         { area: "nlp", title: "NLP" },
         { area: "acl", title: "NLP" },
@@ -1702,7 +1706,7 @@ class CSRankings {
     }
 
     public static geoCheck(): void {
-        navigator.geolocation.getCurrentPosition((position) => {
+        navigator.geolocation?.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = (<HTMLInputElement>document.getElementById("regions"));
             switch (continent) {
@@ -1756,7 +1760,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#{key}`).prop('value', params[key].toString());
+                $(`#${key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
