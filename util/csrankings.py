@@ -307,6 +307,15 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (28)"),
         Conference("ECCV (29)"),
         Conference("ECCV (30)"),
+        Conference("ECCV (31)"),
+        Conference("ECCV (32)"),
+        Conference("ECCV (33)"),
+        Conference("ECCV (34)"),
+        Conference("ECCV (35)"),
+        Conference("ECCV (36)"),
+        Conference("ECCV (37)"),
+        Conference("ECCV (38)"),
+        Conference("ECCV (39)"),
     ],
     # 'robotics'
     Area("icra"): [
