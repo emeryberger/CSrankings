@@ -18,9 +18,7 @@ import unicodedata
 
 def strip_accents(s):
     return "".join(
-        c
-        for c in unicodedata.normalize("NFD", s)
-        if unicodedata.category(c) != "Mn"
+        c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn"
     )
 
 
@@ -54,10 +52,7 @@ with open("csrankings.csv", mode="r") as infile:
                 print(item[i], index)
         if item["scholarid"] == "":
             item["scholarid"] = "NOSCHOLARPAGE"
-        if (
-            item["scholarid"] != "NOSCHOLARPAGE"
-            and item["scholarid"][-5:] != "AAAAJ"
-        ):
+        if item["scholarid"] != "NOSCHOLARPAGE" and item["scholarid"][-5:] != "AAAAJ":
             print(item["scholarid"], index)
         writer[ch].writerow(item)
     # Finally, cleanup.
