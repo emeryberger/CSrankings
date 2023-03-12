@@ -51,8 +51,6 @@ os.rename("scholar-visited.csv", "scholar-visited-" + str(now) + ".csv")
 with codecs.open("scholar-visited.csv", "w", "utf8") as visitedFile:
     visitedFile.write("name,date\n")
     for name in checked:
-        visitedFile.write(
-            name.decode("utf8") + "," + str(checked[name]) + "\n"
-        )
+        visitedFile.write(name.decode("utf8") + "," + str(checked[name]) + "\n")
 
 os.remove("scholar-visited-" + str(now) + ".csv")
