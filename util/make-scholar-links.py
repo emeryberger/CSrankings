@@ -81,9 +81,7 @@ def searchAuthor(name):
     userMatcher = re.compile("user=([A-Za-z0-9\-]+)")
     quoted = urllib.parse.quote_plus(name)
     res = requests.get(
-        "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C48&q="
-        + quoted
-        + "&btnG="
+        "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C48&q=" + quoted + "&btnG="
     )
     res.raise_for_status()
     soup = bs4.BeautifulSoup(res.text)
@@ -212,14 +210,7 @@ for name in facultydictkeys:
     #    name = name.decode('utf8')
     # print("["+me+"] " + name + "," + id)
     print(
-        n
-        + ","
-        + facultydict[n]
-        + ","
-        + homepages[n]
-        + ","
-        + newscholarLinks[n]
-        + "\n"
+        n + "," + facultydict[n] + "," + homepages[n] + "," + newscholarLinks[n] + "\n"
     )
     # actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
 
@@ -228,14 +219,7 @@ for name in facultydictkeys:
 
 for n in newscholarLinks:
     print(
-        n
-        + ","
-        + facultydict[n]
-        + ","
-        + homepages[n]
-        + ","
-        + newscholarLinks[n]
-        + "\n"
+        n + "," + facultydict[n] + "," + homepages[n] + "," + newscholarLinks[n] + "\n"
     )
 
 # Write everything out.
