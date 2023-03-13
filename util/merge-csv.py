@@ -16,9 +16,7 @@ def csv2dict_str_str(fname):
     with open(fname, mode="r") as infile:
         rdr = csv.reader(infile)
         d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(
-                rows[1].strip(), "utf-8"
-            )
+            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
             for rows in rdr
         }
     return d
