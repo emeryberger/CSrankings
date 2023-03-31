@@ -142,9 +142,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("rtss"): [Conference("RTSS"), Conference("rtss")],
     Area("rtas"): [
         Conference("RTAS"),
-        Conference(
-            "IEEE Real-Time and Embedded Technology and Applications Symposium"
-        ),
+        Conference("IEEE Real-Time and Embedded Technology and Applications Symposium"),
     ],
     # SIGDA
     Area("iccad"): [Conference("ICCAD")],
@@ -307,6 +305,15 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ECCV (28)"),
         Conference("ECCV (29)"),
         Conference("ECCV (30)"),
+        Conference("ECCV (31)"),
+        Conference("ECCV (32)"),
+        Conference("ECCV (33)"),
+        Conference("ECCV (34)"),
+        Conference("ECCV (35)"),
+        Conference("ECCV (36)"),
+        Conference("ECCV (37)"),
+        Conference("ECCV (38)"),
+        Conference("ECCV (39)"),
     ],
     # 'robotics'
     Area("icra"): [
@@ -358,7 +365,7 @@ areadict: Dict[Area, List[Conference]] = {
 EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
 
-EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11),  2022: (41, 11)}
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11)}
 EMSOFT_TCAD_PaperStart = {
     # 2018 page numbers contributed by Ezio Bartocci
     2018: {
@@ -421,8 +428,38 @@ EMSOFT_TCAD_PaperStart = {
         4205,
     },
     # 2022 numbers contributed by Changhee Jang
-    2022: {3614,3638,3673,3757,3779,3850,3874,3886,3898,3957,3969,3981,4016,4028,4157,4193,4205,4253,4265,4361,4373,4409,4421,4445,4457,4469,4492,4504,4539,4563, },
-    
+    2022: {
+        3614,
+        3638,
+        3673,
+        3757,
+        3779,
+        3850,
+        3874,
+        3886,
+        3898,
+        3957,
+        3969,
+        3981,
+        4016,
+        4028,
+        4157,
+        4193,
+        4205,
+        4253,
+        4265,
+        4361,
+        4373,
+        4409,
+        4421,
+        4445,
+        4457,
+        4469,
+        4492,
+        4504,
+        4539,
+        4563,
+    },
 }
 
 
@@ -858,8 +895,7 @@ def countPaper(
 
     if (
         pageCount == -1
-        and confname
-        == "ACM Conference on Computer and Communications Security"
+        and confname == "ACM Conference on Computer and Communications Security"
     ):
         tooFewPages = True
 
@@ -871,9 +907,7 @@ def countPaper(
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
-            confname == "ACM Trans. Graph."
-            and int(volume) >= 26
-            and int(volume) <= 39
+            confname == "ACM Trans. Graph." and int(volume) >= 26 and int(volume) <= 39
         )
         exceptionConference |= (
             confname == "SIGGRAPH" and int(volume) >= 26 and int(volume) <= 39
@@ -906,9 +940,7 @@ def test_countPaper():
         "anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing"
     )
     # Discard short papers.
-    assert not countPaper(
-        "anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing"
-    )
+    assert not countPaper("anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing")
     # Ignore page counts if we are in an exception conference (like SIGGRAPH)
     assert countPaper(
         "SIGGRAPH",

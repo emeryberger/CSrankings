@@ -123,9 +123,7 @@ if options.end_year:
 with open(filename, "r") as f:
     datastore = json.load(f)
 
-confdict = {
-    options.conference
-}  # possible conferences include ISCA, PLDI, ASPLOS, etc.
+confdict = {options.conference}  # possible conferences include ISCA, PLDI, ASPLOS, etc.
 conflist = list(confdict)
 conflist.sort()
 
@@ -138,12 +136,8 @@ print("dummy")
 # Now start iterating through the data.
 
 i = 0  # which entry we are on in the data (stored as an array)
-year = (
-    {}
-)  # dict: year[name][conf] = earliest year published by name in that conference
-count = (
-    {}
-)  # dict: count[name][conf] = total count of pubs by name in that conference
+year = {}  # dict: year[name][conf] = earliest year published by name in that conference
+count = {}  # dict: count[name][conf] = total count of pubs by name in that conference
 
 # Note that articles.json is sorted by author name and then by date.
 while i < len(datastore):

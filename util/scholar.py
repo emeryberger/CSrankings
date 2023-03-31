@@ -218,9 +218,7 @@ class ScholarConf(object):
 
     # USER_AGENT = 'Mozilla/5.0 (X11; U; FreeBSD i386; en-US; rv:1.9.2.9) Gecko/20100913 Firefox/3.6.9'
     # Let's update at this point (3/14):
-    USER_AGENT = (
-        "Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0"
-    )
+    USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0"
 
     # If set, we will use this file to read/save cookies to enable
     # cookie use across sessions.
@@ -372,9 +370,7 @@ class ScholarArticleParser(object):
         self._parse_globals()
 
         # Now parse out listed articles:
-        for div in self.soup.findAll(
-            ScholarArticleParser._tag_results_checker
-        ):
+        for div in self.soup.findAll(ScholarArticleParser._tag_results_checker):
             self._parse_article(div)
             self._clean_article()
             if self.article["title"]:
@@ -427,9 +423,7 @@ class ScholarArticleParser(object):
                 for tag2 in tag:
                     if not hasattr(tag2, "name"):
                         continue
-                    if tag2.name == "span" and self._tag_has_class(
-                        tag2, "gs_fl"
-                    ):
+                    if tag2.name == "span" and self._tag_has_class(tag2, "gs_fl"):
                         self._parse_links(tag2)
 
     def _parse_links(self, span):
@@ -440,12 +434,8 @@ class ScholarArticleParser(object):
                 continue
 
             if tag.get("href").startswith("/scholar?cites"):
-                if hasattr(tag, "string") and tag.string.startswith(
-                    "Cited by"
-                ):
-                    self.article["num_citations"] = self._as_int(
-                        tag.string.split()[-1]
-                    )
+                if hasattr(tag, "string") and tag.string.startswith("Cited by"):
+                    self.article["num_citations"] = self._as_int(tag.string.split()[-1])
 
                 # Weird Google Scholar behavior here: if the original
                 # search query came with a number-of-results limit,
@@ -466,9 +456,7 @@ class ScholarArticleParser(object):
 
             if tag.get("href").startswith("/scholar?cluster"):
                 if hasattr(tag, "string") and tag.string.startswith("All "):
-                    self.article["num_versions"] = self._as_int(
-                        tag.string.split()[1]
-                    )
+                    self.article["num_versions"] = self._as_int(tag.string.split()[1])
                 self.article["url_versions"] = self._strip_url_arg(
                     "num", self._path2url(tag.get("href"))
                 )
@@ -491,9 +479,7 @@ class ScholarArticleParser(object):
 
     @staticmethod
     def _tag_results_checker(tag):
-        return tag.name == "div" and ScholarArticleParser._tag_has_class(
-            tag, "gs_r"
-        )
+        return tag.name == "div" and ScholarArticleParser._tag_has_class(tag, "gs_r")
 
     @staticmethod
     def _as_int(obj):
@@ -535,11 +521,7 @@ class ScholarArticleParser120201(ScholarArticleParser):
             if not hasattr(tag, "name"):
                 continue
 
-            if (
-                tag.name == "h3"
-                and self._tag_has_class(tag, "gs_rt")
-                and tag.a
-            ):
+            if tag.name == "h3" and self._tag_has_class(tag, "gs_rt") and tag.a:
                 self.article["title"] = "".join(tag.a.findAll(text=True))
                 self.article["url"] = self._path2url(tag.a["href"])
                 if self.article["url"].endswith(".pdf"):
@@ -605,9 +587,7 @@ class ScholarArticleParser120726(ScholarArticleParser):
                     self.article["title"] = "".join(tag.h3.findAll(text=True))
 
                 if tag.find("div", {"class": "gs_a"}):
-                    year = self.year_re.findall(
-                        tag.find("div", {"class": "gs_a"}).text
-                    )
+                    year = self.year_re.findall(tag.find("div", {"class": "gs_a"}).text)
                     self.article["year"] = year[0] if len(year) > 0 else None
 
                 if tag.find("div", {"class": "gs_fl"}):
@@ -615,9 +595,7 @@ class ScholarArticleParser120726(ScholarArticleParser):
 
                 if tag.find("div", {"class": "gs_rs"}):
                     # These are the content excerpts rendered into the results.
-                    raw_text = tag.find("div", {"class": "gs_rs"}).findAll(
-                        text=True
-                    )
+                    raw_text = tag.find("div", {"class": "gs_rs"}).findAll(text=True)
                     if len(raw_text) > 0:
                         raw_text = "".join(raw_text)
                         raw_text = raw_text.replace("\n", "")
@@ -710,10 +688,7 @@ class ClusterScholarQuery(ScholarQuery):
     """
 
     SCHOLAR_CLUSTER_URL = (
-        ScholarConf.SCHOLAR_SITE
-        + "/scholar?"
-        + "cluster=%(cluster)s"
-        + "&num=%(num)s"
+        ScholarConf.SCHOLAR_SITE + "/scholar?" + "cluster=%(cluster)s" + "&num=%(num)s"
     )
 
     def __init__(self, cluster=None):
@@ -906,9 +881,7 @@ class ScholarSettings(object):
     def set_per_page_results(self, per_page_results):
         msg = "page results must be integer"
         self.per_page_results = ScholarUtils.ensure_int(per_page_results, msg)
-        self.per_page_results = min(
-            self.per_page_results, ScholarConf.MAX_PAGE_RESULTS
-        )
+        self.per_page_results = min(self.per_page_results, ScholarConf.MAX_PAGE_RESULTS)
         self._is_configured = True
 
     def is_configured(self):
@@ -926,9 +899,7 @@ class ScholarQuerier(object):
 
     # Default URLs for visiting and submitting Settings pane, as of 3/14
     GET_SETTINGS_URL = (
-        ScholarConf.SCHOLAR_SITE
-        + "/scholar_settings?"
-        + "sciifh=1&hl=en&as_sdt=0,5"
+        ScholarConf.SCHOLAR_SITE + "/scholar_settings?" + "sciifh=1&hl=en&as_sdt=0,5"
     )
 
     SET_SETTINGS_URL = (
@@ -966,18 +937,12 @@ class ScholarQuerier(object):
         self.cjar = MozillaCookieJar()
 
         # If we have a cookie file, load it:
-        if ScholarConf.COOKIE_JAR_FILE and os.path.exists(
-            ScholarConf.COOKIE_JAR_FILE
-        ):
+        if ScholarConf.COOKIE_JAR_FILE and os.path.exists(ScholarConf.COOKIE_JAR_FILE):
             try:
-                self.cjar.load(
-                    ScholarConf.COOKIE_JAR_FILE, ignore_discard=True
-                )
+                self.cjar.load(ScholarConf.COOKIE_JAR_FILE, ignore_discard=True)
                 ScholarUtils.log("info", "loaded cookies file")
             except Exception as msg:
-                ScholarUtils.log(
-                    "warn", "could not load cookies file: %s" % msg
-                )
+                ScholarUtils.log("warn", "could not load cookies file: %s" % msg)
                 self.cjar = MozillaCookieJar()  # Just to be safe
 
         self.opener = build_opener(HTTPCookieProcessor(self.cjar))
@@ -1123,9 +1088,7 @@ class ScholarQuerier(object):
         try:
             ScholarUtils.log("info", "requesting %s" % unquote(url))
 
-            req = Request(
-                url=url, headers={"User-Agent": ScholarConf.USER_AGENT}
-            )
+            req = Request(url=url, headers={"User-Agent": ScholarConf.USER_AGENT})
             hdl = self.opener.open(req)
             html = hdl.read()
 
@@ -1134,9 +1097,7 @@ class ScholarQuerier(object):
             ScholarUtils.log("debug", "url: %s" % hdl.geturl())
             ScholarUtils.log("debug", "result: %s" % hdl.getcode())
             ScholarUtils.log("debug", "headers:\n" + str(hdl.info()))
-            ScholarUtils.log(
-                "debug", "data:\n" + html.decode("utf-8")
-            )  # For Python 3
+            ScholarUtils.log("debug", "data:\n" + html.decode("utf-8"))  # For Python 3
             ScholarUtils.log("debug", "<<<<" + "-" * 68)
 
             return html
@@ -1158,13 +1119,9 @@ def txt(querier, with_globals):
             max_label_len = max([len(str(item[1])) for item in items])
 
         # Get items sorted in specified order:
-        items = sorted(
-            list(querier.query.attrs.values()), key=lambda item: item[2]
-        )
+        items = sorted(list(querier.query.attrs.values()), key=lambda item: item[2])
         # Find largest label length:
-        max_label_len = max(
-            [len(str(item[1])) for item in items] + [max_label_len]
-        )
+        max_label_len = max([len(str(item[1])) for item in items] + [max_label_len])
         fmt = "[G] %%%ds %%s" % max(0, max_label_len - 4)
         for item in items:
             if item[0] is not None:
@@ -1393,9 +1350,7 @@ scholar.py -c 5 -a "albert einstein" -t --none "quantum theory" --after 1970"""
             or options.after
             or options.before
         ):
-            print(
-                "Cluster ID queries do not allow additional search arguments."
-            )
+            print("Cluster ID queries do not allow additional search arguments.")
             return 1
 
     querier = ScholarQuerier()
@@ -1410,9 +1365,7 @@ scholar.py -c 5 -a "albert einstein" -t --none "quantum theory" --after 1970"""
     elif options.citation == "rw":
         settings.set_citation_format(ScholarSettings.CITFORM_REFWORKS)
     elif options.citation is not None:
-        print(
-            'Invalid citation link format, must be one of "bt", "en", "rm", or "rw".'
-        )
+        print('Invalid citation link format, must be one of "bt", "en", "rm", or "rw".')
         return 1
 
     querier.apply_settings(settings)

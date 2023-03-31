@@ -68,9 +68,7 @@ def parseDBLP(facultydict):
                     if child.tag == "pages":
                         pageCount = csrankings.pagecount(child.text)
 
-                if (pageCount > 1) and (
-                    pageCount < csrankings.pageCountThreshold
-                ):
+                if (pageCount > 1) and (pageCount < csrankings.pageCountThreshold):
                     # Only skip papers with a very small paper count,
                     # but above 1. Why?
                     # DBLP has real papers with incorrect page counts
@@ -123,9 +121,7 @@ def csv2dict_str_str(fname):
         # for rows in reader:
         #    print rows[0], "-->", rows[1]
         d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(
-                rows[1].strip(), "utf-8"
-            )
+            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
             for rows in reader
         }
     return d
@@ -145,9 +141,7 @@ if csrankings.generateLog:
         authlog_gl,
     ) = parseDBLP(facultydict)
 else:
-    (intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(
-        facultydict
-    )
+    (intauthors_gl, authscores_gl, authscoresAdjusted_gl) = parseDBLP(facultydict)
 
     # if (intauthors_gl[k] > 0)
     #    print k.encode('utf8') + " : " + str(intauthors_gl[k]).encode('utf8')
