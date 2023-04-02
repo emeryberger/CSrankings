@@ -4,6 +4,7 @@
 
 import contextlib
 import re
+import csv
 
 from typing import Dict, List, NewType
 
@@ -25,6 +26,12 @@ TECSCounterColon = re.compile("([0-9]+):[1-9][0-9]*-([0-9]+):[1-9][0-9]*")
 # Extract the ISMB proceedings page numbers.
 ISMBpageCounter = re.compile(r"i(\d+)-i(\d+)")
 
+# Read in SIGCSE research articles
+SIGCSE = set()
+with open("sigcse-research-articles.csv", "r") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        SIGCSE.add((int(row["year"]),int(row["start"]),int(row["end"])))
 
 def startpage(pageStr: str) -> int:
     """Compute the starting page number from a string representing page numbers."""
@@ -357,8 +364,8 @@ areadict: Dict[Area, List[Conference]] = {
     Area("vr"): [Conference("VR")],
     # 'ecom' : ['EC', 'WINE']
     Area("ec"): [Conference("EC")],
-    Area("wine"): [Conference("WINE")]
-    # ,'cse' : ['SIGCSE']
+    Area("wine"): [Conference("WINE")],
+    Area("sigcse") : [Conference('SIGCSE')]
 }
 
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
@@ -814,6 +821,11 @@ def countPaper(
             or int(number) != EMSOFT_TCAD[year][1]
             or startPage not in EMSOFT_TCAD_PaperStart[year]
         ):
+            return False
+
+    # Special handling for SIGCSE.
+    if confname in ["SIGCSE"]:
+        if (year,startPage,startPage+pageCount-1) not in SIGCSE:
             return False
 
     # Special handling for ISMB.
