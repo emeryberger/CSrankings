@@ -251,9 +251,7 @@ def makegraph(institution, fname, dir):
                             }
                         )
                         # print("adding " + realname.encode('utf8') + " <-> " + coauthorrealname.encode('utf8'))
-                        print(
-                            "adding " + realname + " <-> " + coauthorrealname
-                        )
+                        print("adding " + realname + " <-> " + coauthorrealname)
                         edges[realname + coauthorrealname] = 0
                         edges[coauthorrealname + realname] = 0
                     edges[realname + coauthorrealname] += 1
@@ -316,9 +314,7 @@ def makegraph(institution, fname, dir):
             for y in range(0, len(nodes)):
                 key = nodes[x]["nodeName"] + nodes[y]["nodeName"]
                 if key in edges:
-                    row.append(
-                        edges[nodes[x]["nodeName"] + nodes[y]["nodeName"]] / 2
-                    )
+                    row.append(edges[nodes[x]["nodeName"] + nodes[y]["nodeName"]] / 2)
                 else:
                     row.append(0)
             matrix.append(row)

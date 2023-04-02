@@ -133,9 +133,7 @@ def build_dicts() -> None:
 
     # Count and report the total number of faculty in the database.
     totalFaculty = sum(name not in aliasdict for name in facultydict)
-    print(
-        f"Total faculty members currently in the database: {str(totalFaculty)}"
-    )
+    print(f"Total faculty members currently in the database: {str(totalFaculty)}")
 
 
 def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
@@ -155,10 +153,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
             authorList = article["author"]
         elif type(article["author"]) == str:
             authorList = [str(article["author"])]
-        elif (
-            type(article["author"]) is OrderedDict
-            or type(article["author"]) is dict
-        ):
+        elif type(article["author"]) is OrderedDict or type(article["author"]) is dict:
             authorList = [article["author"]["#text"]]  # type: ignore
         else:
             print("***Unknown record type, skipping.***")
@@ -241,10 +236,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
 
         if "title" in article:
             title = Title("")
-            if (
-                type(article["title"]) is OrderedDict
-                or type(article["title"]) is dict
-            ):
+            if type(article["title"]) is OrderedDict or type(article["title"]) is dict:
                 title = Title(article["title"]["#text"])  # type: ignore
             else:
                 title = Title(article["title"])
@@ -310,9 +302,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 authlogs[realName] = tmplist
                 interestingauthors[realName] += 1
                 authorscores[(realName, areaname, year)] += 1.0
-                authorscoresAdjusted[(realName, areaname, year)] += (
-                    1.0 / authorsOnPaper
-                )
+                authorscoresAdjusted[(realName, areaname, year)] += 1.0 / authorsOnPaper
     return True
 
 
