@@ -172,13 +172,14 @@ class CSRankings {
             { area: "vr", title: "Visualization" },
             { area: "ecom", title: "ECom" },
             { area: "ec", title: "ECom" },
-            { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+            { area: "wine", title: "ECom" },
+            { area: "csed", title: "CSEd" },
+            { area: "sigcse", title: "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+        this.interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -1772,7 +1773,8 @@ CSRankings.parentMap = {
     'iros': 'robotics',
     'rss': 'robotics',
     'vis': 'visualization',
-    'vr': 'visualization'
+    'vr': 'visualization',
+    'sigcse': 'csed'
 };
 CSRankings.nextTier = {
     'ase': true,
