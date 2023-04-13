@@ -312,7 +312,7 @@ class CSRankings {
             'sigcomm': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
-            'eurographics': 'graph',
+            'eurographics': 'graph', // next tier
             'focs': 'act',
             'soda': 'act',
             'stoc': 'act',
@@ -331,7 +331,8 @@ class CSRankings {
             'iros': 'robotics',
             'rss': 'robotics',
             'vis': 'visualization',
-            'vr': 'visualization'
+            'vr': 'visualization',
+	    'sigcse': 'csed'
         };
 
     public static readonly nextTier: { [key: string]: boolean } =
@@ -344,6 +345,7 @@ class CSRankings {
             'ndss': true, // for now
             'pets': true,
             'eurosys': true,
+	    'eurographics': true,
             'fast': true,
             'usenixatc': true,
             'icfp': true,
@@ -467,14 +469,15 @@ class CSRankings {
         { area: "vr", title: "Visualization" },
         { area: "ecom", title: "ECom" },
         { area: "ec", title: "ECom" },
-        { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+        { area: "wine", title: "ECom" },
+        { area : "csed", title : "CSEd" },
+        { area : "sigcse", title: "CSEd" }
         ];
 
     private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
     private readonly systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
     private readonly theoryAreas = ["act", "crypt", "log"];
-    private readonly interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+    private readonly interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
 
     private readonly areaNames: Array<string> = [];
     private readonly fields: Array<string> = [];
@@ -1705,7 +1708,7 @@ class CSRankings {
     }
 
     public static geoCheck(): void {
-        navigator.geolocation.getCurrentPosition((position) => {
+        navigator.geolocation?.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = (<HTMLInputElement>document.getElementById("regions"));
             switch (continent) {
@@ -1759,7 +1762,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#{key}`).prop('value', params[key].toString());
+                $(`#${key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
