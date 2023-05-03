@@ -172,13 +172,14 @@ class CSRankings {
             { area: "vr", title: "Visualization" },
             { area: "ecom", title: "ECom" },
             { area: "ec", title: "ECom" },
-            { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+            { area: "wine", title: "ECom" },
+            { area: "csed", title: "CSEd" },
+            { area: "sigcse", title: "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+        this.interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -1394,7 +1395,8 @@ class CSRankings {
         return start;
     }
     static geoCheck() {
-        navigator.geolocation.getCurrentPosition((position) => {
+        var _a;
+        (_a = navigator.geolocation) === null || _a === void 0 ? void 0 : _a.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = document.getElementById("regions");
             switch (continent) {
@@ -1771,7 +1773,8 @@ CSRankings.parentMap = {
     'iros': 'robotics',
     'rss': 'robotics',
     'vis': 'visualization',
-    'vr': 'visualization'
+    'vr': 'visualization',
+    'sigcse': 'csed'
 };
 CSRankings.nextTier = {
     'ase': true,
