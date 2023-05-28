@@ -27,6 +27,7 @@ csrankings.min.js: csrankings.js csrankings.ts
 update-dblp:
 	$(MAKE) download-dblp
 	$(MAKE) shrink-dblp
+	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	@echo "Done."
 
 clean-dblp:
