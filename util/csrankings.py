@@ -302,7 +302,7 @@ def countPaper(confname: Conference, year: int, volume: str, number: str, pages:
         exceptionConference |= confname == 'SIGGRAPH Asia'
         # FIXME - hopefully DBLP will fix
         exceptionConference |= confname == 'CHI' and year == 2018
-        exceptionConference |= confname == 'ICCAD' and year in {2016, 2018}
+        exceptionConference |= confname == 'ICCAD' and year in {2016, 2018, 2022}
         exceptionConference |= confname == 'CHI' and year == 2019
         exceptionConference |= confname == 'FAST' and year == 2012
         exceptionConference |= confname == 'DAC' and year == 2019
