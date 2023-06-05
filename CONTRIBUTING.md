@@ -7,7 +7,7 @@ Thanks for contributing to CSrankings! Please read and indicate you agree with *
 **NOTE:** IF YOU DO NOT FOLLOW THE STEPS BELOW, YOUR COMMIT WILL BE SUMMARILY REJECTED.
 You must read and check **all** the boxes below by filling them in with an X or your PR will be rejected.
 
-** The Basics **
+**The Basics**
 
 - [ ] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
 
