@@ -9,17 +9,21 @@ You must read and check **all** the boxes below by filling them in with an X or 
 
 **The Basics**
 
+- [ ] All pull requests and issues must come from non-anonymous accounts.
+
 - [ ] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
 
-- [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` (see below).
+- [ ] Combine multiple updates to a single institution into a **single PR.**
+
+- [ ] Only submit one pull request per institution.
+
+- [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` and `old/industry.csv` (see below).
 
 - [ ] Do not use Excel to edit any .csv files; Excel incorrectly tries to
 convert some Google Scholar entries to formulas, corrupting the
 database. Use the GitHub user interface or a text editor like emacs or NotePad instead.
 
 - [ ] Insert new faculty **in alphabetical order** (not at the end) in the appropriate `csrankings-[a-z].csv` files. **Do not modify `csrankings.csv`, which is auto-generated.**
-
-- [ ] Combine multiple updates to a single institution into a **single PR.** Only submit one PR per institution.
 
 - [ ] Check to make sure that you have no spaces after commas, or any missing fields.
 
