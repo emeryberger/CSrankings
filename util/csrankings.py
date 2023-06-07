@@ -154,7 +154,7 @@ DAC_TooShortPapers = {2019: {21, 22, 43, 44, 45, 76, 77, 78, 79, 100, 101, 121, 
 # Here is the list.
 # The entries for 2022 and 2023 are speculative.
 ISMB_Bioinformatics = {2023: (39, 'Supplement'), 2022: (38, 'Supplement'), 2021: (37, 'Supplement'), 2020: (36, 'Supplement-1'), 2019: (35, 14), 2018: (34, 13), 2017: (33, 14), 2016: (32, 12), 2015: (31, 12), 2014: (30, 12), 2013: (29, 13), 2012: (28, 12), 2011: (27, 13), 2010: (26, 12), 2009: (25, 12), 2008: (24, 13), 2007: (23, 13)}
-# TOG special handling to count only EUROGRAPHICS proceedings.
+# TOG special handling to count only SIGGRAPH proceedings.
 # Assuming all will be in the same issues through 2023.
 TOG_SIGGRAPH_Volume = {2023: (42, 4), 2022: (41, 4), 2021: (40, 4), 2020: (39, 4), 2019: (38, 4), 2018: (37, 4), 2017: (36, 4), 2016: (35, 4), 2015: (34, 4), 2014: (33, 4), 2013: (32, 4), 2012: (31, 4), 2011: (30, 4), 2010: (29, 4), 2009: (28, 3), 2008: (27, 3), 2007: (26, 3), 2006: (25, 3), 2005: (24, 3), 2004: (23, 3), 2003: (22, 3), 2002: (21, 3)}
 # TOG special handling to count only SIGGRAPH Asia proceedings.
