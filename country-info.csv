@@ -16,6 +16,7 @@ Babeș-Bolyai University,europe,ro
 Bar-Ilan University,europe,il
 Bauhaus University Weimar,europe,de
 Beihang University,asia,cn
+Beijing Jiaotong University,asia,cn
 Ben-Gurion University of the Negev,europe,il
 Bielefeld University,europe,de
 Bilkent University,europe,tr
@@ -24,11 +25,13 @@ Bocconi University,europe,it
 Boğaziçi University,europe,tr
 Brandenburg University of Technology,europe,de
 Brno University of Technology,europe,cz
+Brock University,canada,ca
 Brunel University London,europe,uk
 Bundeswehr University Munich,europe,de
 CISPA Helmholtz Center,europe,de
 CMI,asia,in
 CRIStAL,europe,fr
+CUHK (SZ),asia,cn
 CWI,europe,nl
 Cardiff University,europe,uk
 Carleton University,canada,ca
@@ -47,11 +50,11 @@ DTU,europe,dk
 Dalhousie University,canada,ca
 De La Salle University,asia,ph
 Durham University,europe,uk
-East China Normal University,asia,cn
 EPFL,europe,ch
 ETH Zurich,europe,ch
 ETS Montreal,canada,ca
 EURECOM,europe,fr
+East China Normal University,asia,cn
 Ecole Normale Superieure,europe,fr
 Ecole Normale Superieure de Cachan,europe,fr
 Ecole Normale Superieure de Lyon,europe,fr
@@ -150,6 +153,7 @@ Middle East Technical University,europe,tr
 Middlesex University,europe,uk
 Monash University,australasia,au
 Mälardalen University,europe,se
+NISER,asia,in
 NTNU,europe,no
 NTUA,europe,gr
 NWPU,asia,cn
@@ -159,7 +163,7 @@ Nanyang Technological University,asia,sg
 National Cheng Kung University,asia,tw
 National Chiao Tung University,asia,tw
 National Institute of Informatics,asia,jp
-National Institute of Technology Silchar,asia,in
+National Institute of Technology Silchar,in,
 National Taiwan University,asia,tw
 National Tsing Hua University,asia,tw
 National University of Singapore,asia,sg
@@ -175,6 +179,7 @@ Peking University,asia,cn
 Politecnico di Milano,europe,it
 Polytechnic University of Catalonia,europe,es
 Polytechnique Montreal,canada,ca
+Pontificia Universidad Catolica de Chile,southamerica,cl
 Qatar Computing Research Institute,asia,qa
 Qatar University,asia,qa
 Queen Mary University of London,europe,uk
@@ -188,7 +193,6 @@ Renmin University of China,asia,cn
 Royal Holloway University of London,europe,uk
 Royal Military College of Canada,canada,ca
 Ruhr-University Bochum,europe,de
-Ryerson University,canada,ca
 SUFE,asia,cn
 SUSTech,asia,cn
 SUTD,asia,sg
@@ -235,6 +239,7 @@ The Hong Kong Polytechnic University,asia,hk
 Tilburg University,europe,nl
 Tokyo Institute of Technology,asia,jp
 Tongji University,asia,cn
+Toronto Metropolitan University,canada,ca
 Trinity College Dublin,europe,ie
 Tsinghua University,asia,cn
 UESTC,asia,cn
@@ -286,7 +291,6 @@ University of Calgary,canada,ca
 University of Cambridge,europe,uk
 University of Canterbury,australasia,nz
 University of Cape Town,africa,za
-University of Chinese Academy of Sciences,asia,cn
 University of Cologne,europe,de
 University of Copenhagen,europe,dk
 University of Crete,europe,gr
@@ -324,6 +328,7 @@ University of Leipzig,europe,de
 University of Liverpool,europe,uk
 University of Luxembourg,europe,lu
 University of Lübeck,europe,de
+University of Macau,asia,hk
 University of Magdeburg,europe,de
 University of Mainz,europe,de
 University of Malaya,asia,my
@@ -348,8 +353,9 @@ University of Ottawa,canada,ca
 University of Oxford,europe,uk
 University of Padova,europe,it
 University of Passau,europe,de
+University of Peradeniya,asia,lk
 University of Piraeus,europe,gr
-University of Pisa, europe,it
+University of Pisa,europe,it
 University of Potsdam,europe,de
 University of Queensland,australasia,au
 University of Regina,canada,ca
@@ -396,6 +402,7 @@ Université Jean Monnet,europe,fr
 Université Laval,canada,ca
 Université Paris Dauphine,europe,fr
 Université de Sherbrooke,canada,ca
+Université du Québec à Montréal,canada,ca
 Université libre de Bruxelles,europe,be
 Uppsala University,europe,se
 Utrecht University,europe,nl
@@ -408,6 +415,7 @@ Western University,canada,ca
 Westlake University,asia,cn
 Wuhan University,asia,cn
 Xi'an Jiaotong University,asia,cn
+Xiamen University,asia,cn
 Xidian University,asia,cn
 Yonsei University,asia,kr
 York University,canada,ca

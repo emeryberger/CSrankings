@@ -32,6 +32,32 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 ;
 ;
 class CSRankings {
+    // We have scrolled: increase the number we rank.
+    static updateMinimum(obj) {
+        if (CSRankings.minToRank <= 500) {
+            const t = obj.scrollTop;
+            CSRankings.minToRank = 5000;
+            CSRankings.getInstance().rank();
+            return t;
+        }
+        else {
+            return 0;
+        }
+    }
+    // Return the singleton corresponding to this object.
+    static getInstance() {
+        return CSRankings.theInstance;
+    }
+    // Promises polyfill.
+    static promise(cont) {
+        if (typeof Promise !== "undefined") {
+            var resolved = Promise.resolve();
+            resolved.then(cont);
+        }
+        else {
+            setTimeout(cont, 0);
+        }
+    }
     constructor() {
         this.note = {};
         this.authorFile = "./csrankings.csv";
@@ -54,6 +80,7 @@ class CSRankings {
             { area: "mlmining", title: "ML" },
             { area: "icml", title: "ML" },
             { area: "kdd", title: "ML" },
+            { area: "iclr", title: "ML" },
             { area: "nips", title: "ML" },
             { area: "nlp", title: "NLP" },
             { area: "acl", title: "NLP" },
@@ -121,6 +148,7 @@ class CSRankings {
             { area: "graph", title: "Graphics" },
             { area: "siggraph", title: "Graphics" },
             { area: "siggraph-asia", title: "Graphics" },
+            { area: "eurographics", title: "Graphics" },
             { area: "chi", title: "HCI" },
             { area: "chiconf", title: "HCI" },
             { area: "ubicomp", title: "HCI" },
@@ -144,13 +172,14 @@ class CSRankings {
             { area: "vr", title: "Visualization" },
             { area: "ecom", title: "ECom" },
             { area: "ec", title: "ECom" },
-            { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+            { area: "wine", title: "ECom" },
+            { area: "csed", title: "CSEd" },
+            { area: "sigcse", title: "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+        this.interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -310,32 +339,6 @@ class CSRankings {
                 }
             }
         }))();
-    }
-    // We have scrolled: increase the number we rank.
-    static updateMinimum(obj) {
-        if (CSRankings.minToRank <= 500) {
-            const t = obj.scrollTop;
-            CSRankings.minToRank = 5000;
-            CSRankings.getInstance().rank();
-            return t;
-        }
-        else {
-            return 0;
-        }
-    }
-    // Return the singleton corresponding to this object.
-    static getInstance() {
-        return CSRankings.theInstance;
-    }
-    // Promises polyfill.
-    static promise(cont) {
-        if (typeof Promise !== "undefined") {
-            var resolved = Promise.resolve();
-            resolved.then(cont);
-        }
-        else {
-            setTimeout(cont, 0);
-        }
     }
     translateNameToDBLP(name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -1392,7 +1395,8 @@ class CSRankings {
         return start;
     }
     static geoCheck() {
-        navigator.geolocation.getCurrentPosition((position) => {
+        var _a;
+        (_a = navigator.geolocation) === null || _a === void 0 ? void 0 : _a.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = document.getElementById("regions");
             switch (continent) {
@@ -1444,7 +1448,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#{key}`).prop('value', params[key].toString());
+                $(`#${key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
@@ -1699,6 +1703,7 @@ CSRankings.parentMap = {
     'eccv': 'vision',
     'iccv': 'vision',
     'icml': 'mlmining',
+    'iclr': 'mlmining',
     'kdd': 'mlmining',
     'nips': 'mlmining',
     'acl': 'nlp',
@@ -1749,6 +1754,7 @@ CSRankings.parentMap = {
     'sigcomm': 'comm',
     'siggraph': 'graph',
     'siggraph-asia': 'graph',
+    'eurographics': 'graph',
     'focs': 'act',
     'soda': 'act',
     'stoc': 'act',
@@ -1767,7 +1773,8 @@ CSRankings.parentMap = {
     'iros': 'robotics',
     'rss': 'robotics',
     'vis': 'visualization',
-    'vr': 'visualization'
+    'vr': 'visualization',
+    'sigcse': 'csed'
 };
 CSRankings.nextTier = {
     'ase': true,
@@ -1778,10 +1785,12 @@ CSRankings.nextTier = {
     'ndss': true,
     'pets': true,
     'eurosys': true,
+    'eurographics': true,
     'fast': true,
     'usenixatc': true,
     'icfp': true,
-    'oopsla': true
+    'oopsla': true,
+    'kdd': true,
 };
 CSRankings.childMap = {};
 CSRankings.noteMap = {
