@@ -82,9 +82,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                     outfile.write(name + "," + actualURL + "\n")
                     outfile.flush()
                 else:
-                    print(
-                        "Lookup failed for " + name + " -- found " + actualURL
-                    )
+                    print("Lookup failed for " + name + " -- found " + actualURL)
         except:
             continue
 
