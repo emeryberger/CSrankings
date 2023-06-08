@@ -78,14 +78,10 @@ def parseDBLP(facultydict):
                     continue
 
                 tooFewPages = False
-                if (pageCount != -1) and (
-                    pageCount < csrankings.pageCountThreshold
-                ):
+                if (pageCount != -1) and (pageCount < csrankings.pageCountThreshold):
                     tooFewPages = True
                     exceptionConference = confname == "SC"
-                    exceptionConference |= (
-                        confname == "SIGSOFT FSE" and year == 2012
-                    )
+                    exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
                     exceptionConference |= (
                         confname == "ACM Trans. Graph."
                         and int(volume) >= 26
@@ -126,14 +122,9 @@ def parseDBLP(facultydict):
                                 interestingauthors.get(authorName, 0) + 1
                             )
                             authorscores[(authorName, areaname, year)] = (
-                                authorscores.get(
-                                    (authorName, areaname, year), 0
-                                )
-                                + 1.0
+                                authorscores.get((authorName, areaname, year), 0) + 1.0
                             )
-                            authorscoresAdjusted[
-                                (authorName, areaname, year)
-                            ] = (
+                            authorscoresAdjusted[(authorName, areaname, year)] = (
                                 authorscoresAdjusted.get(
                                     (authorName, areaname, year), 0
                                 )
@@ -145,9 +136,7 @@ def parseDBLP(facultydict):
 
 fdict = csrankings.csv2dict_str_str("faculty-affiliations.csv")
 
-(intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(
-    fdict
-)
+(intauthors_gl, authscores_gl, authscoresAdjusted_gl, authlog_gl) = parseDBLP(fdict)
 
 f = open("all-author-info.csv", "w")
 f.write('"name","dept","area","count","adjustedcount","year"\n')
