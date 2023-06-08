@@ -87,9 +87,7 @@ generated = {}
 with open("generated-author-info.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
     for row in reader:
-        generated[row["name"]] = generated.get(row["name"], 0) + float(
-            row["count"]
-        )
+        generated[row["name"]] = generated.get(row["name"], 0) + float(row["count"])
 
 
 # Read in country-info file.
@@ -180,9 +178,7 @@ if False:
         sfieldnames = ["alias", "name"]
         swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
         swriter.writeheader()
-        for n in collections.OrderedDict(
-            sorted(aliases.items(), key=lambda t: t[0])
-        ):
+        for n in collections.OrderedDict(sorted(aliases.items(), key=lambda t: t[0])):
             for a in aliases[n]:
                 h = {"alias": a, "name": n}
                 swriter.writerow(h)
@@ -212,10 +208,7 @@ for name in csrankings:
         page = "NOSCHOLARPAGE"
         if name in aliases:
             for a in aliases[name]:
-                if (
-                    a in csrankings
-                    and csrankings[a]["scholarid"] != "NOSCHOLARPAGE"
-                ):
+                if a in csrankings and csrankings[a]["scholarid"] != "NOSCHOLARPAGE":
                     page = csrankings[a]["scholarid"]
         if name in aliasToName:
             if csrankings[aliasToName[name]] != "NOSCHOLARPAGE":
@@ -294,9 +287,7 @@ for n in sorted(
             + " clashes and scores:"
             + str(mapscores)
         )
-        affiliations = list(
-            map(lambda nv: csrankings[nv[0]]["affiliation"], mapscores)
-        )
+        affiliations = list(map(lambda nv: csrankings[nv[0]]["affiliation"], mapscores))
         print(affiliations)
         if affiliations[0] == affiliations[-1]:
             # All affiliations the same.
@@ -319,11 +310,7 @@ for name in ks:
     try:
         r = requests.head(page, allow_redirects=True, timeout=3)
         print(r.status_code)
-        if (
-            (r.status_code == 404)
-            or (r.status_code == 410)
-            or (r.status_code == 500)
-        ):
+        if (r.status_code == 404) or (r.status_code == 410) or (r.status_code == 500):
             # prints the int of the status code. Find more at httpstatusrappers.com :)
             print("SEARCHING NOW FOR FIX FOR " + name)
             actualURL = find_fix(name, csrankings[name]["affiliation"])
@@ -347,9 +334,7 @@ for name in ks:
 
 # Now rewrite csrankings.csv.
 
-csrankings = collections.OrderedDict(
-    sorted(csrankings.items(), key=lambda t: t[0])
-)
+csrankings = collections.OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
 with open("csrankings.csv", mode="w") as outfile:
     sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
