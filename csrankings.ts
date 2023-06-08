@@ -87,7 +87,7 @@ class CSRankings {
     public static readonly areas: Array<string> = [];
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
-    public static readonly regions: Array<string> = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "au", "at", "br", "ca", "cn", "dk", "fr", "de", "gr", "hk", "in", "il", "it", "jp", "nl", "nz", "kr", "es", "ch", "tr", "uk", "us"]
+    public static readonly regions: Array<string> = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae","ar","at","au","bd","be","br","ca","ch","cl","cn","co","cy","cz","de","dk","ee","eg","es","fi","fr","gr","hk","hu","ie","il","in","ir","it","jo","jp","kr","lb","lu","mt","my","nl","no","nz","ph","pk","pl","pt","qa","ro","ru","sa","se","sg","th","tr","tw","uk","za"];
     private static readonly nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 
     private note: { [name: string]: string } = {};
@@ -261,13 +261,14 @@ class CSRankings {
             'eccv': 'vision',
             'iccv': 'vision',
             'icml': 'mlmining',
+	    'iclr': 'mlmining',
             'kdd': 'mlmining',
             'nips': 'mlmining',
             'acl': 'nlp',
             'emnlp': 'nlp',
             'naacl': 'nlp',
-            'sigir': 'ir',
-            'www': 'ir',
+            'sigir': 'inforet',
+            'www': 'inforet',
             'asplos': 'arch',
             'isca': 'arch',
             'micro': 'arch',
@@ -311,6 +312,7 @@ class CSRankings {
             'sigcomm': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
+            'eurographics': 'graph', // next tier
             'focs': 'act',
             'soda': 'act',
             'stoc': 'act',
@@ -329,7 +331,8 @@ class CSRankings {
             'iros': 'robotics',
             'rss': 'robotics',
             'vis': 'visualization',
-            'vr': 'visualization'
+            'vr': 'visualization',
+	    'sigcse': 'csed'
         };
 
     public static readonly nextTier: { [key: string]: boolean } =
@@ -342,10 +345,12 @@ class CSRankings {
             'ndss': true, // for now
             'pets': true,
             'eurosys': true,
+	    'eurographics': true,
             'fast': true,
             'usenixatc': true,
             'icfp': true,
-            'oopsla': true
+            'oopsla': true,
+	    'kdd': true,
         };
 
     public static readonly childMap: { [key: string]: [string] } = {};
@@ -372,12 +377,13 @@ class CSRankings {
         { area: "mlmining", title: "ML" },
         { area: "icml", title: "ML" },
         { area: "kdd", title: "ML" },
+        { area: "iclr", title: "ML" },
         { area: "nips", title: "ML" },
         { area: "nlp", title: "NLP" },
         { area: "acl", title: "NLP" },
         { area: "emnlp", title: "NLP" },
         { area: "naacl", title: "NLP" },
-        { area: "ir", title: "Web+IR" },
+        { area: "inforet", title: "Web+IR" },
         { area: "sigir", title: "Web+IR" },
         { area: "www", title: "Web+IR" },
         { area: "arch", title: "Arch" },
@@ -439,6 +445,7 @@ class CSRankings {
         { area: "graph", title: "Graphics" },
         { area: "siggraph", title: "Graphics" },
         { area: "siggraph-asia", title: "Graphics" },
+        { area: "eurographics", title: "Graphics" },
         { area: "chi", title: "HCI" },
         { area: "chiconf", title: "HCI" },
         { area: "ubicomp", title: "HCI" },
@@ -462,14 +469,15 @@ class CSRankings {
         { area: "vr", title: "Visualization" },
         { area: "ecom", title: "ECom" },
         { area: "ec", title: "ECom" },
-        { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+        { area: "wine", title: "ECom" },
+        { area : "csed", title : "CSEd" },
+        { area : "sigcse", title: "CSEd" }
         ];
 
-    private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "ir"];
+    private readonly aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
     private readonly systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
     private readonly theoryAreas = ["act", "crypt", "log"];
-    private readonly interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+    private readonly interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
 
     private readonly areaNames: Array<string> = [];
     private readonly fields: Array<string> = [];
@@ -972,31 +980,6 @@ class CSRankings {
                     return false;
                 }
                 break;
-            case "at":
-            case "au":
-            case "br":
-            case "ca":
-            case "ch":
-            case "cn":
-            case "de":
-            case "dk":
-            case "es":
-            case "fr":
-            case "gr":
-            case "hk":
-            case "il":
-            case "in":
-            case "it":
-            case "jp":
-            case "kr":
-            case "nl":
-            case "nz":
-            case "tr":
-            case "uk":
-                if (this.countryAbbrv[dept] != regions) {
-                    return false;
-                }
-                break;
             case "europe":
                 if (!(dept in this.countryInfo)) { // USA
                     return false;
@@ -1043,6 +1026,11 @@ class CSRankings {
                 }
                 break;
             case "world":
+                break;
+	    default:
+                if (this.countryAbbrv[dept] != regions) {
+                    return false;
+                }
                 break;
         }
         return true;
@@ -1720,7 +1708,7 @@ class CSRankings {
     }
 
     public static geoCheck(): void {
-        navigator.geolocation.getCurrentPosition((position) => {
+        navigator.geolocation?.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = (<HTMLInputElement>document.getElementById("regions"));
             switch (continent) {
@@ -1774,7 +1762,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#{key}`).prop('value', params[key].toString());
+                $(`#${key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
