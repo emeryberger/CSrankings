@@ -127,6 +127,7 @@
 //article[journal="PVLDB"],
 //article[journal="Proc. VLDB Endow."],
 //inproceedings[booktitle="SIGMOD Conference"],
+//article[journal="Proc. ACM Manag. Data"],
 //inproceedings[booktitle="ICDE"],
 //inproceedings[booktitle="PODS"],
 //inproceedings[booktitle="MobiSys"],
