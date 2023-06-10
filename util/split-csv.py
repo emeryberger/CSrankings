@@ -17,9 +17,7 @@ def csv2dict_str_str(fname):
     with open(fname, mode="r") as infile:
         rdr = csv.reader(infile)
         d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(
-                rows[1].strip(), "utf-8"
-            )
+            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
             for rows in rdr
         }
     return d
@@ -54,15 +52,11 @@ with open("csrankings.csv", mode="r") as infile:
         homepageWriter.writeheader()
         with open("scholar.csv", mode="w") as scholarlinks:
             scholarfieldnames = ["name", "scholarid"]
-            scholarWriter = csv.DictWriter(
-                scholarlinks, fieldnames=scholarfieldnames
-            )
+            scholarWriter = csv.DictWriter(scholarlinks, fieldnames=scholarfieldnames)
             scholarWriter.writeheader()
             with open("faculty-affiliations.csv", "w") as facultyaffs:
                 facfieldnames = ["name", "affiliation"]
-                facWriter = csv.DictWriter(
-                    facultyaffs, fieldnames=facfieldnames
-                )
+                facWriter = csv.DictWriter(facultyaffs, fieldnames=facfieldnames)
                 facWriter.writeheader()
                 for row in reader:
                     match = re.match("(.*)\s+\[(.*)\]", row["name"])
