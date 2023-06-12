@@ -131,7 +131,7 @@ def process():
             for l in changed_lines[file]:
                 line = l['content']
 
-                print(f"Processing {line}:")
+                print(f"Processing {line}")
                 
                 if re.search(r',\s', line):
                     print(f"Found a space after a comma ({line}). Please ensure there are no spaces after commas.")
@@ -153,8 +153,8 @@ def process():
                     if not has_valid_homepage(homepage):
                         print(f"  Invalid homepage URL ({homepage}). Please provide a correct URL.")
                         valid = False
-                except:
-                    print(f"Processing failed.")
+                except Exception as e:
+                    print(f"Processing failed ({e}).")
                     valid = False
 
     if valid:
