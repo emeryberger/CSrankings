@@ -141,7 +141,7 @@ def process():
                 try:
                     (name, affiliation, homepage, scholarid) = line.split(',')
                     if not has_valid_google_scholar_id(scholarid):
-                        print(f"  Invalid Google Scholar ID ({google_scholar_id}). Please provide a valid identifier.")
+                        print(f"  Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.")
                         valid = False
                     completions = matching_name_with_dblp(name)
                     if completions == 0:
