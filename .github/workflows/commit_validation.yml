@@ -19,8 +19,8 @@ jobs:
 
       # Checkout the repo
       - uses: actions/checkout@v3
-        #with:
-        #  fetch-depth: 0 # needed to checkout all branches for this Action to work
+        with:
+          fetch-depth: 1 # needed to checkout all branches for this Action to work # was 0
 
       # Check the PR diff using the current branch and the base branch of the PR
       - uses: GrantBirki/git-diff-action@v2.0.1
