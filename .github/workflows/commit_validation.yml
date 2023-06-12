@@ -2,11 +2,8 @@ name: Commit Validation
 
 on:
   push:
-    branches:
-      - [ "gh-pages" ]  # Change this to the branch you want to trigger the validation on
 
   pull_request:
-    branches: [ "gh-pages" ]
 
 jobs:
   commit_validation:
