@@ -107,13 +107,17 @@ def process():
     changed_lines = {}
     
     for d in data['files']:
-        file_path = d['path']
-        changed_lines[file_path] = []
+        try:
+            file_path = d['path']
+            changed_lines[file_path] = []
 
-        for chunk in d['chunks']:
-            for change in chunk['changes']:
-                if True: # change['type'] == 'AddedLine': # for testing only
-                    changed_lines[file_path].append(change)
+            for chunk in d['chunks']:
+                for change in chunk['changes']:
+                    if change['type'] == 'AddedLine':
+                        changed_lines[file_path].append(change)
+        except:
+            # Gracefully handle misformed / empty JSON.
+            pass
 
     # Now process the diffs.
 
