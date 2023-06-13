@@ -12,10 +12,10 @@ allowed_files = ['csrankings-[a-z].csv', 'country-info.csv', 'old/industry.csv',
 def translate_name_to_dblp(name):
     # Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
     # First, replace spaces and non-ASCII characters (not complete).
-    name = re.sub(r' Jr\.', '_Jr.', name)
-    name = re.sub(r' II', '_II', name)
-    name = re.sub(r' III', '_III', name)
-    name = re.sub(r'\'|\-|\.', '=', name)
+    name = re.sub(r'\.', '', name)
+    #name = re.sub(r' II', '_II', name)
+    #name = re.sub(r' III', '_III', name)
+    #name = re.sub(r'\'|\-|\.', '=', name)
     # Now replace diacritics.
     name = urllib.parse.quote(name, safe='=')
     name = re.sub(r'&', '=', name)
@@ -83,7 +83,7 @@ def matching_name_with_dblp(name):
     author_name = translate_name_to_dblp(name)
     # Look for matching authors, no more than 10.
     dblp_url = f"https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10"
-    print(f"  searching for {dblp_url}")
+    print(f"  Checking {dblp_url}")
     try:
         response = requests.get(dblp_url)
         j = json.loads(response.text)
@@ -169,6 +169,7 @@ def process():
                         valid = False
 
                     # Check Google Scholar ID.
+                    print(f"  Checking Google Scholar ID ({scholarid})")
                     if not has_valid_google_scholar_id(scholarid):
                         print(f"  Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.")
                         valid = False
@@ -178,11 +179,12 @@ def process():
                     if completions == 0:
                         print(f"  Invalid name ({name}). Please ensure it matches the DBLP entry.")
                         valid = False
-                    if completions > 1:
+                    elif completions > 1:
                         print(f"  Possibly invalid name ({name}). This may be a disambiguation entry.")
                         valid = False
 
                     # Test the homepage.
+                    print(f"  Checking homepage URL ({homepage})")
                     if not has_valid_homepage(homepage):
                         print(f"  Invalid homepage URL ({homepage}). Please provide a correct URL.")
                         valid = False
