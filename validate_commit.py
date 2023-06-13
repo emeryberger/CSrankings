@@ -128,15 +128,29 @@ def process():
     valid = True
 
     print("Sanity checking the commit. Please check any issues raised here.")
+
+    # Pick arbitrary thresholds; if there are more than this many diffs,
+    # it is probably because of some line ending mismatch or editing with Excel.
+    remaining_diffs = 50
     
     for file in changed_lines:
         if not is_valid_file(file):
             print(f"Invalid file modification ({file}). Please only modify allowed CSV files.")
             valid = False
+            break
 
         # Check if we are processing a `csrankings-?.csv` file.
-        if re.match(r'csrankings-[a-z]\.csv', file):
+        matched = re.match(r'csrankings-([a-z])\.csv', file)
+        if matched:
+            the_letter = matched.groups(0)[0]
+            
             for l in changed_lines[file]:
+                remaining_diffs -= 1
+                if remaining_diffs <= 0:
+                    print("This PR has too many diffs. Something probably went wrong.")
+                    valid = False
+                    break
+                
                 line = l['content'].strip()
 
                 print(f"Processing {line}")
@@ -148,19 +162,36 @@ def process():
                 
                 try:
                     (name, affiliation, homepage, scholarid) = line.split(',')
+
+                    # Verify that entry is in the correct file.
+                    if name[0].lower() != the_letter:
+                        print(f"  This entry is in the wrong file. It is in `csrankings-{the_letter}.csv` but should be in `csrankings-{name[0].lower()}.csv`.")
+                        valid = False
+
+                    # Check Google Scholar ID.
                     if not has_valid_google_scholar_id(scholarid):
                         print(f"  Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.")
                         valid = False
+
+                    # Check name against DBLP.
                     completions = matching_name_with_dblp(name)
                     if completions == 0:
                         print(f"  Invalid name ({name}). Please ensure it matches the DBLP entry.")
                         valid = False
                     if completions > 1:
-                        print(f"  Invalid name ({name}). This may be a disambiguation entry.")
+                        print(f"  Possibly invalid name ({name}). This may be a disambiguation entry.")
                         valid = False
+
+                    # Test the homepage.
                     if not has_valid_homepage(homepage):
                         print(f"  Invalid homepage URL ({homepage}). Please provide a correct URL.")
                         valid = False
+
+                    # TODO:
+                    # - verify that new entry is in alphabetical order
+                    # - warn if there is an affiliation mismatch with DBLP
+                    # - warn if there is a home page mismatch with DBLP
+                        
                 except Exception as e:
                     print(f"Processing failed ({e}).")
                     valid = False
