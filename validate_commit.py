@@ -36,9 +36,11 @@ def translate_name_to_dblp(name):
     new_name = new_name.replace(' ', '_')
     new_name = new_name.replace('-', '=')
     new_name = urllib.parse.quote(new_name)
-    str_ = "https://dblp.org/pers/hd"
+    str_ = ""
+    # str_ = "https://dblp.org/pers/hd"
     last_initial = last_name[0].lower()
-    str_ += f'/{last_initial}/{last_name}:{new_name}'
+    str_ += f'{last_name}:{new_name}'
+    # str_ += f'/{last_initial}/{last_name}:{new_name}'
     return str_
 
 def is_valid_account(account):
@@ -79,7 +81,9 @@ def matching_name_with_dblp(name):
     # Try to fetch the author name and return the number of completions
     # (1 == an exact match).
     author_name = translate_name_to_dblp(name)
-    dblp_url = f"https://dblp.org/search/publ/api?q=author%3A{name}%3A&format=json"
+    # Look for matching authors, no more than 10.
+    dblp_url = f"https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10"
+    print(f"  searching for {dblp_url}")
     try:
         response = requests.get(dblp_url)
         j = json.loads(response.text)
