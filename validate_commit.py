@@ -7,7 +7,7 @@ import sys
 
 import urllib.parse
 
-allowed_files = ['csrankings-[a-z].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
+allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
 def translate_name_to_dblp(name):
     # Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -15,7 +15,8 @@ def translate_name_to_dblp(name):
     name = re.sub(r'\.', '', name)
     #name = re.sub(r' II', '_II', name)
     #name = re.sub(r' III', '_III', name)
-    #name = re.sub(r'\'|\-|\.', '=', name)
+    # name = re.sub(r'\'|\-|\.', '=', name)
+    name = re.sub(r'\-', '%2D', name)
     # Now replace diacritics.
     name = urllib.parse.quote(name, safe='=')
     name = re.sub(r'&', '=', name)
@@ -85,11 +86,13 @@ def matching_name_with_dblp(name):
     author_name = translate_name_to_dblp(name)
     # Look for matching authors, no more than 10.
     dblp_url = f"https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10"
-    print(f"  Checking {dblp_url}")
+    # print(f"  Checking {dblp_url}")
     try:
         response = requests.get(dblp_url)
         j = json.loads(response.text)
         completions = j['result']['completions']['@total']
+        if completions != 0:
+            print(f"  Checking {dblp_url}")
         return int(completions)
     except requests.exceptions.RequestException as e:
         print(f"Exception: {e}")
@@ -146,11 +149,13 @@ def process():
             break
 
         # Check if we are processing a `csrankings-?.csv` file.
-        matched = re.match(r'csrankings-([a-z])\.csv', file)
+        matched = re.match(r'csrankings-([a-z0])\.csv', file)
         if matched:
             the_letter = matched.groups(0)[0]
             
             for l in changed_lines[file]:
+                line_valid = True
+                
                 remaining_diffs -= 1
                 if remaining_diffs <= 0:
                     print("This PR has too many diffs. Something probably went wrong.")
@@ -170,12 +175,12 @@ def process():
                     (name, affiliation, homepage, scholarid) = line.split(',')
 
                     # Verify that entry is in the correct file.
-                    if name[0].lower() != the_letter:
+                    if name[0].lower() != the_letter and the_letter != '0':
                         print(f"  This entry is in the wrong file. It is in `csrankings-{the_letter}.csv` but should be in `csrankings-{name[0].lower()}.csv`.")
                         valid, line_valid = (False, False)
 
                     # Check Google Scholar ID.
-                    print(f"  Checking Google Scholar ID ({scholarid})")
+                    # print(f"  Checking Google Scholar ID ({scholarid})")
                     if not has_valid_google_scholar_id(scholarid):
                         print(f"  Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.")
                         valid = False
@@ -190,7 +195,7 @@ def process():
                         valid, line_valid = (False, False)
 
                     # Test the homepage.
-                    print(f"  Checking homepage URL ({homepage})")
+                    # print(f"  Checking homepage URL ({homepage})")
                     if not has_valid_homepage(homepage):
                         print(f"  Invalid homepage URL ({homepage}). Please provide a correct URL.")
                         valid, line_valid = (False, False)
@@ -201,9 +206,10 @@ def process():
                     # - warn if there is a home page mismatch with DBLP
 
                     if line_valid:
-                        print(f"All tests passed for {name}.")
+                        pass
+                        # print(f"All tests passed for {name}.")
                     else:
-                        print(f"Test failure for {name}.")
+                        print(f"***Test failure for {name}***.")
                         
                 except Exception as e:
                     print(f"Processing failed ({e}).")
