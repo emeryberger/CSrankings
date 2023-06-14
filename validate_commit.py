@@ -56,6 +56,8 @@ def has_valid_homepage(homepage):
     # Use requests library to fetch the page and check the response
     try:
         response = requests.get(homepage)
+        if response.status_code != 200:
+            print(f"  Received error code {response.status_code}.")
         return response.status_code == 200
     except requests.exceptions.RequestException:
         return False
@@ -126,17 +128,21 @@ def process():
     # Now process the diffs.
 
     valid = True
+    line_valid = True
 
     print("Sanity checking the commit. Please check any issues raised here.")
 
     # Pick arbitrary thresholds; if there are more than this many diffs,
     # it is probably because of some line ending mismatch or editing with Excel.
     remaining_diffs = 50
+
+    # TO DO: check deleted lines to see if home page still valid
+    # or if moved to another file
     
     for file in changed_lines:
         if not is_valid_file(file):
             print(f"Invalid file modification ({file}). Please only modify allowed CSV files.")
-            valid = False
+            valid, line_valid = (False, False)
             break
 
         # Check if we are processing a `csrankings-?.csv` file.
@@ -148,7 +154,7 @@ def process():
                 remaining_diffs -= 1
                 if remaining_diffs <= 0:
                     print("This PR has too many diffs. Something probably went wrong.")
-                    valid = False
+                    valid, line_valid = (False, False)
                     break
                 
                 line = l['content'].strip()
@@ -157,7 +163,7 @@ def process():
                 
                 if re.search(r',\s', line):
                     print(f"  Found a space after a comma ({line}). Please ensure there are no spaces after commas.")
-                    valid = False
+                    valid, line_valid = (False, False)
                     continue
                 
                 try:
@@ -166,7 +172,7 @@ def process():
                     # Verify that entry is in the correct file.
                     if name[0].lower() != the_letter:
                         print(f"  This entry is in the wrong file. It is in `csrankings-{the_letter}.csv` but should be in `csrankings-{name[0].lower()}.csv`.")
-                        valid = False
+                        valid, line_valid = (False, False)
 
                     # Check Google Scholar ID.
                     print(f"  Checking Google Scholar ID ({scholarid})")
@@ -178,25 +184,30 @@ def process():
                     completions = matching_name_with_dblp(name)
                     if completions == 0:
                         print(f"  Invalid name ({name}). Please ensure it matches the DBLP entry.")
-                        valid = False
+                        valid, line_valid = (False, False)
                     elif completions > 1:
                         print(f"  Possibly invalid name ({name}). This may be a disambiguation entry.")
-                        valid = False
+                        valid, line_valid = (False, False)
 
                     # Test the homepage.
                     print(f"  Checking homepage URL ({homepage})")
                     if not has_valid_homepage(homepage):
                         print(f"  Invalid homepage URL ({homepage}). Please provide a correct URL.")
-                        valid = False
+                        valid, line_valid = (False, False)
 
                     # TODO:
                     # - verify that new entry is in alphabetical order
                     # - warn if there is an affiliation mismatch with DBLP
                     # - warn if there is a home page mismatch with DBLP
+
+                    if line_valid:
+                        print(f"All tests passed for {name}.")
+                    else:
+                        print(f"Test failure for {name}.")
                         
                 except Exception as e:
                     print(f"Processing failed ({e}).")
-                    valid = False
+                    valid, line_valid = (False, False)
 
     if valid:
         sys.exit(0)
