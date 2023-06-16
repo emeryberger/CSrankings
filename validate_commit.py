@@ -104,11 +104,16 @@ def matching_name_with_dblp(name: str) -> int:
         response = requests.get(dblp_url)
         # Extract the number of completions from the JSON response.
         j = json.loads(response.text)
-        completions = j['result']['completions']['@total']
+        completions = int(j['result']['completions']['@total'])
         # Print a message if there is a match.
         if completions != 0:
             print(f'  Checking {dblp_url}')
-        return int(completions)
+            # Check for an exact name match
+            if completions > 0:
+                for hit in j['result']['hits']['hit']:
+                    if hit['info']['author'] == name:
+                        return 1
+        return completions
     except requests.exceptions.RequestException as e:
         # Handle any exceptions that occur during the request.
         print(f'Exception: {e}')
