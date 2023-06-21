@@ -64,9 +64,25 @@ def has_reasonable_title(title):
     # Check if the title is reasonable
     return not title.startswith('Update csrankings-')
 
+# Use richer headers to avoid 403 errors.
+# From https://scrapeops.io/web-scraping-playbook/403-forbidden-error-web-scraping.
+HEADERS = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5",
+        "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Cache-Control": "max-age=0",
+    }
+
 def has_valid_homepage(homepage: str) -> bool:
     try:
-        response = requests.get(homepage)
+        response = requests.get(homepage, headers=HEADERS, timeout=15)
         if response.status_code != 200:
             print(f'  Received error code {response.status_code}.')
         return response.status_code == 200
@@ -207,7 +223,7 @@ def process():
                         print(f'  Possibly invalid name ({name}). This may be a disambiguation entry.')
                         valid, line_valid = (False, False)
                     # Test the homepage.
-                    # print(f"  Checking homepage URL ({homepage})")
+                    print(f"  Checking homepage URL ({homepage})")
                     if not has_valid_homepage(homepage):
                         print(f'  Invalid homepage URL ({homepage}). Please provide a correct URL.')
                         valid, line_valid = (False, False)
