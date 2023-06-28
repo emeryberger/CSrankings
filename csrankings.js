@@ -172,13 +172,14 @@ class CSRankings {
             { area: "vr", title: "Visualization" },
             { area: "ecom", title: "ECom" },
             { area: "ec", title: "ECom" },
-            { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+            { area: "wine", title: "ECom" },
+            { area: "csed", title: "CSEd" },
+            { area: "sigcse", title: "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+        this.interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -1692,7 +1693,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
+CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lk", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
@@ -1772,7 +1773,8 @@ CSRankings.parentMap = {
     'iros': 'robotics',
     'rss': 'robotics',
     'vis': 'visualization',
-    'vr': 'visualization'
+    'vr': 'visualization',
+    'sigcse': 'csed'
 };
 CSRankings.nextTier = {
     'ase': true,
