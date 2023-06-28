@@ -14,7 +14,7 @@ https://csrankings.org
 
 ### Adding or modifying affiliations
 
-**_NOTE: Updates are now processed on a quarterly basis. You may submit pull requests at any time, but they may not be processed until the next quarter (March 1, 2023)._**
+**_NOTE: Updates are now processed on a quarterly basis. You may submit pull requests at any time, but they may not be processed until the next quarter (after three months have elapsed)._**
 
 **You can now edit files directly in GitHub to create pull requests.** All data is
 in the files `csrankings-[a-z].csv`, with authors listed in
