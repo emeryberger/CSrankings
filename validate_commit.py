@@ -84,7 +84,7 @@ def has_valid_homepage(homepage: str) -> bool:
     try:
         response = requests.get(homepage, headers=HEADERS, timeout=15)
         if response.status_code != 200:
-            print(f'  Received error code {response.status_code}.')
+            print(f'  WARNING: Received error code {response.status_code}.')
         return response.status_code == 200
     except requests.exceptions.RequestException:
         return False
@@ -132,7 +132,7 @@ def matching_name_with_dblp(name: str) -> int:
         return completions
     except requests.exceptions.RequestException as e:
         # Handle any exceptions that occur during the request.
-        print(f'Exception: {e}')
+        print(f'ERROR: Exception: {e}')
         return 0
 
 def is_valid_file(file: str) -> bool:
@@ -179,7 +179,7 @@ def process():
     # or if moved to another file
     for file in changed_lines:
         if not is_valid_file(file):
-            print(f'Invalid file modification ({file}). Please only modify allowed CSV files.')
+            print(f'ERROR: Invalid file modification ({file}). Please only modify allowed CSV files.')
             valid, line_valid = (False, False)
             break
         # Check if we are processing a `csrankings-?.csv` file.
@@ -190,42 +190,42 @@ def process():
                 line_valid = True
                 remaining_diffs -= 1
                 if remaining_diffs <= 0:
-                    print('This PR has too many diffs. Something probably went wrong.')
+                    print('ERROR: This PR has too many diffs. Something probably went wrong.')
                     valid, line_valid = (False, False)
                     break
                 line = l['content'].strip()
                 print(f'Processing {line}')
                 if re.search(',\\s', line):
-                    print(f'  Found a space after a comma ({line}). Please ensure there are no spaces after commas.')
+                    print(f'  ERROR: Found a space after a comma ({line}). Please ensure there are no spaces after commas.')
                     valid, line_valid = (False, False)
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
-                        print(f'  This institution ({affiliation}) was not found in `institutions.csv`.')
+                        print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
                         valid, line_valid = (False, False)
                     # Verify that entry is in the correct file.
                     if name[0].lower() != the_letter and the_letter != '0':
-                        print(f'  This entry is in the wrong file. It is in `csrankings-{the_letter}.csv` but should be in `csrankings-{name[0].lower()}.csv`.')
+                        print(f'  ERROR: This entry is in the wrong file. It is in `csrankings-{the_letter}.csv` but should be in `csrankings-{name[0].lower()}.csv`.')
                         valid, line_valid = (False, False)
                     # Check Google Scholar ID.
                     # print(f"  Checking Google Scholar ID ({scholarid})")
                     if not has_valid_google_scholar_id(scholarid):
-                        print(f'  Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.')
+                        print(f'  ERROR: Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.')
                         valid = False
                     # Check name against DBLP.
                     completions = matching_name_with_dblp(name)
                     if completions == 0:
-                        print(f'  Invalid name ({name}). Please ensure it matches the DBLP entry.')
+                        print(f'  ERROR: Invalid name ({name}). Please ensure it matches the DBLP entry.')
                         valid, line_valid = (False, False)
                     elif completions > 1:
-                        print(f'  Possibly invalid name ({name}). This may be a disambiguation entry.')
+                        print(f'  WARNING: Possibly invalid name ({name}). This may be a disambiguation entry.')
                         valid, line_valid = (False, False)
                     # Test the homepage.
                     print(f"  Checking homepage URL ({homepage})")
                     if not has_valid_homepage(homepage):
-                        print(f'  Invalid homepage URL ({homepage}). Please provide a correct URL.')
+                        print(f'  WARNING: Invalid homepage URL ({homepage}). Please provide a correct URL.')
                         valid, line_valid = (False, False)
                     # TODO:
                     # - verify that new entry is in alphabetical order
