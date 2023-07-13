@@ -32,6 +32,8 @@ def translate_name_to_dblp(name: str) -> str:
     name = re.sub('&', '=', name)
     # replaces ';' with '='
     name = re.sub(';', '=', name)
+    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
+    name = re.sub('-', ' ', name)
     split_name = name.split(' ')
     last_name = split_name[-1]
     disambiguation = ''
