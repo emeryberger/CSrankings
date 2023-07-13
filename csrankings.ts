@@ -677,13 +677,20 @@ class CSRankings {
         return this.areaStringMap[name];
     }
 
+    private removeDisambiguationSuffix(str: string) {
+	// Matches a space followed by a four-digit number at the end of the string
+	const regex = /\s\d{4}$/;
+	return str.replace(regex, '');
+    }
 
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
     private compareNames(a: string, b: string): number {
 
-        //split the names as strings into arrays
-        const aName = a.split(" ");
-        const bName = b.split(" ");
+        // Split the names as strings into arrays,
+	// removing any disambiguation suffixes first.
+	
+        const aName = this.removeDisambiguationSuffix(a).split(" ");
+        const bName = this.removeDisambiguationSuffix(b).split(" ");
 
         // get the last names by selecting
         // the last element in the name arrays
@@ -692,12 +699,20 @@ class CSRankings {
         const aLastName = aName[aName.length - 1];
         const bLastName = bName[bName.length - 1];
 
+	let returnValue : number;
+	
         // compare the names and return either
         // a negative number, positive number
         // or zero.
-        if (aLastName < bLastName) return -1;
-        if (aLastName > bLastName) return 1;
-        return 0;
+        if (aLastName < bLastName) {
+	    returnValue = -1;
+	} else if (aLastName > bLastName) {
+	    returnValue = 1;
+	} else {
+	    returnValue = 0;
+	}
+	
+        return returnValue;
     }
 
     /* Create a bar or pie chart using Vega. Modified by Minsuk Kahng (https://minsuk.com) */
