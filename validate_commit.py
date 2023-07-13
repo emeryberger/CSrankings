@@ -20,20 +20,14 @@ def translate_name_to_dblp(name: str) -> str:
     # Replace spaces and non-ASCII characters.
     # removes periods
     name = re.sub('\\.', '', name)
-    #name = re.sub(r' II', '_II', name)
-    #name = re.sub(r' III', '_III', name)
-    # name = re.sub(r'\'|\-|\.', '=', name)
-    # replaces hyphens with URL encoded string
-    name = re.sub('\\-', '%2D', name)
-    # Replace diacritics.
+    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
+    name = re.sub('-', ' ', name)
     # encodes diacritics
     name = urllib.parse.quote(name, safe='=')
     # replaces '&' with '='
     name = re.sub('&', '=', name)
     # replaces ';' with '='
     name = re.sub(';', '=', name)
-    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
-    name = re.sub('-', ' ', name)
     split_name = name.split(' ')
     last_name = split_name[-1]
     disambiguation = ''
