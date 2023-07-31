@@ -36,9 +36,9 @@ jobs:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
         run: |
           python validate_commit.py $DIFF
+          python validate_commit.py $DIFF || echo ::set-output name=result::$(tail -n 1 validation.log)
 
-          
-      - name: Comment PR on failure
+      - name: Comment PR
         if: ${{ failure() }}
         uses: actions/github-script@v3
         with:
@@ -46,9 +46,8 @@ jobs:
           script: |
             const output = `The commit validation failed with the following output: \n\`${{steps.validation.outputs.result}}\``
             const issue_number = context.issue.number
-            const octokit = github.getOctokit(core.getInput('github-token'))
-            octokit.issues.createComment({
+            github.issues.createComment({
               ...context.repo,
-              issue_number,
+              issue_number: issue_number,
               body: output
             })
