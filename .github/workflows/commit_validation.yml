@@ -35,9 +35,8 @@ jobs:
         env:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
         run: |
-          python validate_commit.py $DIFF
-          python validate_commit.py $DIFF || echo ::set-output name=result::$(tail -n 1 validation.log)
-
+          OUTPUT=$(python validate_commit.py $DIFF) || echo ::set-output name=result::"$OUTPUT"
+          
       - name: Comment PR
         if: ${{ failure() }}
         uses: actions/github-script@v3
