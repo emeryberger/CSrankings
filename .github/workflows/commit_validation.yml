@@ -31,8 +31,24 @@ jobs:
 
       # Print the diff in JSON format
       - name: Check commits for validity
+        id: validation
         env:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
         run: |
           python validate_commit.py $DIFF
 
+          
+      - name: Comment PR on failure
+        if: ${{ failure() }}
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const output = `The commit validation failed with the following output: \n\`${{steps.validation.outputs.result}}\``
+            const issue_number = context.issue.number
+            const octokit = github.getOctokit(core.getInput('github-token'))
+            octokit.issues.createComment({
+              ...context.repo,
+              issue_number,
+              body: output
+            })
