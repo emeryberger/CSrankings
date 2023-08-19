@@ -313,7 +313,7 @@ class CSRankings {
             let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
                 localStorage.getItem('surveyDisplayed');
             // DISABLE SURVEY (remove the next line to re-enable)
-            shownAlready = 'disabled';
+            // shownAlready = 'disabled';
             if (!shownAlready) {
                 // Not shown yet.
                 const randomValue = Math.floor(Math.random() * surveyFrequency);
@@ -326,7 +326,7 @@ class CSRankings {
             }
             // Randomly display a sponsorship request.
             // In the future, tie to amount of use of the site, a la Wikipedia.
-            const sponsorshipFrequency = 20; // One out of this many users gets the sponsor page (on average).
+            const sponsorshipFrequency = 10; // One out of this many users gets the sponsor page (on average).
             // Check to see if the sponsorship page has already been displayed.
             if (!localStorage.getItem('sponsorshipDisplayed')) {
                 // Not shown yet.
