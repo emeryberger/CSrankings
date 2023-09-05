@@ -326,7 +326,7 @@ class CSRankings {
             }
             // Randomly display a sponsorship request.
             // In the future, tie to amount of use of the site, a la Wikipedia.
-            const sponsorshipFrequency = 10; // One out of this many users gets the sponsor page (on average).
+            const sponsorshipFrequency = 5; // One out of this many users gets the sponsor page (on average).
             // Check to see if the sponsorship page has already been displayed.
             if (!localStorage.getItem('sponsorshipDisplayed')) {
                 // Not shown yet.
