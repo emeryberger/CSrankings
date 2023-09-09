@@ -67,6 +67,7 @@ areaList = [
     {"area": "comm", "title": "Networks", "color": syscolor},
     {"area": "sigcomm", "title": "Networks", "color": syscolor},
     {"area": "nsdi", "title": "Networks", "color": syscolor},
+    {"area": "conext", "title": "Networks", "color": syscolor},
     {"area": "mod", "title": "DB", "color": syscolor},
     {"area": "icde", "title": "DB", "color": syscolor},
     {"area": "vldb", "title": "DB", "color": syscolor},

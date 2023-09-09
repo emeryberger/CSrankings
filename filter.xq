@@ -111,6 +111,7 @@
 //inproceedings[booktitle="Internet Measurement Conference"],
 //inproceedings[booktitle="SIGCOMM"],
 //inproceedings[booktitle="NSDI"],
+//inproceedings[booktitle="CoNEXT"],
 //article[journal="PACMPL"],
 //inproceedings[booktitle="POPL"],
 //inproceedings[booktitle="PLDI"],

@@ -310,6 +310,7 @@ class CSRankings {
             'issta': 'soft',  // next tier
             'nsdi': 'comm',
             'sigcomm': 'comm',
+            'conext': 'comm',
             'siggraph': 'graph',
             'siggraph-asia': 'graph',
             'eurographics': 'graph', // next tier
@@ -394,6 +395,7 @@ class CSRankings {
         { area: "comm", title: "Networks" },
         { area: "sigcomm", title: "Networks" },
         { area: "nsdi", title: "Networks" },
+        { area: "conext", title: "Networks" },
         { area: "sec", title: "Security" },
         { area: "ccs", title: "Security" },
         { area: "oakland", title: "Security" },
