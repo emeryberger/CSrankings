@@ -20,12 +20,8 @@ def translate_name_to_dblp(name: str) -> str:
     # Replace spaces and non-ASCII characters.
     # removes periods
     name = re.sub('\\.', '', name)
-    #name = re.sub(r' II', '_II', name)
-    #name = re.sub(r' III', '_III', name)
-    # name = re.sub(r'\'|\-|\.', '=', name)
-    # replaces hyphens with URL encoded string
-    name = re.sub('\\-', '%2D', name)
-    # Replace diacritics.
+    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
+    name = re.sub('-', ' ', name)
     # encodes diacritics
     name = urllib.parse.quote(name, safe='=')
     # replaces '&' with '='
@@ -94,11 +90,10 @@ def has_valid_google_scholar_id(id):
     if id == 'NOSCHOLARPAGE':
         return True
     # Define the regular expression pattern for valid IDs
-    pattern = '^[a-zA-Z0-9_-]{7}AAAAJ$'
+    pattern = '^[a-zA-Z0-9_-]{12}$'
     # Check if the ID matches the pattern
-    if not re.match(pattern, id):
-        return False
-    return True
+    return re.match(pattern, id)
+
 
 def matching_name_with_dblp(name: str) -> int:
     """
