@@ -71,6 +71,8 @@
 //inproceedings[booktitle="EUROCRYPT (1)"],
 //inproceedings[booktitle="EUROCRYPT (2)"],
 //inproceedings[booktitle="EUROCRYPT (3)"],
+//inproceedings[booktitle="EUROCRYPT (4)"],
+//inproceedings[booktitle="EUROCRYPT (5)"],
 //inproceedings[booktitle="SC"],
 //inproceedings[booktitle="HPDC"],
 //inproceedings[booktitle="ICS"],
