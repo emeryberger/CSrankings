@@ -204,14 +204,14 @@ class CSRankings {
 	    // We've finished loading; remove the overlay.
 	    document!.getElementById("overlay-loading")!.style.display = "none";
 	    // Randomly display a survey.
-	    const surveyFrequency = 10; // One out of this many users gets the survey (on average).
+	    const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
 	    // Check to see if survey has already been displayed.
 	    let displaySurvey = false;
 	    // Keep the cookie for backwards compatibility (for now).
 	    let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
 		localStorage.getItem('surveyDisplayed');
 	    // DISABLE SURVEY (remove the next line to re-enable)
-	    // shownAlready = 'disabled';
+	    shownAlready = 'disabled';
             if (!shownAlready) {
 		// Not shown yet.
 		const randomValue = Math.floor(Math.random() * surveyFrequency);
