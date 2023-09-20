@@ -35,6 +35,7 @@
 //article[journal="IEEE Trans. Vis. Comput. Graph."],
 //article[journal="IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."],
 //inproceedings[booktitle="IEEE Symposium on Security and Privacy"],
+//inproceedings[booktitle="SP"],
 //inproceedings[booktitle="ACM Conference on Computer and Communications Security"],
 //inproceedings[booktitle="CCS"],
 //inproceedings[booktitle="USENIX Security Symposium"],
