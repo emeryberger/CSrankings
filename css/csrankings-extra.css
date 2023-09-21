@@ -1,0 +1,55 @@
+/* Adapted from https://stackoverflow.com/questions/899148/html-select-option-separator */
+
+optgroup + optgroup {
+    border-top: 1px solid black
+}
+
+optgroup { padding-bottom: 8px; }
+optgroup:not(:first-child) {
+    padding-top: 8px; border-top: solid 1px #666;
+}
+
+.ai-area {
+    color: #377eb8
+}
+
+.systems-area {
+    color: #ff7f00
+}
+
+.theory-area {
+    color: #4daf4a
+}
+
+.interdisciplinary-area {
+    color: #984ea3
+}
+
+.overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.centerscreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.overlaytext {
+{
+  font-size: "20vw";
+  color: white;
+}

@@ -1,0 +1,351 @@
+<!--
+	The dblp computer science bibliography is copyright by Schloss Dagstuhl - Leibniz Center for Informatics.
+
+	The metadata provided by dblp on its webpages, as well as their XML, JSON, RDF, RIS, BibTeX, and text export formats
+	available at our website, is released under the CC0 1.0 Public Domain Dedication license. That is, you are free to copy,
+	distribute, use, modify, transform, build upon, and produce derived works from our data, even for commercial purposes,
+	all without asking permission. Of course, we are always happy if you provide a link to us as the source of the data.
+
+	Read the full CC0 1.0 legal code for the exact terms that apply:
+
+	https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+	A daily updated dblp XML record dump is available at:
+
+        https://dblp.org/xml/dblp.xml.gz
+
+	Persistent snapshots of the dblp XML record dumps are available at:
+
+        https://dblp.org/xml/release/
+
+	Date of this DTD file: November 23, 2019		
+
+	A changelog for this dblp.dtd can be found at:
+
+	https://dblp.org/xml/CHANGES.txt
+
+	For further details on the content of dblp XML records see:
+
+	https://dblp.org/faq/16154937.html
+-->
+
+<!ELEMENT dblp (article|inproceedings|proceedings|book|incollection|
+                phdthesis|mastersthesis|www|person|data)*>
+<!ATTLIST dblp mdate CDATA #IMPLIED >                
+                
+<!ENTITY % field "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter|publnr">
+
+<!ELEMENT article       (%field;)*>
+<!ATTLIST article
+                        key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        reviewid CDATA #IMPLIED
+                        rating CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT inproceedings (%field;)*>
+<!ATTLIST inproceedings key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT proceedings   (%field;)*>
+<!ATTLIST proceedings   key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT book          (%field;)*>
+<!ATTLIST book          key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT incollection  (%field;)*>
+<!ATTLIST incollection  key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT phdthesis     (%field;)*>
+<!ATTLIST phdthesis     key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT mastersthesis (%field;)*>
+<!ATTLIST mastersthesis key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT www           (%field;)*>
+<!ATTLIST www           key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT data          (%field;)*>
+<!ATTLIST data          key CDATA #REQUIRED
+                        mdate CDATA #IMPLIED
+                        publtype CDATA #IMPLIED
+                        cdate CDATA #IMPLIED
+>
+
+<!ELEMENT person ((author*, (note|url|cite)*)|crossref) > 
+<!ATTLIST person key CDATA #REQUIRED
+          mdate CDATA #IMPLIED
+          cdate CDATA #IMPLIED
+ >
+
+<!ELEMENT author    (#PCDATA)>
+<!ATTLIST author
+                    aux CDATA #IMPLIED
+                    bibtex CDATA #IMPLIED
+                    orcid CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT editor    (#PCDATA)>
+<!ATTLIST editor
+                    aux CDATA #IMPLIED
+                    orcid CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT address   (#PCDATA)>
+<!ATTLIST address
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ENTITY % titlecontents "#PCDATA|sub|sup|i|tt|ref">
+<!ELEMENT title     (%titlecontents;)*>
+<!ATTLIST title
+                    bibtex CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT booktitle (#PCDATA)>
+<!ATTLIST booktitle
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT pages     (#PCDATA)>
+<!ATTLIST pages
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT year      (#PCDATA)>
+<!ATTLIST year
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT journal   (#PCDATA)>
+<!ATTLIST journal
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT volume    (#PCDATA)>
+<!ATTLIST volume
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT number    (#PCDATA)>
+<!ATTLIST number
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT month     (#PCDATA)>
+<!ATTLIST month
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT url       (#PCDATA)>
+<!ATTLIST url
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT ee        (#PCDATA)>
+<!ATTLIST ee
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED
+>
+
+<!ELEMENT cite      (#PCDATA)>
+<!ATTLIST cite
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED
+                    ref CDATA #IMPLIED
+>
+
+<!ELEMENT school    (#PCDATA)>
+<!ATTLIST school
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST publisher
+                    href CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT note      (#PCDATA)>
+<!ATTLIST note
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED                   
+>
+
+<!ELEMENT cdrom     (#PCDATA)>
+
+<!ELEMENT crossref  (#PCDATA)>
+<!ELEMENT isbn      (#PCDATA)>
+<!ATTLIST isbn
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT chapter   (#PCDATA)>
+<!ELEMENT series    (#PCDATA)>
+<!ATTLIST series
+                    href CDATA #IMPLIED
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!ELEMENT publnr (#PCDATA) >
+<!ATTLIST publnr
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type CDATA #IMPLIED 
+>
+
+<!--  sub elements of the title element -->
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref href CDATA #REQUIRED>
+<!ELEMENT sup (%titlecontents;)*>
+<!ELEMENT sub (%titlecontents;)*>
+<!ELEMENT i   (%titlecontents;)*>
+<!ELEMENT tt  (%titlecontents;)*>
+
+<!ENTITY reg   "&#174;">
+<!ENTITY micro "&#181;">
+<!ENTITY times "&#215;">
+
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Character entity set. Typical invocation:
+     <!ENTITY % HTMLlat1 PUBLIC
+       "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML">
+-->
+<!-- This version of the entity set can be used with any SGML document
+     which uses ISO 8859-1 or ISO 10646 as its document character 
+     set. This includes XML documents and ISO HTML documents. 
+-->
+ 
+    <!ENTITY Agrave  "&#192;" ><!-- capital A, grave accent -->
+    <!ENTITY Aacute  "&#193;" ><!-- capital A, acute accent -->
+    <!ENTITY Acirc   "&#194;" ><!-- capital A, circumflex accent -->
+    <!ENTITY Atilde  "&#195;" ><!-- capital A, tilde -->
+    <!ENTITY Auml    "&#196;" ><!-- capital A, dieresis or umlaut mark -->
+    <!ENTITY Aring   "&#197;" ><!-- capital A, ring -->
+    <!ENTITY AElig   "&#198;" ><!-- capital AE diphthong (ligature) -->
+    <!ENTITY Ccedil  "&#199;" ><!-- capital C, cedilla -->
+    <!ENTITY Egrave  "&#200;" ><!-- capital E, grave accent -->
+    <!ENTITY Eacute  "&#201;" ><!-- capital E, acute accent -->
+    <!ENTITY Ecirc   "&#202;" ><!-- capital E, circumflex accent -->
+    <!ENTITY Euml    "&#203;" ><!-- capital E, dieresis or umlaut mark -->
+    <!ENTITY Igrave  "&#204;" ><!-- capital I, grave accent -->
+    <!ENTITY Iacute  "&#205;" ><!-- capital I, acute accent -->
+    <!ENTITY Icirc   "&#206;" ><!-- capital I, circumflex accent -->
+    <!ENTITY Iuml    "&#207;" ><!-- capital I, dieresis or umlaut mark -->
+    <!ENTITY ETH     "&#208;" ><!-- capital Eth, Icelandic -->
+    <!ENTITY Ntilde  "&#209;" ><!-- capital N, tilde -->
+    <!ENTITY Ograve  "&#210;" ><!-- capital O, grave accent -->
+    <!ENTITY Oacute  "&#211;" ><!-- capital O, acute accent -->
+    <!ENTITY Ocirc   "&#212;" ><!-- capital O, circumflex accent -->
+    <!ENTITY Otilde  "&#213;" ><!-- capital O, tilde -->
+    <!ENTITY Ouml    "&#214;" ><!-- capital O, dieresis or umlaut mark -->
+    <!ENTITY Oslash  "&#216;" ><!-- capital O, slash -->
+    <!ENTITY Ugrave  "&#217;" ><!-- capital U, grave accent -->
+    <!ENTITY Uacute  "&#218;" ><!-- capital U, acute accent -->
+    <!ENTITY Ucirc   "&#219;" ><!-- capital U, circumflex accent -->
+    <!ENTITY Uuml    "&#220;" ><!-- capital U, dieresis or umlaut mark -->
+    <!ENTITY Yacute  "&#221;" ><!-- capital Y, acute accent -->
+    <!ENTITY THORN   "&#222;" ><!-- capital THORN, Icelandic -->
+    <!ENTITY szlig   "&#223;" ><!-- small sharp s, German (sz ligature) -->
+    <!ENTITY agrave  "&#224;" ><!-- small a, grave accent -->   
+    <!ENTITY aacute  "&#225;" ><!-- small a, acute accent -->
+    <!ENTITY acirc   "&#226;" ><!-- small a, circumflex accent -->
+    <!ENTITY atilde  "&#227;" ><!-- small a, tilde -->
+    <!ENTITY auml    "&#228;" ><!-- small a, dieresis or umlaut mark -->
+    <!ENTITY aring   "&#229;" ><!-- small a, ring -->
+    <!ENTITY aelig   "&#230;" ><!-- small ae diphthong (ligature) -->
+    <!ENTITY ccedil  "&#231;" ><!-- small c, cedilla -->
+    <!ENTITY egrave  "&#232;" ><!-- small e, grave accent -->
+    <!ENTITY eacute  "&#233;" ><!-- small e, acute accent -->
+    <!ENTITY ecirc   "&#234;" ><!-- small e, circumflex accent -->
+    <!ENTITY euml    "&#235;" ><!-- small e, dieresis or umlaut mark -->
+    <!ENTITY igrave  "&#236;" ><!-- small i, grave accent -->
+    <!ENTITY iacute  "&#237;" ><!-- small i, acute accent -->
+    <!ENTITY icirc   "&#238;" ><!-- small i, circumflex accent -->
+    <!ENTITY iuml    "&#239;" ><!-- small i, dieresis or umlaut mark -->
+    <!ENTITY eth     "&#240;" ><!-- small eth, Icelandic -->
+    <!ENTITY ntilde  "&#241;" ><!-- small n, tilde -->
+    <!ENTITY ograve  "&#242;" ><!-- small o, grave accent -->
+    <!ENTITY oacute  "&#243;" ><!-- small o, acute accent -->
+    <!ENTITY ocirc   "&#244;" ><!-- small o, circumflex accent -->
+    <!ENTITY otilde  "&#245;" ><!-- small o, tilde -->
+    <!ENTITY ouml    "&#246;" ><!-- small o, dieresis or umlaut mark -->
+
+    <!ENTITY oslash  "&#248;" ><!-- small o, slash -->
+    <!ENTITY ugrave  "&#249;" ><!-- small u, grave accent -->
+    <!ENTITY uacute  "&#250;" ><!-- small u, acute accent -->
+    <!ENTITY ucirc   "&#251;" ><!-- small u, circumflex accent -->
+    <!ENTITY uuml    "&#252;" ><!-- small u, dieresis or umlaut mark -->
+    <!ENTITY yacute  "&#253;" ><!-- small y, acute accent -->
+    <!ENTITY thorn   "&#254;" ><!-- small thorn, Icelandic -->
+    <!ENTITY yuml    "&#255;" ><!-- small y, dieresis or umlaut mark -->
+

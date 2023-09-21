@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="description" content="Computer Science Rankings">
+    <meta name="keywords" content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+      });
+    </script>
+    
+    <title>FAQ - CSRankings: Computer Science Rankings</title>
+
+<!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-78147305-1', 'auto');
+      ga('send', 'pageview'); 
+
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <style type="text/css">
+      body {
+      font-family: Helvetica, Arial;
+      }
+
+      table td {
+      vertical-align: top;
+      }
+
+      td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      }
+
+      a {
+      color : blue ;
+      }
+
+      a.only_these_areas {
+      cursor: pointer;
+      }
+
+      div.hovertip {
+      cursor: pointer;
+      }
+
+      span.hovertip {
+      cursor: pointer;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+	
+        <h1>FAQ Computer Science Rankings</h1>
+	<div class="panel panel-info">
+	  <div class="panel-heading">
+	    <p>
+	      Frequently asked questions for <a href="http://csrankings.org">CSRankings.org</a>.
+	    </p>
+	    <div class="row">
+	      <!-- col-xs-3 col-sm-6 col-md-4  -->
+	      <div class="col-sm-12 col-md-12 col-lg-12">
+		<div class="table">
+		  <table class="table-sm table-striped">
+
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />Why another ranking? Why this methodology?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    Rankings are intensely popular and
+			      influential. While we might wish for a
+			      world without rankings, wishing will not
+			    make rankings go away.
+			  </p>
+			  <p>Given this state of affairs, it makes
+			      sense to aim for a ranking system that
+			      is meaningful and transparent. Unfortunately, the most influential
+			      rankings right now are those from US
+			      News and World Report, which is entirely
+			      reputation-based and <a target="_blank"
+			      href="http://www.usnews.com/education/best-graduate-schools/articles/science-schools-methodology">relies
+			      on surveys sent to department heads and
+			      directors of graduate studies.</a>
+			  </p>
+			  <p>
+			    By contrast, CSRankings is entirely
+			    metrics-based: it weighs departments by
+			    their presence at the most prestigious
+			    publication venues. This approach is
+			    intended to be both incentive-aligned
+			    (faculty already aim to publish at top
+			    venues) and difficult to game, since
+			    publishing in such conferences is
+			    difficult. It is admittedly bean-counting,
+			    but its intent is to "count the right
+			    beans." It is also entirely transparent;
+			    all code and data are publicly available
+			    at <a href="https://github.com/emeryberger/CSRankings">
+			      https://github.com/emeryberger/CSRankings
+			    </a> under a <a rel="license"
+			    href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative
+			    Commons
+			    Attribution-NonCommercial-NoDerivatives
+			    4.0 International License</a> (note: this
+			    means you may not distribute anything built from
+			    CSrankings' code or data).
+			  </p>
+			  <p>
+			</td>
+		      </tr>
+		    </tbody>
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />How about incorporating citations?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    Unfortunately, citation-based metrics have
+			    been repeatedly shown to
+			    be <a target="_blank"
+			    href="http://arxiv.org/abs/1212.0638">subject</a>
+			    to <a target="_blank"
+			    href="http://evaluation.hypotheses.org/files/2010/12/pdf_IkeAntkareISSI.pdf">manipulation</a>. There
+			    are <a href="http://retractionwatch.com/2017/08/22/one-way-boost-unis-ranking-ask-faculty-cite/">universities
+			    instructing faculty</a> to cite each
+			    other, and the phenomenon
+			    of <a href="https://www.statnews.com/2017/01/13/citation-cartels-science/">"citation
+			    cartels"</a> is well documented.
+			  </p>
+			  <p>There are also methodological challenges:
+			    citations for all papers are not freely
+			    available and change rapidly, and citation
+			    count systems like Google Scholar do not do
+			    a great job of disambiguating
+			    authors <em>and</em> can be gamed by
+			    authors. (See <a href="https://scholar.google.com/citations?user=qGuYgMsAAAAJ&hl=en">Et
+			    al.'s</a> page for a humorous example.)
+			  </p>
+			  <p>Note that selective conferences are
+			    already a proxy for citation impact:
+			    papers published at these conferences are
+			    on average much more highly cited than
+			    papers that appear in less selective, less
+			    prestigious venues.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />What do <em>adjusted counts</em> and <em>average counts</em> mean?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p><b>Adjusted counts</b>: each publication is counted
+			    exactly once, with credit adjusted by splitting evenly
+			    across all co-authors. This approach makes it impossible to
+			    boost rankings simply by adding authors to a paper.
+			  </p>
+			  <p>
+			    <b>Average count</b> is the geometric mean
+			    of the adjusted counts per area (for n areas selected, this is the nth
+			    root of the product of all adjusted counts (+ 1)).
+			    $$averageCount = \sqrt[N]{\prod_{i=1}^N(adjustedCounts_i + 1)}$$
+			    <em>This
+			      computation implicitly normalizes for publication rates and sizes of
+			      areas.</em>
+			  </p>
+			  <p>
+			    Note that publications must be at least 6 pages long to be counted.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+	    
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />
+			    How were research areas determined?
+			    <br />
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    Nearly all categories are based on
+			    research-focused <a href="http://www.acm.org/special-interest-groups">ACM
+			    SIGs</a>.  Areas not represented by ACM
+			    SIGs are intended to span <em>most</em>
+			    established research-centric areas of
+			    computer science.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />Why is (some area) not included?<br />
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    For any research-focused area to be
+			    included, at least 50
+			    <a href="https://en.wikipedia.org/wiki/List_of_research_universities_in_the_United_States#Universities_classified_as_.22R1:_Doctoral_Universities_-_Highest_Research_Activity.22">R1
+			    institutions</a> must have publications in the
+			    top conferences in that area in the last 10 years.
+			    This threshold is to ensure that there is
+			    enough research activity in an area to
+			    enable a meaningful ranking. A number of ACM
+			    SIGs do not meet this criteria.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />
+			    How were the conferences selected?
+			    <br />
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    The conferences listed were developed in consultation
+			    with faculty across a range of
+			    institutions, including via community surveys.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />Why so few conferences per area?<br />
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    Only the very top conferences in each area
+			    are listed. All conferences listed must be
+			    roughly equivalent in terms of number of
+			    submissions, selectivity and impact to
+			    avoid creating incentives to target less
+			    selective conferences.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />Why is conference X not listed?<br />
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    Additional
+			    conferences are not listed when they
+			    are not roughly equivalent to the rest.
+			    This selection is generally uncontroversial
+			    but in some communites has been established by surveying
+			    recent program committees from their indisputably top conference(s).
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+		    
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />How is authorship count adjusted?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    A single faculty member gets 1/N credit for a paper, where N is the
+			    number of authors, regardless of their affiliation or status (faculty,
+			    student, or otherwise). The number never changes. A paper can count
+			    for at most 1.0, in the case that all authors are / end up becoming
+			    faculty in the database.
+			  </p>
+			  <p>
+			    The key downside to counting papers
+			    without adjusting for authors is that it
+			    would make it trivial to inflate the
+			    effect of writing a single paper simply by
+			    adding authors.  Splitting authorship
+			    credit means that authors are incentivized
+			    to
+			    appropriately <a href="https://www.acm.org/publications/policies/new-acm-policy-on-authorship">treat
+			    authorship credits</a>. Note that
+			    publication rates are normalized across
+			    areas.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />How about adjusting the count only by faculty in the database (or some other means)?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+		    
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    Here are some of the
+			    numerous downsides of only including
+			    authors present in the database:
+
+			    <ul>
+			      <li>Authorship counts would be difficult
+			      to calculate (manually).</li>
+			      <li>Authorship counts would be dynamic
+			      (that is, they would change over
+			      time). When an author dies and is no
+			      longer in the database, everyone else
+			      would have to have their credit
+			      increased (talk about perverse
+			      incentives).</li>
+			      <li>It would create an incentive
+			      for senior faculty to have their junior
+			      collaborators not get tenure (since they
+			      would then likely leave the
+			      database).</li>
+			      <li>It would favor collaboration with
+			      industry (not in the database) over
+			      collaboration with academics. Note that
+			      companies do not
+			      generally provide public access to their
+			      employee directories.</li>
+			      <li>It would create a disincentive for
+			      faculty to see their students get
+			      faculty appointments (since it would
+			      reduce credit).</li>
+			    </ul>
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />What are the criteria for including faculty?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    The criteria for inclusion are that anyone who is a full-time,
+			    tenure-track faculty member on a given
+			    campus <em>who can <b>solely</b> advise PhD
+			    students</em> in Computer Science can be
+			    included in the database. This approach
+			    thus extends the reach of the database to
+			    a number of faculty from other departments
+			    who have adjunct appointments with a CS
+			    department or similar that let them advise
+			    CS PhD students. Note that full-time means an at least 75% appointment for
+			    the entire academic year.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />What about including faculty from ECE, Informatics, etc.?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+                            As mentioned above, tenure-track faculty
+			    who can advise PhD students in CS can be
+			    included regardless of their home
+			    department.  The primary audience of
+			    CSRankings is prospective graduate
+			    students who are seeking a postgraduate
+			    degree in Computer Science.
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />Why isn't <em>(prestigious science journal A)</em> included?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    CSrankings uses DBLP as its data source,
+			    and DBLP does not currently index general
+			    science journals (including Science, Nature,
+			    and PNAS).
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+		    
+
+		    <thead>
+		      <tr>
+			<th>
+			  <p><br />How can I submit change requests (to add faculty, change home pages, change affiliations, etc.)?
+			  </p>
+			</th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <tr>
+			<td>
+			  <p>
+			    <em>Submit a pull request</em> for
+			    the <a href="https://github.com/emeryberger/CSRankings">CSrankings GitHub repo</a>.
+			    <a href="https://github.com/emeryberger/CSrankings/blob/gh-pages/docs/CONTRIBUTING.md">More details<//a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">tutorial on pull requests here</a>.
+</p>
+<p>
+			    Make sure that faculty members' names correspond to
+			      their <a href="http://dblp.uni-trier.de/search/">DBLP</a>
+			    author entries.
+			    <b>Please
+			      also read <a href="https://github.com/emeryberger/CSrankings/blob/gh-pages/docs/CONTRIBUTING.md">this
+			      guide to contributing</a> before
+			      submitting any proposed changes.</b>
+			  </p>
+			</td>
+		      </tr>
+		    </tbody>
+		    		    
+
+		  </table>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>
