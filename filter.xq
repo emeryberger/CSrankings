@@ -54,6 +54,7 @@
 //inproceedings[booktitle="CAV"],
 //inproceedings[booktitle="CAV (1)"],
 //inproceedings[booktitle="CAV (2)"],
+//inproceedings[booktitle="CAV (3)"],
 //inproceedings[booktitle="LICS"],
 //inproceedings[booktitle="CSL-LICS"],
 //inproceedings[booktitle="NeurIPS"],
