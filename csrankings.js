@@ -306,7 +306,7 @@ class CSRankings {
             // We've finished loading; remove the overlay.
             document.getElementById("overlay-loading").style.display = "none";
             // Randomly display a survey.
-            const surveyFrequency = 10; // One out of this many users gets the survey (on average).
+            const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
             // Check to see if survey has already been displayed.
             let displaySurvey = false;
             // Keep the cookie for backwards compatibility (for now).
@@ -326,7 +326,7 @@ class CSRankings {
             }
             // Randomly display a sponsorship request.
             // In the future, tie to amount of use of the site, a la Wikipedia.
-            const sponsorshipFrequency = 20; // One out of this many users gets the sponsor page (on average).
+            const sponsorshipFrequency = 5; // One out of this many users gets the sponsor page (on average).
             // Check to see if the sponsorship page has already been displayed.
             if (!localStorage.getItem('sponsorshipDisplayed')) {
                 // Not shown yet.
