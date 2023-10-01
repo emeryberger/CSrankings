@@ -1,0 +1,39 @@
+name: Commit Validation
+
+on:
+  push:
+
+  pull_request:
+
+jobs:
+  commit_validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: jitterbit/get-changed-files@v1
+        id: abc
+        with:
+          format: space-delimited
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Checkout the repo
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # needed to checkout all branches for this Action to work
+
+      # Check the PR diff using the current branch and the base branch of the PR
+      - uses: GrantBirki/git-diff-action@v2.0.1
+        id: git-diff-action
+        with:
+          json_diff_file_output: diff.json
+          raw_diff_file_output: diff.txt
+
+      # Print the diff in JSON format
+      - name: Check commits for validity
+        id: validation
+        env:
+          DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
+        run: |
+          python validate_commit.py $DIFF
+          
