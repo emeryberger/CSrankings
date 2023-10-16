@@ -56,13 +56,9 @@ class FuzzyDict(dict):
         self.cutoff = cutoff
 
         # short wrapper around some super (dict) methods
-        self._dict_contains = lambda key: super(FuzzyDict, self).__contains__(
-            key
-        )
+        self._dict_contains = lambda key: super(FuzzyDict, self).__contains__(key)
 
-        self._dict_getitem = lambda key: super(FuzzyDict, self).__getitem__(
-            key
-        )
+        self._dict_getitem = lambda key: super(FuzzyDict, self).__getitem__(key)
 
     def _search(self, lookfor, stop_on_first=False):
         """Returns the value whose key best matches lookfor
