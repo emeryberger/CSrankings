@@ -33,7 +33,7 @@ database. Use the GitHub user interface or a text editor like emacs or NotePad i
 
 - [ ] Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org).
 
-- [X] If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
+- [ ] If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
 
 **Inclusion criteria**
 
