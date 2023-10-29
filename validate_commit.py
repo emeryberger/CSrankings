@@ -109,7 +109,6 @@ def matching_name_with_dblp(name: str) -> int:
     """
     # Translate the name to a format that can be used in DBLP queries.
     author_name = translate_name_to_dblp(name)
-    print("author_name: ", author_name)
     # Search for up to 10 matching authors.
     dblp_url = f'https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
     try:
@@ -117,8 +116,6 @@ def matching_name_with_dblp(name: str) -> int:
         print("dblp_url: ", dblp_url)
         response = requests.get(dblp_url)
         # Extract the number of completions from the JSON response.
-        print("response: ", response)
-        print("response.text: ", response.text)
         if "<title>429 Too Many Requests</title>" in response.text:
             # wait for a few seconds and try again
             time.sleep(10)
@@ -160,10 +157,6 @@ def process():
     with open(json_file, 'r') as f:
         json_data = f.read()
     data = json.loads(json_data)
-    print("JSON content: ")
-    print(json_data)
-    print(" - - - ")
-    print(data)
     changed_lines = {}
     for d in data['files']:
         try:
@@ -210,22 +203,18 @@ def process():
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
                     # Verify that the affiliation is already in the database
-                    print(f"Splitted: {name, affiliation, homepage, scholarid}")
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
                         valid, line_valid = (False, False)
-                    print("Affiliation validated")
                     # Verify that entry is in the correct file.
                     if name[0].lower() != the_letter and the_letter != '0':
                         print(f'  ERROR: This entry is in the wrong file. It is in `csrankings-{the_letter}.csv` but should be in `csrankings-{name[0].lower()}.csv`.')
                         valid, line_valid = (False, False)
-                    print("File validated")
                     # Check Google Scholar ID.
                     # print(f"  Checking Google Scholar ID ({scholarid})")
                     if not has_valid_google_scholar_id(scholarid):
                         print(f'  ERROR: Invalid Google Scholar ID ({scholarid}). Please provide a valid identifier.')
                         valid = False
-                    print("Google Scholar ID validated")
                     # Check name against DBLP.
                     completions = matching_name_with_dblp(name)
                     if completions == 0:
@@ -234,21 +223,16 @@ def process():
                     elif completions > 1:
                         print(f'  WARNING: Possibly invalid name ({name}). This may be a disambiguation entry.')
                         valid, line_valid = (False, False)
-                    else:
-                        print(f'  Name validated')
                     # Test the homepage.
                     print(f"  Checking homepage URL ({homepage})")
                     if not has_valid_homepage(homepage):
                         print(f'  WARNING: Invalid homepage URL ({homepage}). Please provide a correct URL.')
                         valid, line_valid = (False, False)
-                    else:
-                        print(f'  Homepage validated')
                     # TODO:
                     # - verify that new entry is in alphabetical order
                     # - warn if there is an affiliation mismatch with DBLP
                     # - warn if there is a home page mismatch with DBLP
                     if line_valid:
-                        print(f'  All tests passed for {name}.')
                         pass
                     else:
                         # print(f"All tests passed for {name}.")
