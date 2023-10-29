@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import sys
+import time
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
@@ -118,6 +119,10 @@ def matching_name_with_dblp(name: str) -> int:
         # Extract the number of completions from the JSON response.
         print("response: ", response)
         print("response.text: ", response.text)
+        if "<title>429 Too Many Requests</title>" in response.text:
+            # wait for a few seconds and try again
+            time.sleep(10)
+            return matching_name_with_dblp(name)
         j = json.loads(response.text)
         completions = int(j['result']['completions']['@total'])
         # Print a message if there is a match.
