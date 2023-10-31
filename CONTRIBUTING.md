@@ -9,13 +9,13 @@ You must read and check **all** the boxes below by filling them in with an X or 
 
 **The Basics**
 
-- [ ] All pull requests and issues must come from non-anonymous accounts. Make sure your GitHub profile contains your full name.
+- [x] All pull requests and issues must come from non-anonymous accounts. Make sure your GitHub profile contains your full name.
 
-- [ ] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
+- [x] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
 
-- [ ] Combine multiple updates to a single institution into a **single PR.**
+- [x] Combine multiple updates to a single institution into a **single PR.**
 
-- [ ] Only submit one pull request per institution.
+- [x] Only submit one pull request per institution.
 
 - [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` and `old/industry.csv` (see below).
 
@@ -79,5 +79,4 @@ steps:
 1. Make your changes on a branch, push them to your clone, and create a pull request on GitHub as usual.
 
 If you want to make another contribution and some time has passed, perform these steps again, creating a fresh fork and shallow clone.
-
 
