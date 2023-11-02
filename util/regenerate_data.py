@@ -17,6 +17,7 @@ from csrankings import (
     confdict,
     TOG_SIGGRAPH_Volume,
     TOG_SIGGRAPH_Asia_Volume,
+    CGF_EUROGRAPHICS_Volume,
     TVCG_Vis_Volume,
     TVCG_VR_Volume,
 )
@@ -152,10 +153,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
             authorList = article["author"]
         elif type(article["author"]) == str:
             authorList = [str(article["author"])]
-        elif (
-            type(article["author"]) is OrderedDict
-            or type(article["author"]) is dict
-        ):
+        elif type(article["author"]) is OrderedDict or type(article["author"]) is dict:
             authorList = [article["author"]["#text"]]  # type: ignore
         else:
             print("***Unknown record type, skipping.***")
@@ -164,10 +162,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         foundOneInDict = False or args.all
         if not args.all:
             for authorName in authorList:
-                if (
-                    type(authorName) is OrderedDict
-                    or type(authorName) is dict
-                ):
+                if type(authorName) is OrderedDict or type(authorName) is dict:
                     aName = authorName["#text"]  # type: ignore
                 else:
                     aName = authorName
@@ -222,6 +217,12 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
                 if (volume == str(vol)) and (number == str(num)):
                     confname = Conference("SIGGRAPH Asia")
                     areaname = confdict[confname]
+        elif confname == Conference("Comput. Graph. Forum"):
+            if year in CGF_EUROGRAPHICS_Volume:
+                (vol, num) = CGF_EUROGRAPHICS_Volume[year]
+                if (volume == str(vol)) and (number == str(num)):
+                    confname = Conference("EUROGRAPHICS")
+                    areaname = confdict[confname]
         elif confname == "IEEE Trans. Vis. Comput. Graph.":
             if year in TVCG_Vis_Volume:
                 (vol, num) = TVCG_Vis_Volume[year]
@@ -235,10 +236,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
 
         if "title" in article:
             title = Title("")
-            if (
-                type(article["title"]) is OrderedDict
-                or type(article["title"]) is dict
-            ):
+            if type(article["title"]) is OrderedDict or type(article["title"]) is dict:
                 title = Title(article["title"]["#text"])  # type: ignore
             else:
                 title = Title(article["title"])

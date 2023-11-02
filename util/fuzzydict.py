@@ -56,13 +56,9 @@ class FuzzyDict(dict):
         self.cutoff = cutoff
 
         # short wrapper around some super (dict) methods
-        self._dict_contains = lambda key: super(FuzzyDict, self).__contains__(
-            key
-        )
+        self._dict_contains = lambda key: super(FuzzyDict, self).__contains__(key)
 
-        self._dict_getitem = lambda key: super(FuzzyDict, self).__getitem__(
-            key
-        )
+        self._dict_getitem = lambda key: super(FuzzyDict, self).__getitem__(key)
 
     def _search(self, lookfor, stop_on_first=False):
         """Returns the value whose key best matches lookfor
@@ -138,7 +134,7 @@ if __name__ == "__main__":
 
     class FuzzyTestCase(unittest.TestCase):
         "Perform some tests"
-        test_dict = {"Hiya": 1, u"hiy\xe4": 2, "test3": 3, 1: 324}
+        test_dict = {"Hiya": 1, "hiy\xe4": 2, "test3": 3, 1: 324}
 
         def testCreation_Empty(self):
             "Verify that not specifying any values creates an empty dictionary"
@@ -162,9 +158,9 @@ if __name__ == "__main__":
 
             self.assertEquals(True, fd.__contains__("hiya"))
 
-            self.assertEquals(True, fd.__contains__(u"test3"))
+            self.assertEquals(True, fd.__contains__("test3"))
 
-            self.assertEquals(True, fd.__contains__(u"hiy\xe4"))
+            self.assertEquals(True, fd.__contains__("hiy\xe4"))
 
             self.assertEquals(False, fd.__contains__("FuzzyWuzzy"))
 
