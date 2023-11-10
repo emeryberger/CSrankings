@@ -14,24 +14,28 @@ import string
 
 # https://stackoverflow.com/a/518232/335756
 import unicodedata
+
+
 def strip_accents(s):
-   return ''.join(c for c in unicodedata.normalize('NFD', s)
-                  if unicodedata.category(c) != 'Mn')
+    return "".join(
+        c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn"
+    )
+
 
 print(strip_accents("Ítalo")[0].lower())
 
 # Split 'csrankings.csv'
 
-fieldnames = ["name","affiliation","homepage","scholarid"]
-with open('csrankings.csv', mode='r') as infile:
+fieldnames = ["name", "affiliation", "homepage", "scholarid"]
+with open("csrankings.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
     arr = [row for row in reader]
-    arr.sort(key=lambda a: strip_accents(a['name']))
+    arr.sort(key=lambda a: strip_accents(a["name"]))
     index = 0
     # Create all the files with headers
     for ch in list(string.ascii_lowercase):
         fname = "csrankings-" + ch + ".csv"
-        with open(fname, mode='w') as outfile:
+        with open(fname, mode="w") as outfile:
             writer = csv.DictWriter(outfile, fieldnames)
             writer.writeheader()
     # Now iterate through them, appending to each as appropriate
@@ -39,7 +43,7 @@ with open('csrankings.csv', mode='r') as infile:
     writer = {}
     for ch in list(string.ascii_lowercase):
         fname = "csrankings-" + ch + ".csv"
-        outfile[ch] = open(fname, mode='a')
+        outfile[ch] = open(fname, mode="a")
         writer[ch] = csv.DictWriter(outfile[ch], fieldnames)
     for item in arr:
         ch = strip_accents(item["name"])[0].lower()
@@ -54,4 +58,3 @@ with open('csrankings.csv', mode='r') as infile:
     # Finally, cleanup.
     for ch in list(string.ascii_lowercase):
         outfile[ch].close()
-        
