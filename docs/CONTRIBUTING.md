@@ -4,12 +4,12 @@ Thanks for contributing to CSrankings! Please read and indicate you agree with *
 
 **If you find CSrankings useful, [please consider becoming a sponsor](https://github.com/sponsors/csrankings).**
 
-**NOTE:** IF YOU DO NOT FOLLOW THE STEPS BELOW, YOUR COMMIT WILL BE SUMMARILY REJECTED.
+**NOTE:** IF YOU DO NOT FOLLOW THE STEPS BELOW, YOUR PULL REQUEST WILL BE SUMMARILY REJECTED.
 You must read and check **all** the boxes below by filling them in with an X or your PR will be rejected.
 
 **The Basics**
 
-- [ ] All pull requests and issues must come from non-anonymous accounts.
+- [ ] All pull requests and issues must come from non-anonymous accounts. Make sure your GitHub profile contains your full name.
 
 - [ ] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
 
