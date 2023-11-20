@@ -25,6 +25,7 @@
 //inproceedings[booktitle="AAAI"],
 //inproceedings[booktitle="AAAI/IAAI"],
 //inproceedings[booktitle="ICLR"],
+//inproceedings[booktitle="ICLR (Poster)"],
 //inproceedings[booktitle="IJCAI"],
 //inproceedings[booktitle="WWW"],
 //inproceedings[booktitle="SIGIR"],
