@@ -31,8 +31,9 @@ jobs:
 
       # Print the diff in JSON format
       - name: Check commits for validity
+        id: validation
         env:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
         run: |
           python validate_commit.py $DIFF
-
+          
