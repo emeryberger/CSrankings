@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import sys
+import time
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
@@ -90,11 +91,10 @@ def has_valid_google_scholar_id(id):
     if id == 'NOSCHOLARPAGE':
         return True
     # Define the regular expression pattern for valid IDs
-    pattern = '^[a-zA-Z0-9_-]{7}AAAAJ$'
+    pattern = '^[a-zA-Z0-9_-]{12}$'
     # Check if the ID matches the pattern
-    if not re.match(pattern, id):
-        return False
-    return True
+    return re.match(pattern, id)
+
 
 def matching_name_with_dblp(name: str) -> int:
     """
@@ -115,6 +115,10 @@ def matching_name_with_dblp(name: str) -> int:
         # Send a request to the DBLP API.
         response = requests.get(dblp_url)
         # Extract the number of completions from the JSON response.
+        if "<title>429 Too Many Requests</title>" in response.text:
+            # wait for a few seconds and try again
+            time.sleep(10)
+            return matching_name_with_dblp(name)
         j = json.loads(response.text)
         completions = int(j['result']['completions']['@total'])
         # Print a message if there is a match.
