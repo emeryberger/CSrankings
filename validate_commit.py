@@ -83,7 +83,8 @@ def has_valid_homepage(homepage: str) -> bool:
         if response.status_code != 200:
             print(f'  WARNING: Received error code {response.status_code}.')
         return response.status_code == 200
-    except requests.exceptions.RequestException:
+    except requests.exceptions.RequestException as e:
+        print(f"  ERROR: An exception occurred: {e}")
         return False
 
 def has_valid_google_scholar_id(id):
