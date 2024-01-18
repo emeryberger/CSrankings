@@ -216,6 +216,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("oakland"): [
         Conference("IEEE Symposium on Security and Privacy"),
         Conference("SP"),
+        Conference("S&P"),
     ],
     Area("usenixsec"): [
         Conference("USENIX Security Symposium"),
