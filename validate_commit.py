@@ -175,7 +175,7 @@ def process():
     print('Sanity checking the commit. Please check any issues raised here.')
     # Pick arbitrary thresholds; if there are more than this many diffs,
     # it is probably because of some line ending mismatch or editing with Excel.
-    remaining_diffs = 50
+    remaining_diffs = 500
     # TO DO: check deleted lines to see if home page still valid
     # or if moved to another file
     for file in changed_lines:
