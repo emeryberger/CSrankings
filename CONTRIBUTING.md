@@ -49,9 +49,7 @@ e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time 
 
 
 # Stanley H. Chan may meet the inclusion criteria based on the following:
-
-- He publishes extensively in computer vision and machine learning conferences, a link to his publications can be found here: https://engineering.purdue.edu/ChanGroup/publication.html
-- His publications can be seen on DBLP page: https://dblp.org/pid/17/6278.html and are listed by conference below:
+- He publishes extensively in computer vision and machine learning conferences. His publications can be seen on his DBLP page: https://dblp.org/pid/17/6278.html and are listed by conference below:
 
 -- CoRR (39)
 -- ICASSP (14)
@@ -65,7 +63,7 @@ e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time 
 -- CVPR (3)
 -- ICML (2)
 
-- He serves as area chairs / journal editors of many vision conferences and image processing journal. Can be seen on his website: https://engineering.purdue.edu/ChanGroup/stanleychan.html
+- He serves as area chairs / journal editors of many vision conferences and image processing journal, (e.g.: IEEE Trans. Comp. Imaging, ICIP, etc.) Those can be seen on his website under "Professional Service": https://engineering.purdue.edu/ChanGroup/stanleychan.html
 
 **Updating an affiliation or home page**
 
