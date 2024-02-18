@@ -47,6 +47,26 @@ showing how faculty not in a CS department meet the inclusion criteria,
 e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time appointment (check
 `old/industry.csv` for faculty who are now more than 25% in industry).
 
+
+# Stanley H. Chan may meet the inclusion criteria based on the following:
+
+- He publishes extensively in computer vision and machine learning conferences, a link to his publications can be found here: https://engineering.purdue.edu/ChanGroup/publication.html
+- His publications can be seen on DBLP page: https://dblp.org/pid/17/6278.html and are listed by conference below:
+
+-- CoRR (39)
+-- ICASSP (14)
+-- IEEE Trans. Computational Imaging (12)
+-- IEEE Trans. Image Process. (9)
+-- ICIP (6)
+-- ICCV (5)
+-- GlobalSIP (3)
+-- ECCV (3)
+-- LNCS (3)
+-- CVPR (3)
+-- ICML (2)
+
+- He serves as area chairs / journal editors of many vision conferences and image processing journal. Can be seen on his website: https://engineering.purdue.edu/ChanGroup/stanleychan.html
+
 **Updating an affiliation or home page**
 
 - [X] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`.
