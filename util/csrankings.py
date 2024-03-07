@@ -216,6 +216,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("oakland"): [
         Conference("IEEE Symposium on Security and Privacy"),
         Conference("SP"),
+        Conference("S&P"),
     ],
     Area("usenixsec"): [
         Conference("USENIX Security Symposium"),
@@ -255,7 +256,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ICML (2)"),
         Conference("ICML (3)"),
     ],
-    Area("iclr"): [Conference("ICLR")],
+    Area("iclr"): [Conference("ICLR"), Conference("ICLR (Poster)")],
     Area("kdd"): [Conference("KDD")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
@@ -384,8 +385,10 @@ areadict: Dict[Area, List[Conference]] = {
     Area("sigcse"): [Conference("SIGCSE")],
 }
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
+# 2023 info contributed by Ezio Bartocci
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156)}
+
 EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11)}
 # 2018 page numbers contributed by Ezio Bartocci
 # 2022 numbers contributed by Changhee Jang
@@ -393,8 +396,8 @@ EMSOFT_TCAD_PaperStart = {
     2018: {
         2188,
         2200,
-        2233,
         2244,
+        2290,
         2311,
         2393,
         2404,
