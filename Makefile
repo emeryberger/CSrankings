@@ -7,12 +7,13 @@
 
 TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings
 
 PYTHON = python3 # 3.7
 PYPY   = python3 # pypy
 
 all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  # fix-affiliations home-pages scholar-links
+	$(MAKE) clean-csrankings
 
 clean:
 	rm $(TARGETS)
@@ -27,6 +28,7 @@ csrankings.min.js: csrankings.js csrankings.ts
 update-dblp:
 	$(MAKE) download-dblp
 	$(MAKE) shrink-dblp
+	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	@echo "Done."
 
 clean-dblp:
