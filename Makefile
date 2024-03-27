@@ -7,12 +7,13 @@
 
 TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings
 
 PYTHON = python3 # 3.7
 PYPY   = python3 # pypy
 
 all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  # fix-affiliations home-pages scholar-links
+	$(MAKE) clean-csrankings
 
 clean:
 	rm $(TARGETS)
@@ -26,7 +27,8 @@ csrankings.min.js: csrankings.js csrankings.ts
 
 update-dblp:
 	$(MAKE) download-dblp
-	$(MAKE) clean-dblp
+	$(MAKE) shrink-dblp
+	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	@echo "Done."
 
 clean-dblp:
@@ -38,13 +40,13 @@ clean-dblp:
 download-dblp:
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
-	curl -o dblp.xml.gz https://dblp.org/xml/dblp.xml.gz
+	curl -o dblp-original.xml.gz https://dblp.org/xml/dblp.xml.gz
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file."
-	basex -c filter.xq > dblp2.xml
+	gunzip -dc dblp-original.xml.gz > dblp.xml
+	basex -c filter.xq  > dblp2.xml
 	gzip dblp2.xml
-	mv dblp.xml.gz dblp-original.xml.gz
 	mv dblp2.xml.gz dblp.xml.gz
 
 faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.csv
