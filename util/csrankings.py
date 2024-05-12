@@ -235,6 +235,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ASPLOS (1)"),
         Conference("ASPLOS (2)"),
         Conference("ASPLOS (3)"),
+        Conference("ASPLOS (4)"),
     ],
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
