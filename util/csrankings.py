@@ -235,6 +235,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ASPLOS (1)"),
         Conference("ASPLOS (2)"),
         Conference("ASPLOS (3)"),
+        Conference("ASPLOS (4)"),
     ],
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
@@ -635,6 +636,7 @@ CGF_EUROGRAPHICS_Volume = {
 }
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2024: (30, 1),
     2023: (29, 1),
     2022: (28, 1),
     2021: (27, 2),
