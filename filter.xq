@@ -203,6 +203,7 @@
 //inproceedings[booktitle="ECCV (38)"],
 //inproceedings[booktitle="ECCV (39)"],
 //inproceedings[booktitle="SIGCSE"],
+//inproceedings[booktitle="SIGCSE (1)"],
 //inproceedings[booktitle="EC"],
 //inproceedings[booktitle="WINE"]}</dblp>
 ]]>
