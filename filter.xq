@@ -36,7 +36,7 @@
 //article[journal="IEEE Trans. Vis. Comput. Graph."],
 //article[journal="IEEE Trans. Comput. Aided Des. Integr. Circuits Syst."],
 //inproceedings[booktitle="IEEE Symposium on Security and Privacy"],
-//inproceedings[booktitle="S&P"],
+//inproceedings[booktitle="S&amp;P"],
 //inproceedings[booktitle="SP"],
 //inproceedings[booktitle="ACM Conference on Computer and Communications Security"],
 //inproceedings[booktitle="CCS"],
@@ -203,6 +203,7 @@
 //inproceedings[booktitle="ECCV (38)"],
 //inproceedings[booktitle="ECCV (39)"],
 //inproceedings[booktitle="SIGCSE"],
+//inproceedings[booktitle="SIGCSE (1)"],
 //inproceedings[booktitle="EC"],
 //inproceedings[booktitle="WINE"]}</dblp>
 ]]>
