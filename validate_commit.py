@@ -8,6 +8,12 @@ import time
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
+def remove_suffix_and_brackets(input_string: str) -> str:
+    # Remove any suffix with a space and anything in brackets only if it is at the end of the string
+    # Used to handle special entries like [Tech]
+    modified_string = re.sub(r'\s*\[.*?\]$', '', input_string)
+    return modified_string
+
 def translate_name_to_dblp(name: str) -> str:
     """
     Converts a given name to a DBLP URL.
@@ -202,6 +208,7 @@ def process():
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    name = remove_suffix_and_brackets(name)
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
