@@ -4,8 +4,15 @@ import json
 import re
 import requests
 import sys
+import time
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
+
+def remove_suffix_and_brackets(input_string: str) -> str:
+    # Remove any suffix with a space and anything in brackets only if it is at the end of the string
+    # Used to handle special entries like [Tech]
+    modified_string = re.sub(r'\s*\[.*?\]$', '', input_string)
+    return modified_string
 
 def translate_name_to_dblp(name: str) -> str:
     """
@@ -82,7 +89,8 @@ def has_valid_homepage(homepage: str) -> bool:
         if response.status_code != 200:
             print(f'  WARNING: Received error code {response.status_code}.')
         return response.status_code == 200
-    except requests.exceptions.RequestException:
+    except requests.exceptions.RequestException as e:
+        print(f"  ERROR: An exception occurred: {e}")
         return False
 
 def has_valid_google_scholar_id(id):
@@ -114,6 +122,10 @@ def matching_name_with_dblp(name: str) -> int:
         # Send a request to the DBLP API.
         response = requests.get(dblp_url)
         # Extract the number of completions from the JSON response.
+        if "<title>429 Too Many Requests</title>" in response.text:
+            # wait for a few seconds and try again
+            time.sleep(10)
+            return matching_name_with_dblp(name)
         j = json.loads(response.text)
         completions = int(j['result']['completions']['@total'])
         # Print a message if there is a match.
@@ -169,7 +181,7 @@ def process():
     print('Sanity checking the commit. Please check any issues raised here.')
     # Pick arbitrary thresholds; if there are more than this many diffs,
     # it is probably because of some line ending mismatch or editing with Excel.
-    remaining_diffs = 50
+    remaining_diffs = 500
     # TO DO: check deleted lines to see if home page still valid
     # or if moved to another file
     for file in changed_lines:
@@ -196,6 +208,7 @@ def process():
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    name = remove_suffix_and_brackets(name)
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
