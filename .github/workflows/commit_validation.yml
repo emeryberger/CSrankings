@@ -36,3 +36,4 @@ jobs:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
         run: |
           python validate_commit.py $DIFF
+          
