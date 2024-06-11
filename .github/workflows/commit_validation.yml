@@ -4,7 +4,7 @@ on:
   push:
 
   pull_request:
-
+      branches: [ "gh-pages" ]
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
