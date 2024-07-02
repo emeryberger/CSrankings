@@ -235,6 +235,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ASPLOS (1)"),
         Conference("ASPLOS (2)"),
         Conference("ASPLOS (3)"),
+        Conference("ASPLOS (4)"),
     ],
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
@@ -382,7 +383,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("vr"): [Conference("VR")],
     Area("ec"): [Conference("EC")],
     Area("wine"): [Conference("WINE")],
-    Area("sigcse"): [Conference("SIGCSE")],
+    Area("sigcse"): [Conference("SIGCSE"), Conference("SIGCSE (1)")],
 }
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
 # 2023 info contributed by Ezio Bartocci
