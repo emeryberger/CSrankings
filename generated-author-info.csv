@@ -1298,6 +1298,10 @@ Adam Belay,Massachusetts Institute of Technology,osdi,1.0,0.16667,2012
 Adam Belay,Massachusetts Institute of Technology,osdi,1.0,0.16667,2014
 Adam Belay,Massachusetts Institute of Technology,osdi,4.0,0.83333,2020
 Adam Belay,Massachusetts Institute of Technology,sosp,1.0,0.2,2019
+Adam Breuer,Dartmouth College,icml,1.0,0.33333,2020
+Adam Breuer,Dartmouth College,kdd,1.0,0.25,2023
+Adam Breuer,Dartmouth College,nips,1.0,0.33333,2018
+Adam Breuer,Dartmouth College,www,1.0,0.33333,2020
 Adam Chlipala,Massachusetts Institute of Technology,asplos,1.0,0.2,2021
 Adam Chlipala,Massachusetts Institute of Technology,cav,1.0,0.5,2013
 Adam Chlipala,Massachusetts Institute of Technology,cav,1.0,0.25,2015
@@ -13092,6 +13096,7 @@ Ansaf Salleb-Aouissi,Columbia University,ijcai,1.0,0.33333,2007
 Anselm Blumer,Tufts University,recomb,1.0,0.25,2024
 Anselm Blumer,Tufts University,stoc,1.0,0.2,1984
 Anselm Blumer,Tufts University,stoc,1.0,0.25,1986
+Ansgar Fehnker,Macquarie University,cav,1.0,0.14286,2001
 Anshul Gandhi,Stony Brook University,imc,2.0,0.45,2019
 Anshul Gandhi,Stony Brook University,imc,1.0,0.25,2022
 Anshul Gandhi,Stony Brook University,nsdi,1.0,0.11111,2024
@@ -31988,6 +31993,10 @@ Christophe Gravier,Université Jean Monnet,naacl,1.0,0.33333,2018
 Christophe Gravier,Université Jean Monnet,vldb,1.0,0.25,2016
 Christophe Gravier,Université Jean Monnet,www,1.0,0.25,2022
 Christophe Gravier,Université Jean Monnet,www,1.0,0.25,2023
+Christophe Hauser,Dartmouth College,ndss,1.0,0.2,2015
+Christophe Hauser,Dartmouth College,nips,1.0,0.16667,2022
+Christophe Hauser,Dartmouth College,oakland,1.0,0.090909,2016
+Christophe Hauser,Dartmouth College,usenixsec,1.0,0.083333,2022
 Christophe Petit 0001,University of Birmingham,crypto,1.0,0.14286,2021
 Christophe Petit 0001,University of Birmingham,eurocrypt,1.0,0.25,2012
 Christophe Petit 0001,University of Birmingham,eurocrypt,1.0,0.2,2016
@@ -43332,29 +43341,29 @@ David Z. Pan,University of Texas at Austin,iccv,1.0,0.14286,2021
 David Z. Pan,University of Texas at Austin,nips,1.0,0.16667,2021
 David Z. Pan,University of Texas at Austin,nips,1.0,0.14286,2022
 David Z. Pan,University of Texas at Austin,nips,1.0,0.25,2023
-David Zhang 0001,The Hong Kong Polytechnic University,aaai,1.0,0.33333,2006
-David Zhang 0001,The Hong Kong Polytechnic University,aaai,1.0,0.16667,2018
-David Zhang 0001,The Hong Kong Polytechnic University,aaai,1.0,0.33333,2019
-David Zhang 0001,The Hong Kong Polytechnic University,asplos,1.0,0.25,2004
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.2,2001
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.33333,2008
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.2,2009
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,2.0,0.45,2010
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.25,2011
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.25,2012
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.25,2013
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.2,2016
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,2.0,0.4,2018
-David Zhang 0001,The Hong Kong Polytechnic University,cvpr,1.0,0.125,2022
-David Zhang 0001,The Hong Kong Polytechnic University,eccv,1.0,0.33333,2012
-David Zhang 0001,The Hong Kong Polytechnic University,eccv,1.0,0.2,2014
-David Zhang 0001,The Hong Kong Polytechnic University,eccv,1.0,0.33333,2018
-David Zhang 0001,The Hong Kong Polytechnic University,iccv,1.0,0.33333,2005
-David Zhang 0001,The Hong Kong Polytechnic University,iccv,2.0,0.5,2011
-David Zhang 0001,The Hong Kong Polytechnic University,iccv,2.0,0.45,2013
-David Zhang 0001,The Hong Kong Polytechnic University,iccv,1.0,0.2,2015
-David Zhang 0001,The Hong Kong Polytechnic University,iccv,1.0,0.25,2017
-David Zhang 0001,The Hong Kong Polytechnic University,icde,1.0,0.027778,2012
+David Zhang 0001,CUHK (SZ),aaai,1.0,0.33333,2006
+David Zhang 0001,CUHK (SZ),aaai,1.0,0.16667,2018
+David Zhang 0001,CUHK (SZ),aaai,1.0,0.33333,2019
+David Zhang 0001,CUHK (SZ),asplos,1.0,0.25,2004
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.2,2001
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.33333,2008
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.2,2009
+David Zhang 0001,CUHK (SZ),cvpr,2.0,0.45,2010
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.25,2011
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.25,2012
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.25,2013
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.2,2016
+David Zhang 0001,CUHK (SZ),cvpr,2.0,0.4,2018
+David Zhang 0001,CUHK (SZ),cvpr,1.0,0.125,2022
+David Zhang 0001,CUHK (SZ),eccv,1.0,0.33333,2012
+David Zhang 0001,CUHK (SZ),eccv,1.0,0.2,2014
+David Zhang 0001,CUHK (SZ),eccv,1.0,0.33333,2018
+David Zhang 0001,CUHK (SZ),iccv,1.0,0.33333,2005
+David Zhang 0001,CUHK (SZ),iccv,2.0,0.5,2011
+David Zhang 0001,CUHK (SZ),iccv,2.0,0.45,2013
+David Zhang 0001,CUHK (SZ),iccv,1.0,0.2,2015
+David Zhang 0001,CUHK (SZ),iccv,1.0,0.25,2017
+David Zhang 0001,CUHK (SZ),icde,1.0,0.027778,2012
 David Zuckerman,University of Texas at Austin,crypto,1.0,0.33333,2006
 David Zuckerman,University of Texas at Austin,ec,1.0,1.0,2011
 David Zuckerman,University of Texas at Austin,focs,1.0,0.5,1989
@@ -51701,6 +51710,7 @@ Endre Szemerédi,Rutgers University,stoc,2.0,0.66667,1987
 Endre Szemerédi,Rutgers University,stoc,1.0,0.33333,1988
 Endre Szemerédi,Rutgers University,stoc,1.0,0.33333,1989
 Endre Szemerédi,Rutgers University,stoc,1.0,0.16667,1995
+Endrowednes Kuantama,Macquarie University,mobicom,1.0,0.2,2024
 Engin Arslan,University of Texas at Arlington,ics,1.0,0.5,2023
 Engin Arslan,University of Texas at Arlington,nsdi,1.0,0.14286,2018
 Engin Arslan,University of Texas at Arlington,sc,1.0,0.33333,2015
@@ -61805,7 +61815,6 @@ Gethin Norman,University of Glasgow,cav,1.0,0.33333,2001
 Gethin Norman,University of Glasgow,cav,1.0,0.33333,2006
 Gethin Norman,University of Glasgow,cav,1.0,0.33333,2011
 Gethin Norman,University of Glasgow,cav,1.0,0.25,2020
-Gevorg Grigoryan,Dartmouth College,vis,1.0,0.5,2002
 Geyong Min,University of Exeter,imc,1.0,0.125,2009
 Ghada A. Al-Mashaqbeh,University of Connecticut,eurocrypt,1.0,0.125,2022
 Ghada A. Al-Mashaqbeh,University of Connecticut,pets,1.0,0.11111,2021
@@ -98595,15 +98604,15 @@ Kai Hormann,Università della Svizzera italiana,eurographics,1.0,0.5,2021
 Kai Hormann,Università della Svizzera italiana,siggraph,1.0,0.25,2004
 Kai Hormann,Università della Svizzera italiana,siggraph,1.0,0.33333,2010
 Kai Hormann,Università della Svizzera italiana,siggraph-asia,1.0,0.14286,2014
-Kai Hwang 0001,University of Southern California,hpca,1.0,0.33333,1997
-Kai Hwang 0001,University of Southern California,hpdc,1.0,0.33333,2000
-Kai Hwang 0001,University of Southern California,ics,1.0,0.076923,1990
-Kai Hwang 0001,University of Southern California,isca,1.0,0.33333,1981
-Kai Hwang 0001,University of Southern California,isca,1.0,0.5,1984
-Kai Hwang 0001,University of Southern California,isca,2.0,1.0,1988
-Kai Hwang 0001,University of Southern California,micro,1.0,0.33333,1984
-Kai Hwang 0001,University of Southern California,sc,1.0,0.5,1990
-Kai Hwang 0001,University of Southern California,sigmod,1.0,0.33333,2022
+Kai Hwang 0001,CUHK (SZ),hpca,1.0,0.33333,1997
+Kai Hwang 0001,CUHK (SZ),hpdc,1.0,0.33333,2000
+Kai Hwang 0001,CUHK (SZ),ics,1.0,0.076923,1990
+Kai Hwang 0001,CUHK (SZ),isca,1.0,0.33333,1981
+Kai Hwang 0001,CUHK (SZ),isca,1.0,0.5,1984
+Kai Hwang 0001,CUHK (SZ),isca,2.0,1.0,1988
+Kai Hwang 0001,CUHK (SZ),micro,1.0,0.33333,1984
+Kai Hwang 0001,CUHK (SZ),sc,1.0,0.5,1990
+Kai Hwang 0001,CUHK (SZ),sigmod,1.0,0.33333,2022
 Kai Kunze,Keio University,chiconf,1.0,0.16667,2019
 Kai Kunze,Keio University,chiconf,2.0,0.20513,2020
 Kai Kunze,Keio University,chiconf,1.0,0.11111,2023
@@ -106291,6 +106300,15 @@ Kyungmin Bae,POSTECH,cav,1.0,0.25,2021
 Kyungmin Bae,POSTECH,cav,1.0,0.33333,2022
 Kyungmin Bae,POSTECH,emsoft,1.0,0.5,2021
 Kyungmin Bae,POSTECH,popl,1.0,0.5,2019
+Kyungtae Kim,Dartmouth College,asplos,1.0,0.14286,2016
+Kyungtae Kim,Dartmouth College,ndss,1.0,0.125,2015
+Kyungtae Kim,Dartmouth College,ndss,1.0,0.25,2018
+Kyungtae Kim,Dartmouth College,ndss,1.0,0.16667,2020
+Kyungtae Kim,Dartmouth College,oakland,1.0,0.2,2019
+Kyungtae Kim,Dartmouth College,oakland,1.0,0.14286,2022
+Kyungtae Kim,Dartmouth College,usenixsec,1.0,0.125,2021
+Kyungtae Kim,Dartmouth College,usenixsec,1.0,0.16667,2023
+Kyungtae Kim,Dartmouth College,www,1.0,0.14286,2017
 Kyungwoo Song,Yonsei University,aaai,1.0,0.33333,2018
 Kyungwoo Song,Yonsei University,aaai,2.0,0.45,2019
 Kyungwoo Song,Yonsei University,aaai,3.0,0.78333,2020
@@ -112188,6 +112206,35 @@ Longbiao Chen,Xiamen University,ubicomp,1.0,0.11111,2021
 Longbiao Chen,Xiamen University,ubicomp,2.0,0.18333,2023
 Longbiao Chen,Xiamen University,ubicomp,1.0,0.066667,2024
 Longbiao Chen,Xiamen University,www,1.0,0.16667,2023
+Longbing Cao,Macquarie University,aaai,1.0,0.16667,2014
+Longbing Cao,Macquarie University,aaai,1.0,0.33333,2015
+Longbing Cao,Macquarie University,aaai,1.0,0.2,2017
+Longbing Cao,Macquarie University,aaai,4.0,1.1167,2018
+Longbing Cao,Macquarie University,aaai,3.0,0.56667,2019
+Longbing Cao,Macquarie University,aaai,2.0,0.41667,2020
+Longbing Cao,Macquarie University,aaai,3.0,0.7,2021
+Longbing Cao,Macquarie University,aaai,1.0,0.14286,2024
+Longbing Cao,Macquarie University,emnlp,1.0,0.25,2021
+Longbing Cao,Macquarie University,icde,1.0,0.33333,2013
+Longbing Cao,Macquarie University,ijcai,1.0,0.16667,2011
+Longbing Cao,Macquarie University,ijcai,2.0,0.5,2013
+Longbing Cao,Macquarie University,ijcai,2.0,0.66667,2016
+Longbing Cao,Macquarie University,ijcai,3.0,0.61667,2017
+Longbing Cao,Macquarie University,ijcai,3.0,0.95,2018
+Longbing Cao,Macquarie University,ijcai,2.0,0.33333,2019
+Longbing Cao,Macquarie University,ijcai,1.0,0.16667,2020
+Longbing Cao,Macquarie University,ijcai,1.0,0.11111,2021
+Longbing Cao,Macquarie University,ijcai,1.0,0.16667,2022
+Longbing Cao,Macquarie University,kdd,1.0,0.25,2010
+Longbing Cao,Macquarie University,kdd,2.0,0.5,2012
+Longbing Cao,Macquarie University,kdd,1.0,0.16667,2017
+Longbing Cao,Macquarie University,kdd,2.0,0.39286,2018
+Longbing Cao,Macquarie University,kdd,1.0,0.25,2021
+Longbing Cao,Macquarie University,nips,1.0,0.5,2018
+Longbing Cao,Macquarie University,nips,3.0,0.71111,2023
+Longbing Cao,Macquarie University,sigmod,1.0,0.16667,2015
+Longbing Cao,Macquarie University,ubicomp,1.0,0.2,2018
+Longbing Cao,Macquarie University,www,1.0,0.16667,2013
 Longbo Huang,Tsinghua University,aaai,1.0,0.2,2019
 Longbo Huang,Tsinghua University,aaai,3.0,0.91667,2021
 Longbo Huang,Tsinghua University,aaai,1.0,0.16667,2023
@@ -112396,8 +112443,6 @@ Lori L. Pollock,University of Delaware,sigcse,1.0,0.25,2018
 Lori L. Pollock,University of Delaware,sigcse,2.0,1.25,2019
 Lori L. Pollock,University of Delaware,sigcse,1.0,0.2,2021
 Lori L. Pollock,University of Delaware,sigcse,1.0,0.5,2023
-Lorie Loeb,Dartmouth College,siggraph,1.0,0.16667,2000
-Lorie Loeb,Dartmouth College,siggraph,1.0,0.25,2002
 Lorie M. Liebrock,New Mexico Tech,oakland,1.0,0.5,2011
 Loris D'Antoni,University of Wisconsin - Madison,cav,1.0,0.5,2013
 Loris D'Antoni,University of Wisconsin - Madison,cav,1.0,0.5,2014
@@ -131836,6 +131881,7 @@ Mitchell P. Marcus,University of Pennsylvania,emnlp,1.0,0.33333,2012
 Mitchell P. Marcus,University of Pennsylvania,emnlp,1.0,0.33333,2015
 Mitchell P. Marcus,University of Pennsylvania,naacl,2.0,0.53333,2006
 Mitchell P. Marcus,University of Pennsylvania,rss,1.0,0.16667,2013
+Mitchell W. McEwan,Macquarie University,chiconf,1.0,0.16667,2016
 Mitesh M. Khapra,IIT Madras,aaai,1.0,0.25,2010
 Mitesh M. Khapra,IIT Madras,aaai,2.0,0.53333,2018
 Mitesh M. Khapra,IIT Madras,aaai,1.0,0.25,2019
@@ -138904,6 +138950,10 @@ Ninghui Sun,Chinese Academy of Sciences,sc,1.0,0.25,2009
 Ninghui Sun,Chinese Academy of Sciences,sc,1.0,0.16667,2011
 Ninghui Sun,Chinese Academy of Sciences,sc,1.0,0.16667,2022
 Ninghui Sun,Chinese Academy of Sciences,usenixatc,1.0,0.25,2017
+Ningning Hou,Macquarie University,mobicom,1.0,0.25,2021
+Ningning Hou,Macquarie University,mobicom,1.0,0.2,2023
+Ningning Hou,Macquarie University,mobicom,1.0,0.2,2024
+Ningning Hou,Macquarie University,sensys,1.0,0.25,2022
 Ningning Xie,University of Toronto,icfp,1.0,0.25,2019
 Ningning Xie,University of Toronto,icfp,1.0,0.2,2020
 Ningning Xie,University of Toronto,icfp,1.0,0.5,2021
@@ -151859,6 +151909,17 @@ Qiong Luo 0001,HKUST,vldb,1.0,0.5,2001
 Qiong Luo 0001,HKUST,vldb,2.0,0.53333,2010
 Qiong Luo 0001,HKUST,vldb,4.0,1.0429,2020
 Qiong Luo 0001,HKUST,vldb,2.0,0.5,2022
+Qiongkai Xu,Macquarie University,aaai,1.0,0.33333,2016
+Qiongkai Xu,Macquarie University,aaai,1.0,0.2,2022
+Qiongkai Xu,Macquarie University,acl,1.0,0.2,2017
+Qiongkai Xu,Macquarie University,chiconf,1.0,0.25,2020
+Qiongkai Xu,Macquarie University,emnlp,1.0,0.25,2020
+Qiongkai Xu,Macquarie University,emnlp,2.0,0.41667,2022
+Qiongkai Xu,Macquarie University,emnlp,1.0,0.2,2023
+Qiongkai Xu,Macquarie University,iclr,1.0,0.33333,2023
+Qiongkai Xu,Macquarie University,naacl,1.0,0.25,2021
+Qiongkai Xu,Macquarie University,nips,1.0,0.14286,2022
+Qiongkai Xu,Macquarie University,www,1.0,0.16667,2023
 Qipeng Liu 0001,Univ. of California - San Diego,crypto,1.0,0.5,2019
 Qipeng Liu 0001,Univ. of California - San Diego,crypto,2.0,0.45,2021
 Qipeng Liu 0001,Univ. of California - San Diego,crypto,2.0,0.53333,2022
@@ -159017,9 +159078,6 @@ Robert L. Constable,Cornell University,stoc,1.0,0.5,1972
 Robert L. Constable,Cornell University,stoc,1.0,1.0,1973
 Robert L. Constable,Cornell University,stoc,1.0,0.5,1975
 Robert L. Constable,Cornell University,stoc,1.0,1.0,1977
-Robert L. Scot Drysdale,Dartmouth College,sigcse,1.0,1.0,2011
-Robert L. Scot Drysdale,Dartmouth College,soda,1.0,1.0,1990
-Robert L. Scot Drysdale,Dartmouth College,stoc,1.0,0.25,1982
 Robert Laganière,University of Ottawa,cvpr,1.0,0.33333,2013
 Robert Laganière,University of Ottawa,iccv,1.0,1.0,1998
 Robert Laganière,University of Ottawa,iccv,1.0,0.5,2007
@@ -163590,6 +163648,8 @@ Sadao Kurohashi,Kyoto University,naacl,2.0,0.58333,2019
 Sadao Kurohashi,Kyoto University,naacl,2.0,0.83333,2021
 Sadia Sharmin,BUET,sigcse,2.0,0.64286,2022
 Sadia Sharmin,BUET,sigcse,1.0,0.16667,2024
+Saeed Hassanpour,Dartmouth College,acl,1.0,0.14286,2023
+Saeed Hassanpour,Dartmouth College,iccv,1.0,0.2,2023
 Saeid Tizpaz-Niari,University of Texas - El Paso,aaai,1.0,0.25,2018
 Saeid Tizpaz-Niari,University of Texas - El Paso,cav,1.0,0.33333,2019
 Saeid Tizpaz-Niari,University of Texas - El Paso,icse,1.0,0.25,2022
@@ -192517,6 +192577,10 @@ Ursula H. Augsdörfer,Graz University of Technology,eurographics,1.0,0.33333,200
 Ursula H. Augsdörfer,Graz University of Technology,iros,1.0,0.16667,2017
 Ursula H. Augsdörfer,Graz University of Technology,siggraph,1.0,0.25,2009
 Ursula Martin,University of Oxford,lics,1.0,0.5,1993
+Usman Naseem,Macquarie University,aaai,2.0,0.36667,2023
+Usman Naseem,Macquarie University,www,2.0,0.5,2022
+Usman Naseem,Macquarie University,www,1.0,0.16667,2023
+Usman Naseem,Macquarie University,www,2.0,0.5,2024
 Usman R. Alim,University of Calgary,eurographics,1.0,0.25,2009
 Usman R. Alim,University of Calgary,eurographics,1.0,0.5,2015
 Usman R. Alim,University of Calgary,eurographics,1.0,0.5,2017
@@ -198241,89 +198305,6 @@ Wen-Jing Hsu,Nanyang Technological University,icra,2.0,0.7,2003
 Wen-Jing Hsu,Nanyang Technological University,icra,1.0,0.33333,2004
 Wen-Jing Hsu,Nanyang Technological University,sigcomm,1.0,0.33333,1993
 Wen-Jing Hsu,Nanyang Technological University,ubicomp,1.0,0.33333,2012
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,acl,1.0,0.25,2021
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,1.0,0.2,1992
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,1.0,0.2,1994
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,1.0,0.25,2000
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,1.0,0.16667,2010
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,2.0,0.44444,2016
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,2.0,0.23377,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,1.0,0.076923,2023
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,asplos,2.0,0.30952,2024
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,cvpr,1.0,0.125,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,dac,1.0,0.071429,2007
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,dac,1.0,0.2,2013
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,dac,1.0,0.125,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,dac,1.0,0.125,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,emnlp,1.0,0.2,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,emnlp,1.0,0.2,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,emnlp,2.0,0.4,2022
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,hpca,1.0,0.25,1997
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,hpdc,1.0,0.2,2021
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,iccad,1.0,0.14286,2018
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,iccad,1.0,0.083333,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,iccad,1.0,0.14286,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,iccv,1.0,0.11111,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,iccv,1.0,0.14286,2021
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.5,1989
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.2,1992
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.16667,2008
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.16667,2015
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.2,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.2,2022
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,ics,1.0,0.1,2024
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.5,1986
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.5,1987
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.5,1988
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,2.0,0.83333,1989
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.2,1991
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.14286,1993
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.2,1995
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.5,1997
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.11111,1998
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,2.0,0.34286,1999
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.2,2000
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,isca,1.0,0.16667,2004
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,kdd,1.0,0.16667,2022
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,kdd,1.0,0.16667,2023
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.58333,1985
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.2,1986
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.7,1987
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.5,1988
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.5,1989
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.25,1991
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.4,1993
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.41667,1994
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.83333,1995
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,4.0,1.6667,1996
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.66667,1997
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.33333,1998
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.5,1999
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.33333,2000
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.83333,2001
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.25,2002
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.16667,2003
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.33333,2005
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.16667,2014
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,2.0,0.36667,2016
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.076923,2018
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.1,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,micro,1.0,0.125,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,naacl,1.0,0.2,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,nips,1.0,0.2,2017
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,oopsla,1.0,0.25,2017
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,pldi,1.0,0.5,1989
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,pldi,1.0,0.25,1993
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,pldi,1.0,0.2,1999
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,pldi,1.0,0.5,2000
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,sc,1.0,0.25,1992
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,sc,1.0,0.25,2012
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,sc,1.0,0.125,2019
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,sc,1.0,0.11111,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,sosp,1.0,0.125,2023
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,vldb,1.0,0.16667,2020
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,vldb,1.0,0.125,2021
-Wen-Mei W. Hwu,Univ. of Illinois at Urbana-Champaign,vldb,1.0,0.25,2024
 Wen-Yan Lin,Singapore Management University,cvpr,1.0,0.2,2011
 Wen-Yan Lin,Singapore Management University,cvpr,1.0,0.2,2012
 Wen-Yan Lin,Singapore Management University,cvpr,2.0,0.58333,2014
@@ -203131,6 +203112,10 @@ Xiaoguang Han 0001,CUHK (SZ),vr,1.0,0.2,2021
 Xiaoguang Niu,Wuhan University,aaai,1.0,0.16667,2023
 Xiaoguang Wang 0003,University of Illinois at Chicago,ccs,1.0,0.25,2014
 Xiaoguang Wang 0003,University of Illinois at Chicago,usenixatc,1.0,0.2,2015
+Xiaohan Yu 0001,Macquarie University,aaai,1.0,0.2,2020
+Xiaohan Yu 0001,Macquarie University,eccv,1.0,0.125,2022
+Xiaohan Yu 0001,Macquarie University,iccv,1.0,0.2,2021
+Xiaohan Yu 0001,Macquarie University,ijcai,1.0,0.33333,2023
 Xiaohan Zhang 0001,Fudan University,ccs,2.0,0.23611,2020
 Xiaohan Zhang 0001,Fudan University,ccs,1.0,0.14286,2022
 Xiaohan Zhang 0001,Fudan University,icse,1.0,0.090909,2020
@@ -206918,6 +206903,16 @@ Xuhua Ding,Singapore Management University,oakland,1.0,0.33333,2022
 Xuhua Ding,Singapore Management University,usenixsec,1.0,0.25,2001
 Xuhua Ding,Singapore Management University,usenixsec,1.0,0.25,2017
 Xuhua Ding,Singapore Management University,vldb,1.0,0.33333,2010
+Xuhui Fan 0001,Macquarie University,aaai,1.0,0.2,2016
+Xuhui Fan 0001,Macquarie University,aaai,1.0,0.25,2020
+Xuhui Fan 0001,Macquarie University,icml,1.0,0.25,2021
+Xuhui Fan 0001,Macquarie University,icml,1.0,0.25,2023
+Xuhui Fan 0001,Macquarie University,ijcai,2.0,0.53333,2016
+Xuhui Fan 0001,Macquarie University,ijcai,1.0,0.16667,2020
+Xuhui Fan 0001,Macquarie University,ijcai,1.0,0.25,2021
+Xuhui Fan 0001,Macquarie University,nips,1.0,0.33333,2018
+Xuhui Fan 0001,Macquarie University,nips,1.0,0.2,2019
+Xuhui Fan 0001,Macquarie University,nips,1.0,0.25,2021
 Xujie Si,University of Toronto,cav,1.0,0.25,2017
 Xujie Si,University of Toronto,cav,1.0,0.2,2020
 Xujie Si,University of Toronto,fse,1.0,0.16667,2018
@@ -209232,6 +209227,9 @@ Yannis Velegrakis,Utrecht University,vldb,1.0,0.16667,2013
 Yannis Velegrakis,Utrecht University,vldb,1.0,0.25,2014
 Yannis Velegrakis,Utrecht University,vldb,1.0,0.33333,2018
 Yannis Velegrakis,Utrecht University,www,1.0,0.25,2020
+Yanqiu Wu 0002,Macquarie University,icml,1.0,0.25,2020
+Yanqiu Wu 0002,Macquarie University,imc,1.0,0.14286,2016
+Yanqiu Wu 0002,Macquarie University,nips,1.0,0.16667,2020
 Yansheng Li 0001,Wuhan University,aaai,2.0,0.45,2024
 Yansheng Li 0001,Wuhan University,cvpr,1.0,0.2,2022
 Yansheng Li 0001,Wuhan University,eccv,1.0,0.14286,2022
@@ -215841,6 +215839,52 @@ Yu-Shuen Wang,National Chiao Tung University,vis,1.0,0.33333,2008
 Yu-Shuen Wang,National Chiao Tung University,vis,1.0,0.5,2011
 Yu-Shuen Wang,National Chiao Tung University,vr,1.0,0.2,2019
 Yu-Shuen Wang,National Chiao Tung University,vr,1.0,0.16667,2021
+Yu-Wing Tai,Dartmouth College,aaai,1.0,0.14286,2016
+Yu-Wing Tai,Dartmouth College,aaai,1.0,0.14286,2020
+Yu-Wing Tai,Dartmouth College,aaai,1.0,0.14286,2022
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.25,2004
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.33333,2005
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.33333,2006
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.33333,2007
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.25,2008
+Yu-Wing Tai,Dartmouth College,cvpr,3.0,0.75,2010
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.16667,2011
+Yu-Wing Tai,Dartmouth College,cvpr,4.0,1.3667,2012
+Yu-Wing Tai,Dartmouth College,cvpr,1.0,0.25,2013
+Yu-Wing Tai,Dartmouth College,cvpr,3.0,0.7,2014
+Yu-Wing Tai,Dartmouth College,cvpr,3.0,0.72619,2015
+Yu-Wing Tai,Dartmouth College,cvpr,2.0,0.58333,2016
+Yu-Wing Tai,Dartmouth College,cvpr,2.0,0.375,2017
+Yu-Wing Tai,Dartmouth College,cvpr,2.0,0.25758,2018
+Yu-Wing Tai,Dartmouth College,cvpr,3.0,0.43452,2019
+Yu-Wing Tai,Dartmouth College,cvpr,8.0,1.569,2020
+Yu-Wing Tai,Dartmouth College,cvpr,5.0,1.3667,2021
+Yu-Wing Tai,Dartmouth College,cvpr,4.0,0.77778,2022
+Yu-Wing Tai,Dartmouth College,cvpr,4.0,0.86667,2023
+Yu-Wing Tai,Dartmouth College,dac,1.0,0.2,2017
+Yu-Wing Tai,Dartmouth College,eccv,1.0,0.25,2010
+Yu-Wing Tai,Dartmouth College,eccv,2.0,0.53333,2012
+Yu-Wing Tai,Dartmouth College,eccv,1.0,0.33333,2014
+Yu-Wing Tai,Dartmouth College,eccv,2.0,0.58333,2016
+Yu-Wing Tai,Dartmouth College,eccv,5.0,1.3333,2018
+Yu-Wing Tai,Dartmouth College,eccv,6.0,1.0845,2020
+Yu-Wing Tai,Dartmouth College,eccv,4.0,1.0833,2022
+Yu-Wing Tai,Dartmouth College,eurographics,1.0,0.25,2012
+Yu-Wing Tai,Dartmouth College,eurographics,1.0,0.33333,2014
+Yu-Wing Tai,Dartmouth College,eurographics,1.0,0.2,2017
+Yu-Wing Tai,Dartmouth College,iccv,1.0,0.2,2011
+Yu-Wing Tai,Dartmouth College,iccv,4.0,0.9,2013
+Yu-Wing Tai,Dartmouth College,iccv,1.0,0.5,2015
+Yu-Wing Tai,Dartmouth College,iccv,3.0,0.65,2017
+Yu-Wing Tai,Dartmouth College,iccv,4.0,0.70952,2019
+Yu-Wing Tai,Dartmouth College,iccv,2.0,0.53333,2021
+Yu-Wing Tai,Dartmouth College,iccv,3.0,0.48571,2023
+Yu-Wing Tai,Dartmouth College,iclr,1.0,0.14286,2023
+Yu-Wing Tai,Dartmouth College,nips,2.0,0.5,2021
+Yu-Wing Tai,Dartmouth College,nips,1.0,0.2,2022
+Yu-Wing Tai,Dartmouth College,nips,3.0,0.46786,2023
+Yu-Wing Tai,Dartmouth College,siggraph-asia,1.0,0.25,2008
+Yu-Wing Tai,Dartmouth College,siggraph-asia,1.0,0.14286,2011
 Yu-Xiang Wang 0003,Univ. of California - Santa Barbara,cvpr,1.0,0.25,2020
 Yu-Xiang Wang 0003,Univ. of California - Santa Barbara,cvpr,1.0,0.16667,2022
 Yu-Xiang Wang 0003,Univ. of California - Santa Barbara,iclr,1.0,0.33333,2019
@@ -216313,6 +216357,21 @@ Yuanjie Li,Tsinghua University,sigmetrics,1.0,0.16667,2018
 Yuanjie Li,Tsinghua University,www,1.0,0.125,2024
 Yuankai Huo,Vanderbilt University,eccv,2.0,0.20202,2020
 Yuankai Huo,Vanderbilt University,iclr,1.0,0.25,2023
+Yuankai Qi,Macquarie University,aaai,1.0,0.16667,2019
+Yuankai Qi,Macquarie University,aaai,1.0,0.25,2020
+Yuankai Qi,Macquarie University,aaai,1.0,0.16667,2024
+Yuankai Qi,Macquarie University,cvpr,1.0,0.14286,2016
+Yuankai Qi,Macquarie University,cvpr,1.0,0.14286,2020
+Yuankai Qi,Macquarie University,cvpr,1.0,0.2,2021
+Yuankai Qi,Macquarie University,cvpr,3.0,0.5,2022
+Yuankai Qi,Macquarie University,cvpr,2.0,0.25397,2023
+Yuankai Qi,Macquarie University,eccv,1.0,0.11111,2018
+Yuankai Qi,Macquarie University,eccv,1.0,0.2,2020
+Yuankai Qi,Macquarie University,iccv,1.0,0.16667,2021
+Yuankai Qi,Macquarie University,iccv,2.0,0.36667,2023
+Yuankai Qi,Macquarie University,ijcai,1.0,0.11111,2019
+Yuankai Qi,Macquarie University,naacl,1.0,0.11111,2022
+Yuankai Qi,Macquarie University,nips,1.0,0.2,2020
 Yuanlin Zhang 0002,Texas Tech University,aaai,1.0,0.33333,1999
 Yuanlin Zhang 0002,Texas Tech University,aaai,1.0,0.5,2004
 Yuanlin Zhang 0002,Texas Tech University,aaai,1.0,0.33333,2006
