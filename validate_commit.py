@@ -5,6 +5,7 @@ import re
 import requests
 import sys
 import time
+import unidecode
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
