@@ -54,9 +54,7 @@ def csv2dict_str_str(fname):
         # for rows in reader:
         #    print rows[0], "-->", rows[1]
         d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(
-                rows[1].strip(), "utf-8"
-            )
+            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
             for rows in reader
         }
     return d

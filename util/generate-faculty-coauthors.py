@@ -75,9 +75,7 @@ def parseDBLP(facultydict):
                 if (pageCount != -1) and (pageCount < pageCountThreshold):
                     tooFewPages = True
                     exceptionConference = confname == "SC"
-                    exceptionConference |= (
-                        confname == "SIGSOFT FSE" and year == 2012
-                    )
+                    exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
                     exceptionConference |= (
                         confname == "ACM Trans. Graph."
                         and int(volume) >= 26
@@ -104,9 +102,7 @@ def parseDBLP(facultydict):
                             if not authorName in coauthors:
                                 coauthors[authorName] = {}
                             if not (year, areaname) in coauthors[authorName]:
-                                coauthors[authorName][(year, areaname)] = set(
-                                    []
-                                )
+                                coauthors[authorName][(year, areaname)] = set([])
                             coauthorsList.append(authorName)
                             papersWritten[authorName] = (
                                 papersWritten.get(authorName, 0) + 1
@@ -126,12 +122,12 @@ def parseDBLP(facultydict):
                             for coauth in coauthorsList:
                                 if coauth != authorName:
                                     if coauth in facultydict:
-                                        coauthors[authorName][
-                                            (year, areaname)
-                                        ].add(coauth)
-                                        coauthors[coauth][
-                                            (year, areaname)
-                                        ].add(authorName)
+                                        coauthors[authorName][(year, areaname)].add(
+                                            coauth
+                                        )
+                                        coauthors[coauth][(year, areaname)].add(
+                                            authorName
+                                        )
 
     o = open("faculty-coauthors.csv", "w")
     o.write('"author","coauthor","year","area"\n')

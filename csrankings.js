@@ -32,6 +32,32 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 ;
 ;
 class CSRankings {
+    // We have scrolled: increase the number we rank.
+    static updateMinimum(obj) {
+        if (CSRankings.minToRank <= 500) {
+            const t = obj.scrollTop;
+            CSRankings.minToRank = 5000;
+            CSRankings.getInstance().rank();
+            return t;
+        }
+        else {
+            return 0;
+        }
+    }
+    // Return the singleton corresponding to this object.
+    static getInstance() {
+        return CSRankings.theInstance;
+    }
+    // Promises polyfill.
+    static promise(cont) {
+        if (typeof Promise !== "undefined") {
+            var resolved = Promise.resolve();
+            resolved.then(cont);
+        }
+        else {
+            setTimeout(cont, 0);
+        }
+    }
     constructor() {
         this.note = {};
         this.authorFile = "./csrankings.csv";
@@ -54,6 +80,7 @@ class CSRankings {
             { area: "mlmining", title: "ML" },
             { area: "icml", title: "ML" },
             { area: "kdd", title: "ML" },
+            { area: "iclr", title: "ML" },
             { area: "nips", title: "ML" },
             { area: "nlp", title: "NLP" },
             { area: "acl", title: "NLP" },
@@ -121,6 +148,7 @@ class CSRankings {
             { area: "graph", title: "Graphics" },
             { area: "siggraph", title: "Graphics" },
             { area: "siggraph-asia", title: "Graphics" },
+            { area: "eurographics", title: "Graphics" },
             { area: "chi", title: "HCI" },
             { area: "chiconf", title: "HCI" },
             { area: "ubicomp", title: "HCI" },
@@ -144,13 +172,14 @@ class CSRankings {
             { area: "vr", title: "Visualization" },
             { area: "ecom", title: "ECom" },
             { area: "ec", title: "ECom" },
-            { area: "wine", title: "ECom" }
-            //,{ area : "cse", title : "CSEd" }
+            { area: "wine", title: "ECom" },
+            { area: "csed", title: "CSEd" },
+            { area: "sigcse", title: "CSEd" }
         ];
         this.aiAreas = ["ai", "vision", "mlmining", "nlp", "inforet"];
         this.systemsAreas = ["arch", "comm", "sec", "mod", "da", "bed", "hpc", "mobile", "metrics", "ops", "plan", "soft"];
         this.theoryAreas = ["act", "crypt", "log"];
-        this.interdisciplinaryAreas = ["bio", "graph", "ecom", "chi", "robotics", "visualization"];
+        this.interdisciplinaryAreas = ["bio", "graph", "csed", "ecom", "chi", "robotics", "visualization"];
         this.areaNames = [];
         this.fields = [];
         this.aiFields = [];
@@ -277,7 +306,7 @@ class CSRankings {
             // We've finished loading; remove the overlay.
             document.getElementById("overlay-loading").style.display = "none";
             // Randomly display a survey.
-            const surveyFrequency = 10; // One out of this many users gets the survey (on average).
+            const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
             // Check to see if survey has already been displayed.
             let displaySurvey = false;
             // Keep the cookie for backwards compatibility (for now).
@@ -297,7 +326,7 @@ class CSRankings {
             }
             // Randomly display a sponsorship request.
             // In the future, tie to amount of use of the site, a la Wikipedia.
-            const sponsorshipFrequency = 20; // One out of this many users gets the sponsor page (on average).
+            const sponsorshipFrequency = 5; // One out of this many users gets the sponsor page (on average).
             // Check to see if the sponsorship page has already been displayed.
             if (!localStorage.getItem('sponsorshipDisplayed')) {
                 // Not shown yet.
@@ -310,32 +339,6 @@ class CSRankings {
                 }
             }
         }))();
-    }
-    // We have scrolled: increase the number we rank.
-    static updateMinimum(obj) {
-        if (CSRankings.minToRank <= 500) {
-            const t = obj.scrollTop;
-            CSRankings.minToRank = 5000;
-            CSRankings.getInstance().rank();
-            return t;
-        }
-        else {
-            return 0;
-        }
-    }
-    // Return the singleton corresponding to this object.
-    static getInstance() {
-        return CSRankings.theInstance;
-    }
-    // Promises polyfill.
-    static promise(cont) {
-        if (typeof Promise !== "undefined") {
-            var resolved = Promise.resolve();
-            resolved.then(cont);
-        }
-        else {
-            setTimeout(cont, 0);
-        }
     }
     translateNameToDBLP(name) {
         // Ex: "Emery D. Berger" -> "http://dblp.uni-trier.de/pers/hd/b/Berger:Emery_D="
@@ -460,25 +463,37 @@ class CSRankings {
         // Return it.
         return this.areaStringMap[name];
     }
+    removeDisambiguationSuffix(str) {
+        // Matches a space followed by a four-digit number at the end of the string
+        const regex = /\s\d{4}$/;
+        return str.replace(regex, '');
+    }
     /* from http://hubrik.com/2015/11/16/sort-by-last-name-with-javascript/ */
     compareNames(a, b) {
-        //split the names as strings into arrays
-        const aName = a.split(" ");
-        const bName = b.split(" ");
+        // Split the names as strings into arrays,
+        // removing any disambiguation suffixes first.
+        const aName = this.removeDisambiguationSuffix(a).split(" ");
+        const bName = this.removeDisambiguationSuffix(b).split(" ");
         // get the last names by selecting
         // the last element in the name arrays
         // using array.length - 1 since full names
         // may also have a middle name or initial
         const aLastName = aName[aName.length - 1];
         const bLastName = bName[bName.length - 1];
+        let returnValue;
         // compare the names and return either
         // a negative number, positive number
         // or zero.
-        if (aLastName < bLastName)
-            return -1;
-        if (aLastName > bLastName)
-            return 1;
-        return 0;
+        if (aLastName < bLastName) {
+            returnValue = -1;
+        }
+        else if (aLastName > bLastName) {
+            returnValue = 1;
+        }
+        else {
+            returnValue = 0;
+        }
+        return returnValue;
     }
     /* Create a bar or pie chart using Vega. Modified by Minsuk Kahng (https://minsuk.com) */
     makeChart(name, isPieChart) {
@@ -1392,7 +1407,8 @@ class CSRankings {
         return start;
     }
     static geoCheck() {
-        navigator.geolocation.getCurrentPosition((position) => {
+        var _a;
+        (_a = navigator.geolocation) === null || _a === void 0 ? void 0 : _a.getCurrentPosition((position) => {
             const continent = whichContinent(position.coords.latitude, position.coords.longitude);
             let regions = document.getElementById("regions");
             switch (continent) {
@@ -1444,7 +1460,7 @@ class CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#{key}`).prop('value', params[key].toString());
+                $(`#${key}`).prop('value', params[key].toString());
             });
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
@@ -1689,7 +1705,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
+CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lk", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
@@ -1699,6 +1715,7 @@ CSRankings.parentMap = {
     'eccv': 'vision',
     'iccv': 'vision',
     'icml': 'mlmining',
+    'iclr': 'mlmining',
     'kdd': 'mlmining',
     'nips': 'mlmining',
     'acl': 'nlp',
@@ -1749,6 +1766,7 @@ CSRankings.parentMap = {
     'sigcomm': 'comm',
     'siggraph': 'graph',
     'siggraph-asia': 'graph',
+    'eurographics': 'graph',
     'focs': 'act',
     'soda': 'act',
     'stoc': 'act',
@@ -1767,7 +1785,8 @@ CSRankings.parentMap = {
     'iros': 'robotics',
     'rss': 'robotics',
     'vis': 'visualization',
-    'vr': 'visualization'
+    'vr': 'visualization',
+    'sigcse': 'csed'
 };
 CSRankings.nextTier = {
     'ase': true,
@@ -1778,10 +1797,12 @@ CSRankings.nextTier = {
     'ndss': true,
     'pets': true,
     'eurosys': true,
+    'eurographics': true,
     'fast': true,
     'usenixatc': true,
     'icfp': true,
-    'oopsla': true
+    'oopsla': true,
+    'kdd': true,
 };
 CSRankings.childMap = {};
 CSRankings.noteMap = {

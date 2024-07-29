@@ -1,32 +1,39 @@
 # Contributing to CSrankings
 
-Thanks for contributing to CSrankings! Please read and indicate you agree with **all** these guidelines to getting your pull request accepted. Note that pull requests may take some time to get merged (up to three months, as processing has moved to a quarterly cadence).
+Thanks for contributing to CSrankings! Please read and indicate you agree with **all** these guidelines to getting your pull request accepted. Note that pull requests may take some time to get merged (please don't contact us for at least three months for updates, unless you are a sponsor - see below).
 
 **If you find CSrankings useful, [please consider becoming a sponsor](https://github.com/sponsors/csrankings).**
 
-**NOTE:** IF YOU DO NOT FOLLOW THE STEPS BELOW, YOUR COMMIT MAY BE SUMMARILY REJECTED.
+**NOTE:** IF YOU DO NOT FOLLOW THE STEPS BELOW, YOUR PULL REQUEST WILL BE SUMMARILY REJECTED.
+You must read and check **all** the boxes below by filling them in with an X or your PR will be rejected.
 
-1. _Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv")._
+**The Basics**
 
-1. _Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv`._
+- [ ] All pull requests and issues must come from non-anonymous accounts. Make sure your GitHub profile contains your full name.
 
-1. _Do not use Excel to edit any .csv files; Excel incorrectly tries to
+- [ ] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
+
+- [ ] Combine multiple updates to a single institution into a **single PR.**
+
+- [ ] Only submit one pull request per institution.
+
+- [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` and `old/industry.csv` (see below).
+
+- [ ] Do not use Excel to edit any .csv files; Excel incorrectly tries to
 convert some Google Scholar entries to formulas, corrupting the
-database. Use a text editor like emacs or NotePad instead._
+database. Use the GitHub user interface or a text editor like emacs or NotePad instead.
 
-1. _Insert new faculty **in alphabetical order** (not at the end) in the appropriate `csrankings-[a-z].csv` files._ **Do not modify `csrankings.csv`, which is auto-generated.**
+- [ ] Insert new faculty **in alphabetical order** (not at the end) in the appropriate `csrankings-[a-z].csv` files. **Do not modify `csrankings.csv`, which is auto-generated.**
 
-1. _Check to make sure that you have no spaces after commas, or any missing fields._
+- [ ] Check to make sure that you have no spaces after commas, or any missing fields.
 
-1. _Check to make sure the home page is correct._
+- [ ] Check to make sure the home page is correct.
 
-1. _Make sure the Google Scholar IDs are just the alphanumeric identifier (not a URL or with `&hl=en`)._
+- [ ] Make sure the Google Scholar IDs are just the alphanumeric identifier (not a URL or with `&hl=en`).
 
-1. _Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org)._
+- [ ] Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org).
 
-1. _If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below)._
-
-1. _Read and check **all** the boxes below by filling them in with an X._
+- [ ] If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
 
 **Inclusion criteria**
 
@@ -35,7 +42,9 @@ criteria. Eligible faculty include only full-time, tenure-track research
 faculty members on a given campus who can *solely* advise PhD students in
 Computer Science. Faculty not in a CS department or similar who can
 advise PhD students in CS can be included regardless of their home
-department. Faculty should also have a 75%+ time appointment (check
+department. **Provide justification, pointing to specific home pages
+showing how faculty not in a CS department meet the inclusion criteria,
+e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time appointment (check
 `old/industry.csv` for faculty who are now more than 25% in industry).
 
 **Updating an affiliation or home page**
