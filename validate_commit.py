@@ -5,6 +5,7 @@ import re
 import requests
 import sys
 import time
+import unidecode
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
@@ -192,7 +193,7 @@ def process():
         # Check if we are processing a `csrankings-?.csv` file.
         matched = re.match('csrankings-([a-z0])\\.csv', file)
         if matched:
-            the_letter = matched.groups(0)[0]
+            the_letter = unidecode.unidecode(matched.groups(0)[0]) # Convert to ASCII
             for l in changed_lines[file]:
                 line_valid = True
                 remaining_diffs -= 1
@@ -208,7 +209,7 @@ def process():
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
-                    name = remove_suffix_and_brackets(name)
+                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
