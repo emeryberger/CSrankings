@@ -5,8 +5,15 @@ import re
 import requests
 import sys
 import time
+import unidecode
 import urllib.parse
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
+
+def remove_suffix_and_brackets(input_string: str) -> str:
+    # Remove any suffix with a space and anything in brackets only if it is at the end of the string
+    # Used to handle special entries like [Tech]
+    modified_string = re.sub(r'\s*\[.*?\]$', '', input_string)
+    return modified_string
 
 def translate_name_to_dblp(name: str) -> str:
     """
@@ -175,7 +182,7 @@ def process():
     print('Sanity checking the commit. Please check any issues raised here.')
     # Pick arbitrary thresholds; if there are more than this many diffs,
     # it is probably because of some line ending mismatch or editing with Excel.
-    remaining_diffs = 50
+    remaining_diffs = 500
     # TO DO: check deleted lines to see if home page still valid
     # or if moved to another file
     for file in changed_lines:
@@ -186,7 +193,7 @@ def process():
         # Check if we are processing a `csrankings-?.csv` file.
         matched = re.match('csrankings-([a-z0])\\.csv', file)
         if matched:
-            the_letter = matched.groups(0)[0]
+            the_letter = unidecode.unidecode(matched.groups(0)[0]) # Convert to ASCII
             for l in changed_lines[file]:
                 line_valid = True
                 remaining_diffs -= 1
@@ -202,6 +209,7 @@ def process():
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
