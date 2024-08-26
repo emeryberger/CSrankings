@@ -9,7 +9,7 @@
 	"noUnusedParameters": true,
 	"noFallthroughCasesInSwitch": true,
 	"strictNullChecks": true,
-	"pretty": true
+//	"pretty": true
     },
     "files": [ "csrankings.ts", "continents.ts" ],
     "moduleResolution": "node"

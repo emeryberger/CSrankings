@@ -37,11 +37,17 @@ with open("csrankings.csv", mode="w") as outfile:
         fname = "csrankings-" + i + ".csv"
         with open(fname, mode="r") as infile:
             reader = csv.DictReader(infile)
+            lineno = 2
             for row in reader:
-                hashrow = hashlib.md5(str(row).encode("utf8"))
-                if hashrow not in added:
-                    writer.writerow(row)
-                    added.add(hashrow)
+                try:
+                    hashrow = hashlib.md5(str(row).encode("utf8"))
+                    if hashrow not in added:
+                        writer.writerow(row)
+                        added.add(hashrow)
+                except:
+                    print(f"*** issue on line {lineno}, file {fname} ***")
+                finally:
+                    lineno += 1
 
 # Now create all the subsidiary files.
 with open("csrankings.csv", mode="r") as infile:
