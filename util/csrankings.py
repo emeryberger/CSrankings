@@ -261,7 +261,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("kdd"): [Conference("KDD")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
-    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH")],
+    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
     Area("siggraph-asia"): [
         Conference("ACM Trans. Graph."),
         Conference("SIGGRAPH Asia"),
