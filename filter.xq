@@ -99,6 +99,8 @@
 //inproceedings[booktitle="EuroSys"],
 //inproceedings[booktitle="USENIX Annual Technical Conference"],
 //inproceedings[booktitle="USENIX Annual Technical Conference, General Track"],
+//inproceedings[booktitle="USENIX ATC"],
+//inproceedings[booktitle="USENIX ATC, General Track"],
 //inproceedings[booktitle="FAST"],
 //inproceedings[booktitle="STOC"],
 //inproceedings[booktitle="FOCS"],
