@@ -171,6 +171,8 @@ areadict: Dict[Area, List[Conference]] = {
     Area("usenixatc"): [
         Conference("USENIX Annual Technical Conference"),
         Conference("USENIX Annual Technical Conference, General Track"),
+        Conference("USENIX ATC"),
+        Conference("USENIX ATC, General Track"),
     ],
     Area("imc"): [Conference("IMC"), Conference("Internet Measurement Conference")],
     Area("sigmetrics"): [
@@ -216,6 +218,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("oakland"): [
         Conference("IEEE Symposium on Security and Privacy"),
         Conference("SP"),
+        Conference("S&P"),
     ],
     Area("usenixsec"): [
         Conference("USENIX Security Symposium"),
@@ -234,6 +237,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ASPLOS (1)"),
         Conference("ASPLOS (2)"),
         Conference("ASPLOS (3)"),
+        Conference("ASPLOS (4)"),
     ],
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
@@ -255,11 +259,11 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ICML (2)"),
         Conference("ICML (3)"),
     ],
-    Area("iclr"): [Conference("ICLR")],
+    Area("iclr"): [Conference("ICLR"), Conference("ICLR (Poster)")],
     Area("kdd"): [Conference("KDD")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
-    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH")],
+    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
     Area("siggraph-asia"): [
         Conference("ACM Trans. Graph."),
         Conference("SIGGRAPH Asia"),
@@ -381,11 +385,13 @@ areadict: Dict[Area, List[Conference]] = {
     Area("vr"): [Conference("VR")],
     Area("ec"): [Conference("EC")],
     Area("wine"): [Conference("WINE")],
-    Area("sigcse"): [Conference("SIGCSE")],
+    Area("sigcse"): [Conference("SIGCSE"), Conference("SIGCSE (1)")],
 }
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
+# 2023 info contributed by Ezio Bartocci
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156)}
+
 EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11)}
 # 2018 page numbers contributed by Ezio Bartocci
 # 2022 numbers contributed by Changhee Jang
@@ -393,8 +399,8 @@ EMSOFT_TCAD_PaperStart = {
     2018: {
         2188,
         2200,
-        2233,
         2244,
+        2290,
         2311,
         2393,
         2404,
@@ -632,6 +638,7 @@ CGF_EUROGRAPHICS_Volume = {
 }
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2024: (30, 1),
     2023: (29, 1),
     2022: (28, 1),
     2021: (27, 2),
@@ -652,6 +659,7 @@ TVCG_Vis_Volume = {
 }
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {
+    2023: (29, 5),
     2022: (28, 5),
     2021: (27, 5),
     2020: (26, 5),
