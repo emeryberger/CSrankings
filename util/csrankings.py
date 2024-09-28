@@ -171,6 +171,8 @@ areadict: Dict[Area, List[Conference]] = {
     Area("usenixatc"): [
         Conference("USENIX Annual Technical Conference"),
         Conference("USENIX Annual Technical Conference, General Track"),
+        Conference("USENIX ATC"),
+        Conference("USENIX ATC, General Track"),
     ],
     Area("imc"): [Conference("IMC"), Conference("Internet Measurement Conference")],
     Area("sigmetrics"): [
@@ -261,7 +263,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("kdd"): [Conference("KDD")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
-    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH")],
+    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
     Area("siggraph-asia"): [
         Conference("ACM Trans. Graph."),
         Conference("SIGGRAPH Asia"),
