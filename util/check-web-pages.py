@@ -8,10 +8,8 @@ import time
 import random
 import urllib2
 import csv
-import operator
 import re
 import google
-from time import sleep
 
 
 def csv2dict_str_str(fname):
@@ -22,8 +20,6 @@ def csv2dict_str_str(fname):
         d = {rows[0].strip(): rows[1].strip() for rows in reader}
     return d
 
-
-import requests
 
 facultydict = csv2dict_str_str("faculty-affiliations.csv")
 homepages = csv2dict_str_str("homepages.csv")
@@ -73,31 +69,25 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                 if match == None:
                     # Check for 404.
                     try:
-                        print("checking " + homepages[
-                            name
-                        ] + " (" + name + ", " + facultydict[name] + ")")
+                        print("checking " + homepages[name] + " (" + name + ", " + facultydict[name] + ")")
                         a = urllib2.urlopen(homepages[name], None, 20)
                         if a.getcode() >= 400:
                             print(str(a.getcode()) + " : " + homepages[name])
                         else:
                             if a.getcode() >= 300:
                                 # Redirect
-                                print(str(a.getcode()) + " : " + homepages[
-                                    name
-                                ] + " -> " + a.geturl())
+                                print(str(a.getcode()) + " : " + homepages[name] + " -> " + a.geturl())
                             else:
                                 s = "%10.2f" % time.time()
-                                appendfile.write(
-                                    name.decode("utf8") + "," + s + "\n"
-                                )
+                                appendfile.write(name.decode("utf8") + "," + s + "\n")
                                 appendfile.flush()
                                 continue
-                    except urllib2.URLError, e:
+                    except urllib2.URLError as e:
                         # For Python 2.6
                         if isinstance(e.reason, socket.timeout):
                             print("timeout: " + homepages[name])
                             timedOut = True
-                    except socket.timeout, e:
+                    except socket.timeout:
                         # For Python 2.7
                         print("timeout: " + homepages[name])
                         timedOut = True
@@ -135,7 +125,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                     appendfile.write(name + "," + s + "\n")
                     appendfile.flush()
                 else:
-                    if not (name in homepages):
+                    if name not in homepages:
                         # It's a new name, what are you gonna do (even if it is a
                         # Google link, include it).
                         print(name + "," + actualURL)
@@ -146,12 +136,7 @@ with codecs.open("homepages.csv", "a", "utf8") as outfile:
                         appendfile.write(name + "," + s + "\n")
                         appendfile.flush()
                     else:
-                        print(
-                            "Lookup failed for "
-                            + name
-                            + " -- found "
-                            + actualURL
-                        )
+                        print("Lookup failed for " + name + " -- found " + actualURL)
 
             sys.stdout.flush()
             # Throttle lookups to avoid getting cut off by Google.

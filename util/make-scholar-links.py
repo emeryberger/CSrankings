@@ -9,14 +9,11 @@
 #
 
 import os
-import scholarly
 from collections import *
 
 import codecs
 import sys
 import random
-import urllib3
-import operator
 import re
 import time
 import fcntl
@@ -93,7 +90,7 @@ def searchAuthor(name):
         for c in div.children:
             href = c.get("href")
             um = userMatcher.search(href)
-            if not um is None:
+            if um is not None:
                 link = um.group(1)
                 return (name, link)
                 break

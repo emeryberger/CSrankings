@@ -1,5 +1,4 @@
 import csv
-import glob
 import json
 import re
 import requests

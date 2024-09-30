@@ -29,13 +29,9 @@
 # The output CSV is of the following format:
 #   name, confnameYear (first year published in that conference), confnameCount (total pubs in that conference), ... (with a final dummy field for convenience)
 
-import gzip
 import json
-import csv
 import sys
 from optparse import OptionParser
-from csrankings import areadict
-from collections import defaultdict
 
 csrankings_root = "."
 

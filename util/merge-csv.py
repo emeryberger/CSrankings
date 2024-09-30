@@ -1,14 +1,7 @@
 #!/usr/bin/env python
 
 from collections import *
-import gzip
-import xmltodict
-import collections
-import json
 import csv
-import re
-import sys
-import operator
 
 
 def csv2dict_str_str(fname):

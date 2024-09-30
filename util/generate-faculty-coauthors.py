@@ -1,5 +1,4 @@
 from csrankings import *
-import json
 import gzip
 
 authorPaperCountThreshold = 0
@@ -81,7 +80,7 @@ def parseDBLP(facultydict):
                     continue
 
                 coauthorsList = []
-                if not confname in confdict:
+                if confname not in confdict:
                     areaname = "na"
                 else:
                     areaname = confdict[confname]
@@ -92,9 +91,9 @@ def parseDBLP(facultydict):
                         authorName = authorName.strip()
                         if True:  # authorName in facultydict):
                             authorsOnPaper += 1
-                            if not authorName in coauthors:
+                            if authorName not in coauthors:
                                 coauthors[authorName] = {}
-                            if not (year, areaname) in coauthors[authorName]:
+                            if (year, areaname) not in coauthors[authorName]:
                                 coauthors[authorName][(year, areaname)] = set([])
                             coauthorsList.append(authorName)
                             papersWritten[authorName] = papersWritten.get(authorName, 0) + 1

@@ -3,7 +3,6 @@
 #   name, confnameYear (first year published in that conference), confnameCount (total pubs in that conference), ... (with a final dummy field for convenience)
 
 import json
-import csv
 from optparse import OptionParser
 
 # Default filename.

@@ -5,7 +5,7 @@ from typing import Dict
 import contextlib
 import re
 import csv
-from typing import Dict, List, NewType
+from typing import List, NewType
 
 Title = NewType("Title", str)
 Author = NewType("Author", str)

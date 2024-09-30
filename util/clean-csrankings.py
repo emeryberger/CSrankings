@@ -1,23 +1,15 @@
 #!/usr/bin/env python3
 
-import codecs
 import collections
 import csv
 
 # import google
-import gzip
-import json
-import operator
 import os
-import pkg_resources
 import random
 import re
 import requests
-import sys
-import time
 
 # import urllib2
-import xmltodict
 
 
 # make random REALLY random.
@@ -160,7 +152,7 @@ if True:
 # Remove any aliases for names that aren't in the database.
 new_aliases = aliases.copy()
 for n in aliases:
-    if not n in csrankings:
+    if n not in csrankings:
         # Temporarily disabling culling of aliases because of the note suffix issue.
         found = True  # False
         for a in aliases[n]:
@@ -193,7 +185,7 @@ for name in aliases:
         # Make sure all aliases are there.
         for a in aliases[name]:
             # Add any missing aliases.
-            if not a in csrankings:
+            if a not in csrankings:
                 csrankings[a] = csrankings[name]
     else:
         # There might be a name that isn't there but an alias that IS. If so, add the name.
