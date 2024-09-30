@@ -264,9 +264,7 @@ def makegraph(institution, fname, dir):
 
             # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
             # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
-            edges[
-                realname + realname
-            ] = 2  # include one bogus co-authored article (2 b/c divided by 2 later)
+            edges[realname + realname] = 2  # include one bogus co-authored article (2 b/c divided by 2 later)
             if realname not in authorIndex:
                 print(realname + " NOT FOUND")
                 if author not in authorIndex:

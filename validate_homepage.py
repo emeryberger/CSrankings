@@ -18,6 +18,7 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9",
 }
 
+
 def is_hostname_resolvable(url: str) -> bool:
     try:
         # Extract hostname from the URL
@@ -32,6 +33,7 @@ def is_hostname_resolvable(url: str) -> bool:
     except socket.error as e:
         print(f"ERROR: Hostname '{hostname}' is not resolvable: {e}")
         return False
+
 
 def has_valid_homepage(homepage: str) -> bool:
     # First, check if the hostname is resolvable
@@ -50,6 +52,7 @@ def has_valid_homepage(homepage: str) -> bool:
     except requests.exceptions.RequestException as e:
         print(f"ERROR: An exception occurred with requests: {e}. Failing over to Selenium...")
         return has_valid_homepage_with_selenium(homepage)
+
 
 def has_valid_homepage_with_selenium(homepage: str) -> bool:
     # Setup Chrome options
@@ -73,4 +76,3 @@ def has_valid_homepage_with_selenium(homepage: str) -> bool:
         return False
     finally:
         driver.quit()
-

@@ -42,6 +42,7 @@ csrankings_root = "."
 # list to hold all authors with number of publications counted -- used for finding those with > 8
 confEntries = []
 
+
 # sorting function
 # sorts based on count (second field)
 def sortFunc(authorEntries):
@@ -61,9 +62,7 @@ parser.add_option(
     help="filter only papers that appeared in a particular conference (e.g., ISCA, ASPLOS)",
 )
 
-parser.add_option(
-    "-f", "--file", dest="filename", help="read data from FILE", metavar="FILE"
-)
+parser.add_option("-f", "--file", dest="filename", help="read data from FILE", metavar="FILE")
 
 parser.add_option(
     "-n",

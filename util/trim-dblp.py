@@ -41,7 +41,6 @@ outputfname = "dblp-reduced.xml"
 
 
 def parseDBLP():
-
     count = 0
     output = open(outputfname, "w")
     output.write(
@@ -51,11 +50,9 @@ def parseDBLP():
     )
 
     with open("dblp.xml", mode="r") as f:
-
         # with gzip.open('dblp.xml.gz') as f:
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"]):
-
+        for event, node in ElementTree.iterparse(f, events=["start", "end"]):
             foundArticle = False
             inRange = False
             authorsOnPaper = 0
@@ -64,7 +61,6 @@ def parseDBLP():
             year = -1
 
             if node.tag == "inproceedings" or node.tag == "article":
-
                 # Check that dates are in the specified range.
 
                 for child in node:

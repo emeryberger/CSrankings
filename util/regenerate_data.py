@@ -256,9 +256,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         failures += 1
         raise
 
-    if countPaper(
-        confname, year, volume, number, pages, startPage, pageCount, url, title
-    ):
+    if countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
         totalPapers += 1
         for authorName in authorList:
             aName = ""
@@ -277,12 +275,7 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
             facultydict[realName] = affiliation
 
             if (
-                affiliation
-                and (
-                    realName in facultydict
-                    or realName in aliasdict
-                    or realName in reversealiasdict
-                )
+                affiliation and (realName in facultydict or realName in aliasdict or realName in reversealiasdict)
             ) or args.all:
                 log: LogType = {
                     "name": realName.encode("utf-8"),
@@ -315,18 +308,18 @@ def dump_it() -> None:
     with open("generated-author-info.csv", "w") as f:
         f.write('"name","dept","area","count","adjustedcount","year"\n')
         authorscores = OrderedDict(sorted(authorscores.items()))
-        for ((authorName, area, year), count) in authorscores.items():
+        for (authorName, area, year), count in authorscores.items():
             countAdjusted = authorscoresAdjusted[(authorName, area, year)]
-            f.write(
-                f"{authorName},{facultydict[authorName]},{area},{count},{countAdjusted:1.5},{year}\n"
-            )
+            f.write(f"{authorName},{facultydict[authorName]},{area},{count},{countAdjusted:1.5},{year}\n")
 
     with open("articles.json", "w") as f:
         z = []
         authlogs = OrderedDict(sorted(authlogs.items()))
         for v, l in authlogs.items():
             if v in interestingauthors:
-                for s in sorted(l, key=lambda x: x["name"].decode("utf-8") + str(x["year"]) + x["conf"] + x["title"].decode("utf-8")):  # type: ignore
+                for s in sorted(
+                    l, key=lambda x: x["name"].decode("utf-8") + str(x["year"]) + x["conf"] + x["title"].decode("utf-8")
+                ):  # type: ignore
                     s["name"] = s["name"].decode("utf-8")  # type: ignore
                     s["title"] = s["title"].decode("utf-8")  # type: ignore
                     z.append(s)

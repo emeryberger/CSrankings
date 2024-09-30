@@ -263,7 +263,11 @@ areadict: Dict[Area, List[Conference]] = {
     Area("kdd"): [Conference("KDD")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
-    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
+    Area("siggraph"): [
+        Conference("ACM Trans. Graph."),
+        Conference("SIGGRAPH"),
+        Conference("SIGGRAPH (Conference Paper Track)"),
+    ],
     Area("siggraph-asia"): [
         Conference("ACM Trans. Graph."),
         Conference("SIGGRAPH Asia"),
@@ -900,25 +904,14 @@ def countPaper(
     # pages found at all => some problem with journal
     # entries in DBLP.
     tooFewPages = False
-    if (
-        pageCount == -1
-        and confname == "ACM Conference on Computer and Communications Security"
-    ):
+    if pageCount == -1 and confname == "ACM Conference on Computer and Communications Security":
         tooFewPages = True
     if pageCount != -1 and pageCount < pageCountThreshold:
         exceptionConference = False
-        exceptionConference |= confname == "SC" and (
-            year <= 2012 or year in [2017, 2020, 2021]
-        )
+        exceptionConference |= confname == "SC" and (year <= 2012 or year in [2017, 2020, 2021])
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
-        exceptionConference |= (
-            confname == "ACM Trans. Graph."
-            and int(volume) >= 26
-            and (int(volume) <= 39)
-        )
-        exceptionConference |= (
-            confname == "SIGGRAPH" and int(volume) >= 26 and (int(volume) <= 39)
-        )
+        exceptionConference |= confname == "ACM Trans. Graph." and int(volume) >= 26 and (int(volume) <= 39)
+        exceptionConference |= confname == "SIGGRAPH" and int(volume) >= 26 and (int(volume) <= 39)
         exceptionConference |= confname == "SIGGRAPH Asia"
         # FIXME - hopefully DBLP will fix
         exceptionConference |= confname == "CHI" and year == 2018
@@ -935,16 +928,10 @@ def countPaper(
 
 
 def test_countPaper() -> bool:
-    assert not countPaper(
-        "anything", startyear - 1, "1", "1", "1-10", 1, 10, "", "nothing"
-    )
-    assert not countPaper(
-        "anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing"
-    )
+    assert not countPaper("anything", startyear - 1, "1", "1", "1-10", 1, 10, "", "nothing")
+    assert not countPaper("anything", endyear + 1, "1", "1", "1-10", 1, 10, "", "nothing")
     assert not countPaper("anything", endyear - 1, "1", "1", "1-5", 1, 5, "", "nothing")
-    assert countPaper(
-        "SIGGRAPH", endyear - 1, "1", "1", "1", 1, -1, "", "Some Graphics Paper"
-    )
+    assert countPaper("SIGGRAPH", endyear - 1, "1", "1", "1", 1, -1, "", "Some Graphics Paper")
     assert not countPaper(
         "ACM Trans. Embedded Comput. Syst.",
         2017,

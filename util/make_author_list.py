@@ -13,9 +13,7 @@ end_year = 2020
 
 parser = OptionParser()
 
-parser.add_option(
-    "-f", "--file", dest="filename", help="read data from FILE", metavar="FILE"
-)
+parser.add_option("-f", "--file", dest="filename", help="read data from FILE", metavar="FILE")
 
 parser.add_option(
     "-s",

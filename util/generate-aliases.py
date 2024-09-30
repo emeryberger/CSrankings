@@ -19,10 +19,7 @@ def parseDBLP(facultydict):
 
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(
-            f, events=["start", "end"], load_dtd=True
-        ):
-
+        for event, node in ElementTree.iterparse(f, events=["start", "end"], load_dtd=True):
             if oldnode is not None:
                 oldnode.clear()
             oldnode = node

@@ -13,14 +13,12 @@ def parseDBLP():
         foundArticle = False
         authorName = ""
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"]):
-
+        for event, node in ElementTree.iterparse(f, events=["start", "end"]):
             if oldnode is not None:
                 oldnode.clear()
             oldnode = node
 
             if node.tag == "inproceedings" or node.tag == "article":
-
                 for child in node:
                     if child.tag == "booktitle" or child.tag == "journal":
                         foundArticle = True
@@ -53,10 +51,7 @@ def csv2dict_str_str(fname):
         reader = csv.reader(infile)
         # for rows in reader:
         #    print rows[0], "-->", rows[1]
-        d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
-            for rows in reader
-        }
+        d = {unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8") for rows in reader}
     return d
 
 
