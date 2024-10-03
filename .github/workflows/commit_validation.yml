@@ -35,5 +35,6 @@ jobs:
         env:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
         run: |
+          pip install -r requirements.txt
           python validate_commit.py $DIFF
           
