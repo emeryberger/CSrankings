@@ -1,23 +1,15 @@
 #!/usr/bin/env python3
 
-import codecs
 import collections
 import csv
 
 # import google
-import gzip
-import json
-import operator
 import os
-import pkg_resources
 import random
 import re
 import requests
-import sys
-import time
 
 # import urllib2
-import xmltodict
 
 
 # make random REALLY random.
@@ -160,7 +152,7 @@ if True:
 # Remove any aliases for names that aren't in the database.
 new_aliases = aliases.copy()
 for n in aliases:
-    if not n in csrankings:
+    if n not in csrankings:
         # Temporarily disabling culling of aliases because of the note suffix issue.
         found = True  # False
         for a in aliases[n]:
@@ -193,7 +185,7 @@ for name in aliases:
         # Make sure all aliases are there.
         for a in aliases[name]:
             # Add any missing aliases.
-            if not a in csrankings:
+            if a not in csrankings:
                 csrankings[a] = csrankings[name]
     else:
         # There might be a name that isn't there but an alias that IS. If so, add the name.
@@ -274,24 +266,17 @@ for sch in scholars:
             clashes.append(scholars[sch])
             # print("For Google Scholar entry " + sch + ", there is a clash: " + str(scholars[sch]))
 
-for n in sorted(
-    clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True
-):
+for n in sorted(clashes, key=lambda t: max(generated.get(v, 0) for v in t), reverse=True):
     maxscore = max(generated.get(name, 0) for name in n)
     if maxscore > 0:
         mapscores = list(map(lambda name: (name, generated.get(name, 0)), n))
         # No point in trying to fix clashes if they don't appear in the output of CSrankings
-        print(
-            "Google scholar entry "
-            + str(reverse_scholar[n[0]])
-            + " clashes and scores:"
-            + str(mapscores)
-        )
+        print("Google scholar entry " + str(reverse_scholar[n[0]]) + " clashes and scores:" + str(mapscores))
         affiliations = list(map(lambda nv: csrankings[nv[0]]["affiliation"], mapscores))
         print(affiliations)
         if affiliations[0] == affiliations[-1]:
             # All affiliations the same.
-            for (n, v) in mapscores:
+            for n, v in mapscores:
                 if v == 0.0:
                     print("DELETING " + n + " (currently disabled)")
                     # del csrankings[n]

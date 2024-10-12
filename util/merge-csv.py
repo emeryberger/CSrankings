@@ -1,24 +1,14 @@
 #!/usr/bin/env python
 
 from collections import *
-import gzip
-import xmltodict
-import collections
-import json
 import csv
-import re
-import sys
-import operator
 
 
 def csv2dict_str_str(fname):
     """Takes a CSV file and returns a dictionary of pairs."""
     with open(fname, mode="r") as infile:
         rdr = csv.reader(infile)
-        d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
-            for rows in rdr
-        }
+        d = {unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8") for rows in rdr}
     return d
 
 

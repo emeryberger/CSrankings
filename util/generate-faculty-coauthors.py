@@ -1,5 +1,4 @@
 from csrankings import *
-import json
 import gzip
 
 authorPaperCountThreshold = 0
@@ -13,11 +12,9 @@ def parseDBLP(facultydict):
     papersWritten = {}
     counter = 0
     with gzip.open("dblp.xml.gz") as f:
-
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"]):
-
+        for event, node in ElementTree.iterparse(f, events=["start", "end"]):
             if oldnode is not None:
                 oldnode.clear()
             oldnode = node
@@ -30,7 +27,6 @@ def parseDBLP(facultydict):
             year = -1
 
             if node.tag == "inproceedings" or node.tag == "article":
-
                 # Check that dates are in the specified range.
 
                 # First, check if this is one of the conferences we are looking for.
@@ -76,11 +72,7 @@ def parseDBLP(facultydict):
                     tooFewPages = True
                     exceptionConference = confname == "SC"
                     exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
-                    exceptionConference |= (
-                        confname == "ACM Trans. Graph."
-                        and int(volume) >= 26
-                        and int(volume) <= 36
-                    )
+                    exceptionConference |= confname == "ACM Trans. Graph." and int(volume) >= 26 and int(volume) <= 36
                     if exceptionConference:
                         tooFewPages = False
 
@@ -88,7 +80,7 @@ def parseDBLP(facultydict):
                     continue
 
                 coauthorsList = []
-                if not confname in confdict:
+                if confname not in confdict:
                     areaname = "na"
                 else:
                     areaname = confdict[confname]
@@ -99,14 +91,12 @@ def parseDBLP(facultydict):
                         authorName = authorName.strip()
                         if True:  # authorName in facultydict):
                             authorsOnPaper += 1
-                            if not authorName in coauthors:
+                            if authorName not in coauthors:
                                 coauthors[authorName] = {}
-                            if not (year, areaname) in coauthors[authorName]:
+                            if (year, areaname) not in coauthors[authorName]:
                                 coauthors[authorName][(year, areaname)] = set([])
                             coauthorsList.append(authorName)
-                            papersWritten[authorName] = (
-                                papersWritten.get(authorName, 0) + 1
-                            )
+                            papersWritten[authorName] = papersWritten.get(authorName, 0) + 1
 
                 # No authors? Bail.
                 if authorsOnPaper == 0:
@@ -122,18 +112,14 @@ def parseDBLP(facultydict):
                             for coauth in coauthorsList:
                                 if coauth != authorName:
                                     if coauth in facultydict:
-                                        coauthors[authorName][(year, areaname)].add(
-                                            coauth
-                                        )
-                                        coauthors[coauth][(year, areaname)].add(
-                                            authorName
-                                        )
+                                        coauthors[authorName][(year, areaname)].add(coauth)
+                                        coauthors[coauth][(year, areaname)].add(authorName)
 
     o = open("faculty-coauthors.csv", "w")
     o.write('"author","coauthor","year","area"\n')
     for auth in coauthors:
         if auth in facultydict:
-            for (year, area) in coauthors[auth]:
+            for year, area in coauthors[auth]:
                 for coauth in coauthors[auth][(year, area)]:
                     if papersWritten[coauth] >= authorPaperCountThreshold:
                         o.write(auth)

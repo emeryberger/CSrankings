@@ -13,10 +13,9 @@ def parseDBLP(facultydict):
     authorscoresAdjusted = {}
 
     with gzip.open("dblp.xml.gz") as f:
-
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"]):
+        for event, node in ElementTree.iterparse(f, events=["start", "end"]):
             if oldnode is not None:
                 oldnode.clear()
             oldnode = node
@@ -33,7 +32,6 @@ def parseDBLP(facultydict):
             volume = 0
 
             if node.tag == "inproceedings" or node.tag == "article":
-
                 # First, check if this is one of the conferences we are looking for.
 
                 for child in node:
@@ -82,11 +80,7 @@ def parseDBLP(facultydict):
                     tooFewPages = True
                     exceptionConference = confname == "SC"
                     exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
-                    exceptionConference |= (
-                        confname == "ACM Trans. Graph."
-                        and int(volume) >= 26
-                        and int(volume) <= 36
-                    )
+                    exceptionConference |= confname == "ACM Trans. Graph." and int(volume) >= 26 and int(volume) <= 36
                     if exceptionConference:
                         tooFewPages = False
 
@@ -101,14 +95,7 @@ def parseDBLP(facultydict):
                         authorName = authorName.strip()
                         if authorName in facultydict:
                             print(
-                                "here we go"
-                                + authorName
-                                + " "
-                                + confname
-                                + " "
-                                + str(authorsOnPaper)
-                                + " "
-                                + str(year)
+                                "here we go" + authorName + " " + confname + " " + str(authorsOnPaper) + " " + str(year)
                             )
                             logstring = authorName.encode("utf-8")
                             logstring += " ; ".encode("utf-8")
@@ -118,17 +105,12 @@ def parseDBLP(facultydict):
                             tmplist = authlogs.get(authorName, [])
                             tmplist.append(logstring)
                             authlogs[authorName] = tmplist
-                            interestingauthors[authorName] = (
-                                interestingauthors.get(authorName, 0) + 1
-                            )
+                            interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
                             authorscores[(authorName, areaname, year)] = (
                                 authorscores.get((authorName, areaname, year), 0) + 1.0
                             )
                             authorscoresAdjusted[(authorName, areaname, year)] = (
-                                authorscoresAdjusted.get(
-                                    (authorName, areaname, year), 0
-                                )
-                                + 1.0 / authorsOnPaper
+                                authorscoresAdjusted.get((authorName, areaname, year), 0) + 1.0 / authorsOnPaper
                             )
 
     return (interestingauthors, authorscores, authorscoresAdjusted, authlogs)
@@ -140,7 +122,7 @@ fdict = csrankings.csv2dict_str_str("faculty-affiliations.csv")
 
 f = open("all-author-info.csv", "w")
 f.write('"name","dept","area","count","adjustedcount","year"\n')
-for (authorName, area, year) in authscores_gl:
+for authorName, area, year in authscores_gl:
     count = authscores_gl[(authorName, area, year)]
     countAdjusted = authscoresAdjusted_gl[(authorName, area, year)]
     # f.write(authorName.encode('utf-8'))

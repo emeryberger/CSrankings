@@ -9,14 +9,11 @@
 #
 
 import os
-import scholarly
 from collections import *
 
 import codecs
 import sys
 import random
-import urllib3
-import operator
 import re
 import time
 import fcntl
@@ -80,9 +77,7 @@ import urllib.parse
 def searchAuthor(name):
     userMatcher = re.compile("user=([A-Za-z0-9\-]+)")
     quoted = urllib.parse.quote_plus(name)
-    res = requests.get(
-        "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C48&q=" + quoted + "&btnG="
-    )
+    res = requests.get("https://scholar.google.com/scholar?hl=en&as_sdt=0%2C48&q=" + quoted + "&btnG=")
     res.raise_for_status()
     soup = bs4.BeautifulSoup(res.text)
     #    print(res.text)
@@ -95,7 +90,7 @@ def searchAuthor(name):
         for c in div.children:
             href = c.get("href")
             um = userMatcher.search(href)
-            if not um is None:
+            if um is not None:
                 link = um.group(1)
                 return (name, link)
                 break
@@ -209,18 +204,14 @@ for name in facultydictkeys:
     newscholarLinks[name] = id
     #    name = name.decode('utf8')
     # print("["+me+"] " + name + "," + id)
-    print(
-        n + "," + facultydict[n] + "," + homepages[n] + "," + newscholarLinks[n] + "\n"
-    )
+    print(n + "," + facultydict[n] + "," + homepages[n] + "," + newscholarLinks[n] + "\n")
     # actualURL = "https://scholar.google.com/citations?user="+id+"&hl=en&oi=ao"
 
     sys.stdout.flush()
     time.sleep(10)
 
 for n in newscholarLinks:
-    print(
-        n + "," + facultydict[n] + "," + homepages[n] + "," + newscholarLinks[n] + "\n"
-    )
+    print(n + "," + facultydict[n] + "," + homepages[n] + "," + newscholarLinks[n] + "\n")
 
 # Write everything out.
 with codecs.open("scholar.csv", "a+", "utf8") as scholarFile:

@@ -13,13 +13,11 @@ def parseDBLP(facultydict):
     authorscoresAdjusted = {}
 
     with open("dblp.xml", mode="r") as f:
-
         # with gzip.open('dblp.xml.gz') as f:
 
         oldnode = None
 
-        for (event, node) in ElementTree.iterparse(f, events=["start", "end"]):
-
+        for event, node in ElementTree.iterparse(f, events=["start", "end"]):
             if oldnode is not None:
                 oldnode.clear()
             oldnode = node
@@ -31,7 +29,6 @@ def parseDBLP(facultydict):
             year = -1
 
             if node.tag == "inproceedings" or node.tag == "article":
-
                 # It's a booktitle or journal, and it's one of our conferences.
 
                 # Check that dates are in the specified range.
@@ -39,9 +36,7 @@ def parseDBLP(facultydict):
                 for child in node:
                     if child.tag == "year" and type(child.text) is str:
                         year = int(child.text)
-                        if (year >= csrankings.startyear) and (
-                            year <= csrankings.endyear
-                        ):
+                        if (year >= csrankings.startyear) and (year <= csrankings.endyear):
                             inRange = True
                         break
 
@@ -90,19 +85,11 @@ def parseDBLP(facultydict):
                         if authorName in facultydict:
                             # print "here we go",authorName, confname, authorsOnPaper, year
                             if csrankings.generateLog:
-                                logstring = (
-                                    authorName.encode("utf-8")
-                                    + " ; "
-                                    + confname
-                                    + " "
-                                    + str(year)
-                                )
+                                logstring = authorName.encode("utf-8") + " ; " + confname + " " + str(year)
                                 tmplist = authlogs.get(authorName, [])
                                 tmplist.append(logstring)
                                 authlogs[authorName] = tmplist
-                            interestingauthors[authorName] = (
-                                interestingauthors.get(authorName, 0) + 1
-                            )
+                            interestingauthors[authorName] = interestingauthors.get(authorName, 0) + 1
 
     if csrankings.generateLog:
         return (
@@ -120,10 +107,7 @@ def csv2dict_str_str(fname):
         reader = csv.reader(infile)
         # for rows in reader:
         #    print rows[0], "-->", rows[1]
-        d = {
-            unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8")
-            for rows in reader
-        }
+        d = {unicode(rows[0].strip(), "utf-8"): unicode(rows[1].strip(), "utf-8") for rows in reader}
     return d
 
 

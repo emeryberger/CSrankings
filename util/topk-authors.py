@@ -29,18 +29,15 @@
 # The output CSV is of the following format:
 #   name, confnameYear (first year published in that conference), confnameCount (total pubs in that conference), ... (with a final dummy field for convenience)
 
-import gzip
 import json
-import csv
 import sys
 from optparse import OptionParser
-from csrankings import areadict
-from collections import defaultdict
 
 csrankings_root = "."
 
 # list to hold all authors with number of publications counted -- used for finding those with > 8
 confEntries = []
+
 
 # sorting function
 # sorts based on count (second field)
@@ -61,9 +58,7 @@ parser.add_option(
     help="filter only papers that appeared in a particular conference (e.g., ISCA, ASPLOS)",
 )
 
-parser.add_option(
-    "-f", "--file", dest="filename", help="read data from FILE", metavar="FILE"
-)
+parser.add_option("-f", "--file", dest="filename", help="read data from FILE", metavar="FILE")
 
 parser.add_option(
     "-n",

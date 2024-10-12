@@ -3,7 +3,6 @@
 #   name, confnameYear (first year published in that conference), confnameCount (total pubs in that conference), ... (with a final dummy field for convenience)
 
 import json
-import csv
 from optparse import OptionParser
 
 # Default filename.
@@ -13,9 +12,7 @@ end_year = 2020
 
 parser = OptionParser()
 
-parser.add_option(
-    "-f", "--file", dest="filename", help="read data from FILE", metavar="FILE"
-)
+parser.add_option("-f", "--file", dest="filename", help="read data from FILE", metavar="FILE")
 
 parser.add_option(
     "-s",

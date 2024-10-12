@@ -408,12 +408,7 @@ class ScholarArticleParser(object):
             if not hasattr(tag, "name"):
                 continue
 
-            if (
-                tag.name == "div"
-                and self._tag_has_class(tag, "gs_rt")
-                and tag.h3
-                and tag.h3.a
-            ):
+            if tag.name == "div" and self._tag_has_class(tag, "gs_rt") and tag.h3 and tag.h3.a:
                 self.article["title"] = "".join(tag.h3.a.findAll(text=True))
                 self.article["url"] = self._path2url(tag.h3.a["href"])
                 if self.article["url"].endswith(".pdf"):
@@ -442,9 +437,7 @@ class ScholarArticleParser(object):
                 # then this limit gets propagated to the URLs embedded
                 # in the results page as well. Same applies to
                 # versions URL in next if-block.
-                self.article["url_citations"] = self._strip_url_arg(
-                    "num", self._path2url(tag.get("href"))
-                )
+                self.article["url_citations"] = self._strip_url_arg("num", self._path2url(tag.get("href")))
 
                 # We can also extract the cluster ID from the versions
                 # URL. Note that we know that the string contains "?",
@@ -457,9 +450,7 @@ class ScholarArticleParser(object):
             if tag.get("href").startswith("/scholar?cluster"):
                 if hasattr(tag, "string") and tag.string.startswith("All "):
                     self.article["num_versions"] = self._as_int(tag.string.split()[1])
-                self.article["url_versions"] = self._strip_url_arg(
-                    "num", self._path2url(tag.get("href"))
-                )
+                self.article["url_versions"] = self._strip_url_arg("num", self._path2url(tag.get("href")))
 
             if tag.getText().startswith("Import"):
                 self.article["url_citation"] = self._path2url(tag.get("href"))
@@ -687,9 +678,7 @@ class ClusterScholarQuery(ScholarQuery):
     know about.
     """
 
-    SCHOLAR_CLUSTER_URL = (
-        ScholarConf.SCHOLAR_SITE + "/scholar?" + "cluster=%(cluster)s" + "&num=%(num)s"
-    )
+    SCHOLAR_CLUSTER_URL = ScholarConf.SCHOLAR_SITE + "/scholar?" + "cluster=%(cluster)s" + "&num=%(num)s"
 
     def __init__(self, cluster=None):
         ScholarQuery.__init__(self)
@@ -853,7 +842,6 @@ class SearchScholarQuery(ScholarQuery):
 
 
 class ScholarSettings(object):
-
     """
     This class lets you adjust the Scholar settings for your
     session. It's intended to mirror the features tunable in the
@@ -889,7 +877,6 @@ class ScholarSettings(object):
 
 
 class ScholarQuerier(object):
-
     """
     ScholarQuerier instances can conduct a search on Google Scholar
     with subsequent parsing of the resulting HTML content.  The
@@ -898,9 +885,7 @@ class ScholarQuerier(object):
     """
 
     # Default URLs for visiting and submitting Settings pane, as of 3/14
-    GET_SETTINGS_URL = (
-        ScholarConf.SCHOLAR_SITE + "/scholar_settings?" + "sciifh=1&hl=en&as_sdt=0,5"
-    )
+    GET_SETTINGS_URL = ScholarConf.SCHOLAR_SITE + "/scholar_settings?" + "sciifh=1&hl=en&as_sdt=0,5"
 
     SET_SETTINGS_URL = (
         ScholarConf.SCHOLAR_SITE

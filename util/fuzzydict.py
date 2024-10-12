@@ -80,7 +80,6 @@ class FuzzyDict(dict):
         best_match = None
         best_key = None
         for key in self:
-
             # if the current key is not a string
             # then we just skip it
             try:
@@ -121,10 +120,7 @@ class FuzzyDict(dict):
         matched, key, item, ratio = self._search(lookfor)
 
         if not matched:
-            raise KeyError(
-                "'%s'. closest match: '%s' with ratio %.3f"
-                % (str(lookfor), str(key), ratio)
-            )
+            raise KeyError("'%s'. closest match: '%s' with ratio %.3f" % (str(lookfor), str(key), ratio))
 
         return item
 
@@ -134,6 +130,7 @@ if __name__ == "__main__":
 
     class FuzzyTestCase(unittest.TestCase):
         "Perform some tests"
+
         test_dict = {"Hiya": 1, "hiy\xe4": 2, "test3": 3, 1: 324}
 
         def testCreation_Empty(self):

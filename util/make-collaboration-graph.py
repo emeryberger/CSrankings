@@ -177,7 +177,7 @@ def displayName(name):
 
 def addNode(name, nodes, addedNode, authorIndex, authorInd):
     # if not name.decode('utf8') in addedNode:
-    if not name in addedNode:
+    if name not in addedNode:
         if name in maxareas:
             nodes.append(
                 {
@@ -237,7 +237,7 @@ def makegraph(institution, fname, dir):
                     # dot.node(coauth.decode('utf8'),color=authorColor[coauth],style="filled")
                     # Force co-author to be added here so we can reference him/her.
                     addNode(coauth, nodes, addedNode, authorIndex, authorInd)
-                    if not realname + coauthorrealname in edges:
+                    if realname + coauthorrealname not in edges:
                         degree += 1
                         sumdegree += 1
                         if degree > maxdegree:
@@ -264,9 +264,7 @@ def makegraph(institution, fname, dir):
 
             # dot.node(author.decode('utf8'),color=authorColor[author],style="filled")
             # graph.add_edge(author.decode('utf8'),author.decode('utf8'))
-            edges[
-                realname + realname
-            ] = 2  # include one bogus co-authored article (2 b/c divided by 2 later)
+            edges[realname + realname] = 2  # include one bogus co-authored article (2 b/c divided by 2 later)
             if realname not in authorIndex:
                 print(realname + " NOT FOUND")
                 if author not in authorIndex:
@@ -345,7 +343,7 @@ with open("faculty-affiliations.csv", "r") as csvfile:
 
 institutions = {}
 for name in facultydict:
-    if not facultydict[name] in institutions:
+    if facultydict[name] not in institutions:
         institutions[facultydict[name]] = True
 
 institutions = OrderedDict(sorted(institutions.items(), key=lambda t: t[0]))
@@ -377,7 +375,7 @@ with open("faculty-coauthors.csv", "r") as csvfile:
         #        print("year = " + str(year))
         if year < startyear or year > endyear:
             continue
-        if not author in coauthors:
+        if author not in coauthors:
             coauthors[author] = []
         coauthors[author].append(coauthor)
         # if not coauthors.has_key(coauthor):
@@ -414,9 +412,9 @@ with open("all-author-info.csv") as csvfile:
             continue
         if author in aliases:
             author = aliases[author]
-        if not author in pubs:
+        if author not in pubs:
             pubs[author] = {}
-        if not area in pubs[author]:
+        if area not in pubs[author]:
             pubs[author][area] = 0
         pubs[author][area] += 1
 
