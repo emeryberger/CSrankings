@@ -1,9 +1,14 @@
 name: Commit Validation
 
 on:
-  push:
-
   pull_request:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  # needed for github actions
+  repository-projects: read
 
 jobs:
   commit_validation:
@@ -37,4 +42,27 @@ jobs:
         run: |
           pip install -r requirements.txt
           python validate_commit.py $DIFF
-          
+
+      - name: Make comment and mark stale if failed
+        if: failure()
+        run: |
+          echo "Mark as stale"
+          gh pr edit "$PR_NUMBER" --add-label stale
+          gh pr comment "$PR_NUMBER" --body 'The validity checks failed. Please look at the logs (click the red X) and correct the errors. Your PR will be closed automatically in 2 days if not fixed.'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+
+      - name: Mark unstale if success
+        if: success()
+        run: |
+          if gh pr view "$PR_NUMBER" --json labels | grep stale ; then
+            echo "No longer stale"
+            gh pr edit "$PR_NUMBER" --remove-label stale
+            gh pr comment "$PR_NUMBER" --body 'The validity checks are now passing. Thank you.'
+          else
+            echo "Was already not stale"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
