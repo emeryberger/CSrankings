@@ -47,22 +47,22 @@ jobs:
         if: failure()
         run: |
           echo "Mark as stale"
-          gh pr edit "$BRANCH" --add-label stale
-          gh pr comment "$BRANCH" --body 'The validity checks failed. Please look at the logs (click the red X) and correct the errors. Your PR will be closed automatically in 2 days if not fixed.'
+          gh pr edit "$PR_NUMBER" --add-label stale
+          gh pr comment "$PR_NUMBER" --body 'The validity checks failed. Please look at the logs (click the red X) and correct the errors. Your PR will be closed automatically in 2 days if not fixed.'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ github.head_ref }}
+          PR_NUMBER: ${{ github.event.number }}
 
       - name: Mark unstale if success
         if: success()
         run: |
-          if gh pr view "$BRANCH" --json labels | grep stale ; then
+          if gh pr view "$PR_NUMBER" --json labels | grep stale ; then
             echo "No longer stale"
-            gh pr edit "$BRANCH" --remove-label stale
-            gh pr comment "$BRANCH" --body 'The validity checks are now passing. Thank you.'
+            gh pr edit "$PR_NUMBER" --remove-label stale
+            gh pr comment "$PR_NUMBER" --body 'The validity checks are now passing. Thank you.'
           else
             echo "Was already not stale"
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ github.head_ref }}
+          PR_NUMBER: ${{ github.event.number }}
