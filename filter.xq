@@ -154,6 +154,7 @@
 //article[journal="ACM Trans. Embed. Comput. Syst."],
 //inproceedings[booktitle="SIGGRAPH"],
 //inproceedings[booktitle="SIGGRAPH (Conference Paper Track)"],
+//inproceedings[booktitle="SIGGRAPH Asia"],
 //article[journal="Comput. Graph. Forum"],
 //inproceedings[booktitle="ASE"],
 //inproceedings[booktitle="ICSE"],
