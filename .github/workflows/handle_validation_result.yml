@@ -25,7 +25,7 @@ jobs:
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.txt`, prNumber.toString());
 
       - name: Mark unstale if success
-        if: ${{ github.event.workflow_run.conclusion == "success" }}
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         run: |
           export PR_NUMBER=$(cat pr_number.txt)
           echo "In repo $GH_REPO on PR $PR_NUMBER"
@@ -42,7 +42,7 @@ jobs:
           GH_REPO: ${{ github.event.repository.full_name }}
 
       - name: Make comment and mark stale if failed
-        if: ${{ github.event.workflow_run.conclusion == "failure" }}
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         run: |
           export PR_NUMBER=$(cat pr_number.txt)
           echo "In repo $GH_REPO on PR $PR_NUMBER"
