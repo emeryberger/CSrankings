@@ -9,35 +9,35 @@ You must read and check **all** the boxes below by filling them in with an X or 
 
 **The Basics**
 
-- [ ] All pull requests and issues must come from non-anonymous accounts. Make sure your GitHub profile contains your full name.
+- [X] All pull requests and issues must come from non-anonymous accounts. Make sure your GitHub profile contains your full name.
 
-- [ ] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
+- [X] Use a reasonable title that explains what the PR corresponds to (as in, not "Update csrankings-x.csv").
 
-- [ ] Combine multiple updates to a single institution into a **single PR.**
+- [X] Combine multiple updates to a single institution into a **single PR.**
 
-- [ ] Only submit one pull request per institution.
+- [X] Only submit one pull request per institution.
 
-- [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` and `old/industry.csv` (see below).
+- [X] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` and `old/industry.csv` (see below).
 
-- [ ] Do not use Excel to edit any .csv files; Excel incorrectly tries to
+- [X] Do not use Excel to edit any .csv files; Excel incorrectly tries to
 convert some Google Scholar entries to formulas, corrupting the
 database. Use the GitHub user interface or a text editor like emacs or NotePad instead.
 
-- [ ] Insert new faculty **in alphabetical order** (not at the end) in the appropriate `csrankings-[a-z].csv` files. **Do not modify `csrankings.csv`, which is auto-generated.**
+- [X] Insert new faculty **in alphabetical order** (not at the end) in the appropriate `csrankings-[a-z].csv` files. **Do not modify `csrankings.csv`, which is auto-generated.**
 
-- [ ] Check to make sure that you have no spaces after commas, or any missing fields.
+- [X] Check to make sure that you have no spaces after commas, or any missing fields.
 
-- [ ] Check to make sure the home page is correct.
+- [X] Check to make sure the home page is correct.
 
-- [ ] Make sure the Google Scholar IDs are just the alphanumeric identifier (not a URL or with `&hl=en`).
+- [X] Make sure the Google Scholar IDs are just the alphanumeric identifier (not a URL or with `&hl=en`).
 
-- [ ] Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org).
+- [X] Check to make sure the name corresponds to the DBLP entry (look it up at http://dblp.org).
 
-- [ ] If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
+- [X] If a faculty member is not in a CS department or similar, include a comment explaining how they meet the inclusion criteria (see below).
 
 **Inclusion criteria**
 
-- [ ] Make sure that any faculty you add meet the inclusion
+- [X] Make sure that any faculty you add meet the inclusion
 criteria. Eligible faculty include only full-time, tenure-track research
 faculty members on a given campus who can *solely* advise PhD students in
 Computer Science. Faculty not in a CS department or similar who can
@@ -49,7 +49,7 @@ e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time 
 
 **Updating an affiliation or home page**
 
-- [ ] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`.
+- [X] Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`.
 
 **Adding one or more faculty members (including an entire department)**
 
