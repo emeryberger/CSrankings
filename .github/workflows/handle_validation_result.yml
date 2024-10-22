@@ -6,6 +6,7 @@ on:
     types: [completed]
 
 permissions:
+  actions: read
   contents: read
   issues: write
   pull-requests: write
@@ -16,13 +17,29 @@ jobs:
   handle-validation-result:
     runs-on: ubuntu-latest
     steps:
-      - name: "Get PR number"
+      - name: 'Download PR number artifact'
         uses: actions/github-script@v6
         with:
           script: |
-            let prNumber = context.payload.workflow_run.pull_requests[0].number;
+            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: context.payload.workflow_run.id,
+            });
+            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr_number.txt"
+            })[0];
+            let download = await github.rest.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
             let fs = require('fs');
-            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.txt`, prNumber.toString());
+            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
+
+      - name: 'Unzip artifact'
+        run: unzip pr_number.zip
 
       - name: Mark unstale if success
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
