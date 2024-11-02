@@ -5,8 +5,18 @@ import re
 import requests
 import sys
 import time
+import unidecode
 import urllib.parse
+
+from validate_homepage import has_valid_homepage
+
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
+
+def remove_suffix_and_brackets(input_string: str) -> str:
+    # Remove any suffix with a space and anything in brackets only if it is at the end of the string
+    # Used to handle special entries like [Tech]
+    modified_string = re.sub(r'\s*\[.*?\]$', '', input_string)
+    return modified_string
 
 def translate_name_to_dblp(name: str) -> str:
     """
@@ -60,32 +70,6 @@ def is_valid_account(account: str) -> bool:
 def has_reasonable_title(title):
     # Check if the title is reasonable
     return not title.startswith('Update csrankings-')
-
-# Use richer headers to avoid 403 errors.
-# From https://scrapeops.io/web-scraping-playbook/403-forbidden-error-web-scraping.
-HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Accept-Encoding": "gzip, deflate",
-        "Connection": "keep-alive",
-        "Upgrade-Insecure-Requests": "1",
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "none",
-        "Sec-Fetch-User": "?1",
-        "Cache-Control": "max-age=0",
-    }
-
-def has_valid_homepage(homepage: str) -> bool:
-    try:
-        response = requests.get(homepage, headers=HEADERS, timeout=15)
-        if response.status_code != 200:
-            print(f'  WARNING: Received error code {response.status_code}.')
-        return response.status_code == 200
-    except requests.exceptions.RequestException as e:
-        print(f"  ERROR: An exception occurred: {e}")
-        return False
 
 def has_valid_google_scholar_id(id):
     # Check if the Google Scholar ID is valid
@@ -186,7 +170,7 @@ def process():
         # Check if we are processing a `csrankings-?.csv` file.
         matched = re.match('csrankings-([a-z0])\\.csv', file)
         if matched:
-            the_letter = matched.groups(0)[0]
+            the_letter = unidecode.unidecode(matched.groups(0)[0]) # Convert to ASCII
             for l in changed_lines[file]:
                 line_valid = True
                 remaining_diffs -= 1
@@ -202,6 +186,7 @@ def process():
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
