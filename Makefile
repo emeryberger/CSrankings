@@ -57,6 +57,7 @@ faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.
 clean-csrankings:
 	@echo "Cleaning."
 	@$(PYTHON) util/clean-csrankings.py
+	@$(PYTHON) util/sort-csv-files.py
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv
