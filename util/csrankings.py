@@ -360,6 +360,11 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("CRYPTO (3)"),
         Conference("CRYPTO (4)"),
         Conference("CRYPTO (5)"),
+        Conference("CRYPTO (6)"),
+        Conference("CRYPTO (7)"),
+        Conference("CRYPTO (8)"),
+        Conference("CRYPTO (9)"),
+        Conference("CRYPTO (10)"),
     ],
     Area("eurocrypt"): [
         Conference("EUROCRYPT"),
@@ -803,6 +808,7 @@ def countPaper(
     """Returns true iff this paper will be included in the rankings."""
     if year < startyear or year > endyear:
         return False
+
     # Special handling for EMSOFT (TECS).
     if confname in [
         "ACM Trans. Embedded Comput. Syst.",
