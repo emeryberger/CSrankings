@@ -5210,14 +5210,14 @@ Alexander A. Sherstov,Univ. of California - Los Angeles,stoc,1.0,1.0,2022
 Alexander Barg,University of Maryland - College Park,fast,1.0,0.083333,2018
 Alexander Barg,University of Maryland - College Park,focs,1.0,0.33333,2017
 Alexander Barg,University of Maryland - College Park,usenixatc,1.0,0.2,2018
-Alexander Binder,SUTD,cvpr,1.0,0.2,2016
-Alexander Binder,SUTD,cvpr,1.0,0.16667,2023
-Alexander Binder,SUTD,eccv,1.0,0.14286,2018
-Alexander Binder,SUTD,eccv,1.0,0.2,2020
-Alexander Binder,SUTD,eccv,1.0,0.25,2022
-Alexander Binder,SUTD,iclr,1.0,0.14286,2020
-Alexander Binder,SUTD,icml,1.0,0.125,2018
-Alexander Binder,SUTD,nips,1.0,0.25,2015
+Alexander Binder,University of Magdeburg,cvpr,1.0,0.2,2016
+Alexander Binder,University of Magdeburg,cvpr,1.0,0.16667,2023
+Alexander Binder,University of Magdeburg,eccv,1.0,0.14286,2018
+Alexander Binder,University of Magdeburg,eccv,1.0,0.2,2020
+Alexander Binder,University of Magdeburg,eccv,1.0,0.25,2022
+Alexander Binder,University of Magdeburg,iclr,1.0,0.14286,2020
+Alexander Binder,University of Magdeburg,icml,1.0,0.125,2018
+Alexander Binder,University of Magdeburg,nips,1.0,0.25,2015
 Alexander Borgida,Rutgers University,aaai,1.0,0.33333,1992
 Alexander Borgida,Rutgers University,aaai,1.0,0.33333,2006
 Alexander Borgida,Rutgers University,aaai,1.0,0.25,2019
@@ -19931,6 +19931,7 @@ Benjamin Moseley,Carnegie Mellon University,stoc,1.0,0.33333,2017
 Benjamin Moseley,Carnegie Mellon University,vldb,1.0,0.2,2012
 Benjamin Moseley,Carnegie Mellon University,vldb,1.0,0.2,2017
 Benjamin Moseley,Carnegie Mellon University,www,1.0,0.33333,2012
+Benjamin Noack,University of Magdeburg,iros,1.0,0.33333,2010
 Benjamin Peherstorfer,New York University,icml,1.0,0.25,2023
 Benjamin Peherstorfer,New York University,nips,1.0,0.5,2023
 Benjamin Raichel,University of Texas at Dallas,focs,1.0,0.5,2015
@@ -22983,6 +22984,20 @@ Bo Yan 0001,Fudan University,cvpr,1.0,0.16667,2022
 Bo Yan 0001,Fudan University,iccv,1.0,0.33333,2021
 Bo Yan 0001,Fudan University,ijcai,2.0,0.5,2023
 Bo Yang 0011,UESTC,dac,1.0,0.2,2004
+Bo Yang 0027,The Hong Kong Polytechnic University,cvpr,1.0,0.125,2020
+Bo Yang 0027,The Hong Kong Polytechnic University,cvpr,2.0,0.36667,2021
+Bo Yang 0027,The Hong Kong Polytechnic University,cvpr,1.0,0.25,2023
+Bo Yang 0027,The Hong Kong Polytechnic University,eccv,1.0,0.14286,2022
+Bo Yang 0027,The Hong Kong Polytechnic University,iccv,1.0,0.5,2021
+Bo Yang 0027,The Hong Kong Polytechnic University,iclr,1.0,0.33333,2023
+Bo Yang 0027,The Hong Kong Polytechnic University,icra,1.0,0.14286,2018
+Bo Yang 0027,The Hong Kong Polytechnic University,icra,1.0,0.2,2021
+Bo Yang 0027,The Hong Kong Polytechnic University,icra,1.0,0.25,2023
+Bo Yang 0027,The Hong Kong Polytechnic University,icra,1.0,0.2,2024
+Bo Yang 0027,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2018
+Bo Yang 0027,The Hong Kong Polytechnic University,iros,1.0,0.125,2019
+Bo Yang 0027,The Hong Kong Polytechnic University,nips,1.0,0.14286,2019
+Bo Yang 0027,The Hong Kong Polytechnic University,nips,2.0,1.0,2022
 Bo Zhang 0010,Tsinghua University,aaai,2.0,0.45,2014
 Bo Zhang 0010,Tsinghua University,aaai,2.0,0.36667,2016
 Bo Zhang 0010,Tsinghua University,aaai,1.0,0.2,2018
@@ -29865,39 +29880,39 @@ Chengnian Sun,University of Waterloo,oopsla,2.0,0.27778,2023
 Chengnian Sun,University of Waterloo,pldi,1.0,0.2,2016
 Chengnian Sun,University of Waterloo,pldi,1.0,0.33333,2017
 Chengnian Sun,University of Waterloo,usenixatc,1.0,0.14286,2021
-Chengqi Zhang,University of Technology Sydney,aaai,1.0,0.2,2016
-Chengqi Zhang,University of Technology Sydney,aaai,1.0,0.16667,2018
-Chengqi Zhang,University of Technology Sydney,aaai,1.0,0.2,2020
-Chengqi Zhang,University of Technology Sydney,aaai,1.0,0.14286,2022
-Chengqi Zhang,University of Technology Sydney,aaai,1.0,0.16667,2023
-Chengqi Zhang,University of Technology Sydney,acl,1.0,0.16667,2022
-Chengqi Zhang,University of Technology Sydney,acl,1.0,0.14286,2023
-Chengqi Zhang,University of Technology Sydney,icde,1.0,0.25,2013
-Chengqi Zhang,University of Technology Sydney,iclr,1.0,0.2,2018
-Chengqi Zhang,University of Technology Sydney,iclr,1.0,0.16667,2021
-Chengqi Zhang,University of Technology Sydney,icml,1.0,0.33333,2002
-Chengqi Zhang,University of Technology Sydney,icml,1.0,0.16667,2022
-Chengqi Zhang,University of Technology Sydney,icml,1.0,0.2,2023
-Chengqi Zhang,University of Technology Sydney,ijcai,2.0,0.33333,2011
-Chengqi Zhang,University of Technology Sydney,ijcai,2.0,0.36667,2015
-Chengqi Zhang,University of Technology Sydney,ijcai,2.0,0.4,2016
-Chengqi Zhang,University of Technology Sydney,ijcai,2.0,0.41667,2017
-Chengqi Zhang,University of Technology Sydney,ijcai,3.0,0.58333,2018
-Chengqi Zhang,University of Technology Sydney,ijcai,3.0,0.53333,2019
-Chengqi Zhang,University of Technology Sydney,ijcai,1.0,0.16667,2020
-Chengqi Zhang,University of Technology Sydney,ijcai,1.0,0.14286,2023
-Chengqi Zhang,University of Technology Sydney,kdd,1.0,0.25,2006
-Chengqi Zhang,University of Technology Sydney,kdd,1.0,0.33333,2013
-Chengqi Zhang,University of Technology Sydney,kdd,1.0,0.25,2015
-Chengqi Zhang,University of Technology Sydney,kdd,1.0,0.16667,2020
-Chengqi Zhang,University of Technology Sydney,kdd,1.0,0.25,2021
-Chengqi Zhang,University of Technology Sydney,naacl,1.0,0.2,2019
-Chengqi Zhang,University of Technology Sydney,nips,1.0,0.2,2019
-Chengqi Zhang,University of Technology Sydney,nips,2.0,0.33333,2020
-Chengqi Zhang,University of Technology Sydney,nips,1.0,0.2,2023
-Chengqi Zhang,University of Technology Sydney,sigmod,1.0,0.25,2009
-Chengqi Zhang,University of Technology Sydney,sigmod,1.0,0.16667,2014
-Chengqi Zhang,University of Technology Sydney,www,1.0,0.25,2017
+Chengqi Zhang,The Hong Kong Polytechnic University,aaai,1.0,0.2,2016
+Chengqi Zhang,The Hong Kong Polytechnic University,aaai,1.0,0.16667,2018
+Chengqi Zhang,The Hong Kong Polytechnic University,aaai,1.0,0.2,2020
+Chengqi Zhang,The Hong Kong Polytechnic University,aaai,1.0,0.14286,2022
+Chengqi Zhang,The Hong Kong Polytechnic University,aaai,1.0,0.16667,2023
+Chengqi Zhang,The Hong Kong Polytechnic University,acl,1.0,0.16667,2022
+Chengqi Zhang,The Hong Kong Polytechnic University,acl,1.0,0.14286,2023
+Chengqi Zhang,The Hong Kong Polytechnic University,icde,1.0,0.25,2013
+Chengqi Zhang,The Hong Kong Polytechnic University,iclr,1.0,0.2,2018
+Chengqi Zhang,The Hong Kong Polytechnic University,iclr,1.0,0.16667,2021
+Chengqi Zhang,The Hong Kong Polytechnic University,icml,1.0,0.33333,2002
+Chengqi Zhang,The Hong Kong Polytechnic University,icml,1.0,0.16667,2022
+Chengqi Zhang,The Hong Kong Polytechnic University,icml,1.0,0.2,2023
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,2.0,0.33333,2011
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,2.0,0.36667,2015
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,2.0,0.4,2016
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,2.0,0.41667,2017
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,3.0,0.58333,2018
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,3.0,0.53333,2019
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2020
+Chengqi Zhang,The Hong Kong Polytechnic University,ijcai,1.0,0.14286,2023
+Chengqi Zhang,The Hong Kong Polytechnic University,kdd,1.0,0.25,2006
+Chengqi Zhang,The Hong Kong Polytechnic University,kdd,1.0,0.33333,2013
+Chengqi Zhang,The Hong Kong Polytechnic University,kdd,1.0,0.25,2015
+Chengqi Zhang,The Hong Kong Polytechnic University,kdd,1.0,0.16667,2020
+Chengqi Zhang,The Hong Kong Polytechnic University,kdd,1.0,0.25,2021
+Chengqi Zhang,The Hong Kong Polytechnic University,naacl,1.0,0.2,2019
+Chengqi Zhang,The Hong Kong Polytechnic University,nips,1.0,0.2,2019
+Chengqi Zhang,The Hong Kong Polytechnic University,nips,2.0,0.33333,2020
+Chengqi Zhang,The Hong Kong Polytechnic University,nips,1.0,0.2,2023
+Chengqi Zhang,The Hong Kong Polytechnic University,sigmod,1.0,0.25,2009
+Chengqi Zhang,The Hong Kong Polytechnic University,sigmod,1.0,0.16667,2014
+Chengqi Zhang,The Hong Kong Polytechnic University,www,1.0,0.25,2017
 Chengqing Zong,Chinese Academy of Sciences,aaai,1.0,0.2,2014
 Chengqing Zong,Chinese Academy of Sciences,aaai,1.0,0.33333,2017
 Chengqing Zong,Chinese Academy of Sciences,aaai,2.0,0.58333,2018
@@ -31793,6 +31808,10 @@ Christian Hammer 0001,University of Potsdam,icse,1.0,0.16667,2013
 Christian Hammer 0001,University of Potsdam,icse,1.0,0.25,2020
 Christian Hammer 0001,University of Potsdam,oopsla,1.0,0.2,2013
 Christian Hammer 0001,University of Potsdam,usenixsec,1.0,0.2,2015
+Christian Hansen 0001,University of Magdeburg,vis,1.0,0.16667,2006
+Christian Hansen 0001,University of Magdeburg,vr,1.0,0.1,2021
+Christian Hansen 0001,University of Magdeburg,vr,2.0,0.35,2022
+Christian Hansen 0001,University of Magdeburg,vr,1.0,0.16667,2023
 Christian Hardmeier,IT University of Copenhagen,emnlp,1.0,0.33333,2012
 Christian Hardmeier,IT University of Copenhagen,emnlp,1.0,0.33333,2013
 Christian Hardmeier,IT University of Copenhagen,emnlp,1.0,0.33333,2017
@@ -56721,6 +56740,7 @@ Farzan Farnia,Chinese University of Hong Kong,nips,1.0,0.5,2016
 Farzan Farnia,Chinese University of Hong Kong,nips,1.0,0.5,2018
 Farzan Farnia,Chinese University of Hong Kong,nips,1.0,0.25,2020
 Farzan Farnia,Chinese University of Hong Kong,nips,1.0,0.33333,2023
+Farzaneh Derakhshan,Illinois Institute of Technology,lics,1.0,0.33333,2021
 Fatemeh Afghah,Northern Arizona University,cvpr,1.0,0.125,2023
 Fatemeh Nargesian,University of Rochester,icde,1.0,0.25,2023
 Fatemeh Nargesian,University of Rochester,ijcai,1.0,0.2,2017
@@ -62290,12 +62310,6 @@ George B. Mertzios,Durham University,soda,1.0,0.16667,2012
 George B. Mertzios,Durham University,wine,1.0,0.25,2011
 George B. Purdy,University of Cincinnati,crypto,1.0,0.33333,1985
 George B. Purdy,University of Cincinnati,eurocrypt,1.0,0.5,1988
-George Baciu,The Hong Kong Polytechnic University,cvpr,1.0,0.5,2012
-George Baciu,The Hong Kong Polytechnic University,eurographics,1.0,0.5,2000
-George Baciu,The Hong Kong Polytechnic University,eurographics,1.0,0.5,2019
-George Baciu,The Hong Kong Polytechnic University,eurographics,1.0,0.33333,2020
-George Baciu,The Hong Kong Polytechnic University,icra,2.0,0.66667,1987
-George Baciu,The Hong Kong Polytechnic University,vis,1.0,0.2,2022
 George Bebis,University of Nevada,cvpr,1.0,0.25,2007
 George Bebis,University of Nevada,eccv,1.0,0.33333,2004
 George Bebis,University of Nevada,iccv,1.0,0.33333,1995
@@ -75227,6 +75241,40 @@ Hongwei Xi,Boston University,lics,1.0,1.0,2001
 Hongwei Xi,Boston University,pldi,1.0,0.5,1998
 Hongwei Xi,Boston University,popl,1.0,0.5,1999
 Hongwei Xi,Boston University,popl,1.0,0.33333,2003
+Hongxia Yang,The Hong Kong Polytechnic University,aaai,2.0,0.28571,2021
+Hongxia Yang,The Hong Kong Polytechnic University,aaai,1.0,0.11111,2024
+Hongxia Yang,The Hong Kong Polytechnic University,acl,1.0,0.2,2019
+Hongxia Yang,The Hong Kong Polytechnic University,acl,1.0,0.125,2021
+Hongxia Yang,The Hong Kong Polytechnic University,acl,2.0,0.25758,2024
+Hongxia Yang,The Hong Kong Polytechnic University,cvpr,1.0,0.125,2023
+Hongxia Yang,The Hong Kong Polytechnic University,eccv,1.0,0.2,2022
+Hongxia Yang,The Hong Kong Polytechnic University,emnlp,1.0,0.14286,2019
+Hongxia Yang,The Hong Kong Polytechnic University,iclr,1.0,0.16667,2020
+Hongxia Yang,The Hong Kong Polytechnic University,iclr,1.0,0.11111,2022
+Hongxia Yang,The Hong Kong Polytechnic University,iclr,4.0,0.54722,2024
+Hongxia Yang,The Hong Kong Polytechnic University,icml,2.0,0.30952,2021
+Hongxia Yang,The Hong Kong Polytechnic University,icml,2.0,0.3,2022
+Hongxia Yang,The Hong Kong Polytechnic University,ijcai,1.0,0.125,2018
+Hongxia Yang,The Hong Kong Polytechnic University,ijcai,2.0,0.4,2019
+Hongxia Yang,The Hong Kong Polytechnic University,ijcai,1.0,0.14286,2020
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,1.0,0.5,2014
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,1.0,0.33333,2015
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,2.0,0.66667,2017
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,4.0,0.86905,2018
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,4.0,0.7,2019
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,6.0,0.87897,2020
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,4.0,0.64444,2021
+Hongxia Yang,The Hong Kong Polytechnic University,kdd,3.0,0.41071,2022
+Hongxia Yang,The Hong Kong Polytechnic University,nips,1.0,0.2,2019
+Hongxia Yang,The Hong Kong Polytechnic University,nips,2.0,0.39286,2020
+Hongxia Yang,The Hong Kong Polytechnic University,nips,2.0,0.20202,2021
+Hongxia Yang,The Hong Kong Polytechnic University,sigir,1.0,0.2,2020
+Hongxia Yang,The Hong Kong Polytechnic University,vldb,1.0,0.125,2019
+Hongxia Yang,The Hong Kong Polytechnic University,www,1.0,0.14286,2018
+Hongxia Yang,The Hong Kong Polytechnic University,www,2.0,0.33333,2020
+Hongxia Yang,The Hong Kong Polytechnic University,www,3.0,0.54286,2021
+Hongxia Yang,The Hong Kong Polytechnic University,www,2.0,0.36667,2022
+Hongxia Yang,The Hong Kong Polytechnic University,www,2.0,0.14646,2023
 Hongxin Hu,University at Buffalo,ccs,2.0,0.7,2018
 Hongxin Hu,University at Buffalo,ccs,1.0,0.16667,2020
 Hongxin Hu,University at Buffalo,ccs,1.0,0.2,2023
@@ -90600,6 +90648,13 @@ Jie Wei,CUNY,iccv,1.0,0.33333,1998
 Jie Wei,CUNY,iros,1.0,0.5,1998
 Jie Wei,CUNY,iros,1.0,0.5,1999
 Jie Wei,CUNY,iros,1.0,0.25,2023
+Jie Wen 0001,Harbin Institute of Technology,aaai,1.0,0.16667,2019
+Jie Wen 0001,Harbin Institute of Technology,aaai,1.0,0.14286,2021
+Jie Wen 0001,Harbin Institute of Technology,aaai,4.0,0.83333,2023
+Jie Wen 0001,Harbin Institute of Technology,aaai,4.0,0.62857,2024
+Jie Wen 0001,Harbin Institute of Technology,cvpr,1.0,0.14286,2023
+Jie Wen 0001,Harbin Institute of Technology,ijcai,1.0,0.16667,2020
+Jie Wen 0001,Harbin Institute of Technology,nips,1.0,0.14286,2023
 Jie Wu 0001,Temple University,icde,2.0,0.25758,2024
 Jie Wu 0001,Temple University,icra,1.0,0.33333,1996
 Jie Wu 0001,Temple University,ics,1.0,1.0,2002
@@ -103902,6 +103957,13 @@ Kavita Bala,Cornell University,siggraph-asia,1.0,0.2,2017
 Kay A. Robbins,University of Texas at San Antonio,sigcse,1.0,0.33333,2011
 Kay A. Robbins,University of Texas at San Antonio,vis,1.0,0.5,1998
 Kay A. Robbins,University of Texas at San Antonio,vis,1.0,0.33333,2004
+Kay Chen Tan,The Hong Kong Polytechnic University,aaai,1.0,0.2,2023
+Kay Chen Tan,The Hong Kong Polytechnic University,aaai,3.0,0.50952,2024
+Kay Chen Tan,The Hong Kong Polytechnic University,ase,1.0,0.25,2020
+Kay Chen Tan,The Hong Kong Polytechnic University,cvpr,1.0,0.2,2022
+Kay Chen Tan,The Hong Kong Polytechnic University,icse,1.0,0.2,2020
+Kay Chen Tan,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2020
+Kay Chen Tan,The Hong Kong Polytechnic University,iros,1.0,0.16667,2023
 Kay Connelly,Michigan State University,chiconf,1.0,0.33333,2011
 Kay Connelly,Michigan State University,chiconf,1.0,0.33333,2012
 Kay Connelly,Michigan State University,chiconf,2.0,0.4,2015
@@ -108532,6 +108594,16 @@ Kunle Olukotun,Stanford University,rss,1.0,0.25,2006
 Kunle Olukotun,Stanford University,sc,1.0,0.25,1995
 Kunle Olukotun,Stanford University,sc,1.0,0.33333,2013
 Kunle Olukotun,Stanford University,sigmod,1.0,0.25,2016
+Kunpeng Liu 0001,Portland State University,aaai,1.0,0.16667,2021
+Kunpeng Liu 0001,Portland State University,aaai,1.0,0.33333,2024
+Kunpeng Liu 0001,Portland State University,acl,1.0,0.16667,2024
+Kunpeng Liu 0001,Portland State University,ijcai,1.0,0.16667,2020
+Kunpeng Liu 0001,Portland State University,ijcai,1.0,0.16667,2022
+Kunpeng Liu 0001,Portland State University,kdd,1.0,0.16667,2019
+Kunpeng Liu 0001,Portland State University,kdd,1.0,0.2,2020
+Kunpeng Liu 0001,Portland State University,kdd,1.0,0.2,2022
+Kunpeng Liu 0001,Portland State University,www,1.0,0.16667,2022
+Kunpeng Liu 0001,Portland State University,www,1.0,0.16667,2023
 Kunqing Xie,Peking University,aaai,1.0,0.16667,2011
 Kunqing Xie,Peking University,aaai,1.0,0.25,2014
 Kunqing Xie,Peking University,ijcai,1.0,0.33333,2021
@@ -118993,6 +119065,35 @@ Man Hon Wong 0001,Chinese University of Hong Kong,pods,1.0,0.5,1992
 Man Hon Wong 0001,Chinese University of Hong Kong,pods,1.0,0.5,1993
 Man Hon Wong 0001,Chinese University of Hong Kong,pods,1.0,1.0,1996
 Man Hon Wong 0001,Chinese University of Hong Kong,pods,1.0,0.5,1999
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,1.0,0.25,2007
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,2.0,0.58333,2008
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,3.0,0.86667,2010
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,2.0,0.58333,2011
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,1.0,0.33333,2013
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,2.0,0.58333,2015
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,1.0,0.33333,2019
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,1.0,0.33333,2021
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,1.0,0.33333,2022
+Man Lung Yiu,The Hong Kong Polytechnic University,icde,1.0,0.2,2024
+Man Lung Yiu,The Hong Kong Polytechnic University,sigir,1.0,0.16667,2013
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.5,2004
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.2,2005
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.25,2008
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.33333,2012
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,3.0,0.78333,2017
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.33333,2020
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.2,2022
+Man Lung Yiu,The Hong Kong Polytechnic University,sigmod,1.0,0.16667,2023
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.25,2006
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.5,2007
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.2,2008
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.33333,2009
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.25,2010
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.5,2012
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.25,2013
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.25,2014
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.25,2017
+Man Lung Yiu,The Hong Kong Polytechnic University,vldb,1.0,0.25,2019
 Man-Ki Yoon,North Carolina State University,asplos,1.0,0.25,2016
 Man-Ki Yoon,North Carolina State University,dac,1.0,0.25,2015
 Man-Ki Yoon,North Carolina State University,icra,1.0,0.33333,2020
@@ -122613,6 +122714,9 @@ Mark Reynolds 0001,University of Western Australia,emsoft,1.0,0.33333,2019
 Mark Reynolds 0001,University of Western Australia,icde,1.0,0.16667,2019
 Mark Reynolds 0001,University of Western Australia,ijcai,1.0,0.25,2016
 Mark Reynolds 0001,University of Western Australia,lics,1.0,1.0,2000
+Mark Roman Miller,Illinois Institute of Technology,chiconf,1.0,0.25,2024
+Mark Roman Miller,Illinois Institute of Technology,uist,1.0,0.2,2017
+Mark Roman Miller,Illinois Institute of Technology,vr,1.0,0.2,2023
 Mark Rouncefield,Lancaster University,chiconf,1.0,0.33333,2002
 Mark Rouncefield,Lancaster University,chiconf,1.0,0.14286,2012
 Mark Rouncefield,Lancaster University,chiconf,1.0,0.25,2015
@@ -137027,6 +137131,21 @@ Monika Henzinger,IST Austria,wine,2.0,0.58333,2015
 Monika Henzinger,IST Austria,www,1.0,0.25,2003
 Monika Henzinger,IST Austria,www,1.0,0.25,2009
 Monika Henzinger,IST Austria,www,1.0,0.33333,2011
+Monique Meuschke,University of Magdeburg,eurographics,1.0,0.2,2014
+Monique Meuschke,University of Magdeburg,eurographics,1.0,0.2,2016
+Monique Meuschke,University of Magdeburg,eurographics,1.0,0.2,2017
+Monique Meuschke,University of Magdeburg,eurographics,1.0,0.2,2018
+Monique Meuschke,University of Magdeburg,eurographics,2.0,0.31111,2019
+Monique Meuschke,University of Magdeburg,eurographics,2.0,0.45,2021
+Monique Meuschke,University of Magdeburg,eurographics,1.0,0.25,2022
+Monique Meuschke,University of Magdeburg,eurographics,2.0,0.375,2023
+Monique Meuschke,University of Magdeburg,eurographics,1.0,0.33333,2024
+Monique Meuschke,University of Magdeburg,naacl,1.0,0.2,2022
+Monique Meuschke,University of Magdeburg,vis,1.0,0.2,2017
+Monique Meuschke,University of Magdeburg,vis,1.0,0.16667,2019
+Monique Meuschke,University of Magdeburg,vis,1.0,0.16667,2023
+Monique Meuschke,University of Magdeburg,vis,1.0,0.25,2024
+Monique Meuschke,University of Magdeburg,vr,1.0,0.1,2022
 Monique Ross,Florida International University,sigcse,1.0,0.33333,2021
 Monique Ross,Florida International University,sigcse,2.0,0.41667,2022
 Monique Ross,Florida International University,sigcse,1.0,0.33333,2023
@@ -137705,6 +137824,9 @@ Mrinmaya Sachan,ETH Zurich,nips,1.0,0.2,2018
 Mrinmaya Sachan,ETH Zurich,nips,1.0,0.11111,2022
 Mrinmaya Sachan,ETH Zurich,nips,1.0,0.090909,2023
 Mrinmaya Sachan,ETH Zurich,www,1.0,0.25,2012
+Mu Li 0005,Harbin Institute of Technology,aaai,1.0,0.16667,2018
+Mu Li 0005,Harbin Institute of Technology,cvpr,1.0,0.2,2018
+Mu Li 0005,Harbin Institute of Technology,eccv,1.0,0.2,2018
 Mu Zhang 0001,University of Utah,ccs,1.0,0.25,2014
 Mu Zhang 0001,University of Utah,ccs,1.0,0.25,2015
 Mu Zhang 0001,University of Utah,ccs,1.0,0.1,2018
@@ -141909,6 +142031,10 @@ Nihar B. Shah,Carnegie Mellon University,nips,1.0,0.25,2023
 Nihar B. Shah,Carnegie Mellon University,sigcomm,1.0,0.16667,2014
 Nihar B. Shah,Carnegie Mellon University,sigmetrics,1.0,0.33333,2023
 Nihar B. Shah,Carnegie Mellon University,www,1.0,0.2,2023
+Nik Sultana,Illinois Institute of Technology,nsdi,1.0,0.11111,2021
+Nik Sultana,Illinois Institute of Technology,oakland,1.0,0.33333,2012
+Nik Sultana,Illinois Institute of Technology,usenixatc,1.0,0.058824,2016
+Nik Sultana,Illinois Institute of Technology,usenixatc,1.0,0.066667,2017
 Nika Haghtalab,Univ. of California - Berkeley,aaai,1.0,0.33333,2014
 Nika Haghtalab,Univ. of California - Berkeley,aaai,2.0,0.83333,2018
 Nika Haghtalab,Univ. of California - Berkeley,aaai,1.0,0.33333,2023
@@ -166798,15 +166924,6 @@ Ruizhen Hu,Shenzhen University,siggraph-asia,1.0,0.2,2022
 Ruizhen Hu,Shenzhen University,siggraph-asia,4.0,0.78333,2023
 Ruizhen Hu,Shenzhen University,vis,1.0,0.2,2020
 Ruizhen Hu,Shenzhen University,vis,1.0,0.2,2023
-Rujia Wang,Illinois Institute of Technology,asplos,1.0,0.25,2015
-Rujia Wang,Illinois Institute of Technology,dac,2.0,0.4,2015
-Rujia Wang,Illinois Institute of Technology,dac,1.0,0.25,2019
-Rujia Wang,Illinois Institute of Technology,hpca,1.0,0.33333,2017
-Rujia Wang,Illinois Institute of Technology,hpca,1.0,0.33333,2018
-Rujia Wang,Illinois Institute of Technology,hpca,1.0,0.5,2020
-Rujia Wang,Illinois Institute of Technology,hpca,1.0,0.14286,2021
-Rujia Wang,Illinois Institute of Technology,hpca,1.0,0.33333,2023
-Rujia Wang,Illinois Institute of Technology,isca,1.0,0.25,2022
 Rumi Chunara,New York University,icml,1.0,0.2,2023
 Rumyana Neykova,Brunel University London,oopsla,1.0,0.2,2020
 Rune Møller Jensen,IT University of Copenhagen,aaai,1.0,0.33333,2002
@@ -170344,6 +170461,12 @@ Santiago Ontañón,Drexel University,ijcai,1.0,0.5,2017
 Santiago Ontañón,Drexel University,kdd,1.0,0.047619,2021
 Santiago Ontañón,Drexel University,naacl,1.0,0.25,2022
 Santiago Ontañón,Drexel University,nips,1.0,0.090909,2020
+Santiago Segarra,Rice University,iclr,1.0,0.33333,2023
+Santiago Segarra,Rice University,icml,1.0,0.25,2014
+Santiago Segarra,Rice University,icml,1.0,0.33333,2021
+Santiago Segarra,Rice University,kdd,1.0,0.25,2019
+Santiago Segarra,Rice University,nips,1.0,0.25,2022
+Santiago Segarra,Rice University,nsdi,3.0,0.36111,2024
 Santosh Kumar 0001,University of Memphis,ccs,1.0,0.16667,2021
 Santosh Kumar 0001,University of Memphis,chiconf,1.0,0.25,2011
 Santosh Kumar 0001,University of Memphis,chiconf,1.0,0.083333,2016
@@ -174711,11 +174834,6 @@ Shanghang Zhang,Peking University,nips,2.0,0.58333,2019
 Shanghang Zhang,Peking University,nips,1.0,0.16667,2021
 Shanghang Zhang,Peking University,nips,3.0,0.54167,2022
 Shanghang Zhang,Peking University,nips,1.0,0.14286,2023
-Shangping Ren,Illinois Institute of Technology,dac,1.0,0.16667,2018
-Shangping Ren,Illinois Institute of Technology,iccad,1.0,0.2,2017
-Shangping Ren,Illinois Institute of Technology,rtas,1.0,0.33333,2007
-Shangping Ren,Illinois Institute of Technology,rtas,1.0,0.33333,2009
-Shangping Ren,Illinois Institute of Technology,rtss,1.0,0.33333,2006
 Shangsong Liang,MBZUAI,aaai,1.0,0.25,2017
 Shangsong Liang,MBZUAI,aaai,1.0,1.0,2018
 Shangsong Liang,MBZUAI,aaai,3.0,1.5,2019
@@ -203638,6 +203756,23 @@ Wen Hu,UNSW,ubicomp,2.0,0.45833,2021
 Wen Hu,UNSW,ubicomp,1.0,0.33333,2022
 Wen Hu,UNSW,ubicomp,4.0,0.50397,2023
 Wen Hu,UNSW,www,1.0,0.25,2024
+Wen Hua,The Hong Kong Polytechnic University,aaai,1.0,0.14286,2022
+Wen Hua,The Hong Kong Polytechnic University,aaai,1.0,0.14286,2024
+Wen Hua,The Hong Kong Polytechnic University,emnlp,1.0,0.2,2021
+Wen Hua,The Hong Kong Polytechnic University,emnlp,1.0,0.16667,2022
+Wen Hua,The Hong Kong Polytechnic University,icde,1.0,0.2,2015
+Wen Hua,The Hong Kong Polytechnic University,icde,1.0,0.25,2019
+Wen Hua,The Hong Kong Polytechnic University,icde,1.0,0.25,2020
+Wen Hua,The Hong Kong Polytechnic University,icde,3.0,0.58333,2021
+Wen Hua,The Hong Kong Polytechnic University,icde,1.0,0.25,2022
+Wen Hua,The Hong Kong Polytechnic University,icde,1.0,0.2,2024
+Wen Hua,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2016
+Wen Hua,The Hong Kong Polytechnic University,sigir,1.0,0.16667,2019
+Wen Hua,The Hong Kong Polytechnic University,sigmod,1.0,0.33333,2015
+Wen Hua,The Hong Kong Polytechnic University,vldb,1.0,0.25,2017
+Wen Hua,The Hong Kong Polytechnic University,vldb,2.0,0.36667,2022
+Wen Hua,The Hong Kong Polytechnic University,vldb,1.0,0.2,2023
+Wen Hua,The Hong Kong Polytechnic University,www,1.0,0.2,2023
 Wen Li 0001,UESTC,aaai,1.0,0.16667,2021
 Wen Li 0001,UESTC,aaai,1.0,0.2,2022
 Wen Li 0001,UESTC,aaai,1.0,0.125,2024
@@ -203848,6 +203983,22 @@ Wenbing Huang 0001,Renmin University of China,nips,2.0,0.34286,2023
 Wenbing Huang 0001,Renmin University of China,www,1.0,0.16667,2019
 Wenbing Huang 0001,Renmin University of China,www,1.0,0.14286,2020
 Wenbing Huang 0001,Renmin University of China,www,1.0,0.11111,2024
+Wenbo Guo 0002,Univ. of California - Santa Barbara,acl,1.0,0.25,2022
+Wenbo Guo 0002,Univ. of California - Santa Barbara,ase,1.0,0.125,2019
+Wenbo Guo 0002,Univ. of California - Santa Barbara,ccs,1.0,0.16667,2018
+Wenbo Guo 0002,Univ. of California - Santa Barbara,ccs,1.0,0.25,2023
+Wenbo Guo 0002,Univ. of California - Santa Barbara,icml,3.0,0.625,2021
+Wenbo Guo 0002,Univ. of California - Santa Barbara,ijcai,1.0,0.16667,2021
+Wenbo Guo 0002,Univ. of California - Santa Barbara,kdd,1.0,0.14286,2017
+Wenbo Guo 0002,Univ. of California - Santa Barbara,ndss,1.0,0.16667,2021
+Wenbo Guo 0002,Univ. of California - Santa Barbara,nips,1.0,0.2,2018
+Wenbo Guo 0002,Univ. of California - Santa Barbara,nips,1.0,0.25,2021
+Wenbo Guo 0002,Univ. of California - Santa Barbara,nips,2.0,0.36667,2023
+Wenbo Guo 0002,Univ. of California - Santa Barbara,oakland,1.0,0.2,2023
+Wenbo Guo 0002,Univ. of California - Santa Barbara,usenixsec,2.0,0.36667,2019
+Wenbo Guo 0002,Univ. of California - Santa Barbara,usenixsec,2.0,0.39286,2021
+Wenbo Guo 0002,Univ. of California - Santa Barbara,usenixsec,3.0,0.50952,2023
+Wenbo Guo 0002,Univ. of California - Santa Barbara,usenixsec,1.0,0.16667,2024
 Wenbo He,McMaster University,aaai,1.0,0.33333,2023
 Wenbo He,McMaster University,icde,1.0,0.33333,2014
 Wenbo He,McMaster University,ijcai,1.0,0.5,2022
@@ -208006,6 +208157,26 @@ Xiao Hu 0005,University of Waterloo,sigmod,2.0,0.83333,2023
 Xiao Hu 0005,University of Waterloo,vldb,1.0,0.2,2020
 Xiao Hu 0005,University of Waterloo,vldb,1.0,0.33333,2022
 Xiao Hu 0005,University of Waterloo,vldb,2.0,0.30556,2023
+Xiao Huang 0001,The Hong Kong Polytechnic University,aaai,1.0,0.33333,2018
+Xiao Huang 0001,The Hong Kong Polytechnic University,aaai,1.0,0.25,2019
+Xiao Huang 0001,The Hong Kong Polytechnic University,aaai,1.0,0.14286,2021
+Xiao Huang 0001,The Hong Kong Polytechnic University,acl,2.0,0.33333,2024
+Xiao Huang 0001,The Hong Kong Polytechnic University,icml,1.0,0.16667,2023
+Xiao Huang 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.33333,2017
+Xiao Huang 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.16667,2020
+Xiao Huang 0001,The Hong Kong Polytechnic University,ijcai,1.0,0.2,2022
+Xiao Huang 0001,The Hong Kong Polytechnic University,kdd,1.0,0.2,2017
+Xiao Huang 0001,The Hong Kong Polytechnic University,kdd,1.0,0.25,2018
+Xiao Huang 0001,The Hong Kong Polytechnic University,kdd,1.0,0.25,2019
+Xiao Huang 0001,The Hong Kong Polytechnic University,kdd,1.0,0.33333,2021
+Xiao Huang 0001,The Hong Kong Polytechnic University,kdd,2.0,0.31111,2024
+Xiao Huang 0001,The Hong Kong Polytechnic University,nips,1.0,0.16667,2020
+Xiao Huang 0001,The Hong Kong Polytechnic University,nips,1.0,0.14286,2021
+Xiao Huang 0001,The Hong Kong Polytechnic University,nips,1.0,0.2,2023
+Xiao Huang 0001,The Hong Kong Polytechnic University,sigir,1.0,0.125,2022
+Xiao Huang 0001,The Hong Kong Polytechnic University,sigir,2.0,0.33333,2023
+Xiao Huang 0001,The Hong Kong Polytechnic University,www,1.0,0.16667,2023
+Xiao Huang 0001,The Hong Kong Polytechnic University,www,2.0,0.27778,2024
 Xiao Wang 0012,Northwestern University,aaai,1.0,0.25,2021
 Xiao Wang 0012,Northwestern University,ccs,2.0,0.34286,2014
 Xiao Wang 0012,Northwestern University,ccs,2.0,0.5,2015
@@ -208102,6 +208273,37 @@ Xiao Zhang 0034,Renmin University of China,sigir,1.0,0.16667,2024
 Xiao Zhang 0034,Renmin University of China,www,1.0,0.14286,2022
 Xiao Zhang 0034,Renmin University of China,www,1.0,0.14286,2023
 Xiao Zhang 0034,Renmin University of China,www,1.0,0.2,2024
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,aaai,1.0,0.33333,2018
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,aaai,1.0,0.25,2020
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,aaai,1.0,0.33333,2022
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,aaai,2.0,0.27778,2023
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,aaai,2.0,0.29167,2024
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,acl,1.0,0.14286,2020
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,acl,1.0,0.16667,2021
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,acl,1.0,0.2,2022
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,acl,2.0,0.36667,2024
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,cvpr,1.0,0.33333,2012
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,cvpr,1.0,0.25,2014
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,cvpr,1.0,0.33333,2015
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,cvpr,1.0,0.2,2019
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,emnlp,1.0,0.14286,2019
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,emnlp,1.0,0.2,2023
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,iclr,1.0,0.2,2023
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,iclr,1.0,0.14286,2024
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,ijcai,1.0,0.25,2019
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,kdd,1.0,0.2,2020
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,kdd,2.0,0.325,2021
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,kdd,1.0,0.11111,2024
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,naacl,1.0,0.14286,2022
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,nips,1.0,0.25,2009
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,nips,1.0,0.2,2012
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,nips,1.0,0.33333,2013
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,nips,1.0,0.16667,2020
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,nips,1.0,0.2,2021
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,nips,1.0,0.125,2023
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,www,1.0,0.1,2022
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,www,1.0,0.16667,2023
+Xiao-Ming Wu 0003,The Hong Kong Polytechnic University,www,1.0,0.2,2024
 Xiao-Wen Chang,McGill University,nips,1.0,0.25,2019
 Xiao-Wen Chang,McGill University,nips,1.0,0.125,2022
 Xiao-Wen Chang,McGill University,nips,1.0,0.11111,2023
@@ -209604,6 +209806,13 @@ Xiaolin Hu 0001,Tsinghua University,nips,1.0,0.5,2017
 Xiaolin Hu 0001,Tsinghua University,nips,2.0,0.325,2020
 Xiaolin Hu 0001,Tsinghua University,nips,1.0,0.16667,2021
 Xiaolin Hu 0001,Tsinghua University,nips,1.0,0.2,2023
+Xiaolin Huang,Shanghai Jiao Tong University,aaai,1.0,0.2,2018
+Xiaolin Huang,Shanghai Jiao Tong University,aaai,2.0,0.36667,2020
+Xiaolin Huang,Shanghai Jiao Tong University,cvpr,1.0,0.2,2022
+Xiaolin Huang,Shanghai Jiao Tong University,eccv,1.0,0.2,2022
+Xiaolin Huang,Shanghai Jiao Tong University,iclr,3.0,0.59286,2023
+Xiaolin Huang,Shanghai Jiao Tong University,nips,1.0,0.16667,2022
+Xiaolin Huang,Shanghai Jiao Tong University,nips,1.0,0.25,2023
 Xiaolin Wang 0001,Peking University,dac,1.0,0.2,2021
 Xiaolin Wang 0001,Peking University,emnlp,1.0,0.25,2022
 Xiaolin Wang 0001,Peking University,eurosys,1.0,0.16667,2018
