@@ -1,9 +1,9 @@
 name: Commit Validation
 
 on:
-  push:
-
   pull_request:
+
+permissions: read-all
 
 jobs:
   commit_validation:
@@ -37,4 +37,18 @@ jobs:
         run: |
           pip install -r requirements.txt
           python validate_commit.py $DIFF
-          
+
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Save PR number
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          mkdir -p ./pr
+          echo $PR_NUMBER > ./pr/pr_number.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr_number.txt
+          path: pr/
