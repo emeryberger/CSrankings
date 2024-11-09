@@ -7,6 +7,9 @@ import sys
 import time
 import unidecode
 import urllib.parse
+
+from validate_homepage import has_valid_homepage
+
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
 def remove_suffix_and_brackets(input_string: str) -> str:
@@ -68,32 +71,6 @@ def has_reasonable_title(title):
     # Check if the title is reasonable
     return not title.startswith('Update csrankings-')
 
-# Use richer headers to avoid 403 errors.
-# From https://scrapeops.io/web-scraping-playbook/403-forbidden-error-web-scraping.
-HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Accept-Encoding": "gzip, deflate",
-        "Connection": "keep-alive",
-        "Upgrade-Insecure-Requests": "1",
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "none",
-        "Sec-Fetch-User": "?1",
-        "Cache-Control": "max-age=0",
-    }
-
-def has_valid_homepage(homepage: str) -> bool:
-    try:
-        response = requests.get(homepage, headers=HEADERS, timeout=15)
-        if response.status_code != 200:
-            print(f'  WARNING: Received error code {response.status_code}.')
-        return response.status_code == 200
-    except requests.exceptions.RequestException as e:
-        print(f"  ERROR: An exception occurred: {e}")
-        return False
-
 def has_valid_google_scholar_id(id):
     # Check if the Google Scholar ID is valid
     if id == 'NOSCHOLARPAGE':
@@ -146,9 +123,9 @@ def matching_name_with_dblp(name: str) -> int:
 def is_valid_file(file: str) -> bool:
     global allowed_files
     if re.match('.*\\.csv', file):
-        if not any((re.match(pattern, file) for pattern in allowed_files)):
-            return False
-    return True
+        if any((re.match(pattern, file) for pattern in allowed_files)):
+            return True
+    return False
 
 def process():
 
