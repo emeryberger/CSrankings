@@ -184,7 +184,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("pacmpl"): [Conference("PACMPL"), Conference("Proc. ACM Program. Lang.")],
     Area("pacmmod"): [Conference("Proc. ACM Manag. Data")],
     Area("icse"): [Conference("ICSE"), Conference("ICSE (1)"), Conference("ICSE (2)")],
-    Area("fse"): [Conference("SIGSOFT FSE"), Conference("ESEC/SIGSOFT FSE")],
+    Area("fse"): [Conference("SIGSOFT FSE"), Conference("ESEC/SIGSOFT FSE"), Conference("Proc. ACM Softw. Eng.")],
     Area("ase"): [Conference("ASE")],
     Area("issta"): [Conference("ISSTA")],
     Area("sosp"): [Conference("SOSP")],
