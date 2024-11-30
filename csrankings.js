@@ -1016,13 +1016,15 @@ class CSRankings {
             let keys = Object.keys(fc);
             keys.sort((a, b) => {
                 if (fc[b] === fc[a]) {
-                    return this.compareNames(a, b);
-                    /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                            const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                            if (fb === fa) {
-                            return this.compareNames(a, b);
-                            }
-                            return fb - fa; */
+                    // return this.compareNames(a, b);
+                    const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                    const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                    if (fb === fa) {
+                        return this.compareNames(a, b);
+                    }
+                    else {
+                        return fb - fa;
+                    }
                 }
                 else {
                     return fc[b] - fc[a];
