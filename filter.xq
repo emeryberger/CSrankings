@@ -167,6 +167,7 @@
 //inproceedings[booktitle="ICSE (2)"],
 //inproceedings[booktitle="SIGSOFT FSE"],
 //inproceedings[booktitle="ESEC/SIGSOFT FSE"],
+//article[journal="Proc. ACM Softw. Eng."],
 //inproceedings[booktitle="ISSTA"],
 //inproceedings[booktitle="CVPR"],
 //inproceedings[booktitle="CVPR (1)"],
