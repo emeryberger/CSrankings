@@ -123,9 +123,9 @@ def matching_name_with_dblp(name: str) -> int:
 def is_valid_file(file: str) -> bool:
     global allowed_files
     if re.match('.*\\.csv', file):
-        if not any((re.match(pattern, file) for pattern in allowed_files)):
-            return False
-    return True
+        if any((re.match(pattern, file) for pattern in allowed_files)):
+            return True
+    return False
 
 def process():
 
