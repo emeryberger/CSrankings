@@ -79,3 +79,4 @@ steps:
 1. Make your changes on a branch, push them to your clone, and create a pull request on GitHub as usual.
 
 If you want to make another contribution and some time has passed, perform these steps again, creating a fresh fork and shallow clone.
+
