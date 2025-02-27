@@ -98,12 +98,12 @@ def map_pacmmod_to_conference(journal: Conference, year: int, number_str: str) -
         number = int(number_str)
         if journal == Conference("Proc. ACM Manag. Data"):
             if year == 2023:
-                if number in [1, 2]:
+                if number in {1, 2}:
                     return (Conference("SIGMOD Conference"), 2023)
-                elif number in [3, 4]:
+                elif number in {3, 4}:
                     return (Conference("SIGMOD Conference"), 2024)
             elif year == 2024:
-                if number in [1, 3, 4]:
+                if number in {1, 3, 4}:
                     return (Conference("SIGMOD Conference"), 2024)
                 elif number == 2:
                     return (Conference("PODS"), 2024)
@@ -837,10 +837,10 @@ def countPaper(
         return False
 
     # Special handling for EMSOFT (TECS).
-    if confname in [
+    if confname in {
         "ACM Trans. Embedded Comput. Syst.",
         "ACM Trans. Embed. Comput. Syst.",
-    ]:
+    }:
         if year not in EMSOFT_TECS:
             return False
         if pvmatcher := TECSCounterColon.match(pages):
@@ -865,7 +865,7 @@ def countPaper(
         if (year, startPage, startPage + pageCount - 1) not in SIGCSE:
             return False
     # Special handling for ISMB.
-    if confname in ["Bioinformatics", "Bioinform."]:
+    if confname in {"Bioinformatics", "Bioinform."}:
         if year not in ISMB_Bioinformatics:
             return False
         vol, num = ISMB_Bioinformatics[year]
@@ -879,7 +879,7 @@ def countPaper(
             startPage = int(pg.group(1))
             end = int(pg.group(2))
             pageCount = end - startPage + 1
-    elif confname in ["ICSE", "ICSE (1)", "ICSE (2)"]:
+    elif confname in {"ICSE", "ICSE (1)", "ICSE (2)"}:
         if year in ICSE_ShortPaperStart:
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
@@ -941,7 +941,7 @@ def countPaper(
     if pageCount != -1 and pageCount < pageCountThreshold:
         exceptionConference = False
         exceptionConference |= confname == "SC" and (
-            year <= 2012 or year in [2017, 2020, 2021]
+            year <= 2012 or year in {2017, 2020, 2021}
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
