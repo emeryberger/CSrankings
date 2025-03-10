@@ -202,8 +202,8 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
 
         areaname = confdict[confname]
 
-        # Special handling for PACMPL
-        if areaname == Area("pacmpl"):
+        # Special handling for PACMPL and PACMSE
+        if areaname == Area("pacmpl") or areaname == Area("pacmse"):
             confname = Conference(article["number"])
             if confname in confdict:
                 areaname = confdict[confname]
