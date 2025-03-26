@@ -1,0 +1,2592 @@
+{
+    "rooms": [
+        {
+            "room_id": "R390",
+            "name": "Near 5",
+            "building": "Neubau",
+            "capacity": 114,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R189",
+            "name": "Its 3",
+            "building": "Bibliothek",
+            "capacity": 108,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R152",
+            "name": "Blue 1",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 53,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R473",
+            "name": "Case 1",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 135,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R205",
+            "name": "Usually 5",
+            "building": "Bibliothek",
+            "capacity": 107,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R812",
+            "name": "These 1",
+            "building": "Bibliothek",
+            "capacity": 38,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "08:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R477",
+            "name": "Recent 3",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 103,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R515",
+            "name": "All 5",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 162,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "12:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R380",
+            "name": "Growth 1",
+            "building": "Bibliothek",
+            "capacity": 68,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R504",
+            "name": "Food 4",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 86,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R121",
+            "name": "Create 3",
+            "building": "Forschungstrakt",
+            "capacity": 34,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R458",
+            "name": "Protect 2",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 130,
+            "equipment": [
+                "Whiteboard",
+                "Flipchart"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R316",
+            "name": "Recent 2",
+            "building": "Neubau",
+            "capacity": 17,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R886",
+            "name": "Lead 5",
+            "building": "Neubau",
+            "capacity": 37,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R528",
+            "name": "Nature 4",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 53,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R515",
+            "name": "Week 2",
+            "building": "Bibliothek",
+            "capacity": 29,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R331",
+            "name": "Act 4",
+            "building": "Sporthalle",
+            "capacity": 175,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R862",
+            "name": "About 1",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 37,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R657",
+            "name": "Husband 5",
+            "building": "Sporthalle",
+            "capacity": 58,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "12:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R337",
+            "name": "Maybe 2",
+            "building": "Sporthalle",
+            "capacity": 154,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R518",
+            "name": "Election 3",
+            "building": "Neubau",
+            "capacity": 64,
+            "equipment": [
+                "Whiteboard",
+                "Flipchart"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R742",
+            "name": "Dinner 4",
+            "building": "Bibliothek",
+            "capacity": 61,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R870",
+            "name": "Wrong 1",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 100,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R504",
+            "name": "Together 3",
+            "building": "Forschungstrakt",
+            "capacity": 71,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R843",
+            "name": "Central 3",
+            "building": "Forschungstrakt",
+            "capacity": 113,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R900",
+            "name": "Traditional 1",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 95,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "08:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R624",
+            "name": "Important 5",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 157,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R185",
+            "name": "Partner 3",
+            "building": "Neubau",
+            "capacity": 196,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R554",
+            "name": "Who 5",
+            "building": "Forschungstrakt",
+            "capacity": 52,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R463",
+            "name": "Always 2",
+            "building": "Neubau",
+            "capacity": 84,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R735",
+            "name": "Plan 3",
+            "building": "Neubau",
+            "capacity": 108,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R545",
+            "name": "Door 1",
+            "building": "Sporthalle",
+            "capacity": 109,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R655",
+            "name": "Left 3",
+            "building": "Neubau",
+            "capacity": 200,
+            "equipment": [
+                "Whiteboard",
+                "Flipchart"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R808",
+            "name": "Kid 4",
+            "building": "Bibliothek",
+            "capacity": 156,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R451",
+            "name": "For 1",
+            "building": "Neubau",
+            "capacity": 150,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R274",
+            "name": "Southern 1",
+            "building": "Neubau",
+            "capacity": 61,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "13:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R938",
+            "name": "Bring 3",
+            "building": "Bibliothek",
+            "capacity": 26,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R627",
+            "name": "Around 1",
+            "building": "Neubau",
+            "capacity": 115,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R515",
+            "name": "Pressure 2",
+            "building": "Forschungstrakt",
+            "capacity": 163,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "15:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R833",
+            "name": "Activity 5",
+            "building": "Sporthalle",
+            "capacity": 42,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R865",
+            "name": "Sell 2",
+            "building": "Neubau",
+            "capacity": 184,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R709",
+            "name": "Support 2",
+            "building": "Sporthalle",
+            "capacity": 149,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R324",
+            "name": "Book 5",
+            "building": "Neubau",
+            "capacity": 97,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "13:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "09:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "09:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R795",
+            "name": "Soldier 5",
+            "building": "Forschungstrakt",
+            "capacity": 21,
+            "equipment": [
+                "PCs",
+                "Mikroskop",
+                "Experimentierstationen"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "11:00",
+                    "end_time": "15:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R611",
+            "name": "Address 5",
+            "building": "Bibliothek",
+            "capacity": 105,
+            "equipment": [
+                "Beamer",
+                "Lautsprecher",
+                "Tafel",
+                "Mikrofon"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "15:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R167",
+            "name": "That 2",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 109,
+            "equipment": [
+                "Lautsprecher",
+                "Tafel",
+                "Beamer"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "10:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R525",
+            "name": "End 4",
+            "building": "Sporthalle",
+            "capacity": 186,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "09:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R912",
+            "name": "Miss 5",
+            "building": "Hauptgeb\u00e4ude",
+            "capacity": 42,
+            "equipment": [
+                "Tische",
+                "St\u00fchle",
+                "Projektor"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "13:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "08:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "14:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "08:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "13:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "13:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "11:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R475",
+            "name": "Friend 4",
+            "building": "Forschungstrakt",
+            "capacity": 84,
+            "equipment": [
+                "Whiteboard",
+                "Flipchart"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "12:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "14:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "14:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "12:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "08:00",
+                    "end_time": "13:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "08:00",
+                    "end_time": "17:00"
+                }
+            ]
+        },
+        {
+            "room_id": "R290",
+            "name": "Each 3",
+            "building": "Neubau",
+            "capacity": 193,
+            "equipment": [
+                "Whiteboard",
+                "Flipchart"
+            ],
+            "available_times": [
+                {
+                    "day": "Montag",
+                    "start_time": "11:00",
+                    "end_time": "12:00"
+                },
+                {
+                    "day": "Montag",
+                    "start_time": "10:00",
+                    "end_time": "17:00"
+                },
+                {
+                    "day": "Dienstag",
+                    "start_time": "10:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Mittwoch",
+                    "start_time": "15:00",
+                    "end_time": "16:00"
+                },
+                {
+                    "day": "Donnerstag",
+                    "start_time": "15:00",
+                    "end_time": "18:00"
+                },
+                {
+                    "day": "Freitag",
+                    "start_time": "12:00",
+                    "end_time": "13:00"
+                }
+            ]
+        }
+    ]
+}
