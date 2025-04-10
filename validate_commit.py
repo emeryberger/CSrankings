@@ -95,7 +95,7 @@ def matching_name_with_dblp(name: str) -> int:
     # Translate the name to a format that can be used in DBLP queries.
     author_name = translate_name_to_dblp(name)
     # Search for up to 10 matching authors.
-    dblp_url = f'https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    dblp_url = f'https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10&h=200'
     try:
         # Send a request to the DBLP API.
         response = requests.get(dblp_url)
