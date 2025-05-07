@@ -106,8 +106,8 @@ class CSRankings {
             { area: "mod", title: "DB" },
             { area: "sigmod", title: "DB" },
             { area: "vldb", title: "DB" },
-            { area: "icde", title: "DB" },
-            { area: "pods", title: "DB" },
+            { area: "icde", title: "DB" }, // next tier
+            { area: "pods", title: "DB" }, // next tier
             { area: "hpc", title: "HPC" },
             { area: "sc", title: "HPC" },
             { area: "hpdc", title: "HPC" },
@@ -122,19 +122,19 @@ class CSRankings {
             { area: "ops", title: "OS" },
             { area: "sosp", title: "OS" },
             { area: "osdi", title: "OS" },
-            { area: "fast", title: "OS" },
-            { area: "usenixatc", title: "OS" },
+            { area: "fast", title: "OS" }, // next tier
+            { area: "usenixatc", title: "OS" }, // next tier
             { area: "eurosys", title: "OS" },
             { area: "pldi", title: "PL" },
             { area: "popl", title: "PL" },
-            { area: "icfp", title: "PL" },
-            { area: "oopsla", title: "PL" },
+            { area: "icfp", title: "PL" }, // next tier
+            { area: "oopsla", title: "PL" }, // next tier
             { area: "plan", title: "PL" },
             { area: "soft", title: "SE" },
             { area: "fse", title: "SE" },
             { area: "icse", title: "SE" },
-            { area: "ase", title: "SE" },
-            { area: "issta", title: "SE" },
+            { area: "ase", title: "SE" }, // next tier
+            { area: "issta", title: "SE" }, // next tier
             { area: "act", title: "Theory" },
             { area: "focs", title: "Theory" },
             { area: "soda", title: "Theory" },
@@ -1016,13 +1016,15 @@ class CSRankings {
             let keys = Object.keys(fc);
             keys.sort((a, b) => {
                 if (fc[b] === fc[a]) {
-                    return this.compareNames(a, b);
-                    /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                            const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                            if (fb === fa) {
-                            return this.compareNames(a, b);
-                            }
-                            return fb - fa; */
+                    // return this.compareNames(a, b);
+                    const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                    const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                    if (fb === fa) {
+                        return this.compareNames(a, b);
+                    }
+                    else {
+                        return fb - fa;
+                    }
                 }
                 else {
                     return fc[b] - fc[a];
@@ -1726,15 +1728,15 @@ CSRankings.parentMap = {
     'asplos': 'arch',
     'isca': 'arch',
     'micro': 'arch',
-    'hpca': 'arch',
+    'hpca': 'arch', // next tier
     'ccs': 'sec',
     'oakland': 'sec',
     'usenixsec': 'sec',
-    'ndss': 'sec',
-    'pets': 'sec',
+    'ndss': 'sec', // next tier (for now)
+    'pets': 'sec', // next tier
     'vldb': 'mod',
     'sigmod': 'mod',
-    'icde': 'mod',
+    'icde': 'mod', // next tier
     'pods': 'mod',
     'dac': 'da',
     'iccad': 'da',
@@ -1751,22 +1753,22 @@ CSRankings.parentMap = {
     'sigmetrics': 'metrics',
     'osdi': 'ops',
     'sosp': 'ops',
-    'eurosys': 'ops',
-    'fast': 'ops',
-    'usenixatc': 'ops',
+    'eurosys': 'ops', // next tier (see below)
+    'fast': 'ops', // next tier
+    'usenixatc': 'ops', // next tier
     'popl': 'plan',
     'pldi': 'plan',
-    'oopsla': 'plan',
-    'icfp': 'plan',
+    'oopsla': 'plan', // next tier 
+    'icfp': 'plan', // next tier
     'fse': 'soft',
     'icse': 'soft',
-    'ase': 'soft',
-    'issta': 'soft',
+    'ase': 'soft', // next tier
+    'issta': 'soft', // next tier
     'nsdi': 'comm',
     'sigcomm': 'comm',
     'siggraph': 'graph',
     'siggraph-asia': 'graph',
-    'eurographics': 'graph',
+    'eurographics': 'graph', // next tier
     'focs': 'act',
     'soda': 'act',
     'stoc': 'act',
@@ -1794,7 +1796,7 @@ CSRankings.nextTier = {
     'icde': true,
     'pods': true,
     'hpca': true,
-    'ndss': true,
+    'ndss': true, // for now
     'pets': true,
     'eurosys': true,
     'eurographics': true,
