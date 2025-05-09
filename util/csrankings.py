@@ -419,9 +419,10 @@ areadict: Dict[Area, List[Conference]] = {
 EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156)}
 
-EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11)}
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11), 2024: (43, 11)}
+
 # 2018 page numbers contributed by Ezio Bartocci
-# 2022 numbers contributed by Changhee Jang
+# 2022, 2024 numbers contributed by Changhee Jang
 EMSOFT_TCAD_PaperStart = {
     2018: {
         2188,
@@ -513,6 +514,36 @@ EMSOFT_TCAD_PaperStart = {
         4504,
         4539,
         4563,
+    },
+    2024: {
+        3382,
+        3419,
+        3431,
+        3467,
+        3515,
+        3539,
+        3564,
+        3576,
+        3588,
+        3662,
+        3708,
+        3732,
+        3756,
+        3768,
+        3780,
+        3804,
+        4045,
+        4057,
+        4093,
+        4154,
+        4238,
+        4250,
+        4274,
+        4286,
+        4298,
+        4310,
+        4322,
+        4334
     },
 }
 # DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
@@ -668,6 +699,7 @@ CGF_EUROGRAPHICS_Volume = {
 }
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2025: (31, 1),
     2024: (30, 1),
     2023: (29, 1),
     2022: (28, 1),
@@ -689,6 +721,7 @@ TVCG_Vis_Volume = {
 }
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {
+    2025: (31, 5),
     2024: (30, 5),
     2023: (29, 5),
     2022: (28, 5),
