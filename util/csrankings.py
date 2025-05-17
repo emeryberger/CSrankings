@@ -699,6 +699,7 @@ CGF_EUROGRAPHICS_Volume = {
 }
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2025: (31, 1),
     2024: (30, 1),
     2023: (29, 1),
     2022: (28, 1),
@@ -720,6 +721,7 @@ TVCG_Vis_Volume = {
 }
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {
+    2025: (31, 5),
     2024: (30, 5),
     2023: (29, 5),
     2022: (28, 5),
