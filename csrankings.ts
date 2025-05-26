@@ -1438,7 +1438,7 @@ class CSRankings {
                     abbrv = countryAbbrv[dept];
                 }
 
-		const country = this.countryNames[abbrv.toUpperCase()];
+		const country = this.countryNames[abbrv.toUpperCase()] ?? abbrv.toUpperCase();
 		
                 s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
 		  + `&nbsp;<img  title="${country}" src="./flags/${abbrv}.png">&nbsp;`
