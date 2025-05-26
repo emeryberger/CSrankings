@@ -1413,7 +1413,7 @@ class CSRankings {
                 }
 
                 s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
-		  + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
+		  + `&nbsp;<img  title="${abbrv.toUpperCase()} src="/flags/${abbrv}.png">&nbsp;`
                     + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
                     + this.ChartIcon + "</span>";
                 s += "</td>";
