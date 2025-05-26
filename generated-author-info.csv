@@ -22,13 +22,6 @@ A. B. Siddique 0001,University of Kentucky,www,1.0,0.33333,2021
 A. B. Siddique 0001,University of Kentucky,www,1.0,0.33333,2023
 A. Cüneyd Tantug,Istanbul Technical University,acl,1.0,0.33333,2007
 A. Cüneyd Tantug,Istanbul Technical University,acl,1.0,0.33333,2019
-A. David Marshall,Cardiff University,aaai,1.0,0.33333,2021
-A. David Marshall,Cardiff University,cvpr,1.0,0.33333,2009
-A. David Marshall,Cardiff University,cvpr,1.0,0.33333,2011
-A. David Marshall,Cardiff University,eccv,1.0,0.33333,1998
-A. David Marshall,Cardiff University,eurographics,1.0,0.14286,2011
-A. David Marshall,Cardiff University,eurographics,1.0,0.5,2014
-A. David Marshall,Cardiff University,icml,1.0,0.33333,2019
 A. E. Eiben,VU Amsterdam,ijcai,1.0,0.5,2007
 A. Ercüment Çiçek,Bilkent University,ismb,1.0,0.33333,2014
 A. Ercüment Çiçek,Bilkent University,pets,1.0,0.33333,2021
@@ -9191,10 +9184,17 @@ Amr Sabry,Indiana University,popl,1.0,0.5,2012
 Amr Sabry,Indiana University,popl,1.0,0.5,2021
 Amr Sabry,Indiana University,popl,1.0,0.33333,2022
 Amr Sabry,Indiana University,popl,1.0,0.25,2024
-Amrit S. Bedi,University of Central Florida,iclr,1.0,0.2,2023
-Amrit S. Bedi,University of Central Florida,iclr,1.0,0.14286,2024
-Amrit S. Bedi,University of Central Florida,icml,2.0,0.33333,2023
-Amrit S. Bedi,University of Central Florida,icml,5.0,0.88452,2024
+Amrit Singh Bedi,University of Central Florida,aaai,2.0,0.45,2022
+Amrit Singh Bedi,University of Central Florida,aaai,2.0,0.47619,2023
+Amrit Singh Bedi,University of Central Florida,iclr,1.0,0.2,2023
+Amrit Singh Bedi,University of Central Florida,iclr,1.0,0.14286,2024
+Amrit Singh Bedi,University of Central Florida,icml,2.0,0.33333,2022
+Amrit Singh Bedi,University of Central Florida,icml,2.0,0.33333,2023
+Amrit Singh Bedi,University of Central Florida,icml,5.0,0.88452,2024
+Amrit Singh Bedi,University of Central Florida,icra,3.0,0.64286,2023
+Amrit Singh Bedi,University of Central Florida,iros,1.0,0.25,2021
+Amrit Singh Bedi,University of Central Florida,iros,2.0,0.41667,2022
+Amrit Singh Bedi,University of Central Florida,nips,1.0,0.2,2020
 Amrita Chaturvedi,IIT (BHU) Varanasi,iros,1.0,0.5,2019
 Amro Awad,North Carolina State University,asplos,1.0,0.2,2016
 Amro Awad,North Carolina State University,dac,1.0,0.25,2022
@@ -11118,6 +11118,7 @@ Andrew Begel,Carnegie Mellon University,icse,1.0,0.25,2016
 Andrew Begel,Carnegie Mellon University,sigcomm,1.0,0.33333,1999
 Andrew Begel,Carnegie Mellon University,sigcse,1.0,0.2,2021
 Andrew Butterfield,Trinity College Dublin,icfp,1.0,0.5,2006
+Andrew C. Dwyer,Royal Holloway University of London,chiconf,1.0,0.2,2022
 Andrew C. Myers,Cornell University,asplos,1.0,0.25,2015
 Andrew C. Myers,Cornell University,asplos,1.0,0.2,2017
 Andrew C. Myers,Cornell University,ccs,1.0,0.5,2004
@@ -11201,7 +11202,6 @@ Andrew Calway,University of Bristol,iros,2.0,1.0,2018
 Andrew Calway,University of Bristol,iros,1.0,0.25,2019
 Andrew Calway,University of Bristol,iros,2.0,0.53333,2021
 Andrew Calway,University of Bristol,iros,1.0,0.25,2022
-Andrew Carl Dwyer,Royal Holloway University of London,chiconf,1.0,0.2,2022
 Andrew Chi-Chih Yao,Tsinghua University,ccs,1.0,0.5,2013
 Andrew Chi-Chih Yao,Tsinghua University,ec,1.0,1.0,2017
 Andrew Chi-Chih Yao,Tsinghua University,focs,1.0,1.0,1977
@@ -12547,9 +12547,7 @@ Anh Nguyen 0002,Auburn University,nips,1.0,0.33333,2022
 Anh Nguyen 0002,Auburn University,nips,1.0,0.2,2023
 Anh Nguyen 0002,Auburn University,vr,1.0,0.5,2015
 Anh Tuan Luu,Nanyang Technological University,aaai,1.0,0.33333,2017
-Anh Tuan Luu,Nanyang Technological University,aaai,3.0,0.91667,2018
 Anh Tuan Luu,Nanyang Technological University,aaai,1.0,0.16667,2019
-Anh Tuan Luu,Nanyang Technological University,aaai,1.0,0.33333,2020
 Anh Tuan Luu,Nanyang Technological University,aaai,2.0,0.61111,2022
 Anh Tuan Luu,Nanyang Technological University,aaai,1.0,0.16667,2023
 Anh Tuan Luu,Nanyang Technological University,aaai,4.0,0.71786,2024
@@ -12571,7 +12569,7 @@ Anh Tuan Luu,Nanyang Technological University,iclr,1.0,0.16667,2024
 Anh Tuan Luu,Nanyang Technological University,icml,1.0,0.16667,2022
 Anh Tuan Luu,Nanyang Technological University,icml,1.0,0.25,2023
 Anh Tuan Luu,Nanyang Technological University,ijcai,1.0,0.33333,2018
-Anh Tuan Luu,Nanyang Technological University,kdd,2.0,0.66667,2018
+Anh Tuan Luu,Nanyang Technological University,kdd,1.0,0.33333,2018
 Anh Tuan Luu,Nanyang Technological University,naacl,4.0,1.15,2024
 Anh Tuan Luu,Nanyang Technological University,nips,2.0,0.58333,2018
 Anh Tuan Luu,Nanyang Technological University,nips,1.0,0.2,2019
@@ -12579,7 +12577,6 @@ Anh Tuan Luu,Nanyang Technological University,nips,2.0,0.7,2021
 Anh Tuan Luu,Nanyang Technological University,nips,2.0,0.30952,2022
 Anh Tuan Luu,Nanyang Technological University,sigir,1.0,0.25,2017
 Anh Tuan Luu,Nanyang Technological University,sigmod,1.0,0.125,2024
-Anh Tuan Luu,Nanyang Technological University,www,1.0,0.33333,2018
 Anhong Guo,University of Michigan,chiconf,1.0,0.14286,2016
 Anhong Guo,University of Michigan,chiconf,1.0,0.14286,2017
 Anhong Guo,University of Michigan,chiconf,1.0,0.16667,2021
@@ -16171,7 +16168,7 @@ Arrvindh Shriraman,Simon Fraser University,micro,1.0,0.25,2016
 Arrvindh Shriraman,Simon Fraser University,micro,1.0,0.2,2018
 Arrvindh Shriraman,Simon Fraser University,micro,1.0,0.14286,2019
 Arshad Jhumka,University of Warwick,ics,1.0,0.25,2022
-Arslan Munir,Kansas State University,iccad,1.0,0.5,2020
+Arslan Munir,Florida Atlantic University,iccad,1.0,0.5,2020
 Arthur Azevedo de Amorim,Rochester Institute of Technology,ccs,1.0,0.1,2018
 Arthur Azevedo de Amorim,Rochester Institute of Technology,icfp,1.0,0.14286,2013
 Arthur Azevedo de Amorim,Rochester Institute of Technology,lics,1.0,0.25,2019
@@ -25503,13 +25500,13 @@ Brittany A. Duncan,University of Nebraska,iros,1.0,0.33333,2017
 Brittany A. Duncan,University of Nebraska,iros,1.0,0.14286,2018
 Brittany A. Duncan,University of Nebraska,iros,1.0,0.25,2022
 Brittany A. Erickson,University of Oregon,ics,1.0,0.25,2024
+Brittany Fasy,Montana State University,icml,1.0,0.16667,2015
 Brittany Johnson,George Mason University,fse,1.0,0.2,2015
 Brittany Johnson,George Mason University,fse,1.0,0.125,2016
 Brittany Johnson,George Mason University,icse,1.0,0.25,2013
 Brittany Johnson,George Mason University,icse,1.0,0.33333,2020
 Brittany Johnson,George Mason University,icse,1.0,0.25,2023
 Brittany Johnson,George Mason University,icse,1.0,0.33333,2024
-Brittany Terese Fasy,Montana State University,icml,1.0,0.16667,2015
 Brittany Terese Fasy,Montana State University,soda,1.0,0.16667,2014
 Brittany Terese Fasy,Montana State University,vis,1.0,0.25,2022
 Bruce A. Draper,Colorado State University,cvpr,1.0,0.2,1988
@@ -27148,10 +27145,10 @@ Carla Ferreira 0001,Universidade NOVA de Lisboa,eurosys,1.0,0.14286,2015
 Carla Ferreira 0001,Universidade NOVA de Lisboa,oopsla,1.0,0.25,2021
 Carla Ferreira 0001,Universidade NOVA de Lisboa,popl,1.0,0.2,2016
 Carla Ferreira 0001,Universidade NOVA de Lisboa,vldb,1.0,0.2,2018
-Carla Maria Dal Sasso Freitas,UFRGS,eurographics,1.0,0.2,2015
-Carla Maria Dal Sasso Freitas,UFRGS,eurographics,1.0,0.33333,2018
-Carla Maria Dal Sasso Freitas,UFRGS,vr,1.0,0.25,2018
-Carla Maria Dal Sasso Freitas,UFRGS,vr,1.0,0.33333,2023
+Carla M. D. S. Freitas,UFRGS,eurographics,1.0,0.2,2015
+Carla M. D. S. Freitas,UFRGS,eurographics,1.0,0.33333,2018
+Carla M. D. S. Freitas,UFRGS,vr,1.0,0.25,2018
+Carla M. D. S. Freitas,UFRGS,vr,1.0,0.33333,2023
 Carla P. Gomes,Cornell University,aaai,1.0,0.5,1997
 Carla P. Gomes,Cornell University,aaai,1.0,0.33333,1998
 Carla P. Gomes,Cornell University,aaai,2.0,1.25,2000
@@ -29513,6 +29510,7 @@ Charles E. Leiserson,Massachusetts Institute of Technology,stoc,1.0,0.5,1993
 Charles E. McDowell,Univ. of California - Santa Cruz,sigcse,1.0,0.33333,2013
 Charles Gretton,Australian National University,aaai,1.0,0.33333,2011
 Charles Gretton,Australian National University,ijcai,1.0,0.11111,2011
+Charles Gretton,Australian National University,ijcai,1.0,0.5,2013
 Charles Gretton,Australian National University,ijcai,1.0,0.33333,2015
 Charles Gretton,Australian National University,iros,1.0,0.25,2008
 Charles J. Colbourn,Arizona State University,iccad,1.0,0.33333,2006
@@ -32225,9 +32223,6 @@ Chris Donahue,Carnegie Mellon University,icml,1.0,0.25,2022
 Chris Donahue,Carnegie Mellon University,icml,1.0,0.076923,2024
 Chris Donahue,Carnegie Mellon University,naacl,1.0,0.2,2021
 Chris Donahue,Carnegie Mellon University,uist,1.0,0.33333,2024
-Chris E. Weaver,University of Oklahoma,eurographics,1.0,0.5,2013
-Chris E. Weaver,University of Oklahoma,vis,1.0,1.0,2009
-Chris E. Weaver,University of Oklahoma,vis,1.0,0.5,2013
 Chris Evans,University College London,ccs,1.0,0.25,2010
 Chris Fox,University of Essex,naacl,1.0,0.25,2012
 Chris G. Willcocks,Durham University,cvpr,1.0,0.33333,2023
@@ -32470,6 +32465,23 @@ Chris Preist,University of Bristol,chiconf,1.0,0.5,2023
 Chris Preist,University of Bristol,ec,1.0,0.33333,2003
 Chris Preist,University of Bristol,www,1.0,0.33333,2002
 Chris Preist,University of Bristol,www,1.0,0.25,2013
+Chris R. Johnson 0001,University of Utah,eurographics,1.0,0.25,2010
+Chris R. Johnson 0001,University of Utah,eurographics,1.0,0.11111,2013
+Chris R. Johnson 0001,University of Utah,eurographics,1.0,0.125,2019
+Chris R. Johnson 0001,University of Utah,eurographics,1.0,0.14286,2020
+Chris R. Johnson 0001,University of Utah,hpdc,1.0,0.25,2000
+Chris R. Johnson 0001,University of Utah,sc,1.0,0.5,1994
+Chris R. Johnson 0001,University of Utah,sc,1.0,0.5,1995
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.25,1992
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.5,1994
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.5,1995
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.25,1996
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.33333,2000
+Chris R. Johnson 0001,University of Utah,vis,2.0,0.41667,2003
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.33333,2004
+Chris R. Johnson 0001,University of Utah,vis,2.0,0.7,2019
+Chris R. Johnson 0001,University of Utah,vis,2.0,0.53333,2021
+Chris R. Johnson 0001,University of Utah,vis,1.0,0.25,2023
 Chris Reed 0001,University of Dundee,aaai,1.0,0.33333,2007
 Chris Reed 0001,University of Dundee,acl,1.0,0.5,1998
 Chris Reed 0001,University of Dundee,acl,1.0,0.5,2019
@@ -32526,6 +32538,9 @@ Chris Schwiegelshohn,Aarhus University,stoc,1.0,0.33333,2021
 Chris Schwiegelshohn,Aarhus University,stoc,1.0,0.25,2022
 Chris Thornton,University of Sussex,kdd,1.0,0.25,2013
 Chris Thornton,University of Sussex,sigcse,1.0,0.33333,2015
+Chris Weaver 0001,University of Oklahoma,eurographics,1.0,0.5,2013
+Chris Weaver 0001,University of Oklahoma,vis,1.0,1.0,2009
+Chris Weaver 0001,University of Oklahoma,vis,1.0,0.5,2013
 Chris Wilson,University of Oregon,dac,1.0,0.5,2000
 Christan Grant,University of Oklahoma,acl,1.0,0.16667,2021
 Christan Grant,University of Oklahoma,kdd,1.0,0.14286,2023
@@ -34049,15 +34064,6 @@ Christopher De Sa,Cornell University,nips,5.0,1.0357,2023
 Christopher De Sa,Cornell University,siggraph-asia,1.0,0.16667,2023
 Christopher De Sa,Cornell University,soda,1.0,0.2,2018
 Christopher De Sa,Cornell University,vldb,1.0,0.16667,2015
-Christopher E. Peters,KTH Royal Institute of Technology,chiconf,1.0,0.2,2021
-Christopher E. Peters,KTH Royal Institute of Technology,chiconf,1.0,0.25,2024
-Christopher E. Peters,KTH Royal Institute of Technology,cvpr,1.0,0.14286,2024
-Christopher E. Peters,KTH Royal Institute of Technology,eurographics,2.0,0.625,2002
-Christopher E. Peters,KTH Royal Institute of Technology,eurographics,1.0,0.125,2012
-Christopher E. Peters,KTH Royal Institute of Technology,eurographics,1.0,0.125,2015
-Christopher E. Peters,KTH Royal Institute of Technology,iros,1.0,0.5,2022
-Christopher E. Peters,KTH Royal Institute of Technology,iros,1.0,0.2,2023
-Christopher E. Peters,KTH Royal Institute of Technology,siggraph,1.0,0.5,2003
 Christopher Edwards,Lancaster University,hpdc,1.0,0.25,2010
 Christopher Ferrie,University of Technology Sydney,aaai,1.0,0.25,2023
 Christopher Ferrie,University of Technology Sydney,ijcai,1.0,0.25,2024
@@ -34488,6 +34494,15 @@ Christopher Nitta,Univ. of California - Davis,hpca,1.0,0.33333,2011
 Christopher Nitta,Univ. of California - Davis,micro,1.0,0.33333,2011
 Christopher Nitta,Univ. of California - Davis,sigcse,1.0,0.5,2021
 Christopher Nitta,Univ. of California - Davis,sigcse,1.0,0.5,2024
+Christopher Peters 0001,KTH Royal Institute of Technology,chiconf,1.0,0.2,2021
+Christopher Peters 0001,KTH Royal Institute of Technology,chiconf,1.0,0.25,2024
+Christopher Peters 0001,KTH Royal Institute of Technology,cvpr,1.0,0.14286,2024
+Christopher Peters 0001,KTH Royal Institute of Technology,eurographics,2.0,0.625,2002
+Christopher Peters 0001,KTH Royal Institute of Technology,eurographics,1.0,0.125,2012
+Christopher Peters 0001,KTH Royal Institute of Technology,eurographics,1.0,0.125,2015
+Christopher Peters 0001,KTH Royal Institute of Technology,iros,1.0,0.5,2022
+Christopher Peters 0001,KTH Royal Institute of Technology,iros,1.0,0.2,2023
+Christopher Peters 0001,KTH Royal Institute of Technology,siggraph,1.0,0.5,2003
 Christopher Potts,Stanford University,acl,1.0,0.33333,2010
 Christopher Potts,Stanford University,acl,1.0,0.16667,2011
 Christopher Potts,Stanford University,acl,2.0,0.53333,2013
@@ -34521,23 +34536,6 @@ Christopher Potts,Stanford University,nips,1.0,0.125,2022
 Christopher Potts,Stanford University,nips,1.0,0.2,2023
 Christopher Potts,Stanford University,www,1.0,0.2,2013
 Christopher Power,University of York,chiconf,2.0,0.75,2012
-Christopher R. Johnson 0001,University of Utah,eurographics,1.0,0.25,2010
-Christopher R. Johnson 0001,University of Utah,eurographics,1.0,0.11111,2013
-Christopher R. Johnson 0001,University of Utah,eurographics,1.0,0.125,2019
-Christopher R. Johnson 0001,University of Utah,eurographics,1.0,0.14286,2020
-Christopher R. Johnson 0001,University of Utah,hpdc,1.0,0.25,2000
-Christopher R. Johnson 0001,University of Utah,sc,1.0,0.5,1994
-Christopher R. Johnson 0001,University of Utah,sc,1.0,0.5,1995
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.25,1992
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.5,1994
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.5,1995
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.25,1996
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.33333,2000
-Christopher R. Johnson 0001,University of Utah,vis,2.0,0.41667,2003
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.33333,2004
-Christopher R. Johnson 0001,University of Utah,vis,2.0,0.7,2019
-Christopher R. Johnson 0001,University of Utah,vis,2.0,0.53333,2021
-Christopher R. Johnson 0001,University of Utah,vis,1.0,0.25,2023
 Christopher Raphael,Indiana University,icml,1.0,1.0,2010
 Christopher Raphael,Indiana University,ijcai,1.0,1.0,2009
 Christopher Raphael,Indiana University,nips,1.0,1.0,2001
@@ -36498,6 +36496,17 @@ Clemente Galdi,University of Salerno,wine,1.0,0.2,2017
 Cliff C. Zou,University of Central Florida,ccs,1.0,0.33333,2002
 Cliff C. Zou,University of Central Florida,ccs,1.0,0.25,2003
 Cliff C. Zou,University of Central Florida,ndss,1.0,0.33333,2006
+Cliff Stein 0001,Columbia University,aaai,1.0,0.33333,2015
+Cliff Stein 0001,Columbia University,emnlp,1.0,0.33333,2013
+Cliff Stein 0001,Columbia University,emnlp,1.0,0.33333,2015
+Cliff Stein 0001,Columbia University,emnlp,1.0,0.33333,2016
+Cliff Stein 0001,Columbia University,focs,1.0,0.2,2019
+Cliff Stein 0001,Columbia University,soda,2.0,0.47619,2014
+Cliff Stein 0001,Columbia University,soda,1.0,0.5,2016
+Cliff Stein 0001,Columbia University,soda,1.0,0.2,2019
+Cliff Stein 0001,Columbia University,stoc,1.0,0.25,2014
+Cliff Stein 0001,Columbia University,stoc,1.0,0.25,2018
+Cliff Stein 0001,Columbia University,stoc,1.0,0.2,2024
 Clifford A. Shaffer,Virginia Tech,sigcse,1.0,0.2,2011
 Clifford A. Shaffer,Virginia Tech,sigcse,1.0,0.2,2014
 Clifford A. Shaffer,Virginia Tech,sigcse,2.0,0.5,2017
@@ -36506,17 +36515,12 @@ Clifford A. Shaffer,Virginia Tech,sigcse,3.0,1.0833,2019
 Clifford A. Shaffer,Virginia Tech,sigcse,1.0,0.2,2020
 Clifford A. Shaffer,Virginia Tech,sigcse,2.0,0.83333,2021
 Clifford A. Shaffer,Virginia Tech,sigcse,2.0,0.83333,2024
-Clifford Stein 0001,Columbia University,aaai,1.0,0.33333,2015
 Clifford Stein 0001,Columbia University,ec,1.0,0.25,2007
-Clifford Stein 0001,Columbia University,emnlp,1.0,0.33333,2013
-Clifford Stein 0001,Columbia University,emnlp,1.0,0.33333,2015
-Clifford Stein 0001,Columbia University,emnlp,1.0,0.33333,2016
 Clifford Stein 0001,Columbia University,focs,1.0,0.33333,1994
 Clifford Stein 0001,Columbia University,focs,1.0,0.5,1997
 Clifford Stein 0001,Columbia University,focs,1.0,0.090909,1999
 Clifford Stein 0001,Columbia University,focs,1.0,0.16667,2007
 Clifford Stein 0001,Columbia University,focs,1.0,0.2,2018
-Clifford Stein 0001,Columbia University,focs,1.0,0.2,2019
 Clifford Stein 0001,Columbia University,focs,1.0,0.25,2022
 Clifford Stein 0001,Columbia University,ismb,1.0,0.25,2000
 Clifford Stein 0001,Columbia University,nips,1.0,0.25,2023
@@ -36527,19 +36531,13 @@ Clifford Stein 0001,Columbia University,soda,1.0,0.25,2002
 Clifford Stein 0001,Columbia University,soda,1.0,0.5,2005
 Clifford Stein 0001,Columbia University,soda,2.0,0.66667,2007
 Clifford Stein 0001,Columbia University,soda,1.0,0.2,2008
-Clifford Stein 0001,Columbia University,soda,2.0,0.47619,2014
-Clifford Stein 0001,Columbia University,soda,1.0,0.5,2016
 Clifford Stein 0001,Columbia University,soda,1.0,0.5,2018
-Clifford Stein 0001,Columbia University,soda,1.0,0.2,2019
 Clifford Stein 0001,Columbia University,stoc,1.0,0.33333,1990
 Clifford Stein 0001,Columbia University,stoc,1.0,0.16667,1991
 Clifford Stein 0001,Columbia University,stoc,1.0,0.5,1993
 Clifford Stein 0001,Columbia University,stoc,1.0,0.25,1997
 Clifford Stein 0001,Columbia University,stoc,1.0,0.2,1999
-Clifford Stein 0001,Columbia University,stoc,1.0,0.25,2014
-Clifford Stein 0001,Columbia University,stoc,1.0,0.25,2018
 Clifford Stein 0001,Columbia University,stoc,1.0,0.33333,2020
-Clifford Stein 0001,Columbia University,stoc,1.0,0.2,2024
 Clifford Stein 0001,Columbia University,usenixatc,1.0,0.2,2005
 Clyde P. Kruskal,University of Maryland - College Park,isca,1.0,0.16667,1982
 Clyde P. Kruskal,University of Maryland - College Park,isca,1.0,0.5,1984
@@ -43236,6 +43234,47 @@ David Coyle,University College Dublin,chiconf,1.0,0.25,2018
 David Coyle,University College Dublin,chiconf,2.0,0.36111,2020
 David Coyle,University College Dublin,chiconf,1.0,0.33333,2023
 David Coyle,University College Dublin,uist,1.0,0.16667,2024
+David Crandall,Indiana University,aaai,1.0,0.14286,2018
+David Crandall,Indiana University,aaai,1.0,0.33333,2023
+David Crandall,Indiana University,chiconf,1.0,0.2,2015
+David Crandall,Indiana University,chiconf,1.0,0.2,2016
+David Crandall,Indiana University,chiconf,1.0,0.33333,2017
+David Crandall,Indiana University,chiconf,1.0,0.14286,2018
+David Crandall,Indiana University,chiconf,1.0,0.14286,2019
+David Crandall,Indiana University,chiconf,1.0,0.25,2021
+David Crandall,Indiana University,cvpr,1.0,0.5,2004
+David Crandall,Indiana University,cvpr,1.0,0.33333,2005
+David Crandall,Indiana University,cvpr,1.0,0.5,2007
+David Crandall,Indiana University,cvpr,1.0,0.25,2011
+David Crandall,Indiana University,cvpr,1.0,0.25,2012
+David Crandall,Indiana University,cvpr,1.0,0.33333,2014
+David Crandall,Indiana University,cvpr,1.0,0.14286,2017
+David Crandall,Indiana University,cvpr,2.0,0.41667,2020
+David Crandall,Indiana University,cvpr,1.0,0.5,2021
+David Crandall,Indiana University,cvpr,1.0,0.16667,2023
+David Crandall,Indiana University,eccv,1.0,0.5,2006
+David Crandall,Indiana University,eccv,1.0,0.2,2018
+David Crandall,Indiana University,eccv,1.0,0.2,2020
+David Crandall,Indiana University,iccv,1.0,0.33333,2009
+David Crandall,Indiana University,iccv,1.0,0.25,2015
+David Crandall,Indiana University,iccv,1.0,0.25,2017
+David Crandall,Indiana University,iccv,3.0,0.54286,2019
+David Crandall,Indiana University,icra,1.0,0.16667,2019
+David Crandall,Indiana University,icra,1.0,0.25,2020
+David Crandall,Indiana University,iros,2.0,0.45,2019
+David Crandall,Indiana University,iros,1.0,0.16667,2021
+David Crandall,Indiana University,iros,1.0,0.125,2023
+David Crandall,Indiana University,kdd,1.0,0.2,2008
+David Crandall,Indiana University,ndss,1.0,0.25,2013
+David Crandall,Indiana University,ndss,1.0,0.25,2014
+David Crandall,Indiana University,nips,1.0,0.16667,2016
+David Crandall,Indiana University,nips,1.0,0.25,2018
+David Crandall,Indiana University,nips,2.0,0.66667,2019
+David Crandall,Indiana University,oakland,1.0,0.25,2020
+David Crandall,Indiana University,sigcse,1.0,0.33333,2019
+David Crandall,Indiana University,ubicomp,1.0,0.16667,2014
+David Crandall,Indiana University,www,1.0,0.25,2009
+David Crandall,Indiana University,www,1.0,0.25,2012
 David D. Jensen,University of Massachusetts Amherst,aaai,2.0,0.75,1999
 David D. Jensen,University of Massachusetts Amherst,aaai,1.0,0.33333,2005
 David D. Jensen,University of Massachusetts Amherst,aaai,1.0,0.25,2010
@@ -43909,48 +43948,6 @@ David Ifeoluwa Adelani,McGill University,nips,1.0,0.018519,2022
 David Ifeoluwa Adelani,McGill University,nips,1.0,0.14286,2023
 David Ifeoluwa Adelani,McGill University,www,1.0,0.14286,2019
 David J. Barnes,University of Kent,sigcse,1.0,0.5,2011
-David J. Crandall,Indiana University,aaai,1.0,0.14286,2018
-David J. Crandall,Indiana University,aaai,1.0,0.33333,2023
-David J. Crandall,Indiana University,chiconf,1.0,0.2,2015
-David J. Crandall,Indiana University,chiconf,1.0,0.2,2016
-David J. Crandall,Indiana University,chiconf,1.0,0.33333,2017
-David J. Crandall,Indiana University,chiconf,1.0,0.14286,2018
-David J. Crandall,Indiana University,chiconf,1.0,0.14286,2019
-David J. Crandall,Indiana University,chiconf,1.0,0.25,2021
-David J. Crandall,Indiana University,cvpr,1.0,0.5,2004
-David J. Crandall,Indiana University,cvpr,1.0,0.33333,2005
-David J. Crandall,Indiana University,cvpr,1.0,0.5,2007
-David J. Crandall,Indiana University,cvpr,1.0,0.25,2011
-David J. Crandall,Indiana University,cvpr,1.0,0.25,2012
-David J. Crandall,Indiana University,cvpr,1.0,0.33333,2014
-David J. Crandall,Indiana University,cvpr,1.0,0.14286,2017
-David J. Crandall,Indiana University,cvpr,2.0,0.41667,2020
-David J. Crandall,Indiana University,cvpr,1.0,0.5,2021
-David J. Crandall,Indiana University,cvpr,1.0,0.011765,2022
-David J. Crandall,Indiana University,cvpr,1.0,0.16667,2023
-David J. Crandall,Indiana University,eccv,1.0,0.5,2006
-David J. Crandall,Indiana University,eccv,1.0,0.2,2018
-David J. Crandall,Indiana University,eccv,1.0,0.2,2020
-David J. Crandall,Indiana University,iccv,1.0,0.33333,2009
-David J. Crandall,Indiana University,iccv,1.0,0.25,2015
-David J. Crandall,Indiana University,iccv,1.0,0.25,2017
-David J. Crandall,Indiana University,iccv,3.0,0.54286,2019
-David J. Crandall,Indiana University,icra,1.0,0.16667,2019
-David J. Crandall,Indiana University,icra,1.0,0.25,2020
-David J. Crandall,Indiana University,iros,2.0,0.45,2019
-David J. Crandall,Indiana University,iros,1.0,0.16667,2021
-David J. Crandall,Indiana University,iros,1.0,0.125,2023
-David J. Crandall,Indiana University,kdd,1.0,0.2,2008
-David J. Crandall,Indiana University,ndss,1.0,0.25,2013
-David J. Crandall,Indiana University,ndss,1.0,0.25,2014
-David J. Crandall,Indiana University,nips,1.0,0.16667,2016
-David J. Crandall,Indiana University,nips,1.0,0.25,2018
-David J. Crandall,Indiana University,nips,2.0,0.66667,2019
-David J. Crandall,Indiana University,oakland,1.0,0.25,2020
-David J. Crandall,Indiana University,sigcse,1.0,0.33333,2019
-David J. Crandall,Indiana University,ubicomp,1.0,0.16667,2014
-David J. Crandall,Indiana University,www,1.0,0.25,2009
-David J. Crandall,Indiana University,www,1.0,0.25,2012
 David J. Duke,University of Leeds,eurographics,1.0,0.5,1993
 David J. Duke,University of Leeds,eurographics,1.0,0.25,1994
 David J. Duke,University of Leeds,eurographics,1.0,1.0,1995
@@ -44672,6 +44669,13 @@ David Malah,Technion,iccv,1.0,0.33333,2017
 David Malone,Maynooth University,chiconf,1.0,0.2,2024
 David Malone,Maynooth University,imc,1.0,1.0,2004
 David Malone,Maynooth University,www,1.0,0.5,2012
+David Marshall 0001,Cardiff University,aaai,1.0,0.33333,2021
+David Marshall 0001,Cardiff University,cvpr,1.0,0.33333,2009
+David Marshall 0001,Cardiff University,cvpr,1.0,0.33333,2011
+David Marshall 0001,Cardiff University,eccv,1.0,0.33333,1998
+David Marshall 0001,Cardiff University,eurographics,1.0,0.14286,2011
+David Marshall 0001,Cardiff University,eurographics,1.0,0.5,2014
+David Marshall 0001,Cardiff University,icml,1.0,0.33333,2019
 David Martins de Matos,Universidade de Lisboa,acl,1.0,0.11111,2015
 David Martins de Matos,Universidade de Lisboa,ijcai,1.0,0.33333,2023
 David Martins de Matos,Universidade de Lisboa,iros,1.0,0.2,2019
@@ -50190,6 +50194,7 @@ Dmitry Evtyushkin,College of William and Mary,micro,1.0,0.16667,2014
 Dmitry Evtyushkin,College of William and Mary,micro,1.0,0.33333,2016
 Dmitry Evtyushkin,College of William and Mary,usenixsec,1.0,0.11111,2019
 Dmitry I. Ilvovsky,HSE University,acl,1.0,0.33333,2015
+Dmitry I. Ilvovsky,HSE University,naacl,1.0,0.25,2022
 Dmitry Korkin,Worcester Polytechnic Institute,aaai,1.0,0.25,2010
 Dmitry Korkin,Worcester Polytechnic Institute,ijcai,1.0,0.33333,2009
 Dmitry Korkin,Worcester Polytechnic Institute,ismb,1.0,0.5,2002
@@ -63953,6 +63958,10 @@ Geoffrey C. Fox,University of Virginia,sc,2.0,0.75,1996
 Geoffrey C. Fox,University of Virginia,sc,1.0,0.25,1998
 Geoffrey C. Fox,University of Virginia,sc,1.0,0.16667,2002
 Geoffrey C. Fox,University of Virginia,sc,1.0,0.33333,2004
+Geoffrey Challen,University at Buffalo,osdi,1.0,0.2,2006
+Geoffrey Challen,University at Buffalo,sensys,1.0,0.2,2004
+Geoffrey Challen,University at Buffalo,sensys,1.0,0.2,2005
+Geoffrey Challen,University at Buffalo,sensys,2.0,0.53333,2008
 Geoffrey Challen,University at Buffalo,sigcse,1.0,0.25,2024
 Geoffrey Challen,University at Buffalo,ubicomp,1.0,0.25,2014
 Geoffrey G. Xie,Naval Postgraduate School,imc,1.0,0.14286,2004
@@ -68942,7 +68951,7 @@ Guillermo Gallego 0002,TU Berlin,icra,1.0,0.25,2019
 Guillermo Gallego 0002,TU Berlin,icra,1.0,0.33333,2024
 Guillermo Gallego 0002,TU Berlin,iros,1.0,0.25,2016
 Guillermo Gallego 0002,TU Berlin,rss,1.0,0.33333,2015
-Guillermo Payá Vayá,TU Braunschweig,dac,1.0,0.2,2018
+Guillermo Payá-Vayá,TU Braunschweig,dac,1.0,0.2,2018
 Guillermo Sapiro,Princeton University,cvpr,2.0,1.3333,1996
 Guillermo Sapiro,Princeton University,cvpr,1.0,0.33333,2001
 Guillermo Sapiro,Princeton University,cvpr,1.0,0.25,2003
@@ -70456,6 +70465,10 @@ H. T. Kung 0001,Harvard University,stoc,1.0,0.5,1975
 H. T. Kung 0001,Harvard University,stoc,1.0,0.5,1976
 H. T. Kung 0001,Harvard University,stoc,1.0,0.5,1980
 H. T. Kung 0001,Harvard University,stoc,1.0,0.5,1981
+H. Ulrich Hoppe,University of Duisburg-Essen,chiconf,1.0,0.33333,1986
+H. Ulrich Hoppe,University of Duisburg-Essen,chiconf,1.0,1.0,1988
+H. Ulrich Hoppe,University of Duisburg-Essen,chiconf,1.0,0.5,1992
+H. Ulrich Hoppe,University of Duisburg-Essen,sigir,1.0,0.25,1990
 H. V. Jagadish,University of Michigan,aaai,1.0,0.2,2007
 H. V. Jagadish,University of Michigan,dac,1.0,0.16667,1987
 H. V. Jagadish,University of Michigan,emnlp,1.0,0.2,2008
@@ -74845,10 +74858,6 @@ Heinrich Müller,TU Dortmund,eurographics,1.0,0.5,2002
 Heinz Handels,University of Lübeck,eccv,1.0,0.33333,2016
 Heinz Handels,University of Lübeck,iccv,1.0,0.33333,2007
 Heinz Handels,University of Lübeck,iccv,1.0,0.33333,2015
-Heinz Ulrich Hoppe,University of Duisburg-Essen,chiconf,1.0,0.33333,1986
-Heinz Ulrich Hoppe,University of Duisburg-Essen,chiconf,1.0,1.0,1988
-Heinz Ulrich Hoppe,University of Duisburg-Essen,chiconf,1.0,0.5,1992
-Heinz Ulrich Hoppe,University of Duisburg-Essen,sigir,1.0,0.25,1990
 Helen C. Purchase,University of Glasgow,eurographics,1.0,0.33333,2010
 Helen C. Purchase,University of Glasgow,eurographics,1.0,0.16667,2018
 Helen C. Purchase,University of Glasgow,vis,1.0,0.25,2012
@@ -77567,10 +77576,6 @@ Hongling Wang,Soochow University,vr,1.0,0.33333,2003
 Hongling Wang,Soochow University,vr,1.0,0.25,2005
 Hongming Zhu,Tongji University,ijcai,1.0,0.14286,2020
 Hongming Zhu,Tongji University,ubicomp,1.0,0.16667,2020
-Hongning Dai,Hong Kong Baptist University,aaai,1.0,0.2,2023
-Hongning Dai,Hong Kong Baptist University,ase,1.0,0.2,2022
-Hongning Dai,Hong Kong Baptist University,icde,1.0,0.125,2024
-Hongning Dai,Hong Kong Baptist University,icse,2.0,0.33333,2024
 Hongning Wang,Tsinghua University,aaai,2.0,0.58333,2017
 Hongning Wang,Tsinghua University,aaai,1.0,0.25,2018
 Hongning Wang,Tsinghua University,aaai,1.0,0.33333,2020
@@ -77923,6 +77928,7 @@ Hongyan Li 0002,Peking University,sigmod,1.0,0.16667,2007
 Hongyang Chao,Sun Yat-sen University,aaai,1.0,0.33333,2015
 Hongyang Chao,Sun Yat-sen University,aaai,1.0,0.5,2017
 Hongyang Chao,Sun Yat-sen University,aaai,1.0,0.16667,2019
+Hongyang Chao,Sun Yat-sen University,aaai,1.0,0.33333,2020
 Hongyang Chao,Sun Yat-sen University,cvpr,1.0,0.2,2016
 Hongyang Chao,Sun Yat-sen University,cvpr,1.0,0.5,2017
 Hongyang Chao,Sun Yat-sen University,cvpr,2.0,0.45,2018
@@ -86349,8 +86355,6 @@ Jamie Callan,Carnegie Mellon University,vldb,1.0,0.33333,1994
 Jamie Callan,Carnegie Mellon University,www,1.0,0.33333,2017
 Jamie Callan,Carnegie Mellon University,www,1.0,0.25,2019
 Jamie Callan,Carnegie Mellon University,www,1.0,0.5,2020
-Jamie H. Morgenstern,University of Washington,nips,1.0,0.2,2022
-Jamie H. Morgenstern,University of Washington,nips,1.0,0.25,2023
 Jamie Morgenstern,University of Washington,aaai,1.0,0.2,2012
 Jamie Morgenstern,University of Washington,aaai,1.0,0.25,2013
 Jamie Morgenstern,University of Washington,aaai,1.0,0.33333,2015
@@ -86368,7 +86372,8 @@ Jamie Morgenstern,University of Washington,nips,1.0,0.5,2015
 Jamie Morgenstern,University of Washington,nips,1.0,0.25,2016
 Jamie Morgenstern,University of Washington,nips,2.0,0.4,2018
 Jamie Morgenstern,University of Washington,nips,2.0,0.4,2019
-Jamie Morgenstern,University of Washington,nips,1.0,0.16667,2023
+Jamie Morgenstern,University of Washington,nips,1.0,0.2,2022
+Jamie Morgenstern,University of Washington,nips,2.0,0.41667,2023
 Jamie Morgenstern,University of Washington,soda,1.0,0.25,2015
 Jamie Morgenstern,University of Washington,stoc,1.0,0.2,2016
 Jamie Morgenstern,University of Washington,wine,1.0,0.2,2016
@@ -91574,12 +91579,6 @@ Jian-Jia Chen,TU Dortmund,rtss,1.0,0.25,2017
 Jian-Jia Chen,TU Dortmund,rtss,3.0,0.7,2018
 Jian-Jia Chen,TU Dortmund,rtss,3.0,0.83333,2021
 Jian-Jia Chen,TU Dortmund,rtss,3.0,0.7,2022
-Jian-Liang Wu,Simon Fraser University,oakland,1.0,0.2,2022
-Jian-Liang Wu,Simon Fraser University,oakland,1.0,0.2,2024
-Jian-Liang Wu,Simon Fraser University,usenixsec,1.0,0.125,2021
-Jian-Liang Wu,Simon Fraser University,usenixsec,1.0,0.14286,2022
-Jian-Liang Wu,Simon Fraser University,usenixsec,1.0,0.125,2023
-Jian-Liang Wu,Simon Fraser University,usenixsec,1.0,0.2,2024
 Jian-Yun Nie,University of Montreal,aaai,2.0,0.58333,2014
 Jian-Yun Nie,University of Montreal,aaai,1.0,0.25,2015
 Jian-Yun Nie,University of Montreal,aaai,1.0,0.25,2020
@@ -92127,6 +92126,12 @@ Jianlei Yang 0001,Beihang University,iccad,1.0,0.125,2017
 Jianlei Yang 0001,Beihang University,iccv,1.0,0.2,2023
 Jianlei Yang 0001,Beihang University,kdd,1.0,0.2,2020
 Jianliang Gao,Central South University,ijcai,1.0,0.16667,2021
+Jianliang Wu,Simon Fraser University,oakland,1.0,0.2,2022
+Jianliang Wu,Simon Fraser University,oakland,1.0,0.2,2024
+Jianliang Wu,Simon Fraser University,usenixsec,1.0,0.125,2021
+Jianliang Wu,Simon Fraser University,usenixsec,1.0,0.14286,2022
+Jianliang Wu,Simon Fraser University,usenixsec,1.0,0.125,2023
+Jianliang Wu,Simon Fraser University,usenixsec,1.0,0.2,2024
 Jianliang Xu,Hong Kong Baptist University,aaai,1.0,0.16667,2021
 Jianliang Xu,Hong Kong Baptist University,dac,1.0,0.125,2023
 Jianliang Xu,Hong Kong Baptist University,fast,1.0,0.25,2024
@@ -97020,6 +97025,7 @@ Johann-Christoph Freytag,Humboldt University of Berlin,vldb,1.0,0.33333,2019
 Johann-Christoph Freytag,Humboldt University of Berlin,vldb,1.0,0.25,2020
 Johann-Christoph Freytag,Humboldt University of Berlin,vldb,1.0,0.33333,2022
 Johanna Pirker,Graz University of Technology,vr,1.0,0.25,2022
+Johanna Viitanen,Aalto University,chiconf,1.0,0.25,2016
 Johannes Bjerva,Aalborg University,aaai,1.0,0.33333,2020
 Johannes Bjerva,Aalborg University,acl,1.0,0.25,2019
 Johannes Bjerva,Aalborg University,acl,1.0,0.33333,2024
@@ -97680,6 +97686,8 @@ John Fearnley,University of Liverpool,wine,1.0,0.25,2014
 John Fearnley,University of Liverpool,wine,2.0,0.5,2016
 John Fearnley,University of Liverpool,wine,1.0,0.25,2018
 John G. Stell,University of Leeds,ijcai,1.0,1.0,2013
+John Gauch,University of Arkansas,iccv,1.0,0.5,1988
+John Gauch,University of Arkansas,icra,1.0,0.33333,1991
 John H. Hartman,University of Arizona,ccs,1.0,0.25,2008
 John H. Hartman,University of Arizona,isca,1.0,0.090909,1994
 John H. Hartman,University of Arizona,nsdi,1.0,0.5,2008
@@ -98030,8 +98038,6 @@ John M. Carroll 0001,Pennsylvania State University,oopsla,1.0,0.16667,1994
 John M. Carroll 0001,Pennsylvania State University,ubicomp,1.0,0.16667,2017
 John M. Carroll 0001,Pennsylvania State University,uist,1.0,0.14286,2003
 John M. Carroll 0001,Pennsylvania State University,vr,1.0,0.16667,2024
-John M. Gauch,University of Arkansas,iccv,1.0,0.5,1988
-John M. Gauch,University of Arkansas,icra,1.0,0.33333,1991
 John M. Hollerbach,University of Utah,cvpr,1.0,0.33333,2007
 John M. Hollerbach,University of Utah,icra,2.0,1.0,1984
 John M. Hollerbach,University of Utah,icra,3.0,1.2,1985
@@ -99911,6 +99917,7 @@ Joseph A. Konstan,University of Minnesota,www,1.0,0.2,2014
 Joseph B. Evans,University of Kansas,hpdc,1.0,0.25,1993
 Joseph B. Evans,University of Kansas,hpdc,2.0,0.35,1995
 Joseph B. Evans,University of Kansas,hpdc,1.0,0.2,2001
+Joseph Beck,Worcester Polytechnic Institute,aaai,1.0,0.33333,2000
 Joseph Bonneau,New York University,ccs,1.0,0.2,2015
 Joseph Bonneau,New York University,ccs,1.0,0.2,2022
 Joseph Bonneau,New York University,ccs,1.0,0.16667,2023
@@ -99959,7 +99966,6 @@ Joseph Devietti,University of Pennsylvania,pldi,1.0,0.2,2017
 Joseph Devietti,University of Pennsylvania,pldi,1.0,0.33333,2018
 Joseph Devietti,University of Pennsylvania,rtss,1.0,0.16667,2015
 Joseph Devietti,University of Pennsylvania,soda,1.0,0.16667,2018
-Joseph E. Beck,Worcester Polytechnic Institute,aaai,1.0,0.33333,2000
 Joseph E. Michaelis,University of Illinois at Chicago,chiconf,1.0,0.5,2017
 Joseph E. Michaelis,University of Illinois at Chicago,chiconf,1.0,0.25,2020
 Joseph E. Michaelis,University of Illinois at Chicago,chiconf,1.0,0.5,2022
@@ -107082,7 +107088,6 @@ Kathleen M. Carley,Carnegie Mellon University,emnlp,2.0,1.0,2019
 Kathleen M. Carley,Carnegie Mellon University,kdd,1.0,0.16667,2018
 Kathleen M. Carley,Carnegie Mellon University,ubicomp,1.0,0.33333,2012
 Kathleen M. Carley,Carnegie Mellon University,www,1.0,0.33333,2016
-Kathleen McKeown,Columbia University,naacl,1.0,0.071429,2024
 Kathrin Hanauer,University of Vienna,kdd,1.0,0.2,2024
 Kathrin Maria Gerling,KU Leuven,chiconf,1.0,0.25,2012
 Kathrin Maria Gerling,KU Leuven,chiconf,1.0,0.25,2013
@@ -107176,7 +107181,7 @@ Kathy McKeown,Columbia University,naacl,3.0,1.0833,2007
 Kathy McKeown,Columbia University,naacl,1.0,0.5,2013
 Kathy McKeown,Columbia University,naacl,3.0,1.1667,2019
 Kathy McKeown,Columbia University,naacl,3.0,0.77778,2021
-Kathy McKeown,Columbia University,naacl,1.0,0.083333,2024
+Kathy McKeown,Columbia University,naacl,2.0,0.15476,2024
 Kathy McKeown,Columbia University,siggraph,1.0,0.5,1980
 Kathy McKeown,Columbia University,sigir,1.0,0.5,1995
 Kathy McKeown,Columbia University,sigir,1.0,0.5,1999
@@ -115285,6 +115290,7 @@ Leo Yu Zhang,Griffith University,ijcai,2.0,0.26786,2024
 Leo Yu Zhang,Griffith University,nips,1.0,0.16667,2023
 Leo Yu Zhang,Griffith University,oakland,3.0,0.35,2024
 Leon Adam Watts,University of Bath,chiconf,1.0,0.5,2010
+Leon Adam Watts,University of Bath,uist,1.0,0.5,2012
 Leon Bergen,Univ. of California - San Diego,acl,1.0,0.33333,2020
 Leon Bergen,Univ. of California - San Diego,emnlp,1.0,0.16667,2019
 Leon Bergen,Univ. of California - San Diego,emnlp,2.0,0.58333,2020
@@ -115299,7 +115305,6 @@ Leon Derczynski,IT University of Copenhagen,emnlp,1.0,0.33333,2023
 Leon Derczynski,IT University of Copenhagen,icml,1.0,0.33333,2023
 Leon Derczynski,IT University of Copenhagen,ijcai,1.0,0.5,2022
 Leon Derczynski,IT University of Copenhagen,naacl,1.0,0.33333,2019
-Leon Watts,University of Bath,uist,1.0,0.5,2012
 Leon van der Torre,University of Luxembourg,aaai,1.0,0.5,1998
 Leon van der Torre,University of Luxembourg,ijcai,1.0,0.5,1995
 Leon van der Torre,University of Luxembourg,ijcai,1.0,0.5,1999
@@ -120927,7 +120932,7 @@ Luigi V. Mancini,Sapienza University of Rome,ccs,1.0,0.25,1996
 Luigi V. Mancini,Sapienza University of Rome,ccs,1.0,0.33333,2000
 Luigi V. Mancini,Sapienza University of Rome,oakland,1.0,0.33333,1994
 Luigia Carlucci Aiello,Sapienza University of Rome,ijcai,1.0,0.33333,1991
-Luis Antonio Brasil Kowada,UFF,recomb,1.0,0.25,2016
+Luis A. B. Kowada,UFF,recomb,1.0,0.25,2016
 Luis Ceze,University of Washington,asplos,1.0,0.25,2008
 Luis Ceze,University of Washington,asplos,1.0,0.25,2009
 Luis Ceze,University of Washington,asplos,1.0,0.2,2010
@@ -121087,6 +121092,9 @@ Luisa Siniscalchi,DTU,eurocrypt,1.0,0.25,2022
 Luisa Siniscalchi,DTU,eurocrypt,1.0,0.25,2023
 Luiz Augusto de Macêdo Morais,UFPE,chiconf,1.0,0.25,2021
 Luiz Augusto de Macêdo Morais,UFPE,chiconf,1.0,0.25,2023
+Luiz Augusto de Macêdo Morais,UFPE,chiconf,1.0,0.16667,2024
+Luiz Augusto de Macêdo Morais,UFPE,eurographics,1.0,0.33333,2022
+Luiz Augusto de Macêdo Morais,UFPE,vis,1.0,0.047619,2024
 Luiz Chaimowicz,UFMG,icra,1.0,0.25,2001
 Luiz Chaimowicz,UFMG,icra,2.0,0.58333,2002
 Luiz Chaimowicz,UFMG,icra,1.0,0.33333,2003
@@ -121355,6 +121363,10 @@ Lutz Schröder,University of Erlangen–Nuremberg,lics,1.0,0.33333,2021
 Lutz Schröder,University of Erlangen–Nuremberg,lics,1.0,0.2,2022
 Lutz Schröder,University of Erlangen–Nuremberg,lics,1.0,0.2,2023
 Lutz Schröder,University of Erlangen–Nuremberg,popl,1.0,0.2,2023
+Luu Anh Tuan,Nanyang Technological University,aaai,3.0,0.91667,2018
+Luu Anh Tuan,Nanyang Technological University,aaai,1.0,0.33333,2020
+Luu Anh Tuan,Nanyang Technological University,kdd,1.0,0.33333,2018
+Luu Anh Tuan,Nanyang Technological University,www,1.0,0.33333,2018
 Luyi Xing,Indiana University,ccs,1.0,0.25,2013
 Luyi Xing,Indiana University,ccs,1.0,0.14286,2014
 Luyi Xing,Indiana University,ccs,1.0,0.125,2015
@@ -130271,25 +130283,6 @@ Matteo Sesia,University of Southern California,nips,1.0,0.33333,2020
 Matteo Sesia,University of Southern California,nips,1.0,0.5,2021
 Matteo Sesia,University of Southern California,nips,2.0,0.75,2022
 Matteo Sesia,University of Southern California,nips,1.0,0.25,2023
-Matthew A. Turk,TTI Chicago,acl,1.0,0.16667,2019
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.25,1989
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.5,1991
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.33333,2004
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.5,2007
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.25,2008
-Matthew A. Turk,TTI Chicago,cvpr,2.0,0.45,2009
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.5,2013
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.25,2015
-Matthew A. Turk,TTI Chicago,cvpr,1.0,0.5,2018
-Matthew A. Turk,TTI Chicago,eccv,1.0,0.25,2014
-Matthew A. Turk,TTI Chicago,iccv,1.0,0.33333,1999
-Matthew A. Turk,TTI Chicago,iccv,1.0,0.2,2005
-Matthew A. Turk,TTI Chicago,iccv,1.0,0.33333,2011
-Matthew A. Turk,TTI Chicago,iccv,1.0,0.25,2013
-Matthew A. Turk,TTI Chicago,iccv,1.0,0.2,2015
-Matthew A. Turk,TTI Chicago,icra,1.0,0.25,1987
-Matthew A. Turk,TTI Chicago,siggraph,1.0,0.2,2004
-Matthew A. Turk,TTI Chicago,uist,1.0,0.25,2014
 Matthew B. Blaschko,KU Leuven,aaai,1.0,0.25,2022
 Matthew B. Blaschko,KU Leuven,cvpr,2.0,0.83333,2008
 Matthew B. Blaschko,KU Leuven,cvpr,1.0,0.071429,2014
@@ -130875,6 +130868,25 @@ Matthew T. Mason,Carnegie Mellon University,rss,1.0,0.33333,2020
 Matthew Toews,ETS Montreal,cvpr,1.0,0.5,2009
 Matthew Toews,ETS Montreal,iccv,1.0,0.5,2003
 Matthew Toews,ETS Montreal,iccv,1.0,0.5,2007
+Matthew Turk 0001,TTI Chicago,acl,1.0,0.16667,2019
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.25,1989
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.5,1991
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.33333,2004
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.5,2007
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.25,2008
+Matthew Turk 0001,TTI Chicago,cvpr,2.0,0.45,2009
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.5,2013
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.25,2015
+Matthew Turk 0001,TTI Chicago,cvpr,1.0,0.5,2018
+Matthew Turk 0001,TTI Chicago,eccv,1.0,0.25,2014
+Matthew Turk 0001,TTI Chicago,iccv,1.0,0.33333,1999
+Matthew Turk 0001,TTI Chicago,iccv,1.0,0.2,2005
+Matthew Turk 0001,TTI Chicago,iccv,1.0,0.33333,2011
+Matthew Turk 0001,TTI Chicago,iccv,1.0,0.25,2013
+Matthew Turk 0001,TTI Chicago,iccv,1.0,0.2,2015
+Matthew Turk 0001,TTI Chicago,icra,1.0,0.25,1987
+Matthew Turk 0001,TTI Chicago,siggraph,1.0,0.2,2004
+Matthew Turk 0001,TTI Chicago,uist,1.0,0.25,2014
 Matthew W. Easterday,Northwestern University,chiconf,1.0,0.16667,2024
 Matthew W. Hahn,Indiana University,ismb,1.0,0.25,2020
 Matthew Wright 0001,Rochester Institute of Technology,ccs,1.0,0.5,2006
@@ -143704,22 +143716,6 @@ Nam Sung Kim,Univ. of Illinois at Urbana-Champaign,osdi,1.0,0.090909,2018
 Nam Sung Kim,Univ. of Illinois at Urbana-Champaign,usenixatc,1.0,0.33333,2015
 Nam Sung Kim,Univ. of Illinois at Urbana-Champaign,usenixatc,1.0,0.125,2023
 Nam Sung Kim,Univ. of Illinois at Urbana-Champaign,vldb,1.0,0.2,2022
-Nam Wook Kim,Boston College,chiconf,1.0,0.16667,2015
-Nam Wook Kim,Boston College,chiconf,2.0,0.26667,2019
-Nam Wook Kim,Boston College,chiconf,2.0,0.26786,2020
-Nam Wook Kim,Boston College,chiconf,1.0,0.2,2022
-Nam Wook Kim,Boston College,chiconf,2.0,0.5,2023
-Nam Wook Kim,Boston College,chiconf,1.0,0.14286,2024
-Nam Wook Kim,Boston College,eurographics,1.0,0.076923,2018
-Nam Wook Kim,Boston College,eurographics,1.0,0.25,2021
-Nam Wook Kim,Boston College,eurographics,1.0,0.2,2023
-Nam Wook Kim,Boston College,uist,1.0,0.11111,2017
-Nam Wook Kim,Boston College,uist,1.0,0.25,2024
-Nam Wook Kim,Boston College,vis,1.0,0.125,2016
-Nam Wook Kim,Boston College,vis,1.0,0.14286,2017
-Nam Wook Kim,Boston College,vis,1.0,0.16667,2018
-Nam Wook Kim,Boston College,vis,1.0,0.14286,2020
-Nam Wook Kim,Boston College,vis,1.0,0.2,2022
 Namhoon Lee,POSTECH,cvpr,2.0,0.41667,2017
 Namhoon Lee,POSTECH,emnlp,1.0,0.25,2024
 Namhoon Lee,POSTECH,iclr,1.0,0.25,2018
@@ -143728,6 +143724,23 @@ Namhoon Lee,POSTECH,iclr,1.0,0.25,2020
 Namhoon Lee,POSTECH,iclr,1.0,0.25,2021
 Namhoon Lee,POSTECH,icml,1.0,0.25,2023
 Namhoon Lee,POSTECH,nips,1.0,0.25,2021
+Namwook Kim,Boston College,chiconf,1.0,0.25,2012
+Namwook Kim,Boston College,chiconf,1.0,0.16667,2015
+Namwook Kim,Boston College,chiconf,2.0,0.26667,2019
+Namwook Kim,Boston College,chiconf,2.0,0.26786,2020
+Namwook Kim,Boston College,chiconf,1.0,0.2,2022
+Namwook Kim,Boston College,chiconf,2.0,0.5,2023
+Namwook Kim,Boston College,chiconf,1.0,0.14286,2024
+Namwook Kim,Boston College,eurographics,1.0,0.076923,2018
+Namwook Kim,Boston College,eurographics,1.0,0.25,2021
+Namwook Kim,Boston College,eurographics,1.0,0.2,2023
+Namwook Kim,Boston College,uist,1.0,0.11111,2017
+Namwook Kim,Boston College,uist,1.0,0.25,2024
+Namwook Kim,Boston College,vis,1.0,0.125,2016
+Namwook Kim,Boston College,vis,1.0,0.14286,2017
+Namwook Kim,Boston College,vis,1.0,0.16667,2018
+Namwook Kim,Boston College,vis,1.0,0.14286,2020
+Namwook Kim,Boston College,vis,1.0,0.2,2022
 Nan Cao 0001,Tongji University,aaai,1.0,0.25,2019
 Nan Cao 0001,Tongji University,chiconf,2.0,0.5,2015
 Nan Cao 0001,Tongji University,chiconf,1.0,0.2,2017
@@ -158145,18 +158158,6 @@ Ping Luo 0002,University of Hong Kong,nips,1.0,0.2,2018
 Ping Luo 0002,University of Hong Kong,nips,6.0,0.94286,2021
 Ping Luo 0002,University of Hong Kong,nips,6.0,1.0195,2022
 Ping Luo 0002,University of Hong Kong,nips,5.0,0.56293,2023
-Ping Wang,Nanyang Technological University,aaai,1.0,0.16667,2020
-Ping Wang,Nanyang Technological University,ase,1.0,0.16667,2018
-Ping Wang,Nanyang Technological University,cvpr,1.0,0.14286,2022
-Ping Wang,Nanyang Technological University,cvpr,2.0,0.53333,2024
-Ping Wang,Nanyang Technological University,eccv,1.0,0.2,2014
-Ping Wang,Nanyang Technological University,iccad,1.0,0.5,2004
-Ping Wang,Nanyang Technological University,iccv,1.0,0.33333,2023
-Ping Wang,Nanyang Technological University,icra,1.0,0.14286,2024
-Ping Wang,Nanyang Technological University,ijcai,1.0,0.25,2017
-Ping Wang,Nanyang Technological University,ijcai,1.0,0.16667,2019
-Ping Wang,Nanyang Technological University,iros,1.0,0.33333,2011
-Ping Wang,Nanyang Technological University,sc,1.0,0.33333,1997
 Ping Wang 0003,Peking University,aaai,1.0,0.14286,2020
 Ping Wang 0003,Peking University,aaai,1.0,0.14286,2022
 Ping Wang 0003,Peking University,ccs,1.0,0.2,2016
@@ -167736,26 +167737,26 @@ Richard T. Snodgrass,University of Arizona,vldb,1.0,0.33333,1996
 Richard T. Snodgrass,University of Arizona,vldb,1.0,0.5,2003
 Richard T. Snodgrass,University of Arizona,vldb,1.0,0.33333,2004
 Richard T. Snodgrass,University of Arizona,vldb,1.0,0.1,2005
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.25,2001
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.25,2002
-Richard T. Vaughan,Simon Fraser University,icra,2.0,1.0,2006
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.33333,2007
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.5,2008
-Richard T. Vaughan,Simon Fraser University,icra,2.0,1.0,2010
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.2,2013
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.2,2014
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.33333,2015
-Richard T. Vaughan,Simon Fraser University,icra,1.0,0.2,2017
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.16667,2001
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.33333,2003
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.5,2005
-Richard T. Vaughan,Simon Fraser University,iros,3.0,1.5,2009
-Richard T. Vaughan,Simon Fraser University,iros,3.0,1.0,2013
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.33333,2014
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.2,2015
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.33333,2016
-Richard T. Vaughan,Simon Fraser University,iros,2.0,1.0,2018
-Richard T. Vaughan,Simon Fraser University,iros,1.0,0.5,2019
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.25,2001
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.25,2002
+Richard Vaughan 0001,Simon Fraser University,icra,2.0,1.0,2006
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.33333,2007
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.5,2008
+Richard Vaughan 0001,Simon Fraser University,icra,2.0,1.0,2010
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.2,2013
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.2,2014
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.33333,2015
+Richard Vaughan 0001,Simon Fraser University,icra,1.0,0.2,2017
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.16667,2001
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.33333,2003
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.5,2005
+Richard Vaughan 0001,Simon Fraser University,iros,3.0,1.5,2009
+Richard Vaughan 0001,Simon Fraser University,iros,3.0,1.0,2013
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.33333,2014
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.2,2015
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.33333,2016
+Richard Vaughan 0001,Simon Fraser University,iros,2.0,1.0,2018
+Richard Vaughan 0001,Simon Fraser University,iros,1.0,0.5,2019
 Richard Veras,University of Oklahoma,ics,1.0,0.16667,2013
 Richard Veras,University of Oklahoma,isca,1.0,0.25,2012
 Richard Veras,University of Oklahoma,pldi,1.0,0.16667,2013
@@ -168630,6 +168631,7 @@ Robert D. Nowak,University of Wisconsin - Madison,nips,2.0,0.5,2023
 Robert D. Nowak,University of Wisconsin - Madison,sigcomm,1.0,0.33333,2008
 Robert D. Nowak,University of Wisconsin - Madison,sigmetrics,1.0,0.16667,2002
 Robert D. Rodman,North Carolina State University,sigcse,1.0,0.25,2013
+Robert D. Stevens,University of Manchester,ismb,1.0,0.11111,2004
 Robert D. Tennent,Queen’s University,popl,1.0,1.0,1973
 Robert D. Tennent,Queen’s University,popl,1.0,0.5,1993
 Robert Dyer 0001,University of Nebraska,fse,1.0,0.25,2014
@@ -169115,6 +169117,44 @@ Robert McCartney,University of Connecticut,sigcse,1.0,0.16667,2018
 Robert Michael Young,University of Utah,aaai,1.0,1.0,1999
 Robert Michael Young,University of Utah,aaai,1.0,0.5,2004
 Robert Michael Young,University of Utah,aaai,1.0,0.5,2005
+Robert Morris 0005,Massachusetts Institute of Technology,asplos,1.0,0.33333,2002
+Robert Morris 0005,Massachusetts Institute of Technology,ccs,1.0,0.5,2002
+Robert Morris 0005,Massachusetts Institute of Technology,ccs,1.0,0.2,2007
+Robert Morris 0005,Massachusetts Institute of Technology,eurosys,1.0,0.25,2009
+Robert Morris 0005,Massachusetts Institute of Technology,eurosys,1.0,0.33333,2010
+Robert Morris 0005,Massachusetts Institute of Technology,eurosys,2.0,0.58333,2012
+Robert Morris 0005,Massachusetts Institute of Technology,mobicom,1.0,0.2,2000
+Robert Morris 0005,Massachusetts Institute of Technology,mobicom,2.0,0.45,2001
+Robert Morris 0005,Massachusetts Institute of Technology,mobicom,1.0,0.25,2003
+Robert Morris 0005,Massachusetts Institute of Technology,mobicom,1.0,0.25,2005
+Robert Morris 0005,Massachusetts Institute of Technology,nsdi,1.0,0.16667,2004
+Robert Morris 0005,Massachusetts Institute of Technology,nsdi,1.0,0.25,2005
+Robert Morris 0005,Massachusetts Institute of Technology,nsdi,4.0,0.99167,2006
+Robert Morris 0005,Massachusetts Institute of Technology,nsdi,1.0,0.33333,2008
+Robert Morris 0005,Massachusetts Institute of Technology,nsdi,1.0,0.14286,2009
+Robert Morris 0005,Massachusetts Institute of Technology,nsdi,1.0,0.16667,2014
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,1.0,0.25,2002
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,1.0,0.16667,2004
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,1.0,0.16667,2006
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,1.0,0.083333,2008
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,1.0,0.14286,2010
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,1.0,0.25,2014
+Robert Morris 0005,Massachusetts Institute of Technology,osdi,2.0,0.45833,2018
+Robert Morris 0005,Massachusetts Institute of Technology,sigcomm,1.0,0.5,1997
+Robert Morris 0005,Massachusetts Institute of Technology,sigcomm,1.0,0.2,2001
+Robert Morris 0005,Massachusetts Institute of Technology,sigcomm,2.0,0.45,2004
+Robert Morris 0005,Massachusetts Institute of Technology,sigcomm,1.0,0.5,2005
+Robert Morris 0005,Massachusetts Institute of Technology,sigcomm,1.0,0.5,2009
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,1.0,0.25,1999
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,2.0,0.45,2001
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,1.0,0.11111,2005
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,1.0,0.14286,2007
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,1.0,0.2,2013
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,1.0,0.2,2019
+Robert Morris 0005,Massachusetts Institute of Technology,sosp,1.0,0.25,2024
+Robert Morris 0005,Massachusetts Institute of Technology,usenixatc,1.0,0.5,2001
+Robert Morris 0005,Massachusetts Institute of Technology,usenixatc,1.0,0.16667,2003
+Robert Morris 0005,Massachusetts Institute of Technology,usenixatc,1.0,0.16667,2011
 Robert Muller,Boston College,icfp,1.0,0.25,1997
 Robert Muller,Boston College,icfp,1.0,0.2,2001
 Robert Muller,Boston College,oopsla,1.0,0.16667,1993
@@ -169287,7 +169327,6 @@ Robert St. Amant,North Carolina State University,ndss,1.0,0.25,2004
 Robert Stevens 0001,University of Manchester,aaai,1.0,0.16667,2006
 Robert Stevens 0001,University of Manchester,chiconf,1.0,0.33333,2015
 Robert Stevens 0001,University of Manchester,ismb,1.0,0.16667,1998
-Robert Stevens 0001,University of Manchester,ismb,1.0,0.11111,2004
 Robert Stevens 0001,University of Manchester,ismb,1.0,0.2,2006
 Robert Stevens 0001,University of Manchester,www,1.0,0.33333,2003
 Robert Stevens 0001,University of Manchester,www,1.0,0.14286,2005
@@ -169324,44 +169363,6 @@ Robert T. Collins,Pennsylvania State University,iccv,1.0,0.14286,1995
 Robert T. Collins,Pennsylvania State University,iccv,1.0,0.2,1999
 Robert T. Collins,Pennsylvania State University,iccv,1.0,0.5,2003
 Robert T. Collins,Pennsylvania State University,iccv,1.0,0.33333,2005
-Robert Tappan Morris,Massachusetts Institute of Technology,asplos,1.0,0.33333,2002
-Robert Tappan Morris,Massachusetts Institute of Technology,ccs,1.0,0.5,2002
-Robert Tappan Morris,Massachusetts Institute of Technology,ccs,1.0,0.2,2007
-Robert Tappan Morris,Massachusetts Institute of Technology,eurosys,1.0,0.25,2009
-Robert Tappan Morris,Massachusetts Institute of Technology,eurosys,1.0,0.33333,2010
-Robert Tappan Morris,Massachusetts Institute of Technology,eurosys,2.0,0.58333,2012
-Robert Tappan Morris,Massachusetts Institute of Technology,mobicom,1.0,0.2,2000
-Robert Tappan Morris,Massachusetts Institute of Technology,mobicom,2.0,0.45,2001
-Robert Tappan Morris,Massachusetts Institute of Technology,mobicom,1.0,0.25,2003
-Robert Tappan Morris,Massachusetts Institute of Technology,mobicom,1.0,0.25,2005
-Robert Tappan Morris,Massachusetts Institute of Technology,nsdi,1.0,0.16667,2004
-Robert Tappan Morris,Massachusetts Institute of Technology,nsdi,1.0,0.25,2005
-Robert Tappan Morris,Massachusetts Institute of Technology,nsdi,4.0,0.99167,2006
-Robert Tappan Morris,Massachusetts Institute of Technology,nsdi,1.0,0.33333,2008
-Robert Tappan Morris,Massachusetts Institute of Technology,nsdi,1.0,0.14286,2009
-Robert Tappan Morris,Massachusetts Institute of Technology,nsdi,1.0,0.16667,2014
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,1.0,0.25,2002
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,1.0,0.16667,2004
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,1.0,0.16667,2006
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,1.0,0.083333,2008
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,1.0,0.14286,2010
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,1.0,0.25,2014
-Robert Tappan Morris,Massachusetts Institute of Technology,osdi,2.0,0.45833,2018
-Robert Tappan Morris,Massachusetts Institute of Technology,sigcomm,1.0,0.5,1997
-Robert Tappan Morris,Massachusetts Institute of Technology,sigcomm,1.0,0.2,2001
-Robert Tappan Morris,Massachusetts Institute of Technology,sigcomm,2.0,0.45,2004
-Robert Tappan Morris,Massachusetts Institute of Technology,sigcomm,1.0,0.5,2005
-Robert Tappan Morris,Massachusetts Institute of Technology,sigcomm,1.0,0.5,2009
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,1.0,0.25,1999
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,2.0,0.45,2001
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,1.0,0.11111,2005
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,1.0,0.14286,2007
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,1.0,0.2,2013
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,1.0,0.2,2019
-Robert Tappan Morris,Massachusetts Institute of Technology,sosp,1.0,0.25,2024
-Robert Tappan Morris,Massachusetts Institute of Technology,usenixatc,1.0,0.5,2001
-Robert Tappan Morris,Massachusetts Institute of Technology,usenixatc,1.0,0.16667,2003
-Robert Tappan Morris,Massachusetts Institute of Technology,usenixatc,1.0,0.16667,2011
 Robert Tyler Loftin,University of Sheffield,aaai,1.0,0.14286,2014
 Robert Tyler Loftin,University of Sheffield,icml,1.0,0.125,2017
 Robert Tyler Loftin,University of Sheffield,icml,1.0,0.5,2022
@@ -171503,6 +171504,16 @@ Roni Khardon,Indiana University,nips,1.0,0.33333,2018
 Roni Khardon,Indiana University,nips,1.0,0.5,2019
 Roni Khardon,Indiana University,pods,1.0,0.25,1997
 Roni Khardon,Indiana University,rss,1.0,0.33333,2022
+Roni Sengupta,University of North Carolina,cvpr,1.0,0.14286,2017
+Roni Sengupta,University of North Carolina,cvpr,1.0,0.25,2018
+Roni Sengupta,University of North Carolina,cvpr,1.0,0.2,2020
+Roni Sengupta,University of North Carolina,cvpr,2.0,0.41667,2021
+Roni Sengupta,University of North Carolina,cvpr,1.0,0.33333,2022
+Roni Sengupta,University of North Carolina,eccv,1.0,0.2,2020
+Roni Sengupta,University of North Carolina,iccv,1.0,0.16667,2019
+Roni Sengupta,University of North Carolina,iccv,1.0,0.25,2021
+Roni Sengupta,University of North Carolina,iccv,1.0,0.2,2023
+Roni Sengupta,University of North Carolina,iclr,1.0,0.14286,2024
 Roni Sengupta,University of North Carolina,nips,1.0,0.1,2023
 Roni Stern,Ben-Gurion University of the Negev,aaai,1.0,0.25,2010
 Roni Stern,Ben-Gurion University of the Negev,aaai,4.0,0.875,2012
@@ -176832,9 +176843,9 @@ Sathya N. Ravi,University of Illinois at Chicago,iclr,1.0,0.25,2024
 Sathya N. Ravi,University of Illinois at Chicago,icml,1.0,0.25,2016
 Sathya N. Ravi,University of Illinois at Chicago,icml,1.0,0.16667,2021
 Sathya N. Ravi,University of Illinois at Chicago,icml,1.0,0.25,2023
-Sathya N. Ravi,University of Illinois at Chicago,nips,1.0,0.16667,2016
 Sathya N. Ravi,University of Illinois at Chicago,nips,1.0,0.2,2021
 Sathya N. Ravi,University of Illinois at Chicago,nips,1.0,0.33333,2023
+Sathya Narayanan Ravi,University of Illinois at Chicago,nips,1.0,0.16667,2016
 Sathyanarayanan N. Aakur,Auburn University,cvpr,1.0,0.5,2019
 Sathyanarayanan N. Aakur,Auburn University,cvpr,1.0,0.5,2023
 Sathyanarayanan N. Aakur,Auburn University,eccv,1.0,0.5,2020
@@ -178723,7 +178734,7 @@ Seong Jae Hwang,Yonsei University,iccv,1.0,0.25,2019
 Seong Jae Hwang,Yonsei University,iccv,1.0,0.16667,2021
 Seong Jae Hwang,Yonsei University,ijcai,1.0,0.2,2022
 Seong Jae Hwang,Yonsei University,kdd,1.0,0.16667,2019
-Seong-Tae Kim,Kyung Hee University,cvpr,1.0,0.33333,2024
+Seong Tae Kim,Kyung Hee University,cvpr,1.0,0.33333,2024
 Seong-Whan Lee,Korea University,aaai,1.0,0.2,2020
 Seong-Whan Lee,Korea University,aaai,2.0,0.53333,2021
 Seong-Whan Lee,Korea University,aaai,2.0,0.5,2023
@@ -181345,14 +181356,14 @@ Shayok Chakraborty,Florida State University,aaai,1.0,0.5,2022
 Shayok Chakraborty,Florida State University,cvpr,1.0,0.33333,2011
 Shayok Chakraborty,Florida State University,cvpr,1.0,0.25,2017
 Shayok Chakraborty,Florida State University,kdd,1.0,0.2,2015
-Shazia Wasim Sadiq,University of Queensland,icde,2.0,0.30952,2015
-Shazia Wasim Sadiq,University of Queensland,icde,2.0,0.30952,2016
-Shazia Wasim Sadiq,University of Queensland,kdd,1.0,0.16667,2015
-Shazia Wasim Sadiq,University of Queensland,kdd,1.0,0.16667,2024
-Shazia Wasim Sadiq,University of Queensland,sigcse,1.0,0.33333,2020
-Shazia Wasim Sadiq,University of Queensland,sigir,1.0,0.2,2020
-Shazia Wasim Sadiq,University of Queensland,sigmod,1.0,0.2,2010
-Shazia Wasim Sadiq,University of Queensland,www,1.0,0.2,2023
+Shazia Sadiq,University of Queensland,icde,2.0,0.30952,2015
+Shazia Sadiq,University of Queensland,icde,2.0,0.30952,2016
+Shazia Sadiq,University of Queensland,kdd,1.0,0.16667,2015
+Shazia Sadiq,University of Queensland,kdd,1.0,0.16667,2024
+Shazia Sadiq,University of Queensland,sigcse,1.0,0.33333,2020
+Shazia Sadiq,University of Queensland,sigir,1.0,0.2,2020
+Shazia Sadiq,University of Queensland,sigmod,1.0,0.2,2010
+Shazia Sadiq,University of Queensland,www,1.0,0.2,2023
 Sheelagh Carpendale,Simon Fraser University,chiconf,1.0,0.25,2005
 Sheelagh Carpendale,Simon Fraser University,chiconf,1.0,0.2,2006
 Sheelagh Carpendale,Simon Fraser University,chiconf,2.0,0.83333,2007
@@ -182388,6 +182399,7 @@ Shijian Lu,Nanyang Technological University,iros,1.0,0.16667,2022
 Shijian Lu,Nanyang Technological University,nips,1.0,0.25,2021
 Shijian Lu,Nanyang Technological University,nips,2.0,0.29167,2022
 Shijian Lu,Nanyang Technological University,nips,3.0,0.40278,2023
+Shijun Li,Wuhan University,ics,1.0,0.16667,2022
 Shijun Li,Wuhan University,kdd,1.0,0.16667,2023
 Shikui Tu,Shanghai Jiao Tong University,aaai,2.0,0.53333,2021
 Shikui Tu,Shanghai Jiao Tong University,aaai,2.0,0.58333,2023
@@ -194355,34 +194367,34 @@ Tae Hyun Kim 0006,Hanyang University,iccv,2.0,0.53333,2023
 Tae Hyun Kim 0006,Hanyang University,iclr,1.0,0.25,2024
 Tae Hyun Kim 0006,Hanyang University,icml,1.0,0.25,2023
 Tae Hyun Kim 0006,Hanyang University,nips,1.0,0.33333,2023
-Tae Hyun Oh,POSTECH,aaai,1.0,0.25,2018
-Tae Hyun Oh,POSTECH,aaai,1.0,0.33333,2024
-Tae Hyun Oh,POSTECH,cvpr,1.0,0.25,2015
-Tae Hyun Oh,POSTECH,cvpr,2.0,0.58333,2016
-Tae Hyun Oh,POSTECH,cvpr,2.0,0.45,2018
-Tae Hyun Oh,POSTECH,cvpr,3.0,0.59286,2019
-Tae Hyun Oh,POSTECH,cvpr,1.0,0.25,2020
-Tae Hyun Oh,POSTECH,cvpr,1.0,0.1,2021
-Tae Hyun Oh,POSTECH,cvpr,1.0,0.2,2023
-Tae Hyun Oh,POSTECH,cvpr,1.0,0.33333,2024
-Tae Hyun Oh,POSTECH,eccv,1.0,0.2,2012
-Tae Hyun Oh,POSTECH,eccv,1.0,0.14286,2018
-Tae Hyun Oh,POSTECH,eccv,3.0,0.91667,2022
-Tae Hyun Oh,POSTECH,eccv,1.0,0.25,2024
-Tae Hyun Oh,POSTECH,emnlp,1.0,0.25,2019
-Tae Hyun Oh,POSTECH,iccv,1.0,0.2,2013
-Tae Hyun Oh,POSTECH,iccv,2.0,0.36667,2017
-Tae Hyun Oh,POSTECH,iccv,2.0,0.33333,2021
-Tae Hyun Oh,POSTECH,iccv,3.0,0.53333,2023
-Tae Hyun Oh,POSTECH,iclr,1.0,0.33333,2022
-Tae Hyun Oh,POSTECH,iclr,1.0,0.25,2023
-Tae Hyun Oh,POSTECH,iclr,2.0,0.53333,2024
-Tae Hyun Oh,POSTECH,icml,1.0,0.2,2019
-Tae Hyun Oh,POSTECH,icra,2.0,0.4,2020
-Tae Hyun Oh,POSTECH,iros,1.0,0.2,2012
-Tae Hyun Oh,POSTECH,nips,1.0,0.25,2016
-Tae Hyun Oh,POSTECH,siggraph,1.0,0.2,2018
 Tae-Hyuk Ahn,Saint Louis University,ismb,1.0,0.125,2018
+Tae-Hyun Oh,POSTECH,aaai,1.0,0.25,2018
+Tae-Hyun Oh,POSTECH,aaai,1.0,0.33333,2024
+Tae-Hyun Oh,POSTECH,cvpr,1.0,0.25,2015
+Tae-Hyun Oh,POSTECH,cvpr,2.0,0.58333,2016
+Tae-Hyun Oh,POSTECH,cvpr,2.0,0.45,2018
+Tae-Hyun Oh,POSTECH,cvpr,3.0,0.59286,2019
+Tae-Hyun Oh,POSTECH,cvpr,1.0,0.25,2020
+Tae-Hyun Oh,POSTECH,cvpr,1.0,0.1,2021
+Tae-Hyun Oh,POSTECH,cvpr,1.0,0.2,2023
+Tae-Hyun Oh,POSTECH,cvpr,1.0,0.33333,2024
+Tae-Hyun Oh,POSTECH,eccv,1.0,0.2,2012
+Tae-Hyun Oh,POSTECH,eccv,1.0,0.14286,2018
+Tae-Hyun Oh,POSTECH,eccv,3.0,0.91667,2022
+Tae-Hyun Oh,POSTECH,eccv,1.0,0.25,2024
+Tae-Hyun Oh,POSTECH,emnlp,1.0,0.25,2019
+Tae-Hyun Oh,POSTECH,iccv,1.0,0.2,2013
+Tae-Hyun Oh,POSTECH,iccv,2.0,0.36667,2017
+Tae-Hyun Oh,POSTECH,iccv,2.0,0.33333,2021
+Tae-Hyun Oh,POSTECH,iccv,3.0,0.53333,2023
+Tae-Hyun Oh,POSTECH,iclr,1.0,0.33333,2022
+Tae-Hyun Oh,POSTECH,iclr,1.0,0.25,2023
+Tae-Hyun Oh,POSTECH,iclr,2.0,0.53333,2024
+Tae-Hyun Oh,POSTECH,icml,1.0,0.2,2019
+Tae-Hyun Oh,POSTECH,icra,2.0,0.4,2020
+Tae-Hyun Oh,POSTECH,iros,1.0,0.2,2012
+Tae-Hyun Oh,POSTECH,nips,1.0,0.25,2016
+Tae-Hyun Oh,POSTECH,siggraph,1.0,0.2,2018
 Tae-Kyun Kim 0001,KAIST,aaai,1.0,0.25,2015
 Tae-Kyun Kim 0001,KAIST,aaai,1.0,0.2,2018
 Tae-Kyun Kim 0001,KAIST,aaai,1.0,0.25,2020
@@ -204945,7 +204957,6 @@ Val Tannen,University of Pennsylvania,vldb,2.0,0.5,2011
 Val Tannen,University of Pennsylvania,vldb,1.0,0.33333,2014
 Val Tannen,University of Pennsylvania,vldb,1.0,0.2,2023
 Valdis Berzins,Naval Postgraduate School,rtss,1.0,0.5,1988
-Valentina A. M. Tamma,University of Liverpool,ijcai,1.0,0.25,2009
 Valentina Castiglioni,TU Eindhoven,lics,1.0,0.2,2021
 Valentina Nisi,Universidade de Lisboa,chiconf,1.0,0.076923,2017
 Valentina Nisi,Universidade de Lisboa,chiconf,1.0,0.25,2019
@@ -204953,6 +204964,7 @@ Valentina Nisi,Universidade de Lisboa,chiconf,1.0,0.33333,2020
 Valentina Nisi,Universidade de Lisboa,chiconf,1.0,0.25,2021
 Valentina Nisi,Universidade de Lisboa,chiconf,1.0,0.2,2022
 Valentina Nisi,Universidade de Lisboa,chiconf,1.0,0.14286,2023
+Valentina Tamma,University of Liverpool,ijcai,1.0,0.25,2009
 Valentine Kabanets,Simon Fraser University,crypto,1.0,0.33333,2007
 Valentine Kabanets,Simon Fraser University,focs,1.0,0.33333,2006
 Valentine Kabanets,Simon Fraser University,focs,1.0,0.25,2021
@@ -207760,6 +207772,11 @@ Vladimir Pavlovic 0001,Rutgers University,nips,1.0,0.33333,2000
 Vladimir Pavlovic 0001,Rutgers University,nips,1.0,0.33333,2008
 Vladimir Pavlovic 0001,Rutgers University,nips,1.0,0.5,2012
 Vladimir Pavlovic 0001,Rutgers University,nips,1.0,0.5,2020
+Vladimir Podolskii 0001,HSE University,iclr,1.0,0.25,2024
+Vladimir Podolskii 0001,HSE University,lics,1.0,0.25,2014
+Vladimir Podolskii 0001,HSE University,lics,1.0,0.33333,2015
+Vladimir Podolskii 0001,HSE University,pods,1.0,0.16667,2017
+Vladimir Podolskii 0001,HSE University,pods,1.0,0.25,2021
 Vladimir Reinharz,Université du Québec à Montréal,ismb,1.0,0.33333,2012
 Vladimir Reinharz,Université du Québec à Montréal,ismb,1.0,0.33333,2013
 Vladimir Reinharz,Université du Québec à Montréal,recomb,1.0,0.33333,2013
@@ -207771,11 +207788,6 @@ Vladimir Stojanovic,Univ. of California - Berkeley,iccad,1.0,0.5,2007
 Vladimir Stojanovic,Univ. of California - Berkeley,iccad,2.0,0.66667,2008
 Vladimir Stojanovic,Univ. of California - Berkeley,iccad,1.0,0.25,2019
 Vladimir Stojanovic,Univ. of California - Berkeley,isca,1.0,0.14286,2010
-Vladimir V. Podolskii,HSE University,iclr,1.0,0.25,2024
-Vladimir V. Podolskii,HSE University,lics,1.0,0.25,2014
-Vladimir V. Podolskii,HSE University,lics,1.0,0.33333,2015
-Vladimir V. Podolskii,HSE University,pods,1.0,0.16667,2017
-Vladimir V. Podolskii,HSE University,pods,1.0,0.25,2021
 Vladimir Vapnik,Columbia University,iclr,1.0,0.25,2016
 Vladimir Vapnik,Columbia University,icml,1.0,0.2,1994
 Vladimir Vapnik,Columbia University,icml,1.0,0.2,2006
@@ -217289,6 +217301,7 @@ Xiaoping Chen,USTC,iros,1.0,0.5,2015
 Xiaoping Chen,USTC,iros,3.0,0.53571,2017
 Xiaoping Chen,USTC,iros,1.0,0.16667,2021
 Xiaoping Chen,USTC,nips,1.0,0.33333,2013
+Xiaoping Zhang,Tsinghua University,aaai,1.0,0.2,2024
 Xiaoping Zhang,Tsinghua University,chiconf,1.0,0.5,2024
 Xiaoqi Tan,University of Alberta,sigmetrics,1.0,0.2,2020
 Xiaoqing Lu,Peking University,iccv,1.0,0.2,2017
@@ -222570,9 +222583,6 @@ Yangsheng Xu,CUHK (SZ),iros,2.0,0.36667,2012
 Yangsheng Xu,CUHK (SZ),iros,3.0,0.53333,2013
 Yangsheng Xu,CUHK (SZ),iros,2.0,0.66667,2014
 Yangsheng Xu,CUHK (SZ),iros,3.0,0.53333,2021
-Yangyang Li,Xidian University,nips,1.0,0.2,2023
-Yangyang Li,Xidian University,www,1.0,0.14286,2023
-Yangyang Li,Xidian University,www,1.0,0.14286,2024
 Yangyang Li 0001,Xidian University,aaai,1.0,0.16667,2021
 Yangyong Zhu,Fudan University,aaai,1.0,0.25,2013
 Yangyong Zhu,Fudan University,kdd,1.0,0.25,2016
@@ -230314,52 +230324,6 @@ Yu-Cheng Tu 0001,University of Auckland,sigcse,1.0,0.33333,2023
 Yu-Chun (Grace) Yen,National Chiao Tung University,chiconf,1.0,0.16667,2017
 Yu-Chun (Grace) Yen,National Chiao Tung University,chiconf,1.0,0.33333,2020
 Yu-Chun (Grace) Yen,National Chiao Tung University,chiconf,1.0,0.14286,2024
-Yu-Gang Jiang,Fudan University,aaai,1.0,0.16667,2013
-Yu-Gang Jiang,Fudan University,aaai,1.0,0.33333,2014
-Yu-Gang Jiang,Fudan University,aaai,1.0,0.2,2017
-Yu-Gang Jiang,Fudan University,aaai,5.0,1.5417,2019
-Yu-Gang Jiang,Fudan University,aaai,2.0,0.28571,2020
-Yu-Gang Jiang,Fudan University,aaai,3.0,0.61667,2022
-Yu-Gang Jiang,Fudan University,aaai,1.0,0.14286,2023
-Yu-Gang Jiang,Fudan University,aaai,3.0,0.46786,2024
-Yu-Gang Jiang,Fudan University,acl,1.0,0.25,2018
-Yu-Gang Jiang,Fudan University,acl,1.0,0.0625,2024
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.33333,2009
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.25,2011
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.2,2012
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.25,2016
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.14286,2017
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.14286,2018
-Yu-Gang Jiang,Fudan University,cvpr,4.0,0.75,2020
-Yu-Gang Jiang,Fudan University,cvpr,1.0,0.5,2021
-Yu-Gang Jiang,Fudan University,cvpr,5.0,0.84683,2022
-Yu-Gang Jiang,Fudan University,cvpr,11.0,1.8345,2023
-Yu-Gang Jiang,Fudan University,cvpr,5.0,0.81905,2024
-Yu-Gang Jiang,Fudan University,eccv,2.0,0.53333,2012
-Yu-Gang Jiang,Fudan University,eccv,2.0,0.58333,2014
-Yu-Gang Jiang,Fudan University,eccv,4.0,0.65833,2018
-Yu-Gang Jiang,Fudan University,eccv,2.0,0.75,2020
-Yu-Gang Jiang,Fudan University,eccv,5.0,0.98333,2022
-Yu-Gang Jiang,Fudan University,eccv,2.0,0.29167,2024
-Yu-Gang Jiang,Fudan University,iccv,1.0,0.25,2009
-Yu-Gang Jiang,Fudan University,iccv,1.0,0.25,2013
-Yu-Gang Jiang,Fudan University,iccv,2.0,0.36667,2017
-Yu-Gang Jiang,Fudan University,iccv,3.0,0.89286,2021
-Yu-Gang Jiang,Fudan University,iccv,2.0,0.36667,2023
-Yu-Gang Jiang,Fudan University,icml,2.0,0.34286,2023
-Yu-Gang Jiang,Fudan University,ijcai,1.0,0.25,2013
-Yu-Gang Jiang,Fudan University,ijcai,1.0,0.2,2015
-Yu-Gang Jiang,Fudan University,ijcai,1.0,0.14286,2018
-Yu-Gang Jiang,Fudan University,ijcai,2.0,0.5,2019
-Yu-Gang Jiang,Fudan University,ijcai,1.0,0.125,2022
-Yu-Gang Jiang,Fudan University,ijcai,1.0,0.2,2023
-Yu-Gang Jiang,Fudan University,ijcai,1.0,0.1,2024
-Yu-Gang Jiang,Fudan University,naacl,1.0,0.1,2024
-Yu-Gang Jiang,Fudan University,nips,1.0,0.25,2019
-Yu-Gang Jiang,Fudan University,nips,1.0,0.1,2022
-Yu-Gang Jiang,Fudan University,nips,2.0,0.35,2023
-Yu-Gang Jiang,Fudan University,sigir,1.0,0.2,2019
-Yu-Gang Jiang,Fudan University,sigir,1.0,0.125,2022
 Yu-Kai Wang,University of Technology Sydney,icra,1.0,0.14286,2019
 Yu-Kai Wang,University of Technology Sydney,icra,1.0,0.16667,2021
 Yu-Kai Wang,University of Technology Sydney,nips,1.0,0.2,2023
@@ -231919,6 +231883,52 @@ Yufeng Zhang 0001,Hunan University,fse,1.0,0.14286,2024
 Yufeng Zhang 0001,Hunan University,icse,1.0,0.2,2015
 Yufeng Zhang 0001,Hunan University,issta,3.0,0.50952,2021
 Yufeng Zhang 0001,Hunan University,nips,1.0,0.14286,2023
+Yugang Jiang,Fudan University,aaai,1.0,0.16667,2013
+Yugang Jiang,Fudan University,aaai,1.0,0.33333,2014
+Yugang Jiang,Fudan University,aaai,1.0,0.2,2017
+Yugang Jiang,Fudan University,aaai,5.0,1.5417,2019
+Yugang Jiang,Fudan University,aaai,2.0,0.28571,2020
+Yugang Jiang,Fudan University,aaai,3.0,0.61667,2022
+Yugang Jiang,Fudan University,aaai,1.0,0.14286,2023
+Yugang Jiang,Fudan University,aaai,3.0,0.46786,2024
+Yugang Jiang,Fudan University,acl,1.0,0.25,2018
+Yugang Jiang,Fudan University,acl,1.0,0.0625,2024
+Yugang Jiang,Fudan University,cvpr,1.0,0.33333,2009
+Yugang Jiang,Fudan University,cvpr,1.0,0.25,2011
+Yugang Jiang,Fudan University,cvpr,1.0,0.2,2012
+Yugang Jiang,Fudan University,cvpr,1.0,0.25,2016
+Yugang Jiang,Fudan University,cvpr,1.0,0.14286,2017
+Yugang Jiang,Fudan University,cvpr,1.0,0.14286,2018
+Yugang Jiang,Fudan University,cvpr,4.0,0.75,2020
+Yugang Jiang,Fudan University,cvpr,1.0,0.5,2021
+Yugang Jiang,Fudan University,cvpr,5.0,0.84683,2022
+Yugang Jiang,Fudan University,cvpr,11.0,1.8345,2023
+Yugang Jiang,Fudan University,cvpr,5.0,0.81905,2024
+Yugang Jiang,Fudan University,eccv,2.0,0.53333,2012
+Yugang Jiang,Fudan University,eccv,2.0,0.58333,2014
+Yugang Jiang,Fudan University,eccv,4.0,0.65833,2018
+Yugang Jiang,Fudan University,eccv,2.0,0.75,2020
+Yugang Jiang,Fudan University,eccv,5.0,0.98333,2022
+Yugang Jiang,Fudan University,eccv,2.0,0.29167,2024
+Yugang Jiang,Fudan University,iccv,1.0,0.25,2009
+Yugang Jiang,Fudan University,iccv,1.0,0.25,2013
+Yugang Jiang,Fudan University,iccv,2.0,0.36667,2017
+Yugang Jiang,Fudan University,iccv,3.0,0.89286,2021
+Yugang Jiang,Fudan University,iccv,2.0,0.36667,2023
+Yugang Jiang,Fudan University,icml,2.0,0.34286,2023
+Yugang Jiang,Fudan University,ijcai,1.0,0.25,2013
+Yugang Jiang,Fudan University,ijcai,1.0,0.2,2015
+Yugang Jiang,Fudan University,ijcai,1.0,0.14286,2018
+Yugang Jiang,Fudan University,ijcai,2.0,0.5,2019
+Yugang Jiang,Fudan University,ijcai,1.0,0.125,2022
+Yugang Jiang,Fudan University,ijcai,1.0,0.2,2023
+Yugang Jiang,Fudan University,ijcai,1.0,0.1,2024
+Yugang Jiang,Fudan University,naacl,1.0,0.1,2024
+Yugang Jiang,Fudan University,nips,1.0,0.25,2019
+Yugang Jiang,Fudan University,nips,1.0,0.1,2022
+Yugang Jiang,Fudan University,nips,2.0,0.35,2023
+Yugang Jiang,Fudan University,sigir,1.0,0.2,2019
+Yugang Jiang,Fudan University,sigir,1.0,0.125,2022
 Yuguang Fang,City University of Hong Kong,icra,1.0,0.14286,2024
 Yugyung Lee,University of Missouri - Kansas City,aaai,1.0,0.5,2018
 Yuh-Dauh Lyuu,National Taiwan University,soda,1.0,0.5,2004
