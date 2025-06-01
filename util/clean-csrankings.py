@@ -9,7 +9,6 @@ import gzip
 import json
 import operator
 import os
-import pkg_resources
 import random
 import re
 import requests

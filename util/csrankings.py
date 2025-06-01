@@ -90,6 +90,28 @@ def test_pagecount() -> int:
     assert pagecount("138:200-138:208") == 9
 
 
+def map_pacmmod_to_conference(journal: Conference, year: int, number_str: str) -> tuple[Conference, int]:
+    """
+    Maps PACMMOD volumes to SIGMOD and PODS conferences based on year and number.
+    """
+    try:
+        number = int(number_str)
+        if journal == Conference("Proc. ACM Manag. Data"):
+            if year == 2023:
+                if number in {1, 2}:
+                    return (Conference("SIGMOD Conference"), 2023)
+                elif number in {3, 4}:
+                    return (Conference("SIGMOD Conference"), 2024)
+            elif year == 2024:
+                if number in {1, 3, 4}:
+                    return (Conference("SIGMOD Conference"), 2024)
+                elif number == 2:
+                    return (Conference("PODS"), 2024)
+    except:
+        pass
+    return (journal, year)
+
+
 #
 # Max three most selective venues per area for now.
 #
@@ -160,8 +182,9 @@ areadict: Dict[Area, List[Conference]] = {
     ],
     Area("icfp"): [Conference("ICFP")],
     Area("pacmpl"): [Conference("PACMPL"), Conference("Proc. ACM Program. Lang.")],
-    Area("icse"): [Conference("ICSE"), Conference("ICSE (1)")],
-    Area("fse"): [Conference("SIGSOFT FSE"), Conference("ESEC/SIGSOFT FSE")],
+    Area("pacmmod"): [Conference("Proc. ACM Manag. Data")],
+    Area("icse"): [Conference("ICSE"), Conference("ICSE (1)"), Conference("ICSE (2)")],
+    Area("fse"): [Conference("SIGSOFT FSE"), Conference("ESEC/SIGSOFT FSE"), Conference("Proc. ACM Softw. Eng.")],
     Area("ase"): [Conference("ASE")],
     Area("issta"): [Conference("ISSTA")],
     Area("sosp"): [Conference("SOSP")],
@@ -171,6 +194,8 @@ areadict: Dict[Area, List[Conference]] = {
     Area("usenixatc"): [
         Conference("USENIX Annual Technical Conference"),
         Conference("USENIX Annual Technical Conference, General Track"),
+        Conference("USENIX ATC"),
+        Conference("USENIX ATC, General Track"),
     ],
     Area("imc"): [Conference("IMC"), Conference("Internet Measurement Conference")],
     Area("sigmetrics"): [
@@ -205,7 +230,6 @@ areadict: Dict[Area, List[Conference]] = {
     ],
     Area("sigmod"): [
         Conference("SIGMOD Conference"),
-        Conference("Proc. ACM Manag. Data"),
     ],
     Area("icde"): [Conference("ICDE")],
     Area("pods"): [Conference("PODS")],
@@ -216,6 +240,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("oakland"): [
         Conference("IEEE Symposium on Security and Privacy"),
         Conference("SP"),
+        Conference("S&P"),
     ],
     Area("usenixsec"): [
         Conference("USENIX Security Symposium"),
@@ -234,6 +259,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ASPLOS (1)"),
         Conference("ASPLOS (2)"),
         Conference("ASPLOS (3)"),
+        Conference("ASPLOS (4)"),
     ],
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
@@ -255,11 +281,11 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ICML (2)"),
         Conference("ICML (3)"),
     ],
-    Area("iclr"): [Conference("ICLR")],
+    Area("iclr"): [Conference("ICLR"), Conference("ICLR (Poster)")],
     Area("kdd"): [Conference("KDD")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
-    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH")],
+    Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
     Area("siggraph-asia"): [
         Conference("ACM Trans. Graph."),
         Conference("SIGGRAPH Asia"),
@@ -356,6 +382,11 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("CRYPTO (3)"),
         Conference("CRYPTO (4)"),
         Conference("CRYPTO (5)"),
+        Conference("CRYPTO (6)"),
+        Conference("CRYPTO (7)"),
+        Conference("CRYPTO (8)"),
+        Conference("CRYPTO (9)"),
+        Conference("CRYPTO (10)"),
     ],
     Area("eurocrypt"): [
         Conference("EUROCRYPT"),
@@ -381,20 +412,23 @@ areadict: Dict[Area, List[Conference]] = {
     Area("vr"): [Conference("VR")],
     Area("ec"): [Conference("EC")],
     Area("wine"): [Conference("WINE")],
-    Area("sigcse"): [Conference("SIGCSE")],
+    Area("sigcse"): [Conference("SIGCSE"), Conference("SIGCSE (1)")],
 }
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106)}
-EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11)}
+# 2023 info contributed by Ezio Bartocci
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156)}
+
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11), 2024: (43, 11)}
+
 # 2018 page numbers contributed by Ezio Bartocci
-# 2022 numbers contributed by Changhee Jang
+# 2022, 2024 numbers contributed by Changhee Jang
 EMSOFT_TCAD_PaperStart = {
     2018: {
         2188,
         2200,
-        2233,
         2244,
+        2290,
         2311,
         2393,
         2404,
@@ -481,6 +515,36 @@ EMSOFT_TCAD_PaperStart = {
         4539,
         4563,
     },
+    2024: {
+        3382,
+        3419,
+        3431,
+        3467,
+        3515,
+        3539,
+        3564,
+        3576,
+        3588,
+        3662,
+        3708,
+        3732,
+        3756,
+        3768,
+        3780,
+        3804,
+        4045,
+        4057,
+        4093,
+        4154,
+        4238,
+        4250,
+        4274,
+        4286,
+        4298,
+        4310,
+        4322,
+        4334
+    },
 }
 # DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
 DAC_TooShortPapers = {
@@ -549,8 +613,9 @@ ISMB_Bioinformatics = {
     2007: (23, 13),
 }
 # TOG special handling to count only SIGGRAPH proceedings.
-# Assuming all will be in the same issues through 2023.
+# Assuming all will be in the same issues through 2024.
 TOG_SIGGRAPH_Volume = {
+    2024: (43, 4),
     2023: (42, 4),
     2022: (41, 4),
     2021: (40, 4),
@@ -575,8 +640,9 @@ TOG_SIGGRAPH_Volume = {
     2002: (21, 3),
 }
 # TOG special handling to count only SIGGRAPH Asia proceedings.
-# Assuming all will be in the same issues through 2023.
+# Assuming all will be in the same issues through 2024.
 TOG_SIGGRAPH_Asia_Volume = {
+    2024: (43, 6),
     2023: (42, 6),
     2022: (41, 6),
     2021: (40, 6),
@@ -595,8 +661,9 @@ TOG_SIGGRAPH_Asia_Volume = {
     2008: (27, 5),
 }
 # CGF special handling to count only EUROGRAPHICS proceedings.
-# Assuming all will be in the same issues through 2023.
+# Assuming all will be in the same issues through 2024.
 CGF_EUROGRAPHICS_Volume = {
+    2024: (43, 2),
     2023: (42, 2),
     2022: (41, 2),
     2021: (40, 2),
@@ -632,6 +699,8 @@ CGF_EUROGRAPHICS_Volume = {
 }
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2025: (31, 1),
+    2024: (30, 1),
     2023: (29, 1),
     2022: (28, 1),
     2021: (27, 2),
@@ -652,6 +721,9 @@ TVCG_Vis_Volume = {
 }
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {
+    2025: (31, 5),
+    2024: (30, 5),
+    2023: (29, 5),
     2022: (28, 5),
     2021: (27, 5),
     2020: (26, 5),
@@ -793,13 +865,15 @@ def countPaper(
     title: Title,
 ) -> bool:
     """Returns true iff this paper will be included in the rankings."""
+
     if year < startyear or year > endyear:
         return False
+
     # Special handling for EMSOFT (TECS).
-    if confname in [
+    if confname in {
         "ACM Trans. Embedded Comput. Syst.",
         "ACM Trans. Embed. Comput. Syst.",
-    ]:
+    }:
         if year not in EMSOFT_TECS:
             return False
         if pvmatcher := TECSCounterColon.match(pages):
@@ -824,7 +898,7 @@ def countPaper(
         if (year, startPage, startPage + pageCount - 1) not in SIGCSE:
             return False
     # Special handling for ISMB.
-    if confname in ["Bioinformatics", "Bioinform."]:
+    if confname in {"Bioinformatics", "Bioinform."}:
         if year not in ISMB_Bioinformatics:
             return False
         vol, num = ISMB_Bioinformatics[year]
@@ -838,7 +912,7 @@ def countPaper(
             startPage = int(pg.group(1))
             end = int(pg.group(2))
             pageCount = end - startPage + 1
-    elif confname in ["ICSE", "ICSE (1)", "ICSE (2)"]:
+    elif confname in {"ICSE", "ICSE (1)", "ICSE (2)"}:
         if year in ICSE_ShortPaperStart:
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
@@ -900,7 +974,7 @@ def countPaper(
     if pageCount != -1 and pageCount < pageCountThreshold:
         exceptionConference = False
         exceptionConference |= confname == "SC" and (
-            year <= 2012 or year in [2017, 2020, 2021]
+            year <= 2012 or year in {2017, 2020, 2021}
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
@@ -918,6 +992,8 @@ def countPaper(
         exceptionConference |= confname == "CHI" and year == 2019
         exceptionConference |= confname == "FAST" and year == 2012
         exceptionConference |= confname == "DAC" and year == 2019
+        exceptionConference |= confname == "SIGMOD Conference" and year in { 2023, 2024 }
+        exceptionConference |= confname == "PODS" and year in { 2023, 2024 }
         # to handle very old ISCA conferences; all papers are full papers in ISCA now
         exceptionConference |= confname == "ISCA" and (pageCount < 0 or pageCount >= 3)
         tooFewPages = not exceptionConference
