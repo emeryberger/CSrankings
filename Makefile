@@ -34,8 +34,8 @@ update-dblp:
 clean-dblp:
 	@echo "Fixing character encodings."
 	sh ./util/fix-dblp.sh
-	mv dblp-fixed.xml dblp.xml
-	$(MAKE) shrink-dblp
+	gzip dblp-fixed.xml
+	$(PYTHON) util/find-missing-names-dblp.py
 
 download-dblp:
 	@echo "Downloading from DBLP."
