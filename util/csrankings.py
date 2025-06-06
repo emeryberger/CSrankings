@@ -98,12 +98,12 @@ def map_pacmmod_to_conference(journal: Conference, year: int, number_str: str) -
         number = int(number_str)
         if journal == Conference("Proc. ACM Manag. Data"):
             if year == 2023:
-                if number in [1, 2]:
+                if number in {1, 2}:
                     return (Conference("SIGMOD Conference"), 2023)
-                elif number in [3, 4]:
+                elif number in {3, 4}:
                     return (Conference("SIGMOD Conference"), 2024)
             elif year == 2024:
-                if number in [1, 3, 4]:
+                if number in {1, 3, 4}:
                     return (Conference("SIGMOD Conference"), 2024)
                 elif number == 2:
                     return (Conference("PODS"), 2024)
@@ -419,9 +419,10 @@ areadict: Dict[Area, List[Conference]] = {
 EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s")}
 EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156)}
 
-EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11)}
+EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11), 2024: (43, 11)}
+
 # 2018 page numbers contributed by Ezio Bartocci
-# 2022 numbers contributed by Changhee Jang
+# 2022, 2024 numbers contributed by Changhee Jang
 EMSOFT_TCAD_PaperStart = {
     2018: {
         2188,
@@ -513,6 +514,36 @@ EMSOFT_TCAD_PaperStart = {
         4504,
         4539,
         4563,
+    },
+    2024: {
+        3382,
+        3419,
+        3431,
+        3467,
+        3515,
+        3539,
+        3564,
+        3576,
+        3588,
+        3662,
+        3708,
+        3732,
+        3756,
+        3768,
+        3780,
+        3804,
+        4045,
+        4057,
+        4093,
+        4154,
+        4238,
+        4250,
+        4274,
+        4286,
+        4298,
+        4310,
+        4322,
+        4334
     },
 }
 # DAC in 2019 has article numbers. Some of these have too few pages. (Contributed by Wanli Chang.)
@@ -668,6 +699,7 @@ CGF_EUROGRAPHICS_Volume = {
 }
 # TVCG special handling to count only IEEE VIS
 TVCG_Vis_Volume = {
+    2025: (31, 1),
     2024: (30, 1),
     2023: (29, 1),
     2022: (28, 1),
@@ -689,6 +721,7 @@ TVCG_Vis_Volume = {
 }
 # TVCG special handling to count only IEEE VR
 TVCG_VR_Volume = {
+    2025: (31, 5),
     2024: (30, 5),
     2023: (29, 5),
     2022: (28, 5),
@@ -837,10 +870,10 @@ def countPaper(
         return False
 
     # Special handling for EMSOFT (TECS).
-    if confname in [
+    if confname in {
         "ACM Trans. Embedded Comput. Syst.",
         "ACM Trans. Embed. Comput. Syst.",
-    ]:
+    }:
         if year not in EMSOFT_TECS:
             return False
         if pvmatcher := TECSCounterColon.match(pages):
@@ -865,7 +898,7 @@ def countPaper(
         if (year, startPage, startPage + pageCount - 1) not in SIGCSE:
             return False
     # Special handling for ISMB.
-    if confname in ["Bioinformatics", "Bioinform."]:
+    if confname in {"Bioinformatics", "Bioinform."}:
         if year not in ISMB_Bioinformatics:
             return False
         vol, num = ISMB_Bioinformatics[year]
@@ -879,7 +912,7 @@ def countPaper(
             startPage = int(pg.group(1))
             end = int(pg.group(2))
             pageCount = end - startPage + 1
-    elif confname in ["ICSE", "ICSE (1)", "ICSE (2)"]:
+    elif confname in {"ICSE", "ICSE (1)", "ICSE (2)"}:
         if year in ICSE_ShortPaperStart:
             pageno = ICSE_ShortPaperStart[year]
             if startPage >= pageno:
@@ -941,7 +974,7 @@ def countPaper(
     if pageCount != -1 and pageCount < pageCountThreshold:
         exceptionConference = False
         exceptionConference |= confname == "SC" and (
-            year <= 2012 or year in [2017, 2020, 2021]
+            year <= 2012 or year in {2017, 2020, 2021}
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
