@@ -110,8 +110,11 @@ def has_valid_google_scholar_id(id):
     # Define the regular expression pattern for valid IDs
     pattern = '^[a-zA-Z0-9_-]{12}$'
     # Check if the ID matches the pattern
-    return re.match(pattern, id)
+    return re.match(pattern, id) is not None
 
+assert has_valid_google_scholar_id('NOSCHOLARPAGE')
+assert not has_valid_google_scholar_id('a_49dn0AAAAJ&hl')
+assert has_valid_google_scholar_id('a_49dn0AAAAJ')
 
 def matching_name_with_dblp(name: str) -> int:
     """
