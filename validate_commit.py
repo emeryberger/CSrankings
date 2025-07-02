@@ -10,6 +10,39 @@ import urllib.parse
 
 from validate_homepage import has_valid_homepage
 
+def get_dblp_info(path: str, timeout: float = 10.0) -> str:
+    """Try to fetch info from DBLP, returning the first live server.
+
+    Args:
+        path: The path to append to the base URL (e.g., '/rec/conf/pldi/Smith23').
+        timeout: Timeout in seconds for each request.
+
+    Returns:
+        The DBLP URL for the first successful fetch.
+
+    Raises:
+        RuntimeError: If both attempts fail.
+    """
+    urls = [
+        f"https://dblp.org{path}",
+        f"https://dblp.uni-trier.de{path}",
+        f"https://dblp.dagstuhl.de{path}"
+    ]
+
+    for url in urls:
+        try:
+            response = requests.get(url, timeout=timeout)
+            if response.ok:
+                return url
+            else:
+                print(f"Failed to fetch {url}: HTTP {response.status_code}")
+        except requests.RequestException as e:
+            print(f"Error fetching {url}: {e}")
+
+    raise RuntimeError("All DBLP fetch attempts failed.")
+
+DBLP = get_dblp_info("", 3.0)
+
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
 def remove_suffix_and_brackets(input_string: str) -> str:
@@ -57,7 +90,6 @@ def translate_name_to_dblp(name: str) -> str:
     new_name = new_name.replace('-', '=')
     new_name = urllib.parse.quote(new_name)
     str_ = ''
-    # str_ = "https://dblp.org/pers/hd"
     last_initial = last_name[0].lower()
     str_ += f'{last_name}:{new_name}'
     # str_ += f'/{last_initial}/{last_name}:{new_name}'
@@ -78,8 +110,11 @@ def has_valid_google_scholar_id(id):
     # Define the regular expression pattern for valid IDs
     pattern = '^[a-zA-Z0-9_-]{12}$'
     # Check if the ID matches the pattern
-    return re.match(pattern, id)
+    return re.fullmatch(pattern, id) is not None
 
+assert has_valid_google_scholar_id('NOSCHOLARPAGE')
+assert not has_valid_google_scholar_id('a_49dn0AAAAJ&hl')
+assert has_valid_google_scholar_id('a_49dn0AAAAJ')
 
 def matching_name_with_dblp(name: str) -> int:
     """
@@ -95,7 +130,7 @@ def matching_name_with_dblp(name: str) -> int:
     # Translate the name to a format that can be used in DBLP queries.
     author_name = translate_name_to_dblp(name)
     # Search for up to 10 matching authors.
-    dblp_url = f'https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    dblp_url = f'{DBLP}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
     try:
         # Send a request to the DBLP API.
         response = requests.get(dblp_url)
