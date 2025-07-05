@@ -24,6 +24,7 @@ def sort_csv_files(directives_file):
         
         for file_pattern in files:
             for file_path in glob(file_pattern):
+                print(f"Processing {file_path}")
                 line_ending = get_line_ending(file_path)
                 df = pd.read_csv(file_path)
                 

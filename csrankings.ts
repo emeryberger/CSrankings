@@ -44,6 +44,11 @@ interface CountryInfo {
     readonly countryabbrv: string;
 };
 
+interface CountryName {
+    readonly name: string;
+    readonly alpha_2: string;
+};
+
 interface Alias {
     readonly alias: string;
     readonly name: string;
@@ -198,6 +203,7 @@ class CSRankings {
             this.displayProgress(4);
             this.countAuthorAreas();
             await this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
+            await this.loadCountryNames(this.countryNames);
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
@@ -242,6 +248,7 @@ class CSRankings {
     private readonly authorFile = "./csrankings.csv";
     private readonly authorinfoFile = "./generated-author-info.csv";
     private readonly countryinfoFile = "./country-info.csv";
+    private readonly countrynamesFile = "./countries.csv";
     // private readonly aliasFile = "./dblp-aliases.csv";
     private readonly turingFile = "./turing.csv";
     private readonly turingImage = "./png/acm-turing-award.png";
@@ -509,6 +516,9 @@ class CSRankings {
 
     /* Map institution to (non-US) region. */
     private readonly countryInfo: { [key: string]: string } = {};
+
+    /* Map country codes (abbreviations) to names. */
+    private readonly countryNames: { [key: string]: string } = {};
 
     /* Map institution to (non-US) abbreviation. */
     private readonly countryAbbrv: { [key: string]: string } = {};
@@ -947,6 +957,22 @@ class CSRankings {
         }
     }
 
+    private async loadCountryNames(countryNames: { [key: string]: string }): Promise<void> {
+        const data = await new Promise((resolve) => {
+            Papa.parse(this.countrynamesFile, {
+                header: true,
+                download: true,
+                complete: (results) => {
+                    resolve(results.data);
+                }
+            });
+        });
+        const ci = data as Array<CountryName>;
+        for (const info of ci) {
+            countryNames[info.alpha_2] = info.name;
+        }
+    }
+
     private async loadAuthorInfo(): Promise<void> {
         const data = await new Promise((resolve) => {
             Papa.parse(this.authorFile, {
@@ -1274,13 +1300,14 @@ class CSRankings {
             let keys = Object.keys(fc);
             keys.sort((a: string, b: string) => {
                 if (fc[b] === fc[a]) {
-                    return this.compareNames(a, b);
-                    /*		    let fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                            const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                            if (fb === fa) {
-                            return this.compareNames(a, b);
-                            }
-                            return fb - fa; */
+                    // return this.compareNames(a, b);
+		    const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                    const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                    if (fb === fa) {
+                       return this.compareNames(a, b);
+                    } else {
+                       return fb - fa;
+		    }
                 } else {
                     return fc[b] - fc[a];
                 }
@@ -1411,8 +1438,10 @@ class CSRankings {
                     abbrv = countryAbbrv[dept];
                 }
 
+		const country = this.countryNames[abbrv.toUpperCase()] ?? abbrv.toUpperCase();
+		
                 s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
-		  + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
+		  + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
                     + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
                     + this.ChartIcon + "</span>";
                 s += "</td>";

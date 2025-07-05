@@ -5,7 +5,44 @@ import re
 import requests
 import sys
 import time
+import unidecode
 import urllib.parse
+
+from validate_homepage import has_valid_homepage
+
+def get_dblp_info(path: str, timeout: float = 10.0) -> str:
+    """Try to fetch info from DBLP, returning the first live server.
+
+    Args:
+        path: The path to append to the base URL (e.g., '/rec/conf/pldi/Smith23').
+        timeout: Timeout in seconds for each request.
+
+    Returns:
+        The DBLP URL for the first successful fetch.
+
+    Raises:
+        RuntimeError: If both attempts fail.
+    """
+    urls = [
+        f"https://dblp.org{path}",
+        f"https://dblp.uni-trier.de{path}",
+        f"https://dblp.dagstuhl.de{path}"
+    ]
+
+    for url in urls:
+        try:
+            response = requests.get(url, timeout=timeout)
+            if response.ok:
+                return url
+            else:
+                print(f"Failed to fetch {url}: HTTP {response.status_code}")
+        except requests.RequestException as e:
+            print(f"Error fetching {url}: {e}")
+
+    raise RuntimeError("All DBLP fetch attempts failed.")
+
+DBLP = get_dblp_info("", 3.0)
+
 allowed_files = ['csrankings-[a-z0].csv', 'country-info.csv', 'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv']
 
 def remove_suffix_and_brackets(input_string: str) -> str:
@@ -53,7 +90,6 @@ def translate_name_to_dblp(name: str) -> str:
     new_name = new_name.replace('-', '=')
     new_name = urllib.parse.quote(new_name)
     str_ = ''
-    # str_ = "https://dblp.org/pers/hd"
     last_initial = last_name[0].lower()
     str_ += f'{last_name}:{new_name}'
     # str_ += f'/{last_initial}/{last_name}:{new_name}'
@@ -67,32 +103,6 @@ def has_reasonable_title(title):
     # Check if the title is reasonable
     return not title.startswith('Update csrankings-')
 
-# Use richer headers to avoid 403 errors.
-# From https://scrapeops.io/web-scraping-playbook/403-forbidden-error-web-scraping.
-HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Accept-Encoding": "gzip, deflate",
-        "Connection": "keep-alive",
-        "Upgrade-Insecure-Requests": "1",
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "none",
-        "Sec-Fetch-User": "?1",
-        "Cache-Control": "max-age=0",
-    }
-
-def has_valid_homepage(homepage: str) -> bool:
-    try:
-        response = requests.get(homepage, headers=HEADERS, timeout=15)
-        if response.status_code != 200:
-            print(f'  WARNING: Received error code {response.status_code}.')
-        return response.status_code == 200
-    except requests.exceptions.RequestException as e:
-        print(f"  ERROR: An exception occurred: {e}")
-        return False
-
 def has_valid_google_scholar_id(id):
     # Check if the Google Scholar ID is valid
     if id == 'NOSCHOLARPAGE':
@@ -100,8 +110,11 @@ def has_valid_google_scholar_id(id):
     # Define the regular expression pattern for valid IDs
     pattern = '^[a-zA-Z0-9_-]{12}$'
     # Check if the ID matches the pattern
-    return re.match(pattern, id)
+    return re.fullmatch(pattern, id) is not None
 
+assert has_valid_google_scholar_id('NOSCHOLARPAGE')
+assert not has_valid_google_scholar_id('a_49dn0AAAAJ&hl')
+assert has_valid_google_scholar_id('a_49dn0AAAAJ')
 
 def matching_name_with_dblp(name: str) -> int:
     """
@@ -117,7 +130,7 @@ def matching_name_with_dblp(name: str) -> int:
     # Translate the name to a format that can be used in DBLP queries.
     author_name = translate_name_to_dblp(name)
     # Search for up to 10 matching authors.
-    dblp_url = f'https://dblp.org/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    dblp_url = f'{DBLP}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
     try:
         # Send a request to the DBLP API.
         response = requests.get(dblp_url)
@@ -145,9 +158,9 @@ def matching_name_with_dblp(name: str) -> int:
 def is_valid_file(file: str) -> bool:
     global allowed_files
     if re.match('.*\\.csv', file):
-        if not any((re.match(pattern, file) for pattern in allowed_files)):
-            return False
-    return True
+        if any((re.match(pattern, file) for pattern in allowed_files)):
+            return True
+    return False
 
 def process():
 
@@ -192,7 +205,7 @@ def process():
         # Check if we are processing a `csrankings-?.csv` file.
         matched = re.match('csrankings-([a-z0])\\.csv', file)
         if matched:
-            the_letter = matched.groups(0)[0]
+            the_letter = unidecode.unidecode(matched.groups(0)[0]) # Convert to ASCII
             for l in changed_lines[file]:
                 line_valid = True
                 remaining_diffs -= 1
@@ -208,7 +221,7 @@ def process():
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
-                    name = remove_suffix_and_brackets(name)
+                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
                     # Verify that the affiliation is already in the database
                     if affiliation not in institutions:
                         print(f'  ERROR: This institution ({affiliation}) was not found in `institutions.csv`.')
