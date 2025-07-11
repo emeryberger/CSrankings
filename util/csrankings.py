@@ -322,6 +322,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("HLT-NAACL"),
         Conference("NAACL-HLT"),
         Conference("NAACL-HLT (1)"),
+        Conference("NAACL (Long Papers)"),
     ],
     Area("cvpr"): [Conference("CVPR"), Conference("CVPR (1)"), Conference("CVPR (2)")],
     Area("iccv"): [Conference("ICCV")],
