@@ -7,8 +7,117 @@ import sys
 import time
 import unidecode
 import urllib.parse
+import os
+import openai
+import json
+import re
+import sys
+
+from typing import List, Literal, Optional
+from pydantic import BaseModel, ValidationError
 
 from validate_homepage import has_valid_homepage
+
+MAX_RETRIES = 3
+
+class AuditEntry(BaseModel):
+    name: str
+    dblp_name: str
+    change: Literal['addition', 'deletion', 'modification']
+    classification: Literal['valid', 'invalid', 'questionable']
+    explanation: str
+    
+def extract_json_from_backquotes(text: str) -> str:
+    """Try to extract the first JSON-like block enclosed in backticks."""
+    match = re.search(r"```(?:json)?\n(.*?)```", text, re.DOTALL)
+    return match.group(1).strip() if match else text
+
+def load_diff(diff_file_path: str) -> str:
+    """Convert structured JSON diff to a readable text format."""
+    with open(diff_file_path, "r", encoding="utf-8") as f:
+        json_data = json.load(f)
+
+    diff_lines = []
+    for file_diff in json_data.get("files", []):
+        path = file_diff.get("path", "")
+        for chunk in file_diff.get("chunks", []):
+            for change in chunk.get("changes", []):
+                change_type = change.get("type")
+                content = change.get("content", '').strip()
+                if change_type == "AddedLine":
+                    diff_lines.append(f"+ {content} ({path})")
+                elif change_type == "DeletedLine":
+                    diff_lines.append(f"- {content} ({path})")
+                elif change_type == "ModifiedLine":
+                    old_line = change.get("oldLine", '').strip()
+                    new_line = change.get("newLine", '').strip()
+                    diff_lines.append(f"- {old_line} ({path})")
+                    diff_lines.append(f"+ {new_line} ({path})")
+                    # diff_lines.append(f"~ {old_line} -> {new_line} ({path})")
+
+    return "\n".join(diff_lines)
+
+def construct_prompt(diff):
+    fname = "CONTRIBUTING.md"
+    with open(fname, "r") as f:
+        contributing = f.read()
+    
+    prompt = f"""
+Audit this pull request to verify the following checklist for a PR to CSrankings. Indicate any questionable additions, removals, or modifications. In particular, verify if any new faculty are affiliated at the listed institution, and whether they are in computer science or can solely supervise PhD students for a degree in computer science, and if they are full-time faculty members. Consult their home page (included in the PR), and if necessary, consult LinkedIn or departmental web pages and Google Scholar (using the included Google Scholar ID). Respond ONLY with a JSON file like the following:
+
+{{ 
+[
+    'name' : (the name),
+    'dblp_name' : (the DBLP name),
+    'change': (one of 'addition', 'deletion', 'modification'),
+    'classification': (one of 'valid', 'invalid', 'questionable'),
+    'explanation': (a textual explanation of the reason for the declared classification),
+  ]
+}}
+
+Pull request diff:
+
+{diff}
+
+Checklist:
+
+{contributing}
+    
+"""
+    # print(prompt)
+    return prompt
+
+
+def run_audit(client, diff_path: str) -> Optional[List[dict]]:
+    diff_text = load_diff(diff_path)
+    prompt = construct_prompt(diff_text)
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2
+        )
+
+        output = response.choices[0].message.content
+        output_clean = extract_json_from_backquotes(output)
+
+        try:
+            parsed = json.loads(output_clean)
+            validated = [AuditEntry(**entry) for entry in parsed]
+            filtered_sorted = sorted(
+                (entry.model_dump() for entry in validated if entry.classification in {"invalid", "questionable"}),
+                key=lambda x: ("invalid" if x["classification"] == "invalid" else "questionable", x["name"].lower())
+            )
+            return filtered_sorted            
+        except (json.JSONDecodeError, ValidationError) as e:
+            print(f"Attempt {attempt} failed: {e}\n")
+            if attempt == MAX_RETRIES:
+                print("Max retries reached. Raw output:")
+                print(output)
+    return None
+
+
 
 def get_dblp_info(path: str, timeout: float = 10.0) -> str:
     """Try to fetch info from DBLP, returning the first live server.
@@ -163,7 +272,6 @@ def is_valid_file(file: str) -> bool:
     return False
 
 def process():
-
     # Read in the institutions dictionary.
     institutions = {}
     with open('institutions.csv', 'r') as f:
@@ -214,7 +322,7 @@ def process():
                     valid, line_valid = (False, False)
                     break
                 line = l['content'].strip()
-                print(f'Processing {line}')
+                # print(f'Processing {line}')
                 if re.search(',\\s', line):
                     print(f'  ERROR: Found a space after a comma ({line}). Please ensure there are no spaces after commas.')
                     valid, line_valid = (False, False)
@@ -260,9 +368,26 @@ def process():
                 except Exception as e:
                     print(f'Processing failed ({e}).')
                     valid, line_valid = (False, False)
-    if valid:
-        sys.exit(0)
-    else:
-        sys.exit(-1)
+    return valid
+
+        
 if __name__ == '__main__':
-    process()
+    # Fetch API key from environment variable
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise EnvironmentError("OPENAI_API_KEY not set in environment.")
+
+    valid = process()
+    if not valid:
+        sys.exit(-1)
+    # openai.api_key = api_key
+    client = openai.OpenAI(api_key=api_key)
+
+    diff_path = sys.argv[1]
+    result = run_audit(client, diff_path)
+    if result:
+        for item in result:
+            print(f"* Update for {item['name']} ({item['dblp_name']}) is {item['classification']}: {item['explanation']}")
+            print("")
+        sys.exit(-1)
+    sys.exit(0)
