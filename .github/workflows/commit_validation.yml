@@ -1,47 +1,83 @@
 name: Commit Validation
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
 
-permissions: read-all
+permissions:
+  pull-requests: read
+  contents: read
 
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: "3.10"
 
-      # Checkout the repo
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # needed to checkout all branches for this Action to work
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      # Check the PR diff using the current branch and the base branch of the PR
-      - uses: GrantBirki/git-diff-action@v2.0.1
-        id: git-diff-action
-        with:
-          json_diff_file_output: diff.json
-          raw_diff_file_output: diff.txt
-
-      # Print the diff in JSON format
-      - name: Check commits for validity
-        id: validation
+      - name: Generate diff.json from PR using GitHub API
         env:
-          DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 <<EOF
+          import os
+          import json
+          import requests
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          pr_number = os.environ["GITHUB_REF"].split("/")[-1]
+          token = os.environ["GITHUB_TOKEN"]
+          headers = {"Authorization": f"Bearer {token}"}
+          diff_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
+
+          print(f"Fetching: {diff_url}")
+          response = requests.get(diff_url, headers=headers)
+          response.raise_for_status()
+          files = response.json()
+
+          output = {"files": []}
+
+          for f in files:
+              filename = f["filename"]
+              patch = f.get("patch")
+              if not patch or not filename.endswith(".csv"):
+                  continue
+
+              lines = patch.splitlines()
+              changes = []
+
+              for line in lines:
+                  if line.startswith("+") and not line.startswith("+++"):
+                      changes.append({"type": "AddedLine", "content": line[1:]})
+                  elif line.startswith("-") and not line.startswith("---"):
+                      changes.append({"type": "DeletedLine", "content": line[1:]})
+                  # Optionally support ModifiedLine if needed
+
+              if changes:
+                  output["files"].append({
+                      "path": filename,
+                      "chunks": [{"changes": changes}]
+                  })
+
+          with open("diff.json", "w") as f:
+              json.dump(output, f, indent=2)
+          EOF
+
+      - name: Run CSV + OpenAI validation
+        env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          pip install -r requirements.txt
-          python validate_commit.py $DIFF
+          python3 validate_commit.py diff.json
 
   upload:
     runs-on: ubuntu-latest
-
+    needs: commit_validation
     steps:
       - name: Save PR number
         env:
