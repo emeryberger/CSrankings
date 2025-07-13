@@ -34,7 +34,7 @@ jobs:
         id: validation
         env:
           DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
-	  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           pip install -r requirements.txt
           python validate_commit.py $DIFF
