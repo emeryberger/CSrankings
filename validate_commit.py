@@ -267,20 +267,20 @@ def process_csv_diff(diff_path: str) -> bool:
                     print(f"Checking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"WARNING:\tInvalid homepage: {homepage}")
+                        print(f"WARN:\tInvalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
                     if name not in homepage_text:
-                        print(f"WARNING:\tExact match of name ({name}) not found on home page ({homepage}).")
+                        print(f"WARN:\tExact match of name ({name}) not found on home page ({homepage}).")
                         if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
-                            print(f"WARNING:\tNo fuzzy match for {name} found on home page.")
+                            print(f"WARN:\tNo fuzzy match for {name} found on home page.")
                     else:    
                         print(f"INFO:\tName ({name}) found on home page.")
                     if affiliation not in homepage_text:
-                        print(f"WARNING:\tAffiliation ({affiliation}) not found on home page.")
+                        print(f"WARN:\tAffiliation ({affiliation}) not found on home page.")
                         if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
-                            print(f"WARNING:\tNo fuzzy match for {affiliation} found on home page.")
+                            print(f"WARN:\tNo fuzzy match for {affiliation} found on home page.")
                     else:
                         print(f"INFO:\tAffiliation ({affiliation}) found on home page.")
                     if affiliation not in institutions:
@@ -306,7 +306,7 @@ def process_csv_diff(diff_path: str) -> bool:
                         else:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
                             if name not in gscholar_page_text:
-                                print(f"WARNING:\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                                print(f"WARN:\tName ({name}) not found on given Google Scholar page ({gs_url}).")
                             else:
                                 print(f"INFO:\tName ({name}) found on given Google Scholar page ({gs_url}).")
                 except Exception as e:
