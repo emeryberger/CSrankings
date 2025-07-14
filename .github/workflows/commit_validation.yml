@@ -113,8 +113,8 @@ jobs:
               echo "Comment already posted. Skipping duplicate."
             fi
 
-            # Add 'stale' label and reminder if ERROR or ❌ present
-            if grep -qE 'ERROR|❌' pr_comment.txt; then
+            # Add 'stale' labelel as required.
+            if [ -f remove_stale.txt ] && grep -q "false" remove_stale.txt; then
               echo "Validation failed. Labeling as 'stale'."
               curl -s -X POST \
                 -H "Authorization: token $GH_TOKEN" \
