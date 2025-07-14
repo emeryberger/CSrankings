@@ -36,7 +36,8 @@ def extract_json_from_backquotes(text: str) -> str:
     return match.group(1).strip() if match else text
 
 def remove_suffix_and_brackets(s: str) -> str:
-    return re.sub(r'\s*\[.*?\]$', '', s)
+    # Remove optional four-digit numeric suffix and optional bracketed suffix, in any order
+    return re.sub(r'\s*(\d{4})?\s*(\[[^\]]*\])?$', '', s)
 
 def has_valid_google_scholar_id(s: str) -> bool:
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{12}$', s))
