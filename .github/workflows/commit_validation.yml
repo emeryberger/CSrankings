@@ -24,53 +24,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate diff.json from PR using GitHub API
+      - name: Generate diff.json from PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_EVENT_NUMBER: ${{ github.event.number }}
         run: |
-          python3 <<EOF
-          import os
-          import json
-          import requests
-
-          repo = os.environ["GITHUB_REPOSITORY"]
-          pr_number = os.environ["GITHUB_EVENT_NUMBER"]
-          token = os.environ["GITHUB_TOKEN"]
-          headers = {"Authorization": f"Bearer {token}"}
-          diff_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
-
-          print(f"Fetching: {diff_url}")
-          response = requests.get(diff_url, headers=headers)
-          response.raise_for_status()
-          files = response.json()
-
-          output = {"files": []}
-
-          for f in files:
-              filename = f["filename"]
-              patch = f.get("patch")
-              if not patch or not filename.endswith(".csv"):
-                  continue
-
-              lines = patch.splitlines()
-              changes = []
-
-              for line in lines:
-                  if line.startswith("+") and not line.startswith("+++"):
-                      changes.append({"type": "AddedLine", "content": line[1:]})
-                  elif line.startswith("-") and not line.startswith("---"):
-                      changes.append({"type": "DeletedLine", "content": line[1:]})
-
-              if changes:
-                  output["files"].append({
-                      "path": filename,
-                      "chunks": [{"changes": changes}]
-                  })
-
-          with open("diff.json", "w") as f:
-              json.dump(output, f, indent=2)
-          EOF
+          python3 generate_diff.py
 
       - name: Run CSV + OpenAI validation
         env:
