@@ -59,24 +59,52 @@ def get_dblp():
     if DBLP is None:
         DBLP = get_dblp_info("", 3.0)
     return DBLP
+
 def translate_name_to_dblp(name: str) -> str:
-    name = re.sub(r'\.', '', name)
-    name = re.sub(r'-', ' ', name)
+    """
+    Converts a given name to a DBLP URL.
+
+    Args:
+        name: A string containing the name to be converted.
+
+    Returns:
+        A string containing the DBLP URL representation of the name.
+    """
+    # Replace spaces and non-ASCII characters.
+    # removes periods
+    name = re.sub('\\.', '', name)
+    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
+    name = re.sub('-', ' ', name)
+    # encodes diacritics
     name = urllib.parse.quote(name, safe='=')
-    name = re.sub(r'&|;', '=', name)
+    # replaces '&' with '='
+    name = re.sub('&', '=', name)
+    # replaces ';' with '='
+    name = re.sub(';', '=', name)
     split_name = name.split(' ')
     last_name = split_name[-1]
+    disambiguation = ''
+    # Handle disambiguation entries.
     try:
-        if int(last_name):
+        if int(last_name) > 0:
             disambiguation = last_name
             split_name.pop()
             last_name = split_name[-1] + '_' + disambiguation
     except:
         pass
+    # Consolidate name and replace spaces with underscores.
     split_name.pop()
-    new_name = ' '.join(split_name).replace(' ', '_').replace('-', '=')
+    new_name = ' '.join(split_name)
+    new_name = new_name.replace(' ', '_')
+    new_name = new_name.replace('-', '=')
     new_name = urllib.parse.quote(new_name)
-    return f'{last_name}:{new_name}'
+    str_ = ''
+    last_initial = last_name[0].lower()
+    str_ += f'{last_name}:{new_name}'
+    # str_ += f'/{last_initial}/{last_name}:{new_name}'
+    # return the DBLP URL containing the given name
+    return str_
+
 
 def matching_name_with_dblp(name: str) -> int:
     author_name = translate_name_to_dblp(name)
