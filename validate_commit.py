@@ -108,13 +108,16 @@ def translate_name_to_dblp(name: str) -> str:
 
 def matching_name_with_dblp(name: str) -> int:
     author_name = translate_name_to_dblp(name)
-    dblp_url = f'{DBLP}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    # print(author_name)
+    dblp_url = f'{get_dblp()}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    # print(dblp_url)
     try:
         r = requests.get(dblp_url)
         if "<title>429 Too Many Requests</title>" in r.text:
             time.sleep(10)
             return matching_name_with_dblp(name)
         j = r.json()
+        # print(j)
         completions = int(j['result']['completions']['@total'])
         if completions > 0:
             for hit in j['result']['hits']['hit']:
