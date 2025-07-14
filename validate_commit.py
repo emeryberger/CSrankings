@@ -261,13 +261,16 @@ def process_csv_diff(diff_path: str) -> bool:
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    if matching_name_with_dblp(name) == 0:
+                        print(f"ERROR:\tNo DBLP match for {name}")
+                        valid = False
                     print(f"Checking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
                         print(f"WARNING:\tInvalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
-                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
+                    name = remove_suffix_and_brackets(name)
                     if name not in homepage_text:
                         print(f"WARNING:\tExact match of name ({name}) not found on home page ({homepage}).")
                         if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
@@ -285,7 +288,7 @@ def process_csv_diff(diff_path: str) -> bool:
                         valid = False
                     else:
                         print(f"INFO:\t{affiliation} is on the list of known institutions (`institutions.csv`).")
-                    if name[0].lower() != the_letter and the_letter != '0':
+                    if unidecode.unidecode(name)[0].lower() != the_letter and the_letter != '0':
                         print(f"ERROR:\tEntry in wrong file: {name} → csrankings-{the_letter}.csv")
                         valid = False
                     else:
@@ -306,9 +309,6 @@ def process_csv_diff(diff_path: str) -> bool:
                                 print(f"WARNING:\tName ({name}) not found on given Google Scholar page ({gs_url}).")
                             else:
                                 print(f"INFO:\tName ({name}) found on given Google Scholar page ({gs_url}).")
-                    if matching_name_with_dblp(name) == 0:
-                        print(f"ERROR:\tNo DBLP match for {name}")
-                        valid = False
                 except Exception as e:
                     print(f"Processing error: {e}")
                     valid = False
