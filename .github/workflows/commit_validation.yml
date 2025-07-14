@@ -27,6 +27,7 @@ jobs:
       - name: Generate diff.json from PR using GitHub API
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_NUMBER: ${{ github.event.number }}
         run: |
           python3 <<EOF
           import os
@@ -34,7 +35,7 @@ jobs:
           import requests
 
           repo = os.environ["GITHUB_REPOSITORY"]
-          pr_number = os.environ["GITHUB_REF"].split("/")[-1]
+          pr_number = os.environ["GITHUB_EVENT_NUMBER"]
           token = os.environ["GITHUB_TOKEN"]
           headers = {"Authorization": f"Bearer {token}"}
           diff_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
@@ -60,7 +61,6 @@ jobs:
                       changes.append({"type": "AddedLine", "content": line[1:]})
                   elif line.startswith("-") and not line.startswith("---"):
                       changes.append({"type": "DeletedLine", "content": line[1:]})
-                  # Optionally support ModifiedLine if needed
 
               if changes:
                   output["files"].append({
