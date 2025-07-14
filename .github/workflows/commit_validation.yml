@@ -1,46 +1,45 @@
 name: Commit Validation
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
 
-permissions: read-all
+permissions:
+  pull-requests: read
+  contents: read
 
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
-        with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      # Checkout the repo
-      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          fetch-depth: 0 # needed to checkout all branches for this Action to work
+          python-version: "3.10"
 
-      # Check the PR diff using the current branch and the base branch of the PR
-      - uses: GrantBirki/git-diff-action@v2.0.1
-        id: git-diff-action
-        with:
-          json_diff_file_output: diff.json
-          raw_diff_file_output: diff.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      # Print the diff in JSON format
-      - name: Check commits for validity
-        id: validation
+      - name: Generate diff.json from PR
         env:
-          DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_NUMBER: ${{ github.event.number }}
         run: |
-          pip install -r requirements.txt
-          python validate_commit.py $DIFF
+          python3 generate_diff.py
+
+      - name: Run CSV + OpenAI validation
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python3 validate_commit.py diff.json
 
   upload:
     runs-on: ubuntu-latest
-
+    needs: commit_validation
     steps:
       - name: Save PR number
         env:
