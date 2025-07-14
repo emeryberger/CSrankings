@@ -326,7 +326,7 @@ if __name__ == "__main__":
 
     csv_valid = process_csv_diff(diff_path)
     if not csv_valid:
-        return
+        sys.exit(0)
         # sys.exit(-1)
 
     client = openai.OpenAI(api_key=api_key)
@@ -340,6 +340,6 @@ if __name__ == "__main__":
             if gloss:
                 auditing_error = True
         if auditing_error:
-            return
+            sys.exit(0)
             # sys.exit(-1)
-    # sys.exit(0)
+    sys.exit(0)
