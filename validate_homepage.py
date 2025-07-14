@@ -11,6 +11,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+ERROR = "❌"
+WARN = "⚠️"
+INFO = "ℹ️"
+
 def is_visible_text(element):
     """Return True for visible elements (not script/style/comment/etc.)."""
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
