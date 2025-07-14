@@ -1,4 +1,5 @@
 import csv
+import fuzzysearch
 import json
 import os
 import re
@@ -10,9 +11,9 @@ import unidecode
 import openai
 
 from typing import List, Literal, Optional
-from pydantic import BaseModel, ValidationError
+from pydantic import HttpUrl, BaseModel, ValidationError
 
-from validate_homepage import has_valid_homepage
+from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 
 MAX_RETRIES = 3
 
@@ -25,6 +26,9 @@ class AuditEntry(BaseModel):
     classification: Literal['valid', 'invalid', 'questionable']
     explanation: str
 
+class AuditEntryList(BaseModel):
+    entries: List[AuditEntry]
+    
 # ---------- Helpers ----------
 
 def extract_json_from_backquotes(text: str) -> str:
@@ -59,34 +63,65 @@ def get_dblp():
     if DBLP is None:
         DBLP = get_dblp_info("", 3.0)
     return DBLP
+
 def translate_name_to_dblp(name: str) -> str:
-    name = re.sub(r'\.', '', name)
-    name = re.sub(r'-', ' ', name)
+    """
+    Converts a given name to a DBLP URL.
+
+    Args:
+        name: A string containing the name to be converted.
+
+    Returns:
+        A string containing the DBLP URL representation of the name.
+    """
+    # Replace spaces and non-ASCII characters.
+    # removes periods
+    name = re.sub('\\.', '', name)
+    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
+    name = re.sub('-', ' ', name)
+    # encodes diacritics
     name = urllib.parse.quote(name, safe='=')
-    name = re.sub(r'&|;', '=', name)
+    # replaces '&' with '='
+    name = re.sub('&', '=', name)
+    # replaces ';' with '='
+    name = re.sub(';', '=', name)
     split_name = name.split(' ')
     last_name = split_name[-1]
+    disambiguation = ''
+    # Handle disambiguation entries.
     try:
-        if int(last_name):
+        if int(last_name) > 0:
             disambiguation = last_name
             split_name.pop()
             last_name = split_name[-1] + '_' + disambiguation
     except:
         pass
+    # Consolidate name and replace spaces with underscores.
     split_name.pop()
-    new_name = ' '.join(split_name).replace(' ', '_').replace('-', '=')
+    new_name = ' '.join(split_name)
+    new_name = new_name.replace(' ', '_')
+    new_name = new_name.replace('-', '=')
     new_name = urllib.parse.quote(new_name)
-    return f'{last_name}:{new_name}'
+    str_ = ''
+    last_initial = last_name[0].lower()
+    str_ += f'{last_name}:{new_name}'
+    # str_ += f'/{last_initial}/{last_name}:{new_name}'
+    # return the DBLP URL containing the given name
+    return str_
+
 
 def matching_name_with_dblp(name: str) -> int:
     author_name = translate_name_to_dblp(name)
-    dblp_url = f'{DBLP}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    # print(author_name)
+    dblp_url = f'{get_dblp()}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    # print(dblp_url)
     try:
         r = requests.get(dblp_url)
         if "<title>429 Too Many Requests</title>" in r.text:
             time.sleep(10)
             return matching_name_with_dblp(name)
         j = r.json()
+        # print(j)
         completions = int(j['result']['completions']['@total'])
         if completions > 0:
             for hit in j['result']['hits']['hit']:
@@ -102,7 +137,21 @@ def construct_prompt(diff: str) -> str:
     with open("CONTRIBUTING.md", "r") as f:
         checklist = f.read()
     return f"""
-Audit this pull request to verify the following checklist for a PR to CSrankings. Indicate any questionable additions, removals, or modifications. In particular, verify if any new faculty are affiliated at the listed institution, and whether they are in computer science or can solely supervise PhD students for a degree in computer science, and if they are full-time faculty members. Consult their home page (included in the PR), and if necessary, consult LinkedIn or departmental web pages and Google Scholar (using the included Google Scholar ID). Respond ONLY with a JSON file like the following:
+    
+Audit this pull request to verify the following checklist for a PR to
+CSrankings. Indicate any questionable additions, removals, or
+modifications. In particular, verify if any new faculty are affiliated
+at the listed institution, and whether they are in computer science or
+can solely supervise PhD students for a degree in computer science,
+and if they are full-time faculty members. Search the web to consult
+their home page (included in the PR), and consult LinkedIn,
+departmental web pages, and Google Scholar (using the included Google
+Scholar ID). Search the web to verify that their home page contains
+the name and specified affiliation (university and CS
+department). Search the web to verify that their Google Scholar ID
+corresponds to them.
+
+Respond ONLY with a JSON file like the following:
 
 {{ 
 [
@@ -116,6 +165,7 @@ Audit this pull request to verify the following checklist for a PR to CSrankings
 
 Pull request diff:
 
+name,affiliation,homepage,scholarid
 {diff}
 
 Checklist:
@@ -152,30 +202,22 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
     diff_text = parse_pr_api_diff(diff_path)
     prompt = construct_prompt(diff_text)
 
-    for attempt in range(1, MAX_RETRIES + 1):
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.2
-        )
-
-        output = response.choices[0].message.content
-        output_clean = extract_json_from_backquotes(output)
-
-        try:
-            parsed = json.loads(output_clean)
-            validated = [AuditEntry(**entry) for entry in parsed]
-            filtered_sorted = sorted(
-                (entry.model_dump() for entry in validated if entry.classification in {"invalid", "questionable"}),
-                key=lambda x: ("invalid" if x["classification"] == "invalid" else "questionable", x["name"].lower())
-            )
-            return filtered_sorted
-        except (json.JSONDecodeError, ValidationError) as e:
-            print(f"Attempt {attempt} failed: {e}\n")
-            if attempt == MAX_RETRIES:
-                print("Max retries reached. Raw output:")
-                print(output)
-    return None
+    response = client.responses.parse(
+        model = "gpt-4.1",
+        input = prompt,
+        tools = [{"type": "web_search_preview"}],
+        tool_choice = "auto",
+        temperature=0.2,
+        text_format = AuditEntryList,
+    )
+    parsed = response.output_parsed
+    
+    filtered_sorted = sorted(
+        parsed.entries,
+        key=lambda x: x.model_dump()["name"].lower()
+    )
+    
+    return [x.model_dump() for x in filtered_sorted]
 
 # ---------- CSV Validation ----------
 
@@ -198,7 +240,7 @@ def process_csv_diff(diff_path: str) -> bool:
         try:
             path = d["path"]
             if not is_valid_file(path):
-                print(f"ERROR: Invalid file modified: {path}")
+                print(f"ERROR:\tInvalid file modified: {path}")
                 return False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
@@ -214,27 +256,58 @@ def process_csv_diff(diff_path: str) -> bool:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
                 if re.search(r',\s', line):
-                    print(f"ERROR: Space after comma: {line}")
+                    print(f"ERROR:\tSpace after comma: {line}")
                     valid = False
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
-                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
-                    if affiliation not in institutions:
-                        print(f"ERROR: Unknown institution: {affiliation}")
-                        valid = False
-                    if name[0].lower() != the_letter and the_letter != '0':
-                        print(f"ERROR: Entry in wrong file: {name} → csrankings-{the_letter}.csv")
-                        valid = False
-                    if not has_valid_google_scholar_id(scholarid):
-                        print(f"ERROR: Invalid GS ID: {scholarid}")
-                        valid = False
-                    if matching_name_with_dblp(name) == 0:
-                        print(f"ERROR: No DBLP match for {name}")
-                        valid = False
                     print(f"Checking homepage: {homepage}")
-                    if not has_valid_homepage(homepage):
-                        print(f"WARNING: Invalid homepage: {homepage}")
+                    homepage_text = has_valid_homepage(homepage)                    
+                    if not homepage_text:
+                        print(f"WARNING:\tInvalid homepage: {homepage}")
+                        valid = False
+                    homepage_text = extract_visible_text_from_webpage(homepage_text)
+                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
+                    if name not in homepage_text:
+                        print(f"WARNING:\tExact match of name ({name}) not found on home page ({homepage}).")
+                        if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
+                            print(f"WARNING:\tNo fuzzy match for {name} found on home page.")
+                    else:    
+                        print(f"INFO:\tName ({name}) found on home page.")
+                    if affiliation not in homepage_text:
+                        print(f"WARNING:\tAffiliation ({affiliation}) not found on home page.")
+                        if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
+                            print(f"WARNING:\tNo fuzzy match for {affiliation} found on home page.")
+                    else:
+                        print(f"INFO:\tAffiliation ({affiliation}) found on home page.")
+                    if affiliation not in institutions:
+                        print(f"ERROR:\tUnknown institution: {affiliation} not found in `institutions.csv`.")
+                        valid = False
+                    else:
+                        print(f"INFO:\t{affiliation} is on the list of known institutions (`institutions.csv`).")
+                    if name[0].lower() != the_letter and the_letter != '0':
+                        print(f"ERROR:\tEntry in wrong file: {name} → csrankings-{the_letter}.csv")
+                        valid = False
+                    else:
+                        print(f"INFO:\tEntry in the correct file.")
+                    if not has_valid_google_scholar_id(scholarid):
+                        print(f"ERROR:\tInvalid GS ID: {scholarid}")
+                        valid = False
+                    else:
+                        print(f"INFO:\tGoogle Scholar ID ({scholarid}) passed validity checks.")
+                        gs_url = f"https://scholar.google.com/citations?hl=en&user={scholarid}"
+                        gscholar_page_text = has_valid_homepage(gs_url)
+                        if not gscholar_page_text:
+                            print(f"ERROR:\tInvalid Google Scholar ID ({scholarid}).")
+                            valid = False
+                        else:
+                            gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
+                            if name not in gscholar_page_text:
+                                print(f"WARNING:\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                            else:
+                                print(f"INFO:\tName ({name}) found on given Google Scholar page ({gs_url}).")
+                    if matching_name_with_dblp(name) == 0:
+                        print(f"ERROR:\tNo DBLP match for {name}")
                         valid = False
                 except Exception as e:
                     print(f"Processing error: {e}")
@@ -256,8 +329,13 @@ if __name__ == "__main__":
     client = openai.OpenAI(api_key=api_key)
     audit_result = run_audit(client, diff_path)
     if audit_result:
-        print(f"\nThe analysis below was generated by AI and may not be accurate.\n")
+        print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
+        auditing_error = False
         for entry in audit_result:
-            print(f"ERROR: Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
-        sys.exit(-1)
+            gloss = "ERROR:\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
+            print(f"{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
+            if gloss:
+                auditing_error = True
+        if auditing_error:
+            sys.exit(-1)
     sys.exit(0)
