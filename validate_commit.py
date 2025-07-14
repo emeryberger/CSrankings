@@ -324,14 +324,19 @@ def mark_failed():
     # DO NOT remove the 'stale' flag.
     with open("remove_stale.txt", "w") as f:
         f.write("false")    
-
+    sys.exit(0)
+        
 def mark_succeeded():
     print("✅ All validity checks passed.")
     # Remove the 'stale' flag.
     with open("remove_stale.txt", "w") as f:
         f.write("true")
+    sys.exit(0)
 
 if __name__ == "__main__":
+    # Remove the 'stale' flag if no error occurs.
+    with open("remove_stale.txt", "w") as f:
+        f.write("true")
     diff_path = sys.argv[1]
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
@@ -340,7 +345,6 @@ if __name__ == "__main__":
     csv_valid = process_csv_diff(diff_path)
     if not csv_valid:
         mark_failed()
-        sys.exit(0)
 
     client = openai.OpenAI(api_key=api_key)
     audit_result = run_audit(client, diff_path)
@@ -354,7 +358,4 @@ if __name__ == "__main__":
                 auditing_error = True
         if auditing_error:
             mark_failed()
-            sys.exit(0)
-            # sys.exit(-1)
     mark_succeeded()
-    sys.exit(0)
