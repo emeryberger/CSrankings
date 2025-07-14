@@ -61,10 +61,10 @@ def has_valid_homepage(homepage: str) -> str | None:
             print("INFO:\tPage loaded successfully with requests.")
             return response.text
         elif response.status_code == 404:
-            print(f"FAILURE:\tPage ({homepage}) not found (404 error).")
+            print(f"ERROR:\tPage ({homepage}) not found (404 error).")
             return None
         else:
-            print(f"WARNING:\tReceived error code {response.status_code} with requests. Failing over to Selenium...")
+            print(f"WARN:\tReceived error code {response.status_code} with requests. Failing over to Selenium...")
             result = has_valid_homepage_with_selenium(homepage)
             # print(result)
             return result
