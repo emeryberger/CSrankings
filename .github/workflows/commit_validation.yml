@@ -68,6 +68,7 @@ jobs:
     permissions:
       pull-requests: write
       issues: write
+      contents: write
 
     steps:
       - name: Download PR number
@@ -87,21 +88,20 @@ jobs:
           name: remove_stale.txt
           path: .
 
-      - name: Post audit comment and manage stale label
+      - name: Post audit comment and manage labels / merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=$(cat pr/pr_number.txt)
-          if [ -f pr_comment.txt ]; then
-            COMMENT_BODY=$(cat pr_comment.txt)
-            COMMENT_JSON=$(jq -Rs . < pr_comment.txt)
+          COMMENTS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments"
+          LABELS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels"
 
-            # Get existing comments by the bot
-            COMMENTS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments"
+          # Post PR comment if not already posted
+          if [ -f pr_comment.txt ]; then
+            COMMENT_JSON=$(jq -Rs . < pr_comment.txt)
             EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
             EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf pr_comment.txt || true)
 
-            # Post comment if it hasn’t already been posted
             if [ -z "$EXISTS" ]; then
               echo "Posting validation result comment..."
               curl -s -X POST \
@@ -110,41 +110,73 @@ jobs:
                 "$COMMENTS_URL" \
                 -d "{\"body\": $COMMENT_JSON}"
             else
-              echo "Comment already posted. Skipping duplicate."
-            fi
-
-            # Add 'stale' labelel as required.
-            if [ -f remove_stale.txt ] && grep -q "false" remove_stale.txt; then
-              echo "Validation failed. Labeling as 'stale'."
-              curl -s -X POST \
-                -H "Authorization: token $GH_TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                "$COMMENTS_URL" \
-                -d '{"body": "Please address the failed validity checks above."}'
-
-              curl -s -X POST \
-                -H "Authorization: token $GH_TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                "https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels" \
-                -d '{"labels": ["stale"]}'
+              echo "Comment already posted. Skipping."
             fi
           fi
 
-          # Remove stale label if validation passed
-          if [ -f remove_stale.txt ] && grep -q "true" remove_stale.txt; then
-            echo "Validation passed. Removing 'stale' label if present."
-
-            EXISTING_LABELS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+          # CASE 1: Checks FAILED → add 'stale'
+          if grep -q "false" remove_stale.txt; then
+            echo "Validation failed. Adding 'stale' label and reminder."
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
               -H "Accept: application/vnd.github+json" \
-              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels)
+              "$COMMENTS_URL" \
+              -d '{"body": "Please address the failed validity checks above."}'
 
-            if echo "$EXISTING_LABELS" | jq -r '.[].name' | grep -q "^stale$"; then
-              echo "Stale label found. Removing."
-              curl -s -X DELETE \
-                -H "Authorization: token $GH_TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels/stale
-            fi
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$LABELS_URL" \
+              -d '{"labels": ["stale"]}'
+            exit 0
+          fi
+
+          # CASE 2: Checks PASSED → remove 'stale', add 'validated', merge PR
+          echo "Validation passed. Managing labels and attempting merge."
+
+          # Remove stale label (if present)
+          EXISTING_LABELS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels)
+
+          if echo "$EXISTING_LABELS" | jq -r '.[].name' | grep -q "^stale$"; then
+            echo "Removing 'stale' label."
+            curl -s -X DELETE \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels/stale
+          fi
+
+          # Add validated label
+          echo "Adding 'validated' label."
+          curl -s -X POST \
+            -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$LABELS_URL" \
+            -d '{"labels": ["validated"]}'
+
+          # Try to merge the PR
+          PR_API_URL="https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER"
+          MERGE_URL="https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/merge"
+
+          MERGEABLE=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$PR_API_URL" | jq -r '.mergeable')
+
+          if [ "$MERGEABLE" = "true" ]; then
+            echo "Merging PR #$PR_NUMBER."
+            curl -s -X PUT \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$MERGE_URL" \
+              -d '{"merge_method": "squash"}'
+          else
+            echo "PR #$PR_NUMBER is not mergeable."
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$COMMENTS_URL" \
+              -d '{"body": "✅ All validity checks passed. This PR is ready to merge, but could not be merged automatically (e.g., due to conflicts). Please merge manually."}'
           fi
 
   stale:
