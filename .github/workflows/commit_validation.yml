@@ -6,6 +6,7 @@ on:
 
 permissions:
   pull-requests: write
+  issues: write
   contents: read
 
 jobs:
@@ -35,16 +36,14 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 validate_commit.py diff.json > pr_comment.txt
+          python3 validate_commit.py diff.json > pr_comment.txt || true
 
       - name: Upload PR number
         run: |
           mkdir -p pr
           echo "${{ github.event.number }}" > pr/pr_number.txt
-        shell: bash
 
-      - name: Upload audit result (if any)
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: pr_comment.txt
           path: pr_comment.txt
@@ -52,16 +51,14 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: pr_number.txt
-          path: pr/pr_number.txt
-
-      - name: Upload stale flag
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
           name: remove_stale.txt
           path: remove_stale.txt
-          if-no-files-found: warn
+          if-no-files-found: ignore
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr_number.txt
+          path: pr/pr_number.txt
 
   post_comment:
     runs-on: ubuntu-latest
@@ -90,42 +87,64 @@ jobs:
           name: remove_stale.txt
           path: .
 
-      - name: Post audit comment, manage labels
+      - name: Post audit comment and manage stale label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=$(cat pr/pr_number.txt)
           if [ -f pr_comment.txt ]; then
-            BODY=$(jq -Rs . < pr_comment.txt)
-            curl -s -X POST \
-              -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments \
-              -d "{\"body\": $BODY}"
+            COMMENT_BODY=$(cat pr_comment.txt)
+            COMMENT_JSON=$(jq -Rs . < pr_comment.txt)
 
-            if grep -q "ERROR" pr_comment.txt; then
-              echo "Detected validation failure — adding 'stale' label and follow-up."
+            # Get existing comments by the bot
+            COMMENTS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments"
+            EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
+            EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf pr_comment.txt || true)
+
+            # Post comment if it hasn’t already been posted
+            if [ -z "$EXISTS" ]; then
+              echo "Posting validation result comment..."
               curl -s -X POST \
                 -H "Authorization: token $GH_TOKEN" \
                 -H "Accept: application/vnd.github+json" \
-                https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments \
+                "$COMMENTS_URL" \
+                -d "{\"body\": $COMMENT_JSON}"
+            else
+              echo "Comment already posted. Skipping duplicate."
+            fi
+
+            # Add 'stale' label and reminder if ERROR or ❌ present
+            if grep -qE 'ERROR|❌' pr_comment.txt; then
+              echo "Validation failed. Labeling as 'stale'."
+              curl -s -X POST \
+                -H "Authorization: token $GH_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "$COMMENTS_URL" \
                 -d '{"body": "Please address the failed validity checks above."}'
 
               curl -s -X POST \
                 -H "Authorization: token $GH_TOKEN" \
                 -H "Accept: application/vnd.github+json" \
-                https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels \
+                "https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels" \
                 -d '{"labels": ["stale"]}'
             fi
           fi
 
-          # Remove 'stale' label if all checks passed
+          # Remove stale label if validation passed
           if [ -f remove_stale.txt ] && grep -q "true" remove_stale.txt; then
-            echo "Removing stale label (checks passed)."
-            curl -s -X DELETE \
-              -H "Authorization: token $GH_TOKEN" \
+            echo "Validation passed. Removing 'stale' label if present."
+
+            EXISTING_LABELS=$(curl -s -H "Authorization: token $GH_TOKEN" \
               -H "Accept: application/vnd.github+json" \
-              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels/stale
+              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels)
+
+            if echo "$EXISTING_LABELS" | jq -r '.[].name' | grep -q "^stale$"; then
+              echo "Stale label found. Removing."
+              curl -s -X DELETE \
+                -H "Authorization: token $GH_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels/stale
+            fi
           fi
 
   stale:
