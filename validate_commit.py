@@ -59,34 +59,65 @@ def get_dblp():
     if DBLP is None:
         DBLP = get_dblp_info("", 3.0)
     return DBLP
+
 def translate_name_to_dblp(name: str) -> str:
-    name = re.sub(r'\.', '', name)
-    name = re.sub(r'-', ' ', name)
+    """
+    Converts a given name to a DBLP URL.
+
+    Args:
+        name: A string containing the name to be converted.
+
+    Returns:
+        A string containing the DBLP URL representation of the name.
+    """
+    # Replace spaces and non-ASCII characters.
+    # removes periods
+    name = re.sub('\\.', '', name)
+    # replaces '-' with ' ' to cope with DBLP search API issue (disabled negation operator)
+    name = re.sub('-', ' ', name)
+    # encodes diacritics
     name = urllib.parse.quote(name, safe='=')
-    name = re.sub(r'&|;', '=', name)
+    # replaces '&' with '='
+    name = re.sub('&', '=', name)
+    # replaces ';' with '='
+    name = re.sub(';', '=', name)
     split_name = name.split(' ')
     last_name = split_name[-1]
+    disambiguation = ''
+    # Handle disambiguation entries.
     try:
-        if int(last_name):
+        if int(last_name) > 0:
             disambiguation = last_name
             split_name.pop()
             last_name = split_name[-1] + '_' + disambiguation
     except:
         pass
+    # Consolidate name and replace spaces with underscores.
     split_name.pop()
-    new_name = ' '.join(split_name).replace(' ', '_').replace('-', '=')
+    new_name = ' '.join(split_name)
+    new_name = new_name.replace(' ', '_')
+    new_name = new_name.replace('-', '=')
     new_name = urllib.parse.quote(new_name)
-    return f'{last_name}:{new_name}'
+    str_ = ''
+    last_initial = last_name[0].lower()
+    str_ += f'{last_name}:{new_name}'
+    # str_ += f'/{last_initial}/{last_name}:{new_name}'
+    # return the DBLP URL containing the given name
+    return str_
+
 
 def matching_name_with_dblp(name: str) -> int:
     author_name = translate_name_to_dblp(name)
-    dblp_url = f'{DBLP}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    # print(author_name)
+    dblp_url = f'{get_dblp()}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    # print(dblp_url)
     try:
         r = requests.get(dblp_url)
         if "<title>429 Too Many Requests</title>" in r.text:
             time.sleep(10)
             return matching_name_with_dblp(name)
         j = r.json()
+        # print(j)
         completions = int(j['result']['completions']['@total'])
         if completions > 0:
             for hit in j['result']['hits']['hit']:
@@ -102,7 +133,21 @@ def construct_prompt(diff: str) -> str:
     with open("CONTRIBUTING.md", "r") as f:
         checklist = f.read()
     return f"""
-Audit this pull request to verify the following checklist for a PR to CSrankings. Indicate any questionable additions, removals, or modifications. In particular, verify if any new faculty are affiliated at the listed institution, and whether they are in computer science or can solely supervise PhD students for a degree in computer science, and if they are full-time faculty members. Consult their home page (included in the PR), and if necessary, consult LinkedIn or departmental web pages and Google Scholar (using the included Google Scholar ID). Respond ONLY with a JSON file like the following:
+    
+Audit this pull request to verify the following checklist for a PR to
+CSrankings. Indicate any questionable additions, removals, or
+modifications. In particular, verify if any new faculty are affiliated
+at the listed institution, and whether they are in computer science or
+can solely supervise PhD students for a degree in computer science,
+and if they are full-time faculty members. Search the web to consult
+their home page (included in the PR), and consult LinkedIn,
+departmental web pages, and Google Scholar (using the included Google
+Scholar ID). Search the web to verify that their home page contains
+the name and specified affiliation (university and CS
+department). Search the web to verify that their Google Scholar ID
+corresponds to them.
+
+Respond ONLY with a JSON file like the following:
 
 {{ 
 [
@@ -111,11 +156,15 @@ Audit this pull request to verify the following checklist for a PR to CSrankings
     'change': (one of 'addition', 'deletion', 'modification'),
     'classification': (one of 'valid', 'invalid', 'questionable'),
     'explanation': (a textual explanation of the reason for the declared classification),
+    'scholar_url': (their Google Scholar URL),
+    'home_page': (their home page),
+    'linkedin_url': (their LinkedIn, or NOLINKEDIN if not found)
   ]
 }}
 
 Pull request diff:
 
+name,affiliation,homepage,scholarid
 {diff}
 
 Checklist:
@@ -153,21 +202,24 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
     prompt = construct_prompt(diff_text)
 
     for attempt in range(1, MAX_RETRIES + 1):
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}],
+        # response = client.chat.completions.create(
+        response = client.responses.create(
+            model="gpt-4.1",
+            input = prompt,
+            tools=[{"type": "web_search_preview"}],
             temperature=0.2
         )
 
-        output = response.choices[0].message.content
+        # output = response.choices[0].message.content
+        output = response.output_text
         output_clean = extract_json_from_backquotes(output)
 
         try:
             parsed = json.loads(output_clean)
             validated = [AuditEntry(**entry) for entry in parsed]
             filtered_sorted = sorted(
-                (entry.model_dump() for entry in validated if entry.classification in {"invalid", "questionable"}),
-                key=lambda x: ("invalid" if x["classification"] == "invalid" else "questionable", x["name"].lower())
+                (entry.model_dump() for entry in validated),
+                 key=lambda x: x["name"].lower()
             )
             return filtered_sorted
         except (json.JSONDecodeError, ValidationError) as e:
@@ -233,7 +285,8 @@ def process_csv_diff(diff_path: str) -> bool:
                         print(f"ERROR: No DBLP match for {name}")
                         valid = False
                     print(f"Checking homepage: {homepage}")
-                    if not has_valid_homepage(homepage):
+                    homepage_text = has_valid_homepage(homepage)                    
+                    if not homepage_text:
                         print(f"WARNING: Invalid homepage: {homepage}")
                         valid = False
                 except Exception as e:
@@ -256,8 +309,9 @@ if __name__ == "__main__":
     client = openai.OpenAI(api_key=api_key)
     audit_result = run_audit(client, diff_path)
     if audit_result:
-        print(f"\nThe analysis below was generated by AI and may not be accurate.\n")
+        print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
         for entry in audit_result:
-            print(f"ERROR: Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
+            gloss = "ERROR: " if entry['classification'] in { 'invalid', 'questionable' } else ""
+            print(f"{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
         sys.exit(-1)
     sys.exit(0)
