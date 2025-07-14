@@ -261,10 +261,11 @@ def process_csv_diff(diff_path: str) -> bool:
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    print(f"INFO:\tValidating {name}")
                     if matching_name_with_dblp(name) == 0:
                         print(f"ERROR:\tNo DBLP match for {name}")
                         valid = False
-                    print(f"Checking homepage: {homepage}")
+                    print(f"INFO:\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
                         print(f"WARN:\tInvalid homepage: {homepage}")
