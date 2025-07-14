@@ -1,5 +1,7 @@
 import requests
 import socket
+
+from bs4 import BeautifulSoup, Comment
 from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -8,6 +10,20 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+def is_visible_text(element):
+    """Return True for visible elements (not script/style/comment/etc.)."""
+    if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
+        return False
+    if isinstance(element, Comment):
+        return False
+    return True
+
+def extract_visible_text_from_webpage(text: str) -> str:
+    soup = BeautifulSoup(text, 'html.parser')
+    texts = soup.find_all(string=True)
+    visible_texts = filter(is_visible_text, texts)
+    return '\n'.join(t.strip() for t in visible_texts if t.strip())
 
 # Define headers for the requests module
 HEADERS = {
@@ -42,15 +58,18 @@ def has_valid_homepage(homepage: str) -> str | None:
     try:
         response = requests.get(homepage, headers=HEADERS, timeout=15)
         if response.status_code == 200:
-            print("SUCCESS: Page loaded successfully with requests.")
+            print("INFO:\tPage loaded successfully with requests.")
             return response.text
+        elif response.status_code == 404:
+            print(f"FAILURE:\tPage ({homepage}) not found (404 error).")
+            return None
         else:
-            print(f"WARNING: Received error code {response.status_code} with requests. Failing over to Selenium...")
+            print(f"WARNING:\tReceived error code {response.status_code} with requests. Failing over to Selenium...")
             result = has_valid_homepage_with_selenium(homepage)
             # print(result)
             return result
     except requests.exceptions.RequestException as e:
-        print(f"ERROR: An exception occurred with requests: {e}. Failing over to Selenium...")
+        print(f"ERROR:\tAn exception occurred with requests: {e}. Failing over to Selenium...")
         result = has_valid_homepage_with_selenium(homepage)
         # print(result)
         return result
@@ -70,10 +89,10 @@ def has_valid_homepage_with_selenium(homepage: str) -> str | None:
     try:
         driver.get(homepage)
         WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-        print("SUCCESS: Page loaded successfully with Selenium.")
+        print("INFO:\tPage loaded successfully with Selenium.")
         return driver.page_source
     except Exception as e:
-        print(f"ERROR: An exception occurred with Selenium: {e}")
+        print(f"ERROR:\tAn exception occurred with Selenium: {e}")
         return None
     finally:
         driver.quit()
