@@ -1,4 +1,5 @@
 import csv
+import fuzzysearch
 import json
 import os
 import re
@@ -10,9 +11,9 @@ import unidecode
 import openai
 
 from typing import List, Literal, Optional
-from pydantic import BaseModel, ValidationError
+from pydantic import HttpUrl, BaseModel, ValidationError
 
-from validate_homepage import has_valid_homepage
+from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 
 MAX_RETRIES = 3
 
@@ -25,6 +26,9 @@ class AuditEntry(BaseModel):
     classification: Literal['valid', 'invalid', 'questionable']
     explanation: str
 
+class AuditEntryList(BaseModel):
+    entries: List[AuditEntry]
+    
 # ---------- Helpers ----------
 
 def extract_json_from_backquotes(text: str) -> str:
@@ -156,9 +160,6 @@ Respond ONLY with a JSON file like the following:
     'change': (one of 'addition', 'deletion', 'modification'),
     'classification': (one of 'valid', 'invalid', 'questionable'),
     'explanation': (a textual explanation of the reason for the declared classification),
-    'scholar_url': (their Google Scholar URL),
-    'home_page': (their home page),
-    'linkedin_url': (their LinkedIn, or NOLINKEDIN if not found)
   ]
 }}
 
@@ -201,33 +202,22 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
     diff_text = parse_pr_api_diff(diff_path)
     prompt = construct_prompt(diff_text)
 
-    for attempt in range(1, MAX_RETRIES + 1):
-        # response = client.chat.completions.create(
-        response = client.responses.create(
-            model="gpt-4.1",
-            input = prompt,
-            tools=[{"type": "web_search_preview"}],
-            temperature=0.2
-        )
-
-        # output = response.choices[0].message.content
-        output = response.output_text
-        output_clean = extract_json_from_backquotes(output)
-
-        try:
-            parsed = json.loads(output_clean)
-            validated = [AuditEntry(**entry) for entry in parsed]
-            filtered_sorted = sorted(
-                (entry.model_dump() for entry in validated),
-                 key=lambda x: x["name"].lower()
-            )
-            return filtered_sorted
-        except (json.JSONDecodeError, ValidationError) as e:
-            print(f"Attempt {attempt} failed: {e}\n")
-            if attempt == MAX_RETRIES:
-                print("Max retries reached. Raw output:")
-                print(output)
-    return None
+    response = client.responses.parse(
+        model = "gpt-4.1",
+        input = prompt,
+        tools = [{"type": "web_search_preview"}],
+        tool_choice = "auto",
+        temperature=0.2,
+        text_format = AuditEntryList,
+    )
+    parsed = response.output_parsed
+    
+    filtered_sorted = sorted(
+        parsed.entries,
+        key=lambda x: x.model_dump()["name"].lower()
+    )
+    
+    return [x.model_dump() for x in filtered_sorted]
 
 # ---------- CSV Validation ----------
 
@@ -250,7 +240,7 @@ def process_csv_diff(diff_path: str) -> bool:
         try:
             path = d["path"]
             if not is_valid_file(path):
-                print(f"ERROR: Invalid file modified: {path}")
+                print(f"ERROR:\tInvalid file modified: {path}")
                 return False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
@@ -266,28 +256,58 @@ def process_csv_diff(diff_path: str) -> bool:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
                 if re.search(r',\s', line):
-                    print(f"ERROR: Space after comma: {line}")
+                    print(f"ERROR:\tSpace after comma: {line}")
                     valid = False
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
-                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
-                    if affiliation not in institutions:
-                        print(f"ERROR: Unknown institution: {affiliation}")
-                        valid = False
-                    if name[0].lower() != the_letter and the_letter != '0':
-                        print(f"ERROR: Entry in wrong file: {name} → csrankings-{the_letter}.csv")
-                        valid = False
-                    if not has_valid_google_scholar_id(scholarid):
-                        print(f"ERROR: Invalid GS ID: {scholarid}")
-                        valid = False
-                    if matching_name_with_dblp(name) == 0:
-                        print(f"ERROR: No DBLP match for {name}")
-                        valid = False
                     print(f"Checking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"WARNING: Invalid homepage: {homepage}")
+                        print(f"WARNING:\tInvalid homepage: {homepage}")
+                        valid = False
+                    homepage_text = extract_visible_text_from_webpage(homepage_text)
+                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
+                    if name not in homepage_text:
+                        print(f"WARNING:\tExact match of name ({name}) not found on home page ({homepage}).")
+                        if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
+                            print(f"WARNING:\tNo fuzzy match for {name} found on home page.")
+                    else:    
+                        print(f"INFO:\tName ({name}) found on home page.")
+                    if affiliation not in homepage_text:
+                        print(f"WARNING:\tAffiliation ({affiliation}) not found on home page.")
+                        if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
+                            print(f"WARNING:\tNo fuzzy match for {affiliation} found on home page.")
+                    else:
+                        print(f"INFO:\tAffiliation ({affiliation}) found on home page.")
+                    if affiliation not in institutions:
+                        print(f"ERROR:\tUnknown institution: {affiliation} not found in `institutions.csv`.")
+                        valid = False
+                    else:
+                        print(f"INFO:\t{affiliation} is on the list of known institutions (`institutions.csv`).")
+                    if name[0].lower() != the_letter and the_letter != '0':
+                        print(f"ERROR:\tEntry in wrong file: {name} → csrankings-{the_letter}.csv")
+                        valid = False
+                    else:
+                        print(f"INFO:\tEntry in the correct file.")
+                    if not has_valid_google_scholar_id(scholarid):
+                        print(f"ERROR:\tInvalid GS ID: {scholarid}")
+                        valid = False
+                    else:
+                        print(f"INFO:\tGoogle Scholar ID ({scholarid}) passed validity checks.")
+                        gs_url = f"https://scholar.google.com/citations?hl=en&user={scholarid}"
+                        gscholar_page_text = has_valid_homepage(gs_url)
+                        if not gscholar_page_text:
+                            print(f"ERROR:\tInvalid Google Scholar ID ({scholarid}).")
+                            valid = False
+                        else:
+                            gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
+                            if name not in gscholar_page_text:
+                                print(f"WARNING:\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                            else:
+                                print(f"INFO:\tName ({name}) found on given Google Scholar page ({gs_url}).")
+                    if matching_name_with_dblp(name) == 0:
+                        print(f"ERROR:\tNo DBLP match for {name}")
                         valid = False
                 except Exception as e:
                     print(f"Processing error: {e}")
@@ -312,7 +332,7 @@ if __name__ == "__main__":
         print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
         auditing_error = False
         for entry in audit_result:
-            gloss = "ERROR: " if entry['classification'] in { 'invalid', 'questionable' } else ""
+            gloss = "ERROR:\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
             print(f"{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
             if gloss:
                 auditing_error = True
