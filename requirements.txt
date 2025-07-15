@@ -11,6 +11,7 @@ selenium>=4.23.1
 webdriver-manager>=4.0.2
 pandas>=2.2.3
 openai>=1.84.0
-pydantic>=2.10.4
-pydantic_core>=2.27.2
-
+pydantic>=2.11.7
+pydantic_core>=2.33.2
+beautifulsoup4>=4.13.4
+fuzzysearch>=0.8.0
