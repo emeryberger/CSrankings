@@ -298,7 +298,7 @@ def process_csv_diff(diff_path: str) -> bool:
                     else:
                         print(f"{INFO}:\tEntry in the correct file.")
                     if not has_valid_google_scholar_id(scholarid):
-                        print(f"{ERROR}:\tInvalid GS ID: {scholarid}")
+                        print(f"{ERROR}:\tInvalid Google Scholar ID format: {scholarid}")
                         valid = False
                     else:
                         print(f"{INFO}:\tGoogle Scholar ID ({scholarid}) passed validity checks.")
