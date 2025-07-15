@@ -184,6 +184,8 @@ def parse_pr_api_diff(pr_diff_json_path: str) -> str:
     with open(pr_diff_json_path, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
+    print("JSON diff:",file=sys.stderr)
+    print(json.dumps(json_data, indent=4), file=sys.stderr)
     diff_lines = []
     for file_diff in json_data.get("files", []):
         path = file_diff.get("path", "")
@@ -198,7 +200,10 @@ def parse_pr_api_diff(pr_diff_json_path: str) -> str:
                 elif change_type == "ModifiedLine":
                     diff_lines.append(f"- {change.get('oldLine', '').strip()} ({path})")
                     diff_lines.append(f"+ {change.get('newLine', '').strip()} ({path})")
-    return "\n".join(diff_lines)
+    result = "\n".join(diff_lines)
+    print("Generated diff:", file=sys.stderr)
+    print(result, file=sys.stderr)
+    return result
 
 # ---------- GPT-4 Auditing ----------
 
