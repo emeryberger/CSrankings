@@ -31,6 +31,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 ;
 ;
 ;
+;
 class CSRankings {
     // We have scrolled: increase the number we rank.
     static updateMinimum(obj) {
@@ -63,6 +64,7 @@ class CSRankings {
         this.authorFile = "./csrankings.csv";
         this.authorinfoFile = "./generated-author-info.csv";
         this.countryinfoFile = "./country-info.csv";
+        this.countrynamesFile = "./countries.csv";
         // private readonly aliasFile = "./dblp-aliases.csv";
         this.turingFile = "./turing.csv";
         this.turingImage = "./png/acm-turing-award.png";
@@ -202,6 +204,8 @@ class CSRankings {
         this.acmfellow = {};
         /* Map institution to (non-US) region. */
         this.countryInfo = {};
+        /* Map country codes (abbreviations) to names. */
+        this.countryNames = {};
         /* Map institution to (non-US) abbreviation. */
         this.countryAbbrv = {};
         /* Map name to home page. */
@@ -300,6 +304,7 @@ class CSRankings {
             this.displayProgress(4);
             this.countAuthorAreas();
             yield this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
+            yield this.loadCountryNames(this.countryNames);
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
@@ -709,6 +714,23 @@ class CSRankings {
             }
         });
     }
+    loadCountryNames(countryNames) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield new Promise((resolve) => {
+                Papa.parse(this.countrynamesFile, {
+                    header: true,
+                    download: true,
+                    complete: (results) => {
+                        resolve(results.data);
+                    }
+                });
+            });
+            const ci = data;
+            for (const info of ci) {
+                countryNames[info.alpha_2] = info.name;
+            }
+        });
+    }
     loadAuthorInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
@@ -1084,6 +1106,7 @@ class CSRankings {
         return univtext;
     }
     buildOutputString(numAreas, countryAbbrv, deptCounts, univtext, minToRank) {
+        var _a;
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
@@ -1139,8 +1162,9 @@ class CSRankings {
                 if (dept in countryAbbrv) {
                     abbrv = countryAbbrv[dept];
                 }
+                const country = (_a = this.countryNames[abbrv.toUpperCase()]) !== null && _a !== void 0 ? _a : abbrv.toUpperCase();
                 s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
-                    + `&nbsp;<img src="/flags/${abbrv}.png">&nbsp;`
+                    + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
                     + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
                     + this.ChartIcon + "</span>";
                 s += "</td>";
