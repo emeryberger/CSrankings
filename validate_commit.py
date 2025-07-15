@@ -13,9 +13,9 @@ import openai
 from typing import List, Literal, Optional
 from pydantic import HttpUrl, BaseModel, ValidationError
 
-ERROR = "❌"
-WARN = "⚠️"
-INFO = "ℹ️"
+ERROR = chr(0x274C)
+WARN = chr(0x26A0) + chr(0xFE0F)
+INFO = chr(0x2139) + chr(0xFE0F)
 
 from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 
@@ -243,7 +243,7 @@ def process_csv_diff(diff_path: str) -> bool:
         try:
             path = d["path"]
             if not is_valid_file(path):
-                print(f"{ERROR}:\tInvalid file modified: {path}")
+                print(f"{ERROR}\tInvalid file modified: {path}")
                 return False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
@@ -259,60 +259,60 @@ def process_csv_diff(diff_path: str) -> bool:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
                 if re.search(r',\s', line):
-                    print(f"{ERROR}:\tSpace after comma: {line}")
+                    print(f"{ERROR}\tSpace after comma: {line}")
                     valid = False
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
-                    print(f"{INFO}:\tValidating {name}")
+                    print(f"{INFO}\tValidating {name}")
                     if matching_name_with_dblp(name) == 0:
-                        print(f"{ERROR}:\tNo DBLP match for {name}")
+                        print(f"{ERROR}\tNo DBLP match for {name}")
                         valid = False
-                    print(f"{INFO}:\tChecking homepage: {homepage}")
+                    print(f"{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"{WARN}:\tInvalid homepage: {homepage}")
+                        print(f"{WARN}\tInvalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
                     if name not in homepage_text:
-                        print(f"{WARN}:\tExact match of name ({name}) not found on home page ({homepage}).")
+                        print(f"{WARN}\tExact match of name ({name}) not found on home page ({homepage}).")
                         if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
-                            print(f"{WARN}:\tNo fuzzy match for {name} found on home page.")
+                            print(f"{WARN}\tNo fuzzy match for {name} found on home page.")
                     else:    
-                        print(f"{INFO}:\tName ({name}) found on home page.")
+                        print(f"{INFO}\tName ({name}) found on home page.")
                     if affiliation not in homepage_text:
-                        print(f"{WARN}:\tAffiliation ({affiliation}) not found on home page.")
+                        print(f"{WARN}\tAffiliation ({affiliation}) not found on home page.")
                         if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
-                            print(f"{WARN}:\tNo fuzzy match for {affiliation} found on home page.")
+                            print(f"{WARN}\tNo fuzzy match for {affiliation} found on home page.")
                     else:
-                        print(f"{INFO}:\tAffiliation ({affiliation}) found on home page.")
+                        print(f"{INFO}\tAffiliation ({affiliation}) found on home page.")
                     if affiliation not in institutions:
-                        print(f"{ERROR}:\tUnknown institution: {affiliation} not found in `institutions.csv`.")
+                        print(f"{ERROR}\tUnknown institution: {affiliation} not found in `institutions.csv`.")
                         valid = False
                     else:
-                        print(f"{INFO}:\t{affiliation} is on the list of known institutions (`institutions.csv`).")
+                        print(f"{INFO}\t{affiliation} is on the list of known institutions (`institutions.csv`).")
                     if unidecode.unidecode(name)[0].lower() != the_letter and the_letter != '0':
-                        print(f"{ERROR}:\tEntry in wrong file: {name} → csrankings-{the_letter}.csv")
+                        print(f"{ERROR}\tEntry in wrong file: {name} → csrankings-{the_letter}.csv")
                         valid = False
                     else:
-                        print(f"{INFO}:\tEntry in the correct file.")
+                        print(f"{INFO}\tEntry in the correct file.")
                     if not has_valid_google_scholar_id(scholarid):
-                        print(f"{ERROR}:\tInvalid Google Scholar ID format: {scholarid}")
+                        print(f"{ERROR}\tInvalid Google Scholar ID format: {scholarid}")
                         valid = False
                     else:
-                        print(f"{INFO}:\tGoogle Scholar ID ({scholarid}) passed validity checks.")
+                        print(f"{INFO}\tGoogle Scholar ID ({scholarid}) passed validity checks.")
                         gs_url = f"https://scholar.google.com/citations?hl=en&user={scholarid}"
                         gscholar_page_text = has_valid_homepage(gs_url)
                         if not gscholar_page_text:
-                            print(f"{ERROR}:\tInvalid Google Scholar ID ({scholarid}).")
+                            print(f"{ERROR}\tInvalid Google Scholar ID ({scholarid}).")
                             valid = False
                         else:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
                             if name not in gscholar_page_text:
-                                print(f"{WARN}:\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                                print(f"{WARN}\tName ({name}) not found on given Google Scholar page ({gs_url}).")
                             else:
-                                print(f"{INFO}:\tName ({name}) found on given Google Scholar page ({gs_url}).")
+                                print(f"{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
                 except Exception as e:
                     print(f"Processing error: {e}")
                     valid = False
@@ -354,7 +354,7 @@ if __name__ == "__main__":
         print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
         auditing_error = False
         for entry in audit_result:
-            gloss = f"{ERROR}:\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
+            gloss = f"{ERROR}\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
             print(f"{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
             if gloss:
                 auditing_error = True
