@@ -305,10 +305,10 @@ def process_csv_diff(diff_path: str) -> bool:
                         valid = False
                     else:
                         print(f"{index}.\t{INFO}\tGoogle Scholar ID ({scholarid}) passed validity checks.")
-                        gs_url = f"{index}.\thttps://scholar.google.com/citations?hl=en&user={scholarid}"
+                        gs_url = f"https://scholar.google.com/citations?hl=en&user={scholarid}"
                         gscholar_page_text = has_valid_homepage(gs_url)
                         if not gscholar_page_text:
-                            print(f"{index}.\t{ERROR}\tInvalid Google Scholar ID ({scholarid}).")
+                            print(f"{index}.\t{ERROR}\tInvalid Google Scholar ID ({scholarid}, {gs_url}).")
                             valid = False
                         else:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
