@@ -1,4 +1,5 @@
 import csv
+import fuzzysearch
 import json
 import os
 import re
@@ -10,11 +11,14 @@ import unidecode
 import openai
 
 from typing import List, Literal, Optional
-from pydantic import BaseModel, ValidationError
+from pydantic import HttpUrl, BaseModel, ValidationError
 
-from validate_homepage import has_valid_homepage
+ERROR = chr(0x274C)
+WARN = chr(0x26A0) + chr(0xFE0F)
+INFO = chr(0x2139) + chr(0xFE0F)
+SUCCESS = "\U00002705"
 
-MAX_RETRIES = 3
+from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 
 # ---------- Models ----------
 
@@ -25,6 +29,9 @@ class AuditEntry(BaseModel):
     classification: Literal['valid', 'invalid', 'questionable']
     explanation: str
 
+class AuditEntryList(BaseModel):
+    entries: List[AuditEntry]
+    
 # ---------- Helpers ----------
 
 def extract_json_from_backquotes(text: str) -> str:
@@ -32,7 +39,8 @@ def extract_json_from_backquotes(text: str) -> str:
     return match.group(1).strip() if match else text
 
 def remove_suffix_and_brackets(s: str) -> str:
-    return re.sub(r'\s*\[.*?\]$', '', s)
+    # Remove optional four-digit numeric suffix and optional bracketed suffix, in any order
+    return re.sub(r'\s*(\d{4})?\s*(\[[^\]]*\])?$', '', s)
 
 def has_valid_google_scholar_id(s: str) -> bool:
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{12}$', s))
@@ -156,9 +164,6 @@ Respond ONLY with a JSON file like the following:
     'change': (one of 'addition', 'deletion', 'modification'),
     'classification': (one of 'valid', 'invalid', 'questionable'),
     'explanation': (a textual explanation of the reason for the declared classification),
-    'scholar_url': (their Google Scholar URL),
-    'home_page': (their home page),
-    'linkedin_url': (their LinkedIn, or NOLINKEDIN if not found)
   ]
 }}
 
@@ -201,33 +206,22 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
     diff_text = parse_pr_api_diff(diff_path)
     prompt = construct_prompt(diff_text)
 
-    for attempt in range(1, MAX_RETRIES + 1):
-        # response = client.chat.completions.create(
-        response = client.responses.create(
-            model="gpt-4.1",
-            input = prompt,
-            tools=[{"type": "web_search_preview"}],
-            temperature=0.2
-        )
-
-        # output = response.choices[0].message.content
-        output = response.output_text
-        output_clean = extract_json_from_backquotes(output)
-
-        try:
-            parsed = json.loads(output_clean)
-            validated = [AuditEntry(**entry) for entry in parsed]
-            filtered_sorted = sorted(
-                (entry.model_dump() for entry in validated),
-                 key=lambda x: x["name"].lower()
-            )
-            return filtered_sorted
-        except (json.JSONDecodeError, ValidationError) as e:
-            print(f"Attempt {attempt} failed: {e}\n")
-            if attempt == MAX_RETRIES:
-                print("Max retries reached. Raw output:")
-                print(output)
-    return None
+    response = client.responses.parse(
+        model = "gpt-4.1",
+        input = prompt,
+        tools = [{"type": "web_search_preview"}],
+        tool_choice = "auto",
+        temperature=0.2,
+        text_format = AuditEntryList,
+    )
+    parsed = response.output_parsed
+    
+    filtered_sorted = sorted(
+        parsed.entries,
+        key=lambda x: x.model_dump()["name"].lower()
+    )
+    
+    return [x.model_dump() for x in filtered_sorted]
 
 # ---------- CSV Validation ----------
 
@@ -250,7 +244,7 @@ def process_csv_diff(diff_path: str) -> bool:
         try:
             path = d["path"]
             if not is_valid_file(path):
-                print(f"ERROR: Invalid file modified: {path}")
+                print(f"{ERROR}\tInvalid file modified: {path}")
                 return False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
@@ -260,43 +254,94 @@ def process_csv_diff(diff_path: str) -> bool:
             continue
 
     valid = True
+    index = 0
     for path, lines in changed_lines.items():
         matched = re.match(r'csrankings-([a-z0])\.csv', path)
         if matched:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
+                index += 1
                 if re.search(r',\s', line):
-                    print(f"ERROR: Space after comma: {line}")
+                    print(f"\t{index}.\t{ERROR}\tSpace after comma: {line}")
                     valid = False
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
-                    name = unidecode.unidecode(remove_suffix_and_brackets(name))
-                    if affiliation not in institutions:
-                        print(f"ERROR: Unknown institution: {affiliation}")
-                        valid = False
-                    if name[0].lower() != the_letter and the_letter != '0':
-                        print(f"ERROR: Entry in wrong file: {name} → csrankings-{the_letter}.csv")
-                        valid = False
-                    if not has_valid_google_scholar_id(scholarid):
-                        print(f"ERROR: Invalid GS ID: {scholarid}")
-                        valid = False
+                    print(f"{index}.\tValidating {name}")
                     if matching_name_with_dblp(name) == 0:
-                        print(f"ERROR: No DBLP match for {name}")
+                        print(f"{index}.\t{ERROR}\tNo DBLP match for {name}")
                         valid = False
-                    print(f"Checking homepage: {homepage}")
+                    print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"WARNING: Invalid homepage: {homepage}")
+                        print(f"{index}.\t{WARN}\tInvalid homepage: {homepage}")
                         valid = False
+                    homepage_text = extract_visible_text_from_webpage(homepage_text)
+                    name = remove_suffix_and_brackets(name)
+                    if name not in homepage_text:
+                        print(f"{index}.\t{WARN}\tExact match of name ({name}) not found on home page ({homepage}).")
+                        if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
+                            print(f"{index}.\t{WARN}\tNo fuzzy match for {name} found on home page.")
+                    else:    
+                        print(f"{index}.\t{INFO}\tName ({name}) found on home page.")
+                    if affiliation not in homepage_text:
+                        print(f"{index}.\t{WARN}\tAffiliation ({affiliation}) not found on home page.")
+                        if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
+                            print(f"{index}.\t{WARN}\tNo fuzzy match for {affiliation} found on home page.")
+                    else:
+                        print(f"{index}.\t{INFO}\tAffiliation ({affiliation}) found on home page.")
+                    if affiliation not in institutions:
+                        print(f"{index}.\t{ERROR}\tUnknown institution: {affiliation} not found in `institutions.csv`.")
+                        valid = False
+                    else:
+                        print(f"{index}.\t{INFO}\t{affiliation} is on the list of known institutions (`institutions.csv`).")
+                    if unidecode.unidecode(name)[0].lower() != the_letter and the_letter != '0':
+                        print(f"{index}.\t{ERROR}\tEntry in wrong file: {name} → csrankings-{the_letter}.csv")
+                        valid = False
+                    else:
+                        print(f"{index}.\t{INFO}\tEntry in the correct file.")
+                    if not has_valid_google_scholar_id(scholarid):
+                        print(f"{index}.\t{ERROR}\tInvalid Google Scholar ID format: {scholarid}")
+                        valid = False
+                    else:
+                        print(f"{index}.\t{INFO}\tGoogle Scholar ID ({scholarid}) passed validity checks.")
+                        gs_url = f"https://scholar.google.com/citations?hl=en&user={scholarid}"
+                        gscholar_page_text = has_valid_homepage(gs_url)
+                        if not gscholar_page_text:
+                            print(f"{index}.\t{ERROR}\tInvalid Google Scholar ID ({scholarid}, {gs_url}).")
+                            valid = False
+                        else:
+                            gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
+                            if name not in gscholar_page_text:
+                                print(f"{index}.\t{WARN}\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                            else:
+                                print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
                 except Exception as e:
-                    print(f"Processing error: {e}")
+                    print(f"{index}.\tProcessing error: {e}")
                     valid = False
     return valid
 
 # ---------- Main ----------
 
+
+def mark_failed():
+    print(f"\n{ERROR} At least one validity check failed.")
+    # DO NOT remove the 'stale' flag.
+    with open("remove_stale.txt", "w") as f:
+        f.write("false")    
+    sys.exit(0)
+
+def mark_succeeded():
+    print(f"{SUCCESS} All validity checks passed.")
+    # Remove the 'stale' flag.
+    with open("remove_stale.txt", "w") as f:
+        f.write("true")
+    sys.exit(0)
+
 if __name__ == "__main__":
+    # Remove the 'stale' flag if no error occurs.
+    with open("remove_stale.txt", "w") as f:
+        f.write("true")
     diff_path = sys.argv[1]
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
@@ -304,18 +349,18 @@ if __name__ == "__main__":
 
     csv_valid = process_csv_diff(diff_path)
     if not csv_valid:
-        sys.exit(-1)
+        mark_failed()
 
     client = openai.OpenAI(api_key=api_key)
     audit_result = run_audit(client, diff_path)
     if audit_result:
         print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
         auditing_error = False
-        for entry in audit_result:
-            gloss = "ERROR: " if entry['classification'] in { 'invalid', 'questionable' } else ""
+        for index, entry in enumerate(audit_result):
+            gloss = f"{index}.\t{ERROR}\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
             print(f"{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
             if gloss:
                 auditing_error = True
         if auditing_error:
-            sys.exit(-1)
-    sys.exit(0)
+            mark_failed()
+    mark_succeeded()
