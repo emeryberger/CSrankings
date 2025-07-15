@@ -1106,6 +1106,7 @@ class CSRankings {
         return univtext;
     }
     buildOutputString(numAreas, countryAbbrv, deptCounts, univtext, minToRank) {
+        var _a;
         let s = this.makePrologue();
         /* Show the top N (with more if tied at the end) */
         s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
@@ -1161,9 +1162,9 @@ class CSRankings {
                 if (dept in countryAbbrv) {
                     abbrv = countryAbbrv[dept];
                 }
-                const country = this.countryNames[abbrv.toUpperCase()];
+                const country = (_a = this.countryNames[abbrv.toUpperCase()]) !== null && _a !== void 0 ? _a : abbrv.toUpperCase();
                 s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
-                    + `&nbsp;<img  title="${country}" src="./flags/${abbrv}.png">&nbsp;`
+                    + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
                     + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
                     + this.ChartIcon + "</span>";
                 s += "</td>";
