@@ -102,16 +102,12 @@ jobs:
             EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
             EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf pr_comment.txt || true)
 
-            if [ -z "$EXISTS" ]; then
-              echo "Posting validation result comment..."
-              curl -s -X POST \
-                -H "Authorization: token $GH_TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                "$COMMENTS_URL" \
-                -d "{\"body\": $COMMENT_JSON}"
-            else
-              echo "Comment already posted. Skipping."
-            fi
+            echo "Posting validation result comment..."
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$COMMENTS_URL" \
+              -d "{\"body\": $COMMENT_JSON}"
           fi
 
           # CASE 1: Checks FAILED → add 'stale'
