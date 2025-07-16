@@ -50,10 +50,10 @@ def is_hostname_resolvable(url: str) -> bool:
             socket.gethostbyname(hostname)
             return True
         else:
-            print(f"{ERROR}: Unable to extract hostname from URL: {url}")
+            # print(f"{ERROR}: Unable to extract hostname from URL: {url}")
             return False
     except socket.error as e:
-        print(f"{ERROR}: Hostname '{hostname}' is not resolvable: {e}")
+        # print(f"{ERROR}: Hostname '{hostname}' is not resolvable: {e}")
         return False
 
 def has_valid_homepage(homepage: str) -> str | None:
@@ -66,18 +66,18 @@ def has_valid_homepage(homepage: str) -> str | None:
     try:
         response = requests.get(homepage, headers=HEADERS, timeout=15)
         if response.status_code == 200:
-            print(f"{INFO}\tPage loaded successfully with requests.")
+            # print(f"{INFO}\tPage loaded successfully with requests.")
             return response.text
         elif response.status_code == 404:
-            print(f"{ERROR}\tPage ({homepage}) not found (404 error).")
+            # print(f"{ERROR}\tPage ({homepage}) not found (404 error).")
             return None
         else:
-            print(f"{WARN}\tReceived error code {response.status_code} with requests. Failing over to Selenium...")
+            # print(f"{WARN}\tReceived error code {response.status_code} with requests. Failing over to Selenium...")
             result = has_valid_homepage_with_selenium(homepage)
             # print(result)
             return result
     except requests.exceptions.RequestException as e:
-        print(f"{ERROR}\tAn exception occurred with requests: {e}. Failing over to Selenium...")
+        # print(f"{ERROR}\tAn exception occurred with requests: {e}. Failing over to Selenium...")
         result = has_valid_homepage_with_selenium(homepage)
         # print(result)
         return result
@@ -98,7 +98,7 @@ def has_valid_homepage_with_selenium(homepage: str) -> str | None:
     try:
         driver.get(homepage)
         WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-        print(f"{INFO}\tPage loaded successfully with Selenium.")
+        # print(f"{INFO}\tPage loaded successfully with Selenium.")
         return driver.page_source
     except Exception as e:
         print(f"{ERROR}\tAn exception occurred with Selenium: {e}")
