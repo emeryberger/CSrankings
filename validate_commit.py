@@ -233,7 +233,7 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
 
 def is_valid_file(file: str) -> bool:
     allowed_files = [
-        'csrankings-[a-z0].csv', 'country-info.csv',
+        'csrankings-[a-z0].csv', 
         'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv'
     ]
     return re.match(r'.*\.csv$', file) and any(re.match(p, file) for p in allowed_files)
