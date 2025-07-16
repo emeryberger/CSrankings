@@ -155,30 +155,6 @@ jobs:
             "$LABELS_URL" \
             -d '{"labels": ["validated"]}'
 
-          # Try to merge the PR
-          PR_API_URL="https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER"
-          MERGE_URL="https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/merge"
-
-          MERGEABLE=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "$PR_API_URL" | jq -r '.mergeable')
-
-          if [ "$MERGEABLE" = "true" ]; then
-            echo "Merging PR #$PR_NUMBER."
-            curl -s -X PUT \
-              -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              "$MERGE_URL" \
-              -d '{"merge_method": "squash"}'
-          else
-            echo "PR #$PR_NUMBER is not mergeable."
-            curl -s -X POST \
-              -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              "$COMMENTS_URL" \
-              -d '{"body": "✅ All validity checks passed. This PR is ready to merge, but could not be merged automatically (e.g., due to conflicts). Please merge manually."}'
-          fi
-
   stale:
     runs-on: ubuntu-latest
     steps:
