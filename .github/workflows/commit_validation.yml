@@ -36,7 +36,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 validate_commit.py diff.json > pr_comment.txt || true
+          python3 validate_commit.py diff.json | tee > pr_comment.txt || true
 
       - name: Upload PR number
         run: |
