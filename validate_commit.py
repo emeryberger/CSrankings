@@ -153,7 +153,8 @@ departmental web pages, and Google Scholar (using the included Google
 Scholar ID). Search the web to verify that their home page contains
 the name and specified affiliation (university and CS
 department). Search the web to verify that their Google Scholar ID
-corresponds to them.
+corresponds to them. Provide an audit for every single faculty
+mentioned in the diff.
 
 Respond ONLY with a JSON file like the following:
 
