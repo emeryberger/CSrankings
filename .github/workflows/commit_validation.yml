@@ -1,54 +1,165 @@
 name: Commit Validation
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
 
-permissions: read-all
+permissions:
+  pull-requests: write
+  issues: write
+  contents: read
 
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
-        with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      # Checkout the repo
-      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          fetch-depth: 0 # needed to checkout all branches for this Action to work
+          python-version: "3.10"
 
-      # Check the PR diff using the current branch and the base branch of the PR
-      - uses: GrantBirki/git-diff-action@v2.0.1
-        id: git-diff-action
-        with:
-          json_diff_file_output: diff.json
-          raw_diff_file_output: diff.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      # Print the diff in JSON format
-      - name: Check commits for validity
-        id: validation
+      - name: Generate diff.json from PR
         env:
-          DIFF: ${{ steps.git-diff-action.outputs.json-diff-path }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_NUMBER: ${{ github.event.number }}
         run: |
-          pip install -r requirements.txt
-          python validate_commit.py $DIFF
+          python3 generate_diff.py
 
-  upload:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Save PR number
+      - name: Run CSV + OpenAI validation
         env:
-          PR_NUMBER: ${{ github.event.number }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          mkdir -p ./pr
-          echo $PR_NUMBER > ./pr/pr_number.txt
+          python3 validate_commit.py diff.json | tee > pr_comment.txt || true
+
+      - name: Upload PR number
+        run: |
+          mkdir -p pr
+          echo "${{ github.event.number }}" > pr/pr_number.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr_comment.txt
+          path: pr_comment.txt
+          if-no-files-found: ignore
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: remove_stale.txt
+          path: remove_stale.txt
+          if-no-files-found: ignore
+
       - uses: actions/upload-artifact@v4
         with:
           name: pr_number.txt
-          path: pr/
+          path: pr/pr_number.txt
+
+  post_comment:
+    runs-on: ubuntu-latest
+    needs: commit_validation
+    if: always()
+
+    permissions:
+      pull-requests: write
+      issues: write
+      contents: write
+
+    steps:
+      - name: Download PR number
+        uses: actions/download-artifact@v4
+        with:
+          name: pr_number.txt
+          path: pr
+
+      - name: Download comment and stale flag
+        uses: actions/download-artifact@v4
+        with:
+          name: pr_comment.txt
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: remove_stale.txt
+          path: .
+
+      - name: Post audit comment and manage labels / merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=$(cat pr/pr_number.txt)
+          COMMENTS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments"
+          LABELS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels"
+
+          # Post PR comment if not already posted
+          if [ -f pr_comment.txt ]; then
+            COMMENT_JSON=$(jq -Rs . < pr_comment.txt)
+            EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
+            EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf pr_comment.txt || true)
+
+            echo "Posting validation result comment..."
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$COMMENTS_URL" \
+              -d "{\"body\": $COMMENT_JSON}"
+          fi
+
+          # CASE 1: Checks FAILED → add 'stale'
+          if grep -q "false" remove_stale.txt; then
+            echo "Validation failed. Adding 'stale' label and reminder."
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$COMMENTS_URL" \
+              -d '{"body": "Please address the failed validity checks above."}'
+
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$LABELS_URL" \
+              -d '{"labels": ["stale"]}'
+            exit 0
+          fi
+
+          # CASE 2: Checks PASSED → remove 'stale', add 'validated', merge PR
+          echo "Validation passed. Managing labels and attempting merge."
+
+          # Remove stale label (if present)
+          EXISTING_LABELS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels)
+
+          if echo "$EXISTING_LABELS" | jq -r '.[].name' | grep -q "^stale$"; then
+            echo "Removing 'stale' label."
+            curl -s -X DELETE \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels/stale
+          fi
+
+          # Add validated label
+          echo "Adding 'validated' label."
+          curl -s -X POST \
+            -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$LABELS_URL" \
+            -d '{"labels": ["validated"]}'
+
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-pr-label: 'stale'
+          stale-pr-message: 'This PR is stale because it has been open for 90 days with no activity. It will be closed in 2 days if there is no further activity.'
+          close-pr-message: 'This PR is being closed due to inactivity.'
+          days-before-pr-stale: 90
+          days-before-pr-close: 2
+          days-before-issue-stale: -1
+          days-before-issue-close: -1
