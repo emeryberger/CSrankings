@@ -151,14 +151,23 @@ CSrankings. Indicate any questionable additions, removals, or
 modifications. In particular, verify if any new faculty are affiliated
 at the listed institution, and whether they are in computer science or
 can solely supervise PhD students for a degree in computer science,
-and if they are full-time faculty members. Search the web to consult
-their home page (included in the PR), and consult LinkedIn,
-departmental web pages, and Google Scholar (using the included Google
-Scholar ID). Search the web to verify that their home page contains
-the name and specified affiliation (university and CS
-department). Search the web to verify that their Google Scholar ID
-corresponds to them. Provide an audit for every single faculty
-mentioned in the diff.
+and if they are full-time faculty members.
+
+Search the web as follows:
+    
+* Search the web to consult their home page (included in the PR), and
+consult LinkedIn, departmental web pages, and Google Scholar (using
+the included Google Scholar ID). Note that "NOSCHOLARPAGE" is
+acceptable as a Google Scholar ID.
+
+* Search the web to verify that the faculty member's home page
+contains the name and specified affiliation (university and CS
+department).
+
+* Search the web to verify that their Google Scholar ID
+corresponds to them.
+
+Provide an audit for every single faculty mentioned in the diff.
 
 Respond ONLY with a JSON file like the following:
 
