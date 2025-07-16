@@ -42,6 +42,10 @@ def remove_suffix_and_brackets(s: str) -> str:
     # Remove optional four-digit numeric suffix and optional bracketed suffix, in any order
     return re.sub(r'\s*(\d{4})?\s*(\[[^\]]*\])?$', '', s)
 
+def remove_brackets(s: str) -> str:
+    # Remove optional bracketed suffix
+    return re.sub(r'\s*\[[^\]]*\]$', '', s)
+
 def has_valid_google_scholar_id(s: str) -> bool:
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{12}$', s))
 
@@ -274,8 +278,9 @@ def process_csv_diff(diff_path: str) -> bool:
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
                     print(f"{index}.\tValidating {name}")
-                    if matching_name_with_dblp(name) == 0:
-                        print(f"{index}.\t{ERROR}\tNo DBLP match for {name}")
+                    name_no_brackets = remove_brackets(name)
+                    if matching_name_with_dblp(name_no_brackets) == 0:
+                        print(f"{index}.\t{ERROR}\tNo DBLP match for {name_no_brackets}")
                         valid = False
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
