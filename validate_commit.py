@@ -368,8 +368,8 @@ if __name__ == "__main__":
         raise EnvironmentError("OPENAI_API_KEY not set.")
 
     csv_valid = process_csv_diff(diff_path)
-    if not csv_valid:
-        mark_failed()
+
+    # Proceed with the AI audit even when the basic checks fail.
 
     client = openai.OpenAI(api_key=api_key)
     audit_result = ""
@@ -392,4 +392,7 @@ if __name__ == "__main__":
                 auditing_error = True
         if auditing_error:
             mark_failed()
+            
+    if not csv_valid:
+        mark_failed()
     mark_succeeded()
