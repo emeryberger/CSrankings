@@ -28,37 +28,28 @@ jobs:
       - name: Generate diff.json from PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_EVENT_NUMBER: ${{ github.event.number }}
-        run: |
-          python3 generate_diff.py
+        run: python3 generate_diff.py
 
       - name: Run CSV + OpenAI validation
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 validate_commit.py diff.json | tee > pr_comment.txt || true
+          python3 validate_commit.py diff.json | tee pr_comment.txt || true
 
-      - name: Upload PR number
+      - name: Save PR number
         run: |
           mkdir -p pr
           echo "${{ github.event.number }}" > pr/pr_number.txt
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
         with:
-          name: pr_comment.txt
-          path: pr_comment.txt
+          name: artifacts
+          path: |
+            pr/pr_number.txt
+            pr_comment.txt
+            remove_stale.txt
           if-no-files-found: ignore
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: remove_stale.txt
-          path: remove_stale.txt
-          if-no-files-found: ignore
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: pr_number.txt
-          path: pr/pr_number.txt
 
   post_comment:
     runs-on: ubuntu-latest
@@ -71,48 +62,45 @@ jobs:
       contents: write
 
     steps:
-      - name: Download PR number
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: pr_number.txt
-          path: pr
-
-      - name: Download comment and stale flag
-        uses: actions/download-artifact@v4
-        with:
-          name: pr_comment.txt
-          path: .
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: remove_stale.txt
-          path: .
+          name: artifacts
+          path: artifacts
 
       - name: Post audit comment and manage labels / merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_NUMBER=$(cat pr/pr_number.txt)
-          COMMENTS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/comments"
-          LABELS_URL="https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels"
+          PR_NUMBER=$(<artifacts/pr/pr_number.txt)
+          REPO="${{ github.repository }}"
+          COMMENTS_URL="https://api.github.com/repos/$REPO/issues/$PR_NUMBER/comments"
+          LABELS_URL="https://api.github.com/repos/$REPO/issues/$PR_NUMBER/labels"
 
-          # Post PR comment if not already posted
-          if [ -f pr_comment.txt ]; then
-            COMMENT_JSON=$(jq -Rs . < pr_comment.txt)
+          if [ -f artifacts/pr_comment.txt ]; then
+            COMMENT_JSON=$(jq -Rs . < artifacts/pr_comment.txt)
             EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
-            EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf pr_comment.txt || true)
+            EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf artifacts/pr_comment.txt || true)
 
-            echo "Posting validation result comment..."
-            curl -s -X POST \
-              -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              "$COMMENTS_URL" \
-              -d "{\"body\": $COMMENT_JSON}"
+            if [ -z "$EXISTS" ]; then
+              echo "Posting validation result comment..."
+              TMPFILE=$(mktemp)
+              echo "{\"body\": $COMMENT_JSON}" > "$TMPFILE"
+
+              curl -s -X POST \
+                -H "Authorization: token $GH_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "$COMMENTS_URL" \
+                --data-binary "@$TMPFILE"
+              rm -f "$TMPFILE"
+            else
+              echo "Comment already exists."
+            fi
           fi
 
           # CASE 1: Checks FAILED → add 'stale'
-          if grep -q "false" remove_stale.txt; then
-            echo "Validation failed. Adding 'stale' label and reminder."
+          if [ -f artifacts/remove_stale.txt ] && grep -q "false" artifacts/remove_stale.txt; then
+            echo "Validation failed. Adding 'stale' label."
             curl -s -X POST \
               -H "Authorization: token $GH_TOKEN" \
               -H "Accept: application/vnd.github+json" \
@@ -127,23 +115,17 @@ jobs:
             exit 0
           fi
 
-          # CASE 2: Checks PASSED → remove 'stale', add 'validated', merge PR
-          echo "Validation passed. Managing labels and attempting merge."
+          # CASE 2: Checks PASSED → remove 'stale', add 'validated'
+          echo "Validation passed. Managing labels."
 
-          # Remove stale label (if present)
-          EXISTING_LABELS=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels)
-
+          EXISTING_LABELS=$(curl -s -H "Authorization: token $GH_TOKEN" "$LABELS_URL")
           if echo "$EXISTING_LABELS" | jq -r '.[].name' | grep -q "^stale$"; then
             echo "Removing 'stale' label."
             curl -s -X DELETE \
               -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              https://api.github.com/repos/${{ github.repository }}/issues/$PR_NUMBER/labels/stale
+              "$LABELS_URL/stale"
           fi
 
-          # Add validated label
           echo "Adding 'validated' label."
           curl -s -X POST \
             -H "Authorization: token $GH_TOKEN" \
