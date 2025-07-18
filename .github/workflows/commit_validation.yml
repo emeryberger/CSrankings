@@ -28,6 +28,7 @@ jobs:
       - name: Generate diff.json from PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_NUMBER: ${{ github.event.number }}
         run: python3 generate_diff.py
 
       - name: Run CSV + OpenAI validation
