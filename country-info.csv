@@ -3,7 +3,7 @@ AUEB,europe,gr
 Aalborg University,europe,dk
 Aalto University,europe,fi
 Aarhus University,europe,dk
-Aberystwyth University,europe,uk
+Aberystwyth University,europe,gb
 American University in Cairo,africa,eg
 American University of Beirut,asia,lb
 Ariel University,europe,il
@@ -14,6 +14,7 @@ BITS Pilani-Goa,asia,in
 BUET,asia,bd
 BUPT,asia,cn
 Babeș-Bolyai University,europe,ro
+Bangladesh University of Professionals,asia,bd
 Bar-Ilan University,europe,il
 Bauhaus University Weimar,europe,de
 Beihang University,asia,cn
@@ -21,30 +22,32 @@ Beijing Jiaotong University,asia,cn
 Ben-Gurion University of the Negev,europe,il
 Bielefeld University,europe,de
 Bilkent University,europe,tr
-Birkbeck University of London,europe,uk
+Birkbeck University of London,europe,gb
 Bocconi University,europe,it
 Boğaziçi University,europe,tr
 Brandenburg University of Technology,europe,de
 Brno University of Technology,europe,cz
 Brock University,canada,ca
-Brunel University London,europe,uk
+Brunel University London,europe,gb
 Bundeswehr University Munich,europe,de
 CISPA Helmholtz Center,europe,de
 CMI,asia,in
 CRIStAL,europe,fr
 CUHK (SZ),asia,cn
 CWI,europe,nl
-Cardiff University,europe,uk
+Cardiff University,europe,gb
 Carleton University,canada,ca
 Central South University,asia,cn
 Chalmers/GU,europe,se
 Charles University,europe,cz
 Chinese Academy of Sciences,asia,cn
 Chinese University of Hong Kong,asia,hk
+Chittagong University of Engineering & Technology,asia,bd
 Chongqing University,asia,cn
 Chulalongkorn University,asia,th
 City University of Hong Kong,asia,hk
-City University of London,europe,uk
+City University of London,europe,gb
+City University of Macau,asia,mo
 Concordia University,canada,ca
 Cyprus University of Technology,europe,cy
 Czech Technical University,europe,cz
@@ -52,7 +55,7 @@ DAIICT,asia,in
 DTU,europe,dk
 Dalhousie University,canada,ca
 De La Salle University,asia,ph
-Durham University,europe,uk
+Durham University,europe,gb
 EPFL,europe,ch
 ETH Zurich,europe,ch
 ETS Montreal,canada,ca
@@ -69,7 +72,7 @@ Fudan University,asia,cn
 GSSI,europe,it
 Galatasaray University,europe,tr
 Goethe University Frankfurt,europe,de
-Goldsmiths University of London,europe,uk
+Goldsmiths University of London,europe,gb
 Graz University of Technology,europe,at
 Griffith University,australasia,au
 HEC Montreal,canada,ca
@@ -83,7 +86,7 @@ Harbin Institute of Technology,asia,cn
 Hasso Plattner Institute,europe,de
 Hebrew University of Jerusalem,europe,il
 Heidelberg University,europe,de
-Heriot-Watt University,europe,uk
+Heriot-Watt University,europe,gb
 Hong Kong Baptist University,asia,hk
 Humboldt University of Berlin,europe,de
 Hunan University,asia,cn
@@ -118,20 +121,24 @@ IIT Tirupati,asia,in
 IMDEA Networks Institute,europe,es
 IMDEA Software Institute,europe,es
 IMSc,asia,in
+INRIA,europe,fr
 IPI PAN,europe,pl
 IPM,asia,ir
 ISI Kolkata,asia,in
 IST Austria,europe,at
 IT University of Copenhagen,europe,dk
 IUST,asia,ir
-Imperial College London,europe,uk
+Imperial College London,europe,gb
 Institut Polytechnique de Paris,europe,fr
+Islamic University of Technology,asia,bd
 Istanbul Technical University,europe,tr
 Izmir Institute of Technology,europe,tr
 JKU Linz,europe,at
 JUST,asia,jo
 Jacobs University Bremen,europe,de
 Jadavpur University,asia,in
+Jagiellonian University,europe,pl
+Jahangirnagar University,asia,bd
 KAIST,asia,kr
 KAUST,asia,sa
 KIIT Bhubaneswar,asia,in
@@ -141,8 +148,9 @@ KU Leuven,europe,be
 Karlsruhe Institute of Technology,europe,de
 Keio University,asia,jp
 Kempelen Institute - KInIT,europe,sk
+Khulna University of Engineering & Technology,asia,bd
 King Abdulaziz University,asia,sa
-King's College London,europe,uk
+King's College London,europe,gb
 Korea University,asia,kr
 Koç University,europe,tr
 Kyoto University,asia,jp
@@ -150,10 +158,10 @@ Kyung Hee University,asia,kr
 Kyungpook National University,asia,kr
 LMU Munich,europe,de
 LUMS,asia,pk
-Lancaster University,europe,uk
+Lancaster University,europe,gb
 Lebanese American University,asia,lb
 Leiden University,europe,nl
-Loughborough University,europe,uk
+Loughborough University,europe,gb
 Lund University,europe,se
 MBZUAI,asia,ae
 MUST,asia,mo
@@ -169,7 +177,7 @@ McGill University,canada,ca
 McMaster University,canada,ca
 Memorial University of Newfoundland,canada,ca
 Middle East Technical University,europe,tr
-Middlesex University,europe,uk
+Middlesex University,europe,gb
 Monash University,australasia,au
 Mälardalen University,europe,se
 NAIST,asia,jp
@@ -179,6 +187,7 @@ NTUA,europe,gr
 NWPU,asia,cn
 NYU Abu Dhabi,asia,ae
 NYU Shanghai,asia,cn
+Nagoya University,asia,jp
 Nanjing University,asia,cn
 Nanyang Technological University,asia,sg
 Nara Institute of Science and Technology,asia,jp
@@ -190,10 +199,10 @@ National Institute of Technology Warangal,asia,in
 National Taiwan University,asia,tw
 National Tsing Hua University,asia,tw
 National University of Singapore,asia,sg
-Newcastle University,europe,uk
+Newcastle University,europe,gb
 Northwest University,asia,cn
 Ontario Tech University,canada,ca
-Open University UK,europe,uk
+Open University UK,europe,gb
 Osaka University,asia,jp
 POSTECH,asia,kr
 PTIT,asia,vn
@@ -208,16 +217,17 @@ Polytechnique Montreal,canada,ca
 Pontificia Universidad Catolica de Chile,southamerica,cl
 Qatar Computing Research Institute,asia,qa
 Qatar University,asia,qa
-Queen Mary University of London,europe,uk
-Queen's University Belfast,europe,uk
+Queen Mary University of London,europe,gb
+Queen's University Belfast,europe,gb
 Queensland University of Technology,australasia,au
 Queen’s University,canada,ca
 RMIT University,australasia,au
 RWTH Aachen University,europe,de
 Radboud University,europe,nl
+Rajshahi University of Engineering & Technology,asia,bd
 Ravenshaw University,asia,in
 Renmin University of China,asia,cn
-Royal Holloway University of London,europe,uk
+Royal Holloway University of London,europe,gb
 Royal Military College of Canada,canada,ca
 Ruhr-University Bochum,europe,de
 SUFE,asia,cn
@@ -301,9 +311,9 @@ Universidade NOVA de Lisboa,europe,pt
 Universidade de Brasília,southamerica,br
 Universidade de Lisboa,europe,pt
 University College Dublin,europe,ie
-University College London,europe,uk
+University College London,europe,gb
 University of A Coruña,europe,es
-University of Aberdeen,europe,uk
+University of Aberdeen,europe,gb
 University of Adelaide,australasia,au
 University of Alberta,canada,ca
 University of Amsterdam,europe,nl
@@ -313,35 +323,38 @@ University of Auckland,australasia,nz
 University of Augsburg,europe,de
 University of Bamberg,europe,de
 University of Basel,europe,ch
-University of Bath,europe,uk
+University of Bath,europe,gb
 University of Bayreuth,europe,de
 University of Bergen,europe,no
 University of Bern,europe,ch
-University of Birmingham,europe,uk
+University of Birmingham,europe,gb
 University of Bonn,europe,de
 University of Bremen,europe,de
-University of Bristol,europe,uk
+University of Bristol,europe,gb
 University of British Columbia,canada,ca
 University of Buenos Aires,southamerica,ar
 University of Calgary,canada,ca
-University of Cambridge,europe,uk
+University of Cambridge,europe,gb
 University of Canterbury,australasia,nz
 University of Cape Town,africa,za
 University of Catania,europe,it
+University of Chittagong,asia,bd
 University of Cologne,europe,de
 University of Copenhagen,europe,dk
 University of Crete,europe,gr
 University of Delhi,asia,in
+University of Dhaka,asia,bd
 University of Duisburg-Essen,europe,de
-University of Dundee,europe,uk
+University of Dundee,europe,gb
 University of Düsseldorf,europe,de
-University of Edinburgh,europe,uk
+University of Edinburgh,europe,gb
 University of Erlangen–Nuremberg,europe,de
-University of Essex,europe,uk
-University of Exeter,europe,uk
+University of Essex,europe,gb
+University of Exeter,europe,gb
 University of Freiburg,europe,de
 University of Fribourg,europe,ch
-University of Glasgow,europe,uk
+University of Geneva,europe,ch
+University of Glasgow,europe,gb
 University of Groningen,europe,nl
 University of Guelph,canada,ca
 University of Göttingen,europe,de
@@ -356,15 +369,15 @@ University of Innsbruck,europe,at
 University of Ioannina,europe,gr
 University of Jordan,asia,jo
 University of Kassel,europe,de
-University of Kent,europe,uk
+University of Kent,europe,gb
 University of Kiel,europe,de
 University of Klagenfurt,europe,at
 University of Koblenz-Landau,europe,de
 University of Konstanz,europe,de
 University of L'Aquila,europe,it
-University of Leeds,europe,uk
+University of Leeds,europe,gb
 University of Leipzig,europe,de
-University of Liverpool,europe,uk
+University of Liverpool,europe,gb
 University of Luxembourg,europe,lu
 University of Lübeck,europe,de
 University of Macau,asia,mo
@@ -372,24 +385,25 @@ University of Magdeburg,europe,de
 University of Mainz,europe,de
 University of Malaya,asia,my
 University of Malta,europe,mt
-University of Manchester,europe,uk
+University of Manchester,europe,gb
 University of Manitoba,canada,ca
 University of Mannheim,europe,de
 University of Marburg,europe,de
 University of Melbourne,australasia,au
 University of Molise,europe,it
 University of Montreal,canada,ca
+University of Moratuwa,asia,lk
 University of Murcia,europe,es
 University of Münster,europe,de
 University of New Brunswick,canada,ca
 University of Newcastle,australasia,au
 University of Nicosia,europe,cy
-University of Nottingham,europe,uk
+University of Nottingham,europe,gb
 University of Oldenburg,europe,de
 University of Osnabrück,europe,de
 University of Otago,australasia,nz
 University of Ottawa,canada,ca
-University of Oxford,europe,uk
+University of Oxford,europe,gb
 University of Padova,europe,it
 University of Passau,europe,de
 University of Peradeniya,asia,lk
@@ -397,6 +411,7 @@ University of Piraeus,europe,gr
 University of Pisa,europe,it
 University of Potsdam,europe,de
 University of Queensland,australasia,au
+University of Rajshahi,asia,bd
 University of Regensburg,europe,de
 University of Regina,canada,ca
 University of Rostock,europe,de
@@ -404,14 +419,14 @@ University of Salerno,europe,it
 University of Salzburg,europe,at
 University of Sannio,europe,it
 University of Saskatchewan,canada,ca
-University of Sheffield,europe,uk
+University of Sheffield,europe,gb
 University of Siegen,europe,de
-University of Southampton,europe,uk
-University of St Andrews,europe,uk
-University of Strathclyde,europe,uk
+University of Southampton,europe,gb
+University of St Andrews,europe,gb
+University of Strathclyde,europe,gb
 University of Stuttgart,europe,de
-University of Surrey,europe,uk
-University of Sussex,europe,uk
+University of Surrey,europe,gb
+University of Sussex,europe,gb
 University of Sydney,australasia,au
 University of Szeged,europe,hu
 University of Tartu,europe,ee
@@ -429,7 +444,7 @@ University of Victoria,canada,ca
 University of Vienna,europe,at
 University of Waikato,australasia,nz
 University of Warsaw,europe,pl
-University of Warwick,europe,uk
+University of Warwick,europe,gb
 University of Waterloo,canada,ca
 University of Western Australia,australasia,au
 University of Windsor,canada,ca
@@ -437,7 +452,7 @@ University of Wollongong,australasia,au
 University of Wroclaw,europe,pl
 University of Wuppertal,europe,de
 University of Würzburg,europe,de
-University of York,europe,uk
+University of York,europe,gb
 University of Zurich,europe,ch
 Università della Svizzera italiana,europe,ch
 Université Jean Monnet,europe,fr
@@ -452,6 +467,7 @@ VISTEC,asia,th
 VNIT Nagpur,asia,in
 VU Amsterdam,europe,nl
 Victoria University of Wellington,australasia,nz
+VinUniversity,asia,vn
 Waseda University,asia,jp
 Weizmann Institute of Science,europe,il
 Western Sydney University,australasia,au
