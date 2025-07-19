@@ -338,7 +338,7 @@ def process_csv_diff(diff_path: str) -> bool:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
                             if name not in gscholar_page_text:
                                 print(f"{index}.\t{WARN}\tName ({name}) not found on given Google Scholar page ({gs_url}).")
-                                print("Returned Google Scholar page:\n{gscholar_page_text}", file=sys.stderr)
+                                print(f"Returned Google Scholar page:\n{gscholar_page_text}", file=sys.stderr)
                                 
                             else:
                                 print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
