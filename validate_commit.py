@@ -336,12 +336,14 @@ def process_csv_diff(diff_path: str) -> bool:
                             valid = False
                         else:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
-                            if name not in gscholar_page_text:
+                            if all(item not in gscholar_page_text
+                                   for item in
+                                   [name, "your computer or network may be sending automated queries"]):
                                 print(f"{index}.\t{WARN}\tName ({name}) not found on given Google Scholar page ({gs_url}).")
                                 print(f"Returned Google Scholar page:\n{gscholar_page_text}", file=sys.stderr)
-                                
                             else:
-                                print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
+                                pass
+                                # print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
                 except Exception as e:
                     print(f"{index}.\tProcessing error: {e}")
                     valid = False
