@@ -148,10 +148,14 @@ def construct_prompt(diff: str) -> str:
     
 Audit this pull request to verify the following checklist for a PR to
 CSrankings. Indicate any questionable additions, removals, or
-modifications. In particular, verify if any new faculty are affiliated
+modifications. In particular, verify if faculty are affiliated
 at the listed institution, and whether they are in computer science or
-can solely supervise PhD students for a degree in computer science,
-and if they are full-time faculty members.
+can solely supervise PhD students for a degree in computer science because
+they have an affiliation with the Computer Science department OR if they are
+permitted to solely advise PhD students by their institution.
+They must also be full-time faculty members. It is not sufficient for them
+to have published in Computer Science venues.
+
 
 Search the web as follows:
     
@@ -334,6 +338,8 @@ def process_csv_diff(diff_path: str) -> bool:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
                             if name not in gscholar_page_text:
                                 print(f"{index}.\t{WARN}\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                                print("Returned Google Scholar page:\n{gscholar_page_text}", file=sys.stderr)
+                                
                             else:
                                 print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
                 except Exception as e:
