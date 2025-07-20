@@ -302,13 +302,13 @@ def process_csv_diff(diff_path: str) -> bool:
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
-                    if name not in homepage_text:
+                    if name.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tExact match of name ({name}) not found on home page ({homepage}).")
-                        if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
+                        if not fuzzysearch.find_near_matches(name.lower(), homepage_text.lower(), max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {name} found on home page.")
                     else:    
                         print(f"{index}.\t{INFO}\tName ({name}) found on home page.")
-                    if affiliation not in homepage_text:
+                    if affiliation.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tAffiliation ({affiliation}) not found on home page.")
                         if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {affiliation} found on home page.")
