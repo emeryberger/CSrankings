@@ -298,7 +298,7 @@ def process_csv_diff(diff_path: str) -> bool:
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"{index}.\t{WARN}\tInvalid homepage: {homepage}")
+                        print(f"{index}.\t{ERROR}\tInvalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
