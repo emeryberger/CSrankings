@@ -262,13 +262,14 @@ def process_csv_diff(diff_path: str) -> bool:
     with open(diff_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    valid = True
     changed_lines = {}
     for d in data["files"]:
         try:
             path = d["path"]
             if not is_valid_file(path):
                 print(f"{ERROR}\tInvalid file modified: {path}")
-                return False
+                valid = False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
                 if c["type"] == "AddedLine"
@@ -276,7 +277,6 @@ def process_csv_diff(diff_path: str) -> bool:
         except KeyError:
             continue
 
-    valid = True
     index = 0
     for path, lines in changed_lines.items():
         matched = re.match(r'csrankings-([a-z0])\.csv', path)
