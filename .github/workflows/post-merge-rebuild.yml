@@ -1,0 +1,41 @@
+name: Run Make and Commit Changes
+
+on:
+  push:
+    branches:
+      - gh-pages  # Runs only on merge to the main branch
+
+permissions:
+  contents: write  # Required to push changes back
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # Required to push back
+
+      - name: Set up Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run make
+        run: |
+          make
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-commit: results of running make after merge"
+            git push
+          fi
