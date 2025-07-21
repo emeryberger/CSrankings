@@ -262,13 +262,14 @@ def process_csv_diff(diff_path: str) -> bool:
     with open(diff_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    valid = True
     changed_lines = {}
     for d in data["files"]:
         try:
             path = d["path"]
             if not is_valid_file(path):
                 print(f"{ERROR}\tInvalid file modified: {path}")
-                return False
+                valid = False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
                 if c["type"] == "AddedLine"
@@ -276,7 +277,6 @@ def process_csv_diff(diff_path: str) -> bool:
         except KeyError:
             continue
 
-    valid = True
     index = 0
     for path, lines in changed_lines.items():
         matched = re.match(r'csrankings-([a-z0])\.csv', path)
@@ -298,17 +298,17 @@ def process_csv_diff(diff_path: str) -> bool:
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"{index}.\t{WARN}\tInvalid homepage: {homepage}")
+                        print(f"{index}.\t{ERROR}\tInvalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
-                    if name not in homepage_text:
+                    if name.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tExact match of name ({name}) not found on home page ({homepage}).")
-                        if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
+                        if not fuzzysearch.find_near_matches(name.lower(), homepage_text.lower(), max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {name} found on home page.")
                     else:    
                         print(f"{index}.\t{INFO}\tName ({name}) found on home page.")
-                    if affiliation not in homepage_text:
+                    if affiliation.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tAffiliation ({affiliation}) not found on home page.")
                         if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {affiliation} found on home page.")
