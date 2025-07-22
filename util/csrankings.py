@@ -264,7 +264,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
     Area("hpca"): [Conference("HPCA")],
-    Area("cav"):  [Conference("CAV")] + [Conference(f"CAV ({i})") for i in range(1, 3)],
+    Area("cav"):  [Conference("CAV")] + [Conference(f"CAV ({i})") for i in range(1, 4)],
     Area("lics"): [Conference("LICS"), Conference("CSL-LICS")],
     Area("focs"): [Conference("FOCS")],
     Area("stoc"): [Conference("STOC")],
