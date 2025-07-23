@@ -114,6 +114,41 @@ with open("country-info.csv", mode="w") as outfile:
         swriter.writerow(h)
 
 
+# Read in all CSrankings files and remove duplicates.
+for letter in map(chr, range(ord('a'),ord('z')+1)):
+    csrankings = {}
+    with open(f"csrankings-{letter}.csv", mode="r") as infile:
+        reader = csv.DictReader(infile)
+        for row in reader:
+            csrankings[row["name"]] = {
+                "affiliation": row["affiliation"],
+                "homepage": row["homepage"],
+                "scholarid": row["scholarid"],
+            }
+    with open(f"csrankings-{letter}.csv", mode="w") as outfile:
+        sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
+        swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+        swriter.writeheader()
+        for n in csrankings:
+            h = {
+                "name": n,
+                "affiliation": csrankings[n]["affiliation"],
+                "homepage": csrankings[n]["homepage"].rstrip("/"),
+                "scholarid": csrankings[n]["scholarid"],
+            }
+            swriter.writerow(h)
+    
+csrankings = {}
+with open("csrankings.csv", mode="r") as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        csrankings[row["name"]] = {
+            "affiliation": row["affiliation"],
+            "homepage": row["homepage"],
+            "scholarid": row["scholarid"],
+        }
+
+
 # Read in CSrankings file.
 csrankings = {}
 with open("csrankings.csv", mode="r") as infile:
