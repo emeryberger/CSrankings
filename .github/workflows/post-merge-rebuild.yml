@@ -24,7 +24,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          npm install -g google-closure-compiler
 
       - name: Run make
         run: |
