@@ -102,11 +102,11 @@ def map_pacmmod_to_conference(journal: Conference, year: int, number_str: str) -
                     return (Conference("SIGMOD Conference"), 2023)
                 elif number in {3, 4}:
                     return (Conference("SIGMOD Conference"), 2024)
-            elif year == 2024:
-                if number in {1, 3, 4}:
-                    return (Conference("SIGMOD Conference"), 2024)
-                elif number == 2:
-                    return (Conference("PODS"), 2024)
+            else:
+                if number == 2:
+                    return (Conference("PODS"), year)
+                else:
+                    return (Conference("SIGMOD Conference"), year)
     except:
         pass
     return (journal, year)
@@ -264,7 +264,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
     Area("hpca"): [Conference("HPCA")],
-    Area("cav"):  [Conference("CAV")] + [Conference(f"CAV ({i})") for i in range(1, 3)],
+    Area("cav"):  [Conference("CAV")] + [Conference(f"CAV ({i})") for i in range(1, 4)],
     Area("lics"): [Conference("LICS"), Conference("CSL-LICS")],
     Area("focs"): [Conference("FOCS")],
     Area("stoc"): [Conference("STOC")],
@@ -322,6 +322,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("HLT-NAACL"),
         Conference("NAACL-HLT"),
         Conference("NAACL-HLT (1)"),
+        Conference("NAACL (Long Papers)"),
     ],
     Area("cvpr"): [Conference("CVPR"), Conference("CVPR (1)"), Conference("CVPR (2)")],
     Area("iccv"): [Conference("ICCV")],
