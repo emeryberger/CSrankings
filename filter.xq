@@ -16,6 +16,7 @@
 //inproceedings[booktitle="NAACL"],
 //inproceedings[booktitle="NAACL-HLT"],
 //inproceedings[booktitle="NAACL-HLT (1)"],
+//inproceedings[booktitle="NAACL (Long Papers)"],
 //inproceedings[booktitle="HLT-NAACL"],
 //inproceedings[booktitle="EMNLP"],
 //inproceedings[booktitle="EMNLP-CoNLL"],
