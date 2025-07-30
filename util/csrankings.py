@@ -910,7 +910,7 @@ def countPaper(
     if pageCount != -1 and pageCount < pageCountThreshold:
         exceptionConference = False
         exceptionConference |= confname == "SC" and (
-            year <= 2012 or year in {2017, 2020, 2021}
+            year <= 2012 or year in {2017, 2020, 2021, 2024}
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
