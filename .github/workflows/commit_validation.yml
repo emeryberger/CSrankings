@@ -35,7 +35,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 validate_commit.py diff.json | tee pr_comment.txt || true
+          python3 validate_commit.py diff.json | tee pr_comment.txt
 
       - name: Save PR number
         run: |
@@ -83,20 +83,16 @@ jobs:
             EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
             EXISTS=$(echo "$EXISTING" | jq -r '.[].body' | grep -Fxf artifacts/pr_comment.txt || true)
 
-            if [ -z "$EXISTS" ]; then
-              echo "Posting validation result comment..."
-              TMPFILE=$(mktemp)
-              echo "{\"body\": $COMMENT_JSON}" > "$TMPFILE"
+            echo "Posting validation result comment..."
+            TMPFILE=$(mktemp)
+            echo "{\"body\": $COMMENT_JSON}" > "$TMPFILE"
 
-              curl -s -X POST \
-                -H "Authorization: token $GH_TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                "$COMMENTS_URL" \
-                --data-binary "@$TMPFILE"
-              rm -f "$TMPFILE"
-            else
-              echo "Comment already exists."
-            fi
+            curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$COMMENTS_URL" \
+              --data-binary "@$TMPFILE"
+            rm -f "$TMPFILE"
           fi
 
           # CASE 1: Checks FAILED → add 'stale'
