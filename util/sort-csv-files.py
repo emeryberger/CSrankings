@@ -45,7 +45,9 @@ def sort_csv_files(directives_file):
                 with open(temp_file_path, 'r', newline='\n') as temp_file:
                     with open(file_path, 'w', newline='') as original_file:
                         for line in temp_file:
-                            original_file.write(line.rstrip('\n') + line_ending)
+                            if len(line.strip()) > 0:
+                                # Only write non-empty lines.
+                                original_file.write(line.rstrip('\n') + line_ending)
                 
                 os.remove(temp_file_path)
                 
