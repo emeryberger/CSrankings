@@ -285,6 +285,9 @@ def process_csv_diff(diff_path: str) -> bool:
         if matched:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
+                # Ignore empty lines, since Github seems to be adding them now.
+                if len(line) == 0:
+                    continue
                 index += 1
                 if re.search(r',\s', line):
                     print(f"\t{index}.\t{ERROR}\tSpace after comma: {line}")
