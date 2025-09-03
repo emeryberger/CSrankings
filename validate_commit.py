@@ -251,7 +251,9 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
 def is_valid_file(file: str) -> bool:
     allowed_files = [
         'csrankings-[a-z0].csv', 
-        'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv'
+        'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv',
+        'csrankings.csv',
+        'generated-author-info.csv'
     ]
     return re.match(r'.*\.csv$', file) and any(re.match(p, file) for p in allowed_files)
 
@@ -283,6 +285,9 @@ def process_csv_diff(diff_path: str) -> bool:
         if matched:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
+                # Ignore empty lines, since Github seems to be adding them now.
+                if len(line) == 0:
+                    continue
                 index += 1
                 if re.search(r',\s', line):
                     print(f"\t{index}.\t{ERROR}\tSpace after comma: {line}")
