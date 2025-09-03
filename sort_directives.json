@@ -1,0 +1,23 @@
+[
+    {
+        "files": ["country-info.csv"],
+	"sort_columns": ["institution", "region", "countryabbrv" ]
+    },
+    {
+	"files": [ "institutions.csv" ],
+        "sort_columns": ["institution"]
+	
+    },
+    {
+	"files" : ["csrankings-[a-z].csv"],
+        "sort_columns": ["name"]
+    },
+    {
+        "files": ["acm-fellows.csv", "turing.csv"],
+        "sort_columns": ["year", "name"]
+    },
+    {
+	"files" : ["old/industry.csv", "old/rip.csv", "old/emeritus.csv"],
+	"sort_columns": ["name"]
+    }
+]
