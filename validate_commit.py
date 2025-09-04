@@ -438,7 +438,7 @@ if __name__ == "__main__":
             if gloss:
                 auditing_error = True
                 
-    if not csv_valid or auditing_error:
+    if not pr_metadata_valid or not csv_valid or auditing_error:
         mark_failed()
         sys.exit(-1)
     else:
