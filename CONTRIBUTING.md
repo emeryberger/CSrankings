@@ -60,7 +60,8 @@ e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time 
 - [ ] If DBLP has multiple entries for this person, *all of them need to be listed*. Do not update `dblp-aliases.csv`.
 
 - [ ] If the institution you are adding is not in the US,
-update `country-info.csv` and add *all* of the faculty in the CS department.
+do not submit a pull request. You must first open an issue entitled "Add (NAME OF UNIVERSITY) to the list of institutions" and I will add the institution. Once that has been completed,
+submit a single PR that adds *all* of the faculty in the CS department.
 
 **(Advanced) Quick contribution via a shallow clone** 
 
@@ -79,5 +80,4 @@ steps:
 1. Make your changes on a branch, push them to your clone, and create a pull request on GitHub as usual.
 
 If you want to make another contribution and some time has passed, perform these steps again, creating a fresh fork and shallow clone.
-
 
