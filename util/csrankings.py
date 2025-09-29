@@ -102,11 +102,11 @@ def map_pacmmod_to_conference(journal: Conference, year: int, number_str: str) -
                     return (Conference("SIGMOD Conference"), 2023)
                 elif number in {3, 4}:
                     return (Conference("SIGMOD Conference"), 2024)
-            elif year == 2024:
-                if number in {1, 3, 4}:
-                    return (Conference("SIGMOD Conference"), 2024)
-                elif number == 2:
-                    return (Conference("PODS"), 2024)
+            else:
+                if number == 2:
+                    return (Conference("PODS"), year)
+                else:
+                    return (Conference("SIGMOD Conference"), year)
     except:
         pass
     return (journal, year)
@@ -910,7 +910,7 @@ def countPaper(
     if pageCount != -1 and pageCount < pageCountThreshold:
         exceptionConference = False
         exceptionConference |= confname == "SC" and (
-            year <= 2012 or year in {2017, 2020, 2021}
+            year <= 2012 or year in {2017, 2020, 2021, 2024}
         )
         exceptionConference |= confname == "SIGSOFT FSE" and year == 2012
         exceptionConference |= (
