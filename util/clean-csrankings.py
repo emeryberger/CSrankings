@@ -91,7 +91,7 @@ with open("generated-author-info.csv", mode="r") as infile:
 
 # Read in country-info file.
 countryinfo = {}
-with open("country-info.csv", mode="r") as infile:
+with open("institutions.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         if row["institution"] != "":
@@ -101,7 +101,7 @@ with open("country-info.csv", mode="r") as infile:
             }
 
 # Sort it and write it back.
-with open("country-info.csv", mode="w") as outfile:
+with open("institutions.csv", mode="w") as outfile:
     sfieldnames = ["institution", "region", "countryabbrv"]
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
