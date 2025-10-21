@@ -92,7 +92,7 @@ class CSRankings {
     public static readonly areas: Array<string> = [];
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
-    public static readonly regions: Array<string> = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae","ar","at","au","bd","be","br","ca","ch","cl","cn","co","cy","cz","de","dk","ee","eg","es","fi","fr","gr","hk","hu","ie","il","in","ir","it","jo","jp","kr","lb","lk","lu","mt","my","nl","no","nz","ph","pk","pl","pt","qa","ro","ru","sa","se","sg","th","tr","tw","uk","za"];
+    public static readonly regions: Array<string> = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae","ar","at","au","bd","be","bg","br","ca","ch","cl","cn","co","cy","cz","de","dk","ee","eg","es","fi","fr","gr","hk","hu","ie","il","in","ir","it","jo","jp","kr","lb","lk","lu","mt","my","nl","no","nz","ph","pk","pl","pt","qa","ro","ru","sa","se","sg","th","tr","tw","uk","us","vn","za"];
     private static readonly nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 
     private note: { [name: string]: string } = {};
@@ -247,7 +247,7 @@ class CSRankings {
 
     private readonly authorFile = "./csrankings.csv";
     private readonly authorinfoFile = "./generated-author-info.csv";
-    private readonly countryinfoFile = "./country-info.csv";
+    private readonly countryinfoFile = "./institutions.csv";
     private readonly countrynamesFile = "./countries.csv";
     // private readonly aliasFile = "./dblp-aliases.csv";
     private readonly turingFile = "./turing.csv";
@@ -514,7 +514,7 @@ class CSRankings {
     /* Map ACM Fellow award winners to year */
     private readonly acmfellow: { [key: string]: number } = {};
 
-    /* Map institution to (non-US) region. */
+    /* Map institution to region. */
     private readonly countryInfo: { [key: string]: string } = {};
 
     /* Map country codes (abbreviations) to names. */
@@ -1014,54 +1014,34 @@ class CSRankings {
     }
 
     private inRegion(dept: string,
-        regions: string): boolean {
+		     regions: string): boolean {
         switch (regions) {
-            case "us":
-                if (dept in this.countryInfo) {
+            case "northamerica":
+                if (this.countryInfo[dept] != "northamerica") {
                     return false;
                 }
                 break;
             case "europe":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "europe") {
                     return false;
                 }
                 break;
-            case "northamerica":
-                if ((dept in this.countryInfo) && (this.countryInfo[dept] != "canada")) {
-                    return false;
-                }
-                break;
             case "australasia":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "australasia") {
                     return false;
                 }
                 break;
             case "southamerica":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "southamerica") {
                     return false;
                 }
                 break;
             case "asia":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "asia") {
                     return false;
                 }
                 break;
             case "africa":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "africa") {
                     return false;
                 }
