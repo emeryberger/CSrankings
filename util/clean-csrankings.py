@@ -91,7 +91,7 @@ with open("generated-author-info.csv", mode="r") as infile:
 
 # Read in country-info file.
 countryinfo = {}
-with open("country-info.csv", mode="r") as infile:
+with open("institutions.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         if row["institution"] != "":
@@ -101,7 +101,7 @@ with open("country-info.csv", mode="r") as infile:
             }
 
 # Sort it and write it back.
-with open("country-info.csv", mode="w") as outfile:
+with open("institutions.csv", mode="w") as outfile:
     sfieldnames = ["institution", "region", "countryabbrv"]
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
@@ -112,6 +112,41 @@ with open("country-info.csv", mode="w") as outfile:
             "countryabbrv": countryinfo[n]["countryabbrv"],
         }
         swriter.writerow(h)
+
+
+# Read in all CSrankings files and remove duplicates.
+for letter in map(chr, range(ord('a'),ord('z')+1)):
+    csrankings = {}
+    with open(f"csrankings-{letter}.csv", mode="r") as infile:
+        reader = csv.DictReader(infile)
+        for row in reader:
+            csrankings[row["name"]] = {
+                "affiliation": row["affiliation"],
+                "homepage": row["homepage"],
+                "scholarid": row["scholarid"],
+            }
+    with open(f"csrankings-{letter}.csv", mode="w") as outfile:
+        sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
+        swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+        swriter.writeheader()
+        for n in csrankings:
+            h = {
+                "name": n,
+                "affiliation": csrankings[n]["affiliation"],
+                "homepage": csrankings[n]["homepage"].rstrip("/"),
+                "scholarid": csrankings[n]["scholarid"],
+            }
+            swriter.writerow(h)
+    
+csrankings = {}
+with open("csrankings.csv", mode="r") as infile:
+    reader = csv.DictReader(infile)
+    for row in reader:
+        csrankings[row["name"]] = {
+            "affiliation": row["affiliation"],
+            "homepage": row["homepage"],
+            "scholarid": row["scholarid"],
+        }
 
 
 # Read in CSrankings file.
