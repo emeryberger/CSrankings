@@ -63,7 +63,7 @@ class CSRankings {
         this.note = {};
         this.authorFile = "./csrankings.csv";
         this.authorinfoFile = "./generated-author-info.csv";
-        this.countryinfoFile = "./country-info.csv";
+        this.countryinfoFile = "./institutions.csv";
         this.countrynamesFile = "./countries.csv";
         // private readonly aliasFile = "./dblp-aliases.csv";
         this.turingFile = "./turing.csv";
@@ -202,7 +202,7 @@ class CSRankings {
         this.turing = {};
         /* Map ACM Fellow award winners to year */
         this.acmfellow = {};
-        /* Map institution to (non-US) region. */
+        /* Map institution to region. */
         this.countryInfo = {};
         /* Map country codes (abbreviations) to names. */
         this.countryNames = {};
@@ -775,52 +775,32 @@ class CSRankings {
     }
     inRegion(dept, regions) {
         switch (regions) {
-            case "us":
-                if (dept in this.countryInfo) {
+            case "northamerica":
+                if (this.countryInfo[dept] != "northamerica") {
                     return false;
                 }
                 break;
             case "europe":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "europe") {
                     return false;
                 }
                 break;
-            case "northamerica":
-                if ((dept in this.countryInfo) && (this.countryInfo[dept] != "canada")) {
-                    return false;
-                }
-                break;
             case "australasia":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "australasia") {
                     return false;
                 }
                 break;
             case "southamerica":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "southamerica") {
                     return false;
                 }
                 break;
             case "asia":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "asia") {
                     return false;
                 }
                 break;
             case "africa":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "africa") {
                     return false;
                 }
@@ -1731,7 +1711,7 @@ CSRankings.minToRank = 30; // initial number to rank --> should be enough to ena
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lk", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
+CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "bg", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lk", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "us", "vn", "za"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
