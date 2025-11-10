@@ -17,7 +17,7 @@ You must read and check **all** the boxes below by filling them in with an X or 
 
 - [ ] Only submit one pull request per institution.
 
-- [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `country-info.csv` and `old/industry.csv` (see below).
+- [ ] Do not modify any files except `csrankings-[a-z].csv` or (if needed) `old/industry.csv` (see below).
 
 - [ ] Do not use Excel to edit any .csv files; Excel incorrectly tries to
 convert some Google Scholar entries to formulas, corrupting the
@@ -59,7 +59,7 @@ e.g. showing a courtesy appointment in CS.** Faculty must also have a 75%+ time 
 
 - [ ] If DBLP has multiple entries for this person, *all of them need to be listed*. Do not update `dblp-aliases.csv`.
 
-- [ ] If the institution you are adding is not in the US,
+- [ ] If you are adding an institution,
 do not submit a pull request. You must first open an issue entitled "Add (NAME OF UNIVERSITY) to the list of institutions" and I will add the institution. Once that has been completed,
 submit a single PR that adds *all* of the faculty in the CS department.
 
@@ -80,4 +80,5 @@ steps:
 1. Make your changes on a branch, push them to your clone, and create a pull request on GitHub as usual.
 
 If you want to make another contribution and some time has passed, perform these steps again, creating a fresh fork and shallow clone.
+
 
