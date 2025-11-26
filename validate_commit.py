@@ -42,6 +42,10 @@ def remove_suffix_and_brackets(s: str) -> str:
     # Remove optional four-digit numeric suffix and optional bracketed suffix, in any order
     return re.sub(r'\s*(\d{4})?\s*(\[[^\]]*\])?$', '', s)
 
+def remove_brackets(s: str) -> str:
+    # Remove optional bracketed suffix
+    return re.sub(r'\s*\[[^\]]*\]$', '', s)
+
 def has_valid_google_scholar_id(s: str) -> bool:
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{12}$', s))
 
@@ -144,16 +148,30 @@ def construct_prompt(diff: str) -> str:
     
 Audit this pull request to verify the following checklist for a PR to
 CSrankings. Indicate any questionable additions, removals, or
-modifications. In particular, verify if any new faculty are affiliated
+modifications. In particular, verify if faculty are affiliated
 at the listed institution, and whether they are in computer science or
-can solely supervise PhD students for a degree in computer science,
-and if they are full-time faculty members. Search the web to consult
-their home page (included in the PR), and consult LinkedIn,
-departmental web pages, and Google Scholar (using the included Google
-Scholar ID). Search the web to verify that their home page contains
-the name and specified affiliation (university and CS
-department). Search the web to verify that their Google Scholar ID
+can solely supervise PhD students for a degree in computer science because
+they have an affiliation with the Computer Science department OR if they are
+permitted to solely advise PhD students by their institution.
+They must also be full-time faculty members. It is not sufficient for them
+to have published in Computer Science venues.
+
+
+Search the web as follows:
+    
+* Search the web to consult their home page (included in the PR), and
+consult LinkedIn, departmental web pages, and Google Scholar (using
+the included Google Scholar ID). Note that "NOSCHOLARPAGE" is
+acceptable as a Google Scholar ID.
+
+* Search the web to verify that the faculty member's home page
+contains the name and specified affiliation (university and CS
+department).
+
+* Search the web to verify that their Google Scholar ID
 corresponds to them.
+
+Provide an audit for every single faculty mentioned in the diff.
 
 Respond ONLY with a JSON file like the following:
 
@@ -184,6 +202,8 @@ def parse_pr_api_diff(pr_diff_json_path: str) -> str:
     with open(pr_diff_json_path, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
+    print("JSON diff:",file=sys.stderr)
+    print(json.dumps(json_data, indent=4), file=sys.stderr)
     diff_lines = []
     for file_diff in json_data.get("files", []):
         path = file_diff.get("path", "")
@@ -198,7 +218,10 @@ def parse_pr_api_diff(pr_diff_json_path: str) -> str:
                 elif change_type == "ModifiedLine":
                     diff_lines.append(f"- {change.get('oldLine', '').strip()} ({path})")
                     diff_lines.append(f"+ {change.get('newLine', '').strip()} ({path})")
-    return "\n".join(diff_lines)
+    result = "\n".join(diff_lines)
+    print("Generated diff:", file=sys.stderr)
+    print(result, file=sys.stderr)
+    return result
 
 # ---------- GPT-4 Auditing ----------
 
@@ -223,12 +246,48 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
     
     return [x.model_dump() for x in filtered_sorted]
 
+# ---------- PR Metadata Validation ----------
+
+def process_pr_metadata(pr_metadata_path: str) -> bool:
+    """
+    Validates PR metadata:
+    - PR title is not a default GitHub title (like "Update csrankings-a.csv")
+    - All checkboxes in the Markdown checklist are checked
+    """
+    valid = True
+    with open(pr_metadata_path, "r", encoding="utf-8") as f:
+        pr_metadata = json.load(f)
+
+    pr_title = pr_metadata["title"]
+    # Check for default GitHub PR titles
+    if re.match(r"^Update csrankings-[a-z0]\.csv$", pr_title) or pr_title.strip().lower() in {
+        "update csrankings.csv", "update generated-author-info.csv"
+    }:
+        print(f"{ERROR}\tPR title is the default GitHub option and too generic: '{pr_title}'")
+        valid = False
+    else:
+        print(f"{INFO}\tPR title is descriptive: '{pr_title}'")
+
+    # Check that all checkboxes in the checklist are checked
+    pr_body = pr_metadata["body"]
+    # Match checklist items that are not checked, only if at line start or after indentation
+    unchecked = re.search(r"^[ \t]*-\s*\[\s+\]", pr_body, re.MULTILINE)
+    if unchecked:
+        print(f"{ERROR}\tNot all checklist items are checked in the PR description.")
+        valid = False
+    else:
+        print(f"{INFO}\tAll checklist items are checked.")
+
+    return valid
+
 # ---------- CSV Validation ----------
 
 def is_valid_file(file: str) -> bool:
     allowed_files = [
-        'csrankings-[a-z0].csv', 'country-info.csv',
-        'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv'
+        'csrankings-[a-z0].csv', 
+        'old/industry.csv', 'old/other.csv', 'old/emeritus.csv', 'old/rip.csv',
+        'csrankings.csv',
+        'generated-author-info.csv'
     ]
     return re.match(r'.*\.csv$', file) and any(re.match(p, file) for p in allowed_files)
 
@@ -239,13 +298,14 @@ def process_csv_diff(diff_path: str) -> bool:
     with open(diff_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    valid = True
     changed_lines = {}
     for d in data["files"]:
         try:
             path = d["path"]
             if not is_valid_file(path):
                 print(f"{ERROR}\tInvalid file modified: {path}")
-                return False
+                valid = False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
                 if c["type"] == "AddedLine"
@@ -253,13 +313,15 @@ def process_csv_diff(diff_path: str) -> bool:
         except KeyError:
             continue
 
-    valid = True
     index = 0
     for path, lines in changed_lines.items():
         matched = re.match(r'csrankings-([a-z0])\.csv', path)
         if matched:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
+                # Ignore empty lines, since Github seems to be adding them now.
+                if len(line) == 0:
+                    continue
                 index += 1
                 if re.search(r',\s', line):
                     print(f"\t{index}.\t{ERROR}\tSpace after comma: {line}")
@@ -268,23 +330,24 @@ def process_csv_diff(diff_path: str) -> bool:
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
                     print(f"{index}.\tValidating {name}")
-                    if matching_name_with_dblp(name) == 0:
-                        print(f"{index}.\t{ERROR}\tNo DBLP match for {name}")
+                    name_no_brackets = remove_brackets(name)
+                    if matching_name_with_dblp(name_no_brackets) == 0:
+                        print(f"{index}.\t{ERROR}\tNo DBLP match for {name_no_brackets}")
                         valid = False
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)                    
                     if not homepage_text:
-                        print(f"{index}.\t{WARN}\tInvalid homepage: {homepage}")
+                        print(f"{index}.\t{ERROR}\tInvalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
-                    if name not in homepage_text:
+                    if name.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tExact match of name ({name}) not found on home page ({homepage}).")
-                        if not fuzzysearch.find_near_matches(name, homepage_text, max_l_dist=5):
+                        if not fuzzysearch.find_near_matches(name.lower(), homepage_text.lower(), max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {name} found on home page.")
                     else:    
                         print(f"{index}.\t{INFO}\tName ({name}) found on home page.")
-                    if affiliation not in homepage_text:
+                    if affiliation.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tAffiliation ({affiliation}) not found on home page.")
                         if not fuzzysearch.find_near_matches(affiliation, homepage_text, max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {affiliation} found on home page.")
@@ -312,10 +375,14 @@ def process_csv_diff(diff_path: str) -> bool:
                             valid = False
                         else:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
-                            if name not in gscholar_page_text:
+                            if all(item not in gscholar_page_text
+                                   for item in
+                                   [name, "your computer or network may be sending automated queries"]):
                                 print(f"{index}.\t{WARN}\tName ({name}) not found on given Google Scholar page ({gs_url}).")
+                                print(f"Returned Google Scholar page:\n{gscholar_page_text}", file=sys.stderr)
                             else:
-                                print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
+                                pass
+                                # print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
                 except Exception as e:
                     print(f"{index}.\tProcessing error: {e}")
                     valid = False
@@ -329,38 +396,51 @@ def mark_failed():
     # DO NOT remove the 'stale' flag.
     with open("remove_stale.txt", "w") as f:
         f.write("false")    
-    sys.exit(0)
 
 def mark_succeeded():
     print(f"{SUCCESS} All validity checks passed.")
     # Remove the 'stale' flag.
     with open("remove_stale.txt", "w") as f:
         f.write("true")
-    sys.exit(0)
 
 if __name__ == "__main__":
     # Remove the 'stale' flag if no error occurs.
     with open("remove_stale.txt", "w") as f:
         f.write("true")
-    diff_path = sys.argv[1]
+    pr_metadata_path = sys.argv[1]
+    diff_path = sys.argv[2]
+
+    pr_metadata_valid = process_pr_metadata(pr_metadata_path)
+    csv_valid = process_csv_diff(diff_path)
+
+    # Proceed with the AI audit even when the basic checks fail.
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise EnvironmentError("OPENAI_API_KEY not set.")
 
-    csv_valid = process_csv_diff(diff_path)
-    if not csv_valid:
-        mark_failed()
-
     client = openai.OpenAI(api_key=api_key)
-    audit_result = run_audit(client, diff_path)
+    audit_result = ""
+
+    retries_remaining = 3
+    while retries_remaining > 0:
+        try:
+            audit_result = run_audit(client, diff_path)
+            break
+        except:
+            retries_remaining -= 1
+
+    auditing_error = False
     if audit_result:
         print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
-        auditing_error = False
-        for index, entry in enumerate(audit_result):
-            gloss = f"{index}.\t{ERROR}\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
-            print(f"{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
+        for index, entry in enumerate(audit_result, start=1):
+            gloss = f"{ERROR}\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
+            print(f"{index}.\t{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
             if gloss:
                 auditing_error = True
-        if auditing_error:
-            mark_failed()
-    mark_succeeded()
+                
+    if not pr_metadata_valid or not csv_valid or auditing_error:
+        mark_failed()
+        sys.exit(-1)
+    else:
+        mark_succeeded()
+        sys.exit(0)
