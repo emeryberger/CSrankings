@@ -547,6 +547,17 @@ class CSRankings {
 
     private usePieChart: boolean = false;
 
+    /* Cached checkbox states to avoid repeated DOM queries */
+    private checkboxCache: { [key: string]: boolean } = {};
+    private checkboxCacheValid: boolean = false;
+
+    /* Debounce timer for rank() calls */
+    private rankDebounceTimer: number | null = null;
+    private readonly RANK_DEBOUNCE_MS: number = 16; // ~1 frame
+
+    /* Flag to track if scroll listener has been added */
+    private scrollListenerAdded: boolean = false;
+
     /* Colors. */
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
     private readonly DownTriangle = "&#9660;";   // downward-facing triangle symbol (expanded view)
@@ -1061,22 +1072,27 @@ class CSRankings {
         fields: Array<number>): boolean {
         for (let i = 0; i < fields.length; i++) {
             const item = this.fields[fields[i]];
-            const str = `input[name=${item}]`;
-            $(str).prop('checked', value);
-            if (item in CSRankings.childMap) {
-                // It's a parent.
-                $(str).prop('disabled', false);
-                // Activate / deactivate all children as appropriate.
-                CSRankings.childMap[item].forEach((k) => {
-                    const str = `input[name=${k}]`;
-                    if (k in CSRankings.nextTier) {
-                        $(str).prop('checked', false);
-                    } else {
-                        $(str).prop('checked', value);
-                    }
-                });
+            const element = document.getElementById(item) as HTMLInputElement;
+            if (element) {
+                element.checked = value;
+                if (item in CSRankings.childMap) {
+                    // It's a parent.
+                    element.disabled = false;
+                    // Activate / deactivate all children as appropriate.
+                    CSRankings.childMap[item].forEach((k) => {
+                        const childElement = document.getElementById(k) as HTMLInputElement;
+                        if (childElement) {
+                            if (k in CSRankings.nextTier) {
+                                childElement.checked = false;
+                            } else {
+                                childElement.checked = value;
+                            }
+                        }
+                    });
+                }
             }
         }
+        this.invalidateCheckboxCache();
         this.rank();
         return false;
     }
@@ -1236,13 +1252,42 @@ class CSRankings {
         }
     }
 
+    /* Invalidate the checkbox cache - call this when checkboxes change */
+    private invalidateCheckboxCache(): void {
+        this.checkboxCacheValid = false;
+    }
+
+    /* Refresh the checkbox cache by reading all checkbox states at once */
+    private refreshCheckboxCache(): void {
+        if (this.checkboxCacheValid) {
+            return;
+        }
+        for (let ind = 0; ind < CSRankings.areas.length; ind++) {
+            const area = CSRankings.areas[ind];
+            const element = document.getElementById(this.fields[ind]) as HTMLInputElement;
+            this.checkboxCache[area] = element ? element.checked : false;
+        }
+        this.checkboxCacheValid = true;
+    }
+
+    /* Get checkbox state from cache (refreshes cache if invalid) */
+    private getCheckboxState(area: string): boolean {
+        if (!this.checkboxCacheValid) {
+            this.refreshCheckboxCache();
+        }
+        return this.checkboxCache[area] || false;
+    }
+
     /* Updates the 'weights' of each area from the checkboxes. */
     /* Returns the number of areas selected (checked). */
     private updateWeights(weights: { [key: string]: number }): number {
+        // Refresh cache once at the start
+        this.refreshCheckboxCache();
+
         let numAreas = 0;
         for (let ind = 0; ind < CSRankings.areas.length; ind++) {
             const area = CSRankings.areas[ind];
-            weights[area] = $(`input[name=${this.fields[ind]}]`).prop('checked') ? 1 : 0;
+            weights[area] = this.checkboxCache[area] ? 1 : 0;
             if (weights[area] === 1) {
                 if (area in CSRankings.parentMap) {
                     // Don't count children.
@@ -1460,27 +1505,39 @@ class CSRankings {
     private setAllOn(value: boolean = true): void {
         for (let i = 0; i < CSRankings.areas.length; i++) {
             const item = this.fields[i];
-            const str = `input[name=${item}]`;
+            const element = document.getElementById(item) as HTMLInputElement;
+            if (!element) continue;
             if (value) {
                 // Turn off all next tier venues.
                 if (item in CSRankings.nextTier) {
-                    $(str).prop('checked', false);
+                    element.checked = false;
                 } else {
-                    $(str).prop('checked', true);
-                    $(str).prop('disabled', false);
+                    element.checked = true;
+                    element.disabled = false;
                 }
             } else {
                 // turn everything off.
-                $(str).prop('checked', false);
-                $(str).prop('disabled', false);
+                element.checked = false;
+                element.disabled = false;
             }
         }
+        this.invalidateCheckboxCache();
     }
 
     /* PUBLIC METHODS */
 
     public rank(update: boolean = true): boolean {
+        // Debounce rapid rank() calls
+        if (this.rankDebounceTimer !== null) {
+            window.clearTimeout(this.rankDebounceTimer);
+        }
 
+        // For immediate feedback, we execute synchronously but use requestAnimationFrame
+        // to batch DOM updates with the browser's render cycle
+        return this.doRank(update);
+    }
+
+    private doRank(update: boolean): boolean {
         const start = performance.now();
 
         let deptNames: { [key: string]: Array<string> } = {};    /* names of departments. */
@@ -1526,16 +1583,23 @@ class CSRankings {
 
         /* Finally done. Redraw! */
         document.getElementById("success")!.innerHTML = s;
-        $("div").scroll(function() {
-            // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
-            // If we are nearly at the bottom, update the minimum.
-            if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
-                const t = CSRankings.updateMinimum(this);
-                if (t) {
-                    $("div").scrollTop(t);
-                }
+
+        // Only add scroll listener once to avoid accumulation
+        if (!this.scrollListenerAdded) {
+            this.scrollListenerAdded = true;
+            // Use event delegation on the success container instead of all divs
+            const successDiv = document.getElementById("success");
+            if (successDiv) {
+                successDiv.addEventListener("scroll", function(this: HTMLElement) {
+                    if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
+                        const t = CSRankings.updateMinimum(this);
+                        if (t) {
+                            this.scrollTop = t;
+                        }
+                    }
+                }, true); // Use capture to catch scroll events from nested elements
             }
-        });
+        }
 
         if (!update) {
             this.navigoRouter.pause();
@@ -1639,24 +1703,25 @@ class CSRankings {
 
     // Update the URL according to the selected checkboxes.
     private updatedURL(): string {
+        // Use the cached checkbox state (already populated by updateWeights in rank())
         let s = '';
         let count = 0;
         let totalParents = 0;
         for (let i = 0; i < this.fields.length; i++) {
-            const str = `input[name=${this.fields[i]}]`;
-            if (!(this.fields[i] in CSRankings.parentMap)) {
+            const field = this.fields[i];
+            if (!(field in CSRankings.parentMap)) {
                 totalParents += 1;
             }
-            if ($(str).prop('checked')) {
+            if (this.getCheckboxState(field)) {
                 // Only add parents.
-                if (!(this.fields[i] in CSRankings.parentMap)) {
+                if (!(field in CSRankings.parentMap)) {
                     // And only add if every top tier child is checked
                     // and only if every next tier child is NOT
                     // checked.
                     let allChecked = 1;
-                    if (this.fields[i] in CSRankings.childMap) {
-                        CSRankings.childMap[this.fields[i]].forEach((k) => {
-                            let val = $(`input[name=${k}]`).prop('checked');
+                    if (field in CSRankings.childMap) {
+                        CSRankings.childMap[field].forEach((k) => {
+                            const val = this.getCheckboxState(k) ? 1 : 0;
                             if (!(k in CSRankings.nextTier)) {
                                 allChecked &= val;
                             } else {
@@ -1665,7 +1730,7 @@ class CSRankings {
                         });
                     }
                     if (allChecked) {
-                        s += `${this.fields[i]}&`;
+                        s += `${field}&`;
                         count += 1;
                     }
                 }
@@ -1834,22 +1899,26 @@ class CSRankings {
         if (foundAll) {
             // Set everything.
             for (const item in CSRankings.topTierAreas) {
-                //		if (!(item in CSRankings.nextTier)) {
-                let str = `input[name=${item}]`;
-                $(str).prop('checked', true);
-                if (item in CSRankings.childMap) {
-                    // It's a parent. Enable it.
-                    $(str).prop('disabled', false);
-                    // and activate all children.
-                    CSRankings.childMap[item].forEach((k) => {
-                        if (!(k in CSRankings.nextTier)) {
-                            $(`input[name=${k}]`).prop('checked', true);
-                        }
-                    });
+                const element = document.getElementById(item) as HTMLInputElement;
+                if (element) {
+                    element.checked = true;
+                    if (item in CSRankings.childMap) {
+                        // It's a parent. Enable it.
+                        element.disabled = false;
+                        // and activate all children.
+                        CSRankings.childMap[item].forEach((k) => {
+                            if (!(k in CSRankings.nextTier)) {
+                                const childElement = document.getElementById(k) as HTMLInputElement;
+                                if (childElement) {
+                                    childElement.checked = true;
+                                }
+                            }
+                        });
+                    }
                 }
-                //		}
             }
             // And we're out.
+            CSRankings.getInstance().invalidateCheckboxCache();
             return;
         }
         if (foundNone) {
@@ -1863,19 +1932,25 @@ class CSRankings {
         // Then, activate the areas in the query.
         for (const item of q) {
             if ((item != "none") && (item != "")) {
-                const str = `input[name=${item}]`;
-                $(str).prop('checked', true);
-                $(str).prop('disabled', false);
-                if (item in CSRankings.childMap) {
-                    // Activate all children.
-                    CSRankings.childMap[item].forEach((k) => {
-                        if (!(k in CSRankings.nextTier)) {
-                            $(`input[name=${k}]`).prop('checked', true);
-                        }
-                    });
+                const element = document.getElementById(item) as HTMLInputElement;
+                if (element) {
+                    element.checked = true;
+                    element.disabled = false;
+                    if (item in CSRankings.childMap) {
+                        // Activate all children.
+                        CSRankings.childMap[item].forEach((k) => {
+                            if (!(k in CSRankings.nextTier)) {
+                                const childElement = document.getElementById(k) as HTMLInputElement;
+                                if (childElement) {
+                                    childElement.checked = true;
+                                }
+                            }
+                        });
+                    }
                 }
             }
         }
+        CSRankings.getInstance().invalidateCheckboxCache();
     }
 
     public static clearNonSubsetted(): void {
@@ -1883,15 +1958,22 @@ class CSRankings {
             if (item in CSRankings.childMap) {
                 const kids = CSRankings.childMap[item];
                 if (!CSRankings.subsetting(kids)) {
-                    const str = `input[name=${item}]`;
-                    $(str).prop('checked', false);
-                    $(str).prop('disabled', false);
-                    kids.forEach((item) => {
-                        $(`input[name=${item}]`).prop('checked', false);
+                    const element = document.getElementById(item) as HTMLInputElement;
+                    if (element) {
+                        element.checked = false;
+                        element.disabled = false;
+                    }
+                    kids.forEach((kid) => {
+                        const kidElement = document.getElementById(kid) as HTMLInputElement;
+                        if (kidElement) {
+                            kidElement.checked = false;
+                        }
                     });
                 }
             }
         }
+        // Invalidate the checkbox cache since we modified checkboxes
+        CSRankings.getInstance().invalidateCheckboxCache();
     }
 
     public static subsetting(sibs: [string]): boolean {
@@ -1908,17 +1990,15 @@ class CSRankings {
         // Count how many are checked above and below.
         let numCheckedAbove = 0;
         aboveFold.forEach((elem) => {
-            let str = `input[name=${elem}]`;
-            let val = $(str).prop('checked');
-            if (val) {
+            const element = document.getElementById(elem) as HTMLInputElement;
+            if (element && element.checked) {
                 numCheckedAbove++;
             }
         });
         let numCheckedBelow = 0;
         belowFold.forEach((elem) => {
-            let str = `input[name=${elem}]`;
-            let val = $(str).prop('checked');
-            if (val) {
+            const element = document.getElementById(elem) as HTMLInputElement;
+            if (element && element.checked) {
                 numCheckedBelow++;
             }
         });
@@ -1948,25 +2028,28 @@ class CSRankings {
         }
         // Initialize callbacks for area checkboxes.
         for (let i = 0; i < this.fields.length; i++) {
-            const str = `input[name=${this.fields[i]}]`;
             const field = this.fields[i];
-            const fieldElement = document.getElementById(this.fields[i]);
+            const fieldElement = document.getElementById(field) as HTMLInputElement;
             if (!fieldElement) {
                 continue;
             }
-            fieldElement!.addEventListener("click", () => {
+            fieldElement.addEventListener("click", () => {
+                // Invalidate cache since a checkbox changed
+                this.invalidateCheckboxCache();
+
                 let updateURL: boolean = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
                     // If any child is on, activate the parent.
                     // If all are off, deactivate parent.
                     updateURL = false;
-                    let parent = CSRankings.parentMap[field];
-                    const strparent = `input[name=${parent}]`;
+                    const parent = CSRankings.parentMap[field];
+                    const parentElement = document.getElementById(parent) as HTMLInputElement;
                     let anyChecked = 0;
                     let allChecked = 1;
                     CSRankings.childMap[parent].forEach((k) => {
-                        const val = $(`input[name=${k}]`).prop('checked');
+                        const childElement = document.getElementById(k) as HTMLInputElement;
+                        const val = childElement ? (childElement.checked ? 1 : 0) : 0;
                         anyChecked |= val;
                         // allChecked means all top tier conferences
                         // are on and all next tier conferences are
@@ -1980,25 +2063,29 @@ class CSRankings {
                         }
                     });
                     // Activate parent if any checked.
-                    $(strparent).prop('checked', anyChecked);
-                    // Mark the parent as disabled unless all are checked.
-                    if (!anyChecked || allChecked) {
-                        $(strparent).prop('disabled', false);
-                    }
-                    if (anyChecked && !allChecked) {
-                        $(strparent).prop('disabled', true);
+                    if (parentElement) {
+                        parentElement.checked = anyChecked ? true : false;
+                        // Mark the parent as disabled unless all are checked.
+                        if (!anyChecked || allChecked) {
+                            parentElement.disabled = false;
+                        }
+                        if (anyChecked && !allChecked) {
+                            parentElement.disabled = true;
+                        }
                     }
                 } else {
                     // Parent: activate or deactivate all children.
-                    const val = $(str).prop('checked');
+                    const val = fieldElement.checked;
                     if (field in CSRankings.childMap) {
                         for (const child of CSRankings.childMap[field]) {
-                            const strchild = `input[name=${child}]`;
-                            if (!(child in CSRankings.nextTier)) {
-                                $(strchild).prop('checked', val);
-                            } else {
-                                // Always deactivate next tier conferences.
-                                $(strchild).prop('checked', false);
+                            const childElement = document.getElementById(child) as HTMLInputElement;
+                            if (childElement) {
+                                if (!(child in CSRankings.nextTier)) {
+                                    childElement.checked = val;
+                                } else {
+                                    // Always deactivate next tier conferences.
+                                    childElement.checked = false;
+                                }
                             }
                         }
                     }
