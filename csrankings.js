@@ -231,6 +231,22 @@ class CSRankings {
         this.RANK_DEBOUNCE_MS = 16; // ~1 frame
         /* Flag to track if scroll listener has been added */
         this.scrollListenerAdded = false;
+        /* === INCREMENTAL UPDATE CACHING === */
+        /* Cache for data that only changes when year/region changes, not checkboxes */
+        this.incrementalCache = {
+            valid: false,
+            startyear: 0,
+            endyear: 0,
+            regions: '',
+            areaData: {},
+            deptNames: {},
+            deptCounts: {},
+            facultyAreaData: {},
+            allFaculty: {}
+        };
+        /* Enable/disable verification mode to compare incremental vs full computation */
+        /* Can be toggled from console: csr.setVerifyIncremental(true) */
+        this.verifyIncremental = false;
         /* Colors. */
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
@@ -997,6 +1013,229 @@ class CSRankings {
     invalidateCheckboxCache() {
         this.checkboxCacheValid = false;
     }
+    /* Invalidate the incremental cache - call when year/region changes */
+    invalidateIncrementalCache() {
+        this.incrementalCache.valid = false;
+    }
+    /* Build the incremental cache - processes all authors once and caches per-area data */
+    buildIncrementalCache(startyear, endyear, regions) {
+        if (this.incrementalCache.valid &&
+            this.incrementalCache.startyear === startyear &&
+            this.incrementalCache.endyear === endyear &&
+            this.incrementalCache.regions === regions) {
+            return; // Cache is still valid
+        }
+        console.log("Building incremental cache...");
+        const cacheStart = performance.now();
+        // Reset cache
+        this.incrementalCache = {
+            valid: true,
+            startyear: startyear,
+            endyear: endyear,
+            regions: regions,
+            areaData: {},
+            deptNames: {},
+            deptCounts: {},
+            facultyAreaData: {},
+            allFaculty: {}
+        };
+        // Initialize area data for ALL areas (including children)
+        // This is important because weights are checked against child areas
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const area = CSRankings.areas[i];
+            this.incrementalCache.areaData[area] = {};
+            this.incrementalCache.facultyAreaData[area] = {};
+        }
+        // Track which faculty we've seen (for building deptNames/deptCounts)
+        const visitedForDept = {};
+        // Single pass through all authors
+        for (const r in this.authors) {
+            if (!this.authors.hasOwnProperty(r)) {
+                continue;
+            }
+            const auth = this.authors[r];
+            const dept = auth.dept;
+            // Filter by region
+            if (!this.inRegion(dept, regions)) {
+                continue;
+            }
+            // Filter by year
+            const year = auth.year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            if (typeof dept === 'undefined') {
+                continue;
+            }
+            const name = auth.name;
+            const rawArea = auth.area; // Keep the raw area (could be child like 'aaai')
+            // For areaDeptAdjustedCount, we need to map to parent area
+            let parentArea = rawArea;
+            if (rawArea in CSRankings.parentMap) {
+                parentArea = CSRankings.parentMap[rawArea];
+            }
+            // Store data by RAW area (for weight checking)
+            // Initialize dept entry for this raw area if needed
+            if (!(dept in this.incrementalCache.areaData[rawArea])) {
+                this.incrementalCache.areaData[rawArea][dept] = 0;
+            }
+            // Accumulate adjusted count for this rawArea+dept
+            const adjustedCount = parseFloat(auth.adjustedcount);
+            this.incrementalCache.areaData[rawArea][dept] += adjustedCount;
+            // Track faculty data per RAW area
+            if (!(name in this.incrementalCache.facultyAreaData[rawArea])) {
+                this.incrementalCache.facultyAreaData[rawArea][name] = { count: 0, adjustedCount: 0 };
+            }
+            this.incrementalCache.facultyAreaData[rawArea][name].count += parseInt(auth.count);
+            this.incrementalCache.facultyAreaData[rawArea][name].adjustedCount += adjustedCount;
+            // Track all faculty and their departments
+            if (!(name in this.incrementalCache.allFaculty)) {
+                this.incrementalCache.allFaculty[name] = { dept: dept };
+            }
+            // Build deptNames and deptCounts (first time we see each faculty member)
+            if (!(name in visitedForDept)) {
+                visitedForDept[name] = true;
+                if (!(dept in this.incrementalCache.deptNames)) {
+                    this.incrementalCache.deptNames[dept] = [];
+                    this.incrementalCache.deptCounts[dept] = 0;
+                }
+                this.incrementalCache.deptNames[dept].push(name);
+                this.incrementalCache.deptCounts[dept] += 1;
+            }
+        }
+        const cacheEnd = performance.now();
+        console.log(`Incremental cache built in ${(cacheEnd - cacheStart).toFixed(1)}ms`);
+    }
+    /* Incremental version of buildDepartments - uses cached data */
+    buildDepartmentsIncremental(weights, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
+        // Reset areaDeptAdjustedCount
+        this.areaDeptAdjustedCount = {};
+        // Build areaDeptAdjustedCount from cached per-area data
+        // Iterate through ALL areas (including children) and check weights
+        // But accumulate into PARENT area for areaDeptAdjustedCount
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const rawArea = CSRankings.areas[i];
+            if (weights[rawArea] === 0) {
+                continue;
+            }
+            // Map to parent area for areaDeptAdjustedCount key
+            let parentArea = rawArea;
+            if (rawArea in CSRankings.parentMap) {
+                parentArea = CSRankings.parentMap[rawArea];
+            }
+            const areaCache = this.incrementalCache.areaData[rawArea];
+            if (!areaCache)
+                continue;
+            for (const dept in areaCache) {
+                const areaDept = parentArea + dept;
+                if (!(areaDept in this.areaDeptAdjustedCount)) {
+                    this.areaDeptAdjustedCount[areaDept] = 0;
+                }
+                this.areaDeptAdjustedCount[areaDept] += areaCache[dept];
+            }
+        }
+        // Track which faculty have publications in ANY selected area
+        // A faculty member is counted once per department, regardless of how many areas
+        const facultySeen = {};
+        // Iterate through all areas (checking weights) and find faculty
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const rawArea = CSRankings.areas[i];
+            if (weights[rawArea] === 0) {
+                continue;
+            }
+            const facultyArea = this.incrementalCache.facultyAreaData[rawArea];
+            if (!facultyArea)
+                continue;
+            for (const name in facultyArea) {
+                if (!(name in facultySeen)) {
+                    facultySeen[name] = true;
+                    facultycount[name] = 0;
+                    facultyAdjustedCount[name] = 0;
+                }
+                facultycount[name] += facultyArea[name].count;
+                facultyAdjustedCount[name] += facultyArea[name].adjustedCount;
+            }
+        }
+        // Build deptNames and deptCounts from faculty we found
+        for (const name in facultySeen) {
+            const dept = this.incrementalCache.allFaculty[name].dept;
+            if (!(dept in deptNames)) {
+                deptNames[dept] = [];
+                deptCounts[dept] = 0;
+            }
+            deptNames[dept].push(name);
+            deptCounts[dept] += 1;
+        }
+    }
+    /* Compare two objects for equality (for verification) */
+    deepEqual(obj1, obj2, path = "") {
+        if (obj1 === obj2)
+            return true;
+        if (typeof obj1 !== typeof obj2) {
+            console.error(`Type mismatch at ${path}: ${typeof obj1} vs ${typeof obj2}`);
+            return false;
+        }
+        if (typeof obj1 !== 'object' || obj1 === null || obj2 === null) {
+            if (typeof obj1 === 'number' && typeof obj2 === 'number') {
+                // Allow small floating point differences
+                if (Math.abs(obj1 - obj2) < 0.0001)
+                    return true;
+            }
+            console.error(`Value mismatch at ${path}: ${obj1} vs ${obj2}`);
+            return false;
+        }
+        const keys1 = Object.keys(obj1).sort();
+        const keys2 = Object.keys(obj2).sort();
+        if (keys1.length !== keys2.length) {
+            console.error(`Key count mismatch at ${path}: ${keys1.length} vs ${keys2.length}`);
+            console.error(`Keys in obj1 but not obj2: ${keys1.filter(k => keys2.indexOf(k) === -1)}`);
+            console.error(`Keys in obj2 but not obj1: ${keys2.filter(k => keys1.indexOf(k) === -1)}`);
+            return false;
+        }
+        for (const key of keys1) {
+            if (!this.deepEqual(obj1[key], obj2[key], `${path}.${key}`)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    /* Verify incremental results match full computation */
+    verifyIncrementalResults(fullStats, fullDeptCounts, fullDeptNames, fullFacultycount, fullFacultyAdjustedCount, incrStats, incrDeptCounts, incrDeptNames, incrFacultycount, incrFacultyAdjustedCount) {
+        let allMatch = true;
+        // Sort deptNames arrays for comparison
+        const sortedFullDeptNames = {};
+        const sortedIncrDeptNames = {};
+        for (const dept in fullDeptNames) {
+            sortedFullDeptNames[dept] = [...fullDeptNames[dept]].sort();
+        }
+        for (const dept in incrDeptNames) {
+            sortedIncrDeptNames[dept] = [...incrDeptNames[dept]].sort();
+        }
+        if (!this.deepEqual(fullStats, incrStats, "stats")) {
+            console.error("VERIFICATION FAILED: stats mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(fullDeptCounts, incrDeptCounts, "deptCounts")) {
+            console.error("VERIFICATION FAILED: deptCounts mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(sortedFullDeptNames, sortedIncrDeptNames, "deptNames")) {
+            console.error("VERIFICATION FAILED: deptNames mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(fullFacultycount, incrFacultycount, "facultycount")) {
+            console.error("VERIFICATION FAILED: facultycount mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(fullFacultyAdjustedCount, incrFacultyAdjustedCount, "facultyAdjustedCount")) {
+            console.error("VERIFICATION FAILED: facultyAdjustedCount mismatch");
+            allMatch = false;
+        }
+        if (allMatch) {
+            console.log("✓ Incremental computation verified - matches full computation");
+        }
+        return allMatch;
+    }
     /* Refresh the checkbox cache by reading all checkbox states at once */
     refreshCheckboxCache() {
         if (this.checkboxCacheValid) {
@@ -1263,9 +1502,38 @@ class CSRankings {
         const endyear = parseInt($("#toyear").find(":selected").text());
         const whichRegions = String($("#regions").find(":selected").val());
         const numAreas = this.updateWeights(currentWeights);
-        this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        // Build/update the incremental cache (only rebuilds if year/region changed)
+        this.buildIncrementalCache(startyear, endyear, whichRegions);
+        // Use incremental computation
+        const incrStart = performance.now();
+        this.buildDepartmentsIncremental(currentWeights, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
+        const incrEnd = performance.now();
+        console.log(`Incremental computation took ${(incrEnd - incrStart).toFixed(1)}ms`);
+        // VERIFICATION: Compare with full computation if enabled
+        // Toggle from console: csr.verifyIncremental = true; then click a checkbox
+        if (this.verifyIncremental) {
+            const fullStart = performance.now();
+            let fullDeptNames = {};
+            let fullDeptCounts = {};
+            let fullFacultycount = {};
+            let fullFacultyAdjustedCount = {};
+            const savedAreaDeptAdjustedCount = Object.assign({}, this.areaDeptAdjustedCount);
+            this.areaDeptAdjustedCount = {};
+            this.buildDepartments(startyear, endyear, currentWeights, whichRegions, fullDeptCounts, fullDeptNames, fullFacultycount, fullFacultyAdjustedCount);
+            const fullStats = {};
+            const savedStats = Object.assign({}, this.stats);
+            this.computeStats(fullDeptNames, numAreas, currentWeights);
+            Object.assign(fullStats, this.stats);
+            const fullEnd = performance.now();
+            console.log(`Full computation took ${(fullEnd - fullStart).toFixed(1)}ms`);
+            // Verify results match
+            this.verifyIncrementalResults(fullStats, fullDeptCounts, fullDeptNames, fullFacultycount, fullFacultyAdjustedCount, savedStats, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+            // Restore incremental results (we use those for rendering)
+            this.areaDeptAdjustedCount = savedAreaDeptAdjustedCount;
+            this.stats = savedStats;
+        }
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         const s = this.buildOutputString(numAreas, this.countryAbbrv, deptCounts, univtext, CSRankings.minToRank);
@@ -1341,6 +1609,11 @@ class CSRankings {
             e.style.display = 'block';
             widget.innerHTML = this.DownTriangle;
         }
+    }
+    /* Toggle verification mode from console: csr.setVerifyIncremental(true) */
+    setVerifyIncremental(enabled) {
+        this.verifyIncremental = enabled;
+        console.log(`Verification mode ${enabled ? 'ENABLED' : 'DISABLED'}. Click a checkbox to test.`);
     }
     activateAll(value = true) {
         this.setAllOn(value);
@@ -1677,10 +1950,18 @@ class CSRankings {
         return subsettedAbove || subsettedBelow;
     }
     addListeners() {
-        ["toyear", "fromyear", "regions", "charttype"].forEach((key) => {
+        ["toyear", "fromyear", "regions"].forEach((key) => {
             const widget = document.getElementById(key);
-            widget.addEventListener("change", () => { this.countAuthorAreas(); this.rank(); });
+            widget.addEventListener("change", () => {
+                // Year/region change invalidates the incremental cache
+                this.invalidateIncrementalCache();
+                this.countAuthorAreas();
+                this.rank();
+            });
         });
+        // Chart type doesn't affect data, just visualization
+        const charttypeWidget = document.getElementById("charttype");
+        charttypeWidget.addEventListener("change", () => { this.rank(); });
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
         for (let position = 0; position < CSRankings.areas.length; position++) {

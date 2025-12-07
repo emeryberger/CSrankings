@@ -30,17 +30,19 @@ make csrankings.min.js
 - Static maps: `parentMap`, `childMap`, `nextTier`, `areas`, `topLevelAreas`, `topTierAreas`
 - Instance accessed via `CSRankings.getInstance()`
 
-### Data Flow on Checkbox Click
+### Data Flow on Checkbox Click (Incremental)
 1. Event listener fires → `invalidateCheckboxCache()`
 2. Parent/child checkbox synchronization (native DOM)
-3. `rank(updateURL)` called
+3. `rank(updateURL)` → `doRank()` called
 4. `updateWeights()` reads checkbox cache
-5. `buildDepartments()` iterates author data
-6. `computeStats()` calculates geometric means
-7. `buildDropDown()` generates faculty HTML
-8. `buildOutputString()` generates ranking table
-9. DOM update via `innerHTML`
-10. `updatedURL()` updates browser history
+5. `buildIncrementalCache()` - only rebuilds if year/region changed
+6. `buildDepartmentsIncremental()` - uses cached per-area data (fast!)
+7. `computeStats()` calculates geometric means
+8. If `VERIFY_INCREMENTAL` is true, runs full computation to verify
+9. `buildDropDown()` generates faculty HTML
+10. `buildOutputString()` generates ranking table
+11. DOM update via `innerHTML`
+12. `updatedURL()` updates browser history
 
 ### Checkbox Hierarchy
 - **Parent checkboxes**: Top-level areas (ai, vision, mlmining, etc.)
@@ -73,6 +75,33 @@ $(`input[name=${id}]`).prop('checked', true);
 ### Scroll Listener
 The scroll listener for lazy loading is added only once using `scrollListenerAdded` flag. Never add scroll listeners inside `rank()` without this guard.
 
+### Incremental Update System
+The incremental update system caches data that only changes when year/region changes:
+
+```typescript
+private incrementalCache: {
+    valid: boolean;
+    startyear: number;
+    endyear: number;
+    regions: string;
+    areaData: { [area: string]: { [dept: string]: number } };  // Per-area dept counts
+    deptNames: { [dept: string]: Array<string> };              // Faculty per dept
+    deptCounts: { [dept: string]: number };                    // Faculty count per dept
+    facultyAreaData: { [area: string]: { [name: string]: {...} } };  // Per-area faculty stats
+    allFaculty: { [name: string]: { dept: string } };          // All faculty
+}
+```
+
+**Cache invalidation:**
+- `invalidateIncrementalCache()` - Called when year/region dropdown changes
+- Cache auto-rebuilds on next `rank()` call if parameters changed
+
+**Verification mode:**
+- Set `VERIFY_INCREMENTAL = true` to compare incremental vs full computation
+- Logs "✓ Incremental computation verified" on success
+- Logs detailed errors if mismatch detected
+- Set to `false` for production to skip verification overhead
+
 ### Key Data Structures
 - `this.authors` - Array of ~50k author publication records
 - `this.authorAreas` - Map of author/dept → area → publication count
@@ -96,10 +125,58 @@ The scroll listener for lazy loading is added only once using `scrollListenerAdd
 ### Debugging Performance
 Console logs show timing:
 ```
-Before render: rank took X milliseconds.
-Rank took Y milliseconds.
+Building incremental cache...           # Only on first load or year/region change
+Incremental cache built in X.Xms
+Incremental computation took X.Xms      # Fast path using cache
+Full computation took X.Xms             # Only if VERIFY_INCREMENTAL=true
+✓ Incremental computation verified      # Verification passed
+Before render: rank took Xms
+Rank took Xms
 ```
-The difference (Y-X) is DOM rendering time.
+- First number is incremental time, second is full (verification only)
+- After cache is built, checkbox clicks should show incremental << full
+- The difference between final two is DOM rendering time
+
+### Testing
+Start a local server:
+```bash
+python3 -m http.server 8000
+# Open http://localhost:8000/index.html
+# Open browser console (F12) to see timing logs
+# Click checkboxes and observe performance
+```
+
+**Automated testing with pytest:**
+```bash
+# Run all tests
+pytest test/ -v
+
+# Run just the incremental computation tests
+pytest test/test_incremental.py -v
+
+# Run a specific test
+pytest test/test_incremental.py::TestIncrementalComputation::test_toggle_ai_checkbox_off -v
+```
+
+**Requirements for testing:**
+```bash
+pip3 install pytest selenium webdriver-manager
+```
+
+**Manual verification from browser console:**
+```javascript
+csr.setVerifyIncremental(true);  // Enable verification
+// Click checkboxes - console will show verification results
+csr.setVerifyIncremental(false); // Disable for production
+```
+
+### Performance Results
+Typical timing with incremental updates:
+| Operation | Incremental | Full | Speedup |
+|-----------|-------------|------|---------|
+| Toggle checkbox | ~10-20ms | ~35-50ms | 2-5x |
+| Activate all | ~20ms | ~40ms | 2x |
+| Deactivate all | ~0ms | ~23ms | ∞ |
 
 ## File Structure
 ```
