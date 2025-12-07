@@ -324,6 +324,45 @@ class TestIncrementalPerformance:
         # With lazy rendering, showing all entries should still be fast
         assert total_rank_time < 200, f"Full ranking took {total_rank_time}ms, should be under 200ms"
 
+class TestInitialLoad:
+    """Test initial page load performance."""
+
+    def test_initial_load_time(self, driver, web_server):
+        """Test that initial page load is fast."""
+        import re
+
+        # Clear browser state
+        driver.delete_all_cookies()
+
+        # Measure time to load page
+        start_time = time.time()
+        driver.get(f"{web_server}/index.html")
+
+        # Wait for page to fully load (ranking table appears)
+        WebDriverWait(driver, 60).until(
+            EC.presence_of_element_located((By.ID, "ranking"))
+        )
+        load_time = (time.time() - start_time) * 1000  # Convert to ms
+
+        # Get console logs for CSV load timing
+        time.sleep(0.5)
+        logs = driver.get_log('browser')
+
+        csv_load_time = None
+        for log in logs:
+            if "All CSV files loaded in" in log['message']:
+                match = re.search(r'(\d+\.?\d*)ms', log['message'])
+                if match:
+                    csv_load_time = float(match.group(1))
+
+        print(f"\nInitial load timing:")
+        print(f"  Total page load: {load_time:.0f}ms")
+        if csv_load_time:
+            print(f"  CSV files (parallel): {csv_load_time:.0f}ms")
+
+        # Page should load in under 10 seconds (network dependent)
+        assert load_time < 10000, f"Page load took {load_time}ms, should be under 10s"
+
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
