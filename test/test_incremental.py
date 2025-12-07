@@ -324,7 +324,6 @@ class TestIncrementalPerformance:
         # With lazy rendering, showing all entries should still be fast
         assert total_rank_time < 200, f"Full ranking took {total_rank_time}ms, should be under 200ms"
 
-
 class TestInitialLoad:
     """Test initial page load performance."""
 
