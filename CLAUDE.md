@@ -174,15 +174,19 @@ csr.setVerifyIncremental(false); // Disable for production
 Typical timing with optimizations:
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
+| Initial CSV load | Sequential | ~350ms parallel | ~3x |
 | Incremental computation | ~50ms | ~10ms | 5x |
 | Full computation | ~50ms | ~40ms | - |
 | Render time | ~700ms | ~4ms | **175x** |
 | Total rank() time | ~750ms | ~65ms | **12x** |
+| Initial page load | ~2-3s | ~900ms | **2-3x** |
 
 Key optimizations:
-1. **Incremental computation**: Only recomputes what changed
-2. **Lazy faculty rendering**: Faculty HTML generated on-demand when expanded
-3. **Checkbox state caching**: Native DOM instead of jQuery
+1. **Parallel CSV loading**: All 6 CSV files load concurrently via `Promise.all()`
+2. **Incremental computation**: Only recomputes what changed based on checkbox state
+3. **Lazy faculty rendering**: Faculty HTML generated on-demand when department expanded
+4. **Checkbox state caching**: Native DOM instead of jQuery
+5. **Optimized countAuthorAreas**: Pre-computed area list, indexed array access
 
 ## File Structure
 ```

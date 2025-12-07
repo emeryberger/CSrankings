@@ -309,28 +309,27 @@ class CSRankings {
                 CSRankings.childMap[parent].push(child);
             }
         }
-        this.displayProgress(1);
         (() => __awaiter(this, void 0, void 0, function* () {
-            yield this.loadTuring(this.turing);
-            yield this.loadACMFellow(this.acmfellow);
-            this.displayProgress(2);
-            yield this.loadAuthorInfo();
-            this.displayProgress(3);
-            yield this.loadAuthors();
+            // Load all CSV files in parallel for faster initial load
+            const loadStart = performance.now();
+            yield Promise.all([
+                this.loadTuring(this.turing),
+                this.loadACMFellow(this.acmfellow),
+                this.loadAuthorInfo(),
+                this.loadAuthors(),
+                this.loadCountryInfo(this.countryInfo, this.countryAbbrv),
+                this.loadCountryNames(this.countryNames)
+            ]);
+            console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
             this.setAllOn();
             this.navigoRouter.on({
                 '/index': this.navigation,
                 '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
             }).resolve();
-            this.displayProgress(4);
             this.countAuthorAreas();
-            yield this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
-            yield this.loadCountryNames(this.countryNames);
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
-            // We've finished loading; remove the overlay.
-            document.getElementById("overlay-loading").style.display = "none";
             // Randomly display a survey.
             const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
             // Check to see if survey has already been displayed.
@@ -672,17 +671,6 @@ class CSRankings {
         };
         vegaEmbed(`div[id="${name}-chart"]`, isPieChart ? vegaLitePieChartSpec : vegaLiteBarChartSpec, { actions: false });
     }
-    displayProgress(step) {
-        const msgs = ["Initializing.",
-            "Loading author information.",
-            "Loading publication data.",
-            "Computing ranking."];
-        const s = `<strong>${msgs[step - 1]}</strong><br />`;
-        const progress = document.querySelector("#progress");
-        if (progress) {
-            progress.innerHTML = s;
-        }
-    }
     loadTuring(turing) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
@@ -892,40 +880,34 @@ class CSRankings {
         const startyear = parseInt($("#fromyear").find(":selected").text());
         const endyear = parseInt($("#toyear").find(":selected").text());
         this.authorAreas = {};
-        for (const r in this.authors) {
-            const { area } = this.authors[r];
+        // Pre-compute area list once instead of iterating areaDict each time
+        const areaList = Object.keys(this.areaDict);
+        const numAuthors = this.authors.length;
+        for (let r = 0; r < numAuthors; r++) {
+            const record = this.authors[r];
+            const { area, year } = record;
             if (area in CSRankings.nextTier) {
                 continue;
             }
-            const { year } = this.authors[r];
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            const { name, dept, count } = this.authors[r];
-            /*
-              DISABLING weight selection so all pie charts look the
-              same regardless of which areas are currently selected:
-              
-              if (weights[theArea] === 0) {
-              continue;
-              }
-            */
+            const { name, dept, count } = record;
             const theCount = parseFloat(count);
+            // Initialize area counts lazily - only create entry when needed
             if (!(name in this.authorAreas)) {
-                this.authorAreas[name] = {};
-                for (const area in this.areaDict) {
-                    if (this.areaDict.hasOwnProperty(area)) {
-                        this.authorAreas[name][area] = 0;
-                    }
+                const entry = {};
+                for (let i = 0; i < areaList.length; i++) {
+                    entry[areaList[i]] = 0;
                 }
+                this.authorAreas[name] = entry;
             }
             if (!(dept in this.authorAreas)) {
-                this.authorAreas[dept] = {};
-                for (const area in this.areaDict) {
-                    if (this.areaDict.hasOwnProperty(area)) {
-                        this.authorAreas[dept][area] = 0;
-                    }
+                const entry = {};
+                for (let i = 0; i < areaList.length; i++) {
+                    entry[areaList[i]] = 0;
                 }
+                this.authorAreas[dept] = entry;
             }
             this.authorAreas[name][area] += theCount;
             this.authorAreas[dept][area] += theCount;
