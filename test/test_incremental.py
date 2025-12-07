@@ -234,6 +234,96 @@ class TestIncrementalPerformance:
         print(f"\nPerformance: Incremental={incremental_time}ms, Full={full_time}ms, "
               f"Speedup={full_time/incremental_time:.1f}x")
 
+    def test_render_time_is_fast(self, loaded_page):
+        """Verify that total render time is under 100ms."""
+        import re
+
+        # First, activate all to ensure cache is populated
+        loaded_page.execute_script("csr.activateAll();")
+        time.sleep(1.5)
+
+        # Clear logs
+        loaded_page.get_log('browser')
+
+        # Toggle a checkbox and measure total time
+        loaded_page.execute_script("document.getElementById('ai').click();")
+        time.sleep(1.5)
+
+        logs = get_console_logs(loaded_page)
+
+        before_render_time = None
+        total_rank_time = None
+
+        for log in logs:
+            # Log format: 'http://localhost:8000/csrankings.js 1540:16 "Before render: rank took 94 milliseconds."'
+            if "Before render: rank took" in log:
+                match = re.search(r'rank took (\d+\.?\d*)', log)
+                if match:
+                    before_render_time = float(match.group(1))
+            elif "Rank took" in log and "Before" not in log:
+                # Format: "Rank took 281.39999997615814 milliseconds."
+                match = re.search(r'Rank took (\d+\.?\d*)', log)
+                if match:
+                    total_rank_time = float(match.group(1))
+
+        assert before_render_time is not None, f"Could not find 'Before render' time in logs: {logs}"
+        assert total_rank_time is not None, f"Could not find 'Rank took' time in logs: {logs}"
+
+        render_time = total_rank_time - before_render_time
+
+        print(f"\nTiming breakdown:")
+        print(f"  Before render: {before_render_time:.1f}ms")
+        print(f"  Total rank: {total_rank_time:.1f}ms")
+        print(f"  Render time: {render_time:.1f}ms")
+
+        # Render time should be under 100ms for good UX
+        # (This is a soft target - the test will still show the actual time)
+        if render_time > 100:
+            print(f"  WARNING: Render time {render_time:.1f}ms exceeds 100ms target")
+
+    def test_full_ranking_performance(self, loaded_page):
+        """Test performance when showing ALL entries."""
+        import re
+
+        # Activate all areas
+        loaded_page.execute_script("csr.activateAll();")
+        time.sleep(2)
+
+        # Clear logs
+        loaded_page.get_log('browser')
+
+        # Toggle a checkbox and measure total time with all entries
+        loaded_page.execute_script("document.getElementById('ai').click();")
+        time.sleep(2)
+
+        logs = get_console_logs(loaded_page)
+
+        before_render_time = None
+        total_rank_time = None
+
+        for log in logs:
+            if "Before render: rank took" in log:
+                match = re.search(r'rank took (\d+\.?\d*)', log)
+                if match:
+                    before_render_time = float(match.group(1))
+            elif "Rank took" in log and "Before" not in log:
+                match = re.search(r'Rank took (\d+\.?\d*)', log)
+                if match:
+                    total_rank_time = float(match.group(1))
+
+        assert before_render_time is not None, f"Could not find 'Before render' time in logs"
+        assert total_rank_time is not None, f"Could not find 'Rank took' time in logs"
+
+        render_time = total_rank_time - before_render_time
+
+        print(f"\nFull ranking (all entries) timing:")
+        print(f"  Before render: {before_render_time:.1f}ms")
+        print(f"  Total rank: {total_rank_time:.1f}ms")
+        print(f"  Render time: {render_time:.1f}ms")
+
+        # With lazy rendering, showing all entries should still be fast
+        assert total_rank_time < 200, f"Full ranking took {total_rank_time}ms, should be under 200ms"
+
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

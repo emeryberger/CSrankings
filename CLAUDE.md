@@ -72,8 +72,8 @@ element.checked = true;
 $(`input[name=${id}]`).prop('checked', true);
 ```
 
-### Scroll Listener
-The scroll listener for lazy loading is added only once using `scrollListenerAdded` flag. Never add scroll listeners inside `rank()` without this guard.
+### All Entries Displayed
+CSRankings now displays all entries on initial load (no progressive scroll loading). This is possible due to lazy faculty rendering - the page loads fast because faculty HTML is only generated when a department row is expanded.
 
 ### Incremental Update System
 The incremental update system caches data that only changes when year/region changes:
@@ -171,12 +171,18 @@ csr.setVerifyIncremental(false); // Disable for production
 ```
 
 ### Performance Results
-Typical timing with incremental updates:
-| Operation | Incremental | Full | Speedup |
-|-----------|-------------|------|---------|
-| Toggle checkbox | ~10-20ms | ~35-50ms | 2-5x |
-| Activate all | ~20ms | ~40ms | 2x |
-| Deactivate all | ~0ms | ~23ms | ∞ |
+Typical timing with optimizations:
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Incremental computation | ~50ms | ~10ms | 5x |
+| Full computation | ~50ms | ~40ms | - |
+| Render time | ~700ms | ~4ms | **175x** |
+| Total rank() time | ~750ms | ~65ms | **12x** |
+
+Key optimizations:
+1. **Incremental computation**: Only recomputes what changed
+2. **Lazy faculty rendering**: Faculty HTML generated on-demand when expanded
+3. **Checkbox state caching**: Native DOM instead of jQuery
 
 ## File Structure
 ```

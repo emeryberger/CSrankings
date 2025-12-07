@@ -88,7 +88,7 @@ class CSRankings {
 
     private static theInstance: CSRankings; // singleton for this object
 
-    private static minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
+    private static minToRank = 5000; // show all entries (lazy rendering makes this fast)
     public static readonly areas: Array<string> = [];
     public static readonly topLevelAreas: { [key: string]: string } = {};
     public static readonly topTierAreas: { [key: string]: string } = {};
@@ -98,18 +98,6 @@ class CSRankings {
     private note: { [name: string]: string } = {};
 
     private navigoRouter: Navigo;
-
-    // We have scrolled: increase the number we rank.
-    public static updateMinimum(obj: any): number {
-        if (CSRankings.minToRank <= 500) {
-            const t = obj.scrollTop;
-            CSRankings.minToRank = 5000;
-            CSRankings.getInstance().rank();
-            return t;
-        } else {
-            return 0;
-        }
-    }
 
     // Return the singleton corresponding to this object.
     public static getInstance(): CSRankings {
@@ -555,9 +543,6 @@ class CSRankings {
     private rankDebounceTimer: number | null = null;
     private readonly RANK_DEBOUNCE_MS: number = 16; // ~1 frame
 
-    /* Flag to track if scroll listener has been added */
-    private scrollListenerAdded: boolean = false;
-
     /* === INCREMENTAL UPDATE CACHING === */
     /* Cache for data that only changes when year/region changes, not checkboxes */
     private incrementalCache: {
@@ -590,6 +575,22 @@ class CSRankings {
     /* Enable/disable verification mode to compare incremental vs full computation */
     /* Can be toggled from console: csr.setVerifyIncremental(true) */
     public verifyIncremental: boolean = false;
+
+    /* === RENDERING OPTIMIZATION CACHING === */
+    /* Cache for faculty dropdown HTML - only changes when year/region changes */
+    private facultyDropdownCache: {
+        valid: boolean;
+        startyear: number;
+        endyear: number;
+        regions: string;
+        html: { [dept: string]: string };
+    } = {
+        valid: false,
+        startyear: 0,
+        endyear: 0,
+        regions: '',
+        html: {}
+    };
 
     /* Colors. */
     private readonly RightTriangle = "&#9658;";   // right-facing triangle symbol (collapsed view)
@@ -1602,103 +1603,117 @@ class CSRankings {
         return numAreas;
     }
 
-    /* Build drop down for faculty names and paper counts. */
+    /* Build drop down HTML for a single department's faculty */
+    private buildFacultyHTML(_dept: string,
+        names: Array<string>,
+        facultycount: { [key: string]: number },
+        facultyAdjustedCount: { [key: string]: number }): string {
+
+        let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
+            + '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
+            + '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
+            + ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
+            + '</small></td></thead><tbody>';
+
+        /* Build a dict of just faculty from this department for sorting purposes. */
+        let fc: { [key: string]: number } = {};
+        for (const name of names) {
+            fc[name] = facultycount[name];
+        }
+        let keys = Object.keys(fc);
+        keys.sort((a: string, b: string) => {
+            if (fc[b] === fc[a]) {
+                const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                if (fb === fa) {
+                    return this.compareNames(a, b);
+                } else {
+                    return fb - fa;
+                }
+            } else {
+                return fc[b] - fc[a];
+            }
+        });
+
+        for (const name of keys) {
+            const homePage = encodeURI(this.homepages[name]);
+            const dblpName = this.dblpAuthors[name];
+
+            p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+                + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                + `>${name}</a>&nbsp;`;
+            if (this.note.hasOwnProperty(name)) {
+                const url = CSRankings.noteMap[this.note[name]];
+                const href = `<a href="${url}">`;
+                p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
+            }
+            if (this.acmfellow.hasOwnProperty(name)) {
+                p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="${this.acmfellowImage}"></span>&nbsp;`;
+            }
+            if (this.turing.hasOwnProperty(name)) {
+                p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
+            }
+            p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
+
+            p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
+                + '>'
+                + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
+
+            if (this.scholarInfo.hasOwnProperty(name)) {
+                if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
+                    const url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
+                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
+                        + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
+                }
+            }
+
+            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
+            p += '<img alt="DBLP" src="dblp.png">'
+                + '</a>';
+
+            p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += this.ChartIcon + "</span>"
+                + '</small>'
+                + '</td><td align="right"><small>'
+                + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
+                + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
+                + "</small></td>"
+                + '<td align="right"><small>'
+                + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
+                + "</small></td></tr>"
+                + "<tr><td colspan=\"4\">"
+                + `<div class="csr-chart" id="${escape(name)}-chart">`
+                + '</div>'
+                + "</td></tr>";
+        }
+        p += "</tbody></table></div>";
+        return p;
+    }
+
+    /* Build drop down for faculty names and paper counts - OPTIMIZED with lazy rendering */
     private buildDropDown(deptNames: { [key: string]: Array<string> },
         facultycount: { [key: string]: number },
         facultyAdjustedCount: { [key: string]: number })
         : { [key: string]: string } {
+        // Return empty - we'll render faculty HTML lazily when expanded
         let univtext: { [key: string]: string } = {};
-
         for (const dept in deptNames) {
-            if (!deptNames.hasOwnProperty(dept)) {
-                continue;
-            }
-
-            let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
-                + '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
-                + '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
-                + ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
-                + '</small></td></thead><tbody>';
-            /* Build a dict of just faculty from this department for sorting purposes. */
-            let fc: { [key: string]: number } = {};
-            for (const name of deptNames[dept]) {
-                fc[name] = facultycount[name];
-            }
-            let keys = Object.keys(fc);
-            keys.sort((a: string, b: string) => {
-                if (fc[b] === fc[a]) {
-                    // return this.compareNames(a, b);
-		    const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                    const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                    if (fb === fa) {
-                       return this.compareNames(a, b);
-                    } else {
-                       return fb - fa;
-		    }
-                } else {
-                    return fc[b] - fc[a];
-                }
-            });
-            for (const name of keys) {
-
-                const homePage = encodeURI(this.homepages[name]);
-                const dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
-
-                p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                    + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                    + `onclick="trackOutboundLink('${homePage}', true); return false;"`
-                    + `>${name}</a>&nbsp;`;
-                if (this.note.hasOwnProperty(name)) {
-                    const url = CSRankings.noteMap[this.note[name]];
-                    const href = `<a href="${url}">`;
-                    p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
-                }
-                if (this.acmfellow.hasOwnProperty(name)) {
-                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="${this.acmfellowImage}"></span>&nbsp;`;
-                }
-                if (this.turing.hasOwnProperty(name)) {
-                    p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
-                }
-                p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
-
-                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                    + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
-                    + '>'
-                    + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
-
-                if (this.scholarInfo.hasOwnProperty(name)) {
-                    if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
-                        const url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
-                        p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
-                            + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
-                    }
-                }
-
-                p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
-                p += '<img alt="DBLP" src="dblp.png">'
-                    + '</a>';
-
-                p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += this.ChartIcon + "</span>"
-                    + '</small>'
-                    + '</td><td align="right"><small>'
-                    + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
-                    + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
-                    + "</small></td>"
-                    + '<td align="right"><small>'
-                    + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
-                    + "</small></td></tr>"
-                    + "<tr><td colspan=\"4\">"
-                    + `<div class="csr-chart" id="${escape(name)}-chart">`
-                    + '</div>'
-                    + "</td></tr>"
-                    ;
-            }
-            p += "</tbody></table></div>";
-            univtext[dept] = p;
+            // Store placeholder - actual HTML generated on demand in toggleFaculty
+            univtext[dept] = "";
         }
+        // Store the data needed for lazy rendering
+        this.lazyRenderData = { deptNames, facultycount, facultyAdjustedCount };
         return univtext;
     }
+
+    /* Data for lazy rendering of faculty dropdowns */
+    private lazyRenderData: {
+        deptNames: { [key: string]: Array<string> };
+        facultycount: { [key: string]: number };
+        facultyAdjustedCount: { [key: string]: number };
+    } | null = null;
 
 
     private buildOutputString(numAreas: number,
@@ -1930,23 +1945,6 @@ class CSRankings {
         /* Finally done. Redraw! */
         document.getElementById("success")!.innerHTML = s;
 
-        // Only add scroll listener once to avoid accumulation
-        if (!this.scrollListenerAdded) {
-            this.scrollListenerAdded = true;
-            // Use event delegation on the success container instead of all divs
-            const successDiv = document.getElementById("success");
-            if (successDiv) {
-                successDiv.addEventListener("scroll", function(this: HTMLElement) {
-                    if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
-                        const t = CSRankings.updateMinimum(this);
-                        if (t) {
-                            this.scrollTop = t;
-                        }
-                    }
-                }, true); // Use capture to catch scroll events from nested elements
-            }
-        }
-
         if (!update) {
             this.navigoRouter.pause();
         } else {
@@ -2000,6 +1998,18 @@ class CSRankings {
             e!.style.display = 'none';
             widget!.innerHTML = this.RightTriangle;
         } else {
+            // Lazy render: generate HTML on first expansion
+            if (e!.innerHTML === '' && this.lazyRenderData) {
+                const deptUnescaped = unescape(dept);
+                if (deptUnescaped in this.lazyRenderData.deptNames) {
+                    e!.innerHTML = this.buildFacultyHTML(
+                        deptUnescaped,
+                        this.lazyRenderData.deptNames[deptUnescaped],
+                        this.lazyRenderData.facultycount,
+                        this.lazyRenderData.facultyAdjustedCount
+                    );
+                }
+            }
             e!.style.display = 'block';
             widget!.innerHTML = this.DownTriangle;
         }
