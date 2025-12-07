@@ -187,6 +187,13 @@ Key optimizations:
 3. **Lazy faculty rendering**: Faculty HTML generated on-demand when department expanded
 4. **Checkbox state caching**: Native DOM instead of jQuery
 5. **Optimized countAuthorAreas**: Pre-computed area list, indexed array access
+6. **No loading overlay**: Page loads fast enough (~900ms) that progress messages are unnecessary
+
+## CI/CD
+
+GitHub Actions workflow (`.github/workflows/post-merge-rebuild.yml`) runs on push to `gh-pages`:
+1. **test job**: Compiles TypeScript, runs pytest with Selenium/Chrome
+2. **build-and-commit job**: Runs `make` and auto-commits results (only after tests pass)
 
 ## File Structure
 ```
@@ -196,18 +203,26 @@ csrankings.min.js      # Minified for production
 index.html             # Main page
 tsconfig.json          # TypeScript config
 Makefile               # Build automation
-generated-author-info.csv  # Publication data
+generated-author-info.csv  # Publication data (~15MB, ~50k records)
+csrankings.csv         # Author info (~2.9MB)
 institutions.csv       # Institution regions
 countries.csv          # Country codes
-turing.csv            # Turing award winners
-acm-fellows.csv       # ACM Fellows
-typescript/           # Type definitions
+turing.csv             # Turing award winners
+acm-fellows.csv        # ACM Fellows
+test/                  # Pytest test suite
+  __init__.py
+  test_incremental.py  # Selenium-based tests (16 tests)
+typescript/            # Type definitions
   jquery.d.ts
   navigo.d.ts
   papaparse.d.ts
   vega-embed.d.ts
   continents.d.ts
   he/index.d.ts
+.github/workflows/     # CI/CD
+  post-merge-rebuild.yml  # Test + build on push
+  commit_validation.yml   # PR validation
+  stale.yml               # Stale PR management
 ```
 
 ## Dependencies
