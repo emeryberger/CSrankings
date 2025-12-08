@@ -15,14 +15,14 @@ PYPY   = python3.12 # pypy
 # DBLP   = dblp.org
 DBLP   = dblp.uni-trier.de
 
-# BaseX JVM settings to disable XML entity expansion limits (required for DBLP DTD processing)
-export BASEX_JVM = -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.totalEntitySizeLimit=0 -Djdk.xml.maxGeneralEntitySizeLimit=0
+# Note: BaseX is no longer used for DBLP filtering. We now use a streaming Python SAX parser
+# which uses constant memory (~50MB) instead of loading the entire document (~11GB).
 
 all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  # fix-affiliations home-pages scholar-links
 	$(MAKE) clean-csrankings
 
 clean:
-	rm $(TARGETS)
+	rm -f $(TARGETS)
 
 csrankings.js: csrankings.ts continents.ts
 	@echo "Rebuilding JavaScript code."
@@ -49,11 +49,9 @@ download-dblp:
 	curl -o dblp-original.xml.gz https://$(DBLP)/xml/dblp.xml.gz
 
 shrink-dblp:
-	@echo "Shrinking the DBLP file."
-	gunzip -dc dblp-original.xml.gz > dblp.xml
-	basex -c filter.xq  > dblp2.xml
-	gzip dblp2.xml
-	mv dblp2.xml.gz dblp.xml.gz
+	@echo "Shrinking the DBLP file (streaming, low memory)."
+	gunzip -dc dblp-original.xml.gz | $(PYTHON) util/filter-dblp.py | gzip > dblp.xml.gz
+	@echo "Filtered DBLP saved to dblp.xml.gz"
 
 faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.csv
 	@echo "Splitting main datafile."

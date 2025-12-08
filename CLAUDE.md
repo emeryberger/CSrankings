@@ -200,30 +200,33 @@ GitHub Actions workflow (`.github/workflows/post-merge-rebuild.yml`) runs on pus
 
 The `make update-dblp` target downloads and filters the DBLP database:
 1. Downloads ~3GB compressed XML from dblp.uni-trier.de
-2. Filters to only CSRankings-relevant venues using BaseX/XQuery (`filter.xq`)
-3. Output: ~52MB compressed (~330k publications)
+2. Filters to only CSRankings-relevant venues using streaming SAX parser
+3. Output: ~53MB compressed (~450k publications)
 
-### BaseX Configuration
-BaseX requires JVM settings to handle DBLP's large DTD with many entity definitions. The Makefile exports:
-```makefile
-export BASEX_JVM = -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.totalEntitySizeLimit=0 -Djdk.xml.maxGeneralEntitySizeLimit=0
+### Streaming Filter (Low Memory)
+The filter uses Python's SAX parser (`util/filter-dblp.py`) which processes XML as a stream:
+- **Memory usage**: ~50MB constant (vs ~11GB for DOM-based approaches)
+- **Processing time**: ~3 minutes
+- **Entity resolution**: Handled via DTD processing for proper diacritics
+
+The streaming approach reads from stdin and writes to stdout, enabling pipeline usage:
+```bash
+gunzip -dc dblp-original.xml.gz | python3 util/filter-dblp.py | gzip > dblp.xml.gz
 ```
 
-Without these settings, BaseX fails with errors like:
-- `JAXP00010001: The parser has encountered more than "2500" entity expansions`
-- `JAXP00010004: The accumulated size of entities exceeded the limit`
-
 ### Entity Resolution
-BaseX with DTD processing (`<set option='DTD'>yes</set>` in filter.xq) correctly resolves XML entities to UTF-8 characters. This is critical for matching faculty names with diacritics:
+The SAX parser with DTD processing correctly resolves XML entities to UTF-8 characters. This is critical for matching faculty names with diacritics:
 - `&Eacute;va Tardos` → `Éva Tardos`
 - `&Uuml;mit V. &Ccedil;ataly&uuml;rek` → `Ümit V. Çatalyürek`
 
-### Venue Configuration
-Venues are defined in `filter.xq`:
-- `$booktitles` - Conference proceedings (AAAI, ICML, CVPR, etc.)
-- `$journals` - Journal articles (ACM Trans. Graph., PVLDB, Bioinform., etc.)
+The `dblp.dtd` file must be present in the working directory for entity resolution.
 
-When adding a new venue, update `filter.xq` with the exact booktitle/journal name as it appears in DBLP.
+### Venue Configuration
+Venues are defined in `util/filter-dblp.py`:
+- `BOOKTITLES` - Conference proceedings (AAAI, ICML, CVPR, etc.)
+- `JOURNALS` - Journal articles (ACM Trans. Graph., PVLDB, Bioinform., etc.)
+
+When adding a new venue, update the appropriate set in `util/filter-dblp.py` with the exact booktitle/journal name as it appears in DBLP.
 
 ### Fully Automated DBLP Update
 Use `make update-dblp-full` to run the complete update pipeline with one command:
@@ -235,7 +238,7 @@ make update-dblp-full
 This performs all 7 steps automatically:
 1. **Backup** - Saves current `dblp-original.xml.gz` to `prev-dblp.xml.gz`
 2. **Download** - Fetches new DBLP dump from dblp.uni-trier.de (~3GB)
-3. **Filter** - Shrinks to CSRankings venues via BaseX/XQuery (~52MB)
+3. **Filter** - Shrinks to CSRankings venues via streaming SAX parser (~53MB)
 4. **Aliases** - Generates `dblp-aliases.csv`
 5. **Name changes** - Detects and applies author name changes to `csrankings-*.csv`
 6. **Regenerate** - Rebuilds `generated-author-info.csv`
