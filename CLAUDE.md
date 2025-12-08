@@ -115,6 +115,7 @@ private incrementalCache: {
 2. Add to `areaMap` array with display title
 3. If next-tier, add to `nextTier` object
 4. Add checkbox in `index.html` under appropriate parent
+5. Add venue to `filter.xq` ($booktitles for conferences, $journals for journal articles)
 
 ### Adding a New Area
 1. Add to `areaMap` array
@@ -195,6 +196,56 @@ GitHub Actions workflow (`.github/workflows/post-merge-rebuild.yml`) runs on pus
 1. **test job**: Compiles TypeScript, runs pytest with Selenium/Chrome
 2. **build-and-commit job**: Runs `make` and auto-commits results (only after tests pass)
 
+## DBLP Processing
+
+The `make update-dblp` target downloads and filters the DBLP database:
+1. Downloads ~3GB compressed XML from dblp.uni-trier.de
+2. Filters to only CSRankings-relevant venues using BaseX/XQuery (`filter.xq`)
+3. Output: ~52MB compressed (~330k publications)
+
+### BaseX Configuration
+BaseX requires JVM settings to handle DBLP's large DTD with many entity definitions. The Makefile exports:
+```makefile
+export BASEX_JVM = -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.totalEntitySizeLimit=0 -Djdk.xml.maxGeneralEntitySizeLimit=0
+```
+
+Without these settings, BaseX fails with errors like:
+- `JAXP00010001: The parser has encountered more than "2500" entity expansions`
+- `JAXP00010004: The accumulated size of entities exceeded the limit`
+
+### Entity Resolution
+BaseX with DTD processing (`<set option='DTD'>yes</set>` in filter.xq) correctly resolves XML entities to UTF-8 characters. This is critical for matching faculty names with diacritics:
+- `&Eacute;va Tardos` → `Éva Tardos`
+- `&Uuml;mit V. &Ccedil;ataly&uuml;rek` → `Ümit V. Çatalyürek`
+
+### Venue Configuration
+Venues are defined in `filter.xq`:
+- `$booktitles` - Conference proceedings (AAAI, ICML, CVPR, etc.)
+- `$journals` - Journal articles (ACM Trans. Graph., PVLDB, Bioinform., etc.)
+
+When adding a new venue, update `filter.xq` with the exact booktitle/journal name as it appears in DBLP.
+
+### Updating Author Names
+DBLP occasionally changes canonical author names (e.g., adding disambiguation numbers like "0001"). The `make update-author-names` target detects these changes and updates csrankings-*.csv files:
+
+```bash
+# 1. Save the current DBLP before downloading new one
+cp dblp-original.xml.gz prev-dblp.xml.gz
+
+# 2. Download new DBLP
+make download-dblp
+
+# 3. Detect name changes (dry-run preview)
+make update-author-names
+
+# 4. Apply changes if preview looks correct
+python3.12 util/update-new-names.py --diff name-changes.csv --in-place
+```
+
+Tools involved:
+- `util/new-name-detector.py` - Compares old/new DBLP dumps for canonical name changes
+- `util/update-new-names.py` - Applies name changes to csrankings-*.csv files
+
 ## File Structure
 ```
 csrankings.ts          # Main TypeScript source
@@ -212,6 +263,11 @@ acm-fellows.csv        # ACM Fellows
 test/                  # Pytest test suite
   __init__.py
   test_incremental.py  # Selenium-based tests (16 tests)
+filter.xq              # XQuery filter for DBLP (venue definitions)
+util/                  # Utility scripts
+  regenerate_data.py   # Generate author publication data
+  split-csv.py         # Split combined CSV files
+  ...                  # Other data processing scripts
 typescript/            # Type definitions
   jquery.d.ts
   navigo.d.ts
