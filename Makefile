@@ -7,7 +7,7 @@
 
 TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names update-dblp-full apply-author-names backup-dblp update-dblp-date
 
 PYTHON = python3.12 # 3.7
 PYPY   = python3.12 # pypy
@@ -108,12 +108,25 @@ collab-graph: generated-author-info.csv faculty-coauthors.csv
 	@echo "Building collaboration graph data."
 	$(PYTHON) util/make-collaboration-graph.py
 
-# Detect and apply DBLP author name changes to csrankings-*.csv files
+# Update the "last update" date in index.html to current month/year
+update-dblp-date:
+	@echo "Updating DBLP date in index.html..."
+	@MONTH_YEAR=$$(date "+%B %Y"); \
+	sed -i.bak -E "s/(DBLP<\/a> \(last update )[A-Za-z]+ [0-9]{4}/\1$$MONTH_YEAR/" index.html && \
+	rm -f index.html.bak && \
+	echo "Updated to: $$MONTH_YEAR"
+
+# Backup current DBLP before downloading new one
+backup-dblp:
+	@if [ -f dblp-original.xml.gz ]; then \
+		echo "Backing up dblp-original.xml.gz to prev-dblp.xml.gz"; \
+		cp dblp-original.xml.gz prev-dblp.xml.gz; \
+	else \
+		echo "No dblp-original.xml.gz to backup (first run?)"; \
+	fi
+
+# Detect DBLP author name changes (dry-run preview)
 # Requires: prev-dblp.xml.gz (previous DBLP dump) and dblp-original.xml.gz (current)
-# Usage:
-#   1. Before downloading new DBLP: cp dblp-original.xml.gz prev-dblp.xml.gz
-#   2. Run: make download-dblp
-#   3. Run: make update-author-names
 update-author-names:
 	@echo "Detecting DBLP author name changes..."
 	@if [ ! -f prev-dblp.xml.gz ]; then \
@@ -127,5 +140,59 @@ update-author-names:
 	$(PYTHON) util/update-new-names.py --diff name-changes.csv
 	@echo ""
 	@echo "To apply changes, run:"
-	@echo "  $(PYTHON) util/update-new-names.py --diff name-changes.csv --in-place"
+	@echo "  make apply-author-names"
+
+# Apply detected author name changes (modifies csrankings-*.csv files)
+apply-author-names:
+	@if [ ! -f name-changes.csv ]; then \
+		echo "Error: name-changes.csv not found. Run 'make update-author-names' first."; \
+		exit 1; \
+	fi
+	@CHANGES=$$(wc -l < name-changes.csv | tr -d ' '); \
+	if [ "$$CHANGES" -le 1 ]; then \
+		echo "No name changes to apply."; \
+	else \
+		echo "Applying $$(($$CHANGES - 1)) name change(s)..."; \
+		$(PYTHON) util/update-new-names.py --diff name-changes.csv --in-place; \
+	fi
+
+# Fully automated DBLP update: backup, download, shrink, detect & apply name changes, regenerate data
+# This is the one-command solution for updating DBLP
+update-dblp-full:
+	@echo "=== FULLY AUTOMATED DBLP UPDATE ==="
+	@echo ""
+	@echo "Step 1/6: Backing up current DBLP..."
+	$(MAKE) backup-dblp
+	@echo ""
+	@echo "Step 2/6: Downloading new DBLP from $(DBLP)..."
+	$(MAKE) download-dblp
+	@echo ""
+	@echo "Step 3/6: Filtering DBLP to CSRankings venues..."
+	$(MAKE) shrink-dblp
+	@echo ""
+	@echo "Step 4/6: Generating DBLP aliases..."
+	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
+	@echo ""
+	@echo "Step 5/6: Detecting and applying author name changes..."
+	@if [ -f prev-dblp.xml.gz ]; then \
+		$(PYTHON) util/new-name-detector.py --old prev-dblp.xml.gz --new dblp-original.xml.gz > name-changes.csv; \
+		CHANGES=$$(wc -l < name-changes.csv | tr -d ' '); \
+		if [ "$$CHANGES" -le 1 ]; then \
+			echo "No name changes detected."; \
+		else \
+			echo "Detected $$(($$CHANGES - 1)) name change(s). Applying..."; \
+			$(PYTHON) util/update-new-names.py --diff name-changes.csv --in-place; \
+		fi; \
+	else \
+		echo "No previous DBLP backup found. Skipping name change detection."; \
+	fi
+	@echo ""
+	@echo "Step 6/7: Regenerating publication data..."
+	$(MAKE) generated-author-info.csv
+	@echo ""
+	@echo "Step 7/7: Updating DBLP date in index.html..."
+	$(MAKE) update-dblp-date
+	@echo ""
+	@echo "=== DBLP UPDATE COMPLETE ==="
+	@echo "You may want to run 'make all' to rebuild everything."
 

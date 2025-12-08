@@ -225,22 +225,53 @@ Venues are defined in `filter.xq`:
 
 When adding a new venue, update `filter.xq` with the exact booktitle/journal name as it appears in DBLP.
 
-### Updating Author Names
-DBLP occasionally changes canonical author names (e.g., adding disambiguation numbers like "0001"). The `make update-author-names` target detects these changes and updates csrankings-*.csv files:
+### Fully Automated DBLP Update
+Use `make update-dblp-full` to run the complete update pipeline with one command:
 
 ```bash
-# 1. Save the current DBLP before downloading new one
-cp dblp-original.xml.gz prev-dblp.xml.gz
+make update-dblp-full
+```
+
+This performs all 7 steps automatically:
+1. **Backup** - Saves current `dblp-original.xml.gz` to `prev-dblp.xml.gz`
+2. **Download** - Fetches new DBLP dump from dblp.uni-trier.de (~3GB)
+3. **Filter** - Shrinks to CSRankings venues via BaseX/XQuery (~52MB)
+4. **Aliases** - Generates `dblp-aliases.csv`
+5. **Name changes** - Detects and applies author name changes to `csrankings-*.csv`
+6. **Regenerate** - Rebuilds `generated-author-info.csv`
+7. **Update date** - Updates "last update" date in `index.html`
+
+### Manual DBLP Update (Step-by-Step)
+If you prefer to review changes before applying:
+
+```bash
+# 1. Backup current DBLP
+make backup-dblp
 
 # 2. Download new DBLP
 make download-dblp
 
-# 3. Detect name changes (dry-run preview)
+# 3. Filter to CSRankings venues
+make shrink-dblp
+
+# 4. Preview name changes (dry-run)
 make update-author-names
 
-# 4. Apply changes if preview looks correct
-python3.12 util/update-new-names.py --diff name-changes.csv --in-place
+# 5. Apply name changes if preview looks correct
+make apply-author-names
+
+# 6. Regenerate publication data
+make generated-author-info.csv
+
+# 7. Update date in index.html
+make update-dblp-date
 ```
+
+### Updating Author Names
+DBLP occasionally changes canonical author names (e.g., adding disambiguation numbers like "0001"). The automated pipeline handles this, but you can also run manually:
+
+- `make update-author-names` - Detect changes (dry-run preview)
+- `make apply-author-names` - Apply changes from `name-changes.csv`
 
 Tools involved:
 - `util/new-name-detector.py` - Compares old/new DBLP dumps for canonical name changes
