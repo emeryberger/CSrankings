@@ -3,6 +3,8 @@
 ## Project Overview
 CSRankings is a metrics-based ranking of top computer science institutions. The frontend is a single-page application built with TypeScript that displays publication-based rankings with interactive filtering by research area, year, and region.
 
+See [optimizations.md](optimizations.md) for performance optimization strategies and benchmarks.
+
 ## Build Commands
 ```bash
 # Compile TypeScript
@@ -200,22 +202,29 @@ GitHub Actions workflow (`.github/workflows/post-merge-rebuild.yml`) runs on pus
 
 The `make update-dblp` target downloads and filters the DBLP database:
 1. Downloads ~3GB compressed XML from dblp.uni-trier.de
-2. Filters to only CSRankings-relevant venues using streaming SAX parser
+2. Filters to only CSRankings-relevant venues using lxml iterparse
 3. Output: ~53MB compressed (~450k publications)
 
-### Streaming Filter (Low Memory)
-The filter uses Python's SAX parser (`util/filter-dblp.py`) which processes XML as a stream:
-- **Memory usage**: ~50MB constant (vs ~11GB for DOM-based approaches)
-- **Processing time**: ~3 minutes
-- **Entity resolution**: Handled via DTD processing for proper diacritics
+### Streaming Filter (lxml)
+The filter uses lxml's iterparse (`util/filter-dblp.py`) for efficient streaming XML processing:
+- **Memory usage**: ~100MB constant (streaming, clears elements after processing)
+- **Processing time**: ~70 seconds (2.7x faster than expat SAX)
+- **Entity resolution**: Handled via DTD loading for proper diacritics
+- **Requires**: `pip install lxml`
 
 The streaming approach reads from stdin and writes to stdout, enabling pipeline usage:
 ```bash
 gunzip -dc dblp-original.xml.gz | python3 util/filter-dblp.py | gzip > dblp.xml.gz
 ```
 
+### Performance Notes
+Profiling shows XML parsing is the bottleneck (~98% of time in libxml2/expat), not Python code:
+- **lxml (libxml2)**: ~70 seconds - current implementation
+- **expat (SAX)**: ~180 seconds - 2.7x slower
+- **Cython**: No benefit since bottleneck is C-based XML parser, not Python
+
 ### Entity Resolution
-The SAX parser with DTD processing correctly resolves XML entities to UTF-8 characters. This is critical for matching faculty names with diacritics:
+lxml with DTD loading correctly resolves XML entities to UTF-8 characters. This is critical for matching faculty names with diacritics:
 - `&Eacute;va Tardos` → `Éva Tardos`
 - `&Uuml;mit V. &Ccedil;ataly&uuml;rek` → `Ümit V. Çatalyürek`
 
@@ -316,8 +325,13 @@ typescript/            # Type definitions
 ```
 
 ## Dependencies
+
+### Frontend (JavaScript)
 - jQuery (DOM manipulation, some remaining uses)
 - Papa Parse (CSV parsing)
 - Navigo (client-side routing)
 - Vega-Lite (charts)
 - he (HTML entity encoding)
+
+### Backend/Build (Python)
+- lxml (`pip install lxml`) - DBLP XML filtering, 2.7x faster than expat
