@@ -3,6 +3,8 @@
 ## Project Overview
 CSRankings is a metrics-based ranking of top computer science institutions. The frontend is a single-page application built with TypeScript that displays publication-based rankings with interactive filtering by research area, year, and region.
 
+See [optimizations.md](optimizations.md) for performance optimization strategies and benchmarks.
+
 ## Build Commands
 ```bash
 # Compile TypeScript
