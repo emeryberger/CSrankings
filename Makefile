@@ -7,13 +7,16 @@
 
 TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names
 
 PYTHON = python3.12 # 3.7
 PYPY   = python3.12 # pypy
 
 # DBLP   = dblp.org
 DBLP   = dblp.uni-trier.de
+
+# BaseX JVM settings to disable XML entity expansion limits (required for DBLP DTD processing)
+export BASEX_JVM = -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.totalEntitySizeLimit=0 -Djdk.xml.maxGeneralEntitySizeLimit=0
 
 all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  # fix-affiliations home-pages scholar-links
 	$(MAKE) clean-csrankings
@@ -104,4 +107,25 @@ collab-graph: generated-author-info.csv faculty-coauthors.csv
 	$(PYTHON) util/generate-all-pubs.py
 	@echo "Building collaboration graph data."
 	$(PYTHON) util/make-collaboration-graph.py
+
+# Detect and apply DBLP author name changes to csrankings-*.csv files
+# Requires: prev-dblp.xml.gz (previous DBLP dump) and dblp-original.xml.gz (current)
+# Usage:
+#   1. Before downloading new DBLP: cp dblp-original.xml.gz prev-dblp.xml.gz
+#   2. Run: make download-dblp
+#   3. Run: make update-author-names
+update-author-names:
+	@echo "Detecting DBLP author name changes..."
+	@if [ ! -f prev-dblp.xml.gz ]; then \
+		echo "Error: prev-dblp.xml.gz not found. Save old DBLP before downloading new one:"; \
+		echo "  cp dblp-original.xml.gz prev-dblp.xml.gz"; \
+		exit 1; \
+	fi
+	$(PYTHON) util/new-name-detector.py --old prev-dblp.xml.gz --new dblp-original.xml.gz > name-changes.csv
+	@echo "Name changes written to name-changes.csv"
+	@echo "Previewing changes (dry-run):"
+	$(PYTHON) util/update-new-names.py --diff name-changes.csv
+	@echo ""
+	@echo "To apply changes, run:"
+	@echo "  $(PYTHON) util/update-new-names.py --diff name-changes.csv --in-place"
 
