@@ -243,7 +243,13 @@ def handle_article(_: Any, article: ArticleType) -> bool:  # type: ignore
         if "title" in article:
             title = Title("")
             if type(article["title"]) is OrderedDict or type(article["title"]) is dict:
-                title = Title(article["title"]["#text"])  # type: ignore
+                # Title may have nested elements (sub, sup, i, etc.)
+                # If #text exists, use it; otherwise extract text from nested elements
+                if "#text" in article["title"]:
+                    title = Title(article["title"]["#text"])  # type: ignore
+                else:
+                    # Flatten nested elements to get text content
+                    title = Title(str(article["title"]))  # type: ignore
             else:
                 title = Title(article["title"])
 
