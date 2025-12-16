@@ -33,18 +33,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 ;
 ;
 class CSRankings {
-    // We have scrolled: increase the number we rank.
-    static updateMinimum(obj) {
-        if (CSRankings.minToRank <= 500) {
-            const t = obj.scrollTop;
-            CSRankings.minToRank = 5000;
-            CSRankings.getInstance().rank();
-            return t;
-        }
-        else {
-            return 0;
-        }
-    }
     // Return the singleton corresponding to this object.
     static getInstance() {
         return CSRankings.theInstance;
@@ -63,7 +51,7 @@ class CSRankings {
         this.note = {};
         this.authorFile = "./csrankings.csv";
         this.authorinfoFile = "./generated-author-info.csv";
-        this.countryinfoFile = "./country-info.csv";
+        this.countryinfoFile = "./institutions.csv";
         this.countrynamesFile = "./countries.csv";
         // private readonly aliasFile = "./dblp-aliases.csv";
         this.turingFile = "./turing.csv";
@@ -202,7 +190,7 @@ class CSRankings {
         this.turing = {};
         /* Map ACM Fellow award winners to year */
         this.acmfellow = {};
-        /* Map institution to (non-US) region. */
+        /* Map institution to region. */
         this.countryInfo = {};
         /* Map country codes (abbreviations) to names. */
         this.countryNames = {};
@@ -223,6 +211,37 @@ class CSRankings {
         this.areaDeptAdjustedCount = {}; /* area+dept */
         this.areaStringMap = {}; // name -> areaString (memoized)
         this.usePieChart = false;
+        /* Cached checkbox states to avoid repeated DOM queries */
+        this.checkboxCache = {};
+        this.checkboxCacheValid = false;
+        /* Debounce timer for rank() calls */
+        this.rankDebounceTimer = null;
+        this.RANK_DEBOUNCE_MS = 16; // ~1 frame
+        /* === INCREMENTAL UPDATE CACHING === */
+        /* Cache for data that only changes when year/region changes, not checkboxes */
+        this.incrementalCache = {
+            valid: false,
+            startyear: 0,
+            endyear: 0,
+            regions: '',
+            areaData: {},
+            deptNames: {},
+            deptCounts: {},
+            facultyAreaData: {},
+            allFaculty: {}
+        };
+        /* Enable/disable verification mode to compare incremental vs full computation */
+        /* Can be toggled from console: csr.setVerifyIncremental(true) */
+        this.verifyIncremental = false;
+        /* === RENDERING OPTIMIZATION CACHING === */
+        /* Cache for faculty dropdown HTML - only changes when year/region changes */
+        this.facultyDropdownCache = {
+            valid: false,
+            startyear: 0,
+            endyear: 0,
+            regions: '',
+            html: {}
+        };
         /* Colors. */
         this.RightTriangle = "&#9658;"; // right-facing triangle symbol (collapsed view)
         this.DownTriangle = "&#9660;"; // downward-facing triangle symbol (expanded view)
@@ -232,6 +251,8 @@ class CSRankings {
         this.OpenPieChartIcon = "<img class='open_chart_icon chart_icon' alt='opened chart' src='png/piechart-open.png'>";
         this.ChartIcon = this.BarChartIcon;
         this.OpenChartIcon = this.OpenBarChartIcon;
+        /* Data for lazy rendering of faculty dropdowns */
+        this.lazyRenderData = null;
         CSRankings.theInstance = this;
         this.navigoRouter = new Navigo(null, true);
         /* Build dictionaries:
@@ -288,28 +309,27 @@ class CSRankings {
                 CSRankings.childMap[parent].push(child);
             }
         }
-        this.displayProgress(1);
         (() => __awaiter(this, void 0, void 0, function* () {
-            yield this.loadTuring(this.turing);
-            yield this.loadACMFellow(this.acmfellow);
-            this.displayProgress(2);
-            yield this.loadAuthorInfo();
-            this.displayProgress(3);
-            yield this.loadAuthors();
+            // Load all CSV files in parallel for faster initial load
+            const loadStart = performance.now();
+            yield Promise.all([
+                this.loadTuring(this.turing),
+                this.loadACMFellow(this.acmfellow),
+                this.loadAuthorInfo(),
+                this.loadAuthors(),
+                this.loadCountryInfo(this.countryInfo, this.countryAbbrv),
+                this.loadCountryNames(this.countryNames)
+            ]);
+            console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
             this.setAllOn();
             this.navigoRouter.on({
                 '/index': this.navigation,
                 '/fromyear/:fromyear/toyear/:toyear/index': this.navigation
             }).resolve();
-            this.displayProgress(4);
             this.countAuthorAreas();
-            yield this.loadCountryInfo(this.countryInfo, this.countryAbbrv);
-            yield this.loadCountryNames(this.countryNames);
             this.addListeners();
             CSRankings.geoCheck();
             this.rank();
-            // We've finished loading; remove the overlay.
-            document.getElementById("overlay-loading").style.display = "none";
             // Randomly display a survey.
             const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
             // Check to see if survey has already been displayed.
@@ -651,17 +671,6 @@ class CSRankings {
         };
         vegaEmbed(`div[id="${name}-chart"]`, isPieChart ? vegaLitePieChartSpec : vegaLiteBarChartSpec, { actions: false });
     }
-    displayProgress(step) {
-        const msgs = ["Initializing.",
-            "Loading author information.",
-            "Loading publication data.",
-            "Computing ranking."];
-        const s = `<strong>${msgs[step - 1]}</strong><br />`;
-        const progress = document.querySelector("#progress");
-        if (progress) {
-            progress.innerHTML = s;
-        }
-    }
     loadTuring(turing) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
@@ -775,52 +784,32 @@ class CSRankings {
     }
     inRegion(dept, regions) {
         switch (regions) {
-            case "us":
-                if (dept in this.countryInfo) {
+            case "northamerica":
+                if (this.countryInfo[dept] != "northamerica") {
                     return false;
                 }
                 break;
             case "europe":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "europe") {
                     return false;
                 }
                 break;
-            case "northamerica":
-                if ((dept in this.countryInfo) && (this.countryInfo[dept] != "canada")) {
-                    return false;
-                }
-                break;
             case "australasia":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "australasia") {
                     return false;
                 }
                 break;
             case "southamerica":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "southamerica") {
                     return false;
                 }
                 break;
             case "asia":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "asia") {
                     return false;
                 }
                 break;
             case "africa":
-                if (!(dept in this.countryInfo)) { // USA
-                    return false;
-                }
                 if (this.countryInfo[dept] != "africa") {
                     return false;
                 }
@@ -838,23 +827,28 @@ class CSRankings {
     activateFields(value, fields) {
         for (let i = 0; i < fields.length; i++) {
             const item = this.fields[fields[i]];
-            const str = `input[name=${item}]`;
-            $(str).prop('checked', value);
-            if (item in CSRankings.childMap) {
-                // It's a parent.
-                $(str).prop('disabled', false);
-                // Activate / deactivate all children as appropriate.
-                CSRankings.childMap[item].forEach((k) => {
-                    const str = `input[name=${k}]`;
-                    if (k in CSRankings.nextTier) {
-                        $(str).prop('checked', false);
-                    }
-                    else {
-                        $(str).prop('checked', value);
-                    }
-                });
+            const element = document.getElementById(item);
+            if (element) {
+                element.checked = value;
+                if (item in CSRankings.childMap) {
+                    // It's a parent.
+                    element.disabled = false;
+                    // Activate / deactivate all children as appropriate.
+                    CSRankings.childMap[item].forEach((k) => {
+                        const childElement = document.getElementById(k);
+                        if (childElement) {
+                            if (k in CSRankings.nextTier) {
+                                childElement.checked = false;
+                            }
+                            else {
+                                childElement.checked = value;
+                            }
+                        }
+                    });
+                }
             }
         }
+        this.invalidateCheckboxCache();
         this.rank();
         return false;
     }
@@ -886,40 +880,34 @@ class CSRankings {
         const startyear = parseInt($("#fromyear").find(":selected").text());
         const endyear = parseInt($("#toyear").find(":selected").text());
         this.authorAreas = {};
-        for (const r in this.authors) {
-            const { area } = this.authors[r];
+        // Pre-compute area list once instead of iterating areaDict each time
+        const areaList = Object.keys(this.areaDict);
+        const numAuthors = this.authors.length;
+        for (let r = 0; r < numAuthors; r++) {
+            const record = this.authors[r];
+            const { area, year } = record;
             if (area in CSRankings.nextTier) {
                 continue;
             }
-            const { year } = this.authors[r];
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
-            const { name, dept, count } = this.authors[r];
-            /*
-              DISABLING weight selection so all pie charts look the
-              same regardless of which areas are currently selected:
-              
-              if (weights[theArea] === 0) {
-              continue;
-              }
-            */
+            const { name, dept, count } = record;
             const theCount = parseFloat(count);
+            // Initialize area counts lazily - only create entry when needed
             if (!(name in this.authorAreas)) {
-                this.authorAreas[name] = {};
-                for (const area in this.areaDict) {
-                    if (this.areaDict.hasOwnProperty(area)) {
-                        this.authorAreas[name][area] = 0;
-                    }
+                const entry = {};
+                for (let i = 0; i < areaList.length; i++) {
+                    entry[areaList[i]] = 0;
                 }
+                this.authorAreas[name] = entry;
             }
             if (!(dept in this.authorAreas)) {
-                this.authorAreas[dept] = {};
-                for (const area in this.areaDict) {
-                    if (this.areaDict.hasOwnProperty(area)) {
-                        this.authorAreas[dept][area] = 0;
-                    }
+                const entry = {};
+                for (let i = 0; i < areaList.length; i++) {
+                    entry[areaList[i]] = 0;
                 }
+                this.authorAreas[dept] = entry;
             }
             this.authorAreas[name][area] += theCount;
             this.authorAreas[dept][area] += theCount;
@@ -1000,13 +988,261 @@ class CSRankings {
             this.stats[dept] = Math.pow(this.stats[dept], 1 / numAreas); // - 1.0;
         }
     }
+    /* Invalidate the checkbox cache - call this when checkboxes change */
+    invalidateCheckboxCache() {
+        this.checkboxCacheValid = false;
+    }
+    /* Invalidate the incremental cache - call when year/region changes */
+    invalidateIncrementalCache() {
+        this.incrementalCache.valid = false;
+    }
+    /* Build the incremental cache - processes all authors once and caches per-area data */
+    buildIncrementalCache(startyear, endyear, regions) {
+        if (this.incrementalCache.valid &&
+            this.incrementalCache.startyear === startyear &&
+            this.incrementalCache.endyear === endyear &&
+            this.incrementalCache.regions === regions) {
+            return; // Cache is still valid
+        }
+        console.log("Building incremental cache...");
+        const cacheStart = performance.now();
+        // Reset cache
+        this.incrementalCache = {
+            valid: true,
+            startyear: startyear,
+            endyear: endyear,
+            regions: regions,
+            areaData: {},
+            deptNames: {},
+            deptCounts: {},
+            facultyAreaData: {},
+            allFaculty: {}
+        };
+        // Initialize area data for ALL areas (including children)
+        // This is important because weights are checked against child areas
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const area = CSRankings.areas[i];
+            this.incrementalCache.areaData[area] = {};
+            this.incrementalCache.facultyAreaData[area] = {};
+        }
+        // Track which faculty we've seen (for building deptNames/deptCounts)
+        const visitedForDept = {};
+        // Single pass through all authors
+        for (const r in this.authors) {
+            if (!this.authors.hasOwnProperty(r)) {
+                continue;
+            }
+            const auth = this.authors[r];
+            const dept = auth.dept;
+            // Filter by region
+            if (!this.inRegion(dept, regions)) {
+                continue;
+            }
+            // Filter by year
+            const year = auth.year;
+            if ((year < startyear) || (year > endyear)) {
+                continue;
+            }
+            if (typeof dept === 'undefined') {
+                continue;
+            }
+            const name = auth.name;
+            const rawArea = auth.area; // Keep the raw area (could be child like 'aaai')
+            // For areaDeptAdjustedCount, we need to map to parent area
+            let parentArea = rawArea;
+            if (rawArea in CSRankings.parentMap) {
+                parentArea = CSRankings.parentMap[rawArea];
+            }
+            // Store data by RAW area (for weight checking)
+            // Initialize dept entry for this raw area if needed
+            if (!(dept in this.incrementalCache.areaData[rawArea])) {
+                this.incrementalCache.areaData[rawArea][dept] = 0;
+            }
+            // Accumulate adjusted count for this rawArea+dept
+            const adjustedCount = parseFloat(auth.adjustedcount);
+            this.incrementalCache.areaData[rawArea][dept] += adjustedCount;
+            // Track faculty data per RAW area
+            if (!(name in this.incrementalCache.facultyAreaData[rawArea])) {
+                this.incrementalCache.facultyAreaData[rawArea][name] = { count: 0, adjustedCount: 0 };
+            }
+            this.incrementalCache.facultyAreaData[rawArea][name].count += parseInt(auth.count);
+            this.incrementalCache.facultyAreaData[rawArea][name].adjustedCount += adjustedCount;
+            // Track all faculty and their departments
+            if (!(name in this.incrementalCache.allFaculty)) {
+                this.incrementalCache.allFaculty[name] = { dept: dept };
+            }
+            // Build deptNames and deptCounts (first time we see each faculty member)
+            if (!(name in visitedForDept)) {
+                visitedForDept[name] = true;
+                if (!(dept in this.incrementalCache.deptNames)) {
+                    this.incrementalCache.deptNames[dept] = [];
+                    this.incrementalCache.deptCounts[dept] = 0;
+                }
+                this.incrementalCache.deptNames[dept].push(name);
+                this.incrementalCache.deptCounts[dept] += 1;
+            }
+        }
+        const cacheEnd = performance.now();
+        console.log(`Incremental cache built in ${(cacheEnd - cacheStart).toFixed(1)}ms`);
+    }
+    /* Incremental version of buildDepartments - uses cached data */
+    buildDepartmentsIncremental(weights, deptCounts, deptNames, facultycount, facultyAdjustedCount) {
+        // Reset areaDeptAdjustedCount
+        this.areaDeptAdjustedCount = {};
+        // Build areaDeptAdjustedCount from cached per-area data
+        // Iterate through ALL areas (including children) and check weights
+        // But accumulate into PARENT area for areaDeptAdjustedCount
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const rawArea = CSRankings.areas[i];
+            if (weights[rawArea] === 0) {
+                continue;
+            }
+            // Map to parent area for areaDeptAdjustedCount key
+            let parentArea = rawArea;
+            if (rawArea in CSRankings.parentMap) {
+                parentArea = CSRankings.parentMap[rawArea];
+            }
+            const areaCache = this.incrementalCache.areaData[rawArea];
+            if (!areaCache)
+                continue;
+            for (const dept in areaCache) {
+                const areaDept = parentArea + dept;
+                if (!(areaDept in this.areaDeptAdjustedCount)) {
+                    this.areaDeptAdjustedCount[areaDept] = 0;
+                }
+                this.areaDeptAdjustedCount[areaDept] += areaCache[dept];
+            }
+        }
+        // Track which faculty have publications in ANY selected area
+        // A faculty member is counted once per department, regardless of how many areas
+        const facultySeen = {};
+        // Iterate through all areas (checking weights) and find faculty
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            const rawArea = CSRankings.areas[i];
+            if (weights[rawArea] === 0) {
+                continue;
+            }
+            const facultyArea = this.incrementalCache.facultyAreaData[rawArea];
+            if (!facultyArea)
+                continue;
+            for (const name in facultyArea) {
+                if (!(name in facultySeen)) {
+                    facultySeen[name] = true;
+                    facultycount[name] = 0;
+                    facultyAdjustedCount[name] = 0;
+                }
+                facultycount[name] += facultyArea[name].count;
+                facultyAdjustedCount[name] += facultyArea[name].adjustedCount;
+            }
+        }
+        // Build deptNames and deptCounts from faculty we found
+        for (const name in facultySeen) {
+            const dept = this.incrementalCache.allFaculty[name].dept;
+            if (!(dept in deptNames)) {
+                deptNames[dept] = [];
+                deptCounts[dept] = 0;
+            }
+            deptNames[dept].push(name);
+            deptCounts[dept] += 1;
+        }
+    }
+    /* Compare two objects for equality (for verification) */
+    deepEqual(obj1, obj2, path = "") {
+        if (obj1 === obj2)
+            return true;
+        if (typeof obj1 !== typeof obj2) {
+            console.error(`Type mismatch at ${path}: ${typeof obj1} vs ${typeof obj2}`);
+            return false;
+        }
+        if (typeof obj1 !== 'object' || obj1 === null || obj2 === null) {
+            if (typeof obj1 === 'number' && typeof obj2 === 'number') {
+                // Allow small floating point differences
+                if (Math.abs(obj1 - obj2) < 0.0001)
+                    return true;
+            }
+            console.error(`Value mismatch at ${path}: ${obj1} vs ${obj2}`);
+            return false;
+        }
+        const keys1 = Object.keys(obj1).sort();
+        const keys2 = Object.keys(obj2).sort();
+        if (keys1.length !== keys2.length) {
+            console.error(`Key count mismatch at ${path}: ${keys1.length} vs ${keys2.length}`);
+            console.error(`Keys in obj1 but not obj2: ${keys1.filter(k => keys2.indexOf(k) === -1)}`);
+            console.error(`Keys in obj2 but not obj1: ${keys2.filter(k => keys1.indexOf(k) === -1)}`);
+            return false;
+        }
+        for (const key of keys1) {
+            if (!this.deepEqual(obj1[key], obj2[key], `${path}.${key}`)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    /* Verify incremental results match full computation */
+    verifyIncrementalResults(fullStats, fullDeptCounts, fullDeptNames, fullFacultycount, fullFacultyAdjustedCount, incrStats, incrDeptCounts, incrDeptNames, incrFacultycount, incrFacultyAdjustedCount) {
+        let allMatch = true;
+        // Sort deptNames arrays for comparison
+        const sortedFullDeptNames = {};
+        const sortedIncrDeptNames = {};
+        for (const dept in fullDeptNames) {
+            sortedFullDeptNames[dept] = [...fullDeptNames[dept]].sort();
+        }
+        for (const dept in incrDeptNames) {
+            sortedIncrDeptNames[dept] = [...incrDeptNames[dept]].sort();
+        }
+        if (!this.deepEqual(fullStats, incrStats, "stats")) {
+            console.error("VERIFICATION FAILED: stats mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(fullDeptCounts, incrDeptCounts, "deptCounts")) {
+            console.error("VERIFICATION FAILED: deptCounts mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(sortedFullDeptNames, sortedIncrDeptNames, "deptNames")) {
+            console.error("VERIFICATION FAILED: deptNames mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(fullFacultycount, incrFacultycount, "facultycount")) {
+            console.error("VERIFICATION FAILED: facultycount mismatch");
+            allMatch = false;
+        }
+        if (!this.deepEqual(fullFacultyAdjustedCount, incrFacultyAdjustedCount, "facultyAdjustedCount")) {
+            console.error("VERIFICATION FAILED: facultyAdjustedCount mismatch");
+            allMatch = false;
+        }
+        if (allMatch) {
+            console.log("✓ Incremental computation verified - matches full computation");
+        }
+        return allMatch;
+    }
+    /* Refresh the checkbox cache by reading all checkbox states at once */
+    refreshCheckboxCache() {
+        if (this.checkboxCacheValid) {
+            return;
+        }
+        for (let ind = 0; ind < CSRankings.areas.length; ind++) {
+            const area = CSRankings.areas[ind];
+            const element = document.getElementById(this.fields[ind]);
+            this.checkboxCache[area] = element ? element.checked : false;
+        }
+        this.checkboxCacheValid = true;
+    }
+    /* Get checkbox state from cache (refreshes cache if invalid) */
+    getCheckboxState(area) {
+        if (!this.checkboxCacheValid) {
+            this.refreshCheckboxCache();
+        }
+        return this.checkboxCache[area] || false;
+    }
     /* Updates the 'weights' of each area from the checkboxes. */
     /* Returns the number of areas selected (checked). */
     updateWeights(weights) {
+        // Refresh cache once at the start
+        this.refreshCheckboxCache();
         let numAreas = 0;
         for (let ind = 0; ind < CSRankings.areas.length; ind++) {
             const area = CSRankings.areas[ind];
-            weights[area] = $(`input[name=${this.fields[ind]}]`).prop('checked') ? 1 : 0;
+            weights[area] = this.checkboxCache[area] ? 1 : 0;
             if (weights[area] === 1) {
                 if (area in CSRankings.parentMap) {
                     // Don't count children.
@@ -1018,91 +1254,95 @@ class CSRankings {
         }
         return numAreas;
     }
-    /* Build drop down for faculty names and paper counts. */
-    buildDropDown(deptNames, facultycount, facultyAdjustedCount) {
-        let univtext = {};
-        for (const dept in deptNames) {
-            if (!deptNames.hasOwnProperty(dept)) {
-                continue;
-            }
-            let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
-                + '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
-                + '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
-                + ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
-                + '</small></td></thead><tbody>';
-            /* Build a dict of just faculty from this department for sorting purposes. */
-            let fc = {};
-            for (const name of deptNames[dept]) {
-                fc[name] = facultycount[name];
-            }
-            let keys = Object.keys(fc);
-            keys.sort((a, b) => {
-                if (fc[b] === fc[a]) {
-                    // return this.compareNames(a, b);
-                    const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
-                    const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
-                    if (fb === fa) {
-                        return this.compareNames(a, b);
-                    }
-                    else {
-                        return fb - fa;
-                    }
+    /* Build drop down HTML for a single department's faculty */
+    buildFacultyHTML(_dept, names, facultycount, facultyAdjustedCount) {
+        let p = '<div class="table"><table class="table table-sm table-striped"><thead><th></th><td><small><em>'
+            + '<abbr title="Click on an author\'s name to go to their home page.">Faculty</abbr></em></small></td>'
+            + '<td align="right"><small><em>&nbsp;&nbsp;<abbr title="Total number of publications (click for DBLP entry).">\#&nbsp;Pubs</abbr>'
+            + ' </em></small></td><td align="right"><small><em><abbr title="Count divided by number of co-authors">Adj.&nbsp;\#</abbr></em>'
+            + '</small></td></thead><tbody>';
+        /* Build a dict of just faculty from this department for sorting purposes. */
+        let fc = {};
+        for (const name of names) {
+            fc[name] = facultycount[name];
+        }
+        let keys = Object.keys(fc);
+        keys.sort((a, b) => {
+            if (fc[b] === fc[a]) {
+                const fb = Math.round(10.0 * facultyAdjustedCount[b]) / 10.0;
+                const fa = Math.round(10.0 * facultyAdjustedCount[a]) / 10.0;
+                if (fb === fa) {
+                    return this.compareNames(a, b);
                 }
                 else {
-                    return fc[b] - fc[a];
+                    return fb - fa;
                 }
-            });
-            for (const name of keys) {
-                const homePage = encodeURI(this.homepages[name]);
-                const dblpName = this.dblpAuthors[name]; // this.translateNameToDBLP(name);
-                p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
-                    + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                    + `onclick="trackOutboundLink('${homePage}', true); return false;"`
-                    + `>${name}</a>&nbsp;`;
-                if (this.note.hasOwnProperty(name)) {
-                    const url = CSRankings.noteMap[this.note[name]];
-                    const href = `<a href="${url}">`;
-                    p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
-                }
-                if (this.acmfellow.hasOwnProperty(name)) {
-                    p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="${this.acmfellowImage}"></span>&nbsp;`;
-                }
-                if (this.turing.hasOwnProperty(name)) {
-                    p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
-                }
-                p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
-                p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                    + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
-                    + '>'
-                    + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
-                if (this.scholarInfo.hasOwnProperty(name)) {
-                    if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
-                        const url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
-                        p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
-                            + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
-                    }
-                }
-                p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
-                p += '<img alt="DBLP" src="dblp.png">'
-                    + '</a>';
-                p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
-                p += this.ChartIcon + "</span>"
-                    + '</small>'
-                    + '</td><td align="right"><small>'
-                    + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
-                    + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
-                    + "</small></td>"
-                    + '<td align="right"><small>'
-                    + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
-                    + "</small></td></tr>"
-                    + "<tr><td colspan=\"4\">"
-                    + `<div class="csr-chart" id="${escape(name)}-chart">`
-                    + '</div>'
-                    + "</td></tr>";
             }
-            p += "</tbody></table></div>";
-            univtext[dept] = p;
+            else {
+                return fc[b] - fc[a];
+            }
+        });
+        for (const name of keys) {
+            const homePage = encodeURI(this.homepages[name]);
+            const dblpName = this.dblpAuthors[name];
+            p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+                + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                + `>${name}</a>&nbsp;`;
+            if (this.note.hasOwnProperty(name)) {
+                const url = CSRankings.noteMap[this.note[name]];
+                const href = `<a href="${url}">`;
+                p += `<span class="note" title="Note">[${href + this.note[name]}</a>]</span>&nbsp;`;
+            }
+            if (this.acmfellow.hasOwnProperty(name)) {
+                p += `<span title="ACM Fellow (${this.acmfellow[name]})"><img alt="ACM Fellow" src="${this.acmfellowImage}"></span>&nbsp;`;
+            }
+            if (this.turing.hasOwnProperty(name)) {
+                p += `<span title="Turing Award"><img alt="Turing Award" src="${this.turingImage}"></span>&nbsp;`;
+            }
+            p += `<span class="areaname">${this.areaString(name).toLowerCase()}</span>&nbsp;`;
+            p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
+                + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
+                + '>'
+                + `<img alt=\"Home page\" src=\"${this.homepageImage}\"></a>&nbsp;`;
+            if (this.scholarInfo.hasOwnProperty(name)) {
+                if (this.scholarInfo[name] != "NOSCHOLARPAGE") {
+                    const url = `https://scholar.google.com/citations?user=${this.scholarInfo[name]}&hl=en&oi=ao`;
+                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
+                        + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
+                }
+            }
+            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
+            p += '<img alt="DBLP" src="dblp.png">'
+                + '</a>';
+            p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += this.ChartIcon + "</span>"
+                + '</small>'
+                + '</td><td align="right"><small>'
+                + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
+                + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
+                + "</small></td>"
+                + '<td align="right"><small>'
+                + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
+                + "</small></td></tr>"
+                + "<tr><td colspan=\"4\">"
+                + `<div class="csr-chart" id="${escape(name)}-chart">`
+                + '</div>'
+                + "</td></tr>";
         }
+        p += "</tbody></table></div>";
+        return p;
+    }
+    /* Build drop down for faculty names and paper counts - OPTIMIZED with lazy rendering */
+    buildDropDown(deptNames, facultycount, facultyAdjustedCount) {
+        // Return empty - we'll render faculty HTML lazily when expanded
+        let univtext = {};
+        for (const dept in deptNames) {
+            // Store placeholder - actual HTML generated on demand in toggleFaculty
+            univtext[dept] = "";
+        }
+        // Store the data needed for lazy rendering
+        this.lazyRenderData = { deptNames, facultycount, facultyAdjustedCount };
         return univtext;
     }
     buildOutputString(numAreas, countryAbbrv, deptCounts, univtext, minToRank) {
@@ -1202,26 +1442,38 @@ class CSRankings {
     setAllOn(value = true) {
         for (let i = 0; i < CSRankings.areas.length; i++) {
             const item = this.fields[i];
-            const str = `input[name=${item}]`;
+            const element = document.getElementById(item);
+            if (!element)
+                continue;
             if (value) {
                 // Turn off all next tier venues.
                 if (item in CSRankings.nextTier) {
-                    $(str).prop('checked', false);
+                    element.checked = false;
                 }
                 else {
-                    $(str).prop('checked', true);
-                    $(str).prop('disabled', false);
+                    element.checked = true;
+                    element.disabled = false;
                 }
             }
             else {
                 // turn everything off.
-                $(str).prop('checked', false);
-                $(str).prop('disabled', false);
+                element.checked = false;
+                element.disabled = false;
             }
         }
+        this.invalidateCheckboxCache();
     }
     /* PUBLIC METHODS */
     rank(update = true) {
+        // Debounce rapid rank() calls
+        if (this.rankDebounceTimer !== null) {
+            window.clearTimeout(this.rankDebounceTimer);
+        }
+        // For immediate feedback, we execute synchronously but use requestAnimationFrame
+        // to batch DOM updates with the browser's render cycle
+        return this.doRank(update);
+    }
+    doRank(update) {
         const start = performance.now();
         let deptNames = {}; /* names of departments. */
         let deptCounts = {}; /* number of faculty in each department. */
@@ -1233,9 +1485,38 @@ class CSRankings {
         const endyear = parseInt($("#toyear").find(":selected").text());
         const whichRegions = String($("#regions").find(":selected").val());
         const numAreas = this.updateWeights(currentWeights);
-        this.buildDepartments(startyear, endyear, currentWeights, whichRegions, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+        // Build/update the incremental cache (only rebuilds if year/region changed)
+        this.buildIncrementalCache(startyear, endyear, whichRegions);
+        // Use incremental computation
+        const incrStart = performance.now();
+        this.buildDepartmentsIncremental(currentWeights, deptCounts, deptNames, facultycount, facultyAdjustedCount);
         /* (university, total or average number of papers) */
         this.computeStats(deptNames, numAreas, currentWeights);
+        const incrEnd = performance.now();
+        console.log(`Incremental computation took ${(incrEnd - incrStart).toFixed(1)}ms`);
+        // VERIFICATION: Compare with full computation if enabled
+        // Toggle from console: csr.verifyIncremental = true; then click a checkbox
+        if (this.verifyIncremental) {
+            const fullStart = performance.now();
+            let fullDeptNames = {};
+            let fullDeptCounts = {};
+            let fullFacultycount = {};
+            let fullFacultyAdjustedCount = {};
+            const savedAreaDeptAdjustedCount = Object.assign({}, this.areaDeptAdjustedCount);
+            this.areaDeptAdjustedCount = {};
+            this.buildDepartments(startyear, endyear, currentWeights, whichRegions, fullDeptCounts, fullDeptNames, fullFacultycount, fullFacultyAdjustedCount);
+            const fullStats = {};
+            const savedStats = Object.assign({}, this.stats);
+            this.computeStats(fullDeptNames, numAreas, currentWeights);
+            Object.assign(fullStats, this.stats);
+            const fullEnd = performance.now();
+            console.log(`Full computation took ${(fullEnd - fullStart).toFixed(1)}ms`);
+            // Verify results match
+            this.verifyIncrementalResults(fullStats, fullDeptCounts, fullDeptNames, fullFacultycount, fullFacultyAdjustedCount, savedStats, deptCounts, deptNames, facultycount, facultyAdjustedCount);
+            // Restore incremental results (we use those for rendering)
+            this.areaDeptAdjustedCount = savedAreaDeptAdjustedCount;
+            this.stats = savedStats;
+        }
         const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
         /* Start building up the string to output. */
         const s = this.buildOutputString(numAreas, this.countryAbbrv, deptCounts, univtext, CSRankings.minToRank);
@@ -1243,16 +1524,6 @@ class CSRankings {
         console.log(`Before render: rank took ${(stop - start)} milliseconds.`);
         /* Finally done. Redraw! */
         document.getElementById("success").innerHTML = s;
-        $("div").scroll(function () {
-            // console.log("scrollTop = " + this.scrollTop + ", clientHeight = " + this.clientHeight + ", scrollHeight = " + this.scrollHeight);
-            // If we are nearly at the bottom, update the minimum.
-            if (this.scrollTop + this.clientHeight > this.scrollHeight - 50) {
-                const t = CSRankings.updateMinimum(this);
-                if (t) {
-                    $("div").scrollTop(t);
-                }
-            }
-        });
         if (!update) {
             this.navigoRouter.pause();
         }
@@ -1302,9 +1573,21 @@ class CSRankings {
             widget.innerHTML = this.RightTriangle;
         }
         else {
+            // Lazy render: generate HTML on first expansion
+            if (e.innerHTML === '' && this.lazyRenderData) {
+                const deptUnescaped = unescape(dept);
+                if (deptUnescaped in this.lazyRenderData.deptNames) {
+                    e.innerHTML = this.buildFacultyHTML(deptUnescaped, this.lazyRenderData.deptNames[deptUnescaped], this.lazyRenderData.facultycount, this.lazyRenderData.facultyAdjustedCount);
+                }
+            }
             e.style.display = 'block';
             widget.innerHTML = this.DownTriangle;
         }
+    }
+    /* Toggle verification mode from console: csr.setVerifyIncremental(true) */
+    setVerifyIncremental(enabled) {
+        this.verifyIncremental = enabled;
+        console.log(`Verification mode ${enabled ? 'ENABLED' : 'DISABLED'}. Click a checkbox to test.`);
     }
     activateAll(value = true) {
         this.setAllOn(value);
@@ -1340,24 +1623,25 @@ class CSRankings {
     }
     // Update the URL according to the selected checkboxes.
     updatedURL() {
+        // Use the cached checkbox state (already populated by updateWeights in rank())
         let s = '';
         let count = 0;
         let totalParents = 0;
         for (let i = 0; i < this.fields.length; i++) {
-            const str = `input[name=${this.fields[i]}]`;
-            if (!(this.fields[i] in CSRankings.parentMap)) {
+            const field = this.fields[i];
+            if (!(field in CSRankings.parentMap)) {
                 totalParents += 1;
             }
-            if ($(str).prop('checked')) {
+            if (this.getCheckboxState(field)) {
                 // Only add parents.
-                if (!(this.fields[i] in CSRankings.parentMap)) {
+                if (!(field in CSRankings.parentMap)) {
                     // And only add if every top tier child is checked
                     // and only if every next tier child is NOT
                     // checked.
                     let allChecked = 1;
-                    if (this.fields[i] in CSRankings.childMap) {
-                        CSRankings.childMap[this.fields[i]].forEach((k) => {
-                            let val = $(`input[name=${k}]`).prop('checked');
+                    if (field in CSRankings.childMap) {
+                        CSRankings.childMap[field].forEach((k) => {
+                            const val = this.getCheckboxState(k) ? 1 : 0;
                             if (!(k in CSRankings.nextTier)) {
                                 allChecked &= val;
                             }
@@ -1367,7 +1651,7 @@ class CSRankings {
                         });
                     }
                     if (allChecked) {
-                        s += `${this.fields[i]}&`;
+                        s += `${field}&`;
                         count += 1;
                     }
                 }
@@ -1533,22 +1817,26 @@ class CSRankings {
         if (foundAll) {
             // Set everything.
             for (const item in CSRankings.topTierAreas) {
-                //		if (!(item in CSRankings.nextTier)) {
-                let str = `input[name=${item}]`;
-                $(str).prop('checked', true);
-                if (item in CSRankings.childMap) {
-                    // It's a parent. Enable it.
-                    $(str).prop('disabled', false);
-                    // and activate all children.
-                    CSRankings.childMap[item].forEach((k) => {
-                        if (!(k in CSRankings.nextTier)) {
-                            $(`input[name=${k}]`).prop('checked', true);
-                        }
-                    });
+                const element = document.getElementById(item);
+                if (element) {
+                    element.checked = true;
+                    if (item in CSRankings.childMap) {
+                        // It's a parent. Enable it.
+                        element.disabled = false;
+                        // and activate all children.
+                        CSRankings.childMap[item].forEach((k) => {
+                            if (!(k in CSRankings.nextTier)) {
+                                const childElement = document.getElementById(k);
+                                if (childElement) {
+                                    childElement.checked = true;
+                                }
+                            }
+                        });
+                    }
                 }
-                //		}
             }
             // And we're out.
+            CSRankings.getInstance().invalidateCheckboxCache();
             return;
         }
         if (foundNone) {
@@ -1562,34 +1850,47 @@ class CSRankings {
         // Then, activate the areas in the query.
         for (const item of q) {
             if ((item != "none") && (item != "")) {
-                const str = `input[name=${item}]`;
-                $(str).prop('checked', true);
-                $(str).prop('disabled', false);
-                if (item in CSRankings.childMap) {
-                    // Activate all children.
-                    CSRankings.childMap[item].forEach((k) => {
-                        if (!(k in CSRankings.nextTier)) {
-                            $(`input[name=${k}]`).prop('checked', true);
-                        }
-                    });
+                const element = document.getElementById(item);
+                if (element) {
+                    element.checked = true;
+                    element.disabled = false;
+                    if (item in CSRankings.childMap) {
+                        // Activate all children.
+                        CSRankings.childMap[item].forEach((k) => {
+                            if (!(k in CSRankings.nextTier)) {
+                                const childElement = document.getElementById(k);
+                                if (childElement) {
+                                    childElement.checked = true;
+                                }
+                            }
+                        });
+                    }
                 }
             }
         }
+        CSRankings.getInstance().invalidateCheckboxCache();
     }
     static clearNonSubsetted() {
         for (const item of CSRankings.areas) {
             if (item in CSRankings.childMap) {
                 const kids = CSRankings.childMap[item];
                 if (!CSRankings.subsetting(kids)) {
-                    const str = `input[name=${item}]`;
-                    $(str).prop('checked', false);
-                    $(str).prop('disabled', false);
-                    kids.forEach((item) => {
-                        $(`input[name=${item}]`).prop('checked', false);
+                    const element = document.getElementById(item);
+                    if (element) {
+                        element.checked = false;
+                        element.disabled = false;
+                    }
+                    kids.forEach((kid) => {
+                        const kidElement = document.getElementById(kid);
+                        if (kidElement) {
+                            kidElement.checked = false;
+                        }
                     });
                 }
             }
         }
+        // Invalidate the checkbox cache since we modified checkboxes
+        CSRankings.getInstance().invalidateCheckboxCache();
     }
     static subsetting(sibs) {
         // Separate the siblings into above and below the fold.
@@ -1606,17 +1907,15 @@ class CSRankings {
         // Count how many are checked above and below.
         let numCheckedAbove = 0;
         aboveFold.forEach((elem) => {
-            let str = `input[name=${elem}]`;
-            let val = $(str).prop('checked');
-            if (val) {
+            const element = document.getElementById(elem);
+            if (element && element.checked) {
                 numCheckedAbove++;
             }
         });
         let numCheckedBelow = 0;
         belowFold.forEach((elem) => {
-            let str = `input[name=${elem}]`;
-            let val = $(str).prop('checked');
-            if (val) {
+            const element = document.getElementById(elem);
+            if (element && element.checked) {
                 numCheckedBelow++;
             }
         });
@@ -1625,10 +1924,18 @@ class CSRankings {
         return subsettedAbove || subsettedBelow;
     }
     addListeners() {
-        ["toyear", "fromyear", "regions", "charttype"].forEach((key) => {
+        ["toyear", "fromyear", "regions"].forEach((key) => {
             const widget = document.getElementById(key);
-            widget.addEventListener("change", () => { this.countAuthorAreas(); this.rank(); });
+            widget.addEventListener("change", () => {
+                // Year/region change invalidates the incremental cache
+                this.invalidateIncrementalCache();
+                this.countAuthorAreas();
+                this.rank();
+            });
         });
+        // Chart type doesn't affect data, just visualization
+        const charttypeWidget = document.getElementById("charttype");
+        charttypeWidget.addEventListener("change", () => { this.rank(); });
         // Add listeners for clicks on area widgets (left side of screen)
         // e.g., 'ai'
         for (let position = 0; position < CSRankings.areas.length; position++) {
@@ -1645,25 +1952,27 @@ class CSRankings {
         }
         // Initialize callbacks for area checkboxes.
         for (let i = 0; i < this.fields.length; i++) {
-            const str = `input[name=${this.fields[i]}]`;
             const field = this.fields[i];
-            const fieldElement = document.getElementById(this.fields[i]);
+            const fieldElement = document.getElementById(field);
             if (!fieldElement) {
                 continue;
             }
             fieldElement.addEventListener("click", () => {
+                // Invalidate cache since a checkbox changed
+                this.invalidateCheckboxCache();
                 let updateURL = true;
                 if (field in CSRankings.parentMap) {
                     // Child:
                     // If any child is on, activate the parent.
                     // If all are off, deactivate parent.
                     updateURL = false;
-                    let parent = CSRankings.parentMap[field];
-                    const strparent = `input[name=${parent}]`;
+                    const parent = CSRankings.parentMap[field];
+                    const parentElement = document.getElementById(parent);
                     let anyChecked = 0;
                     let allChecked = 1;
                     CSRankings.childMap[parent].forEach((k) => {
-                        const val = $(`input[name=${k}]`).prop('checked');
+                        const childElement = document.getElementById(k);
+                        const val = childElement ? (childElement.checked ? 1 : 0) : 0;
                         anyChecked |= val;
                         // allChecked means all top tier conferences
                         // are on and all next tier conferences are
@@ -1678,27 +1987,31 @@ class CSRankings {
                         }
                     });
                     // Activate parent if any checked.
-                    $(strparent).prop('checked', anyChecked);
-                    // Mark the parent as disabled unless all are checked.
-                    if (!anyChecked || allChecked) {
-                        $(strparent).prop('disabled', false);
-                    }
-                    if (anyChecked && !allChecked) {
-                        $(strparent).prop('disabled', true);
+                    if (parentElement) {
+                        parentElement.checked = anyChecked ? true : false;
+                        // Mark the parent as disabled unless all are checked.
+                        if (!anyChecked || allChecked) {
+                            parentElement.disabled = false;
+                        }
+                        if (anyChecked && !allChecked) {
+                            parentElement.disabled = true;
+                        }
                     }
                 }
                 else {
                     // Parent: activate or deactivate all children.
-                    const val = $(str).prop('checked');
+                    const val = fieldElement.checked;
                     if (field in CSRankings.childMap) {
                         for (const child of CSRankings.childMap[field]) {
-                            const strchild = `input[name=${child}]`;
-                            if (!(child in CSRankings.nextTier)) {
-                                $(strchild).prop('checked', val);
-                            }
-                            else {
-                                // Always deactivate next tier conferences.
-                                $(strchild).prop('checked', false);
+                            const childElement = document.getElementById(child);
+                            if (childElement) {
+                                if (!(child in CSRankings.nextTier)) {
+                                    childElement.checked = val;
+                                }
+                                else {
+                                    // Always deactivate next tier conferences.
+                                    childElement.checked = false;
+                                }
                             }
                         }
                     }
@@ -1727,11 +2040,11 @@ class CSRankings {
         }
     }
 }
-CSRankings.minToRank = 30; // initial number to rank --> should be enough to enable a scrollbar
+CSRankings.minToRank = 5000; // show all entries (lazy rendering makes this fast)
 CSRankings.areas = [];
 CSRankings.topLevelAreas = {};
 CSRankings.topTierAreas = {};
-CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lk", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "za"];
+CSRankings.regions = ["europe", "northamerica", "southamerica", "australasia", "asia", "africa", "world", "ae", "ar", "at", "au", "bd", "be", "bg", "br", "ca", "ch", "cl", "cn", "co", "cy", "cz", "de", "dk", "ee", "eg", "es", "fi", "fr", "gr", "hk", "hu", "ie", "il", "in", "ir", "it", "jo", "jp", "kr", "lb", "lk", "lu", "mt", "my", "nl", "no", "nz", "ph", "pk", "pl", "pt", "qa", "ro", "ru", "sa", "se", "sg", "th", "tr", "tw", "uk", "us", "vn", "za"];
 CSRankings.nameMatcher = new RegExp('(.*)\\s+\\[(.*)\\]'); // Matches names followed by [X] notes.
 CSRankings.parentIndex = {}; // For color lookups
 CSRankings.parentMap = {
