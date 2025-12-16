@@ -246,6 +246,40 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
     
     return [x.model_dump() for x in filtered_sorted]
 
+# ---------- PR Metadata Validation ----------
+
+def process_pr_metadata(pr_metadata_path: str) -> bool:
+    """
+    Validates PR metadata:
+    - PR title is not a default GitHub title (like "Update csrankings-a.csv")
+    - All checkboxes in the Markdown checklist are checked
+    """
+    valid = True
+    with open(pr_metadata_path, "r", encoding="utf-8") as f:
+        pr_metadata = json.load(f)
+
+    pr_title = pr_metadata["title"]
+    # Check for default GitHub PR titles
+    if re.match(r"^Update csrankings-[a-z0]\.csv$", pr_title) or pr_title.strip().lower() in {
+        "update csrankings.csv", "update generated-author-info.csv"
+    }:
+        print(f"{ERROR}\tPR title is the default GitHub option and too generic: '{pr_title}'")
+        valid = False
+    else:
+        print(f"{INFO}\tPR title is descriptive: '{pr_title}'")
+
+    # Check that all checkboxes in the checklist are checked
+    pr_body = pr_metadata["body"]
+    # Match checklist items that are not checked, only if at line start or after indentation
+    unchecked = re.search(r"^[ \t]*-\s*\[\s+\]", pr_body, re.MULTILINE)
+    if unchecked:
+        print(f"{ERROR}\tNot all checklist items are checked in the PR description.")
+        valid = False
+    else:
+        print(f"{INFO}\tAll checklist items are checked.")
+
+    return valid
+
 # ---------- CSV Validation ----------
 
 def is_valid_file(file: str) -> bool:
@@ -285,6 +319,9 @@ def process_csv_diff(diff_path: str) -> bool:
         if matched:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
             for line in lines:
+                # Ignore empty lines, since Github seems to be adding them now.
+                if len(line) == 0:
+                    continue
                 index += 1
                 if re.search(r',\s', line):
                     print(f"\t{index}.\t{ERROR}\tSpace after comma: {line}")
@@ -370,14 +407,16 @@ if __name__ == "__main__":
     # Remove the 'stale' flag if no error occurs.
     with open("remove_stale.txt", "w") as f:
         f.write("true")
-    diff_path = sys.argv[1]
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise EnvironmentError("OPENAI_API_KEY not set.")
+    pr_metadata_path = sys.argv[1]
+    diff_path = sys.argv[2]
 
+    pr_metadata_valid = process_pr_metadata(pr_metadata_path)
     csv_valid = process_csv_diff(diff_path)
 
     # Proceed with the AI audit even when the basic checks fail.
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise EnvironmentError("OPENAI_API_KEY not set.")
 
     client = openai.OpenAI(api_key=api_key)
     audit_result = ""
@@ -399,7 +438,7 @@ if __name__ == "__main__":
             if gloss:
                 auditing_error = True
                 
-    if not csv_valid or auditing_error:
+    if not pr_metadata_valid or not csv_valid or auditing_error:
         mark_failed()
         sys.exit(-1)
     else:
