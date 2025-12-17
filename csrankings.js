@@ -1754,6 +1754,288 @@ var CSRankings;
     CSRankings.geoCheck = geoCheck;
 })(CSRankings || (CSRankings = {}));
 /*
+  CSRankings - Survey Module
+
+  Handles display of user surveys with configurable frequency.
+*/
+var CSRankings;
+(function (CSRankings) {
+    const DEFAULT_SURVEY_CONFIG = {
+        frequency: 1000000, // One out of this many users gets the survey (on average)
+        overlayId: 'overlay-survey',
+        storageKey: 'surveyDisplayed',
+        cookieKey: 'surveyDisplayed',
+        disabled: true // Currently disabled
+    };
+    /**
+     * Check if survey has already been shown to this user.
+     * Checks both localStorage and cookies for backwards compatibility.
+     */
+    function hasBeenShown(config) {
+        // Check localStorage
+        if (localStorage.getItem(config.storageKey)) {
+            return true;
+        }
+        // Check cookie for backwards compatibility
+        if (config.cookieKey) {
+            const cookieMatch = document.cookie
+                .split('; ')
+                .find(row => row.startsWith(config.cookieKey + '='));
+            if (cookieMatch) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * Mark the survey as shown in localStorage.
+     */
+    function markAsShown(config) {
+        localStorage.setItem(config.storageKey, 'true');
+    }
+    /**
+     * Show the survey overlay.
+     */
+    function showOverlay(config) {
+        const overlay = document.getElementById(config.overlayId);
+        if (overlay) {
+            overlay.style.display = 'block';
+        }
+    }
+    /**
+     * Attempt to display the survey to the user.
+     * Returns true if the survey was displayed, false otherwise.
+     */
+    function tryDisplaySurvey(config = {}) {
+        const fullConfig = Object.assign(Object.assign({}, DEFAULT_SURVEY_CONFIG), config);
+        // Check if disabled
+        if (fullConfig.disabled) {
+            return false;
+        }
+        // Check if already shown
+        if (hasBeenShown(fullConfig)) {
+            return false;
+        }
+        // Random chance to show
+        const randomValue = Math.floor(Math.random() * fullConfig.frequency);
+        if (randomValue !== 0) {
+            return false;
+        }
+        // Show the survey
+        markAsShown(fullConfig);
+        showOverlay(fullConfig);
+        return true;
+    }
+    CSRankings.tryDisplaySurvey = tryDisplaySurvey;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Sponsorship Module
+
+  Handles display of sponsorship requests with usage-based triggering.
+  Tracks user visits and interactions over time to show sponsorship
+  requests to engaged users (similar to Wikipedia's approach).
+*/
+var CSRankings;
+(function (CSRankings) {
+    const DEFAULT_SPONSORSHIP_CONFIG = {
+        minVisits: 3, // Show after at least 3 visits
+        minInteractions: 10, // And at least 10 interactions
+        randomChance: 3, // 1 in 3 chance once thresholds met
+        overlayId: 'overlay-sponsor',
+        storageKey: 'csrankings-usage'
+    };
+    const DEFAULT_USAGE_STATS = {
+        visitCount: 0,
+        firstVisit: 0,
+        lastVisit: 0,
+        interactionCount: 0,
+        sponsorshipShown: false
+    };
+    /**
+     * Load usage stats from localStorage.
+     */
+    function loadUsageStats(storageKey) {
+        const stored = localStorage.getItem(storageKey);
+        if (!stored) {
+            return Object.assign({}, DEFAULT_USAGE_STATS);
+        }
+        try {
+            const parsed = JSON.parse(stored);
+            return Object.assign(Object.assign({}, DEFAULT_USAGE_STATS), parsed);
+        }
+        catch (_a) {
+            return Object.assign({}, DEFAULT_USAGE_STATS);
+        }
+    }
+    /**
+     * Save usage stats to localStorage.
+     */
+    function saveUsageStats(storageKey, stats) {
+        localStorage.setItem(storageKey, JSON.stringify(stats));
+    }
+    /**
+     * Show the sponsorship overlay.
+     */
+    function showOverlay(overlayId) {
+        const overlay = document.getElementById(overlayId);
+        if (overlay) {
+            overlay.style.display = 'block';
+        }
+    }
+    /**
+     * UsageTracker class to manage usage statistics and sponsorship display.
+     * Use the singleton instance via UsageTracker.getInstance().
+     */
+    class UsageTracker {
+        constructor(config = {}) {
+            this.config = Object.assign(Object.assign({}, DEFAULT_SPONSORSHIP_CONFIG), config);
+            this.stats = loadUsageStats(this.config.storageKey);
+        }
+        /**
+         * Get or create the singleton UsageTracker instance.
+         */
+        static getInstance(config) {
+            if (!UsageTracker.instance) {
+                UsageTracker.instance = new UsageTracker(config);
+            }
+            return UsageTracker.instance;
+        }
+        /**
+         * Record a new visit/session.
+         * Should be called once when the page loads.
+         */
+        recordVisit() {
+            const now = Date.now();
+            this.stats.visitCount += 1;
+            if (this.stats.firstVisit === 0) {
+                this.stats.firstVisit = now;
+            }
+            this.stats.lastVisit = now;
+            this.save();
+            console.log(`CSRankings usage: Visit #${this.stats.visitCount}`);
+        }
+        /**
+         * Record a user interaction (checkbox click, filter change, etc.).
+         * Call this when the user interacts with the rankings.
+         */
+        recordInteraction() {
+            this.stats.interactionCount += 1;
+            this.save();
+        }
+        /**
+         * Get current usage statistics.
+         */
+        getStats() {
+            return Object.assign({}, this.stats);
+        }
+        /**
+         * Get a human-readable summary of usage.
+         */
+        getUsageSummary() {
+            const visits = this.stats.visitCount;
+            const firstVisit = this.stats.firstVisit
+                ? new Date(this.stats.firstVisit).toLocaleDateString()
+                : 'never';
+            return `You've visited CSRankings ${visits} time${visits !== 1 ? 's' : ''} ` +
+                `since ${firstVisit}.`;
+        }
+        /**
+         * Check if sponsorship thresholds have been met.
+         */
+        meetsThresholds() {
+            return this.stats.visitCount >= this.config.minVisits &&
+                this.stats.interactionCount >= this.config.minInteractions;
+        }
+        /**
+         * Attempt to display the sponsorship request.
+         * Returns true if displayed, false otherwise.
+         *
+         * @param skipIfSurveyShown - If true, won't show if survey was just displayed
+         */
+        tryDisplaySponsorship(skipIfSurveyShown = false) {
+            // Already shown this session via localStorage flag
+            if (this.stats.sponsorshipShown) {
+                return false;
+            }
+            // Skip if survey was just shown
+            if (skipIfSurveyShown) {
+                return false;
+            }
+            // Check if usage thresholds are met
+            if (!this.meetsThresholds()) {
+                console.log(`CSRankings: Sponsorship thresholds not met. ` +
+                    `Visits: ${this.stats.visitCount}/${this.config.minVisits}, ` +
+                    `Interactions: ${this.stats.interactionCount}/${this.config.minInteractions}`);
+                return false;
+            }
+            // Random chance
+            const randomValue = Math.floor(Math.random() * this.config.randomChance);
+            if (randomValue !== 0) {
+                return false;
+            }
+            // Show sponsorship
+            this.stats.sponsorshipShown = true;
+            this.save();
+            showOverlay(this.config.overlayId);
+            console.log(`CSRankings: Showing sponsorship request. ${this.getUsageSummary()}`);
+            return true;
+        }
+        /**
+         * Reset the sponsorship shown flag (e.g., for a new session/year).
+         * This allows the sponsorship to be shown again.
+         */
+        resetSponsorshipShown() {
+            this.stats.sponsorshipShown = false;
+            this.save();
+        }
+        /**
+         * Save current stats to localStorage.
+         */
+        save() {
+            saveUsageStats(this.config.storageKey, this.stats);
+        }
+        /**
+         * Clear all usage data (for testing/debugging).
+         */
+        clearUsageData() {
+            this.stats = Object.assign({}, DEFAULT_USAGE_STATS);
+            localStorage.removeItem(this.config.storageKey);
+            console.log('CSRankings: Usage data cleared.');
+        }
+    }
+    UsageTracker.instance = null;
+    CSRankings.UsageTracker = UsageTracker;
+    // Convenience functions for common operations
+    /**
+     * Record a visit and attempt to display sponsorship.
+     * Call this once when the app initializes.
+     *
+     * @param surveyWasShown - Whether a survey was just displayed
+     * @returns true if sponsorship was displayed
+     */
+    function initSponsorshipTracking(surveyWasShown = false) {
+        const tracker = UsageTracker.getInstance();
+        tracker.recordVisit();
+        return tracker.tryDisplaySponsorship(surveyWasShown);
+    }
+    CSRankings.initSponsorshipTracking = initSponsorshipTracking;
+    /**
+     * Record a user interaction.
+     * Call this when user clicks checkboxes, changes filters, etc.
+     */
+    function recordUserInteraction() {
+        UsageTracker.getInstance().recordInteraction();
+    }
+    CSRankings.recordUserInteraction = recordUserInteraction;
+    /**
+     * Get usage statistics summary.
+     */
+    function getUsageSummary() {
+        return UsageTracker.getInstance().getUsageSummary();
+    }
+    CSRankings.getUsageSummary = getUsageSummary;
+})(CSRankings || (CSRankings = {}));
+/*
   CSRankings - Event Handlers
 
   DOM event listener setup for dropdowns, checkboxes, and buttons.
@@ -1769,6 +2051,8 @@ var CSRankings;
                 callbacks.invalidateIncrementalCache();
                 callbacks.recomputeAuthorAreas();
                 callbacks.rank();
+                // Track user interaction for sponsorship
+                CSRankings.recordUserInteraction();
             });
         });
         // Chart type doesn't affect data, just visualization
@@ -1813,6 +2097,8 @@ var CSRankings;
                     CSRankings.handleParentCheckboxClick(field, fieldElement, callbacks.invalidateCheckboxCache);
                 }
                 callbacks.rank(updateURL);
+                // Track user interaction for sponsorship
+                CSRankings.recordUserInteraction();
             });
         }
     }
@@ -1835,6 +2121,8 @@ var CSRankings;
             const widget = document.getElementById(item);
             widget.addEventListener("click", () => {
                 listeners[item]();
+                // Track user interaction for sponsorship
+                CSRankings.recordUserInteraction();
             });
         }
     }
@@ -2027,39 +2315,9 @@ var CSRankings;
                 this.addListeners();
                 CSRankings.geoCheck(() => this.rank());
                 this.rank();
-                // Randomly display a survey.
-                const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
-                // Check to see if survey has already been displayed.
-                let displaySurvey = false;
-                // Keep the cookie for backwards compatibility (for now).
-                let shownAlready = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
-                    localStorage.getItem('surveyDisplayed');
-                // DISABLE SURVEY (remove the next line to re-enable)
-                shownAlready = 'disabled';
-                if (!shownAlready) {
-                    // Not shown yet.
-                    const randomValue = Math.floor(Math.random() * surveyFrequency);
-                    displaySurvey = (randomValue == 0);
-                    if (displaySurvey) {
-                        localStorage.setItem('surveyDisplayed', 'true');
-                        // Now reveal the survey.
-                        document.getElementById("overlay-survey").style.display = "block";
-                    }
-                }
-                // Randomly display a sponsorship request.
-                // In the future, tie to amount of use of the site, a la Wikipedia.
-                const sponsorshipFrequency = 5; // One out of this many users gets the sponsor page (on average).
-                // Check to see if the sponsorship page has already been displayed.
-                if (!localStorage.getItem('sponsorshipDisplayed')) {
-                    // Not shown yet.
-                    const randomValue = Math.floor(Math.random() * sponsorshipFrequency);
-                    const displaySponsor = (randomValue == 0);
-                    if (!displaySurvey && displaySponsor) { // Only show if we have not shown the survey page as well.
-                        localStorage.setItem('sponsorshipDisplayed', 'true');
-                        // Now reveal the sponsorship page.
-                        document.getElementById("overlay-sponsor").style.display = "block";
-                    }
-                }
+                // Display survey or sponsorship request
+                const surveyShown = CSRankings.tryDisplaySurvey({ disabled: true });
+                CSRankings.initSponsorshipTracking(surveyShown);
             }))();
         }
         recomputeAuthorAreas() {
@@ -2275,6 +2533,8 @@ var CSRankings;
         toggleFaculty(dept) {
             const e = document.getElementById(dept + "-faculty");
             const widget = document.getElementById(dept + "-widget");
+            // Track user interaction for sponsorship
+            CSRankings.recordUserInteraction();
             if (e.style.display === 'block') {
                 e.style.display = 'none';
                 widget.innerHTML = CSRankings.RightTriangle;

@@ -34,6 +34,8 @@ namespace CSRankings {
                 callbacks.invalidateIncrementalCache();
                 callbacks.recomputeAuthorAreas();
                 callbacks.rank();
+                // Track user interaction for sponsorship
+                recordUserInteraction();
             });
         });
         // Chart type doesn't affect data, just visualization
@@ -81,6 +83,8 @@ namespace CSRankings {
                     handleParentCheckboxClick(field, fieldElement, callbacks.invalidateCheckboxCache);
                 }
                 callbacks.rank(updateURL);
+                // Track user interaction for sponsorship
+                recordUserInteraction();
             });
         }
     }
@@ -104,6 +108,8 @@ namespace CSRankings {
             const widget = document.getElementById(item);
             widget!.addEventListener("click", () => {
                 listeners[item]();
+                // Track user interaction for sponsorship
+                recordUserInteraction();
             });
         }
     }

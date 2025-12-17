@@ -223,39 +223,9 @@ namespace CSRankings {
                 this.addListeners();
                 geoCheck(() => this.rank());
                 this.rank();
-                // Randomly display a survey.
-                const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
-                // Check to see if survey has already been displayed.
-                let displaySurvey = false;
-                // Keep the cookie for backwards compatibility (for now).
-                let shownAlready: string | null | undefined = document.cookie.split('; ').find(row => row.startsWith('surveyDisplayed')) ||
-                    localStorage.getItem('surveyDisplayed');
-                // DISABLE SURVEY (remove the next line to re-enable)
-                shownAlready = 'disabled';
-                if (!shownAlready) {
-                    // Not shown yet.
-                    const randomValue = Math.floor(Math.random() * surveyFrequency);
-                    displaySurvey = (randomValue == 0);
-                    if (displaySurvey) {
-                        localStorage.setItem('surveyDisplayed', 'true');
-                        // Now reveal the survey.
-                        document!.getElementById("overlay-survey")!.style.display = "block";
-                    }
-                }
-                // Randomly display a sponsorship request.
-                // In the future, tie to amount of use of the site, a la Wikipedia.
-                const sponsorshipFrequency = 5; // One out of this many users gets the sponsor page (on average).
-                // Check to see if the sponsorship page has already been displayed.
-                if (!localStorage.getItem('sponsorshipDisplayed')) {
-                    // Not shown yet.
-                    const randomValue = Math.floor(Math.random() * sponsorshipFrequency);
-                    const displaySponsor = (randomValue == 0);
-                    if (!displaySurvey && displaySponsor) { // Only show if we have not shown the survey page as well.
-                        localStorage.setItem('sponsorshipDisplayed', 'true');
-                        // Now reveal the sponsorship page.
-                        document!.getElementById("overlay-sponsor")!.style.display = "block";
-                    }
-                }
+                // Display survey or sponsorship request
+                const surveyShown = tryDisplaySurvey({ disabled: true });
+                initSponsorshipTracking(surveyShown);
             })();
         }
 
@@ -559,6 +529,8 @@ namespace CSRankings {
         public toggleFaculty(dept: string): void {
             const e = document.getElementById(dept + "-faculty");
             const widget = document.getElementById(dept + "-widget");
+            // Track user interaction for sponsorship
+            recordUserInteraction();
             if (e!.style.display === 'block') {
                 e!.style.display = 'none';
                 widget!.innerHTML = RightTriangle;
