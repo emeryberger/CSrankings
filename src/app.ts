@@ -221,7 +221,7 @@ namespace CSRankings {
                 }).resolve();
                 this.recomputeAuthorAreas();
                 this.addListeners();
-                App.geoCheck();
+                geoCheck(() => this.rank());
                 this.rank();
                 // Randomly display a survey.
                 const surveyFrequency = 1000000; // One out of this many users gets the survey (on average).
@@ -326,31 +326,13 @@ namespace CSRankings {
 
         private activateFields(value: boolean,
             fields: Array<number>): boolean {
-            for (let i = 0; i < fields.length; i++) {
-                const item = this.fields[fields[i]];
-                const element = document.getElementById(item) as HTMLInputElement;
-                if (element) {
-                    element.checked = value;
-                    if (item in childMap) {
-                        // It's a parent.
-                        element.disabled = false;
-                        // Activate / deactivate all children as appropriate.
-                        childMap[item].forEach((k) => {
-                            const childElement = document.getElementById(k) as HTMLInputElement;
-                            if (childElement) {
-                                if (k in nextTier) {
-                                    childElement.checked = false;
-                                } else {
-                                    childElement.checked = value;
-                                }
-                            }
-                        });
-                    }
-                }
-            }
-            this.invalidateCheckboxCache();
-            this.rank();
-            return false;
+            return activateFieldSet(
+                value,
+                fields,
+                this.fields,
+                () => this.invalidateCheckboxCache(),
+                () => this.rank()
+            );
         }
 
         /* Build drop down for faculty names and paper counts - OPTIMIZED with lazy rendering */
@@ -384,11 +366,7 @@ namespace CSRankings {
             if (this.checkboxCacheValid) {
                 return;
             }
-            for (let ind = 0; ind < areas.length; ind++) {
-                const area = areas[ind];
-                const element = document.getElementById(this.fields[ind]) as HTMLInputElement;
-                this.checkboxCache[area] = element ? element.checked : false;
-            }
+            refreshCheckboxCache(this.fields, this.checkboxCache);
             this.checkboxCacheValid = true;
         }
 
@@ -405,44 +383,12 @@ namespace CSRankings {
         private updateWeights(weights: { [key: string]: number }): number {
             // Refresh cache once at the start
             this.refreshCheckboxCache();
-
-            let numAreas = 0;
-            for (let ind = 0; ind < areas.length; ind++) {
-                const area = areas[ind];
-                weights[area] = this.checkboxCache[area] ? 1 : 0;
-                if (weights[area] === 1) {
-                    if (area in parentMap) {
-                        // Don't count children.
-                        continue;
-                    }
-                    /* One more area checked. */
-                    numAreas++;
-                }
-            }
-            return numAreas;
+            return updateWeightsFromCache(weights, this.checkboxCache);
         }
 
         /* This activates all checkboxes _without_ triggering ranking. */
         private setAllOn(value: boolean = true): void {
-            for (let i = 0; i < areas.length; i++) {
-                const item = this.fields[i];
-                const element = document.getElementById(item) as HTMLInputElement;
-                if (!element) continue;
-                if (value) {
-                    // Turn off all next tier venues.
-                    if (item in nextTier) {
-                        element.checked = false;
-                    } else {
-                        element.checked = true;
-                        element.disabled = false;
-                    }
-                } else {
-                    // turn everything off.
-                    element.checked = false;
-                    element.disabled = false;
-                }
-            }
-            this.invalidateCheckboxCache();
+            setAllCheckboxes(this.fields, value, () => this.invalidateCheckboxCache());
         }
 
         /* PUBLIC METHODS */
@@ -693,394 +639,40 @@ namespace CSRankings {
 
         // Update the URL according to the selected checkboxes.
         private updatedURL(): string {
-            // Use the cached checkbox state (already populated by updateWeights in rank())
-            let s = '';
-            let count = 0;
-            let totalParents = 0;
-            for (let i = 0; i < this.fields.length; i++) {
-                const field = this.fields[i];
-                if (!(field in parentMap)) {
-                    totalParents += 1;
-                }
-                if (this.getCheckboxState(field)) {
-                    // Only add parents.
-                    if (!(field in parentMap)) {
-                        // And only add if every top tier child is checked
-                        // and only if every next tier child is NOT
-                        // checked.
-                        let allChecked = 1;
-                        if (field in childMap) {
-                            childMap[field].forEach((k) => {
-                                const val = this.getCheckboxState(k) ? 1 : 0;
-                                if (!(k in nextTier)) {
-                                    allChecked &= val;
-                                } else {
-                                    allChecked &= val ? 0 : 1;
-                                }
-                            });
-                        }
-                        if (allChecked) {
-                            s += `${field}&`;
-                            count += 1;
-                        }
-                    }
-                }
-            }
-            if (count > 0) {
-                // Trim off the trailing '&'.
-                s = s.slice(0, -1);
-            }
-            const region = $("#regions").find(":selected").val();
-            let start = '';
-            // Check the dates.
-            const d = new Date();
-            const currYear = d.getFullYear();
-            const startyear = parseInt($("#fromyear").find(":selected").text());
-            const endyear = parseInt($("#toyear").find(":selected").text());
-            if ((startyear != currYear - 10) || (endyear != currYear)) {
-                start += `/fromyear/${startyear.toString()}`;
-                start += `/toyear/${endyear.toString()}`;
-            }
-
-            if (count == totalParents) {
-                start += '/index?all'; // Distinguished special URL - default = all selected.
-            } else if (count == 0) {
-                start += '/index?none'; // Distinguished special URL - none selected.
-            } else {
-                start += `/index?${s}`;
-            }
-            if (region != "USA") {
-                start += `&${region}`;
-            }
-
-            const chartType = $("#charttype").find(":selected").val();
-            if (chartType == "pie") {
-                this.usePieChart = true;
-                for (const elt of document.getElementsByClassName("chart_icon")) {
-                    (<HTMLInputElement>elt).src = "png/piechart.png";
-                }
-                for (const elt of document.getElementsByClassName("open_chart_icon")) {
-                    (<HTMLInputElement>elt).src = "png/piechart-open.png";
-                }
-                for (const elt of document.getElementsByClassName("closed_chart_icon")) {
-                    (<HTMLInputElement>elt).src = "png/piechart.png";
-                }
-                this.ChartIcon = PieChartIcon;
-                this.OpenChartIcon = OpenPieChartIcon;
-                start += '&pie';
-            } else {
-                this.usePieChart = false;
-                for (const elt of document.getElementsByClassName("chart_icon")) {
-                    (<HTMLInputElement>elt).src = "png/barchart.png";
-                }
-                for (const elt of document.getElementsByClassName("open_chart_icon")) {
-                    (<HTMLInputElement>elt).src = "png/barchart-open.png";
-                }
-                for (const elt of document.getElementsByClassName("closed_chart_icon")) {
-                    (<HTMLInputElement>elt).src = "png/barchart.png";
-                }
-                this.ChartIcon = BarChartIcon;
-                this.OpenChartIcon = OpenBarChartIcon;
-            }
-
-            return start;
-        }
-
-        public static geoCheck(): void {
-            navigator.geolocation?.getCurrentPosition((position) => {
-                const continent = whichContinent(position.coords.latitude, position.coords.longitude);
-                let regionsEl = (<HTMLInputElement>document.getElementById("regions"));
-                switch (continent) {
-                    case "northamerica":
-                        return;
-                    case "europe":
-                    case "asia":
-                    case "southamerica":
-                    case "africa":
-                        regionsEl!.value = continent;
-                        break;
-                    default:
-                        regionsEl!.value = "world";
-                        break;
-                }
-                App.getInstance().rank();
-            });
+            const result = buildFullURL(
+                this.fields,
+                (field: string) => this.getCheckboxState(field),
+                this.usePieChart
+            );
+            this.usePieChart = result.usePieChart;
+            this.ChartIcon = result.ChartIcon;
+            this.OpenChartIcon = result.OpenChartIcon;
+            return result.url;
         }
 
         public navigation(params: { [key: string]: string }, query: string): void {
-            if (params !== null) {
-                // Set params (fromyear and toyear).
-                Object.keys(params).forEach((key) => {
-                    $(`#${key}`).prop('value', params[key].toString());
-                });
-            }
-            // Clear everything *unless* there are subsets / below-the-fold selected.
-            App.clearNonSubsetted();
-            // Now check everything listed in the query string.
-            let q = query.split('&');
-            // If there is an 'all' in the query string, set everything to true.
-            const foundAll = q.some((elem) => {
-                return (elem == "all");
-            });
-            // For testing: if 'survey' is in the query string, reveal the survey overlay.
-            const foundSurvey = q.some((elem) => {
-                return (elem == "survey");
-            });
-            if (foundSurvey) {
-                document!.getElementById("overlay-survey")!.style.display = "block";
-            }
-            const foundNone = q.some((elem) => {
-                return (elem == "none");
-            });
-            // Check for regions and strip them out.
-            const foundRegion = q.some((elem) => {
-                return regions.indexOf(elem) >= 0;
-            });
-            if (foundRegion) {
-                let index = 0;
-                q.forEach((elem) => {
-                    // Splice it out.
-                    if (regions.indexOf(elem) >= 0) {
-                        q.splice(index, 1);
-                        // Set the region.
-                        $("#regions").val(elem);
-                    }
-                    index += 1;
-                });
-            }
-            // Check for pie chart
-            const foundPie = q.some((elem) => {
-                return (elem == "pie");
-            });
-            if (foundPie) {
-                $("#charttype").val("pie");
-            }
-
-            if (foundAll) {
-                // Set everything.
-                for (const item in topTierAreas) {
-                    const element = document.getElementById(item) as HTMLInputElement;
-                    if (element) {
-                        element.checked = true;
-                        if (item in childMap) {
-                            // It's a parent. Enable it.
-                            element.disabled = false;
-                            // and activate all children.
-                            childMap[item].forEach((k) => {
-                                if (!(k in nextTier)) {
-                                    const childElement = document.getElementById(k) as HTMLInputElement;
-                                    if (childElement) {
-                                        childElement.checked = true;
-                                    }
-                                }
-                            });
-                        }
-                    }
-                }
-                // And we're out.
-                App.getInstance().invalidateCheckboxCache();
-                return;
-            }
-            if (foundNone) {
-                // Clear everything and return.
-                App.clearNonSubsetted();
-                return;
-            }
-            // Just a list of areas.
-            // First, clear everything that isn't subsetted.
-            App.clearNonSubsetted();
-            // Then, activate the areas in the query.
-            for (const item of q) {
-                if ((item != "none") && (item != "")) {
-                    const element = document.getElementById(item) as HTMLInputElement;
-                    if (element) {
-                        element.checked = true;
-                        element.disabled = false;
-                        if (item in childMap) {
-                            // Activate all children.
-                            childMap[item].forEach((k) => {
-                                if (!(k in nextTier)) {
-                                    const childElement = document.getElementById(k) as HTMLInputElement;
-                                    if (childElement) {
-                                        childElement.checked = true;
-                                    }
-                                }
-                            });
-                        }
-                    }
-                }
-            }
-            App.getInstance().invalidateCheckboxCache();
-        }
-
-        public static clearNonSubsetted(): void {
-            for (const item of areas) {
-                if (item in childMap) {
-                    const kids = childMap[item];
-                    if (!App.subsetting(kids)) {
-                        const element = document.getElementById(item) as HTMLInputElement;
-                        if (element) {
-                            element.checked = false;
-                            element.disabled = false;
-                        }
-                        kids.forEach((kid) => {
-                            const kidElement = document.getElementById(kid) as HTMLInputElement;
-                            if (kidElement) {
-                                kidElement.checked = false;
-                            }
-                        });
-                    }
-                }
-            }
-            // Invalidate the checkbox cache since we modified checkboxes
-            App.getInstance().invalidateCheckboxCache();
-        }
-
-        public static subsetting(sibs: string[]): boolean {
-            // Separate the siblings into above and below the fold.
-            let aboveFold: string[] = [];
-            let belowFold: string[] = [];
-            sibs.forEach((elem) => {
-                if (elem in nextTier) {
-                    belowFold.push(elem);
-                } else {
-                    aboveFold.push(elem);
-                }
-            });
-            // Count how many are checked above and below.
-            let numCheckedAbove = 0;
-            aboveFold.forEach((elem) => {
-                const element = document.getElementById(elem) as HTMLInputElement;
-                if (element && element.checked) {
-                    numCheckedAbove++;
-                }
-            });
-            let numCheckedBelow = 0;
-            belowFold.forEach((elem) => {
-                const element = document.getElementById(elem) as HTMLInputElement;
-                if (element && element.checked) {
-                    numCheckedBelow++;
-                }
-            });
-            const subsettedAbove = ((numCheckedAbove > 0) && (numCheckedAbove < aboveFold.length));
-            const subsettedBelow = ((numCheckedBelow > 0) && (belowFold.length != 0));
-            return subsettedAbove || subsettedBelow;
+            handleNavigation(params, query, () => this.invalidateCheckboxCache());
         }
 
         private addListeners(): void {
-            ["toyear", "fromyear", "regions"].forEach((key) => {
-                const widget = document.getElementById(key);
-                widget!.addEventListener("change", () => {
-                    // Year/region change invalidates the incremental cache
-                    this.invalidateIncrementalCache();
-                    this.recomputeAuthorAreas();
-                    this.rank();
-                });
-            });
-            // Chart type doesn't affect data, just visualization
-            const charttypeWidget = document.getElementById("charttype");
-            charttypeWidget!.addEventListener("change", () => { this.rank(); });
-            // Add listeners for clicks on area widgets (left side of screen)
-            // e.g., 'ai'
-            for (let position = 0; position < areas.length; position++) {
-                let area = areas[position];
-                if (!(area in parentMap)) {
-                    // Not a child.
-                    const widget = document.getElementById(`${area}-widget`);
-                    if (widget) {
-                        widget!.addEventListener("click", () => {
-                            this.toggleConferences(area);
-                        });
-                    }
-                }
-            }
-            // Initialize callbacks for area checkboxes.
-            for (let i = 0; i < this.fields.length; i++) {
-                const field = this.fields[i];
-                const fieldElement = document.getElementById(field) as HTMLInputElement;
-                if (!fieldElement) {
-                    continue;
-                }
-                fieldElement.addEventListener("click", () => {
-                    // Invalidate cache since a checkbox changed
-                    this.invalidateCheckboxCache();
-
-                    let updateURL: boolean = true;
-                    if (field in parentMap) {
-                        // Child:
-                        // If any child is on, activate the parent.
-                        // If all are off, deactivate parent.
-                        updateURL = false;
-                        const parent = parentMap[field];
-                        const parentElement = document.getElementById(parent) as HTMLInputElement;
-                        let anyChecked = 0;
-                        let allChecked = 1;
-                        childMap[parent].forEach((k) => {
-                            const childElement = document.getElementById(k) as HTMLInputElement;
-                            const val = childElement ? (childElement.checked ? 1 : 0) : 0;
-                            anyChecked |= val;
-                            // allChecked means all top tier conferences
-                            // are on and all next tier conferences are
-                            // off.
-                            if (!(k in nextTier)) {
-                                // All need to be on.
-                                allChecked &= val;
-                            } else {
-                                // All need to be off.
-                                allChecked &= val ? 0 : 1;
-                            }
-                        });
-                        // Activate parent if any checked.
-                        if (parentElement) {
-                            parentElement.checked = anyChecked ? true : false;
-                            // Mark the parent as disabled unless all are checked.
-                            if (!anyChecked || allChecked) {
-                                parentElement.disabled = false;
-                            }
-                            if (anyChecked && !allChecked) {
-                                parentElement.disabled = true;
-                            }
-                        }
-                    } else {
-                        // Parent: activate or deactivate all children.
-                        const val = fieldElement.checked;
-                        if (field in childMap) {
-                            for (const child of childMap[field]) {
-                                const childElement = document.getElementById(child) as HTMLInputElement;
-                                if (childElement) {
-                                    if (!(child in nextTier)) {
-                                        childElement.checked = val;
-                                    } else {
-                                        // Always deactivate next tier conferences.
-                                        childElement.checked = false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    this.rank(updateURL);
-                });
-            }
-            // Add group selectors.
-            const listeners: { [key: string]: () => void } =
-            {
-                'all_areas_on': (() => { this.activateAll(); }),
-                'all_areas_off': (() => { this.activateNone(); }),
-                'ai_areas_on': (() => { this.activateAI(); }),
-                'ai_areas_off': (() => { this.deactivateAI(); }),
-                'systems_areas_on': (() => { this.activateSystems(); }),
-                'systems_areas_off': (() => { this.deactivateSystems(); }),
-                'theory_areas_on': (() => { this.activateTheory(); }),
-                'theory_areas_off': (() => { this.deactivateTheory(); }),
-                'other_areas_on': (() => { this.activateOthers(); }),
-                'other_areas_off': (() => { this.deactivateOthers(); })
+            const callbacks: EventCallbacks = {
+                invalidateIncrementalCache: () => this.invalidateIncrementalCache(),
+                invalidateCheckboxCache: () => this.invalidateCheckboxCache(),
+                recomputeAuthorAreas: () => this.recomputeAuthorAreas(),
+                rank: (updateURL?: boolean) => this.rank(updateURL),
+                toggleConferences: (area: string) => this.toggleConferences(area),
+                activateAll: () => this.activateAll(),
+                activateNone: () => this.activateNone(),
+                activateAI: () => this.activateAI(),
+                deactivateAI: () => this.deactivateAI(),
+                activateSystems: () => this.activateSystems(),
+                deactivateSystems: () => this.deactivateSystems(),
+                activateTheory: () => this.activateTheory(),
+                deactivateTheory: () => this.deactivateTheory(),
+                activateOthers: () => this.activateOthers(),
+                deactivateOthers: () => this.deactivateOthers()
             };
-            for (const item in listeners) {
-                const widget = document.getElementById(item);
-                widget!.addEventListener("click", () => {
-                    listeners[item]();
-                });
-            }
+            addAllListeners(this.fields, callbacks);
         }
     }
 
