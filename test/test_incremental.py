@@ -324,6 +324,98 @@ class TestIncrementalPerformance:
         # With lazy rendering, showing all entries should still be fast
         assert total_rank_time < 200, f"Full ranking took {total_rank_time}ms, should be under 200ms"
 
+class TestModularRefactoring:
+    """Tests to verify refactored modules work correctly."""
+
+    def test_namespace_exports_available(self, loaded_page):
+        """Verify all expected namespace exports are available."""
+        exports = [
+            "CSRankings.parentMap",
+            "CSRankings.childMap",
+            "CSRankings.nextTier",
+            "CSRankings.areas",
+            "CSRankings.topLevelAreas",
+            "CSRankings.topTierAreas",
+            "CSRankings.areaMap",
+            "CSRankings.regions",
+            "CSRankings.App",
+        ]
+        for export in exports:
+            result = loaded_page.execute_script(f"return typeof {export} !== 'undefined';")
+            assert result, f"Export {export} should be defined"
+
+    def test_global_csr_is_app_instance(self, loaded_page):
+        """Verify global csr is instance of CSRankings.App."""
+        result = loaded_page.execute_script("return csr instanceof CSRankings.App;")
+        assert result, "Global csr should be instance of CSRankings.App"
+
+    def test_static_maps_populated(self, loaded_page):
+        """Verify static configuration maps are populated."""
+        checks = [
+            ("CSRankings.parentMap", "Object.keys(CSRankings.parentMap).length > 50"),
+            ("CSRankings.areas", "CSRankings.areas.length > 90"),
+            ("CSRankings.areaMap", "CSRankings.areaMap.length > 90"),
+        ]
+        for name, check in checks:
+            result = loaded_page.execute_script(f"return {check};")
+            assert result, f"{name} should be populated"
+
+    def test_utility_functions_work(self, loaded_page):
+        """Test that utility functions are accessible and work."""
+        # Test sum function
+        result = loaded_page.execute_script("return CSRankings.sum([1, 2, 3, 4, 5]);")
+        assert result == 15, "sum([1,2,3,4,5]) should equal 15"
+
+        # Test average function
+        result = loaded_page.execute_script("return CSRankings.average([10, 20, 30]);")
+        assert result == 20, "average([10,20,30]) should equal 20"
+
+    def test_region_filtering_works(self, loaded_page):
+        """Test that region filtering is accessible."""
+        # This tests that inRegion function works via the UI
+        loaded_page.execute_script("$('#regions').val('europe').trigger('change');")
+        time.sleep(1.5)
+        # Should not error and should show results
+        ranking_exists = loaded_page.execute_script(
+            "return document.getElementById('ranking') !== null;"
+        )
+        assert ranking_exists, "Ranking table should exist after region change"
+
+    def test_rendering_produces_valid_html(self, loaded_page):
+        """Test that rendering functions produce valid HTML."""
+        # Check that ranking table has expected structure
+        has_structure = loaded_page.execute_script("""
+            const table = document.getElementById('ranking');
+            return table &&
+                   table.querySelector('thead') !== null &&
+                   table.querySelector('tbody') !== null;
+        """)
+        assert has_structure, "Ranking table should have thead and tbody"
+
+    def test_all_public_apis_work(self, loaded_page):
+        """Comprehensive test of all public API methods."""
+        apis = [
+            ("csr.activateAll()", "Activate all", True),
+            ("csr.activateNone()", "Activate none", False),  # No ranking when no areas
+            ("csr.activateAI()", "Activate AI", True),
+            ("csr.activateSystems()", "Activate Systems", True),
+            ("csr.activateTheory()", "Activate Theory", True),
+            ("csr.activateOthers()", "Activate Others", True),
+        ]
+        for api_call, description, expect_ranking in apis:
+            loaded_page.execute_script(api_call)
+            time.sleep(0.5)
+            # Verify no errors - page should still be functional
+            ranking_exists = loaded_page.execute_script(
+                "return document.getElementById('ranking') !== null;"
+            )
+            if expect_ranking:
+                assert ranking_exists, f"Ranking should exist after {description}"
+            else:
+                # activateNone() correctly shows "no areas selected" message
+                assert not ranking_exists, f"Ranking should NOT exist after {description}"
+
+
 class TestInitialLoad:
     """Test initial page load performance."""
 
