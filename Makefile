@@ -24,11 +24,11 @@ all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  #
 clean:
 	rm -f $(TARGETS)
 
-csrankings.js: csrankings.ts continents.ts
+csrankings.js: src/types.ts src/config.ts src/utils.ts src/data-loader.ts src/region.ts src/computation.ts src/verification.ts src/rendering.ts src/continents.ts src/app.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --project tsconfig.json
 
-csrankings.min.js: csrankings.js csrankings.ts
+csrankings.min.js: csrankings.js
 	google-closure-compiler --js csrankings.js > csrankings.min.js
 
 update-dblp:
