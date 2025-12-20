@@ -9,8 +9,23 @@
 	"noUnusedParameters": true,
 	"noFallthroughCasesInSwitch": true,
 	"strictNullChecks": true,
-//	"pretty": true
+	"outFile": "csrankings.js"
     },
-    "files": [ "csrankings.ts", "continents.ts" ],
-    "moduleResolution": "node"
+    "files": [
+	"src/types.ts",
+	"src/config.ts",
+	"src/utils.ts",
+	"src/data-loader.ts",
+	"src/region.ts",
+	"src/computation.ts",
+	"src/verification.ts",
+	"src/rendering.ts",
+	"src/continents.ts",
+	"src/checkbox.ts",
+	"src/navigation.ts",
+	"src/survey.ts",
+	"src/sponsorship.ts",
+	"src/event-handlers.ts",
+	"src/app.ts"
+    ]
 }
