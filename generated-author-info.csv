@@ -4425,11 +4425,6 @@ Alan Mislove,Northeastern University,www,2.0,0.47619,2013
 Alan Mislove,Northeastern University,www,1.0,0.33333,2016
 Alan Mislove,Northeastern University,www,1.0,0.25,2018
 Alan Mislove,Northeastern University,www,1.0,0.14286,2019
-Alan Mycroft,University of Cambridge,aaai,1.0,0.33333,2025
-Alan Mycroft,University of Cambridge,hpca,1.0,0.25,2021
-Alan Mycroft,University of Cambridge,icfp,1.0,0.33333,2014
-Alan Mycroft,University of Cambridge,popl,1.0,0.5,1986
-Alan Mycroft,University of Cambridge,popl,1.0,0.5,2017
 Alan R. Siegel,New York University,focs,1.0,0.33333,1983
 Alan R. Siegel,New York University,focs,1.0,0.5,1984
 Alan R. Siegel,New York University,focs,1.0,0.5,1985
@@ -12840,16 +12835,6 @@ Andrew M. McNutt,University of Utah,uist,1.0,0.2,2021
 Andrew M. McNutt,University of Utah,vis,1.0,1.0,2023
 Andrew M. McNutt,University of Utah,vis,1.0,0.33333,2024
 Andrew M. McNutt,University of Utah,vis,2.0,0.53333,2025
-Andrew M. Pitts,University of Cambridge,icfp,1.0,0.33333,2003
-Andrew M. Pitts,University of Cambridge,lics,1.0,1.0,1989
-Andrew M. Pitts,University of Cambridge,lics,1.0,0.5,1990
-Andrew M. Pitts,University of Cambridge,lics,1.0,1.0,1993
-Andrew M. Pitts,University of Cambridge,lics,1.0,1.0,1996
-Andrew M. Pitts,University of Cambridge,lics,1.0,0.5,1999
-Andrew M. Pitts,University of Cambridge,popl,1.0,0.5,2007
-Andrew M. Pitts,University of Cambridge,popl,1.0,1.0,2010
-Andrew M. Pitts,University of Cambridge,popl,1.0,0.5,2013
-Andrew M. Pitts,University of Cambridge,popl,1.0,1.0,2023
 Andrew MacFarlane 0001,City University of London,chiconf,1.0,0.14286,2025
 Andrew Markham,University of Oxford,aaai,1.0,0.2,2017
 Andrew Markham,University of Oxford,aaai,1.0,0.25,2018
@@ -13604,14 +13589,6 @@ Andy D. Pimentel,University of Amsterdam,dac,1.0,0.33333,2017
 Andy D. Pimentel,University of Amsterdam,ics,1.0,0.16667,2023
 Andy D. Pimentel,University of Amsterdam,naacl,1.0,0.16667,2025
 Andy D. Pimentel,University of Amsterdam,rtss,1.0,0.33333,2017
-Andy Hopper,University of Cambridge,isca,1.0,0.33333,1989
-Andy Hopper,University of Cambridge,kdd,1.0,0.2,2020
-Andy Hopper,University of Cambridge,mobicom,1.0,0.2,1999
-Andy Hopper,University of Cambridge,mobisys,1.0,0.33333,2003
-Andy Hopper,University of Cambridge,mobisys,1.0,0.5,2005
-Andy Hopper,University of Cambridge,sosp,1.0,0.5,1993
-Andy Hopper,University of Cambridge,ubicomp,1.0,0.5,2003
-Andy Hopper,University of Cambridge,ubicomp,1.0,0.5,2008
 Andy J. Wellings,University of York,rtss,1.0,0.33333,1992
 Andy J. Wellings,University of York,rtss,1.0,0.5,1995
 Andy J. Wellings,University of York,rtss,1.0,0.5,1996
@@ -92744,6 +92721,12 @@ Isaac Cho,Utah State University,vis,1.0,0.2,2016
 Isaac Cho,Utah State University,vr,1.0,0.25,2025
 Isaac D. Scherson,Univ. of California - Irvine,focs,1.0,0.33333,1986
 Isaac D. Scherson,Univ. of California - Irvine,sigmetrics,1.0,0.5,1996
+Isaac Grosof,Northwestern University,osdi,1.0,0.090909,2020
+Isaac Grosof,Northwestern University,sigmetrics,1.0,0.33333,2019
+Isaac Grosof,Northwestern University,sigmetrics,1.0,0.33333,2020
+Isaac Grosof,Northwestern University,sigmetrics,2.0,0.5,2021
+Isaac Grosof,Northwestern University,sigmetrics,1.0,0.33333,2024
+Isaac Grosof,Northwestern University,sigmetrics,1.0,0.33333,2025
 Isaac H. Kim,Univ. of California - Davis,stoc,1.0,0.14286,2024
 Isaac Keslassy,Technion,sigcomm,1.0,0.14286,2003
 Isaac Keslassy,Technion,sigcomm,1.0,0.33333,2004
@@ -122745,6 +122728,36 @@ Kevin Liu,Michigan State University,icml,1.0,0.16667,2023
 Kevin Liu,Michigan State University,icse,1.0,0.25,2023
 Kevin Liu,Michigan State University,ismb,1.0,0.2,2012
 Kevin Liu,Michigan State University,nips,1.0,0.14286,2022
+Kevin M. Lynch,Northwestern University,icra,1.0,1.0,1992
+Kevin M. Lynch,Northwestern University,icra,1.0,0.5,1993
+Kevin M. Lynch,Northwestern University,icra,1.0,0.5,1995
+Kevin M. Lynch,Northwestern University,icra,3.0,1.75,1997
+Kevin M. Lynch,Northwestern University,icra,2.0,0.5,1998
+Kevin M. Lynch,Northwestern University,icra,1.0,1.0,1999
+Kevin M. Lynch,Northwestern University,icra,2.0,1.0,2000
+Kevin M. Lynch,Northwestern University,icra,1.0,0.5,2001
+Kevin M. Lynch,Northwestern University,icra,1.0,0.2,2002
+Kevin M. Lynch,Northwestern University,icra,3.0,0.83333,2004
+Kevin M. Lynch,Northwestern University,icra,2.0,0.75,2005
+Kevin M. Lynch,Northwestern University,icra,1.0,0.33333,2006
+Kevin M. Lynch,Northwestern University,icra,3.0,1.0,2007
+Kevin M. Lynch,Northwestern University,icra,1.0,0.33333,2010
+Kevin M. Lynch,Northwestern University,icra,2.0,0.5,2011
+Kevin M. Lynch,Northwestern University,icra,4.0,0.92619,2012
+Kevin M. Lynch,Northwestern University,icra,1.0,0.5,2017
+Kevin M. Lynch,Northwestern University,icra,1.0,0.14286,2024
+Kevin M. Lynch,Northwestern University,iros,1.0,0.33333,1992
+Kevin M. Lynch,Northwestern University,iros,2.0,1.5,1993
+Kevin M. Lynch,Northwestern University,iros,1.0,0.5,1996
+Kevin M. Lynch,Northwestern University,iros,1.0,0.2,2000
+Kevin M. Lynch,Northwestern University,iros,1.0,0.33333,2001
+Kevin M. Lynch,Northwestern University,iros,2.0,1.0,2003
+Kevin M. Lynch,Northwestern University,iros,1.0,0.25,2005
+Kevin M. Lynch,Northwestern University,iros,1.0,0.33333,2006
+Kevin M. Lynch,Northwestern University,iros,4.0,1.1762,2014
+Kevin M. Lynch,Northwestern University,iros,1.0,0.33333,2015
+Kevin M. Lynch,Northwestern University,rss,1.0,0.33333,2008
+Kevin M. Lynch,Northwestern University,rss,1.0,0.33333,2011
 Kevin Moran,University of Central Florida,ase,1.0,0.2,2018
 Kevin Moran,University of Central Florida,ase,1.0,0.5,2023
 Kevin Moran,University of Central Florida,fse,1.0,0.25,2015
@@ -128302,11 +128315,6 @@ Lawrence Birnbaum,Northwestern University,ijcai,1.0,0.33333,1989
 Lawrence Birnbaum,Northwestern University,ijcai,1.0,0.25,1991
 Lawrence Birnbaum,Northwestern University,ijcai,1.0,0.33333,1995
 Lawrence Birnbaum,Northwestern University,www,1.0,0.33333,2007
-Lawrence C. Paulson,University of Cambridge,cav,1.0,0.5,1998
-Lawrence C. Paulson,University of Cambridge,ccs,1.0,0.33333,2002
-Lawrence C. Paulson,University of Cambridge,iclr,1.0,0.25,2021
-Lawrence C. Paulson,University of Cambridge,lics,1.0,1.0,1999
-Lawrence C. Paulson,University of Cambridge,popl,1.0,1.0,1982
 Lawrence Carin,Duke University,aaai,1.0,0.33333,2006
 Lawrence Carin,Duke University,aaai,1.0,0.2,2007
 Lawrence Carin,Duke University,aaai,3.0,0.83333,2015
@@ -192424,26 +192432,6 @@ Ross D. King,University of Manchester,ismb,1.0,0.25,2006
 Ross D. King,University of Manchester,ismb,1.0,0.25,2008
 Ross D. King,University of Manchester,kdd,1.0,0.33333,1998
 Ross D. King,University of Manchester,kdd,1.0,0.25,2000
-Ross J. Anderson,University of Cambridge,ccs,1.0,1.0,1993
-Ross J. Anderson,University of Cambridge,crypto,1.0,0.5,1995
-Ross J. Anderson,University of Cambridge,crypto,1.0,0.5,2007
-Ross J. Anderson,University of Cambridge,eurocrypt,1.0,0.5,1997
-Ross J. Anderson,University of Cambridge,icml,1.0,0.2,2021
-Ross J. Anderson,University of Cambridge,nips,1.0,0.14286,2021
-Ross J. Anderson,University of Cambridge,oakland,1.0,0.5,1995
-Ross J. Anderson,University of Cambridge,oakland,1.0,1.0,1996
-Ross J. Anderson,University of Cambridge,oakland,1.0,0.33333,2008
-Ross J. Anderson,University of Cambridge,oakland,1.0,0.25,2010
-Ross J. Anderson,University of Cambridge,oakland,1.0,0.2,2014
-Ross J. Anderson,University of Cambridge,oakland,1.0,0.25,2022
-Ross J. Anderson,University of Cambridge,oakland,1.0,0.33333,2024
-Ross J. Anderson,University of Cambridge,pets,1.0,0.33333,2016
-Ross J. Anderson,University of Cambridge,pets,1.0,0.2,2022
-Ross J. Anderson,University of Cambridge,pets,1.0,0.25,2025
-Ross J. Anderson,University of Cambridge,usenixsec,1.0,0.33333,2012
-Ross J. Anderson,University of Cambridge,usenixsec,1.0,0.5,2023
-Ross J. Anderson,University of Cambridge,usenixsec,1.0,0.33333,2024
-Ross J. Anderson,University of Cambridge,www,1.0,0.16667,2024
 Ross Maciejewski,Arizona State University,chiconf,1.0,0.16667,2017
 Ross Maciejewski,Arizona State University,chiconf,1.0,0.16667,2018
 Ross Maciejewski,Arizona State University,chiconf,1.0,0.25,2022
@@ -224648,22 +224636,6 @@ Timothy C. Bell,University of Canterbury,sigcse,2.0,1.0,2011
 Timothy C. Bell,University of Canterbury,sigcse,1.0,0.33333,2012
 Timothy C. Bell,University of Canterbury,sigcse,1.0,0.25,2013
 Timothy C. Bell,University of Canterbury,sigcse,1.0,0.25,2018
-Timothy G. Griffin,University of Cambridge,imc,1.0,0.25,2003
-Timothy G. Griffin,University of Cambridge,imc,1.0,0.2,2005
-Timothy G. Griffin,University of Cambridge,lics,1.0,1.0,1988
-Timothy G. Griffin,University of Cambridge,ndss,1.0,0.16667,2003
-Timothy G. Griffin,University of Cambridge,pods,1.0,0.33333,1996
-Timothy G. Griffin,University of Cambridge,popl,1.0,1.0,1990
-Timothy G. Griffin,University of Cambridge,sigcomm,1.0,0.5,1999
-Timothy G. Griffin,University of Cambridge,sigcomm,1.0,0.5,2002
-Timothy G. Griffin,University of Cambridge,sigcomm,1.0,0.33333,2003
-Timothy G. Griffin,University of Cambridge,sigcomm,1.0,0.25,2004
-Timothy G. Griffin,University of Cambridge,sigcomm,1.0,0.5,2005
-Timothy G. Griffin,University of Cambridge,sigcomm,1.0,0.33333,2018
-Timothy G. Griffin,University of Cambridge,sigmetrics,1.0,0.25,2004
-Timothy G. Griffin,University of Cambridge,sigmod,1.0,0.5,1995
-Timothy G. Griffin,University of Cambridge,sigmod,1.0,0.2,1996
-Timothy G. Griffin,University of Cambridge,sigmod,1.0,0.5,1997
 Timothy J. Hickey,Brandeis University,popl,1.0,1.0,1989
 Timothy J. Hickey,Brandeis University,popl,1.0,1.0,2000
 Timothy J. Hickey,Brandeis University,sigcse,1.0,0.5,2013
@@ -225866,6 +225838,40 @@ Todd D. Millstein,Univ. of California - Los Angeles,sigcomm,1.0,0.2,2020
 Todd D. Millstein,Univ. of California - Los Angeles,sigcomm,1.0,0.125,2021
 Todd D. Millstein,Univ. of California - Los Angeles,sigcomm,2.0,0.30952,2023
 Todd D. Millstein,Univ. of California - Los Angeles,vldb,1.0,0.125,2015
+Todd D. Murphey,Northwestern University,iccv,1.0,0.16667,2021
+Todd D. Murphey,Northwestern University,icra,2.0,1.0,2001
+Todd D. Murphey,Northwestern University,icra,1.0,0.5,2002
+Todd D. Murphey,Northwestern University,icra,1.0,0.25,2003
+Todd D. Murphey,Northwestern University,icra,2.0,1.3333,2006
+Todd D. Murphey,Northwestern University,icra,1.0,0.5,2007
+Todd D. Murphey,Northwestern University,icra,2.0,1.0,2008
+Todd D. Murphey,Northwestern University,icra,2.0,1.0,2010
+Todd D. Murphey,Northwestern University,icra,1.0,0.33333,2011
+Todd D. Murphey,Northwestern University,icra,3.0,1.5,2012
+Todd D. Murphey,Northwestern University,icra,3.0,1.0333,2015
+Todd D. Murphey,Northwestern University,icra,1.0,0.25,2019
+Todd D. Murphey,Northwestern University,icra,2.0,0.45,2021
+Todd D. Murphey,Northwestern University,icra,1.0,0.33333,2024
+Todd D. Murphey,Northwestern University,icra,2.0,0.83333,2025
+Todd D. Murphey,Northwestern University,iros,1.0,0.5,2001
+Todd D. Murphey,Northwestern University,iros,1.0,0.25,2005
+Todd D. Murphey,Northwestern University,iros,1.0,0.5,2012
+Todd D. Murphey,Northwestern University,iros,2.0,0.75,2013
+Todd D. Murphey,Northwestern University,iros,1.0,0.25,2014
+Todd D. Murphey,Northwestern University,iros,1.0,0.25,2015
+Todd D. Murphey,Northwestern University,iros,1.0,0.25,2019
+Todd D. Murphey,Northwestern University,iros,2.0,1.0,2020
+Todd D. Murphey,Northwestern University,iros,1.0,0.25,2021
+Todd D. Murphey,Northwestern University,iros,2.0,0.36667,2023
+Todd D. Murphey,Northwestern University,iros,1.0,0.2,2024
+Todd D. Murphey,Northwestern University,nips,1.0,0.33333,2020
+Todd D. Murphey,Northwestern University,rss,1.0,0.5,2016
+Todd D. Murphey,Northwestern University,rss,3.0,1.0,2017
+Todd D. Murphey,Northwestern University,rss,2.0,0.58333,2018
+Todd D. Murphey,Northwestern University,rss,2.0,0.58333,2019
+Todd D. Murphey,Northwestern University,rss,1.0,0.1,2020
+Todd D. Murphey,Northwestern University,rss,1.0,0.25,2021
+Todd D. Murphey,Northwestern University,rss,1.0,0.14286,2023
 Todd J. Treangen,Rice University,icml,1.0,0.16667,2022
 Todd J. Treangen,Rice University,ismb,1.0,0.33333,2023
 Todd J. Treangen,Rice University,ismb,1.0,0.125,2024
