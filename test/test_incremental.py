@@ -20,37 +20,48 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+os.environ.setdefault("WDM_LOCAL", "1")
 
-def is_port_in_use(port: int) -> bool:
-    """Check if a port is already in use."""
+
+def get_cached_chromedriver() -> str | None:
+    """Return the newest cached ChromeDriver path, if present."""
+    base_dir = os.path.expanduser("~/.wdm/drivers/chromedriver")
+    if not os.path.isdir(base_dir):
+        return None
+    candidates: list[str] = []
+    for root, _, files in os.walk(base_dir):
+        if "chromedriver" in files:
+            candidates.append(os.path.join(root, "chromedriver"))
+    if not candidates:
+        return None
+    candidates.sort(key=lambda path: os.path.getmtime(path), reverse=True)
+    return candidates[0]
+
+def find_free_port() -> int:
+    """Find an available localhost port."""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        return s.connect_ex(('localhost', port)) == 0
+        s.bind(("localhost", 0))
+        return s.getsockname()[1]
 
 
 @pytest.fixture(scope="module")
 def web_server():
     """Start a web server for testing, or use existing one."""
-    port = 8000
-    server_process = None
-
-    if not is_port_in_use(port):
-        # Start the server
-        project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        server_process = subprocess.Popen(
-            ['python3', '-m', 'http.server', str(port)],
-            cwd=project_dir,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
-        )
-        # Wait for server to start
-        time.sleep(2)
+    port = find_free_port()
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    server_process = subprocess.Popen(
+        ['python3', '-m', 'http.server', str(port)],
+        cwd=project_dir,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
+    time.sleep(2)
 
     yield f"http://localhost:{port}"
 
     # Cleanup
-    if server_process:
-        server_process.terminate()
-        server_process.wait()
+    server_process.terminate()
+    server_process.wait()
 
 
 @pytest.fixture(scope="module")
@@ -62,10 +73,11 @@ def driver():
     options.add_argument('--disable-dev-shm-usage')
     options.set_capability('goog:loggingPrefs', {'browser': 'ALL'})
 
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
-        options=options
+    cached_driver = get_cached_chromedriver()
+    service = Service(
+        cached_driver if cached_driver else ChromeDriverManager().install()
     )
+    driver = webdriver.Chrome(service=service, options=options)
 
     yield driver
 
@@ -454,6 +466,35 @@ class TestInitialLoad:
 
         # Page should load in under 10 seconds (network dependent)
         assert load_time < 10000, f"Page load took {load_time}ms, should be under 10s"
+
+
+class TestStickyControls:
+    """Tests to ensure the rank controls stay visible while scrolling."""
+
+    def test_rank_controls_stick_to_top(self, loaded_page):
+        """Verify the rank controls panel uses sticky positioning."""
+        panel = loaded_page.find_element(By.CSS_SELECTOR, ".rank-controls-sticky")
+
+        position = loaded_page.execute_script(
+            "return window.getComputedStyle(arguments[0]).position;",
+            panel,
+        )
+        assert position == "sticky", f"Expected sticky positioning, got '{position}'"
+
+        loaded_page.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(1)
+        pinned_top = loaded_page.execute_script(
+            "return Math.round(arguments[0].getBoundingClientRect().top);",
+            panel,
+        )
+
+        assert -2 <= pinned_top <= 5, (
+            f"Rank controls should stay pinned near the top while scrolling "
+            f"(observed top={pinned_top}px)"
+        )
+
+        loaded_page.execute_script("window.scrollTo(0, 0);")
+        time.sleep(0.5)
 
 
 if __name__ == "__main__":
