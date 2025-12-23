@@ -410,4 +410,5 @@ gh pr close <PR_NUMBER>
 - he (HTML entity encoding)
 
 ### Backend/Build (Python)
+- **Python 3.13+ recommended** - `util/regenerate_data.py` may crash (exit 139) on older versions
 - lxml (`pip install lxml`) - DBLP XML filtering, 2.7x faster than expat
