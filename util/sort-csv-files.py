@@ -39,13 +39,19 @@ def sort_csv_files(directives_file):
 
                 # Write the sorted DataFrame to a temporary file with the specified line ending
                 temp_file_path = file_path + '.tmp'
+                try:
+                    sorted_df = sorted_df.drop(columns=['Unnamed: 1'])
+                except Exception:
+                    pass
                 sorted_df.to_csv(temp_file_path, index=False)
                 
                 # Replace original file with the temporary file using the correct line endings
                 with open(temp_file_path, 'r', newline='\n') as temp_file:
                     with open(file_path, 'w', newline='') as original_file:
                         for line in temp_file:
-                            original_file.write(line.rstrip('\n') + line_ending)
+                            if len(line.strip()) > 0:
+                                # Only write non-empty lines.
+                                original_file.write(line.rstrip('\n') + line_ending)
                 
                 os.remove(temp_file_path)
                 
