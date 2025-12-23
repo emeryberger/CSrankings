@@ -39,6 +39,10 @@ def sort_csv_files(directives_file):
 
                 # Write the sorted DataFrame to a temporary file with the specified line ending
                 temp_file_path = file_path + '.tmp'
+                try:
+                    sorted_df = sorted_df.drop(columns=['Unnamed: 1'])
+                except Exception:
+                    pass
                 sorted_df.to_csv(temp_file_path, index=False)
                 
                 # Replace original file with the temporary file using the correct line endings

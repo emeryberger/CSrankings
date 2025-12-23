@@ -210,7 +210,6 @@
     <script defer src="js/vega-lite-5.1.1.min.js" type="text/javascript"></script>
     <script defer src="js/vega-embed-6.18.2.min.js" type="text/javascript"></script>
     <script defer src="js/papaparse.min.js" type="text/javascript"></script>
-    <script defer src="continents.js" type="text/javascript"></script>
 <!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
     <script defer src="js/bootstrap.min.js" type="text/javascript"></script>
     <script defer src="js/navigo.min.js"></script>
@@ -229,15 +228,6 @@
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));    </script>
-    <div class="overlay" id="overlay-loading">
-      <div class="centerscreen overlaytext">
-	<center>
-	  <font color="white" size="15vw">
-	    <div id="progress">Loading.<br /></div>
-	  </font>
-	</center>
-      </div>
-    </div>
     <!-- sponsorship link, initially off (activated randomly). -->
     <div class="overlay" onclick="document.getElementById('overlay-sponsor').style.display = 'none';" id="overlay-sponsor" style="display:none">
       <div class="centerscreen overlaytext">
@@ -292,7 +282,7 @@
 
           <h1>CSRankings: Computer Science Rankings</h1>
 
-	  <div class="panel panel-info">
+	  <div class="panel panel-info intro-panel">
 	    <div class="panel-heading">
 	      <p>
 		CSRankings is a metrics-based ranking of top computer
@@ -316,7 +306,13 @@
 		For info on grad stipends, check out <a href="https://csstipendrankings.org/">CSStipendRankings.org</a>. For publication statistics on CSrankings conferences, see <a href="https://csconferences.org/">CSconferences.org</a>.
 		<b>If you find CSrankings useful, <a href="https://github.com/sponsors/csrankings">consider sponsoring CSrankings</a>.</b>
 	      </p>
-	      <div class="row">
+	    </div>
+	  </div>
+
+	  <div class="rank-controls-sticky">
+	    <div class="panel panel-info rank-controls-panel">
+	      <div class="panel-heading">
+	      <div class="row" id="rank-controls-row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 		  Rank 
 		  <label for="regions">institutions in</label>
@@ -328,6 +324,7 @@
 		      <option value="bd">Bangladesh</option>
 		      <option value="be">Belgium</option>
 		      <option value="br">Brazil</option>
+		      <option value="bg">Bulgaria</option>
                       <option value="ca">Canada</option>
 		      <option value="cl">Chile</option>
 		      <option value="cn">China</option>
@@ -504,6 +501,7 @@
 		    <option selected="selected" value="2025">2025</option>
 		  </select>
 		</div>
+	      </div>
 	      </div>
 	    </div>
 	  </div>
@@ -2041,7 +2039,7 @@
 </p>
 
 <p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (last update August 2025). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
+	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (last update December 2025). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
 	      
 	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
 	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
