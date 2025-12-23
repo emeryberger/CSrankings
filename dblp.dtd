@@ -18,7 +18,7 @@
 
         https://dblp.org/xml/release/
 
-	Date of this DTD file: November 23, 2019		
+	Date of this DTD file: May 10, 2023
 
 	A changelog for this dblp.dtd can be found at:
 
@@ -33,13 +33,13 @@
                 phdthesis|mastersthesis|www|person|data)*>
 <!ATTLIST dblp mdate CDATA #IMPLIED >                
                 
-<!ENTITY % field "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter|publnr">
+<!ENTITY % field "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter|publnr|stream|rel">
 
 <!ELEMENT article       (%field;)*>
 <!ATTLIST article
                         key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         reviewid CDATA #IMPLIED
                         rating CDATA #IMPLIED
                         cdate CDATA #IMPLIED
@@ -48,56 +48,56 @@
 <!ELEMENT inproceedings (%field;)*>
 <!ATTLIST inproceedings key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT proceedings   (%field;)*>
 <!ATTLIST proceedings   key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT book          (%field;)*>
 <!ATTLIST book          key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT incollection  (%field;)*>
 <!ATTLIST incollection  key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT phdthesis     (%field;)*>
 <!ATTLIST phdthesis     key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT mastersthesis (%field;)*>
 <!ATTLIST mastersthesis key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT www           (%field;)*>
 <!ATTLIST www           key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
 <!ELEMENT data          (%field;)*>
 <!ATTLIST data          key CDATA #REQUIRED
                         mdate CDATA #IMPLIED
-                        publtype CDATA #IMPLIED
+                        publtype NMTOKENS #IMPLIED
                         cdate CDATA #IMPLIED
 >
 
@@ -113,7 +113,7 @@
                     bibtex CDATA #IMPLIED
                     orcid CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT editor    (#PCDATA)>
@@ -121,14 +121,14 @@
                     aux CDATA #IMPLIED
                     orcid CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT address   (#PCDATA)>
 <!ATTLIST address
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ENTITY % titlecontents "#PCDATA|sub|sup|i|tt|ref">
@@ -137,77 +137,77 @@
                     bibtex CDATA #IMPLIED
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT booktitle (#PCDATA)>
 <!ATTLIST booktitle
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT pages     (#PCDATA)>
 <!ATTLIST pages
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT year      (#PCDATA)>
 <!ATTLIST year
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT journal   (#PCDATA)>
 <!ATTLIST journal
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT volume    (#PCDATA)>
 <!ATTLIST volume
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT number    (#PCDATA)>
 <!ATTLIST number
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT month     (#PCDATA)>
 <!ATTLIST month
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT url       (#PCDATA)>
 <!ATTLIST url
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT ee        (#PCDATA)>
 <!ATTLIST ee
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED
+                    type NMTOKENS #IMPLIED
 >
 
 <!ELEMENT cite      (#PCDATA)>
 <!ATTLIST cite
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED
+                    type NMTOKENS #IMPLIED
                     ref CDATA #IMPLIED
 >
 
@@ -215,7 +215,7 @@
 <!ATTLIST school
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT publisher (#PCDATA)>
@@ -223,14 +223,14 @@
                     href CDATA #IMPLIED
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT note      (#PCDATA)>
 <!ATTLIST note
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED                   
+                    type NMTOKENS #IMPLIED                   
 >
 
 <!ELEMENT cdrom     (#PCDATA)>
@@ -240,24 +240,42 @@
 <!ATTLIST isbn
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT chapter   (#PCDATA)>
+
+<!ELEMENT rel (#PCDATA)>
+<!ATTLIST rel
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type NMTOKENS #IMPLIED 
+                    uri CDATA #IMPLIED 
+                    sort CDATA #IMPLIED
+>
+
+<!ELEMENT stream   (#PCDATA)>
+<!ATTLIST stream
+                    aux CDATA #IMPLIED
+                    label CDATA #IMPLIED
+                    type NMTOKENS #IMPLIED 
+>
+
 <!ELEMENT series    (#PCDATA)>
 <!ATTLIST series
                     href CDATA #IMPLIED
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
 
 <!ELEMENT publnr (#PCDATA) >
 <!ATTLIST publnr
                     aux CDATA #IMPLIED
                     label CDATA #IMPLIED
-                    type CDATA #IMPLIED 
+                    type NMTOKENS #IMPLIED 
 >
+
 
 <!--  sub elements of the title element -->
 <!ELEMENT ref (#PCDATA)>
@@ -348,4 +366,3 @@
     <!ENTITY yacute  "&#253;" ><!-- small y, acute accent -->
     <!ENTITY thorn   "&#254;" ><!-- small thorn, Icelandic -->
     <!ENTITY yuml    "&#255;" ><!-- small y, dieresis or umlaut mark -->
-
