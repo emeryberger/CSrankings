@@ -670,20 +670,20 @@ Aarti Singh,Carnegie Mellon University,nips,1.0,0.33333,2019
 Aarti Singh,Carnegie Mellon University,nips,1.0,0.2,2020
 Aarti Singh,Carnegie Mellon University,nips,1.0,0.25,2021
 Aarti Singh,Carnegie Mellon University,nips,2.0,0.45,2024
-Aarushi Goel,Purdue University,ccs,2.0,0.30952,2023
-Aarushi Goel,Purdue University,ccs,1.0,0.33333,2024
-Aarushi Goel,Purdue University,crypto,1.0,0.25,2018
-Aarushi Goel,Purdue University,crypto,1.0,0.2,2021
-Aarushi Goel,Purdue University,crypto,1.0,0.125,2023
-Aarushi Goel,Purdue University,crypto,1.0,0.33333,2024
-Aarushi Goel,Purdue University,crypto,2.0,0.53333,2025
-Aarushi Goel,Purdue University,eurocrypt,1.0,0.25,2019
-Aarushi Goel,Purdue University,eurocrypt,1.0,0.25,2021
-Aarushi Goel,Purdue University,eurocrypt,2.0,0.5,2022
-Aarushi Goel,Purdue University,eurocrypt,1.0,0.25,2023
-Aarushi Goel,Purdue University,pets,1.0,0.25,2022
-Aarushi Goel,Purdue University,pets,1.0,0.2,2024
-Aarushi Goel,Purdue University,usenixsec,1.0,0.2,2023
+Aarushi Goel,Rutgers University,ccs,2.0,0.30952,2023
+Aarushi Goel,Rutgers University,ccs,1.0,0.33333,2024
+Aarushi Goel,Rutgers University,crypto,1.0,0.25,2018
+Aarushi Goel,Rutgers University,crypto,1.0,0.2,2021
+Aarushi Goel,Rutgers University,crypto,1.0,0.125,2023
+Aarushi Goel,Rutgers University,crypto,1.0,0.33333,2024
+Aarushi Goel,Rutgers University,crypto,2.0,0.53333,2025
+Aarushi Goel,Rutgers University,eurocrypt,1.0,0.25,2019
+Aarushi Goel,Rutgers University,eurocrypt,1.0,0.25,2021
+Aarushi Goel,Rutgers University,eurocrypt,2.0,0.5,2022
+Aarushi Goel,Rutgers University,eurocrypt,1.0,0.25,2023
+Aarushi Goel,Rutgers University,pets,1.0,0.25,2022
+Aarushi Goel,Rutgers University,pets,1.0,0.2,2024
+Aarushi Goel,Rutgers University,usenixsec,1.0,0.2,2023
 Aasa Feragen,DTU,cvpr,1.0,0.33333,2014
 Aasa Feragen,DTU,cvpr,1.0,0.33333,2015
 Aasa Feragen,DTU,cvpr,1.0,0.5,2018
@@ -66571,16 +66571,39 @@ Feng Zhang 0007,Renmin University of China,vldb,1.0,0.14286,2022
 Feng Zhang 0007,Renmin University of China,vldb,3.0,0.31591,2024
 Feng Zhang 0007,Renmin University of China,vldb,2.0,0.325,2025
 Feng Zhang 0007,Renmin University of China,www,1.0,0.16667,2022
-Feng Zheng,SUSTech,aaai,1.0,0.11111,2025
-Feng Zheng,SUSTech,cvpr,1.0,0.2,2024
-Feng Zheng,SUSTech,emnlp,1.0,0.11111,2024
-Feng Zheng,SUSTech,iclr,1.0,0.16667,2025
-Feng Zheng,SUSTech,icra,1.0,0.16667,2018
-Feng Zheng,SUSTech,ijcai,1.0,0.2,2020
-Feng Zheng,SUSTech,iros,1.0,0.16667,2018
-Feng Zheng,SUSTech,nips,1.0,0.16667,2024
-Feng Zheng,SUSTech,uist,1.0,0.125,2009
-Feng Zheng,SUSTech,uist,1.0,0.25,2015
+Feng Zheng 0001,SUSTech,aaai,2.0,0.83333,2018
+Feng Zheng 0001,SUSTech,aaai,2.0,0.26786,2020
+Feng Zheng 0001,SUSTech,aaai,5.0,0.96905,2021
+Feng Zheng 0001,SUSTech,aaai,3.0,0.50952,2022
+Feng Zheng 0001,SUSTech,aaai,2.0,0.28571,2023
+Feng Zheng 0001,SUSTech,aaai,3.0,0.48611,2024
+Feng Zheng 0001,SUSTech,cvpr,1.0,0.16667,2018
+Feng Zheng 0001,SUSTech,cvpr,3.0,0.575,2019
+Feng Zheng 0001,SUSTech,cvpr,3.0,0.41071,2020
+Feng Zheng 0001,SUSTech,cvpr,2.0,0.30952,2021
+Feng Zheng 0001,SUSTech,cvpr,3.0,0.47778,2022
+Feng Zheng 0001,SUSTech,cvpr,3.0,0.54286,2023
+Feng Zheng 0001,SUSTech,cvpr,1.0,0.16667,2025
+Feng Zheng 0001,SUSTech,eccv,1.0,0.14286,2020
+Feng Zheng 0001,SUSTech,eccv,3.0,0.5,2022
+Feng Zheng 0001,SUSTech,eccv,3.0,0.55,2024
+Feng Zheng 0001,SUSTech,iccv,5.0,0.78571,2021
+Feng Zheng 0001,SUSTech,iccv,4.0,0.7,2023
+Feng Zheng 0001,SUSTech,iclr,1.0,0.2,2023
+Feng Zheng 0001,SUSTech,iclr,1.0,0.14286,2024
+Feng Zheng 0001,SUSTech,iclr,1.0,0.11111,2025
+Feng Zheng 0001,SUSTech,icml,1.0,0.14286,2022
+Feng Zheng 0001,SUSTech,icml,1.0,0.14286,2023
+Feng Zheng 0001,SUSTech,icml,1.0,0.16667,2025
+Feng Zheng 0001,SUSTech,ijcai,1.0,0.5,2016
+Feng Zheng 0001,SUSTech,ijcai,1.0,0.33333,2018
+Feng Zheng 0001,SUSTech,ijcai,4.0,0.7873,2019
+Feng Zheng 0001,SUSTech,ijcai,1.0,0.16667,2020
+Feng Zheng 0001,SUSTech,ijcai,1.0,0.16667,2021
+Feng Zheng 0001,SUSTech,ijcai,1.0,0.2,2024
+Feng Zheng 0001,SUSTech,nips,1.0,0.16667,2020
+Feng Zheng 0001,SUSTech,nips,1.0,0.125,2022
+Feng Zheng 0001,SUSTech,nips,1.0,0.125,2023
 Feng Zhu 0006,UESTC,aaai,1.0,0.2,2020
 Feng Zhu 0006,UESTC,aaai,1.0,0.125,2021
 Feng Zhu 0006,UESTC,acl,1.0,0.125,2025
