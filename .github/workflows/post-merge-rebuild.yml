@@ -1,0 +1,76 @@
+name: Run Make and Commit Changes
+
+on:
+  push:
+    branches:
+      - gh-pages  # Runs only on merge to the main branch
+
+permissions:
+  contents: write  # Required to push changes back
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install TypeScript
+        run: npm install -g typescript
+
+      - name: Compile TypeScript
+        run: tsc --project tsconfig.json
+
+      - name: Install test dependencies
+        run: pip install pytest selenium webdriver-manager
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Run tests
+        run: python3 -m pytest test/ -v
+
+  build-and-commit:
+    runs-on: ubuntu-latest
+    needs: test  # Only run after tests pass
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # Required to push back
+
+      - name: Set up Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          npm install -g google-closure-compiler
+
+      - name: Run make
+        run: |
+          make
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-commit: results of running make after merge"
+            git push
+          fi
