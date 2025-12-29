@@ -27,16 +27,16 @@ namespace CSRankings {
 
     /* Add event listeners for dropdown changes */
     export function addDropdownListeners(callbacks: EventCallbacks): void {
-        ["toyear", "fromyear", "regions"].forEach((key) => {
-            const widget = document.getElementById(key);
-            widget!.addEventListener("change", () => {
-                // Year/region change invalidates the incremental cache
-                callbacks.invalidateIncrementalCache();
-                callbacks.recomputeAuthorAreas();
-                callbacks.rank();
-                // Track user interaction for sponsorship
-                recordUserInteraction();
-            });
+        // Note: year selects are now hidden and managed by the year slider (year-slider.ts)
+        // Only add listener for regions dropdown
+        const regionsWidget = document.getElementById("regions");
+        regionsWidget!.addEventListener("change", () => {
+            // Region change invalidates the incremental cache
+            callbacks.invalidateIncrementalCache();
+            callbacks.recomputeAuthorAreas();
+            callbacks.rank();
+            // Track user interaction for sponsorship
+            recordUserInteraction();
         });
         // Chart type doesn't affect data, just visualization
         const charttypeWidget = document.getElementById("charttype");
