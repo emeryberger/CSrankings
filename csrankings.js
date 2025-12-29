@@ -440,7 +440,7 @@ var CSRankings;
     }
     CSRankings.loadACMFellow = loadACMFellow;
     /* Load country/region information for institutions */
-    function loadCountryInfo(countryInfo, countryAbbrv) {
+    function loadCountryInfo(countryInfo, countryAbbrv, institutionHomepages) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
                 Papa.parse(CSRankings.countryinfoFile, {
@@ -455,6 +455,9 @@ var CSRankings;
             for (const info of ci) {
                 countryInfo[info.institution] = info.region;
                 countryAbbrv[info.institution] = info.countryabbrv;
+                if (institutionHomepages && info.homepage) {
+                    institutionHomepages[info.institution] = info.homepage;
+                }
             }
         });
     }
@@ -983,13 +986,13 @@ var CSRankings;
         for (const name of keys) {
             const homePage = encodeURI(homepages[name]);
             const dblpName = dblpAuthors[name];
-            p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+            p += `<tr class="faculty-row" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
                 + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                + `onclick="event.stopPropagation(); trackOutboundLink('${homePage}', true); return false;"`
                 + `>${name}</a>&nbsp;`;
             if (note.hasOwnProperty(name)) {
                 const url = CSRankings.noteMap[note[name]];
-                const href = `<a href="${url}">`;
+                const href = `<a href="${url}" onclick="event.stopPropagation();">`;
                 p += `<span class="note" title="Note">[${href + note[name]}</a>]</span>&nbsp;`;
             }
             if (acmfellow.hasOwnProperty(name)) {
@@ -1001,25 +1004,25 @@ var CSRankings;
             const areaStr = areaStringFn(name);
             p += `<span class="areaname">${areaStr.toLowerCase()}</span>&nbsp;`;
             p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
+                + `onclick="event.stopPropagation(); trackOutboundLink(\'${homePage}\', true); return false;"`
                 + '>'
                 + `<img alt=\"Home page\" src=\"${CSRankings.homepageImage}\"></a>&nbsp;`;
             if (scholarInfo.hasOwnProperty(name)) {
                 if (scholarInfo[name] != "NOSCHOLARPAGE") {
                     const url = `https://scholar.google.com/citations?user=${scholarInfo[name]}&hl=en&oi=ao`;
-                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
+                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="event.stopPropagation(); trackOutboundLink('${url}', true); return false;">`
                         + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
                 }
             }
-            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
+            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">`;
             p += '<img alt="DBLP" src="dblp.png">'
                 + '</a>';
-            p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
             p += ChartIcon + "</span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
                 + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
-                + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
+                + `onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
                 + "</small></td>"
                 + '<td align="right"><small>'
                 + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
@@ -1034,7 +1037,7 @@ var CSRankings;
     }
     CSRankings.buildFacultyHTML = buildFacultyHTML;
     /* Build the main output ranking table */
-    function buildOutputString(numAreas, countryAbbrv, countryNames, deptCounts, univtext, stats, useDenseRankings, ChartIcon) {
+    function buildOutputString(numAreas, countryAbbrv, countryNames, deptCounts, univtext, stats, useDenseRankings, ChartIcon, institutionHomepages) {
         var _a;
         let s = CSRankings.makePrologue();
         /* Show the top N (with more if tied at the end) */
@@ -1084,7 +1087,7 @@ var CSRankings;
                 s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
                 s += "</td>";
                 s += "<td>"
-                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget">`
+                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget" title="Click to show/hide faculty">`
                     + CSRankings.RightTriangle
                     + "</span>";
                 let abbrv = "us";
@@ -1092,9 +1095,16 @@ var CSRankings;
                     abbrv = countryAbbrv[dept];
                 }
                 const country = (_a = countryNames[abbrv.toUpperCase()]) !== null && _a !== void 0 ? _a : abbrv.toUpperCase();
-                s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
+                // Institution name always toggles faculty list
+                let deptDisplay = `<span onclick="csr.toggleFaculty('${esc}');" style="cursor:pointer;" title="Click to show/hide faculty">${dept}</span>`;
+                // Add home icon if institution has a homepage
+                const instHomepage = institutionHomepages && institutionHomepages[dept];
+                if (instHomepage) {
+                    deptDisplay += `&nbsp;<a href="${encodeURI(instHomepage)}" target="_blank" onclick="event.stopPropagation(); trackOutboundLink('${encodeURI(instHomepage)}', true);" title="Visit ${dept} CS department"><img alt="Homepage" src="${CSRankings.homepageImage}" style="opacity:0.7;"></a>`;
+                }
+                s += "&nbsp;" + deptDisplay
                     + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
-                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
                     + ChartIcon + "</span>";
                 s += "</td>";
                 s += `<td align="right">${(Math.round(10.0 * v) / 10.0).toFixed(1)}</td>`;
@@ -1573,6 +1583,14 @@ var CSRankings;
             Object.keys(params).forEach((key) => {
                 $(`#${key}`).prop('value', params[key].toString());
             });
+            // Sync year slider if it exists
+            if (params['fromyear'] && params['toyear']) {
+                const fromYear = parseInt(params['fromyear']);
+                const toYear = parseInt(params['toyear']);
+                if (typeof CSRankings.setYearSliderValues === 'function') {
+                    CSRankings.setYearSliderValues(fromYear, toYear);
+                }
+            }
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
         clearNonSubsetted(invalidateCheckboxCache);
@@ -2044,16 +2062,16 @@ var CSRankings;
 (function (CSRankings) {
     /* Add event listeners for dropdown changes */
     function addDropdownListeners(callbacks) {
-        ["toyear", "fromyear", "regions"].forEach((key) => {
-            const widget = document.getElementById(key);
-            widget.addEventListener("change", () => {
-                // Year/region change invalidates the incremental cache
-                callbacks.invalidateIncrementalCache();
-                callbacks.recomputeAuthorAreas();
-                callbacks.rank();
-                // Track user interaction for sponsorship
-                CSRankings.recordUserInteraction();
-            });
+        // Note: year selects are now hidden and managed by the year slider (year-slider.ts)
+        // Only add listener for regions dropdown
+        const regionsWidget = document.getElementById("regions");
+        regionsWidget.addEventListener("change", () => {
+            // Region change invalidates the incremental cache
+            callbacks.invalidateIncrementalCache();
+            callbacks.recomputeAuthorAreas();
+            callbacks.rank();
+            // Track user interaction for sponsorship
+            CSRankings.recordUserInteraction();
         });
         // Chart type doesn't affect data, just visualization
         const charttypeWidget = document.getElementById("charttype");
@@ -2137,6 +2155,114 @@ var CSRankings;
     CSRankings.addAllListeners = addAllListeners;
 })(CSRankings || (CSRankings = {}));
 /*
+  CSRankings - Year Range Slider
+
+  Initialization and management of the year range slider using noUiSlider.
+*/
+var CSRankings;
+(function (CSRankings) {
+    let yearSliderInstance = null;
+    const MIN_YEAR = 1970;
+    const MAX_YEAR = 2025;
+    const DEFAULT_FROM_YEAR = 2015;
+    const DEFAULT_TO_YEAR = 2025;
+    /* Initialize the year range slider */
+    function initYearSlider(onChangeCallback) {
+        const sliderElement = document.getElementById('year-slider');
+        if (!sliderElement) {
+            console.error('Year slider element not found');
+            return;
+        }
+        // Get initial values from hidden selects (for URL param support)
+        const fromYearSelect = document.getElementById('fromyear');
+        const toYearSelect = document.getElementById('toyear');
+        let initialFrom = DEFAULT_FROM_YEAR;
+        let initialTo = DEFAULT_TO_YEAR;
+        if (fromYearSelect && fromYearSelect.value) {
+            initialFrom = parseInt(fromYearSelect.value) || DEFAULT_FROM_YEAR;
+        }
+        if (toYearSelect && toYearSelect.value) {
+            initialTo = parseInt(toYearSelect.value) || DEFAULT_TO_YEAR;
+        }
+        // Create the slider
+        noUiSlider.create(sliderElement, {
+            start: [initialFrom, initialTo],
+            connect: true,
+            range: {
+                'min': MIN_YEAR,
+                'max': MAX_YEAR
+            },
+            step: 1,
+            behaviour: 'tap-drag'
+        });
+        yearSliderInstance = sliderElement.noUiSlider;
+        // Update displays and hidden selects on slide
+        yearSliderInstance.on('update', (values, _handle) => {
+            const fromYear = Math.round(parseFloat(values[0]));
+            const toYear = Math.round(parseFloat(values[1]));
+            // Update display elements
+            const fromDisplay = document.getElementById('year-display-from');
+            const toDisplay = document.getElementById('year-display-to');
+            if (fromDisplay)
+                fromDisplay.textContent = fromYear.toString();
+            if (toDisplay)
+                toDisplay.textContent = toYear.toString();
+        });
+        // Trigger callback only on change (when user releases)
+        yearSliderInstance.on('change', (values, _handle) => {
+            const fromYear = Math.round(parseFloat(values[0]));
+            const toYear = Math.round(parseFloat(values[1]));
+            // Update hidden selects for URL compatibility
+            updateHiddenSelect('fromyear', fromYear);
+            updateHiddenSelect('toyear', toYear);
+            // Trigger the callback
+            onChangeCallback();
+        });
+    }
+    CSRankings.initYearSlider = initYearSlider;
+    /* Update hidden select element, adding option if needed */
+    function updateHiddenSelect(selectId, value) {
+        const select = document.getElementById(selectId);
+        if (!select)
+            return;
+        // Check if option exists, if not create it
+        let option = select.querySelector(`option[value="${value}"]`);
+        if (!option) {
+            option = document.createElement('option');
+            option.value = value.toString();
+            option.textContent = value.toString();
+            select.appendChild(option);
+        }
+        select.value = value.toString();
+    }
+    /* Set slider values programmatically (for URL navigation) */
+    function setYearSliderValues(fromYear, toYear) {
+        if (yearSliderInstance) {
+            yearSliderInstance.set([fromYear, toYear]);
+        }
+        // Also update displays
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay)
+            fromDisplay.textContent = fromYear.toString();
+        if (toDisplay)
+            toDisplay.textContent = toYear.toString();
+    }
+    CSRankings.setYearSliderValues = setYearSliderValues;
+    /* Get current slider values */
+    function getYearSliderValues() {
+        if (yearSliderInstance) {
+            const values = yearSliderInstance.get();
+            return {
+                fromYear: Math.round(parseFloat(values[0])),
+                toYear: Math.round(parseFloat(values[1]))
+            };
+        }
+        return { fromYear: DEFAULT_FROM_YEAR, toYear: DEFAULT_TO_YEAR };
+    }
+    CSRankings.getYearSliderValues = getYearSliderValues;
+})(CSRankings || (CSRankings = {}));
+/*
   CSRankings - Main Application
 
   The main App class that orchestrates the ranking system.
@@ -2175,6 +2301,8 @@ var CSRankings;
             this.countryNames = {};
             /* Map institution to (non-US) abbreviation. */
             this.countryAbbrv = {};
+            /* Map institution to homepage URL. */
+            this.institutionHomepages = {};
             /* Map name to home page. */
             this.homepages = {};
             /* Set to true for "dense rankings" vs. "competition rankings". */
@@ -2302,7 +2430,7 @@ var CSRankings;
                     CSRankings.loadACMFellow(this.acmfellow),
                     CSRankings.loadAuthorInfo(this.dblpAuthors, this.homepages, this.scholarInfo, this.note),
                     CSRankings.loadAuthors().then(authors => { this.authors = authors; }),
-                    CSRankings.loadCountryInfo(this.countryInfo, this.countryAbbrv),
+                    CSRankings.loadCountryInfo(this.countryInfo, this.countryAbbrv, this.institutionHomepages),
                     CSRankings.loadCountryNames(this.countryNames)
                 ]);
                 console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
@@ -2311,6 +2439,13 @@ var CSRankings;
                     '/index': (params, query) => this.navigation(params, query),
                     '/fromyear/:fromyear/toyear/:toyear/index': (params, query) => this.navigation(params, query)
                 }).resolve();
+                // Initialize year slider after URL params are applied
+                CSRankings.initYearSlider(() => {
+                    this.invalidateIncrementalCache();
+                    this.recomputeAuthorAreas();
+                    this.rank();
+                    CSRankings.recordUserInteraction();
+                });
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 CSRankings.geoCheck(() => this.rank());
@@ -2484,7 +2619,7 @@ var CSRankings;
             }
             const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
             /* Start building up the string to output. */
-            const s = CSRankings.buildOutputString(numAreas, this.countryAbbrv, this.countryNames, deptCounts, univtext, this.stats, this.useDenseRankings, this.ChartIcon);
+            const s = CSRankings.buildOutputString(numAreas, this.countryAbbrv, this.countryNames, deptCounts, univtext, this.stats, this.useDenseRankings, this.ChartIcon, this.institutionHomepages);
             let stop = performance.now();
             console.log(`Before render: rank took ${(stop - start)} milliseconds.`);
             /* Finally done. Redraw! */
