@@ -133,7 +133,7 @@ namespace CSRankings {
                 title: 'Welcome to CSRankings',
                 text: `
                     <p>Looking for a PhD in Computer Science? You're in the right place.</p>
-                    <p>This site helps you find <strong>research-active faculty</strong> in your area of interest - which matters more than school rankings.</p>
+                    <p>This site helps you find <strong>research-active faculty</strong> in your area of interest.</p>
                 `,
                 buttons: [
                     {
