@@ -165,7 +165,7 @@ optgroup:not(:first-child) {
 }
 
 @media (max-width: 576px) {
-  .area-indicators {
+  .rank-controls-sponsor {
     display: none;
   }
 }
