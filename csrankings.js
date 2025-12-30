@@ -1636,6 +1636,10 @@ var CSRankings;
         });
         if (foundPie) {
             $("#charttype").val("pie");
+            // Sync the custom dropdown
+            if (typeof CSRankings.syncChartDropdown === 'function') {
+                CSRankings.syncChartDropdown();
+            }
         }
         if (foundAll) {
             // Set everything.
@@ -2342,30 +2346,27 @@ var CSRankings;
 */
 var CSRankings;
 (function (CSRankings) {
-    // Continent regions that should have no icon (empty placeholder)
-    const continentRegions = {
-        'northamerica': true,
-        'southamerica': true,
-        'europe': true,
-        'asia': true,
-        'africa': true,
-        'australasia': true
+    // Globe icons for multi-country regions (centered on appropriate region)
+    const regionGlobeIcons = {
+        'northamerica': 'globe-americas',
+        'southamerica': 'globe-americas',
+        'europe': 'globe-europe-africa',
+        'africa': 'globe-europe-africa',
+        'asia': 'globe-asia-australia',
+        'australasia': 'globe-asia-australia',
+        'world': 'globe-world'
     };
     // Generate icon HTML based on region type
     function getRegionIcon(region) {
-        if (region === 'world') {
-            // Globe icon for "the world"
-            return `<span class="region-globe-icon" title="World"></span>`;
-        }
-        else if (continentRegions[region]) {
-            // Empty placeholder for continents
-            return `<span class="region-empty-icon"></span>`;
+        if (regionGlobeIcons[region]) {
+            const iconFile = regionGlobeIcons[region];
+            return `<img src="/flags/${iconFile}.png" alt="${region}" class="region-globe-img">`;
         }
         return '';
     }
-    // Check if region is multi-country (no flag)
+    // Check if region is multi-country (uses globe icon)
     function isMultiCountryRegion(value) {
-        return value === 'world' || continentRegions[value] === true;
+        return regionGlobeIcons[value] !== undefined;
     }
     function initRegionDropdown() {
         const select = document.getElementById('regions');
@@ -2453,7 +2454,6 @@ var CSRankings;
     }
     CSRankings.initRegionDropdown = initRegionDropdown;
     function updateRegionDisplay(select, textEl, flagEl) {
-        var _a, _b, _c, _d;
         const selected = select.options[select.selectedIndex];
         if (!selected)
             return;
@@ -2462,26 +2462,10 @@ var CSRankings;
         if (textEl)
             textEl.textContent = text;
         if (flagEl) {
-            // Remove any existing icon elements
-            const existingGlobe = (_a = flagEl.parentElement) === null || _a === void 0 ? void 0 : _a.querySelector('.region-globe-icon');
-            const existingEmpty = (_b = flagEl.parentElement) === null || _b === void 0 ? void 0 : _b.querySelector('.region-empty-icon');
-            if (existingGlobe)
-                existingGlobe.remove();
-            if (existingEmpty)
-                existingEmpty.remove();
-            if (value === 'world') {
-                // World - show globe icon
-                flagEl.style.display = 'none';
-                const globeIcon = document.createElement('span');
-                globeIcon.className = 'region-globe-icon';
-                (_c = flagEl.parentElement) === null || _c === void 0 ? void 0 : _c.insertBefore(globeIcon, flagEl);
-            }
-            else if (continentRegions[value]) {
-                // Continent - show empty placeholder
-                flagEl.style.display = 'none';
-                const emptyIcon = document.createElement('span');
-                emptyIcon.className = 'region-empty-icon';
-                (_d = flagEl.parentElement) === null || _d === void 0 ? void 0 : _d.insertBefore(emptyIcon, flagEl);
+            if (regionGlobeIcons[value]) {
+                // Multi-country region - show globe icon
+                flagEl.src = `/flags/${regionGlobeIcons[value]}.png`;
+                flagEl.style.display = 'block';
             }
             else {
                 // Country - show flag
@@ -2506,6 +2490,89 @@ var CSRankings;
         });
     }
     CSRankings.syncRegionDropdown = syncRegionDropdown;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Custom Chart Type Dropdown
+
+  Creates a custom dropdown for chart type selection with icons.
+  Syncs with the hidden original select for compatibility.
+*/
+var CSRankings;
+(function (CSRankings) {
+    const chartIcons = {
+        'bar': 'png/barchart.png',
+        'pie': 'png/piechart.png'
+    };
+    function initChartDropdown() {
+        const select = document.getElementById('charttype');
+        const selectedDiv = document.getElementById('chart-selected');
+        const optionsDiv = document.getElementById('chart-options');
+        const selectedText = document.getElementById('chart-selected-text');
+        const selectedIcon = document.getElementById('chart-selected-icon');
+        if (!select || !selectedDiv || !optionsDiv) {
+            return;
+        }
+        // Toggle dropdown open/closed
+        selectedDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            optionsDiv.classList.toggle('open');
+        });
+        // Close when clicking outside
+        document.addEventListener('click', () => {
+            optionsDiv.classList.remove('open');
+        });
+        // Handle option selection
+        optionsDiv.addEventListener('click', (e) => {
+            var _a;
+            const target = e.target.closest('.chart-option');
+            if (!target)
+                return;
+            const value = target.getAttribute('data-value');
+            if (!value)
+                return;
+            // Update the hidden select
+            select.value = value;
+            // Update the visible selected display
+            const text = ((_a = target.querySelector('span')) === null || _a === void 0 ? void 0 : _a.textContent) || value;
+            if (selectedText)
+                selectedText.textContent = text;
+            if (selectedIcon && chartIcons[value]) {
+                selectedIcon.src = chartIcons[value];
+            }
+            // Update selected state in options
+            optionsDiv.querySelectorAll('.chart-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            target.classList.add('selected');
+            // Close the dropdown
+            optionsDiv.classList.remove('open');
+            // Trigger change event on the select
+            select.dispatchEvent(new Event('change'));
+        });
+    }
+    CSRankings.initChartDropdown = initChartDropdown;
+    // Sync custom dropdown when select changes programmatically
+    function syncChartDropdown() {
+        const select = document.getElementById('charttype');
+        const selectedText = document.getElementById('chart-selected-text');
+        const selectedIcon = document.getElementById('chart-selected-icon');
+        const optionsDiv = document.getElementById('chart-options');
+        if (!select || !optionsDiv)
+            return;
+        const value = select.value;
+        const selectedOption = select.options[select.selectedIndex];
+        const text = (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.textContent) || value;
+        if (selectedText)
+            selectedText.textContent = text;
+        if (selectedIcon && chartIcons[value]) {
+            selectedIcon.src = chartIcons[value];
+        }
+        // Update selected state in options
+        optionsDiv.querySelectorAll('.chart-option').forEach(opt => {
+            opt.classList.toggle('selected', opt.getAttribute('data-value') === value);
+        });
+    }
+    CSRankings.syncChartDropdown = syncChartDropdown;
 })(CSRankings || (CSRankings = {}));
 /*
   CSRankings - Main Application
@@ -2693,6 +2760,8 @@ var CSRankings;
                 });
                 // Initialize custom region dropdown with flags
                 CSRankings.initRegionDropdown();
+                // Initialize custom chart type dropdown with icons
+                CSRankings.initChartDropdown();
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 CSRankings.geoCheck(() => this.rank());
