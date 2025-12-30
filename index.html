@@ -266,28 +266,23 @@
           <h1>CSRankings: Computer Science Rankings</h1>
 
 	  <div class="panel panel-info intro-panel">
-	    <div class="panel-heading">
-	      <p>
-		CSRankings is a metrics-based ranking of top computer
-		science institutions around the world.
-		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to expand
-		areas or institutions. <b>Click on a name</b> to go to a
-		faculty member's home page. <b>Click on a chart icon</b> (the
-		<img class="chart_icon" alt="chart icon" src="png/barchart.png" title="Click to see publication distribution">
-		after a name or institution) to see the distribution of
-		their publication areas as a <span class="custom-chart-dropdown" id="custom-chart-dropdown" title="Choose chart visualization style"><span class="chart-selected" id="chart-selected"><img src="png/barchart.png" alt="bar" class="chart-icon" id="chart-selected-icon"><span id="chart-selected-text">bar chart</span><span class="chart-arrow">&#9662;</span></span><span class="chart-options" id="chart-options"><span class="chart-option selected" data-value="bar"><img src="png/barchart.png" alt="bar"><span>bar chart</span></span><span class="chart-option" data-value="pie"><img src="png/piechart.png" alt="pie"><span>pie chart</span></span></span></span><select id="charttype" style="display:none;" title="Choose chart visualization style">
-			<option value="bar">bar chart</option>
-			<option value="pie">pie chart</option>
-		</select>. <b>Click on a
-		  Google Scholar icon</b>
-		(<img src="scholar-favicon.ico" alt="Google Scholar"
-		      height="10" width="10" title="View Google Scholar profile">) to see publications,
-		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png" title="View DBLP bibliography">) to
-		go to a DBLP entry.
-		<em><a href="advice.html">Applying to grad school? Read this first.</a></em>
-		For info on grad stipends, check out <a href="https://csstipendrankings.org/">CSStipendRankings.org</a>. For publication statistics on CSrankings conferences, see <a href="https://csconferences.org/">CSconferences.org</a>.
-		<b>If you find CSrankings useful, <a href="https://github.com/sponsors/csrankings">consider sponsoring CSrankings</a>.</b>
+	    <div class="panel-heading" style="position:relative; padding-right:50px;">
+	      <a href="https://github.com/emeryberger/CSRankings" target="_blank" title="View on GitHub" style="position:absolute; top:10px; right:15px; padding:5px;"><svg height="24" width="24" viewBox="0 0 16 16" fill="#333"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+	      <p style="margin-bottom:5px;">
+		CSRankings is a metrics-based ranking of top computer science institutions based on faculty publications at selective conferences.
 	      </p>
+	      <p style="margin-bottom:0;">
+		<a href="advice.html"><b>Advice for prospective grad students</b></a> ·
+		<a href="https://csconferences.org/" title="Publication statistics for CS conferences"><b>CSConferences</b></a> ·
+		<a href="https://csstipendrankings.org/" title="Compare PhD stipends across CS programs"><b>CSStipendRankings</b></a> ·
+		<a href="faq.html"><b>FAQ</b></a>
+	      </p>
+	      <!-- Hidden elements for chart type (used by JS) -->
+	      <span class="custom-chart-dropdown" id="custom-chart-dropdown" style="display:none;" title="Choose chart visualization style"><span class="chart-selected" id="chart-selected"><img src="png/barchart.png" alt="bar" class="chart-icon" id="chart-selected-icon"><span id="chart-selected-text">bar chart</span><span class="chart-arrow">&#9662;</span></span><span class="chart-options" id="chart-options"><span class="chart-option selected" data-value="bar"><img src="png/barchart.png" alt="bar"><span>bar chart</span></span><span class="chart-option" data-value="pie"><img src="png/piechart.png" alt="pie"><span>pie chart</span></span></span></span>
+	      <select id="charttype" style="display:none;" title="Choose chart visualization style">
+		<option value="bar">bar chart</option>
+		<option value="pie">pie chart</option>
+	      </select>
 	    </div>
 	  </div>
 
@@ -1939,44 +1934,14 @@
 	  
 	  <div class="page-footer">
 	    <p>
-	      <br />
-	      This ranking is
-	      designed to identify institutions and faculty actively
-	      engaged in research across a number of areas of
-	      computer science, based on the number of publications
-	      by faculty that have appeared at the most selective
-	      conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
+	      Publication data from <a target="_blank" href="https://dblp.org/">DBLP</a> (December 2025) ·
+	      <a target="_blank" href="https://github.com/emeryberger/CSRankings">Contribute via GitHub</a> (<a target="_blank" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository">how to</a>) ·
+	      With generous support from <a href="https://www.cs.stonybrook.edu/">Stony Brook University</a> and our <a href="https://github.com/sponsors/CSrankings">other sponsors</a>
 	    </p>
-
-	    <p>
-	      <b>We gratefully acknowledge the generous support of our sponsors, including <a href="https://www.cs.stonybrook.edu/">Stony Brook University</a></b>. <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');">Sponsor CSrankings</button>
-	    </p>
-	    
-	    <p>
-	      <center>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/hOSl3xPmHiQ?rel=0&amp;start=231" frameborder="0" allow="encrypted-media" allowfullscreen>
-		</iframe>
-		<span width="560">
-		  <br />
-		  <b>New to CSrankings?</b>
-		  <b><a href="https://www.youtube.com/watch?v=hOSl3xPmHiQ&feature=youtu.be&t=3m51s">
-		      Watch this video</a></b>
-		  to learn how to use CSrankings.
-		</div>
-	      </center>
-	    </p>
-	    
-<p>
-  <em>Prominent mentions of CSrankings:</em> CMU (<a href="https://www.facebook.com/mldcmu/photos/a.1951141291831706.1073741828.1950839991861836/2031085493837285/?type=3&theater">1</a>, <a href="http://www.cbd.cmu.edu/carnegie-mellon-ranked-first-in-publications-in-highly-selective-computational-biology-conferences/">2</a>) | <a href="http://edinburghnlp.inf.ed.ac.uk/">Edinburgh</a> | <a href="https://cse.engin.umich.edu/about/by-the-numbers/">Michigan</a> | <a href="https://www.cs.rutgers.edu/">Rutgers</a> | <a href="https://www.technion.ac.il/en/blog/prospects-and-risks-from-the-forefront-of-ai/">Technion</a> | <a href="https://www.facebook.com/yann.lecun/posts/10154886059272143">Yann LeCun</a> | <a href="https://blog.regehr.org/archives/1558">John Regehr</a> | <a href="http://www.theexclusive.org/2017/11/cs-rankings.html">Charles Sutton</a>
-</p>
-
-<p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (last update December 2025). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
-	      
-	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
-	    <p>
-	      <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://emeryberger.com/" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/" href="https://github.com/emeryberger/CSrankings" rel="dct:source">https://github.com/emeryberger/CSrankings</a>.
-	    </p>
+	    <p class="text-muted" style="font-size: 0.85em;">
+	      <a href="https://emeryberger.com/">Emery Berger</a> ·
+	      <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> ·
+	      <a href="http://gotorankings.org/">GOTO ranking</a>
 	    </p>
 	  </div>
 	</div>

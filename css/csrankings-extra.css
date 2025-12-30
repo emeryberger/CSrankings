@@ -693,3 +693,18 @@ optgroup:not(:first-child) {
     padding: 1px 3px;
   }
 }
+
+/* ============================================
+   Footer Styles
+   ============================================ */
+
+.page-footer {
+  margin-top: 2em;
+  padding: 1em 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.page-footer p {
+  margin-bottom: 0.5em;
+}
