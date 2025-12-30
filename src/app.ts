@@ -229,6 +229,8 @@ namespace CSRankings {
                     this.rank();
                     recordUserInteraction();
                 });
+                // Initialize custom region dropdown with flags
+                initRegionDropdown();
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 geoCheck(() => this.rank());
@@ -502,6 +504,9 @@ namespace CSRankings {
 
             stop = performance.now();
             console.log(`Rank took ${(stop - start)} milliseconds.`);
+
+            // Update area selection indicators in the sticky banner
+            updateAreaIndicators();
 
             return false;
         }
