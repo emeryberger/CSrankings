@@ -742,3 +742,126 @@ optgroup:not(:first-child) {
 .sponsors-avatars a:hover img {
   border-color: #337ab7;
 }
+
+/* ============================================
+   Skeleton Loading States
+   ============================================ */
+
+.skeleton-loading {
+  padding: 20px;
+}
+
+.skeleton-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skeleton-row:nth-child(odd) {
+  background: #fafafa;
+}
+
+.skeleton-rank {
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 3px;
+  margin-right: 15px;
+}
+
+.skeleton-name {
+  flex: 1;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 3px;
+  max-width: 250px;
+}
+
+.skeleton-score {
+  width: 50px;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-header {
+  display: flex;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.skeleton-header-item {
+  height: 16px;
+  background: #d0d0d0;
+  border-radius: 3px;
+}
+
+.skeleton-header-item:first-child {
+  width: 30px;
+  margin-right: 15px;
+}
+
+.skeleton-header-item:nth-child(2) {
+  flex: 1;
+  max-width: 120px;
+}
+
+.skeleton-header-item:last-child {
+  width: 50px;
+  margin-left: 20px;
+}
+
+/* ============================================
+   Mobile Responsive Improvements
+   ============================================ */
+
+/* Touch-friendly year slider - only for touch devices */
+@media (pointer: coarse) {
+  .year-slider .noUi-handle {
+    width: 28px !important;
+    height: 28px !important;
+    right: -14px !important;
+    top: -10px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    border: 2px solid #333 !important;
+    box-sizing: border-box !important;
+    cursor: pointer;
+  }
+
+  /* Hide the default handle lines */
+  .year-slider .noUi-handle:before,
+  .year-slider .noUi-handle:after {
+    display: none !important;
+  }
+
+  .year-slider .noUi-touch-area {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+  }
+
+  .year-slider-container {
+    padding: 10px 5px;
+  }
+
+  .year-slider {
+    margin: 0 15px;
+  }
+}
