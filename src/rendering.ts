@@ -122,7 +122,7 @@ namespace CSRankings {
         let s = makePrologue();
         /* Show the top N (with more if tied at the end) */
 
-        s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
+        s = s + '<thead><tr><th></th><th align="left"><font color="#777">Institution</font>'
             + '&nbsp;'.repeat(20)      /* Hopefully max length of an institution. */
             + '</th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
