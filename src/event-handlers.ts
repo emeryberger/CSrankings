@@ -234,29 +234,9 @@ namespace CSRankings {
         }
     }
 
-    /* Add click listeners to area indicators for toggling */
-    export function addAreaIndicatorListeners(callbacks: EventCallbacks): void {
-        const indicatorActions: { [key: string]: { on: () => void, off: () => void } } = {
-            'ai': { on: callbacks.activateAI, off: callbacks.deactivateAI },
-            'systems': { on: callbacks.activateSystems, off: callbacks.deactivateSystems },
-            'theory': { on: callbacks.activateTheory, off: callbacks.deactivateTheory },
-            'interdisciplinary': { on: callbacks.activateOthers, off: callbacks.deactivateOthers }
-        };
-
-        for (const group in indicatorActions) {
-            const indicator = document.querySelector(`.${group}-indicator`) as HTMLElement;
-            if (indicator) {
-                indicator.addEventListener('click', () => {
-                    // Toggle: if any selected, turn all off; if none selected, turn all on
-                    if (indicator.classList.contains('selection-none')) {
-                        indicatorActions[group].on();
-                    } else {
-                        indicatorActions[group].off();
-                    }
-                    recordUserInteraction();
-                });
-            }
-        }
+    /* Area indicator click handling moved to area-dropdown.ts */
+    export function addAreaIndicatorListeners(_callbacks: EventCallbacks): void {
+        // Click handlers now managed by initAreaDropdowns() in area-dropdown.ts
     }
 
 }
