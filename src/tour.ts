@@ -287,8 +287,8 @@ namespace CSRankings {
                 title: 'Faculty Names Are Links',
                 text: function() {
                     return `
-                    <p>Click any <strong>school name</strong> to expand and see its faculty.</p>
-                    <p>Each faculty <strong>name</strong> is a link to their homepage. You can also click the <img src="png/house-logo.png" alt="home" style="height:14px;vertical-align:middle;"> icon:</p>
+                    <p>Click any <strong>school name</strong> to expand and see its faculty. The <img src="png/house-logo.png" alt="home" style="height:14px;vertical-align:middle;"> icon next to each school takes you to that CS department's website.</p>
+                    <p>Each faculty <strong>name</strong> is a link to their homepage:</p>
                     ${getMockFacultyEntry('name')}
                 `;
                 },
