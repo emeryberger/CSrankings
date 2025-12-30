@@ -289,9 +289,17 @@
 	      <div class="panel-heading">
 	      <div class="rank-controls-flex" id="rank-controls-row">
 		<div class="rank-controls-main">
-		  Rank 
+		  Rank
 		  <label for="regions">institutions in</label>
-		  <select id="regions" name="regions" title="Filter by country, region, or continent">
+		  <div class="custom-region-dropdown" id="custom-region-dropdown" title="Filter by country, region, or continent">
+		    <div class="region-selected" id="region-selected">
+		      <img src="/flags/us.png" alt="" class="region-flag" id="region-selected-flag">
+		      <span id="region-selected-text">USA</span>
+		      <span class="region-arrow">&#9662;</span>
+		    </div>
+		    <div class="region-options" id="region-options"></div>
+		  </div>
+		  <select id="regions" name="regions" style="display:none;" title="Filter by country, region, or continent">
 		    <optgroup label="by country/region">
 		      <option value="ar">Argentina</option>
                       <option value="au">Australia</option>
@@ -413,6 +421,12 @@
 		    <option value="2024">2024</option>
 		    <option selected="selected" value="2025">2025</option>
 		  </select>
+		  <span class="area-indicators" title="Area selection status">
+		    <span class="area-indicator ai-indicator" data-area="ai" title="AI areas: Click to toggle">AI</span>
+		    <span class="area-indicator systems-indicator" data-area="systems" title="Systems areas: Click to toggle">Systems</span>
+		    <span class="area-indicator theory-indicator" data-area="theory" title="Theory areas: Click to toggle">Theory</span>
+		    <span class="area-indicator interdisciplinary-indicator" data-area="interdisciplinary" title="Interdisciplinary areas: Click to toggle">Interdisc.</span>
+		  </span>
 		</div>
 		<div class="rank-controls-sponsor">
 		  <button class="btn-sponsor" onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');" title="Support CSrankings operation">
@@ -502,7 +516,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="vision-widget">&#9658;
+			<span class="hovertip" id="vision-widget" title="Click to show/hide conferences">&#9658;
 			</span>
 			<label for="vision">
 			  Computer vision
@@ -559,7 +573,7 @@
 		    </tr>
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mlmining-widget">
+			<span class="hovertip" id="mlmining-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Machine learning
@@ -631,7 +645,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="nlp-widget">
+			<span class="hovertip" id="nlp-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			<label for="nlp">
@@ -690,7 +704,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="inforet-widget">
+			<span class="hovertip" id="inforet-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			<label for="inforet">
@@ -756,7 +770,7 @@
 
 		    <tr>
 		      <td>   
-			<span class="hovertip" id="arch-widget">
+			<span class="hovertip" id="arch-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer architecture
@@ -818,7 +832,7 @@
 
 		    <tr>
 		      <td>  
-			<span class="hovertip" id="comm-widget">
+			<span class="hovertip" id="comm-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer networks
@@ -860,7 +874,7 @@
 
 		    <tr>
 		      <td>  
-			<span class="hovertip" id="sec-widget">
+			<span class="hovertip" id="sec-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer security
@@ -922,7 +936,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mod-widget">
+			<span class="hovertip" id="mod-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Databases
@@ -985,7 +999,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="da-widget">
+			<span class="hovertip" id="da-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Design automation
@@ -1026,7 +1040,7 @@
 		    
 		    <tr>
 		      <td>
-			<span class="hovertip" id="bed-widget">
+			<span class="hovertip" id="bed-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Embedded &amp; real-time systems&nbsp;&nbsp;
@@ -1075,7 +1089,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="hpc-widget">
+			<span class="hovertip" id="hpc-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			High-performance computing
@@ -1124,7 +1138,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mobile-widget">
+			<span class="hovertip" id="mobile-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Mobile computing
@@ -1173,7 +1187,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="metrics-widget">
+			<span class="hovertip" id="metrics-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Measurement &amp; perf. analysis&nbsp;
@@ -1214,7 +1228,7 @@
 
 		    <tr>
 		      <td>  
-			<span class="hovertip" id="ops-widget">
+			<span class="hovertip" id="ops-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Operating systems
@@ -1287,7 +1301,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="plan-widget">
+			<span class="hovertip" id="plan-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Programming languages
@@ -1352,7 +1366,7 @@
 		    
 		    <tr>
 		      <td>
-			<span class="hovertip" id="soft-widget">
+			<span class="hovertip" id="soft-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Software engineering
@@ -1431,7 +1445,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="act-widget">
+			<span class="hovertip" id="act-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Algorithms &amp; complexity
@@ -1482,7 +1496,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="crypt-widget">
+			<span class="hovertip" id="crypt-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Cryptography
@@ -1524,7 +1538,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="log-widget">
+			<span class="hovertip" id="log-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Logic &amp; verification
@@ -1580,7 +1594,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="bio-widget">
+			<span class="hovertip" id="bio-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Comp. bio &amp; bioinformatics
@@ -1623,7 +1637,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="graph-widget">
+			<span class="hovertip" id="graph-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer graphics
@@ -1682,7 +1696,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="csed-widget">
+			<span class="hovertip" id="csed-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer science education
@@ -1718,7 +1732,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="ecom-widget">
+			<span class="hovertip" id="ecom-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Economics &amp; computation
@@ -1761,7 +1775,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="chi-widget">
+			<span class="hovertip" id="chi-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Human-computer interaction
@@ -1812,7 +1826,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="robotics-widget">
+			<span class="hovertip" id="robotics-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Robotics
@@ -1862,7 +1876,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="visualization-widget">
+			<span class="hovertip" id="visualization-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Visualization

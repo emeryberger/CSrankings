@@ -1,6 +1,43 @@
 # CSRankings UI Improvements
 
+## Pending Tasks
+
+(None at this time)
+
+---
+
 ## Completed Tasks
+
+### 8. Mobile Date Slider Alignment ✓
+Fixed mobile slider alignment so dates stay attached to slider endpoints. Slider now shrinks responsively.
+- Updated CSS media queries to use `flex-wrap: nowrap` and `flex: 1` for slider
+- Added smaller breakpoint (576px) for very small screens
+
+### 9. Sticky Banner Area Selection Indicators ✓
+Added compact area indicators (AI, Systems, Theory, Interdisc.) to the sticky banner showing selection state via opacity:
+- Full opacity = all selected
+- Partial opacity (0.6) = some selected
+- Dimmed (0.25) = none selected
+- Click to toggle all on/off
+- Files: `index.html`, `css/csrankings-extra.css`, `src/event-handlers.ts`, `src/app.ts`
+
+### 10. Location Dropdown Country Flags ✓
+Replaced native select with custom dropdown that displays country flags:
+- Created `src/region-dropdown.ts` for dropdown initialization and sync
+- Added CSS styling for custom dropdown with flag images
+- Individual countries show their national flags
+- Continents (North America, Europe, etc.) show no icon (empty placeholder)
+- "The world" shows a round globe icon
+- Syncs with hidden select for URL compatibility
+
+### 11. Sticky Institution Table Header ✓
+Made the institution ranking table header sticky inside the scrolling container:
+- Added `position: sticky` to thead
+- Changed `border-collapse` to `separate` to enable sticky behavior
+- Header stays visible when scrolling through institutions
+
+### 12. Area Triangle Tooltips ✓
+Added `title="Click to show/hide conferences"` to all area expand/collapse widgets in `index.html`.
 
 ### 1. Date Selection Slider ✓
 Replaced year dropdowns with a noUiSlider range slider. Added:

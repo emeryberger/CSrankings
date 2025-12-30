@@ -166,6 +166,10 @@ namespace CSRankings {
                     q.splice(index, 1);
                     // Set the region.
                     $("#regions").val(elem);
+                    // Sync the custom dropdown
+                    if (typeof syncRegionDropdown === 'function') {
+                        syncRegionDropdown();
+                    }
                 }
                 index += 1;
             });
@@ -308,6 +312,10 @@ namespace CSRankings {
                 default:
                     regionsEl!.value = "world";
                     break;
+            }
+            // Sync the custom dropdown
+            if (typeof syncRegionDropdown === 'function') {
+                syncRegionDropdown();
             }
             rankCallback();
         });
