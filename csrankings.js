@@ -2342,30 +2342,27 @@ var CSRankings;
 */
 var CSRankings;
 (function (CSRankings) {
-    // Continent regions that should have no icon (empty placeholder)
-    const continentRegions = {
-        'northamerica': true,
-        'southamerica': true,
-        'europe': true,
-        'asia': true,
-        'africa': true,
-        'australasia': true
+    // Globe icons for multi-country regions (centered on appropriate region)
+    const regionGlobeIcons = {
+        'northamerica': 'globe-americas',
+        'southamerica': 'globe-americas',
+        'europe': 'globe-europe-africa',
+        'africa': 'globe-europe-africa',
+        'asia': 'globe-asia-australia',
+        'australasia': 'globe-asia-australia',
+        'world': 'globe-world'
     };
     // Generate icon HTML based on region type
     function getRegionIcon(region) {
-        if (region === 'world') {
-            // Globe icon for "the world"
-            return `<span class="region-globe-icon" title="World"></span>`;
-        }
-        else if (continentRegions[region]) {
-            // Empty placeholder for continents
-            return `<span class="region-empty-icon"></span>`;
+        if (regionGlobeIcons[region]) {
+            const iconFile = regionGlobeIcons[region];
+            return `<img src="/flags/${iconFile}.png" alt="${region}" class="region-globe-img">`;
         }
         return '';
     }
-    // Check if region is multi-country (no flag)
+    // Check if region is multi-country (uses globe icon)
     function isMultiCountryRegion(value) {
-        return value === 'world' || continentRegions[value] === true;
+        return regionGlobeIcons[value] !== undefined;
     }
     function initRegionDropdown() {
         const select = document.getElementById('regions');
@@ -2453,7 +2450,6 @@ var CSRankings;
     }
     CSRankings.initRegionDropdown = initRegionDropdown;
     function updateRegionDisplay(select, textEl, flagEl) {
-        var _a, _b, _c, _d;
         const selected = select.options[select.selectedIndex];
         if (!selected)
             return;
@@ -2462,26 +2458,10 @@ var CSRankings;
         if (textEl)
             textEl.textContent = text;
         if (flagEl) {
-            // Remove any existing icon elements
-            const existingGlobe = (_a = flagEl.parentElement) === null || _a === void 0 ? void 0 : _a.querySelector('.region-globe-icon');
-            const existingEmpty = (_b = flagEl.parentElement) === null || _b === void 0 ? void 0 : _b.querySelector('.region-empty-icon');
-            if (existingGlobe)
-                existingGlobe.remove();
-            if (existingEmpty)
-                existingEmpty.remove();
-            if (value === 'world') {
-                // World - show globe icon
-                flagEl.style.display = 'none';
-                const globeIcon = document.createElement('span');
-                globeIcon.className = 'region-globe-icon';
-                (_c = flagEl.parentElement) === null || _c === void 0 ? void 0 : _c.insertBefore(globeIcon, flagEl);
-            }
-            else if (continentRegions[value]) {
-                // Continent - show empty placeholder
-                flagEl.style.display = 'none';
-                const emptyIcon = document.createElement('span');
-                emptyIcon.className = 'region-empty-icon';
-                (_d = flagEl.parentElement) === null || _d === void 0 ? void 0 : _d.insertBefore(emptyIcon, flagEl);
+            if (regionGlobeIcons[value]) {
+                // Multi-country region - show globe icon
+                flagEl.src = `/flags/${regionGlobeIcons[value]}.png`;
+                flagEl.style.display = 'block';
             }
             else {
                 // Country - show flag
