@@ -220,6 +220,13 @@ optgroup:not(:first-child) {
   filter: brightness(1.15);
 }
 
+@media (max-width: 992px) {
+  .area-toggle-btn {
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+}
+
 /* ============================================
    Custom Region Dropdown with Flags
    ============================================ */
