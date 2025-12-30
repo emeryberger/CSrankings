@@ -17,7 +17,9 @@
     <link rel="preload" as="style" href="css/csrankings.css">
     <link rel="preload" as="style" href="css/csrankings-extra.css">
     <link rel="preload" as="style" href="css/nouislider.min.css">
-    
+    <link rel="preload" as="style" href="css/walkthrough.css">
+    <link rel="preload" as="style" href="css/csrankings-tour.css">
+
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://dblp.org">
@@ -34,6 +36,7 @@
 <!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
     <link rel="preload" as="script" href="js/navigo.min.js">
     <link rel="preload" as="script" href="js/nouislider.min.js">
+    <link rel="preload" as="script" href="js/walkthrough.min.js">
 
 
     <meta name="description" content="Computer Science Rankings">
@@ -50,7 +53,9 @@
     <link rel="stylesheet" href="css/csrankings.css">
     <link rel="stylesheet" href="css/csrankings-extra.css">
     <link rel="stylesheet" href="css/nouislider.min.css">
-    
+    <link rel="stylesheet" href="css/walkthrough.css">
+    <link rel="stylesheet" href="css/csrankings-tour.css">
+
     <title>CSRankings: Computer Science Rankings</title>
 
     <!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
@@ -198,6 +203,7 @@
     <script defer src="js/bootstrap.min.js" type="text/javascript"></script>
     <script defer src="js/navigo.min.js"></script>
     <script defer src="js/nouislider.min.js"></script>
+    <script defer src="js/walkthrough.min.js"></script>
     <!-- <script defer src="csrankings.min.js" type="text/javascript"></script> -->
 <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224607094172722"
 	    crossorigin="anonymous"></script> -->
@@ -430,6 +436,7 @@
 		  </span>
 		</div>
 		<div class="rank-controls-sponsor">
+		  <button type="button" class="btn-help-tour" onclick="event.preventDefault(); event.stopPropagation(); CSRankings.startTour(); return false;" title="Take a guided tour">Tour</button>
 		  <button class="btn-sponsor" onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');" title="Support CSrankings operation">
 		    Sponsor CSrankings
 		  </button>
