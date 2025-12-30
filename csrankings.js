@@ -1622,6 +1622,10 @@ var CSRankings;
                     q.splice(index, 1);
                     // Set the region.
                     $("#regions").val(elem);
+                    // Sync the custom dropdown
+                    if (typeof CSRankings.syncRegionDropdown === 'function') {
+                        CSRankings.syncRegionDropdown();
+                    }
                 }
                 index += 1;
             });
@@ -1765,6 +1769,10 @@ var CSRankings;
                 default:
                     regionsEl.value = "world";
                     break;
+            }
+            // Sync the custom dropdown
+            if (typeof CSRankings.syncRegionDropdown === 'function') {
+                CSRankings.syncRegionDropdown();
             }
             rankCallback();
         });
@@ -2151,8 +2159,71 @@ var CSRankings;
         addAreaWidgetListeners(callbacks);
         addCheckboxListeners(fields, callbacks);
         addGroupSelectorListeners(callbacks);
+        addAreaIndicatorListeners(callbacks);
     }
     CSRankings.addAllListeners = addAllListeners;
+    /* Update area selection indicators based on checkbox states */
+    function updateAreaIndicators() {
+        const areaGroups = {
+            'ai': CSRankings.aiAreas,
+            'systems': CSRankings.systemsAreas,
+            'theory': CSRankings.theoryAreas,
+            'interdisciplinary': CSRankings.interdisciplinaryAreas
+        };
+        for (const group in areaGroups) {
+            const areas = areaGroups[group];
+            let checkedCount = 0;
+            let totalCount = 0;
+            for (const area of areas) {
+                const checkbox = document.getElementById(area);
+                if (checkbox) {
+                    totalCount++;
+                    if (checkbox.checked) {
+                        checkedCount++;
+                    }
+                }
+            }
+            const indicator = document.querySelector(`.${group}-indicator`);
+            if (indicator) {
+                indicator.classList.remove('selection-none', 'selection-partial', 'selection-all');
+                if (checkedCount === 0) {
+                    indicator.classList.add('selection-none');
+                }
+                else if (checkedCount === totalCount) {
+                    indicator.classList.add('selection-all');
+                }
+                else {
+                    indicator.classList.add('selection-partial');
+                }
+            }
+        }
+    }
+    CSRankings.updateAreaIndicators = updateAreaIndicators;
+    /* Add click listeners to area indicators for toggling */
+    function addAreaIndicatorListeners(callbacks) {
+        const indicatorActions = {
+            'ai': { on: callbacks.activateAI, off: callbacks.deactivateAI },
+            'systems': { on: callbacks.activateSystems, off: callbacks.deactivateSystems },
+            'theory': { on: callbacks.activateTheory, off: callbacks.deactivateTheory },
+            'interdisciplinary': { on: callbacks.activateOthers, off: callbacks.deactivateOthers }
+        };
+        for (const group in indicatorActions) {
+            const indicator = document.querySelector(`.${group}-indicator`);
+            if (indicator) {
+                indicator.addEventListener('click', () => {
+                    // Toggle: if any selected, turn all off; if none selected, turn all on
+                    if (indicator.classList.contains('selection-none')) {
+                        indicatorActions[group].on();
+                    }
+                    else {
+                        indicatorActions[group].off();
+                    }
+                    CSRankings.recordUserInteraction();
+                });
+            }
+        }
+    }
+    CSRankings.addAreaIndicatorListeners = addAreaIndicatorListeners;
 })(CSRankings || (CSRankings = {}));
 /*
   CSRankings - Year Range Slider
@@ -2261,6 +2332,180 @@ var CSRankings;
         return { fromYear: DEFAULT_FROM_YEAR, toYear: DEFAULT_TO_YEAR };
     }
     CSRankings.getYearSliderValues = getYearSliderValues;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Custom Region Dropdown with Flags
+
+  Creates a custom dropdown that displays country flags alongside region names.
+  Multi-country regions use globe icons instead of flags.
+  Syncs with the hidden original select for data compatibility.
+*/
+var CSRankings;
+(function (CSRankings) {
+    // Continent regions that should have no icon (empty placeholder)
+    const continentRegions = {
+        'northamerica': true,
+        'southamerica': true,
+        'europe': true,
+        'asia': true,
+        'africa': true,
+        'australasia': true
+    };
+    // Generate icon HTML based on region type
+    function getRegionIcon(region) {
+        if (region === 'world') {
+            // Globe icon for "the world"
+            return `<span class="region-globe-icon" title="World"></span>`;
+        }
+        else if (continentRegions[region]) {
+            // Empty placeholder for continents
+            return `<span class="region-empty-icon"></span>`;
+        }
+        return '';
+    }
+    // Check if region is multi-country (no flag)
+    function isMultiCountryRegion(value) {
+        return value === 'world' || continentRegions[value] === true;
+    }
+    function initRegionDropdown() {
+        const select = document.getElementById('regions');
+        const customDropdown = document.getElementById('custom-region-dropdown');
+        const selectedDiv = document.getElementById('region-selected');
+        const optionsDiv = document.getElementById('region-options');
+        const selectedText = document.getElementById('region-selected-text');
+        const selectedFlag = document.getElementById('region-selected-flag');
+        if (!select || !customDropdown || !optionsDiv || !selectedDiv) {
+            console.error('Region dropdown elements not found');
+            return;
+        }
+        // Build the options from the select element
+        let optionsHTML = '';
+        const optgroups = select.querySelectorAll('optgroup');
+        optgroups.forEach((group) => {
+            const label = group.getAttribute('label') || '';
+            optionsHTML += `<div class="region-option-group">${label}</div>`;
+            const options = group.querySelectorAll('option');
+            options.forEach((option) => {
+                const value = option.value;
+                const text = option.textContent || '';
+                const selected = option.selected ? 'selected' : '';
+                if (isMultiCountryRegion(value)) {
+                    // Multi-country region - use globe or empty icon
+                    optionsHTML += `<div class="region-option ${selected}" data-value="${value}">
+                        ${getRegionIcon(value)}
+                        <span>${text}</span>
+                    </div>`;
+                }
+                else {
+                    // Country with flag
+                    optionsHTML += `<div class="region-option ${selected}" data-value="${value}">
+                        <img src="/flags/${value}.png" alt="${value}">
+                        <span>${text}</span>
+                    </div>`;
+                }
+            });
+        });
+        optionsDiv.innerHTML = optionsHTML;
+        // Toggle dropdown open/closed
+        selectedDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            optionsDiv.classList.toggle('open');
+        });
+        // Close when clicking outside
+        document.addEventListener('click', () => {
+            optionsDiv.classList.remove('open');
+        });
+        // Handle option selection
+        optionsDiv.addEventListener('click', (e) => {
+            var _a;
+            const target = e.target.closest('.region-option');
+            if (!target)
+                return;
+            const value = target.getAttribute('data-value');
+            if (!value)
+                return;
+            // Update the hidden select
+            select.value = value;
+            // Update the visible selected display
+            const text = ((_a = target.querySelector('span')) === null || _a === void 0 ? void 0 : _a.textContent) || value;
+            const img = target.querySelector('img');
+            if (selectedText)
+                selectedText.textContent = text;
+            if (selectedFlag && img) {
+                selectedFlag.src = img.src;
+                selectedFlag.style.display = 'block';
+            }
+            else if (selectedFlag) {
+                selectedFlag.style.display = 'none';
+            }
+            // Update selected state in options
+            optionsDiv.querySelectorAll('.region-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            target.classList.add('selected');
+            // Close the dropdown
+            optionsDiv.classList.remove('open');
+            // Trigger change event on the select
+            select.dispatchEvent(new Event('change'));
+        });
+        // Set initial state based on selected option
+        updateRegionDisplay(select, selectedText, selectedFlag);
+    }
+    CSRankings.initRegionDropdown = initRegionDropdown;
+    function updateRegionDisplay(select, textEl, flagEl) {
+        var _a, _b, _c, _d;
+        const selected = select.options[select.selectedIndex];
+        if (!selected)
+            return;
+        const value = selected.value;
+        const text = selected.textContent || value;
+        if (textEl)
+            textEl.textContent = text;
+        if (flagEl) {
+            // Remove any existing icon elements
+            const existingGlobe = (_a = flagEl.parentElement) === null || _a === void 0 ? void 0 : _a.querySelector('.region-globe-icon');
+            const existingEmpty = (_b = flagEl.parentElement) === null || _b === void 0 ? void 0 : _b.querySelector('.region-empty-icon');
+            if (existingGlobe)
+                existingGlobe.remove();
+            if (existingEmpty)
+                existingEmpty.remove();
+            if (value === 'world') {
+                // World - show globe icon
+                flagEl.style.display = 'none';
+                const globeIcon = document.createElement('span');
+                globeIcon.className = 'region-globe-icon';
+                (_c = flagEl.parentElement) === null || _c === void 0 ? void 0 : _c.insertBefore(globeIcon, flagEl);
+            }
+            else if (continentRegions[value]) {
+                // Continent - show empty placeholder
+                flagEl.style.display = 'none';
+                const emptyIcon = document.createElement('span');
+                emptyIcon.className = 'region-empty-icon';
+                (_d = flagEl.parentElement) === null || _d === void 0 ? void 0 : _d.insertBefore(emptyIcon, flagEl);
+            }
+            else {
+                // Country - show flag
+                flagEl.src = `/flags/${value}.png`;
+                flagEl.style.display = 'block';
+            }
+        }
+    }
+    // Sync custom dropdown when select changes programmatically (e.g., from URL)
+    function syncRegionDropdown() {
+        const select = document.getElementById('regions');
+        const selectedText = document.getElementById('region-selected-text');
+        const selectedFlag = document.getElementById('region-selected-flag');
+        const optionsDiv = document.getElementById('region-options');
+        if (!select || !optionsDiv)
+            return;
+        updateRegionDisplay(select, selectedText, selectedFlag);
+        // Update selected state in options
+        const value = select.value;
+        optionsDiv.querySelectorAll('.region-option').forEach(opt => {
+            opt.classList.toggle('selected', opt.getAttribute('data-value') === value);
+        });
+    }
+    CSRankings.syncRegionDropdown = syncRegionDropdown;
 })(CSRankings || (CSRankings = {}));
 /*
   CSRankings - Main Application
@@ -2446,6 +2691,8 @@ var CSRankings;
                     this.rank();
                     CSRankings.recordUserInteraction();
                 });
+                // Initialize custom region dropdown with flags
+                CSRankings.initRegionDropdown();
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 CSRankings.geoCheck(() => this.rank());
@@ -2634,6 +2881,8 @@ var CSRankings;
             this.navigoRouter.navigate(str);
             stop = performance.now();
             console.log(`Rank took ${(stop - start)} milliseconds.`);
+            // Update area selection indicators in the sticky banner
+            CSRankings.updateAreaIndicators();
             return false;
         }
         /* Turn the chart display on or off. */

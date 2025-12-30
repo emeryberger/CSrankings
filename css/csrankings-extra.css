@@ -106,6 +106,211 @@ optgroup:not(:first-child) {
   box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
 }
 
+/* ============================================
+   Area Selection Indicators
+   ============================================ */
+
+.area-indicators {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.area-indicator {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.area-indicator.ai-indicator {
+  background-color: #377eb8;
+  color: white;
+}
+
+.area-indicator.systems-indicator {
+  background-color: #ff7f00;
+  color: white;
+}
+
+.area-indicator.theory-indicator {
+  background-color: #4daf4a;
+  color: white;
+}
+
+.area-indicator.interdisciplinary-indicator {
+  background-color: #984ea3;
+  color: white;
+}
+
+/* Selection states via opacity */
+.area-indicator.selection-none {
+  opacity: 0.25;
+}
+
+.area-indicator.selection-partial {
+  opacity: 0.6;
+}
+
+.area-indicator.selection-all {
+  opacity: 1.0;
+}
+
+.area-indicator:hover {
+  filter: brightness(1.1);
+}
+
+@media (max-width: 576px) {
+  .area-indicators {
+    display: none;
+  }
+}
+
+/* ============================================
+   Custom Region Dropdown with Flags
+   ============================================ */
+
+.custom-region-dropdown {
+  position: relative;
+  display: inline-block;
+  min-width: 140px;
+  vertical-align: middle;
+}
+
+.region-selected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.region-selected:hover {
+  border-color: #337ab7;
+}
+
+.region-flag {
+  width: 16px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.region-arrow {
+  margin-left: auto;
+  font-size: 10px;
+  color: #666;
+}
+
+.region-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.region-options.open {
+  display: block;
+}
+
+.region-option-group {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  background: #f5f5f5;
+  border-top: 1px solid #eee;
+}
+
+.region-option-group:first-child {
+  border-top: none;
+}
+
+.region-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.region-option:hover {
+  background: #e3f2fd;
+}
+
+.region-option.selected {
+  background: #d9edf7;
+}
+
+.region-option img {
+  width: 16px;
+  height: auto;
+}
+
+.region-option-noicon {
+  padding-left: 36px;
+}
+
+/* Globe icon for "world" region only */
+.region-globe-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #5ba3e0 0%, #2d6aa0 50%, #5ba3e0 100%);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.2);
+}
+
+.region-globe-icon::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+
+.region-globe-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  right: 2px;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-50%);
+}
+
+/* Empty placeholder for continent regions (no icon) */
+.region-empty-icon {
+  display: inline-block;
+  width: 16px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
 .rank-controls-panel {
   margin-top: 0;
   margin-bottom: 20px;
@@ -165,6 +370,25 @@ optgroup:not(:first-child) {
     flex: 1;
     max-height: 800px;
     overflow-y: auto;
+  }
+
+  /* Sticky table header inside scrolling container */
+  #success table.table-fit {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  #success table.table-fit > thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  #success table.table-fit > thead > tr > th {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 
@@ -296,31 +520,46 @@ optgroup:not(:first-child) {
 @media (max-width: 992px) {
   .year-slider-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     margin-top: 10px;
     width: 100%;
   }
 
   .year-slider {
-    order: 3;
-    width: 100%;
-    max-width: 250px;
-    margin: 5px 0;
+    flex: 1;
+    min-width: 80px;
+    max-width: 200px;
+    margin: 0;
   }
 
   .year-slider-label {
-    order: 1;
-    width: 100%;
-    text-align: center;
+    display: none;
   }
 
-  #year-display-from {
-    order: 2;
+  .year-display {
+    flex-shrink: 0;
+    min-width: 42px;
+    font-size: 0.95em;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .year-slider-container {
+    gap: 4px;
   }
 
-  #year-display-to {
-    order: 4;
+  .year-slider {
+    min-width: 60px;
+    max-width: 120px;
+  }
+
+  .year-display {
+    min-width: 38px;
+    font-size: 0.85em;
+    padding: 1px 3px;
   }
 }
