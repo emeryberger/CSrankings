@@ -502,6 +502,15 @@ optgroup:not(:first-child) {
    Ranking table zebra striping and hover
    ============================================ */
 
+/* Rank number column - fixed width, right aligned */
+.rank-cell {
+  width: 2.5em;
+  min-width: 2.5em;
+  text-align: right;
+  padding-right: 8px !important;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Institution rankings: zebra stripe every other institution */
 /* Table has 3 rows per institution: data, chart, faculty */
 #success table.table-fit > tbody > tr:nth-child(6n+1) > td {
