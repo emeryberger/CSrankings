@@ -623,6 +623,7 @@ optgroup:not(:first-child) {
     justify-content: center;
     gap: 6px;
     margin-top: 10px;
+    margin-bottom: 12px;
     width: 100%;
   }
 
