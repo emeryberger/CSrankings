@@ -25,9 +25,9 @@ namespace CSRankings {
 
     let yearSliderInstance: noUiSliderInstance | null = null;
     const MIN_YEAR = 1970;
-    const MAX_YEAR = 2025;
-    const DEFAULT_FROM_YEAR = 2015;
-    const DEFAULT_TO_YEAR = 2025;
+    const MAX_YEAR = new Date().getFullYear();
+    const DEFAULT_FROM_YEAR = MAX_YEAR - 10;
+    const DEFAULT_TO_YEAR = MAX_YEAR;
 
     // Store the callback for use in year input handlers
     let yearChangeCallback: (() => void) | null = null;
