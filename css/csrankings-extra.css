@@ -276,6 +276,85 @@ optgroup:not(:first-child) {
   flex-shrink: 0;
 }
 
+/* ============================================
+   Custom Chart Type Dropdown
+   ============================================ */
+
+.custom-chart-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.chart-selected {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chart-selected:hover {
+  border-color: #337ab7;
+}
+
+.chart-selected .chart-icon {
+  width: 12px;
+  height: auto;
+}
+
+.chart-arrow {
+  font-size: 10px;
+  color: #666;
+  margin-left: 2px;
+}
+
+.chart-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.chart-options.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.chart-option:hover {
+  background: #e3f2fd;
+}
+
+.chart-option.selected {
+  background: #d9edf7;
+}
+
+.chart-option img {
+  width: 12px;
+  height: auto;
+}
+
 .rank-controls-panel {
   margin-top: 0;
   margin-bottom: 20px;
