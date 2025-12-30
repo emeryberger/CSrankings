@@ -43,7 +43,8 @@ namespace CSRankings {
     /* Load country/region information for institutions */
     export async function loadCountryInfo(
         countryInfo: { [key: string]: string },
-        countryAbbrv: { [key: string]: string }
+        countryAbbrv: { [key: string]: string },
+        institutionHomepages?: { [key: string]: string }
     ): Promise<void> {
         const data = await new Promise((resolve) => {
             Papa.parse(countryinfoFile, {
@@ -58,6 +59,9 @@ namespace CSRankings {
         for (const info of ci) {
             countryInfo[info.institution] = info.region;
             countryAbbrv[info.institution] = info.countryabbrv;
+            if (institutionHomepages && info.homepage) {
+                institutionHomepages[info.institution] = info.homepage;
+            }
         }
     }
 
