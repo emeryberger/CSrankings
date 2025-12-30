@@ -238,36 +238,12 @@ namespace CSRankings {
                 id: 'focus-area',
                 title: 'Focus on Your Area',
                 text: `
-                    <p>Focus on your specific areas of interest.</p>
-                    <p>For example, if you want to do research in Systems, select just that area and deselect the others.</p>
+                    <p>Click any category pill (<strong>AI</strong>, <strong>Systems</strong>, <strong>Theory</strong>, <strong>Interdisc.</strong>) to open a dropdown with all the sub-areas.</p>
+                    <p>Use the checkboxes to select exactly which research areas interest you. Click <strong>▶</strong> next to any area to see individual conferences.</p>
                 `,
                 attachTo: {
                     element: '.area-indicators',
                     on: 'bottom'
-                },
-                buttons: [
-                    {
-                        text: 'Back',
-                        action: function() { tourInstance?.back(); },
-                        secondary: true
-                    },
-                    {
-                        text: 'Next',
-                        action: function() { tourInstance?.next(); }
-                    }
-                ]
-            },
-            // Step 6: Drill Down into Areas (left sidebar)
-            {
-                id: 'drill-down',
-                title: 'Drill Down into Sub-Areas',
-                text: `
-                    <p>Instead of just looking at broad categories, these checkboxes let you drill down your search to researchers in specific sub-areas.</p>
-                    <p>Click the <b>▶</b> arrow next to any area to expand it and see individual conferences. This lets you focus on exactly the venues that matter to you.</p>
-                `,
-                attachTo: {
-                    element: '#ai_toggle',
-                    on: 'right'
                 },
                 buttons: [
                     {
