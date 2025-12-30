@@ -171,6 +171,56 @@ optgroup:not(:first-child) {
 }
 
 /* ============================================
+   Area Section Toggle Buttons
+   ============================================ */
+
+.area-toggle-btn {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+  user-select: none;
+  color: white;
+  vertical-align: middle;
+}
+
+.area-toggle-btn.ai-toggle {
+  background-color: #377eb8;
+}
+
+.area-toggle-btn.systems-toggle {
+  background-color: #ff7f00;
+}
+
+.area-toggle-btn.theory-toggle {
+  background-color: #4daf4a;
+}
+
+.area-toggle-btn.interdisciplinary-toggle {
+  background-color: #984ea3;
+}
+
+/* Selection states via opacity */
+.area-toggle-btn.selection-none {
+  opacity: 0.3;
+}
+
+.area-toggle-btn.selection-partial {
+  opacity: 0.65;
+}
+
+.area-toggle-btn.selection-all {
+  opacity: 1.0;
+}
+
+.area-toggle-btn:hover {
+  filter: brightness(1.15);
+}
+
+/* ============================================
    Custom Region Dropdown with Flags
    ============================================ */
 
