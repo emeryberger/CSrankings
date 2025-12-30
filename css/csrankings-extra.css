@@ -596,14 +596,14 @@ optgroup:not(:first-child) {
 }
 
 .year-slider .noUi-handle {
-  height: 20px;
-  width: 20px;
-  top: -7px;
-  right: -10px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid #337ab7;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  height: 16px;
+  width: 8px;
+  top: -5px;
+  right: -4px;
+  border-radius: 2px;
+  background: #337ab7;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   cursor: pointer;
 }
 
@@ -613,12 +613,12 @@ optgroup:not(:first-child) {
 }
 
 .year-slider .noUi-handle:hover {
-  background: #d9edf7;
+  background: #286090;
 }
 
 .year-slider .noUi-handle:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(51, 122, 183, 0.3);
+  box-shadow: 0 0 0 2px rgba(51, 122, 183, 0.4);
 }
 
 /* Responsive adjustments */
