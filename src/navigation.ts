@@ -180,6 +180,10 @@ namespace CSRankings {
         });
         if (foundPie) {
             $("#charttype").val("pie");
+            // Sync the custom dropdown
+            if (typeof syncChartDropdown === 'function') {
+                syncChartDropdown();
+            }
         }
 
         if (foundAll) {

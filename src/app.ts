@@ -231,6 +231,8 @@ namespace CSRankings {
                 });
                 // Initialize custom region dropdown with flags
                 initRegionDropdown();
+                // Initialize custom chart type dropdown with icons
+                initChartDropdown();
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 geoCheck(() => this.rank());
