@@ -596,32 +596,20 @@ optgroup:not(:first-child) {
 }
 
 .year-slider .noUi-handle {
-  height: 14px;
-  width: 2px;
-  top: -4px;
-  right: -1px;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
+  height: 17px !important;
+  width: 5px !important;
+  min-width: 0 !important;
+  top: 0px !important;
+  right: -2px !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: #000 !important;
+  cursor: ew-resize;
 }
 
-/* Left handle (start year) - blue */
-.year-slider .noUi-handle-lower {
-  background: #2171b5;
-}
-
-.year-slider .noUi-handle-lower:hover {
-  background: #08519c;
-}
-
-/* Right handle (end year) - orange (colorblind-friendly vs blue) */
-.year-slider .noUi-handle-upper {
-  background: #d95f0e;
-}
-
-.year-slider .noUi-handle-upper:hover {
-  background: #b84c09;
+.year-slider .noUi-handle:hover {
+  background: #333 !important;
 }
 
 .year-slider .noUi-handle:before,
