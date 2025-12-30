@@ -2749,22 +2749,24 @@ var CSRankings;
     function getMockFacultyEntry(highlight) {
         const chartIcon = getChartIcon();
         // Bright highlight with border for focused element
-        const hl = (part) => highlight === part
-            ? 'background:#ffeb3b; padding:2px 6px; border-radius:3px; border:2px solid #f57c00;'
-            : '';
-        // Dim non-highlighted elements with dark overlay effect
-        const dim = (part) => highlight && highlight !== part
-            ? 'background:rgba(0,0,0,0.6); border-radius:3px; padding:2px 4px;'
-            : '';
+        const hlStyle = 'background:#ffeb3b; padding:4px 8px; border-radius:3px; border:2px solid #f57c00; position:relative; z-index:2;';
+        // Base style for all blocks
+        const blockStyle = 'display:inline-block; padding:4px 8px; border-radius:3px; vertical-align:middle;';
+        const hl = (part) => highlight === part ? hlStyle : blockStyle;
+        // When something is highlighted, show overlay on entire entry except highlighted part
+        const overlayStyle = highlight
+            ? 'position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); border-radius:4px; pointer-events:none;'
+            : 'display:none;';
         return `
-            <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:1.8;">
-                <span style="${hl('name')} ${dim('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
-                <span style="font-variant:small-caps; color:#666; margin-left:6px; ${hl('areas')} ${dim('areas')}">ml</span>
-                <span style="margin-left:8px; ${hl('name')} ${dim('name')}"><img src="png/house-logo.png" alt="home" style="height:12px;"></span>
-                <span style="${hl('scholar')} ${dim('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px; margin-left:4px;"></span>
-                <span style="${hl('dblp')} ${dim('dblp')}"><img src="dblp.png" alt="DBLP" style="height:12px; margin-left:4px;"></span>
-                <span style="${hl('chart')} ${dim('chart')}"><img src="${chartIcon}" alt="chart" style="height:12px; margin-left:4px; cursor:pointer;"></span>
-                <span style="color:#666; margin-left:12px; ${dim('score')}">12.3</span>
+            <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:2.2; position:relative;">
+                <div style="${overlayStyle}"></div>
+                <span style="${hl('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
+                <span style="font-variant:small-caps; color:#666; ${hl('areas')}">ml</span>
+                <span style="${hl('name')}"><img src="png/house-logo.png" alt="home" style="height:12px;"></span>
+                <span style="${hl('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px;"></span>
+                <span style="${hl('dblp')}"><img src="dblp.png" alt="DBLP" style="height:12px;"></span>
+                <span style="${hl('chart')}"><img src="${chartIcon}" alt="chart" style="height:12px; cursor:pointer;"></span>
+                <span style="color:#666; ${blockStyle}">12.3</span>
             </div>
         `;
     }
