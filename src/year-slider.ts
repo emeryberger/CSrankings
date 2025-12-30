@@ -29,6 +29,9 @@ namespace CSRankings {
     const DEFAULT_FROM_YEAR = 2015;
     const DEFAULT_TO_YEAR = 2025;
 
+    // Store the callback for use in year input handlers
+    let yearChangeCallback: (() => void) | null = null;
+
     /* Initialize the year range slider */
     export function initYearSlider(onChangeCallback: () => void): void {
         const sliderElement = document.getElementById('year-slider');
@@ -36,6 +39,8 @@ namespace CSRankings {
             console.error('Year slider element not found');
             return;
         }
+
+        yearChangeCallback = onChangeCallback;
 
         // Get initial values from hidden selects (for URL param support)
         const fromYearSelect = document.getElementById('fromyear') as HTMLSelectElement;
@@ -70,11 +75,15 @@ namespace CSRankings {
             const fromYear = Math.round(parseFloat(values[0]));
             const toYear = Math.round(parseFloat(values[1]));
 
-            // Update display elements
+            // Update display elements (only if not being edited)
             const fromDisplay = document.getElementById('year-display-from');
             const toDisplay = document.getElementById('year-display-to');
-            if (fromDisplay) fromDisplay.textContent = fromYear.toString();
-            if (toDisplay) toDisplay.textContent = toYear.toString();
+            if (fromDisplay && document.activeElement !== fromDisplay) {
+                fromDisplay.textContent = fromYear.toString();
+            }
+            if (toDisplay && document.activeElement !== toDisplay) {
+                toDisplay.textContent = toYear.toString();
+            }
         });
 
         // Trigger callback only on change (when user releases)
@@ -89,6 +98,111 @@ namespace CSRankings {
             // Trigger the callback
             onChangeCallback();
         });
+
+        // Initialize editable year displays
+        initEditableYearDisplays();
+    }
+
+    /* Initialize editable year display elements */
+    function initEditableYearDisplays(): void {
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+
+        if (fromDisplay) {
+            setupEditableYear(fromDisplay, 'from');
+        }
+        if (toDisplay) {
+            setupEditableYear(toDisplay, 'to');
+        }
+    }
+
+    /* Set up an editable year display element */
+    function setupEditableYear(element: HTMLElement, type: 'from' | 'to'): void {
+        // Make it focusable and editable
+        element.setAttribute('contenteditable', 'true');
+        element.setAttribute('inputmode', 'numeric');
+        element.style.cursor = 'text';
+        element.title = `Click to edit ${type === 'from' ? 'start' : 'end'} year (${MIN_YEAR}-${MAX_YEAR})`;
+
+        // Select all text on focus
+        element.addEventListener('focus', () => {
+            const range = document.createRange();
+            range.selectNodeContents(element);
+            const selection = window.getSelection();
+            if (selection) {
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        });
+
+        // Handle Enter key
+        element.addEventListener('keydown', (e: KeyboardEvent) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                element.blur();
+            }
+            // Only allow digits
+            if (e.key.length === 1 && !/\d/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        // Validate and apply on blur
+        element.addEventListener('blur', () => {
+            applyYearInput(element, type);
+        });
+    }
+
+    /* Validate and apply year input */
+    function applyYearInput(element: HTMLElement, type: 'from' | 'to'): void {
+        const inputValue = parseInt(element.textContent || '', 10);
+        const currentValues = getYearSliderValues();
+
+        let newFrom = currentValues.fromYear;
+        let newTo = currentValues.toYear;
+
+        if (isNaN(inputValue)) {
+            // Invalid input, restore previous value
+            element.textContent = (type === 'from' ? newFrom : newTo).toString();
+            return;
+        }
+
+        // Clamp to valid range
+        const clampedValue = Math.max(MIN_YEAR, Math.min(MAX_YEAR, inputValue));
+
+        if (type === 'from') {
+            newFrom = clampedValue;
+            // Ensure from <= to
+            if (newFrom > newTo) {
+                newTo = newFrom;
+            }
+        } else {
+            newTo = clampedValue;
+            // Ensure to >= from
+            if (newTo < newFrom) {
+                newFrom = newTo;
+            }
+        }
+
+        // Update slider and displays
+        if (yearSliderInstance) {
+            yearSliderInstance.set([newFrom, newTo]);
+        }
+
+        // Update hidden selects
+        updateHiddenSelect('fromyear', newFrom);
+        updateHiddenSelect('toyear', newTo);
+
+        // Update display text
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay) fromDisplay.textContent = newFrom.toString();
+        if (toDisplay) toDisplay.textContent = newTo.toString();
+
+        // Trigger callback
+        if (yearChangeCallback) {
+            yearChangeCallback();
+        }
     }
 
     /* Update hidden select element, adding option if needed */
