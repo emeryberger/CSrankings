@@ -120,9 +120,10 @@ namespace CSRankings {
         const dim = (part: string) => highlight && highlight !== part ? 'opacity:0.2;' : '';
         return `
             <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:1.8;">
-                <span style="${hl('name')} ${dim('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a> <img src="png/house-logo.png" alt="home" style="height:12px; margin-left:2px;"></span>
+                <span style="${hl('name')} ${dim('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
                 <span style="font-variant:small-caps; color:#666; margin-left:6px; ${hl('areas')} ${dim('areas')}">ml</span>
-                <span style="margin-left:8px; ${hl('scholar')} ${dim('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px;"></span>
+                <span style="margin-left:8px; ${hl('name')} ${dim('name')}"><img src="png/house-logo.png" alt="home" style="height:12px;"></span>
+                <span style="${hl('scholar')} ${dim('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px; margin-left:4px;"></span>
                 <span style="${hl('dblp')} ${dim('dblp')}"><img src="dblp.png" alt="DBLP" style="height:12px; margin-left:4px;"></span>
                 <span style="${hl('chart')} ${dim('chart')}"><img src="${chartIcon}" alt="chart" style="height:12px; margin-left:4px; cursor:pointer;"></span>
                 <span style="color:#666; margin-left:12px; ${dim('score')}">12.3</span>
