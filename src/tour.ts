@@ -121,7 +121,7 @@ namespace CSRankings {
 
         // When something is highlighted, show overlay on entire entry except highlighted part
         const overlayStyle = highlight
-            ? 'position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); border-radius:4px; pointer-events:none;'
+            ? 'position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.3); border-radius:4px; pointer-events:none;'
             : 'display:none;';
 
         return `

@@ -2755,7 +2755,7 @@ var CSRankings;
         const hl = (part) => highlight === part ? hlStyle : blockStyle;
         // When something is highlighted, show overlay on entire entry except highlighted part
         const overlayStyle = highlight
-            ? 'position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); border-radius:4px; pointer-events:none;'
+            ? 'position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.3); border-radius:4px; pointer-events:none;'
             : 'display:none;';
         return `
             <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:2.2; position:relative;">
