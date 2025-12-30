@@ -2666,7 +2666,7 @@ var CSRankings;
     function getMockChart() {
         var _a;
         const chartType = ((_a = document.getElementById('charttype')) === null || _a === void 0 ? void 0 : _a.value) || 'bar';
-        // Simulated data: Jane Doe has pubs in ML (8), NLP (3),Tic. Vis. (1)
+        // Simulated data: A. Professor has pubs in ML (8), NLP (3),Tic. Vis. (1)
         // Areas sorted alphabetically, colors: AI=#377eb8, Systems=#ff7f00, Theory=#4daf4a,Tic.=#984ea3
         const areas = [
             { name: 'AI', value: 0, color: '#377eb8' },
@@ -2760,7 +2760,7 @@ var CSRankings;
         return `
             <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:2.2; position:relative;">
                 <div style="${overlayStyle}"></div>
-                <span style="${hl('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
+                <span style="${hl('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">A. Professor</a></span>
                 <span style="font-variant:small-caps; color:#666; ${hl('areas')}">ml</span>
                 <span style="${hl('name')}"><img src="png/house-logo.png" alt="home" style="height:12px;"></span>
                 <span style="${hl('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px;"></span>
