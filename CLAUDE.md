@@ -5,6 +5,8 @@ CSRankings is a metrics-based ranking of top computer science institutions. The 
 
 See [optimizations.md](optimizations.md) for performance optimization strategies and benchmarks.
 
+See [docs/ui-learnings.md](docs/ui-learnings.md) for CSS patterns, table structure, and UI modification guidelines.
+
 ## Build Commands
 ```bash
 # Compile TypeScript
@@ -23,7 +25,19 @@ make csrankings.min.js
 ## Architecture
 
 ### Main Files
-- `csrankings.ts` - Main TypeScript application (~2100 lines)
+- `src/` - TypeScript source files (modular architecture):
+  - `app.ts` - Main application entry point, CSRankings singleton class
+  - `checkbox.ts` - Checkbox state management and caching
+  - `computation.ts` - Ranking computation and incremental updates
+  - `config.ts` - Area maps, parent/child relationships, configuration
+  - `data-loader.ts` - CSV loading (parallel via Promise.all)
+  - `event-handlers.ts` - UI event listeners
+  - `navigation.ts` - Client-side routing (Navigo)
+  - `rendering.ts` - HTML generation for tables and dropdowns
+  - `region.ts` - Region/continent filtering
+  - `types.ts` - TypeScript type definitions
+  - `utils.ts` - Utility functions
+  - `verification.ts` - Incremental computation verification
 - `index.html` - Single page with checkbox controls and result container
 - `tsconfig.json` - TypeScript configuration (ES6 target, strict mode)
 
@@ -291,8 +305,20 @@ Tools involved:
 
 ## File Structure
 ```
-csrankings.ts          # Main TypeScript source
-csrankings.js          # Compiled JavaScript
+src/                   # TypeScript source (modular)
+  app.ts               # Main entry point
+  checkbox.ts          # Checkbox management
+  computation.ts       # Ranking computation
+  config.ts            # Area configuration
+  data-loader.ts       # CSV loading
+  event-handlers.ts    # UI events
+  navigation.ts        # Routing
+  rendering.ts         # HTML generation
+  region.ts            # Region filtering
+  types.ts             # Type definitions
+  utils.ts             # Utilities
+  verification.ts      # Incremental verification
+csrankings.js          # Compiled JavaScript (bundled)
 csrankings.min.js      # Minified for production
 index.html             # Main page
 tsconfig.json          # TypeScript config
