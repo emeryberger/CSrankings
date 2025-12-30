@@ -426,6 +426,86 @@ git push origin gh-pages
 gh pr close <PR_NUMBER>
 ```
 
+## Maintaining Institution Homepages
+
+The `institutions.csv` file contains CS department homepage URLs for each institution. These URLs are displayed when users click on institution names.
+
+### File Format
+```csv
+institution,region,countryabbrv,homepage
+MIT,northamerica,us,https://www.eecs.mit.edu/
+University of Oxford,europe,gb,https://www.cs.ox.ac.uk/
+```
+
+### Common URL Issues
+
+**Problem**: Many entries point to main university homepages instead of CS department pages.
+
+**Signs of incorrect URLs:**
+- URL is just `https://www.university.edu` (no path)
+- URL contains `staff.`, `people.`, `homepage.`, or `avesis.`
+- URL points to a different department (e.g., ECE instead of CS)
+
+**Correct URLs should point to:**
+- Department of Computer Science
+- School of Computing
+- Faculty of Informatics
+- College of Computing
+- Or equivalent CS-specific page
+
+### Finding Correct URLs
+
+Search for: `"[University Name] computer science department homepage"`
+
+Common patterns by country:
+- **US**: `cs.university.edu` or `www.cs.university.edu`
+- **UK**: `www.university.ac.uk/computer-science` or `cs.university.ac.uk`
+- **Germany**: `informatik.uni-xxx.de` or `www.uni-xxx.de/informatik`
+- **India (IITs)**: `cse.iitX.ac.in` or `www.cse.iitX.ac.in`
+- **China**: `cs.university.edu.cn`
+- **Japan**: `www.cs.university.ac.jp`
+
+### Preserving Homepage Column
+
+**IMPORTANT**: The `util/clean-csrankings.py` script processes `institutions.csv`. It was updated to preserve the `homepage` column. If the column gets stripped, check that the script includes:
+
+```python
+# In clean-csrankings.py around line 98
+countryinfo[row["institution"]] = {
+    "region": row["region"],
+    "countryabbrv": row["countryabbrv"],
+    "homepage": row.get("homepage", ""),  # Must include this!
+}
+
+# And in the write section around line 106
+sfieldnames = ["institution", "region", "countryabbrv", "homepage"]  # Must include homepage!
+```
+
+### Batch URL Updates
+
+When updating many URLs, use parallel web searches to find correct CS department pages:
+1. Group institutions by region/country
+2. Search for official CS department homepages
+3. Verify URLs actually work and point to CS departments
+4. Update `institutions.csv` with correct URLs
+
+### Universities That Commonly Need Updates
+
+**Renamed/Restructured:**
+- Jacobs University Bremen → Constructor University
+- ENS Cachan → ENS Paris-Saclay
+- Tokyo Institute of Technology → Science Tokyo (transition ongoing)
+
+**Multi-campus systems** (ensure correct campus CS page):
+- University of California system
+- BITS Pilani (Pilani, Goa, Hyderabad campuses)
+- IIT system in India
+
+**Research institutes** (may not have traditional department pages):
+- INRIA (France) - use team/center pages
+- CWI (Netherlands) - use main institute page
+- Max Planck Institutes (Germany)
+
 ## Dependencies
 
 ### Frontend (JavaScript)
