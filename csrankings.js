@@ -2752,8 +2752,10 @@ var CSRankings;
         const hl = (part) => highlight === part
             ? 'background:#ffeb3b; padding:2px 6px; border-radius:3px; border:2px solid #f57c00;'
             : '';
-        // Dim non-highlighted elements when something is highlighted (darker)
-        const dim = (part) => highlight && highlight !== part ? 'opacity:0.2;' : '';
+        // Dim non-highlighted elements with dark overlay effect
+        const dim = (part) => highlight && highlight !== part
+            ? 'background:rgba(0,0,0,0.6); border-radius:3px; padding:2px 4px;'
+            : '';
         return `
             <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:1.8;">
                 <span style="${hl('name')} ${dim('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
