@@ -27,16 +27,16 @@ namespace CSRankings {
 
     /* Add event listeners for dropdown changes */
     export function addDropdownListeners(callbacks: EventCallbacks): void {
-        ["toyear", "fromyear", "regions"].forEach((key) => {
-            const widget = document.getElementById(key);
-            widget!.addEventListener("change", () => {
-                // Year/region change invalidates the incremental cache
-                callbacks.invalidateIncrementalCache();
-                callbacks.recomputeAuthorAreas();
-                callbacks.rank();
-                // Track user interaction for sponsorship
-                recordUserInteraction();
-            });
+        // Note: year selects are now hidden and managed by the year slider (year-slider.ts)
+        // Only add listener for regions dropdown
+        const regionsWidget = document.getElementById("regions");
+        regionsWidget!.addEventListener("change", () => {
+            // Region change invalidates the incremental cache
+            callbacks.invalidateIncrementalCache();
+            callbacks.recomputeAuthorAreas();
+            callbacks.rank();
+            // Track user interaction for sponsorship
+            recordUserInteraction();
         });
         // Chart type doesn't affect data, just visualization
         const charttypeWidget = document.getElementById("charttype");
@@ -123,6 +123,70 @@ namespace CSRankings {
         addAreaWidgetListeners(callbacks);
         addCheckboxListeners(fields, callbacks);
         addGroupSelectorListeners(callbacks);
+        addAreaIndicatorListeners(callbacks);
+    }
+
+    /* Update area selection indicators based on checkbox states */
+    export function updateAreaIndicators(): void {
+        const areaGroups: { [key: string]: string[] } = {
+            'ai': aiAreas,
+            'systems': systemsAreas,
+            'theory': theoryAreas,
+            'interdisciplinary': interdisciplinaryAreas
+        };
+
+        for (const group in areaGroups) {
+            const areas = areaGroups[group];
+            let checkedCount = 0;
+            let totalCount = 0;
+
+            for (const area of areas) {
+                const checkbox = document.getElementById(area) as HTMLInputElement;
+                if (checkbox) {
+                    totalCount++;
+                    if (checkbox.checked) {
+                        checkedCount++;
+                    }
+                }
+            }
+
+            const indicator = document.querySelector(`.${group}-indicator`) as HTMLElement;
+            if (indicator) {
+                indicator.classList.remove('selection-none', 'selection-partial', 'selection-all');
+                if (checkedCount === 0) {
+                    indicator.classList.add('selection-none');
+                } else if (checkedCount === totalCount) {
+                    indicator.classList.add('selection-all');
+                } else {
+                    indicator.classList.add('selection-partial');
+                }
+            }
+        }
+    }
+
+    /* Add click listeners to area indicators for toggling */
+    export function addAreaIndicatorListeners(callbacks: EventCallbacks): void {
+        const indicatorActions: { [key: string]: { on: () => void, off: () => void } } = {
+            'ai': { on: callbacks.activateAI, off: callbacks.deactivateAI },
+            'systems': { on: callbacks.activateSystems, off: callbacks.deactivateSystems },
+            'theory': { on: callbacks.activateTheory, off: callbacks.deactivateTheory },
+            'interdisciplinary': { on: callbacks.activateOthers, off: callbacks.deactivateOthers }
+        };
+
+        for (const group in indicatorActions) {
+            const indicator = document.querySelector(`.${group}-indicator`) as HTMLElement;
+            if (indicator) {
+                indicator.addEventListener('click', () => {
+                    // Toggle: if any selected, turn all off; if none selected, turn all on
+                    if (indicator.classList.contains('selection-none')) {
+                        indicatorActions[group].on();
+                    } else {
+                        indicatorActions[group].off();
+                    }
+                    recordUserInteraction();
+                });
+            }
+        }
     }
 
 }

@@ -42,6 +42,7 @@ namespace CSRankings {
         readonly institution: string;
         readonly region: "us" | "europe" | "ca" | "northamerica" | "australasia" | "southamerica" | "asia" | "africa" | "world";
         readonly countryabbrv: string;
+        readonly homepage?: string;
     }
 
     export interface CountryName {

@@ -54,7 +54,261 @@ optgroup:not(:first-child) {
 }
 
 .rank-controls-sticky {
-  position: static;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Flexbox layout for rank controls */
+.rank-controls-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rank-controls-main {
+  flex: 1;
+  text-align: center;
+}
+
+.rank-controls-sponsor {
+  flex-shrink: 0;
+}
+
+.btn-sponsor {
+  background: #337ab7;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
+}
+
+.btn-sponsor:hover {
+  background: #286090;
+  box-shadow: 0 4px 8px rgba(51, 122, 183, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-sponsor:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
+}
+
+/* ============================================
+   Area Selection Indicators
+   ============================================ */
+
+.area-indicators {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.area-indicator {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.area-indicator.ai-indicator {
+  background-color: #377eb8;
+  color: white;
+}
+
+.area-indicator.systems-indicator {
+  background-color: #ff7f00;
+  color: white;
+}
+
+.area-indicator.theory-indicator {
+  background-color: #4daf4a;
+  color: white;
+}
+
+.area-indicator.interdisciplinary-indicator {
+  background-color: #984ea3;
+  color: white;
+}
+
+/* Selection states via opacity */
+.area-indicator.selection-none {
+  opacity: 0.25;
+}
+
+.area-indicator.selection-partial {
+  opacity: 0.6;
+}
+
+.area-indicator.selection-all {
+  opacity: 1.0;
+}
+
+.area-indicator:hover {
+  filter: brightness(1.1);
+}
+
+@media (max-width: 576px) {
+  .area-indicators {
+    display: none;
+  }
+}
+
+/* ============================================
+   Custom Region Dropdown with Flags
+   ============================================ */
+
+.custom-region-dropdown {
+  position: relative;
+  display: inline-block;
+  min-width: 140px;
+  vertical-align: middle;
+}
+
+.region-selected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.region-selected:hover {
+  border-color: #337ab7;
+}
+
+.region-flag {
+  width: 16px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.region-arrow {
+  margin-left: auto;
+  font-size: 10px;
+  color: #666;
+}
+
+.region-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.region-options.open {
+  display: block;
+}
+
+.region-option-group {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  background: #f5f5f5;
+  border-top: 1px solid #eee;
+}
+
+.region-option-group:first-child {
+  border-top: none;
+}
+
+.region-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.region-option:hover {
+  background: #e3f2fd;
+}
+
+.region-option.selected {
+  background: #d9edf7;
+}
+
+.region-option img {
+  width: 16px;
+  height: auto;
+}
+
+.region-option-noicon {
+  padding-left: 36px;
+}
+
+/* Globe icon for "world" region only */
+.region-globe-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #5ba3e0 0%, #2d6aa0 50%, #5ba3e0 100%);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.2);
+}
+
+.region-globe-icon::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+
+.region-globe-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  right: 2px;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-50%);
+}
+
+/* Empty placeholder for continent regions (no icon) */
+.region-empty-icon {
+  display: inline-block;
+  width: 16px;
+  height: 11px;
+  flex-shrink: 0;
 }
 
 .rank-controls-panel {
@@ -117,6 +371,25 @@ optgroup:not(:first-child) {
     max-height: 800px;
     overflow-y: auto;
   }
+
+  /* Sticky table header inside scrolling container */
+  #success table.table-fit {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  #success table.table-fit > thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  #success table.table-fit > thead > tr > th {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 }
 
 /* ============================================
@@ -132,6 +405,12 @@ optgroup:not(:first-child) {
 /* Institution hover */
 #success table.table-fit > tbody > tr:nth-child(3n+1):hover > td {
   background-color: #e3f2fd;
+}
+
+/* Add vertical padding to institution data rows for breathing room */
+#success table.table-fit > tbody > tr:nth-child(3n+1) > td {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 /* Collapse empty chart/faculty rows */
@@ -161,4 +440,126 @@ optgroup:not(:first-child) {
   padding: 0 !important;
   line-height: 0 !important;
   font-size: 0 !important;
+}
+
+/* ============================================
+   Year Range Slider
+   ============================================ */
+
+.year-slider-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  margin-left: 8px;
+}
+
+.year-slider-label {
+  white-space: nowrap;
+  color: #333;
+}
+
+.year-display {
+  font-weight: bold;
+  font-size: 1.1em;
+  min-width: 48px;
+  text-align: center;
+  color: #337ab7;
+  background-color: #d9edf7;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid #bce8f1;
+}
+
+.year-slider {
+  width: 160px;
+  height: 8px;
+  margin: 0 8px;
+}
+
+/* Year range display wrapper */
+.year-range-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+/* noUiSlider customization */
+.year-slider .noUi-connect {
+  background: #337ab7;
+}
+
+.year-slider .noUi-handle {
+  height: 20px;
+  width: 20px;
+  top: -7px;
+  right: -10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #337ab7;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.year-slider .noUi-handle:before,
+.year-slider .noUi-handle:after {
+  display: none;
+}
+
+.year-slider .noUi-handle:hover {
+  background: #d9edf7;
+}
+
+.year-slider .noUi-handle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(51, 122, 183, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .year-slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .year-slider {
+    flex: 1;
+    min-width: 80px;
+    max-width: 200px;
+    margin: 0;
+  }
+
+  .year-slider-label {
+    display: none;
+  }
+
+  .year-display {
+    flex-shrink: 0;
+    min-width: 42px;
+    font-size: 0.95em;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .year-slider-container {
+    gap: 4px;
+  }
+
+  .year-slider {
+    min-width: 60px;
+    max-width: 120px;
+  }
+
+  .year-display {
+    min-width: 38px;
+    font-size: 0.85em;
+    padding: 1px 3px;
+  }
 }
