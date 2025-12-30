@@ -167,28 +167,41 @@ namespace CSRankings {
 
         for (const group in areaGroups) {
             const parentAreas = areaGroups[group].areas;
-            let checkedCount = 0;
-            let totalCount = 0;
+            let anyChecked = false;
+            let isDefaultState = true;
 
-            // Check both parent areas AND their child conferences
+            // Check if current state matches the default state:
+            // - All parent areas checked
+            // - All top-tier (non-nextTier) children checked
+            // - All next-tier children NOT checked
             for (const area of parentAreas) {
-                // Check parent checkbox
+                // Check parent checkbox - should be checked in default state
                 const parentCheckbox = document.getElementById(area) as HTMLInputElement;
                 if (parentCheckbox) {
-                    totalCount++;
                     if (parentCheckbox.checked) {
-                        checkedCount++;
+                        anyChecked = true;
+                    } else {
+                        isDefaultState = false;
                     }
                 }
 
-                // Check child checkboxes (conferences under this area)
+                // Check child checkboxes
                 if (area in childMap) {
                     for (const child of childMap[area]) {
                         const childCheckbox = document.getElementById(child) as HTMLInputElement;
                         if (childCheckbox) {
-                            totalCount++;
+                            const isNextTier = child in nextTier;
                             if (childCheckbox.checked) {
-                                checkedCount++;
+                                anyChecked = true;
+                                // Next-tier should NOT be checked in default state
+                                if (isNextTier) {
+                                    isDefaultState = false;
+                                }
+                            } else {
+                                // Top-tier should be checked in default state
+                                if (!isNextTier) {
+                                    isDefaultState = false;
+                                }
                             }
                         }
                     }
@@ -197,9 +210,9 @@ namespace CSRankings {
 
             // Determine selection state
             let selectionClass: string;
-            if (checkedCount === 0) {
+            if (!anyChecked) {
                 selectionClass = 'selection-none';
-            } else if (checkedCount === totalCount) {
+            } else if (isDefaultState) {
                 selectionClass = 'selection-all';
             } else {
                 selectionClass = 'selection-partial';
