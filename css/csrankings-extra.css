@@ -446,6 +446,7 @@ optgroup:not(:first-child) {
   border-bottom-right-radius: 0;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  padding-bottom: 5px;
 }
 
 /* ============================================
