@@ -244,6 +244,8 @@ namespace CSRankings {
                 initTour();
                 // Initialize sponsors banner
                 initSponsors();
+                // Initialize area dropdowns
+                initAreaDropdowns();
             })();
         }
 
