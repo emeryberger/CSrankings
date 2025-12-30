@@ -98,11 +98,12 @@ with open("institutions.csv", mode="r") as infile:
             countryinfo[row["institution"]] = {
                 "region": row["region"],
                 "countryabbrv": row["countryabbrv"],
+                "homepage": row.get("homepage", ""),
             }
 
 # Sort it and write it back.
 with open("institutions.csv", mode="w") as outfile:
-    sfieldnames = ["institution", "region", "countryabbrv"]
+    sfieldnames = ["institution", "region", "countryabbrv", "homepage"]
     swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
     swriter.writeheader()
     for n in collections.OrderedDict(sorted(countryinfo.items())):
@@ -110,6 +111,7 @@ with open("institutions.csv", mode="w") as outfile:
             "institution": n,
             "region": countryinfo[n]["region"],
             "countryabbrv": countryinfo[n]["countryabbrv"],
+            "homepage": countryinfo[n]["homepage"],
         }
         swriter.writerow(h)
 
