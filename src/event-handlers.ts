@@ -166,16 +166,31 @@ namespace CSRankings {
         };
 
         for (const group in areaGroups) {
-            const areas = areaGroups[group].areas;
+            const parentAreas = areaGroups[group].areas;
             let checkedCount = 0;
             let totalCount = 0;
 
-            for (const area of areas) {
-                const checkbox = document.getElementById(area) as HTMLInputElement;
-                if (checkbox) {
+            // Check both parent areas AND their child conferences
+            for (const area of parentAreas) {
+                // Check parent checkbox
+                const parentCheckbox = document.getElementById(area) as HTMLInputElement;
+                if (parentCheckbox) {
                     totalCount++;
-                    if (checkbox.checked) {
+                    if (parentCheckbox.checked) {
                         checkedCount++;
+                    }
+                }
+
+                // Check child checkboxes (conferences under this area)
+                if (area in childMap) {
+                    for (const child of childMap[area]) {
+                        const childCheckbox = document.getElementById(child) as HTMLInputElement;
+                        if (childCheckbox) {
+                            totalCount++;
+                            if (childCheckbox.checked) {
+                                checkedCount++;
+                            }
+                        }
                     }
                 }
             }
