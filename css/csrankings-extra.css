@@ -575,6 +575,19 @@ optgroup:not(:first-child) {
   padding: 2px 6px;
   border-radius: 3px;
   border: 1px solid #bce8f1;
+  cursor: text;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.year-display:hover {
+  border-color: #337ab7;
+}
+
+.year-display:focus {
+  outline: none;
+  border-color: #337ab7;
+  box-shadow: 0 0 0 2px rgba(51, 122, 183, 0.25);
+  background-color: #fff;
 }
 
 .year-slider {
