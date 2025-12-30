@@ -260,7 +260,8 @@ optgroup:not(:first-child) {
 }
 
 .region-options {
-  display: none;
+  display: none !important;
+  visibility: hidden;
   position: absolute;
   top: 100%;
   left: 0;
@@ -277,7 +278,8 @@ optgroup:not(:first-child) {
 }
 
 .region-options.open {
-  display: block;
+  display: block !important;
+  visibility: visible;
 }
 
 .region-option-group {
@@ -364,7 +366,8 @@ optgroup:not(:first-child) {
 }
 
 .chart-options {
-  display: none;
+  display: none !important;
+  visibility: hidden;
   position: absolute;
   top: 100%;
   left: 0;
@@ -378,7 +381,8 @@ optgroup:not(:first-child) {
 }
 
 .chart-options.open {
-  display: flex;
+  display: flex !important;
+  visibility: visible;
   flex-direction: column;
 }
 
