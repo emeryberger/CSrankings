@@ -2748,15 +2748,20 @@ var CSRankings;
     // highlight: 'name' | 'areas' | 'home' | 'scholar' | 'dblp' | 'chart' | null
     function getMockFacultyEntry(highlight) {
         const chartIcon = getChartIcon();
-        const hl = (part) => highlight === part ? 'background:#fff3cd; padding:2px 4px; border-radius:3px;' : '';
+        // Bright highlight with border for focused element
+        const hl = (part) => highlight === part
+            ? 'background:#ffeb3b; padding:2px 6px; border-radius:3px; border:2px solid #f57c00;'
+            : '';
+        // Dim non-highlighted elements when something is highlighted
+        const dim = (part) => highlight && highlight !== part ? 'opacity:0.4;' : '';
         return `
             <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:1.8;">
-                <span style="${hl('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
-                <span style="font-variant:small-caps; color:#666; margin-left:6px; ${hl('areas')}">ml</span>
-                <span style="margin-left:8px; ${hl('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px;"></span>
-                <span style="${hl('dblp')}"><img src="dblp.png" alt="DBLP" style="height:12px; margin-left:4px;"></span>
-                <span style="${hl('chart')}"><img src="${chartIcon}" alt="chart" style="height:12px; margin-left:4px; cursor:pointer;"></span>
-                <span style="color:#666; margin-left:12px;">12.3</span>
+                <span style="${hl('name')} ${dim('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">Jane Doe</a></span>
+                <span style="font-variant:small-caps; color:#666; margin-left:6px; ${hl('areas')} ${dim('areas')}">ml</span>
+                <span style="margin-left:8px; ${hl('scholar')} ${dim('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px;"></span>
+                <span style="${hl('dblp')} ${dim('dblp')}"><img src="dblp.png" alt="DBLP" style="height:12px; margin-left:4px;"></span>
+                <span style="${hl('chart')} ${dim('chart')}"><img src="${chartIcon}" alt="chart" style="height:12px; margin-left:4px; cursor:pointer;"></span>
+                <span style="color:#666; margin-left:12px; ${dim('score')}">12.3</span>
             </div>
         `;
     }
