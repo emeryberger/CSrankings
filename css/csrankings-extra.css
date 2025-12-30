@@ -708,3 +708,36 @@ optgroup:not(:first-child) {
 .page-footer p {
   margin-bottom: 0.5em;
 }
+
+/* ============================================
+   Sponsors Avatars
+   ============================================ */
+
+.sponsors-avatars {
+  margin: 0.75em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sponsors-avatars a {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sponsors-avatars a:hover {
+  transform: scale(1.1);
+}
+
+.sponsors-avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  transition: border-color 0.2s ease;
+}
+
+.sponsors-avatars a:hover img {
+  border-color: #337ab7;
+}
