@@ -242,6 +242,8 @@ namespace CSRankings {
                 initSponsorshipTracking(surveyShown);
                 // Initialize interactive tour
                 initTour();
+                // Initialize sponsors banner
+                initSponsors();
             })();
         }
 
