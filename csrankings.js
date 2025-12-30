@@ -2135,47 +2135,78 @@ var CSRankings;
     CSRankings.addCheckboxListeners = addCheckboxListeners;
     /* Add event listeners for group selector buttons */
     function addGroupSelectorListeners(callbacks) {
-        const listeners = {
-            'all_areas_on': (() => { callbacks.activateAll(); }),
-            'all_areas_off': (() => { callbacks.activateNone(); }),
-            'ai_areas_on': (() => { callbacks.activateAI(); }),
-            'ai_areas_off': (() => { callbacks.deactivateAI(); }),
-            'systems_areas_on': (() => { callbacks.activateSystems(); }),
-            'systems_areas_off': (() => { callbacks.deactivateSystems(); }),
-            'theory_areas_on': (() => { callbacks.activateTheory(); }),
-            'theory_areas_off': (() => { callbacks.deactivateTheory(); }),
-            'other_areas_on': (() => { callbacks.activateOthers(); }),
-            'other_areas_off': (() => { callbacks.deactivateOthers(); })
-        };
-        for (const item in listeners) {
-            const widget = document.getElementById(item);
-            widget.addEventListener("click", () => {
-                listeners[item]();
-                // Track user interaction for sponsorship
+        // All areas on/off buttons
+        const allOnWidget = document.getElementById('all_areas_on');
+        if (allOnWidget) {
+            allOnWidget.addEventListener("click", () => {
+                callbacks.activateAll();
+                CSRankings.recordUserInteraction();
+            });
+        }
+        const allOffWidget = document.getElementById('all_areas_off');
+        if (allOffWidget) {
+            allOffWidget.addEventListener("click", () => {
+                callbacks.activateNone();
                 CSRankings.recordUserInteraction();
             });
         }
     }
     CSRankings.addGroupSelectorListeners = addGroupSelectorListeners;
+    /* Add event listeners for area toggle buttons (the section header buttons) */
+    function addAreaToggleListeners(callbacks) {
+        const toggleActions = {
+            'ai_toggle': { on: callbacks.activateAI, off: callbacks.deactivateAI, areas: CSRankings.aiAreas },
+            'systems_toggle': { on: callbacks.activateSystems, off: callbacks.deactivateSystems, areas: CSRankings.systemsAreas },
+            'theory_toggle': { on: callbacks.activateTheory, off: callbacks.deactivateTheory, areas: CSRankings.theoryAreas },
+            'other_toggle': { on: callbacks.activateOthers, off: callbacks.deactivateOthers, areas: CSRankings.interdisciplinaryAreas }
+        };
+        for (const toggleId in toggleActions) {
+            const btn = document.getElementById(toggleId);
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    // Check if any areas are currently selected
+                    const areas = toggleActions[toggleId].areas;
+                    let anyChecked = false;
+                    for (const area of areas) {
+                        const checkbox = document.getElementById(area);
+                        if (checkbox && checkbox.checked) {
+                            anyChecked = true;
+                            break;
+                        }
+                    }
+                    // Toggle: if any selected, turn all off; if none selected, turn all on
+                    if (anyChecked) {
+                        toggleActions[toggleId].off();
+                    }
+                    else {
+                        toggleActions[toggleId].on();
+                    }
+                    CSRankings.recordUserInteraction();
+                });
+            }
+        }
+    }
+    CSRankings.addAreaToggleListeners = addAreaToggleListeners;
     /* Add all event listeners */
     function addAllListeners(fields, callbacks) {
         addDropdownListeners(callbacks);
         addAreaWidgetListeners(callbacks);
         addCheckboxListeners(fields, callbacks);
         addGroupSelectorListeners(callbacks);
+        addAreaToggleListeners(callbacks);
         addAreaIndicatorListeners(callbacks);
     }
     CSRankings.addAllListeners = addAllListeners;
     /* Update area selection indicators based on checkbox states */
     function updateAreaIndicators() {
         const areaGroups = {
-            'ai': CSRankings.aiAreas,
-            'systems': CSRankings.systemsAreas,
-            'theory': CSRankings.theoryAreas,
-            'interdisciplinary': CSRankings.interdisciplinaryAreas
+            'ai': { areas: CSRankings.aiAreas, toggleId: 'ai_toggle' },
+            'systems': { areas: CSRankings.systemsAreas, toggleId: 'systems_toggle' },
+            'theory': { areas: CSRankings.theoryAreas, toggleId: 'theory_toggle' },
+            'interdisciplinary': { areas: CSRankings.interdisciplinaryAreas, toggleId: 'other_toggle' }
         };
         for (const group in areaGroups) {
-            const areas = areaGroups[group];
+            const areas = areaGroups[group].areas;
             let checkedCount = 0;
             let totalCount = 0;
             for (const area of areas) {
@@ -2187,18 +2218,28 @@ var CSRankings;
                     }
                 }
             }
+            // Determine selection state
+            let selectionClass;
+            if (checkedCount === 0) {
+                selectionClass = 'selection-none';
+            }
+            else if (checkedCount === totalCount) {
+                selectionClass = 'selection-all';
+            }
+            else {
+                selectionClass = 'selection-partial';
+            }
+            // Update banner indicator
             const indicator = document.querySelector(`.${group}-indicator`);
             if (indicator) {
                 indicator.classList.remove('selection-none', 'selection-partial', 'selection-all');
-                if (checkedCount === 0) {
-                    indicator.classList.add('selection-none');
-                }
-                else if (checkedCount === totalCount) {
-                    indicator.classList.add('selection-all');
-                }
-                else {
-                    indicator.classList.add('selection-partial');
-                }
+                indicator.classList.add(selectionClass);
+            }
+            // Update section toggle button
+            const toggleBtn = document.getElementById(areaGroups[group].toggleId);
+            if (toggleBtn) {
+                toggleBtn.classList.remove('selection-none', 'selection-partial', 'selection-all');
+                toggleBtn.classList.add(selectionClass);
             }
         }
     }

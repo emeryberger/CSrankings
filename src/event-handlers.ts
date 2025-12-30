@@ -91,26 +91,55 @@ namespace CSRankings {
 
     /* Add event listeners for group selector buttons */
     export function addGroupSelectorListeners(callbacks: EventCallbacks): void {
-        const listeners: { [key: string]: () => void } =
-        {
-            'all_areas_on': (() => { callbacks.activateAll(); }),
-            'all_areas_off': (() => { callbacks.activateNone(); }),
-            'ai_areas_on': (() => { callbacks.activateAI(); }),
-            'ai_areas_off': (() => { callbacks.deactivateAI(); }),
-            'systems_areas_on': (() => { callbacks.activateSystems(); }),
-            'systems_areas_off': (() => { callbacks.deactivateSystems(); }),
-            'theory_areas_on': (() => { callbacks.activateTheory(); }),
-            'theory_areas_off': (() => { callbacks.deactivateTheory(); }),
-            'other_areas_on': (() => { callbacks.activateOthers(); }),
-            'other_areas_off': (() => { callbacks.deactivateOthers(); })
-        };
-        for (const item in listeners) {
-            const widget = document.getElementById(item);
-            widget!.addEventListener("click", () => {
-                listeners[item]();
-                // Track user interaction for sponsorship
+        // All areas on/off buttons
+        const allOnWidget = document.getElementById('all_areas_on');
+        if (allOnWidget) {
+            allOnWidget.addEventListener("click", () => {
+                callbacks.activateAll();
                 recordUserInteraction();
             });
+        }
+        const allOffWidget = document.getElementById('all_areas_off');
+        if (allOffWidget) {
+            allOffWidget.addEventListener("click", () => {
+                callbacks.activateNone();
+                recordUserInteraction();
+            });
+        }
+    }
+
+    /* Add event listeners for area toggle buttons (the section header buttons) */
+    export function addAreaToggleListeners(callbacks: EventCallbacks): void {
+        const toggleActions: { [key: string]: { on: () => void, off: () => void, areas: string[] } } = {
+            'ai_toggle': { on: callbacks.activateAI, off: callbacks.deactivateAI, areas: aiAreas },
+            'systems_toggle': { on: callbacks.activateSystems, off: callbacks.deactivateSystems, areas: systemsAreas },
+            'theory_toggle': { on: callbacks.activateTheory, off: callbacks.deactivateTheory, areas: theoryAreas },
+            'other_toggle': { on: callbacks.activateOthers, off: callbacks.deactivateOthers, areas: interdisciplinaryAreas }
+        };
+
+        for (const toggleId in toggleActions) {
+            const btn = document.getElementById(toggleId) as HTMLElement;
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    // Check if any areas are currently selected
+                    const areas = toggleActions[toggleId].areas;
+                    let anyChecked = false;
+                    for (const area of areas) {
+                        const checkbox = document.getElementById(area) as HTMLInputElement;
+                        if (checkbox && checkbox.checked) {
+                            anyChecked = true;
+                            break;
+                        }
+                    }
+                    // Toggle: if any selected, turn all off; if none selected, turn all on
+                    if (anyChecked) {
+                        toggleActions[toggleId].off();
+                    } else {
+                        toggleActions[toggleId].on();
+                    }
+                    recordUserInteraction();
+                });
+            }
         }
     }
 
@@ -123,20 +152,21 @@ namespace CSRankings {
         addAreaWidgetListeners(callbacks);
         addCheckboxListeners(fields, callbacks);
         addGroupSelectorListeners(callbacks);
+        addAreaToggleListeners(callbacks);
         addAreaIndicatorListeners(callbacks);
     }
 
     /* Update area selection indicators based on checkbox states */
     export function updateAreaIndicators(): void {
-        const areaGroups: { [key: string]: string[] } = {
-            'ai': aiAreas,
-            'systems': systemsAreas,
-            'theory': theoryAreas,
-            'interdisciplinary': interdisciplinaryAreas
+        const areaGroups: { [key: string]: { areas: string[], toggleId: string } } = {
+            'ai': { areas: aiAreas, toggleId: 'ai_toggle' },
+            'systems': { areas: systemsAreas, toggleId: 'systems_toggle' },
+            'theory': { areas: theoryAreas, toggleId: 'theory_toggle' },
+            'interdisciplinary': { areas: interdisciplinaryAreas, toggleId: 'other_toggle' }
         };
 
         for (const group in areaGroups) {
-            const areas = areaGroups[group];
+            const areas = areaGroups[group].areas;
             let checkedCount = 0;
             let totalCount = 0;
 
@@ -150,16 +180,28 @@ namespace CSRankings {
                 }
             }
 
+            // Determine selection state
+            let selectionClass: string;
+            if (checkedCount === 0) {
+                selectionClass = 'selection-none';
+            } else if (checkedCount === totalCount) {
+                selectionClass = 'selection-all';
+            } else {
+                selectionClass = 'selection-partial';
+            }
+
+            // Update banner indicator
             const indicator = document.querySelector(`.${group}-indicator`) as HTMLElement;
             if (indicator) {
                 indicator.classList.remove('selection-none', 'selection-partial', 'selection-all');
-                if (checkedCount === 0) {
-                    indicator.classList.add('selection-none');
-                } else if (checkedCount === totalCount) {
-                    indicator.classList.add('selection-all');
-                } else {
-                    indicator.classList.add('selection-partial');
-                }
+                indicator.classList.add(selectionClass);
+            }
+
+            // Update section toggle button
+            const toggleBtn = document.getElementById(areaGroups[group].toggleId) as HTMLElement;
+            if (toggleBtn) {
+                toggleBtn.classList.remove('selection-none', 'selection-partial', 'selection-all');
+                toggleBtn.classList.add(selectionClass);
             }
         }
     }
