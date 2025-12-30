@@ -114,6 +114,7 @@ optgroup:not(:first-child) {
   display: inline-flex;
   gap: 4px;
   margin-left: 10px;
+  margin-top: 8px;
   align-items: center;
 }
 
