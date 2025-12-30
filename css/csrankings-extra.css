@@ -597,12 +597,12 @@ optgroup:not(:first-child) {
 
 .year-slider .noUi-handle {
   height: 14px;
-  width: 4px;
+  width: 2px;
   top: -4px;
-  right: -2px;
-  border-radius: 1px;
+  right: -1px;
+  border-radius: 0;
   border: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: none;
   cursor: pointer;
 }
 
@@ -631,7 +631,7 @@ optgroup:not(:first-child) {
 
 .year-slider .noUi-handle:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+  box-shadow: none;
 }
 
 /* Responsive adjustments */
