@@ -2206,15 +2206,29 @@ var CSRankings;
             'interdisciplinary': { areas: CSRankings.interdisciplinaryAreas, toggleId: 'other_toggle' }
         };
         for (const group in areaGroups) {
-            const areas = areaGroups[group].areas;
+            const parentAreas = areaGroups[group].areas;
             let checkedCount = 0;
             let totalCount = 0;
-            for (const area of areas) {
-                const checkbox = document.getElementById(area);
-                if (checkbox) {
+            // Check both parent areas AND their child conferences
+            for (const area of parentAreas) {
+                // Check parent checkbox
+                const parentCheckbox = document.getElementById(area);
+                if (parentCheckbox) {
                     totalCount++;
-                    if (checkbox.checked) {
+                    if (parentCheckbox.checked) {
                         checkedCount++;
+                    }
+                }
+                // Check child checkboxes (conferences under this area)
+                if (area in CSRankings.childMap) {
+                    for (const child of CSRankings.childMap[area]) {
+                        const childCheckbox = document.getElementById(child);
+                        if (childCheckbox) {
+                            totalCount++;
+                            if (childCheckbox.checked) {
+                                checkedCount++;
+                            }
+                        }
                     }
                 }
             }
