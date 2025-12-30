@@ -240,6 +240,8 @@ namespace CSRankings {
                 // Display survey or sponsorship request
                 const surveyShown = tryDisplaySurvey({ disabled: true });
                 initSponsorshipTracking(surveyShown);
+                // Initialize interactive tour
+                initTour();
             })();
         }
 
