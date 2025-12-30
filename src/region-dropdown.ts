@@ -8,31 +8,29 @@
 
 namespace CSRankings {
 
-    // Continent regions that should have no icon (empty placeholder)
-    const continentRegions: { [key: string]: boolean } = {
-        'northamerica': true,
-        'southamerica': true,
-        'europe': true,
-        'asia': true,
-        'africa': true,
-        'australasia': true
+    // Globe icons for multi-country regions (centered on appropriate region)
+    const regionGlobeIcons: { [key: string]: string } = {
+        'northamerica': 'globe-americas',
+        'southamerica': 'globe-americas',
+        'europe': 'globe-europe-africa',
+        'africa': 'globe-europe-africa',
+        'asia': 'globe-asia-australia',
+        'australasia': 'globe-asia-australia',
+        'world': 'globe-world'
     };
 
     // Generate icon HTML based on region type
     function getRegionIcon(region: string): string {
-        if (region === 'world') {
-            // Globe icon for "the world"
-            return `<span class="region-globe-icon" title="World"></span>`;
-        } else if (continentRegions[region]) {
-            // Empty placeholder for continents
-            return `<span class="region-empty-icon"></span>`;
+        if (regionGlobeIcons[region]) {
+            const iconFile = regionGlobeIcons[region];
+            return `<img src="/flags/${iconFile}.png" alt="${region}" class="region-globe-img">`;
         }
         return '';
     }
 
-    // Check if region is multi-country (no flag)
+    // Check if region is multi-country (uses globe icon)
     function isMultiCountryRegion(value: string): boolean {
-        return value === 'world' || continentRegions[value] === true;
+        return regionGlobeIcons[value] !== undefined;
     }
 
     export function initRegionDropdown(): void {
@@ -145,24 +143,10 @@ namespace CSRankings {
         if (textEl) textEl.textContent = text;
 
         if (flagEl) {
-            // Remove any existing icon elements
-            const existingGlobe = flagEl.parentElement?.querySelector('.region-globe-icon');
-            const existingEmpty = flagEl.parentElement?.querySelector('.region-empty-icon');
-            if (existingGlobe) existingGlobe.remove();
-            if (existingEmpty) existingEmpty.remove();
-
-            if (value === 'world') {
-                // World - show globe icon
-                flagEl.style.display = 'none';
-                const globeIcon = document.createElement('span');
-                globeIcon.className = 'region-globe-icon';
-                flagEl.parentElement?.insertBefore(globeIcon, flagEl);
-            } else if (continentRegions[value]) {
-                // Continent - show empty placeholder
-                flagEl.style.display = 'none';
-                const emptyIcon = document.createElement('span');
-                emptyIcon.className = 'region-empty-icon';
-                flagEl.parentElement?.insertBefore(emptyIcon, flagEl);
+            if (regionGlobeIcons[value]) {
+                // Multi-country region - show globe icon
+                flagEl.src = `/flags/${regionGlobeIcons[value]}.png`;
+                flagEl.style.display = 'block';
             } else {
                 // Country - show flag
                 flagEl.src = `/flags/${value}.png`;

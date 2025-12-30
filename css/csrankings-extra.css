@@ -269,45 +269,10 @@ optgroup:not(:first-child) {
   padding-left: 36px;
 }
 
-/* Globe icon for "world" region only */
-.region-globe-icon {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background: linear-gradient(135deg, #5ba3e0 0%, #2d6aa0 50%, #5ba3e0 100%);
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.2);
-}
-
-.region-globe-icon::before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
-}
-
-.region-globe-icon::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 2px;
-  right: 2px;
-  height: 1px;
-  background: rgba(255,255,255,0.4);
-  transform: translateY(-50%);
-}
-
-/* Empty placeholder for continent regions (no icon) */
-.region-empty-icon {
-  display: inline-block;
+/* Globe images for multi-country regions */
+.region-globe-img {
   width: 16px;
-  height: 11px;
+  height: 16px;
   flex-shrink: 0;
 }
 
