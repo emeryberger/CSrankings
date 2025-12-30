@@ -127,6 +127,14 @@ namespace CSRankings {
             Object.keys(params).forEach((key) => {
                 $(`#${key}`).prop('value', params[key].toString());
             });
+            // Sync year slider if it exists
+            if (params['fromyear'] && params['toyear']) {
+                const fromYear = parseInt(params['fromyear']);
+                const toYear = parseInt(params['toyear']);
+                if (typeof setYearSliderValues === 'function') {
+                    setYearSliderValues(fromYear, toYear);
+                }
+            }
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
         clearNonSubsetted(invalidateCheckboxCache);
@@ -158,6 +166,10 @@ namespace CSRankings {
                     q.splice(index, 1);
                     // Set the region.
                     $("#regions").val(elem);
+                    // Sync the custom dropdown
+                    if (typeof syncRegionDropdown === 'function') {
+                        syncRegionDropdown();
+                    }
                 }
                 index += 1;
             });
@@ -300,6 +312,10 @@ namespace CSRankings {
                 default:
                     regionsEl!.value = "world";
                     break;
+            }
+            // Sync the custom dropdown
+            if (typeof syncRegionDropdown === 'function') {
+                syncRegionDropdown();
             }
             rankCallback();
         });
