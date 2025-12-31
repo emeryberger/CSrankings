@@ -3844,7 +3844,7 @@ var CSRankings;
      * Check if we're on a wide enough screen for previews.
      */
     function isWideScreen() {
-        return window.innerWidth >= 1200;
+        return window.innerWidth >= 1000;
     }
     /**
      * Create the preview element if it doesn't exist.
