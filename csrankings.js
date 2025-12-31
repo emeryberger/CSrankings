@@ -2819,6 +2819,20 @@ var CSRankings;
             `;
         }
     }
+    // Mock institution row HTML for illustration
+    function getMockInstitutionEntry() {
+        return `
+            <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:2.2;">
+                <span style="background:#ffeb3b; padding:4px 8px; border-radius:3px; border:2px solid #f57c00;">
+                    <a href="#" onclick="return false;" style="color:#337ab7; font-weight:600;">A University</a>
+                </span>
+                <img src="png/house-logo.png" alt="home" style="height:12px; margin-left:6px; opacity:0.7;">
+                <img src="flags/globe-world.png" alt="world" style="height:12px; margin-left:6px;">
+                <img src="png/barchart.png" alt="chart" style="height:12px; margin-left:6px;">
+                <span style="color:#666; margin-left:8px;">42</span>
+            </div>
+        `;
+    }
     // Mock faculty entry HTML for illustration
     // highlight: 'name' | 'areas' | 'scholar' | 'dblp' | 'chart' | null
     function getMockFacultyEntry(highlight) {
@@ -2964,13 +2978,39 @@ var CSRankings;
                     }
                 ]
             },
-            // Step 6: Faculty Name = Homepage Link
+            // Step 6: Institution Names
+            {
+                id: 'institution-name',
+                title: 'Institution Names',
+                text: function () {
+                    return `
+                    <p>Click any <strong>institution name</strong> to expand and see its faculty.</p>
+                    <p>The <img src="png/house-logo.png" alt="home" style="height:14px;vertical-align:middle;"> icon next to each institution takes you to that CS department's website:</p>
+                    ${getMockInstitutionEntry()}
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 7: Faculty Name = Homepage Link
             {
                 id: 'faculty-name',
                 title: 'Faculty Names Are Links',
                 text: function () {
                     return `
-                    <p>Click any <strong>school name</strong> to expand and see its faculty. The <img src="png/house-logo.png" alt="home" style="height:14px;vertical-align:middle;"> icon next to each school takes you to that CS department's website.</p>
                     <p>Each faculty <strong>name</strong> is a link to their homepage:</p>
                     ${getMockFacultyEntry('name')}
                 `;
