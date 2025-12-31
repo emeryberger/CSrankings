@@ -34,7 +34,8 @@ jobs:
 
       - name: Fetch sponsors from GitHub
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Requires a PAT with read:org scope stored as SPONSORS_TOKEN secret
+          GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
         run: python3 util/update-sponsors.py
 
       - name: Commit and push changes
