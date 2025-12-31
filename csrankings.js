@@ -3449,6 +3449,7 @@ var CSRankings;
     let activeDropdown = null;
     let expandedAreas = new Set();
     let isUpdatingCheckbox = false;
+    let dropdownJustOpened = false;
     /**
      * Get child conferences for a parent area
      */
@@ -3636,6 +3637,9 @@ var CSRankings;
             panel.classList.add('open');
             indicator.classList.add('active');
             activeDropdown = category;
+            // Prevent immediate close on touch devices
+            dropdownJustOpened = true;
+            setTimeout(() => { dropdownJustOpened = false; }, 100);
         }
     }
     /**
@@ -3660,11 +3664,14 @@ var CSRankings;
     function attachDropdownListeners(category, panel) {
         // Expand/collapse icons
         panel.querySelectorAll('.area-expand-icon').forEach(icon => {
-            icon.addEventListener('click', (e) => {
+            const handleExpand = (e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 const parentId = icon.dataset.parent;
                 toggleExpand(parentId);
-            });
+            };
+            icon.addEventListener('click', handleExpand);
+            icon.addEventListener('touchend', handleExpand);
         });
         // "All" checkbox for category
         const allCheckbox = panel.querySelector('.all-checkbox');
@@ -3739,23 +3746,30 @@ var CSRankings;
      * Initialize area dropdowns
      */
     function initAreaDropdowns() {
-        // Attach click handlers to indicators
+        // Attach click/touch handlers to indicators
         document.querySelectorAll('.area-indicator').forEach(indicator => {
-            indicator.addEventListener('click', (e) => {
+            // Use both click and touchend for better iPad support
+            const handleActivate = (e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 const category = indicator.dataset.area;
                 toggleDropdown(category);
-            });
+            };
+            indicator.addEventListener('click', handleActivate);
+            // For iPad Safari: touchend provides more reliable activation
+            indicator.addEventListener('touchend', handleActivate);
         });
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (activeDropdown && !isUpdatingCheckbox) {
+        // Close dropdown when clicking/touching outside
+        const closeHandler = (e) => {
+            if (activeDropdown && !isUpdatingCheckbox && !dropdownJustOpened) {
                 const target = e.target;
                 if (!target.closest('.area-indicators') && !target.closest('.area-dropdown-panel')) {
                     closeDropdown(activeDropdown);
                 }
             }
-        });
+        };
+        document.addEventListener('click', closeHandler);
+        document.addEventListener('touchend', closeHandler);
         // Initialize indicator states
         ['ai', 'systems', 'theory', 'interdisciplinary'].forEach(updateIndicatorState);
         // Listen for changes to main checkboxes to sync dropdowns
