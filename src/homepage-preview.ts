@@ -64,10 +64,23 @@ namespace CSRankings {
         if (!previewElement) return;
 
         const padding = 20;
+        const previewWidth = 400;
         const previewHeight = 300;
 
-        // Position at the left edge of viewport so it doesn't obscure faculty info
+        // Position next to the ranking window (to the left of the content)
+        const rankingWindow = document.getElementById('ranking-window');
         let left = padding;
+
+        if (rankingWindow) {
+            const rect = rankingWindow.getBoundingClientRect();
+            // Position at the left edge of ranking window, minus preview width
+            left = rect.left - previewWidth - padding;
+            // If not enough room, position at left edge of viewport
+            if (left < padding) {
+                left = padding;
+            }
+        }
+
         let top = event.clientY - previewHeight / 2;
 
         if (top < padding) {
