@@ -4046,24 +4046,48 @@ var CSRankings;
     CSRankings.attachPreviewHandlers = attachPreviewHandlers;
     /**
      * Initialize homepage preview functionality.
-     * Uses event delegation on the document body.
+     * Uses mouseover/mouseout for event delegation since mouseenter doesn't bubble.
      */
     function initHomepagePreview() {
-        // Use event delegation for dynamically created faculty rows
-        document.body.addEventListener('mouseenter', (event) => {
+        let currentRow = null;
+        // Use mouseover for event delegation (it bubbles, unlike mouseenter)
+        document.body.addEventListener('mouseover', (event) => {
             const target = event.target;
             const row = target.closest('.faculty-row[data-homepage]');
-            if (row) {
-                handleFacultyMouseEnter(event);
+            if (row && row !== currentRow) {
+                currentRow = row;
+                // Clear any pending hide
+                if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
+                }
+                // Get the homepage URL from the data attribute
+                const url = row.dataset.homepage;
+                if (url && isWideScreen()) {
+                    hoverTimeout = window.setTimeout(() => {
+                        showPreview(url, event);
+                    }, HOVER_DELAY);
+                }
             }
-        }, true);
-        document.body.addEventListener('mouseleave', (event) => {
+        });
+        document.body.addEventListener('mouseout', (event) => {
             const target = event.target;
             const row = target.closest('.faculty-row[data-homepage]');
-            if (row) {
-                handleFacultyMouseLeave();
+            const relatedTarget = event.relatedTarget;
+            // Check if we're leaving the row (not just moving within it)
+            if (row && (!relatedTarget || !row.contains(relatedTarget))) {
+                currentRow = null;
+                if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = null;
+                }
+                // Small delay before hiding to allow moving to preview
+                setTimeout(() => {
+                    if (!isPreviewHovered) {
+                        hidePreview();
+                    }
+                }, 100);
             }
-        }, true);
+        });
     }
     CSRankings.initHomepagePreview = initHomepagePreview;
 })(CSRankings || (CSRankings = {}));
