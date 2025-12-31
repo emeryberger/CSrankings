@@ -54,7 +54,7 @@ query($org: String!, $cursor: String) {
 """
 
 def fetch_sponsors(token: str, org: str = "CSrankings") -> list:
-    """Fetch all sponsors for the given organization."""
+    """Fetch all sponsors for the given organization or user."""
     headers = {
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
@@ -63,39 +63,65 @@ def fetch_sponsors(token: str, org: str = "CSrankings") -> list:
     sponsors = []
     cursor = None
 
-    while True:
-        variables = {"org": org, "cursor": cursor}
-        response = requests.post(
-            GITHUB_GRAPHQL_URL,
-            headers=headers,
-            json={"query": SPONSORS_QUERY, "variables": variables}
-        )
+    # Try organization first, then user
+    for query_type in ["organization", "user"]:
+        query = SPONSORS_QUERY.replace("organization(login:", f"{query_type}(login:")
+        cursor = None
+        sponsors = []
 
-        if response.status_code != 200:
-            print(f"Error: GitHub API returned {response.status_code}")
-            print(response.text)
-            sys.exit(1)
+        print(f"Trying {query_type} query for '{org}'...")
 
-        data = response.json()
+        while True:
+            variables = {"org": org, "cursor": cursor}
+            response = requests.post(
+                GITHUB_GRAPHQL_URL,
+                headers=headers,
+                json={"query": query, "variables": variables}
+            )
 
-        if "errors" in data:
-            print(f"GraphQL errors: {data['errors']}")
-            sys.exit(1)
+            print(f"API response status: {response.status_code}")
 
-        sponsorships = data["data"]["organization"]["sponsorshipsAsMaintainer"]
+            if response.status_code != 200:
+                print(f"Error: GitHub API returned {response.status_code}")
+                print(response.text)
+                break
 
-        for node in sponsorships["nodes"]:
-            entity = node["sponsorEntity"]
-            if entity:  # Can be null for private sponsors
-                sponsors.append({
-                    "login": entity["login"],
-                    "avatar_url": entity["avatarUrl"] + "&s=60",
-                    "html_url": entity["url"]
-                })
+            data = response.json()
+            print(f"Response data keys: {data.keys()}")
 
-        if not sponsorships["pageInfo"]["hasNextPage"]:
+            if "errors" in data:
+                print(f"GraphQL errors: {data['errors']}")
+                break
+
+            entity_data = data.get("data", {}).get(query_type)
+            if not entity_data:
+                print(f"No {query_type} data found")
+                break
+
+            sponsorships = entity_data.get("sponsorshipsAsMaintainer")
+            if not sponsorships:
+                print(f"No sponsorshipsAsMaintainer field found")
+                break
+
+            print(f"Found {len(sponsorships.get('nodes', []))} sponsorship nodes")
+
+            for node in sponsorships["nodes"]:
+                entity = node.get("sponsorEntity")
+                if entity:  # Can be null for private sponsors
+                    sponsors.append({
+                        "login": entity["login"],
+                        "avatar_url": entity["avatarUrl"] + "&s=60",
+                        "html_url": entity["url"]
+                    })
+
+            if not sponsorships["pageInfo"]["hasNextPage"]:
+                break
+            cursor = sponsorships["pageInfo"]["endCursor"]
+
+        # If we found sponsors, stop trying
+        if sponsors:
+            print(f"Success with {query_type} query!")
             break
-        cursor = sponsorships["pageInfo"]["endCursor"]
 
     return sponsors
 
