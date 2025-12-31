@@ -25,27 +25,25 @@ except ImportError:
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
 SPONSORS_FILE = "sponsors.json"
 
-# GraphQL query to fetch sponsors
+# GraphQL query to fetch sponsors using the sponsors connection
 SPONSORS_QUERY = """
 query($org: String!, $cursor: String) {
   organization(login: $org) {
-    sponsorshipsAsMaintainer(first: 100, after: $cursor, includePrivate: false) {
+    sponsors(first: 100, after: $cursor) {
       pageInfo {
         hasNextPage
         endCursor
       }
       nodes {
-        sponsorEntity {
-          ... on User {
-            login
-            avatarUrl
-            url
-          }
-          ... on Organization {
-            login
-            avatarUrl
-            url
-          }
+        ... on User {
+          login
+          avatarUrl
+          url
+        }
+        ... on Organization {
+          login
+          avatarUrl
+          url
         }
       }
     }
@@ -98,20 +96,19 @@ def fetch_sponsors(token: str, org: str = "CSrankings") -> list:
                 print(f"No {query_type} data found")
                 break
 
-            sponsorships = entity_data.get("sponsorshipsAsMaintainer")
+            sponsorships = entity_data.get("sponsors")
             if not sponsorships:
-                print(f"No sponsorshipsAsMaintainer field found")
+                print(f"No sponsors field found")
                 break
 
-            print(f"Found {len(sponsorships.get('nodes', []))} sponsorship nodes")
+            print(f"Found {len(sponsorships.get('nodes', []))} sponsor nodes")
 
             for node in sponsorships["nodes"]:
-                entity = node.get("sponsorEntity")
-                if entity:  # Can be null for private sponsors
+                if node:  # Can be null for private sponsors
                     sponsors.append({
-                        "login": entity["login"],
-                        "avatar_url": entity["avatarUrl"] + "&s=60",
-                        "html_url": entity["url"]
+                        "login": node["login"],
+                        "avatar_url": node["avatarUrl"] + "&s=60",
+                        "html_url": node["url"]
                     })
 
             if not sponsorships["pageInfo"]["hasNextPage"]:
@@ -139,9 +136,10 @@ def main():
 
     print("Fetching sponsors from GitHub...")
 
-    # Try the specified account first, then CSrankings org
+    # Try multiple account variations
     sponsors = []
-    for account in [args.account, "CSrankings"]:
+    accounts_to_try = [args.account, "CSrankings", "csrankings", "CSRankings"]
+    for account in accounts_to_try:
         print(f"\n=== Trying account: {account} ===")
         sponsors = fetch_sponsors(token, account)
         if sponsors:
