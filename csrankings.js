@@ -3949,31 +3949,37 @@ var CSRankings;
     function loadPreviewContent(url, container) {
         const iframe = document.createElement('iframe');
         iframe.sandbox.add('allow-scripts', 'allow-same-origin');
-        let loaded = false;
+        let errorShown = false;
+        const showError = () => {
+            if (!errorShown) {
+                errorShown = true;
+                showPreviewError(container, url);
+            }
+        };
         iframe.onload = () => {
             var _a;
-            loaded = true;
             // Check if iframe actually loaded content
             try {
-                // This will throw if blocked by X-Frame-Options
+                // This will throw if blocked by X-Frame-Options (cross-origin)
                 const doc = iframe.contentDocument || ((_a = iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.document);
                 if (!doc || !doc.body || doc.body.innerHTML === '') {
-                    showPreviewError(container, url);
+                    showError();
                 }
             }
             catch (_b) {
-                // Cross-origin, can't check but iframe might still render
+                // Cross-origin error means the site likely blocked framing
+                showError();
             }
         };
         iframe.onerror = () => {
-            showPreviewError(container, url);
+            showError();
         };
-        // Timeout for slow loads or blocked frames
+        // Timeout for slow loads
         setTimeout(() => {
-            if (!loaded && container.querySelector('.homepage-preview-loading')) {
-                showPreviewError(container, url);
+            if (container.querySelector('.homepage-preview-loading')) {
+                showError();
             }
-        }, 3000);
+        }, 2000);
         iframe.src = url;
         container.innerHTML = '';
         container.appendChild(iframe);
