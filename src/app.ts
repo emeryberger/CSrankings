@@ -246,8 +246,6 @@ namespace CSRankings {
                 initSponsors();
                 // Initialize area dropdowns
                 initAreaDropdowns();
-                // Initialize homepage preview on hover
-                initHomepagePreview();
             })();
         }
 
