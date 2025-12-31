@@ -129,6 +129,7 @@ def main():
     parser = argparse.ArgumentParser(description="Update sponsors.json from GitHub")
     parser.add_argument("--token", help="GitHub token (or set GITHUB_TOKEN env var)")
     parser.add_argument("--dry-run", action="store_true", help="Print sponsors without saving")
+    parser.add_argument("--account", default="emeryberger", help="GitHub account to fetch sponsors for")
     args = parser.parse_args()
 
     token = args.token or os.environ.get("GITHUB_TOKEN")
@@ -137,7 +138,18 @@ def main():
         sys.exit(1)
 
     print("Fetching sponsors from GitHub...")
-    sponsors = fetch_sponsors(token)
+
+    # Try the specified account first, then CSrankings org
+    sponsors = []
+    for account in [args.account, "CSrankings"]:
+        print(f"\n=== Trying account: {account} ===")
+        sponsors = fetch_sponsors(token, account)
+        if sponsors:
+            print(f"Found {len(sponsors)} sponsors for {account}")
+            break
+
+    if not sponsors:
+        print("\nNo sponsors found in any account.")
 
     print(f"Found {len(sponsors)} public sponsors")
 
