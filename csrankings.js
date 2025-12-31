@@ -3448,6 +3448,7 @@ var CSRankings;
     };
     let activeDropdown = null;
     let expandedAreas = new Set();
+    let isUpdatingCheckbox = false;
     /**
      * Get child conferences for a parent area
      */
@@ -3467,7 +3468,10 @@ var CSRankings;
     function toggleArea(areaId, checked) {
         const checkbox = document.getElementById(areaId);
         if (checkbox && checkbox.checked !== checked) {
+            isUpdatingCheckbox = true;
             checkbox.click();
+            // Reset flag after a short delay to allow event to process
+            setTimeout(() => { isUpdatingCheckbox = false; }, 50);
         }
     }
     /**
@@ -3745,7 +3749,7 @@ var CSRankings;
         });
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
-            if (activeDropdown) {
+            if (activeDropdown && !isUpdatingCheckbox) {
                 const target = e.target;
                 if (!target.closest('.area-indicators') && !target.closest('.area-dropdown-panel')) {
                     closeDropdown(activeDropdown);
