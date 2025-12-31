@@ -1055,7 +1055,7 @@ optgroup:not(:first-child) {
 }
 
 /* Homepage preview on hover - only on wide screens */
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .homepage-preview {
     position: fixed;
     display: none;
