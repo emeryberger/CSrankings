@@ -130,7 +130,7 @@ def main():
     parser = argparse.ArgumentParser(description="Update sponsors.json from GitHub")
     parser.add_argument("--token", help="GitHub token (or set GITHUB_TOKEN env var)")
     parser.add_argument("--dry-run", action="store_true", help="Print sponsors without saving")
-    parser.add_argument("--account", default="emeryberger", help="GitHub account to fetch sponsors for")
+    parser.add_argument("--account", default="CSrankings", help="GitHub org/user to fetch sponsors for")
     args = parser.parse_args()
 
     token = args.token or os.environ.get("GITHUB_TOKEN")
@@ -140,9 +140,9 @@ def main():
 
     print("Fetching sponsors from GitHub...")
 
-    # Try multiple account variations
+    # Query the specified account (emeryberger by default)
     sponsors = []
-    accounts_to_try = [args.account, "CSrankings", "csrankings", "CSRankings"]
+    accounts_to_try = [args.account]
     for account in accounts_to_try:
         print(f"\n=== Trying account: {account} ===")
         sponsors = fetch_sponsors(token, account)
