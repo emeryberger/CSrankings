@@ -135,13 +135,8 @@ download-prev-dblp:
 	fi; \
 	YEAR=$$(echo "$$MONTH_YEAR" | grep -oE '[0-9]+'); \
 	MONTH_NAME=$$(echo "$$MONTH_YEAR" | grep -oE '[A-Za-z]+'); \
-	MONTH_NUM=$$(case "$$MONTH_NAME" in \
-		January) echo "01";; February) echo "02";; March) echo "03";; \
-		April) echo "04";; May) echo "05";; June) echo "06";; \
-		July) echo "07";; August) echo "08";; September) echo "09";; \
-		October) echo "10";; November) echo "11";; December) echo "12";; \
-		*) echo "";; \
-	esac); \
+	MONTH_NUM=$$(echo "January February March April May June July August September October November December" | \
+		tr ' ' '\n' | grep -n "^$$MONTH_NAME$$" | cut -d: -f1 | xargs printf "%02d"); \
 	if [ -z "$$MONTH_NUM" ]; then \
 		echo "Error: Could not parse month '$$MONTH_NAME'"; \
 		exit 1; \
