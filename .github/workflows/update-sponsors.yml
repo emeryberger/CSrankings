@@ -1,7 +1,10 @@
 name: Update Sponsors
 
 on:
-  workflow_dispatch:  # Manual trigger only
+  schedule:
+    # Run at midnight UTC on the 28th of each month
+    - cron: '0 0 28 * *'
+  workflow_dispatch:  # Allow manual trigger
 
 permissions:
   contents: write
