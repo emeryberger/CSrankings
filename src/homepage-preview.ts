@@ -244,25 +244,52 @@ namespace CSRankings {
 
     /**
      * Initialize homepage preview functionality.
-     * Uses event delegation on the document body.
+     * Uses mouseover/mouseout for event delegation since mouseenter doesn't bubble.
      */
     export function initHomepagePreview(): void {
-        // Use event delegation for dynamically created faculty rows
-        document.body.addEventListener('mouseenter', (event: MouseEvent) => {
-            const target = event.target as HTMLElement;
-            const row = target.closest('.faculty-row[data-homepage]') as HTMLElement;
-            if (row) {
-                handleFacultyMouseEnter(event);
-            }
-        }, true);
+        let currentRow: HTMLElement | null = null;
 
-        document.body.addEventListener('mouseleave', (event: MouseEvent) => {
+        // Use mouseover for event delegation (it bubbles, unlike mouseenter)
+        document.body.addEventListener('mouseover', (event: MouseEvent) => {
             const target = event.target as HTMLElement;
             const row = target.closest('.faculty-row[data-homepage]') as HTMLElement;
-            if (row) {
-                handleFacultyMouseLeave();
+
+            if (row && row !== currentRow) {
+                currentRow = row;
+                // Clear any pending hide
+                if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
+                }
+                // Get the homepage URL from the data attribute
+                const url = row.dataset.homepage;
+                if (url && isWideScreen()) {
+                    hoverTimeout = window.setTimeout(() => {
+                        showPreview(url, event);
+                    }, HOVER_DELAY);
+                }
             }
-        }, true);
+        });
+
+        document.body.addEventListener('mouseout', (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            const row = target.closest('.faculty-row[data-homepage]') as HTMLElement;
+            const relatedTarget = event.relatedTarget as HTMLElement;
+
+            // Check if we're leaving the row (not just moving within it)
+            if (row && (!relatedTarget || !row.contains(relatedTarget))) {
+                currentRow = null;
+                if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = null;
+                }
+                // Small delay before hiding to allow moving to preview
+                setTimeout(() => {
+                    if (!isPreviewHovered) {
+                        hidePreview();
+                    }
+                }, 100);
+            }
+        });
     }
 
 }
