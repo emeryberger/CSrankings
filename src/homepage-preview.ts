@@ -26,15 +26,7 @@ namespace CSRankings {
         if (!previewElement) {
             previewElement = document.createElement('div');
             previewElement.className = 'homepage-preview';
-            previewElement.innerHTML = `
-                <div class="homepage-preview-header">
-                    <span class="homepage-preview-url"></span>
-                    <a class="homepage-preview-open" href="#" target="_blank">Open</a>
-                </div>
-                <div class="homepage-preview-content">
-                    <div class="homepage-preview-loading">Loading preview...</div>
-                </div>
-            `;
+            previewElement.innerHTML = '<div class="homepage-preview-content"></div>';
             document.body.appendChild(previewElement);
 
             // Keep preview visible when hovering over it
@@ -47,9 +39,9 @@ namespace CSRankings {
                 hidePreview();
             });
 
-            // Make the preview itself clickable to open the page
-            previewElement.addEventListener('click', (e) => {
-                if (currentUrl && !(e.target as HTMLElement).closest('.homepage-preview-open')) {
+            // Make the preview clickable to open the page
+            previewElement.addEventListener('click', () => {
+                if (currentUrl) {
                     window.open(currentUrl, '_blank');
                 }
             });
@@ -64,8 +56,8 @@ namespace CSRankings {
         if (!previewElement) return;
 
         const padding = 20;
-        const previewWidth = 400;
-        const previewHeight = 300;
+        const previewWidth = 200;
+        const previewHeight = 120;
 
         // Position next to the ranking window (to the left of the content)
         const rankingWindow = document.getElementById('ranking-window');
@@ -103,122 +95,31 @@ namespace CSRankings {
         const preview = ensurePreviewElement();
         currentUrl = url;
 
-        // Update URL display and open link
-        const urlDisplay = preview.querySelector('.homepage-preview-url') as HTMLElement;
-        const openLink = preview.querySelector('.homepage-preview-open') as HTMLAnchorElement;
-
-        if (urlDisplay) {
-            try {
-                urlDisplay.textContent = new URL(url).hostname;
-            } catch {
-                urlDisplay.textContent = url;
-            }
-        }
-        if (openLink) {
-            openLink.href = url;
-        }
-
-        // Show loading state first
         const content = preview.querySelector('.homepage-preview-content') as HTMLElement;
         if (content) {
-            content.innerHTML = '<div class="homepage-preview-loading">Loading preview...</div>';
+            loadPreviewContent(url, content);
         }
 
         positionPreview(event);
         preview.classList.add('visible');
-
-        // Try to load iframe
-        loadPreviewContent(url, content);
     }
 
     /**
-     * Test if a URL can be loaded in an iframe, then show preview if successful.
+     * Show a link card instead of iframe (more reliable).
      */
     function loadPreviewContent(url: string, container: HTMLElement): void {
-        // Create a hidden test iframe first
-        const testIframe = document.createElement('iframe');
-        testIframe.sandbox.add('allow-scripts', 'allow-same-origin');
-        testIframe.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
+        let hostname = url;
+        try {
+            hostname = new URL(url).hostname;
+        } catch {
+            // Use full URL if parsing fails
+        }
 
-        let resolved = false;
-
-        const cleanup = () => {
-            if (testIframe.parentNode) {
-                testIframe.parentNode.removeChild(testIframe);
-            }
-        };
-
-        const showSuccess = () => {
-            if (resolved) return;
-            resolved = true;
-            cleanup();
-
-            // Create the actual visible iframe
-            const iframe = document.createElement('iframe');
-            iframe.sandbox.add('allow-scripts', 'allow-same-origin');
-            iframe.src = url;
-            container.innerHTML = '';
-            container.appendChild(iframe);
-        };
-
-        const showFailure = () => {
-            if (resolved) return;
-            resolved = true;
-            cleanup();
-            hidePreview();
-        };
-
-        testIframe.onload = () => {
-            // Check if we can access anything - blocked frames throw errors
-            try {
-                // Try to access contentWindow - this works for successful loads
-                const win = testIframe.contentWindow;
-                if (win) {
-                    // Additional check: try to get location.href
-                    // This throws for blocked frames but not for successful cross-origin loads
-                    try {
-                        // This will throw SecurityError for cross-origin, which is fine
-                        // But blocked frames might behave differently
-                        void win.location.href;
-                    } catch (e) {
-                        // SecurityError is expected for cross-origin - that's OK
-                        if (e instanceof DOMException && e.name === 'SecurityError') {
-                            showSuccess();
-                            return;
-                        }
-                    }
-                    showSuccess();
-                } else {
-                    showFailure();
-                }
-            } catch {
-                showFailure();
-            }
-        };
-
-        testIframe.onerror = () => {
-            showFailure();
-        };
-
-        // Timeout - if nothing happens in 3 seconds, assume failure
-        setTimeout(() => {
-            if (!resolved) {
-                showFailure();
-            }
-        }, 3000);
-
-        document.body.appendChild(testIframe);
-        testIframe.src = url;
-    }
-
-    /**
-     * Show error message when iframe can't load.
-     */
-    function showPreviewError(container: HTMLElement, url: string): void {
         container.innerHTML = `
-            <div class="homepage-preview-error">
-                <div>Preview not available</div>
-                <a href="${url}" target="_blank">Click to open in new tab</a>
+            <div class="homepage-preview-card">
+                <div class="homepage-preview-card-icon">🏠</div>
+                <div class="homepage-preview-card-url">${hostname}</div>
+                <div class="homepage-preview-card-action">Click to open homepage</div>
             </div>
         `;
     }
