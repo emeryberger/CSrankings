@@ -25,25 +25,28 @@ except ImportError:
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
 SPONSORS_FILE = "sponsors.json"
 
-# GraphQL query to fetch sponsors using the sponsors connection
+# GraphQL query to fetch all sponsors (past and present) using sponsorshipsAsMaintainer
+# activeOnly: false includes past sponsors
 SPONSORS_QUERY = """
 query($org: String!, $cursor: String) {
   organization(login: $org) {
-    sponsors(first: 100, after: $cursor) {
+    sponsorshipsAsMaintainer(first: 100, after: $cursor, includePrivate: false, activeOnly: false) {
       pageInfo {
         hasNextPage
         endCursor
       }
       nodes {
-        ... on User {
-          login
-          avatarUrl
-          url
-        }
-        ... on Organization {
-          login
-          avatarUrl
-          url
+        sponsorEntity {
+          ... on User {
+            login
+            avatarUrl
+            url
+          }
+          ... on Organization {
+            login
+            avatarUrl
+            url
+          }
         }
       }
     }
@@ -96,19 +99,20 @@ def fetch_sponsors(token: str, org: str = "CSrankings") -> list:
                 print(f"No {query_type} data found")
                 break
 
-            sponsorships = entity_data.get("sponsors")
+            sponsorships = entity_data.get("sponsorshipsAsMaintainer")
             if not sponsorships:
-                print(f"No sponsors field found")
+                print(f"No sponsorshipsAsMaintainer field found")
                 break
 
-            print(f"Found {len(sponsorships.get('nodes', []))} sponsor nodes")
+            print(f"Found {len(sponsorships.get('nodes', []))} sponsorship nodes")
 
             for node in sponsorships["nodes"]:
-                if node:  # Can be null for private sponsors
+                entity = node.get("sponsorEntity") if node else None
+                if entity:  # Can be null for private sponsors
                     sponsors.append({
-                        "login": node["login"],
-                        "avatar_url": node["avatarUrl"] + "&s=60",
-                        "html_url": node["url"]
+                        "login": entity["login"],
+                        "avatar_url": entity["avatarUrl"] + "&s=60",
+                        "html_url": entity["url"]
                     })
 
             if not sponsorships["pageInfo"]["hasNextPage"]:
