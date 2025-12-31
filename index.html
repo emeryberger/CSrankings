@@ -175,18 +175,18 @@
       if (new_window === undefined) {
       new_window = false;
       }
-      if (typeof ga !== 'undefined') {
-      ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
-      'hitCallback':
-      function () {
-      if (!new_window) {
-      document.location = url;
-      }
-      }
+      /* Track with GA4 gtag if available */
+      if (typeof gtag !== 'undefined') {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon'
       });
       }
       if (new_window){
       window.open(url);
+      } else {
+      document.location = url;
       }
       }
     </script>
