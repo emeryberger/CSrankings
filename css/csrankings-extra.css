@@ -94,7 +94,11 @@ optgroup:not(:first-child) {
 
 .rank-controls-main {
   flex: 1;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
 .rank-controls-sponsor {
@@ -757,7 +761,6 @@ optgroup:not(:first-child) {
   align-items: center;
   gap: 6px;
   flex-wrap: nowrap;
-  margin-left: 8px;
 }
 
 .year-slider-label {
@@ -839,20 +842,16 @@ optgroup:not(:first-child) {
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .year-slider-container {
-    display: flex;
+    display: inline-flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
     gap: 6px;
-    margin-top: 10px;
-    margin-bottom: 12px;
-    width: 100%;
   }
 
   .year-slider {
-    flex: 1;
+    width: 100px;
     min-width: 80px;
-    max-width: 200px;
+    max-width: 100px;
     margin: 0;
   }
 
@@ -874,8 +873,9 @@ optgroup:not(:first-child) {
   }
 
   .year-slider {
+    width: 80px;
     min-width: 60px;
-    max-width: 120px;
+    max-width: 80px;
   }
 
   .year-display {
