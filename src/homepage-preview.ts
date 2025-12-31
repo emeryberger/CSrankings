@@ -132,21 +132,83 @@ namespace CSRankings {
     }
 
     /**
-     * Load the preview content (iframe or error message).
+     * Test if a URL can be loaded in an iframe, then show preview if successful.
      */
     function loadPreviewContent(url: string, container: HTMLElement): void {
-        const iframe = document.createElement('iframe');
-        iframe.sandbox.add('allow-scripts', 'allow-same-origin');
+        // Create a hidden test iframe first
+        const testIframe = document.createElement('iframe');
+        testIframe.sandbox.add('allow-scripts', 'allow-same-origin');
+        testIframe.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;';
 
-        iframe.onerror = () => {
-            showPreviewError(container, url);
+        let resolved = false;
+
+        const cleanup = () => {
+            if (testIframe.parentNode) {
+                testIframe.parentNode.removeChild(testIframe);
+            }
         };
 
-        // Just load the iframe - if the site blocks framing, the browser
-        // will show its own error. We can't reliably detect this from JS.
-        iframe.src = url;
-        container.innerHTML = '';
-        container.appendChild(iframe);
+        const showSuccess = () => {
+            if (resolved) return;
+            resolved = true;
+            cleanup();
+
+            // Create the actual visible iframe
+            const iframe = document.createElement('iframe');
+            iframe.sandbox.add('allow-scripts', 'allow-same-origin');
+            iframe.src = url;
+            container.innerHTML = '';
+            container.appendChild(iframe);
+        };
+
+        const showFailure = () => {
+            if (resolved) return;
+            resolved = true;
+            cleanup();
+            hidePreview();
+        };
+
+        testIframe.onload = () => {
+            // Check if we can access anything - blocked frames throw errors
+            try {
+                // Try to access contentWindow - this works for successful loads
+                const win = testIframe.contentWindow;
+                if (win) {
+                    // Additional check: try to get location.href
+                    // This throws for blocked frames but not for successful cross-origin loads
+                    try {
+                        // This will throw SecurityError for cross-origin, which is fine
+                        // But blocked frames might behave differently
+                        void win.location.href;
+                    } catch (e) {
+                        // SecurityError is expected for cross-origin - that's OK
+                        if (e instanceof DOMException && e.name === 'SecurityError') {
+                            showSuccess();
+                            return;
+                        }
+                    }
+                    showSuccess();
+                } else {
+                    showFailure();
+                }
+            } catch {
+                showFailure();
+            }
+        };
+
+        testIframe.onerror = () => {
+            showFailure();
+        };
+
+        // Timeout - if nothing happens in 3 seconds, assume failure
+        setTimeout(() => {
+            if (!resolved) {
+                showFailure();
+            }
+        }, 3000);
+
+        document.body.appendChild(testIframe);
+        testIframe.src = url;
     }
 
     /**
