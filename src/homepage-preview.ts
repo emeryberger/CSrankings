@@ -64,17 +64,12 @@ namespace CSRankings {
         if (!previewElement) return;
 
         const padding = 20;
-        const previewWidth = 400;
         const previewHeight = 300;
 
-        // Position to the left of cursor so it doesn't obscure the row
-        let left = event.clientX - previewWidth - padding;
+        // Position at the left edge of viewport so it doesn't obscure faculty info
+        let left = padding;
         let top = event.clientY - previewHeight / 2;
 
-        // If not enough room on left, show on right
-        if (left < padding) {
-            left = event.clientX + padding;
-        }
         if (top < padding) {
             top = padding;
         }
