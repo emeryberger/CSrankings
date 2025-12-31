@@ -120,6 +120,13 @@ def main():
             print(f"  - {s['login']}")
         return
 
+    # Don't overwrite with empty list - something went wrong
+    if len(sponsors) == 0:
+        print("WARNING: No sponsors found. This likely means the token lacks permissions.")
+        print("The token needs 'read:org' scope to read sponsor data.")
+        print("NOT updating sponsors.json to preserve existing data.")
+        sys.exit(0)  # Exit successfully to not fail the workflow
+
     # Save to file
     output = {
         "sponsors": sponsors,
