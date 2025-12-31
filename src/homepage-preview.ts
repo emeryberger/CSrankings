@@ -16,7 +16,7 @@ namespace CSRankings {
      * Check if we're on a wide enough screen for previews.
      */
     function isWideScreen(): boolean {
-        return window.innerWidth >= 1200;
+        return window.innerWidth >= 1000;
     }
 
     /**
