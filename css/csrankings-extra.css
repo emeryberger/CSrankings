@@ -907,7 +907,7 @@ optgroup:not(:first-child) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
 }
 
 .sponsors-avatars a {
@@ -916,14 +916,14 @@ optgroup:not(:first-child) {
 }
 
 .sponsors-avatars a:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .sponsors-avatars img {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   transition: border-color 0.2s ease;
 }
 
