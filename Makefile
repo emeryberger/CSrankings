@@ -125,7 +125,7 @@ backup-dblp:
 
 # Download the DBLP snapshot corresponding to the last update date (from index.html)
 # This is used in CI where dblp-original.xml.gz is not checked in
-# DBLP releases are at: https://dblp.org/xml/release/dblp-YYYY-MM-01.xml.gz
+# DBLP releases are at: https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-01.xml.gz
 download-prev-dblp:
 	@echo "Downloading previous DBLP snapshot based on last update date..."
 	@MONTH_YEAR=$$(grep -oE 'DBLP</a> \([A-Za-z]+ [0-9]{4}\)' index.html | grep -oE '[A-Za-z]+ [0-9]+'); \
@@ -148,7 +148,7 @@ download-prev-dblp:
 	fi; \
 	RELEASE_DATE="$$YEAR-$$MONTH_NUM-01"; \
 	echo "Last update was: $$MONTH_YEAR -> downloading dblp-$$RELEASE_DATE.xml.gz"; \
-	curl -f -o dblp-original.xml.gz "https://dblp.org/xml/release/dblp-$$RELEASE_DATE.xml.gz" || \
+	curl -f -o dblp-original.xml.gz "https://drops.dagstuhl.de/storage/artifacts/dblp/xml/$$YEAR/dblp-$$RELEASE_DATE.xml.gz" || \
 		(echo "Error: Failed to download DBLP release for $$RELEASE_DATE" && exit 1)
 
 # Detect DBLP author name changes (dry-run preview)
