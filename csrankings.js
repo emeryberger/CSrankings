@@ -3889,11 +3889,12 @@ var CSRankings;
         const padding = 20;
         const previewWidth = 400;
         const previewHeight = 300;
-        let left = event.clientX + padding;
+        // Position to the left of cursor so it doesn't obscure the row
+        let left = event.clientX - previewWidth - padding;
         let top = event.clientY - previewHeight / 2;
-        // Keep within viewport bounds
-        if (left + previewWidth > window.innerWidth) {
-            left = event.clientX - previewWidth - padding;
+        // If not enough room on left, show on right
+        if (left < padding) {
+            left = event.clientX + padding;
         }
         if (top < padding) {
             top = padding;
