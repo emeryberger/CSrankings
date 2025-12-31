@@ -145,6 +145,9 @@ optgroup:not(:first-child) {
   cursor: pointer;
   transition: opacity 0.2s ease;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .area-indicator.ai-indicator {
@@ -256,6 +259,9 @@ optgroup:not(:first-child) {
   text-align: center;
   transition: transform 0.2s ease;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .area-expand-icon.expanded {
@@ -308,10 +314,44 @@ optgroup:not(:first-child) {
     position: fixed;
     left: 10px;
     right: 10px;
-    top: auto;
-    bottom: 60px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
     max-width: none;
-    max-height: 50vh;
+    max-height: 60vh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Larger touch targets for mobile/tablet */
+  .area-dropdown-item {
+    padding: 10px 12px;
+  }
+
+  .area-dropdown-item label {
+    font-size: 15px;
+    min-height: 24px;
+  }
+
+  .area-dropdown-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .area-expand-icon {
+    font-size: 14px;
+    width: 24px;
+    padding: 4px;
+  }
+
+  .area-child {
+    padding: 8px 8px;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .area-dropdown-panel {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
