@@ -169,6 +169,7 @@ update-dblp-full:
 	$(MAKE) shrink-dblp
 	@echo ""
 	@echo "Step 4/6: Generating DBLP aliases..."
+	$(MAKE) faculty-affiliations.csv
 	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	@echo ""
 	@echo "Step 5/6: Detecting and applying author name changes..."
