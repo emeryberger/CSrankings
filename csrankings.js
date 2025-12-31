@@ -4044,48 +4044,73 @@ var CSRankings;
         row.addEventListener('mouseleave', handleFacultyMouseLeave);
     }
     CSRankings.attachPreviewHandlers = attachPreviewHandlers;
+    let currentRowElement = null;
+    let hideTimeout = null;
+    /**
+     * Schedule showing the preview for a row.
+     */
+    function scheduleShowPreview(row, event) {
+        const url = row.dataset.homepage;
+        if (!url || !isWideScreen())
+            return;
+        // Cancel any pending hide
+        if (hideTimeout) {
+            clearTimeout(hideTimeout);
+            hideTimeout = null;
+        }
+        // Cancel any pending show
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+        }
+        currentRowElement = row;
+        hoverTimeout = window.setTimeout(() => {
+            if (currentRowElement === row) {
+                showPreview(url, event);
+            }
+        }, HOVER_DELAY);
+    }
+    /**
+     * Schedule hiding the preview.
+     */
+    function scheduleHidePreview() {
+        // Cancel any pending show
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+        }
+        currentRowElement = null;
+        // Small delay before hiding to allow moving to preview
+        hideTimeout = window.setTimeout(() => {
+            if (!isPreviewHovered && !currentRowElement) {
+                hidePreview();
+            }
+        }, 150);
+    }
     /**
      * Initialize homepage preview functionality.
      * Uses mouseover/mouseout for event delegation since mouseenter doesn't bubble.
      */
     function initHomepagePreview() {
-        let currentRow = null;
         // Use mouseover for event delegation (it bubbles, unlike mouseenter)
         document.body.addEventListener('mouseover', (event) => {
             const target = event.target;
             const row = target.closest('.faculty-row[data-homepage]');
-            if (row && row !== currentRow) {
-                currentRow = row;
-                // Clear any pending hide
-                if (hoverTimeout) {
-                    clearTimeout(hoverTimeout);
-                }
-                // Get the homepage URL from the data attribute
-                const url = row.dataset.homepage;
-                if (url && isWideScreen()) {
-                    hoverTimeout = window.setTimeout(() => {
-                        showPreview(url, event);
-                    }, HOVER_DELAY);
-                }
+            if (row) {
+                scheduleShowPreview(row, event);
             }
         });
         document.body.addEventListener('mouseout', (event) => {
             const target = event.target;
             const row = target.closest('.faculty-row[data-homepage]');
             const relatedTarget = event.relatedTarget;
-            // Check if we're leaving the row (not just moving within it)
-            if (row && (!relatedTarget || !row.contains(relatedTarget))) {
-                currentRow = null;
-                if (hoverTimeout) {
-                    clearTimeout(hoverTimeout);
-                    hoverTimeout = null;
+            if (row) {
+                // Check if moving to another faculty row
+                const newRow = relatedTarget === null || relatedTarget === void 0 ? void 0 : relatedTarget.closest('.faculty-row[data-homepage]');
+                // Check if moving to the preview
+                const toPreview = relatedTarget === null || relatedTarget === void 0 ? void 0 : relatedTarget.closest('.homepage-preview');
+                if (!newRow && !toPreview && !row.contains(relatedTarget)) {
+                    scheduleHidePreview();
                 }
-                // Small delay before hiding to allow moving to preview
-                setTimeout(() => {
-                    if (!isPreviewHovered) {
-                        hidePreview();
-                    }
-                }, 100);
             }
         });
     }
