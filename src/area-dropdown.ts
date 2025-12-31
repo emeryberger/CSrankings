@@ -85,6 +85,7 @@ namespace CSRankings {
 
     let activeDropdown: string | null = null;
     let expandedAreas: Set<string> = new Set();
+    let isUpdatingCheckbox: boolean = false;
 
     /**
      * Get child conferences for a parent area
@@ -107,7 +108,10 @@ namespace CSRankings {
     function toggleArea(areaId: string, checked: boolean): void {
         const checkbox = document.getElementById(areaId) as HTMLInputElement;
         if (checkbox && checkbox.checked !== checked) {
+            isUpdatingCheckbox = true;
             checkbox.click();
+            // Reset flag after a short delay to allow event to process
+            setTimeout(() => { isUpdatingCheckbox = false; }, 50);
         }
     }
 
@@ -420,7 +424,7 @@ namespace CSRankings {
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
-            if (activeDropdown) {
+            if (activeDropdown && !isUpdatingCheckbox) {
                 const target = e.target as HTMLElement;
                 if (!target.closest('.area-indicators') && !target.closest('.area-dropdown-panel')) {
                     closeDropdown(activeDropdown);
