@@ -138,40 +138,12 @@ namespace CSRankings {
         const iframe = document.createElement('iframe');
         iframe.sandbox.add('allow-scripts', 'allow-same-origin');
 
-        let errorShown = false;
-
-        const showError = () => {
-            if (!errorShown) {
-                errorShown = true;
-                showPreviewError(container, url);
-            }
-        };
-
-        iframe.onload = () => {
-            // Check if iframe actually loaded content
-            try {
-                // This will throw if blocked by X-Frame-Options (cross-origin)
-                const doc = iframe.contentDocument || iframe.contentWindow?.document;
-                if (!doc || !doc.body || doc.body.innerHTML === '') {
-                    showError();
-                }
-            } catch {
-                // Cross-origin error means the site likely blocked framing
-                showError();
-            }
-        };
-
         iframe.onerror = () => {
-            showError();
+            showPreviewError(container, url);
         };
 
-        // Timeout for slow loads
-        setTimeout(() => {
-            if (container.querySelector('.homepage-preview-loading')) {
-                showError();
-            }
-        }, 2000);
-
+        // Just load the iframe - if the site blocks framing, the browser
+        // will show its own error. We can't reliably detect this from JS.
         iframe.src = url;
         container.innerHTML = '';
         container.appendChild(iframe);
