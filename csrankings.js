@@ -986,7 +986,7 @@ var CSRankings;
         for (const name of keys) {
             const homePage = encodeURI(homepages[name]);
             const dblpName = dblpAuthors[name];
-            p += `<tr class="faculty-row" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
+            p += `<tr class="faculty-row" data-homepage="${homePage}" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
                 + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
                 + `onclick="event.stopPropagation(); trackOutboundLink('${homePage}', true); return false;"`
                 + `>${name}</a>&nbsp;`;
@@ -3829,6 +3829,245 @@ var CSRankings;
     CSRankings.initAreaDropdowns = initAreaDropdowns;
 })(CSRankings || (CSRankings = {}));
 /*
+  CSRankings - Homepage Preview
+
+  Shows a preview of faculty homepages on hover (desktop only).
+*/
+var CSRankings;
+(function (CSRankings) {
+    let previewElement = null;
+    let currentUrl = '';
+    let hoverTimeout = null;
+    let isPreviewHovered = false;
+    const HOVER_DELAY = 300; // ms before showing preview
+    /**
+     * Check if we're on a wide enough screen for previews.
+     */
+    function isWideScreen() {
+        return window.innerWidth >= 1200;
+    }
+    /**
+     * Create the preview element if it doesn't exist.
+     */
+    function ensurePreviewElement() {
+        if (!previewElement) {
+            previewElement = document.createElement('div');
+            previewElement.className = 'homepage-preview';
+            previewElement.innerHTML = `
+                <div class="homepage-preview-header">
+                    <span class="homepage-preview-url"></span>
+                    <a class="homepage-preview-open" href="#" target="_blank">Open</a>
+                </div>
+                <div class="homepage-preview-content">
+                    <div class="homepage-preview-loading">Loading preview...</div>
+                </div>
+            `;
+            document.body.appendChild(previewElement);
+            // Keep preview visible when hovering over it
+            previewElement.addEventListener('mouseenter', () => {
+                isPreviewHovered = true;
+            });
+            previewElement.addEventListener('mouseleave', () => {
+                isPreviewHovered = false;
+                hidePreview();
+            });
+            // Make the preview itself clickable to open the page
+            previewElement.addEventListener('click', (e) => {
+                if (currentUrl && !e.target.closest('.homepage-preview-open')) {
+                    window.open(currentUrl, '_blank');
+                }
+            });
+        }
+        return previewElement;
+    }
+    /**
+     * Position the preview near the mouse/element.
+     */
+    function positionPreview(event) {
+        if (!previewElement)
+            return;
+        const padding = 20;
+        const previewWidth = 400;
+        const previewHeight = 300;
+        let left = event.clientX + padding;
+        let top = event.clientY - previewHeight / 2;
+        // Keep within viewport bounds
+        if (left + previewWidth > window.innerWidth) {
+            left = event.clientX - previewWidth - padding;
+        }
+        if (top < padding) {
+            top = padding;
+        }
+        if (top + previewHeight > window.innerHeight - padding) {
+            top = window.innerHeight - previewHeight - padding;
+        }
+        previewElement.style.left = left + 'px';
+        previewElement.style.top = top + 'px';
+    }
+    /**
+     * Show the homepage preview.
+     */
+    function showPreview(url, event) {
+        if (!isWideScreen())
+            return;
+        const preview = ensurePreviewElement();
+        currentUrl = url;
+        // Update URL display and open link
+        const urlDisplay = preview.querySelector('.homepage-preview-url');
+        const openLink = preview.querySelector('.homepage-preview-open');
+        if (urlDisplay) {
+            try {
+                urlDisplay.textContent = new URL(url).hostname;
+            }
+            catch (_a) {
+                urlDisplay.textContent = url;
+            }
+        }
+        if (openLink) {
+            openLink.href = url;
+        }
+        // Show loading state first
+        const content = preview.querySelector('.homepage-preview-content');
+        if (content) {
+            content.innerHTML = '<div class="homepage-preview-loading">Loading preview...</div>';
+        }
+        positionPreview(event);
+        preview.classList.add('visible');
+        // Try to load iframe
+        loadPreviewContent(url, content);
+    }
+    /**
+     * Load the preview content (iframe or error message).
+     */
+    function loadPreviewContent(url, container) {
+        const iframe = document.createElement('iframe');
+        iframe.sandbox.add('allow-scripts', 'allow-same-origin');
+        let loaded = false;
+        iframe.onload = () => {
+            var _a;
+            loaded = true;
+            // Check if iframe actually loaded content
+            try {
+                // This will throw if blocked by X-Frame-Options
+                const doc = iframe.contentDocument || ((_a = iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.document);
+                if (!doc || !doc.body || doc.body.innerHTML === '') {
+                    showPreviewError(container, url);
+                }
+            }
+            catch (_b) {
+                // Cross-origin, can't check but iframe might still render
+            }
+        };
+        iframe.onerror = () => {
+            showPreviewError(container, url);
+        };
+        // Timeout for slow loads or blocked frames
+        setTimeout(() => {
+            if (!loaded && container.querySelector('.homepage-preview-loading')) {
+                showPreviewError(container, url);
+            }
+        }, 3000);
+        iframe.src = url;
+        container.innerHTML = '';
+        container.appendChild(iframe);
+    }
+    /**
+     * Show error message when iframe can't load.
+     */
+    function showPreviewError(container, url) {
+        container.innerHTML = `
+            <div class="homepage-preview-error">
+                <div>Preview not available</div>
+                <a href="${url}" target="_blank">Click to open in new tab</a>
+            </div>
+        `;
+    }
+    /**
+     * Hide the preview.
+     */
+    function hidePreview() {
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+        }
+        // Don't hide if mouse is over the preview
+        if (isPreviewHovered)
+            return;
+        if (previewElement) {
+            previewElement.classList.remove('visible');
+            // Clear iframe to stop loading
+            const content = previewElement.querySelector('.homepage-preview-content');
+            if (content) {
+                content.innerHTML = '';
+            }
+        }
+        currentUrl = '';
+    }
+    /**
+     * Handle mouseenter on faculty rows.
+     */
+    function handleFacultyMouseEnter(event) {
+        const row = event.currentTarget;
+        const url = row.dataset.homepage;
+        if (!url || !isWideScreen())
+            return;
+        // Clear any existing timeout
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+        }
+        // Delay before showing preview
+        hoverTimeout = window.setTimeout(() => {
+            showPreview(url, event);
+        }, HOVER_DELAY);
+    }
+    /**
+     * Handle mouseleave on faculty rows.
+     */
+    function handleFacultyMouseLeave() {
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = null;
+        }
+        // Small delay before hiding to allow moving to preview
+        setTimeout(() => {
+            if (!isPreviewHovered) {
+                hidePreview();
+            }
+        }, 100);
+    }
+    /**
+     * Attach preview handlers to a faculty row element.
+     */
+    function attachPreviewHandlers(row, homepageUrl) {
+        row.dataset.homepage = homepageUrl;
+        row.addEventListener('mouseenter', handleFacultyMouseEnter);
+        row.addEventListener('mouseleave', handleFacultyMouseLeave);
+    }
+    CSRankings.attachPreviewHandlers = attachPreviewHandlers;
+    /**
+     * Initialize homepage preview functionality.
+     * Uses event delegation on the document body.
+     */
+    function initHomepagePreview() {
+        // Use event delegation for dynamically created faculty rows
+        document.body.addEventListener('mouseenter', (event) => {
+            const target = event.target;
+            const row = target.closest('.faculty-row[data-homepage]');
+            if (row) {
+                handleFacultyMouseEnter(event);
+            }
+        }, true);
+        document.body.addEventListener('mouseleave', (event) => {
+            const target = event.target;
+            const row = target.closest('.faculty-row[data-homepage]');
+            if (row) {
+                handleFacultyMouseLeave();
+            }
+        }, true);
+    }
+    CSRankings.initHomepagePreview = initHomepagePreview;
+})(CSRankings || (CSRankings = {}));
+/*
   CSRankings - Main Application
 
   The main App class that orchestrates the ranking system.
@@ -4029,6 +4268,8 @@ var CSRankings;
                 CSRankings.initSponsors();
                 // Initialize area dropdowns
                 CSRankings.initAreaDropdowns();
+                // Initialize homepage preview on hover
+                CSRankings.initHomepagePreview();
             }))();
         }
         recomputeAuthorAreas() {

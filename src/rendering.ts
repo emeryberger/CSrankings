@@ -53,7 +53,7 @@ namespace CSRankings {
             const homePage = encodeURI(homepages[name]);
             const dblpName = dblpAuthors[name];
 
-            p += `<tr class="faculty-row" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
+            p += `<tr class="faculty-row" data-homepage="${homePage}" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
                 + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
                 + `onclick="event.stopPropagation(); trackOutboundLink('${homePage}', true); return false;"`
                 + `>${name}</a>&nbsp;`;
