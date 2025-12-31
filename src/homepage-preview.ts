@@ -138,32 +138,39 @@ namespace CSRankings {
         const iframe = document.createElement('iframe');
         iframe.sandbox.add('allow-scripts', 'allow-same-origin');
 
-        let loaded = false;
+        let errorShown = false;
+
+        const showError = () => {
+            if (!errorShown) {
+                errorShown = true;
+                showPreviewError(container, url);
+            }
+        };
 
         iframe.onload = () => {
-            loaded = true;
             // Check if iframe actually loaded content
             try {
-                // This will throw if blocked by X-Frame-Options
+                // This will throw if blocked by X-Frame-Options (cross-origin)
                 const doc = iframe.contentDocument || iframe.contentWindow?.document;
                 if (!doc || !doc.body || doc.body.innerHTML === '') {
-                    showPreviewError(container, url);
+                    showError();
                 }
             } catch {
-                // Cross-origin, can't check but iframe might still render
+                // Cross-origin error means the site likely blocked framing
+                showError();
             }
         };
 
         iframe.onerror = () => {
-            showPreviewError(container, url);
+            showError();
         };
 
-        // Timeout for slow loads or blocked frames
+        // Timeout for slow loads
         setTimeout(() => {
-            if (!loaded && container.querySelector('.homepage-preview-loading')) {
-                showPreviewError(container, url);
+            if (container.querySelector('.homepage-preview-loading')) {
+                showError();
             }
-        }, 3000);
+        }, 2000);
 
         iframe.src = url;
         container.innerHTML = '';
