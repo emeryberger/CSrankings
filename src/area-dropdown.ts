@@ -86,6 +86,7 @@ namespace CSRankings {
     let activeDropdown: string | null = null;
     let expandedAreas: Set<string> = new Set();
     let isUpdatingCheckbox: boolean = false;
+    let dropdownJustOpened: boolean = false;
 
     /**
      * Get child conferences for a parent area
@@ -298,6 +299,9 @@ namespace CSRankings {
             panel.classList.add('open');
             indicator.classList.add('active');
             activeDropdown = category;
+            // Prevent immediate close on touch devices
+            dropdownJustOpened = true;
+            setTimeout(() => { dropdownJustOpened = false; }, 100);
         }
     }
 
@@ -325,11 +329,14 @@ namespace CSRankings {
     function attachDropdownListeners(category: string, panel: HTMLElement): void {
         // Expand/collapse icons
         panel.querySelectorAll('.area-expand-icon').forEach(icon => {
-            icon.addEventListener('click', (e) => {
+            const handleExpand = (e: Event) => {
+                e.preventDefault();
                 e.stopPropagation();
                 const parentId = (icon as HTMLElement).dataset.parent!;
                 toggleExpand(parentId);
-            });
+            };
+            icon.addEventListener('click', handleExpand);
+            icon.addEventListener('touchend', handleExpand);
         });
 
         // "All" checkbox for category
@@ -413,24 +420,33 @@ namespace CSRankings {
      * Initialize area dropdowns
      */
     export function initAreaDropdowns(): void {
-        // Attach click handlers to indicators
+        // Attach click/touch handlers to indicators
         document.querySelectorAll('.area-indicator').forEach(indicator => {
-            indicator.addEventListener('click', (e) => {
+            // Use both click and touchend for better iPad support
+            const handleActivate = (e: Event) => {
+                e.preventDefault();
                 e.stopPropagation();
                 const category = (indicator as HTMLElement).dataset.area!;
                 toggleDropdown(category);
-            });
+            };
+
+            indicator.addEventListener('click', handleActivate);
+            // For iPad Safari: touchend provides more reliable activation
+            indicator.addEventListener('touchend', handleActivate);
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (activeDropdown && !isUpdatingCheckbox) {
+        // Close dropdown when clicking/touching outside
+        const closeHandler = (e: Event) => {
+            if (activeDropdown && !isUpdatingCheckbox && !dropdownJustOpened) {
                 const target = e.target as HTMLElement;
                 if (!target.closest('.area-indicators') && !target.closest('.area-dropdown-panel')) {
                     closeDropdown(activeDropdown);
                 }
             }
-        });
+        };
+
+        document.addEventListener('click', closeHandler);
+        document.addEventListener('touchend', closeHandler);
 
         // Initialize indicator states
         ['ai', 'systems', 'theory', 'interdisciplinary'].forEach(updateIndicatorState);
