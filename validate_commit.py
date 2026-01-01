@@ -20,6 +20,30 @@ SUCCESS = "\U00002705"
 
 from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 
+# ---------- Checkbox References ----------
+# These map to footnotes in .github/PULL_REQUEST_TEMPLATE.md
+# Used in error messages to help contributors understand which requirement failed
+
+CHECKBOX_REFS = {
+    "non_anonymous": "[^1]",      # Full name in profile
+    "pr_title": "[^2]",           # Descriptive PR title
+    "one_pr": "[^3]",             # One PR per institution
+    "allowed_files": "[^4]",      # Only modify allowed files
+    "no_excel": "[^5]",           # No Excel corruption
+    "csv_format": "[^6]",         # No spaces after commas
+    "alphabetical": "[^7]",       # Alphabetical order
+    "dblp_name": "[^8]",          # DBLP name match
+    "homepage": "[^9]",           # Valid homepage
+    "scholar_id": "[^10]",        # Valid Google Scholar ID
+    "new_institution": "[^14]",   # Open issue first for new institutions
+}
+
+# Excel error values that indicate the file was edited with Excel
+EXCEL_ERROR_PATTERNS = [
+    '#NAME?', '#REF?', '#VALUE?', '#DIV/0!', '#NULL!', '#N/A', '#NUM!',
+    '=HYPERLINK(', '=CONCATENATE(', '=IF(',  # Unevaluated formulas
+]
+
 # ---------- Models ----------
 
 class AuditEntry(BaseModel):
@@ -48,6 +72,67 @@ def remove_brackets(s: str) -> str:
 
 def has_valid_google_scholar_id(s: str) -> bool:
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{12}$', s))
+
+def check_excel_corruption(line: str) -> Optional[str]:
+    """Check if a line contains signs of Excel corruption. Returns the pattern found, or None."""
+    for pattern in EXCEL_ERROR_PATTERNS:
+        if pattern in line:
+            return pattern
+    return None
+
+def normalize_name_for_sorting(name: str) -> str:
+    """Normalize a name for alphabetical comparison."""
+    # Remove diacritics and convert to lowercase for consistent sorting
+    return unidecode.unidecode(name).lower().strip()
+
+def check_alphabetical_order(filepath: str, new_entries: List[str]) -> List[str]:
+    """
+    Check if new entries are inserted in correct alphabetical position.
+    Returns a list of error messages for entries that are out of order.
+    """
+    errors = []
+
+    if not os.path.exists(filepath):
+        return errors
+
+    # Read the current file
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            all_names = [row[0] for row in reader if row and len(row) >= 1]
+    except Exception:
+        return errors
+
+    # For each new entry, check its position
+    for new_entry in new_entries:
+        try:
+            parts = new_entry.split(',')
+            if len(parts) < 1:
+                continue
+            new_name = parts[0]
+            new_name_normalized = normalize_name_for_sorting(new_name)
+
+            # Find where this name appears in the file
+            for i, existing_name in enumerate(all_names):
+                if existing_name == new_name:
+                    # Check predecessor
+                    if i > 0:
+                        prev_name = all_names[i - 1]
+                        prev_normalized = normalize_name_for_sorting(prev_name)
+                        if prev_normalized > new_name_normalized:
+                            errors.append(f"'{new_name}' should come after '{prev_name}' (alphabetically)")
+
+                    # Check successor
+                    if i < len(all_names) - 1:
+                        next_name = all_names[i + 1]
+                        next_normalized = normalize_name_for_sorting(next_name)
+                        if next_normalized < new_name_normalized:
+                            errors.append(f"'{new_name}' should come before '{next_name}' (alphabetically)")
+                    break
+        except Exception:
+            continue
+
+    return errors
 
 def get_dblp_info(path: str, timeout: float = 10.0) -> str:
     urls = [
@@ -258,12 +343,24 @@ def process_pr_metadata(pr_metadata_path: str) -> bool:
     with open(pr_metadata_path, "r", encoding="utf-8") as f:
         pr_metadata = json.load(f)
 
+    # Check that author has a name set in their GitHub profile
+    author_login = pr_metadata.get("author_login", "")
+    author_name = pr_metadata.get("author_name", "")
+    if not author_name or not author_name.strip():
+        print(f"{ERROR}\t{CHECKBOX_REFS['non_anonymous']} GitHub profile for @{author_login} does not have a name set.")
+        print(f"{INFO}\tPlease add your full name to your GitHub profile: https://github.com/settings/profile")
+        valid = False
+    elif author_name.strip().lower() == author_login.lower():
+        print(f"{WARN}\tGitHub profile name '{author_name}' appears to be the same as username. Consider using your full name.")
+    else:
+        print(f"{INFO}\tPR author: {author_name} (@{author_login})")
+
     pr_title = pr_metadata["title"]
     # Check for default GitHub PR titles
     if re.match(r"^Update csrankings-[a-z0]\.csv$", pr_title) or pr_title.strip().lower() in {
         "update csrankings.csv", "update generated-author-info.csv"
     }:
-        print(f"{ERROR}\tPR title is the default GitHub option and too generic: '{pr_title}'")
+        print(f"{ERROR}\t{CHECKBOX_REFS['pr_title']} PR title is the default GitHub option and too generic: '{pr_title}'")
         valid = False
     else:
         print(f"{INFO}\tPR title is descriptive: '{pr_title}'")
@@ -300,44 +397,86 @@ def process_csv_diff(diff_path: str) -> bool:
 
     valid = True
     changed_lines = {}
+    deleted_lines = {}
     for d in data["files"]:
         try:
             path = d["path"]
             if not is_valid_file(path):
-                print(f"{ERROR}\tInvalid file modified: {path}")
+                print(f"{ERROR}\t{CHECKBOX_REFS['allowed_files']} Invalid file modified: {path}")
                 valid = False
             changed_lines[path] = [
                 c["content"] for ch in d["chunks"] for c in ch["changes"]
                 if c["type"] == "AddedLine"
             ]
+            deleted_lines[path] = [
+                c["content"] for ch in d["chunks"] for c in ch["changes"]
+                if c["type"] == "DeletedLine"
+            ]
         except KeyError:
             continue
+
+    # Collect names being deleted (for affiliation change detection)
+    deleted_names = set()
+    for path, lines in deleted_lines.items():
+        for line in lines:
+            if line and ',' in line:
+                try:
+                    name = line.split(',')[0]
+                    deleted_names.add(normalize_name_for_sorting(name))
+                except Exception:
+                    pass
+
+    # Collect all affiliations to check one-PR-per-institution rule
+    # But exclude entries that are affiliation changes (name exists in both added and deleted)
+    all_affiliations = set()
+    affiliation_changes = []
 
     index = 0
     for path, lines in changed_lines.items():
         matched = re.match(r'csrankings-([a-z0])\.csv', path)
         if matched:
             the_letter = unidecode.unidecode(matched.groups(0)[0])
+
+            # Check alphabetical order for this file
+            order_errors = check_alphabetical_order(path, lines)
+            for err in order_errors:
+                print(f"{ERROR}\t{CHECKBOX_REFS['alphabetical']} {err}")
+                valid = False
+
             for line in lines:
                 # Ignore empty lines, since Github seems to be adding them now.
                 if len(line) == 0:
                     continue
                 index += 1
+
+                # Check for Excel corruption
+                excel_error = check_excel_corruption(line)
+                if excel_error:
+                    print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['no_excel']} Excel corruption detected: found '{excel_error}' in line. Do not use Excel to edit CSV files.")
+                    valid = False
+                    continue
+
                 if re.search(r',\s', line):
-                    print(f"\t{index}.\t{ERROR}\tSpace after comma: {line}")
+                    print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['csv_format']} Space after comma: {line}")
                     valid = False
                     continue
                 try:
                     name, affiliation, homepage, scholarid = line.split(',')
+                    # Check if this is an affiliation change (name was also deleted)
+                    name_normalized = normalize_name_for_sorting(name)
+                    if name_normalized in deleted_names:
+                        affiliation_changes.append(name)
+                    else:
+                        all_affiliations.add(affiliation)
                     print(f"{index}.\tValidating {name}")
                     name_no_brackets = remove_brackets(name)
                     if matching_name_with_dblp(name_no_brackets) == 0:
-                        print(f"{index}.\t{ERROR}\tNo DBLP match for {name_no_brackets}")
+                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['dblp_name']} No DBLP match for {name_no_brackets}")
                         valid = False
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
-                    homepage_text = has_valid_homepage(homepage)                    
+                    homepage_text = has_valid_homepage(homepage)
                     if not homepage_text:
-                        print(f"{index}.\t{ERROR}\tInvalid homepage: {homepage}")
+                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['homepage']} Invalid homepage: {homepage}")
                         valid = False
                     homepage_text = extract_visible_text_from_webpage(homepage_text)
                     name = remove_suffix_and_brackets(name)
@@ -345,7 +484,7 @@ def process_csv_diff(diff_path: str) -> bool:
                         print(f"{index}.\t{WARN}\tExact match of name ({name}) not found on home page ({homepage}).")
                         if not fuzzysearch.find_near_matches(name.lower(), homepage_text.lower(), max_l_dist=5):
                             print(f"{index}.\t{WARN}\tNo fuzzy match for {name} found on home page.")
-                    else:    
+                    else:
                         print(f"{index}.\t{INFO}\tName ({name}) found on home page.")
                     if affiliation.lower() not in homepage_text.lower():
                         print(f"{index}.\t{WARN}\tAffiliation ({affiliation}) not found on home page.")
@@ -354,7 +493,9 @@ def process_csv_diff(diff_path: str) -> bool:
                     else:
                         print(f"{index}.\t{INFO}\tAffiliation ({affiliation}) found on home page.")
                     if affiliation not in institutions:
-                        print(f"{index}.\t{ERROR}\tUnknown institution: {affiliation} not found in `institutions.csv`.")
+                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['new_institution']} Unknown institution: {affiliation}")
+                        print(f"{index}.\t{INFO}\tYou must first open an issue titled 'Add {affiliation} to the list of institutions' before submitting this PR.")
+                        print(f"{index}.\t{INFO}\tOnce the institution is added, submit a single PR with ALL faculty in the CS department.")
                         valid = False
                     else:
                         print(f"{index}.\t{INFO}\t{affiliation} is on the list of known institutions (`institutions.csv`).")
@@ -364,14 +505,14 @@ def process_csv_diff(diff_path: str) -> bool:
                     else:
                         print(f"{index}.\t{INFO}\tEntry in the correct file.")
                     if not has_valid_google_scholar_id(scholarid):
-                        print(f"{index}.\t{ERROR}\tInvalid Google Scholar ID format: {scholarid}")
+                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['scholar_id']} Invalid Google Scholar ID format: {scholarid}")
                         valid = False
                     else:
                         print(f"{index}.\t{INFO}\tGoogle Scholar ID ({scholarid}) passed validity checks.")
                         gs_url = f"https://scholar.google.com/citations?hl=en&user={scholarid}"
                         gscholar_page_text = has_valid_homepage(gs_url)
                         if not gscholar_page_text:
-                            print(f"{index}.\t{ERROR}\tInvalid Google Scholar ID ({scholarid}, {gs_url}).")
+                            print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['scholar_id']} Invalid Google Scholar ID ({scholarid}, {gs_url}).")
                             valid = False
                         else:
                             gscholar_page_text = extract_visible_text_from_webpage(gscholar_page_text)
@@ -386,6 +527,19 @@ def process_csv_diff(diff_path: str) -> bool:
                 except Exception as e:
                     print(f"{index}.\tProcessing error: {e}")
                     valid = False
+
+    # Check one-PR-per-institution rule (excluding affiliation changes)
+    if affiliation_changes:
+        print(f"{INFO}\tDetected affiliation change(s) for: {', '.join(affiliation_changes)}")
+    if len(all_affiliations) > 1:
+        print(f"{ERROR}\t{CHECKBOX_REFS['one_pr']} PR contains new entries for multiple institutions: {', '.join(sorted(all_affiliations))}")
+        print(f"{INFO}\tCombine all updates for a single institution into one PR. Submit separate PRs for different institutions.")
+        valid = False
+    elif len(all_affiliations) == 1:
+        print(f"{INFO}\tAll new entries are for a single institution: {list(all_affiliations)[0]}")
+    elif len(all_affiliations) == 0 and affiliation_changes:
+        print(f"{INFO}\tPR contains only affiliation changes (no new faculty additions).")
+
     return valid
 
 # ---------- Main ----------
