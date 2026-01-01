@@ -50,6 +50,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true  # Required to push back
+          fetch-depth: 0  # Fetch full history for git pull --rebase
 
       - name: Set up Git identity
         run: |
