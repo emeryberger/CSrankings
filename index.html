@@ -175,16 +175,18 @@
       if (new_window === undefined) {
       new_window = false;
       }
-      ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
-      'hitCallback':
-      function () {
-      if (!new_window) {
-      document.location = url;
-      }
-      }
+      /* Track with GA4 gtag if available */
+      if (typeof gtag !== 'undefined') {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon'
       });
+      }
       if (new_window){
       window.open(url);
+      } else {
+      document.location = url;
       }
       }
     </script>
@@ -284,8 +286,6 @@
 	      <div class="panel-heading">
 	      <div class="rank-controls-flex" id="rank-controls-row">
 		<div class="rank-controls-main">
-		  Rank
-		  <label for="regions">institutions in</label>
 		  <div class="custom-region-dropdown" id="custom-region-dropdown" title="Filter by country, region, or continent">
 		    <div class="region-selected" id="region-selected">
 		      <img src="/flags/us.png" alt="" class="region-flag" id="region-selected-flag">
