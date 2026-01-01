@@ -1,4 +1,4 @@
-name: Monthly DBLP Update
+name: Update Sponsors
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  update-dblp:
+  update-sponsors:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,20 +31,21 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install requests
 
-      - name: Run DBLP update
-        run: |
-          make update-dblp-full
+      - name: Fetch sponsors from GitHub
+        env:
+          # Requires a PAT with read:org scope stored as SPONSORS_TOKEN secret
+          GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
+        run: python3 util/update-sponsors.py
 
       - name: Commit and push changes
         run: |
-          git add -A
+          git add sponsors.json
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "No changes to sponsors."
           else
-            git commit -m "Auto-commit: monthly DBLP update"
+            git commit -m "Update sponsors list"
             
             # Retry logic to handle concurrent pushes (race condition fix)
             MAX_RETRIES=3
