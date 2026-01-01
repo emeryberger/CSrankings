@@ -45,5 +45,34 @@ jobs:
             echo "No changes to sponsors."
           else
             git commit -m "Update sponsors list"
-            git push
+            
+            # Retry logic to handle concurrent pushes (race condition fix)
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            RETRY_DELAY=5
+            
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              echo "Attempt $((RETRY_COUNT + 1)) of $MAX_RETRIES: Pushing changes..."
+              
+              if git push; then
+                echo "Successfully pushed changes."
+                exit 0
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  echo "Push failed. Pulling with rebase and retrying in ${RETRY_DELAY}s..."
+                  sleep $RETRY_DELAY
+                  
+                  # Pull with rebase to integrate remote changes
+                  git pull --rebase origin gh-pages
+                  
+                  # Increase delay for next retry (exponential backoff)
+                  RETRY_DELAY=$((RETRY_DELAY + 5))
+                else
+                  echo "Error: Failed to push after $MAX_RETRIES attempts."
+                  exit 1
+                fi
+              fi
+            done
           fi
