@@ -1,6 +1,6 @@
 ## Required Checklist
 
-Read [CONTRIBUTING.md](../CONTRIBUTING.md) and check **all** boxes that apply.
+Read [CONTRIBUTING.md](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md) and check **all** boxes that apply.
 Delete any lines that don't apply to your PR.
 
 ### Identity & Format
@@ -28,18 +28,18 @@ Delete any lines that don't apply to your PR.
 
 ---
 
-[^1]: Anonymous submissions are rejected to ensure accountability. [more info](../CONTRIBUTING.md#non-anonymous)
-[^2]: Generic titles make the PR queue difficult to manage. [more info](../CONTRIBUTING.md#pr-title)
-[^3]: Multiple PRs for one institution create merge conflicts. [more info](../CONTRIBUTING.md#one-pr)
-[^4]: Other files are auto-generated or require maintainer access. [more info](../CONTRIBUTING.md#allowed-files)
-[^5]: Excel corrupts Google Scholar IDs by converting them to formulas. [more info](../CONTRIBUTING.md#no-excel)
-[^6]: Malformed CSV lines break the data pipeline. [more info](../CONTRIBUTING.md#csv-format)
-[^7]: Alphabetical order makes entries easy to find and reduces merge conflicts. [more info](../CONTRIBUTING.md#alphabetical)
-[^8]: Publications are matched by exact DBLP name; mismatches = zero papers counted. [more info](../CONTRIBUTING.md#dblp-name)
-[^9]: Automated validation fetches homepage to verify affiliation. [more info](../CONTRIBUTING.md#homepage)
-[^10]: Full URLs or `&hl=en` suffixes break the Scholar lookup. [more info](../CONTRIBUTING.md#scholar-id)
-[^11]: Adjuncts, visitors, and part-time faculty are excluded. [more info](../CONTRIBUTING.md#tenure-track)
-[^12]: Faculty who can only co-advise don't meet inclusion criteria. [more info](../CONTRIBUTING.md#sole-advising)
-[^13]: E.g., courtesy appointment in CS, or graduate program membership. [more info](../CONTRIBUTING.md#non-cs-dept)
-[^14]: Institution must be added to `institutions.csv` first by maintainer. [more info](../CONTRIBUTING.md#new-institution)
-[^15]: Partial departments skew rankings; all-or-nothing ensures fairness. [more info](../CONTRIBUTING.md#entire-dept)
+[^1]: Anonymous submissions are rejected to ensure accountability. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#non-anonymous)
+[^2]: Generic titles make the PR queue difficult to manage. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#pr-title)
+[^3]: Multiple PRs for one institution create merge conflicts. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#one-pr)
+[^4]: Other files are auto-generated or require maintainer access. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#allowed-files)
+[^5]: Excel corrupts Google Scholar IDs by converting them to formulas. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#no-excel)
+[^6]: Malformed CSV lines break the data pipeline. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#csv-format)
+[^7]: Alphabetical order makes entries easy to find and reduces merge conflicts. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#alphabetical)
+[^8]: Publications are matched by exact DBLP name; mismatches = zero papers counted. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#dblp-name)
+[^9]: Automated validation fetches homepage to verify affiliation. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#homepage)
+[^10]: Full URLs or `&hl=en` suffixes break the Scholar lookup. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#scholar-id)
+[^11]: Adjuncts, visitors, and part-time faculty are excluded. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#tenure-track)
+[^12]: Faculty who can only co-advise don't meet inclusion criteria. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#sole-advising)
+[^13]: E.g., courtesy appointment in CS, or graduate program membership. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#non-cs-dept)
+[^14]: Institution must be added to `institutions.csv` first by maintainer. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#new-institution)
+[^15]: Partial departments skew rankings; all-or-nothing ensures fairness. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#entire-dept)
