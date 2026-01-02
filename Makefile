@@ -7,7 +7,7 @@
 
 TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names update-dblp-full apply-author-names backup-dblp update-dblp-date
+.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names update-dblp-full apply-author-names backup-dblp update-dblp-date download-prev-dblp
 
 PYTHON = python3.12 # 3.7
 PYPY   = python3.12 # pypy
@@ -123,6 +123,29 @@ backup-dblp:
 		echo "No dblp-original.xml.gz to backup (first run?)"; \
 	fi
 
+# Download the DBLP snapshot corresponding to the last update date (from index.html)
+# This is used in CI where dblp-original.xml.gz is not checked in
+# DBLP releases are at: https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-01.xml.gz
+download-prev-dblp:
+	@echo "Downloading previous DBLP snapshot based on last update date..."
+	@MONTH_YEAR=$$(grep -oE 'DBLP</a> \([A-Za-z]+ [0-9]{4}\)' index.html | grep -oE '[A-Za-z]+ [0-9]+'); \
+	if [ -z "$$MONTH_YEAR" ]; then \
+		echo "Error: Could not parse DBLP date from index.html"; \
+		exit 1; \
+	fi; \
+	YEAR=$$(echo "$$MONTH_YEAR" | grep -oE '[0-9]+'); \
+	MONTH_NAME=$$(echo "$$MONTH_YEAR" | grep -oE '[A-Za-z]+'); \
+	MONTH_NUM=$$(echo "January February March April May June July August September October November December" | \
+		tr ' ' '\n' | grep -n "^$$MONTH_NAME$$" | cut -d: -f1 | xargs printf "%02d"); \
+	if [ -z "$$MONTH_NUM" ]; then \
+		echo "Error: Could not parse month '$$MONTH_NAME'"; \
+		exit 1; \
+	fi; \
+	RELEASE_DATE="$$YEAR-$$MONTH_NUM-01"; \
+	echo "Last update was: $$MONTH_YEAR -> downloading dblp-$$RELEASE_DATE.xml.gz"; \
+	curl -f -o dblp-original.xml.gz "https://drops.dagstuhl.de/storage/artifacts/dblp/xml/$$YEAR/dblp-$$RELEASE_DATE.xml.gz" || \
+		(echo "Error: Failed to download DBLP release for $$RELEASE_DATE" && exit 1)
+
 # Detect DBLP author name changes (dry-run preview)
 # Requires: prev-dblp.xml.gz (previous DBLP dump) and dblp-original.xml.gz (current)
 update-author-names:
@@ -159,19 +182,23 @@ apply-author-names:
 update-dblp-full:
 	@echo "=== FULLY AUTOMATED DBLP UPDATE ==="
 	@echo ""
-	@echo "Step 1/6: Backing up current DBLP..."
+	@echo "Step 1/8: Downloading previous DBLP snapshot (for name change detection)..."
+	$(MAKE) download-prev-dblp
+	@echo ""
+	@echo "Step 2/8: Backing up to prev-dblp.xml.gz..."
 	$(MAKE) backup-dblp
 	@echo ""
-	@echo "Step 2/6: Downloading new DBLP from $(DBLP)..."
+	@echo "Step 3/8: Downloading new DBLP from $(DBLP)..."
 	$(MAKE) download-dblp
 	@echo ""
-	@echo "Step 3/6: Filtering DBLP to CSRankings venues..."
+	@echo "Step 4/8: Filtering DBLP to CSRankings venues..."
 	$(MAKE) shrink-dblp
 	@echo ""
-	@echo "Step 4/6: Generating DBLP aliases..."
+	@echo "Step 5/8: Generating DBLP aliases..."
+	$(MAKE) faculty-affiliations.csv
 	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	@echo ""
-	@echo "Step 5/6: Detecting and applying author name changes..."
+	@echo "Step 6/8: Detecting and applying author name changes..."
 	@if [ -f prev-dblp.xml.gz ]; then \
 		$(PYTHON) util/new-name-detector.py --old prev-dblp.xml.gz --new dblp-original.xml.gz > name-changes.csv; \
 		CHANGES=$$(wc -l < name-changes.csv | tr -d ' '); \
@@ -185,10 +212,10 @@ update-dblp-full:
 		echo "No previous DBLP backup found. Skipping name change detection."; \
 	fi
 	@echo ""
-	@echo "Step 6/7: Regenerating publication data..."
+	@echo "Step 7/8: Regenerating publication data..."
 	$(MAKE) generated-author-info.csv
 	@echo ""
-	@echo "Step 7/7: Updating DBLP date in index.html..."
+	@echo "Step 8/8: Updating DBLP date in index.html..."
 	$(MAKE) update-dblp-date
 	@echo ""
 	@echo "=== DBLP UPDATE COMPLETE ==="
