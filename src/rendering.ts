@@ -53,13 +53,13 @@ namespace CSRankings {
             const homePage = encodeURI(homepages[name]);
             const dblpName = dblpAuthors[name];
 
-            p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+            p += `<tr class="faculty-row" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
                 + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                + `onclick="event.stopPropagation(); trackOutboundLink('${homePage}', true); return false;"`
                 + `>${name}</a>&nbsp;`;
             if (note.hasOwnProperty(name)) {
                 const url = noteMap[note[name]];
-                const href = `<a href="${url}">`;
+                const href = `<a href="${url}" onclick="event.stopPropagation();">`;
                 p += `<span class="note" title="Note">[${href + note[name]}</a>]</span>&nbsp;`;
             }
             if (acmfellow.hasOwnProperty(name)) {
@@ -72,28 +72,28 @@ namespace CSRankings {
             p += `<span class="areaname">${areaStr.toLowerCase()}</span>&nbsp;`;
 
             p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
+                + `onclick="event.stopPropagation(); trackOutboundLink(\'${homePage}\', true); return false;"`
                 + '>'
                 + `<img alt=\"Home page\" src=\"${homepageImage}\"></a>&nbsp;`;
 
             if (scholarInfo.hasOwnProperty(name)) {
                 if (scholarInfo[name] != "NOSCHOLARPAGE") {
                     const url = `https://scholar.google.com/citations?user=${scholarInfo[name]}&hl=en&oi=ao`;
-                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
+                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="event.stopPropagation(); trackOutboundLink('${url}', true); return false;">`
                         + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
                 }
             }
 
-            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
+            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">`;
             p += '<img alt="DBLP" src="dblp.png">'
                 + '</a>';
 
-            p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
             p += ChartIcon + "</span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
                 + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
-                + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
+                + `onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
                 + "</small></td>"
                 + '<td align="right"><small>'
                 + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
@@ -116,12 +116,13 @@ namespace CSRankings {
         univtext: { [key: string]: string },
         stats: { [key: string]: number },
         useDenseRankings: boolean,
-        ChartIcon: string
+        ChartIcon: string,
+        institutionHomepages?: { [key: string]: string }
     ): string {
         let s = makePrologue();
         /* Show the top N (with more if tied at the end) */
 
-        s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
+        s = s + '<thead><tr><th></th><th align="left"><font color="#777">Institution</font>'
             + '&nbsp;'.repeat(20)      /* Hopefully max length of an institution. */
             + '</th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
@@ -163,12 +164,10 @@ namespace CSRankings {
                     }
                 }
                 const esc = escape(dept);
-                s += "\n<tr><td>" + rank;
-                // Print spaces to hold up to 4 digits of ranked schools.
-                s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
+                s += "\n<tr><td class=\"rank-cell\">" + rank;
                 s += "</td>";
                 s += "<td>"
-                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget">`
+                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget" title="Click to show/hide faculty">`
                     + RightTriangle
                     + "</span>";
 
@@ -179,9 +178,17 @@ namespace CSRankings {
 
                 const country = countryNames[abbrv.toUpperCase()] ?? abbrv.toUpperCase();
 
-                s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
+                // Institution name always toggles faculty list
+                let deptDisplay = `<span onclick="csr.toggleFaculty('${esc}');" style="cursor:pointer;" title="Click to show/hide faculty">${dept}</span>`;
+
+                // Add home icon if institution has a homepage
+                const instHomepage = institutionHomepages && institutionHomepages[dept];
+                if (instHomepage) {
+                    deptDisplay += `&nbsp;<a href="${encodeURI(instHomepage)}" target="_blank" onclick="event.stopPropagation(); trackOutboundLink('${encodeURI(instHomepage)}', true);" title="Visit ${dept} CS department"><img alt="Homepage" src="${homepageImage}" style="opacity:0.7;"></a>`;
+                }
+                s += "&nbsp;" + deptDisplay
                     + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
-                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
                     + ChartIcon + "</span>";
                 s += "</td>";
 
