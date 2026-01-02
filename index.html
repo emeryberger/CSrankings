@@ -16,11 +16,12 @@
     <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="preload" as="style" href="css/csrankings.css">
     <link rel="preload" as="style" href="css/csrankings-extra.css">
-    
+    <link rel="preload" as="style" href="css/nouislider.min.css">
+    <link rel="preload" as="style" href="css/walkthrough.css">
+    <link rel="preload" as="style" href="css/csrankings-tour.css">
+
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://connect.facebook.net">
-    <link rel="preconnect" href="https://www.facebook.com">
     <link rel="preconnect" href="https://dblp.org">
 
     
@@ -34,6 +35,8 @@
 <!--    <link rel="preload" as="script" href="js/pako.min.js" type="text/javascript"> -->
 <!--    <link rel="preload" as="script" src="js/bootstrap.min.js" type="text/javascript"></script> -->
     <link rel="preload" as="script" href="js/navigo.min.js">
+    <link rel="preload" as="script" href="js/nouislider.min.js">
+    <link rel="preload" as="script" href="js/walkthrough.min.js">
 
 
     <meta name="description" content="Computer Science Rankings">
@@ -49,7 +52,10 @@
     
     <link rel="stylesheet" href="css/csrankings.css">
     <link rel="stylesheet" href="css/csrankings-extra.css">
-    
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="css/walkthrough.css">
+    <link rel="stylesheet" href="css/csrankings-tour.css">
+
     <title>CSRankings: Computer Science Rankings</title>
 
     <!--    <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
@@ -169,36 +175,21 @@
       if (new_window === undefined) {
       new_window = false;
       }
-      ga('send', 'event', 'outbound', 'click', url, {'transport': 'beacon',
-      'hitCallback':
-      function () {
-      if (!new_window) {
+      /* Track with GA4 gtag if available */
+      if (typeof gtag !== 'undefined') {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': url,
+        'transport_type': 'beacon'
+      });
+      }
+      if (new_window){
+      window.open(url);
+      } else {
       document.location = url;
       }
       }
-      });
-      if (new_window){
-      window.open(url);
-      }
-      }
     </script>
-    <!-- Facebook Pixel Code -->
-    <script defer>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1437880419634625');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-		   src="https://www.facebook.com/tr?id=1437880419634625&ev=PageView&noscript=1"
-		   /></noscript>
-    <!-- End Facebook Pixel Code -->
 
     <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="js/he-1.2.0.js" type="text/javascript"></script>
@@ -213,6 +204,8 @@
 <!--    <script async src="js/pako.min.js" type="text/javascript"></script> -->
     <script defer src="js/bootstrap.min.js" type="text/javascript"></script>
     <script defer src="js/navigo.min.js"></script>
+    <script defer src="js/nouislider.min.js"></script>
+    <script defer src="js/walkthrough.min.js"></script>
     <!-- <script defer src="csrankings.min.js" type="text/javascript"></script> -->
 <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224607094172722"
 	    crossorigin="anonymous"></script> -->
@@ -220,14 +213,6 @@
   </head>
 
   <body>
-    <div id="fb-root"></div>
-    <script async>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id; js.async=true;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));    </script>
     <!-- sponsorship link, initially off (activated randomly). -->
     <div class="overlay" onclick="document.getElementById('overlay-sponsor').style.display = 'none';" id="overlay-sponsor" style="display:none">
       <div class="centerscreen overlaytext">
@@ -284,39 +269,32 @@
 
 	  <div class="panel panel-info intro-panel">
 	    <div class="panel-heading">
-	      <p>
-		CSRankings is a metrics-based ranking of top computer
-		science institutions around the world.
-		<b>Click on a triangle</b> (<font color="blue">&#9658;</font>) to expand
-		areas or institutions. <b>Click on a name</b> to go to a
-		faculty member's home page. <b>Click on a chart icon</b> (the
-		<img class="chart_icon" alt="chart icon" src="png/barchart.png">
-		after a name or institution) to see the distribution of
-		their publication areas as a 
-		<select id="charttype">
-			<option value="bar">bar chart</option>
-			<option value="pie">pie chart</option>
-		</select>. <b>Click on a
-		  Google Scholar icon</b>
-		(<img src="scholar-favicon.ico" alt="Google Scholar"
-		      height="10" width="10">) to see publications,
-		and <b>click on the DBLP logo</b> (<img alt="DBLP" src="dblp.png">) to
-		go to a DBLP entry.
-		<em><a href="advice.html">Applying to grad school? Read this first.</a></em>
-		For info on grad stipends, check out <a href="https://csstipendrankings.org/">CSStipendRankings.org</a>. For publication statistics on CSrankings conferences, see <a href="https://csconferences.org/">CSconferences.org</a>.
-		<b>If you find CSrankings useful, <a href="https://github.com/sponsors/csrankings">consider sponsoring CSrankings</a>.</b>
+	      <p style="margin-bottom:0;">
+		CSRankings is a metrics-based ranking of top computer science institutions based on faculty publications at selective conferences.
 	      </p>
+	      <!-- Hidden elements for chart type (used by JS) -->
+	      <span class="custom-chart-dropdown" id="custom-chart-dropdown" style="display:none;" title="Choose chart visualization style"><span class="chart-selected" id="chart-selected"><img src="png/barchart.png" alt="bar" class="chart-icon" id="chart-selected-icon"><span id="chart-selected-text">bar chart</span><span class="chart-arrow">&#9662;</span></span><span class="chart-options" id="chart-options"><span class="chart-option selected" data-value="bar"><img src="png/barchart.png" alt="bar"><span>bar chart</span></span><span class="chart-option" data-value="pie"><img src="png/piechart.png" alt="pie"><span>pie chart</span></span></span></span>
+	      <select id="charttype" style="display:none;" title="Choose chart visualization style">
+		<option value="bar">bar chart</option>
+		<option value="pie">pie chart</option>
+	      </select>
 	    </div>
 	  </div>
 
 	  <div class="rank-controls-sticky">
 	    <div class="panel panel-info rank-controls-panel">
 	      <div class="panel-heading">
-	      <div class="row" id="rank-controls-row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-		  Rank 
-		  <label for="regions">institutions in</label>
-		  <select id="regions" name="regions">
+	      <div class="rank-controls-flex" id="rank-controls-row">
+		<div class="rank-controls-main">
+		  <div class="custom-region-dropdown" id="custom-region-dropdown" title="Filter by country, region, or continent">
+		    <div class="region-selected" id="region-selected">
+		      <img src="/flags/us.png" alt="" class="region-flag" id="region-selected-flag">
+		      <span id="region-selected-text">USA</span>
+		      <span class="region-arrow">&#9662;</span>
+		    </div>
+		    <div class="region-options" id="region-options"></div>
+		  </div>
+		  <select id="regions" name="regions" style="display:none;" title="Filter by country, region, or continent">
 		    <optgroup label="by country/region">
 		      <option value="ar">Argentina</option>
                       <option value="au">Australia</option>
@@ -390,55 +368,22 @@
 		      <option value="world">the world</option>
 		    </optgroup>
 		  </select>
-		  <label for="fromyear">by publications from</label>
-		  <!--	      by average count
-			      of publications from -->
-		  <select id="fromyear" name="fromyear">
-		    <option value="1970">1970</option>  
-		    <option value="1971">1971</option>  
-		    <option value="1972">1972</option>  
-		    <option value="1973">1973</option>  
-		    <option value="1974">1974</option>  
-		    <option value="1975">1975</option>  
-		    <option value="1976">1976</option>  
-		    <option value="1977">1977</option>  
-		    <option value="1978">1978</option>  
-		    <option value="1979">1979</option>  
-		    <option value="1980">1980</option>  
-		    <option value="1981">1981</option>  
-		    <option value="1982">1982</option>  
-		    <option value="1983">1983</option>  
-		    <option value="1984">1984</option>  
-		    <option value="1985">1985</option>  
-		    <option value="1986">1986</option>  
-		    <option value="1987">1987</option>  
-		    <option value="1988">1988</option>  
-		    <option value="1989">1989</option>  
-		    <option value="1990">1990</option>  
-		    <option value="1991">1991</option>  
-		    <option value="1992">1992</option>  
-		    <option value="1993">1993</option>  
-		    <option value="1994">1994</option>  
-		    <option value="1995">1995</option>  
-		    <option value="1996">1996</option>  
-		    <option value="1997">1997</option>  
-		    <option value="1998">1998</option>  
-		    <option value="1999">1999</option>  
+		  <span class="year-slider-container" title="Filter by publication year range">
+		    <span id="year-display-from" class="year-display" title="Start year">2015</span>
+		    <div id="year-slider" class="year-slider" title="Drag handles to select year range"></div>
+		    <span id="year-display-to" class="year-display" title="End year">2025</span>
+		  </span>
+		  <!-- Hidden selects for URL compatibility -->
+		  <select id="fromyear" name="fromyear" style="display:none;">
+		    <option value="1970">1970</option>
+		    <option value="1975">1975</option>
+		    <option value="1980">1980</option>
+		    <option value="1985">1985</option>
+		    <option value="1990">1990</option>
+		    <option value="1995">1995</option>
 		    <option value="2000">2000</option>
-		    <option value="2001">2001</option>  
-		    <option value="2002">2002</option>
-		    <option value="2003">2003</option>
-		    <option value="2004">2004</option>
 		    <option value="2005">2005</option>
-		    <option value="2006">2006</option>
-		    <option value="2007">2007</option>
-		    <option value="2008">2008</option>
-		    <option value="2009">2009</option>
 		    <option value="2010">2010</option>
-		    <option value="2011">2011</option>
-		    <option value="2012">2012</option>
-		    <option value="2013">2013</option>
-		    <option value="2014">2014</option>
 		    <option selected="selected" value="2015">2015</option>
 		    <option value="2016">2016</option>
 		    <option value="2017">2017</option>
@@ -451,43 +396,14 @@
 		    <option value="2024">2024</option>
 		    <option value="2025">2025</option>
 		  </select>
-		  <label for="toyear">to</label>
-		  <select id="toyear" name="toyear">
-		    <option value="1980">1980</option>  
-		    <option value="1981">1981</option>  
-		    <option value="1982">1982</option>  
-		    <option value="1983">1983</option>  
-		    <option value="1984">1984</option>  
-		    <option value="1985">1985</option>  
-		    <option value="1986">1986</option>  
-		    <option value="1987">1987</option>  
-		    <option value="1988">1988</option>  
-		    <option value="1989">1989</option>  
-		    <option value="1990">1990</option>  
-		    <option value="1991">1991</option>  
-		    <option value="1992">1992</option>  
-		    <option value="1993">1993</option>  
-		    <option value="1994">1994</option>  
-		    <option value="1995">1995</option>  
-		    <option value="1996">1996</option>  
-		    <option value="1997">1997</option>  
-		    <option value="1998">1998</option>  
-		    <option value="1999">1999</option>  
+		  <select id="toyear" name="toyear" style="display:none;">
+		    <option value="1980">1980</option>
+		    <option value="1985">1985</option>
+		    <option value="1990">1990</option>
+		    <option value="1995">1995</option>
 		    <option value="2000">2000</option>
-		    <option value="2001">2001</option>  
-		    <option value="2002">2002</option>
-		    <option value="2003">2003</option>
-		    <option value="2004">2004</option>
 		    <option value="2005">2005</option>
-		    <option value="2006">2006</option>  
-		    <option value="2007">2007</option>
-		    <option value="2008">2008</option>
-		    <option value="2009">2009</option>
 		    <option value="2010">2010</option>
-		    <option value="2011">2011</option>
-		    <option value="2012">2012</option>
-		    <option value="2013">2013</option>
-		    <option value="2014">2014</option>
 		    <option value="2015">2015</option>
 		    <option value="2016">2016</option>
 		    <option value="2017">2017</option>
@@ -500,6 +416,18 @@
 		    <option value="2024">2024</option>
 		    <option selected="selected" value="2025">2025</option>
 		  </select>
+		  <span class="area-indicators" title="Area selection status">
+		    <span class="area-indicator ai-indicator" data-area="ai" title="AI areas: Click to toggle">AI</span>
+		    <span class="area-indicator systems-indicator" data-area="systems" title="Systems areas: Click to toggle">Systems</span>
+		    <span class="area-indicator theory-indicator" data-area="theory" title="Theory areas: Click to toggle">Theory</span>
+		    <span class="area-indicator interdisciplinary-indicator" data-area="interdisciplinary" title="Interdisciplinary areas: Click to toggle">Interdisc.</span>
+		  </span>
+		</div>
+		<div class="rank-controls-sponsor">
+		  <button type="button" class="btn-help-tour" onclick="event.preventDefault(); event.stopPropagation(); CSRankings.startTour(); return false;" title="Take a guided tour">Tour</button>
+		  <button class="btn-sponsor" onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');" title="Support CSrankings operation">
+		    Sponsor CSrankings
+		  </button>
 		</div>
 	      </div>
 	      </div>
@@ -509,8 +437,8 @@
 	  <div class="row switch-xs row-centered">
 
 	    <!-- start area selection -->
-	    
-	    <div class="col-centered col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
+
+	    <div id="area-selection-panel" class="col-centered col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div class="table-responsive">
 		<table class="table-fit table table-sm table-striped">
 		  
@@ -518,17 +446,15 @@
 		    <tr>
 		      <th colspan="2">
 			<p style="font-size: 125%">All Areas
-			  &nbsp;<span style="font-size: 80%;">[<a class="area_group_selector" id="all_areas_off"><font color="blue"><b>off</b></font></a> | <a class="area_group_selector" id="all_areas_on"><font color="blue"><b>on</b></font></a>]</span>
+			  &nbsp;<span style="font-size: 80%;">[<a class="area_group_selector" id="all_areas_off" title="Deselect all areas"><font color="blue"><b>off</b></font></a> | <a class="area_group_selector" id="all_areas_on" title="Select all areas"><font color="blue"><b>on</b></font></a>]</span>
 			</p>
 		      </th>
 		    </tr>
 		  </thead>
 		  <thead>
 		    <tr>
-		      <th colspan="2">
-			<p class="ai-area">AI
-			  [<a class="area_group_selector" id="ai_areas_off">off</a> | <a class="area_group_selector" id="ai_areas_on">on</a>]
-			</p>
+		      <th colspan="2" style="text-align: left;">
+			  <span class="area-toggle-btn ai-toggle" id="ai_toggle" data-area="ai" title="Click to toggle AI areas">AI</span>
 		      </th>
 		    </tr>
 		  </thead>
@@ -537,8 +463,8 @@
 		    
 		    <tr>
 		      <td>
-			<span class="hovertip" id="ai-widget">&#9658;</span>
-			<label for="ai">
+			<span class="hovertip" id="ai-widget" title="Click to show/hide conferences">&#9658;</span>
+			<label for="ai" title="Select/deselect all AI conferences">
 			  Artificial intelligence
 			</label>
 			<div class="table-responsive" style="display:none;" id="ai-conferences">
@@ -584,7 +510,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="vision-widget">&#9658;
+			<span class="hovertip" id="vision-widget" title="Click to show/hide conferences">&#9658;
 			</span>
 			<label for="vision">
 			  Computer vision
@@ -641,7 +567,7 @@
 		    </tr>
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mlmining-widget">
+			<span class="hovertip" id="mlmining-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Machine learning
@@ -713,7 +639,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="nlp-widget">
+			<span class="hovertip" id="nlp-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			<label for="nlp">
@@ -772,7 +698,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="inforet-widget">
+			<span class="hovertip" id="inforet-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			<label for="inforet">
@@ -826,10 +752,8 @@
 		  <thead>
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
-		      <th colspan="2">
-			<p class="systems-area">Systems
-			  [<a class="area_group_selector" id="systems_areas_off">off</a> | <a class="area_group_selector" id="systems_areas_on">on</a>]
-			</p>
+		      <th colspan="2" style="text-align: left;">
+			  <span class="area-toggle-btn systems-toggle" id="systems_toggle" data-area="systems" title="Click to toggle Systems areas">Systems</span>
 		      </th>
 		    </tr>
 		  </thead>
@@ -838,7 +762,7 @@
 
 		    <tr>
 		      <td>   
-			<span class="hovertip" id="arch-widget">
+			<span class="hovertip" id="arch-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer architecture
@@ -900,7 +824,7 @@
 
 		    <tr>
 		      <td>  
-			<span class="hovertip" id="comm-widget">
+			<span class="hovertip" id="comm-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer networks
@@ -942,7 +866,7 @@
 
 		    <tr>
 		      <td>  
-			<span class="hovertip" id="sec-widget">
+			<span class="hovertip" id="sec-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer security
@@ -1004,7 +928,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mod-widget">
+			<span class="hovertip" id="mod-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Databases
@@ -1067,7 +991,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="da-widget">
+			<span class="hovertip" id="da-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Design automation
@@ -1108,7 +1032,7 @@
 		    
 		    <tr>
 		      <td>
-			<span class="hovertip" id="bed-widget">
+			<span class="hovertip" id="bed-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Embedded &amp; real-time systems&nbsp;&nbsp;
@@ -1157,7 +1081,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="hpc-widget">
+			<span class="hovertip" id="hpc-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			High-performance computing
@@ -1206,7 +1130,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="mobile-widget">
+			<span class="hovertip" id="mobile-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Mobile computing
@@ -1255,7 +1179,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="metrics-widget">
+			<span class="hovertip" id="metrics-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Measurement &amp; perf. analysis&nbsp;
@@ -1296,7 +1220,7 @@
 
 		    <tr>
 		      <td>  
-			<span class="hovertip" id="ops-widget">
+			<span class="hovertip" id="ops-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Operating systems
@@ -1369,7 +1293,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="plan-widget">
+			<span class="hovertip" id="plan-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Programming languages
@@ -1434,7 +1358,7 @@
 		    
 		    <tr>
 		      <td>
-			<span class="hovertip" id="soft-widget">
+			<span class="hovertip" id="soft-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Software engineering
@@ -1501,10 +1425,8 @@
 		  <thead>
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
-		      <th colspan="2">
-			<p class="theory-area">Theory
-			  [<a class="area_group_selector" id="theory_areas_off">off</a> | <a class="area_group_selector" id="theory_areas_on">on</a>]
-			</p>
+		      <th colspan="2" style="text-align: left;">
+			  <span class="area-toggle-btn theory-toggle" id="theory_toggle" data-area="theory" title="Click to toggle Theory areas">Theory</span>
 		      </th>
 		    </tr>
 		  </thead>
@@ -1513,7 +1435,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="act-widget">
+			<span class="hovertip" id="act-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Algorithms &amp; complexity
@@ -1564,7 +1486,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="crypt-widget">
+			<span class="hovertip" id="crypt-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Cryptography
@@ -1606,7 +1528,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="log-widget">
+			<span class="hovertip" id="log-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Logic &amp; verification
@@ -1650,10 +1572,8 @@
 		  <thead>
 		    <tr><td colspan="2"><small>&nbsp;</small></td></tr>
 		    <tr>
-		      <th colspan="2">
-			<p class="interdisciplinary-area">Interdisciplinary Areas
-			  [<a class="area_group_selector" id="other_areas_off">off</a> | <a class="area_group_selector" id="other_areas_on">on</a>]
-			</p>
+		      <th colspan="2" style="text-align: left;">
+			  <span class="area-toggle-btn interdisciplinary-toggle" id="other_toggle" data-area="interdisciplinary" title="Click to toggle Interdisciplinary areas">Interdisciplinary Areas</span>
 		      </th>
 		    </tr>
 		  </thead>
@@ -1662,7 +1582,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="bio-widget">
+			<span class="hovertip" id="bio-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Comp. bio &amp; bioinformatics
@@ -1705,7 +1625,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="graph-widget">
+			<span class="hovertip" id="graph-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer graphics
@@ -1764,7 +1684,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="csed-widget">
+			<span class="hovertip" id="csed-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Computer science education
@@ -1800,7 +1720,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="ecom-widget">
+			<span class="hovertip" id="ecom-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Economics &amp; computation
@@ -1843,7 +1763,7 @@
 
 		    <tr>
 		      <td> 
-			<span class="hovertip" id="chi-widget">
+			<span class="hovertip" id="chi-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Human-computer interaction
@@ -1894,7 +1814,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="robotics-widget">
+			<span class="hovertip" id="robotics-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Robotics
@@ -1944,7 +1864,7 @@
 
 		    <tr>
 		      <td>
-			<span class="hovertip" id="visualization-widget">
+			<span class="hovertip" id="visualization-widget" title="Click to show/hide conferences">
 			  &#9658;
 			</span>
 			Visualization
@@ -1994,9 +1914,25 @@
 	    <!-- end area selection -->
 
 	    <!-- start ranking window -->
-	    
-	    <div class="col-xs-6 col-sm-push-6 col-sm-6 col-md-6 col-lg-6 text-center">
+
+	    <div id="ranking-window" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
 	      <div id="success">
+		<!-- Skeleton loading placeholder -->
+		<div id="skeleton-loading" class="skeleton-loading">
+		  <div class="skeleton-header">
+		    <div class="skeleton-header-item"></div>
+		    <div class="skeleton-header-item"></div>
+		    <div class="skeleton-header-item"></div>
+		  </div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:200px"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:280px"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:220px"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:260px"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:190px"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:240px"></div><div class="skeleton-score"></div></div>
+		  <div class="skeleton-row"><div class="skeleton-rank"></div><div class="skeleton-name" style="max-width:210px"></div><div class="skeleton-score"></div></div>
+		</div>
 	      </div>
 	    </div>
 	    
@@ -2007,47 +1943,25 @@
 	  
 	  <div class="page-footer">
 	    <p>
-	      <br />
-	      This ranking is
-	      designed to identify institutions and faculty actively
-	      engaged in research across a number of areas of
-	      computer science, based on the number of publications
-	      by faculty that have appeared at the most selective
-	      conferences in each area of computer science (see the <b><a href="faq.html">FAQ</a></b> for more details).
+	      Publication data from <a target="_blank" href="https://dblp.org/">DBLP</a> (December 2025) ·
+	      <a target="_blank" href="https://github.com/emeryberger/CSRankings">Contribute via GitHub</a> <a href="https://github.com/emeryberger/CSRankings" target="_blank" title="View on GitHub" style="vertical-align:middle; opacity:0.7;"><svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a> (<a target="_blank" href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository">how to</a>)
 	    </p>
-
 	    <p>
-	      <b>We gratefully acknowledge the generous support of our sponsors, including <a href="https://www.cs.stonybrook.edu/">Stony Brook University</a></b>. <button onclick="event.stopPropagation(); window.open('https://github.com/sponsors/csrankings');">Sponsor CSrankings</button>
+	      With generous support from <a href="https://www.cs.stonybrook.edu/">Stony Brook University</a> and our <a href="https://github.com/sponsors/CSrankings">other sponsors</a>
 	    </p>
-	    
+	    <div class="sponsors-avatars" id="sponsors-avatars">
+	      <!-- Dynamically populated from GitHub API -->
+	    </div>
 	    <p>
-	      <center>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/hOSl3xPmHiQ?rel=0&amp;start=231" frameborder="0" allow="encrypted-media" allowfullscreen>
-		</iframe>
-		<span width="560">
-		  <br />
-		  <b>New to CSrankings?</b>
-		  <b><a href="https://www.youtube.com/watch?v=hOSl3xPmHiQ&feature=youtu.be&t=3m51s">
-		      Watch this video</a></b>
-		  to learn how to use CSrankings.
-		</div>
-	      </center>
+	      <a href="advice.html"><b>Advice for prospective grad students</b></a> ·
+	      <a href="https://csconferences.org/" title="Publication statistics for CS conferences"><b>CSConferences</b></a> ·
+	      <a href="https://csstipendrankings.org/" title="Compare PhD stipends across CS programs"><b>CSStipendRankings</b></a> ·
+	      <a href="faq.html"><b>FAQ</b></a>
 	    </p>
-	    
-<p>
-  <em>Prominent mentions of CSrankings:</em> CMU (<a href="https://www.facebook.com/mldcmu/photos/a.1951141291831706.1073741828.1950839991861836/2031085493837285/?type=3&theater">1</a>, <a href="http://www.cbd.cmu.edu/carnegie-mellon-ranked-first-in-publications-in-highly-selective-computational-biology-conferences/">2</a>) | <a href="http://edinburghnlp.inf.ed.ac.uk/">Edinburgh</a> | <a href="https://cse.engin.umich.edu/about/by-the-numbers/">Michigan</a> | <a href="https://www.cs.rutgers.edu/">Rutgers</a> | <a href="https://www.technion.ac.il/en/blog/prospects-and-risks-from-the-forefront-of-ai/">Technion</a> | <a href="https://www.facebook.com/yann.lecun/posts/10154886059272143">Yann LeCun</a> | <a href="https://blog.regehr.org/archives/1558">John Regehr</a> | <a href="http://www.theexclusive.org/2017/11/cs-rankings.html">Charles Sutton</a>
-</p>
-
-<p class="text-muted">
-	      All publication data is from <a target="_blank" href="https://dblp.org/">DBLP</a> (last update December 2025). Click to see <a target="_blank" href="https://github.com/emeryberger/CSrankings/blob/gh-pages/csrankings.csv">the current database of faculty and their affiliations</a>. <b>Please submit any affiliation updates by editing the appropriate files and issuing a "pull request". Please verify that the faculty members are full-time, tenure-track faculty <em>who can solely advise a PhD student in Computer Science</em>, and that their names are as they appear in DBLP.</b>
-	      
-	      All code and data is available here: <a target="_blank" href="https://github.com/emeryberger/CSRankings">https://github.com/emeryberger/CSRankings</a>, and frequently-asked questions are here: <a href="faq.html">CSRankings FAQ</a>. CSrankings is a <a href="http://gotorankings.org/"><em>GOTO</em> ranking</a>.<br />
-	      <div class="fb-like" data-href="https://www.facebook.com/csrankings/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-	    <p>
-	      <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/" property="dct:title">CSRankings</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://emeryberger.com/" property="cc:attributionName" rel="cc:attributionURL">Emery Berger</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/" href="https://github.com/emeryberger/CSrankings" rel="dct:source">https://github.com/emeryberger/CSrankings</a>.
-	      Follow <b><a href="https://twitter.com/CSrankings">@csrankings</a></b> for updates.<br />
-	      <br>Copyright 2017-2024 © <a href="https://emeryberger.com/">Emery Berger</a><br />
-	    </p>
+	    <p class="text-muted" style="font-size: 0.85em;">
+	      <a href="https://emeryberger.com/">Emery Berger</a> ·
+	      <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> ·
+	      <a href="http://gotorankings.org/">GOTO ranking</a>
 	    </p>
 	  </div>
 	</div>

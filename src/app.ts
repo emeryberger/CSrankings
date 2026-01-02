@@ -52,6 +52,9 @@ namespace CSRankings {
         /* Map institution to (non-US) abbreviation. */
         private readonly countryAbbrv: { [key: string]: string } = {};
 
+        /* Map institution to homepage URL. */
+        private readonly institutionHomepages: { [key: string]: string } = {};
+
         /* Map name to home page. */
         private readonly homepages: { [key: string]: string } = {};
 
@@ -210,7 +213,7 @@ namespace CSRankings {
                     loadACMFellow(this.acmfellow),
                     loadAuthorInfo(this.dblpAuthors, this.homepages, this.scholarInfo, this.note),
                     loadAuthors().then(authors => { this.authors = authors; }),
-                    loadCountryInfo(this.countryInfo, this.countryAbbrv),
+                    loadCountryInfo(this.countryInfo, this.countryAbbrv, this.institutionHomepages),
                     loadCountryNames(this.countryNames)
                 ]);
                 console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
@@ -219,6 +222,17 @@ namespace CSRankings {
                     '/index': (params: { [key: string]: string }, query: string) => this.navigation(params, query),
                     '/fromyear/:fromyear/toyear/:toyear/index': (params: { [key: string]: string }, query: string) => this.navigation(params, query)
                 }).resolve();
+                // Initialize year slider after URL params are applied
+                initYearSlider(() => {
+                    this.invalidateIncrementalCache();
+                    this.recomputeAuthorAreas();
+                    this.rank();
+                    recordUserInteraction();
+                });
+                // Initialize custom region dropdown with flags
+                initRegionDropdown();
+                // Initialize custom chart type dropdown with icons
+                initChartDropdown();
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 geoCheck(() => this.rank());
@@ -226,6 +240,12 @@ namespace CSRankings {
                 // Display survey or sponsorship request
                 const surveyShown = tryDisplaySurvey({ disabled: true });
                 initSponsorshipTracking(surveyShown);
+                // Initialize interactive tour
+                initTour();
+                // Initialize sponsors banner
+                initSponsors();
+                // Initialize area dropdowns
+                initAreaDropdowns();
             })();
         }
 
@@ -472,7 +492,8 @@ namespace CSRankings {
                 univtext,
                 this.stats,
                 this.useDenseRankings,
-                this.ChartIcon);
+                this.ChartIcon,
+                this.institutionHomepages);
 
             let stop = performance.now();
             console.log(`Before render: rank took ${(stop - start)} milliseconds.`);
@@ -491,6 +512,9 @@ namespace CSRankings {
 
             stop = performance.now();
             console.log(`Rank took ${(stop - start)} milliseconds.`);
+
+            // Update area selection indicators in the sticky banner
+            updateAreaIndicators();
 
             return false;
         }
