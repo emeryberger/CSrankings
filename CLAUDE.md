@@ -5,6 +5,8 @@ CSRankings is a metrics-based ranking of top computer science institutions. The 
 
 See [optimizations.md](optimizations.md) for performance optimization strategies and benchmarks.
 
+See [docs/ui-learnings.md](docs/ui-learnings.md) for CSS patterns, table structure, and UI modification guidelines.
+
 ## Build Commands
 ```bash
 # Compile TypeScript
@@ -23,7 +25,19 @@ make csrankings.min.js
 ## Architecture
 
 ### Main Files
-- `csrankings.ts` - Main TypeScript application (~2100 lines)
+- `src/` - TypeScript source files (modular architecture):
+  - `app.ts` - Main application entry point, CSRankings singleton class
+  - `checkbox.ts` - Checkbox state management and caching
+  - `computation.ts` - Ranking computation and incremental updates
+  - `config.ts` - Area maps, parent/child relationships, configuration
+  - `data-loader.ts` - CSV loading (parallel via Promise.all)
+  - `event-handlers.ts` - UI event listeners
+  - `navigation.ts` - Client-side routing (Navigo)
+  - `rendering.ts` - HTML generation for tables and dropdowns
+  - `region.ts` - Region/continent filtering
+  - `types.ts` - TypeScript type definitions
+  - `utils.ts` - Utility functions
+  - `verification.ts` - Incremental computation verification
 - `index.html` - Single page with checkbox controls and result container
 - `tsconfig.json` - TypeScript configuration (ES6 target, strict mode)
 
@@ -198,6 +212,75 @@ GitHub Actions workflow (`.github/workflows/post-merge-rebuild.yml`) runs on pus
 1. **test job**: Compiles TypeScript, runs pytest with Selenium/Chrome
 2. **build-and-commit job**: Runs `make` and auto-commits results (only after tests pass)
 
+### Race Condition Protection
+All workflows that push changes include retry logic to handle concurrent pushes:
+- **Max retries**: 3 attempts
+- **Retry mechanism**: `git pull --rebase` to integrate remote changes before retrying
+- **Exponential backoff**: 5s, 10s, 15s delays between retries
+- **Workflows protected**: `post-merge-rebuild.yml`, `monthly-dblp-update.yml`, `update-sponsors.yml`
+
+This prevents data loss when multiple PRs are merged in quick succession, ensuring all changes are preserved even if concurrent CI runs occur.
+
+## PR Validation System
+
+The `commit_validation.yml` workflow validates PRs automatically using `validate_commit.py`.
+
+### PR Template
+
+`.github/PULL_REQUEST_TEMPLATE.md` provides a checklist that populates new PR descriptions. Key learnings:
+
+- **Use absolute URLs**: Links in PR templates don't resolve correctly with relative paths. Use full URLs like `https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#anchor`
+- **GitHub doesn't support PR forms**: Unlike Issue Forms (YAML-based with required fields), PR templates are markdown-only. Checkboxes are just text that users can ignore.
+- **Trigger on `edited`**: The workflow must include `edited` in triggers so validation re-runs when contributors check boxes after initial submission:
+  ```yaml
+  on:
+    pull_request_target:
+      types: [opened, synchronize, edited]
+  ```
+
+### Programmatic Validation
+
+`validate_commit.py` validates PRs programmatically rather than trusting checkboxes:
+
+| Check | Implementation |
+|-------|----------------|
+| Author profile | GitHub API check for non-empty `user.name` |
+| PR title | Reject generic titles like "Update csrankings-x.csv" |
+| One PR per institution | Collect affiliations, fail if >1 (excludes affiliation changes) |
+| Allowed files | Only `csrankings-[a-z].csv` or `old/*.csv` |
+| Excel corruption | Detect `#NAME?`, `#REF?`, `#VALUE?`, etc. |
+| CSV format | No spaces after commas |
+| Alphabetical order | Check new entries against neighbors in file |
+| DBLP match | Query DBLP API for name |
+| Homepage | Fetch and check for name/affiliation |
+| Google Scholar | Validate 12-char ID format, fetch page |
+| New institution | Provide guidance to open issue first |
+
+### Checkbox References
+
+Error messages include footnote references (e.g., `[^5]`) that map to the PR template, helping contributors understand which requirement failed:
+```
+❌  [^5] Excel corruption detected: found '#NAME?' in line.
+❌  [^7] 'Jane Smith' should come before 'John Doe' (alphabetically)
+```
+
+### Affiliation Changes
+
+The one-PR-per-institution check correctly handles affiliation changes by detecting when a name appears in both deleted and added lines:
+```python
+if name_normalized in deleted_names:
+    affiliation_changes.append(name)  # Don't count toward institution check
+else:
+    all_affiliations.add(affiliation)
+```
+
+### Files Involved
+
+- `.github/PULL_REQUEST_TEMPLATE.md` - Checklist with footnotes
+- `CONTRIBUTING.md` - Detailed explanations with anchor IDs
+- `validate_commit.py` - Programmatic validation logic
+- `generate_diff.py` - Fetches PR metadata including author info
+
 ## DBLP Processing
 
 The `make update-dblp` target downloads and filters the DBLP database:
@@ -291,8 +374,20 @@ Tools involved:
 
 ## File Structure
 ```
-csrankings.ts          # Main TypeScript source
-csrankings.js          # Compiled JavaScript
+src/                   # TypeScript source (modular)
+  app.ts               # Main entry point
+  checkbox.ts          # Checkbox management
+  computation.ts       # Ranking computation
+  config.ts            # Area configuration
+  data-loader.ts       # CSV loading
+  event-handlers.ts    # UI events
+  navigation.ts        # Routing
+  rendering.ts         # HTML generation
+  region.ts            # Region filtering
+  types.ts             # Type definitions
+  utils.ts             # Utilities
+  verification.ts      # Incremental verification
+csrankings.js          # Compiled JavaScript (bundled)
 csrankings.min.js      # Minified for production
 index.html             # Main page
 tsconfig.json          # TypeScript config
@@ -399,6 +494,86 @@ git pull --rebase origin gh-pages
 git push origin gh-pages
 gh pr close <PR_NUMBER>
 ```
+
+## Maintaining Institution Homepages
+
+The `institutions.csv` file contains CS department homepage URLs for each institution. These URLs are displayed when users click on institution names.
+
+### File Format
+```csv
+institution,region,countryabbrv,homepage
+MIT,northamerica,us,https://www.eecs.mit.edu/
+University of Oxford,europe,gb,https://www.cs.ox.ac.uk/
+```
+
+### Common URL Issues
+
+**Problem**: Many entries point to main university homepages instead of CS department pages.
+
+**Signs of incorrect URLs:**
+- URL is just `https://www.university.edu` (no path)
+- URL contains `staff.`, `people.`, `homepage.`, or `avesis.`
+- URL points to a different department (e.g., ECE instead of CS)
+
+**Correct URLs should point to:**
+- Department of Computer Science
+- School of Computing
+- Faculty of Informatics
+- College of Computing
+- Or equivalent CS-specific page
+
+### Finding Correct URLs
+
+Search for: `"[University Name] computer science department homepage"`
+
+Common patterns by country:
+- **US**: `cs.university.edu` or `www.cs.university.edu`
+- **UK**: `www.university.ac.uk/computer-science` or `cs.university.ac.uk`
+- **Germany**: `informatik.uni-xxx.de` or `www.uni-xxx.de/informatik`
+- **India (IITs)**: `cse.iitX.ac.in` or `www.cse.iitX.ac.in`
+- **China**: `cs.university.edu.cn`
+- **Japan**: `www.cs.university.ac.jp`
+
+### Preserving Homepage Column
+
+**IMPORTANT**: The `util/clean-csrankings.py` script processes `institutions.csv`. It was updated to preserve the `homepage` column. If the column gets stripped, check that the script includes:
+
+```python
+# In clean-csrankings.py around line 98
+countryinfo[row["institution"]] = {
+    "region": row["region"],
+    "countryabbrv": row["countryabbrv"],
+    "homepage": row.get("homepage", ""),  # Must include this!
+}
+
+# And in the write section around line 106
+sfieldnames = ["institution", "region", "countryabbrv", "homepage"]  # Must include homepage!
+```
+
+### Batch URL Updates
+
+When updating many URLs, use parallel web searches to find correct CS department pages:
+1. Group institutions by region/country
+2. Search for official CS department homepages
+3. Verify URLs actually work and point to CS departments
+4. Update `institutions.csv` with correct URLs
+
+### Universities That Commonly Need Updates
+
+**Renamed/Restructured:**
+- Jacobs University Bremen → Constructor University
+- ENS Cachan → ENS Paris-Saclay
+- Tokyo Institute of Technology → Science Tokyo (transition ongoing)
+
+**Multi-campus systems** (ensure correct campus CS page):
+- University of California system
+- BITS Pilani (Pilani, Goa, Hyderabad campuses)
+- IIT system in India
+
+**Research institutes** (may not have traditional department pages):
+- INRIA (France) - use team/center pages
+- CWI (Netherlands) - use main institute page
+- Max Planck Institutes (Germany)
 
 ## Dependencies
 

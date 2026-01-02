@@ -440,7 +440,7 @@ var CSRankings;
     }
     CSRankings.loadACMFellow = loadACMFellow;
     /* Load country/region information for institutions */
-    function loadCountryInfo(countryInfo, countryAbbrv) {
+    function loadCountryInfo(countryInfo, countryAbbrv, institutionHomepages) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield new Promise((resolve) => {
                 Papa.parse(CSRankings.countryinfoFile, {
@@ -455,6 +455,9 @@ var CSRankings;
             for (const info of ci) {
                 countryInfo[info.institution] = info.region;
                 countryAbbrv[info.institution] = info.countryabbrv;
+                if (institutionHomepages && info.homepage) {
+                    institutionHomepages[info.institution] = info.homepage;
+                }
             }
         });
     }
@@ -983,13 +986,13 @@ var CSRankings;
         for (const name of keys) {
             const homePage = encodeURI(homepages[name]);
             const dblpName = dblpAuthors[name];
-            p += "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>"
+            p += `<tr class="faculty-row" style="cursor:pointer;" onclick="window.open('${homePage}', '_blank'); trackOutboundLink('${homePage}', true);" title="Click anywhere to visit ${name}'s home page"><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><small>`
                 + `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                + `onclick="trackOutboundLink('${homePage}', true); return false;"`
+                + `onclick="event.stopPropagation(); trackOutboundLink('${homePage}', true); return false;"`
                 + `>${name}</a>&nbsp;`;
             if (note.hasOwnProperty(name)) {
                 const url = CSRankings.noteMap[note[name]];
-                const href = `<a href="${url}">`;
+                const href = `<a href="${url}" onclick="event.stopPropagation();">`;
                 p += `<span class="note" title="Note">[${href + note[name]}</a>]</span>&nbsp;`;
             }
             if (acmfellow.hasOwnProperty(name)) {
@@ -1001,25 +1004,25 @@ var CSRankings;
             const areaStr = areaStringFn(name);
             p += `<span class="areaname">${areaStr.toLowerCase()}</span>&nbsp;`;
             p += `<a title="Click for author\'s home page." target="_blank" href="${homePage}" `
-                + `onclick="trackOutboundLink(\'${homePage}\', true); return false;"`
+                + `onclick="event.stopPropagation(); trackOutboundLink(\'${homePage}\', true); return false;"`
                 + '>'
                 + `<img alt=\"Home page\" src=\"${CSRankings.homepageImage}\"></a>&nbsp;`;
             if (scholarInfo.hasOwnProperty(name)) {
                 if (scholarInfo[name] != "NOSCHOLARPAGE") {
                     const url = `https://scholar.google.com/citations?user=${scholarInfo[name]}&hl=en&oi=ao`;
-                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="trackOutboundLink('${url}', true); return false;">`
+                    p += `<a title="Click for author\'s Google Scholar page." target="_blank" href="${url}" onclick="event.stopPropagation(); trackOutboundLink('${url}', true); return false;">`
                         + '<img alt="Google Scholar" src="scholar-favicon.ico" height="10" width="10"></a>&nbsp;';
                 }
             }
-            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="trackOutboundLink('${dblpName}', true); return false;">`;
+            p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">`;
             p += '<img alt="DBLP" src="dblp.png">'
                 + '</a>';
-            p += `<span onclick='csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
             p += ChartIcon + "</span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
                 + `<a title="Click for author's DBLP entry." target="_blank" href="${dblpName}" `
-                + `onclick="trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
+                + `onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">${fc[name]}</a>`
                 + "</small></td>"
                 + '<td align="right"><small>'
                 + (Math.round(10.0 * facultyAdjustedCount[name]) / 10.0).toFixed(1)
@@ -1034,11 +1037,11 @@ var CSRankings;
     }
     CSRankings.buildFacultyHTML = buildFacultyHTML;
     /* Build the main output ranking table */
-    function buildOutputString(numAreas, countryAbbrv, countryNames, deptCounts, univtext, stats, useDenseRankings, ChartIcon) {
+    function buildOutputString(numAreas, countryAbbrv, countryNames, deptCounts, univtext, stats, useDenseRankings, ChartIcon, institutionHomepages) {
         var _a;
         let s = CSRankings.makePrologue();
         /* Show the top N (with more if tied at the end) */
-        s = s + '<thead><tr><th align="left"><font color="#777">#</font></th><th align="left"><font color="#777">Institution</font>'
+        s = s + '<thead><tr><th></th><th align="left"><font color="#777">Institution</font>'
             + '&nbsp;'.repeat(20) /* Hopefully max length of an institution. */
             + '</th><th align="right">'
             + '<abbr title="Geometric mean count of papers published across all areas."><font color="#777">Count</font>'
@@ -1079,12 +1082,10 @@ var CSRankings;
                     }
                 }
                 const esc = escape(dept);
-                s += "\n<tr><td>" + rank;
-                // Print spaces to hold up to 4 digits of ranked schools.
-                s += "&nbsp;".repeat(4 - Math.ceil(Math.log10(rank)));
+                s += "\n<tr><td class=\"rank-cell\">" + rank;
                 s += "</td>";
                 s += "<td>"
-                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget">`
+                    + `<span class="hovertip" onclick="csr.toggleFaculty('${esc}');" id="${esc}-widget" title="Click to show/hide faculty">`
                     + CSRankings.RightTriangle
                     + "</span>";
                 let abbrv = "us";
@@ -1092,9 +1093,16 @@ var CSRankings;
                     abbrv = countryAbbrv[dept];
                 }
                 const country = (_a = countryNames[abbrv.toUpperCase()]) !== null && _a !== void 0 ? _a : abbrv.toUpperCase();
-                s += "&nbsp;" + `<span onclick="csr.toggleFaculty('${esc}');">${dept}</span>`
+                // Institution name always toggles faculty list
+                let deptDisplay = `<span onclick="csr.toggleFaculty('${esc}');" style="cursor:pointer;" title="Click to show/hide faculty">${dept}</span>`;
+                // Add home icon if institution has a homepage
+                const instHomepage = institutionHomepages && institutionHomepages[dept];
+                if (instHomepage) {
+                    deptDisplay += `&nbsp;<a href="${encodeURI(instHomepage)}" target="_blank" onclick="event.stopPropagation(); trackOutboundLink('${encodeURI(instHomepage)}', true);" title="Visit ${dept} CS department"><img alt="Homepage" src="${CSRankings.homepageImage}" style="opacity:0.7;"></a>`;
+                }
+                s += "&nbsp;" + deptDisplay
                     + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
-                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}'>`
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
                     + ChartIcon + "</span>";
                 s += "</td>";
                 s += `<td align="right">${(Math.round(10.0 * v) / 10.0).toFixed(1)}</td>`;
@@ -1573,6 +1581,14 @@ var CSRankings;
             Object.keys(params).forEach((key) => {
                 $(`#${key}`).prop('value', params[key].toString());
             });
+            // Sync year slider if it exists
+            if (params['fromyear'] && params['toyear']) {
+                const fromYear = parseInt(params['fromyear']);
+                const toYear = parseInt(params['toyear']);
+                if (typeof CSRankings.setYearSliderValues === 'function') {
+                    CSRankings.setYearSliderValues(fromYear, toYear);
+                }
+            }
         }
         // Clear everything *unless* there are subsets / below-the-fold selected.
         clearNonSubsetted(invalidateCheckboxCache);
@@ -1604,6 +1620,10 @@ var CSRankings;
                     q.splice(index, 1);
                     // Set the region.
                     $("#regions").val(elem);
+                    // Sync the custom dropdown
+                    if (typeof CSRankings.syncRegionDropdown === 'function') {
+                        CSRankings.syncRegionDropdown();
+                    }
                 }
                 index += 1;
             });
@@ -1614,6 +1634,10 @@ var CSRankings;
         });
         if (foundPie) {
             $("#charttype").val("pie");
+            // Sync the custom dropdown
+            if (typeof CSRankings.syncChartDropdown === 'function') {
+                CSRankings.syncChartDropdown();
+            }
         }
         if (foundAll) {
             // Set everything.
@@ -1747,6 +1771,10 @@ var CSRankings;
                 default:
                     regionsEl.value = "world";
                     break;
+            }
+            // Sync the custom dropdown
+            if (typeof CSRankings.syncRegionDropdown === 'function') {
+                CSRankings.syncRegionDropdown();
             }
             rankCallback();
         });
@@ -2044,16 +2072,16 @@ var CSRankings;
 (function (CSRankings) {
     /* Add event listeners for dropdown changes */
     function addDropdownListeners(callbacks) {
-        ["toyear", "fromyear", "regions"].forEach((key) => {
-            const widget = document.getElementById(key);
-            widget.addEventListener("change", () => {
-                // Year/region change invalidates the incremental cache
-                callbacks.invalidateIncrementalCache();
-                callbacks.recomputeAuthorAreas();
-                callbacks.rank();
-                // Track user interaction for sponsorship
-                CSRankings.recordUserInteraction();
-            });
+        // Note: year selects are now hidden and managed by the year slider (year-slider.ts)
+        // Only add listener for regions dropdown
+        const regionsWidget = document.getElementById("regions");
+        regionsWidget.addEventListener("change", () => {
+            // Region change invalidates the incremental cache
+            callbacks.invalidateIncrementalCache();
+            callbacks.recomputeAuthorAreas();
+            callbacks.rank();
+            // Track user interaction for sponsorship
+            CSRankings.recordUserInteraction();
         });
         // Chart type doesn't affect data, just visualization
         const charttypeWidget = document.getElementById("charttype");
@@ -2105,36 +2133,1700 @@ var CSRankings;
     CSRankings.addCheckboxListeners = addCheckboxListeners;
     /* Add event listeners for group selector buttons */
     function addGroupSelectorListeners(callbacks) {
-        const listeners = {
-            'all_areas_on': (() => { callbacks.activateAll(); }),
-            'all_areas_off': (() => { callbacks.activateNone(); }),
-            'ai_areas_on': (() => { callbacks.activateAI(); }),
-            'ai_areas_off': (() => { callbacks.deactivateAI(); }),
-            'systems_areas_on': (() => { callbacks.activateSystems(); }),
-            'systems_areas_off': (() => { callbacks.deactivateSystems(); }),
-            'theory_areas_on': (() => { callbacks.activateTheory(); }),
-            'theory_areas_off': (() => { callbacks.deactivateTheory(); }),
-            'other_areas_on': (() => { callbacks.activateOthers(); }),
-            'other_areas_off': (() => { callbacks.deactivateOthers(); })
-        };
-        for (const item in listeners) {
-            const widget = document.getElementById(item);
-            widget.addEventListener("click", () => {
-                listeners[item]();
-                // Track user interaction for sponsorship
+        // All areas on/off buttons
+        const allOnWidget = document.getElementById('all_areas_on');
+        if (allOnWidget) {
+            allOnWidget.addEventListener("click", () => {
+                callbacks.activateAll();
+                CSRankings.recordUserInteraction();
+            });
+        }
+        const allOffWidget = document.getElementById('all_areas_off');
+        if (allOffWidget) {
+            allOffWidget.addEventListener("click", () => {
+                callbacks.activateNone();
                 CSRankings.recordUserInteraction();
             });
         }
     }
     CSRankings.addGroupSelectorListeners = addGroupSelectorListeners;
+    /* Add event listeners for area toggle buttons (the section header buttons) */
+    function addAreaToggleListeners(callbacks) {
+        const toggleActions = {
+            'ai_toggle': { on: callbacks.activateAI, off: callbacks.deactivateAI, areas: CSRankings.aiAreas },
+            'systems_toggle': { on: callbacks.activateSystems, off: callbacks.deactivateSystems, areas: CSRankings.systemsAreas },
+            'theory_toggle': { on: callbacks.activateTheory, off: callbacks.deactivateTheory, areas: CSRankings.theoryAreas },
+            'other_toggle': { on: callbacks.activateOthers, off: callbacks.deactivateOthers, areas: CSRankings.interdisciplinaryAreas }
+        };
+        for (const toggleId in toggleActions) {
+            const btn = document.getElementById(toggleId);
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    // Check if any areas are currently selected
+                    const areas = toggleActions[toggleId].areas;
+                    let anyChecked = false;
+                    for (const area of areas) {
+                        const checkbox = document.getElementById(area);
+                        if (checkbox && checkbox.checked) {
+                            anyChecked = true;
+                            break;
+                        }
+                    }
+                    // Toggle: if any selected, turn all off; if none selected, turn all on
+                    if (anyChecked) {
+                        toggleActions[toggleId].off();
+                    }
+                    else {
+                        toggleActions[toggleId].on();
+                    }
+                    CSRankings.recordUserInteraction();
+                });
+            }
+        }
+    }
+    CSRankings.addAreaToggleListeners = addAreaToggleListeners;
     /* Add all event listeners */
     function addAllListeners(fields, callbacks) {
         addDropdownListeners(callbacks);
         addAreaWidgetListeners(callbacks);
         addCheckboxListeners(fields, callbacks);
         addGroupSelectorListeners(callbacks);
+        addAreaToggleListeners(callbacks);
+        addAreaIndicatorListeners(callbacks);
     }
     CSRankings.addAllListeners = addAllListeners;
+    /* Update area selection indicators based on checkbox states */
+    function updateAreaIndicators() {
+        const areaGroups = {
+            'ai': { areas: CSRankings.aiAreas, toggleId: 'ai_toggle' },
+            'systems': { areas: CSRankings.systemsAreas, toggleId: 'systems_toggle' },
+            'theory': { areas: CSRankings.theoryAreas, toggleId: 'theory_toggle' },
+            'interdisciplinary': { areas: CSRankings.interdisciplinaryAreas, toggleId: 'other_toggle' }
+        };
+        for (const group in areaGroups) {
+            const parentAreas = areaGroups[group].areas;
+            let anyChecked = false;
+            let isDefaultState = true;
+            // Check if current state matches the default state:
+            // - All parent areas checked
+            // - All top-tier (non-nextTier) children checked
+            // - All next-tier children NOT checked
+            for (const area of parentAreas) {
+                // Check parent checkbox - should be checked in default state
+                const parentCheckbox = document.getElementById(area);
+                if (parentCheckbox) {
+                    if (parentCheckbox.checked) {
+                        anyChecked = true;
+                    }
+                    else {
+                        isDefaultState = false;
+                    }
+                }
+                // Check child checkboxes
+                if (area in CSRankings.childMap) {
+                    for (const child of CSRankings.childMap[area]) {
+                        const childCheckbox = document.getElementById(child);
+                        if (childCheckbox) {
+                            const isNextTier = child in CSRankings.nextTier;
+                            if (childCheckbox.checked) {
+                                anyChecked = true;
+                                // Next-tier should NOT be checked in default state
+                                if (isNextTier) {
+                                    isDefaultState = false;
+                                }
+                            }
+                            else {
+                                // Top-tier should be checked in default state
+                                if (!isNextTier) {
+                                    isDefaultState = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // Determine selection state
+            let selectionClass;
+            if (!anyChecked) {
+                selectionClass = 'selection-none';
+            }
+            else if (isDefaultState) {
+                selectionClass = 'selection-all';
+            }
+            else {
+                selectionClass = 'selection-partial';
+            }
+            // Update banner indicator
+            const indicator = document.querySelector(`.${group}-indicator`);
+            if (indicator) {
+                indicator.classList.remove('selection-none', 'selection-partial', 'selection-all');
+                indicator.classList.add(selectionClass);
+            }
+            // Update section toggle button
+            const toggleBtn = document.getElementById(areaGroups[group].toggleId);
+            if (toggleBtn) {
+                toggleBtn.classList.remove('selection-none', 'selection-partial', 'selection-all');
+                toggleBtn.classList.add(selectionClass);
+            }
+        }
+    }
+    CSRankings.updateAreaIndicators = updateAreaIndicators;
+    /* Area indicator click handling moved to area-dropdown.ts */
+    function addAreaIndicatorListeners(_callbacks) {
+        // Click handlers now managed by initAreaDropdowns() in area-dropdown.ts
+    }
+    CSRankings.addAreaIndicatorListeners = addAreaIndicatorListeners;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Year Range Slider
+
+  Initialization and management of the year range slider using noUiSlider.
+*/
+var CSRankings;
+(function (CSRankings) {
+    let yearSliderInstance = null;
+    const MIN_YEAR = 1970;
+    const MAX_YEAR = new Date().getFullYear();
+    const DEFAULT_FROM_YEAR = MAX_YEAR - 10;
+    const DEFAULT_TO_YEAR = MAX_YEAR;
+    // Store the callback for use in year input handlers
+    let yearChangeCallback = null;
+    /* Initialize the year range slider */
+    function initYearSlider(onChangeCallback) {
+        const sliderElement = document.getElementById('year-slider');
+        if (!sliderElement) {
+            console.error('Year slider element not found');
+            return;
+        }
+        yearChangeCallback = onChangeCallback;
+        // Get initial values from hidden selects (for URL param support)
+        const fromYearSelect = document.getElementById('fromyear');
+        const toYearSelect = document.getElementById('toyear');
+        let initialFrom = DEFAULT_FROM_YEAR;
+        let initialTo = DEFAULT_TO_YEAR;
+        if (fromYearSelect && fromYearSelect.value) {
+            initialFrom = parseInt(fromYearSelect.value) || DEFAULT_FROM_YEAR;
+        }
+        if (toYearSelect && toYearSelect.value) {
+            initialTo = parseInt(toYearSelect.value) || DEFAULT_TO_YEAR;
+        }
+        // Create the slider
+        noUiSlider.create(sliderElement, {
+            start: [initialFrom, initialTo],
+            connect: true,
+            range: {
+                'min': MIN_YEAR,
+                'max': MAX_YEAR
+            },
+            step: 1,
+            behaviour: 'tap-drag'
+        });
+        yearSliderInstance = sliderElement.noUiSlider;
+        // Update displays and hidden selects on slide
+        yearSliderInstance.on('update', (values, _handle) => {
+            const fromYear = Math.round(parseFloat(values[0]));
+            const toYear = Math.round(parseFloat(values[1]));
+            // Update display elements (only if not being edited)
+            const fromDisplay = document.getElementById('year-display-from');
+            const toDisplay = document.getElementById('year-display-to');
+            if (fromDisplay && document.activeElement !== fromDisplay) {
+                fromDisplay.textContent = fromYear.toString();
+            }
+            if (toDisplay && document.activeElement !== toDisplay) {
+                toDisplay.textContent = toYear.toString();
+            }
+        });
+        // Trigger callback only on change (when user releases)
+        yearSliderInstance.on('change', (values, _handle) => {
+            const fromYear = Math.round(parseFloat(values[0]));
+            const toYear = Math.round(parseFloat(values[1]));
+            // Update hidden selects for URL compatibility
+            updateHiddenSelect('fromyear', fromYear);
+            updateHiddenSelect('toyear', toYear);
+            // Trigger the callback
+            onChangeCallback();
+        });
+        // Initialize editable year displays
+        initEditableYearDisplays();
+    }
+    CSRankings.initYearSlider = initYearSlider;
+    /* Initialize editable year display elements */
+    function initEditableYearDisplays() {
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay) {
+            setupEditableYear(fromDisplay, 'from');
+        }
+        if (toDisplay) {
+            setupEditableYear(toDisplay, 'to');
+        }
+    }
+    /* Set up an editable year display element */
+    function setupEditableYear(element, type) {
+        // Make it focusable and editable
+        element.setAttribute('contenteditable', 'true');
+        element.setAttribute('inputmode', 'numeric');
+        element.style.cursor = 'text';
+        element.title = `Click to edit ${type === 'from' ? 'start' : 'end'} year (${MIN_YEAR}-${MAX_YEAR})`;
+        // Select all text on focus
+        element.addEventListener('focus', () => {
+            const range = document.createRange();
+            range.selectNodeContents(element);
+            const selection = window.getSelection();
+            if (selection) {
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        });
+        // Handle Enter key
+        element.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                element.blur();
+            }
+            // Only allow digits
+            if (e.key.length === 1 && !/\d/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+        // Validate and apply on blur
+        element.addEventListener('blur', () => {
+            applyYearInput(element, type);
+        });
+    }
+    /* Validate and apply year input */
+    function applyYearInput(element, type) {
+        const inputValue = parseInt(element.textContent || '', 10);
+        const currentValues = getYearSliderValues();
+        let newFrom = currentValues.fromYear;
+        let newTo = currentValues.toYear;
+        if (isNaN(inputValue)) {
+            // Invalid input, restore previous value
+            element.textContent = (type === 'from' ? newFrom : newTo).toString();
+            return;
+        }
+        // Clamp to valid range
+        const clampedValue = Math.max(MIN_YEAR, Math.min(MAX_YEAR, inputValue));
+        if (type === 'from') {
+            newFrom = clampedValue;
+            // Ensure from <= to
+            if (newFrom > newTo) {
+                newTo = newFrom;
+            }
+        }
+        else {
+            newTo = clampedValue;
+            // Ensure to >= from
+            if (newTo < newFrom) {
+                newFrom = newTo;
+            }
+        }
+        // Update slider and displays
+        if (yearSliderInstance) {
+            yearSliderInstance.set([newFrom, newTo]);
+        }
+        // Update hidden selects
+        updateHiddenSelect('fromyear', newFrom);
+        updateHiddenSelect('toyear', newTo);
+        // Update display text
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay)
+            fromDisplay.textContent = newFrom.toString();
+        if (toDisplay)
+            toDisplay.textContent = newTo.toString();
+        // Trigger callback
+        if (yearChangeCallback) {
+            yearChangeCallback();
+        }
+    }
+    /* Update hidden select element, adding option if needed */
+    function updateHiddenSelect(selectId, value) {
+        const select = document.getElementById(selectId);
+        if (!select)
+            return;
+        // Check if option exists, if not create it
+        let option = select.querySelector(`option[value="${value}"]`);
+        if (!option) {
+            option = document.createElement('option');
+            option.value = value.toString();
+            option.textContent = value.toString();
+            select.appendChild(option);
+        }
+        select.value = value.toString();
+    }
+    /* Set slider values programmatically (for URL navigation) */
+    function setYearSliderValues(fromYear, toYear) {
+        if (yearSliderInstance) {
+            yearSliderInstance.set([fromYear, toYear]);
+        }
+        // Also update displays
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay)
+            fromDisplay.textContent = fromYear.toString();
+        if (toDisplay)
+            toDisplay.textContent = toYear.toString();
+    }
+    CSRankings.setYearSliderValues = setYearSliderValues;
+    /* Get current slider values */
+    function getYearSliderValues() {
+        if (yearSliderInstance) {
+            const values = yearSliderInstance.get();
+            return {
+                fromYear: Math.round(parseFloat(values[0])),
+                toYear: Math.round(parseFloat(values[1]))
+            };
+        }
+        return { fromYear: DEFAULT_FROM_YEAR, toYear: DEFAULT_TO_YEAR };
+    }
+    CSRankings.getYearSliderValues = getYearSliderValues;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Custom Region Dropdown with Flags
+
+  Creates a custom dropdown that displays country flags alongside region names.
+  Multi-country regions use globe icons instead of flags.
+  Syncs with the hidden original select for data compatibility.
+*/
+var CSRankings;
+(function (CSRankings) {
+    // Globe icons for multi-country regions (centered on appropriate region)
+    const regionGlobeIcons = {
+        'northamerica': 'globe-americas',
+        'southamerica': 'globe-americas',
+        'europe': 'globe-europe-africa',
+        'africa': 'globe-europe-africa',
+        'asia': 'globe-asia-australia',
+        'australasia': 'globe-asia-australia',
+        'world': 'globe-world'
+    };
+    // Generate icon HTML based on region type
+    function getRegionIcon(region) {
+        if (regionGlobeIcons[region]) {
+            const iconFile = regionGlobeIcons[region];
+            return `<img src="/flags/${iconFile}.png" alt="${region}" class="region-globe-img">`;
+        }
+        return '';
+    }
+    // Check if region is multi-country (uses globe icon)
+    function isMultiCountryRegion(value) {
+        return regionGlobeIcons[value] !== undefined;
+    }
+    function initRegionDropdown() {
+        const select = document.getElementById('regions');
+        const customDropdown = document.getElementById('custom-region-dropdown');
+        const selectedDiv = document.getElementById('region-selected');
+        const optionsDiv = document.getElementById('region-options');
+        const selectedText = document.getElementById('region-selected-text');
+        const selectedFlag = document.getElementById('region-selected-flag');
+        if (!select || !customDropdown || !optionsDiv || !selectedDiv) {
+            console.error('Region dropdown elements not found');
+            return;
+        }
+        // Build the options from the select element
+        let optionsHTML = '';
+        const optgroups = select.querySelectorAll('optgroup');
+        optgroups.forEach((group) => {
+            const label = group.getAttribute('label') || '';
+            optionsHTML += `<div class="region-option-group">${label}</div>`;
+            const options = group.querySelectorAll('option');
+            options.forEach((option) => {
+                const value = option.value;
+                const text = option.textContent || '';
+                const selected = option.selected ? 'selected' : '';
+                if (isMultiCountryRegion(value)) {
+                    // Multi-country region - use globe or empty icon
+                    optionsHTML += `<div class="region-option ${selected}" data-value="${value}">
+                        ${getRegionIcon(value)}
+                        <span>${text}</span>
+                    </div>`;
+                }
+                else {
+                    // Country with flag
+                    optionsHTML += `<div class="region-option ${selected}" data-value="${value}">
+                        <img src="/flags/${value}.png" alt="${value}">
+                        <span>${text}</span>
+                    </div>`;
+                }
+            });
+        });
+        optionsDiv.innerHTML = optionsHTML;
+        // Toggle dropdown open/closed
+        selectedDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            optionsDiv.classList.toggle('open');
+        });
+        // Close when clicking outside
+        document.addEventListener('click', () => {
+            optionsDiv.classList.remove('open');
+        });
+        // Handle option selection
+        optionsDiv.addEventListener('click', (e) => {
+            var _a;
+            const target = e.target.closest('.region-option');
+            if (!target)
+                return;
+            const value = target.getAttribute('data-value');
+            if (!value)
+                return;
+            // Update the hidden select
+            select.value = value;
+            // Update the visible selected display
+            const text = ((_a = target.querySelector('span')) === null || _a === void 0 ? void 0 : _a.textContent) || value;
+            const img = target.querySelector('img');
+            if (selectedText)
+                selectedText.textContent = text;
+            if (selectedFlag && img) {
+                selectedFlag.src = img.src;
+                selectedFlag.style.display = 'block';
+            }
+            else if (selectedFlag) {
+                selectedFlag.style.display = 'none';
+            }
+            // Update selected state in options
+            optionsDiv.querySelectorAll('.region-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            target.classList.add('selected');
+            // Close the dropdown
+            optionsDiv.classList.remove('open');
+            // Trigger change event on the select
+            select.dispatchEvent(new Event('change'));
+        });
+        // Set initial state based on selected option
+        updateRegionDisplay(select, selectedText, selectedFlag);
+    }
+    CSRankings.initRegionDropdown = initRegionDropdown;
+    function updateRegionDisplay(select, textEl, flagEl) {
+        const selected = select.options[select.selectedIndex];
+        if (!selected)
+            return;
+        const value = selected.value;
+        const text = selected.textContent || value;
+        if (textEl)
+            textEl.textContent = text;
+        if (flagEl) {
+            if (regionGlobeIcons[value]) {
+                // Multi-country region - show globe icon
+                flagEl.src = `/flags/${regionGlobeIcons[value]}.png`;
+                flagEl.style.display = 'block';
+            }
+            else {
+                // Country - show flag
+                flagEl.src = `/flags/${value}.png`;
+                flagEl.style.display = 'block';
+            }
+        }
+    }
+    // Sync custom dropdown when select changes programmatically (e.g., from URL)
+    function syncRegionDropdown() {
+        const select = document.getElementById('regions');
+        const selectedText = document.getElementById('region-selected-text');
+        const selectedFlag = document.getElementById('region-selected-flag');
+        const optionsDiv = document.getElementById('region-options');
+        if (!select || !optionsDiv)
+            return;
+        updateRegionDisplay(select, selectedText, selectedFlag);
+        // Update selected state in options
+        const value = select.value;
+        optionsDiv.querySelectorAll('.region-option').forEach(opt => {
+            opt.classList.toggle('selected', opt.getAttribute('data-value') === value);
+        });
+    }
+    CSRankings.syncRegionDropdown = syncRegionDropdown;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Custom Chart Type Dropdown
+
+  Creates a custom dropdown for chart type selection with icons.
+  Syncs with the hidden original select for compatibility.
+*/
+var CSRankings;
+(function (CSRankings) {
+    const chartIcons = {
+        'bar': 'png/barchart.png',
+        'pie': 'png/piechart.png'
+    };
+    function initChartDropdown() {
+        const select = document.getElementById('charttype');
+        const selectedDiv = document.getElementById('chart-selected');
+        const optionsDiv = document.getElementById('chart-options');
+        const selectedText = document.getElementById('chart-selected-text');
+        const selectedIcon = document.getElementById('chart-selected-icon');
+        if (!select || !selectedDiv || !optionsDiv) {
+            return;
+        }
+        // Toggle dropdown open/closed
+        selectedDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            optionsDiv.classList.toggle('open');
+        });
+        // Close when clicking outside
+        document.addEventListener('click', () => {
+            optionsDiv.classList.remove('open');
+        });
+        // Handle option selection
+        optionsDiv.addEventListener('click', (e) => {
+            var _a;
+            const target = e.target.closest('.chart-option');
+            if (!target)
+                return;
+            const value = target.getAttribute('data-value');
+            if (!value)
+                return;
+            // Update the hidden select
+            select.value = value;
+            // Update the visible selected display
+            const text = ((_a = target.querySelector('span')) === null || _a === void 0 ? void 0 : _a.textContent) || value;
+            if (selectedText)
+                selectedText.textContent = text;
+            if (selectedIcon && chartIcons[value]) {
+                selectedIcon.src = chartIcons[value];
+            }
+            // Update selected state in options
+            optionsDiv.querySelectorAll('.chart-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            target.classList.add('selected');
+            // Close the dropdown
+            optionsDiv.classList.remove('open');
+            // Trigger change event on the select
+            select.dispatchEvent(new Event('change'));
+        });
+    }
+    CSRankings.initChartDropdown = initChartDropdown;
+    // Sync custom dropdown when select changes programmatically
+    function syncChartDropdown() {
+        const select = document.getElementById('charttype');
+        const selectedText = document.getElementById('chart-selected-text');
+        const selectedIcon = document.getElementById('chart-selected-icon');
+        const optionsDiv = document.getElementById('chart-options');
+        if (!select || !optionsDiv)
+            return;
+        const value = select.value;
+        const selectedOption = select.options[select.selectedIndex];
+        const text = (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.textContent) || value;
+        if (selectedText)
+            selectedText.textContent = text;
+        if (selectedIcon && chartIcons[value]) {
+            selectedIcon.src = chartIcons[value];
+        }
+        // Update selected state in options
+        optionsDiv.querySelectorAll('.chart-option').forEach(opt => {
+            opt.classList.toggle('selected', opt.getAttribute('data-value') === value);
+        });
+    }
+    CSRankings.syncChartDropdown = syncChartDropdown;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Interactive Tour for Newcomers
+
+  A friendly, step-by-step walkthrough oriented toward prospective
+  graduate students looking for PhD advisors.
+*/
+/// <reference path="../typescript/shepherd.d.ts" />
+var CSRankings;
+(function (CSRankings) {
+    const TOUR_STORAGE_KEY = 'csrankings-tour-completed';
+    let tourInstance = null;
+    // Get current chart icon based on user's chart type selection
+    function getChartIcon() {
+        var _a;
+        const chartType = ((_a = document.getElementById('charttype')) === null || _a === void 0 ? void 0 : _a.value) || 'bar';
+        return chartType === 'pie' ? 'png/piechart.png' : 'png/barchart.png';
+    }
+    // Generate a mock chart matching the actual Vega charts
+    // Areas sorted alphabetically, colors by category (AI=#377eb8, Systems=#ff7f00, Theory=#4daf4a,Tic.=#984ea3)
+    function getMockChart() {
+        var _a;
+        const chartType = ((_a = document.getElementById('charttype')) === null || _a === void 0 ? void 0 : _a.value) || 'bar';
+        // Simulated data: A. Professor has pubs in ML (8), NLP (3),Tic. Vis. (1)
+        // Areas sorted alphabetically, colors: AI=#377eb8, Systems=#ff7f00, Theory=#4daf4a,Tic.=#984ea3
+        const areas = [
+            { name: 'AI', value: 0, color: '#377eb8' },
+            { name: 'Arch', value: 0, color: '#ff7f00' },
+            { name: 'Comp. Bio', value: 0, color: '#984ea3' },
+            { name: 'Crypto', value: 0, color: '#4daf4a' },
+            { name: 'CSEd', value: 0, color: '#984ea3' },
+            { name: 'DB', value: 0, color: '#ff7f00' },
+            { name: 'ECom', value: 0, color: '#984ea3' },
+            { name: 'EDA', value: 0, color: '#ff7f00' },
+            { name: 'Embedded', value: 0, color: '#ff7f00' },
+            { name: 'Graphics', value: 0, color: '#984ea3' },
+            { name: 'HCI', value: 0, color: '#984ea3' },
+            { name: 'HPC', value: 0, color: '#ff7f00' },
+            { name: 'Logic', value: 0, color: '#4daf4a' },
+            { name: 'Metrics', value: 0, color: '#ff7f00' },
+            { name: 'ML', value: 8, color: '#377eb8' },
+            { name: 'Mobile', value: 0, color: '#ff7f00' },
+            { name: 'Networks', value: 0, color: '#ff7f00' },
+            { name: 'NLP', value: 3, color: '#377eb8' },
+            { name: 'OS', value: 0, color: '#ff7f00' },
+            { name: 'PL', value: 0, color: '#ff7f00' },
+            { name: 'Robotics', value: 0, color: '#984ea3' },
+            { name: 'SE', value: 0, color: '#ff7f00' },
+            { name: 'Security', value: 0, color: '#ff7f00' },
+            { name: 'Theory', value: 0, color: '#4daf4a' },
+            { name: 'Vision', value: 0, color: '#377eb8' },
+            { name: 'Visualization', value: 1, color: '#984ea3' },
+            { name: 'Web+IR', value: 0, color: '#377eb8' }
+        ];
+        if (chartType === 'pie') {
+            // Pie chart - only show slices for non-zero values
+            const total = areas.reduce((sum, a) => sum + a.value, 0);
+            const withValues = areas.filter(a => a.value > 0);
+            let cumulativeAngle = 0;
+            let slices = '';
+            withValues.forEach(area => {
+                const angle = (area.value / total) * 360;
+                const startAngle = cumulativeAngle;
+                const endAngle = cumulativeAngle + angle;
+                cumulativeAngle = endAngle;
+                // SVG arc for pie slice
+                const startRad = (startAngle - 90) * Math.PI / 180;
+                const endRad = (endAngle - 90) * Math.PI / 180;
+                const x1 = 40 + 35 * Math.cos(startRad);
+                const y1 = 40 + 35 * Math.sin(startRad);
+                const x2 = 40 + 35 * Math.cos(endRad);
+                const y2 = 40 + 35 * Math.sin(endRad);
+                const largeArc = angle > 180 ? 1 : 0;
+                slices += `<path d="M40,40 L${x1},${y1} A35,35 0 ${largeArc},1 ${x2},${y2} Z" fill="${area.color}"/>`;
+            });
+            return `
+                <div style="background:#fff; margin:10px 0; padding:8px; display:flex; align-items:center; gap:16px;">
+                    <svg width="80" height="80" viewBox="0 0 80 80">${slices}</svg>
+                    <div style="font-size:10px; color:#666;">
+                        ${withValues.map(a => `<div><span style="display:inline-block;width:10px;height:10px;background:${a.color};margin-right:4px;"></span>${a.name}: ${a.value}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        else {
+            // Bar chart - show all areas, bars only for non-zero
+            const maxVal = 8;
+            const barWidth = 14;
+            const gap = 1;
+            return `
+                <div style="background:#fff; margin:10px 0; padding:4px; overflow-x:auto;">
+                    <div style="display:flex; align-items:flex-end; height:50px; gap:${gap}px; border-bottom:1px solid #ccc;">
+                        ${areas.map(a => `<div style="background:${a.value > 0 ? a.color : 'transparent'}; width:${barWidth}px; height:${(a.value / maxVal) * 45}px; min-height:${a.value > 0 ? 2 : 0}px;"></div>`).join('')}
+                    </div>
+                    <div style="display:flex; gap:${gap}px; padding-top:2px;">
+                        ${areas.map(a => `<div style="width:${barWidth}px; font-size:6px; text-align:center; color:#666; writing-mode:vertical-rl; transform:rotate(180deg); height:40px; overflow:hidden;">${a.name}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+    }
+    // Mock institution row HTML for illustration
+    function getMockInstitutionEntry() {
+        return `
+            <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:2.2;">
+                <span style="background:#ffeb3b; padding:4px 8px; border-radius:3px; border:2px solid #f57c00;">
+                    <a href="#" onclick="return false;" style="color:#337ab7; font-weight:600;">A University</a>
+                </span>
+                <img src="png/house-logo.png" alt="home" style="height:12px; margin-left:6px; opacity:0.7;">
+                <img src="flags/globe-world.png" alt="world" style="height:12px; margin-left:6px;">
+                <img src="png/barchart.png" alt="chart" style="height:12px; margin-left:6px;">
+                <span style="color:#666; margin-left:8px;">42</span>
+            </div>
+        `;
+    }
+    // Mock faculty entry HTML for illustration
+    // highlight: 'name' | 'areas' | 'scholar' | 'dblp' | 'chart' | null
+    function getMockFacultyEntry(highlight) {
+        const chartIcon = getChartIcon();
+        // Bright highlight with border for focused element
+        const hlStyle = 'background:#ffeb3b; padding:4px 8px; border-radius:3px; border:2px solid #f57c00; position:relative; z-index:2;';
+        // Base style for all blocks
+        const blockStyle = 'display:inline-block; padding:4px 8px; border-radius:3px; vertical-align:middle;';
+        const hl = (part) => highlight === part ? hlStyle : blockStyle;
+        // When something is highlighted, show overlay on entire entry except highlighted part
+        const overlayStyle = highlight
+            ? 'position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.3); border-radius:4px; pointer-events:none;'
+            : 'display:none;';
+        return `
+            <div style="background:#f9f9f9; border:1px solid #ddd; border-radius:4px; padding:10px; margin:10px 0; font-size:13px; line-height:2.2; position:relative;">
+                <div style="${overlayStyle}"></div>
+                <span style="${hl('name')}"><a href="#" onclick="return false;" style="color:#337ab7; font-weight:500;">A. Professor</a></span>
+                <span style="font-variant:small-caps; color:#666; ${hl('areas')}">ml</span>
+                <span style="${hl('name')}"><img src="png/house-logo.png" alt="home" style="height:12px;"></span>
+                <span style="${hl('scholar')}"><img src="scholar-favicon.ico" alt="Google Scholar" style="height:12px;"></span>
+                <span style="${hl('dblp')}"><img src="dblp.png" alt="DBLP" style="height:12px;"></span>
+                <span style="${hl('chart')}"><img src="${chartIcon}" alt="chart" style="height:12px; cursor:pointer;"></span>
+                <span style="color:#666; ${blockStyle}">12.3</span>
+            </div>
+        `;
+    }
+    function createTourSteps() {
+        return [
+            // Step 1: Welcome (centered)
+            {
+                id: 'welcome',
+                title: 'Welcome to CSRankings',
+                text: `
+                    <p>Looking for a PhD in Computer Science? You're in the right place.</p>
+                    <p>This site helps you find <strong>research-active faculty</strong> in your area of interest.</p>
+                `,
+                buttons: [
+                    {
+                        text: 'Skip',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.cancel(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Show Me How',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ],
+                classes: 'shepherd-centered'
+            },
+            // Step 2: Key Insight
+            {
+                id: 'key-insight',
+                title: 'Think Labs, Not Schools',
+                text: `
+                    <p>For a PhD, you're really applying to work with a <strong>specific professor or lab</strong>, not just a department.</p>
+                    <p>A school strong in one area may not be strong in yours. Focus on finding faculty whose research matches your interests.</p>
+                `,
+                attachTo: {
+                    element: '.intro-panel',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 3: Pick Your Region (controls row - left)
+            {
+                id: 'region',
+                title: 'Filter by Region',
+                text: `
+                    <p>Looking at specific countries? Use the region filter.</p>
+                    <p>Or keep it on "World" to see global options.</p>
+                `,
+                attachTo: {
+                    element: '#custom-region-dropdown',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 4: Year Range (controls row - middle)
+            {
+                id: 'year-range',
+                title: 'Find Active Researchers',
+                text: `
+                    <p>Use the year range to focus on <strong>recent publications</strong>.</p>
+                    <p>Professors who haven't published recently may be focusing on administration, startups, or other duties - and may not be taking new students.</p>
+                `,
+                attachTo: {
+                    element: '.year-slider-container',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 5: Focus on YOUR Area (controls row - right)
+            {
+                id: 'focus-area',
+                title: 'Focus on Your Area',
+                text: `
+                    <p>Click any category pill (<strong>AI</strong>, <strong>Systems</strong>, <strong>Theory</strong>, <strong>Interdisc.</strong>) to open a dropdown with all the sub-areas.</p>
+                    <p>Use the checkboxes to select exactly which research areas interest you. Click <strong>▶</strong> next to any area to see individual conferences.</p>
+                `,
+                attachTo: {
+                    element: '.area-indicators',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 6: Institution Names
+            {
+                id: 'institution-name',
+                title: 'Institution Names',
+                text: function () {
+                    return `
+                    <p>Click any <strong>institution name</strong> to expand and see its faculty.</p>
+                    <p>The <img src="png/house-logo.png" alt="home" style="height:14px;vertical-align:middle;"> icon next to each institution takes you to that CS department's website:</p>
+                    ${getMockInstitutionEntry()}
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 7: Faculty Name = Homepage Link
+            {
+                id: 'faculty-name',
+                title: 'Faculty Names Are Links',
+                text: function () {
+                    return `
+                    <p>Each faculty <strong>name</strong> is a link to their homepage:</p>
+                    ${getMockFacultyEntry('name')}
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 7: Research Areas
+            {
+                id: 'research-areas',
+                title: 'Research Areas',
+                text: function () {
+                    return `
+                    <p>Next to each name, you'll see their main <strong>research areas</strong> in small caps:</p>
+                    ${getMockFacultyEntry('areas')}
+                    <p>This gives you a quick sense of their focus and expertise.</p>
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 8: Google Scholar
+            {
+                id: 'google-scholar',
+                title: 'Google Scholar',
+                text: function () {
+                    return `
+                    <p>The <img src="scholar-favicon.ico" alt="Google Scholar" style="height:14px;vertical-align:middle;"> icon links to their Google Scholar profile:</p>
+                    ${getMockFacultyEntry('scholar')}
+                    <p>Google Scholar shows all their papers, citation counts, and recent activity.</p>
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 9: DBLP
+            {
+                id: 'dblp',
+                title: 'DBLP',
+                text: function () {
+                    return `
+                    <p>The <img src="dblp.png" alt="DBLP" style="height:14px;vertical-align:middle;"> icon links to DBLP, the CS bibliography:</p>
+                    ${getMockFacultyEntry('dblp')}
+                    <p>DBLP shows publication venues, co-authors, and collaborators.</p>
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 10: Chart Icon
+            {
+                id: 'chart-icon',
+                title: 'Publication Breakdown',
+                text: function () {
+                    const chartIcon = getChartIcon();
+                    return `
+                    <p>Click the <img src="${chartIcon}" alt="chart" style="height:14px;vertical-align:middle;"> icon to see a breakdown of their publications by research area:</p>
+                    ${getMockFacultyEntry('chart')}
+                    ${getMockChart()}
+                `;
+                },
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 10: Don't Obsess Over Scores
+            {
+                id: 'scores-warning',
+                title: "Don't Compare Scores",
+                text: `
+                    <p>If two schools score 20.2 and 19.0, that doesn't mean one is "better."</p>
+                    <p>Look at the <strong>actual faculty</strong> at both places. A student might thrive with professors at one school but not another - it's very personal.</p>
+                `,
+                attachTo: {
+                    element: '#success',
+                    on: 'top'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 11: Do Your Homework
+            {
+                id: 'homework',
+                title: 'Before You Reach Out',
+                text: `
+                    <p>Once you find interesting faculty:</p>
+                    <ul>
+                        <li>Read 2-3 of their recent papers</li>
+                        <li>Check their homepage for "prospective students" info</li>
+                        <li>Understand their research style and focus</li>
+                    </ul>
+                    <p>Send a <strong>personalized</strong> email showing you've done your homework - and always apply through the official system too.</p>
+                `,
+                attachTo: {
+                    element: '.intro-panel',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Next',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.next(); }
+                    }
+                ]
+            },
+            // Step 9: You're Ready (centered)
+            {
+                id: 'ready',
+                title: "You're Ready",
+                text: `
+                    <p>Remember: the right advisor matters more than the school's ranking. You can have a great career at many excellent programs.</p>
+                    <p>Focus on <strong>finding the right advisor</strong>, not the highest-ranked school.</p>
+                    <p class="tour-keyboard-hint">Click "Tour" anytime to replay this guide.</p>
+                `,
+                buttons: [
+                    {
+                        text: 'Back',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.back(); },
+                        secondary: true
+                    },
+                    {
+                        text: 'Get Started',
+                        action: function () { tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.complete(); }
+                    }
+                ],
+                classes: 'shepherd-centered'
+            }
+        ];
+    }
+    function createTour() {
+        try {
+            console.log('Creating Shepherd.Tour...');
+            const tour = new Shepherd.Tour({
+                useModalOverlay: true,
+                exitOnEsc: true,
+                keyboardNavigation: true,
+                defaultStepOptions: {
+                    cancelIcon: {
+                        enabled: true
+                    },
+                    scrollTo: { behavior: 'smooth', block: 'center' },
+                    modalOverlayOpeningPadding: 8,
+                    modalOverlayOpeningRadius: 4
+                }
+            });
+            console.log('Tour created, adding steps...');
+            // Add all steps
+            const steps = createTourSteps();
+            tour.addSteps(steps);
+            console.log('Steps added:', steps.length);
+            // Mark tour as completed when finished or cancelled
+            tour.on('complete', () => {
+                localStorage.setItem(TOUR_STORAGE_KEY, 'true');
+            });
+            tour.on('cancel', () => {
+                localStorage.setItem(TOUR_STORAGE_KEY, 'true');
+            });
+            return tour;
+        }
+        catch (e) {
+            console.error('Error creating tour:', e);
+            throw e;
+        }
+    }
+    /**
+     * Check if the tour has been completed before
+     */
+    function hasCompletedTour() {
+        return localStorage.getItem(TOUR_STORAGE_KEY) === 'true';
+    }
+    /**
+     * Initialize the tour - called on page load.
+     * Auto-starts on first visit, otherwise waits for user action.
+     */
+    function initTour() {
+        console.log('initTour called, Shepherd available:', typeof Shepherd !== 'undefined');
+        // Only initialize if Shepherd is available
+        if (typeof Shepherd === 'undefined') {
+            console.warn('Shepherd.js not loaded - tour disabled');
+            return;
+        }
+        tourInstance = createTour();
+        // Auto-start on first visit (with a small delay for page to settle)
+        if (!hasCompletedTour()) {
+            setTimeout(() => {
+                tourInstance === null || tourInstance === void 0 ? void 0 : tourInstance.start();
+            }, 1000);
+        }
+    }
+    CSRankings.initTour = initTour;
+    /**
+     * Start the tour manually (called from Help button)
+     */
+    function startTour() {
+        console.log('startTour called, tourInstance:', tourInstance, 'Shepherd:', typeof Shepherd);
+        if (!tourInstance) {
+            if (typeof Shepherd !== 'undefined') {
+                tourInstance = createTour();
+            }
+            else {
+                console.warn('Shepherd.js not loaded - tour disabled');
+                return;
+            }
+        }
+        console.log('Starting tour...');
+        tourInstance.start();
+    }
+    CSRankings.startTour = startTour;
+    /**
+     * Reset tour completion status (for testing)
+     */
+    function resetTourStatus() {
+        localStorage.removeItem(TOUR_STORAGE_KEY);
+        console.log('Tour status reset - will show on next page load');
+    }
+    CSRankings.resetTourStatus = resetTourStatus;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Sponsors Banner
+
+  Fetches and displays GitHub sponsors dynamically.
+*/
+var CSRankings;
+(function (CSRankings) {
+    const SPONSORS_CONTAINER_ID = 'sponsors-avatars';
+    const GITHUB_ORG = 'CSrankings';
+    // Cache sponsors in localStorage for 24 hours to reduce API calls
+    const CACHE_KEY = 'csrankings-sponsors';
+    const CACHE_DURATION_MS = 24 * 60 * 60 * 1000;
+    /**
+     * Load sponsors from localStorage cache if valid.
+     */
+    function loadCachedSponsors() {
+        try {
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (!cached)
+                return null;
+            const data = JSON.parse(cached);
+            if (Date.now() - data.timestamp > CACHE_DURATION_MS) {
+                localStorage.removeItem(CACHE_KEY);
+                return null;
+            }
+            return data.sponsors;
+        }
+        catch (_a) {
+            return null;
+        }
+    }
+    /**
+     * Save sponsors to localStorage cache.
+     */
+    function cacheSponsors(sponsors) {
+        try {
+            const data = {
+                timestamp: Date.now(),
+                sponsors: sponsors
+            };
+            localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+        }
+        catch (_a) {
+            // localStorage may be unavailable
+        }
+    }
+    /**
+     * Fetch sponsors from GitHub API.
+     * Note: GitHub doesn't have a public API for sponsors, so we scrape the sponsors page
+     * or use a static list. For now, we'll use the GitHub org members as a fallback.
+     */
+    function fetchSponsorsFromPage() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // GitHub sponsors page doesn't have a public API
+            // We'll fetch from a JSON file that can be periodically updated
+            try {
+                const response = yield fetch('sponsors.json');
+                if (response.ok) {
+                    const data = yield response.json();
+                    return data.sponsors || [];
+                }
+            }
+            catch (_a) {
+                // Fall back to empty if file doesn't exist
+            }
+            return [];
+        });
+    }
+    /**
+     * Render sponsors to the container.
+     */
+    function renderSponsors(sponsors) {
+        const container = document.getElementById(SPONSORS_CONTAINER_ID);
+        if (!container)
+            return;
+        if (sponsors.length === 0) {
+            // Hide the container if no sponsors
+            container.style.display = 'none';
+            return;
+        }
+        container.innerHTML = sponsors.map(sponsor => `<a href="${sponsor.html_url}" target="_blank" title="${sponsor.login}">` +
+            `<img src="${sponsor.avatar_url}" alt="${sponsor.login}"></a>`).join('');
+    }
+    /**
+     * Initialize the sponsors banner.
+     */
+    function initSponsors() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Try cache first
+            const cached = loadCachedSponsors();
+            if (cached && cached.length > 0) {
+                renderSponsors(cached);
+                return;
+            }
+            // Fetch fresh data
+            const sponsors = yield fetchSponsorsFromPage();
+            if (sponsors.length > 0) {
+                cacheSponsors(sponsors);
+            }
+            renderSponsors(sponsors);
+        });
+    }
+    CSRankings.initSponsors = initSponsors;
+})(CSRankings || (CSRankings = {}));
+/*
+  CSRankings - Area Dropdown Module
+
+  Provides expandable dropdown panels for area category indicators.
+  Each category (AI, Systems, Theory, Interdisciplinary) expands to show
+  its parent areas, each of which can be expanded to show child conferences.
+*/
+var CSRankings;
+(function (CSRankings) {
+    // Map category to parent areas with display labels
+    const categoryAreas = {
+        'ai': [
+            { id: 'ai', label: 'Artificial Intelligence' },
+            { id: 'vision', label: 'Computer Vision' },
+            { id: 'mlmining', label: 'Machine Learning' },
+            { id: 'nlp', label: 'Natural Language Processing' },
+            { id: 'inforet', label: 'Web & IR' }
+        ],
+        'systems': [
+            { id: 'arch', label: 'Architecture' },
+            { id: 'comm', label: 'Networks' },
+            { id: 'sec', label: 'Security' },
+            { id: 'mod', label: 'Databases' },
+            { id: 'da', label: 'Design Automation' },
+            { id: 'bed', label: 'Embedded Systems' },
+            { id: 'hpc', label: 'High-Perf Computing' },
+            { id: 'mobile', label: 'Mobile Computing' },
+            { id: 'metrics', label: 'Measurement' },
+            { id: 'ops', label: 'Operating Systems' },
+            { id: 'plan', label: 'Programming Languages' },
+            { id: 'soft', label: 'Software Engineering' }
+        ],
+        'theory': [
+            { id: 'act', label: 'Algorithms & Complexity' },
+            { id: 'crypt', label: 'Cryptography' },
+            { id: 'log', label: 'Logic & Verification' }
+        ],
+        'interdisciplinary': [
+            { id: 'bio', label: 'Comp. Biology' },
+            { id: 'graph', label: 'Graphics' },
+            { id: 'csed', label: 'CS Education' },
+            { id: 'ecom', label: 'Economics' },
+            { id: 'chi', label: 'HCI' },
+            { id: 'robotics', label: 'Robotics' },
+            { id: 'visualization', label: 'Visualization' }
+        ]
+    };
+    // Conference display names (uppercase versions)
+    const conferenceNames = {
+        'aaai': 'AAAI', 'ijcai': 'IJCAI',
+        'cvpr': 'CVPR', 'eccv': 'ECCV', 'iccv': 'ICCV',
+        'icml': 'ICML', 'iclr': 'ICLR', 'kdd': 'KDD', 'nips': 'NeurIPS',
+        'acl': 'ACL', 'emnlp': 'EMNLP', 'naacl': 'NAACL',
+        'sigir': 'SIGIR', 'www': 'WWW',
+        'asplos': 'ASPLOS', 'isca': 'ISCA', 'micro': 'MICRO', 'hpca': 'HPCA',
+        'sigcomm': 'SIGCOMM', 'nsdi': 'NSDI',
+        'ccs': 'CCS', 'oakland': 'S&P', 'usenixsec': 'USENIX Sec', 'ndss': 'NDSS', 'pets': 'PETS',
+        'sigmod': 'SIGMOD', 'vldb': 'VLDB', 'icde': 'ICDE', 'pods': 'PODS',
+        'dac': 'DAC', 'iccad': 'ICCAD',
+        'emsoft': 'EMSOFT', 'rtas': 'RTAS', 'rtss': 'RTSS',
+        'sc': 'SC', 'hpdc': 'HPDC', 'ics': 'ICS',
+        'mobicom': 'MobiCom', 'mobisys': 'MobiSys', 'sensys': 'SenSys',
+        'imc': 'IMC', 'sigmetrics': 'SIGMETRICS',
+        'sosp': 'SOSP', 'osdi': 'OSDI', 'eurosys': 'EuroSys', 'fast': 'FAST', 'usenixatc': 'USENIX ATC',
+        'popl': 'POPL', 'pldi': 'PLDI', 'oopsla': 'OOPSLA', 'icfp': 'ICFP',
+        'fse': 'FSE', 'icse': 'ICSE', 'ase': 'ASE', 'issta': 'ISSTA',
+        'focs': 'FOCS', 'soda': 'SODA', 'stoc': 'STOC',
+        'crypto': 'CRYPTO', 'eurocrypt': 'EUROCRYPT',
+        'cav': 'CAV', 'lics': 'LICS',
+        'siggraph': 'SIGGRAPH', 'siggraph-asia': 'SIGGRAPH Asia', 'eurographics': 'Eurographics',
+        'chiconf': 'CHI', 'ubicomp': 'UbiComp', 'uist': 'UIST',
+        'icra': 'ICRA', 'iros': 'IROS', 'rss': 'RSS',
+        'ismb': 'ISMB', 'recomb': 'RECOMB',
+        'vis': 'VIS', 'vr': 'IEEE VR',
+        'ec': 'EC', 'wine': 'WINE',
+        'sigcse': 'SIGCSE'
+    };
+    let activeDropdown = null;
+    let expandedAreas = new Set();
+    let isUpdatingCheckbox = false;
+    let dropdownJustOpened = false;
+    /**
+     * Get child conferences for a parent area
+     */
+    function getChildConferences(parentId) {
+        return CSRankings.childMap[parentId] || [];
+    }
+    /**
+     * Check if an area/conference checkbox is currently checked
+     */
+    function isAreaChecked(areaId) {
+        const checkbox = document.getElementById(areaId);
+        return checkbox ? checkbox.checked : false;
+    }
+    /**
+     * Toggle an area checkbox and trigger ranking update
+     */
+    function toggleArea(areaId, checked) {
+        const checkbox = document.getElementById(areaId);
+        if (checkbox && checkbox.checked !== checked) {
+            isUpdatingCheckbox = true;
+            checkbox.click();
+            // Reset flag after a short delay to allow event to process
+            setTimeout(() => { isUpdatingCheckbox = false; }, 50);
+        }
+    }
+    /**
+     * Create the dropdown panel HTML for a category
+     */
+    function createDropdownPanel(category) {
+        const panel = document.createElement('div');
+        panel.className = 'area-dropdown-panel';
+        panel.id = `area-dropdown-${category}`;
+        const areas = categoryAreas[category] || [];
+        const categoryLabels = {
+            'ai': 'AI',
+            'systems': 'Systems',
+            'theory': 'Theory',
+            'interdisciplinary': 'Interdisciplinary'
+        };
+        // Check if all areas in this category are checked
+        const allChecked = areas.every(a => isAreaChecked(a.id));
+        let html = '<div class="area-dropdown-content">';
+        // Add "All" toggle at top
+        html += `
+            <div class="area-dropdown-item area-all-toggle">
+                <label>
+                    <input type="checkbox" class="area-dropdown-checkbox all-checkbox" data-category="${category}" ${allChecked ? 'checked' : ''}>
+                    <span><strong>All ${categoryLabels[category]}</strong></span>
+                </label>
+            </div>
+            <div class="area-dropdown-divider"></div>
+        `;
+        for (const area of areas) {
+            const parentChecked = isAreaChecked(area.id);
+            const children = getChildConferences(area.id);
+            const hasChildren = children.length > 0;
+            const isExpanded = expandedAreas.has(area.id);
+            html += `
+                <div class="area-dropdown-item area-parent" data-area="${area.id}">
+                    <div class="area-parent-row">
+                        ${hasChildren ? `<span class="area-expand-icon ${isExpanded ? 'expanded' : ''}" data-parent="${area.id}">&#9658;</span>` : '<span class="area-expand-spacer"></span>'}
+                        <label>
+                            <input type="checkbox" class="area-dropdown-checkbox parent-checkbox" data-area="${area.id}" ${parentChecked ? 'checked' : ''}>
+                            <span>${area.label}</span>
+                        </label>
+                    </div>
+            `;
+            if (hasChildren) {
+                // Separate top-tier and next-tier conferences
+                const topTierChildren = children.filter(id => !CSRankings.nextTier[id]);
+                const nextTierChildren = children.filter(id => CSRankings.nextTier[id]);
+                html += `<div class="area-children ${isExpanded ? 'expanded' : ''}" data-parent="${area.id}">`;
+                // Top-tier conferences first
+                for (const childId of topTierChildren) {
+                    const childChecked = isAreaChecked(childId);
+                    const confName = conferenceNames[childId] || childId.toUpperCase();
+                    html += `
+                        <div class="area-dropdown-item area-child">
+                            <label>
+                                <input type="checkbox" class="area-dropdown-checkbox child-checkbox" data-area="${childId}" data-parent="${area.id}" ${childChecked ? 'checked' : ''}>
+                                <span>${confName}</span>
+                            </label>
+                        </div>
+                    `;
+                }
+                // Divider and next-tier conferences (if any)
+                if (nextTierChildren.length > 0) {
+                    html += '<div class="area-child-divider"></div>';
+                    for (const childId of nextTierChildren) {
+                        const childChecked = isAreaChecked(childId);
+                        const confName = conferenceNames[childId] || childId.toUpperCase();
+                        html += `
+                            <div class="area-dropdown-item area-child next-tier">
+                                <label>
+                                    <input type="checkbox" class="area-dropdown-checkbox child-checkbox" data-area="${childId}" data-parent="${area.id}" ${childChecked ? 'checked' : ''}>
+                                    <span>${confName}</span>
+                                </label>
+                            </div>
+                        `;
+                    }
+                }
+                html += '</div>';
+            }
+            html += '</div>';
+        }
+        html += '</div>';
+        panel.innerHTML = html;
+        return panel;
+    }
+    /**
+     * Toggle expand/collapse of child conferences
+     */
+    function toggleExpand(parentId) {
+        const isExpanded = expandedAreas.has(parentId);
+        if (isExpanded) {
+            expandedAreas.delete(parentId);
+        }
+        else {
+            expandedAreas.add(parentId);
+        }
+        // Update UI
+        document.querySelectorAll(`.area-expand-icon[data-parent="${parentId}"]`).forEach(icon => {
+            icon.classList.toggle('expanded', !isExpanded);
+        });
+        document.querySelectorAll(`.area-children[data-parent="${parentId}"]`).forEach(container => {
+            container.classList.toggle('expanded', !isExpanded);
+        });
+    }
+    /**
+     * Sync dropdown checkbox states from main checkboxes
+     */
+    function syncDropdownFromMain(category) {
+        const panel = document.getElementById(`area-dropdown-${category}`);
+        if (!panel)
+            return;
+        const areas = categoryAreas[category] || [];
+        // Sync "All" checkbox
+        const allCheckbox = panel.querySelector('.all-checkbox');
+        if (allCheckbox) {
+            allCheckbox.checked = areas.every(a => isAreaChecked(a.id));
+        }
+        for (const area of areas) {
+            // Sync parent checkbox
+            const parentCheckbox = panel.querySelector(`[data-area="${area.id}"].parent-checkbox`);
+            if (parentCheckbox) {
+                parentCheckbox.checked = isAreaChecked(area.id);
+            }
+            // Sync child checkboxes
+            const children = getChildConferences(area.id);
+            for (const childId of children) {
+                const childCheckbox = panel.querySelector(`[data-area="${childId}"].child-checkbox`);
+                if (childCheckbox) {
+                    childCheckbox.checked = isAreaChecked(childId);
+                }
+            }
+        }
+    }
+    /**
+     * Toggle dropdown visibility
+     */
+    function toggleDropdown(category) {
+        const indicator = document.querySelector(`.area-indicator[data-area="${category}"]`);
+        if (!indicator)
+            return;
+        // Close any open dropdown
+        if (activeDropdown && activeDropdown !== category) {
+            closeDropdown(activeDropdown);
+        }
+        let panel = document.getElementById(`area-dropdown-${category}`);
+        if (panel && panel.classList.contains('open')) {
+            closeDropdown(category);
+        }
+        else {
+            // Create panel if it doesn't exist
+            if (!panel) {
+                panel = createDropdownPanel(category);
+                indicator.parentElement.appendChild(panel);
+                attachDropdownListeners(category, panel);
+            }
+            else {
+                // Sync state before opening
+                syncDropdownFromMain(category);
+            }
+            // Open
+            panel.classList.add('open');
+            indicator.classList.add('active');
+            activeDropdown = category;
+            // Prevent immediate close on touch devices
+            dropdownJustOpened = true;
+            setTimeout(() => { dropdownJustOpened = false; }, 100);
+        }
+    }
+    /**
+     * Close a dropdown
+     */
+    function closeDropdown(category) {
+        const panel = document.getElementById(`area-dropdown-${category}`);
+        const indicator = document.querySelector(`.area-indicator[data-area="${category}"]`);
+        if (panel) {
+            panel.classList.remove('open');
+        }
+        if (indicator) {
+            indicator.classList.remove('active');
+        }
+        if (activeDropdown === category) {
+            activeDropdown = null;
+        }
+    }
+    /**
+     * Attach event listeners to dropdown elements
+     */
+    function attachDropdownListeners(category, panel) {
+        // Expand/collapse icons
+        panel.querySelectorAll('.area-expand-icon').forEach(icon => {
+            const handleExpand = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const parentId = icon.dataset.parent;
+                toggleExpand(parentId);
+            };
+            icon.addEventListener('click', handleExpand);
+            icon.addEventListener('touchend', handleExpand);
+        });
+        // "All" checkbox for category
+        const allCheckbox = panel.querySelector('.all-checkbox');
+        if (allCheckbox) {
+            allCheckbox.addEventListener('change', (e) => {
+                e.stopPropagation();
+                const input = e.target;
+                const checked = input.checked;
+                const areas = categoryAreas[category] || [];
+                // Toggle all parent areas in this category
+                for (const area of areas) {
+                    toggleArea(area.id, checked);
+                }
+                // Sync all checkboxes in dropdown
+                setTimeout(() => {
+                    syncDropdownFromMain(category);
+                    updateIndicatorState(category);
+                }, 10);
+            });
+        }
+        // Parent checkboxes
+        panel.querySelectorAll('.parent-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                e.stopPropagation();
+                const input = e.target;
+                const areaId = input.dataset.area;
+                toggleArea(areaId, input.checked);
+                // Sync all checkboxes in dropdown to match main state
+                setTimeout(() => {
+                    syncDropdownFromMain(category);
+                    updateIndicatorState(category);
+                }, 10);
+            });
+        });
+        // Child checkboxes
+        panel.querySelectorAll('.child-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                e.stopPropagation();
+                const input = e.target;
+                const areaId = input.dataset.area;
+                const parentId = input.dataset.parent;
+                toggleArea(areaId, input.checked);
+                // Sync all checkboxes in dropdown to match main state
+                setTimeout(() => {
+                    syncDropdownFromMain(category);
+                    updateIndicatorState(category);
+                }, 10);
+            });
+        });
+    }
+    /**
+     * Update indicator opacity based on selection state
+     */
+    function updateIndicatorState(category) {
+        const indicator = document.querySelector(`.area-indicator[data-area="${category}"]`);
+        if (!indicator)
+            return;
+        const areas = categoryAreas[category] || [];
+        const checkedCount = areas.filter(a => isAreaChecked(a.id)).length;
+        indicator.classList.remove('selection-none', 'selection-partial', 'selection-all');
+        if (checkedCount === 0) {
+            indicator.classList.add('selection-none');
+        }
+        else if (checkedCount === areas.length) {
+            indicator.classList.add('selection-all');
+        }
+        else {
+            indicator.classList.add('selection-partial');
+        }
+    }
+    /**
+     * Initialize area dropdowns
+     */
+    function initAreaDropdowns() {
+        // Attach click/touch handlers to indicators
+        document.querySelectorAll('.area-indicator').forEach(indicator => {
+            // Use both click and touchend for better iPad support
+            const handleActivate = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const category = indicator.dataset.area;
+                toggleDropdown(category);
+            };
+            indicator.addEventListener('click', handleActivate);
+            // For iPad Safari: touchend provides more reliable activation
+            indicator.addEventListener('touchend', handleActivate);
+        });
+        // Close dropdown when clicking/touching outside
+        const closeHandler = (e) => {
+            if (activeDropdown && !isUpdatingCheckbox && !dropdownJustOpened) {
+                const target = e.target;
+                if (!target.closest('.area-indicators') && !target.closest('.area-dropdown-panel')) {
+                    closeDropdown(activeDropdown);
+                }
+            }
+        };
+        document.addEventListener('click', closeHandler);
+        document.addEventListener('touchend', closeHandler);
+        // Initialize indicator states
+        ['ai', 'systems', 'theory', 'interdisciplinary'].forEach(updateIndicatorState);
+        // Listen for changes to main checkboxes to sync dropdowns
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                setTimeout(() => {
+                    ['ai', 'systems', 'theory', 'interdisciplinary'].forEach(cat => {
+                        updateIndicatorState(cat);
+                        if (activeDropdown === cat) {
+                            syncDropdownFromMain(cat);
+                        }
+                    });
+                }, 10);
+            });
+        });
+    }
+    CSRankings.initAreaDropdowns = initAreaDropdowns;
 })(CSRankings || (CSRankings = {}));
 /*
   CSRankings - Main Application
@@ -2175,6 +3867,8 @@ var CSRankings;
             this.countryNames = {};
             /* Map institution to (non-US) abbreviation. */
             this.countryAbbrv = {};
+            /* Map institution to homepage URL. */
+            this.institutionHomepages = {};
             /* Map name to home page. */
             this.homepages = {};
             /* Set to true for "dense rankings" vs. "competition rankings". */
@@ -2302,7 +3996,7 @@ var CSRankings;
                     CSRankings.loadACMFellow(this.acmfellow),
                     CSRankings.loadAuthorInfo(this.dblpAuthors, this.homepages, this.scholarInfo, this.note),
                     CSRankings.loadAuthors().then(authors => { this.authors = authors; }),
-                    CSRankings.loadCountryInfo(this.countryInfo, this.countryAbbrv),
+                    CSRankings.loadCountryInfo(this.countryInfo, this.countryAbbrv, this.institutionHomepages),
                     CSRankings.loadCountryNames(this.countryNames)
                 ]);
                 console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
@@ -2311,6 +4005,17 @@ var CSRankings;
                     '/index': (params, query) => this.navigation(params, query),
                     '/fromyear/:fromyear/toyear/:toyear/index': (params, query) => this.navigation(params, query)
                 }).resolve();
+                // Initialize year slider after URL params are applied
+                CSRankings.initYearSlider(() => {
+                    this.invalidateIncrementalCache();
+                    this.recomputeAuthorAreas();
+                    this.rank();
+                    CSRankings.recordUserInteraction();
+                });
+                // Initialize custom region dropdown with flags
+                CSRankings.initRegionDropdown();
+                // Initialize custom chart type dropdown with icons
+                CSRankings.initChartDropdown();
                 this.recomputeAuthorAreas();
                 this.addListeners();
                 CSRankings.geoCheck(() => this.rank());
@@ -2318,6 +4023,12 @@ var CSRankings;
                 // Display survey or sponsorship request
                 const surveyShown = CSRankings.tryDisplaySurvey({ disabled: true });
                 CSRankings.initSponsorshipTracking(surveyShown);
+                // Initialize interactive tour
+                CSRankings.initTour();
+                // Initialize sponsors banner
+                CSRankings.initSponsors();
+                // Initialize area dropdowns
+                CSRankings.initAreaDropdowns();
             }))();
         }
         recomputeAuthorAreas() {
@@ -2484,7 +4195,7 @@ var CSRankings;
             }
             const univtext = this.buildDropDown(deptNames, facultycount, facultyAdjustedCount);
             /* Start building up the string to output. */
-            const s = CSRankings.buildOutputString(numAreas, this.countryAbbrv, this.countryNames, deptCounts, univtext, this.stats, this.useDenseRankings, this.ChartIcon);
+            const s = CSRankings.buildOutputString(numAreas, this.countryAbbrv, this.countryNames, deptCounts, univtext, this.stats, this.useDenseRankings, this.ChartIcon, this.institutionHomepages);
             let stop = performance.now();
             console.log(`Before render: rank took ${(stop - start)} milliseconds.`);
             /* Finally done. Redraw! */
@@ -2499,6 +4210,8 @@ var CSRankings;
             this.navigoRouter.navigate(str);
             stop = performance.now();
             console.log(`Rank took ${(stop - start)} milliseconds.`);
+            // Update area selection indicators in the sticky banner
+            CSRankings.updateAreaIndicators();
             return false;
         }
         /* Turn the chart display on or off. */
