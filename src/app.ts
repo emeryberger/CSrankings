@@ -218,6 +218,8 @@ namespace CSRankings {
                 ]);
                 console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
                 this.setAllOn();
+                // Populate year selects before URL resolution so options exist when params are parsed
+                populateYearSelects();
                 this.navigoRouter.on({
                     '/index': (params: { [key: string]: string }, query: string) => this.navigation(params, query),
                     '/fromyear/:fromyear/toyear/:toyear/index': (params: { [key: string]: string }, query: string) => this.navigation(params, query)
@@ -648,6 +650,12 @@ namespace CSRankings {
 
         public navigation(params: { [key: string]: string }, query: string): void {
             handleNavigation(params, query, () => this.invalidateCheckboxCache());
+            // If year params changed, trigger full recomputation
+            if (params && (params['fromyear'] || params['toyear'])) {
+                this.invalidateIncrementalCache();
+                this.recomputeAuthorAreas();
+            }
+            this.rank();
         }
 
         private addListeners(): void {

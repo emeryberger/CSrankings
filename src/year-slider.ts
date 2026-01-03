@@ -32,6 +32,37 @@ namespace CSRankings {
     // Store the callback for use in year input handlers
     let yearChangeCallback: (() => void) | null = null;
 
+    /* Populate the hidden year select elements dynamically */
+    export function populateYearSelects(): void {
+        const fromYearSelect = document.getElementById('fromyear') as HTMLSelectElement;
+        const toYearSelect = document.getElementById('toyear') as HTMLSelectElement;
+
+        if (!fromYearSelect || !toYearSelect) return;
+
+        // Clear existing options
+        fromYearSelect.innerHTML = '';
+        toYearSelect.innerHTML = '';
+
+        // Populate with years from MIN_YEAR to MAX_YEAR
+        for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {
+            const fromOption = document.createElement('option');
+            fromOption.value = year.toString();
+            fromOption.textContent = year.toString();
+            if (year === DEFAULT_FROM_YEAR) {
+                fromOption.selected = true;
+            }
+            fromYearSelect.appendChild(fromOption);
+
+            const toOption = document.createElement('option');
+            toOption.value = year.toString();
+            toOption.textContent = year.toString();
+            if (year === DEFAULT_TO_YEAR) {
+                toOption.selected = true;
+            }
+            toYearSelect.appendChild(toOption);
+        }
+    }
+
     /* Initialize the year range slider */
     export function initYearSlider(onChangeCallback: () => void): void {
         const sliderElement = document.getElementById('year-slider');
@@ -41,6 +72,15 @@ namespace CSRankings {
         }
 
         yearChangeCallback = onChangeCallback;
+
+        // Populate hidden selects dynamically
+        populateYearSelects();
+
+        // Initialize display spans with default values
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay) fromDisplay.textContent = DEFAULT_FROM_YEAR.toString();
+        if (toDisplay) toDisplay.textContent = DEFAULT_TO_YEAR.toString();
 
         // Get initial values from hidden selects (for URL param support)
         const fromYearSelect = document.getElementById('fromyear') as HTMLSelectElement;
