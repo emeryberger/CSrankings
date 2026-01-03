@@ -33,7 +33,7 @@ namespace CSRankings {
     let yearChangeCallback: (() => void) | null = null;
 
     /* Populate the hidden year select elements dynamically */
-    function populateYearSelects(): void {
+    export function populateYearSelects(): void {
         const fromYearSelect = document.getElementById('fromyear') as HTMLSelectElement;
         const toYearSelect = document.getElementById('toyear') as HTMLSelectElement;
 

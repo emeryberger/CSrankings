@@ -2318,6 +2318,7 @@ var CSRankings;
             toYearSelect.appendChild(toOption);
         }
     }
+    CSRankings.populateYearSelects = populateYearSelects;
     /* Initialize the year range slider */
     function initYearSlider(onChangeCallback) {
         const sliderElement = document.getElementById('year-slider');
@@ -4037,6 +4038,8 @@ var CSRankings;
                 ]);
                 console.log(`All CSV files loaded in ${(performance.now() - loadStart).toFixed(1)}ms`);
                 this.setAllOn();
+                // Populate year selects before URL resolution so options exist when params are parsed
+                CSRankings.populateYearSelects();
                 this.navigoRouter.on({
                     '/index': (params, query) => this.navigation(params, query),
                     '/fromyear/:fromyear/toyear/:toyear/index': (params, query) => this.navigation(params, query)
@@ -4347,6 +4350,12 @@ var CSRankings;
         }
         navigation(params, query) {
             CSRankings.handleNavigation(params, query, () => this.invalidateCheckboxCache());
+            // If year params changed, trigger full recomputation
+            if (params && (params['fromyear'] || params['toyear'])) {
+                this.invalidateIncrementalCache();
+                this.recomputeAuthorAreas();
+            }
+            this.rank();
         }
         addListeners() {
             const callbacks = {
