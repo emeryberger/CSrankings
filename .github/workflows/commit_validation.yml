@@ -4,6 +4,11 @@ on:
   pull_request_target:
     types: [opened, synchronize, edited]
 
+# Prevent multiple runs for the same PR from running simultaneously
+concurrency:
+  group: pr-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 permissions:
   pull-requests: write
   issues: write
@@ -129,16 +134,3 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "$LABELS_URL" \
             -d '{"labels": ["validated"]}'
-
-  stale:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/stale@v9
-        with:
-          stale-pr-label: 'stale'
-          stale-pr-message: 'This PR is stale because it has been open for 90 days with no activity. It will be closed in 2 days if there is no further activity.'
-          close-pr-message: 'This PR is being closed due to inactivity.'
-          days-before-pr-stale: 90
-          days-before-pr-close: 2
-          days-before-issue-stale: -1
-          days-before-issue-close: -1
