@@ -371,53 +371,13 @@
 		    </optgroup>
 		  </select>
 		  <span class="year-slider-container" title="Filter by publication year range">
-		    <span id="year-display-from" class="year-display" title="Start year">2015</span>
+		    <span id="year-display-from" class="year-display" title="Start year"></span>
 		    <div id="year-slider" class="year-slider" title="Drag handles to select year range"></div>
-		    <span id="year-display-to" class="year-display" title="End year">2025</span>
+		    <span id="year-display-to" class="year-display" title="End year"></span>
 		  </span>
-		  <!-- Hidden selects for URL compatibility -->
-		  <select id="fromyear" name="fromyear" style="display:none;">
-		    <option value="1970">1970</option>
-		    <option value="1975">1975</option>
-		    <option value="1980">1980</option>
-		    <option value="1985">1985</option>
-		    <option value="1990">1990</option>
-		    <option value="1995">1995</option>
-		    <option value="2000">2000</option>
-		    <option value="2005">2005</option>
-		    <option value="2010">2010</option>
-		    <option selected="selected" value="2015">2015</option>
-		    <option value="2016">2016</option>
-		    <option value="2017">2017</option>
-		    <option value="2018">2018</option>
-		    <option value="2019">2019</option>
-		    <option value="2020">2020</option>
-		    <option value="2021">2021</option>
-		    <option value="2022">2022</option>
-		    <option value="2023">2023</option>
-		    <option value="2024">2024</option>
-		    <option value="2025">2025</option>
-		  </select>
-		  <select id="toyear" name="toyear" style="display:none;">
-		    <option value="1980">1980</option>
-		    <option value="1985">1985</option>
-		    <option value="1990">1990</option>
-		    <option value="1995">1995</option>
-		    <option value="2000">2000</option>
-		    <option value="2005">2005</option>
-		    <option value="2010">2010</option>
-		    <option value="2015">2015</option>
-		    <option value="2016">2016</option>
-		    <option value="2017">2017</option>
-		    <option value="2018">2018</option>
-		    <option value="2019">2019</option>
-		    <option value="2020">2020</option>
-		    <option value="2021">2021</option>
-		    <option value="2022">2022</option>
-		    <option value="2023">2023</option>
-		    <option value="2024">2024</option>
-		    <option selected="selected" value="2025">2025</option>
-		  </select>
+		  <!-- Hidden selects for URL compatibility (populated dynamically by year-slider.ts) -->
+		  <select id="fromyear" name="fromyear" style="display:none;"></select>
+		  <select id="toyear" name="toyear" style="display:none;"></select>
 		  <span class="area-indicators" title="Area selection status">
 		    <span class="area-indicator ai-indicator" data-area="ai" title="AI areas: Click to toggle">AI</span>
 		    <span class="area-indicator systems-indicator" data-area="systems" title="Systems areas: Click to toggle">Systems</span>
