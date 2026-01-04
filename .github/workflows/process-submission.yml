@@ -1,0 +1,442 @@
+name: Process Faculty Submissions
+
+on:
+  # Run hourly to sweep through pending submissions
+  schedule:
+    - cron: '0 * * * *'
+  # Also allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  process-submissions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 unidecode lxml
+
+      - name: Find and process pending submissions
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Find all open issues with our title prefix that haven't been processed
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+
+            const pendingIssues = issues.filter(issue =>
+              issue.title.startsWith('[CSrankings form submission]') &&
+              !issue.labels.some(l => l.name === 'processed' || l.name === 'pr-created' || l.name === 'validation-failed')
+            );
+
+            console.log(`Found ${pendingIssues.length} pending submissions`);
+
+            if (pendingIssues.length === 0) {
+              console.log('No pending submissions to process');
+              return;
+            }
+
+            // Helper to parse issue body
+            const parseField = (body, label) => {
+              const regex = new RegExp(`### ${label}[^\\n]*\\n\\n([^#]+?)(?=\\n###|\\n\\n###|$)`, 'is');
+              const match = body.match(regex);
+              if (!match) return '';
+              // Handle code blocks
+              let value = match[1].trim();
+              if (value.startsWith('```')) {
+                value = value.replace(/^```[^\n]*\n/, '').replace(/\n```$/, '');
+              }
+              return value.trim();
+            };
+
+            const parseAction = (body) => {
+              const actionText = parseField(body, 'Action');
+              if (actionText.toLowerCase().includes('add')) return 'add';
+              if (actionText.toLowerCase().includes('reinstate')) return 'reinstate';
+              if (actionText.toLowerCase().includes('update')) return 'update';
+              if (actionText.toLowerCase().includes('remove')) return 'remove';
+              return 'unknown';
+            };
+
+            // Helper to normalize names for alphabetical sorting
+            const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+            // Process each issue
+            for (const issue of pendingIssues) {
+              console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
+
+              try {
+                const body = issue.body || '';
+                const action = parseAction(body);
+                console.log(`  Action: ${action}`);
+
+                if (action === 'unknown') {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: '## ❌ Could not determine action\n\nUnable to parse the submission type from this issue. Please ensure the issue was created via the [submission form](/submit/).'
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['validation-failed']
+                  });
+                  continue;
+                }
+
+                // Parse common fields
+                const name = parseField(body, 'Name');
+
+                if (!name) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: '## ❌ Missing name\n\nCould not find the faculty name in this submission.'
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['validation-failed']
+                  });
+                  continue;
+                }
+
+                // Determine target file based on first letter
+                const firstLetter = name.charAt(0).toLowerCase();
+                const targetFile = /[a-z]/.test(firstLetter)
+                  ? `csrankings-${firstLetter}.csv`
+                  : 'csrankings-0.csv';
+
+                let branchName, commitMessage, prTitle, prBody, newContent;
+
+                if (action === 'add' || action === 'reinstate') {
+                  // Parse add/reinstate fields
+                  const institution = parseField(body, 'Institution');
+                  const homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
+                  const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
+
+                  if (!institution || !homepage || !scholarid) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Missing required fields\n\nCould not parse all required fields:\n- Name: ${name || '❌ missing'}\n- Institution: ${institution || '❌ missing'}\n- Homepage: ${homepage || '❌ missing'}\n- Scholar ID: ${scholarid || '❌ missing'}`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  // Check institution exists
+                  const institutionsContent = fs.readFileSync('institutions.csv', 'utf8');
+                  const institutions = institutionsContent.split('\n').map(l => l.split(',')[0]);
+                  if (!institutions.includes(institution)) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Institution not found\n\n"${institution}" is not in CSRankings. Please [request the institution be added](https://github.com/${context.repo.owner}/${context.repo.repo}/issues/new?template=new-institution.md) first.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  // Read current file and add entry
+                  const content = fs.readFileSync(targetFile, 'utf8');
+                  const lines = content.split('\n');
+                  const newEntry = `${name},${institution},${homepage},${scholarid}`;
+                  const newNameNorm = normalize(name);
+
+                  // Check for duplicates
+                  const isDuplicate = lines.some(line => {
+                    const existingName = line.split(',')[0];
+                    return normalize(existingName) === newNameNorm;
+                  });
+
+                  if (isDuplicate && action === 'add') {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Duplicate entry\n\n"${name}" already exists in CSRankings. Use the Update option if you need to modify their entry.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  // Find insertion point (alphabetical order)
+                  let insertIndex = 1; // Skip header
+                  for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i].trim()) continue;
+                    const existingName = lines[i].split(',')[0];
+                    if (normalize(existingName) > newNameNorm) {
+                      insertIndex = i;
+                      break;
+                    }
+                    insertIndex = i + 1;
+                  }
+
+                  lines.splice(insertIndex, 0, newEntry);
+                  newContent = lines.join('\n');
+
+                  const actionWord = action === 'reinstate' ? 'Reinstate' : 'Add';
+                  branchName = `${action}-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+                  commitMessage = `${actionWord} ${name} (${institution})`;
+                  prTitle = `${actionWord} ${name} (${institution})`;
+                  prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted via [CSRankings form](/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
+
+                  // For reinstatement, also need to remove from old/ file
+                  if (action === 'reinstate') {
+                    const sourceFile = parseField(body, 'Source File');
+                    if (sourceFile) {
+                      prBody += `\n\n**Note:** Also remove entry from \`${sourceFile}\``;
+                    }
+                  }
+
+                } else if (action === 'update') {
+                  // Parse update fields
+                  const newEntryText = parseField(body, 'New Entry');
+                  const oldEntryText = parseField(body, 'Old Entry');
+
+                  if (!newEntryText) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: '## ❌ Missing new entry data\n\nCould not parse the new entry from this submission.'
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  const [newName, newInst, newHome, newScholar] = newEntryText.split(',').map(s => s.trim());
+
+                  // Read file and find/replace entry
+                  const content = fs.readFileSync(targetFile, 'utf8');
+                  const lines = content.split('\n');
+                  const nameNorm = normalize(name);
+
+                  let found = false;
+                  for (let i = 0; i < lines.length; i++) {
+                    const existingName = lines[i].split(',')[0];
+                    if (normalize(existingName) === nameNorm) {
+                      lines[i] = newEntryText;
+                      found = true;
+                      break;
+                    }
+                  }
+
+                  if (!found) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Entry not found\n\nCould not find "${name}" in ${targetFile}.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  newContent = lines.join('\n');
+                  branchName = `update-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+                  commitMessage = `Update ${name}`;
+                  prTitle = `Update ${name}`;
+                  prBody = `## Summary\nUpdating faculty entry for **${name}**.\n\nSubmitted via [CSRankings form](/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+
+                } else if (action === 'remove') {
+                  // Parse remove fields
+                  const reason = parseField(body, 'Reason for Removal') || parseField(body, 'Reason');
+                  const institution = parseField(body, 'Institution');
+                  const currentEntry = parseField(body, 'Current Entry');
+
+                  // Read file and find entry to remove
+                  const content = fs.readFileSync(targetFile, 'utf8');
+                  const lines = content.split('\n');
+                  const nameNorm = normalize(name);
+
+                  let removedLine = null;
+                  let removeIndex = -1;
+                  for (let i = 0; i < lines.length; i++) {
+                    const existingName = lines[i].split(',')[0];
+                    if (normalize(existingName) === nameNorm) {
+                      removedLine = lines[i];
+                      removeIndex = i;
+                      break;
+                    }
+                  }
+
+                  if (removeIndex === -1) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Entry not found\n\nCould not find "${name}" in ${targetFile}.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  lines.splice(removeIndex, 1);
+                  newContent = lines.join('\n');
+
+                  // Determine which old/ file to add to
+                  let oldFile = 'old/other.csv';
+                  if (reason) {
+                    const reasonLower = reason.toLowerCase();
+                    if (reasonLower.includes('retired') || reasonLower.includes('emeritus')) {
+                      oldFile = 'old/emeritus.csv';
+                    } else if (reasonLower.includes('industry')) {
+                      oldFile = 'old/industry.csv';
+                    } else if (reasonLower.includes('deceased') || reasonLower.includes('rip')) {
+                      oldFile = 'old/rip.csv';
+                    } else if (reasonLower.includes('research')) {
+                      oldFile = 'old/research.csv';
+                    }
+                  }
+
+                  branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+                  commitMessage = `Remove ${name} (${reason || 'unspecified'})`;
+                  prTitle = `Remove ${name} (${institution || 'unknown'})`;
+                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Note:** Entry should be added to \`${oldFile}\``;
+                }
+
+                // Create branch and PR
+                console.log(`  Creating branch: ${branchName}`);
+
+                // Get current commit SHA
+                const { data: ref } = await github.rest.git.getRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: 'heads/gh-pages'
+                });
+                const baseSha = ref.object.sha;
+
+                // Create new branch
+                await github.rest.git.createRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `refs/heads/${branchName}`,
+                  sha: baseSha
+                });
+
+                // Get file SHA
+                const { data: fileData } = await github.rest.repos.getContent({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  path: targetFile,
+                  ref: 'gh-pages'
+                });
+
+                // Update file in new branch
+                await github.rest.repos.createOrUpdateFileContents({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  path: targetFile,
+                  message: commitMessage,
+                  content: Buffer.from(newContent).toString('base64'),
+                  sha: fileData.sha,
+                  branch: branchName
+                });
+
+                // Create pull request
+                const { data: pr } = await github.rest.pulls.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: prTitle,
+                  head: branchName,
+                  base: 'gh-pages',
+                  body: prBody
+                });
+
+                console.log(`  Created PR #${pr.number}: ${pr.html_url}`);
+
+                // Comment on issue with success
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `## ✅ PR Created\n\nYour submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
+                });
+
+                // Add processed label
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['pr-created']
+                });
+
+              } catch (error) {
+                console.error(`  Error processing issue #${issue.number}:`, error);
+
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `## ❌ Processing Error\n\nAn error occurred while processing this submission:\n\n\`\`\`\n${error.message}\n\`\`\`\n\nPlease check the issue format or contact a maintainer.`
+                });
+
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['validation-failed']
+                });
+              }
+            }
+
+            console.log('\nDone processing submissions');

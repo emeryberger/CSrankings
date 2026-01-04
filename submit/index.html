@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faculty Submission - CSRankings</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="submit.css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-78147305-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1 class="page-header">
+                    <a href="/">CSRankings</a>
+                    <small>Faculty Submission</small>
+                </h1>
+
+                <!-- Action Selection -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">What would you like to do?</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default action-btn active" data-action="add">
+                                    <span class="glyphicon glyphicon-plus"></span><br>
+                                    Add New Faculty
+                                </button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default action-btn" data-action="update">
+                                    <span class="glyphicon glyphicon-edit"></span><br>
+                                    Update Existing
+                                </button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default action-btn" data-action="remove">
+                                    <span class="glyphicon glyphicon-remove"></span><br>
+                                    Remove Faculty
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guidelines Alert -->
+                <div class="alert alert-info" id="guidelines-add">
+                    <strong>Adding new faculty:</strong> Must be <strong>full-time, tenure-track</strong> and able to <strong>solely advise CS PhD students</strong>.
+                    <a href="https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md" target="_blank">Read full guidelines</a>.
+                </div>
+                <div class="alert alert-info" id="guidelines-update" style="display:none;">
+                    <strong>Updating existing entry:</strong> Use this to change affiliation (moved institutions), update homepage URL, or correct Google Scholar ID.
+                </div>
+                <div class="alert alert-warning" id="guidelines-remove" style="display:none;">
+                    <strong>Removing faculty:</strong> Use this for faculty who have retired, moved to industry, or are no longer tenure-track.
+                    Entries are moved to <code>old/</code> folder, not deleted.
+                </div>
+
+                <form id="submit-form" class="form-horizontal">
+                    <!-- Name Field with Autocomplete -->
+                    <div class="form-group" id="name-group">
+                        <label for="name" class="col-sm-3 control-label">
+                            Name <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="name"
+                                   placeholder="Enter name as it appears in DBLP"
+                                   autocomplete="off"
+                                   required>
+                            <div id="name-suggestions" class="suggestions-dropdown"></div>
+                            <span id="name-status" class="help-block status"></span>
+                            <p class="help-block" id="name-help-add">
+                                Use exact name from <a href="https://dblp.org/search" target="_blank">DBLP</a>, including disambiguation numbers (e.g., "0001").
+                            </p>
+                            <p class="help-block" id="name-help-update" style="display:none;">
+                                Start typing to search existing CSRankings entries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Current Info Panel (for update/remove) -->
+                    <div class="form-group" id="current-info-group" style="display:none;">
+                        <label class="col-sm-3 control-label">Current Entry</label>
+                        <div class="col-sm-9">
+                            <div class="well well-sm" id="current-info">
+                                <p><strong>Institution:</strong> <span id="current-institution">-</span></p>
+                                <p><strong>Homepage:</strong> <span id="current-homepage">-</span></p>
+                                <p><strong>Scholar ID:</strong> <span id="current-scholarid">-</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Institution Field -->
+                    <div class="form-group" id="institution-group">
+                        <label for="institution" class="col-sm-3 control-label">
+                            <span id="institution-label-new">Institution</span>
+                            <span id="institution-label-update" style="display:none;">New Institution</span>
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="institution"
+                                   placeholder="Start typing to search..."
+                                   autocomplete="off"
+                                   required>
+                            <div id="institution-suggestions" class="suggestions-dropdown"></div>
+                            <span id="institution-status" class="help-block status"></span>
+                            <p class="help-block">
+                                <a href="https://github.com/emeryberger/CSrankings/issues/new?template=new-institution.md" target="_blank">Request new institution</a> if not found.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Homepage Field -->
+                    <div class="form-group" id="homepage-group">
+                        <label for="homepage" class="col-sm-3 control-label">
+                            Homepage URL <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="url" class="form-control" id="homepage"
+                                   placeholder="https://www.example.edu/~jsmith"
+                                   required>
+                            <span id="homepage-status" class="help-block status"></span>
+                        </div>
+                    </div>
+
+                    <!-- Google Scholar ID Field -->
+                    <div class="form-group" id="scholarid-group">
+                        <label for="scholarid" class="col-sm-3 control-label">
+                            Google Scholar ID <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="scholarid"
+                                   placeholder="12-character ID or NOSCHOLARPAGE"
+                                   required>
+                            <span id="scholarid-status" class="help-block status"></span>
+                            <p class="help-block">
+                                Find after <code>user=</code> in Google Scholar URL.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Removal Reason (only for remove action) -->
+                    <div class="form-group" id="removal-reason-group" style="display:none;">
+                        <label for="removal-reason" class="col-sm-3 control-label">
+                            Reason <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="removal-reason">
+                                <option value="">Select reason...</option>
+                                <option value="retired">Retired/Emeritus</option>
+                                <option value="industry">Moved to industry</option>
+                                <option value="deceased">Deceased</option>
+                                <option value="non-tenure">No longer tenure-track</option>
+                                <option value="left-academia">Left academia</option>
+                                <option value="other">Other (specify below)</option>
+                            </select>
+                            <input type="text" class="form-control" id="removal-reason-other"
+                                   placeholder="Please specify..." style="display:none; margin-top:10px;">
+                        </div>
+                    </div>
+
+                    <!-- Company Name (only for industry removal) -->
+                    <div class="form-group" id="company-name-group" style="display:none;">
+                        <label for="company-name" class="col-sm-3 control-label">
+                            Company <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="company-name"
+                                   placeholder="e.g., Google, Microsoft, Meta...">
+                            <p class="help-block">Which company did they join?</p>
+                        </div>
+                    </div>
+
+                    <!-- Eligibility Checkboxes (for add action) -->
+                    <div id="eligibility-section">
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <p><strong>Please confirm the following:</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check-tenure" required>
+                                        This faculty member is <strong>full-time, tenure-track</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check-advisor" required>
+                                        This faculty member can <strong>solely advise CS PhD students</strong> (not co-advise)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check-dblp" required>
+                                        Name matches <strong>DBLP exactly</strong> (including disambiguation numbers)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check-homepage" required>
+                                        Homepage URL is <strong>working</strong> and shows name/affiliation
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="check-non-cs-group" style="display:none;">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check-non-cs">
+                                        Faculty is not in CS department but has courtesy appointment or can advise CS PhDs
+                                        <br><small class="text-muted">(Only check if applicable - provide justification in notes)</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes/Justification -->
+                    <div class="form-group">
+                        <label for="notes" class="col-sm-3 control-label">Notes</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="notes" rows="2"
+                                      placeholder="Optional: Add any additional context or justification..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Preview -->
+                    <div class="form-group" id="preview-group" style="display:none;">
+                        <label class="col-sm-3 control-label">Preview</label>
+                        <div class="col-sm-9">
+                            <pre id="csv-preview" class="well well-sm"></pre>
+                            <p class="help-block">
+                                <span id="preview-add">Will be added to <code id="target-file">csrankings-?.csv</code></span>
+                                <span id="preview-update" style="display:none;">Will update entry in <code id="target-file-update">csrankings-?.csv</code></span>
+                                <span id="preview-remove" style="display:none;">Will move entry to <code>old/</code> folder</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" disabled>
+                                <span class="glyphicon glyphicon-send"></span>
+                                <span id="submit-text">Submit via GitHub</span>
+                            </button>
+                            <p class="help-block">
+                                You'll be redirected to GitHub to create an issue.
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Validation Summary -->
+                <div id="validation-summary" class="alert alert-danger" style="display:none;">
+                    <strong>Please fix the following:</strong>
+                    <ul id="validation-errors"></ul>
+                </div>
+
+                <hr>
+
+                <div class="text-muted">
+                    <p><strong>What happens next?</strong></p>
+                    <ol>
+                        <li>You'll be redirected to GitHub to submit an issue</li>
+                        <li>Automated validation checks will run</li>
+                        <li>If valid, a PR will be created automatically</li>
+                        <li>A maintainer will review and merge</li>
+                    </ol>
+                    <p><a href="/">&larr; Back to CSRankings</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/papaparse.min.js"></script>
+    <script src="submit.js"></script>
+</body>
+</html>
