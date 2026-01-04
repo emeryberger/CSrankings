@@ -13,7 +13,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
   All interfaces and type declarations for the CSRankings application.
 */
 /// <reference path="../typescript/he/index.d.ts" />
-/// <reference path="../typescript/jquery.d.ts" />
 /// <reference path="../typescript/vega-embed.d.ts" />
 /// <reference path="../typescript/papaparse.d.ts" />
 /// <reference path="../typescript/navigo.d.ts" />
@@ -1017,7 +1016,7 @@ var CSRankings;
             p += `<a title="Click for author\'s DBLP entry." target="_blank" href="${dblpName}" onclick="event.stopPropagation(); trackOutboundLink('${dblpName}', true); return false;">`;
             p += '<img alt="DBLP" src="dblp.png">'
                 + '</a>';
-            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${document.getElementById("charttype").value} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
             p += ChartIcon + "</span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
@@ -1102,7 +1101,7 @@ var CSRankings;
                 }
                 s += "&nbsp;" + deptDisplay
                     + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
-                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${document.getElementById("charttype").value} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
                     + ChartIcon + "</span>";
                 s += "</td>";
                 s += `<td align="right">${(Math.round(10.0 * v) / 10.0).toFixed(1)}</td>`;
@@ -1517,13 +1516,13 @@ var CSRankings;
     /* Build full URL with year, region, and chart type parameters */
     function buildFullURL(fields, getCheckboxState, _usePieChart) {
         const { s, count, totalParents } = buildURLString(fields, getCheckboxState);
-        const region = $("#regions").find(":selected").val();
+        const region = document.getElementById("regions").value;
         let start = '';
         // Check the dates.
         const d = new Date();
         const currYear = d.getFullYear();
-        const startyear = parseInt($("#fromyear").find(":selected").text());
-        const endyear = parseInt($("#toyear").find(":selected").text());
+        const startyear = parseInt(document.getElementById("fromyear").selectedOptions[0].text);
+        const endyear = parseInt(document.getElementById("toyear").selectedOptions[0].text);
         if ((startyear != currYear - 10) || (endyear != currYear)) {
             start += `/fromyear/${startyear.toString()}`;
             start += `/toyear/${endyear.toString()}`;
@@ -1543,7 +1542,7 @@ var CSRankings;
         let newUsePieChart = _usePieChart;
         let ChartIcon = CSRankings.BarChartIcon;
         let OpenChartIcon = CSRankings.OpenBarChartIcon;
-        const chartType = $("#charttype").find(":selected").val();
+        const chartType = document.getElementById("charttype").value;
         if (chartType == "pie") {
             newUsePieChart = true;
             for (const elt of document.getElementsByClassName("chart_icon")) {
@@ -1579,7 +1578,7 @@ var CSRankings;
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#${key}`).prop('value', params[key].toString());
+                document.getElementById(key).value = params[key].toString();
             });
             // Sync year slider if it exists
             if (params['fromyear'] && params['toyear']) {
@@ -1619,7 +1618,7 @@ var CSRankings;
                 if (CSRankings.regions.indexOf(elem) >= 0) {
                     q.splice(index, 1);
                     // Set the region.
-                    $("#regions").val(elem);
+                    document.getElementById("regions").value = elem;
                     // Sync the custom dropdown
                     if (typeof CSRankings.syncRegionDropdown === 'function') {
                         CSRankings.syncRegionDropdown();
@@ -1633,7 +1632,7 @@ var CSRankings;
             return (elem == "pie");
         });
         if (foundPie) {
-            $("#charttype").val("pie");
+            document.getElementById("charttype").value = "pie";
             // Sync the custom dropdown
             if (typeof CSRankings.syncChartDropdown === 'function') {
                 CSRankings.syncChartDropdown();
@@ -4071,8 +4070,8 @@ var CSRankings;
             }))();
         }
         recomputeAuthorAreas() {
-            const startyear = parseInt($("#fromyear").find(":selected").text());
-            const endyear = parseInt($("#toyear").find(":selected").text());
+            const startyear = parseInt(document.getElementById("fromyear").selectedOptions[0].text);
+            const endyear = parseInt(document.getElementById("toyear").selectedOptions[0].text);
             this.authorAreas = CSRankings.countAuthorAreas(this.authors, this.areaDict, startyear, endyear);
         }
         areaString(name) {
@@ -4200,9 +4199,9 @@ var CSRankings;
             let facultyAdjustedCount = {}; /* name -> adjusted count of pubs per name / department */
             let currentWeights = {}; /* array to hold 1 or 0, depending on if the area is checked or not. */
             this.areaDeptAdjustedCount = {};
-            const startyear = parseInt($("#fromyear").find(":selected").text());
-            const endyear = parseInt($("#toyear").find(":selected").text());
-            const whichRegions = String($("#regions").find(":selected").val());
+            const startyear = parseInt(document.getElementById("fromyear").selectedOptions[0].text);
+            const endyear = parseInt(document.getElementById("toyear").selectedOptions[0].text);
+            const whichRegions = document.getElementById("regions").value;
             const numAreas = this.updateWeights(currentWeights);
             // Build/update the incremental cache (only rebuilds if year/region changed)
             CSRankings.buildIncrementalCache(this.authors, startyear, endyear, whichRegions, this.countryInfo, this.countryAbbrv, this.incrementalCache);
