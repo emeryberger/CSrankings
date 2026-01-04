@@ -77,15 +77,18 @@ private checkboxCacheValid: boolean = false;
 - Cache is refreshed once per `rank()` call via `refreshCheckboxCache()`
 - Use `getCheckboxState(area)` to read from cache
 
-### Native DOM vs jQuery
-Prefer native DOM APIs for checkbox operations:
+### Native DOM (No jQuery)
+The application uses native DOM APIs exclusively (jQuery was removed):
 ```typescript
-// Good - native DOM (5-10x faster)
+// Checkbox operations
 const element = document.getElementById(id) as HTMLInputElement;
 element.checked = true;
 
-// Avoid - jQuery overhead
-$(`input[name=${id}]`).prop('checked', true);
+// Select/dropdown operations
+const select = document.getElementById("regions") as HTMLSelectElement;
+const value = select.value;                          // Get value
+select.value = "world";                              // Set value
+const text = select.selectedOptions[0].text;         // Get selected text
 ```
 
 ### All Entries Displayed
@@ -202,7 +205,7 @@ Key optimizations:
 1. **Parallel CSV loading**: All 6 CSV files load concurrently via `Promise.all()`
 2. **Incremental computation**: Only recomputes what changed based on checkbox state
 3. **Lazy faculty rendering**: Faculty HTML generated on-demand when department expanded
-4. **Checkbox state caching**: Native DOM instead of jQuery
+4. **Checkbox state caching**: Native DOM APIs (no jQuery)
 5. **Optimized countAuthorAreas**: Pre-computed area list, indexed array access
 6. **No loading overlay**: Page loads fast enough (~900ms) that progress messages are unnecessary
 
@@ -407,7 +410,6 @@ util/                  # Utility scripts
   split-csv.py         # Split combined CSV files
   ...                  # Other data processing scripts
 typescript/            # Type definitions
-  jquery.d.ts
   navigo.d.ts
   papaparse.d.ts
   vega-embed.d.ts
@@ -578,7 +580,6 @@ When updating many URLs, use parallel web searches to find correct CS department
 ## Dependencies
 
 ### Frontend (JavaScript)
-- jQuery (DOM manipulation, some remaining uses)
 - Papa Parse (CSV parsing)
 - Navigo (client-side routing)
 - Vega-Lite (charts)
