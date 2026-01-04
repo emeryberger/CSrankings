@@ -22,6 +22,7 @@ const ABBREVIATION_MAP = {
 // State
 let institutions = [];
 let facultyEntries = [];
+let dblpAliases = new Map(); // alias -> canonical name
 let currentAction = 'add';
 let selectedEntry = null;
 let validationState = {
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', init);
 async function init() {
     await Promise.all([
         loadInstitutions(),
-        loadFacultyEntries()
+        loadFacultyEntries(),
+        loadDBLPAliases()
     ]);
     setupEventListeners();
     updateUIForAction('add');
@@ -110,6 +112,35 @@ async function loadFacultyEntries() {
     catch (error) {
         console.error('Failed to load faculty entries:', error);
     }
+}
+/**
+ * Load DBLP aliases for name lookup
+ * Maps alternative names to canonical DBLP names
+ */
+async function loadDBLPAliases() {
+    try {
+        const response = await fetch('/dblp-aliases.csv');
+        if (!response.ok)
+            return;
+        const text = await response.text();
+        const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+        for (const row of parsed.data) {
+            if (row.alias && row.name) {
+                dblpAliases.set(row.alias.toLowerCase().trim(), row.name.trim());
+            }
+        }
+        console.log(`Loaded ${dblpAliases.size} DBLP aliases`);
+    }
+    catch (error) {
+        console.error('Failed to load DBLP aliases:', error);
+    }
+}
+/**
+ * Check if a name has a DBLP alias (canonical name)
+ */
+function getCanonicalDBLPName(name) {
+    const normalized = name.toLowerCase().trim();
+    return dblpAliases.get(normalized) || null;
 }
 /**
  * Setup all event listeners
@@ -669,7 +700,14 @@ async function checkDBLPNameAsync(name) {
             setFieldStatus('name', 'warning', `DBLP check failed: ${result.error}`);
         }
         else if (!result.found) {
-            setFieldStatus('name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
+            // Check if this name is a known alias
+            const canonicalName = getCanonicalDBLPName(name);
+            if (canonicalName) {
+                setFieldStatus('name', 'warning', `This name is an alias. Use the canonical DBLP name: <strong>${canonicalName}</strong>`);
+            }
+            else {
+                setFieldStatus('name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
+            }
         }
         else if (!result.exactMatch && result.suggestions.length > 0) {
             const suggestions = result.suggestions.slice(0, 3).map(s => `"${s}"`).join(', ');
