@@ -18,6 +18,8 @@ WARN = chr(0x26A0) + chr(0xFE0F)
 INFO = chr(0x2139) + chr(0xFE0F)
 SUCCESS = "\U00002705"
 
+# Import from same directory (add util/ to path when running from repo root)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 
 # ---------- Checkbox References ----------
@@ -71,7 +73,8 @@ def remove_brackets(s: str) -> str:
     return re.sub(r'\s*\[[^\]]*\]$', '', s)
 
 def has_valid_google_scholar_id(s: str) -> bool:
-    return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{12}$', s))
+    """Check if Google Scholar ID has valid format (12 chars ending in J)."""
+    return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}J$', s))
 
 def check_excel_corruption(line: str) -> Optional[str]:
     """Check if a line contains signs of Excel corruption. Returns the pattern found, or None."""
