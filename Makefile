@@ -5,7 +5,7 @@
 # See COPYING for license information.
 #
 
-TARGETS = csrankings.js csrankings.min.js generated-author-info.csv
+TARGETS = csrankings.js csrankings.min.js submit/submit.js generated-author-info.csv
 
 .PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names update-dblp-full apply-author-names backup-dblp update-dblp-date download-prev-dblp
 
@@ -18,7 +18,7 @@ DBLP   = dblp.uni-trier.de
 # Note: BaseX is no longer used for DBLP filtering. We now use a streaming Python SAX parser
 # which uses constant memory (~50MB) instead of loading the entire document (~11GB).
 
-all: generated-author-info.csv csrankings.js csrankings.min.js csrankings.csv  # fix-affiliations home-pages scholar-links
+all: generated-author-info.csv csrankings.js csrankings.min.js submit/submit.js csrankings.csv  # fix-affiliations home-pages scholar-links
 	$(MAKE) clean-csrankings
 
 clean:
@@ -27,6 +27,10 @@ clean:
 csrankings.js: src/types.ts src/config.ts src/utils.ts src/data-loader.ts src/region.ts src/computation.ts src/verification.ts src/rendering.ts src/continents.ts src/app.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --project tsconfig.json
+
+submit/submit.js: src/submit.ts
+	@echo "Rebuilding submit form JavaScript."
+	tsc src/submit.ts --target es6 --lib es2017,dom --outDir submit --skipLibCheck
 
 csrankings.min.js: csrankings.js
 	google-closure-compiler --js csrankings.js > csrankings.min.js
