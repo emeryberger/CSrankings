@@ -347,9 +347,13 @@ def process_pr_metadata(pr_metadata_path: str) -> bool:
         pr_metadata = json.load(f)
 
     # Check that author has a name set in their GitHub profile
+    # Skip this check for bot accounts (e.g., github-actions[bot])
     author_login = pr_metadata.get("author_login", "")
     author_name = pr_metadata.get("author_name", "")
-    if not author_name or not author_name.strip():
+    is_bot = "[bot]" in author_login.lower()
+    if is_bot:
+        print(f"{INFO}\tPR created by bot: @{author_login}")
+    elif not author_name or not author_name.strip():
         print(f"{ERROR}\t{CHECKBOX_REFS['non_anonymous']} GitHub profile for @{author_login} does not have a name set.")
         print(f"{INFO}\tPlease add your full name to your GitHub profile: https://github.com/settings/profile")
         valid = False
