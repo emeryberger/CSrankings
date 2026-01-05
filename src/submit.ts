@@ -502,6 +502,15 @@ function setupEventListeners(): void {
     const scholaridInput = document.getElementById('scholarid') as HTMLInputElement;
     scholaridInput.addEventListener('input', validateScholarId);
 
+    // New DBLP name field (for disambiguation suffixes in updates)
+    const newNameInput = document.getElementById('new-name') as HTMLInputElement;
+    if (newNameInput) {
+        newNameInput.addEventListener('input', () => {
+            updateSubmitButton();
+            updatePreview();
+        });
+    }
+
     // Eligibility checkboxes
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
         cb.addEventListener('change', updateSubmitButton);
@@ -659,6 +668,9 @@ function updateUIForAction(action: ActionType): void {
 
     // Current info panel (for update/remove)
     show('current-info-group', action !== 'add');
+
+    // New DBLP name field (for update only - disambiguation suffixes)
+    show('new-name-group', action === 'update');
 
     // Institution label
     show('institution-label-new', action === 'add');
@@ -1761,10 +1773,12 @@ function updateSubmitButton(): void {
             if (selectedEntry) {
                 const currentHomepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
                 const currentScholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
+                const currentNewName = (document.getElementById('new-name') as HTMLInputElement)?.value.trim() || '';
                 const originalHomepage = selectedEntry.homepage.trim();
                 const originalScholarid = selectedEntry.scholarid.trim();
                 hasChanges = currentHomepage !== originalHomepage ||
-                             currentScholarid !== originalScholarid;
+                             currentScholarid !== originalScholarid ||
+                             (currentNewName !== '' && currentNewName !== selectedEntry.name);
             }
             // For reinstatements (from old/), always allow (moving back to active is a change)
             const isReinstatement = selectedEntry?.isOld === true;
@@ -1797,6 +1811,7 @@ function updateSubmitButton(): void {
  */
 function updatePreview(): void {
     const name = (document.getElementById('name') as HTMLInputElement).value.trim();
+    const newName = (document.getElementById('new-name') as HTMLInputElement)?.value.trim() || '';
     const institution = (document.getElementById('institution') as HTMLInputElement).value.trim();
     const homepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
     const scholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
@@ -1814,12 +1829,15 @@ function updatePreview(): void {
         return;
     }
 
-    if (name && institution && homepage && scholarid) {
-        const csvLine = `${name},${institution},${homepage},${scholarid}`;
+    // For updates, use new name if provided
+    const effectiveName = (currentAction === 'update' && newName) ? newName : name;
+
+    if (effectiveName && institution && homepage && scholarid) {
+        const csvLine = `${effectiveName},${institution},${homepage},${scholarid}`;
         (document.getElementById('csv-preview') as HTMLElement).textContent = csvLine;
 
         // Determine target file
-        const firstLetter = name.charAt(0).toLowerCase();
+        const firstLetter = effectiveName.charAt(0).toLowerCase();
         const targetFile = /[a-z]/.test(firstLetter)
             ? `csrankings-${firstLetter}.csv`
             : 'csrankings-0.csv';
@@ -1842,13 +1860,16 @@ function handleSubmit(e: Event): void {
     e.preventDefault();
 
     const name = (document.getElementById('name') as HTMLInputElement).value.trim();
+    const newName = (document.getElementById('new-name') as HTMLInputElement)?.value.trim() || '';
     const institution = (document.getElementById('institution') as HTMLInputElement).value.trim();
     const homepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
     const scholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
     const notes = (document.getElementById('notes') as HTMLTextAreaElement).value.trim();
 
     // Build submission data
-    const entry: FacultyEntry = { name, institution, homepage, scholarid };
+    // For updates, use new name if provided, otherwise keep original name
+    const effectiveName = (currentAction === 'update' && newName) ? newName : name;
+    const entry: FacultyEntry = { name: effectiveName, institution, homepage, scholarid };
     let issueUrl: string;
 
     switch (currentAction) {
@@ -1955,6 +1976,9 @@ function createUpdateIssueUrl(oldEntry: FacultyEntry, newEntry: FacultyEntry, no
         : `[CSrankings form submission] Update ${newEntry.name}`;
 
     const changes: string[] = [];
+    if (oldEntry.name !== newEntry.name) {
+        changes.push(`- Name: ${oldEntry.name} → ${newEntry.name}`);
+    }
     if (oldEntry.institution !== newEntry.institution) {
         changes.push(`- Institution: ${oldEntry.institution} → ${newEntry.institution}`);
     }

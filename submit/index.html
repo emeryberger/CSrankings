@@ -91,6 +91,23 @@
                         </div>
                     </div>
 
+                    <!-- New DBLP Name Field (for update only - disambiguation suffixes) -->
+                    <div class="form-group" id="new-name-group" style="display:none;">
+                        <label for="new-name" class="col-sm-3 control-label">
+                            New DBLP Name
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="new-name"
+                                   placeholder="e.g., Christian Schilling 0001"
+                                   autocomplete="off">
+                            <span id="new-name-status" class="help-block status"></span>
+                            <p class="help-block">
+                                Optional: Use to add DBLP disambiguation suffix (e.g., "0001").
+                                <a href="https://dblp.org/search" target="_blank">Search DBLP</a> for the correct name.
+                            </p>
+                        </div>
+                    </div>
+
                     <!-- Institution Field -->
                     <div class="form-group" id="institution-group">
                         <label for="institution" class="col-sm-3 control-label">
