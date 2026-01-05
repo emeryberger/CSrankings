@@ -96,6 +96,74 @@ body {
     border-color: #8a6d3b;
 }
 
+/* Action buttons - compact with intuitive colors */
+.action-btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    border: none !important;
+    color: white !important;
+}
+
+
+/* Add button - green (positive action) */
+.action-btn[data-action="add"] {
+    background-color: #5cb85c !important;
+}
+
+.action-btn[data-action="add"].active {
+    background-color: #449d44 !important;
+}
+
+.action-btn[data-action="add"]:hover {
+    background-color: #47a447 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Update button - blue (neutral action) */
+.action-btn[data-action="update"] {
+    background-color: #5bc0de !important;
+}
+
+.action-btn[data-action="update"].active {
+    background-color: #31b0d5 !important;
+}
+
+.action-btn[data-action="update"]:hover {
+    background-color: #39b3d7 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Remove button - red (destructive action) */
+.action-btn[data-action="remove"] {
+    background-color: #d9534f !important;
+}
+
+.action-btn[data-action="remove"].active {
+    background-color: #c9302c !important;
+}
+
+.action-btn[data-action="remove"]:hover {
+    background-color: #d43f3a !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Non-active state - slightly faded */
+.action-btn:not(.active) {
+    opacity: 0.6;
+}
+
+.action-btn:not(.active):hover {
+    opacity: 0.9;
+}
+
+/* Button group adjustments */
+.btn-group-justified > .btn-group > .action-btn {
+    width: 100%;
+}
+
 /* Submit button */
 #submit-btn {
     margin-top: 10px;
@@ -103,6 +171,21 @@ body {
 
 #submit-btn .glyphicon {
     margin-right: 5px;
+}
+
+/* Eligibility checkboxes - compact layout */
+.eligibility-list .checkbox {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.eligibility-list .checkbox label {
+    padding-left: 20px;
+    font-weight: normal;
+}
+
+.eligibility-list .checkbox input[type="checkbox"] {
+    margin-left: -20px;
 }
 
 /* Validation summary */

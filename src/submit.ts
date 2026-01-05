@@ -46,6 +46,53 @@ const ABBREVIATION_MAP: Record<string, string[]> = {
     'california': ['cal.', 'cal'],
 };
 
+// Common university acronyms -> full names (lowercase for matching)
+const ACRONYM_MAP: Record<string, string[]> = {
+    'mit': ['massachusetts institute of technology'],
+    'cmu': ['carnegie mellon'],
+    'uiuc': ['university of illinois at urbana', 'illinois urbana'],
+    'ucla': ['university of california, los angeles', 'california los angeles'],
+    'ucb': ['university of california, berkeley', 'california berkeley', 'uc berkeley'],
+    'ucsd': ['university of california, san diego', 'california san diego'],
+    'usc': ['university of southern california'],
+    'gatech': ['georgia institute of technology', 'georgia tech'],
+    'gt': ['georgia institute of technology', 'georgia tech'],
+    'uw': ['university of washington', 'university of wisconsin'],
+    'nyu': ['new york university'],
+    'umich': ['university of michigan'],
+    'upenn': ['university of pennsylvania', 'penn'],
+    'umd': ['university of maryland'],
+    'utexas': ['university of texas at austin', 'texas austin'],
+    'ut austin': ['university of texas at austin', 'texas austin'],
+    'purdue': ['purdue university'],
+    'eth': ['eth zurich', 'eidgenössische technische hochschule'],
+    'epfl': ['ecole polytechnique federale de lausanne', 'lausanne'],
+    'caltech': ['california institute of technology'],
+    'stanford': ['stanford university'],
+    'princeton': ['princeton university'],
+    'harvard': ['harvard university'],
+    'yale': ['yale university'],
+    'cornell': ['cornell university'],
+    'columbia': ['columbia university'],
+    'brown': ['brown university'],
+    'oxford': ['university of oxford'],
+    'cambridge': ['university of cambridge'],
+    'imperial': ['imperial college'],
+    'ucl': ['university college london'],
+    'tum': ['technical university of munich', 'technische universitat munchen'],
+    'nus': ['national university of singapore'],
+    'ntu': ['nanyang technological'],
+    'hku': ['university of hong kong'],
+    'tsinghua': ['tsinghua university'],
+    'peking': ['peking university'],
+    'iit': ['indian institute of technology'],
+    'iisc': ['indian institute of science'],
+    'waterloo': ['university of waterloo'],
+    'toronto': ['university of toronto'],
+    'mcgill': ['mcgill university'],
+    'ubc': ['university of british columbia'],
+};
+
 // State
 let institutions: string[] = [];
 let facultyEntries: FacultyEntry[] = [];
@@ -307,10 +354,15 @@ function switchToUpdateWithEntry(entry: FacultyEntry): void {
     (document.getElementById('homepage') as HTMLInputElement).value = entry.homepage;
     (document.getElementById('scholarid') as HTMLInputElement).value = entry.scholarid;
 
-    // Show current info
+    // Show current info with clickable links
     (document.getElementById('current-institution') as HTMLElement).textContent = entry.institution;
-    (document.getElementById('current-homepage') as HTMLElement).textContent = entry.homepage;
-    (document.getElementById('current-scholarid') as HTMLElement).textContent = entry.scholarid;
+    (document.getElementById('current-homepage') as HTMLElement).innerHTML =
+        `<a href="${escapeHtml(entry.homepage)}" target="_blank">${escapeHtml(entry.homepage)}</a>`;
+    const scholarUrl = entry.scholarid === 'NOSCHOLARPAGE' ? '' :
+        `https://scholar.google.com/citations?user=${encodeURIComponent(entry.scholarid)}`;
+    (document.getElementById('current-scholarid') as HTMLElement).innerHTML = scholarUrl
+        ? `<a href="${escapeHtml(scholarUrl)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
+        : entry.scholarid;
 
     // Handle former faculty status indicator
     const currentInfo = document.getElementById('current-info') as HTMLElement;
@@ -544,8 +596,13 @@ function selectFacultyEntry(name: string): void {
     const currentInfo = document.getElementById('current-info') as HTMLElement;
 
     (document.getElementById('current-institution') as HTMLElement).textContent = entry.institution;
-    (document.getElementById('current-homepage') as HTMLElement).textContent = entry.homepage;
-    (document.getElementById('current-scholarid') as HTMLElement).textContent = entry.scholarid;
+    (document.getElementById('current-homepage') as HTMLElement).innerHTML =
+        `<a href="${escapeHtml(entry.homepage)}" target="_blank">${escapeHtml(entry.homepage)}</a>`;
+    const scholarUrl2 = entry.scholarid === 'NOSCHOLARPAGE' ? '' :
+        `https://scholar.google.com/citations?user=${encodeURIComponent(entry.scholarid)}`;
+    (document.getElementById('current-scholarid') as HTMLElement).innerHTML = scholarUrl2
+        ? `<a href="${escapeHtml(scholarUrl2)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
+        : entry.scholarid;
 
     // Add/update status indicator for former faculty
     let statusIndicator = currentInfo.querySelector('.former-status');
@@ -613,7 +670,9 @@ function escapeRegex(str: string): string {
  * Check if institution matches query with fuzzy abbreviation support
  */
 function institutionMatchesFuzzy(institution: string, query: string): boolean {
+    const instLower = institution.toLowerCase();
     const instNorm = normalizeForFuzzyMatch(institution);
+    const queryLower = query.toLowerCase().trim();
     const queryNorm = normalizeForFuzzyMatch(query);
 
     // Direct match after normalization
@@ -622,13 +681,23 @@ function institutionMatchesFuzzy(institution: string, query: string): boolean {
     }
 
     // Also try matching the original query against normalized institution
-    if (instNorm.includes(query.toLowerCase())) {
+    if (instNorm.includes(queryLower)) {
         return true;
     }
 
     // And try matching normalized query against original institution
-    if (institution.toLowerCase().includes(queryNorm)) {
+    if (instLower.includes(queryNorm)) {
         return true;
+    }
+
+    // Check if query is a known acronym
+    const expansions = ACRONYM_MAP[queryLower];
+    if (expansions) {
+        for (const expansion of expansions) {
+            if (instLower.includes(expansion)) {
+                return true;
+            }
+        }
     }
 
     return false;
@@ -906,8 +975,11 @@ function validateInstitution(): void {
  * Validate homepage URL
  */
 function validateHomepage(): void {
+    const testLink = document.getElementById('test-homepage-link') as HTMLAnchorElement;
+
     if (currentAction === 'remove') {
         validationState.homepage = { valid: true, message: '' };
+        testLink.style.display = 'none';
         updateSubmitButton();
         return;
     }
@@ -916,6 +988,7 @@ function validateHomepage(): void {
 
     if (!homepage) {
         setFieldStatus('homepage', 'error', 'Homepage URL is required');
+        testLink.style.display = 'none';
         return;
     }
 
@@ -924,8 +997,13 @@ function validateHomepage(): void {
         const url = new URL(homepage);
         if (!['http:', 'https:'].includes(url.protocol)) {
             setFieldStatus('homepage', 'error', 'URL must start with http:// or https://');
+            testLink.style.display = 'none';
             return;
         }
+
+        // Show test link
+        testLink.href = homepage;
+        testLink.style.display = 'inline';
 
         // Format valid, now check accessibility
         setFieldStatus('homepage', 'valid', 'Checking accessibility...');
@@ -933,6 +1011,7 @@ function validateHomepage(): void {
 
     } catch (e) {
         setFieldStatus('homepage', 'error', 'Invalid URL format');
+        testLink.style.display = 'none';
         return;
     }
 }

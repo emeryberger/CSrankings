@@ -32,22 +32,13 @@
                     <div class="panel-body">
                         <div class="btn-group btn-group-justified" role="group">
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default action-btn active" data-action="add">
-                                    <span class="glyphicon glyphicon-plus"></span><br>
-                                    Add New Faculty
-                                </button>
+                                <button type="button" class="btn btn-default action-btn active" data-action="add">Add</button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default action-btn" data-action="update">
-                                    <span class="glyphicon glyphicon-edit"></span><br>
-                                    Update Existing
-                                </button>
+                                <button type="button" class="btn btn-default action-btn" data-action="update">Update</button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default action-btn" data-action="remove">
-                                    <span class="glyphicon glyphicon-remove"></span><br>
-                                    Remove Faculty
-                                </button>
+                                <button type="button" class="btn btn-default action-btn" data-action="remove">Remove</button>
                             </div>
                         </div>
                     </div>
@@ -130,6 +121,9 @@
                                    placeholder="https://www.example.edu/~jsmith"
                                    required>
                             <span id="homepage-status" class="help-block status"></span>
+                            <p class="help-block">
+                                <a href="#" id="test-homepage-link" target="_blank" style="display:none;">Test homepage</a>
+                            </p>
                         </div>
                     </div>
 
@@ -145,6 +139,7 @@
                             <span id="scholarid-status" class="help-block status"></span>
                             <p class="help-block">
                                 Find after <code>user=</code> in Google Scholar URL.
+                                <a href="#" id="test-scholar-link" target="_blank" style="display:none;">Verify on Scholar</a>
                             </p>
                         </div>
                     </div>
@@ -184,63 +179,28 @@
                     <!-- Eligibility Checkboxes (for add action) -->
                     <div id="eligibility-section">
                         <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <p><strong>Please confirm the following:</strong></p>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="check-tenure" required>
-                                        This faculty member is <strong>full-time, tenure-track</strong>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="check-advisor" required>
-                                        This faculty member can <strong>solely advise CS PhD students</strong> (not co-advise)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="check-dblp" required>
-                                        Name matches <strong>DBLP exactly</strong> (including disambiguation numbers)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="check-homepage" required>
-                                        Homepage URL is <strong>working</strong> and shows name/affiliation
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" id="check-non-cs-group" style="display:none;">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="check-non-cs">
-                                        Faculty is not in CS department but has courtesy appointment or can advise CS PhDs
-                                        <br><small class="text-muted">(Only check if applicable - provide justification in notes)</small>
-                                    </label>
+                            <label class="col-sm-3 control-label">Eligibility</label>
+                            <div class="col-sm-9">
+                                <div class="eligibility-list">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="check-tenure" required>
+                                            <strong>Full-time, tenure-track</strong> faculty member
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="check-advisor" required>
+                                            Can <strong>solely advise</strong> CS PhD students (not co-advise)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="check-cs-dept" required>
+                                            In a <strong>CS department</strong> (or similar: Informatics, etc.)
+                                        </label>
+                                        <br><small class="text-muted" style="margin-left: 20px;">If not, provide a link and explain in Notes below</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
