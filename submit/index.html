@@ -228,18 +228,60 @@
                         </div>
                     </div>
 
-                    <!-- Submit Button -->
+                    <!-- Submit Buttons -->
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" disabled>
-                                <span id="submit-text">Submit via GitHub</span>
-                            </button>
-                            <p class="help-block">
-                                You'll be redirected to GitHub to create an issue.
+                            <!-- Single submit (for update/remove) -->
+                            <div id="single-submit-group">
+                                <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" disabled>
+                                    <span id="submit-text">Submit via GitHub</span>
+                                </button>
+                            </div>
+                            <!-- Batch buttons (for add) -->
+                            <div id="batch-buttons-group">
+                                <button type="button" id="add-to-batch-btn" class="btn btn-success btn-lg" disabled>
+                                    + Add to Batch
+                                </button>
+                                <span class="text-muted" style="margin: 0 10px;">or</span>
+                                <button type="submit" id="submit-btn-add" class="btn btn-default" disabled>
+                                    Submit Single Entry
+                                </button>
+                            </div>
+                            <p class="help-block" id="submit-help" style="margin-top: 10px;">
+                                Add multiple faculty, then submit all at once.
                             </p>
                         </div>
                     </div>
                 </form>
+
+                <!-- Batch Entries List (Add mode only) -->
+                <div id="batch-entries-section" style="display:none;">
+                    <h4>Batch Entries <span class="badge" id="batch-count">0</span></h4>
+                    <p class="text-muted">Add multiple faculty from the same institution, then submit all at once.</p>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-condensed" id="batch-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Homepage</th>
+                                    <th>Scholar ID</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="batch-entries-body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <button type="button" id="submit-batch-btn" class="btn btn-primary btn-lg" disabled>
+                        Submit All <span id="batch-count-btn">0</span> Entries
+                    </button>
+                    <button type="button" id="clear-batch-btn" class="btn btn-default">
+                        Clear All
+                    </button>
+                    <p class="help-block">
+                        Creates a single GitHub issue with all entries for easier review.
+                    </p>
+                </div>
 
                 <!-- Validation Summary -->
                 <div id="validation-summary" class="alert alert-danger" style="display:none;">
