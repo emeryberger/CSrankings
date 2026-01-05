@@ -1,5 +1,7 @@
 # Contributing to CSrankings
 
+> **Adding or updating a single faculty member?** Use our [self-service form](https://csrankings.org/submit/) instead — it's faster and validates your entry automatically!
+
 Thanks for contributing to CSrankings! Please read and indicate you agree with **all** these guidelines to getting your pull request accepted. Note that pull requests may take some time to get merged (please don't contact us for at least three months for updates, unless you are a sponsor - see below).
 
 **If you find CSrankings useful, [please consider becoming a sponsor](https://github.com/sponsors/csrankings).**

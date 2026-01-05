@@ -1,3 +1,5 @@
+> **Adding or updating a single faculty member?** Use our [self-service form](https://csrankings.org/submit/) instead — it's faster and validates your entry automatically!
+
 ## Required Checklist
 
 Read [CONTRIBUTING.md](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md) and check **all** boxes that apply.

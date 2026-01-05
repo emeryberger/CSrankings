@@ -77,15 +77,18 @@ private checkboxCacheValid: boolean = false;
 - Cache is refreshed once per `rank()` call via `refreshCheckboxCache()`
 - Use `getCheckboxState(area)` to read from cache
 
-### Native DOM vs jQuery
-Prefer native DOM APIs for checkbox operations:
+### Native DOM (No jQuery)
+The application uses native DOM APIs exclusively (jQuery was removed):
 ```typescript
-// Good - native DOM (5-10x faster)
+// Checkbox operations
 const element = document.getElementById(id) as HTMLInputElement;
 element.checked = true;
 
-// Avoid - jQuery overhead
-$(`input[name=${id}]`).prop('checked', true);
+// Select/dropdown operations
+const select = document.getElementById("regions") as HTMLSelectElement;
+const value = select.value;                          // Get value
+select.value = "world";                              // Set value
+const text = select.selectedOptions[0].text;         // Get selected text
 ```
 
 ### All Entries Displayed
@@ -202,7 +205,7 @@ Key optimizations:
 1. **Parallel CSV loading**: All 6 CSV files load concurrently via `Promise.all()`
 2. **Incremental computation**: Only recomputes what changed based on checkbox state
 3. **Lazy faculty rendering**: Faculty HTML generated on-demand when department expanded
-4. **Checkbox state caching**: Native DOM instead of jQuery
+4. **Checkbox state caching**: Native DOM APIs (no jQuery)
 5. **Optimized countAuthorAreas**: Pre-computed area list, indexed array access
 6. **No loading overlay**: Page loads fast enough (~900ms) that progress messages are unnecessary
 
@@ -280,6 +283,165 @@ else:
 - `CONTRIBUTING.md` - Detailed explanations with anchor IDs
 - `validate_commit.py` - Programmatic validation logic
 - `generate_diff.py` - Fetches PR metadata including author info
+
+## Faculty Submission Form
+
+A self-service web form at `/submit/` allows faculty to submit CSRankings entries without manual PR creation.
+
+### Architecture
+
+```
+User fills form → GitHub Issue → GitHub Action → Pull Request
+      ↓                               ↓
+ Client-side validation        Server-side validation
+ - DBLP name check             - validate_submission.py
+ - Homepage accessibility      - Full DBLP verification
+ - Institution autocomplete    - Homepage content check
+ - Scholar ID format           - Duplicate detection
+```
+
+**No OAuth required** - uses GitHub Issue creation which requires only a GitHub login.
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `src/submit.ts` | TypeScript form implementation (~1800 lines) |
+| `submit/submit.js` | Compiled JavaScript |
+| `submit/index.html` | Form page (Bootstrap 3) |
+| `submit/submit.css` | Form styles |
+| `util/validate_submission.py` | Server-side validation |
+| `.github/workflows/process-submission.yml` | Issue → PR automation |
+| `.github/ISSUE_TEMPLATE/new-institution.md` | New institution request template |
+
+### Three Action Modes
+
+- **Add**: New faculty with eligibility checkboxes
+- **Update**: Search existing entry, modify institution/homepage/scholar ID
+- **Remove**: Search existing entry, select reason (retired, industry, deceased, etc.)
+
+### Institution Autocomplete Features
+
+- **Fuzzy matching**: `University` ↔ `Univ.`, `Institute` ↔ `Inst.`, etc.
+- **Acronym support**: 150+ acronyms including:
+  - Generic U? two-letter (UA-UZ): `UT` → all UT schools, `UC` → all UC schools
+  - Specific: MIT, CMU, UIUC, UCLA, ETH, EPFL, NUS, etc.
+- **Priority ordering**: Primary institution shown first (e.g., UT → UT Austin first)
+- **Country flags**: Shows flag emoji based on institution's country code
+
+**Acronym configuration** in `src/submit.ts`:
+```typescript
+// Two-letter acronyms match multiple institutions
+const ACRONYM_MAP: Record<string, string[]> = {
+    'ut': ['university of texas', 'texas at', 'university of tennessee', ...],
+    'uc': ['univ. of california', 'california -', ...],
+    ...
+};
+
+// Primary institution shown first in results
+const ACRONYM_PRIMARY: Record<string, string | string[]> = {
+    'ut': 'University of Texas at Austin',
+    'uc': 'california -',  // Pattern matches all UC schools
+    'uw': ['University of Washington', 'Wisconsin'],  // Multiple primaries
+    ...
+};
+```
+
+### Key Implementation Notes
+
+**Issue body format** - The GitHub Action parses the `### Action` field:
+```markdown
+### Action
+Add new faculty entry
+
+### Name (as it appears in DBLP)
+...
+```
+**Critical**: Don't use GitHub issue templates with the `template` URL parameter - it overrides the `body` parameter and the Action field gets lost.
+
+**Hidden required fields** - When switching between Add/Update/Remove modes, toggle `required` attribute on hidden fields (like eligibility checkboxes) to prevent browser validation errors:
+```typescript
+document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
+    (cb as HTMLInputElement).required = action === 'add';
+});
+```
+
+**Name validation on blur** - For Update/Remove modes, auto-select entry if typed name exactly matches:
+```typescript
+nameInput.addEventListener('blur', () => {
+    if (currentAction !== 'add') {
+        validateNameForUpdateRemove();  // Auto-selects if exact match
+    }
+});
+```
+
+**Unicode symbols** - Using Unicode instead of Bootstrap glyphicons for status indicators:
+- ✓ (`&#10003;`) - Valid/success
+- ✗ (`&#10007;`) - Error
+- ⚠ (`&#9888;`) - Warning
+- ↻ (`&#8635;`) - Loading/spinning
+
+**Fuzzy matching regex** - Abbreviations ending with `.` need special handling:
+```typescript
+// \b word boundary doesn't work after punctuation
+// Use lookahead instead: (?=\s|$)
+const regex = abbrev.endsWith('.')
+    ? new RegExp(`\\b${escapedAbbrev}(?=\\s|$)`, 'gi')
+    : new RegExp(`\\b${escapedAbbrev}\\b`, 'gi');
+```
+
+**DBLP API**:
+- Endpoint: `https://dblp.org/search/author/api?q=author%3A{query}$%3A&format=json`
+- Debounced at 500ms to avoid rate limiting
+
+**Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
+
+**Google Scholar ID format**: 12 characters, or `NOSCHOLARPAGE`.
+
+### Build Commands
+
+```bash
+# Compile submit form only
+make submit/submit.js
+
+# Or manually
+tsc src/submit.ts --target es6 --lib es2017,dom --outDir submit --skipLibCheck
+```
+
+### Workflow Processing
+
+The `process-submission.yml` workflow:
+1. Runs hourly via cron (also manual trigger)
+2. Finds issues with title prefix `[CSrankings form submission]`
+3. Parses `### Action` field to determine action type (add/update/remove/reinstate)
+4. Validates fields and checks institution exists
+5. Creates branch, commits CSV change, opens PR
+6. Triggers `commit_validation.yml` on the new PR
+7. Comments on issue with result
+
+**Required permissions**:
+```yaml
+permissions:
+  contents: write      # Create branches and commits
+  issues: write        # Comment on issues, add labels
+  pull-requests: write # Create PRs
+  actions: write       # Trigger validation workflow
+```
+
+**Triggering validation**: PRs created by `GITHUB_TOKEN` don't trigger other workflows automatically. The workflow explicitly calls `workflow_dispatch`:
+```javascript
+await github.rest.actions.createWorkflowDispatch({
+    workflow_id: 'commit_validation.yml',
+    ref: 'gh-pages',
+    inputs: { pr_number: String(pr.number) }
+});
+```
+
+### CSV Line Endings
+
+CSRankings CSV files use CRLF (`\r\n`) line endings. The workflow:
+- Reads with `.split(/\r?\n/)` to handle both formats
+- Writes with `.join('\r\n')` to maintain CRLF
 
 ## DBLP Processing
 
@@ -384,9 +546,14 @@ src/                   # TypeScript source (modular)
   navigation.ts        # Routing
   rendering.ts         # HTML generation
   region.ts            # Region filtering
+  submit.ts            # Faculty submission form
   types.ts             # Type definitions
   utils.ts             # Utilities
   verification.ts      # Incremental verification
+submit/                # Faculty submission form
+  index.html           # Form page
+  submit.js            # Compiled from src/submit.ts
+  submit.css           # Form styles
 csrankings.js          # Compiled JavaScript (bundled)
 csrankings.min.js      # Minified for production
 index.html             # Main page
@@ -407,7 +574,6 @@ util/                  # Utility scripts
   split-csv.py         # Split combined CSV files
   ...                  # Other data processing scripts
 typescript/            # Type definitions
-  jquery.d.ts
   navigo.d.ts
   papaparse.d.ts
   vega-embed.d.ts
@@ -578,7 +744,6 @@ When updating many URLs, use parallel web searches to find correct CS department
 ## Dependencies
 
 ### Frontend (JavaScript)
-- jQuery (DOM manipulation, some remaining uses)
 - Papa Parse (CSV parsing)
 - Navigo (client-side routing)
 - Vega-Lite (charts)

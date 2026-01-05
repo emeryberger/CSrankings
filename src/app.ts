@@ -252,8 +252,8 @@ namespace CSRankings {
         }
 
         private recomputeAuthorAreas(): void {
-            const startyear = parseInt($("#fromyear").find(":selected").text());
-            const endyear = parseInt($("#toyear").find(":selected").text());
+            const startyear = parseInt((document.getElementById("fromyear") as HTMLSelectElement).selectedOptions[0].text);
+            const endyear = parseInt((document.getElementById("toyear") as HTMLSelectElement).selectedOptions[0].text);
             this.authorAreas = countAuthorAreas(this.authors, this.areaDict, startyear, endyear);
         }
 
@@ -406,9 +406,9 @@ namespace CSRankings {
             let currentWeights: { [key: string]: number } = {};       /* array to hold 1 or 0, depending on if the area is checked or not. */
             this.areaDeptAdjustedCount = {};
 
-            const startyear = parseInt($("#fromyear").find(":selected").text());
-            const endyear = parseInt($("#toyear").find(":selected").text());
-            const whichRegions = String($("#regions").find(":selected").val());
+            const startyear = parseInt((document.getElementById("fromyear") as HTMLSelectElement).selectedOptions[0].text);
+            const endyear = parseInt((document.getElementById("toyear") as HTMLSelectElement).selectedOptions[0].text);
+            const whichRegions = (document.getElementById("regions") as HTMLSelectElement).value;
 
             const numAreas = this.updateWeights(currentWeights);
 

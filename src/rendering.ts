@@ -88,7 +88,7 @@ namespace CSRankings {
             p += '<img alt="DBLP" src="dblp.png">'
                 + '</a>';
 
-            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${$("#charttype").find(":selected").val()} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
+            p += `<span onclick='event.stopPropagation(); csr.toggleChart("${escape(name)}"); ga("send", "event", "chart", "toggle", "toggle ${escape(name)} ${(document.getElementById("charttype") as HTMLSelectElement).value} chart");' title="Click for author's publication profile." class="hovertip" id="${escape(name) + '-chartwidget'}">`;
             p += ChartIcon + "</span>"
                 + '</small>'
                 + '</td><td align="right"><small>'
@@ -188,7 +188,7 @@ namespace CSRankings {
                 }
                 s += "&nbsp;" + deptDisplay
                     + `&nbsp;<img  title="${country}" src="/flags/${abbrv}.png">&nbsp;`
-                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${$("#charttype").find(":selected").val()} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
+                    + `<span class="hovertip" onclick='csr.toggleChart("${esc}"); ga("send", "event", "chart", "toggle-department", "toggle ${esc} ${(document.getElementById("charttype") as HTMLSelectElement).value} chart");' id='${esc + "-chartwidget"}' title="Click for publication distribution">`
                     + ChartIcon + "</span>";
                 s += "</td>";
 
