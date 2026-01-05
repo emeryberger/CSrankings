@@ -76,6 +76,7 @@ const ACRONYM_MAP = {
 };
 // State
 let institutions = [];
+let institutionMap = new Map(); // name -> full data
 let facultyEntries = [];
 let dblpAliases = new Map(); // alias -> canonical name
 let currentAction = 'add';
@@ -101,6 +102,18 @@ function init() {
     });
 }
 /**
+ * Convert country code to flag emoji
+ */
+function countryCodeToFlag(countryCode) {
+    if (!countryCode || countryCode.length !== 2)
+        return '';
+    const code = countryCode.toUpperCase();
+    // Convert to regional indicator symbols (flag emoji)
+    const firstChar = String.fromCodePoint(0x1F1E6 + code.charCodeAt(0) - 65);
+    const secondChar = String.fromCodePoint(0x1F1E6 + code.charCodeAt(1) - 65);
+    return firstChar + secondChar;
+}
+/**
  * Load institutions from CSV for autocomplete
  */
 function loadInstitutions() {
@@ -109,9 +122,11 @@ function loadInstitutions() {
             const response = yield fetch('/institutions.csv');
             const text = yield response.text();
             const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-            institutions = parsed.data
-                .map(row => row.institution)
-                .filter(Boolean);
+            institutions = parsed.data.filter(row => row.institution);
+            // Build lookup map
+            for (const inst of institutions) {
+                institutionMap.set(inst.institution, inst);
+            }
             console.log(`Loaded ${institutions.length} institutions`);
         }
         catch (error) {
@@ -626,12 +641,12 @@ function handleInstitutionInput() {
         return;
     }
     // Filter matching institutions with fuzzy abbreviation support
-    const matches = institutions.filter(inst => institutionMatchesFuzzy(inst, query)).slice(0, 10);
+    const matches = institutions.filter(inst => institutionMatchesFuzzy(inst.institution, query)).slice(0, 10);
     showInstitutionSuggestions(matches);
     updatePreview();
 }
 /**
- * Show institution autocomplete suggestions
+ * Show institution autocomplete suggestions with country flags
  */
 function showInstitutionSuggestions(matches) {
     const container = document.getElementById('institution-suggestions');
@@ -639,7 +654,10 @@ function showInstitutionSuggestions(matches) {
         hideSuggestions('institution');
         return;
     }
-    container.innerHTML = matches.map(inst => `<div class="suggestion-item" data-value="${escapeHtml(inst)}">${escapeHtml(inst)}</div>`).join('');
+    container.innerHTML = matches.map(inst => {
+        const flag = countryCodeToFlag(inst.countryabbrv);
+        return `<div class="suggestion-item" data-value="${escapeHtml(inst.institution)}">${flag} ${escapeHtml(inst.institution)}</div>`;
+    }).join('');
     container.style.display = 'block';
     // Add click handlers
     container.querySelectorAll('.suggestion-item').forEach(item => {
@@ -823,12 +841,12 @@ function validateInstitution() {
         return;
     }
     // Check if institution exists
-    const exists = institutions.some(inst => inst.toLowerCase() === institution.toLowerCase());
+    const exists = institutions.some(inst => inst.institution.toLowerCase() === institution.toLowerCase());
     if (exists) {
         // Find exact casing
-        const exact = institutions.find(inst => inst.toLowerCase() === institution.toLowerCase());
-        if (exact) {
-            document.getElementById('institution').value = exact;
+        const exactInst = institutions.find(inst => inst.institution.toLowerCase() === institution.toLowerCase());
+        if (exactInst) {
+            document.getElementById('institution').value = exactInst.institution;
         }
         setFieldStatus('institution', 'valid', 'Institution found');
     }
