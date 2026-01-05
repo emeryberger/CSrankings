@@ -916,13 +916,14 @@ function institutionMatchesFuzzy(institution: string, query: string): boolean {
 }
 
 // Primary institutions for common acronyms (shown first in results)
-const ACRONYM_PRIMARY: Record<string, string> = {
+// Can be a single institution or array of institutions/patterns
+const ACRONYM_PRIMARY: Record<string, string | string[]> = {
     'ut': 'University of Texas at Austin',
     'uf': 'University of Florida',
     'um': 'University of Michigan',
-    'uw': 'University of Washington',
+    'uw': ['University of Washington', 'Wisconsin'],  // Both UW schools
     'ua': 'University of Arizona',
-    'uc': 'Univ. of California - Berkeley',
+    'uc': 'california -',  // All UC schools (pattern match)
     'ui': 'Univ. of Illinois at Urbana-Champaign',
     'uo': 'University of Oregon',
     'uk': 'University of Kentucky',
@@ -963,14 +964,24 @@ function handleInstitutionInput(): void {
 
     // Sort to prioritize primary institutions for acronyms
     const queryLower = query.toLowerCase().trim();
-    const primaryInst = ACRONYM_PRIMARY[queryLower];
+    const primaryConfig = ACRONYM_PRIMARY[queryLower];
+
+    // Helper to check if institution matches primary config
+    const isPrimary = (inst: string): boolean => {
+        if (!primaryConfig) return false;
+        const instLower = inst.toLowerCase();
+        if (Array.isArray(primaryConfig)) {
+            return primaryConfig.some(p => instLower.includes(p.toLowerCase()));
+        }
+        return instLower.includes(primaryConfig.toLowerCase());
+    };
 
     allMatches.sort((a, b) => {
-        // Primary institution for this acronym comes first
-        if (primaryInst) {
-            if (a.institution === primaryInst) return -1;
-            if (b.institution === primaryInst) return 1;
-        }
+        const aIsPrimary = isPrimary(a.institution);
+        const bIsPrimary = isPrimary(b.institution);
+        // Primary institutions come first
+        if (aIsPrimary && !bIsPrimary) return -1;
+        if (!aIsPrimary && bIsPrimary) return 1;
         // Then sort alphabetically
         return a.institution.localeCompare(b.institution);
     });
