@@ -1722,8 +1722,16 @@ function updateSubmitButton(): void {
             if (selectedEntry) {
                 const currentHomepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
                 const currentScholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
-                hasChanges = currentHomepage !== selectedEntry.homepage ||
-                             currentScholarid !== selectedEntry.scholarid;
+                const originalHomepage = selectedEntry.homepage.trim();
+                const originalScholarid = selectedEntry.scholarid.trim();
+                hasChanges = currentHomepage !== originalHomepage ||
+                             currentScholarid !== originalScholarid;
+                // Debug logging (can be removed later)
+                console.log('Update check:', {
+                    currentHomepage, originalHomepage, homepageMatch: currentHomepage === originalHomepage,
+                    currentScholarid, originalScholarid, scholaridMatch: currentScholarid === originalScholarid,
+                    hasChanges, updateFieldsValid
+                });
             }
             // For reinstatements (from old/), always allow (moving back to active is a change)
             const isReinstatement = selectedEntry?.isOld === true;
