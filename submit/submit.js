@@ -241,6 +241,10 @@ function setupEventListeners() {
         if (currentAction === 'add') {
             validateName();
         }
+        else {
+            // For update/remove: auto-select if name matches an existing entry
+            validateNameForUpdateRemove();
+        }
     });
     // Institution field - autocomplete and validate
     const institutionInput = document.getElementById('institution');
@@ -787,6 +791,42 @@ function validateName() {
     updatePreview();
 }
 /**
+ * Validate name for update/remove modes - auto-select if exact match found
+ */
+function validateNameForUpdateRemove() {
+    const name = document.getElementById('name').value.trim();
+    if (!name) {
+        setFieldStatus('name', 'error', 'Name is required');
+        return;
+    }
+    if (name.length < 2) {
+        setFieldStatus('name', 'error', 'Name is too short');
+        return;
+    }
+    // If entry already selected and name matches, we're good
+    if (selectedEntry && selectedEntry.name.toLowerCase() === name.toLowerCase()) {
+        return;
+    }
+    // Look for exact match (case-insensitive)
+    const exactMatch = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase());
+    if (exactMatch) {
+        // Auto-select the matching entry
+        selectFacultyEntry(exactMatch.name);
+    }
+    else {
+        // Check for close matches to provide helpful message
+        const closeMatches = facultyEntries.filter(e => e.name.toLowerCase().includes(name.toLowerCase()) ||
+            name.toLowerCase().includes(e.name.toLowerCase())).slice(0, 3);
+        if (closeMatches.length > 0) {
+            const suggestions = closeMatches.map(e => `"${e.name}"`).join(', ');
+            setFieldStatus('name', 'error', `Name not found. Did you mean: ${suggestions}?`);
+        }
+        else {
+            setFieldStatus('name', 'error', 'Name not found in CSRankings. Use the dropdown to select an existing entry.');
+        }
+    }
+}
+/**
  * Async DBLP name check with debouncing
  */
 let dblpCheckTimeout;
@@ -1044,15 +1084,15 @@ function setFieldStatus(field, status, message) {
     group.classList.remove('has-success', 'has-error', 'has-warning');
     if (status === 'valid') {
         group.classList.add('has-success');
-        statusEl.innerHTML = `<span class="text-success"><span class="glyphicon glyphicon-ok"></span> ${message}</span>`;
+        statusEl.innerHTML = `<span class="text-success">&#10003; ${message}</span>`;
     }
     else if (status === 'error') {
         group.classList.add('has-error');
-        statusEl.innerHTML = `<span class="text-danger"><span class="glyphicon glyphicon-remove"></span> ${message}</span>`;
+        statusEl.innerHTML = `<span class="text-danger">&#10007; ${message}</span>`;
     }
     else if (status === 'warning') {
         group.classList.add('has-warning');
-        statusEl.innerHTML = `<span class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> ${message}</span>`;
+        statusEl.innerHTML = `<span class="text-warning">&#9888; ${message}</span>`;
     }
     updateSubmitButton();
 }
@@ -1344,7 +1384,7 @@ function showProgress(message) {
         progressDiv.className = 'alert alert-info';
         (_a = document.querySelector('.container')) === null || _a === void 0 ? void 0 : _a.prepend(progressDiv);
     }
-    progressDiv.innerHTML = `<span class="glyphicon glyphicon-refresh spinning"></span> ${message}`;
+    progressDiv.innerHTML = `<span class="spinning">&#8635;</span> ${message}`;
     progressDiv.style.display = 'block';
 }
 /**
