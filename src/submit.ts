@@ -94,7 +94,8 @@ const ACRONYM_MAP: Record<string, string[]> = {
 };
 
 // State
-let institutions: string[] = [];
+let institutions: Institution[] = [];
+let institutionMap: Map<string, Institution> = new Map(); // name -> full data
 let facultyEntries: FacultyEntry[] = [];
 let dblpAliases: Map<string, string> = new Map(); // alias -> canonical name
 let currentAction: ActionType = 'add';
@@ -122,6 +123,18 @@ async function init(): Promise<void> {
 }
 
 /**
+ * Convert country code to flag emoji
+ */
+function countryCodeToFlag(countryCode: string): string {
+    if (!countryCode || countryCode.length !== 2) return '';
+    const code = countryCode.toUpperCase();
+    // Convert to regional indicator symbols (flag emoji)
+    const firstChar = String.fromCodePoint(0x1F1E6 + code.charCodeAt(0) - 65);
+    const secondChar = String.fromCodePoint(0x1F1E6 + code.charCodeAt(1) - 65);
+    return firstChar + secondChar;
+}
+
+/**
  * Load institutions from CSV for autocomplete
  */
 async function loadInstitutions(): Promise<void> {
@@ -129,9 +142,11 @@ async function loadInstitutions(): Promise<void> {
         const response = await fetch('/institutions.csv');
         const text = await response.text();
         const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-        institutions = (parsed.data as Institution[])
-            .map(row => row.institution)
-            .filter(Boolean);
+        institutions = (parsed.data as Institution[]).filter(row => row.institution);
+        // Build lookup map
+        for (const inst of institutions) {
+            institutionMap.set(inst.institution, inst);
+        }
         console.log(`Loaded ${institutions.length} institutions`);
     } catch (error) {
         console.error('Failed to load institutions:', error);
@@ -719,7 +734,7 @@ function handleInstitutionInput(): void {
 
     // Filter matching institutions with fuzzy abbreviation support
     const matches = institutions.filter(inst =>
-        institutionMatchesFuzzy(inst, query)
+        institutionMatchesFuzzy(inst.institution, query)
     ).slice(0, 10);
 
     showInstitutionSuggestions(matches);
@@ -727,9 +742,9 @@ function handleInstitutionInput(): void {
 }
 
 /**
- * Show institution autocomplete suggestions
+ * Show institution autocomplete suggestions with country flags
  */
-function showInstitutionSuggestions(matches: string[]): void {
+function showInstitutionSuggestions(matches: Institution[]): void {
     const container = document.getElementById('institution-suggestions') as HTMLElement;
 
     if (matches.length === 0) {
@@ -737,9 +752,10 @@ function showInstitutionSuggestions(matches: string[]): void {
         return;
     }
 
-    container.innerHTML = matches.map(inst =>
-        `<div class="suggestion-item" data-value="${escapeHtml(inst)}">${escapeHtml(inst)}</div>`
-    ).join('');
+    container.innerHTML = matches.map(inst => {
+        const flag = countryCodeToFlag(inst.countryabbrv);
+        return `<div class="suggestion-item" data-value="${escapeHtml(inst.institution)}">${flag} ${escapeHtml(inst.institution)}</div>`;
+    }).join('');
 
     container.style.display = 'block';
 
@@ -951,16 +967,16 @@ function validateInstitution(): void {
 
     // Check if institution exists
     const exists = institutions.some(inst =>
-        inst.toLowerCase() === institution.toLowerCase()
+        inst.institution.toLowerCase() === institution.toLowerCase()
     );
 
     if (exists) {
         // Find exact casing
-        const exact = institutions.find(inst =>
-            inst.toLowerCase() === institution.toLowerCase()
+        const exactInst = institutions.find(inst =>
+            inst.institution.toLowerCase() === institution.toLowerCase()
         );
-        if (exact) {
-            (document.getElementById('institution') as HTMLInputElement).value = exact;
+        if (exactInst) {
+            (document.getElementById('institution') as HTMLInputElement).value = exactInst.institution;
         }
         setFieldStatus('institution', 'valid', 'Institution found');
     } else {
