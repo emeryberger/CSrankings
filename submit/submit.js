@@ -46,6 +46,7 @@ const ACRONYM_MAP = {
     'penn': ['university of pennsylvania'],
     'upenn': ['university of pennsylvania'],
     // UC System
+    'uc': ['univ. of california', 'california -'],
     'uc berkeley': ['california - berkeley'],
     'ucb': ['california - berkeley'],
     'ucla': ['california - los angeles'],
@@ -59,10 +60,12 @@ const ACRONYM_MAP = {
     'ucm': ['california - merced'],
     'uc merced': ['california - merced'],
     // Illinois
+    'ui': ['university of illinois'],
     'uiuc': ['illinois at urbana-champaign'],
     'uic': ['illinois at chicago'],
     'iit': ['illinois institute of technology'],
     // Texas
+    'ut': ['university of texas', 'texas at'],
     'ut austin': ['texas at austin'],
     'utexas': ['texas at austin'],
     'uta': ['texas at arlington'],
@@ -72,6 +75,7 @@ const ACRONYM_MAP = {
     'tamu': ['texas a&m university'],
     'texas a&m': ['texas a&m'],
     // Other Big State Schools
+    'um': ['university of michigan', 'university of minnesota', 'university of maryland', 'university of miami', 'university of montana', 'university of maine', 'university of memphis'],
     'umich': ['university of michigan'],
     'michigan': ['university of michigan'],
     'osu': ['ohio state', 'oregon state'],
@@ -93,6 +97,7 @@ const ACRONYM_MAP = {
     'ucf': ['central florida'],
     'fiu': ['florida international'],
     'usf': ['south florida'],
+    'ug': ['university of georgia'],
     'uga': ['university of georgia'],
     'gsu': ['georgia state'],
     'uva': ['university of virginia'],
@@ -104,7 +109,9 @@ const ACRONYM_MAP = {
     'nc state': ['north carolina state'],
     'usc': ['southern california'],
     'asu': ['arizona state'],
-    'ua': ['university of arizona'],
+    'ua': ['university of arizona', 'university of alabama'],
+    'uo': ['university of oregon'],
+    'cu': ['university of colorado', 'colorado boulder'],
     'cu boulder': ['colorado boulder'],
     'colorado': ['colorado boulder'],
     'oregon': ['university of oregon'],
@@ -116,6 +123,9 @@ const ACRONYM_MAP = {
     'indiana': ['indiana university'],
     'iu': ['indiana university'],
     'uiowa': ['university of iowa'],
+    'uk': ['university of kentucky'],
+    'utk': ['university of tennessee'],
+    'ut knoxville': ['university of tennessee'],
     // Georgia Tech
     'gatech': ['georgia institute of technology'],
     'gt': ['georgia institute of technology'],
