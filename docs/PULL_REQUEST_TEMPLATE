@@ -69,7 +69,7 @@ update `country-info.csv` and add *all* of the faculty in the CS department.
 We recommend that you use the GitHub web user interface to make changes. However, it may be more convenient
 to clone the repository for larger-scale changes.
 
-However, a full clone of the CSrankings repository is almost 2GB.  To
+However, a full clone of the CSrankings repository is almost 5GB.  To
 contribute a change without creating a full local clone of the
 CSrankings repo, you can perform a _shallow clone_.  To do so, follow these
 steps:
