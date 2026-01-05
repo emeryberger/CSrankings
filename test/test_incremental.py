@@ -384,8 +384,12 @@ class TestModularRefactoring:
 
     def test_region_filtering_works(self, loaded_page):
         """Test that region filtering is accessible."""
-        # This tests that inRegion function works via the UI
-        loaded_page.execute_script("$('#regions').val('europe').trigger('change');")
+        # This tests that inRegion function works via the UI (using native DOM, not jQuery)
+        loaded_page.execute_script("""
+            const select = document.getElementById('regions');
+            select.value = 'europe';
+            select.dispatchEvent(new Event('change'));
+        """)
         time.sleep(1.5)
         # Should not error and should show results
         ranking_exists = loaded_page.execute_script(

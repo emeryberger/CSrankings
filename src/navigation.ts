@@ -58,13 +58,13 @@ namespace CSRankings {
     ): { url: string; usePieChart: boolean; ChartIcon: string; OpenChartIcon: string } {
         const { s, count, totalParents } = buildURLString(fields, getCheckboxState);
 
-        const region = $("#regions").find(":selected").val();
+        const region = (document.getElementById("regions") as HTMLSelectElement).value;
         let start = '';
         // Check the dates.
         const d = new Date();
         const currYear = d.getFullYear();
-        const startyear = parseInt($("#fromyear").find(":selected").text());
-        const endyear = parseInt($("#toyear").find(":selected").text());
+        const startyear = parseInt((document.getElementById("fromyear") as HTMLSelectElement).selectedOptions[0].text);
+        const endyear = parseInt((document.getElementById("toyear") as HTMLSelectElement).selectedOptions[0].text);
         if ((startyear != currYear - 10) || (endyear != currYear)) {
             start += `/fromyear/${startyear.toString()}`;
             start += `/toyear/${endyear.toString()}`;
@@ -85,7 +85,7 @@ namespace CSRankings {
         let ChartIcon = BarChartIcon;
         let OpenChartIcon = OpenBarChartIcon;
 
-        const chartType = $("#charttype").find(":selected").val();
+        const chartType = (document.getElementById("charttype") as HTMLSelectElement).value;
         if (chartType == "pie") {
             newUsePieChart = true;
             for (const elt of document.getElementsByClassName("chart_icon")) {
@@ -125,7 +125,7 @@ namespace CSRankings {
         if (params !== null) {
             // Set params (fromyear and toyear).
             Object.keys(params).forEach((key) => {
-                $(`#${key}`).prop('value', params[key].toString());
+                (document.getElementById(key) as HTMLSelectElement).value = params[key].toString();
             });
             // Sync year slider if it exists
             if (params['fromyear'] && params['toyear']) {
@@ -165,7 +165,7 @@ namespace CSRankings {
                 if (regions.indexOf(elem) >= 0) {
                     q.splice(index, 1);
                     // Set the region.
-                    $("#regions").val(elem);
+                    (document.getElementById("regions") as HTMLSelectElement).value = elem;
                     // Sync the custom dropdown
                     if (typeof syncRegionDropdown === 'function') {
                         syncRegionDropdown();
@@ -179,7 +179,7 @@ namespace CSRankings {
             return (elem == "pie");
         });
         if (foundPie) {
-            $("#charttype").val("pie");
+            (document.getElementById("charttype") as HTMLSelectElement).value = "pie";
             // Sync the custom dropdown
             if (typeof syncChartDropdown === 'function') {
                 syncChartDropdown();

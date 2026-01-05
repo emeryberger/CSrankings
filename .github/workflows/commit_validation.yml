@@ -3,10 +3,16 @@ name: Commit Validation
 on:
   pull_request_target:
     types: [opened, synchronize, edited]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to validate'
+        required: true
+        type: number
 
 # Prevent multiple runs for the same PR from running simultaneously
 concurrency:
-  group: pr-validation-${{ github.event.pull_request.number }}
+  group: pr-validation-${{ github.event.pull_request.number || inputs.pr_number }}
   cancel-in-progress: true
 
 permissions:
@@ -17,6 +23,8 @@ permissions:
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
 
     steps:
       - name: Check out repository
@@ -33,19 +41,19 @@ jobs:
       - name: Generate diff.json from PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_EVENT_NUMBER: ${{ github.event.number }}
+          GITHUB_EVENT_NUMBER: ${{ env.PR_NUMBER }}
         run: python3 generate_diff.py
 
       - name: Run CSV + OpenAI validation
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python3 validate_commit.py pr_metadata.json diff.json | tee pr_comment.txt
+          python3 util/validate_commit.py pr_metadata.json diff.json | tee pr_comment.txt
 
       - name: Save PR number
         run: |
           mkdir -p pr
-          echo "${{ github.event.number }}" > pr/pr_number.txt
+          echo "${{ env.PR_NUMBER }}" > pr/pr_number.txt
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

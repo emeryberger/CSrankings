@@ -5,7 +5,6 @@
 */
 
 /// <reference path="../typescript/he/index.d.ts" />
-/// <reference path="../typescript/jquery.d.ts" />
 /// <reference path="../typescript/vega-embed.d.ts" />
 /// <reference path="../typescript/papaparse.d.ts" />
 /// <reference path="../typescript/navigo.d.ts" />
