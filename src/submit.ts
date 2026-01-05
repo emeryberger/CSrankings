@@ -285,6 +285,7 @@ const ACRONYM_MAP: Record<string, string[]> = {
 // State
 let institutions: Institution[] = [];
 let institutionMap: Map<string, Institution> = new Map(); // name -> full data
+let knownAcademicDomains: Set<string> = new Set(); // domains extracted from institution homepages
 let facultyEntries: FacultyEntry[] = [];
 let dblpAliases: Map<string, string> = new Map(); // alias -> canonical name
 let currentAction: ActionType = 'add';
@@ -332,11 +333,32 @@ async function loadInstitutions(): Promise<void> {
         const text = await response.text();
         const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
         institutions = (parsed.data as Institution[]).filter(row => row.institution);
-        // Build lookup map
+        // Build lookup map and extract domains from homepages
         for (const inst of institutions) {
             institutionMap.set(inst.institution, inst);
+            // Extract domain from homepage URL
+            if (inst.homepage) {
+                try {
+                    const url = new URL(inst.homepage);
+                    // Add the full domain and parent domains
+                    const hostname = url.hostname.toLowerCase();
+                    knownAcademicDomains.add(hostname);
+                    // Also add parent domain (e.g., mit.edu from www.csail.mit.edu)
+                    const parts = hostname.split('.');
+                    if (parts.length >= 2) {
+                        // Add the base domain (last two parts, e.g., mit.edu)
+                        knownAcademicDomains.add(parts.slice(-2).join('.'));
+                        // Add last 3 parts for country TLDs (e.g., ox.ac.uk)
+                        if (parts.length >= 3) {
+                            knownAcademicDomains.add(parts.slice(-3).join('.'));
+                        }
+                    }
+                } catch (e) {
+                    // Invalid URL, skip
+                }
+            }
         }
-        console.log(`Loaded ${institutions.length} institutions`);
+        console.log(`Loaded ${institutions.length} institutions, ${knownAcademicDomains.size} academic domains`);
     } catch (error) {
         console.error('Failed to load institutions:', error);
         showError('Failed to load institution list. Please refresh the page.');
@@ -1348,14 +1370,136 @@ async function checkHomepageAsync(homepage: string): Promise<void> {
 
         // Check for social media / non-academic URLs
         const url = new URL(homepage);
-        const socialDomains = ['linkedin.com', 'twitter.com', 'x.com', 'facebook.com',
-                               'github.com', 'medium.com', 'substack.com', 'youtube.com'];
-        if (socialDomains.some(d => url.hostname.includes(d))) {
-            setFieldStatus('homepage', 'error',
-                'Use official academic/institutional page, not social media');
+        const blockedDomains: { domains: string[], message: string }[] = [
+            // Social media
+            { domains: ['linkedin.com', 'twitter.com', 'x.com', 'facebook.com', 'instagram.com'],
+              message: 'Use official academic/institutional page, not social media' },
+            // Code hosting (not homepages)
+            { domains: ['github.com', 'gitlab.com', 'bitbucket.org'],
+              message: 'Use official academic page, not code repository' },
+            // Blogging platforms
+            { domains: ['medium.com', 'substack.com', 'wordpress.com', 'blogger.com', 'tumblr.com'],
+              message: 'Use official academic page, not blog platform' },
+            // Video platforms
+            { domains: ['youtube.com', 'youtu.be', 'vimeo.com'],
+              message: 'Use official academic page, not video platform' },
+            // Academic profile aggregators (not true homepages)
+            { domains: ['researchgate.net'],
+              message: 'Use official academic page, not ResearchGate profile' },
+            { domains: ['scholar.google.com', 'scholar.google.'],
+              message: 'Use official academic page. Put Scholar ID in the Scholar field below.' },
+            { domains: ['dblp.org', 'dblp.uni-trier.de'],
+              message: 'Use official academic page, not DBLP profile' },
+            { domains: ['semanticscholar.org'],
+              message: 'Use official academic page, not Semantic Scholar profile' },
+            { domains: ['orcid.org'],
+              message: 'Use official academic page, not ORCID profile' },
+            { domains: ['wikipedia.org'],
+              message: 'Use official academic page, not Wikipedia' },
+            // Link aggregators
+            { domains: ['linktr.ee', 'linkin.bio', 'about.me', 'bio.link'],
+              message: 'Use official academic page, not link aggregator' },
+        ];
+
+        for (const blocked of blockedDomains) {
+            if (blocked.domains.some(d => url.hostname.includes(d))) {
+                setFieldStatus('homepage', 'error', blocked.message);
+                updatePreview();
+                return;
+            }
+        }
+
+        // Check for document files (not a homepage)
+        const pathLower = url.pathname.toLowerCase();
+        const documentExtensions = ['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx', '.txt'];
+        const matchedExt = documentExtensions.find(ext => pathLower.endsWith(ext));
+        if (matchedExt) {
+            setFieldStatus('homepage', 'error', `Link to homepage, not a ${matchedExt.substring(1).toUpperCase()} file`);
             updatePreview();
             return;
         }
+
+        // Check for image files
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.bmp'];
+        if (imageExtensions.some(ext => pathLower.endsWith(ext))) {
+            setFieldStatus('homepage', 'error', 'Link to homepage, not an image file');
+            updatePreview();
+            return;
+        }
+
+        // Track website builder warning (don't block, but add warning suffix)
+        const websiteBuilders = ['wix.com', 'weebly.com', 'squarespace.com', 'sites.google.com',
+                                 'webflow.io', 'carrd.co', 'notion.site', 'notion.so'];
+        const isWebsiteBuilder = websiteBuilders.some(d => url.hostname.includes(d));
+
+        // Check for overly long URLs or excessive query parameters
+        if (homepage.length > 200) {
+            setFieldStatus('homepage', 'warning', 'URL is unusually long. Verify this is the correct homepage.');
+            // Continue checking but flag it
+        }
+
+        // Check for common email/webmail URLs
+        const webmailDomains = ['outlook.office.com', 'mail.google.com', 'webmail.'];
+        if (webmailDomains.some(d => url.hostname.includes(d) || url.href.includes(d))) {
+            setFieldStatus('homepage', 'error', 'Use academic homepage, not email/webmail link');
+            updatePreview();
+            return;
+        }
+
+        // Check for directory-style URLs that aren't personal pages
+        // These patterns suggest a department listing, not an individual's page
+        const directoryPatterns = [
+            /\/faculty\/?$/i,           // ends with /faculty or /faculty/
+            /\/people\/?$/i,            // ends with /people or /people/
+            /\/staff\/?$/i,             // ends with /staff or /staff/
+            /\/directory\/?$/i,         // ends with /directory
+            /\/members\/?$/i,           // ends with /members
+            /\/team\/?$/i,              // ends with /team
+        ];
+        if (directoryPatterns.some(pattern => pattern.test(pathLower))) {
+            setFieldStatus('homepage', 'warning',
+                'This looks like a department directory. Link to the individual\'s page.');
+            // Don't block - some faculty pages do end with /people/name format
+        }
+
+        // Check for academic portal URLs that aren't homepages
+        const portalDomains = ['avesis.', 'pure.', 'portal.', 'profiles.'];
+        const isAcademicPortal = portalDomains.some(d => url.hostname.includes(d));
+
+        // Verify the URL uses a known academic domain
+        // Uses domains extracted from institutions.csv + common academic TLD patterns
+        const hostname = url.hostname.toLowerCase();
+        const hostParts = hostname.split('.');
+
+        // Check against known institution domains from institutions.csv
+        let matchesKnownInstitution = false;
+        if (knownAcademicDomains.size > 0) {
+            // Check if hostname or any parent domain is in our known set
+            matchesKnownInstitution = knownAcademicDomains.has(hostname) ||
+                (hostParts.length >= 2 && knownAcademicDomains.has(hostParts.slice(-2).join('.'))) ||
+                (hostParts.length >= 3 && knownAcademicDomains.has(hostParts.slice(-3).join('.')));
+        }
+
+        // Common academic TLD patterns (fallback for institutions not in CSV)
+        const academicTLDPatterns = [
+            /\.edu$/,           // US universities
+            /\.ac\.[a-z]{2}$/,  // Academic domains (ac.uk, ac.jp, ac.kr, ac.il, ac.nz, ac.in, etc.)
+            /\.edu\.[a-z]{2}$/, // Educational (edu.au, edu.cn, edu.sg, edu.tw, etc.)
+        ];
+
+        // Common academic domain patterns
+        const academicDomainPatterns = [
+            /\.(edu|ac|uni|university|college|institute|school)\./, // generic academic
+            /^(www\.)?(cs|cse|eecs|ece|engineering|computing)\./,   // CS departments
+        ];
+
+        const matchesAcademicTLD = academicTLDPatterns.some(pattern => pattern.test(hostname));
+        const matchesAcademicPattern = academicDomainPatterns.some(pattern => pattern.test(url.href));
+
+        const isAcademicDomain = matchesKnownInstitution || matchesAcademicTLD || matchesAcademicPattern;
+
+        // Track if it's a non-academic domain for warning purposes
+        const isNonAcademicDomain = !isAcademicDomain;
 
         try {
             // Try to fetch the homepage (may fail due to CORS)
@@ -1405,25 +1549,51 @@ async function checkHomepageAsync(homepage: string): Promise<void> {
                                         'teaching', 'courses', 'phd', 'lab', 'scholar'];
             const hasAcademicContent = academicIndicators.some(ind => lowerText.includes(ind));
 
-            // Build status message
+            // Build status message with optional warnings
+            const needsWarning = isWebsiteBuilder || isAcademicPortal || isNonAcademicDomain;
+            let warningNote = '';
+            if (isNonAcademicDomain && !isWebsiteBuilder && !isAcademicPortal) {
+                warningNote = ' (non-academic domain - verify this is official)';
+            } else if (isWebsiteBuilder) {
+                warningNote = ' (institutional page preferred)';
+            } else if (isAcademicPortal) {
+                warningNote = ' (direct faculty page preferred over portal)';
+            }
+
             if (nameFound && instFound) {
-                setFieldStatus('homepage', 'valid', 'Page accessible, name & institution found');
+                if (needsWarning) {
+                    setFieldStatus('homepage', 'warning', 'Name & institution found' + warningNote);
+                } else {
+                    setFieldStatus('homepage', 'valid', 'Page accessible, name & institution found');
+                }
             } else if (nameFound && hasAcademicContent) {
-                setFieldStatus('homepage', 'valid', 'Page accessible, name found on academic page');
+                if (needsWarning) {
+                    setFieldStatus('homepage', 'warning', 'Name found on academic page' + warningNote);
+                } else {
+                    setFieldStatus('homepage', 'valid', 'Page accessible, name found on academic page');
+                }
             } else if (lastNameFound && hasAcademicContent) {
-                setFieldStatus('homepage', 'warning', 'Page accessible, last name found - verify full name');
+                setFieldStatus('homepage', 'warning', 'Last name found - verify full name' + warningNote);
             } else if (nameFound) {
-                setFieldStatus('homepage', 'warning', 'Page accessible, but verify it\'s the correct person');
+                setFieldStatus('homepage', 'warning', 'Verify it\'s the correct person' + warningNote);
             } else if (hasAcademicContent) {
-                setFieldStatus('homepage', 'warning', 'Academic page found, but name not detected');
+                setFieldStatus('homepage', 'warning', 'Academic page found, but name not detected' + warningNote);
             } else {
-                setFieldStatus('homepage', 'warning', 'Page accessible, verify it shows faculty info');
+                setFieldStatus('homepage', 'warning', 'Page accessible, verify it shows faculty info' + warningNote);
             }
 
         } catch (e) {
             // CORS error or network failure - can't verify from browser
             // This is common and not necessarily an error
-            setFieldStatus('homepage', 'valid', 'URL format valid. Will be verified during review.');
+            if (isWebsiteBuilder) {
+                setFieldStatus('homepage', 'warning', 'URL format valid, but institutional page preferred');
+            } else if (isAcademicPortal) {
+                setFieldStatus('homepage', 'warning', 'URL format valid, but direct faculty page preferred');
+            } else if (isNonAcademicDomain) {
+                setFieldStatus('homepage', 'warning', 'Non-academic domain. Verify this is the official faculty page.');
+            } else {
+                setFieldStatus('homepage', 'valid', 'URL format valid. Will be verified during review.');
+            }
         }
 
         updatePreview();
