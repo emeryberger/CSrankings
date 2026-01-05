@@ -1444,12 +1444,10 @@ ${notes ? `### Notes\n${notes}` : ''}`;
     // Note: labels can only be set via URL by users with write access
     // The hourly workflow will identify issues by title prefix instead
     const params = new URLSearchParams({
-        template: 'faculty-submission.yml',
         title: title
     });
 
-    // Note: body is added via the template, but we can't pre-fill all fields
-    // So we create the full body here
+    // Don't use template - we construct the full body with all required fields
     return `https://github.com/${GITHUB_REPO}/issues/new?${params.toString()}&body=${encodeURIComponent(body)}`;
 }
 
