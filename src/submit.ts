@@ -483,6 +483,11 @@ function updateUIForAction(action: ActionType): void {
     institutionInput.required = action !== 'remove';
     homepageInput.required = action !== 'remove';
     scholaridInput.required = action !== 'remove';
+
+    // Toggle required on eligibility checkboxes (only required for 'add' action)
+    document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
+        (cb as HTMLInputElement).required = action === 'add';
+    });
 }
 
 /**
@@ -1299,15 +1304,7 @@ function updateSubmitButton(): void {
 
         case 'update':
             // Selected entry + all fields valid
-            const allFieldsValid = Object.values(validationState).every((v: ValidationState) => v.valid);
-            canSubmit = selectedEntry !== null && allFieldsValid;
-            // Debug logging
-            console.log('Update submit check:', {
-                selectedEntry: selectedEntry?.name || null,
-                validationState: JSON.stringify(validationState),
-                allFieldsValid,
-                canSubmit
-            });
+            canSubmit = selectedEntry !== null && Object.values(validationState).every((v: ValidationState) => v.valid);
             // Update button text based on whether this is a reinstatement
             if (submitText) {
                 submitText.textContent = selectedEntry?.isOld
