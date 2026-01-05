@@ -806,29 +806,6 @@ function getOldFileLabel(oldFile: string | undefined): string {
 }
 
 /**
- * Pre-populate fields from an old/ entry (for re-adding former faculty)
- */
-function populateFromOldEntry(entry: FacultyEntry): void {
-    const label = getOldFileLabel(entry.oldFile);
-
-    // Populate institution, homepage, and scholarid fields
-    (document.getElementById('institution') as HTMLInputElement).value = entry.institution;
-    (document.getElementById('homepage') as HTMLInputElement).value = entry.homepage;
-    (document.getElementById('scholarid') as HTMLInputElement).value = entry.scholarid;
-
-    // Show status message
-    setFieldStatus('name', 'warning',
-        `Found in ${label} - fields pre-populated. Verify and update if needed.`);
-
-    // Validate the populated fields
-    validateInstitution();
-    validateHomepage();
-    validateScholarId();
-
-    updatePreview();
-}
-
-/**
  * Show name autocomplete suggestions
  */
 function showNameSuggestions(matches: FacultyEntry[]): void {
@@ -1219,15 +1196,9 @@ function validateName(): void {
             e.name.toLowerCase() === name.toLowerCase()
         );
         if (existingEntry) {
-            if (existingEntry.isOld) {
-                // Pre-populate fields from old/ entry but stay in Add mode
-                populateFromOldEntry(existingEntry);
-                return;
-            } else {
-                // Active entry - auto-switch to update mode
-                switchToUpdateWithEntry(existingEntry);
-                return;
-            }
+            // Entry exists (active or old/) - switch to update mode
+            switchToUpdateWithEntry(existingEntry);
+            return;
         }
 
         // Show checking status and verify against DBLP
@@ -1882,7 +1853,11 @@ function handleSubmit(e: Event): void {
 
     switch (currentAction) {
         case 'add':
-            issueUrl = createAddIssueUrl(entry, notes);
+            // Check if this person is in old/ directories
+            const oldEntry = facultyEntries.find(e =>
+                e.name.toLowerCase() === name.toLowerCase() && e.isOld
+            );
+            issueUrl = createAddIssueUrl(entry, notes, oldEntry);
             break;
         case 'update':
             issueUrl = createUpdateIssueUrl(selectedEntry!, entry, notes);
@@ -1912,11 +1887,30 @@ function handleSubmit(e: Event): void {
 /**
  * Create GitHub Issue URL for adding new faculty
  */
-function createAddIssueUrl(data: FacultyEntry, notes: string): string {
-    const title = `[CSrankings form submission] Add ${data.name} (${data.institution})`;
+function createAddIssueUrl(data: FacultyEntry, notes: string, existingOldEntry?: FacultyEntry): string {
+    // Check if this is a reinstatement from old/ directory
+    const isReinstatement = existingOldEntry?.isOld === true;
+    const oldFileLabel = existingOldEntry?.oldFile ? getOldFileLabel(existingOldEntry.oldFile) : '';
+
+    const title = isReinstatement
+        ? `[CSrankings form submission] Reinstate ${data.name} (${data.institution})`
+        : `[CSrankings form submission] Add ${data.name} (${data.institution})`;
+
+    const actionLine = isReinstatement
+        ? `Reinstate former faculty (currently in ${oldFileLabel || 'old/'} folder)`
+        : 'Add new faculty entry';
+
+    const previousEntrySection = isReinstatement && existingOldEntry
+        ? `### Previous Entry (from ${existingOldEntry.oldFile})
+\`\`\`
+${existingOldEntry.name},${existingOldEntry.institution},${existingOldEntry.homepage},${existingOldEntry.scholarid}
+\`\`\`
+
+`
+        : '';
 
     const body = `### Action
-Add new faculty entry
+${actionLine}
 
 ### Name (as it appears in DBLP)
 ${data.name}
@@ -1930,7 +1924,7 @@ ${data.homepage}
 ### Google Scholar ID
 ${data.scholarid}
 
-### Eligibility Confirmation
+${previousEntrySection}### Eligibility Confirmation
 - [X] Full-time, tenure-track faculty
 - [X] Can solely advise CS PhD students
 - [X] Name matches DBLP exactly
@@ -2135,8 +2129,17 @@ function handleAddToBatch(): void {
         return;
     }
 
-    // Add to batch
-    const entry: FacultyEntry = { name, institution, homepage, scholarid };
+    // Check if this person is in old/ directories
+    const oldEntry = facultyEntries.find(e =>
+        e.name.toLowerCase() === name.toLowerCase() && e.isOld
+    );
+
+    // Add to batch (include old/ info if found)
+    const entry: FacultyEntry = {
+        name, institution, homepage, scholarid,
+        isOld: oldEntry?.isOld,
+        oldFile: oldEntry?.oldFile
+    };
     batchEntries.push(entry);
 
     // Update batch UI
@@ -2188,8 +2191,11 @@ function updateBatchUI(): void {
     tbody.innerHTML = '';
     batchEntries.forEach((entry, index) => {
         const row = document.createElement('tr');
+        const oldBadge = entry.isOld
+            ? ` <span class="label label-warning">${getOldFileLabel(entry.oldFile)}</span>`
+            : '';
         row.innerHTML = `
-            <td>${escapeHtml(entry.name)}</td>
+            <td>${escapeHtml(entry.name)}${oldBadge}</td>
             <td><a href="${escapeHtml(entry.homepage)}" target="_blank" title="${escapeHtml(entry.homepage)}">${escapeHtml(truncateUrl(entry.homepage))}</a></td>
             <td><code>${escapeHtml(entry.scholarid)}</code></td>
             <td><button type="button" class="btn btn-xs btn-danger" data-index="${index}" title="Remove">&#10007;</button></td>
@@ -2265,25 +2271,36 @@ function handleSubmitBatch(): void {
  * Create GitHub Issue URL for batch submission
  */
 function createBatchIssueUrl(entries: FacultyEntry[], institution: string, notes: string): string {
-    const title = `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
+    // Check if any entries are reinstatements from old/
+    const reinstatements = entries.filter(e => e.isOld);
+    const hasReinstatements = reinstatements.length > 0;
 
-    const entriesList = entries.map((e, i) =>
-        `${i + 1}. **${e.name}**\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\``
-    ).join('\n\n');
+    const title = hasReinstatements
+        ? `[CSrankings form submission] Add/Reinstate ${entries.length} faculty from ${institution}`
+        : `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
+
+    const entriesList = entries.map((e, i) => {
+        const oldNote = e.isOld ? ` *(reinstatement from ${e.oldFile})*` : '';
+        return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\``;
+    }).join('\n\n');
 
     const csvLines = entries.map(e =>
         `${e.name},${e.institution},${e.homepage},${e.scholarid}`
     ).join('\n');
 
+    const reinstatementNote = hasReinstatements
+        ? `\n### Reinstatements\n${reinstatements.length} of ${entries.length} entries are reinstatements from old/ directories.\n`
+        : '';
+
     const body = `### Action
-Add ${entries.length} new faculty entries (batch submission)
+Add ${entries.length} new faculty entries (batch submission)${hasReinstatements ? ` - includes ${reinstatements.length} reinstatement(s)` : ''}
 
 ### Institution
 ${institution}
 
 ### Faculty Entries
 ${entriesList}
-
+${reinstatementNote}
 ### CSV Lines
 \`\`\`
 ${csvLines}

@@ -725,23 +725,6 @@ function getOldFileLabel(oldFile) {
     return 'Former';
 }
 /**
- * Pre-populate fields from an old/ entry (for re-adding former faculty)
- */
-function populateFromOldEntry(entry) {
-    const label = getOldFileLabel(entry.oldFile);
-    // Populate institution, homepage, and scholarid fields
-    document.getElementById('institution').value = entry.institution;
-    document.getElementById('homepage').value = entry.homepage;
-    document.getElementById('scholarid').value = entry.scholarid;
-    // Show status message
-    setFieldStatus('name', 'warning', `Found in ${label} - fields pre-populated. Verify and update if needed.`);
-    // Validate the populated fields
-    validateInstitution();
-    validateHomepage();
-    validateScholarId();
-    updatePreview();
-}
-/**
  * Show name autocomplete suggestions
  */
 function showNameSuggestions(matches) {
@@ -1076,16 +1059,9 @@ function validateName() {
     if (currentAction === 'add') {
         const existingEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase());
         if (existingEntry) {
-            if (existingEntry.isOld) {
-                // Pre-populate fields from old/ entry but stay in Add mode
-                populateFromOldEntry(existingEntry);
-                return;
-            }
-            else {
-                // Active entry - auto-switch to update mode
-                switchToUpdateWithEntry(existingEntry);
-                return;
-            }
+            // Entry exists (active or old/) - switch to update mode
+            switchToUpdateWithEntry(existingEntry);
+            return;
         }
         // Show checking status and verify against DBLP
         setFieldStatus('name', 'valid', 'Checking DBLP...');
@@ -1675,7 +1651,9 @@ function handleSubmit(e) {
     let issueUrl;
     switch (currentAction) {
         case 'add':
-            issueUrl = createAddIssueUrl(entry, notes);
+            // Check if this person is in old/ directories
+            const oldEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase() && e.isOld);
+            issueUrl = createAddIssueUrl(entry, notes, oldEntry);
             break;
         case 'update':
             issueUrl = createUpdateIssueUrl(selectedEntry, entry, notes);
@@ -1702,10 +1680,26 @@ function handleSubmit(e) {
 /**
  * Create GitHub Issue URL for adding new faculty
  */
-function createAddIssueUrl(data, notes) {
-    const title = `[CSrankings form submission] Add ${data.name} (${data.institution})`;
+function createAddIssueUrl(data, notes, existingOldEntry) {
+    // Check if this is a reinstatement from old/ directory
+    const isReinstatement = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.isOld) === true;
+    const oldFileLabel = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.oldFile) ? getOldFileLabel(existingOldEntry.oldFile) : '';
+    const title = isReinstatement
+        ? `[CSrankings form submission] Reinstate ${data.name} (${data.institution})`
+        : `[CSrankings form submission] Add ${data.name} (${data.institution})`;
+    const actionLine = isReinstatement
+        ? `Reinstate former faculty (currently in ${oldFileLabel || 'old/'} folder)`
+        : 'Add new faculty entry';
+    const previousEntrySection = isReinstatement && existingOldEntry
+        ? `### Previous Entry (from ${existingOldEntry.oldFile})
+\`\`\`
+${existingOldEntry.name},${existingOldEntry.institution},${existingOldEntry.homepage},${existingOldEntry.scholarid}
+\`\`\`
+
+`
+        : '';
     const body = `### Action
-Add new faculty entry
+${actionLine}
 
 ### Name (as it appears in DBLP)
 ${data.name}
@@ -1719,7 +1713,7 @@ ${data.homepage}
 ### Google Scholar ID
 ${data.scholarid}
 
-### Eligibility Confirmation
+${previousEntrySection}### Eligibility Confirmation
 - [X] Full-time, tenure-track faculty
 - [X] Can solely advise CS PhD students
 - [X] Name matches DBLP exactly
@@ -1898,8 +1892,14 @@ function handleAddToBatch() {
         alert(`Homepage "${homepage}" is already used by another entry in the batch.`);
         return;
     }
-    // Add to batch
-    const entry = { name, institution, homepage, scholarid };
+    // Check if this person is in old/ directories
+    const oldEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase() && e.isOld);
+    // Add to batch (include old/ info if found)
+    const entry = {
+        name, institution, homepage, scholarid,
+        isOld: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.isOld,
+        oldFile: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.oldFile
+    };
     batchEntries.push(entry);
     // Update batch UI
     updateBatchUI();
@@ -1945,8 +1945,11 @@ function updateBatchUI() {
     tbody.innerHTML = '';
     batchEntries.forEach((entry, index) => {
         const row = document.createElement('tr');
+        const oldBadge = entry.isOld
+            ? ` <span class="label label-warning">${getOldFileLabel(entry.oldFile)}</span>`
+            : '';
         row.innerHTML = `
-            <td>${escapeHtml(entry.name)}</td>
+            <td>${escapeHtml(entry.name)}${oldBadge}</td>
             <td><a href="${escapeHtml(entry.homepage)}" target="_blank" title="${escapeHtml(entry.homepage)}">${escapeHtml(truncateUrl(entry.homepage))}</a></td>
             <td><code>${escapeHtml(entry.scholarid)}</code></td>
             <td><button type="button" class="btn btn-xs btn-danger" data-index="${index}" title="Remove">&#10007;</button></td>
@@ -2015,18 +2018,29 @@ function handleSubmitBatch() {
  * Create GitHub Issue URL for batch submission
  */
 function createBatchIssueUrl(entries, institution, notes) {
-    const title = `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
-    const entriesList = entries.map((e, i) => `${i + 1}. **${e.name}**\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\``).join('\n\n');
+    // Check if any entries are reinstatements from old/
+    const reinstatements = entries.filter(e => e.isOld);
+    const hasReinstatements = reinstatements.length > 0;
+    const title = hasReinstatements
+        ? `[CSrankings form submission] Add/Reinstate ${entries.length} faculty from ${institution}`
+        : `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
+    const entriesList = entries.map((e, i) => {
+        const oldNote = e.isOld ? ` *(reinstatement from ${e.oldFile})*` : '';
+        return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\``;
+    }).join('\n\n');
     const csvLines = entries.map(e => `${e.name},${e.institution},${e.homepage},${e.scholarid}`).join('\n');
+    const reinstatementNote = hasReinstatements
+        ? `\n### Reinstatements\n${reinstatements.length} of ${entries.length} entries are reinstatements from old/ directories.\n`
+        : '';
     const body = `### Action
-Add ${entries.length} new faculty entries (batch submission)
+Add ${entries.length} new faculty entries (batch submission)${hasReinstatements ? ` - includes ${reinstatements.length} reinstatement(s)` : ''}
 
 ### Institution
 ${institution}
 
 ### Faculty Entries
 ${entriesList}
-
+${reinstatementNote}
 ### CSV Lines
 \`\`\`
 ${csvLines}
