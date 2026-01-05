@@ -74,7 +74,7 @@ def remove_brackets(s: str) -> str:
 
 def has_valid_google_scholar_id(s: str) -> bool:
     """Check if Google Scholar ID has valid format (12 chars ending in J)."""
-    return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}J$', s))
+    return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}[CJ]$', s))
 
 def check_excel_corruption(line: str) -> Optional[str]:
     """Check if a line contains signs of Excel corruption. Returns the pattern found, or None."""

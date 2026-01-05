@@ -128,11 +128,12 @@ async function loadFacultyEntries(): Promise<void> {
                 const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
                 for (const row of parsed.data as string[][]) {
                     if (row.length >= 4 && row[0] !== 'name') {
+                        // Trim all values to handle mixed line endings (CRLF vs LF)
                         facultyEntries.push({
-                            name: row[0],
-                            institution: row[1],
-                            homepage: row[2],
-                            scholarid: row[3],
+                            name: row[0].trim(),
+                            institution: row[1].trim(),
+                            homepage: row[2].trim(),
+                            scholarid: row[3].trim(),
                             isOld: isOldFile,
                             oldFile: isOldFile ? allFiles[i] : undefined
                         } as FacultyEntry);
@@ -1063,11 +1064,11 @@ function validateScholarId(): void {
     }
 
     // Valid format: 12 alphanumeric characters ending in J (Google Scholar pattern)
-    const validFormat = /^[a-zA-Z0-9_-]{11}J$/.test(scholarid);
+    const validFormat = /^[a-zA-Z0-9_-]{11}[CJ]$/.test(scholarid);
 
     if (!validFormat) {
         setFieldStatus('scholarid', 'error',
-            'Must be exactly 12 characters ending in J, or NOSCHOLARPAGE');
+            'Must be exactly 12 characters ending in C or J, or NOSCHOLARPAGE');
         updatePreview();
         return;
     }
