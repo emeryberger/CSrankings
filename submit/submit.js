@@ -1531,12 +1531,6 @@ function updateSubmitButton() {
                 const originalScholarid = selectedEntry.scholarid.trim();
                 hasChanges = currentHomepage !== originalHomepage ||
                     currentScholarid !== originalScholarid;
-                // Debug logging (can be removed later)
-                console.log('Update check:', {
-                    currentHomepage, originalHomepage, homepageMatch: currentHomepage === originalHomepage,
-                    currentScholarid, originalScholarid, scholaridMatch: currentScholarid === originalScholarid,
-                    hasChanges, updateFieldsValid
-                });
             }
             // For reinstatements (from old/), always allow (moving back to active is a change)
             const isReinstatement = (selectedEntry === null || selectedEntry === void 0 ? void 0 : selectedEntry.isOld) === true;
