@@ -462,6 +462,14 @@ function setupEventListeners() {
     // Scholar ID field - validate format
     const scholaridInput = document.getElementById('scholarid');
     scholaridInput.addEventListener('input', validateScholarId);
+    // New DBLP name field (for disambiguation suffixes in updates)
+    const newNameInput = document.getElementById('new-name');
+    if (newNameInput) {
+        newNameInput.addEventListener('input', () => {
+            updateSubmitButton();
+            updatePreview();
+        });
+    }
     // Eligibility checkboxes
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
         cb.addEventListener('change', updateSubmitButton);
@@ -598,6 +606,8 @@ function updateUIForAction(action) {
     show('name-help-update', action !== 'add');
     // Current info panel (for update/remove)
     show('current-info-group', action !== 'add');
+    // New DBLP name field (for update only - disambiguation suffixes)
+    show('new-name-group', action === 'update');
     // Institution label
     show('institution-label-new', action === 'add');
     show('institution-label-update', action !== 'add');
@@ -1535,6 +1545,7 @@ function clearFieldStatus(field) {
  * Update submit button state
  */
 function updateSubmitButton() {
+    var _a;
     let canSubmit = false;
     const submitText = document.getElementById('submit-text');
     switch (currentAction) {
@@ -1564,10 +1575,12 @@ function updateSubmitButton() {
             if (selectedEntry) {
                 const currentHomepage = document.getElementById('homepage').value.trim();
                 const currentScholarid = document.getElementById('scholarid').value.trim();
+                const currentNewName = ((_a = document.getElementById('new-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
                 const originalHomepage = selectedEntry.homepage.trim();
                 const originalScholarid = selectedEntry.scholarid.trim();
                 hasChanges = currentHomepage !== originalHomepage ||
-                    currentScholarid !== originalScholarid;
+                    currentScholarid !== originalScholarid ||
+                    (currentNewName !== '' && currentNewName !== selectedEntry.name);
             }
             // For reinstatements (from old/), always allow (moving back to active is a change)
             const isReinstatement = (selectedEntry === null || selectedEntry === void 0 ? void 0 : selectedEntry.isOld) === true;
@@ -1599,7 +1612,9 @@ function updateSubmitButton() {
  * Update CSV preview
  */
 function updatePreview() {
+    var _a;
     const name = document.getElementById('name').value.trim();
+    const newName = ((_a = document.getElementById('new-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
     const institution = document.getElementById('institution').value.trim();
     const homepage = document.getElementById('homepage').value.trim();
     const scholarid = document.getElementById('scholarid').value.trim();
@@ -1615,11 +1630,13 @@ function updatePreview() {
         }
         return;
     }
-    if (name && institution && homepage && scholarid) {
-        const csvLine = `${name},${institution},${homepage},${scholarid}`;
+    // For updates, use new name if provided
+    const effectiveName = (currentAction === 'update' && newName) ? newName : name;
+    if (effectiveName && institution && homepage && scholarid) {
+        const csvLine = `${effectiveName},${institution},${homepage},${scholarid}`;
         document.getElementById('csv-preview').textContent = csvLine;
         // Determine target file
-        const firstLetter = name.charAt(0).toLowerCase();
+        const firstLetter = effectiveName.charAt(0).toLowerCase();
         const targetFile = /[a-z]/.test(firstLetter)
             ? `csrankings-${firstLetter}.csv`
             : 'csrankings-0.csv';
@@ -1639,15 +1656,18 @@ function updatePreview() {
  * Handle form submission
  */
 function handleSubmit(e) {
-    var _a;
+    var _a, _b;
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
+    const newName = ((_a = document.getElementById('new-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
     const institution = document.getElementById('institution').value.trim();
     const homepage = document.getElementById('homepage').value.trim();
     const scholarid = document.getElementById('scholarid').value.trim();
     const notes = document.getElementById('notes').value.trim();
     // Build submission data
-    const entry = { name, institution, homepage, scholarid };
+    // For updates, use new name if provided, otherwise keep original name
+    const effectiveName = (currentAction === 'update' && newName) ? newName : name;
+    const entry = { name: effectiveName, institution, homepage, scholarid };
     let issueUrl;
     switch (currentAction) {
         case 'add':
@@ -1661,7 +1681,7 @@ function handleSubmit(e) {
         case 'remove':
             const reason = document.getElementById('removal-reason').value;
             const reasonOther = document.getElementById('removal-reason-other').value;
-            const companyName = ((_a = document.getElementById('company-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
+            const companyName = ((_b = document.getElementById('company-name')) === null || _b === void 0 ? void 0 : _b.value.trim()) || '';
             const fullReason = reason === 'other' ? reasonOther :
                 reason === 'industry' && companyName ? `${reason} (${companyName})` : reason;
             issueUrl = createRemoveIssueUrl(selectedEntry, fullReason, notes);
@@ -1739,6 +1759,9 @@ function createUpdateIssueUrl(oldEntry, newEntry, notes) {
         ? `[CSrankings form submission] Reinstate ${newEntry.name} (${newEntry.institution})`
         : `[CSrankings form submission] Update ${newEntry.name}`;
     const changes = [];
+    if (oldEntry.name !== newEntry.name) {
+        changes.push(`- Name: ${oldEntry.name} → ${newEntry.name}`);
+    }
     if (oldEntry.institution !== newEntry.institution) {
         changes.push(`- Institution: ${oldEntry.institution} → ${newEntry.institution}`);
     }
