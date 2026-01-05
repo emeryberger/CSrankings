@@ -1129,7 +1129,15 @@ function updateSubmitButton() {
             break;
         case 'update':
             // Selected entry + all fields valid
-            canSubmit = selectedEntry !== null && Object.values(validationState).every((v) => v.valid);
+            const allFieldsValid = Object.values(validationState).every((v) => v.valid);
+            canSubmit = selectedEntry !== null && allFieldsValid;
+            // Debug logging
+            console.log('Update submit check:', {
+                selectedEntry: (selectedEntry === null || selectedEntry === void 0 ? void 0 : selectedEntry.name) || null,
+                validationState: JSON.stringify(validationState),
+                allFieldsValid,
+                canSubmit
+            });
             // Update button text based on whether this is a reinstatement
             if (submitText) {
                 submitText.textContent = (selectedEntry === null || selectedEntry === void 0 ? void 0 : selectedEntry.isOld)
