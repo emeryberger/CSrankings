@@ -806,6 +806,29 @@ function getOldFileLabel(oldFile: string | undefined): string {
 }
 
 /**
+ * Pre-populate fields from an old/ entry (for re-adding former faculty)
+ */
+function populateFromOldEntry(entry: FacultyEntry): void {
+    const label = getOldFileLabel(entry.oldFile);
+
+    // Populate institution, homepage, and scholarid fields
+    (document.getElementById('institution') as HTMLInputElement).value = entry.institution;
+    (document.getElementById('homepage') as HTMLInputElement).value = entry.homepage;
+    (document.getElementById('scholarid') as HTMLInputElement).value = entry.scholarid;
+
+    // Show status message
+    setFieldStatus('name', 'warning',
+        `Found in ${label} - fields pre-populated. Verify and update if needed.`);
+
+    // Validate the populated fields
+    validateInstitution();
+    validateHomepage();
+    validateScholarId();
+
+    updatePreview();
+}
+
+/**
  * Show name autocomplete suggestions
  */
 function showNameSuggestions(matches: FacultyEntry[]): void {
@@ -1196,9 +1219,15 @@ function validateName(): void {
             e.name.toLowerCase() === name.toLowerCase()
         );
         if (existingEntry) {
-            // Auto-switch to update mode and populate fields
-            switchToUpdateWithEntry(existingEntry);
-            return;
+            if (existingEntry.isOld) {
+                // Pre-populate fields from old/ entry but stay in Add mode
+                populateFromOldEntry(existingEntry);
+                return;
+            } else {
+                // Active entry - auto-switch to update mode
+                switchToUpdateWithEntry(existingEntry);
+                return;
+            }
         }
 
         // Show checking status and verify against DBLP
