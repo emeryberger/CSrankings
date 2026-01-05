@@ -264,6 +264,22 @@ jobs:
                     labels: ['pr-created']
                   });
 
+                  // Trigger validation workflow for the new PR
+                  try {
+                    await github.rest.actions.createWorkflowDispatch({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      workflow_id: 'commit_validation.yml',
+                      ref: 'gh-pages',
+                      inputs: {
+                        pr_number: String(pr.number)
+                      }
+                    });
+                    console.log(`  Triggered validation for PR #${pr.number}`);
+                  } catch (valError) {
+                    console.error(`  Could not trigger validation: ${valError.message}`);
+                  }
+
                   continue;
                 }
 
