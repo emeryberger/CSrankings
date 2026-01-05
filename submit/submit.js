@@ -725,6 +725,23 @@ function getOldFileLabel(oldFile) {
     return 'Former';
 }
 /**
+ * Pre-populate fields from an old/ entry (for re-adding former faculty)
+ */
+function populateFromOldEntry(entry) {
+    const label = getOldFileLabel(entry.oldFile);
+    // Populate institution, homepage, and scholarid fields
+    document.getElementById('institution').value = entry.institution;
+    document.getElementById('homepage').value = entry.homepage;
+    document.getElementById('scholarid').value = entry.scholarid;
+    // Show status message
+    setFieldStatus('name', 'warning', `Found in ${label} - fields pre-populated. Verify and update if needed.`);
+    // Validate the populated fields
+    validateInstitution();
+    validateHomepage();
+    validateScholarId();
+    updatePreview();
+}
+/**
  * Show name autocomplete suggestions
  */
 function showNameSuggestions(matches) {
@@ -1059,9 +1076,16 @@ function validateName() {
     if (currentAction === 'add') {
         const existingEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase());
         if (existingEntry) {
-            // Auto-switch to update mode and populate fields
-            switchToUpdateWithEntry(existingEntry);
-            return;
+            if (existingEntry.isOld) {
+                // Pre-populate fields from old/ entry but stay in Add mode
+                populateFromOldEntry(existingEntry);
+                return;
+            }
+            else {
+                // Active entry - auto-switch to update mode
+                switchToUpdateWithEntry(existingEntry);
+                return;
+            }
         }
         // Show checking status and verify against DBLP
         setFieldStatus('name', 'valid', 'Checking DBLP...');
