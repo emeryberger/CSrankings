@@ -37,6 +37,8 @@ const ACRONYM_MAP = {
     'ud': ['university of delaware', 'university of denver', 'university of dundee', 'university of delhi'],
     'ue': ['university of edinburgh', 'university of essex', 'university of exeter'],
     'uf': ['university of florida', 'university of freiburg'],
+    'fau': ['florida atlantic'],
+    'fit': ['florida institute of technology'],
     'ug': ['university of georgia', 'university of glasgow', 'university of guelph', 'university of groningen', 'university of geneva'],
     'uh': ['university of houston', 'university of hawaii', 'university of helsinki', 'university of hamburg', 'university of haifa'],
     'ui': ['university of illinois', 'university of idaho', 'university of iowa'],
