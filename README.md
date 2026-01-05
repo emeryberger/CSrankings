@@ -16,11 +16,13 @@ https://csrankings.org
 
 **_NOTE: Updates are now processed on a quarterly basis. You may submit pull requests at any time, but they may not be processed until the next quarter (after three months have elapsed)._**
 
-**You can now edit files directly in GitHub to create pull requests.** All data is
-in the files `csrankings-[a-z].csv`, with authors listed in
-alphabetical order by their first name, organized by the initial letter. Please read <a
-href="CONTRIBUTING.md">```CONTRIBUTING.md```</a> for full details on
-how to contribute.
+#### Self-service form (recommended)
+
+**For adding or updating a single faculty member, use our [self-service form](https://csrankings.org/submit/).** The form validates your entry automatically and creates a GitHub issue that is processed into a PR.
+
+#### Manual pull requests
+
+For bulk changes (e.g., adding an entire department), you can edit files directly in GitHub to create pull requests. All data is in the files `csrankings-[a-z].csv`, with authors listed in alphabetical order by their first name, organized by the initial letter. Please read <a href="CONTRIBUTING.md">`CONTRIBUTING.md`</a> for full details on how to contribute.
 
 ### Trying it out at home
 
@@ -30,11 +32,20 @@ upwards of 19GiB of memory). To then rebuild the databases, just run
 ``make``. You can test it by running a local web server (e.g., ``python3 -m http.server``)
 and then connecting to [http://0.0.0.0:8000](http://0.0.0.0:8000).
 
-You will also need to install libxml2-utils (or whatever package
-includes xmllint on your distro), npm, typescript, closure-compiler, python-lxml, [pypy](https://doc.pypy.org/en/latest/install.html),
-and basex via a command line like:
+You will also need to install the following dependencies:
 
-``apt-get install libxml2-utils npm python-lxml basex; npm install -g typescript google-closure-compiler``
+```bash
+# On Debian/Ubuntu:
+apt-get install libxml2-utils npm python3-lxml
+
+# Install Node.js packages:
+npm install -g typescript google-closure-compiler
+
+# Install Python packages:
+pip install lxml unidecode requests
+```
+
+Note: Python 3.12+ is recommended. The DBLP filtering uses a streaming lxml parser for efficient memory usage.
 
 ### Quick contribution via a shallow clone
 
