@@ -306,13 +306,13 @@ User fills form → GitHub Issue → GitHub Action → Pull Request
 
 | File | Purpose |
 |------|---------|
-| `src/submit.ts` | TypeScript form implementation (~1300 lines) |
+| `src/submit.ts` | TypeScript form implementation (~1800 lines) |
 | `submit/submit.js` | Compiled JavaScript |
 | `submit/index.html` | Form page (Bootstrap 3) |
 | `submit/submit.css` | Form styles |
 | `util/validate_submission.py` | Server-side validation |
 | `.github/workflows/process-submission.yml` | Issue → PR automation |
-| `.github/ISSUE_TEMPLATE/faculty-submission.yml` | Issue form template |
+| `.github/ISSUE_TEMPLATE/new-institution.md` | New institution request template |
 
 ### Three Action Modes
 
@@ -323,10 +323,63 @@ User fills form → GitHub Issue → GitHub Action → Pull Request
 ### Institution Autocomplete Features
 
 - **Fuzzy matching**: `University` ↔ `Univ.`, `Institute` ↔ `Inst.`, etc.
-- **Acronym support**: MIT, CMU, UIUC, UCLA, ETH, etc. expand to full names
+- **Acronym support**: 150+ acronyms including:
+  - Generic U? two-letter (UA-UZ): `UT` → all UT schools, `UC` → all UC schools
+  - Specific: MIT, CMU, UIUC, UCLA, ETH, EPFL, NUS, etc.
+- **Priority ordering**: Primary institution shown first (e.g., UT → UT Austin first)
 - **Country flags**: Shows flag emoji based on institution's country code
 
+**Acronym configuration** in `src/submit.ts`:
+```typescript
+// Two-letter acronyms match multiple institutions
+const ACRONYM_MAP: Record<string, string[]> = {
+    'ut': ['university of texas', 'texas at', 'university of tennessee', ...],
+    'uc': ['univ. of california', 'california -', ...],
+    ...
+};
+
+// Primary institution shown first in results
+const ACRONYM_PRIMARY: Record<string, string | string[]> = {
+    'ut': 'University of Texas at Austin',
+    'uc': 'california -',  // Pattern matches all UC schools
+    'uw': ['University of Washington', 'Wisconsin'],  // Multiple primaries
+    ...
+};
+```
+
 ### Key Implementation Notes
+
+**Issue body format** - The GitHub Action parses the `### Action` field:
+```markdown
+### Action
+Add new faculty entry
+
+### Name (as it appears in DBLP)
+...
+```
+**Critical**: Don't use GitHub issue templates with the `template` URL parameter - it overrides the `body` parameter and the Action field gets lost.
+
+**Hidden required fields** - When switching between Add/Update/Remove modes, toggle `required` attribute on hidden fields (like eligibility checkboxes) to prevent browser validation errors:
+```typescript
+document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
+    (cb as HTMLInputElement).required = action === 'add';
+});
+```
+
+**Name validation on blur** - For Update/Remove modes, auto-select entry if typed name exactly matches:
+```typescript
+nameInput.addEventListener('blur', () => {
+    if (currentAction !== 'add') {
+        validateNameForUpdateRemove();  // Auto-selects if exact match
+    }
+});
+```
+
+**Unicode symbols** - Using Unicode instead of Bootstrap glyphicons for status indicators:
+- ✓ (`&#10003;`) - Valid/success
+- ✗ (`&#10007;`) - Error
+- ⚠ (`&#9888;`) - Warning
+- ↻ (`&#8635;`) - Loading/spinning
 
 **Fuzzy matching regex** - Abbreviations ending with `.` need special handling:
 ```typescript
@@ -343,7 +396,7 @@ const regex = abbrev.endsWith('.')
 
 **Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
 
-**Google Scholar ID format**: 12 characters ending in `C` or `J`, or `NOSCHOLARPAGE`.
+**Google Scholar ID format**: 12 characters, or `NOSCHOLARPAGE`.
 
 ### Build Commands
 
@@ -358,14 +411,31 @@ tsc src/submit.ts --target es6 --lib es2017,dom --outDir submit --skipLibCheck
 ### Workflow Processing
 
 The `process-submission.yml` workflow:
-1. Triggers on issues with `submission` label
-2. Parses issue body (handles both `\n` and `\n\n` after headers)
-3. Runs `validate_submission.py` for server-side checks
-4. If valid: creates branch, commits CSV change, opens PR
-5. Triggers `commit_validation.yml` on the new PR
-6. Comments on issue with result
+1. Runs hourly via cron (also manual trigger)
+2. Finds issues with title prefix `[CSrankings form submission]`
+3. Parses `### Action` field to determine action type (add/update/remove/reinstate)
+4. Validates fields and checks institution exists
+5. Creates branch, commits CSV change, opens PR
+6. Triggers `commit_validation.yml` on the new PR
+7. Comments on issue with result
 
-**Important**: PRs created by `GITHUB_TOKEN` don't trigger other workflows automatically. The workflow explicitly calls `workflow_dispatch` to trigger validation.
+**Required permissions**:
+```yaml
+permissions:
+  contents: write      # Create branches and commits
+  issues: write        # Comment on issues, add labels
+  pull-requests: write # Create PRs
+  actions: write       # Trigger validation workflow
+```
+
+**Triggering validation**: PRs created by `GITHUB_TOKEN` don't trigger other workflows automatically. The workflow explicitly calls `workflow_dispatch`:
+```javascript
+await github.rest.actions.createWorkflowDispatch({
+    workflow_id: 'commit_validation.yml',
+    ref: 'gh-pages',
+    inputs: { pr_number: String(pr.number) }
+});
+```
 
 ### CSV Line Endings
 
