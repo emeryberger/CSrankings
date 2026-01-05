@@ -304,7 +304,7 @@ jobs:
 
                 // Determine target file based on first letter
                 const firstLetter = name.charAt(0).toLowerCase();
-                const targetFile = /[a-z]/.test(firstLetter)
+                let targetFile = /[a-z]/.test(firstLetter)
                   ? `csrankings-${firstLetter}.csv`
                   : 'csrankings-0.csv';
 
@@ -431,10 +431,24 @@ jobs:
 
                   const [newName, newInst, newHome, newScholar] = newEntryText.split(',').map(s => s.trim());
 
+                  // Extract old name from Old Entry field (for DBLP name changes like adding disambiguation suffix)
+                  // Fall back to the Name field if Old Entry is not parseable
+                  let searchName = name;
+                  if (oldEntryText) {
+                    const [oldName] = oldEntryText.split(',').map(s => s.trim());
+                    if (oldName) searchName = oldName;
+                  }
+
+                  // Determine correct target file based on old name (in case name is changing)
+                  const searchFirstLetter = searchName.charAt(0).toLowerCase();
+                  const searchTargetFile = /[a-z]/.test(searchFirstLetter)
+                    ? `csrankings-${searchFirstLetter}.csv`
+                    : 'csrankings-0.csv';
+
                   // Read file and find/replace entry
-                  const content = fs.readFileSync(targetFile, 'utf8');
+                  const content = fs.readFileSync(searchTargetFile, 'utf8');
                   const lines = content.split(/\r?\n/);
-                  const nameNorm = normalize(name);
+                  const nameNorm = normalize(searchName);
 
                   let found = false;
                   for (let i = 0; i < lines.length; i++) {
@@ -451,7 +465,7 @@ jobs:
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       issue_number: issue.number,
-                      body: `## ❌ Entry not found\n\nCould not find "${name}" in ${targetFile}.`
+                      body: `## ❌ Entry not found\n\nCould not find "${searchName}" in ${searchTargetFile}.`
                     });
                     await github.rest.issues.addLabels({
                       owner: context.repo.owner,
@@ -463,10 +477,15 @@ jobs:
                   }
 
                   newContent = lines.join('\r\n');
-                  branchName = `update-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `Update ${name}`;
-                  prTitle = `Update ${name}`;
-                  prBody = `## Summary\nUpdating faculty entry for **${name}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+                  // Use searchName for branch/title since that's the name being updated
+                  const displayName = searchName !== newName ? `${searchName} → ${newName}` : searchName;
+                  branchName = `update-${searchName.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+                  commitMessage = `Update ${displayName}`;
+                  prTitle = `Update ${displayName}`;
+                  prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+
+                  // Override targetFile for the update operation
+                  targetFile = searchTargetFile;
 
                 } else if (action === 'remove') {
                   // Parse remove fields
