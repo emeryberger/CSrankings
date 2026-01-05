@@ -812,6 +812,32 @@ function institutionMatchesFuzzy(institution, query) {
     }
     return false;
 }
+// Primary institutions for common acronyms (shown first in results)
+const ACRONYM_PRIMARY = {
+    'ut': 'University of Texas at Austin',
+    'uf': 'University of Florida',
+    'um': 'University of Michigan',
+    'uw': 'University of Washington',
+    'ua': 'University of Arizona',
+    'uc': 'Univ. of California - Berkeley',
+    'ui': 'Univ. of Illinois at Urbana-Champaign',
+    'uo': 'University of Oregon',
+    'uk': 'University of Kentucky',
+    'uq': 'University of Queensland',
+    'uv': 'University of Virginia',
+    'us': 'University of Sydney',
+    'un': 'University of Nebraska',
+    'up': 'University of Pennsylvania',
+    'ub': 'University at Buffalo',
+    'ud': 'University of Delaware',
+    'ue': 'University of Edinburgh',
+    'ug': 'University of Georgia',
+    'uh': 'University of Houston',
+    'ul': 'University of Louisville',
+    'ur': 'University of Rochester',
+    'uy': 'University of York',
+    'uz': 'University of Zurich',
+};
 /**
  * Handle institution input - show autocomplete suggestions
  */
@@ -824,7 +850,22 @@ function handleInstitutionInput() {
         return;
     }
     // Filter matching institutions with fuzzy abbreviation support
-    const matches = institutions.filter(inst => institutionMatchesFuzzy(inst.institution, query)).slice(0, 10);
+    const allMatches = institutions.filter(inst => institutionMatchesFuzzy(inst.institution, query));
+    // Sort to prioritize primary institutions for acronyms
+    const queryLower = query.toLowerCase().trim();
+    const primaryInst = ACRONYM_PRIMARY[queryLower];
+    allMatches.sort((a, b) => {
+        // Primary institution for this acronym comes first
+        if (primaryInst) {
+            if (a.institution === primaryInst)
+                return -1;
+            if (b.institution === primaryInst)
+                return 1;
+        }
+        // Then sort alphabetically
+        return a.institution.localeCompare(b.institution);
+    });
+    const matches = allMatches.slice(0, 10);
     showInstitutionSuggestions(matches);
     updatePreview();
 }
