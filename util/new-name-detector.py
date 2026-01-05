@@ -8,6 +8,8 @@ from typing import Dict, Optional, Tuple
 
 from lxml import etree as ET
 
+PLACEHOLDER_ORCID = "0000-0000-0000-0000"
+
 # --- DTD entity support -------------------------------------------------------
 
 # <!ENTITY eacute "&#233;">   or   <!ENTITY Eacute "&#x00C9;">
@@ -63,6 +65,22 @@ def load_faculty_affiliations(path: str) -> Dict[str, str]:
             aff = (row.get("affiliation") or "").strip()
             if name:
                 m[name] = aff
+    return m
+
+
+def load_orcids(path: str) -> Dict[str, str]:
+    """name -> orcid (excludes placeholder ORCIDs)"""
+    m: Dict[str, str] = {}
+    try:
+        with open(path, newline="", encoding="utf-8") as f:
+            rdr = csv.DictReader(f)
+            for row in rdr:
+                name = (row.get("name") or "").strip()
+                orcid = (row.get("orcid") or "").strip()
+                if name and orcid and orcid != PLACEHOLDER_ORCID:
+                    m[name] = orcid
+    except FileNotFoundError:
+        pass
     return m
 
 
@@ -135,21 +153,24 @@ def diff_canonical_names(
     old_map: Dict[str, str],
     new_map: Dict[str, str],
     faculty_names: Dict[str, str],
-) -> Tuple[Tuple[str, str, str], ...]:
+    orcid_map: Dict[str, str],
+) -> Tuple[Tuple[str, str, str, str], ...]:
     """
-    Return tuples (uid, old_name, new_name) where:
+    Return tuples (uid, old_name, new_name, orcid) where:
       - uid is present in both maps
       - old_name == old_map[uid]
       - new_name == new_map[uid]
       - old_name != new_name
       - old_name is present in faculty-affiliations.csv (as a key)
+      - orcid is looked up from orcid_map (empty string if not found)
     """
     rows = []
     for uid in sorted(set(old_map.keys()) & set(new_map.keys())):
         old_name = old_map[uid]
         new_name = new_map[uid]
         if old_name != new_name and old_name in faculty_names:
-            rows.append((uid, old_name, new_name))
+            orcid = orcid_map.get(old_name, "")
+            rows.append((uid, old_name, new_name, orcid))
     return tuple(rows)
 
 
@@ -164,18 +185,21 @@ def main() -> None:
     ap.add_argument("--dtd", default="dblp.dtd", help="Path to dblp.dtd (entities)")
     ap.add_argument("--faculty", default="faculty-affiliations.csv",
                     help="Path to faculty-affiliations.csv")
+    ap.add_argument("--orcid", default="orcid.csv",
+                    help="Path to orcid.csv for ORCID lookups")
     args = ap.parse_args()
 
     entmap = load_dtd_entities(args.dtd)
     faculty = load_faculty_affiliations(args.faculty)
+    orcids = load_orcids(args.orcid)
 
     old_map = parse_canonical_names(args.old, entmap)
     new_map = parse_canonical_names(args.new, entmap)
 
     writer = csv.writer(sys.stdout)
-    writer.writerow(["uid", "old_name", "new_name"])
-    for uid, old_name, new_name in diff_canonical_names(old_map, new_map, faculty):
-        writer.writerow([uid, old_name, new_name])
+    writer.writerow(["uid", "old_name", "new_name", "orcid"])
+    for uid, old_name, new_name, orcid in diff_canonical_names(old_map, new_map, faculty, orcids):
+        writer.writerow([uid, old_name, new_name, orcid])
 
 
 if __name__ == "__main__":
