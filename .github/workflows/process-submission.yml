@@ -74,11 +74,21 @@ jobs:
 
             const parseAction = (body) => {
               const actionText = parseField(body, 'Action');
-              if (actionText.toLowerCase().includes('add')) return 'add';
-              if (actionText.toLowerCase().includes('reinstate')) return 'reinstate';
-              if (actionText.toLowerCase().includes('update')) return 'update';
-              if (actionText.toLowerCase().includes('remove')) return 'remove';
+              const lower = actionText.toLowerCase();
+              // Check for batch first (batch submissions contain "batch submission")
+              if (lower.includes('batch submission')) return 'batch';
+              if (lower.includes('add')) return 'add';
+              if (lower.includes('reinstate')) return 'reinstate';
+              if (lower.includes('update')) return 'update';
+              if (lower.includes('remove')) return 'remove';
               return 'unknown';
+            };
+
+            // Parse CSV lines from batch submission
+            const parseCSVLines = (body) => {
+              const csvSection = parseField(body, 'CSV Lines');
+              if (!csvSection) return [];
+              return csvSection.split(/\r?\n/).filter(line => line.trim() && line.includes(','));
             };
 
             // Helper to normalize names for alphabetical sorting
@@ -109,7 +119,155 @@ jobs:
                   continue;
                 }
 
-                // Parse common fields
+                // Handle batch submissions separately
+                if (action === 'batch') {
+                  const csvLines = parseCSVLines(body);
+                  const institution = parseField(body, 'Institution');
+
+                  if (csvLines.length === 0) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: '## ❌ No entries found\n\nCould not find any CSV entries in this batch submission.'
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  // Check institution exists
+                  const institutionsContent = fs.readFileSync('institutions.csv', 'utf8');
+                  const institutions = institutionsContent.split(/\r?\n/).map(l => l.split(',')[0]);
+                  if (institution && !institutions.includes(institution)) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Institution not found\n\n"${institution}" is not in CSRankings. Please [request the institution be added](https://github.com/${context.repo.owner}/${context.repo.repo}/issues/new?template=new-institution.md) first.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
+                  // Group entries by target file
+                  const entriesByFile = {};
+                  const allNames = [];
+                  for (const line of csvLines) {
+                    const [name, inst, homepage, scholarid] = line.split(',').map(s => s.trim());
+                    if (!name) continue;
+                    allNames.push(name);
+                    const firstLetter = name.charAt(0).toLowerCase();
+                    const targetFile = /[a-z]/.test(firstLetter) ? `csrankings-${firstLetter}.csv` : 'csrankings-0.csv';
+                    if (!entriesByFile[targetFile]) entriesByFile[targetFile] = [];
+                    entriesByFile[targetFile].push({ name, line, nameNorm: normalize(name) });
+                  }
+
+                  // Create branch
+                  const branchName = `batch-add-${institution.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+
+                  // Get current commit SHA
+                  const { data: ref } = await github.rest.git.getRef({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    ref: 'heads/gh-pages'
+                  });
+                  const baseSha = ref.object.sha;
+
+                  // Create new branch
+                  await github.rest.git.createRef({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    ref: `refs/heads/${branchName}`,
+                    sha: baseSha
+                  });
+
+                  // Process each file
+                  for (const [targetFile, entries] of Object.entries(entriesByFile)) {
+                    // Get file content
+                    const { data: fileData } = await github.rest.repos.getContent({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      path: targetFile,
+                      ref: branchName
+                    });
+
+                    let content = Buffer.from(fileData.content, 'base64').toString('utf8');
+                    let lines = content.split(/\r?\n/);
+
+                    // Add each entry in alphabetical order
+                    for (const entry of entries) {
+                      // Find insertion point
+                      let insertIndex = 1;
+                      for (let i = 1; i < lines.length; i++) {
+                        if (!lines[i].trim()) continue;
+                        const existingName = lines[i].split(',')[0];
+                        if (normalize(existingName) > entry.nameNorm) {
+                          insertIndex = i;
+                          break;
+                        }
+                        insertIndex = i + 1;
+                      }
+                      lines.splice(insertIndex, 0, entry.line);
+                    }
+
+                    const newContent = lines.join('\r\n');
+
+                    // Update file
+                    await github.rest.repos.createOrUpdateFileContents({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      path: targetFile,
+                      message: `Add ${entries.length} faculty from ${institution}`,
+                      content: Buffer.from(newContent).toString('base64'),
+                      sha: fileData.sha,
+                      branch: branchName
+                    });
+                  }
+
+                  // Create PR
+                  const prTitle = `Add ${csvLines.length} faculty from ${institution}`;
+                  const prBody = `## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
+
+                  const { data: pr } = await github.rest.pulls.create({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    title: prTitle,
+                    head: branchName,
+                    base: 'gh-pages',
+                    body: prBody
+                  });
+
+                  console.log(`  Created PR #${pr.number}: ${pr.html_url}`);
+
+                  // Comment on issue
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `## ✅ PR Created\n\nYour batch submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
+                  });
+
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['pr-created']
+                  });
+
+                  continue;
+                }
+
+                // Parse common fields for single submissions
                 const name = parseField(body, 'Name');
 
                 if (!name) {
