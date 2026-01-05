@@ -2,6 +2,15 @@
  * CSRankings Faculty Submission Form
  * Client-side validation and GitHub Issue creation
  */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 // Configuration
 const GITHUB_REPO = 'emeryberger/CSrankings';
 // Note: OAuth requires a server-side component for code exchange.
@@ -19,6 +28,52 @@ const ABBREVIATION_MAP = {
     'international': ['intl.', 'intl'],
     'california': ['cal.', 'cal'],
 };
+// Common university acronyms -> full names (lowercase for matching)
+const ACRONYM_MAP = {
+    'mit': ['massachusetts institute of technology'],
+    'cmu': ['carnegie mellon'],
+    'uiuc': ['university of illinois at urbana', 'illinois urbana'],
+    'ucla': ['university of california, los angeles', 'california los angeles'],
+    'ucb': ['university of california, berkeley', 'california berkeley', 'uc berkeley'],
+    'ucsd': ['university of california, san diego', 'california san diego'],
+    'usc': ['university of southern california'],
+    'gatech': ['georgia institute of technology', 'georgia tech'],
+    'gt': ['georgia institute of technology', 'georgia tech'],
+    'uw': ['university of washington', 'university of wisconsin'],
+    'nyu': ['new york university'],
+    'umich': ['university of michigan'],
+    'upenn': ['university of pennsylvania', 'penn'],
+    'umd': ['university of maryland'],
+    'utexas': ['university of texas at austin', 'texas austin'],
+    'ut austin': ['university of texas at austin', 'texas austin'],
+    'purdue': ['purdue university'],
+    'eth': ['eth zurich', 'eidgenössische technische hochschule'],
+    'epfl': ['ecole polytechnique federale de lausanne', 'lausanne'],
+    'caltech': ['california institute of technology'],
+    'stanford': ['stanford university'],
+    'princeton': ['princeton university'],
+    'harvard': ['harvard university'],
+    'yale': ['yale university'],
+    'cornell': ['cornell university'],
+    'columbia': ['columbia university'],
+    'brown': ['brown university'],
+    'oxford': ['university of oxford'],
+    'cambridge': ['university of cambridge'],
+    'imperial': ['imperial college'],
+    'ucl': ['university college london'],
+    'tum': ['technical university of munich', 'technische universitat munchen'],
+    'nus': ['national university of singapore'],
+    'ntu': ['nanyang technological'],
+    'hku': ['university of hong kong'],
+    'tsinghua': ['tsinghua university'],
+    'peking': ['peking university'],
+    'iit': ['indian institute of technology'],
+    'iisc': ['indian institute of science'],
+    'waterloo': ['university of waterloo'],
+    'toronto': ['university of toronto'],
+    'mcgill': ['mcgill university'],
+    'ubc': ['university of british columbia'],
+};
 // State
 let institutions = [];
 let facultyEntries = [];
@@ -33,108 +88,116 @@ let validationState = {
 };
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', init);
-async function init() {
-    await Promise.all([
-        loadInstitutions(),
-        loadFacultyEntries(),
-        loadDBLPAliases()
-    ]);
-    setupEventListeners();
-    updateUIForAction('add');
-    updateSubmitButton();
+function init() {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield Promise.all([
+            loadInstitutions(),
+            loadFacultyEntries(),
+            loadDBLPAliases()
+        ]);
+        setupEventListeners();
+        updateUIForAction('add');
+        updateSubmitButton();
+    });
 }
 /**
  * Load institutions from CSV for autocomplete
  */
-async function loadInstitutions() {
-    try {
-        const response = await fetch('/institutions.csv');
-        const text = await response.text();
-        const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-        institutions = parsed.data
-            .map(row => row.institution)
-            .filter(Boolean);
-        console.log(`Loaded ${institutions.length} institutions`);
-    }
-    catch (error) {
-        console.error('Failed to load institutions:', error);
-        showError('Failed to load institution list. Please refresh the page.');
-    }
+function loadInstitutions() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch('/institutions.csv');
+            const text = yield response.text();
+            const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+            institutions = parsed.data
+                .map(row => row.institution)
+                .filter(Boolean);
+            console.log(`Loaded ${institutions.length} institutions`);
+        }
+        catch (error) {
+            console.error('Failed to load institutions:', error);
+            showError('Failed to load institution list. Please refresh the page.');
+        }
+    });
 }
 /**
  * Load existing faculty entries for name autocomplete
  */
-async function loadFacultyEntries() {
-    try {
-        // Load all csrankings-*.csv files
-        const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-        const activeFiles = letters.map(l => `csrankings-${l}.csv`);
-        // Also load old/ files for faculty who left (can be added back)
-        const oldFiles = [
-            'old/industry.csv', // Moved to industry
-            'old/emeritus.csv', // Retired/emeritus
-            'old/other.csv', // Left for other reasons
-            'old/research.csv', // Research positions
-            'old/rip.csv' // Deceased (for historical reference)
-        ];
-        const allFiles = [...activeFiles, ...oldFiles];
-        const responses = await Promise.all(allFiles.map(f => fetch(`/${f}`).then(r => r.ok ? r.text() : '').catch(() => '')));
-        facultyEntries = [];
-        let activeCount = 0;
-        let oldCount = 0;
-        for (let i = 0; i < responses.length; i++) {
-            const text = responses[i];
-            const isOldFile = i >= activeFiles.length;
-            if (text) {
-                const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
-                for (const row of parsed.data) {
-                    if (row.length >= 4 && row[0] !== 'name') {
-                        // Trim all values to handle mixed line endings (CRLF vs LF)
-                        facultyEntries.push({
-                            name: row[0].trim(),
-                            institution: row[1].trim(),
-                            homepage: row[2].trim(),
-                            scholarid: row[3].trim(),
-                            isOld: isOldFile,
-                            oldFile: isOldFile ? allFiles[i] : undefined
-                        });
-                        if (isOldFile) {
-                            oldCount++;
-                        }
-                        else {
-                            activeCount++;
+function loadFacultyEntries() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            // Load all csrankings-*.csv files
+            const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            const activeFiles = letters.map(l => `csrankings-${l}.csv`);
+            // Also load old/ files for faculty who left (can be added back)
+            const oldFiles = [
+                'old/industry.csv', // Moved to industry
+                'old/emeritus.csv', // Retired/emeritus
+                'old/other.csv', // Left for other reasons
+                'old/research.csv', // Research positions
+                'old/rip.csv' // Deceased (for historical reference)
+            ];
+            const allFiles = [...activeFiles, ...oldFiles];
+            const responses = yield Promise.all(allFiles.map(f => fetch(`/${f}`).then(r => r.ok ? r.text() : '').catch(() => '')));
+            facultyEntries = [];
+            let activeCount = 0;
+            let oldCount = 0;
+            for (let i = 0; i < responses.length; i++) {
+                const text = responses[i];
+                const isOldFile = i >= activeFiles.length;
+                if (text) {
+                    const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
+                    for (const row of parsed.data) {
+                        if (row.length >= 4 && row[0] !== 'name') {
+                            // Trim all values to handle mixed line endings (CRLF vs LF)
+                            facultyEntries.push({
+                                name: row[0].trim(),
+                                institution: row[1].trim(),
+                                homepage: row[2].trim(),
+                                scholarid: row[3].trim(),
+                                isOld: isOldFile,
+                                oldFile: isOldFile ? allFiles[i] : undefined
+                            });
+                            if (isOldFile) {
+                                oldCount++;
+                            }
+                            else {
+                                activeCount++;
+                            }
                         }
                     }
                 }
             }
+            console.log(`Loaded ${activeCount} active + ${oldCount} former faculty entries`);
         }
-        console.log(`Loaded ${activeCount} active + ${oldCount} former faculty entries`);
-    }
-    catch (error) {
-        console.error('Failed to load faculty entries:', error);
-    }
+        catch (error) {
+            console.error('Failed to load faculty entries:', error);
+        }
+    });
 }
 /**
  * Load DBLP aliases for name lookup
  * Maps alternative names to canonical DBLP names
  */
-async function loadDBLPAliases() {
-    try {
-        const response = await fetch('/dblp-aliases.csv');
-        if (!response.ok)
-            return;
-        const text = await response.text();
-        const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-        for (const row of parsed.data) {
-            if (row.alias && row.name) {
-                dblpAliases.set(row.alias.toLowerCase().trim(), row.name.trim());
+function loadDBLPAliases() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch('/dblp-aliases.csv');
+            if (!response.ok)
+                return;
+            const text = yield response.text();
+            const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+            for (const row of parsed.data) {
+                if (row.alias && row.name) {
+                    dblpAliases.set(row.alias.toLowerCase().trim(), row.name.trim());
+                }
             }
+            console.log(`Loaded ${dblpAliases.size} DBLP aliases`);
         }
-        console.log(`Loaded ${dblpAliases.size} DBLP aliases`);
-    }
-    catch (error) {
-        console.error('Failed to load DBLP aliases:', error);
-    }
+        catch (error) {
+            console.error('Failed to load DBLP aliases:', error);
+        }
+    });
 }
 /**
  * Check if a name has a DBLP alias (canonical name)
@@ -250,10 +313,15 @@ function switchToUpdateWithEntry(entry) {
     document.getElementById('institution').value = entry.institution;
     document.getElementById('homepage').value = entry.homepage;
     document.getElementById('scholarid').value = entry.scholarid;
-    // Show current info
+    // Show current info with clickable links
     document.getElementById('current-institution').textContent = entry.institution;
-    document.getElementById('current-homepage').textContent = entry.homepage;
-    document.getElementById('current-scholarid').textContent = entry.scholarid;
+    document.getElementById('current-homepage').innerHTML =
+        `<a href="${escapeHtml(entry.homepage)}" target="_blank">${escapeHtml(entry.homepage)}</a>`;
+    const scholarUrl = entry.scholarid === 'NOSCHOLARPAGE' ? '' :
+        `https://scholar.google.com/citations?user=${encodeURIComponent(entry.scholarid)}`;
+    document.getElementById('current-scholarid').innerHTML = scholarUrl
+        ? `<a href="${escapeHtml(scholarUrl)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
+        : entry.scholarid;
     // Handle former faculty status indicator
     const currentInfo = document.getElementById('current-info');
     let statusIndicator = currentInfo.querySelector('.former-status');
@@ -454,8 +522,13 @@ function selectFacultyEntry(name) {
     const currentInfoGroup = document.getElementById('current-info-group');
     const currentInfo = document.getElementById('current-info');
     document.getElementById('current-institution').textContent = entry.institution;
-    document.getElementById('current-homepage').textContent = entry.homepage;
-    document.getElementById('current-scholarid').textContent = entry.scholarid;
+    document.getElementById('current-homepage').innerHTML =
+        `<a href="${escapeHtml(entry.homepage)}" target="_blank">${escapeHtml(entry.homepage)}</a>`;
+    const scholarUrl2 = entry.scholarid === 'NOSCHOLARPAGE' ? '' :
+        `https://scholar.google.com/citations?user=${encodeURIComponent(entry.scholarid)}`;
+    document.getElementById('current-scholarid').innerHTML = scholarUrl2
+        ? `<a href="${escapeHtml(scholarUrl2)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
+        : entry.scholarid;
     // Add/update status indicator for former faculty
     let statusIndicator = currentInfo.querySelector('.former-status');
     if (entry.isOld) {
@@ -514,19 +587,30 @@ function escapeRegex(str) {
  * Check if institution matches query with fuzzy abbreviation support
  */
 function institutionMatchesFuzzy(institution, query) {
+    const instLower = institution.toLowerCase();
     const instNorm = normalizeForFuzzyMatch(institution);
+    const queryLower = query.toLowerCase().trim();
     const queryNorm = normalizeForFuzzyMatch(query);
     // Direct match after normalization
     if (instNorm.includes(queryNorm)) {
         return true;
     }
     // Also try matching the original query against normalized institution
-    if (instNorm.includes(query.toLowerCase())) {
+    if (instNorm.includes(queryLower)) {
         return true;
     }
     // And try matching normalized query against original institution
-    if (institution.toLowerCase().includes(queryNorm)) {
+    if (instLower.includes(queryNorm)) {
         return true;
+    }
+    // Check if query is a known acronym
+    const expansions = ACRONYM_MAP[queryLower];
+    if (expansions) {
+        for (const expansion of expansions) {
+            if (instLower.includes(expansion)) {
+                return true;
+            }
+        }
     }
     return false;
 }
@@ -605,47 +689,49 @@ function translateNameToDBLP(name) {
 /**
  * Check DBLP for name existence
  */
-async function checkDBLPName(name) {
-    var _a, _b, _c, _d, _e;
-    const result = { found: false, exactMatch: false, suggestions: [], error: undefined };
-    try {
-        const authorQuery = translateNameToDBLP(name);
-        if (!authorQuery) {
-            result.error = 'Could not parse name';
-            return result;
-        }
-        // Use DBLP author search API
-        // Format: author:FirstName_LastName: (URL encoded)
-        const url = `https://dblp.org/search/author/api?q=author%3A${encodeURIComponent(authorQuery)}%3A&format=json&c=10`;
-        const response = await fetch(url);
-        if (response.status === 429) {
-            result.error = 'DBLP rate limited - try again later';
-            return result;
-        }
-        if (!response.ok) {
-            result.error = `DBLP returned ${response.status}`;
-            return result;
-        }
-        const data = await response.json();
-        const total = parseInt(((_b = (_a = data === null || data === void 0 ? void 0 : data.result) === null || _a === void 0 ? void 0 : _a.completions) === null || _b === void 0 ? void 0 : _b['@total']) || '0', 10);
-        if (total > 0) {
-            result.found = true;
-            const hits = ((_d = (_c = data === null || data === void 0 ? void 0 : data.result) === null || _c === void 0 ? void 0 : _c.hits) === null || _d === void 0 ? void 0 : _d.hit) || [];
-            for (const hit of hits.slice(0, 5)) {
-                const author = ((_e = hit === null || hit === void 0 ? void 0 : hit.info) === null || _e === void 0 ? void 0 : _e.author) || '';
-                if (author) {
-                    result.suggestions.push(author);
-                    if (author.toLowerCase() === name.toLowerCase()) {
-                        result.exactMatch = true;
+function checkDBLPName(name) {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a, _b, _c, _d, _e;
+        const result = { found: false, exactMatch: false, suggestions: [], error: undefined };
+        try {
+            const authorQuery = translateNameToDBLP(name);
+            if (!authorQuery) {
+                result.error = 'Could not parse name';
+                return result;
+            }
+            // Use DBLP author search API
+            // Format: author:FirstName_LastName: (URL encoded)
+            const url = `https://dblp.org/search/author/api?q=author%3A${encodeURIComponent(authorQuery)}%3A&format=json&c=10`;
+            const response = yield fetch(url);
+            if (response.status === 429) {
+                result.error = 'DBLP rate limited - try again later';
+                return result;
+            }
+            if (!response.ok) {
+                result.error = `DBLP returned ${response.status}`;
+                return result;
+            }
+            const data = yield response.json();
+            const total = parseInt(((_b = (_a = data === null || data === void 0 ? void 0 : data.result) === null || _a === void 0 ? void 0 : _a.completions) === null || _b === void 0 ? void 0 : _b['@total']) || '0', 10);
+            if (total > 0) {
+                result.found = true;
+                const hits = ((_d = (_c = data === null || data === void 0 ? void 0 : data.result) === null || _c === void 0 ? void 0 : _c.hits) === null || _d === void 0 ? void 0 : _d.hit) || [];
+                for (const hit of hits.slice(0, 5)) {
+                    const author = ((_e = hit === null || hit === void 0 ? void 0 : hit.info) === null || _e === void 0 ? void 0 : _e.author) || '';
+                    if (author) {
+                        result.suggestions.push(author);
+                        if (author.toLowerCase() === name.toLowerCase()) {
+                            result.exactMatch = true;
+                        }
                     }
                 }
             }
         }
-    }
-    catch (e) {
-        result.error = e.message || 'DBLP check failed';
-    }
-    return result;
+        catch (e) {
+            result.error = e.message || 'DBLP check failed';
+        }
+        return result;
+    });
 }
 /**
  * Validate name field
@@ -686,39 +772,41 @@ function validateName() {
  * Async DBLP name check with debouncing
  */
 let dblpCheckTimeout;
-async function checkDBLPNameAsync(name) {
-    // Debounce DBLP checks
-    if (dblpCheckTimeout) {
-        clearTimeout(dblpCheckTimeout);
-    }
-    dblpCheckTimeout = window.setTimeout(async () => {
-        const result = await checkDBLPName(name);
-        // Make sure the name hasn't changed while we were checking
-        const currentName = document.getElementById('name').value.trim();
-        if (currentName !== name)
-            return;
-        if (result.error) {
-            setFieldStatus('name', 'warning', `DBLP check failed: ${result.error}`);
+function checkDBLPNameAsync(name) {
+    return __awaiter(this, void 0, void 0, function* () {
+        // Debounce DBLP checks
+        if (dblpCheckTimeout) {
+            clearTimeout(dblpCheckTimeout);
         }
-        else if (!result.found) {
-            // Check if this name is a known alias
-            const canonicalName = getCanonicalDBLPName(name);
-            if (canonicalName) {
-                setFieldStatus('name', 'warning', `This name is an alias. Use the canonical DBLP name: <strong>${canonicalName}</strong>`);
+        dblpCheckTimeout = window.setTimeout(() => __awaiter(this, void 0, void 0, function* () {
+            const result = yield checkDBLPName(name);
+            // Make sure the name hasn't changed while we were checking
+            const currentName = document.getElementById('name').value.trim();
+            if (currentName !== name)
+                return;
+            if (result.error) {
+                setFieldStatus('name', 'warning', `DBLP check failed: ${result.error}`);
+            }
+            else if (!result.found) {
+                // Check if this name is a known alias
+                const canonicalName = getCanonicalDBLPName(name);
+                if (canonicalName) {
+                    setFieldStatus('name', 'warning', `This name is an alias. Use the canonical DBLP name: <strong>${canonicalName}</strong>`);
+                }
+                else {
+                    setFieldStatus('name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
+                }
+            }
+            else if (!result.exactMatch && result.suggestions.length > 0) {
+                const suggestions = result.suggestions.slice(0, 3).map(s => `"${s}"`).join(', ');
+                setFieldStatus('name', 'warning', `Not exact match. Did you mean: ${suggestions}?`);
             }
             else {
-                setFieldStatus('name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
+                setFieldStatus('name', 'valid', 'Found in DBLP');
             }
-        }
-        else if (!result.exactMatch && result.suggestions.length > 0) {
-            const suggestions = result.suggestions.slice(0, 3).map(s => `"${s}"`).join(', ');
-            setFieldStatus('name', 'warning', `Not exact match. Did you mean: ${suggestions}?`);
-        }
-        else {
-            setFieldStatus('name', 'valid', 'Found in DBLP');
-        }
-        updatePreview();
-    }, 500);
+            updatePreview();
+        }), 500);
+    });
 }
 /**
  * Validate institution field
@@ -753,14 +841,17 @@ function validateInstitution() {
  * Validate homepage URL
  */
 function validateHomepage() {
+    const testLink = document.getElementById('test-homepage-link');
     if (currentAction === 'remove') {
         validationState.homepage = { valid: true, message: '' };
+        testLink.style.display = 'none';
         updateSubmitButton();
         return;
     }
     const homepage = document.getElementById('homepage').value.trim();
     if (!homepage) {
         setFieldStatus('homepage', 'error', 'Homepage URL is required');
+        testLink.style.display = 'none';
         return;
     }
     // Check URL format
@@ -768,14 +859,19 @@ function validateHomepage() {
         const url = new URL(homepage);
         if (!['http:', 'https:'].includes(url.protocol)) {
             setFieldStatus('homepage', 'error', 'URL must start with http:// or https://');
+            testLink.style.display = 'none';
             return;
         }
+        // Show test link
+        testLink.href = homepage;
+        testLink.style.display = 'inline';
         // Format valid, now check accessibility
         setFieldStatus('homepage', 'valid', 'Checking accessibility...');
         checkHomepageAsync(homepage);
     }
     catch (e) {
         setFieldStatus('homepage', 'error', 'Invalid URL format');
+        testLink.style.display = 'none';
         return;
     }
 }
@@ -783,95 +879,97 @@ function validateHomepage() {
  * Async homepage check with debouncing
  */
 let homepageCheckTimeout;
-async function checkHomepageAsync(homepage) {
-    // Debounce checks
-    if (homepageCheckTimeout) {
-        clearTimeout(homepageCheckTimeout);
-    }
-    homepageCheckTimeout = window.setTimeout(async () => {
-        const name = document.getElementById('name').value.trim();
-        const institution = document.getElementById('institution').value.trim();
-        // Make sure the homepage hasn't changed while we were waiting
-        const currentHomepage = document.getElementById('homepage').value.trim();
-        if (currentHomepage !== homepage)
-            return;
-        // Check for social media / non-academic URLs
-        const url = new URL(homepage);
-        const socialDomains = ['linkedin.com', 'twitter.com', 'x.com', 'facebook.com',
-            'github.com', 'medium.com', 'substack.com', 'youtube.com'];
-        if (socialDomains.some(d => url.hostname.includes(d))) {
-            setFieldStatus('homepage', 'error', 'Use official academic/institutional page, not social media');
-            updatePreview();
-            return;
+function checkHomepageAsync(homepage) {
+    return __awaiter(this, void 0, void 0, function* () {
+        // Debounce checks
+        if (homepageCheckTimeout) {
+            clearTimeout(homepageCheckTimeout);
         }
-        try {
-            // Try to fetch the homepage (may fail due to CORS)
-            const response = await fetch(homepage, {
-                method: 'GET',
-                mode: 'cors',
-                headers: { 'Accept': 'text/html' }
-            });
-            if (!response.ok) {
-                setFieldStatus('homepage', 'error', `Page returned HTTP ${response.status}`);
+        homepageCheckTimeout = window.setTimeout(() => __awaiter(this, void 0, void 0, function* () {
+            const name = document.getElementById('name').value.trim();
+            const institution = document.getElementById('institution').value.trim();
+            // Make sure the homepage hasn't changed while we were waiting
+            const currentHomepage = document.getElementById('homepage').value.trim();
+            if (currentHomepage !== homepage)
+                return;
+            // Check for social media / non-academic URLs
+            const url = new URL(homepage);
+            const socialDomains = ['linkedin.com', 'twitter.com', 'x.com', 'facebook.com',
+                'github.com', 'medium.com', 'substack.com', 'youtube.com'];
+            if (socialDomains.some(d => url.hostname.includes(d))) {
+                setFieldStatus('homepage', 'error', 'Use official academic/institutional page, not social media');
                 updatePreview();
                 return;
             }
-            const text = await response.text();
-            const lowerText = text.toLowerCase();
-            // Smart name matching - check full name, first name, or last name
-            const nameParts = name.toLowerCase().split(/\s+/);
-            const firstName = nameParts[0] || '';
-            const lastName = nameParts[nameParts.length - 1] || '';
-            // Check for name variations
-            const fullNameFound = name && lowerText.includes(name.toLowerCase());
-            const lastNameFound = lastName && lastName.length > 2 && lowerText.includes(lastName);
-            const firstNameFound = firstName && firstName.length > 2 && lowerText.includes(firstName);
-            const nameFound = fullNameFound || (lastNameFound && firstNameFound);
-            // Smart institution matching - check full name or common abbreviations
-            let instFound = institution && lowerText.includes(institution.toLowerCase());
-            if (!instFound && institution) {
-                // Try abbreviation matching
-                const instLower = institution.toLowerCase();
-                const abbrevs = [
-                    instLower.replace(/university/gi, 'univ'),
-                    instLower.replace(/institute/gi, 'inst'),
-                    instLower.replace(/technology/gi, 'tech'),
-                    // Also try just key words
-                    ...instLower.split(/\s+/).filter(w => w.length > 3)
-                ];
-                instFound = abbrevs.some(a => a && lowerText.includes(a));
+            try {
+                // Try to fetch the homepage (may fail due to CORS)
+                const response = yield fetch(homepage, {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: { 'Accept': 'text/html' }
+                });
+                if (!response.ok) {
+                    setFieldStatus('homepage', 'error', `Page returned HTTP ${response.status}`);
+                    updatePreview();
+                    return;
+                }
+                const text = yield response.text();
+                const lowerText = text.toLowerCase();
+                // Smart name matching - check full name, first name, or last name
+                const nameParts = name.toLowerCase().split(/\s+/);
+                const firstName = nameParts[0] || '';
+                const lastName = nameParts[nameParts.length - 1] || '';
+                // Check for name variations
+                const fullNameFound = name && lowerText.includes(name.toLowerCase());
+                const lastNameFound = lastName && lastName.length > 2 && lowerText.includes(lastName);
+                const firstNameFound = firstName && firstName.length > 2 && lowerText.includes(firstName);
+                const nameFound = fullNameFound || (lastNameFound && firstNameFound);
+                // Smart institution matching - check full name or common abbreviations
+                let instFound = institution && lowerText.includes(institution.toLowerCase());
+                if (!instFound && institution) {
+                    // Try abbreviation matching
+                    const instLower = institution.toLowerCase();
+                    const abbrevs = [
+                        instLower.replace(/university/gi, 'univ'),
+                        instLower.replace(/institute/gi, 'inst'),
+                        instLower.replace(/technology/gi, 'tech'),
+                        // Also try just key words
+                        ...instLower.split(/\s+/).filter(w => w.length > 3)
+                    ];
+                    instFound = abbrevs.some(a => a && lowerText.includes(a));
+                }
+                // Check for academic page indicators
+                const academicIndicators = ['professor', 'faculty', 'research', 'publications',
+                    'teaching', 'courses', 'phd', 'lab', 'scholar'];
+                const hasAcademicContent = academicIndicators.some(ind => lowerText.includes(ind));
+                // Build status message
+                if (nameFound && instFound) {
+                    setFieldStatus('homepage', 'valid', 'Page accessible, name & institution found');
+                }
+                else if (nameFound && hasAcademicContent) {
+                    setFieldStatus('homepage', 'valid', 'Page accessible, name found on academic page');
+                }
+                else if (lastNameFound && hasAcademicContent) {
+                    setFieldStatus('homepage', 'warning', 'Page accessible, last name found - verify full name');
+                }
+                else if (nameFound) {
+                    setFieldStatus('homepage', 'warning', 'Page accessible, but verify it\'s the correct person');
+                }
+                else if (hasAcademicContent) {
+                    setFieldStatus('homepage', 'warning', 'Academic page found, but name not detected');
+                }
+                else {
+                    setFieldStatus('homepage', 'warning', 'Page accessible, verify it shows faculty info');
+                }
             }
-            // Check for academic page indicators
-            const academicIndicators = ['professor', 'faculty', 'research', 'publications',
-                'teaching', 'courses', 'phd', 'lab', 'scholar'];
-            const hasAcademicContent = academicIndicators.some(ind => lowerText.includes(ind));
-            // Build status message
-            if (nameFound && instFound) {
-                setFieldStatus('homepage', 'valid', 'Page accessible, name & institution found');
+            catch (e) {
+                // CORS error or network failure - can't verify from browser
+                // This is common and not necessarily an error
+                setFieldStatus('homepage', 'valid', 'URL format valid. Will be verified during review.');
             }
-            else if (nameFound && hasAcademicContent) {
-                setFieldStatus('homepage', 'valid', 'Page accessible, name found on academic page');
-            }
-            else if (lastNameFound && hasAcademicContent) {
-                setFieldStatus('homepage', 'warning', 'Page accessible, last name found - verify full name');
-            }
-            else if (nameFound) {
-                setFieldStatus('homepage', 'warning', 'Page accessible, but verify it\'s the correct person');
-            }
-            else if (hasAcademicContent) {
-                setFieldStatus('homepage', 'warning', 'Academic page found, but name not detected');
-            }
-            else {
-                setFieldStatus('homepage', 'warning', 'Page accessible, verify it shows faculty info');
-            }
-        }
-        catch (e) {
-            // CORS error or network failure - can't verify from browser
-            // This is common and not necessarily an error
-            setFieldStatus('homepage', 'valid', 'URL format valid. Will be verified during review.');
-        }
-        updatePreview();
-    }, 500);
+            updatePreview();
+        }), 500);
+    });
 }
 /**
  * Validate Google Scholar ID format
