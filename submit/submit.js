@@ -264,6 +264,16 @@ let validationState = {
     homepage: { valid: false, message: '' },
     scholarid: { valid: false, message: '' }
 };
+/**
+ * Check if a name has a DBLP disambiguation suffix (e.g., "0001")
+ */
+function hasDisambiguationSuffix(name) {
+    const parts = name.trim().split(/\s+/);
+    if (parts.length < 2)
+        return false;
+    const lastPart = parts[parts.length - 1];
+    return /^\d{4}$/.test(lastPart);
+}
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', init);
 function init() {
@@ -466,8 +476,16 @@ function setupEventListeners() {
     const newNameInput = document.getElementById('new-name');
     if (newNameInput) {
         newNameInput.addEventListener('input', () => {
+            clearFieldStatus('new-name');
             updateSubmitButton();
             updatePreview();
+        });
+        // Validate against DBLP on blur
+        newNameInput.addEventListener('blur', () => {
+            const newName = newNameInput.value.trim();
+            if (newName) {
+                validateNewDBLPName(newName);
+            }
         });
     }
     // Eligibility checkboxes
@@ -606,8 +624,8 @@ function updateUIForAction(action) {
     show('name-help-update', action !== 'add');
     // Current info panel (for update/remove)
     show('current-info-group', action !== 'add');
-    // New DBLP name field (for update only - disambiguation suffixes)
-    show('new-name-group', action === 'update');
+    // New DBLP name field - hidden by default, shown conditionally when entry is selected
+    show('new-name-group', false);
     // Institution label
     show('institution-label-new', action === 'add');
     show('institution-label-update', action !== 'add');
@@ -803,6 +821,16 @@ function selectFacultyEntry(name) {
         statusIndicator.remove();
     }
     currentInfoGroup.style.display = 'block';
+    // Show new DBLP name field only for updates when name lacks disambiguation suffix
+    const newNameGroup = document.getElementById('new-name-group');
+    if (newNameGroup) {
+        const showNewNameField = currentAction === 'update' && !hasDisambiguationSuffix(entry.name);
+        newNameGroup.style.display = showNewNameField ? 'block' : 'none';
+        // Clear the field when hidden
+        if (!showNewNameField) {
+            document.getElementById('new-name').value = '';
+        }
+    }
     // Validate - show appropriate message for former vs current faculty
     const statusMsg = entry.isOld
         ? `Former faculty (${getOldFileLabel(entry.oldFile)})`
@@ -1154,6 +1182,39 @@ function checkDBLPNameAsync(name) {
                 setFieldStatus('name', 'valid', 'Found in DBLP');
             }
             updatePreview();
+        }), 500);
+    });
+}
+/**
+ * Validate new DBLP name (for disambiguation suffix updates)
+ */
+let newNameCheckTimeout;
+function validateNewDBLPName(name) {
+    return __awaiter(this, void 0, void 0, function* () {
+        // Debounce DBLP checks
+        if (newNameCheckTimeout) {
+            clearTimeout(newNameCheckTimeout);
+        }
+        newNameCheckTimeout = window.setTimeout(() => __awaiter(this, void 0, void 0, function* () {
+            const result = yield checkDBLPName(name);
+            // Make sure the name hasn't changed while we were checking
+            const currentName = document.getElementById('new-name').value.trim();
+            if (currentName !== name)
+                return;
+            if (result.error) {
+                setFieldStatus('new-name', 'warning', `DBLP check failed: ${result.error}`);
+            }
+            else if (!result.found) {
+                setFieldStatus('new-name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
+            }
+            else if (!result.exactMatch && result.suggestions.length > 0) {
+                const suggestions = result.suggestions.slice(0, 3).map(s => `"${s}"`).join(', ');
+                setFieldStatus('new-name', 'warning', `Not exact match. Did you mean: ${suggestions}?`);
+            }
+            else {
+                setFieldStatus('new-name', 'valid', 'Found in DBLP');
+            }
+            updateSubmitButton();
         }), 500);
     });
 }
