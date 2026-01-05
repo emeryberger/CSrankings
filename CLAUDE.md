@@ -456,6 +456,37 @@ await github.rest.actions.createWorkflowDispatch({
 });
 ```
 
+### Update Action Logic
+
+For update submissions, the workflow must find the existing entry to replace it. **Critical**: When the name is changing (e.g., adding a DBLP disambiguation suffix), the workflow searches using the **old name** from the `### Old Entry` field, not the `### Name` field.
+
+```javascript
+// Extract old name from Old Entry field (for DBLP name changes)
+let searchName = name;  // Default to Name field
+if (oldEntryText) {
+    const [oldName] = oldEntryText.split(',').map(s => s.trim());
+    if (oldName) searchName = oldName;  // Use old name for search
+}
+```
+
+This is essential for DBLP disambiguation suffix updates like:
+- Old: `Christian Schilling,Aalborg University,...`
+- New: `Christian Schilling 0001,Aalborg University,...`
+
+The workflow correctly searches for "Christian Schilling" (old name) rather than "Christian Schilling 0001" (new name that doesn't exist yet).
+
+### Reprocessing Failed Submissions
+
+If a submission fails validation and needs reprocessing after a fix:
+1. Remove the `validation-failed` label: `gh issue edit <num> --remove-label validation-failed`
+2. Reopen if closed: `gh issue reopen <num>`
+3. Trigger workflow: `gh workflow run process-submission.yml`
+
+The workflow only processes issues that are:
+- Open (state = open)
+- Have title starting with `[CSrankings form submission]`
+- Don't have labels: `processed`, `pr-created`, or `validation-failed`
+
 ### CSV Line Endings
 
 CSRankings CSV files use CRLF (`\r\n`) line endings. The workflow:
