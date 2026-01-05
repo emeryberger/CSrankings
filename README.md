@@ -36,20 +36,20 @@ You will also need to install the following dependencies:
 
 ```bash
 # On Debian/Ubuntu:
-apt-get install libxml2-utils npm python3-lxml
+apt-get install libxml2-utils npm
 
 # Install Node.js packages:
 npm install -g typescript google-closure-compiler
 
 # Install Python packages:
-pip install lxml unidecode requests
+python3 -m pip install -r requirements.txt
 ```
 
 Note: Python 3.12+ is recommended. The DBLP filtering uses a streaming lxml parser for efficient memory usage.
 
 ### Quick contribution via a shallow clone
 
-A full clone of the CSrankings repository is almost 2GB, and the
+A full clone of the CSrankings repository is almost 5GB, and the
 `csrankings.csv` file is too large to edit via the GitHub web site. To
 contribute a change without creating a full local clone of the
 CSrankings repo, you can do a shallow clone. To do so, follow these
