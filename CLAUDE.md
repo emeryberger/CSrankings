@@ -284,6 +284,95 @@ else:
 - `validate_commit.py` - Programmatic validation logic
 - `generate_diff.py` - Fetches PR metadata including author info
 
+## Faculty Submission Form
+
+A self-service web form at `/submit/` allows faculty to submit CSRankings entries without manual PR creation.
+
+### Architecture
+
+```
+User fills form → GitHub Issue → GitHub Action → Pull Request
+      ↓                               ↓
+ Client-side validation        Server-side validation
+ - DBLP name check             - validate_submission.py
+ - Homepage accessibility      - Full DBLP verification
+ - Institution autocomplete    - Homepage content check
+ - Scholar ID format           - Duplicate detection
+```
+
+**No OAuth required** - uses GitHub Issue creation which requires only a GitHub login.
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `src/submit.ts` | TypeScript form implementation (~1300 lines) |
+| `submit/submit.js` | Compiled JavaScript |
+| `submit/index.html` | Form page (Bootstrap 3) |
+| `submit/submit.css` | Form styles |
+| `util/validate_submission.py` | Server-side validation |
+| `.github/workflows/process-submission.yml` | Issue → PR automation |
+| `.github/ISSUE_TEMPLATE/faculty-submission.yml` | Issue form template |
+
+### Three Action Modes
+
+- **Add**: New faculty with eligibility checkboxes
+- **Update**: Search existing entry, modify institution/homepage/scholar ID
+- **Remove**: Search existing entry, select reason (retired, industry, deceased, etc.)
+
+### Institution Autocomplete Features
+
+- **Fuzzy matching**: `University` ↔ `Univ.`, `Institute` ↔ `Inst.`, etc.
+- **Acronym support**: MIT, CMU, UIUC, UCLA, ETH, etc. expand to full names
+- **Country flags**: Shows flag emoji based on institution's country code
+
+### Key Implementation Notes
+
+**Fuzzy matching regex** - Abbreviations ending with `.` need special handling:
+```typescript
+// \b word boundary doesn't work after punctuation
+// Use lookahead instead: (?=\s|$)
+const regex = abbrev.endsWith('.')
+    ? new RegExp(`\\b${escapedAbbrev}(?=\\s|$)`, 'gi')
+    : new RegExp(`\\b${escapedAbbrev}\\b`, 'gi');
+```
+
+**DBLP API**:
+- Endpoint: `https://dblp.org/search/author/api?q=author%3A{query}$%3A&format=json`
+- Debounced at 500ms to avoid rate limiting
+
+**Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
+
+**Google Scholar ID format**: 12 characters ending in `C` or `J`, or `NOSCHOLARPAGE`.
+
+### Build Commands
+
+```bash
+# Compile submit form only
+make submit/submit.js
+
+# Or manually
+tsc src/submit.ts --target es6 --lib es2017,dom --outDir submit --skipLibCheck
+```
+
+### Workflow Processing
+
+The `process-submission.yml` workflow:
+1. Triggers on issues with `submission` label
+2. Parses issue body (handles both `\n` and `\n\n` after headers)
+3. Runs `validate_submission.py` for server-side checks
+4. If valid: creates branch, commits CSV change, opens PR
+5. Triggers `commit_validation.yml` on the new PR
+6. Comments on issue with result
+
+**Important**: PRs created by `GITHUB_TOKEN` don't trigger other workflows automatically. The workflow explicitly calls `workflow_dispatch` to trigger validation.
+
+### CSV Line Endings
+
+CSRankings CSV files use CRLF (`\r\n`) line endings. The workflow:
+- Reads with `.split(/\r?\n/)` to handle both formats
+- Writes with `.join('\r\n')` to maintain CRLF
+
 ## DBLP Processing
 
 The `make update-dblp` target downloads and filters the DBLP database:
@@ -387,9 +476,14 @@ src/                   # TypeScript source (modular)
   navigation.ts        # Routing
   rendering.ts         # HTML generation
   region.ts            # Region filtering
+  submit.ts            # Faculty submission form
   types.ts             # Type definitions
   utils.ts             # Utilities
   verification.ts      # Incremental verification
+submit/                # Faculty submission form
+  index.html           # Form page
+  submit.js            # Compiled from src/submit.ts
+  submit.css           # Form styles
 csrankings.js          # Compiled JavaScript (bundled)
 csrankings.min.js      # Minified for production
 index.html             # Main page
