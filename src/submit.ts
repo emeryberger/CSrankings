@@ -264,6 +264,9 @@ function setupEventListeners(): void {
         setTimeout(hideSuggestions.bind(null, 'name'), 200);
         if (currentAction === 'add') {
             validateName();
+        } else {
+            // For update/remove: auto-select if name matches an existing entry
+            validateNameForUpdateRemove();
         }
     });
 
@@ -909,6 +912,51 @@ function validateName(): void {
 }
 
 /**
+ * Validate name for update/remove modes - auto-select if exact match found
+ */
+function validateNameForUpdateRemove(): void {
+    const name = (document.getElementById('name') as HTMLInputElement).value.trim();
+
+    if (!name) {
+        setFieldStatus('name', 'error', 'Name is required');
+        return;
+    }
+
+    if (name.length < 2) {
+        setFieldStatus('name', 'error', 'Name is too short');
+        return;
+    }
+
+    // If entry already selected and name matches, we're good
+    if (selectedEntry && selectedEntry.name.toLowerCase() === name.toLowerCase()) {
+        return;
+    }
+
+    // Look for exact match (case-insensitive)
+    const exactMatch = facultyEntries.find(e =>
+        e.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (exactMatch) {
+        // Auto-select the matching entry
+        selectFacultyEntry(exactMatch.name);
+    } else {
+        // Check for close matches to provide helpful message
+        const closeMatches = facultyEntries.filter(e =>
+            e.name.toLowerCase().includes(name.toLowerCase()) ||
+            name.toLowerCase().includes(e.name.toLowerCase())
+        ).slice(0, 3);
+
+        if (closeMatches.length > 0) {
+            const suggestions = closeMatches.map(e => `"${e.name}"`).join(', ');
+            setFieldStatus('name', 'error', `Name not found. Did you mean: ${suggestions}?`);
+        } else {
+            setFieldStatus('name', 'error', 'Name not found in CSRankings. Use the dropdown to select an existing entry.');
+        }
+    }
+}
+
+/**
  * Async DBLP name check with debouncing
  */
 let dblpCheckTimeout: number | undefined;
@@ -1202,13 +1250,13 @@ function setFieldStatus(field: string, status: 'valid' | 'error' | 'warning', me
 
     if (status === 'valid') {
         group.classList.add('has-success');
-        statusEl.innerHTML = `<span class="text-success"><span class="glyphicon glyphicon-ok"></span> ${message}</span>`;
+        statusEl.innerHTML = `<span class="text-success">&#10003; ${message}</span>`;
     } else if (status === 'error') {
         group.classList.add('has-error');
-        statusEl.innerHTML = `<span class="text-danger"><span class="glyphicon glyphicon-remove"></span> ${message}</span>`;
+        statusEl.innerHTML = `<span class="text-danger">&#10007; ${message}</span>`;
     } else if (status === 'warning') {
         group.classList.add('has-warning');
-        statusEl.innerHTML = `<span class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> ${message}</span>`;
+        statusEl.innerHTML = `<span class="text-warning">&#9888; ${message}</span>`;
     }
 
     updateSubmitButton();
@@ -1536,7 +1584,7 @@ function showProgress(message: string): void {
         progressDiv.className = 'alert alert-info';
         document.querySelector('.container')?.prepend(progressDiv);
     }
-    progressDiv.innerHTML = `<span class="glyphicon glyphicon-refresh spinning"></span> ${message}`;
+    progressDiv.innerHTML = `<span class="spinning">&#8635;</span> ${message}`;
     progressDiv.style.display = 'block';
 }
 
