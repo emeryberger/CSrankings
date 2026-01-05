@@ -48,6 +48,32 @@ const ABBREVIATION_MAP: Record<string, string[]> = {
 
 // Common university acronyms -> partial strings to match in institution names (lowercase)
 const ACRONYM_MAP: Record<string, string[]> = {
+    // Generic U? two-letter acronyms (match all "University of X" where X starts with that letter)
+    'ua': ['university of arizona', 'university of alabama', 'university of arkansas', 'university of alberta', 'university of auckland', 'university of amsterdam', 'university of athens', 'university of antwerp', 'university of aberdeen'],
+    'ub': ['university at buffalo', 'university of bath', 'university of bergen', 'university of bern', 'university of birmingham', 'university of bonn', 'university of bremen', 'university of bristol', 'university of british columbia'],
+    'uc': ['univ. of california', 'california -', 'university of chicago', 'university of cincinnati', 'university of connecticut', 'university of colorado', 'university of cambridge', 'university of copenhagen', 'university of calgary', 'university of canterbury'],
+    'ud': ['university of delaware', 'university of denver', 'university of dundee', 'university of delhi'],
+    'ue': ['university of edinburgh', 'university of essex', 'university of exeter'],
+    'uf': ['university of florida', 'university of freiburg'],
+    'ug': ['university of georgia', 'university of glasgow', 'university of guelph', 'university of groningen', 'university of geneva'],
+    'uh': ['university of houston', 'university of hawaii', 'university of helsinki', 'university of hamburg', 'university of haifa'],
+    'ui': ['university of illinois', 'university of idaho', 'university of iowa'],
+    'uk': ['university of kentucky', 'university of kansas', 'university of kiel'],
+    'ul': ['university of louisville', 'university of luxembourg', 'university of liverpool', 'university of leeds', 'university of leipzig', 'university of lausanne'],
+    'um': ['university of michigan', 'university of minnesota', 'university of maryland', 'university of miami', 'university of memphis', 'university of melbourne', 'university of manchester', 'university of malta', 'university of montreal', 'university of macau'],
+    'un': ['university of nebraska', 'university of nevada', 'university of new hampshire', 'university of new mexico', 'university of nottingham', 'university of newcastle', 'university of notre dame'],
+    'uo': ['university of oregon', 'university of ottawa', 'university of otago', 'university of oxford', 'university of oklahoma', 'university of oslo'],
+    'up': ['university of pennsylvania', 'university of pittsburgh', 'university of padova', 'university of pisa', 'university of potsdam'],
+    'uq': ['university of queensland'],
+    'ur': ['university of rochester', 'university of regina', 'university of richmond'],
+    'us': ['university of sydney', 'university of southampton', 'university of south carolina', 'university of south florida', 'university of sussex', 'university of surrey', 'university of salzburg', 'university of sheffield', 'university of stuttgart', 'university of strathclyde'],
+    'ut': ['university of texas', 'texas at', 'university of tennessee', 'university of toronto', 'university of tokyo', 'university of twente', 'university of utah', 'university of tulsa', 'university of tartu'],
+    'uu': ['university of utah', 'university of ulm', 'university of udine', 'utrecht university'],
+    'uv': ['university of vermont', 'university of virginia', 'university of vienna', 'university of victoria'],
+    'uw': ['university of washington', 'wisconsin - madison', 'university of waterloo', 'university of warsaw', 'university of wollongong', 'university of warwick', 'university of windsor'],
+    'uy': ['university of york'],
+    'uz': ['university of zurich', 'university of zaragoza'],
+
     // Top US schools
     'mit': ['massachusetts inst. of technology'],
     'cmu': ['carnegie mellon'],
@@ -65,7 +91,6 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'upenn': ['university of pennsylvania'],
 
     // UC System
-    'uc': ['univ. of california', 'california -'],
     'uc berkeley': ['california - berkeley'],
     'ucb': ['california - berkeley'],
     'ucla': ['california - los angeles'],
@@ -80,13 +105,11 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'uc merced': ['california - merced'],
 
     // Illinois
-    'ui': ['university of illinois'],
     'uiuc': ['illinois at urbana-champaign'],
     'uic': ['illinois at chicago'],
     'iit': ['illinois institute of technology'],
 
     // Texas
-    'ut': ['university of texas', 'texas at'],
     'ut austin': ['texas at austin'],
     'utexas': ['texas at austin'],
     'uta': ['texas at arlington'],
@@ -97,7 +120,6 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'texas a&m': ['texas a&m'],
 
     // Other Big State Schools
-    'um': ['university of michigan', 'university of minnesota', 'university of maryland', 'university of miami', 'university of montana', 'university of maine', 'university of memphis'],
     'umich': ['university of michigan'],
     'michigan': ['university of michigan'],
     'osu': ['ohio state', 'oregon state'],
@@ -110,16 +132,13 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'umbc': ['maryland - baltimore county'],
     'uw madison': ['wisconsin - madison'],
     'uw milwaukee': ['wisconsin - milwaukee'],
-    'uw': ['university of washington', 'wisconsin - madison'],
     'umn': ['university of minnesota'],
     'minnesota': ['university of minnesota'],
     'ufl': ['university of florida'],
-    'uf': ['university of florida'],
     'fsu': ['florida state'],
     'ucf': ['central florida'],
     'fiu': ['florida international'],
     'usf': ['south florida'],
-    'ug': ['university of georgia'],
     'uga': ['university of georgia'],
     'gsu': ['georgia state'],
     'uva': ['university of virginia'],
@@ -131,8 +150,6 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'nc state': ['north carolina state'],
     'usc': ['southern california'],
     'asu': ['arizona state'],
-    'ua': ['university of arizona', 'university of alabama'],
-    'uo': ['university of oregon'],
     'cu': ['university of colorado', 'colorado boulder'],
     'cu boulder': ['colorado boulder'],
     'colorado': ['colorado boulder'],
@@ -145,7 +162,6 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'indiana': ['indiana university'],
     'iu': ['indiana university'],
     'uiowa': ['university of iowa'],
-    'uk': ['university of kentucky'],
     'utk': ['university of tennessee'],
     'ut knoxville': ['university of tennessee'],
 
@@ -251,7 +267,6 @@ const ACRONYM_MAP: Record<string, string[]> = {
     'unsw': ['new south wales'],
     'unimelb': ['university of melbourne'],
     'melbourne': ['university of melbourne'],
-    'uq': ['university of queensland'],
     'monash': ['monash'],
     'adelaide': ['adelaide'],
 
