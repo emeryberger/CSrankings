@@ -159,7 +159,7 @@ jobs:
 
                   // Check institution exists
                   const institutionsContent = fs.readFileSync('institutions.csv', 'utf8');
-                  const institutions = institutionsContent.split('\n').map(l => l.split(',')[0]);
+                  const institutions = institutionsContent.split(/\r?\n/).map(l => l.split(',')[0]);
                   if (!institutions.includes(institution)) {
                     await github.rest.issues.createComment({
                       owner: context.repo.owner,
@@ -178,7 +178,7 @@ jobs:
 
                   // Read current file and add entry
                   const content = fs.readFileSync(targetFile, 'utf8');
-                  const lines = content.split('\n');
+                  const lines = content.split(/\r?\n/);
                   const newEntry = `${name},${institution},${homepage},${scholarid}`;
                   const newNameNorm = normalize(name);
 
@@ -217,7 +217,7 @@ jobs:
                   }
 
                   lines.splice(insertIndex, 0, newEntry);
-                  newContent = lines.join('\n');
+                  newContent = lines.join('\r\n');
 
                   const actionWord = action === 'reinstate' ? 'Reinstate' : 'Add';
                   branchName = `${action}-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
@@ -258,7 +258,7 @@ jobs:
 
                   // Read file and find/replace entry
                   const content = fs.readFileSync(targetFile, 'utf8');
-                  const lines = content.split('\n');
+                  const lines = content.split(/\r?\n/);
                   const nameNorm = normalize(name);
 
                   let found = false;
@@ -287,7 +287,7 @@ jobs:
                     continue;
                   }
 
-                  newContent = lines.join('\n');
+                  newContent = lines.join('\r\n');
                   branchName = `update-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Update ${name}`;
                   prTitle = `Update ${name}`;
@@ -301,7 +301,7 @@ jobs:
 
                   // Read file and find entry to remove
                   const content = fs.readFileSync(targetFile, 'utf8');
-                  const lines = content.split('\n');
+                  const lines = content.split(/\r?\n/);
                   const nameNorm = normalize(name);
 
                   let removedLine = null;
@@ -332,7 +332,7 @@ jobs:
                   }
 
                   lines.splice(removeIndex, 1);
-                  newContent = lines.join('\n');
+                  newContent = lines.join('\r\n');
 
                   // Determine which old/ file to add to
                   let oldFile = 'old/other.csv';

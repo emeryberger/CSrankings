@@ -23,7 +23,7 @@ except ImportError:
 
 def has_valid_google_scholar_id(scholar_id: str) -> bool:
     """Check if Google Scholar ID has valid format (12 chars ending in J)."""
-    return scholar_id == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}J$', scholar_id))
+    return scholar_id == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}[CJ]$', scholar_id))
 
 
 def check_google_scholar_page(scholar_id: str, name: str) -> dict:
