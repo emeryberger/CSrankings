@@ -648,10 +648,12 @@ When names change, `util/update-new-names.py` automatically updates `orcid.csv`:
 
 ### Building orcid.csv from Scratch
 
-To regenerate the ORCID mapping:
 ```bash
-# Script extracts from DBLP, queries ORCID API for remainder
-python3 /tmp/build_orcid_csv.py
+# Full rebuild (DBLP + ORCID API, ~45 minutes)
+python3 util/build-orcid-csv.py --include-old
+
+# Quick rebuild (DBLP only, ~1 minute)
+python3 util/build-orcid-csv.py --skip-api --include-old
 ```
 
 The build process:
@@ -701,6 +703,7 @@ util/                  # Utility scripts
   split-csv.py         # Split combined CSV files
   new-name-detector.py # Detect DBLP name changes (with ORCID)
   update-new-names.py  # Apply name changes (ORCID-based matching)
+  build-orcid-csv.py   # Build orcid.csv from DBLP + ORCID API
   filter-dblp.py       # Filter DBLP XML to CSRankings venues
   ...                  # Other data processing scripts
 typescript/            # Type definitions
