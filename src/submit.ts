@@ -1716,13 +1716,27 @@ function updateSubmitButton(): void {
             break;
 
         case 'update':
-            // Selected entry + all fields valid
-            canSubmit = selectedEntry !== null && Object.values(validationState).every((v: ValidationState) => v.valid);
+            // Selected entry + all fields valid + something actually changed
+            const updateFieldsValid = Object.values(validationState).every((v: ValidationState) => v.valid);
+            let hasChanges = false;
+            if (selectedEntry) {
+                const currentHomepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
+                const currentScholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
+                hasChanges = currentHomepage !== selectedEntry.homepage ||
+                             currentScholarid !== selectedEntry.scholarid;
+            }
+            // For reinstatements (from old/), always allow (moving back to active is a change)
+            const isReinstatement = selectedEntry?.isOld === true;
+            canSubmit = selectedEntry !== null && updateFieldsValid && (hasChanges || isReinstatement);
             // Update button text based on whether this is a reinstatement
             if (submitText) {
-                submitText.textContent = selectedEntry?.isOld
-                    ? 'Submit Reinstatement'
-                    : 'Submit Update';
+                if (selectedEntry?.isOld) {
+                    submitText.textContent = 'Submit Reinstatement';
+                } else if (!hasChanges && selectedEntry) {
+                    submitText.textContent = 'No Changes';
+                } else {
+                    submitText.textContent = 'Submit Update';
+                }
             }
             break;
 
