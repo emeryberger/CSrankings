@@ -290,6 +290,7 @@ let facultyEntries: FacultyEntry[] = [];
 let dblpAliases: Map<string, string> = new Map(); // alias -> canonical name
 let currentAction: ActionType = 'add';
 let selectedEntry: FacultyEntry | null = null;
+let batchEntries: FacultyEntry[] = []; // Entries queued for batch submission
 
 let validationState: Record<string, ValidationState> = {
     name: { valid: false, message: '' },
@@ -522,6 +523,22 @@ function setupEventListeners(): void {
     const form = document.getElementById('submit-form') as HTMLFormElement;
     form.addEventListener('submit', handleSubmit);
 
+    // Batch entry buttons
+    const addToBatchBtn = document.getElementById('add-to-batch-btn');
+    if (addToBatchBtn) {
+        addToBatchBtn.addEventListener('click', handleAddToBatch);
+    }
+
+    const submitBatchBtn = document.getElementById('submit-batch-btn');
+    if (submitBatchBtn) {
+        submitBatchBtn.addEventListener('click', handleSubmitBatch);
+    }
+
+    const clearBatchBtn = document.getElementById('clear-batch-btn');
+    if (clearBatchBtn) {
+        clearBatchBtn.addEventListener('click', clearBatchEntries);
+    }
+
     // Close suggestions when clicking outside
     document.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
@@ -699,6 +716,20 @@ function updateUIForAction(action: ActionType): void {
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
         (cb as HTMLInputElement).required = action === 'add';
     });
+
+    // Show/hide batch UI based on action
+    const singleSubmit = document.getElementById('single-submit-group');
+    const batchButtons = document.getElementById('batch-buttons-group');
+    const batchSection = document.getElementById('batch-entries-section');
+
+    if (singleSubmit) singleSubmit.style.display = action !== 'add' ? 'block' : 'none';
+    if (batchButtons) batchButtons.style.display = action === 'add' ? 'block' : 'none';
+    if (batchSection) batchSection.style.display = action === 'add' ? 'block' : 'none';
+
+    // Clear batch entries when switching away from add
+    if (action !== 'add' && batchEntries.length > 0) {
+        clearBatchEntries();
+    }
 }
 
 /**
@@ -1713,6 +1744,15 @@ function updateSubmitButton(): void {
             const allChecked = Array.from(checkboxes).every(cb => (cb as HTMLInputElement).checked);
             canSubmit = fieldsValid && allChecked;
             if (submitText) submitText.textContent = 'Submit New Entry';
+
+            // Update batch buttons
+            const addToBatchBtn = document.getElementById('add-to-batch-btn') as HTMLButtonElement;
+            const submitBtnAdd = document.getElementById('submit-btn-add') as HTMLButtonElement;
+            const submitBatchBtn = document.getElementById('submit-batch-btn') as HTMLButtonElement;
+
+            if (addToBatchBtn) addToBatchBtn.disabled = !canSubmit;
+            if (submitBtnAdd) submitBtnAdd.disabled = !canSubmit;
+            if (submitBatchBtn) submitBatchBtn.disabled = batchEntries.length === 0;
             break;
 
         case 'update':
@@ -2044,6 +2084,195 @@ function showSuccess(message: string): void {
 
     // Auto-dismiss after 5 seconds
     setTimeout(() => alert.remove(), 5000);
+}
+
+/**
+ * Handle adding current entry to batch
+ */
+function handleAddToBatch(): void {
+    const name = (document.getElementById('name') as HTMLInputElement).value.trim();
+    const institution = (document.getElementById('institution') as HTMLInputElement).value.trim();
+    const homepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
+    const scholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
+
+    // Check for duplicate name in batch
+    if (batchEntries.some(e => e.name.toLowerCase() === name.toLowerCase())) {
+        alert(`"${name}" is already in the batch.`);
+        return;
+    }
+
+    // Check for duplicate homepage in batch
+    if (batchEntries.some(e => e.homepage.toLowerCase() === homepage.toLowerCase())) {
+        alert(`Homepage "${homepage}" is already used by another entry in the batch.`);
+        return;
+    }
+
+    // Add to batch
+    const entry: FacultyEntry = { name, institution, homepage, scholarid };
+    batchEntries.push(entry);
+
+    // Update batch UI
+    updateBatchUI();
+
+    // Clear form for next entry (keep institution and checkboxes)
+    (document.getElementById('name') as HTMLInputElement).value = '';
+    (document.getElementById('homepage') as HTMLInputElement).value = '';
+    (document.getElementById('scholarid') as HTMLInputElement).value = '';
+
+    // Reset validation for cleared fields
+    validationState.name = { valid: false, message: '' };
+    validationState.homepage = { valid: false, message: '' };
+    validationState.scholarid = { valid: false, message: '' };
+    clearFieldStatus('name');
+    clearFieldStatus('homepage');
+    clearFieldStatus('scholarid');
+
+    // Hide preview
+    const previewGroup = document.getElementById('preview-group');
+    if (previewGroup) previewGroup.style.display = 'none';
+
+    // Focus name field
+    (document.getElementById('name') as HTMLInputElement).focus();
+
+    // Show success message
+    showSuccess(`Added "${name}" to batch (${batchEntries.length} total)`);
+}
+
+/**
+ * Update batch entries UI
+ */
+function updateBatchUI(): void {
+    const tbody = document.getElementById('batch-entries-body');
+    const countBadge = document.getElementById('batch-count');
+    const countBtn = document.getElementById('batch-count-btn');
+    const submitBatchBtn = document.getElementById('submit-batch-btn') as HTMLButtonElement;
+
+    if (!tbody) return;
+
+    // Update count badges
+    if (countBadge) countBadge.textContent = String(batchEntries.length);
+    if (countBtn) countBtn.textContent = String(batchEntries.length);
+
+    // Update submit batch button
+    if (submitBatchBtn) submitBatchBtn.disabled = batchEntries.length === 0;
+
+    // Rebuild table
+    tbody.innerHTML = '';
+    batchEntries.forEach((entry, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${escapeHtml(entry.name)}</td>
+            <td><a href="${escapeHtml(entry.homepage)}" target="_blank" title="${escapeHtml(entry.homepage)}">${escapeHtml(truncateUrl(entry.homepage))}</a></td>
+            <td><code>${escapeHtml(entry.scholarid)}</code></td>
+            <td><button type="button" class="btn btn-xs btn-danger" data-index="${index}" title="Remove">&#10007;</button></td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    // Add click handlers for remove buttons
+    tbody.querySelectorAll('button[data-index]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const index = parseInt((e.target as HTMLElement).getAttribute('data-index') || '0');
+            removeBatchEntry(index);
+        });
+    });
+}
+
+/**
+ * Truncate URL for display
+ */
+function truncateUrl(url: string): string {
+    if (url.length <= 40) return url;
+    try {
+        const parsed = new URL(url);
+        const path = parsed.pathname;
+        if (path.length > 20) {
+            return parsed.hostname + '/...' + path.slice(-15);
+        }
+        return parsed.hostname + path;
+    } catch {
+        return url.slice(0, 37) + '...';
+    }
+}
+
+/**
+ * Remove entry from batch
+ */
+function removeBatchEntry(index: number): void {
+    const removed = batchEntries.splice(index, 1)[0];
+    updateBatchUI();
+    showSuccess(`Removed "${removed.name}" from batch`);
+}
+
+/**
+ * Clear all batch entries
+ */
+function clearBatchEntries(): void {
+    batchEntries = [];
+    updateBatchUI();
+}
+
+/**
+ * Handle submitting batch entries
+ */
+function handleSubmitBatch(): void {
+    if (batchEntries.length === 0) return;
+
+    const institution = batchEntries[0].institution;
+    const notes = (document.getElementById('notes') as HTMLTextAreaElement).value.trim();
+
+    // Create batch issue URL
+    const issueUrl = createBatchIssueUrl(batchEntries, institution, notes);
+
+    // Track submission
+    if (typeof ga !== 'undefined') {
+        ga('send', 'event', 'submission', 'batch-add', institution, batchEntries.length);
+    }
+
+    // Redirect to GitHub
+    window.location.href = issueUrl;
+}
+
+/**
+ * Create GitHub Issue URL for batch submission
+ */
+function createBatchIssueUrl(entries: FacultyEntry[], institution: string, notes: string): string {
+    const title = `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
+
+    const entriesList = entries.map((e, i) =>
+        `${i + 1}. **${e.name}**\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\``
+    ).join('\n\n');
+
+    const csvLines = entries.map(e =>
+        `${e.name},${e.institution},${e.homepage},${e.scholarid}`
+    ).join('\n');
+
+    const body = `### Action
+Add ${entries.length} new faculty entries (batch submission)
+
+### Institution
+${institution}
+
+### Faculty Entries
+${entriesList}
+
+### CSV Lines
+\`\`\`
+${csvLines}
+\`\`\`
+
+### Notes
+${notes || 'None'}
+
+---
+*Submitted via CSRankings batch submission form*`;
+
+    const params = new URLSearchParams({
+        title: title,
+        labels: 'submission,batch'
+    });
+
+    return `https://github.com/${GITHUB_REPO}/issues/new?${params.toString()}&body=${encodeURIComponent(body)}`;
 }
 
 // Declare external dependencies
