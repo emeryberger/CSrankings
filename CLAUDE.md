@@ -317,8 +317,27 @@ User fills form → GitHub Issue → GitHub Action → Pull Request
 ### Three Action Modes
 
 - **Add**: New faculty with eligibility checkboxes
-- **Update**: Search existing entry, modify institution/homepage/scholar ID
+- **Update**: Search existing entry, modify institution/homepage/scholar ID/DBLP name
 - **Remove**: Search existing entry, select reason (retired, industry, deceased, etc.)
+
+### DBLP Disambiguation Suffixes
+
+When DBLP has multiple authors with the same name, they add numeric suffixes like "0001". The update workflow supports adding these:
+
+- **"New DBLP Name" field**: Only appears in update mode when selected entry lacks a 4-digit suffix
+- **Validation**: New name is checked against DBLP API before submission
+- **Detection**: `hasDisambiguationSuffix()` checks for 4-digit suffix at end of name
+
+```typescript
+function hasDisambiguationSuffix(name: string): boolean {
+    const parts = name.trim().split(/\s+/);
+    if (parts.length < 2) return false;
+    const lastPart = parts[parts.length - 1];
+    return /^\d{4}$/.test(lastPart);
+}
+```
+
+Example: User selects "Christian Schilling", enters "Christian Schilling 0001" as new name.
 
 ### Institution Autocomplete Features
 
@@ -752,3 +771,80 @@ When updating many URLs, use parallel web searches to find correct CS department
 ### Backend/Build (Python)
 - **Python 3.13+ recommended** - `util/regenerate_data.py` may crash (exit 139) on older versions
 - lxml (`pip install lxml`) - DBLP XML filtering, 2.7x faster than expat
+
+## Dynamic Year Slider
+
+The year range slider automatically updates to show a 10-year range ending with the current year.
+
+### Implementation
+
+Year options are generated dynamically in JavaScript rather than hardcoded in HTML:
+
+```typescript
+// src/year-slider.ts
+const MAX_YEAR = new Date().getFullYear();
+const DEFAULT_FROM_YEAR = MAX_YEAR - 10;
+const DEFAULT_TO_YEAR = MAX_YEAR;
+
+export function populateYearSelects(): void {
+    // Generates options from 1970 to current year
+    // Sets default selection to 10-year range
+}
+```
+
+**Key files:**
+- `src/year-slider.ts` - `populateYearSelects()` generates options dynamically
+- `src/app.ts` - Calls `populateYearSelects()` before URL resolution
+- `index.html` - Hidden selects are empty, populated by JS
+
+**Why dynamic:**
+- Eliminates need to update HTML every January
+- In 2026 shows 2016-2026, in 2027 shows 2017-2027 automatically
+
+### URL Parameter Handling
+
+When URL contains year params (e.g., `/fromyear/2020/toyear/2024/index`):
+1. `populateYearSelects()` runs first to create `<option>` elements
+2. `handleNavigation()` sets select values from URL params
+3. `navigation()` triggers `rank()` to recompute with new years
+
+## Repository Size Management
+
+The repository history was cleaned to reduce clone size from ~5GB to ~140MB.
+
+### Files Removed from History
+
+Using `git-filter-repo`:
+```bash
+git filter-repo --path articles.json --path dblp.xml.gz --path dblp-original.xml.gz \
+    --path generated-author-info.csv --path csrankings.csv --invert-paths --force
+```
+
+| File | Raw Size in History | Reason |
+|------|---------------------|--------|
+| `articles.json` | 43 GB | Generated, regenerated monthly |
+| `generated-author-info.csv` | 18 GB | Generated from DBLP |
+| `csrankings.csv` | 8 GB | Old combined file (now split) |
+| `dblp*.xml.gz` | 3 GB | Large data files |
+
+### Current Configuration
+
+- **Git LFS**: `dblp.xml.gz` tracked via LFS (`.gitattributes`)
+- **`.gitignore`**: `articles.json`, `dblp-original.xml.gz`, `homepages.csv`, etc.
+- **CI regenerates**: `generated-author-info.csv` rebuilt by `make` in CI
+
+### After History Rewrite
+
+All collaborators must re-clone or run:
+```bash
+git fetch origin
+git reset --hard origin/gh-pages
+```
+
+### Adding New Institutions
+
+Institution names must not exceed 37 characters (length of "Univ. of Illinois at Urbana-Champaign"). Abbreviate as needed:
+- `University` → `Univ.`
+- `Institute` → `Inst.`
+- `Technology` → `Tech.`
+- `Information` → `Info.`
