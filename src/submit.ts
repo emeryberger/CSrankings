@@ -1122,15 +1122,9 @@ async function checkDBLPName(name: string): Promise<{found: boolean; exactMatch:
     const result = { found: false, exactMatch: false, suggestions: [] as string[], error: undefined as string | undefined };
 
     try {
-        const authorQuery = translateNameToDBLP(name);
-        if (!authorQuery) {
-            result.error = 'Could not parse name';
-            return result;
-        }
-
-        // Use DBLP author search API
-        // Format: author:FirstName_LastName: (URL encoded)
-        const url = `https://dblp.org/search/author/api?q=author%3A${encodeURIComponent(authorQuery)}%3A&format=json&c=10`;
+        // Use simple search query - DBLP will add wildcards automatically
+        // This works better than the strict author:Name: format for middle initials
+        const url = `https://dblp.org/search/author/api?q=${encodeURIComponent(name)}&format=json&c=10`;
 
         const response = await fetch(url);
 
@@ -1145,17 +1139,22 @@ async function checkDBLPName(name: string): Promise<{found: boolean; exactMatch:
         }
 
         const data = await response.json();
-        const total = parseInt(data?.result?.completions?.['@total'] || '0', 10);
+        const hits = data?.result?.hits?.hit || [];
+        const totalHits = parseInt(data?.result?.hits?.['@total'] || '0', 10);
 
-        if (total > 0) {
+        if (totalHits > 0) {
             result.found = true;
-            const hits = data?.result?.hits?.hit || [];
+
+            // Normalize input name for comparison (lowercase, collapse spaces, remove periods)
+            const normalizedInput = name.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
 
             for (const hit of hits.slice(0, 5)) {
                 const author = hit?.info?.author || '';
                 if (author) {
                     result.suggestions.push(author);
-                    if (author.toLowerCase() === name.toLowerCase()) {
+                    // Normalize author name for comparison
+                    const normalizedAuthor = author.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+                    if (normalizedAuthor === normalizedInput) {
                         result.exactMatch = true;
                     }
                 }

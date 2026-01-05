@@ -998,14 +998,9 @@ function checkDBLPName(name) {
         var _a, _b, _c, _d, _e;
         const result = { found: false, exactMatch: false, suggestions: [], error: undefined };
         try {
-            const authorQuery = translateNameToDBLP(name);
-            if (!authorQuery) {
-                result.error = 'Could not parse name';
-                return result;
-            }
-            // Use DBLP author search API
-            // Format: author:FirstName_LastName: (URL encoded)
-            const url = `https://dblp.org/search/author/api?q=author%3A${encodeURIComponent(authorQuery)}%3A&format=json&c=10`;
+            // Use simple search query - DBLP will add wildcards automatically
+            // This works better than the strict author:Name: format for middle initials
+            const url = `https://dblp.org/search/author/api?q=${encodeURIComponent(name)}&format=json&c=10`;
             const response = yield fetch(url);
             if (response.status === 429) {
                 result.error = 'DBLP rate limited - try again later';
@@ -1016,15 +1011,19 @@ function checkDBLPName(name) {
                 return result;
             }
             const data = yield response.json();
-            const total = parseInt(((_b = (_a = data === null || data === void 0 ? void 0 : data.result) === null || _a === void 0 ? void 0 : _a.completions) === null || _b === void 0 ? void 0 : _b['@total']) || '0', 10);
-            if (total > 0) {
+            const hits = ((_b = (_a = data === null || data === void 0 ? void 0 : data.result) === null || _a === void 0 ? void 0 : _a.hits) === null || _b === void 0 ? void 0 : _b.hit) || [];
+            const totalHits = parseInt(((_d = (_c = data === null || data === void 0 ? void 0 : data.result) === null || _c === void 0 ? void 0 : _c.hits) === null || _d === void 0 ? void 0 : _d['@total']) || '0', 10);
+            if (totalHits > 0) {
                 result.found = true;
-                const hits = ((_d = (_c = data === null || data === void 0 ? void 0 : data.result) === null || _c === void 0 ? void 0 : _c.hits) === null || _d === void 0 ? void 0 : _d.hit) || [];
+                // Normalize input name for comparison (lowercase, collapse spaces, remove periods)
+                const normalizedInput = name.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
                 for (const hit of hits.slice(0, 5)) {
                     const author = ((_e = hit === null || hit === void 0 ? void 0 : hit.info) === null || _e === void 0 ? void 0 : _e.author) || '';
                     if (author) {
                         result.suggestions.push(author);
-                        if (author.toLowerCase() === name.toLowerCase()) {
+                        // Normalize author name for comparison
+                        const normalizedAuthor = author.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+                        if (normalizedAuthor === normalizedInput) {
                             result.exactMatch = true;
                         }
                     }
