@@ -26,6 +26,13 @@ def has_valid_google_scholar_id(scholar_id: str) -> bool:
     return scholar_id == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}[CJ]$', scholar_id))
 
 
+def has_valid_orcid(orcid: str) -> bool:
+    """Check if ORCID has valid format (0000-0000-0000-000X where X is 0-9 or X)."""
+    if orcid == '0000-0000-0000-0000':
+        return True  # Placeholder for no ORCID
+    return bool(re.fullmatch(r'^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$', orcid))
+
+
 def check_google_scholar_page(scholar_id: str, name: str) -> dict:
     """
     Check if Google Scholar page exists and contains the expected name.
@@ -326,6 +333,7 @@ def main():
     parser.add_argument('--institution', required=True, help='Institution name')
     parser.add_argument('--homepage', required=True, help='Homepage URL')
     parser.add_argument('--scholarid', required=True, help='Google Scholar ID')
+    parser.add_argument('--orcid', default='0000-0000-0000-0000', help='ORCID (optional)')
     parser.add_argument('--action', default='add', choices=['add', 'update'],
                         help='Type of submission (add new or update existing)')
 
@@ -339,6 +347,7 @@ def main():
     print(f"  Institution: {args.institution}")
     print(f"  Homepage: {args.homepage}")
     print(f"  Scholar ID: {args.scholarid}")
+    print(f"  ORCID: {args.orcid}")
     print(f"  Action: {args.action}")
     print()
 
@@ -394,7 +403,16 @@ def main():
     else:
         print("  ✓ Found exact match")
 
-    # 5. Check homepage
+    # 5. Check ORCID (optional field)
+    print("Checking ORCID...")
+    if not has_valid_orcid(args.orcid):
+        errors.append(f"- **ORCID**: Invalid format. Must be `0000-0000-0000-0000` format or placeholder. Got: `{args.orcid}`")
+    elif args.orcid == '0000-0000-0000-0000':
+        print("  ✓ Placeholder (no ORCID)")
+    else:
+        print(f"  ✓ Valid format: {args.orcid}")
+
+    # 6. Check homepage
     print("Checking homepage...")
     hp = check_homepage_accessible(args.homepage, args.name, args.institution)
     if hp['error']:

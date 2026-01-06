@@ -315,6 +315,7 @@ jobs:
                   const institution = parseField(body, 'Institution');
                   const homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
                   const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
+                  const orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
 
                   if (!institution || !homepage || !scholarid) {
                     await github.rest.issues.createComment({
@@ -354,7 +355,7 @@ jobs:
                   // Read current file and add entry
                   const content = fs.readFileSync(targetFile, 'utf8');
                   const lines = content.split(/\r?\n/);
-                  const newEntry = `${name},${institution},${homepage},${scholarid}`;
+                  const newEntry = `${name},${institution},${homepage},${scholarid},${orcid}`;
                   const newNameNorm = normalize(name);
 
                   // Check for duplicates
