@@ -410,40 +410,28 @@ async function loadFacultyEntries(): Promise<void> {
             const text = responses[i];
             const isOldFile = i >= activeFiles.length;
             const filename = allFiles[i];
-            // old/industry.csv has 6 columns: name,affiliation,homepage,scholarid,company,orcid
-            const isIndustryFile = filename === 'old/industry.csv';
 
             if (text) {
-                const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
-                for (const row of parsed.data as string[][]) {
-                    if (row.length >= 4 && row[0] !== 'name') {
-                        // Trim all values to handle mixed line endings (CRLF vs LF)
-                        // Handle different column formats:
-                        // - Standard (5 cols): name,affiliation,homepage,scholarid,orcid
-                        // - Industry (6 cols): name,affiliation,homepage,scholarid,company,orcid
-                        // - Old format (4 cols): name,affiliation,homepage,scholarid
-                        let orcid = '0000-0000-0000-0000';
-                        if (isIndustryFile && row.length >= 6) {
-                            orcid = row[5].trim();  // ORCID is 6th column in industry.csv
-                        } else if (row.length >= 5) {
-                            orcid = row[4].trim();  // ORCID is 5th column in standard format
-                        }
+                // Parse with headers to access fields by name (handles varying column orders)
+                const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+                for (const row of parsed.data as Record<string, string>[]) {
+                    // Skip rows without required fields
+                    if (!row.name || !row.affiliation) continue;
 
-                        facultyEntries.push({
-                            name: row[0].trim(),
-                            institution: row[1].trim(),
-                            homepage: row[2].trim(),
-                            scholarid: row[3].trim(),
-                            orcid: orcid,
-                            isOld: isOldFile,
-                            oldFile: isOldFile ? filename : undefined
-                        } as FacultyEntry);
+                    facultyEntries.push({
+                        name: (row.name || '').trim(),
+                        institution: (row.affiliation || '').trim(),
+                        homepage: (row.homepage || '').trim(),
+                        scholarid: (row.scholarid || '').trim(),
+                        orcid: (row.orcid || '0000-0000-0000-0000').trim(),
+                        isOld: isOldFile,
+                        oldFile: isOldFile ? filename : undefined
+                    } as FacultyEntry);
 
-                        if (isOldFile) {
-                            oldCount++;
-                        } else {
-                            activeCount++;
-                        }
+                    if (isOldFile) {
+                        oldCount++;
+                    } else {
+                        activeCount++;
                     }
                 }
             }
