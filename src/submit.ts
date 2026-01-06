@@ -16,6 +16,7 @@ interface FacultyEntry {
     institution: string;
     homepage: string;
     scholarid: string;
+    orcid: string;
     isOld?: boolean;      // true if from old/ folder
     oldFile?: string;     // which old/ file (industry, emeritus, etc.)
 }
@@ -288,6 +289,7 @@ let institutionMap: Map<string, Institution> = new Map(); // name -> full data
 let knownAcademicDomains: Set<string> = new Set(); // domains extracted from institution homepages
 let facultyEntries: FacultyEntry[] = [];
 let dblpAliases: Map<string, string> = new Map(); // alias -> canonical name
+let orcidMap: Map<string, string> = new Map(); // name -> orcid
 let currentAction: ActionType = 'add';
 let selectedEntry: FacultyEntry | null = null;
 let batchEntries: FacultyEntry[] = []; // Entries queued for batch submission
@@ -315,9 +317,11 @@ document.addEventListener('DOMContentLoaded', init);
 async function init(): Promise<void> {
     await Promise.all([
         loadInstitutions(),
-        loadFacultyEntries(),
+        loadOrcids(),
         loadDBLPAliases()
     ]);
+    // Load faculty entries after orcid map is ready
+    await loadFacultyEntries();
     setupEventListeners();
     updateUIForAction('add');
     updateSubmitButton();
@@ -413,14 +417,16 @@ async function loadFacultyEntries(): Promise<void> {
                 for (const row of parsed.data as string[][]) {
                     if (row.length >= 4 && row[0] !== 'name') {
                         // Trim all values to handle mixed line endings (CRLF vs LF)
+                        const name = row[0].trim();
                         facultyEntries.push({
-                            name: row[0].trim(),
+                            name: name,
                             institution: row[1].trim(),
                             homepage: row[2].trim(),
                             scholarid: row[3].trim(),
+                            orcid: orcidMap.get(name) || '0000-0000-0000-0000',
                             isOld: isOldFile,
                             oldFile: isOldFile ? allFiles[i] : undefined
-                        } as FacultyEntry);
+                        });
 
                         if (isOldFile) {
                             oldCount++;
@@ -455,6 +461,27 @@ async function loadDBLPAliases(): Promise<void> {
         console.log(`Loaded ${dblpAliases.size} DBLP aliases`);
     } catch (error) {
         console.error('Failed to load DBLP aliases:', error);
+    }
+}
+
+/**
+ * Load ORCIDs for faculty members
+ * Maps faculty names to their ORCID identifiers
+ */
+async function loadOrcids(): Promise<void> {
+    try {
+        const response = await fetch('/orcid.csv');
+        if (!response.ok) return;
+        const text = await response.text();
+        const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+        for (const row of parsed.data as Array<{name: string; orcid: string}>) {
+            if (row.name && row.orcid) {
+                orcidMap.set(row.name.trim(), row.orcid.trim());
+            }
+        }
+        console.log(`Loaded ${orcidMap.size} ORCIDs`);
+    } catch (error) {
+        console.error('Failed to load ORCIDs:', error);
     }
 }
 
@@ -511,6 +538,13 @@ function setupEventListeners(): void {
     // Scholar ID field - validate format
     const scholaridInput = document.getElementById('scholarid') as HTMLInputElement;
     scholaridInput.addEventListener('input', validateScholarId);
+
+    // ORCID field - validate format
+    const orcidInput = document.getElementById('orcid') as HTMLInputElement;
+    orcidInput.addEventListener('input', () => {
+        validateOrcid();
+        updateSubmitButton();
+    });
 
     // New DBLP name field (for disambiguation suffixes in updates)
     const newNameInput = document.getElementById('new-name') as HTMLInputElement;
@@ -695,7 +729,7 @@ function updateUIForAction(action: ActionType): void {
     show('institution-label-update', action !== 'add');
 
     // Fields visibility for remove
-    const hideForRemove = ['institution-group', 'homepage-group', 'scholarid-group'];
+    const hideForRemove = ['institution-group', 'homepage-group', 'scholarid-group', 'orcid-group'];
     hideForRemove.forEach(id => show(id, action !== 'remove'));
 
     // Removal reason
@@ -778,6 +812,7 @@ function resetForm(): void {
     (document.getElementById('institution') as HTMLInputElement).value = '';
     (document.getElementById('homepage') as HTMLInputElement).value = '';
     (document.getElementById('scholarid') as HTMLInputElement).value = '';
+    (document.getElementById('orcid') as HTMLInputElement).value = '';
     (document.getElementById('notes') as HTMLTextAreaElement).value = '';
     (document.getElementById('removal-reason') as HTMLSelectElement).value = '';
 
@@ -789,6 +824,7 @@ function resetForm(): void {
     clearFieldStatus('institution');
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
+    clearFieldStatus('orcid');
 
     (document.getElementById('preview-group') as HTMLElement).style.display = 'none';
     (document.getElementById('current-info-group') as HTMLElement).style.display = 'none';
@@ -884,6 +920,7 @@ function selectFacultyEntry(name: string): void {
         (document.getElementById('institution') as HTMLInputElement).value = entry.institution;
         (document.getElementById('homepage') as HTMLInputElement).value = entry.homepage;
         (document.getElementById('scholarid') as HTMLInputElement).value = entry.scholarid;
+        (document.getElementById('orcid') as HTMLInputElement).value = entry.orcid;
     }
 
     // Show current info with status indicator for former faculty
@@ -898,6 +935,11 @@ function selectFacultyEntry(name: string): void {
     (document.getElementById('current-scholarid') as HTMLElement).innerHTML = scholarUrl2
         ? `<a href="${escapeHtml(scholarUrl2)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
         : entry.scholarid;
+    const orcidUrl = entry.orcid === '0000-0000-0000-0000' ? '' :
+        `https://orcid.org/${entry.orcid}`;
+    (document.getElementById('current-orcid') as HTMLElement).innerHTML = orcidUrl
+        ? `<a href="${escapeHtml(orcidUrl)}" target="_blank">${escapeHtml(entry.orcid)}</a>`
+        : entry.orcid;
 
     // Add/update status indicator for former faculty
     let statusIndicator = currentInfo.querySelector('.former-status');
@@ -1756,6 +1798,38 @@ function checkScholarIdAsync(scholarid: string): void {
 }
 
 /**
+ * Validate ORCID format (optional field)
+ */
+function validateOrcid(): void {
+    const orcid = (document.getElementById('orcid') as HTMLInputElement).value.trim();
+
+    // Empty is valid (optional field)
+    if (!orcid) {
+        clearFieldStatus('orcid');
+        return;
+    }
+
+    // Placeholder is valid
+    if (orcid === '0000-0000-0000-0000') {
+        setFieldStatus('orcid', 'valid', 'Placeholder (no ORCID)');
+        return;
+    }
+
+    // Valid ORCID format: 0000-0000-0000-000X (where X can be 0-9 or X)
+    const validFormat = /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(orcid);
+
+    if (!validFormat) {
+        setFieldStatus('orcid', 'error', 'Invalid format. Use: 0000-0000-0000-0000');
+        return;
+    }
+
+    // Format valid - provide link for verification
+    const orcidUrl = `https://orcid.org/${orcid}`;
+    setFieldStatus('orcid', 'valid',
+        `Format valid. <a href="${orcidUrl}" target="_blank">Verify profile ↗</a>`);
+}
+
+/**
  * Update field status display
  */
 function setFieldStatus(field: string, status: 'valid' | 'error' | 'warning', message: string): void {
@@ -1929,12 +2003,13 @@ function handleSubmit(e: Event): void {
     const institution = (document.getElementById('institution') as HTMLInputElement).value.trim();
     const homepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
     const scholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
+    const orcid = (document.getElementById('orcid') as HTMLInputElement).value.trim() || '0000-0000-0000-0000';
     const notes = (document.getElementById('notes') as HTMLTextAreaElement).value.trim();
 
     // Build submission data
     // For updates, use new name if provided, otherwise keep original name
     const effectiveName = (currentAction === 'update' && newName) ? newName : name;
-    const entry: FacultyEntry = { name: effectiveName, institution, homepage, scholarid };
+    const entry: FacultyEntry = { name: effectiveName, institution, homepage, scholarid, orcid };
     let issueUrl: string;
 
     switch (currentAction) {
@@ -2205,6 +2280,7 @@ function handleAddToBatch(): void {
     const institution = (document.getElementById('institution') as HTMLInputElement).value.trim();
     const homepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
     const scholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
+    const orcid = (document.getElementById('orcid') as HTMLInputElement).value.trim() || '0000-0000-0000-0000';
 
     // Check for duplicate name in batch
     if (batchEntries.some(e => e.name.toLowerCase() === name.toLowerCase())) {
@@ -2225,7 +2301,7 @@ function handleAddToBatch(): void {
 
     // Add to batch (include old/ info if found)
     const entry: FacultyEntry = {
-        name, institution, homepage, scholarid,
+        name, institution, homepage, scholarid, orcid,
         isOld: oldEntry?.isOld,
         oldFile: oldEntry?.oldFile
     };
@@ -2238,6 +2314,7 @@ function handleAddToBatch(): void {
     (document.getElementById('name') as HTMLInputElement).value = '';
     (document.getElementById('homepage') as HTMLInputElement).value = '';
     (document.getElementById('scholarid') as HTMLInputElement).value = '';
+    (document.getElementById('orcid') as HTMLInputElement).value = '';
 
     // Reset validation for cleared fields
     validationState.name = { valid: false, message: '' };
@@ -2246,6 +2323,7 @@ function handleAddToBatch(): void {
     clearFieldStatus('name');
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
+    clearFieldStatus('orcid');
 
     // Hide preview
     const previewGroup = document.getElementById('preview-group');
