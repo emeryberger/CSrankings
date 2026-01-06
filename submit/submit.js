@@ -1715,11 +1715,14 @@ function updateSubmitButton() {
             if (selectedEntry) {
                 const currentHomepage = document.getElementById('homepage').value.trim();
                 const currentScholarid = document.getElementById('scholarid').value.trim();
+                const currentOrcid = document.getElementById('orcid').value.trim();
                 const currentNewName = ((_a = document.getElementById('new-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
                 const originalHomepage = selectedEntry.homepage.trim();
                 const originalScholarid = selectedEntry.scholarid.trim();
+                const originalOrcid = selectedEntry.orcid.trim();
                 hasChanges = currentHomepage !== originalHomepage ||
                     currentScholarid !== originalScholarid ||
+                    currentOrcid !== originalOrcid ||
                     (currentNewName !== '' && currentNewName !== selectedEntry.name);
             }
             // For reinstatements (from old/), always allow (moving back to active is a change)
