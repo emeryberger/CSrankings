@@ -27,9 +27,13 @@ def csv2dict_str_str(fname):
 
 import hashlib
 
+# Read fieldnames from the first file to preserve all columns dynamically
+with open("csrankings-a.csv", mode="r") as first_file:
+    first_reader = csv.DictReader(first_file)
+    fieldnames = first_reader.fieldnames
+
 added = set()
 with open("csrankings.csv", mode="w") as outfile:
-    fieldnames = ["name", "affiliation", "homepage", "scholarid", "orcid"]
     writer = csv.DictWriter(outfile, fieldnames)
     writer.writeheader()
     for i in list(string.ascii_lowercase):
@@ -41,7 +45,7 @@ with open("csrankings.csv", mode="w") as outfile:
             for row in reader:
                 try:
                     # Ensure orcid field exists (for backwards compatibility)
-                    if "orcid" not in row:
+                    if "orcid" in fieldnames and "orcid" not in row:
                         row["orcid"] = "0000-0000-0000-0000"
                     hashrow = hashlib.md5(str(row).encode("utf8"))
                     if hashrow not in added:
