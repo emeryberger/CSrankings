@@ -25,7 +25,7 @@ random.seed(seed)
 
 # Trim out LinkedIn and RateMyProfessors sites, etc.
 trimstrings = [
-    "\.php\?",
+    r"\.php\?",
     "youtube",
     "researchgate",
     "dblp.uni-trier.",
@@ -36,7 +36,7 @@ trimstrings = [
     "2017",
     "2016",
     "2015",
-    "\.pdf",
+    r"\.pdf",
     "wikipedia",
 ]
 
