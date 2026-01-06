@@ -547,7 +547,11 @@ jobs:
                   branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Remove ${name} (${reason || 'unspecified'})`;
                   prTitle = `Remove ${name} (${institution || 'unknown'})`;
-                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Note:** Entry should be added to \`${oldFile}\``;
+                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
+
+                  // Store old file info for the remove action
+                  var removeOldFile = oldFile;
+                  var removeEntry = removedLine;
                 }
 
                 // Create branch and PR
@@ -587,6 +591,50 @@ jobs:
                   sha: fileData.sha,
                   branch: branchName
                 });
+
+                // For remove action, also add entry to the appropriate old/ file
+                if (action === 'remove' && removeOldFile && removeEntry) {
+                  console.log(`  Adding entry to ${removeOldFile}`);
+
+                  // Get old file content
+                  const { data: oldFileData } = await github.rest.repos.getContent({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: removeOldFile,
+                    ref: branchName
+                  });
+
+                  let oldContent = Buffer.from(oldFileData.content, 'base64').toString('utf8');
+                  let oldLines = oldContent.split(/\r?\n/);
+
+                  // Find insertion point (alphabetical order by name)
+                  const entryName = removeEntry.split(',')[0];
+                  const entryNameNorm = normalize(entryName);
+                  let insertIndex = 1; // Skip header
+                  for (let i = 1; i < oldLines.length; i++) {
+                    if (!oldLines[i].trim()) continue;
+                    const existingName = oldLines[i].split(',')[0];
+                    if (normalize(existingName) > entryNameNorm) {
+                      insertIndex = i;
+                      break;
+                    }
+                    insertIndex = i + 1;
+                  }
+
+                  oldLines.splice(insertIndex, 0, removeEntry);
+                  const newOldContent = oldLines.join('\r\n');
+
+                  // Update old file
+                  await github.rest.repos.createOrUpdateFileContents({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: removeOldFile,
+                    message: `Add ${entryName} to ${removeOldFile}`,
+                    content: Buffer.from(newOldContent).toString('base64'),
+                    sha: oldFileData.sha,
+                    branch: branchName
+                  });
+                }
 
                 // Create pull request
                 const { data: pr } = await github.rest.pulls.create({
