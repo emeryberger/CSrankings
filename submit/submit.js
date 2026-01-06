@@ -370,20 +370,33 @@ function loadFacultyEntries() {
             for (let i = 0; i < responses.length; i++) {
                 const text = responses[i];
                 const isOldFile = i >= activeFiles.length;
+                const filename = allFiles[i];
+                // old/industry.csv has 6 columns: name,affiliation,homepage,scholarid,company,orcid
+                const isIndustryFile = filename === 'old/industry.csv';
                 if (text) {
                     const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
                     for (const row of parsed.data) {
                         if (row.length >= 4 && row[0] !== 'name') {
                             // Trim all values to handle mixed line endings (CRLF vs LF)
-                            // Handle both 4-column (old format) and 5-column (with orcid) formats
+                            // Handle different column formats:
+                            // - Standard (5 cols): name,affiliation,homepage,scholarid,orcid
+                            // - Industry (6 cols): name,affiliation,homepage,scholarid,company,orcid
+                            // - Old format (4 cols): name,affiliation,homepage,scholarid
+                            let orcid = '0000-0000-0000-0000';
+                            if (isIndustryFile && row.length >= 6) {
+                                orcid = row[5].trim(); // ORCID is 6th column in industry.csv
+                            }
+                            else if (row.length >= 5) {
+                                orcid = row[4].trim(); // ORCID is 5th column in standard format
+                            }
                             facultyEntries.push({
                                 name: row[0].trim(),
                                 institution: row[1].trim(),
                                 homepage: row[2].trim(),
                                 scholarid: row[3].trim(),
-                                orcid: row.length >= 5 ? row[4].trim() : '0000-0000-0000-0000',
+                                orcid: orcid,
                                 isOld: isOldFile,
-                                oldFile: isOldFile ? allFiles[i] : undefined
+                                oldFile: isOldFile ? filename : undefined
                             });
                             if (isOldFile) {
                                 oldCount++;
