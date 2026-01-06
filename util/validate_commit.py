@@ -37,6 +37,7 @@ CHECKBOX_REFS = {
     "dblp_name": "[^8]",          # DBLP name match
     "homepage": "[^9]",           # Valid homepage
     "scholar_id": "[^10]",        # Valid Google Scholar ID
+    "orcid": "[^11]",             # Valid ORCID format
     "new_institution": "[^14]",   # Open issue first for new institutions
 }
 
@@ -75,6 +76,12 @@ def remove_brackets(s: str) -> str:
 def has_valid_google_scholar_id(s: str) -> bool:
     """Check if Google Scholar ID has valid format (12 chars ending in J)."""
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}[CJ]$', s))
+
+def has_valid_orcid(s: str) -> bool:
+    """Check if ORCID has valid format (0000-0000-0000-000X where X is 0-9 or X)."""
+    if s == '0000-0000-0000-0000':
+        return True  # Placeholder for no ORCID
+    return bool(re.fullmatch(r'^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$', s))
 
 def check_excel_corruption(line: str) -> Optional[str]:
     """Check if a line contains signs of Excel corruption. Returns the pattern found, or None."""
@@ -275,7 +282,7 @@ Respond ONLY with a JSON file like the following:
 
 Pull request diff:
 
-name,affiliation,homepage,scholarid
+name,affiliation,homepage,scholarid,orcid
 {diff}
 
 Checklist:
@@ -468,7 +475,16 @@ def process_csv_diff(diff_path: str) -> bool:
                     valid = False
                     continue
                 try:
-                    name, affiliation, homepage, scholarid = line.split(',')
+                    parts = line.split(',')
+                    if len(parts) == 5:
+                        name, affiliation, homepage, scholarid, orcid = parts
+                    elif len(parts) == 4:
+                        name, affiliation, homepage, scholarid = parts
+                        orcid = '0000-0000-0000-0000'  # Default for old format
+                    else:
+                        print(f"{index}.\t{ERROR}\tInvalid CSV format: expected 4 or 5 columns, got {len(parts)}")
+                        valid = False
+                        continue
                     # Check if this is an affiliation change (name was also deleted)
                     name_normalized = normalize_name_for_sorting(name)
                     if name_normalized in deleted_names:
@@ -531,6 +547,12 @@ def process_csv_diff(diff_path: str) -> bool:
                             else:
                                 pass
                                 # print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
+                    # Validate ORCID format
+                    if not has_valid_orcid(orcid):
+                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['orcid']} Invalid ORCID format: {orcid}")
+                        valid = False
+                    elif orcid != '0000-0000-0000-0000':
+                        print(f"{index}.\t{INFO}\tORCID ({orcid}) has valid format.")
                 except Exception as e:
                     print(f"{index}.\tProcessing error: {e}")
                     valid = False
