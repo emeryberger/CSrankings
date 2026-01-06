@@ -1835,11 +1835,14 @@ function updateSubmitButton(): void {
             if (selectedEntry) {
                 const currentHomepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
                 const currentScholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
+                const currentOrcid = (document.getElementById('orcid') as HTMLInputElement).value.trim();
                 const currentNewName = (document.getElementById('new-name') as HTMLInputElement)?.value.trim() || '';
                 const originalHomepage = selectedEntry.homepage.trim();
                 const originalScholarid = selectedEntry.scholarid.trim();
+                const originalOrcid = selectedEntry.orcid.trim();
                 hasChanges = currentHomepage !== originalHomepage ||
                              currentScholarid !== originalScholarid ||
+                             currentOrcid !== originalOrcid ||
                              (currentNewName !== '' && currentNewName !== selectedEntry.name);
             }
             // For reinstatements (from old/), always allow (moving back to active is a change)
