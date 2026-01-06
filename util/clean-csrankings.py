@@ -117,50 +117,44 @@ with open("institutions.csv", mode="w") as outfile:
 
 
 # Read in all CSrankings files and remove duplicates.
+# Preserve all fields dynamically to avoid losing data when new columns are added.
 for letter in map(chr, range(ord('a'),ord('z')+1)):
     csrankings = {}
+    fieldnames = None
     with open(f"csrankings-{letter}.csv", mode="r") as infile:
         reader = csv.DictReader(infile)
+        fieldnames = reader.fieldnames  # Preserve original field order
         for row in reader:
-            csrankings[row["name"]] = {
-                "affiliation": row["affiliation"],
-                "homepage": row["homepage"],
-                "scholarid": row["scholarid"],
-            }
+            # Store all fields, not just known ones
+            csrankings[row["name"]] = dict(row)
     with open(f"csrankings-{letter}.csv", mode="w") as outfile:
-        sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
-        swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+        swriter = csv.DictWriter(outfile, fieldnames=fieldnames)
         swriter.writeheader()
         for n in csrankings:
-            h = {
-                "name": n,
-                "affiliation": csrankings[n]["affiliation"],
-                "homepage": csrankings[n]["homepage"].rstrip("/"),
-                "scholarid": csrankings[n]["scholarid"],
-            }
-            swriter.writerow(h)
+            entry = csrankings[n].copy()
+            entry["name"] = n
+            # Normalize homepage (remove trailing slash)
+            if "homepage" in entry:
+                entry["homepage"] = entry["homepage"].rstrip("/")
+            swriter.writerow(entry)
     
+# Read in CSrankings file, preserving all fields dynamically.
+csrankings = {}
+csrankings_fieldnames = None
+with open("csrankings.csv", mode="r") as infile:
+    reader = csv.DictReader(infile)
+    csrankings_fieldnames = reader.fieldnames
+    for row in reader:
+        csrankings[row["name"]] = dict(row)
+
+
+# Read in CSrankings file (again for alias processing).
 csrankings = {}
 with open("csrankings.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
+    csrankings_fieldnames = reader.fieldnames
     for row in reader:
-        csrankings[row["name"]] = {
-            "affiliation": row["affiliation"],
-            "homepage": row["homepage"],
-            "scholarid": row["scholarid"],
-        }
-
-
-# Read in CSrankings file.
-csrankings = {}
-with open("csrankings.csv", mode="r") as infile:
-    reader = csv.DictReader(infile)
-    for row in reader:
-        csrankings[row["name"]] = {
-            "affiliation": row["affiliation"],
-            "homepage": row["homepage"],
-            "scholarid": row["scholarid"],
-        }
+        csrankings[row["name"]] = dict(row)
 
 # Remove any cycles in the aliases (that is, name -> alias -> name).
 
@@ -368,18 +362,16 @@ for name in ks:
         print("got me")
 
 
-# Now rewrite csrankings.csv.
+# Now rewrite csrankings.csv, preserving all fields.
 
 csrankings = collections.OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
 with open("csrankings.csv", mode="w") as outfile:
-    sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
-    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter = csv.DictWriter(outfile, fieldnames=csrankings_fieldnames)
     swriter.writeheader()
     for n in csrankings:
-        h = {
-            "name": n,
-            "affiliation": csrankings[n]["affiliation"],
-            "homepage": csrankings[n]["homepage"].rstrip("/"),
-            "scholarid": csrankings[n]["scholarid"],
-        }
-        swriter.writerow(h)
+        entry = csrankings[n].copy()
+        entry["name"] = n
+        # Normalize homepage (remove trailing slash)
+        if "homepage" in entry:
+            entry["homepage"] = entry["homepage"].rstrip("/")
+        swriter.writerow(entry)
