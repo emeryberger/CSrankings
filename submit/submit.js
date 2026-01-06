@@ -728,7 +728,14 @@ function resetForm() {
     clearFieldStatus('institution');
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
-    clearFieldStatus('orcid');
+    // Don't clear orcid status - it's optional and valid by default
+    // Just clear the UI without invalidating the state
+    const orcidGroup = document.getElementById('orcid-group');
+    const orcidStatusEl = document.getElementById('orcid-status');
+    if (orcidGroup)
+        orcidGroup.classList.remove('has-success', 'has-error', 'has-warning');
+    if (orcidStatusEl)
+        orcidStatusEl.innerHTML = '';
     // Hide ORCID search link
     const searchLink = document.getElementById('search-orcid-link');
     if (searchLink)
@@ -888,6 +895,7 @@ function selectFacultyEntry(name) {
         validateInstitution();
         validateHomepage();
         validateScholarId();
+        validateOrcid();
     }
     updatePreview();
     updateSubmitButton();
