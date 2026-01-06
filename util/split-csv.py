@@ -29,7 +29,7 @@ import hashlib
 
 added = set()
 with open("csrankings.csv", mode="w") as outfile:
-    fieldnames = ["name", "affiliation", "homepage", "scholarid"]
+    fieldnames = ["name", "affiliation", "homepage", "scholarid", "orcid"]
     writer = csv.DictWriter(outfile, fieldnames)
     writer.writeheader()
     for i in list(string.ascii_lowercase):
@@ -40,6 +40,9 @@ with open("csrankings.csv", mode="w") as outfile:
             lineno = 2
             for row in reader:
                 try:
+                    # Ensure orcid field exists (for backwards compatibility)
+                    if "orcid" not in row:
+                        row["orcid"] = "0000-0000-0000-0000"
                     hashrow = hashlib.md5(str(row).encode("utf8"))
                     if hashrow not in added:
                         writer.writerow(row)
@@ -65,7 +68,7 @@ with open("csrankings.csv", mode="r") as infile:
                 facWriter = csv.DictWriter(facultyaffs, fieldnames=facfieldnames)
                 facWriter.writeheader()
                 for row in reader:
-                    match = re.match("(.*)\s+\[(.*)\]", row["name"])
+                    match = re.match(r"(.*)\s+\[(.*)\]", row["name"])
                     if match:
                         row["name"] = match.group(1)
                     h = {"name": row["name"], "homepage": row["homepage"]}

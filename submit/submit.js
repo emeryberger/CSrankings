@@ -255,7 +255,6 @@ let institutionMap = new Map(); // name -> full data
 let knownAcademicDomains = new Set(); // domains extracted from institution homepages
 let facultyEntries = [];
 let dblpAliases = new Map(); // alias -> canonical name
-let orcidMap = new Map(); // name -> orcid
 let currentAction = 'add';
 let selectedEntry = null;
 let batchEntries = []; // Entries queued for batch submission
@@ -263,7 +262,8 @@ let validationState = {
     name: { valid: false, message: '' },
     institution: { valid: false, message: '' },
     homepage: { valid: false, message: '' },
-    scholarid: { valid: false, message: '' }
+    scholarid: { valid: false, message: '' },
+    orcid: { valid: true, message: '' } // Optional field, valid by default
 };
 /**
  * Check if a name has a DBLP disambiguation suffix (e.g., "0001")
@@ -281,11 +281,9 @@ function init() {
     return __awaiter(this, void 0, void 0, function* () {
         yield Promise.all([
             loadInstitutions(),
-            loadOrcids(),
+            loadFacultyEntries(),
             loadDBLPAliases()
         ]);
-        // Load faculty entries after orcid map is ready
-        yield loadFacultyEntries();
         setupEventListeners();
         updateUIForAction('add');
         updateSubmitButton();
@@ -372,27 +370,28 @@ function loadFacultyEntries() {
             for (let i = 0; i < responses.length; i++) {
                 const text = responses[i];
                 const isOldFile = i >= activeFiles.length;
+                const filename = allFiles[i];
                 if (text) {
-                    const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
+                    // Parse with headers to access fields by name (handles varying column orders)
+                    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
                     for (const row of parsed.data) {
-                        if (row.length >= 4 && row[0] !== 'name') {
-                            // Trim all values to handle mixed line endings (CRLF vs LF)
-                            const name = row[0].trim();
-                            facultyEntries.push({
-                                name: name,
-                                institution: row[1].trim(),
-                                homepage: row[2].trim(),
-                                scholarid: row[3].trim(),
-                                orcid: orcidMap.get(name) || '0000-0000-0000-0000',
-                                isOld: isOldFile,
-                                oldFile: isOldFile ? allFiles[i] : undefined
-                            });
-                            if (isOldFile) {
-                                oldCount++;
-                            }
-                            else {
-                                activeCount++;
-                            }
+                        // Skip rows without required fields
+                        if (!row.name || !row.affiliation)
+                            continue;
+                        facultyEntries.push({
+                            name: (row.name || '').trim(),
+                            institution: (row.affiliation || '').trim(),
+                            homepage: (row.homepage || '').trim(),
+                            scholarid: (row.scholarid || '').trim(),
+                            orcid: (row.orcid || '0000-0000-0000-0000').trim(),
+                            isOld: isOldFile,
+                            oldFile: isOldFile ? filename : undefined
+                        });
+                        if (isOldFile) {
+                            oldCount++;
+                        }
+                        else {
+                            activeCount++;
                         }
                     }
                 }
@@ -425,30 +424,6 @@ function loadDBLPAliases() {
         }
         catch (error) {
             console.error('Failed to load DBLP aliases:', error);
-        }
-    });
-}
-/**
- * Load ORCIDs for faculty members
- * Maps faculty names to their ORCID identifiers
- */
-function loadOrcids() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch('/orcid.csv');
-            if (!response.ok)
-                return;
-            const text = yield response.text();
-            const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-            for (const row of parsed.data) {
-                if (row.name && row.orcid) {
-                    orcidMap.set(row.name.trim(), row.orcid.trim());
-                }
-            }
-            console.log(`Loaded ${orcidMap.size} ORCIDs`);
-        }
-        catch (error) {
-            console.error('Failed to load ORCIDs:', error);
         }
     });
 }
@@ -503,10 +478,8 @@ function setupEventListeners() {
     scholaridInput.addEventListener('input', validateScholarId);
     // ORCID field - validate format
     const orcidInput = document.getElementById('orcid');
-    orcidInput.addEventListener('input', () => {
-        validateOrcid();
-        updateSubmitButton();
-    });
+    orcidInput.addEventListener('input', validateOrcid);
+    orcidInput.addEventListener('blur', validateOrcid);
     // New DBLP name field (for disambiguation suffixes in updates)
     const newNameInput = document.getElementById('new-name');
     if (newNameInput) {
@@ -605,6 +578,7 @@ function switchToUpdateWithEntry(entry) {
     document.getElementById('institution').value = entry.institution;
     document.getElementById('homepage').value = entry.homepage;
     document.getElementById('scholarid').value = entry.scholarid;
+    document.getElementById('orcid').value = entry.orcid;
     // Show current info with clickable links
     document.getElementById('current-institution').textContent = entry.institution;
     document.getElementById('current-homepage').innerHTML =
@@ -614,6 +588,11 @@ function switchToUpdateWithEntry(entry) {
     document.getElementById('current-scholarid').innerHTML = scholarUrl
         ? `<a href="${escapeHtml(scholarUrl)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
         : entry.scholarid;
+    const orcidUrl = entry.orcid === '0000-0000-0000-0000' ? '' :
+        `https://orcid.org/${entry.orcid}`;
+    document.getElementById('current-orcid').innerHTML = orcidUrl
+        ? `<a href="${escapeHtml(orcidUrl)}" target="_blank">${escapeHtml(entry.orcid)}</a>`
+        : entry.orcid;
     // Handle former faculty status indicator
     const currentInfo = document.getElementById('current-info');
     let statusIndicator = currentInfo.querySelector('.former-status');
@@ -732,7 +711,8 @@ function resetForm() {
         name: { valid: false, message: '' },
         institution: { valid: false, message: '' },
         homepage: { valid: false, message: '' },
-        scholarid: { valid: false, message: '' }
+        scholarid: { valid: false, message: '' },
+        orcid: { valid: true, message: '' } // Optional field, valid by default
     };
     document.getElementById('name').value = '';
     document.getElementById('institution').value = '';
@@ -749,6 +729,10 @@ function resetForm() {
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
     clearFieldStatus('orcid');
+    // Hide ORCID search link
+    const searchLink = document.getElementById('search-orcid-link');
+    if (searchLink)
+        searchLink.style.display = 'none';
     document.getElementById('preview-group').style.display = 'none';
     document.getElementById('current-info-group').style.display = 'none';
     updateSubmitButton();
@@ -760,6 +744,7 @@ function handleNameInput() {
     const input = document.getElementById('name');
     const query = input.value.trim().toLowerCase();
     clearFieldStatus('name');
+    updateOrcidSearchLink();
     if (query.length < 2) {
         hideSuggestions('name');
         return;
@@ -770,6 +755,24 @@ function handleNameInput() {
         showNameSuggestions(matches);
     }
     updatePreview();
+}
+/**
+ * Update the ORCID search link with the current name
+ */
+function updateOrcidSearchLink() {
+    const nameInput = document.getElementById('name');
+    const searchLink = document.getElementById('search-orcid-link');
+    if (!searchLink)
+        return;
+    const name = nameInput.value.trim();
+    if (name.length >= 2) {
+        const encodedName = encodeURIComponent(name);
+        searchLink.href = `https://orcid.org/orcid-search/search?searchQuery=${encodedName}`;
+        searchLink.style.display = 'inline';
+    }
+    else {
+        searchLink.style.display = 'none';
+    }
 }
 /**
  * Get a friendly label for old file type
@@ -827,6 +830,7 @@ function selectFacultyEntry(name) {
     selectedEntry = entry;
     // Populate fields
     document.getElementById('name').value = entry.name;
+    updateOrcidSearchLink();
     if (currentAction === 'update') {
         document.getElementById('institution').value = entry.institution;
         document.getElementById('homepage').value = entry.homepage;
@@ -844,10 +848,10 @@ function selectFacultyEntry(name) {
     document.getElementById('current-scholarid').innerHTML = scholarUrl2
         ? `<a href="${escapeHtml(scholarUrl2)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
         : entry.scholarid;
-    const orcidUrl = entry.orcid === '0000-0000-0000-0000' ? '' :
+    const orcidUrl2 = entry.orcid === '0000-0000-0000-0000' ? '' :
         `https://orcid.org/${entry.orcid}`;
-    document.getElementById('current-orcid').innerHTML = orcidUrl
-        ? `<a href="${escapeHtml(orcidUrl)}" target="_blank">${escapeHtml(entry.orcid)}</a>`
+    document.getElementById('current-orcid').innerHTML = orcidUrl2
+        ? `<a href="${escapeHtml(orcidUrl2)}" target="_blank">${escapeHtml(entry.orcid)}</a>`
         : entry.orcid;
     // Add/update status indicator for former faculty
     let statusIndicator = currentInfo.querySelector('.former-status');
@@ -1605,29 +1609,36 @@ function checkScholarIdAsync(scholarid) {
     setFieldStatus('scholarid', 'valid', `Format valid. <a href="${scholarUrl}" target="_blank">Verify profile ↗</a>`);
 }
 /**
- * Validate ORCID format (optional field)
+ * Validate ORCID format
  */
 function validateOrcid() {
+    if (currentAction === 'remove') {
+        validationState.orcid = { valid: true, message: '' };
+        updateSubmitButton();
+        return;
+    }
     const orcid = document.getElementById('orcid').value.trim();
-    // Empty is valid (optional field)
-    if (!orcid) {
-        clearFieldStatus('orcid');
+    // Empty or placeholder is valid (ORCID is optional)
+    if (!orcid || orcid === '0000-0000-0000-0000') {
+        // Set to placeholder if empty
+        if (!orcid) {
+            document.getElementById('orcid').value = '0000-0000-0000-0000';
+        }
+        setFieldStatus('orcid', 'valid', 'Optional - no ORCID provided');
+        updatePreview();
         return;
     }
-    // Placeholder is valid
-    if (orcid === '0000-0000-0000-0000') {
-        setFieldStatus('orcid', 'valid', 'Placeholder (no ORCID)');
-        return;
-    }
-    // Valid ORCID format: 0000-0000-0000-000X (where X can be 0-9 or X)
+    // Valid ORCID format: 0000-0000-0000-000X (where X is 0-9 or X for checksum)
     const validFormat = /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(orcid);
     if (!validFormat) {
-        setFieldStatus('orcid', 'error', 'Invalid format. Use: 0000-0000-0000-0000');
+        setFieldStatus('orcid', 'error', 'Must be in format 0000-0000-0000-0000 (16 digits with dashes)');
+        updatePreview();
         return;
     }
-    // Format valid - provide link for verification
+    // Format valid, provide verification link
     const orcidUrl = `https://orcid.org/${orcid}`;
-    setFieldStatus('orcid', 'valid', `Format valid. <a href="${orcidUrl}" target="_blank">Verify profile ↗</a>`);
+    setFieldStatus('orcid', 'valid', `Format valid. <a href="${orcidUrl}" target="_blank">Verify ORCID ↗</a>`);
+    updatePreview();
 }
 /**
  * Update field status display
@@ -1846,7 +1857,7 @@ function createAddIssueUrl(data, notes, existingOldEntry) {
     const previousEntrySection = isReinstatement && existingOldEntry
         ? `### Previous Entry (from ${existingOldEntry.oldFile})
 \`\`\`
-${existingOldEntry.name},${existingOldEntry.institution},${existingOldEntry.homepage},${existingOldEntry.scholarid}
+${existingOldEntry.name},${existingOldEntry.institution},${existingOldEntry.homepage},${existingOldEntry.scholarid},${existingOldEntry.orcid}
 \`\`\`
 
 `
@@ -1865,6 +1876,9 @@ ${data.homepage}
 
 ### Google Scholar ID
 ${data.scholarid}
+
+### ORCID
+${data.orcid}
 
 ${previousEntrySection}### Eligibility Confirmation
 - [X] Full-time, tenure-track faculty
@@ -1904,6 +1918,9 @@ function createUpdateIssueUrl(oldEntry, newEntry, notes) {
     if (oldEntry.scholarid !== newEntry.scholarid) {
         changes.push(`- Scholar ID: ${oldEntry.scholarid} → ${newEntry.scholarid}`);
     }
+    if (oldEntry.orcid !== newEntry.orcid) {
+        changes.push(`- ORCID: ${oldEntry.orcid} → ${newEntry.orcid}`);
+    }
     const actionLine = isReinstatement
         ? `Reinstate former faculty (was in ${oldFileLabel || 'old/'} folder)`
         : 'Update existing faculty entry';
@@ -1922,12 +1939,12 @@ ${sourceFile}
 
 ### New Entry
 \`\`\`
-${newEntry.name},${newEntry.institution},${newEntry.homepage},${newEntry.scholarid}
+${newEntry.name},${newEntry.institution},${newEntry.homepage},${newEntry.scholarid},${newEntry.orcid}
 \`\`\`
 
 ### Old Entry
 \`\`\`
-${oldEntry.name},${oldEntry.institution},${oldEntry.homepage},${oldEntry.scholarid}
+${oldEntry.name},${oldEntry.institution},${oldEntry.homepage},${oldEntry.scholarid},${oldEntry.orcid}
 \`\`\`
 
 ${notes ? `### Notes\n${notes}` : ''}`;
@@ -2069,6 +2086,7 @@ function handleAddToBatch() {
     validationState.name = { valid: false, message: '' };
     validationState.homepage = { valid: false, message: '' };
     validationState.scholarid = { valid: false, message: '' };
+    validationState.orcid = { valid: true, message: '' }; // Optional field
     clearFieldStatus('name');
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
@@ -2185,9 +2203,9 @@ function createBatchIssueUrl(entries, institution, notes) {
         : `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
     const entriesList = entries.map((e, i) => {
         const oldNote = e.isOld ? ` *(reinstatement from ${e.oldFile})*` : '';
-        return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\``;
+        return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\`\n   - ORCID: \`${e.orcid}\``;
     }).join('\n\n');
-    const csvLines = entries.map(e => `${e.name},${e.institution},${e.homepage},${e.scholarid}`).join('\n');
+    const csvLines = entries.map(e => `${e.name},${e.institution},${e.homepage},${e.scholarid},${e.orcid}`).join('\n');
     const reinstatementNote = hasReinstatements
         ? `\n### Reinstatements\n${reinstatements.length} of ${entries.length} entries are reinstatements from old/ directories.\n`
         : '';

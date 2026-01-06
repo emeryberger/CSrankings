@@ -298,6 +298,7 @@ User fills form → GitHub Issue → GitHub Action → Pull Request
  - Homepage accessibility      - Full DBLP verification
  - Institution autocomplete    - Homepage content check
  - Scholar ID format           - Duplicate detection
+ - ORCID format                - ORCID validation
 ```
 
 **No OAuth required** - uses GitHub Issue creation which requires only a GitHub login.
@@ -316,9 +317,17 @@ User fills form → GitHub Issue → GitHub Action → Pull Request
 
 ### Three Action Modes
 
-- **Add**: New faculty with eligibility checkboxes
-- **Update**: Search existing entry, modify institution/homepage/scholar ID/DBLP name
+- **Add**: New faculty with eligibility checkboxes, optional ORCID
+- **Update**: Search existing entry, modify institution/homepage/scholar ID/ORCID/DBLP name
 - **Remove**: Search existing entry, select reason (retired, industry, deceased, etc.)
+
+### ORCID Field
+
+The form includes an optional ORCID field:
+- **Format**: `0000-0000-0000-0000` (16 digits with dashes)
+- **Placeholder**: `0000-0000-0000-0000` used when no ORCID is provided
+- **Search link**: "Search ORCID for your name" link appears when name is entered
+- **Validation**: Format validated client-side and server-side
 
 ### DBLP Disambiguation Suffixes
 
@@ -415,7 +424,11 @@ const regex = abbrev.endsWith('.')
 
 **Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
 
-**Google Scholar ID format**: 12 characters, or `NOSCHOLARPAGE`.
+**Google Scholar ID format**: 12 characters ending in `C` or `J`, or `NOSCHOLARPAGE`.
+
+**ORCID format**: `0000-0000-0000-000X` where X is 0-9 or X (checksum digit). Placeholder `0000-0000-0000-0000` for no ORCID.
+
+**CSV parsing**: Uses header-based parsing (`Papa.parse` with `header: true`) to access fields by name, handling varying column orders (e.g., `old/industry.csv` has extra `company` column).
 
 ### Build Commands
 
@@ -725,8 +738,12 @@ PRs that add faculty entries may have merge conflicts when the target CSV files 
 ### CSV File Format
 Faculty entries are stored in alphabetically-split CSV files:
 - `csrankings-a.csv` through `csrankings-z.csv` (by first letter of first name)
-- Format: `Name,Institution,URL,GoogleScholarID`
-- Example: `John Smith,MIT,https://example.com/jsmith,abc123AAAAJ`
+- Format: `name,affiliation,homepage,scholarid,orcid` (5 columns)
+- Example: `John Smith,MIT,https://example.com/jsmith,abc123AAAAJ,0000-0002-1234-5678`
+- ORCID placeholder: `0000-0000-0000-0000` for faculty without known ORCIDs
+
+**Special case - old/industry.csv**: Has 6 columns with an extra `company` field:
+- Format: `name,affiliation,homepage,scholarid,company,orcid`
 
 ### Alphabetical Ordering Rules
 - Entries are sorted alphabetically by **full name** (first name, then last name)
