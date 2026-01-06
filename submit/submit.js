@@ -728,6 +728,10 @@ function resetForm() {
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
     clearFieldStatus('orcid');
+    // Hide ORCID search link
+    const searchLink = document.getElementById('search-orcid-link');
+    if (searchLink)
+        searchLink.style.display = 'none';
     document.getElementById('preview-group').style.display = 'none';
     document.getElementById('current-info-group').style.display = 'none';
     updateSubmitButton();
@@ -739,6 +743,7 @@ function handleNameInput() {
     const input = document.getElementById('name');
     const query = input.value.trim().toLowerCase();
     clearFieldStatus('name');
+    updateOrcidSearchLink();
     if (query.length < 2) {
         hideSuggestions('name');
         return;
@@ -749,6 +754,24 @@ function handleNameInput() {
         showNameSuggestions(matches);
     }
     updatePreview();
+}
+/**
+ * Update the ORCID search link with the current name
+ */
+function updateOrcidSearchLink() {
+    const nameInput = document.getElementById('name');
+    const searchLink = document.getElementById('search-orcid-link');
+    if (!searchLink)
+        return;
+    const name = nameInput.value.trim();
+    if (name.length >= 2) {
+        const encodedName = encodeURIComponent(name);
+        searchLink.href = `https://orcid.org/orcid-search/search?searchQuery=${encodedName}`;
+        searchLink.style.display = 'inline';
+    }
+    else {
+        searchLink.style.display = 'none';
+    }
 }
 /**
  * Get a friendly label for old file type
@@ -806,6 +829,7 @@ function selectFacultyEntry(name) {
     selectedEntry = entry;
     // Populate fields
     document.getElementById('name').value = entry.name;
+    updateOrcidSearchLink();
     if (currentAction === 'update') {
         document.getElementById('institution').value = entry.institution;
         document.getElementById('homepage').value = entry.homepage;
