@@ -26,9 +26,9 @@ print(strip_accents("Ítalo")[0].lower())
 
 # Split 'csrankings.csv'
 
-fieldnames = ["name", "affiliation", "homepage", "scholarid"]
 with open("csrankings.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
+    fieldnames = reader.fieldnames  # Preserve all columns dynamically
     arr = [row for row in reader]
     arr.sort(key=lambda a: strip_accents(a["name"]))
     index = 0
