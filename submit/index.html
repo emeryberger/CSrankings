@@ -87,6 +87,7 @@
                                 <p><strong>Institution:</strong> <span id="current-institution">-</span></p>
                                 <p><strong>Homepage:</strong> <span id="current-homepage">-</span></p>
                                 <p><strong>Scholar ID:</strong> <span id="current-scholarid">-</span></p>
+                                <p><strong>ORCID:</strong> <span id="current-orcid">-</span></p>
                             </div>
                         </div>
                     </div>
@@ -157,6 +158,22 @@
                             <p class="help-block">
                                 Find after <code>user=</code> in Google Scholar URL.
                                 <a href="#" id="test-scholar-link" target="_blank" style="display:none;">Verify on Scholar</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ORCID Field -->
+                    <div class="form-group" id="orcid-group">
+                        <label for="orcid" class="col-sm-3 control-label">
+                            ORCID
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="orcid"
+                                   placeholder="0000-0000-0000-0000">
+                            <span id="orcid-status" class="help-block status"></span>
+                            <p class="help-block">
+                                16-digit identifier from <a href="https://orcid.org" target="_blank">orcid.org</a>.
+                                Optional for new entries.
                             </p>
                         </div>
                     </div>

@@ -255,6 +255,7 @@ let institutionMap = new Map(); // name -> full data
 let knownAcademicDomains = new Set(); // domains extracted from institution homepages
 let facultyEntries = [];
 let dblpAliases = new Map(); // alias -> canonical name
+let orcidMap = new Map(); // name -> orcid
 let currentAction = 'add';
 let selectedEntry = null;
 let batchEntries = []; // Entries queued for batch submission
@@ -280,9 +281,11 @@ function init() {
     return __awaiter(this, void 0, void 0, function* () {
         yield Promise.all([
             loadInstitutions(),
-            loadFacultyEntries(),
+            loadOrcids(),
             loadDBLPAliases()
         ]);
+        // Load faculty entries after orcid map is ready
+        yield loadFacultyEntries();
         setupEventListeners();
         updateUIForAction('add');
         updateSubmitButton();
@@ -374,11 +377,13 @@ function loadFacultyEntries() {
                     for (const row of parsed.data) {
                         if (row.length >= 4 && row[0] !== 'name') {
                             // Trim all values to handle mixed line endings (CRLF vs LF)
+                            const name = row[0].trim();
                             facultyEntries.push({
-                                name: row[0].trim(),
+                                name: name,
                                 institution: row[1].trim(),
                                 homepage: row[2].trim(),
                                 scholarid: row[3].trim(),
+                                orcid: orcidMap.get(name) || '0000-0000-0000-0000',
                                 isOld: isOldFile,
                                 oldFile: isOldFile ? allFiles[i] : undefined
                             });
@@ -420,6 +425,30 @@ function loadDBLPAliases() {
         }
         catch (error) {
             console.error('Failed to load DBLP aliases:', error);
+        }
+    });
+}
+/**
+ * Load ORCIDs for faculty members
+ * Maps faculty names to their ORCID identifiers
+ */
+function loadOrcids() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch('/orcid.csv');
+            if (!response.ok)
+                return;
+            const text = yield response.text();
+            const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+            for (const row of parsed.data) {
+                if (row.name && row.orcid) {
+                    orcidMap.set(row.name.trim(), row.orcid.trim());
+                }
+            }
+            console.log(`Loaded ${orcidMap.size} ORCIDs`);
+        }
+        catch (error) {
+            console.error('Failed to load ORCIDs:', error);
         }
     });
 }
@@ -472,6 +501,12 @@ function setupEventListeners() {
     // Scholar ID field - validate format
     const scholaridInput = document.getElementById('scholarid');
     scholaridInput.addEventListener('input', validateScholarId);
+    // ORCID field - validate format
+    const orcidInput = document.getElementById('orcid');
+    orcidInput.addEventListener('input', () => {
+        validateOrcid();
+        updateSubmitButton();
+    });
     // New DBLP name field (for disambiguation suffixes in updates)
     const newNameInput = document.getElementById('new-name');
     if (newNameInput) {
@@ -630,7 +665,7 @@ function updateUIForAction(action) {
     show('institution-label-new', action === 'add');
     show('institution-label-update', action !== 'add');
     // Fields visibility for remove
-    const hideForRemove = ['institution-group', 'homepage-group', 'scholarid-group'];
+    const hideForRemove = ['institution-group', 'homepage-group', 'scholarid-group', 'orcid-group'];
     hideForRemove.forEach(id => show(id, action !== 'remove'));
     // Removal reason
     show('removal-reason-group', action === 'remove');
@@ -703,6 +738,7 @@ function resetForm() {
     document.getElementById('institution').value = '';
     document.getElementById('homepage').value = '';
     document.getElementById('scholarid').value = '';
+    document.getElementById('orcid').value = '';
     document.getElementById('notes').value = '';
     document.getElementById('removal-reason').value = '';
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
@@ -712,6 +748,7 @@ function resetForm() {
     clearFieldStatus('institution');
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
+    clearFieldStatus('orcid');
     document.getElementById('preview-group').style.display = 'none';
     document.getElementById('current-info-group').style.display = 'none';
     updateSubmitButton();
@@ -794,6 +831,7 @@ function selectFacultyEntry(name) {
         document.getElementById('institution').value = entry.institution;
         document.getElementById('homepage').value = entry.homepage;
         document.getElementById('scholarid').value = entry.scholarid;
+        document.getElementById('orcid').value = entry.orcid;
     }
     // Show current info with status indicator for former faculty
     const currentInfoGroup = document.getElementById('current-info-group');
@@ -806,6 +844,11 @@ function selectFacultyEntry(name) {
     document.getElementById('current-scholarid').innerHTML = scholarUrl2
         ? `<a href="${escapeHtml(scholarUrl2)}" target="_blank">${escapeHtml(entry.scholarid)}</a>`
         : entry.scholarid;
+    const orcidUrl = entry.orcid === '0000-0000-0000-0000' ? '' :
+        `https://orcid.org/${entry.orcid}`;
+    document.getElementById('current-orcid').innerHTML = orcidUrl
+        ? `<a href="${escapeHtml(orcidUrl)}" target="_blank">${escapeHtml(entry.orcid)}</a>`
+        : entry.orcid;
     // Add/update status indicator for former faculty
     let statusIndicator = currentInfo.querySelector('.former-status');
     if (entry.isOld) {
@@ -1562,6 +1605,31 @@ function checkScholarIdAsync(scholarid) {
     setFieldStatus('scholarid', 'valid', `Format valid. <a href="${scholarUrl}" target="_blank">Verify profile ↗</a>`);
 }
 /**
+ * Validate ORCID format (optional field)
+ */
+function validateOrcid() {
+    const orcid = document.getElementById('orcid').value.trim();
+    // Empty is valid (optional field)
+    if (!orcid) {
+        clearFieldStatus('orcid');
+        return;
+    }
+    // Placeholder is valid
+    if (orcid === '0000-0000-0000-0000') {
+        setFieldStatus('orcid', 'valid', 'Placeholder (no ORCID)');
+        return;
+    }
+    // Valid ORCID format: 0000-0000-0000-000X (where X can be 0-9 or X)
+    const validFormat = /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(orcid);
+    if (!validFormat) {
+        setFieldStatus('orcid', 'error', 'Invalid format. Use: 0000-0000-0000-0000');
+        return;
+    }
+    // Format valid - provide link for verification
+    const orcidUrl = `https://orcid.org/${orcid}`;
+    setFieldStatus('orcid', 'valid', `Format valid. <a href="${orcidUrl}" target="_blank">Verify profile ↗</a>`);
+}
+/**
  * Update field status display
  */
 function setFieldStatus(field, status, message) {
@@ -1727,11 +1795,12 @@ function handleSubmit(e) {
     const institution = document.getElementById('institution').value.trim();
     const homepage = document.getElementById('homepage').value.trim();
     const scholarid = document.getElementById('scholarid').value.trim();
+    const orcid = document.getElementById('orcid').value.trim() || '0000-0000-0000-0000';
     const notes = document.getElementById('notes').value.trim();
     // Build submission data
     // For updates, use new name if provided, otherwise keep original name
     const effectiveName = (currentAction === 'update' && newName) ? newName : name;
-    const entry = { name: effectiveName, institution, homepage, scholarid };
+    const entry = { name: effectiveName, institution, homepage, scholarid, orcid };
     let issueUrl;
     switch (currentAction) {
         case 'add':
@@ -1969,6 +2038,7 @@ function handleAddToBatch() {
     const institution = document.getElementById('institution').value.trim();
     const homepage = document.getElementById('homepage').value.trim();
     const scholarid = document.getElementById('scholarid').value.trim();
+    const orcid = document.getElementById('orcid').value.trim() || '0000-0000-0000-0000';
     // Check for duplicate name in batch
     if (batchEntries.some(e => e.name.toLowerCase() === name.toLowerCase())) {
         alert(`"${name}" is already in the batch.`);
@@ -1983,7 +2053,7 @@ function handleAddToBatch() {
     const oldEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase() && e.isOld);
     // Add to batch (include old/ info if found)
     const entry = {
-        name, institution, homepage, scholarid,
+        name, institution, homepage, scholarid, orcid,
         isOld: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.isOld,
         oldFile: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.oldFile
     };
@@ -1994,6 +2064,7 @@ function handleAddToBatch() {
     document.getElementById('name').value = '';
     document.getElementById('homepage').value = '';
     document.getElementById('scholarid').value = '';
+    document.getElementById('orcid').value = '';
     // Reset validation for cleared fields
     validationState.name = { valid: false, message: '' };
     validationState.homepage = { valid: false, message: '' };
@@ -2001,6 +2072,7 @@ function handleAddToBatch() {
     clearFieldStatus('name');
     clearFieldStatus('homepage');
     clearFieldStatus('scholarid');
+    clearFieldStatus('orcid');
     // Hide preview
     const previewGroup = document.getElementById('preview-group');
     if (previewGroup)
