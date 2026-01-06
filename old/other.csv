@@ -1,31 +1,62 @@
-name,affiliation,homepage,scholarid,orcid
-Andrew W. Appel,Princeton University,https://www.cs.princeton.edu/~appel,wC_ntLYAAAAJ,0000-0000-0000-0000
-Anind Dey,Carnegie Mellon University,http://www.cs.cmu.edu/~anind,ydA8Q5AAAAAJ,0000-0000-0000-0000
-Anind K. Dey,Carnegie Mellon University,http://www.cs.cmu.edu/~anind,ydA8Q5AAAAAJ,0000-0002-3004-0770
-Alex Waibel,Karlsruhe Inst. of Technology,http://www.cs.cmu.edu/~ahw,uHwTzpYAAAAJ,0000-0000-0000-0000
-Alexander H. Waibel,Carnegie Mellon University,http://www.cs.cmu.edu/~ahw,uHwTzpYAAAAJ,0000-0000-0000-0000
-Barbara Engelhardt,Princeton University,https://www.cs.princeton.edu/~bee,VEGtG7YAAAAJ,0000-0000-0000-0000
-Barbara E. Engelhardt,Princeton University,https://www.cs.princeton.edu/~bee,VEGtG7YAAAAJ,0000-0000-0000-0000
-Benjamin J. Hescott,Northeastern University,https://www.ccis.northeastern.edu/people/benjamin-hescott/,O8NWAXoAAAAJ,0000-0000-0000-0000
-Benjamin J. Raphael,Princeton University,http://compbio.cs.brown.edu,GhvZjJUAAAAJ,0000-0003-1274-048X
-Brian Kocoloski,Washington University in St. Louis,https://www.cse.wustl.edu/~brian.kocoloski,Qu_xQjYAAAAJ,0000-0000-0000-0000
-Eric Xing,Carnegie Mellon University,http://www.cs.cmu.edu/~epxing,5pKTRxEAAAAJ,0000-0000-0000-0000
-Eric P. Xing,Carnegie Mellon University,http://www.cs.cmu.edu/~epxing,5pKTRxEAAAAJ,0000-0000-0000-0000
-Eric Po Xing,Carnegie Mellon University,http://www.cs.cmu.edu/~epxing,5pKTRxEAAAAJ,0000-0000-0000-0000
-Janet Siegmund,TU Chemnitz,http://www.infosun.fim.uni-passau.de/se/people-jsiegmund.php,Lg3MjDMAAAAJ,0000-0002-5815-266X
-Jinze Liu,Virginia Commonwealth University,https://biostatistics.vcu.edu/about/faculty-directory/detail.html?id=liuj15,NOSCHOLARPAGE,0000-0000-0000-0000
-Grigory Yaroslavtsev,George Mason University,http://grigory.us,AbRFE3IAAAAJ,0000-0000-0000-0000
-Lionel C. Briand,University of Luxembourg,http://wwwen.uni.lu/snt/people/lionel_briand,Zj897NoAAAAJ,0000-0000-0000-0000
-Mark Zhandary,Princeton University,https://www.cs.princeton.edu/~mzhandry,NOSCHOLARPAGE,0000-0000-0000-0000
-Mark Zhandry,Princeton University,https://www.cs.princeton.edu/~mzhandry,NOSCHOLARPAGE,0000-0000-0000-0000
-Peter M. Chen,University of Michigan,http://web.eecs.umich.edu/~pmchen,dVZNQqUAAAAJ,0000-0002-5951-4183
-Rui Tan,Nanyang Technological University,https://www3.ntu.edu.sg/home/tanrui,co5MGPkAAAAJ,0000-0000-0000-0000
-Süleyman Cenk Sahinalp,Indiana University,https://ccr.cancer.gov/staff-directory/s-cenk-sahinalp,O8wbTncAAAAJ,0000-0000-0000-0000
-Wyatt Lloyd,Princeton University,http://www-bcf.usc.edu/~wyattllo,NU-FHh4AAAAJ,0000-0002-4870-0490
-Viktor Gruev,Washington University in St. Louis,https://ece.illinois.edu/directory/profile/vgruev,WV7XovQAAAAJ,0000-0000-0000-0000
-Yoram Singer,Princeton University,http://www.cs.princeton.edu/~ysinger,NOSCHOLARPAGE,0000-0000-0000-0000
-Dongfang Liu,Rochester Inst. of Technology,https://dongfang-liu.github.io,uICY0vEAAAAJ,0000-0000-0000-0000
-Tong Lu,Nanjing University,https://cs.nju.edu.cn/lutong,NOSCHOLARPAGE,0000-0000-0000-0000
-Grace Eden,IIIT Delhi,https://www.iiitd.ac.in/grace,Gs5GF8YAAAAJ,0000-0000-0000-0000
-William D. Richard,Washington University in St. Louis,http://www.cse.wustl.edu/~wdr,HQeEzR0AAAAJ,0000-0000-0000-0000
+name,affiliation,homepage,scholarid,orcid
+
+Andrew W. Appel,Princeton University,https://www.cs.princeton.edu/~appel,wC_ntLYAAAAJ,0000-0000-0000-0000
+
+Anind Dey,Carnegie Mellon University,http://www.cs.cmu.edu/~anind,ydA8Q5AAAAAJ,0000-0000-0000-0000
+
+Anind K. Dey,Carnegie Mellon University,http://www.cs.cmu.edu/~anind,ydA8Q5AAAAAJ,0000-0002-3004-0770
+
+Alex Waibel,Karlsruhe Inst. of Technology,http://www.cs.cmu.edu/~ahw,uHwTzpYAAAAJ,0000-0000-0000-0000
+
+Alexander H. Waibel,Carnegie Mellon University,http://www.cs.cmu.edu/~ahw,uHwTzpYAAAAJ,0000-0000-0000-0000
+
+Barbara Engelhardt,Princeton University,https://www.cs.princeton.edu/~bee,VEGtG7YAAAAJ,0000-0000-0000-0000
+
+Barbara E. Engelhardt,Princeton University,https://www.cs.princeton.edu/~bee,VEGtG7YAAAAJ,0000-0000-0000-0000
+
+Benjamin J. Hescott,Northeastern University,https://www.ccis.northeastern.edu/people/benjamin-hescott/,O8NWAXoAAAAJ,0000-0000-0000-0000
+
+Benjamin J. Raphael,Princeton University,http://compbio.cs.brown.edu,GhvZjJUAAAAJ,0000-0003-1274-048X
+
+Brian Kocoloski,Washington University in St. Louis,https://www.cse.wustl.edu/~brian.kocoloski,Qu_xQjYAAAAJ,0000-0000-0000-0000
+
+Eric Xing,Carnegie Mellon University,http://www.cs.cmu.edu/~epxing,5pKTRxEAAAAJ,0000-0000-0000-0000
+
+Eric P. Xing,Carnegie Mellon University,http://www.cs.cmu.edu/~epxing,5pKTRxEAAAAJ,0000-0000-0000-0000
+
+Eric Po Xing,Carnegie Mellon University,http://www.cs.cmu.edu/~epxing,5pKTRxEAAAAJ,0000-0000-0000-0000
+
+Janet Siegmund,TU Chemnitz,http://www.infosun.fim.uni-passau.de/se/people-jsiegmund.php,Lg3MjDMAAAAJ,0000-0002-5815-266X
+
+Jinze Liu,Virginia Commonwealth University,https://biostatistics.vcu.edu/about/faculty-directory/detail.html?id=liuj15,NOSCHOLARPAGE,0000-0000-0000-0000
+
+Grigory Yaroslavtsev,George Mason University,http://grigory.us,AbRFE3IAAAAJ,0000-0000-0000-0000
+
+Lionel C. Briand,University of Luxembourg,http://wwwen.uni.lu/snt/people/lionel_briand,Zj897NoAAAAJ,0000-0000-0000-0000
+
+Mark Zhandary,Princeton University,https://www.cs.princeton.edu/~mzhandry,NOSCHOLARPAGE,0000-0000-0000-0000
+
+Mark Zhandry,Princeton University,https://www.cs.princeton.edu/~mzhandry,NOSCHOLARPAGE,0000-0000-0000-0000
+
+Peter M. Chen,University of Michigan,http://web.eecs.umich.edu/~pmchen,dVZNQqUAAAAJ,0000-0002-5951-4183
+
+Rui Tan,Nanyang Technological University,https://www3.ntu.edu.sg/home/tanrui,co5MGPkAAAAJ,0000-0000-0000-0000
+
+Süleyman Cenk Sahinalp,Indiana University,https://ccr.cancer.gov/staff-directory/s-cenk-sahinalp,O8wbTncAAAAJ,0000-0000-0000-0000
+
+Wyatt Lloyd,Princeton University,http://www-bcf.usc.edu/~wyattllo,NU-FHh4AAAAJ,0000-0002-4870-0490
+
+Viktor Gruev,Washington University in St. Louis,https://ece.illinois.edu/directory/profile/vgruev,WV7XovQAAAAJ,0000-0000-0000-0000
+
+Yoram Singer,Princeton University,http://www.cs.princeton.edu/~ysinger,NOSCHOLARPAGE,0000-0000-0000-0000
+
+Dongfang Liu,Rochester Inst. of Technology,https://dongfang-liu.github.io,uICY0vEAAAAJ,0000-0000-0000-0000
+
+Tong Lu,Nanjing University,https://cs.nju.edu.cn/lutong,NOSCHOLARPAGE,0000-0000-0000-0000
+
+Grace Eden,IIIT Delhi,https://www.iiitd.ac.in/grace,Gs5GF8YAAAAJ,0000-0000-0000-0000
+
+William D. Richard,Washington University in St. Louis,http://www.cse.wustl.edu/~wdr,HQeEzR0AAAAJ,0000-0000-0000-0000
+
 Gordon Stewart 0001,Ohio University,http://ace.cs.ohio.edu/~gstewart,pnzKfOcAAAAJ,0000-0000-0000-0000
+Qizhi Liu,Nanjing University,https://cs.nju.edu.cn/liuqizhi,NOSCHOLARPAGE,0000-0000-0000-0000
