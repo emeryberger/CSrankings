@@ -62,11 +62,14 @@ def main():
     print(f"Loaded {len(orcid_map)} ORCID entries")
 
     print("\nMerging into csrankings-*.csv files...")
-    total_entries = 0
-    total_with_orcid = 0
-
     for letter in string.ascii_lowercase:
         filename = f"csrankings-{letter}.csv"
+        if os.path.exists(filename):
+            merge_orcid_into_file(filename, orcid_map)
+
+    print("\nMerging into old/*.csv files...")
+    old_files = ["old/emeritus.csv", "old/industry.csv", "old/other.csv", "old/research.csv", "old/rip.csv"]
+    for filename in old_files:
         if os.path.exists(filename):
             merge_orcid_into_file(filename, orcid_map)
 

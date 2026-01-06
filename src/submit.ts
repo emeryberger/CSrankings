@@ -808,6 +808,10 @@ function resetForm(): void {
     clearFieldStatus('scholarid');
     clearFieldStatus('orcid');
 
+    // Hide ORCID search link
+    const searchLink = document.getElementById('search-orcid-link') as HTMLAnchorElement;
+    if (searchLink) searchLink.style.display = 'none';
+
     (document.getElementById('preview-group') as HTMLElement).style.display = 'none';
     (document.getElementById('current-info-group') as HTMLElement).style.display = 'none';
 
@@ -822,6 +826,7 @@ function handleNameInput(): void {
     const query = input.value.trim().toLowerCase();
 
     clearFieldStatus('name');
+    updateOrcidSearchLink();
 
     if (query.length < 2) {
         hideSuggestions('name');
@@ -838,6 +843,25 @@ function handleNameInput(): void {
     }
 
     updatePreview();
+}
+
+/**
+ * Update the ORCID search link with the current name
+ */
+function updateOrcidSearchLink(): void {
+    const nameInput = document.getElementById('name') as HTMLInputElement;
+    const searchLink = document.getElementById('search-orcid-link') as HTMLAnchorElement;
+
+    if (!searchLink) return;
+
+    const name = nameInput.value.trim();
+    if (name.length >= 2) {
+        const encodedName = encodeURIComponent(name);
+        searchLink.href = `https://orcid.org/orcid-search/search?searchQuery=${encodedName}`;
+        searchLink.style.display = 'inline';
+    } else {
+        searchLink.style.display = 'none';
+    }
 }
 
 /**
@@ -897,6 +921,7 @@ function selectFacultyEntry(name: string): void {
 
     // Populate fields
     (document.getElementById('name') as HTMLInputElement).value = entry.name;
+    updateOrcidSearchLink();
 
     if (currentAction === 'update') {
         (document.getElementById('institution') as HTMLInputElement).value = entry.institution;
