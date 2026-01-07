@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# DEPRECATED: This script uses Python 2 syntax and is not used in the Makefile.
+# Use split-csv.py instead, which merges csrankings-*.csv into csrankings.csv.
+
 from collections import *
 import gzip
 import xmltodict

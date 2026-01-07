@@ -9,8 +9,15 @@ Uses the placeholder 'NOORCID' for entries without an ORCID.
 import csv
 import string
 import os
+import tempfile
+import shutil
 
 ORCID_PLACEHOLDER = "0000-0000-0000-0000"
+
+def count_csv_rows(filename):
+    """Count data rows in a CSV file (excluding header)."""
+    with open(filename, mode="r", encoding="utf-8") as f:
+        return sum(1 for _ in f) - 1  # Subtract 1 for header
 
 def load_orcid_data(filename="orcid.csv"):
     """Load ORCID data into a dictionary keyed by name."""
@@ -25,7 +32,17 @@ def load_orcid_data(filename="orcid.csv"):
 
 
 def merge_orcid_into_file(filename, orcid_map):
-    """Add ORCID column to a csrankings-*.csv file."""
+    """Add ORCID column to a csrankings-*.csv file.
+
+    Safety measures to prevent data loss:
+    1. Count rows before processing
+    2. Write to temp file first
+    3. Verify output row count matches input
+    4. Only replace original after verification
+    """
+    # Count rows before processing
+    input_row_count = count_csv_rows(filename)
+
     rows = []
     with open(filename, mode="r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -43,12 +60,37 @@ def merge_orcid_into_file(filename, orcid_map):
             row["orcid"] = orcid
             rows.append(row)
 
-    # Write back with new column
+    # Verify we read all rows
+    if len(rows) != input_row_count:
+        raise RuntimeError(
+            f"ERROR: {filename}: Read {len(rows)} rows but expected {input_row_count}. "
+            "Aborting to prevent data loss!"
+        )
+
+    # Write to temp file first
     new_fieldnames = list(fieldnames) + ["orcid"]
-    with open(filename, mode="w", encoding="utf-8", newline="\r\n") as f:
-        writer = csv.DictWriter(f, fieldnames=new_fieldnames, lineterminator="\r\n")
-        writer.writeheader()
-        writer.writerows(rows)
+    temp_fd, temp_path = tempfile.mkstemp(suffix=".csv")
+    try:
+        with os.fdopen(temp_fd, mode="w", encoding="utf-8", newline="\r\n") as f:
+            writer = csv.DictWriter(f, fieldnames=new_fieldnames, lineterminator="\r\n")
+            writer.writeheader()
+            writer.writerows(rows)
+
+        # Verify temp file has correct row count
+        output_row_count = count_csv_rows(temp_path)
+        if output_row_count != input_row_count:
+            raise RuntimeError(
+                f"ERROR: {filename}: Wrote {output_row_count} rows but expected {input_row_count}. "
+                "Aborting to prevent data loss!"
+            )
+
+        # Safe to replace original
+        shutil.move(temp_path, filename)
+    except Exception:
+        # Clean up temp file on error
+        if os.path.exists(temp_path):
+            os.unlink(temp_path)
+        raise
 
     # Count stats
     with_orcid = sum(1 for r in rows if r["orcid"] != ORCID_PLACEHOLDER)
