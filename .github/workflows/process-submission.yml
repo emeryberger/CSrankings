@@ -358,13 +358,19 @@ jobs:
                   const newEntry = `${name},${institution},${homepage},${scholarid},${orcid}`;
                   const newNameNorm = normalize(name);
 
-                  // Check for duplicates
-                  const isDuplicate = lines.some(line => {
+                  // Check for duplicates (exact match with accents)
+                  const exactDuplicate = lines.some(line => {
                     const existingName = line.split(',')[0];
-                    return normalize(existingName) === newNameNorm;
+                    return existingName.toLowerCase() === name.toLowerCase();
                   });
 
-                  if (isDuplicate && action === 'add') {
+                  // Check for accent-variant match (same name, different accents)
+                  const accentVariant = !exactDuplicate && lines.find(line => {
+                    const existingName = line.split(',')[0];
+                    return normalize(existingName) === newNameNorm && existingName.toLowerCase() !== name.toLowerCase();
+                  });
+
+                  if (exactDuplicate && action === 'add') {
                     await github.rest.issues.createComment({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
@@ -378,6 +384,90 @@ jobs:
                       labels: ['validation-failed']
                     });
                     continue;
+                  }
+
+                  // If accent variant exists, treat as name correction (update instead of add)
+                  if (accentVariant && action === 'add') {
+                    const existingName = accentVariant.split(',')[0];
+                    console.log(`  Accent correction detected: "${existingName}" → "${name}"`);
+                    // Find and replace the existing entry
+                    let found = false;
+                    for (let i = 0; i < lines.length; i++) {
+                      const lineName = lines[i].split(',')[0];
+                      if (lineName === existingName) {
+                        lines[i] = newEntry;
+                        found = true;
+                        break;
+                      }
+                    }
+                    if (found) {
+                      // Skip the normal add flow, we've already updated in place
+                      const newContent = lines.join('\r\n');
+                      branchName = `fix-accent-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+                      commitMessage = `Fix accent: ${existingName} → ${name}`;
+                      prTitle = `Fix accent: ${existingName} → ${name}`;
+                      prBody = `## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
+
+                      // Jump to branch creation (skip normal add logic)
+                      console.log(`  Creating branch: ${branchName}`);
+                      const { data: ref } = await github.rest.git.getRef({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        ref: 'heads/gh-pages'
+                      });
+                      await github.rest.git.createRef({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        ref: `refs/heads/${branchName}`,
+                        sha: ref.object.sha
+                      });
+                      const { data: fileData } = await github.rest.repos.getContent({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        path: targetFile,
+                        ref: 'gh-pages'
+                      });
+                      await github.rest.repos.createOrUpdateFileContents({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        path: targetFile,
+                        message: commitMessage,
+                        content: Buffer.from(newContent).toString('base64'),
+                        sha: fileData.sha,
+                        branch: branchName
+                      });
+                      const { data: pr } = await github.rest.pulls.create({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        title: prTitle,
+                        head: branchName,
+                        base: 'gh-pages',
+                        body: prBody
+                      });
+                      console.log(`  Created PR #${pr.number}: ${pr.html_url}`);
+                      await github.rest.issues.createComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: issue.number,
+                        body: `## ✅ Accent Correction PR Created\n\nDetected this is an accent correction for an existing entry.\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR.`
+                      });
+                      await github.rest.issues.addLabels({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: issue.number,
+                        labels: ['pr-created']
+                      });
+                      try {
+                        await github.rest.actions.createWorkflowDispatch({
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          workflow_id: 'commit_validation.yml',
+                          ref: 'gh-pages',
+                          inputs: { pr_number: String(pr.number) }
+                        });
+                      } catch (e) { console.error(`  Validation trigger failed: ${e.message}`); }
+                      continue;
+                    }
                   }
 
                   // Find insertion point (alphabetical order)
@@ -547,7 +637,11 @@ jobs:
                   branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Remove ${name} (${reason || 'unspecified'})`;
                   prTitle = `Remove ${name} (${institution || 'unknown'})`;
-                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Note:** Entry should be added to \`${oldFile}\``;
+                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
+
+                  // Store old file info for the remove action
+                  var removeOldFile = oldFile;
+                  var removeEntry = removedLine;
                 }
 
                 // Create branch and PR
@@ -587,6 +681,50 @@ jobs:
                   sha: fileData.sha,
                   branch: branchName
                 });
+
+                // For remove action, also add entry to the appropriate old/ file
+                if (action === 'remove' && removeOldFile && removeEntry) {
+                  console.log(`  Adding entry to ${removeOldFile}`);
+
+                  // Get old file content
+                  const { data: oldFileData } = await github.rest.repos.getContent({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: removeOldFile,
+                    ref: branchName
+                  });
+
+                  let oldContent = Buffer.from(oldFileData.content, 'base64').toString('utf8');
+                  let oldLines = oldContent.split(/\r?\n/);
+
+                  // Find insertion point (alphabetical order by name)
+                  const entryName = removeEntry.split(',')[0];
+                  const entryNameNorm = normalize(entryName);
+                  let insertIndex = 1; // Skip header
+                  for (let i = 1; i < oldLines.length; i++) {
+                    if (!oldLines[i].trim()) continue;
+                    const existingName = oldLines[i].split(',')[0];
+                    if (normalize(existingName) > entryNameNorm) {
+                      insertIndex = i;
+                      break;
+                    }
+                    insertIndex = i + 1;
+                  }
+
+                  oldLines.splice(insertIndex, 0, removeEntry);
+                  const newOldContent = oldLines.join('\r\n');
+
+                  // Update old file
+                  await github.rest.repos.createOrUpdateFileContents({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: removeOldFile,
+                    message: `Add ${entryName} to ${removeOldFile}`,
+                    content: Buffer.from(newOldContent).toString('base64'),
+                    sha: oldFileData.sha,
+                    branch: branchName
+                  });
+                }
 
                 // Create pull request
                 const { data: pr } = await github.rest.pulls.create({
