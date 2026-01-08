@@ -312,10 +312,26 @@ jobs:
 
                 if (action === 'add' || action === 'reinstate') {
                   // Parse add/reinstate fields
-                  const institution = parseField(body, 'Institution');
-                  const homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
-                  const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
-                  const orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
+                  let institution = parseField(body, 'Institution');
+                  let homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
+                  let scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
+                  let orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
+
+                  // For reinstatements coming through update flow, fields may be in CSV format
+                  // Try to extract from New Entry if explicit fields are missing
+                  if (action === 'reinstate' && (!institution || !homepage || !scholarid)) {
+                    const newEntryText = parseField(body, 'New Entry');
+                    if (newEntryText) {
+                      const parts = newEntryText.split(',').map(s => s.trim());
+                      // CSV format: name,institution,homepage,scholarid,orcid
+                      if (parts.length >= 4) {
+                        if (!institution && parts[1]) institution = parts[1];
+                        if (!homepage && parts[2]) homepage = parts[2];
+                        if (!scholarid && parts[3]) scholarid = parts[3];
+                        if (parts[4] && parts[4] !== '0000-0000-0000-0000') orcid = parts[4];
+                      }
+                    }
+                  }
 
                   if (!institution || !homepage || !scholarid) {
                     await github.rest.issues.createComment({
@@ -491,11 +507,27 @@ jobs:
                   prTitle = `${actionWord} ${name} (${institution})`;
                   prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
 
-                  // For reinstatement, also need to remove from old/ file
+                  // For reinstatement, store source file for removal from old/ directory
+                  var reinstateSourceFile = null;
+                  var reinstateEntryName = name;
                   if (action === 'reinstate') {
-                    const sourceFile = parseField(body, 'Source File');
+                    // Try to get source file from explicit field
+                    let sourceFile = parseField(body, 'Source File');
+                    // Also check Old Entry for reinstatements that came through update flow
+                    if (!sourceFile) {
+                      const oldEntrySection = parseField(body, 'Old Entry');
+                      // Old entry might indicate source file, but usually the source is from old/ folder
+                      // Check Previous Entry section for add-style reinstatements
+                      const prevEntryMatch = body.match(/### Previous Entry \(from ([^)]+)\)/);
+                      if (prevEntryMatch) {
+                        sourceFile = prevEntryMatch[1];
+                      }
+                    }
                     if (sourceFile) {
-                      prBody += `\n\n**Note:** Also remove entry from \`${sourceFile}\``;
+                      // Remove backticks if present
+                      sourceFile = sourceFile.replace(/`/g, '').trim();
+                      reinstateSourceFile = sourceFile;
+                      prBody += `\n\n**Note:** Entry will be removed from \`${sourceFile}\``;
                     }
                   }
 
@@ -681,6 +713,57 @@ jobs:
                   sha: fileData.sha,
                   branch: branchName
                 });
+
+                // For reinstatement, remove entry from the old/ source file
+                if (action === 'reinstate' && reinstateSourceFile && reinstateEntryName) {
+                  console.log(`  Removing entry from ${reinstateSourceFile}`);
+
+                  try {
+                    // Get old file content
+                    const { data: oldFileData } = await github.rest.repos.getContent({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      path: reinstateSourceFile,
+                      ref: branchName
+                    });
+
+                    let oldContent = Buffer.from(oldFileData.content, 'base64').toString('utf8');
+                    let oldLines = oldContent.split(/\r?\n/);
+
+                    // Find and remove the entry by name
+                    const nameNorm = normalize(reinstateEntryName);
+                    let removeIndex = -1;
+                    for (let i = 1; i < oldLines.length; i++) {
+                      const existingName = oldLines[i].split(',')[0];
+                      if (normalize(existingName) === nameNorm) {
+                        removeIndex = i;
+                        break;
+                      }
+                    }
+
+                    if (removeIndex !== -1) {
+                      oldLines.splice(removeIndex, 1);
+                      const newOldContent = oldLines.join('\r\n');
+
+                      // Update old file
+                      await github.rest.repos.createOrUpdateFileContents({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        path: reinstateSourceFile,
+                        message: `Remove ${reinstateEntryName} from ${reinstateSourceFile}`,
+                        content: Buffer.from(newOldContent).toString('base64'),
+                        sha: oldFileData.sha,
+                        branch: branchName
+                      });
+                      console.log(`  Removed ${reinstateEntryName} from ${reinstateSourceFile}`);
+                    } else {
+                      console.log(`  Warning: Could not find ${reinstateEntryName} in ${reinstateSourceFile}`);
+                    }
+                  } catch (oldFileError) {
+                    console.error(`  Could not remove from ${reinstateSourceFile}: ${oldFileError.message}`);
+                    // Don't fail the whole operation, just log the error
+                  }
+                }
 
                 // For remove action, also add entry to the appropriate old/ file
                 if (action === 'remove' && removeOldFile && removeEntry) {
