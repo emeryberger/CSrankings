@@ -488,6 +488,31 @@ This is essential for DBLP disambiguation suffix updates like:
 
 The workflow correctly searches for "Christian Schilling" (old name) rather than "Christian Schilling 0001" (new name that doesn't exist yet).
 
+### Reinstatement Action Logic
+
+Reinstatements (moving faculty from `old/` back to active) can come through **two different submission paths**:
+
+| Path | Source | Field Format |
+|------|--------|--------------|
+| Add-style | `createAddIssueUrl` with `existingOldEntry` | Explicit `### Institution`, `### Homepage URL`, `### Google Scholar ID` fields |
+| Update-style | `createUpdateIssueUrl` with `isOld=true` | Fields embedded in `### New Entry` CSV format |
+
+**The workflow handles both**:
+1. First tries to parse explicit fields (`Institution`, `Homepage URL`, etc.)
+2. If missing and action is `reinstate`, falls back to parsing `### New Entry` CSV:
+   ```javascript
+   if (action === 'reinstate' && (!institution || !homepage || !scholarid)) {
+       const newEntryText = parseField(body, 'New Entry');
+       const parts = newEntryText.split(',');
+       // CSV format: name,institution,homepage,scholarid,orcid
+       institution = parts[1]; homepage = parts[2]; scholarid = parts[3];
+   }
+   ```
+
+**Old file removal**: The workflow also removes the entry from the source `old/` file (e.g., `old/industry.csv`). The source file is found via:
+- `### Source File` field (update-style reinstatements)
+- `### Previous Entry (from ...)` section (add-style reinstatements)
+
 ### Reprocessing Failed Submissions
 
 If a submission fails validation and needs reprocessing after a fix:
