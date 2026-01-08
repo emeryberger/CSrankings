@@ -101,6 +101,11 @@ jobs:
               try {
                 const body = issue.body || '';
                 const action = parseAction(body);
+
+                // Extract submitter info for co-authoring
+                const submitter = issue.user?.login || 'unknown';
+                const submitterEmail = `${submitter}@users.noreply.github.com`;
+                const coAuthorLine = `\n\nCo-Authored-By: ${submitter} <${submitterEmail}>`;
                 console.log(`  Action: ${action}`);
 
                 if (action === 'unknown') {
@@ -227,7 +232,7 @@ jobs:
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       path: targetFile,
-                      message: `Add ${entries.length} faculty from ${institution}`,
+                      message: `Add ${entries.length} faculty from ${institution}${coAuthorLine}`,
                       content: Buffer.from(newContent).toString('base64'),
                       sha: fileData.sha,
                       branch: branchName
@@ -236,7 +241,7 @@ jobs:
 
                   // Create PR
                   const prTitle = `Add ${csvLines.length} faculty from ${institution}`;
-                  const prBody = `## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
+                  const prBody = `## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
 
                   const { data: pr } = await github.rest.pulls.create({
                     owner: context.repo.owner,
@@ -420,9 +425,9 @@ jobs:
                       // Skip the normal add flow, we've already updated in place
                       const newContent = lines.join('\r\n');
                       branchName = `fix-accent-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                      commitMessage = `Fix accent: ${existingName} → ${name}`;
+                      commitMessage = `Fix accent: ${existingName} → ${name}${coAuthorLine}`;
                       prTitle = `Fix accent: ${existingName} → ${name}`;
-                      prBody = `## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
+                      prBody = `## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
 
                       // Jump to branch creation (skip normal add logic)
                       console.log(`  Creating branch: ${branchName}`);
@@ -503,9 +508,9 @@ jobs:
 
                   const actionWord = action === 'reinstate' ? 'Reinstate' : 'Add';
                   branchName = `${action}-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `${actionWord} ${name} (${institution})`;
+                  commitMessage = `${actionWord} ${name} (${institution})${coAuthorLine}`;
                   prTitle = `${actionWord} ${name} (${institution})`;
-                  prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
+                  prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
 
                   // For reinstatement, store source file for removal from old/ directory
                   var reinstateSourceFile = null;
@@ -603,9 +608,9 @@ jobs:
                   // Use searchName for branch/title since that's the name being updated
                   const displayName = searchName !== newName ? `${searchName} → ${newName}` : searchName;
                   branchName = `update-${searchName.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `Update ${displayName}`;
+                  commitMessage = `Update ${displayName}${coAuthorLine}`;
                   prTitle = `Update ${displayName}`;
-                  prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+                  prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
 
                   // Override targetFile for the update operation
                   targetFile = searchTargetFile;
@@ -667,9 +672,9 @@ jobs:
                   }
 
                   branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `Remove ${name} (${reason || 'unspecified'})`;
+                  commitMessage = `Remove ${name} (${reason || 'unspecified'})${coAuthorLine}`;
                   prTitle = `Remove ${name} (${institution || 'unknown'})`;
-                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
+                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
 
                   // Store old file info for the remove action
                   var removeOldFile = oldFile;
@@ -750,7 +755,7 @@ jobs:
                         owner: context.repo.owner,
                         repo: context.repo.repo,
                         path: reinstateSourceFile,
-                        message: `Remove ${reinstateEntryName} from ${reinstateSourceFile}`,
+                        message: `Remove ${reinstateEntryName} from ${reinstateSourceFile}${coAuthorLine}`,
                         content: Buffer.from(newOldContent).toString('base64'),
                         sha: oldFileData.sha,
                         branch: branchName
@@ -802,7 +807,7 @@ jobs:
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     path: removeOldFile,
-                    message: `Add ${entryName} to ${removeOldFile}`,
+                    message: `Add ${entryName} to ${removeOldFile}${coAuthorLine}`,
                     content: Buffer.from(newOldContent).toString('base64'),
                     sha: oldFileData.sha,
                     branch: branchName

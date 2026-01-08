@@ -469,6 +469,11 @@ await github.rest.actions.createWorkflowDispatch({
 });
 ```
 
+**Submitter attribution**: The workflow gives credit to the person who submitted the issue:
+- Commit messages include `Co-Authored-By: username <username@users.noreply.github.com>`
+- PR bodies include `Submitted by @username` with a clickable mention
+- The submitter's GitHub username is extracted from `issue.user.login`
+
 ### Update Action Logic
 
 For update submissions, the workflow must find the existing entry to replace it. **Critical**: When the name is changing (e.g., adding a DBLP disambiguation suffix), the workflow searches using the **old name** from the `### Old Entry` field, not the `### Name` field.
