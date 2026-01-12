@@ -73,16 +73,11 @@ namespace CSRankings {
 
         yearChangeCallback = onChangeCallback;
 
-        // Populate hidden selects dynamically
-        populateYearSelects();
+        // NOTE: populateYearSelects() is called in app.ts BEFORE URL resolution,
+        // so the hidden selects already exist and may have URL param values set.
+        // Do NOT call populateYearSelects() here as it would overwrite URL params!
 
-        // Initialize display spans with default values
-        const fromDisplay = document.getElementById('year-display-from');
-        const toDisplay = document.getElementById('year-display-to');
-        if (fromDisplay) fromDisplay.textContent = DEFAULT_FROM_YEAR.toString();
-        if (toDisplay) toDisplay.textContent = DEFAULT_TO_YEAR.toString();
-
-        // Get initial values from hidden selects (for URL param support)
+        // Get initial values from hidden selects (which may have URL params applied)
         const fromYearSelect = document.getElementById('fromyear') as HTMLSelectElement;
         const toYearSelect = document.getElementById('toyear') as HTMLSelectElement;
 
@@ -95,6 +90,12 @@ namespace CSRankings {
         if (toYearSelect && toYearSelect.value) {
             initialTo = parseInt(toYearSelect.value) || DEFAULT_TO_YEAR;
         }
+
+        // Initialize display spans with values from selects (respects URL params)
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay) fromDisplay.textContent = initialFrom.toString();
+        if (toDisplay) toDisplay.textContent = initialTo.toString();
 
         // Create the slider
         noUiSlider.create(sliderElement, {
