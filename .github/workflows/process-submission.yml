@@ -108,11 +108,6 @@ jobs:
 
             console.log(`Batch submissions: ${batchSubmissions.length}, Individual: ${individualSubmissions.length}`);
 
-            // Process batch submissions first (no rate limiting for batches)
-            // Then individual submissions with rate limiting
-            const sortedIssues = [...batchSubmissions, ...individualSubmissions];
-            let prsCreatedThisRun = 0;
-
             // Helper to parse issue body
             const parseField = (body, label) => {
               // Match "### Label" followed by 1-2 newlines, then capture until next ### or end
