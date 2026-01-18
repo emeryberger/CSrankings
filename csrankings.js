@@ -2132,21 +2132,20 @@ var CSRankings;
     CSRankings.addCheckboxListeners = addCheckboxListeners;
     /* Add event listeners for group selector buttons */
     function addGroupSelectorListeners(callbacks) {
-        // All areas on/off buttons
-        const allOnWidget = document.getElementById('all_areas_on');
-        if (allOnWidget) {
-            allOnWidget.addEventListener("click", () => {
-                callbacks.activateAll();
+        // "All" toggle switches (both banner and sidebar)
+        const allToggles = document.querySelectorAll('.all-toggle-checkbox');
+        allToggles.forEach(toggle => {
+            toggle.addEventListener("change", (e) => {
+                const checkbox = e.target;
+                if (checkbox.checked) {
+                    callbacks.activateAll();
+                }
+                else {
+                    callbacks.activateNone();
+                }
                 CSRankings.recordUserInteraction();
             });
-        }
-        const allOffWidget = document.getElementById('all_areas_off');
-        if (allOffWidget) {
-            allOffWidget.addEventListener("click", () => {
-                callbacks.activateNone();
-                CSRankings.recordUserInteraction();
-            });
-        }
+        });
     }
     CSRankings.addGroupSelectorListeners = addGroupSelectorListeners;
     /* Add event listeners for area toggle buttons (the section header buttons) */
@@ -2268,6 +2267,41 @@ var CSRankings;
                 toggleBtn.classList.add(selectionClass);
             }
         }
+        // Update "All" toggle switches (both banner and sidebar)
+        const allAreas = [...CSRankings.aiAreas, ...CSRankings.systemsAreas, ...CSRankings.theoryAreas, ...CSRankings.interdisciplinaryAreas];
+        let anyCheckedGlobal = false;
+        let allChecked = true;
+        for (const area of allAreas) {
+            const checkbox = document.getElementById(area);
+            if (checkbox) {
+                if (checkbox.checked) {
+                    anyCheckedGlobal = true;
+                }
+                else {
+                    allChecked = false;
+                }
+            }
+        }
+        // Update all toggle switches
+        const allToggles = document.querySelectorAll('.all-toggle');
+        const allToggleCheckboxes = document.querySelectorAll('.all-toggle-checkbox');
+        allToggles.forEach(toggle => {
+            toggle.classList.remove('selection-none', 'selection-partial', 'selection-all');
+            if (!anyCheckedGlobal) {
+                toggle.classList.add('selection-none');
+            }
+            else if (allChecked) {
+                toggle.classList.add('selection-all');
+            }
+            else {
+                toggle.classList.add('selection-partial');
+            }
+        });
+        // Sync checkbox state (without triggering change event)
+        // Toggle is "on" only when ALL areas are checked
+        allToggleCheckboxes.forEach(checkbox => {
+            checkbox.checked = allChecked;
+        });
     }
     CSRankings.updateAreaIndicators = updateAreaIndicators;
     /* Area indicator click handling moved to area-dropdown.ts */
@@ -2996,6 +3030,7 @@ var CSRankings;
                 id: 'focus-area',
                 title: 'Focus on Your Area',
                 text: `
+                    <p>Use the <strong>All</strong> toggle to quickly select or deselect all areas at once.</p>
                     <p>Click any category pill (<strong>AI</strong>, <strong>Systems</strong>, <strong>Theory</strong>, <strong>Interdisc.</strong>) to open a dropdown with all the sub-areas.</p>
                     <p>Use the checkboxes to select exactly which research areas interest you. Click <strong>▶</strong> next to any area to see individual conferences.</p>
                 `,
