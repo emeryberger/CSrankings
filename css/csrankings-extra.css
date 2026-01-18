@@ -193,6 +193,96 @@ optgroup:not(:first-child) {
   box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
 }
 
+/* All Areas Toggle Switch */
+.all-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 10px;
+}
+
+.all-toggle-checkbox {
+  display: none;
+}
+
+.all-toggle-slider {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  background-color: #ccc;
+  border-radius: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.all-toggle-slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.all-toggle-checkbox:checked + .all-toggle-slider {
+  background-color: #05317c;
+}
+
+.all-toggle-checkbox:checked + .all-toggle-slider::before {
+  transform: translateX(14px);
+}
+
+.all-toggle-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Partial state - steel blue (between #ccc off and #05317c on) */
+.all-toggle.selection-partial .all-toggle-slider {
+  background-color: #6889a8;
+}
+
+.all-toggle.selection-partial .all-toggle-slider::before {
+  transform: translateX(7px);
+}
+
+/* All Areas Header in Sidebar */
+.all-areas-header {
+  display: flex;
+  align-items: center;
+  font-size: 125%;
+  margin-bottom: 8px;
+}
+
+.all-toggle-sidebar .all-toggle-slider {
+  width: 40px;
+  height: 22px;
+}
+
+.all-toggle-sidebar .all-toggle-slider::before {
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+.all-toggle-sidebar .all-toggle-checkbox:checked + .all-toggle-slider::before {
+  transform: translateX(18px);
+}
+
+.all-toggle-sidebar.selection-partial .all-toggle-slider::before {
+  transform: translateX(9px);
+}
+
+.all-toggle-sidebar .all-toggle-label {
+  font-size: 14px;
+}
+
 /* Area Dropdown Panels */
 .area-indicators {
   position: relative;
