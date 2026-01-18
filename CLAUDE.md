@@ -41,14 +41,16 @@ make csrankings.min.js
 
 - `src/` - TypeScript source files (modular architecture):
   - `app.ts` - Main application entry point, CSRankings singleton class
+  - `area-dropdown.ts` - Area dropdown panels for category pills (AI, Systems, Theory, Interdisc.)
   - `checkbox.ts` - Checkbox state management and caching
   - `computation.ts` - Ranking computation and incremental updates
   - `config.ts` - Area maps, parent/child relationships, configuration
   - `data-loader.ts` - CSV loading (parallel via Promise.all)
-  - `event-handlers.ts` - UI event listeners
+  - `event-handlers.ts` - UI event listeners, "All" toggle switch sync
   - `navigation.ts` - Client-side routing (Navigo)
   - `rendering.ts` - HTML generation for tables and dropdowns
   - `region.ts` - Region/continent filtering
+  - `tour.ts` - Interactive guided tour for new users
   - `types.ts` - TypeScript type definitions
   - `utils.ts` - Utility functions
   - `verification.ts` - Incremental computation verification

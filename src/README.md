@@ -17,7 +17,9 @@ This directory contains the modular TypeScript source files for CSRankings. All 
 | `continents.ts` | ~70 | Continent/country data for region filtering |
 | `checkbox.ts` | ~170 | Checkbox state management (refreshCheckboxCache, updateWeightsFromCache, activateFieldSet, handleParentCheckboxClick, handleChildCheckboxClick) |
 | `navigation.ts` | ~260 | URL handling and routing (buildURLString, buildFullURL, handleNavigation, clearNonSubsetted, subsetting, geoCheck) |
-| `event-handlers.ts` | ~115 | DOM event listener setup (addDropdownListeners, addAreaWidgetListeners, addCheckboxListeners, addGroupSelectorListeners) |
+| `event-handlers.ts` | ~280 | DOM event listener setup (addDropdownListeners, addAreaWidgetListeners, addCheckboxListeners, addGroupSelectorListeners, updateAreaIndicators) |
+| `area-dropdown.ts` | ~470 | Area dropdown panels for category pills (AI, Systems, Theory, Interdisc.) |
+| `tour.ts` | ~610 | Interactive guided tour for new users (Shepherd.js integration) |
 | `app.ts` | ~680 | Main App class with instance state and public API methods |
 
 ## Build
@@ -68,4 +70,6 @@ Files must be listed in dependency order in `tsconfig.json`:
 10. `checkbox.ts` - Depends on config (for areas, parentMap, childMap, nextTier)
 11. `navigation.ts` - Depends on config, checkbox, continents
 12. `event-handlers.ts` - Depends on config, checkbox
-13. `app.ts` - Depends on all above modules
+13. `area-dropdown.ts` - Depends on config, event-handlers
+14. `tour.ts` - Depends on config, rendering (for chart generation)
+15. `app.ts` - Depends on all above modules
