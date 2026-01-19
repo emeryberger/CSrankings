@@ -25,6 +25,76 @@ optgroup:not(:first-child) {
     color: #984ea3
 }
 
+/* No Areas Selected Message */
+.no-areas-selected {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.no-areas-message {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.no-areas-pills {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.area-pill-btn {
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.area-pill-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.area-pill-btn.ai-pill {
+    background-color: #377eb8;
+}
+
+.area-pill-btn.systems-pill {
+    background-color: #ff7f00;
+}
+
+.area-pill-btn.theory-pill {
+    background-color: #4daf4a;
+}
+
+.area-pill-btn.interdisc-pill {
+    background-color: #984ea3;
+}
+
+.btn-select-all {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #05317c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.btn-select-all:hover {
+    filter: brightness(1.2);
+}
+
 /* Hide left area selection panel on mobile only */
 @media (max-width: 767px) {
   #area-selection-panel {
@@ -145,7 +215,7 @@ optgroup:not(:first-child) {
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, filter 0.15s ease, transform 0.1s ease;
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -186,7 +256,8 @@ optgroup:not(:first-child) {
 }
 
 .area-indicator:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.15);
+  transform: translateY(-1px);
 }
 
 .area-indicator.active {
@@ -463,6 +534,7 @@ optgroup:not(:first-child) {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
+  transition: opacity 0.2s ease, filter 0.15s ease, transform 0.1s ease;
   cursor: pointer;
   transition: opacity 0.2s ease, filter 0.2s ease;
   user-select: none;
@@ -501,6 +573,7 @@ optgroup:not(:first-child) {
 
 .area-toggle-btn:hover {
   filter: brightness(1.15);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 992px) {
