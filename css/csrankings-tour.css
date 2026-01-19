@@ -120,6 +120,8 @@
 .btn-help-tour:hover {
   background: #337ab7;
   color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
 }
 
 /* Welcome step - centered without attachment */
