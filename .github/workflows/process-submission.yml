@@ -236,6 +236,30 @@ jobs:
               const [submitter, institution] = key.split('|||');
               console.log(`\nAuto-batching ${issues.length} submissions from ${submitter} for ${institution}`);
 
+              // Add "CSrankings form submission" label and clean up title for all issues in batch
+              for (const issue of issues) {
+                try {
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['CSrankings form submission']
+                  });
+
+                  if (issue.title.startsWith('[CSrankings form submission]')) {
+                    const newTitle = issue.title.replace('[CSrankings form submission]', '').trim();
+                    await github.rest.issues.update({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      title: newTitle
+                    });
+                  }
+                } catch (labelError) {
+                  console.log(`  Could not update label/title for #${issue.number}: ${labelError.message}`);
+                }
+              }
+
               try {
                 // Collect all entries
                 const entries = [];
@@ -388,6 +412,30 @@ jobs:
             // Process each issue (sorted: batch first, then individual)
             for (const issue of sortedIssues) {
               console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
+
+              // Add "CSrankings form submission" label and clean up title
+              try {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  labels: ['CSrankings form submission']
+                });
+
+                // Remove "[CSrankings form submission]" prefix from title
+                if (issue.title.startsWith('[CSrankings form submission]')) {
+                  const newTitle = issue.title.replace('[CSrankings form submission]', '').trim();
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    title: newTitle
+                  });
+                  console.log(`  Updated title to: ${newTitle}`);
+                }
+              } catch (labelError) {
+                console.log(`  Could not update label/title: ${labelError.message}`);
+              }
 
               // Check total PRs created this run
               if (prsCreatedThisRun >= MAX_TOTAL_PRS_PER_RUN) {
