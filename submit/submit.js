@@ -728,6 +728,10 @@ function updateUIForAction(action) {
         batchButtons.style.display = action === 'add' ? 'block' : 'none';
     if (batchSection)
         batchSection.style.display = action === 'add' ? 'block' : 'none';
+    // Hide batch help text for non-add actions
+    const submitHelp = document.getElementById('submit-help');
+    if (submitHelp)
+        submitHelp.style.display = action === 'add' ? 'block' : 'none';
     // Clear batch entries when switching away from add
     if (action !== 'add' && batchEntries.length > 0) {
         clearBatchEntries();

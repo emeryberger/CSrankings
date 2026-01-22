@@ -12,7 +12,7 @@ Optimizations:
 """
 
 import argparse
-import gzip
+import lzma
 import json
 import csv
 import sys
@@ -335,9 +335,9 @@ def do_it() -> None:
     include_all = args.all
 
     # Use iterparse for memory-efficient streaming
-    with gzip.open("dblp.xml.gz", 'rb') as gz:
+    with lzma.open("dblp.xml.xz", 'rb') as xz:
         context = etree.iterparse(
-            gz,
+            xz,
             events=('end',),
             tag=('inproceedings', 'article'),
             load_dtd=True,
