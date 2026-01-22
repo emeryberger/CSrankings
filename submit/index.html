@@ -44,6 +44,12 @@
                     </div>
                 </div>
 
+                <!-- Rate Limit Notice -->
+                <div class="alert alert-warning" id="rate-limit-notice">
+                    <strong>Adding multiple faculty?</strong> Use the <strong>batch feature</strong> below to add them all at once.
+                    Individual submissions are limited to <strong>2 per day per user</strong>. Batch submissions have no limit.
+                </div>
+
                 <!-- Guidelines Alert -->
                 <div class="alert alert-info" id="guidelines-add">
                     <strong>Adding new faculty:</strong> Must be <strong>full-time, tenure-track</strong> and able to <strong>solely advise CS PhD students</strong>.
@@ -51,6 +57,7 @@
                 </div>
                 <div class="alert alert-info" id="guidelines-update" style="display:none;">
                     <strong>Updating existing entry:</strong> Use this to change affiliation (moved institutions), update homepage URL, or correct Google Scholar ID.
+                    <br><small>To move someone to industry or emeritus, use the <strong>Remove</strong> action instead.</small>
                 </div>
                 <div class="alert alert-warning" id="guidelines-remove" style="display:none;">
                     <strong>Removing faculty:</strong> Use this for faculty who have retired, moved to industry, or are no longer tenure-track.
@@ -238,6 +245,19 @@
                                         <br><small class="text-muted" style="margin-left: 20px;">If not, provide a link and explain in Notes below</small>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Profile Confirmation -->
+                    <div class="form-group" id="github-profile-group">
+                        <label class="col-sm-3 control-label">Confirmation</label>
+                        <div class="col-sm-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="check-github-name" required>
+                                    My <a href="https://docs.github.com/en/get-started/start-your-journey/setting-up-your-profile" target="_blank"><strong>GitHub profile</strong></a> displays my first and last name
+                                </label>
                             </div>
                         </div>
                     </div>

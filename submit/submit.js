@@ -275,6 +275,36 @@ function hasDisambiguationSuffix(name) {
     const lastPart = parts[parts.length - 1];
     return /^\d{4}$/.test(lastPart);
 }
+/**
+ * Check if a name is properly capitalized (not all caps or all lowercase)
+ * Returns true for names like "John Smith", "Mary-Jane Watson", "Li Wei"
+ * Returns false for "JOHN SMITH" or "john smith"
+ */
+function isProperlyCapitalized(name) {
+    if (!name || name.length < 2)
+        return false;
+    // Split into parts (handling spaces, hyphens)
+    const parts = name.split(/[\s\-]+/).filter(p => p.length > 0);
+    for (const part of parts) {
+        // Skip single letters (initials like "J." or "W.")
+        if (part.length <= 2)
+            continue;
+        // Skip numbers (disambiguation suffixes like "0001")
+        if (/^\d+$/.test(part))
+            continue;
+        // Extract just letters for the check
+        const letters = part.replace(/[^a-zA-Z]/g, '');
+        if (letters.length > 1) {
+            // All uppercase is bad (e.g., "JOHN")
+            if (letters === letters.toUpperCase())
+                return false;
+            // All lowercase is bad (e.g., "john")
+            if (letters === letters.toLowerCase())
+                return false;
+        }
+    }
+    return true;
+}
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', init);
 function init() {
@@ -633,6 +663,7 @@ function updateUIForAction(action) {
     show('guidelines-add', action === 'add');
     show('guidelines-update', action === 'update');
     show('guidelines-remove', action === 'remove');
+    show('rate-limit-notice', action === 'add');
     // Name help text
     show('name-help-add', action === 'add');
     show('name-help-update', action !== 'add');
@@ -697,6 +728,10 @@ function updateUIForAction(action) {
         batchButtons.style.display = action === 'add' ? 'block' : 'none';
     if (batchSection)
         batchSection.style.display = action === 'add' ? 'block' : 'none';
+    // Hide batch help text for non-add actions
+    const submitHelp = document.getElementById('submit-help');
+    if (submitHelp)
+        submitHelp.style.display = action === 'add' ? 'block' : 'none';
     // Clear batch entries when switching away from add
     if (action !== 'add' && batchEntries.length > 0) {
         clearBatchEntries();
@@ -1146,6 +1181,11 @@ function validateName() {
     const excelPatterns = ['#NAME?', '#REF?', '#VALUE?', '#DIV/0!', '#NULL!', '#N/A', '#NUM!'];
     if (excelPatterns.some(p => name.includes(p))) {
         setFieldStatus('name', 'error', 'Name contains Excel error - do not use Excel');
+        return;
+    }
+    // Check for proper capitalization (not all caps or all lowercase)
+    if (!isProperlyCapitalized(name)) {
+        setFieldStatus('name', 'error', 'Name must use proper capitalization (not ALL CAPS or all lowercase)');
         return;
     }
     // For add action, check it doesn't already exist and verify DBLP
