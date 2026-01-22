@@ -207,7 +207,21 @@ namespace CSRankings {
             s += "<br>" + "</body>" + "</html>";
         } else {
             /* Nothing selected. */
-            s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
+            s = `<div class="no-areas-selected">
+                <div class="no-areas-message">
+                    <strong>No areas selected.</strong>
+                    Click an area to select it.
+                </div>
+                <div class="no-areas-pills">
+                    <span class="area-pill-btn ai-pill" onclick="CSRankings.App.getInstance().activateAI()">AI</span>
+                    <span class="area-pill-btn systems-pill" onclick="CSRankings.App.getInstance().activateSystems()">Systems</span>
+                    <span class="area-pill-btn theory-pill" onclick="CSRankings.App.getInstance().activateTheory()">Theory</span>
+                    <span class="area-pill-btn interdisc-pill" onclick="CSRankings.App.getInstance().activateOthers()">Interdisc.</span>
+                </div>
+                <button class="btn-select-all" onclick="CSRankings.App.getInstance().activateAll()">
+                    Select All Areas
+                </button>
+            </div>`;
         }
         return s;
     }

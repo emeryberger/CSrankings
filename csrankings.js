@@ -1120,7 +1120,21 @@ var CSRankings;
         }
         else {
             /* Nothing selected. */
-            s = "<h3>Please select at least one area by clicking one or more checkboxes.</h3>";
+            s = `<div class="no-areas-selected">
+                <div class="no-areas-message">
+                    <strong>No areas selected.</strong>
+                    Click an area to select it.
+                </div>
+                <div class="no-areas-pills">
+                    <span class="area-pill-btn ai-pill" onclick="CSRankings.App.getInstance().activateAI()">AI</span>
+                    <span class="area-pill-btn systems-pill" onclick="CSRankings.App.getInstance().activateSystems()">Systems</span>
+                    <span class="area-pill-btn theory-pill" onclick="CSRankings.App.getInstance().activateTheory()">Theory</span>
+                    <span class="area-pill-btn interdisc-pill" onclick="CSRankings.App.getInstance().activateOthers()">Interdisc.</span>
+                </div>
+                <button class="btn-select-all" onclick="CSRankings.App.getInstance().activateAll()">
+                    Select All Areas
+                </button>
+            </div>`;
         }
         return s;
     }
@@ -2132,21 +2146,20 @@ var CSRankings;
     CSRankings.addCheckboxListeners = addCheckboxListeners;
     /* Add event listeners for group selector buttons */
     function addGroupSelectorListeners(callbacks) {
-        // All areas on/off buttons
-        const allOnWidget = document.getElementById('all_areas_on');
-        if (allOnWidget) {
-            allOnWidget.addEventListener("click", () => {
-                callbacks.activateAll();
+        // "All" toggle switches (both banner and sidebar)
+        const allToggles = document.querySelectorAll('.all-toggle-checkbox');
+        allToggles.forEach(toggle => {
+            toggle.addEventListener("change", (e) => {
+                const checkbox = e.target;
+                if (checkbox.checked) {
+                    callbacks.activateAll();
+                }
+                else {
+                    callbacks.activateNone();
+                }
                 CSRankings.recordUserInteraction();
             });
-        }
-        const allOffWidget = document.getElementById('all_areas_off');
-        if (allOffWidget) {
-            allOffWidget.addEventListener("click", () => {
-                callbacks.activateNone();
-                CSRankings.recordUserInteraction();
-            });
-        }
+        });
     }
     CSRankings.addGroupSelectorListeners = addGroupSelectorListeners;
     /* Add event listeners for area toggle buttons (the section header buttons) */
@@ -2268,6 +2281,41 @@ var CSRankings;
                 toggleBtn.classList.add(selectionClass);
             }
         }
+        // Update "All" toggle switches (both banner and sidebar)
+        const allAreas = [...CSRankings.aiAreas, ...CSRankings.systemsAreas, ...CSRankings.theoryAreas, ...CSRankings.interdisciplinaryAreas];
+        let anyCheckedGlobal = false;
+        let allChecked = true;
+        for (const area of allAreas) {
+            const checkbox = document.getElementById(area);
+            if (checkbox) {
+                if (checkbox.checked) {
+                    anyCheckedGlobal = true;
+                }
+                else {
+                    allChecked = false;
+                }
+            }
+        }
+        // Update all toggle switches
+        const allToggles = document.querySelectorAll('.all-toggle');
+        const allToggleCheckboxes = document.querySelectorAll('.all-toggle-checkbox');
+        allToggles.forEach(toggle => {
+            toggle.classList.remove('selection-none', 'selection-partial', 'selection-all');
+            if (!anyCheckedGlobal) {
+                toggle.classList.add('selection-none');
+            }
+            else if (allChecked) {
+                toggle.classList.add('selection-all');
+            }
+            else {
+                toggle.classList.add('selection-partial');
+            }
+        });
+        // Sync checkbox state (without triggering change event)
+        // Toggle is "on" only when ALL areas are checked
+        allToggleCheckboxes.forEach(checkbox => {
+            checkbox.checked = allChecked;
+        });
     }
     CSRankings.updateAreaIndicators = updateAreaIndicators;
     /* Area indicator click handling moved to area-dropdown.ts */
@@ -2326,16 +2374,10 @@ var CSRankings;
             return;
         }
         yearChangeCallback = onChangeCallback;
-        // Populate hidden selects dynamically
-        populateYearSelects();
-        // Initialize display spans with default values
-        const fromDisplay = document.getElementById('year-display-from');
-        const toDisplay = document.getElementById('year-display-to');
-        if (fromDisplay)
-            fromDisplay.textContent = DEFAULT_FROM_YEAR.toString();
-        if (toDisplay)
-            toDisplay.textContent = DEFAULT_TO_YEAR.toString();
-        // Get initial values from hidden selects (for URL param support)
+        // NOTE: populateYearSelects() is called in app.ts BEFORE URL resolution,
+        // so the hidden selects already exist and may have URL param values set.
+        // Do NOT call populateYearSelects() here as it would overwrite URL params!
+        // Get initial values from hidden selects (which may have URL params applied)
         const fromYearSelect = document.getElementById('fromyear');
         const toYearSelect = document.getElementById('toyear');
         let initialFrom = DEFAULT_FROM_YEAR;
@@ -2346,6 +2388,13 @@ var CSRankings;
         if (toYearSelect && toYearSelect.value) {
             initialTo = parseInt(toYearSelect.value) || DEFAULT_TO_YEAR;
         }
+        // Initialize display spans with values from selects (respects URL params)
+        const fromDisplay = document.getElementById('year-display-from');
+        const toDisplay = document.getElementById('year-display-to');
+        if (fromDisplay)
+            fromDisplay.textContent = initialFrom.toString();
+        if (toDisplay)
+            toDisplay.textContent = initialTo.toString();
         // Create the slider
         noUiSlider.create(sliderElement, {
             start: [initialFrom, initialTo],
@@ -2995,6 +3044,7 @@ var CSRankings;
                 id: 'focus-area',
                 title: 'Focus on Your Area',
                 text: `
+                    <p>Use the <strong>All</strong> toggle to quickly select or deselect all areas at once.</p>
                     <p>Click any category pill (<strong>AI</strong>, <strong>Systems</strong>, <strong>Theory</strong>, <strong>Interdisc.</strong>) to open a dropdown with all the sub-areas.</p>
                     <p>Use the checkboxes to select exactly which research areas interest you. Click <strong>▶</strong> next to any area to see individual conferences.</p>
                 `,

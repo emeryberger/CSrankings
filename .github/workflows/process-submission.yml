@@ -46,6 +46,7 @@ jobs:
               per_page: 100
             });
 
+            // Filter for pending issues (include rate-limited ones - they may become processable)
             const pendingIssues = issues.filter(issue =>
               issue.title.startsWith('[CSrankings form submission]') &&
               !issue.labels.some(l => l.name === 'processed' || l.name === 'pr-created' || l.name === 'validation-failed')
@@ -57,6 +58,55 @@ jobs:
               console.log('No pending submissions to process');
               return;
             }
+
+            // === THROTTLING CONFIGURATION ===
+            const MAX_INDIVIDUAL_PER_USER_PER_DAY = 2;  // Individual (non-batch) submissions per user per day
+            const MAX_TOTAL_PRS_PER_RUN = 5;            // Max PRs to create per hourly run
+
+            // Get recent PRs to check rate limits
+            const { data: recentPRs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              per_page: 100
+            });
+
+            // Count individual submissions per user in last 24 hours
+            const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+            const userSubmissionCounts = {};
+            for (const pr of recentPRs) {
+              const prDate = new Date(pr.created_at);
+              if (prDate < oneDayAgo) continue;
+
+              // Check if this was an individual (non-batch) submission
+              const isBatch = pr.title.includes('faculty from') && /\d+ faculty/.test(pr.title);
+              if (isBatch) continue;
+
+              // Extract submitter from PR body (Co-Authored-By line or @mention)
+              const submitterMatch = pr.body?.match(/Submitted by @(\w+)/) || pr.body?.match(/Co-Authored-By: (\w+)/);
+              if (submitterMatch) {
+                const user = submitterMatch[1];
+                userSubmissionCounts[user] = (userSubmissionCounts[user] || 0) + 1;
+              }
+            }
+
+            console.log('User submission counts (last 24h):', userSubmissionCounts);
+
+            // Separate batch vs individual submissions and sort (batch first)
+            const batchSubmissions = [];
+            const individualSubmissions = [];
+
+            for (const issue of pendingIssues) {
+              const isBatch = issue.title.toLowerCase().includes('batch') ||
+                              /add \d+ faculty from/i.test(issue.title);
+              if (isBatch) {
+                batchSubmissions.push(issue);
+              } else {
+                individualSubmissions.push(issue);
+              }
+            }
+
+            console.log(`Batch submissions: ${batchSubmissions.length}, Individual: ${individualSubmissions.length}`);
 
             // Helper to parse issue body
             const parseField = (body, label) => {
@@ -94,13 +144,351 @@ jobs:
             // Helper to normalize names for alphabetical sorting
             const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
-            // Process each issue
-            for (const issue of pendingIssues) {
-              console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
+            // Helper to check if a name is properly capitalized
+            const isProperlyCapitalized = (name) => {
+              if (!name || name.length < 2) return false;
+              // Split into parts (handling spaces, hyphens)
+              const parts = name.split(/[\s\-]+/).filter(p => p.length > 0);
+              for (const part of parts) {
+                // Skip single letters (initials like "J." or "W.")
+                if (part.length <= 2) continue;
+                // Skip numbers (disambiguation suffixes like "0001")
+                if (/^\d+$/.test(part)) continue;
+                // Check if all uppercase or all lowercase (bad)
+                const letters = part.replace(/[^a-zA-Z]/g, '');
+                if (letters.length > 1) {
+                  if (letters === letters.toUpperCase()) return false; // ALL CAPS
+                  if (letters === letters.toLowerCase()) return false; // all lowercase
+                }
+              }
+              return true;
+            };
+
+            // Helper to check if GitHub user has an anonymous profile
+            const isAnonymousProfile = async (username) => {
+              try {
+                const { data: user } = await github.rest.users.getByUsername({ username });
+                // Consider anonymous if no name set and account is very new or has no repos
+                const hasName = user.name && user.name.trim().length > 0;
+                const hasBio = user.bio && user.bio.trim().length > 0;
+                const hasRepos = user.public_repos > 0;
+                const hasFollowers = user.followers > 0;
+                // Require at least a name OR (bio + some activity)
+                return !hasName && !hasBio && !hasRepos && !hasFollowers;
+              } catch (e) {
+                console.log(`  Could not fetch profile for ${username}: ${e.message}`);
+                return false; // Don't block on API errors
+              }
+            };
+
+            // === AUTO-BATCHING ===
+            // Group individual 'add' submissions by user+institution
+            const autoBatchGroups = {};
+            const issuesForAutoBatch = [];
+            const issuesForIndividualProcessing = [];
+
+            for (const issue of individualSubmissions) {
+              const body = issue.body || '';
+              const action = parseAction(body);
+
+              // Only auto-batch 'add' actions
+              if (action === 'add') {
+                const institution = parseField(body, 'Institution');
+                const submitter = issue.user?.login || 'unknown';
+                const key = `${submitter}|||${institution}`;
+
+                if (!autoBatchGroups[key]) {
+                  autoBatchGroups[key] = [];
+                }
+                autoBatchGroups[key].push(issue);
+              } else {
+                issuesForIndividualProcessing.push(issue);
+              }
+            }
+
+            // Check which groups should be auto-batched (2+ submissions)
+            const autoBatchCandidates = [];
+            for (const [key, issues] of Object.entries(autoBatchGroups)) {
+              if (issues.length >= 2) {
+                // Auto-batch these
+                autoBatchCandidates.push({ key, issues });
+                console.log(`Auto-batching ${issues.length} submissions for ${key}`);
+              } else {
+                // Single submission, process individually
+                issuesForIndividualProcessing.push(...issues);
+              }
+            }
+
+            // Final processing order: batch submissions, auto-batched groups, then individual
+            const sortedIssues = [...batchSubmissions];
+            // Auto-batched groups will be handled separately
+            sortedIssues.push(...issuesForIndividualProcessing);
+
+            let prsCreatedThisRun = 0;
+
+            // Process auto-batched groups first (after regular batches)
+            for (const { key, issues } of autoBatchCandidates) {
+              if (prsCreatedThisRun >= MAX_TOTAL_PRS_PER_RUN) {
+                console.log(`  Skipping auto-batch: reached max PRs per run`);
+                break;
+              }
+
+              const [submitter, institution] = key.split('|||');
+              console.log(`\nAuto-batching ${issues.length} submissions from ${submitter} for ${institution}`);
 
               try {
-                const body = issue.body || '';
-                const action = parseAction(body);
+                // Collect all entries
+                const entries = [];
+                const issueNumbers = [];
+
+                for (const issue of issues) {
+                  const body = issue.body || '';
+                  const name = parseField(body, 'Name');
+                  const homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
+                  const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
+                  const orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
+
+                  if (name && homepage && scholarid) {
+                    entries.push({
+                      name,
+                      line: `${name},${institution},${homepage},${scholarid},${orcid}`,
+                      nameNorm: normalize(name),
+                      issueNumber: issue.number
+                    });
+                    issueNumbers.push(issue.number);
+                  }
+                }
+
+                if (entries.length < 2) {
+                  console.log(`  Not enough valid entries for auto-batch, skipping`);
+                  // Put back for individual processing
+                  issuesForIndividualProcessing.push(...issues);
+                  continue;
+                }
+
+                // Create branch
+                const branchName = `auto-batch-${institution.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
+
+                // Get current commit SHA
+                const { data: ref } = await github.rest.git.getRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: 'heads/gh-pages'
+                });
+                const baseSha = ref.object.sha;
+
+                // Create new branch
+                await github.rest.git.createRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `refs/heads/${branchName}`,
+                  sha: baseSha
+                });
+
+                // Group entries by target file
+                const entriesByFile = {};
+                for (const entry of entries) {
+                  const firstLetter = entry.name.charAt(0).toLowerCase();
+                  const targetFile = /[a-z]/.test(firstLetter) ? `csrankings-${firstLetter}.csv` : 'csrankings-0.csv';
+                  if (!entriesByFile[targetFile]) entriesByFile[targetFile] = [];
+                  entriesByFile[targetFile].push(entry);
+                }
+
+                // Process each file
+                const coAuthorLine = `\n\nCo-Authored-By: ${submitter} <${submitter}@users.noreply.github.com>`;
+                for (const [targetFile, fileEntries] of Object.entries(entriesByFile)) {
+                  const { data: fileData } = await github.rest.repos.getContent({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: targetFile,
+                    ref: branchName
+                  });
+
+                  let content = Buffer.from(fileData.content, 'base64').toString('utf8');
+                  let lines = content.split(/\r?\n/);
+
+                  for (const entry of fileEntries) {
+                    let insertIndex = 1;
+                    for (let i = 1; i < lines.length; i++) {
+                      if (!lines[i].trim()) continue;
+                      const existingName = lines[i].split(',')[0];
+                      if (normalize(existingName) > entry.nameNorm) {
+                        insertIndex = i;
+                        break;
+                      }
+                      insertIndex = i + 1;
+                    }
+                    lines.splice(insertIndex, 0, entry.line);
+                  }
+
+                  const newContent = lines.join('\r\n');
+                  await github.rest.repos.createOrUpdateFileContents({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: targetFile,
+                    message: `Add ${fileEntries.length} faculty from ${institution}${coAuthorLine}`,
+                    content: Buffer.from(newContent).toString('base64'),
+                    sha: fileData.sha,
+                    branch: branchName
+                  });
+                }
+
+                // Create PR
+                const prTitle = `Add ${entries.length} faculty from ${institution} (auto-batched)`;
+                const prBody = `## Summary\nAuto-batched ${entries.length} individual submissions into a single PR.\n\nSubmitted by @${submitter} via CSRankings form.\n\nCloses ${issueNumbers.map(n => `#${n}`).join(', ')}\n\n## Entries\n${entries.map((e, i) => `${i + 1}. ${e.name}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${entries.map(e => e.line).join('\n')}\n\`\`\``;
+
+                const { data: pr } = await github.rest.pulls.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: prTitle,
+                  head: branchName,
+                  base: 'gh-pages',
+                  body: prBody
+                });
+
+                console.log(`  Created auto-batch PR #${pr.number}: ${pr.html_url}`);
+                prsCreatedThisRun++;
+
+                // Comment on all issues
+                for (const issue of issues) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `## ✅ Auto-Batched\n\nYour submission has been combined with ${entries.length - 1} other submission(s) from the same institution into a single PR:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nThis helps us process submissions more efficiently. Thank you!`
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['pr-created', 'auto-batched']
+                  });
+                }
+
+                // Trigger validation
+                try {
+                  await github.rest.actions.createWorkflowDispatch({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    workflow_id: 'commit_validation.yml',
+                    ref: 'gh-pages',
+                    inputs: { pr_number: String(pr.number) }
+                  });
+                } catch (e) { console.error(`  Validation trigger failed: ${e.message}`); }
+
+              } catch (error) {
+                console.error(`  Error auto-batching: ${error.message}`);
+                // Put issues back for individual processing
+                for (const issue of issues) {
+                  issuesForIndividualProcessing.push(issue);
+                }
+              }
+            }
+
+            // Process each issue (sorted: batch first, then individual)
+            for (const issue of sortedIssues) {
+              console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
+
+              // Check total PRs created this run
+              if (prsCreatedThisRun >= MAX_TOTAL_PRS_PER_RUN) {
+                console.log(`  Skipping: reached max PRs per run (${MAX_TOTAL_PRS_PER_RUN})`);
+                continue;
+              }
+
+              const submitter = issue.user?.login || 'unknown';
+              const isBatchIssue = issue.title.toLowerCase().includes('batch') ||
+                                   /add \d+ faculty from/i.test(issue.title);
+
+              // Rate limit individual submissions per user
+              if (!isBatchIssue) {
+                const userCount = userSubmissionCounts[submitter] || 0;
+                const wasRateLimited = issue.labels.some(l => l.name === 'rate-limited');
+
+                if (userCount >= MAX_INDIVIDUAL_PER_USER_PER_DAY) {
+                  console.log(`  Rate limited: ${submitter} has ${userCount} individual submissions in last 24h (max: ${MAX_INDIVIDUAL_PER_USER_PER_DAY})`);
+
+                  // Only add label/comment if not already rate-limited (avoid spam)
+                  if (!wasRateLimited) {
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['rate-limited']
+                    });
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ⏳ Rate Limited\n\nYou have reached the daily limit of ${MAX_INDIVIDUAL_PER_USER_PER_DAY} individual submissions per user.\n\n**Your submission will be processed automatically** once your limit resets (within 24 hours), or you can:\n- **Use [batch submission](https://csrankings.org/submit/)** to add multiple faculty at once (recommended, no rate limit)\n\nThis limit helps us manage system resources. Thank you for your patience!`
+                    });
+                  }
+                  continue;
+                }
+
+                // User is now under limit - remove rate-limited label if present
+                if (wasRateLimited) {
+                  console.log(`  Clearing rate-limit for ${submitter} (now at ${userCount}/${MAX_INDIVIDUAL_PER_USER_PER_DAY})`);
+                  try {
+                    await github.rest.issues.removeLabel({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      name: 'rate-limited'
+                    });
+                  } catch (e) { /* label may not exist */ }
+                }
+              }
+
+              // Check for anonymous GitHub profile (only for add actions)
+              const body = issue.body || '';
+              const action = parseAction(body);
+
+              if (action === 'add' && !isBatchIssue) {
+                const isAnon = await isAnonymousProfile(submitter);
+                if (isAnon) {
+                  console.log(`  Rejected: ${submitter} has an anonymous GitHub profile`);
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `## ❌ Anonymous Profile\n\nSubmissions from anonymous GitHub profiles are not accepted.\n\nPlease update your [GitHub profile](https://github.com/settings/profile) to include:\n- Your **real name**\n- Or a **bio** and some public activity (repositories, contributions)\n\nOnce your profile is updated, please submit again. This helps us verify the legitimacy of submissions.`
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['validation-failed', 'anonymous-profile']
+                  });
+                  continue;
+                }
+              }
+
+              // Check name capitalization for add/update actions
+              if (action === 'add' || action === 'update' || action === 'reinstate') {
+                const name = parseField(body, 'Name');
+                if (name && !isProperlyCapitalized(name)) {
+                  console.log(`  Rejected: "${name}" is not properly capitalized`);
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `## ❌ Invalid Name Format\n\nThe name "${name}" is not properly capitalized.\n\nNames must use **standard capitalization** (e.g., "John Smith", not "JOHN SMITH" or "john smith").\n\nPlease check the name on [DBLP](https://dblp.org/search) and submit again with the correct capitalization.`
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['validation-failed', 'invalid-name-format']
+                  });
+                  continue;
+                }
+              }
+
+              try {
+                // Submitter info for co-authoring (submitter already defined above)
+                // action and body already parsed above
+                const submitterEmail = `${submitter}@users.noreply.github.com`;
+                const coAuthorLine = `\n\nCo-Authored-By: ${submitter} <${submitterEmail}>`;
                 console.log(`  Action: ${action}`);
 
                 if (action === 'unknown') {
@@ -227,7 +615,7 @@ jobs:
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       path: targetFile,
-                      message: `Add ${entries.length} faculty from ${institution}`,
+                      message: `Add ${entries.length} faculty from ${institution}${coAuthorLine}`,
                       content: Buffer.from(newContent).toString('base64'),
                       sha: fileData.sha,
                       branch: branchName
@@ -236,7 +624,7 @@ jobs:
 
                   // Create PR
                   const prTitle = `Add ${csvLines.length} faculty from ${institution}`;
-                  const prBody = `## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
+                  const prBody = `## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
 
                   const { data: pr } = await github.rest.pulls.create({
                     owner: context.repo.owner,
@@ -248,6 +636,10 @@ jobs:
                   });
 
                   console.log(`  Created PR #${pr.number}: ${pr.html_url}`);
+
+                  // Update rate limiting counters
+                  prsCreatedThisRun++;
+                  // Batch submissions don't count toward individual user limits
 
                   // Comment on issue
                   await github.rest.issues.createComment({
@@ -312,10 +704,26 @@ jobs:
 
                 if (action === 'add' || action === 'reinstate') {
                   // Parse add/reinstate fields
-                  const institution = parseField(body, 'Institution');
-                  const homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
-                  const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
-                  const orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
+                  let institution = parseField(body, 'Institution');
+                  let homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
+                  let scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
+                  let orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
+
+                  // For reinstatements coming through update flow, fields may be in CSV format
+                  // Try to extract from New Entry if explicit fields are missing
+                  if (action === 'reinstate' && (!institution || !homepage || !scholarid)) {
+                    const newEntryText = parseField(body, 'New Entry');
+                    if (newEntryText) {
+                      const parts = newEntryText.split(',').map(s => s.trim());
+                      // CSV format: name,institution,homepage,scholarid,orcid
+                      if (parts.length >= 4) {
+                        if (!institution && parts[1]) institution = parts[1];
+                        if (!homepage && parts[2]) homepage = parts[2];
+                        if (!scholarid && parts[3]) scholarid = parts[3];
+                        if (parts[4] && parts[4] !== '0000-0000-0000-0000') orcid = parts[4];
+                      }
+                    }
+                  }
 
                   if (!institution || !homepage || !scholarid) {
                     await github.rest.issues.createComment({
@@ -404,9 +812,9 @@ jobs:
                       // Skip the normal add flow, we've already updated in place
                       const newContent = lines.join('\r\n');
                       branchName = `fix-accent-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                      commitMessage = `Fix accent: ${existingName} → ${name}`;
+                      commitMessage = `Fix accent: ${existingName} → ${name}${coAuthorLine}`;
                       prTitle = `Fix accent: ${existingName} → ${name}`;
-                      prBody = `## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
+                      prBody = `## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
 
                       // Jump to branch creation (skip normal add logic)
                       console.log(`  Creating branch: ${branchName}`);
@@ -445,6 +853,11 @@ jobs:
                         body: prBody
                       });
                       console.log(`  Created PR #${pr.number}: ${pr.html_url}`);
+
+                      // Update rate limiting counters
+                      prsCreatedThisRun++;
+                      userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
+
                       await github.rest.issues.createComment({
                         owner: context.repo.owner,
                         repo: context.repo.repo,
@@ -487,15 +900,31 @@ jobs:
 
                   const actionWord = action === 'reinstate' ? 'Reinstate' : 'Add';
                   branchName = `${action}-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `${actionWord} ${name} (${institution})`;
+                  commitMessage = `${actionWord} ${name} (${institution})${coAuthorLine}`;
                   prTitle = `${actionWord} ${name} (${institution})`;
-                  prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
+                  prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
 
-                  // For reinstatement, also need to remove from old/ file
+                  // For reinstatement, store source file for removal from old/ directory
+                  var reinstateSourceFile = null;
+                  var reinstateEntryName = name;
                   if (action === 'reinstate') {
-                    const sourceFile = parseField(body, 'Source File');
+                    // Try to get source file from explicit field
+                    let sourceFile = parseField(body, 'Source File');
+                    // Also check Old Entry for reinstatements that came through update flow
+                    if (!sourceFile) {
+                      const oldEntrySection = parseField(body, 'Old Entry');
+                      // Old entry might indicate source file, but usually the source is from old/ folder
+                      // Check Previous Entry section for add-style reinstatements
+                      const prevEntryMatch = body.match(/### Previous Entry \(from ([^)]+)\)/);
+                      if (prevEntryMatch) {
+                        sourceFile = prevEntryMatch[1];
+                      }
+                    }
                     if (sourceFile) {
-                      prBody += `\n\n**Note:** Also remove entry from \`${sourceFile}\``;
+                      // Remove backticks if present
+                      sourceFile = sourceFile.replace(/`/g, '').trim();
+                      reinstateSourceFile = sourceFile;
+                      prBody += `\n\n**Note:** Entry will be removed from \`${sourceFile}\``;
                     }
                   }
 
@@ -571,9 +1000,9 @@ jobs:
                   // Use searchName for branch/title since that's the name being updated
                   const displayName = searchName !== newName ? `${searchName} → ${newName}` : searchName;
                   branchName = `update-${searchName.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `Update ${displayName}`;
+                  commitMessage = `Update ${displayName}${coAuthorLine}`;
                   prTitle = `Update ${displayName}`;
-                  prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+                  prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
 
                   // Override targetFile for the update operation
                   targetFile = searchTargetFile;
@@ -635,9 +1064,9 @@ jobs:
                   }
 
                   branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
-                  commitMessage = `Remove ${name} (${reason || 'unspecified'})`;
+                  commitMessage = `Remove ${name} (${reason || 'unspecified'})${coAuthorLine}`;
                   prTitle = `Remove ${name} (${institution || 'unknown'})`;
-                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
+                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
 
                   // Store old file info for the remove action
                   var removeOldFile = oldFile;
@@ -682,6 +1111,57 @@ jobs:
                   branch: branchName
                 });
 
+                // For reinstatement, remove entry from the old/ source file
+                if (action === 'reinstate' && reinstateSourceFile && reinstateEntryName) {
+                  console.log(`  Removing entry from ${reinstateSourceFile}`);
+
+                  try {
+                    // Get old file content
+                    const { data: oldFileData } = await github.rest.repos.getContent({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      path: reinstateSourceFile,
+                      ref: branchName
+                    });
+
+                    let oldContent = Buffer.from(oldFileData.content, 'base64').toString('utf8');
+                    let oldLines = oldContent.split(/\r?\n/);
+
+                    // Find and remove the entry by name
+                    const nameNorm = normalize(reinstateEntryName);
+                    let removeIndex = -1;
+                    for (let i = 1; i < oldLines.length; i++) {
+                      const existingName = oldLines[i].split(',')[0];
+                      if (normalize(existingName) === nameNorm) {
+                        removeIndex = i;
+                        break;
+                      }
+                    }
+
+                    if (removeIndex !== -1) {
+                      oldLines.splice(removeIndex, 1);
+                      const newOldContent = oldLines.join('\r\n');
+
+                      // Update old file
+                      await github.rest.repos.createOrUpdateFileContents({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        path: reinstateSourceFile,
+                        message: `Remove ${reinstateEntryName} from ${reinstateSourceFile}${coAuthorLine}`,
+                        content: Buffer.from(newOldContent).toString('base64'),
+                        sha: oldFileData.sha,
+                        branch: branchName
+                      });
+                      console.log(`  Removed ${reinstateEntryName} from ${reinstateSourceFile}`);
+                    } else {
+                      console.log(`  Warning: Could not find ${reinstateEntryName} in ${reinstateSourceFile}`);
+                    }
+                  } catch (oldFileError) {
+                    console.error(`  Could not remove from ${reinstateSourceFile}: ${oldFileError.message}`);
+                    // Don't fail the whole operation, just log the error
+                  }
+                }
+
                 // For remove action, also add entry to the appropriate old/ file
                 if (action === 'remove' && removeOldFile && removeEntry) {
                   console.log(`  Adding entry to ${removeOldFile}`);
@@ -719,7 +1199,7 @@ jobs:
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     path: removeOldFile,
-                    message: `Add ${entryName} to ${removeOldFile}`,
+                    message: `Add ${entryName} to ${removeOldFile}${coAuthorLine}`,
                     content: Buffer.from(newOldContent).toString('base64'),
                     sha: oldFileData.sha,
                     branch: branchName
@@ -737,6 +1217,12 @@ jobs:
                 });
 
                 console.log(`  Created PR #${pr.number}: ${pr.html_url}`);
+
+                // Update rate limiting counters
+                prsCreatedThisRun++;
+                if (!isBatchIssue) {
+                  userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
+                }
 
                 // Comment on issue with success
                 await github.rest.issues.createComment({

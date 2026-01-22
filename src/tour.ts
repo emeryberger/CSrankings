@@ -253,6 +253,7 @@ namespace CSRankings {
                 id: 'focus-area',
                 title: 'Focus on Your Area',
                 text: `
+                    <p>Use the <strong>All</strong> toggle to quickly select or deselect all areas at once.</p>
                     <p>Click any category pill (<strong>AI</strong>, <strong>Systems</strong>, <strong>Theory</strong>, <strong>Interdisc.</strong>) to open a dropdown with all the sub-areas.</p>
                     <p>Use the checkboxes to select exactly which research areas interest you. Click <strong>▶</strong> next to any area to see individual conferences.</p>
                 `,

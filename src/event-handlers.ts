@@ -91,21 +91,19 @@ namespace CSRankings {
 
     /* Add event listeners for group selector buttons */
     export function addGroupSelectorListeners(callbacks: EventCallbacks): void {
-        // All areas on/off buttons
-        const allOnWidget = document.getElementById('all_areas_on');
-        if (allOnWidget) {
-            allOnWidget.addEventListener("click", () => {
-                callbacks.activateAll();
+        // "All" toggle switches (both banner and sidebar)
+        const allToggles = document.querySelectorAll('.all-toggle-checkbox');
+        allToggles.forEach(toggle => {
+            toggle.addEventListener("change", (e) => {
+                const checkbox = e.target as HTMLInputElement;
+                if (checkbox.checked) {
+                    callbacks.activateAll();
+                } else {
+                    callbacks.activateNone();
+                }
                 recordUserInteraction();
             });
-        }
-        const allOffWidget = document.getElementById('all_areas_off');
-        if (allOffWidget) {
-            allOffWidget.addEventListener("click", () => {
-                callbacks.activateNone();
-                recordUserInteraction();
-            });
-        }
+        });
     }
 
     /* Add event listeners for area toggle buttons (the section header buttons) */
@@ -232,6 +230,43 @@ namespace CSRankings {
                 toggleBtn.classList.add(selectionClass);
             }
         }
+
+        // Update "All" toggle switches (both banner and sidebar)
+        const allAreas = [...aiAreas, ...systemsAreas, ...theoryAreas, ...interdisciplinaryAreas];
+        let anyCheckedGlobal = false;
+        let allChecked = true;
+
+        for (const area of allAreas) {
+            const checkbox = document.getElementById(area) as HTMLInputElement;
+            if (checkbox) {
+                if (checkbox.checked) {
+                    anyCheckedGlobal = true;
+                } else {
+                    allChecked = false;
+                }
+            }
+        }
+
+        // Update all toggle switches
+        const allToggles = document.querySelectorAll('.all-toggle');
+        const allToggleCheckboxes = document.querySelectorAll('.all-toggle-checkbox') as NodeListOf<HTMLInputElement>;
+
+        allToggles.forEach(toggle => {
+            toggle.classList.remove('selection-none', 'selection-partial', 'selection-all');
+            if (!anyCheckedGlobal) {
+                toggle.classList.add('selection-none');
+            } else if (allChecked) {
+                toggle.classList.add('selection-all');
+            } else {
+                toggle.classList.add('selection-partial');
+            }
+        });
+
+        // Sync checkbox state (without triggering change event)
+        // Toggle is "on" only when ALL areas are checked
+        allToggleCheckboxes.forEach(checkbox => {
+            checkbox.checked = allChecked;
+        });
     }
 
     /* Area indicator click handling moved to area-dropdown.ts */

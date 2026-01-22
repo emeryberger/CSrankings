@@ -373,6 +373,11 @@
 		  <select id="fromyear" name="fromyear" style="display:none;"></select>
 		  <select id="toyear" name="toyear" style="display:none;"></select>
 		  <span class="area-indicators" title="Area selection status">
+		    <label class="all-toggle" title="Toggle all areas">
+		      <input type="checkbox" class="all-toggle-checkbox" checked>
+		      <span class="all-toggle-slider"></span>
+		      <span class="all-toggle-label">All</span>
+		    </label>
 		    <span class="area-indicator ai-indicator" data-area="ai" title="AI areas: Click to toggle">AI</span>
 		    <span class="area-indicator systems-indicator" data-area="systems" title="Systems areas: Click to toggle">Systems</span>
 		    <span class="area-indicator theory-indicator" data-area="theory" title="Theory areas: Click to toggle">Theory</span>
@@ -401,9 +406,13 @@
 		  <thead>
 		    <tr>
 		      <th colspan="2">
-			<p style="font-size: 125%">All Areas
-			  &nbsp;<span style="font-size: 80%;">[<a class="area_group_selector" id="all_areas_off" title="Deselect all areas"><font color="blue"><b>off</b></font></a> | <a class="area_group_selector" id="all_areas_on" title="Select all areas"><font color="blue"><b>on</b></font></a>]</span>
-			</p>
+			<span class="all-areas-header">
+			  <label class="all-toggle all-toggle-sidebar" title="Toggle all areas">
+			    <input type="checkbox" class="all-toggle-checkbox" checked>
+			    <span class="all-toggle-slider"></span>
+			    <span class="all-toggle-label">All Areas</span>
+			  </label>
+			</span>
 		      </th>
 		    </tr>
 		  </thead>
