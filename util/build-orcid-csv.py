@@ -16,7 +16,7 @@ Takes ~45 minutes due to ORCID API rate limiting.
 
 import argparse
 import csv
-import gzip
+import lzma
 import re
 import urllib.request
 import urllib.parse
@@ -38,7 +38,7 @@ def extract_dblp_orcids(dblp_path: str) -> Dict[str, str]:
     orcids = {}
     pattern = re.compile(r'<author orcid="([^"]+)">([^<]+)</author>')
 
-    with gzip.open(dblp_path, 'rt', encoding='utf-8') as f:
+    with lzma.open(dblp_path, 'rt', encoding='utf-8') as f:
         for line in f:
             for match in pattern.finditer(line):
                 orcid = match.group(1)
@@ -205,7 +205,7 @@ def search_and_verify(name: str, institution: str) -> Tuple[str, Optional[str]]:
 
 def main():
     parser = argparse.ArgumentParser(description="Build orcid.csv from DBLP and ORCID API")
-    parser.add_argument("--dblp", default="dblp.xml.gz", help="Path to DBLP XML (default: dblp.xml.gz)")
+    parser.add_argument("--dblp", default="dblp.xml.xz", help="Path to DBLP XML (default: dblp.xml.xz)")
     parser.add_argument("--output", default="orcid.csv", help="Output file (default: orcid.csv)")
     parser.add_argument("--skip-api", action="store_true", help="Skip ORCID API queries (DBLP only)")
     parser.add_argument("--include-old", action="store_true", help="Include old/*.csv faculty")

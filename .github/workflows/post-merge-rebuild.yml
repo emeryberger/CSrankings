@@ -51,7 +51,6 @@ jobs:
         with:
           persist-credentials: true  # Required to push back
           fetch-depth: 0  # Fetch full history for git pull --rebase
-          lfs: true  # Enable Git LFS for dblp.xml.gz
 
       - name: Set up Git identity
         run: |
