@@ -1,5 +1,5 @@
 import csrankings
-import gzip
+import lzma
 from lxml import etree as ElementTree
 
 startyear = 2013
@@ -12,7 +12,7 @@ def parseDBLP(facultydict):
     authorscores = {}
     authorscoresAdjusted = {}
 
-    with gzip.open("dblp.xml.gz") as f:
+    with lzma.open("dblp.xml.xz") as f:
 
         oldnode = None
 
