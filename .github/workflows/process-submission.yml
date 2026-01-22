@@ -47,8 +47,10 @@ jobs:
             });
 
             // Filter for pending issues (include rate-limited ones - they may become processable)
+            // Match by title prefix OR by label (since we clean the title after first processing)
             const pendingIssues = issues.filter(issue =>
-              issue.title.startsWith('[CSrankings form submission]') &&
+              (issue.title.startsWith('[CSrankings form submission]') ||
+               issue.labels.some(l => l.name === 'CSrankings form submission')) &&
               !issue.labels.some(l => l.name === 'processed' || l.name === 'pr-created' || l.name === 'validation-failed')
             );
 
