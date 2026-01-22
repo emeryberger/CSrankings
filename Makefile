@@ -54,8 +54,8 @@ download-dblp:
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file (streaming, low memory)."
-	gunzip -dc dblp-original.xml.gz | $(PYTHON) util/filter-dblp.py | gzip > dblp.xml.gz
-	@echo "Filtered DBLP saved to dblp.xml.gz"
+	gunzip -dc dblp-original.xml.gz | $(PYTHON) util/filter-dblp.py | xz -9 > dblp.xml.xz
+	@echo "Filtered DBLP saved to dblp.xml.xz"
 
 faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.csv
 	@echo "Splitting main datafile."
@@ -90,12 +90,12 @@ fix-affiliations: faculty-affiliations.csv
 	@rm /tmp/f1.csv
 	@mv /tmp/f2.csv faculty-affiliations.csv
 
-faculty-coauthors.csv: dblp.xml.gz util/generate-faculty-coauthors.py util/csrankings.py
+faculty-coauthors.csv: dblp.xml.xz util/generate-faculty-coauthors.py util/csrankings.py
 	@echo "Rebuilding the co-author database (faculty-coauthors.csv)."
 	$(PYTHON) util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml.gz util/regenerate_data.py util/csrankings.py dblp-aliases.csv
+generated-author-info.csv: faculty-affiliations.csv dblp.xml.xz util/regenerate_data.py util/csrankings.py dblp-aliases.csv
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	@$(PYPY) util/split-csv.py
 	@$(PYPY) util/regenerate_data.py
