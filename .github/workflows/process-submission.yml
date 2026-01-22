@@ -375,6 +375,14 @@ jobs:
                 console.log(`  Created auto-batch PR #${pr.number}: ${pr.html_url}`);
                 prsCreatedThisRun++;
 
+                // Add label to PR
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['CSrankings form submission']
+                });
+
                 // Comment on all issues
                 for (const issue of issues) {
                   await github.rest.issues.createComment({
@@ -691,6 +699,14 @@ jobs:
                   prsCreatedThisRun++;
                   // Batch submissions don't count toward individual user limits
 
+                  // Add label to PR
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    labels: ['CSrankings form submission']
+                  });
+
                   // Comment on issue
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
@@ -907,6 +923,14 @@ jobs:
                       // Update rate limiting counters
                       prsCreatedThisRun++;
                       userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
+
+                      // Add label to PR
+                      await github.rest.issues.addLabels({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: pr.number,
+                        labels: ['CSrankings form submission']
+                      });
 
                       await github.rest.issues.createComment({
                         owner: context.repo.owner,
@@ -1273,6 +1297,14 @@ jobs:
                 if (!isBatchIssue) {
                   userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
                 }
+
+                // Add label to PR
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['CSrankings form submission']
+                });
 
                 // Comment on issue with success
                 await github.rest.issues.createComment({
