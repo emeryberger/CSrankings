@@ -1897,8 +1897,8 @@ function createAddIssueUrl(data, notes, existingOldEntry) {
     const isReinstatement = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.isOld) === true;
     const oldFileLabel = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.oldFile) ? getOldFileLabel(existingOldEntry.oldFile) : '';
     const title = isReinstatement
-        ? `[CSrankings form submission] Reinstate ${data.name} (${data.institution})`
-        : `[CSrankings form submission] Add ${data.name} (${data.institution})`;
+        ? `Reinstate ${data.name} (${data.institution})`
+        : `Add ${data.name} (${data.institution})`;
     const actionLine = isReinstatement
         ? `Reinstate former faculty (currently in ${oldFileLabel || 'old/'} folder)`
         : 'Add new faculty entry';
@@ -1936,7 +1936,7 @@ ${previousEntrySection}### Eligibility Confirmation
 
 ${notes ? `### Notes\n${notes}` : ''}`;
     // Note: labels can only be set via URL by users with write access
-    // The hourly workflow will identify issues by title prefix instead
+    // The hourly workflow will identify issues by body content (### Action section)
     const params = new URLSearchParams({
         title: title
     });
@@ -1951,8 +1951,8 @@ function createUpdateIssueUrl(oldEntry, newEntry, notes) {
     const isReinstatement = oldEntry.isOld === true;
     const oldFileLabel = oldEntry.oldFile ? getOldFileLabel(oldEntry.oldFile) : '';
     const title = isReinstatement
-        ? `[CSrankings form submission] Reinstate ${newEntry.name} (${newEntry.institution})`
-        : `[CSrankings form submission] Update ${newEntry.name}`;
+        ? `Reinstate ${newEntry.name} (${newEntry.institution})`
+        : `Update ${newEntry.name}`;
     const changes = [];
     if (oldEntry.name !== newEntry.name) {
         changes.push(`- Name: ${oldEntry.name} → ${newEntry.name}`);
@@ -2005,7 +2005,7 @@ ${notes ? `### Notes\n${notes}` : ''}`;
  * Create GitHub Issue URL for removing faculty
  */
 function createRemoveIssueUrl(entry, reason, notes) {
-    const title = `[CSrankings form submission] Remove ${entry.name} (${entry.institution})`;
+    const title = `Remove ${entry.name} (${entry.institution})`;
     const body = `### Action
 Remove faculty entry
 
@@ -2247,8 +2247,8 @@ function createBatchIssueUrl(entries, institution, notes) {
     const reinstatements = entries.filter(e => e.isOld);
     const hasReinstatements = reinstatements.length > 0;
     const title = hasReinstatements
-        ? `[CSrankings form submission] Add/Reinstate ${entries.length} faculty from ${institution}`
-        : `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
+        ? `Add/Reinstate ${entries.length} faculty from ${institution}`
+        : `Add ${entries.length} faculty from ${institution}`;
     const entriesList = entries.map((e, i) => {
         const oldNote = e.isOld ? ` *(reinstatement from ${e.oldFile})*` : '';
         return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\`\n   - ORCID: \`${e.orcid}\``;

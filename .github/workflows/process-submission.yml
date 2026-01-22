@@ -47,10 +47,10 @@ jobs:
             });
 
             // Filter for pending issues (include rate-limited ones - they may become processable)
-            // Match by title prefix OR by label (since we clean the title after first processing)
+            // Match by label OR by body content (### Action section indicates form submission)
             const pendingIssues = issues.filter(issue =>
-              (issue.title.startsWith('[CSrankings form submission]') ||
-               issue.labels.some(l => l.name === 'CSrankings form submission')) &&
+              (issue.labels.some(l => l.name === 'CSrankings form submission') ||
+               (issue.body && issue.body.includes('### Action'))) &&
               !issue.labels.some(l => l.name === 'processed' || l.name === 'pr-created' || l.name === 'validation-failed')
             );
 
@@ -238,7 +238,7 @@ jobs:
               const [submitter, institution] = key.split('|||');
               console.log(`\nAuto-batching ${issues.length} submissions from ${submitter} for ${institution}`);
 
-              // Add "CSrankings form submission" label and clean up title for all issues in batch
+              // Add "CSrankings form submission" label to all issues in batch
               for (const issue of issues) {
                 try {
                   await github.rest.issues.addLabels({
@@ -247,18 +247,8 @@ jobs:
                     issue_number: issue.number,
                     labels: ['CSrankings form submission']
                   });
-
-                  if (issue.title.startsWith('[CSrankings form submission]')) {
-                    const newTitle = issue.title.replace('[CSrankings form submission]', '').trim();
-                    await github.rest.issues.update({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      title: newTitle
-                    });
-                  }
                 } catch (labelError) {
-                  console.log(`  Could not update label/title for #${issue.number}: ${labelError.message}`);
+                  console.log(`  Could not add label for #${issue.number}: ${labelError.message}`);
                 }
               }
 
@@ -423,7 +413,7 @@ jobs:
             for (const issue of sortedIssues) {
               console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
 
-              // Add "CSrankings form submission" label and clean up title
+              // Add "CSrankings form submission" label
               try {
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
@@ -431,20 +421,8 @@ jobs:
                   issue_number: issue.number,
                   labels: ['CSrankings form submission']
                 });
-
-                // Remove "[CSrankings form submission]" prefix from title
-                if (issue.title.startsWith('[CSrankings form submission]')) {
-                  const newTitle = issue.title.replace('[CSrankings form submission]', '').trim();
-                  await github.rest.issues.update({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: issue.number,
-                    title: newTitle
-                  });
-                  console.log(`  Updated title to: ${newTitle}`);
-                }
               } catch (labelError) {
-                console.log(`  Could not update label/title: ${labelError.message}`);
+                console.log(`  Could not add label: ${labelError.message}`);
               }
 
               // Check total PRs created this run
