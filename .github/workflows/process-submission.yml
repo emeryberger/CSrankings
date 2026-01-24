@@ -48,7 +48,9 @@ jobs:
 
             // Filter for pending issues (include rate-limited ones - they may become processable)
             // Match by label OR by body content (### Action section indicates form submission)
+            // Exclude PRs (which have pull_request property) - only process actual issues
             const pendingIssues = issues.filter(issue =>
+              !issue.pull_request &&
               (issue.labels.some(l => l.name === 'CSrankings form submission') ||
                (issue.body && issue.body.includes('### Action'))) &&
               !issue.labels.some(l => l.name === 'processed' || l.name === 'pr-created' || l.name === 'validation-failed')
