@@ -1,0 +1,289 @@
+/**
+ * CSRankings Faculty Submission Form Styles
+ */
+
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.page-header {
+    margin-top: 0;
+}
+
+.page-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-header small {
+    color: #777;
+}
+
+/* Form styling */
+.form-horizontal .control-label {
+    text-align: right;
+    padding-top: 7px;
+}
+
+.required {
+    color: #d9534f;
+}
+
+/* Status messages */
+.status {
+    min-height: 20px;
+}
+
+/* Autocomplete suggestions */
+.suggestions-dropdown {
+    position: absolute;
+    z-index: 1000;
+    width: calc(100% - 30px);
+    max-height: 300px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    display: none;
+}
+
+.suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Preview section */
+#csv-preview {
+    font-family: monospace;
+    font-size: 12px;
+    word-break: break-all;
+    white-space: pre-wrap;
+    margin-bottom: 5px;
+}
+
+#target-file {
+    font-family: monospace;
+}
+
+/* Form group positioning for autocomplete */
+#institution-group {
+    position: relative;
+}
+
+/* Validation states - Bootstrap overrides for better visibility */
+.has-success .form-control {
+    border-color: #3c763d;
+}
+
+.has-error .form-control {
+    border-color: #a94442;
+}
+
+.has-warning .form-control {
+    border-color: #8a6d3b;
+}
+
+/* Action buttons - compact with intuitive colors */
+.action-btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    border: none !important;
+    color: white !important;
+}
+
+
+/* Add button - green (positive action) */
+.action-btn[data-action="add"] {
+    background-color: #5cb85c !important;
+}
+
+.action-btn[data-action="add"].active {
+    background-color: #449d44 !important;
+}
+
+.action-btn[data-action="add"]:hover {
+    background-color: #47a447 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Update button - blue (neutral action) */
+.action-btn[data-action="update"] {
+    background-color: #5bc0de !important;
+}
+
+.action-btn[data-action="update"].active {
+    background-color: #31b0d5 !important;
+}
+
+.action-btn[data-action="update"]:hover {
+    background-color: #39b3d7 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Remove button - red (destructive action) */
+.action-btn[data-action="remove"] {
+    background-color: #d9534f !important;
+}
+
+.action-btn[data-action="remove"].active {
+    background-color: #c9302c !important;
+}
+
+.action-btn[data-action="remove"]:hover {
+    background-color: #d43f3a !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Non-active state - slightly faded */
+.action-btn:not(.active) {
+    opacity: 0.6;
+}
+
+.action-btn:not(.active):hover {
+    opacity: 0.9;
+}
+
+/* Button group adjustments */
+.btn-group-justified > .btn-group > .action-btn {
+    width: 100%;
+}
+
+/* Submit button */
+#submit-btn {
+    margin-top: 10px;
+}
+
+/* Eligibility checkboxes - compact layout */
+.eligibility-list .checkbox {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.eligibility-list .checkbox label {
+    padding-left: 20px;
+    font-weight: normal;
+}
+
+.eligibility-list .checkbox input[type="checkbox"] {
+    margin-left: -20px;
+}
+
+/* Validation summary */
+#validation-summary {
+    margin-top: 20px;
+}
+
+#validation-summary ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+/* Help text links */
+.help-block a {
+    text-decoration: underline;
+}
+
+/* Info alert styling */
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .form-horizontal .control-label {
+        text-align: left;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .suggestions-dropdown {
+        width: 100%;
+    }
+
+    .col-sm-offset-3 {
+        margin-left: 0;
+    }
+}
+
+/* Loading spinner (for future async validation) */
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Spinning glyphicon */
+.spinning {
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Progress indicator */
+#progress-indicator {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 15px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Auth status banner */
+.auth-status {
+    padding: 8px 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 14px;
+}
+
+.auth-status .btn-link {
+    padding: 0;
+    font-size: inherit;
+}
+
+/* Code styling */
+code {
+    background-color: #f9f2f4;
+    color: #c7254e;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 90%;
+}
+
+/* Well styling for preview */
+.well-sm {
+    padding: 9px;
+    border-radius: 3px;
+}

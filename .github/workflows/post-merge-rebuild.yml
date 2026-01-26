@@ -9,14 +9,48 @@ permissions:
   contents: write  # Required to push changes back
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install TypeScript
+        run: npm install -g typescript
+
+      - name: Compile TypeScript
+        run: tsc --project tsconfig.json
+
+      - name: Install test dependencies
+        run: pip install pytest selenium webdriver-manager
+
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Run tests
+        run: python3 -m pytest test/ -v
+
   build-and-commit:
     runs-on: ubuntu-latest
+    needs: test  # Only run after tests pass
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true  # Required to push back
+          fetch-depth: 0  # Fetch full history for git pull --rebase
 
       - name: Set up Git identity
         run: |
@@ -39,5 +73,34 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Auto-commit: results of running make after merge"
-            git push
+            
+            # Retry logic to handle concurrent pushes (race condition fix)
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            RETRY_DELAY=5
+            
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              echo "Attempt $((RETRY_COUNT + 1)) of $MAX_RETRIES: Pushing changes..."
+              
+              if git push; then
+                echo "Successfully pushed changes."
+                exit 0
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  echo "Push failed. Pulling with rebase and retrying in ${RETRY_DELAY}s..."
+                  sleep $RETRY_DELAY
+                  
+                  # Pull with rebase to integrate remote changes
+                  git pull --rebase origin gh-pages
+                  
+                  # Increase delay for next retry (exponential backoff)
+                  RETRY_DELAY=$((RETRY_DELAY + 5))
+                else
+                  echo "Error: Failed to push after $MAX_RETRIES attempts."
+                  exit 1
+                fi
+              fi
+            done
           fi

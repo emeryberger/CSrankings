@@ -1,0 +1,193 @@
+/* ============================================
+   CSRankings Tour - Custom Shepherd.js Styles
+   Matches Bootstrap panel-info styling
+   ============================================ */
+
+/* Override Shepherd button colors to match CSRankings/Bootstrap */
+.shepherd-button {
+  background: #337ab7;
+  border: 1px solid #2e6da4;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+}
+
+.shepherd-button:not(:disabled):hover {
+  background: #286090;
+  border-color: #204d74;
+}
+
+.shepherd-button.shepherd-button-secondary {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.shepherd-button.shepherd-button-secondary:not(:disabled):hover {
+  background: #e6e6e6;
+  border-color: #adadad;
+  color: #333;
+}
+
+/* Tour element styling - Bootstrap panel-info style */
+.shepherd-element {
+  max-width: 400px;
+  border-radius: 4px;
+  border: 1px solid #bce8f1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  z-index: 9001 !important;
+  background: #fff;
+}
+
+/* Header - matches panel-info heading */
+.shepherd-has-title .shepherd-content .shepherd-header {
+  background: #d9edf7;
+  padding: 10px 15px;
+  border-bottom: 1px solid #bce8f1;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.shepherd-has-title .shepherd-content .shepherd-header .shepherd-title {
+  color: #31708f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.shepherd-has-title .shepherd-content .shepherd-cancel-icon {
+  color: #31708f;
+}
+
+.shepherd-has-title .shepherd-content .shepherd-cancel-icon:hover {
+  color: #1a3a4a;
+}
+
+/* Text content */
+.shepherd-text {
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+
+.shepherd-text p {
+  margin: 0 0 10px 0;
+}
+
+.shepherd-text p:last-child {
+  margin-bottom: 0;
+}
+
+.shepherd-text ul {
+  margin: 10px 0;
+  padding-left: 25px;
+}
+
+.shepherd-text li {
+  margin-bottom: 5px;
+}
+
+/* Footer */
+.shepherd-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  background: #f5f5f5;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Modal overlay */
+.shepherd-modal-overlay-container {
+  z-index: 9000 !important;
+}
+
+/* Help/Tour button - outline style matching Sponsor button */
+.btn-help-tour {
+  background: transparent;
+  color: #337ab7;
+  border: 1px solid #337ab7;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 10px;
+}
+
+.btn-help-tour:hover {
+  background: #337ab7;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
+}
+
+/* Welcome step - centered without attachment */
+.shepherd-element.shepherd-centered {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Highlight box around targeted elements */
+.shepherd-target {
+  box-shadow: 0 0 0 4px rgba(51, 122, 183, 0.3) !important;
+}
+
+/* Arrow color to match header */
+.shepherd-arrow:before {
+  background: #d9edf7 !important;
+}
+
+/* When arrow points up (tooltip below target) */
+.shepherd-element[data-popper-placement^="bottom"] .shepherd-arrow:before {
+  border-bottom-color: #bce8f1;
+}
+
+/* When arrow points down (tooltip above target) */
+.shepherd-element[data-popper-placement^="top"] .shepherd-arrow:before {
+  background: #f5f5f5 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .shepherd-element {
+    max-width: 90vw;
+    margin: 10px;
+  }
+
+  .shepherd-text {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .shepherd-footer {
+    padding: 10px 12px;
+  }
+
+  .shepherd-button {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .btn-help-tour {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Ensure sticky header stays visible during tour */
+.shepherd-modal-is-visible .rank-controls-sticky {
+  z-index: 100;
+}
+
+/* Keyboard shortcut hint */
+.tour-keyboard-hint {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+  font-style: italic;
+}

@@ -25,7 +25,7 @@ random.seed(seed)
 
 # Trim out LinkedIn and RateMyProfessors sites, etc.
 trimstrings = [
-    "\.php\?",
+    r"\.php\?",
     "youtube",
     "researchgate",
     "dblp.uni-trier.",
@@ -36,7 +36,7 @@ trimstrings = [
     "2017",
     "2016",
     "2015",
-    "\.pdf",
+    r"\.pdf",
     "wikipedia",
 ]
 
@@ -89,76 +89,65 @@ with open("generated-author-info.csv", mode="r") as infile:
         generated[row["name"]] = generated.get(row["name"], 0) + float(row["count"])
 
 
-# Read in country-info file.
+# Read in country-info file, preserving all fields dynamically.
 countryinfo = {}
-with open("country-info.csv", mode="r") as infile:
+institutions_fieldnames = None
+with open("institutions.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
+    institutions_fieldnames = reader.fieldnames
     for row in reader:
-        if row["institution"] != "":
-            countryinfo[row["institution"]] = {
-                "region": row["region"],
-                "countryabbrv": row["countryabbrv"],
-            }
+        if row.get("institution", "") != "":
+            countryinfo[row["institution"]] = dict(row)
 
-# Sort it and write it back.
-with open("country-info.csv", mode="w") as outfile:
-    sfieldnames = ["institution", "region", "countryabbrv"]
-    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+# Sort it and write it back, preserving all fields.
+with open("institutions.csv", mode="w") as outfile:
+    swriter = csv.DictWriter(outfile, fieldnames=institutions_fieldnames)
     swriter.writeheader()
     for n in collections.OrderedDict(sorted(countryinfo.items())):
-        h = {
-            "institution": n,
-            "region": countryinfo[n]["region"],
-            "countryabbrv": countryinfo[n]["countryabbrv"],
-        }
-        swriter.writerow(h)
+        entry = countryinfo[n].copy()
+        entry["institution"] = n
+        swriter.writerow(entry)
 
 
 # Read in all CSrankings files and remove duplicates.
+# Preserve all fields dynamically to avoid losing data when new columns are added.
 for letter in map(chr, range(ord('a'),ord('z')+1)):
     csrankings = {}
+    fieldnames = None
     with open(f"csrankings-{letter}.csv", mode="r") as infile:
         reader = csv.DictReader(infile)
+        fieldnames = reader.fieldnames  # Preserve original field order
         for row in reader:
-            csrankings[row["name"]] = {
-                "affiliation": row["affiliation"],
-                "homepage": row["homepage"],
-                "scholarid": row["scholarid"],
-            }
+            # Store all fields, not just known ones
+            csrankings[row["name"]] = dict(row)
     with open(f"csrankings-{letter}.csv", mode="w") as outfile:
-        sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
-        swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+        swriter = csv.DictWriter(outfile, fieldnames=fieldnames)
         swriter.writeheader()
         for n in csrankings:
-            h = {
-                "name": n,
-                "affiliation": csrankings[n]["affiliation"],
-                "homepage": csrankings[n]["homepage"].rstrip("/"),
-                "scholarid": csrankings[n]["scholarid"],
-            }
-            swriter.writerow(h)
+            entry = csrankings[n].copy()
+            entry["name"] = n
+            # Normalize homepage (remove trailing slash)
+            if "homepage" in entry:
+                entry["homepage"] = entry["homepage"].rstrip("/")
+            swriter.writerow(entry)
     
+# Read in CSrankings file, preserving all fields dynamically.
+csrankings = {}
+csrankings_fieldnames = None
+with open("csrankings.csv", mode="r") as infile:
+    reader = csv.DictReader(infile)
+    csrankings_fieldnames = reader.fieldnames
+    for row in reader:
+        csrankings[row["name"]] = dict(row)
+
+
+# Read in CSrankings file (again for alias processing).
 csrankings = {}
 with open("csrankings.csv", mode="r") as infile:
     reader = csv.DictReader(infile)
+    csrankings_fieldnames = reader.fieldnames
     for row in reader:
-        csrankings[row["name"]] = {
-            "affiliation": row["affiliation"],
-            "homepage": row["homepage"],
-            "scholarid": row["scholarid"],
-        }
-
-
-# Read in CSrankings file.
-csrankings = {}
-with open("csrankings.csv", mode="r") as infile:
-    reader = csv.DictReader(infile)
-    for row in reader:
-        csrankings[row["name"]] = {
-            "affiliation": row["affiliation"],
-            "homepage": row["homepage"],
-            "scholarid": row["scholarid"],
-        }
+        csrankings[row["name"]] = dict(row)
 
 # Remove any cycles in the aliases (that is, name -> alias -> name).
 
@@ -238,15 +227,16 @@ for name in aliases:
 
 # Correct any missing scholar pages.
 for name in csrankings:
-    if csrankings[name]["scholarid"] == "NOSCHOLARPAGE":
+    if csrankings[name].get("scholarid", "NOSCHOLARPAGE") == "NOSCHOLARPAGE":
         page = "NOSCHOLARPAGE"
         if name in aliases:
             for a in aliases[name]:
-                if a in csrankings and csrankings[a]["scholarid"] != "NOSCHOLARPAGE":
+                if a in csrankings and csrankings[a].get("scholarid", "NOSCHOLARPAGE") != "NOSCHOLARPAGE":
                     page = csrankings[a]["scholarid"]
         if name in aliasToName:
-            if csrankings[aliasToName[name]] != "NOSCHOLARPAGE":
-                page = csrankings[aliasToName[name]]["scholarid"]
+            alias_entry = csrankings.get(aliasToName[name], {})
+            if alias_entry.get("scholarid", "NOSCHOLARPAGE") != "NOSCHOLARPAGE":
+                page = alias_entry["scholarid"]
 
         if page != "NOSCHOLARPAGE":
             csrankings[name]["scholarid"] = page
@@ -254,29 +244,29 @@ for name in csrankings:
 # Fix inconsistent home pages.
 if False:
     for name in csrankings:
-        page = csrankings[name]["homepage"]
+        page = csrankings[name].get("homepage", "")
         if name in aliases:
             for a in aliases[name]:
-                if a in csrankings and csrankings[a]["homepage"] != page:
+                if a in csrankings and csrankings[a].get("homepage", "") != page:
                     if page == "http://csrankings.org":
-                        page = csrankings[a]["homepage"]
+                        page = csrankings[a].get("homepage", "")
                     csrankings[a]["homepage"] = page
 
 # Find and flag inconsistent affiliations.
 for name in csrankings:
-    aff = csrankings[name]["affiliation"]
+    aff = csrankings[name].get("affiliation", "")
     if name in aliases:
         for a in aliases[name]:
-            if a in csrankings and csrankings[a]["affiliation"] != aff:
+            if a in csrankings and csrankings[a].get("affiliation", "") != aff:
                 print("INCONSISTENT AFFILIATION: " + name)
 
 
 # Find and flag inconsistent Google Scholar pages.
 for name in csrankings:
-    sch = csrankings[name]["scholarid"]
+    sch = csrankings[name].get("scholarid", "")
     if name in aliases:
         for a in aliases[name]:
-            if a in csrankings and csrankings[a]["scholarid"] != sch:
+            if a in csrankings and csrankings[a].get("scholarid", "") != sch:
                 print("INCONSISTENT SCHOLAR PAGE: " + name)
 
 # Make sure that Google Scholar pages are not accidentally duplicated across different authors.
@@ -286,7 +276,7 @@ for name in csrankings:
 
 scholars = {}
 for name in csrankings:
-    sch = csrankings[name]["scholarid"]
+    sch = csrankings[name].get("scholarid", "NOSCHOLARPAGE")
     if sch == "NOSCHOLARPAGE":
         continue
     if sch in scholars:
@@ -321,7 +311,7 @@ for n in sorted(
             + " clashes and scores:"
             + str(mapscores)
         )
-        affiliations = list(map(lambda nv: csrankings[nv[0]]["affiliation"], mapscores))
+        affiliations = list(map(lambda nv: csrankings[nv[0]].get("affiliation", ""), mapscores))
         print(affiliations)
         if affiliations[0] == affiliations[-1]:
             # All affiliations the same.
@@ -339,7 +329,9 @@ random.shuffle(ks)
 ks = ks[:count]
 
 for name in ks:
-    page = csrankings[name]["homepage"]
+    page = csrankings[name].get("homepage", "")
+    if not page:
+        continue
     print("Testing " + page + " (" + name + ")")
     try:
         r = requests.head(page, allow_redirects=True, timeout=3)
@@ -347,7 +339,7 @@ for name in ks:
         if (r.status_code == 404) or (r.status_code == 410) or (r.status_code == 500):
             # prints the int of the status code. Find more at httpstatusrappers.com :)
             print("SEARCHING NOW FOR FIX FOR " + name)
-            actualURL = find_fix(name, csrankings[name]["affiliation"])
+            actualURL = find_fix(name, csrankings[name].get("affiliation", ""))
             print("changed to " + actualURL)
             csrankings[name]["homepage"] = actualURL
             continue
@@ -359,25 +351,23 @@ for name in ks:
     except requests.ConnectionError:
         print("failed to connect")
         print("SEARCHING NOW FOR FIX FOR " + name)
-        actualURL = find_fix(name, csrankings[name]["affiliation"])
+        actualURL = find_fix(name, csrankings[name].get("affiliation", ""))
         print("changed to " + actualURL)
         csrankings[name]["homepage"] = actualURL
     except:
         print("got me")
 
 
-# Now rewrite csrankings.csv.
+# Now rewrite csrankings.csv, preserving all fields.
 
 csrankings = collections.OrderedDict(sorted(csrankings.items(), key=lambda t: t[0]))
 with open("csrankings.csv", mode="w") as outfile:
-    sfieldnames = ["name", "affiliation", "homepage", "scholarid"]
-    swriter = csv.DictWriter(outfile, fieldnames=sfieldnames)
+    swriter = csv.DictWriter(outfile, fieldnames=csrankings_fieldnames)
     swriter.writeheader()
     for n in csrankings:
-        h = {
-            "name": n,
-            "affiliation": csrankings[n]["affiliation"],
-            "homepage": csrankings[n]["homepage"].rstrip("/"),
-            "scholarid": csrankings[n]["scholarid"],
-        }
-        swriter.writerow(h)
+        entry = csrankings[n].copy()
+        entry["name"] = n
+        # Normalize homepage (remove trailing slash)
+        if "homepage" in entry:
+            entry["homepage"] = entry["homepage"].rstrip("/")
+        swriter.writerow(entry)

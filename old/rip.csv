@@ -1,27 +1,37 @@
-name,affiliation,homepage,scholarid
-Alexander Vardy,Univ. of California - San Diego,http://jacobsdev.ucsd.edu/faculty/faculty_bios/index.sfe?fmp_recid=76,WtalCkkAAAAJ
-Allen R. Tannenbaum,Stony Brook University,http://www.iacs.stonybrook.edu/people/affiliates/allen-tannenbaum,w0Vl_lsAAAAJ
-Arvind 0001,Massachusetts Institute of Technology,http://csg.csail.mit.edu/Users/arvind,P0hz-8UAAAAJ
-Arzoo Katiyar,Pennsylvania State University,https://sites.google.com/site/arzook99/home,a20VZPQAAAAJ
-Barry W. Boehm,University of Southern California,http://csse.usc.edu/new/barry-w-boehm,EyAD66UAAAAJ
-Dana H. Ballard,University of Texas at Austin,https://www.cs.utexas.edu/~dana,67aYFTQAAAAJ
-Dragomir R. Radev,Yale University,http://www.cs.yale.edu/homes/radev,vIqWvgwAAAAJ
-E. Allen Emerson,University of Texas at Austin,http://www.cs.utexas.edu/~emerson,NOSCHOLARPAGE
-Edmund M. Clarke,Carnegie Mellon University,https://www.cs.cmu.edu/~emc,_adL2C8AAAAJ
-Eelco Visser,TU Delft,http://eelcovisser.org,1OA7zicAAAAJ
-Eugene Charniak,Brown University,https://cs.brown.edu/~ec,_XHudx4AAAAJ
-Hector Garcia-Molina,Stanford University,http://infolab.stanford.edu/people/hector.html,bAa___kAAAAJ
-Isabel F. Cruz,University of Illinois at Chicago,https://www.cs.uic.edu/Cruz,kdv2ajAAAAAJ
-J. D. Tygar,University of California - Berkeley,http://www.tygar.net,NOSCHOLARPAGE
-J. Doug Tygar,University of California - Berkeley,http://www.tygar.net,NOSCHOLARPAGE
-Jaime G. Carbonell,Carnegie Mellon University,https://www.cs.cmu.edu/~jgc,uSfaEgUAAAAJ
-Larry Henschen,Northwestern University,http://www.mccormick.northwestern.edu/research-faculty/directory/profiles/henschen-larry.html,NOSCHOLARPAGE
-Lars Arge,Aarhus University,http://cs.au.dk/~large,MgdxxbAAAAAJ
-Laurie J. Hendren,McGill University,http://www.sable.mcgill.ca/~hendren,uouHKIkAAAAJ
-Lawrence J. Henschen,Northwestern University,http://www.mccormick.northwestern.edu/research-faculty/directory/profiles/henschen-larry.html,NOSCHOLARPAGE
-Michael I. Schwartzbach,Aarhus University,http://cs.au.dk/~mis,zX-HBWwAAAAJ
-Ron Graham,University of California - San Diego,https://cseweb.ucsd.edu/~rgraham,qrPaF3QAAAAJ
-Ronald L. Graham,University of California - San Diego,https://cseweb.ucsd.edu/~rgraham,qrPaF3QAAAAJ
-Sally A McKee,Chalmers/GU,https://www.chalmers.se/en/staff/Pages/sally-mckee.aspx,NOSCHOLARPAGE
-Stanley C. Eisenstat,Yale University,http://sce.cs.yale.edu,NOSCHOLARPAGE
-William R. Cook,University of Texas at Austin,http://www.cs.utexas.edu/~wcook,mNuzGVcAAAAJ
+name,affiliation,homepage,scholarid,orcid
+Alexander Vardy,Univ. of California - San Diego,http://jacobsdev.ucsd.edu/faculty/faculty_bios/index.sfe?fmp_recid=76,WtalCkkAAAAJ,0000-0003-3303-9078
+Allen R. Tannenbaum,Stony Brook University,http://www.iacs.stonybrook.edu/people/affiliates/allen-tannenbaum,w0Vl_lsAAAAJ,0000-0002-0567-5256
+Arvind 0001,Massachusetts Inst. of Technology,http://csg.csail.mit.edu/Users/arvind,P0hz-8UAAAAJ,0000-0000-0000-0000
+Arzoo Katiyar,Pennsylvania State University,https://sites.google.com/site/arzook99/home,a20VZPQAAAAJ,0000-0000-0000-0000
+Barry W. Boehm,University of Southern California,http://csse.usc.edu/new/barry-w-boehm,EyAD66UAAAAJ,0000-0000-0000-0000
+Charles M. Eastman,Georgia Institute of Technology,http://arch.gatech.edu/charles-eastman,NOSCHOLARPAGE,0000-0000-0000-0000
+Christoph M. Hoffmann,Purdue University,https://www.cs.purdue.edu/people/cmh,bR-fLK4AAAAJ,0000-0000-0000-0000
+Dana H. Ballard,University of Texas at Austin,https://www.cs.utexas.edu/~dana,67aYFTQAAAAJ,0000-0000-0000-0000
+Dragomir R. Radev,Yale University,http://www.cs.yale.edu/homes/radev,vIqWvgwAAAAJ,0000-0000-0000-0000
+E. Allen Emerson,University of Texas at Austin,http://www.cs.utexas.edu/~emerson,NOSCHOLARPAGE,0000-0000-0000-0000
+Edmund M. Clarke,Carnegie Mellon University,https://www.cs.cmu.edu/~emc,_adL2C8AAAAJ,0000-0000-0000-0000
+Eelco Visser,TU Delft,http://eelcovisser.org,1OA7zicAAAAJ,0000-0002-7384-3370
+Eugene Charniak,Brown University,https://cs.brown.edu/~ec,_XHudx4AAAAJ,0000-0000-0000-0000
+Gokhan Memik,Northwestern University,http://www.ece.northwestern.edu/~memik,BUJPA5QAAAAJ,0000-0000-0000-0000
+Hector Garcia-Molina,Stanford University,http://infolab.stanford.edu/people/hector.html,bAa___kAAAAJ,0000-0000-0000-0000
+Isabel F. Cruz,University of Illinois at Chicago,https://www.cs.uic.edu/Cruz,kdv2ajAAAAAJ,0000-0000-0000-0000
+J. D. Tygar,Univ. of California - Berkeley,http://www.tygar.net,NOSCHOLARPAGE,0000-0000-0000-0000
+J. Doug Tygar,Univ. of California - Berkeley,http://www.tygar.net,NOSCHOLARPAGE,0000-0000-0000-0000
+Jaime G. Carbonell,Carnegie Mellon University,https://www.cs.cmu.edu/~jgc,uSfaEgUAAAAJ,0000-0000-0000-0000
+John L. Wyatt,Massachusetts Inst. of Technology,http://www.rle.mit.edu/bio-wyatt,Xzaz7iwAAAAJ,0000-0000-0000-0000
+John L. Wyatt Jr.,Massachusetts Inst. of Technology,http://www.rle.mit.edu/bio-wyatt,Xzaz7iwAAAAJ,0000-0000-0000-0000
+Larry Henschen,Northwestern University,http://www.mccormick.northwestern.edu/research-faculty/directory/profiles/henschen-larry.html,NOSCHOLARPAGE,0000-0000-0000-0000
+Lars Arge,Aarhus University,http://cs.au.dk/~large,MgdxxbAAAAAJ,0000-0000-0000-0000
+Laurie J. Hendren,McGill University,http://www.sable.mcgill.ca/~hendren,uouHKIkAAAAJ,0000-0000-0000-0000
+Lawrence J. Henschen,Northwestern University,http://www.mccormick.northwestern.edu/research-faculty/directory/profiles/henschen-larry.html,NOSCHOLARPAGE,0000-0000-0000-0000
+Les Gasser,Univ. of Illinois at Urbana-Champaign,https://ischool.illinois.edu/people/faculty/gasser,NOSCHOLARPAGE,0000-0000-0000-0000
+Marvin Minsky,Massachusetts Inst. of Technology,http://web.media.mit.edu/~minsky,NOSCHOLARPAGE,0000-0000-0000-0000
+Max Mintz,University of Pennsylvania,http://www.cis.upenn.edu/~mintz,NOSCHOLARPAGE,0000-0000-0000-0000
+Michael I. Schwartzbach,Aarhus University,http://cs.au.dk/~mis,zX-HBWwAAAAJ,0000-0000-0000-0000
+Ron Graham,Univ. of California - San Diego,https://cseweb.ucsd.edu/~rgraham,qrPaF3QAAAAJ,0000-0000-0000-0000
+Ronald L. Graham,Univ. of California - San Diego,https://cseweb.ucsd.edu/~rgraham,qrPaF3QAAAAJ,0000-0000-0000-0000
+Sally A McKee,Chalmers/GU,https://www.chalmers.se/en/staff/Pages/sally-mckee.aspx,NOSCHOLARPAGE,0000-0000-0000-0000
+Seth J. Teller,Massachusetts Inst. of Technology,https://people.csail.mit.edu/teller,I6sTssIAAAAJ,0000-0000-0000-0000
+Stanley C. Eisenstat,Yale University,http://sce.cs.yale.edu,NOSCHOLARPAGE,0000-0000-0000-0000
+William R. Cook,University of Texas at Austin,http://www.cs.utexas.edu/~wcook,mNuzGVcAAAAJ,0000-0003-4918-8975
+William T. Peake,Massachusetts Inst. of Technology,http://www.rle.mit.edu/peake,NOSCHOLARPAGE,0000-0000-0000-0000
