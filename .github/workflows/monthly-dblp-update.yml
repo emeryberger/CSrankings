@@ -1,0 +1,78 @@
+name: Monthly DBLP Update
+
+on:
+  schedule:
+    # Run at midnight UTC on the 28th of each month
+    - cron: '0 0 28 * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-dblp:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0  # Fetch full history for git pull --rebase
+
+      - name: Set up Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run DBLP update
+        run: |
+          make update-dblp-full
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-commit: monthly DBLP update"
+            
+            # Retry logic to handle concurrent pushes (race condition fix)
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            RETRY_DELAY=5
+            
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              echo "Attempt $((RETRY_COUNT + 1)) of $MAX_RETRIES: Pushing changes..."
+              
+              if git push; then
+                echo "Successfully pushed changes."
+                exit 0
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  echo "Push failed. Pulling with rebase and retrying in ${RETRY_DELAY}s..."
+                  sleep $RETRY_DELAY
+                  
+                  # Pull with rebase to integrate remote changes
+                  git pull --rebase origin gh-pages
+                  
+                  # Increase delay for next retry (exponential backoff)
+                  RETRY_DELAY=$((RETRY_DELAY + 5))
+                else
+                  echo "Error: Failed to push after $MAX_RETRIES attempts."
+                  exit 1
+                fi
+              fi
+            done
+          fi

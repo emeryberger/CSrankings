@@ -25,6 +25,95 @@ optgroup:not(:first-child) {
     color: #984ea3
 }
 
+/* No Areas Selected Message */
+.no-areas-selected {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.no-areas-message {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.no-areas-pills {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.area-pill-btn {
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.area-pill-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.area-pill-btn.ai-pill {
+    background-color: #377eb8;
+}
+
+.area-pill-btn.systems-pill {
+    background-color: #ff7f00;
+}
+
+.area-pill-btn.theory-pill {
+    background-color: #4daf4a;
+}
+
+.area-pill-btn.interdisc-pill {
+    background-color: #984ea3;
+}
+
+.btn-select-all {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #05317c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.btn-select-all:hover {
+    filter: brightness(1.2);
+}
+
+/* Hide left area selection panel on mobile only */
+@media (max-width: 767px) {
+  #area-selection-panel {
+    display: none !important;
+  }
+
+  /* Center the ranking window content on mobile */
+  #ranking-window {
+    text-align: center;
+  }
+
+  #ranking-window #success {
+    display: inline-block;
+    text-align: left;
+    max-width: 900px;
+    width: 100%;
+  }
+}
+
 .overlay {
   position: fixed;
   display: block;
@@ -35,7 +124,7 @@ optgroup:not(:first-child) {
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
-  z-index: 2;
+  z-index: 10000;
   cursor: pointer;
 }
 
@@ -49,7 +138,1081 @@ optgroup:not(:first-child) {
 }
 
 .overlaytext {
-{
-  font-size: "20vw";
+  font-size: 20vw;
   color: white;
+}
+
+.rank-controls-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Flexbox layout for rank controls */
+.rank-controls-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rank-controls-main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.rank-controls-sponsor {
+  flex-shrink: 0;
+}
+
+.btn-sponsor {
+  background: #337ab7;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
+}
+
+.btn-sponsor:hover {
+  background: #286090;
+  box-shadow: 0 4px 8px rgba(51, 122, 183, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-sponsor:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.3);
+}
+
+/* ============================================
+   Area Selection Indicators
+   ============================================ */
+
+.area-indicators {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.area-indicator {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, filter 0.15s ease, transform 0.1s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.area-indicator.ai-indicator {
+  background-color: #377eb8;
+  color: white;
+}
+
+.area-indicator.systems-indicator {
+  background-color: #ff7f00;
+  color: white;
+}
+
+.area-indicator.theory-indicator {
+  background-color: #4daf4a;
+  color: white;
+}
+
+.area-indicator.interdisciplinary-indicator {
+  background-color: #984ea3;
+  color: white;
+}
+
+/* Selection states via opacity */
+.area-indicator.selection-none {
+  opacity: 0.25;
+}
+
+.area-indicator.selection-partial {
+  opacity: 0.6;
+}
+
+.area-indicator.selection-all {
+  opacity: 1.0;
+}
+
+.area-indicator:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.area-indicator.active {
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* All Areas Toggle Switch */
+.all-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 10px;
+}
+
+.all-toggle-checkbox {
+  display: none;
+}
+
+.all-toggle-slider {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  background-color: #ccc;
+  border-radius: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.all-toggle-slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.all-toggle-checkbox:checked + .all-toggle-slider {
+  background-color: #05317c;
+}
+
+.all-toggle-checkbox:checked + .all-toggle-slider::before {
+  transform: translateX(14px);
+}
+
+.all-toggle-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Partial state - steel blue (between #ccc off and #05317c on) */
+.all-toggle.selection-partial .all-toggle-slider {
+  background-color: #6889a8;
+}
+
+.all-toggle.selection-partial .all-toggle-slider::before {
+  transform: translateX(7px);
+}
+
+/* All Areas Header in Sidebar */
+.all-areas-header {
+  display: flex;
+  align-items: center;
+  font-size: 125%;
+  margin-bottom: 8px;
+}
+
+.all-toggle-sidebar .all-toggle-slider {
+  width: 40px;
+  height: 22px;
+}
+
+.all-toggle-sidebar .all-toggle-slider::before {
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+.all-toggle-sidebar .all-toggle-checkbox:checked + .all-toggle-slider::before {
+  transform: translateX(18px);
+}
+
+.all-toggle-sidebar.selection-partial .all-toggle-slider::before {
+  transform: translateX(9px);
+}
+
+.all-toggle-sidebar .all-toggle-label {
+  font-size: 14px;
+}
+
+/* Area Dropdown Panels */
+.area-indicators {
+  position: relative;
+}
+
+.area-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.area-dropdown-panel.open {
+  display: block;
+}
+
+.area-dropdown-content {
+  padding: 8px 0;
+}
+
+.area-dropdown-item {
+  padding: 6px 12px;
+}
+
+.area-dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.area-dropdown-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 0;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.area-dropdown-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Parent area rows */
+.area-parent-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.area-expand-icon {
+  cursor: pointer;
+  font-size: 10px;
+  color: #666;
+  width: 16px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.area-expand-icon.expanded {
+  transform: rotate(90deg);
+}
+
+.area-expand-spacer {
+  width: 16px;
+}
+
+/* Child conference list */
+.area-children {
+  display: none;
+  margin-left: 20px;
+  border-left: 2px solid #eee;
+  padding-left: 8px;
+}
+
+.area-children.expanded {
+  display: block;
+}
+
+.area-child {
+  padding: 4px 8px;
+}
+
+.area-child-divider {
+  height: 1px;
+  background: #ddd;
+  margin: 6px 0;
+}
+
+.area-dropdown-divider {
+  height: 1px;
+  background: #ddd;
+  margin: 4px 12px;
+}
+
+.area-all-toggle {
+  font-weight: 500;
+}
+
+.area-child.next-tier {
+  opacity: 0.7;
+}
+
+/* Responsive positioning */
+@media (max-width: 768px) {
+  .area-dropdown-panel {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    max-width: none;
+    max-height: 60vh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Larger touch targets for mobile/tablet */
+  .area-dropdown-item {
+    padding: 10px 12px;
+  }
+
+  .area-dropdown-item label {
+    font-size: 15px;
+    min-height: 24px;
+  }
+
+  .area-dropdown-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .area-expand-icon {
+    font-size: 14px;
+    width: 24px;
+    padding: 4px;
+  }
+
+  .area-child {
+    padding: 8px 8px;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .area-dropdown-panel {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 576px) {
+  .rank-controls-sponsor {
+    display: none;
+  }
+}
+
+/* ============================================
+   Area Section Toggle Buttons
+   ============================================ */
+
+.area-toggle-btn {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: opacity 0.2s ease, filter 0.15s ease, transform 0.1s ease;
+  cursor: pointer;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+  user-select: none;
+  color: white;
+  vertical-align: middle;
+}
+
+.area-toggle-btn.ai-toggle {
+  background-color: #377eb8;
+}
+
+.area-toggle-btn.systems-toggle {
+  background-color: #ff7f00;
+}
+
+.area-toggle-btn.theory-toggle {
+  background-color: #4daf4a;
+}
+
+.area-toggle-btn.interdisciplinary-toggle {
+  background-color: #984ea3;
+}
+
+/* Selection states via opacity */
+.area-toggle-btn.selection-none {
+  opacity: 0.3;
+}
+
+.area-toggle-btn.selection-partial {
+  opacity: 0.65;
+}
+
+.area-toggle-btn.selection-all {
+  opacity: 1.0;
+}
+
+.area-toggle-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+  .area-toggle-btn {
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+}
+
+/* ============================================
+   Custom Region Dropdown with Flags
+   ============================================ */
+
+.custom-region-dropdown {
+  position: relative;
+  display: inline-block;
+  min-width: 140px;
+  vertical-align: middle;
+}
+
+.region-selected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.region-selected:hover {
+  border-color: #337ab7;
+}
+
+.region-flag {
+  width: 16px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.region-arrow {
+  margin-left: auto;
+  font-size: 10px;
+  color: #666;
+}
+
+.region-options {
+  display: none !important;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.region-options.open {
+  display: block !important;
+  visibility: visible;
+}
+
+.region-option-group {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  background: #f5f5f5;
+  border-top: 1px solid #eee;
+}
+
+.region-option-group:first-child {
+  border-top: none;
+}
+
+.region-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.region-option:hover {
+  background: #e3f2fd;
+}
+
+.region-option.selected {
+  background: #d9edf7;
+}
+
+.region-option img {
+  width: 16px;
+  height: auto;
+}
+
+.region-option-noicon {
+  padding-left: 36px;
+}
+
+/* Globe images for multi-country regions */
+.region-globe-img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   Custom Chart Type Dropdown
+   ============================================ */
+
+.custom-chart-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.chart-selected {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chart-selected:hover {
+  border-color: #337ab7;
+}
+
+.chart-selected .chart-icon {
+  width: 12px;
+  height: auto;
+}
+
+.chart-arrow {
+  font-size: 10px;
+  color: #666;
+  margin-left: 2px;
+}
+
+.chart-options {
+  display: none !important;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.chart-options.open {
+  display: flex !important;
+  visibility: visible;
+  flex-direction: column;
+}
+
+.chart-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.chart-option:hover {
+  background: #e3f2fd;
+}
+
+.chart-option.selected {
+  background: #d9edf7;
+}
+
+.chart-option img {
+  width: 12px;
+  height: auto;
+}
+
+.rank-controls-panel {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.rank-controls-panel .panel-heading {
+  background-color: #d9edf7;
+  box-shadow: none;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.intro-panel {
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.intro-panel .panel-heading {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding-bottom: 5px;
+}
+
+/* ============================================
+   Responsive institution list height
+   ============================================ */
+
+/* Desktop: make institution list match areas list height */
+@media (min-width: 768px) {
+  /* Use flexbox to equalize column heights */
+  .row.switch-xs.row-centered {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .row.switch-xs.row-centered > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Institution column content should fill height */
+  #success {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #success .table-responsive {
+    flex: 1;
+    max-height: 800px;
+    overflow-y: auto;
+  }
+
+  /* Sticky table header inside scrolling container */
+  #success table.table-fit {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  #success table.table-fit > thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  #success table.table-fit > thead > tr > th {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+/* ============================================
+   Ranking table zebra striping and hover
+   ============================================ */
+
+/* Rank number column - fixed width, right aligned */
+.rank-cell {
+  width: 2.5em;
+  min-width: 2.5em;
+  text-align: right;
+  padding-right: 8px !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Institution rankings: zebra stripe every other institution */
+/* Table has 3 rows per institution: data, chart, faculty */
+#success table.table-fit > tbody > tr:nth-child(6n+1) > td {
+  background-color: #f5f5f5;
+}
+
+/* Institution hover */
+#success table.table-fit > tbody > tr:nth-child(3n+1):hover > td {
+  background-color: #e3f2fd;
+}
+
+/* Add vertical padding to institution data rows for breathing room */
+#success table.table-fit > tbody > tr:nth-child(3n+1) > td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Collapse empty chart/faculty rows */
+#success table.table-fit > tbody > tr:nth-child(3n+2) > td,
+#success table.table-fit > tbody > tr:nth-child(3n) > td {
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* ============================================
+   Faculty listings zebra striping and hover
+   ============================================ */
+
+/* Faculty zebra stripe - stripe faculty 1, 3, 5... (rows 1, 5, 9...) */
+#success div.table > table tbody tr:nth-child(4n+1) td {
+  background-color: #f5f5f5;
+}
+
+/* Faculty hover */
+#success div.table > table tbody tr:hover td {
+  background-color: #e3f2fd;
+}
+
+/* Collapse empty chart rows in faculty tables */
+#success div.table > table tbody tr:nth-child(even) td {
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* ============================================
+   Year Range Slider
+   ============================================ */
+
+.year-slider-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.year-slider-label {
+  white-space: nowrap;
+  color: #333;
+}
+
+.year-display {
+  font-weight: bold;
+  font-size: 1.1em;
+  min-width: 48px;
+  text-align: center;
+  color: #337ab7;
+  background-color: #d9edf7;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid #bce8f1;
+  cursor: text;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.year-display:hover {
+  border-color: #337ab7;
+}
+
+.year-display:focus {
+  outline: none;
+  border-color: #337ab7;
+  box-shadow: 0 0 0 2px rgba(51, 122, 183, 0.25);
+  background-color: #fff;
+}
+
+.year-slider {
+  width: 100px;
+  height: 8px;
+  margin: 0 8px;
+}
+
+/* Year range display wrapper */
+.year-range-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+/* noUiSlider customization */
+.year-slider .noUi-connect {
+  background: #337ab7;
+}
+
+.year-slider .noUi-handle {
+  height: 17px !important;
+  width: 5px !important;
+  min-width: 0 !important;
+  top: 0px !important;
+  right: -2px !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: #000 !important;
+  cursor: ew-resize;
+}
+
+.year-slider .noUi-handle:hover {
+  background: #333 !important;
+}
+
+.year-slider .noUi-handle:before,
+.year-slider .noUi-handle:after {
+  display: none;
+}
+
+.year-slider .noUi-handle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .year-slider-container {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .year-slider {
+    width: 100px;
+    min-width: 80px;
+    max-width: 100px;
+    margin: 0;
+  }
+
+  .year-slider-label {
+    display: none;
+  }
+
+  .year-display {
+    flex-shrink: 0;
+    min-width: 42px;
+    font-size: 0.95em;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .year-slider-container {
+    gap: 4px;
+  }
+
+  .year-slider {
+    width: 80px;
+    min-width: 60px;
+    max-width: 80px;
+  }
+
+  .year-display {
+    min-width: 38px;
+    font-size: 0.85em;
+    padding: 1px 3px;
+  }
+}
+
+/* ============================================
+   Footer Styles
+   ============================================ */
+
+.page-footer {
+  margin-top: 2em;
+  padding: 1em 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.page-footer p {
+  margin-bottom: 0.5em;
+}
+
+/* ============================================
+   Sponsors Avatars
+   ============================================ */
+
+.sponsors-avatars {
+  margin: 0.75em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.sponsors-avatars a {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sponsors-avatars a:hover {
+  transform: scale(1.15);
+}
+
+.sponsors-avatars img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s ease;
+}
+
+.sponsors-avatars a:hover img {
+  border-color: #337ab7;
+}
+
+/* ============================================
+   Skeleton Loading States
+   ============================================ */
+
+.skeleton-loading {
+  padding: 20px;
+}
+
+.skeleton-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skeleton-row:nth-child(odd) {
+  background: #fafafa;
+}
+
+.skeleton-rank {
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 3px;
+  margin-right: 15px;
+}
+
+.skeleton-name {
+  flex: 1;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 3px;
+  max-width: 250px;
+}
+
+.skeleton-score {
+  width: 50px;
+  height: 20px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-header {
+  display: flex;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.skeleton-header-item {
+  height: 16px;
+  background: #d0d0d0;
+  border-radius: 3px;
+}
+
+.skeleton-header-item:first-child {
+  width: 30px;
+  margin-right: 15px;
+}
+
+.skeleton-header-item:nth-child(2) {
+  flex: 1;
+  max-width: 120px;
+}
+
+.skeleton-header-item:last-child {
+  width: 50px;
+  margin-left: 20px;
+}
+
+/* ============================================
+   Mobile Responsive Improvements
+   ============================================ */
+
+/* Touch-friendly year slider - only for touch devices */
+@media (pointer: coarse) {
+  .year-slider .noUi-handle {
+    width: 28px !important;
+    height: 28px !important;
+    right: -14px !important;
+    top: -10px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    border: 2px solid #333 !important;
+    box-sizing: border-box !important;
+    cursor: pointer;
+  }
+
+  /* Hide the default handle lines */
+  .year-slider .noUi-handle:before,
+  .year-slider .noUi-handle:after {
+    display: none !important;
+  }
+
+  .year-slider .noUi-touch-area {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+  }
+
+  .year-slider-container {
+    padding: 10px 5px;
+  }
+
+  .year-slider {
+    margin: 0 15px;
+  }
 }

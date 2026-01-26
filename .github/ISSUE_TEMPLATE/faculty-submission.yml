@@ -1,0 +1,65 @@
+name: Faculty Submission
+description: Add a faculty member to CSRankings (via self-service form)
+title: "Add [name] ([institution])"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Faculty Submission
+        This issue was created via the [CSRankings submission form](/submit/).
+        An automated workflow will validate and create a PR if everything checks out.
+
+  - type: input
+    id: name
+    attributes:
+      label: Name (as it appears in DBLP)
+      description: Must match DBLP exactly, including disambiguation numbers like "0001"
+      placeholder: "Jane Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: institution
+    attributes:
+      label: Institution
+      description: Must already exist in CSRankings
+      placeholder: "MIT"
+    validations:
+      required: true
+
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage URL
+      description: Must be accessible and show name/affiliation
+      placeholder: "https://www.example.edu/~jsmith"
+    validations:
+      required: true
+
+  - type: input
+    id: scholarid
+    attributes:
+      label: Google Scholar ID
+      description: 12-character ID from Scholar profile URL, or NOSCHOLARPAGE
+      placeholder: "abc123AAAAJ"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: eligibility
+    attributes:
+      label: Eligibility Confirmation
+      description: Please confirm the following requirements
+      options:
+        - label: This faculty member is full-time, tenure-track, and can solely advise CS PhD students
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **What happens next:**
+        1. An automated check will validate your submission
+        2. If valid, a PR will be created automatically
+        3. A maintainer will review and merge
