@@ -375,6 +375,14 @@ jobs:
                   labels: ['CSrankings form submission']
                 });
 
+                // Subscribe issue creator to PR notifications
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
+                });
+
                 // Comment on all issues
                 for (const issue of issues) {
                   await github.rest.issues.createComment({
@@ -687,6 +695,14 @@ jobs:
                     labels: ['CSrankings form submission']
                   });
 
+                  // Subscribe issue creator to PR notifications
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
+                  });
+
                   // Comment on issue
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
@@ -910,6 +926,14 @@ jobs:
                         repo: context.repo.repo,
                         issue_number: pr.number,
                         labels: ['CSrankings form submission']
+                      });
+
+                      // Subscribe issue creator to PR notifications
+                      await github.rest.issues.createComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: pr.number,
+                        body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                       });
 
                       await github.rest.issues.createComment({
@@ -1284,6 +1308,14 @@ jobs:
                   repo: context.repo.repo,
                   issue_number: pr.number,
                   labels: ['CSrankings form submission']
+                });
+
+                // Subscribe issue creator to PR notifications
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                 });
 
                 // Comment on issue with success
