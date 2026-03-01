@@ -302,9 +302,6 @@ namespace CSRankings {
         for (let r = 0; r < numAuthors; r++) {
             const record = authors[r];
             const { area, year } = record;
-            if (area in nextTier) {
-                continue;
-            }
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
