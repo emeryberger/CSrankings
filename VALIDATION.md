@@ -126,6 +126,7 @@ Multiple PRs adding the same person, often with slightly different data:
 | Japan | Assistant/Associate/Full Professor | Generally permanent in national universities |
 | China | Lecturer, Associate Prof, Professor | Generally permanent; "特聘" (special appointment) may be fixed-term |
 | South Korea | Assistant/Associate/Full Professor | Similar to US system |
+| Estonia | Professor, Dotsent (Assoc. Prof), Lektor (Lecturer) | "Teadur" (Research Fellow/Researcher) is research-only, NOT tenure-track |
 
 ---
 
