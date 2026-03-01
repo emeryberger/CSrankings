@@ -375,6 +375,14 @@ jobs:
                   labels: ['CSrankings form submission']
                 });
 
+                // Subscribe issue creator to PR notifications
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
+                });
+
                 // Comment on all issues
                 for (const issue of issues) {
                   await github.rest.issues.createComment({
@@ -687,6 +695,14 @@ jobs:
                     labels: ['CSrankings form submission']
                   });
 
+                  // Subscribe issue creator to PR notifications
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
+                  });
+
                   // Comment on issue
                   await github.rest.issues.createComment({
                     owner: context.repo.owner,
@@ -912,6 +928,14 @@ jobs:
                         labels: ['CSrankings form submission']
                       });
 
+                      // Subscribe issue creator to PR notifications
+                      await github.rest.issues.createComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: pr.number,
+                        body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
+                      });
+
                       await github.rest.issues.createComment({
                         owner: context.repo.owner,
                         repo: context.repo.repo,
@@ -1019,6 +1043,15 @@ jobs:
                     ? `csrankings-${searchFirstLetter}.csv`
                     : 'csrankings-0.csv';
 
+                  // Check if the update requires a cross-file move (first letter of name changed)
+                  const newFirstLetter = newName.charAt(0).toLowerCase();
+                  const newNameTargetFile = /[a-z]/.test(newFirstLetter)
+                    ? `csrankings-${newFirstLetter}.csv`
+                    : 'csrankings-0.csv';
+                  const crossFileMove = newNameTargetFile !== searchTargetFile;
+                  var updateCrossFileTarget = null;
+                  var updateCrossFileEntry = null;
+
                   // Read file and find/replace entry
                   const content = fs.readFileSync(searchTargetFile, 'utf8');
                   const lines = content.split(/\r?\n/);
@@ -1028,7 +1061,13 @@ jobs:
                   for (let i = 0; i < lines.length; i++) {
                     const existingName = lines[i].split(',')[0];
                     if (normalize(existingName) === nameNorm) {
-                      lines[i] = newEntryText;
+                      if (crossFileMove) {
+                        lines.splice(i, 1); // Remove from old file
+                        updateCrossFileTarget = newNameTargetFile;
+                        updateCrossFileEntry = newEntryText;
+                      } else {
+                        lines[i] = newEntryText; // In-place replacement
+                      }
                       found = true;
                       break;
                     }
@@ -1057,6 +1096,10 @@ jobs:
                   commitMessage = `Update ${displayName}${coAuthorLine}`;
                   prTitle = `Update ${displayName}`;
                   prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+
+                  if (crossFileMove) {
+                    prBody += `\n\n**Note:** Entry moved from \`${searchTargetFile}\` to \`${newNameTargetFile}\` due to name change.`;
+                  }
 
                   // Override targetFile for the update operation
                   targetFile = searchTargetFile;
@@ -1164,6 +1207,54 @@ jobs:
                   sha: fileData.sha,
                   branch: branchName
                 });
+
+                // For update with cross-file move, add entry to new file
+                if (action === 'update' && updateCrossFileTarget && updateCrossFileEntry) {
+                  console.log(`  Moving entry to ${updateCrossFileTarget}`);
+
+                  try {
+                    // Get new file content from the branch
+                    const { data: newFileData } = await github.rest.repos.getContent({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      path: updateCrossFileTarget,
+                      ref: branchName
+                    });
+
+                    let newFileContent = Buffer.from(newFileData.content, 'base64').toString('utf8');
+                    let newFileLines = newFileContent.split(/\r?\n/);
+
+                    // Find insertion point (alphabetical order)
+                    const entryName = updateCrossFileEntry.split(',')[0];
+                    const entryNameNorm = normalize(entryName);
+                    let insertIndex = 1; // Skip header
+                    for (let i = 1; i < newFileLines.length; i++) {
+                      if (!newFileLines[i].trim()) continue;
+                      const existingName = newFileLines[i].split(',')[0];
+                      if (normalize(existingName) > entryNameNorm) {
+                        insertIndex = i;
+                        break;
+                      }
+                      insertIndex = i + 1;
+                    }
+
+                    newFileLines.splice(insertIndex, 0, updateCrossFileEntry);
+                    const updatedNewContent = newFileLines.join('\r\n');
+
+                    await github.rest.repos.createOrUpdateFileContents({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      path: updateCrossFileTarget,
+                      message: `Move entry to ${updateCrossFileTarget}${coAuthorLine}`,
+                      content: Buffer.from(updatedNewContent).toString('base64'),
+                      sha: newFileData.sha,
+                      branch: branchName
+                    });
+                    console.log(`  Moved entry to ${updateCrossFileTarget}`);
+                  } catch (moveError) {
+                    console.error(`  Could not move entry to ${updateCrossFileTarget}: ${moveError.message}`);
+                  }
+                }
 
                 // For reinstatement, remove entry from the old/ source file
                 if (action === 'reinstate' && reinstateSourceFile && reinstateEntryName) {
@@ -1284,6 +1375,14 @@ jobs:
                   repo: context.repo.repo,
                   issue_number: pr.number,
                   labels: ['CSrankings form submission']
+                });
+
+                // Subscribe issue creator to PR notifications
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                 });
 
                 // Comment on issue with success
