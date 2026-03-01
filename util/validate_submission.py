@@ -197,8 +197,10 @@ def check_dblp_name(name: str) -> dict:
                 author = hit.get('info', {}).get('author', '')
                 if author:
                     result['suggestions'].append(author)
-                    # Check for exact match
-                    if author.lower() == name.lower():
+                    # Check for exact match (case-sensitive: DBLP treats
+                    # capitalization as significant, e.g. "XiaoFeng Wang 0001"
+                    # and "Xiaofeng Wang 0001" are different people)
+                    if author == name:
                         result['exact_match'] = True
 
     except requests.RequestException as e:
@@ -292,7 +294,10 @@ def check_duplicate_entry(name: str) -> dict:
     if not os.path.exists(filename):
         return result
 
-    name_norm = unidecode.unidecode(name).lower().strip()
+    # Use case-sensitive comparison: DBLP treats capitalization as significant,
+    # e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
+    # Only normalize diacritics (unidecode) and whitespace, not case.
+    name_norm = unidecode.unidecode(name).strip()
 
     try:
         with open(filename, 'r', encoding='utf-8') as f:
@@ -301,7 +306,7 @@ def check_duplicate_entry(name: str) -> dict:
             for row in reader:
                 if len(row) >= 4:
                     existing_name = row[0].strip()
-                    existing_norm = unidecode.unidecode(existing_name).lower().strip()
+                    existing_norm = unidecode.unidecode(existing_name).strip()
                     if existing_norm == name_norm:
                         result['exists'] = True
                         result['current_institution'] = row[1].strip()
