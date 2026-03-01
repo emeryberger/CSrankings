@@ -351,9 +351,9 @@ areadict: Dict[Area, List[Conference]] = {
     Area("sigcse"): [Conference("SIGCSE"), Conference("SIGCSE (1)")],
 }
 # EMSOFT is now published as a special issue of TECS *or* IEEE TCAD in a particular page range.
-# 2023 info contributed by Ezio Bartocci
-EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s")}
-EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156)}
+# 2023-2025 info contributed by Ezio Bartocci
+EMSOFT_TECS = {2017: (16, "5s"), 2019: (18, "5s"), 2021: (20, "5s"), 2023: (22, "5s"), 2025: (24, "5s")}
+EMSOFT_TECS_PaperNumbers = {2017: (163, 190), 2019: (84, 110), 2021: (79, 106), 2023: (136, 156), 2025: (129, 155)}
 
 EMSOFT_TCAD = {2018: (37, 11), 2020: (39, 11), 2022: (41, 11), 2024: (43, 11)}
 
