@@ -272,9 +272,9 @@ namespace CSRankings {
             }
             // Create an object containing areas and number of publications.
             let datadict: { [key: string]: number } = {};
-            const keys = topTierAreas;
             let maxValue = 0;
-            for (let key in keys) {
+            for (let i = 0; i < areas.length; i++) {
+                let key = areas[i];
                 const value = this.authorAreas[name][key];
                 if (key in parentMap) {
                     key = this.areaDict[key];

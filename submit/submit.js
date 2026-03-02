@@ -275,36 +275,6 @@ function hasDisambiguationSuffix(name) {
     const lastPart = parts[parts.length - 1];
     return /^\d{4}$/.test(lastPart);
 }
-/**
- * Check if a name is properly capitalized (not all caps or all lowercase)
- * Returns true for names like "John Smith", "Mary-Jane Watson", "Li Wei"
- * Returns false for "JOHN SMITH" or "john smith"
- */
-function isProperlyCapitalized(name) {
-    if (!name || name.length < 2)
-        return false;
-    // Split into parts (handling spaces, hyphens)
-    const parts = name.split(/[\s\-]+/).filter(p => p.length > 0);
-    for (const part of parts) {
-        // Skip single letters (initials like "J." or "W.")
-        if (part.length <= 2)
-            continue;
-        // Skip numbers (disambiguation suffixes like "0001")
-        if (/^\d+$/.test(part))
-            continue;
-        // Extract just letters for the check
-        const letters = part.replace(/[^a-zA-Z]/g, '');
-        if (letters.length > 1) {
-            // All uppercase is bad (e.g., "JOHN")
-            if (letters === letters.toUpperCase())
-                return false;
-            // All lowercase is bad (e.g., "john")
-            if (letters === letters.toLowerCase())
-                return false;
-        }
-    }
-    return true;
-}
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', init);
 function init() {
@@ -447,7 +417,7 @@ function loadDBLPAliases() {
             const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
             for (const row of parsed.data) {
                 if (row.alias && row.name) {
-                    dblpAliases.set(row.alias.toLowerCase().trim(), row.name.trim());
+                    dblpAliases.set(row.alias.trim(), row.name.trim());
                 }
             }
             console.log(`Loaded ${dblpAliases.size} DBLP aliases`);
@@ -461,8 +431,7 @@ function loadDBLPAliases() {
  * Check if a name has a DBLP alias (canonical name)
  */
 function getCanonicalDBLPName(name) {
-    const normalized = name.toLowerCase().trim();
-    return dblpAliases.get(normalized) || null;
+    return dblpAliases.get(name.trim()) || null;
 }
 /**
  * Setup all event listeners
@@ -663,7 +632,6 @@ function updateUIForAction(action) {
     show('guidelines-add', action === 'add');
     show('guidelines-update', action === 'update');
     show('guidelines-remove', action === 'remove');
-    show('rate-limit-notice', action === 'add');
     // Name help text
     show('name-help-add', action === 'add');
     show('name-help-update', action !== 'add');
@@ -728,10 +696,6 @@ function updateUIForAction(action) {
         batchButtons.style.display = action === 'add' ? 'block' : 'none';
     if (batchSection)
         batchSection.style.display = action === 'add' ? 'block' : 'none';
-    // Hide batch help text for non-add actions
-    const submitHelp = document.getElementById('submit-help');
-    if (submitHelp)
-        submitHelp.style.display = action === 'add' ? 'block' : 'none';
     // Clear batch entries when switching away from add
     if (action !== 'add' && batchEntries.length > 0) {
         clearBatchEntries();
@@ -1143,14 +1107,16 @@ function checkDBLPName(name) {
             const totalHits = parseInt(((_d = (_c = data === null || data === void 0 ? void 0 : data.result) === null || _c === void 0 ? void 0 : _c.hits) === null || _d === void 0 ? void 0 : _d['@total']) || '0', 10);
             if (totalHits > 0) {
                 result.found = true;
-                // Normalize input name for comparison (lowercase, collapse spaces, remove periods)
-                const normalizedInput = name.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+                // Normalize input name for comparison (collapse spaces, remove periods)
+                // Case-sensitive: DBLP treats capitalization as significant,
+                // e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
+                const normalizedInput = name.replace(/\./g, '').replace(/\s+/g, ' ').trim();
                 for (const hit of hits.slice(0, 5)) {
                     const author = ((_e = hit === null || hit === void 0 ? void 0 : hit.info) === null || _e === void 0 ? void 0 : _e.author) || '';
                     if (author) {
                         result.suggestions.push(author);
-                        // Normalize author name for comparison
-                        const normalizedAuthor = author.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+                        // Normalize author name for comparison (case-sensitive)
+                        const normalizedAuthor = author.replace(/\./g, '').replace(/\s+/g, ' ').trim();
                         if (normalizedAuthor === normalizedInput) {
                             result.exactMatch = true;
                         }
@@ -1183,14 +1149,11 @@ function validateName() {
         setFieldStatus('name', 'error', 'Name contains Excel error - do not use Excel');
         return;
     }
-    // Check for proper capitalization (not all caps or all lowercase)
-    if (!isProperlyCapitalized(name)) {
-        setFieldStatus('name', 'error', 'Name must use proper capitalization (not ALL CAPS or all lowercase)');
-        return;
-    }
     // For add action, check it doesn't already exist and verify DBLP
     if (currentAction === 'add') {
-        const existingEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase());
+        // Case-sensitive: DBLP treats capitalization as significant,
+        // e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
+        const existingEntry = facultyEntries.find(e => e.name === name);
         if (existingEntry) {
             // Entry exists (active or old/) - switch to update mode
             switchToUpdateWithEntry(existingEntry);
@@ -1218,11 +1181,11 @@ function validateNameForUpdateRemove() {
         return;
     }
     // If entry already selected and name matches, we're good
-    if (selectedEntry && selectedEntry.name.toLowerCase() === name.toLowerCase()) {
+    if (selectedEntry && selectedEntry.name === name) {
         return;
     }
-    // Look for exact match (case-insensitive)
-    const exactMatch = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase());
+    // Look for exact match (case-sensitive: DBLP treats capitalization as significant)
+    const exactMatch = facultyEntries.find(e => e.name === name);
     if (exactMatch) {
         // Auto-select the matching entry
         selectFacultyEntry(exactMatch.name);
@@ -1864,7 +1827,7 @@ function handleSubmit(e) {
     switch (currentAction) {
         case 'add':
             // Check if this person is in old/ directories
-            const oldEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase() && e.isOld);
+            const oldEntry = facultyEntries.find(e => e.name === name && e.isOld);
             issueUrl = createAddIssueUrl(entry, notes, oldEntry);
             break;
         case 'update':
@@ -1897,8 +1860,8 @@ function createAddIssueUrl(data, notes, existingOldEntry) {
     const isReinstatement = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.isOld) === true;
     const oldFileLabel = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.oldFile) ? getOldFileLabel(existingOldEntry.oldFile) : '';
     const title = isReinstatement
-        ? `Reinstate ${data.name} (${data.institution})`
-        : `Add ${data.name} (${data.institution})`;
+        ? `[CSrankings form submission] Reinstate ${data.name} (${data.institution})`
+        : `[CSrankings form submission] Add ${data.name} (${data.institution})`;
     const actionLine = isReinstatement
         ? `Reinstate former faculty (currently in ${oldFileLabel || 'old/'} folder)`
         : 'Add new faculty entry';
@@ -1936,7 +1899,7 @@ ${previousEntrySection}### Eligibility Confirmation
 
 ${notes ? `### Notes\n${notes}` : ''}`;
     // Note: labels can only be set via URL by users with write access
-    // The hourly workflow will identify issues by body content (### Action section)
+    // The hourly workflow will identify issues by title prefix instead
     const params = new URLSearchParams({
         title: title
     });
@@ -1951,8 +1914,8 @@ function createUpdateIssueUrl(oldEntry, newEntry, notes) {
     const isReinstatement = oldEntry.isOld === true;
     const oldFileLabel = oldEntry.oldFile ? getOldFileLabel(oldEntry.oldFile) : '';
     const title = isReinstatement
-        ? `Reinstate ${newEntry.name} (${newEntry.institution})`
-        : `Update ${newEntry.name}`;
+        ? `[CSrankings form submission] Reinstate ${newEntry.name} (${newEntry.institution})`
+        : `[CSrankings form submission] Update ${newEntry.name}`;
     const changes = [];
     if (oldEntry.name !== newEntry.name) {
         changes.push(`- Name: ${oldEntry.name} → ${newEntry.name}`);
@@ -2005,7 +1968,7 @@ ${notes ? `### Notes\n${notes}` : ''}`;
  * Create GitHub Issue URL for removing faculty
  */
 function createRemoveIssueUrl(entry, reason, notes) {
-    const title = `Remove ${entry.name} (${entry.institution})`;
+    const title = `[CSrankings form submission] Remove ${entry.name} (${entry.institution})`;
     const body = `### Action
 Remove faculty entry
 
@@ -2104,8 +2067,8 @@ function handleAddToBatch() {
     const homepage = document.getElementById('homepage').value.trim();
     const scholarid = document.getElementById('scholarid').value.trim();
     const orcid = document.getElementById('orcid').value.trim() || '0000-0000-0000-0000';
-    // Check for duplicate name in batch
-    if (batchEntries.some(e => e.name.toLowerCase() === name.toLowerCase())) {
+    // Check for duplicate name in batch (case-sensitive: DBLP treats capitalization as significant)
+    if (batchEntries.some(e => e.name === name)) {
         alert(`"${name}" is already in the batch.`);
         return;
     }
@@ -2115,7 +2078,7 @@ function handleAddToBatch() {
         return;
     }
     // Check if this person is in old/ directories
-    const oldEntry = facultyEntries.find(e => e.name.toLowerCase() === name.toLowerCase() && e.isOld);
+    const oldEntry = facultyEntries.find(e => e.name === name && e.isOld);
     // Add to batch (include old/ info if found)
     const entry = {
         name, institution, homepage, scholarid, orcid,
@@ -2247,8 +2210,8 @@ function createBatchIssueUrl(entries, institution, notes) {
     const reinstatements = entries.filter(e => e.isOld);
     const hasReinstatements = reinstatements.length > 0;
     const title = hasReinstatements
-        ? `Add/Reinstate ${entries.length} faculty from ${institution}`
-        : `Add ${entries.length} faculty from ${institution}`;
+        ? `[CSrankings form submission] Add/Reinstate ${entries.length} faculty from ${institution}`
+        : `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
     const entriesList = entries.map((e, i) => {
         const oldNote = e.isOld ? ` *(reinstatement from ${e.oldFile})*` : '';
         return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\`\n   - ORCID: \`${e.orcid}\``;

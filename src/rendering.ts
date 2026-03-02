@@ -235,7 +235,6 @@ namespace CSRankings {
     ): void {
         let data: Array<any> = [];
         let datadict: { [key: string]: number } = {};
-        const keys = topTierAreas;
         const uname = unescape(name);
 
         // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
@@ -251,11 +250,17 @@ namespace CSRankings {
         ];
         chartAreas.forEach(area => datadict[area.key] = 0);
 
-        for (let key in keys) {
+        for (let i = 0; i < areas.length; i++) {
+            let key = areas[i];
             if (!(uname in authorAreas)) {
                 // Defensive programming.
                 // This should only happen if we have an error in the aliases file.
                 return;
+            }
+            // Only include areas whose checkbox is currently checked
+            const checkbox = document.getElementById(key) as HTMLInputElement;
+            if (checkbox && !checkbox.checked) {
+                continue;
             }
             // Round it to the nearest 0.1.
             const value = Math.round(authorAreas[uname][key] * 10) / 10;

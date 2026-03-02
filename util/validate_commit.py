@@ -239,8 +239,14 @@ def matching_name_with_dblp(name: str) -> int:
 def construct_prompt(diff: str) -> str:
     with open("CONTRIBUTING.md", "r") as f:
         checklist = f.read()
+    validation_guide = ""
+    try:
+        with open("VALIDATION.md", "r") as f:
+            validation_guide = f.read()
+    except FileNotFoundError:
+        pass
     return f"""
-    
+
 Audit this pull request to verify the following checklist for a PR to
 CSrankings. Indicate any questionable additions, removals, or
 modifications. In particular, verify if faculty are affiliated
@@ -253,7 +259,7 @@ to have published in Computer Science venues.
 
 
 Search the web as follows:
-    
+
 * Search the web to consult their home page (included in the PR), and
 consult LinkedIn, departmental web pages, and Google Scholar (using
 the included Google Scholar ID). Note that "NOSCHOLARPAGE" is
@@ -266,11 +272,16 @@ department).
 * Search the web to verify that their Google Scholar ID
 corresponds to them.
 
+Pay special attention to the following common failure modes and validation
+criteria from past PR reviews:
+
+{validation_guide}
+
 Provide an audit for every single faculty mentioned in the diff.
 
 Respond ONLY with a JSON file like the following:
 
-{{ 
+{{
 [
     'name' : (the name),
     'dblp_name' : (the DBLP name),
