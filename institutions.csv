@@ -1,4 +1,5 @@
 institution,region,countryabbrv,homepage
+AUEB,europe,gr,https://www.dept.aueb.gr/en/cs
 Aalborg University,europe,dk,https://www.cs.aau.dk/
 Aalto University,europe,fi,https://www.aalto.fi/en/department-of-computer-science
 Aarhus University,europe,dk,https://cs.au.dk/
@@ -12,9 +13,13 @@ Ariel University,europe,il,https://www.ariel.ac.il/wp/cs/en/
 Arizona State University,northamerica,us,https://scai.engineering.asu.edu/
 Ashoka University,asia,in,https://www.ashoka.edu.in/department/department-of-cs/
 Auburn University,northamerica,us,https://www.eng.auburn.edu/comp/
-AUEB,europe,gr,https://www.dept.aueb.gr/en/cs
 Augusta University,northamerica,us,https://www.augusta.edu/ccs/
 Australian National University,australasia,au,https://comp.anu.edu.au/
+BITS Pilani,asia,in,https://www.bits-pilani.ac.in/pilani/computer-science-information-systems/
+BITS Pilani-Goa,asia,in,https://www.bits-pilani.ac.in/goa/computer-science-information-systems/
+BNBU,asia,cn,https://fst.bnbu.edu.cn/cst_en/index.htm
+BUET,asia,bd,https://cse.buet.ac.bd
+BUPT,asia,cn,https://scs.bupt.edu.cn
 Babeș-Bolyai University,europe,ro,https://www.cs.ubbcluj.ro
 Bangladesh Univ. of Professionals,asia,bd,https://bup.edu.bd/department_home/8
 Bar-Ilan University,europe,il,https://cs.biu.ac.il/
@@ -29,9 +34,6 @@ Bielefeld University,europe,de,https://www.uni-bielefeld.de/fakultaeten/technisc
 Bilkent University,europe,tr,https://www.cs.bilkent.edu.tr
 Binghamton University,northamerica,us,https://www.binghamton.edu/computer-science/
 Birkbeck University of London,europe,gb,https://www.dcs.bbk.ac.uk
-BITS Pilani,asia,in,https://www.bits-pilani.ac.in/pilani/computer-science-information-systems/
-BITS Pilani-Goa,asia,in,https://www.bits-pilani.ac.in/goa/computer-science-information-systems/
-BNBU,asia,cn,https://fst.bnbu.edu.cn/cst_en/index.htm
 Bocconi University,europe,it,https://cs.unibocconi.eu
 Boise State University,northamerica,us,https://www.boisestate.edu/coen-cs/
 Boston College,northamerica,us,https://www.bc.edu/bc-web/schools/morrissey/departments/computer-science.html
@@ -45,9 +47,14 @@ Brock University,northamerica,ca,https://brocku.ca/mathematics-science/computer-
 Brown University,northamerica,us,https://cs.brown.edu/
 Brunel University London,europe,gb,https://www.brunel.ac.uk/computer-science
 Budapest Univ. of Tech. and Econ.,europe,hu,https://www.cs.bme.hu/english/
-BUET,asia,bd,https://cse.buet.ac.bd
 Bundeswehr University Munich,europe,de,https://www.unibw.de/home-en/departments/department-of-computer-science
-BUPT,asia,cn,https://scs.bupt.edu.cn
+CISPA Helmholtz Center,europe,de,https://cispa.saarland
+CMI,asia,in,https://www.cmi.ac.in
+CNRS,europe,fr,https://www.ins2i.cnrs.fr/en
+CRIStAL,europe,fr,https://www.cristal.univ-lille.fr
+CUHK (SZ),asia,cn,https://sds.cuhk.edu.cn
+CUNY,northamerica,us,https://www.gc.cuny.edu/computer-science
+CWI,europe,nl,https://www.cwi.nl/en/
 California Inst. of Technology,northamerica,us,https://www.cms.caltech.edu/
 Cardiff University,europe,gb,https://www.cardiff.ac.uk/computer-science
 Carleton University,northamerica,ca,https://carleton.ca/scs/
@@ -62,47 +69,40 @@ Chittagong Univ. of Eng. & Technology,asia,bd,https://cuet.ac.bd/department/cse
 Chongqing University,asia,cn,https://www.cse.cqu.edu.cn
 Chulalongkorn University,asia,th,https://www.cp.eng.chula.ac.th/
 Chung-Ang University,asia,kr,https://cse.cau.ac.kr/eng/
-CISPA Helmholtz Center,europe,de,https://cispa.saarland
 City University of Hong Kong,asia,hk,https://www.cs.cityu.edu.hk
 City University of London,europe,gb,https://www.city.ac.uk/about/schools/science-technology/computer-science
 City University of Macau,asia,mo,https://fds.cityu.edu.mo
 Claremont Graduate University,northamerica,us,https://www.cgu.edu/school/center-for-information-systems-and-technology/
 Clemson University,northamerica,us,https://www.clemson.edu/cecas/departments/computing/
 Cleveland State University,northamerica,us,https://engineering.csuohio.edu/cs
-CMI,asia,in,https://www.cmi.ac.in
-CNRS,europe,fr,https://www.ins2i.cnrs.fr/en
 College of William and Mary,northamerica,us,https://www.wm.edu/as/computerscience/
 Colorado School of Mines,northamerica,us,https://cs.mines.edu/
 Colorado State University,northamerica,us,https://compsci.colostate.edu/
 Columbia University,northamerica,us,https://www.cs.columbia.edu/
 Concordia University,northamerica,ca,https://www.concordia.ca/ginacody/computer-science-software-eng.html
 Cornell University,northamerica,us,https://www.cs.cornell.edu/
-CRIStAL,europe,fr,https://www.cristal.univ-lille.fr
-CUHK (SZ),asia,cn,https://sds.cuhk.edu.cn
-CUNY,northamerica,us,https://www.gc.cuny.edu/computer-science
-CWI,europe,nl,https://www.cwi.nl/en/
 Cyprus University of Technology,europe,cy,https://www.cut.ac.cy/faculties/fet/eecei/
 Czech Technical University,europe,cz,https://cmp.felk.cvut.cz
 DAIICT,asia,in,https://www.daiict.ac.in
+DGIST,asia,kr,https://eecs.dgist.ac.kr/en/
+DTU,europe,dk,https://www.compute.dtu.dk/
 Dalhousie University,northamerica,ca,https://www.dal.ca/faculty/computerscience.html
 Dartmouth College,northamerica,us,https://web.cs.dartmouth.edu/
 De La Salle University,asia,ph,https://www.dlsu.edu.ph/colleges/ccs/
 DePaul University,northamerica,us,https://www.cdm.depaul.edu
-DGIST,asia,kr,https://eecs.dgist.ac.kr/en/
 Drexel University,northamerica,us,https://drexel.edu/cci/academics/computer-science-department/
-DTU,europe,dk,https://www.compute.dtu.dk/
 Duke University,northamerica,us,https://cs.duke.edu/
 Durham University,europe,gb,https://www.durham.ac.uk/departments/academic/computer-science/
+EPFL,europe,ch,https://www.epfl.ch/schools/ic/
+ETH Zurich,europe,ch,https://inf.ethz.ch/
+ETS Montreal,northamerica,ca,https://www.etsmtl.ca
+EURECOM,europe,fr,https://www.eurecom.fr
 East China Normal University,asia,cn,https://cs.ecnu.edu.cn/
 Ecole Normale Superieure,europe,fr,https://www.di.ens.fr/
 Ecole Normale Superieure de Cachan,europe,fr,https://www.lsv.ens-cachan.fr
 Ecole Normale Superieure de Lyon,europe,fr,https://informatique.ens-lyon.fr
 Ecole Normale Superieure de Rennes,europe,fr,http://www.ens-rennes.fr/research-in-computer-sciences-and-telecommunications-157088.kjsp
 Emory University,northamerica,us,https://computerscience.emory.edu/
-EPFL,europe,ch,https://www.epfl.ch/schools/ic/
-ETH Zurich,europe,ch,https://inf.ethz.ch/
-ETS Montreal,northamerica,ca,https://www.etsmtl.ca
-EURECOM,europe,fr,https://www.eurecom.fr
 Federal University of Bahia,southamerica,br,https://computacao.ufba.br/
 Federal University of Rio Grande,southamerica,br,https://www.paulo.c3.furg.br
 Florida Atlantic University,northamerica,us,https://www.fau.edu/engineering/eecs/
@@ -112,19 +112,23 @@ Florida State University,northamerica,us,https://www.cs.fsu.edu/
 Freie Universitaet Berlin,europe,de,https://www.mi.fu-berlin.de/en/inf/
 Friedrich Schiller University Jena,europe,de,https://www.fmi.uni-jena.de
 Fudan University,asia,cn,https://www.cs.fudan.edu.cn
+GIST,asia,kr,https://eecs.gist.ac.kr/
+GSSI,europe,it,https://cs.gssi.it
 Galatasaray University,europe,tr,https://bm.gsu.edu.tr/en
 George Mason University,northamerica,us,https://cs.gmu.edu/
 George Washington University,northamerica,us,https://cs.engineering.gwu.edu/
 Georgetown University,northamerica,us,https://cs.georgetown.edu/
 Georgia Institute of Technology,northamerica,us,https://www.cc.gatech.edu/
 Georgia State University,northamerica,us,https://csds.gsu.edu/
-GIST,asia,kr,https://eecs.gist.ac.kr/
 Goethe University Frankfurt,europe,de,https://www.goethe-university-frankfurt.de/106076806/Institute_of_Computer_Science
 Goldsmiths University of London,europe,gb,https://www.gold.ac.uk/computing/
 Graz University of Technology,europe,at,https://www.tugraz.at/fakultaeten/csbme/home
 Griffith University,australasia,au,https://www.griffith.edu.au/griffith-sciences/school-information-communication-technology
-GSSI,europe,it,https://cs.gssi.it
 Guangzhou University,asia,cn,https://jsj.gzhu.edu.cn/
+HEC Montreal,northamerica,ca,https://www.hec.ca/en/it/
+HKUST,asia,hk,https://cse.hkust.edu.hk/
+HSE University,europe,ru,https://cs.hse.ru/en/
+HUST,asia,cn,http://english.cs.hust.edu.cn/
 Hacettepe University,europe,tr,https://web.cs.hacettepe.edu.tr
 Hamburg University of Technology,europe,de,https://www.tuhh.de/tuhh/en/schools/electrical-engineering-computer-science-and-mathematics
 Hangzhou Dianzi University,asia,cn,https://computer.hdu.edu.cn/
@@ -133,16 +137,12 @@ Harbin Institute of Technology,asia,cn,https://encs.hit.edu.cn/
 Harvard University,northamerica,us,https://seas.harvard.edu/computer-science
 Hasso Plattner Institute,europe,de,https://hpi.de
 Hebrew University of Jerusalem,europe,il,https://www.cs.huji.ac.il/
-HEC Montreal,northamerica,ca,https://www.hec.ca/en/it/
 Heidelberg University,europe,de,https://www.informatik.uni-heidelberg.de/
 Henan University,asia,cn,https://cs.henu.edu.cn/
 Heriot-Watt University,europe,gb,https://www.hw.ac.uk/about/our-schools/mathematical-and-computer-sciences/
-HKUST,asia,hk,https://cse.hkust.edu.hk/
 Hong Kong Baptist University,asia,hk,https://www.comp.hkbu.edu.hk
-HSE University,europe,ru,https://cs.hse.ru/en/
 Humboldt University of Berlin,europe,de,https://www.informatik.hu-berlin.de/en
 Hunan University,asia,cn,https://csee.hnu.edu.cn
-HUST,asia,cn,http://english.cs.hust.edu.cn/
 IACS,asia,in,http://iacs.res.in/School-of-Mathematical-Computational-Sciences
 IGDTUW,asia,in,https://www.igdtuw.ac.in/departments/computer-science-and-engineering
 IIIT Bangalore,asia,in,https://cse.iiitb.ac.in/
@@ -172,69 +172,71 @@ IIT Patna,asia,in,https://www.iitp.ac.in/departments/engineering-technology/comp
 IIT Roorkee,asia,in,https://cse.iitr.ac.in/
 IIT Ropar,asia,in,https://cse.iitrpr.ac.in/
 IIT Tirupati,asia,in,https://cse.iittp.ac.in/
-Illinois Institute of Technology,northamerica,us,https://www.iit.edu/computer-science
 IMDEA Networks Institute,europe,es,https://networks.imdea.org
 IMDEA Software Institute,europe,es,https://software.imdea.org
-Imperial College London,europe,gb,https://www.imperial.ac.uk/computing/
 IMSc,asia,in,https://www.imsc.res.in
-Indiana State University,northamerica,us,https://cs.indstate.edu
-Indiana University,northamerica,us,https://cs.indiana.edu/
-Inner Mongolia University,asia,cn,https://ccs.imu.edu.cn/
 INRIA,europe,fr,https://cambium.inria.fr
 INSAIT,europe,bg,https://insait.ai
-Institut Polytechnique de Paris,europe,fr,https://cs.ip-paris.fr/
-Iowa State University,northamerica,us,https://www.cs.iastate.edu/
 IPI PAN,europe,pl,https://ipipan.waw.pl
 IPM,asia,ir,https://cs.ipm.ac.ir
 ISI Kolkata,asia,in,https://www.isical.ac.in
-Islamic University of Technology,asia,bd,https://cse.iutoic-dhaka.edu/
 IST Austria,europe,at,https://ist.ac.at/en/research/
-Istanbul Technical University,europe,tr,https://bbf.itu.edu.tr/en
-Istanbul University-Cerrahpaşa,europe,tr,https://bilgisayarmuhendislik.iuc.edu.tr/en
 IT University of Copenhagen,europe,dk,https://en.itu.dk/
 IUPUI,northamerica,us,https://cs.iupui.edu
 IUST,asia,ir,https://ce.iust.ac.ir
+Illinois Institute of Technology,northamerica,us,https://www.iit.edu/computer-science
+Imperial College London,europe,gb,https://www.imperial.ac.uk/computing/
+Indiana State University,northamerica,us,https://cs.indstate.edu
+Indiana University,northamerica,us,https://cs.indiana.edu/
+Inner Mongolia University,asia,cn,https://ccs.imu.edu.cn/
+Institut Polytechnique de Paris,europe,fr,https://cs.ip-paris.fr/
+Iowa State University,northamerica,us,https://www.cs.iastate.edu/
+Islamic University of Technology,asia,bd,https://cse.iutoic-dhaka.edu/
+Istanbul Technical University,europe,tr,https://bbf.itu.edu.tr/en
+Istanbul University-Cerrahpaşa,europe,tr,https://bilgisayarmuhendislik.iuc.edu.tr/en
 Izmir Institute of Technology,europe,tr,https://ceng.iyte.edu.tr
+JKU Linz,europe,at,https://informatik.jku.at/
+JUST,asia,jo,https://www.just.edu.jo/FacultiesandDepartments/it/Departments/cs/
 Jacobs University Bremen,europe,de,https://constructor.university/research/school-of-computer-science-and-engineering
 Jadavpur University,asia,in,https://cse.jadavpuruniversity.in/
 Jagiellonian University,europe,pl,https://ii.uj.edu.pl/en_GB/
 Jahangirnagar University,asia,bd,https://juniv.edu/department/cse
 Jaypee Univ. of Info. Tech.,asia,in,https://www.juit.ac.in/
 Jilin University,asia,cn,https://ccst.jlu.edu.cn
-JKU Linz,europe,at,https://informatik.jku.at/
 Johns Hopkins University,northamerica,us,https://www.cs.jhu.edu/
-JUST,asia,jo,https://www.just.edu.jo/FacultiesandDepartments/it/Departments/cs/
 KAIST,asia,kr,https://cs.kaist.ac.kr/
+KAUST,asia,sa,https://www.kaust.edu.sa
+KIIT Bhubaneswar,asia,in,https://cse.kiit.ac.in
+KMUTNB,asia,th,https://tggs.kmutnb.ac.th
+KTH Royal Inst. of Technology,europe,se,https://www.kth.se/cs/department-of-computer-science-1.1027648
+KU Leuven,europe,be,https://wms.cs.kuleuven.be/cs/english
 Kansas State University,northamerica,us,https://www.cs.ksu.edu/
 Karlsruhe Inst. of Technology,europe,de,https://www.informatik.kit.edu/english/
-KAUST,asia,sa,https://www.kaust.edu.sa
 Keio University,asia,jp,https://www.st.keio.ac.jp
 Kempelen Institute - KInIT,europe,sk,https://kinit.sk
 Kennesaw State University,northamerica,us,https://ccse.kennesaw.edu/
 Kent State University,northamerica,us,https://www.kent.edu/cs
 Khulna Univ. of Eng. & Technology,asia,bd,https://kuet.ac.bd/department/CSE/
-KIIT Bhubaneswar,asia,in,https://cse.kiit.ac.in
 King Abdulaziz University,asia,sa,https://www.kau.edu.sa
 King's College London,europe,gb,https://www.kcl.ac.uk/informatics
-KMUTNB,asia,th,https://tggs.kmutnb.ac.th
 Korea University,asia,kr,https://cs.korea.edu/en_cs/index.do
 Koç University,europe,tr,https://mysite.ku.edu.tr
-KTH Royal Inst. of Technology,europe,se,https://www.kth.se/cs/department-of-computer-science-1.1027648
-KU Leuven,europe,be,https://wms.cs.kuleuven.be/cs/english
 Kyoto University,asia,jp,https://www.i.kyoto-u.ac.jp/en/
 Kyung Hee University,asia,kr,https://networking.khu.ac.kr
 Kyungpook National University,asia,kr,https://computer.knu.ac.kr/eng/index.php
+LIU Post,northamerica,us,https://liu.edu/post/academics/school-of-computer-science-and-innovation
+LMU Munich,europe,de,https://www.ifi.lmu.de/
+LUMS,asia,pk,https://lums.edu.pk
 Lancaster University,europe,gb,https://www.lancaster.ac.uk/scc/
 Lebanese American University,asia,lb,https://sas.lau.edu.lb
 Lehigh University,northamerica,us,https://engineering.lehigh.edu/cse
 Leiden University,europe,nl,https://liacs.leidenuniv.nl/
-LIU Post,northamerica,us,https://liu.edu/post/academics/school-of-computer-science-and-innovation
-LMU Munich,europe,de,https://www.ifi.lmu.de/
 Loughborough University,europe,gb,https://www.lboro.ac.uk
 Louisiana State University,northamerica,us,https://www.lsu.edu/eng/cse/
 Louisiana Tech University,northamerica,us,https://coes.latech.edu/undergraduate-programs/computer-science/
-LUMS,asia,pk,https://lums.edu.pk
 Lund University,europe,se,https://cs.lth.se
+MBZUAI,asia,ae,https://mbzuai.ac.ae
+MUST,asia,mo,https://fie.must.edu.mo
 Maastricht University,europe,nl,https://dke.maastrichtuniversity.nl
 Macquarie University,australasia,au,https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/school-of-computing
 Malmö University,europe,se,https://mau.se
@@ -245,7 +247,6 @@ Massachusetts Inst. of Technology,northamerica,us,https://www.eecs.mit.edu/
 Massey University,australasia,nz,https://www.massey.ac.nz
 Max Planck Society,europe,de,https://www.mpi-inf.mpg.de/
 Maynooth University,europe,ie,https://www.maynoothuniversity.ie/computer-science
-MBZUAI,asia,ae,https://mbzuai.ac.ae
 McGill University,northamerica,ca,https://www.cs.mcgill.ca/
 McMaster University,northamerica,ca,https://www.eng.mcmaster.ca/cas/
 Memorial Univ. of Newfoundland,northamerica,ca,https://www.mun.ca
@@ -260,10 +261,17 @@ Monash University,australasia,au,https://www.monash.edu/it/dsai
 Monash University Indonesia,asia,id,https://www.monash.edu
 Monash University Malaysia,asia,my,https://www.monash.edu.my/it
 Montana State University,northamerica,us,https://www.cs.montana.edu
-MUST,asia,mo,https://fie.must.edu.mo
 Mälardalen University,europe,se,https://www.es.mdh.se
-Nagoya University,asia,jp,https://www.i.nagoya-u.ac.jp/en/
 NAIST,asia,jp,https://isw3.naist.jp/
+NISER,asia,in,https://www.niser.ac.in
+NIT Jalandhar,asia,in,https://www.nitj.ac.in/cse/
+NJIT,northamerica,us,https://cs.njit.edu/
+NTNU,europe,no,https://www.ntnu.edu/idi
+NTUA,europe,gr,https://www.ece.ntua.gr
+NWPU,asia,cn,https://teacher.nwpu.edu.cn
+NYU Abu Dhabi,asia,ae,https://nyuad.nyu.edu
+NYU Shanghai,asia,cn,https://cs.shanghai.nyu.edu/
+Nagoya University,asia,jp,https://www.i.nagoya-u.ac.jp/en/
 Nanjing University,asia,cn,https://cs.nju.edu.cn
 Nankai University,asia,cn,https://cs.nankai.edu.cn/
 Nanyang Technological University,asia,sg,https://www.ntu.edu.sg/computing
@@ -283,9 +291,6 @@ New Mexico Tech,northamerica,us,https://www.nmt.edu/academics/compsci/index.php
 New York Tech,northamerica,us,https://www.nyit.edu/academics/engineering-and-computing-sciences/computer-science/
 New York University,northamerica,us,https://cs.nyu.edu/
 Newcastle University,europe,gb,https://www.ncl.ac.uk/computing/
-NISER,asia,in,https://www.niser.ac.in
-NIT Jalandhar,asia,in,https://www.nitj.ac.in/cse/
-NJIT,northamerica,us,https://cs.njit.edu/
 North Carolina State University,northamerica,us,https://csc.ncsu.edu/
 North Dakota State University,northamerica,us,https://www.cs.ndsu.nodak.edu
 Northeastern University,northamerica,us,https://www.khoury.northeastern.edu/
@@ -294,15 +299,10 @@ Northern Arizona University,northamerica,us,https://nau.edu/school-informatics-c
 Northwest University,asia,cn,https://ist.nwu.edu.cn
 Northwestern University,northamerica,us,https://www.mccormick.northwestern.edu/computer-science/
 Nova Southeastern University,northamerica,us,https://cec.nova.edu
-NTNU,europe,no,https://www.ntnu.edu/idi
-NTUA,europe,gr,https://www.ece.ntua.gr
-NWPU,asia,cn,https://teacher.nwpu.edu.cn
-NYU Abu Dhabi,asia,ae,https://nyuad.nyu.edu
-NYU Shanghai,asia,cn,https://cs.shanghai.nyu.edu/
+OHSU,northamerica,us,https://www.ohsu.edu/school-of-medicine/medical-informatics-and-clinical-epidemiology
 Oakland University,northamerica,us,https://www.oakland.edu/secs/departments/cse/
 Ohio State University,northamerica,us,https://cse.osu.edu/
 Ohio University,northamerica,us,https://www.ohio.edu/engineering/eecs
-OHSU,northamerica,us,https://www.ohsu.edu/school-of-medicine/medical-informatics-and-clinical-epidemiology
 Oklahoma State University,northamerica,us,https://cs.okstate.edu
 Old Dominion University,northamerica,us,https://www.cs.odu.edu
 Ontario Tech University,northamerica,ca,https://engineering.ontariotechu.ca
@@ -310,6 +310,11 @@ Open University NL,europe,nl,https://www.ou.nl/en/onderzoeksgebied-informatica-p
 Open University UK,europe,gb,https://stem.open.ac.uk
 Oregon State University,northamerica,us,https://eecs.oregonstate.edu/
 Osaka University,asia,jp,https://www.ist.osaka-u.ac.jp
+POSTECH,asia,kr,https://ecse.postech.ac.kr/
+PTIT,asia,vn,https://english.ptit.edu.vn/
+PUC-RIO,southamerica,br,https://www.inf.puc-rio.br
+PUC-RS,southamerica,br,https://www.inf.pucrs.br
+PUCPR,southamerica,br,https://www.ppgia.pucpr.br/pt/
 Pabna Univ. of Science and Technology,asia,bd,https://pust.ac.bd/academic/departments/dept_teachers/D01
 Paderborn University,europe,de,https://cs.uni-paderborn.de
 Peking University,asia,cn,https://cs.pku.edu.cn/English/Home.htm
@@ -320,12 +325,7 @@ Politecnico di Torino,europe,it,https://www.dauin.polito.it/
 Polytechnic Univ. of Catalonia,europe,es,https://www.cs.upc.edu/
 Polytechnique Montreal,northamerica,ca,https://www.polymtl.ca/gigl/
 Portland State University,northamerica,us,https://web.cecs.pdx.edu
-POSTECH,asia,kr,https://ecse.postech.ac.kr/
 Princeton University,northamerica,us,https://www.cs.princeton.edu/
-PTIT,asia,vn,https://english.ptit.edu.vn/
-PUC-RIO,southamerica,br,https://www.inf.puc-rio.br
-PUC-RS,southamerica,br,https://www.inf.pucrs.br
-PUCPR,southamerica,br,https://www.ppgia.pucpr.br/pt/
 Purdue University,northamerica,us,https://www.cs.purdue.edu/
 Qatar Computing Research Inst.,asia,qa,https://www.qcri.org
 Qatar University,asia,qa,https://www.qu.edu.qa
@@ -333,19 +333,25 @@ Queen Mary University of London,europe,gb,https://www.qmul.ac.uk/eecs/
 Queen's University Belfast,europe,gb,https://www.qub.ac.uk
 Queensland Univ. of Technology,australasia,au,https://www.qut.edu.au/about/faculty-of-science/school-of-computer-science
 Queen’s University,northamerica,ca,https://www.cs.queensu.ca
+RMIT University,australasia,au,https://www.rmit.edu.au/about/schools-colleges/computing-technologies
+RWTH Aachen University,europe,de,https://www.informatik.rwth-aachen.de/
 Radboud University,europe,nl,https://www.cs.ru.nl
 Rajshahi Univ. of Eng. & Technology,asia,bd,https://www.cse.ruet.ac.bd/
 Ravenshaw University,asia,in,https://ravenshawuniversity.ac.in
 Renmin University of China,asia,cn,https://info.ruc.edu.cn
 Rensselaer Polytechnic Institute,northamerica,us,https://compsci.rpi.edu/
 Rice University,northamerica,us,https://cs.rice.edu/
-RMIT University,australasia,au,https://www.rmit.edu.au/about/schools-colleges/computing-technologies
 Rochester Inst. of Technology,northamerica,us,https://www.rit.edu/computing/department-computer-science
 Royal Holloway Univ. of London,europe,gb,https://pure.royalholloway.ac.uk
 Royal Military College of Canada,northamerica,ca,https://www.rmc-cmr.ca/en/mathematics-and-computer-science/department-mathematics-and-computer-science
 Ruhr-University Bochum,europe,de,https://www.ini.rub.de
 Rutgers University,northamerica,us,https://www.cs.rutgers.edu/
-RWTH Aachen University,europe,de,https://www.informatik.rwth-aachen.de/
+SIU Carbondale,northamerica,us,https://www2.cs.siu.edu
+SRM Inst. of Science and Tech.,asia,in,https://www.srmist.edu.in/department/department-of-computational-intelligence/
+SUAT,asia,cn,https://suat-sz.edu.cn/en/Faculties/Faculty_of_Computer_Science_and_Control_Engineer.htm
+SUFE,asia,cn,https://itcs.shufe.edu.cn
+SUSTech,asia,cn,https://cse.sustech.edu.cn/en/
+SUTD,asia,sg,https://istd.sutd.edu.sg
 Saarland University,europe,de,https://www.uni-saarland.de/en/department/computer-science.html
 Sabancı University,europe,tr,https://cs.sabanciuniv.edu/
 Santa Clara University,northamerica,us,https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/
@@ -363,52 +369,22 @@ Sichuan University,asia,cn,https://cs.scu.edu.cn
 Simon Fraser University,northamerica,ca,https://www.sfu.ca/computing.html
 Simula UiB,europe,no,https://www.simula.no/research/projects/simula-uib
 Singapore Management University,asia,sg,https://scis.smu.edu.sg
-SIU Carbondale,northamerica,us,https://www2.cs.siu.edu
 Soochow University,asia,cn,https://web.suda.edu.cn
 South Asian University,asia,in,https://sau.int
 South China Univ. of Technology,asia,cn,https://www2.scut.edu.cn/ft/
 Southeast University,asia,cn,https://cse.seu.edu.cn/
 Southern Methodist University,northamerica,us,https://www.smu.edu/lyle/departments/cs
 Southwest University,asia,cn,http://cis.swu.edu.cn/
-SRM Inst. of Science and Tech.,asia,in,https://www.srmist.edu.in/department/department-of-computational-intelligence/
 Stanford University,northamerica,us,https://www.cs.stanford.edu/
 Stellenbosch University,africa,za,https://www.cs.sun.ac.za
 Stevens Institute of Technology,northamerica,us,https://www.cs.stevens.edu
 Stony Brook University,northamerica,us,https://www.cs.stonybrook.edu/
-SUAT,asia,cn,https://suat-sz.edu.cn/en/Faculties/Faculty_of_Computer_Science_and_Control_Engineer.htm
-SUFE,asia,cn,https://itcs.shufe.edu.cn
 Sun Yat-sen University,asia,cn,https://cse.sysu.edu.cn
 Sungkyunkwan University,asia,kr,https://cse.skku.edu/eng_cse/index.do
-SUSTech,asia,cn,https://cse.sustech.edu.cn/en/
-SUTD,asia,sg,https://istd.sutd.edu.sg
 Swinburne University of Technology,australasia,au,https://www.swinburne.edu.au/engineering/departments/computing-technologies/
 Syracuse University,northamerica,us,https://ecs.syracuse.edu/
-Taiyuan University of Technology,asia,cn,https://ccst.tyut.edu.cn/
-Tallinn University of Technology,europe,ee,https://taltech.ee/en/school-of-information-technologies
-Tampere University,europe,fi,https://www.tuni.fi
-Tata Inst. of Fundamental Research,asia,in,https://www.tcs.tifr.res.in
-Technion,europe,il,https://www.cs.technion.ac.il/
-TeIAS,asia,ir,https://teias.institute
-Tel Aviv University,europe,il,https://en-exact-sciences.tau.ac.il/computer
-Temple University,northamerica,us,https://cis.temple.edu/
-Texas A&M at Qatar,asia,qa,https://www.qatar.tamu.edu
-Texas A&M University,northamerica,us,https://engineering.tamu.edu/cse/
-Texas State University,northamerica,us,https://www.cs.txstate.edu
-Texas Tech University,northamerica,us,https://www.depts.ttu.edu/cs/
-The Catholic University of Korea,asia,kr,https://csie.catholic.ac.kr/
-The Hong Kong Polytechnic Univ.,asia,hk,https://www4.comp.polyu.edu.hk
-The University of Alabama,northamerica,us,https://cs.ua.edu
 THWS,europe,de,https://fiw.thws.de
-Tianjin University,asia,cn,https://cic.tju.edu.cn
-Tilburg University,europe,nl,https://www.tilburguniversity.edu/about/schools/tshd/departments/dca
 TOBB ETÜ,europe,tr,https://www.etu.edu.tr
-Tohoku University,asia,jp,https://www.is.tohoku.ac.jp/en/
-Tokyo Institute of Technology,asia,jp,https://www.is.c.titech.ac.jp
-Tongji University,asia,cn,https://sse.tongji.edu.cn
-Toronto Metropolitan University,northamerica,ca,https://www.scs.torontomu.ca
-Towson University,northamerica,us,https://www.towson.edu/fcsm/departments/computerinfosci/
-Trinity College Dublin,europe,ie,https://www.scss.tcd.ie
-Tsinghua University,asia,cn,https://www.cs.tsinghua.edu.cn/csen/
 TTI Chicago,northamerica,us,https://ttic.uchicago.edu
 TU Berlin,europe,de,https://www.tu.berlin/en/eecs
 TU Braunschweig,europe,de,https://www.ibr.cs.tu-bs.de
@@ -425,6 +401,30 @@ TU Ilmenau,europe,de,https://www.tu-ilmenau.de
 TU Kaiserslautern,europe,de,https://anthonywlin.github.io
 TU Munich,europe,de,https://www.cs.cit.tum.de/en/cs/home/
 TU Wien,europe,at,https://informatics.tuwien.ac.at/
+Taiyuan University of Technology,asia,cn,https://ccst.tyut.edu.cn/
+Tallinn University of Technology,europe,ee,https://taltech.ee/en/school-of-information-technologies
+Tampere University,europe,fi,https://www.tuni.fi
+Tata Inst. of Fundamental Research,asia,in,https://www.tcs.tifr.res.in
+TeIAS,asia,ir,https://teias.institute
+Technion,europe,il,https://www.cs.technion.ac.il/
+Tel Aviv University,europe,il,https://en-exact-sciences.tau.ac.il/computer
+Temple University,northamerica,us,https://cis.temple.edu/
+Texas A&M University,northamerica,us,https://engineering.tamu.edu/cse/
+Texas A&M at Qatar,asia,qa,https://www.qatar.tamu.edu
+Texas State University,northamerica,us,https://www.cs.txstate.edu
+Texas Tech University,northamerica,us,https://www.depts.ttu.edu/cs/
+The Catholic University of Korea,asia,kr,https://csie.catholic.ac.kr/
+The Hong Kong Polytechnic Univ.,asia,hk,https://www4.comp.polyu.edu.hk
+The University of Alabama,northamerica,us,https://cs.ua.edu
+Tianjin University,asia,cn,https://cic.tju.edu.cn
+Tilburg University,europe,nl,https://www.tilburguniversity.edu/about/schools/tshd/departments/dca
+Tohoku University,asia,jp,https://www.is.tohoku.ac.jp/en/
+Tokyo Institute of Technology,asia,jp,https://www.is.c.titech.ac.jp
+Tongji University,asia,cn,https://sse.tongji.edu.cn
+Toronto Metropolitan University,northamerica,ca,https://www.scs.torontomu.ca
+Towson University,northamerica,us,https://www.towson.edu/fcsm/departments/computerinfosci/
+Trinity College Dublin,europe,ie,https://www.scss.tcd.ie
+Tsinghua University,asia,cn,https://www.cs.tsinghua.edu.cn/csen/
 Tufts University,northamerica,us,https://engineering.tufts.edu/cs/
 Tulane University,northamerica,us,https://www.cs.tulane.edu
 UAEU,asia,ae,https://www.uaeu.ac.ae
@@ -440,11 +440,15 @@ UFPR,southamerica,br,https://www.inf.ufpr.br
 UFRGS,southamerica,br,https://www.inf.ufrgs.br
 UFRJ,southamerica,br,https://www.cos.ufrj.br
 UFU,southamerica,br,https://www.facom.ufu.br
-UiT The Arctic Univ. of Norway,europe,no,https://uit.no
 UNC - Charlotte,northamerica,us,https://cci.charlotte.edu
 UNC - Greensboro,northamerica,us,https://compsci.uncg.edu/
 UNICAMP,southamerica,br,https://www.ic.unicamp.br
 UNIST,asia,kr,https://cse.unist.ac.kr/eng/
+UNSW,australasia,au,https://www.unsw.edu.au/engineering/our-schools/computer-science-and-engineering
+USP,southamerica,br,https://www.ime.usp.br
+USP-ICMC,southamerica,br,https://conteudo.icmc.usp.br
+USTC,asia,cn,https://en.cs.ustc.edu.cn/
+UiT The Arctic Univ. of Norway,europe,no,https://uit.no
 Univ. of Arkansas - Little Rock,northamerica,us,https://ualr.edu/computerscience/
 Univ. of California - Berkeley,northamerica,us,https://eecs.berkeley.edu/
 Univ. of California - Davis,northamerica,us,https://cs.ucdavis.edu/
@@ -463,19 +467,19 @@ Univ. of Massachusetts Amherst,northamerica,us,https://www.cics.umass.edu/
 Univ. of Missouri - Kansas City,northamerica,us,https://sse.umkc.edu/academics/programs/computer-science-and-information-technology.html
 Univ. of Modena and Reggio Emilia,europe,it,https://personale.unimore.it
 Univ. of Wisconsin - Milwaukee,northamerica,us,https://uwm.edu/engineering/departments/computer-science/
-Universidad de Chile,southamerica,cl,https://www.dcc.uchile.cl
-Universidad de los Andes,southamerica,co,https://profesores.virtual.uniandes.edu.co
-Universidad de Zaragoza,europe,es,https://webdiis.unizar.es
 Universidad Nacional de Córdoba,southamerica,ar,https://cs.famaf.unc.edu.ar
 Universidad Rey Juan Carlos,europe,es,https://www.tsc.urjc.es
-Universidade de Brasília,southamerica,br,https://cic.unb.br
-Universidade de Lisboa,europe,pt,https://dei.tecnico.ulisboa.pt/en/
+Universidad de Chile,southamerica,cl,https://www.dcc.uchile.cl
+Universidad de Zaragoza,europe,es,https://webdiis.unizar.es
+Universidad de los Andes,southamerica,co,https://profesores.virtual.uniandes.edu.co
 Universidade Federal de Viçosa,southamerica,br,https://www2.dpi.ufv.br
 Universidade NOVA de Lisboa,europe,pt,https://userweb.fct.unl.pt
-University at Albany - SUNY,northamerica,us,https://www.albany.edu/computer-science
-University at Buffalo,northamerica,us,https://cse.buffalo.edu
+Universidade de Brasília,southamerica,br,https://cic.unb.br
+Universidade de Lisboa,europe,pt,https://dei.tecnico.ulisboa.pt/en/
 University College Dublin,europe,ie,https://www.ucd.ie/cs/
 University College London,europe,gb,https://www.ucl.ac.uk/computer-science/
+University at Albany - SUNY,northamerica,us,https://www.albany.edu/computer-science
+University at Buffalo,northamerica,us,https://cse.buffalo.edu
 University of A Coruña,europe,es,https://pdi.udc.es
 University of Aberdeen,europe,gb,https://www.abdn.ac.uk
 University of Alabama - Birmingham,northamerica,us,https://www.uab.edu/cas/computerscience/
@@ -658,7 +662,6 @@ University of Texas at Arlington,northamerica,us,https://www.uta.edu/academics/s
 University of Texas at Austin,northamerica,us,https://www.cs.utexas.edu/
 University of Texas at Dallas,northamerica,us,https://cs.utdallas.edu/
 University of Texas at San Antonio,northamerica,us,https://www.cs.utsa.edu
-University of the Witwatersrand,africa,za,https://www.wits.ac.za/csam/
 University of Tokyo,asia,jp,https://www.i.u-tokyo.ac.jp/edu/course/cs/index_e.shtml
 University of Toronto,northamerica,ca,https://web.cs.toronto.edu/
 University of Trento,europe,it,https://disi.unitn.it
@@ -690,31 +693,28 @@ University of Wyoming,northamerica,us,https://www.uwyo.edu/cosc/department/index
 University of Würzburg,europe,de,https://www.informatik.uni-wuerzburg.de
 University of York,europe,gb,https://www.york.ac.uk/computer-science/
 University of Zurich,europe,ch,https://www.ifi.uzh.ch/en.html
+University of the Witwatersrand,africa,za,https://www.wits.ac.za/csam/
 Università della Svizzera italiana,europe,ch,https://search.usi.ch
+Université Jean Monnet,europe,fr,https://perso.univ-st-etienne.fr
+Université Laval,northamerica,ca,https://www2.ift.ulaval.ca
+Université Paris Cité,europe,fr,https://math-info.u-paris.fr/en/homepage/
+Université Paris Dauphine,europe,fr,https://www.lamsade.dauphine.fr
 Université de Mons,europe,be,https://web.umons.ac.be/fs-informatique/en/home/
 Université de Sherbrooke,northamerica,ca,https://www.usherbrooke.ca
 Université du Québec à Montréal,northamerica,ca,https://professeurs.uqam.ca
-Université Jean Monnet,europe,fr,https://perso.univ-st-etienne.fr
-Université Laval,northamerica,ca,https://www2.ift.ulaval.ca
 Université libre de Bruxelles,europe,be,https://www.ulb.ac.be
-Université Paris Cité,europe,fr,https://math-info.u-paris.fr/en/homepage/
-Université Paris Dauphine,europe,fr,https://www.lamsade.dauphine.fr
-UNSW,australasia,au,https://www.unsw.edu.au/engineering/our-schools/computer-science-and-engineering
 Uppsala University,europe,se,https://www.it.uu.se/
-USP,southamerica,br,https://www.ime.usp.br
-USP-ICMC,southamerica,br,https://conteudo.icmc.usp.br
-USTC,asia,cn,https://en.cs.ustc.edu.cn/
 Utah State University,northamerica,us,https://cs.usu.edu/
 Utrecht University,europe,nl,https://www.uu.nl
+VISTEC,asia,th,https://vistec.ist
+VNIT Nagpur,asia,in,https://vnit.ac.in
+VNU Univ. of Eng. and Tech.,asia,vn,https://www.fit.uet.vnu.edu.vn/
+VU Amsterdam,europe,nl,https://vu.nl/en/about-vu/faculties/faculty-of-science/departments/computer-science
 Vanderbilt University,northamerica,us,https://engineering.vanderbilt.edu/departments/computer-science/
 Victoria University of Wellington,australasia,nz,https://ecs.victoria.ac.nz
 VinUniversity,asia,vn,https://cecs.vinuni.edu.vn/
 Virginia Commonwealth University,northamerica,us,https://egr.vcu.edu/departments/computer-science/
 Virginia Tech,northamerica,us,https://cs.vt.edu/
-VISTEC,asia,th,https://vistec.ist
-VNIT Nagpur,asia,in,https://vnit.ac.in
-VNU Univ. of Eng. and Tech.,asia,vn,https://www.fit.uet.vnu.edu.vn/
-VU Amsterdam,europe,nl,https://vu.nl/en/about-vu/faculties/faculty-of-science/departments/computer-science
 Waseda University,asia,jp,https://www.waseda.jp/fsci/en/
 Washington State University,northamerica,us,https://www.eecs.wsu.edu
 Washington University in St. Louis,northamerica,us,https://cse.washu.edu/
