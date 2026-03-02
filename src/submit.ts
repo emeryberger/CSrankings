@@ -454,7 +454,7 @@ async function loadDBLPAliases(): Promise<void> {
         const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
         for (const row of parsed.data as Array<{alias: string; name: string}>) {
             if (row.alias && row.name) {
-                dblpAliases.set(row.alias.toLowerCase().trim(), row.name.trim());
+                dblpAliases.set(row.alias.trim(), row.name.trim());
             }
         }
         console.log(`Loaded ${dblpAliases.size} DBLP aliases`);
@@ -467,8 +467,7 @@ async function loadDBLPAliases(): Promise<void> {
  * Check if a name has a DBLP alias (canonical name)
  */
 function getCanonicalDBLPName(name: string): string | null {
-    const normalized = name.toLowerCase().trim();
-    return dblpAliases.get(normalized) || null;
+    return dblpAliases.get(name.trim()) || null;
 }
 
 /**
@@ -1242,15 +1241,17 @@ async function checkDBLPName(name: string): Promise<{found: boolean; exactMatch:
         if (totalHits > 0) {
             result.found = true;
 
-            // Normalize input name for comparison (lowercase, collapse spaces, remove periods)
-            const normalizedInput = name.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+            // Normalize input name for comparison (collapse spaces, remove periods)
+            // Case-sensitive: DBLP treats capitalization as significant,
+            // e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
+            const normalizedInput = name.replace(/\./g, '').replace(/\s+/g, ' ').trim();
 
             for (const hit of hits.slice(0, 5)) {
                 const author = hit?.info?.author || '';
                 if (author) {
                     result.suggestions.push(author);
-                    // Normalize author name for comparison
-                    const normalizedAuthor = author.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+                    // Normalize author name for comparison (case-sensitive)
+                    const normalizedAuthor = author.replace(/\./g, '').replace(/\s+/g, ' ').trim();
                     if (normalizedAuthor === normalizedInput) {
                         result.exactMatch = true;
                     }
@@ -1289,9 +1290,9 @@ function validateName(): void {
 
     // For add action, check it doesn't already exist and verify DBLP
     if (currentAction === 'add') {
-        const existingEntry = facultyEntries.find(e =>
-            e.name.toLowerCase() === name.toLowerCase()
-        );
+        // Case-sensitive: DBLP treats capitalization as significant,
+        // e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
+        const existingEntry = facultyEntries.find(e => e.name === name);
         if (existingEntry) {
             // Entry exists (active or old/) - switch to update mode
             switchToUpdateWithEntry(existingEntry);
@@ -1325,14 +1326,12 @@ function validateNameForUpdateRemove(): void {
     }
 
     // If entry already selected and name matches, we're good
-    if (selectedEntry && selectedEntry.name.toLowerCase() === name.toLowerCase()) {
+    if (selectedEntry && selectedEntry.name === name) {
         return;
     }
 
-    // Look for exact match (case-insensitive)
-    const exactMatch = facultyEntries.find(e =>
-        e.name.toLowerCase() === name.toLowerCase()
-    );
+    // Look for exact match (case-sensitive: DBLP treats capitalization as significant)
+    const exactMatch = facultyEntries.find(e => e.name === name);
 
     if (exactMatch) {
         // Auto-select the matching entry
@@ -2038,7 +2037,7 @@ function handleSubmit(e: Event): void {
         case 'add':
             // Check if this person is in old/ directories
             const oldEntry = facultyEntries.find(e =>
-                e.name.toLowerCase() === name.toLowerCase() && e.isOld
+                e.name === name && e.isOld
             );
             issueUrl = createAddIssueUrl(entry, notes, oldEntry);
             break;
@@ -2310,8 +2309,8 @@ function handleAddToBatch(): void {
     const scholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
     const orcid = (document.getElementById('orcid') as HTMLInputElement).value.trim() || '0000-0000-0000-0000';
 
-    // Check for duplicate name in batch
-    if (batchEntries.some(e => e.name.toLowerCase() === name.toLowerCase())) {
+    // Check for duplicate name in batch (case-sensitive: DBLP treats capitalization as significant)
+    if (batchEntries.some(e => e.name === name)) {
         alert(`"${name}" is already in the batch.`);
         return;
     }
@@ -2324,7 +2323,7 @@ function handleAddToBatch(): void {
 
     // Check if this person is in old/ directories
     const oldEntry = facultyEntries.find(e =>
-        e.name.toLowerCase() === name.toLowerCase() && e.isOld
+        e.name === name && e.isOld
     );
 
     // Add to batch (include old/ info if found)

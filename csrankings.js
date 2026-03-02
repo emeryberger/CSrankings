@@ -820,9 +820,6 @@ var CSRankings;
         for (let r = 0; r < numAuthors; r++) {
             const record = authors[r];
             const { area, year } = record;
-            if (area in CSRankings.nextTier) {
-                continue;
-            }
             if ((year < startyear) || (year > endyear)) {
                 continue;
             }
@@ -1143,7 +1140,6 @@ var CSRankings;
     function makeChart(name, isPieChart, authorAreas, areaDict) {
         let data = [];
         let datadict = {};
-        const keys = CSRankings.topTierAreas;
         const uname = unescape(name);
         // Areas with their category info for color map (from https://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4).
         const chartAreas = [
@@ -1153,11 +1149,17 @@ var CSRankings;
             ...CSRankings.interdisciplinaryAreas.map(key => ({ key: key, label: areaDict[key], color: "#984ea3" }))
         ];
         chartAreas.forEach(area => datadict[area.key] = 0);
-        for (let key in keys) {
+        for (let i = 0; i < CSRankings.areas.length; i++) {
+            let key = CSRankings.areas[i];
             if (!(uname in authorAreas)) {
                 // Defensive programming.
                 // This should only happen if we have an error in the aliases file.
                 return;
+            }
+            // Only include areas whose checkbox is currently checked
+            const checkbox = document.getElementById(key);
+            if (checkbox && !checkbox.checked) {
+                continue;
             }
             // Round it to the nearest 0.1.
             const value = Math.round(authorAreas[uname][key] * 10) / 10;
@@ -4139,9 +4141,9 @@ var CSRankings;
             }
             // Create an object containing areas and number of publications.
             let datadict = {};
-            const keys = CSRankings.topTierAreas;
             let maxValue = 0;
-            for (let key in keys) {
+            for (let i = 0; i < CSRankings.areas.length; i++) {
+                let key = CSRankings.areas[i];
                 const value = this.authorAreas[name][key];
                 if (key in CSRankings.parentMap) {
                     key = this.areaDict[key];
