@@ -48,7 +48,6 @@ var CSRankings;
         'oakland': 'sec',
         'usenixsec': 'sec',
         'ndss': 'sec', // next tier (for now)
-        'pets': 'sec', // next tier
         'vldb': 'mod',
         'sigmod': 'mod',
         'icde': 'mod', // next tier
@@ -113,7 +112,6 @@ var CSRankings;
         'pods': true,
         'hpca': true,
         'ndss': true, // for now
-        'pets': true,
         'eurosys': true,
         'eurographics': true,
         'fast': true,
@@ -178,7 +176,6 @@ var CSRankings;
         { area: "oakland", title: "Security" },
         { area: "usenixsec", title: "Security" },
         { area: "ndss", title: "Security" },
-        { area: "pets", title: "Security" },
         { area: "mod", title: "DB" },
         { area: "sigmod", title: "DB" },
         { area: "vldb", title: "DB" },
@@ -636,6 +633,10 @@ var CSRankings;
             }
             const name = auth.name;
             const rawArea = auth.area; // Keep the raw area (could be child like 'aaai')
+            // Skip areas not in the current configuration
+            if (!(rawArea in cache.areaData)) {
+                continue;
+            }
             // For areaDeptAdjustedCount, we need to map to parent area
             let parentArea = rawArea;
             if (rawArea in CSRankings.parentMap) {
@@ -3553,7 +3554,7 @@ var CSRankings;
         'sigir': 'SIGIR', 'www': 'WWW',
         'asplos': 'ASPLOS', 'isca': 'ISCA', 'micro': 'MICRO', 'hpca': 'HPCA',
         'sigcomm': 'SIGCOMM', 'nsdi': 'NSDI',
-        'ccs': 'CCS', 'oakland': 'S&P', 'usenixsec': 'USENIX Sec', 'ndss': 'NDSS', 'pets': 'PETS',
+        'ccs': 'CCS', 'oakland': 'S&P', 'usenixsec': 'USENIX Sec', 'ndss': 'NDSS',
         'sigmod': 'SIGMOD', 'vldb': 'VLDB', 'icde': 'ICDE', 'pods': 'PODS',
         'dac': 'DAC', 'iccad': 'ICCAD',
         'emsoft': 'EMSOFT', 'rtas': 'RTAS', 'rtss': 'RTSS',

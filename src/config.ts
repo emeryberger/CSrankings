@@ -30,7 +30,6 @@ namespace CSRankings {
         'oakland': 'sec',
         'usenixsec': 'sec',
         'ndss': 'sec', // next tier (for now)
-        'pets': 'sec', // next tier
         'vldb': 'mod',
         'sigmod': 'mod',
         'icde': 'mod', // next tier
@@ -96,7 +95,6 @@ namespace CSRankings {
         'pods': true,
         'hpca': true,
         'ndss': true, // for now
-        'pets': true,
         'eurosys': true,
         'eurographics': true,
         'fast': true,
@@ -166,7 +164,6 @@ namespace CSRankings {
         { area: "oakland", title: "Security" },
         { area: "usenixsec", title: "Security" },
         { area: "ndss", title: "Security" },
-        { area: "pets", title: "Security" },
         { area: "mod", title: "DB" },
         { area: "sigmod", title: "DB" },
         { area: "vldb", title: "DB" },

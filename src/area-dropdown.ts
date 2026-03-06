@@ -61,7 +61,7 @@ namespace CSRankings {
         'sigir': 'SIGIR', 'www': 'WWW',
         'asplos': 'ASPLOS', 'isca': 'ISCA', 'micro': 'MICRO', 'hpca': 'HPCA',
         'sigcomm': 'SIGCOMM', 'nsdi': 'NSDI',
-        'ccs': 'CCS', 'oakland': 'S&P', 'usenixsec': 'USENIX Sec', 'ndss': 'NDSS', 'pets': 'PETS',
+        'ccs': 'CCS', 'oakland': 'S&P', 'usenixsec': 'USENIX Sec', 'ndss': 'NDSS',
         'sigmod': 'SIGMOD', 'vldb': 'VLDB', 'icde': 'ICDE', 'pods': 'PODS',
         'dac': 'DAC', 'iccad': 'ICCAD',
         'emsoft': 'EMSOFT', 'rtas': 'RTAS', 'rtss': 'RTSS',
