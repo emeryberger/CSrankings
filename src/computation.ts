@@ -74,6 +74,11 @@ namespace CSRankings {
             const name = auth.name;
             const rawArea = auth.area;  // Keep the raw area (could be child like 'aaai')
 
+            // Skip areas not in the current configuration
+            if (!(rawArea in cache.areaData)) {
+                continue;
+            }
+
             // For areaDeptAdjustedCount, we need to map to parent area
             let parentArea = rawArea;
             if (rawArea in parentMap) {
