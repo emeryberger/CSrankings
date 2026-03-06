@@ -64,7 +64,7 @@ jobs:
             }
 
             // === THROTTLING CONFIGURATION ===
-            const MAX_INDIVIDUAL_PER_USER_PER_DAY = 2;  // Individual (non-batch) submissions per user per day
+            const MAX_INDIVIDUAL_PER_USER_PER_WEEK = 1;  // Individual (non-batch) submissions per user per week
             const MAX_TOTAL_PRS_PER_RUN = 5;            // Max PRs to create per hourly run
 
             // Get recent PRs to check rate limits
@@ -75,15 +75,16 @@ jobs:
               per_page: 100
             });
 
-            // Count individual submissions per user in last 24 hours
-            const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+            // Count individual submissions per user in last 7 days
+            const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
             const userSubmissionCounts = {};
             for (const pr of recentPRs) {
               const prDate = new Date(pr.created_at);
-              if (prDate < oneDayAgo) continue;
+              if (prDate < oneWeekAgo) continue;
 
-              // Check if this was an individual (non-batch) submission
-              const isBatch = pr.title.includes('faculty from') && /\d+ faculty/.test(pr.title);
+              // Check if this was a real batch (2+ faculty) submission
+              const batchMatch = pr.title.match(/(\d+) faculty/);
+              const isBatch = batchMatch && parseInt(batchMatch[1]) >= 2;
               if (isBatch) continue;
 
               // Extract submitter from PR body (Co-Authored-By line or @mention)
@@ -94,15 +95,16 @@ jobs:
               }
             }
 
-            console.log('User submission counts (last 24h):', userSubmissionCounts);
+            console.log('User submission counts (last 7 days):', userSubmissionCounts);
 
             // Separate batch vs individual submissions and sort (batch first)
             const batchSubmissions = [];
             const individualSubmissions = [];
 
             for (const issue of pendingIssues) {
+              const issueBatchMatch = issue.title.match(/(\d+) faculty/i);
               const isBatch = issue.title.toLowerCase().includes('batch') ||
-                              /add \d+ faculty from/i.test(issue.title);
+                              (issueBatchMatch && parseInt(issueBatchMatch[1]) >= 2);
               if (isBatch) {
                 batchSubmissions.push(issue);
               } else {
@@ -442,16 +444,17 @@ jobs:
               }
 
               const submitter = issue.user?.login || 'unknown';
+              const batchIssueMatch = issue.title.match(/(\d+) faculty/i);
               const isBatchIssue = issue.title.toLowerCase().includes('batch') ||
-                                   /add \d+ faculty from/i.test(issue.title);
+                                   (batchIssueMatch && parseInt(batchIssueMatch[1]) >= 2);
 
               // Rate limit individual submissions per user
               if (!isBatchIssue) {
                 const userCount = userSubmissionCounts[submitter] || 0;
                 const wasRateLimited = issue.labels.some(l => l.name === 'rate-limited');
 
-                if (userCount >= MAX_INDIVIDUAL_PER_USER_PER_DAY) {
-                  console.log(`  Rate limited: ${submitter} has ${userCount} individual submissions in last 24h (max: ${MAX_INDIVIDUAL_PER_USER_PER_DAY})`);
+                if (userCount >= MAX_INDIVIDUAL_PER_USER_PER_WEEK) {
+                  console.log(`  Rate limited: ${submitter} has ${userCount} individual submissions in last 7 days (max: ${MAX_INDIVIDUAL_PER_USER_PER_WEEK})`);
 
                   // Only add label/comment if not already rate-limited (avoid spam)
                   if (!wasRateLimited) {
@@ -465,7 +468,7 @@ jobs:
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       issue_number: issue.number,
-                      body: `## ⏳ Rate Limited\n\nYou have reached the daily limit of ${MAX_INDIVIDUAL_PER_USER_PER_DAY} individual submissions per user.\n\n**Your submission will be processed automatically** once your limit resets (within 24 hours), or you can:\n- **Use [batch submission](https://csrankings.org/submit/)** to add multiple faculty at once (recommended, no rate limit)\n\nThis limit helps us manage system resources. Thank you for your patience!`
+                      body: `## ⏳ Rate Limited\n\nYou have reached the weekly limit of ${MAX_INDIVIDUAL_PER_USER_PER_WEEK} individual submission per user.\n\n**Your submission will be processed automatically** once your limit resets (within 7 days), or you can:\n- **Use [batch submission](https://csrankings.org/submit/)** to add multiple faculty at once (recommended, no rate limit)\n\nThis limit helps us manage system resources. Thank you for your patience!`
                     });
                   }
                   continue;
@@ -473,7 +476,7 @@ jobs:
 
                 // User is now under limit - remove rate-limited label if present
                 if (wasRateLimited) {
-                  console.log(`  Clearing rate-limit for ${submitter} (now at ${userCount}/${MAX_INDIVIDUAL_PER_USER_PER_DAY})`);
+                  console.log(`  Clearing rate-limit for ${submitter} (now at ${userCount}/${MAX_INDIVIDUAL_PER_USER_PER_WEEK})`);
                   try {
                     await github.rest.issues.removeLabel({
                       owner: context.repo.owner,
