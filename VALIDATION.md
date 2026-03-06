@@ -7,6 +7,8 @@
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
 
+> **Important:** Having publications in CSRankings-tracked venues does **not** make someone eligible. Eligibility is determined solely by the criteria above (tenure-track status, CS department, PhD advising). Many researchers outside CS publish in CS venues — this does not qualify them for inclusion.
+
 ---
 
 ## Categories of PRs
