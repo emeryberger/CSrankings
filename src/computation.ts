@@ -225,7 +225,7 @@ namespace CSRankings {
                 continue;
             }
             let area = auth.area;
-            if (weights[area] === 0) {
+            if (!(area in weights) || weights[area] === 0) {
                 continue;
             }
             const year = auth.year;

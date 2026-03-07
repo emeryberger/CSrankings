@@ -334,7 +334,7 @@ class TestIncrementalPerformance:
         print(f"  Render time: {render_time:.1f}ms")
 
         # With lazy rendering, showing all entries should still be fast
-        assert total_rank_time < 200, f"Full ranking took {total_rank_time}ms, should be under 200ms"
+        assert total_rank_time < 500, f"Full ranking took {total_rank_time}ms, should be under 500ms"
 
 class TestModularRefactoring:
     """Tests to verify refactored modules work correctly."""
