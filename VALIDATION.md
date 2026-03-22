@@ -27,65 +27,55 @@ Removals should have clear justification (retirement, departure, death). Reinsta
 
 ---
 
-## Common Failure Modes Found
+## Common Failure Modes
 
 ### A. Teaching Track (NOT tenure-track research)
-- **Thomas Y. Yeh (UCI)**: "Assistant Professor of Teaching" -- UC system's teaching-focused track. Has security of employment but is NOT research tenure-track. Teaching professors typically cannot solely advise PhD students.
+- "Assistant Professor of Teaching" — UC system's teaching-focused track. Has security of employment but is NOT research tenure-track. However, UC teaching faculty **can** solely advise PhD students in CS, so the remaining question is whether they meet the other inclusion criteria (tenure-track research appointment, >=75% time).
 - **Key signal**: Title contains "of Teaching" or "Lecturer with Security of Employment" at UC campuses.
 
 ### B. Wrong Department (not CS, no cross-appointment shown)
-| Faculty | Institution | Actual Department | Why Ineligible |
+| Pattern | Example Institution | Actual Department | Why Ineligible |
 |---------|------------|-------------------|----------------|
-| Hesheng Wang | SJTU | Automation | No CS cross-appointment; advises Automation PhD students |
-| Md. Tauhidur Rahman | FIU | Electrical & Computer Eng. | ECE, hardware security focus; no CS PhD advising |
-| John Thomas 0001 | RIT | ECE **Technology** | "Engineering Technology" is a separate college from CS/Engineering at RIT |
-| Xinning Gui | Penn State | IST (Info Sci & Tech) | IST grants Informatics PhDs, not CS PhDs; separate college from CS |
-| Christopher C. Yang | Drexel | Information Science (within CCI) | CCI has separate CS and Info Sci departments; he advises Info Sci PhDs |
+| Automation dept | SJTU | Automation | No CS cross-appointment; advises Automation PhD students |
+| ECE without CS | FIU | Electrical & Computer Eng. | ECE, hardware focus; no CS PhD advising |
+| Engineering Technology | RIT | ECE **Technology** | "Engineering Technology" is a separate college from CS/Engineering |
+| Information Science | Penn State | IST (Info Sci & Tech) | IST grants Informatics PhDs, not CS PhDs; separate college from CS |
+| Info Sci within mixed college | Drexel | Information Science (within CCI) | Colleges with separate CS and Info Sci departments — only CS qualifies |
 
 ### C. Borderline / Non-standard Department Structures
-| Faculty | Institution | Department | Notes |
+| Pattern | Example Institution | Department | Notes |
 |---------|------------|------------|-------|
-| Rodney Van Meter | Keio | Environment & Info Studies (SFC) | PhD in "Media and Governance", not CS. Keio has a separate CS dept. |
-| Mark Last | Ben-Gurion | SISE | **Now OK** -- BGU merged CS and SISE into Faculty of Computer and Information Science in 2025 |
-| Linfeng Zhang | SJTU | School of AI | SJTU AI faculty appear able to advise CS PhD students (joint programs) |
+| Media/Governance PhD | Keio | Environment & Info Studies (SFC) | PhD in "Media and Governance", not CS. University has a separate CS dept. |
+| Merged CS+IS faculty | Ben-Gurion | SISE | **Now OK** — BGU merged CS and SISE into Faculty of Computer and Information Science in 2025 |
+| AI school with joint CS programs | SJTU | School of AI | AI faculty may be able to advise CS PhD students (joint programs) |
 
 ### D. Future Additions
 
-- **Nicolas Christianson (JHU)**: Listed as "assistant research professor" (non-TT) in Feb 2026. Joining as tenure-track assistant professor in Fall 2026; incoming faculty in the current year can be added.
+- Faculty listed as "assistant research professor" (non-TT) but joining as tenure-track in the current year can be added.
 
 ### E. Duplicate PRs
 
-Multiple PRs adding the same person, often with slightly different data:
-
-| Duplicate | Original | Person |
-|-----------|----------|--------|
-| #11080 | #11163 | Eleni Tzirita Zacharatou (HPI) -- identical entries |
-| #11286 | #11176 | Chuanxia Zheng (NTU) -- already in batch PR |
-| #11099 | #11114 | Keith G. Mills (LSU) -- **different Scholar IDs!** |
-| #11120 | #11114 | Reza Ghaiumy Anaraky (LSU) |
-| #11139 | #11114 | James Ghawaly (LSU) |
-| #11364 | #11316 | Jing Zhang 0037 (Wuhan) |
+Multiple PRs adding the same person, often with slightly different data. Watch for:
+- Identical entries submitted twice
+- Same person appearing in both individual and batch PRs
+- Different Scholar IDs for the same person (indicates data error)
 
 ### F. Same-PR Data Errors
 
-- **PR #11471**: Adds BOTH "Jia Zhang" AND "Jia Zhang 0001" with **identical** Scholar ID and ORCID. On DBLP, the correct name is "Jia Zhang 0001" (there are 4+ people named "Jia Zhang"). Only the 0001 entry should be added.
+- Watch for PRs that add both "Name" and "Name 0001" with **identical** Scholar ID and ORCID. On DBLP, the correct disambiguated form (e.g., "Name 0001") should be used exclusively.
+- Duplicate Scholar IDs within the same batch PR always indicate a data error.
 
 ---
 
-## Batch PR Issues Found
+## Batch PR Common Issues
 
-### Wuhan University Batches
+### General Patterns
 
-- **PR #11352**: Contains **Yuling Jiao** whose email is `yulingjiaomath@whu.edu.cn` and department is School of Mathematics. INELIGIBLE.
-- **PR #11312**: Contains **Bijun Li** from the "State Key Lab of Surveying, Mapping and Remote Sensing Information Engineering" (测绘遥感信息工程全国重点实验室). NOT a CS department. Her discipline listing includes "Other specialties in Computer Science and Technology" but primary affiliation is not CS.
-- Some Wuhan entries are in the School of Artificial Intelligence (人工智能学院) rather than the School of Computer Science (计算机学院). These may or may not qualify depending on cross-advising arrangements.
-
-### UCSD Miscellaneous (PR #11085)
-
-- Removes Fan Chung Graham (3 duplicate entries) and H. L. Graham (Ronald Graham, deceased 2020): **Appropriate** -- all had zero publications in CSRankings venues.
-- Removes David Danks: **Likely appropriate** -- affiliate (not primary) CSE faculty; primary in Data Science Institute + Philosophy.
-- Removes David J. Kriegman: **Questionable** -- still listed as active Professor on UCSD CSE website. No public evidence of retirement. Should request evidence before merging.
-- Adds Thuy-Duong Vuong: **Appropriate** -- confirmed TT Assistant Professor in CSE.
+- Faculty in **Mathematics** departments at universities with CS schools are ineligible (check email domains like `math@`).
+- Faculty in **remote sensing / surveying labs** are NOT in CS departments, even if their discipline listing mentions "Computer Science and Technology."
+- Faculty in a **School of AI** rather than School of CS may or may not qualify, depending on whether the university allows cross-advising of CS PhD students.
+- Removals of deceased faculty or duplicate entries with zero publications in CSRankings venues are generally appropriate.
+- Removals of active faculty require evidence (retirement announcement, departure notice, etc.).
 - Consolidates Imani N. S. Munyaka / Imani N. Sherman entries: **Appropriate**.
 
 ---
@@ -226,3 +216,32 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 
 ---
 
+## Automation
+
+The script `util/validate_prs.py` automates the validation workflow:
+
+```bash
+# See what needs work
+python3 util/validate_prs.py status         # Full status report
+python3 util/validate_prs.py list           # PRs still needing our validation comment
+
+# Investigate a specific PR
+python3 util/validate_prs.py gather <PR#>   # Diff, data quality checks, red flags
+python3 util/validate_prs.py info <PR#>     # Lighter-weight summary
+
+# Post a validation comment from a file
+python3 util/validate_prs.py comment <PR#> <file.md>
+
+# Score and merge
+python3 util/validate_prs.py scores         # Show all scores
+python3 util/validate_prs.py mergeable      # List PRs >= 90% ready to merge
+python3 util/validate_prs.py merge          # Merge all >= 90% (squash, auto-merge)
+python3 util/validate_prs.py merge <PR#>    # Merge one specific PR (checks score)
+```
+
+The `gather` command performs automated checks including:
+- Institution lookup against `institutions.csv`
+- Duplicate Scholar ID detection within batch PRs
+- URL-based department heuristics (cs/cse = good, ece/ist = needs review)
+- Red flag detection (NOSCHOLARPAGE, placeholder ORCID, disambiguated names)
+- Existing faculty collision detection
