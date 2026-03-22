@@ -263,6 +263,26 @@ jobs:
 
                 for (const issue of issues) {
                   const body = issue.body || '';
+
+                  // Skip issues with unchecked eligibility boxes
+                  const unchecked = (body.match(/- \[ \] /g) || []).length;
+                  if (unchecked > 0) {
+                    console.log(`  Skipping issue #${issue.number}: ${unchecked} unchecked eligibility box(es)`);
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Incomplete Eligibility Confirmation\n\nThis submission has **${unchecked} unchecked eligibility checkbox${unchecked > 1 ? 'es' : ''}**. All eligibility criteria must be confirmed before a PR can be created.\n\nPlease resubmit with all boxes checked.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed', 'incomplete-checklist']
+                    });
+                    continue;
+                  }
+
                   const name = parseField(body, 'Name');
                   const homepage = parseField(body, 'Homepage URL') || parseField(body, 'Homepage');
                   const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
@@ -384,6 +404,21 @@ jobs:
                   issue_number: pr.number,
                   body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                 });
+
+                // Propagate Notes from each issue to the PR
+                for (const issue of issues) {
+                  const issueBody = issue.body || '';
+                  const issueNotes = parseField(issueBody, 'Notes');
+                  if (issueNotes && issueNotes.trim() && issueNotes.trim() !== '_No response_') {
+                    const issueName = parseField(issueBody, 'Name') || `issue #${issue.number}`;
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: pr.number,
+                      body: `## 📝 Submitter Notes for ${issueName} (from issue #${issue.number})\n\n${issueNotes.trim()}`
+                    });
+                  }
+                }
 
                 // Comment on all issues
                 for (const issue of issues) {
@@ -507,6 +542,27 @@ jobs:
                     repo: context.repo.repo,
                     issue_number: issue.number,
                     labels: ['validation-failed', 'anonymous-profile']
+                  });
+                  continue;
+                }
+              }
+
+              // Check eligibility checklist — all boxes must be checked for add/reinstate
+              if (action === 'add' || action === 'reinstate') {
+                const unchecked = (body.match(/- \[ \] /g) || []).length;
+                if (unchecked > 0) {
+                  console.log(`  Rejected: ${unchecked} unchecked eligibility box(es)`);
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `## ❌ Incomplete Eligibility Confirmation\n\nThis submission has **${unchecked} unchecked eligibility checkbox${unchecked > 1 ? 'es' : ''}**.\n\nAll eligibility criteria must be confirmed (checked) before a PR can be created. Please review the requirements:\n- Full-time, tenure-track faculty\n- Can solely advise CS PhD students\n- Name matches DBLP exactly\n- Homepage URL works and shows name/affiliation\n\nIf you cannot confirm all criteria, this person may not be eligible for CSRankings. Please resubmit with all boxes checked, or explain in the Notes field why a criterion does not apply.`
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['validation-failed', 'incomplete-checklist']
                   });
                   continue;
                 }
@@ -705,6 +761,18 @@ jobs:
                     issue_number: pr.number,
                     body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                   });
+
+                  // Propagate Notes from the issue to the PR
+                  const batchNotes = parseField(body, 'Notes');
+                  if (batchNotes && batchNotes.trim() && batchNotes.trim() !== '_No response_') {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: pr.number,
+                      body: `## 📝 Submitter Notes (from issue #${issue.number})\n\n${batchNotes.trim()}`
+                    });
+                    console.log(`  Added submitter notes to PR #${pr.number}`);
+                  }
 
                   // Comment on issue
                   await github.rest.issues.createComment({
@@ -938,6 +1006,17 @@ jobs:
                         issue_number: pr.number,
                         body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                       });
+
+                      // Propagate Notes from the issue to the PR
+                      const accentNotes = parseField(body, 'Notes');
+                      if (accentNotes && accentNotes.trim() && accentNotes.trim() !== '_No response_') {
+                        await github.rest.issues.createComment({
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          issue_number: pr.number,
+                          body: `## 📝 Submitter Notes (from issue #${issue.number})\n\n${accentNotes.trim()}`
+                        });
+                      }
 
                       await github.rest.issues.createComment({
                         owner: context.repo.owner,
@@ -1387,6 +1466,18 @@ jobs:
                   issue_number: pr.number,
                   body: `Submitted by @${submitter} — you'll receive notifications for CI and review updates on this PR.`
                 });
+
+                // Propagate Notes from the issue to the PR as a comment
+                const issueNotes = parseField(body, 'Notes');
+                if (issueNotes && issueNotes.trim() && issueNotes.trim() !== '_No response_') {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    body: `## 📝 Submitter Notes (from issue #${issue.number})\n\n${issueNotes.trim()}`
+                  });
+                  console.log(`  Added submitter notes to PR #${pr.number}`);
+                }
 
                 // Comment on issue with success
                 await github.rest.issues.createComment({
