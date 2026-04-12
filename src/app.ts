@@ -12,7 +12,7 @@ namespace CSRankings {
 
         private note: { [name: string]: string } = {};
 
-        private navigoRouter: Navigo;
+        private navigoRouter!: Navigo;
 
         // Return the singleton corresponding to this object.
         public static getInstance(): App {
