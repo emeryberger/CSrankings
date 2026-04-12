@@ -9,6 +9,8 @@
 	"noUnusedParameters": true,
 	"noFallthroughCasesInSwitch": true,
 	"strictNullChecks": true,
+	"rootDir": "./src",
+	"ignoreDeprecations": "5.0",
 	"outFile": "csrankings.js"
     },
     "files": [
