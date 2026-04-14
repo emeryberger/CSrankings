@@ -143,11 +143,11 @@ docs/                  # Documentation
 
 ## Repository Size Management
 
-The repository history was cleaned to reduce clone size from ~5GB to ~140MB.
+The repository history was cleaned (2026-04-14) to reduce clone size from ~11GB to ~400MB. DBLP data is now stored as `dblp.xml.xz` (no LFS); historical versions of large generated files were purged.
 
-- **Git LFS**: `dblp.xml.gz` tracked via LFS (`.gitattributes`)
-- **`.gitignore`**: `articles.json`, `dblp-original.xml.gz`, `homepages.csv`, etc.
-- **CI regenerates**: `generated-author-info.csv` rebuilt by `make` in CI
+- **`.gitignore`**: `articles.json`, `dblp-original.xml.gz`, `homepages.csv`, `faculty-affiliations.csv`, etc. — must never be committed
+- **Current DBLP data**: `dblp.xml.xz` (xz-compressed, ~30MB, tracked directly in git)
+- **CI regenerates**: `generated-author-info.csv` rebuilt by `make` in CI; only the latest version is retained in history
 
 Institution names must not exceed 37 characters (length of "Univ. of Illinois at Urbana-Champaign"). Abbreviate as needed:
 - `University` -> `Univ.`
