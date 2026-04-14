@@ -163,14 +163,15 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 
 ### Guidelines for Writing Validation Comments
 
-1. **Always check every inclusion criterion** from the table above — do not skip any row
-2. **Cite evidence**: link to or name the specific source (faculty directory page, Google Scholar profile, LinkedIn, etc.)
-3. **Likelihood percentage**: 90-100% = clearly valid; 70-89% = likely valid with minor concerns; 50-69% = significant uncertainty; <50% = likely invalid
-4. **Flag specific issues** that need action (wrong Scholar ID, DBLP disambiguation, missing institution, etc.)
-5. **For non-US institutions**, reference the International Title Equivalences table above
-6. **For batch PRs**, every person must be individually assessed — do not just spot-check
-7. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
-8. **For removals**, verify the stated reason (retirement, departure, death) with evidence
+1. **Always read existing PR comments first.** Prior comments may contain evidence from the submitter, maintainer corrections, bot validation output, or previous reviewer concerns. Incorporate that evidence into your assessment and explicitly address any raised issues rather than duplicating or contradicting them without justification.
+2. **Always check every inclusion criterion** from the table above — do not skip any row
+3. **Cite evidence**: link to or name the specific source (faculty directory page, Google Scholar profile, LinkedIn, etc.)
+4. **Likelihood percentage**: 90-100% = clearly valid; 70-89% = likely valid with minor concerns; 50-69% = significant uncertainty; <50% = likely invalid
+5. **Flag specific issues** that need action (wrong Scholar ID, DBLP disambiguation, missing institution, etc.)
+6. **For non-US institutions**, reference the International Title Equivalences table above
+7. **For batch PRs**, every person must be individually assessed — do not just spot-check
+8. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
+9. **For removals**, verify the stated reason (retirement, departure, death) with evidence
 
 ---
 
