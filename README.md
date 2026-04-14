@@ -14,15 +14,17 @@ https://csrankings.org
 
 ### Adding or modifying affiliations
 
-**_NOTE: Updates are now processed on a quarterly basis. You may submit pull requests at any time, but they may not be processed until the next quarter (after three months have elapsed)._**
+## 👉 **Use the [self-service submission form](https://csrankings.org/submit/).** 👈
 
-#### Self-service form (recommended)
+**Essentially all contributions should be made through the form** — no clone, no CSV editing, no worrying about file format. The form validates your entry (DBLP name, homepage, Google Scholar ID, ORCID) and files an issue that is auto-processed into a PR. It supports:
 
-**For adding or updating a single faculty member, use our [self-service form](https://csrankings.org/submit/).** The form validates your entry automatically and creates a GitHub issue that is processed into a PR.
+- **Add** — new tenure-track faculty, with a **batch mode** for submitting an entire department at once (no rate limit on batch submissions).
+- **Update** — change affiliation (when someone moves), update homepage URL or Google Scholar ID, or add a DBLP disambiguation suffix (e.g., `0001`).
+- **Remove** — for faculty who retired, became emeritus, moved to industry (records the company), are deceased, are no longer tenure-track, or left academia. (Entries are moved to `old/`, not deleted.)
 
-#### Manual pull requests
+**_NOTE: Submissions are processed on a quarterly basis, so it may take up to three months for your change to appear._**
 
-For bulk changes (e.g., adding an entire department), you can edit files directly in GitHub to create pull requests. All data is in the files `csrankings-[a-z].csv`, with authors listed in alphabetical order by their first name, organized by the initial letter. Please read <a href="CONTRIBUTING.md">`CONTRIBUTING.md`</a> for full details on how to contribute.
+If your institution isn't yet listed, open a [new institution issue](https://github.com/emeryberger/CSrankings/issues/new?template=new-institution.md) first — then submit faculty through the form. Direct edits to `csrankings-[a-z].csv` via pull request are only for maintainers and unusual cases; see [`CONTRIBUTING.md`](CONTRIBUTING.md). Do not edit `csrankings.csv`; it is auto-generated.
 
 ### Trying it out at home
 
@@ -49,11 +51,7 @@ Note: Python 3.12+ is recommended. The DBLP filtering uses a streaming lxml pars
 
 ### Quick contribution via a shallow clone
 
-A full clone of the CSrankings repository is almost 5GB, and the
-`csrankings.csv` file is too large to edit via the GitHub web site. To
-contribute a change without creating a full local clone of the
-CSrankings repo, you can do a shallow clone. To do so, follow these
-steps:
+Most contributors should use the [web-based options above](#adding-or-modifying-affiliations) — no clone needed. If you do need a local copy for larger changes, a full clone of the CSrankings repository is around 400MB. To avoid downloading the full git history, you can do a shallow clone. Follow these steps:
 
 1. Fork the CSrankings repo. If you have an existing fork, but it is
 not up to date with the main repository, this technique may not
