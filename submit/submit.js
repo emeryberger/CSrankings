@@ -1810,7 +1810,7 @@ function updatePreview() {
  * Handle form submission
  */
 function handleSubmit(e) {
-    var _a, _b;
+    var _a, _b, _c;
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
     const newName = ((_a = document.getElementById('new-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
@@ -1819,6 +1819,7 @@ function handleSubmit(e) {
     const scholarid = document.getElementById('scholarid').value.trim();
     const orcid = document.getElementById('orcid').value.trim() || '0000-0000-0000-0000';
     const notes = document.getElementById('notes').value.trim();
+    const isSponsor = !!((_c = document.getElementById('check-sponsor')) === null || _c === void 0 ? void 0 : _c.checked);
     // Build submission data
     // For updates, use new name if provided, otherwise keep original name
     const effectiveName = (currentAction === 'update' && newName) ? newName : name;
@@ -1828,10 +1829,10 @@ function handleSubmit(e) {
         case 'add':
             // Check if this person is in old/ directories
             const oldEntry = facultyEntries.find(e => e.name === name && e.isOld);
-            issueUrl = createAddIssueUrl(entry, notes, oldEntry);
+            issueUrl = createAddIssueUrl(entry, notes, oldEntry, isSponsor);
             break;
         case 'update':
-            issueUrl = createUpdateIssueUrl(selectedEntry, entry, notes);
+            issueUrl = createUpdateIssueUrl(selectedEntry, entry, notes, isSponsor);
             break;
         case 'remove':
             const reason = document.getElementById('removal-reason').value;
@@ -1839,7 +1840,7 @@ function handleSubmit(e) {
             const companyName = ((_b = document.getElementById('company-name')) === null || _b === void 0 ? void 0 : _b.value.trim()) || '';
             const fullReason = reason === 'other' ? reasonOther :
                 reason === 'industry' && companyName ? `${reason} (${companyName})` : reason;
-            issueUrl = createRemoveIssueUrl(selectedEntry, fullReason, notes);
+            issueUrl = createRemoveIssueUrl(selectedEntry, fullReason, notes, isSponsor);
             break;
         default:
             return;
@@ -1855,7 +1856,7 @@ function handleSubmit(e) {
 /**
  * Create GitHub Issue URL for adding new faculty
  */
-function createAddIssueUrl(data, notes, existingOldEntry) {
+function createAddIssueUrl(data, notes, existingOldEntry, isSponsor) {
     // Check if this is a reinstatement from old/ directory
     const isReinstatement = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.isOld) === true;
     const oldFileLabel = (existingOldEntry === null || existingOldEntry === void 0 ? void 0 : existingOldEntry.oldFile) ? getOldFileLabel(existingOldEntry.oldFile) : '';
@@ -1897,7 +1898,7 @@ ${previousEntrySection}### Eligibility Confirmation
 - [X] Name matches DBLP exactly
 - [X] Homepage URL works and shows name/affiliation
 
-${notes ? `### Notes\n${notes}` : ''}`;
+${isSponsor ? '### Sponsor\nSubmitter self-identifies as a CSrankings sponsor.\n\n' : ''}${notes ? `### Notes\n${notes}` : ''}`;
     // Note: labels can only be set via URL by users with write access
     // The hourly workflow will identify issues by title prefix instead
     const params = new URLSearchParams({
@@ -1909,7 +1910,7 @@ ${notes ? `### Notes\n${notes}` : ''}`;
 /**
  * Create GitHub Issue URL for updating existing faculty
  */
-function createUpdateIssueUrl(oldEntry, newEntry, notes) {
+function createUpdateIssueUrl(oldEntry, newEntry, notes, isSponsor) {
     // Check if this is a reinstatement (from old/ folder back to active)
     const isReinstatement = oldEntry.isOld === true;
     const oldFileLabel = oldEntry.oldFile ? getOldFileLabel(oldEntry.oldFile) : '';
@@ -1958,7 +1959,7 @@ ${newEntry.name},${newEntry.institution},${newEntry.homepage},${newEntry.scholar
 ${oldEntry.name},${oldEntry.institution},${oldEntry.homepage},${oldEntry.scholarid},${oldEntry.orcid}
 \`\`\`
 
-${notes ? `### Notes\n${notes}` : ''}`;
+${isSponsor ? '### Sponsor\nSubmitter self-identifies as a CSrankings sponsor.\n\n' : ''}${notes ? `### Notes\n${notes}` : ''}`;
     const params = new URLSearchParams({
         title: title
     });
@@ -1967,7 +1968,7 @@ ${notes ? `### Notes\n${notes}` : ''}`;
 /**
  * Create GitHub Issue URL for removing faculty
  */
-function createRemoveIssueUrl(entry, reason, notes) {
+function createRemoveIssueUrl(entry, reason, notes, isSponsor) {
     const title = `[CSrankings form submission] Remove ${entry.name} (${entry.institution})`;
     const body = `### Action
 Remove faculty entry
@@ -1986,7 +1987,7 @@ ${reason}
 ${entry.name},${entry.institution},${entry.homepage},${entry.scholarid}
 \`\`\`
 
-${notes ? `### Notes\n${notes}` : ''}`;
+${isSponsor ? '### Sponsor\nSubmitter self-identifies as a CSrankings sponsor.\n\n' : ''}${notes ? `### Notes\n${notes}` : ''}`;
     const params = new URLSearchParams({
         title: title
     });
@@ -2189,12 +2190,14 @@ function clearBatchEntries() {
  * Handle submitting batch entries
  */
 function handleSubmitBatch() {
+    var _a;
     if (batchEntries.length === 0)
         return;
     const institution = batchEntries[0].institution;
     const notes = document.getElementById('notes').value.trim();
+    const isSponsor = !!((_a = document.getElementById('check-sponsor')) === null || _a === void 0 ? void 0 : _a.checked);
     // Create batch issue URL
-    const issueUrl = createBatchIssueUrl(batchEntries, institution, notes);
+    const issueUrl = createBatchIssueUrl(batchEntries, institution, notes, isSponsor);
     // Track submission
     if (typeof ga !== 'undefined') {
         ga('send', 'event', 'submission', 'batch-add', institution, batchEntries.length);
@@ -2205,7 +2208,7 @@ function handleSubmitBatch() {
 /**
  * Create GitHub Issue URL for batch submission
  */
-function createBatchIssueUrl(entries, institution, notes) {
+function createBatchIssueUrl(entries, institution, notes, isSponsor) {
     // Check if any entries are reinstatements from old/
     const reinstatements = entries.filter(e => e.isOld);
     const hasReinstatements = reinstatements.length > 0;
@@ -2234,7 +2237,7 @@ ${reinstatementNote}
 ${csvLines}
 \`\`\`
 
-### Notes
+${isSponsor ? '### Sponsor\nSubmitter self-identifies as a CSrankings sponsor.\n\n' : ''}### Notes
 ${notes || 'None'}
 
 ---

@@ -38,6 +38,20 @@ jobs:
           script: |
             const fs = require('fs');
 
+            // Load sponsor list (authoritative source for sponsor verification)
+            let sponsorLogins = new Set();
+            try {
+              const sponsorsData = JSON.parse(fs.readFileSync('sponsors.json', 'utf8'));
+              for (const s of (sponsorsData.sponsors || [])) {
+                if (s.login) sponsorLogins.add(s.login.toLowerCase());
+              }
+              console.log(`Loaded ${sponsorLogins.size} sponsors from sponsors.json`);
+            } catch (e) {
+              console.log(`Could not load sponsors.json: ${e.message}`);
+            }
+            const isSponsor = (login) => !!login && sponsorLogins.has(login.toLowerCase());
+            const sponsorBanner = '> ## \u{1F49B} CSrankings Sponsor\n> Submitted by a verified [CSrankings sponsor](https://github.com/sponsors/csrankings) \u2014 thank you for your support!\n\n';
+
             // Find all open issues with our title prefix that haven't been processed
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
@@ -240,16 +254,20 @@ jobs:
               }
 
               const [submitter, institution] = key.split('|||');
-              console.log(`\nAuto-batching ${issues.length} submissions from ${submitter} for ${institution}`);
+              const submitterIsSponsor = isSponsor(submitter);
+              console.log(`\nAuto-batching ${issues.length} submissions from ${submitter}${submitterIsSponsor ? ' (sponsor)' : ''} for ${institution}`);
 
-              // Add "CSrankings form submission" label to all issues in batch
+              // Add "CSrankings form submission" label (and "sponsor" if applicable) to all issues in batch
+              const batchIssueLabels = submitterIsSponsor
+                ? ['CSrankings form submission', 'sponsor']
+                : ['CSrankings form submission'];
               for (const issue of issues) {
                 try {
                   await github.rest.issues.addLabels({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     issue_number: issue.number,
-                    labels: ['CSrankings form submission']
+                    labels: batchIssueLabels
                   });
                 } catch (labelError) {
                   console.log(`  Could not add label for #${issue.number}: ${labelError.message}`);
@@ -375,7 +393,7 @@ jobs:
 
                 // Create PR
                 const prTitle = `Add ${entries.length} faculty from ${institution} (auto-batched)`;
-                const prBody = `## Summary\nAuto-batched ${entries.length} individual submissions into a single PR.\n\nSubmitted by @${submitter} via CSRankings form.\n\nCloses ${issueNumbers.map(n => `#${n}`).join(', ')}\n\n## Entries\n${entries.map((e, i) => `${i + 1}. ${e.name}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${entries.map(e => e.line).join('\n')}\n\`\`\``;
+                const prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nAuto-batched ${entries.length} individual submissions into a single PR.\n\nSubmitted by @${submitter} via CSRankings form.\n\nCloses ${issueNumbers.map(n => `#${n}`).join(', ')}\n\n## Entries\n${entries.map((e, i) => `${i + 1}. ${e.name}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${entries.map(e => e.line).join('\n')}\n\`\`\``;
 
                 const { data: pr } = await github.rest.pulls.create({
                   owner: context.repo.owner,
@@ -389,12 +407,14 @@ jobs:
                 console.log(`  Created auto-batch PR #${pr.number}: ${pr.html_url}`);
                 prsCreatedThisRun++;
 
-                // Add label to PR
+                // Add label to PR (plus "sponsor" when applicable)
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: pr.number,
-                  labels: ['CSrankings form submission']
+                  labels: submitterIsSponsor
+                    ? ['CSrankings form submission', 'sponsor']
+                    : ['CSrankings form submission']
                 });
 
                 // Subscribe issue creator to PR notifications
@@ -460,13 +480,20 @@ jobs:
             for (const issue of sortedIssues) {
               console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
 
-              // Add "CSrankings form submission" label
+              const submitterIsSponsor = isSponsor(issue.user?.login);
+              if (submitterIsSponsor) {
+                console.log(`  Submitter @${issue.user.login} is a CSrankings sponsor`);
+              }
+
+              // Add "CSrankings form submission" label (and "sponsor" when applicable)
               try {
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  labels: ['CSrankings form submission']
+                  labels: submitterIsSponsor
+                    ? ['CSrankings form submission', 'sponsor']
+                    : ['CSrankings form submission']
                 });
               } catch (labelError) {
                 console.log(`  Could not add label: ${labelError.message}`);
@@ -729,7 +756,7 @@ jobs:
 
                   // Create PR
                   const prTitle = `Add ${csvLines.length} faculty from ${institution}`;
-                  const prBody = `## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
+                  const prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
 
                   const { data: pr } = await github.rest.pulls.create({
                     owner: context.repo.owner,
@@ -746,12 +773,14 @@ jobs:
                   prsCreatedThisRun++;
                   // Batch submissions don't count toward individual user limits
 
-                  // Add label to PR
+                  // Add label to PR (plus "sponsor" when applicable)
                   await github.rest.issues.addLabels({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     issue_number: pr.number,
-                    labels: ['CSrankings form submission']
+                    labels: submitterIsSponsor
+                      ? ['CSrankings form submission', 'sponsor']
+                      : ['CSrankings form submission']
                   });
 
                   // Subscribe issue creator to PR notifications
@@ -947,7 +976,7 @@ jobs:
                       branchName = `fix-accent-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                       commitMessage = `Fix accent: ${existingName} → ${name}${coAuthorLine}`;
                       prTitle = `Fix accent: ${existingName} → ${name}`;
-                      prBody = `## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
+                      prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
 
                       // Jump to branch creation (skip normal add logic)
                       console.log(`  Creating branch: ${branchName}`);
@@ -991,12 +1020,14 @@ jobs:
                       prsCreatedThisRun++;
                       userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
 
-                      // Add label to PR
+                      // Add label to PR (plus "sponsor" when applicable)
                       await github.rest.issues.addLabels({
                         owner: context.repo.owner,
                         repo: context.repo.repo,
                         issue_number: pr.number,
-                        labels: ['CSrankings form submission']
+                        labels: submitterIsSponsor
+                          ? ['CSrankings form submission', 'sponsor']
+                          : ['CSrankings form submission']
                       });
 
                       // Subscribe issue creator to PR notifications
@@ -1062,7 +1093,7 @@ jobs:
                   branchName = `${action}-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `${actionWord} ${name} (${institution})${coAuthorLine}`;
                   prTitle = `${actionWord} ${name} (${institution})`;
-                  prBody = `## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
+                  prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
 
                   // For reinstatement, store source file for removal from old/ directory
                   var reinstateSourceFile = null;
@@ -1177,7 +1208,7 @@ jobs:
                   branchName = `update-${searchName.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Update ${displayName}${coAuthorLine}`;
                   prTitle = `Update ${displayName}`;
-                  prBody = `## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+                  prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
 
                   if (crossFileMove) {
                     prBody += `\n\n**Note:** Entry moved from \`${searchTargetFile}\` to \`${newNameTargetFile}\` due to name change.`;
@@ -1245,7 +1276,7 @@ jobs:
                   branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Remove ${name} (${reason || 'unspecified'})${coAuthorLine}`;
                   prTitle = `Remove ${name} (${institution || 'unknown'})`;
-                  prBody = `## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
+                  prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
 
                   // Store old file info for the remove action
                   var removeOldFile = oldFile;
@@ -1451,12 +1482,14 @@ jobs:
                   userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
                 }
 
-                // Add label to PR
+                // Add label to PR (plus "sponsor" when applicable)
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: pr.number,
-                  labels: ['CSrankings form submission']
+                  labels: submitterIsSponsor
+                    ? ['CSrankings form submission', 'sponsor']
+                    : ['CSrankings form submission']
                 });
 
                 // Subscribe issue creator to PR notifications
