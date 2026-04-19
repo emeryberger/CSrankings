@@ -110,11 +110,11 @@ collab-graph: generated-author-info.csv faculty-coauthors.csv
 	@echo "Building collaboration graph data."
 	$(PYTHON) util/make-collaboration-graph.py
 
-# Update the "last update" date in index.html to current month/year
+# Update the DBLP date in index.html to current month/year
 update-dblp-date:
 	@echo "Updating DBLP date in index.html..."
 	@MONTH_YEAR=$$(date "+%B %Y"); \
-	sed -i.bak -E "s/(DBLP<\/a> \(last update )[A-Za-z]+ [0-9]{4}/\1$$MONTH_YEAR/" index.html && \
+	sed -i.bak -E "s/(DBLP<\/a> \()[A-Za-z]+ [0-9]{4}(\))/\1$$MONTH_YEAR\2/" index.html && \
 	rm -f index.html.bak && \
 	echo "Updated to: $$MONTH_YEAR"
 
