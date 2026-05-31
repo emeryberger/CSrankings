@@ -808,7 +808,7 @@ jobs:
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     issue_number: issue.number,
-                    body: `## ✅ PR Created\n\nYour batch submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
+                    body: `${submitterIsSponsor ? sponsorBanner : ''}## ✅ PR Created\n\nYour batch submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
                   });
 
                   await github.rest.issues.addLabels({
@@ -1517,7 +1517,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: `## ✅ PR Created\n\nYour submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
+                  body: `${submitterIsSponsor ? sponsorBanner : ''}## ✅ PR Created\n\nYour submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
                 });
 
                 // Add processed label
