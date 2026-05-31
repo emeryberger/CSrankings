@@ -147,7 +147,7 @@ def map_pacmmod_to_conference(journal: Conference, year: int, number_str: str) -
 # 'log': ['CAV', 'CAV (1)', 'CAV (2)', 'LICS', 'CSL-LICS'],
 # SIGACT
 # 'act': ['STOC', 'FOCS', 'SODA'],
-# 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD'],
+# 'mlmining': ['NIPS', 'ICML', 'ICML (1)', 'ICML (2)', 'ICML (3)', 'KDD', 'KDD (1)', 'KDD (2)'],
 # 'ai': ['AAAI', 'AAAI/IAAI', 'IJCAI'],
 # AAAI listed to account for AAAI/IAAI joint conference
 # SIGGRAPH
@@ -277,7 +277,7 @@ areadict: Dict[Area, List[Conference]] = {
         Conference("ICML (3)"),
     ],
     Area("iclr"): [Conference("ICLR"), Conference("ICLR (Poster)")],
-    Area("kdd"): [Conference("KDD")],
+    Area("kdd"): [Conference("KDD"), Conference("KDD (1)"), Conference("KDD (2)")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
     Area("ijcai"): [Conference("IJCAI")],
     Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
