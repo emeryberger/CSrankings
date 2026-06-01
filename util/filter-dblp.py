@@ -64,7 +64,7 @@ BOOKTITLES = frozenset([
     # Machine Learning
     "NeurIPS", "NIPS",
     "ICML", "ICML (1)", "ICML (2)", "ICML (3)",
-    "KDD",
+    "KDD", "KDD (1)", "KDD (2)",
 
     # Cryptography
     "CRYPTO", "CRYPTO (1)", "CRYPTO (2)", "CRYPTO (3)", "CRYPTO (4)",
