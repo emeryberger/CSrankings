@@ -34,22 +34,115 @@ jobs:
 
       - name: Find and process pending submissions
         uses: actions/github-script@v7
+        env:
+          # Optional PAT with read:org scope; used to detect private sponsors at
+          # runtime. Public sponsors come from sponsors.json regardless.
+          SPONSORS_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
         with:
           script: |
             const fs = require('fs');
 
-            // Load sponsor list (authoritative source for sponsor verification)
+            // Load sponsor list (authoritative source for sponsor verification).
+            // publicSponsorLogins: only sponsors who appear in sponsors.json — used
+            //   to decide whether to display a public-facing acknowledgment banner.
+            // sponsorLogins: superset that also includes private sponsors fetched
+            //   at runtime — used for the rate-limit bypass (silent benefit).
+            let publicSponsorLogins = new Set();
             let sponsorLogins = new Set();
             try {
               const sponsorsData = JSON.parse(fs.readFileSync('sponsors.json', 'utf8'));
               for (const s of (sponsorsData.sponsors || [])) {
-                if (s.login) sponsorLogins.add(s.login.toLowerCase());
+                if (s.login) {
+                  const key = s.login.toLowerCase();
+                  publicSponsorLogins.add(key);
+                  sponsorLogins.add(key);
+                }
               }
-              console.log(`Loaded ${sponsorLogins.size} sponsors from sponsors.json`);
+              console.log(`Loaded ${publicSponsorLogins.size} public sponsors from sponsors.json`);
             } catch (e) {
               console.log(`Could not load sponsors.json: ${e.message}`);
             }
+
+            // Merge in private sponsors at runtime (never persisted to disk).
+            // Mirrors util/update-sponsors.py: tries organization, then user.
+            const sponsorsToken = process.env.SPONSORS_TOKEN;
+            if (sponsorsToken) {
+              const SPONSORS_ACCOUNT = 'CSrankings';
+              const queryFor = (kind) => `
+                query($org: String!, $cursor: String) {
+                  ${kind}(login: $org) {
+                    sponsorshipsAsMaintainer(first: 100, after: $cursor, includePrivate: true, activeOnly: false) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes {
+                        sponsorEntity {
+                          ... on User { login }
+                          ... on Organization { login }
+                        }
+                      }
+                    }
+                  }
+                }`;
+              let privateAdded = 0;
+              for (const kind of ['organization', 'user']) {
+                let cursor = null;
+                let foundAny = false;
+                let pageError = false;
+                while (!pageError) {
+                  let resp;
+                  try {
+                    resp = await fetch('https://api.github.com/graphql', {
+                      method: 'POST',
+                      headers: {
+                        'Authorization': `Bearer ${sponsorsToken}`,
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        query: queryFor(kind),
+                        variables: { org: SPONSORS_ACCOUNT, cursor }
+                      })
+                    });
+                  } catch (e) {
+                    console.log(`  Private sponsor fetch error (${kind}): ${e.message}`);
+                    pageError = true;
+                    break;
+                  }
+                  if (!resp.ok) {
+                    console.log(`  Private sponsor fetch failed (${kind}): HTTP ${resp.status}`);
+                    pageError = true;
+                    break;
+                  }
+                  const data = await resp.json();
+                  const sponsorships = data?.data?.[kind]?.sponsorshipsAsMaintainer;
+                  if (!sponsorships) break;
+                  foundAny = true;
+                  for (const node of sponsorships.nodes || []) {
+                    const login = node?.sponsorEntity?.login;
+                    if (login) {
+                      const key = login.toLowerCase();
+                      if (!sponsorLogins.has(key)) {
+                        sponsorLogins.add(key);
+                        privateAdded++;
+                      }
+                    }
+                  }
+                  if (!sponsorships.pageInfo.hasNextPage) break;
+                  cursor = sponsorships.pageInfo.endCursor;
+                }
+                if (foundAny) break;
+              }
+              console.log(`Added ${privateAdded} additional sponsors via SPONSORS_TOKEN (not persisted)`);
+            } else {
+              console.log('SPONSORS_TOKEN not set; private sponsors cannot be detected');
+            }
+
+            // isSponsor: any sponsor (public or private) \u2014 used for silent benefits
+            //   like the rate-limit bypass.
+            // isPublicSponsor: only sponsors who chose public visibility on GitHub \u2014
+            //   used for any acknowledgment a third party can see (PR banners,
+            //   `sponsor` labels, log lines about sponsor status). Private sponsors
+            //   must not be outed.
             const isSponsor = (login) => !!login && sponsorLogins.has(login.toLowerCase());
+            const isPublicSponsor = (login) => !!login && publicSponsorLogins.has(login.toLowerCase());
             const sponsorBanner = '> ## \u{1F49B} CSrankings Sponsor\n> Submitted by a verified [CSrankings sponsor](https://github.com/sponsors/csrankings) \u2014 thank you for your support!\n\n';
 
             // Find all open issues with our title prefix that haven't been processed
@@ -254,11 +347,12 @@ jobs:
               }
 
               const [submitter, institution] = key.split('|||');
-              const submitterIsSponsor = isSponsor(submitter);
-              console.log(`\nAuto-batching ${issues.length} submissions from ${submitter}${submitterIsSponsor ? ' (sponsor)' : ''} for ${institution}`);
+              const submitterIsPublicSponsor = isPublicSponsor(submitter);
+              console.log(`\nAuto-batching ${issues.length} submissions from ${submitter}${submitterIsPublicSponsor ? ' (sponsor)' : ''} for ${institution}`);
 
-              // Add "CSrankings form submission" label (and "sponsor" if applicable) to all issues in batch
-              const batchIssueLabels = submitterIsSponsor
+              // Add "CSrankings form submission" label (and "sponsor" if a public sponsor) to all issues in batch.
+              // Private sponsors get the rate-limit bypass but no visible label.
+              const batchIssueLabels = submitterIsPublicSponsor
                 ? ['CSrankings form submission', 'sponsor']
                 : ['CSrankings form submission'];
               for (const issue of issues) {
@@ -393,7 +487,7 @@ jobs:
 
                 // Create PR
                 const prTitle = `Add ${entries.length} faculty from ${institution} (auto-batched)`;
-                const prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nAuto-batched ${entries.length} individual submissions into a single PR.\n\nSubmitted by @${submitter} via CSRankings form.\n\nCloses ${issueNumbers.map(n => `#${n}`).join(', ')}\n\n## Entries\n${entries.map((e, i) => `${i + 1}. ${e.name}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${entries.map(e => e.line).join('\n')}\n\`\`\``;
+                const prBody = `${submitterIsPublicSponsor ? sponsorBanner : ''}## Summary\nAuto-batched ${entries.length} individual submissions into a single PR.\n\nSubmitted by @${submitter} via CSRankings form.\n\nCloses ${issueNumbers.map(n => `#${n}`).join(', ')}\n\n## Entries\n${entries.map((e, i) => `${i + 1}. ${e.name}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${entries.map(e => e.line).join('\n')}\n\`\`\``;
 
                 const { data: pr } = await github.rest.pulls.create({
                   owner: context.repo.owner,
@@ -407,12 +501,12 @@ jobs:
                 console.log(`  Created auto-batch PR #${pr.number}: ${pr.html_url}`);
                 prsCreatedThisRun++;
 
-                // Add label to PR (plus "sponsor" when applicable)
+                // Add label to PR (plus "sponsor" only for public sponsors)
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: pr.number,
-                  labels: submitterIsSponsor
+                  labels: submitterIsPublicSponsor
                     ? ['CSrankings form submission', 'sponsor']
                     : ['CSrankings form submission']
                 });
@@ -481,17 +575,19 @@ jobs:
               console.log(`\nProcessing issue #${issue.number}: ${issue.title}`);
 
               const submitterIsSponsor = isSponsor(issue.user?.login);
-              if (submitterIsSponsor) {
+              const submitterIsPublicSponsor = isPublicSponsor(issue.user?.login);
+              if (submitterIsPublicSponsor) {
                 console.log(`  Submitter @${issue.user.login} is a CSrankings sponsor`);
               }
 
-              // Add "CSrankings form submission" label (and "sponsor" when applicable)
+              // Add "CSrankings form submission" label (and "sponsor" only for public sponsors).
+              // Private sponsors get the rate-limit bypass but no visible label.
               try {
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  labels: submitterIsSponsor
+                  labels: submitterIsPublicSponsor
                     ? ['CSrankings form submission', 'sponsor']
                     : ['CSrankings form submission']
                 });
@@ -510,8 +606,8 @@ jobs:
               const isBatchIssue = issue.title.toLowerCase().includes('batch') ||
                                    (batchIssueMatch && parseInt(batchIssueMatch[1]) >= 2);
 
-              // Rate limit individual submissions per user
-              if (!isBatchIssue) {
+              // Rate limit individual submissions per user (sponsors are exempt)
+              if (!isBatchIssue && !submitterIsSponsor) {
                 const userCount = userSubmissionCounts[submitter] || 0;
                 const wasRateLimited = issue.labels.some(l => l.name === 'rate-limited');
 
@@ -756,7 +852,7 @@ jobs:
 
                   // Create PR
                   const prTitle = `Add ${csvLines.length} faculty from ${institution}`;
-                  const prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
+                  const prBody = `${submitterIsPublicSponsor ? sponsorBanner : ''}## Summary\nAdding ${csvLines.length} faculty entries from **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings batch submission form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entries\n${allNames.map((n, i) => `${i + 1}. ${n}`).join('\n')}\n\n## CSV Lines\n\`\`\`\n${csvLines.join('\n')}\n\`\`\``;
 
                   const { data: pr } = await github.rest.pulls.create({
                     owner: context.repo.owner,
@@ -773,12 +869,12 @@ jobs:
                   prsCreatedThisRun++;
                   // Batch submissions don't count toward individual user limits
 
-                  // Add label to PR (plus "sponsor" when applicable)
+                  // Add label to PR (plus "sponsor" only for public sponsors)
                   await github.rest.issues.addLabels({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     issue_number: pr.number,
-                    labels: submitterIsSponsor
+                    labels: submitterIsPublicSponsor
                       ? ['CSrankings form submission', 'sponsor']
                       : ['CSrankings form submission']
                   });
@@ -808,7 +904,7 @@ jobs:
                     owner: context.repo.owner,
                     repo: context.repo.repo,
                     issue_number: issue.number,
-                    body: `${submitterIsSponsor ? sponsorBanner : ''}## ✅ PR Created\n\nYour batch submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
+                    body: `${submitterIsPublicSponsor ? sponsorBanner : ''}## ✅ PR Created\n\nYour batch submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
                   });
 
                   await github.rest.issues.addLabels({
@@ -976,7 +1072,7 @@ jobs:
                       branchName = `fix-accent-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                       commitMessage = `Fix accent: ${existingName} → ${name}${coAuthorLine}`;
                       prTitle = `Fix accent: ${existingName} → ${name}`;
-                      prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
+                      prBody = `${submitterIsPublicSponsor ? sponsorBanner : ''}## Summary\nCorrecting accent in faculty name.\n\n**Old:** ${existingName}\n**New:** ${name}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}`;
 
                       // Jump to branch creation (skip normal add logic)
                       console.log(`  Creating branch: ${branchName}`);
@@ -1020,12 +1116,12 @@ jobs:
                       prsCreatedThisRun++;
                       userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
 
-                      // Add label to PR (plus "sponsor" when applicable)
+                      // Add label to PR (plus "sponsor" only for public sponsors)
                       await github.rest.issues.addLabels({
                         owner: context.repo.owner,
                         repo: context.repo.repo,
                         issue_number: pr.number,
-                        labels: submitterIsSponsor
+                        labels: submitterIsPublicSponsor
                           ? ['CSrankings form submission', 'sponsor']
                           : ['CSrankings form submission']
                       });
@@ -1093,7 +1189,7 @@ jobs:
                   branchName = `${action}-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `${actionWord} ${name} (${institution})${coAuthorLine}`;
                   prTitle = `${actionWord} ${name} (${institution})`;
-                  prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
+                  prBody = `${submitterIsPublicSponsor ? sponsorBanner : ''}## Summary\n${action === 'reinstate' ? 'Reinstating' : 'Adding'} faculty entry for **${name}** at **${institution}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry\n\`\`\`\n${newEntry}\n\`\`\``;
 
                   // For reinstatement, store source file for removal from old/ directory
                   var reinstateSourceFile = null;
@@ -1208,7 +1304,7 @@ jobs:
                   branchName = `update-${searchName.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Update ${displayName}${coAuthorLine}`;
                   prTitle = `Update ${displayName}`;
-                  prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
+                  prBody = `${submitterIsPublicSponsor ? sponsorBanner : ''}## Summary\nUpdating faculty entry for **${searchName}**.\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Changes\n**Old:**\n\`\`\`\n${oldEntryText}\n\`\`\`\n\n**New:**\n\`\`\`\n${newEntryText}\n\`\`\``;
 
                   if (crossFileMove) {
                     prBody += `\n\n**Note:** Entry moved from \`${searchTargetFile}\` to \`${newNameTargetFile}\` due to name change.`;
@@ -1276,7 +1372,7 @@ jobs:
                   branchName = `remove-${name.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '').toLowerCase()}-${Date.now()}`;
                   commitMessage = `Remove ${name} (${reason || 'unspecified'})${coAuthorLine}`;
                   prTitle = `Remove ${name} (${institution || 'unknown'})`;
-                  prBody = `${submitterIsSponsor ? sponsorBanner : ''}## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
+                  prBody = `${submitterIsPublicSponsor ? sponsorBanner : ''}## Summary\nRemoving faculty entry for **${name}**.\n\n**Reason:** ${reason || 'Not specified'}\n\nSubmitted by @${submitter} via [CSRankings form](https://csrankings.org/submit/).\n\nCloses #${issue.number}\n\n## Entry being removed\n\`\`\`\n${removedLine}\n\`\`\`\n\n**Moved to:** \`${oldFile}\``;
 
                   // Store old file info for the remove action
                   var removeOldFile = oldFile;
@@ -1482,12 +1578,12 @@ jobs:
                   userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
                 }
 
-                // Add label to PR (plus "sponsor" when applicable)
+                // Add label to PR (plus "sponsor" only for public sponsors)
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: pr.number,
-                  labels: submitterIsSponsor
+                  labels: submitterIsPublicSponsor
                     ? ['CSrankings form submission', 'sponsor']
                     : ['CSrankings form submission']
                 });
@@ -1517,7 +1613,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: `${submitterIsSponsor ? sponsorBanner : ''}## ✅ PR Created\n\nYour submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
+                  body: `${submitterIsPublicSponsor ? sponsorBanner : ''}## ✅ PR Created\n\nYour submission has been processed and a pull request has been created:\n\n**PR #${pr.number}**: ${pr.html_url}\n\nA maintainer will review and merge the PR. Thank you for contributing to CSRankings!`
                 });
 
                 // Add processed label
