@@ -400,6 +400,11 @@ jobs:
                   const scholarid = parseField(body, 'Google Scholar ID') || parseField(body, 'Scholar ID');
                   const orcid = parseField(body, 'ORCID') || '0000-0000-0000-0000';
 
+                  if (orcid === '0000-0000-0000-0000') {
+                    core.warning(`Issue #${issue.number}: Missing required ORCID — skipping`);
+                    continue;
+                  }
+
                   if (name && homepage && scholarid) {
                     entries.push({
                       name,
@@ -983,12 +988,13 @@ jobs:
                     }
                   }
 
-                  if (!institution || !homepage || !scholarid) {
+                  if (!institution || !homepage || !scholarid || !orcid || orcid === '0000-0000-0000-0000') {
+                    const orcidMissing = !orcid || orcid === '0000-0000-0000-0000';
                     await github.rest.issues.createComment({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       issue_number: issue.number,
-                      body: `## ❌ Missing required fields\n\nCould not parse all required fields:\n- Name: ${name || '❌ missing'}\n- Institution: ${institution || '❌ missing'}\n- Homepage: ${homepage || '❌ missing'}\n- Scholar ID: ${scholarid || '❌ missing'}`
+                      body: `## ❌ Missing required fields\n\nCould not parse all required fields:\n- Name: ${name || '❌ missing'}\n- Institution: ${institution || '❌ missing'}\n- Homepage: ${homepage || '❌ missing'}\n- Scholar ID: ${scholarid || '❌ missing'}\n- ORCID: ${orcidMissing ? '❌ missing — [Register for an ORCID iD](https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID)' : orcid}`
                     });
                     await github.rest.issues.addLabels({
                       owner: context.repo.owner,

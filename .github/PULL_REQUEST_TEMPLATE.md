@@ -18,6 +18,7 @@ Delete any lines that don't apply to your PR.
 - [ ] Name matches [DBLP](https://dblp.org) exactly (including 0001 suffixes)[^8]
 - [ ] Homepage URL works and shows name + affiliation[^9]
 - [ ] Google Scholar ID is the 12-character code only[^10]
+- [ ] Valid ORCID provided (not placeholder zeros)[^16]
 
 ### Eligibility
 - [ ] Faculty is full-time, tenure-track[^11]
@@ -45,3 +46,4 @@ Delete any lines that don't apply to your PR.
 [^13]: E.g., courtesy appointment in CS, or graduate program membership. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#non-cs-dept)
 [^14]: Institution must be added to `institutions.csv` first by maintainer. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#new-institution)
 [^15]: Partial departments skew rankings; all-or-nothing ensures fairness. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#entire-dept)
+[^16]: ORCID is required for all new and updated entries. [Register for an ORCID iD](https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID) if you don't have one. [more info](https://github.com/emeryberger/CSrankings/blob/gh-pages/CONTRIBUTING.md#orcid)
