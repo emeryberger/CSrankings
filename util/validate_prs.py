@@ -368,8 +368,8 @@ def check_red_flags(person: dict) -> list[str]:
             flags.append("NOSCHOLARPAGE with no ORCID")
         else:
             flags.append("NOSCHOLARPAGE (but ORCID provided)")
-    if person.get("orcid") == "0000-0000-0000-0000":
-        flags.append("Placeholder ORCID (all zeros)")
+    if person.get("orcid", "0000-0000-0000-0000") == "0000-0000-0000-0000":
+        flags.append("MISSING ORCID (required) — register at https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID")
     if re.search(r'\d{4}$', person.get("name", "")):
         flags.append("DBLP disambiguated name")
     return flags

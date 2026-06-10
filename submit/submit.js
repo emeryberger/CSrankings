@@ -1629,13 +1629,9 @@ function validateOrcid() {
         return;
     }
     const orcid = document.getElementById('orcid').value.trim();
-    // Empty or placeholder is valid (ORCID is optional)
+    // ORCID is required - empty or placeholder is not accepted
     if (!orcid || orcid === '0000-0000-0000-0000') {
-        // Set to placeholder if empty
-        if (!orcid) {
-            document.getElementById('orcid').value = '0000-0000-0000-0000';
-        }
-        setFieldStatus('orcid', 'valid', 'Optional - no ORCID provided');
+        setFieldStatus('orcid', 'error', 'A valid ORCID is required. <a href="https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID" target="_blank">Register for an ORCID iD</a> if you don\'t have one.');
         updatePreview();
         return;
     }

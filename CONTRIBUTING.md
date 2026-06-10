@@ -46,7 +46,12 @@ Insert new faculty **in alphabetical order** (not at the end) in the appropriate
 <a id="csv-format"></a>
 ### CSV formatting
 
-Check to make sure that you have no spaces after commas, or any missing fields. Each line must have exactly four comma-separated values.
+Check to make sure that you have no spaces after commas, or any missing fields. Each line must have exactly five comma-separated values (name, affiliation, homepage, Google Scholar ID, ORCID).
+
+<a id="orcid"></a>
+### ORCID (required)
+
+A valid ORCID iD is required for all new and updated entries. The placeholder value `0000-0000-0000-0000` is not accepted. If you do not have an ORCID, [register for one here](https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID) — it only takes a few seconds. ORCID enables reliable name disambiguation and links publications across systems.
 
 <a id="homepage"></a>
 ### Homepage
@@ -92,7 +97,7 @@ Faculty must be able to *solely* advise PhD students for a degree in Computer Sc
 
 <a id="updating"></a>
 
-Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`.
+Update affiliations, home pages, and Google Scholar entries by modifying `csrankings-[a-z].csv`. For the Google Scholar entry, just use the alphanumeric identifier in the middle of the URL. If none is there, put `NOSCHOLARPAGE`. A valid ORCID is required for all updates — [register for one](https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID) if you don't have one.
 
 ---
 

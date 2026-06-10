@@ -78,9 +78,10 @@ def has_valid_google_scholar_id(s: str) -> bool:
     return s == 'NOSCHOLARPAGE' or bool(re.fullmatch(r'^[a-zA-Z0-9_-]{11}[CJ]$', s))
 
 def has_valid_orcid(s: str) -> bool:
-    """Check if ORCID has valid format (0000-0000-0000-000X where X is 0-9 or X)."""
+    """Check if ORCID has valid format (0000-0000-0000-000X where X is 0-9 or X).
+    Note: placeholder 0000-0000-0000-0000 passes format check but is rejected at the call site."""
     if s == '0000-0000-0000-0000':
-        return True  # Placeholder for no ORCID
+        return True  # Valid format, but rejected as insufficient by caller
     return bool(re.fullmatch(r'^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$', s))
 
 def check_excel_corruption(line: str) -> Optional[str]:
@@ -558,11 +559,14 @@ def process_csv_diff(diff_path: str) -> bool:
                             else:
                                 pass
                                 # print(f"{index}.\t{INFO}\tName ({name}) found on given Google Scholar page ({gs_url}).")
-                    # Validate ORCID format
+                    # Validate ORCID format (ORCID is required for all new/updated entries)
                     if not has_valid_orcid(orcid):
                         print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['orcid']} Invalid ORCID format: {orcid}")
                         valid = False
-                    elif orcid != '0000-0000-0000-0000':
+                    elif orcid == '0000-0000-0000-0000':
+                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['orcid']} A valid ORCID is required. Register at https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID")
+                        valid = False
+                    else:
                         print(f"{index}.\t{INFO}\tORCID ({orcid}) has valid format.")
                 except Exception as e:
                     print(f"{index}.\tProcessing error: {e}")

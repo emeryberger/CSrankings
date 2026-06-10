@@ -27,9 +27,10 @@ def has_valid_google_scholar_id(scholar_id: str) -> bool:
 
 
 def has_valid_orcid(orcid: str) -> bool:
-    """Check if ORCID has valid format (0000-0000-0000-000X where X is 0-9 or X)."""
+    """Check if ORCID has valid format (0000-0000-0000-000X where X is 0-9 or X).
+    Note: placeholder 0000-0000-0000-0000 passes format check but is rejected at the call site."""
     if orcid == '0000-0000-0000-0000':
-        return True  # Placeholder for no ORCID
+        return True  # Valid format, but rejected as insufficient by caller
     return bool(re.fullmatch(r'^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$', orcid))
 
 
@@ -408,12 +409,12 @@ def main():
     else:
         print("  ✓ Found exact match")
 
-    # 5. Check ORCID (optional field)
+    # 5. Check ORCID (required field)
     print("Checking ORCID...")
     if not has_valid_orcid(args.orcid):
-        errors.append(f"- **ORCID**: Invalid format. Must be `0000-0000-0000-0000` format or placeholder. Got: `{args.orcid}`")
+        errors.append(f"- **ORCID**: Invalid format. Must be `0000-0000-0000-000X` format (16 digits with dashes). Got: `{args.orcid}`")
     elif args.orcid == '0000-0000-0000-0000':
-        print("  ✓ Placeholder (no ORCID)")
+        errors.append("- **ORCID**: A valid ORCID is required for all submissions. [Register for an ORCID iD](https://support.orcid.org/hc/en-us/articles/360006897454-How-do-I-register-for-an-ORCID-ID) if you don't have one.")
     else:
         print(f"  ✓ Valid format: {args.orcid}")
 
