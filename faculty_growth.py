@@ -112,8 +112,10 @@ def main():
     ap.add_argument("--start-year", type=int, default=2000)
     ap.add_argument("--end-year", type=int, default=2024,
                     help="cap the series here; later years are DBLP-incomplete (default: 2024)")
-    ap.add_argument("--fit", choices=["exponential", "linear", "quadratic", "none"],
-                    default="exponential", help="growth curve to fit (default: exponential)")
+    ap.add_argument("--fit", default="exponential,quadratic",
+                    help="comma-separated growth curves to overlay: any of "
+                         "exponential, linear, quadratic (or 'none'). "
+                         "Default: exponential,quadratic")
     ap.add_argument("--out", default="faculty_growth",
                     help="output path stem (writes .png and .pdf)")
     args = ap.parse_args()
@@ -134,9 +136,11 @@ def main():
     ax1 = fig.add_subplot()
 
     ax1.bar(years, authors, color="green", label="Faculty (unique authors)")
-    if args.fit != "none":
-        xs, ys, label, r2 = fit_curve(years, authors, args.fit)
-        ax1.plot(xs, ys, color="darkorange", linewidth=2.5,
+    fit_colors = {"exponential": "darkorange", "quadratic": "purple", "linear": "red"}
+    models = [m.strip() for m in args.fit.split(",") if m.strip() and m.strip() != "none"]
+    for model in models:
+        xs, ys, label, r2 = fit_curve(years, authors, model)
+        ax1.plot(xs, ys, color=fit_colors.get(model, "black"), linewidth=2.5,
                  label=f"{label}, $R^2$={r2:.3f}")
         print(f"\n{label}  R^2={r2:.4f}")
     ax1.set_xticks(evenly_spaced_items(years, 5))
