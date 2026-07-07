@@ -88,10 +88,14 @@ def fit_curve(years, authors, model):
         ys = np.polyval(c, xs)
         label = f"linear fit (+{c[0]:.0f}/yr)"
     elif model == "quadratic":
-        c = np.polyfit(x, y, 2)
-        pred = np.polyval(c, x)
-        ys = np.polyval(c, xs)
-        label = "quadratic fit"
+        # Fit on t = year - year0 so the coefficients are human-readable.
+        x0 = x.min()
+        c = np.polyfit(x - x0, y, 2)
+        pred = np.polyval(c, x - x0)
+        ys = np.polyval(c, xs - x0)
+        a, b, cc = c
+        label = (f"quadratic: $y = {a:.1f}t^2 {b:+.1f}t {cc:+.0f}$"
+                 f"\n($t$ = year $- {int(x0)}$)")
     else:  # exponential: y = a * exp(b * (year - year0))
         x0 = x.min()
         lc = np.polyfit(x - x0, np.log(y), 1)
@@ -112,10 +116,10 @@ def main():
     ap.add_argument("--start-year", type=int, default=2000)
     ap.add_argument("--end-year", type=int, default=2024,
                     help="cap the series here; later years are DBLP-incomplete (default: 2024)")
-    ap.add_argument("--fit", default="exponential,quadratic",
+    ap.add_argument("--fit", default="quadratic",
                     help="comma-separated growth curves to overlay: any of "
                          "exponential, linear, quadratic (or 'none'). "
-                         "Default: exponential,quadratic")
+                         "Default: quadratic")
     ap.add_argument("--out", default="faculty_growth",
                     help="output path stem (writes .png and .pdf)")
     args = ap.parse_args()
