@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-	"target": "es2017",
+	"target": "es6",
 	"lib": ["es2017", "dom"],
 	"skipLibCheck": true,
 	"noImplicitAny": true,
@@ -10,7 +10,8 @@
 	"noUnusedParameters": true,
 	"noFallthroughCasesInSwitch": true,
 	"strictNullChecks": true,
-	"outFile": "submit/submit.js"
+	"rootDir": "./src",
+	"outDir": "submit"
     },
     "files": [
 	"src/submit.ts"

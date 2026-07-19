@@ -27,10 +27,11 @@ clean:
 csrankings.js: src/types.ts src/config.ts src/utils.ts src/data-loader.ts src/region.ts src/computation.ts src/verification.ts src/rendering.ts src/continents.ts src/app.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --project tsconfig.json
+	$(PYTHON) util/concat-js.py
 
 submit/submit.js: src/submit.ts
 	@echo "Rebuilding submit form JavaScript."
-	tsc src/submit.ts --target es6 --lib es2017,dom --outDir submit --skipLibCheck
+	tsc --project tsconfig.submit.json
 
 csrankings.min.js: csrankings.js
 	google-closure-compiler --js csrankings.js > csrankings.min.js

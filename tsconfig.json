@@ -10,8 +10,7 @@
 	"noFallthroughCasesInSwitch": true,
 	"strictNullChecks": true,
 	"rootDir": "./src",
-	"ignoreDeprecations": "6.0",
-	"outFile": "csrankings.js"
+	"outDir": "build/js"
     },
     "files": [
 	"src/types.ts",
