@@ -1,3 +1,4 @@
+"use strict";
 /**
  * CSRankings Faculty Submission Form
  * Client-side validation and GitHub Issue creation
@@ -1815,7 +1816,7 @@ function handleSubmit(e) {
     const scholarid = document.getElementById('scholarid').value.trim();
     const orcid = document.getElementById('orcid').value.trim() || '0000-0000-0000-0000';
     const notes = document.getElementById('notes').value.trim();
-    const isSponsor = !!((_c = document.getElementById('check-sponsor')) === null || _c === void 0 ? void 0 : _c.checked);
+    const isSponsor = !!((_b = document.getElementById('check-sponsor')) === null || _b === void 0 ? void 0 : _b.checked);
     // Build submission data
     // For updates, use new name if provided, otherwise keep original name
     const effectiveName = (currentAction === 'update' && newName) ? newName : name;
@@ -1833,7 +1834,7 @@ function handleSubmit(e) {
         case 'remove':
             const reason = document.getElementById('removal-reason').value;
             const reasonOther = document.getElementById('removal-reason-other').value;
-            const companyName = ((_b = document.getElementById('company-name')) === null || _b === void 0 ? void 0 : _b.value.trim()) || '';
+            const companyName = ((_c = document.getElementById('company-name')) === null || _c === void 0 ? void 0 : _c.value.trim()) || '';
             const fullReason = reason === 'other' ? reasonOther :
                 reason === 'industry' && companyName ? `${reason} (${companyName})` : reason;
             issueUrl = createRemoveIssueUrl(selectedEntry, fullReason, notes, isSponsor);
