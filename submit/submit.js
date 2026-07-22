@@ -1,4 +1,3 @@
-"use strict";
 /**
  * CSRankings Faculty Submission Form
  * Client-side validation and GitHub Issue creation
@@ -680,9 +679,12 @@ function updateUIForAction(action) {
     const institutionInput = document.getElementById('institution');
     const homepageInput = document.getElementById('homepage');
     const scholaridInput = document.getElementById('scholarid');
+    const orcidInput = document.getElementById('orcid');
     institutionInput.required = action !== 'remove';
     homepageInput.required = action !== 'remove';
     scholaridInput.required = action !== 'remove';
+    // ORCID field is hidden for remove; clear required so hidden control doesn't block submission
+    orcidInput.required = action !== 'remove';
     // Toggle required on eligibility checkboxes (only required for 'add' action)
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
         cb.required = action === 'add';

@@ -752,10 +752,13 @@ function updateUIForAction(action: ActionType): void {
     const institutionInput = document.getElementById('institution') as HTMLInputElement;
     const homepageInput = document.getElementById('homepage') as HTMLInputElement;
     const scholaridInput = document.getElementById('scholarid') as HTMLInputElement;
+    const orcidInput = document.getElementById('orcid') as HTMLInputElement;
 
     institutionInput.required = action !== 'remove';
     homepageInput.required = action !== 'remove';
     scholaridInput.required = action !== 'remove';
+    // ORCID field is hidden for remove; clear required so hidden control doesn't block submission
+    orcidInput.required = action !== 'remove';
 
     // Toggle required on eligibility checkboxes (only required for 'add' action)
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
