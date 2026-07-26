@@ -2,7 +2,8 @@
 
 ## Inclusion Criteria (for reference)
 
-1. **Full-time, tenure-track research faculty** (not teaching-track, not postdoc, not adjunct, not visiting)
+1. **Full-time, tenure-track research faculty** (not postdoc, not adjunct, not visiting)
+   - **Exception — University of California teaching faculty are eligible.** UC's Teaching Professor series (formerly LPSOE/LSOE; titles such as "Assistant/Associate/Full Professor of Teaching" or "Assistant/Associate/Full Teaching Professor", and "Lecturer with Security of Employment") confers security of employment and the ability to solely advise CS PhD students. Faculty in this series count as eligible. See [Common Failure Modes §A](#a-university-of-california-teaching-faculty-eligible).
 2. Can **solely advise PhD students in Computer Science**
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
@@ -29,9 +30,17 @@ Removals should have clear justification (retirement, departure, death). Reinsta
 
 ## Common Failure Modes
 
-### A. Teaching Track (NOT tenure-track research)
-- "Assistant Professor of Teaching" — UC system's teaching-focused track. Has security of employment but is NOT research tenure-track. However, UC teaching faculty **can** solely advise PhD students in CS, so the remaining question is whether they meet the other inclusion criteria (tenure-track research appointment, >=75% time).
-- **Key signal**: Title contains "of Teaching" or "Lecturer with Security of Employment" at UC campuses.
+### A. University of California teaching faculty: ELIGIBLE
+
+**This is not a failure mode.** It is listed here because it is a common source of confusion.
+
+Faculty in the **University of California Teaching Professor series** are **eligible for inclusion**. Do not reject a UC entry on the grounds that the title contains "Teaching".
+
+- **Titles in this series**: "Assistant / Associate / Full Professor of Teaching", the equivalent "Assistant / Associate / Full Teaching Professor" phrasing, and the legacy "Lecturer with Security of Employment" (LSOE) and "Lecturer with Potential Security of Employment" (LPSOE).
+- **Why eligible**: the series confers **security of employment** (UC's equivalent of tenure) and carries the right to **solely advise PhD students in Computer Science**. Both of the criteria that matter — a permanent appointment and sole CS PhD advising — are satisfied.
+- **Still check the remaining criteria**: the person must be in a CS department (criterion 4) and at >=75% time (criterion 3). Those are assessed exactly as for any other entry.
+
+> **Scope**: this exception is specific to the **University of California** system. Teaching-titled appointments elsewhere ("Teaching Professor", "Professor of Practice", "Lecturer" at non-UC US institutions) are **not** automatically eligible and must be assessed individually — the question is whether the appointment is permanent and confers sole CS PhD advising rights. Note that in the UK, "Lecturer" is a permanent academic post and is eligible; see [International Title Equivalences](#international-title-equivalences).
 
 ### B. Wrong Department (not CS, no cross-appointment shown)
 | Pattern | Example Institution | Actual Department | Why Ineligible |
@@ -194,7 +203,7 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 
 ### Red flags
 
-- "Professor of Teaching" or "Lecturer" at US universities (may be non-TT)
+- "Professor of Teaching" or "Lecturer" at **non-UC** US universities (may be non-TT). At University of California campuses these titles are **eligible** — see [§A](#a-university-of-california-teaching-faculty-eligible)
 - "Research Professor" or "Research Scientist" (often non-TT)
 - Faculty whose email domain doesn't match their listed institution
 - Same Google Scholar ID appearing in multiple entries
