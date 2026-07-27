@@ -9,3 +9,6 @@ prev-dblp.xml.gz
 
 # Intermediate TypeScript build output (concatenated into csrankings.js)
 build/
+
+# Backup files written by util/update-new-names.py during the monthly DBLP update
+*.bak
