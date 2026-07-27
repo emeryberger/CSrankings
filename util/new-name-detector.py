@@ -107,10 +107,15 @@ def parse_canonical_names(
     """
     result: Dict[str, str] = {}
     with gzip.open(gz_path, "rb") as f:
+        # NOTE: do *not* pass tag="www" here. DBLP clusters its <www> homepage
+        # records at the end of the file, and iterparse only emits events for the
+        # filtered tag -- so the freeing below would not run until the very end,
+        # by which point the whole document (~10M records) is retained in memory.
+        # That OOMs a 16GB CI runner. Iterating every element and freeing each
+        # top-level record keeps memory flat (~30MB) regardless of input size.
         context = ET.iterparse(
             f,
             events=("end",),
-            tag="www",
             load_dtd=False,          # offline
             no_network=True,
             recover=True,            # tolerant of minor issues
@@ -119,7 +124,15 @@ def parse_canonical_names(
             resolve_entities=False,  # expand entities ourselves via entmap
         )
         for _, node in context:
+            # Only top-level records (direct children of <dblp>) are processed and
+            # freed. Child elements are skipped without clearing them, so the parent
+            # record can still be read; they are released with their parent below.
+            parent = node.getparent()
+            if parent is None or parent.getparent() is not None:
+                continue
             try:
+                if node.tag != "www":
+                    continue
                 key = node.get("key") or ""
                 if not key.startswith("homepages/"):
                     continue

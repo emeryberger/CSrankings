@@ -77,10 +77,13 @@ def parse_dblp_homepages(
     """
     with gzip.open(gz_path, "rb") as f:
         seen_uids = set()
+        # NOTE: do *not* pass tag="www" here -- see the same note in
+        # new-name-detector.py. DBLP puts its <www> homepage records at the end of
+        # the file, so filtering by tag defers all freeing to the end of the parse
+        # and retains the entire document in memory (~14GB on current DBLP).
         context = ET.iterparse(
             f,
             events=("end",),
-            tag="www",
             load_dtd=False,         # stay offline
             no_network=True,
             recover=True,           # be tolerant of minor issues
@@ -89,7 +92,14 @@ def parse_dblp_homepages(
             resolve_entities=False, # we expand &name; ourselves
         )
         for _, node in context:
+            # Only top-level records are processed and freed; child elements are
+            # left intact so their parent can be read, and are released with it.
+            parent = node.getparent()
+            if parent is None or parent.getparent() is not None:
+                continue
             try:
+                if node.tag != "www":
+                    continue
                 key = node.get("key") or ""
                 if not key.startswith("homepages/"):
                     continue
