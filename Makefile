@@ -187,23 +187,23 @@ apply-author-names:
 update-dblp-full:
 	@echo "=== FULLY AUTOMATED DBLP UPDATE ==="
 	@echo ""
-	@echo "Step 1/8: Downloading previous DBLP snapshot (for name change detection)..."
+	@echo "Step 1/9: Downloading previous DBLP snapshot (for name change detection)..."
 	$(MAKE) download-prev-dblp
 	@echo ""
-	@echo "Step 2/8: Backing up to prev-dblp.xml.gz..."
+	@echo "Step 2/9: Backing up to prev-dblp.xml.gz..."
 	$(MAKE) backup-dblp
 	@echo ""
-	@echo "Step 3/8: Downloading new DBLP from $(DBLP)..."
+	@echo "Step 3/9: Downloading new DBLP from $(DBLP)..."
 	$(MAKE) download-dblp
 	@echo ""
-	@echo "Step 4/8: Filtering DBLP to CSRankings venues..."
+	@echo "Step 4/9: Filtering DBLP to CSRankings venues..."
 	$(MAKE) shrink-dblp
 	@echo ""
-	@echo "Step 5/8: Generating DBLP aliases..."
+	@echo "Step 5/9: Generating DBLP aliases..."
 	$(MAKE) faculty-affiliations.csv
 	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	@echo ""
-	@echo "Step 6/8: Detecting and applying author name changes..."
+	@echo "Step 6/9: Detecting and applying author name changes..."
 	@if [ -f prev-dblp.xml.gz ]; then \
 		$(PYTHON) util/new-name-detector.py --old prev-dblp.xml.gz --new dblp-original.xml.gz > name-changes.csv; \
 		CHANGES=$$(wc -l < name-changes.csv | tr -d ' '); \
@@ -217,10 +217,16 @@ update-dblp-full:
 		echo "No previous DBLP backup found. Skipping name change detection."; \
 	fi
 	@echo ""
-	@echo "Step 7/8: Regenerating publication data..."
+	@echo "Step 7/9: Regenerating publication data..."
 	$(MAKE) generated-author-info.csv
 	@echo ""
-	@echo "Step 8/8: Updating DBLP date in index.html..."
+	@echo "Step 8/9: Rebuilding csrankings.csv with DBLP alias expansion..."
+	@# clean-csrankings.py is the only step that expands dblp-aliases.csv into
+	@# csrankings.csv. Without it this target writes an alias-stripped file (~2,100
+	@# rows short), which the next post-merge 'make all' silently puts back.
+	$(MAKE) clean-csrankings
+	@echo ""
+	@echo "Step 9/9: Updating DBLP date in index.html..."
 	$(MAKE) update-dblp-date
 	@echo ""
 	@echo "=== DBLP UPDATE COMPLETE ==="
