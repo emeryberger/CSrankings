@@ -285,12 +285,15 @@ def check_duplicate_entry(name: str) -> dict:
         'current_file': None
     }
 
-    # Determine which file to check
-    first_letter = name[0].lower() if name else ''
-    if first_letter.isalpha():
-        filename = f'csrankings-{first_letter}.csv'
-    else:
-        filename = 'csrankings-0.csv'
+    # Determine which file to check. Use the transliterated initial, since an
+    # accented name lives in the plain-letter file (Ozgur -> csrankings-o.csv);
+    # name[0] alone would look for a csrankings-<accent>.csv that does not exist
+    # and silently report no duplicate.
+    ascii_name = unidecode.unidecode(name) if name else ''
+    first_letter = ascii_name[0].lower() if ascii_name else ''
+    if not first_letter.isascii() or not first_letter.isalpha():
+        return result
+    filename = f'csrankings-{first_letter}.csv'
 
     if not os.path.exists(filename):
         return result

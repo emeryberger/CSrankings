@@ -257,6 +257,22 @@ jobs:
             // Helper to normalize names for alphabetical sorting
             const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
+            // Map a name to the csrankings-*.csv file it belongs in. Mirrors
+            // util/validate_commit.py, which requires unidecode(name)[0].lower()
+            // to match the file's letter, so an accented initial goes in the
+            // plain-letter file (Ozgur -> csrankings-o.csv). Letters that
+            // NFD does not decompose need an explicit mapping. Returns null when
+            // the initial has no a-z equivalent; there is no csrankings-0.csv.
+            const initialOverrides = {
+              '\u00f8': 'o', '\u0153': 'o', '\u0111': 'd', '\u00f0': 'd', '\u0142': 'l',
+              '\u0127': 'h', '\u0131': 'i', '\u00fe': 't', '\u00e6': 'a', '\u00df': 's'
+            };
+            const fileForName = (name) => {
+              const first = normalize(name || '').charAt(0);
+              const letter = initialOverrides[first] || first;
+              return /[a-z]/.test(letter) ? `csrankings-${letter}.csv` : null;
+            };
+
             // Helper to check if a name is properly capitalized
             const isProperlyCapitalized = (name) => {
               if (!name || name.length < 2) return false;
@@ -405,9 +421,16 @@ jobs:
                     continue;
                   }
 
+                  const targetFile = fileForName(name);
+                  if (!targetFile) {
+                    core.warning(`Issue #${issue.number}: no csrankings file for "${name}" — skipping`);
+                    continue;
+                  }
+
                   if (name && homepage && scholarid) {
                     entries.push({
                       name,
+                      targetFile,
                       line: `${name},${institution},${homepage},${scholarid},${orcid}`,
                       nameNorm: normalize(name),
                       issueNumber: issue.number
@@ -421,6 +444,14 @@ jobs:
                   // Put back for individual processing
                   issuesForIndividualProcessing.push(...issues);
                   continue;
+                }
+
+                // Group entries by target file (before creating the branch, so a
+                // bad entry cannot leave an orphan branch behind)
+                const entriesByFile = {};
+                for (const entry of entries) {
+                  if (!entriesByFile[entry.targetFile]) entriesByFile[entry.targetFile] = [];
+                  entriesByFile[entry.targetFile].push(entry);
                 }
 
                 // Create branch
@@ -441,15 +472,6 @@ jobs:
                   ref: `refs/heads/${branchName}`,
                   sha: baseSha
                 });
-
-                // Group entries by target file
-                const entriesByFile = {};
-                for (const entry of entries) {
-                  const firstLetter = entry.name.charAt(0).toLowerCase();
-                  const targetFile = /[a-z]/.test(firstLetter) ? `csrankings-${firstLetter}.csv` : 'csrankings-0.csv';
-                  if (!entriesByFile[targetFile]) entriesByFile[targetFile] = [];
-                  entriesByFile[targetFile].push(entry);
-                }
 
                 // Process each file
                 const coAuthorLine = `\n\nCo-Authored-By: ${submitter} <${submitter}@users.noreply.github.com>`;
@@ -780,17 +802,39 @@ jobs:
                     continue;
                   }
 
-                  // Group entries by target file
+                  // Group entries by target file. Done before the branch is
+                  // created so an unplaceable name fails cleanly instead of
+                  // aborting mid-commit and orphaning a branch.
                   const entriesByFile = {};
                   const allNames = [];
+                  const unplaceable = [];
                   for (const line of csvLines) {
                     const [name, inst, homepage, scholarid] = line.split(',').map(s => s.trim());
                     if (!name) continue;
                     allNames.push(name);
-                    const firstLetter = name.charAt(0).toLowerCase();
-                    const targetFile = /[a-z]/.test(firstLetter) ? `csrankings-${firstLetter}.csv` : 'csrankings-0.csv';
+                    const targetFile = fileForName(name);
+                    if (!targetFile) {
+                      unplaceable.push(name);
+                      continue;
+                    }
                     if (!entriesByFile[targetFile]) entriesByFile[targetFile] = [];
                     entriesByFile[targetFile].push({ name, line, nameNorm: normalize(name) });
+                  }
+
+                  if (unplaceable.length > 0) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Unsupported name\n\nCould not determine which \`csrankings-*.csv\` file these names belong in:\n\n${unplaceable.map(n => `- ${n}`).join('\n')}\n\nNames must begin with a letter that maps to a-z. Please use the Latin-script form of the name as it appears on [DBLP](https://dblp.org/search).`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
                   }
 
                   // Create branch
@@ -958,10 +1002,22 @@ jobs:
                 }
 
                 // Determine target file based on first letter
-                const firstLetter = name.charAt(0).toLowerCase();
-                let targetFile = /[a-z]/.test(firstLetter)
-                  ? `csrankings-${firstLetter}.csv`
-                  : 'csrankings-0.csv';
+                let targetFile = fileForName(name);
+                if (!targetFile) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `## ❌ Unsupported name\n\nCould not determine which \`csrankings-*.csv\` file "${name}" belongs in. Names must begin with a letter that maps to a-z.\n\nPlease use the Latin-script form of the name as it appears on [DBLP](https://dblp.org/search).`
+                  });
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: ['validation-failed']
+                  });
+                  continue;
+                }
 
                 let branchName, commitMessage, prTitle, prBody, newContent;
 
@@ -1253,16 +1309,27 @@ jobs:
                   }
 
                   // Determine correct target file based on old name (in case name is changing)
-                  const searchFirstLetter = searchName.charAt(0).toLowerCase();
-                  const searchTargetFile = /[a-z]/.test(searchFirstLetter)
-                    ? `csrankings-${searchFirstLetter}.csv`
-                    : 'csrankings-0.csv';
-
+                  const searchTargetFile = fileForName(searchName);
                   // Check if the update requires a cross-file move (first letter of name changed)
-                  const newFirstLetter = newName.charAt(0).toLowerCase();
-                  const newNameTargetFile = /[a-z]/.test(newFirstLetter)
-                    ? `csrankings-${newFirstLetter}.csv`
-                    : 'csrankings-0.csv';
+                  const newNameTargetFile = fileForName(newName);
+
+                  if (!searchTargetFile || !newNameTargetFile) {
+                    const badName = !searchTargetFile ? searchName : newName;
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Unsupported name\n\nCould not determine which \`csrankings-*.csv\` file "${badName}" belongs in. Names must begin with a letter that maps to a-z.\n\nPlease use the Latin-script form of the name as it appears on [DBLP](https://dblp.org/search).`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
                   const crossFileMove = newNameTargetFile !== searchTargetFile;
                   var updateCrossFileTarget = null;
                   var updateCrossFileEntry = null;
