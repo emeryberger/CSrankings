@@ -10,7 +10,7 @@ import requests
 import unidecode
 import openai
 
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Tuple
 from pydantic import HttpUrl, BaseModel, ValidationError
 
 ERROR = chr(0x274C)
@@ -414,6 +414,89 @@ def is_valid_file(file: str) -> bool:
     ]
     return re.match(r'.*\.csv$', file) and any(re.match(p, file) for p in allowed_files)
 
+def classify_identifier_only(diff_path: str) -> Optional[List[Tuple[str, str, str]]]:
+    """Detect a diff that ONLY rewrites the ORCID field of existing rows.
+
+    Bulk ORCID backfills change no name, affiliation, homepage or Scholar ID, so the
+    per-entry eligibility lookups (DBLP + homepage + Google Scholar, ~10s/row) and the
+    AI audit re-verify people this PR does not touch. On a 660-row batch that is a
+    ~2-hour CI job; at ~1500 rows it would approach the 6-hour job limit.
+
+    Returns a list of (path, old_line, new_line) when every change is
+    identifier-only, else None (meaning: run the full validation).
+    """
+    with open(diff_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    pairs: List[Tuple[str, str, str]] = []
+    for d in data.get("files", []):
+        path = d.get("path")
+        if not path or not is_valid_file(path):
+            return None
+        added, deleted = [], []
+        for ch in d.get("chunks", []):
+            for c in ch.get("changes", []):
+                if c["type"] == "AddedLine" and c["content"].strip():
+                    added.append(c["content"])
+                elif c["type"] == "DeletedLine" and c["content"].strip():
+                    deleted.append(c["content"])
+        if len(added) != len(deleted) or not added:
+            return None
+        # Pair by the first four fields; only the ORCID may differ.
+        key = lambda L: tuple(L.split(",")[:4])
+        by_old = {}
+        for L in deleted:
+            parts = L.split(",")
+            if len(parts) != 5:
+                return None
+            by_old.setdefault(key(L), []).append(L)
+        for L in added:
+            parts = L.split(",")
+            if len(parts) != 5:
+                return None
+            k = key(L)
+            if k not in by_old or not by_old[k]:
+                return None
+            old = by_old[k].pop()
+            if old.split(",")[4] == parts[4]:
+                return None            # nothing actually changed
+            pairs.append((path, old, L))
+        if any(v for v in by_old.values()):
+            return None
+    return pairs or None
+
+
+def validate_identifier_only(pairs: List[Tuple[str, str, str]]) -> bool:
+    """Cheap, network-free checks sufficient for an identifier-only diff."""
+    valid = True
+    print(f"{INFO}\tIdentifier-only diff: {len(pairs)} row(s) change the ORCID field and nothing else.")
+    print(f"{INFO}\tSkipping per-entry DBLP/homepage/Scholar lookups and the AI audit -- name,")
+    print(f"{INFO}\taffiliation, homepage and Scholar ID are byte-identical on every row, so")
+    print(f"{INFO}\teligibility is unchanged by this PR.")
+    seen = {}
+    for path, old, new in pairs:
+        name, affiliation, _, _, orcid = new.split(",")
+        excel_error = check_excel_corruption(new)
+        if excel_error:
+            print(f"{ERROR}\t{CHECKBOX_REFS['no_excel']} Excel corruption detected: found '{excel_error}' in {name}.")
+            valid = False
+        if re.search(r',\s', new):
+            print(f"{ERROR}\t{CHECKBOX_REFS['csv_format']} Space after comma: {new}")
+            valid = False
+        if not has_valid_orcid(orcid):
+            print(f"{ERROR}\t{CHECKBOX_REFS['orcid']} Invalid ORCID format for {name}: {orcid}")
+            valid = False
+        # An ORCID identifies one person: reject the same iD on two institutions.
+        if orcid != "0000-0000-0000-0000":
+            prev = seen.get(orcid)
+            if prev and prev[1] != affiliation:
+                print(f"{ERROR}\tORCID {orcid} assigned to {name} ({affiliation}) and {prev[0]} ({prev[1]}) -- one iD cannot span two institutions.")
+                valid = False
+            seen.setdefault(orcid, (name, affiliation))
+    if valid:
+        print(f"{INFO}\tAll {len(pairs)} ORCID changes passed format and collision checks.")
+    return valid
+
+
 def process_csv_diff(diff_path: str) -> bool:
     with open("institutions.csv", "r") as f:
         institutions = {row["institution"]: True for row in csv.DictReader(f)}
@@ -609,6 +692,16 @@ if __name__ == "__main__":
     diff_path = sys.argv[2]
 
     pr_metadata_valid = process_pr_metadata(pr_metadata_path)
+
+    # Fast path: a diff that only rewrites ORCID fields needs no eligibility re-check.
+    identifier_only = classify_identifier_only(diff_path)
+    if identifier_only:
+        if validate_identifier_only(identifier_only) and pr_metadata_valid:
+            mark_succeeded()
+            sys.exit(0)
+        mark_failed()
+        sys.exit(-1)
+
     csv_valid = process_csv_diff(diff_path)
 
     # Proceed with the AI audit even when the basic checks fail.
