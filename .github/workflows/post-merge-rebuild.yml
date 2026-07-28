@@ -33,7 +33,10 @@ jobs:
         run: tsc --project tsconfig.json
 
       - name: Install test dependencies
-        run: pip install pytest selenium webdriver-manager
+        # requirements.txt as well as the test-only packages: the suite imports
+        # util/ modules (e.g. validate_commit.py, which needs pydantic), so the
+        # tests must run against the project's real dependencies.
+        run: pip install -r requirements.txt pytest selenium webdriver-manager
 
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@latest

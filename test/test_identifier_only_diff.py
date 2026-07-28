@@ -18,7 +18,6 @@ import io
 import json
 import contextlib
 import sys
-import types
 from pathlib import Path
 
 import pytest
@@ -26,39 +25,13 @@ import pytest
 REPO = Path(__file__).resolve().parent.parent
 
 
-def _stub(name, **attrs):
-    """Install a stand-in module so importing validate_commit does not need the real one."""
-    if name not in sys.modules or not hasattr(sys.modules[name], "__stubbed__"):
-        mod = types.ModuleType(name)
-        mod.__stubbed__ = True  # type: ignore[attr-defined]
-        for k, v in attrs.items():
-            setattr(mod, k, v)
-        sys.modules[name] = mod
-
-
 def _load_validate_commit():
-    """Import util/validate_commit.py with its heavyweight deps stubbed out.
+    """Import util/validate_commit.py as a module.
 
-    The test job installs only pytest/selenium/webdriver-manager -- the rest of
-    requirements.txt is installed later, in the build job -- so this module must
-    not depend on fuzzysearch, unidecode, openai or pydantic being present.
-
-    Stub only what is missing: if the real package is installed (as it is locally)
-    it is left alone.
+    The test job installs requirements.txt, so its real dependencies (pydantic,
+    fuzzysearch, unidecode, openai) are present and are exercised directly rather
+    than stubbed.
     """
-    for name, attrs in (
-        ("fuzzysearch", {"find_near_matches": lambda *a, **k: []}),
-        ("unidecode", {"unidecode": lambda s: s}),
-        ("openai", {"OpenAI": object}),
-        # pydantic supplies the base class for the audit models; a plain class is
-        # enough, since only annotations are evaluated at import time.
-        ("pydantic", {"BaseModel": type("BaseModel", (), {}), "HttpUrl": str,
-                      "ValidationError": type("ValidationError", (Exception,), {})}),
-    ):
-        try:
-            importlib.import_module(name)
-        except ImportError:
-            _stub(name, **attrs)
     spec = importlib.util.spec_from_file_location(
         "validate_commit", REPO / "util" / "validate_commit.py"
     )
@@ -71,11 +44,12 @@ def _load_validate_commit():
 try:
     vc = _load_validate_commit()
 except Exception as exc:  # pragma: no cover
-    # Never abort collection: a failure here would take the whole test suite --
-    # and the post-merge rebuild that runs it -- down with this one file.
+    # Never abort collection: an ImportError at module scope takes down the whole
+    # pytest run -- and the post-merge rebuild that invokes it -- not just this file.
     pytest.skip(
         f"could not import util/validate_commit.py ({exc!r})", allow_module_level=True
     )
+
 
 PLACEHOLDER = "0000-0000-0000-0000"
 REAL = "0000-0002-1825-0097"
