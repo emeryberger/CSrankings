@@ -145,19 +145,52 @@ def check_alphabetical_order(filepath: str, new_entries: List[str]) -> List[str]
 
     return errors
 
+# DBLP rate-limits aggressively and drops connections under load. Retry with
+# exponential backoff so a transient failure is not mistaken for a real answer.
+DBLP_MAX_ATTEMPTS = 5
+DBLP_BACKOFF_BASE = 3.0    # seconds; doubles each attempt
+DBLP_BACKOFF_CAP = 30.0    # seconds
+
+
+def dblp_backoff_delay(attempt: int, retry_after: Optional[str] = None) -> float:
+    """Delay before retry `attempt` (0-based), honoring a Retry-After header."""
+    if retry_after:
+        try:
+            return min(float(retry_after), DBLP_BACKOFF_CAP)
+        except ValueError:
+            pass
+    return min(DBLP_BACKOFF_BASE * (2 ** attempt), DBLP_BACKOFF_CAP)
+
+
+def is_dblp_rate_limited(response: requests.Response) -> bool:
+    """DBLP signals throttling with a 429 status, and sometimes with an HTML
+    body served under a 200."""
+    if response.status_code == 429:
+        return True
+    return "429 Too Many Requests" in response.text[:2000]
+
+
 def get_dblp_info(path: str, timeout: float = 10.0) -> str:
     urls = [
         f"https://dblp.org{path}",
         f"https://dblp.uni-trier.de{path}",
         f"https://dblp.dagstuhl.de{path}"
     ]
-    for url in urls:
-        try:
-            response = requests.get(url, timeout=timeout)
-            if response.ok:
-                return url
-        except requests.RequestException:
-            pass
+    # Sweep every mirror before backing off, so a single slow mirror does not
+    # cost a full delay.
+    for attempt in range(DBLP_MAX_ATTEMPTS):
+        retry_after = None
+        for url in urls:
+            try:
+                response = requests.get(url, timeout=timeout)
+                if response.ok and not is_dblp_rate_limited(response):
+                    return url
+                if response.status_code == 429:
+                    retry_after = response.headers.get("Retry-After", retry_after)
+            except requests.RequestException:
+                pass
+        if attempt < DBLP_MAX_ATTEMPTS - 1:
+            time.sleep(dblp_backoff_delay(attempt, retry_after))
     raise RuntimeError("All DBLP fetch attempts failed.")
 
 DBLP = None
@@ -214,26 +247,64 @@ def translate_name_to_dblp(name: str) -> str:
     return str_
 
 
+# Returned when DBLP could not be reached at all. Distinct from 0 ("DBLP
+# answered, and there is no such author"), because an unreachable server is no
+# evidence against a name and must not fail the PR.
+DBLP_UNAVAILABLE = -1
+
+# Once this many names in a row have exhausted their retries, assume DBLP is
+# down and stop paying the backoff on every remaining entry: a large PR would
+# otherwise spend many minutes re-confirming the same outage.
+DBLP_GIVE_UP_AFTER = 3
+_dblp_consecutive_failures = 0
+
+
 def matching_name_with_dblp(name: str) -> int:
+    """Number of DBLP authors matching `name` (1 on exact match), 0 if DBLP
+    reports none, or DBLP_UNAVAILABLE if the lookup could not be completed."""
+    global _dblp_consecutive_failures
+
+    if _dblp_consecutive_failures >= DBLP_GIVE_UP_AFTER:
+        return DBLP_UNAVAILABLE
+
     author_name = translate_name_to_dblp(name)
-    # print(author_name)
-    dblp_url = f'{get_dblp()}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
-    # print(dblp_url)
     try:
-        r = requests.get(dblp_url)
-        if "<title>429 Too Many Requests</title>" in r.text:
-            time.sleep(10)
-            return matching_name_with_dblp(name)
-        j = r.json()
-        # print(j)
-        completions = int(j['result']['completions']['@total'])
-        if completions > 0:
-            for hit in j['result']['hits']['hit']:
-                if hit['info']['author'] == name:
-                    return 1
-        return completions
-    except Exception:
-        return 0
+        dblp_url = f'{get_dblp()}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    except RuntimeError:
+        _dblp_consecutive_failures += 1
+        return DBLP_UNAVAILABLE
+
+    last_error = None
+    for attempt in range(DBLP_MAX_ATTEMPTS):
+        retry_after = None
+        try:
+            r = requests.get(dblp_url, timeout=30.0)
+            if is_dblp_rate_limited(r):
+                retry_after = r.headers.get("Retry-After")
+                last_error = "rate limited"
+            elif not r.ok:
+                last_error = f"HTTP {r.status_code}"
+            else:
+                j = r.json()
+                completions = int(j['result']['completions']['@total'])
+                _dblp_consecutive_failures = 0
+                if completions > 0:
+                    for hit in j['result']['hits'].get('hit', []):
+                        if hit['info']['author'] == name:
+                            return 1
+                return completions
+        except (requests.RequestException, ValueError, KeyError, TypeError) as e:
+            # Connection resets and truncated/garbled JSON are both symptoms of
+            # throttling, so treat them the same as an explicit 429.
+            last_error = f"{type(e).__name__}: {e}"
+        if attempt < DBLP_MAX_ATTEMPTS - 1:
+            time.sleep(dblp_backoff_delay(attempt, retry_after))
+
+    _dblp_consecutive_failures += 1
+    print(f"\t{WARN}\tDBLP lookup for {name} failed after {DBLP_MAX_ATTEMPTS} attempts ({last_error}).")
+    if _dblp_consecutive_failures == DBLP_GIVE_UP_AFTER:
+        print(f"\t{WARN}\tDBLP appears to be down; skipping DBLP name checks for the rest of this run.")
+    return DBLP_UNAVAILABLE
 
 # ---------- Prompt Construction ----------
 
@@ -588,7 +659,12 @@ def process_csv_diff(diff_path: str) -> bool:
                         all_affiliations.add(affiliation)
                     print(f"{index}.\tValidating {name}")
                     name_no_brackets = remove_brackets(name)
-                    if matching_name_with_dblp(name_no_brackets) == 0:
+                    dblp_matches = matching_name_with_dblp(name_no_brackets)
+                    if dblp_matches == DBLP_UNAVAILABLE:
+                        # DBLP was unreachable; that is not evidence the name is
+                        # wrong, so warn rather than failing the PR.
+                        print(f"{index}.\t{WARN}\tCould not reach DBLP to check {name_no_brackets}; name unverified.")
+                    elif dblp_matches == 0:
                         print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['dblp_name']} No DBLP match for {name_no_brackets}")
                         valid = False
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
