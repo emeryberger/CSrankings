@@ -233,20 +233,34 @@ The script `util/validate_prs.py` automates the validation workflow:
 # See what needs work
 python3 util/validate_prs.py status         # Full status report
 python3 util/validate_prs.py list           # PRs still needing our validation comment
+python3 util/validate_prs.py check <PR#>    # Does this PR already have our comment?
 
 # Investigate a specific PR
 python3 util/validate_prs.py gather <PR#>   # Diff, data quality checks, red flags
 python3 util/validate_prs.py info <PR#>     # Lighter-weight summary
+python3 util/validate_prs.py gather-all     # Gather all unvalidated PRs -> /tmp/prs_gathered.json
 
 # Post a validation comment from a file
 python3 util/validate_prs.py comment <PR#> <file.md>
 
 # Score and merge
-python3 util/validate_prs.py scores         # Show all scores
-python3 util/validate_prs.py mergeable      # List PRs >= 90% ready to merge
-python3 util/validate_prs.py merge          # Merge all >= 90% (squash, auto-merge)
+python3 util/validate_prs.py scores         # Show all scores; tags those >= 80% [MERGEABLE]
+python3 util/validate_prs.py merge          # Merge ALL PRs >= 80% (squash)
 python3 util/validate_prs.py merge <PR#>    # Merge one specific PR (checks score)
+python3 util/validate_prs.py merge -t 90    # Raise the threshold for this run
+
+# Conflicts and duplicates
+python3 util/validate_prs.py resolve [PR#]  # Auto-resolve conflicts on CSV-only PRs
+python3 util/validate_prs.py duplicates     # Institutions with 2+ open PRs
+python3 util/validate_prs.py close-dupes    # Close dupes, keeping the lowest PR number
+python3 util/validate_prs.py consolidate    # Combine per-institution PRs into one
 ```
+
+> **Careful with bare `merge`.** With no PR argument it merges *every* PR at or
+> above the threshold (default **80%**, not 90%). That will happily merge a PR
+> you flagged as conditionally unsafe — for example, a removal whose replacement
+> entry is still sitting in a separate open PR. When some PRs above the threshold
+> carry caveats, merge them one at a time by number.
 
 The `gather` command performs automated checks including:
 - Institution lookup against `institutions.csv`
