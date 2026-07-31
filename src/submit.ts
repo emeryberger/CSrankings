@@ -1927,14 +1927,17 @@ function updateSubmitButton(): void {
             const updateFieldsValid = Object.values(validationState).every((v: ValidationState) => v.valid);
             let hasChanges = false;
             if (selectedEntry) {
+                const currentInstitution = (document.getElementById('institution') as HTMLInputElement).value.trim();
                 const currentHomepage = (document.getElementById('homepage') as HTMLInputElement).value.trim();
                 const currentScholarid = (document.getElementById('scholarid') as HTMLInputElement).value.trim();
                 const currentOrcid = (document.getElementById('orcid') as HTMLInputElement).value.trim();
                 const currentNewName = (document.getElementById('new-name') as HTMLInputElement)?.value.trim() || '';
+                const originalInstitution = selectedEntry.institution.trim();
                 const originalHomepage = selectedEntry.homepage.trim();
                 const originalScholarid = selectedEntry.scholarid.trim();
                 const originalOrcid = selectedEntry.orcid.trim();
-                hasChanges = currentHomepage !== originalHomepage ||
+                hasChanges = currentInstitution !== originalInstitution ||
+                             currentHomepage !== originalHomepage ||
                              currentScholarid !== originalScholarid ||
                              currentOrcid !== originalOrcid ||
                              (currentNewName !== '' && currentNewName !== selectedEntry.name);
