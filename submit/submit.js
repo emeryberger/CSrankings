@@ -1,3 +1,4 @@
+"use strict";
 /**
  * CSRankings Faculty Submission Form
  * Client-side validation and GitHub Issue creation
@@ -1723,14 +1724,17 @@ function updateSubmitButton() {
             const updateFieldsValid = Object.values(validationState).every((v) => v.valid);
             let hasChanges = false;
             if (selectedEntry) {
+                const currentInstitution = document.getElementById('institution').value.trim();
                 const currentHomepage = document.getElementById('homepage').value.trim();
                 const currentScholarid = document.getElementById('scholarid').value.trim();
                 const currentOrcid = document.getElementById('orcid').value.trim();
                 const currentNewName = ((_a = document.getElementById('new-name')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
+                const originalInstitution = selectedEntry.institution.trim();
                 const originalHomepage = selectedEntry.homepage.trim();
                 const originalScholarid = selectedEntry.scholarid.trim();
                 const originalOrcid = selectedEntry.orcid.trim();
-                hasChanges = currentHomepage !== originalHomepage ||
+                hasChanges = currentInstitution !== originalInstitution ||
+                    currentHomepage !== originalHomepage ||
                     currentScholarid !== originalScholarid ||
                     currentOrcid !== originalOrcid ||
                     (currentNewName !== '' && currentNewName !== selectedEntry.name);
