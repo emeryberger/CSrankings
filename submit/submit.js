@@ -1,3 +1,4 @@
+"use strict";
 /**
  * CSRankings Faculty Submission Form
  * Client-side validation and GitHub Issue creation
