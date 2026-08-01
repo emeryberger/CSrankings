@@ -7,6 +7,7 @@
 2. Can **solely advise PhD students in Computer Science**
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
+   - **Exception — AI schools and colleges are eligible.** A university's School of Artificial Intelligence or College of AI (e.g. SJTU, Tsinghua) counts as a CS unit; its faculty need no separate justification and no proof of CS cross-advising. See [Common Failure Modes §C1](#c1-ai-schools-and-colleges-eligible).
 
 > **Important:** Having publications in CSRankings-tracked venues does **not** make someone eligible. Eligibility is determined solely by the criteria above (tenure-track status, CS department, PhD advising). Many researchers outside CS publish in CS venues — this does not qualify them for inclusion.
 
@@ -56,7 +57,20 @@ Faculty in the **University of California Teaching Professor series** are **elig
 |---------|------------|------------|-------|
 | Media/Governance PhD | Keio | Environment & Info Studies (SFC) | PhD in "Media and Governance", not CS. University has a separate CS dept. |
 | Merged CS+IS faculty | Ben-Gurion | SISE | **Now OK** — BGU merged CS and SISE into Faculty of Computer and Information Science in 2025 |
-| AI school with joint CS programs | SJTU | School of AI | AI faculty may be able to advise CS PhD students (joint programs) |
+| AI school / college | SJTU, Tsinghua | School of AI, College of AI | **ELIGIBLE** — see [§C1](#c1-ai-schools-and-colleges-eligible) |
+
+#### C1. AI schools and colleges: ELIGIBLE
+
+**This is not a failure mode.** It is called out because it was previously ambiguous and is now settled (ruling: 2026-08-01).
+
+Faculty in a university's **School of Artificial Intelligence** or **College of AI** are **eligible for inclusion**, and should be treated the same as faculty in that university's Department of Computer Science. Do not hold an entry because the unit is named "AI" rather than "Computer Science".
+
+- **Examples**: SJTU School of Artificial Intelligence, Tsinghua College of AI, and equivalents elsewhere.
+- **Why eligible**: these are computing units. They are typically spun out of, or run jointly with, the CS department, and their faculty supervise doctoral students in shared or cross-listed CS programmes. Requiring per-institution proof of cross-advising rights produced a lot of churn for a question that resolves the same way nearly every time.
+- **`institutions.csv` need not match.** These entries will often be at a university whose `institutions.csv` URL points at the CS department (e.g. `cs.tsinghua.edu.cn`, `cs.sjtu.edu.cn`). That mismatch alone is **not** grounds to reject — CSRankings tracks one URL per institution, not per unit.
+- **Still check the remaining criteria**: the person must be tenure-track or equivalent (criterion 1) and at >=75% time (criterion 3). Assess those exactly as for any other entry.
+
+> **Boundary — this ruling covers AI schools only.** It does not extend to other adjacent units, which continue to be assessed under [§B](#b-wrong-department-not-cs-no-cross-appointment-shown): **Automation** departments (including SJTU's), **Electrical & Computer Engineering**, **Information Science / IST**, and **Engineering Technology** remain ineligible without a documented CS cross-appointment. A "School of Data Science" or "School of Cyber Science" is likewise not covered here and should be judged on its own facts.
 
 ### D. Future Additions
 
@@ -82,7 +96,7 @@ Multiple PRs adding the same person, often with slightly different data. Watch f
 
 - Faculty in **Mathematics** departments at universities with CS schools are ineligible (check email domains like `math@`).
 - Faculty in **remote sensing / surveying labs** are NOT in CS departments, even if their discipline listing mentions "Computer Science and Technology."
-- Faculty in a **School of AI** rather than School of CS may or may not qualify, depending on whether the university allows cross-advising of CS PhD students.
+- Faculty in a **School of AI** or **College of AI** rather than a School of CS **are eligible** — see [§C1](#c1-ai-schools-and-colleges-eligible). No per-institution proof of CS cross-advising is required.
 - Removals of deceased faculty or duplicate entries with zero publications in CSRankings venues are generally appropriate.
 - Removals of active faculty require evidence (retirement announcement, departure notice, etc.).
 - Consolidates Imani N. S. Munyaka / Imani N. Sherman entries: **Appropriate**.
