@@ -5,6 +5,7 @@
 1. **Full-time, tenure-track research faculty** (not postdoc, not adjunct, not visiting)
    - **Exception — University of California teaching faculty are eligible.** UC's Teaching Professor series (formerly LPSOE/LSOE; titles such as "Assistant/Associate/Full Professor of Teaching" or "Assistant/Associate/Full Teaching Professor", and "Lecturer with Security of Employment") confers security of employment and the ability to solely advise CS PhD students. Faculty in this series count as eligible. See [Common Failure Modes §A](#a-university-of-california-teaching-faculty-eligible).
 2. Can **solely advise PhD students in Computer Science**
+   - **Verify this directly; do not infer it from rank.** Many institutions state supervision rights explicitly — Chinese faculty pages in particular almost always mark **博士生导师** (doctoral supervisor) or **硕士生导师** (master's supervisor *only*, which does **not** qualify). See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2).
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
    - **Exception — AI schools and colleges are eligible.** A university's School of Artificial Intelligence or College of AI (e.g. SJTU, Tsinghua) counts as a CS unit; its faculty need no separate justification and no proof of CS cross-advising. See [Common Failure Modes §C1](#c1-ai-schools-and-colleges-eligible).
@@ -119,7 +120,7 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 | Criterion | Status | Notes |
 |-----------|--------|-------|
 | Full-time, tenure-track research faculty | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence: title, department page link] |
-| Can solely advise CS PhD students | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence] |
+| Can solely advise CS PhD students | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence — cite the source, e.g. 博士生导师 designation, "Accepting Doctoral Students" flag, or named PhD students on a lab page. Do not infer from rank alone] |
 | >=75% time appointment | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence or "No evidence of industry split"] |
 | In a CS department | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Department name, any cross-appointment notes] |
 
@@ -191,9 +192,11 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 3. **Likelihood percentage**: 90-100% = clearly valid; 70-89% = likely valid with minor concerns; 50-69% = significant uncertainty; <50% = likely invalid
 4. **Flag specific issues** that need action (wrong Scholar ID, DBLP disambiguation, missing institution, etc.)
 5. **For non-US institutions**, reference the International Title Equivalences table above
-6. **For batch PRs**, every person must be individually assessed — do not just spot-check
-7. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
-8. **For removals**, verify the stated reason (retirement, departure, death) with evidence
+6. **Never mark criterion 2 as PASS on the strength of a title alone.** Cite the actual evidence for doctoral supervision — a 博士生导师 designation, an "Accepting Doctoral Students" flag, named PhD students on a lab page, or a departmental supervisor listing. If none is available, mark it ⚠️ UNCLEAR and say what would settle it. See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
+7. **Read the whole PR thread before assessing.** Submitters and third parties often supply the missing evidence in a comment; scoring without reading it produces a wrong verdict and wastes their time
+8. **For batch PRs**, every person must be individually assessed — do not just spot-check
+9. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
+10. **For removals**, verify the stated reason (retirement, departure, death) with evidence
 
 ---
 
@@ -215,10 +218,44 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 - University faculty directory pages (department-specific listings)
 - ResearchGate (often shows department explicitly)
 
+### Verifying PhD supervision rights (criterion 2)
+
+Criterion 2 — *can solely advise PhD students* — is easy to assume from a title and easy to get wrong. A professorial title does **not** by itself establish doctoral supervision rights, and some non-professorial titles **do** carry them. Check it directly rather than inferring it from rank.
+
+**Chinese institutions state it explicitly. Always look.**
+
+Chinese faculty pages routinely print supervision status as part of the title line, and it is authoritative:
+
+| Term | Pinyin | Meaning | Satisfies criterion 2? |
+|------|--------|---------|------------------------|
+| **博士生导师** (often 博导) | bóshìshēng dǎoshī | Doctoral supervisor | ✅ **Yes** |
+| **硕士生导师** (often 硕导) | shuòshìshēng dǎoshī | Master's supervisor only | ❌ **No** |
+
+Titles are usually written as a compound, e.g. `教授、博士生导师` (Professor and Doctoral Supervisor) or `副教授 / 博士生导师` (Associate Professor / Doctoral Supervisor).
+
+**This is often the fastest way to resolve an otherwise ambiguous title.** It decouples criterion 2 from rank naming, which matters because Chinese research-series titles can look non-tenure-track to a reader used to US conventions:
+
+- `青年研究员、博士生导师` ("Young Researcher") — the 博导 designation confirms doctoral supervision even though the rank name resembles a research-scientist post that [Red flags](#red-flags) would otherwise treat with suspicion.
+- `特聘教授` ("Distinguished Professor") — a 特聘 appointment [may be fixed-term](#international-title-equivalences); 博导 status is separate evidence and should be checked on its own.
+
+Directories where this appears in practice include `faculty.<inst>.edu.cn` profile pages, `gr.xjtu.edu.cn`, and `people.ucas.edu.cn` (which renders it in English as "Ph.D. Advisor").
+
+**Elsewhere, look for these signals:**
+
+- **UK/European institutional research portals** often carry an explicit **"Accepting Doctoral Students"** flag (e.g. `researchportal.bath.ac.uk`). Strong positive evidence.
+- **Lab or group pages listing current PhD students** by name. A group with several doctoral students is direct evidence of sole supervision in practice, not merely eligibility for it.
+- **Departmental graduate-programme pages** listing eligible supervisors.
+
+**Two cautions:**
+
+1. **Supervision rights do not establish the department.** 博导 status confirms criterion 2 only. A faculty member can be a doctoral supervisor in a non-CS unit, which leaves criterion 4 unaddressed — verify the two separately.
+2. **Co-advising is not sole advising.** Criterion 2 requires the ability to serve as sole advisor. Where a page shows only jointly-supervised students, or where a research-series appointment permits supervision only alongside a full professor, that does not qualify.
+
 ### Red flags
 
 - "Professor of Teaching" or "Lecturer" at **non-UC** US universities (may be non-TT). At University of California campuses these titles are **eligible** — see [§A](#a-university-of-california-teaching-faculty-eligible)
-- "Research Professor" or "Research Scientist" (often non-TT)
+- "Research Professor" or "Research Scientist" (often non-TT). **For Chinese institutions, check for a 博士生导师 designation before rejecting** — research-series titles such as 青年研究员 frequently carry full doctoral supervision rights; see [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
+- Faculty page shows **硕士生导师 only** (master's supervisor, no 博导 designation) — cannot solely advise PhD students, so criterion 2 fails
 - Faculty whose email domain doesn't match their listed institution
 - Same Google Scholar ID appearing in multiple entries
 - NOSCHOLARPAGE with no ORCID -- harder to verify identity
