@@ -49,16 +49,44 @@ EXCEL_ERROR_PATTERNS = [
 
 # ---------- Models ----------
 
+class CriterionEvidence(BaseModel):
+    """
+    One inclusion criterion, with the evidence the model claims supports it.
+
+    `source_url` and `quote` exist so the claim can be checked mechanically:
+    verify_criterion() refetches source_url and confirms `quote` really occurs
+    on it. A model that invents a department or a supervisor designation has to
+    invent a quote to go with it, and that is detectable. Verdicts asserted
+    without a checkable quote are demoted to 'unverified' rather than believed.
+    """
+    verdict: Literal['pass', 'fail', 'unverified']
+    source_url: str   # page the quote was taken from; "" if unverified
+    quote: str        # verbatim text from source_url; "" if unverified
+
 class AuditEntry(BaseModel):
     name: str
     dblp_name: str
     change: Literal['addition', 'deletion', 'modification']
-    classification: Literal['valid', 'invalid', 'questionable']
+    # The four VALIDATION.md inclusion criteria, each independently evidenced.
+    tenure_track: CriterionEvidence    # full-time, tenure-track research faculty
+    phd_advising: CriterionEvidence    # can solely advise CS PhD students
+    full_time: CriterionEvidence       # >=75% time appointment
+    cs_department: CriterionEvidence   # in a CS department (or documented exception)
+    classification: Literal['valid', 'invalid', 'questionable', 'unverified']
     explanation: str
 
 class AuditEntryList(BaseModel):
     entries: List[AuditEntry]
-    
+
+# Human-readable labels for the four criteria, in report order.
+CRITERION_FIELDS = [
+    ("tenure_track",  "Full-time, tenure-track research faculty"),
+    ("phd_advising",  "Can solely advise CS PhD students"),
+    ("full_time",     ">=75% time appointment"),
+    ("cs_department", "In a CS department"),
+]
+
+
 # ---------- Helpers ----------
 
 def extract_json_from_backquotes(text: str) -> str:
@@ -306,6 +334,141 @@ def matching_name_with_dblp(name: str) -> int:
         print(f"\t{WARN}\tDBLP appears to be down; skipping DBLP name checks for the rest of this run.")
     return DBLP_UNAVAILABLE
 
+# ---------- Audit Evidence Verification ----------
+#
+# The AI audit has been observed asserting specific, checkable facts that the
+# cited page contradicts -- a CS affiliation for someone in another department,
+# a 博士生导师 designation absent from the page, even a VALIDATION.md rule that
+# does not exist. Those assertions shipped under a passing check, because
+# nothing ever compared them against the source.
+#
+# Everything below exists to close that gap: the model must attach a verbatim
+# quote and a URL to each criterion, and we refetch the URL and confirm the
+# quote is really there before the claim is allowed to count as verified.
+
+# Quote must be long enough that a coincidental match is implausible, but short
+# enough that a model can lift it verbatim without transcription drift.
+MIN_QUOTE_CHARS = 12
+# Tolerance for whitespace/punctuation drift when locating the quote.
+QUOTE_FUZZ_RATIO = 0.15
+QUOTE_FUZZ_MAX = 12
+
+# url -> visible page text ("" when the page could not be fetched). Populated
+# lazily so several criteria citing one page cost a single request.
+_page_text_cache: dict = {}
+
+def fetch_page_text(url: str) -> Optional[str]:
+    """Fetch `url` and return its visible text, or None if it can't be read."""
+    if url in _page_text_cache:
+        return _page_text_cache[url]
+    text = None
+    try:
+        raw = has_valid_homepage(url)
+        if raw:
+            text = extract_visible_text_from_webpage(raw)
+    except Exception:
+        text = None
+    _page_text_cache[url] = text
+    return text
+
+def normalize_for_quote_match(s: str) -> str:
+    """Collapse whitespace and case so quoting is robust to page formatting."""
+    return re.sub(r'\s+', ' ', s).strip().lower()
+
+def quote_appears_on_page(quote: str, page_text: str) -> bool:
+    """True if `quote` occurs in `page_text`, tolerating small formatting drift."""
+    q = normalize_for_quote_match(quote)
+    p = normalize_for_quote_match(page_text)
+    if not q or not p:
+        return False
+    if q in p:
+        return True
+    # Allow limited edit distance: pages re-flow text, insert soft hyphens, etc.
+    max_dist = min(QUOTE_FUZZ_MAX, max(1, int(len(q) * QUOTE_FUZZ_RATIO)))
+    try:
+        return bool(fuzzysearch.find_near_matches(q, p, max_l_dist=max_dist))
+    except Exception:
+        return False
+
+def verify_criterion(ev: "CriterionEvidence") -> Tuple[str, str]:
+    """
+    Check one criterion's cited evidence against its source page.
+
+    Returns (status, detail) where status is one of:
+      'confirmed'   quote was found on the cited page -- claim stands
+      'unsupported' page loaded but the quote is NOT on it -- treat as fabricated
+      'unreachable' page could not be fetched -- claim is simply unchecked
+      'nocite'      model asserted a verdict with no usable URL/quote
+      'declared'    model itself said 'unverified'; nothing to check
+    """
+    if ev.verdict == 'unverified':
+        return 'declared', 'model reported this criterion as unverified'
+    url, quote = (ev.source_url or '').strip(), (ev.quote or '').strip()
+    if not url or not quote:
+        return 'nocite', 'verdict asserted without a source URL and quote'
+    if len(quote) < MIN_QUOTE_CHARS:
+        return 'nocite', f'quote too short to verify ({len(quote)} chars)'
+    page_text = fetch_page_text(url)
+    if page_text is None:
+        return 'unreachable', f'could not fetch {url}'
+    if quote_appears_on_page(quote, page_text):
+        return 'confirmed', url
+    return 'unsupported', url
+
+def verify_audit_entry(entry: dict) -> dict:
+    """
+    Verify every criterion on one audit entry and correct the entry in place.
+
+    Any criterion whose evidence does not check out is demoted to 'unverified',
+    so a fabricated or unfetchable citation can never be reported as a verified
+    pass. Returns a summary used for reporting and for deciding the outcome.
+    """
+    results, fabricated, unchecked = {}, [], []
+    for field, label in CRITERION_FIELDS:
+        raw = entry.get(field) or {}
+        ev = CriterionEvidence(**raw) if not isinstance(raw, CriterionEvidence) else raw
+        status, detail = verify_criterion(ev)
+        if status == 'unsupported':
+            fabricated.append((label, ev, detail))
+        elif status in ('unreachable', 'nocite'):
+            unchecked.append((label, ev, status, detail))
+        # Demote anything we could not confirm; only 'confirmed' keeps its verdict.
+        if status != 'confirmed' and ev.verdict != 'unverified':
+            entry[field] = {'verdict': 'unverified',
+                            'source_url': ev.source_url,
+                            'quote': ev.quote}
+        else:
+            entry[field] = ev.model_dump() if hasattr(ev, 'model_dump') else dict(raw)
+        results[field] = (label, ev, status, detail)
+    return {'results': results, 'fabricated': fabricated, 'unchecked': unchecked}
+
+def reclassify_after_verification(entry: dict, summary: dict) -> None:
+    """
+    Bring `classification` back in line with what actually survived verification.
+
+    A 'valid' verdict resting on evidence that did not check out becomes
+    'unverified' -- which asks for human review instead of either rubber-stamping
+    the PR or failing the submitter for the auditor's mistake. A 'fail' on any
+    criterion is preserved only when its evidence was confirmed.
+    """
+    confirmed_fail = any(
+        ev.verdict == 'fail' and status == 'confirmed'
+        for (_label, ev, status, _d) in summary['results'].values()
+    )
+    if confirmed_fail:
+        # A genuine, evidenced failure: leave invalid/questionable as the model set it.
+        if entry.get('classification') == 'valid':
+            entry['classification'] = 'questionable'
+        return
+    any_confirmed = any(status == 'confirmed'
+                        for (_l, _e, status, _d) in summary['results'].values())
+    if entry.get('classification') == 'valid' and not any_confirmed:
+        # Nothing at all could be corroborated; do not report this as valid.
+        entry['classification'] = 'unverified'
+    elif entry.get('classification') in ('invalid', 'questionable') and summary['fabricated']:
+        # The adverse finding rested on evidence that isn't on the page.
+        entry['classification'] = 'unverified'
+
 # ---------- Prompt Construction ----------
 
 def construct_prompt(diff: str) -> str:
@@ -351,6 +514,38 @@ criteria from past PR reviews:
 
 Provide an audit for every single faculty mentioned in the diff.
 
+EVIDENCE RULES -- these are enforced mechanically, not on trust:
+
+1. Assess the four inclusion criteria SEPARATELY: tenure_track, phd_advising,
+   full_time, cs_department.
+
+2. For every criterion you mark 'pass' or 'fail', you MUST supply:
+     - source_url: a page you actually retrieved, and
+     - quote: text copied VERBATIM from that page which shows the finding.
+   Each quote is checked by refetching source_url and searching for it. If the
+   quote is not on that page, the finding is discarded and reported as an
+   auditing failure. Copy quotes exactly; do not translate, paraphrase,
+   summarize, reformat, or reconstruct them from memory.
+
+3. If you could not retrieve a page, or the page does not state the fact, set
+   verdict to 'unverified' with empty source_url and quote. 'unverified' is a
+   correct and expected answer. It is ALWAYS better than guessing.
+
+4. NEVER infer a department, an academic rank, a supervisor designation
+   (such as 博士生导师 / 博导), or an institutional policy that you did not read
+   on a retrieved page. Do not deduce a department from a person's research
+   area, their co-authors, their venues, or the institution's general
+   reputation. Do not state that a unit "is considered" or "is recognized as"
+   a CS unit unless VALIDATION.md says so or you quote a page that says so.
+
+5. Quote in the page's original language. If a page is in Chinese, quote the
+   Chinese text (e.g. 教授、博士生导师). Do not translate it into English --
+   a translated quote cannot be located on the page and will be discarded.
+
+6. Set classification to 'unverified' when you could not check the criteria
+   that matter, rather than defaulting to 'valid'. Reserve 'invalid' and
+   'questionable' for findings you can actually evidence with a quote.
+
 Respond ONLY with a JSON file like the following:
 
 {{
@@ -358,8 +553,12 @@ Respond ONLY with a JSON file like the following:
     'name' : (the name),
     'dblp_name' : (the DBLP name),
     'change': (one of 'addition', 'deletion', 'modification'),
-    'classification': (one of 'valid', 'invalid', 'questionable'),
-    'explanation': (a textual explanation of the reason for the declared classification),
+    'tenure_track':  {{'verdict': 'pass'|'fail'|'unverified', 'source_url': ..., 'quote': ...}},
+    'phd_advising':  {{'verdict': 'pass'|'fail'|'unverified', 'source_url': ..., 'quote': ...}},
+    'full_time':     {{'verdict': 'pass'|'fail'|'unverified', 'source_url': ..., 'quote': ...}},
+    'cs_department': {{'verdict': 'pass'|'fail'|'unverified', 'source_url': ..., 'quote': ...}},
+    'classification': (one of 'valid', 'invalid', 'questionable', 'unverified'),
+    'explanation': (a textual explanation, citing only facts you quoted above),
   ]
 }}
 
@@ -416,13 +615,21 @@ def run_audit(client, diff_path: str) -> Optional[List[dict]]:
         text_format = AuditEntryList,
     )
     parsed = response.output_parsed
-    
+
     filtered_sorted = sorted(
         parsed.entries,
         key=lambda x: x.model_dump()["name"].lower()
     )
-    
-    return [x.model_dump() for x in filtered_sorted]
+
+    entries = [x.model_dump() for x in filtered_sorted]
+
+    # Check every claim against the page it cites before anyone reads it.
+    for entry in entries:
+        summary = verify_audit_entry(entry)
+        reclassify_after_verification(entry, summary)
+        entry['_verification'] = summary
+
+    return entries
 
 # ---------- PR Metadata Validation ----------
 
@@ -798,13 +1005,49 @@ if __name__ == "__main__":
 
     auditing_error = False
     if audit_result:
-        print(f"\nThe analysis below was generated by AI and may not be accurate:\n")
+        print(f"\nThe analysis below was generated by AI. Every factual claim it makes")
+        print(f"is checked against the page it cites; claims marked {WARN} were NOT")
+        print(f"confirmed and should be treated as unverified, not as findings.\n")
         for index, entry in enumerate(audit_result, start=1):
             gloss = f"{ERROR}\t" if entry['classification'] in { 'invalid', 'questionable' } else ""
             print(f"{index}.\t{gloss}Update for {entry['name']} ({entry['dblp_name']}) is {entry['classification']}: {entry['explanation']}\n")
+
+            summary = entry.get('_verification') or {}
+            for field, label in CRITERION_FIELDS:
+                res = (summary.get('results') or {}).get(field)
+                if not res:
+                    continue
+                _label, ev, status, detail = res
+                if status == 'confirmed':
+                    print(f"{index}.\t{INFO}\t{label}: {ev.verdict.upper()} "
+                          f"-- verified against {detail}")
+                elif status == 'unsupported':
+                    print(f"{index}.\t{ERROR}\t{label}: claim DISCARDED -- the AI cited "
+                          f"{detail} as saying \"{ev.quote[:120]}\", but that text is not "
+                          f"on the page. Treat this criterion as unverified.")
+                elif status == 'unreachable':
+                    print(f"{index}.\t{WARN}\t{label}: unverified -- {detail} "
+                          f"(page unreachable; not evidence either way)")
+                elif status == 'nocite':
+                    print(f"{index}.\t{WARN}\t{label}: unverified -- {detail}")
+                else:
+                    print(f"{index}.\t{WARN}\t{label}: unverified")
+
+            if summary.get('fabricated'):
+                print(f"{index}.\t{ERROR}\tThe AI audit cited "
+                      f"{len(summary['fabricated'])} source(s) that do not support "
+                      f"the claim made. Its conclusions for this entry are unreliable; "
+                      f"please verify manually rather than relying on them.")
+            if entry['classification'] == 'unverified':
+                print(f"{index}.\t{WARN}\tThis entry could not be automatically "
+                      f"verified and needs human review. This is NOT a finding "
+                      f"against the submission.")
+            print()
+
             if gloss:
                 auditing_error = True
-                
+
+
     if not pr_metadata_valid or not csv_valid or auditing_error:
         mark_failed()
         sys.exit(-1)
