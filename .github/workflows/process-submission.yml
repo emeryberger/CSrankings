@@ -257,6 +257,22 @@ jobs:
             // Helper to normalize names for alphabetical sorting
             const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
+            // Sort key for choosing where to INSERT a row (distinct from normalize(),
+            // which is for case-insensitive name *matching* and stays as it is).
+            //
+            // The canonical order for these CSVs is whatever `make` produces: it runs
+            // util/sort-csv-files.py, which is a pandas sort_values() on the name column
+            // -- a plain case-sensitive comparison of the raw name. Every csrankings-*.csv
+            // is exactly in that order (0 out-of-order adjacent pairs across ~32k names).
+            //
+            // Inserting by normalize() instead put rows in a different place, because
+            // lowercasing reorders anything whose neighbours differ only in case: an
+            // ALL-CAPS name like "XIN YUAN" sorts before "Xiaobo Ma" raw, but after it
+            // lowercased. `make` re-sorted such rows afterwards, so the data self-healed,
+            // but the PR itself carried a misplaced row and a noisier diff.
+            const sortKey = (s) => s;
+
+
             // Map a name to the csrankings-*.csv file it belongs in. Mirrors
             // util/validate_commit.py, which requires unidecode(name)[0].lower()
             // to match the file's letter, so an accented initial goes in the
@@ -432,7 +448,7 @@ jobs:
                       name,
                       targetFile,
                       line: `${name},${institution},${homepage},${scholarid},${orcid}`,
-                      nameNorm: normalize(name),
+                      nameNorm: normalize(name), nameSortKey: sortKey(name),
                       issueNumber: issue.number
                     });
                     issueNumbers.push(issue.number);
@@ -491,7 +507,7 @@ jobs:
                     for (let i = 1; i < lines.length; i++) {
                       if (!lines[i].trim()) continue;
                       const existingName = lines[i].split(',')[0];
-                      if (normalize(existingName) > entry.nameNorm) {
+                      if (sortKey(existingName) > entry.nameSortKey) {
                         insertIndex = i;
                         break;
                       }
@@ -818,7 +834,7 @@ jobs:
                       continue;
                     }
                     if (!entriesByFile[targetFile]) entriesByFile[targetFile] = [];
-                    entriesByFile[targetFile].push({ name, line, nameNorm: normalize(name) });
+                    entriesByFile[targetFile].push({ name, line, nameNorm: normalize(name), nameSortKey: sortKey(name) });
                   }
 
                   if (unplaceable.length > 0) {
@@ -876,7 +892,7 @@ jobs:
                       for (let i = 1; i < lines.length; i++) {
                         if (!lines[i].trim()) continue;
                         const existingName = lines[i].split(',')[0];
-                        if (normalize(existingName) > entry.nameNorm) {
+                        if (sortKey(existingName) > entry.nameSortKey) {
                           insertIndex = i;
                           break;
                         }
@@ -1085,6 +1101,7 @@ jobs:
                   const lines = content.split(/\r?\n/);
                   const newEntry = `${name},${institution},${homepage},${scholarid},${orcid}`;
                   const newNameNorm = normalize(name);
+                  const newNameSortKey = sortKey(name);
 
                   // Check for duplicates (exact match with accents)
                   const exactDuplicate = lines.some(line => {
@@ -1237,7 +1254,7 @@ jobs:
                   for (let i = 1; i < lines.length; i++) {
                     if (!lines[i].trim()) continue;
                     const existingName = lines[i].split(',')[0];
-                    if (normalize(existingName) > newNameNorm) {
+                    if (sortKey(existingName) > newNameSortKey) {
                       insertIndex = i;
                       break;
                     }
@@ -1509,11 +1526,12 @@ jobs:
                     // Find insertion point (alphabetical order)
                     const entryName = updateCrossFileEntry.split(',')[0];
                     const entryNameNorm = normalize(entryName);
+                    const entryNameSortKey = sortKey(entryName);
                     let insertIndex = 1; // Skip header
                     for (let i = 1; i < newFileLines.length; i++) {
                       if (!newFileLines[i].trim()) continue;
                       const existingName = newFileLines[i].split(',')[0];
-                      if (normalize(existingName) > entryNameNorm) {
+                      if (sortKey(existingName) > entryNameSortKey) {
                         insertIndex = i;
                         break;
                       }
@@ -1604,21 +1622,69 @@ jobs:
                   let oldContent = Buffer.from(oldFileData.content, 'base64').toString('utf8');
                   let oldLines = oldContent.split(/\r?\n/);
 
+                  // Reshape the row to the destination file's schema.
+                  //
+                  // csrankings-*.csv rows are 5 fields:
+                  //   name,affiliation,homepage,scholarid,orcid
+                  // old/emeritus.csv, old/rip.csv, old/research.csv and old/other.csv use
+                  // that same 5-field schema, so the row copies across verbatim.
+                  //
+                  // old/industry.csv is the exception -- it carries a 6th field, `company`,
+                  // between scholarid and orcid:
+                  //   name,affiliation,homepage,scholarid,company,orcid
+                  // Copying the 5-field row in unchanged silently shifts the ORCID into the
+                  // company column and leaves orcid empty. The company name is available:
+                  // the form asks for it whenever the reason is "industry" and encodes it in
+                  // the reason string as `industry (Company Name)`, so recover it from there.
+                  let entryToInsert = removeEntry;
+                  if (removeOldFile === 'old/industry.csv') {
+                    const companyMatch = /industry\s*\(([^)]+)\)/i.exec(reason || '');
+                    // "TBD" is the established placeholder in this file for an unknown employer.
+                    const company = (companyMatch ? companyMatch[1] : '').replace(/,/g, ' ').trim() || 'TBD';
+                    // Split before the final field (orcid) rather than on every comma, so a
+                    // comma inside an earlier field cannot shift the insertion point.
+                    const lastComma = entryToInsert.lastIndexOf(',');
+                    if (lastComma !== -1) {
+                      entryToInsert = entryToInsert.slice(0, lastComma) + ',' + company + entryToInsert.slice(lastComma);
+                    }
+                  }
+
+                  // Fail loudly rather than writing a row that doesn't match the header.
+                  // This is what silently produced malformed industry.csv rows before.
+                  const headerFields = (oldLines[0] || '').split(',').length;
+                  const entryFields = entryToInsert.split(',').length;
+                  if (headerFields > 1 && entryFields !== headerFields) {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      body: `## ❌ Internal error building \`${removeOldFile}\` row\n\nThe generated row has ${entryFields} fields but \`${removeOldFile}\` expects ${headerFields}:\n\n\`\`\`\n${entryToInsert}\n\`\`\`\n\nThe entry was **not** added to \`${removeOldFile}\`. This is a bug in the submission workflow, not a problem with your submission -- please report it.`
+                    });
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      labels: ['validation-failed']
+                    });
+                    continue;
+                  }
+
                   // Find insertion point (alphabetical order by name)
-                  const entryName = removeEntry.split(',')[0];
+                  const entryName = entryToInsert.split(',')[0];
                   const entryNameNorm = normalize(entryName);
+                  const entryNameSortKey = sortKey(entryName);
                   let insertIndex = 1; // Skip header
                   for (let i = 1; i < oldLines.length; i++) {
                     if (!oldLines[i].trim()) continue;
                     const existingName = oldLines[i].split(',')[0];
-                    if (normalize(existingName) > entryNameNorm) {
+                    if (sortKey(existingName) > entryNameSortKey) {
                       insertIndex = i;
                       break;
                     }
                     insertIndex = i + 1;
                   }
 
-                  oldLines.splice(insertIndex, 0, removeEntry);
+                  oldLines.splice(insertIndex, 0, entryToInsert);
                   const newOldContent = oldLines.join('\r\n');
 
                   // Update old file
