@@ -1,23 +1,50 @@
 [
     {
-        "files": ["country-info.csv"],
-	"sort_columns": ["institution", "region", "countryabbrv" ]
+        "files": [
+            "country-info.csv"
+        ],
+        "sort_columns": [
+            "institution",
+            "region",
+            "countryabbrv"
+        ]
     },
     {
-	"files": [ "institutions.csv" ],
-        "sort_columns": ["institution"]
-	
+        "files": [
+            "institutions.csv"
+        ],
+        "sort_columns": [
+            "institution"
+        ]
     },
     {
-	"files" : ["csrankings-[a-z].csv"],
-        "sort_columns": ["name"]
+        "files": [
+            "csrankings-[a-z].csv"
+        ],
+        "sort_columns": [
+            "name"
+        ],
+        "sort_key": "unidecode_lower"
     },
     {
-        "files": ["acm-fellows.csv", "turing.csv"],
-        "sort_columns": ["year", "name"]
+        "files": [
+            "acm-fellows.csv",
+            "turing.csv"
+        ],
+        "sort_columns": [
+            "year",
+            "name"
+        ]
     },
     {
-	"files" : ["old/industry.csv", "old/rip.csv", "old/emeritus.csv"],
-	"sort_columns": ["name"]
+        "files": [
+            "old/industry.csv",
+            "old/rip.csv",
+            "old/emeritus.csv"
+        ],
+        "sort_columns": [
+            "name"
+        ],
+        "sort_key": "unidecode_lower"
     }
 ]

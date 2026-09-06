@@ -260,17 +260,36 @@ jobs:
             // Sort key for choosing where to INSERT a row (distinct from normalize(),
             // which is for case-insensitive name *matching* and stays as it is).
             //
-            // The canonical order for these CSVs is whatever `make` produces: it runs
-            // util/sort-csv-files.py, which is a pandas sort_values() on the name column
-            // -- a plain case-sensitive comparison of the raw name. Every csrankings-*.csv
-            // is exactly in that order (0 out-of-order adjacent pairs across ~32k names).
+            // This must reproduce normalize_name_for_sorting() in util/validate_commit.py
+            // -- `unidecode(name).lower().strip()` -- because that is the order the CI bot
+            // enforces on new entries AND, since sort_directives.json gained
+            // "sort_key": "unidecode_lower", the order util/sort-csv-files.py now writes.
+            // Insertion, CI validation, and the build therefore all agree.
             //
-            // Inserting by normalize() instead put rows in a different place, because
-            // lowercasing reorders anything whose neighbours differ only in case: an
-            // ALL-CAPS name like "XIN YUAN" sorts before "Xiaobo Ma" raw, but after it
-            // lowercased. `make` re-sorted such rows afterwards, so the data self-healed,
-            // but the PR itself carried a misplaced row and a noisier diff.
-            const sortKey = (s) => s;
+            // normalize() is not good enough here: it strips combining marks via NFD, but
+            // NFD does not decompose characters that carry no combining mark. Those need
+            // an explicit table. The entries below are exactly the characters that occur
+            // in the faculty CSVs today and that NFD leaves alone -- derived from the data,
+            // not guessed. Add to it if unidecode and NFD ever disagree on a new name.
+            const transliterate = {
+              'ø': 'o',  'Ø': 'O',   // LATIN {SMALL,CAPITAL} LETTER O WITH STROKE
+              'ß': 'ss',             // LATIN SMALL LETTER SHARP S
+              'æ': 'ae', 'Æ': 'AE',  // LATIN {SMALL,CAPITAL} LETTER AE
+              'ł': 'l',  'Ł': 'L',   // LATIN {SMALL,CAPITAL} LETTER L WITH STROKE
+              'ı': 'i',              // LATIN SMALL LETTER DOTLESS I
+              'þ': 'th', 'Þ': 'Th',  // LATIN {SMALL,CAPITAL} LETTER THORN
+              'ð': 'd',  'Ð': 'D',   // LATIN {SMALL,CAPITAL} LETTER ETH
+              'œ': 'oe', 'Œ': 'OE',  // LATIN {SMALL,CAPITAL} LIGATURE OE
+              'đ': 'd',  'Đ': 'D',   // LATIN {SMALL,CAPITAL} LETTER D WITH STROKE
+              ' ': ' ',         // NO-BREAK SPACE (present in a few names)
+              '­': ''           // SOFT HYPHEN (present in a few names)
+            };
+            const sortKey = (s) =>
+              s.normalize('NFD')
+               .replace(/[̀-ͯ]/g, '')
+               .replace(/[øØßæÆłŁıþÞðÐœŒđĐ ­]/g, (c) => transliterate[c])
+               .toLowerCase()
+               .trim();
 
 
             // Map a name to the csrankings-*.csv file it belongs in. Mirrors

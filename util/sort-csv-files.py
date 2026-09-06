@@ -1,7 +1,21 @@
 import pandas as pd
 import json
 import os
+import unidecode
 from glob import glob
+
+# Sort keys a directive may request via "sort_key". The default is a plain
+# case-sensitive comparison of the raw value.
+#
+# "unidecode_lower" matches normalize_name_for_sorting() in util/validate_commit.py,
+# which is what the CI bot uses to check that new entries are inserted in
+# alphabetical order. The faculty files use it so that the order the build
+# produces and the order CI enforces are the same thing -- otherwise CI rejects
+# correctly-placed entries wherever the two disagree (which was the case for 475
+# adjacent pairs before this was reconciled).
+SORT_KEYS = {
+    "unidecode_lower": lambda s: unidecode.unidecode(str(s)).lower().strip(),
+}
 
 def get_line_ending(file_path):
     with open(file_path, 'rb') as f:
@@ -21,7 +35,14 @@ def sort_csv_files(directives_file):
         files = directive['files']
         sort_columns = directive['sort_columns']
         sort_orders = directive.get('sort_orders', [True] * len(sort_columns))
-        
+        sort_key_name = directive.get('sort_key')
+        if sort_key_name is not None and sort_key_name not in SORT_KEYS:
+            raise ValueError(
+                f"Unknown sort_key {sort_key_name!r} in {directives_file}; "
+                f"known keys: {sorted(SORT_KEYS)}"
+            )
+        sort_key = SORT_KEYS.get(sort_key_name)
+
         for file_pattern in files:
             for file_path in glob(file_pattern):
                 print(f"Processing {file_path}")
@@ -35,7 +56,28 @@ def sort_csv_files(directives_file):
                     for col in sort_columns
                 ]
                 
-                sorted_df = df.sort_values(by=sort_columns_actual, ascending=sort_orders)
+                if sort_key is None:
+                    sorted_df = df.sort_values(by=sort_columns_actual, ascending=sort_orders)
+                else:
+                    # kind='stable' matters here. The default quicksort is not stable, and
+                    # a normalized key creates ties that raw values never had: accent-alias
+                    # pairs such as "Eray Tuzun"/"Eray Tüzün" share a key. With an unstable
+                    # sort those rows swap on every run, so `make` would emit a spurious
+                    # diff each time. Stable sorting keeps tied rows in their existing
+                    # order, which makes repeated runs a no-op.
+                    # Sort on derived key columns rather than passing a `key=` callable,
+                    # so the transform applies only to the columns being sorted and the
+                    # stored values are left untouched. Temporary columns are dropped
+                    # before writing, so the output schema is unchanged.
+                    key_columns = []
+                    for col in sort_columns_actual:
+                        key_col = f"__sortkey__{col}"
+                        df[key_col] = df[col].map(sort_key)
+                        key_columns.append(key_col)
+                    sorted_df = df.sort_values(
+                        by=key_columns, ascending=sort_orders, kind='stable'
+                    )
+                    sorted_df = sorted_df.drop(columns=key_columns)
 
                 # Write the sorted DataFrame to a temporary file with the specified line ending
                 temp_file_path = file_path + '.tmp'
