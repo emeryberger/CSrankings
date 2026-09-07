@@ -34,6 +34,10 @@ from validate_commit import normalize_name_for_sorting  # noqa: E402
 
 # Files whose name column is sorted with the normalized key. Must stay in step
 # with the "sort_key": "unidecode_lower" directives in sort_directives.json.
+PLACEHOLDER_ORCID = "0000-0000-0000-0000"
+
+# Files whose name column is sorted with the normalized key. Must stay in step
+# with the "sort_key": "unidecode_lower" directives in sort_directives.json.
 NAME_SORTED_GLOBS = ["csrankings-[a-z].csv", "old/industry.csv",
                      "old/rip.csv", "old/emeritus.csv"]
 
@@ -175,4 +179,58 @@ def test_industry_csv_row_width():
     assert not misplaced, (
         f"{len(misplaced)} row(s) have an ORCID in the `company` column; "
         f"first: {misplaced[0]}"
+    )
+
+
+def test_orcid_csv_is_in_sync():
+    """orcid.csv agrees with the faculty CSVs.
+
+    orcid.csv is a name -> ORCID lookup table that util/build-orcid-csv.py builds
+    by querying the ORCID API (~45 minutes), so it cannot be regenerated on every
+    build and used to drift badly: 916 names whose CSV row held a real ORCID were
+    still recorded as the placeholder here. `make` now runs
+    util/sync-orcid-csv.py, which reconciles the table locally without API access;
+    this test fails if that has not happened.
+    """
+    proc = subprocess.run(
+        [sys.executable, os.path.join("util", "sync-orcid-csv.py"), "--check"],
+        cwd=REPO_ROOT, capture_output=True, text=True, timeout=600,
+    )
+    assert proc.returncode == 0, (
+        f"orcid.csv is out of sync with the faculty CSVs.\n"
+        f"Run: python3 util/sync-orcid-csv.py\n\n{proc.stdout}\n{proc.stderr}"
+    )
+
+
+@pytest.mark.parametrize("path", name_sorted_files(),
+                         ids=lambda p: os.path.relpath(p, REPO_ROOT))
+def test_no_whitespace_padded_names(path):
+    """A name with stray leading/trailing whitespace matches nothing in DBLP.
+
+    'Haipeng Zhang 0004 ' sat in csrankings-h.csv with a trailing space, so it
+    could not match DBLP's 'Haipeng Zhang 0004' and that person's publications
+    were not being counted.
+    """
+    bad = [n for n in names_in(path) if n != n.strip()]
+    assert not bad, f"{os.path.relpath(path, REPO_ROOT)}: names with stray whitespace: {bad}"
+
+
+@pytest.mark.parametrize("path", name_sorted_files(),
+                         ids=lambda p: os.path.relpath(p, REPO_ROOT))
+def test_orcid_field_is_never_empty(path):
+    """An absent ORCID is written as the placeholder, not as an empty field.
+
+    An empty trailing field is indistinguishable from a truncated row and defeats
+    tooling that checks for the placeholder.
+    """
+    with open(path, newline="", encoding="utf-8") as f:
+        rows = [r for r in csv.reader(f) if r]
+    header = rows[0]
+    if "orcid" not in header:
+        pytest.skip(f"{os.path.basename(path)} has no orcid column")
+    idx = header.index("orcid")
+    bad = [r[0] for r in rows[1:] if len(r) > idx and r[idx].strip() == ""]
+    assert not bad, (
+        f"{os.path.relpath(path, REPO_ROOT)}: {len(bad)} row(s) with an empty orcid "
+        f"field (use {PLACEHOLDER_ORCID!r}); first: {bad[0]}"
     )

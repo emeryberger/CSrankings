@@ -24,3 +24,24 @@ jobs:
           days-before-pr-close: 2
           days-before-issue-stale: -1
           days-before-issue-close: -1
+
+          # A comment or push by the contributor clears the stale label, so a PR
+          # that gets a reply is not closed out from under them. This is the
+          # action's default, set explicitly so the guarantee is visible here and
+          # survives a change of defaults upstream.
+          #
+          # Note the granularity: the action keys off the GitHub `updated_at`
+          # field, so *any* activity clears the label -- including a comment from
+          # a maintainer or from the validation bot, not only from the PR author.
+          # The action cannot filter by comment author.
+          remove-stale-when-updated: true
+          remove-pr-stale-when-updated: true
+
+          # The default is 30, which is not enough to reach every PR here: with
+          # ~75 open PRs, and each one potentially costing several API calls to
+          # inspect, label, unlabel or close, the run would exhaust its budget
+          # partway through and silently skip the rest. A contributor who replied
+          # could then keep the stale label -- and be closed -- simply because the
+          # action never got to their PR. 300 covers the current queue with room
+          # to grow and stays far inside the hourly API rate limit.
+          operations-per-run: 300

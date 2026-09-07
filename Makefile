@@ -67,6 +67,7 @@ clean-csrankings:
 	@echo "Cleaning."
 	@$(PYTHON) util/clean-csrankings.py
 	@$(PYTHON) util/sort-csv-files.py
+	@$(PYTHON) util/sync-orcid-csv.py
 	@echo "Done."
 
 home-pages: faculty-affiliations.csv homepages.csv
