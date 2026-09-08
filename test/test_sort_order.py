@@ -42,6 +42,17 @@ NAME_SORTED_GLOBS = ["csrankings-[a-z].csv", "old/industry.csv",
                      "old/rip.csv", "old/emeritus.csv"]
 
 
+# Invariants that only hold *after* `make` has normalized the tree.
+#
+# The post-merge workflow runs the test suite as a gate on the build job that
+# runs `make` -- so a check that only `make` can satisfy deadlocks it: the test
+# fails, `make` never runs, and the drift it was reporting is never repaired.
+# Merging PR #14251 hit exactly that. These are deselected in the gating run
+# and re-run after `make` in the build job, where they verify that `make`
+# actually left the tree normalized.
+postmake = pytest.mark.postmake
+
+
 def name_sorted_files():
     out = []
     for pattern in NAME_SORTED_GLOBS:
@@ -54,6 +65,7 @@ def names_in(path):
         return [r[0] for r in csv.reader(f) if r and r[0] != "name"]
 
 
+@postmake
 @pytest.mark.parametrize("path", name_sorted_files(),
                          ids=lambda p: os.path.relpath(p, REPO_ROOT))
 def test_file_is_sorted_by_validator_key(path):
@@ -182,6 +194,7 @@ def test_industry_csv_row_width():
     )
 
 
+@postmake
 def test_orcid_csv_is_in_sync():
     """orcid.csv agrees with the faculty CSVs.
 
