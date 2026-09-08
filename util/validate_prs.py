@@ -20,6 +20,20 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Optional
 
+try:
+    # The canonical definition; CI enforces this ordering.
+    from validate_commit import normalize_name_for_sorting
+except ImportError:
+    # validate_commit pulls in CI-only dependencies (fuzzysearch) that a
+    # maintainer running this script locally need not have. Fall back to the
+    # same expression -- test_sort_order.py asserts the two agree, so this
+    # cannot drift silently.
+    import unidecode
+
+    def normalize_name_for_sorting(name: str) -> str:
+        """Normalize a name for alphabetical comparison."""
+        return unidecode.unidecode(name).lower().strip()
+
 REPO = "emeryberger/CSrankings"
 BASEDIR = Path(__file__).parent.parent
 VALIDATION_FOOTER = "Automated validation analysis based on [VALIDATION.md]"
@@ -150,12 +164,31 @@ def get_pr_merge_status(pr_number: int) -> tuple[str, str]:
 
 def get_pr_branch(pr_number: int) -> Optional[str]:
     """Get the head branch name for a PR."""
+    head = get_pr_head(pr_number)
+    return head["branch"] if head else None
+
+
+def get_pr_head(pr_number: int) -> Optional[dict]:
+    """Head branch, head repository, and whether maintainers may push to it.
+
+    Most PRs here come from forks, so the head branch does not exist on
+    `origin`. Anything that writes to a PR branch needs the head repository,
+    not just the branch name.
+    """
     try:
         info = run_gh([
             "pr", "view", str(pr_number), "--repo", REPO,
-            "--json", "headRefName"
+            "--json", "headRefName,headRepositoryOwner,headRepository,maintainerCanModify"
         ])
-        return info.get("headRefName") if info else None
+        if not info or not info.get("headRefName"):
+            return None
+        owner = (info.get("headRepositoryOwner") or {}).get("login") or ""
+        name = (info.get("headRepository") or {}).get("name") or ""
+        return {
+            "branch": info["headRefName"],
+            "repo": f"{owner}/{name}" if owner and name else REPO,
+            "maintainer_can_modify": bool(info.get("maintainerCanModify")),
+        }
     except Exception:
         return None
 
@@ -423,6 +456,78 @@ def is_csv_only_pr(pr_number: int) -> bool:
     return bool(files) and all(f.endswith(".csv") for f in files)
 
 
+
+def _sort_key_for_line(line: str) -> str:
+    """Canonical sort key for a CSV data row: the normalized name column.
+
+    Must match normalize_name_for_sorting() in util/validate_commit.py (what CI
+    enforces) and the "unidecode_lower" key in sort_directives.json (what
+    `make` writes). Sorting by the raw line instead -- as this used to -- puts
+    rows where CI then rejects them.
+    """
+    try:
+        name = next(csv.reader(io.StringIO(line)))[0]
+    except Exception:
+        name = line
+    return normalize_name_for_sorting(name)
+
+
+def _apply_csv_changes(path, net_adds: set, net_rems: set) -> tuple[bool, list]:
+    """Apply additions/removals to a CSV in place, leaving other rows untouched.
+
+    This used to read the file, drop every row into a set, and rewrite the whole
+    thing with `sorted()` and "\n" endings. That reformatted files that were
+    CRLF-encoded and re-ordered them with a raw byte sort rather than the
+    normalized key, so a one-row fix landed as a whole-file rewrite -- PR #14135
+    resolved as a 2,271-line diff on csrankings-l.csv, none of it the
+    contributor's change. Editing in place keeps the diff to the rows that
+    actually changed.
+    """
+    with open(path, "rb") as f:
+        raw = f.read()
+    nl = "\r\n" if b"\r\n" in raw.split(b"\n", 1)[0] + b"\n" else "\n"
+    text = raw.decode("utf-8")
+    lines = text.split("\r\n") if nl == "\r\n" else text.split("\n")
+    while lines and lines[-1] == "":
+        lines.pop()
+    if not lines:
+        return False, []
+
+    header, data = lines[0], lines[1:]
+    before = list(data)
+
+    # A removal whose line no longer matches gh-pages byte-for-byte -- because
+    # the row was edited after the PR was opened -- would otherwise be dropped
+    # in silence, leaving the PR reported as resolved while part of its change
+    # never landed. Report those instead.
+    unmatched = sorted(set(net_rems) - set(data))
+    if net_rems:
+        rems = set(net_rems)
+        data = [ln for ln in data if ln not in rems]
+
+    existing = set(data)
+    for line in sorted(net_adds):
+        if line in existing:
+            continue
+        key = _sort_key_for_line(line)
+        pos = len(data)
+        for i, ln in enumerate(data):
+            if _sort_key_for_line(ln) > key:
+                pos = i
+                break
+        data.insert(pos, line)
+        existing.add(line)
+
+    if data == before:
+        return False, unmatched
+
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        f.write(header + nl)
+        for line in data:
+            f.write(line + nl)
+    return True, unmatched
+
+
 def resolve_conflicts(pr_number: int, dry_run: bool = False) -> tuple[bool, str]:
     """
     Auto-resolve merge conflicts for CSV-only PRs by replaying changes
@@ -433,9 +538,30 @@ def resolve_conflicts(pr_number: int, dry_run: bool = False) -> tuple[bool, str]
     to the PR's branch.
     """
     # Get PR info
-    branch = get_pr_branch(pr_number)
-    if not branch:
+    head = get_pr_head(pr_number)
+    if not head:
         return False, "Could not determine branch name"
+    branch = head["branch"]
+
+    # Work out where the result has to be pushed before touching the working
+    # tree, so an unpushable PR costs nothing and leaves nothing behind.
+    #
+    # This used to be hardcoded to "origin", so for a fork-based PR -- which is
+    # nearly all of them -- git created a branch of that name in the *base*
+    # repo and reported success, while the PR head never moved. The caller then
+    # saw "Resolved" and tried to merge an unchanged, still-conflicting PR.
+    # (That is how the stray `oxford-updates` branch appeared here; it has been
+    # deleted.)
+    if head["repo"] == REPO:
+        push_remote = "origin"
+    elif not head["maintainer_can_modify"]:
+        return False, (
+            f"PR head is {head['repo']}:{branch} and 'Allow edits by maintainers' "
+            f"is off, so the branch cannot be updated. Ask the contributor to "
+            f"rebase, or apply the change directly."
+        )
+    else:
+        push_remote = f"https://github.com/{head['repo']}.git"
 
     files = get_pr_files(pr_number)
     if not files:
@@ -467,6 +593,7 @@ def resolve_conflicts(pr_number: int, dry_run: bool = False) -> tuple[bool, str]
 
         # Apply changes
         modified = []
+        stale: list[str] = []
         for filepath, (net_adds, net_rems) in changes.items():
             fullpath = BASEDIR / filepath
             if not fullpath.exists():
@@ -481,24 +608,18 @@ def resolve_conflicts(pr_number: int, dry_run: bool = False) -> tuple[bool, str]
                     modified.append(filepath)
                 continue
 
-            with open(fullpath, "r") as f:
-                content = f.read()
-            lines = content.strip().split("\n")
-            header = lines[0]
-            data = set(lines[1:])
+            changed, unmatched = _apply_csv_changes(fullpath, net_adds, net_rems)
+            if unmatched:
+                stale.extend(f"{filepath}: {u}" for u in unmatched)
+            if changed:
+                modified.append(filepath)
 
-            # Apply removals
-            for line in net_rems:
-                data.discard(line)
-            # Apply additions
-            for line in net_adds:
-                data.add(line)
-
-            with open(fullpath, "w") as f:
-                f.write(header + "\n")
-                for line in sorted(data):
-                    f.write(line + "\n")
-            modified.append(filepath)
+        if stale:
+            return False, (
+                f"{len(stale)} row(s) the PR removes no longer match gh-pages, so "
+                f"replaying it would drop part of its change. Resolve by hand. "
+                f"First: {stale[0]}"
+            )
 
         if not modified:
             return False, "No files were modified"
@@ -511,11 +632,12 @@ def resolve_conflicts(pr_number: int, dry_run: bool = False) -> tuple[bool, str]
         if r.returncode != 0:
             return False, f"Commit failed: {r.stderr}"
 
-        r = run_git(["push", "origin", f"_resolve-{pr_number}:{branch}", "--force"], timeout=120)
+        r = run_git(["push", push_remote, f"_resolve-{pr_number}:{branch}", "--force"],
+                    timeout=120)
         if r.returncode != 0:
             return False, f"Push failed: {r.stderr}"
 
-        return True, f"Resolved: updated {len(modified)} files on branch {branch}"
+        return True, f"Resolved: updated {len(modified)} files on {head['repo']}:{branch}"
 
     finally:
         # Restore state
