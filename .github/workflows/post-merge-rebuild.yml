@@ -69,6 +69,11 @@ jobs:
         run: |
           pip install -r requirements.txt
           npm install -g google-closure-compiler
+          # pytest is needed for the post-make invariant check below. selenium
+          # and webdriver-manager are not exercised -- `-m postmake` deselects
+          # the browser tests -- but test/test_incremental.py imports selenium
+          # at module scope, so collection fails without them. No Chrome needed.
+          pip install pytest selenium webdriver-manager
 
       - name: Run make
         run: |
