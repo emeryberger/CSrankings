@@ -13,6 +13,9 @@ __pycache__/
 .DS_Store
 prev-dblp.xml.gz
 
+# Release date of the last DBLP download, written by util/download-dblp-release.py
+dblp-release-date.txt
+
 # Intermediate TypeScript build output (concatenated into csrankings.js)
 build/
 

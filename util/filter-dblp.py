@@ -23,6 +23,7 @@ Performance:
     - Memory usage: ~100MB constant (streaming)
 """
 
+import os
 import sys
 
 try:
@@ -168,6 +169,21 @@ JOURNALS = frozenset([
 ])
 
 
+class LocalDTDResolver(etree.Resolver):
+    """Serve the local dblp.dtd for whatever DTD name the dump declares.
+
+    The rolling dump declares SYSTEM "dblp.dtd", but the monthly releases on
+    drops.dagstuhl.de declare a dated name such as "dblp-2023-06-28.dtd". Without
+    this, lxml looks for that file next to the input, finds nothing, and every
+    &Eacute;-style entity becomes a hard parse error.
+    """
+
+    def resolve(self, system_url, public_id, context):
+        if os.path.basename(system_url).startswith("dblp") and system_url.endswith(".dtd"):
+            return self.resolve_filename(os.path.abspath("dblp.dtd"), context)
+        return None
+
+
 def main():
     print("Filtering DBLP (lxml iterparse)...", file=sys.stderr)
 
@@ -180,6 +196,7 @@ def main():
         resolve_entities=True,
         huge_tree=True,  # Allow large text content
     )
+    parser.resolvers.add(LocalDTDResolver())
 
     output = sys.stdout
     output.write('<dblp>')

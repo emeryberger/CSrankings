@@ -1,9 +1,32 @@
 # DBLP Processing
 
 The `make update-dblp` target downloads and filters the DBLP database:
-1. Downloads ~3GB compressed XML from dblp.uni-trier.de
+1. Downloads the latest monthly DBLP release (~1GB compressed XML) from the Dagstuhl DROPS archive
 2. Filters to only CSRankings-relevant venues using lxml iterparse
 3. Output: ~53MB compressed (~450k publications)
+
+## Where the Data Comes From
+
+Downloads use the dated monthly releases at
+`https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-01.xml.gz`,
+via `util/download-dblp-release.py`. The rolling dump at `dblp.org/xml/dblp.xml.gz`
+(and the `dblp.uni-trier.de` mirror) has sat behind an Anubis proof-of-work bot
+check since September 2026: curl gets a 200 with a small HTML challenge page
+instead of the data, which is what broke the monthly update.
+
+The script:
+- tries the current month's release, then the previous month's (releases appear
+  within a few days of the 1st; the workflow runs on the 28th)
+- downloads with `curl -f` and refuses anything that does not start with the
+  gzip magic bytes, so an HTML page can never masquerade as data again
+- records the release date in `dblp-release-date.txt` (gitignored), which
+  `make update-dblp-date` uses to stamp `index.html` with the month of the data
+  actually used
+
+The releases declare a dated DTD (e.g. `dblp-2023-06-28.dtd`) rather than
+`dblp.dtd`. `util/filter-dblp.py` and `util/generate-aliases.py` register an
+lxml resolver that maps any `dblp*.dtd` to the local `dblp.dtd`; without it,
+entity references such as `&Eacute;` are hard parse errors.
 
 ## Streaming Filter (lxml)
 
@@ -51,7 +74,7 @@ make update-dblp-full
 
 This performs all 7 steps automatically:
 1. **Backup** - Saves current `dblp-original.xml.gz` to `prev-dblp.xml.gz`
-2. **Download** - Fetches new DBLP dump from dblp.uni-trier.de (~3GB)
+2. **Download** - Fetches the latest monthly DBLP release from drops.dagstuhl.de (~1GB)
 3. **Filter** - Shrinks to CSRankings venues via streaming SAX parser (~53MB)
 4. **Aliases** - Generates `dblp-aliases.csv`
 5. **Name changes** - Detects and applies author name changes to `csrankings-*.csv`

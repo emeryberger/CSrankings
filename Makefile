@@ -12,8 +12,11 @@ TARGETS = csrankings.js csrankings.min.js submit/submit.js generated-author-info
 PYTHON = python3.12 # 3.7
 PYPY   = python3.12 # pypy
 
-# DBLP   = dblp.org
-DBLP   = dblp.uni-trier.de
+# DBLP downloads come from the Dagstuhl DROPS release archive, not from
+# dblp.org / dblp.uni-trier.de: since September 2026 those sit behind an Anubis
+# bot check that hands curl an HTML challenge page instead of dblp.xml.gz.
+# See util/download-dblp-release.py.
+DBLP   = drops.dagstuhl.de
 
 # Note: BaseX is no longer used for DBLP filtering. We now use a streaming Python SAX parser
 # which uses constant memory (~50MB) instead of loading the entire document (~11GB).
@@ -49,9 +52,9 @@ clean-dblp:
 	$(PYTHON) util/find-missing-names-dblp.py
 
 download-dblp:
-	@echo "Downloading from DBLP."
+	@echo "Downloading the latest monthly DBLP release from $(DBLP)."
 	rm -f dblp.xml.gz
-	curl -o dblp-original.xml.gz https://$(DBLP)/xml/dblp.xml.gz
+	$(PYTHON) util/download-dblp-release.py --output dblp-original.xml.gz
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file (streaming, low memory)."
@@ -113,9 +116,11 @@ collab-graph: generated-author-info.csv faculty-coauthors.csv
 	$(PYTHON) util/make-collaboration-graph.py
 
 # Update the DBLP date in index.html to current month/year
+# Stamps the month of the release that download-dblp actually fetched (recorded
+# in dblp-release-date.txt), falling back to the current month if there is none.
 update-dblp-date:
 	@echo "Updating DBLP date in index.html..."
-	@MONTH_YEAR=$$(date "+%B %Y"); \
+	@MONTH_YEAR=$$($(PYTHON) util/download-dblp-release.py --print-month); \
 	sed -i.bak -E "s/(DBLP<\/a> \()[A-Za-z]+ [0-9]{4}(\))/\1$$MONTH_YEAR\2/" index.html && \
 	rm -f index.html.bak && \
 	echo "Updated to: $$MONTH_YEAR"
@@ -149,8 +154,7 @@ download-prev-dblp:
 	fi; \
 	RELEASE_DATE="$$YEAR-$$MONTH_NUM-01"; \
 	echo "Last update was: $$MONTH_YEAR -> downloading dblp-$$RELEASE_DATE.xml.gz"; \
-	curl -f -o dblp-original.xml.gz "https://drops.dagstuhl.de/storage/artifacts/dblp/xml/$$YEAR/dblp-$$RELEASE_DATE.xml.gz" || \
-		(echo "Error: Failed to download DBLP release for $$RELEASE_DATE" && exit 1)
+	$(PYTHON) util/download-dblp-release.py --release "$$RELEASE_DATE" --output dblp-original.xml.gz
 
 # Detect DBLP author name changes (dry-run preview)
 # Requires: prev-dblp.xml.gz (previous DBLP dump) and dblp-original.xml.gz (current)
