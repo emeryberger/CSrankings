@@ -4,6 +4,12 @@ dblp-original.xml.gz
 homepages.csv
 scholar.csv
 util/__pycache__/*
+
+# Any Python bytecode, not just util/'s. post-merge-rebuild.yml now runs pytest
+# in the same job that does `git add -A`, so test/__pycache__ was swept into an
+# auto-commit; the narrower rule above did not cover it.
+__pycache__/
+*.py[cod]
 .DS_Store
 prev-dblp.xml.gz
 

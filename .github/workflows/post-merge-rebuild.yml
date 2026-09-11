@@ -41,8 +41,13 @@ jobs:
       - name: Set up Chrome
         uses: browser-actions/setup-chrome@latest
 
+      # Deselect the `postmake` invariants (sort order, orcid.csv sync). They
+      # can only be satisfied by `make`, which runs in the build job below --
+      # gating that job on them deadlocks: the test fails, `make` never runs,
+      # and the drift it reported is never repaired. They are re-run after
+      # `make` in build-and-commit, where they are meaningful.
       - name: Run tests
-        run: python3 -m pytest test/ -v
+        run: python3 -m pytest test/ -v -m "not postmake"
 
   build-and-commit:
     runs-on: ubuntu-latest
@@ -64,10 +69,21 @@ jobs:
         run: |
           pip install -r requirements.txt
           npm install -g google-closure-compiler
+          # pytest is needed for the post-make invariant check below. selenium
+          # and webdriver-manager are not exercised -- `-m postmake` deselects
+          # the browser tests -- but test/test_incremental.py imports selenium
+          # at module scope, so collection fails without them. No Chrome needed.
+          pip install pytest selenium webdriver-manager
 
       - name: Run make
         run: |
           make
+
+      # `make` is what normalizes the tree, so these run here rather than in
+      # the gating job. A failure means `make` did not leave the tree in the
+      # state it is supposed to -- a real defect in the build, not stale data.
+      - name: Verify post-make invariants
+        run: python3 -m pytest test/ -v -m postmake
 
       - name: Commit and push changes
         run: |
