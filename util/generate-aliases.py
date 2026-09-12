@@ -34,8 +34,12 @@ def parseDBLP(facultydict):
 
         oldnode = None
 
+        # resolve_entities=True is required, not just the default: lxml >= 6.1
+        # defaults to 'internal', under which parameter entities in the external
+        # DTD (e.g. %field; in dblp.dtd) are never defined and parsing fails with
+        # "Entity 'field' not defined". filter-dblp.py sets it the same way.
         parser = ElementTree.iterparse(
-            f, events=["start", "end"], load_dtd=True
+            f, events=["start", "end"], load_dtd=True, resolve_entities=True
         )
         # The monthly releases declare a dated DTD (e.g. dblp-2023-06-28.dtd);
         # map any dblp*.dtd to the local dblp.dtd so entities still resolve.
