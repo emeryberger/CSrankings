@@ -31,6 +31,8 @@ import os
 import sys
 from typing import Dict, List, Tuple
 
+from csv_text import clean_field
+
 PLACEHOLDER = "0000-0000-0000-0000"
 ORCID_FILE = "orcid.csv"
 HEADER = ["name", "orcid"]
@@ -66,7 +68,7 @@ def load_faculty() -> Dict[str, str]:
             if not reader.fieldnames or "orcid" not in reader.fieldnames:
                 continue
             for row in reader:
-                name = (row.get("name") or "").strip()
+                name = clean_field(row.get("name") or "")
                 if not name:
                     continue
                 orcid = (row.get("orcid") or "").strip()
@@ -78,15 +80,22 @@ def load_faculty() -> Dict[str, str]:
     return faculty
 
 
-def load_table() -> Dict[str, str]:
+def load_table() -> Tuple[Dict[str, str], int]:
+    """name -> ORCID from orcid.csv, plus how many names on disk needed cleaning."""
     if not os.path.exists(ORCID_FILE):
-        return {}
+        return {}, 0
     out: Dict[str, str] = {}
+    unclean = 0
     with open(ORCID_FILE, newline="", encoding="utf-8") as f:
         for row in csv.reader(f):
             if len(row) >= 2 and row[0] != "name":
-                out[row[0]] = row[1]
-    return out
+                # Clean names so an entry recorded with an NBSP merges with the
+                # corrected faculty row instead of lingering as a separate name.
+                name = clean_field(row[0])
+                unclean += name != row[0]
+                if name not in out or (is_real(row[1]) and not is_real(out[name])):
+                    out[name] = row[1]
+    return out, unclean
 
 
 def reconcile(faculty: Dict[str, str], table: Dict[str, str]):
@@ -150,13 +159,14 @@ def main() -> int:
     if not faculty:
         print("No faculty CSVs found; refusing to rewrite orcid.csv.", file=sys.stderr)
         return 1
-    table = load_table()
+    table, unclean = load_table()
 
     merged, added, updated, removed, conflicts, csv_could_gain = reconcile(faculty, table)
 
-    drift = len(added) + len(updated) + len(removed)
+    drift = len(added) + len(updated) + len(removed) + unclean
     print(f"orcid.csv: {len(table)} entries -> {len(merged)} "
-          f"(+{len(added)} added, {len(updated)} updated, -{len(removed)} removed)")
+          f"(+{len(added)} added, {len(updated)} updated, -{len(removed)} removed, "
+          f"{unclean} name(s) cleaned of invisible characters)")
 
     if conflicts:
         print(f"  WARNING: {len(conflicts)} name(s) have a different real ORCID in "

@@ -18,6 +18,8 @@ import time
 # import urllib2
 import xmltodict
 
+from csv_text import clean_field
+
 
 # make random REALLY random.
 seed = random.SystemRandom().random()
@@ -118,8 +120,10 @@ for letter in map(chr, range(ord('a'),ord('z')+1)):
         reader = csv.DictReader(infile)
         fieldnames = reader.fieldnames  # Preserve original field order
         for row in reader:
-            # Store all fields, not just known ones
-            csrankings[row["name"]] = dict(row)
+            # Store all fields, not just known ones. Fields are cleaned of NBSPs
+            # and other invisible characters, which silently break DBLP matching.
+            row = {k: clean_field(v or "") for k, v in row.items()}
+            csrankings[row["name"]] = row
     with open(f"csrankings-{letter}.csv", mode="w") as outfile:
         swriter = csv.DictWriter(outfile, fieldnames=fieldnames)
         swriter.writeheader()

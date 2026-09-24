@@ -21,6 +21,7 @@ SUCCESS = "\U00002705"
 # Import from same directory (add util/ to path when running from repo root)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
+from csv_text import find_bad_chars
 
 # ---------- Checkbox References ----------
 # These map to footnotes in .github/PULL_REQUEST_TEMPLATE.md
@@ -845,6 +846,14 @@ def process_csv_diff(diff_path: str) -> bool:
 
                 if re.search(r',\s', line):
                     print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['csv_format']} Space after comma: {line}")
+                    valid = False
+                    continue
+
+                # Invisible look-alikes (NBSP, soft hyphen, zero-width space...)
+                # render like ASCII but make the name miss its DBLP entry.
+                bad_chars = find_bad_chars(line)
+                if bad_chars:
+                    print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['csv_format']} Invisible or non-standard character(s) {', '.join(bad_chars)} in: {line!r}. Use plain ASCII spaces and hyphens (retype the name rather than copying it from a web page).")
                     valid = False
                     continue
                 try:

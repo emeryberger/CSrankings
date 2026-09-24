@@ -11,6 +11,8 @@ import sys
 import operator
 import string
 
+from csv_text import clean_field
+
 
 def csv2dict_str_str(fname):
     """Takes a CSV file and returns a dictionary of pairs."""
@@ -44,6 +46,9 @@ with open("csrankings.csv", mode="w") as outfile:
             lineno = 2
             for row in reader:
                 try:
+                    # Strip NBSPs and other invisible characters so a name that
+                    # merely looks right still matches DBLP (see csv_text.py).
+                    row = {k: clean_field(v or "") for k, v in row.items()}
                     # Ensure orcid field exists (for backwards compatibility)
                     if "orcid" in fieldnames and "orcid" not in row:
                         row["orcid"] = "0000-0000-0000-0000"

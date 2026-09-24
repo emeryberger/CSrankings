@@ -221,6 +221,19 @@ jobs:
 
             console.log(`Batch submissions: ${batchSubmissions.length}, Individual: ${individualSubmissions.length}`);
 
+            // Replace invisible look-alike characters that users paste from web
+            // pages. A name like "Jun Wen<NBSP>0001" renders correctly but matches
+            // no DBLP author, so the person silently gets zero publications
+            // (PR #13468). Mirrors clean_field() in util/csv_text.py; newlines are
+            // preserved because the batch "CSV Lines" field is multi-line.
+            const cleanField = (s) => s
+              .normalize('NFC')
+              .replace(/\u00ad/g, '-')                          // SOFT HYPHEN
+              .replace(/[\u200b\u200c\u200d\u2060\ufeff]/g, '')  // zero-width chars
+              .replace(/[^\S\n ]/g, ' ')                        // NBSP, thin space, tab, CR...
+              .replace(/ {2,}/g, ' ')
+              .split('\n').map(l => l.trim()).join('\n');
+
             // Helper to parse issue body
             const parseField = (body, label) => {
               // Match "### Label" followed by 1-2 newlines, then capture until next ### or end
@@ -232,7 +245,7 @@ jobs:
               if (value.startsWith('```')) {
                 value = value.replace(/^```[^\n]*\n/, '').replace(/\n```$/, '');
               }
-              return value.trim();
+              return cleanField(value).trim();
             };
 
             const parseAction = (body) => {
