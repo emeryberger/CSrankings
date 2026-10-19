@@ -22,6 +22,7 @@ SUCCESS = "\U00002705"
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 from csv_text import find_bad_chars
+from dblp_local import get_index as get_dblp_index, format_names, has_suffix
 
 # ---------- Checkbox References ----------
 # These map to footnotes in .github/PULL_REQUEST_TEMPLATE.md
@@ -199,6 +200,16 @@ def is_dblp_rate_limited(response: requests.Response) -> bool:
     return "429 Too Many Requests" in response.text[:2000]
 
 
+def is_dblp_bot_check(response: requests.Response) -> bool:
+    """DBLP's Anubis proof-of-work challenge arrives as an HTTP 202 HTML page.
+    It cannot be passed from a script, so retrying is pointless."""
+    return response.status_code == 202 or "not a bot" in response.text[:3000]
+
+
+class DblpBotCheck(RuntimeError):
+    pass
+
+
 def get_dblp_info(path: str, timeout: float = 10.0) -> str:
     urls = [
         f"https://dblp.org{path}",
@@ -212,6 +223,8 @@ def get_dblp_info(path: str, timeout: float = 10.0) -> str:
         for url in urls:
             try:
                 response = requests.get(url, timeout=timeout)
+                if is_dblp_bot_check(response):
+                    raise DblpBotCheck(url)
                 if response.ok and not is_dblp_rate_limited(response):
                     return url
                 if response.status_code == 429:
@@ -299,6 +312,8 @@ def matching_name_with_dblp(name: str) -> int:
     author_name = translate_name_to_dblp(name)
     try:
         dblp_url = f'{get_dblp()}/search/author/api?q=author%3A{author_name}$%3A&format=json&c=10'
+    except DblpBotCheck:
+        return _dblp_blocked_by_bot_check()
     except RuntimeError:
         _dblp_consecutive_failures += 1
         return DBLP_UNAVAILABLE
@@ -308,6 +323,8 @@ def matching_name_with_dblp(name: str) -> int:
         retry_after = None
         try:
             r = requests.get(dblp_url, timeout=30.0)
+            if is_dblp_bot_check(r):
+                return _dblp_blocked_by_bot_check()
             if is_dblp_rate_limited(r):
                 retry_after = r.headers.get("Retry-After")
                 last_error = "rate limited"
@@ -334,6 +351,70 @@ def matching_name_with_dblp(name: str) -> int:
     if _dblp_consecutive_failures == DBLP_GIVE_UP_AFTER:
         print(f"\t{WARN}\tDBLP appears to be down; skipping DBLP name checks for the rest of this run.")
     return DBLP_UNAVAILABLE
+
+
+def _dblp_blocked_by_bot_check() -> int:
+    global _dblp_consecutive_failures
+    if _dblp_consecutive_failures < DBLP_GIVE_UP_AFTER:
+        print(f"\t{INFO}\tLive DBLP is behind a bot check; relying on the local DBLP snapshot for the rest of this run.")
+    _dblp_consecutive_failures = DBLP_GIVE_UP_AFTER
+    return DBLP_UNAVAILABLE
+
+
+def check_dblp_name(index: int, name: str, orcid: str) -> bool:
+    """Check a CSV name against the local DBLP snapshot (dblp.xml.xz), falling
+    back to live DBLP only when the snapshot has nothing to say. Prints
+    findings; returns False only on a definite error."""
+    db = get_dblp_index()
+    if db is None:
+        matches = matching_name_with_dblp(name)
+        if matches == DBLP_UNAVAILABLE:
+            print(f"{index}.\t{WARN}\tCould not reach DBLP to check {name}; name unverified.")
+        elif matches == 0:
+            print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['dblp_name']} No DBLP match for {name}")
+            return False
+        return True
+
+    hit = db.lookup(name, orcid)
+    valid = True
+    if hit.alias_of:
+        print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} `{name}` is a DBLP alias; use the canonical DBLP name `{hit.alias_of}`.")
+    # An alias's ORCID naturally sits on the canonical name; the alias warning covers it.
+    orcid_elsewhere = [n for n in hit.orcid_elsewhere if n[0] != hit.alias_of]
+    if orcid_elsewhere:
+        where = format_names(orcid_elsewhere)
+        if hit.found:
+            print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} ORCID {orcid} is attached in DBLP to {where}, not to `{name}`. Check that `{name}` is the right DBLP name.")
+        else:
+            print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['dblp_name']} No papers in tracked venues under `{name}`, but ORCID {orcid} is attached in DBLP to {where}. Use that DBLP name.")
+            valid = False
+    if hit.similar:
+        print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} DBLP has differently spelled or capitalized name(s): {format_names(hit.similar)}. DBLP names are exact; check which one is this person.")
+    if hit.found:
+        print(f"{index}.\t{INFO}\tDBLP snapshot: {hit.papers} paper(s) in tracked venues under `{name}`.")
+        suffixed = [v for v in hit.variants if has_suffix(v[0])]
+        if not has_suffix(name) and suffixed:
+            print(f"{index}.\t{WARN}\tDBLP also has disambiguated profiles {format_names(suffixed)}. Make sure `{name}` (without a suffix) is the right one.")
+        return valid
+    if hit.alias_of or hit.orcid_elsewhere or hit.similar:
+        return valid
+    if hit.variants:
+        print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} No papers in tracked venues under `{name}`. DBLP has {format_names(hit.variants)}; check the disambiguation suffix.")
+        return valid
+
+    if hit.close:
+        print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} No papers in tracked venues under `{name}`. Did you mean {format_names(hit.close)}?")
+        return valid
+
+    # Not in the snapshot at all: could be a new author with no tracked-venue
+    # papers yet, or a misspelling. Only live DBLP can tell those apart.
+    matches = matching_name_with_dblp(name)
+    if matches == 0:
+        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['dblp_name']} No DBLP match for {name}")
+        return False
+    if matches == DBLP_UNAVAILABLE:
+        print(f"{index}.\t{WARN}\t`{name}` has no papers in tracked venues in the DBLP snapshot (normal for new faculty), and live DBLP could not be reached to confirm the name exists. Check https://dblp.org/search?q={urllib.parse.quote(name)} by hand.")
+    return True
 
 # ---------- Audit Evidence Verification ----------
 #
@@ -875,13 +956,7 @@ def process_csv_diff(diff_path: str) -> bool:
                         all_affiliations.add(affiliation)
                     print(f"{index}.\tValidating {name}")
                     name_no_brackets = remove_brackets(name)
-                    dblp_matches = matching_name_with_dblp(name_no_brackets)
-                    if dblp_matches == DBLP_UNAVAILABLE:
-                        # DBLP was unreachable; that is not evidence the name is
-                        # wrong, so warn rather than failing the PR.
-                        print(f"{index}.\t{WARN}\tCould not reach DBLP to check {name_no_brackets}; name unverified.")
-                    elif dblp_matches == 0:
-                        print(f"{index}.\t{ERROR}\t{CHECKBOX_REFS['dblp_name']} No DBLP match for {name_no_brackets}")
+                    if not check_dblp_name(index, name_no_brackets, orcid):
                         valid = False
                     print(f"{index}.\t{INFO}\tChecking homepage: {homepage}")
                     homepage_text = has_valid_homepage(homepage)

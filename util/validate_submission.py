@@ -20,6 +20,11 @@ try:
 except ImportError:
     has_valid_homepage = None
 
+try:
+    from dblp_local import get_index as get_dblp_index
+except ImportError:
+    get_dblp_index = None
+
 
 def has_valid_google_scholar_id(scholar_id: str) -> bool:
     """Check if Google Scholar ID has valid format (12 chars ending in J)."""
@@ -165,6 +170,20 @@ def check_dblp_name(name: str) -> dict:
         'suggestions': [],
         'error': None
     }
+
+    # Live DBLP is behind a bot check, so consult the local snapshot first.
+    db = get_dblp_index() if get_dblp_index else None
+    if db is not None:
+        hit = db.lookup(name)
+        if hit.found:
+            result['found'] = result['exact_match'] = True
+            return result
+        better = [hit.alias_of] if hit.alias_of else []
+        better += [n for n, _ in hit.similar + hit.variants + hit.close]
+        if better:
+            result['found'] = True
+            result['suggestions'] = better[:5]
+            return result
 
     try:
         # Use DBLP author search API
