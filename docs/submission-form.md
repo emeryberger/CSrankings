@@ -48,7 +48,7 @@ The form includes an optional ORCID field:
 When DBLP has multiple authors with the same name, they add numeric suffixes like "0001". The update workflow supports adding these:
 
 - **"New DBLP Name" field**: Only appears in update mode when selected entry lacks a 4-digit suffix
-- **Validation**: New name is checked against DBLP API before submission
+- **Validation**: New name is checked against the DBLP name list before submission
 - **Detection**: `hasDisambiguationSuffix()` checks for 4-digit suffix at end of name
 
 ```typescript
@@ -132,9 +132,11 @@ const regex = abbrev.endsWith('.')
     : new RegExp(`\\b${escapedAbbrev}\\b`, 'gi');
 ```
 
-**DBLP API**:
-- Endpoint: `https://dblp.org/search/author/api?q=author%3A{query}$%3A&format=json`
-- Debounced at 500ms to avoid rate limiting
+**DBLP name check**: dblp.org is behind an Anubis bot check, so the form no longer calls its API. It checks names against `dblp-names/<k>.txt`, static shards (`name<TAB>papers`, keyed by the first letter of the last name) that `util/export-dblp-names.py` builds from `dblp.xml.xz` during the monthly DBLP update. Only the one shard needed is fetched (≤ ~800 KB, gzipped by Pages).
+- Exact match (case-sensitive): valid, with the tracked-paper count; warns if case variants or suffixed `0001` profiles also exist
+- Alias, case/period variant, other suffix, or close misspelling: warning with suggestions
+- Not in the list: warning only, since the snapshot covers tracked venues and new faculty may have no papers there yet
+- Debounced at 500ms
 
 **Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
 

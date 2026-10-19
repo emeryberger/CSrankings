@@ -1086,53 +1086,133 @@ function translateNameToDBLP(name) {
     }
     return result;
 }
-/**
- * Check DBLP for name existence
- */
-function checkDBLPName(name) {
+const dblpShards = new Map();
+/** Must match shard_key() in util/export-dblp-names.py. */
+function dblpShardKey(name) {
+    const tokens = stripDBLPSuffix(name).split(/\s+/).filter(t => t);
+    const c = tokens.length ? tokens[tokens.length - 1].toLowerCase()[0] : '_';
+    return c >= 'a' && c <= 'z' ? c : '_';
+}
+function stripDBLPSuffix(name) {
+    return name.replace(/ \d{4}$/, '');
+}
+function dblpSpellingKey(name) {
+    return name.replace(/\./g, ' ').split(/\s+/).filter(t => t).join(' ').toLowerCase();
+}
+function loadDBLPShard(key) {
+    let shard = dblpShards.get(key);
+    if (!shard) {
+        shard = fetch(`/dblp-names/${key}.txt`).then((response) => __awaiter(this, void 0, void 0, function* () {
+            if (!response.ok)
+                throw new Error(`name list returned ${response.status}`);
+            const names = new Map();
+            for (const line of (yield response.text()).split('\n')) {
+                const tab = line.indexOf('\t');
+                if (tab > 0)
+                    names.set(line.slice(0, tab), parseInt(line.slice(tab + 1), 10));
+            }
+            return names;
+        }));
+        // Let a failed fetch be retried on the next check.
+        shard.catch(() => dblpShards.delete(key));
+        dblpShards.set(key, shard);
+    }
+    return shard;
+}
+function editDistance(a, b) {
+    let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+    for (let i = 1; i <= a.length; i++) {
+        const cur = [i];
+        for (let j = 1; j <= b.length; j++) {
+            cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        }
+        prev = cur;
+    }
+    return prev[b.length];
+}
+function checkDBLPName(rawName) {
     return __awaiter(this, void 0, void 0, function* () {
-        var _a, _b, _c, _d, _e;
-        const result = { found: false, exactMatch: false, suggestions: [], error: undefined };
+        const name = rawName.normalize('NFC').trim();
+        const result = { papers: 0, alias: getCanonicalDBLPName(name), variants: [], similar: [], close: [] };
+        let names;
         try {
-            // Use simple search query - DBLP will add wildcards automatically
-            // This works better than the strict author:Name: format for middle initials
-            const url = `https://dblp.org/search/author/api?q=${encodeURIComponent(name)}&format=json&c=10`;
-            const response = yield fetch(url);
-            if (response.status === 429) {
-                result.error = 'DBLP rate limited - try again later';
-                return result;
-            }
-            if (!response.ok) {
-                result.error = `DBLP returned ${response.status}`;
-                return result;
-            }
-            const data = yield response.json();
-            const hits = ((_b = (_a = data === null || data === void 0 ? void 0 : data.result) === null || _a === void 0 ? void 0 : _a.hits) === null || _b === void 0 ? void 0 : _b.hit) || [];
-            const totalHits = parseInt(((_d = (_c = data === null || data === void 0 ? void 0 : data.result) === null || _c === void 0 ? void 0 : _c.hits) === null || _d === void 0 ? void 0 : _d['@total']) || '0', 10);
-            if (totalHits > 0) {
-                result.found = true;
-                // Normalize input name for comparison (collapse spaces, remove periods)
-                // Case-sensitive: DBLP treats capitalization as significant,
-                // e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
-                const normalizedInput = name.replace(/\./g, '').replace(/\s+/g, ' ').trim();
-                for (const hit of hits.slice(0, 5)) {
-                    const author = ((_e = hit === null || hit === void 0 ? void 0 : hit.info) === null || _e === void 0 ? void 0 : _e.author) || '';
-                    if (author) {
-                        result.suggestions.push(author);
-                        // Normalize author name for comparison (case-sensitive)
-                        const normalizedAuthor = author.replace(/\./g, '').replace(/\s+/g, ' ').trim();
-                        if (normalizedAuthor === normalizedInput) {
-                            result.exactMatch = true;
-                        }
-                    }
-                }
-            }
+            names = yield loadDBLPShard(dblpShardKey(name));
         }
         catch (e) {
-            result.error = e.message || 'DBLP check failed';
+            result.error = e.message || 'name list unavailable';
+            return result;
         }
+        result.papers = names.get(name) || 0;
+        const base = stripDBLPSuffix(name);
+        const key = dblpSpellingKey(name);
+        const tokens = base.split(/\s+/);
+        const first = tokens[0], last = tokens[tokens.length - 1];
+        const maxEdits = Math.max(1, Math.floor(name.length * 0.12));
+        names.forEach((papers, n) => {
+            if (n === name)
+                return;
+            const nBase = stripDBLPSuffix(n);
+            if (nBase === base) {
+                result.variants.push([n, papers]);
+            }
+            else if (dblpSpellingKey(n) === key) {
+                result.similar.push([n, papers]);
+            }
+            else if (!result.papers && Math.abs(n.length - name.length) <= maxEdits) {
+                const nTokens = nBase.split(/\s+/);
+                if ((nTokens[0] === first || nTokens[nTokens.length - 1] === last) && editDistance(n, name) <= maxEdits) {
+                    result.close.push([n, papers]);
+                }
+            }
+        });
+        for (const list of [result.variants, result.similar, result.close]) {
+            list.sort((a, b) => b[1] - a[1]);
+        }
+        result.close = result.close.slice(0, 3);
         return result;
     });
+}
+function formatDBLPNames(names) {
+    return names.slice(0, 3)
+        .map(([n, papers]) => `<strong>${escapeHtml(n)}</strong> (${papers} paper${papers === 1 ? '' : 's'})`)
+        .join(', ');
+}
+/**
+ * Show the result of a DBLP name check on a form field.
+ */
+function reportDBLPName(field, name, result) {
+    const searchLink = `<a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a>`;
+    const papers = (n) => `${n} paper${n === 1 ? '' : 's'}`;
+    if (result.error) {
+        setFieldStatus(field, 'warning', `Could not check the name (${escapeHtml(result.error)}). Check ${searchLink} for the exact spelling.`);
+    }
+    else if (result.alias) {
+        setFieldStatus(field, 'warning', `This name is an alias. Use the canonical DBLP name: <strong>${escapeHtml(result.alias)}</strong>`);
+    }
+    else if (result.papers) {
+        // DBLP names are case-sensitive: "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
+        const suffixed = hasDisambiguationSuffix(name) ? [] : result.variants.filter(([n]) => hasDisambiguationSuffix(n));
+        const others = result.similar.concat(suffixed);
+        if (others.length) {
+            setFieldStatus(field, 'warning', `Found in DBLP (${papers(result.papers)}), but DBLP also has ${formatDBLPNames(others)}. ` +
+                `If one of those is this person, use that name.`);
+        }
+        else {
+            setFieldStatus(field, 'valid', `Found in DBLP (${papers(result.papers)} in tracked venues)`);
+        }
+    }
+    else if (result.similar.length) {
+        setFieldStatus(field, 'warning', `DBLP names are case-sensitive and must match exactly. Did you mean ${formatDBLPNames(result.similar)}?`);
+    }
+    else if (result.variants.length) {
+        setFieldStatus(field, 'warning', `No tracked papers under this exact name. Did you mean ${formatDBLPNames(result.variants)}?`);
+    }
+    else if (result.close.length) {
+        setFieldStatus(field, 'warning', `No tracked papers under this exact name. Did you mean ${formatDBLPNames(result.close)}?`);
+    }
+    else {
+        setFieldStatus(field, 'warning', `No papers in CSRankings venues under this name yet. Check ${searchLink} for the exact spelling.`);
+    }
 }
 /**
  * Validate name field
@@ -1223,26 +1303,7 @@ function checkDBLPNameAsync(name) {
             const currentName = document.getElementById('name').value.trim();
             if (currentName !== name)
                 return;
-            if (result.error) {
-                setFieldStatus('name', 'warning', `DBLP check failed: ${result.error}`);
-            }
-            else if (!result.found) {
-                // Check if this name is a known alias
-                const canonicalName = getCanonicalDBLPName(name);
-                if (canonicalName) {
-                    setFieldStatus('name', 'warning', `This name is an alias. Use the canonical DBLP name: <strong>${canonicalName}</strong>`);
-                }
-                else {
-                    setFieldStatus('name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
-                }
-            }
-            else if (!result.exactMatch && result.suggestions.length > 0) {
-                const suggestions = result.suggestions.slice(0, 3).map(s => `"${s}"`).join(', ');
-                setFieldStatus('name', 'warning', `Not exact match. Did you mean: ${suggestions}?`);
-            }
-            else {
-                setFieldStatus('name', 'valid', 'Found in DBLP');
-            }
+            reportDBLPName('name', name, result);
             updatePreview();
         }), 500);
     });
@@ -1263,19 +1324,7 @@ function validateNewDBLPName(name) {
             const currentName = document.getElementById('new-name').value.trim();
             if (currentName !== name)
                 return;
-            if (result.error) {
-                setFieldStatus('new-name', 'warning', `DBLP check failed: ${result.error}`);
-            }
-            else if (!result.found) {
-                setFieldStatus('new-name', 'error', `Name not found in DBLP. Check <a href="https://dblp.org/search?q=${encodeURIComponent(name)}" target="_blank">DBLP</a> for exact spelling.`);
-            }
-            else if (!result.exactMatch && result.suggestions.length > 0) {
-                const suggestions = result.suggestions.slice(0, 3).map(s => `"${s}"`).join(', ');
-                setFieldStatus('new-name', 'warning', `Not exact match. Did you mean: ${suggestions}?`);
-            }
-            else {
-                setFieldStatus('new-name', 'valid', 'Found in DBLP');
-            }
+            reportDBLPName('new-name', name, result);
             updateSubmitButton();
         }), 500);
     });
