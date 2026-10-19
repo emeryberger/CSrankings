@@ -73,6 +73,17 @@ Faculty in a university's **School of Artificial Intelligence** or **College of 
 
 > **Boundary — this ruling covers AI schools only.** It does not extend to other adjacent units, which continue to be assessed under [§B](#b-wrong-department-not-cs-no-cross-appointment-shown): **Automation** departments (including SJTU's), **Electrical & Computer Engineering**, **Information Science / IST**, and **Engineering Technology** remain ineligible without a documented CS cross-appointment. A "School of Data Science" or "School of Cyber Science" is likewise not covered here and should be judged on its own facts.
 
+#### C2. Faculty outside the CS unit (ruling: 2026-10-19)
+
+The question for any faculty member outside the CS department (or a §C1 AI school) is whether they can **solely supervise CS PhD students**.
+
+- **UC San Diego: ELIGIBLE.** Any tenure-track (ladder-rank) UCSD faculty member can supervise a PhD student in any discipline, including CS. Department (HDSI, Mathematics, ECE, Cognitive Science, Linguistics, Scripps, ...) does not matter, and no CSE affiliated listing is required.
+- **Texas A&M: ELIGIBLE** with a CSE "Affiliated Faculty" (courtesy) or "Joint Faculty" listing. At TAMU these titles carry CS PhD supervision privileges.
+- **Everywhere else** (Schools of Cyber Science, AI or research *institutes*, merged AI + Automation schools, EE/Automation departments, ...): accept only faculty with **clear evidence** of sole supervision rights for CS PhD students. Examples:
+  - China: 博士生导师 in a Computer Science and Technology (0812xx) discipline on an official faculty page or doctoral-admissions roster, or in the AI-school programme of a §C1 school (e.g. 140500). 博导 status only in another first-level discipline (Cyberspace Security 0839, Information & Communication Engineering 0810, Control Science 0811) does not count.
+  - Elsewhere: the person stating on their own faculty page that they are a PhD advisor, plus an appointment that admits PhD students in CS or AI, or official graduate-faculty listings.
+  - A title alone (副教授, chair professor, "affiliated") outside UCSD and TAMU is not evidence.
+
 ### D. Future Additions
 
 - Faculty listed as "assistant research professor" (non-TT) but joining as tenure-track in the current year can be added.
