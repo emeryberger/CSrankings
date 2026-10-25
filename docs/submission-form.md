@@ -138,6 +138,12 @@ const regex = abbrev.endsWith('.')
 - Not in the list: warning only, since the snapshot covers tracked venues and new faculty may have no papers there yet
 - Debounced at 500ms
 
+**DBLP name autocomplete** (`setupDBLPAutocomplete()`): in Add mode, the Name field shows a dropdown of DBLP authors from the same shards, and so does the "New DBLP Name" field in Update mode. When that field is empty, it suggests the selected entry's suffixed variants.
+- The last typed word picks the shard and is matched as a last-name prefix. Other words must be prefixes of the first and middle names, in order. So "Emery Ber" finds "Emery D. Berger". Matching ignores case, periods and diacritics.
+- Up to 10 results, sorted by tracked-venue papers. Names already in CSRankings are tagged with their institution, and picking one switches the form to Update mode.
+- Arrow keys, Enter and Escape work. Items use `mousedown` + `preventDefault` so the blur validation doesn't run on the half-typed name.
+- Update/Remove modes still suggest existing CSRankings entries in the Name field. That dropdown shares the `#name-suggestions` container.
+
 **Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
 
 **Google Scholar ID format**: 12 characters ending in `C` or `J`, or `NOSCHOLARPAGE`.

@@ -449,8 +449,18 @@ function setupEventListeners() {
     // Name field - autocomplete and validation
     const nameInput = document.getElementById('name');
     nameInput.addEventListener('input', debounce(handleNameInput, 200));
+    // In add mode, suggest DBLP author names (update/remove suggest existing entries instead)
+    setupDBLPAutocomplete(nameInput, document.getElementById('name-suggestions'), () => currentAction === 'add' ? nameInput.value.trim() : null, () => {
+        updateOrcidSearchLink();
+        validateName();
+        updatePreview();
+    });
     nameInput.addEventListener('blur', () => {
-        setTimeout(hideSuggestions.bind(null, 'name'), 200);
+        // Delayed so a click on an update/remove suggestion lands first; skip if focus came back.
+        setTimeout(() => {
+            if (document.activeElement !== nameInput)
+                hideSuggestions('name');
+        }, 200);
         if (currentAction === 'add') {
             validateName();
         }
@@ -494,6 +504,12 @@ function setupEventListeners() {
             if (newName) {
                 validateNewDBLPName(newName);
             }
+        });
+        // Suggest DBLP names; on focus with an empty field, offer the selected entry's suffixed variants
+        setupDBLPAutocomplete(newNameInput, document.getElementById('new-name-suggestions'), () => newNameInput.value.trim() || (selectedEntry ? selectedEntry.name : null), name => {
+            validateNewDBLPName(name);
+            updateSubmitButton();
+            updatePreview();
         });
     }
     // Eligibility checkboxes
@@ -1213,6 +1229,142 @@ function reportDBLPName(field, name, result) {
     else {
         setFieldStatus(field, 'warning', `No papers in CSRankings venues under this name yet. Check ${searchLink} for the exact spelling.`);
     }
+}
+/**
+ * DBLP name autocomplete.
+ *
+ * Searches the same name shards as checkDBLPName(), so it only offers names
+ * with papers in tracked venues. The shard is chosen by the last typed word,
+ * which is treated as (a prefix of) the last name: "Emery Ber" finds
+ * "Emery D. Berger". Matching ignores case, periods and diacritics.
+ */
+const DBLP_SUGGESTION_LIMIT = 10;
+function dblpMatchTokens(name) {
+    return stripDBLPSuffix(name.normalize('NFD').replace(/[̀-ͯ]/g, ''))
+        .replace(/\./g, ' ').toLowerCase().split(/\s+/).filter(t => t);
+}
+/** True if each query token is a prefix of a name token, in order, with first and last names aligned. */
+function dblpNameMatches(query, name) {
+    if (name.length < query.length)
+        return false;
+    if (!name[0].startsWith(query[0]) || !name[name.length - 1].startsWith(query[query.length - 1]))
+        return false;
+    let j = 1;
+    for (let i = 1; i < query.length - 1; i++) {
+        while (j < name.length - 1 && !name[j].startsWith(query[i]))
+            j++;
+        if (j >= name.length - 1)
+            return false;
+        j++;
+    }
+    return true;
+}
+function findDBLPNameSuggestions(rawQuery) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const query = rawQuery.normalize('NFC').trim();
+        const queryTokens = dblpMatchTokens(query);
+        if (queryTokens.length < 2)
+            return [];
+        const queryHasSuffix = hasDisambiguationSuffix(query);
+        let names;
+        try {
+            names = yield loadDBLPShard(dblpShardKey(query));
+        }
+        catch (_a) {
+            return [];
+        }
+        const matches = [];
+        names.forEach((papers, n) => {
+            if (queryHasSuffix ? !n.startsWith(query) : !dblpNameMatches(queryTokens, dblpMatchTokens(n)))
+                return;
+            matches.push([n, papers]);
+        });
+        // Exact (case-insensitive) matches first, then by tracked papers.
+        const exact = queryTokens.join(' ');
+        const rank = ([n, papers]) => (dblpMatchTokens(n).join(' ') === exact ? 1e9 : 0) + papers;
+        matches.sort((a, b) => rank(b) - rank(a) || a[0].localeCompare(b[0]));
+        return matches.slice(0, DBLP_SUGGESTION_LIMIT);
+    });
+}
+/**
+ * Wire DBLP name autocomplete to an input and its suggestions container.
+ * `query` returns the text to search (or null to show nothing).
+ */
+function setupDBLPAutocomplete(input, container, query, onSelect) {
+    let active = -1;
+    const items = () => Array.from(container.querySelectorAll('.suggestion-item'));
+    const highlight = (index) => {
+        const list = items();
+        active = list.length ? (index + list.length) % list.length : -1;
+        list.forEach((item, i) => item.classList.toggle('active', i === active));
+        if (active >= 0)
+            list[active].scrollIntoView({ block: 'nearest' });
+    };
+    const hide = () => {
+        container.style.display = 'none';
+        active = -1;
+    };
+    // The name field's container is shared with the update/remove entry suggestions; leave those alone.
+    const hideOwn = () => {
+        if (container.querySelector('.dblp-suggestion'))
+            hide();
+    };
+    const select = (name) => {
+        input.value = name;
+        hide();
+        onSelect(name);
+    };
+    const update = debounce(() => __awaiter(this, void 0, void 0, function* () {
+        const q = query();
+        if (!q)
+            return hideOwn();
+        const matches = yield findDBLPNameSuggestions(q);
+        // Drop stale results if the input changed while the shard loaded.
+        if (query() !== q)
+            return;
+        if (!matches.length || (matches.length === 1 && matches[0][0] === q.trim()))
+            return hideOwn();
+        const listed = new Map(facultyEntries.map(e => [e.name, e]));
+        container.innerHTML = '<div class="suggestion-header">DBLP authors with papers in CSRankings venues</div>' +
+            matches.map(([n, papers]) => {
+                const entry = listed.get(n);
+                const note = entry
+                    ? `<span class="label label-info">In CSRankings</span> <small class="text-muted">${escapeHtml(entry.institution)}</small>`
+                    : '';
+                return `<div class="suggestion-item dblp-suggestion" data-name="${escapeHtml(n)}">
+                    <strong>${escapeHtml(n)}</strong>
+                    <small class="text-muted">${papers} paper${papers === 1 ? '' : 's'}</small> ${note}
+                </div>`;
+            }).join('');
+        container.style.display = 'block';
+        active = -1;
+        items().forEach(item => {
+            // mousedown + preventDefault keeps focus in the input, so blur
+            // validation doesn't run on the half-typed name first.
+            item.addEventListener('mousedown', e => {
+                e.preventDefault();
+                select(item.dataset.name || '');
+            });
+        });
+    }), 150);
+    input.addEventListener('input', update);
+    input.addEventListener('focus', update);
+    input.addEventListener('blur', hideOwn);
+    input.addEventListener('keydown', e => {
+        if (container.style.display !== 'block' || !container.querySelector('.dblp-suggestion'))
+            return;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            highlight(active + (e.key === 'ArrowDown' ? 1 : -1));
+        }
+        else if (e.key === 'Enter' && active >= 0) {
+            e.preventDefault();
+            select(items()[active].dataset.name || '');
+        }
+        else if (e.key === 'Escape') {
+            hide();
+        }
+    });
 }
 /**
  * Validate name field
