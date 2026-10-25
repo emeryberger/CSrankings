@@ -48,7 +48,7 @@ The form includes an optional ORCID field:
 When DBLP has multiple authors with the same name, they add numeric suffixes like "0001". The update workflow supports adding these:
 
 - **"New DBLP Name" field**: Only appears in update mode when selected entry lacks a 4-digit suffix
-- **Validation**: New name is checked against DBLP API before submission
+- **Validation**: New name is checked against the DBLP name list before submission
 - **Detection**: `hasDisambiguationSuffix()` checks for 4-digit suffix at end of name
 
 ```typescript
@@ -132,9 +132,17 @@ const regex = abbrev.endsWith('.')
     : new RegExp(`\\b${escapedAbbrev}\\b`, 'gi');
 ```
 
-**DBLP API**:
-- Endpoint: `https://dblp.org/search/author/api?q=author%3A{query}$%3A&format=json`
-- Debounced at 500ms to avoid rate limiting
+**DBLP name check**: dblp.org is behind an Anubis bot check, so the form no longer calls its API. It checks names against `dblp-names/<k>.txt`, static shards (`name<TAB>papers`, keyed by the first letter of the last name) that `util/export-dblp-names.py` builds from `dblp.xml.xz` during the monthly DBLP update. Only the one shard needed is fetched (≤ ~800 KB, gzipped by Pages).
+- Exact match (case-sensitive): valid, with the tracked-paper count; warns if case variants or suffixed `0001` profiles also exist
+- Alias, case/period variant, other suffix, or close misspelling: warning with suggestions
+- Not in the list: warning only, since the snapshot covers tracked venues and new faculty may have no papers there yet
+- Debounced at 500ms
+
+**DBLP name autocomplete** (`setupDBLPAutocomplete()`): in Add mode, the Name field shows a dropdown of DBLP authors from the same shards, and so does the "New DBLP Name" field in Update mode. When that field is empty, it suggests the selected entry's suffixed variants.
+- The last typed word picks the shard and is matched as a last-name prefix. Other words must be prefixes of the first and middle names, in order. So "Emery Ber" finds "Emery D. Berger". Matching ignores case, periods and diacritics.
+- Up to 10 results, sorted by tracked-venue papers. Names already in CSRankings are tagged with their institution, and picking one switches the form to Update mode.
+- Arrow keys, Enter and Escape work. Items use `mousedown` + `preventDefault` so the blur validation doesn't run on the half-typed name.
+- Update/Remove modes still suggest existing CSRankings entries in the Name field. That dropdown shares the `#name-suggestions` container.
 
 **Homepage CORS**: Most academic sites block CORS. Show warning but don't block submission - server-side validation will verify.
 

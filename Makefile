@@ -43,6 +43,7 @@ update-dblp:
 	$(MAKE) download-dblp
 	$(MAKE) shrink-dblp
 	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
+	$(PYTHON) util/export-dblp-names.py
 	@echo "Done."
 
 clean-dblp:
@@ -207,6 +208,7 @@ update-dblp-full:
 	@echo "Step 5/9: Generating DBLP aliases..."
 	$(MAKE) faculty-affiliations.csv
 	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
+	$(PYTHON) util/export-dblp-names.py
 	@echo ""
 	@echo "Step 6/9: Detecting and applying author name changes..."
 	@if [ -f prev-dblp.xml.gz ]; then \

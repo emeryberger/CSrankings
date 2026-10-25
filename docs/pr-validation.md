@@ -28,10 +28,32 @@ The `commit_validation.yml` workflow validates PRs automatically using `validate
 | Excel corruption | Detect `#NAME?`, `#REF?`, `#VALUE?`, etc. |
 | CSV format | No spaces after commas |
 | Alphabetical order | Check new entries against neighbors in file |
-| DBLP match | Query DBLP API for name |
+| DBLP match | Look the name up in the local snapshot (`dblp.xml.xz`) via `util/dblp_local.py`; see below |
 | Homepage | Fetch and check for name/affiliation |
 | Google Scholar | Validate 12-char ID format, fetch page |
 | New institution | Provide guidance to open issue first |
+
+### DBLP name check (offline)
+
+dblp.org and its mirrors answer every API request with an Anubis proof-of-work
+page (HTTP 202), so the validators no longer depend on the live API. Instead,
+`util/dblp_local.py` builds an index (about 8 seconds) of every author name in
+the repository's DBLP snapshot, which holds all tracked-venue papers, and checks
+each added name against it:
+
+| Finding | Severity |
+|---------|----------|
+| Name has tracked-venue papers | ok (reports the count) |
+| No papers under the name, but the submitted ORCID is on another DBLP name | error (suggests that name) |
+| Name is a DBLP alias (`dblp-aliases.csv`) | warning (suggests the canonical name) |
+| Same name with different case or periods (`S M Ferdous` vs. `S. M. Ferdous`) | warning |
+| Unsuffixed name, but suffixed profiles (`Name 0001`) exist | warning |
+| No papers, but a close spelling or a different suffix has papers | warning ("did you mean") |
+| Not in the snapshot at all | live DBLP is tried; if it is blocked, a warning asks for a manual check (normal for new faculty with no tracked papers) |
+
+The snapshot only covers tracked venues, so absence alone is never an error.
+When live DBLP returns its bot-check page, the validator stops querying it for
+the rest of the run instead of retrying with backoff.
 
 ## Checkbox References
 
