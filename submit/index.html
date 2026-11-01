@@ -44,11 +44,24 @@
                     </div>
                 </div>
 
-                <!-- Rate Limit Notice -->
+                <!-- Processing Time & Rate Limit Notice -->
                 <div class="alert alert-warning" id="rate-limit-notice">
+                    <strong>Please be patient:</strong> submissions may take <strong>up to three months</strong> to be processed and merged.
+                    Please <strong>do not contact us</strong> about the status of your submission.
+                    <a href="https://github.com/sponsors/csrankings" target="_blank">Sponsors</a> are welcome to <a id="sponsor-contact">reach out to the maintainer directly</a>.
+                    <br><br>
                     <strong>Adding multiple faculty?</strong> Use the <strong>batch feature</strong> below to add them all at once.
                     Individual submissions are limited to <strong>1 per week per user</strong>. Batch submissions have no limit.
                 </div>
+                <script>
+                    // Assemble the address at runtime so it never appears verbatim in the HTML (deters scrapers).
+                    (function () {
+                        var a = document.getElementById('sponsor-contact');
+                        if (!a) return;
+                        var addr = ['emery', 'berger'].join('.') + '+csrankings' + String.fromCharCode(64) + ['gmail', 'com'].join('.');
+                        a.href = 'mail' + 'to:' + addr + '?subject=' + encodeURIComponent('[CSrankings sponsor]');
+                    })();
+                </script>
 
                 <!-- Guidelines Alert -->
                 <div class="alert alert-info" id="guidelines-add">
