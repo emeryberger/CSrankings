@@ -716,6 +716,12 @@ function updateUIForAction(action) {
         batchButtons.style.display = action === 'add' ? 'block' : 'none';
     if (batchSection)
         batchSection.style.display = action === 'add' ? 'block' : 'none';
+    const submitHelp = document.getElementById('submit-help');
+    if (submitHelp)
+        submitHelp.style.display = action === 'add' ? 'block' : 'none';
+    const batchHint = document.getElementById('batch-hint');
+    if (batchHint)
+        batchHint.style.display = action === 'add' ? 'inline' : 'none';
     // Clear batch entries when switching away from add
     if (action !== 'add' && batchEntries.length > 0) {
         clearBatchEntries();
