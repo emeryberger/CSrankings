@@ -171,7 +171,8 @@ jobs:
             }
 
             // === THROTTLING CONFIGURATION ===
-            const MAX_INDIVIDUAL_PER_USER_PER_WEEK = 1;  // Individual (non-batch) submissions per user per week
+            const MAX_INDIVIDUAL_PER_USER_PER_WEEK = 1;  // Individual (non-batch) additions per user per week
+            const MAX_CHANGES_PER_USER_PER_DAY = 1;      // Updates/removals per user per day (no batch alternative)
             const MAX_TOTAL_PRS_PER_RUN = 5;            // Max PRs to create per hourly run
 
             // Get recent PRs to check rate limits
@@ -182,9 +183,11 @@ jobs:
               per_page: 100
             });
 
-            // Count individual submissions per user in last 7 days
+            // Count per user: individual additions in last 7 days, updates/removals in last 24 hours
             const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-            const userSubmissionCounts = {};
+            const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+            const userSubmissionCounts = {};  // additions (weekly window)
+            const userChangeCounts = {};      // updates/removals (daily window)
             for (const pr of recentPRs) {
               const prDate = new Date(pr.created_at);
               if (prDate < oneWeekAgo) continue;
@@ -194,15 +197,21 @@ jobs:
               const isBatch = batchMatch && parseInt(batchMatch[1]) >= 2;
               if (isBatch) continue;
 
+              const isAddition = /^(Add |Reinstate |Fix accent:)/.test(pr.title);
+              const isChange = /^(Update |Remove )/.test(pr.title);
+              if (!isAddition && !(isChange && prDate >= oneDayAgo)) continue;
+
               // Extract submitter from PR body (Co-Authored-By line or @mention)
               const submitterMatch = pr.body?.match(/Submitted by @(\w+)/) || pr.body?.match(/Co-Authored-By: (\w+)/);
               if (submitterMatch) {
                 const user = submitterMatch[1];
-                userSubmissionCounts[user] = (userSubmissionCounts[user] || 0) + 1;
+                const counts = isAddition ? userSubmissionCounts : userChangeCounts;
+                counts[user] = (counts[user] || 0) + 1;
               }
             }
 
-            console.log('User submission counts (last 7 days):', userSubmissionCounts);
+            console.log('User addition counts (last 7 days):', userSubmissionCounts);
+            console.log('User update/removal counts (last 24 hours):', userChangeCounts);
 
             // Separate batch vs individual submissions and sort (batch first)
             const batchSubmissions = [];
@@ -681,13 +690,21 @@ jobs:
               const isBatchIssue = issue.title.toLowerCase().includes('batch') ||
                                    (batchIssueMatch && parseInt(batchIssueMatch[1]) >= 2);
 
-              // Rate limit individual submissions per user (sponsors are exempt)
+              const body = issue.body || '';
+              const action = parseAction(body);
+
+              // Rate limit individual submissions per user (sponsors are exempt):
+              // additions 1/week (batch is the alternative), updates/removals 1/day.
+              const isChangeAction = action === 'update' || action === 'remove';
+              const rateCounts = isChangeAction ? userChangeCounts : userSubmissionCounts;
+              const rateMax = isChangeAction ? MAX_CHANGES_PER_USER_PER_DAY : MAX_INDIVIDUAL_PER_USER_PER_WEEK;
+              const rateWindow = isChangeAction ? '24 hours' : '7 days';
               if (!isBatchIssue && !submitterIsSponsor) {
-                const userCount = userSubmissionCounts[submitter] || 0;
+                const userCount = rateCounts[submitter] || 0;
                 const wasRateLimited = issue.labels.some(l => l.name === 'rate-limited');
 
-                if (userCount >= MAX_INDIVIDUAL_PER_USER_PER_WEEK) {
-                  console.log(`  Rate limited: ${submitter} has ${userCount} individual submissions in last 7 days (max: ${MAX_INDIVIDUAL_PER_USER_PER_WEEK})`);
+                if (userCount >= rateMax) {
+                  console.log(`  Rate limited: ${submitter} has ${userCount} ${isChangeAction ? 'updates/removals' : 'individual additions'} in last ${rateWindow} (max: ${rateMax})`);
 
                   // Only add label/comment if not already rate-limited (avoid spam)
                   if (!wasRateLimited) {
@@ -701,7 +718,9 @@ jobs:
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       issue_number: issue.number,
-                      body: `## ⏳ Rate Limited\n\nYou have reached the weekly limit of ${MAX_INDIVIDUAL_PER_USER_PER_WEEK} individual submission per user.\n\n**Your submission will be processed automatically** once your limit resets (within 7 days), or you can:\n- **Use [batch submission](https://csrankings.org/submit/)** to add multiple faculty at once (recommended, no rate limit)\n\nThis limit helps us manage system resources. Thank you for your patience!`
+                      body: isChangeAction
+                        ? `## ⏳ Rate Limited\n\nYou have reached the daily limit of ${MAX_CHANGES_PER_USER_PER_DAY} update or removal per user.\n\n**Your submission will be processed automatically** once your limit resets (within 24 hours) — no need to resubmit.\n\nThis limit helps us manage review load. Thank you for your patience!`
+                        : `## ⏳ Rate Limited\n\nYou have reached the weekly limit of ${MAX_INDIVIDUAL_PER_USER_PER_WEEK} individual addition per user.\n\n**Your submission will be processed automatically** once your limit resets (within 7 days), or you can:\n- **Use [batch submission](https://csrankings.org/submit/)** to add multiple faculty at once (recommended, no rate limit)\n\nThis limit helps us manage system resources. Thank you for your patience!`
                     });
                   }
                   continue;
@@ -709,7 +728,7 @@ jobs:
 
                 // User is now under limit - remove rate-limited label if present
                 if (wasRateLimited) {
-                  console.log(`  Clearing rate-limit for ${submitter} (now at ${userCount}/${MAX_INDIVIDUAL_PER_USER_PER_WEEK})`);
+                  console.log(`  Clearing rate-limit for ${submitter} (now at ${userCount}/${rateMax})`);
                   try {
                     await github.rest.issues.removeLabel({
                       owner: context.repo.owner,
@@ -722,8 +741,6 @@ jobs:
               }
 
               // Check for anonymous GitHub profile (only for add actions)
-              const body = issue.body || '';
-              const action = parseAction(body);
 
               if (action === 'add' && !isBatchIssue) {
                 const isAnon = await isAnonymousProfile(submitter);
@@ -1746,7 +1763,7 @@ jobs:
                 // Update rate limiting counters
                 prsCreatedThisRun++;
                 if (!isBatchIssue) {
-                  userSubmissionCounts[submitter] = (userSubmissionCounts[submitter] || 0) + 1;
+                  rateCounts[submitter] = (rateCounts[submitter] || 0) + 1;
                 }
 
                 // Add label to PR (plus "sponsor" only for public sponsors)

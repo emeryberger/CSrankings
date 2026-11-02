@@ -35,50 +35,9 @@ make csrankings.js
 make csrankings.min.js
 ```
 
-## Architecture
-
-### Main Files
-
-- `src/` - TypeScript source files (modular architecture):
-  - `app.ts` - Main application entry point, CSRankings singleton class
-  - `area-dropdown.ts` - Area dropdown panels for category pills (AI, Systems, Theory, Interdisc.)
-  - `checkbox.ts` - Checkbox state management and caching
-  - `computation.ts` - Ranking computation and incremental updates
-  - `config.ts` - Area maps, parent/child relationships, configuration
-  - `data-loader.ts` - CSV loading (parallel via Promise.all)
-  - `event-handlers.ts` - UI event listeners, "All" toggle switch sync
-  - `navigation.ts` - Client-side routing (Navigo)
-  - `rendering.ts` - HTML generation for tables and dropdowns
-  - `region.ts` - Region/continent filtering
-  - `tour.ts` - Interactive guided tour for new users
-  - `types.ts` - TypeScript type definitions
-  - `utils.ts` - Utility functions
-  - `verification.ts` - Incremental computation verification
-- `index.html` - Single page with checkbox controls and result container
-- `tsconfig.json` - TypeScript configuration (ES6 target, strict mode)
-
-### Key Classes and Patterns
-
-- `CSRankings` - Singleton class managing all ranking logic
-- Static maps: `parentMap`, `childMap`, `nextTier`, `areas`, `topLevelAreas`, `topTierAreas`
-- Instance accessed via `CSRankings.getInstance()`
-
 ## Common Tasks
 
-### Adding a New Conference
-
-1. Add to `parentMap` with parent area
-2. Add to `areaMap` array with display title
-3. If next-tier, add to `nextTier` object
-4. Add checkbox in `index.html` under appropriate parent
-5. Add venue to `filter.xq` ($booktitles for conferences, $journals for journal articles)
-
-### Adding a New Area
-
-1. Add to `areaMap` array
-2. Add to appropriate category array (aiAreas, systemsAreas, theoryAreas, interdisciplinaryAreas)
-3. Create `childMap` entry if it has child conferences
-4. Add UI elements in `index.html`
+To add a venue or area, use the `add-venue` skill (`.claude/skills/add-venue/`).
 
 ## Testing
 
@@ -103,38 +62,7 @@ pytest test/test_incremental.py -v
 pip3 install pytest selenium webdriver-manager
 ```
 
-## File Structure
-
-```
-src/                   # TypeScript source (modular)
-submit/                # Faculty submission form
-csrankings.js          # Compiled JavaScript (bundled)
-csrankings.min.js      # Minified for production
-index.html             # Main page
-tsconfig.json          # TypeScript config
-Makefile               # Build automation
-generated-author-info.csv  # Publication data (~15MB, ~50k records)
-orcid.csv              # Faculty name -> ORCID mapping (~31k entries)
-institutions.csv       # Institution regions and homepages
-countries.csv          # Country codes
-turing.csv             # Turing award winners
-acm-fellows.csv        # ACM Fellows
-test/                  # Pytest test suite
-filter.xq              # XQuery filter for DBLP (venue definitions)
-util/                  # Utility scripts
-typescript/            # Type definitions
-.github/workflows/     # CI/CD workflows
-docs/                  # Documentation
-```
-
 ## Dependencies
-
-### Frontend (JavaScript)
-
-- Papa Parse (CSV parsing)
-- Navigo (client-side routing)
-- Vega-Lite (charts)
-- he (HTML entity encoding)
 
 ### Backend/Build (Python)
 
