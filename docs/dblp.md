@@ -77,7 +77,7 @@ keynotes and so on look like research papers unless a rule says otherwise. `coun
 - `non-research-papers.csv` - DBLP keys of papers in tracks that leave no trace in
   the DBLP record, with the track and its source. **This needs updating for each new
   year of a listed venue**, or that year's non-research tracks will count.
-  Covered so far: AAAI, IJCAI 2017-, KDD 2016-2026 except 2020 and 2022, SIGIR 2019-2025,
+  Covered so far: AAAI, IJCAI 2017-, KDD 2000-2026, SIGIR 2019-2025,
   PVLDB (conference years 2019, 2021-2023, 2025), WWW 2022, 2024, 2026, ASE 2019-2025,
   ISSTA 2017-2022, USENIX sessions 2016-, and the ISCA and HPCA 2025 industry tracks.
 - Venue tables in `util/csrankings.py` where only numbers separate the tracks, such
