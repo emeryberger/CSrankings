@@ -5,7 +5,9 @@ from typing import Dict
 import contextlib
 import re
 import csv
-from typing import Dict, List, NewType
+from typing import Dict, List, NewType, Sequence
+
+from nonresearch import nonResearchCategory
 
 Title = NewType("Title", str)
 Author = NewType("Author", str)
@@ -603,6 +605,8 @@ TOG_SIGGRAPH_Asia_Volume = {
 # CGF special handling to count only EUROGRAPHICS proceedings.
 # Assuming all will be in the same issues through 2024.
 CGF_EUROGRAPHICS_Volume = {
+    2026: (45, 2),
+    2025: (44, 2),
     2024: (43, 2),
     2023: (42, 2),
     2022: (41, 2),
@@ -776,6 +780,35 @@ SIGMOD_NonResearchPapersRange = {
     ],
     2014: [(147, 188), (337, 384), (529, 573), (1223, 1258)],
 }
+# MobiCom 2024's research papers end at page 1574. DBLP then lists short papers
+# from co-located events under the main conference, starting at page 1826.
+MobiCom_NonResearchPaperStart = {2024: 1575}
+# DBLP lists the entire SC 2006 program, numbered by article: birds-of-a-feather
+# sessions, panels, posters, tutorials, challenges, vendor talks and so on. Only
+# these articles are technical papers: the Gordon Bell finalists (45-50) and the
+# 54 papers of the technical program (74-127).
+SC_2006_ResearchArticles = [(45, 50), (74, 127)]
+# Other conferences publish under the same booktitle as a tracked one, so DBLP's
+# table of contents (a record's <url>) is what tells them apart. Each of these was
+# confirmed against the title of the proceedings in the full DBLP dump.
+WrongVenueTablesOfContents = {
+    # International Conference on Control, Automation and Diagnosis.
+    "ICCAD": ("db/conf/iccad2/",),
+    # International Computer Symposium (Taiwan).
+    "ICS": ("db/conf/intcompsymp/",),
+    # Intelligent Interactive Assistance and Mobile Multimedia Computing.
+    "IMC": ("db/conf/imc2/",),
+    # Software Composition. Its 2004 workshop is listed under ENTCS.
+    "SC": ("db/conf/soco/", "db/journals/entcs/"),
+    # "I Can't Believe It's Not Better" workshop at ICLR.
+    "ICLR": ("db/conf/icbinb/",),
+    # Computer Network Performance Symposium.
+    "SIGMETRICS": ("db/conf/cnps/",),
+}
+# Eurographics publishes its State of the Art Reports in its conference issue.
+EUROGRAPHICS_SurveyTitle = re.compile(
+    r"\bsurveys?\b|\bstate[- ]of[- ]the[- ]art\b", re.IGNORECASE
+)
 # ASE accepts short papers and long papers. Long papers appear to be at least 10 pages long,
 # while short papers are shorter.
 ASE_LongPaperThreshold = 10
@@ -804,10 +837,18 @@ def countPaper(
     pageCount: int,
     url: str,
     title: Title,
+    ee: Sequence[str] = (),
+    key: str = "",
 ) -> bool:
     """Returns true iff this paper will be included in the rankings."""
 
     if year < startyear or year > endyear:
+        return False
+
+    if url and url.startswith(WrongVenueTablesOfContents.get(confname, ())):
+        return False
+
+    if nonResearchCategory(title, ee, url or "", key) is not None:
         return False
 
     # Special handling for EMSOFT (TECS).
@@ -875,6 +916,14 @@ def countPaper(
     elif confname == "ACM Trans. Graph.":
         # should already have been handled by regenerate_data.py.
         return False
+    elif confname == "Comput. Graph. Forum":
+        # Only the Eurographics issue counts, and regenerate_data.py has renamed it.
+        # The others are regular journal issues and other conferences (such as
+        # EuroVis and Pacific Graphics).
+        return False
+    elif confname == "EUROGRAPHICS":
+        if EUROGRAPHICS_SurveyTitle.search(title):
+            return False
     elif confname == "IEEE Trans. Vis. Comput. Graph.":
         Vis_Conf = False
         if year in TVCG_Vis_Volume:
@@ -891,8 +940,19 @@ def countPaper(
         if pageCount < ASE_LongPaperThreshold:
             # Omit short papers (which may be demos, etc.).
             return False
+    elif confname == "MobiCom":
+        if year in MobiCom_NonResearchPaperStart:
+            if startPage >= MobiCom_NonResearchPaperStart[year]:
+                return False
     elif confname == "ICS":
         if url is not None and "innovations" in url:
+            return False
+    elif confname == "SC" and year == 2006:
+        # Bare article numbers identify the conference; Software Composition,
+        # which shares this booktitle, has page ranges.
+        if pages.isdigit() and not any(
+            first <= int(pages) <= last for first, last in SC_2006_ResearchArticles
+        ):
             return False
     elif confname == "DAC":
         if year in DAC_TooShortPapers:
@@ -927,6 +987,8 @@ def countPaper(
             confname == "SIGGRAPH" and int(volume) >= 26 and (int(volume) <= 39)
         )
         exceptionConference |= confname == "SIGGRAPH Asia"
+        # DBLP gives every paper in this issue the placeholder pages i-iii.
+        exceptionConference |= confname == "EUROGRAPHICS" and year == 2024
         # FIXME - hopefully DBLP will fix
         exceptionConference |= confname == "CHI" and year == 2018
         exceptionConference |= confname == "ICCAD" and year in {2016, 2018, 2022}

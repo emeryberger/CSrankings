@@ -64,6 +64,52 @@ Venues are defined in `util/filter-dblp.py`:
 
 When adding a new venue, update the appropriate set in `util/filter-dblp.py` with the exact booktitle/journal name as it appears in DBLP.
 
+## Excluding Non-Research Contributions
+
+Only peer-reviewed research contributions count. DBLP lists everything a venue
+publishes under the venue's name, so position papers, invited papers, front matter,
+keynotes and so on look like research papers unless a rule says otherwise. `countPaper()` in `util/csrankings.py` rejects them using:
+
+- `util/nonresearch.py` - rules based on what a record says about itself: its
+  title (`Position: ...`, `Front Matter.`, `Session details: ...`, `(Panel)`), its
+  `<ee>` URLs (`-Abstract-Position_Paper_Track.html` on NeurIPS, the AAAI Doctoral
+  Consortium path) and its `<url>` table of contents (`siggrapha2019courses`).
+- `non-research-papers.csv` - DBLP keys of papers in tracks that leave no trace in
+  the DBLP record, with the track and its source. **This needs updating for each new
+  year of a listed venue**, or that year's non-research tracks will count.
+  Covered so far: AAAI, IJCAI 2017-, KDD 2000-2026, SIGIR 2019-2025,
+  PVLDB (conference years 2019, 2021-2023, 2025), WWW 2022, 2024, 2026, ASE 2019-2025,
+  ISSTA 2017-2022, USENIX sessions 2016-, and the ISCA and HPCA 2025 industry tracks.
+- Venue tables in `util/csrankings.py` where only numbers separate the tracks, such
+  as `SC_2006_ResearchArticles` and `SIGMOD_NonResearchPaperStart`.
+
+The 6-page threshold is not enough: it does not apply to records without page
+numbers, which includes recent NeurIPS and nearly all of ICLR and NDSS.
+
+Venues differ in how DBLP records a position track. ICML 2025's has its own
+booktitle, `ICML (Position Papers)`, so `util/filter-dblp.py` drops it, while ICML
+2024's uses plain `ICML` and only the title prefix identifies it. NeurIPS 2025's is
+identifiable only by its URL.
+
+At NeurIPS, only the main track counts. The rule is an allowlist on the URL, so new
+or renamed tracks are excluded by default: Datasets and Benchmarks (2022-2025), which
+became Evaluations and Datasets in 2026, Creative AI, and so on. If the main track's
+URL ever stops using `-Abstract-Conference`, this rule must be updated or that year's
+NeurIPS papers will not count.
+
+**When another venue adds a track, check how DBLP records it** and add a rule if it
+is not peer-reviewed research. Add the new title or URL to
+`test/test_nonresearch.py`, including near misses that must keep counting.
+
+Other conferences can share a tracked booktitle. `WrongVenueTablesOfContents` in
+`util/csrankings.py` lists them. To confirm one, follow a record's `<crossref>` to its
+`<proceedings>` record in the full dump (the filtered snapshot omits those), and
+exclude by DBLP table of contents, never by title.
+
+Rules must stay high precision, since a false positive silently costs an author a
+real paper. Records that carry no marker at all (such as ICRA 2011's unpaginated
+entries) are deliberately left alone.
+
 ## Fully Automated DBLP Update
 
 Use `make update-dblp-full` to run the complete update pipeline with one command:

@@ -193,6 +193,7 @@ def process_article(elem, conf_filter: str, include_all: bool) -> Optional[Dict]
     pages = get_element_text(pages_elem) if pages_elem is not None else ""
     title = Title(get_element_text(title_elem)) if title_elem is not None else Title("")
     url = get_element_text(url_elem) if url_elem is not None else ""
+    ee = [get_element_text(e) for e in elem.findall('ee')]
 
     # Check if conference is in our list
     if confname not in confdict:
@@ -247,7 +248,7 @@ def process_article(elem, conf_filter: str, include_all: bool) -> Optional[Dict]
         startPage = -1
 
     # Check if paper should be counted
-    if not countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title):
+    if not countPaper(confname, year, volume, number, pages, startPage, pageCount, url, title, ee, elem.get('key', '')):
         return None
 
     totalPapers += 1
