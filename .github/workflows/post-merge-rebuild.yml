@@ -60,6 +60,12 @@ jobs:
           persist-credentials: true  # Required to push back
           fetch-depth: 0  # Fetch full history for git pull --rebase
 
+      # The Makefile calls python3.12 by name, and ubuntu-latest no longer ships it.
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
       - name: Set up Git identity
         run: |
           git config user.name "github-actions[bot]"
