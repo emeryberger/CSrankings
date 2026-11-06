@@ -8,7 +8,7 @@ The `make update-dblp` target downloads and filters the DBLP database:
 ## Where the Data Comes From
 
 Downloads use the dated monthly releases at
-`https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-01.xml.gz`,
+`https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-DD.xml.gz`,
 via `util/download-dblp-release.py`. The rolling dump at `dblp.org/xml/dblp.xml.gz`
 (and the `dblp.uni-trier.de` mirror) has sat behind an Anubis proof-of-work bot
 check since September 2026: curl gets a 200 with a small HTML challenge page
@@ -16,7 +16,15 @@ instead of the data, which is what broke the monthly update.
 
 The script:
 - tries the current month's release, then the previous month's (releases appear
-  within a few days of the 1st; the workflow runs on the 28th)
+  within a few days of the 1st; the workflow runs on the 28th). The day in the
+  file name is usually `01` but not always (October 2026 was `dblp-2026-10-03`),
+  so each month is found by probing days 1-10; `--month YYYY-MM` does the same
+  for a specific month (used by `make download-prev-dblp`)
+- fails if the newest release it finds is more than 45 days old
+  (`--max-age-days`), so a missing or renamed release triggers the workflow's
+  failure issue instead of a "successful" run that commits nothing. That silent
+  mode is how October 2026 was missed: the job re-processed September's data
+  and reported success.
 - downloads with `curl -f` and refuses anything that does not start with the
   gzip magic bytes, so an HTML page can never masquerade as data again
 - records the release date in `dblp-release-date.txt` (gitignored), which
