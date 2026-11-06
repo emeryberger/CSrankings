@@ -69,6 +69,8 @@ def merge_blockers(assessment: Optional[dict], score: Optional[int], labels: Lis
     affiliations = assessment.get("affiliations") or {}
     for entry in assessment.get("entries", []):
         name = entry.get("name", "?")
+        if not entry.get("person_on_evidence_page"):
+            blockers.append(f"{name}: the page cited for their rank does not name them")
         if entry.get("current_industry_roles"):
             blockers.append(f"{name}: current industry roles were mentioned")
         site = sites.get(affiliations.get(name))

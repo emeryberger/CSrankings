@@ -66,6 +66,11 @@ PROFESSORIAL_TITLE = re.compile(r'\b(assistant|associate|full)?\s*professor\b', 
 NON_TENURE_TITLE = re.compile(
     r'\b(teaching|research|clinical|adjunct|visiting|emerit\w*|practice|instruction|'
     r'courtesy|affiliated?|lecturer|instructor|postdoc\w*)\b', re.IGNORECASE)
+NON_PROFESSOR_TITLE = re.compile(
+    r'\b(lecturer|instructor|postdoc\w*|researcher|research (associate|fellow|scientist)|scientist)\b',
+    re.IGNORECASE)
+TITLE_SEARCH_LINES = 4
+TITLE_CONTEXT_CHARS = 25
 PHD_PROGRAM = re.compile(r'\bph\.?\s?d\b|\bdoctora', re.IGNORECASE)
 
 # ---------- Models ----------
@@ -771,13 +776,64 @@ def run_audit(diff_text: str, thread: str) -> List[dict]:
 
 # ---------- Scoring and Reporting ----------
 
+def name_pattern(name: str) -> "re.Pattern":
+    """Match 'Jane Doe', 'Jane Q. Doe' and 'Doe, Jane', ignoring accents, case and DBLP suffix."""
+    parts = unidecode.unidecode(re.sub(r'\s+\d{4}$', '', name)).lower().split()
+    first, last = re.escape(parts[0]), re.escape(parts[-1])
+    return re.compile(rf'\b{first}\b(?:\s+[\w.-]+){{0,2}}?\s+{last}\b|\b{last},\s*{first}\b')
+
+def lines_naming(name: str, page_text: Optional[str]) -> Tuple[List[str], List[int]]:
+    """Return the page's lines and the indexes of those that name the person."""
+    lines = (page_text or '').splitlines()
+    pattern = name_pattern(name)
+    return lines, [i for i, line in enumerate(lines)
+                   if pattern.search(unidecode.unidecode(line).lower())]
+
+def tenure_title_near_name(name: str, page_text: Optional[str]) -> bool:
+    """
+    True if the title nearest the person's name on the page is an unqualified one.
+
+    A quote only shows that a phrase is somewhere on a page, and a directory has
+    that phrase for many people. So look beside the name itself: the same line,
+    then the lines after it (as directories usually lay it out), then before it.
+    The qualifier check stays close to the title, so that a heading such as
+    'Research Areas', or a later sentence about research, doesn't count against it.
+    """
+    lines, indexes = lines_naming(name, page_text)
+    for index in indexes:
+        window = TITLE_SEARCH_LINES
+        nearby = [index, *range(index + 1, index + 1 + window),
+                  *range(index - 1, index - 1 - window, -1)]
+        for i in nearby:
+            line = lines[i] if 0 <= i < len(lines) else ''
+            match = PROFESSORIAL_TITLE.search(line)
+            if match:
+                context = line[max(0, match.start() - TITLE_CONTEXT_CHARS):
+                               match.end() + TITLE_CONTEXT_CHARS]
+                if not NON_TENURE_TITLE.search(context):
+                    return True
+                break  # the nearest title is qualified, so a later one can't rescue it
+            if NON_PROFESSOR_TITLE.search(line):
+                break  # their title isn't a professorship; the next one is someone else's
+    return False
+
+def person_on_evidence_page(entry: dict) -> bool:
+    """True if the page cited for the person's rank actually names them."""
+    ev = entry['_verification']['results']['tenure_track'][1]
+    page_text = fetch_page_text(ev.source_url) if ev.source_url else None
+    return any(lines_naming(name, page_text)[1] for name in (entry.get('dblp_name'), entry['name'])
+               if name)
+
 def rank_rule_applies(entry: dict, country: Optional[str]) -> bool:
     """Check the limits of the US/Canada rule, which the model can't be left to police."""
     results = entry['_verification']['results']
-    title = results['tenure_track'][1].quote or ''
+    ev = results['tenure_track'][1]
+    title = ev.quote or ''
+    page_text = fetch_page_text(ev.source_url) if ev.source_url else None
     return (country in RANK_RULE_COUNTRIES
             and bool(PROFESSORIAL_TITLE.search(title))
             and not NON_TENURE_TITLE.search(title)
+            and tenure_title_near_name(entry['name'], page_text)
             and bool(PHD_PROGRAM.search(results['phd_advising'][1].quote or '')))
 
 def score_entry(entry: dict, country: Optional[str] = None) -> int:
@@ -905,6 +961,7 @@ def run_assessment(diff_path: str, metadata: dict) -> Optional[int]:
             "entries": [{
                 "name": e['name'],
                 "score": e['_score'],
+                "person_on_evidence_page": person_on_evidence_page(e),
                 "phd_advising_basis": e['phd_advising_basis'],
                 "current_industry_roles": e['current_industry_roles'],
                 "criteria": {field: {"verdict": ev.verdict, "status": status,

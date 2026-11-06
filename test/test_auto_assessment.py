@@ -24,7 +24,8 @@ def assessment(**criteria):
     fields = {field: criterion() for field in
               ("tenure_track", "phd_advising", "full_time", "cs_department")}
     fields.update(criteria)
-    return {"entries": [{"name": "Jane Doe", "criteria": fields}], "removals": [],
+    return {"entries": [{"name": "Jane Doe", "person_on_evidence_page": True, "criteria": fields}],
+            "removals": [],
             "affiliations": {"Jane Doe": "Stanford University"}}
 
 
@@ -246,34 +247,87 @@ def test_the_real_industry_file_loads():
     assert auto_merge.load_industry_names()
 
 
-def rank_entry(title="Assistant Professor of Computer Science",
-               program="The department offers a Ph.D. in Computer Science"):
+def rank_entry(monkeypatch, title="Assistant Professor of Computer Science",
+               program="The department offers a Ph.D. in Computer Science", page=None):
     entry = audited()
     results = entry["_verification"]["results"]
     results["tenure_track"][1].quote = title
+    results["tenure_track"][1].source_url = "https://cs.example.edu/jane"
     results["phd_advising"][1].quote = program
+    entry["name"], entry["dblp_name"] = "Jane Doe", "Jane Doe 0001"
     entry["phd_advising_basis"] = "rank_in_cs_department"
+    monkeypatch.setattr(vc, "fetch_page_text", lambda url: page or f"Jane Doe\n{title}")
     return entry
 
 
 @pytest.mark.parametrize("country", ["us", "ca"])
-def test_rank_rule_counts_in_the_us_and_canada(country):
-    assert vc.score_entry(rank_entry(), country) == 95
+def test_rank_rule_counts_in_the_us_and_canada(monkeypatch, country):
+    assert vc.score_entry(rank_entry(monkeypatch), country) == 95
 
 
 @pytest.mark.parametrize("country", ["kr", "cn", "gb", None])
-def test_rank_rule_does_not_count_elsewhere(country):
-    assert vc.score_entry(rank_entry(), country) == vc.UNCONFIRMED_SCORE_CAP
+def test_rank_rule_does_not_count_elsewhere(monkeypatch, country):
+    assert vc.score_entry(rank_entry(monkeypatch), country) == vc.UNCONFIRMED_SCORE_CAP
 
 
 @pytest.mark.parametrize("title", [
     "Assistant Professor of Teaching", "Research Assistant Professor", "Clinical Professor",
     "Professor of Practice", "Adjunct Professor", "Visiting Professor", "Lecturer", "Researcher",
 ])
-def test_rank_rule_needs_a_tenure_track_title(title):
-    assert vc.score_entry(rank_entry(title=title), "us") == vc.UNCONFIRMED_SCORE_CAP
+def test_rank_rule_needs_a_tenure_track_title(monkeypatch, title):
+    assert vc.score_entry(rank_entry(monkeypatch, title=title), "us") == vc.UNCONFIRMED_SCORE_CAP
 
 
-def test_rank_rule_needs_evidence_of_a_phd_program():
-    entry = rank_entry(program="The department offers a Master of Science")
+DIRECTORY = """Roe, John
+Assistant Professor
+Poe, Ann
+Professor of Instruction
+Doe, Jane
+Assistant Professor of Instruction
+Loe, Max
+Assistant Professor
+"""
+
+
+def test_a_quote_cropped_from_a_qualified_title_is_caught(monkeypatch):
+    entry = rank_entry(monkeypatch, title="Assistant Professor", page=DIRECTORY)
+    assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
+
+
+def test_someone_elses_title_in_a_directory_does_not_count(monkeypatch):
+    page = "Roe, John\nAssistant Professor\nDoe, Jane\nLecturer\nLoe, Max\nAssistant Professor"
+    entry = rank_entry(monkeypatch, title="Assistant Professor", page=page)
+    assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
+
+
+def test_a_page_that_does_not_name_the_person_fails(monkeypatch):
+    entry = rank_entry(monkeypatch, title="Assistant Professor", page="John Roe\nAssistant Professor")
+    assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
+    assert not vc.person_on_evidence_page(entry)
+
+
+@pytest.mark.parametrize("page", [
+    "Doe, Jane\nAssistant Professor\nResearch Areas",
+    "Jane Q. Doe\nAssociate Professor",
+    "Assistant Professor\nJane Doe\nResearch Interests",
+    "Dr. Jane Doe is an Assistant Professor in the Department of Computer Science. Her research is on systems.",
+    "JANE DOE\nProfessor\nDepartment of Computer Science",
+    "J\u00e4ne Doe\nFull Professor",
+])
+def test_ordinary_layouts_pass(page):
+    assert vc.tenure_title_near_name("Jane Doe 0001", page)
+
+
+def test_page_without_the_name_blocks_merging():
+    result = assessment()
+    result["entries"][0]["person_on_evidence_page"] = False
+    assert any("does not name them" in blocker for blocker in blockers(result))
+
+
+def test_a_different_person_sharing_a_first_name_does_not_match():
+    assert not vc.lines_naming("Jane Doe", "Jane Smith and John Doe")[1]
+
+
+def test_rank_rule_needs_evidence_of_a_phd_program(monkeypatch):
+    entry = rank_entry(monkeypatch, program="The department offers a Master of Science")
     assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP

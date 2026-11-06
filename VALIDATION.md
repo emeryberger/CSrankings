@@ -370,6 +370,7 @@ This rule applies only in the US and Canada. Elsewhere, rank alone is still not 
 - No current industry role was mentioned for anyone in it, and nobody in it is listed in `old/industry.csv`.
 - Every person's institution is in `institutions.csv`.
 - For criteria 1, 2 and 4, the confirming page is on that institution's own site. Personal sites and GitHub Pages don't count for this gate, although they can still count as evidence for a maintainer.
+- The page cited for rank names the person. Under the US and Canada rule, the title beside their name must also be unqualified.
 - The PR hasn't changed since it was assessed.
 
 **Maintainers decide.** A maintainer's assessment always outranks the automated score, even when the automated one is newer, so a low maintainer score blocks merging. The `hold` label stops auto-closing, `stale` marking and auto-merging. Setting the repository variable `AUTO_MERGE` to `off` reports decisions without merging.
