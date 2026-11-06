@@ -3,6 +3,9 @@ name: Commit Validation
 on:
   pull_request_target:
     types: [opened, synchronize, edited]
+  # A reply can supply the evidence an assessment asked for.
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       pr_number:
@@ -12,7 +15,7 @@ on:
 
 # Prevent multiple runs for the same PR from running simultaneously
 concurrency:
-  group: pr-validation-${{ github.event.pull_request.number || inputs.pr_number }}
+  group: pr-validation-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr_number }}
   cancel-in-progress: true
 
 permissions:
@@ -23,8 +26,15 @@ permissions:
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Comments: only replies on PRs, and not from the maintainer or a bot.
+    if: >-
+      github.event_name != 'issue_comment' || (
+      github.event.issue.pull_request &&
+      github.event.comment.user.login != 'emeryberger' &&
+      github.event.comment.user.type != 'Bot')
     env:
-      PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+      PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number || inputs.pr_number }}
 
     steps:
       - name: Check out repository
@@ -44,9 +54,14 @@ jobs:
           GITHUB_EVENT_NUMBER: ${{ env.PR_NUMBER }}
         run: python3 generate_diff.py
 
-      - name: Run CSV + OpenAI validation
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code@2.1.319
+
+      # The token is from `claude setup-token`, so this uses the maintainer's
+      # subscription. Without it, only the mechanical checks run.
+      - name: Run mechanical checks and the VALIDATION.md assessment
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
           python3 util/validate_commit.py pr_metadata.json diff.json | tee pr_comment.txt
 
@@ -63,12 +78,14 @@ jobs:
             pr/pr_number.txt
             pr_comment.txt
             remove_stale.txt
+            assessment.md
+            assessment.json
           if-no-files-found: ignore
 
   post_comment:
     runs-on: ubuntu-latest
     needs: commit_validation
-    if: always()
+    if: ${{ !cancelled() && needs.commit_validation.result != 'skipped' }}
 
     permissions:
       pull-requests: write
@@ -91,6 +108,22 @@ jobs:
           COMMENTS_URL="https://api.github.com/repos/$REPO/issues/$PR_NUMBER/comments"
           LABELS_URL="https://api.github.com/repos/$REPO/issues/$PR_NUMBER/labels"
 
+          post_comment() {
+            jq -Rs '{body: .}' < "$1" | curl -s -X POST \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$COMMENTS_URL" --data-binary @-
+          }
+
+          if [ -f artifacts/assessment.md ]; then
+            post_comment artifacts/assessment.md
+          fi
+
+          # A reply gets a new assessment, but not the checks or label changes again.
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+            exit 0
+          fi
+
           if [ -f artifacts/pr_comment.txt ]; then
             COMMENT_JSON=$(jq -Rs . < artifacts/pr_comment.txt)
             EXISTING=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL")
@@ -108,7 +141,13 @@ jobs:
             rm -f "$TMPFILE"
           fi
 
-          # CASE 1: Checks FAILED → add 'stale'
+          # A PR on hold is decided by a person, on their schedule.
+          if curl -s -H "Authorization: token $GH_TOKEN" "$LABELS_URL" | jq -r '.[].name' | grep -q "^hold$"; then
+            echo "PR is on hold. Leaving labels alone."
+            exit 0
+          fi
+
+          # CASE 1: Checks FAILED or low score → add 'stale'
           if [ -f artifacts/remove_stale.txt ] && grep -q "false" artifacts/remove_stale.txt; then
             echo "Validation failed. Adding 'stale' label."
             curl -s -X POST \
@@ -142,3 +181,39 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "$LABELS_URL" \
             -d '{"labels": ["validated"]}'
+
+  auto_merge:
+    runs-on: ubuntu-latest
+    needs: [commit_validation, post_comment]
+    if: ${{ !cancelled() && needs.post_comment.result == 'success' }}
+
+    permissions:
+      actions: write        # start the rebuild, which a GITHUB_TOKEN merge does not trigger
+      contents: write
+      issues: read
+      pull-requests: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: artifacts
+          path: artifacts
+
+      - name: Merge if every gate passes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTO_MERGE: ${{ vars.AUTO_MERGE }}
+        run: |
+          python3 util/auto_merge.py "$(cat artifacts/pr/pr_number.txt)" artifacts/assessment.json artifacts/remove_stale.txt

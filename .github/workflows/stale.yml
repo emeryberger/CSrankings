@@ -24,6 +24,7 @@ jobs:
           days-before-pr-close: 14
           days-before-issue-stale: -1
           days-before-issue-close: -1
+          exempt-pr-labels: 'hold'
 
           # A comment or push by the contributor clears the stale label, so a PR
           # that gets a reply is not closed out from under them. This is the

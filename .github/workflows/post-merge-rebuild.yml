@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - gh-pages  # Runs only on merge to the main branch
+  workflow_dispatch:  # util/auto_merge.py starts this: merges made with GITHUB_TOKEN fire no push event
 
 permissions:
   contents: write  # Required to push changes back

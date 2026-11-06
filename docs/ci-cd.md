@@ -23,7 +23,7 @@ This prevents data loss when multiple PRs are merged in quick succession, ensuri
 | File | Purpose |
 |------|---------|
 | `.github/workflows/post-merge-rebuild.yml` | Test + build on push |
-| `.github/workflows/commit_validation.yml` | PR validation |
+| `.github/workflows/commit_validation.yml` | PR validation, automated `VALIDATION.md` assessment, auto-merge ([details](pr-validation.md#automated-assessment)) |
 | `.github/workflows/process-submission.yml` | Issue -> PR automation |
 | `.github/workflows/monthly-dblp-update.yml` | Monthly DBLP data refresh |
 | `.github/workflows/update-sponsors.yml` | Sponsor logo updates |

@@ -1,6 +1,19 @@
 # PR Validation System
 
-The `commit_validation.yml` workflow validates PRs automatically using `validate_commit.py`.
+The `commit_validation.yml` workflow validates PRs automatically using `validate_commit.py`. It also assesses eligibility against `VALIDATION.md` and can merge automatically; see [VALIDATION.md](../VALIDATION.md#automatic-assessment-and-merging) for the rules.
+
+## Automated Assessment
+
+The assessment runs `claude -p` with `CLAUDE_CODE_OAUTH_TOKEN`, a repository secret created with `claude setup-token`, so it uses the maintainer's subscription rather than an API key. Without the secret only the mechanical checks run, and if the subscription's usage limit is reached the comment says the assessment failed and a maintainer reviews the PR.
+
+PR text, comments and web pages are untrusted, so the design assumes the model can be manipulated:
+
+- Its only tools are `WebSearch` and `WebFetch`, and it runs in an empty directory with no GitHub credentials in its environment.
+- Its output is reduced to a schema and sanitized before posting, which removes mentions, markup and score text.
+- Its score is capped by mechanical quote checks, and merging is decided by the gates in `util/auto_merge.py`, not by the model.
+- Only a comment by `github-actions[bot]` that starts with the assessment heading counts as an automated score. That account also relays submitter notes, which is why the heading is required.
+
+Merges made with `GITHUB_TOKEN` don't fire push workflows, so `auto_merge.py` starts `post-merge-rebuild.yml` itself.
 
 ## PR Template
 

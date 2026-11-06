@@ -335,6 +335,38 @@ Directories where this appears in practice include `faculty.<inst>.edu.cn` profi
 
 ## Automation
 
+### Automatic assessment and merging
+
+`commit_validation.yml` applies this document to every PR when it is opened or updated, and again when someone other than the maintainer replies. It runs Claude Code on the maintainer's subscription and posts an `Automated Validation Assessment` comment with a likelihood of validity.
+
+**Score caps.** Every quoted fact is rechecked against the page it cites, and the model's score is then capped:
+
+| Finding | Maximum score |
+|---------|---------------|
+| Criterion 1, 2 or 4 is not a confirmed pass, or the classification isn't `valid`, or someone in the diff wasn't assessed | 75% |
+| A cited quote is not on the cited page | 50% |
+| A confirmed failure on any criterion | 30% |
+
+**What happens next**
+
+- **80% or more, with every merge gate passed:** merged automatically.
+- **Below 50%:** marked `stale`, which closes the PR after 14 days without activity.
+- **Otherwise:** left for a maintainer.
+
+**Merge gates** (`util/auto_merge.py`). All of these must hold, whatever the score:
+
+- The mechanical checks passed, and the PR has neither the `hold` nor the `stale` label.
+- It changes only `csrankings-?.csv` files and removes nobody.
+- Every person's institution is in `institutions.csv`.
+- For criteria 1, 2 and 4, the confirming page is on that institution's own site. Personal sites and GitHub Pages don't count for this gate, although they can still count as evidence for a maintainer.
+- The PR hasn't changed since it was assessed.
+
+**Maintainers decide.** A maintainer's assessment always outranks the automated score, even when the automated one is newer, so a low maintainer score blocks merging. The `hold` label stops auto-closing, `stale` marking and auto-merging. Setting the repository variable `AUTO_MERGE` to `off` reports decisions without merging.
+
+An automated assessment doesn't replace following up: a PR left below 80% still needs the steps in [Following Up on Validated PRs](#following-up-on-validated-prs). Each PR gets at most 6 automatic assessments.
+
+### Manual tools
+
 The script `util/validate_prs.py` automates the validation workflow. It does not look for replies to earlier assessments, and `list` skips any PR that already has an assessment, so run the [follow-up check](#following-up-on-validated-prs) first:
 
 ```bash
