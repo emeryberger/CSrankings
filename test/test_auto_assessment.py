@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 
 import auto_merge  # noqa: E402
 import validate_commit as vc  # noqa: E402
+import validate_homepage as vh  # noqa: E402
 import validate_prs as vp  # noqa: E402
 
 SITES = {"Hanyang University": "hanyang.ac.kr", "Stanford University": "stanford.edu"}
@@ -129,7 +130,7 @@ def test_classification_caps_and_range_is_clamped():
 def test_diff_people_finds_removals_but_not_updates():
     diff = ("+ Jane Doe,Stanford University,u,s,o (csrankings-j.csv)\n"
             "- Jane Doe,Other,u,s,o (csrankings-j.csv)\n"
-            "- John Roe,Other,u,s,o (csrankings-j.csv)")
+            "- John Roe,Other,u,s2,o2 (csrankings-j.csv)")
     assert vc.diff_people(diff) == ({"Jane Doe": "Stanford University"}, ["John Roe"])
 
 
@@ -177,3 +178,102 @@ def test_maintainer_outranks_a_later_bot_assessment(monkeypatch):
     high = BOT.replace("60%", "95%")
     fake_comments(monkeypatch, [("emeryberger", human), (vp.ASSESSMENT_BOT, high)])
     assert vp.get_validation_score(1) == 40
+
+
+def test_rename_with_the_same_ids_is_not_a_removal():
+    diff = ("- Hamed Haddadi,Imperial,u,gkA7zvoAAAAJ,0000-0002-5895-8903 (csrankings-h.csv)\n"
+            "+ Hamed Haddadi 0001,Oxford,v,gkA7zvoAAAAJ,0000-0002-5895-8903 (csrankings-h.csv)")
+    assert vc.diff_people(diff)[1] == []
+
+
+def test_placeholder_ids_do_not_make_a_rename():
+    diff = ("- John Roe,X,u,NOSCHOLARPAGE,0000-0000-0000-0000 (csrankings-j.csv)\n"
+            "+ Jane Doe,X,v,NOSCHOLARPAGE,0000-0000-0000-0000 (csrankings-j.csv)")
+    assert vc.diff_people(diff)[1] == ["John Roe"]
+
+
+@pytest.mark.parametrize("quote, long_enough", [
+    ("\u526f\u6559\u6388\u3001\u7814\u7a76\u5458\u3001\u535a\u5bfc", True),
+    ("\u535a\u58eb\u751f\u5bfc\u5e08", False),
+    ("Professor of CS", True),
+    ("Professor", False),
+])
+def test_cjk_quotes_can_be_long_enough(quote, long_enough):
+    assert (vc.quote_strength(quote) >= vc.MIN_QUOTE_CHARS) == long_enough
+
+
+class FakeResponse:
+    def __init__(self, content, content_type, apparent="utf-8"):
+        self.content, self.headers = content, {"Content-Type": content_type}
+        self.encoding, self.apparent_encoding = "ISO-8859-1", apparent
+
+    @property
+    def text(self):
+        return self.content.decode(self.encoding)
+
+
+CHINESE = "\u535a\u58eb\u751f\u5bfc\u5e08"
+
+
+@pytest.mark.parametrize("response", [
+    FakeResponse(CHINESE.encode("utf-8"), "text/html"),
+    FakeResponse(f'<meta charset="gbk">{CHINESE}'.encode("gbk"), "text/html", apparent="ascii"),
+    FakeResponse(f'<meta charset="nonsense">{CHINESE}'.encode("utf-8"), "text/html"),
+])
+def test_pages_without_a_header_charset_decode_correctly(response):
+    assert CHINESE in vh.decode_response(response)
+
+
+def test_a_header_charset_is_respected():
+    response = FakeResponse(b"caf\xe9", "text/html; charset=latin-1")
+    response.encoding = "latin-1"
+    assert vh.decode_response(response) == "caf\u00e9"
+
+
+def test_industry_roles_block_merging():
+    result = assessment()
+    result["entries"][0]["current_industry_roles"] = ["Chief Scientist at Example"]
+    assert any("industry roles" in blocker for blocker in blockers(result))
+
+
+def test_listing_in_the_industry_file_blocks_merging():
+    found = auto_merge.merge_blockers(assessment(), 95, [], ["csrankings-j.csv"], SITES, True,
+                                      industry_names=frozenset({"Jane Doe"}))
+    assert any("industry.csv" in blocker for blocker in found)
+
+
+def test_the_real_industry_file_loads():
+    assert auto_merge.load_industry_names()
+
+
+def rank_entry(title="Assistant Professor of Computer Science",
+               program="The department offers a Ph.D. in Computer Science"):
+    entry = audited()
+    results = entry["_verification"]["results"]
+    results["tenure_track"][1].quote = title
+    results["phd_advising"][1].quote = program
+    entry["phd_advising_basis"] = "rank_in_cs_department"
+    return entry
+
+
+@pytest.mark.parametrize("country", ["us", "ca"])
+def test_rank_rule_counts_in_the_us_and_canada(country):
+    assert vc.score_entry(rank_entry(), country) == 95
+
+
+@pytest.mark.parametrize("country", ["kr", "cn", "gb", None])
+def test_rank_rule_does_not_count_elsewhere(country):
+    assert vc.score_entry(rank_entry(), country) == vc.UNCONFIRMED_SCORE_CAP
+
+
+@pytest.mark.parametrize("title", [
+    "Assistant Professor of Teaching", "Research Assistant Professor", "Clinical Professor",
+    "Professor of Practice", "Adjunct Professor", "Visiting Professor", "Lecturer", "Researcher",
+])
+def test_rank_rule_needs_a_tenure_track_title(title):
+    assert vc.score_entry(rank_entry(title=title), "us") == vc.UNCONFIRMED_SCORE_CAP
+
+
+def test_rank_rule_needs_evidence_of_a_phd_program():
+    entry = rank_entry(program="The department offers a Master of Science")
+    assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP

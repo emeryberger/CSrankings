@@ -62,6 +62,7 @@ jobs:
       - name: Run mechanical checks and the VALIDATION.md assessment
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ASSESSMENT_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           python3 util/validate_commit.py pr_metadata.json diff.json | tee pr_comment.txt
 

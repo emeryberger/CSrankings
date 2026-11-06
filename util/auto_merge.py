@@ -48,7 +48,8 @@ def load_institution_sites(path: Path = ROOT / "institutions.csv") -> dict:
 
 def merge_blockers(assessment: Optional[dict], score: Optional[int], labels: List[str],
                    files: List[str], sites: dict, mechanical_passed: bool,
-                   threshold: int = DEFAULT_MERGE_THRESHOLD) -> List[str]:
+                   threshold: int = DEFAULT_MERGE_THRESHOLD,
+                   industry_names: frozenset = frozenset()) -> List[str]:
     """Return every reason this PR may not be auto-merged; empty means it may."""
     if not assessment:
         return ["no assessment was produced for this version of the PR"]
@@ -68,6 +69,8 @@ def merge_blockers(assessment: Optional[dict], score: Optional[int], labels: Lis
     affiliations = assessment.get("affiliations") or {}
     for entry in assessment.get("entries", []):
         name = entry.get("name", "?")
+        if entry.get("current_industry_roles"):
+            blockers.append(f"{name}: current industry roles were mentioned")
         site = sites.get(affiliations.get(name))
         if not site:
             blockers.append(f"{name}: institution is not in institutions.csv")
@@ -81,7 +84,15 @@ def merge_blockers(assessment: Optional[dict], score: Optional[int], labels: Lis
         full_time = (entry.get("criteria") or {}).get("full_time") or {}
         if full_time.get("verdict") == "fail":
             blockers.append(f"{name}: full_time failed")
+    listed = sorted(industry_names & set(affiliations))
+    if listed:
+        blockers.append(f"listed in old/industry.csv: {', '.join(listed)}")
     return blockers
+
+
+def load_industry_names(path: Path = ROOT / "old" / "industry.csv") -> frozenset:
+    with open(path, encoding="utf-8") as f:
+        return frozenset(row["name"] for row in csv.DictReader(f))
 
 
 def gh(*args: str) -> str:
@@ -98,7 +109,8 @@ def main() -> int:
         assessment, get_validation_score(int(pr)),
         [label["name"] for label in info["labels"]],
         [file["path"] for file in info["files"]],
-        load_institution_sites(), mechanical_passed)
+        load_institution_sites(), mechanical_passed,
+        industry_names=load_industry_names())
     if assessment and assessment.get("head_sha") != info["headRefOid"]:
         blockers.append("the PR changed after it was assessed")
     if info["state"] != "OPEN":

@@ -249,7 +249,7 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 3. **Likelihood percentage**: 90-100% = clearly valid; 70-89% = likely valid with minor concerns; 50-69% = significant uncertainty; <50% = likely invalid
 4. **Flag specific issues** that need action (wrong Scholar ID, DBLP disambiguation, missing institution, etc.)
 5. **For non-US institutions**, reference the International Title Equivalences table above
-6. **Never mark criterion 2 as PASS on the strength of a title alone.** Cite the actual evidence for doctoral supervision — a 博士生导师 designation, an "Accepting Doctoral Students" flag, named PhD students on a lab page, or a departmental supervisor listing. If none is available, mark it ⚠️ UNCLEAR and say what would settle it. See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
+6. **Never mark criterion 2 as PASS on the strength of a title alone**, except under the [US and Canada rule](#verifying-phd-supervision-rights-criterion-2). Cite the actual evidence for doctoral supervision — a 博士生导师 designation, an "Accepting Doctoral Students" flag, named PhD students on a lab page, or a departmental supervisor listing. If none is available, mark it ⚠️ UNCLEAR and say what would settle it. See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
 7. **Read the whole PR thread before assessing.** Submitters and third parties often supply the missing evidence in a comment; scoring without reading it produces a wrong verdict and wastes their time. For PRs already assessed, follow [Following Up on Validated PRs](#following-up-on-validated-prs)
 8. **For batch PRs**, every person must be individually assessed — do not just spot-check
 9. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
@@ -302,6 +302,16 @@ Directories where this appears in practice include `faculty.<inst>.edu.cn` profi
 - **UK/European institutional research portals** often carry an explicit **"Accepting Doctoral Students"** flag (e.g. `researchportal.bath.ac.uk`). Strong positive evidence.
 - **Lab or group pages listing current PhD students** by name. A group with several doctoral students is direct evidence of sole supervision in practice, not merely eligibility for it.
 - **Departmental graduate-programme pages** listing eligible supervisors.
+
+**US and Canada: rank in a CS PhD-granting department counts** (ruling: 2026-11-06).
+
+New faculty often have no students yet, so direct evidence may not exist. At a US or Canadian institution, criterion 2 passes when all of these hold:
+
+- The title is Assistant, Associate or Full Professor, with no qualifier such as Teaching, Research, Clinical, Adjunct, Visiting or of Practice.
+- The person is in the CS department itself, not in a unit that §C2 covers.
+- The institution's own page shows that the department offers a PhD in Computer Science.
+
+This rule applies only in the US and Canada. Elsewhere, rank alone is still not evidence.
 
 **Two cautions:**
 
@@ -357,6 +367,7 @@ Directories where this appears in practice include `faculty.<inst>.edu.cn` profi
 
 - The mechanical checks passed, and the PR has neither the `hold` nor the `stale` label.
 - It changes only `csrankings-?.csv` files and removes nobody.
+- No current industry role was mentioned for anyone in it, and nobody in it is listed in `old/industry.csv`.
 - Every person's institution is in `institutions.csv`.
 - For criteria 1, 2 and 4, the confirming page is on that institution's own site. Personal sites and GitHub Pages don't count for this gate, although they can still count as evidence for a maintainer.
 - The PR hasn't changed since it was assessed.
