@@ -115,6 +115,51 @@ Multiple PRs adding the same person, often with slightly different data. Watch f
 
 ---
 
+## Following Up on Validated PRs
+
+**Start every validation run here, before assessing any new PR.** Submitters often answer a validation comment with the evidence it asked for, and a PR can be auto-closed as stale while its reply waits unread.
+
+### 1. Find what changed since the last assessment
+
+This lists every open PR with a reply from someone other than the maintainer or the bot since its last assessment, plus never-assessed PRs with a reply:
+
+```bash
+gh pr list --state open --limit 100 --json number,title,comments --jq '.[] | ([.comments[] | select(.author.login=="emeryberger" and (.body | contains("Automated validation analysis based on")))] | last | .createdAt) as $v | [.comments[] | select((.author.login | IN("emeryberger","github-actions") | not) and ($v == null or .createdAt > $v or (.body | contains("Automated validation analysis based on"))))] as $new | select($new | length > 0) | "#\(.number) \(.title) [last validated: \($v // "never")]: \([$new[].author.login] | join(", "))"'
+```
+
+This lists commits pushed since the last assessment. It runs per PR because `gh pr list` cannot return commits for this many PRs:
+
+```bash
+for n in $(gh pr list --state open --limit 100 --json number --jq '.[].number'); do gh pr view "$n" --json number,comments,commits --jq '([.comments[] | select(.author.login=="emeryberger" and (.body | contains("Automated validation analysis based on")))] | last | .createdAt) as $v | select($v) | .number as $n | .commits[] | select(.committedDate > $v) | "#\($n) \(.oid[:8]) \(.messageHeadline)"'; done
+```
+
+Stale notices and bot check output are not responses.
+
+### 2. Read what those commands can't show
+
+- **Replies that quote an assessment.** A quoted assessment includes the footer, so only the maintainer's own comments count as assessments. The reply itself may start below a long quote (#14727).
+- **The source issue.** Form-submitted PRs say "from issue #N". Editing that issue does **not** change the PR, so a submitter who "removed" someone there has left the row in the diff (#15368). Check the diff, and check `gh api repos/emeryberger/CSrankings/issues/<N> --jq .updated_at`.
+- **Screenshots and attachments.** Read them. GitHub strips attachments from email replies, so a reply that mentions one may have arrived without it.
+- **Evidence sent by email.** Only the maintainer can check it. List the PR for the maintainer, and do not assess the evidence until they have read it. Do not ask for confidential student records to be posted on the PR.
+
+### 3. Check the response against what was asked
+
+- Treat claims as claims. Open every link and confirm what the page says.
+- Ask whether the response addresses the **open** criterion. Proof of tenure-track status does not answer a question about CS PhD supervision.
+- Evidence of *master's* advising, or of supervision in another discipline, does not satisfy criterion 2 (see [§C2](#c2-faculty-outside-the-cs-unit-ruling-2026-10-19)). Existing listings are never precedent.
+
+### 4. Respond
+
+- **Answer every substantive response**, even when the score doesn't move. Post an `Updated Validation Assessment` with **What changed**, **Remaining issues**, **Conclusion** and the new likelihood, and say which evidence you checked and what it showed.
+- **Make fixes that fall to us.** Form-submitted PRs live on bot branches that submitters can't push to. When the submitter asked for a correction and the row is otherwise settled (a DBLP suffix, dropping one person from a batch), make the change on the branch and say so in the comment.
+- **Escalate challenges to a rule.** If a response disputes a ruling or raises a case the rulings don't cover, put the question to the maintainer. Record the answer in this document.
+
+### 5. Report
+
+Report each PR with activity to the maintainer: what the response said, what checking it showed, the score change, and the action taken or needed. List separately anything only the maintainer can do, such as rulings and emailed evidence.
+
+---
+
 ## Validation Comment Format
 
 When reviewing a PR, **always post a validation assessment comment** on the PR. The comment should follow this template. The comment must be thorough, evidence-based, and reference this document.
@@ -204,7 +249,7 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 4. **Flag specific issues** that need action (wrong Scholar ID, DBLP disambiguation, missing institution, etc.)
 5. **For non-US institutions**, reference the International Title Equivalences table above
 6. **Never mark criterion 2 as PASS on the strength of a title alone.** Cite the actual evidence for doctoral supervision — a 博士生导师 designation, an "Accepting Doctoral Students" flag, named PhD students on a lab page, or a departmental supervisor listing. If none is available, mark it ⚠️ UNCLEAR and say what would settle it. See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
-7. **Read the whole PR thread before assessing.** Submitters and third parties often supply the missing evidence in a comment; scoring without reading it produces a wrong verdict and wastes their time
+7. **Read the whole PR thread before assessing.** Submitters and third parties often supply the missing evidence in a comment; scoring without reading it produces a wrong verdict and wastes their time. For PRs already assessed, follow [Following Up on Validated PRs](#following-up-on-validated-prs)
 8. **For batch PRs**, every person must be individually assessed — do not just spot-check
 9. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
 10. **For removals**, verify the stated reason (retirement, departure, death) with evidence
@@ -289,7 +334,7 @@ Directories where this appears in practice include `faculty.<inst>.edu.cn` profi
 
 ## Automation
 
-The script `util/validate_prs.py` automates the validation workflow:
+The script `util/validate_prs.py` automates the validation workflow. It does not look for replies to earlier assessments, and `list` skips any PR that already has an assessment, so run the [follow-up check](#following-up-on-validated-prs) first:
 
 ```bash
 # See what needs work

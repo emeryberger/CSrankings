@@ -38,6 +38,9 @@ REPO = "emeryberger/CSrankings"
 BASEDIR = Path(__file__).parent.parent
 VALIDATION_FOOTER = "Automated validation analysis based on [VALIDATION.md]"
 FOOTER_MD = "*Automated validation analysis based on [VALIDATION.md](../blob/gh-pages/VALIDATION.md) criteria*"
+# Only these accounts can post assessments. Anyone can comment on a PR, and
+# replies often quote an assessment, footer and score included.
+MAINTAINERS = ("emeryberger",)
 BOT_PASS_MARKER = "All validity checks passed"
 DEFAULT_MERGE_THRESHOLD = 80
 
@@ -209,19 +212,23 @@ def get_pr_files(pr_number: int) -> list[str]:
 # Validation comment detection and scoring
 # ===========================================================================
 
+def get_our_assessments(pr_number: int, endpoint: str = "issues") -> list[str]:
+    """Return a PR's assessments, oldest first: maintainer comments with the footer."""
+    authors = json.dumps(list(MAINTAINERS))
+    try:
+        output = run_gh_text([
+            "api", "--paginate", f"repos/{REPO}/{endpoint}/{pr_number}/comments",
+            "--jq", f".[] | select(.user.login | IN({authors}[])) | .body | @json"
+        ], timeout=30)
+    except Exception:
+        return []
+    bodies = [json.loads(line) for line in output.splitlines() if line.strip()]
+    return [body for body in bodies if VALIDATION_FOOTER in body]
+
+
 def has_our_validation(pr_number: int) -> bool:
     """Check if a PR already has our specific validation comment."""
-    text = get_pr_comments(pr_number)
-    if VALIDATION_FOOTER in text:
-        return True
-    try:
-        text2 = run_gh_text([
-            "api", f"repos/{REPO}/pulls/{pr_number}/comments",
-            "--jq", ".[].body"
-        ], timeout=15)
-        return VALIDATION_FOOTER in text2
-    except Exception:
-        return False
+    return bool(get_our_assessments(pr_number) or get_our_assessments(pr_number, "pulls"))
 
 
 def has_bot_validation_passed(pr_number: int) -> bool:
@@ -231,12 +238,8 @@ def has_bot_validation_passed(pr_number: int) -> bool:
 
 def get_validation_score(pr_number: int) -> Optional[int]:
     """Extract the most recent likelihood-of-validity percentage from comments."""
-    text = get_pr_comments(pr_number)
-    if VALIDATION_FOOTER not in text:
-        return None
-    scores = re.findall(r'[Ll]ikelihood of validity:\s*(\d+)%', text)
-    if not scores:
-        scores = re.findall(r'[Oo]verall likelihood of validity:\s*(\d+)%', text)
+    scores = re.findall(r'[Ll]ikelihood of validity:\s*(\d+)%',
+                        "\n".join(get_our_assessments(pr_number)))
     return int(scores[-1]) if scores else None
 
 
