@@ -408,7 +408,13 @@ def check_dblp_name(index: int, name: str, orcid: str) -> bool:
     if hit.alias_of:
         print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} `{name}` is a DBLP alias; use the canonical DBLP name `{hit.alias_of}`.")
     # An alias's ORCID naturally sits on the canonical name; the alias warning covers it.
-    orcid_elsewhere = [n for n in hit.orcid_elsewhere if n[0] != hit.alias_of]
+    # Likewise, papers under an alias of this name are this person's, and the rebuild
+    # credits them to this name, so the submitted name is the right one to use.
+    alias_names = {alias for alias, _ in hit.aliases}
+    orcid_elsewhere = [n for n in hit.orcid_elsewhere
+                       if n[0] != hit.alias_of and n[0] not in alias_names]
+    if hit.aliases:
+        print(f"{index}.\t{INFO}\tDBLP snapshot: {format_names(hit.aliases)} under the alias of `{name}`; these are credited to `{name}`.")
     if orcid_elsewhere:
         where = format_names(orcid_elsewhere)
         if hit.found:
@@ -424,7 +430,7 @@ def check_dblp_name(index: int, name: str, orcid: str) -> bool:
         if not has_suffix(name) and suffixed:
             print(f"{index}.\t{WARN}\tDBLP also has disambiguated profiles {format_names(suffixed)}. Make sure `{name}` (without a suffix) is the right one.")
         return valid
-    if hit.alias_of or hit.orcid_elsewhere or hit.similar:
+    if hit.alias_of or hit.aliases or hit.orcid_elsewhere or hit.similar:
         return valid
     if hit.variants:
         print(f"{index}.\t{WARN}\t{CHECKBOX_REFS['dblp_name']} No papers in tracked venues under `{name}`. DBLP has {format_names(hit.variants)}; check the disambiguation suffix.")

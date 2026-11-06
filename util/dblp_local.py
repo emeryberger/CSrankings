@@ -58,6 +58,8 @@ class DblpLookup:
     name: str
     papers: int                     # tracked-venue papers under exactly this name
     alias_of: Optional[str] = None  # canonical DBLP name, if `name` is an alias
+    # Names that are aliases of `name`, with their papers. The rebuild credits these to `name`.
+    aliases: List[Tuple[str, int]] = field(default_factory=list)
     # Other names sharing the same base name, as (name, papers), most papers first.
     variants: List[Tuple[str, int]] = field(default_factory=list)
     # Names that differ only in case, periods or spacing, as (name, papers).
@@ -88,6 +90,7 @@ class DblpIndex:
         self.names_by_key: Dict[str, Set[str]] = defaultdict(set)
         self.names_by_token: Dict[str, Set[str]] = defaultdict(set)
         self.aliases: Dict[str, str] = {}
+        self.names_by_canonical: Dict[str, set] = defaultdict(set)
 
         with lzma.open(snapshot) as f:
             data = f.read()
@@ -110,7 +113,9 @@ class DblpIndex:
         if os.path.exists(aliases):
             with open(aliases, encoding="utf-8") as f:
                 for row in csv.DictReader(f):
-                    self.aliases[_normalize(row["alias"])] = _normalize(row["name"])
+                    alias, canonical = _normalize(row["alias"]), _normalize(row["name"])
+                    self.aliases[alias] = canonical
+                    self.names_by_canonical[canonical].add(alias)
 
     def lookup(self, name: str, orcid: Optional[str] = None) -> DblpLookup:
         name = _normalize(name)
@@ -138,6 +143,10 @@ class DblpIndex:
             name=name,
             papers=self.papers.get(name, 0),
             alias_of=self.aliases.get(name),
+            aliases=sorted(
+                ((n, self.papers[n]) for n in self.names_by_canonical.get(name, ()) if n in self.papers),
+                key=lambda x: -x[1],
+            ),
             variants=variants,
             similar=similar,
             close=close,

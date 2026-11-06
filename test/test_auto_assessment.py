@@ -1,5 +1,6 @@
 """Tests for the automated VALIDATION.md assessment: score caps and merge gates."""
 import json
+import lzma
 import os
 import sys
 
@@ -8,6 +9,7 @@ import pytest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "util"))
 
 import auto_merge  # noqa: E402
+from dblp_local import DblpIndex  # noqa: E402
 import validate_commit as vc  # noqa: E402
 import validate_homepage as vh  # noqa: E402
 import validate_prs as vp  # noqa: E402
@@ -331,3 +333,27 @@ def test_a_different_person_sharing_a_first_name_does_not_match():
 def test_rank_rule_needs_evidence_of_a_phd_program(monkeypatch):
     entry = rank_entry(monkeypatch, program="The department offers a Master of Science")
     assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
+
+
+@pytest.fixture
+def dblp(monkeypatch, tmp_path):
+    snapshot = tmp_path / "dblp.xml.xz"
+    with lzma.open(snapshot, "wb") as f:
+        f.write(b"""<dblp>
+<inproceedings key="a"><author orcid="0000-0002-8188-3751">Dimitrios Kollias</author></inproceedings>
+<inproceedings key="b"><author orcid="0000-0003-0034-0358">Yanan Guo 0002</author></inproceedings>
+</dblp>""")
+    aliases = tmp_path / "dblp-aliases.csv"
+    aliases.write_text("alias,name\nDimitrios Kollias,Dimitris Kollias\n", encoding="utf-8")
+    monkeypatch.setattr(vc, "get_dblp_index", lambda: DblpIndex(str(snapshot), str(aliases)))
+
+
+def test_orcid_on_an_alias_of_the_submitted_name_is_not_an_error(dblp, capsys):
+    assert vc.check_dblp_name(1, "Dimitris Kollias", "0000-0002-8188-3751")
+    output = capsys.readouterr().out
+    assert "credited to `Dimitris Kollias`" in output and "Use that DBLP name" not in output
+
+
+def test_orcid_on_an_unrelated_name_is_still_an_error(dblp, capsys):
+    assert not vc.check_dblp_name(1, "Yanan Guo", "0000-0003-0034-0358")
+    assert "Use that DBLP name" in capsys.readouterr().out

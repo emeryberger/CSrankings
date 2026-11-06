@@ -57,7 +57,7 @@ each added name against it:
 | Finding | Severity |
 |---------|----------|
 | Name has tracked-venue papers | ok (reports the count) |
-| No papers under the name, but the submitted ORCID is on another DBLP name | error (suggests that name) |
+| No papers under the name, but the submitted ORCID is on another DBLP name | error (suggests that name), unless that name is an alias of the submitted one |
 | Name is a DBLP alias (`dblp-aliases.csv`) | warning (suggests the canonical name) |
 | Same name with different case or periods (`S M Ferdous` vs. `S. M. Ferdous`) | warning |
 | Unsuffixed name, but suffixed profiles (`Name 0001`) exist | warning |

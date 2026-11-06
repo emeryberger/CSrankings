@@ -14,6 +14,7 @@ SNAPSHOT = """<dblp>
 <inproceedings key="b"><author orcid="0000-0003-0034-0358">Yanan Guo 0002</author><author>Yanan Guo</author></inproceedings>
 <inproceedings key="c"><author>S. M. Ferdous</author><author>XiaoFeng Wang 0001</author></inproceedings>
 <inproceedings key="d"><author>Dmitriy Drusvyatskiy</author><author>Alexander Cloninger</author></inproceedings>
+<inproceedings key="f"><author orcid="0000-0002-8188-3751">Dimitrios Kollias</author></inproceedings>
 <inproceedings key="e"><author>J&#252;rgen M&#252;ller</author><author>Xiaofeng Wang 0001</author></inproceedings>
 </dblp>
 """
@@ -26,7 +27,7 @@ def index(tmp_path_factory):
     with lzma.open(snap, "wb") as f:
         f.write(SNAPSHOT.encode("utf-8"))
     aliases = d / "dblp-aliases.csv"
-    aliases.write_text("alias,name\nAlex Cloninger,Alexander Cloninger\n", encoding="utf-8")
+    aliases.write_text("alias,name\nAlex Cloninger,Alexander Cloninger\nDimitrios Kollias,Dimitris Kollias\n", encoding="utf-8")
     return DblpIndex(str(snap), str(aliases))
 
 
@@ -84,3 +85,9 @@ def test_unknown_name(index):
     hit = index.lookup("Qianfang Liao")
     assert not hit.found
     assert not (hit.variants or hit.similar or hit.close or hit.alias_of)
+
+
+def test_papers_under_an_alias_of_the_name(index):
+    hit = index.lookup("Dimitris Kollias", "0000-0002-8188-3751")
+    assert hit.aliases == [("Dimitrios Kollias", 1)]
+    assert hit.orcid_elsewhere == [("Dimitrios Kollias", 1)]
