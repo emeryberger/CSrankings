@@ -1,0 +1,42 @@
+name: CI Failure Mail
+
+# Opens an issue mentioning the repository owner when any workflow below does not
+# succeed, so that GitHub emails them; no mail credentials are stored. The post-merge
+# rebuild once failed for days without anyone being told, and the rankings silently
+# stopped updating. test/test_ci_notifications.py fails if a workflow is missing here.
+on:
+  workflow_run:
+    workflows:
+      - Check Runner Images
+      - Close stale PRs
+      - Commit Validation
+      - Monthly DBLP Update
+      - Process Faculty Submissions
+      - Run Make and Commit Changes
+      - Update Sponsors
+      - pages build and deployment
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+jobs:
+  notify:
+    # Deliberately not pinned: this must still run when a pinned image is gone.
+    runs-on: ubuntu-latest
+
+    steps:
+      # On workflow_run this checks out the default branch, never the triggering
+      # run's code, so nothing from a pull request runs with this token.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      # Runs on successes too, which is what closes an open failure issue.
+      - name: Report the run
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 util/notify_ci_failure.py

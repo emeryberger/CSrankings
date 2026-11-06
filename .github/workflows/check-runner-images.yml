@@ -1,0 +1,39 @@
+name: Check Runner Images
+
+# Reports a pinned Ubuntu image that GitHub has removed or deprecated. A failure
+# here is reported by ci-failure-mail.yml, like any other.
+on:
+  schedule:
+    # Every Monday at 12:00 UTC
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+    inputs:
+      simulate_failure:
+        description: >-
+          Fail deliberately, to check that the failure issue and email arrive. Run
+          again without this to close the issue. Touches no data; takes seconds.
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    # Deliberately not pinned: this has to run when a pinned image is gone.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simulate a failure (notification test only)
+        if: ${{ inputs.simulate_failure }}
+        run: |
+          echo "simulate_failure was set: failing on purpose to test the failure mail."
+          exit 1
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check pinned images
+        run: python3 util/check_runner_images.py
