@@ -80,9 +80,10 @@ The question for any faculty member outside the CS department (or a §C1 AI scho
 - **UC San Diego: ELIGIBLE.** Any tenure-track (ladder-rank) UCSD faculty member can supervise a PhD student in any discipline, including CS. Department (HDSI, Mathematics, ECE, Cognitive Science, Linguistics, Scripps, ...) does not matter, and no CSE affiliated listing is required.
 - **Texas A&M: ELIGIBLE** with a CSE "Affiliated Faculty" (courtesy) or "Joint Faculty" listing. At TAMU these titles carry CS PhD supervision privileges.
 - **Everywhere else** (Schools of Cyber Science, AI or research *institutes*, merged AI + Automation schools, EE/Automation departments, ...): accept only faculty with **clear evidence** of sole supervision rights for CS PhD students. Examples:
-  - China: 博士生导师 in a Computer Science and Technology (0812xx) discipline on an official faculty page or doctoral-admissions roster, or in the AI-school programme of a §C1 school (e.g. 140500). 博导 status only in another first-level discipline (Cyberspace Security 0839, Information & Communication Engineering 0810, Control Science 0811) does not count.
+  - China: 博士生导师 in a Computer Science and Technology (0812xx) discipline on an official faculty page or doctoral-admissions roster, or in the AI-school programme of a §C1 school (e.g. 140500). 博导 status only in another first-level discipline (Cyberspace Security 0839, Software Engineering 0835, Information & Communication Engineering 0810, Control Science 0811) does not count. Software school faculty qualify if they are also doctoral supervisors under 0812 (ruling on 0835: 2026-11-06).
   - Elsewhere: the person stating on their own faculty page that they are a PhD advisor, plus an appointment that admits PhD students in CS or AI, or official graduate-faculty listings.
   - A title alone (副教授, chair professor, "affiliated") outside UCSD and TAMU is not evidence.
+- **Data Science PhD programmes: do not count** (ruling: 2026-11-06). Sole advising in a separate Data Science PhD, such as the one run by UChicago's Committee on Data Science, is not sole supervision of CS PhD students. The person still needs a CS appointment or a CS-department policy allowing them to be sole advisor of CS PhD students.
 
 ### D. Future Additions
 
