@@ -74,7 +74,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          npm install -g google-closure-compiler
+          npm install -g typescript google-closure-compiler
           # pytest is needed for the post-make invariant check below. selenium
           # and webdriver-manager are not exercised -- `-m postmake` deselects
           # the browser tests -- but test/test_incremental.py imports selenium
