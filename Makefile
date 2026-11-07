@@ -101,7 +101,7 @@ faculty-coauthors.csv: dblp.xml.xz util/generate-faculty-coauthors.py util/csran
 	$(PYTHON) util/generate-faculty-coauthors.py
 	@echo "Done."
 
-generated-author-info.csv: faculty-affiliations.csv dblp.xml.xz util/regenerate_data.py util/csrankings.py dblp-aliases.csv
+generated-author-info.csv: faculty-affiliations.csv dblp.xml.xz util/regenerate_data.py util/csrankings.py util/nonresearch.py non-research-papers.csv dblp-aliases.csv
 	@echo "Rebuilding the publication database (generated-author-info.csv)."
 	@$(PYPY) util/split-csv.py
 	@$(PYPY) util/regenerate_data.py
@@ -137,7 +137,9 @@ backup-dblp:
 
 # Download the DBLP snapshot corresponding to the last update date (from index.html)
 # This is used in CI where dblp-original.xml.gz is not checked in
-# DBLP releases are at: https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-01.xml.gz
+# DBLP releases are at: https://drops.dagstuhl.de/storage/artifacts/dblp/xml/YYYY/dblp-YYYY-MM-DD.xml.gz
+# (DD is usually 01 but not always, e.g. 2026-10-03), so pass the month and let
+# the downloader find that month's file.
 download-prev-dblp:
 	@echo "Downloading previous DBLP snapshot based on last update date..."
 	@MONTH_YEAR=$$(grep -oE 'DBLP</a> \([A-Za-z]+ [0-9]{4}\)' index.html | grep -oE '[A-Za-z]+ [0-9]+'); \
@@ -153,9 +155,9 @@ download-prev-dblp:
 		echo "Error: Could not parse month '$$MONTH_NAME'"; \
 		exit 1; \
 	fi; \
-	RELEASE_DATE="$$YEAR-$$MONTH_NUM-01"; \
-	echo "Last update was: $$MONTH_YEAR -> downloading dblp-$$RELEASE_DATE.xml.gz"; \
-	$(PYTHON) util/download-dblp-release.py --release "$$RELEASE_DATE" --output dblp-original.xml.gz
+	RELEASE_MONTH="$$YEAR-$$MONTH_NUM"; \
+	echo "Last update was: $$MONTH_YEAR -> downloading the $$RELEASE_MONTH release"; \
+	$(PYTHON) util/download-dblp-release.py --month "$$RELEASE_MONTH" --output dblp-original.xml.gz
 
 # Detect DBLP author name changes (dry-run preview)
 # Requires: prev-dblp.xml.gz (previous DBLP dump) and dblp-original.xml.gz (current)

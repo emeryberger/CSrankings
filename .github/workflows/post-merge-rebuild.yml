@@ -4,13 +4,17 @@ on:
   push:
     branches:
       - gh-pages  # Runs only on merge to the main branch
+  workflow_dispatch:  # util/auto_merge.py starts this: merges made with GITHUB_TOKEN fire no push event
 
 permissions:
   contents: write  # Required to push changes back
 
+# Both jobs are pinned so that a change of image is a deliberate step: ubuntu-latest
+# moving to 26.04 removed python3.12 and tsc, and broke this workflow for days.
+# check-runner-images.yml alerts by email if GitHub removes or deprecates the pinned image.
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout repository
@@ -50,7 +54,7 @@ jobs:
         run: python3 -m pytest test/ -v -m "not postmake"
 
   build-and-commit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: test  # Only run after tests pass
 
     steps:
@@ -60,6 +64,12 @@ jobs:
           persist-credentials: true  # Required to push back
           fetch-depth: 0  # Fetch full history for git pull --rebase
 
+      # The Makefile calls python3.12 by name, and ubuntu-26.04 does not ship it.
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
       - name: Set up Git identity
         run: |
           git config user.name "github-actions[bot]"
@@ -68,7 +78,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          npm install -g google-closure-compiler
+          npm install -g typescript google-closure-compiler
           # pytest is needed for the post-make invariant check below. selenium
           # and webdriver-manager are not exercised -- `-m postmake` deselects
           # the browser tests -- but test/test_incremental.py imports selenium

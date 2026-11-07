@@ -80,9 +80,10 @@ The question for any faculty member outside the CS department (or a §C1 AI scho
 - **UC San Diego: ELIGIBLE.** Any tenure-track (ladder-rank) UCSD faculty member can supervise a PhD student in any discipline, including CS. Department (HDSI, Mathematics, ECE, Cognitive Science, Linguistics, Scripps, ...) does not matter, and no CSE affiliated listing is required.
 - **Texas A&M: ELIGIBLE** with a CSE "Affiliated Faculty" (courtesy) or "Joint Faculty" listing. At TAMU these titles carry CS PhD supervision privileges.
 - **Everywhere else** (Schools of Cyber Science, AI or research *institutes*, merged AI + Automation schools, EE/Automation departments, ...): accept only faculty with **clear evidence** of sole supervision rights for CS PhD students. Examples:
-  - China: 博士生导师 in a Computer Science and Technology (0812xx) discipline on an official faculty page or doctoral-admissions roster, or in the AI-school programme of a §C1 school (e.g. 140500). 博导 status only in another first-level discipline (Cyberspace Security 0839, Information & Communication Engineering 0810, Control Science 0811) does not count.
+  - China: 博士生导师 in a Computer Science and Technology (0812xx) discipline on an official faculty page or doctoral-admissions roster, or in the AI-school programme of a §C1 school (e.g. 140500). 博导 status only in another first-level discipline (Cyberspace Security 0839, Software Engineering 0835, Information & Communication Engineering 0810, Control Science 0811) does not count. Software school faculty qualify if they are also doctoral supervisors under 0812 (ruling on 0835: 2026-11-06).
   - Elsewhere: the person stating on their own faculty page that they are a PhD advisor, plus an appointment that admits PhD students in CS or AI, or official graduate-faculty listings.
   - A title alone (副教授, chair professor, "affiliated") outside UCSD and TAMU is not evidence.
+- **Data Science PhD programmes: do not count** (ruling: 2026-11-06). Sole advising in a separate Data Science PhD, such as the one run by UChicago's Committee on Data Science, is not sole supervision of CS PhD students. The person still needs a CS appointment or a CS-department policy allowing them to be sole advisor of CS PhD students.
 
 ### D. Future Additions
 
@@ -112,6 +113,51 @@ Multiple PRs adding the same person, often with slightly different data. Watch f
 - Removals of deceased faculty or duplicate entries with zero publications in CSRankings venues are generally appropriate.
 - Removals of active faculty require evidence (retirement announcement, departure notice, etc.).
 - Consolidates Imani N. S. Munyaka / Imani N. Sherman entries: **Appropriate**.
+
+---
+
+## Following Up on Validated PRs
+
+**Start every validation run here, before assessing any new PR.** Submitters often answer a validation comment with the evidence it asked for, and a PR can be auto-closed as stale while its reply waits unread.
+
+### 1. Find what changed since the last assessment
+
+This lists every open PR with a reply from someone other than the maintainer or the bot since its last assessment, plus never-assessed PRs with a reply:
+
+```bash
+gh pr list --state open --limit 100 --json number,title,comments --jq '.[] | ([.comments[] | select(.author.login=="emeryberger" and (.body | contains("Automated validation analysis based on")))] | last | .createdAt) as $v | [.comments[] | select((.author.login | IN("emeryberger","github-actions") | not) and ($v == null or .createdAt > $v or (.body | contains("Automated validation analysis based on"))))] as $new | select($new | length > 0) | "#\(.number) \(.title) [last validated: \($v // "never")]: \([$new[].author.login] | join(", "))"'
+```
+
+This lists commits pushed since the last assessment. It runs per PR because `gh pr list` cannot return commits for this many PRs:
+
+```bash
+for n in $(gh pr list --state open --limit 100 --json number --jq '.[].number'); do gh pr view "$n" --json number,comments,commits --jq '([.comments[] | select(.author.login=="emeryberger" and (.body | contains("Automated validation analysis based on")))] | last | .createdAt) as $v | select($v) | .number as $n | .commits[] | select(.committedDate > $v) | "#\($n) \(.oid[:8]) \(.messageHeadline)"'; done
+```
+
+Stale notices and bot check output are not responses.
+
+### 2. Read what those commands can't show
+
+- **Replies that quote an assessment.** A quoted assessment includes the footer, so only the maintainer's own comments count as assessments. The reply itself may start below a long quote (#14727).
+- **The source issue.** Form-submitted PRs say "from issue #N". Editing that issue does **not** change the PR, so a submitter who "removed" someone there has left the row in the diff (#15368). Check the diff, and check `gh api repos/emeryberger/CSrankings/issues/<N> --jq .updated_at`.
+- **Screenshots and attachments.** Read them. GitHub strips attachments from email replies, so a reply that mentions one may have arrived without it.
+- **Evidence sent by email.** Only the maintainer can check it. List the PR for the maintainer, and do not assess the evidence until they have read it. Do not ask for confidential student records to be posted on the PR.
+
+### 3. Check the response against what was asked
+
+- Treat claims as claims. Open every link and confirm what the page says.
+- Ask whether the response addresses the **open** criterion. Proof of tenure-track status does not answer a question about CS PhD supervision.
+- Evidence of *master's* advising, or of supervision in another discipline, does not satisfy criterion 2 (see [§C2](#c2-faculty-outside-the-cs-unit-ruling-2026-10-19)). Existing listings are never precedent.
+
+### 4. Respond
+
+- **Answer every substantive response**, even when the score doesn't move. Post an `Updated Validation Assessment` with **What changed**, **Remaining issues**, **Conclusion** and the new likelihood, and say which evidence you checked and what it showed.
+- **Make fixes that fall to us.** Form-submitted PRs live on bot branches that submitters can't push to. When the submitter asked for a correction and the row is otherwise settled (a DBLP suffix, dropping one person from a batch), make the change on the branch and say so in the comment.
+- **Escalate challenges to a rule.** If a response disputes a ruling or raises a case the rulings don't cover, put the question to the maintainer. Record the answer in this document.
+
+### 5. Report
+
+Report each PR with activity to the maintainer: what the response said, what checking it showed, the score change, and the action taken or needed. List separately anything only the maintainer can do, such as rulings and emailed evidence.
 
 ---
 
@@ -203,8 +249,8 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 3. **Likelihood percentage**: 90-100% = clearly valid; 70-89% = likely valid with minor concerns; 50-69% = significant uncertainty; <50% = likely invalid
 4. **Flag specific issues** that need action (wrong Scholar ID, DBLP disambiguation, missing institution, etc.)
 5. **For non-US institutions**, reference the International Title Equivalences table above
-6. **Never mark criterion 2 as PASS on the strength of a title alone.** Cite the actual evidence for doctoral supervision — a 博士生导师 designation, an "Accepting Doctoral Students" flag, named PhD students on a lab page, or a departmental supervisor listing. If none is available, mark it ⚠️ UNCLEAR and say what would settle it. See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
-7. **Read the whole PR thread before assessing.** Submitters and third parties often supply the missing evidence in a comment; scoring without reading it produces a wrong verdict and wastes their time
+6. **Never mark criterion 2 as PASS on the strength of a title alone**, except under the [US and Canada rule](#verifying-phd-supervision-rights-criterion-2). Cite the actual evidence for doctoral supervision — a 博士生导师 designation, an "Accepting Doctoral Students" flag, named PhD students on a lab page, or a departmental supervisor listing. If none is available, mark it ⚠️ UNCLEAR and say what would settle it. See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2)
+7. **Read the whole PR thread before assessing.** Submitters and third parties often supply the missing evidence in a comment; scoring without reading it produces a wrong verdict and wastes their time. For PRs already assessed, follow [Following Up on Validated PRs](#following-up-on-validated-prs)
 8. **For batch PRs**, every person must be individually assessed — do not just spot-check
 9. **Always end with** the `*Automated validation analysis based on [VALIDATION.md](...) criteria*` footer line
 10. **For removals**, verify the stated reason (retirement, departure, death) with evidence
@@ -257,6 +303,16 @@ Directories where this appears in practice include `faculty.<inst>.edu.cn` profi
 - **Lab or group pages listing current PhD students** by name. A group with several doctoral students is direct evidence of sole supervision in practice, not merely eligibility for it.
 - **Departmental graduate-programme pages** listing eligible supervisors.
 
+**US and Canada: rank in a CS PhD-granting department counts** (ruling: 2026-11-06).
+
+New faculty often have no students yet, so direct evidence may not exist. At a US or Canadian institution, criterion 2 passes when all of these hold:
+
+- The title is Assistant, Associate or Full Professor, with no qualifier such as Teaching, Research, Clinical, Adjunct, Visiting or of Practice.
+- The person is in the CS department itself, not in a unit that §C2 covers.
+- The institution's own page shows that the department offers a PhD in Computer Science.
+
+This rule applies only in the US and Canada. Elsewhere, rank alone is still not evidence.
+
 **Two cautions:**
 
 1. **Supervision rights do not establish the department.** 博导 status confirms criterion 2 only. A faculty member can be a doctoral supervisor in a non-CS unit, which leaves criterion 4 unaddressed — verify the two separately.
@@ -289,7 +345,41 @@ Directories where this appears in practice include `faculty.<inst>.edu.cn` profi
 
 ## Automation
 
-The script `util/validate_prs.py` automates the validation workflow:
+### Automatic assessment and merging
+
+`commit_validation.yml` applies this document to every PR when it is opened or updated, and again when someone other than the maintainer replies. It runs Claude Code on the maintainer's subscription and posts an `Automated Validation Assessment` comment with a likelihood of validity.
+
+**Score caps.** Every quoted fact is rechecked against the page it cites, and the model's score is then capped:
+
+| Finding | Maximum score |
+|---------|---------------|
+| Criterion 1, 2 or 4 is not a confirmed pass, or the classification isn't `valid`, or someone in the diff wasn't assessed | 75% |
+| A cited quote is not on the cited page | 50% |
+| A confirmed failure on any criterion | 30% |
+
+**What happens next**
+
+- **80% or more, with every merge gate passed:** merged automatically.
+- **Below 50%:** marked `stale`, which closes the PR after 14 days without activity.
+- **Otherwise:** left for a maintainer.
+
+**Merge gates** (`util/auto_merge.py`). All of these must hold, whatever the score:
+
+- The mechanical checks passed, and the PR has neither the `hold` nor the `stale` label.
+- It changes only `csrankings-?.csv` files and removes nobody.
+- No current industry role was mentioned for anyone in it, and nobody in it is listed in `old/industry.csv`.
+- Every person's institution is in `institutions.csv`.
+- For criteria 1, 2 and 4, the confirming page is on that institution's own site. Personal sites and GitHub Pages don't count for this gate, although they can still count as evidence for a maintainer.
+- The page cited for rank names the person. Under the US and Canada rule, the title beside their name must also be unqualified.
+- The PR hasn't changed since it was assessed.
+
+**Maintainers decide.** A maintainer's assessment always outranks the automated score, even when the automated one is newer, so a low maintainer score blocks merging. The `hold` label stops auto-closing, `stale` marking and auto-merging. Setting the repository variable `AUTO_MERGE` to `off` reports decisions without merging.
+
+An automated assessment doesn't replace following up: a PR left below 80% still needs the steps in [Following Up on Validated PRs](#following-up-on-validated-prs). Each PR gets at most 6 automatic assessments.
+
+### Manual tools
+
+The script `util/validate_prs.py` automates the validation workflow. It does not look for replies to earlier assessments, and `list` skips any PR that already has an assessment, so run the [follow-up check](#following-up-on-validated-prs) first:
 
 ```bash
 # See what needs work

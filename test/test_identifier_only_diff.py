@@ -29,7 +29,7 @@ def _load_validate_commit():
     """Import util/validate_commit.py as a module.
 
     The test job installs requirements.txt, so its real dependencies (pydantic,
-    fuzzysearch, unidecode, openai) are present and are exercised directly rather
+    fuzzysearch, unidecode) are present and are exercised directly rather
     than stubbed.
     """
     spec = importlib.util.spec_from_file_location(

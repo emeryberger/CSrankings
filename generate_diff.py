@@ -1,6 +1,7 @@
 # generate_diff.py
 import os
 import json
+import re
 import requests
 
 def generate_metadata(repo: str, pr_number: str, token: str, output_path: str = "pr_metadata.json") -> None:
@@ -23,11 +24,30 @@ def generate_metadata(repo: str, pr_number: str, token: str, output_path: str = 
             user_data = user_response.json()
             author_name = user_data.get("name", "") or ""
 
+    comments = []
+    comments_url = f"https://api.github.com/repos/{repo}/issues/{pr_number}/comments?per_page=100"
+    while comments_url:
+        comments_response = requests.get(comments_url, headers=headers)
+        comments_response.raise_for_status()
+        comments += comments_response.json()
+        comments_url = comments_response.links.get("next", {}).get("url")
+
+    bot = "github-actions[bot]"
     pr_metadata = {
         "title": pr_data.get("title", ""),
         "body": pr_data.get("body", ""),
         "author_login": author_login,
         "author_name": author_name,
+        "head_sha": pr_data.get("head", {}).get("sha", ""),
+        "comments": [
+            {"author": c["user"]["login"], "created_at": c["created_at"], "body": c["body"]}
+            for c in comments if c["user"]["login"] != bot
+        ],
+        "prior_assessment_hashes": [
+            match.group(1) for c in comments if c["user"]["login"] == bot
+            and c["body"].startswith("## Automated Validation Assessment")
+            for match in [re.search(r"<!-- assessment-input: (\w+) -->", c["body"])] if match
+        ],
     }
     with open(output_path, "w") as f:
         json.dump(pr_metadata, f, indent=2)

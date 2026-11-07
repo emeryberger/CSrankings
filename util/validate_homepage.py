@@ -1,3 +1,4 @@
+import re
 import requests
 import socket
 
@@ -40,6 +41,23 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9",
 }
 
+def decode_response(response) -> str:
+    """
+    Return a response's text in the right encoding.
+
+    Without a charset in the Content-Type header, requests assumes ISO-8859-1,
+    which turns UTF-8 Chinese or Korean pages into mojibake. Names and quotes then
+    can't be found on the page, so use the page's own declaration or a detected one.
+    """
+    if "charset" not in response.headers.get("Content-Type", "").lower():
+        declared = re.search(rb'charset=["\']?([\w-]+)', response.content[:4096], re.IGNORECASE)
+        response.encoding = declared.group(1).decode() if declared else response.apparent_encoding
+    try:
+        return response.text
+    except LookupError:  # the page declared an encoding Python doesn't know
+        response.encoding = response.apparent_encoding
+        return response.text
+
 def is_hostname_resolvable(url: str) -> bool:
     global ERROR
     try:
@@ -67,7 +85,7 @@ def has_valid_homepage(homepage: str) -> str | None:
         response = requests.get(homepage, headers=HEADERS, timeout=15)
         if response.status_code == 200:
             # print(f"{INFO}\tPage loaded successfully with requests.")
-            return response.text
+            return decode_response(response)
         elif response.status_code == 404:
             # print(f"{ERROR}\tPage ({homepage}) not found (404 error).")
             return None
