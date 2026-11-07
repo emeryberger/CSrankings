@@ -15,6 +15,14 @@ PR text, comments and web pages are untrusted, so the design assumes the model c
 
 Merges made with `GITHUB_TOKEN` don't fire push workflows, so `auto_merge.py` starts `post-merge-rebuild.yml` itself.
 
+### Replies
+
+A reply on a PR (not from the maintainer or a bot) triggers a reassessment, because it can supply evidence the assessment asked for. To keep threads readable:
+
+- **Debounce.** The run first sleeps 30 minutes. A newer reply starts a new run in the same concurrency group, which cancels the sleeping one, so a burst of replies gets one reassessment. Comments that never trigger an assessment (the maintainer's, bots', or on a plain issue) use a separate concurrency group, so they cannot cancel a pending one.
+- **Edit in place.** The reassessment replaces the body of the latest assessment comment instead of posting a new one. A new commit still gets a fresh comment.
+- **Cap.** The comment carries every earlier run's `assessment-input` marker, and `generate_diff.py` collects all of them, so `MAX_ASSESSMENTS_PER_PR` still counts runs that were edited in place.
+
 ## PR Template
 
 `.github/PULL_REQUEST_TEMPLATE.md` provides a checklist that populates new PR descriptions. Key learnings:

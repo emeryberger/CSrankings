@@ -43,11 +43,14 @@ def generate_metadata(repo: str, pr_number: str, token: str, output_path: str = 
             {"author": c["user"]["login"], "created_at": c["created_at"], "body": c["body"]}
             for c in comments if c["user"]["login"] != bot
         ],
-        "prior_assessment_hashes": [
-            match.group(1) for c in comments if c["user"]["login"] == bot
+        # A reply-triggered reassessment edits the existing assessment comment
+        # in place and carries every earlier run's marker forward, so collect
+        # all markers, not just one per comment (the per-PR cap counts them).
+        "prior_assessment_hashes": list(dict.fromkeys(
+            h for c in comments if c["user"]["login"] == bot
             and c["body"].startswith("## Automated Validation Assessment")
-            for match in [re.search(r"<!-- assessment-input: (\w+) -->", c["body"])] if match
-        ],
+            for h in re.findall(r"<!-- assessment-input: (\w+) -->", c["body"])
+        )),
     }
     with open(output_path, "w") as f:
         json.dump(pr_metadata, f, indent=2)

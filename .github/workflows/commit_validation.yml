@@ -14,8 +14,11 @@ on:
         type: number
 
 # Prevent multiple runs for the same PR from running simultaneously
+# Comments that do not trigger an assessment (the maintainer's, bots', or on a
+# plain issue) get a group of their own. Otherwise they would cancel a pending
+# reassessment (or a running validation) and then skip the job themselves.
 concurrency:
-  group: pr-validation-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr_number }}
+  group: pr-validation-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr_number }}${{ (github.event_name == 'issue_comment' && (!github.event.issue.pull_request || github.event.comment.user.login == 'emeryberger' || github.event.comment.user.type == 'Bot')) && format('-ignored-{0}', github.run_id) || '' }}
   cancel-in-progress: true
 
 permissions:
@@ -26,7 +29,8 @@ permissions:
 jobs:
   commit_validation:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 30 minutes of debounce (replies only) plus up to 30 for the checks.
+    timeout-minutes: 60
     # Comments: only replies on PRs, and not from the maintainer or a bot.
     if: >-
       github.event_name != 'issue_comment' || (
@@ -37,6 +41,15 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number || inputs.pr_number }}
 
     steps:
+      # Debounce replies. Submitters often post several comments in a row, and
+      # reassessing after each one buried threads under near-identical
+      # 30,000-character assessments (#15402 got seven in ninety minutes). Wait
+      # for the thread to go quiet: a newer comment starts a new run in the same
+      # concurrency group, which cancels this one while it is still sleeping.
+      - name: Wait for the thread to go quiet (replies only)
+        if: github.event_name == 'issue_comment'
+        run: sleep 1800
+
       - name: Check out repository
         uses: actions/checkout@v4
 
@@ -116,8 +129,30 @@ jobs:
               "$COMMENTS_URL" --data-binary @-
           }
 
+          # On a reply, update the latest assessment in place rather than adding
+          # another long comment. A new commit still gets a fresh comment.
+          update_assessment() {
+            LATEST=$(curl -s -H "Authorization: token $GH_TOKEN" "$COMMENTS_URL?per_page=100" \
+              | jq -r '[.[] | select(.user.login == "github-actions[bot]")
+                             | select(.body | startswith("## Automated Validation Assessment"))]
+                       | last | .id // empty')
+            if [ -n "$LATEST" ]; then
+              jq -Rs '{body: .}' < "$1" | curl -s -X PATCH \
+                -H "Authorization: token $GH_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$REPO/issues/comments/$LATEST" --data-binary @- > /dev/null
+              echo "Updated assessment comment $LATEST in place."
+            else
+              post_comment "$1"
+            fi
+          }
+
           if [ -f artifacts/assessment.md ]; then
-            post_comment artifacts/assessment.md
+            if [ "${{ github.event_name }}" = "issue_comment" ]; then
+              update_assessment artifacts/assessment.md
+            else
+              post_comment artifacts/assessment.md
+            fi
           fi
 
           # A reply gets a new assessment, but not the checks or label changes again.

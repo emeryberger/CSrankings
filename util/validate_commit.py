@@ -888,7 +888,8 @@ def sanitize(text: str) -> str:
     text = re.sub(r'likelihood of validity', 'validity', text, flags=re.IGNORECASE)
     return re.sub(r'\s+', ' ', text).strip()
 
-def render_assessment(entries: List[dict], score: int, missing: List[str], input_hash: str) -> str:
+def render_assessment(entries: List[dict], score: int, missing: List[str], input_hash: str,
+                      prior_hashes: Optional[List[str]] = None) -> str:
     lines = [f"{ASSESSMENT_HEADING}: {len(entries)} entr{'y' if len(entries) == 1 else 'ies'}", "",
              f"**Likelihood of validity: {score}%**", "",
              "This assessment applies [VALIDATION.md](../blob/gh-pages/VALIDATION.md) automatically. "
@@ -914,10 +915,14 @@ def render_assessment(entries: List[dict], score: int, missing: List[str], input
                           "A maintainer needs to check the 75% time requirement."]
         lines += ["", sanitize(entry.get('explanation', ''))[:1500], ""]
     lines += ["---", "*Generated automatically by Claude Code. Replying with evidence triggers "
-              "a new assessment. A maintainer's assessment takes precedence over this one.*",
+              "a reassessment once the thread has been quiet for 30 minutes; this comment is "
+              "then updated in place. A maintainer's assessment takes precedence over this one.*",
               "*Automated validation analysis based on "
-              "[VALIDATION.md](../blob/gh-pages/VALIDATION.md) criteria*",
-              f"<!-- assessment-input: {input_hash} -->"]
+              "[VALIDATION.md](../blob/gh-pages/VALIDATION.md) criteria*"]
+    # Earlier runs' markers are kept so the per-PR cap still counts them after
+    # this comment replaces the previous assessment.
+    for h in dict.fromkeys([*(prior_hashes or []), input_hash]):
+        lines.append(f"<!-- assessment-input: {h} -->")
     return "\n".join(lines) + "\n"
 
 def run_assessment(diff_path: str, metadata: dict) -> Optional[int]:
@@ -956,7 +961,7 @@ def run_assessment(diff_path: str, metadata: dict) -> Optional[int]:
     if missing:
         score = min(score, UNCONFIRMED_SCORE_CAP)
     with open("assessment.md", "w", encoding="utf-8") as f:
-        f.write(render_assessment(entries, score, missing, input_hash))
+        f.write(render_assessment(entries, score, missing, input_hash, prior))
     with open("assessment.json", "w", encoding="utf-8") as f:
         json.dump({
             "score": score,
