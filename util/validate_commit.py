@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate_homepage import has_valid_homepage, extract_visible_text_from_webpage
 from csv_text import find_bad_chars
 from dblp_local import get_index as get_dblp_index, format_names, has_suffix
+from auto_merge import load_institution_sites, same_host, site_of
 
 # ---------- Checkbox References ----------
 # These map to footnotes in .github/PULL_REQUEST_TEMPLATE.md
@@ -71,7 +72,7 @@ NON_PROFESSOR_TITLE = re.compile(
     re.IGNORECASE)
 TITLE_SEARCH_LINES = 4
 TITLE_CONTEXT_CHARS = 25
-PHD_PROGRAM = re.compile(r'\bph\.?\s?d\b|\bdoctora', re.IGNORECASE)
+PHD_PROGRAM = re.compile(r'\bph\.?\s?d\b|\bdoctor(?:al|ate)?\b', re.IGNORECASE)
 
 # ---------- Models ----------
 
@@ -103,6 +104,7 @@ class AuditEntry(BaseModel):
     # 'rank_in_cs_department' is the US/Canada rule; score_entry() enforces its limits.
     phd_advising_basis: Literal['direct', 'rank_in_cs_department']
     current_industry_roles: List[str]  # every current company role any page mentions
+    official_listing_url: str  # a page on the institution's own site naming the person, or ""
     explanation: str
 
 class AuditEntryList(BaseModel):
@@ -679,6 +681,13 @@ EVIDENCE RULES -- these are enforced mechanically, not on trust:
    title, and phd_advising must quote the institution's own page showing that the
    department offers a PhD in Computer Science.
 
+   Each quote must be at least 12 characters long (6 for Chinese, Japanese or
+   Korean); shorter ones can't be checked and are discarded.
+
+   Personal sites are fine as evidence. Also set official_listing_url to a page on
+   the institution's own website that names the person, such as a department
+   directory, or to "" if you could not retrieve one.
+
    List in current_industry_roles every current company role that any page
    mentions for the person, including advisory and co-founder roles. Use an empty
    list only if you found none.
@@ -795,9 +804,10 @@ def lines_naming(name: str, page_text: Optional[str]) -> Tuple[List[str], List[i
     return lines, [i for i, line in enumerate(lines)
                    if pattern.search(unidecode.unidecode(line).lower())]
 
-def tenure_title_near_name(name: str, page_text: Optional[str]) -> bool:
+def nearest_title(name: str, page_text: Optional[str]) -> Optional[str]:
     """
-    True if the title nearest the person's name on the page is an unqualified one.
+    Classify the title nearest the person's name: 'unqualified', 'qualified',
+    'not_professor', or None if the page shows no title for them.
 
     A quote only shows that a phrase is somewhere on a page, and a directory has
     that phrase for many people. So look beside the name itself: the same line,
@@ -806,26 +816,129 @@ def tenure_title_near_name(name: str, page_text: Optional[str]) -> bool:
     'Research Areas', or a later sentence about research, doesn't count against it.
     """
     lines, indexes = lines_naming(name, page_text)
+    # The first mention that shows a title is the page's header or directory line;
+    # later ones tend to be a biography, which mentions past and visiting posts.
     for index in indexes:
-        window = TITLE_SEARCH_LINES
-        nearby = [index, *range(index + 1, index + 1 + window),
-                  *range(index - 1, index - 1 - window, -1)]
+        nearby = [index, *range(index + 1, index + 1 + TITLE_SEARCH_LINES),
+                  *range(index - 1, index - 1 - TITLE_SEARCH_LINES, -1)]
         for i in nearby:
             line = lines[i] if 0 <= i < len(lines) else ''
             match = PROFESSORIAL_TITLE.search(line)
             if match:
                 context = line[max(0, match.start() - TITLE_CONTEXT_CHARS):
                                match.end() + TITLE_CONTEXT_CHARS]
-                if not NON_TENURE_TITLE.search(context):
-                    return True
-                break  # the nearest title is qualified, so a later one can't rescue it
+                return 'qualified' if NON_TENURE_TITLE.search(context) else 'unqualified'
             if NON_PROFESSOR_TITLE.search(line):
-                break  # their title isn't a professorship; the next one is someone else's
-    return False
+                return 'not_professor'  # the next title would be someone else's
+    return None
+
+def tenure_title_near_name(name: str, page_text: Optional[str]) -> bool:
+    return nearest_title(name, page_text) == 'unqualified'
 
 def person_on_evidence_page(entry: dict) -> bool:
     """True if the page cited for the person's rank actually names them."""
     ev = entry['_verification']['results']['tenure_track'][1]
+    if ev.source_url and same_host(ev.source_url, entry.get('_homepage', '')):
+        return True  # their own site, which often says "I am..." rather than their name
+    page_text = fetch_page_text(ev.source_url) if ev.source_url else None
+    return any(lines_naming(name, page_text)[1] for name in (entry.get('dblp_name'), entry['name'])
+               if name)
+
+def quoted_title_is_unqualified(quote: str, page_text: Optional[str]) -> bool:
+    """True if every line holding the quoted title leaves it unqualified, so that
+    'Assistant Professor' can't be cropped from 'Assistant Professor of Teaching'."""
+    title = PROFESSORIAL_TITLE.search(quote)
+    if not title or not page_text:
+        return False
+    found = False
+    for line in page_text.splitlines():
+        for match in re.finditer(re.escape(title.group(0).strip()), line, re.IGNORECASE):
+            found = True
+            if NON_TENURE_TITLE.search(line[max(0, match.start() - TITLE_CONTEXT_CHARS):
+                                            match.end() + TITLE_CONTEXT_CHARS]):
+                return False
+    return found
+
+def official_title_conflicts(name: str, page_text: Optional[str], country: Optional[str]) -> bool:
+    """
+    True if the institution's page gives the person a lesser title.
+
+    A qualified professorship ('of Teaching', 'Research') always is one. A title
+    such as Lecturer only is in the US and Canada: in the UK and Australia it is a
+    permanent academic post (see International Title Equivalences).
+    """
+    kind = nearest_title(name, page_text)
+    return kind == 'qualified' or (kind == 'not_professor' and country in RANK_RULE_COUNTRIES)
+
+def normalized_institution(name: str) -> str:
+    text = unidecode.unidecode(name).lower()
+    for short, full in (('univ.', 'university'), ('inst.', 'institute'), ('tech.', 'technology')):
+        text = text.replace(short, full)
+    return re.sub(r'\s+', ' ', re.sub(r'^the ', '', re.sub(r'[^a-z0-9 ]', ' ', text).strip())).strip()
+
+def fetch_orcid_employments(orcid: str) -> List[dict]:
+    """Return an ORCID record's employment summaries, or [] if it can't be read."""
+    try:
+        response = requests.get(f"https://pub.orcid.org/v3.0/{orcid}/record",
+                                headers={"Accept": "application/json"}, timeout=20)
+        response.raise_for_status()
+        groups = response.json()['activities-summary']['employments']['affiliation-group']
+    except (requests.RequestException, KeyError, TypeError, ValueError):
+        return []
+    return [summary['employment-summary'] for group in groups for summary in group['summaries']]
+
+def orcid_links_to_institution(name: str, orcid: str, institution: str) -> bool:
+    """
+    True if DBLP ties this ORCID to the name and its record shows a current
+    professorship at the institution. DBLP's link is what makes this independent of
+    the submitter: a stranger's ORCID isn't attached to the author's papers.
+    """
+    if not orcid or orcid.startswith('0000-0000'):
+        return False
+    db = get_dblp_index()
+    if db is None:
+        return False
+    hit = db.lookup(name, orcid)
+    names = {n for n, _ in hit.orcid_names}
+    if hit.name not in names and not names & {alias for alias, _ in hit.aliases}:
+        return False
+    wanted = normalized_institution(institution)
+    for job in fetch_orcid_employments(orcid):
+        role = job.get('role-title') or ''
+        if (normalized_institution(job['organization']['name']) == wanted and not job.get('end-date')
+                and PROFESSORIAL_TITLE.search(role) and not NON_TENURE_TITLE.search(role)):
+            return True
+    return False
+
+def find_institution_link(entry: dict, institution: Optional[str], orcid: str, sites: dict,
+                          country: Optional[str] = None) -> dict:
+    """
+    Find something the submitter doesn't control that ties the person to the institution.
+
+    Personal sites are normal here and can supply the evidence, so this is what keeps a
+    claim from resting on them alone. An official page that gives a lesser title is a
+    conflict: it outranks whatever the person's own site says.
+    """
+    site = sites.get(institution)
+    link, conflict = None, False
+    if site:
+        urls = [entry.get('official_listing_url'), entry.get('_homepage')]
+        urls += [ev.source_url for (_l, ev, _s, _d) in entry['_verification']['results'].values()]
+        for url in dict.fromkeys(u for u in urls if u and site_of(u) == site):
+            page_text = fetch_page_text(url)
+            for name in (entry['name'], entry.get('dblp_name')):
+                if name and lines_naming(name, page_text)[1]:
+                    link = link or f"named on {url}"
+                    conflict = conflict or official_title_conflicts(name, page_text, country)
+    if not link and institution and orcid_links_to_institution(
+            entry.get('dblp_name') or entry['name'], orcid, institution):
+        link = f"ORCID {orcid}, which DBLP attaches to this name"
+    return {'link': link, 'conflict': conflict}
+
+def phd_page_names_person(entry: dict) -> bool:
+    """True if the page cited for PhD advising names them. A student's CV, a lab page
+    or a second personal site can show supervision, so the host doesn't matter here."""
+    ev = entry['_verification']['results']['phd_advising'][1]
     page_text = fetch_page_text(ev.source_url) if ev.source_url else None
     return any(lines_naming(name, page_text)[1] for name in (entry.get('dblp_name'), entry['name'])
                if name)
@@ -839,7 +952,9 @@ def rank_rule_applies(entry: dict, country: Optional[str]) -> bool:
     return (country in RANK_RULE_COUNTRIES
             and bool(PROFESSORIAL_TITLE.search(title))
             and not NON_TENURE_TITLE.search(title)
-            and tenure_title_near_name(entry['name'], page_text)
+            and (quoted_title_is_unqualified(title, page_text)
+                 if same_host(ev.source_url or '', entry.get('_homepage', ''))
+                 else tenure_title_near_name(entry['name'], page_text))
             and bool(PHD_PROGRAM.search(results['phd_advising'][1].quote or '')))
 
 def score_entry(entry: dict, country: Optional[str] = None) -> int:
@@ -865,6 +980,15 @@ def score_entry(entry: dict, country: Optional[str] = None) -> int:
 def load_institution_countries(path: str = "institutions.csv") -> dict:
     with open(path, encoding="utf-8") as f:
         return {row["institution"]: row["countryabbrv"] for row in csv.DictReader(f)}
+
+def diff_rows(diff_text: str) -> dict:
+    """Return {name: CSV fields} for the rows a diff adds."""
+    rows = {}
+    for line in diff_text.splitlines():
+        if line.startswith('+ '):
+            fields = re.sub(r' \([^()]*\)$', '', line[2:]).split(',')
+            rows[fields[0]] = fields
+    return rows
 
 def diff_people(diff_text: str) -> Tuple[dict, List[str]]:
     """Return ({name: affiliation} for added rows, [names removed outright])."""
@@ -909,6 +1033,13 @@ def render_assessment(entries: List[dict], score: int, missing: List[str], input
         if entry.get('phd_advising_basis') == 'rank_in_cs_department':
             lines += ["", "PhD advising rests on the US/Canada rule for tenure-track faculty "
                           "in a CS PhD-granting department."]
+        link = entry.get('_institution_link') or {}
+        lines += ["", (f"Link to the institution: {sanitize(link['link'])}." if link.get('link')
+                       else f"{WARN} Nothing independent of the submitter ties this person to the "
+                            "institution, so a maintainer needs to review this entry.")]
+        if link.get('conflict'):
+            lines += ["", f"{WARN} The institution's own page gives a different title, "
+                          "which outranks any personal site."]
         if entry.get('current_industry_roles'):
             roles = sanitize('; '.join(entry['current_industry_roles']))[:300]
             lines += ["", f"{WARN} Current industry roles mentioned: {roles}. "
@@ -954,9 +1085,15 @@ def run_assessment(diff_path: str, metadata: dict) -> Optional[int]:
     assessed = {e['name'] for e in entries} | {e['dblp_name'] for e in entries}
     missing = [name for name in [*added, *removals] if name not in assessed]
     countries = load_institution_countries()
+    sites = load_institution_sites()
+    rows = diff_rows(diff_text)
     for entry in entries:
-        affiliation = added.get(entry['dblp_name']) or added.get(entry['name'])
+        row = rows.get(entry['dblp_name']) or rows.get(entry['name']) or []
+        affiliation = row[1] if len(row) > 1 else None
+        entry['_homepage'] = row[2] if len(row) > 2 else ''
         entry['_score'] = score_entry(entry, countries.get(affiliation))
+        entry['_institution_link'] = find_institution_link(
+            entry, affiliation, row[4] if len(row) > 4 else '', sites, countries.get(affiliation))
     score = min((e['_score'] for e in entries), default=0)
     if missing:
         score = min(score, UNCONFIRMED_SCORE_CAP)
@@ -973,6 +1110,10 @@ def run_assessment(diff_path: str, metadata: dict) -> Optional[int]:
                 "name": e['name'],
                 "score": e['_score'],
                 "person_on_evidence_page": person_on_evidence_page(e),
+                "homepage": e['_homepage'],
+                "phd_page_names_person": phd_page_names_person(e),
+                "institution_link": e['_institution_link']['link'],
+                "official_title_conflict": e['_institution_link']['conflict'],
                 "phd_advising_basis": e['phd_advising_basis'],
                 "current_industry_roles": e['current_industry_roles'],
                 "criteria": {field: {"verdict": ev.verdict, "status": status,

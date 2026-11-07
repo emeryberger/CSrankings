@@ -26,7 +26,10 @@ def assessment(**criteria):
     fields = {field: criterion() for field in
               ("tenure_track", "phd_advising", "full_time", "cs_department")}
     fields.update(criteria)
-    return {"entries": [{"name": "Jane Doe", "person_on_evidence_page": True, "criteria": fields}],
+    return {"entries": [{"name": "Jane Doe", "person_on_evidence_page": True,
+                         "institution_link": "named on https://cs.stanford.edu/jane",
+                         "homepage": "https://janedoe.github.io/", "phd_page_names_person": True,
+                         "criteria": fields}],
             "removals": [],
             "affiliations": {"Jane Doe": "Stanford University"}}
 
@@ -64,15 +67,51 @@ def test_removal_blocks():
     assert any("removes" in blocker for blocker in blockers(result))
 
 
-def test_evidence_on_a_page_the_submitter_controls_blocks():
+def test_evidence_on_their_personal_site_is_allowed():
+    result = assessment(phd_advising=criterion(url="https://janedoe.github.io/"),
+                        cs_department=criterion(url="https://www.janedoe.github.io/about"))
+    assert blockers(result) == []
+
+
+def test_someone_elses_github_pages_site_is_not_their_homepage():
+    result = assessment(cs_department=criterion(url="https://other.github.io/"))
+    assert any("neither" in blocker for blocker in blockers(result))
+
+
+def test_a_students_cv_can_show_phd_advising_if_it_names_them():
+    result = assessment(phd_advising=criterion(url="https://astudent.github.io/cv/"))
+    assert blockers(result) == []
+    result["entries"][0]["phd_page_names_person"] = False
+    assert any("does not name them" in blocker for blocker in blockers(result))
+
+
+def test_third_party_sites_are_not_allowed_as_evidence():
+    result = assessment(cs_department=criterion(url="https://scholarlink.example/jane"))
+    assert any("neither" in blocker for blocker in blockers(result))
+
+
+def test_a_personal_site_needs_an_independent_link():
     result = assessment(phd_advising=criterion(url="https://janedoe.github.io/"))
-    assert any("not hosted by" in blocker for blocker in blockers(result))
+    result["entries"][0]["institution_link"] = None
+    assert any("nothing independent" in blocker for blocker in blockers(result))
+
+
+def test_an_official_page_with_a_different_title_blocks():
+    result = assessment()
+    result["entries"][0]["official_title_conflict"] = True
+    assert any("different title" in blocker for blocker in blockers(result))
+
+
+def test_rank_rule_needs_the_phd_program_on_the_official_site():
+    result = assessment(phd_advising=criterion(url="https://janedoe.github.io/"))
+    result["entries"][0]["phd_advising_basis"] = "rank_in_cs_department"
+    assert any("PhD program" in blocker for blocker in blockers(result))
 
 
 @pytest.mark.parametrize("url", ["https://stanford.edu.evil.com/x", "https://evilstanford.edu/x"])
 def test_lookalike_hosts_are_not_the_institution(url):
     result = assessment(cs_department=criterion(url=url))
-    assert any("not hosted by" in blocker for blocker in blockers(result))
+    assert any("neither" in blocker for blocker in blockers(result))
 
 
 @pytest.mark.parametrize("evidence", [
@@ -357,3 +396,93 @@ def test_orcid_on_an_alias_of_the_submitted_name_is_not_an_error(dblp, capsys):
 def test_orcid_on_an_unrelated_name_is_still_an_error(dblp, capsys):
     assert not vc.check_dblp_name(1, "Yanan Guo", "0000-0003-0034-0358")
     assert "Use that DBLP name" in capsys.readouterr().out
+
+
+def rank_entry_on_own_site(monkeypatch, page):
+    entry = rank_entry(monkeypatch, title="assistant professor", page=page)
+    entry["_homepage"] = "https://cs.example.edu/jane"
+    return entry
+
+
+def test_rank_rule_accepts_first_person_on_their_own_site(monkeypatch):
+    entry = rank_entry_on_own_site(monkeypatch, "I am an assistant professor of computer science.")
+    assert vc.score_entry(entry, "us") == 95
+
+
+def test_a_title_cropped_on_their_own_site_is_caught(monkeypatch):
+    entry = rank_entry_on_own_site(monkeypatch, "I am an assistant professor of teaching.")
+    assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
+
+
+def linked_entry(url="https://cs.stanford.edu/people", homepage="https://janedoe.github.io/"):
+    entry = audited()
+    entry.update(name="Jane Doe", dblp_name="Jane Doe", _homepage=homepage, official_listing_url=url)
+    return entry
+
+
+def test_official_listing_links_a_personal_site(monkeypatch):
+    monkeypatch.setattr(vc, "fetch_page_text", lambda url: "Doe, Jane\nAssistant Professor")
+    found = vc.find_institution_link(linked_entry(), "Stanford University", "", SITES)
+    assert "named on" in found["link"] and not found["conflict"]
+
+
+def test_official_listing_with_a_lesser_title_conflicts(monkeypatch):
+    monkeypatch.setattr(vc, "fetch_page_text", lambda url: "Doe, Jane\nAssistant Professor of Instruction")
+    assert vc.find_institution_link(linked_entry(), "Stanford University", "", SITES)["conflict"]
+
+
+def test_official_lecturer_listing_conflicts_only_in_the_us_and_canada(monkeypatch):
+    monkeypatch.setattr(vc, "fetch_page_text", lambda url: "Doe, Jane\nLecturer")
+    find = lambda country: vc.find_institution_link(linked_entry(), "Stanford University", "", SITES, country)
+    assert find("us")["conflict"] and find("ca")["conflict"]
+    assert not find("gb")["conflict"] and not find("au")["conflict"]
+
+
+def test_a_listing_on_another_site_is_not_a_link(monkeypatch):
+    monkeypatch.setattr(vc, "fetch_page_text", lambda url: "Doe, Jane\nAssistant Professor")
+    monkeypatch.setattr(vc, "get_dblp_index", lambda: None)
+    entry = linked_entry(url="https://evil.example/stanford")
+    assert vc.find_institution_link(entry, "Stanford University", "", SITES)["link"] is None
+
+
+ORCID = "0000-0002-8188-3751"
+JOB = {"organization": {"name": "The Stanford University"}, "role-title": "Assistant Professor"}
+
+
+@pytest.fixture
+def orcid_dblp(monkeypatch, tmp_path):
+    snapshot = tmp_path / "dblp.xml.xz"
+    with lzma.open(snapshot, "wb") as f:
+        f.write(f'<dblp><inproceedings key="a"><author orcid="{ORCID}">Jane Doe</author></inproceedings></dblp>'.encode())
+    aliases = tmp_path / "dblp-aliases.csv"
+    aliases.write_text("alias,name\n", encoding="utf-8")
+    monkeypatch.setattr(vc, "get_dblp_index", lambda: DblpIndex(str(snapshot), str(aliases)))
+
+
+@pytest.mark.parametrize("job, expected", [
+    (JOB, True),
+    ({**JOB, "end-date": {"year": {"value": "2020"}}}, False),
+    ({**JOB, "role-title": "PhD Student"}, False),
+    ({**JOB, "role-title": "Research Assistant Professor"}, False),
+    ({**JOB, "role-title": None}, False),
+    ({**JOB, "organization": {"name": "Harvard University"}}, False),
+])
+def test_orcid_link_needs_a_current_professorship_there(monkeypatch, orcid_dblp, job, expected):
+    monkeypatch.setattr(vc, "fetch_orcid_employments", lambda orcid: [job])
+    assert vc.orcid_links_to_institution("Jane Doe", ORCID, "Stanford University") is expected
+
+
+def test_orcid_link_needs_dblp_to_attach_it_to_the_name(monkeypatch, orcid_dblp):
+    monkeypatch.setattr(vc, "fetch_orcid_employments", lambda orcid: [JOB])
+    assert not vc.orcid_links_to_institution("John Roe", ORCID, "Stanford University")
+    assert not vc.orcid_links_to_institution("Jane Doe", "0000-0000-0000-0000", "Stanford University")
+
+
+@pytest.mark.parametrize("quote", [
+    "The department offers a Doctor of Philosophy in Computer Science.",
+    "With a PhD in Computer Science from UIC",
+    "offered at the master's and doctoral levels",
+    "getting a Ph.D. in Computer Science",
+])
+def test_ways_of_naming_a_phd_program(quote):
+    assert vc.PHD_PROGRAM.search(quote)

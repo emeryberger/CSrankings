@@ -369,8 +369,10 @@ This rule applies only in the US and Canada. Elsewhere, rank alone is still not 
 - It changes only `csrankings-?.csv` files and removes nobody.
 - No current industry role was mentioned for anyone in it, and nobody in it is listed in `old/industry.csv`.
 - Every person's institution is in `institutions.csv`.
-- For criteria 1, 2 and 4, the confirming page is on that institution's own site. Personal sites and GitHub Pages don't count for this gate, although they can still count as evidence for a maintainer.
-- The page cited for rank names the person. Under the US and Canada rule, the title beside their name must also be unqualified.
+- For criteria 1, 2 and 4, the confirming page is on the institution's own site or the person's own homepage. Other third-party pages don't count.
+- Something the submitter doesn't control ties the person to the institution: either a page on its own site names them, or DBLP attaches their ORCID to their name and that ORCID record shows a current, unqualified professorship there.
+- The institution's own page doesn't give a lesser title. It outranks a personal site.
+- The page cited for rank names the person, unless it is their own homepage. Under the US and Canada rule, the title must also be unqualified, and the CS PhD program must be shown on the institution's own site.
 - The PR hasn't changed since it was assessed.
 
 **Maintainers decide.** A maintainer's assessment always outranks the automated score, even when the automated one is newer, so a low maintainer score blocks merging. The `hold` label stops auto-closing, `stale` marking and auto-merging. Setting the repository variable `AUTO_MERGE` to `off` reports decisions without merging.

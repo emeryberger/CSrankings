@@ -5,8 +5,9 @@ Decide whether a PR may be merged automatically, and merge it if so.
 The score comes from an AI assessment, and its inputs (PR text, comments, web
 pages) can be written by anyone. So a high score alone is never enough: each
 gate below is checked mechanically, outside the model's reach. In particular,
-the evidence for the criteria that matter must be text actually found on a page
-hosted by the person's own institution, which a submitter cannot normally edit.
+the evidence must be text actually found on a page, and a personal site can only
+supply it when something the submitter doesn't control ties the person to the
+institution: an official page naming them, or an ORCID that DBLP attaches to them.
 
 Set the repository variable AUTO_MERGE to "off" to report decisions without
 merging.
@@ -39,6 +40,13 @@ def site_of(url: str) -> str:
     if len(labels) >= 3 and len(labels[-1]) == 2 and labels[-2] in SECOND_LEVEL:
         return ".".join(labels[-3:])
     return ".".join(labels[-2:])
+
+
+def same_host(url: str, other: str) -> bool:
+    """True for the same host, ignoring www. Shared hosts such as github.io stay distinct."""
+    def host(u: str) -> str:
+        return re.sub(r'^www\.', '', (urlparse(u).hostname or '').lower())
+    return bool(host(url)) and host(url) == host(other)
 
 
 def load_institution_sites(path: Path = ROOT / "institutions.csv") -> dict:
@@ -81,8 +89,20 @@ def merge_blockers(assessment: Optional[dict], score: Optional[int], labels: Lis
             evidence = (entry.get("criteria") or {}).get(field) or {}
             if evidence.get("status") != "confirmed" or evidence.get("verdict") != "pass":
                 blockers.append(f"{name}: {field} is not a confirmed pass")
-            elif site_of(evidence.get("source_url", "")) != site:
-                blockers.append(f"{name}: {field} evidence is not hosted by {site}")
+            elif field == "phd_advising":
+                # A student's CV, a lab page or a second personal site can show this.
+                if not entry.get("phd_page_names_person") and site_of(evidence.get("source_url", "")) != site:
+                    blockers.append(f"{name}: the page cited for PhD advising does not name them")
+            elif (site_of(evidence.get("source_url", "")) != site
+                  and not same_host(evidence.get("source_url", ""), entry.get("homepage", ""))):
+                blockers.append(f"{name}: {field} evidence is on neither {site} nor their homepage")
+        if (entry.get("phd_advising_basis") == "rank_in_cs_department"
+                and site_of(((entry.get("criteria") or {}).get("phd_advising") or {}).get("source_url", "")) != site):
+            blockers.append(f"{name}: the CS PhD program is not shown on {site}")
+        if not entry.get("institution_link"):
+            blockers.append(f"{name}: nothing independent ties them to the institution")
+        if entry.get("official_title_conflict"):
+            blockers.append(f"{name}: the institution's page gives a different title")
         full_time = (entry.get("criteria") or {}).get("full_time") or {}
         if full_time.get("verdict") == "fail":
             blockers.append(f"{name}: full_time failed")
