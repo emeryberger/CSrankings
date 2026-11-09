@@ -456,6 +456,22 @@ def test_rank_rule_accepts_first_person_on_their_own_site(monkeypatch):
     assert vc.score_entry(entry, "us") == 95
 
 
+def test_a_directory_as_homepage_judges_their_own_card(monkeypatch):
+    # The PR's homepage is the department directory, which also lists someone
+    # else as "Assistant Professor of Practice" (UTC, PR #15509).
+    page = "Jane Doe\nAssistant Professor\nWilliam Worden\nAssistant Professor of Practice"
+    entry = rank_entry_on_own_site(monkeypatch, page)
+    entry["_homepage"] = entry["_verification"]["results"]["tenure_track"][1].source_url
+    assert vc.score_entry(entry, "us") == 95
+
+
+def test_a_directory_as_homepage_still_catches_their_own_qualified_title(monkeypatch):
+    page = "Jane Doe\nAssistant Professor of Practice\nWilliam Worden\nAssistant Professor"
+    entry = rank_entry_on_own_site(monkeypatch, page)
+    entry["_homepage"] = entry["_verification"]["results"]["tenure_track"][1].source_url
+    assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
+
+
 def test_a_title_cropped_on_their_own_site_is_caught(monkeypatch):
     entry = rank_entry_on_own_site(monkeypatch, "I am an assistant professor of teaching.")
     assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP

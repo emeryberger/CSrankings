@@ -970,7 +970,11 @@ def rank_rule_applies(entry: dict, country: Optional[str]) -> bool:
     return (country in RANK_RULE_COUNTRIES
             and bool(PROFESSORIAL_TITLE.search(title))
             and not NON_TENURE_TITLE.search(title)
-            and (quoted_title_is_unqualified(title, page_text)
+            and ((quoted_title_is_unqualified(title, page_text)
+                  # A "homepage" can be a department directory, where the quoted
+                  # title also appears, qualified, for other people. If the page
+                  # names the person, the title beside their name decides.
+                  or tenure_title_near_name(entry['name'], page_text))
                  if same_host(ev.source_url or '', entry.get('_homepage', ''))
                  else tenure_title_near_name(entry['name'], page_text))
             and bool(PHD_PROGRAM.search(results['phd_advising'][1].quote or '')))
