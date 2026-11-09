@@ -801,8 +801,16 @@ def lines_naming(name: str, page_text: Optional[str]) -> Tuple[List[str], List[i
     """Return the page's lines and the indexes of those that name the person."""
     lines = (page_text or '').splitlines()
     pattern = name_pattern(name)
-    return lines, [i for i, line in enumerate(lines)
-                   if pattern.search(unidecode.unidecode(line).lower())]
+    folded = [unidecode.unidecode(line).lower().strip() for line in lines]
+    indexes = []
+    for i, line in enumerate(folded):
+        # Directory cards often break a name heading across two lines ("Shahnewaz
+        # Karim" / "Sakib"). Missing it leaves only a later "More info about ..."
+        # link, and the title found after that belongs to the next person's card.
+        joined = f"{line} {folded[i + 1]}" if i + 1 < len(folded) else line
+        if pattern.search(line) or (pattern.search(joined) and not pattern.search(folded[i + 1])):
+            indexes.append(i)
+    return lines, indexes
 
 def nearest_title(name: str, page_text: Optional[str]) -> Optional[str]:
     """

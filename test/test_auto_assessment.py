@@ -341,6 +341,38 @@ def test_someone_elses_title_in_a_directory_does_not_count(monkeypatch):
     assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
 
 
+# UTC's CSE directory: each card's name heading is split across two lines, and the
+# card ends with a "More info about <name>" link, right before the next card.
+SPLIT_NAME_DIRECTORY = """Image
+Jane
+\t\t\tDoe
+PhD
+Computer Science and Engineering: Assistant Professor
+[email protected]
+More info
+about Jane Doe
+Image
+William
+\t\t\tWorden
+Computer Science and Engineering: Assistant Professor of Practice
+"""
+
+
+def test_a_name_split_across_lines_finds_its_own_card():
+    assert vc.nearest_title("Jane Doe", SPLIT_NAME_DIRECTORY) == "unqualified"
+    assert not vc.official_title_conflicts("Jane Doe", SPLIT_NAME_DIRECTORY, "us")
+
+
+def test_the_next_cards_title_is_still_caught_when_it_is_theirs():
+    page = SPLIT_NAME_DIRECTORY.replace("Engineering: Assistant Professor\n",
+                                        "Engineering: Assistant Professor of Practice\n", 1)
+    assert vc.official_title_conflicts("Jane Doe", page, "us")
+
+
+def test_a_name_split_across_lines_does_not_join_two_people():
+    assert not vc.lines_naming("Jane Doe", "Jane Smith\nand John Doe")[1]
+
+
 def test_a_page_that_does_not_name_the_person_fails(monkeypatch):
     entry = rank_entry(monkeypatch, title="Assistant Professor", page="John Roe\nAssistant Professor")
     assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
