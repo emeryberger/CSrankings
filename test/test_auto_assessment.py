@@ -549,3 +549,16 @@ def test_orcid_link_needs_dblp_to_attach_it_to_the_name(monkeypatch, orcid_dblp)
 ])
 def test_ways_of_naming_a_phd_program(quote):
     assert vc.PHD_PROGRAM.search(quote)
+
+
+def test_assessment_rows_read_as_words(monkeypatch):
+    entry = audited()
+    entry["_score"], entry["name"] = 90, "Jane Doe"
+    results = entry["_verification"]["results"]
+    label, ev, _status, detail = results["full_time"]
+    ev.verdict, ev.quote, ev.source_url = "unverified", None, None
+    results["full_time"] = (label, ev, "declared", detail)
+    rows = [line for line in vc.render_assessment([entry], 90, [], "abc").splitlines()
+            if line.startswith("| >=75%")]
+    assert rows == ["| >=75% time appointment | ⚠️ Not verified | No page found that states this |"]
+    assert "unverified, declared" not in vc.render_assessment([entry], 90, [], "abc")

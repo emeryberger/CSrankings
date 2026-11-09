@@ -1034,6 +1034,23 @@ def sanitize(text: str) -> str:
     text = re.sub(r'likelihood of validity', 'validity', text, flags=re.IGNORECASE)
     return re.sub(r'\s+', ' ', text).strip()
 
+def result_text(verdict: str, status: str) -> str:
+    """Say in words what verify_criterion found, rather than echoing its status codes."""
+    if status == 'confirmed':
+        return 'Pass' if verdict == 'pass' else 'Fail'
+    return {
+        'declared': 'Not verified',
+        'nocite': 'Claimed, no source cited' if verdict == 'pass' else 'Doubtful, no source cited',
+        'unsupported': 'Quote not found on the cited page',
+        'unreachable': 'Cited page could not be loaded',
+    }.get(status, 'Not verified')
+
+# Evidence column for a criterion with no quote.
+NO_EVIDENCE_TEXT = {
+    'declared': 'No page found that states this',
+    'nocite': 'None cited',
+}
+
 def render_assessment(entries: List[dict], score: int, missing: List[str], input_hash: str,
                       prior_hashes: Optional[List[str]] = None) -> str:
     lines = [f"{ASSESSMENT_HEADING}: {len(entries)} entr{'y' if len(entries) == 1 else 'ies'}", "",
@@ -1050,8 +1067,8 @@ def render_assessment(entries: List[dict], score: int, missing: List[str], input
             _label, ev, status, _detail = entry['_verification']['results'][field]
             mark = {'confirmed': SUCCESS if ev.verdict == 'pass' else ERROR}.get(status, WARN)
             source = f" ({sanitize(ev.source_url)})" if ev.source_url else ""
-            quote = f'"{sanitize(ev.quote)[:200]}"' if ev.quote else status
-            lines.append(f"| {label} | {mark} {ev.verdict}, {status} | {quote}{source} |")
+            quote = f'"{sanitize(ev.quote)[:200]}"' if ev.quote else NO_EVIDENCE_TEXT.get(status, "\u2014")
+            lines.append(f"| {label} | {mark} {result_text(ev.verdict, status)} | {quote}{source} |")
         if entry.get('phd_advising_basis') == 'rank_in_cs_department':
             lines += ["", "PhD advising rests on the US/Canada rule for tenure-track faculty "
                           "in a CS PhD-granting department."]
