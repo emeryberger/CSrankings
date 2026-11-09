@@ -7,7 +7,7 @@
 2. Can **solely advise PhD students in Computer Science**
    - **Verify this directly; do not infer it from rank.** Many institutions state supervision rights explicitly — Chinese faculty pages in particular almost always mark **博士生导师** (doctoral supervisor) or **硕士生导师** (master's supervisor *only*, which does **not** qualify). See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2).
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
-   - **Assume this passes unless there is evidence to the contrary** (ruling: 2026-11-09): a part-time or fractional appointment, a primary job outside academia, or a listing in `old/industry.csv`. Do not lower the likelihood because no page states the appointment percentage.
+   - **Assume this passes unless there is evidence to the contrary** (ruling: 2026-11-09): a part-time or fractional appointment, a primary job outside academia, or a listing in `old/industry.csv`. Do not lower the likelihood because no page states the appointment percentage. Membership on a board of advisors, an advisory board or a board of directors is **not** evidence to the contrary.
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
    - **Exception — AI schools and colleges are eligible.** A university's School of Artificial Intelligence or College of AI (e.g. SJTU, Tsinghua) counts as a CS unit; its faculty need no separate justification and no proof of CS cross-advising. See [Common Failure Modes §C1](#c1-ai-schools-and-colleges-eligible).
 

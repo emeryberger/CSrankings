@@ -589,3 +589,25 @@ def test_an_unverified_criterion_reads_as_words():
     rows = [line for line in vc.render_assessment([entry], 90, [], "abc").splitlines()
             if line.startswith("| Can solely")]
     assert rows == ["| Can solely advise CS PhD students | ⚠️ Not verified | No page found that states this |"]
+
+
+@pytest.mark.parametrize("role,substantive", [
+    ("Member, Board of Advisors, Example Inc.", False),
+    ("Scientific Advisory Board, Acme AI", False),
+    ("Serves on the board of directors for startups (unnamed)", False),
+    ("Advisor to Example Robotics", False),
+    ("Co-founder and board member, Example Inc.", True),
+    ("Chief Scientist at Example", True),
+    ("CTO, Example Inc.", True),
+    ("Research scientist, Google (part-time)", True),
+])
+def test_board_and_advisory_roles_are_not_industry_roles(role, substantive):
+    kept, advisory = vc.split_industry_roles([role])
+    assert (kept == [role]) == substantive and (advisory == [role]) != substantive
+
+
+def test_advisory_roles_are_shown_as_information_not_a_check():
+    entry = unverified_full_time_entry()
+    entry["advisory_roles"] = ["Board of Advisors, Example Inc."]
+    out = vc.render_assessment([entry], 90, [], "abc")
+    assert "✅ Assumed" in out and "not evidence against the 75% time requirement" in out
