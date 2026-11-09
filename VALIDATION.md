@@ -310,6 +310,8 @@ New faculty often have no students yet, so direct evidence may not exist. At a U
 - The title is Assistant, Associate or Full Professor, with no qualifier such as Teaching, Research, Clinical, Adjunct, Visiting or of Practice.
 - The person is in the CS department itself, not in a unit that §C2 covers.
 - The institution's own page shows that the department offers a PhD in Computer Science.
+  - A broader doctorate with a **named Computer Science concentration or track** counts as a PhD in Computer Science (ruling: 2026-11-06). Example: the University of Tennessee at Chattanooga's "Ph.D. Computational Science: Computer Science" concentration. Do not mark criterion 2 unclear, or lower the score, because the CS programme is a concentration rather than a standalone degree.
+  - A doctorate in Data Science only does not count; see [§C2](#c2-faculty-outside-the-cs-unit-ruling-2026-10-19).
 
 This rule applies only in the US and Canada. Elsewhere, rank alone is still not evidence.
 
