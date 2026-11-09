@@ -131,7 +131,7 @@ This performs all 7 steps automatically:
 2. **Download** - Fetches the latest monthly DBLP release from drops.dagstuhl.de (~1GB)
 3. **Filter** - Shrinks to CSRankings venues via streaming SAX parser (~53MB)
 4. **Aliases** - Generates `dblp-aliases.csv`
-5. **Name changes** - Detects and applies author name changes to `csrankings-*.csv`
+5. **Name changes** - Detects and applies author name changes to `csrankings-*.csv`, then writes `name-check.csv`: rows whose ORCID DBLP now puts on a different name, and rows on a DBLP disambiguation page (advisory; review before renaming)
 6. **Regenerate** - Rebuilds `generated-author-info.csv`
 7. **Update date** - Updates "last update" date in `index.html`
 
@@ -172,6 +172,7 @@ DBLP occasionally changes canonical author names (e.g., adding disambiguation nu
 Tools involved:
 - `util/new-name-detector.py` - Compares old/new DBLP dumps for canonical name changes, includes ORCID for matching
 - `util/update-new-names.py` - Applies name changes to csrankings-*.csv files, uses ORCID-based matching when available
+- `util/orcid-name-check.py` - Reports people DBLP split off a shared name into a new numbered profile, which `new-name-detector.py` cannot see (it follows renamed profiles only)
 
 ## See Also
 

@@ -225,6 +225,11 @@ update-dblp-full:
 	else \
 		echo "No previous DBLP backup found. Skipping name change detection."; \
 	fi
+	@# new-name-detector.py follows renamed DBLP profiles but not people split off
+	@# a shared name into a new numbered profile. Report those (advisory only):
+	@# rows whose ORCID DBLP now attaches to another name, and rows sitting on a
+	@# DBLP disambiguation page. name-check.csv is committed with the update.
+	$(PYTHON) util/orcid-name-check.py > name-check.csv
 	@echo ""
 	@echo "Step 7/9: Regenerating publication data..."
 	$(MAKE) generated-author-info.csv
