@@ -7,6 +7,7 @@
 2. Can **solely advise PhD students in Computer Science**
    - **Verify this directly; do not infer it from rank.** Many institutions state supervision rights explicitly — Chinese faculty pages in particular almost always mark **博士生导师** (doctoral supervisor) or **硕士生导师** (master's supervisor *only*, which does **not** qualify). See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2).
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
+   - **Assume this passes unless there is evidence to the contrary** (ruling: 2026-11-09): a part-time or fractional appointment, a primary job outside academia, or a listing in `old/industry.csv`. Do not lower the likelihood because no page states the appointment percentage.
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
    - **Exception — AI schools and colleges are eligible.** A university's School of Artificial Intelligence or College of AI (e.g. SJTU, Tsinghua) counts as a CS unit; its faculty need no separate justification and no proof of CS cross-advising. See [Common Failure Modes §C1](#c1-ai-schools-and-colleges-eligible).
 
@@ -178,7 +179,7 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 |-----------|--------|-------|
 | Full-time, tenure-track research faculty | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence: title, department page link] |
 | Can solely advise CS PhD students | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence — cite the source, e.g. 博士生导师 designation, "Accepting Doctoral Students" flag, or named PhD students on a lab page. Do not infer from rank alone] |
-| >=75% time appointment | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence or "No evidence of industry split"] |
+| >=75% time appointment | ✅ PASS (assumed) / ❌ FAIL | [Evidence to the contrary, or "Assumed: no evidence of a part-time or industry appointment"] |
 | In a CS department | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Department name, any cross-appointment notes] |
 
 ### Data Verification

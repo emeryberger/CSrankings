@@ -655,6 +655,11 @@ EVIDENCE RULES -- these are enforced mechanically, not on trust:
    verdict to 'unverified' with empty source_url and quote. 'unverified' is a
    correct and expected answer. It is ALWAYS better than guessing.
 
+   full_time is presumed met. Leave it 'unverified' (empty source_url and quote)
+   when you found no evidence either way: that counts as a pass, so do not lower
+   likelihood or classification for it. Mark it 'fail' only with a quote showing
+   a part-time or fractional appointment or a primary job outside academia.
+
 4. NEVER infer a department, an academic rank, a supervisor designation
    (such as 博士生导师 / 博导), or an institutional policy that you did not read
    on a retrieved page. Do not deduce a department from a person's research
@@ -1068,7 +1073,14 @@ def render_assessment(entries: List[dict], score: int, missing: List[str], input
             mark = {'confirmed': SUCCESS if ev.verdict == 'pass' else ERROR}.get(status, WARN)
             source = f" ({sanitize(ev.source_url)})" if ev.source_url else ""
             quote = f'"{sanitize(ev.quote)[:200]}"' if ev.quote else NO_EVIDENCE_TEXT.get(status, "\u2014")
-            lines.append(f"| {label} | {mark} {result_text(ev.verdict, status)} | {quote}{source} |")
+            text = result_text(ev.verdict, status)
+            if field == 'full_time' and status == 'declared':
+                # Presumed met unless something says otherwise (VALIDATION.md criterion 3).
+                if entry.get('current_industry_roles'):
+                    mark, text, quote = WARN, 'Check', 'Industry roles were mentioned; see below'
+                else:
+                    mark, text, quote = SUCCESS, 'Assumed', 'No evidence of a part-time or industry appointment'
+            lines.append(f"| {label} | {mark} {text} | {quote}{source} |")
         if entry.get('phd_advising_basis') == 'rank_in_cs_department':
             lines += ["", "PhD advising rests on the US/Canada rule for tenure-track faculty "
                           "in a CS PhD-granting department."]

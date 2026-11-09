@@ -551,14 +551,41 @@ def test_ways_of_naming_a_phd_program(quote):
     assert vc.PHD_PROGRAM.search(quote)
 
 
-def test_assessment_rows_read_as_words(monkeypatch):
+def unverified_full_time_entry(roles=()):
     entry = audited()
-    entry["_score"], entry["name"] = 90, "Jane Doe"
+    entry["_score"], entry["name"], entry["current_industry_roles"] = 90, "Jane Doe", list(roles)
     results = entry["_verification"]["results"]
     label, ev, _status, detail = results["full_time"]
     ev.verdict, ev.quote, ev.source_url = "unverified", None, None
     results["full_time"] = (label, ev, "declared", detail)
-    rows = [line for line in vc.render_assessment([entry], 90, [], "abc").splitlines()
+    return entry
+
+
+def time_row(entry):
+    return [line for line in vc.render_assessment([entry], 90, [], "abc").splitlines()
             if line.startswith("| >=75%")]
-    assert rows == ["| >=75% time appointment | ⚠️ Not verified | No page found that states this |"]
+
+
+def test_time_appointment_is_assumed_without_evidence_against_it():
+    entry = unverified_full_time_entry()
+    assert time_row(entry) == [
+        "| >=75% time appointment | ✅ Assumed | No evidence of a part-time or industry appointment |"]
     assert "unverified, declared" not in vc.render_assessment([entry], 90, [], "abc")
+
+
+def test_time_appointment_needs_a_check_when_industry_roles_are_mentioned():
+    entry = unverified_full_time_entry(roles=["CTO, Example Inc."])
+    assert time_row(entry) == [
+        "| >=75% time appointment | ⚠️ Check | Industry roles were mentioned; see below |"]
+
+
+def test_an_unverified_criterion_reads_as_words():
+    entry = audited()
+    entry["_score"], entry["name"] = 90, "Jane Doe"
+    results = entry["_verification"]["results"]
+    label, ev, _status, detail = results["phd_advising"]
+    ev.verdict, ev.quote, ev.source_url = "unverified", None, None
+    results["phd_advising"] = (label, ev, "declared", detail)
+    rows = [line for line in vc.render_assessment([entry], 90, [], "abc").splitlines()
+            if line.startswith("| Can solely")]
+    assert rows == ["| Can solely advise CS PhD students | ⚠️ Not verified | No page found that states this |"]
