@@ -72,6 +72,8 @@ NON_PROFESSOR_TITLE = re.compile(
     re.IGNORECASE)
 TITLE_SEARCH_LINES = 4
 TITLE_CONTEXT_CHARS = 25
+# Leading name parts that pages often omit (see name_pattern).
+NAME_PREFIXES = {"md", "mohammad", "mohammed", "muhammad", "mohd", "mst"}
 PHD_PROGRAM = re.compile(r'\bph\.?\s?d\b|\bdoctor(?:al|ate)?\b', re.IGNORECASE)
 
 # ---------- Models ----------
@@ -794,8 +796,16 @@ def run_audit(diff_text: str, thread: str) -> List[dict]:
 def name_pattern(name: str) -> "re.Pattern":
     """Match 'Jane Doe', 'Jane Q. Doe' and 'Doe, Jane', ignoring accents, case and DBLP suffix."""
     parts = unidecode.unidecode(re.sub(r'\s+\d{4}$', '', name)).lower().split()
-    first, last = re.escape(parts[0]), re.escape(parts[-1])
-    return re.compile(rf'\b{first}\b(?:\s+[\w.-]+){{0,2}}?\s+{last}\b|\b{last},\s*{first}\b')
+    def forms(parts):
+        first, last = re.escape(parts[0]), re.escape(parts[-1])
+        return rf'\b{first}\b(?:\s+[\w.-]+){{0,2}}?\s+{last}\b|\b{last},\s*{first}\b'
+    alternatives = [forms(parts)]
+    # "Md." / "Mohammad" (and "Mst." for women) lead many Bangladeshi and other
+    # South Asian names, and pages often drop them: "Md. Imran Hossen" is listed
+    # as "Imran Hossen". Only drop it when two names are left.
+    if len(parts) >= 3 and parts[0].rstrip('.') in NAME_PREFIXES:
+        alternatives.append(forms(parts[1:]))
+    return re.compile('|'.join(alternatives))
 
 def lines_naming(name: str, page_text: Optional[str]) -> Tuple[List[str], List[int]]:
     """Return the page's lines and the indexes of those that name the person."""

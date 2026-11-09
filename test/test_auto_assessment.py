@@ -373,6 +373,21 @@ def test_a_name_split_across_lines_does_not_join_two_people():
     assert not vc.lines_naming("Jane Doe", "Jane Smith\nand John Doe")[1]
 
 
+@pytest.mark.parametrize("name,page", [
+    ("Md. Imran Hossen", "Image\nImran Hossen\nAssistant Professor"),
+    ("Md Imran Hossen", "Dr. Md Imran Hossen\nAssistant Professor"),
+    ("Mohammad Ali Khan", "Hossen, Imran\nAli Khan\nProfessor"),
+    ("Imran Hossen", "Md. Imran Hossen\nAssistant Professor"),
+])
+def test_a_leading_md_prefix_is_optional(name, page):
+    assert vc.lines_naming(name, page)[1]
+
+
+def test_a_prefix_is_kept_when_only_one_name_would_remain():
+    assert not vc.lines_naming("Muhammad Ali", "Ali Khan\nProfessor")[1]
+    assert not vc.lines_naming("Md. Imran Hossen", "Md. Rafiq Hossen\nProfessor")[1]
+
+
 def test_a_page_that_does_not_name_the_person_fails(monkeypatch):
     entry = rank_entry(monkeypatch, title="Assistant Professor", page="John Roe\nAssistant Professor")
     assert vc.score_entry(entry, "us") == vc.UNCONFIRMED_SCORE_CAP
