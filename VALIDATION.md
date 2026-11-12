@@ -7,6 +7,7 @@
 2. Can **solely advise PhD students in Computer Science**
    - **Verify this directly; do not infer it from rank.** Many institutions state supervision rights explicitly — Chinese faculty pages in particular almost always mark **博士生导师** (doctoral supervisor) or **硕士生导师** (master's supervisor *only*, which does **not** qualify). See [Verifying PhD supervision rights](#verifying-phd-supervision-rights-criterion-2).
 3. **>=75% time appointment** (not primarily in industry; check `old/industry.csv`)
+   - **Assume this passes unless there is evidence to the contrary** (ruling: 2026-11-09): a part-time or fractional appointment, a primary job outside academia, or a listing in `old/industry.csv`. Do not lower the likelihood because no page states the appointment percentage. Membership on a board of advisors, an advisory board or a board of directors is **not** evidence to the contrary.
 4. Faculty **not in a CS department** must provide justification (e.g., courtesy appointment) with links
    - **Exception — AI schools and colleges are eligible.** A university's School of Artificial Intelligence or College of AI (e.g. SJTU, Tsinghua) counts as a CS unit; its faculty need no separate justification and no proof of CS cross-advising. See [Common Failure Modes §C1](#c1-ai-schools-and-colleges-eligible).
 
@@ -178,7 +179,7 @@ When reviewing a PR, **always post a validation assessment comment** on the PR. 
 |-----------|--------|-------|
 | Full-time, tenure-track research faculty | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence: title, department page link] |
 | Can solely advise CS PhD students | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence — cite the source, e.g. 博士生导师 designation, "Accepting Doctoral Students" flag, or named PhD students on a lab page. Do not infer from rank alone] |
-| >=75% time appointment | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Evidence or "No evidence of industry split"] |
+| >=75% time appointment | ✅ PASS (assumed) / ❌ FAIL | [Evidence to the contrary, or "Assumed: no evidence of a part-time or industry appointment"] |
 | In a CS department | ✅ PASS / ❌ FAIL / ⚠️ UNCLEAR | [Department name, any cross-appointment notes] |
 
 ### Data Verification
@@ -310,6 +311,8 @@ New faculty often have no students yet, so direct evidence may not exist. At a U
 - The title is Assistant, Associate or Full Professor, with no qualifier such as Teaching, Research, Clinical, Adjunct, Visiting or of Practice.
 - The person is in the CS department itself, not in a unit that §C2 covers.
 - The institution's own page shows that the department offers a PhD in Computer Science.
+  - A broader doctorate with a **named Computer Science concentration or track** counts as a PhD in Computer Science (ruling: 2026-11-06). Example: the University of Tennessee at Chattanooga's "Ph.D. Computational Science: Computer Science" concentration. Do not mark criterion 2 unclear, or lower the score, because the CS programme is a concentration rather than a standalone degree.
+  - A doctorate in Data Science only does not count; see [§C2](#c2-faculty-outside-the-cs-unit-ruling-2026-10-19).
 
 This rule applies only in the US and Canada. Elsewhere, rank alone is still not evidence.
 
@@ -369,8 +372,10 @@ This rule applies only in the US and Canada. Elsewhere, rank alone is still not 
 - It changes only `csrankings-?.csv` files and removes nobody.
 - No current industry role was mentioned for anyone in it, and nobody in it is listed in `old/industry.csv`.
 - Every person's institution is in `institutions.csv`.
-- For criteria 1, 2 and 4, the confirming page is on that institution's own site. Personal sites and GitHub Pages don't count for this gate, although they can still count as evidence for a maintainer.
-- The page cited for rank names the person. Under the US and Canada rule, the title beside their name must also be unqualified.
+- For criteria 1, 2 and 4, the confirming page is on the institution's own site or the person's own homepage. Other third-party pages don't count.
+- Something the submitter doesn't control ties the person to the institution: either a page on its own site names them, or DBLP attaches their ORCID to their name and that ORCID record shows a current, unqualified professorship there.
+- The institution's own page doesn't give a lesser title. It outranks a personal site.
+- The page cited for rank names the person, unless it is their own homepage. Under the US and Canada rule, the title must also be unqualified, and the CS PhD program must be shown on the institution's own site.
 - The PR hasn't changed since it was assessed.
 
 **Maintainers decide.** A maintainer's assessment always outranks the automated score, even when the automated one is newer, so a low maintainer score blocks merging. The `hold` label stops auto-closing, `stale` marking and auto-merging. Setting the repository variable `AUTO_MERGE` to `off` reports decisions without merging.

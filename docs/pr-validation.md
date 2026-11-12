@@ -11,6 +11,7 @@ PR text, comments and web pages are untrusted, so the design assumes the model c
 - Its only tools are `WebSearch` and `WebFetch`, and it runs in an empty directory with no GitHub credentials in its environment.
 - Its output is reduced to a schema and sanitized before posting, which removes mentions, markup and score text.
 - Its score is capped by mechanical quote checks, and merging is decided by the gates in `util/auto_merge.py`, not by the model.
+- Personal sites are allowed as evidence, because about a fifth of listed faculty use one as their homepage. A claim can't rest on one alone: an official page naming the person, or an ORCID attached to them in DBLP that shows a current professorship, must tie them to the institution.
 - Only a comment by `github-actions[bot]` that starts with the assessment heading counts as an automated score. That account also relays submitter notes, which is why the heading is required.
 
 Merges made with `GITHUB_TOKEN` don't fire push workflows, so `auto_merge.py` starts `post-merge-rebuild.yml` itself.
