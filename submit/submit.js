@@ -1944,10 +1944,10 @@ function updateSubmitButton() {
                 addToBatchBtn.disabled = !canSubmit;
             if (submitBtnAdd)
                 submitBtnAdd.disabled = !canSubmit;
-            if (submitBatchBtn) {
-                submitBatchBtn.disabled = batchEntries.length === 0 ||
-                    (batchEntries.some(e => e.notInCSDept) && !hasNotes);
-            }
+            // Batch entries carry their own notes (captured when added), so the
+            // batch can be submitted regardless of what Notes says now
+            if (submitBatchBtn)
+                submitBatchBtn.disabled = batchEntries.length === 0;
             break;
         case 'update':
             // Selected entry + all fields valid + something actually changed
@@ -2324,7 +2324,8 @@ function handleAddToBatch() {
         name, institution, homepage, scholarid, orcid,
         isOld: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.isOld,
         oldFile: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.oldFile,
-        notInCSDept: !isInCSDept()
+        notInCSDept: !isInCSDept(),
+        notes: getNotes()
     };
     batchEntries.push(entry);
     // Update batch UI
@@ -2368,10 +2369,8 @@ function updateBatchUI() {
     if (countBtn)
         countBtn.textContent = String(batchEntries.length);
     // Update submit batch button
-    if (submitBatchBtn) {
-        submitBatchBtn.disabled = batchEntries.length === 0 ||
-            (batchEntries.some(e => e.notInCSDept) && getNotes() === '');
-    }
+    if (submitBatchBtn)
+        submitBatchBtn.disabled = batchEntries.length === 0;
     // Rebuild table
     tbody.innerHTML = '';
     batchEntries.forEach((entry, index) => {
@@ -2379,8 +2378,11 @@ function updateBatchUI() {
         const oldBadge = entry.isOld
             ? ` <span class="label label-warning">${getOldFileLabel(entry.oldFile)}</span>`
             : '';
+        const deptBadge = entry.notInCSDept
+            ? ` <span class="label label-info" title="${escapeHtml(entry.notes || '')}">not CS dept.</span>`
+            : '';
         row.innerHTML = `
-            <td>${escapeHtml(entry.name)}${oldBadge}</td>
+            <td>${escapeHtml(entry.name)}${oldBadge}${deptBadge}</td>
             <td><a href="${escapeHtml(entry.homepage)}" target="_blank" title="${escapeHtml(entry.homepage)}">${escapeHtml(truncateUrl(entry.homepage))}</a></td>
             <td><code>${escapeHtml(entry.scholarid)}</code></td>
             <td><button type="button" class="btn btn-xs btn-danger" data-index="${index}" title="Remove">&#10007;</button></td>
@@ -2463,6 +2465,26 @@ function createBatchIssueUrl(entries, institution, notes, isSponsor) {
         return `${i + 1}. **${e.name}**${oldNote}${deptNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\`\n   - ORCID: \`${e.orcid}\``;
     }).join('\n\n');
     const csvLines = entries.map(e => `${e.name},${e.institution},${e.homepage},${e.scholarid},${e.orcid}`).join('\n');
+    // Each entry keeps the Notes it was added with; group entries sharing the same
+    // text, and append whatever is in the Notes field now if it is something new
+    const notesByText = new Map();
+    for (const e of entries) {
+        if (!e.notes)
+            continue;
+        const names = notesByText.get(e.notes) || [];
+        names.push(e.name);
+        notesByText.set(e.notes, names);
+    }
+    const noteLines = [];
+    if (notesByText.size === 1 && [...notesByText.values()][0].length === entries.length) {
+        noteLines.push([...notesByText.keys()][0]);
+    }
+    else {
+        notesByText.forEach((names, text) => noteLines.push(`**${names.join(', ')}**: ${text}`));
+    }
+    if (notes && !notesByText.has(notes))
+        noteLines.push(notes);
+    const allNotes = noteLines.join('\n\n');
     const reinstatementNote = hasReinstatements
         ? `\n### Reinstatements\n${reinstatements.length} of ${entries.length} entries are reinstatements from old/ directories.\n`
         : '';
@@ -2481,7 +2503,7 @@ ${csvLines}
 \`\`\`
 
 ${isSponsor ? '### Sponsor\nSubmitter self-identifies as a CSrankings sponsor.\n\n' : ''}### Notes
-${notes || 'None'}
+${allNotes || 'None'}
 
 ---
 *Submitted via CSRankings batch submission form*`;
