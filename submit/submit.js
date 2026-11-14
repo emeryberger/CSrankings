@@ -444,6 +444,11 @@ function setupEventListeners() {
         btn.addEventListener('click', (e) => {
             const target = e.currentTarget;
             const action = target.dataset.action;
+            // Leaving Add mode discards the batch, so ask first
+            if (action !== 'add' && currentAction === 'add' && batchEntries.length > 0 &&
+                !confirm(`Switching modes will discard the ${batchEntries.length} entr${batchEntries.length === 1 ? 'y' : 'ies'} in your batch. Continue?`)) {
+                return;
+            }
             setAction(action);
         });
     });
@@ -1401,7 +1406,15 @@ function validateName() {
         // Case-sensitive: DBLP treats capitalization as significant,
         // e.g. "XiaoFeng Wang 0001" and "Xiaofeng Wang 0001" are different people.
         const existingEntry = facultyEntries.find(e => e.name === name);
-        if (existingEntry) {
+        if (existingEntry && batchEntries.length > 0) {
+            // Switching to Update mode would discard the batch, so stay in Add mode.
+            // Former faculty can be reinstated as part of the batch; current ones can't.
+            if (!existingEntry.isOld) {
+                setFieldStatus('name', 'error', `Already listed at ${existingEntry.institution}. Submit your batch first, then use Update for this person.`);
+                return;
+            }
+        }
+        else if (existingEntry) {
             // Entry exists (active or old/) - switch to update mode
             switchToUpdateWithEntry(existingEntry);
             return;
