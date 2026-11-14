@@ -438,6 +438,7 @@ function getCanonicalDBLPName(name) {
  * Setup all event listeners
  */
 function setupEventListeners() {
+    var _a;
     // Action buttons
     document.querySelectorAll('.action-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -516,6 +517,8 @@ function setupEventListeners() {
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
         cb.addEventListener('change', updateSubmitButton);
     });
+    // Notes can stand in for the CS-department box, so re-check the buttons as they change
+    (_a = document.getElementById('notes')) === null || _a === void 0 ? void 0 : _a.addEventListener('input', updateSubmitButton);
     // Removal reason
     const removalReason = document.getElementById('removal-reason');
     removalReason.addEventListener('change', () => {
@@ -702,9 +705,11 @@ function updateUIForAction(action) {
     scholaridInput.required = action !== 'remove';
     // ORCID field is hidden for remove; clear required so hidden control doesn't block submission
     orcidInput.required = action !== 'remove';
-    // Toggle required on eligibility checkboxes (only required for 'add' action)
+    // Toggle required on eligibility checkboxes (only required for 'add' action).
+    // The CS-department box is never required: faculty outside CS may be added
+    // if the submitter explains in Notes (enforced in updateSubmitButton).
     document.querySelectorAll('#eligibility-section input[type="checkbox"]').forEach(cb => {
-        cb.required = action === 'add';
+        cb.required = action === 'add' && cb.id !== 'check-cs-dept';
     });
     // Show/hide batch UI based on action
     const singleSubmit = document.getElementById('single-submit-group');
@@ -1899,6 +1904,16 @@ function clearFieldStatus(field) {
     validationState[field] = { valid: false, message: '' };
     updateSubmitButton();
 }
+/** Trimmed contents of the Notes field */
+function getNotes() {
+    var _a;
+    return ((_a = document.getElementById('notes')) === null || _a === void 0 ? void 0 : _a.value.trim()) || '';
+}
+/** Whether the submitter checked "In a CS department" */
+function isInCSDept() {
+    var _a;
+    return !!((_a = document.getElementById('check-cs-dept')) === null || _a === void 0 ? void 0 : _a.checked);
+}
 /**
  * Update submit button state
  */
@@ -1912,9 +1927,15 @@ function updateSubmitButton() {
             const fieldsValid = Object.values(validationState).every((v) => v.valid);
             const checkboxes = document.querySelectorAll('#eligibility-section input[type="checkbox"][required]');
             const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-            canSubmit = fieldsValid && allChecked;
+            // Not in a CS department is allowed, but only with a justification in Notes
+            const hasNotes = getNotes() !== '';
+            const csDeptOk = isInCSDept() || hasNotes;
+            canSubmit = fieldsValid && allChecked && csDeptOk;
             if (submitText)
                 submitText.textContent = 'Submit New Entry';
+            const csDeptHint = document.getElementById('cs-dept-hint');
+            if (csDeptHint)
+                csDeptHint.classList.toggle('text-danger', !csDeptOk);
             // Update batch buttons
             const addToBatchBtn = document.getElementById('add-to-batch-btn');
             const submitBtnAdd = document.getElementById('submit-btn-add');
@@ -1923,8 +1944,10 @@ function updateSubmitButton() {
                 addToBatchBtn.disabled = !canSubmit;
             if (submitBtnAdd)
                 submitBtnAdd.disabled = !canSubmit;
-            if (submitBatchBtn)
-                submitBatchBtn.disabled = batchEntries.length === 0;
+            if (submitBatchBtn) {
+                submitBatchBtn.disabled = batchEntries.length === 0 ||
+                    (batchEntries.some(e => e.notInCSDept) && !hasNotes);
+            }
             break;
         case 'update':
             // Selected entry + all fields valid + something actually changed
@@ -2037,8 +2060,13 @@ function handleSubmit(e) {
     let issueUrl;
     switch (currentAction) {
         case 'add':
+            if (!isInCSDept() && !notes) {
+                alert('Please explain in Notes (with a link) why this person is eligible despite not being in a CS department.');
+                return;
+            }
             // Check if this person is in old/ directories
             const oldEntry = facultyEntries.find(e => e.name === name && e.isOld);
+            entry.notInCSDept = !isInCSDept();
             issueUrl = createAddIssueUrl(entry, notes, oldEntry, isSponsor);
             break;
         case 'update':
@@ -2107,6 +2135,7 @@ ${previousEntrySection}### Eligibility Confirmation
 - [X] Can solely advise CS PhD students
 - [X] Name matches DBLP exactly
 - [X] Homepage URL works and shows name/affiliation
+${data.notInCSDept ? '- Not in a CS department (justification in Notes)' : '- [X] In a CS department'}
 
 ${isSponsor ? '### Sponsor\nSubmitter self-identifies as a CSrankings sponsor.\n\n' : ''}${notes ? `### Notes\n${notes}` : ''}`;
     // Note: labels can only be set via URL by users with write access
@@ -2294,7 +2323,8 @@ function handleAddToBatch() {
     const entry = {
         name, institution, homepage, scholarid, orcid,
         isOld: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.isOld,
-        oldFile: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.oldFile
+        oldFile: oldEntry === null || oldEntry === void 0 ? void 0 : oldEntry.oldFile,
+        notInCSDept: !isInCSDept()
     };
     batchEntries.push(entry);
     // Update batch UI
@@ -2338,8 +2368,10 @@ function updateBatchUI() {
     if (countBtn)
         countBtn.textContent = String(batchEntries.length);
     // Update submit batch button
-    if (submitBatchBtn)
-        submitBatchBtn.disabled = batchEntries.length === 0;
+    if (submitBatchBtn) {
+        submitBatchBtn.disabled = batchEntries.length === 0 ||
+            (batchEntries.some(e => e.notInCSDept) && getNotes() === '');
+    }
     // Rebuild table
     tbody.innerHTML = '';
     batchEntries.forEach((entry, index) => {
@@ -2427,7 +2459,8 @@ function createBatchIssueUrl(entries, institution, notes, isSponsor) {
         : `[CSrankings form submission] Add ${entries.length} faculty from ${institution}`;
     const entriesList = entries.map((e, i) => {
         const oldNote = e.isOld ? ` *(reinstatement from ${e.oldFile})*` : '';
-        return `${i + 1}. **${e.name}**${oldNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\`\n   - ORCID: \`${e.orcid}\``;
+        const deptNote = e.notInCSDept ? ' *(not in a CS department; see Notes)*' : '';
+        return `${i + 1}. **${e.name}**${oldNote}${deptNote}\n   - Homepage: ${e.homepage}\n   - Scholar ID: \`${e.scholarid}\`\n   - ORCID: \`${e.orcid}\``;
     }).join('\n\n');
     const csvLines = entries.map(e => `${e.name},${e.institution},${e.homepage},${e.scholarid},${e.orcid}`).join('\n');
     const reinstatementNote = hasReinstatements
