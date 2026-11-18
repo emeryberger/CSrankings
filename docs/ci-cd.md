@@ -39,6 +39,10 @@ Each workflow has at most one open issue. Further failures comment on it, and th
 
 To test it, run `Check Runner Images` from the Actions tab with `simulate_failure` set; an issue and an email should appear within a few minutes. Running it again without that option closes the issue. If reporting itself fails, the `CI Failure Mail` run is the only sign, because it does not watch itself.
 
+## DBLP Data Review Issue
+
+The monthly DBLP update can succeed and still drop papers, as when DBLP listed IJCAI-ECAI 2026 as `IJCAI/ECAI` and the whole year went uncounted. So `monthly-dblp-update.yml` also posts what the update could not decide on its own, as an issue labelled `dblp-venue-drift` assigned to the repository owner: venue names that newly appeared in a tracked DBLP stream (`venue-drift.md`) and IJCAI table-of-contents sections it does not know (`ijcai-tracks.md`). The step never fails the update; data still publishes. Further runs comment on the open issue, and a run with nothing to report closes it. See [dblp.md](dblp.md#venue-drift-detection) for how to resolve each entry.
+
 ## Pinned Runner Image
 
 `post-merge-rebuild.yml` pins its jobs to a specific Ubuntu image, because a change of image can remove tools the build needs. `check-runner-images.yml` runs weekly and fails, which is reported like any other failure, if GitHub's [list of images](https://github.com/actions/runner-images) no longer offers a pinned image or marks it deprecated. To move to a new image, change `runs-on` in both jobs and confirm that `make` still passes in the next run. The two alerting workflows stay on `ubuntu-latest` so that they keep running when a pinned image is gone.

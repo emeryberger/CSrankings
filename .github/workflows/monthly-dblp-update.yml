@@ -21,6 +21,9 @@ permissions:
 jobs:
   update-dblp:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write  # review issue (venue-drift.md, ijcai-tracks.md)
 
     steps:
       # Deliberately first, so testing the alert does not spend 19 minutes and
@@ -55,6 +58,92 @@ jobs:
       - name: Run DBLP update
         run: |
           make update-dblp-full
+
+      # IJCAI 2026 went uncounted for months because DBLP listed the joint
+      # IJCAI-ECAI papers as "IJCAI/ECAI" and the filter only knew "IJCAI".
+      # The update now writes two reports of things a human must decide:
+      #   venue-drift.md  -- util/filter-dblp.py: venue names newly appearing in
+      #                      a DBLP stream we track (papers silently dropped)
+      #   ijcai-tracks.md -- util/ijcai_tracks.py: unknown IJCAI track names,
+      #                      fetch failures, title mismatches
+      # Surface them as an issue rather than failing the update: the rest of the
+      # data should still publish. The issue closes itself once both are empty.
+      - name: Report DBLP data needing review
+        continue-on-error: true  # never block publishing the update
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const LABEL = 'dblp-venue-drift';
+            const read = (f) => fs.existsSync(f) ? fs.readFileSync(f, 'utf8').trim() : '';
+            const drift = read('venue-drift.md');
+            const ijcai = read('ijcai-tracks.md');
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}` +
+                           `/actions/runs/${context.runId}`;
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: LABEL, per_page: 100,
+            });
+
+            if (!drift && !ijcai) {
+              for (const issue of open.data) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner, repo: context.repo.repo, issue_number: issue.number,
+                  body: `Nothing to review in this DBLP update (${runUrl}). Closing.`,
+                });
+                await github.rest.issues.update({
+                  owner: context.repo.owner, repo: context.repo.repo, issue_number: issue.number,
+                  state: 'closed', state_reason: 'completed',
+                });
+              }
+              return;
+            }
+
+            core.warning('The DBLP update found data needing review; see the issue.');
+            const sections = [];
+            if (drift) {
+              sections.push(
+                `## Unrecognized venue names`,
+                ``,
+                `Recent records filed under a DBLP stream that CSRankings tracks, but with a ` +
+                `venue name the filter does not recognize and that DBLP had not used in that ` +
+                `stream before. These papers are **not being counted**.`,
+                ``,
+                drift,
+                ``,
+                `For each row, look up the proceedings title in DBLP, then either:`,
+                `- **count it** (e.g., a joint-conference name like \`IJCAI/ECAI\` or a new volume ` +
+                `like \`CAV (4)\`): add the name to \`BOOKTITLES\`/\`JOURNALS\` in ` +
+                `\`util/filter-dblp.py\` and to the area in \`util/csrankings.py\`; or`,
+                `- **ignore it** (workshops, companion volumes, industry tracks): add it to ` +
+                `\`KNOWN_UNCOUNTED\` in \`util/filter-dblp.py\`.`,
+                ``);
+            }
+            if (ijcai) {
+              sections.push(
+                `## IJCAI non-research tracks`,
+                ``,
+                `\`util/ijcai_tracks.py\` could not fully classify the ijcai.org table of ` +
+                `contents, so some survey/journal/sister-conference papers may be counted:`,
+                ``,
+                ijcai,
+                ``);
+            }
+            const body = [...sections, `Run: ${runUrl}. This issue closes itself when a run reports nothing.`].join('\n');
+
+            if (open.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: open.data[0].number, body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: 'Monthly DBLP update: venue data needs review',
+                // Assigning the owner is what makes GitHub email them.
+                body, labels: [LABEL], assignees: [context.repo.owner],
+              });
+            }
 
       - name: Commit and push changes
         run: |

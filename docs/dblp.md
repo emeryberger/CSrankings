@@ -70,7 +70,29 @@ Venues are defined in `util/filter-dblp.py`:
 - `BOOKTITLES` - Conference proceedings (AAAI, ICML, CVPR, etc.)
 - `JOURNALS` - Journal articles (ACM Trans. Graph., PVLDB, Bioinform., etc.)
 
-When adding a new venue, update the appropriate set in `util/filter-dblp.py` with the exact booktitle/journal name as it appears in DBLP.
+When adding a new venue, update the appropriate set in `util/filter-dblp.py` with the exact booktitle/journal name as it appears in DBLP, **and** add the same name to the venue's area in `util/csrankings.py` (`areadict`). A name in only one of the two contributes nothing.
+
+Matching is exact, so a one-year rename silently drops that year. Joint conferences
+are the usual cause: DBLP lists IJCAI-ECAI 2026 as `IJCAI/ECAI` (IJCAI-ECAI 2022 was
+plain `IJCAI`), and new proceedings volumes do the same (`CAV (4)` for CAV 2025 Part IV).
+Both went uncounted until added. For a joint name, also make sure only the tracked
+conference's proceedings count: `countPaper()` accepts `IJCAI/ECAI` only for records in
+DBLP's `conf/ijcai` stream, never ECAI's own (`conf/ecai`) proceedings.
+
+### Venue Drift Detection
+
+To catch renames, `util/filter-dblp.py --drift-report venue-drift.md` (run by `make
+shrink-dblp`) reports recent records that sit in a DBLP stream we track (the `conf/ijcai`
+in key `conf/ijcai/XiangXJCZ26`) under a venue name that was not kept **and** that DBLP
+never used in that stream before last year. Recurring names such as workshops,
+Findings and companion volumes have earlier years, so they are not reported. Options:
+`--drift-min-year` (default: last year) and `--drift-threshold` (default: 20 records).
+
+The monthly workflow posts a non-empty report as a GitHub issue labelled
+`dblp-venue-drift` and closes it once a run reports nothing. For each row, look up the
+proceedings title in DBLP and either add the name to `BOOKTITLES`/`JOURNALS` and
+`util/csrankings.py` (it should count), or add it to `KNOWN_UNCOUNTED` in
+`util/filter-dblp.py` (it should not).
 
 ## Excluding Non-Research Contributions
 
@@ -85,11 +107,30 @@ keynotes and so on look like research papers unless a rule says otherwise. `coun
 - `non-research-papers.csv` - DBLP keys of papers in tracks that leave no trace in
   the DBLP record, with the track and its source. **This needs updating for each new
   year of a listed venue**, or that year's non-research tracks will count.
+  IJCAI's entries are maintained automatically (see below).
   Covered so far: AAAI, IJCAI 2017-, KDD 2000-2026, SIGIR 2019-2025,
   PVLDB (conference years 2019, 2021-2023, 2025), WWW 2022, 2024, 2026, ASE 2019-2025,
   ISSTA 2017-2022, USENIX sessions 2016-, and the ISCA and HPCA 2025 industry tracks.
 - Venue tables in `util/csrankings.py` where only numbers separate the tracks, such
   as `SC_2006_ResearchArticles` and `SIGMOD_NonResearchPaperStart`.
+
+### IJCAI Tracks (automated)
+
+IJCAI's Survey, Journal, Sister Conferences Best Papers and Early Career papers share
+the proceedings, DOI prefix and DBLP record format with its research papers; only the
+ijcai.org table of contents says which track a paper is in. `util/ijcai_tracks.py`
+(`make ijcai-nonresearch`, step 7 of `make update-dblp-full`) reads
+`https://www.ijcai.org/proceedings/YYYY/` for this year and last, matches papers to
+DBLP records by DOI (`10.24963/ijcai.YYYY/N`) and title, and appends the keys of
+excluded-track papers to `non-research-papers.csv`. It is idempotent.
+
+Section names change from year to year, so the script only acts on names in its
+`EXCLUDED_TRACKS` and `COUNTED_TRACKS`. An unknown section, a title mismatch or a
+failed fetch goes to `ijcai-tracks.md`, which the monthly workflow posts in the same
+review issue as the venue-drift report. Doctoral Consortium and Demo papers (2-5
+pages) are left to the 6-page threshold. The joint IJCAI-ECAI 2026 proceedings have no
+ECAI section; all of its papers are IJCAI proceedings. Run by hand with `--dry-run`, or
+with `--toc-file` to use a saved page.
 
 The 6-page threshold is not enough: it does not apply to records without page
 numbers, which includes recent NeurIPS and nearly all of ICLR and NDSS.
@@ -126,14 +167,18 @@ Use `make update-dblp-full` to run the complete update pipeline with one command
 make update-dblp-full
 ```
 
-This performs all 7 steps automatically:
+This performs these steps automatically (see the `update-dblp-full` target in the `Makefile` for the exact list):
 1. **Backup** - Saves current `dblp-original.xml.gz` to `prev-dblp.xml.gz`
 2. **Download** - Fetches the latest monthly DBLP release from drops.dagstuhl.de (~1GB)
-3. **Filter** - Shrinks to CSRankings venues via streaming SAX parser (~53MB)
+3. **Filter** - Shrinks to CSRankings venues via streaming SAX parser (~53MB), and writes `venue-drift.md` ([Venue Drift Detection](#venue-drift-detection))
 4. **Aliases** - Generates `dblp-aliases.csv`
 5. **Name changes** - Detects and applies author name changes to `csrankings-*.csv`, then writes `name-check.csv`: rows whose ORCID DBLP now puts on a different name, and rows on a DBLP disambiguation page (advisory; review before renaming)
-6. **Regenerate** - Rebuilds `generated-author-info.csv`
-7. **Update date** - Updates "last update" date in `index.html`
+6. **IJCAI tracks** - Adds IJCAI non-research papers to `non-research-papers.csv` and writes `ijcai-tracks.md` ([IJCAI Tracks](#ijcai-tracks-automated))
+7. **Regenerate** - Rebuilds `generated-author-info.csv` and `csrankings.csv`
+8. **Update date** - Updates "last update" date in `index.html`
+
+`venue-drift.md` and `ijcai-tracks.md` are gitignored; in CI their contents become a
+`dblp-venue-drift` issue.
 
 ## Manual DBLP Update (Step-by-Step)
 
@@ -155,10 +200,13 @@ make update-author-names
 # 5. Apply name changes if preview looks correct
 make apply-author-names
 
-# 6. Regenerate publication data
+# 6. Exclude IJCAI non-research tracks
+make ijcai-nonresearch
+
+# 7. Regenerate publication data
 make generated-author-info.csv
 
-# 7. Update date in index.html
+# 8. Update date in index.html
 make update-dblp-date
 ```
 

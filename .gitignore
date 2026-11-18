@@ -21,3 +21,6 @@ build/
 
 # Backup files written by util/update-new-names.py during the monthly DBLP update
 *.bak
+# Venue-rename report from util/filter-dblp.py (posted as an issue by CI)
+venue-drift.md
+ijcai-tracks.md
