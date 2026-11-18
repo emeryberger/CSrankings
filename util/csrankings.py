@@ -266,7 +266,7 @@ areadict: Dict[Area, List[Conference]] = {
     Area("isca"): [Conference("ISCA")],
     Area("micro"): [Conference("MICRO")],
     Area("hpca"): [Conference("HPCA")],
-    Area("cav"):  [Conference("CAV")] + [Conference(f"CAV ({i})") for i in range(1, 4)],
+    Area("cav"):  [Conference("CAV")] + [Conference(f"CAV ({i})") for i in range(1, 10)],
     Area("lics"): [Conference("LICS"), Conference("CSL-LICS")],
     Area("focs"): [Conference("FOCS")],
     Area("stoc"): [Conference("STOC")],
@@ -281,7 +281,10 @@ areadict: Dict[Area, List[Conference]] = {
     Area("iclr"): [Conference("ICLR"), Conference("ICLR (Poster)")],
     Area("kdd"): [Conference("KDD"), Conference("KDD (1)"), Conference("KDD (2)")],
     Area("aaai"): [Conference("AAAI"), Conference("AAAI/IAAI")],
-    Area("ijcai"): [Conference("IJCAI")],
+    # In years IJCAI is held jointly with ECAI (2022 Vienna, 2026 Bremen), DBLP
+    # may list the papers under "IJCAI/ECAI". They are the IJCAI proceedings;
+    # countPaper() rejects any record not filed under DBLP's conf/ijcai stream.
+    Area("ijcai"): [Conference("IJCAI"), Conference("IJCAI/ECAI")],
     Area("siggraph"): [Conference("ACM Trans. Graph."), Conference("SIGGRAPH"), Conference("SIGGRAPH (Conference Paper Track)")],
     Area("siggraph-asia"): [
         Conference("ACM Trans. Graph."),
@@ -849,6 +852,13 @@ def countPaper(
         return False
 
     if nonResearchCategory(title, ee, url or "", key) is not None:
+        return False
+
+    # Joint IJCAI-ECAI: count only what DBLP files as IJCAI proceedings, never
+    # papers published in ECAI's own (Frontiers in AI) proceedings.
+    if confname == "IJCAI/ECAI" and not (
+        key.startswith("conf/ijcai/") or url.startswith("db/conf/ijcai/")
+    ):
         return False
 
     # Special handling for EMSOFT (TECS).
