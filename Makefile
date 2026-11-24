@@ -7,7 +7,7 @@
 
 TARGETS = csrankings.js csrankings.min.js submit/submit.js generated-author-info.csv
 
-.PHONY: home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names update-dblp-full apply-author-names backup-dblp update-dblp-date download-prev-dblp
+.PHONY: ijcai-nonresearch home-pages scholar-links fix-affiliations update-dblp clean-dblp download-dblp shrink-dblp clean-csrankings update-author-names update-dblp-full apply-author-names backup-dblp update-dblp-date download-prev-dblp
 
 PYTHON = python3.12 # 3.7
 PYPY   = python3.12 # pypy
@@ -59,8 +59,12 @@ download-dblp:
 
 shrink-dblp:
 	@echo "Shrinking the DBLP file (streaming, low memory)."
-	gunzip -dc dblp-original.xml.gz | $(PYTHON) util/filter-dblp.py | xz -9 > dblp.xml.xz
+	gunzip -dc dblp-original.xml.gz | $(PYTHON) util/filter-dblp.py --drift-report venue-drift.md | xz -9 > dblp.xml.xz
 	@echo "Filtered DBLP saved to dblp.xml.xz"
+	@if [ -s venue-drift.md ]; then \
+		echo "WARNING: DBLP uses venue names we do not recognize (possible renames; see venue-drift.md):"; \
+		cat venue-drift.md; \
+	fi
 
 faculty-affiliations.csv homepages.csv scholar.csv csrankings.csv: csrankings-*.csv
 	@echo "Splitting main datafile."
@@ -125,6 +129,12 @@ update-dblp-date:
 	sed -i.bak -E "s/(DBLP<\/a> \()[A-Za-z]+ [0-9]{4}(\))/\1$$MONTH_YEAR\2/" index.html && \
 	rm -f index.html.bak && \
 	echo "Updated to: $$MONTH_YEAR"
+
+# IJCAI's survey/journal/sister-conference/early-career papers are only
+# distinguishable via ijcai.org's table of contents; add their DBLP keys to
+# non-research-papers.csv. Problems needing a human go to ijcai-tracks.md.
+ijcai-nonresearch: dblp.xml.xz
+	$(PYTHON) util/ijcai_tracks.py --report ijcai-tracks.md
 
 # Backup current DBLP before downloading new one
 backup-dblp:
@@ -195,24 +205,24 @@ apply-author-names:
 update-dblp-full:
 	@echo "=== FULLY AUTOMATED DBLP UPDATE ==="
 	@echo ""
-	@echo "Step 1/9: Downloading previous DBLP snapshot (for name change detection)..."
+	@echo "Step 1/10: Downloading previous DBLP snapshot (for name change detection)..."
 	$(MAKE) download-prev-dblp
 	@echo ""
-	@echo "Step 2/9: Backing up to prev-dblp.xml.gz..."
+	@echo "Step 2/10: Backing up to prev-dblp.xml.gz..."
 	$(MAKE) backup-dblp
 	@echo ""
-	@echo "Step 3/9: Downloading new DBLP from $(DBLP)..."
+	@echo "Step 3/10: Downloading new DBLP from $(DBLP)..."
 	$(MAKE) download-dblp
 	@echo ""
-	@echo "Step 4/9: Filtering DBLP to CSRankings venues..."
+	@echo "Step 4/10: Filtering DBLP to CSRankings venues..."
 	$(MAKE) shrink-dblp
 	@echo ""
-	@echo "Step 5/9: Generating DBLP aliases..."
+	@echo "Step 5/10: Generating DBLP aliases..."
 	$(MAKE) faculty-affiliations.csv
 	$(PYTHON) util/generate-aliases.py > dblp-aliases.csv
 	$(PYTHON) util/export-dblp-names.py
 	@echo ""
-	@echo "Step 6/9: Detecting and applying author name changes..."
+	@echo "Step 6/10: Detecting and applying author name changes..."
 	@if [ -f prev-dblp.xml.gz ]; then \
 		$(PYTHON) util/new-name-detector.py --old prev-dblp.xml.gz --new dblp-original.xml.gz > name-changes.csv; \
 		CHANGES=$$(wc -l < name-changes.csv | tr -d ' '); \
@@ -225,17 +235,25 @@ update-dblp-full:
 	else \
 		echo "No previous DBLP backup found. Skipping name change detection."; \
 	fi
+	@# new-name-detector.py follows renamed DBLP profiles but not people split off
+	@# a shared name into a new numbered profile. Report those (advisory only):
+	@# rows whose ORCID DBLP now attaches to another name, and rows sitting on a
+	@# DBLP disambiguation page. name-check.csv is committed with the update.
+	$(PYTHON) util/orcid-name-check.py > name-check.csv
 	@echo ""
-	@echo "Step 7/9: Regenerating publication data..."
+	@echo "Step 7/10: Excluding IJCAI non-research tracks (ijcai.org table of contents)..."
+	$(MAKE) ijcai-nonresearch
+	@echo ""
+	@echo "Step 8/10: Regenerating publication data..."
 	$(MAKE) generated-author-info.csv
 	@echo ""
-	@echo "Step 8/9: Rebuilding csrankings.csv with DBLP alias expansion..."
+	@echo "Step 9/10: Rebuilding csrankings.csv with DBLP alias expansion..."
 	@# clean-csrankings.py is the only step that expands dblp-aliases.csv into
 	@# csrankings.csv. Without it this target writes an alias-stripped file (~2,100
 	@# rows short), which the next post-merge 'make all' silently puts back.
 	$(MAKE) clean-csrankings
 	@echo ""
-	@echo "Step 9/9: Updating DBLP date in index.html..."
+	@echo "Step 10/10: Updating DBLP date in index.html..."
 	$(MAKE) update-dblp-date
 	@echo ""
 	@echo "=== DBLP UPDATE COMPLETE ==="
